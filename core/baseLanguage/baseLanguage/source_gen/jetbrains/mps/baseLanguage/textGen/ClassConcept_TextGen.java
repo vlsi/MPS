@@ -15,7 +15,7 @@ public class ClassConcept_TextGen extends SNodeTextGen {
     BaseLanguageTextGen.fileHeader(node, this);
     BaseLanguageTextGen.annotations(node, this);
     BaseLanguageTextGen.visibilityWithIndent(SLinkOperations.getTarget(node, "visibility", true), this);
-    if (!(Classifier_Behavior.call_isInner_521412098689998677(node) && Classifier_Behavior.call_isStatic_521412098689998668(node))) {
+    if (Classifier_Behavior.call_isInner_521412098689998677(node) && Classifier_Behavior.call_isStatic_521412098689998668(node)) {
       this.append("static ");
     }
     if (SPropertyOperations.getBoolean(node, "abstractClass")) {
