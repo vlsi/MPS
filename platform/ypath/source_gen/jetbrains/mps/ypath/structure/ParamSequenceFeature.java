@@ -148,6 +148,7 @@ public class ParamSequenceFeature extends SequenceFeature implements IFeature, I
     this.setSizeFunction(node);
   }
 
+
   public static ParamSequenceFeature newInstance(SModel sm, boolean init) {
     return (ParamSequenceFeature)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.ypath.structure.ParamSequenceFeature", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -155,4 +156,5 @@ public class ParamSequenceFeature extends SequenceFeature implements IFeature, I
   public static ParamSequenceFeature newInstance(SModel sm) {
     return ParamSequenceFeature.newInstance(sm, false);
   }
+
 }

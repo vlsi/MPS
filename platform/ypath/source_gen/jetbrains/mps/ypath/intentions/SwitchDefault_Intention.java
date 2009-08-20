@@ -8,6 +8,7 @@ import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 public class SwitchDefault_Intention extends BaseIntention {
+
   public SwitchDefault_Intention() {
   }
 
@@ -53,4 +54,5 @@ public class SwitchDefault_Intention extends BaseIntention {
   public String getLocationString() {
     return "jetbrains.mps.ypath.intentions";
   }
+
 }

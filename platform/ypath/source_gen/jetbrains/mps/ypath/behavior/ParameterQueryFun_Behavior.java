@@ -7,6 +7,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class ParameterQueryFun_Behavior {
+
   public static void init(SNode thisNode) {
   }
 
@@ -17,4 +18,5 @@ public class ParameterQueryFun_Behavior {
     }
     return new _Quotations.QuotationClass_0().createNode(SLinkOperations.getTarget(SNodeOperations.getAncestor(thisNode, "jetbrains.mps.ypath.structure.IFeature", false, false), "parameterType", true));
   }
+
 }

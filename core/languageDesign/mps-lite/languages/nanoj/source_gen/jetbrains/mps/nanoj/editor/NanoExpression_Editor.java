@@ -9,6 +9,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Error;
 
 public class NanoExpression_Editor extends DefaultNodeEditor {
+
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createError_7200_0(editorContext, node);
   }
@@ -18,4 +19,5 @@ public class NanoExpression_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Error_7200_0");
     return editorCell;
   }
+
 }

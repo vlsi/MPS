@@ -41,6 +41,7 @@ import jetbrains.mps.smodel.action.INodeSubstituteAction;
 import jetbrains.mps.nodeEditor.cellMenu.CellContext;
 
 public class IterateOperation_Editor extends DefaultNodeEditor {
+
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_7857_0(editorContext, node);
   }
@@ -171,6 +172,7 @@ public class IterateOperation_Editor extends DefaultNodeEditor {
 
   private EditorCell createReadOnlyModelAccessor_7857_0(final EditorContext editorContext, final SNode node) {
     EditorCell_Property editorCell = EditorCell_Property.create(editorContext, new ModelAccessor() {
+
       public String getText() {
         return IterateOperation_Behavior.call_getAxisInternalValue_1213877293456(node);
       }
@@ -196,6 +198,7 @@ public class IterateOperation_Editor extends DefaultNodeEditor {
 
   private EditorCell createReadOnlyModelAccessor_7857_1(final EditorContext editorContext, final SNode node) {
     EditorCell_Property editorCell = EditorCell_Property.create(editorContext, new ModelAccessor() {
+
       public String getText() {
         return TraversalAxis.parseValue(SPropertyOperations.getString_def(node, "axis", "DESCENDANTS")).getName();
       }
@@ -291,6 +294,7 @@ public class IterateOperation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
+
   private static boolean renderingCondition7857_0(SNode node, EditorContext editorContext, IScope scope) {
     return (SLinkOperations.getTarget(node, "usedFeature", false) == null);
   }
@@ -312,6 +316,7 @@ public class IterateOperation_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline7857_0 extends AbstractCellProvider {
+
     public _Inline7857_0() {
       super();
     }
@@ -346,9 +351,10 @@ public class IterateOperation_Editor extends DefaultNodeEditor {
       } else
       return editorCell;
     }
-  }
 
+}
   public static class _Inline7857_1 extends AbstractCellProvider {
+
     public _Inline7857_1() {
       super();
     }
@@ -384,9 +390,10 @@ public class IterateOperation_Editor extends DefaultNodeEditor {
       } else
       return editorCell;
     }
-  }
 
+}
   public static class IterateOperation_component_cellMenu0 implements SubstituteInfoPart {
+
     private menu_SubstituteFeatureAndParameter myComponent;
 
     public IterateOperation_component_cellMenu0() {
@@ -396,9 +403,10 @@ public class IterateOperation_Editor extends DefaultNodeEditor {
     public List<INodeSubstituteAction> createActions(CellContext cellContext, EditorContext editorContext) {
       return this.myComponent.createActions(cellContext, editorContext);
     }
-  }
 
+}
   public static class IterateOperation_component_cellMenu1 implements SubstituteInfoPart {
+
     private menu_SubstituteFeatureAndParameter myComponent;
 
     public IterateOperation_component_cellMenu1() {
@@ -408,9 +416,10 @@ public class IterateOperation_Editor extends DefaultNodeEditor {
     public List<INodeSubstituteAction> createActions(CellContext cellContext, EditorContext editorContext) {
       return this.myComponent.createActions(cellContext, editorContext);
     }
-  }
 
+}
   public static class IterateOperation_component_cellMenu2 implements SubstituteInfoPart {
+
     private menu_SubstituteFeatureAndParameter myComponent;
 
     public IterateOperation_component_cellMenu2() {
@@ -420,5 +429,7 @@ public class IterateOperation_Editor extends DefaultNodeEditor {
     public List<INodeSubstituteAction> createActions(CellContext cellContext, EditorContext editorContext) {
       return this.myComponent.createActions(cellContext, editorContext);
     }
-  }
+
+}
+
 }

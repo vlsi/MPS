@@ -16,6 +16,7 @@ import jetbrains.mps.uiLanguage.behavior.ComponentDeclaration_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class AttributeValue_attribute_ReferentConstraint extends BaseNodeReferenceSearchScopeProvider implements IModelConstraints {
+
   public AttributeValue_attribute_ReferentConstraint() {
   }
 
@@ -35,4 +36,5 @@ public class AttributeValue_attribute_ReferentConstraint extends BaseNodeReferen
     }
     return result;
   }
+
 }

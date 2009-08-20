@@ -53,6 +53,7 @@ public class RaiseOperation extends BaseConcept implements IOperation {
     super.setChild(RaiseOperation.ARGUMENT, node);
   }
 
+
   public static RaiseOperation newInstance(SModel sm, boolean init) {
     return (RaiseOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.uiLanguage.structure.RaiseOperation", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -60,4 +61,5 @@ public class RaiseOperation extends BaseConcept implements IOperation {
   public static RaiseOperation newInstance(SModel sm) {
     return RaiseOperation.newInstance(sm, false);
   }
+
 }

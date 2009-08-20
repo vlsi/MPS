@@ -33,6 +33,7 @@ public class MatchPropertyOperation extends MatchKindOperation {
     super.setChild(MatchPropertyOperation.MATCH_EXPRESSION, node);
   }
 
+
   public static MatchPropertyOperation newInstance(SModel sm, boolean init) {
     return (MatchPropertyOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.ypath.structure.MatchPropertyOperation", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -40,4 +41,5 @@ public class MatchPropertyOperation extends MatchKindOperation {
   public static MatchPropertyOperation newInstance(SModel sm) {
     return MatchPropertyOperation.newInstance(sm, false);
   }
+
 }

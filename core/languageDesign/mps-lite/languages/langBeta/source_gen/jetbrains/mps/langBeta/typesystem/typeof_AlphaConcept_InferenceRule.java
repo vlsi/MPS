@@ -12,6 +12,7 @@ import jetbrains.mps.typesystem.inference.NodeErrorTarget;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class typeof_AlphaConcept_InferenceRule extends AbstractInferenceRule_Runtime implements InferenceRule_Runtime {
+
   public typeof_AlphaConcept_InferenceRule() {
   }
 
@@ -39,4 +40,5 @@ public class typeof_AlphaConcept_InferenceRule extends AbstractInferenceRule_Run
   public boolean overrides() {
     return false;
   }
+
 }

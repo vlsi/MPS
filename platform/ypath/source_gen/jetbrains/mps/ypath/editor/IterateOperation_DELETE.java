@@ -11,12 +11,14 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class IterateOperation_DELETE {
+
   public static void setCellActions(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setAction(CellActionType.DELETE, new IterateOperation_DELETE.IterateOperation_DELETE_DELETE(node));
   }
 
   public static class IterateOperation_DELETE_DELETE extends EditorCellAction {
-    /*package*/ SNode myNode;
+
+    /* package */SNode myNode;
 
     public IterateOperation_DELETE_DELETE(SNode node) {
       this.myNode = node;
@@ -36,5 +38,7 @@ public class IterateOperation_DELETE {
         }
       }
     }
-  }
+
+}
+
 }

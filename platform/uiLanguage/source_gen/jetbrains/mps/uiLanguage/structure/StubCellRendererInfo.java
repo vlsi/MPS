@@ -25,6 +25,7 @@ public class StubCellRendererInfo extends BaseConcept {
     super.setReferent(StubCellRendererInfo.CELL_RENDERER_SETTER, node);
   }
 
+
   public static StubCellRendererInfo newInstance(SModel sm, boolean init) {
     return (StubCellRendererInfo)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.uiLanguage.structure.StubCellRendererInfo", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -32,4 +33,5 @@ public class StubCellRendererInfo extends BaseConcept {
   public static StubCellRendererInfo newInstance(SModel sm) {
     return StubCellRendererInfo.newInstance(sm, false);
   }
+
 }

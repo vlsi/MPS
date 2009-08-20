@@ -4,6 +4,7 @@ package jetbrains.mps.nanoj.structure;
 
 import jetbrains.mps.lang.core.structure.BaseConcept;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.nanoj.structure.Expression;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
@@ -16,13 +17,14 @@ public class MinusExpression extends BaseConcept {
     super(node);
   }
 
-  public jetbrains.mps.core.structure.BaseConcept getExpr() {
-    return (jetbrains.mps.core.structure.BaseConcept)this.getChild(jetbrains.mps.core.structure.BaseConcept.class, MinusExpression.EXPR);
+  public Expression getExpr() {
+    return (Expression)this.getChild(Expression.class, MinusExpression.EXPR);
   }
 
-  public void setExpr(jetbrains.mps.core.structure.BaseConcept node) {
+  public void setExpr(Expression node) {
     super.setChild(MinusExpression.EXPR, node);
   }
+
 
   public static MinusExpression newInstance(SModel sm, boolean init) {
     return (MinusExpression)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.nanoj.structure.MinusExpression", sm, GlobalScope.getInstance(), init).getAdapter();
@@ -31,4 +33,5 @@ public class MinusExpression extends BaseConcept {
   public static MinusExpression newInstance(SModel sm) {
     return MinusExpression.newInstance(sm, false);
   }
+
 }

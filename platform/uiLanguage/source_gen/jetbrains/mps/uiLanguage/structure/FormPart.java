@@ -33,6 +33,7 @@ public class FormPart extends BaseConcept {
     super.setChild(FormPart.CONTENT, node);
   }
 
+
   public static FormPart newInstance(SModel sm, boolean init) {
     return (FormPart)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.uiLanguage.structure.FormPart", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -40,4 +41,5 @@ public class FormPart extends BaseConcept {
   public static FormPart newInstance(SModel sm) {
     return FormPart.newInstance(sm, false);
   }
+
 }

@@ -8,6 +8,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 public class GenericParamFeature_Behavior {
+
   public static void init(SNode thisNode) {
   }
 
@@ -24,4 +25,5 @@ public class GenericParamFeature_Behavior {
       SPropertyOperations.getString(param, "paramValue")
     ));
   }
+
 }

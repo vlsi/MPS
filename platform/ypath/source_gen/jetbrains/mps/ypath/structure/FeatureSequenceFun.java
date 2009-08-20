@@ -22,4 +22,5 @@ public class FeatureSequenceFun extends ConceptFunction {
   public static FeatureSequenceFun newInstance(SModel sm) {
     return FeatureSequenceFun.newInstance(sm, false);
   }
+
 }

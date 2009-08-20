@@ -41,6 +41,7 @@ public class ParamFeatureSizeFun extends FeatureSizeFun implements IParamFeature
     this.setProperty(ParamFeatureSizeFun.VIRTUAL_PACKAGE, value);
   }
 
+
   public static ParamFeatureSizeFun newInstance(SModel sm, boolean init) {
     return (ParamFeatureSizeFun)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.ypath.structure.ParamFeatureSizeFun", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -48,4 +49,5 @@ public class ParamFeatureSizeFun extends FeatureSizeFun implements IParamFeature
   public static ParamFeatureSizeFun newInstance(SModel sm) {
     return ParamFeatureSizeFun.newInstance(sm, false);
   }
+
 }

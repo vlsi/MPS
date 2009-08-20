@@ -29,6 +29,7 @@ import java.util.ArrayList;
 import jetbrains.mps.smodel.SModel;
 
 public class TreeNodeKindProperty_Editor extends DefaultNodeEditor {
+
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_4147_0(editorContext, node);
   }
@@ -39,7 +40,8 @@ public class TreeNodeKindProperty_Editor extends DefaultNodeEditor {
     EditorCell editorCell = null;
     if (alternationCondition) {
       editorCell = this.createConstant_4147_1(editorContext, node);
-    } else {
+    } else
+    {
       editorCell = this.createConstant_4147_2(editorContext, node);
     }
     TreeNodeKindProperty_default_DELETE.setCellActions(editorCell, node, editorContext);
@@ -129,11 +131,13 @@ public class TreeNodeKindProperty_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
+
   private static boolean renderingCondition4147_0(SNode node, EditorContext editorContext, IScope scope) {
     return SPropertyOperations.getBoolean(node, "default");
   }
 
   public static class TreeNodeKindProperty_generic_cellMenu0 extends AbstractCellMenuPart_Generic_Group {
+
     public TreeNodeKindProperty_generic_cellMenu0() {
     }
 
@@ -174,5 +178,7 @@ public class TreeNodeKindProperty_Editor extends DefaultNodeEditor {
         "property must be always specified"
       );
     }
-  }
+
+}
+
 }

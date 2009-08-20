@@ -29,4 +29,5 @@ public class IGenericFeature_Behavior {
   public static SNode callSuper_getterExpression_1213877249152(SNode thisNode, String callerConceptFqName, SNode srcExpr, SNode param, ITemplateGenerator generator) {
     return (SNode)BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.ypath.structure.IGenericFeature"), callerConceptFqName, "virtual_getterExpression_1213877249152", PARAMETERS_1213877249152, srcExpr, param, generator);
   }
+
 }

@@ -106,6 +106,7 @@ public class SequenceFeature extends BaseConcept implements INamedConcept, IFeat
     super.setChild(SequenceFeature.SIZE_FUNCTION, node);
   }
 
+
   public static SequenceFeature newInstance(SModel sm, boolean init) {
     return (SequenceFeature)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.ypath.structure.SequenceFeature", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -113,4 +114,5 @@ public class SequenceFeature extends BaseConcept implements INamedConcept, IFeat
   public static SequenceFeature newInstance(SModel sm) {
     return SequenceFeature.newInstance(sm, false);
   }
+
 }

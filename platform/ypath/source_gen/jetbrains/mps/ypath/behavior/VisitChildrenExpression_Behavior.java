@@ -6,10 +6,12 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class VisitChildrenExpression_Behavior {
+
   public static void init(SNode thisNode) {
   }
 
   public static SNode call_getEnclosingVisitNodesStatement_1213877259423(SNode thisNode) {
     return SNodeOperations.getAncestor(thisNode, "jetbrains.mps.ypath.structure.VisitBlock", false, false);
   }
+
 }

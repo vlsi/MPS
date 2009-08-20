@@ -42,6 +42,7 @@ public class ParameterQueryFun extends ConceptFunction implements IDesignFunctio
     this.setProperty(ParameterQueryFun.VIRTUAL_PACKAGE, value);
   }
 
+
   public static ParameterQueryFun newInstance(SModel sm, boolean init) {
     return (ParameterQueryFun)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.ypath.structure.ParameterQueryFun", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -49,4 +50,5 @@ public class ParameterQueryFun extends ConceptFunction implements IDesignFunctio
   public static ParameterQueryFun newInstance(SModel sm) {
     return ParameterQueryFun.newInstance(sm, false);
   }
+
 }

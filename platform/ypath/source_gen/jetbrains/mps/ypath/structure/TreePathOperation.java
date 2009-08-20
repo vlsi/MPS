@@ -43,6 +43,7 @@ public class TreePathOperation extends BaseConcept implements IOperation {
     this.setProperty(TreePathOperation.VIRTUAL_PACKAGE, value);
   }
 
+
   public static TreePathOperation newInstance(SModel sm, boolean init) {
     return (TreePathOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.ypath.structure.TreePathOperation", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -50,4 +51,5 @@ public class TreePathOperation extends BaseConcept implements IOperation {
   public static TreePathOperation newInstance(SModel sm) {
     return TreePathOperation.newInstance(sm, false);
   }
+
 }

@@ -21,4 +21,5 @@ public class KindBlock extends LambdaMethod {
   public static KindBlock newInstance(SModel sm) {
     return KindBlock.newInstance(sm, false);
   }
+
 }

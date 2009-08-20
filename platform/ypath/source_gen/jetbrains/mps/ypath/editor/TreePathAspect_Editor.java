@@ -32,6 +32,7 @@ import jetbrains.mps.nodeEditor.cellMenu.DefaultReferenceSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
 
 public class TreePathAspect_Editor extends DefaultNodeEditor {
+
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_1553_0(editorContext, node);
   }
@@ -630,11 +631,13 @@ public class TreePathAspect_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
+
   private static boolean renderingCondition1553_0(SNode node, EditorContext editorContext, IScope scope) {
     return true || (SLinkOperations.getTarget(node, "parentBlock", true) != null) || (SLinkOperations.getTarget(node, "childrenBlock", true) != null);
   }
 
   private static class nodeKindsListHandler_1553_0 extends RefNodeListHandler {
+
     public nodeKindsListHandler_1553_0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
@@ -692,9 +695,10 @@ public class TreePathAspect_Editor extends DefaultNodeEditor {
       editorCell.setDefaultText("");
       return editorCell;
     }
-  }
 
+}
   private static class featuresListHandler_1553_0 extends RefNodeListHandler {
+
     public featuresListHandler_1553_0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
@@ -752,5 +756,7 @@ public class TreePathAspect_Editor extends DefaultNodeEditor {
       editorCell.setDefaultText("");
       return editorCell;
     }
-  }
+
+}
+
 }

@@ -11,7 +11,6 @@ public interface IFeature extends INamedConcept {
   public static final String ASCENDING = "ascending";
   public static final String OPPOSITE = "opposite";
 
-
   public boolean getWritable();
   public void setWritable(boolean value);
   public boolean getDefault();

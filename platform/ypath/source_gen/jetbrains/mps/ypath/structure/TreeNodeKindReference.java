@@ -33,6 +33,7 @@ public class TreeNodeKindReference extends Expression {
     super.setReferent(TreeNodeKindReference.TREE_NODE_KIND, node);
   }
 
+
   public static TreeNodeKindReference newInstance(SModel sm, boolean init) {
     return (TreeNodeKindReference)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.ypath.structure.TreeNodeKindReference", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -40,4 +41,5 @@ public class TreeNodeKindReference extends Expression {
   public static TreeNodeKindReference newInstance(SModel sm) {
     return TreeNodeKindReference.newInstance(sm, false);
   }
+
 }

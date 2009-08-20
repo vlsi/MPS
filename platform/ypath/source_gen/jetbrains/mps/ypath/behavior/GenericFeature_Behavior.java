@@ -6,6 +6,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.generator.template.ITemplateGenerator;
 
 public class GenericFeature_Behavior {
+
   public static void init(SNode thisNode) {
   }
 
@@ -16,4 +17,5 @@ public class GenericFeature_Behavior {
   public static SNode virtual_getterExpression_1213877249152(SNode thisNode, SNode srcExpr, SNode param, ITemplateGenerator generator) {
     return FeatureUtil.getterExpression(thisNode, srcExpr, generator);
   }
+
 }

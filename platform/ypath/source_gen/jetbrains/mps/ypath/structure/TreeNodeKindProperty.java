@@ -70,6 +70,7 @@ public class TreeNodeKindProperty extends BaseConcept implements INamedConcept {
     super.setChild(TreeNodeKindProperty.GETTER, node);
   }
 
+
   public static TreeNodeKindProperty newInstance(SModel sm, boolean init) {
     return (TreeNodeKindProperty)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.ypath.structure.TreeNodeKindProperty", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -77,4 +78,5 @@ public class TreeNodeKindProperty extends BaseConcept implements INamedConcept {
   public static TreeNodeKindProperty newInstance(SModel sm) {
     return TreeNodeKindProperty.newInstance(sm, false);
   }
+
 }

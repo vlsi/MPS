@@ -97,6 +97,7 @@ public class GenericFeature extends BaseConcept implements IGenericFeature, INam
     super.setChild(GenericFeature.GETTER, node);
   }
 
+
   public static GenericFeature newInstance(SModel sm, boolean init) {
     return (GenericFeature)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.ypath.structure.GenericFeature", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -104,4 +105,5 @@ public class GenericFeature extends BaseConcept implements IGenericFeature, INam
   public static GenericFeature newInstance(SModel sm) {
     return GenericFeature.newInstance(sm, false);
   }
+
 }

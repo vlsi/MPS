@@ -61,6 +61,7 @@ public class AttributeValue extends BaseConcept implements IComponentPart {
     super.setChild(AttributeValue.VALUE, node);
   }
 
+
   public static AttributeValue newInstance(SModel sm, boolean init) {
     return (AttributeValue)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.uiLanguage.structure.AttributeValue", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -68,4 +69,5 @@ public class AttributeValue extends BaseConcept implements IComponentPart {
   public static AttributeValue newInstance(SModel sm) {
     return AttributeValue.newInstance(sm, false);
   }
+
 }

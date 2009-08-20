@@ -13,6 +13,7 @@ import jetbrains.mps.smodel.search.SimpleSearchScope;
 import jetbrains.mps.smodel.search.EmptySearchScope;
 
 public class TreeNodeKindReference_treeNodeKind_ReferentConstraint extends BaseNodeReferenceSearchScopeProvider implements IModelConstraints {
+
   public TreeNodeKindReference_treeNodeKind_ReferentConstraint() {
   }
 
@@ -28,9 +29,11 @@ public class TreeNodeKindReference_treeNodeKind_ReferentConstraint extends BaseN
     ISearchScope searchScope;
     if ((_context.getReferenceNode() != null) && (SLinkOperations.getTarget(_context.getReferenceNode(), "treePathAspect", false) != null)) {
       searchScope = new SimpleSearchScope(SLinkOperations.getTargets(SLinkOperations.getTarget(_context.getReferenceNode(), "treePathAspect", false), "nodeKinds", true));
-    } else {
+    } else
+    {
       searchScope = new EmptySearchScope();
     }
     return searchScope;
   }
+
 }

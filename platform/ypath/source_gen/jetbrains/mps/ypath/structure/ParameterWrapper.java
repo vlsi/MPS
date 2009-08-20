@@ -70,6 +70,7 @@ public class ParameterWrapper extends BaseConcept implements INamedConcept {
     super.setReferent(ParameterWrapper.PARAM_REF, node);
   }
 
+
   public static ParameterWrapper newInstance(SModel sm, boolean init) {
     return (ParameterWrapper)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.ypath.structure.ParameterWrapper", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -77,4 +78,5 @@ public class ParameterWrapper extends BaseConcept implements INamedConcept {
   public static ParameterWrapper newInstance(SModel sm) {
     return ParameterWrapper.newInstance(sm, false);
   }
+
 }

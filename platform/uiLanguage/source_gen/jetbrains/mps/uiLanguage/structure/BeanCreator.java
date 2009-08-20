@@ -49,6 +49,7 @@ public class BeanCreator extends AbstractCreator {
     this.insertChild(prev, BeanCreator.PARAMETER, node);
   }
 
+
   public static BeanCreator newInstance(SModel sm, boolean init) {
     return (BeanCreator)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.uiLanguage.structure.BeanCreator", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -56,4 +57,5 @@ public class BeanCreator extends AbstractCreator {
   public static BeanCreator newInstance(SModel sm) {
     return BeanCreator.newInstance(sm, false);
   }
+
 }

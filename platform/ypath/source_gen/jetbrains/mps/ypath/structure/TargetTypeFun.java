@@ -42,6 +42,7 @@ public class TargetTypeFun extends ConceptFunction implements IDesignFunction {
     this.setProperty(TargetTypeFun.VIRTUAL_PACKAGE, value);
   }
 
+
   public static TargetTypeFun newInstance(SModel sm, boolean init) {
     return (TargetTypeFun)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.ypath.structure.TargetTypeFun", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -49,4 +50,5 @@ public class TargetTypeFun extends ConceptFunction implements IDesignFunction {
   public static TargetTypeFun newInstance(SModel sm) {
     return TargetTypeFun.newInstance(sm, false);
   }
+
 }

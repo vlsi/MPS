@@ -95,6 +95,7 @@ public class StandardDialog extends BaseConcept implements IComponentInstance {
     this.insertChild(prev, StandardDialog.CONTENT, node);
   }
 
+
   public static StandardDialog newInstance(SModel sm, boolean init) {
     return (StandardDialog)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.uiLanguage.structure.StandardDialog", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -102,4 +103,5 @@ public class StandardDialog extends BaseConcept implements IComponentInstance {
   public static StandardDialog newInstance(SModel sm) {
     return StandardDialog.newInstance(sm, false);
   }
+
 }

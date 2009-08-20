@@ -7,6 +7,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class NodeKindCase_Behavior {
+
   public static void init(SNode thisNode) {
   }
 
@@ -18,4 +19,5 @@ public class NodeKindCase_Behavior {
     }
     return treePathAspect;
   }
+
 }

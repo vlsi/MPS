@@ -21,6 +21,7 @@ import jetbrains.mps.ypath.behavior.IParamFeature_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 
 public class OperationsUtil {
+
   public static List<SNode> substituteApplicableOperations(SNode wildCardOp) {
     if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(wildCardOp, "usedFeature", false), "jetbrains.mps.ypath.structure.IParamFeature") && (SLinkOperations.getTarget(wildCardOp, "paramObject", true) != null)) {
       return ListSequence.fromListAndArray(new ArrayList<SNode>(), wildCardOp);
@@ -30,18 +31,22 @@ public class OperationsUtil {
     SNode tp = ITreePathExpression_Behavior.call_getTreePath_1213877496973(tpoe);
     final TraversalAxis axis = TraversalAxis.parseValue(SPropertyOperations.getString_def(wildCardOp, "axis", "DESCENDANTS"));
     List<SNode> features = ((SLinkOperations.getTarget(wildCardOp, "usedFeature", false) == null) ?
-      ListSequence.fromList(SLinkOperations.getTargets(tp, "features", true)).where(new IWhereFilter<SNode>() {
+      ListSequence.fromList(SLinkOperations.getTargets(tp, "features", true)).where(new IWhereFilter <SNode>() {
+
         public boolean accept(SNode it) {
           return TraversalAxisUtil.isAcceptableFeatureForAxis(it, axis);
         }
       }).toListSequence() :
       ListSequence.fromListAndArray(new ArrayList<SNode>(), SLinkOperations.getTarget(wildCardOp, "usedFeature", false))
     );
-    return ListSequence.fromList(features).translate(new ITranslator2<SNode, SNode>() {
+    return ListSequence.fromList(features).translate(new ITranslator2 <SNode, SNode>() {
+
       public Iterable<SNode> translate(final SNode it) {
-        return new Iterable<SNode>() {
+        return new Iterable <SNode>() {
+
           public Iterator<SNode> iterator() {
-            return new YieldingIterator<SNode>() {
+            return new YieldingIterator <SNode>() {
+
               private int __CP__ = 0;
               private SNode _10_io;
               private SNode _18_io;
@@ -152,4 +157,5 @@ __switch__:
     }
     return expression;
   }
+
 }

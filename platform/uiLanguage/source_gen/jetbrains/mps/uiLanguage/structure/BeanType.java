@@ -24,6 +24,7 @@ public class BeanType extends BaseClassifierType {
     super.setReferent(BeanType.BEAN, node);
   }
 
+
   public static BeanType newInstance(SModel sm, boolean init) {
     return (BeanType)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.uiLanguage.structure.BeanType", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -31,4 +32,5 @@ public class BeanType extends BaseClassifierType {
   public static BeanType newInstance(SModel sm) {
     return BeanType.newInstance(sm, false);
   }
+
 }

@@ -13,6 +13,7 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 
 public class TreePath_component extends AbstractCellProvider {
+
   public TreePath_component(SNode node) {
     super(node);
   }
@@ -48,4 +49,5 @@ public class TreePath_component extends AbstractCellProvider {
     } else
     return editorCell;
   }
+
 }

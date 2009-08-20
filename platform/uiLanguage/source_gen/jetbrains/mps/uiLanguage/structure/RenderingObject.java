@@ -22,4 +22,5 @@ public class RenderingObject extends Expression {
   public static RenderingObject newInstance(SModel sm) {
     return RenderingObject.newInstance(sm, false);
   }
+
 }

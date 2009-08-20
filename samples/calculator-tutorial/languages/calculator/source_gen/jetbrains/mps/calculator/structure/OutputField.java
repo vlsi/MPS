@@ -25,6 +25,7 @@ public class OutputField extends BaseConcept {
     super.setChild(OutputField.EXPRESSION, node);
   }
 
+
   public static OutputField newInstance(SModel sm, boolean init) {
     return (OutputField)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.calculator.structure.OutputField", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -32,4 +33,5 @@ public class OutputField extends BaseConcept {
   public static OutputField newInstance(SModel sm) {
     return OutputField.newInstance(sm, false);
   }
+
 }

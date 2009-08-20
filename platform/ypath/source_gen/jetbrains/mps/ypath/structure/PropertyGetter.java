@@ -21,4 +21,5 @@ public class PropertyGetter extends LambdaMethod {
   public static PropertyGetter newInstance(SModel sm) {
     return PropertyGetter.newInstance(sm, false);
   }
+
 }

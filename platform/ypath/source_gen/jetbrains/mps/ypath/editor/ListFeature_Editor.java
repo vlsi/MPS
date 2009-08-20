@@ -41,6 +41,7 @@ import jetbrains.mps.smodel.action.INodeSubstituteAction;
 import jetbrains.mps.nodeEditor.cellMenu.CellContext;
 
 public class ListFeature_Editor extends DefaultNodeEditor {
+
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_9012_0(editorContext, node);
   }
@@ -51,7 +52,8 @@ public class ListFeature_Editor extends DefaultNodeEditor {
     EditorCell editorCell = null;
     if (alternationCondition) {
       editorCell = this.createConstant_9012_5(editorContext, node);
-    } else {
+    } else
+    {
       editorCell = this.createConstant_9012_6(editorContext, node);
     }
     IFeature_default_DELETE.setCellActions(editorCell, node, editorContext);
@@ -65,7 +67,8 @@ public class ListFeature_Editor extends DefaultNodeEditor {
     EditorCell editorCell = null;
     if (alternationCondition) {
       editorCell = this.createCollection_9012_8(editorContext, node);
-    } else {
+    } else
+    {
       editorCell = this.createCollection_9012_9(editorContext, node);
     }
     return editorCell;
@@ -403,10 +406,11 @@ public class ListFeature_Editor extends DefaultNodeEditor {
 
   private EditorCell createReadOnlyModelAccessor_9012_0(final EditorContext editorContext, final SNode node) {
     EditorCell_Property editorCell = EditorCell_Property.create(editorContext, new ModelAccessor() {
+
       public String getText() {
         StringBuilder sb = new StringBuilder("[ ");
         String sep = "";
-        for (SNode foo : Sequence.fromIterable(IFeature_Behavior.call_getPartialOpposites_1213877499798(node))) {
+        for(SNode foo : Sequence.fromIterable(IFeature_Behavior.call_getPartialOpposites_1213877499798(node))) {
           sb.append(sep).append(SPropertyOperations.getString(foo, "name"));
           sep = ", ";
         }
@@ -505,6 +509,7 @@ public class ListFeature_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
+
   private static boolean renderingCondition9012_0(SNode node, EditorContext editorContext, IScope scope) {
     return SPropertyOperations.getBoolean(node, "default");
   }
@@ -526,6 +531,7 @@ public class ListFeature_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline9012_0 extends AbstractCellProvider {
+
     public _Inline9012_0() {
       super();
     }
@@ -557,9 +563,10 @@ public class ListFeature_Editor extends DefaultNodeEditor {
       } else
       return editorCell;
     }
-  }
 
+}
   public static class ListFeature_generic_cellMenu0 extends AbstractCellMenuPart_Generic_Group {
+
     public ListFeature_generic_cellMenu0() {
     }
 
@@ -600,9 +607,10 @@ public class ListFeature_Editor extends DefaultNodeEditor {
         "feature must be always specified"
       );
     }
-  }
 
+}
   public static class ListFeature_component_cellMenu0 implements SubstituteInfoPart {
+
     private menu_FeatureSetOpposite myComponent;
 
     public ListFeature_component_cellMenu0() {
@@ -612,9 +620,10 @@ public class ListFeature_Editor extends DefaultNodeEditor {
     public List<INodeSubstituteAction> createActions(CellContext cellContext, EditorContext editorContext) {
       return this.myComponent.createActions(cellContext, editorContext);
     }
-  }
 
+}
   public static class ListFeature_component_cellMenu1 implements SubstituteInfoPart {
+
     private menu_FeatureSetOpposite myComponent;
 
     public ListFeature_component_cellMenu1() {
@@ -624,9 +633,10 @@ public class ListFeature_Editor extends DefaultNodeEditor {
     public List<INodeSubstituteAction> createActions(CellContext cellContext, EditorContext editorContext) {
       return this.myComponent.createActions(cellContext, editorContext);
     }
-  }
 
+}
   public static class ListFeature_component_cellMenu2 implements SubstituteInfoPart {
+
     private menu_FeatureSetOpposite myComponent;
 
     public ListFeature_component_cellMenu2() {
@@ -636,5 +646,7 @@ public class ListFeature_Editor extends DefaultNodeEditor {
     public List<INodeSubstituteAction> createActions(CellContext cellContext, EditorContext editorContext) {
       return this.myComponent.createActions(cellContext, editorContext);
     }
-  }
+
+}
+
 }

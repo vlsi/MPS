@@ -81,6 +81,7 @@ public class AttributeDeclaration extends BaseConcept implements IMember {
     super.setChild(AttributeDeclaration.ON_CHANGE, node);
   }
 
+
   public static AttributeDeclaration newInstance(SModel sm, boolean init) {
     return (AttributeDeclaration)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.uiLanguage.structure.AttributeDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -88,4 +89,5 @@ public class AttributeDeclaration extends BaseConcept implements IMember {
   public static AttributeDeclaration newInstance(SModel sm) {
     return AttributeDeclaration.newInstance(sm, false);
   }
+
 }

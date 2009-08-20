@@ -7,6 +7,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class FeatureGetFun_Behavior {
+
   public static void init(SNode thisNode) {
   }
 
@@ -14,4 +15,5 @@ public class FeatureGetFun_Behavior {
     SNode treepath = SNodeOperations.getAncestor(thisNode, "jetbrains.mps.ypath.structure.TreePath", false, false);
     return SLinkOperations.getTarget(SLinkOperations.getTarget(treepath, "treePathType", true), "nodeType", true);
   }
+
 }

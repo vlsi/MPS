@@ -11,6 +11,7 @@ import jetbrains.mps.intentions.BaseIntentionProvider;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class typeof_VisitNodesStatement_InferenceRule extends AbstractInferenceRule_Runtime implements InferenceRule_Runtime {
+
   public typeof_VisitNodesStatement_InferenceRule() {
   }
 
@@ -39,4 +40,5 @@ public class typeof_VisitNodesStatement_InferenceRule extends AbstractInferenceR
   public boolean overrides() {
     return false;
   }
+
 }

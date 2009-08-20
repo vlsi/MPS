@@ -24,6 +24,7 @@ public class ComponentCreator extends AbstractCreator {
     super.setReferent(ComponentCreator.COMPONENT_DECLARATION, node);
   }
 
+
   public static ComponentCreator newInstance(SModel sm, boolean init) {
     return (ComponentCreator)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.uiLanguage.structure.ComponentCreator", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -31,4 +32,5 @@ public class ComponentCreator extends AbstractCreator {
   public static ComponentCreator newInstance(SModel sm) {
     return ComponentCreator.newInstance(sm, false);
   }
+
 }

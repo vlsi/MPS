@@ -18,6 +18,7 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 
 public class IFeature_Properties extends AbstractCellProvider {
+
   public IFeature_Properties(SNode node) {
     super(node);
   }
@@ -151,4 +152,5 @@ public class IFeature_Properties extends AbstractCellProvider {
     } else
     return editorCell;
   }
+
 }

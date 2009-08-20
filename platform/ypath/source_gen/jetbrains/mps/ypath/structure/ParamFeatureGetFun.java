@@ -41,6 +41,7 @@ public class ParamFeatureGetFun extends FeatureGetFun implements IParamFeatureFu
     this.setProperty(ParamFeatureGetFun.VIRTUAL_PACKAGE, value);
   }
 
+
   public static ParamFeatureGetFun newInstance(SModel sm, boolean init) {
     return (ParamFeatureGetFun)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.ypath.structure.ParamFeatureGetFun", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -48,4 +49,5 @@ public class ParamFeatureGetFun extends FeatureGetFun implements IParamFeatureFu
   public static ParamFeatureGetFun newInstance(SModel sm) {
     return ParamFeatureGetFun.newInstance(sm, false);
   }
+
 }

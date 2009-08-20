@@ -22,4 +22,5 @@ public class AddListenerOperation extends BinaryOperation {
   public static AddListenerOperation newInstance(SModel sm) {
     return AddListenerOperation.newInstance(sm, false);
   }
+
 }

@@ -12,6 +12,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 
 public class replace_whereBlock_with_closure_Intention extends BaseIntention {
+
   public replace_whereBlock_with_closure_Intention() {
   }
 
@@ -52,7 +53,7 @@ public class replace_whereBlock_with_closure_Intention extends BaseIntention {
     SNode cp = SLinkOperations.getTarget(SLinkOperations.getTarget(node, "whereBlock", true), "parameter", true);
     SPropertyOperations.set(scpd, "name", SPropertyOperations.getString(cp, "name"));
     SLinkOperations.setTarget(cl, "body", SNodeOperations.detachNode(SLinkOperations.getTarget(SLinkOperations.getTarget(node, "whereBlock", true), "body", true)), true);
-    for (SNode dsc : ListSequence.fromList(SNodeOperations.getDescendants(SLinkOperations.getTarget(cl, "body", true), "jetbrains.mps.baseLanguage.structure.ClosureParameterReference", false, new String[]{}))) {
+    for(SNode dsc : ListSequence.fromList(SNodeOperations.getDescendants(SLinkOperations.getTarget(cl, "body", true), "jetbrains.mps.baseLanguage.structure.ClosureParameterReference", false, new String[]{}))) {
       if (SLinkOperations.getTarget(SNodeOperations.cast(dsc, "jetbrains.mps.baseLanguage.structure.ClosureParameterReference"), "closureParameter", false) == cp) {
         SNode pr = SNodeOperations.replaceWithNewChild(dsc, "jetbrains.mps.baseLanguage.structure.ParameterReference");
         SLinkOperations.setTarget(pr, "variableDeclaration", scpd, false);
@@ -65,4 +66,5 @@ public class replace_whereBlock_with_closure_Intention extends BaseIntention {
   public String getLocationString() {
     return "jetbrains.mps.ypath.intentions";
   }
+
 }

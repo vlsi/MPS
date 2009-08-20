@@ -41,6 +41,7 @@ import jetbrains.mps.smodel.action.INodeSubstituteAction;
 import jetbrains.mps.nodeEditor.cellMenu.CellContext;
 
 public class GenericFeature_Editor extends DefaultNodeEditor {
+
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_6125_0(editorContext, node);
   }
@@ -51,7 +52,8 @@ public class GenericFeature_Editor extends DefaultNodeEditor {
     EditorCell editorCell = null;
     if (alternationCondition) {
       editorCell = this.createConstant_6125_0(editorContext, node);
-    } else {
+    } else
+    {
       editorCell = this.createConstant_6125_1(editorContext, node);
     }
     IFeature_default_DELETE.setCellActions(editorCell, node, editorContext);
@@ -65,7 +67,8 @@ public class GenericFeature_Editor extends DefaultNodeEditor {
     EditorCell editorCell = null;
     if (alternationCondition) {
       editorCell = this.createCollection_6125_3(editorContext, node);
-    } else {
+    } else
+    {
       editorCell = this.createCollection_6125_4(editorContext, node);
     }
     return editorCell;
@@ -359,10 +362,11 @@ public class GenericFeature_Editor extends DefaultNodeEditor {
 
   private EditorCell createReadOnlyModelAccessor_6125_0(final EditorContext editorContext, final SNode node) {
     EditorCell_Property editorCell = EditorCell_Property.create(editorContext, new ModelAccessor() {
+
       public String getText() {
         StringBuilder sb = new StringBuilder("[ ");
         String sep = "";
-        for (SNode foo : Sequence.fromIterable(IFeature_Behavior.call_getPartialOpposites_1213877499798(node))) {
+        for(SNode foo : Sequence.fromIterable(IFeature_Behavior.call_getPartialOpposites_1213877499798(node))) {
           sb.append(sep).append(SPropertyOperations.getString(foo, "name"));
           sep = ", ";
         }
@@ -444,6 +448,7 @@ public class GenericFeature_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
+
   private static boolean renderingCondition6125_0(SNode node, EditorContext editorContext, IScope scope) {
     return SPropertyOperations.getBoolean(node, "default");
   }
@@ -465,6 +470,7 @@ public class GenericFeature_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline6125_0 extends AbstractCellProvider {
+
     public _Inline6125_0() {
       super();
     }
@@ -496,9 +502,10 @@ public class GenericFeature_Editor extends DefaultNodeEditor {
       } else
       return editorCell;
     }
-  }
 
+}
   public static class GenericFeature_generic_cellMenu0 extends AbstractCellMenuPart_Generic_Group {
+
     public GenericFeature_generic_cellMenu0() {
     }
 
@@ -539,9 +546,10 @@ public class GenericFeature_Editor extends DefaultNodeEditor {
         "feature must be always specified"
       );
     }
-  }
 
+}
   public static class GenericFeature_component_cellMenu0 implements SubstituteInfoPart {
+
     private menu_FeatureSetOpposite myComponent;
 
     public GenericFeature_component_cellMenu0() {
@@ -551,9 +559,10 @@ public class GenericFeature_Editor extends DefaultNodeEditor {
     public List<INodeSubstituteAction> createActions(CellContext cellContext, EditorContext editorContext) {
       return this.myComponent.createActions(cellContext, editorContext);
     }
-  }
 
+}
   public static class GenericFeature_component_cellMenu1 implements SubstituteInfoPart {
+
     private menu_FeatureSetOpposite myComponent;
 
     public GenericFeature_component_cellMenu1() {
@@ -563,9 +572,10 @@ public class GenericFeature_Editor extends DefaultNodeEditor {
     public List<INodeSubstituteAction> createActions(CellContext cellContext, EditorContext editorContext) {
       return this.myComponent.createActions(cellContext, editorContext);
     }
-  }
 
+}
   public static class GenericFeature_component_cellMenu2 implements SubstituteInfoPart {
+
     private menu_FeatureSetOpposite myComponent;
 
     public GenericFeature_component_cellMenu2() {
@@ -575,5 +585,7 @@ public class GenericFeature_Editor extends DefaultNodeEditor {
     public List<INodeSubstituteAction> createActions(CellContext cellContext, EditorContext editorContext) {
       return this.myComponent.createActions(cellContext, editorContext);
     }
-  }
+
+}
+
 }

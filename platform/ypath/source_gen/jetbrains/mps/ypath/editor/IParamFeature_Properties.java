@@ -19,6 +19,7 @@ import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 
 public class IParamFeature_Properties extends AbstractCellProvider {
+
   public IParamFeature_Properties(SNode node) {
     super(node);
   }
@@ -282,4 +283,5 @@ public class IParamFeature_Properties extends AbstractCellProvider {
     } else
     return editorCell;
   }
+
 }

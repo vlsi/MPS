@@ -9,6 +9,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.IScope;
 
 public class GenericFeature_writable_PropertyConstraint implements IModelConstraints, INodePropertySetter {
+
   public GenericFeature_writable_PropertyConstraint() {
   }
 
@@ -23,4 +24,5 @@ public class GenericFeature_writable_PropertyConstraint implements IModelConstra
   public void execPropertySet(final SNode node, final String propertyName, final String propertyValue, final IScope scope) {
     // nothing to do, it's a read-only property
   }
+
 }

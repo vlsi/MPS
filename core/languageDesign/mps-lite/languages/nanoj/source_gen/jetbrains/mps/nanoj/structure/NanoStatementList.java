@@ -37,6 +37,7 @@ public class NanoStatementList extends NanoStatement {
     this.insertChild(prev, NanoStatementList.BODY, node);
   }
 
+
   public static NanoStatementList newInstance(SModel sm, boolean init) {
     return (NanoStatementList)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.nanoj.structure.NanoStatementList", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -44,4 +45,5 @@ public class NanoStatementList extends NanoStatement {
   public static NanoStatementList newInstance(SModel sm) {
     return NanoStatementList.newInstance(sm, false);
   }
+
 }

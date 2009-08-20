@@ -6,6 +6,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class MatchKindOperation_Behavior {
+
   public static void init(SNode thisNode) {
   }
 
@@ -13,9 +14,11 @@ public class MatchKindOperation_Behavior {
     SNode treeNodeKind;
     if ((SLinkOperations.getTarget(thisNode, "nodeKindOccurrence", true) != null)) {
       treeNodeKind = SLinkOperations.getTarget(SLinkOperations.getTarget(thisNode, "nodeKindOccurrence", true), "nodeKind", false);
-    } else {
+    } else
+    {
       treeNodeKind = SLinkOperations.getTarget(thisNode, "nodeKind", false);
     }
     return treeNodeKind;
   }
+
 }

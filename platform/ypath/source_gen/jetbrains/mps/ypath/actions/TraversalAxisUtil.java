@@ -9,6 +9,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class TraversalAxisUtil {
+
   public static String getOperationSign(TraversalAxis axis) {
     switch (axis) {
       case ANCESTORS:
@@ -183,4 +184,5 @@ public class TraversalAxisUtil {
         return false;
     }
   }
+
 }

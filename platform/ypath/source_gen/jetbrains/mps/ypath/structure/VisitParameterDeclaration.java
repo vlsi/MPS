@@ -22,4 +22,5 @@ public class VisitParameterDeclaration extends VariableDeclaration {
   public static VisitParameterDeclaration newInstance(SModel sm) {
     return VisitParameterDeclaration.newInstance(sm, false);
   }
+
 }

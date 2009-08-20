@@ -21,6 +21,7 @@ import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.MPSColors;
 
 public class VisitParameterDeclarationList_Editor extends DefaultNodeEditor {
+
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_2322_0(editorContext, node);
   }
@@ -57,6 +58,7 @@ public class VisitParameterDeclarationList_Editor extends DefaultNodeEditor {
   }
 
   private static class visitParameterDeclarationListHandler_2322_0 extends RefNodeListHandler {
+
     public visitParameterDeclarationListHandler_2322_0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
@@ -111,5 +113,7 @@ public class VisitParameterDeclarationList_Editor extends DefaultNodeEditor {
       editorCell.setDefaultText("");
       return editorCell;
     }
-  }
+
+}
+
 }

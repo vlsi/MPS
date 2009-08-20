@@ -17,6 +17,7 @@ import jetbrains.mps.nodeEditor.AbstractCellProvider;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 
 public class InputFieldReference_Editor extends DefaultNodeEditor {
+
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_9871_0(editorContext, node);
   }
@@ -51,6 +52,7 @@ public class InputFieldReference_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline9871_0 extends AbstractCellProvider {
+
     public _Inline9871_0() {
       super();
     }
@@ -81,5 +83,7 @@ public class InputFieldReference_Editor extends DefaultNodeEditor {
       } else
       return editorCell;
     }
-  }
+
+}
+
 }

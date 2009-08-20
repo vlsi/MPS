@@ -143,6 +143,7 @@ public class GenericParamFeature extends BaseConcept implements IGenericFeature,
     super.setChild(GenericParamFeature.CARDINAL, node);
   }
 
+
   public static GenericParamFeature newInstance(SModel sm, boolean init) {
     return (GenericParamFeature)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.ypath.structure.GenericParamFeature", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -150,4 +151,5 @@ public class GenericParamFeature extends BaseConcept implements IGenericFeature,
   public static GenericParamFeature newInstance(SModel sm) {
     return GenericParamFeature.newInstance(sm, false);
   }
+
 }

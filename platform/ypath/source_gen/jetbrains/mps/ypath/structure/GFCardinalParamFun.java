@@ -41,6 +41,7 @@ public class GFCardinalParamFun extends GFCardinalFun implements IParamFeatureFu
     this.setProperty(GFCardinalParamFun.VIRTUAL_PACKAGE, value);
   }
 
+
   public static GFCardinalParamFun newInstance(SModel sm, boolean init) {
     return (GFCardinalParamFun)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.ypath.structure.GFCardinalParamFun", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -48,4 +49,5 @@ public class GFCardinalParamFun extends GFCardinalFun implements IParamFeatureFu
   public static GFCardinalParamFun newInstance(SModel sm) {
     return GFCardinalParamFun.newInstance(sm, false);
   }
+
 }

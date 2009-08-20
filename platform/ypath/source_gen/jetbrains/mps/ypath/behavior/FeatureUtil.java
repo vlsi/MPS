@@ -79,7 +79,8 @@ public class FeatureUtil {
     if (fd != null) {
       Iterable<Object> params = fd.getParameters(nodeType);
       if (Sequence.fromIterable(params).isNotEmpty()) {
-        return Sequence.fromIterable(params).select(new ISelector<Object, SNode>() {
+        return Sequence.fromIterable(params).select(new ISelector <Object, SNode>() {
+
           public SNode select(Object it) {
             SNode param = SConceptOperations.createNewNode("jetbrains.mps.ypath.structure.ParameterWrapper", null);
             if (it instanceof SNode) {
@@ -111,4 +112,5 @@ public class FeatureUtil {
     }
     return featureDesign;
   }
+
 }

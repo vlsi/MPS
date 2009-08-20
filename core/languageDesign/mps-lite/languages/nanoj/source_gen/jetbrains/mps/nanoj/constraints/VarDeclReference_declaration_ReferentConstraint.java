@@ -15,6 +15,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 
 public class VarDeclReference_declaration_ReferentConstraint extends BaseNodeReferenceSearchScopeProvider implements IModelConstraints {
+
   public VarDeclReference_declaration_ReferentConstraint() {
   }
 
@@ -34,7 +35,8 @@ public class VarDeclReference_declaration_ReferentConstraint extends BaseNodeRef
       if ((currentBlock == null)) {
         break;
       }
-      for (SNode statement : ListSequence.fromList(SNodeOperations.getChildren(currentBlock)).where(new IWhereFilter<SNode>() {
+      for(SNode statement : ListSequence.fromList(SNodeOperations.getChildren(currentBlock)).where(new IWhereFilter <SNode>() {
+
         public boolean accept(SNode it) {
           return SNodeOperations.isInstanceOf(it, "jetbrains.mps.nanoj.structure.NanoStatement");
         }
@@ -48,4 +50,5 @@ public class VarDeclReference_declaration_ReferentConstraint extends BaseNodeRef
     }
     return result;
   }
+
 }

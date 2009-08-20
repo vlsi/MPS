@@ -23,6 +23,7 @@ public class VisitParameterReference extends VariableReference {
     this.setVariableDeclaration(node);
   }
 
+
   public static VisitParameterReference newInstance(SModel sm, boolean init) {
     return (VisitParameterReference)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.ypath.structure.VisitParameterReference", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -30,4 +31,5 @@ public class VisitParameterReference extends VariableReference {
   public static VisitParameterReference newInstance(SModel sm) {
     return VisitParameterReference.newInstance(sm, false);
   }
+
 }

@@ -11,6 +11,7 @@ import jetbrains.mps.intentions.BaseIntentionProvider;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class typeOf_LambdaMethodParameter_InferenceRule extends AbstractInferenceRule_Runtime implements InferenceRule_Runtime {
+
   public typeOf_LambdaMethodParameter_InferenceRule() {
   }
 
@@ -39,4 +40,5 @@ public class typeOf_LambdaMethodParameter_InferenceRule extends AbstractInferenc
   public boolean overrides() {
     return false;
   }
+
 }

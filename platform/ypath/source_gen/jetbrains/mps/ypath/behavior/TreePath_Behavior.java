@@ -6,6 +6,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class TreePath_Behavior {
+
   public static void init(SNode thisNode) {
   }
 
@@ -16,4 +17,5 @@ public class TreePath_Behavior {
   public static Iterable<SNode> call_getFeature_1213877481312(SNode thisNode, SNode type) {
     return SLinkOperations.getTargets(thisNode, "features", true);
   }
+
 }

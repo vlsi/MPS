@@ -22,4 +22,5 @@ public class AlphaConcept extends BaseConcept {
   public static AlphaConcept newInstance(SModel sm) {
     return AlphaConcept.newInstance(sm, false);
   }
+
 }

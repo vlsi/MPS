@@ -84,6 +84,7 @@ public class ComponentInstance extends BaseConcept implements IComponentPart, IC
     this.insertChild(prev, ComponentInstance.CONTENT, node);
   }
 
+
   public static ComponentInstance newInstance(SModel sm, boolean init) {
     return (ComponentInstance)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.uiLanguage.structure.ComponentInstance", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -91,4 +92,5 @@ public class ComponentInstance extends BaseConcept implements IComponentPart, IC
   public static ComponentInstance newInstance(SModel sm) {
     return ComponentInstance.newInstance(sm, false);
   }
+
 }

@@ -9,6 +9,7 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 
 public class Ypath_ApplicationPlugin extends BaseApplicationPlugin {
+
   public List<BaseCustomApplicationPlugin> initCustomParts() {
     List<BaseCustomApplicationPlugin> res = ListSequence.fromList(new ArrayList<BaseCustomApplicationPlugin>());
     this.addCustomPart(res, new DesignPartLoader_CustomApplicationPlugin());
@@ -19,4 +20,5 @@ public class Ypath_ApplicationPlugin extends BaseApplicationPlugin {
     ListSequence.fromList(plugins).addElement(plugin);
     plugin.init();
   }
+
 }

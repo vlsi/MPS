@@ -22,4 +22,5 @@ public class FeatureSizeFun extends ConceptFunction {
   public static FeatureSizeFun newInstance(SModel sm) {
     return FeatureSizeFun.newInstance(sm, false);
   }
+
 }

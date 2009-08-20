@@ -11,6 +11,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class ComponentController_name_PropertyConstraint implements IModelConstraints, INodePropertyGetter {
+
   public ComponentController_name_PropertyConstraint() {
   }
 
@@ -25,4 +26,5 @@ public class ComponentController_name_PropertyConstraint implements IModelConstr
   public Object execPropertyGet(SNode node, String propertyName, IScope scope) {
     return SPropertyOperations.getString(SLinkOperations.getTarget(node, "component", false), "name") + "_Controller";
   }
+
 }

@@ -7,6 +7,7 @@ import java.io.File;
 import jetbrains.mps.ypath.runtime.IFilter;
 
 public class FileTreePath extends TreePath<File> {
+
   public FileTreePath() {
   }
 
@@ -19,17 +20,19 @@ public class FileTreePath extends TreePath<File> {
   }
 
   private static class Parent {
+
     public static File parent(File node) {
       return node.getParentFile();
     }
-  }
 
+}
   private static class Children {
+
     public static File[] childrenArray(File node) {
       return node.listFiles();
     }
-  }
 
+}
   public static class DIR_NodeKindTrigger implements IFilter<File> {
     private static FileTreePath.DIR_NodeKindTrigger instance;
 
@@ -40,14 +43,15 @@ public class FileTreePath extends TreePath<File> {
       return node.isDirectory();
     }
 
+
     public static IFilter<File> getInstance() {
       if (instance == null) {
         instance = new FileTreePath.DIR_NodeKindTrigger();
       }
       return instance;
     }
-  }
 
+}
   public static class FILE_NodeKindTrigger implements IFilter<File> {
     private static FileTreePath.FILE_NodeKindTrigger instance;
 
@@ -58,27 +62,32 @@ public class FileTreePath extends TreePath<File> {
       return node.isFile();
     }
 
+
     public static IFilter<File> getInstance() {
       if (instance == null) {
         instance = new FileTreePath.FILE_NodeKindTrigger();
       }
       return instance;
     }
-  }
 
+}
   public static class FILE_relativeName_Property {
+
     public static IFilter<File> getMatcher(final String matchValue) {
       IFilter filter;
       if (matchValue != null) {
         filter = new IFilter() {
+
           public boolean accept(Object n) {
             File node = (File)n;
             String actualValue = FileTreePath.FILE_relativeName_Property.Getter.getValue(node);
             return matchValue.equals(actualValue);
           }
         };
-      } else {
+      } else
+      {
         filter = new IFilter() {
+
           public boolean accept(Object n) {
             File node = (File)n;
             String actualValue = FileTreePath.FILE_relativeName_Property.Getter.getValue(node);
@@ -90,25 +99,31 @@ public class FileTreePath extends TreePath<File> {
     }
 
     private static class Getter {
+
       public static String getValue(File node) {
         return node.getName();
       }
-    }
-  }
 
+}
+
+}
   public static class FILE_extension_Property {
+
     public static IFilter<File> getMatcher(final String matchValue) {
       IFilter filter;
       if (matchValue != null) {
         filter = new IFilter() {
+
           public boolean accept(Object n) {
             File node = (File)n;
             String actualValue = FileTreePath.FILE_extension_Property.Getter.getValue(node);
             return matchValue.equals(actualValue);
           }
         };
-      } else {
+      } else
+      {
         filter = new IFilter() {
+
           public boolean accept(Object n) {
             File node = (File)n;
             String actualValue = FileTreePath.FILE_extension_Property.Getter.getValue(node);
@@ -120,6 +135,7 @@ public class FileTreePath extends TreePath<File> {
     }
 
     private static class Getter {
+
       public static String getValue(File node) {
         String name = node.getName();
         int indexOfLastDot = name.lastIndexOf(".");
@@ -129,6 +145,9 @@ public class FileTreePath extends TreePath<File> {
         }
         return ext;
       }
-    }
-  }
+
+}
+
+}
+
 }

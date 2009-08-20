@@ -16,6 +16,7 @@ import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 public class ComponentInstance_componentDeclaration_ReferentConstraint extends BaseNodeReferenceSearchScopeProvider implements IModelConstraints {
+
   public ComponentInstance_componentDeclaration_ReferentConstraint() {
   }
 
@@ -29,11 +30,13 @@ public class ComponentInstance_componentDeclaration_ReferentConstraint extends B
 
   public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferentConstraintContext _context) {
     List<SNode> components = new ArrayList<SNode>();
-    ListSequence.fromList(components).addSequence(ListSequence.fromList(SModelOperations.getRootsIncludingImported(_context.getModel(), operationContext.getScope(), "jetbrains.mps.uiLanguage.structure.ComponentDeclaration")).where(new IWhereFilter<SNode>() {
+    ListSequence.fromList(components).addSequence(ListSequence.fromList(SModelOperations.getRootsIncludingImported(_context.getModel(), operationContext.getScope(), "jetbrains.mps.uiLanguage.structure.ComponentDeclaration")).where(new IWhereFilter <SNode>() {
+
       public boolean accept(SNode it) {
         return !(SPropertyOperations.getBoolean(it, "abstract"));
       }
     }));
     return components;
   }
+
 }

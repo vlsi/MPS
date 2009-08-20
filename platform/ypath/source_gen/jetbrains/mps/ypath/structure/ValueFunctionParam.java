@@ -22,4 +22,5 @@ public class ValueFunctionParam extends ConceptFunctionParameter {
   public static ValueFunctionParam newInstance(SModel sm) {
     return ValueFunctionParam.newInstance(sm, false);
   }
+
 }

@@ -13,14 +13,15 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 public class keymap_TreeNodeKindProperty extends EditorCellKeyMap {
+
   public keymap_TreeNodeKindProperty() {
     this.setApplicableToEveryModel(false);
     EditorCellKeyMapAction action;
     action = new keymap_TreeNodeKindProperty.keymap_TreeNodeKindProperty_Action0();
     this.putAction("ctrl", "VK_D", action);
   }
-
   public static class keymap_TreeNodeKindProperty_Action0 extends EditorCellKeyMapAction {
+
     public keymap_TreeNodeKindProperty_Action0() {
       this.setShownInPopupMenu(true);
     }
@@ -55,7 +56,7 @@ public class keymap_TreeNodeKindProperty extends EditorCellKeyMap {
 
     private void execute_internal(final KeyEvent keyEvent, final EditorContext editorContext, final SNode node, final List<SNode> selectedNodes) {
       SNode treepath = SNodeOperations.getAncestor(node, "jetbrains.mps.ypath.structure.TreePathAspect", false, false);
-      for (SNode desc : SNodeOperations.getDescendants(treepath, null, false, new String[]{})) {
+      for(SNode desc : SNodeOperations.getDescendants(treepath, null, false, new String[]{})) {
         if (SNodeOperations.isInstanceOf(desc, "jetbrains.mps.ypath.structure.TreeNodeKindProperty")) {
           SPropertyOperations.set(SNodeOperations.cast(desc, "jetbrains.mps.ypath.structure.TreeNodeKindProperty"), "default", "" + (false));
         }
@@ -66,5 +67,7 @@ public class keymap_TreeNodeKindProperty extends EditorCellKeyMap {
     public String getKeyStroke() {
       return "ctrl D";
     }
-  }
+
+}
+
 }

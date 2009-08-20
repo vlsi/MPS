@@ -8,10 +8,12 @@ import jetbrains.mps.ypath.runtime.TraversalAxis;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 public class IterateOperation_Behavior {
+
   public static void init(SNode thisNode) {
   }
 
   public static String call_getAxisInternalValue_1213877293456(SNode thisNode) {
     return TraversalAxisUtil.getOperationSign(TraversalAxis.parseValue(SPropertyOperations.getString_def(thisNode, "axis", "DESCENDANTS")));
   }
+
 }

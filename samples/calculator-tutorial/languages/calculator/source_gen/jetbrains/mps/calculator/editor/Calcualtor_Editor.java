@@ -24,6 +24,7 @@ import jetbrains.mps.nodeEditor.cellMenu.DefaultReferenceSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
 
 public class Calcualtor_Editor extends DefaultNodeEditor {
+
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_6304_0(editorContext, node);
   }
@@ -99,6 +100,7 @@ public class Calcualtor_Editor extends DefaultNodeEditor {
   }
 
   private static class inputFieldListHandler_6304_0 extends RefNodeListHandler {
+
     public inputFieldListHandler_6304_0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
@@ -138,9 +140,10 @@ public class Calcualtor_Editor extends DefaultNodeEditor {
     public EditorCell createSeparatorCell(EditorContext editorContext) {
       return super.createSeparatorCell(editorContext);
     }
-  }
 
+}
   private static class outputFieldListHandler_6304_0 extends RefNodeListHandler {
+
     public outputFieldListHandler_6304_0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
@@ -180,5 +183,7 @@ public class Calcualtor_Editor extends DefaultNodeEditor {
     public EditorCell createSeparatorCell(EditorContext editorContext) {
       return super.createSeparatorCell(editorContext);
     }
-  }
+
+}
+
 }

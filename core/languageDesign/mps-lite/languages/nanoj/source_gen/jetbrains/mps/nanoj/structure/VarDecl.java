@@ -34,6 +34,7 @@ public class VarDecl extends BaseConcept {
     super.setChild(VarDecl.VAR_TYPE, node);
   }
 
+
   public static VarDecl newInstance(SModel sm, boolean init) {
     return (VarDecl)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.nanoj.structure.VarDecl", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -41,4 +42,5 @@ public class VarDecl extends BaseConcept {
   public static VarDecl newInstance(SModel sm) {
     return VarDecl.newInstance(sm, false);
   }
+
 }
