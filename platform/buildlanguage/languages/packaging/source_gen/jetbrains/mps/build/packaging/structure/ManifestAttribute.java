@@ -23,7 +23,6 @@ public class ManifestAttribute extends BaseConcept implements INamedConcept {
     super(node);
   }
 
-
   public String getName() {
     return this.getProperty(ManifestAttribute.NAME);
   }

@@ -23,7 +23,6 @@ public class FileAssociation extends BaseConcept implements INamedConcept {
     super(node);
   }
 
-
   public String getExtensions() {
     return this.getProperty(FileAssociation.EXTENSIONS);
   }

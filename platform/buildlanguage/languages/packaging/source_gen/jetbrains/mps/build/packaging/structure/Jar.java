@@ -15,7 +15,6 @@ public class Jar extends Zip {
     super(node);
   }
 
-
   public Manifest getManifest() {
     return (Manifest)this.getChild(Manifest.class, Jar.MANIFEST);
   }

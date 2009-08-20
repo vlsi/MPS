@@ -18,7 +18,6 @@ public class CompositePathComponent extends BaseConcept {
     super(node);
   }
 
-
   public int getPathComponentsCount() {
     return this.getChildCount(CompositePathComponent.PATH_COMPONENT);
   }

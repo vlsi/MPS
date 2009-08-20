@@ -19,7 +19,6 @@ public class VariableReference extends BaseConcept implements IStringExpression 
     super(node);
   }
 
-
   public String getShortDescription() {
     return this.getProperty(VariableReference.SHORT_DESCRIPTION);
   }

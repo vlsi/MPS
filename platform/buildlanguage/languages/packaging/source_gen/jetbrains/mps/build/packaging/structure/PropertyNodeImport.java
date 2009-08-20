@@ -16,7 +16,6 @@ public class PropertyNodeImport extends PropertiesImport {
     super(node);
   }
 
-
   public PropertyNode getPropertyNode() {
     return (PropertyNode)this.getReferent(PropertyNode.class, PropertyNodeImport.PROPERTY_NODE);
   }

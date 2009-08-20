@@ -20,6 +20,7 @@ public class MacroReference_MenuComponent extends AbstractCellMenuComponent {
   public MacroReference_MenuComponent() {
     super(new SubstituteInfoPart[]{new MacroReference_MenuComponent.MacroReference_generic_cellMenu0()});
   }
+
   public static class MacroReference_generic_cellMenu0 extends AbstractCellMenuPart_Generic_Group {
     public MacroReference_generic_cellMenu0() {
     }

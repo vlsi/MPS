@@ -30,7 +30,6 @@ public class CustomMPSBuildGenerator extends BuildGeneratorImpl {
     super(project);
   }
 
-
   public void setPathToBuildTools(String path) {
     this.myPathToBuildTools = path;
   }

@@ -17,7 +17,6 @@ public class MacroReference extends BaseConcept {
     super(node);
   }
 
-
   public String getName() {
     return this.getProperty(MacroReference.NAME);
   }

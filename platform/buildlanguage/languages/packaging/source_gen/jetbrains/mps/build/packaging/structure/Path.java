@@ -20,7 +20,6 @@ public class Path extends PropertyValueExpression implements IPath {
     super(node);
   }
 
-
   public String getShortDescription() {
     return this.getProperty(Path.SHORT_DESCRIPTION);
   }

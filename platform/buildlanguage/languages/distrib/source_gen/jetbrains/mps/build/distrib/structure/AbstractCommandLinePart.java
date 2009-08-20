@@ -15,7 +15,6 @@ public class AbstractCommandLinePart extends BaseConcept {
     super(node);
   }
 
-
   public static AbstractCommandLinePart newInstance(SModel sm, boolean init) {
     return (AbstractCommandLinePart)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.distrib.structure.AbstractCommandLinePart", sm, GlobalScope.getInstance(), init).getAdapter();
   }

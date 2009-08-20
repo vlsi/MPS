@@ -16,7 +16,6 @@ public class MPSLayoutConfigurationReferencePropertyValueExpression extends Prop
     super(node);
   }
 
-
   public Configuration getConfiguration() {
     return (Configuration)this.getReferent(Configuration.class, MPSLayoutConfigurationReferencePropertyValueExpression.CONFIGURATION);
   }

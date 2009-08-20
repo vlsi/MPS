@@ -17,7 +17,6 @@ public class BuildLanguageTargetReference extends BaseConcept {
     super(node);
   }
 
-
   public TargetDeclaration getTargetDeclaration() {
     return (TargetDeclaration)this.getReferent(TargetDeclaration.class, BuildLanguageTargetReference.TARGET_DECLARATION);
   }

@@ -29,7 +29,6 @@ public class MPSBuild extends AbstractProjectComponent implements ICompositeComp
     super(node);
   }
 
-
   public String getExcludes() {
     return this.getProperty(MPSBuild.EXCLUDES);
   }

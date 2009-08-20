@@ -21,7 +21,6 @@ public class ExternalVariableReference extends PropertyValueExpression implement
     super(node);
   }
 
-
   public String getShortDescription() {
     return this.getProperty(ExternalVariableReference.SHORT_DESCRIPTION);
   }

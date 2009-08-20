@@ -25,7 +25,6 @@ public class ModuleDescription extends BaseConcept implements INamedConcept {
     super(node);
   }
 
-
   public String getName() {
     return this.getProperty(ModuleDescription.NAME);
   }

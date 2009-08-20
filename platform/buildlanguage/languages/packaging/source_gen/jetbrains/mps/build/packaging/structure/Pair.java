@@ -17,7 +17,6 @@ public class Pair extends BaseConcept {
     super(node);
   }
 
-
   public IStringExpression getFirst() {
     return (IStringExpression)this.getChild(IStringExpression.class, Pair.FIRST);
   }

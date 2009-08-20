@@ -13,4 +13,5 @@ public interface NodeData {
   public boolean canHaveChildren();
   public void addChildren(NodeData nodeData);
   public NodeData getParent();
-  public void setParent(NodeData parent);}
+  public void setParent(NodeData parent);
+}

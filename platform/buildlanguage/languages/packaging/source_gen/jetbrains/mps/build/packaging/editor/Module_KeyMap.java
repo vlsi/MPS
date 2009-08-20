@@ -20,6 +20,7 @@ public class Module_KeyMap extends EditorCellKeyMap {
     action = new Module_KeyMap.Module_KeyMap_Action0();
     this.putAction("ctrl", "VK_B", action);
   }
+
   public static class Module_KeyMap_Action0 extends EditorCellKeyMapAction {
     public Module_KeyMap_Action0() {
       this.setShownInPopupMenu(false);

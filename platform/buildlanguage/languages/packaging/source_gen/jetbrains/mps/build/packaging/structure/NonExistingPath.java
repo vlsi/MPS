@@ -20,7 +20,6 @@ public class NonExistingPath extends BaseConcept implements IPath {
     super(node);
   }
 
-
   public String getPathToCheck() {
     return this.getProperty(NonExistingPath.PATH_TO_CHECK);
   }

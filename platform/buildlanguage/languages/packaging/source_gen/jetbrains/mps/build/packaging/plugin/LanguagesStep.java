@@ -39,7 +39,6 @@ public class LanguagesStep extends AbstractStep {
     this.myHandler = handler;
   }
 
-
   public void _init() {
     super._init();
     String errorText = null;
@@ -163,7 +162,6 @@ public class LanguagesStep extends AbstractStep {
       });
       this.myMpsProject = mpsProject;
     }
-
 
     protected String getNamespace(CheckBoxNode node) {
       NodeData data = node.getData();

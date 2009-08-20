@@ -21,7 +21,6 @@ public class ProjectPaneModelAddition_ActionGroup extends GeneratedActionGroup {
     }
   }
 
-
   public void adjust() {
     this.insertGroupIntoAnother(ModelActions_ActionGroup.ID, null);
   }

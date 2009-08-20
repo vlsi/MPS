@@ -29,7 +29,6 @@ public class Antcall extends AbstractProjectComponent implements ICompositeCompo
     super(node);
   }
 
-
   public String getExcludes() {
     return this.getProperty(Antcall.EXCLUDES);
   }

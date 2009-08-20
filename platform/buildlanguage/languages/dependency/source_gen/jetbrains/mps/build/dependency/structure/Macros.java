@@ -20,7 +20,6 @@ public class Macros extends BaseConcept implements INamedConcept {
     super(node);
   }
 
-
   public String getName() {
     return this.getProperty(Macros.NAME);
   }

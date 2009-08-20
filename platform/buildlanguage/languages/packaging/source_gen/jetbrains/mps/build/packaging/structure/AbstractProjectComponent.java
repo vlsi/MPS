@@ -25,7 +25,6 @@ public class AbstractProjectComponent extends BaseConcept implements INamedConce
     super(node);
   }
 
-
   public String getName() {
     return this.getProperty(AbstractProjectComponent.NAME);
   }

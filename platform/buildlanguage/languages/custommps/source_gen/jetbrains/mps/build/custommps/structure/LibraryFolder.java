@@ -17,7 +17,6 @@ public class LibraryFolder extends Folder {
     super(node);
   }
 
-
   public IStringExpression getLibraryName() {
     return (IStringExpression)this.getChild(IStringExpression.class, LibraryFolder.LIBRARY_NAME);
   }

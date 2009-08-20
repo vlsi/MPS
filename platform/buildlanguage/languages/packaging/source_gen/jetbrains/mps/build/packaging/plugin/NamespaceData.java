@@ -18,7 +18,6 @@ public class NamespaceData implements NodeData {
     this.myText = text;
   }
 
-
   public String getText() {
     return this.myText;
   }

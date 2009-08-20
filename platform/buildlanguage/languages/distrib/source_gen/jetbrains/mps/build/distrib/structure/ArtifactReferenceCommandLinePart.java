@@ -14,7 +14,6 @@ public class ArtifactReferenceCommandLinePart extends AbstractCommandLinePart {
     super(node);
   }
 
-
   public static ArtifactReferenceCommandLinePart newInstance(SModel sm, boolean init) {
     return (ArtifactReferenceCommandLinePart)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.distrib.structure.ArtifactReferenceCommandLinePart", sm, GlobalScope.getInstance(), init).getAdapter();
   }

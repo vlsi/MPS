@@ -19,7 +19,6 @@ public class SimpleString extends BaseConcept implements IStringExpression {
     super(node);
   }
 
-
   public String getName() {
     return this.getProperty(SimpleString.NAME);
   }

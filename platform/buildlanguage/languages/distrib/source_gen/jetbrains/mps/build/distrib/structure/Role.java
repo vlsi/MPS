@@ -20,7 +20,6 @@ public class Role extends BaseConcept implements INamedConcept {
     super(node);
   }
 
-
   public String getName() {
     return this.getProperty(Role.NAME);
   }

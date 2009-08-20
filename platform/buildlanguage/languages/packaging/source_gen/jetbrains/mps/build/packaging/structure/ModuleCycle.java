@@ -18,7 +18,6 @@ public class ModuleCycle extends BaseConcept {
     super(node);
   }
 
-
   public int getModuleReferencesCount() {
     return this.getChildCount(ModuleCycle.MODULE_REFERENCE);
   }

@@ -24,7 +24,6 @@ public class GenerateBuildWizard extends AbstractWizard {
     this.myGenerator = generator;
   }
 
-
   public String getHelpID() {
     return null;
   }

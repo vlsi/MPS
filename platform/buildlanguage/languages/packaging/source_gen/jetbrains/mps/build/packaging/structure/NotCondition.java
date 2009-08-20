@@ -19,7 +19,6 @@ public class NotCondition extends BaseConcept implements ICondition {
     super(node);
   }
 
-
   public String getShortDescription() {
     return this.getProperty(NotCondition.SHORT_DESCRIPTION);
   }

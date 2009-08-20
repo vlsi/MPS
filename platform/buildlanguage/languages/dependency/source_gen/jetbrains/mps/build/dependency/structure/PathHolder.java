@@ -17,7 +17,6 @@ public class PathHolder extends BaseConcept {
     super(node);
   }
 
-
   public String getPath() {
     return this.getProperty(PathHolder.PATH);
   }

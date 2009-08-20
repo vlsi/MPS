@@ -18,7 +18,6 @@ public class ClassPath extends BaseConcept {
     super(node);
   }
 
-
   public int getClassPathItemsCount() {
     return this.getChildCount(ClassPath.CLASS_PATH_ITEM);
   }

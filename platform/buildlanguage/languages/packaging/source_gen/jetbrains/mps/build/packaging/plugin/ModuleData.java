@@ -21,7 +21,6 @@ public class ModuleData implements NodeData {
     this.myModule = module;
   }
 
-
   public String getText() {
     return this.myModule.getModuleFqName();
   }

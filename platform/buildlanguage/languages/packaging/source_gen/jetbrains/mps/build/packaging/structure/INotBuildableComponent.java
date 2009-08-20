@@ -5,4 +5,5 @@ package jetbrains.mps.build.packaging.structure;
 import jetbrains.mps.smodel.INodeAdapter;
 
 public interface INotBuildableComponent extends INodeAdapter {
-  public static final String concept = "jetbrains.mps.build.packaging.structure.INotBuildableComponent";}
+  public static final String concept = "jetbrains.mps.build.packaging.structure.INotBuildableComponent";
+}

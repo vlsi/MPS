@@ -33,7 +33,6 @@ public class MPSLayout extends BaseConcept implements ILayoutComponent, INamedCo
     super(node);
   }
 
-
   public String getScriptsFolder() {
     return this.getProperty(MPSLayout.SCRIPTS_FOLDER);
   }
