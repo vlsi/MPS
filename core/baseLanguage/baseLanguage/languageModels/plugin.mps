@@ -41430,7 +41430,7 @@
             <node role="type" type="jetbrains.mps.baseLanguage.structure.StringType" id="1413585168861286112" />
             <node role="initializer" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1413585168861286113">
               <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1413585168861286114">
-                <property name="value" value="debugdata.xml" />
+                <property name="value" value=".debug" />
               </node>
               <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="460566664136894182">
                 <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1413585168861286115">
