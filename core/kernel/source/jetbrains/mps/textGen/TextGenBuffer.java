@@ -67,7 +67,7 @@ public final class TextGenBuffer {
     String lineSeparator = getLineSeparator();
     if (s.contains(lineSeparator)) {
       myLineNumbers[myCurrBuffer] += s.split(lineSeparator, -1).length - 1;
-      myPostions[myCurrBuffer] = s.length() - s.lastIndexOf(lineSeparator) - 1;
+      myPostions[myCurrBuffer] = s.length() - s.lastIndexOf(lineSeparator) - lineSeparator.length();
     } else {
       myPostions[myCurrBuffer] += s.length();
     }
