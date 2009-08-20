@@ -4,4 +4,5 @@ package jetbrains.mps.build.generictasks.plugin;
 
 import jetbrains.mps.plugins.projectplugins.BaseProjectPlugin;
 
-public class Generictasks_ProjectPlugin extends BaseProjectPlugin {}
+public class Generictasks_ProjectPlugin extends BaseProjectPlugin {
+}
