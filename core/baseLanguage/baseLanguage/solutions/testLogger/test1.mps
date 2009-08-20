@@ -16,9 +16,10 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590338(jetbrains.mps.baseLanguage.closures.structure)" version="3" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895903fe(jetbrains.mps.baseLanguage.strings.constraints)" version="1" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590402(jetbrains.mps.baseLanguage.strings.structure)" version="9" />
-  <maxImportIndex value="3" />
+  <maxImportIndex value="4" />
   <import index="1" modelUID="r:00000000-0000-4000-0000-011c895903a5(test2)" version="-1" />
   <import index="3" modelUID="f:java_stub#java.lang(java.lang@java_stub)" version="-1" />
+  <import index="4" modelUID="f:java_stub#java.util(java.util@java_stub)" version="-1" />
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="1191319992725">
     <property name="name" value="A" />
     <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1191319992726" />
@@ -26,11 +27,46 @@
       <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1224501978739" />
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1224501978740" />
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1224501978741">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="6768994795311909113">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="6768994795311909114">
+            <property name="name" value="ar" />
+            <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="6768994795311909115">
+              <link role="classifier" targetNodeId="4.~ArrayList" resolveInfo="ArrayList" />
+              <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="6768994795311909117">
+                <link role="classifier" targetNodeId="3.~String" resolveInfo="String" />
+              </node>
+            </node>
+            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="6768994795311909119">
+              <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="6768994795311966300">
+                <link role="baseMethodDeclaration" targetNodeId="4.~ArrayList.&lt;init&gt;()" resolveInfo="ArrayList" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="6768994795311559208">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="6768994795311559209">
+            <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="6768994795311559210">
+              <link role="classifier" targetNodeId="4539702814067580420" resolveInfo="D" />
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="6768994795311538071">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="6768994795311538072">
+            <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="6768994795311538073">
+              <link role="classifier" targetNodeId="4539702814067579805" resolveInfo="A.B.C" />
+            </node>
+          </node>
+        </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="8533578990689130298">
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="8533578990689130299">
             <property name="name" value="c" />
             <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="8533578990689130300">
               <link role="classifier" targetNodeId="4539702814067579805" resolveInfo="C" />
+            </node>
+            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="6768994795311680833">
+              <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="6768994795311821277">
+                <link role="baseMethodDeclaration" targetNodeId="4539702814067580422" resolveInfo="D" />
+              </node>
             </node>
           </node>
         </node>
@@ -77,7 +113,7 @@
             <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="8533578990689130296">
               <property name="name" value="c" />
               <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="8533578990689130297">
-                <link role="classifier" targetNodeId="4539702814067105036" resolveInfo="B" />
+                <link role="classifier" targetNodeId="4539702814067580420" resolveInfo="D" />
               </node>
             </node>
           </node>
@@ -97,6 +133,13 @@
           <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="4539702814067579808" />
           <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="4539702814067579809" />
           <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="4539702814067579810">
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="6768994795311559201">
+              <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="6768994795311559202">
+                <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="6768994795311559203">
+                  <link role="classifier" targetNodeId="4539702814067105036" resolveInfo="A.B" />
+                </node>
+              </node>
+            </node>
             <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="8533578990689130292">
               <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="8533578990689130293">
                 <property name="name" value="c" />

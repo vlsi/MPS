@@ -22,6 +22,7 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.constraints.ModelConstraintsUtil;
 import jetbrains.mps.smodel.constraints.SearchScopeStatus;
+import jetbrains.mps.smodel.constraints.IReferencePresentation;
 import jetbrains.mps.smodel.search.ISearchScope;
 import jetbrains.mps.util.Condition;
 
@@ -52,10 +53,14 @@ import java.util.List;
     }
 
     ISearchScope searchScope = status.getSearchScope();
-    return createActions(referenceNode, currentReferent, linkDeclaration, searchScope, scope);
+    IReferencePresentation presentation = status.getPresentation();
+    return createActions(referenceNode, currentReferent, linkDeclaration, searchScope, presentation, scope);
   }
 
-  private static List<INodeSubstituteAction> createActions(SNode referenceNode, SNode currentReferent, LinkDeclaration linkDeclaration, ISearchScope searchScope, final IScope scope) {
+  private static List<INodeSubstituteAction> createActions(
+      SNode referenceNode, SNode currentReferent, LinkDeclaration linkDeclaration,
+      ISearchScope searchScope, IReferencePresentation presentation, final IScope scope) {
+
     final AbstractConceptDeclaration referentConcept = linkDeclaration.getTarget();
     if (referentConcept == null) {
       return Collections.emptyList();
@@ -68,7 +73,7 @@ import java.util.List;
 
     List<INodeSubstituteAction> actions = new ArrayList<INodeSubstituteAction>();
     for (SNode node : nodes) {
-      actions.add(new DefaultReferentNodeSubstituteAction(node, referenceNode, currentReferent, linkDeclaration));
+      actions.add(new DefaultReferentNodeSubstituteAction(node, referenceNode, currentReferent, linkDeclaration, presentation));
     }
     return actions;
   }

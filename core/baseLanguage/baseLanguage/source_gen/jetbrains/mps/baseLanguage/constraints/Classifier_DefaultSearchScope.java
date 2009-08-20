@@ -8,7 +8,7 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.constraints.ReferentConstraintContext;
 import jetbrains.mps.baseLanguage.search.VisibleClassifiersScope;
 import jetbrains.mps.baseLanguage.search.IClassifiersSearchScope;
-import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.constraints.PresentationReferentConstraintContext;
 import jetbrains.mps.baseLanguage.behavior.Classifier_Behavior;
 
 public class Classifier_DefaultSearchScope extends BaseNodeReferenceSearchScopeProvider {
@@ -27,7 +27,11 @@ public class Classifier_DefaultSearchScope extends BaseNodeReferenceSearchScopeP
     return new VisibleClassifiersScope(_context.getModel(), IClassifiersSearchScope.CLASSIFFIER, operationContext.getScope());
   }
 
-  public String getPresentation(final IOperationContext operationContext, final ReferentConstraintContext _context, final SNode parameterNode) {
-    return Classifier_Behavior.call_getNestedNameInContext_8540045600162183880(parameterNode, _context.getEnclosingNode());
+  public boolean hasPresentation() {
+    return true;
+  }
+
+  public String getPresentation(final IOperationContext operationContext, final PresentationReferentConstraintContext _context) {
+    return Classifier_Behavior.call_getNestedNameInContext_8540045600162183880(_context.getParameterNode(), _context.getEnclosingNode());
   }
 }

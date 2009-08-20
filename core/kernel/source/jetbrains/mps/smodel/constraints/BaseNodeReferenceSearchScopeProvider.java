@@ -47,7 +47,11 @@ public abstract class BaseNodeReferenceSearchScopeProvider implements INodeRefer
     throw new RuntimeException("unexpected type in search-scope provider " + searchScopeOrListOfNodes.getClass());
   }
 
-  public String getPresentation(IOperationContext operationContext, ReferentConstraintContext _context, SNode parameterObject) {
-    return NodePresentationUtil.matchingText(parameterObject, true);
+  public boolean hasPresentation() {
+    return false;
+  }
+
+  public String getPresentation(IOperationContext operationContext, PresentationReferentConstraintContext _context) {
+    throw new UnsupportedOperationException();
   }
 }

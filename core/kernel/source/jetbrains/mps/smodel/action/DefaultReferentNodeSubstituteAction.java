@@ -24,6 +24,7 @@ import jetbrains.mps.smodel.CopyUtil;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.constraints.IReferencePresentation;
 import jetbrains.mps.smodel.presentation.NodePresentationUtil;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.util.CollectionUtil;
@@ -38,21 +39,31 @@ import java.awt.Font;
 public class DefaultReferentNodeSubstituteAction extends AbstractNodeSubstituteAction {
   private SNode myCurrentReferent;
   private LinkDeclaration myLinkDeclaration;
+  private IReferencePresentation myPresentation;
 
-  public DefaultReferentNodeSubstituteAction(SNode parameterNode, SNode referenceNode, SNode currentReferent, LinkDeclaration linkDeclaration) {
+  public DefaultReferentNodeSubstituteAction(SNode parameterNode, SNode referenceNode, SNode currentReferent, LinkDeclaration linkDeclaration, IReferencePresentation presentation) {
     super(null, parameterNode, referenceNode);
     myCurrentReferent = currentReferent;
     myLinkDeclaration = linkDeclaration;
+    myPresentation = presentation;
     if (SModelUtil_new.getGenuineLinkMetaclass(linkDeclaration) != LinkMetaclass.reference) {
       throw new RuntimeException("Only reference links are allowed here.");
     }
   }
 
   public String getMatchingText(String pattern) {
+    if (myPresentation != null) {
+      return myPresentation.getText((SNode) getParameterObject(), false);
+    }
+
     return getMatchingText(pattern, true, false);
   }
 
   public String getVisibleMatchingText(String pattern) {
+    if (myPresentation != null) {
+      return myPresentation.getText((SNode) getParameterObject(), true);
+    }
+
     return getMatchingText(pattern, true, true);
   }
 

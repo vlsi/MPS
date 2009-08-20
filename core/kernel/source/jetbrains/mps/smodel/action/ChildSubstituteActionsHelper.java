@@ -27,6 +27,7 @@ import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.constraints.ModelConstraintsManager;
 import jetbrains.mps.smodel.constraints.ModelConstraintsUtil;
 import jetbrains.mps.smodel.constraints.SearchScopeStatus;
+import jetbrains.mps.smodel.constraints.IReferencePresentation;
 import jetbrains.mps.smodel.presentation.NodePresentationUtil;
 import jetbrains.mps.smodel.presentation.ReferenceConceptUtil;
 import jetbrains.mps.smodel.search.ISearchScope;
@@ -296,11 +297,13 @@ public class ChildSubstituteActionsHelper {
     List<INodeSubstituteAction> actions = new ArrayList<INodeSubstituteAction>();
     final LinkDeclaration referenceLink_final = smartReference;
     ISearchScope searchScope = status.getSearchScope();
+    IReferencePresentation presentation = status.getPresentation();
     final AbstractConceptDeclaration targetConcept = smartReference.getTarget();
 
     List<SNode> referentNodes = searchScope.getNodes(new IsInstanceCondition(targetConcept));
     for (SNode referentNode : referentNodes) {
-      actions.add(new SmartRefChildNodeSubstituteAction(referentNode, parentNode, currentChild, childSetter, context.getScope(), referenceNodeConcept, referenceLink_final));
+      actions.add(new SmartRefChildNodeSubstituteAction(referentNode, parentNode,
+        currentChild, childSetter, context.getScope(), referenceNodeConcept, referenceLink_final, presentation));
     }
 
     return actions;
@@ -451,6 +454,7 @@ public class ChildSubstituteActionsHelper {
     private final SNode myReferentNode;
     private final ConceptDeclaration myReferenceNodeConcept;
     private final LinkDeclaration myReferenceLink_final;
+    private IReferencePresentation myPresentation;
 
     public SmartRefChildNodeSubstituteAction(
       SNode referentNode,
@@ -459,7 +463,8 @@ public class ChildSubstituteActionsHelper {
       IChildNodeSetter childSetter,
       IScope scope,
       ConceptDeclaration referenceNodeConcept,
-      LinkDeclaration referenceLink_final) {
+      LinkDeclaration referenceLink_final,
+      IReferencePresentation presentation) {
 
       super(referenceNodeConcept, referentNode, parentNode, currentChild, childSetter, scope);
       myReferentNode = referentNode;
@@ -468,18 +473,27 @@ public class ChildSubstituteActionsHelper {
       myReferenceNodeConcept = referenceNodeConcept;
       myReferenceLink_final = referenceLink_final;
       myMatchingText = null;
+      myPresentation = presentation;
     }
 
     public String getMatchingText(String pattern) {
       if (myMatchingText == null) {
-        myMatchingText = getSmartMatchingText(myReferenceNodeConcept, myReferentNode, false);
+        if (myPresentation != null) {
+          myMatchingText = myPresentation.getText(myReferentNode, false);
+        } else {
+          myMatchingText = getSmartMatchingText(myReferenceNodeConcept, myReferentNode, false);
+        }
       }
       return myMatchingText;
     }
 
     public String getVisibleMatchingText(String pattern) {
       if (myVisibleMatchingText == null) {
-        myVisibleMatchingText = getSmartMatchingText(myReferenceNodeConcept, myReferentNode, true);
+        if (myPresentation != null) {
+          myVisibleMatchingText = myPresentation.getText(myReferentNode, true);
+        } else {
+          myVisibleMatchingText = getSmartMatchingText(myReferenceNodeConcept, myReferentNode, true);
+        }
       }
       return myVisibleMatchingText;
     }

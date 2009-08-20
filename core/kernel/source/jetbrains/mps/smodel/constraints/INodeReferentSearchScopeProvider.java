@@ -21,5 +21,8 @@ import jetbrains.mps.smodel.search.ISearchScope;
 
 public interface INodeReferentSearchScopeProvider extends IModelConstraints {
   ISearchScope createNodeReferentSearchScope(IOperationContext operationContext, ReferentConstraintContext _context);
-  String getPresentation(IOperationContext operationContext, ReferentConstraintContext _context, SNode parameterObject);
+
+  boolean hasPresentation();
+
+  String getPresentation(IOperationContext operationContext, PresentationReferentConstraintContext _context);
 }

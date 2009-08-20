@@ -229,6 +229,14 @@ public class QueriesGenerated {
     return (SLinkOperations.getTarget(_context.getNode(), "canBeRoot", true) != null);
   }
 
+  public static boolean ifMacro_Condition_3216033926780887577(final IOperationContext operationContext, final IfMacroContext _context) {
+    return (SLinkOperations.getTarget(_context.getNode(), "presentation", true) != null);
+  }
+
+  public static boolean ifMacro_Condition_3216033926780887598(final IOperationContext operationContext, final IfMacroContext _context) {
+    return (SLinkOperations.getTarget(_context.getNode(), "presentation", true) != null);
+  }
+
   public static boolean ifMacro_Condition_3906442776579708832(final IOperationContext operationContext, final IfMacroContext _context) {
     return (SLinkOperations.getTarget(_context.getNode(), "presentation", true) != null);
   }

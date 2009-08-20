@@ -25,7 +25,7 @@ import jetbrains.mps.smodel.search.ISearchScope;
 public class SearchScopeStatus extends Status {
   protected boolean myDefault;
   protected ISearchScope mySearchScope;
-
+  protected IReferencePresentation myPresentation;
 
   /*package*/ SearchScopeStatus(Code code, String message) {
     super(code, message);
@@ -35,14 +35,19 @@ public class SearchScopeStatus extends Status {
     return mySearchScope;
   }
 
+  public IReferencePresentation getPresentation() {
+    return myPresentation;
+  }
+
   public boolean isDefault() {
     return myDefault;
   }
 
   /*package*/ static class OK extends SearchScopeStatus {
-    public OK(ISearchScope ss, boolean isDefault) {
+    public OK(ISearchScope ss, IReferencePresentation presentation, boolean isDefault) {
       super(Code.OK, "");
       mySearchScope = ss;
+      myPresentation = presentation;
       myDefault = isDefault;
     }
   }

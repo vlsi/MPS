@@ -94,9 +94,12 @@ public class ModelConstraintsUtil {
     IOperationContext context) {
 
     INodeReferentSearchScopeProvider scopeProvider = ModelConstraintsManager.getInstance().getNodeReferentSearchScopeProvider(referenceNodeConcept, linkRole);
+    ReferentConstraintContext referentConstraintContext = new ReferentConstraintContext(model, enclosingNode, referenceNode, BaseAdapter.fromAdapter(linkTarget));
     if (scopeProvider != null) {
-      ISearchScope searchScope = scopeProvider.createNodeReferentSearchScope(context, new ReferentConstraintContext(model, enclosingNode, referenceNode, BaseAdapter.fromAdapter(linkTarget)));
-      return newOK(searchScope, false);
+      ISearchScope searchScope = scopeProvider.createNodeReferentSearchScope(context, referentConstraintContext);
+      return newOK(searchScope,
+        scopeProvider.hasPresentation() ? new DefaultReferencPresentation(context, referentConstraintContext, scopeProvider) : null,
+        false);
     }
 
     // default search scope
@@ -110,20 +113,40 @@ public class ModelConstraintsUtil {
 
     scopeProvider = ModelConstraintsManager.getInstance().getNodeDefaultSearchScopeProvider(linkTarget);
     if (scopeProvider != null) {
-      ISearchScope searchScope = scopeProvider.createNodeReferentSearchScope(context, new ReferentConstraintContext(model, enclosingNode, referenceNode, BaseAdapter.fromAdapter(linkTarget)));
-      return newOK(searchScope, false);
+      ISearchScope searchScope = scopeProvider.createNodeReferentSearchScope(context, referentConstraintContext);
+      return newOK(searchScope,
+        scopeProvider.hasPresentation() ? new DefaultReferencPresentation(context, referentConstraintContext, scopeProvider) : null,
+        false);
     }
 
     // global search scope
     ISearchScope searchScope = SModelSearchUtil.createModelAndImportedModelsScope(model, false, context.getScope());
-    return newOK(searchScope, true);
+    return newOK(searchScope, null, true);
   }
 
-  private static OK newOK(ISearchScope searchScope, boolean isDefault) {
+  private static OK newOK(ISearchScope searchScope, IReferencePresentation presentation, boolean isDefault) {
     if (searchScope == null) {
       searchScope = new EmptySearchScope();
     }
-    return new OK(searchScope, isDefault);
+    return new OK(searchScope, presentation, isDefault);
+  }
+
+  private static class DefaultReferencPresentation implements IReferencePresentation {
+    private IOperationContext myOperationContext;
+    private ReferentConstraintContext myContext;
+    private INodeReferentSearchScopeProvider myProvider;
+
+    private DefaultReferencPresentation(IOperationContext operationContext, ReferentConstraintContext context, INodeReferentSearchScopeProvider provider) {
+      myOperationContext = operationContext;
+      myContext = context;
+      myProvider = provider;
+    }
+
+    public String getText(SNode node, boolean visible) {
+      return myProvider.getPresentation(myOperationContext,
+        new PresentationReferentConstraintContext(myContext.getModel(), myContext.getEnclosingNode(),
+          myContext.getReferenceNode(), myContext.getLinkTarget(), node, visible));
+    }
   }
 
 }

@@ -7,6 +7,8 @@ import jetbrains.mps.smodel.constraints.IModelConstraints;
 import jetbrains.mps.smodel.constraints.ModelConstraintsManager;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.constraints.ReferentConstraintContext;
+import jetbrains.mps.smodel.constraints.PresentationReferentConstraintContext;
+import jetbrains.mps.baseLanguage.behavior.ConstructorDeclaration_Behavior;
 
 public class ClassCreator_constructorDeclaration_ReferentConstraint extends BaseNodeReferenceSearchScopeProvider implements IModelConstraints {
   public ClassCreator_constructorDeclaration_ReferentConstraint() {
@@ -22,5 +24,13 @@ public class ClassCreator_constructorDeclaration_ReferentConstraint extends Base
 
   public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferentConstraintContext _context) {
     return new VisibleClassConstructorsScope(_context.getModel(), operationContext.getScope());
+  }
+
+  public boolean hasPresentation() {
+    return true;
+  }
+
+  public String getPresentation(final IOperationContext operationContext, final PresentationReferentConstraintContext _context) {
+    return ConstructorDeclaration_Behavior.call_getPresentationInContext_983626226385657373(_context.getParameterNode(), _context.getEnclosingNode());
   }
 }

@@ -57,8 +57,6 @@ import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.smodel.BaseAdapter;
 import jetbrains.mps.baseLanguage.search.VisibleThrowablesScope;
 import jetbrains.mps.lang.core.behavior.BaseConcept_Behavior;
-import jetbrains.mps.baseLanguage.constraints.VisibleClassConstructorsScope;
-import jetbrains.mps.baseLanguage.behavior.ConstructorDeclaration_Behavior;
 import jetbrains.mps.baseLanguage.search.ClassifierVisibleStaticMembersScope;
 import jetbrains.mps.baseLanguage.structure.Classifier;
 import jetbrains.mps.smodel.action.SideTransformActionsBuilderContext;
@@ -1748,82 +1746,6 @@ __switch__:
 
   public static List<INodeSubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_IOperation_1240657999273(final IOperationContext operationContext, final NodeSubstituteActionsFactoryContext _context) {
     List<INodeSubstituteAction> result = ListSequence.fromList(new ArrayList<INodeSubstituteAction>());
-    return result;
-  }
-
-  public static List<INodeSubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_ClassifierType_1314539882763154095(final IOperationContext operationContext, final NodeSubstituteActionsFactoryContext _context) {
-    List<INodeSubstituteAction> result = ListSequence.fromList(new ArrayList<INodeSubstituteAction>());
-    {
-      SNode outputConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType");
-      SNode childConcept = (SNode)_context.getChildConcept();
-      if (SConceptOperations.isSuperConceptOf(childConcept, NameUtil.nodeFQName(outputConcept))) {
-        Calculable calc = new Calculable() {
-          public Object calculate() {
-            return (List<SNode>)new VisibleClassifiersScope(_context.getModel(), IClassifiersSearchScope.CLASSIFFIER, operationContext.getScope()).getNodes();
-          }
-        };
-        Iterable<SNode> queryResult = (Iterable)calc.calculate();
-        if (queryResult != null) {
-          for (final SNode item : queryResult) {
-            ListSequence.fromList(result).addElement(new DefaultChildNodeSubstituteAction(outputConcept, item, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope()) {
-              public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
-                SNode result = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ClassifierType", null);
-                SLinkOperations.setTarget(result, "classifier", (item), false);
-                return result;
-              }
-
-              public String getMatchingText(String pattern) {
-                return Classifier_Behavior.call_getNestedNameInContext_8540045600162183880((item), _context.getParentNode());
-              }
-
-              public String getVisibleMatchingText(String pattern) {
-                return this.getMatchingText(pattern);
-              }
-
-              public String getDescriptionText(String pattern) {
-                return NodePresentationUtil.descriptionText((item), false);
-              }
-            });
-          }
-        }
-      }
-    }
-    return result;
-  }
-
-  public static List<INodeSubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_ClassCreator_1732338698756615084(final IOperationContext operationContext, final NodeSubstituteActionsFactoryContext _context) {
-    List<INodeSubstituteAction> result = ListSequence.fromList(new ArrayList<INodeSubstituteAction>());
-    {
-      SNode outputConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassCreator");
-      SNode childConcept = (SNode)_context.getChildConcept();
-      if (SConceptOperations.isSuperConceptOf(childConcept, NameUtil.nodeFQName(outputConcept))) {
-        Calculable calc = new Calculable() {
-          public Object calculate() {
-            return (List<SNode>)new VisibleClassConstructorsScope(_context.getModel(), operationContext.getScope()).getNodes();
-          }
-        };
-        Iterable<SNode> queryResult = (Iterable)calc.calculate();
-        if (queryResult != null) {
-          for (final SNode item : queryResult) {
-            ListSequence.fromList(result).addElement(new DefaultChildNodeSubstituteAction(outputConcept, item, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope()) {
-              public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
-                SNode creator = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ClassCreator", null);
-                SLinkOperations.setTarget(creator, "baseMethodDeclaration", (item), false);
-                return creator;
-              }
-
-              public String getMatchingText(String pattern) {
-                return ConstructorDeclaration_Behavior.call_getPresentationInContext_983626226385657373((item), _context.getParentNode());
-              }
-
-              public String getVisibleMatchingText(String pattern) {
-                return this.getMatchingText(pattern);
-              }
-            });
-          }
-        }
-      }
-    }
     return result;
   }
 
