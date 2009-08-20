@@ -21,5 +21,4 @@ public class MoneyGetAmountMethodCall extends MoneyMethodCall {
   public static MoneyGetAmountMethodCall newInstance(SModel sm) {
     return MoneyGetAmountMethodCall.newInstance(sm, false);
   }
-
 }

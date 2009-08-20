@@ -24,7 +24,6 @@ import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
 
 public class FunctionType_Editor extends DefaultNodeEditor {
-
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_1642_0(editorContext, node);
   }
@@ -95,7 +94,6 @@ public class FunctionType_Editor extends DefaultNodeEditor {
   }
 
   private static class paramListHandler_1642_0 extends RefNodeListHandler {
-
     public paramListHandler_1642_0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
@@ -142,7 +140,5 @@ public class FunctionType_Editor extends DefaultNodeEditor {
         return editorCell;
       }
     }
-
-}
-
+  }
 }

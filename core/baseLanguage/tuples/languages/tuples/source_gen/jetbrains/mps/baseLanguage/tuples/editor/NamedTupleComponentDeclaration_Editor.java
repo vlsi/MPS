@@ -36,7 +36,6 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 
 public class NamedTupleComponentDeclaration_Editor extends DefaultNodeEditor {
-
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_0912_0(editorContext, node);
   }
@@ -137,7 +136,6 @@ public class NamedTupleComponentDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-
   private static boolean renderingCondition0912_0(SNode node, EditorContext editorContext, IScope scope) {
     return SLinkOperations.getCount(node, "annotation") > 0;
   }
@@ -147,7 +145,6 @@ public class NamedTupleComponentDeclaration_Editor extends DefaultNodeEditor {
   }
 
   private static class annotationListHandler_0912_0 extends RefNodeListHandler {
-
     public annotationListHandler_0912_0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
@@ -187,10 +184,9 @@ public class NamedTupleComponentDeclaration_Editor extends DefaultNodeEditor {
     public EditorCell createSeparatorCell(EditorContext editorContext) {
       return super.createSeparatorCell(editorContext);
     }
+  }
 
-}
   public static class NamedTupleComponentDeclaration_name_postfixCellMenu0 extends AbstractCellMenuPart_PropertyPostfixHints {
-
     public NamedTupleComponentDeclaration_name_postfixCellMenu0() {
     }
 
@@ -200,8 +196,7 @@ public class NamedTupleComponentDeclaration_Editor extends DefaultNodeEditor {
       SNode nodeType = SLinkOperations.getTarget(node, "type", true);
       if (nodeType != null) {
         result = Type_Behavior.call_getVariableSuffixes_1213877337304(nodeType);
-      } else
-      {
+      } else {
         result = ListSequence.fromList(new ArrayList<String>());
       }
       // we need this because of smart input
@@ -211,7 +206,5 @@ public class NamedTupleComponentDeclaration_Editor extends DefaultNodeEditor {
       }
       return result;
     }
-
-}
-
+  }
 }

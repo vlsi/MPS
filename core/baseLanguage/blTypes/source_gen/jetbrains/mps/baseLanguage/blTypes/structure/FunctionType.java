@@ -47,7 +47,6 @@ public class FunctionType extends BaseConcept {
     this.insertChild(prev, FunctionType.PARAM, node);
   }
 
-
   public static FunctionType newInstance(SModel sm, boolean init) {
     return (FunctionType)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.blTypes.structure.FunctionType", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -55,5 +54,4 @@ public class FunctionType extends BaseConcept {
   public static FunctionType newInstance(SModel sm) {
     return FunctionType.newInstance(sm, false);
   }
-
 }

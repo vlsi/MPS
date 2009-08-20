@@ -21,5 +21,4 @@ public class MoneyIsZeroMethodCall extends MoneyMethodCall {
   public static MoneyIsZeroMethodCall newInstance(SModel sm) {
     return MoneyIsZeroMethodCall.newInstance(sm, false);
   }
-
 }

@@ -33,7 +33,6 @@ public class IndexedTupleMemberAccessExpression extends Expression {
     super.setChild(IndexedTupleMemberAccessExpression.INDEX, node);
   }
 
-
   public static IndexedTupleMemberAccessExpression newInstance(SModel sm, boolean init) {
     return (IndexedTupleMemberAccessExpression)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.tuples.structure.IndexedTupleMemberAccessExpression", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -41,5 +40,4 @@ public class IndexedTupleMemberAccessExpression extends Expression {
   public static IndexedTupleMemberAccessExpression newInstance(SModel sm) {
     return IndexedTupleMemberAccessExpression.newInstance(sm, false);
   }
-
 }

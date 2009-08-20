@@ -20,7 +20,6 @@ import java.util.ArrayList;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class typeof_NamedTupleLiteral_InferenceRule extends AbstractInferenceRule_Runtime implements InferenceRule_Runtime {
-
   public typeof_NamedTupleLiteral_InferenceRule() {
   }
 
@@ -31,7 +30,7 @@ public class typeof_NamedTupleLiteral_InferenceRule extends AbstractInferenceRul
       typeCheckingContext.reportTypeError(literal, "Invalid components number", "r:e119dbbd-3529-4067-8bad-6b9edd79d0b6(jetbrains.mps.baseLanguage.tuples.typesystem)", "1239579091243", intentionProvider, errorTarget);
     }
     Map<SNode, List<SNode>> mmap = MapSequence.fromMap(new HashMap<SNode, List<SNode>>());
-    for(SNode cmpRef : ListSequence.fromList(SLinkOperations.getTargets(literal, "componentRef", true))) {
+    for (SNode cmpRef : ListSequence.fromList(SLinkOperations.getTargets(literal, "componentRef", true))) {
       SNode matchedType = RulesFunctions_BaseLanguage.inference_matchTypeWithTypeVariables(typeCheckingContext, SLinkOperations.getTarget(SLinkOperations.getTarget(cmpRef, "componentDeclaration", false), "type", true), mmap);
       {
         SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(cmpRef, "value", true);
@@ -40,7 +39,7 @@ public class typeof_NamedTupleLiteral_InferenceRule extends AbstractInferenceRul
       }
     }
     List<SNode> PTYPES = new ArrayList<SNode>();
-    for(SNode foo : ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(literal, "tupleDeclaration", false), "typeVariableDeclaration", true))) {
+    for (SNode foo : ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(literal, "tupleDeclaration", false), "typeVariableDeclaration", true))) {
       List<SNode> nodes = MapSequence.fromMap(mmap).get(foo);
       final SNode PTYPE_typevar_1239968089672 = typeCheckingContext.createNewRuntimeTypesVariable();
       if (ListSequence.fromList(nodes).isNotEmpty()) {
@@ -71,5 +70,4 @@ public class typeof_NamedTupleLiteral_InferenceRule extends AbstractInferenceRul
   public boolean overrides() {
     return false;
   }
-
 }

@@ -22,5 +22,4 @@ public class InIntervalExpression extends BinaryOperation {
   public static InIntervalExpression newInstance(SModel sm) {
     return InIntervalExpression.newInstance(sm, false);
   }
-
 }

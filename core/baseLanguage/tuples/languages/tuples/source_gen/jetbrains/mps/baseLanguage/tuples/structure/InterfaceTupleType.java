@@ -50,7 +50,6 @@ public class InterfaceTupleType extends Type {
     this.insertChild(prev, InterfaceTupleType.PARAMETER_TYPE, node);
   }
 
-
   public static InterfaceTupleType newInstance(SModel sm, boolean init) {
     return (InterfaceTupleType)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.tuples.structure.InterfaceTupleType", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -58,5 +57,4 @@ public class InterfaceTupleType extends Type {
   public static InterfaceTupleType newInstance(SModel sm) {
     return InterfaceTupleType.newInstance(sm, false);
   }
-
 }

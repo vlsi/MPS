@@ -30,5 +30,4 @@ public enum TestState {
   public Icon getIcon() {
     return this.icon;
   }
-
 }

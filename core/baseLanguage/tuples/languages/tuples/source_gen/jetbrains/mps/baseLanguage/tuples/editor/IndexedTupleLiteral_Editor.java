@@ -27,7 +27,6 @@ import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 
 public class IndexedTupleLiteral_Editor extends DefaultNodeEditor {
-
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_2140_0(editorContext, node);
   }
@@ -96,7 +95,6 @@ public class IndexedTupleLiteral_Editor extends DefaultNodeEditor {
   }
 
   private static class componentListHandler_2140_0 extends RefNodeListHandler {
-
     public componentListHandler_2140_0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
@@ -154,7 +152,5 @@ public class IndexedTupleLiteral_Editor extends DefaultNodeEditor {
       editorCell.setDefaultText("");
       return editorCell;
     }
-
-}
-
+  }
 }

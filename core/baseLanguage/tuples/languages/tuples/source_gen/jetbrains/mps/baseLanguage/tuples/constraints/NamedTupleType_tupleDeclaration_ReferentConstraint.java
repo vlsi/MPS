@@ -18,7 +18,6 @@ import java.util.ArrayList;
 import jetbrains.mps.baseLanguage.tuples.structure.NamedTupleDeclaration;
 
 public class NamedTupleType_tupleDeclaration_ReferentConstraint extends BaseNodeReferenceSearchScopeProvider implements IModelConstraints {
-
   public NamedTupleType_tupleDeclaration_ReferentConstraint() {
   }
 
@@ -32,10 +31,9 @@ public class NamedTupleType_tupleDeclaration_ReferentConstraint extends BaseNode
 
   public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferentConstraintContext _context) {
     return new VisibleClassifiersScope(SNodeOperations.getModel(_context.getEnclosingNode()), IClassifiersSearchScope.ANYTHING, operationContext.getScope()) {
-
       protected List<INodeAdapter> getNodesFormClassifiersList(List<Classifier> classifiers, int constraint, Condition<INodeAdapter> condition) {
         List<INodeAdapter> result = new ArrayList<INodeAdapter>();
-        for(Classifier classifier : classifiers) {
+        for (Classifier classifier : classifiers) {
           if (classifier instanceof NamedTupleDeclaration) {
             result.add(classifier);
           }
@@ -44,5 +42,4 @@ public class NamedTupleType_tupleDeclaration_ReferentConstraint extends BaseNode
       }
     };
   }
-
 }

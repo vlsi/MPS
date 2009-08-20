@@ -110,5 +110,4 @@ public class TestMethodRow implements TestStatisticsRow {
   public boolean matches(String testCase, String testMethod) {
     return testCase == null || (ObjectUtils.equals(testCase, this.testCaseName) && (testMethod == null || ObjectUtils.equals(testMethod, this.testMethodName)));
   }
-
 }

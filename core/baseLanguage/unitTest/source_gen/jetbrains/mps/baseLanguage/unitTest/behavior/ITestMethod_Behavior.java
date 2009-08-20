@@ -38,5 +38,4 @@ public class ITestMethod_Behavior {
   public static String callSuper_getTestName_1216136419751(SNode thisNode, String callerConceptFqName) {
     return (String)BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.unitTest.structure.ITestMethod"), callerConceptFqName, "virtual_getTestName_1216136419751", PARAMETERS_1216136419751);
   }
-
 }

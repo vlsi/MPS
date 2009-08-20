@@ -7,12 +7,10 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class IndexedTupleMemberAccessExpression_Behavior {
-
   public static void init(SNode thisNode) {
   }
 
   public static boolean virtual_isLValue_1213877519786(SNode thisNode) {
     return !(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(thisNode, "tuple", true), "jetbrains.mps.baseLanguage.tuples.structure.IndexedTupleLiteral"));
   }
-
 }

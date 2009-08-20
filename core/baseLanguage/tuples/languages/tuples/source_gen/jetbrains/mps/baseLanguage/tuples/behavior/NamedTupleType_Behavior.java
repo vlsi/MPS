@@ -9,26 +9,24 @@ import jetbrains.mps.lang.core.behavior.BaseConcept_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 public class NamedTupleType_Behavior {
-
   public static void init(SNode thisNode) {
   }
 
   public static String virtual_getPresentation_1213877396640(SNode thisNode) {
     StringBuilder sb = new StringBuilder(SConceptPropertyOperations.getString(thisNode, "leftBracket"));
     String sep = "";
-    for(SNode ntcd : SLinkOperations.getTargets(SLinkOperations.getTarget(thisNode, "classifier", false), "component", true)) {
+    for (SNode ntcd : SLinkOperations.getTargets(SLinkOperations.getTarget(thisNode, "classifier", false), "component", true)) {
       sb.append(sep).append(BaseConcept_Behavior.call_getPresentation_1213877396640(SLinkOperations.getTarget(ntcd, "type", true))).append(" ").append(SPropertyOperations.getString(ntcd, "name"));
       sep = ", ";
     }
     sb.append(SConceptPropertyOperations.getString(thisNode, "rightBracket")).append(" ").append(SPropertyOperations.getString(SLinkOperations.getTarget(thisNode, "classifier", false), "name"));
     sep = "<";
     String suffix = "";
-    for(SNode t : SLinkOperations.getTargets(thisNode, "parameter", true)) {
+    for (SNode t : SLinkOperations.getTargets(thisNode, "parameter", true)) {
       sb.append(sep).append(BaseConcept_Behavior.call_getPresentation_1213877396640(t));
       sep = ", ";
       suffix = ">";
     }
     return sb.append(suffix).toString();
   }
-
 }

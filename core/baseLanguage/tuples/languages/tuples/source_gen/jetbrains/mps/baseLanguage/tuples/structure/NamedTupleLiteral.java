@@ -49,7 +49,6 @@ public class NamedTupleLiteral extends Expression {
     this.insertChild(prev, NamedTupleLiteral.COMPONENT_REF, node);
   }
 
-
   public static NamedTupleLiteral newInstance(SModel sm, boolean init) {
     return (NamedTupleLiteral)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.tuples.structure.NamedTupleLiteral", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -57,5 +56,4 @@ public class NamedTupleLiteral extends Expression {
   public static NamedTupleLiteral newInstance(SModel sm) {
     return NamedTupleLiteral.newInstance(sm, false);
   }
-
 }

@@ -8,7 +8,6 @@ import jetbrains.mps.lang.typesystem.runtime.OverloadedOperationsTypesProvider;
 import jetbrains.mps.smodel.SNode;
 
 public class TypesystemDescriptor extends BaseHelginsDescriptor {
-
   public TypesystemDescriptor() {
     {
       InferenceRule_Runtime inferenceRule = new typeof_MoneyGetAmountMethodCall_InferenceRule();
@@ -40,7 +39,6 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
           this.myRightTypeIsExact = true;
         }
 
-
         public SNode getOperationType(SNode operation, SNode leftOperandType, SNode rightOperandType) {
           return new _Quotations.QuotationClass_7().createNode();
         }
@@ -56,7 +54,6 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
           this.myLeftTypeIsExact = true;
           this.myRightTypeIsExact = true;
         }
-
 
         public SNode getOperationType(SNode operation, SNode leftOperandType, SNode rightOperandType) {
           return new _Quotations.QuotationClass_10().createNode();
@@ -74,7 +71,6 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
           this.myRightTypeIsExact = true;
         }
 
-
         public SNode getOperationType(SNode operation, SNode leftOperandType, SNode rightOperandType) {
           return new _Quotations.QuotationClass_12().createNode();
         }
@@ -91,7 +87,6 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
           this.myRightTypeIsExact = true;
         }
 
-
         public SNode getOperationType(SNode operation, SNode leftOperandType, SNode rightOperandType) {
           return new _Quotations.QuotationClass_16().createNode();
         }
@@ -107,7 +102,6 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
           this.myLeftTypeIsExact = true;
           this.myRightTypeIsExact = true;
         }
-
 
         public SNode getOperationType(SNode operation, SNode leftOperandType, SNode rightOperandType) {
           return new _Quotations.QuotationClass_19().createNode();

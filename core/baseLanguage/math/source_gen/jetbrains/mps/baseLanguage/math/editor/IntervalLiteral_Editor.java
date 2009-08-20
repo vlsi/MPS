@@ -30,7 +30,6 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.IScope;
 
 public class IntervalLiteral_Editor extends DefaultNodeEditor {
-
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_6862_0(editorContext, node);
   }
@@ -87,12 +86,10 @@ public class IntervalLiteral_Editor extends DefaultNodeEditor {
 
   private EditorCell createReadOnlyModelAccessor_6862_0(final EditorContext editorContext, final SNode node) {
     EditorCell_Property editorCell = EditorCell_Property.create(editorContext, new ModelAccessor() {
-
       public String getText() {
         if (SPropertyOperations.getBoolean(node, "startIncluded")) {
           return "[";
-        } else
-        {
+        } else {
           return "(";
         }
       }
@@ -112,12 +109,10 @@ public class IntervalLiteral_Editor extends DefaultNodeEditor {
 
   private EditorCell createReadOnlyModelAccessor_6862_1(final EditorContext editorContext, final SNode node) {
     EditorCell_Property editorCell = EditorCell_Property.create(editorContext, new ModelAccessor() {
-
       public String getText() {
         if (SPropertyOperations.getBoolean(node, "endIncluded")) {
           return "]";
-        } else
-        {
+        } else {
           return ")";
         }
       }
@@ -222,7 +217,6 @@ public class IntervalLiteral_Editor extends DefaultNodeEditor {
   }
 
   public static class IntervalLiteral_generic_cellMenu0 extends AbstractCellMenuPart_Generic_Item {
-
     public IntervalLiteral_generic_cellMenu0() {
     }
 
@@ -233,10 +227,9 @@ public class IntervalLiteral_Editor extends DefaultNodeEditor {
     public String getMatchingText() {
       return "(";
     }
+  }
 
-}
   public static class IntervalLiteral_generic_cellMenu1 extends AbstractCellMenuPart_Generic_Item {
-
     public IntervalLiteral_generic_cellMenu1() {
     }
 
@@ -247,10 +240,9 @@ public class IntervalLiteral_Editor extends DefaultNodeEditor {
     public String getMatchingText() {
       return "[";
     }
+  }
 
-}
   public static class IntervalLiteral_generic_cellMenu2 extends AbstractCellMenuPart_Generic_Item {
-
     public IntervalLiteral_generic_cellMenu2() {
     }
 
@@ -261,10 +253,9 @@ public class IntervalLiteral_Editor extends DefaultNodeEditor {
     public String getMatchingText() {
       return ")";
     }
+  }
 
-}
   public static class IntervalLiteral_generic_cellMenu3 extends AbstractCellMenuPart_Generic_Item {
-
     public IntervalLiteral_generic_cellMenu3() {
     }
 
@@ -275,7 +266,5 @@ public class IntervalLiteral_Editor extends DefaultNodeEditor {
     public String getMatchingText() {
       return "]";
     }
-
-}
-
+  }
 }

@@ -11,7 +11,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.baseLanguage.behavior.IMemberContainer_Behavior;
 
 public class BTestCase_Behavior {
-
   public static void init(SNode thisNode) {
   }
 
@@ -36,5 +35,4 @@ public class BTestCase_Behavior {
     ListSequence.fromList(members).addSequence(ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(thisNode, "testMethodList", true), "testMethod", true)));
     return members;
   }
-
 }

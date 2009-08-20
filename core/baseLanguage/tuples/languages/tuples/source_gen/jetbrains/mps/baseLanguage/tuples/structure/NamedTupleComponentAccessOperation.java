@@ -52,7 +52,6 @@ public class NamedTupleComponentAccessOperation extends BaseConcept implements I
     super.setReferent(NamedTupleComponentAccessOperation.COMPONENT, node);
   }
 
-
   public static NamedTupleComponentAccessOperation newInstance(SModel sm, boolean init) {
     return (NamedTupleComponentAccessOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.tuples.structure.NamedTupleComponentAccessOperation", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -60,5 +59,4 @@ public class NamedTupleComponentAccessOperation extends BaseConcept implements I
   public static NamedTupleComponentAccessOperation newInstance(SModel sm) {
     return NamedTupleComponentAccessOperation.newInstance(sm, false);
   }
-
 }

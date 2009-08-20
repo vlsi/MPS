@@ -34,7 +34,6 @@ public class MoneyCreator extends AbstractCreator {
     super.setChild(MoneyCreator.CURRENCY, node);
   }
 
-
   public static MoneyCreator newInstance(SModel sm, boolean init) {
     return (MoneyCreator)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.money.structure.MoneyCreator", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -42,5 +41,4 @@ public class MoneyCreator extends AbstractCreator {
   public static MoneyCreator newInstance(SModel sm) {
     return MoneyCreator.newInstance(sm, false);
   }
-
 }

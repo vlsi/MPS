@@ -17,7 +17,6 @@ import javax.swing.UIManager;
 import javax.swing.BorderFactory;
 
 public class StatisticsRowRenderer implements TableCellRenderer {
-
   private JPanel textPanel;
   private JLabel text;
   private JLabel advancedText;
@@ -77,8 +76,7 @@ public class StatisticsRowRenderer implements TableCellRenderer {
         String additionalText = rowValue.getAdditionalText();
         if (additionalText != null) {
           this.advancedText.setText(" (" + additionalText + ")");
-        } else
-        {
+        } else {
           this.advancedText.setText("");
         }
         result = this.textPanel;
@@ -133,8 +131,7 @@ public class StatisticsRowRenderer implements TableCellRenderer {
           if (e > 0) {
             result = this.aloneError;
           }
-        } else
-        {
+        } else {
           this.simpleField.setText("");
           result = this.simpleField;
         }
@@ -148,8 +145,7 @@ public class StatisticsRowRenderer implements TableCellRenderer {
         result.setForeground(table.getSelectionForeground());
       }
       result.setBackground(table.getSelectionBackground());
-    } else
-    {
+    } else {
       if (!(keepForeground)) {
         result.setForeground(table.getForeground());
       }
@@ -157,8 +153,7 @@ public class StatisticsRowRenderer implements TableCellRenderer {
     }
     if (hasFocus) {
       result.setBorder(UIManager.getBorder("Table.focusCellHighlightBorder"));
-    } else
-    {
+    } else {
       result.setBorder(BorderFactory.createEmptyBorder(1, 1, 1, 1));
     }
     result.setEnabled(table.isEnabled());
@@ -166,8 +161,7 @@ public class StatisticsRowRenderer implements TableCellRenderer {
       if (container) {
         Font font = table.getFont();
         adjustFont.setFont(new Font(font.getName(), Font.BOLD, font.getSize()));
-      } else
-      {
+      } else {
         adjustFont.setFont(table.getFont());
       }
     }
@@ -188,5 +182,4 @@ public class StatisticsRowRenderer implements TableCellRenderer {
     this.simpleField.setText(s);
     return this.simpleField;
   }
-
 }

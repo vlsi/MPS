@@ -24,7 +24,6 @@ public class PrimitiveTypeRef extends BaseConcept {
     super.setReferent(PrimitiveTypeRef.DESCRIPTOR, node);
   }
 
-
   public static PrimitiveTypeRef newInstance(SModel sm, boolean init) {
     return (PrimitiveTypeRef)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.blTypes.structure.PrimitiveTypeRef", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -32,5 +31,4 @@ public class PrimitiveTypeRef extends BaseConcept {
   public static PrimitiveTypeRef newInstance(SModel sm) {
     return PrimitiveTypeRef.newInstance(sm, false);
   }
-
 }

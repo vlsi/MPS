@@ -14,7 +14,6 @@ import jetbrains.mps.lang.core.behavior.INamedConcept_Behavior;
 import jetbrains.mps.workbench.editors.MPSEditorOpener;
 
 public class TestCaseTreeNode extends MPSTreeNode {
-
   protected SNode testCase;
   private TestState state;
 
@@ -38,7 +37,6 @@ public class TestCaseTreeNode extends MPSTreeNode {
   public String getClassName() {
     final Wrappers._T<String> className = new Wrappers._T<String>(null);
     ModelAccess.instance().runReadAction(new Runnable() {
-
       public void run() {
         className.value = INamedConcept_Behavior.call_getFqName_1213877404258(TestCaseTreeNode.this.testCase);
       }
@@ -53,5 +51,4 @@ public class TestCaseTreeNode extends MPSTreeNode {
   public int getToggleClickCount() {
     return -1;
   }
-
 }

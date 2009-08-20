@@ -9,7 +9,6 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class LogStatement_DataFlow extends DataFlowBuilder {
-
   public LogStatement_DataFlow() {
   }
 
@@ -19,5 +18,4 @@ public class LogStatement_DataFlow extends DataFlowBuilder {
       _context.getBuilder().build((SNode)SLinkOperations.getTarget(_context.getNode(), "exception", true));
     }
   }
-
 }

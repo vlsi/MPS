@@ -20,7 +20,6 @@ import jetbrains.mps.typesystem.inference.NodeErrorTarget;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class check_NamedTupleComponent_final_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
-
   public check_NamedTupleComponent_final_NonTypesystemRule() {
   }
 
@@ -29,8 +28,7 @@ public class check_NamedTupleComponent_final_NonTypesystemRule extends AbstractN
       IMatchingPattern pattern_0 = HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.tuples.structure.NamedTupleType");
       SNode coercedNode_0 = TypeChecker.getInstance().getRuntimeSupport().coerce_(TypeChecker.getInstance().getTypeOf(expression), pattern_0, typeCheckingContext);
       if (coercedNode_0 != null) {
-        if (ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(coercedNode_0, "classifier", false), "component", true)).any(new IWhereFilter <SNode>() {
-
+        if (ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(coercedNode_0, "classifier", false), "component", true)).any(new IWhereFilter<SNode>() {
           public boolean accept(SNode cmp) {
             return SPropertyOperations.getBoolean(cmp, "final");
           }
@@ -41,8 +39,7 @@ public class check_NamedTupleComponent_final_NonTypesystemRule extends AbstractN
             typeCheckingContext.reportTypeError(expression, "Cannot assign to final tuple component", "r:e119dbbd-3529-4067-8bad-6b9edd79d0b6(jetbrains.mps.baseLanguage.tuples.typesystem)", "1240403693265", intentionProvider, errorTarget);
           }
         }
-      } else
-      {
+      } else {
       }
     }
   }
@@ -58,5 +55,4 @@ public class check_NamedTupleComponent_final_NonTypesystemRule extends AbstractN
   public boolean overrides() {
     return false;
   }
-
 }

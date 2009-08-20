@@ -19,7 +19,6 @@ import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
 
 public class NamedTupleComponentReference_Editor extends DefaultNodeEditor {
-
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_0079_0(editorContext, node);
   }
@@ -76,7 +75,6 @@ public class NamedTupleComponentReference_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline0079_0 extends AbstractCellProvider {
-
     public _Inline0079_0() {
       super();
     }
@@ -111,7 +109,5 @@ public class NamedTupleComponentReference_Editor extends DefaultNodeEditor {
       } else
       return editorCell;
     }
-
-}
-
+  }
 }

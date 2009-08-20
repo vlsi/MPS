@@ -74,5 +74,4 @@ public enum Severity {
     }
     return Severity.getDefault();
   }
-
 }

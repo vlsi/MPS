@@ -14,19 +14,17 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class extended_interfaces_supertypesOf_namedTupleType_SubtypingRule extends SubtypingRule_Runtime implements ISubtypingRule_Runtime {
-
   public extended_interfaces_supertypesOf_namedTupleType_SubtypingRule() {
   }
 
   public List<SNode> getSubOrSuperTypes(SNode namedTupleType, TypeCheckingContext typeCheckingContext) {
     List<SNode> result = new ArrayList<SNode>();
-    for(SNode ct : ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(namedTupleType, "classifier", false), "extends", true))) {
+    for (SNode ct : ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(namedTupleType, "classifier", false), "extends", true))) {
       List<SNode> paramTypes = new ArrayList<SNode>();
-      for(SNode pt : ListSequence.fromList(SLinkOperations.getTargets(ct, "parameter", true))) {
+      for (SNode pt : ListSequence.fromList(SLinkOperations.getTargets(ct, "parameter", true))) {
         if (SNodeOperations.isInstanceOf(pt, "jetbrains.mps.baseLanguage.structure.TypeVariableReference")) {
           ListSequence.fromList(paramTypes).addElement(ListSequence.fromList(ListSequence.fromList(SLinkOperations.getTargets(namedTupleType, "parameter", true)).toListSequence()).getElement(SNodeOperations.getIndexInParent(SLinkOperations.getTarget(SNodeOperations.cast(pt, "jetbrains.mps.baseLanguage.structure.TypeVariableReference"), "typeVariableDeclaration", false))));
-        } else
-        {
+        } else {
           ListSequence.fromList(paramTypes).addElement(pt);
         }
       }
@@ -46,5 +44,4 @@ public class extended_interfaces_supertypesOf_namedTupleType_SubtypingRule exten
   public boolean isWeak() {
     return true;
   }
-
 }

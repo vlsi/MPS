@@ -39,7 +39,6 @@ public class PrintStatement extends Statement {
     this.insertChild(prev, PrintStatement.TEXT_EXPRESSION, node);
   }
 
-
   public static PrintStatement newInstance(SModel sm, boolean init) {
     return (PrintStatement)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.logging.structure.PrintStatement", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -47,5 +46,4 @@ public class PrintStatement extends Statement {
   public static PrintStatement newInstance(SModel sm) {
     return PrintStatement.newInstance(sm, false);
   }
-
 }

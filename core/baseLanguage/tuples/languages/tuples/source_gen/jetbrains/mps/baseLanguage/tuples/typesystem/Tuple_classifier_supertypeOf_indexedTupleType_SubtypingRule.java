@@ -18,7 +18,6 @@ import jetbrains.mps.baseLanguage.closures.constraints.ClassifierTypeUtil;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class Tuple_classifier_supertypeOf_indexedTupleType_SubtypingRule extends SubtypingRule_Runtime implements ISubtypingRule_Runtime {
-
   public Tuple_classifier_supertypeOf_indexedTupleType_SubtypingRule() {
   }
 
@@ -26,11 +25,11 @@ public class Tuple_classifier_supertypeOf_indexedTupleType_SubtypingRule extends
     List<SNode> result = new ArrayList<SNode>();
     String clname = "Tuples._" + ListSequence.fromList(SLinkOperations.getTargets(itt, "componentType", true)).count();
     SModel rtmodel = SNodeOperations.getModel(SLinkOperations.getTarget(new _Quotations.QuotationClass_7().createNode(typeCheckingContext), "classifier", false));
-    for(SNode ct : SModelOperations.getNodes(rtmodel, "jetbrains.mps.baseLanguage.structure.Classifier")) {
+    for (SNode ct : SModelOperations.getNodes(rtmodel, "jetbrains.mps.baseLanguage.structure.Classifier")) {
       if ((clname).equals(SPropertyOperations.getString(ct, "name"))) {
         SNode supertype = new _Quotations.QuotationClass_8().createNode(ct, typeCheckingContext);
         ListSequence.fromList(result).addElement(supertype);
-        for(SNode comptype : SLinkOperations.getTargets(itt, "componentType", true)) {
+        for (SNode comptype : SLinkOperations.getTargets(itt, "componentType", true)) {
           SNode javatype = ClassifierTypeUtil.getTypeCoercedToClassifierType(comptype);
           SLinkOperations.addChild(supertype, "parameter", SNodeOperations.copyNode(javatype));
         }
@@ -50,5 +49,4 @@ public class Tuple_classifier_supertypeOf_indexedTupleType_SubtypingRule extends
   public boolean isWeak() {
     return true;
   }
-
 }

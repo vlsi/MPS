@@ -16,15 +16,13 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class indexedTupleType_supertypeOf_namedTupleType_SubtypingRule extends SubtypingRule_Runtime implements ISubtypingRule_Runtime {
-
   public indexedTupleType_supertypeOf_namedTupleType_SubtypingRule() {
   }
 
   public SNode getSubOrSuperType(SNode ntt, TypeCheckingContext typeCheckingContext) {
     final List<SNode> queue = ListSequence.fromList(new LinkedList<SNode>());
     final List<SNode> pts = SLinkOperations.getTargets(ntt, "parameter", true);
-    return new _Quotations.QuotationClass_2().createNode(ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(ntt, "classifier", false), "component", true)).select(new ISelector <SNode, SNode>() {
-
+    return new _Quotations.QuotationClass_2().createNode(ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(ntt, "classifier", false), "component", true)).select(new ISelector<SNode, SNode>() {
       public SNode select(SNode cmp) {
         SNode tmp = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ArrayType", null);
         SLinkOperations.setTarget(tmp, "componentType", SNodeOperations.copyNode(SLinkOperations.getTarget(cmp, "type", true)), true);
@@ -37,9 +35,8 @@ public class indexedTupleType_supertypeOf_namedTupleType_SubtypingRule extends S
             if (idx < ListSequence.fromList(pts).count()) {
               SNodeOperations.replaceWithAnother(t, SNodeOperations.copyNode(ListSequence.fromList(pts).getElement(idx)));
             }
-          } else
-          {
-            for(SNode c : ListSequence.fromList(SNodeOperations.getChildren(t))) {
+          } else {
+            for (SNode c : ListSequence.fromList(SNodeOperations.getChildren(t))) {
               ListSequence.fromList(queue).addElement(c);
             }
           }
@@ -60,5 +57,4 @@ public class indexedTupleType_supertypeOf_namedTupleType_SubtypingRule extends S
   public boolean isWeak() {
     return true;
   }
-
 }

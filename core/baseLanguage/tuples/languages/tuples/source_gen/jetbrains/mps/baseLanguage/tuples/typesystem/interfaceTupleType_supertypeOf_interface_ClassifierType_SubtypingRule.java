@@ -16,7 +16,6 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class interfaceTupleType_supertypeOf_interface_ClassifierType_SubtypingRule extends SubtypingRule_Runtime implements ISubtypingRule_Runtime {
-
   public interfaceTupleType_supertypeOf_interface_ClassifierType_SubtypingRule() {
   }
 
@@ -25,7 +24,7 @@ public class interfaceTupleType_supertypeOf_interface_ClassifierType_SubtypingRu
     if (false && SNodeOperations.isInstanceOf(SLinkOperations.getTarget(classifierType, "classifier", false), "jetbrains.mps.baseLanguage.structure.Interface") && TupleIntefaceUtils.isTupleInterface(SNodeOperations.cast(SLinkOperations.getTarget(classifierType, "classifier", false), "jetbrains.mps.baseLanguage.structure.Interface"))) {
       SNode tupleType = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.tuples.structure.InterfaceTupleType", null);
       SLinkOperations.setTarget(tupleType, "iface", SNodeOperations.cast(SLinkOperations.getTarget(classifierType, "classifier", false), "jetbrains.mps.baseLanguage.structure.Interface"), false);
-      for(SNode p : ListSequence.fromList(SLinkOperations.getTargets(classifierType, "parameter", true))) {
+      for (SNode p : ListSequence.fromList(SLinkOperations.getTargets(classifierType, "parameter", true))) {
         SLinkOperations.addChild(tupleType, "parameterType", SNodeOperations.copyNode(p));
       }
       ListSequence.fromList(result).addElement(tupleType);
@@ -44,5 +43,4 @@ public class interfaceTupleType_supertypeOf_interface_ClassifierType_SubtypingRu
   public boolean isWeak() {
     return true;
   }
-
 }

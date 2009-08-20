@@ -16,7 +16,6 @@ import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 
 public class TupleIntefaceUtils {
-
   public TupleIntefaceUtils() {
   }
 
@@ -28,7 +27,7 @@ public class TupleIntefaceUtils {
     List<TupleIntefaceUtils.Property> accessors = ListSequence.fromList(new ArrayList<TupleIntefaceUtils.Property>());
     List<TupleIntefaceUtils.Property> mutators = ListSequence.fromList(new ArrayList<TupleIntefaceUtils.Property>());
     int ignored = 0;
-    for(SNode method : ListSequence.fromList(SLinkOperations.getTargets(ifc, "method", true))) {
+    for (SNode method : ListSequence.fromList(SLinkOperations.getTargets(ifc, "method", true))) {
       if (SLinkOperations.getCount(method, "parameter") == 0 && !(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(method, "returnType", true), "jetbrains.mps.baseLanguage.structure.VoidType"))) {
         ListSequence.fromList(accessors).addElement(new TupleIntefaceUtils.Property(true, SPropertyOperations.getString(method, "name"), SLinkOperations.getTarget(method, "returnType", true)));
       } else if (SLinkOperations.getCount(method, "parameter") == 1 && MatchingUtil.matchNodes(SLinkOperations.getTarget(method, "returnType", true), ListSequence.fromList(SLinkOperations.getTargets(method, "parameter", true)).toListSequence().first())) {
@@ -40,14 +39,12 @@ public class TupleIntefaceUtils {
       }
     }
     List<TupleIntefaceUtils.Property> result = null;
-    IEnumerator<TupleIntefaceUtils.Property> ait = ListSequence.fromList(accessors).sort(new ISelector <TupleIntefaceUtils.Property, Comparable<?>>() {
-
+    IEnumerator<TupleIntefaceUtils.Property> ait = ListSequence.fromList(accessors).sort(new ISelector<TupleIntefaceUtils.Property, Comparable<?>>() {
       public Comparable<?> select(TupleIntefaceUtils.Property p) {
         return p.name();
       }
     }, true).enumerator();
-    IEnumerator<TupleIntefaceUtils.Property> mit = ListSequence.fromList(mutators).sort(new ISelector <TupleIntefaceUtils.Property, Comparable<?>>() {
-
+    IEnumerator<TupleIntefaceUtils.Property> mit = ListSequence.fromList(mutators).sort(new ISelector<TupleIntefaceUtils.Property, Comparable<?>>() {
       public Comparable<?> select(TupleIntefaceUtils.Property p) {
         return p.name();
       }
@@ -75,7 +72,6 @@ public class TupleIntefaceUtils {
   }
 
   public static class Property extends MultiTuple._3<Boolean, String, SNode> {
-
     public Property() {
       super();
     }
@@ -111,7 +107,5 @@ public class TupleIntefaceUtils {
     public TupleIntefaceUtils.Property assignFrom(Tuples._3<Boolean, String, SNode> from) {
       return (TupleIntefaceUtils.Property)super.assign(from);
     }
-
-}
-
+  }
 }

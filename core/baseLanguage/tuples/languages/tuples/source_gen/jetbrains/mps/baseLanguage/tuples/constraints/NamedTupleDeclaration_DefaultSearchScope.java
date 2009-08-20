@@ -15,7 +15,6 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class NamedTupleDeclaration_DefaultSearchScope extends BaseNodeReferenceSearchScopeProvider {
-
   public NamedTupleDeclaration_DefaultSearchScope() {
   }
 
@@ -29,12 +28,10 @@ public class NamedTupleDeclaration_DefaultSearchScope extends BaseNodeReferenceS
 
   public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferentConstraintContext _context) {
     final SModel refModel = SNodeOperations.getModel(_context.getReferenceNode());
-    return ListSequence.fromList(SModelOperations.getNodesIncludingImported(_context.getModel(), operationContext.getScope(), "jetbrains.mps.baseLanguage.tuples.structure.NamedTupleDeclaration")).where(new IWhereFilter <SNode>() {
-
+    return ListSequence.fromList(SModelOperations.getNodesIncludingImported(_context.getModel(), operationContext.getScope(), "jetbrains.mps.baseLanguage.tuples.structure.NamedTupleDeclaration")).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode ntd) {
         return SNodeOperations.getModel(ntd) == refModel || (SLinkOperations.getTarget(ntd, "visibility", true) != null);
       }
     });
   }
-
 }

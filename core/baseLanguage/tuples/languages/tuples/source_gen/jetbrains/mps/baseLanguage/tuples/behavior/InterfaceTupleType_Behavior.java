@@ -12,19 +12,16 @@ import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.lang.core.behavior.BaseConcept_Behavior;
 
 public class InterfaceTupleType_Behavior {
-
   public static void init(SNode thisNode) {
   }
 
   public static String virtual_getPresentation_1213877396640(SNode thisNode) {
-    return SConceptPropertyOperations.getString(thisNode, "leftBracket") + IterableUtils.join(ListSequence.fromList(TupleIntefaceUtils.analyzeTupleInterface(SLinkOperations.getTarget(thisNode, "iface", false))).select(new ISelector <TupleIntefaceUtils.Property, String>() {
-
+    return SConceptPropertyOperations.getString(thisNode, "leftBracket") + IterableUtils.join(ListSequence.fromList(TupleIntefaceUtils.analyzeTupleInterface(SLinkOperations.getTarget(thisNode, "iface", false))).select(new ISelector<TupleIntefaceUtils.Property, String>() {
       public String select(TupleIntefaceUtils.Property p) {
         return BaseConcept_Behavior.call_getPresentation_1213877396640(p.type()) + " " + p.name();
       }
     }), ", ") + ((SLinkOperations.getCount(thisNode, "parameterType") > 0 ?
-      "<" + IterableUtils.join(ListSequence.fromList(SLinkOperations.getTargets(thisNode, "parameterType", true)).select(new ISelector <SNode, String>() {
-
+      "<" + IterableUtils.join(ListSequence.fromList(SLinkOperations.getTargets(thisNode, "parameterType", true)).select(new ISelector<SNode, String>() {
         public String select(SNode pt) {
           return BaseConcept_Behavior.call_getPresentation_1213877396640(pt);
         }
@@ -32,5 +29,4 @@ public class InterfaceTupleType_Behavior {
       ""
     )) + SConceptPropertyOperations.getString(thisNode, "rightBracket");
   }
-
 }

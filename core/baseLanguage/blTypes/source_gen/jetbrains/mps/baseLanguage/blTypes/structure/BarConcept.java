@@ -52,7 +52,6 @@ public class BarConcept extends BaseConcept implements INamedConcept {
     this.setProperty(BarConcept.VIRTUAL_PACKAGE, value);
   }
 
-
   public static BarConcept newInstance(SModel sm, boolean init) {
     return (BarConcept)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.blTypes.structure.BarConcept", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -60,5 +59,4 @@ public class BarConcept extends BaseConcept implements INamedConcept {
   public static BarConcept newInstance(SModel sm) {
     return BarConcept.newInstance(sm, false);
   }
-
 }

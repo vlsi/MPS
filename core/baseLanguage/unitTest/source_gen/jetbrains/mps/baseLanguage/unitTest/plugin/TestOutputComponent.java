@@ -14,7 +14,6 @@ import com.intellij.execution.ui.ConsoleViewContentType;
 import com.intellij.openapi.util.Disposer;
 
 public class TestOutputComponent {
-
   private JComponent component;
   private ConsoleView consoleView;
   private List<TestOutputComponent.Message> messages;
@@ -38,7 +37,7 @@ public class TestOutputComponent {
       this.filterClass = filterClass;
       this.filterMethod = filterMethod;
       this.consoleView.clear();
-      for(TestOutputComponent.Message message : ListSequence.fromList(this.messages)) {
+      for (TestOutputComponent.Message message : ListSequence.fromList(this.messages)) {
         this.append(message);
       }
     }
@@ -71,8 +70,7 @@ public class TestOutputComponent {
         this.consoleView.print(message.getMessage() + "\n", ConsoleViewContentType.ERROR_OUTPUT);
       } else if (message.isInternal()) {
         this.consoleView.print(message.getMessage() + "\n", ConsoleViewContentType.SYSTEM_OUTPUT);
-      } else
-      {
+      } else {
         this.consoleView.print(message.getMessage() + "\n", ConsoleViewContentType.NORMAL_OUTPUT);
       }
     }
@@ -83,7 +81,6 @@ public class TestOutputComponent {
   }
 
   private static class Message {
-
     private String testClass;
     private String testMethod;
     private String message;
@@ -113,7 +110,5 @@ public class TestOutputComponent {
     public boolean isInternal() {
       return this.internal;
     }
-
-}
-
+  }
 }

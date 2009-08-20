@@ -5,8 +5,6 @@ package jetbrains.mps.baseLanguage.money.behavior;
 import jetbrains.mps.smodel.SNode;
 
 public class MoneyCreator_Behavior {
-
   public static void init(SNode thisNode) {
   }
-
 }

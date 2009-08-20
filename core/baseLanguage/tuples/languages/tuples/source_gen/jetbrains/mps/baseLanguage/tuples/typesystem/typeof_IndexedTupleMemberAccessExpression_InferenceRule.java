@@ -17,7 +17,6 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class typeof_IndexedTupleMemberAccessExpression_InferenceRule extends AbstractInferenceRule_Runtime implements InferenceRule_Runtime {
-
   public typeof_IndexedTupleMemberAccessExpression_InferenceRule() {
   }
 
@@ -41,7 +40,6 @@ public class typeof_IndexedTupleMemberAccessExpression_InferenceRule extends Abs
       {
         final SNode tupleType = typeCheckingContext.typeOf(SLinkOperations.getTarget(mae, "tuple", true), "r:e119dbbd-3529-4067-8bad-6b9edd79d0b6(jetbrains.mps.baseLanguage.tuples.typesystem)", "1238864035483", true);
         typeCheckingContext.whenConcrete(tupleType, new Runnable() {
-
           public void run() {
             if (!(index >= 0 && index < SLinkOperations.getCount(SNodeOperations.as(typeCheckingContext.getEquationManager().getRepresentator(tupleType), "jetbrains.mps.baseLanguage.tuples.structure.IndexedTupleType"), "componentType"))) {
               BaseIntentionProvider intentionProvider = null;
@@ -73,5 +71,4 @@ public class typeof_IndexedTupleMemberAccessExpression_InferenceRule extends Abs
   public boolean overrides() {
     return false;
   }
-
 }

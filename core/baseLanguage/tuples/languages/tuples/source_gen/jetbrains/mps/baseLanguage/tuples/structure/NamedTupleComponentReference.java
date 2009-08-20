@@ -34,7 +34,6 @@ public class NamedTupleComponentReference extends BaseConcept {
     super.setChild(NamedTupleComponentReference.VALUE, node);
   }
 
-
   public static NamedTupleComponentReference newInstance(SModel sm, boolean init) {
     return (NamedTupleComponentReference)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.tuples.structure.NamedTupleComponentReference", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -42,5 +41,4 @@ public class NamedTupleComponentReference extends BaseConcept {
   public static NamedTupleComponentReference newInstance(SModel sm) {
     return NamedTupleComponentReference.newInstance(sm, false);
   }
-
 }

@@ -8,11 +8,10 @@ import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.project.GlobalScope;
 
 public class _Quotations {
-
   public _Quotations() {
   }
-  public static class QuotationClass_0 {
 
+  public static class QuotationClass_0 {
     public QuotationClass_0() {
     }
 
@@ -26,10 +25,9 @@ public class _Quotations {
       }
       return result;
     }
+  }
 
-}
   public static class QuotationClass_1 {
-
     public QuotationClass_1() {
     }
 
@@ -43,7 +41,5 @@ public class _Quotations {
       }
       return result;
     }
-
-}
-
+  }
 }

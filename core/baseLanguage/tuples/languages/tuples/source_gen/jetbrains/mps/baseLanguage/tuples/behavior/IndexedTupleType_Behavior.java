@@ -11,7 +11,6 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 
 public class IndexedTupleType_Behavior {
-
   public static void init(SNode thisNode) {
   }
 
@@ -19,7 +18,7 @@ public class IndexedTupleType_Behavior {
     StringBuilder sb = new StringBuilder();
     sb.append(SConceptPropertyOperations.getString(thisNode, "leftBracket"));
     String sep = "";
-    for(SNode mt : SLinkOperations.getTargets(thisNode, "componentType", true)) {
+    for (SNode mt : SLinkOperations.getTargets(thisNode, "componentType", true)) {
       sb.append(sep).append(BaseConcept_Behavior.call_getPresentation_1213877396640(mt));
       sep = ", ";
     }
@@ -50,5 +49,4 @@ public class IndexedTupleType_Behavior {
     }
     return suffixes;
   }
-
 }

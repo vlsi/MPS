@@ -61,7 +61,6 @@ public class FooConcept extends BaseConcept implements INamedConcept {
     super.setReferent(FooConcept.BAR, node);
   }
 
-
   public static FooConcept newInstance(SModel sm, boolean init) {
     return (FooConcept)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.blTypes.structure.FooConcept", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -69,5 +68,4 @@ public class FooConcept extends BaseConcept implements INamedConcept {
   public static FooConcept newInstance(SModel sm) {
     return FooConcept.newInstance(sm, false);
   }
-
 }

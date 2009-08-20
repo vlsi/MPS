@@ -22,5 +22,4 @@ public class IntervalContainsExpression extends BinaryOperation {
   public static IntervalContainsExpression newInstance(SModel sm) {
     return IntervalContainsExpression.newInstance(sm, false);
   }
-
 }

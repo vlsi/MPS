@@ -16,14 +16,13 @@ import jetbrains.mps.intentions.BaseIntentionProvider;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class typeof_NamedTupleComponentAccessOperation_InferenceRule extends AbstractInferenceRule_Runtime implements InferenceRule_Runtime {
-
   public typeof_NamedTupleComponentAccessOperation_InferenceRule() {
   }
 
   public void applyRule(final SNode operation, final TypeCheckingContext typeCheckingContext) {
     List<SNode> PTYPES = new ArrayList<SNode>();
     SNode tupleDecl = SNodeOperations.cast(SNodeOperations.getParent(SLinkOperations.getTarget(operation, "component", false)), "jetbrains.mps.baseLanguage.tuples.structure.NamedTupleDeclaration");
-    for(SNode tvr : ListSequence.fromList(SLinkOperations.getTargets(tupleDecl, "typeVariableDeclaration", true))) {
+    for (SNode tvr : ListSequence.fromList(SLinkOperations.getTargets(tupleDecl, "typeVariableDeclaration", true))) {
       final SNode PTYPE_typevar_1239974367138 = typeCheckingContext.createNewRuntimeTypesVariable();
       ListSequence.fromList(PTYPES).addElement(typeCheckingContext.getEquationManager().getRepresentator(PTYPE_typevar_1239974367138));
     }
@@ -36,12 +35,11 @@ public class typeof_NamedTupleComponentAccessOperation_InferenceRule extends Abs
     if (SNodeOperations.isInstanceOf(opType, "jetbrains.mps.baseLanguage.structure.TypeVariableReference")) {
       int idx = SNodeOperations.getIndexInParent(SLinkOperations.getTarget(SNodeOperations.cast(opType, "jetbrains.mps.baseLanguage.structure.TypeVariableReference"), "typeVariableDeclaration", false));
       opType = ListSequence.fromList(PTYPES).getElement(idx);
-    } else
-    {
+    } else {
       List<SNode> variableReferences = SNodeOperations.getDescendants(opType, "jetbrains.mps.baseLanguage.structure.TypeVariableReference", false, new String[]{});
       List<SNode> tvrs = new ArrayList<SNode>();
       ListSequence.fromList(tvrs).addSequence(ListSequence.fromList(variableReferences));
-      for(SNode tvr : tvrs) {
+      for (SNode tvr : tvrs) {
         int idx = SNodeOperations.getIndexInParent(SLinkOperations.getTarget(tvr, "typeVariableDeclaration", false));
         if (idx < ListSequence.fromList(PTYPES).count()) {
           SNodeOperations.replaceWithAnother(tvr, ListSequence.fromList(PTYPES).getElement(idx));
@@ -66,5 +64,4 @@ public class typeof_NamedTupleComponentAccessOperation_InferenceRule extends Abs
   public boolean overrides() {
     return false;
   }
-
 }

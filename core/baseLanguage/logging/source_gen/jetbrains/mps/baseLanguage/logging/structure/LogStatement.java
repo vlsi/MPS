@@ -53,7 +53,6 @@ public class LogStatement extends Statement {
     super.setChild(LogStatement.EXCEPTION, node);
   }
 
-
   public static LogStatement newInstance(SModel sm, boolean init) {
     return (LogStatement)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.logging.structure.LogStatement", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -61,5 +60,4 @@ public class LogStatement extends Statement {
   public static LogStatement newInstance(SModel sm) {
     return LogStatement.newInstance(sm, false);
   }
-
 }

@@ -11,7 +11,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class BLArrayType_name_PropertyConstraint implements IModelConstraints, INodePropertyGetter {
-
   public BLArrayType_name_PropertyConstraint() {
   }
 
@@ -26,5 +25,4 @@ public class BLArrayType_name_PropertyConstraint implements IModelConstraints, I
   public Object execPropertyGet(SNode node, String propertyName, IScope scope) {
     return SPropertyOperations.getString(SLinkOperations.getTarget(node, "componentType", false), "name") + "[]";
   }
-
 }

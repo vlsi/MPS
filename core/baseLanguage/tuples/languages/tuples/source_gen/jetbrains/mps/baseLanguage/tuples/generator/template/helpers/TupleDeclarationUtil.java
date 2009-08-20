@@ -7,7 +7,6 @@ import jetbrains.mps.lang.core.behavior.INamedConcept_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class TupleDeclarationUtil {
-
   public TupleDeclarationUtil() {
   }
 
@@ -19,5 +18,4 @@ public class TupleDeclarationUtil {
     }
     return fqName;
   }
-
 }

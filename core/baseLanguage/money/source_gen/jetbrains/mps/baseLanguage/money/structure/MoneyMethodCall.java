@@ -24,7 +24,6 @@ public class MoneyMethodCall extends Expression {
     super.setChild(MoneyMethodCall.INSTANCE, node);
   }
 
-
   public static MoneyMethodCall newInstance(SModel sm, boolean init) {
     return (MoneyMethodCall)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.money.structure.MoneyMethodCall", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -32,5 +31,4 @@ public class MoneyMethodCall extends Expression {
   public static MoneyMethodCall newInstance(SModel sm) {
     return MoneyMethodCall.newInstance(sm, false);
   }
-
 }

@@ -40,7 +40,6 @@ public class IndexedTupleLiteral extends Expression {
     this.insertChild(prev, IndexedTupleLiteral.COMPONENT, node);
   }
 
-
   public static IndexedTupleLiteral newInstance(SModel sm, boolean init) {
     return (IndexedTupleLiteral)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.tuples.structure.IndexedTupleLiteral", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -48,5 +47,4 @@ public class IndexedTupleLiteral extends Expression {
   public static IndexedTupleLiteral newInstance(SModel sm) {
     return IndexedTupleLiteral.newInstance(sm, false);
   }
-
 }

@@ -13,7 +13,6 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
 
 public class QueriesGenerated {
-
   public static boolean baseMappingRule_Condition_1235731783189(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
     return TypeChecker.getInstance().getSubtypingManager().isSubtype(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(_context.getNode(), "term", true)), new _Quotations.QuotationClass_0().createNode());
   }
@@ -57,5 +56,4 @@ public class QueriesGenerated {
   public static SNode sourceNodeQuery_1235732008574(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "term", true);
   }
-
 }

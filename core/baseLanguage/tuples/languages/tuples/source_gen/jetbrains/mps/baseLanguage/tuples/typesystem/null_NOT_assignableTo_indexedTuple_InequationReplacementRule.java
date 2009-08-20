@@ -12,7 +12,6 @@ import jetbrains.mps.typesystem.inference.NodeErrorTarget;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class null_NOT_assignableTo_indexedTuple_InequationReplacementRule extends AbstractInequationReplacementRule_Runtime {
-
   public null_NOT_assignableTo_indexedTuple_InequationReplacementRule() {
   }
 
@@ -51,5 +50,4 @@ public class null_NOT_assignableTo_indexedTuple_InequationReplacementRule extend
   public String getApplicableSupertypeConceptFQName() {
     return "jetbrains.mps.baseLanguage.tuples.structure.IndexedTupleType";
   }
-
 }

@@ -6,7 +6,6 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 
 public class MoneyType_Behavior {
-
   public static void init(SNode thisNode) {
   }
 
@@ -14,5 +13,4 @@ public class MoneyType_Behavior {
     SNode creator = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.money.structure.MoneyCreator", null);
     return creator;
   }
-
 }

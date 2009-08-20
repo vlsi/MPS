@@ -40,7 +40,6 @@ import jetbrains.mps.nodeEditor.cellMenu.DefaultReferenceSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
 
 public class InterfaceTupleType_Editor extends DefaultNodeEditor {
-
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_0883_0(editorContext, node);
   }
@@ -128,10 +127,8 @@ public class InterfaceTupleType_Editor extends DefaultNodeEditor {
 
   private EditorCell createReadOnlyModelAccessor_0883_0(final EditorContext editorContext, final SNode node) {
     EditorCell_Property editorCell = EditorCell_Property.create(editorContext, new ModelAccessor() {
-
       public String getText() {
-        return IterableUtils.join(ListSequence.fromList(TupleIntefaceUtils.analyzeTupleInterface(SLinkOperations.getTarget(node, "iface", false))).select(new ISelector <TupleIntefaceUtils.Property, String>() {
-
+        return IterableUtils.join(ListSequence.fromList(TupleIntefaceUtils.analyzeTupleInterface(SLinkOperations.getTarget(node, "iface", false))).select(new ISelector<TupleIntefaceUtils.Property, String>() {
           public String select(TupleIntefaceUtils.Property p) {
             return BaseConcept_Behavior.call_getPresentation_1213877396640(p.type()) + " " + p.name();
           }
@@ -218,13 +215,11 @@ public class InterfaceTupleType_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-
   private static boolean renderingCondition0883_0(SNode node, EditorContext editorContext, IScope scope) {
     return SLinkOperations.getCount(node, "parameterType") > 0;
   }
 
   public static class _Inline0883_0 extends AbstractCellProvider {
-
     public _Inline0883_0() {
       super();
     }
@@ -255,10 +250,9 @@ public class InterfaceTupleType_Editor extends DefaultNodeEditor {
       } else
       return editorCell;
     }
+  }
 
-}
   private static class parameterTypeListHandler_0883_0 extends RefNodeListHandler {
-
     public parameterTypeListHandler_0883_0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
@@ -305,7 +299,5 @@ public class InterfaceTupleType_Editor extends DefaultNodeEditor {
         return editorCell;
       }
     }
-
-}
-
+  }
 }

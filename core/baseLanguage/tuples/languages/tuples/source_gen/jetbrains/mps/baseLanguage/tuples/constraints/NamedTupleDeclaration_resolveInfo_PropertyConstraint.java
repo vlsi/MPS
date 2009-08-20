@@ -10,7 +10,6 @@ import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.core.behavior.BaseConcept_Behavior;
 
 public class NamedTupleDeclaration_resolveInfo_PropertyConstraint implements IModelConstraints, INodePropertyGetter {
-
   public NamedTupleDeclaration_resolveInfo_PropertyConstraint() {
   }
 
@@ -25,5 +24,4 @@ public class NamedTupleDeclaration_resolveInfo_PropertyConstraint implements IMo
   public Object execPropertyGet(SNode node, String propertyName, IScope scope) {
     return BaseConcept_Behavior.call_getPresentation_1213877396640(node);
   }
-
 }

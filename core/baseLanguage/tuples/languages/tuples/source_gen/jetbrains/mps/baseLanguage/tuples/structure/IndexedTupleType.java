@@ -40,7 +40,6 @@ public class IndexedTupleType extends Type {
     this.insertChild(prev, IndexedTupleType.COMPONENT_TYPE, node);
   }
 
-
   public static IndexedTupleType newInstance(SModel sm, boolean init) {
     return (IndexedTupleType)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.tuples.structure.IndexedTupleType", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -48,5 +47,4 @@ public class IndexedTupleType extends Type {
   public static IndexedTupleType newInstance(SModel sm) {
     return IndexedTupleType.newInstance(sm, false);
   }
-
 }

@@ -24,7 +24,6 @@ public class IntervalType extends Type {
     super.setChild(IntervalType.ELEMENT_TYPE, node);
   }
 
-
   public static IntervalType newInstance(SModel sm, boolean init) {
     return (IntervalType)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.math.structure.IntervalType", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -32,5 +31,4 @@ public class IntervalType extends Type {
   public static IntervalType newInstance(SModel sm) {
     return IntervalType.newInstance(sm, false);
   }
-
 }

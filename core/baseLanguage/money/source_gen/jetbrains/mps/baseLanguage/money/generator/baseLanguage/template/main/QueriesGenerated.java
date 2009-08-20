@@ -13,7 +13,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 public class QueriesGenerated {
-
   public static boolean baseMappingRule_Condition_1187347436103(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
     return Util.isPlusMinusExpressionMoneyExpression(_context.getNode());
   }
@@ -97,5 +96,4 @@ public class QueriesGenerated {
   public static SNode sourceNodeQuery_1217888432992(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "instance", true);
   }
-
 }

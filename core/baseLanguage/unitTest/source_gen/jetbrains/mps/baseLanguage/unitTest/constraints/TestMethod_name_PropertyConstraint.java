@@ -10,7 +10,6 @@ import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 public class TestMethod_name_PropertyConstraint implements IModelConstraints, INodePropertyGetter {
-
   public TestMethod_name_PropertyConstraint() {
   }
 
@@ -25,5 +24,4 @@ public class TestMethod_name_PropertyConstraint implements IModelConstraints, IN
   public Object execPropertyGet(SNode node, String propertyName, IScope scope) {
     return "test_" + SPropertyOperations.getString(node, "methodName");
   }
-
 }

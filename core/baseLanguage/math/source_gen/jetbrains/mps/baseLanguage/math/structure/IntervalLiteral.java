@@ -51,7 +51,6 @@ public class IntervalLiteral extends Expression {
     super.setChild(IntervalLiteral.END, node);
   }
 
-
   public static IntervalLiteral newInstance(SModel sm, boolean init) {
     return (IntervalLiteral)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.math.structure.IntervalLiteral", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -59,5 +58,4 @@ public class IntervalLiteral extends Expression {
   public static IntervalLiteral newInstance(SModel sm) {
     return IntervalLiteral.newInstance(sm, false);
   }
-
 }

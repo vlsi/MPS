@@ -7,7 +7,6 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 
 public abstract class TestContainerRow implements TestStatisticsRow {
-
   private String text;
   private String additionalText;
   private List<TestStatisticsRow> rows = ListSequence.fromList(new ArrayList<TestStatisticsRow>());
@@ -27,7 +26,7 @@ public abstract class TestContainerRow implements TestStatisticsRow {
 
   public long getElapsedTime() {
     long elapsedTime = 0;
-    for(TestStatisticsRow row : ListSequence.fromList(this.rows)) {
+    for (TestStatisticsRow row : ListSequence.fromList(this.rows)) {
       long methodTime = row.getElapsedTime();
       if (methodTime >= 0) {
         elapsedTime = elapsedTime + methodTime;
@@ -72,7 +71,7 @@ public abstract class TestContainerRow implements TestStatisticsRow {
 
   public int getSuccessful() {
     int count = 0;
-    for(TestStatisticsRow row : ListSequence.fromList(this.rows)) {
+    for (TestStatisticsRow row : ListSequence.fromList(this.rows)) {
       count = count + row.getSuccessful();
     }
     return count;
@@ -80,7 +79,7 @@ public abstract class TestContainerRow implements TestStatisticsRow {
 
   public int getErrored() {
     int count = 0;
-    for(TestStatisticsRow row : ListSequence.fromList(this.rows)) {
+    for (TestStatisticsRow row : ListSequence.fromList(this.rows)) {
       count = count + row.getErrored();
     }
     return count;
@@ -88,7 +87,7 @@ public abstract class TestContainerRow implements TestStatisticsRow {
 
   public int getFailed() {
     int count = 0;
-    for(TestStatisticsRow row : ListSequence.fromList(this.rows)) {
+    for (TestStatisticsRow row : ListSequence.fromList(this.rows)) {
       count = count + row.getFailed();
     }
     return count;
@@ -97,5 +96,4 @@ public abstract class TestContainerRow implements TestStatisticsRow {
   public void addRow(TestStatisticsRow row) {
     ListSequence.fromList(this.rows).addElement(row);
   }
-
 }

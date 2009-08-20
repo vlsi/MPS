@@ -34,5 +34,4 @@ public class ITestable_Behavior {
   public static TestRunParameters callSuper_getTestRunParameters_1216045139515(SNode thisNode, String callerConceptFqName) {
     return (TestRunParameters)BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.unitTest.structure.ITestable"), callerConceptFqName, "virtual_getTestRunParameters_1216045139515", PARAMETERS_1216045139515);
   }
-
 }

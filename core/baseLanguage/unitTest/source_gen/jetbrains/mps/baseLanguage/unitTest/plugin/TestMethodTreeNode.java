@@ -12,7 +12,6 @@ import jetbrains.mps.baseLanguage.unitTest.behavior.ITestCase_Behavior;
 import jetbrains.mps.workbench.editors.MPSEditorOpener;
 
 public class TestMethodTreeNode extends MPSTreeNode {
-
   protected SNode testMethod;
   private TestState state = TestState.NOT_RAN;
 
@@ -35,7 +34,6 @@ public class TestMethodTreeNode extends MPSTreeNode {
   public void setState(TestState state) {
     this.state = state;
     ModelAccess.instance().runReadInEDT(new Runnable() {
-
       public void run() {
         TestMethodTreeNode.this.updatePresentation();
         TestMethodTreeNode.this.updateNodePresentationInTree();
@@ -46,7 +44,6 @@ public class TestMethodTreeNode extends MPSTreeNode {
   public String getClassName() {
     final Wrappers._T<String> className = new Wrappers._T<String>(null);
     ModelAccess.instance().runReadAction(new Runnable() {
-
       public void run() {
         SNode testCase = ITestMethod_Behavior.call_getTestCase_1216134500045(TestMethodTreeNode.this.testMethod);
         if (testCase != null) {
@@ -60,7 +57,6 @@ public class TestMethodTreeNode extends MPSTreeNode {
   public String getMethodName() {
     final Wrappers._T<String> methodName = new Wrappers._T<String>(null);
     ModelAccess.instance().runReadAction(new Runnable() {
-
       public void run() {
         methodName.value = ITestMethod_Behavior.call_getTestName_1216136419751(TestMethodTreeNode.this.testMethod);
       }
@@ -75,5 +71,4 @@ public class TestMethodTreeNode extends MPSTreeNode {
   public void doubleClick() {
     this.getOperationContext().getComponent(MPSEditorOpener.class).openNode(this.testMethod);
   }
-
 }

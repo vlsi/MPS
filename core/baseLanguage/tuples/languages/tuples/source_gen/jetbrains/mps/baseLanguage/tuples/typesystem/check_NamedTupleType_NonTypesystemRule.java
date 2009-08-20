@@ -13,7 +13,6 @@ import jetbrains.mps.typesystem.inference.NodeErrorTarget;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class check_NamedTupleType_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
-
   public check_NamedTupleType_NonTypesystemRule() {
   }
 
@@ -36,5 +35,4 @@ public class check_NamedTupleType_NonTypesystemRule extends AbstractNonTypesyste
   public boolean overrides() {
     return true;
   }
-
 }

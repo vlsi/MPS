@@ -9,8 +9,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.baseLanguage.unitTest.behavior.ITestCase_Behavior;
 import jetbrains.mps.baseLanguage.unitTest.behavior.ITestMethod_Behavior;
 
-public class TestNameMap <C, M> {
-
+public class TestNameMap<C, M> {
   private Map<String, C> classToTestCase;
   private Map<String, Map<String, M>> classToMethodToMethodTest;
 
@@ -50,5 +49,4 @@ public class TestNameMap <C, M> {
     MapSequence.fromMap(this.classToTestCase).clear();
     MapSequence.fromMap(this.classToMethodToMethodTest).clear();
   }
-
 }

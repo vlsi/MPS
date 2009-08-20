@@ -31,7 +31,6 @@ import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandlerElementKeyMap;
 
 public class NamedTupleDeclaration_Editor extends DefaultNodeEditor {
-
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_9393_0(editorContext, node);
   }
@@ -282,7 +281,6 @@ public class NamedTupleDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-
   private static boolean renderingCondition9393_0(SNode node, EditorContext editorContext, IScope scope) {
     return SLinkOperations.getCount(node, "annotation") > 0;
   }
@@ -300,7 +298,6 @@ public class NamedTupleDeclaration_Editor extends DefaultNodeEditor {
   }
 
   private static class annotationListHandler_9393_0 extends RefNodeListHandler {
-
     public annotationListHandler_9393_0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
@@ -340,10 +337,9 @@ public class NamedTupleDeclaration_Editor extends DefaultNodeEditor {
     public EditorCell createSeparatorCell(EditorContext editorContext) {
       return super.createSeparatorCell(editorContext);
     }
+  }
 
-}
   private static class componentListHandler_9393_0 extends RefNodeListHandler {
-
     public componentListHandler_9393_0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
@@ -398,10 +394,9 @@ public class NamedTupleDeclaration_Editor extends DefaultNodeEditor {
       editorCell.setDefaultText("<<components>>");
       return editorCell;
     }
+  }
 
-}
   private static class annotationListHandler_9393_1 extends RefNodeListHandler {
-
     public annotationListHandler_9393_1(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
@@ -441,10 +436,9 @@ public class NamedTupleDeclaration_Editor extends DefaultNodeEditor {
     public EditorCell createSeparatorCell(EditorContext editorContext) {
       return super.createSeparatorCell(editorContext);
     }
+  }
 
-}
   private static class extendsListHandler_9393_0 extends RefNodeListHandler {
-
     public extendsListHandler_9393_0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
@@ -502,10 +496,9 @@ public class NamedTupleDeclaration_Editor extends DefaultNodeEditor {
       editorCell.setDefaultText("<none>");
       return editorCell;
     }
+  }
 
-}
   private static class typeVariableDeclarationListHandler_9393_0 extends RefNodeListHandler {
-
     public typeVariableDeclarationListHandler_9393_0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
@@ -552,7 +545,5 @@ public class NamedTupleDeclaration_Editor extends DefaultNodeEditor {
         return editorCell;
       }
     }
-
-}
-
+  }
 }

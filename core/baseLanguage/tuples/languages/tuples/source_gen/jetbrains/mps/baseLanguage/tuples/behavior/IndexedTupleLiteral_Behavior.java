@@ -7,17 +7,15 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.baseLanguage.behavior.Expression_Behavior;
 
 public class IndexedTupleLiteral_Behavior {
-
   public static void init(SNode thisNode) {
   }
 
   public static boolean virtual_isLValue_1213877519786(SNode thisNode) {
-    for(SNode mexp : SLinkOperations.getTargets(thisNode, "component", true)) {
+    for (SNode mexp : SLinkOperations.getTargets(thisNode, "component", true)) {
       if (!(Expression_Behavior.call_isLValue_1213877519786(mexp))) {
         return false;
       }
     }
     return true;
   }
-
 }

@@ -56,5 +56,4 @@ public class ITestCase_Behavior {
   public static String callSuper_getSimpleClassName_1229278847513(SNode thisNode, String callerConceptFqName) {
     return (String)BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.unitTest.structure.ITestCase"), callerConceptFqName, "virtual_getSimpleClassName_1229278847513", PARAMETERS_1229278847513);
   }
-
 }

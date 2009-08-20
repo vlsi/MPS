@@ -22,5 +22,4 @@ public class MoneyType extends Type {
   public static MoneyType newInstance(SModel sm) {
     return MoneyType.newInstance(sm, false);
   }
-
 }

@@ -8,7 +8,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import org.apache.commons.lang.ObjectUtils;
 
 public class TestCaseRow extends TestContainerRow {
-
   private String testCaseName;
 
   public TestCaseRow(SNode testCase) {
@@ -19,5 +18,4 @@ public class TestCaseRow extends TestContainerRow {
   public boolean matches(String testCase, String testMethod) {
     return testCase == null || ObjectUtils.equals(testCase, this.testCaseName);
   }
-
 }

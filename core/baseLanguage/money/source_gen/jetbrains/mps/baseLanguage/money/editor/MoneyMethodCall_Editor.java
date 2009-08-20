@@ -16,7 +16,6 @@ import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
 
 public class MoneyMethodCall_Editor extends DefaultNodeEditor {
-
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_7315_0(editorContext, node);
   }
@@ -67,5 +66,4 @@ public class MoneyMethodCall_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
 }

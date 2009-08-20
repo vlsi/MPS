@@ -12,7 +12,6 @@ import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
 import jetbrains.mps.baseLanguage.behavior.Type_Behavior;
 
 public class QueriesGenerated {
-
   public static Object propertyMacro_GetPropertyValue_1235747506459(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return SPropertyOperations.getBoolean(_context.getNode(), "startIncluded");
   }
@@ -56,5 +55,4 @@ public class QueriesGenerated {
   public static SNode sourceNodeQuery_1235747506526(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "rightExpression", true);
   }
-
 }

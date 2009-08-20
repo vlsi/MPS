@@ -37,7 +37,6 @@ import jetbrains.mps.nodeEditor.cellMenu.DefaultReferenceSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
 
 public class NamedTupleType_Editor extends DefaultNodeEditor {
-
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_9635_0(editorContext, node);
   }
@@ -274,13 +273,11 @@ public class NamedTupleType_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-
   private static boolean renderingCondition9635_0(SNode node, EditorContext editorContext, IScope scope) {
     return SLinkOperations.getCount(node, "parameter") > 0;
   }
 
   public static class _Inline9635_0 extends AbstractCellProvider {
-
     public _Inline9635_0() {
       super();
     }
@@ -311,10 +308,9 @@ public class NamedTupleType_Editor extends DefaultNodeEditor {
       } else
       return editorCell;
     }
+  }
 
-}
   public static class _Inline9635_1 extends AbstractCellProvider {
-
     public _Inline9635_1() {
       super();
     }
@@ -329,11 +325,10 @@ public class NamedTupleType_Editor extends DefaultNodeEditor {
 
     private EditorCell createReadOnlyModelAccessor_9635_0(final EditorContext editorContext, final SNode node) {
       EditorCell_Property editorCell = EditorCell_Property.create(editorContext, new ModelAccessor() {
-
         public String getText() {
           StringBuilder sb = new StringBuilder();
           String sep = "";
-          for(SNode ntcd : SLinkOperations.getTargets(node, "component", true)) {
+          for (SNode ntcd : SLinkOperations.getTargets(node, "component", true)) {
             sb.append(sep).append(SPropertyOperations.getString(ntcd, "name"));
             sep = ", ";
           }
@@ -355,10 +350,9 @@ public class NamedTupleType_Editor extends DefaultNodeEditor {
       }
       return editorCell;
     }
+  }
 
-}
   public static class _Inline9635_2 extends AbstractCellProvider {
-
     public _Inline9635_2() {
       super();
     }
@@ -390,10 +384,9 @@ public class NamedTupleType_Editor extends DefaultNodeEditor {
       editorCell.setRole(handler.getElementRole());
       return editorCell;
     }
+  }
 
-}
   public static class _Inline9635_3 extends AbstractCellProvider {
-
     public _Inline9635_3() {
       super();
     }
@@ -425,14 +418,12 @@ public class NamedTupleType_Editor extends DefaultNodeEditor {
       return editorCell;
     }
 
-
     private static boolean renderingCondition9635_1(SNode node, EditorContext editorContext, IScope scope) {
       return SLinkOperations.getCount(node, "typeVariableDeclaration") > 0;
     }
+  }
 
-}
   private static class parameterTypeListHandler_9635_0 extends RefNodeListHandler {
-
     public parameterTypeListHandler_9635_0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
@@ -479,10 +470,9 @@ public class NamedTupleType_Editor extends DefaultNodeEditor {
         return editorCell;
       }
     }
+  }
 
-}
   private static class componentListHandler_9635_0 extends RefNodeListHandler {
-
     public componentListHandler_9635_0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
@@ -522,7 +512,5 @@ public class NamedTupleType_Editor extends DefaultNodeEditor {
     public EditorCell createSeparatorCell(EditorContext editorContext) {
       return super.createSeparatorCell(editorContext);
     }
-
-}
-
+  }
 }

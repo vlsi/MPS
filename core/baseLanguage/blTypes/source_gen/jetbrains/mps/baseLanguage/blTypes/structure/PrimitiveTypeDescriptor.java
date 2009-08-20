@@ -75,7 +75,6 @@ public class PrimitiveTypeDescriptor extends BaseConcept implements INamedConcep
     this.insertChild(prev, PrimitiveTypeDescriptor.EXTENDS, node);
   }
 
-
   public static PrimitiveTypeDescriptor newInstance(SModel sm, boolean init) {
     return (PrimitiveTypeDescriptor)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.blTypes.structure.PrimitiveTypeDescriptor", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -83,5 +82,4 @@ public class PrimitiveTypeDescriptor extends BaseConcept implements INamedConcep
   public static PrimitiveTypeDescriptor newInstance(SModel sm) {
     return PrimitiveTypeDescriptor.newInstance(sm, false);
   }
-
 }

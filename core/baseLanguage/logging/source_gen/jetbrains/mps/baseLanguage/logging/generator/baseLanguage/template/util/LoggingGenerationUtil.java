@@ -10,12 +10,11 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.Language;
 
 public class LoggingGenerationUtil {
-
   public static SNode toPlus(List<SNode> textExpressions) {
     SNode result = null;
     if (ListSequence.fromList(textExpressions).isNotEmpty()) {
       result = SNodeOperations.copyNode(ListSequence.fromList(textExpressions).first());
-      for(SNode textExpression : ListSequence.fromList(textExpressions).skip(1)) {
+      for (SNode textExpression : ListSequence.fromList(textExpressions).skip(1)) {
         result = new _Quotations.QuotationClass_0().createNode(SNodeOperations.copyNode(textExpression), result);
       }
     }
@@ -25,5 +24,4 @@ public class LoggingGenerationUtil {
   public static boolean isDesignTimeModel(SModel sm) {
     return Language.isLanguageModel(sm);
   }
-
 }

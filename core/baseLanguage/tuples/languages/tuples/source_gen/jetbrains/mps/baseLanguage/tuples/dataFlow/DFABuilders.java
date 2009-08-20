@@ -6,11 +6,9 @@ import jetbrains.mps.lang.dataFlow.DataFlowBuilders;
 import jetbrains.mps.lang.dataFlow.DataFlowManager;
 
 public class DFABuilders extends DataFlowBuilders {
-
   public void install(DataFlowManager manager) {
     manager.register("jetbrains.mps.baseLanguage.tuples.structure.IndexedTupleLiteral", new IndexedTupleLiteral_DataFlow());
     manager.register("jetbrains.mps.baseLanguage.tuples.structure.NamedTupleLiteral", new NamedTupleLiteral_DataFlow());
     manager.register("jetbrains.mps.baseLanguage.tuples.structure.IndexedTupleMemberAccessExpression", new IndexedTupleMemberAccessExpression_DataFlow());
   }
-
 }

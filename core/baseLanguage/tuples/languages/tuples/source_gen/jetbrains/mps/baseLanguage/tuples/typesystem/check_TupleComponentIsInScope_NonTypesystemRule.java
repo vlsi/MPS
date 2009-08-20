@@ -15,13 +15,12 @@ import jetbrains.mps.typesystem.inference.NodeErrorTarget;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class check_TupleComponentIsInScope_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
-
   public check_TupleComponentIsInScope_NonTypesystemRule() {
   }
 
   public void applyRule(final SNode namedTupleLiteral, final TypeCheckingContext typeCheckingContext) {
     List<SNode> tupleComponents = SLinkOperations.getTargets(SLinkOperations.getTarget(namedTupleLiteral, "tupleDeclaration", false), "component", true);
-    for(SNode ref : SLinkOperations.getTargets(namedTupleLiteral, "componentRef", true)) {
+    for (SNode ref : SLinkOperations.getTargets(namedTupleLiteral, "componentRef", true)) {
       SNode tupleComponent = SLinkOperations.getTarget(ref, "componentDeclaration", false);
       if (!(ListSequence.fromList(tupleComponents).contains(tupleComponent))) {
         BaseIntentionProvider intentionProvider = null;
@@ -42,5 +41,4 @@ public class check_TupleComponentIsInScope_NonTypesystemRule extends AbstractNon
   public boolean overrides() {
     return false;
   }
-
 }

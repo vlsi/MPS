@@ -108,7 +108,6 @@ public class NamedTupleComponentDeclaration extends BaseConcept implements IVali
     this.insertChild(prev, NamedTupleComponentDeclaration.ANNOTATION, node);
   }
 
-
   public static NamedTupleComponentDeclaration newInstance(SModel sm, boolean init) {
     return (NamedTupleComponentDeclaration)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.tuples.structure.NamedTupleComponentDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -116,5 +115,4 @@ public class NamedTupleComponentDeclaration extends BaseConcept implements IVali
   public static NamedTupleComponentDeclaration newInstance(SModel sm) {
     return NamedTupleComponentDeclaration.newInstance(sm, false);
   }
-
 }

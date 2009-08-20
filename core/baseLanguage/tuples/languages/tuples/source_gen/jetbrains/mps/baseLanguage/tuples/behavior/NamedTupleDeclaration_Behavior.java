@@ -8,18 +8,16 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 public class NamedTupleDeclaration_Behavior {
-
   public static void init(SNode thisNode) {
   }
 
   public static String virtual_getPresentation_1213877396640(SNode thisNode) {
     StringBuilder sb = new StringBuilder(SConceptPropertyOperations.getString(thisNode, "leftBracket"));
     String sep = "";
-    for(SNode cmp : SLinkOperations.getTargets(thisNode, "component", true)) {
+    for (SNode cmp : SLinkOperations.getTargets(thisNode, "component", true)) {
       sb.append(sep).append(SPropertyOperations.getString(cmp, "name"));
       sep = ", ";
     }
     return sb.append(SConceptPropertyOperations.getString(thisNode, "rightBracket")).append(" ").append(SPropertyOperations.getString(thisNode, "nestedName")).toString();
   }
-
 }

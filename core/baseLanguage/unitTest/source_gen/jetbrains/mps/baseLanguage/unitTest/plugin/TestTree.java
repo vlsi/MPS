@@ -15,7 +15,6 @@ import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 
 public class TestTree extends MPSTree {
-
   private IOperationContext operationContext;
   private Map<SNode, List<SNode>> tests;
   private TestNameMap<TestCaseTreeNode, TestMethodTreeNode> map;
@@ -29,11 +28,11 @@ public class TestTree extends MPSTree {
   public MPSTreeNode rebuild() {
     MPSTreeNode root = new TextTreeNode("Tests");
     this.map.clear();
-    for(SNode testCase : SetSequence.fromSet(MapSequence.fromMap(this.tests).keySet())) {
+    for (SNode testCase : SetSequence.fromSet(MapSequence.fromMap(this.tests).keySet())) {
       TestCaseTreeNode testCaseTreeNode = new TestCaseTreeNode(this.operationContext, testCase);
       root.add(testCaseTreeNode);
       this.map.put(testCase, testCaseTreeNode);
-      for(SNode method : ListSequence.fromList(MapSequence.fromMap(this.tests).get(testCase))) {
+      for (SNode method : ListSequence.fromList(MapSequence.fromMap(this.tests).get(testCase))) {
         TestMethodTreeNode testMethodTreeNode = new TestMethodTreeNode(this.operationContext, method);
         testCaseTreeNode.add(testMethodTreeNode);
         this.map.put(testCase, method, testMethodTreeNode);
@@ -55,5 +54,4 @@ public class TestTree extends MPSTree {
   public TestMethodTreeNode get(String className, String methodName) {
     return this.map.get(className, methodName);
   }
-
 }

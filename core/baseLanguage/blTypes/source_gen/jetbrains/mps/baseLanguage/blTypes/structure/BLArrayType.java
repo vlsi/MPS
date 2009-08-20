@@ -61,7 +61,6 @@ public class BLArrayType extends BaseConcept implements INamedConcept {
     super.setReferent(BLArrayType.COMPONENT_TYPE, node);
   }
 
-
   public static BLArrayType newInstance(SModel sm, boolean init) {
     return (BLArrayType)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.blTypes.structure.BLArrayType", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -69,5 +68,4 @@ public class BLArrayType extends BaseConcept implements INamedConcept {
   public static BLArrayType newInstance(SModel sm) {
     return BLArrayType.newInstance(sm, false);
   }
-
 }
