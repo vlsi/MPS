@@ -22,6 +22,7 @@ import jetbrains.mps.lang.constraints.structure.ConceptConstraints;
 import jetbrains.mps.lang.core.structure.INamedConcept;
 import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
 import jetbrains.mps.lang.structure.structure.ConceptDeclaration;
+import jetbrains.mps.lang.structure.structure.LinkDeclaration;
 import jetbrains.mps.lang.typesystem.structure.RuntimeTypeVariable;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.nodeEditor.NodeReadAccessCaster;
@@ -30,6 +31,7 @@ import jetbrains.mps.project.IModule;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.reloading.ReloadAdapter;
 import jetbrains.mps.smodel.*;
+import jetbrains.mps.smodel.search.SModelSearchUtil;
 import jetbrains.mps.smodel.behaviour.BehaviorConstants;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.misc.StringBuilderSpinAllocator;
@@ -373,7 +375,19 @@ public class ModelConstraintsManager implements ApplicationComponent {
     });
   }
 
-  /*package*/ INodeReferentSearchScopeProvider getNodeDefaultSearchScopeProvider(AbstractConceptDeclaration referentConcept) {
+
+  /*package*/ INodeReferentSearchScopeProvider getNodeReferentSearchScopeProvider(AbstractConceptDeclaration nodeConcept, String referentRole) {
+    INodeReferentSearchScopeProvider result = null;
+    result = getNodeReferentSearchScopeProviderNonDefault(nodeConcept, referentRole);
+    if (result != null) {
+      return result;
+    }
+    LinkDeclaration linkDeclaration = SModelSearchUtil.findLinkDeclaration(nodeConcept, referentRole);
+    return getNodeDefaultSearchScopeProvider(linkDeclaration.getTarget());
+  }
+
+
+  private INodeReferentSearchScopeProvider getNodeDefaultSearchScopeProvider(AbstractConceptDeclaration referentConcept) {
     while (referentConcept != null) {
       Language l = SModelUtil_new.getDeclaringLanguage(referentConcept, GlobalScope.getInstance());
       if (!myAddedLanguageNamespaces.containsKey(l.getNamespace())) {
@@ -392,7 +406,7 @@ public class ModelConstraintsManager implements ApplicationComponent {
   /**
    * use the ModelConstraintsUtil.getSearchScope()
    */
-  /*package*/ INodeReferentSearchScopeProvider getNodeReferentSearchScopeProvider(AbstractConceptDeclaration nodeConcept, String referentRole) {
+  private INodeReferentSearchScopeProvider getNodeReferentSearchScopeProviderNonDefault(AbstractConceptDeclaration nodeConcept, String referentRole) {
     List<AbstractConceptDeclaration> hierarchy = SModelUtil_new.getConceptAndSuperConcepts(nodeConcept);
     for (AbstractConceptDeclaration concept : hierarchy) {
       Language l = SModelUtil_new.getDeclaringLanguage(concept, GlobalScope.getInstance());

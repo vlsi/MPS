@@ -82,23 +82,6 @@ public class Resolver {
     return referencesToSort;
   }
 
-  private static List<SNode> getSmartReferenceTargets(
-    final ConceptDeclaration referenceNodeConcept,
-    LinkDeclaration smartReference,
-    final SNode parentNode,
-    final IOperationContext context) {
-
-    // try to create referent-search-scope
-    SearchScopeStatus status = ModelConstraintsUtil.getSearchScope(parentNode, null, referenceNodeConcept, smartReference, context);
-    if (status.isError()) return new ArrayList<SNode>();
-
-    ISearchScope searchScope = status.getSearchScope();
-    final AbstractConceptDeclaration targetConcept = smartReference.getTarget();
-
-    List<SNode> referentNodes = searchScope.getNodes(new IsInstanceCondition(targetConcept));
-    return referentNodes;
-  }
-
   public static boolean resolve1(SReference reference, IOperationContext operationContext) {
     return resolve1(reference, operationContext, new ArrayList<ResolveResult>(), true);
   }

@@ -1084,5 +1084,29 @@
       </node>
     </node>
   </node>
+  <node type="jetbrains.mps.lang.constraints.structure.ConceptConstraints" id="625126330682991629">
+    <property name="package" value="CellModel" />
+    <link role="concept" targetNodeId="1.625126330682908270" resolveInfo="CellModel_RefererencePresentation" />
+    <node role="canBeChild" type="jetbrains.mps.lang.constraints.structure.ConstraintFunction_CanBeAChild" id="625126330682991630">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="625126330682991631">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="625126330682991632">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="625126330682991645">
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="625126330682991634">
+              <node role="operand" type="jetbrains.mps.lang.constraints.structure.ConstraintFunctionParameter_parentNode" id="625126330682991633" />
+              <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_GetAncestorOperation" id="625126330682991638">
+                <node role="parameter" type="jetbrains.mps.lang.smodel.structure.OperationParm_Concept" id="625126330682991639">
+                  <node role="conceptArgument" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" id="625126330682991642">
+                    <link role="conceptDeclaration" targetNodeId="1.1088013125922" resolveInfo="CellModel_RefCell" />
+                  </node>
+                </node>
+                <node role="parameter" type="jetbrains.mps.lang.smodel.structure.OperationParm_Inclusion" id="625126330682991644" />
+              </node>
+            </node>
+            <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_IsNotNullOperation" id="625126330682991649" />
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
 </model>
 

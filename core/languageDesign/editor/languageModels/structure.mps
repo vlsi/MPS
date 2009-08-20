@@ -4240,5 +4240,14 @@
       <link role="conceptPropertyDeclaration" targetNodeId="3.1137473891462" resolveInfo="alias" />
     </node>
   </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="625126330682908270">
+    <property name="package" value="CellModel" />
+    <property name="name" value="CellModel_ReferencePresentation" />
+    <link role="extends" targetNodeId="1073389214265" resolveInfo="EditorCellModel" />
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="625126330682991093">
+      <property name="value" value="ref. presentation" />
+      <link role="conceptPropertyDeclaration" targetNodeId="3.1137473891462" resolveInfo="alias" />
+    </node>
+  </node>
 </model>
 

@@ -102,27 +102,29 @@ public class ModelConstraintsUtil {
         false);
     }
 
-    // default search scope
-    if (linkTarget == null) {
-      LinkDeclaration linkDeclaration = SModelSearchUtil.findLinkDeclaration(referenceNodeConcept, linkRole);
-      if (linkDeclaration == null) {
-        throw new RuntimeException("couldn't find '" + linkRole + "' link declaration in concept " + referenceNodeConcept.getDebugText());
-      }
-      linkTarget = linkDeclaration.getTarget();
-    }
-
-    scopeProvider = ModelConstraintsManager.getInstance().getNodeDefaultSearchScopeProvider(linkTarget);
-    if (scopeProvider != null) {
-      ISearchScope searchScope = scopeProvider.createNodeReferentSearchScope(context, referentConstraintContext);
-      return newOK(searchScope,
-        scopeProvider.hasPresentation() ? new DefaultReferencPresentation(context, referentConstraintContext, scopeProvider) : null,
-        false);
-    }
-
     // global search scope
     ISearchScope searchScope = SModelSearchUtil.createModelAndImportedModelsScope(model, false, context.getScope());
     return newOK(searchScope, null, true);
   }
+
+  public static IReferencePresentation getPresentation(SNode enclosingNode, SNode referenceNode, AbstractConceptDeclaration referenceNodeConcept, LinkDeclaration referenceLinkDeclaration, IOperationContext context) {
+    String linkRole = SModelUtil_new.getGenuineLinkRole(referenceLinkDeclaration);
+    AbstractConceptDeclaration linkTarget = referenceLinkDeclaration.getTarget();    
+    final SModel model;
+    if (enclosingNode != null) {
+      model = enclosingNode.getModel();
+    } else if (referenceNode != null) {
+      model = referenceNode.getModel();
+      enclosingNode = referenceNode.getParent();
+    } else {
+      model = null;
+    }
+
+    INodeReferentSearchScopeProvider scopeProvider = ModelConstraintsManager.getInstance().getNodeReferentSearchScopeProvider(referenceNodeConcept, linkRole);
+    ReferentConstraintContext referentConstraintContext = new ReferentConstraintContext(model, enclosingNode, referenceNode, BaseAdapter.fromAdapter(linkTarget));
+    return new DefaultReferencPresentation(context, referentConstraintContext, scopeProvider);
+  }
+
 
   private static OK newOK(ISearchScope searchScope, IReferencePresentation presentation, boolean isDefault) {
     if (searchScope == null) {

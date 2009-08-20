@@ -58,6 +58,13 @@
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="6768994795311538071">
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="6768994795311538072">
             <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="6768994795311538073">
+              <link role="classifier" targetNodeId="4539702814067579805" resolveInfo="C" />
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1523109646032630167">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1523109646032630168">
+            <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1523109646032630169">
               <link role="classifier" targetNodeId="4539702814067579805" resolveInfo="A.B.C" />
             </node>
           </node>
@@ -76,14 +83,14 @@
           </node>
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="6775591514230454302">
-          <node role="expression" type="jetbrains.mps.baseLanguage.structure.ClassifierClassExpression" id="6775591514230454303">
-            <link role="classifier" targetNodeId="4539702814067579805" resolveInfo="A.B.C" />
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.ClassifierClassExpression" id="6030144364120816014">
+            <link role="classifier" targetNodeId="4539702814067580420" resolveInfo="A.B.C.D" />
           </node>
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="6775591514229982253">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="6775591514230191076">
-            <node role="operand" type="jetbrains.mps.baseLanguage.structure.ClassifierClassExpression" id="6775591514229985641">
-              <link role="classifier" targetNodeId="4539702814067579805" resolveInfo="C" />
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.ClassifierClassExpression" id="6941795974781981221">
+              <link role="classifier" targetNodeId="4539702814067580420" resolveInfo="A.B.C.D" />
             </node>
             <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="6775591514230197020">
               <link role="baseMethodDeclaration" targetNodeId="3.~Class.getName():java.lang.String" resolveInfo="getName" />
