@@ -11,9 +11,9 @@ import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 
-public class RestoreRangeSeletion_Test extends BaseTransformationTest {
+public class FieldDeletion_Test extends BaseTransformationTest {
   @Test
-  public void test_RestoreRangeSeletion() throws Throwable {
+  public void test_FieldDeletion() throws Throwable {
     this.initTest("${mps_home}/core/baseLanguage/baseLanguage/baseLanguage.mpr", "r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest)");
     this.runTest(this.getClass().getCanonicalName() + "$TestBody", "testMethod", false);
   }
@@ -24,7 +24,7 @@ public class RestoreRangeSeletion_Test extends BaseTransformationTest {
       SwingUtilities.invokeAndWait(new Runnable() {
         public void run() {
           try {
-            editorWrap[0] = TestBody.this.initEditor("1932269937152125077", "1932269937152125086");
+            editorWrap[0] = TestBody.this.initEditor("1267114898303352600", "1267114898303352606");
           } catch (Exception e) {
             e.printStackTrace();
           }
@@ -32,7 +32,7 @@ public class RestoreRangeSeletion_Test extends BaseTransformationTest {
       });
       final IEditor editor = editorWrap[0];
       EditorComponent editorComponent = editor.getCurrentEditorComponent();
-      BaseEditorTestBody.pressKeys(editorComponent, ListSequence.fromListAndArray(new ArrayList<String>(), " F5"));
+      BaseEditorTestBody.pressKeys(editorComponent, ListSequence.fromListAndArray(new ArrayList<String>(), "ctrl DELETE"));
       TestBody.this.finishTest();
     }
   }

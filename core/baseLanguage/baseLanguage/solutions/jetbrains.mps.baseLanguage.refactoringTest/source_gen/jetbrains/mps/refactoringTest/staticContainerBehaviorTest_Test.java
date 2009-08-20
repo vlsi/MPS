@@ -18,15 +18,13 @@ import junit.framework.Assert;
 import jetbrains.mps.lang.test.matcher.NodesMatcher;
 
 public class staticContainerBehaviorTest_Test extends BaseTransformationTest {
-
-  @Test()
+  @Test
   public void test_staticContainerBehaviorTest() throws Throwable {
     this.initTest("${mps_home}/core/baseLanguage/baseLanguage/baseLanguage.mpr", "r:4dc6ffb5-4bbb-4773-b0b7-e52989ceb56f(jetbrains.mps.refactoringTest)");
     this.runTest(this.getClass().getCanonicalName() + "$TestBody", "test_staticContainerBehaviorTest", true);
   }
 
   public static class TestBody extends BaseTestBody {
-
     public void test_staticContainerBehaviorTest() throws Exception {
       this.addNodeById("1230052684554");
       this.addNodeById("1230052684570");
@@ -46,7 +44,5 @@ public class staticContainerBehaviorTest_Test extends BaseTransformationTest {
       ref.doRefactor();
       Assert.assertEquals(null, NodesMatcher.matchNodes(ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("1230052684555"), "jetbrains.mps.lang.behavior.structure.ConceptBehavior"), SNodeOperations.cast(this.getNodeById("1230052684584"), "jetbrains.mps.lang.behavior.structure.ConceptBehavior")), ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("1230052684571"), "jetbrains.mps.lang.behavior.structure.ConceptBehavior"), SNodeOperations.cast(this.getNodeById("1230052684589"), "jetbrains.mps.lang.behavior.structure.ConceptBehavior"))));
     }
-
-}
-
+  }
 }

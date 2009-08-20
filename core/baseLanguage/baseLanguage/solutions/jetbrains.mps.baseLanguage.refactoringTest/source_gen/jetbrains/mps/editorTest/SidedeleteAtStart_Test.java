@@ -12,19 +12,16 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 
 public class SidedeleteAtStart_Test extends BaseTransformationTest {
-
-  @Test()
+  @Test
   public void test_SidedeleteAtStart() throws Throwable {
     this.initTest("${mps_home}/core/baseLanguage/baseLanguage/baseLanguage.mpr", "r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest)");
     this.runTest(this.getClass().getCanonicalName() + "$TestBody", "testMethod", false);
   }
 
   public static class TestBody extends BaseEditorTestBody {
-
     public void testMethod() throws Exception {
       final IEditor[] editorWrap = new IEditor[1];
       SwingUtilities.invokeAndWait(new Runnable() {
-
         public void run() {
           try {
             editorWrap[0] = TestBody.this.initEditor("1232625272299", "1232625278881");
@@ -38,7 +35,5 @@ public class SidedeleteAtStart_Test extends BaseTransformationTest {
       BaseEditorTestBody.pressKeys(editorComponent, ListSequence.fromListAndArray(new ArrayList<String>(), " BACK_SPACE"));
       TestBody.this.finishTest();
     }
-
-}
-
+  }
 }

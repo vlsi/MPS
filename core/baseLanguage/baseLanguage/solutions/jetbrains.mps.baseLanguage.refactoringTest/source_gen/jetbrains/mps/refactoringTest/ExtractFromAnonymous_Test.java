@@ -16,15 +16,13 @@ import junit.framework.Assert;
 import jetbrains.mps.lang.test.matcher.NodesMatcher;
 
 public class ExtractFromAnonymous_Test extends BaseTransformationTest {
-
-  @Test()
+  @Test
   public void test_ExtractFromAnonymous() throws Throwable {
     this.initTest("${mps_home}/core/baseLanguage/baseLanguage/baseLanguage.mpr", "r:4dc6ffb5-4bbb-4773-b0b7-e52989ceb56f(jetbrains.mps.refactoringTest)");
     this.runTest(this.getClass().getCanonicalName() + "$TestBody", "test_ExtractFromAnonymous", true);
   }
 
   public static class TestBody extends BaseTestBody {
-
     public void test_ExtractFromAnonymous() throws Exception {
       this.addNodeById("1230052406963");
       this.addNodeById("1230052406990");
@@ -34,7 +32,5 @@ public class ExtractFromAnonymous_Test extends BaseTransformationTest {
       ref.doRefactor();
       Assert.assertEquals(null, NodesMatcher.matchNodes(ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("1230052406964"), "jetbrains.mps.baseLanguage.structure.ClassConcept")), ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("1230052406991"), "jetbrains.mps.baseLanguage.structure.ClassConcept"))));
     }
-
-}
-
+  }
 }

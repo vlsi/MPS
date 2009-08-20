@@ -12,19 +12,16 @@ import java.awt.event.ActionListener;
 import javax.swing.KeyStroke;
 
 public class MovingNode_Test extends BaseTransformationTest {
-
-  @Test()
+  @Test
   public void test_MovingNode() throws Throwable {
     this.initTest("${mps_home}/core/baseLanguage/baseLanguage/baseLanguage.mpr", "r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest)");
     this.runTest(this.getClass().getCanonicalName() + "$TestBody", "testMethod", false);
   }
 
   public static class TestBody extends BaseEditorTestBody {
-
     public void testMethod() throws Exception {
       final IEditor[] editorWrap = new IEditor[1];
       SwingUtilities.invokeAndWait(new Runnable() {
-
         public void run() {
           try {
             editorWrap[0] = TestBody.this.initEditor("1452412866770394613", "1452412866770394617");
@@ -37,7 +34,6 @@ public class MovingNode_Test extends BaseTransformationTest {
       EditorComponent editorComponent = editor.getCurrentEditorComponent();
       final IEditor editorVar = editor;
       SwingUtilities.invokeAndWait(new Runnable() {
-
         public void run() {
           ActionListener actionListener = editorVar.getCurrentEditorComponent().getActionForKeyStroke(KeyStroke.getKeyStroke("alt DOWN"));
           actionListener.actionPerformed(null);
@@ -45,7 +41,5 @@ public class MovingNode_Test extends BaseTransformationTest {
       });
       TestBody.this.finishTest();
     }
-
-}
-
+  }
 }

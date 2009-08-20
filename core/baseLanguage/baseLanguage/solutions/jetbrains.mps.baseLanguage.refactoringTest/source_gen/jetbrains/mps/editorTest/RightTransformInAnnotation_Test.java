@@ -10,19 +10,16 @@ import javax.swing.SwingUtilities;
 import jetbrains.mps.nodeEditor.EditorComponent;
 
 public class RightTransformInAnnotation_Test extends BaseTransformationTest {
-
-  @Test()
+  @Test
   public void test_RightTransformInAnnotation() throws Throwable {
     this.initTest("${mps_home}/core/baseLanguage/baseLanguage/baseLanguage.mpr", "r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest)");
     this.runTest(this.getClass().getCanonicalName() + "$TestBody", "testMethod", false);
   }
 
   public static class TestBody extends BaseEditorTestBody {
-
     public void testMethod() throws Exception {
       final IEditor[] editorWrap = new IEditor[1];
       SwingUtilities.invokeAndWait(new Runnable() {
-
         public void run() {
           try {
             editorWrap[0] = TestBody.this.initEditor("1230224846076", "1230225066152");
@@ -36,7 +33,5 @@ public class RightTransformInAnnotation_Test extends BaseTransformationTest {
       BaseEditorTestBody.typeString(editorComponent, "+1");
       TestBody.this.finishTest();
     }
-
-}
-
+  }
 }

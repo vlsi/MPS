@@ -17,15 +17,13 @@ import junit.framework.Assert;
 import jetbrains.mps.lang.test.matcher.NodesMatcher;
 
 public class ConceptMethod_Test extends BaseTransformationTest {
-
-  @Test()
+  @Test
   public void test_conceptMethod() throws Throwable {
     this.initTest("${mps_home}/core/baseLanguage/baseLanguage/baseLanguage.mpr", "r:4dc6ffb5-4bbb-4773-b0b7-e52989ceb56f(jetbrains.mps.refactoringTest)");
     this.runTest(this.getClass().getCanonicalName() + "$TestBody", "test_conceptMethod", true);
   }
 
   public static class TestBody extends BaseTestBody {
-
     public void test_conceptMethod() throws Exception {
       this.addNodeById("1230052406798");
       this.addNodeById("1230052406829");
@@ -44,7 +42,5 @@ public class ConceptMethod_Test extends BaseTransformationTest {
     public void fff(ExtractMethodRefactoring ref) {
       ref.doRefactor();
     }
-
-}
-
+  }
 }

@@ -14,15 +14,13 @@ import java.util.ArrayList;
 import jetbrains.mps.smodel.SNode;
 
 public class InlineMethodInTest_Test extends BaseTransformationTest {
-
-  @Test()
+  @Test
   public void test_InlineMethodTest() throws Throwable {
     this.initTest("${mps_home}/core/baseLanguage/baseLanguage/baseLanguage.mpr", "r:4dc6ffb5-4bbb-4773-b0b7-e52989ceb56f(jetbrains.mps.refactoringTest)");
     this.runTest(this.getClass().getCanonicalName() + "$TestBody", "test_InlineMethodTest", true);
   }
 
   public static class TestBody extends BaseTestBody {
-
     public void test_InlineMethodTest() throws Exception {
       this.addNodeById("1230057984817");
       this.addNodeById("1230057984833");
@@ -30,7 +28,5 @@ public class InlineMethodInTest_Test extends BaseTransformationTest {
       ref.doRefactor();
       Assert.assertEquals(null, NodesMatcher.matchNodes(ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("1230057984818"), "jetbrains.mps.lang.test.structure.NodesTestCase")), ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("1230057984834"), "jetbrains.mps.lang.test.structure.NodesTestCase"))));
     }
-
-}
-
+  }
 }

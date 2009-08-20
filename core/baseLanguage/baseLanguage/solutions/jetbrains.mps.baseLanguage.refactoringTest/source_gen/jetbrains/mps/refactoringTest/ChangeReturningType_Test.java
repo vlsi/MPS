@@ -16,15 +16,13 @@ import java.util.ArrayList;
 import jetbrains.mps.smodel.SNode;
 
 public class ChangeReturningType_Test extends BaseTransformationTest {
-
-  @Test()
+  @Test
   public void test_ChangeReturningType() throws Throwable {
     this.initTest("${mps_home}/core/baseLanguage/baseLanguage/baseLanguage.mpr", "r:4dc6ffb5-4bbb-4773-b0b7-e52989ceb56f(jetbrains.mps.refactoringTest)");
     this.runTest(this.getClass().getCanonicalName() + "$TestBody", "test_ChangeReturningType", true);
   }
 
   public static class TestBody extends BaseTestBody {
-
     public void test_ChangeReturningType() throws Exception {
       this.addNodeById("1230052903027");
       this.addNodeById("1230052903036");
@@ -34,7 +32,5 @@ public class ChangeReturningType_Test extends BaseTransformationTest {
       ref.doRefactoring();
       Assert.assertEquals(null, NodesMatcher.matchNodes(ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("1230052903028"), "jetbrains.mps.baseLanguage.structure.ClassConcept")), ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("1230052903037"), "jetbrains.mps.baseLanguage.structure.ClassConcept"))));
     }
-
-}
-
+  }
 }

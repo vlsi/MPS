@@ -13,27 +13,25 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class ReturnStatement_Test extends BaseTransformationTest {
-
-  @Test()
+  @Test
   public void test_alwaysReturn() throws Throwable {
     this.initTest("${mps_home}/core/baseLanguage/baseLanguage/baseLanguage.mpr", "r:4dc6ffb5-4bbb-4773-b0b7-e52989ceb56f(jetbrains.mps.refactoringTest)");
     this.runTest(this.getClass().getCanonicalName() + "$TestBody", "test_alwaysReturn", true);
   }
 
-  @Test()
+  @Test
   public void test_retunInAnonymousClass() throws Throwable {
     this.initTest("${mps_home}/core/baseLanguage/baseLanguage/baseLanguage.mpr", "r:4dc6ffb5-4bbb-4773-b0b7-e52989ceb56f(jetbrains.mps.refactoringTest)");
     this.runTest(this.getClass().getCanonicalName() + "$TestBody", "test_retunInAnonymousClass", true);
   }
 
-  @Test()
+  @Test
   public void test_notAlwaysReturn() throws Throwable {
     this.initTest("${mps_home}/core/baseLanguage/baseLanguage/baseLanguage.mpr", "r:4dc6ffb5-4bbb-4773-b0b7-e52989ceb56f(jetbrains.mps.refactoringTest)");
     this.runTest(this.getClass().getCanonicalName() + "$TestBody", "test_notAlwaysReturn", true);
   }
 
   public static class TestBody extends BaseTestBody {
-
     public void test_alwaysReturn() throws Exception {
       this.addNodeById("1230052642345");
       Assert.assertNull(ExtractMethodFabric.getErrors(ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("1230052642367"), "jetbrains.mps.baseLanguage.structure.IfStatement"))));
@@ -49,7 +47,5 @@ public class ReturnStatement_Test extends BaseTransformationTest {
       this.addNodeById("1230052642345");
       Assert.assertTrue(ExtractMethodFabric.getErrors(ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("1230052642395"), "jetbrains.mps.baseLanguage.structure.IfStatement"))) != null);
     }
-
-}
-
+  }
 }

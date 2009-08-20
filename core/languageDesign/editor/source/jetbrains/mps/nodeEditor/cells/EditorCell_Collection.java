@@ -773,6 +773,15 @@ public class EditorCell_Collection extends EditorCell_Basic implements Iterable<
     }
   }
 
+  public void setAction(CellActionType type, EditorCellAction action) {
+    super.setAction(type, action);
+    for (EditorCell child: myEditorCells) {
+      if (child.getStyle().get(StyleAttributes.GET_PARENT_SUBSTITUDE_INFO)) {
+        child.setAction(type, action);
+      }
+    }
+  }
+
   class EditorCell_Brace extends EditorCell_Constant {
     public static final String OPENING_TEXT = "(";
     public static final String CLOSING_TEXT = ")";

@@ -14,15 +14,13 @@ import java.util.ArrayList;
 import jetbrains.mps.smodel.SNode;
 
 public class OneReturnWithNotVariableParameters_Test extends BaseTransformationTest {
-
-  @Test()
+  @Test
   public void test_OneReturnWithNotVariableParameters() throws Throwable {
     this.initTest("${mps_home}/core/baseLanguage/baseLanguage/baseLanguage.mpr", "r:4dc6ffb5-4bbb-4773-b0b7-e52989ceb56f(jetbrains.mps.refactoringTest)");
     this.runTest(this.getClass().getCanonicalName() + "$TestBody", "test_OneReturnWithNotVariableParameters", true);
   }
 
   public static class TestBody extends BaseTestBody {
-
     public void test_OneReturnWithNotVariableParameters() throws Exception {
       this.addNodeById("1230053073337");
       this.addNodeById("1230053073377");
@@ -30,7 +28,5 @@ public class OneReturnWithNotVariableParameters_Test extends BaseTransformationT
       ref.doRefactor();
       Assert.assertEquals(null, NodesMatcher.matchNodes(ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("1230053073338"), "jetbrains.mps.baseLanguage.structure.ClassConcept")), ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("1230053073378"), "jetbrains.mps.baseLanguage.structure.ClassConcept"))));
     }
-
-}
-
+  }
 }

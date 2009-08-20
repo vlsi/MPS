@@ -16,15 +16,13 @@ import junit.framework.Assert;
 import jetbrains.mps.lang.test.matcher.NodesMatcher;
 
 public class ExtractFromStatementWithReturnValue_Test extends BaseTransformationTest {
-
-  @Test()
+  @Test
   public void test_extractFromStatementWithReturnValue() throws Throwable {
     this.initTest("${mps_home}/core/baseLanguage/baseLanguage/baseLanguage.mpr", "r:4dc6ffb5-4bbb-4773-b0b7-e52989ceb56f(jetbrains.mps.refactoringTest)");
     this.runTest(this.getClass().getCanonicalName() + "$TestBody", "test_extractFromStatementWithReturnValue", true);
   }
 
   public static class TestBody extends BaseTestBody {
-
     public void test_extractFromStatementWithReturnValue() throws Exception {
       this.addNodeById("1230052641914");
       this.addNodeById("1230052641949");
@@ -34,7 +32,5 @@ public class ExtractFromStatementWithReturnValue_Test extends BaseTransformation
       ref.doRefactor();
       Assert.assertEquals(null, NodesMatcher.matchNodes(ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("1230052641915"), "jetbrains.mps.baseLanguage.structure.ClassConcept")), ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("1230052641966"), "jetbrains.mps.baseLanguage.structure.ClassConcept"))));
     }
-
-}
-
+  }
 }

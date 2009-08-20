@@ -17,19 +17,16 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 
 public class DefaultCellInfoTest_Test extends BaseTransformationTest {
-
-  @Test()
+  @Test
   public void test_DefaultCellInfoTest() throws Throwable {
     this.initTest("${mps_home}/core/baseLanguage/baseLanguage/baseLanguage.mpr", "r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest)");
     this.runTest(this.getClass().getCanonicalName() + "$TestBody", "testMethod", false);
   }
 
   public static class TestBody extends BaseEditorTestBody {
-
     public void testMethod() throws Exception {
       final IEditor[] editorWrap = new IEditor[1];
       SwingUtilities.invokeAndWait(new Runnable() {
-
         public void run() {
           try {
             editorWrap[0] = TestBody.this.initEditor("5560058483159205760", "5560058483159208304");
@@ -42,8 +39,7 @@ public class DefaultCellInfoTest_Test extends BaseTransformationTest {
       EditorComponent editorComponent = editor.getCurrentEditorComponent();
       IOperationContext operationContext = editor.getCurrentEditorComponent().getOperationContext();
       EditorComponent inspector = operationContext.getComponent(InspectorTool.class).getInspector();
-      EditorCell editorCell = inspector.getRootCell().getFirstLeaf(new Condition <EditorCell>() {
-
+      EditorCell editorCell = inspector.getRootCell().getFirstLeaf(new Condition<EditorCell>() {
         public boolean met(EditorCell c) {
           return c instanceof EditorCell_Error;
         }
@@ -52,7 +48,5 @@ public class DefaultCellInfoTest_Test extends BaseTransformationTest {
       BaseEditorTestBody.pressKeys(editorComponent, ListSequence.fromListAndArray(new ArrayList<String>(), " LEFT"));
       TestBody.this.finishTest();
     }
-
-}
-
+  }
 }

@@ -10,19 +10,16 @@ import javax.swing.SwingUtilities;
 import jetbrains.mps.nodeEditor.EditorComponent;
 
 public class IntentionTest_Test extends BaseTransformationTest {
-
-  @Test()
+  @Test
   public void test_IntentionTest() throws Throwable {
     this.initTest("${mps_home}/core/baseLanguage/baseLanguage/baseLanguage.mpr", "r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest)");
     this.runTest(this.getClass().getCanonicalName() + "$TestBody", "testMethod", false);
   }
 
   public static class TestBody extends BaseEditorTestBody {
-
     public void testMethod() throws Exception {
       final IEditor[] editorWrap = new IEditor[1];
       SwingUtilities.invokeAndWait(new Runnable() {
-
         public void run() {
           try {
             editorWrap[0] = TestBody.this.initEditor("1230132506154", "1230132540710");
@@ -36,7 +33,5 @@ public class IntentionTest_Test extends BaseTransformationTest {
       BaseEditorTestBody.invokeIntention("jetbrains.mps.baseLanguage.intentions.DeprecatedJavaDoc_Intention", editor, this.myStart.getNode());
       TestBody.this.finishTest();
     }
-
-}
-
+  }
 }

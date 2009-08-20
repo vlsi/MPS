@@ -16,15 +16,13 @@ import java.util.ArrayList;
 import jetbrains.mps.smodel.SNode;
 
 public class ChangeMethodName_Test extends BaseTransformationTest {
-
-  @Test()
+  @Test
   public void test_ChangeMethodName() throws Throwable {
     this.initTest("${mps_home}/core/baseLanguage/baseLanguage/baseLanguage.mpr", "r:4dc6ffb5-4bbb-4773-b0b7-e52989ceb56f(jetbrains.mps.refactoringTest)");
     this.runTest(this.getClass().getCanonicalName() + "$TestBody", "test_ChangeMethodName", true);
   }
 
   public static class TestBody extends BaseTestBody {
-
     public void test_ChangeMethodName() throws Exception {
       this.addNodeById("1230052902978");
       this.addNodeById("1230052902987");
@@ -34,7 +32,5 @@ public class ChangeMethodName_Test extends BaseTransformationTest {
       ref.doRefactoring();
       Assert.assertEquals(null, NodesMatcher.matchNodes(ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("1230052902979"), "jetbrains.mps.baseLanguage.structure.ClassConcept")), ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("1230052902988"), "jetbrains.mps.baseLanguage.structure.ClassConcept"))));
     }
-
-}
-
+  }
 }

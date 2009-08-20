@@ -17,15 +17,13 @@ import junit.framework.Assert;
 import jetbrains.mps.lang.test.matcher.NodesMatcher;
 
 public class ChangeSignatureOfStaticMethod_Test extends BaseTransformationTest {
-
-  @Test()
+  @Test
   public void test_ChangeSignatureOfStaticMethod() throws Throwable {
     this.initTest("${mps_home}/core/baseLanguage/baseLanguage/baseLanguage.mpr", "r:4dc6ffb5-4bbb-4773-b0b7-e52989ceb56f(jetbrains.mps.refactoringTest)");
     this.runTest(this.getClass().getCanonicalName() + "$TestBody", "test_ChangeSignatureOfStaticMethod", true);
   }
 
   public static class TestBody extends BaseTestBody {
-
     public void test_ChangeSignatureOfStaticMethod() throws Exception {
       this.addNodeById("1230052903079");
       this.addNodeById("1230052903110");
@@ -43,7 +41,5 @@ public class ChangeSignatureOfStaticMethod_Test extends BaseTransformationTest {
       ref.doRefactoring();
       Assert.assertEquals(null, NodesMatcher.matchNodes(ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("1230052903080"), "jetbrains.mps.baseLanguage.structure.ClassConcept")), ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("1230052903111"), "jetbrains.mps.baseLanguage.structure.ClassConcept"))));
     }
-
-}
-
+  }
 }

@@ -14,15 +14,13 @@ import java.util.ArrayList;
 import jetbrains.mps.smodel.SNode;
 
 public class InlineWithoutDeclarationDeletion_Test extends BaseTransformationTest {
-
-  @Test()
+  @Test
   public void test_inlineWithoutDeclarationDeletion() throws Throwable {
     this.initTest("${mps_home}/core/baseLanguage/baseLanguage/baseLanguage.mpr", "r:4dc6ffb5-4bbb-4773-b0b7-e52989ceb56f(jetbrains.mps.refactoringTest)");
     this.runTest(this.getClass().getCanonicalName() + "$TestBody", "test_inlineWithoutDeclarationDeletion", true);
   }
 
   public static class TestBody extends BaseTestBody {
-
     public void test_inlineWithoutDeclarationDeletion() throws Exception {
       this.addNodeById("1230053266583");
       this.addNodeById("1230053266604");
@@ -30,7 +28,5 @@ public class InlineWithoutDeclarationDeletion_Test extends BaseTransformationTes
       ref.doRefactoring();
       Assert.assertEquals(null, NodesMatcher.matchNodes(ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("1230053266584"), "jetbrains.mps.baseLanguage.structure.ClassConcept")), ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("1230053266605"), "jetbrains.mps.baseLanguage.structure.ClassConcept"))));
     }
-
-}
-
+  }
 }

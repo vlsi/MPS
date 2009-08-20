@@ -17,15 +17,13 @@ import jetbrains.mps.baseLanguage.plugin.ExtractMethodWithReturn;
 import jetbrains.mps.lang.test.matcher.NodesMatcher;
 
 public class ExtractDifferentReturns_Test extends BaseTransformationTest {
-
-  @Test()
+  @Test
   public void test_extractDifferentReturns() throws Throwable {
     this.initTest("${mps_home}/core/baseLanguage/baseLanguage/baseLanguage.mpr", "r:4dc6ffb5-4bbb-4773-b0b7-e52989ceb56f(jetbrains.mps.refactoringTest)");
     this.runTest(this.getClass().getCanonicalName() + "$TestBody", "test_extractDifferentReturns", true);
   }
 
   public static class TestBody extends BaseTestBody {
-
     public void test_extractDifferentReturns() throws Exception {
       this.addNodeById("1230052641812");
       this.addNodeById("1230052641841");
@@ -36,7 +34,5 @@ public class ExtractDifferentReturns_Test extends BaseTransformationTest {
       ref.doRefactor();
       Assert.assertEquals(null, NodesMatcher.matchNodes(ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("1230052641813"), "jetbrains.mps.baseLanguage.structure.ClassConcept")), ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("1230052641842"), "jetbrains.mps.baseLanguage.structure.ClassConcept"))));
     }
-
-}
-
+  }
 }

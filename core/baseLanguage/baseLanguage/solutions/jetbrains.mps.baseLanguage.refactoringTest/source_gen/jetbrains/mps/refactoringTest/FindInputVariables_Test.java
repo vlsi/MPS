@@ -15,15 +15,13 @@ import jetbrains.mps.baseLanguage.plugin.MethodParameter;
 import junit.framework.Assert;
 
 public class FindInputVariables_Test extends BaseTransformationTest {
-
-  @Test()
+  @Test
   public void test_inputVariablesTest() throws Throwable {
     this.initTest("${mps_home}/core/baseLanguage/baseLanguage/baseLanguage.mpr", "r:4dc6ffb5-4bbb-4773-b0b7-e52989ceb56f(jetbrains.mps.refactoringTest)");
     this.runTest(this.getClass().getCanonicalName() + "$TestBody", "test_inputVariablesTest", true);
   }
 
   public static class TestBody extends BaseTestBody {
-
     public void test_inputVariablesTest() throws Exception {
       this.addNodeById("1230052444310");
       ExtractMethodRefactoringAnalyzer a = new ExtractMethodRefactoringAnalyzer(ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("1230052444319"), "jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement"), SNodeOperations.cast(this.getNodeById("1230052444324"), "jetbrains.mps.baseLanguage.structure.ExpressionStatement"), SNodeOperations.cast(this.getNodeById("1230052444331"), "jetbrains.mps.baseLanguage.structure.ExpressionStatement")));
@@ -31,7 +29,5 @@ public class FindInputVariables_Test extends BaseTransformationTest {
       Assert.assertEquals(1, ListSequence.fromList(vars).count());
       Assert.assertEquals(SNodeOperations.cast(this.getNodeById("1230052444315"), "jetbrains.mps.baseLanguage.structure.ParameterDeclaration"), ListSequence.fromList(vars).first().getDeclaration());
     }
-
-}
-
+  }
 }
