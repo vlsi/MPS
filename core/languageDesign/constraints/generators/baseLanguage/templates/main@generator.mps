@@ -330,6 +330,12 @@
         <link role="template" targetNodeId="7.1143148725345" resolveInfo="reduce_ConceptFunctionParameter_default" />
       </node>
     </node>
+    <node role="reductionMappingRule" type="jetbrains.mps.lang.generator.structure.Reduction_MappingRule" id="4590747232508839732">
+      <link role="applicableConcept" targetNodeId="11.4590747232508808445" resolveInfo="ConstraintFunctionParameter_inEditor" />
+      <node role="ruleConsequence" type="jetbrains.mps.lang.generator.structure.TemplateDeclarationReference" id="4590747232508844438">
+        <link role="template" targetNodeId="7.1143148725345" resolveInfo="reduce_ConceptFunctionParameter_default" />
+      </node>
+    </node>
     <node role="rootMappingRule" type="jetbrains.mps.lang.generator.structure.Root_MappingRule" id="1213106258530">
       <link role="applicableConcept" targetNodeId="11.1213093968558" resolveInfo="ConceptConstraints" />
       <link role="template" targetNodeId="1213106217514" resolveInfo="ConstraintsClass" />

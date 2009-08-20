@@ -339,6 +339,26 @@
       </node>
       <node role="presentation" type="jetbrains.mps.lang.constraints.structure.ConstraintFunction_ReferentSearchScope_Presentation" id="6768994795311763304">
         <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="6768994795311763305">
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="4590747232508931369">
+            <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="4590747232508931370">
+              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="3277551044807234553">
+                <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="3277551044807234555">
+                  <node role="operand" type="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" id="3277551044807234556">
+                    <link role="concept" targetNodeId="1.1107461130800" resolveInfo="Classifier" />
+                    <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="3277551044807234557">
+                      <node role="operand" type="jetbrains.mps.lang.constraints.structure.ConstraintFunctionParameter_parameterNode" id="3277551044807234558" />
+                      <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_GetParentOperation" id="3277551044807234559" />
+                    </node>
+                  </node>
+                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="3277551044807234560">
+                    <link role="baseMethodDeclaration" targetNodeId="50.8540045600162183880" resolveInfo="getNestedNameInContext" />
+                    <node role="actualArgument" type="jetbrains.mps.lang.constraints.structure.ConceptParameter_ReferentSearchScope_enclosingNode" id="3277551044807234561" />
+                  </node>
+                </node>
+              </node>
+            </node>
+            <node role="condition" type="jetbrains.mps.lang.constraints.structure.ConstraintFunctionParameter_inEditor" id="4590747232508931373" />
+          </node>
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="6768994795311763323">
             <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="6768994795311911180">
               <node role="operand" type="jetbrains.mps.lang.constraints.structure.ConstraintFunctionParameter_parameterNode" id="6768994795311763324" />

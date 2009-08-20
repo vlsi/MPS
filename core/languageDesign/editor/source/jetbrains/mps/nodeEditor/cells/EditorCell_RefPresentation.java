@@ -2,11 +2,9 @@ package jetbrains.mps.nodeEditor.cells;
 
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.constraints.IReferencePresentation;
-import jetbrains.mps.smodel.constraints.ModelConstraintsManager;
 import jetbrains.mps.smodel.constraints.ModelConstraintsUtil;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.util.EqualUtil;
-import jetbrains.mps.lang.structure.structure.LinkDeclaration;
 
 public class EditorCell_RefPresentation {
 
@@ -58,7 +56,7 @@ public class EditorCell_RefPresentation {
         myContextCell.getEditorContext().getOperationContext()
       );
 
-      return presentation.getText(referenceTarget, true, false);
+      return presentation.getText(referenceTarget, true, false, true);
     }
 
     public void setText(String text) {

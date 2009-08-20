@@ -38,13 +38,10 @@ import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.Condition;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.QueryMethodGenerated;
-import jetbrains.mps.project.IModule;
 import org.jetbrains.annotations.NotNull;
 
 import javax.swing.Icon;
 import java.util.*;
-import java.awt.Font;
-import java.awt.event.KeyEvent;
 
 /**
  * Igor Alshannikov
@@ -479,7 +476,7 @@ public class ChildSubstituteActionsHelper {
     public String getMatchingText(String pattern) {
       if (myMatchingText == null) {
         if (myPresentation != null) {
-          myMatchingText = myPresentation.getText(myReferentNode, false, true);
+          myMatchingText = myPresentation.getText(myReferentNode, false, true, false);
         } else {
           myMatchingText = getSmartMatchingText(myReferenceNodeConcept, myReferentNode, false);
         }
@@ -490,7 +487,7 @@ public class ChildSubstituteActionsHelper {
     public String getVisibleMatchingText(String pattern) {
       if (myVisibleMatchingText == null) {
         if (myPresentation != null) {
-          myVisibleMatchingText = myPresentation.getText(myReferentNode, true, true);
+          myVisibleMatchingText = myPresentation.getText(myReferentNode, true, true, false);
         } else {
           myVisibleMatchingText = getSmartMatchingText(myReferenceNodeConcept, myReferentNode, true);
         }

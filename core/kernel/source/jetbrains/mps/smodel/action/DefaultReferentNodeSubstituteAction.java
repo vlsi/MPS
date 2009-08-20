@@ -30,7 +30,6 @@ import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.util.CollectionUtil;
 
 import javax.swing.Icon;
-import java.awt.Font;
 
 /**
  * Igor Alshannikov
@@ -53,7 +52,7 @@ public class DefaultReferentNodeSubstituteAction extends AbstractNodeSubstituteA
 
   public String getMatchingText(String pattern) {
     if (myPresentation != null) {
-      return myPresentation.getText((SNode) getParameterObject(), false, false);
+      return myPresentation.getText((SNode) getParameterObject(), false, false, false);
     }
 
     return getMatchingText(pattern, true, false);
@@ -61,7 +60,7 @@ public class DefaultReferentNodeSubstituteAction extends AbstractNodeSubstituteA
 
   public String getVisibleMatchingText(String pattern) {
     if (myPresentation != null) {
-      return myPresentation.getText((SNode) getParameterObject(), true, false);
+      return myPresentation.getText((SNode) getParameterObject(), true, false, false);
     }
 
     return getMatchingText(pattern, true, true);

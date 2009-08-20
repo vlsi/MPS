@@ -4533,6 +4533,10 @@
       <link role="conceptLinkDeclaration" targetNodeId="3.1161119487665" resolveInfo="applicableConceptFunctionParameter" />
       <link role="target" targetNodeId="6768994795311967741" resolveInfo="ConstraintFunctionParameter_smartReference" />
     </node>
+    <node role="conceptLink" type="jetbrains.mps.lang.structure.structure.ReferenceConceptLink" id="4590747232508808452">
+      <link role="conceptLinkDeclaration" targetNodeId="3.1161119487665" resolveInfo="applicableConceptFunctionParameter" />
+      <link role="target" targetNodeId="4590747232508808445" resolveInfo="ConstraintFunctionParameter_inEditor" />
+    </node>
     <node role="conceptLink" type="jetbrains.mps.lang.structure.structure.AggregationConceptLink" id="3906442776579944409">
       <link role="conceptLinkDeclaration" targetNodeId="3.1137545148427" resolveInfo="conceptFunctionReturnType" />
       <node role="target" type="jetbrains.mps.baseLanguage.structure.StringType" id="3906442776579944411" />
@@ -4576,6 +4580,22 @@
     <node role="conceptLink" type="jetbrains.mps.lang.structure.structure.AggregationConceptLink" id="6768994795311967744">
       <link role="conceptLinkDeclaration" targetNodeId="3.1137545963098" resolveInfo="conceptFunctionParameterType" />
       <node role="target" type="jetbrains.mps.baseLanguage.structure.BooleanType" id="6768994795311967745" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="4590747232508808445">
+    <property name="package" value="Parameters" />
+    <property name="name" value="ConstraintFunctionParameter_inEditor" />
+    <link role="extends" targetNodeId="3.1107135704075" resolveInfo="ConceptFunctionParameter" />
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="4590747232508808446">
+      <property name="value" value="inEditor" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" resolveInfo="alias" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.BooleanConceptProperty" id="4590747232508808447">
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473994950" resolveInfo="dontSubstituteByDefault" />
+    </node>
+    <node role="conceptLink" type="jetbrains.mps.lang.structure.structure.AggregationConceptLink" id="4590747232508808448">
+      <link role="conceptLinkDeclaration" targetNodeId="3.1137545963098" resolveInfo="conceptFunctionParameterType" />
+      <node role="target" type="jetbrains.mps.baseLanguage.structure.BooleanType" id="4590747232508808449" />
     </node>
   </node>
 </model>

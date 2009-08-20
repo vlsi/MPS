@@ -7,13 +7,15 @@ public class PresentationReferentConstraintContext extends ReferentConstraintCon
   private SNode myParameterNode;
   private boolean myVisible;
   private boolean mySmartReference;
+  private boolean myInEditor;
 
   public PresentationReferentConstraintContext(SModel model, SNode enclosingNode,
-                                               SNode referenceNode, SNode linkTarget, SNode parameterNode, boolean visible, boolean smartRef) {
+                                               SNode referenceNode, SNode linkTarget, SNode parameterNode, boolean visible, boolean smartRef, boolean inEditor) {
     super(model, enclosingNode, referenceNode, linkTarget);
     myParameterNode = parameterNode;
     myVisible = visible;
     mySmartReference = smartRef;
+    myInEditor = inEditor;
   }
 
   public SNode getParameterNode() {
@@ -26,5 +28,9 @@ public class PresentationReferentConstraintContext extends ReferentConstraintCon
 
   public boolean getSmartReference() {
     return mySmartReference;
+  }
+
+  public boolean getInEditor() {
+    return myInEditor;
   }
 }

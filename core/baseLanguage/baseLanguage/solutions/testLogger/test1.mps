@@ -48,17 +48,10 @@
             </node>
           </node>
         </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="6768994795311559208">
-          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="6768994795311559209">
-            <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="6768994795311559210">
-              <link role="classifier" targetNodeId="4539702814067580420" resolveInfo="D" />
-            </node>
-          </node>
-        </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="6768994795311538071">
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="6768994795311538072">
-            <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="6768994795311538073">
-              <link role="classifier" targetNodeId="4539702814067579805" resolveInfo="C" />
+            <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="4590747232508780480">
+              <link role="classifier" targetNodeId="1191319992725" resolveInfo="A" />
             </node>
           </node>
         </node>
@@ -76,8 +69,8 @@
               <link role="classifier" targetNodeId="4539702814067579805" resolveInfo="C" />
             </node>
             <node role="initializer" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="6768994795311680833">
-              <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="6768994795311821277">
-                <link role="baseMethodDeclaration" targetNodeId="4539702814067580422" resolveInfo="D" />
+              <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="3277551044807289641">
+                <link role="baseMethodDeclaration" targetNodeId="4539702814067579807" resolveInfo="A.B.C" />
               </node>
             </node>
           </node>
@@ -121,6 +114,14 @@
         <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="4539702814067105039" />
         <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="4539702814067105040" />
         <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="4539702814067105041">
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="4590747232508780485">
+            <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="4590747232508780486">
+              <property name="name" value="abcdef" />
+              <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="4590747232508780487">
+                <link role="classifier" targetNodeId="4539702814067579805" resolveInfo="C" />
+              </node>
+            </node>
+          </node>
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="8533578990689130295">
             <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="8533578990689130296">
               <property name="name" value="c" />
