@@ -109,5 +109,8 @@
   <nodeInfo nodeId="353793545802854960" fileName="PathReference_Behavior.java" startLine="40" startPosition="199" endLine="41" endPosition="152" />
   <nodeInfo nodeId="353793545802854985" fileName="PathReference_Behavior.java" startLine="45" startPosition="5" endLine="46" endPosition="16" />
   <nodeInfo nodeId="353793545802854994" fileName="PathReference_Behavior.java" startLine="49" startPosition="77" endLine="50" endPosition="82" />
+  <nodeInfo nodeId="373392210222778369" fileName="CustomNestedDeclaration_Behavior.java" startLine="15" startPosition="79" endLine="16" endPosition="166" />
+  <nodeInfo nodeId="373392210222778396" fileName="CustomNestedDeclaration_Behavior.java" startLine="19" startPosition="118" endLine="20" endPosition="154" />
+  <nodeInfo nodeId="373392210222912031" fileName="CustomNestedDeclaration_Behavior.java" startLine="11" startPosition="43" endLine="12" endPosition="64" />
 </debugInfo>
 
