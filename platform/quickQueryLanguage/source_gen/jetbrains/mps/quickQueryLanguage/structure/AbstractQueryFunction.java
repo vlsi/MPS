@@ -22,5 +22,4 @@ public class AbstractQueryFunction extends ConceptFunction {
   public static AbstractQueryFunction newInstance(SModel sm) {
     return AbstractQueryFunction.newInstance(sm, false);
   }
-
 }

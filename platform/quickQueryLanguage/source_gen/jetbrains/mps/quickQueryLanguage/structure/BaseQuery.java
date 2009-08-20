@@ -34,7 +34,6 @@ public class BaseQuery extends BaseConcept {
     super.setChild(BaseQuery.CONDITION, node);
   }
 
-
   public static BaseQuery newInstance(SModel sm, boolean init) {
     return (BaseQuery)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.quickQueryLanguage.structure.BaseQuery", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -42,5 +41,4 @@ public class BaseQuery extends BaseConcept {
   public static BaseQuery newInstance(SModel sm) {
     return BaseQuery.newInstance(sm, false);
   }
-
 }

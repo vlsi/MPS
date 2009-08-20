@@ -15,7 +15,6 @@ public class IntLiteral extends PropertyValueExpression {
     super(node);
   }
 
-
   public int getValue() {
     return this.getIntegerProperty(IntLiteral.VALUE);
   }

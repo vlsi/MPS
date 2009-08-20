@@ -21,5 +21,4 @@ public class GIndent extends GItem {
   public static GIndent newInstance(SModel sm) {
     return GIndent.newInstance(sm, false);
   }
-
 }

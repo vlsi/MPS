@@ -19,7 +19,6 @@ public class Enum extends BaseConcept {
     super(node);
   }
 
-
   public int getConstantsesCount() {
     return this.getChildCount(Enum.CONSTANTS);
   }

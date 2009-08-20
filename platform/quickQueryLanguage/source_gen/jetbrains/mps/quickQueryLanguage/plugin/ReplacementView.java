@@ -30,7 +30,6 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 
 public class ReplacementView {
-
   private UsagesView myUsagesView;
   private RunReplacement_Tool myTool;
   private JPanel myMainPanel = new JPanel(new BorderLayout());
@@ -39,21 +38,18 @@ public class ReplacementView {
   public ReplacementView(RunReplacement_Tool tool, final MPSProject project, IResultProvider provider, SearchQuery searchQuery, final Query query) {
     this.myTool = tool;
     this.myUsagesView = new UsagesView(project, new ViewOptions()) {
-
       public void close() {
         ReplacementView.this.myTool.closeTab(ReplacementView.this);
       }
     };
     JPanel buttonPanel = new JPanel(new FlowLayout(FlowLayout.LEFT));
     this.myButton.addActionListener(new ActionListener() {
-
       public void actionPerformed(ActionEvent event) {
         ModelAccess.instance().runWriteActionInCommand(new Runnable() {
-
           public void run() {
             try {
               List<SNode> replaceNodes = ReplacementView.this.getExecuteResult(ReplacementView.this.myUsagesView.getIncludedResultNodes());
-              for(SNode node : replaceNodes) {
+              for (SNode node : replaceNodes) {
                 query.doReplace(node);
               }
               JOptionPane.showMessageDialog(null, "Modify completed successfully", "Information", JOptionPane.INFORMATION_MESSAGE);
@@ -69,11 +65,9 @@ public class ReplacementView {
     this.myMainPanel.add(buttonPanel, BorderLayout.SOUTH);
     this.myMainPanel.add(this.myUsagesView.getComponent(), BorderLayout.CENTER);
     SwingUtilities.invokeLater(new Runnable() {
-
       public void run() {
         ProgressManager.getInstance().run(new Task.Modal(project.getComponent(Project.class), "Searching", true) {
-
-          public void run(@NotNull() ProgressIndicator indicator) {
+          public void run(@NotNull ProgressIndicator indicator) {
             indicator.setIndeterminate(true);
             ReplacementView.this.myUsagesView.run(indicator);
           }
@@ -88,10 +82,9 @@ public class ReplacementView {
 
   public List<SNode> getExecuteResult(List<SNodePointer> nodes) {
     List<SNode> results = ListSequence.fromList(new ArrayList<SNode>());
-    for(SNodePointer nodePointer : nodes) {
+    for (SNodePointer nodePointer : nodes) {
       ListSequence.fromList(results).addElement(nodePointer.getNode());
     }
     return results;
   }
-
 }

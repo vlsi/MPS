@@ -23,7 +23,6 @@ public class ReplaceModelQuery extends BaseQuery {
     super.setChild(ReplaceModelQuery.REPLACE, node);
   }
 
-
   public static ReplaceModelQuery newInstance(SModel sm, boolean init) {
     return (ReplaceModelQuery)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.quickQueryLanguage.structure.ReplaceModelQuery", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -31,5 +30,4 @@ public class ReplaceModelQuery extends BaseQuery {
   public static ReplaceModelQuery newInstance(SModel sm) {
     return ReplaceModelQuery.newInstance(sm, false);
   }
-
 }

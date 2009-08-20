@@ -24,7 +24,6 @@ public class GStatementItem extends GItem {
     super.setChild(GStatementItem.STATEMENT_LIST, node);
   }
 
-
   public static GStatementItem newInstance(SModel sm, boolean init) {
     return (GStatementItem)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.gtext.structure.GStatementItem", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -32,5 +31,4 @@ public class GStatementItem extends GItem {
   public static GStatementItem newInstance(SModel sm) {
     return GStatementItem.newInstance(sm, false);
   }
-
 }

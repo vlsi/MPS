@@ -64,7 +64,6 @@ public class GItemList extends GItem implements GCompositeItem {
     this.insertChild(prev, GItemList.ITEM, node);
   }
 
-
   public static GItemList newInstance(SModel sm, boolean init) {
     return (GItemList)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.gtext.structure.GItemList", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -72,5 +71,4 @@ public class GItemList extends GItem implements GCompositeItem {
   public static GItemList newInstance(SModel sm) {
     return GItemList.newInstance(sm, false);
   }
-
 }

@@ -32,7 +32,6 @@ import jetbrains.mps.ide.findusages.view.UsagesViewTool;
 import jetbrains.mps.ide.findusages.view.FindUtils;
 
 public class FindInstancesDialog extends BaseDialog {
-
   private JPanel myPanel = new JPanel(new BorderLayout());
   private IOperationContext myContext;
   private EmbeddableEditor myEditor;
@@ -45,7 +44,6 @@ public class FindInstancesDialog extends BaseDialog {
     this.setSize(new Dimension(500, 500));
     this.setModal(false);
     ModelAccess.instance().runWriteActionInCommand(new Runnable() {
-
       public void run() {
         FindInstancesDialog.this.myNode = SConceptOperations.createNewNode("jetbrains.mps.quickQueryLanguage.structure.ModelQuery", null);
         SNode statementList = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.StatementList", null);
@@ -60,19 +58,17 @@ public class FindInstancesDialog extends BaseDialog {
     });
     final Wrappers._T<List<Language>> languageList = new Wrappers._T<List<Language>>();
     ModelAccess.instance().runReadAction(new Runnable() {
-
       public void run() {
         languageList.value = language.getAllExtendedLanguages();
       }
     });
-    for(Language extendedLanguage : languageList.value) {
+    for (Language extendedLanguage : languageList.value) {
       this.myEditor.addLanguageStructureModel(extendedLanguage);
     }
     this.myPanel.add(this.myEditor.getComponenet(), BorderLayout.CENTER);
     this.myEditor.addLanguageStructureModel(BootstrapLanguages.collectionsLanguage());
     this.myEditor.addLanguageStructureModel(language);
     ModelAccess.instance().runReadAction(new Runnable() {
-
       public void run() {
         FindInstancesDialog.this.myScope = new ScopeEditor(new ScopeOptions());
         FindInstancesDialog.this.myPanel.add(FindInstancesDialog.this.myScope.getComponent(), BorderLayout.SOUTH);
@@ -86,7 +82,6 @@ public class FindInstancesDialog extends BaseDialog {
 
   public void setConceptDeclaration(final SNode declaration) {
     ModelAccess.instance().runWriteActionInCommand(new Runnable() {
-
       public void run() {
         SLinkOperations.setTarget(FindInstancesDialog.this.myNode, "conceptDeclaration", SNodeOperations.cast(declaration, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration"), false);
       }
@@ -102,7 +97,6 @@ public class FindInstancesDialog extends BaseDialog {
       final Query query = (Query)Class.forName(fqName, true, loader).newInstance();
       final IScope scope = this.myScope.getOptions().getScope(this.myContext, result.getModelDescriptor());
       ModelAccess.instance().runReadAction(new Runnable() {
-
         public void run() {
           FindInstancesDialog.this.execute(FindInstancesDialog.this.myContext.getProject(), query, SNodeOperations.cast(result.getSNode(), "jetbrains.mps.quickQueryLanguage.structure.BaseQuery"), scope);
         }
@@ -121,12 +115,10 @@ public class FindInstancesDialog extends BaseDialog {
   public void execute(Project project, Query query, final SNode queryNode, final IScope scope) {
     final Wrappers._T<SearchQuery> searchQuery = new Wrappers._T<SearchQuery>();
     ModelAccess.instance().runReadAction(new Runnable() {
-
       public void run() {
         if (SLinkOperations.getTarget(queryNode, "conceptDeclaration", false) != null) {
           searchQuery.value = new SearchQuery(new NodeHolder(SLinkOperations.getTarget(queryNode, "conceptDeclaration", false)), scope);
-        } else
-        {
+        } else {
           searchQuery.value = new SearchQuery(scope);
         }
       }
@@ -134,5 +126,4 @@ public class FindInstancesDialog extends BaseDialog {
     UsagesViewTool tool = project.getComponent(UsagesViewTool.class);
     tool.findUsages(FindUtils.makeProvider(new QueryFinder(query)), searchQuery.value, true, true, false, "No usages for that node");
   }
-
 }

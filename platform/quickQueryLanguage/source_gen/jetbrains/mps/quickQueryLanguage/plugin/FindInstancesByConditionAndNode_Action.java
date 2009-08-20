@@ -28,12 +28,12 @@ public class FindInstancesByConditionAndNode_Action extends GeneratedAction {
     this.setExecuteOutsideCommand(true);
   }
 
-  @NotNull()
+  @NotNull
   public String getKeyStroke() {
     return "";
   }
 
-  public void doUpdate(@NotNull() AnActionEvent event) {
+  public void doUpdate(@NotNull AnActionEvent event) {
     try {
       this.enable(event.getPresentation());
     } catch (Throwable t) {
@@ -42,7 +42,7 @@ public class FindInstancesByConditionAndNode_Action extends GeneratedAction {
     }
   }
 
-  @Override()
+  @Override
   protected boolean collectActionData(AnActionEvent event) {
     if (!(super.collectActionData(event))) {
       return false;
@@ -70,7 +70,7 @@ public class FindInstancesByConditionAndNode_Action extends GeneratedAction {
     return true;
   }
 
-  public void doExecute(@NotNull() final AnActionEvent event) {
+  public void doExecute(@NotNull final AnActionEvent event) {
     try {
       FindInstancesDialog testDialog = new FindInstancesDialog(new FindInstancesContext(FindInstancesByConditionAndNode_Action.this.context), (Language)FindInstancesByConditionAndNode_Action.this.langModule);
       testDialog.setConceptDeclaration(FindInstancesByConditionAndNode_Action.this.node);
@@ -79,5 +79,4 @@ public class FindInstancesByConditionAndNode_Action extends GeneratedAction {
       LOG.error("User's action execute method failed. Action:" + "FindInstancesByConditionAndNode", t);
     }
   }
-
 }

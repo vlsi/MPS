@@ -17,7 +17,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class typeof_AbstractQueryFunction_InferenceRule extends AbstractInferenceRule_Runtime implements InferenceRule_Runtime {
-
   public typeof_AbstractQueryFunction_InferenceRule() {
   }
 
@@ -25,7 +24,7 @@ public class typeof_AbstractQueryFunction_InferenceRule extends AbstractInferenc
     SNode expectedRetType = IMethodLike_Behavior.call_getExpectedRetType_1239354342632(bmd);
     Iterable<SNode> returnStatements = RulesFunctions_BaseLanguage.collectReturnStatements(SLinkOperations.getTarget(bmd, "body", true));
     if (expectedRetType == null) {
-      for(SNode returnStatement : Sequence.fromIterable(returnStatements)) {
+      for (SNode returnStatement : Sequence.fromIterable(returnStatements)) {
         if ((SLinkOperations.getTarget(returnStatement, "expression", true) != null)) {
           {
             BaseIntentionProvider intentionProvider = null;
@@ -34,17 +33,15 @@ public class typeof_AbstractQueryFunction_InferenceRule extends AbstractInferenc
           }
         }
       }
-    } else
-    {
-      for(SNode returnStatement : Sequence.fromIterable(returnStatements)) {
+    } else {
+      for (SNode returnStatement : Sequence.fromIterable(returnStatements)) {
         if ((SLinkOperations.getTarget(returnStatement, "expression", true) == null)) {
           {
             BaseIntentionProvider intentionProvider = null;
             IErrorTarget errorTarget = new NodeErrorTarget();
             typeCheckingContext.reportTypeError(returnStatement, "should return value", "r:00000000-0000-4000-0000-011c8959050e(jetbrains.mps.quickQueryLanguage.typesystem)", "5046156961652249747", intentionProvider, errorTarget);
           }
-        } else
-        {
+        } else {
           SNode returnType = typeCheckingContext.typeOf(SLinkOperations.getTarget(returnStatement, "expression", true), "r:00000000-0000-4000-0000-011c8959050e(jetbrains.mps.quickQueryLanguage.typesystem)", "5046156961652249760", true);
           {
             SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(returnStatement, "expression", true);
@@ -78,5 +75,4 @@ public class typeof_AbstractQueryFunction_InferenceRule extends AbstractInferenc
   public boolean overrides() {
     return false;
   }
-
 }

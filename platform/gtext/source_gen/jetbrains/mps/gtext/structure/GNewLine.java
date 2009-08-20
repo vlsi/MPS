@@ -21,5 +21,4 @@ public class GNewLine extends GItem {
   public static GNewLine newInstance(SModel sm) {
     return GNewLine.newInstance(sm, false);
   }
-
 }

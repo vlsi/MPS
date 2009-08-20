@@ -21,7 +21,6 @@ public class PropertyDeclaration extends BaseConcept implements IProjectComponen
     super(node);
   }
 
-
   public String getName() {
     return this.getProperty(PropertyDeclaration.NAME);
   }

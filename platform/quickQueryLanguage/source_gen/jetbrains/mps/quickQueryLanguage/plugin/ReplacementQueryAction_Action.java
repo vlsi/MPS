@@ -25,12 +25,12 @@ public class ReplacementQueryAction_Action extends GeneratedAction {
     this.setExecuteOutsideCommand(true);
   }
 
-  @NotNull()
+  @NotNull
   public String getKeyStroke() {
     return "";
   }
 
-  public void doUpdate(@NotNull() AnActionEvent event) {
+  public void doUpdate(@NotNull AnActionEvent event) {
     try {
       this.enable(event.getPresentation());
     } catch (Throwable t) {
@@ -39,7 +39,7 @@ public class ReplacementQueryAction_Action extends GeneratedAction {
     }
   }
 
-  @Override()
+  @Override
   protected boolean collectActionData(AnActionEvent event) {
     if (!(super.collectActionData(event))) {
       return false;
@@ -55,7 +55,7 @@ public class ReplacementQueryAction_Action extends GeneratedAction {
     return true;
   }
 
-  public void doExecute(@NotNull() final AnActionEvent event) {
+  public void doExecute(@NotNull final AnActionEvent event) {
     try {
       ReplaceDialog dialog = new ReplaceDialog(new FindInstancesContext(ReplacementQueryAction_Action.this.context), (Language)ReplacementQueryAction_Action.this.langModule);
       dialog.showDialog();
@@ -63,5 +63,4 @@ public class ReplacementQueryAction_Action extends GeneratedAction {
       LOG.error("User's action execute method failed. Action:" + "ReplacementQueryAction", t);
     }
   }
-
 }

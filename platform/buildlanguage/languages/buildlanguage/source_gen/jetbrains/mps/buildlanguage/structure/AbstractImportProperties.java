@@ -15,7 +15,6 @@ public class AbstractImportProperties extends BaseConcept {
     super(node);
   }
 
-
   public static AbstractImportProperties newInstance(SModel sm, boolean init) {
     return (AbstractImportProperties)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.buildlanguage.structure.AbstractImportProperties", sm, GlobalScope.getInstance(), init).getAdapter();
   }

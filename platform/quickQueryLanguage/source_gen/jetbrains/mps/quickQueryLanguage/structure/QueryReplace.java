@@ -21,5 +21,4 @@ public class QueryReplace extends AbstractQueryFunction {
   public static QueryReplace newInstance(SModel sm) {
     return QueryReplace.newInstance(sm, false);
   }
-
 }

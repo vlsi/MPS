@@ -22,7 +22,6 @@ public class MultiLineString extends PropertyValueExpression implements INamedCo
     super(node);
   }
 
-
   public String getName() {
     return this.getProperty(MultiLineString.NAME);
   }

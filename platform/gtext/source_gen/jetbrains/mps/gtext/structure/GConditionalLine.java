@@ -73,7 +73,6 @@ public class GConditionalLine extends GItem implements GCompositeItem {
     this.insertChild(prev, GConditionalLine.ITEM, node);
   }
 
-
   public static GConditionalLine newInstance(SModel sm, boolean init) {
     return (GConditionalLine)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.gtext.structure.GConditionalLine", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -81,5 +80,4 @@ public class GConditionalLine extends GItem implements GCompositeItem {
   public static GConditionalLine newInstance(SModel sm) {
     return GConditionalLine.newInstance(sm, false);
   }
-
 }

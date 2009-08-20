@@ -58,7 +58,6 @@ public class Element extends ElementPart {
     this.insertChild(prev, Element.CONTENT, node);
   }
 
-
   public static Element newInstance(SModel sm, boolean init) {
     return (Element)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.sampleXML.structure.Element", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -66,5 +65,4 @@ public class Element extends ElementPart {
   public static Element newInstance(SModel sm) {
     return Element.newInstance(sm, false);
   }
-
 }

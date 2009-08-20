@@ -16,7 +16,6 @@ public class TargetReference extends BaseConcept {
     super(node);
   }
 
-
   public TargetDeclaration getTargetDeclaration() {
     return (TargetDeclaration)this.getReferent(TargetDeclaration.class, TargetReference.TARGET_DECLARATION);
   }

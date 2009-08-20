@@ -20,7 +20,6 @@ public class ImportPropertyNode extends AbstractImportProperties implements IPro
     super(node);
   }
 
-
   public String getName() {
     return this.getProperty(ImportPropertyNode.NAME);
   }

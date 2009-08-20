@@ -5,4 +5,5 @@ package jetbrains.mps.buildlanguage.structure;
 import jetbrains.mps.lang.core.structure.INamedConcept;
 
 public interface ICommented extends INamedConcept {
-  public static final String concept = "jetbrains.mps.buildlanguage.structure.ICommented";}
+  public static final String concept = "jetbrains.mps.buildlanguage.structure.ICommented";
+}

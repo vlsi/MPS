@@ -12,7 +12,6 @@ import jetbrains.mps.intentions.BaseIntentionProvider;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class typeof_Query_node_Parameter_InferenceRule extends AbstractInferenceRule_Runtime implements InferenceRule_Runtime {
-
   public typeof_Query_node_Parameter_InferenceRule() {
   }
 
@@ -36,5 +35,4 @@ public class typeof_Query_node_Parameter_InferenceRule extends AbstractInference
   public boolean overrides() {
     return false;
   }
-
 }

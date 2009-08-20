@@ -20,7 +20,6 @@ public class PropertyReference extends PropertyValueExpression implements INamed
     super(node);
   }
 
-
   public String getName() {
     return this.getProperty(PropertyReference.NAME);
   }

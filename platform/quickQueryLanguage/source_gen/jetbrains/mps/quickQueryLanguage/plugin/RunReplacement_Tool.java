@@ -19,7 +19,6 @@ import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.ide.findusages.view.FindUtils;
 
 public class RunReplacement_Tool extends GeneratedTool {
-
   private List<ReplacementView> myViews = ListSequence.fromList(new ArrayList<ReplacementView>());
 
   public RunReplacement_Tool(Project project) {
@@ -48,7 +47,6 @@ public class RunReplacement_Tool extends GeneratedTool {
 
   public void addTab(final SearchQuery searchQuery, final Query query) {
     ModelAccess.instance().runReadAction(new Runnable() {
-
       public void run() {
         ReplacementView view = new ReplacementView(RunReplacement_Tool.this, RunReplacement_Tool.this.getMPSProject(), FindUtils.makeProvider(new QueryFinder(query)), searchQuery, query);
         ListSequence.fromList(RunReplacement_Tool.this.myViews).addElement(view);
@@ -63,5 +61,4 @@ public class RunReplacement_Tool extends GeneratedTool {
       }
     });
   }
-
 }

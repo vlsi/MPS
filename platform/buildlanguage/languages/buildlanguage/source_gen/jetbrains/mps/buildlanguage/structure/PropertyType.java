@@ -15,7 +15,6 @@ public class PropertyType extends BaseConcept {
     super(node);
   }
 
-
   public static PropertyType newInstance(SModel sm, boolean init) {
     return (PropertyType)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.buildlanguage.structure.PropertyType", sm, GlobalScope.getInstance(), init).getAdapter();
   }

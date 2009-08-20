@@ -14,7 +14,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 public class QueriesGenerated {
-
   public static Object propertyMacro_GetPropertyValue_1218801182940(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return NameUtil.nodeFQName(SLinkOperations.getTarget(_context.getNode(), "conceptDeclaration", false));
   }
@@ -42,5 +41,4 @@ public class QueriesGenerated {
     SLinkOperations.addChild(statementList, "statement", expressionStatement);
     return statementList;
   }
-
 }

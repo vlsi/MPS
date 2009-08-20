@@ -24,7 +24,6 @@ public class GExpressionItem extends GItem {
     super.setChild(GExpressionItem.EXPRESSION, node);
   }
 
-
   public static GExpressionItem newInstance(SModel sm, boolean init) {
     return (GExpressionItem)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.gtext.structure.GExpressionItem", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -32,5 +31,4 @@ public class GExpressionItem extends GItem {
   public static GExpressionItem newInstance(SModel sm) {
     return GExpressionItem.newInstance(sm, false);
   }
-
 }

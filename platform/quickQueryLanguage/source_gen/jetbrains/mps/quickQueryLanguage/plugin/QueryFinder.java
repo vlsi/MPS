@@ -16,7 +16,6 @@ import java.util.Iterator;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 
 public class QueryFinder implements IFinder {
-
   private Query myQuery;
 
   public QueryFinder(Query query) {
@@ -39,5 +38,4 @@ public class QueryFinder implements IFinder {
     }
     return new SearchResults(instances.getSearchedNodes(), instancesList);
   }
-
 }

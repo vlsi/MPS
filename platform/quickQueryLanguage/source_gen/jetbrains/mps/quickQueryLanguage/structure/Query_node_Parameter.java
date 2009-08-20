@@ -22,5 +22,4 @@ public class Query_node_Parameter extends ConceptFunctionParameter {
   public static Query_node_Parameter newInstance(SModel sm) {
     return Query_node_Parameter.newInstance(sm, false);
   }
-
 }

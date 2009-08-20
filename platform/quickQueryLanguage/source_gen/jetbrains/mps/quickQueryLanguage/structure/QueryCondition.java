@@ -21,5 +21,4 @@ public class QueryCondition extends AbstractQueryFunction {
   public static QueryCondition newInstance(SModel sm) {
     return QueryCondition.newInstance(sm, false);
   }
-
 }

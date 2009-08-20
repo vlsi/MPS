@@ -51,7 +51,6 @@ public class GContentPlaceholder extends GItem implements INamedConcept {
     this.setProperty(GContentPlaceholder.VIRTUAL_PACKAGE, value);
   }
 
-
   public static GContentPlaceholder newInstance(SModel sm, boolean init) {
     return (GContentPlaceholder)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.gtext.structure.GContentPlaceholder", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -59,5 +58,4 @@ public class GContentPlaceholder extends GItem implements INamedConcept {
   public static GContentPlaceholder newInstance(SModel sm) {
     return GContentPlaceholder.newInstance(sm, false);
   }
-
 }

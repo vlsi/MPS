@@ -5,4 +5,5 @@ package jetbrains.mps.buildlanguage.structure;
 import jetbrains.mps.smodel.INodeAdapter;
 
 public interface ISource extends INodeAdapter {
-  public static final String concept = "jetbrains.mps.buildlanguage.structure.ISource";}
+  public static final String concept = "jetbrains.mps.buildlanguage.structure.ISource";
+}

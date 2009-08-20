@@ -38,7 +38,6 @@ public class GItemStatement extends Statement {
     this.insertChild(prev, GItemStatement.ITEM, node);
   }
 
-
   public static GItemStatement newInstance(SModel sm, boolean init) {
     return (GItemStatement)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.gtext.structure.GItemStatement", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -46,5 +45,4 @@ public class GItemStatement extends Statement {
   public static GItemStatement newInstance(SModel sm) {
     return GItemStatement.newInstance(sm, false);
   }
-
 }

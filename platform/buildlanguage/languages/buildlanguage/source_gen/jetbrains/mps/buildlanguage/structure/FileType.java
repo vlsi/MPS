@@ -14,7 +14,6 @@ public class FileType extends PropertyType {
     super(node);
   }
 
-
   public static FileType newInstance(SModel sm, boolean init) {
     return (FileType)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.buildlanguage.structure.FileType", sm, GlobalScope.getInstance(), init).getAdapter();
   }

@@ -74,7 +74,6 @@ public class GContentBlock extends GItem implements INamedConcept, GCompositeIte
     this.insertChild(prev, GContentBlock.ITEM, node);
   }
 
-
   public static GContentBlock newInstance(SModel sm, boolean init) {
     return (GContentBlock)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.gtext.structure.GContentBlock", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -82,5 +81,4 @@ public class GContentBlock extends GItem implements INamedConcept, GCompositeIte
   public static GContentBlock newInstance(SModel sm) {
     return GContentBlock.newInstance(sm, false);
   }
-
 }

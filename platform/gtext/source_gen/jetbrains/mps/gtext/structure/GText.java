@@ -23,7 +23,6 @@ public class GText extends GItem {
     this.setProperty(GText.TEXT, value);
   }
 
-
   public static GText newInstance(SModel sm, boolean init) {
     return (GText)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.gtext.structure.GText", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -31,5 +30,4 @@ public class GText extends GItem {
   public static GText newInstance(SModel sm) {
     return GText.newInstance(sm, false);
   }
-
 }

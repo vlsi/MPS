@@ -21,5 +21,4 @@ public class ModelQuery extends BaseQuery {
   public static ModelQuery newInstance(SModel sm) {
     return ModelQuery.newInstance(sm, false);
   }
-
 }

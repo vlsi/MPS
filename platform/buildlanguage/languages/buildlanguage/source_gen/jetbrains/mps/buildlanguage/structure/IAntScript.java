@@ -5,4 +5,5 @@ package jetbrains.mps.buildlanguage.structure;
 import jetbrains.mps.smodel.INodeAdapter;
 
 public interface IAntScript extends INodeAdapter {
-  public static final String concept = "jetbrains.mps.buildlanguage.structure.IAntScript";}
+  public static final String concept = "jetbrains.mps.buildlanguage.structure.IAntScript";
+}

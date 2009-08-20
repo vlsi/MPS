@@ -11,7 +11,6 @@ import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 public class GDocument_name_PropertyConstraint implements IModelConstraints, INodePropertyGetter, INodePropertySetter {
-
   public GDocument_name_PropertyConstraint() {
   }
 
@@ -32,5 +31,4 @@ public class GDocument_name_PropertyConstraint implements IModelConstraints, INo
   public void execPropertySet(final SNode node, final String propertyName, final String propertyValue, final IScope scope) {
     // R/O
   }
-
 }

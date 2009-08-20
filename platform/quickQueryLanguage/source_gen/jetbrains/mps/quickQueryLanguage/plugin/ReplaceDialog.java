@@ -29,7 +29,6 @@ import jetbrains.mps.ide.findusages.model.SearchQuery;
 import jetbrains.mps.ide.findusages.model.holders.NodeHolder;
 
 public class ReplaceDialog extends BaseDialog {
-
   private EmbeddableEditor myEditor;
   private ScopeEditor myScope;
   private IOperationContext myContext;
@@ -40,7 +39,6 @@ public class ReplaceDialog extends BaseDialog {
     super(context.getMainFrame(), "Modify Instances by condition");
     this.myContext = context;
     ModelAccess.instance().runWriteActionInCommand(new Runnable() {
-
       public void run() {
         ReplaceDialog.this.myNode = SConceptOperations.createNewNode("jetbrains.mps.quickQueryLanguage.structure.ReplaceModelQuery", null);
         ReplaceDialog.this.myEditor = new EmbeddableEditor(context, new ModelOwner() {        }, ReplaceDialog.this.myNode);
@@ -51,12 +49,11 @@ public class ReplaceDialog extends BaseDialog {
     this.myEditor.addLanguageStructureModel(language);
     final Wrappers._T<List<Language>> languageList = new Wrappers._T<List<Language>>();
     ModelAccess.instance().runReadAction(new Runnable() {
-
       public void run() {
         languageList.value = language.getAllExtendedLanguages();
       }
     });
-    for(Language extendedLanguage : languageList.value) {
+    for (Language extendedLanguage : languageList.value) {
       this.myEditor.addLanguageStructureModel(extendedLanguage);
     }
     this.myEditor.addLanguageStructureModel(BootstrapLanguages.collectionsLanguage());
@@ -71,7 +68,6 @@ public class ReplaceDialog extends BaseDialog {
 
   public void setConceptDeclaration(final SNode declaration) {
     ModelAccess.instance().runWriteActionInCommand(new Runnable() {
-
       public void run() {
         SLinkOperations.setTarget(ReplaceDialog.this.myNode, "conceptDeclaration", SNodeOperations.cast(declaration, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration"), false);
       }
@@ -87,7 +83,6 @@ public class ReplaceDialog extends BaseDialog {
       final Query query = (Query)Class.forName(fqName, true, loader).newInstance();
       final IScope scope = this.myScope.getOptions().getScope(this.myContext, result.getModelDescriptor());
       ModelAccess.instance().runReadAction(new Runnable() {
-
         public void run() {
           ReplaceDialog.this.execute(ReplaceDialog.this.myContext.getMPSProject(), query, SNodeOperations.cast(result.getSNode(), "jetbrains.mps.quickQueryLanguage.structure.BaseQuery"), scope);
         }
@@ -102,12 +97,10 @@ public class ReplaceDialog extends BaseDialog {
   public void execute(MPSProject project, Query query, final SNode queryNode, final IScope scope) {
     final Wrappers._T<SearchQuery> searchQuery = new Wrappers._T<SearchQuery>();
     ModelAccess.instance().runReadAction(new Runnable() {
-
       public void run() {
         if (SLinkOperations.getTarget(queryNode, "conceptDeclaration", false) != null) {
           searchQuery.value = new SearchQuery(new NodeHolder(SLinkOperations.getTarget(queryNode, "conceptDeclaration", false)), scope);
-        } else
-        {
+        } else {
           searchQuery.value = new SearchQuery(scope);
         }
       }
@@ -120,5 +113,4 @@ public class ReplaceDialog extends BaseDialog {
     this.myEditor.disposeEditor();
     this.dispose();
   }
-
 }

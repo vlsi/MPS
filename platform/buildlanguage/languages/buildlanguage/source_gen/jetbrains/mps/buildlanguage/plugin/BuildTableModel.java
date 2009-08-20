@@ -32,7 +32,6 @@ public class BuildTableModel implements TableModel {
     this.updateStateInternal(loadState(data));
   }
 
-
   public void updateState(Map<String, String> data) {
     Map<SNodePointer, String> pointersToMap = loadState(data);
     this.updateStateInternal(pointersToMap);

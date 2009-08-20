@@ -11,7 +11,6 @@ import jetbrains.mps.project.GlobalScope;
 import org.jetbrains.annotations.NotNull;
 
 public class FindInstancesContext extends StandaloneMPSContext {
-
   private MPSProject myMPSProject;
   private IModule myModule;
 
@@ -28,7 +27,7 @@ public class FindInstancesContext extends StandaloneMPSContext {
     return GlobalScope.getInstance();
   }
 
-  public  <T>T getComponent(@NotNull() Class<T> c) {
+  public <T>T getComponent(@NotNull Class<T> c) {
     T component = this.myMPSProject.getComponent(c);
     if (component != null) {
       return component;
@@ -36,9 +35,8 @@ public class FindInstancesContext extends StandaloneMPSContext {
     return super.getComponent(c);
   }
 
-  @Deprecated()
+  @Deprecated
   public MPSProject getMPSProject() {
     return this.myMPSProject;
   }
-
 }

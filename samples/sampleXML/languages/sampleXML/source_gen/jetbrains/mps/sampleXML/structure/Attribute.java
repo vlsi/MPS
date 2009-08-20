@@ -61,7 +61,6 @@ public class Attribute extends BaseConcept implements INamedConcept {
     this.setProperty(Attribute.VIRTUAL_PACKAGE, value);
   }
 
-
   public static Attribute newInstance(SModel sm, boolean init) {
     return (Attribute)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.sampleXML.structure.Attribute", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -69,5 +68,4 @@ public class Attribute extends BaseConcept implements INamedConcept {
   public static Attribute newInstance(SModel sm) {
     return Attribute.newInstance(sm, false);
   }
-
 }

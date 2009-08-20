@@ -23,7 +23,6 @@ public class GIndentBlock extends GItem {
     super.setChild(GIndentBlock.ITEM_LIST, node);
   }
 
-
   public static GIndentBlock newInstance(SModel sm, boolean init) {
     return (GIndentBlock)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.gtext.structure.GIndentBlock", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -31,5 +30,4 @@ public class GIndentBlock extends GItem {
   public static GIndentBlock newInstance(SModel sm) {
     return GIndentBlock.newInstance(sm, false);
   }
-
 }

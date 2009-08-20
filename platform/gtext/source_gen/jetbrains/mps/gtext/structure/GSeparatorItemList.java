@@ -73,7 +73,6 @@ public class GSeparatorItemList extends GItem implements GCompositeItem {
     this.insertChild(prev, GSeparatorItemList.ITEM, node);
   }
 
-
   public static GSeparatorItemList newInstance(SModel sm, boolean init) {
     return (GSeparatorItemList)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.gtext.structure.GSeparatorItemList", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -81,5 +80,4 @@ public class GSeparatorItemList extends GItem implements GCompositeItem {
   public static GSeparatorItemList newInstance(SModel sm) {
     return GSeparatorItemList.newInstance(sm, false);
   }
-
 }

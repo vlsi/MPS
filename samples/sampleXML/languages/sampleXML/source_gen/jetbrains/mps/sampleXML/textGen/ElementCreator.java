@@ -14,7 +14,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public abstract class ElementCreator {
-
   public static void byElement(SNode node, final SNodeTextGen textGen) {
     SNode element = SLinkOperations.getTarget(node, "rootElement", true);
     Element result = ElementCreator.createElement(element, textGen);
@@ -33,13 +32,13 @@ public abstract class ElementCreator {
 
   protected static Element createElement(SNode element, final SNodeTextGen textGen) {
     Element result = new Element(SPropertyOperations.getString(element, "name"));
-    for(SNode attribute : SLinkOperations.getTargets(element, "attribute", true)) {
+    for (SNode attribute : SLinkOperations.getTargets(element, "attribute", true)) {
       if (SPropertyOperations.getString(attribute, "value") != null) {
         result.setAttribute(SPropertyOperations.getString(attribute, "name"), SPropertyOperations.getString(attribute, "value"));
       }
     }
     boolean first = true;
-    for(SNode part : SLinkOperations.getTargets(element, "content", true)) {
+    for (SNode part : SLinkOperations.getTargets(element, "content", true)) {
       if (SNodeOperations.isInstanceOf(part, "jetbrains.mps.sampleXML.structure.Text")) {
         if (!(first)) {
           result.addContent("\n");
@@ -53,5 +52,4 @@ public abstract class ElementCreator {
     }
     return result;
   }
-
 }

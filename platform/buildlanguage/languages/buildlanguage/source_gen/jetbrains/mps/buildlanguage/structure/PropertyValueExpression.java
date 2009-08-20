@@ -18,7 +18,6 @@ public class PropertyValueExpression extends BaseConcept implements ISource {
     super(node);
   }
 
-
   public String getShortDescription() {
     return this.getProperty(PropertyValueExpression.SHORT_DESCRIPTION);
   }
