@@ -22,6 +22,8 @@ import jetbrains.mps.nodeEditor.cellActions.CellAction_Empty;
 import jetbrains.mps.nodeEditor.cellMenu.CompositeSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.BasicCellContext;
 import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPart;
+import jetbrains.mps.nodeEditor.style.AttributeCalculator;
+import java.awt.Color;
 import jetbrains.mps.nodeEditor.cellProviders.AbstractCellListHandler;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Indent;
 import jetbrains.mps.smodel.IScope;
@@ -131,6 +133,28 @@ public class ClassCreator_Editor extends DefaultNodeEditor {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.NAVIGATABLE_REFERENCE, "constructorDeclaration");
       style.set(StyleAttributes.RT_ANCHOR_TAG, "ext_1_RTransform");
+      style.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator<Color>() {
+        public Color calculate(EditorCell cell) {
+          return ClassCreator_Editor._StyleParameter_QueryFunction_9368_0((cell == null ?
+            null :
+            cell.getSNode()
+          ), (cell == null ?
+            null :
+            cell.getEditorContext()
+          ));
+        }
+      });
+      style.set(StyleAttributes.TEXT_BACKGROUND_COLOR, new AttributeCalculator<Color>() {
+        public Color calculate(EditorCell cell) {
+          return ClassCreator_Editor._StyleParameter_QueryFunction_9368_1((cell == null ?
+            null :
+            cell.getSNode()
+          ), (cell == null ?
+            null :
+            cell.getEditorContext()
+          ));
+        }
+      });
     }
     return editorCell;
   }
@@ -145,6 +169,20 @@ public class ClassCreator_Editor extends DefaultNodeEditor {
 
   private static boolean renderingCondition9368_0(SNode node, EditorContext editorContext, IScope scope) {
     return SLinkOperations.getCount(node, "typeParameter") > 0;
+  }
+
+  private static Color _StyleParameter_QueryFunction_9368_0(SNode node, EditorContext editorContext) {
+    if ((SLinkOperations.getTarget(node, "baseMethodDeclaration", false) == null)) {
+      return Color.RED;
+    }
+    return Color.BLACK;
+  }
+
+  private static Color _StyleParameter_QueryFunction_9368_1(SNode node, EditorContext editorContext) {
+    if ((SLinkOperations.getTarget(node, "baseMethodDeclaration", false) == null)) {
+      return Color.PINK;
+    }
+    return Color.WHITE;
   }
 
   private static class typeParameterListHandler_9368_0 extends RefNodeListHandler {

@@ -4601,6 +4601,68 @@
             </node>
           </node>
         </node>
+        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.ForegroundColorStyleClassItem" id="3331197433824999414">
+          <node role="query" type="jetbrains.mps.lang.editor.structure.QueryFunction_Color" id="3331197433824999415">
+            <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="3331197433824999416">
+              <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="3331197433824999417">
+                <node role="condition" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="3331197433824999418">
+                  <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="3331197433824999419">
+                    <node role="operand" type="jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_node" id="3331197433824999420" />
+                    <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="3331197433824999442">
+                      <link role="link" targetNodeId="17.1116615189566" />
+                    </node>
+                  </node>
+                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_IsNullOperation" id="3331197433824999422" />
+                </node>
+                <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="3331197433824999423">
+                  <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="3331197433824999424">
+                    <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference" id="3331197433824999425">
+                      <link role="classifier" targetNodeId="56.~Color" resolveInfo="Color" />
+                      <link role="variableDeclaration" targetNodeId="56.~Color.RED" resolveInfo="RED" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="3331197433824999426">
+                <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference" id="3331197433824999427">
+                  <link role="classifier" targetNodeId="56.~Color" resolveInfo="Color" />
+                  <link role="variableDeclaration" targetNodeId="56.~Color.BLACK" resolveInfo="BLACK" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.TextBackgroundColorStyleClassItem" id="3331197433824999428">
+          <node role="query" type="jetbrains.mps.lang.editor.structure.QueryFunction_Color" id="3331197433824999429">
+            <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="3331197433824999430">
+              <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="3331197433824999431">
+                <node role="condition" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="3331197433824999432">
+                  <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="3331197433824999433">
+                    <node role="operand" type="jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_node" id="3331197433824999434" />
+                    <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="3331197433824999443">
+                      <link role="link" targetNodeId="17.1116615189566" />
+                    </node>
+                  </node>
+                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_IsNullOperation" id="3331197433824999436" />
+                </node>
+                <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="3331197433824999437">
+                  <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="3331197433824999438">
+                    <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference" id="3331197433824999439">
+                      <link role="classifier" targetNodeId="56.~Color" resolveInfo="Color" />
+                      <link role="variableDeclaration" targetNodeId="56.~Color.PINK" resolveInfo="PINK" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="3331197433824999440">
+                <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference" id="3331197433824999441">
+                  <link role="classifier" targetNodeId="56.~Color" resolveInfo="Color" />
+                  <link role="variableDeclaration" targetNodeId="56.~Color.WHITE" resolveInfo="WHITE" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
         <node role="styleItem" type="jetbrains.mps.lang.editor.structure.NavigatableReferenceStyleClassItem" id="6775591514230048060">
           <link role="link" targetNodeId="17.1116615189566" />
         </node>
@@ -4832,6 +4894,68 @@
         </node>
         <node role="styleItem" type="jetbrains.mps.lang.editor.structure.NavigatableReferenceStyleClassItem" id="7829308473164658919">
           <link role="link" targetNodeId="17.1107535924139" />
+        </node>
+        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.ForegroundColorStyleClassItem" id="3331197433824933477">
+          <node role="query" type="jetbrains.mps.lang.editor.structure.QueryFunction_Color" id="3331197433824933478">
+            <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="3331197433824933479">
+              <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="3331197433824996754">
+                <node role="condition" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="3331197433824997945">
+                  <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="3331197433824996758">
+                    <node role="operand" type="jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_node" id="3331197433824996757" />
+                    <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="3331197433824997944">
+                      <link role="link" targetNodeId="17.1107535924139" />
+                    </node>
+                  </node>
+                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_IsNullOperation" id="3331197433824997949" />
+                </node>
+                <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="3331197433824996756">
+                  <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="3331197433824997950">
+                    <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference" id="3331197433824997952">
+                      <link role="classifier" targetNodeId="56.~Color" resolveInfo="Color" />
+                      <link role="variableDeclaration" targetNodeId="56.~Color.RED" resolveInfo="RED" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="3331197433824997954">
+                <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference" id="3331197433824997959">
+                  <link role="classifier" targetNodeId="56.~Color" resolveInfo="Color" />
+                  <link role="variableDeclaration" targetNodeId="56.~Color.BLACK" resolveInfo="BLACK" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.TextBackgroundColorStyleClassItem" id="3331197433824997961">
+          <node role="query" type="jetbrains.mps.lang.editor.structure.QueryFunction_Color" id="3331197433824997962">
+            <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="3331197433824997963">
+              <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="3331197433824997964">
+                <node role="condition" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="3331197433824997973">
+                  <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="3331197433824997968">
+                    <node role="operand" type="jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_node" id="3331197433824997967" />
+                    <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="3331197433824997972">
+                      <link role="link" targetNodeId="17.1107535924139" />
+                    </node>
+                  </node>
+                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_IsNullOperation" id="3331197433824997977" />
+                </node>
+                <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="3331197433824997966">
+                  <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="3331197433824997978">
+                    <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference" id="3331197433824997980">
+                      <link role="classifier" targetNodeId="56.~Color" resolveInfo="Color" />
+                      <link role="variableDeclaration" targetNodeId="56.~Color.PINK" resolveInfo="PINK" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="3331197433824997982">
+                <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference" id="3331197433824997986">
+                  <link role="classifier" targetNodeId="56.~Color" resolveInfo="Color" />
+                  <link role="variableDeclaration" targetNodeId="56.~Color.WHITE" resolveInfo="WHITE" />
+                </node>
+              </node>
+            </node>
+          </node>
         </node>
         <node role="menuDescriptor" type="jetbrains.mps.lang.editor.structure.CellMenuDescriptor" id="7829308473164834749">
           <node role="cellMenuPart" type="jetbrains.mps.lang.editor.structure.CellMenuPart_Generic_Group" id="7829308473164879363">
@@ -14036,6 +14160,68 @@
         </node>
         <node role="styleItem" type="jetbrains.mps.lang.editor.structure.SideTransformAnchorTagStyleClassItem" id="5232179654691589587">
           <property name="tag" value="ext_1_RTransform" />
+        </node>
+        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.ForegroundColorStyleClassItem" id="3331197433824999459">
+          <node role="query" type="jetbrains.mps.lang.editor.structure.QueryFunction_Color" id="3331197433824999460">
+            <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="3331197433824999461">
+              <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="3331197433824999462">
+                <node role="condition" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="3331197433824999463">
+                  <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="3331197433824999464">
+                    <node role="operand" type="jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_node" id="3331197433824999465" />
+                    <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="3331197433824999487">
+                      <link role="link" targetNodeId="17.1212686240295" />
+                    </node>
+                  </node>
+                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_IsNullOperation" id="3331197433824999467" />
+                </node>
+                <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="3331197433824999468">
+                  <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="3331197433824999469">
+                    <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference" id="3331197433824999470">
+                      <link role="classifier" targetNodeId="56.~Color" resolveInfo="Color" />
+                      <link role="variableDeclaration" targetNodeId="56.~Color.RED" resolveInfo="RED" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="3331197433824999471">
+                <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference" id="3331197433824999472">
+                  <link role="classifier" targetNodeId="56.~Color" resolveInfo="Color" />
+                  <link role="variableDeclaration" targetNodeId="56.~Color.BLACK" resolveInfo="BLACK" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.TextBackgroundColorStyleClassItem" id="3331197433824999473">
+          <node role="query" type="jetbrains.mps.lang.editor.structure.QueryFunction_Color" id="3331197433824999474">
+            <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="3331197433824999475">
+              <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="3331197433824999476">
+                <node role="condition" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="3331197433824999477">
+                  <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="3331197433824999478">
+                    <node role="operand" type="jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_node" id="3331197433824999479" />
+                    <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="3331197433824999488">
+                      <link role="link" targetNodeId="17.1212686240295" />
+                    </node>
+                  </node>
+                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_IsNullOperation" id="3331197433824999481" />
+                </node>
+                <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="3331197433824999482">
+                  <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="3331197433824999483">
+                    <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference" id="3331197433824999484">
+                      <link role="classifier" targetNodeId="56.~Color" resolveInfo="Color" />
+                      <link role="variableDeclaration" targetNodeId="56.~Color.PINK" resolveInfo="PINK" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="3331197433824999485">
+                <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference" id="3331197433824999486">
+                  <link role="classifier" targetNodeId="56.~Color" resolveInfo="Color" />
+                  <link role="variableDeclaration" targetNodeId="56.~Color.WHITE" resolveInfo="WHITE" />
+                </node>
+              </node>
+            </node>
+          </node>
         </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="1212699852037">

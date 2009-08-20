@@ -20,6 +20,8 @@ import jetbrains.mps.nodeEditor.cellMenu.BasicCellContext;
 import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPart;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
+import jetbrains.mps.nodeEditor.style.AttributeCalculator;
+import java.awt.Color;
 import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_Generic_Group;
 import java.util.List;
 import jetbrains.mps.smodel.IScope;
@@ -84,9 +86,45 @@ public class ClassifierClassExpression_Editor extends DefaultNodeEditor {
     editorCell.setCellId("ReadOnlyModelAccessor_4221_0");
     {
       Style style = editorCell.getStyle();
+      style.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator<Color>() {
+        public Color calculate(EditorCell cell) {
+          return ClassifierClassExpression_Editor._StyleParameter_QueryFunction_4221_0((cell == null ?
+            null :
+            cell.getSNode()
+          ), (cell == null ?
+            null :
+            cell.getEditorContext()
+          ));
+        }
+      });
+      style.set(StyleAttributes.TEXT_BACKGROUND_COLOR, new AttributeCalculator<Color>() {
+        public Color calculate(EditorCell cell) {
+          return ClassifierClassExpression_Editor._StyleParameter_QueryFunction_4221_1((cell == null ?
+            null :
+            cell.getSNode()
+          ), (cell == null ?
+            null :
+            cell.getEditorContext()
+          ));
+        }
+      });
       style.set(StyleAttributes.NAVIGATABLE_REFERENCE, "classifier");
     }
     return editorCell;
+  }
+
+  private static Color _StyleParameter_QueryFunction_4221_0(SNode node, EditorContext editorContext) {
+    if ((SLinkOperations.getTarget(node, "classifier", false) == null)) {
+      return Color.RED;
+    }
+    return Color.BLACK;
+  }
+
+  private static Color _StyleParameter_QueryFunction_4221_1(SNode node, EditorContext editorContext) {
+    if ((SLinkOperations.getTarget(node, "classifier", false) == null)) {
+      return Color.PINK;
+    }
+    return Color.WHITE;
   }
 
   public static class ClassifierClassExpression_generic_cellMenu0 extends AbstractCellMenuPart_Generic_Group {

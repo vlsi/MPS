@@ -2766,8 +2766,14 @@
       <node role="part" type="jetbrains.mps.lang.actions.structure.AddMenuPart" id="1218492473985">
         <link role="concept" targetNodeId="1.1197027756228" resolveInfo="DotExpression" />
         <node role="part" type="jetbrains.mps.lang.actions.structure.ParameterizedSubstituteMenuPart" id="1218492473986">
-          <node role="type" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1218492473987">
-            <link role="concept" targetNodeId="1.1068580123165" resolveInfo="InstanceMethodDeclaration" />
+          <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="395524464728596681">
+            <link role="classifier" targetNodeId="54.~Pair" resolveInfo="Pair" />
+            <node role="parameter" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="395524464728596685">
+              <link role="concept" targetNodeId="1.1068580123165" resolveInfo="InstanceMethodDeclaration" />
+            </node>
+            <node role="parameter" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="395524464728596690">
+              <link role="concept" targetNodeId="1.1068390468198" resolveInfo="ClassConcept" />
+            </node>
           </node>
           <node role="query" type="jetbrains.mps.lang.actions.structure.QueryFunction_ParameterizedSubstitute_Query" id="1218492473988">
             <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1218492473989">
