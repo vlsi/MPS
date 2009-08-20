@@ -34,7 +34,6 @@
   <node type="jetbrains.mps.lang.constraints.structure.ConceptConstraints" id="1235730075559">
     <link role="concept" targetNodeId="1.1235729871799" resolveInfo="SumVariableReference" />
     <node role="referent" type="jetbrains.mps.lang.constraints.structure.NodeReferentConstraint" id="1235730077435">
-      <link role="applicableLink" targetNodeId="1.1235730054504" />
       <node role="searchScopeFactory" type="jetbrains.mps.lang.constraints.structure.ConstraintFunction_ReferentSearchScope_Factory" id="1235730079858">
         <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1235730079859">
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1235730082917">

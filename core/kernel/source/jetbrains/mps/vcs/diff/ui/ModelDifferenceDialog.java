@@ -107,6 +107,7 @@ public class ModelDifferenceDialog extends BaseDialog {
   @Override
   public void dispose() {
     myFocusTrackback.restoreFocus();
+    myFocusWatcher.deinstall(myDifferenceComponent);
     super.dispose();
   }
 }

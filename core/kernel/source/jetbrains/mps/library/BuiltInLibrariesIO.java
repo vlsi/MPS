@@ -31,14 +31,15 @@ import java.util.Map;
 
 public class BuiltInLibrariesIO {
   private static final Logger LOG = Logger.getLogger(BuiltInLibrariesIO.class);
-  private static final String CONFIG_FILE_NAME = "CustomBuiltInLibraries.xml";
-  private static final String ROOT_TAG = "libraries";
-  private static final String LIBRARY_TAG = "library";
-  private static final String LIBRARY_NAME_TAG = "name";
-  private static final String LIBRARY_PATH_TAG = "path";
+  public static final String CONFIG_FILE_NAME = "CustomBuiltInLibraries";
+  private static final String CONFIG_FILE_WHOLE_NAME = CONFIG_FILE_NAME + ".xml";
+  public static final String ROOT_TAG = "libraries";
+  public static final String LIBRARY_TAG = "library";
+  public static final String LIBRARY_NAME_TAG = "name";
+  public static final String LIBRARY_PATH_TAG = "path";
 
   public static void readBuiltInLibraries(Map<String, Library> libraryMap) {
-    URL resource = LibraryManager.class.getResource(CONFIG_FILE_NAME);
+    URL resource = LibraryManager.class.getResource(CONFIG_FILE_WHOLE_NAME);
     if (resource == null) return;
 
     try {
@@ -104,7 +105,7 @@ public class BuiltInLibrariesIO {
   }
 
   public static String getModifiedConfigurationFile() {
-    return BuiltInLibrariesIO.class.getPackage().getName().replace(".", File.separator) + File.separator + CONFIG_FILE_NAME;
+    return BuiltInLibrariesIO.class.getPackage().getName().replace(".", File.separator) + File.separator + CONFIG_FILE_WHOLE_NAME;
   }
 
   public static void main(String[] args) {

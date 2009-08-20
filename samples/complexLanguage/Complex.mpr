@@ -14,16 +14,38 @@
     </projectLanguages>
     <projectDevkits />
     <genConfs>
-      <genConfModule name="Generate Sandbox" moduleRef="95120851-2c04-4def-8c41-2a1112cfdbf6(jetbrains.mps.samples.complex.sandbox)" />
-      <genConfModule name="Generate Complex Runtime" moduleRef="b8bf2110-d2b5-478f-87dd-306abe7416fe(jetbrains.mps.samples.complex.runtime)" />
-      <genConfModule name="Generate Complex" moduleRef="ff24ab03-965e-4d15-9aed-52dc276658f4(jetbrains.mps.samples.complex)" />
+      <genConfModule runnable="false" name="Generate Sandbox" moduleRef="95120851-2c04-4def-8c41-2a1112cfdbf6(jetbrains.mps.samples.complex.sandbox)" />
+      <genConfModule runnable="false" name="Generate Complex Runtime" moduleRef="b8bf2110-d2b5-478f-87dd-306abe7416fe(jetbrains.mps.samples.complex.runtime)" />
+      <genConfModule runnable="false" name="Generate Complex" moduleRef="ff24ab03-965e-4d15-9aed-52dc276658f4(jetbrains.mps.samples.complex)" />
     </genConfs>
   </component>
   <component name="ProjectDetails">
     <option name="projectName" value="Complex" />
   </component>
+  <component name="ProjectModuleManager">
+    <modules />
+  </component>
+  <component name="ProjectRootManager" version="2" />
   <component name="SvnBranchConfigurationManager">
+    <option name="myConfigurationMap">
+      <map>
+        <entry key="$APPLICATION_HOME_DIR$">
+          <value>
+            <SvnBranchConfiguration>
+              <option name="branchUrls">
+                <list>
+                  <option value="https://svn.jetbrains.org/mps/branches" />
+                  <option value="https://svn.jetbrains.org/mps/tags" />
+                </list>
+              </option>
+              <option name="trunkUrl" value="https://svn.jetbrains.org/mps/trunk" />
+            </SvnBranchConfiguration>
+          </value>
+        </entry>
+      </map>
+    </option>
     <option name="myVersion" value="124" />
+    <option name="mySupportsUserInfoFilter" value="true" />
   </component>
   <component name="VcsDirectoryMappings">
     <mapping directory="" vcs="" />
