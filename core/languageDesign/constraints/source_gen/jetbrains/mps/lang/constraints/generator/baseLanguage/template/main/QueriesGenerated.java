@@ -229,6 +229,14 @@ public class QueriesGenerated {
     return (SLinkOperations.getTarget(_context.getNode(), "canBeRoot", true) != null);
   }
 
+  public static boolean ifMacro_Condition_3906442776579708832(final IOperationContext operationContext, final IfMacroContext _context) {
+    return (SLinkOperations.getTarget(_context.getNode(), "presentation", true) != null);
+  }
+
+  public static boolean ifMacro_Condition_3906442776579908117(final IOperationContext operationContext, final IfMacroContext _context) {
+    return (SLinkOperations.getTarget(_context.getNode(), "presentation", true) != null);
+  }
+
   public static SNode sourceNodeQuery_1184609310103(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "propertyGetter", true), "body", true);
   }
@@ -263,6 +271,14 @@ public class QueriesGenerated {
 
   public static SNode sourceNodeQuery_1238150662130(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "searchScopeFactory", true), "body", true);
+  }
+
+  public static SNode sourceNodeQuery_3906442776579708815(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "presentation", true), "body", true);
+  }
+
+  public static SNode sourceNodeQuery_3906442776579908108(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "presentation", true), "body", true);
   }
 
   public static Iterable sourceNodesQuery_1194966878188(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {

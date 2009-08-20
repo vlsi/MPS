@@ -13,6 +13,7 @@ public class NodeReferentConstraint extends BaseConcept {
   public static final String concept = "jetbrains.mps.lang.constraints.structure.NodeReferentConstraint";
   public static final String APPLICABLE_LINK = "applicableLink";
   public static final String SEARCH_SCOPE_FACTORY = "searchScopeFactory";
+  public static final String PRESENTATION = "presentation";
   public static final String REFERENT_SET_HANDLER = "referentSetHandler";
 
   public NodeReferentConstraint(SNode node) {
@@ -33,6 +34,14 @@ public class NodeReferentConstraint extends BaseConcept {
 
   public void setSearchScopeFactory(ConstraintFunction_ReferentSearchScope_Factory node) {
     super.setChild(NodeReferentConstraint.SEARCH_SCOPE_FACTORY, node);
+  }
+
+  public ConstraintFunction_ReferentSearchScope_Presentation getPresentation() {
+    return (ConstraintFunction_ReferentSearchScope_Presentation)this.getChild(ConstraintFunction_ReferentSearchScope_Presentation.class, NodeReferentConstraint.PRESENTATION);
+  }
+
+  public void setPresentation(ConstraintFunction_ReferentSearchScope_Presentation node) {
+    super.setChild(NodeReferentConstraint.PRESENTATION, node);
   }
 
   public ConstraintFunction_ReferentSetHandler getReferentSetHandler() {

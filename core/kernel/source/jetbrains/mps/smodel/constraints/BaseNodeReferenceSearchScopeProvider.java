@@ -16,6 +16,8 @@
 package jetbrains.mps.smodel.constraints;
 
 import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.presentation.NodePresentationUtil;
 import jetbrains.mps.smodel.search.EmptySearchScope;
 import jetbrains.mps.smodel.search.ISearchScope;
 import jetbrains.mps.smodel.search.SimpleSearchScope;
@@ -43,5 +45,9 @@ public abstract class BaseNodeReferenceSearchScopeProvider implements INodeRefer
       return new SimpleSearchScope(CollectionUtil.asList((Iterable) searchScopeOrListOfNodes));
     }
     throw new RuntimeException("unexpected type in search-scope provider " + searchScopeOrListOfNodes.getClass());
+  }
+
+  public String getPresentation(IOperationContext operationContext, ReferentConstraintContext _context, SNode parameterObject) {
+    return NodePresentationUtil.matchingText(parameterObject, true);
   }
 }

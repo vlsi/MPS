@@ -499,6 +499,19 @@
           </node>
         </node>
       </node>
+      <node role="presentation" type="jetbrains.mps.lang.constraints.structure.ConstraintFunction_ReferentSearchScope_Presentation" id="3906442776579672677">
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="3906442776579672678">
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="3906442776579710292">
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="3906442776579779378">
+              <node role="operand" type="jetbrains.mps.lang.constraints.structure.ConstraintFunctionParameter_parameterNode" id="3906442776579817048" />
+              <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="3906442776579779382">
+                <link role="baseMethodDeclaration" targetNodeId="50.8540045600162183880" resolveInfo="getNestedNameInContext" />
+                <node role="actualArgument" type="jetbrains.mps.lang.constraints.structure.ConceptParameter_ReferentSearchScope_enclosingNode" id="3906442776579779383" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
     </node>
   </node>
   <node type="jetbrains.mps.lang.constraints.structure.ConceptConstraints" id="1213104846934">

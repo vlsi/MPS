@@ -12,6 +12,7 @@ public class NodeDefaultSearchScope extends BaseConcept {
   public static final String concept = "jetbrains.mps.lang.constraints.structure.NodeDefaultSearchScope";
   public static final String DESCRIPTION = "description";
   public static final String SEARCH_SCOPE_FACTORY = "searchScopeFactory";
+  public static final String PRESENTATION = "presentation";
 
   public NodeDefaultSearchScope(SNode node) {
     super(node);
@@ -31,6 +32,14 @@ public class NodeDefaultSearchScope extends BaseConcept {
 
   public void setSearchScopeFactory(ConstraintFunction_ReferentSearchScope_Factory node) {
     super.setChild(NodeDefaultSearchScope.SEARCH_SCOPE_FACTORY, node);
+  }
+
+  public ConstraintFunction_ReferentSearchScope_Presentation getPresentation() {
+    return (ConstraintFunction_ReferentSearchScope_Presentation)this.getChild(ConstraintFunction_ReferentSearchScope_Presentation.class, NodeDefaultSearchScope.PRESENTATION);
+  }
+
+  public void setPresentation(ConstraintFunction_ReferentSearchScope_Presentation node) {
+    super.setChild(NodeDefaultSearchScope.PRESENTATION, node);
   }
 
   public static NodeDefaultSearchScope newInstance(SModel sm, boolean init) {
