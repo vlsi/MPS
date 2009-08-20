@@ -20,6 +20,7 @@ import jetbrains.mps.ide.hierarchy.HierarchyTreeNode;
 import jetbrains.mps.smodel.INodeAdapter;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.util.Condition;
 
 import javax.swing.*;
@@ -27,6 +28,8 @@ import javax.swing.tree.TreePath;
 import java.util.HashSet;
 import java.util.Set;
 import java.awt.*;
+
+import com.intellij.openapi.util.Computable;
 
 public class HierarchicalChooseNodeComponent extends JPanel implements IChooseComponent<SNode> {
   private MyHierarchyTree myHierarchyTree;
@@ -107,8 +110,13 @@ public class HierarchicalChooseNodeComponent extends JPanel implements IChooseCo
     if (!(lastComponent instanceof HierarchyTreeNode)) {
       throw new InvalidInputValueException("no node is selected");
     }
-    HierarchyTreeNode selectedTreeNode = (HierarchyTreeNode) lastComponent;
-    return selectedTreeNode.getNode().getNode();
+    final HierarchyTreeNode selectedTreeNode = (HierarchyTreeNode) lastComponent;
+    SNode node = ModelAccess.instance().runReadAction(new Computable<SNode>() {
+      public SNode compute() {
+        return selectedTreeNode.getNode().getNode();
+      }
+    });
+    return node;
   }
 
   public JComponent getMainComponent() {
