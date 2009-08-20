@@ -47,14 +47,12 @@ public class SModelUtil {
 
   public static void startListeningOnce(ClassLoaderManager clManager, GlobalSModelEventsManager meManager) {
     clManager.addReloadHandler(new ReloadAdapter() {
-
       public void onReload() {
         MapSequence.fromMap(SModelUtil.myFQNameToConcepDecl).clear();
         MapSequence.fromMap(SModelUtil.myConceptToLanguage).clear();
       }
     });
     meManager.addGlobalModelListener(new SModelAdapter() {
-
       public void rootRemoved(SModelRootEvent p0) {
         if (Language.getModelAspect(p0.getModelDescriptor()) == LanguageAspect.STRUCTURE) {
           if (SNodeOperations.isInstanceOf(((SNode)p0.getRoot()), "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration")) {
@@ -83,12 +81,12 @@ public class SModelUtil {
   public static SNode findNodeByFQName(String nodeFQName, SNode concept, IScope scope) {
     String modelName = NameUtil.namespaceFromLongName(nodeFQName);
     String name = NameUtil.shortNameFromLongName(nodeFQName);
-    for(SModelDescriptor descriptor : ListSequence.fromList(scope.getModelDescriptors())) {
+    for (SModelDescriptor descriptor : ListSequence.fromList(scope.getModelDescriptors())) {
       if (!(modelName.equals(descriptor.getLongName()))) {
         continue;
       }
       SModel model = descriptor.getSModel();
-      for(SNode root : ListSequence.fromList(SModelOperations.getRoots(model, null))) {
+      for (SNode root : ListSequence.fromList(SModelOperations.getRoots(model, null))) {
         if (name.equals(root.getName()) && SNodeOperations.isInstanceOf(root, NameUtil.nodeFQName(concept))) {
           return root;
         }
@@ -108,8 +106,7 @@ public class SModelUtil {
     if (conceptFQName.equals("jetbrains.mps.smodel.structure.ModelPersistence$UnknownSNode")) {
       return null;
     }
-    return NodeReadAccessCaster.runReadTransparentAction(new Computable <SNode>() {
-
+    return NodeReadAccessCaster.runReadTransparentAction(new Computable<SNode>() {
       public SNode compute() {
         String languageNamespace = NameUtil.namespaceFromConceptFQName(conceptFQName);
         Language language = scope.getLanguage(languageNamespace);
@@ -136,7 +133,7 @@ public class SModelUtil {
     return SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.core.structure.BaseConcept");
   }
 
-  public static Language getDeclaringLanguage(SNode concept, @NotNull() IScope scope) {
+  public static Language getDeclaringLanguage(SNode concept, @NotNull IScope scope) {
     Language l = MapSequence.fromMap(myConceptToLanguage).get(concept);
     if (l != null) {
       return l;
@@ -169,9 +166,9 @@ public class SModelUtil {
 
   public static List<SNode> getDirectSuperInterfacesAndTheirSupers(SNode concept) {
     Set<SNode> result = SetSequence.fromSet(new LinkedHashSet<SNode>());
-    for(SNode superConcept : ListSequence.fromList(getDirectSuperConcepts(concept))) {
+    for (SNode superConcept : ListSequence.fromList(getDirectSuperConcepts(concept))) {
       if (SNodeOperations.isInstanceOf(superConcept, "jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration") && !(SetSequence.fromSet(result).contains(superConcept))) {
-        for(AbstractConceptDeclaration adapter : ListSequence.fromList(new ConceptAndSuperConceptsScope(((AbstractConceptDeclaration)SNodeOperations.getAdapter(superConcept))).getConcepts())) {
+        for (AbstractConceptDeclaration adapter : ListSequence.fromList(new ConceptAndSuperConceptsScope(((AbstractConceptDeclaration)SNodeOperations.getAdapter(superConcept))).getConcepts())) {
           SetSequence.fromSet(result).addElement(adapter.getNode());
         }
       }
@@ -187,15 +184,14 @@ public class SModelUtil {
       if (extended != null) {
         ListSequence.fromList(result).addElement(extended);
       }
-      for(SNode ref : ListSequence.fromList(SLinkOperations.getTargets(conceptDecl, "implements", true))) {
+      for (SNode ref : ListSequence.fromList(SLinkOperations.getTargets(conceptDecl, "implements", true))) {
         if (SLinkOperations.getTarget(ref, "intfc", false) != null) {
           ListSequence.fromList(result).addElement(SLinkOperations.getTarget(ref, "intfc", false));
         }
       }
-    } else
-    {
+    } else {
       SNode intConceptDecl = (SNode)concept;
-      for(SNode ref : ListSequence.fromList(SLinkOperations.getTargets(intConceptDecl, "extends", true))) {
+      for (SNode ref : ListSequence.fromList(SLinkOperations.getTargets(intConceptDecl, "extends", true))) {
         if (SLinkOperations.getTarget(ref, "intfc", false) != null) {
           ListSequence.fromList(result).addElement(SLinkOperations.getTarget(ref, "intfc", false));
         }
@@ -222,5 +218,4 @@ public class SModelUtil {
   public static SNode getGenuineLinkSourceCardinality(SNode linkDecl) {
     return SEnumOperations.enumMemberForValue(SEnumOperations.getEnum("r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)", "Cardinality"), SPropertyOperations.getString_def(getGenuineLinkDeclaration(linkDecl), "sourceCardinality", "0..1"));
   }
-
 }
