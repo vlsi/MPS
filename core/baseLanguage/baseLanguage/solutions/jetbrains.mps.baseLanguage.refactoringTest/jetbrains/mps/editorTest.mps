@@ -4169,7 +4169,7 @@
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="2600341035666016323">
             <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="2600341035666016324">
               <link role="classifier" targetNodeId="7.~Map" resolveInfo="Map" />
-              <node role="testNode$attribute" type="jetbrains.mps.lang.test.structure.AnonymousCellAnnotation" id="1267114898303479149">
+              <node role="testNode$attribute" type="jetbrains.mps.lang.test.structure.AnonymousCellAnnotation" id="368004458608097448">
                 <property name="isLastPosition" value="true" />
                 <property name="useLabelSelection" value="true" />
                 <property name="selectionStart" value="3" />
