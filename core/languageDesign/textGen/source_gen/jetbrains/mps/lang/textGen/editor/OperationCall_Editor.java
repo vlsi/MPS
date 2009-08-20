@@ -31,7 +31,6 @@ import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.style.Style;
 
 public class OperationCall_Editor extends DefaultNodeEditor {
-
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_6903_0(editorContext, node);
   }
@@ -73,13 +72,11 @@ public class OperationCall_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-
   private static boolean renderingCondition6903_0(SNode node, EditorContext editorContext, IScope scope) {
     return ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(node, "function", false), "parameter", true)).isNotEmpty();
   }
 
   public static class _Inline6903_0 extends AbstractCellProvider {
-
     public _Inline6903_0() {
       super();
     }
@@ -111,10 +108,9 @@ public class OperationCall_Editor extends DefaultNodeEditor {
       } else
       return editorCell;
     }
+  }
 
-}
   private static class parameterListHandler_6903_0 extends RefNodeListHandler {
-
     public parameterListHandler_6903_0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
@@ -177,7 +173,5 @@ public class OperationCall_Editor extends DefaultNodeEditor {
       editorCell.setDefaultText("");
       return editorCell;
     }
-
-}
-
+  }
 }

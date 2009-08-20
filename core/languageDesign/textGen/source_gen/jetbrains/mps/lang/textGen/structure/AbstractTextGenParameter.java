@@ -22,5 +22,4 @@ public class AbstractTextGenParameter extends ConceptFunctionParameter {
   public static AbstractTextGenParameter newInstance(SModel sm) {
     return AbstractTextGenParameter.newInstance(sm, false);
   }
-
 }

@@ -37,5 +37,4 @@ public class AbstractTextGenDeclaration_Behavior {
   public static List<SNode> callSuper_getAvailableOperations_1234781444746(SNode thisNode, String callerConceptFqName) {
     return (List<SNode>)BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.textGen.structure.AbstractTextGenDeclaration"), callerConceptFqName, "virtual_getAvailableOperations_1234781444746", PARAMETERS_1234781444746);
   }
-
 }

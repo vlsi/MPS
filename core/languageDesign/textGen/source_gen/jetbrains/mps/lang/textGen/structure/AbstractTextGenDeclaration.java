@@ -52,7 +52,6 @@ public class AbstractTextGenDeclaration extends BaseConcept implements IValidIde
     this.setProperty(AbstractTextGenDeclaration.VIRTUAL_PACKAGE, value);
   }
 
-
   public static AbstractTextGenDeclaration newInstance(SModel sm, boolean init) {
     return (AbstractTextGenDeclaration)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.textGen.structure.AbstractTextGenDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -60,5 +59,4 @@ public class AbstractTextGenDeclaration extends BaseConcept implements IValidIde
   public static AbstractTextGenDeclaration newInstance(SModel sm) {
     return AbstractTextGenDeclaration.newInstance(sm, false);
   }
-
 }

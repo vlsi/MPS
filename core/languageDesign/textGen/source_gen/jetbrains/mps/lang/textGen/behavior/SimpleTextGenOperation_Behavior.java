@@ -20,7 +20,7 @@ public class SimpleTextGenOperation_Behavior {
     }
     StringBuilder result = new StringBuilder();
     boolean space = false;
-    for(int i = 0 ; i < name.length() ; i += (space ?
+    for (int i = 0 ; i < name.length() ; i += (space ?
       2 :
       1
     )) {
@@ -45,5 +45,4 @@ public class SimpleTextGenOperation_Behavior {
   public static String callSuper_getMethodName_1234789420862(SNode thisNode, String callerConceptFqName) {
     return (String)BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.textGen.structure.SimpleTextGenOperation"), callerConceptFqName, "virtual_getMethodName_1234789420862", PARAMETERS_1234789420862);
   }
-
 }

@@ -25,7 +25,6 @@ public class FoundErrorOperation extends Statement {
     super.setChild(FoundErrorOperation.TEXT, node);
   }
 
-
   public static FoundErrorOperation newInstance(SModel sm, boolean init) {
     return (FoundErrorOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.textGen.structure.FoundErrorOperation", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -33,5 +32,4 @@ public class FoundErrorOperation extends Statement {
   public static FoundErrorOperation newInstance(SModel sm) {
     return FoundErrorOperation.newInstance(sm, false);
   }
-
 }

@@ -21,5 +21,4 @@ public class ContextParameter extends AbstractTextGenParameter {
   public static ContextParameter newInstance(SModel sm) {
     return ContextParameter.newInstance(sm, false);
   }
-
 }

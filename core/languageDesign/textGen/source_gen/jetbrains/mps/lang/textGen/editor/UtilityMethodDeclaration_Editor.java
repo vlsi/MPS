@@ -39,7 +39,6 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 
 public class UtilityMethodDeclaration_Editor extends DefaultNodeEditor {
-
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_4287_0(editorContext, node);
   }
@@ -227,7 +226,6 @@ public class UtilityMethodDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-
   private static boolean renderingCondition4287_0(SNode node, EditorContext editorContext, IScope scope) {
     return SLinkOperations.getCount(node, "annotation") > 0;
   }
@@ -237,7 +235,6 @@ public class UtilityMethodDeclaration_Editor extends DefaultNodeEditor {
   }
 
   private static class annotationListHandler_4287_0 extends RefNodeListHandler {
-
     public annotationListHandler_4287_0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
@@ -277,10 +274,9 @@ public class UtilityMethodDeclaration_Editor extends DefaultNodeEditor {
     public EditorCell createSeparatorCell(EditorContext editorContext) {
       return super.createSeparatorCell(editorContext);
     }
+  }
 
-}
   private static class parameterListHandler_4287_0 extends RefNodeListHandler {
-
     public parameterListHandler_4287_0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
@@ -343,10 +339,9 @@ public class UtilityMethodDeclaration_Editor extends DefaultNodeEditor {
       editorCell.setDefaultText("");
       return editorCell;
     }
+  }
 
-}
   public static class UtilityMethodDeclaration_name_postfixCellMenu0 extends AbstractCellMenuPart_PropertyPostfixHints {
-
     public UtilityMethodDeclaration_name_postfixCellMenu0() {
     }
 
@@ -355,13 +350,10 @@ public class UtilityMethodDeclaration_Editor extends DefaultNodeEditor {
       SNode nodeType = SLinkOperations.getTarget(node, "returnType", true);
       if (nodeType != null) {
         result = Type_Behavior.call_getVariableSuffixes_1213877337304(nodeType);
-      } else
-      {
+      } else {
         result = ListSequence.fromList(new ArrayList<String>());
       }
       return result;
     }
-
-}
-
+  }
 }

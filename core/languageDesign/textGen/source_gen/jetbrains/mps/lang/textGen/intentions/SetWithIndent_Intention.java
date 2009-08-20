@@ -10,7 +10,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 public class SetWithIndent_Intention extends BaseIntention {
-
   public SetWithIndent_Intention() {
   }
 
@@ -52,8 +51,7 @@ public class SetWithIndent_Intention extends BaseIntention {
     boolean indent = AbstractAppendPart_Behavior.call_withIndent_1237466287046(node);
     if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.lang.textGen.structure.ConstantStringAppendPart")) {
       SPropertyOperations.set(SNodeOperations.cast(node, "jetbrains.mps.lang.textGen.structure.ConstantStringAppendPart"), "withIndent", "" + !(indent));
-    } else
-    {
+    } else {
       SPropertyOperations.set(SNodeOperations.cast(node, "jetbrains.mps.lang.textGen.structure.NodeAppendPart"), "withIndent", "" + !(indent));
     }
   }
@@ -61,5 +59,4 @@ public class SetWithIndent_Intention extends BaseIntention {
   public String getLocationString() {
     return "jetbrains.mps.lang.textGen.intentions";
   }
-
 }

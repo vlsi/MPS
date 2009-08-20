@@ -42,7 +42,6 @@ public class CollectionAppendPart extends AbstractAppendPart {
     super.setChild(CollectionAppendPart.LIST, node);
   }
 
-
   public static CollectionAppendPart newInstance(SModel sm, boolean init) {
     return (CollectionAppendPart)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.textGen.structure.CollectionAppendPart", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -50,5 +49,4 @@ public class CollectionAppendPart extends AbstractAppendPart {
   public static CollectionAppendPart newInstance(SModel sm) {
     return CollectionAppendPart.newInstance(sm, false);
   }
-
 }

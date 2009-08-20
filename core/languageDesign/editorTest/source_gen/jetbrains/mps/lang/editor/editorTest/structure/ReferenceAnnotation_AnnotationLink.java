@@ -14,5 +14,4 @@ public class ReferenceAnnotation_AnnotationLink {
   public static ReferenceAnnotataion getReferenceAnnotation(BaseConcept source, String linkRole) {
     return (ReferenceAnnotataion)source.getLinkAttribute(ReferenceAnnotation_AnnotationLink.REFERENCE_ANNOTATION, linkRole);
   }
-
 }

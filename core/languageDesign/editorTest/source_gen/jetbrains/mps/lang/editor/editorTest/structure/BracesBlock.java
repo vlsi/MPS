@@ -41,7 +41,6 @@ public class BracesBlock extends TestBlockList implements IBaseTestBlock {
     this.setProperty(BracesBlock.VIRTUAL_PACKAGE, value);
   }
 
-
   public static BracesBlock newInstance(SModel sm, boolean init) {
     return (BracesBlock)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.editorTest.structure.BracesBlock", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -49,5 +48,4 @@ public class BracesBlock extends TestBlockList implements IBaseTestBlock {
   public static BracesBlock newInstance(SModel sm) {
     return BracesBlock.newInstance(sm, false);
   }
-
 }

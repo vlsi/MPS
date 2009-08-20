@@ -47,7 +47,6 @@ public class UtilityMethodCall extends Expression {
     this.insertChild(prev, UtilityMethodCall.PARAMETER, node);
   }
 
-
   public static UtilityMethodCall newInstance(SModel sm, boolean init) {
     return (UtilityMethodCall)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.textGen.structure.UtilityMethodCall", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -55,5 +54,4 @@ public class UtilityMethodCall extends Expression {
   public static UtilityMethodCall newInstance(SModel sm) {
     return UtilityMethodCall.newInstance(sm, false);
   }
-
 }

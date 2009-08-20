@@ -21,5 +21,4 @@ public class PlusExpression extends BinaryExpression {
   public static PlusExpression newInstance(SModel sm) {
     return PlusExpression.newInstance(sm, false);
   }
-
 }

@@ -41,7 +41,6 @@ public class VerticalLayoutBlockList extends TestBlockList implements IBaseTestB
     this.setProperty(VerticalLayoutBlockList.VIRTUAL_PACKAGE, value);
   }
 
-
   public static VerticalLayoutBlockList newInstance(SModel sm, boolean init) {
     return (VerticalLayoutBlockList)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.editorTest.structure.VerticalLayoutBlockList", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -49,5 +48,4 @@ public class VerticalLayoutBlockList extends TestBlockList implements IBaseTestB
   public static VerticalLayoutBlockList newInstance(SModel sm) {
     return VerticalLayoutBlockList.newInstance(sm, false);
   }
-
 }

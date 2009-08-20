@@ -23,5 +23,4 @@ public class AbstractAppendPart_Behavior {
   public static boolean callSuper_withIndent_1237466287046(SNode thisNode, String callerConceptFqName) {
     return (Boolean)BehaviorManager.getInstance().invokeSuper(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.textGen.structure.AbstractAppendPart"), callerConceptFqName, "virtual_withIndent_1237466287046", PARAMETERS_1237466287046);
   }
-
 }

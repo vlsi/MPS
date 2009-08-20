@@ -22,5 +22,4 @@ public class GenerateTextDeclaration extends ConceptFunction {
   public static GenerateTextDeclaration newInstance(SModel sm) {
     return GenerateTextDeclaration.newInstance(sm, false);
   }
-
 }

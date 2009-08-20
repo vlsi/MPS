@@ -9,15 +9,13 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.SNode;
 
 public class UtilityMethodCall_DataFlow extends DataFlowBuilder {
-
   public UtilityMethodCall_DataFlow() {
   }
 
   public void build(final IOperationContext operationContext, final DataFlowBuilderContext _context) {
     _context.getBuilder().emitRead(SLinkOperations.getTarget(_context.getNode(), "function", false));
-    for(SNode arg : SLinkOperations.getTargets(_context.getNode(), "parameter", true)) {
+    for (SNode arg : SLinkOperations.getTargets(_context.getNode(), "parameter", true)) {
       _context.getBuilder().build((SNode)arg);
     }
   }
-
 }

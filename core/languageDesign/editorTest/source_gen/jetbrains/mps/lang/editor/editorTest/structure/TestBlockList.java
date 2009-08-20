@@ -65,7 +65,6 @@ public class TestBlockList extends BaseConcept implements IBaseTestBlock {
     this.insertChild(prev, TestBlockList.STATEMENT, node);
   }
 
-
   public static TestBlockList newInstance(SModel sm, boolean init) {
     return (TestBlockList)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.editorTest.structure.TestBlockList", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -73,5 +72,4 @@ public class TestBlockList extends BaseConcept implements IBaseTestBlock {
   public static TestBlockList newInstance(SModel sm) {
     return TestBlockList.newInstance(sm, false);
   }
-
 }

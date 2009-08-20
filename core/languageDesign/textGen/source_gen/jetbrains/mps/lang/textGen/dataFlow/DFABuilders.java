@@ -6,7 +6,6 @@ import jetbrains.mps.lang.dataFlow.DataFlowBuilders;
 import jetbrains.mps.lang.dataFlow.DataFlowManager;
 
 public class DFABuilders extends DataFlowBuilders {
-
   public void install(DataFlowManager manager) {
     manager.register("jetbrains.mps.lang.textGen.structure.OperationDeclaration", new OperationDeclaration_DataFlow());
     manager.register("jetbrains.mps.lang.textGen.structure.OperationCall", new OperationCall_DataFlow());
@@ -26,5 +25,4 @@ public class DFABuilders extends DataFlowBuilders {
     manager.register("jetbrains.mps.lang.textGen.structure.IndentBufferOperation", new IndentBufferOperation_DataFlow());
     manager.register("jetbrains.mps.lang.textGen.structure.LanguageTextGenDeclaration", new LanguageTextGenDeclaration_DataFlow());
   }
-
 }

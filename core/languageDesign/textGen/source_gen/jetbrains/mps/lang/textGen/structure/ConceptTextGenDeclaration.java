@@ -61,7 +61,6 @@ public class ConceptTextGenDeclaration extends AbstractTextGenDeclaration implem
     super.setChild(ConceptTextGenDeclaration.TEXT_GEN_BLOCK, node);
   }
 
-
   public static ConceptTextGenDeclaration newInstance(SModel sm, boolean init) {
     return (ConceptTextGenDeclaration)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.textGen.structure.ConceptTextGenDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -69,5 +68,4 @@ public class ConceptTextGenDeclaration extends AbstractTextGenDeclaration implem
   public static ConceptTextGenDeclaration newInstance(SModel sm) {
     return ConceptTextGenDeclaration.newInstance(sm, false);
   }
-
 }

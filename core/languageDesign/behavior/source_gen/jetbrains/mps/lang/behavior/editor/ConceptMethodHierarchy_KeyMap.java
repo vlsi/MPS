@@ -23,6 +23,7 @@ public class ConceptMethodHierarchy_KeyMap extends EditorCellKeyMap {
     action = new ConceptMethodHierarchy_KeyMap.ConceptMethodHierarchy_KeyMap_Action1();
     this.putAction("ctrl", "VK_I", action);
   }
+
   public static class ConceptMethodHierarchy_KeyMap_Action0 extends EditorCellKeyMapAction {
     public ConceptMethodHierarchy_KeyMap_Action0() {
       this.setShownInPopupMenu(true);

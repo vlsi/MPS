@@ -68,7 +68,6 @@ public class LanguageTextGenDeclaration extends AbstractTextGenDeclaration {
     this.insertChild(prev, LanguageTextGenDeclaration.FUNCTION, node);
   }
 
-
   public static LanguageTextGenDeclaration newInstance(SModel sm, boolean init) {
     return (LanguageTextGenDeclaration)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.textGen.structure.LanguageTextGenDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -76,5 +75,4 @@ public class LanguageTextGenDeclaration extends AbstractTextGenDeclaration {
   public static LanguageTextGenDeclaration newInstance(SModel sm) {
     return LanguageTextGenDeclaration.newInstance(sm, false);
   }
-
 }

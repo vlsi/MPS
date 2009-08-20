@@ -16,7 +16,6 @@ import jetbrains.mps.typesystem.inference.NodeErrorTarget;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class check_CallInnerFunctionOperation_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
-
   public check_CallInnerFunctionOperation_NonTypesystemRule() {
   }
 
@@ -27,8 +26,7 @@ public class check_CallInnerFunctionOperation_NonTypesystemRule extends Abstract
     List<SNode> actualArguments = SLinkOperations.getTargets(innerMethodCall, "parameter", true);
     if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(ListSequence.fromList(parameterDeclarations).last(), "type", true), "jetbrains.mps.baseLanguage.structure.VariableArityType")) {
       b = ListSequence.fromList(parameterDeclarations).count() - 1 <= ListSequence.fromList(actualArguments).count();
-    } else
-    {
+    } else {
       b = ListSequence.fromList(parameterDeclarations).count() == ListSequence.fromList(actualArguments).count();
     }
     if (!(b)) {
@@ -39,7 +37,7 @@ public class check_CallInnerFunctionOperation_NonTypesystemRule extends Abstract
       }
     }
     if (SLinkOperations.getCount(baseMethodDeclaration, "typeVariableDeclaration") > 0) {
-      for(SNode actual : actualArguments) {
+      for (SNode actual : actualArguments) {
         typeCheckingContext.addDependencyForCurrent(actual);
       }
     }
@@ -56,5 +54,4 @@ public class check_CallInnerFunctionOperation_NonTypesystemRule extends Abstract
   public boolean overrides() {
     return false;
   }
-
 }

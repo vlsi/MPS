@@ -323,7 +323,6 @@ public class StaticConceptMethodDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-
   private static boolean renderingCondition5645_0(SNode node, EditorContext editorContext, IScope scope) {
     return ListSequence.fromList(SLinkOperations.getTargets(node, "parameter", true)).isEmpty();
   }
@@ -486,7 +485,6 @@ public class StaticConceptMethodDeclaration_Editor extends DefaultNodeEditor {
     public StaticConceptMethodDeclaration_component_cellMenu0() {
       this.myComponent = new ConceptMethodDeclaration_Menu();
     }
-
 
     public List<INodeSubstituteAction> createActions(CellContext cellContext, EditorContext editorContext) {
       return this.myComponent.createActions(cellContext, editorContext);

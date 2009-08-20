@@ -22,5 +22,4 @@ public class AbstractAppendPart extends BaseConcept {
   public static AbstractAppendPart newInstance(SModel sm) {
     return AbstractAppendPart.newInstance(sm, false);
   }
-
 }

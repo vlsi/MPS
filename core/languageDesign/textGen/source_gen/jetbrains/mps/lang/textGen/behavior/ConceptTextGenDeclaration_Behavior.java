@@ -20,7 +20,7 @@ public class ConceptTextGenDeclaration_Behavior {
   public static List<SNode> virtual_getAvailableOperations_1234781444746(SNode thisNode) {
     List<SNode> result = new ArrayList<SNode>();
     List<SNode> roots = SModelOperations.getRoots(SNodeOperations.getModel(thisNode), "jetbrains.mps.lang.textGen.structure.LanguageTextGenDeclaration");
-    for(SNode langTextGen : roots) {
+    for (SNode langTextGen : roots) {
       ListSequence.fromList(result).addSequence(ListSequence.fromList(SLinkOperations.getTargets(langTextGen, "operation", true)));
     }
     return result;
@@ -41,5 +41,4 @@ public class ConceptTextGenDeclaration_Behavior {
   public static SNode callSuper_getBaseConcept_8952337903384725606(SNode thisNode, String callerConceptFqName) {
     return (SNode)BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.textGen.structure.ConceptTextGenDeclaration"), callerConceptFqName, "virtual_getBaseConcept_2621449412040133768", PARAMETERS_8952337903384725606);
   }
-
 }

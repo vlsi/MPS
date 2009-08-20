@@ -25,7 +25,6 @@ public class ConceptMethodDeclaration extends BaseMethodDeclaration implements I
     super(node);
   }
 
-
   public String getShortDescription() {
     return this.getProperty(ConceptMethodDeclaration.SHORT_DESCRIPTION);
   }
@@ -89,7 +88,6 @@ public class ConceptMethodDeclaration extends BaseMethodDeclaration implements I
   public void setVisibility(Visibility node) {
     super.setChild(ConceptMethodDeclaration.VISIBILITY, node);
   }
-
 
   public static ConceptMethodDeclaration newInstance(SModel sm, boolean init) {
     return (ConceptMethodDeclaration)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();

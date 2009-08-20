@@ -22,5 +22,4 @@ public class UtilityMethodDeclaration extends BaseMethodDeclaration {
   public static UtilityMethodDeclaration newInstance(SModel sm) {
     return UtilityMethodDeclaration.newInstance(sm, false);
   }
-
 }

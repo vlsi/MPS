@@ -47,7 +47,6 @@ public class OperationCall extends AbstractAppendPart {
     this.insertChild(prev, OperationCall.PARAMETER, node);
   }
 
-
   public static OperationCall newInstance(SModel sm, boolean init) {
     return (OperationCall)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.textGen.structure.OperationCall", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -55,5 +54,4 @@ public class OperationCall extends AbstractAppendPart {
   public static OperationCall newInstance(SModel sm) {
     return OperationCall.newInstance(sm, false);
   }
-
 }

@@ -18,7 +18,6 @@ import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 
 public class BracesBlock_Editor extends DefaultNodeEditor {
-
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_4321_0(editorContext, node);
   }
@@ -40,7 +39,6 @@ public class BracesBlock_Editor extends DefaultNodeEditor {
   }
 
   private static class statementListHandler_4321_0 extends RefNodeListHandler {
-
     public statementListHandler_4321_0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
@@ -91,7 +89,5 @@ public class BracesBlock_Editor extends DefaultNodeEditor {
       editorCell.setDefaultText("");
       return editorCell;
     }
-
-}
-
+  }
 }

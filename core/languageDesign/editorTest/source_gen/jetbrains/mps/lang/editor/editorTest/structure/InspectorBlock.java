@@ -51,7 +51,6 @@ public class InspectorBlock extends BaseConcept implements IBaseTestBlock {
     super.setChild(InspectorBlock.BLOCK, node);
   }
 
-
   public static InspectorBlock newInstance(SModel sm, boolean init) {
     return (InspectorBlock)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.editorTest.structure.InspectorBlock", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -59,5 +58,4 @@ public class InspectorBlock extends BaseConcept implements IBaseTestBlock {
   public static InspectorBlock newInstance(SModel sm) {
     return InspectorBlock.newInstance(sm, false);
   }
-
 }

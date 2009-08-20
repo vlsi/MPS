@@ -12,7 +12,6 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 
 public class IntegerLiteral_Editor extends DefaultNodeEditor {
-
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createProperty_6139_0(editorContext, node);
   }
@@ -34,5 +33,4 @@ public class IntegerLiteral_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
 }

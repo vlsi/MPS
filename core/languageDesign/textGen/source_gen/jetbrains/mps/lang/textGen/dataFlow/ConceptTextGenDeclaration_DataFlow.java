@@ -9,7 +9,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.SNode;
 
 public class ConceptTextGenDeclaration_DataFlow extends DataFlowBuilder {
-
   public ConceptTextGenDeclaration_DataFlow() {
   }
 
@@ -18,5 +17,4 @@ public class ConceptTextGenDeclaration_DataFlow extends DataFlowBuilder {
     _context.getBuilder().emitRead(SLinkOperations.getTarget(_context.getNode(), "conceptDeclaration", false));
     _context.getBuilder().build((SNode)SLinkOperations.getTarget(_context.getNode(), "textGenBlock", true));
   }
-
 }

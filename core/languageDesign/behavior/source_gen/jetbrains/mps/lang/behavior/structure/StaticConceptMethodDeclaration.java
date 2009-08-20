@@ -22,7 +22,6 @@ public class StaticConceptMethodDeclaration extends BaseMethodDeclaration implem
     super(node);
   }
 
-
   public String getShortDescription() {
     return this.getProperty(StaticConceptMethodDeclaration.SHORT_DESCRIPTION);
   }
@@ -62,7 +61,6 @@ public class StaticConceptMethodDeclaration extends BaseMethodDeclaration implem
   public void setVisibility(Visibility node) {
     super.setChild(StaticConceptMethodDeclaration.VISIBILITY, node);
   }
-
 
   public static StaticConceptMethodDeclaration newInstance(SModel sm, boolean init) {
     return (StaticConceptMethodDeclaration)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.behavior.structure.StaticConceptMethodDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();

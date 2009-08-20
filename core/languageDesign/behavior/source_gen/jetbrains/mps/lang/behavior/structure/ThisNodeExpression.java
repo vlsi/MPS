@@ -19,7 +19,6 @@ public class ThisNodeExpression extends Expression implements IThisExpression {
     super(node);
   }
 
-
   public String getShortDescription() {
     return this.getProperty(ThisNodeExpression.SHORT_DESCRIPTION);
   }
@@ -43,7 +42,6 @@ public class ThisNodeExpression extends Expression implements IThisExpression {
   public void setVirtualPackage(String value) {
     this.setProperty(ThisNodeExpression.VIRTUAL_PACKAGE, value);
   }
-
 
   public static ThisNodeExpression newInstance(SModel sm, boolean init) {
     return (ThisNodeExpression)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.behavior.structure.ThisNodeExpression", sm, GlobalScope.getInstance(), init).getAdapter();

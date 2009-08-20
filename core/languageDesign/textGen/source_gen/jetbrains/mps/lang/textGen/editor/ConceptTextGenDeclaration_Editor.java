@@ -21,7 +21,6 @@ import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.lang.sharedConcepts.editor.SharedStyles_StyleSheet;
 
 public class ConceptTextGenDeclaration_Editor extends DefaultNodeEditor {
-
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_2829_0(editorContext, node);
   }
@@ -163,7 +162,6 @@ public class ConceptTextGenDeclaration_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline2829_0 extends AbstractCellProvider {
-
     public _Inline2829_0() {
       super();
     }
@@ -195,7 +193,5 @@ public class ConceptTextGenDeclaration_Editor extends DefaultNodeEditor {
       } else
       return editorCell;
     }
-
-}
-
+  }
 }

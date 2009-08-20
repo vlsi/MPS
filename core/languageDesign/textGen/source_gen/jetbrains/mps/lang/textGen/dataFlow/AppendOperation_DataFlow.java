@@ -9,14 +9,12 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class AppendOperation_DataFlow extends DataFlowBuilder {
-
   public AppendOperation_DataFlow() {
   }
 
   public void build(final IOperationContext operationContext, final DataFlowBuilderContext _context) {
-    for(SNode part : SLinkOperations.getTargets(_context.getNode(), "part", true)) {
+    for (SNode part : SLinkOperations.getTargets(_context.getNode(), "part", true)) {
       _context.getBuilder().build((SNode)part);
     }
   }
-
 }

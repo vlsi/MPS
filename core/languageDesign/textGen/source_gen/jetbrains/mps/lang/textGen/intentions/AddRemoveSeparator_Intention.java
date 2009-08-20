@@ -8,7 +8,6 @@ import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 public class AddRemoveSeparator_Intention extends BaseIntention {
-
   public AddRemoveSeparator_Intention() {
   }
 
@@ -45,5 +44,4 @@ public class AddRemoveSeparator_Intention extends BaseIntention {
   public String getLocationString() {
     return "jetbrains.mps.lang.textGen.intentions";
   }
-
 }

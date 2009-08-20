@@ -14,7 +14,6 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class UtilityMethodDeclaration_DefaultSearchScope extends BaseNodeReferenceSearchScopeProvider {
-
   public UtilityMethodDeclaration_DefaultSearchScope() {
   }
 
@@ -34,5 +33,4 @@ public class UtilityMethodDeclaration_DefaultSearchScope extends BaseNodeReferen
     }
     return methods;
   }
-
 }

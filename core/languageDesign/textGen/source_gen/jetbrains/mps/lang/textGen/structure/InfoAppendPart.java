@@ -24,7 +24,6 @@ public class InfoAppendPart extends AbstractAppendPart {
     super.setChild(InfoAppendPart.VALUE, node);
   }
 
-
   public static InfoAppendPart newInstance(SModel sm, boolean init) {
     return (InfoAppendPart)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.textGen.structure.InfoAppendPart", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -32,5 +31,4 @@ public class InfoAppendPart extends AbstractAppendPart {
   public static InfoAppendPart newInstance(SModel sm) {
     return InfoAppendPart.newInstance(sm, false);
   }
-
 }

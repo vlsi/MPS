@@ -22,5 +22,4 @@ public class SimpleTextGenOperation extends Statement {
   public static SimpleTextGenOperation newInstance(SModel sm) {
     return SimpleTextGenOperation.newInstance(sm, false);
   }
-
 }

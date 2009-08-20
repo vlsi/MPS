@@ -21,5 +21,4 @@ public class IncreaseDepthOperation extends SimpleTextGenOperation {
   public static IncreaseDepthOperation newInstance(SModel sm) {
     return IncreaseDepthOperation.newInstance(sm, false);
   }
-
 }

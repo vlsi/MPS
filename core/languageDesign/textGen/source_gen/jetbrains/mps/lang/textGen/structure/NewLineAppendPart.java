@@ -21,5 +21,4 @@ public class NewLineAppendPart extends AbstractAppendPart {
   public static NewLineAppendPart newInstance(SModel sm) {
     return NewLineAppendPart.newInstance(sm, false);
   }
-
 }

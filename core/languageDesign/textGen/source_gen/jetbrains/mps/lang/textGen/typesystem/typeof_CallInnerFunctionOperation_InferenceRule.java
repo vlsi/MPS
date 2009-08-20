@@ -15,7 +15,6 @@ import jetbrains.mps.baseLanguage.typesystem.RulesFunctions_BaseLanguage;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class typeof_CallInnerFunctionOperation_InferenceRule extends AbstractInferenceRule_Runtime implements InferenceRule_Runtime {
-
   public typeof_CallInnerFunctionOperation_InferenceRule() {
   }
 
@@ -39,5 +38,4 @@ public class typeof_CallInnerFunctionOperation_InferenceRule extends AbstractInf
   public boolean overrides() {
     return false;
   }
-
 }

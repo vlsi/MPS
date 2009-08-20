@@ -42,7 +42,6 @@ public class StubBlock extends BaseConcept implements IBaseTestBlock {
     this.setProperty(StubBlock.VIRTUAL_PACKAGE, value);
   }
 
-
   public static StubBlock newInstance(SModel sm, boolean init) {
     return (StubBlock)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.editorTest.structure.StubBlock", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -50,5 +49,4 @@ public class StubBlock extends BaseConcept implements IBaseTestBlock {
   public static StubBlock newInstance(SModel sm) {
     return StubBlock.newInstance(sm, false);
   }
-
 }

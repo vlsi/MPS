@@ -25,7 +25,6 @@ public class WithIndentOperation extends Statement {
     super.setChild(WithIndentOperation.LIST, node);
   }
 
-
   public static WithIndentOperation newInstance(SModel sm, boolean init) {
     return (WithIndentOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.textGen.structure.WithIndentOperation", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -33,5 +32,4 @@ public class WithIndentOperation extends Statement {
   public static WithIndentOperation newInstance(SModel sm) {
     return WithIndentOperation.newInstance(sm, false);
   }
-
 }

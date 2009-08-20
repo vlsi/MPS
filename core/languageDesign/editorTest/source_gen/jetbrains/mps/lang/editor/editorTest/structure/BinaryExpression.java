@@ -60,7 +60,6 @@ public class BinaryExpression extends BaseConcept implements IBaseTestBlock {
     super.setChild(BinaryExpression.RIGHT, node);
   }
 
-
   public static BinaryExpression newInstance(SModel sm, boolean init) {
     return (BinaryExpression)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.editorTest.structure.BinaryExpression", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -68,5 +67,4 @@ public class BinaryExpression extends BaseConcept implements IBaseTestBlock {
   public static BinaryExpression newInstance(SModel sm) {
     return BinaryExpression.newInstance(sm, false);
   }
-
 }

@@ -11,7 +11,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class LanguageTextGenDeclaration_Behavior {
-
   public static void init(SNode thisNode) {
   }
 
@@ -27,8 +26,8 @@ public class LanguageTextGenDeclaration_Behavior {
   public static List<SNode> virtual_getAvailableOperations_1234781444746(SNode thisNode) {
     List<SNode> result = new ArrayList<SNode>();
     List<SNode> list = LanguageTextGenDeclaration_Behavior.call_getBaseTextGenComponents_1234781318244(thisNode, new ArrayList<SNode>(), thisNode);
-    for(SNode baseTextGen : list) {
-      for(SNode func : SLinkOperations.getTargets(baseTextGen, "operation", true)) {
+    for (SNode baseTextGen : list) {
+      for (SNode func : SLinkOperations.getTargets(baseTextGen, "operation", true)) {
         if (SPropertyOperations.getString(func, "name") != null) {
           ListSequence.fromList(result).addElement(func);
         }
@@ -41,8 +40,8 @@ public class LanguageTextGenDeclaration_Behavior {
   public static List<SNode> call_getAvailableFunctions_1234781318196(SNode thisNode) {
     List<SNode> result = new ArrayList<SNode>();
     List<SNode> list = LanguageTextGenDeclaration_Behavior.call_getBaseTextGenComponents_1234781318244(thisNode, new ArrayList<SNode>(), SLinkOperations.getTarget(thisNode, "baseTextGen", false));
-    for(SNode baseTextGen : list) {
-      for(SNode func : SLinkOperations.getTargets(baseTextGen, "function", true)) {
+    for (SNode baseTextGen : list) {
+      for (SNode func : SLinkOperations.getTargets(baseTextGen, "function", true)) {
         if (SPropertyOperations.getString(func, "name") != null) {
           ListSequence.fromList(result).addElement(func);
         }
@@ -55,8 +54,7 @@ public class LanguageTextGenDeclaration_Behavior {
     ListSequence.fromList(list).addElement(node);
     if ((SLinkOperations.getTarget(node, "baseTextGen", false) == null) || !(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(node, "baseTextGen", false), "jetbrains.mps.lang.textGen.structure.LanguageTextGenDeclaration"))) {
       return list;
-    } else
-    {
+    } else {
       return LanguageTextGenDeclaration_Behavior.call_getBaseTextGenComponents_1234781318244(thisNode, list, (SNode)SLinkOperations.getTarget(node, "baseTextGen", false));
     }
   }
@@ -64,5 +62,4 @@ public class LanguageTextGenDeclaration_Behavior {
   public static String virtual_getTextGenNode_1234784577703(SNode thisNode) {
     return "textGen";
   }
-
 }

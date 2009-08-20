@@ -21,5 +21,4 @@ public class IndentBufferOperation extends SimpleTextGenOperation {
   public static IndentBufferOperation newInstance(SModel sm) {
     return IndentBufferOperation.newInstance(sm, false);
   }
-
 }

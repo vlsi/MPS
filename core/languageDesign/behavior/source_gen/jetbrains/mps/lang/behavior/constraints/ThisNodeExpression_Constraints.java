@@ -4,7 +4,6 @@ package jetbrains.mps.lang.behavior.constraints;
 
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.constraints.CanBeAChildContext;
-import jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration;
 
 public class ThisNodeExpression_Constraints {
   public static boolean canBeAChild(final IOperationContext operationContext, final CanBeAChildContext _context) {

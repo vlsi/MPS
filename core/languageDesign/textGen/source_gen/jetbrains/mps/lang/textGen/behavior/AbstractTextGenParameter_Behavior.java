@@ -16,12 +16,11 @@ public class AbstractTextGenParameter_Behavior {
   public static String virtual_getGetterName_1234885318469(SNode thisNode) {
     String alias = SConceptPropertyOperations.getString(thisNode, "alias");
     StringBuilder builder = new StringBuilder("get");
-    for(int i = 0 ; i < alias.length() ; i++ ) {
+    for (int i = 0 ; i < alias.length() ; i++ ) {
       char ch = alias.charAt(i);
       if (i == 0) {
         builder.append(alias.toUpperCase().charAt(i));
-      } else
-      {
+      } else {
         builder.append(ch);
       }
     }
@@ -43,5 +42,4 @@ public class AbstractTextGenParameter_Behavior {
   public static String callSuper_getGetterName_1234885318469(SNode thisNode, String callerConceptFqName) {
     return (String)BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.textGen.structure.AbstractTextGenParameter"), callerConceptFqName, "virtual_getGetterName_1234885318469", PARAMETERS_1234885318469);
   }
-
 }

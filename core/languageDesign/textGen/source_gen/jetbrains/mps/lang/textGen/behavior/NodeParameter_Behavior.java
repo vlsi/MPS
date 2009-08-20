@@ -5,12 +5,10 @@ package jetbrains.mps.lang.textGen.behavior;
 import jetbrains.mps.smodel.SNode;
 
 public class NodeParameter_Behavior {
-
   public static void init(SNode thisNode) {
   }
 
   public static String virtual_getGetterName_1234885318469(SNode thisNode) {
     return "getSNode";
   }
-
 }

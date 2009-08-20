@@ -14,7 +14,6 @@ import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.lang.editor.cellProviders.ConceptPropertyCellProvider;
 
 public class BinaryExpression_Editor extends DefaultNodeEditor {
-
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_4275_0(editorContext, node);
   }
@@ -79,5 +78,4 @@ public class BinaryExpression_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
 }

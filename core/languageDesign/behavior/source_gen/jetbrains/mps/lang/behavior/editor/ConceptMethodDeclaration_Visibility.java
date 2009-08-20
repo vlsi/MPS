@@ -15,6 +15,7 @@ public class ConceptMethodDeclaration_Visibility extends AbstractCellMenuCompone
   public ConceptMethodDeclaration_Visibility() {
     super(new SubstituteInfoPart[]{new ConceptMethodDeclaration_Visibility.ConceptMethodDeclaration_generic_cellMenu1(),new ConceptMethodDeclaration_Visibility.ConceptMethodDeclaration_generic_cellMenu2()});
   }
+
   public static class ConceptMethodDeclaration_generic_cellMenu1 extends AbstractCellMenuPart_Generic_Item {
     public ConceptMethodDeclaration_generic_cellMenu1() {
     }

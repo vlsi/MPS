@@ -22,5 +22,4 @@ public class ReferenceAnnotataion extends BaseConcept {
   public static ReferenceAnnotataion newInstance(SModel sm) {
     return ReferenceAnnotataion.newInstance(sm, false);
   }
-
 }

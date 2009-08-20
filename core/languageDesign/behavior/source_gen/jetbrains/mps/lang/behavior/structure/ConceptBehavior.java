@@ -43,7 +43,6 @@ public class ConceptBehavior extends BaseConcept implements INamedConcept, IMemb
     super(node);
   }
 
-
   public String getName() {
     return this.getProperty(ConceptBehavior.NAME);
   }
@@ -203,7 +202,6 @@ public class ConceptBehavior extends BaseConcept implements INamedConcept, IMemb
   public void insertStaticMethod(StaticConceptMethodDeclaration prev, StaticConceptMethodDeclaration node) {
     this.insertChild(prev, ConceptBehavior.STATIC_METHOD, node);
   }
-
 
   public static ConceptBehavior newInstance(SModel sm, boolean init) {
     return (ConceptBehavior)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.behavior.structure.ConceptBehavior", sm, GlobalScope.getInstance(), init).getAdapter();

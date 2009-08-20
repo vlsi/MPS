@@ -60,7 +60,6 @@ public class SideTranformWrapper extends BaseConcept implements IBaseTestBlock {
     super.setChild(SideTranformWrapper.CHILD, node);
   }
 
-
   public static SideTranformWrapper newInstance(SModel sm, boolean init) {
     return (SideTranformWrapper)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.editorTest.structure.SideTranformWrapper", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -68,5 +67,4 @@ public class SideTranformWrapper extends BaseConcept implements IBaseTestBlock {
   public static SideTranformWrapper newInstance(SModel sm) {
     return SideTranformWrapper.newInstance(sm, false);
   }
-
 }

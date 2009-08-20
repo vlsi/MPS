@@ -575,7 +575,6 @@ public class ConceptMethodDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-
   private static boolean renderingCondition6299_0(SNode node, EditorContext editorContext, IScope scope) {
     return SPropertyOperations.getBoolean(node, "isVirtual");
   }
@@ -844,7 +843,6 @@ public class ConceptMethodDeclaration_Editor extends DefaultNodeEditor {
     public ConceptMethodDeclaration_component_cellMenu0() {
       this.myComponent = new ConceptMethodDeclaration_Menu();
     }
-
 
     public List<INodeSubstituteAction> createActions(CellContext cellContext, EditorContext editorContext) {
       return this.myComponent.createActions(cellContext, editorContext);

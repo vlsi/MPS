@@ -38,7 +38,6 @@ public class AppendOperation extends Statement {
     this.insertChild(prev, AppendOperation.PART, node);
   }
 
-
   public static AppendOperation newInstance(SModel sm, boolean init) {
     return (AppendOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.textGen.structure.AppendOperation", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -46,5 +45,4 @@ public class AppendOperation extends Statement {
   public static AppendOperation newInstance(SModel sm) {
     return AppendOperation.newInstance(sm, false);
   }
-
 }

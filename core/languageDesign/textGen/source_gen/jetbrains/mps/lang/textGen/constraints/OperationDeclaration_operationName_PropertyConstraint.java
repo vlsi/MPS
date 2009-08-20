@@ -10,7 +10,6 @@ import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 public class OperationDeclaration_operationName_PropertyConstraint implements IModelConstraints, INodePropertyGetter {
-
   public OperationDeclaration_operationName_PropertyConstraint() {
   }
 
@@ -28,16 +27,14 @@ public class OperationDeclaration_operationName_PropertyConstraint implements IM
       return null;
     }
     StringBuilder result = new StringBuilder();
-    for(int i = 0 ; i < name.length() ; i++ ) {
+    for (int i = 0 ; i < name.length() ; i++ ) {
       if (Character.isUpperCase(name.charAt(i))) {
         result.append(' ');
         result.append(name.toLowerCase().charAt(i));
-      } else
-      {
+      } else {
         result.append(name.charAt(i));
       }
     }
     return result.toString();
   }
-
 }

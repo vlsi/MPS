@@ -24,7 +24,6 @@ public class OperationDeclaration extends BaseMethodDeclaration {
     this.setProperty(OperationDeclaration.OPERATION_NAME, value);
   }
 
-
   public static OperationDeclaration newInstance(SModel sm, boolean init) {
     return (OperationDeclaration)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.textGen.structure.OperationDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -32,5 +31,4 @@ public class OperationDeclaration extends BaseMethodDeclaration {
   public static OperationDeclaration newInstance(SModel sm) {
     return OperationDeclaration.newInstance(sm, false);
   }
-
 }

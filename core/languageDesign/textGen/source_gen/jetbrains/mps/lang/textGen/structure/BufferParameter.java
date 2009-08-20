@@ -21,5 +21,4 @@ public class BufferParameter extends AbstractTextGenParameter {
   public static BufferParameter newInstance(SModel sm) {
     return BufferParameter.newInstance(sm, false);
   }
-
 }
