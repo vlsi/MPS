@@ -169,7 +169,7 @@ public class ClassifierType_Editor extends DefaultNodeEditor {
     if ((SLinkOperations.getTarget(node, "classifier", false) == null)) {
       return Color.PINK;
     }
-    return Color.WHITE;
+    return null;
   }
 
   private static class parameterListHandler_9185_0 extends RefNodeListHandler {

@@ -182,7 +182,7 @@ public class ClassCreator_Editor extends DefaultNodeEditor {
     if ((SLinkOperations.getTarget(node, "baseMethodDeclaration", false) == null)) {
       return Color.PINK;
     }
-    return Color.WHITE;
+    return null;
   }
 
   private static class typeParameterListHandler_9368_0 extends RefNodeListHandler {

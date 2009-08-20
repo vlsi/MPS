@@ -124,7 +124,7 @@ public class ClassifierClassExpression_Editor extends DefaultNodeEditor {
     if ((SLinkOperations.getTarget(node, "classifier", false) == null)) {
       return Color.PINK;
     }
-    return Color.WHITE;
+    return null;
   }
 
   public static class ClassifierClassExpression_generic_cellMenu0 extends AbstractCellMenuPart_Generic_Group {

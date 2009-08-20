@@ -4655,10 +4655,7 @@
                 </node>
               </node>
               <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="3331197433824999440">
-                <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference" id="3331197433824999441">
-                  <link role="classifier" targetNodeId="56.~Color" resolveInfo="Color" />
-                  <link role="variableDeclaration" targetNodeId="56.~Color.WHITE" resolveInfo="WHITE" />
-                </node>
+                <node role="expression" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="3331197433825381908" />
               </node>
             </node>
           </node>
@@ -4949,10 +4946,7 @@
                 </node>
               </node>
               <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="3331197433824997982">
-                <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference" id="3331197433824997986">
-                  <link role="classifier" targetNodeId="56.~Color" resolveInfo="Color" />
-                  <link role="variableDeclaration" targetNodeId="56.~Color.WHITE" resolveInfo="WHITE" />
-                </node>
+                <node role="expression" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="3331197433825381891" />
               </node>
             </node>
           </node>
@@ -14215,10 +14209,7 @@
                 </node>
               </node>
               <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="3331197433824999485">
-                <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference" id="3331197433824999486">
-                  <link role="classifier" targetNodeId="56.~Color" resolveInfo="Color" />
-                  <link role="variableDeclaration" targetNodeId="56.~Color.WHITE" resolveInfo="WHITE" />
-                </node>
+                <node role="expression" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="3331197433825381924" />
               </node>
             </node>
           </node>
