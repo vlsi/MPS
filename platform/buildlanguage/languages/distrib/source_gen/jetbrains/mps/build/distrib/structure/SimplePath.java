@@ -15,6 +15,7 @@ public class SimplePath extends AbstractPath {
     super(node);
   }
 
+
   public String getPath() {
     return this.getProperty(SimplePath.PATH);
   }

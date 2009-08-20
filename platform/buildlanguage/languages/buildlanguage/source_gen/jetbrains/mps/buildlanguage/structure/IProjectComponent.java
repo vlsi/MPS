@@ -5,5 +5,4 @@ package jetbrains.mps.buildlanguage.structure;
 import jetbrains.mps.lang.core.structure.INamedConcept;
 
 public interface IProjectComponent extends INamedConcept {
-  public static final String concept = "jetbrains.mps.buildlanguage.structure.IProjectComponent";
-}
+  public static final String concept = "jetbrains.mps.buildlanguage.structure.IProjectComponent";}

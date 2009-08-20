@@ -38,6 +38,7 @@ public abstract class TwoOptionsStep<M> extends AbstractStep {
     this.myProject = project;
   }
 
+
   protected abstract M[] getVariants();
 
   protected abstract String getCheckBoxName();

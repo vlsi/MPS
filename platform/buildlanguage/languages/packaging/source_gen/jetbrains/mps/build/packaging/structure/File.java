@@ -15,6 +15,7 @@ public class File extends AbstractProjectComponent {
     super(node);
   }
 
+
   public Path getSourcePath() {
     return (Path)this.getChild(Path.class, File.SOURCE_PATH);
   }

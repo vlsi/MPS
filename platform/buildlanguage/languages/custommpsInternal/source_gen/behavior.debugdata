@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<debugInfo>
+  <nodeInfo nodeId="1240033962877" fileName="MPSModule_Behavior.java" startLine="19" startPosition="71" endLine="20" endPosition="76" />
+  <nodeInfo nodeId="1240033962883" fileName="MPSModule_Behavior.java" startLine="20" startPosition="76" endLine="23" endPosition="5" />
+  <nodeInfo nodeId="1240033962885" fileName="MPSModule_Behavior.java" startLine="21" startPosition="25" endLine="22" endPosition="33" />
+  <nodeInfo nodeId="1240033962892" fileName="MPSModule_Behavior.java" startLine="23" startPosition="5" endLine="24" endPosition="17" />
+  <nodeInfo nodeId="1240033962898" fileName="MPSModule_Behavior.java" startLine="27" startPosition="80" endLine="28" endPosition="131" />
+  <nodeInfo nodeId="1240033962904" fileName="MPSModule_Behavior.java" startLine="28" startPosition="131" endLine="29" endPosition="76" />
+  <nodeInfo nodeId="1240033962910" fileName="MPSModule_Behavior.java" startLine="29" startPosition="76" endLine="30" endPosition="45" />
+  <nodeInfo nodeId="1240033962916" fileName="MPSModule_Behavior.java" startLine="30" startPosition="45" endLine="31" endPosition="127" />
+  <nodeInfo nodeId="1240033962928" fileName="MPSModule_Behavior.java" startLine="31" startPosition="127" endLine="32" endPosition="97" />
+  <nodeInfo nodeId="1240033962942" fileName="MPSModule_Behavior.java" startLine="32" startPosition="97" endLine="33" endPosition="122" />
+  <nodeInfo nodeId="1240033962948" fileName="MPSModule_Behavior.java" startLine="33" startPosition="122" endLine="34" endPosition="65" />
+  <nodeInfo nodeId="1240033962955" fileName="MPSModule_Behavior.java" startLine="34" startPosition="65" endLine="35" endPosition="76" />
+  <nodeInfo nodeId="1240033962962" fileName="MPSModule_Behavior.java" startLine="35" startPosition="76" endLine="36" endPosition="25" />
+  <nodeInfo nodeId="1240033962982" fileName="UndeclaredVariableReference_Behavior.java" startLine="12" startPosition="71" endLine="13" endPosition="74" />
+  <nodeInfo nodeId="4435815598243878862" fileName="IfProjectComponent_Behavior.java" startLine="18" startPosition="83" endLine="21" endPosition="5" />
+  <nodeInfo nodeId="4435815598243878870" fileName="IfProjectComponent_Behavior.java" startLine="19" startPosition="147" endLine="20" endPosition="220" />
+  <nodeInfo nodeId="4435815598243878877" fileName="IfProjectComponent_Behavior.java" startLine="21" startPosition="5" endLine="22" endPosition="14" />
+  <nodeInfo nodeId="4435815598243878884" fileName="IfProjectComponent_Behavior.java" startLine="25" startPosition="83" endLine="26" endPosition="50" />
+  <nodeInfo nodeId="4435815598243878890" fileName="IfProjectComponent_Behavior.java" startLine="26" startPosition="50" endLine="35" endPosition="5" />
+  <nodeInfo nodeId="4435815598243878897" fileName="IfProjectComponent_Behavior.java" startLine="27" startPosition="127" endLine="30" endPosition="7" />
+  <nodeInfo nodeId="4435815598243878904" fileName="IfProjectComponent_Behavior.java" startLine="28" startPosition="74" endLine="29" endPosition="104" />
+  <nodeInfo nodeId="4435815598243878911" fileName="IfProjectComponent_Behavior.java" startLine="31" startPosition="10" endLine="35" endPosition="5" />
+  <nodeInfo nodeId="4435815598243878913" fileName="IfProjectComponent_Behavior.java" startLine="31" startPosition="12" endLine="34" endPosition="7" />
+  <nodeInfo nodeId="4435815598243878920" fileName="IfProjectComponent_Behavior.java" startLine="32" startPosition="76" endLine="33" endPosition="106" />
+  <nodeInfo nodeId="4435815598243878927" fileName="IfProjectComponent_Behavior.java" startLine="35" startPosition="5" endLine="36" endPosition="20" />
+</debugInfo>
+

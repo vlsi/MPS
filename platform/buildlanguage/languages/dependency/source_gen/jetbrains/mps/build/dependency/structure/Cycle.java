@@ -25,6 +25,7 @@ public class Cycle extends BaseConcept implements INamedConcept {
     super(node);
   }
 
+
   public String getName() {
     return this.getProperty(Cycle.NAME);
   }

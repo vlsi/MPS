@@ -20,6 +20,7 @@ public class DigitalSignatureWindowsConfiguration extends BaseConcept {
     super(node);
   }
 
+
   public IPath getPathToExecutable() {
     return (IPath)this.getChild(IPath.class, DigitalSignatureWindowsConfiguration.PATH_TO_EXECUTABLE);
   }

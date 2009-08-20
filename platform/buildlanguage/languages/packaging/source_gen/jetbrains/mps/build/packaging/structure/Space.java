@@ -18,6 +18,7 @@ public class Space extends BaseConcept implements IStringExpression {
     super(node);
   }
 
+
   public String getShortDescription() {
     return this.getProperty(Space.SHORT_DESCRIPTION);
   }

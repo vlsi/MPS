@@ -15,6 +15,7 @@ public class PropertyFileImport extends PropertiesImport {
     super(node);
   }
 
+
   public Path getFile() {
     return (Path)this.getChild(Path.class, PropertyFileImport.FILE);
   }

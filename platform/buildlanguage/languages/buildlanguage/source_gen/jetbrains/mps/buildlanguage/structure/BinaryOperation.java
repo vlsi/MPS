@@ -17,6 +17,7 @@ public class BinaryOperation extends PropertyValueExpression {
     super(node);
   }
 
+
   public PropertyValueExpression getLeft() {
     return (PropertyValueExpression)this.getChild(PropertyValueExpression.class, BinaryOperation.LEFT);
   }

@@ -15,6 +15,7 @@ public class StringCommandLinePart extends AbstractCommandLinePart {
     super(node);
   }
 
+
   public String getText() {
     return this.getProperty(StringCommandLinePart.TEXT);
   }

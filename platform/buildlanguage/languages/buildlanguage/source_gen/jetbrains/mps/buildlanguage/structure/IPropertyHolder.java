@@ -5,5 +5,4 @@ package jetbrains.mps.buildlanguage.structure;
 import jetbrains.mps.smodel.INodeAdapter;
 
 public interface IPropertyHolder extends INodeAdapter {
-  public static final String concept = "jetbrains.mps.buildlanguage.structure.IPropertyHolder";
-}
+  public static final String concept = "jetbrains.mps.buildlanguage.structure.IPropertyHolder";}

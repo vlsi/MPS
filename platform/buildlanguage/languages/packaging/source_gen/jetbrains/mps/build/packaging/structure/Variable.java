@@ -21,6 +21,7 @@ public class Variable extends BaseConcept implements INamedConcept {
     super(node);
   }
 
+
   public String getAntName() {
     return this.getProperty(Variable.ANT_NAME);
   }

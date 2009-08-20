@@ -50,6 +50,7 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
     this.setValidDefaultSolutionName(projectName);
   }
 
+
   public void generate() {
     ProgressManager.getInstance().run(new Task.Modal(this.myProject, "Generating Build Script", false) {
       public void run(@NotNull ProgressIndicator progressIndicator) {

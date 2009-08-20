@@ -16,6 +16,7 @@ public class PathCommantLinePart extends AbstractCommandLinePart {
     super(node);
   }
 
+
   public Path getPath() {
     return (Path)this.getChild(Path.class, PathCommantLinePart.PATH);
   }

@@ -26,6 +26,7 @@ public class BuildToolsStep extends AbstractStep {
     this.myBuildGenerator = buildGenerator;
   }
 
+
   public JComponent createMainComponent() {
     this.myPathField = new PathField();
     this.myPathField.setMode(TreeFileChooser.MODE_FILES);

@@ -23,6 +23,7 @@ public class AbstractCall extends BaseConcept implements IProjectComponent, ICom
     super(node);
   }
 
+
   public String getName() {
     return this.getProperty(AbstractCall.NAME);
   }

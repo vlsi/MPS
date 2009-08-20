@@ -21,5 +21,4 @@ public interface ICompositeComponent extends IAbstractCompositeComponent {
   public Iterator<AbstractProjectComponent> entries();
   public List<AbstractProjectComponent> getEntries();
   public void addEntry(AbstractProjectComponent node);
-  public void insertEntry(AbstractProjectComponent prev, AbstractProjectComponent node);
-}
+  public void insertEntry(AbstractProjectComponent prev, AbstractProjectComponent node);}

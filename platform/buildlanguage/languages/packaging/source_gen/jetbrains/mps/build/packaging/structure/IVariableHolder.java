@@ -5,5 +5,4 @@ package jetbrains.mps.build.packaging.structure;
 import jetbrains.mps.smodel.INodeAdapter;
 
 public interface IVariableHolder extends INodeAdapter {
-  public static final String concept = "jetbrains.mps.build.packaging.structure.IVariableHolder";
-}
+  public static final String concept = "jetbrains.mps.build.packaging.structure.IVariableHolder";}

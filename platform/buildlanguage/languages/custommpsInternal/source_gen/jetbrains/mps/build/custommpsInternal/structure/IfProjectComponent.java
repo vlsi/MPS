@@ -25,6 +25,7 @@ public class IfProjectComponent extends AbstractProjectComponent implements IAbs
     super(node);
   }
 
+
   public String getName() {
     return this.getProperty(IfProjectComponent.NAME);
   }
@@ -89,5 +90,4 @@ public class IfProjectComponent extends AbstractProjectComponent implements IAbs
   public static IfProjectComponent newInstance(SModel sm) {
     return IfProjectComponent.newInstance(sm, false);
   }
-
 }

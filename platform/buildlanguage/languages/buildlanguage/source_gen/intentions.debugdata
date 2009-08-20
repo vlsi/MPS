@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<debugInfo>
+  <nodeInfo nodeId="1201260308382" fileName="AddComment_intention_Intention.java" startLine="52" startPosition="76" endLine="53" endPosition="58" />
+  <nodeInfo nodeId="1201595870746" fileName="RemoveEmptyComment_intention_Intention.java" startLine="31" startPosition="85" endLine="38" endPosition="6" />
+  <nodeInfo nodeId="1201595932926" fileName="RemoveEmptyComment_intention_Intention.java" startLine="52" startPosition="76" endLine="53" endPosition="60" />
+  <nodeInfo nodeId="1201602536535" fileName="AddComment_intention_Intention.java" startLine="31" startPosition="85" endLine="38" endPosition="6" />
+  <nodeInfo nodeId="1219149141956" fileName="CreateExternalPropertyFromNormal_intention_Intention.java" startLine="48" startPosition="76" endLine="49" endPosition="137" />
+  <nodeInfo nodeId="1219149168202" fileName="CreateExternalPropertyFromNormal_intention_Intention.java" startLine="51" startPosition="99" endLine="52" endPosition="63" />
+  <nodeInfo nodeId="1219149199582" fileName="CreateExternalPropertyFromNormal_intention_Intention.java" startLine="33" startPosition="85" endLine="34" endPosition="44" />
+  <nodeInfo nodeId="1219149356853" fileName="CreateExternalPropertyFromNormal_intention_Intention.java" startLine="49" startPosition="137" endLine="50" endPosition="109" />
+  <nodeInfo nodeId="1219149370702" fileName="CreateExternalPropertyFromNormal_intention_Intention.java" startLine="50" startPosition="109" endLine="51" endPosition="99" />
+  <nodeInfo nodeId="1219149630134" fileName="CreateNormalPropertyFromExternal_intention_Intention.java" startLine="33" startPosition="85" endLine="34" endPosition="62" />
+  <nodeInfo nodeId="1219149662638" fileName="CreateNormalPropertyFromExternal_intention_Intention.java" startLine="37" startPosition="76" endLine="38" endPosition="121" />
+  <nodeInfo nodeId="1219149662644" fileName="CreateNormalPropertyFromExternal_intention_Intention.java" startLine="38" startPosition="121" endLine="39" endPosition="101" />
+  <nodeInfo nodeId="1219149662652" fileName="CreateNormalPropertyFromExternal_intention_Intention.java" startLine="39" startPosition="101" endLine="40" endPosition="91" />
+  <nodeInfo nodeId="1219149662661" fileName="CreateNormalPropertyFromExternal_intention_Intention.java" startLine="40" startPosition="91" endLine="41" endPosition="55" />
+  <nodeInfo nodeId="1219149886945" fileName="CreateExternalPropertyFromNormal_intention_Intention.java" startLine="44" startPosition="90" endLine="45" endPosition="118" />
+</debugInfo>
+

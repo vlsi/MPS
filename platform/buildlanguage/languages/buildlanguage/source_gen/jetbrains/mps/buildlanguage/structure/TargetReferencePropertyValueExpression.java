@@ -19,6 +19,7 @@ public class TargetReferencePropertyValueExpression extends PropertyValueExpress
     super(node);
   }
 
+
   public String getFullName() {
     return this.getProperty(TargetReferencePropertyValueExpression.FULL_NAME);
   }

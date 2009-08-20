@@ -21,6 +21,7 @@ public class Configuration extends BaseConcept implements INamedConcept {
     super(node);
   }
 
+
   public String getFullName() {
     return this.getProperty(Configuration.FULL_NAME);
   }

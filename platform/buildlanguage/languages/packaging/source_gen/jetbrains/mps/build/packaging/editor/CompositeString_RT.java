@@ -23,6 +23,7 @@ public class CompositeString_RT {
       this.myNode = node;
     }
 
+
     public void execute(EditorContext editorContext) {
       this.execute_internal(editorContext, this.myNode);
     }

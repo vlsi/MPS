@@ -14,6 +14,7 @@ public class UniversalConfig extends SystemSpecificConfig {
     super(node);
   }
 
+
   public static UniversalConfig newInstance(SModel sm, boolean init) {
     return (UniversalConfig)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.distrib.structure.UniversalConfig", sm, GlobalScope.getInstance(), init).getAdapter();
   }

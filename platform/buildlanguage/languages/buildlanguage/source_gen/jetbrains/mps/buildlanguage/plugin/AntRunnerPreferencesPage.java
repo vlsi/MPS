@@ -25,6 +25,7 @@ public class AntRunnerPreferencesPage extends JPanel {
     this.add(new JScrollPane(new JTable(this.myModel)), BorderLayout.CENTER);
   }
 
+
   public void updateState(Map<String, String> data) {
     this.myIsModified = false;
     this.myModel.updateState(data);

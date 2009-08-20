@@ -19,6 +19,7 @@ public class FileExistsCondition extends BaseConcept implements ICondition {
     super(node);
   }
 
+
   public String getShortDescription() {
     return this.getProperty(FileExistsCondition.SHORT_DESCRIPTION);
   }

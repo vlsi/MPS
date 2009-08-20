@@ -14,6 +14,7 @@ public class BaseDirPath extends Path {
     super(node);
   }
 
+
   public static BaseDirPath newInstance(SModel sm, boolean init) {
     return (BaseDirPath)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.packaging.structure.BaseDirPath", sm, GlobalScope.getInstance(), init).getAdapter();
   }

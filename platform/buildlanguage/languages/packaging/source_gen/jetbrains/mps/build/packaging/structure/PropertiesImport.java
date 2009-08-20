@@ -15,6 +15,7 @@ public class PropertiesImport extends BaseConcept {
     super(node);
   }
 
+
   public static PropertiesImport newInstance(SModel sm, boolean init) {
     return (PropertiesImport)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.packaging.structure.PropertiesImport", sm, GlobalScope.getInstance(), init).getAdapter();
   }

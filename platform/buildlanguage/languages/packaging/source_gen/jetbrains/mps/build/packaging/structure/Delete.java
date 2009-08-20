@@ -15,6 +15,7 @@ public class Delete extends PostProcessingTask {
     super(node);
   }
 
+
   public String getPath() {
     return this.getProperty(Delete.PATH);
   }

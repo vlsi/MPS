@@ -22,6 +22,7 @@ public class CompositeString_Right_Delete {
       this.myNode = node;
     }
 
+
     public void execute(EditorContext editorContext) {
       this.execute_internal(editorContext, this.myNode);
     }

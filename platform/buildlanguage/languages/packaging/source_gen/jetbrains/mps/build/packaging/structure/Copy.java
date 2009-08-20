@@ -17,6 +17,7 @@ public class Copy extends AbstractProjectComponent {
     super(node);
   }
 
+
   public String getExcludes() {
     return this.getProperty(Copy.EXCLUDES);
   }

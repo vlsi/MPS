@@ -22,6 +22,7 @@ public class SolutionStep extends TwoOptionsStep<IModule> {
     this.myMpsProject = this.myProject.getComponent(MPSProjectHolder.class).getMPSProject();
   }
 
+
   public String getDescription() {
     return "Build would be located in new solution.";
   }

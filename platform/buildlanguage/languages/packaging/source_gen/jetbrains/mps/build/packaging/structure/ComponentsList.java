@@ -21,6 +21,7 @@ public class ComponentsList extends AbstractProjectComponent implements IAbstrac
     super(node);
   }
 
+
   public String getName() {
     return this.getProperty(ComponentsList.NAME);
   }

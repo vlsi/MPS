@@ -26,6 +26,7 @@ public abstract class AbstractBuildGenerator {
   public AbstractBuildGenerator() {
   }
 
+
   public abstract void generate();
 
   public void setProjectName(String projectName) {

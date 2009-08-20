@@ -14,6 +14,7 @@ public class UnixConfig extends SystemSpecificConfig {
     super(node);
   }
 
+
   public static UnixConfig newInstance(SModel sm, boolean init) {
     return (UnixConfig)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.distrib.structure.UnixConfig", sm, GlobalScope.getInstance(), init).getAdapter();
   }

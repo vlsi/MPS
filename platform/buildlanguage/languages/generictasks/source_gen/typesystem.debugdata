@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<debugInfo>
+  <nodeInfo nodeId="353793545802854606" fileName="typeof_Attribute_InferenceRule.java" startLine="17" startPosition="97" endLine="22" endPosition="5" />
+  <nodeInfo nodeId="353793545802854621" fileName="chechAttributeDeclarationDefaultValueIsInEnum_NonTypesystemRule.java" startLine="21" startPosition="113" endLine="30" endPosition="5" />
+  <nodeInfo nodeId="353793545802854634" fileName="chechAttributeDeclarationDefaultValueIsInEnum_NonTypesystemRule.java" startLine="22" startPosition="174" endLine="29" endPosition="7" />
+  <nodeInfo nodeId="353793545802854645" fileName="chechAttributeDeclarationDefaultValueIsInEnum_NonTypesystemRule.java" startLine="23" startPosition="198" endLine="28" endPosition="9" />
+  <nodeInfo nodeId="353793545802854660" fileName="chechAttributeDeclarationDefaultValueIsInEnum_NonTypesystemRule.java" startLine="30" startPosition="5" endLine="37" endPosition="5" />
+  <nodeInfo nodeId="353793545802854662" fileName="chechAttributeDeclarationDefaultValueIsInEnum_NonTypesystemRule.java" startLine="31" startPosition="169" endLine="36" endPosition="7" />
+  <nodeInfo nodeId="353793545802854674" fileName="typeof_GenericAttributeDeclaration_InferenceRule.java" startLine="18" startPosition="97" endLine="32" endPosition="5" />
+  <nodeInfo nodeId="353793545802854687" fileName="typeof_GenericAttributeDeclaration_InferenceRule.java" startLine="19" startPosition="151" endLine="24" endPosition="7" />
+  <nodeInfo nodeId="353793545802854697" fileName="typeof_GenericAttributeDeclaration_InferenceRule.java" startLine="24" startPosition="7" endLine="31" endPosition="7" />
+  <nodeInfo nodeId="353793545802854699" fileName="typeof_GenericAttributeDeclaration_InferenceRule.java" startLine="25" startPosition="75" endLine="30" endPosition="9" />
+  <nodeInfo nodeId="353793545802854720" fileName="checkParentsOfInterfaceAreInterfaces_NonTypesystemRule.java" startLine="22" startPosition="113" endLine="31" endPosition="5" />
+  <nodeInfo nodeId="353793545802854726" fileName="checkParentsOfInterfaceAreInterfaces_NonTypesystemRule.java" startLine="23" startPosition="122" endLine="30" endPosition="7" />
+  <nodeInfo nodeId="353793545802854735" fileName="checkParentsOfInterfaceAreInterfaces_NonTypesystemRule.java" startLine="24" startPosition="172" endLine="29" endPosition="9" />
+  <nodeInfo nodeId="353793545802854747" fileName="checkAttributeValueIsInEnum_NonTypesystemRule.java" startLine="21" startPosition="102" endLine="30" endPosition="5" />
+  <nodeInfo nodeId="353793545802854762" fileName="checkAttributeValueIsInEnum_NonTypesystemRule.java" startLine="22" startPosition="208" endLine="29" endPosition="7" />
+  <nodeInfo nodeId="353793545802854764" fileName="checkAttributeValueIsInEnum_NonTypesystemRule.java" startLine="23" startPosition="232" endLine="28" endPosition="9" />
+  <nodeInfo nodeId="353793545802854797" fileName="checkAllRequiredAttributesPresent_NonTypesystemRule.java" startLine="23" startPosition="101" endLine="44" endPosition="5" />
+  <nodeInfo nodeId="353793545802854805" fileName="checkAllRequiredAttributesPresent_NonTypesystemRule.java" startLine="24" startPosition="200" endLine="43" endPosition="7" />
+  <nodeInfo nodeId="353793545802854810" fileName="checkAllRequiredAttributesPresent_NonTypesystemRule.java" startLine="25" startPosition="87" endLine="26" endPosition="30" />
+  <nodeInfo nodeId="353793545802854814" fileName="checkAllRequiredAttributesPresent_NonTypesystemRule.java" startLine="26" startPosition="30" endLine="34" endPosition="9" />
+  <nodeInfo nodeId="353793545802854820" fileName="checkAllRequiredAttributesPresent_NonTypesystemRule.java" startLine="27" startPosition="114" endLine="33" endPosition="11" />
+  <nodeInfo nodeId="353793545802854832" fileName="checkAllRequiredAttributesPresent_NonTypesystemRule.java" startLine="28" startPosition="174" endLine="31" endPosition="13" />
+  <nodeInfo nodeId="353793545802854839" fileName="checkAllRequiredAttributesPresent_NonTypesystemRule.java" startLine="29" startPosition="75" endLine="30" endPosition="27" />
+  <nodeInfo nodeId="353793545802854843" fileName="checkAllRequiredAttributesPresent_NonTypesystemRule.java" startLine="31" startPosition="13" endLine="32" endPosition="18" />
+  <nodeInfo nodeId="353793545802854844" fileName="checkAllRequiredAttributesPresent_NonTypesystemRule.java" startLine="34" startPosition="9" endLine="42" endPosition="9" />
+  <nodeInfo nodeId="353793545802854846" fileName="checkAllRequiredAttributesPresent_NonTypesystemRule.java" startLine="35" startPosition="23" endLine="40" endPosition="11" />
+  <nodeInfo nodeId="353793545802854855" fileName="checkAllRequiredAttributesPresent_NonTypesystemRule.java" startLine="40" startPosition="11" endLine="41" endPosition="17" />
+</debugInfo>
+

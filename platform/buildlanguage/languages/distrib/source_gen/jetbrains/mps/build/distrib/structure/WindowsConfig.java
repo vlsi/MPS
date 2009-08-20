@@ -25,6 +25,7 @@ public class WindowsConfig extends SystemSpecificConfig {
     super(node);
   }
 
+
   public IPath getLicense() {
     return (IPath)this.getChild(IPath.class, WindowsConfig.LICENSE);
   }

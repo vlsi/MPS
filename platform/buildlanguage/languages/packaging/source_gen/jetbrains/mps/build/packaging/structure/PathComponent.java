@@ -16,6 +16,7 @@ public class PathComponent extends BaseConcept {
     super(node);
   }
 
+
   public String getPath() {
     return this.getProperty(PathComponent.PATH);
   }

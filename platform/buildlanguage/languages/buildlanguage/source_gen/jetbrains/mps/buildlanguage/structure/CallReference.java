@@ -16,6 +16,7 @@ public class CallReference extends PropertyValueExpression {
     super(node);
   }
 
+
   public AbstractCall getCall() {
     return (AbstractCall)this.getReferent(AbstractCall.class, CallReference.CALL);
   }

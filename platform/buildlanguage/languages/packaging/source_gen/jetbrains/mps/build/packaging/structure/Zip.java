@@ -26,6 +26,7 @@ public class Zip extends AbstractProjectComponent implements ICompositeComponent
     super(node);
   }
 
+
   public String getFilemode() {
     return this.getProperty(Zip.FILEMODE);
   }

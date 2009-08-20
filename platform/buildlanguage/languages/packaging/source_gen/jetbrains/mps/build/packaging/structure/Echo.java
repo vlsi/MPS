@@ -16,6 +16,7 @@ public class Echo extends File {
     super(node);
   }
 
+
   public boolean getAppend() {
     return this.getBooleanProperty(Echo.APPEND);
   }

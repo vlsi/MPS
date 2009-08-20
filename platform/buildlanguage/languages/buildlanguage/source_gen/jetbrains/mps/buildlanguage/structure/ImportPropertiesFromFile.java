@@ -15,6 +15,7 @@ public class ImportPropertiesFromFile extends AbstractImportProperties {
     super(node);
   }
 
+
   public PropertyValueExpression getPropertyFile() {
     return (PropertyValueExpression)this.getChild(PropertyValueExpression.class, ImportPropertiesFromFile.PROPERTY_FILE);
   }

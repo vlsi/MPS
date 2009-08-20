@@ -29,6 +29,7 @@ public class Project extends BaseConcept implements INamedConcept, IPropertyHold
     super(node);
   }
 
+
   public String getName() {
     return this.getProperty(Project.NAME);
   }

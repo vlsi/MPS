@@ -15,6 +15,7 @@ public class BooleanLiteral extends PropertyValueExpression {
     super(node);
   }
 
+
   public boolean getValue() {
     return this.getBooleanProperty(BooleanLiteral.VALUE);
   }

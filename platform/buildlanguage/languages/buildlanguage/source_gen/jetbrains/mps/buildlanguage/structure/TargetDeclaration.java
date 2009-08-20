@@ -26,6 +26,7 @@ public class TargetDeclaration extends BaseConcept implements IProjectComponent,
     super(node);
   }
 
+
   public String getIf() {
     return this.getProperty(TargetDeclaration.IF);
   }

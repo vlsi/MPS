@@ -13,7 +13,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class MPSModule_Behavior {
-
   public static void init(SNode thisNode) {
   }
 
@@ -36,5 +35,4 @@ public class MPSModule_Behavior {
     SLinkOperations.addChild(compositePath, "pathComponent", pathComponent);
     return compositePath;
   }
-
 }

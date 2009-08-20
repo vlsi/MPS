@@ -12,7 +12,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 
 public class IfProjectComponent_Behavior {
-
   public static void init(SNode thisNode) {
   }
 
@@ -29,13 +28,11 @@ public class IfProjectComponent_Behavior {
       if ((SLinkOperations.getTarget(thisNode, "ifTrue", true) != null)) {
         ListSequence.fromList(children).addElement(SLinkOperations.getTarget(thisNode, "ifTrue", true));
       }
-    } else
-    {
+    } else {
       if ((SLinkOperations.getTarget(thisNode, "ifFaulse", true) != null)) {
         ListSequence.fromList(children).addElement(SLinkOperations.getTarget(thisNode, "ifFaulse", true));
       }
     }
     return children;
   }
-
 }

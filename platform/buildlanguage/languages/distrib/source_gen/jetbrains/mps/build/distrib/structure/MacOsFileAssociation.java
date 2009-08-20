@@ -15,6 +15,7 @@ public class MacOsFileAssociation extends FileAssociation {
     super(node);
   }
 
+
   public Role getRole() {
     return (Role)this.getChild(Role.class, MacOsFileAssociation.ROLE);
   }

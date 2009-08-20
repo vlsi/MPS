@@ -21,7 +21,6 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 public class QueriesGenerated {
-
   public static boolean nodeSubstituteActionsBuilder_Precondition_MPSModule_1240034061541(final IOperationContext operationContext, final NodeSubstitutePreconditionContext _context) {
     return MPSBuild_Behavior.isInCustomMPSGenerator_1238403397946(operationContext);
   }
@@ -33,16 +32,14 @@ public class QueriesGenerated {
       SNode childConcept = (SNode)_context.getChildConcept();
       if (SConceptOperations.isSuperConceptOf(childConcept, NameUtil.nodeFQName(outputConcept))) {
         Calculable calc = new Calculable() {
-
           public Object calculate() {
             return Module_Behavior.getAllAvailableModules_1222444746697();
           }
         };
         Iterable<IModule> queryResult = (Iterable)calc.calculate();
         if (queryResult != null) {
-          for(final IModule item : queryResult) {
+          for (final IModule item : queryResult) {
             ListSequence.fromList(result).addElement(new DefaultChildNodeSubstituteAction(outputConcept, item, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope()) {
-
               public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
                 SNode newNode = SConceptOperations.createNewNode("jetbrains.mps.build.custommpsInternal.structure.MPSModule", null);
                 SPropertyOperations.set(newNode, "id", (item).getModuleId().toString());
@@ -56,5 +53,4 @@ public class QueriesGenerated {
     }
     return result;
   }
-
 }

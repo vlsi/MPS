@@ -20,6 +20,7 @@ public class MacConfig extends SystemSpecificConfig {
     super(node);
   }
 
+
   public IPath getIconPath() {
     return (IPath)this.getChild(IPath.class, MacConfig.ICON_PATH);
   }

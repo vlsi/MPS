@@ -16,6 +16,7 @@ public class Module extends AbstractProjectComponent {
     super(node);
   }
 
+
   public String getId() {
     return this.getProperty(Module.ID);
   }

@@ -31,6 +31,7 @@ public class CheckBoxTree<N extends NodeData> extends JPanel {
     this.add(new JScrollPane(this.myTree), BorderLayout.CENTER);
   }
 
+
   public void mouseParessed(int x, int y) {
     int row = this.myTree.getRowForLocation(x, y);
     if (row == 0) {

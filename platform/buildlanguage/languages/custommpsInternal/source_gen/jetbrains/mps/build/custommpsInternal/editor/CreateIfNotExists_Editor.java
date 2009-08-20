@@ -16,7 +16,6 @@ import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 
 public class CreateIfNotExists_Editor extends DefaultNodeEditor {
-
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_1626_0(editorContext, node);
   }
@@ -81,5 +80,4 @@ public class CreateIfNotExists_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
 }

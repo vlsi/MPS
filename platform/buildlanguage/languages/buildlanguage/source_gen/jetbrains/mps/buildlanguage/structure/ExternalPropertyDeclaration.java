@@ -15,6 +15,7 @@ public class ExternalPropertyDeclaration extends PropertyDeclaration {
     super(node);
   }
 
+
   public boolean getCheckOnStart() {
     return this.getBooleanProperty(ExternalPropertyDeclaration.CHECK_ON_START);
   }

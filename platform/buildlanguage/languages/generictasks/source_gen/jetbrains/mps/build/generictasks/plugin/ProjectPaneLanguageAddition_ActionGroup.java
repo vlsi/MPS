@@ -21,6 +21,7 @@ public class ProjectPaneLanguageAddition_ActionGroup extends GeneratedActionGrou
     }
   }
 
+
   public void adjust() {
     this.insertGroupIntoAnother(LanguageActions_ActionGroup.ID, null);
   }

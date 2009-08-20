@@ -17,6 +17,7 @@ public class Replace extends File {
     super(node);
   }
 
+
   public int getReplacingPairsCount() {
     return this.getChildCount(Replace.REPLACING_PAIR);
   }

@@ -25,6 +25,7 @@ public class ProjectDescription extends BaseConcept implements INamedConcept {
     super(node);
   }
 
+
   public String getName() {
     return this.getProperty(ProjectDescription.NAME);
   }

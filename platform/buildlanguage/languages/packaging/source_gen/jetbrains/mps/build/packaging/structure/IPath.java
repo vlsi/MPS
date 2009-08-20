@@ -6,5 +6,4 @@ import jetbrains.mps.smodel.INodeAdapter;
 
 public interface IPath extends INodeAdapter {
   public static final String concept = "jetbrains.mps.build.packaging.structure.IPath";
-  public static String CPR_CanStartFromBasedir = "canStartFromBasedir";
-}
+  public static String CPR_CanStartFromBasedir = "canStartFromBasedir";}

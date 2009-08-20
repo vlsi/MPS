@@ -34,6 +34,7 @@ public class AntRunnerPreferences_PreferencesComponent extends BaseProjectPrefsC
     super(project);
   }
 
+
   public void loadState(Element state) {
     XmlSerializer.deserializeInto(this.myState, state);
     this.afterRead(this.getMPSProject());

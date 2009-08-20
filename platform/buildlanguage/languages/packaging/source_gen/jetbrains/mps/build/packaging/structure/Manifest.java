@@ -18,6 +18,7 @@ public class Manifest extends BaseConcept {
     super(node);
   }
 
+
   public int getManifestAttributesCount() {
     return this.getChildCount(Manifest.MANIFEST_ATTRIBUTE);
   }

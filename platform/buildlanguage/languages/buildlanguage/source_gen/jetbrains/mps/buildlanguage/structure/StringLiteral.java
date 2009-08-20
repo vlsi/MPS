@@ -20,6 +20,7 @@ public class StringLiteral extends PropertyValueExpression implements INamedConc
     super(node);
   }
 
+
   public String getValue() {
     return this.getProperty(StringLiteral.VALUE);
   }

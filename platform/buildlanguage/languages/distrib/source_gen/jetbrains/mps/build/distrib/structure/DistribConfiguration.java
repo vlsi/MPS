@@ -45,6 +45,7 @@ public class DistribConfiguration extends BaseConcept implements INamedConcept, 
     super(node);
   }
 
+
   public String getStartupClass() {
     return this.getProperty(DistribConfiguration.STARTUP_CLASS);
   }

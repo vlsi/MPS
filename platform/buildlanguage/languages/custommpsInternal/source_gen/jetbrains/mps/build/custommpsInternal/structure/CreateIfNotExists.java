@@ -17,6 +17,7 @@ public class CreateIfNotExists extends AbstractProjectComponent {
     super(node);
   }
 
+
   public String getArtifactName() {
     return this.getProperty(CreateIfNotExists.ARTIFACT_NAME);
   }
@@ -41,5 +42,4 @@ public class CreateIfNotExists extends AbstractProjectComponent {
   public static CreateIfNotExists newInstance(SModel sm) {
     return CreateIfNotExists.newInstance(sm, false);
   }
-
 }

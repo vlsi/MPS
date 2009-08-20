@@ -14,6 +14,7 @@ public class PlusOperation extends BinaryOperation {
     super(node);
   }
 
+
   public static PlusOperation newInstance(SModel sm, boolean init) {
     return (PlusOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.buildlanguage.structure.PlusOperation", sm, GlobalScope.getInstance(), init).getAdapter();
   }

@@ -20,6 +20,7 @@ public class CompositeString extends BaseConcept implements IStringExpression {
     super(node);
   }
 
+
   public String getShortDescription() {
     return this.getProperty(CompositeString.SHORT_DESCRIPTION);
   }

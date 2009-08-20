@@ -5,5 +5,4 @@ package jetbrains.mps.build.packaging.structure;
 import jetbrains.mps.smodel.INodeAdapter;
 
 public interface ITransparentProjectComponent extends INodeAdapter {
-  public static final String concept = "jetbrains.mps.build.packaging.structure.ITransparentProjectComponent";
-}
+  public static final String concept = "jetbrains.mps.build.packaging.structure.ITransparentProjectComponent";}

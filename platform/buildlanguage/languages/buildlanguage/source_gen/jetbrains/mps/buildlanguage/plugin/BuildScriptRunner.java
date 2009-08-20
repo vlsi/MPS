@@ -25,6 +25,7 @@ public class BuildScriptRunner extends BaseRunner {
     this.myComponent = component;
   }
 
+
   public void run(File file, String commandLine) {
     this.myComponent.setRunnerActions(null);
     List<String> parameters = ListSequence.fromList(new ArrayList<String>());

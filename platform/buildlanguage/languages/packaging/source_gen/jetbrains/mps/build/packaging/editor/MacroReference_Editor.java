@@ -96,6 +96,7 @@ public class MacroReference_Editor extends DefaultNodeEditor {
       this.myComponent = new MacroReference_MenuComponent();
     }
 
+
     public List<INodeSubstituteAction> createActions(CellContext cellContext, EditorContext editorContext) {
       return this.myComponent.createActions(cellContext, editorContext);
     }
@@ -108,6 +109,7 @@ public class MacroReference_Editor extends DefaultNodeEditor {
       this.myComponent = new MacroReference_MenuComponent();
     }
 
+
     public List<INodeSubstituteAction> createActions(CellContext cellContext, EditorContext editorContext) {
       return this.myComponent.createActions(cellContext, editorContext);
     }
@@ -119,6 +121,7 @@ public class MacroReference_Editor extends DefaultNodeEditor {
     public MacroReference_component_cellMenu2() {
       this.myComponent = new MacroReference_MenuComponent();
     }
+
 
     public List<INodeSubstituteAction> createActions(CellContext cellContext, EditorContext editorContext) {
       return this.myComponent.createActions(cellContext, editorContext);

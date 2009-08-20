@@ -21,6 +21,7 @@ public class Macro extends PropertyDeclaration implements INamedConcept {
     super(node);
   }
 
+
   public String getPath() {
     return this.getProperty(Macro.PATH);
   }

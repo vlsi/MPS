@@ -24,6 +24,7 @@ public class Folder extends AbstractProjectComponent implements ICompositeCompon
     super(node);
   }
 
+
   public String getExcludes() {
     return this.getProperty(Folder.EXCLUDES);
   }

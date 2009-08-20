@@ -16,6 +16,7 @@ public class ConfigurationReference extends BaseConcept {
     super(node);
   }
 
+
   public Configuration getConfiguration() {
     return (Configuration)this.getReferent(Configuration.class, ConfigurationReference.CONFIGURATION);
   }
