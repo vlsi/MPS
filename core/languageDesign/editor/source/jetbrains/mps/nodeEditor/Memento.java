@@ -101,7 +101,9 @@ class Memento {
     for (CellInfo collectionInfo : myCollectionsWithEnabledBraces) {
       EditorCell collection = collectionInfo.findCell(editor);
       if (!(collection instanceof EditorCell_Collection)) continue;
-      ((EditorCell_Collection)collection).enableBraces();
+      if (((EditorCell_Collection)collection).usesBraces()) {
+        ((EditorCell_Collection)collection).enableBraces();
+      }
     }
     for (CellInfo collectionInfo : myFolded) {
       EditorCell collection = collectionInfo.findCell(editor);
