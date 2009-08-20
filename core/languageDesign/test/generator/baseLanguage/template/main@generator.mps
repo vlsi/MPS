@@ -75,6 +75,9 @@
   <node type="jetbrains.mps.lang.generator.structure.MappingConfiguration" id="1210261200088">
     <property name="name" value="main" />
     <property name="topPriorityGroup" value="true" />
+    <node role="dropRootRule" type="jetbrains.mps.lang.generator.structure.DropRootRule" id="5097124989039186776">
+      <link role="applicableConcept" targetNodeId="1.5097124989038916362" resolveInfo="TestInfo" />
+    </node>
     <node role="rootMappingRule" type="jetbrains.mps.lang.generator.structure.Root_MappingRule" id="1216994496569">
       <link role="applicableConcept" targetNodeId="1.1216913645126" resolveInfo="NodesTestCase" />
       <link role="template" targetNodeId="1216994643104" resolveInfo="TestCaseName" />
@@ -661,6 +664,35 @@
                 <node role="propertyMacro$property_attribute$value" type="jetbrains.mps.lang.generator.structure.PropertyMacro" id="1221570038141">
                   <node role="propertyValueFunction" type="jetbrains.mps.lang.generator.structure.PropertyMacro_GetPropertyValue" id="1221570038142">
                     <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1221570038143">
+                      <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="5097124989039081703">
+                        <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="5097124989039081704">
+                          <property name="name" value="projectPath" />
+                          <node role="type" type="jetbrains.mps.baseLanguage.structure.StringType" id="5097124989039081705" />
+                          <node role="initializer" type="jetbrains.mps.lang.smodel.structure.StaticConceptMethodCall" id="5097124989039081706">
+                            <link role="concept" targetNodeId="1.5097124989038916362" resolveInfo="TestInfo" />
+                            <link role="baseMethodDeclaration" targetNodeId="32.5097124989038916375" resolveInfo="getProjectPath" />
+                            <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="5097124989039081719">
+                              <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="5097124989039081715" />
+                              <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_GetModelOperation" id="5097124989039081726" />
+                            </node>
+                          </node>
+                        </node>
+                      </node>
+                      <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="5097124989039081698">
+                        <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="5097124989039081699">
+                          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="5097124989039081712">
+                            <node role="expression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="5097124989039081714">
+                              <link role="variableDeclaration" targetNodeId="5097124989039081704" resolveInfo="projectPath" />
+                            </node>
+                          </node>
+                        </node>
+                        <node role="condition" type="jetbrains.mps.baseLanguage.structure.NotEqualsExpression" id="5097124989039081708">
+                          <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="5097124989039081711" />
+                          <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="5097124989039081707">
+                            <link role="variableDeclaration" targetNodeId="5097124989039081704" resolveInfo="projectPath" />
+                          </node>
+                        </node>
+                      </node>
                       <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1221570038144">
                         <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1221570038145">
                           <property name="name" value="invocationContext" />
@@ -1863,6 +1895,36 @@
                 <node role="propertyMacro$property_attribute$value" type="jetbrains.mps.lang.generator.structure.PropertyMacro" id="1229198973223">
                   <node role="propertyValueFunction" type="jetbrains.mps.lang.generator.structure.PropertyMacro_GetPropertyValue" id="1229198973224">
                     <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1229198973225">
+                      <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="5097124989039081729">
+                        <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="5097124989039081730">
+                          <property name="name" value="projectPath" />
+                          <node role="type" type="jetbrains.mps.baseLanguage.structure.StringType" id="5097124989039081731" />
+                          <node role="initializer" type="jetbrains.mps.lang.smodel.structure.StaticConceptMethodCall" id="5097124989039081732">
+                            <link role="baseMethodDeclaration" targetNodeId="32.5097124989038916375" resolveInfo="getProjectPath" />
+                            <link role="concept" targetNodeId="1.5097124989038916362" resolveInfo="TestInfo" />
+                            <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="5097124989039081733">
+                              <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="5097124989039081734" />
+                              <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_GetModelOperation" id="5097124989039081735" />
+                            </node>
+                          </node>
+                        </node>
+                      </node>
+                      <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="5097124989039081737">
+                        <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="5097124989039081738">
+                          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="5097124989039081739">
+                            <node role="expression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="5097124989039081740">
+                              <link role="variableDeclaration" targetNodeId="5097124989039081730" resolveInfo="projectPath" />
+                            </node>
+                          </node>
+                        </node>
+                        <node role="condition" type="jetbrains.mps.baseLanguage.structure.NotEqualsExpression" id="5097124989039081741">
+                          <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="5097124989039081742" />
+                          <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="5097124989039081743">
+                            <link role="variableDeclaration" targetNodeId="5097124989039081730" resolveInfo="projectPath" />
+                          </node>
+                        </node>
+                      </node>
+                      <node role="statement" type="jetbrains.mps.baseLanguage.structure.Statement" id="5097124989039081744" />
                       <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1229198973226">
                         <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1229198973227">
                           <property name="name" value="invocationContext" />

@@ -687,5 +687,14 @@
       <link role="conceptPropertyDeclaration" targetNodeId="5.1137473891462" resolveInfo="alias" />
     </node>
   </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="5097124989038916362">
+    <property name="rootable" value="true" />
+    <property name="name" value="TestInfo" />
+    <link role="extends" targetNodeId="5.1133920641626" resolveInfo="BaseConcept" />
+    <node role="propertyDeclaration" type="jetbrains.mps.lang.structure.structure.PropertyDeclaration" id="5097124989038916363">
+      <property name="name" value="projectPath" />
+      <link role="dataType" targetNodeId="5.1082983041843" resolveInfo="string" />
+    </node>
+  </node>
 </model>
 

@@ -1078,5 +1078,17 @@
       <link role="relationDeclaration" targetNodeId="4.1137473891462" resolveInfo="alias" />
     </node>
   </node>
+  <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" id="5097124989038916364">
+    <link role="conceptDeclaration" targetNodeId="1.5097124989038916362" resolveInfo="TestInfo" />
+    <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="5097124989038916366">
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="5097124989038916369">
+        <property name="text" value="Project path:" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Property" id="5097124989038916371">
+        <link role="relationDeclaration" targetNodeId="1.5097124989038916363" resolveInfo="projectPath" />
+      </node>
+      <node role="cellLayout" type="jetbrains.mps.lang.editor.structure.CellLayout_Indent" id="5097124989038916368" />
+    </node>
+  </node>
 </model>
 

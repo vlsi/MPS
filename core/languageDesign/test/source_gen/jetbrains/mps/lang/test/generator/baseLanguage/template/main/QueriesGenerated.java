@@ -12,6 +12,7 @@ import jetbrains.mps.generator.template.PropertyMacroContext;
 import jetbrains.mps.baseLanguage.unitTest.behavior.ITestCase_Behavior;
 import jetbrains.mps.baseLanguage.unitTest.behavior.ITestMethod_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.lang.test.behavior.TestInfo_Behavior;
 import jetbrains.mps.util.Macros;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.lang.test.behavior.NodesTestCase_Behavior;
@@ -70,6 +71,10 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_1221570038142(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    String projectPath = TestInfo_Behavior.getProjectPath_5097124989038916375(SNodeOperations.getModel(_context.getNode()));
+    if (projectPath != null) {
+      return projectPath;
+    }
     IOperationContext invocationContext = _context.getInvocationContext();
     String url = invocationContext.getProject().getPresentableUrl();
     if (url != null) {
@@ -131,6 +136,11 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_1229198973224(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    String projectPath = TestInfo_Behavior.getProjectPath_5097124989038916375(SNodeOperations.getModel(_context.getNode()));
+    if (projectPath != null) {
+      return projectPath;
+    }
+
     IOperationContext invocationContext = _context.getInvocationContext();
     String url = invocationContext.getProject().getPresentableUrl();
     if (url != null) {

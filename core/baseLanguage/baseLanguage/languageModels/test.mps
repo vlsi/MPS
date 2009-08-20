@@ -2508,5 +2508,8 @@
       </node>
     </node>
   </node>
+  <node type="jetbrains.mps.lang.test.structure.TestInfo" id="5097124989039164757">
+    <property name="projectPath" value="${mps_home}/core/baseLanguage/baseLanguage/baseLanguage.mpr" />
+  </node>
 </model>
 
