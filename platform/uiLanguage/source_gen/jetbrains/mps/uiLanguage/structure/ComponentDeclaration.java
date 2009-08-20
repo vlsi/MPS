@@ -116,7 +116,6 @@ public class ComponentDeclaration extends BaseConcept implements IClassifier {
     super.setChild(ComponentDeclaration.RENDERER_INFO, node);
   }
 
-
   public static ComponentDeclaration newInstance(SModel sm, boolean init) {
     return (ComponentDeclaration)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.uiLanguage.structure.ComponentDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -124,5 +123,4 @@ public class ComponentDeclaration extends BaseConcept implements IClassifier {
   public static ComponentDeclaration newInstance(SModel sm) {
     return ComponentDeclaration.newInstance(sm, false);
   }
-
 }

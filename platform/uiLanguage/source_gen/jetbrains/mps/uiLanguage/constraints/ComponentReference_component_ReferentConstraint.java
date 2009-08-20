@@ -17,7 +17,6 @@ import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 public class ComponentReference_component_ReferentConstraint extends BaseNodeReferenceSearchScopeProvider implements IModelConstraints {
-
   public ComponentReference_component_ReferentConstraint() {
   }
 
@@ -40,8 +39,7 @@ public class ComponentReference_component_ReferentConstraint extends BaseNodeRef
     }
     List<SNode> result = new ArrayList<SNode>();
     if (componentDeclaration != null) {
-      ListSequence.fromList(result).addSequence(ListSequence.fromList(SNodeOperations.getDescendants(componentDeclaration, "jetbrains.mps.uiLanguage.structure.ComponentInstance", false, new String[]{})).where(new IWhereFilter <SNode>() {
-
+      ListSequence.fromList(result).addSequence(ListSequence.fromList(SNodeOperations.getDescendants(componentDeclaration, "jetbrains.mps.uiLanguage.structure.ComponentInstance", false, new String[]{})).where(new IWhereFilter<SNode>() {
         public boolean accept(SNode it) {
           return SPropertyOperations.getString(it, "name") != null;
         }
@@ -49,5 +47,4 @@ public class ComponentReference_component_ReferentConstraint extends BaseNodeRef
     }
     return result;
   }
-
 }

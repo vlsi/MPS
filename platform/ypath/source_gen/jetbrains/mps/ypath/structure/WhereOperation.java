@@ -33,7 +33,6 @@ public class WhereOperation extends TreePathOperation {
     super.setChild(WhereOperation.FILTER, node);
   }
 
-
   public static WhereOperation newInstance(SModel sm, boolean init) {
     return (WhereOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.ypath.structure.WhereOperation", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -41,5 +40,4 @@ public class WhereOperation extends TreePathOperation {
   public static WhereOperation newInstance(SModel sm) {
     return WhereOperation.newInstance(sm, false);
   }
-
 }

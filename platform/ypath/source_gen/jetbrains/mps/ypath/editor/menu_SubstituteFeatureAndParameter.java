@@ -25,12 +25,11 @@ import jetbrains.mps.ypath.behavior.IParamFeature_Behavior;
 import jetbrains.mps.smodel.SModel;
 
 public class menu_SubstituteFeatureAndParameter extends AbstractCellMenuComponent {
-
   public menu_SubstituteFeatureAndParameter() {
     super(new SubstituteInfoPart[]{new menu_SubstituteFeatureAndParameter.IterateOperation_generic_cellMenu0()});
   }
-  public static class IterateOperation_generic_cellMenu0 extends AbstractCellMenuPart_Generic_Group {
 
+  public static class IterateOperation_generic_cellMenu0 extends AbstractCellMenuPart_Generic_Group {
     public IterateOperation_generic_cellMenu0() {
     }
 
@@ -41,14 +40,13 @@ public class menu_SubstituteFeatureAndParameter extends AbstractCellMenuComponen
       SNode tpoe = SNodeOperations.getAncestor(node, "jetbrains.mps.ypath.structure.TreePathOperationExpression", false, false);
       if (SNodeOperations.isInstanceOf(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(tpoe, "operand", true)), "jetbrains.mps.ypath.structure.TreePathType")) {
         SNode nodeType = SLinkOperations.getTarget(SNodeOperations.cast(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(tpoe, "operand", true)), "jetbrains.mps.ypath.structure.TreePathType"), "nodeType", true);
-        for(SNode feat : Sequence.fromIterable(TreePath_Behavior.call_getFeature_1213877481312(ITreePathExpression_Behavior.call_getTreePath_1213877496973(tpoe), nodeType))) {
+        for (SNode feat : Sequence.fromIterable(TreePath_Behavior.call_getFeature_1213877481312(ITreePathExpression_Behavior.call_getTreePath_1213877496973(tpoe), nodeType))) {
           if (TraversalAxisUtil.isAcceptableFeatureForAxis(feat, axis)) {
             if (SNodeOperations.isInstanceOf(feat, "jetbrains.mps.ypath.structure.IParamFeature")) {
-              for(SNode pw : ListSequence.fromList(IParamFeature_Behavior.call_getParameterObjects_1213877340242(SNodeOperations.cast(feat, "jetbrains.mps.ypath.structure.IParamFeature"), nodeType))) {
+              for (SNode pw : ListSequence.fromList(IParamFeature_Behavior.call_getParameterObjects_1213877340242(SNodeOperations.cast(feat, "jetbrains.mps.ypath.structure.IParamFeature"), nodeType))) {
                 ListSequence.fromList(res).addElement(new Pair<SNode, SNode>(feat, pw));
               }
-            } else
-            {
+            } else {
               ListSequence.fromList(res).addElement(new Pair<SNode, Object>(feat, null));
             }
           }
@@ -84,8 +82,7 @@ public class menu_SubstituteFeatureAndParameter extends AbstractCellMenuComponen
       } else
       if ((pw != null)) {
         return SPropertyOperations.getString(pw, "name") + " | " + SPropertyOperations.getString(fe, "name");
-      } else
-      {
+      } else {
         return SPropertyOperations.getString(fe, "name");
       }
     }
@@ -101,12 +98,9 @@ public class menu_SubstituteFeatureAndParameter extends AbstractCellMenuComponen
       } else
       if (SNodeOperations.isInstanceOf(fe, "jetbrains.mps.ypath.structure.IParamFeature")) {
         return "parameterized feature in " + SPropertyOperations.getString(SNodeOperations.cast(SNodeOperations.getParent(fe), "jetbrains.mps.lang.core.structure.INamedConcept"), "name");
-      } else
-      {
+      } else {
         return "feature in " + SPropertyOperations.getString(SNodeOperations.cast(SNodeOperations.getParent(fe), "jetbrains.mps.lang.core.structure.INamedConcept"), "name");
       }
     }
-
-}
-
+  }
 }

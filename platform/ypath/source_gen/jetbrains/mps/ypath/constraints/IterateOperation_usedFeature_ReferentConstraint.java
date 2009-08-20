@@ -16,7 +16,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 
 public class IterateOperation_usedFeature_ReferentConstraint extends BaseNodeReferenceSearchScopeProvider implements IModelConstraints {
-
   public IterateOperation_usedFeature_ReferentConstraint() {
   }
 
@@ -32,11 +31,9 @@ public class IterateOperation_usedFeature_ReferentConstraint extends BaseNodeRef
     SNode tpoe;
     if (SNodeOperations.isInstanceOf(_context.getEnclosingNode(), "jetbrains.mps.ypath.structure.TreePathOperationExpression")) {
       tpoe = _context.getEnclosingNode();
-    } else
-    {
+    } else {
       tpoe = SNodeOperations.getAncestor(_context.getEnclosingNode(), "jetbrains.mps.ypath.structure.TreePathOperationExpression", false, false);
     }
     return Sequence.fromIterable(TreePath_Behavior.call_getFeature_1213877481312(ITreePathExpression_Behavior.call_getTreePath_1213877496973(tpoe), SLinkOperations.getTarget(SNodeOperations.cast(TypeChecker.getInstance().getTypeOf(tpoe), "jetbrains.mps.ypath.structure.TreePathType"), "nodeType", true))).toListSequence();
   }
-
 }

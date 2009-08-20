@@ -42,7 +42,6 @@ public class ToStringFun extends ConceptFunction implements IDesignFunction {
     this.setProperty(ToStringFun.VIRTUAL_PACKAGE, value);
   }
 
-
   public static ToStringFun newInstance(SModel sm, boolean init) {
     return (ToStringFun)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.ypath.structure.ToStringFun", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -50,5 +49,4 @@ public class ToStringFun extends ConceptFunction implements IDesignFunction {
   public static ToStringFun newInstance(SModel sm) {
     return ToStringFun.newInstance(sm, false);
   }
-
 }

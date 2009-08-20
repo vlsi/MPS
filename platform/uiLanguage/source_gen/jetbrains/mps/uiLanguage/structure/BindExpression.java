@@ -24,7 +24,6 @@ public class BindExpression extends Expression {
     super.setChild(BindExpression.EXPRESSION, node);
   }
 
-
   public static BindExpression newInstance(SModel sm, boolean init) {
     return (BindExpression)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.uiLanguage.structure.BindExpression", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -32,5 +31,4 @@ public class BindExpression extends Expression {
   public static BindExpression newInstance(SModel sm) {
     return BindExpression.newInstance(sm, false);
   }
-
 }

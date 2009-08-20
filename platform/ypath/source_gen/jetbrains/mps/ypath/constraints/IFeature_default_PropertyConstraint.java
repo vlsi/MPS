@@ -13,7 +13,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class IFeature_default_PropertyConstraint implements IModelConstraints, INodePropertySetter {
-
   public IFeature_default_PropertyConstraint() {
   }
 
@@ -27,7 +26,7 @@ public class IFeature_default_PropertyConstraint implements IModelConstraints, I
 
   public void execPropertySet(final SNode node, final String propertyName, final String propertyValue, final IScope scope) {
     if ((SPropertyOperations.getBoolean(propertyValue))) {
-      for(SNode foo : ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(SNodeOperations.getParent(node), "jetbrains.mps.ypath.structure.TreePathAspect"), "features", true))) {
+      for (SNode foo : ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(SNodeOperations.getParent(node), "jetbrains.mps.ypath.structure.TreePathAspect"), "features", true))) {
         if (foo != node) {
           SPropertyOperations.set(foo, "default", "" + (false));
         }
@@ -35,5 +34,4 @@ public class IFeature_default_PropertyConstraint implements IModelConstraints, I
     }
     node.setProperty("default", String.valueOf((SPropertyOperations.getBoolean(propertyValue))), false);
   }
-
 }

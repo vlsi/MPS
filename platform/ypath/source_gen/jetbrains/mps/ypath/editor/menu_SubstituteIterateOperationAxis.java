@@ -25,12 +25,11 @@ import jetbrains.mps.ypath.behavior.IParamFeature_Behavior;
 import jetbrains.mps.smodel.SModel;
 
 public class menu_SubstituteIterateOperationAxis extends AbstractCellMenuComponent {
-
   public menu_SubstituteIterateOperationAxis() {
     super(new SubstituteInfoPart[]{new menu_SubstituteIterateOperationAxis.IterateOperation_generic_cellMenu1()});
   }
-  public static class IterateOperation_generic_cellMenu1 extends AbstractCellMenuPart_Generic_Group {
 
+  public static class IterateOperation_generic_cellMenu1 extends AbstractCellMenuPart_Generic_Group {
     public IterateOperation_generic_cellMenu1() {
     }
 
@@ -39,19 +38,18 @@ public class menu_SubstituteIterateOperationAxis extends AbstractCellMenuCompone
       List<Triplet> res = ListSequence.fromList(new ArrayList<Triplet>());
       if (SNodeOperations.isInstanceOf(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(tpoe, "operand", true)), "jetbrains.mps.ypath.structure.TreePathType")) {
         SNode nodeType = SLinkOperations.getTarget(SNodeOperations.cast(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(tpoe, "operand", true)), "jetbrains.mps.ypath.structure.TreePathType"), "nodeType", true);
-        for(TraversalAxis axis : ListSequence.fromList(TraversalAxis.getConstants())) {
+        for (TraversalAxis axis : ListSequence.fromList(TraversalAxis.getConstants())) {
           ListSequence.fromList(res).addElement(new Triplet(axis, null, null));
-          for(SNode feat : Sequence.fromIterable(TreePath_Behavior.call_getFeature_1213877481312(ITreePathExpression_Behavior.call_getTreePath_1213877496973(tpoe), nodeType))) {
+          for (SNode feat : Sequence.fromIterable(TreePath_Behavior.call_getFeature_1213877481312(ITreePathExpression_Behavior.call_getTreePath_1213877496973(tpoe), nodeType))) {
             if (TraversalAxisUtil.isAcceptableFeatureForAxis(feat, axis)) {
               if (SPropertyOperations.getBoolean(feat, "default")) {
                 ListSequence.fromList(res).addElement(new Triplet<TraversalAxis, SNode, SNode>(axis, feat, null));
               } else
               if (SNodeOperations.isInstanceOf(feat, "jetbrains.mps.ypath.structure.IParamFeature")) {
-                for(SNode pw : ListSequence.fromList(IParamFeature_Behavior.call_getParameterObjects_1213877340242(SNodeOperations.cast(feat, "jetbrains.mps.ypath.structure.IParamFeature"), nodeType))) {
+                for (SNode pw : ListSequence.fromList(IParamFeature_Behavior.call_getParameterObjects_1213877340242(SNodeOperations.cast(feat, "jetbrains.mps.ypath.structure.IParamFeature"), nodeType))) {
                   ListSequence.fromList(res).addElement(new Triplet<TraversalAxis, SNode, SNode>(axis, feat, pw));
                 }
-              } else
-              {
+              } else {
                 ListSequence.fromList(res).addElement(new Triplet<TraversalAxis, SNode, SNode>(axis, feat, null));
               }
             }
@@ -89,15 +87,13 @@ public class menu_SubstituteIterateOperationAxis extends AbstractCellMenuCompone
       String suffix = "";
       if ((feat == null)) {
         suffix = " *";
-      } else
-      {
+      } else {
         if (SPropertyOperations.getBoolean(feat, "default")) {
           suffix = "";
         } else
         if ((pw != null)) {
           suffix = SPropertyOperations.getString(pw, "name");
-        } else
-        {
+        } else {
           suffix = SPropertyOperations.getString(feat, "name");
         }
       }
@@ -115,21 +111,17 @@ public class menu_SubstituteIterateOperationAxis extends AbstractCellMenuCompone
       String suffix = "";
       if ((feat == null)) {
         suffix = "all";
-      } else
-      {
+      } else {
         if (SPropertyOperations.getBoolean(feat, "default")) {
           suffix = "default";
         } else
         if ((pw != null)) {
           suffix = SPropertyOperations.getString(pw, "name") + " " + SPropertyOperations.getString(feat, "name");
-        } else
-        {
+        } else {
           suffix = SPropertyOperations.getString(feat, "name");
         }
       }
       return "iterate " + axis.getName() + " @" + suffix;
     }
-
-}
-
+  }
 }

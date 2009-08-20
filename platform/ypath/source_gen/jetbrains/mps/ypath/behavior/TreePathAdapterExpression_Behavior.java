@@ -10,7 +10,6 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 
 public class TreePathAdapterExpression_Behavior {
-
   public static void init(SNode thisNode) {
   }
 
@@ -22,12 +21,10 @@ public class TreePathAdapterExpression_Behavior {
       }
     }
     List<SNode> features = SLinkOperations.getTargets(SLinkOperations.getTarget(thisNode, "treepathAspect", false), "features", true);
-    return ListSequence.fromList(features).where(new IWhereFilter <SNode>() {
-
+    return ListSequence.fromList(features).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return !(SNodeOperations.isInstanceOf(it, "jetbrains.mps.ypath.structure.IGenericFeature"));
       }
     }).isEmpty() && ListSequence.fromList(features).isNotEmpty();
   }
-
 }

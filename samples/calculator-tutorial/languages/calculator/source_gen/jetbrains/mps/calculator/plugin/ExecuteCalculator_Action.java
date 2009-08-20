@@ -25,7 +25,7 @@ public class ExecuteCalculator_Action extends GeneratedAction {
     this.setExecuteOutsideCommand(false);
   }
 
-  @NotNull()
+  @NotNull
   public String getKeyStroke() {
     return "";
   }
@@ -34,7 +34,7 @@ public class ExecuteCalculator_Action extends GeneratedAction {
     return ExecuteCalculator_Action.this.getMainMethod() != null;
   }
 
-  public void doUpdate(@NotNull() AnActionEvent event) {
+  public void doUpdate(@NotNull AnActionEvent event) {
     try {
       {
         boolean enabled = this.isApplicable(event);
@@ -46,7 +46,7 @@ public class ExecuteCalculator_Action extends GeneratedAction {
     }
   }
 
-  @Override()
+  @Override
   protected boolean collectActionData(AnActionEvent event) {
     if (!(super.collectActionData(event))) {
       return false;
@@ -66,12 +66,11 @@ public class ExecuteCalculator_Action extends GeneratedAction {
     return true;
   }
 
-  public void doExecute(@NotNull() final AnActionEvent event) {
+  public void doExecute(@NotNull final AnActionEvent event) {
     try {
       try {
         final Method method = ExecuteCalculator_Action.this.getMainMethod();
         Thread thread = new Thread(new Runnable() {
-
           public void run() {
             try {
               String[] args = new String[0];
@@ -107,5 +106,4 @@ public class ExecuteCalculator_Action extends GeneratedAction {
       return null;
     }
   }
-
 }

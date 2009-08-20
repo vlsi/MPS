@@ -42,7 +42,6 @@ public class GFGetterFun extends ConceptFunction implements IDesignFunction {
     this.setProperty(GFGetterFun.VIRTUAL_PACKAGE, value);
   }
 
-
   public static GFGetterFun newInstance(SModel sm, boolean init) {
     return (GFGetterFun)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.ypath.structure.GFGetterFun", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -50,5 +49,4 @@ public class GFGetterFun extends ConceptFunction implements IDesignFunction {
   public static GFGetterFun newInstance(SModel sm) {
     return GFGetterFun.newInstance(sm, false);
   }
-
 }

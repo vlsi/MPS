@@ -18,7 +18,6 @@ import jetbrains.mps.ypath.behavior.ITreePathExpression_Behavior;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class typeof_TreePathOperationExpression_InferenceRule extends AbstractInferenceRule_Runtime implements InferenceRule_Runtime {
-
   public typeof_TreePathOperationExpression_InferenceRule() {
   }
 
@@ -36,7 +35,6 @@ public class typeof_TreePathOperationExpression_InferenceRule extends AbstractIn
           {
             final SNode _representatorVar0 = typeCheckingContext.getEquationManager().getRepresentator(SourceType_typevar_1186145333005);
             typeCheckingContext.whenConcrete(_representatorVar0, new Runnable() {
-
               public void run() {
                 SNode targetType = FeatureUtil.getTargetType(SLinkOperations.getTarget(op, "usedFeature", false), SLinkOperations.getTarget(SNodeOperations.cast(typeCheckingContext.getEquationManager().getRepresentator(SourceType_typevar_1186145333005), "jetbrains.mps.ypath.structure.TreePathType"), "nodeType", true), ParameterWrapper_Behavior.call_getParameterValue_1213877312166(SLinkOperations.getTarget(op, "paramObject", true)));
                 if (!((targetType != null))) {
@@ -55,8 +53,7 @@ public class typeof_TreePathOperationExpression_InferenceRule extends AbstractIn
             }, "r:00000000-0000-4000-0000-011c895905aa(jetbrains.mps.ypath.typesystem)", "1186145326892", false, false);
           }
         }
-      } else
-      {
+      } else {
         SNode treePath = ITreePathExpression_Behavior.call_getTreePath_1213877496973(tpoe);
         if (treePath != null) {
           {
@@ -71,8 +68,7 @@ public class typeof_TreePathOperationExpression_InferenceRule extends AbstractIn
           typeCheckingContext.reportTypeError(tpoe, "No treepath found", "r:00000000-0000-4000-0000-011c895905aa(jetbrains.mps.ypath.typesystem)", "1196942498551", intentionProvider, errorTarget);
         }
       }
-    } else
-    {
+    } else {
       {
         SNode _nodeToCheck_1029348928467 = tpoe;
         BaseIntentionProvider intentionProvider = null;
@@ -92,5 +88,4 @@ public class typeof_TreePathOperationExpression_InferenceRule extends AbstractIn
   public boolean overrides() {
     return false;
   }
-
 }

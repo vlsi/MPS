@@ -32,7 +32,6 @@ import jetbrains.mps.generator.template.TemplateQueryContext;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 
 public class QueriesGenerated {
-
   public static boolean baseMappingRule_Condition_1196091747822(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
     return !(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(_context.getNode(), "operand", true), "jetbrains.mps.ypath.structure.TreePathOperationExpression"));
   }
@@ -388,14 +387,11 @@ public class QueriesGenerated {
   public static Iterable sourceNodesQuery_1225096837297(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     SNode origOp = (SNode)_context.getTransientObject("siblings_operation");
     final SNode currOpp = SLinkOperations.getTarget(SNodeOperations.cast(_context.getNode(), "jetbrains.mps.ypath.structure.IterateOperation"), "usedFeature", false);
-    return ListSequence.fromList(OperationsUtil.substituteApplicableOperations(origOp)).translate(new ITranslator2 <SNode, SNode>() {
-
+    return ListSequence.fromList(OperationsUtil.substituteApplicableOperations(origOp)).translate(new ITranslator2<SNode, SNode>() {
       public Iterable<SNode> translate(final SNode it) {
-        return new Iterable <SNode>() {
-
+        return new Iterable<SNode>() {
           public Iterator<SNode> iterator() {
-            return new YieldingIterator <SNode>() {
-
+            return new YieldingIterator<SNode>() {
               private int __CP__ = 0;
               private SNode _3_opp;
               private SNode _7_io;
@@ -447,14 +443,11 @@ __switch__:
     _context.putTransientObject("traversal_axis", axis);
     _context.putTransientObject("siblings_operation", _context.getNode());
     final List<SNode> oppFeats = ListSequence.fromList(new ArrayList<SNode>());
-    return ListSequence.fromList(OperationsUtil.substituteApplicableOperations(_context.getNode())).translate(new ITranslator2 <SNode, SNode>() {
-
+    return ListSequence.fromList(OperationsUtil.substituteApplicableOperations(_context.getNode())).translate(new ITranslator2<SNode, SNode>() {
       public Iterable<SNode> translate(final SNode it) {
-        return new Iterable <SNode>() {
-
+        return new Iterable<SNode>() {
           public Iterator<SNode> iterator() {
-            return new YieldingIterator <SNode>() {
-
+            return new YieldingIterator<SNode>() {
               private int __CP__ = 0;
               private SNode _3_opp;
               private SNode _7_io;
@@ -519,14 +512,11 @@ __switch__:
     _context.putTransientObject("traversal_axis", axis);
     _context.putTransientObject("siblings_operation", _context.getNode());
     final List<SNode> oppFeats = ListSequence.fromList(new ArrayList<SNode>());
-    return ListSequence.fromList(OperationsUtil.substituteApplicableOperations(_context.getNode())).translate(new ITranslator2 <SNode, SNode>() {
-
+    return ListSequence.fromList(OperationsUtil.substituteApplicableOperations(_context.getNode())).translate(new ITranslator2<SNode, SNode>() {
       public Iterable<SNode> translate(final SNode it) {
-        return new Iterable <SNode>() {
-
+        return new Iterable<SNode>() {
           public Iterator<SNode> iterator() {
-            return new YieldingIterator <SNode>() {
-
+            return new YieldingIterator<SNode>() {
               private int __CP__ = 0;
               private SNode _3_opp;
               private SNode _7_io;
@@ -577,14 +567,11 @@ __switch__:
   public static Iterable sourceNodesQuery_1225096838117(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     SNode origOp = (SNode)_context.getTransientObject("siblings_operation");
     final SNode currOpp = SLinkOperations.getTarget(SNodeOperations.cast(_context.getNode(), "jetbrains.mps.ypath.structure.IterateOperation"), "usedFeature", false);
-    return ListSequence.fromList(OperationsUtil.substituteApplicableOperations(origOp)).translate(new ITranslator2 <SNode, SNode>() {
-
+    return ListSequence.fromList(OperationsUtil.substituteApplicableOperations(origOp)).translate(new ITranslator2<SNode, SNode>() {
       public Iterable<SNode> translate(final SNode it) {
-        return new Iterable <SNode>() {
-
+        return new Iterable<SNode>() {
           public Iterator<SNode> iterator() {
-            return new YieldingIterator <SNode>() {
-
+            return new YieldingIterator<SNode>() {
               private int __CP__ = 0;
               private SNode _3_opp;
               private SNode _7_io;
@@ -650,8 +637,7 @@ __switch__:
 
   public static SNode mapSrcMacro_mapper_1225096836382(final IOperationContext operationContext, final MapSrcMacroContext _context) {
     SNode lvr = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.LocalVariableReference", null);
-    SLinkOperations.setTarget(lvr, "variableDeclaration", ListSequence.fromList(SNodeOperations.getDescendants(SNodeOperations.getAncestor(SNodeOperations.getAncestor(_context.getParentOutputNode(), "jetbrains.mps.baseLanguage.structure.StatementList", false, false), "jetbrains.mps.baseLanguage.structure.StatementList", false, false), "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration", false, new String[]{})).where(new IWhereFilter <SNode>() {
-
+    SLinkOperations.setTarget(lvr, "variableDeclaration", ListSequence.fromList(SNodeOperations.getDescendants(SNodeOperations.getAncestor(SNodeOperations.getAncestor(_context.getParentOutputNode(), "jetbrains.mps.baseLanguage.structure.StatementList", false, false), "jetbrains.mps.baseLanguage.structure.StatementList", false, false), "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration", false, new String[]{})).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return "_zzz_".equals(SPropertyOperations.getString(it, "name"));
       }
@@ -661,8 +647,7 @@ __switch__:
 
   public static SNode mapSrcMacro_mapper_1225096836489(final IOperationContext operationContext, final MapSrcMacroContext _context) {
     SNode lvr = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.LocalVariableReference", null);
-    SLinkOperations.setTarget(lvr, "variableDeclaration", ListSequence.fromList(SNodeOperations.getDescendants(SNodeOperations.getAncestor(SNodeOperations.getAncestor(_context.getParentOutputNode(), "jetbrains.mps.baseLanguage.structure.StatementList", false, false), "jetbrains.mps.baseLanguage.structure.StatementList", false, false), "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration", false, new String[]{})).where(new IWhereFilter <SNode>() {
-
+    SLinkOperations.setTarget(lvr, "variableDeclaration", ListSequence.fromList(SNodeOperations.getDescendants(SNodeOperations.getAncestor(SNodeOperations.getAncestor(_context.getParentOutputNode(), "jetbrains.mps.baseLanguage.structure.StatementList", false, false), "jetbrains.mps.baseLanguage.structure.StatementList", false, false), "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration", false, new String[]{})).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return "_xxx_".equals(SPropertyOperations.getString(it, "name"));
       }
@@ -672,8 +657,7 @@ __switch__:
 
   public static SNode mapSrcMacro_mapper_1225096836605(final IOperationContext operationContext, final MapSrcMacroContext _context) {
     SNode lvr = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.LocalVariableReference", null);
-    SLinkOperations.setTarget(lvr, "variableDeclaration", ListSequence.fromList(SNodeOperations.getDescendants(SNodeOperations.getAncestor(SNodeOperations.getAncestor(_context.getParentOutputNode(), "jetbrains.mps.baseLanguage.structure.StatementList", false, false), "jetbrains.mps.baseLanguage.structure.StatementList", false, false), "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration", false, new String[]{})).where(new IWhereFilter <SNode>() {
-
+    SLinkOperations.setTarget(lvr, "variableDeclaration", ListSequence.fromList(SNodeOperations.getDescendants(SNodeOperations.getAncestor(SNodeOperations.getAncestor(_context.getParentOutputNode(), "jetbrains.mps.baseLanguage.structure.StatementList", false, false), "jetbrains.mps.baseLanguage.structure.StatementList", false, false), "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration", false, new String[]{})).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return "_zzz_".equals(SPropertyOperations.getString(it, "name"));
       }
@@ -683,8 +667,7 @@ __switch__:
 
   public static SNode mapSrcMacro_mapper_1225096836697(final IOperationContext operationContext, final MapSrcMacroContext _context) {
     SNode lvr = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.LocalVariableReference", null);
-    SLinkOperations.setTarget(lvr, "variableDeclaration", ListSequence.fromList(SNodeOperations.getDescendants(SNodeOperations.getAncestor(SNodeOperations.getAncestor(_context.getParentOutputNode(), "jetbrains.mps.baseLanguage.structure.StatementList", false, false), "jetbrains.mps.baseLanguage.structure.StatementList", false, false), "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration", false, new String[]{})).where(new IWhereFilter <SNode>() {
-
+    SLinkOperations.setTarget(lvr, "variableDeclaration", ListSequence.fromList(SNodeOperations.getDescendants(SNodeOperations.getAncestor(SNodeOperations.getAncestor(_context.getParentOutputNode(), "jetbrains.mps.baseLanguage.structure.StatementList", false, false), "jetbrains.mps.baseLanguage.structure.StatementList", false, false), "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration", false, new String[]{})).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return "_xxx_".equals(SPropertyOperations.getString(it, "name"));
       }
@@ -693,8 +676,7 @@ __switch__:
   }
 
   public static SNode mapSrcMacro_mapper_1225096836936(final IOperationContext operationContext, final MapSrcMacroContext _context) {
-    SNode zzz = ListSequence.fromList(SNodeOperations.getDescendants(SNodeOperations.getAncestor(_context.getParentOutputNode(), "jetbrains.mps.baseLanguage.collections.structure.SequenceCreator", true, false), null, false, new String[]{})).where(new IWhereFilter <SNode>() {
-
+    SNode zzz = ListSequence.fromList(SNodeOperations.getDescendants(SNodeOperations.getAncestor(_context.getParentOutputNode(), "jetbrains.mps.baseLanguage.collections.structure.SequenceCreator", true, false), null, false, new String[]{})).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return SNodeOperations.isInstanceOf(it, "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration") && "_zzz_".equals(SPropertyOperations.getString(SNodeOperations.cast(it, "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration"), "name"));
       }
@@ -705,8 +687,7 @@ __switch__:
   }
 
   public static SNode mapSrcMacro_mapper_1225096837079(final IOperationContext operationContext, final MapSrcMacroContext _context) {
-    SNode zzz = ListSequence.fromList(SNodeOperations.getDescendants(SNodeOperations.getAncestor(_context.getParentOutputNode(), "jetbrains.mps.baseLanguage.structure.WhileStatement", true, false), null, false, new String[]{})).where(new IWhereFilter <SNode>() {
-
+    SNode zzz = ListSequence.fromList(SNodeOperations.getDescendants(SNodeOperations.getAncestor(_context.getParentOutputNode(), "jetbrains.mps.baseLanguage.structure.WhileStatement", true, false), null, false, new String[]{})).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return SNodeOperations.isInstanceOf(it, "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration") && "_zzz_".equals(SPropertyOperations.getString(SNodeOperations.cast(it, "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration"), "name"));
       }
@@ -724,8 +705,7 @@ __switch__:
   }
 
   public static SNode mapSrcMacro_mapper_1225096837537(final IOperationContext operationContext, final MapSrcMacroContext _context) {
-    SNode zzz = ListSequence.fromList(SNodeOperations.getDescendants(SNodeOperations.getAncestor(_context.getParentOutputNode(), "jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral", true, false), null, false, new String[]{})).where(new IWhereFilter <SNode>() {
-
+    SNode zzz = ListSequence.fromList(SNodeOperations.getDescendants(SNodeOperations.getAncestor(_context.getParentOutputNode(), "jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral", true, false), null, false, new String[]{})).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return SNodeOperations.isInstanceOf(it, "jetbrains.mps.baseLanguage.structure.ParameterDeclaration") && "_zzz_".equals(SPropertyOperations.getString(SNodeOperations.cast(it, "jetbrains.mps.baseLanguage.structure.ParameterDeclaration"), "name"));
       }
@@ -736,8 +716,7 @@ __switch__:
   }
 
   public static SNode mapSrcMacro_mapper_1225096837639(final IOperationContext operationContext, final MapSrcMacroContext _context) {
-    SNode zzz = ListSequence.fromList(SNodeOperations.getDescendants(SNodeOperations.getAncestor(_context.getParentOutputNode(), "jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral", true, false), null, false, new String[]{})).where(new IWhereFilter <SNode>() {
-
+    SNode zzz = ListSequence.fromList(SNodeOperations.getDescendants(SNodeOperations.getAncestor(_context.getParentOutputNode(), "jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral", true, false), null, false, new String[]{})).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return SNodeOperations.isInstanceOf(it, "jetbrains.mps.baseLanguage.structure.ParameterDeclaration") && "_zzz_".equals(SPropertyOperations.getString(SNodeOperations.cast(it, "jetbrains.mps.baseLanguage.structure.ParameterDeclaration"), "name"));
       }
@@ -769,8 +748,7 @@ __switch__:
   }
 
   public static SNode mapSrcMacro_mapper_1225096843420(final IOperationContext operationContext, final MapSrcMacroContext _context) {
-    SNode zzz = ListSequence.fromList(SNodeOperations.getDescendants(SNodeOperations.getAncestor(_context.getParentOutputNode(), "jetbrains.mps.baseLanguage.collections.structure.SequenceCreator", true, false), null, false, new String[]{})).where(new IWhereFilter <SNode>() {
-
+    SNode zzz = ListSequence.fromList(SNodeOperations.getDescendants(SNodeOperations.getAncestor(_context.getParentOutputNode(), "jetbrains.mps.baseLanguage.collections.structure.SequenceCreator", true, false), null, false, new String[]{})).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return SNodeOperations.isInstanceOf(it, "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration") && "_zzz_".equals(SPropertyOperations.getString(SNodeOperations.cast(it, "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration"), "name"));
       }
@@ -788,8 +766,7 @@ __switch__:
   }
 
   public static SNode mapSrcMacro_mapper_1465573729715750639(final IOperationContext operationContext, final MapSrcMacroContext _context) {
-    SNode zzz = ListSequence.fromList(SNodeOperations.getDescendants(SNodeOperations.getAncestor(_context.getParentOutputNode(), "jetbrains.mps.baseLanguage.collections.structure.SequenceCreator", true, false), null, false, new String[]{})).where(new IWhereFilter <SNode>() {
-
+    SNode zzz = ListSequence.fromList(SNodeOperations.getDescendants(SNodeOperations.getAncestor(_context.getParentOutputNode(), "jetbrains.mps.baseLanguage.collections.structure.SequenceCreator", true, false), null, false, new String[]{})).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return SNodeOperations.isInstanceOf(it, "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration") && "_zzz_".equals(SPropertyOperations.getString(SNodeOperations.cast(it, "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration"), "name"));
       }
@@ -798,5 +775,4 @@ __switch__:
     SLinkOperations.setTarget(ref_zzz, "variableDeclaration", zzz, false);
     return IGenericFeature_Behavior.call_getterExpression_1213877249152(SNodeOperations.cast(SLinkOperations.getTarget(_context.getNode(), "usedFeature", false), "jetbrains.mps.ypath.structure.IGenericFeature"), ref_zzz, SLinkOperations.getTarget(_context.getNode(), "paramObject", true), ((TemplateQueryContext)_context).getGenerator());
   }
-
 }

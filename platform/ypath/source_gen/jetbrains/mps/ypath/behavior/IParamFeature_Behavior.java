@@ -8,7 +8,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class IParamFeature_Behavior {
-
   public static void init(SNode thisNode) {
   }
 
@@ -19,5 +18,4 @@ public class IParamFeature_Behavior {
   public static SNode call_getTargetType_1213877340252(SNode thisNode, Object param) {
     return FeatureUtil.getTargetType(thisNode, SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.getAncestor(thisNode, "jetbrains.mps.ypath.structure.TreePathAspect", false, false), "treePathType", true), "nodeType", true), param);
   }
-
 }

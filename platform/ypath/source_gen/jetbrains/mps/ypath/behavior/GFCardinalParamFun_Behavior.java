@@ -5,8 +5,6 @@ package jetbrains.mps.ypath.behavior;
 import jetbrains.mps.smodel.SNode;
 
 public class GFCardinalParamFun_Behavior {
-
   public static void init(SNode thisNode) {
   }
-
 }

@@ -16,7 +16,6 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 
 public class LambdaMethodParameter_Editor extends DefaultNodeEditor {
-
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createProperty_6133_0(editorContext, node);
   }
@@ -43,5 +42,4 @@ public class LambdaMethodParameter_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
 }

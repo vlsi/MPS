@@ -52,7 +52,6 @@ public class ListElements extends BaseConcept implements IComponentPart {
     super.setChild(ListElements.VALUE, node);
   }
 
-
   public static ListElements newInstance(SModel sm, boolean init) {
     return (ListElements)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.uiLanguage.structure.ListElements", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -60,5 +59,4 @@ public class ListElements extends BaseConcept implements IComponentPart {
   public static ListElements newInstance(SModel sm) {
     return ListElements.newInstance(sm, false);
   }
-
 }

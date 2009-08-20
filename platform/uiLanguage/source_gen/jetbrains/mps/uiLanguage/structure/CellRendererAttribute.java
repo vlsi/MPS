@@ -52,7 +52,6 @@ public class CellRendererAttribute extends BaseConcept implements IComponentPart
     super.setChild(CellRendererAttribute.RENDERER, node);
   }
 
-
   public static CellRendererAttribute newInstance(SModel sm, boolean init) {
     return (CellRendererAttribute)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.uiLanguage.structure.CellRendererAttribute", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -60,5 +59,4 @@ public class CellRendererAttribute extends BaseConcept implements IComponentPart
   public static CellRendererAttribute newInstance(SModel sm) {
     return CellRendererAttribute.newInstance(sm, false);
   }
-
 }

@@ -94,5 +94,4 @@ public enum FragmentTypeEnum {
     }
     return FragmentTypeEnum.getDefault();
   }
-
 }

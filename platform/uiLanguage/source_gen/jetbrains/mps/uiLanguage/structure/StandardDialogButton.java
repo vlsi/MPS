@@ -43,7 +43,6 @@ public class StandardDialogButton extends BaseConcept {
     super.setChild(StandardDialogButton.HANDLER, node);
   }
 
-
   public static StandardDialogButton newInstance(SModel sm, boolean init) {
     return (StandardDialogButton)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.uiLanguage.structure.StandardDialogButton", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -51,5 +50,4 @@ public class StandardDialogButton extends BaseConcept {
   public static StandardDialogButton newInstance(SModel sm) {
     return StandardDialogButton.newInstance(sm, false);
   }
-
 }

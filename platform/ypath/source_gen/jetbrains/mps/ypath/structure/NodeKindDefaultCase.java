@@ -21,5 +21,4 @@ public class NodeKindDefaultCase extends NodeKindCase {
   public static NodeKindDefaultCase newInstance(SModel sm) {
     return NodeKindDefaultCase.newInstance(sm, false);
   }
-
 }

@@ -14,6 +14,7 @@ public interface TreePath extends INodeAdapter {
   public static final String FEATURES = "features";
   public static final String DEFAULT_FEATURE = "defaultFeature";
 
+
   public TreePathType getTreePathType();
   public void setTreePathType(TreePathType node);
   public ParentBlock getParentBlock();

@@ -21,5 +21,4 @@ public class WhereBlock extends LambdaMethod {
   public static WhereBlock newInstance(SModel sm) {
     return WhereBlock.newInstance(sm, false);
   }
-
 }

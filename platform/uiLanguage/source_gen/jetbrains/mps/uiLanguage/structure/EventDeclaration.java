@@ -72,7 +72,6 @@ public class EventDeclaration extends BaseConcept implements IMember {
     super.setChild(EventDeclaration.INITIALIZER, node);
   }
 
-
   public static EventDeclaration newInstance(SModel sm, boolean init) {
     return (EventDeclaration)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.uiLanguage.structure.EventDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -80,5 +79,4 @@ public class EventDeclaration extends BaseConcept implements IMember {
   public static EventDeclaration newInstance(SModel sm) {
     return EventDeclaration.newInstance(sm, false);
   }
-
 }

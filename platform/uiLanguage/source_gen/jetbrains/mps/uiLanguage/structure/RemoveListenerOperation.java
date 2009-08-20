@@ -22,5 +22,4 @@ public class RemoveListenerOperation extends BinaryOperation {
   public static RemoveListenerOperation newInstance(SModel sm) {
     return RemoveListenerOperation.newInstance(sm, false);
   }
-
 }

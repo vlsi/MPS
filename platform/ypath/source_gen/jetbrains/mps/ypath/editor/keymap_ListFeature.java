@@ -14,15 +14,14 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class keymap_ListFeature extends EditorCellKeyMap {
-
   public keymap_ListFeature() {
     this.setApplicableToEveryModel(false);
     EditorCellKeyMapAction action;
     action = new keymap_ListFeature.keymap_ListFeature_Action0();
     this.putAction("alt", "VK_D", action);
   }
-  public static class keymap_ListFeature_Action0 extends EditorCellKeyMapAction {
 
+  public static class keymap_ListFeature_Action0 extends EditorCellKeyMapAction {
     public keymap_ListFeature_Action0() {
       this.setShownInPopupMenu(false);
     }
@@ -58,7 +57,7 @@ public class keymap_ListFeature extends EditorCellKeyMap {
     private void execute_internal(final KeyEvent keyEvent, final EditorContext editorContext, final SNode node, final List<SNode> selectedNodes) {
       SNode tp = SNodeOperations.getAncestor(node, "jetbrains.mps.ypath.structure.TreePath", false, false);
       boolean isDefault = SPropertyOperations.getBoolean(SNodeOperations.cast(node, "jetbrains.mps.ypath.structure.IFeature"), "default");
-      for(SNode fe : SLinkOperations.getTargets(tp, "features", true)) {
+      for (SNode fe : SLinkOperations.getTargets(tp, "features", true)) {
         SPropertyOperations.set(fe, "default", "" + (!(isDefault) && fe == node));
       }
     }
@@ -66,7 +65,5 @@ public class keymap_ListFeature extends EditorCellKeyMap {
     public String getKeyStroke() {
       return "alt D";
     }
-
-}
-
+  }
 }

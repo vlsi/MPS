@@ -20,7 +20,6 @@ import jetbrains.mps.nodeEditor.AbstractCellProvider;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 
 public class NodeKindSpecificCase_Editor extends DefaultNodeEditor {
-
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_4092_0(editorContext, node);
   }
@@ -158,7 +157,6 @@ public class NodeKindSpecificCase_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline4092_0 extends AbstractCellProvider {
-
     public _Inline4092_0() {
       super();
     }
@@ -188,7 +186,5 @@ public class NodeKindSpecificCase_Editor extends DefaultNodeEditor {
       } else
       return editorCell;
     }
-
-}
-
+  }
 }

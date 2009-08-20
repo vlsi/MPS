@@ -17,7 +17,6 @@ import java.util.Iterator;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class check_VisitChildrenExpression_InferenceRule extends AbstractInferenceRule_Runtime implements InferenceRule_Runtime {
-
   public check_VisitChildrenExpression_InferenceRule() {
   }
 
@@ -70,5 +69,4 @@ public class check_VisitChildrenExpression_InferenceRule extends AbstractInferen
   public boolean overrides() {
     return false;
   }
-
 }

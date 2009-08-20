@@ -33,7 +33,6 @@ public class VisitBlock extends LambdaMethod {
     super.setChild(VisitBlock.VISIT_PARAMETER_DECLARATION_LIST, node);
   }
 
-
   public static VisitBlock newInstance(SModel sm, boolean init) {
     return (VisitBlock)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.ypath.structure.VisitBlock", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -41,5 +40,4 @@ public class VisitBlock extends LambdaMethod {
   public static VisitBlock newInstance(SModel sm) {
     return VisitBlock.newInstance(sm, false);
   }
-
 }

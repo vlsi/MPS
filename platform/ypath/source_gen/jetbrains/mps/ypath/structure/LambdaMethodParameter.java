@@ -22,5 +22,4 @@ public class LambdaMethodParameter extends ClosureParameter {
   public static LambdaMethodParameter newInstance(SModel sm) {
     return LambdaMethodParameter.newInstance(sm, false);
   }
-
 }

@@ -52,7 +52,6 @@ public class ActionHandler extends BaseConcept implements IComponentPart {
     super.setChild(ActionHandler.HANDLER, node);
   }
 
-
   public static ActionHandler newInstance(SModel sm, boolean init) {
     return (ActionHandler)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.uiLanguage.structure.ActionHandler", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -60,5 +59,4 @@ public class ActionHandler extends BaseConcept implements IComponentPart {
   public static ActionHandler newInstance(SModel sm) {
     return ActionHandler.newInstance(sm, false);
   }
-
 }

@@ -25,7 +25,6 @@ public class NodeKindCase extends BaseConcept {
     super.setChild(NodeKindCase.STATEMENT_LIST, node);
   }
 
-
   public static NodeKindCase newInstance(SModel sm, boolean init) {
     return (NodeKindCase)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.ypath.structure.NodeKindCase", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -33,5 +32,4 @@ public class NodeKindCase extends BaseConcept {
   public static NodeKindCase newInstance(SModel sm) {
     return NodeKindCase.newInstance(sm, false);
   }
-
 }

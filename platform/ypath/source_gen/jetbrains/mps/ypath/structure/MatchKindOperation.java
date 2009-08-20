@@ -32,7 +32,6 @@ public class MatchKindOperation extends TreePathOperation {
     super.setChild(MatchKindOperation.NODE_KIND_OCCURRENCE, node);
   }
 
-
   public static MatchKindOperation newInstance(SModel sm, boolean init) {
     return (MatchKindOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.ypath.structure.MatchKindOperation", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -40,5 +39,4 @@ public class MatchKindOperation extends TreePathOperation {
   public static MatchKindOperation newInstance(SModel sm) {
     return MatchKindOperation.newInstance(sm, false);
   }
-
 }

@@ -61,7 +61,6 @@ public class InlineEventHandler extends BaseConcept implements IComponentPart {
     super.setChild(InlineEventHandler.HANDLER, node);
   }
 
-
   public static InlineEventHandler newInstance(SModel sm, boolean init) {
     return (InlineEventHandler)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.uiLanguage.structure.InlineEventHandler", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -69,5 +68,4 @@ public class InlineEventHandler extends BaseConcept implements IComponentPart {
   public static InlineEventHandler newInstance(SModel sm) {
     return InlineEventHandler.newInstance(sm, false);
   }
-
 }

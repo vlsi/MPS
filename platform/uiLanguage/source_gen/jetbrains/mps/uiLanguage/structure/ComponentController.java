@@ -146,7 +146,6 @@ public class ComponentController extends BaseConcept implements INamedConcept, I
     this.insertChild(prev, ComponentController.COMPONENT_METHOD, node);
   }
 
-
   public static ComponentController newInstance(SModel sm, boolean init) {
     return (ComponentController)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.uiLanguage.structure.ComponentController", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -154,5 +153,4 @@ public class ComponentController extends BaseConcept implements INamedConcept, I
   public static ComponentController newInstance(SModel sm) {
     return ComponentController.newInstance(sm, false);
   }
-
 }

@@ -20,7 +20,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class TreePathOperationExpression_Editor extends DefaultNodeEditor {
-
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_7232_0(editorContext, node);
   }
@@ -31,8 +30,7 @@ public class TreePathOperationExpression_Editor extends DefaultNodeEditor {
     EditorCell editorCell = null;
     if (alternationCondition) {
       editorCell = this.createConstant_7232_0(editorContext, node);
-    } else
-    {
+    } else {
       editorCell = this.createConstant_7232_1(editorContext, node);
     }
     {
@@ -112,9 +110,7 @@ public class TreePathOperationExpression_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-
   private static boolean renderingCondition7232_0(SNode node, EditorContext editorContext, IScope scope) {
     return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(node, "operand", true), "jetbrains.mps.ypath.structure.TreePathAdapterExpression");
   }
-
 }

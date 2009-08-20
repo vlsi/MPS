@@ -52,7 +52,6 @@ public class InputField extends BaseConcept implements INamedConcept {
     this.setProperty(InputField.VIRTUAL_PACKAGE, value);
   }
 
-
   public static InputField newInstance(SModel sm, boolean init) {
     return (InputField)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.calculator.structure.InputField", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -60,5 +59,4 @@ public class InputField extends BaseConcept implements INamedConcept {
   public static InputField newInstance(SModel sm) {
     return InputField.newInstance(sm, false);
   }
-
 }

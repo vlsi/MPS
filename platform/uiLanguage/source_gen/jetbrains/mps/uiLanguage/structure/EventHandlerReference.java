@@ -25,7 +25,6 @@ public class EventHandlerReference extends Expression {
     super.setReferent(EventHandlerReference.HANDLER, node);
   }
 
-
   public static EventHandlerReference newInstance(SModel sm, boolean init) {
     return (EventHandlerReference)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.uiLanguage.structure.EventHandlerReference", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -33,5 +32,4 @@ public class EventHandlerReference extends Expression {
   public static EventHandlerReference newInstance(SModel sm) {
     return EventHandlerReference.newInstance(sm, false);
   }
-
 }

@@ -120,7 +120,6 @@ public class BeanDeclaration extends BaseConcept implements IClassifier, INamedC
     this.insertChild(prev, BeanDeclaration.CONSTRUCTOR, node);
   }
 
-
   public static BeanDeclaration newInstance(SModel sm, boolean init) {
     return (BeanDeclaration)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.uiLanguage.structure.BeanDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -128,5 +127,4 @@ public class BeanDeclaration extends BaseConcept implements IClassifier, INamedC
   public static BeanDeclaration newInstance(SModel sm) {
     return BeanDeclaration.newInstance(sm, false);
   }
-
 }

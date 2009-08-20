@@ -132,7 +132,6 @@ public class ParamListFeature extends ListFeature implements IParamFeature {
     super.setChild(ParamListFeature.CARDINAL, node);
   }
 
-
   public static ParamListFeature newInstance(SModel sm, boolean init) {
     return (ParamListFeature)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.ypath.structure.ParamListFeature", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -140,5 +139,4 @@ public class ParamListFeature extends ListFeature implements IParamFeature {
   public static ParamListFeature newInstance(SModel sm) {
     return ParamListFeature.newInstance(sm, false);
   }
-
 }

@@ -12,7 +12,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class InputFieldReference_field_ReferentConstraint extends BaseNodeReferenceSearchScopeProvider implements IModelConstraints {
-
   public InputFieldReference_field_ReferentConstraint() {
   }
 
@@ -28,5 +27,4 @@ public class InputFieldReference_field_ReferentConstraint extends BaseNodeRefere
     SNode calc = SNodeOperations.getAncestor(_context.getEnclosingNode(), "jetbrains.mps.calculator.structure.Calcualtor", false, false);
     return SLinkOperations.getTargets(calc, "inputField", true);
   }
-
 }

@@ -42,7 +42,6 @@ public class GeneratorFunctionParam extends ConceptFunctionParameter implements 
     this.setProperty(GeneratorFunctionParam.VIRTUAL_PACKAGE, value);
   }
 
-
   public static GeneratorFunctionParam newInstance(SModel sm, boolean init) {
     return (GeneratorFunctionParam)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.ypath.structure.GeneratorFunctionParam", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -50,5 +49,4 @@ public class GeneratorFunctionParam extends ConceptFunctionParameter implements 
   public static GeneratorFunctionParam newInstance(SModel sm) {
     return GeneratorFunctionParam.newInstance(sm, false);
   }
-
 }

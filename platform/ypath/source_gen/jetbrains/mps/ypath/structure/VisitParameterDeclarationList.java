@@ -38,7 +38,6 @@ public class VisitParameterDeclarationList extends BaseConcept {
     this.insertChild(prev, VisitParameterDeclarationList.VISIT_PARAMETER_DECLARATION, node);
   }
 
-
   public static VisitParameterDeclarationList newInstance(SModel sm, boolean init) {
     return (VisitParameterDeclarationList)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.ypath.structure.VisitParameterDeclarationList", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -46,5 +45,4 @@ public class VisitParameterDeclarationList extends BaseConcept {
   public static VisitParameterDeclarationList newInstance(SModel sm) {
     return VisitParameterDeclarationList.newInstance(sm, false);
   }
-
 }

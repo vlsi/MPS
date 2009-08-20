@@ -24,7 +24,6 @@ public class VisitNodesStatement extends Statement {
     super.setChild(VisitNodesStatement.VISIT_BLOCK, node);
   }
 
-
   public static VisitNodesStatement newInstance(SModel sm, boolean init) {
     return (VisitNodesStatement)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.ypath.structure.VisitNodesStatement", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -32,5 +31,4 @@ public class VisitNodesStatement extends Statement {
   public static VisitNodesStatement newInstance(SModel sm) {
     return VisitNodesStatement.newInstance(sm, false);
   }
-
 }
