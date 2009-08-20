@@ -27,6 +27,11 @@
       <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1224501978739" />
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1224501978740" />
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1224501978741">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="8705638658311395354">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.ClassifierClassExpression" id="8705638658311395355">
+            <link role="classifier" targetNodeId="4539702814067105036" resolveInfo="B" />
+          </node>
+        </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="6768994795311909113">
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="6768994795311909114">
             <property name="name" value="ar" />

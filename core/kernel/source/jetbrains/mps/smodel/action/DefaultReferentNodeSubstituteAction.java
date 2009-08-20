@@ -53,7 +53,7 @@ public class DefaultReferentNodeSubstituteAction extends AbstractNodeSubstituteA
 
   public String getMatchingText(String pattern) {
     if (myPresentation != null) {
-      return myPresentation.getText((SNode) getParameterObject(), false);
+      return myPresentation.getText((SNode) getParameterObject(), false, false);
     }
 
     return getMatchingText(pattern, true, false);
@@ -61,7 +61,7 @@ public class DefaultReferentNodeSubstituteAction extends AbstractNodeSubstituteA
 
   public String getVisibleMatchingText(String pattern) {
     if (myPresentation != null) {
-      return myPresentation.getText((SNode) getParameterObject(), true);
+      return myPresentation.getText((SNode) getParameterObject(), true, false);
     }
 
     return getMatchingText(pattern, true, true);

@@ -6,19 +6,25 @@ import jetbrains.mps.smodel.SNode;
 public class PresentationReferentConstraintContext extends ReferentConstraintContext {
   private SNode myParameterNode;
   private boolean myVisible;
+  private boolean mySmartReference;
 
   public PresentationReferentConstraintContext(SModel model, SNode enclosingNode,
-                                               SNode referenceNode, SNode linkTarget, SNode parameterNode, boolean visible) {
+                                               SNode referenceNode, SNode linkTarget, SNode parameterNode, boolean visible, boolean smartRef) {
     super(model, enclosingNode, referenceNode, linkTarget);
     myParameterNode = parameterNode;
     myVisible = visible;
+    mySmartReference = smartRef;
   }
 
   public SNode getParameterNode() {
     return myParameterNode;
   }
 
-  public boolean isVisible() {
+  public boolean getVisible() {
     return myVisible;
+  }
+
+  public boolean getSmartReference() {
+    return mySmartReference;
   }
 }

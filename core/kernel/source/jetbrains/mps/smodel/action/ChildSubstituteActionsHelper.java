@@ -479,7 +479,7 @@ public class ChildSubstituteActionsHelper {
     public String getMatchingText(String pattern) {
       if (myMatchingText == null) {
         if (myPresentation != null) {
-          myMatchingText = myPresentation.getText(myReferentNode, false);
+          myMatchingText = myPresentation.getText(myReferentNode, false, true);
         } else {
           myMatchingText = getSmartMatchingText(myReferenceNodeConcept, myReferentNode, false);
         }
@@ -490,7 +490,7 @@ public class ChildSubstituteActionsHelper {
     public String getVisibleMatchingText(String pattern) {
       if (myVisibleMatchingText == null) {
         if (myPresentation != null) {
-          myVisibleMatchingText = myPresentation.getText(myReferentNode, true);
+          myVisibleMatchingText = myPresentation.getText(myReferentNode, true, true);
         } else {
           myVisibleMatchingText = getSmartMatchingText(myReferenceNodeConcept, myReferentNode, true);
         }

@@ -1436,9 +1436,6 @@
       <property name="value" value="class of node operation" />
       <link role="conceptPropertyDeclaration" targetNodeId="4.1137473914776" />
     </node>
-    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.BooleanConceptProperty" id="6775591514230197038">
-      <link role="conceptPropertyDeclaration" targetNodeId="4.1137473994950" resolveInfo="dontSubstituteByDefault" />
-    </node>
     <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1116615189566">
       <property name="sourceCardinality" value="1" />
       <property name="role" value="classifier" />

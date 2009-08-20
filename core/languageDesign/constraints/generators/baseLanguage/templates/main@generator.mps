@@ -318,6 +318,18 @@
         <link role="template" targetNodeId="7.1143148725345" resolveInfo="reduce_ConceptFunctionParameter_default" />
       </node>
     </node>
+    <node role="reductionMappingRule" type="jetbrains.mps.lang.generator.structure.Reduction_MappingRule" id="6768994795311967750">
+      <link role="applicableConcept" targetNodeId="11.6768994795311967732" resolveInfo="ConstraintFunctionParameter_visible" />
+      <node role="ruleConsequence" type="jetbrains.mps.lang.generator.structure.TemplateDeclarationReference" id="6768994795311970494">
+        <link role="template" targetNodeId="7.1143148725345" resolveInfo="reduce_ConceptFunctionParameter_default" />
+      </node>
+    </node>
+    <node role="reductionMappingRule" type="jetbrains.mps.lang.generator.structure.Reduction_MappingRule" id="6768994795311970495">
+      <link role="applicableConcept" targetNodeId="11.6768994795311967741" resolveInfo="ConstraintFunctionParameter_smartReference" />
+      <node role="ruleConsequence" type="jetbrains.mps.lang.generator.structure.TemplateDeclarationReference" id="6768994795311970497">
+        <link role="template" targetNodeId="7.1143148725345" resolveInfo="reduce_ConceptFunctionParameter_default" />
+      </node>
+    </node>
     <node role="rootMappingRule" type="jetbrains.mps.lang.generator.structure.Root_MappingRule" id="1213106258530">
       <link role="applicableConcept" targetNodeId="11.1213093968558" resolveInfo="ConceptConstraints" />
       <link role="template" targetNodeId="1213106217514" resolveInfo="ConstraintsClass" />
