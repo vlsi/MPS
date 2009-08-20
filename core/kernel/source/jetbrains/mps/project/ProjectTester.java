@@ -127,8 +127,8 @@ public class ProjectTester {
         addDiffReport(new TestComparator(oldTest, newTest), result, title);
       }
       for (String fileName : files) {
-        int dotPosition = fileName.lastIndexOf(".");
-        if (dotPosition == -1) {
+        int dotPosition = fileName.indexOf(".");
+        if (dotPosition == 0 || dotPosition == -1) {
           continue;
         }
         String title = getDiffReportTitle(null, fileName, false, true);
