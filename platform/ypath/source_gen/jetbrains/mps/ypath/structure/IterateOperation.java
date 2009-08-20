@@ -51,7 +51,6 @@ public class IterateOperation extends TreePathOperation {
     super.setChild(IterateOperation.PARAM_OBJECT, node);
   }
 
-
   public static IterateOperation newInstance(SModel sm, boolean init) {
     return (IterateOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.ypath.structure.IterateOperation", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -59,5 +58,4 @@ public class IterateOperation extends TreePathOperation {
   public static IterateOperation newInstance(SModel sm) {
     return IterateOperation.newInstance(sm, false);
   }
-
 }

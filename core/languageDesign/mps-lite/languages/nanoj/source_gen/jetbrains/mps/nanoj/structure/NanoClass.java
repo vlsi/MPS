@@ -4,7 +4,6 @@ package jetbrains.mps.nanoj.structure;
 
 import jetbrains.mps.lang.core.structure.BaseConcept;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.nanoj.structure.Statement;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
@@ -17,14 +16,13 @@ public class NanoClass extends BaseConcept {
     super(node);
   }
 
-  public Statement getStatement() {
-    return (Statement)this.getChild(Statement.class, NanoClass.STATEMENT);
+  public jetbrains.mps.core.structure.BaseConcept getStatement() {
+    return (jetbrains.mps.core.structure.BaseConcept)this.getChild(jetbrains.mps.core.structure.BaseConcept.class, NanoClass.STATEMENT);
   }
 
-  public void setStatement(Statement node) {
+  public void setStatement(jetbrains.mps.core.structure.BaseConcept node) {
     super.setChild(NanoClass.STATEMENT, node);
   }
-
 
   public static NanoClass newInstance(SModel sm, boolean init) {
     return (NanoClass)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.nanoj.structure.NanoClass", sm, GlobalScope.getInstance(), init).getAdapter();
@@ -33,5 +31,4 @@ public class NanoClass extends BaseConcept {
   public static NanoClass newInstance(SModel sm) {
     return NanoClass.newInstance(sm, false);
   }
-
 }

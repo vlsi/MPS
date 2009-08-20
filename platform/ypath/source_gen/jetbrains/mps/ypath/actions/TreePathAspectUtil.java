@@ -19,7 +19,6 @@ import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.ypath.behavior.TreePath_Behavior;
 
 public class TreePathAspectUtil {
-
   public static List<SNode> getTreePathAspects(SNode expression, IScope scope) {
     List<SNode> treePathAspects = new ArrayList<SNode>();
     final Wrappers._T<SNode> expType = new Wrappers._T<SNode>(TypeChecker.getInstance().getTypeOf(expression));
@@ -30,8 +29,7 @@ public class TreePathAspectUtil {
       }
       SNode concept = (SNode)SConceptOperations.findConceptDeclaration("jetbrains.mps.ypath.structure.TreePathAspect");
       Iterable<SNode> instances = SModelOperations.getRootsIncludingImported(SNodeOperations.getModel(expression), scope, "jetbrains.mps.ypath.structure.TreePathAspect");
-      ListSequence.fromList(treePathAspects).addSequence(Sequence.fromIterable(instances).where(new IWhereFilter <SNode>() {
-
+      ListSequence.fromList(treePathAspects).addSequence(Sequence.fromIterable(instances).where(new IWhereFilter<SNode>() {
         public boolean accept(SNode it) {
           SNode type = TreePath_Behavior.call_getNodeType_1213877481303(it);
           boolean result = false;
@@ -44,5 +42,4 @@ public class TreePathAspectUtil {
     }
     return treePathAspects;
   }
-
 }

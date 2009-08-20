@@ -23,7 +23,6 @@ import jetbrains.mps.nodeEditor.AbstractCellProvider;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 
 public class MatchKindOperation_Editor extends DefaultNodeEditor {
-
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_3694_0(editorContext, node);
   }
@@ -34,8 +33,7 @@ public class MatchKindOperation_Editor extends DefaultNodeEditor {
     EditorCell editorCell = null;
     if (alternationCondition) {
       editorCell = this.createCollection_3694_1(editorContext, node);
-    } else
-    {
+    } else {
       editorCell = this.createRefNode_3694_0(editorContext, node);
     }
     if (true) {
@@ -130,13 +128,11 @@ public class MatchKindOperation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-
   private static boolean renderingCondition3694_0(SNode node, EditorContext editorContext, IScope scope) {
     return SLinkOperations.getTarget(node, "nodeKind", false) != null;
   }
 
   public static class _Inline3694_0 extends AbstractCellProvider {
-
     public _Inline3694_0() {
       super();
     }
@@ -167,7 +163,5 @@ public class MatchKindOperation_Editor extends DefaultNodeEditor {
       } else
       return editorCell;
     }
-
-}
-
+  }
 }

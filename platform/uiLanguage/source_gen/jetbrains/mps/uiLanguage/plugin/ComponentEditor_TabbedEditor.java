@@ -16,14 +16,13 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.ide.ui.smodel.SModelTreeNode;
 
 public class ComponentEditor_TabbedEditor extends BaseTabbedEditor {
-
   public ComponentEditor_TabbedEditor(IOperationContext operationContext, SNode node) {
     super(operationContext, node);
     this.addTab(new ComponentEditor_TabbedEditor.Component_Tab(this, node, node.getAdapter().getClass()), null);
     this.addTab(new ComponentEditor_TabbedEditor.Controller_Tab(this, node, node.getAdapter().getClass()), null);
   }
-  public static class Component_Tab extends BaseSingleTab {
 
+  public static class Component_Tab extends BaseSingleTab {
     public Component_Tab(TabbedEditor tabbedEditor, SNode baseNode, Class<? extends BaseAdapter> adapterClass) {
       super(tabbedEditor, baseNode, adapterClass);
     }
@@ -47,10 +46,9 @@ public class ComponentEditor_TabbedEditor extends BaseTabbedEditor {
     public SNode createNode(SNode node) {
       throw new IllegalArgumentException();
     }
+  }
 
-}
   public static class Controller_Tab extends BaseSingleTab {
-
     public Controller_Tab(TabbedEditor tabbedEditor, SNode baseNode, Class<? extends BaseAdapter> adapterClass) {
       super(tabbedEditor, baseNode, adapterClass);
     }
@@ -81,7 +79,5 @@ public class ComponentEditor_TabbedEditor extends BaseTabbedEditor {
         return controller;
       }
     }
-
-}
-
+  }
 }

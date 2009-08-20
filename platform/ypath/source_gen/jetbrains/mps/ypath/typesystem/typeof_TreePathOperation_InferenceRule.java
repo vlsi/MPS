@@ -13,7 +13,6 @@ import jetbrains.mps.typesystem.inference.IErrorTarget;
 import jetbrains.mps.typesystem.inference.NodeErrorTarget;
 
 public class typeof_TreePathOperation_InferenceRule extends AbstractInferenceRule_Runtime implements InferenceRule_Runtime {
-
   public typeof_TreePathOperation_InferenceRule() {
   }
 
@@ -57,5 +56,4 @@ public class typeof_TreePathOperation_InferenceRule extends AbstractInferenceRul
   public boolean overrides() {
     return false;
   }
-
 }

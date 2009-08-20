@@ -42,7 +42,6 @@ public class ExpressionFunctionParam extends ConceptFunctionParameter implements
     this.setProperty(ExpressionFunctionParam.VIRTUAL_PACKAGE, value);
   }
 
-
   public static ExpressionFunctionParam newInstance(SModel sm, boolean init) {
     return (ExpressionFunctionParam)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.ypath.structure.ExpressionFunctionParam", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -50,5 +49,4 @@ public class ExpressionFunctionParam extends ConceptFunctionParameter implements
   public static ExpressionFunctionParam newInstance(SModel sm) {
     return ExpressionFunctionParam.newInstance(sm, false);
   }
-
 }

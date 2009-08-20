@@ -23,7 +23,6 @@ public class VarDeclReference extends NanoExpression {
     super.setReferent(VarDeclReference.DECLARATION, node);
   }
 
-
   public static VarDeclReference newInstance(SModel sm, boolean init) {
     return (VarDeclReference)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.nanoj.structure.VarDeclReference", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -31,5 +30,4 @@ public class VarDeclReference extends NanoExpression {
   public static VarDeclReference newInstance(SModel sm) {
     return VarDeclReference.newInstance(sm, false);
   }
-
 }

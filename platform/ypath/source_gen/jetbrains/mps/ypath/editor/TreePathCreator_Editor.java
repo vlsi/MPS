@@ -15,7 +15,6 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 
 public class TreePathCreator_Editor extends DefaultNodeEditor {
-
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_6851_0(editorContext, node);
   }
@@ -92,5 +91,4 @@ public class TreePathCreator_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
 }

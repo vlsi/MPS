@@ -96,7 +96,6 @@ public class Calcualtor extends BaseConcept implements INamedConcept {
     this.insertChild(prev, Calcualtor.OUTPUT_FIELD, node);
   }
 
-
   public static Calcualtor newInstance(SModel sm, boolean init) {
     return (Calcualtor)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.calculator.structure.Calcualtor", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -104,5 +103,4 @@ public class Calcualtor extends BaseConcept implements INamedConcept {
   public static Calcualtor newInstance(SModel sm) {
     return Calcualtor.newInstance(sm, false);
   }
-
 }

@@ -22,5 +22,4 @@ public class NanoExpression extends BaseConcept {
   public static NanoExpression newInstance(SModel sm) {
     return NanoExpression.newInstance(sm, false);
   }
-
 }

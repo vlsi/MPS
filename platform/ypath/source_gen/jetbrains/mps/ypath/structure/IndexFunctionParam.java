@@ -22,5 +22,4 @@ public class IndexFunctionParam extends ConceptFunctionParameter {
   public static IndexFunctionParam newInstance(SModel sm) {
     return IndexFunctionParam.newInstance(sm, false);
   }
-
 }

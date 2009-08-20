@@ -86,7 +86,6 @@ public class Grid extends BaseConcept implements IComponentInstance {
     this.insertChild(prev, Grid.CONTENT, node);
   }
 
-
   public static Grid newInstance(SModel sm, boolean init) {
     return (Grid)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.uiLanguage.structure.Grid", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -94,5 +93,4 @@ public class Grid extends BaseConcept implements IComponentInstance {
   public static Grid newInstance(SModel sm) {
     return Grid.newInstance(sm, false);
   }
-
 }

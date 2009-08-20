@@ -25,7 +25,6 @@ public class BeforeConstructionBlock extends BaseConcept {
     super.setChild(BeforeConstructionBlock.BODY, node);
   }
 
-
   public static BeforeConstructionBlock newInstance(SModel sm, boolean init) {
     return (BeforeConstructionBlock)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.uiLanguage.structure.BeforeConstructionBlock", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -33,5 +32,4 @@ public class BeforeConstructionBlock extends BaseConcept {
   public static BeforeConstructionBlock newInstance(SModel sm) {
     return BeforeConstructionBlock.newInstance(sm, false);
   }
-
 }

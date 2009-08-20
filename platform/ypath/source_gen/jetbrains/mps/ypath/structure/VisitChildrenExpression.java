@@ -38,7 +38,6 @@ public class VisitChildrenExpression extends Expression {
     this.insertChild(prev, VisitChildrenExpression.ACTUAL_ARGUMENT, node);
   }
 
-
   public static VisitChildrenExpression newInstance(SModel sm, boolean init) {
     return (VisitChildrenExpression)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.ypath.structure.VisitChildrenExpression", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -46,5 +45,4 @@ public class VisitChildrenExpression extends Expression {
   public static VisitChildrenExpression newInstance(SModel sm) {
     return VisitChildrenExpression.newInstance(sm, false);
   }
-
 }

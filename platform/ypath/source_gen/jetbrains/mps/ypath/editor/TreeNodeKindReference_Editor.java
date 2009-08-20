@@ -19,7 +19,6 @@ import jetbrains.mps.nodeEditor.AbstractCellProvider;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 
 public class TreeNodeKindReference_Editor extends DefaultNodeEditor {
-
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_5109_0(editorContext, node);
   }
@@ -124,7 +123,6 @@ public class TreeNodeKindReference_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline5109_0 extends AbstractCellProvider {
-
     public _Inline5109_0() {
       super();
     }
@@ -154,10 +152,9 @@ public class TreeNodeKindReference_Editor extends DefaultNodeEditor {
       } else
       return editorCell;
     }
+  }
 
-}
   public static class _Inline5109_1 extends AbstractCellProvider {
-
     public _Inline5109_1() {
       super();
     }
@@ -188,7 +185,5 @@ public class TreeNodeKindReference_Editor extends DefaultNodeEditor {
       } else
       return editorCell;
     }
-
-}
-
+  }
 }

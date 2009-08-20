@@ -38,7 +38,6 @@ public class GridRow extends BaseConcept {
     this.insertChild(prev, GridRow.COMPONENT, node);
   }
 
-
   public static GridRow newInstance(SModel sm, boolean init) {
     return (GridRow)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.uiLanguage.structure.GridRow", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -46,5 +45,4 @@ public class GridRow extends BaseConcept {
   public static GridRow newInstance(SModel sm) {
     return GridRow.newInstance(sm, false);
   }
-
 }

@@ -9,7 +9,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class RemoveExclamationMark_Intention extends BaseIntention {
-
   public RemoveExclamationMark_Intention() {
   }
 
@@ -51,5 +50,4 @@ public class RemoveExclamationMark_Intention extends BaseIntention {
   public String getLocationString() {
     return "jetbrains.mps.ypath.intentions";
   }
-
 }

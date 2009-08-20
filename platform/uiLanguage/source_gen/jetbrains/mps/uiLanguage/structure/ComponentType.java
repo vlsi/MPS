@@ -24,7 +24,6 @@ public class ComponentType extends BaseClassifierType {
     super.setReferent(ComponentType.COMPONENT, node);
   }
 
-
   public static ComponentType newInstance(SModel sm, boolean init) {
     return (ComponentType)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.uiLanguage.structure.ComponentType", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -32,5 +31,4 @@ public class ComponentType extends BaseClassifierType {
   public static ComponentType newInstance(SModel sm) {
     return ComponentType.newInstance(sm, false);
   }
-
 }

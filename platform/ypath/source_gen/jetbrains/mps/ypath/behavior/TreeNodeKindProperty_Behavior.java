@@ -7,7 +7,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class TreeNodeKindProperty_Behavior {
-
   public static void init(SNode thisNode) {
   }
 
@@ -21,5 +20,4 @@ public class TreeNodeKindProperty_Behavior {
     String innerClassName = TreeNodeKindProperty_Behavior.call_getClassName_1213877513203(thisNode);
     return packageName + "!" + outerClassName + "." + innerClassName;
   }
-
 }

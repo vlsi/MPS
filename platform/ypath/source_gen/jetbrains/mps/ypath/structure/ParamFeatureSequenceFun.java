@@ -41,7 +41,6 @@ public class ParamFeatureSequenceFun extends FeatureSequenceFun implements IPara
     this.setProperty(ParamFeatureSequenceFun.VIRTUAL_PACKAGE, value);
   }
 
-
   public static ParamFeatureSequenceFun newInstance(SModel sm, boolean init) {
     return (ParamFeatureSequenceFun)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.ypath.structure.ParamFeatureSequenceFun", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -49,5 +48,4 @@ public class ParamFeatureSequenceFun extends FeatureSequenceFun implements IPara
   public static ParamFeatureSequenceFun newInstance(SModel sm) {
     return ParamFeatureSequenceFun.newInstance(sm, false);
   }
-
 }

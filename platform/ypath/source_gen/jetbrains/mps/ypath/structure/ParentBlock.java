@@ -21,5 +21,4 @@ public class ParentBlock extends LambdaMethod {
   public static ParentBlock newInstance(SModel sm) {
     return ParentBlock.newInstance(sm, false);
   }
-
 }

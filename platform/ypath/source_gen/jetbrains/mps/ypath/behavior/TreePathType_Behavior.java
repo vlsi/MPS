@@ -9,7 +9,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class TreePathType_Behavior {
-
   public static void init(SNode thisNode) {
   }
 
@@ -22,5 +21,4 @@ public class TreePathType_Behavior {
     SLinkOperations.setTarget(creator, "treePathType", SNodeOperations.copyNode(thisNode), true);
     return creator;
   }
-
 }

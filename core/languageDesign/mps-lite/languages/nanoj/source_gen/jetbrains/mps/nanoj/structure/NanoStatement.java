@@ -22,5 +22,4 @@ public class NanoStatement extends BaseConcept {
   public static NanoStatement newInstance(SModel sm) {
     return NanoStatement.newInstance(sm, false);
   }
-
 }

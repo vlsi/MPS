@@ -89,5 +89,4 @@ public enum TraversalAxis {
     }
     return TraversalAxis.getDefault();
   }
-
 }

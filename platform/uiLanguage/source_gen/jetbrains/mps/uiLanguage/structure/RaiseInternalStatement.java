@@ -25,7 +25,6 @@ public class RaiseInternalStatement extends Statement {
     super.setChild(RaiseInternalStatement.ARGUMENT, node);
   }
 
-
   public static RaiseInternalStatement newInstance(SModel sm, boolean init) {
     return (RaiseInternalStatement)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.uiLanguage.structure.RaiseInternalStatement", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -33,5 +32,4 @@ public class RaiseInternalStatement extends Statement {
   public static RaiseInternalStatement newInstance(SModel sm) {
     return RaiseInternalStatement.newInstance(sm, false);
   }
-
 }

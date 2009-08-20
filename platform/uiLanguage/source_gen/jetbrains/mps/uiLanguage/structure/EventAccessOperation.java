@@ -61,7 +61,6 @@ public class EventAccessOperation extends BaseConcept implements IMemberOperatio
     this.setMember(node);
   }
 
-
   public static EventAccessOperation newInstance(SModel sm, boolean init) {
     return (EventAccessOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.uiLanguage.structure.EventAccessOperation", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -69,5 +68,4 @@ public class EventAccessOperation extends BaseConcept implements IMemberOperatio
   public static EventAccessOperation newInstance(SModel sm) {
     return EventAccessOperation.newInstance(sm, false);
   }
-
 }

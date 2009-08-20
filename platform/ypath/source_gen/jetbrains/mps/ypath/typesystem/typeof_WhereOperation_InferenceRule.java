@@ -14,7 +14,6 @@ import jetbrains.mps.typesystem.inference.IErrorTarget;
 import jetbrains.mps.typesystem.inference.NodeErrorTarget;
 
 public class typeof_WhereOperation_InferenceRule extends AbstractInferenceRule_Runtime implements InferenceRule_Runtime {
-
   public typeof_WhereOperation_InferenceRule() {
   }
 
@@ -56,5 +55,4 @@ public class typeof_WhereOperation_InferenceRule extends AbstractInferenceRule_R
   public boolean overrides() {
     return false;
   }
-
 }

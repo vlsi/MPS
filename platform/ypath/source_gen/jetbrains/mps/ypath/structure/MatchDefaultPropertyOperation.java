@@ -24,7 +24,6 @@ public class MatchDefaultPropertyOperation extends TreePathOperation {
     super.setChild(MatchDefaultPropertyOperation.MATCH_EXPRESSION, node);
   }
 
-
   public static MatchDefaultPropertyOperation newInstance(SModel sm, boolean init) {
     return (MatchDefaultPropertyOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.ypath.structure.MatchDefaultPropertyOperation", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -32,5 +31,4 @@ public class MatchDefaultPropertyOperation extends TreePathOperation {
   public static MatchDefaultPropertyOperation newInstance(SModel sm) {
     return MatchDefaultPropertyOperation.newInstance(sm, false);
   }
-
 }

@@ -61,7 +61,6 @@ public class AttributeReferenceOperation extends BaseConcept implements IMemberO
     this.setMember(node);
   }
 
-
   public static AttributeReferenceOperation newInstance(SModel sm, boolean init) {
     return (AttributeReferenceOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.uiLanguage.structure.AttributeReferenceOperation", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -69,5 +68,4 @@ public class AttributeReferenceOperation extends BaseConcept implements IMemberO
   public static AttributeReferenceOperation newInstance(SModel sm) {
     return AttributeReferenceOperation.newInstance(sm, false);
   }
-
 }

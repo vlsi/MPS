@@ -33,7 +33,6 @@ public class TreePathAdapterExpression extends Expression {
     super.setChild(TreePathAdapterExpression.EXPRESSION, node);
   }
 
-
   public static TreePathAdapterExpression newInstance(SModel sm, boolean init) {
     return (TreePathAdapterExpression)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.ypath.structure.TreePathAdapterExpression", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -41,5 +40,4 @@ public class TreePathAdapterExpression extends Expression {
   public static TreePathAdapterExpression newInstance(SModel sm) {
     return TreePathAdapterExpression.newInstance(sm, false);
   }
-
 }

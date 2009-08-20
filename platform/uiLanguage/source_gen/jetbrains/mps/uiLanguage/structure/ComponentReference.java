@@ -24,7 +24,6 @@ public class ComponentReference extends Expression {
     super.setReferent(ComponentReference.COMPONENT, node);
   }
 
-
   public static ComponentReference newInstance(SModel sm, boolean init) {
     return (ComponentReference)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.uiLanguage.structure.ComponentReference", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -32,5 +31,4 @@ public class ComponentReference extends Expression {
   public static ComponentReference newInstance(SModel sm) {
     return ComponentReference.newInstance(sm, false);
   }
-
 }

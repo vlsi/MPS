@@ -13,11 +13,9 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.ide.IEditor;
 
 public class UiLanguage_ProjectPlugin extends BaseProjectPlugin {
-
   public void initEditors(MPSProject project) {
     MPSEditorOpener opener = project.getComponent(MPSEditorOpener.class);
     opener.registerOpenHandler(new MPSEditorOpenHandler() {
-
       public SNode getBaseNode(IOperationContext context, SNode node) {
         if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.uiLanguage.structure.ComponentController")) {
           return SLinkOperations.getTarget(SNodeOperations.cast(node, "jetbrains.mps.uiLanguage.structure.ComponentController"), "component", false);
@@ -34,5 +32,4 @@ public class UiLanguage_ProjectPlugin extends BaseProjectPlugin {
       }
     }, this);
   }
-
 }

@@ -6,7 +6,6 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class MatchDefaultPropertyOperation_Behavior {
-
   public static void init(SNode thisNode) {
   }
 
@@ -16,5 +15,4 @@ public class MatchDefaultPropertyOperation_Behavior {
     assert (treePath != null);
     return TreePathAspect_Behavior.call_getDefaultProperty_1213877241846(SNodeOperations.cast(treePath, "jetbrains.mps.ypath.structure.TreePathAspect"));
   }
-
 }

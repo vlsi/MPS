@@ -12,19 +12,15 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 public class TreePathAspect_Behavior {
-
   public static void init(SNode thisNode) {
   }
 
   public static SNode call_getDefaultProperty_1213877241846(SNode thisNode) {
-    return ListSequence.fromList(SLinkOperations.getTargets(thisNode, "nodeKinds", true)).translate(new ITranslator2 <SNode, SNode>() {
-
+    return ListSequence.fromList(SLinkOperations.getTargets(thisNode, "nodeKinds", true)).translate(new ITranslator2<SNode, SNode>() {
       public Iterable<SNode> translate(final SNode it) {
-        return new Iterable <SNode>() {
-
+        return new Iterable<SNode>() {
           public Iterator<SNode> iterator() {
-            return new YieldingIterator <SNode>() {
-
+            return new YieldingIterator<SNode>() {
               private int __CP__ = 0;
               private SNode _2_prop;
               private Iterator<SNode> _2_prop_it;
@@ -79,5 +75,4 @@ __switch__:
       }
     }).first();
   }
-
 }

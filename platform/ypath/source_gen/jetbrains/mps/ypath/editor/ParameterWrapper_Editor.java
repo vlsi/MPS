@@ -24,7 +24,6 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 
 public class ParameterWrapper_Editor extends DefaultNodeEditor {
-
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createProperty_5358_0(editorContext, node);
   }
@@ -61,7 +60,6 @@ public class ParameterWrapper_Editor extends DefaultNodeEditor {
 
   private EditorCell createReadOnlyModelAccessor_5358_0(final EditorContext editorContext, final SNode node) {
     EditorCell_Property editorCell = EditorCell_Property.create(editorContext, new ModelAccessor() {
-
       public String getText() {
         SNodeOperations.getParent(node);
         return (SNodeOperations.isInstanceOf(SNodeOperations.getParent(node), "jetbrains.mps.ypath.structure.IterateOperation") ?
@@ -107,5 +105,4 @@ public class ParameterWrapper_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
 }

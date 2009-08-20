@@ -52,7 +52,6 @@ public class LayoutConstraint extends BaseConcept implements IComponentPart {
     super.setChild(LayoutConstraint.CONSTRAINT, node);
   }
 
-
   public static LayoutConstraint newInstance(SModel sm, boolean init) {
     return (LayoutConstraint)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.uiLanguage.structure.LayoutConstraint", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -60,5 +59,4 @@ public class LayoutConstraint extends BaseConcept implements IComponentPart {
   public static LayoutConstraint newInstance(SModel sm) {
     return LayoutConstraint.newInstance(sm, false);
   }
-
 }

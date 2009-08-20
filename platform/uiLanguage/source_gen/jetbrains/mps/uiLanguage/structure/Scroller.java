@@ -65,7 +65,6 @@ public class Scroller extends BaseConcept implements IComponentInstance {
     this.insertChild(prev, Scroller.CONTENT, node);
   }
 
-
   public static Scroller newInstance(SModel sm, boolean init) {
     return (Scroller)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.uiLanguage.structure.Scroller", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -73,5 +72,4 @@ public class Scroller extends BaseConcept implements IComponentInstance {
   public static Scroller newInstance(SModel sm) {
     return Scroller.newInstance(sm, false);
   }
-
 }

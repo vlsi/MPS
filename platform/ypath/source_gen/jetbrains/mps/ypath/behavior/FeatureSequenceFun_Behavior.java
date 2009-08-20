@@ -7,7 +7,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class FeatureSequenceFun_Behavior {
-
   public static void init(SNode thisNode) {
   }
 
@@ -15,5 +14,4 @@ public class FeatureSequenceFun_Behavior {
     SNode nodeType = SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.getAncestor(thisNode, "jetbrains.mps.ypath.structure.TreePath", false, false), "treePathType", true), "nodeType", true);
     return new _Quotations.QuotationClass_3().createNode(nodeType);
   }
-
 }

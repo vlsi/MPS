@@ -143,7 +143,6 @@ public class TreePathAspect extends BaseConcept implements INamedConcept, IVisib
     this.insertChild(prev, TreePathAspect.FEATURES, node);
   }
 
-
   public static TreePathAspect newInstance(SModel sm, boolean init) {
     return (TreePathAspect)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.ypath.structure.TreePathAspect", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -151,5 +150,4 @@ public class TreePathAspect extends BaseConcept implements INamedConcept, IVisib
   public static TreePathAspect newInstance(SModel sm) {
     return TreePathAspect.newInstance(sm, false);
   }
-
 }

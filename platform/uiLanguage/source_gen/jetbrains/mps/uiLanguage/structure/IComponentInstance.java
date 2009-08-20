@@ -9,6 +9,7 @@ public interface IComponentInstance extends IComponentPart {
   public static final String concept = "jetbrains.mps.uiLanguage.structure.IComponentInstance";
   public static final String CONTENT = "content";
 
+
   public int getContentsCount();
   public Iterator<IComponentPart> contents();
   public List<IComponentPart> getContents();

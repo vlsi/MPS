@@ -101,7 +101,6 @@ public class TreePathCreator extends AbstractCreator implements TreePath {
     this.insertChild(prev, TreePathCreator.FEATURES, node);
   }
 
-
   public static TreePathCreator newInstance(SModel sm, boolean init) {
     return (TreePathCreator)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.ypath.structure.TreePathCreator", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -109,5 +108,4 @@ public class TreePathCreator extends AbstractCreator implements TreePath {
   public static TreePathCreator newInstance(SModel sm) {
     return TreePathCreator.newInstance(sm, false);
   }
-
 }

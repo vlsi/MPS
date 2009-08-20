@@ -20,12 +20,11 @@ import jetbrains.mps.ypath.behavior.IFeature_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 public class menu_FeatureSetOpposite extends AbstractCellMenuComponent {
-
   public menu_FeatureSetOpposite() {
     super(new SubstituteInfoPart[]{new menu_FeatureSetOpposite.IFeature_generic_cellMenu0()});
   }
-  public static class IFeature_generic_cellMenu0 extends AbstractCellMenuPart_Generic_Group {
 
+  public static class IFeature_generic_cellMenu0 extends AbstractCellMenuPart_Generic_Group {
     public IFeature_generic_cellMenu0() {
     }
 
@@ -33,8 +32,7 @@ public class menu_FeatureSetOpposite extends AbstractCellMenuComponent {
       List<Pair> res = ListSequence.fromList(new ArrayList<Pair>());
       final SNode srcNode = node;
       final boolean isGeneric = SNodeOperations.isInstanceOf(srcNode, "jetbrains.mps.ypath.structure.IGenericFeature");
-      for(SNode fe : ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(SNodeOperations.getParent(srcNode), "jetbrains.mps.ypath.structure.TreePathAspect"), "features", true)).where(new IWhereFilter <SNode>() {
-
+      for (SNode fe : ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(SNodeOperations.getParent(srcNode), "jetbrains.mps.ypath.structure.TreePathAspect"), "features", true)).where(new IWhereFilter<SNode>() {
         public boolean accept(SNode it) {
           return it != srcNode && ((isGeneric ?
             SNodeOperations.isInstanceOf(it, "jetbrains.mps.ypath.structure.IGenericFeature") :
@@ -87,7 +85,5 @@ public class menu_FeatureSetOpposite extends AbstractCellMenuComponent {
         "set opposite feature"
       );
     }
-
-}
-
+  }
 }

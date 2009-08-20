@@ -18,5 +18,4 @@ public class DesignPartLoader_CustomApplicationPlugin extends BaseCustomApplicat
   public void doDispose() {
     DesignPartLoader.getInstance().unregisterFromClassLoadManager();
   }
-
 }

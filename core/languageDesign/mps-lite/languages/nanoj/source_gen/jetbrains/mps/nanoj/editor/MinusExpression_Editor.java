@@ -14,7 +14,6 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 
 public class MinusExpression_Editor extends DefaultNodeEditor {
-
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_2588_0(editorContext, node);
   }
@@ -50,5 +49,4 @@ public class MinusExpression_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
 }

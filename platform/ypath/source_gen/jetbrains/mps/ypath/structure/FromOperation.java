@@ -24,7 +24,6 @@ public class FromOperation extends TreePathOperation {
     super.setChild(FromOperation.FROM_EXPRESSION, node);
   }
 
-
   public static FromOperation newInstance(SModel sm, boolean init) {
     return (FromOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.ypath.structure.FromOperation", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -32,5 +31,4 @@ public class FromOperation extends TreePathOperation {
   public static FromOperation newInstance(SModel sm) {
     return FromOperation.newInstance(sm, false);
   }
-
 }

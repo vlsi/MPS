@@ -23,7 +23,6 @@ public class NodeKindSpecificCase extends NodeKindCase {
     super.setReferent(NodeKindSpecificCase.TREE_NODE_KIND, node);
   }
 
-
   public static NodeKindSpecificCase newInstance(SModel sm, boolean init) {
     return (NodeKindSpecificCase)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.ypath.structure.NodeKindSpecificCase", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -31,5 +30,4 @@ public class NodeKindSpecificCase extends NodeKindCase {
   public static NodeKindSpecificCase newInstance(SModel sm) {
     return NodeKindSpecificCase.newInstance(sm, false);
   }
-
 }
