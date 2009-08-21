@@ -2357,9 +2357,6 @@
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode" id="1075379141236">
         <link role="relationDeclaration" targetNodeId="17.1068580123156" />
         <link role="actionMap" targetNodeId="1140226376803" resolveInfo="ExpressionStatement_Expression_Actions" />
-        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem" id="1214310995915">
-          <property name="flag" value="true" />
-        </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1075379141237">
         <property name="text" value=";" />
