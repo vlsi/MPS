@@ -1455,7 +1455,6 @@
     <property name="package" value="expressions.assingments" />
     <property name="name" value="AndAssingmentExpression" />
     <link role="extends" targetNodeId="3999172467440224562" resolveInfo="BaseAssingmentExpression" />
-    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.ConceptProperty" id="3835416431564243606" />
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="3999172467440567066">
       <property name="value" value="&amp;=" />
       <link role="conceptPropertyDeclaration" targetNodeId="3999172467440224571" resolveInfo="sign" />
@@ -1708,7 +1707,7 @@
     </node>
     <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="4857814468235439118">
       <property name="metaClass" value="aggregation" />
-      <property name="role" value="expression" />
+      <property name="role" value="command" />
       <property name="sourceCardinality" value="1" />
       <link role="target" targetNodeId="7633559109504426816" resolveInfo="AbstractCommand" />
     </node>
@@ -2352,7 +2351,7 @@
     </node>
     <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="8457058248751696157">
       <property name="metaClass" value="aggregation" />
-      <property name="role" value="commonCommandList" />
+      <property name="role" value="commandList" />
       <property name="sourceCardinality" value="1" />
       <link role="target" targetNodeId="3321051580269894529" resolveInfo="TerminatedCommandList" />
     </node>

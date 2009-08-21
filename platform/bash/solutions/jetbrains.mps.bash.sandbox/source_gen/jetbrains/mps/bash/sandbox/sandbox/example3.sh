@@ -5,7 +5,7 @@ for P in "${@}"; do
   IFS=: 
   for D in ${PATH}; do
     for F in ${D}/${P}; do
-      this_command && echo ${F} 
+      [ -x "${F}" ] && echo ${F} 
     done 
   done 
 done 

@@ -240,7 +240,7 @@
                     <node role="head" type="jetbrains.mps.bash.structure.HeadCommandList" id="9034131902192847973">
                       <node role="base" type="jetbrains.mps.bash.structure.HeadPipeline" id="9034131902192847974">
                         <node role="command" type="jetbrains.mps.bash.structure.RedirectedCommand" id="9034131902192847976">
-                          <node role="expression" type="jetbrains.mps.bash.structure.ExternalCommandCall" id="9034131902192847992">
+                          <node role="command" type="jetbrains.mps.bash.structure.ExternalCommandCall" id="9034131902192847992">
                             <link role="declaration" targetNodeId="2v.9034131902186554428" resolveInfo="tr" />
                             <node role="refToOptions" type="jetbrains.mps.bash.structure.ArgumentListReference" id="9034131902192847993">
                               <node role="words" type="jetbrains.mps.bash.structure.GeneralizedWord" id="9034131902192847994">
@@ -393,7 +393,7 @@
                   <link role="variable" targetNodeId="9034131902192848075" resolveInfo="CLASS_PATH" />
                 </node>
                 <node role="units" type="jetbrains.mps.bash.structure.SimpleWord" id="9034131902192955879">
-                  <property name="word" value=": " />
+                  <property name="word" value=":" />
                 </node>
                 <node role="units" type="jetbrains.mps.bash.structure.BasicParameterExpansion" id="9034131902192955880">
                   <link role="variable" targetNodeId="9034131902193373348" resolveInfo="PROJECT_HOME_FROM_STARTUP_DIR" />
@@ -639,7 +639,6 @@
             </node>
           </node>
         </node>
-        <node role="terminator" type="jetbrains.mps.bash.structure.CommandTerminator" id="2362837471611380694" />
       </node>
       <node role="lines" type="jetbrains.mps.bash.structure.CommandList" id="2362837471611764228">
         <node role="head" type="jetbrains.mps.bash.structure.HeadCommandList" id="2362837471611764229">
@@ -1272,7 +1271,7 @@
                 </node>
               </node>
               <node role="testCommand" type="jetbrains.mps.bash.structure.RedirectedCommand" id="3835416431562293957">
-                <node role="expression" type="jetbrains.mps.bash.structure.ExternalCommandCall" id="3835416431562293959">
+                <node role="command" type="jetbrains.mps.bash.structure.ExternalCommandCall" id="3835416431562293959">
                   <link role="declaration" targetNodeId="2v.3835416431562293940" resolveInfo="which" />
                   <node role="refToOptions" type="jetbrains.mps.bash.structure.ArgumentListReference" id="3835416431562293960">
                     <node role="words" type="jetbrains.mps.bash.structure.GeneralizedWord" id="3835416431562293961">
@@ -1498,32 +1497,7 @@
   </node>
   <node type="jetbrains.mps.bash.structure.ShellScript" id="3835416431562846467">
     <property name="name" value="test" />
-    <node role="commands" type="jetbrains.mps.bash.structure.InputLines" id="1625002555034534937">
-      <node role="lines" type="jetbrains.mps.bash.structure.CommandList" id="1625002555034534938">
-        <node role="head" type="jetbrains.mps.bash.structure.HeadCommandList" id="1625002555034534939">
-          <node role="base" type="jetbrains.mps.bash.structure.HeadPipeline" id="1625002555034534940">
-            <node role="command" type="jetbrains.mps.bash.structure.Command" id="1625002555034534941" />
-          </node>
-        </node>
-        <node role="terminator" type="jetbrains.mps.bash.structure.CommandTerminator" id="1625002555034534942" />
-      </node>
-      <node role="lines" type="jetbrains.mps.bash.structure.CommandList" id="1625002555034534943">
-        <node role="head" type="jetbrains.mps.bash.structure.HeadCommandList" id="1625002555034534944">
-          <node role="base" type="jetbrains.mps.bash.structure.HeadPipeline" id="1625002555034534945">
-            <node role="command" type="jetbrains.mps.bash.structure.Command" id="1625002555034534946" />
-          </node>
-        </node>
-        <node role="terminator" type="jetbrains.mps.bash.structure.CommandTerminator" id="1625002555034534947" />
-      </node>
-      <node role="lines" type="jetbrains.mps.bash.structure.CommandList" id="1625002555034534948">
-        <node role="head" type="jetbrains.mps.bash.structure.HeadCommandList" id="1625002555034534949">
-          <node role="base" type="jetbrains.mps.bash.structure.HeadPipeline" id="1625002555034534950">
-            <node role="command" type="jetbrains.mps.bash.structure.Command" id="1625002555034534951" />
-          </node>
-        </node>
-        <node role="terminator" type="jetbrains.mps.bash.structure.CommandTerminator" id="1625002555034534952" />
-      </node>
-    </node>
+    <node role="commands" type="jetbrains.mps.bash.structure.InputLines" id="1625002555034534937" />
   </node>
   <node type="jetbrains.mps.bash.structure.ShellScript" id="3835416431564591990">
     <property name="name" value="example4" />

@@ -3,11 +3,16 @@
 
 echo "Primes Example" 
 
-for ((accord;1 < 1;iteration)); do
+for ((I=1; ${I} < 100; I++)); do
   T=1 
-  for ((accord;1 < 1;iteration)); do
-    this_command 
-    this_command 
+  for ((J=2; ${J} < ${I}; J++)); do
+    if ((${I} % ${J} == 0)); then
+      T=0 
+      break 
+    fi 
+    if ((${T} == 1)); then
+      echo ${I} 
+    fi 
   done 
 done 
 
