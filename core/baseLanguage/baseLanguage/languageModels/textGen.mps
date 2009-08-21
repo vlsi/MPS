@@ -1135,15 +1135,6 @@
         </node>
       </node>
     </node>
-    <node role="extention" type="jetbrains.mps.lang.textGen.structure.ExtentionDeclaration" id="7547703063484764849">
-      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="7547703063484764850">
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="7547703063484767159">
-          <node role="expression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="7547703063484767160">
-            <property name="value" value="java" />
-          </node>
-        </node>
-      </node>
-    </node>
     <node role="extension" type="jetbrains.mps.lang.textGen.structure.ExtensionDeclaration" id="2341412953773654322">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="2341412953773654323">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="2341412953773654324">
@@ -2556,15 +2547,6 @@
         </node>
       </node>
     </node>
-    <node role="extention" type="jetbrains.mps.lang.textGen.structure.ExtentionDeclaration" id="7547703063484774252">
-      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="7547703063484774253">
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="7547703063484774254">
-          <node role="expression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="7547703063484774255">
-            <property name="value" value="java" />
-          </node>
-        </node>
-      </node>
-    </node>
     <node role="extension" type="jetbrains.mps.lang.textGen.structure.ExtensionDeclaration" id="2341412953773654310">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="2341412953773654311">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="2341412953773654312">
@@ -3529,15 +3511,6 @@
         </node>
         <node role="statement" type="jetbrains.mps.lang.textGen.structure.AppendOperation" id="4122243921611777295">
           <node role="part" type="jetbrains.mps.lang.textGen.structure.NewLineAppendPart" id="4122243921611777297" />
-        </node>
-      </node>
-    </node>
-    <node role="extention" type="jetbrains.mps.lang.textGen.structure.ExtentionDeclaration" id="7547703063484774260">
-      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="7547703063484774261">
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="7547703063484774262">
-          <node role="expression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="7547703063484774263">
-            <property name="value" value="java" />
-          </node>
         </node>
       </node>
     </node>
@@ -6651,15 +6624,6 @@
             <property name="value" value="}" />
           </node>
           <node role="part" type="jetbrains.mps.lang.textGen.structure.NewLineAppendPart" id="1237557926065" />
-        </node>
-      </node>
-    </node>
-    <node role="extention" type="jetbrains.mps.lang.textGen.structure.ExtentionDeclaration" id="7547703063484774256">
-      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="7547703063484774257">
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="7547703063484774258">
-          <node role="expression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="7547703063484774259">
-            <property name="value" value="java" />
-          </node>
         </node>
       </node>
     </node>

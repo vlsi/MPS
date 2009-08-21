@@ -43,15 +43,6 @@
         </node>
       </node>
     </node>
-    <node role="extension" type="jetbrains.mps.lang.textGen.structure.ExtensionDeclaration" id="7547703063484774824">
-      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="7547703063484774825">
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="7547703063484777626">
-          <node role="expression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="7547703063484777627">
-            <property name="value" value="xml" />
-          </node>
-        </node>
-      </node>
-    </node>
     <node role="extension" type="jetbrains.mps.lang.textGen.structure.ExtensionDeclaration" id="2341412953773654886">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="2341412953773654887">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="2341412953773657688">
