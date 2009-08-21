@@ -535,10 +535,6 @@
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1068581242866">
     <property name="name" value="LocalVariableReference" />
     <link role="extends" targetNodeId="1068498886296" resolveInfo="VariableReference" />
-    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1107217045786">
-      <property name="value" value="&lt;{localVariableDeclaration}&gt;" />
-      <link role="conceptPropertyDeclaration" targetNodeId="4.1137473891462" />
-    </node>
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1107217060616">
       <property name="value" value="reference to local variable declaration" />
       <link role="conceptPropertyDeclaration" targetNodeId="4.1137473914776" />
@@ -584,10 +580,6 @@
     <property name="name" value="ParameterReference" />
     <property name="package" value="method" />
     <link role="extends" targetNodeId="1068498886296" resolveInfo="VariableReference" />
-    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1107217381435">
-      <property name="value" value="&lt;{parameterDeclaration}&gt;" />
-      <link role="conceptPropertyDeclaration" targetNodeId="4.1137473891462" />
-    </node>
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1107217390234">
       <property name="value" value="reference to method parameter" />
       <link role="conceptPropertyDeclaration" targetNodeId="4.1137473914776" />
@@ -1293,10 +1285,6 @@
     <property name="name" value="ClassifierType" />
     <property name="package" value="type" />
     <link role="extends" targetNodeId="1068431790189" resolveInfo="Type" />
-    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1107553263363">
-      <property name="value" value="&lt;{classifier}&gt;" />
-      <link role="conceptPropertyDeclaration" targetNodeId="4.1137473891462" />
-    </node>
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1107553270693">
       <property name="value" value="reference to classifier" />
       <link role="conceptPropertyDeclaration" targetNodeId="4.1137473914776" />
@@ -1388,10 +1376,6 @@
       <property name="role" value="typeVariableDeclaration" />
       <link role="target" targetNodeId="1109279763828" resolveInfo="TypeVariableDeclaration" />
     </node>
-    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1109283512728">
-      <property name="value" value="&lt;{typeVariableDeclaration}&gt;" />
-      <link role="conceptPropertyDeclaration" targetNodeId="4.1137473891462" />
-    </node>
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1109283528840">
       <property name="value" value="reference to type variable" />
       <link role="conceptPropertyDeclaration" targetNodeId="4.1137473914776" />
@@ -1428,10 +1412,6 @@
     <property name="name" value="ClassifierClassExpression" />
     <property name="package" value="classifier" />
     <link role="extends" targetNodeId="1068431790191" resolveInfo="Expression" />
-    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1137986169635">
-      <property name="value" value="&lt;{classifier}&gt;.class" />
-      <link role="conceptPropertyDeclaration" targetNodeId="4.1137473891462" />
-    </node>
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1137986190996">
       <property name="value" value="class of node operation" />
       <link role="conceptPropertyDeclaration" targetNodeId="4.1137473914776" />
