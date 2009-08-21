@@ -10,23 +10,20 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.textGen.TextGenManager;
 
 public class OutputNode_TextGen extends SNodeTextGen {
-
   public void doGenerateText(SNode node) {
     if (SPropertyOperations.getString(node, "text") != null) {
       this.append(SPropertyOperations.getString(node, "text"));
-    } else
-    {
+    } else {
       this.append("!no text!");
     }
     if (ListSequence.fromList(SLinkOperations.getTargets(node, "outputChild", true)).isNotEmpty()) {
       this.append(" children:{");
       if (ListSequence.fromList(SLinkOperations.getTargets(node, "outputChild", true)).isNotEmpty()) {
-        for(SNode item : SLinkOperations.getTargets(node, "outputChild", true)) {
+        for (SNode item : SLinkOperations.getTargets(node, "outputChild", true)) {
           TextGenManager.instance().appendNodeText(this.getContext(), this.getBuffer(), item, this.getSNode());
         }
       }
       this.append("}");
     }
   }
-
 }

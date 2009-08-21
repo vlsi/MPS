@@ -9,7 +9,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.textGen.TextGenManager;
 
 public class OutputRoot_TextGen extends SNodeTextGen {
-
   public void doGenerateText(SNode node) {
     this.append((SPropertyOperations.getString(node, "name") == null ?
       "<no name>" :
@@ -25,7 +24,7 @@ public class OutputRoot_TextGen extends SNodeTextGen {
       TextGenManager.instance().appendNodeText(this.getContext(), this.getBuffer(), SLinkOperations.getTarget(node, "specialChild", true), this.getSNode());
       this.appendNewLine();
     }
-    for(SNode output : SLinkOperations.getTargets(node, "outputChild", true)) {
+    for (SNode output : SLinkOperations.getTargets(node, "outputChild", true)) {
       this.appendNewLine();
       this.appendNewLine();
       this.increaseDepth();
@@ -33,5 +32,4 @@ public class OutputRoot_TextGen extends SNodeTextGen {
       this.decreaseDepth();
     }
   }
-
 }

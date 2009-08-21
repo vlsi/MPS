@@ -7,7 +7,6 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
 
 public class QueriesGenerated {
-
   public static SNode sourceNodeQuery_1209604320455(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return _context.getNode();
   }
@@ -15,5 +14,4 @@ public class QueriesGenerated {
   public static SNode sourceNodeQuery_1209662301920(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return _context.getNode();
   }
-
 }
