@@ -15,6 +15,7 @@ public class ConceptTextGenDeclaration extends AbstractTextGenDeclaration implem
   public static final String ALIAS = "alias";
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
   public static final String CONCEPT_DECLARATION = "conceptDeclaration";
+  public static final String EXTENSION = "extension";
   public static final String TEXT_GEN_BLOCK = "textGenBlock";
 
   public ConceptTextGenDeclaration(SNode node) {
@@ -51,6 +52,14 @@ public class ConceptTextGenDeclaration extends AbstractTextGenDeclaration implem
 
   public void setConceptDeclaration(AbstractConceptDeclaration node) {
     super.setReferent(ConceptTextGenDeclaration.CONCEPT_DECLARATION, node);
+  }
+
+  public ExtensionDeclaration getExtension() {
+    return (ExtensionDeclaration)this.getChild(ExtensionDeclaration.class, ConceptTextGenDeclaration.EXTENSION);
+  }
+
+  public void setExtension(ExtensionDeclaration node) {
+    super.setChild(ConceptTextGenDeclaration.EXTENSION, node);
   }
 
   public GenerateTextDeclaration getTextGenBlock() {

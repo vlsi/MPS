@@ -43,6 +43,24 @@
         </node>
       </node>
     </node>
+    <node role="extention" type="jetbrains.mps.lang.textGen.structure.ExtentionDeclaration" id="7547703063484774824">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="7547703063484774825">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="7547703063484777626">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="7547703063484777627">
+            <property name="value" value="xml" />
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="extension" type="jetbrains.mps.lang.textGen.structure.ExtensionDeclaration" id="2341412953773654886">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="2341412953773654887">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="2341412953773657688">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="2341412953773657689">
+            <property name="value" value="xml" />
+          </node>
+        </node>
+      </node>
+    </node>
   </node>
   <visible index="2" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
   <node type="jetbrains.mps.lang.textGen.structure.LanguageTextGenDeclaration" id="1236700479964">
@@ -209,7 +227,7 @@
                       <link role="variableDeclaration" targetNodeId="1236700642828" resolveInfo="result" />
                     </node>
                     <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1236700642893">
-                      <link role="baseMethodDeclaration" targetNodeId="2.~Element.addContent(org.jdom.Content):org.jdom.Element" resolveInfo="addContent" />
+                      <link role="baseMethodDeclaration" targetNodeId="2.~Element.addContent(org.jdom.Element):org.jdom.Element" resolveInfo="addContent" />
                       <node role="actualArgument" type="jetbrains.mps.lang.textGen.structure.UtilityMethodCall" id="1236700702804">
                         <link role="function" targetNodeId="1236700609238" resolveInfo="createElement" />
                         <node role="parameter" type="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" id="1236700758357">

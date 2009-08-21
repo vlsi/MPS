@@ -15,32 +15,27 @@
  */
 package jetbrains.mps.generator.fileGenerator;
 
+import com.intellij.openapi.application.ApplicationManager;
+import com.intellij.openapi.application.ModalityState;
+import com.intellij.openapi.vfs.VirtualFile;
+import jetbrains.mps.baseLanguage.plugin.DebugInfo;
+import jetbrains.mps.baseLanguage.plugin.PositionInfo;
 import jetbrains.mps.generator.GenerationStatus;
 import jetbrains.mps.generator.GeneratorManager;
 import jetbrains.mps.generator.JavaNameUtil;
-import jetbrains.mps.generator.template.TemplateQueryContext;
 import jetbrains.mps.generator.generationTypes.TextGenerationUtil;
 import jetbrains.mps.generator.generationTypes.TextGenerationUtil.TextGenerationResult;
-import jetbrains.mps.generator.fileGenerator.IFileGenerator;
+import jetbrains.mps.generator.template.TemplateQueryContext;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.textGen.TextGenManager;
 import jetbrains.mps.vcs.MPSVCSManager;
-import jetbrains.mps.vfs.VFileSystem;
-import jetbrains.mps.vfs.MPSExtentions;
 import jetbrains.mps.vfs.IFile;
-import jetbrains.mps.vfs.FileSystem;
-import jetbrains.mps.baseLanguage.plugin.DebugInfo;
-import jetbrains.mps.baseLanguage.plugin.PositionInfo;
-import jetbrains.mps.baseLanguage.structure.Statement;
+import jetbrains.mps.vfs.VFileSystem;
 
 import java.io.File;
 import java.io.IOException;
 import java.util.*;
-
-import com.intellij.openapi.application.ApplicationManager;
-import com.intellij.openapi.application.ModalityState;
-import com.intellij.openapi.vfs.VirtualFile;
 
 public class FileGenerationUtil {
   public static final Logger LOG = Logger.getLogger(FileGenerationUtil.class);
@@ -181,23 +176,18 @@ public class FileGenerationUtil {
   }
 
   public static void generateFiles(GenerationStatus status, File outputRootDirectory, GeneratorManager gm, Map<SNode, String> outputNodeContents, Set<File> generatedFiles, Set<File> directories) {
+    DefaultFileGenerator fileGenerator = new DefaultFileGenerator();
     for (SNode outputRootNode : outputNodeContents.keySet()) {
       try {
         SNode originalInputNode = null;
         if (status.getTraceMap() != null) {
           originalInputNode = status.getTraceMap().getOriginalInputNode(outputRootNode);
         }
-        IFileGenerator fileGenerator = gm.chooseFileGenerator(outputRootNode, originalInputNode);
-        if (fileGenerator == null) {
-          LOG.error("couldn't find file generator for output node: " + outputRootNode.getDebugText());
-          gm.chooseFileGenerator(outputRootNode, originalInputNode);
-        } else {
-          File generatedFile = fileGenerator.generateFile(outputRootNode, originalInputNode, status.getInputModel(), outputNodeContents.get(outputRootNode), outputRootDirectory);
+        File generatedFile = fileGenerator.generateFile(outputRootNode, originalInputNode, status.getInputModel(), outputNodeContents.get(outputRootNode), outputRootDirectory);
 
-          if (generatedFile != null) {
-            generatedFiles.add(generatedFile);
-            directories.add(generatedFile.getParentFile());
-          }
+        if (generatedFile != null) {
+          generatedFiles.add(generatedFile);
+          directories.add(generatedFile.getParentFile());
         }
       } catch (IOException e) {
         LOG.error(e);

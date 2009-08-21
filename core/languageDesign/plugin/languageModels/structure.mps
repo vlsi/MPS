@@ -2147,6 +2147,7 @@
       <property name="sourceCardinality" value="0..1" />
       <link role="target" targetNodeId="2.1068390468198" resolveInfo="ClassConcept" />
     </node>
+    <node role="deprecatedNode$attribute" type="jetbrains.mps.lang.structure.structure.DeprecatedNodeAnnotation" id="6987517167924755840" />
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1218035947926">
     <property name="package" value="FileGenerator" />

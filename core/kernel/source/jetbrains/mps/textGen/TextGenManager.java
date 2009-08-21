@@ -15,6 +15,8 @@
  */
 package jetbrains.mps.textGen;
 
+import jetbrains.mps.baseLanguage.plugin.PositionInfo;
+import jetbrains.mps.baseLanguage.structure.Statement;
 import jetbrains.mps.lang.structure.structure.ConceptDeclaration;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.GlobalScope;
@@ -24,12 +26,8 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.misc.hash.HashMap;
-import jetbrains.mps.baseLanguage.plugin.PositionInfo;
-import jetbrains.mps.baseLanguage.structure.Statement;
 
 import java.util.Map;
-import java.util.List;
-import java.util.ArrayList;
 
 /**
  * User: Dmitriev.
@@ -68,6 +66,10 @@ public class TextGenManager {
 
   public boolean canGenerateTextFor(SNode node) {
     return !(loadNodeTextGen(null, node) instanceof DefaultTextGen);
+  }
+
+  public String getExtension(SNode node) {
+    return loadNodeTextGen(null, node).getExtention(node);
   }
 
   public void appendNodeText(IOperationContext context, TextGenBuffer buffer, SNode node, SNode contextNode) {

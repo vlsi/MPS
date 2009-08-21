@@ -18,22 +18,22 @@ package jetbrains.mps.generator.fileGenerator;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.textGen.TextGenManager;
 import jetbrains.mps.util.FileUtil;
 
 import java.io.File;
 import java.io.IOException;
 
-public abstract class DefaultFileGenerator implements IFileGenerator {
+public class DefaultFileGenerator implements IFileGenerator {
   private static final Logger LOG = Logger.getLogger(DefaultFileGenerator.class);
 
-  protected DefaultFileGenerator() {
-  }
-
   public boolean overridesDefault(SNode outputRootNode, SNode originalInputNode) {
-    return false;
+    return true;
   }
 
-  public abstract String getExtension(SNode node);
+  public boolean isDefault(SNode outputRootNode) {
+    return true;
+  }
 
   public final File generateFile(SNode outputRootNode, SNode originalInputNode, SModel inputModel, String content, File outputRootDir) throws IOException {
     if (!isDefault(outputRootNode)) {
@@ -41,7 +41,11 @@ public abstract class DefaultFileGenerator implements IFileGenerator {
     }
 
     File outputDir = FileGenerationUtil.getDefaultOutputDir(inputModel, outputRootDir);
-    File file = new File(outputDir, outputRootNode.getName() + "." + getExtension(outputRootNode));
+    String extension = TextGenManager.instance().getExtension(outputRootNode);
+    if (extension == null) {
+      return null;
+    }
+    File file = new File(outputDir, outputRootNode.getName() + "." + extension);
 
     if (!file.getParentFile().exists()) {
       file.getParentFile().mkdirs();

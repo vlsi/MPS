@@ -95,6 +95,7 @@
   </refactoringHistory>
   <language namespace="c72da2b9-7cce-4447-8389-f407dc1158b7(jetbrains.mps.lang.structure)" />
   <language namespace="f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)" />
+  <language namespace="ceab5195-25ea-4f22-9b92-103b95ca8c0c(jetbrains.mps.lang.core)" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590283(jetbrains.mps.lang.core.constraints)" version="2" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959028c(jetbrains.mps.lang.structure.constraints)" version="11" />
@@ -119,16 +120,23 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590345(jetbrains.mps.lang.pattern.structure)" version="0" />
   <language-engaged-on-generation namespace="f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)" />
   <devkit namespace="2677cb18-f558-4e33-bc38-a5139cee06dc(jetbrains.mps.devkit.language-design)" />
-  <maxImportIndex value="9" />
+  <maxImportIndex value="10" />
   <import index="4" modelUID="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" version="0" />
   <import index="6" modelUID="f:java_stub#jetbrains.mps.smodel(jetbrains.mps.smodel@java_stub)" version="-1" />
   <import index="7" modelUID="f:java_stub#jetbrains.mps.textGen(jetbrains.mps.textGen@java_stub)" version="-1" />
+  <import index="10" modelUID="r:c6eeedda-084d-4659-9c4d-80b7768f2bb2(jetbrains.mps.baseLanguage.textGen)" version="-1" />
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1233670071145">
     <property name="name" value="ConceptTextGenDeclaration" />
     <property name="rootable" value="true" />
     <property name="package" value="root" />
     <property name="iconPath" value="${language_descriptor}/icons/textGen.png" />
     <link role="extends" targetNodeId="1234281982537" resolveInfo="AbstractTextGenDeclaration" />
+    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="7991274449437422201">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="extension" />
+      <property name="sourceCardinality" value="0..1" />
+      <link role="target" targetNodeId="8931911391946696733" resolveInfo="ExtentionDeclaration" />
+    </node>
     <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1233749296504">
       <property name="metaClass" value="aggregation" />
       <property name="role" value="textGenBlock" />
@@ -140,7 +148,7 @@
       <property name="role" value="conceptDeclaration" />
       <link role="target" targetNodeId="4.1169125787135" resolveInfo="AbstractConceptDeclaration" />
     </node>
-    <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="8952337903384725596">
+    <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="3759860006499894303">
       <link role="intfc" targetNodeId="4.2621449412040133764" resolveInfo="IConceptAspect" />
     </node>
   </node>
@@ -248,6 +256,9 @@
       <property name="role" value="function" />
       <property name="sourceCardinality" value="0..n" />
       <link role="target" targetNodeId="1234524838116" resolveInfo="PrivateFunctionDeclaration" />
+    </node>
+    <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="3470428764802872645">
+      <link role="intfc" targetNodeId="4.2621449412040133764" resolveInfo="IConceptAspect" />
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1233922353619">
@@ -513,6 +524,22 @@
       <property name="role" value="part" />
       <property name="sourceCardinality" value="1..n" />
       <link role="target" targetNodeId="1237305115734" resolveInfo="AbstractAppendPart" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="8931911391946696733">
+    <property name="name" value="ExtensionDeclaration" />
+    <link role="extends" targetNodeId="3v.1137021947720" resolveInfo="ConceptFunction" />
+    <node role="conceptLink" type="jetbrains.mps.lang.structure.structure.ReferenceConceptLink" id="8931911391946696735">
+      <link role="conceptLinkDeclaration" targetNodeId="3v.1161119487665" resolveInfo="applicableConceptFunctionParameter" />
+      <link role="target" targetNodeId="1233748055915" resolveInfo="NodeParameter" />
+    </node>
+    <node role="conceptLink" type="jetbrains.mps.lang.structure.structure.AggregationConceptLink" id="8931911391946696737">
+      <link role="conceptLinkDeclaration" targetNodeId="3v.1137545148427" resolveInfo="conceptFunctionReturnType" />
+      <node role="target" type="jetbrains.mps.baseLanguage.structure.StringType" id="8931911391946696739" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="8931911391946696734">
+      <property name="value" value="extension" />
+      <link role="conceptPropertyDeclaration" targetNodeId="2v.1137473891462" resolveInfo="alias" />
     </node>
   </node>
 </model>

@@ -339,7 +339,7 @@
     <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="1175152854371">
       <link role="intfc" targetNodeId="2.1169194658468" />
     </node>
-    <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="8952337903384729123">
+    <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="3759860006499894302">
       <link role="intfc" targetNodeId="3.2621449412040133764" resolveInfo="IConceptAspect" />
     </node>
     <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1168285871518">

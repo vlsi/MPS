@@ -10,7 +10,6 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.plugins.pluginparts.custom.BaseCustomProjectPlugin;
 import jetbrains.mps.project.MPSProject;
-import jetbrains.mps.generator.fileGenerator.IFileGenerator;
 
 public class BaseLanguage_ProjectPlugin extends BaseProjectPlugin {
   public List<GeneratedTool> initTools(Project project) {
@@ -29,11 +28,5 @@ public class BaseLanguage_ProjectPlugin extends BaseProjectPlugin {
       plugin.init(project);
     }
     return res;
-  }
-
-  public List<IFileGenerator> initFileGenerators() {
-    List<IFileGenerator> generators = ListSequence.fromList(new ArrayList<IFileGenerator>());
-    ListSequence.fromList(generators).addElement(new Java_FileGenerator());
-    return generators;
   }
 }

@@ -17,12 +17,10 @@ package jetbrains.mps.project;
 
 import com.intellij.openapi.progress.EmptyProgressIndicator;
 import com.intellij.openapi.progress.ProgressIndicator;
+import jetbrains.mps.generator.GenerationStatus;
 import jetbrains.mps.generator.GeneratorManager;
 import jetbrains.mps.generator.IllegalGeneratorConfigurationException;
 import jetbrains.mps.generator.JavaNameUtil;
-import jetbrains.mps.generator.GenerationStatus;
-import jetbrains.mps.generator.fileGenerator.IFileGenerator;
-import jetbrains.mps.generator.fileGenerator.DefaultFileGenerator;
 import jetbrains.mps.generator.fileGenerator.FileGenerationUtil;
 import jetbrains.mps.generator.generationTypes.GenerateFilesAndClassesGenerationType;
 import jetbrains.mps.ide.genconf.GenParameters;
@@ -33,13 +31,14 @@ import jetbrains.mps.logging.ILoggingHandler;
 import jetbrains.mps.logging.LogEntry;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.structure.project.testconfigurations.BaseTestConfiguration;
-import jetbrains.mps.project.tester.TestComparator;
 import jetbrains.mps.project.tester.DiffReport;
+import jetbrains.mps.project.tester.TestComparator;
 import jetbrains.mps.reloading.ClassLoaderManager;
+import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.textGen.TextGenManager;
 import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.util.NameUtil;
 import junit.framework.TestCase;
@@ -47,10 +46,9 @@ import junit.framework.TestFailure;
 import org.eclipse.jdt.core.compiler.CategorizedProblem;
 import org.eclipse.jdt.internal.compiler.CompilationResult;
 
+import java.io.File;
 import java.lang.reflect.Method;
 import java.util.*;
-import java.io.File;
-import java.io.FilenameFilter;
 
 public class ProjectTester {
   private MPSProject myProject;
@@ -327,10 +325,8 @@ public class ProjectTester {
     public boolean handleOutput(GenerationStatus status, String outputDir, IOperationContext context, ProgressIndicator monitor, IMessageHandler messages) {
       SModel outputModel = status.getOutputModel();
       myOutputModelToPath.put(outputModel, outputDir);
-      GeneratorManager gm = context.getComponent(GeneratorManager.class);
       for (SNode outputRoot : outputModel.getRoots()) {
-        IFileGenerator fileGenerator = gm.chooseFileGenerator(outputRoot, null);
-        String extension = ((DefaultFileGenerator) fileGenerator).getExtension(outputRoot);
+        String extension = TextGenManager.instance().getExtension(outputRoot);
         myNodeExtensionMap.put(NameUtil.nodeFQName(outputRoot), extension);
       }
       return super.handleOutput(status, outputDir, context, monitor, messages);

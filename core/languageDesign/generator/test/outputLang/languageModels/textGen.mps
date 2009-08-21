@@ -210,6 +210,15 @@
         </node>
       </node>
     </node>
+    <node role="extention" type="jetbrains.mps.lang.textGen.structure.ExtentionDeclaration" id="7547703063484794294">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="7547703063484794295">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="7547703063484794296">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="7547703063484794297">
+            <property name="value" value="java" />
+          </node>
+        </node>
+      </node>
+    </node>
   </node>
 </model>
 
