@@ -135,12 +135,7 @@ public final class CopyUtil {
               staticReference.getResolveInfo()));
           }
         } else if (mapping.containsKey(inputTargetNode)) {
-          LinkDeclaration linkDeclaration = new ConceptAndSuperConceptsScope(inputNode.getConceptDeclarationAdapter()).getLinkDeclarationByRole(ref.getRole());
-          if (linkDeclaration != null && linkDeclaration.getOuter()) {
-            outputNode.setReferent(ref.getRole(), inputTargetNode, false);
-          } else {
             outputNode.setReferent(ref.getRole(), mapping.get(inputTargetNode), false);
-          }
         } else {
           outputNode.setReferent(ref.getRole(), inputTargetNode, false);
         }

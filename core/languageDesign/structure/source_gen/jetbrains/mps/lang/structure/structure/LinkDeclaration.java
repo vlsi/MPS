@@ -14,7 +14,6 @@ public class LinkDeclaration extends BaseConcept implements IStructureDeprecatab
   public static final String SHORT_DESCRIPTION = "shortDescription";
   public static final String ALIAS = "alias";
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
-  public static final String OUTER = "outer";
   public static final String META_CLASS = "metaClass";
   public static final String SOURCE_CARDINALITY = "sourceCardinality";
   public static final String SPECIALIZED_LINK = "specializedLink";
@@ -54,14 +53,6 @@ public class LinkDeclaration extends BaseConcept implements IStructureDeprecatab
 
   public void setVirtualPackage(String value) {
     this.setProperty(LinkDeclaration.VIRTUAL_PACKAGE, value);
-  }
-
-  public boolean getOuter() {
-    return this.getBooleanProperty(LinkDeclaration.OUTER);
-  }
-
-  public void setOuter(boolean value) {
-    this.setBooleanProperty(LinkDeclaration.OUTER, value);
   }
 
   public LinkMetaclass getMetaClass() {
