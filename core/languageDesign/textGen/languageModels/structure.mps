@@ -92,6 +92,36 @@
         </entry>
       </conceptFeatureMap>
     </refactoringContext>
+    <refactoringContext modelVersion="9">
+      <refactoring refactoringClass="jetbrains.mps.lang.structure.scripts.RenameConcept" />
+      <moveMap />
+      <conceptFeatureMap>
+        <entry>
+          <key featureName="ExtensionDeclaration" conceptFQName="jetbrains.mps.lang.textGen.structure.ExtensionDeclaration" featureKind="CONCEPT" />
+          <value featureName="ExtensionDeclaration1" conceptFQName="jetbrains.mps.lang.textGen.structure.ExtensionDeclaration1" featureKind="CONCEPT" />
+        </entry>
+      </conceptFeatureMap>
+    </refactoringContext>
+    <refactoringContext modelVersion="10">
+      <refactoring refactoringClass="jetbrains.mps.lang.structure.scripts.RenameLink" />
+      <moveMap />
+      <conceptFeatureMap>
+        <entry>
+          <key featureName="extension" conceptFQName="jetbrains.mps.lang.textGen.structure.ConceptTextGenDeclaration" featureKind="CHILD" />
+          <value featureName="extension" conceptFQName="jetbrains.mps.lang.textGen.structure.ConceptTextGenDeclaration" featureKind="CHILD" />
+        </entry>
+      </conceptFeatureMap>
+    </refactoringContext>
+    <refactoringContext modelVersion="11">
+      <refactoring refactoringClass="jetbrains.mps.lang.structure.scripts.RenameConcept" />
+      <moveMap />
+      <conceptFeatureMap>
+        <entry>
+          <key featureName="ExtensionDeclaration1" conceptFQName="jetbrains.mps.lang.textGen.structure.ExtensionDeclaration1" featureKind="CONCEPT" />
+          <value featureName="ExtensionDeclaration" conceptFQName="jetbrains.mps.lang.textGen.structure.ExtensionDeclaration" featureKind="CONCEPT" />
+        </entry>
+      </conceptFeatureMap>
+    </refactoringContext>
   </refactoringHistory>
   <language namespace="c72da2b9-7cce-4447-8389-f407dc1158b7(jetbrains.mps.lang.structure)" />
   <language namespace="f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)" />
@@ -116,7 +146,7 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" version="7" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590338(jetbrains.mps.baseLanguage.closures.structure)" version="3" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959034b(jetbrains.mps.lang.quotation.structure)" version="0" />
-  <languageAspect modelUID="r:de0d3c0c-d049-41cf-bbf9-a920ba513cd3(jetbrains.mps.lang.textGen.structure)" version="8" />
+  <languageAspect modelUID="r:de0d3c0c-d049-41cf-bbf9-a920ba513cd3(jetbrains.mps.lang.textGen.structure)" version="11" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590345(jetbrains.mps.lang.pattern.structure)" version="0" />
   <language-engaged-on-generation namespace="f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)" />
   <devkit namespace="2677cb18-f558-4e33-bc38-a5139cee06dc(jetbrains.mps.devkit.language-design)" />
@@ -135,7 +165,7 @@
       <property name="metaClass" value="aggregation" />
       <property name="role" value="extension" />
       <property name="sourceCardinality" value="0..1" />
-      <link role="target" targetNodeId="8931911391946696733" resolveInfo="ExtentionDeclaration" />
+      <link role="target" targetNodeId="8931911391946696733" resolveInfo="ExtensionDeclaration" />
     </node>
     <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1233749296504">
       <property name="metaClass" value="aggregation" />

@@ -69,7 +69,7 @@ public class TextGenManager {
   }
 
   public String getExtension(SNode node) {
-    return loadNodeTextGen(null, node).getExtention(node);
+    return loadNodeTextGen(null, node).getExtension(node);
   }
 
   public void appendNodeText(IOperationContext context, TextGenBuffer buffer, SNode node, SNode contextNode) {

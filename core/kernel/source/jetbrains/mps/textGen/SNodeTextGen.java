@@ -58,7 +58,7 @@ public abstract class SNodeTextGen<BA extends INodeAdapter> {
   protected void doGenerateText(SNode node) {
   }
 
-  public String getExtention(SNode node) {
+  public String getExtension(SNode node) {
     return null;
   }
 

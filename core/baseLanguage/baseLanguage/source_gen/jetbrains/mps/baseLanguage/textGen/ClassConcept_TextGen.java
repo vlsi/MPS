@@ -54,7 +54,7 @@ public class ClassConcept_TextGen extends SNodeTextGen {
     this.appendNewLine();
   }
 
-  public String getExtention(SNode node) {
+  public String getExtension(SNode node) {
     return "java";
   }
 }
