@@ -21,7 +21,6 @@ import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_ReplaceNode_CustomNodeConcept;
 
 public class IsNullOperation_Editor extends DefaultNodeEditor {
-
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_7734_0(editorContext, node);
   }
@@ -72,14 +71,11 @@ public class IsNullOperation_Editor extends DefaultNodeEditor {
   }
 
   public static class IsNullOperation_Editor_replaceWith_Operation_cellMenu0 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
-
     public IsNullOperation_Editor_replaceWith_Operation_cellMenu0() {
     }
 
     public String getReplacementConceptName() {
       return "jetbrains.mps.samples.formulaLanguage.structure.Operation";
     }
-
-}
-
+  }
 }

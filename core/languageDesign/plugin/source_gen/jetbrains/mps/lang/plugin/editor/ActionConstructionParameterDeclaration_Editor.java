@@ -52,6 +52,10 @@ public class ActionConstructionParameterDeclaration_Editor extends DefaultNodeEd
   private EditorCell createCollection_4196_2(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_4196_2");
+    {
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.SELECTABLE, false);
+    }
     if (renderingCondition4196_0(node, editorContext, editorContext.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.createRefNode_4196_1(editorContext, node));
     }

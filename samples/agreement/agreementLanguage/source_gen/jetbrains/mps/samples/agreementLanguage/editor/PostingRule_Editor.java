@@ -21,7 +21,6 @@ import jetbrains.mps.nodeEditor.MPSFonts;
 import jetbrains.mps.nodeEditor.MPSColors;
 
 public class PostingRule_Editor extends DefaultNodeEditor {
-
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_4002_0(editorContext, node);
   }
@@ -116,7 +115,6 @@ public class PostingRule_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline4002_0 extends AbstractCellProvider {
-
     public _Inline4002_0() {
       super();
     }
@@ -152,7 +150,5 @@ public class PostingRule_Editor extends DefaultNodeEditor {
       } else
       return editorCell;
     }
-
-}
-
+  }
 }

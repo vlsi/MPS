@@ -20,7 +20,6 @@ import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 public class Quantity_Editor extends DefaultNodeEditor {
-
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_8785_0(editorContext, node);
   }
@@ -101,7 +100,6 @@ public class Quantity_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-
   private static boolean renderingCondition8785_0(SNode node, EditorContext editorContext, IScope scope) {
     return SPropertyOperations.hasValue(node, "unit", "USD", "USD_KWH");
   }
@@ -109,5 +107,4 @@ public class Quantity_Editor extends DefaultNodeEditor {
   private static boolean renderingCondition8785_1(SNode node, EditorContext editorContext, IScope scope) {
     return !(SPropertyOperations.hasValue(node, "unit", "USD", "USD_KWH"));
   }
-
 }

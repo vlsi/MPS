@@ -17,7 +17,6 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 
 public class Date_Editor extends DefaultNodeEditor {
-
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_3246_0(editorContext, node);
   }
@@ -122,5 +121,4 @@ public class Date_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
 }

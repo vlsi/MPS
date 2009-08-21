@@ -24,7 +24,6 @@ import jetbrains.mps.nodeEditor.MPSFonts;
 import jetbrains.mps.nodeEditor.MPSColors;
 
 public class AgreementDeclarations_Editor extends DefaultNodeEditor {
-
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_4569_0(editorContext, node);
   }
@@ -145,7 +144,6 @@ public class AgreementDeclarations_Editor extends DefaultNodeEditor {
   }
 
   private static class accountTypeListHandler_4569_0 extends RefNodeListHandler {
-
     public accountTypeListHandler_4569_0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
@@ -208,10 +206,9 @@ public class AgreementDeclarations_Editor extends DefaultNodeEditor {
       editorCell.setDefaultText("");
       return editorCell;
     }
+  }
 
-}
   private static class eventTypeListHandler_4569_0 extends RefNodeListHandler {
-
     public eventTypeListHandler_4569_0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
@@ -267,7 +264,5 @@ public class AgreementDeclarations_Editor extends DefaultNodeEditor {
       editorCell.setDefaultText("");
       return editorCell;
     }
-
-}
-
+  }
 }

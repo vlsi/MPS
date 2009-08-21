@@ -454,6 +454,10 @@ public class CellModel_RefCell_Editor extends DefaultNodeEditor {
     private EditorCell createCollection_8529_7(EditorContext editorContext, SNode node) {
       EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
       editorCell.setCellId("Collection_8529_7");
+      {
+        Style style = editorCell.getStyle();
+        style.set(StyleAttributes.SELECTABLE, false);
+      }
       editorCell.addEditorCell(this.createRefCell_8529_3(editorContext, node));
       return editorCell;
     }

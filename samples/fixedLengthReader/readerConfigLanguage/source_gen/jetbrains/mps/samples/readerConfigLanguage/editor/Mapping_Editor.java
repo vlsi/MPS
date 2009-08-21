@@ -26,7 +26,6 @@ import jetbrains.mps.nodeEditor.MPSFonts;
 import jetbrains.mps.nodeEditor.MPSColors;
 
 public class Mapping_Editor extends DefaultNodeEditor {
-
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_1426_0(editorContext, node);
   }
@@ -128,7 +127,6 @@ public class Mapping_Editor extends DefaultNodeEditor {
   }
 
   private static class fieldListHandler_1426_0 extends RefNodeListHandler {
-
     public fieldListHandler_1426_0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
@@ -184,7 +182,5 @@ public class Mapping_Editor extends DefaultNodeEditor {
       editorCell.setDefaultText("");
       return editorCell;
     }
-
-}
-
+  }
 }

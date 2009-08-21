@@ -11,14 +11,12 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class Operation_leftOperand_Actions {
-
   public static void setCellActions(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setAction(CellActionType.DELETE, new Operation_leftOperand_Actions.Operation_leftOperand_Actions_DELETE(node));
   }
 
   public static class Operation_leftOperand_Actions_DELETE extends EditorCellAction {
-
-    /* package */SNode myNode;
+    /*package*/ SNode myNode;
 
     public Operation_leftOperand_Actions_DELETE(SNode node) {
       this.myNode = node;
@@ -35,7 +33,5 @@ public class Operation_leftOperand_Actions {
     public void execute_internal(EditorContext editorContext, SNode node) {
       SNodeOperations.replaceWithAnother(node, SLinkOperations.getTarget(node, "rightOperand", true));
     }
-
-}
-
+  }
 }

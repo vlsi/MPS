@@ -14,7 +14,6 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 
 public class ParenthisizedExpression_Editor extends DefaultNodeEditor {
-
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_8860_0(editorContext, node);
   }
@@ -58,5 +57,4 @@ public class ParenthisizedExpression_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
 }

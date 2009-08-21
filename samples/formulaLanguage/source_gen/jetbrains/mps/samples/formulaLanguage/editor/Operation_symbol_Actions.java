@@ -9,14 +9,12 @@ import jetbrains.mps.nodeEditor.CellActionType;
 import jetbrains.mps.nodeEditor.EditorCellAction;
 
 public class Operation_symbol_Actions {
-
   public static void setCellActions(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setAction(CellActionType.DELETE, new Operation_symbol_Actions.Operation_symbol_Actions_DELETE(node));
   }
 
   public static class Operation_symbol_Actions_DELETE extends EditorCellAction {
-
-    /* package */SNode myNode;
+    /*package*/ SNode myNode;
 
     public Operation_symbol_Actions_DELETE(SNode node) {
       this.myNode = node;
@@ -32,7 +30,5 @@ public class Operation_symbol_Actions {
 
     public void execute_internal(EditorContext editorContext, SNode node) {
     }
-
-}
-
+  }
 }

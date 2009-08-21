@@ -15,7 +15,6 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 
 public class FloatingPointConstant_Editor extends DefaultNodeEditor {
-
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createProperty_9378_0(editorContext, node);
   }
@@ -41,5 +40,4 @@ public class FloatingPointConstant_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
 }
