@@ -15,15 +15,12 @@
  */
 package jetbrains.mps.refactoring.framework;
 
+import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.structure.project.testconfigurations.ModuleTestConfiguration;
-import jetbrains.mps.smodel.Language;
-import jetbrains.mps.smodel.MPSModuleRepository;
-import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.logging.Logger;
+import jetbrains.mps.smodel.*;
 
 import java.util.*;
 
@@ -56,22 +53,55 @@ public class RefactoringUtil {
     return result;
   }
 
-  public static boolean isApplicableInContext(ILoggableRefactoring refactoring, List<SNode> nodes) {
-    if (!isApplicableToNodes(refactoring, nodes)) return false;
+  public static boolean isApplicableInContext(ILoggableRefactoring refactoring, Collection entities) {
+    assert !entities.isEmpty();
+    assert (entities.size() == 1 || !refactoring.isOneTargetOnly());
+
+    if (!isApplicableToEntities(refactoring, entities)) return false;
+    RefactoringTarget refTarget = refactoring.getRefactoringTarget();
 
     for (ILoggableRefactoring r : getAllRefactorings().values()) {
-      if (r.getRefactoringTarget() != RefactoringTarget.NODE) continue;
-      if (!isApplicableToNodes(r, nodes)) continue;
+      if (r.getRefactoringTarget() != refTarget) continue;
+      if (!isApplicableToEntities(r, entities)) continue;
       if (r.getOverridenRefactoringClass() == refactoring.getClass()) return false;
     }
 
     return true;
   }
 
-  public static boolean isApplicableToNodes(ILoggableRefactoring r, List<SNode> nodes) {
-    if (nodes.isEmpty()) return false;
+  private static boolean isApplicableToEntities(ILoggableRefactoring refactoring, Collection entities) {
+    RefactoringTarget refTarget = refactoring.getRefactoringTarget();
+
+    if (refTarget == RefactoringTarget.NODE) {
+      return isApplicableToNodes(refactoring, entities);
+    } else if (refTarget == RefactoringTarget.MODEL) {
+      return isApplicableToModels(refactoring, entities);
+    } else {
+      return isApplicableToModules(refactoring, entities);
+    }
+  }
+
+  private static boolean isApplicableToNodes(ILoggableRefactoring r, Collection<SNode> nodes) {
     for (SNode node : nodes) {
       if (!r.isApplicableWRTConcept(node)) {
+        return false;
+      }
+    }
+    return true;
+  }
+
+  private static boolean isApplicableToModels(ILoggableRefactoring refactoring, Collection<SModelDescriptor> models) {
+    for (SModelDescriptor model : models) {
+      if (!refactoring.isApplicableToModel(model)) {
+        return false;
+      }
+    }
+    return true;
+  }
+
+  private static boolean isApplicableToModules(ILoggableRefactoring refactoring, Collection<IModule> modules) {
+    for (IModule module : modules) {
+      if (!refactoring.isApplicableToModule(module)) {
         return false;
       }
     }
@@ -107,7 +137,7 @@ public class RefactoringUtil {
 
   public static boolean isLocalByDefault(RefactoringContext refactoringContext) {
     LOG.assertCanRead();
-    
+
     IModule module = refactoringContext.getSelectedModule();
     if (module instanceof Language) {
       Language l = (Language) module;

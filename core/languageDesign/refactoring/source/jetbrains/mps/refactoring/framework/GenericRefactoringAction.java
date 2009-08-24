@@ -16,14 +16,13 @@
 package jetbrains.mps.refactoring.framework;
 
 import com.intellij.openapi.actionSystem.AnActionEvent;
+import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.*;
-import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.workbench.action.BaseAction;
 import org.jetbrains.annotations.NotNull;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 
 public class GenericRefactoringAction extends BaseAction {
   private ILoggableRefactoring myRefactoring;
@@ -43,14 +42,20 @@ public class GenericRefactoringAction extends BaseAction {
       }
     });
 
+    boolean isOneTarget = myRefactoring.isOneTargetOnly();
+
     final RefactoringContext context = new RefactoringContext(myRefactoring);
     context.setCurrentOperationContext(e.getData(MPSDataKeys.OPERATION_CONTEXT));
+
     context.setSelectedNode(e.getData(MPSDataKeys.NODE));
-    context.setSelectedNodes(e.getData(MPSDataKeys.NODES));
+    context.setSelectedNodes(toList(getNodes(e, isOneTarget)));
+
     context.setSelectedModel(e.getData(MPSDataKeys.MODEL));
-    context.setSelectedModels(e.getData(MPSDataKeys.MODELS));
+    context.setSelectedModels(toList(getModels(e, isOneTarget)));
+
     context.setSelectedModule(e.getData(MPSDataKeys.MODULE));
-    context.setSelectedModules(e.getData(MPSDataKeys.MODULES));
+    context.setSelectedModules(toList(getModules(e, isOneTarget)));
+
     context.setSelectedMPSProject(e.getData(MPSDataKeys.MPS_PROJECT));
     context.setCurrentScope(e.getData(MPSDataKeys.SCOPE));
 
@@ -75,27 +80,66 @@ public class GenericRefactoringAction extends BaseAction {
     return myRefactoring.getKeyStroke();
   }
 
-  private List<SNode> getNodes(AnActionEvent e) {
-    SNode node = MPSDataKeys.NODE.getData(e.getDataContext());
-    if (node != null) {
-      return CollectionUtil.list(node);
+  private <T> List<T> toList(Collection<T> c) {
+    return new ArrayList<T>(c);
+  }
+
+  private<T> Set<T> getEntities(AnActionEvent e, boolean oneEntity, T single, List<T> list) {
+    Set<T> result = new HashSet<T>();
+
+    if (single != null) {
+      result.add(single);
     }
-    List<SNode> list = MPSDataKeys.NODES.getData(e.getDataContext());
-    if (list == null || list.isEmpty()) return new ArrayList<SNode>();
-    return list;
+
+    if (oneEntity) {
+      if (list != null && !list.isEmpty() && !(list.size()==1 && list.contains(single))) {
+        result.clear();
+      }
+    } else {
+      if (list != null) {
+        result.addAll(list);
+      }
+    }
+
+    return result;
+  }
+
+  private Set<SNode> getNodes(AnActionEvent e, boolean oneEntity) {
+    SNode node = MPSDataKeys.NODE.getData(e.getDataContext());
+    List<SNode> nodes = MPSDataKeys.NODES.getData(e.getDataContext());
+    return getEntities(e,oneEntity, node,nodes);
+  }
+
+  private Set<SModelDescriptor> getModels(AnActionEvent e, boolean oneEntity) {
+    SModelDescriptor node = MPSDataKeys.MODEL.getData(e.getDataContext());
+    List<SModelDescriptor> nodes = MPSDataKeys.MODELS.getData(e.getDataContext());
+    return getEntities(e,oneEntity, node,nodes);
+  }
+
+  private Set<IModule> getModules(AnActionEvent e, boolean oneEntity) {
+    IModule node = MPSDataKeys.MODULE.getData(e.getDataContext());
+    List<IModule> nodes = MPSDataKeys.MODULES.getData(e.getDataContext());
+    return getEntities(e,oneEntity, node,nodes);
   }
 
   protected void doUpdate(AnActionEvent e) {
-    boolean enabled = true;
-    List<SNode> nodes = getNodes(e);
+    RefactoringTarget refTarget = myRefactoring.getRefactoringTarget();
+    boolean oneEntity = myRefactoring.isOneTargetOnly();
 
-    if (myRefactoring.getRefactoringTarget() == RefactoringTarget.NODE) {
-      enabled = RefactoringUtil.isApplicableInContext(myRefactoring, nodes);
-    } else if (myRefactoring.getRefactoringTarget() == RefactoringTarget.MODEL) {
-      SModelDescriptor modelDescriptor = MPSDataKeys.MODEL.getData(e.getDataContext());
-      if (modelDescriptor != null) {
-        enabled = myRefactoring.isApplicableToModel(modelDescriptor);
-      }
+    Set entities;
+    if (refTarget == RefactoringTarget.NODE) {
+      entities = getNodes(e, oneEntity);
+    } else if (refTarget == RefactoringTarget.MODEL) {
+      entities = getModels(e, oneEntity);
+    } else {
+      entities = getModules(e, oneEntity);
+    }
+
+    boolean enabled;
+    if (entities == null || entities.isEmpty()) {
+      enabled = false;
+    } else {
+      enabled = RefactoringUtil.isApplicableInContext(myRefactoring, entities);
     }
 
     setEnabledState(e.getPresentation(), enabled);

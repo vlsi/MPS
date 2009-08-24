@@ -6,9 +6,9 @@ import jetbrains.mps.refactoring.framework.BaseGeneratedRefactoring;
 import jetbrains.mps.lang.core.scripts.MoveNodes;
 import jetbrains.mps.refactoring.framework.RefactoringTarget;
 import jetbrains.mps.refactoring.framework.RefactoringContext;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
@@ -57,9 +57,6 @@ public class MoveConcepts extends BaseGeneratedRefactoring {
   }
 
   public boolean isApplicable(RefactoringContext refactoringContext) {
-    if (ListSequence.fromList(refactoringContext.getSelectedNodes()).isEmpty()) {
-      return false;
-    }
     SModel model = SNodeOperations.getModel(ListSequence.fromList(refactoringContext.getSelectedNodes()).first());
     for (SNode node : refactoringContext.getSelectedNodes()) {
       if (!(SNodeOperations.isInstanceOf(node, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration"))) {

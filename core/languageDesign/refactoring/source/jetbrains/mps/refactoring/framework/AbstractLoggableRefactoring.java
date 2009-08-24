@@ -18,10 +18,9 @@ package jetbrains.mps.refactoring.framework;
 import com.intellij.openapi.util.Computable;
 import jetbrains.mps.ide.findusages.model.SearchResults;
 import jetbrains.mps.project.IModule;
-import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.smodel.SModelDescriptor;
-import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.project.Solution;
+import jetbrains.mps.project.DevKit;
+import jetbrains.mps.smodel.*;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -84,6 +83,19 @@ public abstract class AbstractLoggableRefactoring implements ILoggableRefactorin
 
   public boolean isApplicableToModel(SModelDescriptor model) {
     return true;
+  }
+
+  public boolean isApplicableToModule(IModule module) {
+    if (getRefactoringTarget()==RefactoringTarget.SOLUTION){
+      return module instanceof Solution;
+    }
+    if (getRefactoringTarget()==RefactoringTarget.LANGUAGE){
+      return module instanceof Language;
+    }
+    if (getRefactoringTarget()==RefactoringTarget.DEVKIT){
+      return module instanceof DevKit;
+    }
+    return false;
   }
 
   public boolean refactorImmediatelyIfNoUsages() {

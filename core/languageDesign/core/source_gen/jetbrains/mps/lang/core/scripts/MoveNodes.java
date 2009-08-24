@@ -5,13 +5,13 @@ package jetbrains.mps.lang.core.scripts;
 import jetbrains.mps.refactoring.framework.BaseGeneratedRefactoring;
 import jetbrains.mps.refactoring.framework.RefactoringTarget;
 import jetbrains.mps.refactoring.framework.RefactoringContext;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.search.ConceptAndSuperConceptsScope;
 import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
 import java.util.List;
 import jetbrains.mps.lang.structure.structure.LinkDeclaration;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.internal.collections.runtime.ISelector;
@@ -57,9 +57,6 @@ public class MoveNodes extends BaseGeneratedRefactoring {
   }
 
   public boolean isApplicable(RefactoringContext refactoringContext) {
-    if (ListSequence.fromList(refactoringContext.getSelectedNodes()).isEmpty()) {
-      return false;
-    }
     if (((Object)refactoringContext.getParameter("target")) instanceof SNode) {
       SNode targetNode = ((SNode)((Object)refactoringContext.getParameter("target")));
       SNode concept = SNodeOperations.getConceptDeclaration(targetNode);
@@ -150,9 +147,7 @@ public class MoveNodes extends BaseGeneratedRefactoring {
   }
 
   public List<SNode> getNodesToOpen(final RefactoringContext refactoringContext) {
-    List<SNode> result = new ArrayList<SNode>();
-    ListSequence.fromList(result).addElement(((SNode)refactoringContext.getParameter("nodeToOpen")));
-    return result;
+    return ListSequence.fromListAndArray(new ArrayList<SNode>(), ((SNode)refactoringContext.getParameter("nodeToOpen")));
   }
 
   public boolean doesUpdateModel() {

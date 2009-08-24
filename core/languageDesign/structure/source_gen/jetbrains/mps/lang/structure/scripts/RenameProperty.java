@@ -5,11 +5,11 @@ package jetbrains.mps.lang.structure.scripts;
 import jetbrains.mps.refactoring.framework.BaseGeneratedRefactoring;
 import jetbrains.mps.lang.core.scripts.Rename;
 import jetbrains.mps.refactoring.framework.RefactoringTarget;
-import jetbrains.mps.refactoring.framework.RefactoringContext;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.kernel.model.SModelUtil;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.refactoring.framework.RefactoringContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import java.util.Map;
 import jetbrains.mps.project.IModule;
@@ -47,19 +47,13 @@ public class RenameProperty extends BaseGeneratedRefactoring {
     return RefactoringTarget.NODE;
   }
 
-  public boolean isApplicable(RefactoringContext refactoringContext) {
-    SNode node = refactoringContext.getSelectedNode();
-    return SNodeOperations.isInstanceOf(node, "jetbrains.mps.lang.structure.structure.PropertyDeclaration");
-  }
-
   public boolean isApplicableWRTConcept(SNode node) {
     return SModelUtil.isAssignableConcept(SNodeOperations.getConceptDeclaration(node), SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.structure.structure.PropertyDeclaration"));
   }
 
   public void doRefactor(final RefactoringContext refactoringContext) {
-    SNode propertyDeclaration = SNodeOperations.cast(refactoringContext.getSelectedNode(), "jetbrains.mps.lang.structure.structure.PropertyDeclaration");
-    SNode concept = SNodeOperations.getAncestor(propertyDeclaration, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration", false, false);
-    refactoringContext.changeFeatureName(propertyDeclaration, SNodeOperations.getModel(concept).getSModelFqName() + "." + SPropertyOperations.getString(concept, "name"), ((String)refactoringContext.getParameter("newName")));
+    SNode concept = SNodeOperations.getAncestor(refactoringContext.getSelectedNode(), "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration", false, false);
+    refactoringContext.changeFeatureName(refactoringContext.getSelectedNode(), SNodeOperations.getModel(concept).getSModelFqName() + "." + SPropertyOperations.getString(concept, "name"), ((String)refactoringContext.getParameter("newName")));
   }
 
   public Map<IModule, List<SModel>> getModelsToGenerate(final RefactoringContext refactoringContext) {
@@ -79,12 +73,12 @@ public class RenameProperty extends BaseGeneratedRefactoring {
     return true;
   }
 
+  public boolean isOneTargetOnly() {
+    return true;
+  }
+
   public String newName_initialValue(final RefactoringContext refactoringContext) {
-    SNode node = refactoringContext.getSelectedNode();
-    if (!(SNodeOperations.isInstanceOf(node, "jetbrains.mps.lang.structure.structure.PropertyDeclaration"))) {
-      return "";
-    }
-    return SPropertyOperations.getString(SNodeOperations.cast(node, "jetbrains.mps.lang.structure.structure.PropertyDeclaration"), "name");
+    return SPropertyOperations.getString(refactoringContext.getSelectedNode(), "name");
   }
 
   public List<IChooseComponent> getChooseComponents(final RefactoringContext refactoringContext) {

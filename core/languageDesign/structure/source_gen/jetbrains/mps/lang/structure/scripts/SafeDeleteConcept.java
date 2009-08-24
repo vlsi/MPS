@@ -68,14 +68,14 @@ public class SafeDeleteConcept extends BaseGeneratedRefactoring {
 
     SearchResults searchResults = new SearchResults();
     searchResults.addAll(FindUtils.getSearchResults(new EmptyProgressIndicator(), refactoringContext.getSelectedNode(), GlobalScope.getInstance(), "jetbrains.mps.lang.structure.findUsages.ConceptInstances_Finder", "jetbrains.mps.lang.structure.findUsages.NodeAndDescendantsUsages_Finder"));
-    for (SNode aspect : ListSequence.fromList(((List<SNode>)((List)refactoringContext.getParameter("nodeAspects"))))) {
+    for(SNode aspect : ListSequence.fromList(((List<SNode>)((List)refactoringContext.getParameter("nodeAspects"))))) {
       searchResults.addAll(FindUtils.getSearchResults(new EmptyProgressIndicator(), aspect, GlobalScope.getInstance(), "jetbrains.mps.lang.structure.findUsages.NodeAndDescendantsUsages_Finder"));
     }
 
     List<SearchResult<SNode>> searchResultsList = searchResults.getSearchResults();
     List<SearchResult<SNode>> searchResultsCopy = ListSequence.fromListWithValues(new ArrayList<SearchResult<SNode>>(), searchResultsList);
 
-    for (SearchResult<SNode> searchResult : searchResultsCopy) {
+    for(SearchResult<SNode> searchResult : searchResultsCopy) {
       SNode containingRoot = searchResult.getObject().getContainingRoot();
       if (((List)refactoringContext.getParameter("nodeAspects")).contains(containingRoot)) {
         searchResults.remove(searchResult);
@@ -86,7 +86,7 @@ public class SafeDeleteConcept extends BaseGeneratedRefactoring {
   }
 
   public void doRefactor(final RefactoringContext refactoringContext) {
-    for (SNode aspectNode : ((List<SNode>)((List)refactoringContext.getParameter("nodeAspects")))) {
+    for(SNode aspectNode : ((List<SNode>)((List)refactoringContext.getParameter("nodeAspects")))) {
       SNodeOperations.deleteNode(aspectNode);
     }
     SNodeOperations.deleteNode(refactoringContext.getSelectedNode());
@@ -101,7 +101,13 @@ public class SafeDeleteConcept extends BaseGeneratedRefactoring {
     return result;
   }
 
+  public boolean isOneTargetOnly() {
+    return true;
+  }
+
+
   public static String getKeyStroke_static() {
     return SafeDelete.getKeyStroke_static();
   }
+
 }

@@ -64,8 +64,7 @@ public class SafeDeleteLink extends BaseGeneratedRefactoring {
   }
 
   public void doRefactor(final RefactoringContext refactoringContext) {
-    SNode node = refactoringContext.getSelectedNode();
-    refactoringContext.deleteFeature(node);
+    refactoringContext.deleteFeature(refactoringContext.getSelectedNode());
   }
 
   public Map<IModule, List<SModel>> getModelsToGenerate(final RefactoringContext refactoringContext) {
@@ -85,7 +84,13 @@ public class SafeDeleteLink extends BaseGeneratedRefactoring {
     return true;
   }
 
+  public boolean isOneTargetOnly() {
+    return true;
+  }
+
+
   public static String getKeyStroke_static() {
     return SafeDelete.getKeyStroke_static();
   }
+
 }

@@ -4677,7 +4677,7 @@
                           </node>
                           <node role="initializer" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1207578525153">
                             <link role="classConcept" targetNodeId="77.~EditorCell_Collection" resolveInfo="EditorCell_Collection" />
-                            <link role="baseMethodDeclaration" targetNodeId="77.~EditorCell_Collection.createVertical(jetbrains.mps.nodeEditor.EditorContext,jetbrains.mps.smodel.SNode,jetbrains.mps.nodeEditor.EditorCellListHandler):jetbrains.mps.nodeEditor.cells.EditorCell_Collection" resolveInfo="createVertical" />
+                            <link role="baseMethodDeclaration" targetNodeId="77.~EditorCell_Collection.createVertical(jetbrains.mps.nodeEditor.EditorContext,jetbrains.mps.smodel.SNode):jetbrains.mps.nodeEditor.cells.EditorCell_Collection" resolveInfo="createVertical" />
                             <node role="actualArgument" type="jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_editorContext" id="1207578527607" />
                             <node role="actualArgument" type="jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_node" id="1207578528828" />
                           </node>
@@ -12186,6 +12186,9 @@
         <node role="styleItem" type="jetbrains.mps.lang.editor.structure.IndentLayoutNewLineStyleClassItem" id="1237647619012">
           <property name="flag" value="true" />
         </node>
+        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.ForegroundColorStyleClassItem" id="8765984606563369611">
+          <property name="color" value="DARK_BLUE" />
+        </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode" id="1214568090087">
         <link role="relationDeclaration" targetNodeId="17.1137022507850" />
@@ -12201,6 +12204,9 @@
         <link role="styleClass" targetNodeId="1215091331565" resolveInfo="RightBrace" />
         <node role="styleItem" type="jetbrains.mps.lang.editor.structure.IndentLayoutNewLineStyleClassItem" id="1237647619016">
           <property name="flag" value="true" />
+        </node>
+        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.ForegroundColorStyleClassItem" id="8765984606563369613">
+          <property name="color" value="DARK_BLUE" />
         </node>
       </node>
       <node role="cellLayout" type="jetbrains.mps.lang.editor.structure.CellLayout_Indent" id="1237647621788" />
