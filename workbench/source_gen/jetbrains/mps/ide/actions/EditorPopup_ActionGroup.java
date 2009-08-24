@@ -9,6 +9,7 @@ import com.intellij.ide.actions.SelectInAction;
 public class EditorPopup_ActionGroup extends GeneratedActionGroup {
   private static Logger LOG = Logger.getLogger(EditorPopup_ActionGroup.class);
   public static final String ID = "jetbrains.mps.ide.actions.EditorPopup";
+  public static final String LABEL_ID_goByRef = ID + "goByRef";
   public static final String LABEL_ID_structure = ID + "structure";
   public static final String LABEL_ID_generateModel = ID + "generateModel";
   public static final String LABEL_ID_find_instances = ID + "find_instances";
@@ -19,6 +20,7 @@ public class EditorPopup_ActionGroup extends GeneratedActionGroup {
     this.setIsInternal(false);
     this.setPopup(false);
     try {
+      EditorPopup_ActionGroup.this.addAnchor(EditorPopup_ActionGroup.LABEL_ID_goByRef);
       EditorPopup_ActionGroup.this.addAction("jetbrains.mps.ide.actions.GoByCurrentReference_Action", "jetbrains.mps.ide");
       EditorPopup_ActionGroup.this.addAction("jetbrains.mps.ide.actions.HighlightUsages_Action", "jetbrains.mps.ide");
       EditorPopup_ActionGroup.this.addAction("jetbrains.mps.ide.actions.HighlightInstances_Action", "jetbrains.mps.ide");

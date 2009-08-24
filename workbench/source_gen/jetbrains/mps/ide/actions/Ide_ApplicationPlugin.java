@@ -57,6 +57,7 @@ public class Ide_ApplicationPlugin extends BaseApplicationPlugin {
     this.addGroup(groups, moduleName, "jetbrains.mps.ide.actions.GenerateModule_ActionGroup");
     this.addGroup(groups, moduleName, "jetbrains.mps.ide.actions.GenerateModels_ActionGroup");
     this.addGroup(groups, moduleName, "jetbrains.mps.ide.actions.SaveTransientModels_ActionGroup");
+    this.addGroup(groups, moduleName, "jetbrains.mps.ide.actions.GoByReference_ActionGroup");
     return groups;
   }
 
