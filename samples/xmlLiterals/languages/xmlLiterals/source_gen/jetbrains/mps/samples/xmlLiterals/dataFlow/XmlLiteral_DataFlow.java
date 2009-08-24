@@ -11,13 +11,12 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class XmlLiteral_DataFlow extends DataFlowBuilder {
-
   public XmlLiteral_DataFlow() {
   }
 
   public void build(final IOperationContext operationContext, final DataFlowBuilderContext _context) {
     List<SNode> items = SNodeOperations.getDescendantsWhereConceptInList(_context.getNode(), new String[]{"jetbrains.mps.samples.xmlLiterals.structure.ElementMacro","jetbrains.mps.samples.xmlLiterals.structure.TextMacro"}, false, new String[]{});
-    for(SNode item : items) {
+    for (SNode item : items) {
       if (SNodeOperations.isInstanceOf(item, "jetbrains.mps.samples.xmlLiterals.structure.ElementMacro")) {
         _context.getBuilder().build((SNode)SLinkOperations.getTarget(SNodeOperations.cast(item, "jetbrains.mps.samples.xmlLiterals.structure.ElementMacro"), "expression", true));
       }
@@ -26,5 +25,4 @@ public class XmlLiteral_DataFlow extends DataFlowBuilder {
       }
     }
   }
-
 }

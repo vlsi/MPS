@@ -50,4 +50,8 @@ public class ApplicationsTest extends BaseMPSTest {
     assertGenerates(new File("platform/ypath/YPath.mpr"), true);
   }
 
+  public void testXmlLiteralsSample() {
+    assertGenerates(new File("samples/xmlLiterals/jetbrains.mps.samples.xmlLiterals.mpr"), true);    
+  }
+
 }

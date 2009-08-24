@@ -38,7 +38,7 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590323(jetbrains.mps.lang.script.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895903fe(jetbrains.mps.baseLanguage.strings.constraints)" version="1" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590402(jetbrains.mps.baseLanguage.strings.structure)" version="9" />
-  <maxImportIndex value="37" />
+  <maxImportIndex value="38" />
   <import index="1" modelUID="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" version="0" />
   <import index="3" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" />
   <import index="4" modelUID="f:java_stub#java.lang(java.lang@java_stub)" version="-1" />
@@ -55,6 +55,7 @@
   <import index="35" modelUID="r:2c4d9270-b6d6-44af-aecd-e01a223680db(jetbrains.mps.kernel.model)" version="-1" />
   <import index="36" modelUID="f:java_stub#jetbrains.mps.util(jetbrains.mps.util@java_stub)" version="-1" />
   <import index="37" modelUID="f:java_stub#javax.swing(javax.swing@java_stub)" version="-1" />
+  <import index="38" modelUID="f:java_stub#jetbrains.mps.smodel.presentation(jetbrains.mps.smodel.presentation@java_stub)" version="-1" />
   <node type="jetbrains.mps.lang.refactoring.structure.Refactoring" id="1198085953023">
     <property name="name" value="RenameConcept" />
     <property name="userFriendlyName" value="Rename Concept" />
@@ -3067,7 +3068,7 @@
                       <link role="variableDeclaration" targetNodeId="9161136784551302567" resolveInfo="sb" />
                     </node>
                     <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="9161136784551302578">
-                      <link role="baseMethodDeclaration" targetNodeId="4.~StringBuilder.append(java.lang.CharSequence):java.lang.StringBuilder" resolveInfo="append" />
+                      <link role="baseMethodDeclaration" targetNodeId="4.~StringBuilder.append(java.lang.String):java.lang.StringBuilder" resolveInfo="append" />
                       <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="9161136784551302579">
                         <link role="baseMethodDeclaration" targetNodeId="36.~NameUtil.decapitalize(java.lang.String):java.lang.String" resolveInfo="decapitalize" />
                         <link role="classConcept" targetNodeId="36.~NameUtil" resolveInfo="NameUtil" />
@@ -3078,7 +3079,7 @@
                     </node>
                   </node>
                   <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="9161136784551302581">
-                    <link role="baseMethodDeclaration" targetNodeId="4.~StringBuilder.append(java.lang.CharSequence):java.lang.StringBuilder" resolveInfo="append" />
+                    <link role="baseMethodDeclaration" targetNodeId="4.~StringBuilder.append(java.lang.String):java.lang.StringBuilder" resolveInfo="append" />
                     <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="9161136784551302582">
                       <property name="value" value=" " />
                     </node>
@@ -3476,6 +3477,33 @@
       </node>
     </node>
     <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="5800912818421828063" />
+  </node>
+  <node type="jetbrains.mps.lang.script.structure.MigrationScript" id="4289873794715249910">
+    <property name="migrationFromBuild" value="1193" />
+    <property name="name" value="FindSmartAliases" />
+    <property name="category" value="find smart aliases" />
+    <property name="title" value="abc" />
+    <node role="part" type="jetbrains.mps.lang.script.structure.MigrationScriptPart_Instance" id="4289873794715249911">
+      <property name="description" value="find smart aliases" />
+      <link role="affectedInstanceConcept" targetNodeId="1.1071489090640" resolveInfo="ConceptDeclaration" />
+      <node role="affectedInstanceUpdater" type="jetbrains.mps.lang.script.structure.MigrationScriptPart_Instance_Updater" id="4289873794715249912">
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="4289873794715249913" />
+      </node>
+      <node role="affectedInstancePredicate" type="jetbrains.mps.lang.script.structure.MigrationScriptPart_Instance_Predicate" id="4289873794715312573">
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="4289873794715312574">
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="4289873794715312576">
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="4289873794715312577">
+              <link role="baseMethodDeclaration" targetNodeId="38.~ReferenceConceptUtil.hasSmartAlias(jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration):boolean" resolveInfo="hasSmartAlias" />
+              <link role="classConcept" targetNodeId="38.~ReferenceConceptUtil" resolveInfo="ReferenceConceptUtil" />
+              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="4289873794715312578">
+                <node role="operand" type="jetbrains.mps.lang.script.structure.MigrationScriptPart_node" id="4289873794715312579" />
+                <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_GetAdapterOperation" id="4289873794715312580" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
   </node>
 </model>
 

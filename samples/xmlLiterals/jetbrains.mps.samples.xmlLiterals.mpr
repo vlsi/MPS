@@ -13,7 +13,9 @@
       <languagePath path="${project}/languages/xmlLiterals/xmlLiterals.mpl" />
     </projectLanguages>
     <projectDevkits />
-    <genConfs />
+    <genConfs>
+      <genConfModule name="xmlLiterals language" moduleRef="jetbrains.mps.samples.xmlLiterals" />
+    </genConfs>
   </component>
   <component name="ProjectDetails">
     <option name="projectName" value="jetbrains.mps.samples.xmlLiterals" />

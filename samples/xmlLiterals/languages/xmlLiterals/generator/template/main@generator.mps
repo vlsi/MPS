@@ -101,20 +101,20 @@
                     </node>
                   </node>
                 </node>
-                <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="7417816926334825619">
-                  <node role="expression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="7417816926334825620">
+                <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="6836059379245881860">
+                  <node role="expression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="6836059379245881861">
                     <link role="variableDeclaration" targetNodeId="7417816926334825603" resolveInfo="result" />
-                    <node role="referenceMacro$link_attribute$variableDeclaration" type="jetbrains.mps.lang.generator.structure.ReferenceMacro" id="7417816926334825621">
-                      <node role="referentFunction" type="jetbrains.mps.lang.generator.structure.ReferenceMacro_GetReferent" id="7417816926334825622">
-                        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="7417816926334825623">
-                          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="7417816926334825624">
-                            <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="7417816926334825625">
-                              <node role="operand" type="jetbrains.mps.lang.generator.generationContext.structure.TemplateFunctionParameter_generationContext" id="7417816926334825626" />
-                              <node role="operation" type="jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GetOutputByLabelAndInput" id="7417816926334825627">
-                                <link role="label" targetNodeId="6512904248380121320" resolveInfo="elementToVariable" />
-                                <node role="inputNode" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="7417816926334825628">
-                                  <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="7417816926334825629" />
-                                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="7417816926334825630">
+                    <node role="referenceMacro$link_attribute$variableDeclaration" type="jetbrains.mps.lang.generator.structure.ReferenceMacro" id="6836059379245881862">
+                      <node role="referentFunction" type="jetbrains.mps.lang.generator.structure.ReferenceMacro_GetReferent" id="6836059379245881863">
+                        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="6836059379245881864">
+                          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="6836059379245881865">
+                            <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="6836059379245881866">
+                              <node role="operand" type="jetbrains.mps.lang.generator.generationContext.structure.TemplateFunctionParameter_generationContext" id="6836059379245881867" />
+                              <node role="operation" type="jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GetOutputByLabelAndInput" id="6836059379245881868">
+                                <link role="label" targetNodeId="6512904248380121320" resolveInfo="contentToVariable" />
+                                <node role="inputNode" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="6836059379245881869">
+                                  <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="6836059379245881870" />
+                                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="6836059379245881871">
                                     <link role="link" targetNodeId="1.9152904044274328260" />
                                   </node>
                                 </node>

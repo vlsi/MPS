@@ -56,7 +56,7 @@ public class QueriesGenerated {
     return _context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "contentToVariable");
   }
 
-  public static Object referenceMacro_GetReferent_7417816926334825622(final IOperationContext operationContext, final ReferenceMacroContext _context) {
+  public static Object referenceMacro_GetReferent_6836059379245881863(final IOperationContext operationContext, final ReferenceMacroContext _context) {
     return _context.getOutputNodeByInputNodeAndMappingLabel(SLinkOperations.getTarget(_context.getNode(), "element", true), "contentToVariable");
   }
 
