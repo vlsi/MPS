@@ -16,7 +16,6 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
 
 public class QueriesGenerated {
-
   public static boolean baseMappingRule_Condition_7417816926334599950(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
     return (SNodeOperations.getNextSibling(_context.getNode()) != null);
   }
@@ -26,11 +25,11 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_6512904248380246676(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return "simpleElement_" + _context.getNode().getId();
+    return _context.createUniqueName("simpleElement_", _context.getNode());
   }
 
   public static Object propertyMacro_GetPropertyValue_7417816926334566982(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return "text_" + _context.getNode().getId();
+    return _context.createUniqueName("text_", _context.getNode());
   }
 
   public static Object propertyMacro_GetPropertyValue_7417816926334570620(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -38,7 +37,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_7417816926334629400(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return "elementMacro_" + _context.getNode().getId();
+    return _context.createUniqueName("elementMacro_", _context.getNode());
   }
 
   public static Object propertyMacro_GetPropertyValue_7417816926334662377(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -108,5 +107,4 @@ public class QueriesGenerated {
   public static Iterable sourceNodesQuery_7417816926334825640(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     return SLinkOperations.getTargets(SLinkOperations.getTarget(_context.getNode(), "contentList", true), "content", true);
   }
-
 }
