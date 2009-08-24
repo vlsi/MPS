@@ -38030,7 +38030,7 @@
   </node>
   <node type="jetbrains.mps.lang.plugin.structure.RunConfigurationDeclaration" id="4434783588132660316">
     <property name="name" value="DefaultJavaApplication" />
-    <property name="caption" value="Application" />
+    <property name="caption" value="Java Application" />
     <property name="package" value="run" />
     <link role="configType" targetNodeId="4434783588132660334" resolveInfo="BLApp" />
     <node role="property" type="jetbrains.mps.lang.plugin.structure.PersistentPropertyDeclaration" id="5818815547539277815">
@@ -38192,7 +38192,7 @@
                   <link role="variableDeclaration" targetNodeId="4992326748908861329" resolveInfo="project" />
                 </node>
                 <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="4992326748908861343">
-                  <link role="baseMethodDeclaration" targetNodeId="114.~ComponentManager.getComponent(java.lang.Class):java.lang.Object" resolveInfo="getComponent" />
+                  <link role="baseMethodDeclaration" targetNodeId="114.~ComponentManager.getComponent(java.lang.String):com.intellij.openapi.components.BaseComponent" resolveInfo="getComponent" />
                   <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.ClassifierClassExpression" id="4992326748908861344">
                     <link role="classifier" targetNodeId="113.~MPSProjectHolder" resolveInfo="MPSProjectHolder" />
                   </node>
@@ -38526,7 +38526,7 @@
           <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="680902548763310821">
             <node role="statement" type="jetbrains.mps.lang.plugin.structure.ReportErrorStatement" id="680902548763310829">
               <node role="error" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="680902548763310831">
-                <property name="value" value="node does not exist anymore" />
+                <property name="value" value="node is not selected or does not exist" />
               </node>
             </node>
           </node>
@@ -38542,8 +38542,7 @@
   </node>
   <node type="jetbrains.mps.lang.plugin.structure.RunConfigurationTypeDeclaration" id="4434783588132660334">
     <property name="name" value="JavaApplication" />
-    <property name="caption" value="Application" />
-    <property name="description" value="Base Language Application" />
+    <property name="caption" value="Java Application" />
     <property name="package" value="run" />
   </node>
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="7594443577466871976">

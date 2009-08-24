@@ -21,11 +21,11 @@ public class JavaApplication_ConfigurationType implements ConfigurationType {
   }
 
   public String getConfigurationTypeDescription() {
-    return "Base Language Application";
+    return "";
   }
 
   public String getDisplayName() {
-    return "Application";
+    return "Java Application";
   }
 
   public Icon getIcon() {

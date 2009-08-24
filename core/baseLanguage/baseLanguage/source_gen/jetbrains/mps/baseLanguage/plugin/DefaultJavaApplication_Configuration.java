@@ -75,7 +75,7 @@ public class DefaultJavaApplication_Configuration extends RunConfigurationBase {
         });
       }
       if (node.value == null) {
-        error.append("node does not exist anymore").append("\n");
+        error.append("node is not selected or does not exist").append("\n");
       }
     }
     if (error.length() != 0) {
