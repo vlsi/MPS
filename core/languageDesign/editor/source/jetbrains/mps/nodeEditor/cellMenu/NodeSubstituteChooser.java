@@ -504,13 +504,8 @@ public class NodeSubstituteChooser implements KeyboardHandler {
     String prefix = pattern.substring(0, pattern.length() - 1);
     if (myNodeSubstituteInfo.hasExactlyNActions(pattern, false, 0) &&
       myNodeSubstituteInfo.hasExactlyNActions(prefix, true, 1)) {
-      INodeSubstituteAction action = getMatchingActions(prefix, true).get(0);
-      final SNode node = action.substitute(myEditorComponent.getEditorContext(), prefix);
 
-      myEditorComponent.flushEvents();
-
-      EditorCell cell = myEditorComponent.findNodeCell(node);
-      myEditorComponent.changeSelection(cell);
+      EditorCell cell = myEditorComponent.getSelectedCell();      
       if (cell instanceof EditorCell_Label) {
         IntelligentInputUtil.processCell((EditorCell_Label) cell, myEditorComponent.getEditorContext(), pattern, CellSide.RIGHT);
       }
