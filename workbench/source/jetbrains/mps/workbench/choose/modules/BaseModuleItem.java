@@ -28,7 +28,7 @@ public abstract class BaseModuleItem implements NavigationItem {
 
   public BaseModuleItem(IModule module) {
     myModule = module;
-    myShortName = NameUtil.shortNameFromLongName(myModule.getModuleUID());
+    myShortName = NameUtil.shortNameFromLongName(myModule.getModuleNamespace());
   }
 
   public IModule getModule() {

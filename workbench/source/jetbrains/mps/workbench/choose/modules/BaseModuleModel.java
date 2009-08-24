@@ -27,10 +27,10 @@ public abstract class BaseModuleModel extends BaseMPSChooseModel<IModule> {
   }
 
   public String doGetFullName(Object element) {
-    return ((BaseModuleItem) element).getModule().getModuleUID();
+    return ((BaseModuleItem) element).getModule().getModuleNamespace();
   }
 
   public String doGetObjectName(IModule module) {
-    return module.getModuleFqName();
+    return module.getModuleNamespace();
   }
 }

@@ -50,6 +50,6 @@ public class ModelPresentation extends BasePresentation {
   private String getModuleUID() {
     IModule module = myModelDescriptor.getModule();
     if (module == null) return "no module";
-    return module.getModuleUID();
+    return module.getModuleNamespace();
   }
 }

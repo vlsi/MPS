@@ -171,11 +171,11 @@ public class CommonChoosers {
 
     BaseMPSChooseModel<T> goToModuleModel = new BaseMPSChooseModel<T>(mpsProject, entityString) {
       public String doGetFullName(Object element) {
-        return ((BaseModuleItem) element).getModule().getModuleFqName();
+        return ((BaseModuleItem) element).getModule().getModuleNamespace();
       }
 
       public String doGetObjectName(T module) {
-        return module.getModuleFqName();
+        return module.getModuleNamespace();
       }
 
       public NavigationItem doGetNavigationItem(final T module) {
