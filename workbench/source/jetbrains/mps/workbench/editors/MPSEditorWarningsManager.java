@@ -37,10 +37,7 @@ import jetbrains.mps.project.structure.project.testconfigurations.ModuleTestConf
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.reloading.ReloadAdapter;
 import jetbrains.mps.reloading.ReloadListener;
-import jetbrains.mps.smodel.Language;
-import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.smodel.SModelDescriptor;
+import jetbrains.mps.smodel.*;
 import jetbrains.mps.workbench.nodesFs.MPSNodeVirtualFile;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
@@ -97,7 +94,11 @@ public class MPSEditorWarningsManager implements ProjectComponent {
           myWarnings.remove(editor);
         }
 
-        SModel smodel = editor.getFile().getNode().getModel();
+        SNode node = editor.getFile().getNode();
+        if (node == null) {
+          return;
+        }
+        SModel smodel = node.getModel();
 
         if (smodel == null) {
           return;
