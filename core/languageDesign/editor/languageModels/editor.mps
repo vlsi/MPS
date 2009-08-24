@@ -378,6 +378,9 @@
           <node role="styleItem" type="jetbrains.mps.lang.editor.structure.DrawBorderStyleClassItem" id="1237473996317">
             <property name="flag" value="true" />
           </node>
+          <node role="styleItem" type="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem" id="4402508398722002657">
+            <property name="flag" value="false" />
+          </node>
           <node role="cellLayout" type="jetbrains.mps.lang.editor.structure.CellLayout_VerticalGrid" id="1239878606820" />
         </node>
         <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="1237473996318">
@@ -435,9 +438,6 @@
           <node role="cellLayout" type="jetbrains.mps.lang.editor.structure.CellLayout_Horizontal" id="1239878594141" />
         </node>
         <node role="cellLayout" type="jetbrains.mps.lang.editor.structure.CellLayout_Vertical" id="1239878593766" />
-        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem" id="4402508398720620024">
-          <property name="flag" value="false" />
-        </node>
       </node>
       <node role="alternationCondition" type="jetbrains.mps.lang.editor.structure.QueryFunction_NodeCondition" id="1237473994194">
         <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1237473994195">
