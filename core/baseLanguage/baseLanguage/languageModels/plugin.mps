@@ -39066,6 +39066,25 @@
                           <node role="type" type="jetbrains.mps.lang.smodel.structure.SModelType" id="60375257504271585" />
                         </node>
                       </node>
+                      <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="7948788081302407617">
+                        <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="7948788081302407618">
+                          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ContinueStatement" id="7948788081302407648" />
+                        </node>
+                        <node role="condition" type="jetbrains.mps.baseLanguage.structure.EqualsExpression" id="7948788081302407641">
+                          <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference" id="7948788081302407645">
+                            <link role="classifier" targetNodeId="5.~SModelStereotype" resolveInfo="SModelStereotype" />
+                            <link role="variableDeclaration" targetNodeId="5.~SModelStereotype.JAVA_STUB" resolveInfo="JAVA_STUB" />
+                          </node>
+                          <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="7948788081302407626">
+                            <node role="operand" type="jetbrains.mps.baseLanguage.collections.structure.ForEachVariableReference" id="7948788081302407621">
+                              <link role="variable" targetNodeId="60375257504271575" resolveInfo="modelDescr" />
+                            </node>
+                            <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="7948788081302407635">
+                              <link role="baseMethodDeclaration" targetNodeId="5.~SModelDescriptor.getStereotype():java.lang.String" resolveInfo="getStereotype" />
+                            </node>
+                          </node>
+                        </node>
+                      </node>
                       <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="60375257504271586">
                         <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="60375257504271587">
                           <property name="name" value="runnableClasses" />
