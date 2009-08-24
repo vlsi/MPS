@@ -39,6 +39,7 @@ import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.JarFileEntryFile;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 import java.io.File;
 import java.io.IOException;
@@ -98,7 +99,11 @@ public abstract class AbstractModule implements IModule {
     return myModuleReference.getModuleFqName();
   }
 
+  @Nullable
   public String getModuleNamespace() {
+    //transient models module
+    if (getModuleDescriptor() == null) return null;
+
     return getModuleDescriptor().getNamespace();
   }
 
@@ -116,6 +121,7 @@ public abstract class AbstractModule implements IModule {
   }
 
   public void onModuleLoad() {
+
     boolean needToSave = false;
 
     if (updateSModelReferences()) {
@@ -326,7 +332,7 @@ public abstract class AbstractModule implements IModule {
       IModule m = MPSModuleRepository.getInstance().getModule(dep.getModuleRef());
       if (m != null) {
         result.add(m);
-      } 
+      }
     }
     return result;
   }
@@ -843,7 +849,7 @@ public abstract class AbstractModule implements IModule {
   }
 
   private class MyClassPathModelRootManager extends ClassPathModelRootManager {
-    public IClassPathItem getClassPathItem() {      
+    public IClassPathItem getClassPathItem() {
       return myClassPath;
     }
   }

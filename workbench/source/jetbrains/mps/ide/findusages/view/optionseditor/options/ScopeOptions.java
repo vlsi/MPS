@@ -21,6 +21,7 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.GlobalScopeMinusTransient;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.MPSProject;
+import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.*;
 import org.jdom.Element;
 import org.jetbrains.annotations.NotNull;
@@ -101,11 +102,11 @@ public class ScopeOptions extends BaseOptions {
       if (myModule.equals(DEFAULT_VALUE)) {
         scope = new OnlyModuleScope(operationContext.getModule());
       } else {
-        IModule module = MPSModuleRepository.getInstance().getModuleByUID(myModule);
+        IModule module = getModuleByNamespace(myModule);
         if (module == null) {
-          myModule = operationContext.getModule().getModuleUID();
-          module = MPSModuleRepository.getInstance().getModuleByUID(myModule);
           LOG.error("Module is not found for " + myModule + ". Using current module.");
+          module = operationContext.getModule();
+          myModule = module.getModuleNamespace();
         }
         scope = new OnlyModuleScope(module);
       }
@@ -127,6 +128,21 @@ public class ScopeOptions extends BaseOptions {
     } else throw new IllegalArgumentException();
 
     return scope;
+  }
+
+  private IModule getModuleByNamespace(String namespace) {
+    MPSModuleRepository repo = MPSModuleRepository.getInstance();
+
+    IModule result = repo.getModule(new ModuleReference(namespace));
+    if (result != null) return result;
+
+    for (IModule module : repo.getAllModules()) {
+      String moduleNamespace = module.getModuleNamespace();
+      if (moduleNamespace == null) continue;
+      if (moduleNamespace.equals(namespace)) return module;
+    }
+
+    return null;
   }
 
   @NotNull
