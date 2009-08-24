@@ -17,6 +17,8 @@ package jetbrains.mps.nodeEditor.cellMenu;
 
 import jetbrains.mps.nodeEditor.cells.TextLine;
 import jetbrains.mps.nodeEditor.EditorComponent;
+import jetbrains.mps.ide.IdeMain;
+import jetbrains.mps.ide.IdeMain.TestMode;
 
 import javax.swing.JWindow;
 import java.awt.*;
@@ -36,7 +38,7 @@ public class NodeSubstitutePatternEditor {
   private int myCachedCaretPosition;
 
   public void setText(String text) {
-    if(myEditorActivated) {
+    if (myEditorActivated) {
       myEditorWindow.myTextLine.setText(text);
       myEditorWindow.relayout();
       myEditorWindow.repaint();
@@ -46,14 +48,14 @@ public class NodeSubstitutePatternEditor {
   }
 
   public String getText() {
-    if(myEditorActivated) {
+    if (myEditorActivated) {
       return myEditorWindow.myTextLine.getText();
     }
     return myCachedText;
   }
 
   public void setCaretPosition(int caretPosition) {
-    if(myEditorActivated) {
+    if (myEditorActivated) {
       myEditorWindow.myTextLine.setCaretPosition(caretPosition);
       myEditorWindow.repaint();
     } else {
@@ -66,8 +68,8 @@ public class NodeSubstitutePatternEditor {
   }
 
   public boolean processKeyPressed(KeyEvent keyEvent) {
-    if(myEditorActivated) {
-      return myEditorWindow.processKeyPressed(keyEvent);      
+    if (myEditorActivated) {
+      return myEditorWindow.processKeyPressed(keyEvent);
     }
     return false;
   }
@@ -80,14 +82,14 @@ public class NodeSubstitutePatternEditor {
   }
 
   public String getPattern() {
-    if(myEditorActivated) {
+    if (myEditorActivated) {
       TextLine textLine = myEditorWindow.myTextLine;
       int caretPosition = textLine.getCaretPosition();
       String text = textLine.getText();
       return text.substring(0, caretPosition);
     }
 
-    if(myCachedText == null) {
+    if (myCachedText == null) {
       return null;
     }
     int caretPos = Math.min(myCachedText.length(), Math.max(myCachedCaretPosition, 0));
@@ -96,16 +98,17 @@ public class NodeSubstitutePatternEditor {
 
   // ------------------
   public void activate(Window owner, Point location, Dimension size) {
-    if(!myEditorActivated) {
+    if (!myEditorActivated) {
       myEditorActivated = true;
       myEditorWindow = new EditorWindow(owner);
       myEditorWindow.setLocation(location);
       myEditorWindow.setMinimalSize(size);
       myEditorWindow.myTextLine.setText(myCachedText);
       myEditorWindow.myTextLine.setCaretPosition(myCachedCaretPosition);
-
-      myEditorWindow.relayout();
-      myEditorWindow.setVisible(true);
+      if (!(IdeMain.getTestMode() == TestMode.CORE_TEST)) {
+        myEditorWindow.relayout();
+        myEditorWindow.setVisible(true);
+      }
     }
   }
 
@@ -114,7 +117,7 @@ public class NodeSubstitutePatternEditor {
   }
 
   public void done() {
-    if(myEditorActivated) {
+    if (myEditorActivated) {
       myEditorWindow.dispose();
       myEditorActivated = false;
     }
@@ -155,7 +158,7 @@ public class NodeSubstitutePatternEditor {
     }
 
     public boolean processKeyTyped(KeyEvent keyEvent) {
-      if(processKeyTypedInternal(keyEvent)) {
+      if (processKeyTypedInternal(keyEvent)) {
         relayout();
         repaint();
         return true;
@@ -178,7 +181,7 @@ public class NodeSubstitutePatternEditor {
     }
 
     public boolean processKeyPressed(KeyEvent keyEvent) {
-      if(processKeyPressedInternal(keyEvent)) {
+      if (processKeyPressedInternal(keyEvent)) {
         relayout();
         repaint();
         return true;
@@ -187,14 +190,14 @@ public class NodeSubstitutePatternEditor {
     }
 
     private boolean processKeyPressedInternal(KeyEvent keyEvent) {
-      if(keyEvent.isControlDown()) {
+      if (keyEvent.isControlDown()) {
         return false;
       }
 
       String oldText = myTextLine.getText();
       int caretPosition = myTextLine.getCaretPosition();
-      if(keyEvent.getKeyCode() == KeyEvent.VK_BACK_SPACE) {
-        if(caretPosition > 0) {
+      if (keyEvent.getKeyCode() == KeyEvent.VK_BACK_SPACE) {
+        if (caretPosition > 0) {
           changeText(oldText.substring(0, caretPosition - 1) + oldText.substring(caretPosition));
           myTextLine.setCaretPosition(caretPosition - 1);
           return true;
@@ -203,8 +206,8 @@ public class NodeSubstitutePatternEditor {
         }
       }
 
-      if(keyEvent.getKeyCode() == KeyEvent.VK_DELETE) {
-        if(caretPosition < oldText.length()) {
+      if (keyEvent.getKeyCode() == KeyEvent.VK_DELETE) {
+        if (caretPosition < oldText.length()) {
           changeText(oldText.substring(0, caretPosition) + oldText.substring(caretPosition + 1));
           return true;
         } else {
@@ -212,8 +215,8 @@ public class NodeSubstitutePatternEditor {
         }
       }
 
-      if(keyEvent.getKeyCode() == KeyEvent.VK_LEFT) {
-        if(caretPosition > 0) {
+      if (keyEvent.getKeyCode() == KeyEvent.VK_LEFT) {
+        if (caretPosition > 0) {
           myTextLine.setCaretPosition(caretPosition - 1);
           return true;
         } else {
@@ -221,8 +224,8 @@ public class NodeSubstitutePatternEditor {
         }
       }
 
-      if(keyEvent.getKeyCode() == KeyEvent.VK_RIGHT) {
-        if(caretPosition < oldText.length()) {
+      if (keyEvent.getKeyCode() == KeyEvent.VK_RIGHT) {
+        if (caretPosition < oldText.length()) {
           myTextLine.setCaretPosition(caretPosition + 1);
           return true;
         } else {

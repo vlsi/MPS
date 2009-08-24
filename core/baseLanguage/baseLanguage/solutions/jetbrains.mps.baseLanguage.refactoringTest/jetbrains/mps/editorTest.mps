@@ -4531,5 +4531,56 @@
       </node>
     </node>
   </node>
+  <node type="jetbrains.mps.lang.test.structure.EditorTestCase" id="3294454325389348340">
+    <property name="name" value="IntelligentInputWithSubstitutionChooser" />
+    <node role="nodeToEdit" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="3294454325389407451">
+      <property name="name" value="method" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="3294454325389407452" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="3294454325389407453" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="3294454325389407454">
+        <node role="testNode$attribute" type="jetbrains.mps.lang.test.structure.AnonymousCellAnnotation" id="3294454325389417944">
+          <property name="isLastPosition" value="true" />
+          <property name="useLabelSelection" value="true" />
+          <property name="selectionStart" value="0" />
+          <property name="selectionEnd" value="0" />
+          <property name="cellId" value="Constant_6577_0" />
+        </node>
+      </node>
+    </node>
+    <node role="result" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="3294454325389407455">
+      <property name="name" value="method" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="3294454325389407456" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="3294454325389407457" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="3294454325389407458">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1083877150830981897">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference" id="1083877150830981898">
+            <link role="classifier" targetNodeId="25.~Color" resolveInfo="Color" />
+            <link role="variableDeclaration" targetNodeId="25.~Color.BLACK" resolveInfo="BLACK" />
+            <node role="testNode$attribute" type="jetbrains.mps.lang.test.structure.AnonymousCellAnnotation" id="1083877150830981899">
+              <property name="isLastPosition" value="true" />
+              <property name="useLabelSelection" value="true" />
+              <property name="selectionStart" value="5" />
+              <property name="selectionEnd" value="5" />
+              <property name="cellId" value="property_name" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="code" type="jetbrains.mps.baseLanguage.structure.StatementList" id="3294454325389417939">
+      <node role="statement" type="jetbrains.mps.lang.test.structure.TypeKeyStatement" id="3294454325389417940">
+        <property name="keys" value="C" />
+      </node>
+      <node role="statement" type="jetbrains.mps.lang.test.structure.PressKeyStatement" id="3294454325389417942">
+        <node role="keyStrokes" type="jetbrains.mps.lang.plugin.structure.KeyMapKeystroke" id="3294454325389417943">
+          <property name="modifiers" value="ctrl" />
+          <property name="keycode" value="VK_SPACE" />
+        </node>
+      </node>
+      <node role="statement" type="jetbrains.mps.lang.test.structure.TypeKeyStatement" id="3294454325389417946">
+        <property name="keys" value="olor.BLACK" />
+      </node>
+    </node>
+  </node>
 </model>
 

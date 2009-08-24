@@ -137,6 +137,8 @@ public class NodeSubstituteChooser implements KeyboardHandler {
           getPopupWindow().relayout();
           getPopupWindow().setSelectionIndex(0);
           getPopupWindow().setVisible(true);
+        } else {
+          getPatternEditor().activate(null, myPatternEditorLocation, myPatternEditorSize);
         }
         myPopupActivated = true;
       } else {
@@ -370,7 +372,9 @@ public class NodeSubstituteChooser implements KeyboardHandler {
     if (getPatternEditor().processKeyTyped(keyEvent)) {
       if (myPopupActivated) {
         rebuildMenuEntries();
-        relayoutPopupMenu();
+        if (!(IdeMain.getTestMode() == TestMode.CORE_TEST)) {
+          relayoutPopupMenu();
+        }
         tryToApplyIntelligentInput();
       }
       return true;
