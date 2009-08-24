@@ -98,6 +98,10 @@ public abstract class AbstractModule implements IModule {
     return myModuleReference.getModuleFqName();
   }
 
+  public String getModuleNamespace() {
+    return getModuleDescriptor().getNamespace();
+  }
+
   @Deprecated
   public String getModuleUID() {
     return getModuleFqName();

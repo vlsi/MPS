@@ -39,6 +39,8 @@ public interface IModule extends ModelOwner, MPSModuleOwner {
 
   String getModuleFqName();
 
+  String getModuleNamespace();
+
   List<SModelDescriptor> getOwnModelDescriptors();
 
   List<SModelRoot> getSModelRoots();
