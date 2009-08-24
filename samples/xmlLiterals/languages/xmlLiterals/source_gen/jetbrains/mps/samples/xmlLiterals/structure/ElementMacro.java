@@ -25,7 +25,6 @@ public class ElementMacro extends Content {
     super.setChild(ElementMacro.EXPRESSION, node);
   }
 
-
   public static ElementMacro newInstance(SModel sm, boolean init) {
     return (ElementMacro)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.samples.xmlLiterals.structure.ElementMacro", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -33,5 +32,4 @@ public class ElementMacro extends Content {
   public static ElementMacro newInstance(SModel sm) {
     return ElementMacro.newInstance(sm, false);
   }
-
 }

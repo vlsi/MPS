@@ -25,7 +25,6 @@ public class XmlLiteral extends Expression {
     super.setChild(XmlLiteral.ELEMENT, node);
   }
 
-
   public static XmlLiteral newInstance(SModel sm, boolean init) {
     return (XmlLiteral)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.samples.xmlLiterals.structure.XmlLiteral", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -33,5 +32,4 @@ public class XmlLiteral extends Expression {
   public static XmlLiteral newInstance(SModel sm) {
     return XmlLiteral.newInstance(sm, false);
   }
-
 }

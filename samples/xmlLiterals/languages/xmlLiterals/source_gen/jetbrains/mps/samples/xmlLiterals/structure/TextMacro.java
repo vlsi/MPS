@@ -25,7 +25,6 @@ public class TextMacro extends BaseText {
     super.setChild(TextMacro.EXPRESSION, node);
   }
 
-
   public static TextMacro newInstance(SModel sm, boolean init) {
     return (TextMacro)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.samples.xmlLiterals.structure.TextMacro", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -33,5 +32,4 @@ public class TextMacro extends BaseText {
   public static TextMacro newInstance(SModel sm) {
     return TextMacro.newInstance(sm, false);
   }
-
 }
