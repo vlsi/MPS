@@ -187,5 +187,8 @@
       </node>
     </node>
   </node>
+  <node type="jetbrains.mps.lang.test.structure.TestInfo" id="4402508398720854500">
+    <property name="projectPath" value="${mps_home}/core/baseLanguage/closures/closures.mpr" />
+  </node>
 </model>
 

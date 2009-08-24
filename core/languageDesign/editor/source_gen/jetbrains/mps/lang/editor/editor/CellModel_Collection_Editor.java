@@ -125,6 +125,10 @@ public class CellModel_Collection_Editor extends DefaultNodeEditor {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_2102_5");
     Styles_StyleSheet.getRootCellModelStyle(editorCell).apply(editorCell);
+    {
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.SELECTABLE, false);
+    }
     if (renderingCondition2102_1(node, editorContext, editorContext.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.createCollection_2102_6(editorContext, node));
     }
