@@ -40,15 +40,20 @@ public class VFileSystem {
         entryPath = entryPath.substring(1);
       }
 
-      return getJarEntryFile(new File(jarFileName), entryPath);
-    } else {
-      return getFile(new File(path));
+      VirtualFile result = getJarEntryFile(new File(jarFileName), entryPath);
+
+      if (result != null) {
+        return result;
+      }
     }
+      
+    return getFile(new File(path));
   }
 
-  public static VirtualFile getJarEntryFile(File jarRootFile, String entryPath) {
+  private static VirtualFile getJarEntryFile(File jarRootFile, String entryPath) {
     VirtualFile jarRoot = getJarFileRoot(jarRootFile);
-    assert jarRoot != null;
+
+    if (jarRoot == null) return null;
 
     VirtualFile entryFile = jarRoot.findFileByRelativePath(entryPath);
     return entryFile;
