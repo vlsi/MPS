@@ -1,11 +1,11 @@
-package jetbrains.mps.diff.test;
+package jetbrains.mps.diff;
 
 import java.util.List;
 import java.io.File;
 
 import junit.framework.TestCase;
 import jetbrains.mps.util.FileUtil;
-import jetbrains.mps.diff.test.DiffTestCase;
+import jetbrains.mps.diff.DiffTestCase;
 import jetbrains.mps.project.tester.TestComparator;
 
 public abstract class BaseDiffTestCase extends TestCase {

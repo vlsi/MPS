@@ -1,6 +1,6 @@
-package jetbrains.mps.diff.test;
+package jetbrains.mps.diff;
 
-import jetbrains.mps.diff.test.BaseDiffTestCase;
+import jetbrains.mps.diff.BaseDiffTestCase;
 
 import java.util.List;
 import java.util.Arrays;
