@@ -572,9 +572,6 @@
       <property name="value" value="2" />
       <link role="conceptPropertyDeclaration" targetNodeId="1166617629900" resolveInfo="priority" />
     </node>
-    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.BooleanConceptProperty" id="4741152186081401725">
-      <link role="conceptPropertyDeclaration" targetNodeId="4.1137473994950" resolveInfo="dontSubstituteByDefault" />
-    </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1068581242874">
     <property name="name" value="ParameterReference" />
