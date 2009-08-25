@@ -21,7 +21,6 @@ public class UndeclaredVariableReference extends BaseConcept implements IStringE
     super(node);
   }
 
-
   public String getAntName() {
     return this.getProperty(UndeclaredVariableReference.ANT_NAME);
   }
@@ -61,7 +60,6 @@ public class UndeclaredVariableReference extends BaseConcept implements IStringE
   public void setVirtualPackage(String value) {
     this.setProperty(UndeclaredVariableReference.VIRTUAL_PACKAGE, value);
   }
-
 
   public static UndeclaredVariableReference newInstance(SModel sm, boolean init) {
     return (UndeclaredVariableReference)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.custommpsInternal.structure.UndeclaredVariableReference", sm, GlobalScope.getInstance(), init).getAdapter();

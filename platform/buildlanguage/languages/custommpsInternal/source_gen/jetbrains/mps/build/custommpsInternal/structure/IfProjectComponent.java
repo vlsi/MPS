@@ -25,7 +25,6 @@ public class IfProjectComponent extends AbstractProjectComponent implements IAbs
     super(node);
   }
 
-
   public String getName() {
     return this.getProperty(IfProjectComponent.NAME);
   }
@@ -81,7 +80,6 @@ public class IfProjectComponent extends AbstractProjectComponent implements IAbs
   public void setIfFaulse(AbstractProjectComponent node) {
     super.setChild(IfProjectComponent.IF_FAULSE, node);
   }
-
 
   public static IfProjectComponent newInstance(SModel sm, boolean init) {
     return (IfProjectComponent)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.custommpsInternal.structure.IfProjectComponent", sm, GlobalScope.getInstance(), init).getAdapter();

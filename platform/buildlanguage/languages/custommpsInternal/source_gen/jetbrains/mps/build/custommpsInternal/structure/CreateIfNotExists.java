@@ -17,7 +17,6 @@ public class CreateIfNotExists extends AbstractProjectComponent {
     super(node);
   }
 
-
   public String getArtifactName() {
     return this.getProperty(CreateIfNotExists.ARTIFACT_NAME);
   }
@@ -33,7 +32,6 @@ public class CreateIfNotExists extends AbstractProjectComponent {
   public void setCreate(AbstractProjectComponent node) {
     super.setChild(CreateIfNotExists.CREATE, node);
   }
-
 
   public static CreateIfNotExists newInstance(SModel sm, boolean init) {
     return (CreateIfNotExists)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.custommpsInternal.structure.CreateIfNotExists", sm, GlobalScope.getInstance(), init).getAdapter();
