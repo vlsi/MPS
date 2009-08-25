@@ -1,0 +1,24 @@
+**** old text
+---- generated text
+*****************
+**** 1, 2 ****
+ diff
+!test
+ case
+ content
+---- 1, 2 ----
+ diff
+!es
+ case
+ conen
+*****************
+**** 3, 4 ****
+ diff
+ test
+ case
+!content
+---- 3, 4 ----
+ diff
+ es
+ case
+!conen

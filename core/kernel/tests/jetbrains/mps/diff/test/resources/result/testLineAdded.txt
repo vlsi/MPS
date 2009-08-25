@@ -1,0 +1,8 @@
+**** old text
+---- generated text
+*****************
+---- 3, 4 ----
+ diff
+ test
+ case
++content

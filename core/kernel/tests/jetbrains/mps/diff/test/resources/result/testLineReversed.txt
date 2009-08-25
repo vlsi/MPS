@@ -1,0 +1,19 @@
+**** old text
+---- generated text
+*****************
+**** 0, 1 ****
+!diff
+ test
+ case
+ content
+---- 0, 2 ----
+!content
+!case
+ test
+ diff
+*****************
+**** 2, 3 ****
+ diff
+ test
+-case
+ content

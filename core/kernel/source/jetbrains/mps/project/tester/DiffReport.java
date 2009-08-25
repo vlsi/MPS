@@ -60,18 +60,22 @@ public class DiffReport {
   @Override
   public String toString() {
     StringBuilder stringBuilder = new StringBuilder();
-    stringBuilder.append(OLD_CONTENT_SYMBOL + " old text\n");
-    stringBuilder.append(NEW_CONTENT_SYMBOL + " generated text\n");
-    for (Change change : myChanges) {
-      stringBuilder.append(SEPARATOR + "\n");
-      char type = change.getType();
-      if (type == Change.DELETED || type == Change.CHANGED) {
-        stringBuilder.append(getChangeHeader(change, true));
-        stringBuilder.append(getChangeReport(change, myContentOld, true));
-      }
-      if (type == Change.ADDED || type == Change.CHANGED) {
-        stringBuilder.append(getChangeHeader(change, false));
-        stringBuilder.append(getChangeReport(change, myContentNew, false));
+    if (myChanges.isEmpty()) {
+      stringBuilder.append("No diff");
+    } else {
+      stringBuilder.append(OLD_CONTENT_SYMBOL + " old text\n");
+      stringBuilder.append(NEW_CONTENT_SYMBOL + " generated text\n");
+      for (Change change : myChanges) {
+        stringBuilder.append(SEPARATOR + "\n");
+        char type = change.getType();
+        if (type == Change.DELETED || type == Change.CHANGED) {
+          stringBuilder.append(getChangeHeader(change, true));
+          stringBuilder.append(getChangeReport(change, myContentOld, true));
+        }
+        if (type == Change.ADDED || type == Change.CHANGED) {
+          stringBuilder.append(getChangeHeader(change, false));
+          stringBuilder.append(getChangeReport(change, myContentNew, false));
+        }
       }
     }
     return stringBuilder.toString();

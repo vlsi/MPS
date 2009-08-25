@@ -1,5 +1,0 @@
-0a0
-> diff
-> test
-> case
-> content

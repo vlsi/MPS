@@ -1,13 +1,12 @@
-package jetbrains.mps.test.diff;
+package jetbrains.mps.diff.test;
 
-import jetbrains.mps.test.diff.BaseDiffTestCase;
+import jetbrains.mps.diff.test.BaseDiffTestCase;
 
 import java.util.List;
 import java.util.Arrays;
 import java.util.Collections;
 
 public class DiffTestCase extends BaseDiffTestCase {
-
   public void testContentDeleted() {
     assertDiff(myContent, new String[0]);
   }

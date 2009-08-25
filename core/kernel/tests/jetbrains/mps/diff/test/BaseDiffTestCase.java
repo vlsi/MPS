@@ -1,11 +1,11 @@
-package jetbrains.mps.test.diff;
+package jetbrains.mps.diff.test;
 
 import java.util.List;
 import java.io.File;
 
 import junit.framework.TestCase;
 import jetbrains.mps.util.FileUtil;
-import jetbrains.mps.test.diff.DiffTestCase;
+import jetbrains.mps.diff.test.DiffTestCase;
 import jetbrains.mps.project.tester.TestComparator;
 
 public abstract class BaseDiffTestCase extends TestCase {
@@ -18,7 +18,7 @@ public abstract class BaseDiffTestCase extends TestCase {
     String fileName = null;
     for (StackTraceElement e : stack) {
       if (e.getClassName().equals(DiffTestCase.class.getName())) {
-        fileName = "core\\kernel\\tests\\jetbrains\\mps\\test\\resources\\result\\" + e.getMethodName() + ".txt";
+        fileName = "core\\kernel\\tests\\jetbrains\\mps\\diff\\test\\resources\\result\\" + e.getMethodName() + ".txt";
       }
     }
     File file = new File(fileName);
@@ -29,7 +29,7 @@ public abstract class BaseDiffTestCase extends TestCase {
   }
 
   void assertDiff(String fileName) {
-    String path = "core\\kernel\\tests\\jetbrains\\mps\\test\\resources\\";
+    String path = "core\\kernel\\tests\\jetbrains\\mps\\diff\\test\\resources\\";
     String fullName = path + fileName + "1.txt";
     assertDiff(FileUtil.read(new File(fullName)).split("\n"),
       FileUtil.read(new File(fullName.replace("1", "2"))).split("\n"));

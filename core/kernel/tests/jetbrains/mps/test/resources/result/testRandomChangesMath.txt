@@ -1,9 +1,0 @@
-2d2
-<   <component name="CodeStyleSettingsManager" />
-<   <component name="InspectionProjectProfileManager" />
-16d14
-<   <component name="ProjectKey" />
-<   <component name="ProjectModuleManager" />
-<   <component name="ProjectRunConfigurationManager" />
-<   <component name="SvnBranchConfigurationManager" />
-<   <component name="libraryTable" />
