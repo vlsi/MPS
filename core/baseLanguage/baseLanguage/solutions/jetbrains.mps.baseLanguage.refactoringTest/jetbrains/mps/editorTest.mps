@@ -4531,6 +4531,74 @@
       </node>
     </node>
   </node>
+  <node type="jetbrains.mps.lang.test.structure.EditorTestCase" id="2707740038604155061">
+    <property name="name" value="DeleteIfPossibleMethod" />
+    <property name="package" value="editorCell_Label" />
+    <node role="nodeToEdit" type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="2707740038604205732">
+      <property name="name" value="Clazz" />
+      <node role="field" type="jetbrains.mps.baseLanguage.structure.FieldDeclaration" id="2707740038604206763">
+        <property name="name" value="ff" />
+        <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PrivateVisibility" id="2707740038604206764" />
+        <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="7677149960895645482">
+          <link role="classifier" targetNodeId="25.~Color" resolveInfo="Color" />
+        </node>
+      </node>
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="2707740038604205733" />
+      <node role="constructor" type="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" id="2707740038604205734">
+        <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="2707740038604205735" />
+        <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="2707740038604205736" />
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="2707740038604205737">
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="2707740038604206770">
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="2707740038604206771">
+              <node role="operation" type="jetbrains.mps.baseLanguage.structure.FieldReferenceOperation" id="2707740038604206772">
+                <link role="fieldDeclaration" targetNodeId="2707740038604206763" resolveInfo="f" />
+                <node role="testNode$attribute" type="jetbrains.mps.lang.test.structure.AnonymousCellAnnotation" id="4790890636873570395">
+                  <property name="isLastPosition" value="true" />
+                  <property name="useLabelSelection" value="true" />
+                  <property name="selectionStart" value="2" />
+                  <property name="selectionEnd" value="2" />
+                  <property name="cellId" value="property_name" />
+                </node>
+              </node>
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="2707740038604206773" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="result" type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="2707740038604205738">
+      <property name="name" value="Clazz" />
+      <node role="field" type="jetbrains.mps.baseLanguage.structure.FieldDeclaration" id="2707740038604205744">
+        <property name="name" value="ff" />
+        <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PrivateVisibility" id="2707740038604205745" />
+        <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="4790890636873578754">
+          <link role="classifier" targetNodeId="25.~Color" resolveInfo="Color" />
+        </node>
+      </node>
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="2707740038604205739" />
+      <node role="constructor" type="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" id="2707740038604205740">
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="2707740038604205743">
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="4790890636873587119">
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="4790890636873587121">
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="4790890636873587120" />
+            </node>
+          </node>
+        </node>
+        <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="2707740038604205741" />
+        <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="2707740038604205742" />
+      </node>
+    </node>
+    <node role="code" type="jetbrains.mps.baseLanguage.structure.StatementList" id="2707740038604206776">
+      <node role="statement" type="jetbrains.mps.lang.test.structure.PressKeyStatement" id="2707740038604206777">
+        <node role="keyStrokes" type="jetbrains.mps.lang.plugin.structure.KeyMapKeystroke" id="2707740038604206778">
+          <property name="keycode" value="VK_BACK_SPACE" />
+        </node>
+        <node role="keyStrokes" type="jetbrains.mps.lang.plugin.structure.KeyMapKeystroke" id="4790890636873560736">
+          <property name="keycode" value="VK_BACK_SPACE" />
+        </node>
+      </node>
+    </node>
+  </node>
   <node type="jetbrains.mps.lang.test.structure.EditorTestCase" id="3294454325389348340">
     <property name="name" value="IntelligentInputWithSubstitutionChooser" />
     <node role="nodeToEdit" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="3294454325389407451">
