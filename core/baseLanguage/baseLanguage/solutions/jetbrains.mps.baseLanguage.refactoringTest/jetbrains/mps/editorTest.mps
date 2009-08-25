@@ -4581,12 +4581,12 @@
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="4790890636873587119">
             <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="5221496074473131272">
               <node role="operand" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="4790890636873587120" />
-              <node role="testNode$attribute" type="jetbrains.mps.lang.test.structure.AnonymousCellAnnotation" id="4921414442878616183">
+              <node role="testNode$attribute" type="jetbrains.mps.lang.test.structure.AnonymousCellAnnotation" id="7436746056274079321">
                 <property name="isLastPosition" value="true" />
                 <property name="useLabelSelection" value="true" />
                 <property name="selectionStart" value="0" />
                 <property name="selectionEnd" value="0" />
-                <property name="cellId" value="error_operation" />
+                <property name="cellId" value="empty_operation" />
               </node>
             </node>
           </node>
