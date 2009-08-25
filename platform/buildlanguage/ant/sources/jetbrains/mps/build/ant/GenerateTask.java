@@ -143,7 +143,7 @@ public class GenerateTask extends org.apache.tools.ant.Task {
       commandLine.add(getGeneratorClass().getCanonicalName());
       commandLine.add(myWhatToGenerate.toString());
 
-      Execute exe = new Execute(new MyExecuteStreamHandler());
+      Execute exe = new Execute(getExecuteStreamHandler());
       exe.setAntRun(this.getProject());
       exe.setWorkingDirectory(this.getProject().getBaseDir());
       exe.setCommandline(commandLine.toArray(new String[commandLine.size()]));
@@ -191,6 +191,10 @@ public class GenerateTask extends org.apache.tools.ant.Task {
         throw new BuildException(e);
       }
     }
+  }
+
+  protected GenerateTask.MyExecuteStreamHandler getExecuteStreamHandler() {
+    return new MyExecuteStreamHandler();
   }
 
   private void checkMpsHome() {
@@ -323,7 +327,7 @@ public class GenerateTask extends org.apache.tools.ant.Task {
     protected abstract void addMessage(String message);
   }
 
-  private class MyExecuteStreamHandler implements ExecuteStreamHandler {
+  protected class MyExecuteStreamHandler implements ExecuteStreamHandler {
     private Thread myOutputReadingThread;
     private Thread myErrorReadingThread;
 
@@ -335,10 +339,14 @@ public class GenerateTask extends org.apache.tools.ant.Task {
         public void run() {
           Scanner s = new Scanner(is);
           while (s.hasNextLine()) {
-            log(s.nextLine(), Project.MSG_ERR);
+            logError(s.nextLine());
           }
         }
       });
+    }
+
+    protected void logError(String line) {
+      log(line, Project.MSG_ERR);
     }
 
     public void setProcessOutputStream(final InputStream is) throws IOException {
@@ -346,10 +354,14 @@ public class GenerateTask extends org.apache.tools.ant.Task {
         public void run() {
           Scanner s = new Scanner(is);
           while (s.hasNextLine()) {
-            log(s.nextLine());
+            logOutput(s.nextLine());
           }
         }
       });
+    }
+
+    protected void logOutput(String line) {
+      log(line);
     }
 
     public void start() throws IOException {
