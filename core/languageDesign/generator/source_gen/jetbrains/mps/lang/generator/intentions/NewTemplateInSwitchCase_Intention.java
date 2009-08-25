@@ -14,8 +14,8 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.ide.ui.smodel.SModelTreeNode;
 
-public class NewTemplateInReductionRule_Intention extends BaseIntention {
-  public NewTemplateInReductionRule_Intention() {
+public class NewTemplateInSwitchCase_Intention extends BaseIntention {
+  public NewTemplateInSwitchCase_Intention() {
   }
 
   public String getConcept() {
@@ -46,7 +46,7 @@ public class NewTemplateInReductionRule_Intention extends BaseIntention {
   }
 
   public boolean isApplicableToNode(final SNode node, final EditorContext editorContext) {
-    if (SConceptOperations.isExactly(SNodeOperations.getConceptDeclaration(SNodeOperations.getParent(node)), "jetbrains.mps.lang.generator.structure.TemplateSwitch")) {
+    if (!(SConceptOperations.isExactly(SNodeOperations.getConceptDeclaration(SNodeOperations.getParent(node)), "jetbrains.mps.lang.generator.structure.TemplateSwitch"))) {
       return false;
     }
     if (editorContext.getSelectedCell().getLinkDeclaration() != ((LinkDeclaration)SNodeOperations.getAdapter(SLinkOperations.findLinkDeclaration("jetbrains.mps.lang.generator.structure.Reduction_MappingRule", "ruleConsequence")))) {
@@ -59,7 +59,7 @@ public class NewTemplateInReductionRule_Intention extends BaseIntention {
     SNode applicableConcept = SLinkOperations.getTarget(node, "applicableConcept", false);
     String name = CreateFromUsageUtil.getText(editorContext);
     if (name == null || name.length() == 0) {
-      name = "reduce_";
+      name = "case_";
       if (applicableConcept != null) {
         name += SPropertyOperations.getString(applicableConcept, "name");
       }

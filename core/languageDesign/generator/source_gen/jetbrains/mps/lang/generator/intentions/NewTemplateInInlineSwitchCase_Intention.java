@@ -5,21 +5,21 @@ package jetbrains.mps.lang.generator.intentions;
 import jetbrains.mps.intentions.BaseIntention;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorContext;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.structure.structure.LinkDeclaration;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.nodeEditor.CreateFromUsageUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.ide.ui.smodel.SModelTreeNode;
 
-public class NewTemplateInReductionRule_Intention extends BaseIntention {
-  public NewTemplateInReductionRule_Intention() {
+public class NewTemplateInInlineSwitchCase_Intention extends BaseIntention {
+  public NewTemplateInInlineSwitchCase_Intention() {
   }
 
   public String getConcept() {
-    return "jetbrains.mps.lang.generator.structure.Reduction_MappingRule";
+    return "jetbrains.mps.lang.generator.structure.InlineSwitch_Case";
   }
 
   public boolean isParameterized() {
@@ -46,20 +46,17 @@ public class NewTemplateInReductionRule_Intention extends BaseIntention {
   }
 
   public boolean isApplicableToNode(final SNode node, final EditorContext editorContext) {
-    if (SConceptOperations.isExactly(SNodeOperations.getConceptDeclaration(SNodeOperations.getParent(node)), "jetbrains.mps.lang.generator.structure.TemplateSwitch")) {
+    if (editorContext.getSelectedCell().getLinkDeclaration() != ((LinkDeclaration)SNodeOperations.getAdapter(SLinkOperations.findLinkDeclaration("jetbrains.mps.lang.generator.structure.InlineSwitch_Case", "caseConsequence")))) {
       return false;
     }
-    if (editorContext.getSelectedCell().getLinkDeclaration() != ((LinkDeclaration)SNodeOperations.getAdapter(SLinkOperations.findLinkDeclaration("jetbrains.mps.lang.generator.structure.Reduction_MappingRule", "ruleConsequence")))) {
-      return false;
-    }
-    return SLinkOperations.getTarget(node, "ruleConsequence", true) == null || SConceptOperations.isExactly(SNodeOperations.getConceptDeclaration(SLinkOperations.getTarget(node, "ruleConsequence", true)), "jetbrains.mps.lang.generator.structure.RuleConsequence");
+    return SLinkOperations.getTarget(node, "caseConsequence", true) == null || SConceptOperations.isExactly(SNodeOperations.getConceptDeclaration(SLinkOperations.getTarget(node, "caseConsequence", true)), "jetbrains.mps.lang.generator.structure.RuleConsequence");
   }
 
   public void execute(final SNode node, final EditorContext editorContext) {
-    SNode applicableConcept = SLinkOperations.getTarget(node, "applicableConcept", false);
+    SNode applicableConcept = MacroIntentionsUtil.getContextNodeConcept(node);
     String name = CreateFromUsageUtil.getText(editorContext);
     if (name == null || name.length() == 0) {
-      name = "reduce_";
+      name = "case_";
       if (applicableConcept != null) {
         name += SPropertyOperations.getString(applicableConcept, "name");
       }
@@ -69,7 +66,7 @@ public class NewTemplateInReductionRule_Intention extends BaseIntention {
     SLinkOperations.setTarget(t, "applicableConcept", applicableConcept, false);
     t.setProperty(SModelTreeNode.PACK, SPropertyOperations.getString(SNodeOperations.cast(SNodeOperations.getContainingRoot(node), "jetbrains.mps.lang.core.structure.BaseConcept"), "virtualPackage"));
     // make reference
-    SNode tr = SLinkOperations.setNewChild(node, "ruleConsequence", "jetbrains.mps.lang.generator.structure.TemplateDeclarationReference");
+    SNode tr = SLinkOperations.setNewChild(node, "caseConsequence", "jetbrains.mps.lang.generator.structure.TemplateDeclarationReference");
     SLinkOperations.setTarget(tr, "template", t, false);
   }
 

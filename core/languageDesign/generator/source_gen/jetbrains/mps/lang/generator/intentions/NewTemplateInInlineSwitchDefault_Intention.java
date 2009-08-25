@@ -5,21 +5,20 @@ package jetbrains.mps.lang.generator.intentions;
 import jetbrains.mps.intentions.BaseIntention;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorContext;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.lang.structure.structure.LinkDeclaration;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.nodeEditor.CreateFromUsageUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.ide.ui.smodel.SModelTreeNode;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 
-public class NewTemplateInReductionRule_Intention extends BaseIntention {
-  public NewTemplateInReductionRule_Intention() {
+public class NewTemplateInInlineSwitchDefault_Intention extends BaseIntention {
+  public NewTemplateInInlineSwitchDefault_Intention() {
   }
 
   public String getConcept() {
-    return "jetbrains.mps.lang.generator.structure.Reduction_MappingRule";
+    return "jetbrains.mps.lang.generator.structure.InlineSwitch_RuleConsequence";
   }
 
   public boolean isParameterized() {
@@ -31,11 +30,11 @@ public class NewTemplateInReductionRule_Intention extends BaseIntention {
   }
 
   public boolean isAvailableInChildNodes() {
-    return true;
+    return false;
   }
 
   public String getDescription(final SNode node, final EditorContext editorContext) {
-    return "New Template";
+    return "New Default Template";
   }
 
   public boolean isApplicable(final SNode node, final EditorContext editorContext) {
@@ -46,31 +45,25 @@ public class NewTemplateInReductionRule_Intention extends BaseIntention {
   }
 
   public boolean isApplicableToNode(final SNode node, final EditorContext editorContext) {
-    if (SConceptOperations.isExactly(SNodeOperations.getConceptDeclaration(SNodeOperations.getParent(node)), "jetbrains.mps.lang.generator.structure.TemplateSwitch")) {
-      return false;
-    }
-    if (editorContext.getSelectedCell().getLinkDeclaration() != ((LinkDeclaration)SNodeOperations.getAdapter(SLinkOperations.findLinkDeclaration("jetbrains.mps.lang.generator.structure.Reduction_MappingRule", "ruleConsequence")))) {
-      return false;
-    }
-    return SLinkOperations.getTarget(node, "ruleConsequence", true) == null || SConceptOperations.isExactly(SNodeOperations.getConceptDeclaration(SLinkOperations.getTarget(node, "ruleConsequence", true)), "jetbrains.mps.lang.generator.structure.RuleConsequence");
+    return SLinkOperations.getTarget(node, "defaultConsequence", true) == null;
   }
 
   public void execute(final SNode node, final EditorContext editorContext) {
-    SNode applicableConcept = SLinkOperations.getTarget(node, "applicableConcept", false);
     String name = CreateFromUsageUtil.getText(editorContext);
     if (name == null || name.length() == 0) {
-      name = "reduce_";
+      name = "default_";
+      SNode applicableConcept = MacroIntentionsUtil.getContextNodeConcept(node);
       if (applicableConcept != null) {
         name += SPropertyOperations.getString(applicableConcept, "name");
       }
     }
     SNode t = SModelOperations.createNewRootNode(SNodeOperations.getModel(node), "jetbrains.mps.lang.generator.structure.TemplateDeclaration", null);
     SPropertyOperations.set(t, "name", name);
-    SLinkOperations.setTarget(t, "applicableConcept", applicableConcept, false);
     t.setProperty(SModelTreeNode.PACK, SPropertyOperations.getString(SNodeOperations.cast(SNodeOperations.getContainingRoot(node), "jetbrains.mps.lang.core.structure.BaseConcept"), "virtualPackage"));
     // make reference
-    SNode tr = SLinkOperations.setNewChild(node, "ruleConsequence", "jetbrains.mps.lang.generator.structure.TemplateDeclarationReference");
+    SNode tr = SConceptOperations.createNewNode("jetbrains.mps.lang.generator.structure.TemplateDeclarationReference", null);
     SLinkOperations.setTarget(tr, "template", t, false);
+    SLinkOperations.setTarget(node, "defaultConsequence", tr, true);
   }
 
   public String getLocationString() {
