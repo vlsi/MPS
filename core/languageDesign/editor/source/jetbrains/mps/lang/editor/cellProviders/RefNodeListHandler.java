@@ -76,7 +76,7 @@ public abstract class RefNodeListHandler extends AbstractCellListHandler {
     emptyCell.setEditable(true);
     emptyCell.setSubstituteInfo(new DefaultChildSubstituteInfo(getOwner(), null, getLinkDeclaration(), editorContext));
     emptyCell.setRole(getElementRole());
-    emptyCell.setCellId(getOwner().getId() + "_" + getElementRole());
+    emptyCell.setCellId("empty_" + getElementRole());
     return emptyCell;
   }
 

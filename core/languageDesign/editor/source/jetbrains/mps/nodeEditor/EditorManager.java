@@ -383,7 +383,7 @@ public class EditorManager {
 
     protected EditorCell_STHint(EditorContext editorContext, SNode node, CellSide side) {
       super(editorContext, node, "");
-      setCellId(node.getId());
+      setCellId("STHint");
       setDefaultText(" ");
       setEditable(true);
       setCellBackgroundColor(LightColors.BLUE);

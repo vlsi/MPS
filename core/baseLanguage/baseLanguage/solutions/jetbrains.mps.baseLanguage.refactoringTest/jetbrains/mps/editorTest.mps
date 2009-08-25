@@ -4536,6 +4536,27 @@
     <property name="package" value="editorCell_Label" />
     <node role="nodeToEdit" type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="2707740038604205732">
       <property name="name" value="Clazz" />
+      <node role="constructor" type="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" id="3176358661158853421">
+        <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="3176358661158853422" />
+        <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="3176358661158853423" />
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="3176358661158853424">
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="3176358661158899948">
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="3176358661158899950">
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="3176358661158899949" />
+              <node role="operation" type="jetbrains.mps.baseLanguage.structure.FieldReferenceOperation" id="3176358661158899954">
+                <link role="fieldDeclaration" targetNodeId="2707740038604206763" resolveInfo="ff" />
+                <node role="testNode$attribute" type="jetbrains.mps.lang.test.structure.AnonymousCellAnnotation" id="3176358661158899955">
+                  <property name="isLastPosition" value="true" />
+                  <property name="useLabelSelection" value="true" />
+                  <property name="selectionStart" value="2" />
+                  <property name="selectionEnd" value="2" />
+                  <property name="cellId" value="property_name" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
       <node role="field" type="jetbrains.mps.baseLanguage.structure.FieldDeclaration" id="2707740038604206763">
         <property name="name" value="ff" />
         <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PrivateVisibility" id="2707740038604206764" />
@@ -4544,27 +4565,6 @@
         </node>
       </node>
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="2707740038604205733" />
-      <node role="constructor" type="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" id="2707740038604205734">
-        <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="2707740038604205735" />
-        <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="2707740038604205736" />
-        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="2707740038604205737">
-          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="2707740038604206770">
-            <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="2707740038604206771">
-              <node role="operation" type="jetbrains.mps.baseLanguage.structure.FieldReferenceOperation" id="2707740038604206772">
-                <link role="fieldDeclaration" targetNodeId="2707740038604206763" resolveInfo="f" />
-                <node role="testNode$attribute" type="jetbrains.mps.lang.test.structure.AnonymousCellAnnotation" id="4790890636873570395">
-                  <property name="isLastPosition" value="true" />
-                  <property name="useLabelSelection" value="true" />
-                  <property name="selectionStart" value="2" />
-                  <property name="selectionEnd" value="2" />
-                  <property name="cellId" value="property_name" />
-                </node>
-              </node>
-              <node role="operand" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="2707740038604206773" />
-            </node>
-          </node>
-        </node>
-      </node>
     </node>
     <node role="result" type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="2707740038604205738">
       <property name="name" value="Clazz" />
@@ -4579,8 +4579,15 @@
       <node role="constructor" type="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" id="2707740038604205740">
         <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="2707740038604205743">
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="4790890636873587119">
-            <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="4790890636873587121">
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="5221496074473131272">
               <node role="operand" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="4790890636873587120" />
+              <node role="testNode$attribute" type="jetbrains.mps.lang.test.structure.AnonymousCellAnnotation" id="4921414442878616183">
+                <property name="isLastPosition" value="true" />
+                <property name="useLabelSelection" value="true" />
+                <property name="selectionStart" value="0" />
+                <property name="selectionEnd" value="0" />
+                <property name="cellId" value="error_operation" />
+              </node>
             </node>
           </node>
         </node>
