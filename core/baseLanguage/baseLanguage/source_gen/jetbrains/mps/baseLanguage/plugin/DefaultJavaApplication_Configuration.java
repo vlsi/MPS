@@ -32,6 +32,7 @@ import jetbrains.mps.MPSProjectHolder;
 import jetbrains.mps.generator.GeneratorManager;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.generator.ModelGenerationStatusManager;
 import jetbrains.mps.generator.IGenerationType;
 import java.nio.charset.Charset;
 import com.intellij.execution.ui.ExecutionConsole;
@@ -116,7 +117,9 @@ public class DefaultJavaApplication_Configuration extends RunConfigurationBase {
                 md.value = SNodeOperations.getModel(node.value).getModelDescriptor();
               }
             });
-            genManager.generateModelsFromDifferentModules(mpsProject.createOperationContext(), ListSequence.fromListAndArray(new ArrayList<SModelDescriptor>(), md.value), IGenerationType.FILES);
+            if (ModelGenerationStatusManager.getInstance().generationRequired(md.value)) {
+              genManager.generateModelsFromDifferentModules(mpsProject.createOperationContext(), ListSequence.fromListAndArray(new ArrayList<SModelDescriptor>(), md.value), IGenerationType.FILES);
+            }
           }
 
           ModelAccess.instance().runReadAction(new Runnable() {
