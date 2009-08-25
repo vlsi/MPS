@@ -241,16 +241,23 @@ public class GenerateTask extends org.apache.tools.ant.Task {
 
   private void gatherAllClassesAndJarsUnder(File dir, Set<File> result) {
     File[] children = dir.listFiles();
+
+    // to provide right order of class loading,
+    // files go first
+    for (File f : children) {
+      if (!f.isDirectory()) {
+        if (f.getName().endsWith(".jar") && !f.getName().contains("ant.jar")) {
+          result.add(f);
+        }
+      }
+    }
+
     for (File f : children) {
       if (f.isDirectory()) {
         if (f.getName().equals("classes")) {
           result.add(f);
         } else {
           gatherAllClassesAndJarsUnder(f, result);
-        }
-      } else {
-        if (f.getName().endsWith(".jar") && !f.getName().contains("ant.jar")) {
-          result.add(f);
         }
       }
     }
