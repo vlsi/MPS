@@ -41,6 +41,8 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.VFileSystem;
 import jetbrains.mps.util.misc.hash.HashSet;
+import jetbrains.mps.ide.IdeMain;
+import jetbrains.mps.ide.IdeMain.TestMode;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 
@@ -145,12 +147,16 @@ public class ModelChangesWatcher implements ApplicationComponent {
   }
 
   public void initComponent() {
+    if (IdeMain.getTestMode() == TestMode.CORE_TEST) return;
+
     myConnection = myBus.connect();
     myConnection.subscribe(VirtualFileManager.VFS_CHANGES, myBusListener);
     myVirtualFileManager.addVirtualFileManagerListener(myVirtualFileManagerListener);
   }
 
   public void disposeComponent() {
+    if (IdeMain.getTestMode() == TestMode.CORE_TEST) return;
+
     myConnection.disconnect();
     myVirtualFileManager.removeVirtualFileManagerListener(myVirtualFileManagerListener);
   }

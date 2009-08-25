@@ -38,6 +38,8 @@ import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.VFileSystem;
 import jetbrains.mps.watching.ModelChangesWatcher;
 import jetbrains.mps.watching.ModelChangesWatcher.IReloadListener;
+import jetbrains.mps.ide.IdeMain;
+import jetbrains.mps.ide.IdeMain.TestMode;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 
@@ -119,12 +121,16 @@ public class SuspiciousModelIndex implements ApplicationComponent {
   }
 
   public void initComponent() {
+    if (IdeMain.getTestMode() == TestMode.CORE_TEST) return;
+
     myProjectManager.addProjectManagerListener(myProjectManagerListener);
     myWatcher.addReloadListener(myReloadListener);
     myVirtualFileManager.addVirtualFileManagerListener(myVirtualFileManagerListener);
   }
 
   public void disposeComponent() {
+    if (IdeMain.getTestMode() == TestMode.CORE_TEST) return;
+
     myProjectManager.removeProjectManagerListener(myProjectManagerListener);
     myWatcher.removeReloadListener(myReloadListener);
     myVirtualFileManager.removeVirtualFileManagerListener(myVirtualFileManagerListener);
