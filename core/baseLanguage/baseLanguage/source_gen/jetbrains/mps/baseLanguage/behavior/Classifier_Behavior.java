@@ -59,13 +59,19 @@ public class Classifier_Behavior {
 
   public static String call_getNestedNameInContext_8540045600162183880(SNode thisNode, SNode context) {
     List<SNode> containers = ListSequence.fromList(SNodeOperations.getAncestors(thisNode, "jetbrains.mps.baseLanguage.structure.Classifier", true)).reversedList();
-    SNode contextContainer = SNodeOperations.getAncestor(context, "jetbrains.mps.baseLanguage.structure.Classifier", true, false);
+    List<SNode> contextContainers = SNodeOperations.getAncestors(context, "jetbrains.mps.baseLanguage.structure.Classifier", true);
 
-    if (ListSequence.fromList(SNodeOperations.getAncestors(context, null, true)).contains(thisNode)) {
+    if (ListSequence.fromList(SNodeOperations.getAncestors(context, null, true)).contains(SNodeOperations.getParent(thisNode))) {
       return SPropertyOperations.getString(thisNode, "name");
     }
 
-    int index = ListSequence.fromList(containers).indexOf(contextContainer);
+    int index = -1;
+    for (SNode ctxCls : contextContainers) {
+      index = ListSequence.fromList(containers).indexOf(ctxCls);
+      if (index != -1) {
+        break;
+      }
+    }
     if (index != -1) {
       List<SNode> newContainers = new ArrayList<SNode>();
       for (int i = index + 1 ; i < ListSequence.fromList(containers).count() ; i++ ) {
