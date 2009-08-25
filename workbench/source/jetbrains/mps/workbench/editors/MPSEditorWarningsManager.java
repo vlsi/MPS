@@ -24,6 +24,7 @@ import com.intellij.openapi.fileEditor.FileEditorManagerListener;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.vfs.VirtualFile;
 import jetbrains.mps.MPSProjectHolder;
+import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.generator.GeneratorManager;
 import jetbrains.mps.generator.IGenerationType;
 import jetbrains.mps.generator.IllegalGeneratorConfigurationException;
@@ -93,12 +94,12 @@ public class MPSEditorWarningsManager implements ProjectComponent {
           }
           myWarnings.remove(editor);
         }
-
-        SNode node = editor.getFile().getNode();
-        if (node == null) {
+        EditorComponent editorComponent = editor.getNodeEditor().getCurrentEditorComponent();
+        if (editorComponent != null && editorComponent.isDisposed()) {
           return;
         }
-        SModel smodel = node.getModel();
+
+        SModel smodel = editor.getFile().getNode().getModel();
 
         if (smodel == null) {
           return;
