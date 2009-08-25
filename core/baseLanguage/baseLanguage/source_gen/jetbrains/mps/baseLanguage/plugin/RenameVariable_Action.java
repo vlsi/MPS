@@ -9,8 +9,11 @@ import jetbrains.mps.smodel.SNode;
 import java.awt.Frame;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.workbench.MPSDataKeys;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
+import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class RenameVariable_Action extends GeneratedAction {
   private static final Icon ICON = null;
@@ -30,16 +33,9 @@ public class RenameVariable_Action extends GeneratedAction {
     return "shift F6";
   }
 
-  public boolean isApplicable(AnActionEvent event) {
-    return SNodeOperations.isInstanceOf(RenameVariable_Action.this.node, "jetbrains.mps.baseLanguage.structure.VariableReference");
-  }
-
   public void doUpdate(@NotNull AnActionEvent event) {
     try {
-      {
-        boolean enabled = this.isApplicable(event);
-        this.setEnabledState(event.getPresentation(), enabled);
-      }
+      this.enable(event.getPresentation());
     } catch (Throwable t) {
       LOG.error("User's action doUpdate method failed. Action:" + "RenameVariable", t);
       this.disable(event.getPresentation());
@@ -54,6 +50,9 @@ public class RenameVariable_Action extends GeneratedAction {
     {
       SNode node = event.getData(MPSDataKeys.NODE);
       if (node != null) {
+        if (!(SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.VariableReference"))) {
+          node = null;
+        }
       }
       this.node = node;
     }
@@ -69,8 +68,13 @@ public class RenameVariable_Action extends GeneratedAction {
 
   public void doExecute(@NotNull final AnActionEvent event) {
     try {
-      RenameRafactoringDialog dialog = new RenameRafactoringDialog(RenameVariable_Action.this.frame, RenameVariable_Action.this.node);
-      dialog.showDialog();
+      final Wrappers._T<SNode> varDeclNode = new Wrappers._T<SNode>();
+      ModelAccess.instance().runReadAction(new Runnable() {
+        public void run() {
+          varDeclNode.value = SLinkOperations.getTarget(RenameVariable_Action.this.node, "variableDeclaration", false);
+        }
+      });
+      new RenameRafactoringDialog(RenameVariable_Action.this.frame, "Variable", varDeclNode.value).showDialog();
     } catch (Throwable t) {
       LOG.error("User's action execute method failed. Action:" + "RenameVariable", t);
     }
