@@ -694,7 +694,7 @@
         <property name="flag" value="false" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="700745782152801023">
-        <property name="text" value="on no usages:" />
+        <property name="text" value="refactor immediately on no usages:" />
         <node role="styleItem" type="jetbrains.mps.lang.editor.structure.FontStyleStyleClassItem" id="700745782152801024">
           <property name="style" value="PLAIN" />
         </node>
@@ -702,44 +702,8 @@
           <property name="color" value="DARK_BLUE" />
         </node>
       </node>
-      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="700745782152801026">
-        <node role="cellLayout" type="jetbrains.mps.lang.editor.structure.CellLayout_VerticalGrid" id="700745782152801027" />
-        <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="700745782152801028">
-          <node role="cellLayout" type="jetbrains.mps.lang.editor.structure.CellLayout_Horizontal" id="700745782152801029" />
-          <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="700745782152801030">
-            <property name="text" value="refactor immediately" />
-          </node>
-          <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="700745782152801031">
-            <property name="text" value=":" />
-          </node>
-          <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Property" id="700745782152801032">
-            <link role="relationDeclaration" targetNodeId="1.1210941394948" resolveInfo="refactorImmediatelyIfNoUsages" />
-          </node>
-        </node>
-        <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="700745782152801033">
-          <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="700745782152801034">
-            <property name="text" value="non-local" />
-          </node>
-          <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="700745782152801035">
-            <property name="text" value=":" />
-          </node>
-          <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Property" id="700745782152801036">
-            <link role="relationDeclaration" targetNodeId="1.700745782152479280" resolveInfo="nonLocalByDefault" />
-          </node>
-          <node role="cellLayout" type="jetbrains.mps.lang.editor.structure.CellLayout_Horizontal" id="700745782152801037" />
-          <node role="renderingCondition" type="jetbrains.mps.lang.editor.structure.QueryFunction_NodeCondition" id="700745782152801038">
-            <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="700745782152801039">
-              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="700745782152801040">
-                <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="700745782152801041">
-                  <node role="operand" type="jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_node" id="700745782152801042" />
-                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="700745782152801043">
-                    <link role="property" targetNodeId="1.1210941394948" resolveInfo="refactorImmediatelyIfNoUsages" />
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Property" id="4466016620819483802">
+        <link role="relationDeclaration" targetNodeId="1.1210941394948" resolveInfo="refactorImmediatelyIfNoUsages" />
       </node>
       <node role="cellLayout" type="jetbrains.mps.lang.editor.structure.CellLayout_Indent" id="700745782152801044" />
       <node role="renderingCondition" type="jetbrains.mps.lang.editor.structure.QueryFunction_NodeCondition" id="700745782152801049">

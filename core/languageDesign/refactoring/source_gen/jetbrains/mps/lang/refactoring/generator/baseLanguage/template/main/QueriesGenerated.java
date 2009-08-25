@@ -185,10 +185,6 @@ public class QueriesGenerated {
     return SPropertyOperations.getBoolean(_context.getNode(), "oneTargetOnly");
   }
 
-  public static boolean ifMacro_Condition_700745782152520311(final IOperationContext operationContext, final IfMacroContext _context) {
-    return SLinkOperations.getTarget(_context.getNode(), "affectedNodesClause", true) != null && SPropertyOperations.getBoolean(_context.getNode(), "refactorImmediatelyIfNoUsages") && SPropertyOperations.getBoolean(_context.getNode(), "nonLocalByDefault");
-  }
-
   public static boolean ifMacro_Condition_700745782152800956(final IOperationContext operationContext, final IfMacroContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "affectedNodesClause", true) != null && SPropertyOperations.getBoolean(_context.getNode(), "refactorImmediatelyIfNoUsages");
   }

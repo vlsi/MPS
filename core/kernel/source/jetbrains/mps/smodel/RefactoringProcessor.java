@@ -75,7 +75,16 @@ public class RefactoringProcessor {
     });
 
     if (show) {
-      showRefactoring(refactoringContext);
+      if (findUsages(refactoringContext)){
+        SearchResults usages = refactoringContext.getUsages();
+        boolean refactorImmediately = refactoringContext.getRefactoring().refactorImmediatelyIfNoUsages();
+        
+        if (usages == null || (usages.getSearchResults().isEmpty() && refactorImmediately)) {
+          doExecuteWithDialog(refactoringContext);
+        } else {
+          showRefactoring(refactoringContext);
+        }
+      }
     } else {
       doExecuteWithDialog(refactoringContext);
     }
@@ -97,32 +106,26 @@ public class RefactoringProcessor {
   }
 
   private void showRefactoring(final RefactoringContext refactoringContext) {
-    if (!findUsages(refactoringContext)) return;
-    SearchResults usages = refactoringContext.getUsages();
-    if (usages == null || (refactoringContext.getRefactoring().refactorImmediatelyIfNoUsages() && usages.getSearchResults().isEmpty())) {
-      doExecuteWithDialog(refactoringContext);
-    } else {
-      ThreadUtils.runInUIThreadNoWait(new Runnable() {
-        public void run() {
-          ModelAccess.instance().runReadAction(new Runnable() {
-            public void run() {
-              RefactoringView refactorintView = refactoringContext.getCurrentOperationContext().getComponent(RefactoringView.class);
-              RefactoringViewAction okAction = new RefactoringViewAction() {
-                public void performAction(final RefactoringViewItem refactoringViewItem) {
-                  new Thread() {
-                    public void run() {
-                      refactoringViewItem.close();
-                      doExecute(refactoringContext, null);
-                    }
-                  }.start();
-                }
-              };
-              refactorintView.showRefactoringView(refactoringContext, okAction, refactoringContext.getUsages());
-            }
-          });
-        }
-      });
-    }
+    ThreadUtils.runInUIThreadNoWait(new Runnable() {
+      public void run() {
+        ModelAccess.instance().runReadAction(new Runnable() {
+          public void run() {
+            RefactoringView refactorintView = refactoringContext.getCurrentOperationContext().getComponent(RefactoringView.class);
+            RefactoringViewAction okAction = new RefactoringViewAction() {
+              public void performAction(final RefactoringViewItem refactoringViewItem) {
+                new Thread() {
+                  public void run() {
+                    refactoringViewItem.close();
+                    doExecute(refactoringContext, null);
+                  }
+                }.start();
+              }
+            };
+            refactorintView.showRefactoringView(refactoringContext, okAction, refactoringContext.getUsages());
+          }
+        });
+      }
+    });
   }
 
   //returns false if should be interrupted after the call

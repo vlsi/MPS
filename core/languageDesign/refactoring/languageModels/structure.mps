@@ -238,10 +238,6 @@
       <property name="name" value="refactorImmediatelyIfNoUsages" />
       <link role="dataType" targetNodeId="1.1082983657063" resolveInfo="boolean" />
     </node>
-    <node role="propertyDeclaration" type="jetbrains.mps.lang.structure.structure.PropertyDeclaration" id="700745782152479280">
-      <property name="name" value="nonLocalByDefault" />
-      <link role="dataType" targetNodeId="1.1082983657063" resolveInfo="boolean" />
-    </node>
     <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1199455308722">
       <property name="metaClass" value="aggregation" />
       <property name="role" value="keystroke" />

@@ -53,14 +53,8 @@ public class RefactoringOptionsDialog extends BaseDialog {
     c.anchor = GridBagConstraints.NORTHWEST;
 
     if (myRefactoring.doesUpdateModel()) {
-      boolean isLocal = ModelAccess.instance().runReadAction(new Computable<Boolean>() {
-        public Boolean compute() {
-          return RefactoringUtil.isLocalByDefault(myRefactoringContext);
-        }
-      });
-
-      myIsLocalCheckBox = new JCheckBox("is local");
-      myIsLocalCheckBox.setSelected(isLocal);
+     myIsLocalCheckBox = new JCheckBox("is local");
+      myIsLocalCheckBox.setSelected(false);
 
       c.gridy = 0;
       myInnerPanel.add(myIsLocalCheckBox, c);

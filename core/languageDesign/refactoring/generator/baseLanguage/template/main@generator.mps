@@ -1879,51 +1879,6 @@
         </node>
       </node>
     </node>
-    <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="700745782152519644">
-      <property name="name" value="isNonLocalByDefault" />
-      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.BooleanType" id="700745782152519685" />
-      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="700745782152519646" />
-      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="700745782152519647">
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="700745782152519686">
-          <node role="expression" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="700745782152519688">
-            <property name="value" value="true" />
-          </node>
-        </node>
-      </node>
-      <node role="nodeMacro$attribute" type="jetbrains.mps.lang.generator.structure.IfMacro" id="700745782152520310">
-        <node role="conditionFunction" type="jetbrains.mps.lang.generator.structure.IfMacro_Condition" id="700745782152520311">
-          <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="700745782152520312">
-            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="700745782152800981">
-              <node role="expression" type="jetbrains.mps.baseLanguage.structure.AndExpression" id="700745782152801001">
-                <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="700745782152801005">
-                  <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="700745782152801004" />
-                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="700745782152801009">
-                    <link role="property" targetNodeId="1.700745782152479280" resolveInfo="nonLocalByDefault" />
-                  </node>
-                </node>
-                <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.AndExpression" id="700745782152800992">
-                  <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.NotEqualsExpression" id="700745782152800988">
-                    <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="700745782152800983">
-                      <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="700745782152800982" />
-                      <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="700745782152800987">
-                        <link role="link" targetNodeId="1.1200932683928" />
-                      </node>
-                    </node>
-                    <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="700745782152800991" />
-                  </node>
-                  <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="700745782152800996">
-                    <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="700745782152800995" />
-                    <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="700745782152801000">
-                      <link role="property" targetNodeId="1.1210941394948" resolveInfo="refactorImmediatelyIfNoUsages" />
-                    </node>
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-      </node>
-    </node>
     <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1197992100780">
       <property name="name" value="createChooseComponent" />
       <node role="returnType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1197993204682">

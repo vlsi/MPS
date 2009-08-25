@@ -114,14 +114,8 @@ public class RefactoringViewItem {
       myButtonsPanel.add(myGenerateModelsCheckbox);
 
       if (refactoringContext.getRefactoring().doesUpdateModel()) {
-        boolean isLocal = ModelAccess.instance().runReadAction(new Computable<Boolean>() {
-          public Boolean compute() {
-            return RefactoringUtil.isLocalByDefault(myRefactoringContext);
-          }
-        });
-
         myIsLocalCheckbox = new JCheckBox("is local");
-        myIsLocalCheckbox.setSelected(isLocal);
+        myIsLocalCheckbox.setSelected(false);
         myButtonsPanel.add(myIsLocalCheckbox);
       }
     }

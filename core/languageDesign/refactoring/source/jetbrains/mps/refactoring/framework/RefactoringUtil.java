@@ -134,17 +134,4 @@ public class RefactoringUtil {
     result.put(language, getLanguageModelsList(project, language));
     return result;
   }
-
-  public static boolean isLocalByDefault(RefactoringContext refactoringContext) {
-    LOG.assertCanRead();
-
-    IModule module = refactoringContext.getSelectedModule();
-    if (module instanceof Language) {
-      Language l = (Language) module;
-      if (l.isBootstrap()) {
-        return false;
-      }
-    }
-    return true;
-  }
 }
