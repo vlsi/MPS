@@ -2552,7 +2552,7 @@
                       <link role="variableDeclaration" targetNodeId="2621449412039967467" resolveInfo="searchResults" />
                     </node>
                     <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="7754459869734087569">
-                      <link role="baseMethodDeclaration" targetNodeId="23.~SearchResults.remove(jetbrains.mps.ide.findusages.model.SearchResult):void" resolveInfo="remove" />
+                      <link role="baseMethodDeclaration" targetNodeId="23.~SearchResults.remove(java.lang.Object):void" resolveInfo="remove" />
                       <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="7754459869734087570">
                         <link role="variableDeclaration" targetNodeId="7754459869734029456" resolveInfo="searchResult" />
                       </node>

@@ -96,8 +96,12 @@ public class AbstractConceptDeclaration_Behavior {
     return null;
   }
 
-  public static List<SNode> call_findTypesystemRules_6409339300305625028(SNode thisNode, IScope scope) {
-    return GoToRulesHelper.getHelginsRules(((AbstractConceptDeclaration)SNodeOperations.getAdapter(thisNode)), scope);
+  public static List<SNode> call_findApplicableTypesystemRules_6409339300305625028(SNode thisNode, IScope scope) {
+    return GoToRulesHelper.getHelginsRules(((AbstractConceptDeclaration)SNodeOperations.getAdapter(thisNode)), scope, false);
+  }
+
+  public static List<SNode> call_findTypesystemRules_5161861506212356934(SNode thisNode, IScope scope) {
+    return GoToRulesHelper.getHelginsRules(((AbstractConceptDeclaration)SNodeOperations.getAdapter(thisNode)), scope, true);
   }
 
   public static List<SNode> call_findIntentions_6409339300305625231(SNode thisNode, IScope scope) {
@@ -153,7 +157,7 @@ public class AbstractConceptDeclaration_Behavior {
     ListSequence.fromList(result).addElement(AbstractConceptDeclaration_Behavior.call_findEditor_6409339300305624772(thisNode, scope));
     ListSequence.fromList(result).addElement(AbstractConceptDeclaration_Behavior.call_findConstraints_6409339300305625141(thisNode, scope));
     ListSequence.fromList(result).addElement(AbstractConceptDeclaration_Behavior.call_findBehaviour_1213877394029(thisNode, scope));
-    ListSequence.fromList(result).addSequence(ListSequence.fromList(AbstractConceptDeclaration_Behavior.call_findTypesystemRules_6409339300305625028(thisNode, scope)));
+    ListSequence.fromList(result).addSequence(ListSequence.fromList(AbstractConceptDeclaration_Behavior.call_findTypesystemRules_5161861506212356934(thisNode, scope)));
     ListSequence.fromList(result).addSequence(ListSequence.fromList(AbstractConceptDeclaration_Behavior.call_findIntentions_6409339300305625231(thisNode, scope)));
     ListSequence.fromList(result).addSequence(ListSequence.fromList(AbstractConceptDeclaration_Behavior.call_findFinders_6409339300305625307(thisNode, scope)));
     ListSequence.fromList(result).addElement(AbstractConceptDeclaration_Behavior.call_findDataFlow_1213877394143(thisNode, scope));

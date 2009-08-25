@@ -21,6 +21,7 @@ import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
 import jetbrains.mps.lang.typesystem.structure.AbstractRule;
 import jetbrains.mps.lang.typesystem.structure.ApplicableNodeCondition;
 import jetbrains.mps.lang.typesystem.structure.PatternCondition;
+import jetbrains.mps.lang.typesystem.structure.ConceptReference;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.Condition;
@@ -39,7 +40,7 @@ import java.util.List;
 
 public class GoToRulesHelper {
   public static void go(Frame frame, EditorCell cell, IOperationContext context, AbstractConceptDeclaration concept) {
-    List<SNode> rules = getHelginsRules(concept, context.getScope());
+    List<SNode> rules = getHelginsRules(concept, context.getScope(), false);
 
     if (rules.size() == 1) {// single rule
       context.getComponent(MPSEditorOpener.class).openNode(rules.get(0));
@@ -57,7 +58,7 @@ public class GoToRulesHelper {
     m.show(frame, x, y);
   }
 
-  public static List<SNode> getHelginsRules(final AbstractConceptDeclaration conceptDeclaration, final IScope scope) {
+  public static List<SNode> getHelginsRules(final AbstractConceptDeclaration conceptDeclaration, final IScope scope, final boolean exactConcept) {
     Language language = SModelUtil_new.getDeclaringLanguage(conceptDeclaration, scope);
     List<SNode> rules = new ArrayList<SNode>();
     if (language != null && language.getTypesystemModelDescriptor() != null) {
@@ -69,7 +70,11 @@ public class GoToRulesHelper {
             if (!(object instanceof AbstractRule)) return false;
 
             AbstractRule rule = (AbstractRule) object;
-            return (maybeApplicable_new(conceptDeclaration, rule.getApplicableNode(), scope));
+            if (exactConcept) {
+              return maybeApplicableExact(conceptDeclaration, rule.getApplicableNode(), scope);
+            } else {
+              return maybeApplicable_new(conceptDeclaration, rule.getApplicableNode(), scope);
+            }
           }
         }));
       }
@@ -91,6 +96,12 @@ public class GoToRulesHelper {
       return SModelUtil_new.isAssignableConcept(conceptDeclaration, baseConcept.getConceptDeclarationAdapter());
     }
     return false;
+  }
+
+  private static boolean maybeApplicableExact(AbstractConceptDeclaration conceptDeclaration, ApplicableNodeCondition applicableNode, IScope scope) {
+    if (conceptDeclaration == null) return false;
+    if (!(applicableNode instanceof ConceptReference)) return false;
+    return conceptDeclaration == ((ConceptReference) applicableNode).getConcept();
   }
 
   private static class MyMenu extends JPopupMenu {
