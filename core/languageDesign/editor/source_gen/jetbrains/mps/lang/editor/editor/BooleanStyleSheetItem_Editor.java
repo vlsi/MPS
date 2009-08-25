@@ -15,11 +15,20 @@ import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPart;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
+import jetbrains.mps.nodeEditor.style.Style;
+import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.editor.behavior.BooleanStyleSheetItem_Behavior;
+import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_PropertyValues;
+import java.util.List;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import java.util.ArrayList;
 import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_ReplaceNode_CustomNodeConcept;
+import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_Generic_Item;
+import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 
 public class BooleanStyleSheetItem_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
@@ -74,7 +83,12 @@ public class BooleanStyleSheetItem_Editor extends DefaultNodeEditor {
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setCellId("property_flag");
+    {
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.INDENT_LAYOUT_INDENT, true);
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPart[]{new BooleanStyleSheetItem_Editor.BooleanStyleSheetItem_flag_cellMenu0(),new BooleanStyleSheetItem_Editor.BooleanStyleSheetItem_generic_cellMenu0()}));
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {
@@ -92,7 +106,6 @@ public class BooleanStyleSheetItem_Editor extends DefaultNodeEditor {
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPart[]{}));
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {
@@ -111,12 +124,34 @@ public class BooleanStyleSheetItem_Editor extends DefaultNodeEditor {
     return (SLinkOperations.getTarget(node, "query", true) != null) && BooleanStyleSheetItem_Behavior.call_useQuery_1223387362946(node);
   }
 
+  public static class BooleanStyleSheetItem_flag_cellMenu0 extends AbstractCellMenuPart_PropertyValues {
+    public BooleanStyleSheetItem_flag_cellMenu0() {
+    }
+
+    public List<String> getPropertyValues(SNode node, IScope scope, IOperationContext operationContext) {
+      return ListSequence.fromListAndArray(new ArrayList<String>(), "true", "false");
+    }
+  }
+
   public static class BooleanStyleSheetItem_Editor_replaceWith_StyleClassItem_cellMenu0 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
     public BooleanStyleSheetItem_Editor_replaceWith_StyleClassItem_cellMenu0() {
     }
 
     public String getReplacementConceptName() {
       return "jetbrains.mps.lang.editor.structure.StyleClassItem";
+    }
+  }
+
+  public static class BooleanStyleSheetItem_generic_cellMenu0 extends AbstractCellMenuPart_Generic_Item {
+    public BooleanStyleSheetItem_generic_cellMenu0() {
+    }
+
+    public void handleAction(SNode node, SModel model, IScope scope, IOperationContext operationContext) {
+      SLinkOperations.setTarget(node, "query", SConceptOperations.createNewNode("jetbrains.mps.lang.editor.structure.QueryFunction_Boolean", null), true);
+    }
+
+    public String getMatchingText() {
+      return "query";
     }
   }
 }

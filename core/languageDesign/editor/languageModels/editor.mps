@@ -6639,6 +6639,54 @@
             </node>
           </node>
         </node>
+        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.IndentLayoutIndentStyleClassItem" id="3581382637180643973">
+          <property name="flag" value="true" />
+        </node>
+        <node role="menuDescriptor" type="jetbrains.mps.lang.editor.structure.CellMenuDescriptor" id="7436746056273364782">
+          <node role="cellMenuPart" type="jetbrains.mps.lang.editor.structure.CellMenuPart_PropertyValues" id="7436746056273373195">
+            <node role="valuesFunction" type="jetbrains.mps.lang.editor.structure.CellMenuPart_PropertyValues_GetValues" id="7436746056273373196">
+              <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="7436746056273373197">
+                <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="7436746056273373198">
+                  <node role="expression" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="7436746056273373199">
+                    <node role="creator" type="jetbrains.mps.baseLanguage.collections.structure.ListCreatorWithInit" id="7436746056273410450">
+                      <node role="elementType" type="jetbrains.mps.baseLanguage.structure.StringType" id="7436746056273410452" />
+                      <node role="initValue" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="7436746056273410467">
+                        <property name="value" value="true" />
+                      </node>
+                      <node role="initValue" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="7436746056273410471">
+                        <property name="value" value="false" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+          <node role="cellMenuPart" type="jetbrains.mps.lang.editor.structure.CellMenuPart_Generic_Item" id="7436746056273410473">
+            <property name="matchingText" value="query" />
+            <node role="handlerFunction" type="jetbrains.mps.lang.editor.structure.CellMenuPart_Generic_Item_Handler" id="7436746056273410474">
+              <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="7436746056273410475">
+                <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="7436746056273410476">
+                  <node role="expression" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression" id="7436746056273410483">
+                    <node role="rValue" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="7436746056273410486">
+                      <node role="creator" type="jetbrains.mps.lang.smodel.structure.SNodeCreator" id="7436746056273410488">
+                        <node role="createdType" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="7436746056273410489">
+                          <link role="concept" targetNodeId="2.1223387125302" resolveInfo="QueryFunction_Boolean" />
+                        </node>
+                      </node>
+                    </node>
+                    <node role="lValue" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="7436746056273410478">
+                      <node role="operand" type="jetbrains.mps.lang.editor.structure.CellMenuPart_Abstract_editedNode" id="7436746056273410477" />
+                      <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="7436746056273410482">
+                        <link role="link" targetNodeId="2.1223387335081" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode" id="1223461953254">
         <link role="relationDeclaration" targetNodeId="2.1223387335081" />
@@ -6665,7 +6713,6 @@
             </node>
           </node>
         </node>
-        <node role="menuDescriptor" type="jetbrains.mps.lang.editor.structure.CellMenuDescriptor" id="1225473473255" />
       </node>
       <node role="cellLayout" type="jetbrains.mps.lang.editor.structure.CellLayout_Horizontal" id="1239878593978" />
     </node>
