@@ -8,6 +8,7 @@
   <language namespace="3a13115c-633c-4c5c-bbcc-75c4219e9555(jetbrains.mps.lang.quotation)" />
   <language namespace="83888646-71ce-4f1c-9c53-c54016f6ad4f(jetbrains.mps.baseLanguage.collections)" />
   <language namespace="28f9e497-3b42-4291-aeba-0a1039153ab1(jetbrains.mps.lang.plugin)" />
+  <language namespace="ceab5195-25ea-4f22-9b92-103b95ca8c0c(jetbrains.mps.lang.core)" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)" version="83" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="1" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902fb(jetbrains.mps.lang.smodel.constraints)" version="21" />
@@ -1722,6 +1723,39 @@
     <node role="applicableNode" type="jetbrains.mps.lang.typesystem.structure.ConceptReference" id="144706109457490170">
       <property name="name" value="tabType" />
       <link role="concept" targetNodeId="4.144706109457489882" resolveInfo="MultitabbedEditorTabType" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.typesystem.structure.InferenceRule" id="6586153900349327568">
+    <property name="name" value="typeof_ActionListStatement" />
+    <property name="package" value="RunConfigs.Configuration.Execute.Statements" />
+    <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="6586153900349327569">
+      <node role="statement" type="jetbrains.mps.lang.typesystem.structure.CreateLessThanInequationStatement" id="6586153900349329842">
+        <node role="leftExpression" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause" id="6586153900349329843">
+          <node role="normalType" type="jetbrains.mps.lang.typesystem.structure.TypeOfExpression" id="6586153900349329844">
+            <node role="term" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="6586153900349329845">
+              <node role="operand" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference" id="6586153900349329846">
+                <link role="applicableNode" targetNodeId="6586153900349327570" resolveInfo="statement" />
+              </node>
+              <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="6586153900349329847">
+                <link role="link" targetNodeId="4.6586153900349324062" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="rightExpression" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause" id="6586153900349329848">
+          <node role="normalType" type="jetbrains.mps.lang.quotation.structure.Quotation" id="6586153900349329849">
+            <node role="quotedNode" type="jetbrains.mps.baseLanguage.collections.structure.ListType" id="6586153900349329850">
+              <node role="elementType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="6586153900349329851">
+                <link role="classifier" targetNodeId="23.~AnAction" resolveInfo="AnAction" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="applicableNode" type="jetbrains.mps.lang.typesystem.structure.ConceptReference" id="6586153900349327570">
+      <property name="name" value="statement" />
+      <link role="concept" targetNodeId="4.6586153900349324059" resolveInfo="ActionListStatement" />
     </node>
   </node>
 </model>

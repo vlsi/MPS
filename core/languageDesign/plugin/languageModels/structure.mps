@@ -3075,5 +3075,23 @@
       <link role="conceptPropertyDeclaration" targetNodeId="6.1137473891462" resolveInfo="alias" />
     </node>
   </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="6586153900349324059">
+    <property name="package" value="RunConfigs.Configuration.Execute.Statements" />
+    <property name="name" value="ActionListStatement" />
+    <link role="extends" targetNodeId="2.1068580123157" resolveInfo="Statement" />
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="6586153900349324060">
+      <property name="value" value="actionList" />
+      <link role="conceptPropertyDeclaration" targetNodeId="6.1137473891462" resolveInfo="alias" />
+    </node>
+    <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="6586153900349324061">
+      <link role="intfc" targetNodeId="678887849223527750" resolveInfo="ExecuteSpecific" />
+    </node>
+    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="6586153900349324062">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="actions" />
+      <property name="sourceCardinality" value="1" />
+      <link role="target" targetNodeId="2.1068431790191" resolveInfo="Expression" />
+    </node>
+  </node>
 </model>
 
