@@ -51,10 +51,6 @@ public class ConfigurationReferencesEditorComponent extends AbstractCellProvider
   private EditorCell createCollection_4382_1(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_4382_1");
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.SELECTABLE, false);
-    }
     if (renderingCondition4382_0(node, editorContext, editorContext.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.createCollection_4382_0(editorContext, node));
     }

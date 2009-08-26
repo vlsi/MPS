@@ -267,10 +267,6 @@ public class ClosureControlStatement_Editor extends DefaultNodeEditor {
     private EditorCell createCollection_3967_3(EditorContext editorContext, SNode node) {
       EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
       editorCell.setCellId("Collection_3967_3");
-      {
-        Style style = editorCell.getStyle();
-        style.set(StyleAttributes.SELECTABLE, false);
-      }
       editorCell.addEditorCell(this.createRefNodeList_3967_1(editorContext, node));
       return editorCell;
     }

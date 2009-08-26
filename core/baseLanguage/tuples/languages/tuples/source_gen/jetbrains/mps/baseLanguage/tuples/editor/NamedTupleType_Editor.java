@@ -368,10 +368,6 @@ public class NamedTupleType_Editor extends DefaultNodeEditor {
     private EditorCell createCollection_9635_6(EditorContext editorContext, SNode node) {
       EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
       editorCell.setCellId("Collection_9635_6");
-      {
-        Style style = editorCell.getStyle();
-        style.set(StyleAttributes.SELECTABLE, false);
-      }
       editorCell.addEditorCell(this.createRefNodeList_9635_1(editorContext, node));
       return editorCell;
     }
@@ -406,10 +402,6 @@ public class NamedTupleType_Editor extends DefaultNodeEditor {
     private EditorCell createCollection_9635_5(EditorContext editorContext, SNode node) {
       EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
       editorCell.setCellId("Collection_9635_5");
-      {
-        Style style = editorCell.getStyle();
-        style.set(StyleAttributes.SELECTABLE, false);
-      }
       if (renderingCondition9635_1(node, editorContext, editorContext.getOperationContext().getScope())) {
         editorCell.addEditorCell(this.createComponent_9635_0(editorContext, node));
       }

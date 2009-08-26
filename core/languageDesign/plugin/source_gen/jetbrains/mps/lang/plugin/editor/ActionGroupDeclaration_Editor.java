@@ -134,10 +134,6 @@ public class ActionGroupDeclaration_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_7595_9(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_7595_9");
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.SELECTABLE, false);
-    }
     if (renderingCondition7595_2(node, editorContext, editorContext.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.createCollection_7595_8(editorContext, node));
     }
