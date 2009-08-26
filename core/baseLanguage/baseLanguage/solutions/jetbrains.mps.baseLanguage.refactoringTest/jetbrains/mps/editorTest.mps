@@ -4719,5 +4719,58 @@
       </node>
     </node>
   </node>
+  <node type="jetbrains.mps.lang.test.structure.EditorTestCase" id="1883175908513185012">
+    <property name="name" value="AddingTypeParameterToConstructor" />
+    <property name="package" value="baseLanguage" />
+    <node role="nodeToEdit" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1883175908513199132">
+      <property name="name" value="method" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1883175908513199133" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1883175908513199134" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1883175908513199135">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1883175908513200611">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1883175908513200612">
+            <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1883175908513220759">
+              <link role="baseMethodDeclaration" targetNodeId="7.~ArrayList.&lt;init&gt;()" resolveInfo="ArrayList" />
+              <node role="testNode$attribute" type="jetbrains.mps.lang.test.structure.AnonymousCellAnnotation" id="1883175908513220761">
+                <property name="isLastPosition" value="true" />
+                <property name="useLabelSelection" value="true" />
+                <property name="selectionStart" value="9" />
+                <property name="selectionEnd" value="9" />
+                <property name="cellId" value="ReferencePresentation_9368_0" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="result" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1883175908513199136">
+      <property name="name" value="method" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1883175908513199137" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1883175908513199138" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1883175908513199139">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1883175908513220762">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1883175908513220763">
+            <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1883175908513220764">
+              <link role="baseMethodDeclaration" targetNodeId="7.~ArrayList.&lt;init&gt;()" resolveInfo="ArrayList" />
+              <node role="typeParameter" type="jetbrains.mps.baseLanguage.structure.Type" id="1883175908513220766">
+                <node role="testNode$attribute" type="jetbrains.mps.lang.test.structure.AnonymousCellAnnotation" id="1883175908513220767">
+                  <property name="isLastPosition" value="true" />
+                  <property name="useLabelSelection" value="true" />
+                  <property name="selectionStart" value="0" />
+                  <property name="selectionEnd" value="0" />
+                  <property name="cellId" value="Error_9010_0" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="code" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1883175908513220768">
+      <node role="statement" type="jetbrains.mps.lang.test.structure.TypeKeyStatement" id="1883175908513220769">
+        <property name="keys" value="&lt;" />
+      </node>
+    </node>
+  </node>
 </model>
 
