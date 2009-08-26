@@ -766,7 +766,7 @@ public class EditorCell_Collection extends EditorCell_Basic implements Iterable<
   @Override
   public void setSubstituteInfo(NodeSubstituteInfo substitueInfo) {
     super.setSubstituteInfo(substitueInfo);
-    if (getChildCount() == 1) {
+    if (getChildCount() == 1 && getStyle().get(StyleAttributes.SELECTABLE)) {
       for (EditorCell child : myEditorCells) {
         if (child.getSNode() == getSNode()) {
           child.setSubstituteInfo(substitueInfo);
@@ -777,7 +777,7 @@ public class EditorCell_Collection extends EditorCell_Basic implements Iterable<
 
   public void setAction(CellActionType type, EditorCellAction action) {
     super.setAction(type, action);
-    if (getChildCount() == 1) {
+    if (getChildCount() == 1 && getStyle().get(StyleAttributes.SELECTABLE)) {
       for (EditorCell child : myEditorCells) {
         if (child.getSNode() == getSNode()) {
           child.setAction(type, action);
