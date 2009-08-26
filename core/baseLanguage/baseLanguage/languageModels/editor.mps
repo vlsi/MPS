@@ -13403,6 +13403,9 @@
         <node role="editorComponent" type="jetbrains.mps.lang.editor.structure.InlineEditorComponent" id="4590747232508931348">
           <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_ReferencePresentation" id="4590747232508931350" />
         </node>
+        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.SideTransformAnchorTagStyleClassItem" id="1883175908512858430">
+          <property name="tag" value="ext_1_RTransform" />
+        </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="1212699852037">
         <property name="vertical" value="false" />
