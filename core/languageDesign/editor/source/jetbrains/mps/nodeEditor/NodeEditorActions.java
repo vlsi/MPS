@@ -338,7 +338,7 @@ public class NodeEditorActions {
       EditorCell_Collection parent = cell.getParent();
       while (parent != null) {
         if (parent.isSelectable()) {
-          while (parent.getParent() != null && parent.getParent().getBounds().equals(parent.getBounds())) {
+          while (parent.getParent() != null && parent.getParent().getBounds().equals(parent.getBounds()) && parent.getParent().isSelectable()) {
             parent = parent.getParent();
           }
           return parent;
