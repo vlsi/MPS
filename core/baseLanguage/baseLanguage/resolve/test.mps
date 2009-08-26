@@ -94,6 +94,7 @@
               </node>
             </node>
           </node>
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.Statement" id="3793054284049061556" />
         </node>
       </node>
     </node>
@@ -110,6 +111,26 @@
               <property name="name" value="c" />
               <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="2953506668701889828">
                 <link role="classifier" targetNodeId="2953506668701835879" resolveInfo="ABC.B.C" />
+              </node>
+            </node>
+          </node>
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="2953506668701889842">
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="2953506668701889843">
+              <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="2953506668701895960">
+                <link role="baseMethodDeclaration" targetNodeId="3949393327309101371" resolveInfo="ABC.A" />
+              </node>
+            </node>
+          </node>
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="2953506668701895962">
+            <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="2953506668701895963">
+              <property name="name" value="b" />
+              <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="2953506668701895964">
+                <link role="classifier" targetNodeId="3949393327309101377" resolveInfo="ABC.B" />
+              </node>
+              <node role="initializer" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="2953506668701895969">
+                <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="2953506668701895970">
+                  <link role="baseMethodDeclaration" targetNodeId="3949393327309101379" resolveInfo="ABC.B" />
+                </node>
               </node>
             </node>
           </node>
@@ -164,6 +185,11 @@
           </node>
         </node>
       </node>
+    </node>
+    <node role="field" type="jetbrains.mps.baseLanguage.structure.FieldDeclaration" id="3793054284049050881">
+      <property name="name" value="abc" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PrivateVisibility" id="3793054284049050882" />
+      <node role="type" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="3793054284049061555" />
     </node>
   </node>
 </model>

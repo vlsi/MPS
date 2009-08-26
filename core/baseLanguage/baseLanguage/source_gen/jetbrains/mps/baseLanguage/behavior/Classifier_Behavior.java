@@ -61,7 +61,8 @@ public class Classifier_Behavior {
     List<SNode> containers = ListSequence.fromList(SNodeOperations.getAncestors(thisNode, "jetbrains.mps.baseLanguage.structure.Classifier", true)).reversedList();
     List<SNode> contextContainers = SNodeOperations.getAncestors(context, "jetbrains.mps.baseLanguage.structure.Classifier", true);
 
-    if (ListSequence.fromList(SNodeOperations.getAncestors(context, null, true)).contains(SNodeOperations.getParent(thisNode))) {
+    List<SNode> ancestors = SNodeOperations.getAncestors(context, null, true);
+    if (ListSequence.fromList(ancestors).contains(SNodeOperations.getParent(thisNode)) || ListSequence.fromList(ancestors).contains(thisNode)) {
       return SPropertyOperations.getString(thisNode, "name");
     }
 
