@@ -127,6 +127,7 @@ public class DefaultJavaApplication_Configuration extends RunConfigurationBase {
               final RunComponent runComponent = new RunComponent(project);
               ClassRunner classRunner = new ClassRunner(runComponent);
 
+              ListSequence.fromList(actions).addSequence(ListSequence.fromList(ListSequence.fromListAndArray(new ArrayList<AnAction>(), runComponent.getConsoleView().createUpDownStacktraceActions())));
               consoleComponent.value = runComponent;
               consoleDispose.value = new Runnable() {
                 public void run() {
