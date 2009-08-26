@@ -208,7 +208,7 @@ public class DefaultJavaApplication_Configuration extends RunConfigurationBase {
   }
 
   private static class MySettingsEditor extends SettingsEditor<DefaultJavaApplication_Configuration> {
-    private ConfigEditor myComponent = null;
+    private JavaAppConfigEditor myComponent = null;
 
     public MySettingsEditor() {
     }
@@ -223,7 +223,7 @@ public class DefaultJavaApplication_Configuration extends RunConfigurationBase {
 
     @NotNull
     protected JComponent createEditor() {
-      this.myComponent = new ConfigEditor();
+      this.myComponent = new JavaAppConfigEditor();
       return this.myComponent;
     }
 
