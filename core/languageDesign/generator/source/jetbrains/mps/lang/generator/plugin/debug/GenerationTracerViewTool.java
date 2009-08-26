@@ -49,9 +49,7 @@ public class GenerationTracerViewTool extends BaseProjectTool {
   private NoTabsComponent myNoTabsComponent;
 
   private List<GenerationTracerView> myTracerViews = new ArrayList<GenerationTracerView>();
-  private boolean myAutoscrollToSource;
   private ContentManagerAdapter myContentListener;
-
 
   public GenerationTracerViewTool(Project project) {
     super(project, "Generation Tracer", -1, Icons.DEFAULT_ICON, ToolWindowAnchor.BOTTOM, true);
@@ -139,15 +137,13 @@ public class GenerationTracerViewTool extends BaseProjectTool {
         GenerationTracerViewTool.this.closeTab(myTracerViews.indexOf(this));
       }
 
-      public void switchAutoscrollToSourceMode() {
-        myAutoscrollToSource = !myAutoscrollToSource;
+      public void autoscrollsChanged(boolean b) {
         for (GenerationTracerView tracerView : myTracerViews) {
-          tracerView.setAutoscrollToSource(myAutoscrollToSource);
+          tracerView.setAutoscrollToSource(b);
         }
       }
     };
 
-    tracerView.setAutoscrollToSource(myAutoscrollToSource);
     myTracerViews.add(tracerView);
 
     Content content = addContent(tracerView.getComponent(), tracerView.getCaption(), tracerView.getIcon(), true);

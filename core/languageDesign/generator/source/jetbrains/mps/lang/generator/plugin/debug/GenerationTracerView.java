@@ -15,20 +15,23 @@
  */
 package jetbrains.mps.lang.generator.plugin.debug;
 
-import jetbrains.mps.ide.MPSToolBar;
-import jetbrains.mps.project.MPSProject;
+import com.intellij.openapi.actionSystem.*;
 import jetbrains.mps.lang.generator.plugin.debug.icons.Icons;
+import jetbrains.mps.project.MPSProject;
+import jetbrains.mps.workbench.action.ActionUtils;
 
-import javax.swing.*;
-import javax.swing.JToggleButton.ToggleButtonModel;
-import javax.swing.border.EmptyBorder;
+import javax.swing.Icon;
+import javax.swing.JComponent;
+import javax.swing.JPanel;
+import javax.swing.JScrollPane;
 import java.awt.BorderLayout;
-import java.awt.event.ActionEvent;
+import java.awt.Component;
 
 public abstract class GenerationTracerView {
   private JPanel myPanel;
   private GenerationTracerTree myTree;
-  JToggleButton myAutoscrollToSourceButton;
+  private ToggleAction myAutoscrollAction;
+  private boolean myAutoscroll;
 
   private TracerNode myRootTracerNode;
 
@@ -37,9 +40,36 @@ public abstract class GenerationTracerView {
     myPanel = new JPanel(new BorderLayout());
     myTree = new GenerationTracerTree(tracerNode, project);
     myPanel.add(new JScrollPane(myTree), BorderLayout.CENTER);
-    myPanel.add(new ActionsToolbar(), BorderLayout.WEST);
+    myPanel.add(createActionsToolbar(), BorderLayout.WEST);
 
     myTree.rebuildLater();
+  }
+
+  private Component createActionsToolbar() {
+    myAutoscrollAction = new ToggleAction("", "Autoscroll to Source", Icons.AUTOSCROLL_TO_SOURCE) {
+      public boolean isSelected(AnActionEvent e) {
+        return myAutoscroll;
+      }
+
+      public void setSelected(AnActionEvent e, boolean state) {
+        if (myAutoscroll != state) {
+          autoscrollsChanged(state);
+        }
+        myAutoscroll = state;
+      }
+    };
+
+    AnAction closeAction = new AnAction("", "Close", Icons.CLOSE) {
+      @Override
+      public void actionPerformed(AnActionEvent e) {
+        close();
+      }
+    };
+
+    ActionGroup group = ActionUtils.groupFromActions(myAutoscrollAction, closeAction);
+    ActionManager manager = ActionManager.getInstance();
+    ActionToolbar toolbar = manager.createActionToolbar(ActionPlaces.USAGE_VIEW_TOOLBAR, group, false);
+    return toolbar.getComponent();
   }
 
   public TracerNode getRootTracerNode() {
@@ -60,42 +90,10 @@ public abstract class GenerationTracerView {
 
   public abstract void close();
 
-  public abstract void switchAutoscrollToSourceMode();
+  public abstract void autoscrollsChanged(boolean b);
 
   public void setAutoscrollToSource(boolean b) {
     myTree.setAutoOpen(b);
-    ((ToggleButtonModel) myAutoscrollToSourceButton.getModel()).setSelected(b);
-  }
-
-
-  private class ActionsToolbar extends MPSToolBar {
-    private ActionsToolbar() {
-      super(JToolBar.VERTICAL);
-      createButtons();
-      setFloatable(false);
-    }
-
-    private void createButtons() {
-      myAutoscrollToSourceButton = new JToggleButton();
-      myAutoscrollToSourceButton.setAction(new AbstractAction("", Icons.AUTOSCROLL_TO_SOURCE) {
-        public void actionPerformed(ActionEvent e) {
-          switchAutoscrollToSourceMode();
-        }
-      });
-      myAutoscrollToSourceButton.setToolTipText("Autoscroll to Source");
-      add(myAutoscrollToSourceButton);
-
-      JButton closeButton = new JButton(new AbstractAction("", Icons.CLOSE) {
-        public void actionPerformed(ActionEvent e) {
-          close();
-        }
-      });
-      closeButton.setToolTipText("Close");
-      add(closeButton);
-    }
-
-    protected EmptyBorder createBorder() {
-      return new EmptyBorder(2, 1, 2, 1);
-    }
+    myAutoscroll = b;
   }
 }

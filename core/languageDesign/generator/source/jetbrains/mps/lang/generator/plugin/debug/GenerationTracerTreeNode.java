@@ -18,13 +18,15 @@ package jetbrains.mps.lang.generator.plugin.debug;
 import com.intellij.openapi.actionSystem.ActionGroup;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import com.intellij.openapi.actionSystem.DefaultActionGroup;
+import com.intellij.openapi.project.Project;
 import jetbrains.mps.ide.ui.MPSTreeNode;
+import jetbrains.mps.lang.generator.plugin.debug.TracerNode.Kind;
+import jetbrains.mps.lang.generator.plugin.debug.icons.Icons;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SNodePointer;
-import jetbrains.mps.lang.generator.plugin.debug.TracerNode.Kind;
-import jetbrains.mps.lang.generator.plugin.debug.icons.Icons;
+import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.workbench.action.BaseAction;
 import jetbrains.mps.workbench.editors.MPSEditorOpener;
 
@@ -139,6 +141,16 @@ public class GenerationTracerTreeNode extends MPSTreeNode {
     return group;
   }
 
+
+  public void autoscroll() {
+    super.autoscroll();
+    SNode nodeToOpen = myTracerNode.getNodePointer().getNode();
+    if (nodeToOpen == null) return;
+
+    IOperationContext context = myProject.createOperationContext();
+
+    new MPSEditorOpener(myProject.getComponent(Project.class)).openNode(nodeToOpen, context,true,true);
+  }
 
   public void doubleClick() {
     SNodePointer nodePointer = myTracerNode.getNodePointer();
