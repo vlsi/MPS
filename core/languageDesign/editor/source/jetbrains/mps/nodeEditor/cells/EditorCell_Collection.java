@@ -732,7 +732,7 @@ public class EditorCell_Collection extends EditorCell_Basic implements Iterable<
 
   public void onRemove() {
     if (myLastCellSelectionListener != null) {
-      setBracesEnabled(false);            
+      setBracesEnabled(false);
       getEditor().removeCellSelectionListener(myLastCellSelectionListener);
     }
     for (EditorCell child : myEditorCells) {
@@ -766,18 +766,22 @@ public class EditorCell_Collection extends EditorCell_Basic implements Iterable<
   @Override
   public void setSubstituteInfo(NodeSubstituteInfo substitueInfo) {
     super.setSubstituteInfo(substitueInfo);
-    for (EditorCell child: myEditorCells) {
-      if (child.getStyle().get(StyleAttributes.GET_PARENT_SUBSTITUDE_INFO)) {
-        child.setSubstituteInfo(substitueInfo);
+    if (getChildCount() == 1) {
+      for (EditorCell child : myEditorCells) {
+        if (child.getSNode() == getSNode()) {
+          child.setSubstituteInfo(substitueInfo);
+        }
       }
     }
   }
 
   public void setAction(CellActionType type, EditorCellAction action) {
     super.setAction(type, action);
-    for (EditorCell child: myEditorCells) {
-      if (child.getStyle().get(StyleAttributes.GET_PARENT_SUBSTITUDE_INFO)) {
-        child.setAction(type, action);
+    if (getChildCount() == 1) {
+      for (EditorCell child : myEditorCells) {
+        if (child.getSNode() == getSNode()) {
+          child.setAction(type, action);
+        }
       }
     }
   }

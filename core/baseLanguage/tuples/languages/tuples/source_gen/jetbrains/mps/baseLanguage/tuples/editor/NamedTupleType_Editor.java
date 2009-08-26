@@ -379,7 +379,6 @@ public class NamedTupleType_Editor extends DefaultNodeEditor {
       {
         Style style = editorCell.getStyle();
         style.set(StyleAttributes.INDENT_LAYOUT_CHILDREN_NEWLINE, true);
-        style.set(StyleAttributes.GET_PARENT_SUBSTITUDE_INFO, true);
       }
       editorCell.setRole(handler.getElementRole());
       return editorCell;

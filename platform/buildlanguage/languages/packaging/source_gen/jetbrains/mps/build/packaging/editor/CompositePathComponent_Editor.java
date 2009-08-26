@@ -9,8 +9,6 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cellProviders.AbstractCellListHandler;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Horizontal;
-import jetbrains.mps.nodeEditor.style.Style;
-import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandler;
 import jetbrains.mps.smodel.action.NodeFactoryManager;
 import jetbrains.mps.nodeEditor.CellActionType;
@@ -19,6 +17,7 @@ import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandlerElementKeyMap;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultReferenceSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
+import jetbrains.mps.nodeEditor.style.StyleAttributes;
 
 public class CompositePathComponent_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
@@ -36,10 +35,6 @@ public class CompositePathComponent_Editor extends DefaultNodeEditor {
     AbstractCellListHandler handler = new CompositePathComponent_Editor.pathComponentListHandler_6133_0(node, "pathComponent", editorContext);
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Horizontal(), false);
     editorCell.setCellId("refNodeList_pathComponent");
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.GET_PARENT_SUBSTITUDE_INFO, true);
-    }
     editorCell.setRole(handler.getElementRole());
     return editorCell;
   }

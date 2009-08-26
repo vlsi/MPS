@@ -14,8 +14,6 @@ import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
-import jetbrains.mps.nodeEditor.style.Style;
-import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
@@ -103,10 +101,6 @@ public class ActionConstructionParameterDeclaration_Editor extends DefaultNodeEd
     provider.setNoTargetText("<no toStringFunction>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.GET_PARENT_SUBSTITUDE_INFO, true);
-    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();

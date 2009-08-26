@@ -43,7 +43,6 @@ public class _Component_Visibility extends AbstractCellProvider {
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.RT_ANCHOR_TAG, "ext_1_RTransform");
-      style.set(StyleAttributes.GET_PARENT_SUBSTITUDE_INFO, true);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();

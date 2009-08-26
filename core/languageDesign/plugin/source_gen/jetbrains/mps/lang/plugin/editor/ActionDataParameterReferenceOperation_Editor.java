@@ -9,12 +9,12 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider;
-import jetbrains.mps.nodeEditor.style.Style;
-import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.nodeEditor.AbstractCellProvider;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
+import jetbrains.mps.nodeEditor.style.Style;
+import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.style.Padding;
 import jetbrains.mps.nodeEditor.style.Measure;
 
@@ -37,10 +37,6 @@ public class ActionDataParameterReferenceOperation_Editor extends DefaultNodeEdi
     EditorCell editorCell;
     provider.setAuxiliaryCellProvider(new ActionDataParameterReferenceOperation_Editor._Inline6775_0());
     editorCell = provider.createEditorCell(editorContext);
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.GET_PARENT_SUBSTITUDE_INFO, true);
-    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();

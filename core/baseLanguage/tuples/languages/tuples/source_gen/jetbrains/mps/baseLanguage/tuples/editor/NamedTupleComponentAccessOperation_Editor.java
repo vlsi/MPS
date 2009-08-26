@@ -10,8 +10,6 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider;
 import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
-import jetbrains.mps.nodeEditor.style.Style;
-import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.nodeEditor.AbstractCellProvider;
@@ -37,10 +35,6 @@ public class NamedTupleComponentAccessOperation_Editor extends DefaultNodeEditor
     provider.setAuxiliaryCellProvider(new NamedTupleComponentAccessOperation_Editor._Inline2041_0());
     editorCell = provider.createEditorCell(editorContext);
     BaseLanguageStyle_StyleSheet.getField(editorCell).apply(editorCell);
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.GET_PARENT_SUBSTITUDE_INFO, true);
-    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();

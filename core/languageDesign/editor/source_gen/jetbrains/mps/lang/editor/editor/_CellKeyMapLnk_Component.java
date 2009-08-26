@@ -45,7 +45,6 @@ public class _CellKeyMapLnk_Component extends AbstractCellProvider {
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.DRAW_BORDER, true);
-      style.set(StyleAttributes.GET_PARENT_SUBSTITUDE_INFO, true);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();

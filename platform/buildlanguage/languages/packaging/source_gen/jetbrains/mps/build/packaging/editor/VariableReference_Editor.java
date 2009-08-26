@@ -41,7 +41,6 @@ public class VariableReference_Editor extends DefaultNodeEditor {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.PADDING_LEFT, new Padding(0.2, Measure.SPACES));
       style.set(StyleAttributes.PADDING_RIGHT, new Padding(0.2, Measure.SPACES));
-      style.set(StyleAttributes.GET_PARENT_SUBSTITUDE_INFO, true);
     }
     CompositeString_RT.setCellActions(editorCell, node, editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());

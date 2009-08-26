@@ -920,6 +920,11 @@ public abstract class EditorCell_Basic implements EditorCell {
     return getParent() == null || getParent().getSNode() != getSNode();
   }
 
+  protected boolean isTopCell() {
+    return getParent() == null || getParent().getSNode() != getSNode()
+      || (getParent().getChildCount() == 1 && getParent().isTopCell());
+  }
+
   public boolean isFirstCaretPosition() {
     return false;
   }

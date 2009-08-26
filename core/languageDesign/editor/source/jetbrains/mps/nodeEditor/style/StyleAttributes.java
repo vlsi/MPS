@@ -83,5 +83,6 @@ public class StyleAttributes {
   public static final StyleAttribute<Boolean> INDENT_LAYOUT_CHILDREN_NEWLINE = new SimpleStyleAttribute<Boolean>("indent-layout-children-new-line", false);
   public static final StyleAttribute<Boolean> INDENT_LAYOUT_NO_WRAP = new SimpleStyleAttribute<Boolean>("indent-layout-no-wrap", false);
 
+  @Deprecated
   public static final StyleAttribute<Boolean> GET_PARENT_SUBSTITUDE_INFO = new SimpleStyleAttribute<Boolean>("get-parent-substitude-info", false);
 }

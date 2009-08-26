@@ -40,7 +40,6 @@ public class PropertyRefQualifier_Editor extends DefaultNodeEditor {
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.PADDING_RIGHT, new Padding(0.0, Measure.SPACES));
-      style.set(StyleAttributes.GET_PARENT_SUBSTITUDE_INFO, true);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();

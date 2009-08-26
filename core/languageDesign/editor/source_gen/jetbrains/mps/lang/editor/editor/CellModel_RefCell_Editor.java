@@ -465,10 +465,6 @@ public class CellModel_RefCell_Editor extends DefaultNodeEditor {
       EditorCell editorCell;
       provider.setAuxiliaryCellProvider(new CellModel_RefCell_Editor._Inline8529_3());
       editorCell = provider.createEditorCell(editorContext);
-      {
-        Style style = editorCell.getStyle();
-        style.set(StyleAttributes.GET_PARENT_SUBSTITUDE_INFO, true);
-      }
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
       SNode attributeConcept = provider.getRoleAttribute();
       Class attributeKind = provider.getRoleAttributeClass();

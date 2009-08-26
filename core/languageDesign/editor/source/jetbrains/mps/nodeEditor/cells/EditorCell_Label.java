@@ -673,7 +673,7 @@ public abstract class EditorCell_Label extends EditorCell_Basic {
   }
 
   private void deleteIfPossible() {
-    if ("".equals(getText()) && (isBigCell() || getStyle().get(StyleAttributes.GET_PARENT_SUBSTITUDE_INFO))) {
+    if ("".equals(getText()) && isTopCell()) {
       if (getStyle().get(StyleAttributes.AUTO_DELETABLE)) {
         getSNode().delete();
       } else {

@@ -60,12 +60,10 @@
       <property name="name" value="methodddd" />
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="3348708091092692786" />
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="3348708091092692787">
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="5879348890583865717">
-          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="5879348890583865718">
-            <property name="name" value="abbbbb" />
-            <node role="type" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="5879348890583865719" />
-            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="5879348890583865721">
-              <property name="value" value="10" />
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="8176545594696953059">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="8176545594696953060">
+            <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="8176545594696993103">
+              <link role="baseMethodDeclaration" targetNodeId="31.~ArrayList.&lt;init&gt;()" resolveInfo="ArrayList" />
             </node>
           </node>
         </node>
@@ -82,16 +80,6 @@
                 <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="7728825675618816063">
                   <property name="value" value="2" />
                 </node>
-              </node>
-            </node>
-          </node>
-        </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="2838174361596911146">
-          <node role="expression" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="8653018021044929206">
-            <node role="creator" type="jetbrains.mps.baseLanguage.structure.ArrayCreatorWithInitializer" id="8653018021044982313">
-              <node role="componentType" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="8653018021044982293" />
-              <node role="initValue" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="8653018021044982315">
-                <link role="variableDeclaration" targetNodeId="5879348890583865718" resolveInfo="abbbbb" />
               </node>
             </node>
           </node>

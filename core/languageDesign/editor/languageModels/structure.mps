@@ -4245,6 +4245,7 @@
       <property name="value" value="get-parent-substitude-info" />
       <link role="conceptPropertyDeclaration" targetNodeId="3.1137473891462" resolveInfo="alias" />
     </node>
+    <node role="deprecatedNode$attribute" type="jetbrains.mps.lang.structure.structure.DeprecatedNodeAnnotation" id="8176545594696872985" />
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="625126330682908270">
     <property name="package" value="CellModel" />

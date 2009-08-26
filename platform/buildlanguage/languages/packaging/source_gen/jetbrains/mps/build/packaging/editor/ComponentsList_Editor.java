@@ -39,7 +39,6 @@ public class ComponentsList_Editor extends DefaultNodeEditor {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.DRAW_BRACKETS, true);
       style.set(StyleAttributes.BRACKETS_COLOR, MPSColors.darkGray);
-      style.set(StyleAttributes.GET_PARENT_SUBSTITUDE_INFO, true);
     }
     editorCell.setRole(handler.getElementRole());
     return editorCell;
