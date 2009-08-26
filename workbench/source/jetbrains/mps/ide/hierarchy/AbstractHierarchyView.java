@@ -117,12 +117,19 @@ public abstract class AbstractHierarchyView<T extends INodeAdapter> extends Base
       }
     };
 
+    BaseAction refreshAction = new BaseAction("Refresh", "Refresh", Icons.REFRESH_ICON) {
+      protected void doExecute(AnActionEvent e) {
+        myHierarchyTree.rebuildNow();
+      }
+    };
+
     return ActionUtils.groupFromActions(
       childrenAction,
       parentAction,
       thisModelAction,
       expandAllAction,
       collapseAllAction,
+      refreshAction,
       createCloseAction()
     );
   }

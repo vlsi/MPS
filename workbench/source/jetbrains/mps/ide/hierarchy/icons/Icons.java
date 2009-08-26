@@ -25,6 +25,7 @@ public class Icons {
   public static final Icon ZOOM_OUT_ICON = new ImageIcon(Icons.class.getResource("zoomOut.png"));
   public static final Icon ACTUAL_ZOOM_ICON = new ImageIcon(Icons.class.getResource("actualZoom.png"));
 
+  public static final Icon REFRESH_ICON = new ImageIcon(Icons.class.getResource("refresh.png"));
 
   public static final Icon THIS_MODEL_ICON = jetbrains.mps.ide.projectPane.Icons.MODEL_ICON;
 }
