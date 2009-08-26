@@ -54,7 +54,7 @@ public class NodeEditorActions {
       if (target instanceof EditorCell_Label) {
         EditorCell_Label label = (EditorCell_Label) target;
         if (myHome) {
-          label.home();          
+          label.home();
         } else {
           label.end();
         }
@@ -65,11 +65,11 @@ public class NodeEditorActions {
       EditorCell toLeft = cell.getLeafToLeft(CellConditions.SELECTABLE);
       if (toLeft != null) {
         return toLeft;
-      }      
+      }
       return cell.getPrevLeaf(CellConditions.SELECTABLE);
     }
   }
-    
+
 
   public static class MoveToRootHome extends NavigationAction {
 
@@ -85,7 +85,7 @@ public class NodeEditorActions {
     }
 
     private EditorCell findTarget(EditorCell cell) {
-      EditorCell_Collection rootCell = cell.isUnfoldedCollection() ?(EditorCell_Collection) cell : cell.getParent();
+      EditorCell_Collection rootCell = cell.isUnfoldedCollection() ? (EditorCell_Collection) cell : cell.getParent();
       while (rootCell != null && rootCell.getParent() != null) {
         rootCell = rootCell.getParent();
       }
@@ -107,7 +107,7 @@ public class NodeEditorActions {
     }
 
     private EditorCell findTarget(EditorCell cell) {
-      EditorCell_Collection rootCell = cell.isUnfoldedCollection() ?(EditorCell_Collection) cell : cell.getParent();
+      EditorCell_Collection rootCell = cell.isUnfoldedCollection() ? (EditorCell_Collection) cell : cell.getParent();
       while (rootCell != null && rootCell.getParent() != null) {
         rootCell = rootCell.getParent();
       }
@@ -176,7 +176,7 @@ public class NodeEditorActions {
       EditorCell target = findTarget(selection);
       context.getNodeEditorComponent().changeSelection(target);
       if (target.isPunctuationLayout() && ((EditorCell_Label) target).isCaretPositionAllowed(1)) {
-        ((EditorCell_Label)target).setCaretPosition(1);
+        ((EditorCell_Label) target).setCaretPosition(1);
       } else if (target instanceof EditorCell_Label) {
         EditorCell_Label label = (EditorCell_Label) target;
         label.home();
@@ -187,34 +187,34 @@ public class NodeEditorActions {
       EditorCell toRight = cell.getLeafToRight(CellConditions.SELECTABLE);
       if (toRight != null) {
         return toRight;
-      }      
+      }
       return cell.getNextLeaf(CellConditions.SELECTABLE);
     }
   }
 
-    public static class MoveUp extends NavigationAction {
-      public boolean canExecute(EditorContext context) {
-        EditorCell selection = context.getNodeEditorComponent().getDeepestSelectedCell();
-        return selection != null && selection.getParent() != null && findTarget(selection, selection.getCaretX()) != null;
-      }
-
-      public void execute(EditorContext context) {
-        EditorCell selection = context.getNodeEditorComponent().getDeepestSelectedCell();
-        context.getNodeEditorComponent().clearSelectionStack();
-        int caretX = selection.getCaretX();
-        if (context.getNodeEditorComponent().hasLastCaretX()) {
-          caretX = context.getNodeEditorComponent().getLastCaretX();
-        }
-        context.getNodeEditorComponent().saveLastCaretX(caretX);
-        EditorCell target = findTarget(selection, caretX);
-        target.setCaretX(caretX);
-        context.getNodeEditorComponent().changeSelection(target, false);
-      }
-
-      private EditorCell findTarget(EditorCell cell, int caretX) {
-        return cell.getUpper(CellConditions.SELECTABLE, caretX);
-      }
+  public static class MoveUp extends NavigationAction {
+    public boolean canExecute(EditorContext context) {
+      EditorCell selection = context.getNodeEditorComponent().getDeepestSelectedCell();
+      return selection != null && selection.getParent() != null && findTarget(selection, selection.getCaretX()) != null;
     }
+
+    public void execute(EditorContext context) {
+      EditorCell selection = context.getNodeEditorComponent().getDeepestSelectedCell();
+      context.getNodeEditorComponent().clearSelectionStack();
+      int caretX = selection.getCaretX();
+      if (context.getNodeEditorComponent().hasLastCaretX()) {
+        caretX = context.getNodeEditorComponent().getLastCaretX();
+      }
+      context.getNodeEditorComponent().saveLastCaretX(caretX);
+      EditorCell target = findTarget(selection, caretX);
+      target.setCaretX(caretX);
+      context.getNodeEditorComponent().changeSelection(target, false);
+    }
+
+    private EditorCell findTarget(EditorCell cell, int caretX) {
+      return cell.getUpper(CellConditions.SELECTABLE, caretX);
+    }
+  }
 
   public static class MoveDown extends NavigationAction {
     public boolean canExecute(EditorContext context) {
@@ -273,7 +273,7 @@ public class NodeEditorActions {
     int height = (int) rect.getHeight();
     height = isDown ? height : -height;
     int caretX = selection.getCaretX();
-    int y = selection.getY() + (selection.getHeight()/2);
+    int y = selection.getY() + (selection.getHeight() / 2);
     int newY = y + height;
     EditorCell target = editor.findCellWeak(caretX, newY);
     if (target == null) {
@@ -332,9 +332,15 @@ public class NodeEditorActions {
     }
 
     private EditorCell findTarget(EditorCell cell) {
+      while (cell.getParent() != null && cell.getParent().getBounds().equals(cell.getBounds())) {
+        cell = cell.getParent();
+      }
       EditorCell_Collection parent = cell.getParent();
-      while(parent != null) {
-        if(parent.isSelectable()) {
+      while (parent != null) {
+        if (parent.isSelectable()) {
+          while (parent.getParent() != null && parent.getParent().getBounds().equals(parent.getBounds())) {
+            parent = parent.getParent();
+          }
           return parent;
         }
         parent = parent.getParent();
@@ -357,9 +363,9 @@ public class NodeEditorActions {
     public void execute(EditorContext context) {
       EditorCell selectedCell = context.getNodeEditorComponent().getSelectedCell();
       if (selectedCell instanceof EditorCell_Label &&
-        ((EditorCell_Label) selectedCell).isEverythingSelected()) {        
+        ((EditorCell_Label) selectedCell).isEverythingSelected()) {
         ((EditorCell_Label) selectedCell).deselectAll();
-        return ;
+        return;
       }
 
       context.getNodeEditorComponent().setSelectionDontClearStack(context.getNodeEditorComponent().popSelection(), true);
@@ -398,7 +404,7 @@ public class NodeEditorActions {
       editor.clearSelectionStack();
 
       EditorCell newSelection = getCommonSelectableAncestor(deepestSelected, selected, nextLeaf);
-      
+
       EditorCell deepestSelection;
       if (newSelection != selected) {
         if (mySide == CellSide.LEFT) {
@@ -446,7 +452,7 @@ public class NodeEditorActions {
         }
 
         if (newSelection instanceof EditorCell_Label) {
-          ((EditorCell_Label) newSelection).selectAll();          
+          ((EditorCell_Label) newSelection).selectAll();
         }
       }
 
@@ -479,7 +485,7 @@ public class NodeEditorActions {
         result = result.getParent();
       }
       return null;
-    }        
+    }
   }
 
   public static class Complete extends EditorCellAction {

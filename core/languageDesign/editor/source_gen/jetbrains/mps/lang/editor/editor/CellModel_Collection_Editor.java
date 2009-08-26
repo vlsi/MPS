@@ -140,7 +140,6 @@ public class CellModel_Collection_Editor extends DefaultNodeEditor {
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.DRAW_BORDER, true);
-      style.set(StyleAttributes.SELECTABLE, false);
     }
     editorCell.setGridLayout(true);
     editorCell.addEditorCell(this.createCollection_2102_7(editorContext, node));

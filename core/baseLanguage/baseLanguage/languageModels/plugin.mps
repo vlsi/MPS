@@ -3125,7 +3125,7 @@
                   <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1220550364862">
                     <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1220550364863">
                       <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1220550364865">
-                        <link role="baseMethodDeclaration" targetNodeId="9.~StringBuffer.append(java.lang.CharSequence):java.lang.StringBuffer" resolveInfo="append" />
+                        <link role="baseMethodDeclaration" targetNodeId="9.~StringBuffer.append(java.lang.String):java.lang.StringBuffer" resolveInfo="append" />
                         <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1220550364866">
                           <property name="value" value="Method name is incorrect." />
                         </node>
@@ -3161,7 +3161,7 @@
             <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1220549886472">
               <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1220549887286">
                 <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1220549889695">
-                  <link role="baseMethodDeclaration" targetNodeId="9.~StringBuffer.append(java.lang.CharSequence):java.lang.StringBuffer" resolveInfo="append" />
+                  <link role="baseMethodDeclaration" targetNodeId="9.~StringBuffer.append(java.lang.String):java.lang.StringBuffer" resolveInfo="append" />
                   <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1220549892306">
                     <property name="value" value="Method name is empty.\n" />
                   </node>
@@ -3199,7 +3199,7 @@
             <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1220550566859">
               <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1220550568784">
                 <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1220550572178">
-                  <link role="baseMethodDeclaration" targetNodeId="9.~StringBuffer.append(java.lang.CharSequence):java.lang.StringBuffer" resolveInfo="append" />
+                  <link role="baseMethodDeclaration" targetNodeId="9.~StringBuffer.append(java.lang.String):java.lang.StringBuffer" resolveInfo="append" />
                   <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1220550574086">
                     <link role="variableDeclaration" targetNodeId="1220550498787" resolveInfo="errors" />
                   </node>
@@ -3273,7 +3273,7 @@
                 <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1220550863707">
                   <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1220550864741">
                     <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1220550865792">
-                      <link role="baseMethodDeclaration" targetNodeId="9.~StringBuffer.append(java.lang.CharSequence):java.lang.StringBuffer" resolveInfo="append" />
+                      <link role="baseMethodDeclaration" targetNodeId="9.~StringBuffer.append(java.lang.String):java.lang.StringBuffer" resolveInfo="append" />
                       <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1220550866669">
                         <property name="value" value="Such method already exists.\n" />
                       </node>
@@ -3316,7 +3316,7 @@
                       <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1220965470661">
                         <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1220550895503">
                           <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1220550897085">
-                            <link role="baseMethodDeclaration" targetNodeId="9.~StringBuffer.append(java.lang.CharSequence):java.lang.StringBuffer" resolveInfo="append" />
+                            <link role="baseMethodDeclaration" targetNodeId="9.~StringBuffer.append(java.lang.String):java.lang.StringBuffer" resolveInfo="append" />
                             <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1220550902009">
                               <property name="value" value="Method overrides method from class " />
                             </node>
@@ -3326,7 +3326,7 @@
                           </node>
                         </node>
                         <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1220965473227">
-                          <link role="baseMethodDeclaration" targetNodeId="9.~StringBuffer.append(java.lang.CharSequence):java.lang.StringBuffer" resolveInfo="append" />
+                          <link role="baseMethodDeclaration" targetNodeId="9.~StringBuffer.append(java.lang.String):java.lang.StringBuffer" resolveInfo="append" />
                           <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1220965479981">
                             <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="1220965479982">
                               <link role="property" targetNodeId="72.1169194664001" resolveInfo="name" />
@@ -3338,7 +3338,7 @@
                         </node>
                       </node>
                       <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1220965483818">
-                        <link role="baseMethodDeclaration" targetNodeId="9.~StringBuffer.append(java.lang.CharSequence):java.lang.StringBuffer" resolveInfo="append" />
+                        <link role="baseMethodDeclaration" targetNodeId="9.~StringBuffer.append(java.lang.String):java.lang.StringBuffer" resolveInfo="append" />
                         <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1220965487226">
                           <property name="value" value="\n" />
                         </node>
@@ -3361,7 +3361,7 @@
             <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1220550953296">
               <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1220550954330">
                 <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1220550955365">
-                  <link role="baseMethodDeclaration" targetNodeId="9.~StringBuffer.append(java.lang.CharSequence):java.lang.StringBuffer" resolveInfo="append" />
+                  <link role="baseMethodDeclaration" targetNodeId="9.~StringBuffer.append(java.lang.String):java.lang.StringBuffer" resolveInfo="append" />
                   <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1220550957633">
                     <property name="value" value="\n" />
                   </node>
@@ -4712,7 +4712,7 @@
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1220961875353">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1220961876466">
             <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1220961903595">
-              <link role="baseMethodDeclaration" targetNodeId="63.~TableModel.addTableModelListener(javax.swing.event.TableModelListener):void" resolveInfo="addTableModelListener" />
+              <link role="baseMethodDeclaration" targetNodeId="63.~AbstractTableModel.addTableModelListener(javax.swing.event.TableModelListener):void" resolveInfo="addTableModelListener" />
               <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1220961905238">
                 <node role="creator" type="jetbrains.mps.baseLanguage.structure.AnonymousClassCreator" id="1220961965069">
                   <node role="cls" type="jetbrains.mps.baseLanguage.structure.AnonymousClass" id="1220961965070">
