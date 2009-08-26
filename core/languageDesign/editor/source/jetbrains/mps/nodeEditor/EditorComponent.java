@@ -1477,10 +1477,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
       public void run() {
         GoByCurrentReference_Action action = new GoByCurrentReference_Action();
         AnActionEvent event = ActionUtils.createEvent(ActionPlaces.EDITOR_POPUP, dataContext);
-        action.update(event);
-        if (event.getPresentation().isEnabled()) {
-          action.actionPerformed(event);
-        }
+        ActionUtils.updateAndPerformAction(action,event);
       }
     });
   }

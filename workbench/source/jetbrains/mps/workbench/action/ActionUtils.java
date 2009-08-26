@@ -16,7 +16,10 @@
 package jetbrains.mps.workbench.action;
 
 import com.intellij.openapi.actionSystem.*;
+import com.intellij.ide.DataManager;
 import jetbrains.mps.logging.Logger;
+
+import java.awt.event.InputEvent;
 
 public class ActionUtils {
   private static final Logger LOG = Logger.getLogger(ActionUtils.class);
@@ -56,8 +59,19 @@ public class ActionUtils {
   }
 
   public static AnActionEvent createEvent(String place, DataContext context) {
-    AnActionEvent res = new AnActionEvent(null, context, place, new Presentation(), ActionManager.getInstance(), 0);
-    return res;
+    return new AnActionEvent(null, context, place, new Presentation(), ActionManager.getInstance(), 0);
+  }
+
+  public static AnActionEvent createEvent(InputEvent ie){
+    DataContext dataContext = DataManager.getInstance().getDataContext(ie.getComponent());
+    return new AnActionEvent(ie, dataContext, ActionPlaces.UNKNOWN, new Presentation(), ActionManager.getInstance(), 0);
+  }
+
+  public static void updateAndPerformAction(AnAction action,AnActionEvent event){
+    action.update(event);
+    if (event.getPresentation().isEnabled()) {
+      action.actionPerformed(event);
+    }
   }
 
   public static boolean contains(ActionGroup container, ActionGroup what) {

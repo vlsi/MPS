@@ -112,9 +112,6 @@ public class DeleteNodesHelper {
       }
     };
     AnActionEvent event = ActionUtils.createEvent(ActionPlaces.UNKNOWN, dc);
-    safeDeleteAction.update(event);
-    if (event.getPresentation().isEnabled()) {
-      safeDeleteAction.actionPerformed(event);
-    }
+    ActionUtils.updateAndPerformAction(safeDeleteAction, event);
   }
 }

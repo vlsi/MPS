@@ -684,7 +684,7 @@ public class ProjectPane extends AbstractProjectViewPane implements PersistentSt
     final ToolWindowManager manager = ToolWindowManager.getInstance(myProject);
     manager.getToolWindow(ToolWindowId.PROJECT_VIEW).activate(new Runnable() {
       public void run() {
-        if (focus){
+        if (focus) {
           manager.getFocusManager().requestFocus(myTree, false);
         }
       }
@@ -719,7 +719,7 @@ public class ProjectPane extends AbstractProjectViewPane implements PersistentSt
           if (object instanceof ProjectModuleTreeNode) return false;
           //not to load models
           if (object instanceof SModelTreeNode) return false;
-          
+
           return true;
         }
       },
@@ -1211,9 +1211,7 @@ public class ProjectPane extends AbstractProjectViewPane implements PersistentSt
 
     public void performCopy(DataContext dataContext) {
       AnActionEvent event = createEvent(dataContext);
-      myAction.update(event);
-      assert event.getPresentation().isEnabled();
-      myAction.actionPerformed(event);
+      ActionUtils.updateAndPerformAction(myAction, event);
     }
 
     public boolean isCopyEnabled(DataContext dataContext) {
@@ -1228,9 +1226,7 @@ public class ProjectPane extends AbstractProjectViewPane implements PersistentSt
 
     public void performPaste(DataContext dataContext) {
       AnActionEvent event = createEvent(dataContext);
-      myAction.update(event);
-      assert event.getPresentation().isEnabled();
-      myAction.actionPerformed(event);
+      ActionUtils.updateAndPerformAction(myAction, event);
     }
 
     public boolean isPastePossible(DataContext dataContext) {
@@ -1249,9 +1245,7 @@ public class ProjectPane extends AbstractProjectViewPane implements PersistentSt
 
     public void performCut(DataContext dataContext) {
       AnActionEvent event = createEvent(dataContext);
-      myAction.update(event);
-      assert event.getPresentation().isEnabled();
-      myAction.actionPerformed(event);
+      ActionUtils.updateAndPerformAction(myAction, event);
     }
 
     public boolean isCutEnabled(DataContext dataContext) {
