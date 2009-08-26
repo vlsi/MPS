@@ -21,6 +21,7 @@ import com.intellij.openapi.wm.ToolWindowManager;
 import jetbrains.mps.ide.tabbedEditor.ILazyTab;
 import jetbrains.mps.ide.tabbedEditor.TabbedEditor;
 import jetbrains.mps.ide.ui.smodel.SModelTreeNode;
+import jetbrains.mps.ide.IdeMain;
 import jetbrains.mps.lang.core.structure.BaseConcept;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.nodeEditor.EditorComponent;
@@ -117,8 +118,10 @@ public abstract class BaseSingletabbedTab implements ILazyTab {
       });
 
       if (myComponent != null) {
-        Project project = MPSDataKeys.PROJECT.getData(DataManager.getInstance().getDataContext());
-        ToolWindowManager.getInstance(project).getFocusManager().requestFocus(myComponent, false);
+        if (IdeMain.getTestMode() != IdeMain.TestMode.CORE_TEST) {
+          Project project = MPSDataKeys.PROJECT.getData(DataManager.getInstance().getDataContext());
+          ToolWindowManager.getInstance(project).getFocusManager().requestFocus(myComponent, false);
+        }
       }
     }
 

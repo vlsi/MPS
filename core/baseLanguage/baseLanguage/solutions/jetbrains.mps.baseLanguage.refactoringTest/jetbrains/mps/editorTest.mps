@@ -1554,53 +1554,6 @@
       </node>
     </node>
   </node>
-  <visible index="2" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
-  <node type="jetbrains.mps.lang.test.structure.EditorTestCase" id="1232549383269">
-    <property name="package" value="selection" />
-    <property name="name" value="ExtendsInConceptDeclaration" />
-    <node role="nodeToEdit" type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1232549453172">
-      <property name="name" value="TestConcept" />
-      <link role="extends" targetNodeId="2v.1133920641626" resolveInfo="BaseConcept" />
-      <node role="testNode$attribute" type="jetbrains.mps.lang.test.structure.AnonymousCellAnnotation" id="1232550796340">
-        <property name="caretPosition" value="0" />
-        <property name="cellId" value="property_name" />
-      </node>
-    </node>
-    <node role="result" type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1232549505425">
-      <property name="name" value="TestConcept" />
-    </node>
-    <node role="code" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1232549542687">
-      <node role="statement" type="jetbrains.mps.baseLanguage.structure.ForStatement" id="1232550124548">
-        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1232550124549">
-          <node role="statement" type="jetbrains.mps.lang.test.structure.PressKeyStatement" id="1232550151217">
-            <node role="keyStrokes" type="jetbrains.mps.lang.plugin.structure.KeyMapKeystroke" id="1232550151218">
-              <property name="keycode" value="VK_DELETE" />
-            </node>
-          </node>
-        </node>
-        <node role="variable" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1232550124551">
-          <property name="name" value="i" />
-          <node role="type" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="1232550126990" />
-          <node role="initializer" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1232550130367">
-            <property name="value" value="0" />
-          </node>
-        </node>
-        <node role="condition" type="jetbrains.mps.baseLanguage.structure.LessThanExpression" id="1232550143757">
-          <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1232550143979">
-            <property name="value" value="12" />
-          </node>
-          <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1232550137556">
-            <link role="variableDeclaration" targetNodeId="1232550124551" resolveInfo="i" />
-          </node>
-        </node>
-        <node role="iteration" type="jetbrains.mps.baseLanguage.structure.PostfixIncrementExpression" id="1232550147340">
-          <node role="expression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1232550147341">
-            <link role="variableDeclaration" targetNodeId="1232550124551" resolveInfo="i" />
-          </node>
-        </node>
-      </node>
-    </node>
-  </node>
   <node type="jetbrains.mps.lang.test.structure.EditorTestCase" id="1232554293720">
     <property name="package" value="selection" />
     <property name="name" value="DeleteOverridenMethodInBehavior" />
