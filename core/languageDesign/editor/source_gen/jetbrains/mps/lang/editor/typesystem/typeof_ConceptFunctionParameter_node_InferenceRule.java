@@ -8,6 +8,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.editor.behavior.AbstractComponent_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.intentions.BaseIntentionProvider;
 import jetbrains.mps.smodel.SModelUtil_new;
 
@@ -17,6 +18,11 @@ public class typeof_ConceptFunctionParameter_node_InferenceRule extends Abstract
 
   public void applyRule(final SNode node, final TypeCheckingContext typeCheckingContext) {
     SNode applicableConcept = AbstractComponent_Behavior.call_getConceptDeclaration_7055725856388417603(SNodeOperations.getAncestor(node, "jetbrains.mps.lang.editor.structure.BaseEditorComponent", false, false));
+    SNode withRole = SNodeOperations.getAncestor(node, "jetbrains.mps.lang.editor.structure.CellModel_WithRole", false, false);
+    if (withRole != null && SNodeOperations.isInstanceOf(SLinkOperations.getTarget(withRole, "relationDeclaration", false), "jetbrains.mps.lang.structure.structure.LinkDeclaration")) {
+      SNode link = SNodeOperations.cast(SLinkOperations.getTarget(withRole, "relationDeclaration", false), "jetbrains.mps.lang.structure.structure.LinkDeclaration");
+      applicableConcept = SLinkOperations.getTarget(link, "target", false);
+    }
     {
       SNode _nodeToCheck_1029348928467 = node;
       BaseIntentionProvider intentionProvider = null;
