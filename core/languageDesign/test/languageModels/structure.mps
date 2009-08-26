@@ -550,6 +550,10 @@
     <property name="iconPath" value="${language_descriptor}\icons\nodesTest.png" />
     <property name="package" value="editor" />
     <link role="extends" targetNodeId="5.1133920641626" resolveInfo="BaseConcept" />
+    <node role="propertyDeclaration" type="jetbrains.mps.lang.structure.structure.PropertyDeclaration" id="1883175908513350760">
+      <property name="name" value="description" />
+      <link role="dataType" targetNodeId="5.1082983041843" resolveInfo="string" />
+    </node>
     <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1229187676388">
       <property name="metaClass" value="aggregation" />
       <property name="sourceCardinality" value="1" />

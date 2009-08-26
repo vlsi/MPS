@@ -14,6 +14,7 @@ import jetbrains.mps.project.GlobalScope;
 
 public class EditorTestCase extends BaseConcept implements INamedConcept, ITestMethod, ITestCase {
   public static final String concept = "jetbrains.mps.lang.test.structure.EditorTestCase";
+  public static final String DESCRIPTION = "description";
   public static final String NAME = "name";
   public static final String SHORT_DESCRIPTION = "shortDescription";
   public static final String ALIAS = "alias";
@@ -24,6 +25,14 @@ public class EditorTestCase extends BaseConcept implements INamedConcept, ITestM
 
   public EditorTestCase(SNode node) {
     super(node);
+  }
+
+  public String getDescription() {
+    return this.getProperty(EditorTestCase.DESCRIPTION);
+  }
+
+  public void setDescription(String value) {
+    this.setProperty(EditorTestCase.DESCRIPTION, value);
   }
 
   public String getName() {
