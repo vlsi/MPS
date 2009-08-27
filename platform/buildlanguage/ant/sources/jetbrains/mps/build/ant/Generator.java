@@ -515,7 +515,7 @@ public class Generator {
     }
   }
 
-  private static class SystemOutLogger implements AntLogger {
+  protected static class SystemOutLogger implements AntLogger {
 
     public void log(String text, int level) {
       if (level == Project.MSG_ERR){

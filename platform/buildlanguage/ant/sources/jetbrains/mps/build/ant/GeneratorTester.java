@@ -9,6 +9,17 @@ public class GeneratorTester extends Generator {
   private String myCurrentTestName;
   private StringBuffer myErrorMessagesBuffer = new StringBuffer();
 
+  public static void main(String[] args) {
+    Generator generator = new GeneratorTester(WhatToGenerate.fromCommandLine(args), new SystemOutLogger());
+    try {
+      generator.generate();
+      System.exit(0);
+    } catch (Exception e) {
+      generator.log(e);
+      System.exit(1);
+    }
+  }
+
   public GeneratorTester(WhatToGenerate whatToGenerate, ProjectComponent component) {
     super(whatToGenerate, component);
   }
