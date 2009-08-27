@@ -325,10 +325,21 @@
           <node role="conditionFunction" type="jetbrains.mps.lang.generator.structure.IfMacro_Condition" id="6382090206703015739">
             <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="6382090206703015740">
               <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="6382090206703015741">
-                <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="6382090206703015743">
-                  <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="6382090206703015742" />
-                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="6382090206703015747">
-                    <link role="baseMethodDeclaration" targetNodeId="4.3905757829894475414" resolveInfo="isBaseCommandExists" />
+                <node role="expression" type="jetbrains.mps.baseLanguage.structure.AndExpression" id="2837696374707000846">
+                  <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="2837696374707000855">
+                    <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="2837696374707000850">
+                      <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="2837696374707000849" />
+                      <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="2837696374707000854">
+                        <link role="link" targetNodeId="1.2635812496400429929" />
+                      </node>
+                    </node>
+                    <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_IsNotNullOperation" id="2837696374707000859" />
+                  </node>
+                  <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="6382090206703015743">
+                    <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="6382090206703015742" />
+                    <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="6382090206703015747">
+                      <link role="baseMethodDeclaration" targetNodeId="4.3905757829894475414" resolveInfo="isBaseCommandExists" />
+                    </node>
                   </node>
                 </node>
               </node>
