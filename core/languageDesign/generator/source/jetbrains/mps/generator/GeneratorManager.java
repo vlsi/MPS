@@ -54,7 +54,6 @@ public class GeneratorManager {
 
   public static final Logger LOG = Logger.getLogger(GeneratorManager.class);
 
-  private final List<IFileGenerator> myFileGenerators = new LinkedList<IFileGenerator>();
   private final List<GenerationListener> myGenerationListeners = new ArrayList<GenerationListener>();
   private final List<CompilationListener> myCompilationListeners = new ArrayList<CompilationListener>();
 
@@ -67,39 +66,8 @@ public class GeneratorManager {
     mySettings = settings;
   }
 
-  public void addFileGenerator(IFileGenerator fileGenerator) {
-    myFileGenerators.add(fileGenerator);
-  }
-
-  public void removeFileGenerator(IFileGenerator fileGenerator) {
-    myFileGenerators.remove(fileGenerator);
-  }
-
   public IGenerationType getDefaultModuleGenerationType() {
     return IGenerationType.FILES;
-  }
-
-  public IFileGenerator chooseFileGenerator(SNode outputRootNode, SNode originalInputNode) {
-    for (IFileGenerator fileGenerator : myFileGenerators) {
-      try {
-        if (fileGenerator.overridesDefault(outputRootNode, originalInputNode)) {
-          return fileGenerator;
-        }
-      } catch (Throwable t) {
-        LOG.error(t);
-      }
-    }
-
-    for (IFileGenerator fileGenerator : myFileGenerators) {
-      try {
-        if (fileGenerator.isDefault(outputRootNode)) {
-          return fileGenerator;
-        }
-      } catch (Throwable t) {
-        LOG.error(t);
-      }
-    }
-    return null;
   }
 
   public void generateModelsFromDifferentModules(final IOperationContext operationContext, final List<SModelDescriptor> inputModels, final IGenerationType generationType) {
