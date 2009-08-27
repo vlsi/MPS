@@ -14,7 +14,6 @@ import jetbrains.mps.build.packaging.behavior.Configuration_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.build.distrib.behavior.DistribConfiguration_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptPropertyOperations;
-import jetbrains.mps.build.distrib.behavior.UniversalConfig_Behavior;
 import jetbrains.mps.build.packaging.behavior.MPSLayout_Behavior;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.build.packaging.behavior.IStringExpression_Behavior;
@@ -23,6 +22,7 @@ import jetbrains.mps.build.distrib.behavior.AbstractCommandLinePart_Behavior;
 import java.util.List;
 import jetbrains.mps.build.distrib.behavior.MacConfig_Behavior;
 import jetbrains.mps.build.packaging.behavior.IPath_Behavior;
+import jetbrains.mps.build.distrib.behavior.UniversalConfig_Behavior;
 import jetbrains.mps.build.distrib.behavior.ArtifactReferenceCommandLinePart_Behavior;
 import jetbrains.mps.build.packaging.behavior.IAbstractCompositeComponent_Behavior;
 import jetbrains.mps.generator.template.ReferenceMacroContext;
@@ -89,22 +89,6 @@ public class QueriesGenerated {
     return SConceptPropertyOperations.getString(_context.getNode(), "operatingSystem") + ".dist";
   }
 
-  public static Object propertyMacro_GetPropertyValue_1230292998920(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return UniversalConfig_Behavior.call_getStartupScriptExtension_1230292961412(_context.getNode());
-  }
-
-  public static Object propertyMacro_GetPropertyValue_1230293047562(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return UniversalConfig_Behavior.call_getStartupScriptName_1230292766208(_context.getNode());
-  }
-
-  public static Object propertyMacro_GetPropertyValue_1230293101910(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return SPropertyOperations.getString(SystemSpecificConfig_Behavior.call_getDistribConfiguration_1230207861621(_context.getNode()), "startupClass");
-  }
-
-  public static Object propertyMacro_GetPropertyValue_1230293101928(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return AbstractPath_Behavior.call_getFullPath_1230059208735(_context.getNode()).replace("\\", "/");
-  }
-
   public static Object propertyMacro_GetPropertyValue_1230293422263(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return SConceptPropertyOperations.getString(_context.getNode(), "operatingSystem") + ".dist";
   }
@@ -153,33 +137,12 @@ public class QueriesGenerated {
     return SystemSpecificConfig_Behavior.call_getAntPathFromAbstractPath_1234513234515(_context.getNode(), SLinkOperations.getTarget(SystemSpecificConfig_Behavior.call_getDistribConfiguration_1230207861621(_context.getNode()), "startupDirectory", true));
   }
 
-  public static Object propertyMacro_GetPropertyValue_1231685737416(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return AbstractPath_Behavior.call_getFullPath_1230059208735(SLinkOperations.getTarget(SystemSpecificConfig_Behavior.call_getDistribConfiguration_1230207861621(_context.getNode()), "startupDirectory", true));
-  }
-
-  public static Object propertyMacro_GetPropertyValue_1231685934125(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    String startupDir = AbstractPath_Behavior.call_getFullPath_1230059208735(SLinkOperations.getTarget(SystemSpecificConfig_Behavior.call_getDistribConfiguration_1230207861621(_context.getNode()), "startupDirectory", true));
-    if (startupDir.endsWith("/")) {
-      startupDir = startupDir.substring(0, startupDir.length() - 1);
-    }
-    String[] path = startupDir.split("/");
-    String pathFromStartupDir = "..";
-    for (int i = 0 ; i < path.length - 1 ; i++ ) {
-      pathFromStartupDir += "/..";
-    }
-    return pathFromStartupDir;
-  }
-
   public static Object propertyMacro_GetPropertyValue_1231692535562(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return DistribConfiguration_Behavior.call_getVMOptionsExt_1231692561653(_context.getNode());
   }
 
   public static Object propertyMacro_GetPropertyValue_1231692592753(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return IStringExpression_Behavior.call_getValue_1213877173054(SLinkOperations.getTarget(_context.getNode(), "shortName", true)).toLowerCase();
-  }
-
-  public static Object propertyMacro_GetPropertyValue_1231748433201(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return SPropertyOperations.getString(SystemSpecificConfig_Behavior.call_getDistribConfiguration_1230207861621(_context.getNode()), "defaultVMOptions");
   }
 
   public static Object propertyMacro_GetPropertyValue_1231749507312(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -426,10 +389,6 @@ public class QueriesGenerated {
     return SPropertyOperations.getString(SystemSpecificConfig_Behavior.call_getDistribConfiguration_1230207861621(_context.getNode()), "additionalVMOptions");
   }
 
-  public static Object propertyMacro_GetPropertyValue_1240322826778(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return SPropertyOperations.getString(SystemSpecificConfig_Behavior.call_getDistribConfiguration_1230207861621(_context.getNode()), "additionalVMOptions");
-  }
-
   public static Object propertyMacro_GetPropertyValue_1240556381818(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return WindowsConfig_Behavior.call_getInstallerIcon_1240557277373(_context.getNode());
   }
@@ -490,11 +449,48 @@ public class QueriesGenerated {
     return AbstractPath_Behavior.call_getFullPath_1230059208735(SLinkOperations.getTarget(SystemSpecificConfig_Behavior.call_getDistribConfiguration_1230207861621(_context.getNode()), "vmOptionsDir", true)).replace("\\", "/");
   }
 
-  public static Object propertyMacro_GetPropertyValue_3858179827519823479(final IOperationContext operationContext, final PropertyMacroContext _context) {
+  public static Object propertyMacro_GetPropertyValue_1635896182103908167(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return UniversalConfig_Behavior.call_getStartupScriptName_1230292766208(_context.getNode());
+  }
+
+  public static Object propertyMacro_GetPropertyValue_1635896182103908181(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    String startupDir = AbstractPath_Behavior.call_getFullPath_1230059208735(SLinkOperations.getTarget(SystemSpecificConfig_Behavior.call_getDistribConfiguration_1230207861621(_context.getNode()), "startupDirectory", true));
+    if (startupDir.endsWith("/")) {
+      startupDir = startupDir.substring(0, startupDir.length() - 1);
+    }
+    String[] path = startupDir.split("/");
+    String pathFromStartupDir = "..";
+    for (int i = 0 ; i < path.length - 1 ; i++ ) {
+      pathFromStartupDir += "/..";
+    }
+    return pathFromStartupDir;
+  }
+
+  public static Object propertyMacro_GetPropertyValue_1635896182103908244(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return SPropertyOperations.getString(SystemSpecificConfig_Behavior.call_getDistribConfiguration_1230207861621(_context.getNode()), "startupClass");
+  }
+
+  public static Object propertyMacro_GetPropertyValue_1635896182103908320(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return SPropertyOperations.getString(SystemSpecificConfig_Behavior.call_getDistribConfiguration_1230207861621(_context.getNode()), "defaultVMOptions");
+  }
+
+  public static Object propertyMacro_GetPropertyValue_1635896182103908344(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return SPropertyOperations.getString(SystemSpecificConfig_Behavior.call_getDistribConfiguration_1230207861621(_context.getNode()), "additionalVMOptions");
+  }
+
+  public static Object propertyMacro_GetPropertyValue_1635896182103908365(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return AbstractPath_Behavior.call_getFullPath_1230059208735(_context.getNode()).replace("\\", "/");
+  }
+
+  public static Object propertyMacro_GetPropertyValue_1635896182103908393(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return AbstractPath_Behavior.call_getFullPath_1230059208735(SLinkOperations.getTarget(SystemSpecificConfig_Behavior.call_getDistribConfiguration_1230207861621(_context.getNode()), "startupDirectory", true));
+  }
+
+  public static Object propertyMacro_GetPropertyValue_2837696374706346939(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return SystemSpecificConfig_Behavior.call_getVMOptionsFilePath_1231769123888(_context.getNode());
   }
 
-  public static Object propertyMacro_GetPropertyValue_4570889604826394255(final IOperationContext operationContext, final PropertyMacroContext _context) {
+  public static Object propertyMacro_GetPropertyValue_3858179827519823479(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return SystemSpecificConfig_Behavior.call_getVMOptionsFilePath_1231769123888(_context.getNode());
   }
 
@@ -576,14 +572,6 @@ public class QueriesGenerated {
 
   public static boolean ifMacro_Condition_1230661197597(final IOperationContext operationContext, final IfMacroContext _context) {
     return !(AbstractPath_Behavior.call_getFullPath_1230059208735(SLinkOperations.getTarget(SystemSpecificConfig_Behavior.call_getDistribConfiguration_1230207861621(_context.getNode()), "startupDirectory", true)).equals("."));
-  }
-
-  public static boolean ifMacro_Condition_1231685674769(final IOperationContext operationContext, final IfMacroContext _context) {
-    return !(AbstractPath_Behavior.call_getFullPath_1230059208735(SLinkOperations.getTarget(SystemSpecificConfig_Behavior.call_getDistribConfiguration_1230207861621(_context.getNode()), "startupDirectory", true)).equals("."));
-  }
-
-  public static boolean ifMacro_Condition_1231748274955(final IOperationContext operationContext, final IfMacroContext _context) {
-    return SPropertyOperations.getBoolean(SystemSpecificConfig_Behavior.call_getDistribConfiguration_1230207861621(_context.getNode()), "useVMOptionsFile");
   }
 
   public static boolean ifMacro_Condition_1231749156422(final IOperationContext operationContext, final IfMacroContext _context) {
@@ -806,10 +794,6 @@ public class QueriesGenerated {
     return (SLinkOperations.getTarget(_context.getNode(), "license", true) != null);
   }
 
-  public static boolean ifMacro_Condition_1240322753785(final IOperationContext operationContext, final IfMacroContext _context) {
-    return StringUtils.isNotEmpty(SPropertyOperations.getString(SystemSpecificConfig_Behavior.call_getDistribConfiguration_1230207861621(_context.getNode()), "additionalVMOptions"));
-  }
-
   public static boolean ifMacro_Condition_1240322795463(final IOperationContext operationContext, final IfMacroContext _context) {
     return StringUtils.isNotEmpty(SPropertyOperations.getString(SystemSpecificConfig_Behavior.call_getDistribConfiguration_1230207861621(_context.getNode()), "additionalVMOptions"));
   }
@@ -862,8 +846,20 @@ public class QueriesGenerated {
     return SPropertyOperations.getBoolean(SystemSpecificConfig_Behavior.call_getDistribConfiguration_1230207861621(_context.getNode()), "useVMOptionsFile");
   }
 
-  public static boolean ifMacro_Condition_4570889604826394267(final IOperationContext operationContext, final IfMacroContext _context) {
+  public static boolean ifMacro_Condition_1635896182103908254(final IOperationContext operationContext, final IfMacroContext _context) {
     return SPropertyOperations.getBoolean(SystemSpecificConfig_Behavior.call_getDistribConfiguration_1230207861621(_context.getNode()), "useVMOptionsFile");
+  }
+
+  public static boolean ifMacro_Condition_1635896182103908264(final IOperationContext operationContext, final IfMacroContext _context) {
+    return SPropertyOperations.getBoolean(SystemSpecificConfig_Behavior.call_getDistribConfiguration_1230207861621(_context.getNode()), "useVMOptionsFile");
+  }
+
+  public static boolean ifMacro_Condition_1635896182103908330(final IOperationContext operationContext, final IfMacroContext _context) {
+    return StringUtils.isNotEmpty(SPropertyOperations.getString(SystemSpecificConfig_Behavior.call_getDistribConfiguration_1230207861621(_context.getNode()), "additionalVMOptions"));
+  }
+
+  public static boolean ifMacro_Condition_1635896182103908378(final IOperationContext operationContext, final IfMacroContext _context) {
+    return !(AbstractPath_Behavior.call_getFullPath_1230059208735(SLinkOperations.getTarget(SystemSpecificConfig_Behavior.call_getDistribConfiguration_1230207861621(_context.getNode()), "startupDirectory", true)).equals("."));
   }
 
   public static boolean ifMacro_Condition_8356548439143999089(final IOperationContext operationContext, final IfMacroContext _context) {
@@ -932,10 +928,6 @@ public class QueriesGenerated {
 
   public static Iterable sourceNodesQuery_1230234413536(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     return SLinkOperations.getTargets(_context.getNode(), "systemSpecificConfig", true);
-  }
-
-  public static Iterable sourceNodesQuery_1230293101939(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    return SLinkOperations.getTargets(SLinkOperations.getTarget(SystemSpecificConfig_Behavior.call_getDistribConfiguration_1230207861621(_context.getNode()), "classPath", true), "classPathItem", true);
   }
 
   public static Iterable sourceNodesQuery_1230564253749(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
@@ -1014,6 +1006,10 @@ public class QueriesGenerated {
 
   public static Iterable sourceNodesQuery_1241440614557(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     return SystemSpecificConfig_Behavior.call_getAllUsedVariable_1234793567442(_context.getNode());
+  }
+
+  public static Iterable sourceNodesQuery_1635896182104079196(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
+    return SLinkOperations.getTargets(SLinkOperations.getTarget(SystemSpecificConfig_Behavior.call_getDistribConfiguration_1230207861621(_context.getNode()), "classPath", true), "classPathItem", true);
   }
 
   public static void mappingScript_CodeBlock_1234975234874(final IOperationContext operationContext, final MappingScriptContext _context) {

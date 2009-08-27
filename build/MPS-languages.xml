@@ -13,10 +13,12 @@
     </jar>
   </target>
   <target name="pack.jetbrains.mps.baseLanguage0">
+    <mkdir dir="core/baseLanguage/baseLanguage/classes_gen" />
     <mkdir dir="core/baseLanguage/baseLanguage/classes" />
     <jar destfile="${deploy.dir}/MPS/core/baseLanguage/jetbrains.mps.baseLanguage.mpsarch.jar" compress="true" duplicate="preserve" filesonly="true">
       <zipfileset file="core/baseLanguage/baseLanguage/baseLanguage.mpl" prefix="module" />
       <zipfileset dir="core/baseLanguage/baseLanguage" excludes="**/*.iml, **/*.java, **/*.class, **/*.mpr, **/*.mws, **/*.mpl, **/*.msd, **/*.devkit, **/*.ipr" prefix="module" />
+      <zipfileset dir="core/baseLanguage/baseLanguage/classes_gen" />
       <zipfileset dir="core/baseLanguage/baseLanguage/classes" />
     </jar>
     <jar destfile="${deploy.dir}/MPS/core/baseLanguage/jetbrains.mps.baseLanguage.runtime.jar" duplicate="preserve" filesonly="true">
