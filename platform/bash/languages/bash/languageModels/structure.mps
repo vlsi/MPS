@@ -1547,6 +1547,10 @@
       <property name="value" value="${" />
       <link role="conceptPropertyDeclaration" targetNodeId="3147078024759753553" resolveInfo="pattern" />
     </node>
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="975347375211372222">
+      <property name="value" value="${variable}" />
+      <link role="conceptPropertyDeclaration" targetNodeId="2v.1137473891462" resolveInfo="alias" />
+    </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="3999172467442724020">
     <property name="name" value="ArithmeticExpansion" />

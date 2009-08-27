@@ -124,7 +124,11 @@
     <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="3321051580273396579">
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="3905757829893347586">
         <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode" id="3321051580273396581">
+          <property name="attractsFocus" value="3" />
           <link role="relationDeclaration" targetNodeId="1.3321051580273150845" />
+          <node role="styleItem" type="jetbrains.mps.lang.editor.structure.DefaultCaretPositionStyleClassItem" id="975347375211484788">
+            <property name="position" value="FIRST" />
+          </node>
         </node>
         <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode" id="3905757829893347589">
           <property name="emptyNoTargetText" value="true" />
@@ -1872,6 +1876,7 @@
     <link role="conceptDeclaration" targetNodeId="1.8474643070102636479" resolveInfo="BaseCommandLine" />
     <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="8474643070102636495">
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode" id="8474643070102636497">
+        <property name="attractsFocus" value="3" />
         <link role="relationDeclaration" targetNodeId="1.8474643070102636485" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="8474643070102636502">
@@ -1946,6 +1951,7 @@
     <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="8474643070111564673">
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode" id="8474643070111564676">
         <property name="noTargetText" value="&lt;no command&gt;" />
+        <property name="attractsFocus" value="2" />
         <link role="relationDeclaration" targetNodeId="1.8474643070110463418" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="8474643070111818355">
@@ -2007,11 +2013,16 @@
   </node>
   <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" id="3905757829901343111">
     <link role="conceptDeclaration" targetNodeId="1.3905757829901343108" resolveInfo="CommandKeeper" />
-    <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="3905757829906075890">
-      <node role="styleItem" type="jetbrains.mps.lang.editor.structure.EditableStyleClassItem" id="3905757829906075892">
+    <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="975347375211242238">
+      <property name="nullText" value="?command" />
+      <link role="styleClass" targetNodeId="3905757829895296290" resolveInfo="HintStyle" />
+      <node role="styleItem" type="jetbrains.mps.lang.editor.structure.DefaultCaretPositionStyleClassItem" id="975347375211572477">
+        <property name="position" value="FIRST" />
+      </node>
+      <node role="styleItem" type="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem" id="975347375211572479">
         <property name="flag" value="true" />
       </node>
-      <node role="styleItem" type="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem" id="3905757829906075894">
+      <node role="styleItem" type="jetbrains.mps.lang.editor.structure.EditableStyleClassItem" id="975347375211831632">
         <property name="flag" value="true" />
       </node>
     </node>
