@@ -15,6 +15,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
+import jetbrains.mps.baseLanguage.search.IClassifiersSearchScope;
 
 public class Classifier_Behavior {
   private static Class[] PARAMETERS_1214840444586 = {SNode.class};
@@ -95,7 +96,7 @@ public class Classifier_Behavior {
   }
 
   public static boolean call_isStatic_521412098689998668(SNode thisNode) {
-    return !(SPropertyOperations.getBoolean(thisNode, "nonStatic"));
+    return !(SPropertyOperations.getBoolean(thisNode, "nonStatic")) && !(SNodeOperations.isInstanceOf(thisNode, "jetbrains.mps.baseLanguage.structure.AnonymousClass"));
   }
 
   public static boolean call_isInner_521412098689998677(SNode thisNode) {
@@ -138,6 +139,20 @@ public class Classifier_Behavior {
           // safely break here
           break;
         }
+      }
+    }
+    return result;
+  }
+
+  public static List<SNode> getAssesableMembers_669019847198843527(SNode contextNode, int constraint) {
+    SNode classifier = SNodeOperations.getAncestor(contextNode, "jetbrains.mps.baseLanguage.structure.Classifier", false, false);
+    List<SNode> result = new ArrayList<SNode>();
+    while (classifier != null) {
+      ListSequence.fromList(result).addSequence(ListSequence.fromList((List<SNode>)Classifier_Behavior.call_getVisibleMembers_1213877306257(classifier, contextNode, IClassifiersSearchScope.INSTANCE_METHOD)));
+      if (!(Classifier_Behavior.call_isStatic_521412098689998668(classifier))) {
+        classifier = SNodeOperations.getAncestor(classifier, "jetbrains.mps.baseLanguage.structure.Classifier", false, false);
+      } else {
+        break;
       }
     }
     return result;
