@@ -1479,39 +1479,14 @@
       <link role="applicableLink" targetNodeId="1.1172058436957" />
       <node role="searchScopeFactory" type="jetbrains.mps.lang.constraints.structure.ConstraintFunction_ReferentSearchScope_Factory" id="1213104859412">
         <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1213104859413">
-          <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1213104859414">
-            <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1213104859415">
-              <property name="name" value="clazz" />
-              <node role="type" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1213104859416">
-                <link role="concept" targetNodeId="1.1068390468198" resolveInfo="ClassConcept" />
-              </node>
-              <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1213104859417">
-                <node role="operand" type="jetbrains.mps.lang.constraints.structure.ConceptParameter_ReferentSearchScope_enclosingNode" id="1213104859418" />
-                <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_GetAncestorOperation" id="1213104859419">
-                  <node role="parameter" type="jetbrains.mps.lang.smodel.structure.OperationParm_Concept" id="1213104859420">
-                    <node role="conceptArgument" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" id="1213104859421">
-                      <link role="conceptDeclaration" targetNodeId="1.1068390468198" resolveInfo="ClassConcept" />
-                    </node>
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1213104859422">
-            <node role="expression" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1213104859423">
-              <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1213104859424">
-                <link role="baseMethodDeclaration" targetNodeId="10.~ClassifierVisibleStaticMembersScope.&lt;init&gt;(jetbrains.mps.baseLanguage.structure.Classifier,jetbrains.mps.smodel.SNode,int)" resolveInfo="ClassifierVisibleStaticMembersScope" />
-                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1213104859425">
-                  <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1213104859426">
-                    <link role="variableDeclaration" targetNodeId="1213104859415" resolveInfo="clazz" />
-                  </node>
-                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_GetAdapterOperation" id="1213104859427" />
-                </node>
-                <node role="actualArgument" type="jetbrains.mps.lang.constraints.structure.ConceptParameter_ReferentSearchScope_enclosingNode" id="1213104859428" />
-                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference" id="1213104859429">
-                  <link role="classifier" targetNodeId="10.~IClassifiersSearchScope" resolveInfo="IClassifiersSearchScope" />
-                  <link role="variableDeclaration" targetNodeId="10.~IClassifiersSearchScope.STATIC_METHOD" resolveInfo="STATIC_METHOD" />
-                </node>
+            <node role="expression" type="jetbrains.mps.lang.smodel.structure.StaticConceptMethodCall" id="3574270020490365874">
+              <link role="concept" targetNodeId="1.1107461130800" resolveInfo="Classifier" />
+              <link role="baseMethodDeclaration" targetNodeId="50.669019847198843527" resolveInfo="getAssesableMembers" />
+              <node role="actualArgument" type="jetbrains.mps.lang.constraints.structure.ConceptParameter_ReferentSearchScope_enclosingNode" id="3574270020490365876" />
+              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference" id="3574270020490365879">
+                <link role="classifier" targetNodeId="10.~IClassifiersSearchScope" resolveInfo="IClassifiersSearchScope" />
+                <link role="variableDeclaration" targetNodeId="10.~IClassifiersSearchScope.STATIC_METHOD" resolveInfo="STATIC_METHOD" />
               </node>
             </node>
           </node>

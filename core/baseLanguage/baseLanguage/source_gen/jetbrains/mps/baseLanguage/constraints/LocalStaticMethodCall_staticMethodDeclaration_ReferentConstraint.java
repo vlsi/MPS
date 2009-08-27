@@ -7,10 +7,7 @@ import jetbrains.mps.smodel.constraints.IModelConstraints;
 import jetbrains.mps.smodel.constraints.ModelConstraintsManager;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.constraints.ReferentConstraintContext;
-import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.baseLanguage.search.ClassifierVisibleStaticMembersScope;
-import jetbrains.mps.baseLanguage.structure.ClassConcept;
+import jetbrains.mps.baseLanguage.behavior.Classifier_Behavior;
 import jetbrains.mps.baseLanguage.search.IClassifiersSearchScope;
 
 public class LocalStaticMethodCall_staticMethodDeclaration_ReferentConstraint extends BaseNodeReferenceSearchScopeProvider implements IModelConstraints {
@@ -26,7 +23,6 @@ public class LocalStaticMethodCall_staticMethodDeclaration_ReferentConstraint ex
   }
 
   public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferentConstraintContext _context) {
-    SNode clazz = SNodeOperations.getAncestor(_context.getEnclosingNode(), "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false);
-    return new ClassifierVisibleStaticMembersScope(((ClassConcept)SNodeOperations.getAdapter(clazz)), _context.getEnclosingNode(), IClassifiersSearchScope.STATIC_METHOD);
+    return Classifier_Behavior.getAssesableMembers_669019847198843527(_context.getEnclosingNode(), IClassifiersSearchScope.STATIC_METHOD);
   }
 }

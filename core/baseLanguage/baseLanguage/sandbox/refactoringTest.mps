@@ -51,6 +51,12 @@
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="1224153941792">
     <property name="name" value="Test" />
     <property name="abstractClass" value="false" />
+    <node role="staticMethod" type="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" id="3574270020490361404">
+      <property name="name" value="static" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="3574270020490361405" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="3574270020490361406" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="3574270020490361407" />
+    </node>
     <node role="staticField" type="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" id="4949017686597703110">
       <property name="name" value="myFielddddd" />
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PrivateVisibility" id="4949017686597703111" />
@@ -64,6 +70,24 @@
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="8176545594696953060">
             <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="8176545594696993103">
               <link role="baseMethodDeclaration" targetNodeId="31.~ArrayList.&lt;init&gt;()" resolveInfo="ArrayList" />
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="3574270020490319701">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="3574270020490319702">
+            <node role="creator" type="jetbrains.mps.baseLanguage.structure.AnonymousClassCreator" id="3574270020490359745">
+              <node role="cls" type="jetbrains.mps.baseLanguage.structure.AnonymousClass" id="3574270020490359746">
+                <property name="nonStatic" value="true" />
+                <link role="classifier" targetNodeId="10.~Runnable" resolveInfo="Runnable" />
+                <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="3574270020490359747" />
+                <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="3574270020490359748">
+                  <property name="isAbstract" value="false" />
+                  <property name="name" value="run" />
+                  <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="3574270020490359749" />
+                  <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="3574270020490359750" />
+                  <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="3574270020490359751" />
+                </node>
+              </node>
             </node>
           </node>
         </node>
@@ -153,6 +177,20 @@
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="8611321448009237968">
           <property name="value" value="Somie actions" />
         </node>
+      </node>
+      <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="5898948207305517376">
+        <property name="name" value="a" />
+        <node role="type" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="5898948207305517377" />
+      </node>
+    </node>
+    <node role="staticInnerClassifiers" type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="5898948207305438445">
+      <property name="name" value="Gu" />
+      <property name="nonStatic" value="true" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="5898948207305438446" />
+      <node role="constructor" type="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" id="5898948207305438447">
+        <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="5898948207305438448" />
+        <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="5898948207305438449" />
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="5898948207305438450" />
       </node>
     </node>
   </node>
