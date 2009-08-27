@@ -33,10 +33,13 @@ import java.util.HashSet;
 import java.util.HashMap;
 import java.util.Map.Entry;
 
+import org.jetbrains.annotations.NotNull;
+
 
 public class NodeHighlightManager implements EditorMessageOwner {
   private final Object myMessagesLock = new Object();
 
+  @NotNull
   private EditorComponent myEditor;
   private Set<EditorMessage> myMessages = new HashSet<EditorMessage>();
   private Map<EditorMessageOwner, Set<EditorMessage>> myOwnerToMessages = new HashMap<EditorMessageOwner, Set<EditorMessage>>();
