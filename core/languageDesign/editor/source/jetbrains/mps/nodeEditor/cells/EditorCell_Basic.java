@@ -922,7 +922,7 @@ public abstract class EditorCell_Basic implements EditorCell {
 
   protected boolean isTopCell() {
     return getParent() == null || getParent().getSNode() != getSNode()
-      || (getParent().getBounds().equals(getBounds()) && getParent().isTopCell());
+      || (getParent().getChildCount() == 1 && getParent().isSelectable() && getParent().isTopCell());
   }
 
   public boolean isFirstCaretPosition() {
