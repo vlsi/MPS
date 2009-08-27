@@ -47,18 +47,11 @@ import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.action.ModelActions;
 import jetbrains.mps.baseLanguage.behavior.BaseMethodDeclaration_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptPropertyOperations;
-import java.util.Set;
-import jetbrains.mps.internal.collections.runtime.SetSequence;
-import java.util.HashSet;
-import jetbrains.mps.baseLanguage.search.LocalVariablesScope;
-import jetbrains.mps.internal.collections.runtime.IVisitor;
 import javax.swing.Icon;
 import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.smodel.BaseAdapter;
 import jetbrains.mps.baseLanguage.search.VisibleThrowablesScope;
 import jetbrains.mps.lang.core.behavior.BaseConcept_Behavior;
-import jetbrains.mps.baseLanguage.search.ClassifierVisibleStaticMembersScope;
-import jetbrains.mps.baseLanguage.structure.Classifier;
 import jetbrains.mps.smodel.action.SideTransformActionsBuilderContext;
 import jetbrains.mps.smodel.action.AbstractSideTransformHintSubstituteAction;
 import jetbrains.mps.baseLanguage.plugin.ParenthesisUtil;
@@ -1057,26 +1050,7 @@ __switch__:
       if (SConceptOperations.isSuperConceptOf(childConcept, NameUtil.nodeFQName(outputConcept))) {
         Calculable calc = new Calculable() {
           public Object calculate() {
-            SNode classConcept = SNodeOperations.getAncestor(_context.getParentNode(), "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false);
-            List<SNode> fieldDeclarations = (List<SNode>)Classifier_Behavior.call_getVisibleMembers_1213877306257(classConcept, _context.getParentNode(), IClassifiersSearchScope.INSTANCE_FIELD);
-            final Set<String> localNames = SetSequence.fromSet(new HashSet<String>());
-            ListSequence.fromList(new LocalVariablesScope(_context.getParentNode()).getNodes()).visitAll(new IVisitor<SNode>() {
-              public void visit(SNode it) {
-                SetSequence.fromSet(localNames).addElement(SPropertyOperations.getString(SNodeOperations.cast(it, "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration"), "name"));
-              }
-            });
-            for (SNode method : ListSequence.fromList(SNodeOperations.getAncestors(_context.getParentNode(), "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration", true))) {
-              ListSequence.fromList(SLinkOperations.getTargets(method, "parameter", true)).visitAll(new IVisitor<SNode>() {
-                public void visit(SNode it) {
-                  SetSequence.fromSet(localNames).addElement(SPropertyOperations.getString(it, "name"));
-                }
-              });
-            }
-            return ListSequence.fromList(fieldDeclarations).where(new IWhereFilter<SNode>() {
-              public boolean accept(SNode it) {
-                return !(SetSequence.fromSet(localNames).contains(SPropertyOperations.getString(it, "name")));
-              }
-            }).toListSequence();
+            return ((List<SNode>)Classifier_Behavior.getAssesableMembers_669019847198843527(_context.getParentNode(), IClassifiersSearchScope.INSTANCE_FIELD));
           }
         };
         Iterable<SNode> queryResult = (Iterable)calc.calculate();
@@ -1086,46 +1060,16 @@ __switch__:
               public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
                 SNode operationExpression = SModelOperations.createNewNode(model, "jetbrains.mps.baseLanguage.structure.DotExpression", null);
                 SLinkOperations.setTarget(SLinkOperations.setNewChild(operationExpression, "operation", "jetbrains.mps.baseLanguage.structure.FieldReferenceOperation"), "fieldDeclaration", (item), false);
-                SLinkOperations.setNewChild(operationExpression, "operand", "jetbrains.mps.baseLanguage.structure.ThisExpression");
+                SNode thisExpression = SLinkOperations.setNewChild(operationExpression, "operand", "jetbrains.mps.baseLanguage.structure.ThisExpression");
+
+                if (SNodeOperations.getAncestor((item), "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false) != SNodeOperations.getAncestor(_context.getParentNode(), "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false)) {
+                  SLinkOperations.setTarget(thisExpression, "classConcept", SNodeOperations.getAncestor((item), "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false), false);
+                }
                 return operationExpression;
               }
 
               public String getDescriptionText(String pattern) {
                 return "this." + SPropertyOperations.getString((item), "name");
-              }
-            });
-          }
-        }
-      }
-    }
-    {
-      SNode outputConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.DotExpression");
-      SNode childConcept = (SNode)_context.getChildConcept();
-      if (SConceptOperations.isSuperConceptOf(childConcept, NameUtil.nodeFQName(outputConcept))) {
-        Calculable calc = new Calculable() {
-          public Object calculate() {
-            //  in anonymous classes
-            SNode anonymousClass = SNodeOperations.getAncestor(_context.getParentNode(), "jetbrains.mps.baseLanguage.structure.AnonymousClass", false, false);
-            if (anonymousClass == null) {
-              return null;
-            }
-            List<SNode> result = new ArrayList<SNode>();
-            List<SNode> outerClassifiers = SNodeOperations.getAncestors(anonymousClass, "jetbrains.mps.baseLanguage.structure.Classifier", false);
-            for (SNode outerClassifier : ListSequence.fromList(outerClassifiers)) {
-              ListSequence.fromList(result).addSequence(ListSequence.fromList((List<SNode>)Classifier_Behavior.call_getVisibleMembers_1213877306257(outerClassifier, _context.getParentNode(), IClassifiersSearchScope.INSTANCE_FIELD)));
-            }
-            return result;
-          }
-        };
-        Iterable<SNode> queryResult = (Iterable)calc.calculate();
-        if (queryResult != null) {
-          for (final SNode item : queryResult) {
-            ListSequence.fromList(result).addElement(new DefaultChildNodeSubstituteAction(outputConcept, item, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope()) {
-              public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
-                SNode operationExpression = SModelOperations.createNewNode(model, "jetbrains.mps.baseLanguage.structure.DotExpression", null);
-                SLinkOperations.setTarget(SLinkOperations.setNewChild(operationExpression, "operation", "jetbrains.mps.baseLanguage.structure.FieldReferenceOperation"), "fieldDeclaration", (item), false);
-                SLinkOperations.setTarget(SLinkOperations.setNewChild(operationExpression, "operand", "jetbrains.mps.baseLanguage.structure.ThisExpression"), "classConcept", SNodeOperations.getAncestor((item), "jetbrains.mps.baseLanguage.structure.Classifier", false, false), false);
-                return operationExpression;
               }
             });
           }
@@ -1717,21 +1661,7 @@ __switch__:
       if (SConceptOperations.isSuperConceptOf(childConcept, NameUtil.nodeFQName(outputConcept))) {
         Calculable calc = new Calculable() {
           public Object calculate() {
-            List<SNode> result = new ArrayList<SNode>();
-            SNode anonymousClass = SNodeOperations.getAncestor(_context.getParentNode(), "jetbrains.mps.baseLanguage.structure.AnonymousClass", false, false);
-            if (anonymousClass == null) {
-              return null;
-            }
-            List<SNode> classifiers = ((List<SNode>)ListSequence.fromList(SNodeOperations.getAncestors(anonymousClass, null, false)).where(new IWhereFilter<SNode>() {
-              public boolean accept(SNode it) {
-                return SNodeOperations.isInstanceOf(it, "jetbrains.mps.baseLanguage.structure.Classifier");
-              }
-            }).toListSequence());
-            for (SNode classifier : ListSequence.fromList(classifiers)) {
-              ClassifierVisibleStaticMembersScope staticMembersScope = new ClassifierVisibleStaticMembersScope(((Classifier)SNodeOperations.getAdapter(classifier)), _context.getParentNode(), IClassifiersSearchScope.STATIC_FIELD);
-              ListSequence.fromList(result).addSequence(ListSequence.fromList(((List<SNode>)staticMembersScope.getNodes())));
-            }
-            return result;
+            return ((List<SNode>)Classifier_Behavior.getAssesableMembers_669019847198843527(_context.getParentNode(), IClassifiersSearchScope.STATIC_FIELD));
           }
         };
         Iterable<SNode> queryResult = (Iterable)calc.calculate();
