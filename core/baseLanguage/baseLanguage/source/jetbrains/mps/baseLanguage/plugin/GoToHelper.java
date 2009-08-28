@@ -57,7 +57,7 @@ public class GoToHelper {
             Object[] selectedElements = list.getSelectedValues();
             for (Object element : selectedElements) {
               NodeNavigationItem selected = (NodeNavigationItem) element;
-              selected.navigate();
+              selected.navigate();                                   
             }
           }
         }).createPopup().

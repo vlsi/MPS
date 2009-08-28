@@ -37,8 +37,8 @@
   <import index="1" modelUID="r:3270011d-8b2d-4938-8dff-d256a759e017(jetbrains.mps.lang.behavior.structure)" version="-1" />
   <import index="3" modelUID="r:00000000-0000-4000-0000-011c8959028e(jetbrains.mps.lang.structure.findUsages)" version="-1" />
   <node type="jetbrains.mps.lang.findUsages.structure.FinderDeclaration" id="1227530810320">
-    <property name="name" value="FindOverridingMethods" />
-    <property name="description" value="Find Overriding Methods" />
+    <property name="name" value="OverridingMethods" />
+    <property name="description" value="Overriding Methods" />
     <link role="forConcept" targetNodeId="1.1225194472830" resolveInfo="ConceptMethodDeclaration" />
     <node role="findFunction" type="jetbrains.mps.lang.findUsages.structure.FindBlock" id="1227530810321">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1227530810322">

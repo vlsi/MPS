@@ -50,7 +50,7 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590373(jetbrains.mps.baseLanguage.classifiers.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590553(jetbrains.mps.uiLanguage.structure)" version="1" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959054e(jetbrains.mps.uiLanguage.constraints)" version="26" />
-  <maxImportIndex value="124" />
+  <maxImportIndex value="125" />
   <import index="1" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="1" />
   <import index="3" modelUID="r:00000000-0000-4000-0000-011c895904a4(jetbrains.mps.ide.actions)" version="-1" />
   <import index="4" modelUID="f:java_stub#java.util(java.util@java_stub)" version="-1" />
@@ -132,6 +132,7 @@
   <import index="122" modelUID="f:java_stub#jetbrains.mps.datatransfer(jetbrains.mps.datatransfer@java_stub)" version="-1" />
   <import index="123" modelUID="f:java_stub#com.intellij.ui.awt(com.intellij.ui.awt@java_stub)" version="-1" />
   <import index="124" modelUID="f:java_stub#java.awt.geom(java.awt.geom@java_stub)" version="-1" />
+  <import index="125" modelUID="f:java_stub#jetbrains.mps.ide.findusages.findalgorithm.finders(jetbrains.mps.ide.findusages.findalgorithm.finders@java_stub)" version="-1" />
   <node type="jetbrains.mps.lang.plugin.structure.ActionGroupDeclaration" id="1205247197267">
     <property name="name" value="BaseLanguageEditorPopup" />
     <node role="modifier" type="jetbrains.mps.lang.plugin.structure.ModificationStatement" id="1205247338363">
@@ -34960,8 +34961,8 @@
                       <link role="variableDeclaration" targetNodeId="1227519899036" resolveInfo="searchResults" />
                     </node>
                     <node role="rValue" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="5689348729905305477">
-                      <link role="baseMethodDeclaration" targetNodeId="82.~FindUtils.getSearchResults(com.intellij.openapi.progress.ProgressIndicator,jetbrains.mps.ide.findusages.model.SearchQuery,jetbrains.mps.ide.findusages.findalgorithm.finders.IFinder...):jetbrains.mps.ide.findusages.model.SearchResults" resolveInfo="getSearchResults" />
                       <link role="classConcept" targetNodeId="82.~FindUtils" resolveInfo="FindUtils" />
+                      <link role="baseMethodDeclaration" targetNodeId="82.~FindUtils.getSearchResults(com.intellij.openapi.progress.ProgressIndicator,jetbrains.mps.ide.findusages.model.SearchQuery,jetbrains.mps.ide.findusages.model.IResultProvider):jetbrains.mps.ide.findusages.model.SearchResults" resolveInfo="getSearchResults" />
                       <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="5689348729905305478">
                         <link role="variableDeclaration" targetNodeId="1227519587891" resolveInfo="progressIndicator" />
                       </node>
@@ -34999,7 +35000,7 @@
                       </node>
                       <node role="rValue" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="5689348729905311444">
                         <link role="classConcept" targetNodeId="82.~FindUtils" resolveInfo="FindUtils" />
-                        <link role="baseMethodDeclaration" targetNodeId="82.~FindUtils.getSearchResults(com.intellij.openapi.progress.ProgressIndicator,jetbrains.mps.ide.findusages.model.SearchQuery,jetbrains.mps.ide.findusages.findalgorithm.finders.IFinder...):jetbrains.mps.ide.findusages.model.SearchResults" resolveInfo="getSearchResults" />
+                        <link role="baseMethodDeclaration" targetNodeId="82.~FindUtils.getSearchResults(com.intellij.openapi.progress.ProgressIndicator,jetbrains.mps.ide.findusages.model.SearchQuery,jetbrains.mps.ide.findusages.model.IResultProvider):jetbrains.mps.ide.findusages.model.SearchResults" resolveInfo="getSearchResults" />
                         <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="5689348729905311445">
                           <link role="variableDeclaration" targetNodeId="1227519587891" resolveInfo="progressIndicator" />
                         </node>
@@ -35095,8 +35096,8 @@
                   <node role="parameter" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1227633792966" />
                 </node>
                 <node role="initializer" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="5033107305426605521">
-                  <link role="baseMethodDeclaration" targetNodeId="82.~FindUtils.getSearchResults(com.intellij.openapi.progress.ProgressIndicator,jetbrains.mps.ide.findusages.model.SearchQuery,jetbrains.mps.ide.findusages.findalgorithm.finders.IFinder...):jetbrains.mps.ide.findusages.model.SearchResults" resolveInfo="getSearchResults" />
                   <link role="classConcept" targetNodeId="82.~FindUtils" resolveInfo="FindUtils" />
+                  <link role="baseMethodDeclaration" targetNodeId="82.~FindUtils.getSearchResults(com.intellij.openapi.progress.ProgressIndicator,jetbrains.mps.ide.findusages.model.SearchQuery,jetbrains.mps.ide.findusages.model.IResultProvider):jetbrains.mps.ide.findusages.model.SearchResults" resolveInfo="getSearchResults" />
                   <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="5033107305426605522">
                     <link role="variableDeclaration" targetNodeId="1227519587891" resolveInfo="progressIndicator" />
                   </node>
@@ -35104,8 +35105,8 @@
                     <link role="variableDeclaration" targetNodeId="5033107305426605494" resolveInfo="query" />
                   </node>
                   <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="5033107305426605524">
-                    <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="5033107305426605525">
-                      <link role="baseMethodDeclaration" targetNodeId="98.~FindOverridingMethods_Finder.&lt;init&gt;()" resolveInfo="FindOverridingMethods_Finder" />
+                    <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1910641662758222217">
+                      <link role="baseMethodDeclaration" targetNodeId="98.~OverridingMethods_Finder.&lt;init&gt;()" resolveInfo="OverridingMethods_Finder" />
                     </node>
                   </node>
                 </node>
@@ -35194,8 +35195,8 @@
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1227521194939">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="5033107305426605475">
-            <link role="baseMethodDeclaration" targetNodeId="82.~FindUtils.getSearchResults(com.intellij.openapi.progress.ProgressIndicator,jetbrains.mps.ide.findusages.model.SearchQuery,jetbrains.mps.ide.findusages.findalgorithm.finders.IFinder...):jetbrains.mps.ide.findusages.model.SearchResults" resolveInfo="getSearchResults" />
             <link role="classConcept" targetNodeId="82.~FindUtils" resolveInfo="FindUtils" />
+            <link role="baseMethodDeclaration" targetNodeId="82.~FindUtils.getSearchResults(com.intellij.openapi.progress.ProgressIndicator,jetbrains.mps.ide.findusages.model.SearchQuery,jetbrains.mps.ide.findusages.model.IResultProvider):jetbrains.mps.ide.findusages.model.SearchResults" resolveInfo="getSearchResults" />
             <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="5033107305426605476">
               <link role="variableDeclaration" targetNodeId="1227521097470" resolveInfo="progressIndicator" />
             </node>
@@ -43535,6 +43536,30 @@
     <node role="keystroke" type="jetbrains.mps.lang.plugin.structure.KeyMapKeystroke" id="8596238429278845810">
       <property name="keycode" value="VK_B" />
       <property name="modifiers" value="ctrl+alt" />
+    </node>
+    <node role="updateBlock" type="jetbrains.mps.lang.plugin.structure.IsApplicableBlock" id="1910641662758326349">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1910641662758326350">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1910641662758368851">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1910641662758368855">
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1910641662758368853">
+              <link role="baseMethodDeclaration" targetNodeId="82.~FindUtils.getFinderByClassName(java.lang.String):jetbrains.mps.ide.findusages.findalgorithm.finders.GeneratedFinder" resolveInfo="getFinderByClassName" />
+              <link role="classConcept" targetNodeId="82.~FindUtils" resolveInfo="FindUtils" />
+              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1910641662758368854">
+                <property name="value" value="jetbrains.mps.baseLanguage.findUsages.OverridingMethods_Finder" />
+              </node>
+            </node>
+            <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1910641662758368859">
+              <link role="baseMethodDeclaration" targetNodeId="125.~GeneratedFinder.isApplicable(jetbrains.mps.smodel.SNode):boolean" resolveInfo="isApplicable" />
+              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1910641662758368860">
+                <node role="operand" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpression" id="1910641662758368861" />
+                <node role="operation" type="jetbrains.mps.lang.plugin.structure.ActionParameterReferenceOperation" id="1910641662758368862">
+                  <link role="member" targetNodeId="8596238429278845812" resolveInfo="methodNode" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
     </node>
   </node>
 </model>
