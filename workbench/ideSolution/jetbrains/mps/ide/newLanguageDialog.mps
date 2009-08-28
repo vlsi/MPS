@@ -49,7 +49,7 @@
     <node role="root" type="jetbrains.mps.ide.uiLanguage.structure.IDEDialog" id="1203684615537">
       <property name="title" value="New Language" />
       <node role="button" type="jetbrains.mps.ide.uiLanguage.structure.IDEDialogButton" id="1203684635117">
-        <property name="text" value="OK" />
+        <property name="text" value="_OK" />
         <property name="isDefault" value="true" />
         <node role="handler" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1203687841165">
           <node role="operand" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpression" id="1205754224277" />
@@ -59,7 +59,7 @@
         </node>
       </node>
       <node role="button" type="jetbrains.mps.ide.uiLanguage.structure.IDEDialogButton" id="1203684637884">
-        <property name="text" value="Cancel" />
+        <property name="text" value="_Cancel" />
         <node role="handler" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1203687846575">
           <node role="operand" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpression" id="1205754224264" />
           <node role="operation" type="jetbrains.mps.baseLanguage.classifiers.structure.DefaultClassifierMethodCallOperation" id="1205834446424">

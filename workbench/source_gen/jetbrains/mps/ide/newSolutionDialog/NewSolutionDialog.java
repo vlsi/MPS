@@ -82,12 +82,12 @@ public class NewSolutionDialog extends BaseDialog {
     this.myContentPane.setResult(newValue);
   }
 
-  @BaseDialog.Button(name = "OK", position = 0, defaultButton = true)
+  @BaseDialog.Button(name = "_OK", position = 0, defaultButton = true)
   public void buttonMethod0() {
     myContentPane.onOk();
   }
 
-  @BaseDialog.Button(name = "Cancel", position = 1, defaultButton = false)
+  @BaseDialog.Button(name = "_Cancel", position = 1, defaultButton = false)
   public void buttonMethod1() {
     myContentPane.onCancel();
   }
