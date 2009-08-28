@@ -212,10 +212,23 @@ public abstract class BaseDialog extends JDialog {
         throw new RuntimeException("BaseDialog doesn't contain button with index " + i);
       final Button b = buttonMethods.get(i).getAnnotation(Button.class);
       final Method m = buttonMethods.get(i);
-      JButton button = new JButton(new AbstractAction(b.name()) {
+
+      int mnemonic = -1;
+      String name = b.name();
+
+      if (b.mnemonic() != Button.VOID_MNEMONIC_CHAR) {
+        mnemonic = b.mnemonic();
+      } else if (b.name().contains("" + Button.VOID_MNEMONIC_CHAR)) {
+        int index = b.name().indexOf(Button.VOID_MNEMONIC_CHAR);
+        mnemonic = b.name().charAt(index + 1);
+        name = name.replaceAll("_","");
+      }
+
+      final int mnemonicFin = mnemonic;
+      JButton button = new JButton(new AbstractAction(name) {
         {
-          if (b.mnemonic()!='_') {
-            putValue(Action.MNEMONIC_KEY, new Integer(b.mnemonic()));
+          if (mnemonicFin != -1) {
+            putValue(Action.MNEMONIC_KEY, new Integer(mnemonicFin));
           }
         }
 
@@ -261,14 +274,15 @@ public abstract class BaseDialog extends JDialog {
   @Target(ElementType.METHOD)
   @Retention(RetentionPolicy.RUNTIME)
   public @interface Button {
+    char VOID_MNEMONIC_CHAR = '_';
+
     int position();
 
     String name();
 
-    char mnemonic() default '_';
+    char mnemonic() default VOID_MNEMONIC_CHAR;
 
-    @Deprecated
-    String shortcut() default "";
+    @Deprecated String shortcut() default "";
 
     boolean defaultButton() default false;
   }
