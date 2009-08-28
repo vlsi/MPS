@@ -106,7 +106,7 @@ public class NewModelDialog extends BaseDialog {
     myModelName.setText(myNamespace == null ? wrapper.getNamespace() : myNamespace);
   }
 
-  @BaseDialog.Button(position = 0, name = "OK", defaultButton = true)
+  @BaseDialog.Button(position = 0, name = "OK", mnemonic = 'O', defaultButton = true)
   public void buttonOk() {
     if (!(myModelRoots.getSelectedItem() instanceof ModelRootWrapper)) {
       String message;
@@ -150,7 +150,7 @@ public class NewModelDialog extends BaseDialog {
     dispose();
   }
 
-  @BaseDialog.Button(position = 1, name = "Cancel")
+  @BaseDialog.Button(position = 1, name = "Cancel", mnemonic = 'C')
   public void buttonCancel() {
     dispose();
   }

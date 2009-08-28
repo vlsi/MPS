@@ -23,7 +23,7 @@ public class ScrollingMessageDialog extends BaseScrollingTextDialog {
     super(mainFrame, "Message", text);
   }
 
-  @BaseDialog.Button(position = 0, name = "Close", defaultButton = true)
+  @BaseDialog.Button(position = 0, name = "Close", mnemonic = 'C', defaultButton = true)
   public void closeButton() {
     dispose();
   }

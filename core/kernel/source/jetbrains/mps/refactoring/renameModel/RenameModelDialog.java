@@ -15,21 +15,20 @@
  */
 package jetbrains.mps.refactoring.renameModel;
 
+import com.intellij.openapi.progress.ProgressIndicator;
+import com.intellij.openapi.progress.ProgressManager;
+import com.intellij.openapi.progress.Task.Modal;
+import com.intellij.openapi.project.Project;
 import jetbrains.mps.ide.dialogs.BaseDialog;
 import jetbrains.mps.ide.dialogs.DialogDimensionsSettings.DialogDimensions;
 import jetbrains.mps.project.SModelRoot;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SModelFqName;
+import org.jetbrains.annotations.NotNull;
 
 import javax.swing.*;
 import java.awt.*;
-
-import com.intellij.openapi.progress.ProgressManager;
-import com.intellij.openapi.progress.ProgressIndicator;
-import com.intellij.openapi.progress.Task.Modal;
-import com.intellij.openapi.project.Project;
-import org.jetbrains.annotations.NotNull;
 
 public class RenameModelDialog extends BaseDialog {
   private JPanel myMainPanel;
@@ -72,7 +71,7 @@ public class RenameModelDialog extends BaseDialog {
     return new DialogDimensions(300, 300, 400, 150);
   }
 
-  @BaseDialog.Button(position = 0, name = "OK", defaultButton = true)
+  @BaseDialog.Button(position = 0, name = "OK", mnemonic = 'O', defaultButton = true)
   public void buttonOk() {
     final SModelFqName fqName = SModelFqName.fromString(myModelNameField.getText());
 
@@ -109,7 +108,7 @@ public class RenameModelDialog extends BaseDialog {
   }
 
 
-  @BaseDialog.Button(position = 1, name = "Cancel")
+  @BaseDialog.Button(position = 1, name = "Cancel", mnemonic = 'C')
   public void buttonCancel() {
     dispose();
   }

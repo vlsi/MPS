@@ -88,7 +88,7 @@ public class FindInstancesDialog extends BaseDialog {
     });
   }
 
-  @BaseDialog.Button(position = 0, name = "Find", defaultButton = true)
+  @BaseDialog.Button(position = 0, name = "Find", mnemonic = 'F', defaultButton = true)
   public void buttonFind() {
     try {
       final GenerationResult result = this.myEditor.generate();
@@ -106,7 +106,7 @@ public class FindInstancesDialog extends BaseDialog {
     }
   }
 
-  @BaseDialog.Button(position = 1, name = "Cancel", defaultButton = false)
+  @BaseDialog.Button(position = 1, name = "Cancel", mnemonic = 'C', defaultButton = false)
   public void buttonCancel() {
     this.myEditor.disposeEditor();
     this.dispose();

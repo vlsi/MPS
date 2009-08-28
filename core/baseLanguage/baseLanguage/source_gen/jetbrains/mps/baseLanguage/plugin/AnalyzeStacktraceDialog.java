@@ -48,7 +48,7 @@ public class AnalyzeStacktraceDialog extends BaseDialog {
     return new DialogDimensionsSettings.DialogDimensions(100, 200, 400, 600);
   }
 
-  @BaseDialog.Button(name = "Ok", position = 0, defaultButton = false)
+  @BaseDialog.Button(name = "OK", mnemonic = 'O', position = 0, defaultButton = false)
   public void onOk() {
     AnalyzeStacktrace_Tool tool = this.myProject.getPluginManager().getTool(AnalyzeStacktrace_Tool.class);
     tool.setStackTrace(this.myText.getText());
@@ -56,7 +56,7 @@ public class AnalyzeStacktraceDialog extends BaseDialog {
     this.dispose();
   }
 
-  @BaseDialog.Button(name = "Cancel", position = 1, defaultButton = true)
+  @BaseDialog.Button(name = "Cancel", mnemonic = 'C', position = 1, defaultButton = true)
   public void onCancel() {
     this.dispose();
   }

@@ -15712,6 +15712,12 @@
             <property name="value" value="OK" />
           </node>
         </node>
+        <node role="value" type="jetbrains.mps.baseLanguage.structure.AnnotationInstanceValue" id="5567550172873228644">
+          <link role="key" targetNodeId="109.~BaseDialog$Button.mnemonic()" resolveInfo="mnemonic" />
+          <node role="value" type="jetbrains.mps.baseLanguage.structure.CharConstant" id="5567550172873245696">
+            <property name="charConstant" value="O" />
+          </node>
+        </node>
         <node role="value" type="jetbrains.mps.baseLanguage.structure.AnnotationInstanceValue" id="4514830148568018430">
           <link role="key" targetNodeId="109.~BaseDialog$Button.position()" resolveInfo="position" />
           <node role="value" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="4514830148568018431">
@@ -15767,6 +15773,12 @@
           <link role="key" targetNodeId="109.~BaseDialog$Button.name()" resolveInfo="name" />
           <node role="value" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="4514830148568018437">
             <property name="value" value="Cancel" />
+          </node>
+        </node>
+        <node role="value" type="jetbrains.mps.baseLanguage.structure.AnnotationInstanceValue" id="5567550172873245697">
+          <link role="key" targetNodeId="109.~BaseDialog$Button.mnemonic()" resolveInfo="mnemonic" />
+          <node role="value" type="jetbrains.mps.baseLanguage.structure.CharConstant" id="5567550172873245699">
+            <property name="charConstant" value="C" />
           </node>
         </node>
         <node role="value" type="jetbrains.mps.baseLanguage.structure.AnnotationInstanceValue" id="4514830148568018438">

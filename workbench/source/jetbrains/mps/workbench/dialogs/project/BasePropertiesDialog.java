@@ -77,18 +77,18 @@ public abstract class BasePropertiesDialog extends BaseTabbedBindedDialog {
 
   protected abstract boolean doSaveChanges();
 
-  @BaseDialog.Button(position = 0, name = "OK", defaultButton = true)
+  @BaseDialog.Button(position = 0, name = "OK", mnemonic = 'O', defaultButton = true)
   public void buttonOK() {
     if (!saveChanges()) return;
     BasePropertiesDialog.this.dispose();
   }
 
-  @BaseDialog.Button(position = 1, name = "Cancel")
+  @BaseDialog.Button(position = 1, name = "Cancel", mnemonic = 'C')
   public void buttonCancel() {
     BasePropertiesDialog.this.dispose();
   }
 
-  @BaseDialog.Button(position = 2, name = "Apply")
+  @BaseDialog.Button(position = 2, name = "Apply", mnemonic = 'A')
   public void buttonApply() {
     saveChanges();
   }

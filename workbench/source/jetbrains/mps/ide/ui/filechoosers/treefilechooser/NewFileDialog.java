@@ -50,13 +50,13 @@ public class NewFileDialog extends BaseDialog {
   }
 
 
-  @BaseDialog.Button(position = 0, name = "Create", defaultButton = true)
+  @BaseDialog.Button(position = 0, name = "Create", mnemonic = 'r', defaultButton = true)
   public void createButton() {
     myResult = myTextArea.getText();
     dispose();
   }
 
-  @BaseDialog.Button(position = 1, name = "Cancel")
+  @BaseDialog.Button(position = 1, name = "Cancel", mnemonic = 'C')
   public void cancelButton() {
     dispose();
   }

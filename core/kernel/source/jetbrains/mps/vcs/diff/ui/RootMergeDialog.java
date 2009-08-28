@@ -235,7 +235,7 @@ public class RootMergeDialog extends BaseDialog implements EditorMessageOwner {
     return new DialogDimensionsSettings.DialogDimensions(10, 10, 1000, 900);
   }
 
-  @Button(name = "Close", position = 0, defaultButton = true)
+  @Button(name = "Close",mnemonic = 'C',position = 0, defaultButton = true)
   public void onClose() {
     dispose();
   }

@@ -82,7 +82,7 @@ public class RenameLanguageDialog extends BaseDialog {
     return new DialogDimensions(300, 300, 400, 200);
   }
 
-  @BaseDialog.Button(position = 0, name = "OK", defaultButton = true)
+  @BaseDialog.Button(position = 0, name = "OK",mnemonic = 'O', defaultButton = true)
   public void buttonOk() {
     final boolean needToRegenerate = myRegenerateLanguage.getModel().isSelected();
 
@@ -160,7 +160,7 @@ public class RenameLanguageDialog extends BaseDialog {
   }
 
 
-  @BaseDialog.Button(position = 1, name = "Cancel")
+  @BaseDialog.Button(position = 1, name = "Cancel",mnemonic = 'C')
   public void buttonCancel() {
     dispose();
   }

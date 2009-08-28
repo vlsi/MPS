@@ -160,7 +160,7 @@ public class BlameDialog extends BaseDialog {
     return myResult;
   }
 
-  @Button(position = 0, name = "Send")
+  @Button(position = 0, name = "Send", mnemonic = 'S')
   public void onSend() {
     String title = getBuildString() + myTitleField.getText();
 
@@ -190,7 +190,7 @@ public class BlameDialog extends BaseDialog {
     dispose();
   }
 
-  @Button(position = 1, name = "Cancel")
+  @Button(position = 1, name = "Cancel", mnemonic = 'C')
   public void onCancel() {
     myResult = null;
     myIsCancelled = true;

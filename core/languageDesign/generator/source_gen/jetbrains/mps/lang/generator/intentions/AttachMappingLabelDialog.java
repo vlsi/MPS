@@ -68,15 +68,15 @@ public class AttachMappingLabelDialog extends BaseDialog {
     return this.myPanel;
   }
 
-  @BaseDialog.Button(name = "Cancel", position = 1, defaultButton = false)
-  public void onCancel() {
-    this.dispose();
-  }
-
-  @BaseDialog.Button(name = "Attach label", position = 0, defaultButton = true)
+  @BaseDialog.Button(name = "Attach label", mnemonic = 'A', position = 0, defaultButton = true)
   public void onOk() {
     this.dispose();
     this.doAttachMappingLabel();
+  }
+
+  @BaseDialog.Button(name = "Cancel", mnemonic = 'C', position = 1, defaultButton = false)
+  public void onCancel() {
+    this.dispose();
   }
 
   public DialogDimensionsSettings.DialogDimensions getDefaultDimensionSettings() {

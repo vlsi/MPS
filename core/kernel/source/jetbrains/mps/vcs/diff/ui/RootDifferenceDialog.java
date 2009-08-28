@@ -2,27 +2,31 @@ package jetbrains.mps.vcs.diff.ui;
 
 
 import jetbrains.mps.ide.dialogs.BaseDialog;
-import jetbrains.mps.ide.dialogs.DialogDimensionsSettings.DialogDimensions;
 import jetbrains.mps.ide.projectPane.Icons;
-import jetbrains.mps.smodel.*;
-import jetbrains.mps.nodeEditor.*;
+import jetbrains.mps.nodeEditor.CellSelectionListener;
+import jetbrains.mps.nodeEditor.EditorComponent;
+import jetbrains.mps.nodeEditor.EditorMessageOwner;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
-import jetbrains.mps.vcs.diff.changes.*;
+import jetbrains.mps.smodel.*;
 import jetbrains.mps.vcs.diff.DiffBuilder;
+import jetbrains.mps.vcs.diff.changes.Change;
+import jetbrains.mps.vcs.diff.changes.DeleteNodeChange;
+import jetbrains.mps.vcs.diff.changes.MoveNodeChange;
+import jetbrains.mps.vcs.diff.changes.NewNodeChange;
 
 import javax.swing.JComponent;
-import javax.swing.JPanel;
 import javax.swing.JLabel;
+import javax.swing.JPanel;
 import javax.swing.JSplitPane;
 import javax.swing.border.EmptyBorder;
-import javax.swing.event.ChangeListener;
 import javax.swing.event.ChangeEvent;
+import javax.swing.event.ChangeListener;
 import java.awt.*;
-import java.awt.event.WindowAdapter;
-import java.awt.event.WindowEvent;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
-import java.util.*;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
+import java.util.ArrayList;
 import java.util.List;
 
 public class RootDifferenceDialog extends BaseDialog implements EditorMessageOwner {
@@ -69,7 +73,7 @@ public class RootDifferenceDialog extends BaseDialog implements EditorMessageOwn
   }
 
   public Dimension getPreferredSize() {
-    return new Dimension(500,400);
+    return new Dimension(500, 400);
   }
 
 
@@ -139,7 +143,7 @@ public class RootDifferenceDialog extends BaseDialog implements EditorMessageOwn
     return myContainer;
   }
 
-  @Button(name = "Close", position = 0, defaultButton = true)
+  @Button(name = "Close", mnemonic = 'C', position = 0, defaultButton = true)
   public void onClose() {
     dispose();
   }

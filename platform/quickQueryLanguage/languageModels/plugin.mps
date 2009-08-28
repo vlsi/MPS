@@ -758,6 +758,12 @@
             <property name="value" value="Find" />
           </node>
         </node>
+        <node role="value" type="jetbrains.mps.baseLanguage.structure.AnnotationInstanceValue" id="5567550172873227530">
+          <link role="key" targetNodeId="28.~BaseDialog$Button.mnemonic()" resolveInfo="mnemonic" />
+          <node role="value" type="jetbrains.mps.baseLanguage.structure.CharConstant" id="5567550172873228637">
+            <property name="charConstant" value="F" />
+          </node>
+        </node>
         <node role="value" type="jetbrains.mps.baseLanguage.structure.AnnotationInstanceValue" id="1219416909923">
           <link role="key" targetNodeId="28.~BaseDialog$Button.defaultButton()" resolveInfo="defaultButton" />
           <node role="value" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1219416909924">
@@ -805,6 +811,12 @@
           <link role="key" targetNodeId="28.~BaseDialog$Button.name()" resolveInfo="name" />
           <node role="value" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1219671295050">
             <property name="value" value="Cancel" />
+          </node>
+        </node>
+        <node role="value" type="jetbrains.mps.baseLanguage.structure.AnnotationInstanceValue" id="5567550172873228638">
+          <link role="key" targetNodeId="28.~BaseDialog$Button.mnemonic()" resolveInfo="mnemonic" />
+          <node role="value" type="jetbrains.mps.baseLanguage.structure.CharConstant" id="5567550172873228640">
+            <property name="charConstant" value="C" />
           </node>
         </node>
         <node role="value" type="jetbrains.mps.baseLanguage.structure.AnnotationInstanceValue" id="1219671299411">
@@ -904,7 +916,7 @@
             </node>
             <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1235929414150">
               <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1235929414151">
-                <link role="baseMethodDeclaration" targetNodeId="24.~ComponentManager.getComponent(java.lang.Class):java.lang.Object" resolveInfo="getComponent" />
+                <link role="baseMethodDeclaration" targetNodeId="24.~ComponentManager.getComponent(java.lang.String):com.intellij.openapi.components.BaseComponent" resolveInfo="getComponent" />
                 <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.ClassifierClassExpression" id="1235929414152">
                   <link role="classifier" targetNodeId="18.~UsagesViewTool" resolveInfo="UsagesViewTool" />
                 </node>
@@ -923,8 +935,8 @@
             <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1235929414157">
               <link role="baseMethodDeclaration" targetNodeId="18.~UsagesViewTool.findUsages(jetbrains.mps.ide.findusages.model.IResultProvider,jetbrains.mps.ide.findusages.model.SearchQuery,boolean,boolean,boolean,java.lang.String):void" resolveInfo="findUsages" />
               <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1235929414158">
-                <link role="baseMethodDeclaration" targetNodeId="18.~FindUtils.makeProvider(jetbrains.mps.ide.findusages.findalgorithm.finders.IFinder...):jetbrains.mps.ide.findusages.model.IResultProvider" resolveInfo="makeProvider" />
                 <link role="classConcept" targetNodeId="18.~FindUtils" resolveInfo="FindUtils" />
+                <link role="baseMethodDeclaration" targetNodeId="18.~FindUtils.makeProvider(java.util.Collection):jetbrains.mps.ide.findusages.model.IResultProvider" resolveInfo="makeProvider" />
                 <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1235929414159">
                   <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1235929414160">
                     <link role="baseMethodDeclaration" targetNodeId="1219922562113" resolveInfo="QueryFinder" />
@@ -1821,10 +1833,71 @@
             <property name="value" value="Modify" />
           </node>
         </node>
+        <node role="value" type="jetbrains.mps.baseLanguage.structure.AnnotationInstanceValue" id="5567550172873246176">
+          <link role="key" targetNodeId="28.~BaseDialog$Button.mnemonic()" resolveInfo="mnemonic" />
+          <node role="value" type="jetbrains.mps.baseLanguage.structure.CharConstant" id="5567550172873246178">
+            <property name="charConstant" value="M" />
+          </node>
+        </node>
         <node role="value" type="jetbrains.mps.baseLanguage.structure.AnnotationInstanceValue" id="1219748129296">
           <link role="key" targetNodeId="28.~BaseDialog$Button.defaultButton()" resolveInfo="defaultButton" />
           <node role="value" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1219748129297">
             <property name="value" value="true" />
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="5567550172873246142">
+      <property name="name" value="buttonCancel" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="5567550172873246143" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="5567550172873246144" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="5567550172873246145">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="5567550172873246146">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="5567550172873246147">
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="5567550172873246148">
+              <node role="operation" type="jetbrains.mps.baseLanguage.structure.FieldReferenceOperation" id="5567550172873246149">
+                <link role="fieldDeclaration" targetNodeId="1219746458485" resolveInfo="myEditor" />
+              </node>
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="5567550172873246150" />
+            </node>
+            <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="5567550172873246151">
+              <link role="baseMethodDeclaration" targetNodeId="35.1219672383771" resolveInfo="disposeEditor" />
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="5567550172873246152">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="5567550172873246153">
+            <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="5567550172873246154">
+              <link role="baseMethodDeclaration" targetNodeId="30.~Window.dispose():void" resolveInfo="dispose" />
+            </node>
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="5567550172873246155" />
+          </node>
+        </node>
+      </node>
+      <node role="annotation" type="jetbrains.mps.baseLanguage.structure.AnnotationInstance" id="5567550172873246156">
+        <link role="annotation" targetNodeId="28.~BaseDialog$Button" resolveInfo="BaseDialog.Button" />
+        <node role="value" type="jetbrains.mps.baseLanguage.structure.AnnotationInstanceValue" id="5567550172873246157">
+          <link role="key" targetNodeId="28.~BaseDialog$Button.position()" resolveInfo="position" />
+          <node role="value" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="5567550172873246158">
+            <property name="value" value="1" />
+          </node>
+        </node>
+        <node role="value" type="jetbrains.mps.baseLanguage.structure.AnnotationInstanceValue" id="5567550172873246159">
+          <link role="key" targetNodeId="28.~BaseDialog$Button.name()" resolveInfo="name" />
+          <node role="value" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="5567550172873246160">
+            <property name="value" value="Cancel" />
+          </node>
+        </node>
+        <node role="value" type="jetbrains.mps.baseLanguage.structure.AnnotationInstanceValue" id="5567550172873246173">
+          <link role="key" targetNodeId="28.~BaseDialog$Button.mnemonic()" resolveInfo="mnemonic" />
+          <node role="value" type="jetbrains.mps.baseLanguage.structure.CharConstant" id="5567550172873246175">
+            <property name="charConstant" value="C" />
+          </node>
+        </node>
+        <node role="value" type="jetbrains.mps.baseLanguage.structure.AnnotationInstanceValue" id="5567550172873246161">
+          <link role="key" targetNodeId="28.~BaseDialog$Button.defaultButton()" resolveInfo="defaultButton" />
+          <node role="value" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="5567550172873246162">
+            <property name="value" value="false" />
           </node>
         </node>
       </node>
@@ -1954,55 +2027,6 @@
         <property name="name" value="scope" />
         <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1235929460061">
           <link role="classifier" targetNodeId="5.~IScope" resolveInfo="IScope" />
-        </node>
-      </node>
-    </node>
-    <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1219748081511">
-      <property name="name" value="buttonCancel" />
-      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1219748081512" />
-      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1219748081513" />
-      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1219748081514">
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1219754870750">
-          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1219754872519">
-            <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1219754870751">
-              <node role="operation" type="jetbrains.mps.baseLanguage.structure.FieldReferenceOperation" id="1219754870752">
-                <link role="fieldDeclaration" targetNodeId="1219746458485" resolveInfo="myEditor" />
-              </node>
-              <node role="operand" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="1219754870753" />
-            </node>
-            <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1219754877608">
-              <link role="baseMethodDeclaration" targetNodeId="35.1219672383771" resolveInfo="disposeEditor" />
-            </node>
-          </node>
-        </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1219748175296">
-          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1219748175297">
-            <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1219748175298">
-              <link role="baseMethodDeclaration" targetNodeId="30.~Window.dispose():void" resolveInfo="dispose" />
-            </node>
-            <node role="operand" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="1219748175299" />
-          </node>
-        </node>
-      </node>
-      <node role="annotation" type="jetbrains.mps.baseLanguage.structure.AnnotationInstance" id="1219748097767">
-        <link role="annotation" targetNodeId="28.~BaseDialog$Button" resolveInfo="BaseDialog.Button" />
-        <node role="value" type="jetbrains.mps.baseLanguage.structure.AnnotationInstanceValue" id="1219748140392">
-          <link role="key" targetNodeId="28.~BaseDialog$Button.position()" resolveInfo="position" />
-          <node role="value" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1219748154691">
-            <property name="value" value="1" />
-          </node>
-        </node>
-        <node role="value" type="jetbrains.mps.baseLanguage.structure.AnnotationInstanceValue" id="1219748140394">
-          <link role="key" targetNodeId="28.~BaseDialog$Button.name()" resolveInfo="name" />
-          <node role="value" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1219748140395">
-            <property name="value" value="Cancel" />
-          </node>
-        </node>
-        <node role="value" type="jetbrains.mps.baseLanguage.structure.AnnotationInstanceValue" id="1219748140396">
-          <link role="key" targetNodeId="28.~BaseDialog$Button.defaultButton()" resolveInfo="defaultButton" />
-          <node role="value" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1219748167232">
-            <property name="value" value="false" />
-          </node>
         </node>
       </node>
     </node>

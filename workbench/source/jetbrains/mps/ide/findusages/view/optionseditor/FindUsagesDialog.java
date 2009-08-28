@@ -106,7 +106,7 @@ public class FindUsagesDialog extends BaseDialog {
     return buttons.toArray(new JButton[buttons.size()]);
   }
 
-  @Button(position = 0, name = "Cancel")
+  @Button(position = 0, name = "Cancel", mnemonic = 'C')
   public void onCancel() {
     dispose();
   }

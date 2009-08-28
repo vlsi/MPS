@@ -140,7 +140,7 @@ public class NewGeneratorDialog extends BaseDialog {
     return myResult;
   }
 
-  @Button(position = 0, name = "OK", defaultButton = true)
+  @Button(position = 0, name = "OK", mnemonic = 'O', defaultButton = true)
   public void buttonOK() {
     String templateModelsPath = myTemplateModelsDir.getText();
     if (templateModelsPath.length() == 0) {
@@ -187,7 +187,7 @@ public class NewGeneratorDialog extends BaseDialog {
     myResult = newGenerator[0];
   }
 
-  @Button(position = 1, name = "Cancel")
+  @Button(position = 1, name = "Cancel", mnemonic = 'C')
   public void buttonCancel() {
     dispose();
   }

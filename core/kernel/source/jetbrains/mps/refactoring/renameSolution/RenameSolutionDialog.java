@@ -60,7 +60,7 @@ public class RenameSolutionDialog extends BaseDialog {
     return new DialogDimensions(300, 300, 400, 200);
   }
 
-  @BaseDialog.Button(position = 0, name = "OK", defaultButton = true)
+  @BaseDialog.Button(position = 0, name = "OK", mnemonic = 'O', defaultButton = true)
   public void buttonOk() {
     boolean renamed = ModelAccess.instance().runWriteActionInCommand(new Computable<Boolean>() {
       public Boolean compute() {
@@ -83,7 +83,7 @@ public class RenameSolutionDialog extends BaseDialog {
     dispose();
   }
 
-  @BaseDialog.Button(position = 1, name = "Cancel")
+  @BaseDialog.Button(position = 1, name = "Cancel", mnemonic = 'C')
   public void buttonCancel() {
     dispose();
   }

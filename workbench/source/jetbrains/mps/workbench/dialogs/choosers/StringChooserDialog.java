@@ -116,13 +116,13 @@ class StringChooserDialog extends BaseDialog {
     return item.getString();
   }
 
-  @Button(position = 0, name = "OK", defaultButton = true)
+  @Button(position = 0, name = "OK", mnemonic = 'O', defaultButton = true)
   public void onOk() {
     dispose();
     myIsCancelled = false;
   }
 
-  @Button(position = 1, name = "Cancel", defaultButton = false)
+  @Button(position = 1, name = "Cancel", mnemonic = 'C', defaultButton = false)
   public void onCancel() {
     dispose();
   }

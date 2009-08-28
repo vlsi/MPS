@@ -74,7 +74,7 @@ public class ReplaceDialog extends BaseDialog {
     });
   }
 
-  @BaseDialog.Button(position = 0, name = "Modify", defaultButton = true)
+  @BaseDialog.Button(position = 0, name = "Modify", mnemonic = 'M', defaultButton = true)
   public void buttonReplace() {
     try {
       final GenerationResult result = this.myEditor.generate();
@@ -94,6 +94,12 @@ public class ReplaceDialog extends BaseDialog {
     }
   }
 
+  @BaseDialog.Button(position = 1, name = "Cancel", mnemonic = 'C', defaultButton = false)
+  public void buttonCancel() {
+    this.myEditor.disposeEditor();
+    this.dispose();
+  }
+
   public void execute(MPSProject project, Query query, final SNode queryNode, final IScope scope) {
     final Wrappers._T<SearchQuery> searchQuery = new Wrappers._T<SearchQuery>();
     ModelAccess.instance().runReadAction(new Runnable() {
@@ -106,11 +112,5 @@ public class ReplaceDialog extends BaseDialog {
       }
     });
     project.getPluginManager().getTool(RunReplacement_Tool.class).addTab(searchQuery.value, query);
-  }
-
-  @BaseDialog.Button(position = 1, name = "Cancel", defaultButton = false)
-  public void buttonCancel() {
-    this.myEditor.disposeEditor();
-    this.dispose();
   }
 }

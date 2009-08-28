@@ -29,13 +29,13 @@ public class ScrollingConfirmDialog extends BaseScrollingTextDialog {
     return myResult;
   }
 
-  @Button(position = 0, name = "Yes", defaultButton = true)
+  @Button(position = 0, name = "Yes", mnemonic = 'Y', defaultButton = true)
   public void yesButton() {
     myResult = Result.YES;
     dispose();
   }
 
-  @Button(position = 1, name = "No")
+  @Button(position = 1, name = "No", mnemonic = 'N')
   public void noButton() {
     myResult = Result.NO;
     dispose();

@@ -87,7 +87,7 @@ public final class ChooseNodeDialog extends BaseDialog {
     return myPanel;
   }
 
-  @Button(position = 0, name = "OK", defaultButton = true)
+  @Button(position = 0, name = "OK", mnemonic = 'O', defaultButton = true)
   public void onOk() {
     if (myTree.getSelectionPath() == null) return;
 
@@ -136,7 +136,7 @@ public final class ChooseNodeDialog extends BaseDialog {
     return myResult;
   }
 
-  @Button(position = 1, name = "Cancel")
+  @Button(position = 1, name = "Cancel", mnemonic = 'C')
   public void onCancel() {
     dispose();
     myResult = null;

@@ -70,7 +70,7 @@ public class ChooseModuleDialog extends BaseDialog {
     return myResult;
   }
 
-  @Button(position = 0, name = "OK")
+  @Button(position = 0, name = "OK", mnemonic = 'O')
   public void okButton() {
     TreePath selection = myTree.getSelectionPath();
     if (selection == null || !(selection.getLastPathComponent() instanceof ModuleTreeNode)) {
@@ -81,7 +81,7 @@ public class ChooseModuleDialog extends BaseDialog {
     dispose();
   }
 
-  @Button(position = 1, name = "Cancel")
+  @Button(position = 1, name = "Cancel", mnemonic = 'C')
   public void cancelButton() {
     myResult = null;
     dispose();

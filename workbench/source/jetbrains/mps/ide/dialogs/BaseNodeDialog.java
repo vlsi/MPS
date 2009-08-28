@@ -111,7 +111,7 @@ public abstract class BaseNodeDialog extends BaseDialog {
     });
   }
 
-  @BaseDialog.Button(position = 0, name = "OK", defaultButton = true)
+  @BaseDialog.Button(position = 0, name = "OK", mnemonic = 'O', defaultButton = true)
   public void buttonOK() {
     if (!doSaveChanges()) return;
     BaseNodeDialog.this.dispose();
@@ -148,12 +148,12 @@ public abstract class BaseNodeDialog extends BaseDialog {
   protected void afterSave() {
   }
 
-  @BaseDialog.Button(position = 1, name = "Cancel")
+  @BaseDialog.Button(position = 1, name = "Cancel", mnemonic = 'C')
   public void buttonCancel() {
     BaseNodeDialog.this.dispose();
   }
 
-  @BaseDialog.Button(position = 2, name = "Apply")
+  @BaseDialog.Button(position = 2, name = "Apply", mnemonic = 'A')
   public void buttonApply() {
     doSaveChanges();
   }

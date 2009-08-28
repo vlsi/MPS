@@ -74,7 +74,7 @@ public class RenameVariable_Action extends GeneratedAction {
           varDeclNode.value = SLinkOperations.getTarget(RenameVariable_Action.this.node, "variableDeclaration", false);
         }
       });
-      new RenameRafactoringDialog(RenameVariable_Action.this.frame, "Variable", varDeclNode.value).showDialog();
+      new RenameRefactoringDialog(RenameVariable_Action.this.frame, "Variable", varDeclNode.value).showDialog();
     } catch (Throwable t) {
       LOG.error("User's action execute method failed. Action:" + "RenameVariable", t);
     }

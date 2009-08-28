@@ -20,8 +20,8 @@ import com.intellij.openapi.ui.DialogWrapper;
 import com.intellij.openapi.ui.Messages;
 import jetbrains.mps.ide.dialogs.BaseDialog;
 import jetbrains.mps.ide.dialogs.DialogDimensionsSettings;
-import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.smodel.SModel;
 
 import javax.swing.JComponent;
 import javax.swing.JOptionPane;
@@ -46,7 +46,7 @@ class MergeModelsDialog extends BaseDialog {
     return myMergeView;
   }
 
-  @BaseDialog.Button(position = 0, name = "OK", defaultButton = true)
+  @BaseDialog.Button(position = 0, name = "OK", mnemonic = 'O', defaultButton = true)
   public void ok() {
     if (!myMergeView.isResolved()) {
       int result;
@@ -65,7 +65,7 @@ class MergeModelsDialog extends BaseDialog {
     dispose();
   }
 
-  @BaseDialog.Button(position = 1, name = "Cancel")
+  @BaseDialog.Button(position = 1, name = "Cancel", mnemonic = 'C')
   public void cancel() {
     dispose();
     myCanceled = true;

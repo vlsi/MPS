@@ -16,15 +16,14 @@
 package jetbrains.mps.vcs.diff.ui;
 
 import com.intellij.openapi.actionSystem.AnAction;
-import com.intellij.openapi.wm.WindowManager;
 import com.intellij.openapi.wm.FocusWatcher;
 import com.intellij.ui.FocusTrackback;
 import jetbrains.mps.ide.dialogs.BaseDialog;
 import jetbrains.mps.ide.dialogs.DialogDimensionsSettings.DialogDimensions;
+import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.smodel.IOperationContext;
 
 import javax.swing.JComponent;
 import java.awt.Frame;
@@ -99,7 +98,7 @@ public class ModelDifferenceDialog extends BaseDialog {
     return myDifferenceComponent;
   }
 
-  @Button(name = "Close", position = 0, defaultButton = true)
+  @Button(name = "Close", mnemonic = 'C', position = 0, defaultButton = true)
   public void onClose() {
     dispose();
   }
