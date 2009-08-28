@@ -86,14 +86,14 @@ public class SetNodePackageDialog extends BaseDialog {
     return this.myIsCancelled;
   }
 
-  @BaseDialog.Button(name = "OK", position = 0, defaultButton = true)
+  @BaseDialog.Button(name = "OK", mnemonic = 'O', position = 0, defaultButton = true)
   public void onOk() {
     this.updatePackage();
     this.myIsCancelled = false;
     this.dispose();
   }
 
-  @BaseDialog.Button(name = "Cancel", position = 1)
+  @BaseDialog.Button(name = "Cancel", mnemonic = 'C', position = 1)
   public void onCancel() {
     this.dispose();
   }
