@@ -85,7 +85,7 @@ public class AddRequiredModelImportsDialog extends BaseStretchingBindedDialog {
     return BorderLayout.CENTER;
   }
 
-  @BaseDialog.Button(position = 0, name = "Import All", defaultButton = true)
+  @BaseDialog.Button(position = 0, name = "Import All", mnemonic = 'A', defaultButton = true)
   public void buttonAddAll() {
     ModelAccess.instance().runWriteActionInCommand(new Runnable() {
       public void run() {
@@ -96,7 +96,7 @@ public class AddRequiredModelImportsDialog extends BaseStretchingBindedDialog {
     dispose();
   }
 
-  @BaseDialog.Button(position = 1, name = "Import Selected")
+  @BaseDialog.Button(position = 1, name = "Import Selected", mnemonic = 'S')
   public void buttonAddSelected() {
     ModelAccess.instance().runWriteActionInCommand(new Runnable() {
       public void run() {
@@ -107,13 +107,13 @@ public class AddRequiredModelImportsDialog extends BaseStretchingBindedDialog {
     dispose();
   }
 
-  @BaseDialog.Button(position = 2, name = "Import None")
+  @BaseDialog.Button(position = 2, name = "Import None", mnemonic = 'N')
   public void buttonAddNone() {
     myCancelled = false;
     dispose();
   }
 
-  @BaseDialog.Button(position = 3, name = "Cancel")
+  @BaseDialog.Button(position = 3, name = "Cancel", mnemonic = 'C')
   public void buttonCancel() {
     myCancelled = true;
     dispose();

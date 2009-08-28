@@ -214,8 +214,8 @@ public abstract class BaseDialog extends JDialog {
       final Method m = buttonMethods.get(i);
       JButton button = new JButton(new AbstractAction(b.name()) {
         {
-          if (b.shortcut().length() > 0) {
-            putValue(Action.ACCELERATOR_KEY, KeyStroke.getKeyStroke(b.shortcut()));
+          if (b.mnemonic()!='_') {
+            putValue(Action.MNEMONIC_KEY, new Integer(b.mnemonic()));
           }
         }
 
@@ -265,6 +265,9 @@ public abstract class BaseDialog extends JDialog {
 
     String name();
 
+    char mnemonic() default '_';
+
+    @Deprecated
     String shortcut() default "";
 
     boolean defaultButton() default false;
