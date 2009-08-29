@@ -48,7 +48,7 @@ public class TextGenManager {
     return myInstance;
   }
 
-  public HashMap<SNode, PositionInfo> positions;
+  public Map<SNode, PositionInfo> positions;
 
   public TextGenerationResult generateText(IOperationContext context, SNode node) {
     positions = new HashMap<SNode, PositionInfo>();
@@ -145,9 +145,9 @@ public class TextGenManager {
   public static class TextGenerationResult {
     private String myText;
     private boolean myContainErrors;
-    private HashMap<SNode, PositionInfo> myPositions;
+    private Map<SNode, PositionInfo> myPositions;
 
-    private TextGenerationResult(String text, boolean containErrors, HashMap<SNode, PositionInfo> positions) {
+    private TextGenerationResult(String text, boolean containErrors, Map<SNode, PositionInfo> positions) {
       myText = text;
       myContainErrors = containErrors;
       myPositions = positions;
