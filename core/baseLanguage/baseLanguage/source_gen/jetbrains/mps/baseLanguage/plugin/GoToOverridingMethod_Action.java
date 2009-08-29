@@ -14,6 +14,7 @@ import java.awt.Frame;
 import com.intellij.openapi.project.Project;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
+import jetbrains.mps.ide.findusages.view.FindUtils;
 import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import java.util.List;
@@ -23,7 +24,6 @@ import com.intellij.openapi.progress.Task;
 import com.intellij.openapi.progress.ProgressIndicator;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.ide.findusages.view.FindUtils;
 import javax.swing.SwingUtilities;
 import java.awt.Rectangle;
 import java.awt.Point;
@@ -52,9 +52,16 @@ public class GoToOverridingMethod_Action extends GeneratedAction {
     return "ctrl alt B";
   }
 
+  public boolean isApplicable(AnActionEvent event) {
+    return FindUtils.getFinderByClassName("jetbrains.mps.baseLanguage.findUsages.OverridingMethods_Finder").isApplicable(GoToOverridingMethod_Action.this.methodNode);
+  }
+
   public void doUpdate(@NotNull AnActionEvent event) {
     try {
-      this.enable(event.getPresentation());
+      {
+        boolean enabled = this.isApplicable(event);
+        this.setEnabledState(event.getPresentation(), enabled);
+      }
     } catch (Throwable t) {
       LOG.error("User's action doUpdate method failed. Action:" + "GoToOverridingMethod", t);
       this.disable(event.getPresentation());
