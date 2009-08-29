@@ -16386,18 +16386,8 @@
               <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="5357294907628574066">
                 <property name="value" value="true" />
               </node>
-              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.NotExpression" id="3897193564237105632">
-                <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="5357294907628574071">
-                  <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="5357294907628574068">
-                    <node role="operand" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpression" id="5357294907628574069" />
-                    <node role="operation" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterReferenceOperation" id="5357294907628574070">
-                      <link role="member" targetNodeId="5357294907628538961" resolveInfo="node" />
-                    </node>
-                  </node>
-                  <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="5357294907628574075">
-                    <link role="baseMethodDeclaration" targetNodeId="40.~SNode.isRoot():boolean" resolveInfo="isRoot" />
-                  </node>
-                </node>
+              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="710337334809419025">
+                <property name="value" value="false" />
               </node>
             </node>
           </node>
