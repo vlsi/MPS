@@ -327,6 +327,10 @@ __switch__:
     return SNodeOperations.isInstanceOf(SNodeOperations.getParent(_context.getSourceNode()), "jetbrains.mps.baseLanguage.structure.DotExpression");
   }
 
+  public static boolean sideTransformHintSubstituteActionsBuilder_Precondition_ClassifierType_710337334809133195(final IOperationContext operationContext, final SideTransformPreconditionContext _context) {
+    return SNodeOperations.isInstanceOf(SNodeOperations.getParent(_context.getSourceNode()), "jetbrains.mps.baseLanguage.structure.InstanceOfExpression");
+  }
+
   public static void nodeFactory_NodeSetup_InstanceMethodDeclaration_1158793299786(final IOperationContext operationContext, final NodeSetupContext _context) {
     if (SNodeOperations.isInstanceOf(_context.getEnclosingNode(), "jetbrains.mps.baseLanguage.structure.Interface")) {
       SPropertyOperations.set(_context.getNewNode(), "isAbstract", "" + (true));
@@ -2550,6 +2554,9 @@ __switch__:
             SNode result = SConceptOperations.createNewNode(NameUtil.nodeFQName(subconcept), null);
             {
               SNode nodeToProcess = _context.getSourceNode();
+              if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(nodeToProcess), "jetbrains.mps.baseLanguage.structure.InstanceOfExpression")) {
+                nodeToProcess = SNodeOperations.cast(SNodeOperations.getParent(nodeToProcess), "jetbrains.mps.baseLanguage.structure.Expression");
+              }
               SNodeOperations.replaceWithAnother(nodeToProcess, result);
               SLinkOperations.setTarget(result, "rightExpression", nodeToProcess, true);
               ParenthesisUtil.checkOperationWRTPriority(result);
@@ -3236,6 +3243,36 @@ __switch__:
           return "unary minus";
         }
       });
+    }
+    return result;
+  }
+
+  public static List<INodeSubstituteAction> sideTransform_ActionsFactory_ClassifierType_710337334808833582(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
+    List<INodeSubstituteAction> result = ListSequence.fromList(new ArrayList<INodeSubstituteAction>());
+    {
+      SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.BinaryOperation");
+      Iterable<SNode> concepts;
+      concepts = SConceptOperations.getAllSubConcepts(concept, _context.getModel(), operationContext.getScope());
+      for (final SNode subconcept : concepts) {
+        if (!(SNodeOperations.isInstanceOf(subconcept, "jetbrains.mps.lang.structure.structure.ConceptDeclaration"))) {
+          continue;
+        }
+        if (SConceptPropertyOperations.getBoolean(subconcept, "abstract")) {
+          continue;
+        }
+        ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(subconcept, _context.getSourceNode()) {
+          public SNode doSubstitute(String pattern) {
+            SNode result = SConceptOperations.createNewNode(NameUtil.nodeFQName(subconcept), null);
+            {
+              SNode expr = SNodeOperations.cast(SNodeOperations.getParent(_context.getSourceNode()), "jetbrains.mps.baseLanguage.structure.Expression");
+              SNodeOperations.replaceWithAnother(expr, result);
+              SLinkOperations.setTarget(result, "leftExpression", expr, true);
+              ParenthesisUtil.checkOperationWRTPriority(result);
+              return result;
+            }
+          }
+        });
+      }
     }
     return result;
   }
