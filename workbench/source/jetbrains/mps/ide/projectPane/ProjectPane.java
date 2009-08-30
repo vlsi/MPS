@@ -390,7 +390,7 @@ public class ProjectPane extends AbstractProjectViewPane implements PersistentSt
   public Object getData(@NonNls String dataId) {
     //MPSDK
     if (dataId.equals(MPSDataKeys.NODE.getName())) return getSelectedSNode();
-    if (dataId.equals(MPSDataKeys.NODES.getName())) return getSelectedNodes();
+    if (dataId.equals(MPSDataKeys.NODES.getName())) return getSelectedSNodes();
 
     if (dataId.equals(MPSDataKeys.MODEL.getName())) return getSelectedModel();
     if (dataId.equals(MPSDataKeys.CONTEXT_MODEL.getName())) return getCurrentModel();
@@ -427,28 +427,6 @@ public class ProjectPane extends AbstractProjectViewPane implements PersistentSt
     return getSelectionPaths().length;
   }
 
-  private SModelDescriptor getCurrentModel() {
-    TreePath selectionPath = getTree().getLeadSelectionPath();
-    if (selectionPath == null) return null;
-    MPSTreeNode treeNode = (MPSTreeNode) selectionPath.getLastPathComponent();
-    while (treeNode != null && !(treeNode instanceof SModelTreeNode)) {
-      treeNode = (MPSTreeNode) treeNode.getParent();
-    }
-    if (treeNode == null) return null;
-    return ((SModelTreeNode) treeNode).getSModelDescriptor();
-  }
-
-  private IModule getCurrentModule() {
-    TreePath selectionPath = getTree().getLeadSelectionPath();
-    if (selectionPath == null) return null;
-    MPSTreeNode treeNode = (MPSTreeNode) selectionPath.getLastPathComponent();
-    while (treeNode != null && !(treeNode instanceof ProjectModuleTreeNode)) {
-      treeNode = (MPSTreeNode) treeNode.getParent();
-    }
-    if (treeNode == null) return null;
-    return ((ProjectModuleTreeNode) treeNode).getModule();
-  }
-
   private ActionPlace getPlace() {
     TreeNode treeNode = getSelectedTreeNode();
     if (treeNode instanceof SNodeTreeNode) {
@@ -478,51 +456,6 @@ public class ProjectPane extends AbstractProjectViewPane implements PersistentSt
     return ActionPlace.PROJECT_PANE;
   }
 
-  private VirtualFile[] getSelectedFiles() {
-    List<VirtualFile> selectedFilesList = new LinkedList<VirtualFile>();
-
-    // add selected model files
-    List<SModelDescriptor> descriptors = getSelectedModels();
-    if (descriptors != null) {
-      for (SModelDescriptor descriptor : descriptors) {
-        IFile ifile = descriptor.getModelFile();
-        if (ifile != null) {
-          VirtualFile vfile = VFileSystem.getFile(ifile);
-          if (vfile != null) {
-            selectedFilesList.add(vfile);
-          }
-        }
-      }
-    }
-
-    // add selected modules files
-    List<IModule> modules = getSelectedModules();
-    if (modules != null) {
-      for (IModule module : modules) {
-        File home = module.getBundleHome();
-        if (home != null) {
-          VirtualFile vfile = VFileSystem.getFile(home);
-          if (vfile != null) {
-            selectedFilesList.add(vfile);
-          }
-        }
-        IFile ifile = module.getDescriptorFile();
-        if (ifile != null) {
-          VirtualFile vfile = VFileSystem.getFile(ifile);
-          if (vfile != null) {
-            selectedFilesList.add(vfile);
-          }
-        }
-      }
-    }
-
-    if (selectedFilesList.size() == 0) {
-      return null;
-    }
-
-    return selectedFilesList.toArray(new VirtualFile[selectedFilesList.size()]);
-  }
-
   private IOperationContext getContextForSelection() {
     TreePath[] selection = getTree().getSelectionPaths();
     if (selection == null) return null;
@@ -533,47 +466,81 @@ public class ProjectPane extends AbstractProjectViewPane implements PersistentSt
     return null;
   }
 
-  private SNode getSelectedSNode() {
-    if (getSelectedNodes() != null && getSelectedNodes().size() == 1) {
-      return getSelectedNodes().get(0);
-    }
-    return null;
-  }
-
   public void rebuildTree() {
     getTree().rebuildNow();
   }
 
-  public void selectNextTreeNode(SNode node) {
-    MPSTreeNode mpsTreeNode = findNextTreeNode(node);
-    getTree().selectNode(mpsTreeNode);
-  }
-
-  public void selectNextTreeModel(SModelDescriptor modelDescriptor) {
-    MPSTreeNode mpsTreeNode = findNextTreeNode(modelDescriptor);
-    getTree().selectNode(mpsTreeNode);
-  }
-
-  public void selectModel(@NotNull final SModelDescriptor modelDescriptor) {
-    LOG.checkEDT();
-
-    ModelAccess.instance().runReadAction(new Runnable() {
+  public void activate(final boolean focus) {
+    myProjectView.changeView(getId());
+    final ToolWindowManager manager = ToolWindowManager.getInstance(myProject);
+    manager.getToolWindow(ToolWindowId.PROJECT_VIEW).activate(new Runnable() {
       public void run() {
-        DefaultTreeModel model = (DefaultTreeModel) getTree().getModel();
-        MPSTreeNode rootNode = (MPSTreeNode) model.getRoot();
-        SModelTreeNode modelTreeNode = findSModelTreeNode(rootNode, modelDescriptor);
-        if (modelTreeNode != null) {
-          TreePath treePath = new TreePath(modelTreeNode.getPath());
-          getTree().setSelectionPath(treePath);
-          getTree().scrollPathToVisible(treePath);
-        } else {
-          LOG.warning("Couldn't select model \"" + modelDescriptor.getLongName() + "\" : tree node not found.");
+        if (focus) {
+          manager.getFocusManager().requestFocus(myTree, false);
         }
+      }
+    }, false);
+  }
+
+  public void doRebuildTree() {
+    ModelAccess.instance().runReadInEDT(new Runnable() {
+      public void run() {
+        if (isDisposed()) {
+          return;
+        }
+        rebuildTreeNow();
       }
     });
   }
 
+  private void rebuildTreeNow() {
+    ModelAccess.instance().runReadAction(new Runnable() {
+      public void run() {
+        rebuildTree();
+      }
+    });
+  }
+
+  public boolean isDisposed() {
+    return myDisposed;
+  }
+
+  public void dispose() {
+    myDisposed = true;
+  }
+
+  public void rebuild() {
+    doRebuildTree();
+  }
+
+  protected void removeListeners() {
+    if (getMPSProject() != null) {
+      SModelRepository.getInstance().removeModelRepositoryListener(mySModelRepositoryListener);
+      CommandProcessor.getInstance().removeCommandListener(myCommandListener);
+      MPSModuleRepository.getInstance().removeModuleRepositoryListener(myRepositoryListener);
+      getMPSProject().getComponent(GeneratorManager.class).addGenerationListener(myGenerationListener);
+      getProject().getComponent(FileEditorManager.class).removeFileEditorManagerListener(myEditorListener);
+      VirtualFileManager.getInstance().removeVirtualFileManagerListener(myRefreshListener);
+    }
+  }
+
+  protected void addListeners() {
+    VirtualFileManager.getInstance().addVirtualFileManagerListener(myRefreshListener);
+    SModelRepository.getInstance().addModelRepositoryListener(mySModelRepositoryListener);
+    CommandProcessor.getInstance().addCommandListener(myCommandListener);
+    MPSModuleRepository.getInstance().addModuleRepositoryListener(myRepositoryListener);
+    getMPSProject().getComponent(GeneratorManager.class).addGenerationListener(myGenerationListener);
+    getProject().getComponent(FileEditorManager.class).addFileEditorManagerListener(myEditorListener);
+  }
+
+  private AnActionEvent createEvent(DataContext context) {
+    return ActionUtils.createEvent(ActionPlaces.PROJECT_VIEW_POPUP, context);
+  }
+
+  //----selection----
+
   //for compatibility
+
   @Deprecated
   public void selectModule(@NotNull final IModule module) {
     selectModule(module, false);
@@ -602,6 +569,30 @@ public class ProjectPane extends AbstractProjectViewPane implements PersistentSt
     } else {
       r.run();
     }
+  }
+
+  public void selectModel(@NotNull final SModelDescriptor modelDescriptor) {
+    LOG.checkEDT();
+
+    ModelAccess.instance().runReadAction(new Runnable() {
+      public void run() {
+        DefaultTreeModel model = (DefaultTreeModel) getTree().getModel();
+        MPSTreeNode rootNode = (MPSTreeNode) model.getRoot();
+        SModelTreeNode modelTreeNode = findSModelTreeNode(rootNode, modelDescriptor);
+        if (modelTreeNode != null) {
+          TreePath treePath = new TreePath(modelTreeNode.getPath());
+          getTree().setSelectionPath(treePath);
+          getTree().scrollPathToVisible(treePath);
+        } else {
+          LOG.warning("Couldn't select model \"" + modelDescriptor.getLongName() + "\" : tree node not found.");
+        }
+      }
+    });
+  }
+
+  public void selectNextTreeModel(SModelDescriptor modelDescriptor) {
+    MPSTreeNode mpsTreeNode = findNextTreeNode(modelDescriptor);
+    getTree().selectNode(mpsTreeNode);
   }
 
   public void selectNode(final SNode node, final IOperationContext context) {
@@ -679,17 +670,239 @@ public class ProjectPane extends AbstractProjectViewPane implements PersistentSt
     });
   }
 
-  public void activate(final boolean focus) {
-    myProjectView.changeView(getId());
-    final ToolWindowManager manager = ToolWindowManager.getInstance(myProject);
-    manager.getToolWindow(ToolWindowId.PROJECT_VIEW).activate(new Runnable() {
-      public void run() {
-        if (focus) {
-          manager.getFocusManager().requestFocus(myTree, false);
+  public void selectNextTreeNode(SNode node) {
+    MPSTreeNode mpsTreeNode = findNextTreeNode(node);
+    getTree().selectNode(mpsTreeNode);
+  }
+
+  //----selection acquire----
+
+  public IModule getSelectedModule() {
+    TreeNode selectedTreeNode = getSelectedModuleTreeNode();
+    if (selectedTreeNode == null) return null;
+    return ((ProjectModuleTreeNode) selectedTreeNode).getModule();
+  }
+
+  public List<IModule> getSelectedModules() {
+    List<IModule> result = new ArrayList<IModule>();
+    TreePath[] paths = getTree().getSelectionPaths();
+    if (paths == null) return result;
+    for (TreePath path : paths) {
+      TreeNode node = (TreeNode) path.getLastPathComponent();
+      if (node instanceof ProjectModuleTreeNode) {
+        result.add(((ProjectModuleTreeNode) node).getModule());
+      }
+    }
+    return result;
+  }
+
+  public IModule getCurrentModule() {
+    TreePath selectionPath = getTree().getLeadSelectionPath();
+    if (selectionPath == null) return null;
+    MPSTreeNode treeNode = (MPSTreeNode) selectionPath.getLastPathComponent();
+    while (treeNode != null && !(treeNode instanceof ProjectModuleTreeNode)) {
+      treeNode = (MPSTreeNode) treeNode.getParent();
+    }
+    if (treeNode == null) return null;
+    return ((ProjectModuleTreeNode) treeNode).getModule();
+  }
+
+  private TreeNode getSelectedModuleTreeNode() {
+    TreeNode selectedTreeNode = getSelectedTreeNode();
+
+    if (!(selectedTreeNode instanceof ProjectModuleTreeNode)) {
+      return null;
+    }
+    return selectedTreeNode;
+  }
+
+  public SModelDescriptor getSelectedModel() {
+    TreeNode selectedTreeNode = getSelectedModelTreeNode();
+    if (selectedTreeNode == null) return null;
+    return ((SModelTreeNode) selectedTreeNode).getSModelDescriptor();
+  }
+
+  public List<SModelDescriptor> getSelectedModels() {
+    List<SModelDescriptor> result = new ArrayList<SModelDescriptor>();
+    TreePath[] paths = getTree().getSelectionPaths();
+    if (paths == null) return result;
+    for (TreePath path : paths) {
+      TreeNode node = (TreeNode) path.getLastPathComponent();
+      if (node instanceof SModelTreeNode) {
+        result.add(((SModelTreeNode) node).getSModelDescriptor());
+      }
+    }
+    return result;
+  }
+
+  public SModelDescriptor getCurrentModel() {
+    TreePath selectionPath = getTree().getLeadSelectionPath();
+    if (selectionPath == null) return null;
+    MPSTreeNode treeNode = (MPSTreeNode) selectionPath.getLastPathComponent();
+    while (treeNode != null && !(treeNode instanceof SModelTreeNode)) {
+      treeNode = (MPSTreeNode) treeNode.getParent();
+    }
+    if (treeNode == null) return null;
+    return ((SModelTreeNode) treeNode).getSModelDescriptor();
+  }
+
+  public TreeNode getSelectedModelTreeNode() {
+    TreeNode selectedTreeNode = getSelectedTreeNode();
+    if (selectedTreeNode == null) {
+      return null;
+    }
+    while (selectedTreeNode != null && !(selectedTreeNode instanceof SModelTreeNode)) {
+      selectedTreeNode = selectedTreeNode.getParent();
+    }
+    if (selectedTreeNode == null) {
+      return null;
+    }
+    return selectedTreeNode;
+  }
+
+  public SNode getSelectedSNode() {
+    if (getSelectedSNodes() != null && getSelectedSNodes().size() == 1) {
+      return getSelectedSNodes().get(0);
+    }
+    return null;
+  }
+
+  public List<SNode> getSelectedSNodes() {
+    List<SNode> result = new ArrayList<SNode>();
+    TreePath[] paths = getTree().getSelectionPaths();
+    if (paths == null) return result;
+    for (TreePath path : paths) {
+      MPSTreeNode node = (MPSTreeNode) path.getLastPathComponent();
+      if (node instanceof MPSTreeNodeEx) {
+        SNode snode = ((MPSTreeNodeEx) node).getSNode();
+        if (snode != null) {
+          result.add(snode);
         }
       }
-    }, false);
+    }
+    return result;
   }
+
+  public List<SNode> getNormalizedSelectedNodes() {
+    List<SNode> selectedNodes = new ArrayList<SNode>(getSelectedSNodes());
+    HashSet<SNode> unselectedNodes = new HashSet<SNode>();
+
+    for (SNode node : selectedNodes) {
+      if (node == null) continue;
+      if (unselectedNodes.contains(node)) continue;
+      unselectedNodes.addAll(node.getDescendants());
+    }
+    selectedNodes.removeAll(unselectedNodes);
+    return selectedNodes;
+  }
+
+  public List<String> getSelectedPackages() {
+    List<String> result = new ArrayList<String>();
+    TreePath[] paths = getTree().getSelectionPaths();
+    if (paths == null) return result;
+    for (TreePath path : paths) {
+      MPSTreeNode node = (MPSTreeNode) path.getLastPathComponent();
+      while (node != null && !(node instanceof PackageNode)) {
+        node = (MPSTreeNode) node.getParent();
+      }
+      if (node != null) {
+        result.add(((PackageNode) node).getFullPackage());
+      }
+    }
+    return result;
+  }
+
+  private ProjectLanguageTreeNode getSelectedProjectLanguageTreeNode() {
+    TreeNode selectedTreeNode = getSelectedTreeNode();
+    if (selectedTreeNode == null) {
+      return null;
+    }
+    while (selectedTreeNode != null && !(selectedTreeNode instanceof ProjectLanguageTreeNode)) {
+      selectedTreeNode = selectedTreeNode.getParent();
+    }
+    if (selectedTreeNode == null) {
+      return null;
+    }
+    return (ProjectLanguageTreeNode) selectedTreeNode;
+  }
+
+  private VirtualFile[] getSelectedFiles() {
+    List<VirtualFile> selectedFilesList = new LinkedList<VirtualFile>();
+
+    // add selected model files
+    List<SModelDescriptor> descriptors = getSelectedModels();
+    if (descriptors != null) {
+      for (SModelDescriptor descriptor : descriptors) {
+        IFile ifile = descriptor.getModelFile();
+        if (ifile != null) {
+          VirtualFile vfile = VFileSystem.getFile(ifile);
+          if (vfile != null) {
+            selectedFilesList.add(vfile);
+          }
+        }
+      }
+    }
+
+    // add selected modules files
+    List<IModule> modules = getSelectedModules();
+    if (modules != null) {
+      for (IModule module : modules) {
+        File home = module.getBundleHome();
+        if (home != null) {
+          VirtualFile vfile = VFileSystem.getFile(home);
+          if (vfile != null) {
+            selectedFilesList.add(vfile);
+          }
+        }
+        IFile ifile = module.getDescriptorFile();
+        if (ifile != null) {
+          VirtualFile vfile = VFileSystem.getFile(ifile);
+          if (vfile != null) {
+            selectedFilesList.add(vfile);
+          }
+        }
+      }
+    }
+
+    if (selectedFilesList.size() == 0) {
+      return null;
+    }
+
+    return selectedFilesList.toArray(new VirtualFile[selectedFilesList.size()]);
+  }
+
+  public TreeNode getSelectedTreeNode() {
+    TreeNode selectedTreeNode;
+    TreePath selectionPath = getTree().getSelectionPath();
+    if (selectionPath == null) {
+      return null;
+    }
+    Object selectedNode = selectionPath.getLastPathComponent();
+    if (!(selectedNode instanceof TreeNode)) {
+      return null;
+    }
+    selectedTreeNode = (TreeNode) selectedNode;
+    return selectedTreeNode;
+  }
+
+  public List<TreeNode> getSelectedTreeNodes() {
+    TreePath[] selectionPaths = getTree().getSelectionPaths();
+    List<TreeNode> selectedTreeNodes = new ArrayList<TreeNode>(selectionPaths.length);
+
+    for (TreePath selectionPath : selectionPaths) {
+      if (selectionPath == null) {
+        return null;
+      }
+      Object selectedNode = selectionPath.getLastPathComponent();
+      if (!(selectedNode instanceof TreeNode)) {
+        return null;
+      }
+      selectedTreeNodes.add((TreeNode) selectedNode);
+    }
+    return selectedTreeNodes;
+  }
+
+  //----node finding----
 
   public MPSTreeNode findModuleTreeNode(final IModule module) {
     DefaultTreeModel treeModel = (DefaultTreeModel) getTree().getModel();
@@ -730,6 +943,46 @@ public class ProjectPane extends AbstractProjectViewPane implements PersistentSt
           return nodeContext != null && nodeContext.getModule() == module;
         }
       });
+  }
+
+  protected SModelTreeNode findSModelTreeNode(MPSTreeNode parent, SModelDescriptor modelDescriptor) {
+    if (!(parent instanceof SModelTreeNode) && !parent.isInitialized() && !parent.hasInfiniteSubtree()) {
+      parent.init();
+    }
+
+    if (parent instanceof SModelTreeNode) {
+      SModelTreeNode parentSModelNode = (SModelTreeNode) parent;
+      SModelDescriptor parentModelDescriptor = parentSModelNode.getSModelDescriptor();
+      SModelReference parentModelRef = parentModelDescriptor.getSModelReference();
+      SModelReference modelRef = modelDescriptor.getSModelReference();
+      if (parentModelRef.equals(modelRef)) {
+        return parentSModelNode;
+      }
+    }
+    for (MPSTreeNode node : parent) {
+      SModelTreeNode foundNode = findSModelTreeNode(node, modelDescriptor);
+      if (foundNode != null) {
+        return foundNode;
+      }
+    }
+    return null;
+  }
+
+  protected MPSTreeNodeEx findTreeNode(MPSTreeNode parent, SNode node) {
+    if (!(parent.isInitialized() || parent.hasInfiniteSubtree())) parent.init();
+    if (parent instanceof SNodeTreeNode) {
+      SNodeTreeNode parentSNodeTreeNode = (SNodeTreeNode) parent;
+      if (node == parentSNodeTreeNode.getSNode()) {
+        return parentSNodeTreeNode;
+      }
+    }
+    for (MPSTreeNode childNode : parent) {
+      MPSTreeNodeEx foundNode = findTreeNode(childNode, node);
+      if (foundNode != null) {
+        return foundNode;
+      }
+    }
+    return null;
   }
 
   private MPSTreeNode findTreeNode(MPSTreeNode root,
@@ -780,248 +1033,63 @@ public class ProjectPane extends AbstractProjectViewPane implements PersistentSt
     return (MPSTreeNode) result;
   }
 
-  public SModelDescriptor getSelectedModel() {
-    TreeNode selectedTreeNode = getSelectedModelTreeNode();
-    if (selectedTreeNode == null) return null;
-    return ((SModelTreeNode) selectedTreeNode).getSModelDescriptor();
+  //----state----
+
+  public MyState getState() {
+    return new MyState((int) myScrollPane.getViewport().getViewPosition().getY(), getTree().saveState());
   }
 
-  public IModule getSelectedModule() {
-    TreeNode selectedTreeNode = getSelectedModuleTreeNode();
-    if (selectedTreeNode == null) return null;
-    return ((ProjectModuleTreeNode) selectedTreeNode).getModule();
-  }
-
-  private TreeNode getSelectedModuleTreeNode() {
-    TreeNode selectedTreeNode = getSelectedTreeNode();
-
-    if (!(selectedTreeNode instanceof ProjectModuleTreeNode)) {
-      return null;
-    }
-    return selectedTreeNode;
-  }
-
-  public TreeNode getSelectedModelTreeNode() {
-    TreeNode selectedTreeNode = getSelectedTreeNode();
-    if (selectedTreeNode == null) {
-      return null;
-    }
-    while (selectedTreeNode != null && !(selectedTreeNode instanceof SModelTreeNode)) {
-      selectedTreeNode = selectedTreeNode.getParent();
-    }
-    if (selectedTreeNode == null) {
-      return null;
-    }
-    return selectedTreeNode;
-  }
-
-  ProjectLanguageTreeNode getSelectedProjectLanguageTreeNode() {
-    TreeNode selectedTreeNode = getSelectedTreeNode();
-    if (selectedTreeNode == null) {
-      return null;
-    }
-    while (selectedTreeNode != null && !(selectedTreeNode instanceof ProjectLanguageTreeNode)) {
-      selectedTreeNode = selectedTreeNode.getParent();
-    }
-    if (selectedTreeNode == null) {
-      return null;
-    }
-    return (ProjectLanguageTreeNode) selectedTreeNode;
-  }
-
-  public TreeNode getSelectedTreeNode() {
-    TreeNode selectedTreeNode;
-    TreePath selectionPath = getTree().getSelectionPath();
-    if (selectionPath == null) {
-      return null;
-    }
-    Object selectedNode = selectionPath.getLastPathComponent();
-    if (!(selectedNode instanceof TreeNode)) {
-      return null;
-    }
-    selectedTreeNode = (TreeNode) selectedNode;
-    return selectedTreeNode;
-  }
-
-  public List<TreeNode> getSelectedTreeNodes() {
-    TreePath[] selectionPaths = getTree().getSelectionPaths();
-    List<TreeNode> selectedTreeNodes = new ArrayList<TreeNode>(selectionPaths.length);
-
-    for (TreePath selectionPath : selectionPaths) {
-      if (selectionPath == null) {
-        return null;
-      }
-      Object selectedNode = selectionPath.getLastPathComponent();
-      if (!(selectedNode instanceof TreeNode)) {
-        return null;
-      }
-      selectedTreeNodes.add((TreeNode) selectedNode);
-    }
-    return selectedTreeNodes;
-  }
-
-  public List<SModelDescriptor> getSelectedModels() {
-    List<SModelDescriptor> result = new ArrayList<SModelDescriptor>();
-    TreePath[] paths = getTree().getSelectionPaths();
-    if (paths == null) return result;
-    for (TreePath path : paths) {
-      TreeNode node = (TreeNode) path.getLastPathComponent();
-      if (node instanceof SModelTreeNode) {
-        result.add(((SModelTreeNode) node).getSModelDescriptor());
-      }
-    }
-    return result;
-  }
-
-  public List<IModule> getSelectedModules() {
-    List<IModule> result = new ArrayList<IModule>();
-    TreePath[] paths = getTree().getSelectionPaths();
-    if (paths == null) return result;
-    for (TreePath path : paths) {
-      TreeNode node = (TreeNode) path.getLastPathComponent();
-      if (node instanceof ProjectModuleTreeNode) {
-        result.add(((ProjectModuleTreeNode) node).getModule());
-      }
-    }
-    return result;
-  }
-
-  List<SNode> getSelectedNodes() {
-    List<SNode> result = new ArrayList<SNode>();
-    TreePath[] paths = getTree().getSelectionPaths();
-    if (paths == null) return result;
-    for (TreePath path : paths) {
-      MPSTreeNode node = (MPSTreeNode) path.getLastPathComponent();
-      if (node instanceof MPSTreeNodeEx) {
-        SNode snode = ((MPSTreeNodeEx) node).getSNode();
-        if (snode != null) {
-          result.add(snode);
-        }
-      }
-    }
-    return result;
-  }
-
-  List<String> getSelectedPackages() {
-    List<String> result = new ArrayList<String>();
-    TreePath[] paths = getTree().getSelectionPaths();
-    if (paths == null) return result;
-    for (TreePath path : paths) {
-      MPSTreeNode node = (MPSTreeNode) path.getLastPathComponent();
-      while (node != null && !(node instanceof PackageNode)) {
-        node = (MPSTreeNode) node.getParent();
-      }
-      if (node != null) {
-        result.add(((PackageNode) node).getFullPackage());
-      }
-    }
-    return result;
-  }
-
-  public List<SNode> getNormalizedSelectedNodes() {
-    List<SNode> selectedNodes = new ArrayList<SNode>(getSelectedNodes());
-    HashSet<SNode> unselectedNodes = new HashSet<SNode>();
-
-    for (SNode node : selectedNodes) {
-      if (node == null) continue;
-      if (unselectedNodes.contains(node)) continue;
-      unselectedNodes.addAll(node.getDescendants());
-    }
-    selectedNodes.removeAll(unselectedNodes);
-    return selectedNodes;
-  }
-
-  public void doRebuildTree() {
+  public void loadState(final MyState state) {
     ModelAccess.instance().runReadInEDT(new Runnable() {
       public void run() {
-        if (isDisposed()) {
-          return;
-        }
         rebuildTreeNow();
+        getTree().loadState(state.getState());
+        myScrollPane.getViewport().setViewPosition(new Point(0, state.getVerticalScrollPosition()));
       }
     });
   }
 
-  private void rebuildTreeNow() {
-    ModelAccess.instance().runReadAction(new Runnable() {
-      public void run() {
-        rebuildTree();
-      }
-    });
-  }
+  public static class MyState {
+    private TreeState myState;
+    private int myVerticalScrollPosition = 0;
 
-  public boolean isDisposed() {
-    return myDisposed;
-  }
+    public MyState() {
+    }
 
-  public void dispose() {
-    myDisposed = true;
-  }
+    public MyState(int verticalScrollPosition, TreeState state) {
+      myVerticalScrollPosition = verticalScrollPosition;
+      myState = state;
+    }
 
-  public void rebuild() {
-    doRebuildTree();
-  }
+    public TreeState getState() {
+      return myState;
+    }
 
-  protected void removeListeners() {
-    if (getMPSProject() != null) {
-      SModelRepository.getInstance().removeModelRepositoryListener(mySModelRepositoryListener);
-      CommandProcessor.getInstance().removeCommandListener(myCommandListener);
-      MPSModuleRepository.getInstance().removeModuleRepositoryListener(myRepositoryListener);
-      getMPSProject().getComponent(GeneratorManager.class).addGenerationListener(myGenerationListener);
-      getProject().getComponent(FileEditorManager.class).removeFileEditorManagerListener(myEditorListener);
-      VirtualFileManager.getInstance().removeVirtualFileManagerListener(myRefreshListener);
+    public void setState(TreeState state) {
+      myState = state;
+    }
+
+    public int getVerticalScrollPosition() {
+      return myVerticalScrollPosition;
+    }
+
+    public void setVerticalScrollPosition(int verticalScrollPosition) {
+      myVerticalScrollPosition = verticalScrollPosition;
     }
   }
 
-  protected void addListeners() {
-    VirtualFileManager.getInstance().addVirtualFileManagerListener(myRefreshListener);
-    SModelRepository.getInstance().addModelRepositoryListener(mySModelRepositoryListener);
-    CommandProcessor.getInstance().addCommandListener(myCommandListener);
-    MPSModuleRepository.getInstance().addModuleRepositoryListener(myRepositoryListener);
-    getMPSProject().getComponent(GeneratorManager.class).addGenerationListener(myGenerationListener);
-    getProject().getComponent(FileEditorManager.class).addFileEditorManagerListener(myEditorListener);
+  //----UI----
+
+  private class MyScrollPane extends JScrollPane implements DataProvider {
+    private MyScrollPane(Component view) {
+      super(view);
+    }
+
+    @Nullable
+    public Object getData(@NonNls String dataId) {
+      return ProjectPane.this.getData(dataId);
+    }
   }
-
-  protected SModelTreeNode findSModelTreeNode(MPSTreeNode parent, SModelDescriptor modelDescriptor) {
-    if (!(parent instanceof SModelTreeNode) && !parent.isInitialized() && !parent.hasInfiniteSubtree()) {
-      parent.init();
-    }
-
-    if (parent instanceof SModelTreeNode) {
-      SModelTreeNode parentSModelNode = (SModelTreeNode) parent;
-      SModelDescriptor parentModelDescriptor = parentSModelNode.getSModelDescriptor();
-      SModelReference parentModelRef = parentModelDescriptor.getSModelReference();
-      SModelReference modelRef = modelDescriptor.getSModelReference();
-      if (parentModelRef.equals(modelRef)) {
-        return parentSModelNode;
-      }
-    }
-    for (MPSTreeNode node : parent) {
-      SModelTreeNode foundNode = findSModelTreeNode(node, modelDescriptor);
-      if (foundNode != null) {
-        return foundNode;
-      }
-    }
-    return null;
-  }
-
-  protected MPSTreeNodeEx findTreeNode(MPSTreeNode parent, SNode node) {
-    if (!(parent.isInitialized() || parent.hasInfiniteSubtree())) parent.init();
-    if (parent instanceof SNodeTreeNode) {
-      SNodeTreeNode parentSNodeTreeNode = (SNodeTreeNode) parent;
-      if (node == parentSNodeTreeNode.getSNode()) {
-        return parentSNodeTreeNode;
-      }
-    }
-    for (MPSTreeNode childNode : parent) {
-      MPSTreeNodeEx foundNode = findTreeNode(childNode, node);
-      if (foundNode != null) {
-        return foundNode;
-      }
-    }
-    return null;
-  }
-
 
   public class MyTree extends MPSTree {
     public MyTree() {
@@ -1115,6 +1183,8 @@ public class ProjectPane extends AbstractProjectViewPane implements PersistentSt
     }
   }
 
+  //----listeners----
+
   private class MyModuleRepositoryListener extends ModuleRepositoryAdapter {
     public void moduleAdded(IModule module) {
       myNeedRebuild = true;
@@ -1148,63 +1218,7 @@ public class ProjectPane extends AbstractProjectViewPane implements PersistentSt
     }
   }
 
-  public MyState getState() {
-    return new MyState((int) myScrollPane.getViewport().getViewPosition().getY(), getTree().saveState());
-  }
-
-  public void loadState(final MyState state) {
-    ModelAccess.instance().runReadInEDT(new Runnable() {
-      public void run() {
-        rebuildTreeNow();
-        getTree().loadState(state.getState());
-        myScrollPane.getViewport().setViewPosition(new Point(0, state.getVerticalScrollPosition()));
-      }
-    });
-  }
-
-  public static class MyState {
-    private TreeState myState;
-    private int myVerticalScrollPosition = 0;
-
-    public MyState() {
-    }
-
-    public MyState(int verticalScrollPosition, TreeState state) {
-      myVerticalScrollPosition = verticalScrollPosition;
-      myState = state;
-    }
-
-    public TreeState getState() {
-      return myState;
-    }
-
-    public void setState(TreeState state) {
-      myState = state;
-    }
-
-    public int getVerticalScrollPosition() {
-      return myVerticalScrollPosition;
-    }
-
-    public void setVerticalScrollPosition(int verticalScrollPosition) {
-      myVerticalScrollPosition = verticalScrollPosition;
-    }
-  }
-
-  private class MyScrollPane extends JScrollPane implements DataProvider {
-    private MyScrollPane(Component view) {
-      super(view);
-    }
-
-    @Nullable
-    public Object getData(@NonNls String dataId) {
-      return ProjectPane.this.getData(dataId);
-    }
-  }
-
-  private AnActionEvent createEvent(DataContext context) {
-    return ActionUtils.createEvent(ActionPlaces.PROJECT_VIEW_POPUP, context);
-  }
+  //----copy-paste----
 
   private class MyCopyProvider implements CopyProvider {
     private CopyNode_Action myAction = new CopyNode_Action();
