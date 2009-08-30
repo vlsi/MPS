@@ -89,7 +89,7 @@ public class CutNode_Action extends GeneratedAction {
           if (ListSequence.fromList(CutNode_Action.this.nodes).count() != 1) {
             pane.rebuildTree();
           }
-          pane.selectNextTreeNode(node);
+          pane.selectNextNode(node);
         }
         SNodeOperations.deleteNode(node);
       }

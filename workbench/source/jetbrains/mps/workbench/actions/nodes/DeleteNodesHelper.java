@@ -63,7 +63,7 @@ public class DeleteNodesHelper {
       SNode sNode = iterator.next();
       if (!iterator.hasNext() && fromProjectPane) {
         projectPane.rebuildTree();
-        projectPane.selectNextTreeNode(sNode);
+        projectPane.selectNextNode(sNode);
       }
 
       doDeleteNode(sNode);

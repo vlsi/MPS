@@ -2662,9 +2662,15 @@
                   </node>
                 </node>
                 <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1218628312800">
-                  <link role="baseMethodDeclaration" targetNodeId="62.~MPSEditorOpener.openNode(jetbrains.mps.smodel.SNode):void" resolveInfo="openNode" />
+                  <link role="baseMethodDeclaration" targetNodeId="62.~MPSEditorOpener.editNode(jetbrains.mps.smodel.SNode,jetbrains.mps.smodel.IOperationContext):jetbrains.mps.ide.IEditor" resolveInfo="editNode" />
                   <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1218628312801">
                     <link role="variableDeclaration" targetNodeId="1218628312780" resolveInfo="copy" />
+                  </node>
+                  <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1519394044243296167">
+                    <node role="operand" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpression" id="1519394044243296168" />
+                    <node role="operation" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterReferenceOperation" id="1519394044243296169">
+                      <link role="member" targetNodeId="1519394044243263114" resolveInfo="context" />
+                    </node>
                   </node>
                 </node>
               </node>
@@ -2686,9 +2692,15 @@
                   </node>
                 </node>
                 <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1218628312810">
-                  <link role="baseMethodDeclaration" targetNodeId="82.~ProjectPane.selectNode(jetbrains.mps.smodel.SNode):void" resolveInfo="selectNode" />
+                  <link role="baseMethodDeclaration" targetNodeId="82.~ProjectPane.selectNode(jetbrains.mps.smodel.SNode,jetbrains.mps.smodel.IOperationContext):void" resolveInfo="selectNode" />
                   <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1218628312811">
                     <link role="variableDeclaration" targetNodeId="1218628312780" resolveInfo="copy" />
+                  </node>
+                  <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1519394044243296171">
+                    <node role="operand" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpression" id="1519394044243296172" />
+                    <node role="operation" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterReferenceOperation" id="1519394044243296173">
+                      <link role="member" targetNodeId="1519394044243263114" resolveInfo="context" />
+                    </node>
                   </node>
                 </node>
               </node>
@@ -2704,6 +2716,10 @@
     <node role="parameter" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterDeclaration" id="1217420645423">
       <property name="name" value="project" />
       <link role="key" targetNodeId="107.~MPSDataKeys.MPS_PROJECT" resolveInfo="MPS_PROJECT" />
+    </node>
+    <node role="parameter" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterDeclaration" id="1519394044243263114">
+      <property name="name" value="context" />
+      <link role="key" targetNodeId="107.~MPSDataKeys.OPERATION_CONTEXT" resolveInfo="OPERATION_CONTEXT" />
     </node>
     <node role="parameter" type="jetbrains.mps.lang.plugin.structure.ActionParameterDeclaration" id="1218628276987">
       <property name="name" value="nodes" />
@@ -12914,7 +12930,7 @@
                       <link role="variableDeclaration" targetNodeId="5033107305426732689" resolveInfo="pane" />
                     </node>
                     <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="5033107305426732706">
-                      <link role="baseMethodDeclaration" targetNodeId="82.~ProjectPane.selectNextTreeNode(jetbrains.mps.smodel.SNode):void" resolveInfo="selectNextTreeNode" />
+                      <link role="baseMethodDeclaration" targetNodeId="82.~ProjectPane.selectNextNode(jetbrains.mps.smodel.SNode):void" resolveInfo="selectNextNode" />
                       <node role="actualArgument" type="jetbrains.mps.baseLanguage.collections.structure.ForEachVariableReference" id="5033107305426732707">
                         <link role="variable" targetNodeId="5033107305426732541" resolveInfo="node" />
                       </node>
