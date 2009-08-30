@@ -88,10 +88,10 @@ public class DefaultJavaApplication_Configuration extends RunConfigurationBase {
     return new RunProfileState() {
       @Nullable
       public ExecutionResult execute(Executor executor, @NotNull ProgramRunner runner) throws ExecutionException {
-        final Wrappers._T<JComponent> consoleComponent = new Wrappers._T<JComponent>();
-        final Wrappers._T<Runnable> consoleDispose = new Wrappers._T<Runnable>(null);
+        JComponent consoleComponent;
+        Runnable consoleDispose = null;
         final List<AnAction> actions = ListSequence.fromList(new ArrayList<AnAction>());
-        final Wrappers._T<ProcessHandler> handler = new Wrappers._T<ProcessHandler>(null);
+        ProcessHandler handler = null;
         {
           if (DefaultJavaApplication_Configuration.this.getStateObject().modelId == null || DefaultJavaApplication_Configuration.this.getStateObject().nodeId == null) {
             throw new ExecutionException("Class node is not defined");
@@ -106,7 +106,7 @@ public class DefaultJavaApplication_Configuration extends RunConfigurationBase {
             throw new ExecutionException("Class node does not exist");
           }
 
-          final Project project = MPSDataKeys.PROJECT.getData(environment.getDataContext());
+          Project project = MPSDataKeys.PROJECT.getData(environment.getDataContext());
           MPSProject mpsProject = project.getComponent(MPSProjectHolder.class).getMPSProject();
 
           if (DefaultJavaApplication_Configuration.this.getStateObject().makeBeforeRun) {
@@ -122,27 +122,29 @@ public class DefaultJavaApplication_Configuration extends RunConfigurationBase {
             }
           }
 
+          final RunComponent runComponent = new RunComponent(project);
+          final ClassRunner classRunner = new ClassRunner(runComponent);
+
+          ListSequence.fromList(actions).addSequence(ListSequence.fromList(ListSequence.fromListAndArray(new ArrayList<AnAction>(), runComponent.getConsoleView().createUpDownStacktraceActions())));
+          consoleComponent = runComponent;
+          consoleDispose = new Runnable() {
+            public void run() {
+              runComponent.dispose();
+            }
+          };
+
+          final Wrappers._T<Process> process = new Wrappers._T<Process>();
           ModelAccess.instance().runReadAction(new Runnable() {
             public void run() {
-              final RunComponent runComponent = new RunComponent(project);
-              ClassRunner classRunner = new ClassRunner(runComponent);
-
-              ListSequence.fromList(actions).addSequence(ListSequence.fromList(ListSequence.fromListAndArray(new ArrayList<AnAction>(), runComponent.getConsoleView().createUpDownStacktraceActions())));
-              consoleComponent.value = runComponent;
-              consoleDispose.value = new Runnable() {
-                public void run() {
-                  runComponent.dispose();
-                }
-              };
-
-              Process process = classRunner.run(node.value, DefaultJavaApplication_Configuration.this.getStateObject().programParams, DefaultJavaApplication_Configuration.this.getStateObject().vmParams, DefaultJavaApplication_Configuration.this.getStateObject().workingDir);
-              handler.value = new BLProcessHandler(runComponent, process, "", Charset.defaultCharset());
+              process.value = classRunner.run(node.value, DefaultJavaApplication_Configuration.this.getStateObject().programParams, DefaultJavaApplication_Configuration.this.getStateObject().vmParams, DefaultJavaApplication_Configuration.this.getStateObject().workingDir);
             }
           });
+
+          handler = new BLProcessHandler(runComponent, process.value, "", Charset.defaultCharset());
         }
-        final JComponent finalConsoleComponent = consoleComponent.value;
-        final Runnable finalConsoleDispose = consoleDispose.value;
-        final ProcessHandler finalHandler = handler.value;
+        final JComponent finalConsoleComponent = consoleComponent;
+        final Runnable finalConsoleDispose = consoleDispose;
+        final ProcessHandler finalHandler = handler;
         return new ExecutionResult() {
           public ExecutionConsole getExecutionConsole() {
             return new ExecutionConsole() {
