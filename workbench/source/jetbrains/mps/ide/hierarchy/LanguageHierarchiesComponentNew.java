@@ -484,7 +484,7 @@ public class LanguageHierarchiesComponentNew extends JComponent implements Scrol
         myColor = ColorAndGraphicsUtil.saturateColor(Color.ORANGE, 0.5f);
       }
       myOperationContext = myComponent.myOperationContext;
-      myRootable = conceptDeclaration instanceof ConceptDeclaration ? ((ConceptDeclaration) conceptDeclaration).getRootable() : false;
+      myRootable = conceptDeclaration instanceof ConceptDeclaration && ((ConceptDeclaration) conceptDeclaration).getRootable();
       myIsAbstract = conceptDeclaration.getConceptProperty("abstract") != null;
       myNamespace = SModelUtil_new.getDeclaringLanguage(conceptDeclaration, myOperationContext.getScope()).getNamespace();
       myNodePointer = new SNodePointer(conceptDeclaration);
@@ -495,7 +495,7 @@ public class LanguageHierarchiesComponentNew extends JComponent implements Scrol
           if (e.isPopupTrigger()) {
             myComponent.processPopupMenu(e);
           } else {
-            projectPane.selectNode(BaseAdapter.fromAdapter(getNode()), myOperationContext);
+            projectPane.selectNode(BaseAdapter.fromAdapter(getNode()));
             if (e.getClickCount() == 2) {
               myOperationContext.getComponent(MPSEditorOpener.class).editNode(BaseAdapter.fromAdapter(getNode()), myOperationContext);
             }

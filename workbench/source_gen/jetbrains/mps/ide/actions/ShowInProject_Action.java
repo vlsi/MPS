@@ -23,7 +23,7 @@ public class ShowInProject_Action extends GeneratedAction {
   private SNode node;
 
   public ShowInProject_Action() {
-    super("Show Node In Project", "", ICON);
+    super("Show Node in Project", "", ICON);
     this.setIsAlwaysVisible(true);
     this.setExecuteOutsideCommand(false);
   }
@@ -63,7 +63,7 @@ public class ShowInProject_Action extends GeneratedAction {
   public void doExecute(@NotNull final AnActionEvent event) {
     try {
       ProjectPane pane = ShowInProject_Action.this.context.getComponent(ProjectPane.class);
-      pane.selectNode(ShowInProject_Action.this.node, ShowInProject_Action.this.context);
+      pane.selectNode(ShowInProject_Action.this.node);
       pane.getTree().requestFocus();
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {

@@ -177,7 +177,7 @@ public class CreateRootNodeGroup extends BaseGroup {
           }
         });
 
-        pane.selectNode(node, operationContext);
+        pane.selectNode(node);
         pane.openEditor();
       }
     };

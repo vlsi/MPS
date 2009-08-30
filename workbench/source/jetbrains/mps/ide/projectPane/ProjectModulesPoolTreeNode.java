@@ -28,7 +28,7 @@ import jetbrains.mps.util.NameUtil;
 
 import java.util.List;
 
-class ProjectModulesPoolTreeNode extends TextTreeNode {
+public class ProjectModulesPoolTreeNode extends TextTreeNode {
   private MPSProject myProject;
   private boolean myInitialized;
 

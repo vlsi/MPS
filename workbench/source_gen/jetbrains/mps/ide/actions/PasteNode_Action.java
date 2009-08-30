@@ -116,7 +116,7 @@ public class PasteNode_Action extends GeneratedAction {
           PasteNode_Action.this.context.getComponent(MPSEditorOpener.class).editNode(root, PasteNode_Action.this.context);
           SwingUtilities.invokeLater(new Runnable() {
             public void run() {
-              PasteNode_Action.this.context.getComponent(ProjectPane.class).selectNode(pasteNodes.get(0), PasteNode_Action.this.context);
+              PasteNode_Action.this.context.getComponent(ProjectPane.class).selectNode(pasteNodes.get(0));
             }
           });
         }

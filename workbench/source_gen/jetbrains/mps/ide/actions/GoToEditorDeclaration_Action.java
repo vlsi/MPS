@@ -30,8 +30,8 @@ import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.workbench.actions.nodes.GoToEditorDeclarationHelper;
 import javax.swing.SwingUtilities;
 import jetbrains.mps.project.ModuleContext;
-import jetbrains.mps.ide.projectPane.ProjectPane;
 import jetbrains.mps.workbench.editors.MPSEditorOpener;
+import jetbrains.mps.ide.projectPane.ProjectPane;
 
 public class GoToEditorDeclaration_Action extends GeneratedAction {
   private static final Icon ICON = IconManager.loadIcon(MacrosUtil.expandPath("${solution_descriptor}/icons/editor.png", "jetbrains.mps.ide"), true);
@@ -154,7 +154,7 @@ public class GoToEditorDeclaration_Action extends GeneratedAction {
   }
 
   /*package*/ void navigateToEditorDeclaration(SNode editorNode, IOperationContext oContext, IEditor editor) {
-    oContext.getComponent(ProjectPane.class).selectNode(editorNode, oContext);
     oContext.getComponent(MPSEditorOpener.class).editNode(editorNode, oContext);
+    oContext.getComponent(ProjectPane.class).selectNode(editorNode);
   }
 }

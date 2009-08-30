@@ -37,9 +37,9 @@ import com.intellij.openapi.util.Computable;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.openapi.vfs.VirtualFileManager;
 import com.intellij.openapi.vfs.VirtualFileManagerListener;
+import com.intellij.openapi.wm.ToolWindow;
 import com.intellij.openapi.wm.ToolWindowId;
 import com.intellij.openapi.wm.ToolWindowManager;
-import com.intellij.openapi.wm.ToolWindow;
 import jetbrains.mps.MPSProjectHolder;
 import jetbrains.mps.generator.GenerationListener;
 import jetbrains.mps.generator.GeneratorManager;
@@ -60,7 +60,10 @@ import jetbrains.mps.ide.ui.smodel.SModelTreeNode;
 import jetbrains.mps.ide.ui.smodel.SNodeTreeNode;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.nodeEditor.EditorComponent;
-import jetbrains.mps.project.*;
+import jetbrains.mps.project.DevKit;
+import jetbrains.mps.project.IModule;
+import jetbrains.mps.project.MPSProject;
+import jetbrains.mps.project.Solution;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.reloading.ReloadAdapter;
 import jetbrains.mps.reloading.ReloadListener;
@@ -82,7 +85,10 @@ import org.jetbrains.annotations.Nullable;
 import javax.swing.Icon;
 import javax.swing.JComponent;
 import javax.swing.JScrollPane;
-import javax.swing.tree.*;
+import javax.swing.tree.DefaultMutableTreeNode;
+import javax.swing.tree.TreeNode;
+import javax.swing.tree.TreePath;
+import javax.swing.tree.TreeSelectionModel;
 import java.awt.Component;
 import java.awt.Point;
 import java.awt.event.KeyAdapter;
@@ -276,7 +282,6 @@ public class ProjectPane extends AbstractProjectViewPane implements PersistentSt
   public SelectInTarget createSelectInTarget() {
     return new SelectInTarget() {
       private SNode myNode;
-      private IOperationContext myContext;
 
       public boolean canSelect(SelectInContext context) {
         VirtualFile virtualFile = context.getVirtualFile();
@@ -290,10 +295,8 @@ public class ProjectPane extends AbstractProjectViewPane implements PersistentSt
           EditorComponent editorComponent = ((MPSFileNodeEditor) editor).getNodeEditor().getCurrentEditorComponent();
           if (editorComponent == null) return false;
           myNode = editorComponent.getEditedNode();
-          myContext = editorComponent.getOperationContext();
         } else {
           myNode = file.getNode();
-          myContext = new ProjectOperationContext(myProject.getComponent(MPSProjectHolder.class).getMPSProject());
         }
         return true;
       }
@@ -301,7 +304,7 @@ public class ProjectPane extends AbstractProjectViewPane implements PersistentSt
       public void selectIn(final SelectInContext context, boolean requestFocus) {
         ModelAccess.instance().runReadAction(new Runnable() {
           public void run() {
-            selectNode(myNode, myContext);
+            selectNode(myNode);
           }
         });
         activate(requestFocus);
@@ -369,6 +372,7 @@ public class ProjectPane extends AbstractProjectViewPane implements PersistentSt
     ClassLoaderManager.getInstance().removeReloadHandler(myReloadListener);
   }
 
+  //todo:the same thing for nodes & modules
   protected void onBeforeModelWillBeDeleted(SModelDescriptor sm) {
     selectNextModel(sm);
   }
@@ -553,7 +557,7 @@ public class ProjectPane extends AbstractProjectViewPane implements PersistentSt
   public void selectModule(@NotNull final IModule module) {
     ModelAccess.instance().runReadInEDT(new Runnable() {
       public void run() {
-        MPSTreeNode moduleTreeNode = findModuleTreeNode(module);
+        MPSTreeNode moduleTreeNode = findMostSuitableModuleTreeNode(module);
 
         if (moduleTreeNode == null) {
           LOG.warning("Couldn't select module \"" + module.getModuleFqName() + "\" : tree node not found.");
@@ -565,15 +569,15 @@ public class ProjectPane extends AbstractProjectViewPane implements PersistentSt
     });
   }
 
-  public void selectModel(@NotNull final SModelDescriptor modelDescriptor) {
+  public void selectModel(@NotNull final SModelDescriptor model) {
     LOG.checkEDT();
 
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
-        SModelTreeNode modelTreeNode = findModelTreeNode(getTree().getRootNode(), modelDescriptor);
+        SModelTreeNode modelTreeNode = findMostSuitableModelTreeNode(model);
 
         if (modelTreeNode == null) {
-          LOG.warning("Couldn't select model \"" + modelDescriptor.getLongName() + "\" : tree node not found.");
+          LOG.warning("Couldn't select model \"" + model.getLongName() + "\" : tree node not found.");
           return;
         }
 
@@ -582,92 +586,33 @@ public class ProjectPane extends AbstractProjectViewPane implements PersistentSt
     });
   }
 
-  public void selectNextModel(SModelDescriptor modelDescriptor) {
-    MPSTreeNode mpsTreeNode = findNextTreeNode(modelDescriptor);
-    getTree().selectNode(mpsTreeNode);
-  }
 
-  public void selectNode(final SNode node, final IOperationContext context) {
+  public void selectNode(final SNode node) {
     LOG.checkEDT();
 
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
         getTree().runWithoutExpansion(new Runnable() {
           public void run() {
-            IModule module = context.getModule();
-            if (module == null) {
-              selectNode(node);
-              return;
-            }
-
-            MPSTreeNode moduleTreeNode = findModuleTreeNode(module);
-            if (moduleTreeNode == null) {
-              LOG.error("Couldn't find tree node for module: " + module.getModuleFqName());
-              selectNode(node);
-              return;
-            }
-
-            // search in module sub-tree
-            SModelDescriptor modelDescriptor = node.getModel().getModelDescriptor();
-            SModelTreeNode modelTreeNode = findModelTreeNode(moduleTreeNode, modelDescriptor);
-            if (modelTreeNode == null) {
-              // no such model in the module sub-tree
-              selectNode(node);
-              return;
-            }
-
-            modelTreeNode.flush();
-
-            // search in SModel sub-tree
-            MPSTreeNodeEx treeNodeToSelect = findTreeNode(modelTreeNode, node);
-            if (treeNodeToSelect != null) {
-              TreePath treePath = new TreePath(treeNodeToSelect.getPath());
-              getTree().setSelectionPath(treePath);
-              getTree().scrollPathToVisible(treePath);
-            } else {
-              LOG.warning("Couldn't select node " + node.getDebugText() + " : tree node not found.");
-            }
+            MPSTreeNodeEx sNodeNode = findMostSuitableSNodeTreeNode(node);
+            getTree().selectNode(sNodeNode);
           }
         });
       }
     });
   }
 
-  private void selectNode(@NotNull final SNode node) {
-    LOG.checkEDT();
+  //----select next queries----
 
-    ModelAccess.instance().runReadAction(new Runnable() {
-      public void run() {
-        DefaultTreeModel treeModel = (DefaultTreeModel) getTree().getModel();
-        MPSTreeNode rootNode = (MPSTreeNode) treeModel.getRoot();
-        SModel model = node.getModel();
-        assert model != null : "trying to select node which is not registered";
-        SModelDescriptor modelDescriptor = model.getModelDescriptor();
-        assert modelDescriptor != null;
-        SModelTreeNode modelTreeNode = findModelTreeNode(rootNode, modelDescriptor);
-        if (modelTreeNode == null) {
-          LOG.warning("Couldn't select node " + node.getDebugText() + " : tree node for model \"" + modelDescriptor.getSModelReference().getLongName() + "\" not found.");
-          return;
-        }
-        modelTreeNode.flush();
-        MPSTreeNodeEx treeNodeToSelect = findTreeNode(modelTreeNode, node);
-        if (treeNodeToSelect != null) {
-          TreePath treePath = new TreePath(treeNodeToSelect.getPath());
-          getTree().setSelectionPath(treePath);
-          getTree().scrollPathToVisible(treePath);
-        } else {
-          LOG.warning("Couldn't select node " + node.getDebugText() + " : tree node not found.");
-        }
-      }
-    });
+  public void selectNextModel(SModelDescriptor modelDescriptor) {
+    MPSTreeNode mpsTreeNode = findNextTreeNode(modelDescriptor);
+    getTree().selectNode(mpsTreeNode);
   }
 
   public void selectNextNode(SNode node) {
     MPSTreeNode mpsTreeNode = findNextTreeNode(node);
     getTree().selectNode(mpsTreeNode);
   }
-
-
 
   //----selection queries----
 
@@ -832,58 +777,78 @@ public class ProjectPane extends AbstractProjectViewPane implements PersistentSt
 
   //----node finding----
 
-  public MPSTreeNode findModuleTreeNode(final IModule module) {
-    MPSTreeNode result = findModuleTreeNode(module, getTree().getRootNode());
-
+  protected ProjectModuleTreeNode findMostSuitableModuleTreeNode(final IModule module) {
+    ProjectModuleTreeNode result = findModuleTreeNodeInProject(module);
     if (result != null) return result;
 
-    if (!myModulesPool.isInitialized()) {
-      myModulesPool.init();
-      return findModuleTreeNode(module);
+    if (myModulesPool.isInitialized()) return null;
+
+    myModulesPool.init();
+    return findModuleTreeNodeAnywhere(module);
+  }
+
+  protected ProjectModuleTreeNode findModuleTreeNodeInProject(final IModule module) {
+    return (ProjectModuleTreeNode) findTreeNode(getTree().getRootNode(),
+      new ModuleInProjectCondition(),
+      new NodeForModuleCondition(module));
+  }
+
+  protected ProjectModuleTreeNode findModuleTreeNodeAnywhere(IModule module) {
+    return (ProjectModuleTreeNode) findTreeNode(getTree().getRootNode(),
+      new ModuleEverywhereCondition(),
+      new NodeForModuleCondition(module));
+  }
+
+  protected SModelTreeNode findMostSuitableModelTreeNode(SModelDescriptor model) {
+    IModule module = FindUtil.getModuleForModel(getMPSProject(),model);
+    if (module == null) return findModelTreeNodeAnywhere(model, getTree().getRootNode());
+
+    ProjectModuleTreeNode moduleTreeNode = findMostSuitableModuleTreeNode(module);
+    if (moduleTreeNode == null) return findModelTreeNodeAnywhere(model, getTree().getRootNode());
+
+    return findModelTreeNodeInModule(model, moduleTreeNode);
+  }
+
+  protected SModelTreeNode findModelTreeNodeInModule(SModelDescriptor model, ProjectModuleTreeNode moduleNode) {
+    if (!moduleNode.isInitialized() && !moduleNode.hasInfiniteSubtree()) {
+      moduleNode.init();
     }
 
+    for (MPSTreeNode node : moduleNode) {
+      if (node instanceof SModelTreeNode) {
+        SModelTreeNode modelNode = (SModelTreeNode) node;
+        SModelDescriptor modelDescriptor = modelNode.getSModelDescriptor();
+        SModelReference modelReference = modelDescriptor.getSModelReference();
+        if (modelReference.equals(model.getSModelReference())) {
+          return modelNode;
+        }
+      }
+      if (node instanceof ProjectModuleTreeNode) {
+        SModelTreeNode foundNode = findModelTreeNodeInModule(model, (ProjectModuleTreeNode) node);
+        if (foundNode != null) {
+          return foundNode;
+        }
+      }
+    }
     return null;
   }
 
-  private MPSTreeNode findModuleTreeNode(final IModule module, MPSTreeNode rootTreeNode) {
-    return findTreeNode(rootTreeNode,
-      new Condition<MPSTreeNode>() {
-        public boolean met(MPSTreeNode object) {
-          //need to go into language to find generator modules
-          if (object instanceof ProjectLanguageTreeNode) return true;
-          //do not go into other modules
-          if (object instanceof ProjectModuleTreeNode) return false;
-          //not to load models
-          if (object instanceof SModelTreeNode) return false;
-
-          return true;
-        }
-      },
-      new Condition<MPSTreeNode>() {
-        public boolean met(MPSTreeNode treeNode) {
-          if (!(treeNode instanceof ProjectModuleTreeNode)) return false;
-          IOperationContext nodeContext = treeNode.getOperationContext();
-          return nodeContext != null && nodeContext.getModule() == module;
-        }
-      });
-  }
-
-  protected SModelTreeNode findModelTreeNode(MPSTreeNode parent, SModelDescriptor modelDescriptor) {
-    if (!(parent instanceof SModelTreeNode) && !parent.isInitialized() && !parent.hasInfiniteSubtree()) {
-      parent.init();
+  protected SModelTreeNode findModelTreeNodeAnywhere(SModelDescriptor model, MPSTreeNode parentNode) {
+    if (!(parentNode instanceof SModelTreeNode) && !parentNode.isInitialized() && !parentNode.hasInfiniteSubtree()) {
+      parentNode.init();
     }
 
-    if (parent instanceof SModelTreeNode) {
-      SModelTreeNode parentSModelNode = (SModelTreeNode) parent;
+    if (parentNode instanceof SModelTreeNode) {
+      SModelTreeNode parentSModelNode = (SModelTreeNode) parentNode;
       SModelDescriptor parentModelDescriptor = parentSModelNode.getSModelDescriptor();
       SModelReference parentModelRef = parentModelDescriptor.getSModelReference();
-      SModelReference modelRef = modelDescriptor.getSModelReference();
+      SModelReference modelRef = model.getSModelReference();
       if (parentModelRef.equals(modelRef)) {
         return parentSModelNode;
       }
     }
-    for (MPSTreeNode node : parent) {
-      SModelTreeNode foundNode = findModelTreeNode(node, modelDescriptor);
+    for (MPSTreeNode node : parentNode) {
+      SModelTreeNode foundNode = findModelTreeNodeAnywhere(model, node);
       if (foundNode != null) {
         return foundNode;
       }
@@ -891,7 +856,14 @@ public class ProjectPane extends AbstractProjectViewPane implements PersistentSt
     return null;
   }
 
-  protected MPSTreeNodeEx findTreeNode(MPSTreeNode parent, SNode node) {
+  protected MPSTreeNodeEx findMostSuitableSNodeTreeNode(SNode node) {
+    SModelTreeNode modelNode = findMostSuitableModelTreeNode(node.getModel().getModelDescriptor());
+    if (modelNode == null) return null;
+
+    return findSNodeTreeNodeInParent(node, modelNode);
+  }
+
+  protected MPSTreeNodeEx findSNodeTreeNodeInParent(SNode node, MPSTreeNode parent) {
     if (!(parent.isInitialized() || parent.hasInfiniteSubtree())) parent.init();
     if (parent instanceof SNodeTreeNode) {
       SNodeTreeNode parentSNodeTreeNode = (SNodeTreeNode) parent;
@@ -900,7 +872,7 @@ public class ProjectPane extends AbstractProjectViewPane implements PersistentSt
       }
     }
     for (MPSTreeNode childNode : parent) {
-      MPSTreeNodeEx foundNode = findTreeNode(childNode, node);
+      MPSTreeNodeEx foundNode = findSNodeTreeNodeInParent(node, childNode);
       if (foundNode != null) {
         return foundNode;
       }
@@ -908,7 +880,7 @@ public class ProjectPane extends AbstractProjectViewPane implements PersistentSt
     return null;
   }
 
-  private MPSTreeNode findTreeNode(MPSTreeNode root, Condition<MPSTreeNode> descendCondition, Condition<MPSTreeNode> resultCondition) {
+  protected MPSTreeNode findTreeNode(MPSTreeNode root, Condition<MPSTreeNode> descendCondition, Condition<MPSTreeNode> resultCondition) {
     if (resultCondition.met(root)) {
       return root;
     }
@@ -927,13 +899,11 @@ public class ProjectPane extends AbstractProjectViewPane implements PersistentSt
     return null;
   }
 
+  //----find next queries----
+
+  //todo: will work bad e.g. if operating with project data from modules pool
   public MPSTreeNode findNextTreeNode(SNode node) {
-    DefaultTreeModel model = (DefaultTreeModel) getTree().getModel();
-    MPSTreeNode rootNode = (MPSTreeNode) model.getRoot();
-    SModelDescriptor sModel = node.getModel().getModelDescriptor();
-    SModelTreeNode sModelNode = findModelTreeNode(rootNode, sModel);
-    if (sModelNode == null) return null;
-    MPSTreeNode foundNode = findTreeNode(sModelNode, node);
+    MPSTreeNode foundNode = findMostSuitableSNodeTreeNode(node);
     if (foundNode == null) return null;
     DefaultMutableTreeNode parentNode = (DefaultMutableTreeNode) foundNode.getParent();
     TreeNode result = parentNode.getChildAfter(foundNode);
@@ -942,16 +912,53 @@ public class ProjectPane extends AbstractProjectViewPane implements PersistentSt
     return (MPSTreeNode) result;
   }
 
+  //todo: will work bad e.g. if operating with project data from modules pool
   public MPSTreeNode findNextTreeNode(SModelDescriptor modelDescriptor) {
-    DefaultTreeModel model = (DefaultTreeModel) getTree().getModel();
-    MPSTreeNode rootNode = (MPSTreeNode) model.getRoot();
-    SModelTreeNode sModelNode = findModelTreeNode(rootNode, modelDescriptor);
+    SModelTreeNode sModelNode = findMostSuitableModelTreeNode(modelDescriptor);
     if (sModelNode == null) return null;
     DefaultMutableTreeNode parentNode = (DefaultMutableTreeNode) sModelNode.getParent();
     TreeNode result = parentNode.getChildAfter(sModelNode);
     if (result == null) result = parentNode.getChildBefore(sModelNode);
     if (result == null) result = parentNode;
     return (MPSTreeNode) result;
+  }
+
+  //----node find conditions----
+
+  private static class ModuleInProjectCondition extends ModuleEverywhereCondition {
+    public boolean met(MPSTreeNode object) {
+      if (!super.met(object)) return false;
+
+      //do not go into modules pool
+      return !(object instanceof ProjectModulesPoolTreeNode);
+    }
+  }
+
+  private static class ModuleEverywhereCondition implements Condition<MPSTreeNode> {
+    public boolean met(MPSTreeNode object) {
+      //need to go into language to find generator modules
+      if (object instanceof ProjectLanguageTreeNode) return true;
+      //do not go into other modules
+      if (object instanceof ProjectModuleTreeNode) return false;
+      //not to load models
+      if (object instanceof SModelTreeNode) return false;
+
+      return true;
+    }
+  }
+
+  private static class NodeForModuleCondition implements Condition<MPSTreeNode> {
+    private final IModule myModule;
+
+    public NodeForModuleCondition(IModule module) {
+      myModule = module;
+    }
+
+    public boolean met(MPSTreeNode treeNode) {
+      if (!(treeNode instanceof ProjectModuleTreeNode)) return false;
+      IOperationContext nodeContext = treeNode.getOperationContext();
+      return nodeContext != null && nodeContext.getModule() == myModule;
+    }
   }
 
   //----state----
@@ -1202,4 +1209,5 @@ public class ProjectPane extends AbstractProjectViewPane implements PersistentSt
       }
     }
   }
+
 }

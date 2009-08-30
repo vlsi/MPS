@@ -87,7 +87,7 @@ public class CloneRoot_Action extends GeneratedAction {
         SNode copy = SNodeOperations.copyNode(root);
         SModelOperations.addRootNode(SNodeOperations.getModel(root), copy);
         CloneRoot_Action.this.project.getComponentSafe(MPSEditorOpener.class).editNode(copy, CloneRoot_Action.this.context);
-        CloneRoot_Action.this.project.getComponentSafe(ProjectPane.class).selectNode(copy, CloneRoot_Action.this.context);
+        CloneRoot_Action.this.project.getComponentSafe(ProjectPane.class).selectNode(copy);
       }
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
