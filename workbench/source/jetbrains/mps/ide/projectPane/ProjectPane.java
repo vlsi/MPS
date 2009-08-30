@@ -678,7 +678,7 @@ public class ProjectPane extends AbstractProjectViewPane implements PersistentSt
   //----selection queries----
 
   public IModule getSelectedModule() {
-    ProjectModuleTreeNode selectedTreeNode = getSelectedModuleTreeNode();
+    ProjectModuleTreeNode selectedTreeNode = getSelectedTreeNode(ProjectModuleTreeNode.class);
     if (selectedTreeNode == null) return null;
     return selectedTreeNode.getModule();
   }
@@ -701,7 +701,7 @@ public class ProjectPane extends AbstractProjectViewPane implements PersistentSt
   }
 
   public SModelDescriptor getSelectedModel() {
-    SModelTreeNode selectedTreeNode = getSelectedModelTreeNode();
+    SModelTreeNode selectedTreeNode = getSelectedTreeNode(SModelTreeNode.class);
     if (selectedTreeNode == null) return null;
     return selectedTreeNode.getSModelDescriptor();
   }
@@ -724,10 +724,9 @@ public class ProjectPane extends AbstractProjectViewPane implements PersistentSt
   }
 
   public SNode getSelectedSNode() {
-    if (getSelectedSNodes() != null && getSelectedSNodes().size() == 1) {
-      return getSelectedSNodes().get(0);
-    }
-    return null;
+    MPSTreeNodeEx selectedTreeNode = getSelectedTreeNode(MPSTreeNodeEx.class);
+    if (selectedTreeNode == null) return null;
+    return selectedTreeNode.getSNode();
   }
 
   public List<SNode> getSelectedSNodes() {
@@ -740,7 +739,7 @@ public class ProjectPane extends AbstractProjectViewPane implements PersistentSt
     return result;
   }
 
-  public List<SNode> getNormalizedSelectedNodes() {
+  public List<SNode> getNormalizedSelectedSNodes() {
     List<SNode> selectedNodes = new ArrayList<SNode>(getSelectedSNodes());
     HashSet<SNode> unselectedNodes = new HashSet<SNode>();
 
@@ -770,30 +769,6 @@ public class ProjectPane extends AbstractProjectViewPane implements PersistentSt
   }
 
   //----tree node selection queries---
-
-  private ProjectModuleTreeNode getSelectedModuleTreeNode() {
-    return getSelectedTreeNode(ProjectModuleTreeNode.class);
-  }
-
-  private SModelTreeNode getSelectedModelTreeNode() {
-    TreeNode selectedTreeNode = getSelectedTreeNode(TreeNode.class);
-    if (selectedTreeNode == null) return null;
-    while (selectedTreeNode != null && !(selectedTreeNode instanceof SModelTreeNode)) {
-      selectedTreeNode = selectedTreeNode.getParent();
-    }
-    if (selectedTreeNode == null) return null;
-    return (SModelTreeNode) selectedTreeNode;
-  }
-
-  private ProjectLanguageTreeNode getSelectedProjectLanguageTreeNode() {
-    TreeNode selectedTreeNode = getSelectedTreeNode(TreeNode.class);
-    if (selectedTreeNode == null) return null;
-    while (selectedTreeNode != null && !(selectedTreeNode instanceof ProjectLanguageTreeNode)) {
-      selectedTreeNode = selectedTreeNode.getParent();
-    }
-    if (selectedTreeNode == null) return null;
-    return (ProjectLanguageTreeNode) selectedTreeNode;
-  }
 
   private VirtualFile[] getSelectedFiles() {
     List<VirtualFile> selectedFilesList = new LinkedList<VirtualFile>();
