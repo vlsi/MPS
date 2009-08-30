@@ -39,6 +39,7 @@ import com.intellij.openapi.vfs.VirtualFileManager;
 import com.intellij.openapi.vfs.VirtualFileManagerListener;
 import com.intellij.openapi.wm.ToolWindowId;
 import com.intellij.openapi.wm.ToolWindowManager;
+import com.intellij.openapi.wm.ToolWindow;
 import jetbrains.mps.MPSProjectHolder;
 import jetbrains.mps.generator.GenerationListener;
 import jetbrains.mps.generator.GeneratorManager;
@@ -539,36 +540,29 @@ public class ProjectPane extends AbstractProjectViewPane implements PersistentSt
 
   //----selection----
 
-  //for compatibility
-
-  @Deprecated
-  public void selectModule(@NotNull final IModule module) {
-    selectModule(module, false);
+  public void selectModuleAndFocus(@NotNull final IModule module) {
+    ToolWindowManager manager = ToolWindowManager.getInstance(getProject());
+    ToolWindow toolWindow = manager.getToolWindow(ToolWindowId.PROJECT_VIEW);
+    toolWindow.activate(new Runnable() {
+      public void run() {
+        selectModule(module);
+      }
+    });
   }
 
-  public void selectModule(@NotNull final IModule module, boolean focus) {
-    Runnable r = new Runnable() {
+  public void selectModule(@NotNull final IModule module) {
+    ModelAccess.instance().runReadInEDT(new Runnable() {
       public void run() {
-        ModelAccess.instance().runReadInEDT(new Runnable() {
-          public void run() {
-            MPSTreeNode moduleTreeNode = findModuleTreeNode(module);
+        MPSTreeNode moduleTreeNode = findModuleTreeNode(module);
 
-            if (moduleTreeNode == null) {
-              LOG.warning("Couldn't select module \"" + module.getModuleFqName() + "\" : tree node not found.");
-              return;
-            }
+        if (moduleTreeNode == null) {
+          LOG.warning("Couldn't select module \"" + module.getModuleFqName() + "\" : tree node not found.");
+          return;
+        }
 
-            getTree().selectNode(moduleTreeNode);
-          }
-        });
+        getTree().selectNode(moduleTreeNode);
       }
-    };
-
-    if (focus) {
-      ToolWindowManager.getInstance(getProject()).getToolWindow(ToolWindowId.PROJECT_VIEW).activate(r);
-    } else {
-      r.run();
-    }
+    });
   }
 
   public void selectModel(@NotNull final SModelDescriptor modelDescriptor) {
@@ -672,6 +666,8 @@ public class ProjectPane extends AbstractProjectViewPane implements PersistentSt
     MPSTreeNode mpsTreeNode = findNextTreeNode(node);
     getTree().selectNode(mpsTreeNode);
   }
+
+
 
   //----selection queries----
 
@@ -837,14 +833,9 @@ public class ProjectPane extends AbstractProjectViewPane implements PersistentSt
   //----node finding----
 
   public MPSTreeNode findModuleTreeNode(final IModule module) {
-    DefaultTreeModel treeModel = (DefaultTreeModel) getTree().getModel();
-    MPSTreeNode rootTreeNode = (MPSTreeNode) treeModel.getRoot();
+    MPSTreeNode result = findModuleTreeNode(module, getTree().getRootNode());
 
-    MPSTreeNode result = findModuleTreeNode(module, rootTreeNode);
-
-    if (result != null) {
-      return result;
-    }
+    if (result != null) return result;
 
     if (!myModulesPool.isInitialized()) {
       myModulesPool.init();

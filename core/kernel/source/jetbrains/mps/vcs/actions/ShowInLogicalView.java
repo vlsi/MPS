@@ -40,7 +40,7 @@ public class ShowInLogicalView extends AbstractVcsAction {
         }
       });
       if (module != null) {
-        projectPane.selectModule(module, true);
+        projectPane.selectModuleAndFocus(module);
       }
     }
   }
