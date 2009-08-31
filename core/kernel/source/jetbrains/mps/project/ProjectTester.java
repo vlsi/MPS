@@ -16,12 +16,9 @@
 package jetbrains.mps.project;
 
 import com.intellij.openapi.progress.EmptyProgressIndicator;
-import com.intellij.openapi.progress.ProgressIndicator;
-import jetbrains.mps.generator.GenerationStatus;
 import jetbrains.mps.generator.GeneratorManager;
 import jetbrains.mps.generator.IllegalGeneratorConfigurationException;
 import jetbrains.mps.generator.JavaNameUtil;
-import jetbrains.mps.generator.fileGenerator.FileGenerationUtil;
 import jetbrains.mps.generator.generationTypes.GenerateFilesAndClassesGenerationType;
 import jetbrains.mps.ide.genconf.GenParameters;
 import jetbrains.mps.ide.messages.IMessageHandler;
@@ -33,20 +30,18 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.structure.project.testconfigurations.BaseTestConfiguration;
 import jetbrains.mps.project.tester.DiffReport;
 import jetbrains.mps.project.tester.TestComparator;
+import jetbrains.mps.project.tester.EditorGenerateType;
+import jetbrains.mps.project.tester.DiffReporter;
 import jetbrains.mps.reloading.ClassLoaderManager;
-import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.textGen.TextGenManager;
-import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.util.NameUtil;
 import junit.framework.TestCase;
 import junit.framework.TestFailure;
 import org.eclipse.jdt.core.compiler.CategorizedProblem;
 import org.eclipse.jdt.internal.compiler.CompilationResult;
 
-import java.io.File;
 import java.lang.reflect.Method;
 import java.util.*;
 
@@ -78,67 +73,6 @@ public class ProjectTester {
     }
 
     return res;
-  }
-
-  private static String getDiffReportTitle(SNode node, String fileName, boolean added, boolean deleted) {
-    return NameUtil.nodeFQName(node) + ((added)? " (created)" : ((deleted)? " (deleted)" : "" )) + "\n"
-      + "  (file: " + fileName + ")";
-  }
-
-  private static String[] getContentAsArray(String content, String separator) {
-    return (content != null)? content.split(separator) : new String[0];
-  }
-
-  private static void addDiffReport(TestComparator comparator, List<String> reports, String title) {
-    DiffReport diffReport = comparator.compare();
-    if (diffReport.hasDifference()) {
-      reports.add(title);
-      reports.addAll(diffReport.getReportsAsList());
-      reports.add("");
-    }
-  }
-
-  public static List<String> createDiffReports(EditorGenerateType genType) {
-    List<String> result = new ArrayList<String>();
-    for (SModel outputModel : genType.getOutputModels()) {
-      List<String> files = new ArrayList<String>();
-      File dir = genType.getOutputDir(outputModel);
-      if (dir == null || !dir.exists() || !dir.canRead()) {
-        continue;
-      }
-      files.addAll(Arrays.asList(dir.list()));
-      for (SNode outputRoot : outputModel) {
-        final String fileType = "." + genType.getExtension(outputRoot);
-        final String fileName = outputRoot + fileType;
-        final String filePath = genType.getOutputDir(outputModel) + File.separator + fileName;
-        final File testFile = new File(filePath);
-        String oldContent = null;
-        String newContent = genType.getSourceByNode(outputRoot, outputModel);
-        if (testFile.exists() && testFile.canRead()) {
-          oldContent = FileUtil.read(testFile);
-          files.remove(fileName);
-        }
-        final boolean created = oldContent == null && newContent != null;
-        final String title = getDiffReportTitle(outputRoot, filePath, created, false);
-        String[] oldTest = getContentAsArray(oldContent, "\n");
-        String[] newTest = getContentAsArray(newContent, System.getProperty("line.separator"));
-        addDiffReport(new TestComparator(oldTest, newTest), result, title);
-      }
-      for (String fileName : files) {
-        int dotPosition = fileName.indexOf(".");
-        if (dotPosition == 0 || dotPosition == -1) {
-          continue;
-        }
-        String title = getDiffReportTitle(null, fileName, false, true);
-        File file = new File(genType.getOutputDir(outputModel) + File.separator + fileName);
-        if (!file.exists() || !file.canRead() || !file.isFile()) {
-          continue;
-        }
-        String[] test = FileUtil.read(file).split("\n");
-        addDiffReport(new TestComparator(test, new String[0]), result, title);
-      }
-    }
-    return result;
   }
 
   private List<TestFailure> createTestFailures(GenerateFilesAndClassesGenerationType genType, GenParameters genParams) {
@@ -187,47 +121,8 @@ public class ProjectTester {
     final List<TestFailure> failedTests = new ArrayList<TestFailure>();
     final List<String> diffReports = new ArrayList<String>();
 
-    final IMessageHandler handler = new IMessageHandler() {
-      public void handle(Message msg) {
-        switch (msg.getKind()) {
-          case ERROR:
-            System.out.println("error: " + msg.getText());
-            errors.add(msg.getText());
-            break;
-
-          case WARNING:
-            System.out.println("warn:  " + msg.getText());
-            warnings.add(msg.getText());
-            break;
-
-          case INFORMATION:
-            System.out.println("info:  " + msg.getText());
-            break;
-
-        }
-      }
-    };
-
-    final ILoggingHandler loggingHandler = new ILoggingHandler() {
-      public void info(LogEntry e) {
-      }
-
-      public void warning(LogEntry e) {
-        warnings.add(e.getMessage());
-      }
-
-      public void debug(LogEntry e) {
-
-      }
-
-      public void error(LogEntry e) {
-        errors.add(e.getMessage());
-      }
-
-      public void fatal(LogEntry e) {
-        errors.add(e.getMessage());
-      }
-    };
+    final IMessageHandler handler = new MyIMessageHandler(errors, warnings);
+    final ILoggingHandler loggingHandler = new MyILoggingHandler(errors, warnings);
 
     try {
       Logger.addLoggingHandler(loggingHandler);
@@ -276,7 +171,7 @@ public class ProjectTester {
             );
 
             if (myIsRunnable) {
-              diffReports.addAll(createDiffReports(generationType));
+              diffReports.addAll(DiffReporter.createDiffReports(generationType));
             }
 
             List<CompilationResult> compilationResultList = generationType.compile(IAdaptiveProgressMonitor.NULL_PROGRESS_MONITOR);
@@ -297,72 +192,61 @@ public class ProjectTester {
     return new TestResult(errors, warnings, compilationResults, failedTests, diffReports);
   }
 
-  public static class EditorGenerateType extends GenerateFilesAndClassesGenerationType {
-    private Map<String, String> myNodeExtensionMap = new HashMap<String, String>();
-    private Map<SModel, String> myOutputModelToPath = new HashMap<SModel, String>();
+  private static class MyIMessageHandler implements IMessageHandler {
+    private final List<String> myErrors;
+    private final List<String> myWarnings;
 
-    public EditorGenerateType(boolean reloadClasses) {
-      super(reloadClasses);
+    public MyIMessageHandler(List<String> errors, List<String> warnings) {
+      myErrors = errors;
+      myWarnings = warnings;
     }
 
-    public boolean requiresReloading() {
-      return false;
-    }
+    public void handle(Message msg) {
+      switch (msg.getKind()) {
+        case ERROR:
+          System.out.println("error: " + msg.getText());
+          myErrors.add(msg.getText());
+          break;
 
-    public boolean requiresCompilationBeforeGeneration() {
-      return false;
-    }
+        case WARNING:
+          System.out.println("warn:  " + msg.getText());
+          myWarnings.add(msg.getText());
+          break;
 
-    public boolean requiresCompilationAfterGeneration() {
-      return false;
-    }
+        case INFORMATION:
+          System.out.println("info:  " + msg.getText());
+          break;
 
-    protected boolean isPutClassesOnTheDisk() {
-      return false;
-    }
-
-    @Override
-    public boolean handleOutput(GenerationStatus status, String outputDir, IOperationContext context, ProgressIndicator monitor, IMessageHandler messages) {
-      SModel outputModel = status.getOutputModel();
-      myOutputModelToPath.put(outputModel, outputDir);
-      for (SNode outputRoot : outputModel.getRoots()) {
-        String extension = TextGenManager.instance().getExtension(outputRoot);
-        myNodeExtensionMap.put(NameUtil.nodeFQName(outputRoot), extension);
       }
-      return super.handleOutput(status, outputDir, context, monitor, messages);
+    }
+  }
+
+  private static class MyILoggingHandler implements ILoggingHandler {
+    private final List<String> myErrors;
+    private final List<String> myWarnings;
+
+    public MyILoggingHandler(List<String> errors, List<String> warnings) {
+      myErrors = errors;
+      myWarnings = warnings;
     }
 
-    @Override
-    public List<CompilationResult> compile(IAdaptiveProgressMonitor progress) {
-      myNodeExtensionMap.clear();
-      myOutputModelToPath.clear();
-      return super.compile(progress);
+    public void info(LogEntry e) {
     }
 
-    Collection<SModel> getOutputModels() {
-      return myOutputModelToPath.keySet();
+    public void warning(LogEntry e) {
+      myWarnings.add(e.getMessage());
     }
 
-    String getExtension(SNode outputNode) {
-      if (myNodeExtensionMap.isEmpty()) {
-        return null;
-      }
-      return myNodeExtensionMap.get(NameUtil.nodeFQName(outputNode));
+    public void debug(LogEntry e) {
+
     }
 
-    File getOutputDir(SModel outputModel) {
-      if (myOutputModelToPath.isEmpty()) {
-        return null;
-      }
-      File outputDir = new File(myOutputModelToPath.get(outputModel));
-      return FileGenerationUtil.getDefaultOutputDir(outputModel, outputDir);
+    public void error(LogEntry e) {
+      myErrors.add(e.getMessage());
     }
 
-    String getSourceByNode(SNode outputRoot, SModel outputModel) {
-      if (getSources().isEmpty()) {
-        return null;
-      }
-      return getSources().get(JavaNameUtil.packageNameForModelUID(outputModel.getSModelReference()) + "." + outputRoot.getName());
+    public void fatal(LogEntry e) {
+      myErrors.add(e.getMessage());
     }
   }
 }

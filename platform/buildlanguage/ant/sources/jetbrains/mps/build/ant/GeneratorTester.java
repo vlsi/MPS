@@ -3,7 +3,8 @@ package jetbrains.mps.build.ant;
 import org.apache.tools.ant.ProjectComponent;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.ProjectTester;
-import jetbrains.mps.project.ProjectTester.EditorGenerateType;
+import jetbrains.mps.project.tester.EditorGenerateType;
+import jetbrains.mps.project.tester.DiffReporter;
 import jetbrains.mps.generator.generationTypes.BaseGenerationType;
 import jetbrains.mps.smodel.ModelAccess;
 
@@ -48,6 +49,7 @@ public class GeneratorTester extends Generator {
       System.out.println("##teamcity[testFailed name='" + myCurrentTestName + "' message='generation errors' details='" + myErrorMessagesBuffer.toString() + "']");
     }
     System.out.println("##teamcity[testFinished name='" + myCurrentTestName + "']");
+    printDiffReportIfNeeded();
   }
 
   @Override
@@ -73,10 +75,13 @@ public class GeneratorTester extends Generator {
   @Override
   protected void showStatistic() {
     super.showStatistic();
+  }
+
+  private void printDiffReportIfNeeded() {
     if (myWhatToGenerate.getShowDiff()) {
       List<String> diffReports = ModelAccess.instance().runReadAction(new Computable<List<String>>() {
         public List<String> compute() {
-          return ProjectTester.createDiffReports((EditorGenerateType) myGenerationType);
+          return DiffReporter.createDiffReports((EditorGenerateType) myGenerationType);
         }
       });
       if (diffReports.isEmpty()) {

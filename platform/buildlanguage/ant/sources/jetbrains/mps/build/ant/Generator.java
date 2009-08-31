@@ -309,6 +309,30 @@ public class Generator {
     GeneratorManager gm = project.getComponentSafe(GeneratorManager.class);
 
     final Map<IModule, List<SModelDescriptor>> moduleToModels = new HashMap<IModule, List<SModelDescriptor>>();
+    List<Set<IModule>> modulesOrder = computeModulesOrder(models, moduleToModels);
+
+    EmptyProgressIndicator emptyProgressIndicator = new EmptyProgressIndicator();
+    for (Set<IModule> modulesSet : modulesOrder) {
+      startModulesGeneration(modulesSet);
+      List<Pair<SModelDescriptor, IOperationContext>> modelsToContext = new ArrayList<Pair<SModelDescriptor, IOperationContext>>();
+      for (IModule module : modulesSet) {
+        ModuleContext moduleContext = new ModuleContext(module, project);
+        List<SModelDescriptor> modelsToGenerateNow = moduleToModels.get(module);
+        for (SModelDescriptor model : modelsToGenerateNow) {
+          modelsToContext.add(new Pair<SModelDescriptor, IOperationContext>(model, moduleContext));
+        }
+
+      }
+      gm.generateModels(modelsToContext,
+        myGenerationType,
+        emptyProgressIndicator,
+        myMessageHandler,
+        false);
+      finishModulesGeneration(modulesSet);
+    }
+  }
+
+  private List<Set<IModule>> computeModulesOrder(List<SModelDescriptor> models, final Map<IModule, List<SModelDescriptor>> moduleToModels) {
     for (final SModelDescriptor model : models) {
       assert model != null;
 
@@ -344,26 +368,7 @@ public class Generator {
         });
       }
     });
-
-    EmptyProgressIndicator emptyProgressIndicator = new EmptyProgressIndicator();
-    for (Set<IModule> modulesSet : modulesOrder) {
-      startModulesGeneration(modulesSet);
-      List<Pair<SModelDescriptor, IOperationContext>> modelsToContext = new ArrayList<Pair<SModelDescriptor, IOperationContext>>();
-      for (IModule module : modulesSet) {
-        ModuleContext moduleContext = new ModuleContext(module, project);
-        List<SModelDescriptor> modelsToGenerateNow = moduleToModels.get(module);
-        for (SModelDescriptor model : modelsToGenerateNow) {
-          modelsToContext.add(new Pair<SModelDescriptor, IOperationContext>(model, moduleContext));
-        }
-
-      }
-      gm.generateModels(modelsToContext,
-        myGenerationType,
-        emptyProgressIndicator,
-        myMessageHandler,
-        false);
-      finishModulesGeneration(modulesSet);
-    }
+    return modulesOrder;
   }
 
   protected void finishModulesGeneration(Set<IModule> modulesSet) {
