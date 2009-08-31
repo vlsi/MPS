@@ -50,6 +50,7 @@ import jetbrains.mps.ide.IdeMain.TestMode;
 import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.ide.actions.*;
 import jetbrains.mps.ide.projectPane.ProjectPane.MyState;
+import jetbrains.mps.ide.projectPane.ProjectLanguageTreeNode.AccessoriesModelTreeNode;
 import jetbrains.mps.ide.ui.MPSTree;
 import jetbrains.mps.ide.ui.MPSTree.TreeState;
 import jetbrains.mps.ide.ui.MPSTreeNode;
@@ -781,9 +782,10 @@ public class ProjectPane extends AbstractProjectViewPane implements PersistentSt
     ProjectModuleTreeNode result = findModuleTreeNodeInProject(module);
     if (result != null) return result;
 
-    if (myModulesPool.isInitialized()) return null;
+    if (!myModulesPool.isInitialized()){
+      myModulesPool.init();
+    }
 
-    myModulesPool.init();
     return findModuleTreeNodeAnywhere(module);
   }
 
@@ -920,6 +922,7 @@ public class ProjectPane extends AbstractProjectViewPane implements PersistentSt
 
       if (node instanceof ProjectModuleTreeNode) descent = true;
       if (node instanceof NamespaceTextNode) descent = true;
+      if (node instanceof AccessoriesModelTreeNode) descent = true;
 
       if (!descent) return false;
 
