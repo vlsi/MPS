@@ -6397,6 +6397,19 @@
         </node>
       </node>
     </node>
+    <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="4251132777951258658">
+      <property name="name" value="availableAssert" />
+      <property name="isVirtual" value="true" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="4251132777951258659" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="4251132777951258661">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="4251132777951284569">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="4251132777951284571">
+            <property name="value" value="true" />
+          </node>
+        </node>
+      </node>
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.BooleanType" id="4251132777951284568" />
+    </node>
     <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="6603209858471717101">
       <property name="name" value="getMethodsToOverride" />
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="6603209858471717102" />

@@ -196,6 +196,19 @@
       </node>
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1219155724142" />
     </node>
+    <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="12430295904170757">
+      <property name="name" value="availableAssert" />
+      <link role="overriddenMethod" targetNodeId="2v.4251132777951258658" resolveInfo="availableAssert" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="12430295904170760">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="12430295904325335">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="12430295904325337">
+            <property name="value" value="false" />
+          </node>
+        </node>
+      </node>
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.BooleanType" id="12430295904325333" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="12430295904325334" />
+    </node>
     <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="1216136232487">
       <property name="name" value="getClassName" />
       <property name="isPrivate" value="false" />

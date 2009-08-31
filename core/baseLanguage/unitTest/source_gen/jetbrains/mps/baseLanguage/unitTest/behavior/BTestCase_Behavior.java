@@ -26,6 +26,10 @@ public class BTestCase_Behavior {
     return SLinkOperations.getTargets(SLinkOperations.getTarget(node, "testMethodList", true), "testMethod", true);
   }
 
+  public static boolean virtual_availableAssert_4251132777951258658(SNode thisNode) {
+    return false;
+  }
+
   public static String virtual_getClassName_1216136193905(SNode thisNode) {
     return INamedConcept_Behavior.call_getFqName_1213877404258(thisNode);
   }
