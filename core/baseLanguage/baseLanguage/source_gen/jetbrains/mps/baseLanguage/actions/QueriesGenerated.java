@@ -1665,7 +1665,12 @@ __switch__:
       if (SConceptOperations.isSuperConceptOf(childConcept, NameUtil.nodeFQName(outputConcept))) {
         Calculable calc = new Calculable() {
           public Object calculate() {
-            return ((List<SNode>)Classifier_Behavior.getAssesableMembers_669019847198843527(_context.getParentNode(), IClassifiersSearchScope.STATIC_FIELD));
+            List<SNode> staticFieldDeclarations = ((List<SNode>)Classifier_Behavior.getAssesableMembers_669019847198843527(_context.getParentNode(), IClassifiersSearchScope.STATIC_FIELD));
+            return ListSequence.fromList(staticFieldDeclarations).where(new IWhereFilter<SNode>() {
+              public boolean accept(SNode it) {
+                return SNodeOperations.getAncestor(it, "jetbrains.mps.baseLanguage.structure.Classifier", false, false) != SNodeOperations.getAncestor(_context.getParentNode(), "jetbrains.mps.baseLanguage.structure.Classifier", false, false);
+              }
+            }).toListSequence();
           }
         };
         Iterable<SNode> queryResult = (Iterable)calc.calculate();
