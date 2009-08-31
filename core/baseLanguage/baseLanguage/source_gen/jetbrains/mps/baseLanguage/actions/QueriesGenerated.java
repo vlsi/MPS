@@ -687,7 +687,7 @@ __switch__:
                 SLinkOperations.setTarget(SLinkOperations.setNewChild(operationExpression, "operation", "jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation"), "baseMethodDeclaration", (item), false);
                 SNode thisExpression = SLinkOperations.setNewChild(operationExpression, "operand", "jetbrains.mps.baseLanguage.structure.ThisExpression");
 
-                if (SNodeOperations.getAncestor((item), "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false) != SNodeOperations.getAncestor(_context.getParentNode(), "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false)) {
+                if (!(ListSequence.fromList(Classifier_Behavior.call_getVisibleMembers_1213877306257(SNodeOperations.getAncestor(_context.getParentNode(), "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false), _context.getParentNode(), IClassifiersSearchScope.INSTANCE_METHOD)).contains((item)))) {
                   SLinkOperations.setTarget(thisExpression, "classConcept", SNodeOperations.getAncestor((item), "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false), false);
                 }
                 return operationExpression;
@@ -1066,7 +1066,7 @@ __switch__:
                 SLinkOperations.setTarget(SLinkOperations.setNewChild(operationExpression, "operation", "jetbrains.mps.baseLanguage.structure.FieldReferenceOperation"), "fieldDeclaration", (item), false);
                 SNode thisExpression = SLinkOperations.setNewChild(operationExpression, "operand", "jetbrains.mps.baseLanguage.structure.ThisExpression");
 
-                if (SNodeOperations.getAncestor((item), "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false) != SNodeOperations.getAncestor(_context.getParentNode(), "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false)) {
+                if (!(ListSequence.fromList(Classifier_Behavior.call_getVisibleMembers_1213877306257(SNodeOperations.getAncestor(_context.getParentNode(), "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false), _context.getParentNode(), IClassifiersSearchScope.INSTANCE_FIELD)).contains((item)))) {
                   SLinkOperations.setTarget(thisExpression, "classConcept", SNodeOperations.getAncestor((item), "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false), false);
                 }
                 return operationExpression;
