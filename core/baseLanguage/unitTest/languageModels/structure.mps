@@ -22,7 +22,7 @@
   <import index="2" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="1" />
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1171931690126">
     <property name="name" value="TestMethod" />
-    <link role="extends" targetNodeId="2.1068580123132" />
+    <link role="extends" targetNodeId="2.1068580123165" resolveInfo="InstanceMethodDeclaration" />
     <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="1216135651783">
       <link role="intfc" targetNodeId="1216134482493" resolveInfo="ITestMethod" />
     </node>
