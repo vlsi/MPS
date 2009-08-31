@@ -112,7 +112,7 @@ public class GoByCurrentReference_Action extends GeneratedAction {
           return;
         }
       }
-      GoByCurrentReference_Action.this.getEditorOpener().openNode(targetNode, GoByCurrentReference_Action.this.context, true, false);
+      GoByCurrentReference_Action.this.getEditorOpener().openNode(targetNode, GoByCurrentReference_Action.this.context, true, !(targetNode.isRoot()));
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
         log.error("User's action execute method failed. Action:" + "GoByCurrentReference", t);
