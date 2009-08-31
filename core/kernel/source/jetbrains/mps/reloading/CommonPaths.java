@@ -63,13 +63,11 @@ public class CommonPaths {
         addJarForName(composite, "jsse.jar");
         addJarForName(composite, "jce.jar");
         addJarForName(composite, "charsets.jar");
-        addJarForName(composite, "deploy.jar");
       } else {
         addJarForName(composite, "classes.jar");
         addJarForName(composite, "jsse.jar");
         addJarForName(composite, "jce.jar");
-        addJarForName(composite, "charsets.jar");
-        addJarForName(composite, "deploy.jar");
+        addJarForName(composite, "charsets.jar");        
       }
       ourRTJar = composite;
     }
