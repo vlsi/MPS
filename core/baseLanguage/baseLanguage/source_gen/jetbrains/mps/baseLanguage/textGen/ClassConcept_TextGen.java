@@ -21,6 +21,9 @@ public class ClassConcept_TextGen extends SNodeTextGen {
     if (SPropertyOperations.getBoolean(node, "abstractClass")) {
       this.append("abstract ");
     }
+    if (SPropertyOperations.getBoolean(node, "isFinal")) {
+      this.append("final ");
+    }
     this.append("class ");
     this.append(SPropertyOperations.getString(node, "name"));
     GenericDeclarationTextGen2.typeDeclarations(node, this);

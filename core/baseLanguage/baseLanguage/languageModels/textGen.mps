@@ -2684,6 +2684,21 @@
             </node>
           </node>
         </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1855116409407746676">
+          <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1855116409407746677">
+            <node role="statement" type="jetbrains.mps.lang.textGen.structure.AppendOperation" id="1855116409407746686">
+              <node role="part" type="jetbrains.mps.lang.textGen.structure.ConstantStringAppendPart" id="1855116409407746688">
+                <property name="value" value="final " />
+              </node>
+            </node>
+          </node>
+          <node role="condition" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1855116409407746681">
+            <node role="operand" type="jetbrains.mps.lang.textGen.structure.NodeParameter" id="1855116409407746680" />
+            <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="1855116409407746685">
+              <link role="property" targetNodeId="1.1221565133444" resolveInfo="isFinal" />
+            </node>
+          </node>
+        </node>
         <node role="statement" type="jetbrains.mps.lang.textGen.structure.AppendOperation" id="1237463991709">
           <node role="part" type="jetbrains.mps.lang.textGen.structure.ConstantStringAppendPart" id="1237463991711">
             <property name="value" value="class " />
