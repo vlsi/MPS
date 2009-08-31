@@ -122,7 +122,7 @@ public class ListSequence<T> extends CollectionSequence<T> implements IListSeque
         return new ListSequence<U> (list);
     }
     
-    public static <U> IListSequence<U> fromListWithValues (List<U> list, Iterable<U> it) {
+    public static <U> IListSequence<U> fromListWithValues (List<U> list, Iterable<? extends U> it) {
         List<U> tmp = list;
     	if (Sequence.USE_NULL_SEQUENCE) {
             if (list == null && it == null) {

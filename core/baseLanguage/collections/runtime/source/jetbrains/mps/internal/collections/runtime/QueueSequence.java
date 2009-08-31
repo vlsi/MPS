@@ -86,7 +86,7 @@ public class QueueSequence<T> extends CollectionSequence<T> implements Queue<T>,
         return new QueueSequence<U>(queue);
     }
     
-    public static <U> IQueueSequence<U> fromQueueWithValues(Queue<U> queue, Iterable<U> it) {
+    public static <U> IQueueSequence<U> fromQueueWithValues(Queue<U> queue, Iterable<? extends U> it) {
         Queue<U> tmp = queue;
         if (Sequence.USE_NULL_SEQUENCE) {
             if (queue == null && it == null) {

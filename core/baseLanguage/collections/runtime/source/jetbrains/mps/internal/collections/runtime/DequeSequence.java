@@ -85,7 +85,7 @@ public class DequeSequence<T> extends QueueSequence<T> implements Deque<T>, IDeq
         return new DequeSequence<U>(deque);
     }
     
-    public static <U> IDequeSequence<U> fromDequeWithValues(Deque<U> deque, Iterable<U> it) {
+    public static <U> IDequeSequence<U> fromDequeWithValues(Deque<U> deque, Iterable<? extends U> it) {
         Deque<U> tmp = deque;
         if (Sequence.USE_NULL_SEQUENCE) {
             if (deque == null && it == null) {

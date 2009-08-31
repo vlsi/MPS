@@ -116,7 +116,7 @@ public class SetSequence<T> extends Sequence<T> implements ISetSequence<T>, Set<
         return new SetSequence<U> (set);
     }
     
-    public static <U> ISetSequence<U> fromSetWithValues (Set<U> set, Iterable<U> it) {
+    public static <U> ISetSequence<U> fromSetWithValues (Set<U> set, Iterable<? extends U> it) {
         Set<U> tmp = set;
         if (Sequence.USE_NULL_SEQUENCE) {
             if (set == null && it == null) {

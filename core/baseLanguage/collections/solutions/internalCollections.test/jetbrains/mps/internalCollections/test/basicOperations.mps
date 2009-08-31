@@ -2504,6 +2504,51 @@
   </node>
   <node type="jetbrains.mps.baseLanguage.unitTest.structure.BTestCase" id="1205942757641">
     <property name="testCaseName" value="List" />
+    <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="8115675450774583629">
+      <property name="name" value="mps5684helper" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.collections.structure.ListType" id="8115675450774589336">
+        <node role="elementType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="8115675450774589338">
+          <link role="classifier" targetNodeId="1237103452115" resolveInfo="Foo" />
+        </node>
+      </node>
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="8115675450774583631" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="8115675450774583632">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="8115675450774583657">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="8115675450774583658">
+            <property name="name" value="bars" />
+            <node role="type" type="jetbrains.mps.baseLanguage.collections.structure.ListType" id="8115675450774583659">
+              <node role="elementType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="8115675450774583660">
+                <link role="classifier" targetNodeId="1237103459566" resolveInfo="Bar" />
+              </node>
+            </node>
+            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="8115675450774583661">
+              <node role="creator" type="jetbrains.mps.baseLanguage.collections.structure.ListCreatorWithInit" id="8115675450774583662">
+                <node role="elementType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="8115675450774583663">
+                  <link role="classifier" targetNodeId="1237103459566" resolveInfo="Bar" />
+                </node>
+                <node role="initValue" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="8115675450774611047">
+                  <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="8115675450774611049">
+                    <link role="baseMethodDeclaration" targetNodeId="1237103459568" resolveInfo="Bar" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="8115675450774583665">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="8115675450774583667">
+            <node role="creator" type="jetbrains.mps.baseLanguage.collections.structure.ListCreatorWithInit" id="8115675450774589345">
+              <node role="elementType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="8115675450774589347">
+                <link role="classifier" targetNodeId="1237103452115" resolveInfo="Foo" />
+              </node>
+              <node role="copyFrom" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="8115675450774589349">
+                <link role="variableDeclaration" targetNodeId="8115675450774583658" resolveInfo="bars" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
     <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1205942757642" />
     <node role="testMethodList" type="jetbrains.mps.baseLanguage.unitTest.structure.TestMethodList" id="1205942757643">
       <node role="testMethod" type="jetbrains.mps.baseLanguage.unitTest.structure.TestMethod" id="1205949211352">
@@ -4683,6 +4728,15 @@
                 <link role="variableDeclaration" targetNodeId="1239090459991" resolveInfo="test2" />
               </node>
             </node>
+          </node>
+        </node>
+      </node>
+      <node role="testMethod" type="jetbrains.mps.baseLanguage.unitTest.structure.TestMethod" id="8115675450774583007">
+        <property name="methodName" value="mps5684" />
+        <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="8115675450774583008" />
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="8115675450774583009">
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="8115675450774611051">
+            <property name="value" value=" just make sure the code compiles" />
           </node>
         </node>
       </node>

@@ -232,4 +232,14 @@ public class List_Test extends Util_Test {
     List<List<Integer>> test2 = ListSequence.fromListAndArray(new ArrayList<List<Integer>>(), ListSequence.fromListAndArray(new ArrayList<Integer>(), 1), ListSequence.fromListAndArray(new LinkedList<Integer>(), 2));
     Assert.assertEquals("[[1], [2]]", String.valueOf(test2));
   }
+
+  @Test
+  public void test_mps5684() throws Exception {
+    //  just make sure the code compiles
+  }
+
+  public List<Foo> mps5684helper() {
+    List<Bar> bars = ListSequence.fromListAndArray(new ArrayList<Bar>(), new Bar());
+    return ListSequence.fromListWithValues(new ArrayList<Foo>(), bars);
+  }
 }

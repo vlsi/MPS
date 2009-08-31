@@ -11971,7 +11971,7 @@
                         <link role="variableDeclaration" targetNodeId="1226062526438" resolveInfo="result" />
                       </node>
                       <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1226062526450">
-                        <link role="baseMethodDeclaration" targetNodeId="24.~StringBuilder.append(java.lang.Object):java.lang.StringBuilder" resolveInfo="append" />
+                        <link role="baseMethodDeclaration" targetNodeId="24.~StringBuilder.append(java.lang.String):java.lang.StringBuilder" resolveInfo="append" />
                         <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1226062526451">
                           <node role="operand" type="jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_node" id="1226062526452" />
                           <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1226062526453">
@@ -11995,7 +11995,7 @@
                     <link role="variableDeclaration" targetNodeId="1226062526438" resolveInfo="result" />
                   </node>
                   <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1226062526460">
-                    <link role="baseMethodDeclaration" targetNodeId="24.~StringBuilder.append(java.lang.CharSequence):java.lang.StringBuilder" resolveInfo="append" />
+                    <link role="baseMethodDeclaration" targetNodeId="24.~StringBuilder.append(java.lang.String):java.lang.StringBuilder" resolveInfo="append" />
                     <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1226062526461">
                       <property name="value" value="(" />
                     </node>
@@ -12049,7 +12049,7 @@
                             <link role="variableDeclaration" targetNodeId="1226062526438" resolveInfo="result" />
                           </node>
                           <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1226062526484">
-                            <link role="baseMethodDeclaration" targetNodeId="24.~StringBuilder.append(java.lang.CharSequence):java.lang.StringBuilder" resolveInfo="append" />
+                            <link role="baseMethodDeclaration" targetNodeId="24.~StringBuilder.append(java.lang.String):java.lang.StringBuilder" resolveInfo="append" />
                             <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1226062526485">
                               <property name="value" value=", " />
                             </node>
@@ -12072,7 +12072,7 @@
                         <link role="variableDeclaration" targetNodeId="1226062526438" resolveInfo="result" />
                       </node>
                       <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1226062526493">
-                        <link role="baseMethodDeclaration" targetNodeId="24.~StringBuilder.append(java.lang.CharSequence):java.lang.StringBuilder" resolveInfo="append" />
+                        <link role="baseMethodDeclaration" targetNodeId="24.~StringBuilder.append(java.lang.String):java.lang.StringBuilder" resolveInfo="append" />
                         <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1226062526494">
                           <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1226062526495">
                             <link role="variableDeclaration" targetNodeId="1226062526474" resolveInfo="cfp" />
@@ -12092,7 +12092,7 @@
                     <link role="variableDeclaration" targetNodeId="1226062526438" resolveInfo="result" />
                   </node>
                   <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1226062526500">
-                    <link role="baseMethodDeclaration" targetNodeId="24.~StringBuilder.append(java.lang.CharSequence):java.lang.StringBuilder" resolveInfo="append" />
+                    <link role="baseMethodDeclaration" targetNodeId="24.~StringBuilder.append(java.lang.String):java.lang.StringBuilder" resolveInfo="append" />
                     <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1226062526501">
                       <property name="value" value=")-&gt;" />
                     </node>
@@ -12125,7 +12125,7 @@
                         <link role="variableDeclaration" targetNodeId="1226062526438" resolveInfo="result" />
                       </node>
                       <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1226062526518">
-                        <link role="baseMethodDeclaration" targetNodeId="24.~StringBuilder.append(java.lang.CharSequence):java.lang.StringBuilder" resolveInfo="append" />
+                        <link role="baseMethodDeclaration" targetNodeId="24.~StringBuilder.append(java.lang.String):java.lang.StringBuilder" resolveInfo="append" />
                         <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1226062526519">
                           <property name="value" value="void" />
                         </node>
@@ -12141,7 +12141,7 @@
                           <link role="variableDeclaration" targetNodeId="1226062526438" resolveInfo="result" />
                         </node>
                         <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1226062526525">
-                          <link role="baseMethodDeclaration" targetNodeId="24.~StringBuilder.append(java.lang.CharSequence):java.lang.StringBuilder" resolveInfo="append" />
+                          <link role="baseMethodDeclaration" targetNodeId="24.~StringBuilder.append(java.lang.String):java.lang.StringBuilder" resolveInfo="append" />
                           <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1226062526526">
                             <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1226062526527">
                               <link role="variableDeclaration" targetNodeId="1226062526503" resolveInfo="expectedReturnType" />
