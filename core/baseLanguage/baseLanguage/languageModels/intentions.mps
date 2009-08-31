@@ -7470,6 +7470,7 @@
   <node type="jetbrains.mps.lang.intentions.structure.IntentionDeclaration" id="1227519137253">
     <property name="package" value="classifier" />
     <property name="name" value="MakeAbstract" />
+    <property name="isAvailableInChildNodes" value="true" />
     <link role="forConcept" targetNodeId="1.1068390468198" resolveInfo="ClassConcept" />
     <node role="descriptionFunction" type="jetbrains.mps.lang.intentions.structure.DescriptionBlock" id="1227519137254">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1227519137255">
@@ -7510,6 +7511,19 @@
                   </node>
                 </node>
               </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="childFilterFunction" type="jetbrains.mps.lang.intentions.structure.ChildFilterFunction" id="538631991771380640">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="538631991771380641">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="538631991771383371">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="538631991771481411">
+            <node role="operand" type="jetbrains.mps.lang.intentions.structure.ConceptFunctionParameter_childNode" id="538631991771383372" />
+            <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_IsRoleOperation" id="538631991771481415">
+              <link role="conceptOfParent" targetNodeId="1.1068390468198" resolveInfo="ClassConcept" />
+              <link role="linkInParent" targetNodeId="1.1178549979242" />
             </node>
           </node>
         </node>
