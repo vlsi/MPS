@@ -122,17 +122,29 @@ class ProjectLanguageTreeNode extends ProjectModuleTreeNode {
       add(generatorNode);
     }
 
-    TextTreeNode languageRuntime = new TextTreeNode("runtime");
+    TextTreeNode languageRuntime = new RuntimeModulesTreeNode();
     for (IModule m : myLanguage.getRuntimeDependOnModules()) {
       languageRuntime.add(createFor(myProject, m));
     }
     add(languageRuntime);
 
-    TextTreeNode allModels = new TextTreeNode("all models");
+    TextTreeNode allModels = new AllModelsTreeNode();
     allModels.setIcon(Icons.PROJECT_MODELS_ICON, false);
     allModels.setIcon(Icons.PROJECT_MODELS_EXPANDED_ICON, true);
     SModelsSubtree.create(allModels, getOperationContext());
     add(allModels);
+  }
+
+  public class RuntimeModulesTreeNode extends TextTreeNode {
+    public RuntimeModulesTreeNode() {
+      super("runtime");
+    }
+  }
+
+  public class AllModelsTreeNode extends TextTreeNode {
+    public AllModelsTreeNode() {
+      super("all models");
+    }
   }
 
   public class AccessoriesModelTreeNode extends TextTreeNode {

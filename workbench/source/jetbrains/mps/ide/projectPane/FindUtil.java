@@ -19,7 +19,6 @@ public class FindUtil {
       if (l.isAccessoryModel(model.getSModelReference())) return l;
     }
 
-/*
     //runtime models in languages
     for (Language l : project.getProjectLanguages()) {
       for (IModule depModule : l.getRuntimeDependOnModules()){
@@ -29,29 +28,10 @@ public class FindUtil {
         }
       }
     }
-*/
-
-
-/*
-
 
     //accessories models in devkits
 
-
     //runtime models in devkits
-
-    for (IModule module : project.getModules()) {
-      if (module instanceof Solution) {
-
-      } else if (module instanceof Language) {
-
-      } else if (module instanceof DevKit) {
-
-      } else {
-        LOG.error("Unknown module type: " + module.getClass().getSimpleName());
-      }
-    }
-    */
 
     return model.getModule();
   }

@@ -51,6 +51,7 @@ import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.ide.actions.*;
 import jetbrains.mps.ide.projectPane.ProjectPane.MyState;
 import jetbrains.mps.ide.projectPane.ProjectLanguageTreeNode.AccessoriesModelTreeNode;
+import jetbrains.mps.ide.projectPane.ProjectLanguageTreeNode.RuntimeModulesTreeNode;
 import jetbrains.mps.ide.ui.MPSTree;
 import jetbrains.mps.ide.ui.MPSTree.TreeState;
 import jetbrains.mps.ide.ui.MPSTreeNode;
@@ -900,15 +901,22 @@ public class ProjectPane extends AbstractProjectViewPane implements PersistentSt
   }
 
   private static class ModuleEverywhereCondition implements Condition<MPSTreeNode> {
-    public boolean met(MPSTreeNode object) {
+    public boolean met(MPSTreeNode node) {
       //go into namespace nodes
-      if (object instanceof NamespaceTextNode) return true;
+      if (node instanceof NamespaceTextNode) return true;
+/*
+      todo: extract optimal module finding process. Used method only works when there is a single ability of selection
+      //need to go into devkits
+      if (node instanceof ProjectDevKitTreeNode) return true;
+*/
       //need to go into language to find generator modules
-      if (object instanceof ProjectLanguageTreeNode) return true;
+      if (node instanceof ProjectLanguageTreeNode) return true;
+      //go into runtime section
+      if (node instanceof RuntimeModulesTreeNode) return true;
       //do not go into other modules
-      if (object instanceof ProjectModuleTreeNode) return false;
+      if (node instanceof ProjectModuleTreeNode) return false;
       //not to load models
-      if (object instanceof SModelTreeNode) return false;
+      if (node instanceof SModelTreeNode) return false;
 
       return true;
     }
