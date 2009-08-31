@@ -26,7 +26,7 @@ public class ShowDiffererenesWithCurrentRevision_Action extends GeneratedAction 
   private SModelDescriptor model;
 
   public ShowDiffererenesWithCurrentRevision_Action() {
-    super("Compare with the same repository revision", "", ICON);
+    super("Compare with the Same Repository Revision", "", ICON);
     this.setIsAlwaysVisible(false);
     this.setExecuteOutsideCommand(true);
   }
@@ -75,7 +75,7 @@ public class ShowDiffererenesWithCurrentRevision_Action extends GeneratedAction 
     if (this.context == null) {
       return false;
     }
-    this.model = event.getData(MPSDataKeys.MODEL);
+    this.model = event.getData(MPSDataKeys.CONTEXT_MODEL);
     if (this.model == null) {
       return false;
     }

@@ -33775,8 +33775,8 @@
                                     <link role="variableDeclaration" targetNodeId="1225455574898" resolveInfo="results" />
                                   </node>
                                   <node role="rValue" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="5033107305426578153">
-                                    <link role="baseMethodDeclaration" targetNodeId="82.~FindUtils.getSearchResults(com.intellij.openapi.progress.ProgressIndicator,jetbrains.mps.ide.findusages.model.SearchQuery,jetbrains.mps.ide.findusages.findalgorithm.finders.IFinder...):jetbrains.mps.ide.findusages.model.SearchResults" resolveInfo="getSearchResults" />
                                     <link role="classConcept" targetNodeId="82.~FindUtils" resolveInfo="FindUtils" />
+                                    <link role="baseMethodDeclaration" targetNodeId="82.~FindUtils.getSearchResults(com.intellij.openapi.progress.ProgressIndicator,jetbrains.mps.ide.findusages.model.SearchQuery,jetbrains.mps.ide.findusages.model.IResultProvider):jetbrains.mps.ide.findusages.model.SearchResults" resolveInfo="getSearchResults" />
                                     <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="5033107305426578154">
                                       <link role="variableDeclaration" targetNodeId="1225455494785" resolveInfo="indiactor" />
                                     </node>
@@ -33850,7 +33850,7 @@
     </node>
     <node role="parameter" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterDeclaration" id="1225448004945">
       <property name="name" value="descriptor" />
-      <link role="key" targetNodeId="54.~MPSDataKeys.MODEL" resolveInfo="MODEL" />
+      <link role="key" targetNodeId="54.~MPSDataKeys.CONTEXT_MODEL" resolveInfo="CONTEXT_MODEL" />
     </node>
     <node role="parameter" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterDeclaration" id="1225455517184">
       <property name="name" value="project" />
@@ -41054,7 +41054,7 @@
     </node>
     <node role="parameter" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterDeclaration" id="6173548178016197733">
       <property name="name" value="model" />
-      <link role="key" targetNodeId="54.~MPSDataKeys.MODEL" resolveInfo="MODEL" />
+      <link role="key" targetNodeId="54.~MPSDataKeys.CONTEXT_MODEL" resolveInfo="CONTEXT_MODEL" />
     </node>
     <node role="parameter" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterDeclaration" id="2542400720666662326">
       <property name="name" value="module" />

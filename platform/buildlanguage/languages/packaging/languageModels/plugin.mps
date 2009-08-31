@@ -11791,7 +11791,7 @@
     </node>
     <node role="parameter" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterDeclaration" id="1224851217094">
       <property name="name" value="currentModel" />
-      <link role="key" targetNodeId="11.~MPSDataKeys.MODEL" resolveInfo="MODEL" />
+      <link role="key" targetNodeId="11.~MPSDataKeys.CONTEXT_MODEL" resolveInfo="CONTEXT_MODEL" />
     </node>
     <node role="parameter" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterDeclaration" id="1224850942354">
       <property name="name" value="project" />

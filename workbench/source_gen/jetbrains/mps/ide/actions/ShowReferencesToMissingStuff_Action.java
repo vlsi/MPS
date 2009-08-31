@@ -28,7 +28,7 @@ public class ShowReferencesToMissingStuff_Action extends GeneratedAction {
   private SModelDescriptor model;
 
   public ShowReferencesToMissingStuff_Action() {
-    super("Show References To Missing Models/Languages", "", ICON);
+    super("Show References to Missing Models/Languages", "", ICON);
     this.setIsAlwaysVisible(true);
     this.setExecuteOutsideCommand(false);
   }

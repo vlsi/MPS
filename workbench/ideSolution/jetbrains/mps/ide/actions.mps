@@ -5647,7 +5647,7 @@
   <node type="jetbrains.mps.lang.plugin.structure.ActionDeclaration" id="1216124397308">
     <property name="package" value="Menu.ProjectPane.Model.Actions" />
     <property name="name" value="ShowDifferencesWithModelOnDisk" />
-    <property name="caption" value="Show Differences With Model On Disk" />
+    <property name="caption" value="Show Differences with Model on Disk" />
     <property name="isAlwaysVisible" value="true" />
     <node role="executeFunction" type="jetbrains.mps.lang.plugin.structure.ExecuteBlock" id="1216124397309">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1216124397310">
@@ -8524,7 +8524,7 @@
     </node>
     <node role="parameter" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterDeclaration" id="1229267843824">
       <property name="name" value="model" />
-      <link role="key" targetNodeId="107.~MPSDataKeys.MODEL" resolveInfo="MODEL" />
+      <link role="key" targetNodeId="107.~MPSDataKeys.CONTEXT_MODEL" resolveInfo="CONTEXT_MODEL" />
     </node>
     <node role="executeFunction" type="jetbrains.mps.lang.plugin.structure.ExecuteBlock" id="1229267732059">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1229267732060">
@@ -8583,7 +8583,7 @@
     </node>
     <node role="parameter" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterDeclaration" id="1229269032165">
       <property name="name" value="model" />
-      <link role="key" targetNodeId="107.~MPSDataKeys.MODEL" resolveInfo="MODEL" />
+      <link role="key" targetNodeId="107.~MPSDataKeys.CONTEXT_MODEL" resolveInfo="CONTEXT_MODEL" />
     </node>
     <node role="executeFunction" type="jetbrains.mps.lang.plugin.structure.ExecuteBlock" id="1229269032166">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1229269032167">
@@ -8627,7 +8627,7 @@
   <node type="jetbrains.mps.lang.plugin.structure.ActionDeclaration" id="1229269040855">
     <property name="package" value="Menu.MainMenu.EditActions" />
     <property name="name" value="AddModelImportByRoot" />
-    <property name="caption" value="Add Model Import By Root" />
+    <property name="caption" value="Add Model Import by Root" />
     <node role="parameter" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterDeclaration" id="1229269040856">
       <property name="name" value="project" />
       <link role="key" targetNodeId="100.~PlatformDataKeys.PROJECT" resolveInfo="PROJECT" />
@@ -8642,7 +8642,7 @@
     </node>
     <node role="parameter" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterDeclaration" id="1229269040859">
       <property name="name" value="model" />
-      <link role="key" targetNodeId="107.~MPSDataKeys.MODEL" resolveInfo="MODEL" />
+      <link role="key" targetNodeId="107.~MPSDataKeys.CONTEXT_MODEL" resolveInfo="CONTEXT_MODEL" />
     </node>
     <node role="executeFunction" type="jetbrains.mps.lang.plugin.structure.ExecuteBlock" id="1229269040860">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1229269040861">
@@ -13462,7 +13462,7 @@
     </node>
     <node role="parameter" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterDeclaration" id="5033107305426766863">
       <property name="name" value="model" />
-      <link role="key" targetNodeId="107.~MPSDataKeys.MODEL" resolveInfo="MODEL" />
+      <link role="key" targetNodeId="107.~MPSDataKeys.CONTEXT_MODEL" resolveInfo="CONTEXT_MODEL" />
     </node>
     <node role="parameter" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterDeclaration" id="5033107305426766825">
       <property name="name" value="cell" />
@@ -14295,7 +14295,7 @@
   <node type="jetbrains.mps.lang.plugin.structure.ActionDeclaration" id="200443176057274802">
     <property name="package" value="Menu.ProjectPane.Model.Actions" />
     <property name="name" value="ShowReferencesToMissingStuff" />
-    <property name="caption" value="Show References To Missing Models/Languages" />
+    <property name="caption" value="Show References to Missing Models/Languages" />
     <property name="isAlwaysVisible" value="true" />
     <node role="parameter" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterDeclaration" id="200443176057277554">
       <property name="name" value="project" />
@@ -14346,8 +14346,8 @@
               <link role="classifier" targetNodeId="172.~IResultProvider" resolveInfo="IResultProvider" />
             </node>
             <node role="initializer" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="7796696880649580072">
-              <link role="baseMethodDeclaration" targetNodeId="171.~FindUtils.makeProvider(jetbrains.mps.ide.findusages.findalgorithm.finders.IFinder...):jetbrains.mps.ide.findusages.model.IResultProvider" resolveInfo="makeProvider" />
               <link role="classConcept" targetNodeId="171.~FindUtils" resolveInfo="FindUtils" />
+              <link role="baseMethodDeclaration" targetNodeId="171.~FindUtils.makeProvider(java.util.Collection):jetbrains.mps.ide.findusages.model.IResultProvider" resolveInfo="makeProvider" />
               <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="7796696880649580073">
                 <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="7796696880649580074">
                   <link role="baseMethodDeclaration" targetNodeId="3.~MissingReferencesFinder.&lt;init&gt;(jetbrains.mps.smodel.IScope,jetbrains.mps.smodel.SModelDescriptor)" resolveInfo="MissingReferencesFinder" />
@@ -17100,7 +17100,7 @@
   <node type="jetbrains.mps.lang.plugin.structure.ActionDeclaration" id="4215104504640602527">
     <property name="package" value="Menu.ProjectPane.Node.Actions" />
     <property name="name" value="ShowDiffererenesWithCurrentRevision" />
-    <property name="caption" value="Compare with the same repository revision" />
+    <property name="caption" value="Compare with the Same Repository Revision" />
     <property name="outsideCommandExecution" value="true" />
     <node role="parameter" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterDeclaration" id="9124496063422744217">
       <property name="name" value="frame" />
@@ -17120,7 +17120,7 @@
     </node>
     <node role="parameter" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterDeclaration" id="4215104504640602530">
       <property name="name" value="model" />
-      <link role="key" targetNodeId="107.~MPSDataKeys.MODEL" resolveInfo="MODEL" />
+      <link role="key" targetNodeId="107.~MPSDataKeys.CONTEXT_MODEL" resolveInfo="CONTEXT_MODEL" />
     </node>
     <node role="executeFunction" type="jetbrains.mps.lang.plugin.structure.ExecuteBlock" id="4215104504640602531">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="4215104504640602532">
@@ -17585,7 +17585,7 @@
     </node>
     <node role="parameter" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterDeclaration" id="227146524086649853">
       <property name="name" value="model" />
-      <link role="key" targetNodeId="107.~MPSDataKeys.MODEL" resolveInfo="MODEL" />
+      <link role="key" targetNodeId="107.~MPSDataKeys.CONTEXT_MODEL" resolveInfo="CONTEXT_MODEL" />
     </node>
     <node role="executeFunction" type="jetbrains.mps.lang.plugin.structure.ExecuteBlock" id="227146524086541068">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="227146524086541069">
@@ -18194,7 +18194,7 @@
     </node>
     <node role="parameter" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterDeclaration" id="227146524086812345">
       <property name="name" value="model" />
-      <link role="key" targetNodeId="107.~MPSDataKeys.MODEL" resolveInfo="MODEL" />
+      <link role="key" targetNodeId="107.~MPSDataKeys.CONTEXT_MODEL" resolveInfo="CONTEXT_MODEL" />
     </node>
     <node role="parameter" type="jetbrains.mps.lang.plugin.structure.ActionParameterDeclaration" id="227146524086812369">
       <property name="name" value="node" />
@@ -19248,7 +19248,7 @@
     </node>
     <node role="parameter" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterDeclaration" id="5533671870987100173">
       <property name="name" value="model" />
-      <link role="key" targetNodeId="107.~MPSDataKeys.MODEL" resolveInfo="MODEL" />
+      <link role="key" targetNodeId="107.~MPSDataKeys.CONTEXT_MODEL" resolveInfo="CONTEXT_MODEL" />
     </node>
   </node>
   <node type="jetbrains.mps.lang.plugin.structure.ActionDeclaration" id="5533671870987188872">

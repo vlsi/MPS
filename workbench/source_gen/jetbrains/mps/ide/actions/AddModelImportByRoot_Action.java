@@ -25,7 +25,7 @@ public class AddModelImportByRoot_Action extends GeneratedAction {
   private SModelDescriptor model;
 
   public AddModelImportByRoot_Action() {
-    super("Add Model Import By Root", "", ICON);
+    super("Add Model Import by Root", "", ICON);
     this.setIsAlwaysVisible(false);
     this.setExecuteOutsideCommand(false);
   }
@@ -63,7 +63,7 @@ public class AddModelImportByRoot_Action extends GeneratedAction {
     if (this.module == null) {
       return false;
     }
-    this.model = event.getData(MPSDataKeys.MODEL);
+    this.model = event.getData(MPSDataKeys.CONTEXT_MODEL);
     if (this.model == null) {
       return false;
     }

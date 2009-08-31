@@ -95,7 +95,7 @@ public class FindSpecificNodeUsages_Action extends GeneratedAction {
     if (this.context == null) {
       return false;
     }
-    this.model = event.getData(MPSDataKeys.MODEL);
+    this.model = event.getData(MPSDataKeys.CONTEXT_MODEL);
     if (this.model == null) {
       return false;
     }

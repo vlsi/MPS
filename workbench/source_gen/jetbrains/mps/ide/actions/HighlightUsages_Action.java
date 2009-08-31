@@ -65,7 +65,7 @@ public class HighlightUsages_Action extends GeneratedAction {
     if (this.editorCell == null) {
       return false;
     }
-    this.model = event.getData(MPSDataKeys.MODEL);
+    this.model = event.getData(MPSDataKeys.CONTEXT_MODEL);
     if (this.model == null) {
       return false;
     }

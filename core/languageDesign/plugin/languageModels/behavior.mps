@@ -2524,7 +2524,7 @@
                   <node role="operand" type="jetbrains.mps.lang.quotation.structure.Quotation" id="1171743928471867316">
                     <node role="quotedNode" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference" id="1171743928471867317">
                       <link role="classifier" targetNodeId="23.~MPSDataKeys" resolveInfo="MPSDataKeys" />
-                      <link role="variableDeclaration" targetNodeId="23.~MPSDataKeys.MODEL" resolveInfo="MODEL" />
+                      <link role="variableDeclaration" targetNodeId="23.~MPSDataKeys.CONTEXT_MODEL" resolveInfo="CONTEXT_MODEL" />
                     </node>
                   </node>
                   <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1171743928471867318">

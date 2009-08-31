@@ -25,7 +25,7 @@ public class ShowDifferencesWithModelOnDisk_Action extends GeneratedAction {
   private Frame frame;
 
   public ShowDifferencesWithModelOnDisk_Action() {
-    super("Show Differences With Model On Disk", "", ICON);
+    super("Show Differences with Model on Disk", "", ICON);
     this.setIsAlwaysVisible(true);
     this.setExecuteOutsideCommand(false);
   }
