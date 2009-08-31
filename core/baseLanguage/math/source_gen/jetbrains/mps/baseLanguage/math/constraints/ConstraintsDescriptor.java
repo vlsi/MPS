@@ -12,7 +12,7 @@ public class ConstraintsDescriptor implements IModelConstraints {
   private List<IModelConstraints> myConstraints = ListSequence.fromList(new ArrayList<IModelConstraints>());
 
   public ConstraintsDescriptor() {
-    ListSequence.fromList(this.myConstraints).addElement(new SumVariableReference_null_ReferentConstraint());
+    ListSequence.fromList(this.myConstraints).addElement(new SumVariableReference_sumVariable_ReferentConstraint());
   }
 
   public void unRegisterSelf(ModelConstraintsManager p0) {
