@@ -133,46 +133,12 @@
   <import index="123" modelUID="f:java_stub#com.intellij.ui.awt(com.intellij.ui.awt@java_stub)" version="-1" />
   <import index="124" modelUID="f:java_stub#java.awt.geom(java.awt.geom@java_stub)" version="-1" />
   <import index="125" modelUID="f:java_stub#jetbrains.mps.ide.findusages.findalgorithm.finders(jetbrains.mps.ide.findusages.findalgorithm.finders@java_stub)" version="-1" />
-  <node type="jetbrains.mps.lang.plugin.structure.ActionGroupDeclaration" id="1205247197267">
-    <property name="name" value="BaseLanguageEditorPopup" />
-    <node role="modifier" type="jetbrains.mps.lang.plugin.structure.ModificationStatement" id="1205247338363">
-      <link role="modifiedGroup" targetNodeId="3.1204991231476" resolveInfo="EditorPopup" />
-    </node>
-    <node role="contents" type="jetbrains.mps.lang.plugin.structure.ElementListContents" id="1207148319290">
-      <node role="reference" type="jetbrains.mps.lang.plugin.structure.ActionInstance" id="1205254813928">
-        <link role="action" targetNodeId="1205248417575" resolveInfo="CommentStatements" />
-      </node>
-      <node role="reference" type="jetbrains.mps.lang.plugin.structure.ActionInstance" id="1205605318439">
-        <link role="action" targetNodeId="1205604975727" resolveInfo="UncommentStatements" />
-      </node>
-      <node role="reference" type="jetbrains.mps.lang.plugin.structure.ActionInstance" id="1205837184579">
-        <link role="action" targetNodeId="1205836731341" resolveInfo="RunClassConcept" />
-      </node>
-      <node role="reference" type="jetbrains.mps.lang.plugin.structure.ActionInstance" id="8596238429278845809">
-        <link role="action" targetNodeId="8596238429278788966" resolveInfo="GoToOverriddenMethod" />
-      </node>
-    </node>
-  </node>
-  <node type="jetbrains.mps.lang.plugin.structure.ActionGroupDeclaration" id="1205247375460">
-    <property name="name" value="BaseLanguageEditorPopupInternal" />
-    <node role="modifier" type="jetbrains.mps.lang.plugin.structure.ModificationStatement" id="1205247403415">
-      <link role="modifiedGroup" targetNodeId="3.1204991232446" resolveInfo="EditorInternal" />
-    </node>
-    <node role="contents" type="jetbrains.mps.lang.plugin.structure.ElementListContents" id="1207148321744" />
-  </node>
   <node type="jetbrains.mps.lang.plugin.structure.ActionGroupDeclaration" id="1205247737002">
     <property name="name" value="BaseLanguageModelActionsInternal" />
     <node role="modifier" type="jetbrains.mps.lang.plugin.structure.ModificationStatement" id="1205247768364">
       <link role="modifiedGroup" targetNodeId="3.1205163054135" resolveInfo="ProjectPaneModelActionsInternal" />
     </node>
     <node role="contents" type="jetbrains.mps.lang.plugin.structure.ElementListContents" id="1207148324042" />
-  </node>
-  <node type="jetbrains.mps.lang.plugin.structure.ActionGroupDeclaration" id="1205247740394">
-    <property name="name" value="BaseLanguageNodeActionsInternal" />
-    <node role="modifier" type="jetbrains.mps.lang.plugin.structure.ModificationStatement" id="1205247793147">
-      <link role="modifiedGroup" targetNodeId="3.1204991217354" resolveInfo="ProjectPaneNodeActionsInternal" />
-    </node>
-    <node role="contents" type="jetbrains.mps.lang.plugin.structure.ElementListContents" id="1207148244981" />
   </node>
   <node type="jetbrains.mps.lang.plugin.structure.ActionDeclaration" id="1205248417575">
     <property name="name" value="CommentStatements" />
@@ -2898,21 +2864,6 @@
           </node>
         </node>
       </node>
-    </node>
-  </node>
-  <node type="jetbrains.mps.lang.plugin.structure.ActionGroupDeclaration" id="1217598080127">
-    <property name="name" value="BaseLanguageToolsAddition" />
-    <node role="contents" type="jetbrains.mps.lang.plugin.structure.ElementListContents" id="1217598095113">
-      <node role="reference" type="jetbrains.mps.lang.plugin.structure.ActionInstance" id="1217598105552">
-        <link role="action" targetNodeId="1217597602946" resolveInfo="ShowTodoViewer" />
-      </node>
-      <node role="reference" type="jetbrains.mps.lang.plugin.structure.ActionInstance" id="5147277331107950658">
-        <link role="action" targetNodeId="6173548178016197173" resolveInfo="AnalyzeStackTrace" />
-      </node>
-    </node>
-    <node role="modifier" type="jetbrains.mps.lang.plugin.structure.ModificationStatement" id="1217598112631">
-      <link role="modifiedGroup" targetNodeId="3.1204991238062" resolveInfo="Tools" />
-      <link role="point" targetNodeId="3.1217598172089" resolveInfo="customTools" />
     </node>
   </node>
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="1220353713044">
@@ -43035,17 +42986,28 @@
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="7079439422377559554">
             <property name="name" value="pkg" />
             <node role="type" type="jetbrains.mps.baseLanguage.structure.StringType" id="7079439422377559555" />
-            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="7079439422377559556">
-              <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="7079439422377559557">
-                <link role="variableDeclaration" targetNodeId="7079439422377559650" resolveInfo="method" />
-              </node>
-              <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="7079439422377559558">
-                <link role="baseMethodDeclaration" targetNodeId="9.~String.substring(int,int):java.lang.String" resolveInfo="substring" />
-                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="7079439422377559559">
-                  <property name="value" value="0" />
+            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.TernaryOperatorExpression" id="2003965187589478614">
+              <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="2003965187589478618" />
+              <node role="condition" type="jetbrains.mps.baseLanguage.structure.EqualsExpression" id="2003965187589478610">
+                <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="2003965187589478613">
+                  <property name="value" value="-1" />
                 </node>
-                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="7079439422377559560">
+                <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="2003965187589478609">
                   <link role="variableDeclaration" targetNodeId="7079439422377559537" resolveInfo="lastDot" />
+                </node>
+              </node>
+              <node role="ifFalse" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="2003965187589478625">
+                <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="2003965187589478626">
+                  <link role="variableDeclaration" targetNodeId="7079439422377559650" resolveInfo="method" />
+                </node>
+                <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="2003965187589478627">
+                  <link role="baseMethodDeclaration" targetNodeId="9.~String.substring(int,int):java.lang.String" resolveInfo="substring" />
+                  <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="2003965187589478628">
+                    <property name="value" value="0" />
+                  </node>
+                  <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="2003965187589478629">
+                    <link role="variableDeclaration" targetNodeId="7079439422377559537" resolveInfo="lastDot" />
+                  </node>
                 </node>
               </node>
             </node>
@@ -43604,6 +43566,55 @@
           </node>
         </node>
       </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.plugin.structure.ActionGroupDeclaration" id="1205247197267">
+    <property name="name" value="BaseLanguageEditorPopup" />
+    <node role="modifier" type="jetbrains.mps.lang.plugin.structure.ModificationStatement" id="1205247338363">
+      <link role="modifiedGroup" targetNodeId="3.1204991231476" resolveInfo="EditorPopup" />
+    </node>
+    <node role="contents" type="jetbrains.mps.lang.plugin.structure.ElementListContents" id="1207148319290">
+      <node role="reference" type="jetbrains.mps.lang.plugin.structure.ActionInstance" id="1205254813928">
+        <link role="action" targetNodeId="1205248417575" resolveInfo="CommentStatements" />
+      </node>
+      <node role="reference" type="jetbrains.mps.lang.plugin.structure.ActionInstance" id="1205605318439">
+        <link role="action" targetNodeId="1205604975727" resolveInfo="UncommentStatements" />
+      </node>
+      <node role="reference" type="jetbrains.mps.lang.plugin.structure.ActionInstance" id="1205837184579">
+        <link role="action" targetNodeId="1205836731341" resolveInfo="RunClassConcept" />
+      </node>
+      <node role="reference" type="jetbrains.mps.lang.plugin.structure.ActionInstance" id="8596238429278845809">
+        <link role="action" targetNodeId="8596238429278788966" resolveInfo="GoToOverriddenMethod" />
+      </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.plugin.structure.ActionGroupDeclaration" id="1205247375460">
+    <property name="name" value="BaseLanguageEditorPopupInternal" />
+    <node role="modifier" type="jetbrains.mps.lang.plugin.structure.ModificationStatement" id="1205247403415">
+      <link role="modifiedGroup" targetNodeId="3.1204991232446" resolveInfo="EditorInternal" />
+    </node>
+    <node role="contents" type="jetbrains.mps.lang.plugin.structure.ElementListContents" id="1207148321744" />
+  </node>
+  <node type="jetbrains.mps.lang.plugin.structure.ActionGroupDeclaration" id="1205247740394">
+    <property name="name" value="BaseLanguageNodeActionsInternal" />
+    <node role="modifier" type="jetbrains.mps.lang.plugin.structure.ModificationStatement" id="1205247793147">
+      <link role="modifiedGroup" targetNodeId="3.1204991217354" resolveInfo="ProjectPaneNodeActionsInternal" />
+    </node>
+    <node role="contents" type="jetbrains.mps.lang.plugin.structure.ElementListContents" id="1207148244981" />
+  </node>
+  <node type="jetbrains.mps.lang.plugin.structure.ActionGroupDeclaration" id="1217598080127">
+    <property name="name" value="BaseLanguageToolsAddition" />
+    <node role="contents" type="jetbrains.mps.lang.plugin.structure.ElementListContents" id="1217598095113">
+      <node role="reference" type="jetbrains.mps.lang.plugin.structure.ActionInstance" id="1217598105552">
+        <link role="action" targetNodeId="1217597602946" resolveInfo="ShowTodoViewer" />
+      </node>
+      <node role="reference" type="jetbrains.mps.lang.plugin.structure.ActionInstance" id="5147277331107950658">
+        <link role="action" targetNodeId="6173548178016197173" resolveInfo="AnalyzeStackTrace" />
+      </node>
+    </node>
+    <node role="modifier" type="jetbrains.mps.lang.plugin.structure.ModificationStatement" id="1217598112631">
+      <link role="modifiedGroup" targetNodeId="3.1204991238062" resolveInfo="Tools" />
+      <link role="point" targetNodeId="3.1217598172089" resolveInfo="customTools" />
     </node>
   </node>
 </model>
