@@ -18,12 +18,19 @@
     <get src="${main.url}/idea{build.number}-jdk15.zip" dest="${tmp}/idea-jdk15.zip" />
     <get src="${main.url}/idea{build.number}-dev.zip" dest="${tmp}/idea-dev.zip" />
   </target>
-  <target name="clean.license.classes" depends="download">
+  <target name="clean.license.classes" depends="download,replace.libraries">
     <property name="platform.jar" value="${idea.platform.dir}/platform.jar" />
     <property name="tmpdir" value="${idea.platform.dir}/tmp" />
+    <property name="openapi.tmpdir" value="${tmp}/idea/lib/openapi" />
     <mkdir dir="${tmpdir}" />
     <unzip src="${platform.jar}" dest="${tmpdir}" />
     <delete dir="${tmpdir}" includes="**com/intellij/ide/license/impl/**" />
+    <mkdir dir="${openapi.tmpdir}" />
+    <unzip src="${tmp}/idea/lib/openapi.jar" dest="${openapi.tmpdir}" />
+    <copy todir="${tmpdir}">
+      <fileset dir="${openapi.tmpdir}" includes="**com/intellij/execution/**" />
+    </copy>
+    <delete dir="${openapi.tmpdir}" />
     <jar basedir="${tmpdir}" destfile="${platform.jar}" update="false" />
     <delete dir="${tmpdir}" />
   </target>

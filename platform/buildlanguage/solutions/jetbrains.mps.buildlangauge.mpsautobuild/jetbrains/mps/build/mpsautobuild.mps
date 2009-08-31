@@ -394,6 +394,70 @@
           </node>
         </node>
       </node>
+      <node role="taskCall" type="jetbrains.mps.build.generictasks.structure.TaskCall" id="2240426702285079527">
+        <link role="declaration" targetNodeId="2v.353793545802814434" resolveInfo="mkdir" />
+        <node role="atributes" type="jetbrains.mps.build.generictasks.structure.Attribute" id="2240426702285079528">
+          <link role="attributeDeclaration" targetNodeId="2v.353793545802814435" resolveInfo="dir" />
+          <node role="value" type="jetbrains.mps.buildlanguage.structure.PropertyReference" id="2240426702285079529">
+            <link role="propertyDeclaration" targetNodeId="2240426702285079515" resolveInfo="openapi.tmpdir" />
+          </node>
+        </node>
+      </node>
+      <node role="taskCall" type="jetbrains.mps.build.generictasks.structure.TaskCall" id="2240426702285079509">
+        <link role="declaration" targetNodeId="2v.353793545802815734" resolveInfo="unzip" />
+        <node role="atributes" type="jetbrains.mps.build.generictasks.structure.Attribute" id="2240426702285079510">
+          <link role="attributeDeclaration" targetNodeId="2v.353793545802815741" resolveInfo="src" />
+          <node role="value" type="jetbrains.mps.buildlanguage.structure.FileName" id="2240426702285079511">
+            <node role="value" type="jetbrains.mps.buildlanguage.structure.PlusOperation" id="2240426702285079512">
+              <node role="right" type="jetbrains.mps.buildlanguage.structure.StringLiteral" id="2240426702285079513">
+                <property name="value" value="/idea/lib/openapi.jar" />
+              </node>
+              <node role="left" type="jetbrains.mps.buildlanguage.structure.PropertyReference" id="2240426702285079514">
+                <link role="propertyDeclaration" targetNodeId="1239364393116" resolveInfo="tmp" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="atributes" type="jetbrains.mps.build.generictasks.structure.Attribute" id="2240426702285079531">
+          <link role="attributeDeclaration" targetNodeId="2v.353793545802815735" resolveInfo="dest" />
+          <node role="value" type="jetbrains.mps.buildlanguage.structure.PropertyReference" id="2240426702285079533">
+            <link role="propertyDeclaration" targetNodeId="2240426702285079515" resolveInfo="openapi.tmpdir" />
+          </node>
+        </node>
+      </node>
+      <node role="taskCall" type="jetbrains.mps.build.generictasks.structure.TaskCall" id="2240426702285079499">
+        <link role="declaration" targetNodeId="2v.353793545802812427" resolveInfo="copy" />
+        <node role="nested" type="jetbrains.mps.build.generictasks.structure.TaskCall" id="2240426702285079506">
+          <link role="declaration" targetNodeId="2v.353793545802813175" resolveInfo="fileset" />
+          <node role="atributes" type="jetbrains.mps.build.generictasks.structure.Attribute" id="2240426702285079507">
+            <link role="attributeDeclaration" targetNodeId="2v.353793545802811531" resolveInfo="dir" />
+            <node role="value" type="jetbrains.mps.buildlanguage.structure.PropertyReference" id="2240426702285079530">
+              <link role="propertyDeclaration" targetNodeId="2240426702285079515" resolveInfo="openapi.tmpdir" />
+            </node>
+          </node>
+          <node role="atributes" type="jetbrains.mps.build.generictasks.structure.Attribute" id="2240426702285079534">
+            <link role="attributeDeclaration" targetNodeId="2v.353793545802811542" resolveInfo="includes" />
+            <node role="value" type="jetbrains.mps.buildlanguage.structure.StringLiteral" id="2240426702285079536">
+              <property name="value" value="**com/intellij/execution/**" />
+            </node>
+          </node>
+        </node>
+        <node role="atributes" type="jetbrains.mps.build.generictasks.structure.Attribute" id="2240426702285079500">
+          <link role="attributeDeclaration" targetNodeId="2v.353793545802812455" resolveInfo="todir" />
+          <node role="value" type="jetbrains.mps.buildlanguage.structure.PropertyReference" id="2240426702285079502">
+            <link role="propertyDeclaration" targetNodeId="1239364393240" resolveInfo="tmpdir" />
+          </node>
+        </node>
+      </node>
+      <node role="taskCall" type="jetbrains.mps.build.generictasks.structure.TaskCall" id="2240426702285079538">
+        <link role="declaration" targetNodeId="2v.353793545802812660" resolveInfo="delete" />
+        <node role="atributes" type="jetbrains.mps.build.generictasks.structure.Attribute" id="2240426702285079539">
+          <link role="attributeDeclaration" targetNodeId="2v.353793545802812669" resolveInfo="dir" />
+          <node role="value" type="jetbrains.mps.buildlanguage.structure.PropertyReference" id="2240426702285079540">
+            <link role="propertyDeclaration" targetNodeId="2240426702285079515" resolveInfo="openapi.tmpdir" />
+          </node>
+        </node>
+      </node>
       <node role="taskCall" type="jetbrains.mps.build.generictasks.structure.TaskCall" id="1239364393224">
         <link role="declaration" targetNodeId="2v.353793545802813521" resolveInfo="jar" />
         <node role="atributes" type="jetbrains.mps.build.generictasks.structure.Attribute" id="1239364393225">
@@ -452,8 +516,25 @@
           </node>
         </node>
       </node>
+      <node role="propertyList" type="jetbrains.mps.buildlanguage.structure.PropertyDeclaration" id="2240426702285079515">
+        <property name="name" value="openapi.tmpdir" />
+        <node role="type" type="jetbrains.mps.buildlanguage.structure.FileType" id="2240426702285079516" />
+        <node role="propertyValue" type="jetbrains.mps.buildlanguage.structure.FileName" id="2240426702285079517">
+          <node role="value" type="jetbrains.mps.buildlanguage.structure.PlusOperation" id="2240426702285079521">
+            <node role="right" type="jetbrains.mps.buildlanguage.structure.StringLiteral" id="2240426702285079522">
+              <property name="value" value="/idea/lib/openapi" />
+            </node>
+            <node role="left" type="jetbrains.mps.buildlanguage.structure.PropertyReference" id="2240426702285079523">
+              <link role="propertyDeclaration" targetNodeId="1239364393116" resolveInfo="tmp" />
+            </node>
+          </node>
+        </node>
+      </node>
       <node role="depends" type="jetbrains.mps.buildlanguage.structure.TargetReference" id="1239364393246">
         <link role="targetDeclaration" targetNodeId="1239364393137" resolveInfo="download" />
+      </node>
+      <node role="depends" type="jetbrains.mps.buildlanguage.structure.TargetReference" id="2240426702285079497">
+        <link role="targetDeclaration" targetNodeId="1239364393247" resolveInfo="replace.libraries" />
       </node>
     </node>
     <node role="target" type="jetbrains.mps.buildlanguage.structure.TargetDeclaration" id="1239364393247">
