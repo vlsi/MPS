@@ -59,23 +59,30 @@ public class CommonPaths {
     if (ourRTJar == null) {
       CompositeClassPathItem composite = new CompositeClassPathItem();
       if (!SystemInfo.isMac) {
-        JarFileClassPathItem rtJar = findBootstrapJarByName("rt.jar");
-        if (rtJar != null) {
-          composite.add(rtJar);
-        } else {
-          LOG.error("Can't find rt.jar. Make sure you are using JDK 5.0");
-        }
+        addJarForName(composite, "rt.jar");
+        addJarForName(composite, "jsse.jar");
+        addJarForName(composite, "jce.jar");
+        addJarForName(composite, "charsets.jar");
+        addJarForName(composite, "deploy.jar");
       } else {
-        IClassPathItem item = findBootstrapJarByName("classes.jar");
-        if (item == null) {
-          LOG.error("Can't find classes.jar. Make sure you are using JDK 5.0");
-        } else {
-          composite.add(item);
-        }
+        addJarForName(composite, "classes.jar");
+        addJarForName(composite, "jsse.jar");
+        addJarForName(composite, "jce.jar");
+        addJarForName(composite, "charsets.jar");
+        addJarForName(composite, "deploy.jar");
       }
       ourRTJar = composite;
     }
     return ourRTJar;
+  }
+
+  private static void addJarForName(CompositeClassPathItem composite, String name) {
+    JarFileClassPathItem rtJar = findBootstrapJarByName(name);
+    if (rtJar != null) {
+      composite.add(rtJar);
+    } else {
+      LOG.error("Can't find " + name + ". Make sure you are using JDK 5.0");
+    }
   }
 
   public static IClassPathItem getMPSPath() {
