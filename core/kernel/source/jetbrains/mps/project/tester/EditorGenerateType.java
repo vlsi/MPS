@@ -63,18 +63,18 @@ public class EditorGenerateType extends GenerateFilesAndClassesGenerationType {
     return super.compile(progress);
   }
 
-  Collection<SModel> getOutputModels() {
+  public Collection<SModel> getOutputModels() {
     return myOutputModelToPath.keySet();
   }
 
-  String getExtension(SNode outputNode) {
+  public String getExtension(SNode outputNode) {
     if (myNodeExtensionMap.isEmpty()) {
       return null;
     }
     return myNodeExtensionMap.get(NameUtil.nodeFQName(outputNode));
   }
 
-  File getOutputDir(SModel outputModel) {
+  public File getOutputDir(SModel outputModel) {
     if (myOutputModelToPath.isEmpty()) {
       return null;
     }
@@ -82,7 +82,7 @@ public class EditorGenerateType extends GenerateFilesAndClassesGenerationType {
     return FileGenerationUtil.getDefaultOutputDir(outputModel, outputDir);
   }
 
-  String getSourceByNode(SNode outputRoot, SModel outputModel) {
+  public String getSourceByNode(SNode outputRoot, SModel outputModel) {
     if (getSources().isEmpty()) {
       return null;
     }

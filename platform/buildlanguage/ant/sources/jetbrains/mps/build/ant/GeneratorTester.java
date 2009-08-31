@@ -2,16 +2,22 @@ package jetbrains.mps.build.ant;
 
 import org.apache.tools.ant.ProjectComponent;
 import jetbrains.mps.project.IModule;
-import jetbrains.mps.project.ProjectTester;
 import jetbrains.mps.project.tester.EditorGenerateType;
 import jetbrains.mps.project.tester.DiffReporter;
 import jetbrains.mps.generator.generationTypes.BaseGenerationType;
+import jetbrains.mps.generator.generationTypes.GenerateFilesGenerationType;
+import jetbrains.mps.generator.GeneratorManager;
 import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.SModelDescriptor;
+import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.util.Pair;
+import jetbrains.mps.ide.progress.IAdaptiveProgressMonitor;
 
 import java.util.Set;
 import java.util.List;
 
 import com.intellij.openapi.util.Computable;
+import com.intellij.openapi.progress.EmptyProgressIndicator;
 
 public class GeneratorTester extends Generator {
   private String myCurrentTestName;
@@ -37,19 +43,30 @@ public class GeneratorTester extends Generator {
   }
 
   @Override
-  protected void startModulesGeneration(Set<IModule> modulesSet) {
+  protected void generateModulesCircle(GeneratorManager gm, EmptyProgressIndicator emptyProgressIndicator, Set<IModule> modulesSet, List<Pair<SModelDescriptor, IOperationContext>> modelsToContext) {
     myCurrentTestName = escapeMessageForTeamCity("generating " + modulesSet);
     myErrorMessagesBuffer = new StringBuffer();
     System.out.println("##teamcity[testStarted name='" + myCurrentTestName + "']");
-  }
 
-  @Override
-  protected void finishModulesGeneration(Set<IModule> modulesSet) {
+    final EditorGenerateType generationType = new EditorGenerateType(true);
+    gm.generateModels(modelsToContext,
+      generationType,
+      emptyProgressIndicator,
+      myMessageHandler,
+      false);
+
+    printDiffReportIfNeeded(generationType);
+
+    ModelAccess.instance().runReadAction(new Runnable() {
+      public void run() {
+        generationType.compile(IAdaptiveProgressMonitor.NULL_PROGRESS_MONITOR);
+      }
+    });
+
     if (myErrorMessagesBuffer.length() > 0) {
       System.out.println("##teamcity[testFailed name='" + myCurrentTestName + "' message='generation errors' details='" + myErrorMessagesBuffer.toString() + "']");
     }
     System.out.println("##teamcity[testFinished name='" + myCurrentTestName + "']");
-    printDiffReportIfNeeded();
   }
 
   @Override
@@ -64,24 +81,15 @@ public class GeneratorTester extends Generator {
   }
 
   @Override
-  protected BaseGenerationType getGenerationType() {
-    if (myWhatToGenerate.getShowDiff()) {
-      return new EditorGenerateType(true);
-    } else {
-      return super.getGenerationType();
-    }
-  }
-
-  @Override
   protected void showStatistic() {
     super.showStatistic();
   }
 
-  private void printDiffReportIfNeeded() {
+  private void printDiffReportIfNeeded(final EditorGenerateType generationType) {
     if (myWhatToGenerate.getShowDiff()) {
       List<String> diffReports = ModelAccess.instance().runReadAction(new Computable<List<String>>() {
         public List<String> compute() {
-          return DiffReporter.createDiffReports((EditorGenerateType) myGenerationType);
+          return DiffReporter.createDiffReports(generationType);
         }
       });
       if (diffReports.isEmpty()) {

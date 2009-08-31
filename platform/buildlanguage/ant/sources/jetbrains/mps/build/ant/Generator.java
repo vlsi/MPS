@@ -29,7 +29,6 @@ import jetbrains.mps.build.buildgeneration.StronglyConnectedModules.IModuleDecor
 import jetbrains.mps.build.buildgeneration.graph.IVertex;
 import jetbrains.mps.generator.GeneratorManager;
 import jetbrains.mps.generator.ModelGenerationStatusManager;
-import jetbrains.mps.generator.generationTypes.BaseGenerationType;
 import jetbrains.mps.generator.generationTypes.GenerateFilesGenerationType;
 import jetbrains.mps.ide.IdeMain;
 import jetbrains.mps.ide.IdeMain.TestMode;
@@ -66,8 +65,7 @@ import java.io.File;
 import java.util.*;
 
 public class Generator {
-  protected final BaseGenerationType myGenerationType;
-  private final MyMessageHandler myMessageHandler = new MyMessageHandler();
+  protected final MyMessageHandler myMessageHandler = new MyMessageHandler();
   protected final WhatToGenerate myWhatToGenerate;
   private final AntLogger myLogger;
   private final List<String> myErrors = new ArrayList<String>();
@@ -93,7 +91,6 @@ public class Generator {
   public Generator(WhatToGenerate whatToGenerate, AntLogger logger) {
     myWhatToGenerate = whatToGenerate;
     myLogger = logger;
-    myGenerationType = getGenerationType();
   }
 
   public void generate() {
@@ -187,7 +184,7 @@ public class Generator {
 
     ArrayList<SModelDescriptor> modelDescriptorsList = new ArrayList<SModelDescriptor>();
     for (SModelDescriptor smodelDescriptor : modelDescriptors) {
-      if (!ModelGenerationStatusManager.isDoNotGenerate(smodelDescriptor)){
+      if (!ModelGenerationStatusManager.isDoNotGenerate(smodelDescriptor)) {
         modelDescriptorsList.add(smodelDescriptor);
       }
     }
@@ -230,7 +227,7 @@ public class Generator {
 
         List<SModelDescriptor> modelDescriptorList = module.getOwnModelDescriptors();
         for (SModelDescriptor sm : modelDescriptorList) {
-          if (SModelStereotype.isUserModel(sm)){
+          if (SModelStereotype.isUserModel(sm)) {
             modelDescriptors.add(sm);
           }
         }
@@ -313,7 +310,6 @@ public class Generator {
 
     EmptyProgressIndicator emptyProgressIndicator = new EmptyProgressIndicator();
     for (Set<IModule> modulesSet : modulesOrder) {
-      startModulesGeneration(modulesSet);
       List<Pair<SModelDescriptor, IOperationContext>> modelsToContext = new ArrayList<Pair<SModelDescriptor, IOperationContext>>();
       for (IModule module : modulesSet) {
         ModuleContext moduleContext = new ModuleContext(module, project);
@@ -323,13 +319,18 @@ public class Generator {
         }
 
       }
-      gm.generateModels(modelsToContext,
-        myGenerationType,
-        emptyProgressIndicator,
-        myMessageHandler,
-        false);
-      finishModulesGeneration(modulesSet);
+      generateModulesCircle(gm, emptyProgressIndicator, modulesSet, modelsToContext);
     }
+  }
+
+  protected void generateModulesCircle(GeneratorManager gm, EmptyProgressIndicator emptyProgressIndicator, Set<IModule> modulesSet, List<Pair<SModelDescriptor, IOperationContext>> modelsToContext) {
+    info("Start generating " + modulesSet);
+    gm.generateModels(modelsToContext,
+      new GenerateFilesGenerationType(),
+      emptyProgressIndicator,
+      myMessageHandler,
+      false);
+    info("Finished generating " + modulesSet);
   }
 
   private List<Set<IModule>> computeModulesOrder(List<SModelDescriptor> models, final Map<IModule, List<SModelDescriptor>> moduleToModels) {
@@ -371,14 +372,6 @@ public class Generator {
     return modulesOrder;
   }
 
-  protected void finishModulesGeneration(Set<IModule> modulesSet) {
-    info("Finished generating " + modulesSet);
-  }
-
-  protected void startModulesGeneration(Set<IModule> modulesSet) {
-    info("Start generating " + modulesSet);
-  }
-
   private void log(String text, int level) {
     if (level <= myWhatToGenerate.getLogLevel()) myLogger.log(text, level);
   }
@@ -411,7 +404,7 @@ public class Generator {
     for (StackTraceElement el : e.getStackTrace()) {
       sb.append("    ");
       sb.append(el.toString());
-      sb.append("\n");      
+      sb.append("\n");
     }
     error(sb.toString());
   }
@@ -458,10 +451,6 @@ public class Generator {
 
       }
     }
-  }
-
-  protected BaseGenerationType getGenerationType() {
-    return new GenerateFilesGenerationType();
   }
 
   private static class ModuleDecorator implements IModuleDecorator<IModule> {
@@ -523,7 +512,7 @@ public class Generator {
   protected static class SystemOutLogger implements AntLogger {
 
     public void log(String text, int level) {
-      if (level == Project.MSG_ERR){
+      if (level == Project.MSG_ERR) {
         System.err.println(text);
       } else {
         System.out.println(text);
