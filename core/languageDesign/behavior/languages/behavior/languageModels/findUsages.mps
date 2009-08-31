@@ -36,6 +36,7 @@
   <maxImportIndex value="3" />
   <import index="1" modelUID="r:3270011d-8b2d-4938-8dff-d256a759e017(jetbrains.mps.lang.behavior.structure)" version="-1" />
   <import index="3" modelUID="r:00000000-0000-4000-0000-011c8959028e(jetbrains.mps.lang.structure.findUsages)" version="-1" />
+  <visible index="2" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
   <node type="jetbrains.mps.lang.findUsages.structure.FinderDeclaration" id="1227530810320">
     <property name="name" value="OverridingMethods" />
     <property name="description" value="Overriding Methods" />
@@ -104,6 +105,77 @@
                 </node>
               </node>
             </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="isApplicableFunction" type="jetbrains.mps.lang.findUsages.structure.IsApplicableBlock" id="3165939133470456784">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="3165939133470456785">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="3165939133470456786">
+          <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="3165939133470456787">
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="3165939133470456788">
+              <node role="expression" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="3165939133470456789">
+                <property name="value" value="false" />
+              </node>
+            </node>
+          </node>
+          <node role="condition" type="jetbrains.mps.baseLanguage.structure.OrExpression" id="3165939133470456790">
+            <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.EqualsExpression" id="3165939133470456791">
+              <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="3165939133470456792">
+                <node role="operand" type="jetbrains.mps.lang.findUsages.structure.ConceptFunctionParameter_node" id="3165939133470456793" />
+                <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_GetParentOperation" id="3165939133470456794" />
+              </node>
+              <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="3165939133470456795" />
+            </node>
+            <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.NotExpression" id="3165939133470456796">
+              <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="3165939133470456797">
+                <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="3165939133470456798">
+                  <node role="operand" type="jetbrains.mps.lang.findUsages.structure.ConceptFunctionParameter_node" id="3165939133470456799" />
+                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_GetParentOperation" id="3165939133470456800" />
+                </node>
+                <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation" id="3165939133470456801">
+                  <node role="conceptArgument" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" id="3165939133470456837">
+                    <link role="conceptDeclaration" targetNodeId="1.1225194240794" resolveInfo="ConceptBehavior" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="3165939133470456803">
+          <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="3165939133470456804">
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="3165939133470456805">
+              <node role="expression" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="3165939133470456806">
+                <property name="value" value="false" />
+              </node>
+            </node>
+          </node>
+          <node role="condition" type="jetbrains.mps.baseLanguage.structure.AndExpression" id="3165939133470456807">
+            <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.NotExpression" id="3165939133470456808">
+              <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="3165939133470456809">
+                <node role="operand" type="jetbrains.mps.lang.findUsages.structure.ConceptFunctionParameter_node" id="3165939133470456810" />
+                <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation" id="3165939133470456811">
+                  <node role="conceptArgument" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" id="3165939133470456812">
+                    <link role="conceptDeclaration" targetNodeId="2v.1081236700938" resolveInfo="StaticMethodDeclaration" />
+                  </node>
+                </node>
+              </node>
+            </node>
+            <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.NotExpression" id="3165939133470456813">
+              <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="3165939133470456814">
+                <node role="operand" type="jetbrains.mps.lang.findUsages.structure.ConceptFunctionParameter_node" id="3165939133470456815" />
+                <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation" id="3165939133470456816">
+                  <node role="conceptArgument" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" id="3165939133470456817">
+                    <link role="conceptDeclaration" targetNodeId="2v.1068580123165" resolveInfo="InstanceMethodDeclaration" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="3165939133470456818">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="3165939133470456819">
+            <property name="value" value="true" />
           </node>
         </node>
       </node>
