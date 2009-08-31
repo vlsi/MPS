@@ -800,7 +800,7 @@ public class ProjectPane extends AbstractProjectViewPane implements PersistentSt
   }
 
   protected SModelTreeNode findMostSuitableModelTreeNode(SModelDescriptor model) {
-    IModule module = FindUtil.getModuleForModel(getMPSProject(),model);
+    IModule module = FindUtil.getModuleForModel(getMPSProject(), model);
     if (module == null) return findModelTreeNodeAnywhere(model, getTree().getRootNode());
 
     ProjectModuleTreeNode moduleTreeNode = findMostSuitableModuleTreeNode(module);
@@ -809,51 +809,12 @@ public class ProjectPane extends AbstractProjectViewPane implements PersistentSt
     return findModelTreeNodeInModule(model, moduleTreeNode);
   }
 
-  protected SModelTreeNode findModelTreeNodeInModule(SModelDescriptor model, ProjectModuleTreeNode moduleNode) {
-    if (!moduleNode.isInitialized() && !moduleNode.hasInfiniteSubtree()) {
-      moduleNode.init();
-    }
-
-    for (MPSTreeNode node : moduleNode) {
-      if (node instanceof SModelTreeNode) {
-        SModelTreeNode modelNode = (SModelTreeNode) node;
-        SModelDescriptor modelDescriptor = modelNode.getSModelDescriptor();
-        SModelReference modelReference = modelDescriptor.getSModelReference();
-        if (modelReference.equals(model.getSModelReference())) {
-          return modelNode;
-        }
-      }
-      if (node instanceof ProjectModuleTreeNode) {
-        SModelTreeNode foundNode = findModelTreeNodeInModule(model, (ProjectModuleTreeNode) node);
-        if (foundNode != null) {
-          return foundNode;
-        }
-      }
-    }
-    return null;
+  protected SModelTreeNode findModelTreeNodeInModule(final SModelDescriptor model, ProjectModuleTreeNode moduleNode) {
+    return (SModelTreeNode) findTreeNode(moduleNode, new ModelInModuleCondition(), new NodeForModelCondition(model));
   }
 
   protected SModelTreeNode findModelTreeNodeAnywhere(SModelDescriptor model, MPSTreeNode parentNode) {
-    if (!(parentNode instanceof SModelTreeNode) && !parentNode.isInitialized() && !parentNode.hasInfiniteSubtree()) {
-      parentNode.init();
-    }
-
-    if (parentNode instanceof SModelTreeNode) {
-      SModelTreeNode parentSModelNode = (SModelTreeNode) parentNode;
-      SModelDescriptor parentModelDescriptor = parentSModelNode.getSModelDescriptor();
-      SModelReference parentModelRef = parentModelDescriptor.getSModelReference();
-      SModelReference modelRef = model.getSModelReference();
-      if (parentModelRef.equals(modelRef)) {
-        return parentSModelNode;
-      }
-    }
-    for (MPSTreeNode node : parentNode) {
-      SModelTreeNode foundNode = findModelTreeNodeAnywhere(model, node);
-      if (foundNode != null) {
-        return foundNode;
-      }
-    }
-    return null;
+    return (SModelTreeNode) findTreeNode(parentNode, new ModelEverywhereCondition(), new NodeForModelCondition(model));
   }
 
   protected MPSTreeNodeEx findMostSuitableSNodeTreeNode(SNode node) {
@@ -864,6 +825,7 @@ public class ProjectPane extends AbstractProjectViewPane implements PersistentSt
   }
 
   protected MPSTreeNodeEx findSNodeTreeNodeInParent(SNode node, MPSTreeNode parent) {
+    //todo rewrite using findTreeNode
     if (!(parent.isInitialized() || parent.hasInfiniteSubtree())) parent.init();
     if (parent instanceof SNodeTreeNode) {
       SNodeTreeNode parentSNodeTreeNode = (SNodeTreeNode) parent;
@@ -902,6 +864,7 @@ public class ProjectPane extends AbstractProjectViewPane implements PersistentSt
   //----find next queries----
 
   //todo: will work bad e.g. if operating with project data from modules pool
+
   public MPSTreeNode findNextTreeNode(SNode node) {
     MPSTreeNode foundNode = findMostSuitableSNodeTreeNode(node);
     if (foundNode == null) return null;
@@ -936,6 +899,8 @@ public class ProjectPane extends AbstractProjectViewPane implements PersistentSt
 
   private static class ModuleEverywhereCondition implements Condition<MPSTreeNode> {
     public boolean met(MPSTreeNode object) {
+      //go into namespace nodes
+      if (object instanceof NamespaceTextNode) return true;
       //need to go into language to find generator modules
       if (object instanceof ProjectLanguageTreeNode) return true;
       //do not go into other modules
@@ -944,6 +909,37 @@ public class ProjectPane extends AbstractProjectViewPane implements PersistentSt
       if (object instanceof SModelTreeNode) return false;
 
       return true;
+    }
+  }
+
+  private static class ModelInModuleCondition extends ModelEverywhereCondition{
+    public boolean met(MPSTreeNode node) {
+      if (!super.met(node)) return false;
+
+      boolean descent = false;
+
+      if (node instanceof ProjectModuleTreeNode) descent = true;
+      if (node instanceof NamespaceTextNode) descent = true;
+
+      if (!descent) return false;
+
+      if (!node.isInitialized() && !node.hasInfiniteSubtree()) {
+        node.init();
+        return true;
+      }
+
+      return node.isInitialized();
+    }
+  }
+
+  private static class ModelEverywhereCondition implements Condition<MPSTreeNode> {
+    public boolean met(MPSTreeNode node) {
+      if (node instanceof SModelTreeNode) return false;
+      if (!node.isInitialized() && !node.hasInfiniteSubtree()) {
+        node.init();
+        return true;
+      }
+      return node.isInitialized();
     }
   }
 
@@ -958,6 +954,22 @@ public class ProjectPane extends AbstractProjectViewPane implements PersistentSt
       if (!(treeNode instanceof ProjectModuleTreeNode)) return false;
       IOperationContext nodeContext = treeNode.getOperationContext();
       return nodeContext != null && nodeContext.getModule() == myModule;
+    }
+  }
+
+  private static class NodeForModelCondition implements Condition<MPSTreeNode> {
+    private final SModelDescriptor myModel;
+
+    public NodeForModelCondition(SModelDescriptor model) {
+      myModel = model;
+    }
+
+    public boolean met(MPSTreeNode node) {
+      if (!(node instanceof SModelTreeNode)) return false;
+      SModelTreeNode modelNode = (SModelTreeNode) node;
+      SModelDescriptor modelDescriptor = modelNode.getSModelDescriptor();
+      SModelReference modelReference = modelDescriptor.getSModelReference();
+      return modelReference.equals(myModel.getSModelReference());
     }
   }
 
@@ -1209,5 +1221,4 @@ public class ProjectPane extends AbstractProjectViewPane implements PersistentSt
       }
     }
   }
-
 }
