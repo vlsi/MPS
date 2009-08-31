@@ -20,6 +20,8 @@ import com.intellij.openapi.application.ModalityState;
 import com.intellij.openapi.vfs.VirtualFile;
 import jetbrains.mps.baseLanguage.plugin.DebugInfo;
 import jetbrains.mps.baseLanguage.plugin.PositionInfo;
+import jetbrains.mps.baseLanguage.textGen.DependenciesRoot;
+import jetbrains.mps.baseLanguage.textGen.Dependency;
 import jetbrains.mps.generator.GenerationStatus;
 import jetbrains.mps.generator.GeneratorManager;
 import jetbrains.mps.generator.JavaNameUtil;
@@ -32,6 +34,7 @@ import jetbrains.mps.textGen.TextGenManager;
 import jetbrains.mps.vcs.MPSVCSManager;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.VFileSystem;
+import jetbrains.mps.util.NameUtil;
 
 import java.io.File;
 import java.io.IOException;
@@ -105,12 +108,15 @@ public class FileGenerationUtil {
 
   public static boolean generateText(IOperationContext context, GenerationStatus status, Map<SNode, String> outputNodeContents, String outputRootDir) {
     boolean hasErrors = false;
+    DependenciesRoot dependRoot = new DependenciesRoot();
     DebugInfo info = new DebugInfo();
     status.setDebugInfo(info);
+    status.setDependenciesRoot(dependRoot);
     for (SNode outputNode : status.getOutputModel().getRoots()) {
       try {
         TextGenerationResult result = TextGenerationUtil.generateText(context, outputNode);
         fillDebugInfo(info, outputNode, result);
+        fillDependencies(dependRoot, outputNode, result);
 
         hasErrors |= result.hasErrors();
         outputNodeContents.put(outputNode, result.getText());
@@ -122,7 +128,7 @@ public class FileGenerationUtil {
   }
 
   private static void fillDebugInfo(DebugInfo info, SNode outputNode, TextGenerationResult result) {
-    for (SNode out : result.getPositions().keySet()) {      
+    for (SNode out : result.getPositions().keySet()) {
       SNode input = out;
       while (input != null && (input.getModel().getModelDescriptor() == null || input.getModel().getModelDescriptor().isTransient())) {
         input = (SNode) input.getUserObject(TemplateQueryContext.ORIGINAL_INPUT_NODE);
@@ -136,6 +142,30 @@ public class FileGenerationUtil {
         info.addPosition(positionInfo);
       }
     }    
+  }
+
+  private static void fillDependencies(DependenciesRoot root, SNode outputNode, TextGenerationResult result) {
+    if (result.getDependencies() != null) {
+      root.addDependencies(new Dependency(NameUtil.nodeFQName(outputNode), getValues(result, TextGenManager.DEPENDENCY),
+        getValues(result, TextGenManager.EXTENDS)));
+    }
+    SNode input = outputNode;
+    while (input != null && (input.getModel().getModelDescriptor() == null || input.getModel().getModelDescriptor().isTransient())) {
+        input = (SNode) input.getUserObject(TemplateQueryContext.ORIGINAL_INPUT_NODE);
+    }
+    if (input != null) {
+      root.setModel(input.getModel());
+    }
+  }
+
+  private static List<String> getValues(TextGenerationResult textGenResult, String value) {
+    List<String> result = new ArrayList<String>();
+    for (String key : textGenResult.getDependencies().keySet()) {
+      if (textGenResult.getDependencies().get(key).equals(value)) {
+        result.add(key);
+      }
+    }
+    return result;
   }
 
   public static void cleanUp(IOperationContext context, Set<File> generatedFiles, Set<File> directories) {
@@ -198,7 +228,16 @@ public class FileGenerationUtil {
       status.getDebugInfo().saveTo(file);
       generatedFiles.add(file.toFile());
     }
+    if (isUseDependenciesChecking()) {
+      if (status.getDependenciesRoot() != null && status.getDependenciesRoot().getModel() != null) {
+        IFile file = DependenciesRoot.getOutputFileOfModel(outputRootDirectory.getAbsolutePath(), status.getDependenciesRoot().getModel().getModelDescriptor());
+        status.getDependenciesRoot().saveTo(file);
+        generatedFiles.add(file.toFile());
+      }
+    }
   }
 
-
+  public static boolean isUseDependenciesChecking() {
+    return false;
+  }
 }

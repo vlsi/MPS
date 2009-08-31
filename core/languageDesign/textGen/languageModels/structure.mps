@@ -287,9 +287,6 @@
       <property name="sourceCardinality" value="0..n" />
       <link role="target" targetNodeId="1234524838116" resolveInfo="PrivateFunctionDeclaration" />
     </node>
-    <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="3470428764802872645">
-      <link role="intfc" targetNodeId="4.2621449412040133764" resolveInfo="IConceptAspect" />
-    </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1233922353619">
     <property name="name" value="OperationDeclaration" />

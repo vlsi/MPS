@@ -11,7 +11,7 @@ public class SynchronizedStatement_TextGen extends SNodeTextGen {
   public void doGenerateText(SNode node) {
     this.appendNewLine();
     this.indentBuffer();
-    this.append("synchronized(");
+    this.append("synchronized (");
     TextGenManager.instance().appendNodeText(this.getContext(), this.getBuffer(), SLinkOperations.getTarget(node, "expression", true), this.getSNode());
     this.append(") {");
     this.increaseDepth();

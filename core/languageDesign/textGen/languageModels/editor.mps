@@ -789,20 +789,23 @@
         </node>
         <node role="focusPolicyApplicable" type="jetbrains.mps.lang.editor.structure.QueryFunction_NodeCondition" id="1234532456570">
           <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1234532456571">
-            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1234532456572">
-              <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1234532456573">
-                <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1234532456574">
-                  <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1234532456575">
-                    <node role="operand" type="jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_node" id="1234532456576" />
-                    <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1234532456577">
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="3893285725317821630">
+              <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="3893285725317821649">
+                <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="3893285725317821644">
+                  <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="3893285725317821639">
+                    <node role="operand" type="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" id="3893285725317821637">
+                      <link role="concept" targetNodeId="1.1234529062040" resolveInfo="UtilityMethodCall" />
+                      <node role="leftExpression" type="jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_node" id="3893285725317821631" />
+                    </node>
+                    <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="3893285725317821643">
                       <link role="link" targetNodeId="1.1234529163244" />
                     </node>
                   </node>
-                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkListAccess" id="1234532456578">
+                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkListAccess" id="3893285725317821648">
                     <link role="link" targetNodeId="3v.1068580123134" />
                   </node>
                 </node>
-                <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.IsNotEmptyOperation" id="1234532456579" />
+                <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.IsNotEmptyOperation" id="3893285725317821653" />
               </node>
             </node>
           </node>

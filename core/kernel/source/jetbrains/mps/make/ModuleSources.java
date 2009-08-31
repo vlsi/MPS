@@ -15,10 +15,16 @@
  */
 package jetbrains.mps.make;
 
+import jetbrains.mps.baseLanguage.textGen.DependenciesRoot;
+import jetbrains.mps.baseLanguage.textGen.Dependency;
 import jetbrains.mps.project.IModule;
+import jetbrains.mps.smodel.SModelDescriptor;
+import jetbrains.mps.smodel.SModelReference;
+import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.MPSExtentions;
+import jetbrains.mps.generator.fileGenerator.FileGenerationUtil;
 
 import java.util.*;
 
@@ -35,8 +41,13 @@ public class ModuleSources {
   ModuleSources(IModule module) {
     myModule = module;
 
-    collectInputFilesInfo();
+    collectInputFilesInfo(module);
     collectOutputFilesInfo();
+
+    if (FileGenerationUtil.isUseDependenciesChecking()) {    
+      collectInputDependenciesFilesInfo();
+      collectDependencyOutput();
+    }
   }
 
   public Set<IFile> getFilesToDelete() {
@@ -59,9 +70,16 @@ public class ModuleSources {
     return myJavaFiles.get(fqName);
   }
 
-  private void collectInputFilesInfo() {
-    for (String source : myModule.getSourcePaths()) {
+  private void collectInputFilesInfo(IModule module) {
+    for (String source : module.getSourcePaths()) {
       collectInput(FileSystem.getFile(source), "");
+    }
+  }
+
+  private void collectInputDependenciesFilesInfo() {
+    List<IModule> dependenciesModule = myModule.getAllDependOnModules();
+    for (IModule module : dependenciesModule) {
+     collectInputFilesInfo(module);
     }
   }
 
@@ -127,6 +145,94 @@ public class ModuleSources {
             myFilesToDelete.add(file);
           } else if (resourceFile.getFile().lastModified() < file.lastModified()) {
             myResourcesToCopy.remove(resourceFile);
+          }
+        }
+      }
+    }
+  }
+  
+  private void collectDependencyOutput() {
+    List<SModelDescriptor> models = SModelRepository.getInstance().getModelDescriptors(myModule);
+    for (SModelDescriptor md : models) {
+      if (md.getSModel().isNotEditable()) {
+        continue;
+      }
+      IFile dependFile = DependenciesRoot.getOutputFileOfModel(myModule.getGeneratorOutputPath(), md);
+      if (dependFile == null || !dependFile.exists() || dependFile.isDirectory()) {
+        continue;
+      }
+      DependenciesRoot dependRoot = DependenciesRoot.load(dependFile);
+      if (dependRoot != null) {
+        addFilesToCompile(dependRoot.getAllDependenciesNames(), dependRoot.getDependencies());
+        for (Dependency extendDependency : dependRoot.getDependencies()) {
+          for (String extendName : extendDependency.getExtends()) {
+            collectExtends(extendName, extendDependency.getClassName(), false);
+          }
+        }
+      }
+    }
+  }
+
+  private Set<String> addFilesToCompile(List<String> collection, Set<Dependency> depends) {
+    Set<String> addedFqNames = new HashSet<String>();
+    Set<String> uniqDependency = new HashSet<String>();
+      for (String s : collection) {
+        if (!uniqDependency.contains(s) && s != null) {
+          uniqDependency.add(s);
+      }
+    }
+    for (String dependFqName : uniqDependency) {
+      JavaFile dependJavaFile = myJavaFiles.get(dependFqName);
+      if (dependFqName != null) {
+        for (Dependency dependency : depends) {
+          if (dependency.getAllDependencies().contains(dependFqName)) {
+            JavaFile javaFile = myJavaFiles.get(dependency.getClassName());
+            if (javaFile == null || dependJavaFile == null) {
+              continue;
+            }
+            if (javaFile.getFile().lastModified() >= dependJavaFile.getFile().lastModified()) {
+              addedFqNames.add(dependFqName);
+              myFilesToCompile.add(dependJavaFile);
+            }
+          }
+        }
+      }
+    }
+    return addedFqNames;
+  }
+
+  private SModelDescriptor getModelByClassName(String className) {
+    String thisReference = className.substring(0, className.lastIndexOf('.'));
+    SModelReference thisModelReference = SModelReference.fromString(thisReference);
+    if (thisModelReference == null) {
+      return null;
+    }
+    return SModelRepository.getInstance().getModelDescriptor(thisModelReference);
+  }
+
+  private void collectExtends(String extendName, String thisName, boolean needCollectInput) {
+    if (needCollectInput) {
+      SModelDescriptor thisModel = getModelByClassName(thisName);
+      List<IModule> dependsByThisModule = thisModel.getModule().getAllDependOnModules();
+      for (IModule module : dependsByThisModule) {
+        collectInputFilesInfo(module);
+      }
+    }
+    JavaFile thisJavaFile = myJavaFiles.get(thisName);
+    JavaFile extendJavaFile = myJavaFiles.get(extendName);
+    if (thisJavaFile == null || extendJavaFile == null) {
+      return;
+    }
+    myFilesToCompile.add(extendJavaFile);
+    SModelDescriptor extendModel = getModelByClassName(extendName);
+    String extendOutputDir = extendModel.getModule().getGeneratorOutputPath();
+    DependenciesRoot extendDependRoot = DependenciesRoot.load(DependenciesRoot.getOutputFileOfModel(extendOutputDir,
+      extendModel));
+    if (extendDependRoot != null) {
+      for (Dependency extendDependency : extendDependRoot.getDependencies()) {
+        if (extendDependency.getClassName().equals(extendName)) {
+          for (String newExntedName : extendDependency.getExtends()) {
+            collectExtends(newExntedName, extendName, true);
           }
         }
       }

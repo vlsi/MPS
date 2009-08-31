@@ -25,7 +25,7 @@ public class RuntimeUtils {
   }
 
   public static Map<String, SNode> getRuntimeClassifiersMap() {
-    synchronized(RuntimeUtils.class) {
+    synchronized (RuntimeUtils.class) {
       if (runtimeClassifiers == null) {
         runtimeClassifiers = MapSequence.fromMap(new HashMap<String, SNode>());
         for (SNode cls : SModelOperations.getNodes(getRuntimeModel(), "jetbrains.mps.baseLanguage.structure.Classifier")) {
@@ -33,7 +33,7 @@ public class RuntimeUtils {
         }
         ClassLoaderManager.getInstance().addReloadHandler(new ReloadAdapter() {
           public void onReload() {
-            synchronized(RuntimeUtils.class) {
+            synchronized (RuntimeUtils.class) {
               RuntimeUtils.runtimeClassifiers = null;
             }
             ClassLoaderManager.getInstance().removeReloadHandler(this);

@@ -27,8 +27,11 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.misc.hash.HashMap;
+import jetbrains.mps.internal.collections.runtime.SetSequence;
 
 import java.util.Map;
+import java.util.List;
+import java.util.ArrayList;
 
 /**
  * User: Dmitriev.
@@ -37,6 +40,10 @@ import java.util.Map;
 public class TextGenManager {
   private static final Logger LOG = Logger.getLogger(TextGenManager.class);
   private static TextGenManager myInstance;
+  public static final String PACKAGE_NAME = "PACKAGE_NAME";
+  public static final String DEPENDENCY = "DEPENDENCY";
+  public static final String EXTENDS = "EXTENDS";
+  public static final String IMPORT = "IMPORT";
 
   public static void reset() {
     myInstance = null;
@@ -49,12 +56,12 @@ public class TextGenManager {
     return myInstance;
   }
 
-  public Map<SNode, PositionInfo> positions;
+  public HashMap<SNode, PositionInfo> positions;
 
   public TextGenerationResult generateText(IOperationContext context, SNode node) {
     positions = new HashMap<SNode, PositionInfo>();
     TextGenBuffer buffer = new TextGenBuffer();
-    buffer.putUserObject("PACKAGE_NAME", node.getModel().getLongName());
+    buffer.putUserObject(PACKAGE_NAME, node.getModel().getLongName());
     appendNodeText(context, buffer, node, null);
     int topLength = buffer.getTopBufferText().split(buffer.getLineSeparator(), -1).length + 2;
     for (SNode n: positions.keySet()) {
@@ -62,7 +69,9 @@ public class TextGenManager {
       position.setStartLine(position.getStartLine() + topLength);
       position.setEndLine(position.getEndLine() + topLength);
     }
-    return new TextGenerationResult(buffer.getText(), buffer.hasErrors(), positions);
+    List<String> dependencies = getUserObjectCollection(DEPENDENCY, node, buffer);
+    List<String> extend = getUserObjectCollection(EXTENDS, node, buffer);
+    return new TextGenerationResult(buffer.getText(), buffer.hasErrors(), positions, dependencies, extend);
   }
 
   public boolean canGenerateTextFor(SNode node) {
@@ -102,7 +111,7 @@ public class TextGenManager {
 
       info.setEndLine(buffer.getLineNumber());
       info.setEndPosition(buffer.getPosition());
-      
+
       if (DebugInfo.isNodeSutable(node)) {
         positions.put(node, info);
       }
@@ -143,15 +152,40 @@ public class TextGenManager {
     return result;
   }
 
+  private List<String> getUserObjectCollection(String key, SNode node, TextGenBuffer buffer) {
+    Object dependenciesObject = buffer.getUserObject(key);
+    List<String> dependencies = new ArrayList<String>();
+    if (dependenciesObject != null) {
+      for (Object dependObj : (SetSequence) dependenciesObject) {
+        if (dependObj == null) {
+          continue;
+        }
+        if (NameUtil.nodeFQName(node).equals(dependObj)) {
+          continue;
+        }
+        dependencies.add((String) dependObj);
+      }
+    }
+    return dependencies;
+  }
+
   public static class TextGenerationResult {
     private String myText;
     private boolean myContainErrors;
-    private Map<SNode, PositionInfo> myPositions;
+    private HashMap<SNode, PositionInfo> myPositions;
+    private Map<String, String> myDependencies = new HashMap<String, String>();
 
-    private TextGenerationResult(String text, boolean containErrors, Map<SNode, PositionInfo> positions) {
+    private TextGenerationResult(String text, boolean containErrors, HashMap<SNode, PositionInfo> positions,
+                                 List<String> dependencies, List<String> extend) {
       myText = text;
       myContainErrors = containErrors;
       myPositions = positions;
+      for (String s : dependencies) {
+        myDependencies.put(s, DEPENDENCY);
+      }
+      for (String s : extend) {
+        myDependencies.put(s, EXTENDS);
+      }
     }
 
     public String getText() {
@@ -165,5 +199,9 @@ public class TextGenManager {
     public Map<SNode, PositionInfo> getPositions() {
       return myPositions;
     }
+
+    public Map<String, String> getDependencies() {
+      return myDependencies;
   }
+}
 }

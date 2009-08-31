@@ -18,85 +18,84 @@ public class ControlStatementDemo {
   public static void bar(int howMany, _UnrestrictedFunctionTypes._void_terminate_P0_E0<? extends Integer> cls) {
     System.out.println("bar> entering");
     int _tmp_1232368702826 = 0;
-    for(Result<? extends Integer, ?> __result__ = cls.invokeUnrestricted() ;  ; ) {
+    {
+      Result<? extends Integer, ?> __result__ = cls.invokeUnrestricted();
       switch (__result__.getOutcome()) {
         case RETURN_VALUE:
           //  fall through
         case RETURN_VOID:
-          //  fall through
-        case BREAK:
           return;
+        case BREAK:
+          break;
         case TERMINATE_VALUE:
           _tmp_1232368702826 = __result__.terminateInt();
           break;
         default:
           break;
       }
-      break;
     }
     System.out.println("bar> i=" + _tmp_1232368702826);
     System.out.println("bar> leaving");
   }
 
   public static void withLock(Object lock, _UnrestrictedFunctionTypes._void_void_P0_E0 block) {
-    synchronized(lock) {
-      for(Result<?, ?> __result__ = block.invokeUnrestricted() ;  ; ) {
+    synchronized (lock) {
+      {
+        Result<?, ?> __result__ = block.invokeUnrestricted();
         switch (__result__.getOutcome()) {
           case RETURN_VALUE:
             //  fall through
           case RETURN_VOID:
-            //  fall through
-          case BREAK:
             return;
+          case BREAK:
+            break;
           case TERMINATE_VOID:
             break;
           default:
             break;
         }
-        break;
       }
     }
   }
 
   public static void async(final _UnrestrictedFunctionTypes._void_void_P0_E0 block) {
     new Thread() {
-
       public void run() {
-        for(Result<?, ?> __result__ = block.invokeUnrestricted() ;  ; ) {
+        {
+          Result<?, ?> __result__ = block.invokeUnrestricted();
           switch (__result__.getOutcome()) {
             case RETURN_VALUE:
               //  fall through
             case RETURN_VOID:
-              //  fall through
-            case BREAK:
               return;
+            case BREAK:
+              break;
             case TERMINATE_VOID:
               break;
             default:
               break;
           }
-          break;
         }
       }
     }.start();
   }
 
   public static void forEachEntry(Map<String, Integer> map, _UnrestrictedFunctionTypes._void_void_P2_E0<? super String, ? super Integer> block) {
-    for(IMapping<String, Integer> e : MapSequence.fromMap(map)) {
-      for(Result<?, ?> __result__ = block.invokeUnrestricted(e.key(), e.value()) ;  ; ) {
+    for (IMapping<String, Integer> e : MapSequence.fromMap(map)) {
+      {
+        Result<?, ?> __result__ = block.invokeUnrestricted(e.key(), e.value());
         switch (__result__.getOutcome()) {
           case RETURN_VALUE:
             //  fall through
           case RETURN_VOID:
-            //  fall through
-          case BREAK:
             return;
+          case BREAK:
+            break;
           case TERMINATE_VOID:
             break;
           default:
             break;
         }
-        break;
       }
     }
   }
@@ -105,15 +104,12 @@ public class ControlStatementDemo {
     System.out.println("foo> entering");
     {
       _UnrestrictedClosures._void_void_P0_E0 __closure__ = new _UnrestrictedClosures._void_void_P0_E0(new _UnrestrictedFunctionTypes._void_void_P0_E0() {
-
         public Result<Object, Object> invokeUnrestricted() {
           {
             _UnrestrictedClosures._void_void_P0_E0 __closure__ = new _UnrestrictedClosures._void_void_P0_E0(new _UnrestrictedFunctionTypes._void_void_P0_E0() {
-
               public Result<Object, Object> invokeUnrestricted() {
                 {
                   _UnrestrictedClosures._void_void_P0_E0 __closure__ = new _UnrestrictedClosures._void_void_P0_E0(new _UnrestrictedFunctionTypes._void_void_P0_E0() {
-
                     public Result<Object, Object> invokeUnrestricted() {
                       System.out.println("async> Owning the monitor");
                       LOCK[0] = true;
@@ -157,7 +153,6 @@ label3691_0:
     while (true) {
       {
         _UnrestrictedClosures._void_void_P0_E0 __closure__ = new _UnrestrictedClosures._void_void_P0_E0(new _UnrestrictedFunctionTypes._void_void_P0_E0() {
-
           public Result<Object, Object> invokeUnrestricted() {
             if (LOCK[0]) {
               System.out.println("sync> Notifying");
@@ -182,8 +177,7 @@ label3691_0:
       }
     }
     {
-      _UnrestrictedClosures._void_terminate_P0_E0<Integer> __closure__ = new _UnrestrictedClosures._void_terminate_P0_E0<Integer>(new _UnrestrictedFunctionTypes._return_terminate_P0_E0 <Integer, Integer>() {
-
+      _UnrestrictedClosures._void_terminate_P0_E0<Integer> __closure__ = new _UnrestrictedClosures._void_terminate_P0_E0<Integer>(new _UnrestrictedFunctionTypes._return_terminate_P0_E0<Integer, Integer>() {
         public Result<Integer, Integer> invokeUnrestricted() {
           if (false) {
             return Result.RETURN(1);
@@ -201,8 +195,7 @@ label3691_0:
       }
     }
     {
-      _UnrestrictedClosures._void_terminate_P0_E0<Integer> __closure__ = new _UnrestrictedClosures._void_terminate_P0_E0<Integer>(new _UnrestrictedFunctionTypes._return_terminate_P0_E0 <Integer, Integer>() {
-
+      _UnrestrictedClosures._void_terminate_P0_E0<Integer> __closure__ = new _UnrestrictedClosures._void_terminate_P0_E0<Integer>(new _UnrestrictedFunctionTypes._return_terminate_P0_E0<Integer, Integer>() {
         public Result<Integer, Integer> invokeUnrestricted() {
           if (false) {
             return Result.RETURN(2);
@@ -221,8 +214,7 @@ label3691_0:
     }
     Map<String, Integer> map = MapSequence.<String, Integer>fromKeysArray("a", "b", "c").withValues(1, 2, 3);
     {
-      _UnrestrictedClosures._void_void_P2_E0 __closure__ = new _UnrestrictedClosures._void_void_P2_E0(new _UnrestrictedFunctionTypes._void_void_P2_E0 <String, Integer>() {
-
+      _UnrestrictedClosures._void_void_P2_E0 __closure__ = new _UnrestrictedClosures._void_void_P2_E0(new _UnrestrictedFunctionTypes._void_void_P2_E0<String, Integer>() {
         public Result<Object, Object> invokeUnrestricted(String k, Integer v) {
           System.out.println(k + "=>" + v);
           return Result.TERMINATE_VOID();
@@ -245,5 +237,4 @@ label3691_0:
     System.out.println("main> res = " + res);
     System.out.println("main> finishing up");
   }
-
 }
