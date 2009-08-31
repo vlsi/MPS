@@ -49,9 +49,9 @@ import jetbrains.mps.ide.IdeMain;
 import jetbrains.mps.ide.IdeMain.TestMode;
 import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.ide.actions.*;
-import jetbrains.mps.ide.projectPane.ProjectPane.MyState;
 import jetbrains.mps.ide.projectPane.ProjectLanguageTreeNode.AccessoriesModelTreeNode;
 import jetbrains.mps.ide.projectPane.ProjectLanguageTreeNode.RuntimeModulesTreeNode;
+import jetbrains.mps.ide.projectPane.ProjectPane.MyState;
 import jetbrains.mps.ide.ui.MPSTree;
 import jetbrains.mps.ide.ui.MPSTree.TreeState;
 import jetbrains.mps.ide.ui.MPSTreeNode;
@@ -431,7 +431,8 @@ public class ProjectPane extends AbstractProjectViewPane implements PersistentSt
   }
 
   public int getSelectionSize() {
-    return getSelectionPaths().length;
+    TreePath[] selection = getSelectionPaths();
+    return selection == null ? 0 : selection.length;
   }
 
   private ActionPlace getPlace() {
@@ -766,6 +767,8 @@ public class ProjectPane extends AbstractProjectViewPane implements PersistentSt
 
   private <T extends TreeNode> List<T> getSelectedTreeNodes(Class<T> nodeClass) {
     TreePath[] selectionPaths = getTree().getSelectionPaths();
+    if (selectionPaths == null) return new ArrayList<T>();
+
     List<T> selectedTreeNodes = new ArrayList<T>(selectionPaths.length);
 
     for (TreePath selectionPath : selectionPaths) {
@@ -783,7 +786,7 @@ public class ProjectPane extends AbstractProjectViewPane implements PersistentSt
     ProjectModuleTreeNode result = findModuleTreeNodeInProject(module);
     if (result != null) return result;
 
-    if (!myModulesPool.isInitialized()){
+    if (!myModulesPool.isInitialized()) {
       myModulesPool.init();
     }
 
@@ -922,7 +925,7 @@ public class ProjectPane extends AbstractProjectViewPane implements PersistentSt
     }
   }
 
-  private static class ModelInModuleCondition extends ModelEverywhereCondition{
+  private static class ModelInModuleCondition extends ModelEverywhereCondition {
     public boolean met(MPSTreeNode node) {
       if (!super.met(node)) return false;
 
