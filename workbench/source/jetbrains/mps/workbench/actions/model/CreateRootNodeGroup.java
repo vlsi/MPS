@@ -61,7 +61,7 @@ public class CreateRootNodeGroup extends BaseGroup {
   public void doUpdate(AnActionEvent event) {
     removeAll();
 
-    SModelDescriptor modelDescriptor = MPSDataKeys.MODEL.getData(event.getDataContext());
+    SModelDescriptor modelDescriptor = MPSDataKeys.CONTEXT_MODEL.getData(event.getDataContext());
     if (modelDescriptor == null) {
       setEnabledState(event.getPresentation(), false);
       return;
