@@ -66,9 +66,9 @@ import java.io.File;
 import java.util.*;
 
 public class Generator {
-  private final BaseGenerationType myGenerationType = getGenerationType();
+  protected final BaseGenerationType myGenerationType;
   private final MyMessageHandler myMessageHandler = new MyMessageHandler();
-  private final WhatToGenerate myWhatToGenerate;
+  protected final WhatToGenerate myWhatToGenerate;
   private final AntLogger myLogger;
   private final List<String> myErrors = new ArrayList<String>();
   private final List<String> myWarnings = new ArrayList<String>();
@@ -87,13 +87,13 @@ public class Generator {
   }
 
   public Generator(WhatToGenerate whatToGenerate, ProjectComponent component) {
-    myWhatToGenerate = whatToGenerate;
-    myLogger = new ProjectComponentLogger(component);
+    this(whatToGenerate, new ProjectComponentLogger(component));
   }
 
   public Generator(WhatToGenerate whatToGenerate, AntLogger logger) {
     myWhatToGenerate = whatToGenerate;
     myLogger = logger;
+    myGenerationType = getGenerationType();
   }
 
   public void generate() {
@@ -286,7 +286,7 @@ public class Generator {
     }
   }
 
-  private void showStatistic() {
+  protected void showStatistic() {
     if (!myErrors.isEmpty() && myWhatToGenerate.getFailOnError()) {
       StringBuffer sb = new StringBuffer();
       sb.append(myErrors.size());
@@ -455,7 +455,7 @@ public class Generator {
     }
   }
 
-  private static BaseGenerationType getGenerationType() {
+  protected BaseGenerationType getGenerationType() {
     return new GenerateFilesGenerationType();
   }
 

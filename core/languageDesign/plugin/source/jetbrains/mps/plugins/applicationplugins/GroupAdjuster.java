@@ -8,6 +8,8 @@ import com.intellij.openapi.project.ProjectManager;
 import com.intellij.openapi.wm.ex.WindowManagerEx;
 import com.intellij.openapi.wm.impl.IdeFrameImpl;
 import jetbrains.mps.ide.projectPane.ProjectPane;
+import jetbrains.mps.ide.IdeMain;
+import jetbrains.mps.ide.IdeMain.TestMode;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.util.Condition;
 import jetbrains.mps.workbench.ActionPlace;
@@ -61,6 +63,7 @@ public class GroupAdjuster {
 
 
   public static void refreshCustomizations() {
+    if (!IdeMain.getTestMode().equals(TestMode.NO_TEST)) return;
     SwingUtilities.invokeLater(new Runnable() {
       public void run() {
         CustomActionsSchema schema = CustomActionsSchema.getInstance();

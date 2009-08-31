@@ -43,7 +43,7 @@ import jetbrains.mps.logging.Logger;
 
 public class GenerateTask extends org.apache.tools.ant.Task {
   private File myMpsHome;
-  private final WhatToGenerate myWhatToGenerate = new WhatToGenerate();
+  protected final WhatToGenerate myWhatToGenerate = new WhatToGenerate();
   private boolean myUsePropertiesAsMacro = false;
   private boolean myFork = false;
   private final List<String> myJvmArgs = new ArrayList<String>();

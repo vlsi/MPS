@@ -22,8 +22,6 @@ import java.util.*;
 import java.lang.reflect.Method;
 import java.lang.reflect.InvocationTargetException;
 
-import com.intellij.util.containers.ConcurrentSoftHashMap;
-
 public class WhatToGenerate {
   private final Set<File> myModelDirectories = new LinkedHashSet<File>();
   private final Set<File> myModuleDirectories = new LinkedHashSet<File>();
@@ -32,6 +30,7 @@ public class WhatToGenerate {
   private final Map<String, File> myLibraries = new LinkedHashMap<String, File>();
   private final Map<String, String> myMacro = new LinkedHashMap<String, String>();
   private int myLogLevel = org.apache.tools.ant.Project.MSG_INFO;
+  private boolean myShowDiff;
   private static final String MODEL_DIR = "MODEL_DIR";
   private static final String MODULE_DIR = "MODULE_DIR";
   private static final String MPS_PROJECT = "MPS_PROJECT";
@@ -39,7 +38,15 @@ public class WhatToGenerate {
   private static final String MPS_MACRO = "MPS_MACRO";
   private static final String FAIL_ON_ERROR = "FAIL_ON_ERROR";
   private static final String LOG_LEVEL = "LOG_LEVEL";
+  private static final String SHOW_DIFF = "SHOW_DIFF";
 
+  public void updateShowDiff(boolean isDifferenceCalculated) {
+    myShowDiff = isDifferenceCalculated;
+  }
+
+  public boolean getShowDiff() {
+    return myShowDiff;
+  }
   public void addModuleDirectory(File dir) {
     assert dir.exists() && dir.isDirectory();
     myModuleDirectories.add(dir);
@@ -189,6 +196,11 @@ public class WhatToGenerate {
     sb.append(LOG_LEVEL);
     sb.append("=");
     sb.append(myLogLevel);
+    sb.append(" ");
+
+    sb.append(SHOW_DIFF);
+    sb.append("=");
+    sb.append(myShowDiff);
 
     return sb.toString();
   }
@@ -215,6 +227,8 @@ public class WhatToGenerate {
           whatToGenerate.myFailOnError = Boolean.parseBoolean(propertyValuePair[1]);
         } else if (propertyValuePair[0].equals(LOG_LEVEL)){
           whatToGenerate.myLogLevel = Integer.parseInt(propertyValuePair[1]);          
+        } else if (propertyValuePair[0].equals(SHOW_DIFF)){
+          whatToGenerate.myShowDiff = Boolean.parseBoolean(propertyValuePair[1]);          
         }
       }
     }

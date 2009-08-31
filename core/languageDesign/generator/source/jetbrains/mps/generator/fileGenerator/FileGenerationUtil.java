@@ -35,6 +35,7 @@ import jetbrains.mps.vcs.MPSVCSManager;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.VFileSystem;
 import jetbrains.mps.util.NameUtil;
+import jetbrains.mps.ide.IdeMain;
 
 import java.io.File;
 import java.io.IOException;
@@ -80,15 +81,17 @@ public class FileGenerationUtil {
   }
 
   private static void refreshGeneratedFiles(final Set<File> generatedFiles) {
-    ApplicationManager.getApplication().invokeLater(new Runnable() {
-      public void run() {
-        for (File f : generatedFiles) {
-          VirtualFile file = VFileSystem.refreshAndGetFile(f);
-          if (file == null) continue;
-          file.refresh(true, true);
+    if (IdeMain.getTestMode().equals(IdeMain.TestMode.NO_TEST)) {
+      ApplicationManager.getApplication().invokeLater(new Runnable() {
+        public void run() {
+          for (File f : generatedFiles) {
+            VirtualFile file = VFileSystem.refreshAndGetFile(f);
+            if (file == null) continue;
+            file.refresh(true, true);
+          }
         }
-      }
-    }, ModalityState.NON_MODAL);
+      }, ModalityState.NON_MODAL);
+    }
   }
 
   public static File getDefaultOutputDir(SModelDescriptor inputModelDescriptor, File outputRootDir) {
@@ -123,7 +126,7 @@ public class FileGenerationUtil {
       } finally {
         TextGenManager.reset();
       }
-    }    
+    }
     return !hasErrors;
   }
 
@@ -141,7 +144,7 @@ public class FileGenerationUtil {
         positionInfo.setFileName(outputNode.getName() + ".java");
         info.addPosition(positionInfo);
       }
-    }    
+    }
   }
 
   private static void fillDependencies(DependenciesRoot root, SNode outputNode, TextGenerationResult result) {
@@ -151,7 +154,7 @@ public class FileGenerationUtil {
     }
     SNode input = outputNode;
     while (input != null && (input.getModel().getModelDescriptor() == null || input.getModel().getModelDescriptor().isTransient())) {
-        input = (SNode) input.getUserObject(TemplateQueryContext.ORIGINAL_INPUT_NODE);
+      input = (SNode) input.getUserObject(TemplateQueryContext.ORIGINAL_INPUT_NODE);
     }
     if (input != null) {
       root.setModel(input.getModel());

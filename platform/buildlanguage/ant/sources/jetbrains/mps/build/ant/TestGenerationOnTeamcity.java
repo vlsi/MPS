@@ -1,8 +1,14 @@
 package jetbrains.mps.build.ant;
 
-import java.util.Scanner;
-
 public class TestGenerationOnTeamcity extends GenerateTask {
+
+  public boolean getShowDiff() {
+    return myWhatToGenerate.getShowDiff();
+  }
+
+  public void setShowDiff(boolean isDifferenceCalculated) {
+    myWhatToGenerate.updateShowDiff(isDifferenceCalculated);
+  }
 
   @Override
   protected Class<? extends Generator> getGeneratorClass() {

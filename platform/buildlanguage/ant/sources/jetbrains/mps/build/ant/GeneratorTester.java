@@ -2,8 +2,15 @@ package jetbrains.mps.build.ant;
 
 import org.apache.tools.ant.ProjectComponent;
 import jetbrains.mps.project.IModule;
+import jetbrains.mps.project.ProjectTester;
+import jetbrains.mps.project.ProjectTester.EditorGenerateType;
+import jetbrains.mps.generator.generationTypes.BaseGenerationType;
+import jetbrains.mps.smodel.ModelAccess;
 
 import java.util.Set;
+import java.util.List;
+
+import com.intellij.openapi.util.Computable;
 
 public class GeneratorTester extends Generator {
   private String myCurrentTestName;
@@ -52,5 +59,37 @@ public class GeneratorTester extends Generator {
 
   private String escapeMessageForTeamCity(String rawMessage) {
     return rawMessage.replace("|", "||").replace("'", "|'").replace("\n", "|n").replace("\r", "|r").replace("]", "|]");
+  }
+
+  @Override
+  protected BaseGenerationType getGenerationType() {
+    if (myWhatToGenerate.getShowDiff()) {
+      return new EditorGenerateType(true);
+    } else {
+      return super.getGenerationType();
+    }
+  }
+
+  @Override
+  protected void showStatistic() {
+    super.showStatistic();
+    if (myWhatToGenerate.getShowDiff()) {
+      List<String> diffReports = ModelAccess.instance().runReadAction(new Computable<List<String>>() {
+        public List<String> compute() {
+          return ProjectTester.createDiffReports((EditorGenerateType) myGenerationType);
+        }
+      });
+      if (diffReports.isEmpty()) {
+        info("No differences between generated and actual code.");
+      } else {
+        StringBuffer sb = new StringBuffer();
+        sb.append("Difference report:\n");
+        for (String diff : diffReports) {
+          sb.append(diff);
+          sb.append("\n");
+        }
+        info(sb.toString());
+      }
+    }
   }
 }

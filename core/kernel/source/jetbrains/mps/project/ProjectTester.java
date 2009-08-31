@@ -80,16 +80,16 @@ public class ProjectTester {
     return res;
   }
 
-  private String getDiffReportTitle(SNode node, String fileName, boolean added, boolean deleted) {
+  private static String getDiffReportTitle(SNode node, String fileName, boolean added, boolean deleted) {
     return NameUtil.nodeFQName(node) + ((added)? " (created)" : ((deleted)? " (deleted)" : "" )) + "\n"
       + "  (file: " + fileName + ")";
   }
 
-  private String[] getContentAsArray(String content, String separator) {
+  private static String[] getContentAsArray(String content, String separator) {
     return (content != null)? content.split(separator) : new String[0];
   }
 
-  private void addDiffReport(TestComparator comparator, List<String> reports, String title) {
+  private static void addDiffReport(TestComparator comparator, List<String> reports, String title) {
     DiffReport diffReport = comparator.compare();
     if (diffReport.hasDifference()) {
       reports.add(title);
@@ -98,7 +98,7 @@ public class ProjectTester {
     }
   }
 
-  private List<String> createDiffReports(EditorGenerateType genType) {
+  public static List<String> createDiffReports(EditorGenerateType genType) {
     List<String> result = new ArrayList<String>();
     for (SModel outputModel : genType.getOutputModels()) {
       List<String> files = new ArrayList<String>();
@@ -297,7 +297,7 @@ public class ProjectTester {
     return new TestResult(errors, warnings, compilationResults, failedTests, diffReports);
   }
 
-  private class EditorGenerateType extends GenerateFilesAndClassesGenerationType {
+  public static class EditorGenerateType extends GenerateFilesAndClassesGenerationType {
     private Map<String, String> myNodeExtensionMap = new HashMap<String, String>();
     private Map<SModel, String> myOutputModelToPath = new HashMap<SModel, String>();
 
