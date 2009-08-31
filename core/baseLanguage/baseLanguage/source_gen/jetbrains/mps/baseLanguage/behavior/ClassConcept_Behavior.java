@@ -20,7 +20,6 @@ import jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
 
 public class ClassConcept_Behavior {
-  private static Class[] PARAMETERS_4251132777951258658 = {SNode.class};
   private static Class[] PARAMETERS_1240936569950 = {SNode.class};
 
   public static void init(SNode thisNode) {
@@ -72,10 +71,6 @@ public class ClassConcept_Behavior {
     return methods;
   }
 
-  public static boolean virtual_availableAssert_4251132777951258658(SNode thisNode) {
-    return true;
-  }
-
   public static List<SNode> call_getMethodsToOverride_6603209858471717101(SNode thisNode) {
     List<SNode> methods = new ArrayList<SNode>();
     ClassifierAndSuperClassifiersScope scope = new ClassifierAndSuperClassifiersScope(((ClassConcept)SNodeOperations.getAdapter(thisNode)), IClassifiersSearchScope.INSTANCE_METHOD);
@@ -106,16 +101,8 @@ public class ClassConcept_Behavior {
     );
   }
 
-  public static boolean call_availableAssert_4251132777951258658(SNode thisNode) {
-    return (Boolean)BehaviorManager.getInstance().invoke(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.ClassConcept"), "virtual_availableAssert_4251132777951258658", PARAMETERS_4251132777951258658);
-  }
-
   public static SNode call_getSuperclass_1240936569950(SNode thisNode) {
     return (SNode)BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.ClassConcept"), "virtual_getSuperclass_1240936569950", PARAMETERS_1240936569950);
-  }
-
-  public static boolean callSuper_availableAssert_4251132777951258658(SNode thisNode, String callerConceptFqName) {
-    return (Boolean)BehaviorManager.getInstance().invokeSuper(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.ClassConcept"), callerConceptFqName, "virtual_availableAssert_4251132777951258658", PARAMETERS_4251132777951258658);
   }
 
   public static SNode callSuper_getSuperclass_1240936569950(SNode thisNode, String callerConceptFqName) {
