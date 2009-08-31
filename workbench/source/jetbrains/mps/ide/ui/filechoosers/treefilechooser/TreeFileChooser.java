@@ -30,6 +30,9 @@ import org.jetbrains.annotations.Nullable;
 import javax.swing.JComponent;
 import javax.swing.JOptionPane;
 import java.awt.Frame;
+import java.awt.Component;
+import java.util.List;
+import java.util.ArrayList;
 
 public class TreeFileChooser {
   public static final int MODE_FILES = TreeFileChooserDialog.MODE_FILES;
@@ -77,15 +80,35 @@ public class TreeFileChooser {
     ourInitialSelectedFile = file;
   }
 
+  public List<IFile> showMultiSelectionDialog(Component owner){
+    return showDialogInternal(JOptionPane.getFrameForComponent(owner), true);
+  }
+
   @Nullable
   public IFile showDialog(Frame owner) {
+    List<IFile> files = showDialogInternal(owner, false);
+    if (files.isEmpty()) return null;
+    return files.get(0);
+  }
+
+  @Nullable
+  public IFile showDialog(JComponent owner) {
+    return showDialog(JOptionPane.getFrameForComponent(owner));
+  }
+
+  @Nullable
+  public IFile showDialog() {
+    return showDialog((Frame) null);
+  }
+
+  private List<IFile> showDialogInternal(Frame owner,boolean multipleSelection) {
     if (owner == null) owner = JOptionPane.getRootFrame();
     setAdditionalModeFilter(myMode);
 
-    IFile res = null;
+    List<IFile> res = new ArrayList<IFile>();
 
     if (UseIdeaFileChooser.useIdeaFileChooser()) {
-      FileChooserDescriptor descriptor = new FileChooserDescriptor(myMode != MODE_DIRECTORIES, myMode != MODE_FILES, true, true, false, false) {
+      FileChooserDescriptor descriptor = new FileChooserDescriptor(myMode != MODE_DIRECTORIES, myMode != MODE_FILES, true, true, false, multipleSelection) {
         public boolean isFileVisible(VirtualFile file, boolean showHiddenFiles) {
           if (!super.isFileVisible(file, showHiddenFiles)) return false;
           return myFileFilter.accept(new FileSystemFile(file.getPath()));
@@ -97,32 +120,19 @@ public class TreeFileChooser {
       FileChooserDialog dialog = FileChooserFactory.getInstance().createFileChooser(descriptor, owner);
 
       VirtualFile selection = LocalFileSystem.getInstance().findFileByIoFile(ourInitialSelectedFile.toFile());
-      VirtualFile[] files = dialog.choose(selection, null);
-      if (files.length == 0) {
-        res = null;
-      } else {
-        res = new FileSystemFile(files[0].getPath());
+      for (VirtualFile file: dialog.choose(selection, null)){
+        res.add(new FileSystemFile(file.getPath()));
       }
     } else {
       TreeFileChooserDialog dialog = new TreeFileChooserDialog(owner, myMode, myFileFilter, myContext, ourInitialSelectedFile);
       dialog.setVisible(true);
 
       if (!dialog.isCancelled()) {
-        res = dialog.getSelectedFile();
+        res.add(dialog.getSelectedFile());
       }
     }
-    if (res != null) ourInitialSelectedFile = res;
+    if (!res.isEmpty()) ourInitialSelectedFile = res.get(0);
     return res;
-  }
-
-  @Nullable
-  public IFile showDialog(JComponent owner) {
-    return showDialog(JOptionPane.getFrameForComponent(owner));
-  }
-
-  @Nullable
-  public IFile showDialog() {
-    return showDialog((Frame) null);
   }
 
   private void setAdditionalModeFilter(int mode) {
