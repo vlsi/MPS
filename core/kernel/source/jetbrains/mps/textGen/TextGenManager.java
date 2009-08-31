@@ -16,6 +16,7 @@
 package jetbrains.mps.textGen;
 
 import jetbrains.mps.baseLanguage.plugin.PositionInfo;
+import jetbrains.mps.baseLanguage.plugin.DebugInfo;
 import jetbrains.mps.baseLanguage.structure.Statement;
 import jetbrains.mps.lang.structure.structure.ConceptDeclaration;
 import jetbrains.mps.logging.Logger;
@@ -102,7 +103,7 @@ public class TextGenManager {
       info.setEndLine(buffer.getLineNumber());
       info.setEndPosition(buffer.getPosition());
       
-      if (node.isInstanceOfConcept(Statement.concept)) {
+      if (DebugInfo.isNodeSutable(node)) {
         positions.put(node, info);
       }
     } catch (Exception e) {
