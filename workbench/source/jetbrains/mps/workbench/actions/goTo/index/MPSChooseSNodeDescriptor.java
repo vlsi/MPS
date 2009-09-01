@@ -17,9 +17,11 @@ package jetbrains.mps.workbench.actions.goTo.index;
 
 import com.intellij.navigation.NavigationItem;
 import com.intellij.openapi.vfs.VirtualFileFilter;
+import com.intellij.openapi.project.Project;
 import com.intellij.util.Processor;
 import com.intellij.util.indexing.FileBasedIndex;
 import com.intellij.util.indexing.ID;
+import com.intellij.psi.search.EverythingGlobalScope;
 import jetbrains.mps.lang.core.structure.INamedConcept;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.project.MPSProject;
@@ -68,14 +70,14 @@ public class MPSChooseSNodeDescriptor extends BaseMPSChooseModel<SNodeDescriptor
           if (changedModels.contains(s.getModelReference()) || cm.hasGetter(s.getConceptFqName(), INamedConcept.NAME)) {
             hasToLoad.add(s.getModelReference());
           } else {
-            if (!fileBasedIndex.getContainingFiles(indexName, s, VirtualFileFilter.ALL).isEmpty()) {
+            if (!fileBasedIndex.getContainingFiles(indexName, s, new EverythingGlobalScope(getIdeaProject())).isEmpty()) {
               keys.add(s);
             }
           }
         }
         return true;
       }
-    });
+    }, getIdeaProject());
 
     for (SModelReference ref : hasToLoad) {
       SModelDescriptor sm = scope.getModelDescriptor(ref);
@@ -96,6 +98,10 @@ public class MPSChooseSNodeDescriptor extends BaseMPSChooseModel<SNodeDescriptor
     addJavaStubs(keys, scope);
 
     return keys.toArray(new SNodeDescriptor[keys.size()]);
+  }
+
+  private Project getIdeaProject() {
+    return getProject().getComponent(Project.class);
   }
 
   private void addJavaStubs(Set<SNodeDescriptor> result, IScope scope) {

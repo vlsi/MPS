@@ -1,7 +1,21 @@
 <extensions>
     <errorHandler implementation="com.intellij.diagnostic.ITNReporter"/>
     <appStarter implementation="com.intellij.openapi.diff.DiffApplication"/>
+    <!--MPS Patch: search in settings-->
     <appStarter implementation="com.intellij.ide.ui.search.TraverseUIStarter"/>
+    <!--MPS Patch: enable project view-->
+    <projectService serviceInterface="com.intellij.ide.projectView.ProjectView"
+                    serviceImplementation="com.intellij.ide.projectView.impl.ProjectViewImpl"/>
+    <!--MPS Patch: enable project view-->
+    <toolWindow id="Project" anchor="left" icon="/general/toolWindowProject.png"
+                factoryClass="com.intellij.ide.projectView.impl.ProjectViewToolWindowFactory"/>
+    <!--project view tool tabs-->
+    <projectViewPane implementation="jetbrains.mps.ide.projectPane.ProjectPane"/>
+    <projectViewPane implementation="jetbrains.mps.ide.projectPane.fileSystem.BaseDirectoryProjectView"/>
+    <projectViewPane implementation="jetbrains.mps.ide.projectPane.fileSystem.VCSRootsProjectView"/>
+
+    <applicationService serviceInterface="com.intellij.openapi.actionSystem.JBAwtEventQueue"
+                        serviceImplementation="com.intellij.openapi.actionSystem.impl.JBAwtEventQueueImpl"/>
 
     <applicationService serviceInterface="com.intellij.openapi.vfs.tracker.VirtualFileTracker"
                         serviceImplementation="com.intellij.openapi.vfs.tracker.VirtualFileTrackerImpl"/>
@@ -52,6 +66,7 @@
                         serviceImplementation="com.intellij.ui.content.ContentFactoryImpl"/>
     <applicationService serviceInterface="com.intellij.ui.TreeUIHelper"
                         serviceImplementation="com.intellij.ui.TreeUIHelperImpl"/>
+    <!--MPS Patch: our own diff request factory-->
     <applicationService serviceInterface="com.intellij.openapi.diff.DiffRequestFactory"
                         serviceImplementation="jetbrains.mps.vcs.diff.MPSDiffRequestFactory"/>
     <applicationService serviceInterface="com.intellij.ui.SystemNotifications"
@@ -80,6 +95,13 @@
                         serviceImplementation="com.intellij.history.LocalHistoryConfiguration"/>
     <applicationService serviceInterface="com.intellij.openapi.updateSettings.impl.UpdateSettings"
                         serviceImplementation="com.intellij.openapi.updateSettings.impl.UpdateSettings"/>
+    <applicationService serviceInterface="com.intellij.featureStatistics.FeatureUsageTracker"
+                        serviceImplementation="com.intellij.featureStatistics.FeatureUsageTrackerImpl"/>
+    <applicationService serviceInterface="com.intellij.featureStatistics.ProductivityFeaturesRegistry"
+                        serviceImplementation="com.intellij.featureStatistics.ProductivityFeaturesRegistryImpl"/>
+    <!--MPS Patch: do not know why this is commented out-->
+    <!--<applicationService serviceInterface="com.intellij.util.InstanceofCheckerGenerator"
+                        serviceImplementation="com.intellij.util.InstanceofCheckerGeneratorImpl"/>-->
 
     <projectService serviceInterface="com.intellij.openapi.vfs.ReadonlyStatusHandler"
                     serviceImplementation="com.intellij.openapi.vcs.readOnlyHandler.ReadonlyStatusHandlerImpl"/>
@@ -97,6 +119,23 @@
                     serviceImplementation="com.intellij.ide.impl.SelectInEditorManagerImpl"/>
     <projectService serviceInterface="com.intellij.ui.RecentsManager"
                     serviceImplementation="com.intellij.ui.RecentsManager"/>
+    <projectService serviceInterface="com.intellij.ui.content.MessageView"
+                    serviceImplementation="com.intellij.ui.content.impl.MessageViewImpl"/>
+
+    <projectService serviceInterface="com.intellij.ui.FileColorManager"
+                    serviceImplementation="com.intellij.ui.tabs.FileColorManagerImpl"/>
+
+    <projectService serviceInterface="com.intellij.ui.tabs.FileColorSharedConfigurationManager"
+                    serviceImplementation="com.intellij.ui.tabs.FileColorSharedConfigurationManager"/>
+
+    <projectService serviceInterface="com.intellij.openapi.project.DumbService"
+                    serviceImplementation="com.intellij.openapi.project.DumbServiceImpl"/>
+
+    <projectService serviceInterface="com.intellij.openapi.vcs.impl.projectlevelman.AllVcsesI"
+                    serviceImplementation="com.intellij.openapi.vcs.impl.projectlevelman.AllVcses"/>
+
+    <projectService serviceInterface="com.intellij.openapi.vcs.changes.RemoteRevisionsCache"
+                    serviceImplementation="com.intellij.openapi.vcs.changes.RemoteRevisionsCache"/>
 
     <!-- General -->
     <applicationConfigurable implementation="com.intellij.ide.GeneralSettingsConfigurable"/>
@@ -113,31 +152,42 @@
     <!-- Web Browser-->
     <applicationConfigurable implementation="com.intellij.ide.BrowserSettings"/>
 
+    <!--MPS Patch: MPS application vcs settings-->
     <!--Vcs Ide Settings-->
     <applicationConfigurable implementation="jetbrains.mps.vcs.ui.VcsSettingsConfigurable"/>
+
+    <!--MPS Patch: was not in previos versions of MPS redactions of this file, but was in idea sources-->
+    <!-- Notifications -->
+    <!--<applicationConfigurable implementation="com.intellij.notification.impl.NotificationsConfigurable"/>-->
 
     <!-- Plugins -->
     <applicationConfigurable implementation="com.intellij.ide.plugins.PluginManagerConfigurable"/>
 
+    <!--MPS Patch: remove updates tab-->
     <!--
     <applicationConfigurable implementation="com.intellij.util.net.HttpConfigurable"/>
     <applicationConfigurable implementation="com.intellij.openapi.diff.impl.external.DiffOptionsForm"/>
     -->
 
     <fileTypeFactory implementation="com.intellij.openapi.fileTypes.impl.PlatformFileTypeFactory"/>
+    <!--MPS Patch: file factory for MPS file types-->
     <fileTypeFactory implementation="jetbrains.mps.fileTypes.MPSFileTypeFactory"/>
     <applicationService serviceInterface="com.intellij.openapi.options.colors.ColorSettingsPages"
                         serviceImplementation="com.intellij.openapi.options.colors.pages.ColorSettingsPagesImpl"/>
 
-    <!-- Scopes
-    <projectConfigurable implementation="com.intellij.ide.util.scopeChooser.ScopeChooserConfigurable"/>
-     -->
+    <applicationConfigurable implementation="com.intellij.openapi.updateSettings.impl.UpdateSettingsConfigurable"/>
 
     <applicationService serviceInterface="com.intellij.psi.search.scope.packageSet.PackageSetFactory"
                         serviceImplementation="com.intellij.psi.search.scope.packageSet.PackageSetFactoryImpl"/>
     <scopeParserExtension implementation="com.intellij.psi.search.scope.packageSet.FilePackageSetParserExtension"/>
     <applicationService serviceInterface="com.intellij.openapi.ui.popup.StackingPopupDispatcher"
                         serviceImplementation="com.intellij.ui.popup.StackingPopupDispatcherImpl"/>
+    <applicationService serviceInterface="com.intellij.cvsSupport2.connections.ssh.SshConnectionPool"
+                        serviceImplementation="com.intellij.cvsSupport2.connections.ssh.SshConnectionPool"/>
+    <applicationService serviceInterface="com.intellij.cvsSupport2.connections.ssh.EmptyPool"
+                        serviceImplementation="com.intellij.cvsSupport2.connections.ssh.EmptyPool"/>
+    <applicationService serviceInterface="com.intellij.cvsSupport2.connections.ssh.SocksAuthenticatorManager"
+                        serviceImplementation="com.intellij.cvsSupport2.connections.ssh.SocksAuthenticatorManager"/>
 
     <fileEditorProvider implementation="com.intellij.openapi.fileEditor.impl.http.HttpFileEditorProvider"/>
     <componentConfigurationMerger
@@ -148,24 +198,6 @@
     <ComponentRoamingType component="PropertiesComponent" type="DISABLED"/>
 
     <progressFunComponentProvider implementation="com.intellij.featureStatistics.ProgressFunProvider"/>
-
-    <applicationService serviceInterface="com.intellij.featureStatistics.FeatureUsageTracker"
-                        serviceImplementation="com.intellij.featureStatistics.FeatureUsageTrackerImpl"/>
-    <applicationService serviceInterface="com.intellij.featureStatistics.ProductivityFeaturesRegistry"
-                        serviceImplementation="com.intellij.featureStatistics.ProductivityFeaturesRegistryImpl"/>
-    <!--<applicationService serviceInterface="com.intellij.util.InstanceofCheckerGenerator"-->
-    <!--serviceImplementation="com.intellij.util.InstanceofCheckerGeneratorImpl"/>-->
-
-
-    <projectService serviceInterface="com.intellij.ui.content.MessageView"
-                    serviceImplementation="com.intellij.ui.content.impl.MessageViewImpl"/>
-
-    <applicationConfigurable implementation="com.intellij.openapi.updateSettings.impl.UpdateSettingsConfigurable"/>
-
-    <!--service required for FileTypeConfigurable-->
-    <applicationService serviceInterface="com.intellij.psi.templateLanguages.TemplateDataLanguagePatterns"
-                        serviceImplementation="com.intellij.psi.templateLanguages.TemplateDataLanguagePatterns"/>
-
-    <syntaxHighlighter factoryClass="com.intellij.openapi.fileTypes.LanguageFileTypeHighlighterProvider"/>    
-
+    <projectConfigurable implementation="com.intellij.javaee.ExternalResourceConfigurable"/>
+    <!-- <checkinHandlerFactory implementation="com.intellij.openapi.vcs.CheckRemoteStatusCheckinHandlerFactory"/> -->
 </extensions>

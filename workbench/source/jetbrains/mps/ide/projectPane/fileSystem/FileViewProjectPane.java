@@ -169,6 +169,9 @@ public abstract class FileViewProjectPane extends AbstractProjectViewPane implem
     myFileListener = new FileChangesListener();
     myVirtualFileManagerListener = new RefreshListener();
     myChangeListListener = new ChangeListUpdateListener();
+
+    initComponent();
+    projectOpened();
   }
 
   protected abstract MPSTreeNode createRoot(Project project);
@@ -202,16 +205,18 @@ public abstract class FileViewProjectPane extends AbstractProjectViewPane implem
     GlobalClassPathIndex.getInstance().addListener(myExclusionListener);
   }
 
-  public MPSTree getTree() {
-    return (MPSTree) myTree;
+  public void projectOpened() {
+    rebuildTreeLater();
+    StartupManager.getInstance(myProject).registerPostStartupActivity(new Runnable() {
+      public void run() {
+        myProjectView.addProjectPane(FileViewProjectPane.this);
+      }
+    });
   }
 
-  public Project getProject() {
-    return myProject;
-  }
-
-  public ProjectView getProjectView() {
-    return myProjectView;
+  public void dispose() {
+    disposeComponent();
+    //if this method is not overridden, myTree is set to null on every change
   }
 
   public void disposeComponent() {
@@ -223,6 +228,18 @@ public abstract class FileViewProjectPane extends AbstractProjectViewPane implem
     GlobalSModelEventsManager.getInstance().removeGlobalModelListener(myGlobalSModelListener);
     myMessageBusConnection.disconnect();
     GlobalClassPathIndex.getInstance().removeListener(myExclusionListener);
+  }
+
+  public MPSTree getTree() {
+    return (MPSTree) myTree;
+  }
+
+  public Project getProject() {
+    return myProject;
+  }
+
+  public ProjectView getProjectView() {
+    return myProjectView;
   }
 
   private void rebuildTreeLater() {
@@ -247,18 +264,6 @@ public abstract class FileViewProjectPane extends AbstractProjectViewPane implem
 
   public void select(Object element, VirtualFile file, boolean requestFocus) {
     selectNode(file, false);
-  }
-
-  public void projectOpened() {
-    rebuildTreeLater();
-    StartupManager.getInstance(myProject).registerPostStartupActivity(new Runnable() {
-      public void run() {
-        myProjectView.addProjectPane(FileViewProjectPane.this);
-      }
-    });
-  }
-
-  public void projectClosed() {
   }
 
   public Object getData(String dataId) {
@@ -372,10 +377,6 @@ public abstract class FileViewProjectPane extends AbstractProjectViewPane implem
     }
 
     return null;
-  }
-
-  public void dispose() {
-    //if this method is not overridden, myTree is set to null on every change
   }
 
   public SelectInTarget createSelectInTarget() {

@@ -1,24 +1,10 @@
-/*
- * Copyright 2003-2009 JetBrains s.r.o.
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- * http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
 package com.intellij.openapi.vcs.history;
 
 import com.intellij.history.LocalHistory;
 import com.intellij.history.LocalHistoryAction;
 import com.intellij.openapi.actionSystem.*;
 import com.intellij.openapi.application.ApplicationManager;
+import com.intellij.openapi.application.Application;
 import com.intellij.openapi.command.CommandProcessor;
 import com.intellij.openapi.diagnostic.Logger;
 import com.intellij.openapi.diff.*;
@@ -28,12 +14,17 @@ import com.intellij.openapi.fileEditor.FileDocumentManager;
 import com.intellij.openapi.fileEditor.impl.LoadTextUtil;
 import com.intellij.openapi.fileTypes.FileType;
 import com.intellij.openapi.progress.ProcessCanceledException;
+import com.intellij.openapi.progress.ProgressIndicator;
+import com.intellij.openapi.progress.ProgressManager;
+import com.intellij.openapi.progress.Task;
+import com.intellij.openapi.project.DumbAware;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.ui.Messages;
 import com.intellij.openapi.ui.PanelWithActionsAndCloseButton;
 import com.intellij.openapi.ui.Splitter;
 import com.intellij.openapi.util.Comparing;
 import com.intellij.openapi.util.IconLoader;
+import com.intellij.openapi.util.Ref;
 import com.intellij.openapi.util.text.StringUtil;
 import com.intellij.openapi.vcs.*;
 import com.intellij.openapi.vcs.annotate.AnnotationProvider;
@@ -43,6 +34,9 @@ import com.intellij.openapi.vcs.changes.actions.CreatePatchFromChangesAction;
 import com.intellij.openapi.vcs.changes.issueLinks.IssueLinkHtmlRenderer;
 import com.intellij.openapi.vcs.changes.issueLinks.IssueLinkRenderer;
 import com.intellij.openapi.vcs.changes.issueLinks.TableLinkMouseListener;
+import com.intellij.openapi.vcs.impl.BackgroundableActionEnabledHandler;
+import com.intellij.openapi.vcs.impl.ProjectLevelVcsManagerImpl;
+import com.intellij.openapi.vcs.impl.VcsBackgroundableActions;
 import com.intellij.openapi.vcs.ui.ReplaceFileConfirmationDialog;
 import com.intellij.openapi.vcs.versionBrowser.ChangeBrowserSettings;
 import com.intellij.openapi.vcs.versionBrowser.CommittedChangeList;
@@ -50,8 +44,6 @@ import com.intellij.openapi.vcs.vfs.VcsFileSystem;
 import com.intellij.openapi.vcs.vfs.VcsVirtualFile;
 import com.intellij.openapi.vfs.ReadonlyStatusHandler;
 import com.intellij.openapi.vfs.VirtualFile;
-import com.intellij.openapi.vfs.newvfs.RefreshSession;
-import com.intellij.openapi.vfs.newvfs.RefreshQueue;
 import com.intellij.ui.BrowserHyperlinkListener;
 import com.intellij.ui.ColoredTableCellRenderer;
 import com.intellij.ui.PopupHandler;
@@ -100,8 +92,9 @@ import java.util.List;
 import jetbrains.mps.util.annotation.Patch;
 
 /**
- * This file was added in order to fix http://jetbrains.net/jira/browse/IDEA-22299
+ * This file was added to idea-patch in order to fix http://jetbrains.net/jira/browse/IDEA-22299
  * TODO remove, when issue would be fixed
+ * author: lesya
  */
 public class FileHistoryPanelImpl<S extends CommittedChangeList, U extends ChangeBrowserSettings> extends PanelWithActionsAndCloseButton implements FileHistoryPanel {
   private static final Logger LOG = Logger.getInstance("#com.intellij.cvsSupport2.ui.FileHistoryDialog");
@@ -125,6 +118,8 @@ public class FileHistoryPanelImpl<S extends CommittedChangeList, U extends Chang
   private final String myRepositoryPath;
 
   private static final String COMMIT_MESSAGE_TITLE = VcsBundle.message("label.selected.revision.commit.message");
+  @NonNls
+  private static final String VCS_HISTORY_ACTIONS_GROUP = "VcsHistoryActionsGroup";
 
   private static final DualViewColumnInfo REVISION =
     new VcsColumnInfo<VcsRevisionNumber>(VcsBundle.message("column.name.revision.version")) {
@@ -170,6 +165,7 @@ public class FileHistoryPanelImpl<S extends CommittedChangeList, U extends Chang
       return "author_author";
     }
   };
+
 
   private static class MessageRenderer extends ColoredTableCellRenderer {
     private final IssueLinkRenderer myIssueLinkRenderer;
@@ -297,25 +293,22 @@ public class FileHistoryPanelImpl<S extends CommittedChangeList, U extends Chang
         myUpdateAlarm.addRequest(this, 10000);
 
         if (refresh) {
-          final VcsHistorySession session;
-          try {
-            session = getHistoryProvider().createSessionFor(myFilePath);
-          }
-          catch (VcsException e) {
-            LOG.info(e);
-            return;
-          }
-          if (session != null) {
-            if (myHistorySession.allowAsyncRefresh()) {
-              SwingUtilities.invokeLater(new Runnable() {
-                public void run() {
+          createSession(new Consumer<VcsHistorySession>() {
+            public void consume(final VcsHistorySession session) {
+              if (session != null) {
+                if (myHistorySession.allowAsyncRefresh()) {
+                  SwingUtilities.invokeLater(new Runnable() {
+                    public void run() {
+                      refresh(session);
+                    }
+                  });
+                } else {
                   refresh(session);
                 }
-              });
-            } else {
-              refresh(session);
+              }
             }
-          }
+          });
+
         }
       }
     }, 10000);
@@ -323,6 +316,20 @@ public class FileHistoryPanelImpl<S extends CommittedChangeList, U extends Chang
     init();
 
     chooseView();
+  }
+
+  private void createSession(final Consumer<VcsHistorySession> consumer) {
+    final Runnable runnable = new Runnable() {
+      public void run() {
+        new VcsHistoryProviderBackgroundableProxy(myProject, getHistoryProvider()).createSessionFor(myFilePath, consumer, null, true);
+      }
+    };
+    final Application application = ApplicationManager.getApplication();
+    if (application.isDispatchThread()) {
+      runnable.run();
+    } else {
+      application.invokeLater(runnable);
+    }
   }
 
   private void replaceTransferable() {
@@ -521,7 +528,7 @@ public class FileHistoryPanelImpl<S extends CommittedChangeList, U extends Chang
       revision = getFirstSelectedRevision();
       final String message = revision.getCommitMessage();
       myOriginalComment = message;
-      @NonNls final String text = "<html><body>" + IssueLinkHtmlRenderer.formatTextWithLinks(myProject, message) + "</body></html>";
+      @NonNls final String text = IssueLinkHtmlRenderer.formatTextIntoHtml(myProject, message);
       myComments.setText(text);
       myComments.setCaretPosition(0);
     }
@@ -676,6 +683,10 @@ public class FileHistoryPanelImpl<S extends CommittedChangeList, U extends Chang
     } else {
       diffAction.registerCustomShortcutSet(CommonShortcuts.getDiff(), this);
     }
+
+    final AnAction diffGroup = ActionManager.getInstance().getAction(VCS_HISTORY_ACTIONS_GROUP);
+    if (diffGroup != null) result.add(diffGroup);
+
     result.add(new CreatePatchFromChangesAction() {
       public void update(final AnActionEvent e) {
         e.getPresentation().setVisible(true);
@@ -692,13 +703,7 @@ public class FileHistoryPanelImpl<S extends CommittedChangeList, U extends Chang
         result.add(additionalAction);
       }
     }
-    result.add(new AnAction(VcsBundle.message("action.name.refresh"), VcsBundle.message("action.desctiption.refresh"),
-      IconLoader.getIcon("/actions/sync.png")) {
-      public void actionPerformed(AnActionEvent e) {
-        refresh();
-
-      }
-    });
+    result.add(new RefreshFileHistoryAction());
 
     if (!popup && supportsTree()) {
       result.add(new MyShowAsTreeAction());
@@ -708,15 +713,12 @@ public class FileHistoryPanelImpl<S extends CommittedChangeList, U extends Chang
   }
 
   public void refresh() {
-    try {
-      final VcsHistorySession session = getHistoryProvider().createSessionFor(myFilePath);
-      if (session == null) return;
-      refresh(session);
-    }
-    catch (VcsException e1) {
-      Messages.showErrorDialog(VcsBundle.message("message.text.cannot.refresh.file.history", e1.getLocalizedMessage()),
-        VcsBundle.message("message.title.refresh.file.history"));
-    }
+    createSession(new Consumer<VcsHistorySession>() {
+      public void consume(VcsHistorySession session) {
+        if (session == null) return;
+        refresh(session);
+      }
+    });
   }
 
   private boolean supportsTree() {
@@ -727,7 +729,7 @@ public class FileHistoryPanelImpl<S extends CommittedChangeList, U extends Chang
     return myProvider;
   }
 
-  private class MyShowAsTreeAction extends ToggleAction {
+  private class MyShowAsTreeAction extends ToggleAction implements DumbAware {
     public MyShowAsTreeAction() {
       super(VcsBundle.message("action.name.show.files.as.tree"), null, Icons.SMALL_VCS_CONFIGURABLE);
     }
@@ -845,21 +847,27 @@ public class FileHistoryPanelImpl<S extends CommittedChangeList, U extends Chang
 
     @Patch
     private void refreshFile(VcsFileRevision revision) {
-      final VirtualFile file = getVirtualFile();
-      if (file == null) {
+      Runnable refresh = null;
+      final VirtualFile vf = getVirtualFile();
+      if (vf == null) {
         final LocalHistoryAction action = startLocalHistoryAction(revision);
-        if (getVirtualParent() != null) {
-          getVirtualParent().refresh(true, true, new Runnable() {
+        final VirtualFile vp = getVirtualParent();
+        if (vp != null) {
+          ProgressManager.getInstance().runProcessWithProgressSynchronously(new Runnable() {
             public void run() {
-              myFilePath.refresh();
-              action.finish();
+              vp.refresh(false, true, new Runnable() {
+                public void run() {
+                  myFilePath.refresh();
+                  action.finish();
+                }
+              });
             }
-          });
+          }, "Refreshing files...", false, myProject);
         }
       } else {
         // this line was added in order to fix http://jetbrains.net/jira/browse/IDEA-22299
         // just adding file.refresh did not help
-        FileDocumentManager.getInstance().saveDocument(FileDocumentManager.getInstance().getDocument(file));
+        FileDocumentManager.getInstance().saveDocument(FileDocumentManager.getInstance().getDocument(vf));
       }
     }
 
@@ -973,29 +981,69 @@ public class FileHistoryPanelImpl<S extends CommittedChangeList, U extends Chang
         IconLoader.getIcon("/actions/annotate.png"));
     }
 
+    private String key(final VirtualFile vf, final VcsFileRevision revision) {
+      return vf.getPath();
+    }
+
     public void update(AnActionEvent e) {
       VirtualFile revVFile = e.getData(VcsDataKeys.VCS_VIRTUAL_FILE);
       VcsFileRevision revision = e.getData(VcsDataKeys.VCS_FILE_REVISION);
       FileType fileType = revVFile == null ? null : revVFile.getFileType();
+      boolean enabled = revision != null && revVFile != null && !fileType.isBinary();
+
+      if (enabled) {
+        final ProjectLevelVcsManager plVcsManager = ProjectLevelVcsManager.getInstance(myProject);
+        enabled &= (!(((ProjectLevelVcsManagerImpl) plVcsManager).getBackgroundableActionHandler(
+          VcsBackgroundableActions.ANNOTATE).isInProgress(key(revVFile, revision))));
+      }
+
       e.getPresentation()
-        .setEnabled(revision != null && revVFile != null && !fileType.isBinary() &&
+        .setEnabled(enabled &&
           myHistorySession.isContentAvailable(revision) &&
           myAnnotationProvider != null && myAnnotationProvider.isAnnotationValid(revision));
     }
 
 
     public void actionPerformed(AnActionEvent e) {
-      VcsFileRevision revision = e.getData(VcsDataKeys.VCS_FILE_REVISION);
-      VirtualFile revisionVirtualFile = e.getData(VcsDataKeys.VCS_VIRTUAL_FILE);
+      final VcsFileRevision revision = e.getData(VcsDataKeys.VCS_FILE_REVISION);
+      final VirtualFile revisionVirtualFile = e.getData(VcsDataKeys.VCS_VIRTUAL_FILE);
       if ((revision == null) || (revisionVirtualFile == null)) return;
-      try {
-        final FileAnnotation annotation = myAnnotationProvider.annotate(revisionVirtualFile, revision);
-        AbstractVcsHelper.getInstance(myProject).showAnnotation(annotation, revisionVirtualFile);
-      }
-      catch (VcsException e1) {
-        AbstractVcsHelper.getInstance(myProject).showError(e1, VcsBundle.message("operation.name.annotate"));
-      }
 
+      final BackgroundableActionEnabledHandler handler = ((ProjectLevelVcsManagerImpl) ProjectLevelVcsManager.getInstance(myProject)).
+        getBackgroundableActionHandler(VcsBackgroundableActions.ANNOTATE);
+      handler.register(key(revisionVirtualFile, revision));
+
+      final Ref<FileAnnotation> fileAnnotationRef = new Ref<FileAnnotation>();
+      final Ref<VcsException> exceptionRef = new Ref<VcsException>();
+
+      ProgressManager.getInstance().run(new Task.Backgroundable(myProject, VcsBundle.message("retrieving.annotations"), true,
+        BackgroundFromStartOption.getInstance()) {
+        public void run(@NotNull ProgressIndicator indicator) {
+          try {
+            fileAnnotationRef.set(myAnnotationProvider.annotate(revisionVirtualFile, revision));
+          }
+          catch (VcsException e) {
+            exceptionRef.set(e);
+          }
+        }
+
+        @Override
+        public void onCancel() {
+          onSuccess();
+        }
+
+        @Override
+        public void onSuccess() {
+          handler.completed(key(revisionVirtualFile, revision));
+
+          if (!exceptionRef.isNull()) {
+            AbstractVcsHelper.getInstance(myProject).showError(exceptionRef.get(), VcsBundle.message("operation.name.annotate"));
+          }
+          if (fileAnnotationRef.isNull()) return;
+
+          AbstractVcsHelper.getInstance(myProject).showAnnotation(fileAnnotationRef.get(), revisionVirtualFile);
+        }
+      });
     }
   }
 
@@ -1187,7 +1235,7 @@ public class FileHistoryPanelImpl<S extends CommittedChangeList, U extends Chang
     myUpdateAlarm.dispose();
   }
 
-  abstract class AbstractActionForSomeSelection extends AnAction {
+  abstract class AbstractActionForSomeSelection extends AnAction implements DumbAware {
     private final int mySuitableSelectedElements;
     private final FileHistoryPanelImpl mySelectionProvider;
 
@@ -1409,6 +1457,17 @@ public class FileHistoryPanelImpl<S extends CommittedChangeList, U extends Chang
       if (myHistorySession.isCurrentRevision(revision.getRevisionNumber())) {
         makeBold(component);
       }
+    }
+  }
+
+  private class RefreshFileHistoryAction extends AnAction implements DumbAware {
+    public RefreshFileHistoryAction() {
+      super(VcsBundle.message("action.name.refresh"), VcsBundle.message("action.desctiption.refresh"), IconLoader.getIcon("/actions/sync.png"));
+    }
+
+    public void actionPerformed(AnActionEvent e) {
+      refresh();
+
     }
   }
 }

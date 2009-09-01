@@ -182,4 +182,7 @@ public abstract class BaseMPSChooseModel<T> implements ChooseByNameModel {
     return new NavigationItemListCellRenderer();
   }
 
+  public String getHelpId() {
+    return null;
+  }
 }

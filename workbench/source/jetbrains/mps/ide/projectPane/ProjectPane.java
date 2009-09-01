@@ -210,6 +210,9 @@ public class ProjectPane extends AbstractProjectViewPane implements PersistentSt
         }
       }
     });
+
+    initComponent();
+    projectOpened();
   }
 
   public void initComponent() {
@@ -363,11 +366,6 @@ public class ProjectPane extends AbstractProjectViewPane implements PersistentSt
   public void projectOpened() {
     myReloadListener.onAfterReload();
     ClassLoaderManager.getInstance().addReloadHandler(myReloadListener);
-    StartupManager.getInstance(myProject).registerStartupActivity(new Runnable() {
-      public void run() {
-        myProjectView.addProjectPane(ProjectPane.this);
-      }
-    });
   }
 
   public void projectClosed() {
@@ -514,6 +512,8 @@ public class ProjectPane extends AbstractProjectViewPane implements PersistentSt
   }
 
   public void dispose() {
+    projectClosed();
+    disposeComponent();
     myDisposed = true;
   }
 

@@ -21,10 +21,12 @@ import com.intellij.openapi.project.ProjectManager;
 import com.intellij.openapi.roots.ProjectRootManager;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.openapi.vfs.VirtualFileFilter;
+import com.intellij.openapi.module.Module;
 import com.intellij.psi.impl.cache.impl.id.FileTypeIdIndexer;
 import com.intellij.psi.impl.cache.impl.id.IdIndex;
 import com.intellij.psi.impl.cache.impl.id.IdIndexEntry;
 import com.intellij.psi.impl.cache.impl.id.IdTableBuilding;
+import com.intellij.psi.search.GlobalSearchScope;
 import com.intellij.util.indexing.FileBasedIndex;
 import com.intellij.util.indexing.FileContent;
 import com.intellij.util.indexing.UnindexedFilesUpdater;
@@ -205,12 +207,28 @@ class FastFindUsagesManager extends FindUsagesManager {
           candidates.add(file);
           return true;
         }
-      }, new VirtualFileFilter() {
-
-        public boolean accept(VirtualFile file) {
-          return scopeFiles.contains(file);
+      }, new GlobalSearchScope() {
+        @Override
+        public boolean contains(VirtualFile file) {
+          return scopeFiles.contains(file);  
         }
-      });
+
+        @Override
+        public int compare(VirtualFile file1, VirtualFile file2) {
+          return file1.getPath().compareTo(file2.getPath());
+        }
+
+        @Override
+        public boolean isSearchInModuleContent(@NotNull Module aModule) {
+          return true;
+        }
+
+        @Override
+        public boolean isSearchInLibraries() {
+          return false;
+        }
+      }
+    );
     return candidates;
   }
 

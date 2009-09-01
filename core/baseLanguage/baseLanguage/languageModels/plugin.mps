@@ -38431,8 +38431,8 @@
                     <link role="baseMethodDeclaration" targetNodeId="6586153900349549432" resolveInfo="getConsoleView" />
                   </node>
                 </node>
-                <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="3212636031937248222">
-                  <link role="baseMethodDeclaration" targetNodeId="44.~ConsoleViewImpl.createUpDownStacktraceActions():com.intellij.openapi.actionSystem.AnAction[]" resolveInfo="createUpDownStacktraceActions" />
+                <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="4786273291595622024">
+                  <link role="baseMethodDeclaration" targetNodeId="44.~ConsoleViewImpl.createConsoleActions():com.intellij.openapi.actionSystem.AnAction[]" resolveInfo="createConsoleActions" />
                 </node>
               </node>
             </node>

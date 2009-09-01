@@ -19,6 +19,7 @@ import com.intellij.openapi.project.Project;
 import com.intellij.openapi.vcs.ProjectLevelVcsManager;
 import com.intellij.openapi.vcs.VcsRoot;
 import com.intellij.openapi.vcs.changes.DirtBuilder;
+import com.intellij.openapi.vcs.changes.VcsGuess;
 import com.intellij.openapi.vcs.impl.BasicDefaultVcsRootPolicy;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.platform.ProjectBaseDirectory;
@@ -32,8 +33,8 @@ public class ExtendedDefaultVcsRootPolicy extends BasicDefaultVcsRootPolicy {
   }
 
   @Override
-  public void markDefaultRootsDirty(DirtBuilder builder) {
-    super.markDefaultRootsDirty(builder);
+  public void markDefaultRootsDirty(DirtBuilder builder, final VcsGuess vcsGuess) {
+    super.markDefaultRootsDirty(builder, vcsGuess);
 
     ProjectLevelVcsManager manager = ProjectLevelVcsManager.getInstance(myIDEAProject);
     VcsRoot[] roots = manager.getAllVcsRoots();

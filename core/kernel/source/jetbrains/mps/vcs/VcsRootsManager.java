@@ -20,6 +20,7 @@ import com.intellij.openapi.project.Project;
 import com.intellij.openapi.vcs.AbstractVcs;
 import com.intellij.openapi.vcs.ProjectLevelVcsManager;
 import com.intellij.openapi.vcs.VcsDirectoryMapping;
+import com.intellij.openapi.vcs.impl.projectlevelman.AllVcses;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.util.containers.ConcurrentHashSet;
 import jetbrains.mps.MPSProjectHolder;

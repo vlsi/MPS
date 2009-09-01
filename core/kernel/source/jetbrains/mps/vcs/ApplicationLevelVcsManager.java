@@ -167,12 +167,12 @@ public class ApplicationLevelVcsManager implements ApplicationComponent, Persist
     try {
       changeProvider.getChanges(scope, new EmptyChangelistBuilder() {
         @Override
-        public void processChangeInList(Change change, @Nullable ChangeList changeList) {
+        public void processChangeInList(Change change, @Nullable ChangeList changeList, VcsKey vcsKey) {
           processChange(change);
         }
 
         @Override
-        public void processChangeInList(Change change, String changeListName) {
+        public void processChangeInList(Change change, String changeListName, VcsKey vcsKey) {
           processChange(change);
         }
 

@@ -506,33 +506,12 @@
         </component>
 
         <!--project view tool-->
-        <component>
-            <interface-class>com.intellij.ide.projectView.ProjectView</interface-class>
-            <implementation-class>com.intellij.ide.projectView.impl.ProjectViewImpl</implementation-class>
-            <option name="workspace" value="true"/>
-            <skipForDummyProject/>
-        </component>
-
-        <!--project view tool tabs-->
-
-        <component>
-            <implementation-class>jetbrains.mps.ide.projectPane.ProjectPane</implementation-class>
-            <option name="workspace" value="true"/>
-            <skipForDummyProject/>
-        </component>
-
-        <component>
-            <implementation-class>jetbrains.mps.ide.projectPane.fileSystem.BaseDirectoryProjectView
-            </implementation-class>
-            <option name="workspace" value="true"/>
-            <skipForDummyProject/>
-        </component>
-
-        <component>
-            <implementation-class>jetbrains.mps.ide.projectPane.fileSystem.VCSRootsProjectView</implementation-class>
-            <option name="workspace" value="true"/>
-            <skipForDummyProject/>
-        </component>
+        <!--<component>-->
+            <!--<interface-class>com.intellij.ide.projectView.ProjectView</interface-class>-->
+            <!--<implementation-class>com.intellij.ide.projectView.impl.ProjectViewImpl</implementation-class>-->
+            <!--<option name="workspace" value="true"/>-->
+            <!--<skipForDummyProject/>-->
+        <!--</component>-->
 
         <component>
             <implementation-class>jetbrains.mps.plugin.PluginStateMonitor</implementation-class>

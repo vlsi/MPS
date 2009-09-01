@@ -448,10 +448,8 @@ public class JavaLexer extends LexerBase {
         buf.append(s).append("\n");
       }
 
-      char[] cbuf = buf.toString().toCharArray();
-
       JavaLexer lexer = new JavaLexer(true, true);
-      lexer.start(cbuf, 0, cbuf.length);
+      lexer.start(buf, 0, buf.length());
       while (lexer.getTokenType() != null) {
         lexer.advance();
       }
