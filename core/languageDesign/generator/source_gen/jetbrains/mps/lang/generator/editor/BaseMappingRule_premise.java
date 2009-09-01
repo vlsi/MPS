@@ -18,6 +18,7 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
+import jetbrains.mps.nodeEditor.InlineCellProvider;
 
 public class BaseMappingRule_premise extends AbstractCellProvider {
   public BaseMappingRule_premise(SNode node) {
@@ -176,7 +177,7 @@ public class BaseMappingRule_premise extends AbstractCellProvider {
     return editorCell;
   }
 
-  public static class _Inline4181_0 extends AbstractCellProvider {
+  public static class _Inline4181_0 extends InlineCellProvider {
     public _Inline4181_0() {
       super();
     }

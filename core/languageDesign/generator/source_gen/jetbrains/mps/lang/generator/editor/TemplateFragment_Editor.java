@@ -18,7 +18,7 @@ import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.nodeEditor.AbstractCellProvider;
+import jetbrains.mps.nodeEditor.InlineCellProvider;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 
 public class TemplateFragment_Editor extends DefaultNodeEditor {
@@ -255,7 +255,7 @@ public class TemplateFragment_Editor extends DefaultNodeEditor {
     return SLinkOperations.getTarget(node, "labelDeclaration", false) != null;
   }
 
-  public static class _Inline4770_0 extends AbstractCellProvider {
+  public static class _Inline4770_0 extends InlineCellProvider {
     public _Inline4770_0() {
       super();
     }
@@ -292,7 +292,7 @@ public class TemplateFragment_Editor extends DefaultNodeEditor {
     }
   }
 
-  public static class _Inline4770_1 extends AbstractCellProvider {
+  public static class _Inline4770_1 extends InlineCellProvider {
     public _Inline4770_1() {
       super();
     }

@@ -22,7 +22,7 @@ import jetbrains.mps.nodeEditor.MPSFonts;
 import jetbrains.mps.nodeEditor.MPSColors;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.nodeEditor.AbstractCellProvider;
+import jetbrains.mps.nodeEditor.InlineCellProvider;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandler;
 import jetbrains.mps.smodel.action.NodeFactoryManager;
 import jetbrains.mps.nodeEditor.CellActionType;
@@ -465,7 +465,7 @@ public class EnumerationDataTypeDeclaration_Editor extends DefaultNodeEditor {
     return SPropertyOperations.getBoolean(node, "hasNoDefaultMember");
   }
 
-  public static class _Inline4339_0 extends AbstractCellProvider {
+  public static class _Inline4339_0 extends InlineCellProvider {
     public _Inline4339_0() {
       super();
     }
@@ -498,7 +498,7 @@ public class EnumerationDataTypeDeclaration_Editor extends DefaultNodeEditor {
     }
   }
 
-  public static class _Inline4339_1 extends AbstractCellProvider {
+  public static class _Inline4339_1 extends InlineCellProvider {
     public _Inline4339_1() {
       super();
     }

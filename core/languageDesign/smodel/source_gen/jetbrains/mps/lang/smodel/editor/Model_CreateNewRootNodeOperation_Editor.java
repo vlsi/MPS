@@ -19,6 +19,7 @@ import jetbrains.mps.nodeEditor.style.Measure;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
+import jetbrains.mps.nodeEditor.InlineCellProvider;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.nodeEditor.MPSColors;
 
@@ -115,7 +116,7 @@ public class Model_CreateNewRootNodeOperation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public static class _Inline8073_0 extends AbstractCellProvider {
+  public static class _Inline8073_0 extends InlineCellProvider {
     public _Inline8073_0() {
       super();
     }

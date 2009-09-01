@@ -13,7 +13,7 @@ import jetbrains.mps.lang.editor.cellProviders.ConceptPropertyCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider;
-import jetbrains.mps.nodeEditor.AbstractCellProvider;
+import jetbrains.mps.nodeEditor.InlineCellProvider;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 
 public class NavigatableReferenceStyleClassItem_Editor extends DefaultNodeEditor {
@@ -74,7 +74,7 @@ public class NavigatableReferenceStyleClassItem_Editor extends DefaultNodeEditor
     return editorCell;
   }
 
-  public static class _Inline0469_0 extends AbstractCellProvider {
+  public static class _Inline0469_0 extends InlineCellProvider {
     public _Inline0469_0() {
       super();
     }

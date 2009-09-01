@@ -23,6 +23,7 @@ import java.awt.Color;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.editor.behavior.EditorCellModel_Behavior;
+import jetbrains.mps.nodeEditor.InlineCellProvider;
 
 public class CellModel_Property_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
@@ -464,7 +465,7 @@ public class CellModel_Property_Editor extends DefaultNodeEditor {
     return EditorCellModel_Behavior.call_isStrikeOut_1223390694337(node);
   }
 
-  public static class _Inline3263_0 extends AbstractCellProvider {
+  public static class _Inline3263_0 extends InlineCellProvider {
     public _Inline3263_0() {
       super();
     }
@@ -501,7 +502,7 @@ public class CellModel_Property_Editor extends DefaultNodeEditor {
     }
   }
 
-  public static class _Inline3263_1 extends AbstractCellProvider {
+  public static class _Inline3263_1 extends InlineCellProvider {
     public _Inline3263_1() {
       super();
     }

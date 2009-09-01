@@ -32,6 +32,7 @@ import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.nodeEditor.InlineCellProvider;
 import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_Generic_Group;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -744,7 +745,7 @@ public class ParamListFeature_Editor extends DefaultNodeEditor {
     return false;
   }
 
-  public static class _Inline9311_0 extends AbstractCellProvider {
+  public static class _Inline9311_0 extends InlineCellProvider {
     public _Inline9311_0() {
       super();
     }

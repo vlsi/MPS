@@ -14,7 +14,7 @@ import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.FocusPolicy;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
-import jetbrains.mps.nodeEditor.AbstractCellProvider;
+import jetbrains.mps.nodeEditor.InlineCellProvider;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 
 public class TreeNodeKindOccurrence_Editor extends DefaultNodeEditor {
@@ -54,7 +54,7 @@ public class TreeNodeKindOccurrence_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public static class _Inline5207_0 extends AbstractCellProvider {
+  public static class _Inline5207_0 extends InlineCellProvider {
     public _Inline5207_0() {
       super();
     }

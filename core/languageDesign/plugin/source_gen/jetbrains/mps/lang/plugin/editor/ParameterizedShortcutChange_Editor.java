@@ -24,7 +24,7 @@ import jetbrains.mps.nodeEditor.style.Padding;
 import jetbrains.mps.nodeEditor.style.Measure;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
-import jetbrains.mps.nodeEditor.AbstractCellProvider;
+import jetbrains.mps.nodeEditor.InlineCellProvider;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 
 public class ParameterizedShortcutChange_Editor extends DefaultNodeEditor {
@@ -94,7 +94,7 @@ public class ParameterizedShortcutChange_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public static class _Inline1789_0 extends AbstractCellProvider {
+  public static class _Inline1789_0 extends InlineCellProvider {
     public _Inline1789_0() {
       super();
     }

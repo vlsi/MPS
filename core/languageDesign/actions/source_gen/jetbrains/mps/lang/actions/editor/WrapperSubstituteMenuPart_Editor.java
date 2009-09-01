@@ -17,7 +17,7 @@ import jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
-import jetbrains.mps.nodeEditor.AbstractCellProvider;
+import jetbrains.mps.nodeEditor.InlineCellProvider;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 
 public class WrapperSubstituteMenuPart_Editor extends DefaultNodeEditor {
@@ -258,7 +258,7 @@ public class WrapperSubstituteMenuPart_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public static class _Inline4349_0 extends AbstractCellProvider {
+  public static class _Inline4349_0 extends InlineCellProvider {
     public _Inline4349_0() {
       super();
     }

@@ -15,7 +15,7 @@ import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.nodeEditor.AbstractCellProvider;
+import jetbrains.mps.nodeEditor.InlineCellProvider;
 
 public class PathHolder_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
@@ -115,7 +115,7 @@ public class PathHolder_Editor extends DefaultNodeEditor {
     return (SLinkOperations.getTarget(node, "macro", false) != null);
   }
 
-  public static class _Inline4245_0 extends AbstractCellProvider {
+  public static class _Inline4245_0 extends InlineCellProvider {
     public _Inline4245_0() {
       super();
     }
@@ -148,7 +148,7 @@ public class PathHolder_Editor extends DefaultNodeEditor {
     }
   }
 
-  public static class _Inline4245_1 extends AbstractCellProvider {
+  public static class _Inline4245_1 extends InlineCellProvider {
     public _Inline4245_1() {
       super();
     }

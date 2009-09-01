@@ -19,6 +19,7 @@ import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.nodeEditor.MPSColors;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.nodeEditor.InlineCellProvider;
 
 public class CellModel_RefNode_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
@@ -260,7 +261,7 @@ public class CellModel_RefNode_Editor extends DefaultNodeEditor {
     return SPropertyOperations.getString(node, "noTargetText") == null;
   }
 
-  public static class _Inline1311_0 extends AbstractCellProvider {
+  public static class _Inline1311_0 extends InlineCellProvider {
     public _Inline1311_0() {
       super();
     }
@@ -297,7 +298,7 @@ public class CellModel_RefNode_Editor extends DefaultNodeEditor {
     }
   }
 
-  public static class _Inline1311_1 extends AbstractCellProvider {
+  public static class _Inline1311_1 extends InlineCellProvider {
     public _Inline1311_1() {
       super();
     }

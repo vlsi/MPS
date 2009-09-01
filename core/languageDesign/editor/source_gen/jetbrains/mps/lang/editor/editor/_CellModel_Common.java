@@ -22,6 +22,7 @@ import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.nodeEditor.InlineCellProvider;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandler;
 import jetbrains.mps.smodel.action.NodeFactoryManager;
 import jetbrains.mps.nodeEditor.CellActionType;
@@ -423,7 +424,7 @@ public class _CellModel_Common extends AbstractCellProvider {
     return !(SPropertyOperations.hasValue(node, "attractsFocus", "0", "0"));
   }
 
-  public static class _Inline7442_0 extends AbstractCellProvider {
+  public static class _Inline7442_0 extends InlineCellProvider {
     public _Inline7442_0() {
       super();
     }
@@ -460,7 +461,7 @@ public class _CellModel_Common extends AbstractCellProvider {
     }
   }
 
-  public static class _Inline7442_1 extends AbstractCellProvider {
+  public static class _Inline7442_1 extends InlineCellProvider {
     public _Inline7442_1() {
       super();
     }
@@ -497,7 +498,7 @@ public class _CellModel_Common extends AbstractCellProvider {
     }
   }
 
-  public static class _Inline7442_2 extends AbstractCellProvider {
+  public static class _Inline7442_2 extends InlineCellProvider {
     public _Inline7442_2() {
       super();
     }

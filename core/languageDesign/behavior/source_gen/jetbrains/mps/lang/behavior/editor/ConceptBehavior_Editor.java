@@ -22,7 +22,7 @@ import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.nodeEditor.AbstractCellProvider;
+import jetbrains.mps.nodeEditor.InlineCellProvider;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.lang.sharedConcepts.editor.SharedStyles_StyleSheet;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandler;
@@ -571,7 +571,7 @@ public class ConceptBehavior_Editor extends DefaultNodeEditor {
     return (SLinkOperations.getTarget(node, "defaultScope", true) != null);
   }
 
-  public static class _Inline1330_0 extends AbstractCellProvider {
+  public static class _Inline1330_0 extends InlineCellProvider {
     public _Inline1330_0() {
       super();
     }
@@ -605,7 +605,7 @@ public class ConceptBehavior_Editor extends DefaultNodeEditor {
     }
   }
 
-  public static class _Inline1330_1 extends AbstractCellProvider {
+  public static class _Inline1330_1 extends InlineCellProvider {
     public _Inline1330_1() {
       super();
     }

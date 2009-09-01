@@ -21,6 +21,7 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.nodeEditor.InlineCellProvider;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_ReplaceNode_CustomNodeConcept;
 
@@ -158,7 +159,7 @@ public class NodeMacro_Editor extends DefaultNodeEditor {
     return SLinkOperations.getTarget(node, "mappingLabel", false) != null;
   }
 
-  public static class _Inline3474_0 extends AbstractCellProvider {
+  public static class _Inline3474_0 extends InlineCellProvider {
     public _Inline3474_0() {
       super();
     }

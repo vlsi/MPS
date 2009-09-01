@@ -21,6 +21,7 @@ import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.lang.editor.behavior.EditorCellModel_Behavior;
+import jetbrains.mps.nodeEditor.InlineCellProvider;
 
 public class CellModel_TransactionalProperty_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
@@ -361,7 +362,7 @@ public class CellModel_TransactionalProperty_Editor extends DefaultNodeEditor {
     return EditorCellModel_Behavior.call_isStrikeOut_1223390694337(node);
   }
 
-  public static class _Inline3190_0 extends AbstractCellProvider {
+  public static class _Inline3190_0 extends InlineCellProvider {
     public _Inline3190_0() {
       super();
     }
@@ -398,7 +399,7 @@ public class CellModel_TransactionalProperty_Editor extends DefaultNodeEditor {
     }
   }
 
-  public static class _Inline3190_1 extends AbstractCellProvider {
+  public static class _Inline3190_1 extends InlineCellProvider {
     public _Inline3190_1() {
       super();
     }

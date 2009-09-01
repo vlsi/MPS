@@ -18,6 +18,7 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
+import jetbrains.mps.nodeEditor.InlineCellProvider;
 
 public class CopyScrNodeMacro_inspector extends AbstractCellProvider {
   public CopyScrNodeMacro_inspector(SNode node) {
@@ -237,7 +238,7 @@ public class CopyScrNodeMacro_inspector extends AbstractCellProvider {
     return editorCell;
   }
 
-  public static class _Inline9547_0 extends AbstractCellProvider {
+  public static class _Inline9547_0 extends InlineCellProvider {
     public _Inline9547_0() {
       super();
     }

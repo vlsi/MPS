@@ -20,7 +20,7 @@ import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.nodeEditor.AbstractCellProvider;
+import jetbrains.mps.nodeEditor.InlineCellProvider;
 import jetbrains.mps.nodeEditor.MPSFonts;
 
 public class Root_MappingRule_Editor extends DefaultNodeEditor {
@@ -388,7 +388,7 @@ public class Root_MappingRule_Editor extends DefaultNodeEditor {
     return SLinkOperations.getTarget(node, "labelDeclaration", false) != null;
   }
 
-  public static class _Inline1377_0 extends AbstractCellProvider {
+  public static class _Inline1377_0 extends InlineCellProvider {
     public _Inline1377_0() {
       super();
     }
@@ -426,7 +426,7 @@ public class Root_MappingRule_Editor extends DefaultNodeEditor {
     }
   }
 
-  public static class _Inline1377_1 extends AbstractCellProvider {
+  public static class _Inline1377_1 extends InlineCellProvider {
     public _Inline1377_1() {
       super();
     }
@@ -463,7 +463,7 @@ public class Root_MappingRule_Editor extends DefaultNodeEditor {
     }
   }
 
-  public static class _Inline1377_2 extends AbstractCellProvider {
+  public static class _Inline1377_2 extends InlineCellProvider {
     public _Inline1377_2() {
       super();
     }
@@ -500,7 +500,7 @@ public class Root_MappingRule_Editor extends DefaultNodeEditor {
     }
   }
 
-  public static class _Inline1377_3 extends AbstractCellProvider {
+  public static class _Inline1377_3 extends InlineCellProvider {
     public _Inline1377_3() {
       super();
     }

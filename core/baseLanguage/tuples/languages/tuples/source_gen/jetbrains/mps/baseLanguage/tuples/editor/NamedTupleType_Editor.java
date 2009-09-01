@@ -20,7 +20,7 @@ import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.nodeEditor.AbstractCellProvider;
+import jetbrains.mps.nodeEditor.InlineCellProvider;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Property;
 import jetbrains.mps.nodeEditor.cells.ModelAccessor;
@@ -28,6 +28,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.util.EqualUtil;
 import jetbrains.mps.nodeEditor.CellActionType;
 import jetbrains.mps.nodeEditor.cellActions.CellAction_Empty;
+import jetbrains.mps.nodeEditor.AbstractCellProvider;
 import jetbrains.mps.baseLanguage.editor._GenericDeclaration_TypeVariables_Component;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandler;
 import jetbrains.mps.smodel.action.NodeFactoryManager;
@@ -277,7 +278,7 @@ public class NamedTupleType_Editor extends DefaultNodeEditor {
     return SLinkOperations.getCount(node, "parameter") > 0;
   }
 
-  public static class _Inline9635_0 extends AbstractCellProvider {
+  public static class _Inline9635_0 extends InlineCellProvider {
     public _Inline9635_0() {
       super();
     }
@@ -310,7 +311,7 @@ public class NamedTupleType_Editor extends DefaultNodeEditor {
     }
   }
 
-  public static class _Inline9635_1 extends AbstractCellProvider {
+  public static class _Inline9635_1 extends InlineCellProvider {
     public _Inline9635_1() {
       super();
     }
@@ -352,7 +353,7 @@ public class NamedTupleType_Editor extends DefaultNodeEditor {
     }
   }
 
-  public static class _Inline9635_2 extends AbstractCellProvider {
+  public static class _Inline9635_2 extends InlineCellProvider {
     public _Inline9635_2() {
       super();
     }
@@ -385,7 +386,7 @@ public class NamedTupleType_Editor extends DefaultNodeEditor {
     }
   }
 
-  public static class _Inline9635_3 extends AbstractCellProvider {
+  public static class _Inline9635_3 extends InlineCellProvider {
     public _Inline9635_3() {
       super();
     }

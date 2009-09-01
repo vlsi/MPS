@@ -33,6 +33,7 @@ import jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.nodeEditor.InlineCellProvider;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandler;
 import jetbrains.mps.smodel.action.NodeFactoryManager;
 import jetbrains.mps.nodeEditor.cellActions.CellAction_DeleteNode;
@@ -623,7 +624,7 @@ public class ConceptMethodDeclaration_Editor extends DefaultNodeEditor {
     return SLinkOperations.getCount(node, "annotation") > 0;
   }
 
-  public static class _Inline6299_0 extends AbstractCellProvider {
+  public static class _Inline6299_0 extends InlineCellProvider {
     public _Inline6299_0() {
       super();
     }
@@ -656,7 +657,7 @@ public class ConceptMethodDeclaration_Editor extends DefaultNodeEditor {
     }
   }
 
-  public static class _Inline6299_1 extends AbstractCellProvider {
+  public static class _Inline6299_1 extends InlineCellProvider {
     public _Inline6299_1() {
       super();
     }

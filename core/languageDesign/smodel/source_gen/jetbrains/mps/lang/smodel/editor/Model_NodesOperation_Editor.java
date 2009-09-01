@@ -18,6 +18,7 @@ import jetbrains.mps.nodeEditor.style.Padding;
 import jetbrains.mps.nodeEditor.style.Measure;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
+import jetbrains.mps.nodeEditor.InlineCellProvider;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.nodeEditor.MPSColors;
 
@@ -80,7 +81,7 @@ public class Model_NodesOperation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public static class _Inline3824_0 extends AbstractCellProvider {
+  public static class _Inline3824_0 extends InlineCellProvider {
     public _Inline3824_0() {
       super();
     }

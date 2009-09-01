@@ -20,6 +20,7 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.lang.editor.cellProviders.ConceptPropertyCellProvider;
+import jetbrains.mps.nodeEditor.InlineCellProvider;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandler;
 import jetbrains.mps.smodel.action.NodeFactoryManager;
 import jetbrains.mps.nodeEditor.CellActionType;
@@ -245,7 +246,7 @@ public class Antcall_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public static class _Inline5497_0 extends AbstractCellProvider {
+  public static class _Inline5497_0 extends InlineCellProvider {
     public _Inline5497_0() {
       super();
     }
@@ -278,7 +279,7 @@ public class Antcall_Editor extends DefaultNodeEditor {
     }
   }
 
-  public static class _Inline5497_1 extends AbstractCellProvider {
+  public static class _Inline5497_1 extends InlineCellProvider {
     public _Inline5497_1() {
       super();
     }

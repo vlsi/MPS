@@ -28,6 +28,7 @@ import jetbrains.mps.smodel.AttributesRolesUtil;
 import jetbrains.mps.lang.generator.structure.NodeMacro_AnnotationLink;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.nodeEditor.InlineCellProvider;
 
 public class NodeMacro_postfix extends AbstractCellProvider {
   public NodeMacro_postfix(SNode node) {
@@ -160,7 +161,7 @@ public class NodeMacro_postfix extends AbstractCellProvider {
     return SPropertyOperations.getString(node, "comment") != null;
   }
 
-  public static class _Inline9824_0 extends AbstractCellProvider {
+  public static class _Inline9824_0 extends InlineCellProvider {
     public _Inline9824_0() {
       super();
     }

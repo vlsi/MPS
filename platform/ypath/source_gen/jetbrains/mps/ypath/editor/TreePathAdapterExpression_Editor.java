@@ -18,7 +18,7 @@ import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.nodeEditor.AbstractCellProvider;
+import jetbrains.mps.nodeEditor.InlineCellProvider;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 
 public class TreePathAdapterExpression_Editor extends DefaultNodeEditor {
@@ -110,7 +110,7 @@ public class TreePathAdapterExpression_Editor extends DefaultNodeEditor {
     return (SNodeOperations.getAncestor(node, "jetbrains.mps.ypath.structure.TreePathOperationExpression", false, false) == null);
   }
 
-  public static class _Inline8904_0 extends AbstractCellProvider {
+  public static class _Inline8904_0 extends InlineCellProvider {
     public _Inline8904_0() {
       super();
     }

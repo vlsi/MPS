@@ -22,6 +22,7 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
+import jetbrains.mps.nodeEditor.InlineCellProvider;
 import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_ReplaceNode_CustomNodeConcept;
 
 public class SwitchMacro_Editor extends DefaultNodeEditor {
@@ -331,7 +332,7 @@ public class SwitchMacro_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public static class _Inline3956_0 extends AbstractCellProvider {
+  public static class _Inline3956_0 extends InlineCellProvider {
     public _Inline3956_0() {
       super();
     }
@@ -365,7 +366,7 @@ public class SwitchMacro_Editor extends DefaultNodeEditor {
     }
   }
 
-  public static class _Inline3956_1 extends AbstractCellProvider {
+  public static class _Inline3956_1 extends InlineCellProvider {
     public _Inline3956_1() {
       super();
     }

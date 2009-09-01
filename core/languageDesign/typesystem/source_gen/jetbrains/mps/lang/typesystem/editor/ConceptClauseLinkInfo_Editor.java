@@ -19,7 +19,7 @@ import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.nodeEditor.AbstractCellProvider;
+import jetbrains.mps.nodeEditor.InlineCellProvider;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 
 public class ConceptClauseLinkInfo_Editor extends DefaultNodeEditor {
@@ -132,7 +132,7 @@ public class ConceptClauseLinkInfo_Editor extends DefaultNodeEditor {
     return SPropertyOperations.hasValue(SLinkOperations.getTarget(node, "linkDeclaration", false), "sourceCardinality", "0..n", "0..1") || SPropertyOperations.hasValue(SLinkOperations.getTarget(node, "linkDeclaration", false), "sourceCardinality", "1..n", "0..1");
   }
 
-  public static class _Inline3933_0 extends AbstractCellProvider {
+  public static class _Inline3933_0 extends InlineCellProvider {
     public _Inline3933_0() {
       super();
     }

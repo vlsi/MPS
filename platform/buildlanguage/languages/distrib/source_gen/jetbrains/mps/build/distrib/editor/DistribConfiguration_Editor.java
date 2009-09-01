@@ -22,7 +22,7 @@ import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.nodeEditor.AbstractCellProvider;
+import jetbrains.mps.nodeEditor.InlineCellProvider;
 import jetbrains.mps.build.packaging.editor.PackagingStyles_StyleSheet;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandler;
 import jetbrains.mps.smodel.action.NodeFactoryManager;
@@ -828,7 +828,7 @@ public class DistribConfiguration_Editor extends DefaultNodeEditor {
     return SPropertyOperations.getBoolean(node, "useVMOptionsFile");
   }
 
-  public static class _Inline7701_0 extends AbstractCellProvider {
+  public static class _Inline7701_0 extends InlineCellProvider {
     public _Inline7701_0() {
       super();
     }
@@ -862,7 +862,7 @@ public class DistribConfiguration_Editor extends DefaultNodeEditor {
     }
   }
 
-  public static class _Inline7701_1 extends AbstractCellProvider {
+  public static class _Inline7701_1 extends InlineCellProvider {
     public _Inline7701_1() {
       super();
     }

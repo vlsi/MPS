@@ -20,7 +20,7 @@ import jetbrains.mps.nodeEditor.MPSFonts;
 import jetbrains.mps.nodeEditor.MPSColors;
 import jetbrains.mps.nodeEditor.cellMenu.CompositeSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPart;
-import jetbrains.mps.nodeEditor.AbstractCellProvider;
+import jetbrains.mps.nodeEditor.InlineCellProvider;
 import jetbrains.mps.lang.sharedConcepts.editor.SharedStyles_StyleSheet;
 import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_PropertyPostfixHints;
 import java.util.List;
@@ -112,7 +112,7 @@ public class ConceptReference_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public static class _Inline4215_0 extends AbstractCellProvider {
+  public static class _Inline4215_0 extends InlineCellProvider {
     public _Inline4215_0() {
       super();
     }

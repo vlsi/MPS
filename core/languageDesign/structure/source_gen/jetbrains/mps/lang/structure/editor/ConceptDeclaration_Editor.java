@@ -34,7 +34,7 @@ import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.util.Macros;
 import jetbrains.mps.vfs.FileSystem;
 import javax.swing.JComponent;
-import jetbrains.mps.nodeEditor.AbstractCellProvider;
+import jetbrains.mps.nodeEditor.InlineCellProvider;
 import jetbrains.mps.nodeEditor.MPSColors;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandler;
 import jetbrains.mps.smodel.action.NodeFactoryManager;
@@ -676,7 +676,7 @@ public class ConceptDeclaration_Editor extends DefaultNodeEditor {
     return EditorUtil.createSelectIconButton(node, editorContext);
   }
 
-  public static class _Inline0886_0 extends AbstractCellProvider {
+  public static class _Inline0886_0 extends InlineCellProvider {
     public _Inline0886_0() {
       super();
     }

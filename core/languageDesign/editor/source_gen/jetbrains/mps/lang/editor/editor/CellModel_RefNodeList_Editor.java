@@ -22,6 +22,7 @@ import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.editor.behavior.CellModel_ListWithRole_Behavior;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.nodeEditor.InlineCellProvider;
 
 public class CellModel_RefNodeList_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
@@ -857,7 +858,7 @@ public class CellModel_RefNodeList_Editor extends DefaultNodeEditor {
     return SModelStereotype.isGeneratorModel(SNodeOperations.getModel(node));
   }
 
-  public static class _Inline6321_0 extends AbstractCellProvider {
+  public static class _Inline6321_0 extends InlineCellProvider {
     public _Inline6321_0() {
       super();
     }
@@ -894,7 +895,7 @@ public class CellModel_RefNodeList_Editor extends DefaultNodeEditor {
     }
   }
 
-  public static class _Inline6321_1 extends AbstractCellProvider {
+  public static class _Inline6321_1 extends InlineCellProvider {
     public _Inline6321_1() {
       super();
     }
@@ -931,7 +932,7 @@ public class CellModel_RefNodeList_Editor extends DefaultNodeEditor {
     }
   }
 
-  public static class _Inline6321_2 extends AbstractCellProvider {
+  public static class _Inline6321_2 extends InlineCellProvider {
     public _Inline6321_2() {
       super();
     }
@@ -968,7 +969,7 @@ public class CellModel_RefNodeList_Editor extends DefaultNodeEditor {
     }
   }
 
-  public static class _Inline6321_3 extends AbstractCellProvider {
+  public static class _Inline6321_3 extends InlineCellProvider {
     public _Inline6321_3() {
       super();
     }

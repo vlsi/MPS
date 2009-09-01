@@ -24,7 +24,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptPropertyOperati
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.nodeEditor.AbstractCellProvider;
+import jetbrains.mps.nodeEditor.InlineCellProvider;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandler;
 import jetbrains.mps.smodel.action.NodeFactoryManager;
@@ -568,7 +568,7 @@ public class ConceptConstraints_Editor extends DefaultNodeEditor {
     return SLinkOperations.getTarget(node, "canBeParent", true) != null;
   }
 
-  public static class _Inline4286_0 extends AbstractCellProvider {
+  public static class _Inline4286_0 extends InlineCellProvider {
     public _Inline4286_0() {
       super();
     }
@@ -601,7 +601,7 @@ public class ConceptConstraints_Editor extends DefaultNodeEditor {
     }
   }
 
-  public static class _Inline4286_1 extends AbstractCellProvider {
+  public static class _Inline4286_1 extends InlineCellProvider {
     public _Inline4286_1() {
       super();
     }

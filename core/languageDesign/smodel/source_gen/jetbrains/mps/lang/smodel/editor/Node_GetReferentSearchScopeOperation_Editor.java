@@ -16,6 +16,7 @@ import jetbrains.mps.lang.sharedConcepts.editor.SharedStyles_StyleSheet;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
+import jetbrains.mps.nodeEditor.InlineCellProvider;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 
 public class Node_GetReferentSearchScopeOperation_Editor extends DefaultNodeEditor {
@@ -100,7 +101,7 @@ public class Node_GetReferentSearchScopeOperation_Editor extends DefaultNodeEdit
     return editorCell;
   }
 
-  public static class _Inline3341_0 extends AbstractCellProvider {
+  public static class _Inline3341_0 extends InlineCellProvider {
     public _Inline3341_0() {
       super();
     }

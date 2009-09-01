@@ -17,7 +17,7 @@ import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.nodeEditor.MPSFonts;
 import jetbrains.mps.nodeEditor.MPSColors;
-import jetbrains.mps.nodeEditor.AbstractCellProvider;
+import jetbrains.mps.nodeEditor.InlineCellProvider;
 
 public class StringConceptProperty_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
@@ -85,7 +85,7 @@ public class StringConceptProperty_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public static class _Inline1328_0 extends AbstractCellProvider {
+  public static class _Inline1328_0 extends InlineCellProvider {
     public _Inline1328_0() {
       super();
     }

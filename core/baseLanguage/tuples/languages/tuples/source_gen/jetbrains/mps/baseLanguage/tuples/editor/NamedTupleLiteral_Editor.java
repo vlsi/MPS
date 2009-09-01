@@ -18,7 +18,7 @@ import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider;
-import jetbrains.mps.nodeEditor.AbstractCellProvider;
+import jetbrains.mps.nodeEditor.InlineCellProvider;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Indent;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandler;
@@ -183,7 +183,7 @@ public class NamedTupleLiteral_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public static class _Inline6372_0 extends AbstractCellProvider {
+  public static class _Inline6372_0 extends InlineCellProvider {
     public _Inline6372_0() {
       super();
     }
@@ -216,7 +216,7 @@ public class NamedTupleLiteral_Editor extends DefaultNodeEditor {
     }
   }
 
-  public static class _Inline6372_1 extends AbstractCellProvider {
+  public static class _Inline6372_1 extends InlineCellProvider {
     public _Inline6372_1() {
       super();
     }

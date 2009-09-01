@@ -34,7 +34,7 @@ import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.ypath.actions.TraversalAxisUtil;
-import jetbrains.mps.nodeEditor.AbstractCellProvider;
+import jetbrains.mps.nodeEditor.InlineCellProvider;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import java.util.List;
 import jetbrains.mps.smodel.action.INodeSubstituteAction;
@@ -311,7 +311,7 @@ public class IterateOperation_Editor extends DefaultNodeEditor {
     return !(TraversalAxisUtil.isAbbreviated(TraversalAxis.parseValue(SPropertyOperations.getString_def(node, "axis", "DESCENDANTS"))));
   }
 
-  public static class _Inline7857_0 extends AbstractCellProvider {
+  public static class _Inline7857_0 extends InlineCellProvider {
     public _Inline7857_0() {
       super();
     }
@@ -348,7 +348,7 @@ public class IterateOperation_Editor extends DefaultNodeEditor {
     }
   }
 
-  public static class _Inline7857_1 extends AbstractCellProvider {
+  public static class _Inline7857_1 extends InlineCellProvider {
     public _Inline7857_1() {
       super();
     }

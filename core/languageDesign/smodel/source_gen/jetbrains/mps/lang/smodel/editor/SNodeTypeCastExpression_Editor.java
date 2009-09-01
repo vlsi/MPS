@@ -18,7 +18,7 @@ import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.nodeEditor.AbstractCellProvider;
+import jetbrains.mps.nodeEditor.InlineCellProvider;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.nodeEditor.style.Padding;
 import jetbrains.mps.nodeEditor.style.Measure;
@@ -108,7 +108,7 @@ public class SNodeTypeCastExpression_Editor extends DefaultNodeEditor {
     return SPropertyOperations.getBoolean(node, "asCast");
   }
 
-  public static class _Inline6410_0 extends AbstractCellProvider {
+  public static class _Inline6410_0 extends InlineCellProvider {
     public _Inline6410_0() {
       super();
     }
