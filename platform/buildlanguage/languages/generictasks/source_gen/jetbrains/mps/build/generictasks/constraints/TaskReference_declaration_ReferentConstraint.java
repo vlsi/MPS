@@ -28,8 +28,8 @@ public class TaskReference_declaration_ReferentConstraint extends BaseNodeRefere
   }
 
   public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferentConstraintContext _context) {
-    List<SNode> decls = SModelOperations.getNodesIncludingImported(_context.getModel(), operationContext.getScope(), "jetbrains.mps.buildlanguage.structure.Declaration");
-    if (SNodeOperations.isInstanceOf(_context.getEnclosingNode(), "jetbrains.mps.build.generictasks.structure.BuiltInTaskDeclaration") && SNodeOperations.hasRole(_context.getReferenceNode(), "jetbrains.mps.build.generictasks.structure.BuiltInTaskDeclaration", "interfaces")) {
+    List<SNode> decls = SModelOperations.getNodesIncludingImported(_context.getModel(), operationContext.getScope(), "jetbrains.mps.buildlanguage.structure.IDeclaration");
+    if (SNodeOperations.isInstanceOf(_context.getEnclosingNode(), "jetbrains.mps.build.generictasks.structure.BuiltInTaskDeclaration") && SNodeOperations.hasRole(_context.getReferenceNode(), "jetbrains.mps.build.generictasks.structure.BuiltInTaskDeclaration", "fakeDeclaration")) {
       List<SNode> newDecls = new ArrayList<SNode>();
       for (SNode decl : ListSequence.fromList(decls)) {
         if (SNodeOperations.isInstanceOf(decl, "jetbrains.mps.build.generictasks.structure.TaskInterfaceDeclaration")) {
@@ -38,7 +38,7 @@ public class TaskReference_declaration_ReferentConstraint extends BaseNodeRefere
       }
       return new SimpleSearchScope(newDecls);
     } else
-    if (SNodeOperations.isInstanceOf(_context.getEnclosingNode(), "jetbrains.mps.build.generictasks.structure.BuiltInTaskDeclaration") && SNodeOperations.hasRole(_context.getReferenceNode(), "jetbrains.mps.build.generictasks.structure.BuiltInTaskDeclaration", "parentRef")) {
+    if (SNodeOperations.isInstanceOf(_context.getEnclosingNode(), "jetbrains.mps.build.generictasks.structure.BuiltInTaskDeclaration") && SNodeOperations.hasRole(_context.getReferenceNode(), "jetbrains.mps.build.generictasks.structure.BuiltInTaskDeclaration", "fakeDeclaration")) {
       List<SNode> newDecls = new ArrayList<SNode>();
       for (SNode decl : ListSequence.fromList(decls)) {
         if (!(SNodeOperations.isInstanceOf(decl, "jetbrains.mps.build.generictasks.structure.TaskInterfaceDeclaration"))) {

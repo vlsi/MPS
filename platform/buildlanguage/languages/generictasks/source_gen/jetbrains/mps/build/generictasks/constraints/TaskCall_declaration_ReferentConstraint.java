@@ -20,7 +20,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.search.SimpleSearchScope;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import jetbrains.mps.build.generictasks.behavior.AbstractTaskDeclaration_Behavior;
+import jetbrains.mps.build.generictasks.behavior.ITaskDeclaration_Behavior;
 
 public class TaskCall_declaration_ReferentConstraint extends BaseNodeReferenceSearchScopeProvider implements IModelConstraints, INodeReferentSetEventHandler {
   public TaskCall_declaration_ReferentConstraint() {
@@ -47,14 +47,14 @@ public class TaskCall_declaration_ReferentConstraint extends BaseNodeReferenceSe
   }
 
   public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferentConstraintContext _context) {
-    List<SNode> declarations = SModelOperations.getNodesIncludingImported(_context.getModel(), operationContext.getScope(), "jetbrains.mps.build.generictasks.structure.AbstractTaskDeclaration");
+    List<SNode> declarations = SModelOperations.getNodesIncludingImported(_context.getModel(), operationContext.getScope(), "jetbrains.mps.build.generictasks.structure.ITaskDeclaration");
     if (!(SNodeOperations.isInstanceOf(_context.getEnclosingNode(), "jetbrains.mps.build.generictasks.structure.TaskCall"))) {
       return new SimpleSearchScope(ListSequence.fromList(declarations).where(new IWhereFilter<SNode>() {
         public boolean accept(SNode it) {
-          return AbstractTaskDeclaration_Behavior.call_canBeRootTask_1191515374482685348(it);
+          return ITaskDeclaration_Behavior.call_canBeRootTask_1449762848926780427(it);
         }
       }).toListSequence());
     }
-    return AbstractTaskDeclaration_Behavior.call_getPossibleNesteds_1191515374482689153(SLinkOperations.getTarget(SNodeOperations.cast(_context.getEnclosingNode(), "jetbrains.mps.build.generictasks.structure.TaskCall"), "declaration", false), declarations);
+    return ITaskDeclaration_Behavior.call_getPossibleNesteds_1449762848926780436(SLinkOperations.getTarget(SNodeOperations.cast(_context.getEnclosingNode(), "jetbrains.mps.build.generictasks.structure.TaskCall"), "declaration", false), declarations);
   }
 }
