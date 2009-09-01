@@ -19,6 +19,10 @@ import org.eclipse.jdt.internal.compiler.ast.ReturnStatement;
 import org.eclipse.jdt.internal.compiler.ast.ForStatement;
 import org.eclipse.jdt.internal.compiler.ast.IfStatement;
 import org.eclipse.jdt.internal.compiler.ast.SwitchStatement;
+import org.eclipse.jdt.internal.compiler.ast.SynchronizedStatement;
+import org.eclipse.jdt.internal.compiler.ast.ThrowStatement;
+import org.eclipse.jdt.internal.compiler.ast.TryStatement;
+import org.eclipse.jdt.internal.compiler.ast.WhileStatement;
 import org.eclipse.jdt.internal.compiler.lookup.TypeBinding;
 import org.eclipse.jdt.internal.compiler.lookup.TypeIds;
 
@@ -674,9 +678,9 @@ public class JavaConverterTreeBuilder {
   }
 
   Statement processStatement(SwitchStatement x) {
-      //SourceInfo info = makeSourceInfo(x);
-      jetbrains.mps.baseLanguage.structure.Expression expression
-        = processExpressionRefl(x.expression);
+    //SourceInfo info = makeSourceInfo(x);
+    jetbrains.mps.baseLanguage.structure.Expression expression
+      = processExpressionRefl(x.expression);
 
     jetbrains.mps.baseLanguage.structure.SwitchStatement result =
       jetbrains.mps.baseLanguage.structure.SwitchStatement.newInstance(myCurrentModel);
@@ -684,17 +688,93 @@ public class JavaConverterTreeBuilder {
     result.setExpression(expression);
 
     // Don't use processStatements here, because it stops at control breaks
-      if (x.statements != null) {
-        for (org.eclipse.jdt.internal.compiler.ast.Statement stmt : x.statements) {
-          SwitchCase switchCase = processCaseStatement((CaseStatement) stmt); //todo debug this
-          if (switchCase != null) {
-            result.addCase(switchCase);
-          }
+    if (x.statements != null) {
+      for (org.eclipse.jdt.internal.compiler.ast.Statement stmt : x.statements) {
+        SwitchCase switchCase = processCaseStatement((CaseStatement) stmt); //todo debug this
+        if (switchCase != null) {
+          result.addCase(switchCase);
         }
       }
-    //todo add default case
-      return result;
     }
+    //todo add default case
+    return result;
+  }
+
+  Statement processStatement(SynchronizedStatement x) {
+    jetbrains.mps.baseLanguage.structure.SynchronizedStatement result =
+      jetbrains.mps.baseLanguage.structure.SynchronizedStatement.newInstance(myCurrentModel);
+    Statement block = processStatementRefl(x.block);
+    jetbrains.mps.baseLanguage.structure.Expression expr = processExpressionRefl(x.expression);
+    result.setExpression(expr);
+    result.setBlock(getStatementListFromStatement(block));
+    return result;
+  }
+
+  Statement processStatement(ThrowStatement x) {
+    // SourceInfo info = makeSourceInfo(x);
+    jetbrains.mps.baseLanguage.structure.Expression toThrow = processExpressionRefl(x.exception);
+    jetbrains.mps.baseLanguage.structure.ThrowStatement throwStatement =
+      jetbrains.mps.baseLanguage.structure.ThrowStatement.newInstance(myCurrentModel);
+    throwStatement.setThrowable(toThrow);
+    return throwStatement;
+  }
+
+  Statement processStatement(TryStatement x) {
+    //SourceInfo info = makeSourceInfo(x);
+    Statement tryBlock = processStatementRefl(x.tryBlock);
+    //List<JLocalRef> catchArgs = new ArrayList<JLocalRef>();
+    List<Statement> catchBlocks = new ArrayList<Statement>();
+    Statement finallyBlock = processStatementRefl(x.finallyBlock);
+    if (x.catchBlocks != null) {
+      for (int i = 0, c = x.catchArguments.length; i < c; ++i) {
+        //  JLocal local = (JLocal) typeMap.get(x.catchArguments[i].binding);
+        //  catchArgs.add((JLocalRef) createVariableRef(info, local));
+        //todo get local vars
+      }
+      for (int i = 0, c = x.catchBlocks.length; i < c; ++i) {
+        catchBlocks.add(processStatementRefl(x.catchBlocks[i]));
+      }
+    }
+
+    if (finallyBlock != null) {
+      jetbrains.mps.baseLanguage.structure.TryStatement tryStatement =
+        jetbrains.mps.baseLanguage.structure.TryStatement.newInstance(myCurrentModel);
+      for (Statement catchBlock : catchBlocks) {
+        CatchClause catchClause = CatchClause.newInstance(myCurrentModel);
+        tryStatement.addCatchClause(catchClause);
+        catchClause.setCatchBody(getStatementListFromStatement(catchBlock));
+        //todo add local vars
+      }
+      tryStatement.setFinallyBody(getStatementListFromStatement(finallyBlock));
+      tryStatement.setBody(getStatementListFromStatement(tryBlock));
+      return tryStatement;
+    } else {
+      TryCatchStatement tryCatchStatement = TryCatchStatement.newInstance(myCurrentModel);
+      for (Statement catchBlock : catchBlocks) {
+        CatchClause catchClause = CatchClause.newInstance(myCurrentModel);
+        tryCatchStatement.addCatchClause(catchClause);
+        catchClause.setCatchBody(getStatementListFromStatement(catchBlock));
+        //todo add local vars
+      }
+      tryCatchStatement.setBody(getStatementListFromStatement(tryBlock));
+      return tryCatchStatement;
+    }
+  }
+
+  Statement processStatement(WhileStatement x) {
+    // SEE NOTE ON JDT FORCED OPTIMIZATIONS
+    // If the condition is false, don't process the body
+    boolean removeBody = isOptimizedFalse(x.condition);
+
+    // SourceInfo info = makeSourceInfo(x);
+    jetbrains.mps.baseLanguage.structure.Expression loopTest = processExpressionRefl(x.condition);
+    Statement loopBody = removeBody ? null : processStatementRefl(x.action);
+    jetbrains.mps.baseLanguage.structure.WhileStatement result =
+      jetbrains.mps.baseLanguage.structure.WhileStatement.newInstance(myCurrentModel);
+    result.setCondition(loopTest);
+    result.setBody(getStatementListFromStatement(loopBody));
+    return result;
+  }
 
 
   //util ============================================================================
