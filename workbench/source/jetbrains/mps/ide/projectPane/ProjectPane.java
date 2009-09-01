@@ -213,6 +213,7 @@ public class ProjectPane extends AbstractProjectViewPane implements PersistentSt
       }
     });
 
+    //todo code issues
     initComponent();
     projectOpened();
   }
@@ -229,6 +230,22 @@ public class ProjectPane extends AbstractProjectViewPane implements PersistentSt
     }
   }
 
+  public void projectOpened() {
+    myReloadListener.onAfterReload();
+    ClassLoaderManager.getInstance().addReloadHandler(myReloadListener);
+  }
+
+  public void disposeComponent() {
+    projectClosed();
+    getTree().clear();
+    getTree().dispose();
+    removeListeners();
+  }
+
+  public void projectClosed() {
+    ClassLoaderManager.getInstance().removeReloadHandler(myReloadListener);
+  }
+  
   public void addToolbarActions(final DefaultActionGroup group) {
     ToggleAction myPAndRToggle = new ToggleAction("Show properties and references", "Show properties and references", Icons.PROP_AND_REF) {
       public boolean isSelected(@Nullable AnActionEvent e) {
@@ -249,12 +266,6 @@ public class ProjectPane extends AbstractProjectViewPane implements PersistentSt
     group.add(myPAndRToggle);
   }
 
-  public void disposeComponent() {
-    getTree().clear();
-    getTree().dispose();
-    removeListeners();
-  }
-
   public static ProjectPane getInstance(Project project){
     final ProjectView projectView = ProjectView.getInstance(project);
     return (ProjectPane) projectView.getProjectViewPaneById(ID);
@@ -270,12 +281,6 @@ public class ProjectPane extends AbstractProjectViewPane implements PersistentSt
 
   public MPSProject getMPSProject() {
     return myProject.getComponent(MPSProjectHolder.class).getMPSProject();
-  }
-
-  @NonNls
-  @NotNull
-  public String getComponentName() {
-    return "Project Pane";
   }
 
   public String getTitle() {
@@ -370,14 +375,6 @@ public class ProjectPane extends AbstractProjectViewPane implements PersistentSt
     });
   }
 
-  public void projectOpened() {
-    myReloadListener.onAfterReload();
-    ClassLoaderManager.getInstance().addReloadHandler(myReloadListener);
-  }
-
-  public void projectClosed() {
-    ClassLoaderManager.getInstance().removeReloadHandler(myReloadListener);
-  }
 
   //todo:the same thing for nodes & modules
   protected void onBeforeModelWillBeDeleted(SModelDescriptor sm) {
