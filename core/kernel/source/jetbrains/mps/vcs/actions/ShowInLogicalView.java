@@ -1,19 +1,19 @@
 package jetbrains.mps.vcs.actions;
 
-import com.intellij.openapi.vcs.actions.AbstractVcsAction;
-import com.intellij.openapi.vcs.actions.VcsContext;
 import com.intellij.openapi.actionSystem.Presentation;
-import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.util.Computable;
-import jetbrains.mps.ide.projectPane.ProjectPane;
+import com.intellij.openapi.vcs.actions.AbstractVcsAction;
+import com.intellij.openapi.vcs.actions.VcsContext;
+import com.intellij.openapi.vfs.VirtualFile;
 import jetbrains.mps.fileTypes.MPSFileTypesManager;
-import jetbrains.mps.smodel.SModelRepository;
-import jetbrains.mps.smodel.SModelDescriptor;
+import jetbrains.mps.ide.projectPane.ProjectPane;
+import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.SModelDescriptor;
+import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.vfs.VFileSystem;
-import jetbrains.mps.project.IModule;
 
 public class ShowInLogicalView extends AbstractVcsAction {
   protected void actionPerformed(VcsContext e) {
@@ -22,7 +22,7 @@ public class ShowInLogicalView extends AbstractVcsAction {
     if (selectedFile == null) return;
 
     assert project != null;
-    ProjectPane projectPane = project.getComponent(ProjectPane.class);
+    ProjectPane projectPane = ProjectPane.getInstance(project);
 
     if (MPSFileTypesManager.instance().isModelFile(selectedFile)) {
       SModelDescriptor model = ModelAccess.instance().runReadAction(new Computable<SModelDescriptor>() {

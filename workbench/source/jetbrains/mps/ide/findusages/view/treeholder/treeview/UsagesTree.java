@@ -618,7 +618,8 @@ public abstract class UsagesTree extends MPSTree {
   }
 
   private void navigateInTree(Object o, boolean focus) {
-    ProjectPane projectPane = getProject().getComponentSafe(ProjectPane.class);
+    Project project = getProject().getComponent(Project.class);
+    ProjectPane projectPane = ProjectPane.getInstance(project);
     if (o instanceof SNode) {
       projectPane.selectNode((SNode) o);
     } else if (o instanceof SModel) {

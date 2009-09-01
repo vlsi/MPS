@@ -16,6 +16,7 @@
 package jetbrains.mps.ide.ui.smodel;
 
 import com.intellij.openapi.actionSystem.ActionGroup;
+import com.intellij.openapi.project.Project;
 import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.ide.projectPane.ProjectPane;
 import jetbrains.mps.ide.ui.MPSTreeNodeEx;
@@ -183,8 +184,9 @@ public class SNodeTreeNode extends MPSTreeNodeEx {
   }
 
   private boolean showPropertiesAndReferences() {
+    Project project = getOperationContext().getProject();
     return getTree() instanceof ProjectPane.MyTree &&
-      getOperationContext().getComponent(ProjectPane.class).isShowPropertiesAndReferences();
+      ProjectPane.getInstance(project).isShowPropertiesAndReferences();
   }
 
   public void doubleClick() {

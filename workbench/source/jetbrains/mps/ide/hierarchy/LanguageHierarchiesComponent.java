@@ -18,6 +18,7 @@ package jetbrains.mps.ide.hierarchy;
 import com.intellij.openapi.actionSystem.ActionManager;
 import com.intellij.openapi.actionSystem.ActionPlaces;
 import com.intellij.openapi.actionSystem.DataProvider;
+import com.intellij.openapi.project.Project;
 import jetbrains.mps.ide.hierarchy.icons.Icons;
 import jetbrains.mps.ide.projectPane.ProjectPane;
 import jetbrains.mps.lang.structure.structure.ConceptDeclaration;
@@ -349,7 +350,8 @@ public class LanguageHierarchiesComponent extends JComponent implements Scrollab
       myNodePointer = new SNodePointer(conceptDeclaration);
       addMouseListener(new MouseAdapter() {
         public void mousePressed(MouseEvent e) {
-          ProjectPane projectPane = myOperationContext.getComponent(ProjectPane.class);
+          Project project = myOperationContext.getProject();
+          ProjectPane projectPane = ProjectPane.getInstance(project);
           myComponent.select(ConceptContainer.this);
           if (e.isPopupTrigger()) {
             myComponent.processPopupMenu(e);

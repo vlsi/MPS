@@ -53,7 +53,7 @@ public class GoToModelAction extends BaseAction {
       public NavigationItem doGetNavigationItem(final SModelDescriptor modelDescriptor) {
         return new BaseModelItem(modelDescriptor) {
           public void navigate(boolean requestFocus) {
-            ProjectPane projectPane = mpsProject.getComponentSafe(ProjectPane.class);
+            ProjectPane projectPane = ProjectPane.getInstance(project);
             projectPane.selectModel(modelDescriptor);
             projectPane.activate(true);
           }

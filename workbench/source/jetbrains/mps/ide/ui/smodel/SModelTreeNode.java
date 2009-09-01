@@ -17,6 +17,7 @@ package jetbrains.mps.ide.ui.smodel;
 
 import com.intellij.openapi.actionSystem.ActionGroup;
 import com.intellij.openapi.util.Computable;
+import com.intellij.openapi.project.Project;
 import jetbrains.mps.generator.ModelGenerationStatusListener;
 import jetbrains.mps.generator.ModelGenerationStatusManager;
 import jetbrains.mps.ide.ThreadUtils;
@@ -407,8 +408,9 @@ public class SModelTreeNode extends MPSTreeNodeEx {
   }
 
   private boolean showPropertiesAndReferences() {
+    Project project = getOperationContext().getProject();
     return getTree() instanceof ProjectPane.MyTree &&
-      getOperationContext().getComponent(ProjectPane.class).isShowPropertiesAndReferences();
+      ProjectPane.getInstance(project).isShowPropertiesAndReferences();
   }
 
   protected void onAdd() {

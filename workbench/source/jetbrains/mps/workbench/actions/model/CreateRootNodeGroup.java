@@ -19,6 +19,7 @@ import com.intellij.ide.DataManager;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import com.intellij.openapi.actionSystem.DataContext;
 import com.intellij.openapi.util.Computable;
+import com.intellij.openapi.project.Project;
 import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.ide.projectPane.ProjectPane;
 import jetbrains.mps.ide.ui.smodel.PackageNode;
@@ -164,9 +165,9 @@ public class CreateRootNodeGroup extends BaseGroup {
       }
 
       protected void doExecute(AnActionEvent e) {
-        IOperationContext operationContext = MPSDataKeys.OPERATION_CONTEXT.getData(e.getDataContext());
+        Project p = MPSDataKeys.PROJECT.getData(e.getDataContext());
         final IScope scope = MPSDataKeys.SCOPE.getData(e.getDataContext());
-        ProjectPane pane = operationContext.getComponent(ProjectPane.class);
+        ProjectPane pane = ProjectPane.getInstance(p);
 
         SNode node = ModelAccess.instance().runWriteActionInCommand(new Computable<SNode>() {
           public SNode compute() {

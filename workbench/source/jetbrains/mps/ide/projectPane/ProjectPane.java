@@ -40,6 +40,8 @@ import com.intellij.openapi.vfs.VirtualFileManagerListener;
 import com.intellij.openapi.wm.ToolWindow;
 import com.intellij.openapi.wm.ToolWindowId;
 import com.intellij.openapi.wm.ToolWindowManager;
+import com.intellij.openapi.extensions.ExtensionPointName;
+import com.intellij.openapi.extensions.ExtensionPoint;
 import jetbrains.mps.MPSProjectHolder;
 import jetbrains.mps.generator.GenerationListener;
 import jetbrains.mps.generator.GeneratorManager;
@@ -251,6 +253,11 @@ public class ProjectPane extends AbstractProjectViewPane implements PersistentSt
     getTree().clear();
     getTree().dispose();
     removeListeners();
+  }
+
+  public static ProjectPane getInstance(Project project){
+    final ProjectView projectView = ProjectView.getInstance(project);
+    return (ProjectPane) projectView.getProjectViewPaneById(ID);
   }
 
   public MPSTree getTree() {

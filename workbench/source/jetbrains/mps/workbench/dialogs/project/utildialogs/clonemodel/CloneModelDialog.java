@@ -223,7 +223,7 @@ public class CloneModelDialog extends BaseStretchingBindedDialog {
 
     Project project = getOperationContext().getProject();
     assert project != null;
-    final ProjectPane pane = project.getComponent(ProjectPane.class);
+    final ProjectPane pane = ProjectPane.getInstance(project);
     assert pane != null;
     SwingUtilities.invokeLater(new Runnable() {
       public void run() {

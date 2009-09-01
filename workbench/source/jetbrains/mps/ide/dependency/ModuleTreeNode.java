@@ -28,6 +28,8 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
+import com.intellij.openapi.project.Project;
+
 public class ModuleTreeNode extends MPSTreeNode {
   private MPSProject myProject;
   private IModule myModule;
@@ -42,7 +44,8 @@ public class ModuleTreeNode extends MPSTreeNode {
   }
 
   public void doubleClick() {
-    myProject.getComponentSafe(ProjectPane.class).selectModule(myModule);
+    Project project = myProject.getComponent(Project.class);
+    ProjectPane.getInstance(project).selectModule(myModule);
   }
 
   public int getToggleClickCount() {

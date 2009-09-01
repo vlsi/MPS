@@ -50,7 +50,7 @@ public class DeleteNodesHelper {
   public void deleteNodes(boolean fromProjectPane) {
     if (myNodes.size() == 0) return;
 
-    ProjectPane projectPane = myContext.getComponent(ProjectPane.class);
+    ProjectPane projectPane = ProjectPane.getInstance(myContext.getProject());
     if (myNodes.size() == 1) {
       deleteSingle(projectPane, fromProjectPane, myNodes.get(0));
     } else {

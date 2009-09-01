@@ -47,7 +47,7 @@ public class GoToLanguageAction extends BaseAction {
       public NavigationItem doGetNavigationItem(final IModule module) {
         return new BaseModuleItem(module) {
           public void navigate(boolean requestFocus) {
-            ProjectPane projectPane = mpsProject.getComponentSafe(ProjectPane.class);
+            ProjectPane projectPane = ProjectPane.getInstance(project);
             projectPane.selectModule(module);
             projectPane.activate(true);
           }
