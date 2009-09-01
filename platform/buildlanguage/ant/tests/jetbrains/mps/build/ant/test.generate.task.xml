@@ -52,9 +52,9 @@
 
     <target name="testSuccess">
         <unzip src="${test.projects.home}/successfulProject.zip" dest="${test.projects.home}"/>
-        <mps.generate mpshome="${module.home}/../../.." failonerror="true" loglevel="debug">
+        <mps.test.generation mpshome="${module.home}/../../.." failonerror="true" loglevel="debug" showdiff="true">
             <project file="${test.projects.home}/SuccessfulProject/SuccessfulProject.mpr"/>
-        </mps.generate>
+        </mps.test.generation>
         <delete dir="${test.projects.home}/SuccessfulProject"/>
     </target>
 

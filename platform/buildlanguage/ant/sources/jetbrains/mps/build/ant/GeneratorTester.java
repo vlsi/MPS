@@ -1,8 +1,10 @@
 package jetbrains.mps.build.ant;
 
 import org.apache.tools.ant.ProjectComponent;
+import org.apache.tools.ant.BuildException;
 import org.apache.tools.ant.util.LineOrientedOutputStream;
 import org.eclipse.jdt.internal.compiler.CompilationResult;
+import org.eclipse.jdt.core.compiler.CategorizedProblem;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.TestResult;
 import jetbrains.mps.project.ProjectTester;
@@ -29,8 +31,7 @@ import com.intellij.psi.stubs.StubOutputStream;
 import junit.framework.TestFailure;
 
 public class GeneratorTester extends Generator {
-  private String myCurrentTestName;
-  private StringBuffer myErrorMessagesBuffer = new StringBuffer();
+  private boolean myTestFailed = false;
 
   public static void main(String[] args) {
     Generator generator = new GeneratorTester(WhatToGenerate.fromCommandLine(args), new SystemOutLogger());
@@ -53,9 +54,8 @@ public class GeneratorTester extends Generator {
 
   @Override
   protected void generateModulesCircle(GeneratorManager gm, EmptyProgressIndicator emptyProgressIndicator, Set<IModule> modulesSet, List<Pair<SModelDescriptor, IOperationContext>> modelsToContext) {
-    myCurrentTestName = escapeMessageForTeamCity("generating " + modulesSet);
-    myErrorMessagesBuffer = new StringBuffer();
-    System.out.println("##teamcity[testStarted name='" + myCurrentTestName + "']");
+    String currentTestName = escapeMessageForTeamCity("generating " + modulesSet);
+    System.out.println("##teamcity[testStarted name='" + currentTestName + "']");
 
     final EditorGenerateType generationType = new EditorGenerateType(true);
     gm.generateModels(modelsToContext,
@@ -63,14 +63,6 @@ public class GeneratorTester extends Generator {
       emptyProgressIndicator,
       myMessageHandler,
       false);
-
-    printDiffReportIfNeeded(generationType);
-
-    List<CompilationResult> compilationResult = ModelAccess.instance().runReadAction(new Computable<List<CompilationResult>>() {
-      public List<CompilationResult> compute() {
-        return generationType.compile(IAdaptiveProgressMonitor.NULL_PROGRESS_MONITOR);
-      }
-    });
 
     List<String> diffReports;
     if (myWhatToGenerate.getShowDiff()) {
@@ -83,25 +75,69 @@ public class GeneratorTester extends Generator {
       diffReports = new ArrayList<String>();
     }
 
-    TestResult testResult = new TestResult(myMessageHandler.getGenerationErrors(), myMessageHandler.getGenerationWarnings(), ProjectTester.createCompilationProblemsList(compilationResult), new ArrayList<TestFailure>(), diffReports);
-    testResult.dump(new PrintStream(new LineOrientedOutputStream() {
-      @Override
-      protected void processLine(String line) throws IOException {
-        info(line);
+    List<CompilationResult> compilationResult = ModelAccess.instance().runReadAction(new Computable<List<CompilationResult>>() {
+      public List<CompilationResult> compute() {
+        return generationType.compile(IAdaptiveProgressMonitor.NULL_PROGRESS_MONITOR);
       }
-    }));
+    });
 
-    if (myErrorMessagesBuffer.length() > 0) {
-      System.out.println("##teamcity[testFailed name='" + myCurrentTestName + "' message='generation errors' details='" + myErrorMessagesBuffer.toString() + "']");
+    StringBuffer sb = createDetailedReport(compilationResult, diffReports);
+
+    if (sb.length() > 0) {
+      myTestFailed = true;
+      System.out.println("##teamcity[testFailed name='" + currentTestName + "' message='generation errors' details='" + sb.toString() + "']");
     }
-    System.out.println("##teamcity[testFinished name='" + myCurrentTestName + "']");
+    System.out.println("##teamcity[testFinished name='" + currentTestName + "']");
   }
 
-  @Override
-  public void error(String text) {
-    super.error(text);
-    myErrorMessagesBuffer.append("|n|n");
-    myErrorMessagesBuffer.append(escapeMessageForTeamCity(text));
+  private StringBuffer createDetailedReport(List<CompilationResult> compilationResult, List<String> diffReports) {
+    StringBuffer sb = new StringBuffer();
+
+    if (myMessageHandler.getGenerationErrors().size() > 0) {
+      sb.append("Generation errors:|n");
+      for (String e : myMessageHandler.getGenerationErrors()) {
+        sb.append("  ");
+        sb.append(escapeMessageForTeamCity(e));
+        sb.append("|n");
+      }
+      sb.append("|n");
+    }
+
+    boolean headerPrinted = false;
+    for (CompilationResult r : compilationResult) {
+      if (r.getErrors() != null && r.getErrors().length > 0) {
+        if (!headerPrinted) {
+          sb.append("Compilation problems:|n");
+          headerPrinted = true;
+        }
+        for (CategorizedProblem p : r.getErrors()) {
+          sb.append("  ");
+          sb.append(escapeMessageForTeamCity(new String(r.getCompilationUnit().getFileName())));
+          sb.append(" (");
+          sb.append(p.getSourceLineNumber());
+          sb.append("): ");
+          sb.append(p.getMessage());
+          sb.append("|n");
+        }
+      }
+    }
+    if (headerPrinted) {
+      sb.append("|n");
+    }
+
+    if (myWhatToGenerate.getShowDiff()) {
+      if (diffReports.size() > 0) {
+        sb.append("Difference:|n");
+        for (String diffReport : diffReports) {
+          sb.append("  ");
+          sb.append(escapeMessageForTeamCity(diffReport));
+          sb.append("|n");
+        }
+        sb.append("|n");
+      }
+    }
+
+    return sb;
   }
 
   private String escapeMessageForTeamCity(String rawMessage) {
@@ -110,27 +146,9 @@ public class GeneratorTester extends Generator {
 
   @Override
   protected void showStatistic() {
-    super.showStatistic();
-  }
-
-  private void printDiffReportIfNeeded(final EditorGenerateType generationType) {
-    if (myWhatToGenerate.getShowDiff()) {
-      List<String> diffReports = ModelAccess.instance().runReadAction(new Computable<List<String>>() {
-        public List<String> compute() {
-          return DiffReporter.createDiffReports(generationType);
-        }
-      });
-      if (diffReports.isEmpty()) {
-        info("No differences between generated and actual code.");
-      } else {
-        StringBuffer sb = new StringBuffer();
-        sb.append("Difference report:\n");
-        for (String diff : diffReports) {
-          sb.append(diff);
-          sb.append("\n");
-        }
-        info(sb.toString());
-      }
+    if (myTestFailed && myWhatToGenerate.getFailOnError()) {
+      throw new BuildException("Tests Failed");
     }
   }
+
 }
