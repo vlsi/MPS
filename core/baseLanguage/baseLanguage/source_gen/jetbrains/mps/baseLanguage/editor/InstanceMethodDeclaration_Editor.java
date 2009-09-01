@@ -284,6 +284,7 @@ public class InstanceMethodDeclaration_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "final");
     editorCell.setCellId("Constant_5704_10");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
+    DeleteFinalInBaseMethod.setCellActions(editorCell, node, editorContext);
     editorCell.setDefaultText("");
     return editorCell;
   }
