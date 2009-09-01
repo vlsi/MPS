@@ -9,10 +9,11 @@
     <!--MPS Patch: enable project view-->
     <toolWindow id="Project" anchor="left" icon="/general/toolWindowProject.png"
                 factoryClass="com.intellij.ide.projectView.impl.ProjectViewToolWindowFactory"/>
-    <!--project view tool tabs-->
+    <!--MPS Patch Start: project view tool tabs-->
     <projectViewPane implementation="jetbrains.mps.ide.projectPane.ProjectPane"/>
     <projectViewPane implementation="jetbrains.mps.ide.projectPane.fileSystem.BaseDirectoryProjectView"/>
     <projectViewPane implementation="jetbrains.mps.ide.projectPane.fileSystem.VCSRootsProjectView"/>
+    <!--MPS Patch Ended-->
 
     <applicationService serviceInterface="com.intellij.openapi.actionSystem.JBAwtEventQueue"
                         serviceImplementation="com.intellij.openapi.actionSystem.impl.JBAwtEventQueueImpl"/>
@@ -121,6 +122,9 @@
                     serviceImplementation="com.intellij.ui.RecentsManager"/>
     <projectService serviceInterface="com.intellij.ui.content.MessageView"
                     serviceImplementation="com.intellij.ui.content.impl.MessageViewImpl"/>
+
+    <!--MPS Patch:-->
+    <selectInTarget implementation="com.intellij.ide.impl.ProjectViewSelectInGroupTarget"/>
 
     <projectService serviceInterface="com.intellij.ui.FileColorManager"
                     serviceImplementation="com.intellij.ui.tabs.FileColorManagerImpl"/>
