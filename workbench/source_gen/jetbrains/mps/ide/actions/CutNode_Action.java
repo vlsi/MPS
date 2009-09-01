@@ -6,6 +6,7 @@ import jetbrains.mps.plugins.pluginparts.actions.GeneratedAction;
 import javax.swing.Icon;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
+import com.intellij.openapi.project.Project;
 import jetbrains.mps.smodel.IOperationContext;
 import java.util.List;
 import jetbrains.mps.smodel.SNode;
@@ -22,6 +23,7 @@ public class CutNode_Action extends GeneratedAction {
   private static final Icon ICON = null;
   protected static Log log = LogFactory.getLog(CutNode_Action.class);
 
+  private Project project;
   private IOperationContext context;
   private List<SNode> nodes;
 
@@ -73,6 +75,10 @@ public class CutNode_Action extends GeneratedAction {
     if (this.nodes == null) {
       return false;
     }
+    this.project = event.getData(MPSDataKeys.PROJECT);
+    if (this.project == null) {
+      return false;
+    }
     this.context = event.getData(MPSDataKeys.OPERATION_CONTEXT);
     if (this.context == null) {
       return false;
@@ -101,6 +107,7 @@ public class CutNode_Action extends GeneratedAction {
   }
 
   private ProjectPane getProjectPane() {
-    return CutNode_Action.this.context.getComponent(ProjectPane.class);
+    return ProjectPane.getInstance(CutNode_Action.this.project);
+
   }
 }

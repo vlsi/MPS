@@ -6,6 +6,7 @@ import jetbrains.mps.plugins.pluginparts.actions.GeneratedAction;
 import javax.swing.Icon;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
+import com.intellij.openapi.project.Project;
 import jetbrains.mps.project.MPSProject;
 import java.awt.Frame;
 import javax.swing.tree.TreeNode;
@@ -22,6 +23,7 @@ public class RenameNamespace_Action extends GeneratedAction {
   private static final Icon ICON = null;
   protected static Log log = LogFactory.getLog(RenameNamespace_Action.class);
 
+  private Project ideaProject;
   private MPSProject project;
   private Frame frame;
   private TreeNode treeNode;
@@ -58,6 +60,10 @@ public class RenameNamespace_Action extends GeneratedAction {
   @Override
   protected boolean collectActionData(AnActionEvent event) {
     if (!(super.collectActionData(event))) {
+      return false;
+    }
+    this.ideaProject = event.getData(MPSDataKeys.PROJECT);
+    if (this.ideaProject == null) {
       return false;
     }
     this.project = event.getData(MPSDataKeys.MPS_PROJECT);
@@ -97,6 +103,6 @@ public class RenameNamespace_Action extends GeneratedAction {
   }
 
   private ProjectPane getProjectPane() {
-    return RenameNamespace_Action.this.project.getComponent(ProjectPane.class);
+    return ProjectPane.getInstance(RenameNamespace_Action.this.ideaProject);
   }
 }

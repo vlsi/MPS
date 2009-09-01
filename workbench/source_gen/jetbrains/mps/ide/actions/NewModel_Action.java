@@ -7,6 +7,7 @@ import javax.swing.Icon;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import java.awt.Frame;
+import com.intellij.openapi.project.Project;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.project.IModule;
@@ -25,6 +26,7 @@ public class NewModel_Action extends GeneratedAction {
   protected static Log log = LogFactory.getLog(NewModel_Action.class);
 
   private Frame frame;
+  private Project ideaProject;
   private MPSProject project;
   private IOperationContext context;
   private IModule module;
@@ -58,6 +60,10 @@ public class NewModel_Action extends GeneratedAction {
     }
     this.frame = event.getData(MPSDataKeys.FRAME);
     if (this.frame == null) {
+      return false;
+    }
+    this.ideaProject = event.getData(MPSDataKeys.PROJECT);
+    if (this.ideaProject == null) {
       return false;
     }
     this.project = event.getData(MPSDataKeys.MPS_PROJECT);
@@ -95,7 +101,7 @@ public class NewModel_Action extends GeneratedAction {
       SModelDescriptor result = dialog.value.getResult();
       if (result != null) {
         SModelDescriptor modelDescriptor = result;
-        NewModel_Action.this.project.getComponentSafe(ProjectPane.class).selectModel(modelDescriptor);
+        ProjectPane.getInstance(NewModel_Action.this.ideaProject).selectModel(modelDescriptor);
       }
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {

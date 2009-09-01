@@ -8,6 +8,7 @@ import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.plugins.MacrosUtil;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
+import com.intellij.openapi.project.Project;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SNode;
 import org.jetbrains.annotations.NotNull;
@@ -19,6 +20,7 @@ public class ShowInProject_Action extends GeneratedAction {
   private static final Icon ICON = IconManager.loadIcon(MacrosUtil.expandPath("${solution_descriptor}\\icons\\project.png", "jetbrains.mps.ide"), true);
   protected static Log log = LogFactory.getLog(ShowInProject_Action.class);
 
+  private Project project;
   private IOperationContext context;
   private SNode node;
 
@@ -49,6 +51,10 @@ public class ShowInProject_Action extends GeneratedAction {
     if (!(super.collectActionData(event))) {
       return false;
     }
+    this.project = event.getData(MPSDataKeys.PROJECT);
+    if (this.project == null) {
+      return false;
+    }
     this.context = event.getData(MPSDataKeys.OPERATION_CONTEXT);
     if (this.context == null) {
       return false;
@@ -62,7 +68,7 @@ public class ShowInProject_Action extends GeneratedAction {
 
   public void doExecute(@NotNull final AnActionEvent event) {
     try {
-      ProjectPane pane = ShowInProject_Action.this.context.getComponent(ProjectPane.class);
+      ProjectPane pane = ProjectPane.getInstance(ShowInProject_Action.this.project);
       pane.selectNode(ShowInProject_Action.this.node);
       pane.getTree().requestFocus();
     } catch (Throwable t) {

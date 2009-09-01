@@ -7,6 +7,7 @@ import javax.swing.Icon;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import jetbrains.mps.project.IModule;
+import com.intellij.openapi.project.Project;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.LanguageAspect;
 import org.jetbrains.annotations.NotNull;
@@ -23,6 +24,7 @@ public class NewAspectModel_Action extends GeneratedAction {
   protected static Log log = LogFactory.getLog(NewAspectModel_Action.class);
 
   private IModule module;
+  private Project ideaProject;
   private MPSProject project;
   private LanguageAspect aspect;
 
@@ -64,6 +66,10 @@ public class NewAspectModel_Action extends GeneratedAction {
     if (this.module == null) {
       return false;
     }
+    this.ideaProject = event.getData(MPSDataKeys.PROJECT);
+    if (this.ideaProject == null) {
+      return false;
+    }
     this.project = event.getData(MPSDataKeys.MPS_PROJECT);
     if (this.project == null) {
       return false;
@@ -77,7 +83,7 @@ public class NewAspectModel_Action extends GeneratedAction {
       // we need it since tree is updated later
       SwingUtilities.invokeLater(new Runnable() {
         public void run() {
-          NewAspectModel_Action.this.project.getComponentSafe(ProjectPane.class).selectModel(modelDescriptor);
+          ProjectPane.getInstance(NewAspectModel_Action.this.ideaProject).selectModel(modelDescriptor);
         }
       });
     } catch (Throwable t) {

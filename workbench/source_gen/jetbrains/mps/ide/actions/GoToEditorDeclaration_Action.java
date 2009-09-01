@@ -8,6 +8,7 @@ import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.plugins.MacrosUtil;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
+import com.intellij.openapi.project.Project;
 import jetbrains.mps.project.MPSProject;
 import java.awt.Frame;
 import jetbrains.mps.ide.IEditor;
@@ -37,6 +38,7 @@ public class GoToEditorDeclaration_Action extends GeneratedAction {
   private static final Icon ICON = IconManager.loadIcon(MacrosUtil.expandPath("${solution_descriptor}/icons/editor.png", "jetbrains.mps.ide"), true);
   protected static Log log = LogFactory.getLog(GoToEditorDeclaration_Action.class);
 
+  private Project ideaProject;
   private MPSProject project;
   private Frame frame;
   private IEditor editor;
@@ -46,7 +48,7 @@ public class GoToEditorDeclaration_Action extends GeneratedAction {
   private SNode node;
 
   public GoToEditorDeclaration_Action() {
-    super("Go To Editor Declaration", "", ICON);
+    super("Go to Editor Declaration", "", ICON);
     this.setIsAlwaysVisible(false);
     this.setExecuteOutsideCommand(true);
   }
@@ -86,6 +88,10 @@ public class GoToEditorDeclaration_Action extends GeneratedAction {
       this.node = node;
     }
     if (this.node == null) {
+      return false;
+    }
+    this.ideaProject = event.getData(MPSDataKeys.PROJECT);
+    if (this.ideaProject == null) {
       return false;
     }
     this.project = event.getData(MPSDataKeys.MPS_PROJECT);
@@ -155,6 +161,6 @@ public class GoToEditorDeclaration_Action extends GeneratedAction {
 
   /*package*/ void navigateToEditorDeclaration(SNode editorNode, IOperationContext oContext, IEditor editor) {
     oContext.getComponent(MPSEditorOpener.class).editNode(editorNode, oContext);
-    oContext.getComponent(ProjectPane.class).selectNode(editorNode);
+    ProjectPane.getInstance(GoToEditorDeclaration_Action.this.ideaProject).selectNode(editorNode);
   }
 }

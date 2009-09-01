@@ -6,6 +6,7 @@ import jetbrains.mps.plugins.pluginparts.actions.GeneratedAction;
 import javax.swing.Icon;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
+import com.intellij.openapi.project.Project;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SNode;
@@ -30,6 +31,7 @@ public class PasteNode_Action extends GeneratedAction {
   private static final Icon ICON = null;
   protected static Log log = LogFactory.getLog(PasteNode_Action.class);
 
+  private Project project;
   private String pack;
   private IOperationContext context;
   private SModelDescriptor contextModel;
@@ -67,6 +69,10 @@ public class PasteNode_Action extends GeneratedAction {
   @Override
   protected boolean collectActionData(AnActionEvent event) {
     if (!(super.collectActionData(event))) {
+      return false;
+    }
+    this.project = event.getData(MPSDataKeys.PROJECT);
+    if (this.project == null) {
       return false;
     }
     this.pack = event.getData(MPSDataKeys.VIRTUAL_PACKAGE);
@@ -116,7 +122,7 @@ public class PasteNode_Action extends GeneratedAction {
           PasteNode_Action.this.context.getComponent(MPSEditorOpener.class).editNode(root, PasteNode_Action.this.context);
           SwingUtilities.invokeLater(new Runnable() {
             public void run() {
-              PasteNode_Action.this.context.getComponent(ProjectPane.class).selectNode(pasteNodes.get(0));
+              ProjectPane.getInstance(PasteNode_Action.this.project).selectNode(pasteNodes.get(0));
             }
           });
         }

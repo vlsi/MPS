@@ -10,6 +10,7 @@ import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.smodel.SNode;
 import java.util.List;
 import jetbrains.mps.smodel.IOperationContext;
+import com.intellij.openapi.project.Project;
 import jetbrains.mps.ide.projectPane.ProjectPane;
 import jetbrains.mps.build.packaging.behavior.Module_Behavior;
 
@@ -52,7 +53,9 @@ public class Module_KeyMap extends EditorCellKeyMap {
 
     private void execute_internal(final KeyEvent keyEvent, final EditorContext editorContext, final SNode node, final List<SNode> selectedNodes) {
       IOperationContext operationContext = editorContext.getOperationContext();
-      operationContext.getComponent(ProjectPane.class).selectModule(Module_Behavior.call_getModule_1213877515148(node));
+
+      Project project = operationContext.getProject();
+      ProjectPane.getInstance(project).selectModule(Module_Behavior.call_getModule_1213877515148(node));
     }
 
     public String getKeyStroke() {

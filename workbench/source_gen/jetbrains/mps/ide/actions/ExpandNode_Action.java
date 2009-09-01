@@ -6,6 +6,7 @@ import jetbrains.mps.plugins.pluginparts.actions.GeneratedAction;
 import javax.swing.Icon;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
+import com.intellij.openapi.project.Project;
 import jetbrains.mps.smodel.IOperationContext;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
@@ -19,6 +20,7 @@ public class ExpandNode_Action extends GeneratedAction {
   private static final Icon ICON = null;
   protected static Log log = LogFactory.getLog(ExpandNode_Action.class);
 
+  private Project project;
   private IOperationContext context;
 
   public ExpandNode_Action() {
@@ -48,6 +50,10 @@ public class ExpandNode_Action extends GeneratedAction {
     if (!(super.collectActionData(event))) {
       return false;
     }
+    this.project = event.getData(MPSDataKeys.PROJECT);
+    if (this.project == null) {
+      return false;
+    }
     this.context = event.getData(MPSDataKeys.OPERATION_CONTEXT);
     if (this.context == null) {
       return false;
@@ -57,7 +63,7 @@ public class ExpandNode_Action extends GeneratedAction {
 
   public void doExecute(@NotNull final AnActionEvent event) {
     try {
-      ProjectPane pane = ExpandNode_Action.this.context.getComponent(ProjectPane.class);
+      ProjectPane pane = ProjectPane.getInstance(ExpandNode_Action.this.project);
       MPSTree tree = pane.getTree();
       TreePath path = tree.getSelectionPath();
       if (path == null) {

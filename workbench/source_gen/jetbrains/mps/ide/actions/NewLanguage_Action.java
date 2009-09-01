@@ -83,7 +83,7 @@ public class NewLanguage_Action extends GeneratedAction {
           NewLanguage_Action.this.project.setFolderFor(l, NewLanguage_Action.this.folder);
         }
       });
-      NewLanguage_Action.this.ideaProject.getComponent(ProjectPane.class).selectModule(l);
+      ProjectPane.getInstance(NewLanguage_Action.this.ideaProject).selectModule(l);
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
         log.error("User's action execute method failed. Action:" + "NewLanguage", t);

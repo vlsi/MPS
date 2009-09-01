@@ -87,7 +87,7 @@ public class NewGenerator_Action extends GeneratedAction {
       dialog[0].showDialog();
       Generator result = dialog[0].getResult();
       if (result != null) {
-        NewGenerator_Action.this.project.getComponent(ProjectPane.class).selectModule(result);
+        ProjectPane.getInstance(NewGenerator_Action.this.project).selectModule(result);
       }
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {

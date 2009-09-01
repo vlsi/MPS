@@ -6,6 +6,7 @@ import jetbrains.mps.plugins.pluginparts.actions.GeneratedAction;
 import javax.swing.Icon;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
+import com.intellij.openapi.project.Project;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.IOperationContext;
 import java.util.List;
@@ -24,6 +25,7 @@ public class CloneRoot_Action extends GeneratedAction {
   private static final Icon ICON = null;
   protected static Log log = LogFactory.getLog(CloneRoot_Action.class);
 
+  private Project ideaProject;
   private MPSProject project;
   private IOperationContext context;
   private List<SNode> nodes;
@@ -69,6 +71,10 @@ public class CloneRoot_Action extends GeneratedAction {
     if (this.nodes == null) {
       return false;
     }
+    this.ideaProject = event.getData(MPSDataKeys.PROJECT);
+    if (this.ideaProject == null) {
+      return false;
+    }
     this.project = event.getData(MPSDataKeys.MPS_PROJECT);
     if (this.project == null) {
       return false;
@@ -87,7 +93,7 @@ public class CloneRoot_Action extends GeneratedAction {
         SNode copy = SNodeOperations.copyNode(root);
         SModelOperations.addRootNode(SNodeOperations.getModel(root), copy);
         CloneRoot_Action.this.project.getComponentSafe(MPSEditorOpener.class).editNode(copy, CloneRoot_Action.this.context);
-        CloneRoot_Action.this.project.getComponentSafe(ProjectPane.class).selectNode(copy);
+        ProjectPane.getInstance(CloneRoot_Action.this.ideaProject).selectNode(copy);
       }
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {

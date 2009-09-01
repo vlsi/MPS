@@ -72,7 +72,7 @@ public class NewDevKit_Action extends GeneratedAction {
       dialog.setProject(NewDevKit_Action.this.project);
       dialog.showDialog();
       DevKit devkit = dialog.getResult();
-      NewDevKit_Action.this.project.getComponent(ProjectPane.class).selectModule(devkit);
+      ProjectPane.getInstance(NewDevKit_Action.this.ideaProject).selectModule(devkit);
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
         log.error("User's action execute method failed. Action:" + "NewDevKit", t);

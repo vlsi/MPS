@@ -8,6 +8,7 @@ import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import java.awt.Frame;
 import jetbrains.mps.smodel.IOperationContext;
+import com.intellij.openapi.project.Project;
 import jetbrains.mps.project.MPSProject;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
@@ -22,6 +23,7 @@ public class SetModuleFolder_Action extends GeneratedAction {
 
   private Frame frame;
   private IOperationContext context;
+  private Project ideaProject;
   private MPSProject project;
 
   public SetModuleFolder_Action() {
@@ -67,6 +69,10 @@ public class SetModuleFolder_Action extends GeneratedAction {
     if (this.context == null) {
       return false;
     }
+    this.ideaProject = event.getData(MPSDataKeys.PROJECT);
+    if (this.ideaProject == null) {
+      return false;
+    }
     this.project = event.getData(MPSDataKeys.MPS_PROJECT);
     if (this.project == null) {
       return false;
@@ -76,7 +82,7 @@ public class SetModuleFolder_Action extends GeneratedAction {
 
   public void doExecute(@NotNull final AnActionEvent event) {
     try {
-      ProjectPane pane = SetModuleFolder_Action.this.context.getComponent(ProjectPane.class);
+      ProjectPane pane = ProjectPane.getInstance(SetModuleFolder_Action.this.ideaProject);
       IModule module = SetModuleFolder_Action.this.context.getModule();
       String oldFolder = SetModuleFolder_Action.this.project.getFolderFor(module);
       String newFolder = JOptionPane.showInputDialog(SetModuleFolder_Action.this.frame, "Enter new folder", oldFolder);
