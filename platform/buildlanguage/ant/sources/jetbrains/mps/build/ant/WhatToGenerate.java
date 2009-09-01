@@ -30,7 +30,7 @@ public class WhatToGenerate {
   private final Map<String, File> myLibraries = new LinkedHashMap<String, File>();
   private final Map<String, String> myMacro = new LinkedHashMap<String, String>();
   private int myLogLevel = org.apache.tools.ant.Project.MSG_INFO;
-  private boolean myShowDiff;
+  private boolean myShowDiff = true;
   private static final String MODEL_DIR = "MODEL_DIR";
   private static final String MODULE_DIR = "MODULE_DIR";
   private static final String MPS_PROJECT = "MPS_PROJECT";
