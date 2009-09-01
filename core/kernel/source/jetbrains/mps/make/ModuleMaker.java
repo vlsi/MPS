@@ -45,7 +45,6 @@ public class ModuleMaker {
 
   private Map<String, IModule> myContainingModules = new HashMap<String, IModule>();
   private Map<IModule, ModuleSources> myModuleSources = new HashMap<IModule, ModuleSources>();
-  private JavaCompiler myCompiler = null;
 
   public ModuleMaker() {
   }
@@ -116,10 +115,6 @@ public class ModuleMaker {
     return toCompile;
   }
 
-  public List<CompilationResult> getFullCompilationResults() {
-    return myCompiler.getCompilationResults();
-  }
-
   private jetbrains.mps.plugin.CompilationResult compile(Set<IModule> modules) {
     boolean hasAnythingToCompile = false;
     for (IModule m : modules) {
@@ -134,7 +129,7 @@ public class ModuleMaker {
 
     IClassPathItem classPathItems = computeDependenciesClassPath(modules);
 
-    myCompiler = new JavaCompiler(classPathItems);
+    JavaCompiler compiler = new JavaCompiler(classPathItems);
 
     for (IModule m : modules) {
       if (areClassesUpToDate(m)) {
@@ -153,17 +148,17 @@ public class ModuleMaker {
       }
 
       for (JavaFile f : sources.getFilesToCompile()) {
-        myCompiler.addSource(f.getClassName(), f.getContents());
+        compiler.addSource(f.getClassName(), f.getContents());
         myContainingModules.put(f.getClassName(), m);
       }
     }
 
-    myCompiler.compile();
+    compiler.compile();
 
     int errorCount = 0;
     int outputtedErrors = 0;
 
-    for (CompilationResult cr : myCompiler.getCompilationResults()) {
+    for (CompilationResult cr : compiler.getCompilationResults()) {
       Set<String> classesWithErrors = new HashSet<String>();
       if (cr.getErrors() != null) {
         for (CategorizedProblem cp : cr.getErrors()) {

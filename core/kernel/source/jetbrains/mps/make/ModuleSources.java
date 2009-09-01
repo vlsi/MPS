@@ -226,8 +226,11 @@ public class ModuleSources {
     myFilesToCompile.add(extendJavaFile);
     SModelDescriptor extendModel = getModelByClassName(extendName);
     String extendOutputDir = extendModel.getModule().getGeneratorOutputPath();
-    DependenciesRoot extendDependRoot = DependenciesRoot.load(DependenciesRoot.getOutputFileOfModel(extendOutputDir,
-      extendModel));
+    IFile extendDependFile = DependenciesRoot.getOutputFileOfModel(extendOutputDir, extendModel);
+    if (extendDependFile == null || !extendDependFile.exists() || !extendDependFile.isDirectory()) {
+      return;
+    }
+    DependenciesRoot extendDependRoot = DependenciesRoot.load(extendDependFile);
     if (extendDependRoot != null) {
       for (Dependency extendDependency : extendDependRoot.getDependencies()) {
         if (extendDependency.getClassName().equals(extendName)) {
