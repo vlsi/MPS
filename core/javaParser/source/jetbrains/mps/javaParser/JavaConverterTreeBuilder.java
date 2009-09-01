@@ -17,6 +17,8 @@ import org.eclipse.jdt.internal.compiler.ast.ContinueStatement;
 import org.eclipse.jdt.internal.compiler.ast.ForeachStatement;
 import org.eclipse.jdt.internal.compiler.ast.ReturnStatement;
 import org.eclipse.jdt.internal.compiler.ast.ForStatement;
+import org.eclipse.jdt.internal.compiler.ast.IfStatement;
+import org.eclipse.jdt.internal.compiler.ast.SwitchStatement;
 import org.eclipse.jdt.internal.compiler.lookup.TypeBinding;
 import org.eclipse.jdt.internal.compiler.lookup.TypeIds;
 
@@ -539,14 +541,7 @@ public class JavaConverterTreeBuilder {
     Statement loopBody = processStatementRefl(x.action);
     DoWhileStatement doWhileStatement = DoWhileStatement.newInstance(myCurrentModel);
     doWhileStatement.setCondition(loopTest);
-
-    StatementList body;
-    if (loopBody instanceof BlockStatement) {
-      body = ((BlockStatement)loopBody).getStatements();
-    } else {
-      body = StatementList.newInstance(myCurrentModel);
-      body.addStatement(loopBody);
-    }
+    StatementList body = getStatementListFromStatement(loopBody);
     doWhileStatement.setBody(body);
     return doWhileStatement;
   }
@@ -564,13 +559,6 @@ public class JavaConverterTreeBuilder {
     return result;
   }
 
-  Statement processStatement(ReturnStatement x) {
-    jetbrains.mps.baseLanguage.structure.ReturnStatement result =
-      jetbrains.mps.baseLanguage.structure.ReturnStatement.newInstance(myCurrentModel);
-    result.setExpression(processExpressionRefl(x.expression));
-    return result;
-  }
-
   private LocalVariableDeclaration getLocalVariableDeclaration(LocalDeclaration x) {
     // SourceInfo info = makeSourceInfo(x);
     // JLocal local = (JLocal) typeMap.get(x.binding); //todo: was ist das?
@@ -582,19 +570,20 @@ public class JavaConverterTreeBuilder {
     return localVariableDeclaration;
   }
 
+  Statement processStatement(ReturnStatement x) {
+    jetbrains.mps.baseLanguage.structure.ReturnStatement result =
+      jetbrains.mps.baseLanguage.structure.ReturnStatement.newInstance(myCurrentModel);
+    result.setExpression(processExpressionRefl(x.expression));
+    return result;
+  }
+
   Statement processStatement(ForeachStatement x) {
     // SourceInfo info = makeSourceInfo(x);
     jetbrains.mps.baseLanguage.structure.ForeachStatement result =
       jetbrains.mps.baseLanguage.structure.ForeachStatement.newInstance(myCurrentModel);
 
-    StatementList body;
     Statement action = processStatementRefl(x.action);
-    if (action instanceof BlockStatement) {
-      body = ((BlockStatement) action).getStatements();
-    } else {
-      body = StatementList.newInstance(myCurrentModel);
-      body.addStatement(action);
-    }
+    StatementList body = getStatementListFromStatement(action);
 
     // JLocal elementVar = (JLocal) typeMap.get(x.elementVariable.binding);
     // String elementVarName = elementVar.getName();
@@ -621,16 +610,8 @@ public class JavaConverterTreeBuilder {
     List<Statement> init = processStatements(x.initializations);
     jetbrains.mps.baseLanguage.structure.Expression expr = processExpressionRefl(x.condition);
     List<ExpressionStatement> incr = processExpressionStatements(x.increments);
-    StatementList body;
     Statement loopBody = removeBody ? null : processStatementRefl(x.action);
-    if (loopBody instanceof BlockStatement) {
-      body = ((BlockStatement)loopBody).getStatements();
-    } else {
-      body = StatementList.newInstance(myCurrentModel);
-      if (loopBody != null) {
-        body.addStatement(loopBody);
-      }
-    }
+    StatementList body = getStatementListFromStatement(loopBody);
     jetbrains.mps.baseLanguage.structure.ForStatement forStatement =
       jetbrains.mps.baseLanguage.structure.ForStatement.newInstance(myCurrentModel);
     forStatement.setCondition(expr);
@@ -649,8 +630,87 @@ public class JavaConverterTreeBuilder {
     return forStatement;
   }
 
+  Statement processStatement(IfStatement x) {
+    // SEE NOTE ON JDT FORCED OPTIMIZATIONS
+    // If the condition is false, don't process the then statement
+    // If the condition is false, don't process the else statement
+    boolean removeThen = isOptimizedFalse(x.condition);
+    boolean removeElse = isOptimizedTrue(x.condition);
 
-  //util
+    //SourceInfo info = makeSourceInfo(x);
+    jetbrains.mps.baseLanguage.structure.Expression expr = processExpressionRefl(x.condition);
+    Statement thenStmt = removeThen ? null
+      : processStatementRefl(x.thenStatement);
+    Statement elseStmt = removeElse ? null
+      : processStatementRefl(x.elseStatement);
+    jetbrains.mps.baseLanguage.structure.IfStatement result =
+      jetbrains.mps.baseLanguage.structure.IfStatement.newInstance(myCurrentModel);
+
+    result.setCondition(expr);
+    if (elseStmt != null) {
+      result.setIfFalseStatement(elseStmt);
+    }
+    StatementList ifTrue = getStatementListFromStatement(thenStmt);
+    result.setIfTrue(ifTrue);
+    return result;
+  }
+
+  Statement processStatement(LabeledStatement x) {
+    Statement statement = processStatementRefl(x.statement);
+    if (statement == null) {
+      return null;
+    }
+
+    if (statement instanceof AbstractLoopStatement) {
+      AbstractLoopStatement loopStatement = (AbstractLoopStatement) statement;
+      loopStatement.setLabel(new String(x.label));
+    } else if (statement instanceof jetbrains.mps.baseLanguage.structure.SwitchStatement) {
+      jetbrains.mps.baseLanguage.structure.SwitchStatement switchStatement =
+        (jetbrains.mps.baseLanguage.structure.SwitchStatement) statement;
+      switchStatement.setLabel(new String(x.label));
+    }
+
+    return statement;
+  }
+
+  Statement processStatement(SwitchStatement x) {
+      //SourceInfo info = makeSourceInfo(x);
+      jetbrains.mps.baseLanguage.structure.Expression expression
+        = processExpressionRefl(x.expression);
+
+    jetbrains.mps.baseLanguage.structure.SwitchStatement result =
+      jetbrains.mps.baseLanguage.structure.SwitchStatement.newInstance(myCurrentModel);
+
+    result.setExpression(expression);
+
+    // Don't use processStatements here, because it stops at control breaks
+      if (x.statements != null) {
+        for (org.eclipse.jdt.internal.compiler.ast.Statement stmt : x.statements) {
+          SwitchCase switchCase = processCaseStatement((CaseStatement) stmt); //todo debug this
+          if (switchCase != null) {
+            result.addCase(switchCase);
+          }
+        }
+      }
+    //todo add default case
+      return result;
+    }
+
+
+  //util ============================================================================
+
+  private StatementList getStatementListFromStatement(Statement possibleBlock) {
+    StatementList result;
+    if (possibleBlock instanceof BlockStatement) {
+      result = ((BlockStatement)possibleBlock).getStatements();
+    } else {
+      result = StatementList.newInstance(myCurrentModel);
+      if (possibleBlock != null) {
+        result.addStatement(possibleBlock);
+      }
+    }
+    return result;
+  }
 
   /**
    * Returns <code>true</code> if JDT optimized the condition to
