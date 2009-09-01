@@ -2141,7 +2141,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     return result;
   }
 
-  public EditorCell changeSelectionWRTFocusPolicy(EditorCell cell) {
+  public EditorCell changeSelectionWRTFocusPolicy(@NotNull EditorCell cell) {
     EditorCell focusPolicyCell = FocusPolicyUtil.findCellToSelectDueToFocusPolicy(cell);
     EditorCell toSelect;
     if (focusPolicyCell == null || (focusPolicyCell == cell && !focusPolicyCell.hasFocusPolicy())) {
