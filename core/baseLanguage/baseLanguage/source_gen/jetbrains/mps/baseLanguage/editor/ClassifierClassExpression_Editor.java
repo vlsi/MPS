@@ -12,7 +12,7 @@ import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
-import jetbrains.mps.nodeEditor.AbstractCellProvider;
+import jetbrains.mps.nodeEditor.InlineCellProvider;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Property;
 import jetbrains.mps.nodeEditor.cells.EditorCell_RefPresentation;
 
@@ -64,7 +64,7 @@ public class ClassifierClassExpression_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public static class _Inline4221_0 extends AbstractCellProvider {
+  public static class _Inline4221_0 extends InlineCellProvider {
     public _Inline4221_0() {
       super();
     }
@@ -78,7 +78,7 @@ public class ClassifierClassExpression_Editor extends DefaultNodeEditor {
     }
 
     private EditorCell createReferencePresentation_4221_0(EditorContext editorContext, SNode node) {
-      EditorCell_Property editorCell = EditorCell_RefPresentation.create(editorContext, node);
+      EditorCell_Property editorCell = EditorCell_RefPresentation.create(editorContext, node, this.getRefNode(), this.getLinkDeclaration());
       editorCell.setCellId("ReferencePresentation_4221_0");
       return editorCell;
     }

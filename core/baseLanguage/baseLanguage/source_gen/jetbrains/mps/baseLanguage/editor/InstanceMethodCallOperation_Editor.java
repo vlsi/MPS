@@ -14,6 +14,7 @@ import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
+import jetbrains.mps.nodeEditor.InlineCellProvider;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 
 public class InstanceMethodCallOperation_Editor extends DefaultNodeEditor {
@@ -57,7 +58,7 @@ public class InstanceMethodCallOperation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public static class _Inline2215_0 extends AbstractCellProvider {
+  public static class _Inline2215_0 extends InlineCellProvider {
     public _Inline2215_0() {
       super();
     }

@@ -15,7 +15,7 @@ import jetbrains.mps.nodeEditor.cellMenu.CompositeSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPart;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
-import jetbrains.mps.nodeEditor.AbstractCellProvider;
+import jetbrains.mps.nodeEditor.InlineCellProvider;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
@@ -89,7 +89,7 @@ public class EnumConstantReference_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public static class _Inline0362_0 extends AbstractCellProvider {
+  public static class _Inline0362_0 extends InlineCellProvider {
     public _Inline0362_0() {
       super();
     }
@@ -127,7 +127,7 @@ public class EnumConstantReference_Editor extends DefaultNodeEditor {
     }
   }
 
-  public static class _Inline0362_1 extends AbstractCellProvider {
+  public static class _Inline0362_1 extends InlineCellProvider {
     public _Inline0362_1() {
       super();
     }

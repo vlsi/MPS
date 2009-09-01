@@ -9092,8 +9092,8 @@
             </node>
           </node>
         </node>
-        <node role="superclass" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1184139503874">
-          <link role="classifier" targetNodeId="11.~AbstractCellProvider" resolveInfo="AbstractCellProvider" />
+        <node role="superclass" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="7069247747689908092">
+          <link role="classifier" targetNodeId="11.~InlineCellProvider" resolveInfo="InlineCellProvider" />
         </node>
         <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1184139503875" />
         <node role="templateFragment$attribute" type="jetbrains.mps.lang.generator.structure.TemplateFragment" id="1184139510101">
@@ -18596,13 +18596,25 @@
             <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="625126330683217362">
               <property name="name" value="editorCell" />
               <node role="initializer" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="6100866471087015755">
-                <link role="baseMethodDeclaration" targetNodeId="67.~EditorCell_RefPresentation.create(jetbrains.mps.nodeEditor.EditorContext,jetbrains.mps.smodel.SNode):jetbrains.mps.nodeEditor.cells.EditorCell_Property" resolveInfo="create" />
                 <link role="classConcept" targetNodeId="67.~EditorCell_RefPresentation" resolveInfo="EditorCell_RefPresentation" />
+                <link role="baseMethodDeclaration" targetNodeId="67.~EditorCell_RefPresentation.create(jetbrains.mps.nodeEditor.EditorContext,jetbrains.mps.smodel.SNode,jetbrains.mps.smodel.SNode,jetbrains.mps.lang.structure.structure.LinkDeclaration):jetbrains.mps.nodeEditor.cells.EditorCell_Property" resolveInfo="create" />
                 <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="6100866471087015756">
                   <link role="variableDeclaration" targetNodeId="625126330683217446" resolveInfo="editorContext" />
                 </node>
                 <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="6100866471087015758">
                   <link role="variableDeclaration" targetNodeId="625126330683217448" resolveInfo="node" />
+                </node>
+                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1264434556220933677">
+                  <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1264434556220933678">
+                    <link role="baseMethodDeclaration" targetNodeId="11.~InlineCellProvider.getRefNode():jetbrains.mps.smodel.SNode" resolveInfo="getRefNode" />
+                  </node>
+                  <node role="operand" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="1264434556220933679" />
+                </node>
+                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1264434556220933779">
+                  <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1264434556220933780">
+                    <link role="baseMethodDeclaration" targetNodeId="11.~InlineCellProvider.getLinkDeclaration():jetbrains.mps.lang.structure.structure.LinkDeclaration" resolveInfo="getLinkDeclaration" />
+                  </node>
+                  <node role="operand" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="1264434556220933781" />
                 </node>
               </node>
               <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="625126330683217376">
@@ -18770,6 +18782,9 @@
         <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PrivateVisibility" id="625126330683217459" />
       </node>
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="625126330683217460" />
+      <node role="superclass" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1264434556220933064">
+        <link role="classifier" targetNodeId="11.~InlineCellProvider" resolveInfo="InlineCellProvider" />
+      </node>
     </node>
   </node>
 </model>

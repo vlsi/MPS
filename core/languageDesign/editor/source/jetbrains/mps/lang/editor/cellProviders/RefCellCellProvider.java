@@ -56,6 +56,11 @@ public class RefCellCellProvider extends AbstractReferentCellProvider {
   protected EditorCell createRefCell(EditorContext context, final SNode effectiveNode, SNode node) {
     AbstractCellProvider inlineComponent = myAuxiliaryCellProvider;
     myAuxiliaryCellProvider.setSNode(effectiveNode);
+    if (inlineComponent instanceof InlineCellProvider) {
+      InlineCellProvider inlineComponentProvider = (InlineCellProvider) inlineComponent;
+      inlineComponentProvider.setRefNode(node);
+      inlineComponentProvider.setLinkDeclaration(myGenuineLinkDeclaration);
+    }
     EditorCell editorCell;
     if (myIsAggregation) {
       editorCell = inlineComponent.createEditorCell(context);

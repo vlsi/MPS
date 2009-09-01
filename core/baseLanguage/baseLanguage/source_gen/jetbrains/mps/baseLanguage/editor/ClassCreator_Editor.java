@@ -19,6 +19,7 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.nodeEditor.InlineCellProvider;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Property;
 import jetbrains.mps.nodeEditor.cells.EditorCell_RefPresentation;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandler;
@@ -129,7 +130,7 @@ public class ClassCreator_Editor extends DefaultNodeEditor {
     return SLinkOperations.getCount(node, "typeParameter") > 0;
   }
 
-  public static class _Inline9368_0 extends AbstractCellProvider {
+  public static class _Inline9368_0 extends InlineCellProvider {
     public _Inline9368_0() {
       super();
     }
@@ -143,7 +144,7 @@ public class ClassCreator_Editor extends DefaultNodeEditor {
     }
 
     private EditorCell createReferencePresentation_9368_0(EditorContext editorContext, SNode node) {
-      EditorCell_Property editorCell = EditorCell_RefPresentation.create(editorContext, node);
+      EditorCell_Property editorCell = EditorCell_RefPresentation.create(editorContext, node, this.getRefNode(), this.getLinkDeclaration());
       editorCell.setCellId("ReferencePresentation_9368_0");
       return editorCell;
     }
