@@ -58,7 +58,7 @@ public class ProjectTester {
     this(project, false);
   }
 
-  private List<String> createCompilationProblemsList(List<CompilationResult> compilationResults) {
+  public static List<String> createCompilationProblemsList(List<CompilationResult> compilationResults) {
     List<String> res = new ArrayList<String>();
 
     for (CompilationResult r : compilationResults) {

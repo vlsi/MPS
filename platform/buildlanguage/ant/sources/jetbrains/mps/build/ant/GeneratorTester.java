@@ -1,7 +1,11 @@
 package jetbrains.mps.build.ant;
 
 import org.apache.tools.ant.ProjectComponent;
+import org.apache.tools.ant.util.LineOrientedOutputStream;
+import org.eclipse.jdt.internal.compiler.CompilationResult;
 import jetbrains.mps.project.IModule;
+import jetbrains.mps.project.TestResult;
+import jetbrains.mps.project.ProjectTester;
 import jetbrains.mps.project.tester.EditorGenerateType;
 import jetbrains.mps.project.tester.DiffReporter;
 import jetbrains.mps.generator.generationTypes.BaseGenerationType;
@@ -15,9 +19,14 @@ import jetbrains.mps.ide.progress.IAdaptiveProgressMonitor;
 
 import java.util.Set;
 import java.util.List;
+import java.util.ArrayList;
+import java.io.PrintStream;
+import java.io.IOException;
 
 import com.intellij.openapi.util.Computable;
 import com.intellij.openapi.progress.EmptyProgressIndicator;
+import com.intellij.psi.stubs.StubOutputStream;
+import junit.framework.TestFailure;
 
 public class GeneratorTester extends Generator {
   private String myCurrentTestName;
@@ -57,11 +66,30 @@ public class GeneratorTester extends Generator {
 
     printDiffReportIfNeeded(generationType);
 
-    ModelAccess.instance().runReadAction(new Runnable() {
-      public void run() {
-        generationType.compile(IAdaptiveProgressMonitor.NULL_PROGRESS_MONITOR);
+    List<CompilationResult> compilationResult = ModelAccess.instance().runReadAction(new Computable<List<CompilationResult>>() {
+      public List<CompilationResult> compute() {
+        return generationType.compile(IAdaptiveProgressMonitor.NULL_PROGRESS_MONITOR);
       }
     });
+
+    List<String> diffReports;
+    if (myWhatToGenerate.getShowDiff()) {
+      diffReports = ModelAccess.instance().runReadAction(new Computable<List<String>>() {
+        public List<String> compute() {
+          return DiffReporter.createDiffReports(generationType);
+        }
+      });
+    } else {
+      diffReports = new ArrayList<String>();
+    }
+
+    TestResult testResult = new TestResult(myMessageHandler.getGenerationErrors(), myMessageHandler.getGenerationWarnings(), ProjectTester.createCompilationProblemsList(compilationResult), new ArrayList<TestFailure>(), diffReports);
+    testResult.dump(new PrintStream(new LineOrientedOutputStream() {
+      @Override
+      protected void processLine(String line) throws IOException {
+        info(line);
+      }
+    }));
 
     if (myErrorMessagesBuffer.length() > 0) {
       System.out.println("##teamcity[testFailed name='" + myCurrentTestName + "' message='generation errors' details='" + myErrorMessagesBuffer.toString() + "']");

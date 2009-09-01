@@ -433,16 +433,19 @@ public class Generator {
   }
 
   /*package private*/ class MyMessageHandler implements IMessageHandler {
-
+    private final List<String> myGenerationErrors = new ArrayList<String>();
+    private final List<String> myGenerationWarnings = new ArrayList<String>();
 
     public void handle(Message msg) {
       switch (msg.getKind()) {
         case ERROR:
           Generator.this.error(msg.getText());
+          myGenerationErrors.add(msg.getText());
           break;
 
         case WARNING:
           Generator.this.warning(msg.getText());
+          myGenerationWarnings.add(msg.getText());
           break;
 
         case INFORMATION:
@@ -450,6 +453,14 @@ public class Generator {
           break;
 
       }
+    }
+
+    public List<String> getGenerationErrors() {
+      return myGenerationErrors;
+    }
+
+    public List<String> getGenerationWarnings() {
+      return myGenerationWarnings;
     }
   }
 

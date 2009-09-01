@@ -21,15 +21,17 @@ import java.io.PrintStream;
 import java.util.List;
 import java.util.ArrayList;
 
-public class TestResult {
-  public List<String> myGenerationErrors;
-  public List<String> myGenerationWarnings;
-  public List<String> myCompilationProblems;
-  public List<TestFailure> myFailedTestReports;
-  public List<String> myDiffReports;
+import org.jetbrains.annotations.NotNull;
 
-  public TestResult(List<String> generationErrors, List<String> generationWarnings, List<String> compilationProblems,
-                    List<TestFailure> testResults, List<String> diff) {
+public class TestResult {
+  public final List<String> myGenerationErrors;
+  public final List<String> myGenerationWarnings;
+  public final List<String> myCompilationProblems;
+  public final List<TestFailure> myFailedTestReports;
+  public final List<String> myDiffReports;
+
+  public TestResult(@NotNull List<String> generationErrors, @NotNull List<String> generationWarnings, @NotNull List<String> compilationProblems,
+                    @NotNull List<TestFailure> testResults, @NotNull List<String> diff) {
     this.myGenerationErrors = generationErrors;
     this.myGenerationWarnings = generationWarnings;
     this.myCompilationProblems = compilationProblems;
