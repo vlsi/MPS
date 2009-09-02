@@ -20,7 +20,6 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.workbench.editors.MPSEditorOpener;
 import javax.swing.SwingUtilities;
-import jetbrains.mps.baseLanguage.plugin.uiActions.OverrideMethodDialog;
 import jetbrains.mps.baseLanguage.plugin.uiActions.ImplementMethodDialog;
 
 public class MethodHierarchy_KeyMap extends EditorCellKeyMap {

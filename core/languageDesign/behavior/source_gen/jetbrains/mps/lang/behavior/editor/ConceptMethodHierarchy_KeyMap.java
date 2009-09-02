@@ -11,7 +11,6 @@ import jetbrains.mps.smodel.SNode;
 import java.util.List;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import javax.swing.SwingUtilities;
-import jetbrains.mps.baseLanguage.plugin.uiActions.OverrideBehaviorMethodDialog;
 import jetbrains.mps.baseLanguage.plugin.uiActions.ImplementBehaviorMethodDialog;
 
 public class ConceptMethodHierarchy_KeyMap extends EditorCellKeyMap {
@@ -61,7 +60,7 @@ public class ConceptMethodHierarchy_KeyMap extends EditorCellKeyMap {
     private void execute_internal(final KeyEvent keyEvent, final EditorContext editorContext, final SNode node, final List<SNode> selectedNodes) {
       SwingUtilities.invokeLater(new Runnable() {
         public void run() {
-          new OverrideBehaviorMethodDialog(node, editorContext, editorContext.getOperationContext().getMainFrame()).showDialog();
+          new OverrideMethodDialog(node, editorContext, editorContext.getOperationContext().getMainFrame()).showDialog();
         }
       });
     }
