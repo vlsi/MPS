@@ -9,6 +9,7 @@ public class Data extends MultiTuple._2<String, String> {
   public Data() {
     super();
   }
+
   public Data(String foo, String bar) {
     super(foo, bar);
   }

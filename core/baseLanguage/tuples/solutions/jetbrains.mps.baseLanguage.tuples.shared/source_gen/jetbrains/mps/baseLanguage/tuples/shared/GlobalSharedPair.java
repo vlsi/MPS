@@ -9,6 +9,7 @@ public class GlobalSharedPair<A, B> extends MultiTuple._2<A, B> {
   public GlobalSharedPair() {
     super();
   }
+
   public GlobalSharedPair(A first, B second) {
     super(first, second);
   }

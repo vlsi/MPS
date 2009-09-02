@@ -9,6 +9,7 @@ public class Tuple<AAA> extends MultiTuple._2<Integer, AAA> {
   public Tuple() {
     super();
   }
+
   public Tuple(Integer value, AAA anotherValue) {
     super(value, anotherValue);
   }

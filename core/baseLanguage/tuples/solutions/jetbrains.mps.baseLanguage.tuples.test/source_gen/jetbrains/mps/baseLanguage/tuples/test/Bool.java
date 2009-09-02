@@ -9,6 +9,7 @@ public class Bool extends MultiTuple._1<Boolean> {
   public Bool() {
     super();
   }
+
   public Bool(Boolean isTrue) {
     super(isTrue);
   }

@@ -9,6 +9,7 @@ public class Pair<S, T> extends MultiTuple._2<S, T> {
   public Pair() {
     super();
   }
+
   public Pair(S first, T second) {
     super(first, second);
   }

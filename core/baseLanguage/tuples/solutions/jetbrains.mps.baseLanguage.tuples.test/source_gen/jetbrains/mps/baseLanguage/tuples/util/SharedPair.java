@@ -9,6 +9,7 @@ public class SharedPair<F, S> extends MultiTuple._2<F, S> {
   public SharedPair() {
     super();
   }
+
   public SharedPair(F first, S second) {
     super(first, second);
   }
