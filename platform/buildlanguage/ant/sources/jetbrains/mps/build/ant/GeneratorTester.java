@@ -5,6 +5,7 @@ import org.apache.tools.ant.BuildException;
 import org.apache.tools.ant.util.LineOrientedOutputStream;
 import org.eclipse.jdt.internal.compiler.CompilationResult;
 import org.eclipse.jdt.core.compiler.CategorizedProblem;
+import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.TestResult;
 import jetbrains.mps.project.ProjectTester;
@@ -22,6 +23,7 @@ import jetbrains.mps.ide.progress.IAdaptiveProgressMonitor;
 import java.util.Set;
 import java.util.List;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.io.PrintStream;
 import java.io.IOException;
 
@@ -75,11 +77,16 @@ public class GeneratorTester extends Generator {
       diffReports = new ArrayList<String>();
     }
 
-    List<CompilationResult> compilationResult = ModelAccess.instance().runReadAction(new Computable<List<CompilationResult>>() {
-      public List<CompilationResult> compute() {
-        return generationType.compile(IAdaptiveProgressMonitor.NULL_PROGRESS_MONITOR);
-      }
-    });
+    List<CompilationResult> compilationResult;
+    if (myWhatToGenerate.getCompile()) {
+      compilationResult = ModelAccess.instance().runReadAction(new Computable<List<CompilationResult>>() {
+        public List<CompilationResult> compute() {
+          return generationType.compile(IAdaptiveProgressMonitor.NULL_PROGRESS_MONITOR);
+        }
+      });
+    } else {
+      compilationResult = Collections.EMPTY_LIST;
+    }
 
     StringBuffer sb = createDetailedReport(compilationResult, diffReports);
 
@@ -90,7 +97,7 @@ public class GeneratorTester extends Generator {
     System.out.println("##teamcity[testFinished name='" + currentTestName + "']");
   }
 
-  private StringBuffer createDetailedReport(List<CompilationResult> compilationResult, List<String> diffReports) {
+  private StringBuffer createDetailedReport(@NotNull List<CompilationResult> compilationResult,@NotNull List<String> diffReports) {
     StringBuffer sb = new StringBuffer();
 
     if (myMessageHandler.getGenerationErrors().size() > 0) {

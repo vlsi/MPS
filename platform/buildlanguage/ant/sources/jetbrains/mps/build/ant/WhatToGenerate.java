@@ -27,6 +27,7 @@ public class WhatToGenerate {
   private final Set<File> myModuleDirectories = new LinkedHashSet<File>();
   private final Set<File> myMPSProjects = new LinkedHashSet<File>();
   private boolean myFailOnError = false;
+  private boolean myCompile = true;
   private final Map<String, File> myLibraries = new LinkedHashMap<String, File>();
   private final Map<String, String> myMacro = new LinkedHashMap<String, String>();
   private int myLogLevel = org.apache.tools.ant.Project.MSG_INFO;
@@ -39,6 +40,7 @@ public class WhatToGenerate {
   private static final String FAIL_ON_ERROR = "FAIL_ON_ERROR";
   private static final String LOG_LEVEL = "LOG_LEVEL";
   private static final String SHOW_DIFF = "SHOW_DIFF";
+  private static final String COMPILE = "COMPILE";
 
   public void updateShowDiff(boolean isDifferenceCalculated) {
     myShowDiff = isDifferenceCalculated;
@@ -92,6 +94,14 @@ public class WhatToGenerate {
 
   public void updateFailOnError(boolean showError) {
     myFailOnError = showError;
+  }
+
+  public boolean getCompile() {
+    return myCompile;
+  }
+
+  public void updateCompile(boolean compile) {
+    myCompile = compile;
   }
 
   public void addLibrary(String name, File dir) {
@@ -201,6 +211,11 @@ public class WhatToGenerate {
     sb.append(SHOW_DIFF);
     sb.append("=");
     sb.append(myShowDiff);
+    sb.append(" ");
+
+    sb.append(COMPILE);
+    sb.append("=");
+    sb.append(myCompile);
 
     return sb.toString();
   }
@@ -229,6 +244,8 @@ public class WhatToGenerate {
           whatToGenerate.myLogLevel = Integer.parseInt(propertyValuePair[1]);          
         } else if (propertyValuePair[0].equals(SHOW_DIFF)){
           whatToGenerate.myShowDiff = Boolean.parseBoolean(propertyValuePair[1]);          
+        } else if (propertyValuePair[0].equals(COMPILE)){
+          whatToGenerate.myCompile = Boolean.parseBoolean(propertyValuePair[1]);          
         }
       }
     }

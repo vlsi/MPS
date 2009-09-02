@@ -68,6 +68,10 @@ public class GenerateTask extends org.apache.tools.ant.Task {
     myFork = fork;
   }
 
+  public void setCompile(boolean compile) {
+    myWhatToGenerate.updateCompile(compile);
+  }
+
   public void addConfiguredModels(DirSet modelsInner) {
     Iterator it = modelsInner.iterator();
     while (it.hasNext()) {

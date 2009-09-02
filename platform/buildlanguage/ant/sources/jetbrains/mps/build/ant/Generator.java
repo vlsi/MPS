@@ -326,7 +326,12 @@ public class Generator {
   protected void generateModulesCircle(GeneratorManager gm, EmptyProgressIndicator emptyProgressIndicator, Set<IModule> modulesSet, List<Pair<SModelDescriptor, IOperationContext>> modelsToContext) {
     info("Start generating " + modulesSet);
     gm.generateModels(modelsToContext,
-      new GenerateFilesGenerationType(),
+      new GenerateFilesGenerationType() {
+        @Override
+        public boolean requiresCompilationAfterGeneration() {
+          return myWhatToGenerate.getCompile();
+        }
+      },
       emptyProgressIndicator,
       myMessageHandler,
       false);
