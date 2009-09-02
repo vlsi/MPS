@@ -21,5 +21,5 @@
     <typedef name="project" classname="jetbrains.mps.build.ant.ProjectDataType"/>
     <typedef name="library" classname="jetbrains.mps.build.ant.LibraryDataType"/>
     <typedef name="jvmarg" classname="jetbrains.mps.build.ant.JvmArg"/>
-    <typedef nmae="macro" classname="jetbrains.mps.build.ant.Macro"/>
+    <typedef name="macro" classname="jetbrains.mps.build.ant.Macro"/>
 </antlib>
