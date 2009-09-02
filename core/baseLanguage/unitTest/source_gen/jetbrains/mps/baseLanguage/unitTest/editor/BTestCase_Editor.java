@@ -56,6 +56,7 @@ public class BTestCase_Editor extends DefaultNodeEditor {
     }
     editorCell.addEditorCell(this.createConstant_7256_4(editorContext, node));
     editorCell.addEditorCell(this.createRefNodeList_7256_0(editorContext, node));
+    editorCell.addEditorCell(this.createRefNodeList_7256_2(editorContext, node));
     editorCell.addEditorCell(this.createConstant_7256_6(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_7256_1(editorContext, node));
     editorCell.addEditorCell(this.createConstant_7256_7(editorContext, node));
@@ -158,6 +159,21 @@ public class BTestCase_Editor extends DefaultNodeEditor {
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
+    }
+    editorCell.setRole(handler.getElementRole());
+    return editorCell;
+  }
+
+  private EditorCell createRefNodeList_7256_2(EditorContext editorContext, SNode node) {
+    AbstractCellListHandler handler = new BTestCase_Editor.fieldListHandler_7256_0(node, "field", editorContext);
+    EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Indent(), false);
+    editorCell.setCellId("refNodeList_field");
+    {
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.SELECTABLE, false);
+      style.set(StyleAttributes.POSITION_CHILDREN, "indented");
+      style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
+      style.set(StyleAttributes.INDENT_LAYOUT_CHILDREN_NEWLINE, true);
     }
     editorCell.setRole(handler.getElementRole());
     return editorCell;
@@ -331,6 +347,63 @@ public class BTestCase_Editor extends DefaultNodeEditor {
         style.set(StyleAttributes.TEXT_COLOR, MPSColors.gray);
       }
       editorCell.setDefaultText("");
+      return editorCell;
+    }
+  }
+
+  private static class fieldListHandler_7256_0 extends RefNodeListHandler {
+    public fieldListHandler_7256_0(SNode ownerNode, String childRole, EditorContext context) {
+      super(ownerNode, childRole, context, false);
+    }
+
+    public SNode createNodeToInsert(EditorContext editorContext) {
+      SNode listOwner = super.getOwner();
+      return NodeFactoryManager.createNode(listOwner, editorContext, super.getElementRole());
+    }
+
+    public EditorCell createNodeCell(EditorContext editorContext, SNode elementNode) {
+      EditorCell elementCell = super.createNodeCell(editorContext, elementNode);
+      this.installElementCellActions(this.getOwner(), elementNode, elementCell, editorContext);
+      return elementCell;
+    }
+
+    public EditorCell createEmptyCell(EditorContext editorContext) {
+      EditorCell emptyCell = null;
+      emptyCell = this.createEmptyCell_internal(editorContext, this.getOwner());
+      this.installElementCellActions(super.getOwner(), null, emptyCell, editorContext);
+      return emptyCell;
+    }
+
+    public EditorCell createEmptyCell_internal(EditorContext editorContext, SNode node) {
+      return this.createConstant_7256_9(editorContext, node);
+    }
+
+    public void installElementCellActions(SNode listOwner, SNode elementNode, EditorCell elementCell, EditorContext editorContext) {
+      if (elementCell.getUserObject(AbstractCellListHandler.ELEMENT_CELL_ACTIONS_SET) == null) {
+        elementCell.putUserObject(AbstractCellListHandler.ELEMENT_CELL_ACTIONS_SET, AbstractCellListHandler.ELEMENT_CELL_ACTIONS_SET);
+        SNode substituteInfoNode = listOwner;
+        if (elementNode != null) {
+          substituteInfoNode = elementNode;
+          elementCell.setAction(CellActionType.DELETE, new CellAction_DeleteNode(elementNode));
+        }
+        if (elementCell.getSubstituteInfo() == null || elementCell.getSubstituteInfo() instanceof DefaultReferenceSubstituteInfo) {
+          elementCell.setSubstituteInfo(new DefaultChildSubstituteInfo(listOwner, elementNode, super.getLinkDeclaration(), editorContext));
+        }
+      }
+    }
+
+    public EditorCell createSeparatorCell(EditorContext editorContext) {
+      return super.createSeparatorCell(editorContext);
+    }
+
+    private EditorCell createConstant_7256_9(EditorContext editorContext, SNode node) {
+      EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
+      editorCell.setCellId("Constant_7256_9");
+      {
+        Style style = editorCell.getStyle();
+        style.set(StyleAttributes.EDITABLE, true);
+      }
+      editorCell.setDefaultText("<<fields>>");
       return editorCell;
     }
   }

@@ -172,6 +172,30 @@
           </node>
           <node role="cellLayout" type="jetbrains.mps.lang.editor.structure.CellLayout_Indent" id="1237821176737" />
         </node>
+        <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNodeList" id="5279008335641977613">
+          <property name="name" value="fieldsList" />
+          <property name="vertical" value="false" />
+          <link role="relationDeclaration" targetNodeId="4.1068390468199" />
+          <node role="emptyCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="5279008335641977614">
+            <property name="nullText" value="&lt;&lt;fields&gt;&gt;" />
+            <node role="styleItem" type="jetbrains.mps.lang.editor.structure.EditableStyleClassItem" id="5279008335641977615">
+              <property name="flag" value="true" />
+            </node>
+          </node>
+          <node role="styleItem" type="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem" id="5279008335641977616">
+            <property name="flag" value="false" />
+          </node>
+          <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PositionChildrenStyleClassItem" id="5279008335641977617">
+            <property name="position" value="indented" />
+          </node>
+          <node role="styleItem" type="jetbrains.mps.lang.editor.structure.IndentLayoutNewLineStyleClassItem" id="5279008335641977619">
+            <property name="flag" value="true" />
+          </node>
+          <node role="styleItem" type="jetbrains.mps.lang.editor.structure.IndentLayoutNewLineChildrenStyleClassItem" id="5279008335641977620">
+            <property name="flag" value="true" />
+          </node>
+          <node role="cellLayout" type="jetbrains.mps.lang.editor.structure.CellLayout_Indent" id="5279008335641977621" />
+        </node>
         <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1224675173874">
           <node role="styleItem" type="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem" id="1224675173875">
             <property name="flag" value="false" />
