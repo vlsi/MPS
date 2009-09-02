@@ -137,6 +137,7 @@
         </group>
 
         <!--fix MPS-2156 after fixing MPS-2142-->
+        <group id="WeighingNewGroup" class="com.intellij.ide.actions.WeighingNewActionGroup"/>
         <group id="NewGroup" popup="true">
         </group>
 
