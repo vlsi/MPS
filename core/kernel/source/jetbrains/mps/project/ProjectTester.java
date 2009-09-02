@@ -75,12 +75,16 @@ public class ProjectTester {
     return res;
   }
 
-  private List<TestFailure> createTestFailures(GenerateFilesAndClassesGenerationType genType, GenParameters genParams) {
+  private static List<TestFailure> createTestFailures(GenerateFilesAndClassesGenerationType genType, GenParameters genParams) {
+    return invokeTests(genType, genParams.getSModels());
+  }
+
+  public static List<TestFailure> invokeTests(GenerateFilesAndClassesGenerationType genType, List<SModel> models) {
     List<TestFailure> result = new ArrayList<TestFailure>();
-    for (SModel model : genParams.getSModels()) {
+    for (SModel model : models) {
       for (SNode root : model.getRoots()) {
         try {
-          ClassLoader classLoader = genType.getCompiler().getClassLoader(getClass().getClassLoader());
+          ClassLoader classLoader = genType.getCompiler().getClassLoader(model.getClass().getClassLoader());
           String className = JavaNameUtil.packageNameForModelUID(model.getSModelReference()) + "." + root.getName();
           Class instanceClass = Class.forName(className, true, classLoader);
           Object instance = instanceClass.newInstance();
