@@ -22,6 +22,7 @@ import org.apache.tools.ant.util.JavaEnvUtils;
 import org.apache.tools.ant.taskdefs.Execute;
 import org.apache.tools.ant.taskdefs.LogStreamHandler;
 import org.apache.tools.ant.taskdefs.ExecuteStreamHandler;
+import org.apache.tools.ant.taskdefs.Property;
 import org.apache.tools.ant.types.DirSet;
 import org.apache.tools.ant.types.EnumeratedAttribute;
 import org.apache.tools.ant.types.resources.FileResource;
@@ -94,6 +95,10 @@ public class GenerateTask extends org.apache.tools.ant.Task {
 
   public void addConfiguredLibrary(LibraryDataType libraryInner) {
     myWhatToGenerate.addLibrary(libraryInner.getName(), libraryInner.getDir());
+  }
+
+  public void addConfiguredMacro(Macro macro){
+    myWhatToGenerate.addMacro(macro.getName(), macro.getPath().getAbsolutePath());
   }
 
   public boolean getUsePropertiesAsMacro() {
