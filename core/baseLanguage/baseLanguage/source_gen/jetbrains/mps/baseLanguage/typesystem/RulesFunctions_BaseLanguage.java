@@ -434,8 +434,8 @@ __switch__:
   }
 
   public static boolean isWithinStatic(SNode node) {
-    SNode staticAncestor = SNodeOperations.getAncestorWhereConceptInList(node, new String[]{"jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration","jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration"}, false, false);
-    if (staticAncestor != null) {
+    SNode ancestor = SNodeOperations.getAncestorWhereConceptInList(node, new String[]{"jetbrains.mps.baseLanguage.structure.FieldDeclaration","jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration","jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration"}, false, false);
+    if (ancestor != null && (SNodeOperations.isInstanceOf(ancestor, "jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration") || SNodeOperations.isInstanceOf(ancestor, "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration"))) {
       return true;
     }
     SNode statementList = SNodeOperations.getAncestor(node, "jetbrains.mps.baseLanguage.structure.StatementList", false, false);
