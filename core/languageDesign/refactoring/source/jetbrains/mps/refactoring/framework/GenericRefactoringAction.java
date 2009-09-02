@@ -50,7 +50,7 @@ public class GenericRefactoringAction extends BaseAction {
     context.setSelectedNode(e.getData(MPSDataKeys.NODE));
     context.setSelectedNodes(toList(getNodes(e, isOneTarget)));
 
-    context.setSelectedModel(e.getData(MPSDataKeys.MODEL));
+    context.setSelectedModel(e.getData(MPSDataKeys.CONTEXT_MODEL));
     context.setSelectedModels(toList(getModels(e, isOneTarget)));
 
     context.setSelectedModule(e.getData(MPSDataKeys.MODULE));
