@@ -4,6 +4,8 @@ package jetbrains.mps.baseLanguage.plugin;
 
 import com.intellij.execution.configurations.ConfigurationType;
 import javax.swing.Icon;
+import jetbrains.mps.ide.icons.IconManager;
+import jetbrains.mps.plugins.MacrosUtil;
 import com.intellij.execution.configurations.ConfigurationFactory;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -12,7 +14,7 @@ import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 
 public class JavaApplication_ConfigurationType implements ConfigurationType {
-  private static final Icon ICON = null;
+  private static final Icon ICON = IconManager.loadIcon(MacrosUtil.expandPath("${language_descriptor}/icons/javaRunConfig.png", "jetbrains.mps.baseLanguage"), true);
 
   public ConfigurationFactory[] getConfigurationFactories() {
     List<ConfigurationFactory> result = ListSequence.fromList(new ArrayList<ConfigurationFactory>());

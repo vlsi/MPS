@@ -38098,6 +38098,7 @@
     <property name="name" value="DefaultJavaApplication" />
     <property name="caption" value="Java Application" />
     <property name="package" value="run" />
+    <property name="iconPath" value="${language_descriptor}/icons/javaRunConfig.png" />
     <link role="configType" targetNodeId="4434783588132660334" resolveInfo="BLApp" />
     <node role="property" type="jetbrains.mps.lang.plugin.structure.PersistentPropertyDeclaration" id="5818815547539277815">
       <property name="name" value="nodeId" />
@@ -38656,6 +38657,7 @@
     <property name="name" value="JavaApplication" />
     <property name="caption" value="Java Application" />
     <property name="package" value="run" />
+    <property name="iconPath" value="${language_descriptor}/icons/javaRunConfig.png" />
   </node>
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="7594443577466871976">
     <property name="package" value="run" />
