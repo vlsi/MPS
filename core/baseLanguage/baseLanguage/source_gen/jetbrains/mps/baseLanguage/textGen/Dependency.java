@@ -28,6 +28,7 @@ public class Dependency implements Comparable<Dependency> {
       SetSequence.fromSet(this.myExtendsNodes).addSequence(ListSequence.fromList(extendsNodes));
     }
   }
+
   public Dependency(Element element) {
     this.myClassName = element.getAttribute(CLASS_NAME).getValue();
     for (Element e : ((List<Element>)element.getChildren(DEPEND_CLASS))) {

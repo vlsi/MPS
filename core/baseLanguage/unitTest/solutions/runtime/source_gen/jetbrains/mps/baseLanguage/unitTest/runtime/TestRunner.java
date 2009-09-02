@@ -13,13 +13,12 @@ import junit.framework.TestResult;
 import java.io.PrintStream;
 
 public class TestRunner extends BaseTestRunner {
-
   public TestRunner() {
   }
 
   public void start(String[] argv) throws Throwable {
     List<Test> tests = ListSequence.fromList(new ArrayList<Test>());
-    for(int i = 0 ; i < argv.length ; i++ ) {
+    for (int i = 0 ; i < argv.length ; i++ ) {
       if ("-c".equals(argv[i])) {
         i++ ;
         Test test = this.getTest(argv[i]);
@@ -41,7 +40,7 @@ public class TestRunner extends BaseTestRunner {
     System.setOut(new PrintStream(out));
     System.setErr(new PrintStream(err));
     testResult.addListener(new MyTestListener(out, err));
-    for(Test test : ListSequence.fromList(tests)) {
+    for (Test test : ListSequence.fromList(tests)) {
       test.run(testResult);
     }
   }
@@ -58,7 +57,6 @@ public class TestRunner extends BaseTestRunner {
   public void runFailed(String message) {
   }
 
-
   public static void main(String[] argv) {
     TestRunner runner = new TestRunner();
     try {
@@ -68,5 +66,4 @@ public class TestRunner extends BaseTestRunner {
       System.exit(1);
     }
   }
-
 }

@@ -25,7 +25,10 @@ public abstract class BaseClassConceptTextGen {
       needNewLine = true;
     }
     if (ListSequence.fromList(SLinkOperations.getTargets(concept, "constructor", true)).isNotEmpty()) {
-      BaseClassConceptTextGen.collection(SLinkOperations.getTargets(concept, "constructor", true), textGen);
+      for (SNode constructor : SLinkOperations.getTargets(concept, "constructor", true)) {
+        TextGenManager.instance().appendNodeText(textGen.getContext(), textGen.getBuffer(), constructor, textGen.getSNode());
+        textGen.appendNewLine();
+      }
       needNewLine = true;
     }
     if (ListSequence.fromList(SLinkOperations.getTargets(concept, "method", true)).isNotEmpty()) {

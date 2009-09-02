@@ -7,7 +7,6 @@ import java.io.PrintStream;
 import java.io.IOException;
 
 public class CommandOutputStream extends FilterOutputStream {
-
   private int lastChar;
   private PrintStream printOut;
 
@@ -43,5 +42,4 @@ public class CommandOutputStream extends FilterOutputStream {
     this.printOut.println(command);
     this.lastChar = '\n';
   }
-
 }

@@ -6,6 +6,7 @@ package jetbrains.mps.closures.test;
 public class ProcessingException extends Exception {
   public ProcessingException() {
   }
+
   public ProcessingException(String msg) {
     super(msg);
   }

@@ -17,9 +17,11 @@ public class MultiTuple {
       System.arraycopy(objs, 0, this.values, 0, objs.length);
     }
   }
+
   private MultiTuple() {
     this.values = EMPTY;
   }
+
   private MultiTuple(int size) {
     this.values = new Object[size];
   }
@@ -154,6 +156,7 @@ public class MultiTuple {
     protected _0(Object... objs) {
       super(objs);
     }
+
     protected _0() {
       super(0);
     }
@@ -168,6 +171,7 @@ public class MultiTuple {
     protected _1(Object... objs) {
       super(objs);
     }
+
     protected _1() {
       super(1);
     }
@@ -192,6 +196,7 @@ public class MultiTuple {
     protected _2(Object... objs) {
       super(objs);
     }
+
     protected _2() {
       super(2);
     }
@@ -226,6 +231,7 @@ public class MultiTuple {
     protected _3(Object... objs) {
       super(objs);
     }
+
     protected _3() {
       super(3);
     }
@@ -270,6 +276,7 @@ public class MultiTuple {
     protected _4(Object... objs) {
       super(objs);
     }
+
     protected _4() {
       super(4);
     }
@@ -324,6 +331,7 @@ public class MultiTuple {
     protected _5(Object... objs) {
       super(objs);
     }
+
     protected _5() {
       super(5);
     }
@@ -388,6 +396,7 @@ public class MultiTuple {
     protected _6(Object... objs) {
       super(objs);
     }
+
     protected _6() {
       super(6);
     }
@@ -462,6 +471,7 @@ public class MultiTuple {
     protected _7(Object... objs) {
       super(objs);
     }
+
     protected _7() {
       super(7);
     }
@@ -546,6 +556,7 @@ public class MultiTuple {
     protected _8(Object... objs) {
       super(objs);
     }
+
     protected _8() {
       super(8);
     }
@@ -640,6 +651,7 @@ public class MultiTuple {
     protected _9(Object... objs) {
       super(objs);
     }
+
     protected _9() {
       super(9);
     }

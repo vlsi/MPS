@@ -35,6 +35,7 @@ public class TestEvent {
     this.memoryUsage = runtime.totalMemory() - runtime.freeMemory();
     this.time = System.currentTimeMillis();
   }
+
   private TestEvent() {
   }
 
@@ -70,10 +71,9 @@ public class TestEvent {
     return this.time;
   }
 
-
   public static String isTestEvent(String messageString) {
     String token = null;
-    for(String expectedToken : ListSequence.fromList(ALL_TOKENS)) {
+    for (String expectedToken : ListSequence.fromList(ALL_TOKENS)) {
       if (messageString.startsWith(expectedToken)) {
         token = expectedToken;
         break;
@@ -114,5 +114,4 @@ public class TestEvent {
   static {
     ALL_TOKENS = ListSequence.fromListAndArray(new ArrayList<String>(), START_TEST_PREFIX, END_TEST_PREFIX, ERROR_TEST_PREFIX, ERROR_TEST_SUFFIX, FAILURE_TEST_PREFIX, FAILURE_TEST_SUFFIX);
   }
-
 }

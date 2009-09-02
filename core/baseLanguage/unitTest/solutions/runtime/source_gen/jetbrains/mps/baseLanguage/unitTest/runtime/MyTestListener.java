@@ -7,7 +7,6 @@ import junit.framework.Test;
 import junit.framework.AssertionFailedError;
 
 public class MyTestListener implements TestListener {
-
   private CommandOutputStream out;
   private CommandOutputStream err;
 
@@ -42,5 +41,4 @@ public class MyTestListener implements TestListener {
     this.out.writeCommand(out);
     this.err.writeCommand(out);
   }
-
 }
