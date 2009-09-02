@@ -4725,5 +4725,122 @@
       </node>
     </node>
   </node>
+  <node type="jetbrains.mps.lang.test.structure.EditorTestCase" id="2345623147105465521">
+    <property name="name" value="SmartReferenseUpdateOnChange" />
+    <property name="package" value="cellProvider" />
+    <property name="description" value="Actions of creating node wasn't writen, and cell presentation wasn't updated." />
+    <node role="nodeToEdit" type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="2345623147105495371">
+      <property name="name" value="SmartReferenseUpdate" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="2345623147105495372" />
+      <node role="constructor" type="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" id="2345623147105495373">
+        <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="2345623147105495374" />
+        <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="2345623147105495375" />
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="2345623147105495376">
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="2345623147105496857">
+            <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="2345623147105496858">
+              <property name="name" value="clazz" />
+              <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="2345623147105496859">
+                <link role="classifier" targetNodeId="2345623147105495371" resolveInfo="Clazze" />
+                <node role="testNode$attribute" type="jetbrains.mps.lang.test.structure.TestNodeAnnotation" id="2345623147105496871">
+                  <property name="name" value="test" />
+                </node>
+              </node>
+              <node role="initializer" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="2345623147105496861" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="testNode$attribute" type="jetbrains.mps.lang.test.structure.AnonymousCellAnnotation" id="297555905489777197">
+        <property name="isLastPosition" value="true" />
+        <property name="useLabelSelection" value="true" />
+        <property name="selectionStart" value="20" />
+        <property name="selectionEnd" value="20" />
+        <property name="cellId" value="property_name" />
+      </node>
+    </node>
+    <node role="result" type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="2345623147105495377">
+      <property name="name" value="SmartReferenseUpdat" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="2345623147105495378" />
+      <node role="constructor" type="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" id="2345623147105495379">
+        <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="2345623147105495380" />
+        <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="2345623147105495381" />
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="2345623147105495382">
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="2345623147105496862">
+            <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="2345623147105496863">
+              <property name="name" value="clazz" />
+              <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="2345623147105496864">
+                <link role="classifier" targetNodeId="2345623147105495377" resolveInfo="Claz" />
+              </node>
+              <node role="initializer" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="2345623147105496866" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="code" type="jetbrains.mps.baseLanguage.structure.StatementList" id="2345623147105496872">
+      <node role="statement" type="jetbrains.mps.lang.test.structure.PressKeyStatement" id="2345623147105496873">
+        <node role="keyStrokes" type="jetbrains.mps.lang.plugin.structure.KeyMapKeystroke" id="2345623147105496874">
+          <property name="keycode" value="VK_BACK_SPACE" />
+        </node>
+      </node>
+      <node role="statement" type="jetbrains.mps.lang.plugin.structure.ExecuteLightweightCommandStatement" id="297555905489768627">
+        <node role="commandClosureLiteral" type="jetbrains.mps.lang.plugin.structure.CommandClosureLiteral" id="297555905489768628">
+          <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="297555905489768629">
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="297555905489768634">
+              <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="297555905489768635">
+                <property name="name" value="testNode" />
+                <node role="type" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="297555905489768636">
+                  <link role="concept" targetNodeId="15.1107535904670" resolveInfo="ClassifierType" />
+                </node>
+                <node role="initializer" type="jetbrains.mps.lang.test.structure.TestNodeReference" id="297555905489768637">
+                  <link role="declaration" targetNodeId="2345623147105496871" resolveInfo="test" />
+                </node>
+              </node>
+            </node>
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="297555905489768638">
+              <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="297555905489768639">
+                <property name="name" value="editorCell" />
+                <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="297555905489768640">
+                  <link role="classifier" targetNodeId="21.~EditorCell" resolveInfo="EditorCell" />
+                </node>
+                <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="297555905489768641">
+                  <node role="operand" type="jetbrains.mps.lang.test.structure.EditorComponentExpression" id="297555905489768642" />
+                  <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="297555905489768643">
+                    <link role="baseMethodDeclaration" targetNodeId="6.~EditorComponent.findCellWithId(jetbrains.mps.smodel.SNode,java.lang.String):jetbrains.mps.nodeEditor.cells.EditorCell" resolveInfo="findCellWithId" />
+                    <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="297555905489768644">
+                      <link role="variableDeclaration" targetNodeId="297555905489768635" resolveInfo="testNode" />
+                    </node>
+                    <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="297555905489768645">
+                      <property name="value" value="ReferencePresentation_9185_0" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+            <node role="statement" type="jetbrains.mps.baseLanguage.unitTest.structure.AssertEquals" id="297555905489768646">
+              <node role="actual" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="297555905489768647">
+                <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParenthesizedExpression" id="297555905489768648">
+                  <node role="expression" type="jetbrains.mps.baseLanguage.structure.CastExpression" id="297555905489768649">
+                    <node role="expression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="297555905489768650">
+                      <link role="variableDeclaration" targetNodeId="297555905489768639" resolveInfo="editorCell" />
+                    </node>
+                    <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="297555905489768651">
+                      <link role="classifier" targetNodeId="21.~EditorCell_Label" resolveInfo="EditorCell_Label" />
+                    </node>
+                  </node>
+                </node>
+                <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="297555905489768652">
+                  <link role="baseMethodDeclaration" targetNodeId="21.~EditorCell_Label.getText():java.lang.String" resolveInfo="getText" />
+                </node>
+              </node>
+              <node role="expected" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="297555905489768653">
+                <property name="value" value="SmartReferenseUpdat" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
 </model>
 

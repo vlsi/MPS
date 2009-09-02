@@ -8,10 +8,9 @@ import jetbrains.mps.smodel.constraints.ModelConstraintsManager;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.constraints.ReferentConstraintContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.smodel.search.EmptySearchScope;
+import java.util.ArrayList;
 import jetbrains.mps.smodel.SNode;
 import java.util.List;
-import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 
 public class TestNodeReference_declaration_ReferentConstraint extends BaseNodeReferenceSearchScopeProvider implements IModelConstraints {
@@ -28,9 +27,9 @@ public class TestNodeReference_declaration_ReferentConstraint extends BaseNodeRe
 
   public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferentConstraintContext _context) {
     if (SNodeOperations.getAncestor(_context.getEnclosingNode(), "jetbrains.mps.lang.test.structure.TestNode", false, false) != null) {
-      return new EmptySearchScope();
+      return new ArrayList<SNode>();
     }
-    SNode test = SNodeOperations.getAncestor(_context.getEnclosingNode(), "jetbrains.mps.lang.test.structure.NodesTestCase", true, false);
+    SNode test = SNodeOperations.getAncestorWhereConceptInList(_context.getEnclosingNode(), new String[]{"jetbrains.mps.lang.test.structure.NodesTestCase","jetbrains.mps.lang.test.structure.EditorTestCase"}, true, false);
     List<SNode> result = new ArrayList<SNode>();
     if (test != null) {
       for (SNode node : ListSequence.fromList(SNodeOperations.getDescendants(test, "jetbrains.mps.lang.test.structure.TestNodeAnnotation", true, new String[]{}))) {
