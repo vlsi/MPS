@@ -107,6 +107,10 @@ public abstract class BaseMultitabbedTab implements ILazyTab {
     return true;
   }
 
+  public String getTabTextForNode(SNode node) {
+    return node.getName();
+  }
+
   private boolean tryToInitComponent() {
     List<Pair<SNode, IOperationContext>> loadableNodes = tryToLoadNodes();
 
@@ -152,7 +156,7 @@ public abstract class BaseMultitabbedTab implements ILazyTab {
     SNodePointer pointer = new SNodePointer(loadableNode);
     myLoadableNodes.add(pointer);
     JComponent jComponent = component.getExternalComponent();
-    myInnerTabbedPane.add(loadableNode.getName(), jComponent);
+    myInnerTabbedPane.add(getTabTextForNode(loadableNode), jComponent);
     myEditors.add(component);
     ToolWindowManager.getInstance(operationContext.getProject()).getFocusManager().requestFocus(component, false);
     SModel sModel = loadableNode.getModel();
