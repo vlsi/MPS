@@ -53,7 +53,7 @@
     <property name="abstractClass" value="false" />
     <node role="staticMethod" type="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" id="3574270020490361404">
       <property name="name" value="static" />
-      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="3574270020490361405" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="960061001752256093" />
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="3574270020490361406" />
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="3574270020490361407" />
     </node>

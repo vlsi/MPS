@@ -332,13 +332,13 @@ public class NodeEditorActions {
     }
 
     private EditorCell findTarget(EditorCell cell) {
-      while (cell.getParent() != null && cell.getParent().getBounds().equals(cell.getBounds())) {
+      while (cell.getParent() != null && cell.getParent().isTransparentCollection()) {
         cell = cell.getParent();
       }
       EditorCell_Collection parent = cell.getParent();
       while (parent != null) {
         if (parent.isSelectable()) {
-          while (parent.getParent() != null && parent.getParent().getBounds().equals(parent.getBounds()) && parent.getParent().isSelectable()) {
+          while (parent.getParent() != null && parent.getParent().isTransparentCollection() && parent.getParent().isSelectable()) {
             parent = parent.getParent();
           }
           return parent;
