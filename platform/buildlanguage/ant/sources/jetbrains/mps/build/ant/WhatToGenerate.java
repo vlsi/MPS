@@ -28,6 +28,7 @@ public class WhatToGenerate {
   private final Set<File> myMPSProjects = new LinkedHashSet<File>();
   private boolean myFailOnError = false;
   private boolean myCompile = true;
+  private boolean myInvokeTests = false;
   private final Map<String, File> myLibraries = new LinkedHashMap<String, File>();
   private final Map<String, String> myMacro = new LinkedHashMap<String, String>();
   private int myLogLevel = org.apache.tools.ant.Project.MSG_INFO;
@@ -41,6 +42,7 @@ public class WhatToGenerate {
   private static final String LOG_LEVEL = "LOG_LEVEL";
   private static final String SHOW_DIFF = "SHOW_DIFF";
   private static final String COMPILE = "COMPILE";
+  private static final String INVOKE_TESTS = "INVOKE_TESTS";
 
   public void updateShowDiff(boolean isDifferenceCalculated) {
     myShowDiff = isDifferenceCalculated;
@@ -49,6 +51,15 @@ public class WhatToGenerate {
   public boolean getShowDiff() {
     return myShowDiff;
   }
+
+  public void updateInvokeTests(boolean invokeTests) {
+    myInvokeTests = invokeTests;
+  }
+
+  public boolean getInvokeTests() {
+    return myInvokeTests;
+  }
+
   public void addModuleDirectory(File dir) {
     assert dir.exists() && dir.isDirectory();
     myModuleDirectories.add(dir);
@@ -216,6 +227,11 @@ public class WhatToGenerate {
     sb.append(COMPILE);
     sb.append("=");
     sb.append(myCompile);
+    sb.append(" ");
+
+    sb.append(INVOKE_TESTS);
+    sb.append("=");
+    sb.append(myInvokeTests);
 
     return sb.toString();
   }
@@ -246,6 +262,8 @@ public class WhatToGenerate {
           whatToGenerate.myShowDiff = Boolean.parseBoolean(propertyValuePair[1]);          
         } else if (propertyValuePair[0].equals(COMPILE)){
           whatToGenerate.myCompile = Boolean.parseBoolean(propertyValuePair[1]);          
+        } else if (propertyValuePair[0].equals(INVOKE_TESTS)){
+          whatToGenerate.myInvokeTests = Boolean.parseBoolean(propertyValuePair[1]);
         }
       }
     }

@@ -17,6 +17,7 @@ import jetbrains.mps.generator.GeneratorManager;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.util.Pair;
 import jetbrains.mps.ide.progress.IAdaptiveProgressMonitor;
 
@@ -26,6 +27,8 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.io.PrintStream;
 import java.io.IOException;
+import java.io.PrintWriter;
+import java.io.StringWriter;
 
 import com.intellij.openapi.util.Computable;
 import com.intellij.openapi.progress.EmptyProgressIndicator;
@@ -88,7 +91,18 @@ public class GeneratorTester extends Generator {
       compilationResult = Collections.EMPTY_LIST;
     }
 
-    StringBuffer sb = createDetailedReport(compilationResult, diffReports);
+    List<TestFailure> testResults;
+    if (myWhatToGenerate.getInvokeTests()) {
+      List<SModel> models = new ArrayList<SModel>();
+      for (Pair<SModelDescriptor, IOperationContext> pair : modelsToContext) {
+        models.add(pair.o1.getSModel());
+      }
+      testResults = ProjectTester.invokeTests(generationType, models);
+    } else {
+      testResults = Collections.EMPTY_LIST;
+    }
+
+    StringBuffer sb = createDetailedReport(compilationResult, testResults, diffReports);
 
     if (sb.length() > 0) {
       myTestFailed = true;
@@ -97,7 +111,7 @@ public class GeneratorTester extends Generator {
     System.out.println("##teamcity[testFinished name='" + currentTestName + "']");
   }
 
-  private StringBuffer createDetailedReport(@NotNull List<CompilationResult> compilationResult,@NotNull List<String> diffReports) {
+  private StringBuffer createDetailedReport(@NotNull List<CompilationResult> compilationResult, List<TestFailure> testFailures, @NotNull List<String> diffReports) {
     StringBuffer sb = new StringBuffer();
 
     if (myMessageHandler.getGenerationErrors().size() > 0) {
@@ -129,6 +143,18 @@ public class GeneratorTester extends Generator {
       }
     }
     if (headerPrinted) {
+      sb.append("|n");
+    }
+
+    if (testFailures.size() > 0) {
+      sb.append("Test Failures:|n");
+      for (TestFailure failure : testFailures) {
+        sb.append("  ");
+        StringWriter writer = new StringWriter();
+        failure.thrownException().printStackTrace(new PrintWriter(writer));
+        sb.append(escapeMessageForTeamCity(writer.toString()));
+        sb.append("|n");
+      }
       sb.append("|n");
     }
 

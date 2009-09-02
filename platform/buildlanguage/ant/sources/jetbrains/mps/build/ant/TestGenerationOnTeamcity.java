@@ -10,6 +10,14 @@ public class TestGenerationOnTeamcity extends GenerateTask {
     myWhatToGenerate.updateShowDiff(isDifferenceCalculated);
   }
 
+  public boolean getInvokeTests() {
+    return myWhatToGenerate.getInvokeTests();
+  }
+
+  public void setInvokeTests(boolean invokeTests) {
+    myWhatToGenerate.updateInvokeTests(invokeTests);    
+  }
+
   @Override
   protected Class<? extends Generator> getGeneratorClass() {
     return GeneratorTester.class;
