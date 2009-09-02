@@ -55,7 +55,7 @@ public class GeneratorTester extends Generator {
   @Override
   protected void generateModulesCircle(GeneratorManager gm, EmptyProgressIndicator emptyProgressIndicator, Set<IModule> modulesSet, List<Pair<SModelDescriptor, IOperationContext>> modelsToContext) {
     String currentTestName = escapeMessageForTeamCity("generating " + modulesSet);
-    System.out.println("##teamcity[testStarted name='" + currentTestName + "']");
+    System.out.println("##teamcity[testStarted name='" + currentTestName + "' captureStandardOutput='true']");
 
     final EditorGenerateType generationType = new EditorGenerateType(true);
     gm.generateModels(modelsToContext,
