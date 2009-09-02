@@ -31,7 +31,6 @@ import com.intellij.openapi.fileEditor.FileEditorManager;
 import com.intellij.openapi.fileEditor.FileEditorManagerAdapter;
 import com.intellij.openapi.fileEditor.FileEditorManagerEvent;
 import com.intellij.openapi.project.Project;
-import com.intellij.openapi.startup.StartupManager;
 import com.intellij.openapi.util.ActionCallback;
 import com.intellij.openapi.util.Computable;
 import com.intellij.openapi.vfs.VirtualFile;
@@ -40,8 +39,6 @@ import com.intellij.openapi.vfs.VirtualFileManagerListener;
 import com.intellij.openapi.wm.ToolWindow;
 import com.intellij.openapi.wm.ToolWindowId;
 import com.intellij.openapi.wm.ToolWindowManager;
-import com.intellij.openapi.extensions.ExtensionPointName;
-import com.intellij.openapi.extensions.ExtensionPoint;
 import jetbrains.mps.MPSProjectHolder;
 import jetbrains.mps.generator.GenerationListener;
 import jetbrains.mps.generator.GeneratorManager;
@@ -235,17 +232,6 @@ public class ProjectPane extends AbstractProjectViewPane implements PersistentSt
     ClassLoaderManager.getInstance().addReloadHandler(myReloadListener);
   }
 
-  public void disposeComponent() {
-    projectClosed();
-    getTree().clear();
-    getTree().dispose();
-    removeListeners();
-  }
-
-  public void projectClosed() {
-    ClassLoaderManager.getInstance().removeReloadHandler(myReloadListener);
-  }
-  
   public void addToolbarActions(final DefaultActionGroup group) {
     ToggleAction myPAndRToggle = new ToggleAction("Show properties and references", "Show properties and references", Icons.PROP_AND_REF) {
       public boolean isSelected(@Nullable AnActionEvent e) {
@@ -516,8 +502,8 @@ public class ProjectPane extends AbstractProjectViewPane implements PersistentSt
   }
 
   public void dispose() {
-    projectClosed();
-    disposeComponent();
+    ClassLoaderManager.getInstance().removeReloadHandler(myReloadListener);
+    removeListeners();
     myDisposed = true;
   }
 
