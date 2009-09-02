@@ -4,7 +4,9 @@ import jetbrains.mps.baseLanguage.structure.*;
 import jetbrains.mps.baseLanguage.structure.LongLiteral;
 import jetbrains.mps.baseLanguage.structure.StringLiteral;
 import jetbrains.mps.baseLanguage.structure.Statement;
+import jetbrains.mps.baseLanguage.structure.FieldDeclaration;
 import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.smodel.INodeAdapter;
 import org.eclipse.jdt.internal.compiler.impl.*;
 import org.eclipse.jdt.internal.compiler.impl.BooleanConstant;
 import org.eclipse.jdt.internal.compiler.impl.CharConstant;
@@ -23,12 +25,12 @@ import org.eclipse.jdt.internal.compiler.ast.SynchronizedStatement;
 import org.eclipse.jdt.internal.compiler.ast.ThrowStatement;
 import org.eclipse.jdt.internal.compiler.ast.TryStatement;
 import org.eclipse.jdt.internal.compiler.ast.WhileStatement;
+import org.eclipse.jdt.internal.compiler.ast.NullLiteral;
 import org.eclipse.jdt.internal.compiler.lookup.TypeBinding;
 import org.eclipse.jdt.internal.compiler.lookup.TypeIds;
+import org.eclipse.jdt.internal.compiler.lookup.Binding;
 
-import java.util.List;
-import java.util.ArrayList;
-import java.util.Collections;
+import java.util.*;
 import java.lang.reflect.Field;
 
 /**
@@ -40,6 +42,10 @@ import java.lang.reflect.Field;
  */
 public class JavaConverterTreeBuilder {
   private SModel myCurrentModel;
+
+  private Classifier myCurrentClass;
+
+  private Map<Binding, INodeAdapter> myBindingMap = new HashMap<Binding, INodeAdapter>();
 
   public jetbrains.mps.baseLanguage.structure.Expression processExpressionRefl(Expression expr) {
     return null;//todo
@@ -419,6 +425,10 @@ public class JavaConverterTreeBuilder {
     return op;
   }
 
+  jetbrains.mps.baseLanguage.structure.Expression processExpression(NullLiteral x) {
+    return jetbrains.mps.baseLanguage.structure.NullLiteral.newInstance(myCurrentModel);
+  }
+
   jetbrains.mps.baseLanguage.structure.Expression processExpression(SuperReference x) {
     // JClassType type = (JClassType) typeMap.get(x.resolvedType);
     // assert (type == currentClass.getSuperClass());
@@ -461,6 +471,104 @@ public class JavaConverterTreeBuilder {
         throw new JavaConverterException("Unexpected operator for unary expression");
     }
   }
+
+
+  jetbrains.mps.baseLanguage.structure.Expression processExpression(SingleNameReference x) {
+    // SourceInfo info = makeSourceInfo(x);
+    Binding binding = x.binding;
+    INodeAdapter target = myBindingMap.get(binding);
+    if (!(target instanceof VariableDeclaration)) {
+      return null;
+    }
+    VariableDeclaration variable = (VariableDeclaration) target;
+
+    /*
+    * Wackiness: if a field happens to have synthetic accessors (only fields
+    * can have them, apparently), this is a ref to a field in an enclosing
+    * instance. CreateThisRef should compute a "this" access of the
+    * appropriate type, unless the field is static.
+    */
+    jetbrains.mps.baseLanguage.structure.Expression result = null;
+    /* if (x.syntheticAccessors != null) {
+      FieldDeclaration field = (FieldDeclaration) variable;
+      if (!field.isStatic()) {
+        JExpression instance = createThisRef(info, field.getEnclosingType());
+        result = new JFieldRef(info, instance, field, currentClass);
+      }
+    }*/ //todo what's that?
+    //   if (result == null) {
+    result = createVariableRef(variable, binding);
+    //  }
+    /* if (x.genericCast != null) {
+      JType castType = (JType) typeMap.get(x.genericCast);
+      result = maybeCast(castType, result);
+    }*/ //todo 2
+    return result;
+  }
+
+  private jetbrains.mps.baseLanguage.structure.Expression createVariableRef(VariableDeclaration variable,
+                                                                            Binding binding) {
+    // Fix up the reference if it's to an outer local/param
+    // variable = possiblyReferenceOuterLocal(variable, binding);
+    //todo fix above case or delete if unnecessary
+    if (variable == null) {
+      return null;
+    }
+    return createVariableRef(variable);
+  }
+
+  /**
+   * Creates an appropriate VariableReference (or DotExpression, with field reference within)
+   *  for the polymorphic type of the
+   * requested VariableDeclaration.
+   */
+  private jetbrains.mps.baseLanguage.structure.Expression createVariableRef(VariableDeclaration variable) {
+    if (variable instanceof LocalVariableDeclaration) {
+      //todo maybe add following scope assertions later
+      /*  if (local.getEnclosingMethod() != currentMethod) {
+          throw new InternalCompilerException(
+              "LocalRef referencing local in a different method.");
+        }*/
+      LocalVariableReference reference = LocalVariableReference.newInstance(myCurrentModel);
+      reference.setLocalVariableDeclaration((LocalVariableDeclaration) variable);
+      return reference;
+    } else if (variable instanceof ParameterDeclaration) {
+      /*   if (parameter.getEnclosingMethod() != currentMethod) {
+        throw new InternalCompilerException(
+            "ParameterRef referencing param in a different method.");
+      }*/
+      ParameterReference parameterReference = ParameterReference.newInstance(myCurrentModel);
+      parameterReference.setParameterDeclaration((ParameterDeclaration) variable);
+      return parameterReference;
+    } else if (variable instanceof FieldDeclaration) {
+      //unqualified field reference
+      FieldDeclaration field = (FieldDeclaration) variable;
+      // JClassType fieldEnclosingType = (JClassType) field.getEnclosingType();
+      /*  if (!program.typeOracle.canTriviallyCast(
+          (JClassType) instance.getType(), fieldEnclosingType)) {
+        throw new InternalCompilerException(
+            "FieldRef referencing field in a different type.");
+      }*/
+      FieldReferenceOperation fro = FieldReferenceOperation.newInstance(myCurrentModel);
+      fro.setFieldDeclaration(field);
+      DotExpression dotExpression = DotExpression.newInstance(myCurrentModel);
+
+      ThisExpression thisExpression = ThisExpression.newInstance(myCurrentModel);
+      if (!myCurrentClass.equals(field.getParent())) {
+        thisExpression.setClassConcept((Classifier) field.getParent());
+      }
+      dotExpression.setOperand(thisExpression);
+      dotExpression.setOperation(fro);
+      return dotExpression;
+    } else if (variable instanceof StaticFieldDeclaration) {
+      //unqualified static field reference
+      LocalStaticFieldReference lsfr = LocalStaticFieldReference.newInstance(myCurrentModel);
+      lsfr.setStaticFieldDeclaration((StaticFieldDeclaration) variable);
+    }
+    throw new JavaConverterException("Unknown VariableDeclaration subclass.");
+  }
+
+  // statements ==========================================================================================
 
   List<Statement> processStatements(org.eclipse.jdt.internal.compiler.ast.Statement[] statements) {
     List<Statement> result = new ArrayList<Statement>();
