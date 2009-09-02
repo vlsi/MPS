@@ -92,12 +92,16 @@ public class GeneratorTester extends Generator {
     }
 
     List<TestFailure> testResults;
-    if (myWhatToGenerate.getInvokeTests()) {
-      List<SModel> models = new ArrayList<SModel>();
+    if (myWhatToGenerate.getInvokeTests() && myWhatToGenerate.getCompile()) {
+      final List<SModel> models = new ArrayList<SModel>();
       for (Pair<SModelDescriptor, IOperationContext> pair : modelsToContext) {
         models.add(pair.o1.getSModel());
       }
-      testResults = ProjectTester.invokeTests(generationType, models);
+      testResults = ModelAccess.instance().runReadAction(new Computable<List<TestFailure>>() {
+        public List<TestFailure> compute() {
+          return ProjectTester.invokeTests(generationType, models);
+        }
+      });
     } else {
       testResults = Collections.EMPTY_LIST;
     }
