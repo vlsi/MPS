@@ -112,7 +112,7 @@ public class ModelDiffTool implements DiffTool {
 
   public static SModel readModel(DiffContent content, String path) throws IOException, ReadException {
     SModel sModel = readModel(content.getBytes(), path);
-    if (content instanceof DocumentContent) {
+    if (content instanceof DocumentContent || content instanceof FileContent) {
       SModelRepository repository = SModelRepository.getInstance();
       SModelDescriptor sModelDescriptor = repository.getModelDescriptor(sModel.getSModelFqName());
       return sModelDescriptor.getSModel();
