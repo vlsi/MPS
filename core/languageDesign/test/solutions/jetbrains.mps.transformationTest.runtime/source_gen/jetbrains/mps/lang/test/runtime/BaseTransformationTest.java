@@ -37,10 +37,8 @@ public class BaseTransformationTest extends TestCase {
     TestMain.configureMPS();
     this.myProject = myContainer.getProject(Macros.mpsHomeMacros().expandPath(projectName, ((IFile)null)));
     SwingUtilities.invokeAndWait(new Runnable() {
-
       public void run() {
         ModelAccess.instance().runWriteActionInCommand(new Runnable() {
-
           public void run() {
             SModelDescriptor modelDescriptor = SModelRepository.getInstance().getModelDescriptor(SModelReference.fromString(model));
             BaseTransformationTest.this.setModelDescriptor(modelDescriptor);
@@ -66,7 +64,6 @@ public class BaseTransformationTest extends TestCase {
   public void runTest(final String className, final String methodName, final boolean runInCommand) throws Throwable {
     final Wrappers._T<Class> clazz = new Wrappers._T<Class>();
     ModelAccess.instance().runReadAction(new Runnable() {
-
       public void run() {
         clazz.value = BaseTransformationTest.this.myModel.getModule().getClass(className);
         assert clazz.value.getClassLoader().toString().contains(BaseTransformationTest.this.myModel.getModule().getModuleFqName());
@@ -78,22 +75,18 @@ public class BaseTransformationTest extends TestCase {
     final Throwable[] exception = new Throwable[1];
     if (runInCommand) {
       SwingUtilities.invokeAndWait(new Runnable() {
-
         public void run() {
           ModelAccess.instance().runWriteActionInCommand(new Runnable() {
-
             public void run() {
               exception[0] = BaseTransformationTest.this.tryToRunTest(clazz.value, methodName, obj);
             }
           });
         }
       });
-    } else
-    {
+    } else {
       exception[0] = BaseTransformationTest.this.tryToRunTest(clazz.value, methodName, obj);
     }
     ModelAccess.instance().runWriteAction(new Runnable() {
-
       public void run() {
         SModelRepository.getInstance().removeModelDescriptor(BaseTransformationTest.this.myTransidentModel);
       }
@@ -117,9 +110,7 @@ public class BaseTransformationTest extends TestCase {
     return exception;
   }
 
-
   public static ProjectContainer getProjectContainer() {
     return myContainer;
   }
-
 }

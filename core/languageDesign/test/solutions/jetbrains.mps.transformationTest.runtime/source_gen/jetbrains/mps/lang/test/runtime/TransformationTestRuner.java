@@ -8,7 +8,6 @@ import com.intellij.openapi.application.impl.ApplicationImpl;
 import com.intellij.openapi.application.ApplicationManager;
 
 public class TransformationTestRuner extends TestRunner {
-
   public TransformationTestRuner() {
   }
 
@@ -23,7 +22,6 @@ public class TransformationTestRuner extends TestRunner {
     BaseTransformationTest.getProjectContainer().clear();
     try {
       SwingUtilities.invokeAndWait(new Runnable() {
-
         public void run() {
           ((ApplicationImpl)ApplicationManager.getApplication()).exit(true);
         }
@@ -33,5 +31,4 @@ public class TransformationTestRuner extends TestRunner {
     }
     System.exit(0);
   }
-
 }

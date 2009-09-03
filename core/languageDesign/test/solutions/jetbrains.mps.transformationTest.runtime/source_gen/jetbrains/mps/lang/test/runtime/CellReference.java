@@ -13,7 +13,6 @@ import jetbrains.mps.nodeEditor.NodeEditorComponent;
 import jetbrains.mps.lang.test.behavior.AnonymousCellAnnotation_Behavior;
 
 public class CellReference {
-
   private SNode myNode;
   private SNode myAnnotation;
   private Map<SNode, SNode> myMap;
@@ -31,7 +30,6 @@ public class CellReference {
   public String toString() {
     final Wrappers._T<String> result = new Wrappers._T<String>();
     ModelAccess.instance().runReadAction(new Runnable() {
-
       public void run() {
         result.value = "(node " + CellReference.this.myNode.getId() + ", id " + SPropertyOperations.getString(CellReference.this.myAnnotation, "cellId") + ")";
       }
@@ -47,5 +45,4 @@ public class CellReference {
   public void assertEditor(IEditor editorComponent, Map<SNode, SNode> map) {
     AnonymousCellAnnotation_Behavior.call_assertEditor_6268941039745719581(this.myAnnotation, editorComponent, this.getNode(), map, this.myMap);
   }
-
 }

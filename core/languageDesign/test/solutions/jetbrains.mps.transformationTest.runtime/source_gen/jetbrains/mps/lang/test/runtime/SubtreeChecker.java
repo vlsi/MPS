@@ -26,7 +26,6 @@ import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.lang.test.behavior.NodeOperation_Behavior;
 
 public class SubtreeChecker {
-
   public static void checkNodeForErrors(SNode node) {
     checkNodeForErrors(node, false, false);
   }
@@ -34,11 +33,11 @@ public class SubtreeChecker {
   public static void checkNodeForErrors(SNode node, boolean allowErrors, boolean allowWarnings) {
     TypeChecker checker = TypeChecker.getInstance();
     checker.checkIfNotChecked(node);
-    for(SNode child : SNodeOperations.getDescendants(node, "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{})) {
+    for (SNode child : SNodeOperations.getDescendants(node, "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{})) {
       boolean isError = false;
       if (SLinkOperations.getTarget(child, AttributesRolesUtil.childRoleFromAttributeRole("nodePropertiesMarker"), true) != null) {
         SNode container = SLinkOperations.getTarget(child, AttributesRolesUtil.childRoleFromAttributeRole("nodePropertiesMarker"), true);
-        for(SNode property : SLinkOperations.getTargets(container, "properties", true)) {
+        for (SNode property : SLinkOperations.getTargets(container, "properties", true)) {
           if (SNodeOperations.isInstanceOf(property, "jetbrains.mps.lang.test.structure.NodeTypeProperty")) {
             SNode type1 = checker.getTypeOf(child);
             SNode type2 = SLinkOperations.getTarget(SNodeOperations.cast(property, "jetbrains.mps.lang.test.structure.NodeTypeProperty"), "type", true);
@@ -47,7 +46,7 @@ public class SubtreeChecker {
           if (SNodeOperations.isInstanceOf(property, "jetbrains.mps.lang.test.structure.NodeTypeSetProperty")) {
             SNode type1 = checker.getTypeOf(child);
             boolean hasType = false;
-            for(SNode type2 : SLinkOperations.getTargets(SNodeOperations.cast(property, "jetbrains.mps.lang.test.structure.NodeTypeSetProperty"), "type", true)) {
+            for (SNode type2 : SLinkOperations.getTargets(SNodeOperations.cast(property, "jetbrains.mps.lang.test.structure.NodeTypeSetProperty"), "type", true)) {
               if (MatchingUtil.matchNodes(type1, type2)) {
                 hasType = true;
                 break;
@@ -93,16 +92,15 @@ public class SubtreeChecker {
     Set<Instruction> unreachable = program.getUnreachableInstructions();
     AnalysisResult<Set<Object>> initialized = program.analyze(new InitializedVariablesAnalyzer());
     AnalysisResult<Set<Object>> live = program.analyze(new LivenessAnalyzer());
-    for(SNode child : SNodeOperations.getDescendants(node, "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{})) {
+    for (SNode child : SNodeOperations.getDescendants(node, "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{})) {
       if (SLinkOperations.getTarget(child, AttributesRolesUtil.childRoleFromAttributeRole("nodePropertiesMarker"), true) != null) {
         SNode container = SLinkOperations.getTarget(child, AttributesRolesUtil.childRoleFromAttributeRole("nodePropertiesMarker"), true);
-        for(SNode property : SLinkOperations.getTargets(container, "properties", true)) {
+        for (SNode property : SLinkOperations.getTargets(container, "properties", true)) {
           Instruction instruction;
           List<Instruction> instructions = program.getInstructionsFor(child);
           if (ListSequence.fromList(instructions).count() > 0) {
             instruction = program.getInstructionsFor(child).get(0);
-          } else
-          {
+          } else {
             continue;
           }
           if (SNodeOperations.isInstanceOf(property, "jetbrains.mps.lang.test.structure.NodeReachable")) {
@@ -130,10 +128,10 @@ public class SubtreeChecker {
   }
 
   public static void performOperations(SNode node) {
-    for(SNode nodeToCheck : SNodeOperations.getDescendants(node, "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{})) {
+    for (SNode nodeToCheck : SNodeOperations.getDescendants(node, "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{})) {
       if (nodeToCheck != null) {
         if (SLinkOperations.getTarget(nodeToCheck, AttributesRolesUtil.childRoleFromAttributeRole("nodeOpraretionsMark"), true) != null) {
-          for(SNode operation : SLinkOperations.getTargets(SLinkOperations.getTarget(nodeToCheck, AttributesRolesUtil.childRoleFromAttributeRole("nodeOpraretionsMark"), true), "operations", true)) {
+          for (SNode operation : SLinkOperations.getTargets(SLinkOperations.getTarget(nodeToCheck, AttributesRolesUtil.childRoleFromAttributeRole("nodeOpraretionsMark"), true), "operations", true)) {
             NodeOperation_Behavior.call_perform_1215601182156(operation, nodeToCheck);
           }
         }
@@ -143,5 +141,4 @@ public class SubtreeChecker {
 
   public static void runTest() {
   }
-
 }

@@ -33,7 +33,6 @@ import java.awt.event.KeyEvent;
 import javax.swing.KeyStroke;
 
 public class BaseEditorTestBody extends BaseTestBody {
-
   public IEditor myEditor;
   private SNode myBefore;
   private SNode myResult;
@@ -46,7 +45,6 @@ public class BaseEditorTestBody extends BaseTestBody {
       this.addNodeById(after);
     }
     ModelAccess.instance().runReadAction(new Runnable() {
-
       public void run() {
         BaseEditorTestBody.this.myBefore = BaseEditorTestBody.this.getNodeById(before);
         BaseEditorTestBody.this.myStart = BaseEditorTestBody.this.findCellReference(BaseEditorTestBody.this.getRealNodeById(before));
@@ -71,12 +69,10 @@ public class BaseEditorTestBody extends BaseTestBody {
 
   public void finishTest() throws InvocationTargetException, InterruptedException {
     SwingUtilities.invokeAndWait(new Runnable() {
-
       public void run() {
         if (BaseEditorTestBody.this.myResult != null) {
           final SNode editedNode = BaseEditorTestBody.this.myEditor.getEditedNode();
           ModelAccess.instance().runWriteActionInCommand(new Runnable() {
-
             public void run() {
               Map<SNode, SNode> map = MapSequence.fromMap(new HashMap<SNode, SNode>());
               Assert.assertEquals(null, NodesMatcher.matchNodes(ListSequence.fromListAndArray(new ArrayList<SNode>(), editedNode), ListSequence.fromListAndArray(new ArrayList<SNode>(), BaseEditorTestBody.this.myResult), (Map)map));
@@ -91,17 +87,14 @@ public class BaseEditorTestBody extends BaseTestBody {
     });
   }
 
-
   public static void invokeIntention(final String name, final IEditor editor, final SNode node) throws Exception {
     SwingUtilities.invokeAndWait(new Runnable() {
-
       public void run() {
         ModelAccess.instance().runWriteActionInCommand(new Runnable() {
-
           public void run() {
             editor.selectNode(node);
             Set<Intention> availableIntentions = IntentionsManager.getInstance().getAvailableIntentionsForExactNode(node, editor.getEditorContext(), false, true);
-            for(Intention intention : SetSequence.fromSet(availableIntentions)) {
+            for (Intention intention : SetSequence.fromSet(availableIntentions)) {
               if (intention.getClass().getCanonicalName().equals(name)) {
                 intention.execute(node, editor.getEditorContext());
               }
@@ -131,9 +124,8 @@ public class BaseEditorTestBody extends BaseTestBody {
 
   public static void typeString(final EditorComponent editorComponent, final String text) throws InterruptedException, InvocationTargetException {
     SwingUtilities.invokeAndWait(new Runnable() {
-
       public void run() {
-        for(char ch : text.toCharArray()) {
+        for (char ch : text.toCharArray()) {
           editorComponent.processKeyTyped(new KeyEvent(editorComponent, KeyEvent.KEY_TYPED, 0, 0, 0, ch));
         }
       }
@@ -146,9 +138,8 @@ public class BaseEditorTestBody extends BaseTestBody {
 
   public static void pressKeys(final EditorComponent editorComponent, final List<String> keyStrokes) throws InterruptedException, InvocationTargetException {
     SwingUtilities.invokeAndWait(new Runnable() {
-
       public void run() {
-        for(String code : ListSequence.fromList(keyStrokes)) {
+        for (String code : ListSequence.fromList(keyStrokes)) {
           KeyStroke stroke = KeyStroke.getKeyStroke(code);
           editorComponent.processKeyPressed(new KeyEvent(editorComponent, KeyEvent.KEY_PRESSED, 0, stroke.getModifiers(), stroke.getKeyCode(), stroke.getKeyChar()));
           editorComponent.processKeyReleased(new KeyEvent(editorComponent, KeyEvent.KEY_RELEASED, 0, stroke.getModifiers(), stroke.getKeyCode(), stroke.getKeyChar()));
@@ -156,5 +147,4 @@ public class BaseEditorTestBody extends BaseTestBody {
       }
     });
   }
-
 }

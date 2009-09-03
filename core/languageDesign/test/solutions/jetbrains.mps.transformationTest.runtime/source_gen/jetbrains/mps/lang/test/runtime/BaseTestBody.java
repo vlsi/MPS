@@ -16,7 +16,6 @@ import jetbrains.mps.smodel.CopyUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class BaseTestBody {
-
   public SModelDescriptor myModel;
   public MPSProject myProject;
   protected Map<SNode, SNode> myMap;
@@ -29,11 +28,10 @@ public class BaseTestBody {
 
   public void addNodeById(final String id) throws Exception {
     ModelAccess.instance().runWriteActionInCommand(new Runnable() {
-
       public void run() {
         SNode node = BaseTestBody.this.myModel.getSModel().getNodeById(id);
         SNode copy = CopyUtil.copy(node, ((Map<SNode, SNode>)BaseTestBody.this.myMap), true);
-        for(SNode a : ListSequence.fromList(SNodeOperations.getDescendants(copy, "jetbrains.mps.lang.test.structure.INodeAnnotattion", false, new String[]{}))) {
+        for (SNode a : ListSequence.fromList(SNodeOperations.getDescendants(copy, "jetbrains.mps.lang.test.structure.INodeAnnotattion", false, new String[]{}))) {
           SNodeOperations.deleteNode(a);
         }
         BaseTestBody.this.myModel.getSModel().addRoot(copy);
@@ -49,5 +47,4 @@ public class BaseTestBody {
   public SNode getRealNodeById(String id) {
     return this.myModel.getSModel().getNodeById(id);
   }
-
 }
