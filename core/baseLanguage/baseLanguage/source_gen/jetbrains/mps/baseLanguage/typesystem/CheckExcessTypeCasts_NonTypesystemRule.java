@@ -27,7 +27,7 @@ public class CheckExcessTypeCasts_NonTypesystemRule extends AbstractNonTypesyste
           intentionProvider = new BaseIntentionProvider("jetbrains.mps.baseLanguage.typesystem.RemoveExcessTypeCast_QuickFix");
           intentionProvider.putArgument("castExpr", expr);
           IErrorTarget errorTarget = new NodeErrorTarget();
-          typeCheckingContext.reportWarning(expr, "Typecast expression is superflous", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "3637195266922531727", intentionProvider, errorTarget);
+          typeCheckingContext.reportInfo(expr, "Typecast expression is superflous", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "3637195266923171603", intentionProvider, errorTarget);
         }
       }
     }

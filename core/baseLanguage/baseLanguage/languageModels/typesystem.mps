@@ -18128,18 +18128,18 @@
               </node>
             </node>
             <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="3637195266922531702">
-              <node role="statement" type="jetbrains.mps.lang.typesystem.structure.WarningStatement" id="3637195266922531727">
-                <node role="nodeToReport" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference" id="3637195266922531730">
+              <node role="statement" type="jetbrains.mps.lang.typesystem.structure.InfoStatement" id="3637195266923171603">
+                <node role="nodeToReport" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference" id="3637195266923171607">
                   <link role="applicableNode" targetNodeId="3637195266922483798" resolveInfo="expr" />
                 </node>
-                <node role="warningText" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="3637195266922531737">
+                <node role="infoText" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="3637195266923171606">
                   <property name="value" value="Typecast expression is superflous" />
                 </node>
-                <node role="helginsIntention" type="jetbrains.mps.lang.typesystem.structure.TypesystemIntention" id="3637195266922531738">
+                <node role="helginsIntention" type="jetbrains.mps.lang.typesystem.structure.TypesystemIntention" id="3637195266923171609">
                   <link role="quickFix" targetNodeId="3637195266922531731" resolveInfo="RemoveExcessTypeCast" />
-                  <node role="actualArgument" type="jetbrains.mps.lang.typesystem.structure.TypesystemIntentionArgument" id="3637195266922531759">
+                  <node role="actualArgument" type="jetbrains.mps.lang.typesystem.structure.TypesystemIntentionArgument" id="3637195266923171610">
                     <link role="quickFixArgument" targetNodeId="3637195266922531742" resolveInfo="castExpr" />
-                    <node role="value" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference" id="3637195266922531763">
+                    <node role="value" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference" id="3637195266923171612">
                       <link role="applicableNode" targetNodeId="3637195266922483798" resolveInfo="expr" />
                     </node>
                   </node>
