@@ -10,7 +10,6 @@ public interface IMacroHolder extends INodeAdapter {
   public static final String concept = "jetbrains.mps.build.packaging.structure.IMacroHolder";
   public static final String MACRO = "macro";
 
-
   public int getMacrosCount();
   public Iterator<Macro> macros();
   public List<Macro> getMacros();

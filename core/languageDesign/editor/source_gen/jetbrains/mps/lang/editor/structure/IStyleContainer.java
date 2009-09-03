@@ -10,7 +10,6 @@ public interface IStyleContainer extends INodeAdapter {
   public static final String concept = "jetbrains.mps.lang.editor.structure.IStyleContainer";
   public static final String STYLE_ITEM = "styleItem";
 
-
   public int getStyleItemsCount();
   public Iterator<StyleClassItem> styleItems();
   public List<StyleClassItem> getStyleItems();

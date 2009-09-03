@@ -12,7 +12,6 @@ public interface IParamFeature extends IFeature {
   public static final String TO_STRING_FUNCTION = "toStringFunction";
   public static final String CARDINAL = "cardinal";
 
-
   public Type getParameterType();
   public void setParameterType(Type node);
   public ParameterQueryFun getParameterQueryFunction();
