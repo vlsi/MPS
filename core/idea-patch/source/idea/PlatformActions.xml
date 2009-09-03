@@ -387,6 +387,10 @@
                     icon="/nodes/homeFolder.png"/>
             <action id="FileChooser.GotoProject" class="com.intellij.openapi.fileChooser.actions.GotoProjectDirectory"
                     icon="/nodes/ideaProject.png"/>
+            <!--//!!ADDED IN MPS-->
+            <action id="FileChooser.GotoMPSModule" class="jetbrains.mps.ide.ui.filechoosers.treefilechooser.GotoModuleDirectory"
+                    icon="/nodes/ideaModule.png"/>
+            <!--//!!ADDED IN MPS-->
             <separator/>
             <action id="FileChooser.NewFile" class="com.intellij.openapi.fileChooser.actions.NewFileAction"
                     icon="/actions/new.png"/>
