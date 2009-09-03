@@ -2675,22 +2675,32 @@
                 </node>
               </node>
             </node>
-            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1218628312802">
-              <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1218628312803">
-                <node role="operand" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="7360913708305936101">
-                  <link role="baseMethodDeclaration" targetNodeId="82.~ProjectPane.getInstance(com.intellij.openapi.project.Project):jetbrains.mps.ide.projectPane.ProjectPane" resolveInfo="getInstance" />
-                  <link role="classConcept" targetNodeId="82.~ProjectPane" resolveInfo="ProjectPane" />
-                  <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="7360913708305936102">
-                    <node role="operand" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpression" id="7360913708305936103" />
-                    <node role="operation" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterReferenceOperation" id="7360913708305936107">
-                      <link role="member" targetNodeId="7360913708305936106" resolveInfo="ideaProject" />
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1705375422255050208">
+              <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1705375422255050210">
+                <link role="baseMethodDeclaration" targetNodeId="72.~SwingUtilities.invokeLater(java.lang.Runnable):void" resolveInfo="invokeLater" />
+                <link role="classConcept" targetNodeId="72.~SwingUtilities" resolveInfo="SwingUtilities" />
+                <node role="actualArgument" type="jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral" id="1705375422255050211">
+                  <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1705375422255050212">
+                    <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1705375422255053328">
+                      <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1705375422255053329">
+                        <node role="operand" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1705375422255053330">
+                          <link role="baseMethodDeclaration" targetNodeId="82.~ProjectPane.getInstance(com.intellij.openapi.project.Project):jetbrains.mps.ide.projectPane.ProjectPane" resolveInfo="getInstance" />
+                          <link role="classConcept" targetNodeId="82.~ProjectPane" resolveInfo="ProjectPane" />
+                          <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1705375422255053331">
+                            <node role="operand" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpression" id="1705375422255053332" />
+                            <node role="operation" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterReferenceOperation" id="1705375422255053333">
+                              <link role="member" targetNodeId="7360913708305936106" resolveInfo="ideaProject" />
+                            </node>
+                          </node>
+                        </node>
+                        <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1705375422255053334">
+                          <link role="baseMethodDeclaration" targetNodeId="82.~ProjectPane.selectNode(jetbrains.mps.smodel.SNode):void" resolveInfo="selectNode" />
+                          <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1705375422255053335">
+                            <link role="variableDeclaration" targetNodeId="1218628312780" resolveInfo="copy" />
+                          </node>
+                        </node>
+                      </node>
                     </node>
-                  </node>
-                </node>
-                <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1218628312810">
-                  <link role="baseMethodDeclaration" targetNodeId="82.~ProjectPane.selectNode(jetbrains.mps.smodel.SNode):void" resolveInfo="selectNode" />
-                  <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1218628312811">
-                    <link role="variableDeclaration" targetNodeId="1218628312780" resolveInfo="copy" />
                   </node>
                 </node>
               </node>

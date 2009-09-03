@@ -19,6 +19,7 @@ import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.workbench.editors.MPSEditorOpener;
+import javax.swing.SwingUtilities;
 import jetbrains.mps.ide.projectPane.ProjectPane;
 
 public class CloneRoot_Action extends GeneratedAction {
@@ -90,10 +91,14 @@ public class CloneRoot_Action extends GeneratedAction {
     try {
       for (SNode node : ListSequence.fromList(CloneRoot_Action.this.nodes)) {
         SNode root = SNodeOperations.getContainingRoot(node);
-        SNode copy = SNodeOperations.copyNode(root);
+        final SNode copy = SNodeOperations.copyNode(root);
         SModelOperations.addRootNode(SNodeOperations.getModel(root), copy);
         CloneRoot_Action.this.project.getComponentSafe(MPSEditorOpener.class).editNode(copy, CloneRoot_Action.this.context);
-        ProjectPane.getInstance(CloneRoot_Action.this.ideaProject).selectNode(copy);
+        SwingUtilities.invokeLater(new Runnable() {
+          public void run() {
+            ProjectPane.getInstance(CloneRoot_Action.this.ideaProject).selectNode(copy);
+          }
+        });
       }
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
