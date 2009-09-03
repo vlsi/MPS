@@ -84,7 +84,10 @@
       <property name="inheritable" value="true" />
     </node>
     <node role="conceptPropertyDeclaration" type="jetbrains.mps.lang.structure.structure.StringConceptPropertyDeclaration" id="1218562853918">
-      <property name="name" value="deprecated1045" />
+      <property name="name" value="deprecated104" />
+    </node>
+    <node role="conceptPropertyDeclaration" type="jetbrains.mps.lang.structure.structure.BooleanConceptPropertyDeclaration" id="6293714305936158372">
+      <property name="name" value="substituteInAmbigousPosition" />
     </node>
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.BooleanConceptProperty" id="1133922314101">
       <link role="conceptPropertyDeclaration" targetNodeId="1137473854053" resolveInfo="abstract" />

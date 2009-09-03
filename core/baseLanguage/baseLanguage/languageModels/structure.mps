@@ -2037,6 +2037,9 @@
       <property name="value" value="local static method invocation" />
       <link role="conceptPropertyDeclaration" targetNodeId="4.1137473914776" />
     </node>
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.BooleanConceptProperty" id="4439253381393984338">
+      <link role="conceptPropertyDeclaration" targetNodeId="4.6293714305936158372" resolveInfo="substituteInAmbigousPosition" />
+    </node>
     <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1172058436957">
       <property name="sourceCardinality" value="1" />
       <property name="role" value="staticMethodDeclaration" />
@@ -2563,6 +2566,9 @@
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1202948805797">
       <property name="value" value="instance method call" />
       <link role="conceptPropertyDeclaration" targetNodeId="4.1137473914776" resolveInfo="short_description" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.BooleanConceptProperty" id="6293714305936418661">
+      <link role="conceptPropertyDeclaration" targetNodeId="4.6293714305936158372" resolveInfo="substituteInAmbigousPosition" />
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration" id="1204053956946">

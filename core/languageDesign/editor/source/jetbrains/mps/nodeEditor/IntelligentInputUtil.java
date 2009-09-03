@@ -25,9 +25,6 @@ import jetbrains.mps.nodeEditor.EditorManager.EditorCell_STHint;
 import jetbrains.mps.nodeEditor.cells.*;
 import jetbrains.mps.typesystem.inference.NodeTypesComponentsRepository;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
-import jetbrains.mps.util.Wrapper;
-import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
-import jetbrains.mps.baseLanguage.closures.runtime.Wrappers._boolean;
 
 import java.util.List;
 
@@ -45,7 +42,7 @@ public class IntelligentInputUtil {
     if (pattern == null || pattern.equals("")) {
       return false;
     }
-    
+
     return editorContext.executeCommand(new Computable<Boolean>() {
       public Boolean compute() {
         if (cell instanceof EditorCell_STHint) {
@@ -72,7 +69,7 @@ public class IntelligentInputUtil {
     String tail = "" + pattern.charAt(pattern.length() - 1);
     EditorCell nextCell = cell.getNextLeaf();
     while (nextCell != null && !nextCell.isSelectable()) {
-      nextCell = nextCell.getNextLeaf();      
+      nextCell = nextCell.getNextLeaf();
     }
 
     if (canCompleteSmallPatternImmediately(info, pattern, "") ||
@@ -97,7 +94,7 @@ public class IntelligentInputUtil {
       EditorCell cellForNewNode = editorContext.getNodeEditorComponent().findNodeCell(newNode);
 
       EditorCell_Label target = null;
-      EditorCell errorOrEditable =  cellForNewNode.findChild(CellFinders.or(CellFinders.FIRST_ERROR, CellFinders.LAST_EDITABLE), true);
+      EditorCell errorOrEditable = cellForNewNode.findChild(CellFinders.or(CellFinders.FIRST_ERROR, CellFinders.LAST_EDITABLE), true);
       if (errorOrEditable instanceof EditorCell_Label) {
         target = (EditorCell_Label) errorOrEditable;
       }
@@ -133,7 +130,7 @@ public class IntelligentInputUtil {
     } else {
       if (isInOneStepAmbigousPosition(info, smallPattern + tail)) {
         editorContext.getNodeEditorComponent().activateNodeSubstituteChooser(cell, info, false);
-      }      
+      }
     }
     return true;
   }
@@ -148,7 +145,7 @@ public class IntelligentInputUtil {
     EditorCell cellForNewNode;
     final SNode newNode;
     if (cell.isValidText(smallPattern) && !"".equals(smallPattern)
-            && substituteInfo.hasExactlyNActions(smallPattern + tail, false, 0)) {
+      && substituteInfo.hasExactlyNActions(smallPattern + tail, false, 0)) {
       newNode = cell.getSNode();
       cellForNewNode = cell;
       sourceCellRemains = true;
@@ -167,7 +164,7 @@ public class IntelligentInputUtil {
       newNode = editorContext.getSelectedCell().getSNode();
 
       if (newNode == null) return true;
-      
+
       cellForNewNode = editorContext.getNodeEditorComponent().findNodeCell(newNode);
       EditorCell errorCell = cellForNewNode.findChild(CellFinders.FIRST_ERROR, true);
 
@@ -194,8 +191,14 @@ public class IntelligentInputUtil {
       return true;
     } else {
       if (isInOneStepAmbigousPosition(substituteInfo, smallPattern + tail)) {
+        if (tryToSubstitudeFirstSutable(editorContext, smallPattern + tail, substituteInfo)) {
+          return true;
+        }
         editorContext.getNodeEditorComponent().activateNodeSubstituteChooser(cell, substituteInfo, false);
-      } else  if (isInAmbigousPosition(substituteInfo, smallPattern, tail)) {
+      } else if (isInAmbigousPosition(substituteInfo, smallPattern, tail)) {
+        if (tryToSubstitudeFirstSutable(editorContext, smallPattern, substituteInfo)) {
+          return true;
+        }
         cell.setText(smallPattern);
         editorContext.getNodeEditorComponent().activateNodeSubstituteChooser(cell, substituteInfo, false);
       }
@@ -259,7 +262,7 @@ public class IntelligentInputUtil {
           editor.changeSelectionWRTFocusPolicy(errorOrEditableCell);
         }
       }
-    } else {     
+    } else {
       editorContext.flushEvents();
       EditorCell_Label rtCell = prepareRTCell(editorContext, newNode, tail);
       if (rtCell != null) {
@@ -267,6 +270,16 @@ public class IntelligentInputUtil {
       }
     }
     return true;
+  }
+
+  private static boolean tryToSubstitudeFirstSutable(EditorContext editorContext, String text, NodeSubstituteInfo substituteInfo) {
+    String property = substituteInfo.getMatchingActions(text, true).get(0).getOutputConcept().getConceptProperty("substituteInAmbigousPosition");
+    if ("true".equals(property)) {
+      INodeSubstituteAction action = substituteInfo.getMatchingActions(text, true).get(0);
+      action.substitute(editorContext, text);
+      return true;
+    }
+    return false;
   }
 
   private static boolean processCellAtStart(EditorCell_Label cell, final EditorContext editorContext, String head, String smallPattern) {
