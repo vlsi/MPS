@@ -106,9 +106,6 @@ public class GenerationController {
     clearMessageVew();
     myProgress.setIndeterminate(false);
     myProgress.setFraction(0);
-    if (!myProgress.isRunning()) {
-      myProgress.start();
-    }
     long totalJob = estimateGenerationTime();
     long startJobTime = System.currentTimeMillis();
     myMesssages.handle(new Message(MessageKind.INFORMATION,GenerationController.class, myGenerationType.getStartText()));
@@ -157,7 +154,6 @@ public class GenerationController {
       fireModelsGenerated(generationOK);
     } catch (GenerationCanceledException gce) {
       warning("generation canceled");
-      myProgress.stop();
       return false;
     } catch (GenerationFailureException e) {
       error(e.getMessage());
@@ -167,10 +163,6 @@ public class GenerationController {
       final String text = t.toString();
       // myProgress.setText(text);
       myMesssages.handle(new Message(MessageKind.ERROR,GenerationController.class, text));
-    } finally {
-      if (myProgress.isRunning()) {
-        myProgress.stop();
-      }
     }
     return true;
   }
