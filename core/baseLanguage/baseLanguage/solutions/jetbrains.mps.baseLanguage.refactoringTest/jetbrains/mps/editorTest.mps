@@ -4842,5 +4842,86 @@
       </node>
     </node>
   </node>
+  <node type="jetbrains.mps.lang.test.structure.EditorTestCase" id="4439253381394558442">
+    <property name="package" value="intelligentInputUtil" />
+    <property name="name" value="SubstitudeAmbigousActions" />
+    <node role="nodeToEdit" type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="4439253381394558444">
+      <property name="name" value="SubstitudeAmbigousActions" />
+      <node role="staticMethod" type="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" id="4439253381394558450">
+        <property name="name" value="method" />
+        <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="4439253381394558451" />
+        <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="4439253381394558452" />
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="4439253381394558453" />
+        <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="8468908930184135584">
+          <property name="name" value="a" />
+          <node role="type" type="jetbrains.mps.baseLanguage.structure.StringType" id="8468908930184135585" />
+        </node>
+      </node>
+      <node role="staticMethod" type="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" id="4439253381394558454">
+        <property name="name" value="method" />
+        <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="4439253381394558455" />
+        <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="4439253381394558456" />
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="4439253381394558457" />
+        <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="4439253381394559640">
+          <property name="name" value="a" />
+          <node role="type" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="4439253381394559641" />
+        </node>
+      </node>
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="4439253381394558445" />
+      <node role="constructor" type="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" id="4439253381394558446">
+        <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="4439253381394558447" />
+        <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="4439253381394558448" />
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="4439253381394558449">
+          <node role="testNode$attribute" type="jetbrains.mps.lang.test.structure.AnonymousCellAnnotation" id="4439253381394559642">
+            <property name="isLastPosition" value="true" />
+            <property name="useLabelSelection" value="true" />
+            <property name="selectionStart" value="0" />
+            <property name="selectionEnd" value="0" />
+            <property name="cellId" value="Constant_6577_0" />
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="result" type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="4439253381394559643">
+      <property name="name" value="SubstitudeAmbigousActions" />
+      <node role="staticMethod" type="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" id="4439253381394559644">
+        <property name="name" value="method" />
+        <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="4439253381394559645" />
+        <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="4439253381394559646" />
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="4439253381394559647" />
+        <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="4439253381394559665">
+          <property name="name" value="a" />
+          <node role="type" type="jetbrains.mps.baseLanguage.structure.StringType" id="4439253381394559666" />
+        </node>
+      </node>
+      <node role="staticMethod" type="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" id="4439253381394559648">
+        <property name="name" value="method" />
+        <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="4439253381394559649" />
+        <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="4439253381394559650" />
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="4439253381394559651" />
+        <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="4439253381394559652">
+          <property name="name" value="a" />
+          <node role="type" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="4439253381394559653" />
+        </node>
+      </node>
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="4439253381394559654" />
+      <node role="constructor" type="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" id="4439253381394559655">
+        <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="4439253381394559656" />
+        <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="4439253381394559657" />
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="4439253381394559660">
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="8468908930184126938">
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.LocalStaticMethodCall" id="8468908930184126939">
+              <link role="baseMethodDeclaration" targetNodeId="4439253381394559644" resolveInfo="method" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="code" type="jetbrains.mps.baseLanguage.structure.StatementList" id="4439253381394559671">
+      <node role="statement" type="jetbrains.mps.lang.test.structure.TypeKeyStatement" id="4439253381394559672">
+        <property name="keys" value="method" />
+      </node>
+    </node>
+  </node>
 </model>
 
