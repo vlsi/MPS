@@ -93,7 +93,7 @@ public class DeleteModelHelper {
       public Object getData(@NonNls String dataId) {
         if (dataId.equals(MPSDataKeys.MPS_PROJECT.getName()))
           return project.getComponent(MPSProjectHolder.class).getMPSProject();
-        else if (dataId.equals(MPSDataKeys.MODEL.getName())) return modelDescriptor;
+        else if (dataId.equals(MPSDataKeys.CONTEXT_MODEL.getName())) return modelDescriptor;
         else return myRealContext.getData(dataId);
       }
     };

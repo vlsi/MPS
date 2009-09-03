@@ -111,7 +111,7 @@ public class GenericRefactoringAction extends BaseAction {
   }
 
   private Set<SModelDescriptor> getModels(AnActionEvent e, boolean oneEntity) {
-    SModelDescriptor node = MPSDataKeys.MODEL.getData(e.getDataContext());
+    SModelDescriptor node = MPSDataKeys.CONTEXT_MODEL.getData(e.getDataContext());
     List<SModelDescriptor> nodes = MPSDataKeys.MODELS.getData(e.getDataContext());
     return getEntities(e,oneEntity, node,nodes);
   }
