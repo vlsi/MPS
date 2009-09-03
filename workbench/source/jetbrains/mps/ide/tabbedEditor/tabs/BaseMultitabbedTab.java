@@ -210,7 +210,7 @@ public abstract class BaseMultitabbedTab implements ILazyTab {
       if (myInnerTabbedPane != null) {
         myInnerTabbedPane.setSelectedIndex(myCurrentIndex);
       }
-    } catch (ArrayIndexOutOfBoundsException e) {
+    } catch (IndexOutOfBoundsException e) {
     }
   }
 
