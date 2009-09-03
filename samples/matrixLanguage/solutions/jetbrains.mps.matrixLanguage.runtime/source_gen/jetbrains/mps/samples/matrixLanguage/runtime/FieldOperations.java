@@ -4,7 +4,6 @@ package jetbrains.mps.samples.matrixLanguage.runtime;
 
 
 public interface FieldOperations<ScalarType> {
-
   public ScalarType add(ScalarType a, ScalarType b);
   public ScalarType mult(ScalarType a, ScalarType b);
   public ScalarType addittiveInverse(ScalarType a);

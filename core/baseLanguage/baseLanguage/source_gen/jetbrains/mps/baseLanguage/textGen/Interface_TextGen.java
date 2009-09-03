@@ -43,7 +43,6 @@ public class Interface_TextGen extends SNodeTextGen {
     }
     if (ListSequence.fromList(SLinkOperations.getTargets(node, "method", true)).isNotEmpty()) {
       BaseLanguageTextGen.newLine(ListSequence.fromList(SLinkOperations.getTargets(node, "staticField", true)).isNotEmpty(), this);
-      this.appendNewLine();
       if (ListSequence.fromList(SLinkOperations.getTargets(node, "method", true)).isNotEmpty()) {
         for (SNode item : SLinkOperations.getTargets(node, "method", true)) {
           TextGenManager.instance().appendNodeText(this.getContext(), this.getBuffer(), item, this.getSNode());

@@ -4,6 +4,5 @@ package jetbrains.mps.closures.test;
 
 
 public interface Processor {
-
   public int process(String instr) throws ProcessingException;
 }

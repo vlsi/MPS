@@ -4,7 +4,6 @@ package jetbrains.mps.baseLanguage.unitTest.plugin;
 
 
 public interface TestStatisticsRow {
-
   public String getText();
   public String getAdditionalText();
   public long getElapsedTime();

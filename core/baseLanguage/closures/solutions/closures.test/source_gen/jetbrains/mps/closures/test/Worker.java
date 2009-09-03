@@ -4,6 +4,5 @@ package jetbrains.mps.closures.test;
 
 
 public interface Worker {
-
   public String doWork(Integer duration);
 }

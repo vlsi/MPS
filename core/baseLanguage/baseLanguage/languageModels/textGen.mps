@@ -3842,7 +3842,6 @@
                   </node>
                 </node>
                 <node role="statement" type="jetbrains.mps.lang.textGen.structure.AppendOperation" id="1237463992177">
-                  <node role="part" type="jetbrains.mps.lang.textGen.structure.NewLineAppendPart" id="1237463992179" />
                   <node role="part" type="jetbrains.mps.lang.textGen.structure.CollectionAppendPart" id="1237463992180">
                     <property name="withSeparator" value="false" />
                     <node role="list" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1236253599943">

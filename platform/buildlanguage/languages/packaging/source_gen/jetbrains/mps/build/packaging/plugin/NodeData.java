@@ -6,7 +6,6 @@ import java.util.List;
 import javax.swing.Icon;
 
 public interface NodeData {
-
   public List<NodeData> getChildren();
   public String getText();
   public Icon getIcon(boolean expanded);

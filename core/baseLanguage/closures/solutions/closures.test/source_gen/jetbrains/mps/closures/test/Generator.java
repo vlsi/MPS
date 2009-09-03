@@ -4,6 +4,5 @@ package jetbrains.mps.closures.test;
 
 
 public interface Generator<R> {
-
   public Iterable<R> generate();
 }

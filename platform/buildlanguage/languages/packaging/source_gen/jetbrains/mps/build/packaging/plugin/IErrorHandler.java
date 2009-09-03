@@ -4,6 +4,5 @@ package jetbrains.mps.build.packaging.plugin;
 
 
 public interface IErrorHandler {
-
   public void setErrorText(String text);
 }
