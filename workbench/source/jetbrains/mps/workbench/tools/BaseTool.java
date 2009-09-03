@@ -200,13 +200,19 @@ public abstract class BaseTool {
     myWindowManager = ToolWindowManager.getInstance(myProject);
 
     if (myNumber != -1) {
-      Keymap keymap = KeymapManager.getInstance().getKeymap(KeymapManager.DEFAULT_IDEA_KEYMAP);
       String actionId = ActivateToolWindowAction.getActionIdForToolWindow(myId);
-      //noinspection ConstantConditions
-      if (keymap.getShortcuts(actionId).length == 0) {
-        KeyboardShortcut shortcut = new KeyboardShortcut(KeyStroke.getKeyStroke("alt " + myNumber), null);
-        keymap.addShortcut(actionId, shortcut);
-      }
+
+      Keymap keymap = KeymapManager.getInstance().getKeymap(KeymapManager.DEFAULT_IDEA_KEYMAP);
+      assert keymap != null;
+      KeyboardShortcut defShortcut = new KeyboardShortcut(KeyStroke.getKeyStroke("alt " + myNumber), null);
+      keymap.addShortcut(actionId, defShortcut);
+
+      keymap = KeymapManager.getInstance().getKeymap(KeymapManager.MAC_OS_X_KEYMAP);
+      assert keymap != null;
+      KeyboardShortcut oldShortcut = new KeyboardShortcut(KeyStroke.getKeyStroke("alt " + myNumber), null);
+      keymap.removeShortcut(actionId, oldShortcut);
+      KeyboardShortcut macShortcut = new KeyboardShortcut(KeyStroke.getKeyStroke("meta " + myNumber), null);
+      keymap.addShortcut(actionId, macShortcut);
     }
 
     //if we create a new project, tool windows are created for it automatically
@@ -262,7 +268,13 @@ public abstract class BaseTool {
     doUnregister();
 
     if (myNumber != -1) {
-      KeymapManager.getInstance().getActiveKeymap().removeAllActionShortcuts(ActivateToolWindowAction.getActionIdForToolWindow(myId));
+      Keymap keymap = KeymapManager.getInstance().getKeymap(KeymapManager.DEFAULT_IDEA_KEYMAP);
+      //noinspection ConstantConditions
+      keymap.removeAllActionShortcuts(ActivateToolWindowAction.getActionIdForToolWindow(myId));
+
+      keymap = KeymapManager.getInstance().getKeymap(KeymapManager.MAC_OS_X_KEYMAP);
+      //noinspection ConstantConditions
+      keymap.removeAllActionShortcuts(ActivateToolWindowAction.getActionIdForToolWindow(myId));
     }
 
     ToolWindow toolWindow = getToolWindow();
