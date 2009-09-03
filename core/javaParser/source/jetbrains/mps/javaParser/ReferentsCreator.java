@@ -126,7 +126,7 @@ public class ReferentsCreator {
       } catch (Throwable e) {
         throw translateException(argument, e);
       }*/
-      //todo
+      //todo arguments are processed in a method "visit" for Method
       return false;
     }
 
@@ -263,45 +263,93 @@ public class ReferentsCreator {
 
     @Override
     public boolean visit(LocalDeclaration localDeclaration, BlockScope scope) {
-      /* try {
-        LocalVariableBinding b = localDeclaration.binding;
-        JType localType = (JType) typeMap.get(localDeclaration.type.resolvedType);
-        JMethodBody enclosingBody = findEnclosingMethod(scope);
-        SourceInfo info = makeSourceInfo(localDeclaration,
-            enclosingBody.getMethod());
-        JLocal newLocal = program.createLocal(info, localDeclaration.name,
-            localType, b.isFinal(), enclosingBody);
-        typeMap.put(b, newLocal);
-        return true;
-      } catch (Throwable e) {
-        throw translateException(localDeclaration, e);
-      }*/
-      //todo
-      return false;
+      SModel model = myReferentsCreator.myCurrentModel;
+      LocalVariableBinding b = localDeclaration.binding;
+      Type localType = createType(localDeclaration.type.resolvedType);
+      // JMethodBody enclosingBody = findEnclosingMethod(scope);
+      LocalVariableDeclaration newLocal = LocalVariableDeclaration.newInstance(model);
+      newLocal.setName(new String(localDeclaration.name));
+      newLocal.setIsFinal(b.isFinal());
+      newLocal.setType(localType);
+      myReferentsCreator.myBindingMap.put(b, newLocal);
+      return true;
     }
 
     @Override
     public boolean visit(MethodDeclaration methodDeclaration, ClassScope scope) {
-      /* try {
-          MethodBinding b = methodDeclaration.binding;
-          JDeclaredType enclosingType = (JDeclaredType) typeMap.get(scope.enclosingSourceType());
-          SourceInfo info = makeSourceInfo(methodDeclaration, enclosingType);
-          JMethod newMethod = processMethodBinding(b, enclosingType, info);
-          mapParameters(newMethod, methodDeclaration);
-          info.addCorrelation(program.getCorrelator().by(newMethod));
-
-          if (newMethod.isNative()) {
-            processNativeMethod(methodDeclaration, info, enclosingType, newMethod);
-          }
-
-          return true;
-        } catch (Throwable e) {
-          throw translateException(methodDeclaration, e);
-        }
-      }*/
-      //todo
-      return false;
+      MethodBinding b = methodDeclaration.binding;
+      Classifier enclosingClassifier = (Classifier) myReferentsCreator.myBindingMap.get(scope.enclosingSourceType());
+      BaseMethodDeclaration newMethod = processMethodBinding(b, enclosingClassifier, methodDeclaration instanceof AnnotationMethodDeclaration);
+      SModel model = myReferentsCreator.myCurrentModel;
+      for (TypeParameter typeParameter : methodDeclaration.typeParameters) {
+        TypeVariableDeclaration typeVariableDeclaration = TypeVariableDeclaration.newInstance(model);
+        typeVariableDeclaration.setName(new String(typeParameter.name));
+        // typeVariableDeclaration.setExtends(typeParameter.bounds); //todo process variable bounds
+        newMethod.addTypeVariableDeclaration(typeVariableDeclaration);
+      }
+      newMethod.setReturnType(createType(b.returnType));
+      mapParameters(newMethod, methodDeclaration);
+      return true;
     }
-    
+
+     private BaseMethodDeclaration processMethodBinding(MethodBinding b, Classifier enclosingClassifier, boolean isAnnotation) {
+       SModel model = myReferentsCreator.myCurrentModel;
+
+       BaseMethodDeclaration result;
+       if (b.isStatic()) {
+         StaticMethodDeclaration staticMethodDeclaration = StaticMethodDeclaration.newInstance(model);
+         staticMethodDeclaration.setVisibility(getMethodVisibility(b));
+         result = staticMethodDeclaration;
+       } else {
+         InstanceMethodDeclaration instanceMethodDeclaration = isAnnotation ?
+           jetbrains.mps.baseLanguage.structure.AnnotationMethodDeclaration.newInstance(model) :
+           InstanceMethodDeclaration.newInstance(model);
+         instanceMethodDeclaration.setIsAbstract(b.isAbstract());
+         instanceMethodDeclaration.setVisibility(getMethodVisibility(b));
+         result = instanceMethodDeclaration;
+       }
+       myReferentsCreator.myBindingMap.put(b, result);
+       result.setName(new String(b.selector));
+       result.setIsFinal(b.isFinal());
+
+
+       //todo: attach to enclosing classifier?
+      return result;
+    }
+
+    private void mapParameters(BaseMethodDeclaration method, AbstractMethodDeclaration x) {
+      MethodBinding b = x.binding;
+      int paramCount = (b.parameters != null ? b.parameters.length : 0);
+      if (paramCount > 0) {
+        for (int i = 0, n = x.arguments.length; i < n; ++i) {
+          createParameter(x.arguments[i].binding, method);
+        }
+      }
+    }
+
+    private ParameterDeclaration createParameter(LocalVariableBinding binding,
+        BaseMethodDeclaration enclosingMethod) {
+      Type type = createType(binding.type);
+      ParameterDeclaration result = ParameterDeclaration.newInstance(myReferentsCreator.myCurrentModel);
+      result.setName(new String(binding.name));
+      result.setType(type);
+      result.setIsFinal(binding.isFinal());
+      //todo: attach parameter to enclosing method?
+      myReferentsCreator.myBindingMap.put(binding, result);
+      return result;
+    }
+
+    private Visibility getMethodVisibility(MethodBinding b) {
+      SModel model = myReferentsCreator.myCurrentModel;
+      if (b.isPublic()) {
+        return PublicVisibility.newInstance(model);
+      } else if (b.isPrivate()) {
+        return PrivateVisibility.newInstance(model);
+      } else if (b.isProtected()) {
+        return ProtectedVisibility.newInstance(model);
+      } else {
+        return null;
+      }
+    }
   }
 }
