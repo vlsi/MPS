@@ -102,10 +102,17 @@ class ModelChangesTree extends MPSTree {
     }
   }
 
-  public ModelChangesTree showDifference(SModel oldModel, SModel newModel, final List<Change> changes) {    
+  public ModelChangesTree showDifference(SModel oldModel, SModel newModel, final List<Change> changes) {
     myChanges = changes;
     myOldModel = oldModel;
     myNewModel = newModel;
+
+    myAddedNodes.clear();
+    myChangedNodes.clear();
+    myAddedNodes.clear();
+    myDeletedNodes.clear();
+    myChangedSubtree.clear();
+
     for (Change change: changes) {
       SNodeId id = change.getAffectedNodeId();
       if (id != null) {

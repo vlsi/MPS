@@ -62,6 +62,7 @@ public class ModelDifferenceDialog extends BaseDialog {
               });
 
               dialog.showDialog();
+              updateDiff(oldModel, newModel);
             }
           }
         };
@@ -84,6 +85,14 @@ public class ModelDifferenceDialog extends BaseDialog {
       }
     };
     myFocusWatcher.install(myDifferenceComponent);
+  }
+
+  private void updateDiff(final SModel oldModel, final SModel newModel) {
+    ModelAccess.instance().runReadAction(new Runnable() {
+      public void run() {
+        myDifferenceComponent.showDifference(oldModel, newModel);
+      }
+    });
   }
 
   public void addAction(AnAction action) {

@@ -125,7 +125,7 @@ class ModelDifferenceComponent extends JPanel {
     return this;
   }
 
-  private void updateView() {
+  void updateView() {
     myChangesTree.rebuildNow();
     myChangesTree.expandRoot();
 
