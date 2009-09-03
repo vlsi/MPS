@@ -1,0 +1,14 @@
+<project name="bootstrap.tests" default="all">
+    <property name="mps.home" value="${ant.file}/../../../.."/>
+
+    <taskdef resource="jetbrains/mps/build/ant/antlib.xml"
+             classpath="${mps.home}/platform/buildlanguage/ant/classes"/>
+
+    <target name="all" depends="test.base.language"/>
+
+    <target name="test.base.language">
+        <mps.test.generation fork="true" compile="true" showdiff="true" invoketests="true">
+            <project file="${mps.home}/core/baseLanguage/baseLanguage/baseLanguage.mpr"/>
+        </mps.test.generation>
+    </target>
+</project>
