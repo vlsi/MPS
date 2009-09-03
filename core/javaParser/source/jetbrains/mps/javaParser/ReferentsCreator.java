@@ -352,4 +352,19 @@ public class ReferentsCreator {
       }
     }
   }
+
+   public void exec(CompilationUnitDeclaration[] unitDecls) {
+     // Traverse once to create our peers for each type
+     ClassesCreator classesCreator = new ClassesCreator(this);
+     for (CompilationUnitDeclaration unitDecl : unitDecls) {
+       unitDecl.traverse(classesCreator, unitDecl.scope);
+     }
+     // Traverse again to create our peers for each method, field,
+     // parameter, and local
+     DeclsCreator declsCreator = new DeclsCreator(this);
+     for (CompilationUnitDeclaration unitDecl : unitDecls) {
+       unitDecl.traverse(declsCreator, unitDecl.scope);
+     }
+   }
+
 }
