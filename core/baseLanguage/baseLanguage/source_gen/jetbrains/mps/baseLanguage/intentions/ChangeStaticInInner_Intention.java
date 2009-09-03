@@ -29,11 +29,10 @@ public class ChangeStaticInInner_Intention extends BaseIntention {
   }
 
   public String getDescription(final SNode node, final EditorContext editorContext) {
-    if (Classifier_Behavior.call_isStatic_521412098689998668(node)) {
-      return "Make Non Static";
-    } else {
-      return "Make Static";
-    }
+    return "Make " + ((Classifier_Behavior.call_isStatic_521412098689998668(node) ?
+      "Non" :
+      ""
+    )) + " Static";
   }
 
   public boolean isApplicable(final SNode node, final EditorContext editorContext) {

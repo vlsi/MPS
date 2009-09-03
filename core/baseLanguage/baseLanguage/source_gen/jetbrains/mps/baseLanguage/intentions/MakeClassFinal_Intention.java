@@ -8,8 +8,8 @@ import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
-public class MakeClassAbstract_Intention extends BaseIntention {
-  public MakeClassAbstract_Intention() {
+public class MakeClassFinal_Intention extends BaseIntention {
+  public MakeClassFinal_Intention() {
   }
 
   public String getConcept() {
@@ -29,10 +29,10 @@ public class MakeClassAbstract_Intention extends BaseIntention {
   }
 
   public String getDescription(final SNode node, final EditorContext editorContext) {
-    return "Make " + ((SPropertyOperations.getBoolean(node, "abstractClass") ?
+    return "Make " + ((SPropertyOperations.getBoolean(node, "isFinal") ?
       "Non" :
       ""
-    )) + " Abstract";
+    )) + " Final";
   }
 
   public boolean isApplicable(final SNode node, final EditorContext editorContext) {
@@ -47,7 +47,7 @@ public class MakeClassAbstract_Intention extends BaseIntention {
   }
 
   public void execute(final SNode node, final EditorContext editorContext) {
-    SPropertyOperations.set(node, "abstractClass", "" + (!(SPropertyOperations.getBoolean(node, "abstractClass"))));
+    SPropertyOperations.set(node, "isFinal", "" + (!(SPropertyOperations.getBoolean(node, "isFinal"))));
   }
 
   public String getLocationString() {
