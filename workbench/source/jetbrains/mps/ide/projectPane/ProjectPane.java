@@ -51,6 +51,7 @@ import jetbrains.mps.ide.actions.*;
 import jetbrains.mps.ide.projectPane.ProjectLanguageTreeNode.AccessoriesModelTreeNode;
 import jetbrains.mps.ide.projectPane.ProjectLanguageTreeNode.RuntimeModulesTreeNode;
 import jetbrains.mps.ide.projectPane.ProjectPane.MyState;
+import jetbrains.mps.ide.projectPane.SModelsSubtree.JavaStubsTreeNode;
 import jetbrains.mps.ide.ui.MPSTree;
 import jetbrains.mps.ide.ui.MPSTree.TreeState;
 import jetbrains.mps.ide.ui.MPSTreeNode;
@@ -924,6 +925,7 @@ public class ProjectPane extends AbstractProjectViewPane implements PersistentSt
       if (node instanceof ProjectModuleTreeNode) descent = true;
       if (node instanceof NamespaceTextNode) descent = true;
       if (node instanceof AccessoriesModelTreeNode) descent = true;
+      if (node instanceof JavaStubsTreeNode) descent = true;
 
       if (!descent) return false;
 
