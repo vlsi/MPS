@@ -18076,5 +18076,123 @@
       <link role="concept" targetNodeId="1.1068390468198" resolveInfo="ClassConcept" />
     </node>
   </node>
+  <node type="jetbrains.mps.lang.typesystem.structure.NonTypesystemRule" id="3637195266922472263">
+    <property name="name" value="CheckExcessTypeCasts" />
+    <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="3637195266922472264">
+      <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="3637195266922530648">
+        <node role="condition" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="3637195266922531693">
+          <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="3637195266922531684">
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="3637195266922531679">
+              <node role="operand" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference" id="3637195266922530651">
+                <link role="applicableNode" targetNodeId="3637195266922483798" resolveInfo="expr" />
+              </node>
+              <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="3637195266922531683">
+                <link role="link" targetNodeId="1.1070534934092" />
+              </node>
+            </node>
+            <node role="operation" type="jetbrains.mps.lang.typesystem.structure.Node_TypeOperation" id="3637195266922531688" />
+          </node>
+          <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation" id="3637195266922531697">
+            <node role="conceptArgument" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" id="3637195266922531699">
+              <link role="conceptDeclaration" targetNodeId="1.1068431790189" resolveInfo="Type" />
+            </node>
+          </node>
+        </node>
+        <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="3637195266922530650">
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="3637195266922531700">
+            <node role="condition" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="3637195266922531716">
+              <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="3637195266922531720">
+                <link role="baseMethodDeclaration" targetNodeId="37.1220438914705" resolveInfo="isSupersetOf" />
+                <node role="actualArgument" type="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" id="3637195266922963264">
+                  <link role="concept" targetNodeId="1.1068431790189" resolveInfo="Type" />
+                  <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="3637195266922963265">
+                    <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="3637195266922963266">
+                      <node role="operand" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference" id="3637195266922963267">
+                        <link role="applicableNode" targetNodeId="3637195266922483798" resolveInfo="expr" />
+                      </node>
+                      <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="3637195266922963268">
+                        <link role="link" targetNodeId="1.1070534934092" />
+                      </node>
+                    </node>
+                    <node role="operation" type="jetbrains.mps.lang.typesystem.structure.Node_TypeOperation" id="3637195266922963269" />
+                  </node>
+                </node>
+              </node>
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="3637195266922969010">
+                <node role="operand" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference" id="3637195266922969009">
+                  <link role="applicableNode" targetNodeId="3637195266922483798" resolveInfo="expr" />
+                </node>
+                <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="3637195266922969014">
+                  <link role="link" targetNodeId="1.1070534934091" />
+                </node>
+              </node>
+            </node>
+            <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="3637195266922531702">
+              <node role="statement" type="jetbrains.mps.lang.typesystem.structure.WarningStatement" id="3637195266922531727">
+                <node role="nodeToReport" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference" id="3637195266922531730">
+                  <link role="applicableNode" targetNodeId="3637195266922483798" resolveInfo="expr" />
+                </node>
+                <node role="warningText" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="3637195266922531737">
+                  <property name="value" value="Typecast expression is superflous" />
+                </node>
+                <node role="helginsIntention" type="jetbrains.mps.lang.typesystem.structure.TypesystemIntention" id="3637195266922531738">
+                  <link role="quickFix" targetNodeId="3637195266922531731" resolveInfo="RemoveExcessTypeCast" />
+                  <node role="actualArgument" type="jetbrains.mps.lang.typesystem.structure.TypesystemIntentionArgument" id="3637195266922531759">
+                    <link role="quickFixArgument" targetNodeId="3637195266922531742" resolveInfo="castExpr" />
+                    <node role="value" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference" id="3637195266922531763">
+                      <link role="applicableNode" targetNodeId="3637195266922483798" resolveInfo="expr" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="applicableNode" type="jetbrains.mps.lang.typesystem.structure.ConceptReference" id="3637195266922483798">
+      <property name="name" value="expr" />
+      <link role="concept" targetNodeId="1.1070534934090" resolveInfo="CastExpression" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.typesystem.structure.TypesystemQuickFix" id="3637195266922531731">
+    <property name="name" value="RemoveExcessTypeCast" />
+    <node role="executeBlock" type="jetbrains.mps.lang.typesystem.structure.QuickFixExecuteBlock" id="3637195266922531732">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="3637195266922531733">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="3637195266922531745">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="3637195266922531747">
+            <node role="operand" type="jetbrains.mps.lang.typesystem.structure.QuickFixArgumentReference" id="3637195266922531746">
+              <link role="quickFixArgument" targetNodeId="3637195266922531742" resolveInfo="castExpr" />
+            </node>
+            <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ReplaceWithAnotherOperation" id="3637195266922531751">
+              <node role="replacementNode" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="3637195266922531754">
+                <node role="operand" type="jetbrains.mps.lang.typesystem.structure.QuickFixArgumentReference" id="3637195266922531753">
+                  <link role="quickFixArgument" targetNodeId="3637195266922531742" resolveInfo="castExpr" />
+                </node>
+                <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="3637195266922531758">
+                  <link role="link" targetNodeId="1.1070534934092" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="quickFixArgument" type="jetbrains.mps.lang.typesystem.structure.QuickFixArgument" id="3637195266922531742">
+      <property name="name" value="castExpr" />
+      <node role="argumentType" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="3637195266922531744">
+        <link role="concept" targetNodeId="1.1070534934090" resolveInfo="CastExpression" />
+      </node>
+    </node>
+    <node role="descriptionBlock" type="jetbrains.mps.lang.typesystem.structure.QuickFixDescriptionBlock" id="3637195266922721581">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="3637195266922721582">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="3637195266922727890">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="3637195266922727891">
+            <property name="value" value="Remove Excess Typecast" />
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
 </model>
 
