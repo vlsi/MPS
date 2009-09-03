@@ -25,7 +25,7 @@
     </target>
 
     <target name="testComplexLanguageProject">
-        <mps.test.generation mpshome="${module.home}/../../.." loglevel="info" fork="true" showdiff="true">
+        <mps.test.generation mpshome="${module.home}/../../.." loglevel="info" fork="true" showdiff="true" invoketests="true">
             <project file="${module.home}/../../../samples/complexLanguage/Complex.mpr"/>
         </mps.test.generation>
     </target>
