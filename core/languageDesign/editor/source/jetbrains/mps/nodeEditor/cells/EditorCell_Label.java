@@ -85,7 +85,7 @@ public abstract class EditorCell_Label extends EditorCell_Basic {
   }
 
   public boolean isLastPositionInBigCell() {
-    return getContainingBigCell().getLastLeaf() == this && isLastCaretPosition();
+    return getContainingBigCell().getLastLeaf() == this && isLastCaretPosition() && !getTextLine().hasNonTrivialSelection();
   }
 
   public CaretPosition getDefaultCaretPosition() {
