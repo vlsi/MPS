@@ -86,7 +86,7 @@ public abstract class BaseSModelDescriptor implements SModelDescriptor {
 
   public SModelRoot getSModelRoot() {
     List<SModelRoot> roots = new ArrayList<SModelRoot>(collectSModelRoots());
-    if (roots.isEmpty()) return null;
+    assert !roots.isEmpty() : "model has no appropriate model roots";
     return roots.get(0);
   }
 
@@ -106,6 +106,8 @@ public abstract class BaseSModelDescriptor implements SModelDescriptor {
         }
       }
     }
+
+    assert !result.isEmpty() : "model has no appropriate model roots";
     return result;
   }
 
