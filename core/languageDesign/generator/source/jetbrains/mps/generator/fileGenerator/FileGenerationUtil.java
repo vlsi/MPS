@@ -241,6 +241,6 @@ public class FileGenerationUtil {
   }
 
   public static boolean isUseDependenciesChecking() {
-    return true;
+    return false;
   }
 }
