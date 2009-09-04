@@ -28,4 +28,5 @@ public class Icons {
   public static final Icon REFRESH_ICON = new ImageIcon(Icons.class.getResource("refresh.png"));
 
   public static final Icon THIS_MODEL_ICON = jetbrains.mps.ide.projectPane.Icons.MODEL_ICON;
+  public static final Icon GENERATOR_ICON = new ImageIcon(Icons.class.getResource("generator.png"));
 }

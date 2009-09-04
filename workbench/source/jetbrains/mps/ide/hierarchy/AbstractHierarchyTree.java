@@ -25,6 +25,7 @@ import jetbrains.mps.ide.ui.TreeTextUtil;
 import jetbrains.mps.smodel.INodeAdapter;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.Condition;
 import org.jetbrains.annotations.Nullable;
@@ -40,6 +41,7 @@ public abstract class AbstractHierarchyTree<T extends INodeAdapter> extends MPST
   protected Class<T> myClass;
   protected boolean myIsParentHierarchy;
   protected boolean myOnlyInOneModel;
+  protected boolean myShowGeneratorModels;
 
   public AbstractHierarchyTree(AbstractHierarchyView<T> hierarchyView, Class<T> aClass, boolean isParentHierarchy) {
     myHierarchyView = hierarchyView;
@@ -64,6 +66,10 @@ public abstract class AbstractHierarchyTree<T extends INodeAdapter> extends MPST
     return myIsParentHierarchy;
   }
 
+  /*package*/ void setParentHierarchy(boolean isParentHierarchy) {
+    myIsParentHierarchy = isParentHierarchy;
+  }
+
   public boolean isOnlyInOneModel() {
     return myOnlyInOneModel;
   }
@@ -76,8 +82,16 @@ public abstract class AbstractHierarchyTree<T extends INodeAdapter> extends MPST
     }
   }
 
-  /*package*/ void setParentHierarchy(boolean isParentHierarchy) {
-    myIsParentHierarchy = isParentHierarchy;
+  public boolean isShowGeneratorModels() {
+    return myShowGeneratorModels;
+  }
+
+  public void setShowGeneratorModels(boolean showGeneratorModels) {
+    boolean oldShowGeneratorModels = myShowGeneratorModels;
+    myShowGeneratorModels = showGeneratorModels;
+    if (oldShowGeneratorModels != myShowGeneratorModels) {
+      rebuildNow();
+    }
   }
 
   public void setOperationContext(IOperationContext operationContext) {
@@ -123,24 +137,34 @@ public abstract class AbstractHierarchyTree<T extends INodeAdapter> extends MPST
         }
       });
     }
+    if (!myShowGeneratorModels) {
+      result = CollectionUtil.filter(result, new Condition<T>() {
+        public boolean met(T object) {
+          return !SModelStereotype.isGeneratorModel(object.getModel());
+        }
+      });
+    }
     return result;
   }
 
   protected T getAbstractParent(T node) {
-    T result = null;
-    if (!myIsParentHierarchy) {
-      result = getParent(node);
-      if (result != null && myOnlyInOneModel && (result.getModel() != node.getModel())) {
-        result = null;
+    if (myIsParentHierarchy) return null;
+    T result = getParent(node);
+    if (result == null) return null;
+    if (!myShowGeneratorModels) {
+      while (SModelStereotype.isGeneratorModel(result.getModel())) {
+        result = getParent(result);
+        if (result == null) return null;
       }
     }
+    if (myOnlyInOneModel && (result.getModel() != node.getModel())) return null;
     return result;
   }
 
   protected MPSTreeNode rebuildParentHierarchy() {
     ArrayList<T> parentHierarchy = new ArrayList<T>();
     T parentDeclaration = myHierarchyNode;
-    while (parentDeclaration != null && (!myOnlyInOneModel || parentDeclaration.getModel() == myHierarchyNode.getModel())) {
+    while (parentDeclaration != null) {
       parentHierarchy.add(parentDeclaration);
       parentDeclaration = getAbstractParent(parentDeclaration);
     }

@@ -105,6 +105,19 @@ public abstract class AbstractHierarchyView<T extends INodeAdapter> extends Base
       }
     };
 
+    ToggleAction generatorModelsAction = new ToggleAction("Show Generator Classes", "Show classes from generator models in hierarchy", Icons.GENERATOR_ICON) {
+      private boolean mySelected = false;
+
+      public boolean isSelected(AnActionEvent e) {
+        return mySelected;
+      }
+
+      public void setSelected(AnActionEvent e, boolean state) {
+        mySelected = state;
+        myHierarchyTree.setShowGeneratorModels(mySelected);
+      }
+    };
+
     BaseAction expandAllAction = new BaseAction("Expand all", "Expand all nodes", jetbrains.mps.ide.findusages.view.icons.Icons.EXPAND_ICON) {
       protected void doExecute(AnActionEvent e) {
         myHierarchyTree.expandAll();
@@ -127,6 +140,7 @@ public abstract class AbstractHierarchyView<T extends INodeAdapter> extends Base
       childrenAction,
       parentAction,
       thisModelAction,
+      generatorModelsAction,
       expandAllAction,
       collapseAllAction,
       refreshAction,
