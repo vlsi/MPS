@@ -48,7 +48,7 @@ public abstract class BaseClassConceptTextGen {
       needNewLine = true;
     }
     if (ListSequence.fromList(SLinkOperations.getTargets(concept, "staticInnerClassifiers", true)).isNotEmpty()) {
-      BaseLanguageTextGen.newLine(needNewLine, textGen);
+      textGen.appendNewLine();
       BaseClassConceptTextGen.innerClassifiers(concept, textGen);
       needNewLine = true;
     }

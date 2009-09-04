@@ -16,11 +16,11 @@ public class Interface_TextGen extends SNodeTextGen {
   public void doGenerateText(SNode node) {
     BaseLanguageTextGen.fileHeader(node, this);
     BaseLanguageTextGen.annotations(node, this);
-    BaseLanguageTextGen.visibility(SLinkOperations.getTarget(node, "visibility", true), this);
+    BaseLanguageTextGen.visibilityWithIndent(SLinkOperations.getTarget(node, "visibility", true), this);
     if (!(ListSequence.fromList(SModelOperations.getRoots(SNodeOperations.getModel(node), "jetbrains.mps.baseLanguage.structure.Interface")).contains(node))) {
       this.append("static ");
     }
-    this.appendWithIndent("interface ");
+    this.append("interface ");
     this.append(JavaNameUtil.shortName(SPropertyOperations.getString(node, "name")));
     GenericDeclarationTextGen2.typeDeclarations(node, this);
     if (ListSequence.fromList(SLinkOperations.getTargets(node, "extendedInterface", true)).isNotEmpty()) {
