@@ -40977,6 +40977,19 @@
             </node>
           </node>
         </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="9180685843803374402">
+          <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="9180685843803374403">
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="9180685843803374412">
+              <node role="expression" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="9180685843803374414" />
+            </node>
+          </node>
+          <node role="condition" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="9180685843803374407">
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="9180685843803374406">
+              <link role="variableDeclaration" targetNodeId="3067327289443862706" resolveInfo="resultList" />
+            </node>
+            <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.IsEmptyOperation" id="9180685843803374411" />
+          </node>
+        </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="3978597472941286141">
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="3978597472941286142">
             <property name="name" value="sorted" />
