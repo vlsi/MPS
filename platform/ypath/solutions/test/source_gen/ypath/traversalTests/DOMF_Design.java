@@ -9,7 +9,8 @@ import jetbrains.mps.internal.collections.runtime.ISequenceClosure;
 import java.util.Iterator;
 import jetbrains.mps.baseLanguage.closures.runtime.YieldingIterator;
 
-public class DOMF_Design {  public static class Design_Feature_child extends IParameterizedFeatureDesign.Stub<String> implements IParameterizedFeatureDesign<String> {
+public class DOMF_Design {
+  public static class Design_Feature_child extends IParameterizedFeatureDesign.Stub<String> implements IParameterizedFeatureDesign<String> {
     public Iterable<String> getParameters(SNode nodeType) {
       return Sequence.fromClosure(new ISequenceClosure<String>() {
         public Iterable<String> iterable() {

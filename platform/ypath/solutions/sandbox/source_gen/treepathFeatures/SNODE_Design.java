@@ -11,7 +11,8 @@ import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 
-public class SNODE_Design {  public static class Design_Feature_child extends IParameterizedFeatureDesign.Stub<String> implements IParameterizedFeatureDesign<String> {
+public class SNODE_Design {
+  public static class Design_Feature_child extends IParameterizedFeatureDesign.Stub<String> implements IParameterizedFeatureDesign<String> {
     public Iterable<String> getParameters(SNode nodeType) {
       return ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(SNodeOperations.cast(nodeType, "jetbrains.mps.lang.smodel.structure.SNodeType"), "concept", false), "linkDeclaration", true)).where(new IWhereFilter<SNode>() {
         public boolean accept(SNode it) {
