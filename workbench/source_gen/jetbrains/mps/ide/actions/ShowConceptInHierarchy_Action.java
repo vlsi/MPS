@@ -10,6 +10,8 @@ import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.nodeEditor.cells.EditorCell;
+import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.ide.IEditor;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
@@ -18,7 +20,6 @@ import jetbrains.mps.ide.hierarchy.HierarchyViewTool;
 import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.project.ProjectOperationContext;
-import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.ide.tabbedEditor.TabbedEditor;
 
 public class ShowConceptInHierarchy_Action extends GeneratedAction {
@@ -27,6 +28,8 @@ public class ShowConceptInHierarchy_Action extends GeneratedAction {
 
   private MPSProject project;
   private IOperationContext context;
+  private EditorCell editorCell;
+  private SNode node;
   private IEditor editor;
 
   public ShowConceptInHierarchy_Action() {
@@ -41,7 +44,7 @@ public class ShowConceptInHierarchy_Action extends GeneratedAction {
   }
 
   public boolean isApplicable(AnActionEvent event) {
-    return ShowConceptInHierarchy_Action.this.getConceptNode() != null;
+    return (ShowConceptInHierarchy_Action.this.getConceptNode() != null);
   }
 
   public void doUpdate(@NotNull AnActionEvent event) {
@@ -63,12 +66,25 @@ public class ShowConceptInHierarchy_Action extends GeneratedAction {
     if (!(super.collectActionData(event))) {
       return false;
     }
+    {
+      SNode node = event.getData(MPSDataKeys.NODE);
+      if (node != null) {
+      }
+      this.node = node;
+    }
+    if (this.node == null) {
+      return false;
+    }
     this.project = event.getData(MPSDataKeys.MPS_PROJECT);
     if (this.project == null) {
       return false;
     }
     this.context = event.getData(MPSDataKeys.OPERATION_CONTEXT);
     if (this.context == null) {
+      return false;
+    }
+    this.editorCell = event.getData(MPSDataKeys.EDITOR_CELL);
+    if (this.editorCell == null) {
       return false;
     }
     this.editor = event.getData(MPSDataKeys.MPS_EDITOR);
@@ -90,7 +106,22 @@ public class ShowConceptInHierarchy_Action extends GeneratedAction {
     }
   }
 
-  /*package*/ SNode getConceptNode() {
+  private SNode getConceptNode() {
+    SNode refNode = ShowConceptInHierarchy_Action.this.editorCell.getSNodeWRTReference();
+    if (SNodeOperations.isInstanceOf(refNode, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration")) {
+      return SNodeOperations.cast(refNode, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration");
+    }
+    if (SNodeOperations.isInstanceOf(refNode, "jetbrains.mps.lang.behavior.structure.ConceptConstructorDeclaration")) {
+      SNode concept = SNodeOperations.getAncestor(refNode, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration", false, false);
+      if (concept != null) {
+        return concept;
+      }
+    }
+    SNode outerConcept = SNodeOperations.getAncestor(ShowConceptInHierarchy_Action.this.node, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration", true, false);
+    if (outerConcept != null) {
+      return outerConcept;
+    }
+
     if (!(ShowConceptInHierarchy_Action.this.editor instanceof TabbedEditor)) {
       return null;
     }

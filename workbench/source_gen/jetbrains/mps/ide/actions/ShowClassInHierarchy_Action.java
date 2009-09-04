@@ -7,23 +7,25 @@ import javax.swing.Icon;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.smodel.SNode;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.ide.hierarchy.BaseLanguageHierarchyViewTool;
 import jetbrains.mps.baseLanguage.structure.Classifier;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class ShowClassInHierarchy_Action extends GeneratedAction {
   private static final Icon ICON = null;
   protected static Log log = LogFactory.getLog(ShowClassInHierarchy_Action.class);
 
   private IOperationContext context;
+  private EditorCell editorCell;
   private SNode node;
 
   public ShowClassInHierarchy_Action() {
-    super("Show Class In Hierarchy", "", ICON);
+    super("Show Class in Hierarchy", "", ICON);
     this.setIsAlwaysVisible(false);
     this.setExecuteOutsideCommand(false);
   }
@@ -34,7 +36,7 @@ public class ShowClassInHierarchy_Action extends GeneratedAction {
   }
 
   public boolean isApplicable(AnActionEvent event) {
-    return SNodeOperations.getAncestorWhereConceptInList(ShowClassInHierarchy_Action.this.node, new String[]{"jetbrains.mps.baseLanguage.structure.ClassConcept","jetbrains.mps.baseLanguage.structure.Interface"}, true, false) != null;
+    return (ShowClassInHierarchy_Action.this.getContextClassifier() != null);
   }
 
   public void doUpdate(@NotNull AnActionEvent event) {
@@ -69,12 +71,16 @@ public class ShowClassInHierarchy_Action extends GeneratedAction {
     if (this.context == null) {
       return false;
     }
+    this.editorCell = event.getData(MPSDataKeys.EDITOR_CELL);
+    if (this.editorCell == null) {
+      return false;
+    }
     return true;
   }
 
   public void doExecute(@NotNull final AnActionEvent event) {
     try {
-      SNode classNode = SNodeOperations.cast(SNodeOperations.getAncestorWhereConceptInList(ShowClassInHierarchy_Action.this.node, new String[]{"jetbrains.mps.baseLanguage.structure.ClassConcept","jetbrains.mps.baseLanguage.structure.Interface"}, true, false), "jetbrains.mps.baseLanguage.structure.Classifier");
+      SNode classNode = ShowClassInHierarchy_Action.this.getContextClassifier();
       BaseLanguageHierarchyViewTool tool = ShowClassInHierarchy_Action.this.context.getComponent(BaseLanguageHierarchyViewTool.class);
       tool.showConceptInHierarchy(((Classifier)SNodeOperations.getAdapter(classNode)), ShowClassInHierarchy_Action.this.context);
       tool.openToolLater(true);
@@ -83,5 +89,20 @@ public class ShowClassInHierarchy_Action extends GeneratedAction {
         log.error("User's action execute method failed. Action:" + "ShowClassInHierarchy", t);
       }
     }
+  }
+
+  private SNode getContextClassifier() {
+    SNode refNode = ShowClassInHierarchy_Action.this.editorCell.getSNodeWRTReference();
+    if (SNodeOperations.isInstanceOf(refNode, "jetbrains.mps.baseLanguage.structure.Classifier")) {
+      return SNodeOperations.cast(refNode, "jetbrains.mps.baseLanguage.structure.Classifier");
+    }
+    if (SNodeOperations.isInstanceOf(refNode, "jetbrains.mps.baseLanguage.structure.ConstructorDeclaration")) {
+      SNode classifier = SNodeOperations.getAncestor(refNode, "jetbrains.mps.baseLanguage.structure.Classifier", false, false);
+      if (classifier != null) {
+        return classifier;
+      }
+    }
+    SNode outerClass = SNodeOperations.cast(SNodeOperations.getAncestorWhereConceptInList(ShowClassInHierarchy_Action.this.node, new String[]{"jetbrains.mps.baseLanguage.structure.ClassConcept","jetbrains.mps.baseLanguage.structure.Interface"}, true, false), "jetbrains.mps.baseLanguage.structure.Classifier");
+    return outerClass;
   }
 }
