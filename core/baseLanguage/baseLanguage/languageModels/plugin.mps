@@ -38657,7 +38657,7 @@
     <property name="name" value="JavaApplication" />
     <property name="caption" value="Java Application" />
     <property name="package" value="run" />
-    <property name="iconPath" value="${language_descriptor}/icons/javaRunConfig.png" />
+    <property name="iconPath" value="${language_descriptor}/icons/runApp.png" />
   </node>
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="7594443577466871976">
     <property name="package" value="run" />

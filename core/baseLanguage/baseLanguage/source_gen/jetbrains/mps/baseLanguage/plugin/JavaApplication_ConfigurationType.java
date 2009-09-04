@@ -14,7 +14,7 @@ import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 
 public class JavaApplication_ConfigurationType implements ConfigurationType {
-  private static final Icon ICON = IconManager.loadIcon(MacrosUtil.expandPath("${language_descriptor}/icons/javaRunConfig.png", "jetbrains.mps.baseLanguage"), true);
+  private static final Icon ICON = IconManager.loadIcon(MacrosUtil.expandPath("${language_descriptor}/icons/runApp.png", "jetbrains.mps.baseLanguage"), true);
 
   public ConfigurationFactory[] getConfigurationFactories() {
     List<ConfigurationFactory> result = ListSequence.fromList(new ArrayList<ConfigurationFactory>());
