@@ -31,6 +31,8 @@ import org.eclipse.jdt.internal.compiler.ast.ConstructorDeclaration;
 import org.eclipse.jdt.internal.compiler.lookup.*;
 
 import java.util.*;
+import java.lang.reflect.Method;
+import java.lang.reflect.InvocationTargetException;
 
 /**
  * Created by IntelliJ IDEA.
@@ -48,13 +50,56 @@ public class JavaConverterTreeBuilder {
 
   private Map<Binding, INodeAdapter> myBindingMap = new HashMap<Binding, INodeAdapter>();
 
-  public jetbrains.mps.baseLanguage.structure.Expression processExpressionRefl(Expression expr) {
-    return null;//todo
+  public jetbrains.mps.baseLanguage.structure.Expression processExpressionRefl(Expression expression) {
+    /*
+       * Note that we always prefer a JDT-computed constant value to the actual
+       * written expression. (Let's hope JDT is always right.) This means we
+       * don't have to write processExpression methods for the numerous JDT
+       * literal nodes because they ALWAYS have a constant value.
+       */
+      jetbrains.mps.baseLanguage.structure.Expression result = null;
+      if (expression != null && expression.constant != null
+          && expression.constant != Constant.NotAConstant) {
+        result = (jetbrains.mps.baseLanguage.structure.Expression) dispatchRefl("processConstant", expression.constant);
+      }
+
+      if (result == null) {
+        // The expression was not a constant, so use the general logic.
+        result = (jetbrains.mps.baseLanguage.structure.Expression) dispatchRefl("processExpression", expression);
+      }
+    return result;
   }
 
-  public jetbrains.mps.baseLanguage.structure.Statement processStatementRefl(org.eclipse.jdt.internal.compiler.ast.Statement stmt) {
-    return null;//todo
+  public jetbrains.mps.baseLanguage.structure.Statement processStatementRefl(org.eclipse.jdt.internal.compiler.ast.Statement x) {
+     Statement statement;
+      if (x instanceof Expression) {
+        jetbrains.mps.baseLanguage.structure.Expression expr = processExpressionRefl((Expression) x);
+        if (expr == null) {
+          return null;
+        }
+        ExpressionStatement expressionStatement = ExpressionStatement.newInstance(myCurrentModel);
+        expressionStatement.setExpression(expr);
+        statement = expressionStatement;
+      } else {
+        statement = (Statement) dispatchRefl("processStatement", x);
+      }
+      return statement;
   }
+
+    protected INodeAdapter dispatchRefl(String name, Object child) {
+      if (child == null) {
+        return null;
+      }
+      try {
+        Method method = getClass().getDeclaredMethod(name, child.getClass());
+        return (INodeAdapter) method.invoke(this, child);
+      } catch (Throwable e) {
+        if (e instanceof InvocationTargetException) {
+          e = ((InvocationTargetException) e).getTargetException();
+        }
+        throw new JavaConverterException(e);
+      }
+    }
 
   List<ExpressionStatement> processExpressionStatements(
     org.eclipse.jdt.internal.compiler.ast.Statement[] statements) {
