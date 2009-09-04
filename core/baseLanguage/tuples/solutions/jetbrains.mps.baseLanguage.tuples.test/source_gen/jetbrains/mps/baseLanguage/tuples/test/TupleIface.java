@@ -4,7 +4,6 @@ package jetbrains.mps.baseLanguage.tuples.test;
 
 
 public interface TupleIface<T> {
-
   public int value();
   public T anotherValue();
 }
