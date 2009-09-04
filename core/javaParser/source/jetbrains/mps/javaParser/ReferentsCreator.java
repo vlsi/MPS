@@ -89,24 +89,33 @@ public class ReferentsCreator {
         name[0] = localName;
       }
 
+      SModel model = myReferentsCreator.myCurrentModel;
       Classifier classifier;
       if (binding.isClass()) {
-        ClassConcept classConcept = ClassConcept.newInstance(myReferentsCreator.myCurrentModel);
+        ClassConcept classConcept = ClassConcept.newInstance(model);
         classConcept.setAbstractClass(binding.isAbstract());
         classConcept.setIsFinal(binding.isFinal());
         classifier = classConcept;
       } else if (binding.isInterface() && !binding.isAnnotationType()) {
-        classifier = Interface.newInstance(myReferentsCreator.myCurrentModel);
+        classifier = Interface.newInstance(model);
       } else if (binding.isAnnotationType()) {
-        classifier = jetbrains.mps.baseLanguage.structure.Annotation.newInstance(myReferentsCreator.myCurrentModel);
+        classifier = jetbrains.mps.baseLanguage.structure.Annotation.newInstance(model);
       } else if (binding.isEnum()) {
-        classifier = EnumClass.newInstance(myReferentsCreator.myCurrentModel);
+        classifier = EnumClass.newInstance(model);
       } else {
         return false;
       }
       classifier.setName(new String(name[name.length - 1]));
 
       myReferentsCreator.myBindingMap.put(binding, classifier);
+
+      for (TypeParameter typeParameter : typeDeclaration.typeParameters) {
+        TypeVariableDeclaration typeVariableDeclaration = TypeVariableDeclaration.newInstance(model);
+        typeVariableDeclaration.setName(new String(typeParameter.name));
+        // typeVariableDeclaration.setExtends(typeParameter.bounds); //todo process variable bounds
+        classifier.addTypeVariableDeclaration(typeVariableDeclaration);
+      }
+
       return true;
     }
   }
