@@ -61,8 +61,6 @@ public class ModelMergeTool implements DiffTool {
         }
       });
 
-      zipModels(contents, mrequest.getFile());
-
       SwingUtilities.invokeLater(new Runnable() {
         public void run() {
           dialog.toFront();
@@ -92,27 +90,6 @@ public class ModelMergeTool implements DiffTool {
         ideaDiffTool.show(request);
       }
     }
-  }
-
-  private void zipModels(DiffContent[] contents, VirtualFile file) throws IOException {
-    File tmp = FileUtil.createTmpDir();
-    writeContentsToFile(contents[ModelMergeRequest.ORIGINAL], file, tmp, "base");
-    writeContentsToFile(contents[ModelMergeRequest.CURRENT], file, tmp, "myne");
-    writeContentsToFile(contents[ModelMergeRequest.LAST_REVISION], file, tmp, "repository");
-    FileUtil.zip(tmp, getZipFile(file));
-
-    FileUtil.delete(tmp);
-  }
-
-  private File getZipFile(VirtualFile file) {
-    return new File(file.getPath() + ".zip");
-  }
-
-  private void writeContentsToFile(DiffContent contents, VirtualFile file, File tmpDir, String suffix) throws IOException {
-    File baseFile = new File(tmpDir.getAbsolutePath() + File.separator + file.getName() + "." + suffix);
-    baseFile.createNewFile();
-    OutputStream stream = new FileOutputStream(baseFile);
-    stream.write(contents.getBytes());
   }
 
   public boolean canShow(DiffRequest request) {

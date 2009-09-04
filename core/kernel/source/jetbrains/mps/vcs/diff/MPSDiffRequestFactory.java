@@ -46,8 +46,7 @@ public class MPSDiffRequestFactory extends DiffRequestFactoryImpl {
     if (!file.getFileType().equals(MPSFileTypeFactory.MODEL_FILE_TYPE)) {
       return super.createMergeRequest(leftText, rightText, originalContent, file, project, actionButtonPresentation);
     }
-    MergeRequest request = new ModelMergeRequest(leftText, rightText, originalContent, file, project, actionButtonPresentation);
-    return request;
+    return new ModelMergeRequest(leftText, rightText, originalContent, file, project, actionButtonPresentation);
   }
 
   public static class ModelMergeRequest extends MergeRequestImpl {
