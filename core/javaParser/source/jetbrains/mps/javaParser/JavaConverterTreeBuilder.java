@@ -7,6 +7,7 @@ import jetbrains.mps.baseLanguage.structure.Statement;
 import jetbrains.mps.baseLanguage.structure.FieldDeclaration;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.INodeAdapter;
+import jetbrains.mps.smodel.CopyUtil;
 import org.eclipse.jdt.internal.compiler.impl.*;
 import org.eclipse.jdt.internal.compiler.impl.BooleanConstant;
 import org.eclipse.jdt.internal.compiler.impl.CharConstant;
@@ -26,12 +27,10 @@ import org.eclipse.jdt.internal.compiler.ast.ThrowStatement;
 import org.eclipse.jdt.internal.compiler.ast.TryStatement;
 import org.eclipse.jdt.internal.compiler.ast.WhileStatement;
 import org.eclipse.jdt.internal.compiler.ast.NullLiteral;
-import org.eclipse.jdt.internal.compiler.lookup.TypeBinding;
-import org.eclipse.jdt.internal.compiler.lookup.TypeIds;
-import org.eclipse.jdt.internal.compiler.lookup.Binding;
+import org.eclipse.jdt.internal.compiler.ast.ConstructorDeclaration;
+import org.eclipse.jdt.internal.compiler.lookup.*;
 
 import java.util.*;
-import java.lang.reflect.Field;
 
 /**
  * Created by IntelliJ IDEA.
@@ -44,6 +43,8 @@ public class JavaConverterTreeBuilder {
   private SModel myCurrentModel;
 
   private Classifier myCurrentClass;
+  private BaseMethodDeclaration myCurrentMethod;
+  private TypesProvider myTypesProvider;
 
   private Map<Binding, INodeAdapter> myBindingMap = new HashMap<Binding, INodeAdapter>();
 
@@ -145,9 +146,12 @@ public class JavaConverterTreeBuilder {
     return processBinaryOperation(x.left, x.right, orExpression);
   }
 
-  AbstractCreator processExpression(ArrayAllocationExpression x) {
-    //SourceInfo info = makeSourceInfo(x);
-    //JArrayType type = (JArrayType) typeMap.get(x.resolvedType);
+  jetbrains.mps.baseLanguage.structure.Expression processExpression(ArrayAllocationExpression x) {
+    Type type = createType(x.resolvedType);
+    if (!(type instanceof ArrayType)) {
+      throw new JavaConverterException("a type of array allocation should be an array type");
+    }
+    ArrayType arrayType = (ArrayType) type;
 
     if (x.initializer != null) {
       List<jetbrains.mps.baseLanguage.structure.Expression> initializers = new ArrayList<jetbrains.mps.baseLanguage.structure.Expression>();
@@ -160,14 +164,16 @@ public class JavaConverterTreeBuilder {
       for (jetbrains.mps.baseLanguage.structure.Expression initializer : initializers) {
         arrayCreator.addInitValue(initializer);
       }
-      //todo add component type
-      return arrayCreator;
+      arrayCreator.setComponentType(CopyUtil.copy(arrayType.getComponentType()));
+      GenericNewExpression genericNewExpression = GenericNewExpression.newInstance(myCurrentModel);
+      genericNewExpression.setCreator(arrayCreator);
+      return genericNewExpression;
     } else {
       List<jetbrains.mps.baseLanguage.structure.Expression> dims = new ArrayList<jetbrains.mps.baseLanguage.structure.Expression>();
       for (Expression dimension : x.dimensions) {
         // can be null if index expression was empty
         if (dimension == null) {
-          dims.add(null); //absent array dimension; todo process in some another way
+          dims.add(null);
         } else {
           dims.add(processExpressionRefl(dimension));
         }
@@ -176,10 +182,14 @@ public class JavaConverterTreeBuilder {
       for (jetbrains.mps.baseLanguage.structure.Expression dim : dims) {
         DimensionExpression dimensionExpression = DimensionExpression.newInstance(myCurrentModel);
         arrayCreator.addDimensionExpression(dimensionExpression);
-        dimensionExpression.setExpression(dim);
+        if (dim != null) {
+          dimensionExpression.setExpression(dim);
+        }
       }
-      //todo add component type
-      return arrayCreator;
+      arrayCreator.setComponentType(CopyUtil.copy(arrayType.getComponentType()));
+      GenericNewExpression genericNewExpression = GenericNewExpression.newInstance(myCurrentModel);
+      genericNewExpression.setCreator(arrayCreator);
+      return genericNewExpression;
     }
   }
 
@@ -324,16 +334,12 @@ public class JavaConverterTreeBuilder {
         throw new JavaConverterException("Unsupported operator for CompoundAssignment");
     }
 
-    //   JType type = (JType) typeMap.get(x.resolvedType);
-    //   SourceInfo info = makeSourceInfo(x);
     op.setLValue(processExpressionRefl(x.lhs));
     op.setRValue(processExpressionRefl(x.expression));
     return op;
   }
 
   jetbrains.mps.baseLanguage.structure.Expression processExpression(ConditionalExpression x) {
-    //SourceInfo info = makeSourceInfo(x);
-    //JType type = (JType) typeMap.get(x.resolvedType);
     jetbrains.mps.baseLanguage.structure.Expression ifTest = processExpressionRefl(x.condition);
     jetbrains.mps.baseLanguage.structure.Expression thenExpr = processExpressionRefl(x.valueIfTrue);
     jetbrains.mps.baseLanguage.structure.Expression elseExpr = processExpressionRefl(x.valueIfFalse);
@@ -356,31 +362,36 @@ public class JavaConverterTreeBuilder {
       default:
         throw new JavaConverterException("Unexpected operator for EqualExpression");
     }
-
-    //  JType type = (JType) typeMap.get(x.resolvedType);
-    //  SourceInfo info = makeSourceInfo(x);
     return processBinaryOperation(x.left, x.right, op);
   }
 
   ConstructorInvocationStatement processExpression(ExplicitConstructorCall x) {
-    if (x.isSuperAccess()) {
-      //    return processSuperConstructorCall(x);
-    } else {
-      //    return processThisConstructorCall(x);
-    }
-    //todo above
-    return null;
+    ConstructorInvocationStatement result = x.isSuperAccess() ?
+      SuperConstructorInvocation.newInstance(myCurrentModel) :
+      ThisConstructorInvocation.newInstance(myCurrentModel);
+    addCallArgs(x.arguments, result);
+    jetbrains.mps.baseLanguage.structure.ConstructorDeclaration cdecl =
+      (jetbrains.mps.baseLanguage.structure.ConstructorDeclaration) myBindingMap.get(x.binding);
+    result.setConstructorDeclaration(cdecl);
+    return result;
   }
 
   jetbrains.mps.baseLanguage.structure.Expression processExpression(InstanceOfExpression x) {
     // SourceInfo info = makeSourceInfo(x);
     jetbrains.mps.baseLanguage.structure.Expression expr = processExpressionRefl(x.expression);
-    // JReferenceType testType = (JReferenceType) typeMap.get(x.type.resolvedType); //todo get type
+    Type testType = createType(x.type.resolvedType);
+    if (!(testType instanceof ClassifierType)) {
+      throw new JavaConverterException("type in instanceof should be ClassifierType");
+    }
     jetbrains.mps.baseLanguage.structure.InstanceOfExpression instanceOfExpression =
       jetbrains.mps.baseLanguage.structure.InstanceOfExpression.newInstance(myCurrentModel);
     instanceOfExpression.setLeftExpression(expr);
-    //todo set type
+    instanceOfExpression.setClassType((ClassifierType) testType);
     return instanceOfExpression;
+  }
+
+  private Type createType(TypeBinding binding) {
+    return myTypesProvider.createType(binding);
   }
 
   jetbrains.mps.baseLanguage.structure.Expression processExpression(PostfixExpression x) {
@@ -430,27 +441,167 @@ public class JavaConverterTreeBuilder {
   }
 
   jetbrains.mps.baseLanguage.structure.Expression processExpression(SuperReference x) {
-    // JClassType type = (JClassType) typeMap.get(x.resolvedType);
-    // assert (type == currentClass.getSuperClass());
-    //SourceInfo info = makeSourceInfo(x);
-
-    //todo: we have no "super-reference" in BL; only super method call
-    //todo: so this case should be analyzed in a method for method calls
-    return null;
+    //we have no "super-reference" in BL; only super method call
+    //so this case should be analyzed in a method for method calls
+    throw  new JavaConverterException("we have no super-references; this case should be analyzed as method call");
   }
 
   jetbrains.mps.baseLanguage.structure.Expression processExpression(ThisReference x) {
-    // JClassType type = (JClassType) typeMap.get(x.resolvedType);
-    // assert (type == currentClass);
-    // SourceInfo info = makeSourceInfo(x);
     jetbrains.mps.baseLanguage.structure.Expression thisRef = ThisExpression.newInstance(myCurrentModel);
     return thisRef;
   }
 
-  jetbrains.mps.baseLanguage.structure.Expression processExpression(UnaryExpression x) {
-    // SourceInfo info = makeSourceInfo(x);
-    int operator = ((x.bits & UnaryExpression.OperatorMASK) >> UnaryExpression.OperatorSHIFT);
+  jetbrains.mps.baseLanguage.structure.Expression processExpression(QualifiedThisReference x) {
+    Classifier qualType = (Classifier) myBindingMap.get(x.qualification.resolvedType);
+    jetbrains.mps.baseLanguage.structure.ThisExpression thisRef = ThisExpression.newInstance(myCurrentModel);
+    thisRef.setClassConcept(qualType);
+    return thisRef;
+  }
 
+  jetbrains.mps.baseLanguage.structure.Expression processExpression(FieldReference x) {
+    FieldBinding fieldBinding = x.binding;
+    if (fieldBinding.isStatic()) {
+      StaticFieldDeclaration staticFieldDeclaration = (StaticFieldDeclaration) myBindingMap.get(fieldBinding);
+      StaticFieldReference sfr = StaticFieldReference.newInstance(myCurrentModel);
+      sfr.setStaticFieldDeclaration(staticFieldDeclaration);
+      sfr.setClassifier((Classifier) myBindingMap.get(fieldBinding));
+      return sfr;
+    } else {
+      FieldDeclaration field;
+      if (fieldBinding.declaringClass == null) {
+        // probably array.length
+        // field = program.getIndexedField("Array.length");  //todo process such a case
+        throw new JavaConverterException("no class for a field");
+      } else {
+        field = (FieldDeclaration) myBindingMap.get(fieldBinding);
+      }
+      jetbrains.mps.baseLanguage.structure.Expression instance = processExpressionRefl(x.receiver);
+      FieldReferenceOperation fieldRef = FieldReferenceOperation.newInstance(myCurrentModel);
+      DotExpression dotExpression = DotExpression.newInstance(myCurrentModel);
+      fieldRef.setFieldDeclaration(field);
+      dotExpression.setOperation(fieldRef);
+      dotExpression.setOperand(instance);
+      /*  if (x.genericCast != null) {
+      JType castType = (JType) typeMap.get(x.genericCast);
+      *//*
+         * Note, this may result in an invalid AST due to an LHS cast operation.
+         * We fix this up in FixAssignmentToUnbox.
+         *//*
+        return maybeCast(castType, fieldRef);
+      }*/
+      return dotExpression;
+    }
+  }
+
+
+  jetbrains.mps.baseLanguage.structure.Expression processExpression(MessageSend x) {
+    BaseMethodDeclaration method = (BaseMethodDeclaration) myBindingMap.get(x.binding);
+    IMethodCall methodCall = null;
+    jetbrains.mps.baseLanguage.structure.Expression result;
+    if (x.receiver instanceof SuperReference || x.receiver instanceof QualifiedSuperReference) {
+      //todo add Qualified Super Method Call to BL
+      SuperMethodCall smc = SuperMethodCall.newInstance(myCurrentModel);
+      smc.setInstanceMethodDeclaration((InstanceMethodDeclaration) method);
+      methodCall = smc;
+      result = smc;
+    } else {
+      jetbrains.mps.baseLanguage.structure.Expression qualifier;
+      InstanceMethodCallOperation imco = InstanceMethodCallOperation.newInstance(myCurrentModel);
+      methodCall = imco;
+      if (x.receiver instanceof ThisReference) {
+        if (method instanceof StaticMethodDeclaration) {
+          // don't bother qualifying it, it's a no-op
+          qualifier = null;
+          return null;
+          //todo really return null?
+        } else {
+          if (x.receiver instanceof QualifiedThisReference) {
+            // use the supplied qualifier
+            qualifier = processExpressionRefl(x.receiver);
+          } else {
+            /*
+            * In cases where JDT had to synthesize a this ref for us, it could
+            * actually be the wrong type, if the target method is in an enclosing
+            * class. We have to synthesize our own ref of the correct type.
+            */
+            //todo do it after debug if really necessary
+            // qualifier = createThisRef(info, method.getEnclosingType());
+            qualifier = processExpressionRefl(x.receiver);
+          }
+        }
+      } else {
+        methodCall = InstanceMethodCallOperation.newInstance(myCurrentModel);
+        qualifier = processExpressionRefl(x.receiver);
+      }
+      methodCall.setBaseMethodDeclaration(method);
+      DotExpression dotExpression = DotExpression.newInstance(myCurrentModel);
+      dotExpression.setOperand(qualifier);
+      dotExpression.setOperation(imco);
+      result = dotExpression;
+    }
+
+    // The arguments come first...
+    addCallArgs(x.arguments, methodCall);
+
+    /*if (x.valueCast != null) {
+      JType castType = (JType) typeMap.get(x.valueCast);
+      return maybeCast(castType, call);
+    }*/
+    return result;
+  }
+
+  private SourceTypeBinding erasure(TypeBinding typeBinding) {
+    if (typeBinding instanceof ParameterizedTypeBinding) {
+      typeBinding = ((ParameterizedTypeBinding) typeBinding).erasure();
+    }
+    return (SourceTypeBinding) typeBinding;
+  }
+
+  jetbrains.mps.baseLanguage.structure.Expression processExpression(AllocationExpression x) {
+    SourceTypeBinding typeBinding = erasure(x.resolvedType);
+    if (typeBinding.constantPoolName() == null) {
+      /*
+      * Weird case: if JDT determines that this local class is totally
+      * uninstantiable, it won't bother allocating a local name.
+      */
+      return jetbrains.mps.baseLanguage.structure.NullLiteral.newInstance(myCurrentModel);
+    }
+    Classifier newClassifier = (Classifier) myBindingMap.get(typeBinding);
+    MethodBinding b = x.binding;
+    jetbrains.mps.baseLanguage.structure.ConstructorDeclaration ctor =
+      (jetbrains.mps.baseLanguage.structure.ConstructorDeclaration) myBindingMap.get(b);
+    // JMethodCall call;
+    ClassCreator classCreator = ClassCreator.newInstance(myCurrentModel);
+    classCreator.setConstructorDeclaration(ctor);
+
+    if (x.enumConstant != null) {
+      throw new JavaConverterException("unexpected enum constant creation");
+    }
+
+    for (TypeReference typeReference : x.typeArguments) {
+      classCreator.addTypeParameter(createType(typeReference.resolvedType));
+    }
+
+    // Plain old regular user arguments
+    addCallArgs(x.arguments, classCreator);
+
+    GenericNewExpression result = GenericNewExpression.newInstance(myCurrentModel);
+    result.setCreator(classCreator);
+    return result;
+  }
+
+  private void addCallArgs(Expression[] args, IMethodCall call) {
+    if (args == null) {
+      args = new Expression[0];
+    }
+    for (Expression arg : args) {
+      call.addActualArgument(processExpressionRefl(arg));
+    }
+  }
+
+
+  jetbrains.mps.baseLanguage.structure.Expression processExpression(UnaryExpression x) {
+    int operator = ((x.bits & UnaryExpression.OperatorMASK) >> UnaryExpression.OperatorSHIFT);
     switch (operator) {
       case UnaryExpression.MINUS:
         UnaryMinus unaryMinus = UnaryMinus.newInstance(myCurrentModel);
@@ -474,35 +625,14 @@ public class JavaConverterTreeBuilder {
 
 
   jetbrains.mps.baseLanguage.structure.Expression processExpression(SingleNameReference x) {
-    // SourceInfo info = makeSourceInfo(x);
     Binding binding = x.binding;
     INodeAdapter target = myBindingMap.get(binding);
     if (!(target instanceof VariableDeclaration)) {
       return null;
     }
     VariableDeclaration variable = (VariableDeclaration) target;
-
-    /*
-    * Wackiness: if a field happens to have synthetic accessors (only fields
-    * can have them, apparently), this is a ref to a field in an enclosing
-    * instance. CreateThisRef should compute a "this" access of the
-    * appropriate type, unless the field is static.
-    */
     jetbrains.mps.baseLanguage.structure.Expression result = null;
-    /* if (x.syntheticAccessors != null) {
-      FieldDeclaration field = (FieldDeclaration) variable;
-      if (!field.isStatic()) {
-        JExpression instance = createThisRef(info, field.getEnclosingType());
-        result = new JFieldRef(info, instance, field, currentClass);
-      }
-    }*/ //todo what's that?
-    //   if (result == null) {
     result = createVariableRef(variable, binding);
-    //  }
-    /* if (x.genericCast != null) {
-      JType castType = (JType) typeMap.get(x.genericCast);
-      result = maybeCast(castType, result);
-    }*/ //todo 2
     return result;
   }
 
@@ -524,31 +654,16 @@ public class JavaConverterTreeBuilder {
    */
   private jetbrains.mps.baseLanguage.structure.Expression createVariableRef(VariableDeclaration variable) {
     if (variable instanceof LocalVariableDeclaration) {
-      //todo maybe add following scope assertions later
-      /*  if (local.getEnclosingMethod() != currentMethod) {
-          throw new InternalCompilerException(
-              "LocalRef referencing local in a different method.");
-        }*/
       LocalVariableReference reference = LocalVariableReference.newInstance(myCurrentModel);
       reference.setLocalVariableDeclaration((LocalVariableDeclaration) variable);
       return reference;
     } else if (variable instanceof ParameterDeclaration) {
-      /*   if (parameter.getEnclosingMethod() != currentMethod) {
-        throw new InternalCompilerException(
-            "ParameterRef referencing param in a different method.");
-      }*/
       ParameterReference parameterReference = ParameterReference.newInstance(myCurrentModel);
       parameterReference.setParameterDeclaration((ParameterDeclaration) variable);
       return parameterReference;
     } else if (variable instanceof FieldDeclaration) {
       //unqualified field reference
       FieldDeclaration field = (FieldDeclaration) variable;
-      // JClassType fieldEnclosingType = (JClassType) field.getEnclosingType();
-      /*  if (!program.typeOracle.canTriviallyCast(
-          (JClassType) instance.getType(), fieldEnclosingType)) {
-        throw new InternalCompilerException(
-            "FieldRef referencing field in a different type.");
-      }*/
       FieldReferenceOperation fro = FieldReferenceOperation.newInstance(myCurrentModel);
       fro.setFieldDeclaration(field);
       DotExpression dotExpression = DotExpression.newInstance(myCurrentModel);
@@ -593,7 +708,6 @@ public class JavaConverterTreeBuilder {
   }
 
   Statement processStatement(AssertStatement x) {
-    //SourceInfo info = makeSourceInfo(x);
     jetbrains.mps.baseLanguage.structure.Expression expr = processExpressionRefl(x.assertExpression);
     jetbrains.mps.baseLanguage.structure.Expression arg = processExpressionRefl(x.exceptionArgument);
     jetbrains.mps.baseLanguage.structure.AssertStatement result = jetbrains.mps.baseLanguage.structure.AssertStatement.newInstance(myCurrentModel);
@@ -606,8 +720,6 @@ public class JavaConverterTreeBuilder {
     if (x == null) {
       return null;
     }
-
-    //SourceInfo info = makeSourceInfo(x);
     BlockStatement blockStatement = BlockStatement.newInstance(myCurrentModel);
     StatementList statementList = StatementList.newInstance(myCurrentModel);
     blockStatement.setStatements(statementList);
@@ -619,7 +731,6 @@ public class JavaConverterTreeBuilder {
 
 
   Statement processStatement(BreakStatement x) {
-    //SourceInfo info = makeSourceInfo(x);
     jetbrains.mps.baseLanguage.structure.BreakStatement result =
       jetbrains.mps.baseLanguage.structure.BreakStatement.newInstance(myCurrentModel);
     if (x.label != null) {
@@ -629,7 +740,6 @@ public class JavaConverterTreeBuilder {
   }
 
   SwitchCase processCaseStatement(CaseStatement x) {
-    // SourceInfo info = makeSourceInfo(x);
     jetbrains.mps.baseLanguage.structure.Expression expression = processExpressionRefl(x.constantExpression);
     SwitchCase switchCase = SwitchCase.newInstance(myCurrentModel);
     switchCase.setExpression(expression);
@@ -638,7 +748,6 @@ public class JavaConverterTreeBuilder {
   }
 
   Statement processStatement(ContinueStatement x) {
-    //SourceInfo info = makeSourceInfo(x);
     jetbrains.mps.baseLanguage.structure.ContinueStatement result =
       jetbrains.mps.baseLanguage.structure.ContinueStatement.newInstance(myCurrentModel);
     if (x.label != null) {
@@ -648,7 +757,6 @@ public class JavaConverterTreeBuilder {
   }
 
   Statement processStatement(DoStatement x) {
-    // SourceInfo info = makeSourceInfo(x);
     jetbrains.mps.baseLanguage.structure.Expression loopTest = processExpressionRefl(x.condition);
     Statement loopBody = processStatementRefl(x.action);
     DoWhileStatement doWhileStatement = DoWhileStatement.newInstance(myCurrentModel);
@@ -672,14 +780,10 @@ public class JavaConverterTreeBuilder {
   }
 
   private LocalVariableDeclaration getLocalVariableDeclaration(LocalDeclaration x) {
-    // SourceInfo info = makeSourceInfo(x);
-    // JLocal local = (JLocal) typeMap.get(x.binding); //todo: was ist das?
-    // JLocalRef localRef = new JLocalRef(info, local);
+    LocalVariableDeclaration local = (LocalVariableDeclaration) myBindingMap.get(x.binding);
     jetbrains.mps.baseLanguage.structure.Expression initializer = processExpressionRefl(x.initialization);
-    LocalVariableDeclaration localVariableDeclaration = LocalVariableDeclaration.newInstance(myCurrentModel);
-    localVariableDeclaration.setInitializer(initializer);
-    localVariableDeclaration.setName(new String(x.name));
-    return localVariableDeclaration;
+    local.setInitializer(initializer);
+    return local;
   }
 
   Statement processStatement(ReturnStatement x) {
@@ -690,30 +794,19 @@ public class JavaConverterTreeBuilder {
   }
 
   Statement processStatement(ForeachStatement x) {
-    // SourceInfo info = makeSourceInfo(x);
     jetbrains.mps.baseLanguage.structure.ForeachStatement result =
       jetbrains.mps.baseLanguage.structure.ForeachStatement.newInstance(myCurrentModel);
-
     Statement action = processStatementRefl(x.action);
     StatementList body = getStatementListFromStatement(action);
-
-    // JLocal elementVar = (JLocal) typeMap.get(x.elementVariable.binding);
-    // String elementVarName = elementVar.getName();
-
-    LocalVariableDeclaration localVariableDeclaration = getLocalVariableDeclaration(x.elementVariable);
-    //JDeclarationStatement elementDecl = (JDeclarationStatement) processStatement(x.elementVariable);
-    //todo create type of var decl and put var into some map
-
+    LocalVariableDeclaration elementVar = (LocalVariableDeclaration) myBindingMap.get(x.elementVariable.binding);
     jetbrains.mps.baseLanguage.structure.Expression iterable = processExpressionRefl(x.collection);
     result.setIterable(iterable);
-    result.setVariable(localVariableDeclaration);
+    result.setVariable(elementVar);
     result.setBody(body);
-
     return result;
   }
 
   Statement processStatement(ForStatement x) {
-    //SourceInfo info = makeSourceInfo(x);
 
     // SEE NOTE ON JDT FORCED OPTIMIZATIONS
     // If the condition is false, don't process the body
@@ -786,7 +879,6 @@ public class JavaConverterTreeBuilder {
   }
 
   Statement processStatement(SwitchStatement x) {
-    //SourceInfo info = makeSourceInfo(x);
     jetbrains.mps.baseLanguage.structure.Expression expression
       = processExpressionRefl(x.expression);
 
@@ -830,14 +922,13 @@ public class JavaConverterTreeBuilder {
   Statement processStatement(TryStatement x) {
     //SourceInfo info = makeSourceInfo(x);
     Statement tryBlock = processStatementRefl(x.tryBlock);
-    //List<JLocalRef> catchArgs = new ArrayList<JLocalRef>();
+    List<LocalVariableDeclaration> catchArgs = new ArrayList<LocalVariableDeclaration>();
     List<Statement> catchBlocks = new ArrayList<Statement>();
     Statement finallyBlock = processStatementRefl(x.finallyBlock);
     if (x.catchBlocks != null) {
       for (int i = 0, c = x.catchArguments.length; i < c; ++i) {
-        //  JLocal local = (JLocal) typeMap.get(x.catchArguments[i].binding);
-        //  catchArgs.add((JLocalRef) createVariableRef(info, local));
-        //todo get local vars
+        LocalVariableDeclaration local = (LocalVariableDeclaration) myBindingMap.get(x.catchArguments[i].binding);
+        catchArgs.add(local);
       }
       for (int i = 0, c = x.catchBlocks.length; i < c; ++i) {
         catchBlocks.add(processStatementRefl(x.catchBlocks[i]));
@@ -847,22 +938,26 @@ public class JavaConverterTreeBuilder {
     if (finallyBlock != null) {
       jetbrains.mps.baseLanguage.structure.TryStatement tryStatement =
         jetbrains.mps.baseLanguage.structure.TryStatement.newInstance(myCurrentModel);
-      for (Statement catchBlock : catchBlocks) {
+      for (int i = 0; i < catchBlocks.size(); i++) {
+        Statement catchBlock = catchBlocks.get(i);
+        LocalVariableDeclaration lvd = catchArgs.get(i);
         CatchClause catchClause = CatchClause.newInstance(myCurrentModel);
         tryStatement.addCatchClause(catchClause);
         catchClause.setCatchBody(getStatementListFromStatement(catchBlock));
-        //todo add local vars
+        catchClause.setThrowable(lvd);
       }
       tryStatement.setFinallyBody(getStatementListFromStatement(finallyBlock));
       tryStatement.setBody(getStatementListFromStatement(tryBlock));
       return tryStatement;
     } else {
       TryCatchStatement tryCatchStatement = TryCatchStatement.newInstance(myCurrentModel);
-      for (Statement catchBlock : catchBlocks) {
+      for (int i = 0; i < catchBlocks.size(); i++) {
+        Statement catchBlock = catchBlocks.get(i);
+        LocalVariableDeclaration lvd = catchArgs.get(i);
         CatchClause catchClause = CatchClause.newInstance(myCurrentModel);
         tryCatchStatement.addCatchClause(catchClause);
         catchClause.setCatchBody(getStatementListFromStatement(catchBlock));
-        //todo add local vars
+        catchClause.setThrowable(lvd);
       }
       tryCatchStatement.setBody(getStatementListFromStatement(tryBlock));
       return tryCatchStatement;
@@ -882,6 +977,179 @@ public class JavaConverterTreeBuilder {
     result.setCondition(loopTest);
     result.setBody(getStatementListFromStatement(loopBody));
     return result;
+  }
+
+  // classes ====================================================================
+
+  public Classifier processType(TypeDeclaration x) {
+    Classifier classifier = (Classifier) myBindingMap.get(x.binding);
+    if (x.binding.isAnnotationType()) {
+      // Do not process.          //todo methods
+      return classifier;
+    }
+    myCurrentClass = classifier;
+    try {
+      //  currentClassScope = x.scope;
+      //  currentSeparatorPositions = x.compilationResult.lineSeparatorPositions;
+      //  currentFileName = String.valueOf(x.compilationResult.fileName);
+      //todo add clinit and init
+
+      if (x.fields != null) {
+        // Process fields
+        for (int i = 0, n = x.fields.length; i < n; ++i) {
+          org.eclipse.jdt.internal.compiler.ast.FieldDeclaration fieldDeclaration = x.fields[i];
+
+
+          if (fieldDeclaration instanceof Initializer) {
+            assert (myCurrentClass instanceof ClassConcept);
+            // processInitializer((Initializer) fieldDeclaration); //todo what's this?
+          } else {
+            processField(fieldDeclaration);
+          }
+        }
+      }
+
+      if (x.methods != null) {
+        // Process methods
+        for (int i = 0, n = x.methods.length; i < n; ++i) {
+          if (x.methods[i].isConstructor()) {
+            assert (myCurrentClass instanceof ClassConcept);
+            processConstructor((ConstructorDeclaration) x.methods[i]);
+          } else if (x.methods[i].isClinit()) {
+            // nothing to do
+          } else {
+            processMethod(x.methods[i]);
+          }
+        }
+      }
+
+      if (myCurrentClass instanceof EnumClass) {
+        //    processEnumType((JEnumType) currentClass);
+      }
+
+      //currentClassScope = null;
+      myCurrentClass = null;
+      //currentSeparatorPositions = null;
+      //currentFileName = null;
+    } catch (Throwable e) {
+      throw new JavaConverterException(e);
+    }
+    return classifier;
+  }
+
+  void processMethod(AbstractMethodDeclaration x) {
+    MethodBinding b = x.binding;
+    BaseMethodDeclaration method = (BaseMethodDeclaration) myBindingMap.get(b);
+    try {
+
+      if (x.isNative()) {
+        // processNativeMethod(x, (JsniMethodBody) method.getBody());
+        throw new JavaConverterException("Native methods not supported");
+      }
+
+      myCurrentMethod = method;
+      // currentMethodBody = (JMethodBody) method.getBody();
+      // currentMethodScope = x.scope;
+
+      StatementList methodBody = method.getBody();
+      if (methodBody != null) {
+        for (Statement statement : processStatements(x.statements)) {
+          methodBody.addStatement(statement);
+        }
+      }
+      // currentMethodScope = null;
+      // currentMethodBody = null;
+      myCurrentMethod = null;
+    } catch (Throwable e) {
+      throw new JavaConverterException(e);
+    }
+  }
+
+  void processConstructor(ConstructorDeclaration x) {
+    jetbrains.mps.baseLanguage.structure.ConstructorDeclaration ctor =
+      (jetbrains.mps.baseLanguage.structure.ConstructorDeclaration) myBindingMap.get(x.binding);
+    try {
+
+      myCurrentMethod = ctor;
+      // currentMethodBody = (JMethodBody) ctor.getBody();
+      // currentMethodScope = x.scope;
+
+      ConstructorInvocationStatement superOrThisCall = null;
+      ExplicitConstructorCall ctorCall = x.constructorCall;
+      if (ctorCall != null) {
+        superOrThisCall = processExpression(ctorCall);
+      }
+
+      StatementList body = ctor.getBody();
+      body.addStatement(superOrThisCall);
+
+      for (Statement statement : processStatements(x.statements)) {
+        body.addStatement(statement);
+      }
+
+      // currentMethodScope = null;
+      myCurrentMethod = null;
+
+    } catch (Throwable e) {
+      throw new JavaConverterException(e);
+    }
+  }
+
+  void processField(org.eclipse.jdt.internal.compiler.ast.FieldDeclaration declaration) {
+    INodeAdapter adapter = myBindingMap.get(declaration.binding);
+    if (adapter == null) {
+      /*
+      * When anonymous classes declare constant fields, the field declaration
+      * is not visited by JDT. Just bail since any references to that field
+      * are guaranteed to be replaced with literals.
+      */
+      return;
+    }
+    if (adapter instanceof FieldDeclaration) {
+      FieldDeclaration field = (FieldDeclaration) adapter;
+
+      try {
+        jetbrains.mps.baseLanguage.structure.Expression initializer = null;
+        if (declaration.initialization != null) {
+          initializer = processExpressionRefl(declaration.initialization);
+        }
+
+        if (initializer != null) {
+          field.setInitializer(initializer);
+        }
+      } catch (Throwable e) {
+        throw new JavaConverterException(e);
+      }
+    }
+    if (adapter instanceof EnumConstantDeclaration) {
+      try {
+        EnumConstantDeclaration enumConstant = (EnumConstantDeclaration) adapter;
+        assert(myCurrentClass instanceof EnumClass);
+        AllocationExpression initializer = (AllocationExpression) declaration.initialization;
+        jetbrains.mps.baseLanguage.structure.ConstructorDeclaration constructor =
+          (jetbrains.mps.baseLanguage.structure.ConstructorDeclaration) myBindingMap.get(initializer.binding);
+        enumConstant.setConstructor(constructor);
+        for (Expression arg : initializer.arguments) {
+          enumConstant.addActualArgument(processExpressionRefl(arg));
+        }
+      } catch (Throwable t) {
+        throw new JavaConverterException(t);
+      }
+    }
+  }
+
+  // exec ==========================================================================
+  public void exec(TypeDeclaration[] types, ReferentsCreator referentsCreator,
+                   SModel currentModel) {
+    // Construct the basic AST.
+    myBindingMap = referentsCreator.getBindingMap();
+    myTypesProvider = referentsCreator.getTypesProvider();
+    myCurrentModel = currentModel;
+    myCurrentClass = null;
+    myCurrentMethod = null;
+    for (TypeDeclaration type : types) {
+      myCurrentModel.addRoot(processType(type));
+    }
   }
 
 

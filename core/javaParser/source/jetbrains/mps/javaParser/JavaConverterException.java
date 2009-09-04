@@ -14,4 +14,8 @@ public class JavaConverterException extends RuntimeException {
   public JavaConverterException(String message) {
     super(message);
   }
+
+  public JavaConverterException(Throwable cause) {
+    super(cause);
+  }
 }
