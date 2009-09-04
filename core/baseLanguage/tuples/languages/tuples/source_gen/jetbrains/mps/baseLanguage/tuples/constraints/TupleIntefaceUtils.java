@@ -75,6 +75,7 @@ public class TupleIntefaceUtils {
     public Property() {
       super();
     }
+
     public Property(Boolean isfinal, String name, SNode type) {
       super(isfinal, name, type);
     }

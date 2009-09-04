@@ -8,19 +8,16 @@ public class Tuples {
   }
 
 public static   interface _0 {
-
     public Tuples._0 assign(Tuples._0 from);
   }
 
 public static   interface _1<T0> {
-
     public T0 _0(T0 value);
     public T0 _0();
     public Tuples._1<T0> assign(Tuples._1<? extends T0> from);
   }
 
 public static   interface _2<T0, T1> {
-
     public T0 _0(T0 value);
     public T1 _1(T1 value);
     public T0 _0();
@@ -29,7 +26,6 @@ public static   interface _2<T0, T1> {
   }
 
 public static   interface _3<T0, T1, T2> {
-
     public T0 _0(T0 value);
     public T1 _1(T1 value);
     public T2 _2(T2 value);
@@ -40,7 +36,6 @@ public static   interface _3<T0, T1, T2> {
   }
 
 public static   interface _4<T0, T1, T2, T3> {
-
     public T0 _0(T0 value);
     public T1 _1(T1 value);
     public T2 _2(T2 value);
@@ -53,7 +48,6 @@ public static   interface _4<T0, T1, T2, T3> {
   }
 
 public static   interface _5<T0, T1, T2, T3, T4> {
-
     public T0 _0(T0 value);
     public T1 _1(T1 value);
     public T2 _2(T2 value);
@@ -68,7 +62,6 @@ public static   interface _5<T0, T1, T2, T3, T4> {
   }
 
 public static   interface _6<T0, T1, T2, T3, T4, T5> {
-
     public T0 _0(T0 value);
     public T1 _1(T1 value);
     public T2 _2(T2 value);
@@ -85,7 +78,6 @@ public static   interface _6<T0, T1, T2, T3, T4, T5> {
   }
 
 public static   interface _7<T0, T1, T2, T3, T4, T5, T6> {
-
     public T0 _0(T0 value);
     public T1 _1(T1 value);
     public T2 _2(T2 value);
@@ -104,7 +96,6 @@ public static   interface _7<T0, T1, T2, T3, T4, T5, T6> {
   }
 
 public static   interface _8<T0, T1, T2, T3, T4, T5, T6, T7> {
-
     public T0 _0(T0 value);
     public T1 _1(T1 value);
     public T2 _2(T2 value);
@@ -125,7 +116,6 @@ public static   interface _8<T0, T1, T2, T3, T4, T5, T6, T7> {
   }
 
 public static   interface _9<T0, T1, T2, T3, T4, T5, T6, T7, T8> {
-
     public T0 _0(T0 value);
     public T1 _1(T1 value);
     public T2 _2(T2 value);
