@@ -817,8 +817,6 @@ public class JavaConverterTreeBuilder {
 
   LocalVariableDeclarationStatement processStatement(LocalDeclaration x) {
     LocalVariableDeclaration localVariableDeclaration = getLocalVariableDeclaration(x);
-
-
     LocalVariableDeclarationStatement result = LocalVariableDeclarationStatement.newInstance(myCurrentModel);
     result.setLocalVariableDeclaration(localVariableDeclaration);
     return result;

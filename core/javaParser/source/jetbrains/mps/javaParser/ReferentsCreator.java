@@ -2,7 +2,7 @@ package jetbrains.mps.javaParser;
 
 import org.eclipse.jdt.internal.compiler.lookup.*;
 import org.eclipse.jdt.internal.compiler.ASTVisitor;
-import org.eclipse.jdt.internal.compiler.impl.Constant;
+import org.eclipse.jdt.internal.compiler.CompilationResult;
 import org.eclipse.jdt.internal.compiler.ast.*;
 import org.eclipse.jdt.internal.compiler.ast.AnnotationMethodDeclaration;
 import org.eclipse.jdt.internal.compiler.ast.Expression;
@@ -14,8 +14,8 @@ import jetbrains.mps.baseLanguage.structure.*;
 
 import java.util.Map;
 import java.util.HashMap;
-import java.util.Set;
-import java.util.HashSet;
+import java.util.List;
+import java.util.ArrayList;
 
 /**
  * Created by IntelliJ IDEA.
@@ -28,6 +28,7 @@ public class ReferentsCreator {
   Map<Binding, INodeAdapter> myBindingMap = new HashMap<Binding, INodeAdapter>();
   SModel myCurrentModel;
   TypesProvider myTypesProvider;
+  List<TypeDeclaration> myTypeDecls = new ArrayList<TypeDeclaration>();
 
   public ReferentsCreator(SModel currentModel) {
     myCurrentModel = currentModel;
@@ -126,6 +127,65 @@ public class ReferentsCreator {
 
     public DeclsCreator(ReferentsCreator referentsCreator) {
       myReferentsCreator = referentsCreator;
+    }
+
+    @Override
+    public boolean visit(TypeDeclaration localTypeDeclaration, BlockScope scope) {
+      return process(localTypeDeclaration);
+    }
+
+    @Override
+    public boolean visit(TypeDeclaration memberTypeDeclaration, ClassScope scope) {
+      return process(memberTypeDeclaration);
+    }
+
+    @Override
+    public boolean visit(TypeDeclaration typeDeclaration, CompilationUnitScope scope) {
+      return process(typeDeclaration);
+    }
+
+    private boolean process(TypeDeclaration typeDeclaration) {
+      SourceTypeBinding binding = typeDeclaration.binding;
+
+      if (binding.constantPoolName() == null) {
+        /*
+         * Weird case: if JDT determines that this local class is totally
+         * uninstantiable, it won't bother allocating a local name.
+         */
+        return false;
+      }
+      Classifier classifier = (Classifier) myReferentsCreator.myBindingMap.get(binding);
+      try {
+
+        ReferenceBinding superClassBinding = binding.superclass();
+        if (superClassBinding != null) {
+          assert (binding.superclass().isClass() || binding.superclass().isEnum());
+          if (classifier instanceof ClassConcept) {
+            ClassConcept classConcept = (ClassConcept) classifier;
+            ClassifierType superClass = (ClassifierType) createType(superClassBinding);
+            classConcept.setSuperclass(superClass);
+          }
+        }
+
+        ReferenceBinding[] superInterfaces = binding.superInterfaces();
+        for (ReferenceBinding superInterfaceBinding : superInterfaces) {
+          assert (superInterfaceBinding.isInterface());
+          ClassifierType superInterface = (ClassifierType) createType(superInterfaceBinding);
+          if (classifier instanceof ClassConcept) {
+            ClassConcept classConcept = (ClassConcept) classifier;
+            classConcept.addImplementedInterface(superInterface);
+          }
+          if (classifier instanceof Interface) {
+            Interface intfc = (Interface) classifier;
+            intfc.addExtendedInterface(superInterface);
+          }
+        }
+
+        myReferentsCreator.myTypeDecls.add(typeDeclaration);
+        return true;
+      } catch (Throwable e) {
+        throw new JavaConverterException(e);
+      }
     }
 
     @Override
@@ -322,12 +382,12 @@ public class ReferentsCreator {
   }
 
   public static boolean isEnumConstant(FieldDeclaration fieldDeclaration) {
-      Expression initialization = fieldDeclaration.initialization;
-      boolean isEnumConstant = initialization != null
-        && initialization instanceof AllocationExpression
-        && ((AllocationExpression) initialization).enumConstant != null;
-      return isEnumConstant;
-    }
+    Expression initialization = fieldDeclaration.initialization;
+    boolean isEnumConstant = initialization != null
+      && initialization instanceof AllocationExpression
+      && ((AllocationExpression) initialization).enumConstant != null;
+    return isEnumConstant;
+  }
 
   public void exec(CompilationUnitDeclaration[] unitDecls) {
     // Traverse once to create our peers for each type
