@@ -25,12 +25,15 @@ import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.MPSExtentions;
 import jetbrains.mps.generator.fileGenerator.FileGenerationUtil;
+import jetbrains.mps.util.NameUtil;
 
 import java.util.*;
 
 public class ModuleSources {
+  private static Map<SModelDescriptor, IFile> myDependFiles = new HashMap<SModelDescriptor, IFile>();
   private IModule myModule;
   private Map<String, JavaFile> myJavaFiles = new HashMap<String, JavaFile>();
+  private Map<String, Long> myLastModifier = new HashMap<String, Long>();
   private Map<String, ResourceFile> myResourceFiles = new HashMap<String, ResourceFile>();
 
   private Set<IFile> myFilesToDelete = new HashSet<IFile>();
@@ -44,8 +47,7 @@ public class ModuleSources {
     collectInputFilesInfo(module);
     collectOutputFilesInfo();
 
-    if (FileGenerationUtil.isUseDependenciesChecking()) {    
-      collectInputDependenciesFilesInfo();
+    if (FileGenerationUtil.isUseDependenciesChecking()) {
       collectDependencyOutput();
     }
   }
@@ -70,16 +72,9 @@ public class ModuleSources {
     return myJavaFiles.get(fqName);
   }
 
-  private void collectInputFilesInfo(IModule module) {
+  void collectInputFilesInfo(IModule module) {
     for (String source : module.getSourcePaths()) {
       collectInput(FileSystem.getFile(source), "");
-    }
-  }
-
-  private void collectInputDependenciesFilesInfo() {
-    List<IModule> dependenciesModule = myModule.getAllDependOnModules();
-    for (IModule module : dependenciesModule) {
-     collectInputFilesInfo(module);
     }
   }
 
@@ -133,8 +128,12 @@ public class ModuleSources {
           JavaFile javaFile = myJavaFiles.get(fqName);
           if (javaFile == null) {
             myFilesToDelete.add(file);
-          } else if (javaFile.getFile().lastModified() < file.lastModified()) {
-            myFilesToCompile.remove(javaFile);
+          } else {
+            long modify = file.lastModified();
+            myLastModifier.put(containerName, modify);
+            if (javaFile.getFile().lastModified() < modify) {
+              myFilesToCompile.remove(javaFile);
+            }
           }
         }
 
@@ -154,46 +153,64 @@ public class ModuleSources {
   private void collectDependencyOutput() {
     List<SModelDescriptor> models = SModelRepository.getInstance().getModelDescriptors(myModule);
     for (SModelDescriptor md : models) {
-      if (md.getSModel().isNotEditable()) {
-        continue;
-      }
-      IFile dependFile = DependenciesRoot.getOutputFileOfModel(myModule.getGeneratorOutputPath(), md);
+      IFile dependFile = getDependencyFile(md);
       if (dependFile == null || !dependFile.exists() || dependFile.isDirectory()) {
         continue;
       }
       DependenciesRoot dependRoot = DependenciesRoot.load(dependFile);
       if (dependRoot != null) {
-        addFilesToCompile(dependRoot.getAllDependenciesNames(), dependRoot.getDependencies());
+        addFilesToCompile(dependRoot);
+        List<String> uniqExtendName = new ArrayList<String>();
         for (Dependency extendDependency : dependRoot.getDependencies()) {
           for (String extendName : extendDependency.getExtends()) {
-            collectExtends(extendName, extendDependency.getClassName(), false);
+            if (uniqExtendName.contains(extendName) || extendDependency.getClassName() == null) {
+              continue;
+            }
+            uniqExtendName.add(extendName);
+            Long modified = getLastModified(extendDependency.getClassName());
+            collectExtends(extendName, extendDependency.getClassName(), false, modified, uniqExtendName);
           }
         }
       }
     }
   }
 
-  private Set<String> addFilesToCompile(List<String> collection, Set<Dependency> depends) {
+  private Set<String> addFilesToCompile(DependenciesRoot dependRoot) {
     Set<String> addedFqNames = new HashSet<String>();
-    Set<String> uniqDependency = new HashSet<String>();
-      for (String s : collection) {
-        if (!uniqDependency.contains(s) && s != null) {
-          uniqDependency.add(s);
+    Map<String, Set<String>> uniqDependency = new HashMap<String, Set<String>>();
+    for (Dependency depend : dependRoot.getDependencies()) {
+      for (String dependName : depend.getAllDependencies()) {
+        if (dependName == null) {
+          continue;
+        }
+        if (!uniqDependency.keySet().contains(dependName)) {
+          Set<String> values = new HashSet<String>();
+          values.add(depend.getClassName());
+          uniqDependency.put(dependName, values);
+        } else {
+          uniqDependency.get(dependName).add(depend.getClassName());
+        }
       }
     }
-    for (String dependFqName : uniqDependency) {
-      JavaFile dependJavaFile = myJavaFiles.get(dependFqName);
+    for (String dependFqName : uniqDependency.keySet()) {
       if (dependFqName != null) {
-        for (Dependency dependency : depends) {
-          if (dependency.getAllDependencies().contains(dependFqName)) {
-            JavaFile javaFile = myJavaFiles.get(dependency.getClassName());
-            if (javaFile == null || dependJavaFile == null) {
-              continue;
-            }
-            if (javaFile.getFile().lastModified() >= dependJavaFile.getFile().lastModified()) {
-              addedFqNames.add(dependFqName);
-              myFilesToCompile.add(dependJavaFile);
-            }
+        JavaFile dependJavaFile = getDependJavaFile(dependFqName);
+        if (dependJavaFile == null) {
+          continue;
+        }
+        for (String className : uniqDependency.get(dependFqName)) {
+          if (className == null) {
+            continue;
+          }
+          JavaFile javaFile = myJavaFiles.get(className);
+          if (javaFile == null) {
+            continue;
+          }
+          Long modified = getLastModified(className);
+          if (modified < dependJavaFile.getFile().lastModified()) {
+            addedFqNames.add(dependFqName);
+            myFilesToCompile.add(dependJavaFile);
+            myFilesToCompile.add(javaFile);
           }
         }
       }
@@ -210,23 +227,31 @@ public class ModuleSources {
     return SModelRepository.getInstance().getModelDescriptor(thisModelReference);
   }
 
-  private void collectExtends(String extendName, String thisName, boolean needCollectInput) {
+  private void collectExtends(String extendName, String thisName, boolean needCollectInput, long lastModified,
+                              List<String> uniqExtendsName) {
     if (needCollectInput) {
-      SModelDescriptor thisModel = getModelByClassName(thisName);
-      List<IModule> dependsByThisModule = thisModel.getModule().getAllDependOnModules();
-      for (IModule module : dependsByThisModule) {
-        collectInputFilesInfo(module);
+      if (uniqExtendsName.contains(extendName)) {
+        return;
+      } else {
+        uniqExtendsName.add(extendName);
       }
     }
+    SModelDescriptor extendModel = getModelByClassName(extendName);
+    if (extendModel == null) {
+      return;
+    }
+    JavaFile extendJavaFile = getDependJavaFile(extendName);
     JavaFile thisJavaFile = myJavaFiles.get(thisName);
-    JavaFile extendJavaFile = myJavaFiles.get(extendName);
     if (thisJavaFile == null || extendJavaFile == null) {
       return;
     }
-    myFilesToCompile.add(extendJavaFile);
-    SModelDescriptor extendModel = getModelByClassName(extendName);
-    String extendOutputDir = extendModel.getModule().getGeneratorOutputPath();
-    IFile extendDependFile = DependenciesRoot.getOutputFileOfModel(extendOutputDir, extendModel);
+    if (extendJavaFile.getFile().exists() && extendJavaFile.getFile().lastModified() > lastModified) {
+      myFilesToCompile.add(extendJavaFile);
+      if (!needCollectInput) {
+        myFilesToCompile.add(thisJavaFile);
+      }
+    }
+    IFile extendDependFile = getDependencyFile(extendModel);
     if (extendDependFile == null || !extendDependFile.exists() || !extendDependFile.isDirectory()) {
       return;
     }
@@ -235,7 +260,7 @@ public class ModuleSources {
       for (Dependency extendDependency : extendDependRoot.getDependencies()) {
         if (extendDependency.getClassName().equals(extendName)) {
           for (String newExntedName : extendDependency.getExtends()) {
-            collectExtends(newExntedName, extendName, true);
+            collectExtends(newExntedName, extendName, true, lastModified, uniqExtendsName);
           }
         }
       }
@@ -266,5 +291,47 @@ public class ModuleSources {
     return file.isFile() &&
       !file.getName().endsWith(MPSExtentions.DOT_JAVAFILE) &&
       !file.getName().endsWith(MPSExtentions.DOT_CLASSFILE);
+  }
+
+  private IFile getDependencyFile(SModelDescriptor md) {
+    String outputDir = md.getModule().getGeneratorOutputPath();
+    IFile dependFile = myDependFiles.get(md);
+    if (dependFile == null) {
+      dependFile = DependenciesRoot.getOutputFileOfModel(outputDir, md);
+      myDependFiles.put(md, dependFile);
+    }
+    return dependFile;
+  }
+
+  private JavaFile getDependJavaFile(String name) {
+    JavaFile extendJavaFile = null;
+    SModelDescriptor extendModel = getModelByClassName(name);
+    if (extendModel == null) {
+      return null;
+    }
+    if (!extendModel.getModule().equals(myModule)) {
+      extendJavaFile = new JavaFile(FileSystem.getFile(extendModel.getModule().getGeneratorOutputPath() + '/' + name.replace('.', '/') + MPSExtentions.DOT_JAVAFILE) , name);
+    } else {
+      extendJavaFile = myJavaFiles.get(name);
+    }
+    if (extendJavaFile == null || extendJavaFile.getFile().exists()) {
+      return extendJavaFile;
+    } else {
+      return null;
+    }
+  }
+
+  private long getLastModified(String className) {
+    String shortName = NameUtil.shortNameFromLongName(className);
+    Long result = myLastModifier.get(shortName);
+    if (result == null) {
+      String path = myModule.getClassesGen().getPath() + '/' + className.replace('.', '/') + MPSExtentions.DOT_CLASSFILE;
+      result = FileSystem.getFile(path).lastModified();
+    }
+    return result;
+  }
+
+  public static void clear() {
+    myDependFiles.clear();
   }
 }

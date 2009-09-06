@@ -152,6 +152,7 @@ public class ModuleMaker {
         myContainingModules.put(f.getClassName(), m);
       }
     }
+    ModuleSources.clear();
 
     compiler.compile();
 
