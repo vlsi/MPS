@@ -3709,7 +3709,7 @@
         <property name="vertical" value="true" />
         <link role="relationDeclaration" targetNodeId="2.1164824815888" />
         <node role="emptyCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1164826376028">
-          <property name="text" value="&lt;choose menu part&gt;" />
+          <property name="nullText" value="&lt;choose menu part&gt;" />
           <node role="styleItem" type="jetbrains.mps.lang.editor.structure.FontStyleStyleClassItem" id="1214314934340">
             <property name="style" value="ITALIC" />
           </node>

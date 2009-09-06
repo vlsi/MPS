@@ -95,7 +95,7 @@ public class CellMenuDescriptor_Editor extends DefaultNodeEditor {
     }
 
     private EditorCell createConstant_1820_1(EditorContext editorContext, SNode node) {
-      EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "<choose menu part>");
+      EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
       editorCell.setCellId("Constant_1820_1");
       {
         Style style = editorCell.getStyle();
@@ -103,7 +103,7 @@ public class CellMenuDescriptor_Editor extends DefaultNodeEditor {
         style.set(StyleAttributes.EDITABLE, true);
         style.set(StyleAttributes.TEXT_COLOR, MPSColors.darkGray);
       }
-      editorCell.setDefaultText("");
+      editorCell.setDefaultText("<choose menu part>");
       return editorCell;
     }
   }
