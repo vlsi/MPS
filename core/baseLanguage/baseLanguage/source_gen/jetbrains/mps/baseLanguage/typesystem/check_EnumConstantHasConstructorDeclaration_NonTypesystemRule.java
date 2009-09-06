@@ -6,8 +6,6 @@ import jetbrains.mps.lang.typesystem.runtime.AbstractNonTypesystemRule_Runtime;
 import jetbrains.mps.lang.typesystem.runtime.NonTypesystemRule_Runtime;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.intentions.BaseIntentionProvider;
 import jetbrains.mps.typesystem.inference.IErrorTarget;
@@ -19,14 +17,6 @@ public class check_EnumConstantHasConstructorDeclaration_NonTypesystemRule exten
   }
 
   public void applyRule(final SNode enumConstantDeclaration, final TypeCheckingContext typeCheckingContext) {
-    SNode enumClass = SNodeOperations.getAncestor(enumConstantDeclaration, "jetbrains.mps.baseLanguage.structure.EnumClass", false, false);
-    if ((enumClass == null)) {
-      return;
-    }
-    if (ListSequence.fromList(SLinkOperations.getTargets(enumClass, "constructor", true)).isEmpty()) {
-      return;
-    }
-
     SNode constructorDeclaration = SLinkOperations.getTarget(enumConstantDeclaration, "baseMethodDeclaration", false);
     if ((constructorDeclaration == null)) {
       {
