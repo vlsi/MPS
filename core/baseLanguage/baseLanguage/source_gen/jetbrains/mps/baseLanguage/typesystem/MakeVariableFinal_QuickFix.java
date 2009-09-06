@@ -12,7 +12,7 @@ public class MakeVariableFinal_QuickFix extends QuickFix_Runtime {
   }
 
   public String getDescription() {
-    return "Make variable final";
+    return "Make Variable Final";
   }
 
   public void execute(SNode node) {

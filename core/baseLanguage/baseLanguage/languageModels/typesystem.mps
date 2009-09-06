@@ -16691,7 +16691,7 @@
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1241101017871">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1241101021484">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1241101021485">
-            <property name="value" value="Make variable final" />
+            <property name="value" value="Make Variable Final" />
           </node>
         </node>
       </node>

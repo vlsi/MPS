@@ -12,18 +12,19 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.IScope;
 import java.awt.Frame;
 import com.intellij.openapi.project.Project;
+import java.util.List;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import jetbrains.mps.ide.findusages.view.FindUtils;
 import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import java.util.List;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
+import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.ide.findusages.findalgorithm.finders.GeneratedFinder;
 import com.intellij.openapi.progress.ProgressManager;
 import com.intellij.openapi.progress.Task;
 import com.intellij.openapi.progress.ProgressIndicator;
-import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
 import javax.swing.SwingUtilities;
 import java.awt.Rectangle;
 import java.awt.Point;
@@ -40,9 +41,11 @@ public class GoToOverridingMethod_Action extends GeneratedAction {
   private IScope scope;
   private Frame frame;
   private Project project;
+  private List<String> finderClasses;
 
-  public GoToOverridingMethod_Action() {
+  public GoToOverridingMethod_Action(List<String> finderClasses_par) {
     super("Go to Overridden Methods", "", ICON);
+    this.finderClasses = finderClasses_par;
     this.setIsAlwaysVisible(false);
     this.setExecuteOutsideCommand(true);
   }
@@ -53,7 +56,12 @@ public class GoToOverridingMethod_Action extends GeneratedAction {
   }
 
   public boolean isApplicable(AnActionEvent event) {
-    return FindUtils.getFinderByClassName("jetbrains.mps.baseLanguage.findUsages.OverridingMethods_Finder").isApplicable(GoToOverridingMethod_Action.this.methodNode);
+    for (String finderClass : GoToOverridingMethod_Action.this.finderClasses) {
+      if (FindUtils.getFinderByClassName(finderClass).isApplicable(GoToOverridingMethod_Action.this.methodNode)) {
+        return true;
+      }
+    }
+    return false;
   }
 
   public void doUpdate(@NotNull AnActionEvent event) {
@@ -114,12 +122,26 @@ public class GoToOverridingMethod_Action extends GeneratedAction {
 
   public void doExecute(@NotNull final AnActionEvent event) {
     try {
+      final List<String> finders = ListSequence.fromList(new ArrayList<String>());
+      ModelAccess.instance().runReadAction(new Runnable() {
+        public void run() {
+          for (String finderClass : GoToOverridingMethod_Action.this.finderClasses) {
+            GeneratedFinder finder = FindUtils.getFinderByClassName(finderClass);
+            if (finder.isApplicable(GoToOverridingMethod_Action.this.methodNode)) {
+              ListSequence.fromList(finders).addElement(finderClass);
+            }
+          }
+        }
+      });
+
       final List<SNode> nodes = new ArrayList<SNode>();
       ProgressManager.getInstance().run(new Task.Modal(GoToOverridingMethod_Action.this.project, "Searching...", true) {
         public void run(@NotNull final ProgressIndicator p) {
           ModelAccess.instance().runReadAction(new Runnable() {
             public void run() {
-              ListSequence.fromList(nodes).addSequence(ListSequence.fromList(FindUtils.executeFinder("jetbrains.mps.baseLanguage.findUsages.OverridingMethods_Finder", GoToOverridingMethod_Action.this.methodNode, GoToOverridingMethod_Action.this.scope, p)));
+              for (String finder : ListSequence.fromList(finders)) {
+                ListSequence.fromList(nodes).addSequence(ListSequence.fromList(FindUtils.executeFinder(finder, GoToOverridingMethod_Action.this.methodNode, GoToOverridingMethod_Action.this.scope, p)));
+              }
             }
           });
         }
@@ -136,5 +158,24 @@ public class GoToOverridingMethod_Action extends GeneratedAction {
     } catch (Throwable t) {
       LOG.error("User's action execute method failed. Action:" + "GoToOverridingMethod", t);
     }
+  }
+
+  @NotNull
+  public String getActionId() {
+    StringBuilder res = new StringBuilder(500);
+    res.append(GoToOverridingMethod_Action.class.getName());
+    res.append("#");
+    res.append(finderClasses_State((List<String>)this.finderClasses));
+    res.append("!");
+    return res.toString();
+  }
+
+  public static String finderClasses_State(List<String> object) {
+    StringBuilder result = new StringBuilder();
+    for (String str : object) {
+      result.append(str).append('+');
+    }
+    result.deleteCharAt(result.length() - 1);
+    return result.toString();
   }
 }

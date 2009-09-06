@@ -4,6 +4,8 @@ package jetbrains.mps.lang.behavior.plugin;
 
 import jetbrains.mps.plugins.pluginparts.actions.GeneratedActionGroup;
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import java.util.ArrayList;
 import jetbrains.mps.ide.actions.EditorPopup_ActionGroup;
 
 public class BehaviourPopup_ActionGroup extends GeneratedActionGroup {
@@ -15,7 +17,7 @@ public class BehaviourPopup_ActionGroup extends GeneratedActionGroup {
     this.setIsInternal(false);
     this.setPopup(false);
     try {
-      BehaviourPopup_ActionGroup.this.addAction("jetbrains.mps.lang.behavior.plugin.GoToOverridingMethod_Action", "jetbrains.mps.lang.behavior");
+      BehaviourPopup_ActionGroup.this.addAction("jetbrains.mps.baseLanguage.plugin.GoToOverridingMethod_Action", "jetbrains.mps.baseLanguage", ListSequence.fromListAndArray(new ArrayList<String>(), "jetbrains.mps.lang.behavior.findUsages.OverridingMethods_Finder"));
     } catch (Throwable t) {
       LOG.error("User group error", t);
     }
