@@ -16716,6 +16716,38 @@
   <node type="jetbrains.mps.lang.typesystem.structure.NonTypesystemRule" id="1241543390448">
     <property name="name" value="check_EnumConstantHasConstructorDeclaration" />
     <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1241543390449">
+      <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="4909195013913862517">
+        <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="4909195013913862518">
+          <property name="name" value="enumClass" />
+          <node role="type" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="4909195013913862519">
+            <link role="concept" targetNodeId="1.1083245097125" resolveInfo="EnumClass" />
+          </node>
+          <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="4909195013913862520">
+            <node role="operand" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference" id="4909195013913862521">
+              <link role="applicableNode" targetNodeId="1241543434539" resolveInfo="enumConstantDeclaration" />
+            </node>
+            <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_GetAncestorOperation" id="4909195013913862522">
+              <node role="parameter" type="jetbrains.mps.lang.smodel.structure.OperationParm_Concept" id="4909195013913862523">
+                <node role="conceptArgument" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" id="4909195013913862524">
+                  <link role="conceptDeclaration" targetNodeId="1.1083245097125" resolveInfo="EnumClass" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="4909195013913862526">
+        <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="4909195013913862527">
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="4909195013913862536" />
+        </node>
+        <node role="condition" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="4909195013913862531">
+          <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="4909195013913862530">
+            <link role="variableDeclaration" targetNodeId="4909195013913862518" resolveInfo="enumClass" />
+          </node>
+          <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_IsNullOperation" id="4909195013913862535" />
+        </node>
+      </node>
+      <node role="statement" type="jetbrains.mps.baseLanguage.structure.Statement" id="4909195013913862537" />
       <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1241543445723">
         <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1241543445724">
           <property name="name" value="constructorDeclaration" />
@@ -16734,12 +16766,55 @@
       </node>
       <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1241543515400">
         <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1241543515401">
-          <node role="statement" type="jetbrains.mps.lang.typesystem.structure.ReportErrorStatement" id="1241543520776">
-            <node role="nodeToReport" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference" id="1241543535383">
-              <link role="applicableNode" targetNodeId="1241543434539" resolveInfo="enumConstantDeclaration" />
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="4909195013914035821">
+            <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="4909195013914035822">
+              <node role="statement" type="jetbrains.mps.lang.typesystem.structure.ReportErrorStatement" id="4909195013914035846">
+                <node role="errorString" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="4909195013914035849">
+                  <property name="value" value="no constructor is declared" />
+                </node>
+                <node role="nodeToReport" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference" id="4909195013914035850">
+                  <link role="applicableNode" targetNodeId="1241543434539" resolveInfo="enumConstant" />
+                </node>
+              </node>
             </node>
-            <node role="errorString" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1241543520778">
-              <property name="value" value="no method declaration" />
+            <node role="condition" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="4909195013914035831">
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="4909195013914035826">
+                <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="4909195013914035825">
+                  <link role="variableDeclaration" targetNodeId="4909195013913862518" resolveInfo="enumClass" />
+                </node>
+                <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkListAccess" id="4909195013914035830">
+                  <link role="link" targetNodeId="1.1068390468201" />
+                </node>
+              </node>
+              <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.IsEmptyOperation" id="4909195013914035835" />
+            </node>
+            <node role="ifFalseStatement" type="jetbrains.mps.baseLanguage.structure.BlockStatement" id="4909195013914035836">
+              <node role="statements" type="jetbrains.mps.baseLanguage.structure.StatementList" id="4909195013914035837">
+                <node role="statement" type="jetbrains.mps.lang.typesystem.structure.ReportErrorStatement" id="4909195013914035838">
+                  <node role="nodeToReport" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference" id="4909195013914035839">
+                    <link role="applicableNode" targetNodeId="1241543434539" resolveInfo="enumConstant" />
+                  </node>
+                  <node role="errorString" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="4909195013914035840">
+                    <property name="value" value="no method declaration" />
+                  </node>
+                  <node role="helginsIntention" type="jetbrains.mps.lang.typesystem.structure.TypesystemIntention" id="4909195013914035841">
+                    <property name="applyImmediately" value="true" />
+                    <link role="quickFix" targetNodeId="1216647860300" resolveInfo="ChooseAppropriateMethodDeclaration" />
+                    <node role="actualArgument" type="jetbrains.mps.lang.typesystem.structure.TypesystemIntentionArgument" id="4909195013914035842">
+                      <link role="quickFixArgument" targetNodeId="1216647908857" resolveInfo="classifier" />
+                      <node role="value" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="4909195013914035843">
+                        <link role="variableDeclaration" targetNodeId="4909195013913862518" resolveInfo="enumClass" />
+                      </node>
+                    </node>
+                    <node role="actualArgument" type="jetbrains.mps.lang.typesystem.structure.TypesystemIntentionArgument" id="4909195013914035844">
+                      <link role="quickFixArgument" targetNodeId="1216647878010" resolveInfo="methodCall" />
+                      <node role="value" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference" id="4909195013914035845">
+                        <link role="applicableNode" targetNodeId="1241543434539" resolveInfo="enumConstant" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
             </node>
           </node>
         </node>
@@ -16752,7 +16827,7 @@
       </node>
     </node>
     <node role="applicableNode" type="jetbrains.mps.lang.typesystem.structure.ConceptReference" id="1241543434539">
-      <property name="name" value="enumConstantDeclaration" />
+      <property name="name" value="enumConstant" />
       <link role="concept" targetNodeId="1.1083245299891" resolveInfo="EnumConstantDeclaration" />
     </node>
   </node>
