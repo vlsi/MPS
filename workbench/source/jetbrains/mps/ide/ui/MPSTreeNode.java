@@ -30,13 +30,11 @@ import jetbrains.mps.workbench.action.ActionUtils;
 import org.jetbrains.annotations.Nullable;
 
 import javax.swing.Icon;
-import javax.swing.JPopupMenu;
 import javax.swing.tree.DefaultMutableTreeNode;
 import javax.swing.tree.DefaultTreeModel;
 import javax.swing.tree.MutableTreeNode;
 import java.awt.Color;
 import java.awt.Font;
-import java.awt.Rectangle;
 import java.awt.event.KeyEvent;
 import java.util.Iterator;
 
@@ -124,47 +122,29 @@ public abstract class MPSTreeNode extends DefaultMutableTreeNode implements Iter
   }
 
   public void keyPressed(final KeyEvent keyEvent) {
-    if (keyEvent.isAltDown() && keyEvent.isControlDown() && (
+    if (!(keyEvent.isAltDown() && (
       (!SystemInfo.isMac && keyEvent.getKeyCode() == KeyEvent.VK_INSERT) ||
-        (SystemInfo.isMac && keyEvent.getKeyCode() == KeyEvent.VK_HELP))) {
-      final DataContext dataContext = DataManager.getInstance().getDataContext(this.getTree());
-      ListPopup popup = ModelAccess.instance().runReadAction(new Computable<ListPopup>() {
-        public ListPopup compute() {
-          ActionGroup group = getQuickCreateGroup(true);
-          if (group == null) return null;
-          Presentation presentation = new Presentation();
-          AnActionEvent event = new AnActionEvent(keyEvent, dataContext, ActionPlaces.UNKNOWN, presentation, ActionManager.getInstance(), 0);
-          ActionUtils.updateGroup(group, event);
-          return JBPopupFactory.getInstance()
-            .createActionGroupPopup("New",
-              group,
-              dataContext,
-              JBPopupFactory.ActionSelectionAid.SPEEDSEARCH,
-              false);
+        (SystemInfo.isMac && keyEvent.getKeyCode() == KeyEvent.VK_HELP)))) return;
 
-        }
-      });
-      if (popup == null) return;
-      popup.showInBestPositionFor(dataContext);
-    } else if (keyEvent.isAltDown() && (
-      (!SystemInfo.isMac && keyEvent.getKeyCode() == KeyEvent.VK_INSERT) ||
-        (SystemInfo.isMac && keyEvent.getKeyCode() == KeyEvent.VK_HELP))) {
-      MPSTree mpsTree = getTree();
-      if (mpsTree == null) return;
+    final DataContext dataContext = DataManager.getInstance().getDataContext(this.getTree());
+    ListPopup popup = ModelAccess.instance().runReadAction(new Computable<ListPopup>() {
+      public ListPopup compute() {
+        ActionGroup group = getQuickCreateGroup(keyEvent.isControlDown());
+        if (group == null) return null;
+        Presentation presentation = new Presentation();
+        AnActionEvent event = new AnActionEvent(keyEvent, dataContext, ActionPlaces.UNKNOWN, presentation, ActionManager.getInstance(), 0);
+        ActionUtils.updateGroup(group, event);
+        return JBPopupFactory.getInstance()
+          .createActionGroupPopup("New",
+            group,
+            dataContext,
+            JBPopupFactory.ActionSelectionAid.SPEEDSEARCH,
+            false);
 
-      JPopupMenu popupMenu = ModelAccess.instance().runReadAction(new Computable<JPopupMenu>() {
-        public JPopupMenu compute() {
-          ActionGroup actionGroup = getQuickCreateGroup(false);
-          if (actionGroup == null) return null;
-          return ActionManager.getInstance().createActionPopupMenu(ActionPlaces.PROJECT_VIEW_POPUP, actionGroup).getComponent();
-        }
-      });
-
-      if (popupMenu == null) return;
-
-      Rectangle rectangle = mpsTree.getPathBounds(mpsTree.getSelectionPath());
-      popupMenu.show(mpsTree, rectangle.x + rectangle.width / 2, rectangle.y);
-    }
+      }
+    });
+    if (popup == null) return;
+    popup.showInBestPositionFor(dataContext);
   }
 
   protected void onRemove() {
