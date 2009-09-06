@@ -15,6 +15,8 @@
  */
 package jetbrains.mps.ide.ui;
 
+import com.intellij.ui.SpeedSearchBase;
+
 import javax.swing.JTree;
 import javax.swing.tree.DefaultMutableTreeNode;
 import javax.swing.tree.TreePath;
