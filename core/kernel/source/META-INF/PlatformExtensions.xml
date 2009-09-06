@@ -13,6 +13,9 @@
     <projectViewPane implementation="jetbrains.mps.ide.projectPane.ProjectPane"/>
     <projectViewPane implementation="jetbrains.mps.ide.projectPane.fileSystem.BaseDirectoryProjectView"/>
     <projectViewPane implementation="jetbrains.mps.ide.projectPane.fileSystem.VCSRootsProjectView"/>
+    <!--Fix NPE in FileTypeConfigurable, which needs TemplateDataLanguagePatterns-->
+    <projectService serviceInterface="com.intellij.psi.templateLanguages.TemplateDataLanguageMappings" serviceImplementation="com.intellij.psi.templateLanguages.TemplateDataLanguageMappings"/>
+    <applicationService serviceInterface="com.intellij.psi.templateLanguages.TemplateDataLanguagePatterns" serviceImplementation="com.intellij.psi.templateLanguages.TemplateDataLanguagePatterns"/>
     <!--MPS Patch Ended-->
 
     <applicationService serviceInterface="com.intellij.openapi.actionSystem.JBAwtEventQueue"
