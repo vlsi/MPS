@@ -30,6 +30,7 @@
   <node type="jetbrains.mps.build.packaging.structure.MPSLayout" id="1237299779833">
     <property name="name" value="MPS" />
     <property name="scriptsFolder" value="build" />
+    <property name="compile" value="true" />
     <node role="component" type="jetbrains.mps.build.custommps.structure.MPSBuild" id="1237299829995">
       <node role="pathToBuildToolsZip" type="jetbrains.mps.build.packaging.structure.Path" id="1237299829996">
         <node role="macro" type="jetbrains.mps.build.packaging.structure.MacroReference" id="1237299829997">
