@@ -44,6 +44,9 @@ public class FocusPolicyUtil {
         return result;
       }
     }
+    while (focusedCell instanceof EditorCell_Collection && ((EditorCell_Collection)focusedCell).isTransparentCollection()) {
+      focusedCell = ((EditorCell_Collection)focusedCell).getChildAt(0);
+    }
     return focusedCell;
   }
 
