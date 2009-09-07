@@ -27,10 +27,7 @@ import org.apache.tools.ant.types.DirSet;
 import org.apache.tools.ant.types.EnumeratedAttribute;
 import org.apache.tools.ant.types.resources.FileResource;
 
-import java.io.File;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.OutputStream;
+import java.io.*;
 import java.util.*;
 import java.net.URLClassLoader;
 import java.net.URL;
@@ -150,7 +147,11 @@ public class GenerateTask extends org.apache.tools.ant.Task {
       commandLine.add("-classpath");
       commandLine.add(currentClassPathString + sb.toString());
       commandLine.add(getGeneratorClass().getCanonicalName());
-      commandLine.add(myWhatToGenerate.toString());
+      try {
+        commandLine.add(myWhatToGenerate.dumpToTmpFile().getAbsolutePath());
+      } catch (FileNotFoundException e) {
+        throw new BuildException(e);
+      }
 
       Execute exe = new Execute(getExecuteStreamHandler());
       exe.setAntRun(this.getProject());

@@ -17,10 +17,12 @@ package jetbrains.mps.build.ant;
 
 import org.apache.tools.ant.BuildException;
 
-import java.io.File;
+import java.io.*;
 import java.util.*;
 import java.lang.reflect.Method;
 import java.lang.reflect.InvocationTargetException;
+
+import jetbrains.mps.util.FileUtil;
 
 public class WhatToGenerate {
   private final Set<File> myModelDirectories = new LinkedHashSet<File>();
@@ -236,7 +238,40 @@ public class WhatToGenerate {
     return sb.toString();
   }
 
-  public static WhatToGenerate fromCommandLine(String[] args) {
+  public File dumpToTmpFile() throws FileNotFoundException {
+    File tmpFile = createTmpFile();
+    PrintWriter writer = new PrintWriter(tmpFile);
+    writer.append(toString());
+    return tmpFile;
+  }
+
+  public static File createTmpFile() {
+    File tmp = new File(System.getProperty("java.io.tmpdir"));
+    int i = 0;
+    while (true) {
+
+      if (!new File(tmp, "mpstemp" + i).exists()) {
+        break;
+      }
+      i++;
+    }
+
+    File result = new File(tmp, "mpstemp" + i);
+    try {
+      result.createNewFile();
+    } catch (IOException e) {
+      e.printStackTrace();
+    }
+    return result;
+  }
+
+  public static WhatToGenerate fromDumpInFile(File file) {
+    String dump = FileUtil.read(file);
+    file.delete();
+    return fromCommandLine(dump);
+  }
+
+  public static WhatToGenerate fromCommandLine(String ... args) {
     WhatToGenerate whatToGenerate = new WhatToGenerate();
     for (String arg : args) {
       String[] argsplit = arg.split("\\s+");

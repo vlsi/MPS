@@ -43,6 +43,7 @@ import jetbrains.mps.logging.LogEntry;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.ModuleContext;
+import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.project.structure.project.ProjectDescriptor;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.persistence.DefaultModelRootManager;
@@ -74,7 +75,7 @@ public class Generator {
   private final Set<MPSProject> myLoadedProjects = new HashSet<MPSProject>();
 
   public static void main(String[] args) {
-    Generator generator = new Generator(WhatToGenerate.fromCommandLine(args), new SystemOutLogger());
+    Generator generator = new Generator(WhatToGenerate.fromDumpInFile(new File(args[0])), new SystemOutLogger());
     try {
       generator.generate();
       System.exit(0);
