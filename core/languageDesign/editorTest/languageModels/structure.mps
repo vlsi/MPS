@@ -233,5 +233,45 @@
       <link role="conceptPropertyDeclaration" targetNodeId="2v.1137473891462" resolveInfo="alias" />
     </node>
   </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="2613454275903805304">
+    <property name="name" value="AttractsFocusBlock" />
+    <link role="extends" targetNodeId="2v.1133920641626" resolveInfo="BaseConcept" />
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="7428162988804839411">
+      <property name="value" value="attracts focus" />
+      <link role="conceptPropertyDeclaration" targetNodeId="2v.1137473891462" resolveInfo="alias" />
+    </node>
+    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="2613454275903805305">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="child" />
+      <property name="sourceCardinality" value="1" />
+      <link role="target" targetNodeId="3702466984434723497" resolveInfo="IBaseTestBlock" />
+    </node>
+    <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="7428162988804758597">
+      <link role="intfc" targetNodeId="3702466984434723497" resolveInfo="IBaseTestBlock" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="2613454275903819473">
+    <property name="name" value="VariableDeclarationBlock" />
+    <link role="extends" targetNodeId="2v.1133920641626" resolveInfo="BaseConcept" />
+    <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="2613454275903819474">
+      <link role="intfc" targetNodeId="2v.1169194658468" resolveInfo="INamedConcept" />
+    </node>
+    <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="7428162988804872619">
+      <link role="intfc" targetNodeId="3702466984434723497" resolveInfo="IBaseTestBlock" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="2613454275903920988">
+    <property name="name" value="VariableDeclarationReference" />
+    <link role="extends" targetNodeId="2v.1133920641626" resolveInfo="BaseConcept" />
+    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="2613454275903920989">
+      <property name="metaClass" value="reference" />
+      <property name="role" value="var" />
+      <property name="sourceCardinality" value="1" />
+      <link role="target" targetNodeId="2613454275903819473" resolveInfo="VariableDeclarationBlock" />
+    </node>
+    <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="7428162988804905824">
+      <link role="intfc" targetNodeId="3702466984434723497" resolveInfo="IBaseTestBlock" />
+    </node>
+  </node>
 </model>
 

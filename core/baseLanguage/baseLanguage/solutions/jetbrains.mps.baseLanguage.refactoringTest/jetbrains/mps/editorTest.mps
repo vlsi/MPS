@@ -5045,5 +5045,44 @@
       </node>
     </node>
   </node>
+  <node type="jetbrains.mps.lang.test.structure.EditorTestCase" id="7428162988804675173">
+    <property name="name" value="SelectionOfWrappedCell" />
+    <node role="nodeToEdit" type="jetbrains.mps.lang.editor.editorTest.structure.TestBlockList" id="7428162988804758596">
+      <node role="statement" type="jetbrains.mps.lang.editor.editorTest.structure.VariableDeclarationBlock" id="7428162988804905823">
+        <property name="name" value="myVar" />
+      </node>
+      <node role="statement" type="jetbrains.mps.lang.editor.editorTest.structure.AttractsFocusBlock" id="7428162988804872613">
+        <node role="testNode$attribute" type="jetbrains.mps.lang.test.structure.AnonymousCellAnnotation" id="7428162988805013919">
+          <property name="isLastPosition" value="true" />
+          <property name="useLabelSelection" value="true" />
+          <property name="selectionStart" value="0" />
+          <property name="selectionEnd" value="0" />
+          <property name="cellId" value="empty_child" />
+        </node>
+      </node>
+    </node>
+    <node role="result" type="jetbrains.mps.lang.editor.editorTest.structure.TestBlockList" id="7428162988805013914">
+      <node role="statement" type="jetbrains.mps.lang.editor.editorTest.structure.VariableDeclarationBlock" id="7428162988805013915">
+        <property name="name" value="myVar" />
+      </node>
+      <node role="statement" type="jetbrains.mps.lang.editor.editorTest.structure.AttractsFocusBlock" id="7428162988805013916">
+        <node role="child" type="jetbrains.mps.lang.editor.editorTest.structure.VariableDeclarationReference" id="2340678293597495804">
+          <link role="var" targetNodeId="7428162988805013915" resolveInfo="myVar" />
+          <node role="testNode$attribute" type="jetbrains.mps.lang.test.structure.AnonymousCellAnnotation" id="2340678293597569639">
+            <property name="isLastPosition" value="true" />
+            <property name="useLabelSelection" value="true" />
+            <property name="selectionStart" value="5" />
+            <property name="selectionEnd" value="5" />
+            <property name="cellId" value="property_name" />
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="code" type="jetbrains.mps.baseLanguage.structure.StatementList" id="2340678293597547556">
+      <node role="statement" type="jetbrains.mps.lang.test.structure.TypeKeyStatement" id="2340678293597547557">
+        <property name="keys" value="myVar" />
+      </node>
+    </node>
+  </node>
 </model>
 
