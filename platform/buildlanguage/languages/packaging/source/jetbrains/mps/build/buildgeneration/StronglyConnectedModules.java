@@ -109,7 +109,7 @@ public class StronglyConnectedModules {
     }
 
     public int compareTo(IModuleDecorator<M> o) {
-      return hashCode() - ((DefaultModuleDecorator<M>)o).hashCode();
+      return myModule.getBundleHome().compareTo(((DefaultModuleDecorator<M>)o).myModule.getBundleHome());
     }
   }
 
