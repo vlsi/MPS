@@ -28,6 +28,10 @@ public class GenerateTaskTest extends BuildFileTest {
     executeTarget("testComplexLanguageProject");
   }
 
+  public void testBuildLanguage() {
+    executeTarget("testBuildLanguage");
+  }
+
   public void testSamplesProjects() {
     executeTarget("testSamplesProjects");
   }

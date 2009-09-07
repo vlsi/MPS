@@ -106,7 +106,7 @@ public class Graphs {
 
   private static class SCCMarkerWalker<V extends IVertex> extends EmptyDFSWalker<V> {
     private int myTimer;
-    private final Map<V, Integer> myExitTimes = new HashMap<V, Integer>();
+    private final Map<V, Integer> myExitTimes = new LinkedHashMap<V, Integer>();
 
     public Map<V, Integer> getExitTimes() {
       return Collections.unmodifiableMap(myExitTimes);

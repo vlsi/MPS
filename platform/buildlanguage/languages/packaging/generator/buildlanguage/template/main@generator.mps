@@ -4386,11 +4386,11 @@
                   </node>
                 </node>
                 <node role="initializer" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1217435283847">
-                  <node role="creator" type="jetbrains.mps.baseLanguage.collections.structure.HashMapCreator" id="1217435283848">
-                    <node role="keyType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1217435283849">
+                  <node role="creator" type="jetbrains.mps.baseLanguage.collections.structure.LinkedHashMapCreator" id="6344029876723370042">
+                    <node role="keyType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="6344029876723370043">
                       <link role="classifier" targetNodeId="16.~IModule" resolveInfo="IModule" />
                     </node>
-                    <node role="valueType" type="jetbrains.mps.lang.smodel.structure.SNodeListType" id="1217435283850">
+                    <node role="valueType" type="jetbrains.mps.lang.smodel.structure.SNodeListType" id="6344029876723370044">
                       <link role="elementConcept" targetNodeId="1.1203599702327" resolveInfo="Module" />
                     </node>
                   </node>

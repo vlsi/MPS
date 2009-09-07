@@ -30,6 +30,12 @@
         </mps.test.generation>
     </target>
 
+    <target name="testBuildLanguage">
+        <mps.generate mpshome="${module.home}/../../.." loglevel="info">
+            <modules dir="${module.home}/../../../platform/buildlanguage"/>
+        </mps.generate>
+    </target>
+
     <target name="testComplexLanguageModels">
         <mps.generate mpshome="${module.home}/../../..">
             <models dir="${module.home}/../../../samples/complexLanguage"/>

@@ -2892,7 +2892,7 @@
                         <link role="variable" targetNodeId="1222444532249" resolveInfo="language" />
                       </node>
                       <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1222444532258">
-                        <link role="baseMethodDeclaration" targetNodeId="6.~IModule.getModuleReference():jetbrains.mps.project.structure.modules.ModuleReference" resolveInfo="getModuleReference" />
+                        <link role="baseMethodDeclaration" targetNodeId="6.~AbstractModule.getModuleReference():jetbrains.mps.project.structure.modules.ModuleReference" resolveInfo="getModuleReference" />
                       </node>
                     </node>
                     <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1222444532259">
@@ -2930,7 +2930,7 @@
                         <link role="variable" targetNodeId="1222444532265" resolveInfo="devKit" />
                       </node>
                       <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1222444532274">
-                        <link role="baseMethodDeclaration" targetNodeId="6.~IModule.getModuleReference():jetbrains.mps.project.structure.modules.ModuleReference" resolveInfo="getModuleReference" />
+                        <link role="baseMethodDeclaration" targetNodeId="6.~AbstractModule.getModuleReference():jetbrains.mps.project.structure.modules.ModuleReference" resolveInfo="getModuleReference" />
                       </node>
                     </node>
                     <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1222444532275">
@@ -2968,7 +2968,7 @@
                         <link role="variable" targetNodeId="1222444532280" resolveInfo="solution" />
                       </node>
                       <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1222444532289">
-                        <link role="baseMethodDeclaration" targetNodeId="6.~IModule.getModuleReference():jetbrains.mps.project.structure.modules.ModuleReference" resolveInfo="getModuleReference" />
+                        <link role="baseMethodDeclaration" targetNodeId="6.~AbstractModule.getModuleReference():jetbrains.mps.project.structure.modules.ModuleReference" resolveInfo="getModuleReference" />
                       </node>
                     </node>
                     <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1222444532290">
