@@ -18,11 +18,12 @@ package jetbrains.mps.vcs;
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.application.ModalityState;
 import com.intellij.openapi.project.Project;
-import com.intellij.openapi.vcs.AbstractVcs;
-import com.intellij.openapi.vcs.FileStatus;
-import com.intellij.openapi.vcs.ProjectLevelVcsManager;
-import com.intellij.openapi.vcs.VcsException;
+import com.intellij.openapi.vcs.*;
+import com.intellij.openapi.vcs.actions.VcsContextFactory;
+import com.intellij.openapi.vcs.rollback.RollbackEnvironment;
+import com.intellij.openapi.vcs.rollback.RollbackProgressListener;
 import com.intellij.openapi.vcs.changes.VcsDirtyScopeManager;
+import com.intellij.openapi.vcs.changes.ChangeListManager;
 import com.intellij.openapi.vcs.checkin.CheckinEnvironment;
 import com.intellij.openapi.vcs.impl.VcsFileStatusProvider;
 import com.intellij.openapi.vfs.VirtualFile;
@@ -31,6 +32,7 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.vfs.VFileSystem;
 import org.jetbrains.annotations.NotNull;
 
+import javax.print.attribute.DocAttributeSet;
 import java.io.File;
 import java.util.*;
 
@@ -39,6 +41,7 @@ class AddOperation extends VcsOperation {
   private final List<File> myFilesToAdd = new ArrayList<File>();
   private final Set<VirtualFile> myVirtualFilesToAdd = new HashSet<VirtualFile>();
   private final boolean myRecursive;
+  private final Set<VirtualFile> myVirtualFilesToRevert = new HashSet<VirtualFile>();
 
   public AddOperation(Set<VirtualFile> filesToAdd, ProjectLevelVcsManager manager, Project project, boolean recursive) {
     super(manager, project);
@@ -56,15 +59,19 @@ class AddOperation extends VcsOperation {
     for (File f : myFilesToAdd) {
       VirtualFile virtualFile = VFileSystem.refreshAndGetFile(f);
       if (virtualFile != null) {
-        myVirtualFilesToAdd.add(virtualFile);
+        if (ChangeListManager.getInstance(myProject).getStatus(virtualFile).equals(FileStatus.DELETED)) {
+          myVirtualFilesToRevert.add(virtualFile);
+        } else {
+          myVirtualFilesToAdd.add(virtualFile);
+        }
       } else {
         LOG.error("Cannot find virtual file for IO file " + f);
       }
     }
 
     if (myRecursive) {
-      Set<VirtualFile> allChildren = getAllChildren(myVirtualFilesToAdd, new LinkedHashSet<VirtualFile>());
-      myVirtualFilesToAdd.addAll(allChildren);
+      myVirtualFilesToAdd.addAll(getAllChildren(myVirtualFilesToAdd, new LinkedHashSet<VirtualFile>()));
+      myVirtualFilesToRevert.addAll(getAllChildren(myVirtualFilesToRevert, new LinkedHashSet<VirtualFile>()));
     }
 
     reallyPerform();
@@ -85,6 +92,14 @@ class AddOperation extends VcsOperation {
   private void reallyPerform() {
     ApplicationManager.getApplication().runReadAction(new Runnable() {
       public void run() {
+        for (VirtualFile vf : myVirtualFilesToRevert) {
+          if (vf == null) {
+            continue;
+          }
+
+          scheduleDeletedFileForRevertInternal(vf);
+        }
+
         for (VirtualFile vf : myVirtualFilesToAdd) {
           if (vf == null) {
             continue;
@@ -124,6 +139,24 @@ class AddOperation extends VcsOperation {
     }
   }
 
+  private void scheduleDeletedFileForRevertInternal(@NotNull VirtualFile vf) {
+    if (vf.exists()) {
+      AbstractVcs vcs = myManager.getVcsFor(vf);
+      if (vcs != null) {
+        RollbackEnvironment ri = vcs.getRollbackEnvironment();
+        if (ri != null) {
+          FilePath path = VcsContextFactory.SERVICE.getInstance().createFilePathOn(vf);
+          ArrayList<VcsException> result = new ArrayList<VcsException>();
+          ri.rollbackMissingFileDeletion(Collections.singletonList(path), result, RollbackProgressListener.EMPTY);
+          for (VcsException e : result) {
+            LOG.error(e);
+          }
+          VcsDirtyScopeManager.getInstance(myProject).fileDirty(vf);
+        }
+      }
+    }
+  }
+
   private List<VirtualFile> getPathMaxUnversionedParent(VirtualFile vf) {
     List<VirtualFile> path = new LinkedList<VirtualFile>();
     path.add(vf);
@@ -134,7 +167,9 @@ class AddOperation extends VcsOperation {
         return Collections.EMPTY_LIST;
       }
 
-      if (isUnderVCS(parent)) {
+      if (isScheduledForDeletion(parent)) {
+        return Collections.EMPTY_LIST;
+      } else if (isUnderVCS(parent)) {
         break;
       } else {
         VirtualFile[] files = parent.getChildren();
@@ -170,5 +205,13 @@ class AddOperation extends VcsOperation {
     VcsFileStatusProvider provider = myProject.getComponent(VcsFileStatusProvider.class);
     FileStatus status = provider.getFileStatus(f);
     return !(status.equals(FileStatus.UNKNOWN) || status.equals(FileStatus.IGNORED));
+  }
+
+  private boolean isScheduledForDeletion(@NotNull VirtualFile f) {
+    if (myProject.isDisposed()) return false;
+
+    VcsFileStatusProvider provider = myProject.getComponent(VcsFileStatusProvider.class);
+    FileStatus status = provider.getFileStatus(f);
+    return status.equals(FileStatus.DELETED);
   }
 }
