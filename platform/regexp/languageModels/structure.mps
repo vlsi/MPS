@@ -274,7 +274,7 @@
     </node>
     <node role="propertyDeclaration" type="jetbrains.mps.lang.structure.structure.PropertyDeclaration" id="1174482761807">
       <property name="name" value="text" />
-      <link role="dataType" targetNodeId="1.1082983041843" />
+      <link role="dataType" targetNodeId="7473568212391781030" resolveInfo="_StringRegexp" />
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1174482769792">
@@ -1046,6 +1046,10 @@
     <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="1222260589975">
       <link role="intfc" targetNodeId="1174653354106" resolveInfo="RegexpUsingConstruction" />
     </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConstrainedDataTypeDeclaration" id="7473568212391781030">
+    <property name="name" value="_StringRegexp" />
+    <property name="constraint" value="[^\\+?.\\[\\]]+" />
   </node>
 </model>
 
