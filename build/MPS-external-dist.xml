@@ -52,6 +52,7 @@
       <zipfileset file="${unix.startup.file}" prefix="${root.folder}" filemode="755" />
       <zipfileset file="${windows.startup.file}" prefix="${root.folder}" />
       <zipfileset file="${vmoptions.file}" prefix="${root.folder}/bin" />
+      <zipfileset file="${vmoptions.file}" fullpath="${root.folder}/bin/mps.exe.vmoptions" />
     </zip>
   </target>
   <target name="unix.dist">

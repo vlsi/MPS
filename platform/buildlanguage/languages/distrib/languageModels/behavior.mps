@@ -780,6 +780,38 @@
         </node>
       </node>
     </node>
+    <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="5311051194232934851">
+      <property name="name" value="getWindowsVmoptions" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="5311051194232934852" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.StringType" id="5311051194232934855" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="5311051194232934854">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="5311051194232934856">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="5311051194232934871">
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="5311051194232934857">
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="5311051194232934858">
+                <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="5311051194232934859">
+                  <node role="operand" type="jetbrains.mps.lang.behavior.structure.ThisNodeExpression" id="5311051194232934860" />
+                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_GetAncestorOperation" id="5311051194232934861">
+                    <node role="parameter" type="jetbrains.mps.lang.smodel.structure.OperationParm_Root" id="5311051194232934862" />
+                  </node>
+                </node>
+                <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_GetDescendantsOperation" id="5311051194232934863">
+                  <node role="parameter" type="jetbrains.mps.lang.smodel.structure.OperationParm_Concept" id="5311051194232934864">
+                    <node role="conceptArgument" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" id="5311051194232934865">
+                      <link role="conceptDeclaration" targetNodeId="1.1230207753430" resolveInfo="WindowsConfig" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+              <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.GetFirstOperation" id="5311051194232934867" />
+            </node>
+            <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="5311051194232934880">
+              <link role="baseMethodDeclaration" targetNodeId="1231769123888" resolveInfo="getVMOptionsFilePath" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
     <node role="constructor" type="jetbrains.mps.lang.behavior.structure.ConceptConstructorDeclaration" id="1230292751071">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1230292751072" />
     </node>

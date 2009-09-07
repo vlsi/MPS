@@ -494,6 +494,10 @@ public class QueriesGenerated {
     return SystemSpecificConfig_Behavior.call_getVMOptionsFilePath_1231769123888(_context.getNode());
   }
 
+  public static Object propertyMacro_GetPropertyValue_5311051194232934888(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return UniversalConfig_Behavior.call_getWindowsVmoptions_5311051194232934851(_context.getNode()).replace("\\", "/");
+  }
+
   public static Object propertyMacro_GetPropertyValue_8356548439143999082(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return DistribConfiguration_Behavior.call_getVMOptionsFileName_1231749012626(SystemSpecificConfig_Behavior.call_getDistribConfiguration_1230207861621(_context.getNode())) + ".exe." + DistribConfiguration_Behavior.call_getVMOptionsExt_1231692561653(SystemSpecificConfig_Behavior.call_getDistribConfiguration_1230207861621(_context.getNode()));
   }
@@ -860,6 +864,10 @@ public class QueriesGenerated {
 
   public static boolean ifMacro_Condition_1635896182103908378(final IOperationContext operationContext, final IfMacroContext _context) {
     return !(AbstractPath_Behavior.call_getFullPath_1230059208735(SLinkOperations.getTarget(SystemSpecificConfig_Behavior.call_getDistribConfiguration_1230207861621(_context.getNode()), "startupDirectory", true)).equals("."));
+  }
+
+  public static boolean ifMacro_Condition_5311051194232934170(final IOperationContext operationContext, final IfMacroContext _context) {
+    return SPropertyOperations.getBoolean(SystemSpecificConfig_Behavior.call_getDistribConfiguration_1230207861621(_context.getNode()), "useVMOptionsFile") && UniversalConfig_Behavior.call_addWindowsStartupScript_1239641827577(_context.getNode());
   }
 
   public static boolean ifMacro_Condition_8356548439143999089(final IOperationContext operationContext, final IfMacroContext _context) {

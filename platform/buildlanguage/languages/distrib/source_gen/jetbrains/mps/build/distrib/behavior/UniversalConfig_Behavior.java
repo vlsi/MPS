@@ -23,4 +23,8 @@ public class UniversalConfig_Behavior {
   public static boolean call_addWindowsStartupScript_1239641827577(SNode thisNode) {
     return ListSequence.fromList(SNodeOperations.getDescendants(SNodeOperations.getAncestor(thisNode, null, false, true), "jetbrains.mps.build.distrib.structure.WindowsConfig", false, new String[]{})).isNotEmpty();
   }
+
+  public static String call_getWindowsVmoptions_5311051194232934851(SNode thisNode) {
+    return SystemSpecificConfig_Behavior.call_getVMOptionsFilePath_1231769123888(ListSequence.fromList(SNodeOperations.getDescendants(SNodeOperations.getAncestor(thisNode, null, false, true), "jetbrains.mps.build.distrib.structure.WindowsConfig", false, new String[]{})).first());
+  }
 }
