@@ -65,5 +65,13 @@
         <fileBasedIndex implementation="jetbrains.mps.workbench.actions.goTo.index.RootNodeNameIndex"/>
         <fileBasedIndex implementation="jetbrains.mps.workbench.actions.goTo.index.NamedNodeIndex"/>
 
+        <syntaxHighlighter key="JAVA" implementationClass="jetbrains.mps.ide.java.JavaFileHighlighter"/>
+        <syntaxHighlighter key="XML" implementationClass="com.intellij.ide.highlighter.XmlFileHighlighter"/>
+        <syntaxHighlighter key="Model" implementationClass="com.intellij.ide.highlighter.XmlFileHighlighter"/>
+        <syntaxHighlighter key="Solution" implementationClass="com.intellij.ide.highlighter.XmlFileHighlighter"/>
+        <syntaxHighlighter key="Language" implementationClass="com.intellij.ide.highlighter.XmlFileHighlighter"/>
+        <syntaxHighlighter key="Devkit" implementationClass="com.intellij.ide.highlighter.XmlFileHighlighter"/>
+        <syntaxHighlighter key="MPS Project" implementationClass="com.intellij.ide.highlighter.XmlFileHighlighter"/>
+
     </extensions>
 </idea-plugin>
