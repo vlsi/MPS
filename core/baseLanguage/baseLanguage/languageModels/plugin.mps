@@ -19948,15 +19948,12 @@
     <node role="updateBlock" type="jetbrains.mps.lang.plugin.structure.IsApplicableBlock" id="1223451996521">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1223451996522">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1223451996531">
-          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1223451996532">
-            <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation" id="1223451996534">
-              <node role="conceptArgument" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" id="1223451996535">
-                <link role="conceptDeclaration" targetNodeId="1.1068580123132" resolveInfo="BaseMethodDeclaration" />
-              </node>
-            </node>
-            <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1224252147484">
-              <node role="operand" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpression" id="1224252147485" />
-              <node role="operation" type="jetbrains.mps.lang.plugin.structure.ActionParameterReferenceOperation" id="1224252147486">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="3887784758961114181">
+            <link role="baseMethodDeclaration" targetNodeId="3887784758961070996" resolveInfo="isApplicable" />
+            <link role="classConcept" targetNodeId="1224252751159" resolveInfo="ChangeMethodSignatureRefactoring" />
+            <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="3887784758961114182">
+              <node role="operand" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpression" id="3887784758961114183" />
+              <node role="operation" type="jetbrains.mps.lang.plugin.structure.ActionParameterReferenceOperation" id="3887784758961114184">
                 <link role="member" targetNodeId="1224252124886" resolveInfo="node" />
               </node>
             </node>
@@ -25836,6 +25833,41 @@
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="1224252751159">
     <property name="package" value="refactoring.changeMethodSignature" />
     <property name="name" value="ChangeMethodSignatureRefactoring" />
+    <node role="staticMethod" type="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" id="3887784758961070996">
+      <property name="name" value="isApplicable" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.BooleanType" id="3887784758961071008" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="3887784758961070998" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="3887784758961070999">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="3887784758961071011">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.OrExpression" id="3887784758961071022">
+            <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="3887784758961071014">
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="3887784758961071013">
+                <link role="variableDeclaration" targetNodeId="3887784758961071009" resolveInfo="node" />
+              </node>
+              <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation" id="3887784758961071018">
+                <node role="conceptArgument" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" id="3887784758961071043">
+                  <link role="conceptDeclaration" targetNodeId="1.1068580123165" resolveInfo="InstanceMethodDeclaration" />
+                </node>
+              </node>
+            </node>
+            <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="3887784758961071037">
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="3887784758961071025">
+                <link role="variableDeclaration" targetNodeId="3887784758961071009" resolveInfo="node" />
+              </node>
+              <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation" id="3887784758961071041">
+                <node role="conceptArgument" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" id="3887784758961071044">
+                  <link role="conceptDeclaration" targetNodeId="1.1081236700938" resolveInfo="StaticMethodDeclaration" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="3887784758961071009">
+        <property name="name" value="node" />
+        <node role="type" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="3887784758961071010" />
+      </node>
+    </node>
     <node role="field" type="jetbrains.mps.baseLanguage.structure.FieldDeclaration" id="1224252798265">
       <property name="name" value="myParameters" />
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PrivateVisibility" id="1224252798266" />
