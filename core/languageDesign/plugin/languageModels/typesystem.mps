@@ -1760,7 +1760,7 @@
   </node>
   <node type="jetbrains.mps.lang.typesystem.structure.InferenceRule" id="7066926174333305999">
     <property name="name" value="typeof_CreateRunConfigStatement" />
-    <property name="package" value="RunConfigs.Create" />
+    <property name="package" value="RunConfigs.Create.CreateStatement" />
     <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="7066926174333306000">
       <node role="statement" type="jetbrains.mps.baseLanguage.collections.structure.ForEachStatement" id="7066926174333307522">
         <node role="variable" type="jetbrains.mps.baseLanguage.collections.structure.ForEachVariable" id="7066926174333307523">
@@ -1810,6 +1810,35 @@
     <node role="applicableNode" type="jetbrains.mps.lang.typesystem.structure.ConceptReference" id="7066926174333306001">
       <property name="name" value="statement" />
       <link role="concept" targetNodeId="4.7066926174333289651" resolveInfo="CreateRunConfigStatement" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.typesystem.structure.InferenceRule" id="8415911927033050435">
+    <property name="name" value="typeof_RunConfigMainNodeStatement" />
+    <property name="package" value="RunConfigs.Create" />
+    <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="8415911927033050436">
+      <node role="statement" type="jetbrains.mps.lang.typesystem.structure.CreateStrongLessThanInequationStatement" id="8415911927033051474">
+        <node role="leftExpression" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause" id="8415911927033051477">
+          <node role="normalType" type="jetbrains.mps.lang.typesystem.structure.TypeOfExpression" id="8415911927033051466">
+            <node role="term" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="8415911927033051469">
+              <node role="operand" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference" id="8415911927033051468">
+                <link role="applicableNode" targetNodeId="8415911927033050437" resolveInfo="statement" />
+              </node>
+              <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="8415911927033051473">
+                <link role="link" targetNodeId="4.8415911927033050433" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="rightExpression" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause" id="8415911927033051480">
+          <node role="normalType" type="jetbrains.mps.lang.quotation.structure.Quotation" id="8415911927033051481">
+            <node role="quotedNode" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="8415911927033051483" />
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="applicableNode" type="jetbrains.mps.lang.typesystem.structure.ConceptReference" id="8415911927033050437">
+      <property name="name" value="statement" />
+      <link role="concept" targetNodeId="4.8415911927033048376" resolveInfo="RunConfigMainNodeStatement" />
     </node>
   </node>
 </model>

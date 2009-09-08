@@ -746,7 +746,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.constraints.structure.ConceptConstraints" id="7066926174333292960">
-    <property name="package" value="RunConfigs.Create" />
+    <property name="package" value="RunConfigs.Create.CreateStatement" />
     <link role="concept" targetNodeId="7.7066926174333292873" resolveInfo="RunConfigPropertyInstance" />
     <node role="referent" type="jetbrains.mps.lang.constraints.structure.NodeReferentConstraint" id="7066926174333292961">
       <link role="applicableLink" targetNodeId="7.7066926174333292904" />
@@ -830,6 +830,54 @@
                 <link role="link" targetNodeId="7.8294332872984117193" />
               </node>
             </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.constraints.structure.ConceptConstraints" id="8415911927033050434">
+    <property name="package" value="RunConfigs.Create" />
+    <link role="concept" targetNodeId="7.8415911927033048376" resolveInfo="RunConfigMainNodeStatement" />
+    <node role="canBeChild" type="jetbrains.mps.lang.constraints.structure.ConstraintFunction_CanBeAChild" id="8415911927033051484">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="8415911927033051485">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="8415911927033051486">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="8415911927033051499">
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="8415911927033051488">
+              <node role="operand" type="jetbrains.mps.lang.constraints.structure.ConstraintFunctionParameter_parentNode" id="8415911927033051487" />
+              <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_GetAncestorOperation" id="8415911927033051492">
+                <node role="parameter" type="jetbrains.mps.lang.smodel.structure.OperationParm_Inclusion" id="8415911927033051498" />
+                <node role="parameter" type="jetbrains.mps.lang.smodel.structure.OperationParm_Concept" id="8415911927033051493">
+                  <node role="conceptArgument" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" id="8415911927033051496">
+                    <link role="conceptDeclaration" targetNodeId="7.8415911927033048375" resolveInfo="CreateRunConfigBlock" />
+                  </node>
+                </node>
+              </node>
+            </node>
+            <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_IsNotNullOperation" id="8415911927033051503" />
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.constraints.structure.ConceptConstraints" id="8415911927033051504">
+    <property name="package" value="RunConfigs.Create.CreateStatement" />
+    <link role="concept" targetNodeId="7.7066926174333289651" resolveInfo="CreateRunConfigStatement" />
+    <node role="canBeChild" type="jetbrains.mps.lang.constraints.structure.ConstraintFunction_CanBeAChild" id="8415911927033051505">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="8415911927033051506">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="8415911927033051507">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="8415911927033051508">
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="8415911927033051509">
+              <node role="operand" type="jetbrains.mps.lang.constraints.structure.ConstraintFunctionParameter_parentNode" id="8415911927033051510" />
+              <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_GetAncestorOperation" id="8415911927033051511">
+                <node role="parameter" type="jetbrains.mps.lang.smodel.structure.OperationParm_Inclusion" id="8415911927033051512" />
+                <node role="parameter" type="jetbrains.mps.lang.smodel.structure.OperationParm_Concept" id="8415911927033051513">
+                  <node role="conceptArgument" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" id="8415911927033051514">
+                    <link role="conceptDeclaration" targetNodeId="7.8415911927033048375" resolveInfo="CreateRunConfigBlock" />
+                  </node>
+                </node>
+              </node>
+            </node>
+            <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_IsNotNullOperation" id="8415911927033051515" />
           </node>
         </node>
       </node>
