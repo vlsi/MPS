@@ -3162,12 +3162,6 @@
       <link role="conceptLinkDeclaration" targetNodeId="2.1161119487665" resolveInfo="applicableConceptFunctionParameter" />
       <link role="target" targetNodeId="1203853034639" resolveInfo="ConceptFunctionParameter_node" />
     </node>
-    <node role="conceptLink" type="jetbrains.mps.lang.structure.structure.AggregationConceptLink" id="8415911927033051529">
-      <link role="conceptLinkDeclaration" targetNodeId="2.1137545148427" resolveInfo="conceptFunctionReturnType" />
-      <node role="target" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="8415911927033051533">
-        <link role="classifier" targetNodeId="34.~RunConfigurationBase" resolveInfo="RunConfigurationBase" />
-      </node>
-    </node>
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="8415911927033050423">
       <property name="value" value="create" />
       <link role="conceptPropertyDeclaration" targetNodeId="6.1137473891462" resolveInfo="alias" />
@@ -3185,6 +3179,10 @@
       <property name="role" value="nodeExpr" />
       <property name="sourceCardinality" value="1" />
       <link role="target" targetNodeId="2.1068431790191" resolveInfo="Expression" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="8415911927033295831">
+      <property name="value" value="main node" />
+      <link role="conceptPropertyDeclaration" targetNodeId="6.1137473891462" resolveInfo="alias" />
     </node>
   </node>
 </model>
