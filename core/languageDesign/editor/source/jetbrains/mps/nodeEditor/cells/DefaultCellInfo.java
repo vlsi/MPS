@@ -47,7 +47,7 @@ public class DefaultCellInfo implements CellInfo {
     myCellId = cell.getCellId();
 
     EditorCell_Collection parent = cell.getParent();
-    if (parent != null) {
+    if (parent != null && myCellId == null) {
       myParentInfo = parent.getCellInfo();
       myIsInList = parent.hasCellListHandler();
       if (myIsInList || myCellId == null) {
@@ -119,5 +119,16 @@ public class DefaultCellInfo implements CellInfo {
     return (cellInfo.myCellId == null ? idsBothNull : cellInfo.myCellId.equals(myCellId))
             && (cellInfo.myNodePointer.equals(myNodePointer))
             && cellInfo.myCellNumber == myCellNumber;
+  }
+
+  @Override
+  public String toString() {
+    return "DefaultCellInfo[" +
+      "myNodePointer=" + myNodePointer.getNodeId() +
+      ", myCellId='" + myCellId + '\'' +
+      ", myCellNumber=" + myCellNumber +
+      ", myIsInList=" + myIsInList +
+      ", myParentInfo=" + myParentInfo + 
+      ']';
   }
 }
