@@ -30,7 +30,6 @@ import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.ide.actions.EditorInternal_ActionGroup;
 import jetbrains.mps.ide.actions.EditorPopup_ActionGroup;
 import jetbrains.mps.ide.actions.GoByCurrentReference_Action;
-import jetbrains.mps.ide.ui.CellSpeedSearch;
 import jetbrains.mps.ide.ui.MPSErrorDialog;
 import jetbrains.mps.intentions.Intention;
 import jetbrains.mps.intentions.IntentionsManager;
@@ -192,8 +191,6 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
   private boolean myInsideOfCommand = false;
 
   private Map<KeyStroke, MPSActionProxy> myActionProxies = new HashMap<KeyStroke, MPSActionProxy>();
-  @SuppressWarnings({"UnusedDeclaration"})
-  private CellSpeedSearch myCellSpeedSearch;
   private IntentionsSupport myIntentionsSupport;
   @SuppressWarnings({"UnusedDeclaration"})
   private AutoValidator myAutoValidator;
@@ -403,7 +400,6 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
       }
     });
 
-    myCellSpeedSearch = new CellSpeedSearch(this);
     addKeyListener(new KeyAdapter() {
       public void keyPressed(final KeyEvent e) {
         processKeyPressed(e);
