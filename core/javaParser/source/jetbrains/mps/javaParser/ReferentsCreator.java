@@ -43,6 +43,10 @@ public class ReferentsCreator {
     return myTypesProvider;
   }
 
+  public TypeDeclaration[] getClassifierTypeDecls() {
+    return myTypeDecls.toArray(new TypeDeclaration[myTypeDecls.size()]);
+  }
+
   public static class ClassesCreator extends ASTVisitor {
     private ReferentsCreator myReferentsCreator;
 
