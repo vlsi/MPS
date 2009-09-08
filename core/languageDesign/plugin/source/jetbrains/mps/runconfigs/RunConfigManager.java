@@ -15,21 +15,20 @@
  */
 package jetbrains.mps.runconfigs;
 
-import com.intellij.openapi.components.ProjectComponent;
-import com.intellij.openapi.project.Project;
-import com.intellij.openapi.extensions.Extensions;
-import com.intellij.openapi.extensions.ExtensionPoint;
-import com.intellij.openapi.util.WriteExternalException;
-import com.intellij.openapi.util.InvalidDataException;
-import com.intellij.util.containers.HashMap;
+import com.intellij.execution.RunManagerEx;
 import com.intellij.execution.configurations.ConfigurationType;
 import com.intellij.execution.impl.RunManagerImpl;
-import com.intellij.execution.RunManagerEx;
+import com.intellij.openapi.components.ProjectComponent;
+import com.intellij.openapi.extensions.ExtensionPoint;
+import com.intellij.openapi.extensions.Extensions;
+import com.intellij.openapi.project.Project;
+import com.intellij.openapi.util.InvalidDataException;
+import com.intellij.openapi.util.WriteExternalException;
+import com.intellij.util.containers.HashMap;
 import jetbrains.mps.MPSProjectHolder;
 import jetbrains.mps.lang.plugin.structure.RunConfigurationTypeDeclaration;
 import jetbrains.mps.library.LibraryManager;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.project.DevKit;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.Solution;
@@ -38,9 +37,9 @@ import jetbrains.mps.reloading.ReloadAdapter;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModel;
+import org.jdom.Element;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
-import org.jdom.Element;
 
 import javax.swing.SwingUtilities;
 import java.util.*;
@@ -83,7 +82,7 @@ public class RunConfigManager implements ProjectComponent {
     final ConfigurationType[] configurationTypes = Extensions.getExtensions(ConfigurationType.CONFIGURATION_TYPE_EP);
     getRunManager().initializeConfigurationTypes(configurationTypes);
 
-    if (myState!=null){
+    if (myState != null) {
       try {
         getRunManager().readExternal(myState);
       } catch (InvalidDataException e) {
@@ -95,7 +94,7 @@ public class RunConfigManager implements ProjectComponent {
     myLoaded = true;
   }
 
-  public void firstInit(){
+  public void firstInit() {
     if (myProject.isDisposed()) return;
     if (myLoaded) return;
 
@@ -172,14 +171,13 @@ public class RunConfigManager implements ProjectComponent {
     for (Language language : languages) {
       if (language.getPluginModelDescriptor() != null) {
         SModel model = language.getPluginModelDescriptor().getSModel();
-        List<RunConfigurationTypeDeclaration> configTypeAdapters = model.getRootsAdapters(RunConfigurationTypeDeclaration.class);
-        if (configTypeAdapters.isEmpty()) continue;
-        //todo
-        String configName = configTypeAdapters.get(0).getName()+"_ConfigurationType";
-        String confName=language.getPluginModelDescriptor().getLongName()+"."+ configName;
-        ConfigurationType configurationType = createConfig(language, confName);
-        if (configurationType == null) continue;
-        conTypes.put(language, configurationType);
+        for (RunConfigurationTypeDeclaration rcTypeDecl : model.getRootsAdapters(RunConfigurationTypeDeclaration.class)) {
+          String configName = rcTypeDecl.getName() + "_ConfigurationType";
+          String confName = language.getPluginModelDescriptor().getLongName() + "." + configName;
+          ConfigurationType configurationType = createConfig(language, confName);
+          if (configurationType == null) continue;
+          conTypes.put(language, configurationType);
+        }
       }
     }
 
