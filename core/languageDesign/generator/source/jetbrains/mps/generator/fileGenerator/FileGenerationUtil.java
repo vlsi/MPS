@@ -20,8 +20,8 @@ import com.intellij.openapi.application.ModalityState;
 import com.intellij.openapi.vfs.VirtualFile;
 import jetbrains.mps.baseLanguage.plugin.DebugInfo;
 import jetbrains.mps.baseLanguage.plugin.PositionInfo;
-import jetbrains.mps.baseLanguage.textGen.DependenciesRoot;
-import jetbrains.mps.baseLanguage.textGen.Dependency;
+import jetbrains.mps.baseLanguage.textGen.ModelDependencies;
+import jetbrains.mps.baseLanguage.textGen.RootDependencies;
 import jetbrains.mps.generator.GenerationStatus;
 import jetbrains.mps.generator.GeneratorManager;
 import jetbrains.mps.generator.JavaNameUtil;
@@ -111,7 +111,7 @@ public class FileGenerationUtil {
 
   public static boolean generateText(IOperationContext context, GenerationStatus status, Map<SNode, String> outputNodeContents, String outputRootDir) {
     boolean hasErrors = false;
-    DependenciesRoot dependRoot = new DependenciesRoot();
+    ModelDependencies dependRoot = new ModelDependencies();
     DebugInfo info = new DebugInfo();
     status.setDebugInfo(info);
     status.setDependenciesRoot(dependRoot);
@@ -151,9 +151,9 @@ public class FileGenerationUtil {
     }
   }
 
-  private static void fillDependencies(DependenciesRoot root, SNode outputNode, TextGenerationResult result) {
+  private static void fillDependencies(ModelDependencies root, SNode outputNode, TextGenerationResult result) {
     if (result.getDependencies() != null) {
-      root.addDependencies(new Dependency(NameUtil.nodeFQName(outputNode), getValues(result, TextGenManager.DEPENDENCY),
+      root.addDependencies(new RootDependencies(NameUtil.nodeFQName(outputNode), getValues(result, TextGenManager.DEPENDENCY),
         getValues(result, TextGenManager.EXTENDS)));
     }
     SNode input = outputNode;
@@ -237,14 +237,16 @@ public class FileGenerationUtil {
     }
     if (isUseDependenciesChecking()) {
       if (status.getDependenciesRoot() != null && status.getDependenciesRoot().getModel() != null) {
-        IFile file = DependenciesRoot.getOutputFileOfModel(outputRootDirectory.getAbsolutePath(), status.getDependenciesRoot().getModel().getModelDescriptor());
-        status.getDependenciesRoot().saveTo(file);
-        generatedFiles.add(file.toFile());
+        IFile file = ModelDependencies.getOutputFileOfModel(outputRootDirectory.getAbsolutePath(), status.getDependenciesRoot().getModel().getModelDescriptor());
+        boolean saved = status.getDependenciesRoot().saveTo(file);
+        if (saved) {
+          generatedFiles.add(file.toFile());
+        }
       }
     }
   }
 
   public static boolean isUseDependenciesChecking() {
-    return false;
+    return true;
   }
 }

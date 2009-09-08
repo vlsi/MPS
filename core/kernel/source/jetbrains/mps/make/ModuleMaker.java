@@ -45,6 +45,7 @@ public class ModuleMaker {
 
   private Map<String, IModule> myContainingModules = new HashMap<String, IModule>();
   private Map<IModule, ModuleSources> myModuleSources = new HashMap<IModule, ModuleSources>();
+  private Dependencies myDependencies;
 
   public ModuleMaker() {
   }
@@ -73,7 +74,21 @@ public class ModuleMaker {
       indicator.setText("Compiling...");
       indicator.setIndeterminate(true);
 
-      Set<IModule> toCompile = getModulesToCompile(modules);
+      Set<IModule> toCompile = new LinkedHashSet<IModule>();
+      Set<IModule> candidates = new LinkedHashSet<IModule>();
+      candidates.addAll(modules);
+
+      for (IModule m : modules) {
+        candidates.addAll(m.getAllDependOnModules(IModule.class));
+      }
+
+      myDependencies = new Dependencies(candidates);
+
+      for (IModule c : candidates) {
+        if (!isUpToDate(c)) {
+          toCompile.add(c);
+        }
+      }
 
       int errorCount = 0;
       List<Set<IModule>> schedule = new MakeScheduleBuilder<IModule>() {
@@ -98,25 +113,9 @@ public class ModuleMaker {
     }
   }
 
-  public Set<IModule> getModulesToCompile(Set<IModule> modules) {
-    Set<IModule> toCompile = new LinkedHashSet<IModule>();
-    Set<IModule> candidates = new LinkedHashSet<IModule>();
-    candidates.addAll(modules);
-
-    for (IModule m : modules) {
-      candidates.addAll(m.getAllDependOnModules(IModule.class));
-    }
-
-    for (IModule c : candidates) {
-      if (!isUpToDate(c)) {
-        toCompile.add(c);
-      }
-    }
-    return toCompile;
-  }
-
   private jetbrains.mps.plugin.CompilationResult compile(Set<IModule> modules) {
     boolean hasAnythingToCompile = false;
+
     for (IModule m : modules) {
       if (m.isCompileInMPS()) {
         hasAnythingToCompile = true;
@@ -128,7 +127,6 @@ public class ModuleMaker {
     }
 
     IClassPathItem classPathItems = computeDependenciesClassPath(modules);
-
     JavaCompiler compiler = new JavaCompiler(classPathItems);
 
     for (IModule m : modules) {
@@ -152,7 +150,6 @@ public class ModuleMaker {
         myContainingModules.put(f.getClassName(), m);
       }
     }
-    ModuleSources.clear();
 
     compiler.compile();
 
@@ -213,7 +210,9 @@ public class ModuleMaker {
               LOG.error("Can't write to " + output.getAbsolutePath());
             }
           } else {
-            output.delete();
+            if (!(output.delete())) {
+              LOG.error("Can't delete " + output.getPath());
+            }
           }
         } else {
           LOG.error("I don't know in which module's output path I should place class file for " + fqName);
@@ -292,7 +291,7 @@ public class ModuleMaker {
 
   private ModuleSources getModuleSources(IModule module) {
     if (!myModuleSources.containsKey(module)) {
-      myModuleSources.put(module, new ModuleSources(module));
+      myModuleSources.put(module, new ModuleSources(module, myDependencies));
     }
     return myModuleSources.get(module);
   }

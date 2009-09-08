@@ -9,7 +9,7 @@ import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import org.jdom.Element;
 
-public class Dependency implements Comparable<Dependency> {
+public class RootDependencies implements Comparable<RootDependencies> {
   private static final String CLASS_NAME = "className";
   private static final String DEPEND_CLASS = "classNode";
   private static final String DEPEND_CLASS_NAME = "dependClassName";
@@ -19,7 +19,7 @@ public class Dependency implements Comparable<Dependency> {
   private Set<String> myExtendsNodes = SetSequence.fromSet(new TreeSet<String>());
   private String myClassName;
 
-  public Dependency(String nodeName, List<String> dependNodes, List<String> extendsNodes) {
+  public RootDependencies(String nodeName, List<String> dependNodes, List<String> extendsNodes) {
     this.myClassName = nodeName;
     if (dependNodes != null) {
       SetSequence.fromSet(this.myDependNodes).addSequence(ListSequence.fromList(dependNodes));
@@ -29,7 +29,7 @@ public class Dependency implements Comparable<Dependency> {
     }
   }
 
-  public Dependency(Element element) {
+  public RootDependencies(Element element) {
     this.myClassName = element.getAttribute(CLASS_NAME).getValue();
     for (Element e : ((List<Element>)element.getChildren(DEPEND_CLASS))) {
       if (e == null) {
@@ -58,7 +58,7 @@ public class Dependency implements Comparable<Dependency> {
     }
   }
 
-  public Set<String> getAllDependencies() {
+  public Set<String> getDependencies() {
     return this.myDependNodes;
   }
 
@@ -70,7 +70,7 @@ public class Dependency implements Comparable<Dependency> {
     return this.myClassName;
   }
 
-  public int compareTo(Dependency p0) {
+  public int compareTo(RootDependencies p0) {
     if (p0 == null || this.myClassName == null || p0.myClassName == null) {
       return 0;
     }

@@ -202,6 +202,6 @@ public class TextGenManager {
 
     public Map<String, String> getDependencies() {
       return myDependencies;
-  }
-}
+    }
+  } 
 }

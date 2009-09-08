@@ -18,7 +18,7 @@ package jetbrains.mps.generator;
 import jetbrains.mps.ide.Status;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.baseLanguage.plugin.DebugInfo;
-import jetbrains.mps.baseLanguage.textGen.DependenciesRoot;
+import jetbrains.mps.baseLanguage.textGen.ModelDependencies;
 
 /**
  * Igor Alshannikov
@@ -31,7 +31,7 @@ public class GenerationStatus extends Status {
   private boolean myWarnings;
   private TraceMap myTraceMap;
   private DebugInfo myDebugInfo;
-  private DependenciesRoot myDependenciesRoot;
+  private ModelDependencies myDependenciesRoot;
 
   public GenerationStatus(SModel inputModel, SModel outputModel, TraceMap traceMap, boolean errors, boolean warnings, boolean canceled) {
     super(errors ? Code.ERROR : Code.OK, null);
@@ -74,11 +74,11 @@ public class GenerationStatus extends Status {
     myDebugInfo = debugInfo;
   }
 
-  public DependenciesRoot getDependenciesRoot() {
+  public ModelDependencies getDependenciesRoot() {
     return myDependenciesRoot;
   }
 
-  public void setDependenciesRoot(DependenciesRoot dependencies) {
+  public void setDependenciesRoot(ModelDependencies dependencies) {
     myDependenciesRoot = dependencies;
   }
 

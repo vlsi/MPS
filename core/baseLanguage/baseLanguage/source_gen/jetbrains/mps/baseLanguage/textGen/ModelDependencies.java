@@ -7,34 +7,32 @@ import java.util.Set;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.TreeSet;
 import jetbrains.mps.smodel.SModel;
-import java.util.List;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
-import java.util.ArrayList;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.watching.ModelChangesWatcher;
 import org.jdom.Element;
 import jetbrains.mps.util.JDOMUtil;
 import org.jdom.Document;
+import java.util.List;
 import jetbrains.mps.smodel.SModelDescriptor;
 import java.io.File;
 import jetbrains.mps.vfs.FileSystem;
 
-public class DependenciesRoot {
+public class ModelDependencies {
   private static final String DEPENDENCY = "dependency";
   private static final String DEPENDENCIES_ROOT = "dependenciesRoot";
-  private static final Logger LOG = Logger.getLogger(DependenciesRoot.class);
+  private static final Logger LOG = Logger.getLogger(ModelDependencies.class);
 
-  private Set<Dependency> myDependencies = SetSequence.fromSet(new TreeSet<Dependency>());
+  private Set<RootDependencies> myDependencies = SetSequence.fromSet(new TreeSet<RootDependencies>());
   private SModel myModel;
 
-  public DependenciesRoot() {
+  public ModelDependencies() {
   }
 
-  public void addDependencies(Dependency newDependency) {
+  public void addDependencies(RootDependencies newDependency) {
     SetSequence.fromSet(this.myDependencies).addElement(newDependency);
   }
 
-  public Set<Dependency> getDependencies() {
+  public Set<RootDependencies> getDependencies() {
     return this.myDependencies;
   }
 
@@ -46,52 +44,29 @@ public class DependenciesRoot {
     return this.myModel;
   }
 
-  public List<String> getAllExtends() {
-    List<String> result = ListSequence.fromList(new ArrayList<String>());
-    for (Dependency dependency : this.myDependencies) {
-      ListSequence.fromList(result).addSequence(SetSequence.fromSet(dependency.getExtends()));
-    }
-    return result;
-  }
-
-  public List<String> getAllDependenciesNames() {
-    List<String> result = ListSequence.fromList(new ArrayList<String>());
-    for (Dependency dependency : this.myDependencies) {
-      ListSequence.fromList(result).addSequence(SetSequence.fromSet(dependency.getAllDependencies()));
-    }
-    return result;
-  }
-
-  public void saveTo(IFile file) {
-    if (SetSequence.fromSet(this.myDependencies).isEmpty() || this.isEmptyCollections()) {
-      if (file.exists()) {
-        file.delete();
-      }
-      return;
-    }
+  public boolean saveTo(IFile file) {
     if (!(file.exists())) {
       file.createNewFile();
       ModelChangesWatcher.instance().fireDataFileCreated(file);
     }
     Element root = new Element(DEPENDENCIES_ROOT);
-    for (Dependency dependency : this.myDependencies) {
-      if (SetSequence.fromSet(dependency.getAllDependencies()).isEmpty() && SetSequence.fromSet(dependency.getExtends()).isEmpty()) {
-        continue;
-      }
+    for (RootDependencies dependency : this.myDependencies) {
       Element e = new Element(DEPENDENCY);
       dependency.saveTo(e);
       root.addContent(e);
     }
     try {
       JDOMUtil.writeDocument(new Document(root), file);
+      return true;
     } catch (Exception e) {
       LOG.error(e);
+      return false;
     }
   }
 
   private boolean isEmptyCollections() {
-    for (Dependency dependency : this.myDependencies) {
-      boolean haveDependencies = SetSequence.fromSet(dependency.getAllDependencies()).isNotEmpty();
+    for (RootDependencies dependency : this.myDependencies) {
+      boolean haveDependencies = SetSequence.fromSet(dependency.getDependencies()).isNotEmpty();
       boolean haveExtends = SetSequence.fromSet(dependency.getExtends()).isNotEmpty();
       if (haveDependencies || haveExtends) {
         return false;
@@ -100,13 +75,13 @@ public class DependenciesRoot {
     return true;
   }
 
-  public static DependenciesRoot load(IFile file) {
+  public static ModelDependencies load(IFile file) {
     try {
       Document document = JDOMUtil.loadDocument(file);
       Element root = document.getRootElement();
-      DependenciesRoot result = new DependenciesRoot();
+      ModelDependencies result = new ModelDependencies();
       for (Element e : ((List<Element>)root.getChildren(DEPENDENCY))) {
-        result.addDependencies(new Dependency(e));
+        result.addDependencies(new RootDependencies(e));
       }
       return result;
     } catch (Exception e) {
