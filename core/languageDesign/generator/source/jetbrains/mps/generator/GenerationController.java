@@ -269,7 +269,7 @@ public class GenerationController {
 
           progress.finishTask();
 
-          //We need this in order to clean subtyping cache which might occupy too much memory
+          //We need this in order to clear subtyping cache which might occupy too much memory
           //if we generate a lot of models. For example, Charisma generation wasn't possible
           //with -Xmx1200 before this change
           TypeChecker.getInstance().setIsGeneration(false);

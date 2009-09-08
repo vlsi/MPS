@@ -235,18 +235,12 @@ public class FileGenerationUtil {
       status.getDebugInfo().saveTo(file);
       generatedFiles.add(file.toFile());
     }
-    if (isUseDependenciesChecking()) {
-      if (status.getDependenciesRoot() != null && status.getDependenciesRoot().getModel() != null) {
-        IFile file = ModelDependencies.getOutputFileOfModel(outputRootDirectory.getAbsolutePath(), status.getDependenciesRoot().getModel().getModelDescriptor());
-        boolean saved = status.getDependenciesRoot().saveTo(file);
-        if (saved) {
-          generatedFiles.add(file.toFile());
-        }
+    if (status.getDependenciesRoot() != null && status.getDependenciesRoot().getModel() != null) {
+      IFile file = ModelDependencies.getOutputFileOfModel(outputRootDirectory.getAbsolutePath(), status.getDependenciesRoot().getModel().getModelDescriptor());
+      boolean saved = status.getDependenciesRoot().saveTo(file);
+      if (saved) {
+        generatedFiles.add(file.toFile());
       }
     }
-  }
-
-  public static boolean isUseDependenciesChecking() {
-    return true;
   }
 }
