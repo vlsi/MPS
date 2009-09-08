@@ -64,17 +64,6 @@ public class ModelDependencies {
     }
   }
 
-  private boolean isEmptyCollections() {
-    for (RootDependencies dependency : this.myDependencies) {
-      boolean haveDependencies = SetSequence.fromSet(dependency.getDependencies()).isNotEmpty();
-      boolean haveExtends = SetSequence.fromSet(dependency.getExtends()).isNotEmpty();
-      if (haveDependencies || haveExtends) {
-        return false;
-      }
-    }
-    return true;
-  }
-
   public static ModelDependencies load(IFile file) {
     try {
       Document document = JDOMUtil.loadDocument(file);
