@@ -37,6 +37,7 @@ import jetbrains.mps.smodel.action.DefaultChildNodeSubstituteAction;
 import java.util.regex.Pattern;
 import java.util.regex.Matcher;
 import jetbrains.mps.baseLanguage.search.IClassifiersSearchScope;
+import jetbrains.mps.baseLanguage.behavior.IMemberContainer_Behavior;
 import jetbrains.mps.baseLanguage.search.VisibleClassifiersScope;
 import jetbrains.mps.smodel.presentation.NodePresentationUtil;
 import jetbrains.mps.baseLanguage.behavior.ConceptFunction_Behavior;
@@ -686,9 +687,13 @@ __switch__:
                 SNode operationExpression = SModelOperations.createNewNode(model, "jetbrains.mps.baseLanguage.structure.DotExpression", null);
                 SLinkOperations.setTarget(SLinkOperations.setNewChild(operationExpression, "operation", "jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation"), "baseMethodDeclaration", (item), false);
                 SNode thisExpression = SLinkOperations.setNewChild(operationExpression, "operand", "jetbrains.mps.baseLanguage.structure.ThisExpression");
-
+                System.out.println("Yarrr!!!!");
                 if (!(ListSequence.fromList(Classifier_Behavior.call_getVisibleMembers_1213877306257(SNodeOperations.getAncestor(_context.getParentNode(), "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false), _context.getParentNode(), IClassifiersSearchScope.INSTANCE_METHOD)).contains((item)))) {
-                  SLinkOperations.setTarget(thisExpression, "classConcept", SNodeOperations.getAncestor((item), "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false), false);
+                  SNode concept = SNodeOperations.getAncestor(_context.getParentNode(), "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false);
+                  while (concept != null && !(ListSequence.fromList(IMemberContainer_Behavior.call_getMembers_1213877531970(concept)).contains((item)))) {
+                    concept = SNodeOperations.getAncestor(concept, "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false);
+                  }
+                  SLinkOperations.setTarget(thisExpression, "classConcept", concept, false);
                 }
                 return operationExpression;
               }
@@ -1067,7 +1072,11 @@ __switch__:
                 SNode thisExpression = SLinkOperations.setNewChild(operationExpression, "operand", "jetbrains.mps.baseLanguage.structure.ThisExpression");
 
                 if (!(ListSequence.fromList(Classifier_Behavior.call_getVisibleMembers_1213877306257(SNodeOperations.getAncestor(_context.getParentNode(), "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false), _context.getParentNode(), IClassifiersSearchScope.INSTANCE_FIELD)).contains((item)))) {
-                  SLinkOperations.setTarget(thisExpression, "classConcept", SNodeOperations.getAncestor((item), "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false), false);
+                  SNode concept = SNodeOperations.getAncestor(_context.getParentNode(), "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false);
+                  while (concept != null && !(ListSequence.fromList(IMemberContainer_Behavior.call_getMembers_1213877531970(concept)).contains((item)))) {
+                    concept = SNodeOperations.getAncestor(concept, "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false);
+                  }
+                  SLinkOperations.setTarget(thisExpression, "classConcept", concept, false);
                 }
                 return operationExpression;
               }
