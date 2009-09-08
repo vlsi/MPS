@@ -15,11 +15,11 @@
  */
 package jetbrains.mps.uitests.sortedlist;
 
+import jetbrains.mps.workbench.dialogs.project.listsupport.ListsFactory.ListComparator;
 import jetbrains.mps.workbench.dialogs.project.listsupport.SortedList;
 import junit.framework.TestCase;
 
 import java.util.Collections;
-import java.util.Comparator;
 import java.util.LinkedList;
 
 public class SortedListTest extends TestCase {
@@ -104,7 +104,7 @@ public class SortedListTest extends TestCase {
     // this is probably not the best thing to do...
     int n = 10;
     LinkedList<Integer> numbers = new LinkedList<Integer>();
-    for (int i = 0; i < n; i++){
+    for (int i = 0; i < n; i++) {
       numbers.add(i);
     }
     Collections.shuffle(numbers);
@@ -120,9 +120,14 @@ public class SortedListTest extends TestCase {
     }
   }
 
-  private static class IntegerComparator implements Comparator<Integer> {
+  private static class IntegerComparator extends ListComparator<Integer> {
     public int compare(Integer o1, Integer o2) {
       return o1.compareTo(o2);
+    }
+
+    @Override
+    public boolean isEqual(Integer o1, Integer o2) {
+      return false;
     }
   }
 }
