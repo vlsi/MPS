@@ -4468,5 +4468,59 @@
       </node>
     </node>
   </node>
+  <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" id="7066926174333290857">
+    <property name="package" value="RunConfigs.Create" />
+    <link role="conceptDeclaration" targetNodeId="1.7066926174333289651" resolveInfo="CreateRunConfigStatement" />
+    <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="7066926174333292866">
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="7066926174333292869">
+        <property name="text" value="createRunConfig" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefCell" id="7066926174333292875">
+        <link role="relationDeclaration" targetNodeId="1.7066926174333292871" />
+        <node role="editorComponent" type="jetbrains.mps.lang.editor.structure.InlineEditorComponent" id="7066926174333292876">
+          <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Property" id="7066926174333292878">
+            <property name="readOnly" value="true" />
+            <link role="relationDeclaration" targetNodeId="14.1169194664001" resolveInfo="name" />
+          </node>
+        </node>
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="7066926174333292880">
+        <property name="text" value="(" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNodeList" id="7066926174333292901">
+        <link role="relationDeclaration" targetNodeId="1.7066926174333292874" />
+        <node role="cellLayout" type="jetbrains.mps.lang.editor.structure.CellLayout_VerticalGrid" id="7066926174333305998" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="7066926174333292882">
+        <property name="text" value=")" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="7066926174333292885">
+        <property name="text" value=";" />
+      </node>
+      <node role="cellLayout" type="jetbrains.mps.lang.editor.structure.CellLayout_Horizontal" id="7066926174333292868" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" id="7066926174333292943">
+    <property name="package" value="RunConfigs.Create" />
+    <link role="conceptDeclaration" targetNodeId="1.7066926174333292873" resolveInfo="RunConfigPropertyInstance" />
+    <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="7066926174333292945">
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefCell" id="7066926174333292948">
+        <link role="relationDeclaration" targetNodeId="1.7066926174333292904" />
+        <node role="editorComponent" type="jetbrains.mps.lang.editor.structure.InlineEditorComponent" id="7066926174333292949">
+          <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Property" id="7066926174333292951">
+            <property name="readOnly" value="true" />
+            <link role="relationDeclaration" targetNodeId="14.1169194664001" resolveInfo="name" />
+          </node>
+        </node>
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="7066926174333292954">
+        <property name="text" value="=" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode" id="7066926174333292959">
+        <link role="relationDeclaration" targetNodeId="1.7066926174333292903" />
+      </node>
+      <node role="cellLayout" type="jetbrains.mps.lang.editor.structure.CellLayout_Horizontal" id="7066926174333292947" />
+    </node>
+  </node>
 </model>
 

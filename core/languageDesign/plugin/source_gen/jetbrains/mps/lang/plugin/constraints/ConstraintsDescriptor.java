@@ -17,6 +17,7 @@ public class ConstraintsDescriptor implements IModelConstraints {
     ListSequence.fromList(this.myConstraints).addElement(new ActionDataParameterDeclaration_key_ReferentConstraint());
     ListSequence.fromList(this.myConstraints).addElement(new PropertyRefExpression_propertyDeclaration_ReferentConstraint());
     ListSequence.fromList(this.myConstraints).addElement(new ShortcutChange_action_ReferentConstraint());
+    ListSequence.fromList(this.myConstraints).addElement(new RunConfigPropertyInstance_property_ReferentConstraint());
   }
 
   public void unRegisterSelf(ModelConstraintsManager p0) {

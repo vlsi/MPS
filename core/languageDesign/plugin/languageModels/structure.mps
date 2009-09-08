@@ -3093,5 +3093,43 @@
       <link role="target" targetNodeId="2.1068431790191" resolveInfo="Expression" />
     </node>
   </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="7066926174333289651">
+    <property name="package" value="RunConfigs.Create" />
+    <property name="name" value="CreateRunConfigStatement" />
+    <link role="extends" targetNodeId="2.1068580123157" resolveInfo="Statement" />
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="7066926174333535759">
+      <property name="value" value="createRunConfig" />
+      <link role="conceptPropertyDeclaration" targetNodeId="6.1137473891462" resolveInfo="alias" />
+    </node>
+    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="7066926174333292874">
+      <property name="metaClass" value="aggregation" />
+      <property name="sourceCardinality" value="0..n" />
+      <property name="role" value="property" />
+      <link role="target" targetNodeId="7066926174333292873" resolveInfo="RunConfigParameterInstance" />
+    </node>
+    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="7066926174333292871">
+      <property name="metaClass" value="reference" />
+      <property name="role" value="runConfig" />
+      <property name="sourceCardinality" value="1" />
+      <link role="target" targetNodeId="7035278950562851062" resolveInfo="RunConfigurationDeclaration" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="7066926174333292873">
+    <property name="package" value="RunConfigs.Create" />
+    <property name="name" value="RunConfigPropertyInstance" />
+    <link role="extends" targetNodeId="6.1133920641626" resolveInfo="BaseConcept" />
+    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="7066926174333292904">
+      <property name="metaClass" value="reference" />
+      <property name="role" value="property" />
+      <property name="sourceCardinality" value="1" />
+      <link role="target" targetNodeId="1210179190070" resolveInfo="PersistentPropertyDeclaration" />
+    </node>
+    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="7066926174333292903">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="propertyValue" />
+      <property name="sourceCardinality" value="1" />
+      <link role="target" targetNodeId="2.1068431790191" resolveInfo="Expression" />
+    </node>
+  </node>
 </model>
 

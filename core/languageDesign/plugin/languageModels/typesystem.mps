@@ -1758,5 +1758,59 @@
       <link role="concept" targetNodeId="4.6586153900349324059" resolveInfo="ActionListStatement" />
     </node>
   </node>
+  <node type="jetbrains.mps.lang.typesystem.structure.InferenceRule" id="7066926174333305999">
+    <property name="name" value="typeof_CreateRunConfigStatement" />
+    <property name="package" value="RunConfigs.Create" />
+    <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="7066926174333306000">
+      <node role="statement" type="jetbrains.mps.baseLanguage.collections.structure.ForEachStatement" id="7066926174333307522">
+        <node role="variable" type="jetbrains.mps.baseLanguage.collections.structure.ForEachVariable" id="7066926174333307523">
+          <property name="name" value="property" />
+        </node>
+        <node role="inputSequence" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="7066926174333307534">
+          <node role="operand" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference" id="7066926174333307527">
+            <link role="applicableNode" targetNodeId="7066926174333306001" resolveInfo="statement" />
+          </node>
+          <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkListAccess" id="7066926174333307539">
+            <link role="link" targetNodeId="4.7066926174333292874" />
+          </node>
+        </node>
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="7066926174333307525">
+          <node role="statement" type="jetbrains.mps.lang.typesystem.structure.CreateStrongLessThanInequationStatement" id="7066926174333307556">
+            <node role="rightExpression" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause" id="7066926174333307560">
+              <node role="normalType" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="7066926174333307574">
+                <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="7066926174333307564">
+                  <node role="operand" type="jetbrains.mps.baseLanguage.collections.structure.ForEachVariableReference" id="7066926174333307561">
+                    <link role="variable" targetNodeId="7066926174333307523" resolveInfo="property" />
+                  </node>
+                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="7066926174333307571">
+                    <link role="link" targetNodeId="4.7066926174333292904" />
+                  </node>
+                </node>
+                <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="7066926174333307584">
+                  <link role="link" targetNodeId="6.1068431790188" />
+                </node>
+              </node>
+            </node>
+            <node role="leftExpression" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause" id="7066926174333307559">
+              <node role="normalType" type="jetbrains.mps.lang.typesystem.structure.TypeOfExpression" id="7066926174333307542">
+                <node role="term" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="7066926174333307547">
+                  <node role="operand" type="jetbrains.mps.baseLanguage.collections.structure.ForEachVariableReference" id="7066926174333307544">
+                    <link role="variable" targetNodeId="7066926174333307523" resolveInfo="property" />
+                  </node>
+                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="7066926174333307554">
+                    <link role="link" targetNodeId="4.7066926174333292903" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="applicableNode" type="jetbrains.mps.lang.typesystem.structure.ConceptReference" id="7066926174333306001">
+      <property name="name" value="statement" />
+      <link role="concept" targetNodeId="4.7066926174333289651" resolveInfo="CreateRunConfigStatement" />
+    </node>
+  </node>
 </model>
 
