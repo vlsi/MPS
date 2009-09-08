@@ -55,7 +55,7 @@
         <!--For file selection dialog-->
         <getDataRule key="context.ProjectFileDirectory" implementationClass="jetbrains.mps.workbench.dataExtraction.fileChooser.ProjectFileRule"/>
         <!--For run config creation with action-->
-        <getDataRule key="Location" implementationClass="jetbrains.mps.workbench.dataExtraction.fileChooser.LocationRule"/>
+        <getDataRule key="Location" implementationClass="jetbrains.mps.workbench.dataExtraction.runConfig.LocationRule"/>
 
         <getDataRule key="MPS_MPSProject" implementationClass="jetbrains.mps.workbench.dataExtraction.MPSProjectRule"/>
         <getDataRule key="MPS_Frame" implementationClass="jetbrains.mps.workbench.dataExtraction.FrameRule"/>
