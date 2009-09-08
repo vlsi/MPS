@@ -8,6 +8,7 @@ import java.util.TreeSet;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import org.jdom.Element;
+import java.util.Collections;
 
 public class RootDependencies implements Comparable<RootDependencies> {
   private static final String CLASS_NAME = "className";
@@ -59,11 +60,11 @@ public class RootDependencies implements Comparable<RootDependencies> {
   }
 
   public Set<String> getDependencies() {
-    return this.myDependNodes;
+    return Collections.unmodifiableSet(this.myDependNodes);
   }
 
   public Set<String> getExtends() {
-    return this.myExtendsNodes;
+    return Collections.unmodifiableSet(this.myExtendsNodes);
   }
 
   public String getClassName() {

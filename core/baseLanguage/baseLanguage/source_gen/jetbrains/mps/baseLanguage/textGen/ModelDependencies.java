@@ -7,6 +7,7 @@ import java.util.Set;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.TreeSet;
 import jetbrains.mps.smodel.SModel;
+import java.util.Collections;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.watching.ModelChangesWatcher;
 import org.jdom.Element;
@@ -33,7 +34,7 @@ public class ModelDependencies {
   }
 
   public Set<RootDependencies> getDependencies() {
-    return this.myDependencies;
+    return Collections.unmodifiableSet(this.myDependencies);
   }
 
   public void setModel(SModel model) {

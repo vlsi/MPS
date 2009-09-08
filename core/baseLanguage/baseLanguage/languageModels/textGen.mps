@@ -9130,12 +9130,16 @@
       </node>
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="3849681456765796876" />
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="3849681456765796877">
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="3849681456765796884">
-          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="3849681456765796886">
-            <node role="operation" type="jetbrains.mps.baseLanguage.structure.FieldReferenceOperation" id="3849681456765796887">
-              <link role="fieldDeclaration" targetNodeId="7159280687324563236" resolveInfo="myDependencies" />
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1862007381684644042">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1862007381684644053">
+            <link role="classConcept" targetNodeId="12.~Collections" resolveInfo="Collections" />
+            <link role="baseMethodDeclaration" targetNodeId="12.~Collections.unmodifiableSet(java.util.Set):java.util.Set" resolveInfo="unmodifiableSet" />
+            <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1862007381684644054">
+              <node role="operation" type="jetbrains.mps.baseLanguage.structure.FieldReferenceOperation" id="1862007381684644055">
+                <link role="fieldDeclaration" targetNodeId="7159280687324563236" resolveInfo="myDependencies" />
+              </node>
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="1862007381684644056" />
             </node>
-            <node role="operand" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="3849681456765796888" />
           </node>
         </node>
       </node>
@@ -9610,11 +9614,15 @@
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="3849681456765796950" />
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="3849681456765796951">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="3849681456765797048">
-          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="3849681456765797050">
-            <node role="operation" type="jetbrains.mps.baseLanguage.structure.FieldReferenceOperation" id="3849681456765797051">
-              <link role="fieldDeclaration" targetNodeId="7159280687324564852" resolveInfo="myDependNodes" />
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1862007381684647196">
+            <link role="baseMethodDeclaration" targetNodeId="12.~Collections.unmodifiableSet(java.util.Set):java.util.Set" resolveInfo="unmodifiableSet" />
+            <link role="classConcept" targetNodeId="12.~Collections" resolveInfo="Collections" />
+            <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1862007381684647198">
+              <node role="operation" type="jetbrains.mps.baseLanguage.structure.FieldReferenceOperation" id="1862007381684647199">
+                <link role="fieldDeclaration" targetNodeId="7159280687324564852" resolveInfo="myDependNodes" />
+              </node>
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="1862007381684647200" />
             </node>
-            <node role="operand" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="3849681456765797052" />
           </node>
         </node>
       </node>
@@ -9627,11 +9635,15 @@
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="7493607813808730316" />
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="7493607813808730317">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="7493607813808730332">
-          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="7493607813808730334">
-            <node role="operation" type="jetbrains.mps.baseLanguage.structure.FieldReferenceOperation" id="7493607813808730335">
-              <link role="fieldDeclaration" targetNodeId="7493607813808730230" resolveInfo="myExtendsNodes" />
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1862007381684647205">
+            <link role="baseMethodDeclaration" targetNodeId="12.~Collections.unmodifiableSet(java.util.Set):java.util.Set" resolveInfo="unmodifiableSet" />
+            <link role="classConcept" targetNodeId="12.~Collections" resolveInfo="Collections" />
+            <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1862007381684647207">
+              <node role="operation" type="jetbrains.mps.baseLanguage.structure.FieldReferenceOperation" id="1862007381684647208">
+                <link role="fieldDeclaration" targetNodeId="7493607813808730230" resolveInfo="myExtendsNodes" />
+              </node>
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="1862007381684647209" />
             </node>
-            <node role="operand" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="7493607813808730336" />
           </node>
         </node>
       </node>
