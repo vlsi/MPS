@@ -154,8 +154,8 @@ public class RunConfigManager implements ProjectComponent {
     return (RunManagerImpl) RunManagerEx.getInstanceEx(myProject);
   }
 
-  private ArrayList<ConfigurationType> createConfigs(MPSProject project) {
-    final Map<IModule, ConfigurationType> conTypes = new HashMap<IModule, ConfigurationType>();
+  private List<ConfigurationType> createConfigs(MPSProject project) {
+    final List<ConfigurationType> conTypes = new ArrayList<ConfigurationType>();
 
     Set<Language> languages = new HashSet<Language>();
     for (Solution s : project.getProjectSolutions()) {
@@ -176,12 +176,12 @@ public class RunConfigManager implements ProjectComponent {
           String confName = language.getPluginModelDescriptor().getLongName() + "." + configName;
           ConfigurationType configurationType = createConfig(language, confName);
           if (configurationType == null) continue;
-          conTypes.put(language, configurationType);
+          conTypes.add(configurationType);
         }
       }
     }
 
-    return new ArrayList<ConfigurationType>(conTypes.values());
+    return conTypes;
   }
 
   private ConfigurationType createConfig(IModule module, String className) {
