@@ -131,7 +131,11 @@ public class FileGenerationUtil {
   }
 
   private static void fillDebugInfo(DebugInfo info, SNode outputNode, TextGenerationResult result) {
-    for (SNode out : result.getPositions().keySet()) {
+    Map<SNode, PositionInfo> positions = result.getPositions();
+    if (positions == null) {
+      return;
+    }
+    for (SNode out : positions.keySet()) {
       SNode input = out;
       while (input != null && (input.getModel().getModelDescriptor() == null || input.getModel().getModelDescriptor().isTransient())) {
         input = (SNode) input.getUserObject(TemplateQueryContext.ORIGINAL_INPUT_NODE);
