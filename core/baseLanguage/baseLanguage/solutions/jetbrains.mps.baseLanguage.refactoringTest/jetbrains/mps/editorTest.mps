@@ -5084,5 +5084,73 @@
       </node>
     </node>
   </node>
+  <node type="jetbrains.mps.lang.test.structure.EditorTestCase" id="6615429292103589151">
+    <property name="package" value="Memento" />
+    <property name="name" value="RestoringSThintCell" />
+    <property name="description" value="If we restore cell whitch deleted, we shouldn't restore selection" />
+    <node role="nodeToEdit" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="6615429292103589154">
+      <property name="name" value="method" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="6615429292103589155" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="6615429292103589156" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="6615429292103589157">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="6615429292103628149">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="6615429292103628150">
+            <property name="name" value="variable" />
+            <node role="type" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="6615429292103628151" />
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="6615429292103628156">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="6615429292103628157">
+            <link role="variableDeclaration" targetNodeId="6615429292103628150" resolveInfo="variable" />
+            <node role="testNode$attribute" type="jetbrains.mps.lang.test.structure.AnonymousCellAnnotation" id="6615429292103628168">
+              <property name="isLastPosition" value="true" />
+              <property name="useLabelSelection" value="true" />
+              <property name="selectionStart" value="8" />
+              <property name="selectionEnd" value="8" />
+              <property name="cellId" value="property_name" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="result" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="6615429292103589158">
+      <property name="name" value="method" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="6615429292103589159" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="6615429292103589160" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="6615429292103589161">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="6615429292103628152">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="6615429292103628153">
+            <property name="name" value="variable" />
+            <node role="type" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="6615429292103628154" />
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="6615429292103628159">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="6615429292103628160">
+            <link role="variableDeclaration" targetNodeId="6615429292103628153" resolveInfo="variable" />
+            <node role="testNode$attribute" type="jetbrains.mps.lang.test.structure.AnonymousCellAnnotation" id="5995251966314006544">
+              <property name="isLastPosition" value="true" />
+              <property name="useLabelSelection" value="true" />
+              <property name="selectionStart" value="7" />
+              <property name="selectionEnd" value="7" />
+              <property name="cellId" value="property_name" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="code" type="jetbrains.mps.baseLanguage.structure.StatementList" id="6615429292103628165">
+      <node role="statement" type="jetbrains.mps.lang.test.structure.TypeKeyStatement" id="6615429292103628166">
+        <property name="keys" value="+" />
+      </node>
+      <node role="statement" type="jetbrains.mps.lang.test.structure.PressKeyStatement" id="5995251966313996626">
+        <node role="keyStrokes" type="jetbrains.mps.lang.plugin.structure.KeyMapKeystroke" id="5995251966313996627">
+          <property name="keycode" value="VK_BACK_SPACE" />
+        </node>
+        <node role="keyStrokes" type="jetbrains.mps.lang.plugin.structure.KeyMapKeystroke" id="584010906491771283">
+          <property name="keycode" value="VK_BACK_SPACE" />
+        </node>
+      </node>
+    </node>
+  </node>
 </model>
 

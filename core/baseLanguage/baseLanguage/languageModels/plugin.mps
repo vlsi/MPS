@@ -10871,6 +10871,7 @@
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1220539339111">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" id="1220539646573">
           <link role="constructorDeclaration" targetNodeId="1220377860700" resolveInfo="_ExtractMethodRefactoring" />
+          <link role="baseMethodDeclaration" targetNodeId="1220377860700" resolveInfo="ExtractMethodRefactoring" />
           <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1220539649996">
             <link role="variableDeclaration" targetNodeId="1220539593057" resolveInfo="params" />
           </node>
