@@ -277,7 +277,9 @@
     <link role="conceptDeclaration" targetNodeId="1.1068580123157" resolveInfo="Statement" />
     <node role="builderBlock" type="jetbrains.mps.lang.dataFlow.structure.BuilderBlock" id="1206459382667">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1206459382668">
-        <node role="statement" type="jetbrains.mps.lang.dataFlow.structure.EmitNopStatement" id="1206459387826" />
+        <node role="statement" type="jetbrains.mps.lang.dataFlow.structure.EmitMayBeUnreachable" id="8196258104472403912">
+          <node role="emitStatement" type="jetbrains.mps.lang.dataFlow.structure.EmitNopStatement" id="1206459387826" />
+        </node>
       </node>
     </node>
   </node>
