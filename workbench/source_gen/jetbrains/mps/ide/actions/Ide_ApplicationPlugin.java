@@ -74,6 +74,7 @@ public class Ide_ApplicationPlugin extends BaseApplicationPlugin {
     this.insertGroupIntoAnother(EditorPopup_ActionGroup.ID, "VcsGroup", EditorPopup_ActionGroup.LABEL_ID_vcs);
     this.insertGroupIntoAnother(LanguageActions_ActionGroup.ID, "VcsGroup", LanguageActions_ActionGroup.LABEL_ID_vcs);
     this.insertGroupIntoAnother(EditorPopup_ActionGroup.ID, "RunContextGroup", null);
+    this.insertGroupIntoAnother(NodeActions_ActionGroup.ID, "RunContextGroup", null);
   }
 
   public void insertGroupIntoAnother(String toId, String whatId, String labelName) {

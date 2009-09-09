@@ -26793,6 +26793,9 @@
     <node role="modifier" type="jetbrains.mps.lang.plugin.structure.ModificationStatement" id="6267318242960707992">
       <link role="modifiedGroup" targetNodeId="1204991231476" resolveInfo="EditorPopup" />
     </node>
+    <node role="modifier" type="jetbrains.mps.lang.plugin.structure.ModificationStatement" id="1177638545603697297">
+      <link role="modifiedGroup" targetNodeId="1204991215587" resolveInfo="NodeActions" />
+    </node>
   </node>
 </model>
 
