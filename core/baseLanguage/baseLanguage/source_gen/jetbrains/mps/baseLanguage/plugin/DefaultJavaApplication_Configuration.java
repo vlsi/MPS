@@ -109,7 +109,7 @@ public class DefaultJavaApplication_Configuration extends BaseRunConfig {
           Project project = MPSDataKeys.PROJECT.getData(environment.getDataContext());
           MPSProject mpsProject = project.getComponent(MPSProjectHolder.class).getMPSProject();
 
-          if (DefaultJavaApplication_Configuration.this.getStateObject().makeBeforeRun) {
+          if (DefaultJavaApplication_Configuration.this.getStateObject().parameters.getMake()) {
             GeneratorManager genManager = mpsProject.getComponent(GeneratorManager.class);
             final Wrappers._T<SModelDescriptor> md = new Wrappers._T<SModelDescriptor>();
             ModelAccess.instance().runReadAction(new Runnable() {
@@ -136,7 +136,7 @@ public class DefaultJavaApplication_Configuration extends BaseRunConfig {
           final Wrappers._T<Process> process = new Wrappers._T<Process>();
           ModelAccess.instance().runReadAction(new Runnable() {
             public void run() {
-              process.value = classRunner.run(node.value, DefaultJavaApplication_Configuration.this.getStateObject().programParams, DefaultJavaApplication_Configuration.this.getStateObject().vmParams, DefaultJavaApplication_Configuration.this.getStateObject().workingDir);
+              process.value = classRunner.run(node.value, DefaultJavaApplication_Configuration.this.getStateObject().parameters.getProgramParameters(), DefaultJavaApplication_Configuration.this.getStateObject().parameters.getVMParameters(), DefaultJavaApplication_Configuration.this.getStateObject().parameters.getWorkingDirectory());
             }
           });
 
@@ -237,10 +237,7 @@ public class DefaultJavaApplication_Configuration extends BaseRunConfig {
   public static class MyState implements Cloneable {
     public String nodeId;
     public String modelId;
-    public String programParams;
-    public String vmParams;
-    public String workingDir;
-    public boolean makeBeforeRun;
+    public RunParameters parameters;
 
     public MyState() {
     }
