@@ -12,6 +12,8 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
+import com.intellij.util.containers.ContainerUtil;
+import com.intellij.openapi.extensions.Extensions;
 
 public class JavaApplication_ConfigurationType implements ConfigurationType {
   private static final Icon ICON = IconManager.loadIcon(MacrosUtil.expandPath("${language_descriptor}/icons/runApp.png", "jetbrains.mps.baseLanguage"), true);
@@ -38,5 +40,9 @@ public class JavaApplication_ConfigurationType implements ConfigurationType {
   @NotNull
   public String getId() {
     return "JavaApplication";
+  }
+
+  public static JavaApplication_ConfigurationType getInstance() {
+    return ContainerUtil.findInstance(Extensions.getExtensions(CONFIGURATION_TYPE_EP), JavaApplication_ConfigurationType.class);
   }
 }
