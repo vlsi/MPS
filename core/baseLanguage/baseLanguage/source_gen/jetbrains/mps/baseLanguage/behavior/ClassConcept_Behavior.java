@@ -111,7 +111,7 @@ public class ClassConcept_Behavior {
 
   public static SNode getContextClass_8008512149545173402(SNode expr) {
     SNode contextNode = expr;
-    SNode parent = SNodeOperations.getParent(expr);
+    SNode parent = SNodeOperations.getAncestor(expr, "jetbrains.mps.baseLanguage.structure.Classifier", false, false);
     if (SNodeOperations.isInstanceOf(parent, "jetbrains.mps.baseLanguage.structure.AnonymousClass")) {
       for (SNode param : SLinkOperations.getTargets(SNodeOperations.cast(parent, "jetbrains.mps.baseLanguage.structure.AnonymousClass"), "parameter", true)) {
         if (ListSequence.fromList(SNodeOperations.getDescendants(param, null, true, new String[]{})).contains(expr)) {

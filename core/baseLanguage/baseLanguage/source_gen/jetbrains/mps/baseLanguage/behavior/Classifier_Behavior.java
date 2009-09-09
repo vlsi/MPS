@@ -145,7 +145,7 @@ public class Classifier_Behavior {
   }
 
   public static List<SNode> getAssesableMembers_669019847198843527(SNode contextNode, int constraint) {
-    SNode classifier = SNodeOperations.getAncestor(contextNode, "jetbrains.mps.baseLanguage.structure.Classifier", false, false);
+    SNode classifier = ClassConcept_Behavior.getContextClass_8008512149545173402(contextNode);
     List<SNode> result = new ArrayList<SNode>();
     while (classifier != null) {
       ListSequence.fromList(result).addSequence(ListSequence.fromList((List<SNode>)Classifier_Behavior.call_getVisibleMembers_1213877306257(classifier, contextNode, constraint)));

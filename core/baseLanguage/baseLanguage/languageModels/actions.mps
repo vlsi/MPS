@@ -2402,15 +2402,10 @@
                 <node role="condition" type="jetbrains.mps.baseLanguage.structure.NotExpression" id="3238577964720301964">
                   <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="3238577964720301965">
                     <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="3238577964720301966">
-                      <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="3238577964720301967">
-                        <node role="operand" type="jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_parentNode" id="3238577964720301968" />
-                        <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_GetAncestorOperation" id="3238577964720301969">
-                          <node role="parameter" type="jetbrains.mps.lang.smodel.structure.OperationParm_Concept" id="3238577964720301970">
-                            <node role="conceptArgument" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" id="3238577964720301971">
-                              <link role="conceptDeclaration" targetNodeId="1.1068390468198" resolveInfo="ClassConcept" />
-                            </node>
-                          </node>
-                        </node>
+                      <node role="operand" type="jetbrains.mps.lang.smodel.structure.StaticConceptMethodCall" id="6949097880357641878">
+                        <link role="concept" targetNodeId="1.1068390468198" resolveInfo="ClassConcept" />
+                        <link role="baseMethodDeclaration" targetNodeId="51.8008512149545173402" resolveInfo="getContextClass" />
+                        <node role="actualArgument" type="jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_parentNode" id="6949097880357641879" />
                       </node>
                       <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="3238577964720301972">
                         <link role="baseMethodDeclaration" targetNodeId="51.1213877306257" resolveInfo="getVisibleMembers" />
@@ -2582,6 +2577,13 @@
                   </node>
                 </node>
               </node>
+              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="6949097880357487932">
+                <node role="expression" type="jetbrains.mps.lang.smodel.structure.StaticConceptMethodCall" id="6949097880357487933">
+                  <link role="concept" targetNodeId="1.1068390468198" resolveInfo="ClassConcept" />
+                  <link role="baseMethodDeclaration" targetNodeId="51.8008512149545173402" resolveInfo="getContextClass" />
+                  <node role="actualArgument" type="jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_parentNode" id="6949097880357487934" />
+                </node>
+              </node>
               <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="3238577964720301977">
                 <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="3238577964720301978">
                   <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="429877441869199160">
@@ -2669,15 +2671,10 @@
                 <node role="condition" type="jetbrains.mps.baseLanguage.structure.NotExpression" id="3238577964720301990">
                   <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="3238577964720301991">
                     <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="3238577964720301992">
-                      <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="3238577964720301993">
-                        <node role="operand" type="jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_parentNode" id="3238577964720301994" />
-                        <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_GetAncestorOperation" id="3238577964720301995">
-                          <node role="parameter" type="jetbrains.mps.lang.smodel.structure.OperationParm_Concept" id="3238577964720301996">
-                            <node role="conceptArgument" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" id="3238577964720301997">
-                              <link role="conceptDeclaration" targetNodeId="1.1068390468198" resolveInfo="ClassConcept" />
-                            </node>
-                          </node>
-                        </node>
+                      <node role="operand" type="jetbrains.mps.lang.smodel.structure.StaticConceptMethodCall" id="6949097880357641872">
+                        <link role="baseMethodDeclaration" targetNodeId="51.8008512149545173402" resolveInfo="getContextClass" />
+                        <link role="concept" targetNodeId="1.1068390468198" resolveInfo="ClassConcept" />
+                        <node role="actualArgument" type="jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_parentNode" id="6949097880357641873" />
                       </node>
                       <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="3238577964720301998">
                         <link role="baseMethodDeclaration" targetNodeId="51.1213877306257" resolveInfo="getVisibleMembers" />

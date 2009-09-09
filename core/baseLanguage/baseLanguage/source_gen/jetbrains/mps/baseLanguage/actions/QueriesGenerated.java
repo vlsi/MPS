@@ -37,6 +37,7 @@ import jetbrains.mps.smodel.action.DefaultChildNodeSubstituteAction;
 import java.util.regex.Pattern;
 import java.util.regex.Matcher;
 import jetbrains.mps.baseLanguage.search.IClassifiersSearchScope;
+import jetbrains.mps.baseLanguage.behavior.ClassConcept_Behavior;
 import jetbrains.mps.baseLanguage.behavior.IMemberContainer_Behavior;
 import jetbrains.mps.baseLanguage.search.VisibleClassifiersScope;
 import jetbrains.mps.smodel.presentation.NodePresentationUtil;
@@ -687,7 +688,8 @@ __switch__:
                 SNode operationExpression = SModelOperations.createNewNode(model, "jetbrains.mps.baseLanguage.structure.DotExpression", null);
                 SLinkOperations.setTarget(SLinkOperations.setNewChild(operationExpression, "operation", "jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation"), "baseMethodDeclaration", (item), false);
                 SNode thisExpression = SLinkOperations.setNewChild(operationExpression, "operand", "jetbrains.mps.baseLanguage.structure.ThisExpression");
-                if (!(ListSequence.fromList(Classifier_Behavior.call_getVisibleMembers_1213877306257(SNodeOperations.getAncestor(_context.getParentNode(), "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false), _context.getParentNode(), IClassifiersSearchScope.INSTANCE_METHOD)).contains((item)))) {
+                ClassConcept_Behavior.getContextClass_8008512149545173402(_context.getParentNode());
+                if (!(ListSequence.fromList(Classifier_Behavior.call_getVisibleMembers_1213877306257(ClassConcept_Behavior.getContextClass_8008512149545173402(_context.getParentNode()), _context.getParentNode(), IClassifiersSearchScope.INSTANCE_METHOD)).contains((item)))) {
                   SNode concept = SNodeOperations.getAncestor(_context.getParentNode(), "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false);
                   while (concept != null && !(ListSequence.fromList(IMemberContainer_Behavior.call_getMembers_1213877531970(concept)).contains((item)))) {
                     concept = SNodeOperations.getAncestor(concept, "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false);
@@ -1070,7 +1072,7 @@ __switch__:
                 SLinkOperations.setTarget(SLinkOperations.setNewChild(operationExpression, "operation", "jetbrains.mps.baseLanguage.structure.FieldReferenceOperation"), "fieldDeclaration", (item), false);
                 SNode thisExpression = SLinkOperations.setNewChild(operationExpression, "operand", "jetbrains.mps.baseLanguage.structure.ThisExpression");
 
-                if (!(ListSequence.fromList(Classifier_Behavior.call_getVisibleMembers_1213877306257(SNodeOperations.getAncestor(_context.getParentNode(), "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false), _context.getParentNode(), IClassifiersSearchScope.INSTANCE_FIELD)).contains((item)))) {
+                if (!(ListSequence.fromList(Classifier_Behavior.call_getVisibleMembers_1213877306257(ClassConcept_Behavior.getContextClass_8008512149545173402(_context.getParentNode()), _context.getParentNode(), IClassifiersSearchScope.INSTANCE_FIELD)).contains((item)))) {
                   SNode concept = SNodeOperations.getAncestor(_context.getParentNode(), "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false);
                   while (concept != null && !(ListSequence.fromList(IMemberContainer_Behavior.call_getMembers_1213877531970(concept)).contains((item)))) {
                     concept = SNodeOperations.getAncestor(concept, "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false);
