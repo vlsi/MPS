@@ -307,10 +307,10 @@
     <link role="conceptDeclaration" targetNodeId="1.7066926174333292873" resolveInfo="RunConfigPropertyInstance" />
     <node role="builderBlock" type="jetbrains.mps.lang.dataFlow.structure.BuilderBlock" id="8415911927033508135">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="8415911927033508136">
-        <node role="statement" type="jetbrains.mps.lang.dataFlow.structure.EmitReadStatement" id="8415911927033508137">
-          <node role="variable" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="8415911927033508140">
-            <node role="operand" type="jetbrains.mps.lang.dataFlow.structure.NodeParameter" id="8415911927033508139" />
-            <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="8415911927033508144">
+        <node role="statement" type="jetbrains.mps.lang.dataFlow.structure.EmitCodeForStatement" id="6267318242960589407">
+          <node role="codeFor" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="6267318242960589409">
+            <node role="operand" type="jetbrains.mps.lang.dataFlow.structure.NodeParameter" id="6267318242960589410" />
+            <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="6267318242960589411">
               <link role="link" targetNodeId="1.7066926174333292903" />
             </node>
           </node>
@@ -320,12 +320,6 @@
             <node role="operand" type="jetbrains.mps.lang.dataFlow.structure.NodeParameter" id="8415911927033508148" />
             <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="8415911927033508153">
               <link role="link" targetNodeId="1.7066926174333292904" />
-            </node>
-          </node>
-          <node role="value" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="8415911927033508155">
-            <node role="operand" type="jetbrains.mps.lang.dataFlow.structure.NodeParameter" id="8415911927033508154" />
-            <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="8415911927033508159">
-              <link role="link" targetNodeId="1.7066926174333292903" />
             </node>
           </node>
         </node>
