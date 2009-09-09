@@ -42123,26 +42123,32 @@
           </node>
         </node>
       </node>
-      <node role="content" type="jetbrains.mps.uiLanguage.structure.ComponentInstance" id="3898325814825245720">
-        <link role="componentDeclaration" targetNodeId="2v.1202464198724" resolveInfo="TextField" />
-        <node role="content" type="jetbrains.mps.uiLanguage.structure.LayoutConstraint" id="3898325814825245721">
-          <node role="constraint" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="3898325814825245728">
-            <link role="baseMethodDeclaration" targetNodeId="3898325814825245642" resolveInfo="createFieldConstraints" />
+      <node role="content" type="jetbrains.mps.uiLanguage.structure.ComponentInstance" id="5001211796553488843">
+        <link role="componentDeclaration" targetNodeId="5001211796553476117" resolveInfo="ParameterBrowser" />
+        <node role="content" type="jetbrains.mps.uiLanguage.structure.LayoutConstraint" id="5001211796553488844">
+          <node role="constraint" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="5001211796553488847">
+            <link role="baseMethodDeclaration" targetNodeId="3898325814825245677" resolveInfo="createPanelConstraints" />
             <link role="classConcept" targetNodeId="3898325814825245636" resolveInfo="LayoutUtil" />
-            <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="3898325814825245730">
+            <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="5001211796553488848">
               <property name="value" value="1" />
             </node>
           </node>
         </node>
-        <node role="content" type="jetbrains.mps.uiLanguage.structure.AttributeValue" id="3898325814825245723">
-          <link role="attribute" targetNodeId="2v.1202464208353" resolveInfo="text" />
-          <node role="value" type="jetbrains.mps.uiLanguage.structure.BindExpression" id="3898325814825245724">
-            <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="3898325814825245725">
-              <node role="operand" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpression" id="3898325814825245726" />
-              <node role="operation" type="jetbrains.mps.uiLanguage.structure.AttributeReferenceOperation" id="3898325814825245727">
+        <node role="content" type="jetbrains.mps.uiLanguage.structure.AttributeValue" id="5001211796553488850">
+          <link role="attribute" targetNodeId="5001211796553488834" resolveInfo="text" />
+          <node role="value" type="jetbrains.mps.uiLanguage.structure.BindExpression" id="5001211796553488861">
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="5001211796553488863">
+              <node role="operand" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpression" id="5001211796553488864" />
+              <node role="operation" type="jetbrains.mps.uiLanguage.structure.AttributeReferenceOperation" id="5001211796553488865">
                 <link role="member" targetNodeId="5360151489983366024" resolveInfo="myVMParams" />
               </node>
             </node>
+          </node>
+        </node>
+        <node role="content" type="jetbrains.mps.uiLanguage.structure.AttributeValue" id="5001211796553488854">
+          <link role="attribute" targetNodeId="5001211796553488839" resolveInfo="dialogCaption" />
+          <node role="value" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="5001211796553488856">
+            <property name="value" value="VM Parameters" />
           </node>
         </node>
       </node>
@@ -42164,26 +42170,32 @@
           </node>
         </node>
       </node>
-      <node role="content" type="jetbrains.mps.uiLanguage.structure.ComponentInstance" id="3898325814825245736">
-        <link role="componentDeclaration" targetNodeId="2v.1202464198724" resolveInfo="TextField" />
-        <node role="content" type="jetbrains.mps.uiLanguage.structure.LayoutConstraint" id="3898325814825245737">
-          <node role="constraint" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="3898325814825245770">
-            <link role="baseMethodDeclaration" targetNodeId="3898325814825245642" resolveInfo="createFieldConstraints" />
+      <node role="content" type="jetbrains.mps.uiLanguage.structure.ComponentInstance" id="5001211796553488867">
+        <link role="componentDeclaration" targetNodeId="5001211796553476117" resolveInfo="ParameterBrowser" />
+        <node role="content" type="jetbrains.mps.uiLanguage.structure.LayoutConstraint" id="5001211796553488868">
+          <node role="constraint" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="5001211796553488869">
             <link role="classConcept" targetNodeId="3898325814825245636" resolveInfo="LayoutUtil" />
-            <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="3898325814825245772">
+            <link role="baseMethodDeclaration" targetNodeId="3898325814825245677" resolveInfo="createPanelConstraints" />
+            <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="5001211796553488879">
               <property name="value" value="3" />
             </node>
           </node>
         </node>
-        <node role="content" type="jetbrains.mps.uiLanguage.structure.AttributeValue" id="3898325814825245739">
-          <link role="attribute" targetNodeId="2v.1202464208353" resolveInfo="text" />
-          <node role="value" type="jetbrains.mps.uiLanguage.structure.BindExpression" id="3898325814825245740">
-            <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="3898325814825245741">
-              <node role="operand" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpression" id="3898325814825245742" />
-              <node role="operation" type="jetbrains.mps.uiLanguage.structure.AttributeReferenceOperation" id="3898325814825245743">
+        <node role="content" type="jetbrains.mps.uiLanguage.structure.AttributeValue" id="5001211796553488871">
+          <link role="attribute" targetNodeId="5001211796553488834" resolveInfo="text" />
+          <node role="value" type="jetbrains.mps.uiLanguage.structure.BindExpression" id="5001211796553488872">
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="5001211796553488873">
+              <node role="operand" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpression" id="5001211796553488874" />
+              <node role="operation" type="jetbrains.mps.uiLanguage.structure.AttributeReferenceOperation" id="5001211796553488878">
                 <link role="member" targetNodeId="5360151489983366022" resolveInfo="myProgramParams" />
               </node>
             </node>
+          </node>
+        </node>
+        <node role="content" type="jetbrains.mps.uiLanguage.structure.AttributeValue" id="5001211796553488876">
+          <link role="attribute" targetNodeId="5001211796553488839" resolveInfo="dialogCaption" />
+          <node role="value" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="5001211796553488877">
+            <property name="value" value="Program Parameters" />
           </node>
         </node>
       </node>
@@ -45276,6 +45288,25 @@
           </node>
         </node>
       </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.uiLanguage.structure.ComponentDeclaration" id="5001211796553476117">
+    <property name="package" value="run" />
+    <property name="stub" value="true" />
+    <property name="name" value="ParameterBrowser" />
+    <link role="extendedComponent" targetNodeId="2v.1202816402995" resolveInfo="Panel" />
+    <link role="mapTo" targetNodeId="65.~RawCommandLineEditor" resolveInfo="RawCommandLineEditor" />
+  </node>
+  <node type="jetbrains.mps.uiLanguage.structure.ComponentController" id="5001211796553488833">
+    <property name="package" value="run" />
+    <link role="component" targetNodeId="5001211796553476117" resolveInfo="ParameterBrowser" />
+    <node role="attribute" type="jetbrains.mps.uiLanguage.structure.AttributeDeclaration" id="5001211796553488834">
+      <property name="name" value="text" />
+      <node role="type" type="jetbrains.mps.baseLanguage.structure.StringType" id="5001211796553488836" />
+    </node>
+    <node role="attribute" type="jetbrains.mps.uiLanguage.structure.AttributeDeclaration" id="5001211796553488839">
+      <property name="name" value="dialogCaption" />
+      <node role="type" type="jetbrains.mps.baseLanguage.structure.StringType" id="5001211796553488841" />
     </node>
   </node>
 </model>
