@@ -806,6 +806,14 @@
     <link role="conceptDeclaration" targetNodeId="1.1164991038168" resolveInfo="ThrowStatement" />
     <node role="builderBlock" type="jetbrains.mps.lang.dataFlow.structure.BuilderBlock" id="1206464650341">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1206464650342">
+        <node role="statement" type="jetbrains.mps.lang.dataFlow.structure.EmitCodeForStatement" id="2670735820731467184">
+          <node role="codeFor" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="2670735820731467186">
+            <node role="operand" type="jetbrains.mps.lang.dataFlow.structure.NodeParameter" id="2670735820731467187" />
+            <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="2670735820731467188">
+              <link role="link" targetNodeId="1.1164991057263" />
+            </node>
+          </node>
+        </node>
         <node role="statement" type="jetbrains.mps.lang.dataFlow.structure.EmitRetStatement" id="1206464652781" />
       </node>
     </node>
