@@ -26783,5 +26783,16 @@
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1451404987992951060" />
     </node>
   </node>
+  <node type="jetbrains.mps.lang.plugin.structure.InterfaceGroup" id="6267318242960657894">
+    <property name="package" value="Integration" />
+    <property name="name" value="IDEARun" />
+    <node role="groupID" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="6267318242960707991">
+      <property name="value" value="RunContextGroup" />
+    </node>
+    <node role="contents" type="jetbrains.mps.lang.plugin.structure.ElementListContents" id="6267318242960657896" />
+    <node role="modifier" type="jetbrains.mps.lang.plugin.structure.ModificationStatement" id="6267318242960707992">
+      <link role="modifiedGroup" targetNodeId="1204991231476" resolveInfo="EditorPopup" />
+    </node>
+  </node>
 </model>
 

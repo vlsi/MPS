@@ -18,6 +18,7 @@ package jetbrains.mps.workbench.dataExtraction.runConfig;
 import com.intellij.ide.impl.dataRules.GetDataRule;
 import com.intellij.openapi.actionSystem.DataProvider;
 import com.intellij.openapi.project.Project;
+import com.intellij.openapi.project.ProjectManager;
 import jetbrains.mps.plugins.pluginparts.runconfigs.MPSLocation;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.workbench.MPSDataKeys;
@@ -28,6 +29,8 @@ public class LocationRule implements GetDataRule {
   public Object getData(DataProvider dataProvider) {
     Project project = (Project) dataProvider.getData(MPSDataKeys.PROJECT.getName());
     SNode node = (SNode) dataProvider.getData(MPSDataKeys.NODE.getName());
+    if (project == null) project = ProjectManager.getInstance().getOpenProjects()[0];
+    if (project == null) return null;
     if (node == null) return null;
     return new MPSLocation(project, node);
   }
