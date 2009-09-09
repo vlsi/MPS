@@ -22,6 +22,8 @@ import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 
+import jetbrains.mps.util.annotation.Patch;
+
 public abstract class BaseRunConfigurationAction extends AnAction {
   protected BaseRunConfigurationAction(final String text, final String description, final Icon icon) {
     super(text, description, icon);
@@ -83,6 +85,7 @@ public abstract class BaseRunConfigurationAction extends AnAction {
 
   protected abstract void perform(ConfigurationContext context);
 
+  @Patch
   public void update(final AnActionEvent event){
     final ConfigurationContext context = new ConfigurationContext(event.getDataContext());
     final Presentation presentation = event.getPresentation();
@@ -94,7 +97,7 @@ public abstract class BaseRunConfigurationAction extends AnAction {
     else{
       presentation.setEnabled(true);
       presentation.setVisible(true);
-      final String name = "NewConfig";
+      final String name = configuration.getConfiguration().getName();
       updatePresentation(presentation, " " + name, context);
     }
   }
