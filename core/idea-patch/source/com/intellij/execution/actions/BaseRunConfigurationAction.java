@@ -86,6 +86,11 @@ public abstract class BaseRunConfigurationAction extends AnAction {
   protected abstract void perform(ConfigurationContext context);
 
   @Patch
+  /* todo
+    [Misha] I haven't understood why, maybe because of different classloaders,
+            in IDEA class ClassCastException is thrown. Fix it and rewrite this -
+            config.isGeneratedName should return true, getSuggestedName - the same as getName.
+  */
   public void update(final AnActionEvent event){
     final ConfigurationContext context = new ConfigurationContext(event.getDataContext());
     final Presentation presentation = event.getPresentation();

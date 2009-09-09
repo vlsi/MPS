@@ -4559,6 +4559,9 @@
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode" id="8415911927033051517">
         <link role="relationDeclaration" targetNodeId="1.8415911927033050433" />
       </node>
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="4418372807722108940">
+        <property name="text" value=";" />
+      </node>
       <node role="cellLayout" type="jetbrains.mps.lang.editor.structure.CellLayout_Horizontal" id="8415911927033050430" />
     </node>
   </node>
