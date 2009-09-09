@@ -16,7 +16,9 @@
 package jetbrains.mps.runconfigs;
 
 import com.intellij.execution.RunManagerEx;
+import com.intellij.execution.junit.RuntimeConfigurationProducer;
 import com.intellij.execution.configurations.ConfigurationType;
+import com.intellij.execution.configurations.LocatableConfiguration;
 import com.intellij.execution.impl.RunManagerImpl;
 import com.intellij.openapi.components.ProjectComponent;
 import com.intellij.openapi.extensions.ExtensionPoint;
@@ -24,11 +26,12 @@ import com.intellij.openapi.extensions.Extensions;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.util.InvalidDataException;
 import com.intellij.openapi.util.WriteExternalException;
-import com.intellij.util.containers.HashMap;
 import jetbrains.mps.MPSProjectHolder;
+import jetbrains.mps.lang.plugin.structure.RunConfigCreator;
 import jetbrains.mps.lang.plugin.structure.RunConfigurationTypeDeclaration;
 import jetbrains.mps.library.LibraryManager;
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.plugins.pluginparts.runconfigs.BaseConfigCreator;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.Solution;
@@ -82,6 +85,13 @@ public class RunConfigManager implements ProjectComponent {
     final ConfigurationType[] configurationTypes = Extensions.getExtensions(ConfigurationType.CONFIGURATION_TYPE_EP);
     getRunManager().initializeConfigurationTypes(configurationTypes);
 
+    ModelAccess.instance().runReadAction(new Runnable() {
+      public void run() {
+        final MPSProject mpsProject = myProject.getComponent(MPSProjectHolder.class).getMPSProject();
+        createCreators(mpsProject);
+      }
+    });
+
     if (myState != null) {
       try {
         getRunManager().readExternal(myState);
@@ -124,6 +134,12 @@ public class RunConfigManager implements ProjectComponent {
     if (!myLoaded) return;
 
     synchronized (myConfigsLock) {
+      final ExtensionPoint<RuntimeConfigurationProducer> epCreator = Extensions.getArea(null).getExtensionPoint(RuntimeConfigurationProducer.RUNTIME_CONFIGURATION_PRODUCER);
+      RuntimeConfigurationProducer[] extensions = epCreator.getExtensions();
+      for (RuntimeConfigurationProducer producer: extensions){
+        epCreator.unregisterExtension(producer);
+      }
+
       Collections.reverse(mySortedConfigs);
 
       Element newState = new Element("root");
@@ -183,6 +199,39 @@ public class RunConfigManager implements ProjectComponent {
 
     return conTypes;
   }
+  private List<ConfigurationType> createCreators(MPSProject project) {
+    final List<ConfigurationType> conTypes = new ArrayList<ConfigurationType>();
+
+    Set<Language> languages = new HashSet<Language>();
+    for (Solution s : project.getProjectSolutions()) {
+      languages.addAll(s.getScope().getVisibleLanguages());
+    }
+
+    for (Language l : project.getProjectLanguages()) {
+      languages.add(l);
+    }
+
+    languages.addAll(LibraryManager.getInstance().getGlobalModules(Language.class));
+
+    for (Language language : languages) {
+      if (language.getPluginModelDescriptor() != null) {
+        SModel model = language.getPluginModelDescriptor().getSModel();
+
+        final ExtensionPoint<RuntimeConfigurationProducer> epCreator = Extensions.getArea(null).getExtensionPoint(RuntimeConfigurationProducer.RUNTIME_CONFIGURATION_PRODUCER);
+        for (RunConfigCreator creator : model.getRootsAdapters(RunConfigCreator.class)) {
+          String creatorClassName = language.getPluginModelDescriptor().getLongName() + "." + creator.getName();
+          BaseConfigCreator configCreator = createCreator(language, creatorClassName);
+          if (configCreator == null) continue;
+
+          epCreator.registerExtension(configCreator);
+          //todo
+          //conTypes.add(configurationType);
+        }
+      }
+    }
+
+    return conTypes;
+  }
 
   private ConfigurationType createConfig(IModule module, String className) {
     try {
@@ -190,6 +239,18 @@ public class RunConfigManager implements ProjectComponent {
       if (configClass == null) return null;
 
       return (ConfigurationType) configClass.newInstance();
+    } catch (Throwable t) {
+      LOG.error(t);
+      return null;
+    }
+  }
+
+  private BaseConfigCreator createCreator(IModule module, String className) {
+    try {
+      Class configClass = module.getClass(className);
+      if (configClass == null) return null;
+
+      return (BaseConfigCreator) configClass.newInstance();
     } catch (Throwable t) {
       LOG.error(t);
       return null;

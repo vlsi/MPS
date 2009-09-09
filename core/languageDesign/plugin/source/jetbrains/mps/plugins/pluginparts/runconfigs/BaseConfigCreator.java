@@ -7,11 +7,14 @@ import com.intellij.execution.configurations.RunConfiguration;
 import com.intellij.execution.impl.RunManagerImpl;
 import com.intellij.execution.impl.RunnerAndConfigurationSettingsImpl;
 import com.intellij.execution.junit.RuntimeConfigurationProducer;
+import com.intellij.openapi.util.Computable;
 import com.intellij.psi.PsiElement;
+import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SNode;
 
 public abstract class BaseConfigCreator extends RuntimeConfigurationProducer {
   private PsiElement mySourceElement;
+  private ConfigurationContext myContext;
 
   public BaseConfigCreator(ConfigurationType configurationType) {
     super(configurationType);
@@ -25,13 +28,23 @@ public abstract class BaseConfigCreator extends RuntimeConfigurationProducer {
     return mySourceElement;
   }
 
+  protected ConfigurationContext getContext() {
+    return myContext;
+  }
+
   protected RunnerAndConfigurationSettingsImpl createConfigurationByElement(Location location, ConfigurationContext context) {
+    myContext = context;
     if (!(location instanceof MPSLocation)) return null;
     MPSLocation mpsLocation = (MPSLocation) location;
-    NodePsiElement nodePsiElement = mpsLocation.getPsiElement();
+    final NodePsiElement nodePsiElement = mpsLocation.getPsiElement();
 
-    RunConfiguration config = doCreateConfiguration(nodePsiElement.getMPSNode());
+    RunConfiguration config = ModelAccess.instance().runReadAction(new Computable<RunConfiguration>() {
+      public RunConfiguration compute() {
+        return doCreateConfiguration(nodePsiElement.getMPSNode());
+      }
+    });
 
+    if (config == null) return null;
     return new RunnerAndConfigurationSettingsImpl(RunManagerImpl.getInstanceImpl(location.getProject()), config, true);
   }
 
