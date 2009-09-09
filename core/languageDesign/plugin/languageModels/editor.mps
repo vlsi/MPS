@@ -4482,6 +4482,14 @@
         <link role="relationDeclaration" targetNodeId="1.7066926174333292874" />
         <node role="cellLayout" type="jetbrains.mps.lang.editor.structure.CellLayout_VerticalGrid" id="7066926174333305998" />
       </node>
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="4418372807722333893">
+        <property name="text" value="," />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode" id="4418372807722333895">
+        <property name="emptyNoTargetText" value="false" />
+        <property name="noTargetText" value="&lt;no name&gt;" />
+        <link role="relationDeclaration" targetNodeId="1.4418372807722332007" />
+      </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="7066926174333292882">
         <property name="text" value=")" />
       </node>

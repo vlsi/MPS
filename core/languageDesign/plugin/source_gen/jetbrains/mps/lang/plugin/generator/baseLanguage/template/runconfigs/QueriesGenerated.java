@@ -168,6 +168,10 @@ public class QueriesGenerated {
     return _context.getOutputNodeByInputNodeAndMappingLabel(SLinkOperations.getTarget(_context.getNode(), "property", false), "map_PersistentProperty");
   }
 
+  public static boolean ifMacro_Condition_4418372807722341507(final IOperationContext operationContext, final IfMacroContext _context) {
+    return (SLinkOperations.getTarget(_context.getNode(), "configName", true) != null);
+  }
+
   public static boolean ifMacro_Condition_6707043251019108517(final IOperationContext operationContext, final IfMacroContext _context) {
     return (SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "editor", true), "resetBlock", true) != null);
   }
@@ -198,6 +202,10 @@ public class QueriesGenerated {
 
   public static SNode sourceNodeQuery_1105312746397538781(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return SNodeOperations.copyNode(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "editor", true), "editor", true)));
+  }
+
+  public static SNode sourceNodeQuery_4418372807722341496(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return SLinkOperations.getTarget(_context.getNode(), "configName", true);
   }
 
   public static SNode sourceNodeQuery_5447563960349298753(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {

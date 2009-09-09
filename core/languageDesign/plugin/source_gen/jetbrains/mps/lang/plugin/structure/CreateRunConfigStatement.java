@@ -4,6 +4,7 @@ package jetbrains.mps.lang.plugin.structure;
 
 import jetbrains.mps.baseLanguage.structure.Statement;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.baseLanguage.structure.Expression;
 import java.util.Iterator;
 import java.util.List;
 import jetbrains.mps.smodel.SModel;
@@ -13,6 +14,7 @@ import jetbrains.mps.project.GlobalScope;
 public class CreateRunConfigStatement extends Statement {
   public static final String concept = "jetbrains.mps.lang.plugin.structure.CreateRunConfigStatement";
   public static final String RUN_CONFIG = "runConfig";
+  public static final String CONFIG_NAME = "configName";
   public static final String PROPERTY = "property";
 
   public CreateRunConfigStatement(SNode node) {
@@ -25,6 +27,14 @@ public class CreateRunConfigStatement extends Statement {
 
   public void setRunConfig(RunConfigurationDeclaration node) {
     super.setReferent(CreateRunConfigStatement.RUN_CONFIG, node);
+  }
+
+  public Expression getConfigName() {
+    return (Expression)this.getChild(Expression.class, CreateRunConfigStatement.CONFIG_NAME);
+  }
+
+  public void setConfigName(Expression node) {
+    super.setChild(CreateRunConfigStatement.CONFIG_NAME, node);
   }
 
   public int getPropertiesCount() {

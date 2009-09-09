@@ -1780,6 +1780,25 @@
     <property name="name" value="typeof_CreateRunConfigStatement" />
     <property name="package" value="RunConfigs.Create.CreateStatement" />
     <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="7066926174333306000">
+      <node role="statement" type="jetbrains.mps.lang.typesystem.structure.CreateStrongLessThanInequationStatement" id="1177638545603482924">
+        <node role="rightExpression" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause" id="1177638545603482928">
+          <node role="normalType" type="jetbrains.mps.lang.quotation.structure.Quotation" id="1177638545603482929">
+            <node role="quotedNode" type="jetbrains.mps.baseLanguage.structure.StringType" id="1177638545603482931" />
+          </node>
+        </node>
+        <node role="leftExpression" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause" id="1177638545603482927">
+          <node role="normalType" type="jetbrains.mps.lang.typesystem.structure.TypeOfExpression" id="1177638545603482916">
+            <node role="term" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1177638545603482919">
+              <node role="operand" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference" id="1177638545603482918">
+                <link role="applicableNode" targetNodeId="7066926174333306001" resolveInfo="statement" />
+              </node>
+              <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1177638545603482923">
+                <link role="link" targetNodeId="4.4418372807722332007" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
       <node role="statement" type="jetbrains.mps.baseLanguage.collections.structure.ForEachStatement" id="7066926174333307522">
         <node role="variable" type="jetbrains.mps.baseLanguage.collections.structure.ForEachVariable" id="7066926174333307523">
           <property name="name" value="property" />
