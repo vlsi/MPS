@@ -45265,6 +45265,15 @@
               <link role="variableDeclaration" targetNodeId="8415911927033508092" resolveInfo="nodeID" />
             </node>
           </node>
+          <node role="configName" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1177638545603622636">
+            <node role="operand" type="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" id="1177638545603622634">
+              <link role="concept" targetNodeId="1.1068390468198" resolveInfo="ClassConcept" />
+              <node role="leftExpression" type="jetbrains.mps.lang.plugin.structure.ConceptFunctionParameter_node" id="1177638545603622633" />
+            </node>
+            <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="1177638545603622640">
+              <link role="property" targetNodeId="72.1169194664001" resolveInfo="name" />
+            </node>
+          </node>
         </node>
       </node>
     </node>
