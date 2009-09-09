@@ -111,6 +111,11 @@ public class CommonPaths {
       result.add(svnClassPath);
     }
 
+    IClassPathItem javaConverterClassPath = getJavaConverterClasspath();
+    if (javaConverterClassPath != null) {
+      result.add(javaConverterClassPath);
+    }
+
     addIfExists(result, "/lib/annotations/annotations.jar");
 
     return result;
@@ -248,6 +253,17 @@ public class CommonPaths {
       + File.separator + "kernel"
       + File.separator + "vcs"
       + File.separator + "svn"
+      + File.separator + "classes";
+    if (new File(workbenchClasses).exists()) {
+      return new FileClassPathItem(workbenchClasses);
+    }
+
+    return null;
+  }
+
+  private static IClassPathItem getJavaConverterClasspath() {
+    String workbenchClasses = PathManager.getHomePath() + File.separator + "core"
+      + File.separator + "javaParser"
       + File.separator + "classes";
     if (new File(workbenchClasses).exists()) {
       return new FileClassPathItem(workbenchClasses);
