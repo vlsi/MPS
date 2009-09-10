@@ -22,8 +22,6 @@ public class ModelActions_ActionGroup extends GeneratedActionGroup {
       ModelActions_ActionGroup.this.addAnchor(ModelActions_ActionGroup.LABEL_ID_createRootNode);
       ModelActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.PasteNode_Action", "jetbrains.mps.ide");
       ModelActions_ActionGroup.this.addSeparator();
-      ModelActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.GetModelContentsFromSource_Action", "jetbrains.mps.ide");
-      ModelActions_ActionGroup.this.addSeparator();
       ModelActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.DeleteModels_Action", "jetbrains.mps.ide");
       ModelActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.CloneModel_Action", "jetbrains.mps.ide");
       ModelActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.CopyModelName_Action", "jetbrains.mps.ide");

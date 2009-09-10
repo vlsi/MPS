@@ -34,7 +34,7 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959057f(jetbrains.mps.baseLanguage.logging.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590373(jetbrains.mps.baseLanguage.classifiers.structure)" version="0" />
   <languageAspect modelUID="r:de0d3c0c-d049-41cf-bbf9-a920ba513cd3(jetbrains.mps.lang.textGen.structure)" version="11" />
-  <maxImportIndex value="210" />
+  <maxImportIndex value="212" />
   <import index="1" modelUID="f:java_stub#jetbrains.mps.workbench.actions.nodes(jetbrains.mps.workbench.actions.nodes@java_stub)" version="-1" />
   <import index="2" modelUID="f:java_stub#jetbrains.mps.ide.modelchecker(jetbrains.mps.ide.modelchecker@java_stub)" version="-1" />
   <import index="3" modelUID="f:java_stub#jetbrains.mps.workbench.actions.model(jetbrains.mps.workbench.actions.model@java_stub)" version="-1" />
@@ -156,6 +156,8 @@
   <import index="204" modelUID="r:de0d3c0c-d049-41cf-bbf9-a920ba513cd3(jetbrains.mps.lang.textGen.structure)" version="11" />
   <import index="205" modelUID="r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)" version="32" />
   <import index="206" modelUID="r:00000000-0000-4000-0000-011c895902c8(jetbrains.mps.baseLanguage.plugin)" version="-1" />
+  <import index="211" modelUID="f:java_stub#jetbrains.mps.javaParser(jetbrains.mps.javaParser@java_stub)" version="-1" />
+  <import index="212" modelUID="f:java_stub#javax.swing.filechooser(javax.swing.filechooser@java_stub)" version="-1" />
   <node type="jetbrains.mps.lang.plugin.structure.ActionGroupDeclaration" id="1204991215587">
     <property name="name" value="NodeActions" />
     <property name="id" value="ProjectPaneNodeActions" />
@@ -26817,14 +26819,14 @@
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="3302512009684150776">
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="3302512009684150777">
             <property name="name" value="fileFilter" />
-            <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="3302512009684150778">
-              <link role="classifier" targetNodeId="207.~FileFilter" resolveInfo="FileFilter" />
+            <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="426276280371539827">
+              <link role="classifier" targetNodeId="212.~FileFilter" resolveInfo="FileFilter" />
             </node>
             <node role="initializer" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="3302512009684150780">
               <node role="creator" type="jetbrains.mps.baseLanguage.structure.AnonymousClassCreator" id="3302512009684204787">
                 <node role="cls" type="jetbrains.mps.baseLanguage.structure.AnonymousClass" id="3302512009684204788">
                   <property name="nonStatic" value="true" />
-                  <link role="classifier" targetNodeId="207.~FileFilter" resolveInfo="FileFilter" />
+                  <link role="classifier" targetNodeId="212.~FileFilter" resolveInfo="FileFilter" />
                   <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="3302512009684204789" />
                   <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="3302512009684204790">
                     <property name="isAbstract" value="false" />
@@ -26996,7 +26998,7 @@
             </node>
             <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="3302512009684204901">
               <link role="baseMethodDeclaration" targetNodeId="72.~JFileChooser.setFileFilter(javax.swing.filechooser.FileFilter):void" resolveInfo="setFileFilter" />
-              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="3302512009684204902">
+              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="426276280371421523">
                 <link role="variableDeclaration" targetNodeId="3302512009684150777" resolveInfo="fileFilter" />
               </node>
             </node>
@@ -27043,12 +27045,12 @@
             <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="5976481792694816416">
               <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="5976481792694816417">
                 <property name="name" value="javaCompiler" />
-                <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="5976481792694816418">
-                  <link role="classifier" targetNodeId="210.~JavaCompiler" resolveInfo="JavaCompiler" />
+                <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="426276280371421931">
+                  <link role="classifier" targetNodeId="211.~JavaCompiler" resolveInfo="JavaCompiler" />
                 </node>
                 <node role="initializer" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="5976481792694816420">
                   <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="5976481792694994896">
-                    <link role="baseMethodDeclaration" targetNodeId="210.~JavaCompiler.&lt;init&gt;(jetbrains.mps.project.IModule,jetbrains.mps.smodel.SModel)" resolveInfo="JavaCompiler" />
+                    <link role="baseMethodDeclaration" targetNodeId="211.~JavaCompiler.&lt;init&gt;(jetbrains.mps.project.IModule,jetbrains.mps.smodel.SModel)" resolveInfo="JavaCompiler" />
                     <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="5976481792694994899">
                       <node role="operand" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpression" id="5976481792694994900" />
                       <node role="operation" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterReferenceOperation" id="5976481792694994901">
@@ -27076,7 +27078,7 @@
                   <link role="variableDeclaration" targetNodeId="5976481792694816417" resolveInfo="javaCompiler" />
                 </node>
                 <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="5976481792694995286">
-                  <link role="baseMethodDeclaration" targetNodeId="210.~JavaCompiler.addSourceFromFile(java.io.File):void" resolveInfo="addSourceFromFile" />
+                  <link role="baseMethodDeclaration" targetNodeId="211.~JavaCompiler.addSourceFromFile(java.io.File):void" resolveInfo="addSourceFromFile" />
                   <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="5976481792695001935">
                     <link role="variableDeclaration" targetNodeId="3302512009684204938" resolveInfo="chosenFile" />
                   </node>
@@ -27088,8 +27090,8 @@
                 <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="5976481792695001938">
                   <link role="variableDeclaration" targetNodeId="5976481792694816417" resolveInfo="javaCompiler" />
                 </node>
-                <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="5976481792695001943">
-                  <link role="baseMethodDeclaration" targetNodeId="210.~JavaCompiler.compile():void" resolveInfo="compile" />
+                <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="426276280371474636">
+                  <link role="baseMethodDeclaration" targetNodeId="211.~JavaCompiler.compile():void" resolveInfo="compile" />
                 </node>
               </node>
             </node>
@@ -27107,7 +27109,7 @@
       </node>
     </node>
   </node>
-    <node type="jetbrains.mps.lang.plugin.structure.InterfaceGroup" id="6267318242960657894">
+  <node type="jetbrains.mps.lang.plugin.structure.InterfaceGroup" id="6267318242960657894">
     <property name="package" value="Integration" />
     <property name="name" value="IDEARun" />
     <node role="groupID" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="6267318242960707991">
