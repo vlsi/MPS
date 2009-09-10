@@ -5,7 +5,6 @@ package jetbrains.mps.baseLanguage.unitTest.plugin;
 import javax.swing.JPanel;
 import javax.swing.JLabel;
 import jetbrains.mps.uiLanguage.runtime.JbRadioButton;
-import javax.swing.JTextField;
 import jetbrains.mps.baseLanguage.plugin.JavaConfigOptions;
 import jetbrains.mps.project.MPSProject;
 import javax.swing.ButtonGroup;
@@ -48,7 +47,7 @@ public class JUnitConfigEditor extends JPanel {
   private JLabel myComponent16;
   private NodeChooserComponent myComponent17;
   private JLabel myComponent18;
-  private JTextField myComponent19;
+  private MethodChooserComponent myComponent19;
   private JavaConfigOptions myJavaOptions0;
   private MPSProject myMyProject;
   private ButtonGroup myMyButtonGroup;
@@ -307,7 +306,7 @@ public class JUnitConfigEditor extends JPanel {
     component.add(this.createComponent25(), LayoutUtil.createLabelConstraints(0));
     component.add(this.createComponent26(), LayoutUtil.createPanelConstraints(1));
     component.add(this.createComponent27(), LayoutUtil.createLabelConstraints(2));
-    component.add(this.createComponent28(), LayoutUtil.createFieldConstraints(3));
+    component.add(this.createComponent28(), LayoutUtil.createPanelConstraints(3));
     return component;
   }
 
@@ -331,9 +330,10 @@ public class JUnitConfigEditor extends JPanel {
     return component;
   }
 
-  private JTextField createComponent28() {
-    JTextField component = new JTextField();
+  private MethodChooserComponent createComponent28() {
+    MethodChooserComponent component = new MethodChooserComponent();
     this.myComponent19 = component;
+    component.setTestCase(myThis.getMyNode());
     return component;
   }
 
