@@ -30,8 +30,8 @@ public class VcsSettingsPanel extends JPanel {
   public VcsSettingsPanel(VcsIdeSettings settings) {
     super(new VerticalFlowLayout(true, false));
     mySettings = settings;
-    myTextModeDifferenceCheckBox = new JCheckBox("View Model Difference As Text", mySettings.getTextModeEnabled());
-    myNotifyWhenChangedOutsideAreMade = new JCheckBox("Show Warning When Changing Models Outside Of Vcs Roots",
+    myTextModeDifferenceCheckBox = new JCheckBox("View model difference as text", mySettings.getTextModeEnabled());
+    myNotifyWhenChangedOutsideAreMade = new JCheckBox("Show warning when changing model outside of vcs roots",
       mySettings.getNotifyWhenChangedOutsideAreMade());
     add(myTextModeDifferenceCheckBox);
     add(myNotifyWhenChangedOutsideAreMade);
