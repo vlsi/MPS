@@ -21,12 +21,25 @@ import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.style.Measure;
 import jetbrains.mps.nodeEditor.style.Padding;
 import jetbrains.mps.nodeEditor.EditorSettings;
+import jetbrains.mps.util.misc.hash.HashMap;
 
 import java.awt.*;
 import java.awt.geom.Rectangle2D;
+import java.util.Map;
 
 public class TextLine {
-  private static final Color ERROR_COLOR = new Color(255, 220, 220);  
+  private static final Color ERROR_COLOR = new Color(255, 220, 220);
+  
+  private static Map<Font, FontMetrics> ourFontMetricsCache = new HashMap<Font, FontMetrics>();
+
+  private static FontMetrics getFontMetrics(Font font) {
+    FontMetrics result = ourFontMetricsCache.get(font);
+    if (result == null) {
+      result = Toolkit.getDefaultToolkit().getFontMetrics(font);
+    }
+    ourFontMetricsCache.put(font, result);
+    return result;
+  }
 
   private String myText;
   private int myDescent = 0;
@@ -437,7 +450,7 @@ public class TextLine {
 
   public FontMetrics getFontMetrics() {
     if (myFontMetrics == null) {
-      myFontMetrics = Toolkit.getDefaultToolkit().getFontMetrics(getFont());
+      myFontMetrics = getFontMetrics(myFont);
     }
     return myFontMetrics;
   }
