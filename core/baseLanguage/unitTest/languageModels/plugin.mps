@@ -12991,14 +12991,14 @@
     </node>
   </node>
   <node type="jetbrains.mps.uiLanguage.structure.ComponentDeclaration" id="145554711891872300">
-    <property name="package" value="run.choose" />
+    <property name="package" value="run.chooser" />
     <property name="name" value="NodeChooserComponent" />
     <property name="stub" value="true" />
     <link role="mapTo" targetNodeId="145554711891969870" resolveInfo="NodeChooserComponent" />
     <link role="extendedComponent" targetNodeId="45.1202816402995" resolveInfo="Panel" />
   </node>
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="145554711891969870">
-    <property name="package" value="run.choose" />
+    <property name="package" value="run.chooser" />
     <property name="name" value="NodeChooserComponent" />
     <node role="constructor" type="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" id="145554711891969876">
       <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="145554711891969877" />
@@ -13843,7 +13843,7 @@
     <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="145554711892064365" />
   </node>
   <node type="jetbrains.mps.uiLanguage.structure.ComponentController" id="145554711892089178">
-    <property name="package" value="run.choose" />
+    <property name="package" value="run.chooser" />
     <link role="component" targetNodeId="145554711891872300" resolveInfo="NodeChooseComponent" />
     <node role="attribute" type="jetbrains.mps.uiLanguage.structure.AttributeDeclaration" id="145554711892089179">
       <property name="name" value="text" />
@@ -13851,7 +13851,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="145554711892089207">
-    <property name="package" value="run.choose" />
+    <property name="package" value="run.chooser" />
     <property name="name" value="BaseChooserComponent" />
     <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="145554711892089221">
       <property name="name" value="setText" />
@@ -14103,7 +14103,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="145554711892089425">
-    <property name="package" value="run.choose" />
+    <property name="package" value="run.chooser" />
     <property name="name" value="ModelChooserComponent" />
     <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="145554711892089426" />
     <node role="constructor" type="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" id="145554711892089427">
@@ -14309,14 +14309,14 @@
     </node>
   </node>
   <node type="jetbrains.mps.uiLanguage.structure.ComponentDeclaration" id="145554711892089591">
-    <property name="package" value="run.choose" />
+    <property name="package" value="run.chooser" />
     <property name="name" value="ModelChooserComponent" />
     <property name="stub" value="true" />
     <link role="extendedComponent" targetNodeId="45.1202816402995" resolveInfo="Panel" />
     <link role="mapTo" targetNodeId="145554711892089425" resolveInfo="ModelChooserComponent" />
   </node>
   <node type="jetbrains.mps.uiLanguage.structure.ComponentController" id="145554711892089593">
-    <property name="package" value="run.choose" />
+    <property name="package" value="run.chooser" />
     <link role="component" targetNodeId="145554711892089591" resolveInfo="ModelChooseComponent" />
     <node role="attribute" type="jetbrains.mps.uiLanguage.structure.AttributeDeclaration" id="145554711892089594">
       <property name="name" value="text" />
@@ -14324,7 +14324,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="145554711892089612">
-    <property name="package" value="run.choose" />
+    <property name="package" value="run.chooser" />
     <property name="name" value="ModuleChooserComponent" />
     <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="145554711892089613" />
     <node role="constructor" type="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" id="145554711892089614">
@@ -14549,15 +14549,15 @@
     </node>
   </node>
   <node type="jetbrains.mps.uiLanguage.structure.ComponentDeclaration" id="145554711892090455">
-    <property name="package" value="run.choose" />
+    <property name="package" value="run.chooser" />
     <property name="name" value="ModuleChooserComponent" />
     <property name="stub" value="true" />
-    <property name="actionComponent" value="true" />
+    <property name="actionComponent" value="false" />
     <link role="mapTo" targetNodeId="145554711892089612" resolveInfo="ModuleChooseComponent" />
     <link role="extendedComponent" targetNodeId="45.1202816402995" resolveInfo="Panel" />
   </node>
   <node type="jetbrains.mps.uiLanguage.structure.ComponentController" id="145554711892090456">
-    <property name="package" value="run.choose" />
+    <property name="package" value="run.chooser" />
     <link role="component" targetNodeId="145554711892090455" resolveInfo="ModuleChooseComponent" />
     <node role="attribute" type="jetbrains.mps.uiLanguage.structure.AttributeDeclaration" id="145554711892090457">
       <property name="name" value="text" />
@@ -14565,7 +14565,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="981052285580751711">
-    <property name="package" value="run.choose" />
+    <property name="package" value="run.chooser" />
     <property name="name" value="MethodChooserComponent" />
     <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="981052285580753523">
       <property name="name" value="getTestCase" />
@@ -14871,14 +14871,14 @@
     </node>
   </node>
   <node type="jetbrains.mps.uiLanguage.structure.ComponentDeclaration" id="981052285580753666">
-    <property name="package" value="run.choose" />
+    <property name="package" value="run.chooser" />
     <property name="name" value="MethodChooserComponent" />
     <property name="stub" value="true" />
     <link role="extendedComponent" targetNodeId="45.1202816402995" resolveInfo="Panel" />
     <link role="mapTo" targetNodeId="981052285580751711" resolveInfo="MethodChooserComponent" />
   </node>
   <node type="jetbrains.mps.uiLanguage.structure.ComponentController" id="981052285580753667">
-    <property name="package" value="run.choose" />
+    <property name="package" value="run.chooser" />
     <link role="component" targetNodeId="981052285580753666" resolveInfo="MethodChooserComponent" />
     <node role="attribute" type="jetbrains.mps.uiLanguage.structure.AttributeDeclaration" id="981052285580753668">
       <property name="name" value="text" />
@@ -14887,6 +14887,66 @@
     <node role="attribute" type="jetbrains.mps.uiLanguage.structure.AttributeDeclaration" id="981052285580753671">
       <property name="name" value="testCase" />
       <node role="type" type="jetbrains.mps.baseLanguage.structure.StringType" id="981052285580815304" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.plugin.structure.RunConfigCreator" id="7964295405452356620">
+    <property name="package" value="run.creator" />
+    <property name="name" value="JUnitFromClass" />
+    <link role="rcType" targetNodeId="1104580685292496804" resolveInfo="JUnit" />
+    <node role="createBlock" type="jetbrains.mps.lang.plugin.structure.CreateRunConfigBlock" id="7964295405452356621">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="7964295405452356622">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="7964295405452356623">
+          <node role="condition" type="jetbrains.mps.baseLanguage.structure.NotExpression" id="7964295405452395966">
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="7964295405452395967">
+              <node role="operand" type="jetbrains.mps.lang.plugin.structure.ConceptFunctionParameter_node" id="7964295405452395968" />
+              <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation" id="7964295405452395969">
+                <node role="conceptArgument" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" id="7964295405452395970">
+                  <link role="conceptDeclaration" targetNodeId="1.1171931851043" resolveInfo="BTestCase" />
+                </node>
+              </node>
+            </node>
+          </node>
+          <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="7964295405452356625">
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="7964295405452356634" />
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.lang.plugin.structure.RunConfigMainNodeStatement" id="7964295405452356654">
+          <node role="nodeExpr" type="jetbrains.mps.lang.plugin.structure.ConceptFunctionParameter_node" id="7964295405452356655" />
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="7964295405452356773">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="7964295405452356774">
+            <property name="name" value="nodeName" />
+            <node role="type" type="jetbrains.mps.baseLanguage.structure.StringType" id="7964295405452356775" />
+            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="7964295405452356784">
+              <node role="operand" type="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" id="7964295405452356782">
+                <link role="concept" targetNodeId="1.1171931851043" resolveInfo="BTestCase" />
+                <node role="leftExpression" type="jetbrains.mps.lang.plugin.structure.ConceptFunctionParameter_node" id="7964295405452356777" />
+              </node>
+              <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="7964295405452356788">
+                <link role="baseMethodDeclaration" targetNodeId="39.1213877404258" resolveInfo="getFqName" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.lang.plugin.structure.CreateRunConfigStatement" id="7964295405452356763">
+          <link role="runConfig" targetNodeId="1104580685292496599" resolveInfo="DefaultJUnit" />
+          <node role="configName" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="7964295405452356767">
+            <node role="operand" type="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" id="7964295405452356765">
+              <link role="concept" targetNodeId="1.1171931851043" resolveInfo="BTestCase" />
+              <node role="leftExpression" type="jetbrains.mps.lang.plugin.structure.ConceptFunctionParameter_node" id="7964295405452356764" />
+            </node>
+            <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="7964295405452356771">
+              <link role="property" targetNodeId="43.1169194664001" resolveInfo="name" />
+            </node>
+          </node>
+          <node role="property" type="jetbrains.mps.lang.plugin.structure.RunConfigPropertyInstance" id="7964295405452356789">
+            <link role="property" targetNodeId="1104580685292496600" resolveInfo="node" />
+            <node role="propertyValue" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="7964295405452356791">
+              <link role="variableDeclaration" targetNodeId="7964295405452356774" resolveInfo="nodeName" />
+            </node>
+          </node>
+        </node>
+      </node>
     </node>
   </node>
 </model>
