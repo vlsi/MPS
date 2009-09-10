@@ -135,7 +135,18 @@ public class TextLine {
     myMinimalLength = length;
   }
 
+  /**
+   * Updates layout and performs expensive calculations
+   */
   public void relayout() {
+    Font defaultFont = EditorSettings.getInstance().getDefaultEditorFont();
+    Integer styleFontSize = myStyle.get(StyleAttributes.FONT_SIZE);
+    String family = defaultFont.getFamily();
+    Integer style = myStyle.get(StyleAttributes.FONT_STYLE);
+    int fontSize = styleFontSize != null ? styleFontSize : defaultFont.getSize();
+
+    myFont = new Font(family, style, fontSize);
+    
     FontMetrics metrics = getFontMetrics();
     myHeight = (int) (metrics.getHeight() * myLineSpacing + getPaddingTop() + getPaddingBottom());
     myTextHeight = (int) (metrics.getHeight() * myLineSpacing);
@@ -308,16 +319,6 @@ public class TextLine {
   }
 
   public Font getFont() {
-    Font defaultFont = EditorSettings.getInstance().getDefaultEditorFont();
-    Integer styleFontSize = myStyle.get(StyleAttributes.FONT_SIZE);
-    String family = defaultFont.getFamily();
-    Integer style = myStyle.get(StyleAttributes.FONT_STYLE);
-    int fontSize = styleFontSize != null ? styleFontSize : defaultFont.getSize();
-
-    if (myFont == null || !family.equals(myFont.getFontName()) || fontSize != myFont.getSize() || style != myFont.getStyle()) {
-      myFont = new Font(family, style, fontSize);
-    }
-
     return myFont;
   }
 
@@ -450,7 +451,7 @@ public class TextLine {
 
   public FontMetrics getFontMetrics() {
     if (myFontMetrics == null) {
-      myFontMetrics = getFontMetrics(myFont);
+      myFontMetrics = getFontMetrics(getFont());
     }
     return myFontMetrics;
   }
