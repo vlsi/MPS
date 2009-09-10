@@ -434,9 +434,9 @@ public class TypeChecker implements ApplicationComponent {
       }
     }
 
-    public Set<SNode> getNodesToDependOn() {
+    public SNode[] getNodesToDependOn() {
       synchronized(myLock) {
-        return new HashSet<SNode>(myNodesToDependOn);
+        return myNodesToDependOn.toArray(new SNode[myNodesToDependOn.size()]);
       }
     }
   }
