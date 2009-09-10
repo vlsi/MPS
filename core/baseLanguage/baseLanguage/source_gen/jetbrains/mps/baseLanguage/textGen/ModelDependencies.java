@@ -48,7 +48,7 @@ public class ModelDependencies {
   public boolean saveTo(IFile file) {
     if (!(file.exists())) {
       IFile dir = file.getParent();
-      if (dir!=null){
+      if (dir != null) {
         dir.mkdirs();
       }
       file.createNewFile();

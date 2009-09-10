@@ -9194,6 +9194,42 @@
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="7159280687324563280">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="7159280687324564771">
           <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="7159280687324564772">
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="6240380780854117842">
+              <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="6240380780854117843">
+                <property name="name" value="dir" />
+                <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="6240380780854117844">
+                  <link role="classifier" targetNodeId="14.~IFile" resolveInfo="IFile" />
+                </node>
+                <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="6240380780854117847">
+                  <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="6240380780854117846">
+                    <link role="variableDeclaration" targetNodeId="7159280687324564769" resolveInfo="file" />
+                  </node>
+                  <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="6240380780854119446">
+                    <link role="baseMethodDeclaration" targetNodeId="14.~IFile.getParent():jetbrains.mps.vfs.IFile" resolveInfo="getParent" />
+                  </node>
+                </node>
+              </node>
+            </node>
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="6240380780854119448">
+              <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="6240380780854119449">
+                <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="6240380780854119457">
+                  <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="6240380780854119459">
+                    <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="6240380780854119458">
+                      <link role="variableDeclaration" targetNodeId="6240380780854117843" resolveInfo="dir" />
+                    </node>
+                    <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="6240380780854119463">
+                      <link role="baseMethodDeclaration" targetNodeId="14.~IFile.mkdirs():boolean" resolveInfo="mkdirs" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+              <node role="condition" type="jetbrains.mps.baseLanguage.structure.NotEqualsExpression" id="6240380780854119453">
+                <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="6240380780854119456" />
+                <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="6240380780854119452">
+                  <link role="variableDeclaration" targetNodeId="6240380780854117843" resolveInfo="dir" />
+                </node>
+              </node>
+            </node>
             <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="7159280687324564773">
               <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="7159280687324564774">
                 <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="7159280687324564775">
