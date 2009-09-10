@@ -70,6 +70,22 @@ public class TextLine {
   private Style myStyle;
   private boolean myBraceSelected = false;
 
+  private Padding myPaddingLeft;
+  private Padding myPaddingRight;
+  private Padding myPaddingTop;
+  private Padding myPaddingBottom;
+
+  private boolean myControlOvered;
+  private boolean myStrikeOut;
+  private boolean myUnderlined;
+
+  private Color myTextColor;
+  private Color myNullTextColor;
+  private Color myTextBackground;
+  private Color myNullTextBackground;
+  private Color mySelectedTextBackground;
+  private Color myNulLSelectedTextBackground;
+
   public TextLine(String text) {
     this(text, new Style(), false);
   }
@@ -142,8 +158,23 @@ public class TextLine {
     String family = defaultFont.getFamily();
     Integer style = myStyle.get(StyleAttributes.FONT_STYLE);
     int fontSize = styleFontSize != null ? styleFontSize : defaultFont.getSize();
-
     myFont = new Font(family, style, fontSize);
+
+    myPaddingLeft = myStyle.get(StyleAttributes.PADDING_LEFT);
+    myPaddingRight = myStyle.get(StyleAttributes.PADDING_RIGHT);
+    myPaddingTop = myStyle.get(StyleAttributes.PADDING_LEFT);
+    myPaddingBottom = myStyle.get(StyleAttributes.PADDING_LEFT);
+
+    myControlOvered = myStyle.get(StyleAttributes.CONTROL_OVERED_REFERENCE);
+    myStrikeOut = myStyle.get(StyleAttributes.STRIKE_OUT);
+    myUnderlined = myStyle.get(StyleAttributes.UNDERLINED);
+
+    myTextColor = myStyle.get(StyleAttributes.TEXT_COLOR);
+    myNullTextColor = myStyle.get(StyleAttributes.NULL_TEXT_COLOR);
+    myTextBackground = myStyle.get(StyleAttributes.TEXT_BACKGROUND_COLOR);
+    myNullTextBackground = myStyle.get(StyleAttributes.NULL_TEXT_BACKGROUND_COLOR);
+    mySelectedTextBackground = myStyle.get(StyleAttributes.SELECTED_TEXT_BACKGROUND_COLOR);
+    myNulLSelectedTextBackground = myStyle.get(StyleAttributes.NULL_SELECTED_TEXT_BACKGROUND_COLOR);
   }
 
   public void relayout() {
@@ -195,28 +226,28 @@ public class TextLine {
   }
 
   public int getPaddingLeft() {
-    Padding padding = myStyle.get(StyleAttributes.PADDING_LEFT);
+    Padding padding = myPaddingLeft;
     Double value = padding.getValue();
     Measure type = padding.getType();
     return getHorizontalInternalInsert(value, type);
   }
 
   public int getPaddingRight() {
-    Padding padding = myStyle.get(StyleAttributes.PADDING_RIGHT);
+    Padding padding = myPaddingRight;
     Double value = padding.getValue();
     Measure type = padding.getType();
     return getHorizontalInternalInsert(value, type);
   }
 
   public int getPaddingTop() {
-    Padding padding = myStyle.get(StyleAttributes.PADDING_TOP);
+    Padding padding = myPaddingTop;
     Double value = padding.getValue();
     Measure type = padding.getType();
     return getVerticalInternalInsert(value, type);
   }
 
   public int getPaddingBottom() {
-    Padding padding = myStyle.get(StyleAttributes.PADDING_BOTTOM);
+    Padding padding = myPaddingBottom;
     Double value = padding.getValue();
     Measure type = padding.getType();
     return getVerticalInternalInsert(value, type);
@@ -266,14 +297,14 @@ public class TextLine {
   }
 
   public Color getTextColor() {
-    if (myStyle.get(StyleAttributes.CONTROL_OVERED_REFERENCE)) {
+    if (myControlOvered) {
       return Color.BLUE;
     }
 
     if (!myNull) {
-      return myStyle.get(StyleAttributes.TEXT_COLOR);
+      return myTextColor;
     } else {
-      return myStyle.get(StyleAttributes.NULL_TEXT_COLOR);
+      return myNullTextColor;
     }
   }
 
@@ -298,9 +329,9 @@ public class TextLine {
       return ERROR_COLOR;
     } else {
       if (!myNull) {
-        return myStyle.get(StyleAttributes.TEXT_BACKGROUND_COLOR);
+        return myTextBackground;
       } else {
-        return myStyle.get(StyleAttributes.NULL_TEXT_BACKGROUND_COLOR);        
+        return myNullTextBackground;
       }
     }
   }
@@ -312,9 +343,9 @@ public class TextLine {
 
   public Color getSelectedTextBackgroundColor() {
     if (!myNull) {
-      return myStyle.get(StyleAttributes.SELECTED_TEXT_BACKGROUND_COLOR);
+      return mySelectedTextBackground;
     } else {
-      return myStyle.get(StyleAttributes.NULL_SELECTED_TEXT_BACKGROUND_COLOR);
+      return myNulLSelectedTextBackground;
     }
   }
 
@@ -560,15 +591,15 @@ public class TextLine {
   }
 
   public boolean isUnderlined() {
-    if (myStyle.get(StyleAttributes.CONTROL_OVERED_REFERENCE)) {
+    if (myControlOvered) {
       return true;
     }
 
-    return myStyle.get(StyleAttributes.UNDERLINED);
+    return myUnderlined;
   }
 
   public boolean isStrikeOut() {
-    return myStyle.get(StyleAttributes.STRIKE_OUT);
+    return myStrikeOut;
   }
 
   public int getAscent() {
