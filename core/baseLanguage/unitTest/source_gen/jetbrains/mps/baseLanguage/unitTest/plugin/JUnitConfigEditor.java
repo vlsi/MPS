@@ -17,9 +17,6 @@ import jetbrains.mps.workbench.MPSDataKeys;
 import com.intellij.ide.DataManager;
 import java.awt.GridBagLayout;
 import jetbrains.mps.baseLanguage.plugin.LayoutUtil;
-import org.jdesktop.beansbinding.Property;
-import org.jdesktop.beansbinding.BeanProperty;
-import org.jdesktop.beansbinding.Bindings;
 import java.awt.FlowLayout;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
@@ -94,51 +91,6 @@ public class JUnitConfigEditor extends JPanel {
   }
 
   private void bind() {
-    {
-      Object sourceObject = myThis;
-      Property sourceProperty = BeanProperty.create("myModule");
-      Object targetObject = this.myComponent11;
-      Property targetProperty = BeanProperty.create("text");
-      AutoBinding binding = Bindings.createAutoBinding(AutoBinding.UpdateStrategy.READ_WRITE, sourceObject, sourceProperty, targetObject, targetProperty);
-      binding.bind();
-      ListSequence.fromList(this.myBindings).addElement(binding);
-    }
-    {
-      Object sourceObject = myThis;
-      Property sourceProperty = BeanProperty.create("myModel");
-      Object targetObject = this.myComponent13;
-      Property targetProperty = BeanProperty.create("text");
-      AutoBinding binding = Bindings.createAutoBinding(AutoBinding.UpdateStrategy.READ_WRITE, sourceObject, sourceProperty, targetObject, targetProperty);
-      binding.bind();
-      ListSequence.fromList(this.myBindings).addElement(binding);
-    }
-    {
-      Object sourceObject = myThis;
-      Property sourceProperty = BeanProperty.create("myNode");
-      Object targetObject = this.myComponent15;
-      Property targetProperty = BeanProperty.create("text");
-      AutoBinding binding = Bindings.createAutoBinding(AutoBinding.UpdateStrategy.READ_WRITE, sourceObject, sourceProperty, targetObject, targetProperty);
-      binding.bind();
-      ListSequence.fromList(this.myBindings).addElement(binding);
-    }
-    {
-      Object sourceObject = myThis;
-      Property sourceProperty = BeanProperty.create("myNode");
-      Object targetObject = this.myComponent17;
-      Property targetProperty = BeanProperty.create("text");
-      AutoBinding binding = Bindings.createAutoBinding(AutoBinding.UpdateStrategy.READ_WRITE, sourceObject, sourceProperty, targetObject, targetProperty);
-      binding.bind();
-      ListSequence.fromList(this.myBindings).addElement(binding);
-    }
-    {
-      Object sourceObject = myThis;
-      Property sourceProperty = BeanProperty.create("myMethod");
-      Object targetObject = this.myComponent19;
-      Property targetProperty = BeanProperty.create("text");
-      AutoBinding binding = Bindings.createAutoBinding(AutoBinding.UpdateStrategy.READ_WRITE, sourceObject, sourceProperty, targetObject, targetProperty);
-      binding.bind();
-      ListSequence.fromList(this.myBindings).addElement(binding);
-    }
   }
 
   private void unbind() {
@@ -252,6 +204,7 @@ public class JUnitConfigEditor extends JPanel {
   private ModuleChooserComponent createComponent17() {
     ModuleChooserComponent component = new ModuleChooserComponent();
     this.myComponent11 = component;
+    component.setText(myThis.getMyModule());
     return component;
   }
 
@@ -274,6 +227,7 @@ public class JUnitConfigEditor extends JPanel {
   private ModelChooserComponent createComponent20() {
     ModelChooserComponent component = new ModelChooserComponent();
     this.myComponent13 = component;
+    component.setText(myThis.getMyModel());
     return component;
   }
 
@@ -296,6 +250,7 @@ public class JUnitConfigEditor extends JPanel {
   private NodeChooserComponent createComponent23() {
     NodeChooserComponent component = new NodeChooserComponent();
     this.myComponent15 = component;
+    component.setText(myThis.getMyNode());
     return component;
   }
 
@@ -320,6 +275,7 @@ public class JUnitConfigEditor extends JPanel {
   private NodeChooserComponent createComponent26() {
     NodeChooserComponent component = new NodeChooserComponent();
     this.myComponent17 = component;
+    component.setText(myThis.getMyNode());
     return component;
   }
 
@@ -333,6 +289,7 @@ public class JUnitConfigEditor extends JPanel {
   private MethodChooserComponent createComponent28() {
     MethodChooserComponent component = new MethodChooserComponent();
     this.myComponent19 = component;
+    component.setText(myThis.getMyMethod());
     component.setTestCase(myThis.getMyNode());
     return component;
   }
