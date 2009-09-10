@@ -36,7 +36,7 @@ public class GeneratorTester extends Generator {
   private boolean myTestFailed = false;
 
   public static void main(String[] args) {
-    Generator generator = new Generator(WhatToGenerate.fromDumpInFile(new File(args[0])), new SystemOutLogger());
+    GeneratorTester generator = new GeneratorTester(WhatToGenerate.fromDumpInFile(new File(args[0])), new SystemOutLogger());
     try {
       generator.generate();
       System.exit(0);
