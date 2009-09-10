@@ -85,6 +85,14 @@ public class EditorSettings implements SearchableConfigurable, PersistentStateCo
     return myDefaultEditorFont;
   }
 
+  public int getFontSize() {
+    return myState.myFontSize;
+  }
+
+  public String getFontFamily() {
+    return myState.myFontFamily;
+  }
+
   public void setDefaultEditorFont(Font newFont) {
     myState.myFontFamily = newFont.getFamily();
     myState.myFontSize = newFont.getSize();

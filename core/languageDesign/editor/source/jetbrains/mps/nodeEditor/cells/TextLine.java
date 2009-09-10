@@ -157,11 +157,11 @@ public class TextLine {
   public void updateStyle(Set<StyleAttribute> attributes) {
     if (attributes == null || attributes.contains(StyleAttributes.FONT_SIZE) || attributes.contains(StyleAttributes.FONT_STYLE)) {
       //this is the most expensive calculation
-      Font defaultFont = EditorSettings.getInstance().getDefaultEditorFont();
+      EditorSettings settings = EditorSettings.getInstance();
       Integer styleFontSize = myStyle.get(StyleAttributes.FONT_SIZE);
-      String family = defaultFont.getFamily();
+      String family = settings.getFontFamily();
       Integer style = myStyle.get(StyleAttributes.FONT_STYLE);
-      int fontSize = styleFontSize != null ? styleFontSize : defaultFont.getSize();
+      int fontSize = styleFontSize != null ? styleFontSize : settings.getFontSize();
       myFont = new Font(family, style, fontSize);
     }
 
