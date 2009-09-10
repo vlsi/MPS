@@ -29,7 +29,6 @@ import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.baseLanguage.plugin.RunComponent;
-import jetbrains.mps.baseLanguage.plugin.ClassRunner;
 import jetbrains.mps.baseLanguage.plugin.BLProcessHandler;
 import java.nio.charset.Charset;
 import com.intellij.execution.ui.ExecutionConsole;
@@ -81,12 +80,13 @@ public class DefaultJUnit_Configuration extends BaseRunConfig {
           final Wrappers._T<SNode> node = new Wrappers._T<SNode>();
           ModelAccess.instance().runReadAction(new Runnable() {
             public void run() {
-              node.value = new SNodePointer(DefaultJUnit_Configuration.this.getStateObject().modelId, DefaultJUnit_Configuration.this.getStateObject().nodeId).getNode();
+              node.value = new SNodePointer(DefaultJUnit_Configuration.this.getStateObject().model, DefaultJUnit_Configuration.this.getStateObject().node).getNode();
             }
           });
           Project project = MPSDataKeys.PROJECT.getData(environment.getDataContext());
           final RunComponent runComponent = new RunComponent(project);
-          final ClassRunner classRunner = new ClassRunner(runComponent);
+          final UnitTestClassRunner testRunner = new UnitTestClassRunner(runComponent);
+          testRunner.setRunParams(DefaultJUnit_Configuration.this.getStateObject().myParams);
 
           ListSequence.fromList(actions).addSequence(ListSequence.fromList(ListSequence.fromListAndArray(new ArrayList<AnAction>(), runComponent.getConsoleView().createConsoleActions())));
           consoleComponent = runComponent;
@@ -99,7 +99,8 @@ public class DefaultJUnit_Configuration extends BaseRunConfig {
           final Wrappers._T<Process> process = new Wrappers._T<Process>();
           ModelAccess.instance().runReadAction(new Runnable() {
             public void run() {
-              process.value = classRunner.run(node.value, DefaultJUnit_Configuration.this.getStateObject().myParams.getProgramParameters(), DefaultJUnit_Configuration.this.getStateObject().myParams.getVMParameters(), DefaultJUnit_Configuration.this.getStateObject().myParams.getWorkingDirectory());
+              testRunner.runTest(node.value);
+              process.value = testRunner.getProcess();
             }
           });
 
@@ -197,8 +198,10 @@ public class DefaultJUnit_Configuration extends BaseRunConfig {
   }
 
   public static class MyState implements Cloneable {
-    public String nodeId;
-    public String modelId;
+    public String node;
+    public String model;
+    public String module;
+    public String method;
     public RunParameters myParams;
 
     public MyState() {

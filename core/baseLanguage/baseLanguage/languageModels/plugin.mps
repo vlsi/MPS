@@ -42237,23 +42237,23 @@
           </node>
         </node>
       </node>
-      <node role="content" type="jetbrains.mps.uiLanguage.structure.ComponentInstance" id="3898325814825245749">
-        <link role="componentDeclaration" targetNodeId="2v.1202464198724" resolveInfo="TextField" />
-        <node role="content" type="jetbrains.mps.uiLanguage.structure.LayoutConstraint" id="3898325814825245750">
-          <node role="constraint" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="3898325814825245776">
-            <link role="baseMethodDeclaration" targetNodeId="3898325814825245642" resolveInfo="createFieldConstraints" />
+      <node role="content" type="jetbrains.mps.uiLanguage.structure.ComponentInstance" id="426276280371604394">
+        <link role="componentDeclaration" targetNodeId="426276280371601258" resolveInfo="FieldWithBrowseButton" />
+        <node role="content" type="jetbrains.mps.uiLanguage.structure.LayoutConstraint" id="426276280371604395">
+          <node role="constraint" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="426276280371604398">
+            <link role="baseMethodDeclaration" targetNodeId="3898325814825245677" resolveInfo="createPanelConstraints" />
             <link role="classConcept" targetNodeId="3898325814825245636" resolveInfo="LayoutUtil" />
-            <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="3898325814825245778">
+            <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="426276280371604399">
               <property name="value" value="5" />
             </node>
           </node>
         </node>
-        <node role="content" type="jetbrains.mps.uiLanguage.structure.AttributeValue" id="3898325814825245752">
-          <link role="attribute" targetNodeId="2v.1202464208353" resolveInfo="text" />
-          <node role="value" type="jetbrains.mps.uiLanguage.structure.BindExpression" id="3898325814825245753">
-            <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="3898325814825245754">
-              <node role="operand" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpression" id="3898325814825245755" />
-              <node role="operation" type="jetbrains.mps.uiLanguage.structure.AttributeReferenceOperation" id="3898325814825245756">
+        <node role="content" type="jetbrains.mps.uiLanguage.structure.AttributeValue" id="426276280371604401">
+          <link role="attribute" targetNodeId="426276280371601260" resolveInfo="text" />
+          <node role="value" type="jetbrains.mps.uiLanguage.structure.BindExpression" id="426276280371604403">
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="426276280371604405">
+              <node role="operand" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpression" id="426276280371604406" />
+              <node role="operation" type="jetbrains.mps.uiLanguage.structure.AttributeReferenceOperation" id="426276280371604407">
                 <link role="member" targetNodeId="5360151489983366026" resolveInfo="myWorkingDir" />
               </node>
             </node>
@@ -45525,6 +45525,21 @@
       <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="5001211796553540579" />
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="5001211796553540580" />
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="5001211796553540581" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.uiLanguage.structure.ComponentDeclaration" id="426276280371601258">
+    <property name="package" value="run" />
+    <property name="name" value="FieldWithBrowseButton" />
+    <property name="stub" value="true" />
+    <link role="mapTo" targetNodeId="45.~TextFieldWithBrowseButton" resolveInfo="TextFieldWithBrowseButton" />
+    <link role="extendedComponent" targetNodeId="2v.1202816402995" resolveInfo="Panel" />
+  </node>
+  <node type="jetbrains.mps.uiLanguage.structure.ComponentController" id="426276280371601259">
+    <property name="package" value="run" />
+    <link role="component" targetNodeId="426276280371601258" resolveInfo="FieldWithBrowseButton" />
+    <node role="attribute" type="jetbrains.mps.uiLanguage.structure.AttributeDeclaration" id="426276280371601260">
+      <property name="name" value="text" />
+      <node role="type" type="jetbrains.mps.baseLanguage.structure.StringType" id="426276280371601261" />
     </node>
   </node>
 </model>
