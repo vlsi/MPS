@@ -834,7 +834,7 @@ public class EditorCell_Collection extends EditorCell_Basic implements Iterable<
       int overlapping = getOverlapping();
       if (myIsOpening) {
         myBraceTextLine.paint(g, myX + textLine.getWidth() - overlapping, myY, false, false);
-        textLine.paint(g, myX, myY, myWidth, myHeight, isSelected(), toShowCaret);
+        textLine.paint(g, myX, myY, isSelected(), toShowCaret);
       } else {
         myBraceTextLine.paint(g, myX, myY, false, false);
         textLine.paint(g, myX + myBraceTextLine.getWidth() - overlapping, myY, isSelected(), toShowCaret);

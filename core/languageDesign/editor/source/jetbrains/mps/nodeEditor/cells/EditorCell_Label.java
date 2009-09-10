@@ -403,9 +403,9 @@ public abstract class EditorCell_Label extends EditorCell_Basic {
     boolean toShowCaret = toShowCaret();
     boolean selected = isSelectionPaintedOnAncestor();
     if (isDrawBrackets()) {
-      textLine.paint(g, myX + myGapLeft + BRACKET_WIDTH, myY, myWidth - 2 * BRACKET_WIDTH, myHeight, selected, toShowCaret);
+      textLine.paint(g, myX + myGapLeft + BRACKET_WIDTH, myY, selected, toShowCaret);
     } else {
-      textLine.paint(g, myX + myGapLeft, myY, myWidth, myHeight, selected, toShowCaret);
+      textLine.paint(g, myX + myGapLeft, myY, selected, toShowCaret);
     }
   }
 

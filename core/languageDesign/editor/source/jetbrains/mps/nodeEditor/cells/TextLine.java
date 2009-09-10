@@ -24,7 +24,6 @@ import java.awt.*;
 import java.awt.geom.Rectangle2D;
 import java.util.Map;
 import java.util.Set;
-import java.util.Collections;
 
 public class TextLine {
   private static final Color ERROR_COLOR = new Color(255, 220, 220);
@@ -182,7 +181,6 @@ public class TextLine {
     mySelectedTextBackground = myStyle.get(StyleAttributes.SELECTED_TEXT_BACKGROUND_COLOR);
     myNulLSelectedTextBackground = myStyle.get(StyleAttributes.NULL_SELECTED_TEXT_BACKGROUND_COLOR);
   }
-
   public void relayout() {
     FontMetrics metrics = getFontMetrics();
     myHeight = (int) (metrics.getHeight() * myLineSpacing + getPaddingTop() + getPaddingBottom());
@@ -360,12 +358,6 @@ public class TextLine {
   }
 
   public void paint(Graphics g, int shiftX, int shiftY, boolean isSelected, boolean toShowCaret) {
-    int width = getWidth();
-    paint(g, shiftX, shiftY, width, myHeight, isSelected, toShowCaret);
-  }
-
-  public void paint(Graphics g, int shiftX, int shiftY, int width, int height, boolean isSelected, boolean toShowCaret) {
-   // shiftY += getTopInset();
     Color backgroundColor;
     Color textColor;
     Color textBackgroundColor;
