@@ -1393,7 +1393,9 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
           return;
         }
 
-        removeAll();
+        if (getComponents().length > 0) {
+          removeAll();
+        }
 
         if (events != null) {
           revertErrorCells(events);
