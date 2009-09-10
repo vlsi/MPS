@@ -18,12 +18,10 @@ package jetbrains.mps.nodeEditor.style;
 import com.intellij.util.containers.HashMap;
 
 import java.util.*;
-import java.awt.Font;
 
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.util.EqualUtil;
 import jetbrains.mps.logging.Logger;
-import org.apache.commons.collections.map.HashedMap;
 
 public class Style {
   private static final Logger LOG = Logger.getLogger(Style.class);
@@ -110,6 +108,8 @@ public class Style {
 
     boolean changed = false;
 
+    Set<StyleAttribute> changedAttributes = new HashSet<StyleAttribute>();
+
     for (StyleAttribute attribute : attributes) {
       Object parentValue = getParentStyle() == null ? null : getParentStyle().get(attribute);
       Object currentValue = myAttributeValues.get(attribute);
@@ -120,7 +120,7 @@ public class Style {
       Object newValue = attribute.combine(parentValue, currentValue);
 
       if (!EqualUtil.equals(newValue, oldCachedValues.get(attribute))) {
-        changed = true;
+        changedAttributes.add(attribute);
       }
 
       if (newValue != null) {
@@ -128,20 +128,21 @@ public class Style {
       }
     }
 
-    if (changed) {
+    if (!changedAttributes.isEmpty()) {
       for (Style style : myChildren) {
         style.updateCache();
       }
-      fireStyleChanged();
+
+      fireStyleChanged(new StyleChangeEvent(this, changedAttributes));
     }
   }
 
-  private void fireStyleChanged() {
+  private void fireStyleChanged(StyleChangeEvent e) {
     if (myStyleListeners == null) return;
 
     for (StyleListener l : myStyleListeners) {
       try {
-        l.styleChanged(this);
+        l.styleChanged(e);
       } catch (Throwable t) {
         LOG.error(t);
       }

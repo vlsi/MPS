@@ -25,10 +25,7 @@ import jetbrains.mps.lang.structure.structure.LinkDeclaration;
 import jetbrains.mps.nodeEditor.*;
 import jetbrains.mps.nodeEditor.cellMenu.NodeSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.NodeSubstitutePatternEditor;
-import jetbrains.mps.nodeEditor.style.Padding;
-import jetbrains.mps.nodeEditor.style.StyleAttributes;
-import jetbrains.mps.nodeEditor.style.StyleListener;
-import jetbrains.mps.nodeEditor.style.Style;
+import jetbrains.mps.nodeEditor.style.*;
 import jetbrains.mps.nodeEditor.text.TextBuilder;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SNodeUndoableAction;
@@ -60,9 +57,9 @@ public abstract class EditorCell_Label extends EditorCell_Basic {
     myNullTextLine = new TextLine("", getStyle(), true);
 
     getStyle().addListener(new StyleListener() {
-      public void styleChanged(Style s) {
-        myTextLine.updateStyle();
-        myNullTextLine.updateStyle();
+      public void styleChanged(StyleChangeEvent e) {
+        myTextLine.updateStyle(e.getChangedAttributes());
+        myNullTextLine.updateStyle(e.getChangedAttributes());
       }
     });
 

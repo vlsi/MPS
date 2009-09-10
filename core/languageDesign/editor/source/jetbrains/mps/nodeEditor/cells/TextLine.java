@@ -16,16 +16,15 @@
 package jetbrains.mps.nodeEditor.cells;
 
 
-import jetbrains.mps.nodeEditor.style.Style;
-import jetbrains.mps.nodeEditor.style.StyleAttributes;
-import jetbrains.mps.nodeEditor.style.Measure;
-import jetbrains.mps.nodeEditor.style.Padding;
+import jetbrains.mps.nodeEditor.style.*;
 import jetbrains.mps.nodeEditor.EditorSettings;
 import jetbrains.mps.util.misc.hash.HashMap;
 
 import java.awt.*;
 import java.awt.geom.Rectangle2D;
 import java.util.Map;
+import java.util.Set;
+import java.util.Collections;
 
 public class TextLine {
   private static final Color ERROR_COLOR = new Color(255, 220, 220);
@@ -153,12 +152,19 @@ public class TextLine {
   }
 
   public void updateStyle() {
-    Font defaultFont = EditorSettings.getInstance().getDefaultEditorFont();
-    Integer styleFontSize = myStyle.get(StyleAttributes.FONT_SIZE);
-    String family = defaultFont.getFamily();
-    Integer style = myStyle.get(StyleAttributes.FONT_STYLE);
-    int fontSize = styleFontSize != null ? styleFontSize : defaultFont.getSize();
-    myFont = new Font(family, style, fontSize);
+    updateStyle(null);
+  }
+
+  public void updateStyle(Set<StyleAttribute> attributes) {
+    if (attributes == null || attributes.contains(StyleAttributes.FONT_SIZE) || attributes.contains(StyleAttributes.FONT_STYLE)) {
+      //this is the most expensive calculation
+      Font defaultFont = EditorSettings.getInstance().getDefaultEditorFont();
+      Integer styleFontSize = myStyle.get(StyleAttributes.FONT_SIZE);
+      String family = defaultFont.getFamily();
+      Integer style = myStyle.get(StyleAttributes.FONT_STYLE);
+      int fontSize = styleFontSize != null ? styleFontSize : defaultFont.getSize();
+      myFont = new Font(family, style, fontSize);
+    }
 
     myPaddingLeft = myStyle.get(StyleAttributes.PADDING_LEFT);
     myPaddingRight = myStyle.get(StyleAttributes.PADDING_RIGHT);
