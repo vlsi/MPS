@@ -242,6 +242,8 @@ public class WhatToGenerate {
     File tmpFile = createTmpFile();
     PrintWriter writer = new PrintWriter(tmpFile);
     writer.append(toString());
+    writer.flush();
+    writer.close();
     return tmpFile;
   }
 

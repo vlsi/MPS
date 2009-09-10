@@ -25,10 +25,7 @@ import java.util.Set;
 import java.util.List;
 import java.util.ArrayList;
 import java.util.Collections;
-import java.io.PrintStream;
-import java.io.IOException;
-import java.io.PrintWriter;
-import java.io.StringWriter;
+import java.io.*;
 
 import com.intellij.openapi.util.Computable;
 import com.intellij.openapi.progress.EmptyProgressIndicator;
@@ -39,7 +36,7 @@ public class GeneratorTester extends Generator {
   private boolean myTestFailed = false;
 
   public static void main(String[] args) {
-    Generator generator = new GeneratorTester(WhatToGenerate.fromCommandLine(args), new SystemOutLogger());
+    Generator generator = new Generator(WhatToGenerate.fromDumpInFile(new File(args[0])), new SystemOutLogger());
     try {
       generator.generate();
       System.exit(0);
