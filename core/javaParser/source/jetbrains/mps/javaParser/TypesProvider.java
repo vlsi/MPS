@@ -2,9 +2,11 @@ package jetbrains.mps.javaParser;
 
 import org.eclipse.jdt.internal.compiler.lookup.*;
 import org.eclipse.jdt.internal.compiler.ast.Wildcard;
-import jetbrains.mps.smodel.INodeAdapter;
-import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.smodel.*;
 import jetbrains.mps.baseLanguage.structure.*;
+import jetbrains.mps.util.NodeNameUtil;
+import jetbrains.mps.util.NameUtil;
+import jetbrains.mps.javastub.classpath.ClassPathModelProvider;
 
 import java.util.Map;
 import java.util.HashMap;
@@ -21,6 +23,18 @@ public class TypesProvider {
 
   public TypesProvider(ReferentsCreator referentsCreator) {
     myReferentsCreator = referentsCreator;
+  }
+
+  public static String classFqNameFromCompoundName(char[][] compoundName) {
+    StringBuilder builder = new StringBuilder();
+    for (int i = 0; i < compoundName.length; i++) {
+      char[] namePart = compoundName[i];
+      builder.append(namePart);
+      if (i < compoundName.length - 1) {
+        builder.append('.');
+      }
+    }
+    return builder.toString();
   }
 
   public Type createType(TypeBinding binding) {
@@ -97,6 +111,18 @@ public class TypesProvider {
             result.addParameter(createType(typeBinding));
           }
           return result;
+        }
+        if (binding instanceof BinaryTypeBinding) {
+          //in java stubs
+          ClassifierType classifierType = ClassifierType.newInstance(model);
+          BinaryTypeBinding binaryTypeBinding = (BinaryTypeBinding) binding;
+          String classFQName = classFqNameFromCompoundName(binaryTypeBinding.compoundName);
+          String packageName = NodeNameUtil.getNamespace(classFQName);
+          SModelReference modelReference = ClassPathModelProvider.uidForPackage(packageName);
+          SNodeId nodeId = new SNodeId.Foreign(SNodeId.Foreign.ID_PREFIX + NameUtil.shortNameFromLongName(classFQName));
+          SReference reference = SReference.create(ClassifierType.CLASSIFIER, classifierType.getNode(), modelReference, nodeId);
+          classifierType.getNode().addReference(reference);
+          return classifierType;
         }
         if (binding instanceof TypeVariableBinding) {
           TypeVariableBinding typeVariableBinding = (TypeVariableBinding) binding;
