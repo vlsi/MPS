@@ -17,6 +17,7 @@ package jetbrains.mps.vcs.ui;
 
 public class VcsIdeSettings {
   private boolean myTextModeEnabled = false;
+  private boolean myNotifyWhenChangedOutsideAreMade = true;
 
   public boolean getTextModeEnabled() {
     return myTextModeEnabled;
@@ -24,5 +25,13 @@ public class VcsIdeSettings {
 
   public void setTextModeEnabled(boolean textModeEnabled) {
     myTextModeEnabled = textModeEnabled;
+  }
+
+  public boolean getNotifyWhenChangedOutsideAreMade() {
+    return myNotifyWhenChangedOutsideAreMade;
+  }
+
+  public void setNotifyWhenChangedOutsideAreMade(boolean notifyWhenChangedOutsideAreMade) {
+    myNotifyWhenChangedOutsideAreMade = notifyWhenChangedOutsideAreMade;
   }
 }

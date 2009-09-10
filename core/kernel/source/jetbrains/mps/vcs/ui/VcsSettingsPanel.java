@@ -15,30 +15,40 @@
  */
 package jetbrains.mps.vcs.ui;
 
+import com.intellij.openapi.ui.VerticalFlowLayout;
+
 import javax.swing.JCheckBox;
 import javax.swing.JPanel;
 import java.awt.BorderLayout;
+import java.awt.FlowLayout;
 
 public class VcsSettingsPanel extends JPanel {
   private final VcsIdeSettings mySettings;
   private final JCheckBox myTextModeDifferenceCheckBox;
+  private final JCheckBox myNotifyWhenChangedOutsideAreMade;
 
   public VcsSettingsPanel(VcsIdeSettings settings) {
-    super(new BorderLayout());
+    super(new VerticalFlowLayout(true, false));
     mySettings = settings;
     myTextModeDifferenceCheckBox = new JCheckBox("View Model Difference As Text", mySettings.getTextModeEnabled());
-    add(myTextModeDifferenceCheckBox, BorderLayout.PAGE_START);
+    myNotifyWhenChangedOutsideAreMade = new JCheckBox("Show Warning When Changing Models Outside Of Vcs Roots",
+      mySettings.getNotifyWhenChangedOutsideAreMade());
+    add(myTextModeDifferenceCheckBox);
+    add(myNotifyWhenChangedOutsideAreMade);
   }
 
   public boolean isModified() {
-    return myTextModeDifferenceCheckBox.isSelected() != mySettings.getTextModeEnabled();
+    return (myTextModeDifferenceCheckBox.isSelected() != mySettings.getTextModeEnabled()) ||
+      (myNotifyWhenChangedOutsideAreMade.isSelected() != mySettings.getNotifyWhenChangedOutsideAreMade());
   }
 
   public void reset() {
     myTextModeDifferenceCheckBox.setSelected(mySettings.getTextModeEnabled());
+    myNotifyWhenChangedOutsideAreMade.setSelected(mySettings.getNotifyWhenChangedOutsideAreMade());
   }
 
   public void apply() {
     mySettings.setTextModeEnabled(myTextModeDifferenceCheckBox.isSelected());
+    mySettings.setNotifyWhenChangedOutsideAreMade(myNotifyWhenChangedOutsideAreMade.isSelected());
   }
 }

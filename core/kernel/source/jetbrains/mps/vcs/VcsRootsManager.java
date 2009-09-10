@@ -47,6 +47,9 @@ public class VcsRootsManager implements ProjectComponent {
   private final SModelAdapter myGlobalSModelListener = new SModelAdapter() {
     @Override
     public void modelSaved(SModelDescriptor sm) {
+      if (!ApplicationLevelVcsManager.instance().getSettings().getNotifyWhenChangedOutsideAreMade()) {
+        return;
+      }
       try {
         IFile modelFile = sm.getModelFile();
         if (modelFile == null) return;
