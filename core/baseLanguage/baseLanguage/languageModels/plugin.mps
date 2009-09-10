@@ -50,7 +50,7 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590373(jetbrains.mps.baseLanguage.classifiers.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590553(jetbrains.mps.uiLanguage.structure)" version="1" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959054e(jetbrains.mps.uiLanguage.constraints)" version="26" />
-  <maxImportIndex value="125" />
+  <maxImportIndex value="126" />
   <import index="1" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="1" />
   <import index="3" modelUID="r:00000000-0000-4000-0000-011c895904a4(jetbrains.mps.ide.actions)" version="-1" />
   <import index="4" modelUID="f:java_stub#java.util(java.util@java_stub)" version="-1" />
@@ -133,6 +133,7 @@
   <import index="123" modelUID="f:java_stub#com.intellij.ui.awt(com.intellij.ui.awt@java_stub)" version="-1" />
   <import index="124" modelUID="f:java_stub#java.awt.geom(java.awt.geom@java_stub)" version="-1" />
   <import index="125" modelUID="f:java_stub#jetbrains.mps.ide.findusages.findalgorithm.finders(jetbrains.mps.ide.findusages.findalgorithm.finders@java_stub)" version="-1" />
+  <import index="126" modelUID="f:java_stub#com.intellij.openapi.fileChooser(com.intellij.openapi.fileChooser@java_stub)" version="-1" />
   <node type="jetbrains.mps.lang.plugin.structure.ActionGroupDeclaration" id="1205247737002">
     <property name="name" value="BaseLanguageModelActionsInternal" />
     <node role="modifier" type="jetbrains.mps.lang.plugin.structure.ModificationStatement" id="1205247768364">
@@ -45917,8 +45918,8 @@
     <property name="package" value="run" />
     <property name="name" value="FieldWithBrowseButton" />
     <property name="stub" value="true" />
-    <link role="mapTo" targetNodeId="45.~TextFieldWithBrowseButton" resolveInfo="TextFieldWithBrowseButton" />
     <link role="extendedComponent" targetNodeId="2v.1202816402995" resolveInfo="Panel" />
+    <link role="mapTo" targetNodeId="8398380099657262850" resolveInfo="FieldWithPathChooseDialog" />
   </node>
   <node type="jetbrains.mps.uiLanguage.structure.ComponentController" id="426276280371601259">
     <property name="package" value="run" />
@@ -45926,6 +45927,298 @@
     <node role="attribute" type="jetbrains.mps.uiLanguage.structure.AttributeDeclaration" id="426276280371601260">
       <property name="name" value="text" />
       <node role="type" type="jetbrains.mps.baseLanguage.structure.StringType" id="426276280371601261" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="8398380099657262850">
+    <property name="package" value="run" />
+    <property name="name" value="FieldWithPathChooseDialog" />
+    <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="8398380099657310591">
+      <property name="name" value="setText" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="8398380099657310592" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="8398380099657310593" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="8398380099657310594">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="8398380099657310596">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="8398380099657310602">
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="8398380099657310597">
+              <node role="operation" type="jetbrains.mps.baseLanguage.structure.FieldReferenceOperation" id="8398380099657310598">
+                <link role="fieldDeclaration" targetNodeId="8398380099657262856" resolveInfo="field" />
+              </node>
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="8398380099657310599" />
+            </node>
+            <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="8398380099657310606">
+              <link role="baseMethodDeclaration" targetNodeId="45.~TextFieldWithBrowseButton.setText(java.lang.String):void" resolveInfo="setText" />
+              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="8398380099657310607">
+                <link role="variableDeclaration" targetNodeId="8398380099657310600" resolveInfo="text" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="8398380099657310600">
+        <property name="name" value="text" />
+        <node role="type" type="jetbrains.mps.baseLanguage.structure.StringType" id="8398380099657310601" />
+      </node>
+    </node>
+    <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="8398380099657310608">
+      <property name="name" value="getText" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.StringType" id="8398380099657310613" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="8398380099657310610" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="8398380099657310611">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="8398380099657310614">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="8398380099657310618">
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="8398380099657310615">
+              <node role="operation" type="jetbrains.mps.baseLanguage.structure.FieldReferenceOperation" id="8398380099657310616">
+                <link role="fieldDeclaration" targetNodeId="8398380099657262856" resolveInfo="field" />
+              </node>
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="8398380099657310617" />
+            </node>
+            <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="8398380099657310622">
+              <link role="baseMethodDeclaration" targetNodeId="45.~TextFieldWithBrowseButton.getText():java.lang.String" resolveInfo="getText" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="8398380099657262851" />
+    <node role="constructor" type="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" id="8398380099657262852">
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="8398380099657262853" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="8398380099657262854" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="8398380099657262855">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="8398380099657273833">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="8398380099657273834">
+            <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="8398380099657273835">
+              <link role="baseMethodDeclaration" targetNodeId="17.~Container.setLayout(java.awt.LayoutManager):void" resolveInfo="setLayout" />
+              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="8398380099657273837">
+                <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="8398380099657310492">
+                  <link role="baseMethodDeclaration" targetNodeId="17.~BorderLayout.&lt;init&gt;()" resolveInfo="BorderLayout" />
+                </node>
+              </node>
+            </node>
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="8398380099657273836" />
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="8398380099657310525">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression" id="8398380099657310529">
+            <node role="rValue" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="8398380099657310532">
+              <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="8398380099657310534">
+                <link role="baseMethodDeclaration" targetNodeId="126.~FileChooserDescriptor.&lt;init&gt;(boolean,boolean,boolean,boolean,boolean,boolean)" resolveInfo="FileChooserDescriptor" />
+                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="8398380099657310535">
+                  <property name="value" value="false" />
+                </node>
+                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="8398380099657310538">
+                  <property name="value" value="true" />
+                </node>
+                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="8398380099657310539">
+                  <property name="value" value="false" />
+                </node>
+                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="8398380099657310541">
+                  <property name="value" value="false" />
+                </node>
+                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="8398380099657310543">
+                  <property name="value" value="false" />
+                </node>
+                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="8398380099657310545">
+                  <property name="value" value="false" />
+                </node>
+              </node>
+            </node>
+            <node role="lValue" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="8398380099657310526">
+              <node role="operation" type="jetbrains.mps.baseLanguage.structure.FieldReferenceOperation" id="8398380099657310527">
+                <link role="fieldDeclaration" targetNodeId="8398380099657272908" resolveInfo="chooser" />
+              </node>
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="8398380099657310528" />
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="8398380099657310547">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="8398380099657310551">
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="8398380099657310548">
+              <node role="operation" type="jetbrains.mps.baseLanguage.structure.FieldReferenceOperation" id="8398380099657310549">
+                <link role="fieldDeclaration" targetNodeId="8398380099657272908" resolveInfo="chooser" />
+              </node>
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="8398380099657310550" />
+            </node>
+            <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="8398380099657310555">
+              <link role="baseMethodDeclaration" targetNodeId="126.~FileChooserDescriptor.setTitle(java.lang.String):void" resolveInfo="setTitle" />
+              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="8398380099657310556">
+                <property name="value" value="Select Working Directory" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="8398380099657310494">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression" id="8398380099657310498">
+            <node role="rValue" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="8398380099657310501">
+              <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="8398380099657310502">
+                <link role="baseMethodDeclaration" targetNodeId="45.~TextFieldWithBrowseButton$NoPathCompletion.&lt;init&gt;(java.awt.event.ActionListener)" resolveInfo="TextFieldWithBrowseButton.NoPathCompletion" />
+                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="8398380099657310503">
+                  <node role="creator" type="jetbrains.mps.baseLanguage.structure.AnonymousClassCreator" id="8398380099657310505">
+                    <node role="cls" type="jetbrains.mps.baseLanguage.structure.AnonymousClass" id="8398380099657310506">
+                      <property name="nonStatic" value="true" />
+                      <link role="classifier" targetNodeId="62.~ActionListener" resolveInfo="ActionListener" />
+                      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="8398380099657310507" />
+                      <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="8398380099657310508">
+                        <property name="isAbstract" value="false" />
+                        <property name="name" value="actionPerformed" />
+                        <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="8398380099657310509" />
+                        <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="8398380099657310510" />
+                        <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="8398380099657310511">
+                          <property name="name" value="p0" />
+                          <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="8398380099657310512">
+                            <link role="classifier" targetNodeId="62.~ActionEvent" resolveInfo="ActionEvent" />
+                          </node>
+                        </node>
+                        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="8398380099657310513">
+                          <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="8398380099657310557">
+                            <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="8398380099657310558">
+                              <property name="name" value="dialog" />
+                              <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="8398380099657310559">
+                                <link role="classifier" targetNodeId="126.~FileChooserDialog" resolveInfo="FileChooserDialog" />
+                              </node>
+                              <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="8398380099657310563">
+                                <node role="operand" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="8398380099657310562">
+                                  <link role="baseMethodDeclaration" targetNodeId="126.~FileChooserFactory.getInstance():com.intellij.openapi.fileChooser.FileChooserFactory" resolveInfo="getInstance" />
+                                  <link role="classConcept" targetNodeId="126.~FileChooserFactory" resolveInfo="FileChooserFactory" />
+                                </node>
+                                <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="8398380099657310567">
+                                  <link role="baseMethodDeclaration" targetNodeId="126.~FileChooserFactory.createFileChooser(com.intellij.openapi.fileChooser.FileChooserDescriptor,java.awt.Component):com.intellij.openapi.fileChooser.FileChooserDialog" resolveInfo="createFileChooser" />
+                                  <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="8398380099657310568">
+                                    <node role="operation" type="jetbrains.mps.baseLanguage.structure.FieldReferenceOperation" id="8398380099657310569">
+                                      <link role="fieldDeclaration" targetNodeId="8398380099657272908" resolveInfo="chooser" />
+                                    </node>
+                                    <node role="operand" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="8398380099657310570">
+                                      <link role="classConcept" targetNodeId="8398380099657262850" resolveInfo="FieldWithPathChooseDialog" />
+                                    </node>
+                                  </node>
+                                  <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="8398380099657310572">
+                                    <link role="classConcept" targetNodeId="8398380099657262850" resolveInfo="FieldWithPathChooseDialog" />
+                                  </node>
+                                </node>
+                              </node>
+                            </node>
+                          </node>
+                          <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="8398380099657310624">
+                            <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="8398380099657310625">
+                              <property name="name" value="selectedFiles" />
+                              <node role="type" type="jetbrains.mps.baseLanguage.structure.ArrayType" id="6438493694657303103">
+                                <node role="componentType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="8398380099657310626">
+                                  <link role="classifier" targetNodeId="103.~VirtualFile" resolveInfo="VirtualFile" />
+                                </node>
+                              </node>
+                              <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="8398380099657310630">
+                                <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="8398380099657310631">
+                                  <link role="variableDeclaration" targetNodeId="8398380099657310558" resolveInfo="dialog" />
+                                </node>
+                                <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="8398380099657310632">
+                                  <link role="baseMethodDeclaration" targetNodeId="126.~FileChooserDialog.choose(com.intellij.openapi.vfs.VirtualFile,com.intellij.openapi.project.Project):com.intellij.openapi.vfs.VirtualFile[]" resolveInfo="choose" />
+                                  <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="8398380099657310633" />
+                                  <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="8398380099657310634" />
+                                </node>
+                              </node>
+                            </node>
+                          </node>
+                          <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="8398380099657310637">
+                            <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="8398380099657310638">
+                              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="8398380099657310648">
+                                <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="8398380099657310650">
+                                  <node role="operand" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="8398380099657310649">
+                                    <link role="classConcept" targetNodeId="8398380099657262850" resolveInfo="FieldWithPathChooseDialog" />
+                                  </node>
+                                  <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="8398380099657310654">
+                                    <link role="baseMethodDeclaration" targetNodeId="8398380099657310591" resolveInfo="setText" />
+                                    <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="8398380099657310658">
+                                      <node role="operand" type="jetbrains.mps.baseLanguage.structure.ArrayAccessExpression" id="6438493694657305129">
+                                        <node role="index" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="6438493694657305133">
+                                          <property name="value" value="0" />
+                                        </node>
+                                        <node role="array" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="8398380099657310655">
+                                          <link role="variableDeclaration" targetNodeId="8398380099657310625" resolveInfo="selectedFile" />
+                                        </node>
+                                      </node>
+                                      <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="8398380099657310664">
+                                        <link role="baseMethodDeclaration" targetNodeId="103.~VirtualFile.getPath():java.lang.String" resolveInfo="getPath" />
+                                      </node>
+                                    </node>
+                                  </node>
+                                </node>
+                              </node>
+                            </node>
+                            <node role="condition" type="jetbrains.mps.baseLanguage.structure.AndExpression" id="6438493694657303106">
+                              <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.NotEqualsExpression" id="6438493694657305123">
+                                <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="6438493694657305127" />
+                                <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.ArrayAccessExpression" id="6438493694657305115">
+                                  <node role="index" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="6438493694657305119">
+                                    <property name="value" value="0" />
+                                  </node>
+                                  <node role="array" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="6438493694657305114">
+                                    <link role="variableDeclaration" targetNodeId="8398380099657310625" resolveInfo="selectedFiles" />
+                                  </node>
+                                </node>
+                              </node>
+                              <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.GreaterThanExpression" id="6438493694657360105">
+                                <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="6438493694657360109">
+                                  <property name="value" value="0" />
+                                </node>
+                                <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="6438493694657360098">
+                                  <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="8398380099657310641">
+                                    <link role="variableDeclaration" targetNodeId="8398380099657310625" resolveInfo="selectedFile" />
+                                  </node>
+                                  <node role="operation" type="jetbrains.mps.baseLanguage.structure.ArrayLengthOperation" id="6438493694657360103" />
+                                </node>
+                              </node>
+                            </node>
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+            <node role="lValue" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="8398380099657310495">
+              <node role="operation" type="jetbrains.mps.baseLanguage.structure.FieldReferenceOperation" id="8398380099657310496">
+                <link role="fieldDeclaration" targetNodeId="8398380099657262856" resolveInfo="field" />
+              </node>
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="8398380099657310497" />
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="8398380099657310515">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="8398380099657310516">
+            <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="8398380099657310517">
+              <link role="baseMethodDeclaration" targetNodeId="17.~Container.add(java.awt.Component,java.lang.Object):void" resolveInfo="add" />
+              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="8398380099657310519">
+                <node role="operation" type="jetbrains.mps.baseLanguage.structure.FieldReferenceOperation" id="8398380099657310520">
+                  <link role="fieldDeclaration" targetNodeId="8398380099657262856" resolveInfo="field" />
+                </node>
+                <node role="operand" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="8398380099657310521" />
+              </node>
+              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference" id="8398380099657310523">
+                <link role="classifier" targetNodeId="17.~BorderLayout" resolveInfo="BorderLayout" />
+                <link role="variableDeclaration" targetNodeId="17.~BorderLayout.CENTER" resolveInfo="CENTER" />
+              </node>
+            </node>
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="8398380099657310518" />
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="field" type="jetbrains.mps.baseLanguage.structure.FieldDeclaration" id="8398380099657262856">
+      <property name="name" value="field" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PrivateVisibility" id="8398380099657262857" />
+      <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="8398380099657272907">
+        <link role="classifier" targetNodeId="45.~TextFieldWithBrowseButton$NoPathCompletion" resolveInfo="TextFieldWithBrowseButton.NoPathCompletion" />
+      </node>
+    </node>
+    <node role="field" type="jetbrains.mps.baseLanguage.structure.FieldDeclaration" id="8398380099657272908">
+      <property name="name" value="chooser" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PrivateVisibility" id="8398380099657272909" />
+      <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="8398380099657272911">
+        <link role="classifier" targetNodeId="126.~FileChooserDescriptor" resolveInfo="FileChooserDescriptor" />
+      </node>
+    </node>
+    <node role="superclass" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="8398380099657272912">
+      <link role="classifier" targetNodeId="16.~JPanel" resolveInfo="JPanel" />
     </node>
   </node>
 </model>
