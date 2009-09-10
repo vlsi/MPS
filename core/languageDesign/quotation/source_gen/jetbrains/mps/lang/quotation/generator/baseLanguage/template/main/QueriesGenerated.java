@@ -92,7 +92,14 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_1224163399565(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return _context.createUniqueName("parameter_", _context.getNode());
+    //  the 'node' expression may have been already mapped and unique name created for it
+    String uniqName = (String)_context.getTransientObject("parameterFromExpressions_" + _context.getNode().getId());
+    uniqName = (uniqName != null ?
+      uniqName :
+      _context.createUniqueName("parameter_", _context.getNode())
+    );
+    _context.putTransientObject("parameterFromExpressions_" + _context.getNode().getId(), uniqName);
+    return uniqName;
   }
 
   public static Object propertyMacro_GetPropertyValue_1224163399576(final IOperationContext operationContext, final PropertyMacroContext _context) {
