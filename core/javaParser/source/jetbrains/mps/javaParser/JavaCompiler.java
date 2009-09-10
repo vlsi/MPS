@@ -10,9 +10,12 @@ import org.eclipse.jdt.internal.compiler.problem.DefaultProblemFactory;
 import org.eclipse.jdt.internal.compiler.classfmt.ClassFileConstants;
 import org.eclipse.jdt.internal.compiler.impl.CompilerOptions;
 import org.eclipse.jdt.internal.compiler.batch.CompilationUnit;
+import org.eclipse.jdt.core.compiler.CategorizedProblem;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.reloading.IClassPathItem;
+import jetbrains.mps.reloading.CompositeClassPathItem;
+import jetbrains.mps.reloading.CommonPaths;
 import jetbrains.mps.vfs.MPSExtentions;
 import jetbrains.mps.util.AbstractClassLoader;
 import jetbrains.mps.util.FileUtil;
@@ -45,8 +48,16 @@ public class JavaCompiler {
   public JavaCompiler(IModule module, SModel model) {
     myModule = module;
     myModel = model;
-    myClassPathItem = module.getClassPathItem();
     assert myModule.getScope().getModelDescriptor(model.getSModelId()) != null;
+    initClassPathItem(module);
+  }
+
+  private void initClassPathItem(IModule module) {
+    CompositeClassPathItem compositeClassPathItem = new CompositeClassPathItem();
+    compositeClassPathItem.add(module.getClassPathItem());
+    compositeClassPathItem.add(CommonPaths.getJDK());
+    compositeClassPathItem.add(CommonPaths.getMPSPath());
+    myClassPathItem = compositeClassPathItem;
   }
 
   public void addSourceFromFile(File file) {
@@ -142,6 +153,20 @@ public class JavaCompiler {
     }
   }
 
+  private class MyProblemFactory extends DefaultProblemFactory {
+    public CategorizedProblem createProblem(char[] originatingFileName, int problemId, String[] problemArguments, String[] messageArguments, int severity, int startPosition, int endPosition, int lineNumber, int columnNumber) {
+      CategorizedProblem problem = super.createProblem(originatingFileName, problemId, problemArguments, messageArguments, severity, startPosition, endPosition, lineNumber, columnNumber);
+      String message = problem.getMessage();
+      return problem;
+    }
+
+    public CategorizedProblem createProblem(char[] originatingFileName, int problemId, String[] problemArguments, int elaborationId, String[] messageArguments, int severity, int startPosition, int endPosition, int lineNumber, int columnNumber) {
+      CategorizedProblem problem = super.createProblem(originatingFileName, problemId, problemArguments, elaborationId, messageArguments, severity, startPosition, endPosition, lineNumber, columnNumber);
+      String message = problem.getMessage();
+      return problem;    //To change body of overridden methods use File | Settings | File Templates.
+    }
+  }
+
   private class CompilerImpl extends Compiler {
 
     public CompilerImpl() {
@@ -149,7 +174,7 @@ public class JavaCompiler {
         new MyErrorHandlingPolicy(),
         getCompilerOptions(),
         new MyCompilerRequestor(),
-        new DefaultProblemFactory(), null, null);
+        new MyProblemFactory(), null, null);
     }
 
     @Override

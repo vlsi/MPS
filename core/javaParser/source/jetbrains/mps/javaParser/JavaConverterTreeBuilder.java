@@ -1124,6 +1124,10 @@ public class JavaConverterTreeBuilder {
       }
 
       StatementList body = ctor.getBody();
+      if (body == null) {
+        body = StatementList.newInstance(myCurrentModel);
+        ctor.setBody(body);
+      }
       body.addStatement(superOrThisCall);
 
       for (Statement statement : processStatements(x.statements)) {

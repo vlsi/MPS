@@ -270,6 +270,10 @@
         <link role="action" targetNodeId="1236183891533" resolveInfo="CopyModelName" />
       </node>
       <node role="reference" type="jetbrains.mps.lang.plugin.structure.Separator" id="1209381958459" />
+      <node role="reference" type="jetbrains.mps.lang.plugin.structure.ActionInstance" id="3784529850623730320">
+        <link role="action" targetNodeId="3302512009684113378" resolveInfo="GetModelContentsFromSource" />
+      </node>
+      <node role="reference" type="jetbrains.mps.lang.plugin.structure.Separator" id="3784529850623730317" />
       <node role="reference" type="jetbrains.mps.lang.plugin.structure.ActionInstance" id="1236354294303">
         <link role="action" targetNodeId="1236348386008" resolveInfo="OptimizeModelImports" />
       </node>
@@ -27000,6 +27004,28 @@
               <link role="baseMethodDeclaration" targetNodeId="72.~JFileChooser.setFileFilter(javax.swing.filechooser.FileFilter):void" resolveInfo="setFileFilter" />
               <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="426276280371421523">
                 <link role="variableDeclaration" targetNodeId="3302512009684150777" resolveInfo="fileFilter" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="8512321177125865593">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="8512321177125865595">
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="8512321177125865594">
+              <link role="variableDeclaration" targetNodeId="3302512009684130214" resolveInfo="fileChooser" />
+            </node>
+            <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="8512321177125867408">
+              <link role="baseMethodDeclaration" targetNodeId="72.~JFileChooser.setSelectedFile(java.io.File):void" resolveInfo="setSelectedFile" />
+              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="8512321177125867409">
+                <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="8512321177125924095">
+                  <link role="baseMethodDeclaration" targetNodeId="88.~File.&lt;init&gt;(java.lang.String,java.lang.String)" resolveInfo="File" />
+                  <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="8512321177125924097">
+                    <link role="baseMethodDeclaration" targetNodeId="149.~PathManager.getHomePath():java.lang.String" resolveInfo="getHomePath" />
+                    <link role="classConcept" targetNodeId="149.~PathManager" resolveInfo="PathManager" />
+                  </node>
+                  <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="8512321177125924099">
+                    <property name="value" value="core/javaParser/source/jetbrains/mps/javaParser/testMaterial" />
+                  </node>
+                </node>
               </node>
             </node>
           </node>

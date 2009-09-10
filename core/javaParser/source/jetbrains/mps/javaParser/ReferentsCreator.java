@@ -114,11 +114,14 @@ public class ReferentsCreator {
 
       myReferentsCreator.myBindingMap.put(binding, classifier);
 
-      for (TypeParameter typeParameter : typeDeclaration.typeParameters) {
+      TypeParameter[] typeParameters = typeDeclaration.typeParameters;
+      if (typeParameters != null) {
+      for (TypeParameter typeParameter : typeParameters) {
         TypeVariableDeclaration typeVariableDeclaration = TypeVariableDeclaration.newInstance(model);
         typeVariableDeclaration.setName(new String(typeParameter.name));
         // typeVariableDeclaration.setExtends(typeParameter.bounds); //todo process variable bounds
         classifier.addTypeVariableDeclaration(typeVariableDeclaration);
+      }
       }
 
       return true;
@@ -262,6 +265,7 @@ public class ReferentsCreator {
       }
       field.setIsFinal(binding.isFinal());
       field.setType(type);
+      field.setName(new String(binding.name));
       myReferentsCreator.myBindingMap.put(binding, field);
       return field;
     }
