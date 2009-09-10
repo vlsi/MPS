@@ -27,6 +27,8 @@ import jetbrains.mps.nodeEditor.cellMenu.NodeSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.NodeSubstitutePatternEditor;
 import jetbrains.mps.nodeEditor.style.Padding;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
+import jetbrains.mps.nodeEditor.style.StyleListener;
+import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.text.TextBuilder;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SNodeUndoableAction;
@@ -56,6 +58,14 @@ public abstract class EditorCell_Label extends EditorCell_Basic {
     super(editorContext, node);
     myTextLine = new TextLine("", getStyle(), false);
     myNullTextLine = new TextLine("", getStyle(), true);
+
+    getStyle().addListener(new StyleListener() {
+      public void styleChanged(Style s) {
+        myTextLine.updateStyle();
+        myNullTextLine.updateStyle();
+      }
+    });
+
     myTextLine.setCaretEnabled(true);
     myNullTextLine.setCaretEnabled(true);
     setText(text);

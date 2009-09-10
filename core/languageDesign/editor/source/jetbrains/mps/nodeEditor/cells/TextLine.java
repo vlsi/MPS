@@ -79,6 +79,7 @@ public class TextLine {
     myNull = isNull;
     myStyle = style;
     showTextColor();
+    updateStyle();
   }                     
 
   public String getText() {
@@ -135,10 +136,7 @@ public class TextLine {
     myMinimalLength = length;
   }
 
-  /**
-   * Updates layout and performs expensive calculations
-   */
-  public void relayout() {
+  public void updateStyle() {
     Font defaultFont = EditorSettings.getInstance().getDefaultEditorFont();
     Integer styleFontSize = myStyle.get(StyleAttributes.FONT_SIZE);
     String family = defaultFont.getFamily();
@@ -146,7 +144,9 @@ public class TextLine {
     int fontSize = styleFontSize != null ? styleFontSize : defaultFont.getSize();
 
     myFont = new Font(family, style, fontSize);
-    
+  }
+
+  public void relayout() {
     FontMetrics metrics = getFontMetrics();
     myHeight = (int) (metrics.getHeight() * myLineSpacing + getPaddingTop() + getPaddingBottom());
     myTextHeight = (int) (metrics.getHeight() * myLineSpacing);

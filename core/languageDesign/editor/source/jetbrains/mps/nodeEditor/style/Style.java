@@ -22,14 +22,18 @@ import java.awt.Font;
 
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.util.EqualUtil;
+import jetbrains.mps.logging.Logger;
 import org.apache.commons.collections.map.HashedMap;
 
 public class Style {
+  private static final Logger LOG = Logger.getLogger(Style.class);
+
   private Style myParent;
   private EditorCell myEditorCell;
   private List<Style> myChildren = new ArrayList<Style>(0);
   private Map<StyleAttribute, Object> myAttributeValues = new HashMap<StyleAttribute, Object>(1);
   private Map<StyleAttribute, Object> myCachedAttributeValues = new HashMap<StyleAttribute, Object>(1);
+  private List<StyleListener> myStyleListeners = null;
 
   public Style() {
     this(null);
@@ -128,6 +132,32 @@ public class Style {
       for (Style style : myChildren) {
         style.updateCache();
       }
+      fireStyleChanged();
     }
+  }
+
+  private void fireStyleChanged() {
+    if (myStyleListeners == null) return;
+
+    for (StyleListener l : myStyleListeners) {
+      try {
+        l.styleChanged(this);
+      } catch (Throwable t) {
+        LOG.error(t);
+      }
+    }
+  }
+
+  public void addListener(StyleListener l) {
+    if (myStyleListeners == null) {
+      myStyleListeners = new ArrayList<StyleListener>(1);
+    }
+    myStyleListeners.add(l);
+  }
+
+  public void removeListener(StyleListener l) {
+    if (myStyleListeners == null) return;
+    myStyleListeners.remove(l);
+    if (myStyleListeners.isEmpty()) myStyleListeners = null;
   }
 }
