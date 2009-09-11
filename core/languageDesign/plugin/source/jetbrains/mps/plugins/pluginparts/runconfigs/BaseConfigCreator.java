@@ -45,7 +45,7 @@ public abstract class BaseConfigCreator extends RuntimeConfigurationProducer {
     });
 
     if (config == null) return null;
-    return new RunnerAndConfigurationSettingsImpl(RunManagerImpl.getInstanceImpl(location.getProject()), config, true);
+    return new RunnerAndConfigurationSettingsImpl(RunManagerImpl.getInstanceImpl(location.getProject()), config, false);
   }
 
   protected abstract RunConfiguration doCreateConfiguration(SNode node);
