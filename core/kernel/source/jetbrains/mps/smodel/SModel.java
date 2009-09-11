@@ -637,14 +637,22 @@ public class SModel implements Iterable<SNode> {
   }
 
   public void addLanguage(@NotNull ModuleReference ref) {
+    addLanguage(ref, false);
+  }
+
+  public void addLanguage(@NotNull ModuleReference ref, boolean executeImportedRefactorings) {
     addLanguage_internal(ref);
     Language language = GlobalScope.getInstance().getLanguage(ref);
     if (language != null) {
-      addAspectModelsVersions(language);
+      addAspectModelsVersions(language, executeImportedRefactorings);
     }
   }
 
   public void addAspectModelsVersions(@NotNull Language language) {
+    addAspectModelsVersions(language, false);
+  }
+
+  public void addAspectModelsVersions(@NotNull Language language,boolean executeImportedRefactorings) {
     if (myVersionedLanguages.contains(language.getModuleReference())) {
       return;
     }
@@ -811,10 +819,14 @@ public class SModel implements Iterable<SNode> {
   }
 
   public void addImportedModel(@NotNull SModelReference modelReference) {
-    addImportElement(modelReference);
+    addImportedModel(modelReference, false);
   }
 
-  void addImportElement(@NotNull SModelReference modelReference) {
+  public void addImportedModel(@NotNull SModelReference modelReference, boolean executeRefactorings) {
+    addImportElement(modelReference, executeRefactorings);
+  }
+
+  void addImportElement(@NotNull SModelReference modelReference, boolean executeRefactorings) {
     ImportElement importElement = getImportElement(modelReference);
     if (importElement != null) return;
     SModelDescriptor modelDescriptor = SModelRepository.getInstance().getModelDescriptor(modelReference);
@@ -1083,7 +1095,11 @@ public class SModel implements Iterable<SNode> {
     validateLanguagesAndImports(false);
   }
 
-  public void validateLanguagesAndImports(boolean respectModulesScopes) {
+  public void validateLanguagesAndImports(boolean respectModulesScopes){
+    validateLanguagesAndImports(respectModulesScopes,false);
+  }
+
+  public void validateLanguagesAndImports(boolean respectModulesScopes, boolean executeImportedRefactorings) {
     GlobalScope scope = GlobalScope.getInstance();
     Set<ModuleReference> usedLanguages = new HashSet<ModuleReference>(getLanguageRefs(scope));
     Set<SModelReference> importedModels = new HashSet<SModelReference>();
@@ -1108,7 +1124,8 @@ public class SModel implements Iterable<SNode> {
         }
 
         usedLanguages.add(ref);
-        addLanguage(ref);
+
+        addLanguage(ref, executeImportedRefactorings);
       }
 
       List<SReference> references = node.getReferences();
@@ -1116,7 +1133,7 @@ public class SModel implements Iterable<SNode> {
         if (reference.isExternal()) {
           SModelReference targetModelReference = reference.getTargetSModelReference();
           if (targetModelReference != null && !importedModels.contains(targetModelReference)) {
-            addImportedModel(targetModelReference);
+            addImportedModel(targetModelReference, executeImportedRefactorings);
             importedModels.add(targetModelReference);
           }
         }
@@ -1474,7 +1491,7 @@ public class SModel implements Iterable<SNode> {
         ModuleReference newRef = module.getModuleReference();
         refs.set(i, newRef);
         changed = changed || changed(ref, newRef);
-      } 
+      }
     }
     return changed;
   }
