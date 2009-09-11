@@ -389,5 +389,60 @@
       <link role="classifier" targetNodeId="7595624734444987006" resolveInfo="A" />
     </node>
   </node>
+  <node type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="6714258459075859050">
+    <property name="name" value="OrdinaryClass" />
+    <node role="superclass" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="6714258459075859051">
+      <link role="classifier" targetNodeId="150.~Object" />
+    </node>
+    <node role="field" type="jetbrains.mps.baseLanguage.structure.FieldDeclaration" id="6714258459075859052">
+      <property name="name" value="myName" />
+      <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="6714258459075859053">
+        <link role="classifier" targetNodeId="150.~String" />
+      </node>
+    </node>
+    <node role="constructor" type="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" id="6714258459075859054">
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="6714258459075859055" />
+      <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="6714258459075859056">
+        <property name="name" value="name" />
+        <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="6714258459075859057">
+          <link role="classifier" targetNodeId="150.~String" />
+        </node>
+      </node>
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="6714258459075859058">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="6714258459075859059">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression" id="6714258459075859060">
+            <node role="lValue" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="6714258459075859061">
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="6714258459075859062" />
+              <node role="operation" type="jetbrains.mps.baseLanguage.structure.FieldReferenceOperation" id="6714258459075859063">
+                <link role="fieldDeclaration" targetNodeId="6714258459075859052" resolveInfo="myName" />
+              </node>
+            </node>
+            <node role="rValue" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="6714258459075859064">
+              <link role="variableDeclaration" targetNodeId="6714258459075859056" resolveInfo="name" />
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="6714258459075859065">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="6714258459075859066">
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="6714258459075859067">
+              <link role="variableDeclaration" targetNodeId="6714258459075859056" resolveInfo="name" />
+            </node>
+            <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="6714258459075859068">
+              <link role="baseMethodDeclaration" targetNodeId="150.~String.toString():java.lang.String" />
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="6714258459075859069">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="6714258459075859070">
+            <link role="classConcept" targetNodeId="150.~String" />
+            <link role="baseMethodDeclaration" targetNodeId="150.~String.valueOf(int):java.lang.String" />
+            <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="6714258459075859071">
+              <property name="value" value="2" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
 </model>
 

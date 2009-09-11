@@ -11,5 +11,7 @@ public class OrdinaryClass {
   String myName;
   public OrdinaryClass(String name) {
     myName = name;
+    name.toString();
+    String.valueOf(2);
   }
 }

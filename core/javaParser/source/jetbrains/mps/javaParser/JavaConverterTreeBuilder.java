@@ -8,6 +8,7 @@ import jetbrains.mps.baseLanguage.structure.FieldDeclaration;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.INodeAdapter;
 import jetbrains.mps.smodel.CopyUtil;
+import jetbrains.mps.smodel.SReference;
 import org.eclipse.jdt.internal.compiler.impl.*;
 import org.eclipse.jdt.internal.compiler.impl.BooleanConstant;
 import org.eclipse.jdt.internal.compiler.impl.CharConstant;
@@ -57,49 +58,49 @@ public class JavaConverterTreeBuilder {
        * don't have to write processExpression methods for the numerous JDT
        * literal nodes because they ALWAYS have a constant value.
        */
-      jetbrains.mps.baseLanguage.structure.Expression result = null;
-      if (expression != null && expression.constant != null
-          && expression.constant != Constant.NotAConstant) {
-        result = (jetbrains.mps.baseLanguage.structure.Expression) dispatchRefl("processConstant", expression.constant);
-      }
+    jetbrains.mps.baseLanguage.structure.Expression result = null;
+    if (expression != null && expression.constant != null
+      && expression.constant != Constant.NotAConstant) {
+      result = (jetbrains.mps.baseLanguage.structure.Expression) dispatchRefl("processConstant", expression.constant);
+    }
 
-      if (result == null) {
-        // The expression was not a constant, so use the general logic.
-        result = (jetbrains.mps.baseLanguage.structure.Expression) dispatchRefl("processExpression", expression);
-      }
+    if (result == null) {
+      // The expression was not a constant, so use the general logic.
+      result = (jetbrains.mps.baseLanguage.structure.Expression) dispatchRefl("processExpression", expression);
+    }
     return result;
   }
 
   public jetbrains.mps.baseLanguage.structure.Statement processStatementRefl(org.eclipse.jdt.internal.compiler.ast.Statement x) {
-     Statement statement;
-      if (x instanceof Expression) {
-        jetbrains.mps.baseLanguage.structure.Expression expr = processExpressionRefl((Expression) x);
-        if (expr == null) {
-          return null;
-        }
-        ExpressionStatement expressionStatement = ExpressionStatement.newInstance(myCurrentModel);
-        expressionStatement.setExpression(expr);
-        statement = expressionStatement;
-      } else {
-        statement = (Statement) dispatchRefl("processStatement", x);
-      }
-      return statement;
-  }
-
-    protected INodeAdapter dispatchRefl(String name, Object child) {
-      if (child == null) {
+    Statement statement;
+    if (x instanceof Expression) {
+      jetbrains.mps.baseLanguage.structure.Expression expr = processExpressionRefl((Expression) x);
+      if (expr == null) {
         return null;
       }
-      try {
-        Method method = getClass().getDeclaredMethod(name, child.getClass());
-        return (INodeAdapter) method.invoke(this, child);
-      } catch (Throwable e) {
-        if (e instanceof InvocationTargetException) {
-          e = ((InvocationTargetException) e).getTargetException();
-        }
-        throw new JavaConverterException(e);
-      }
+      ExpressionStatement expressionStatement = ExpressionStatement.newInstance(myCurrentModel);
+      expressionStatement.setExpression(expr);
+      statement = expressionStatement;
+    } else {
+      statement = (Statement) dispatchRefl("processStatement", x);
     }
+    return statement;
+  }
+
+  protected INodeAdapter dispatchRefl(String name, Object child) {
+    if (child == null) {
+      return null;
+    }
+    try {
+      Method method = getClass().getDeclaredMethod(name, child.getClass());
+      return (INodeAdapter) method.invoke(this, child);
+    } catch (Throwable e) {
+      if (e instanceof InvocationTargetException) {
+        e = ((InvocationTargetException) e).getTargetException();
+      }
+      throw new JavaConverterException(e);
+    }
+  }
 
   List<ExpressionStatement> processExpressionStatements(
     org.eclipse.jdt.internal.compiler.ast.Statement[] statements) {
@@ -284,9 +285,9 @@ public class JavaConverterTreeBuilder {
       case BinaryExpression.RIGHT_SHIFT:
         op = ShiftRightExpression.newInstance(myCurrentModel);
         break;
-        //todo add to BL
-        /* case BinaryExpression.UNSIGNED_RIGHT_SHIFT:
-        break;*/
+      //todo add to BL
+      /* case BinaryExpression.UNSIGNED_RIGHT_SHIFT:
+      break;*/
       case BinaryExpression.PLUS:
         op = PlusExpression.newInstance(myCurrentModel);
         break;
@@ -347,34 +348,34 @@ public class JavaConverterTreeBuilder {
       case CompoundAssignment.MINUS:
         op = MinusAssignmentExpression.newInstance(myCurrentModel);
         break;
-        //todo make those expressions' counterparts in BL
-        /* case CompoundAssignment.MULTIPLY:
-        op = JBinaryOperator.ASG_MUL;
-        break;
-      case CompoundAssignment.DIVIDE:
-        op = JBinaryOperator.ASG_DIV;
-        break;
-      case CompoundAssignment.AND:
-        op = JBinaryOperator.ASG_BIT_AND;
-        break;
-      case CompoundAssignment.OR:
-        op = JBinaryOperator.ASG_BIT_OR;
-        break;
-      case CompoundAssignment.XOR:
-        op = JBinaryOperator.ASG_BIT_XOR;
-        break;
-      case CompoundAssignment.REMAINDER:
-        op = JBinaryOperator.ASG_MOD;
-        break;
-      case CompoundAssignment.LEFT_SHIFT:
-        op = JBinaryOperator.ASG_SHL;
-        break;
-      case CompoundAssignment.RIGHT_SHIFT:
-        op = JBinaryOperator.ASG_SHR;
-        break;
-      case CompoundAssignment.UNSIGNED_RIGHT_SHIFT:
-        op = JBinaryOperator.ASG_SHRU;
-        break;*/
+      //todo make those expressions' counterparts in BL
+      /* case CompoundAssignment.MULTIPLY:
+      op = JBinaryOperator.ASG_MUL;
+      break;
+    case CompoundAssignment.DIVIDE:
+      op = JBinaryOperator.ASG_DIV;
+      break;
+    case CompoundAssignment.AND:
+      op = JBinaryOperator.ASG_BIT_AND;
+      break;
+    case CompoundAssignment.OR:
+      op = JBinaryOperator.ASG_BIT_OR;
+      break;
+    case CompoundAssignment.XOR:
+      op = JBinaryOperator.ASG_BIT_XOR;
+      break;
+    case CompoundAssignment.REMAINDER:
+      op = JBinaryOperator.ASG_MOD;
+      break;
+    case CompoundAssignment.LEFT_SHIFT:
+      op = JBinaryOperator.ASG_SHL;
+      break;
+    case CompoundAssignment.RIGHT_SHIFT:
+      op = JBinaryOperator.ASG_SHR;
+      break;
+    case CompoundAssignment.UNSIGNED_RIGHT_SHIFT:
+      op = JBinaryOperator.ASG_SHRU;
+      break;*/
       default:
         throw new JavaConverterException("Unsupported operator for CompoundAssignment");
     }
@@ -411,13 +412,16 @@ public class JavaConverterTreeBuilder {
   }
 
   ConstructorInvocationStatement processExpression(ExplicitConstructorCall x) {
+    if (x.isImplicitSuper()) {
+      return null;
+    }
     ConstructorInvocationStatement result = x.isSuperAccess() ?
       SuperConstructorInvocation.newInstance(myCurrentModel) :
       ThisConstructorInvocation.newInstance(myCurrentModel);
     addCallArgs(x.arguments, result);
-    jetbrains.mps.baseLanguage.structure.ConstructorDeclaration cdecl =
-      (jetbrains.mps.baseLanguage.structure.ConstructorDeclaration) myBindingMap.get(x.binding);
-    result.setConstructorDeclaration(cdecl);
+    SReference methodReference = myTypesProvider.createMethodReference(x.binding,
+      ConstructorInvocationStatement.BASE_METHOD_DECLARATION, result.getNode());
+    result.getNode().addReference(methodReference);
     return result;
   }
 
@@ -540,13 +544,20 @@ public class JavaConverterTreeBuilder {
 
 
   jetbrains.mps.baseLanguage.structure.Expression processExpression(MessageSend x) {
-    BaseMethodDeclaration method = (BaseMethodDeclaration) myBindingMap.get(x.binding);
+
     IMethodCall methodCall = null;
     jetbrains.mps.baseLanguage.structure.Expression result;
-    if (x.receiver instanceof SuperReference || x.receiver instanceof QualifiedSuperReference) {
+
+    if (x.binding.isStatic()) {
+      StaticMethodCall smc = StaticMethodCall.newInstance(myCurrentModel);
+      methodCall = smc;
+      result = smc;
+      SReference classifierReference =
+        myTypesProvider.createClassifierReference(x.binding.declaringClass, StaticMethodCall.CLASS_CONCEPT, smc.getNode());
+        smc.getNode().addReference(classifierReference);
+    } else if (x.receiver instanceof SuperReference || x.receiver instanceof QualifiedSuperReference) {
       //todo add Qualified Super Method Call to BL
       SuperMethodCall smc = SuperMethodCall.newInstance(myCurrentModel);
-      smc.setInstanceMethodDeclaration((InstanceMethodDeclaration) method);
       methodCall = smc;
       result = smc;
     } else {
@@ -554,36 +565,30 @@ public class JavaConverterTreeBuilder {
       InstanceMethodCallOperation imco = InstanceMethodCallOperation.newInstance(myCurrentModel);
       methodCall = imco;
       if (x.receiver instanceof ThisReference) {
-        if (method instanceof StaticMethodDeclaration) {
-          // don't bother qualifying it, it's a no-op
-          qualifier = null;
-          return null;
-          //todo really return null?
+        if (x.receiver instanceof QualifiedThisReference) {
+          // use the supplied qualifier
+          qualifier = processExpressionRefl(x.receiver);
         } else {
-          if (x.receiver instanceof QualifiedThisReference) {
-            // use the supplied qualifier
-            qualifier = processExpressionRefl(x.receiver);
-          } else {
-            /*
-            * In cases where JDT had to synthesize a this ref for us, it could
-            * actually be the wrong type, if the target method is in an enclosing
-            * class. We have to synthesize our own ref of the correct type.
-            */
-            //todo do it after debug if really necessary
-            // qualifier = createThisRef(info, method.getEnclosingType());
-            qualifier = processExpressionRefl(x.receiver);
-          }
+          /*
+          * In cases where JDT had to synthesize a this ref for us, it could
+          * actually be the wrong type, if the target method is in an enclosing
+          * class. We have to synthesize our own ref of the correct type.
+          */
+          //todo do it after debug if really necessary
+          // qualifier = createThisRef(info, method.getEnclosingType());
+          qualifier = processExpressionRefl(x.receiver);
         }
       } else {
-        methodCall = InstanceMethodCallOperation.newInstance(myCurrentModel);
         qualifier = processExpressionRefl(x.receiver);
       }
-      methodCall.setBaseMethodDeclaration(method);
       DotExpression dotExpression = DotExpression.newInstance(myCurrentModel);
       dotExpression.setOperand(qualifier);
       dotExpression.setOperation(imco);
       result = dotExpression;
     }
+
+    SReference methodReference = myTypesProvider.createMethodReference(x.binding, BaseMethodCall.BASE_METHOD_DECLARATION, methodCall.getNode());
+    methodCall.getNode().addReference(methodReference);
 
     // The arguments come first...
     addCallArgs(x.arguments, methodCall);
@@ -1128,7 +1133,9 @@ public class JavaConverterTreeBuilder {
         body = StatementList.newInstance(myCurrentModel);
         ctor.setBody(body);
       }
-      body.addStatement(superOrThisCall);
+      if (superOrThisCall != null) {
+        body.addStatement(superOrThisCall);
+      }
 
       for (Statement statement : processStatements(x.statements)) {
         body.addStatement(statement);
