@@ -327,15 +327,18 @@ public class NodeTypesComponent implements EditorMessageOwner, Cloneable {
   }
 
   private void performActionsAfterChecking() {
+    Map<SNode, IErrorReporter> toAdd = new HashMap<SNode, IErrorReporter>();
+
     // setting expanded errors
-    for (SNode node : new HashSet<SNode>(myNodesToErrorsMap.keySet())) {
+    for (SNode node : myNodesToErrorsMap.keySet()) {
       IErrorReporter iErrorReporter = myNodesToErrorsMap.get(node);
       String errorString = iErrorReporter.reportError();
       SimpleErrorReporter reporter = new SimpleErrorReporter(node, errorString, iErrorReporter.getRuleModel(), iErrorReporter.getRuleId(),
         iErrorReporter.getMessageStatus(), iErrorReporter.getErrorTarget());
       reporter.setIntentionProvider(iErrorReporter.getIntentionProvider());
-      myNodesToErrorsMap.put(node, reporter);
-    }
+      toAdd.put(node, reporter);
+    }    
+    myNodesToErrorsMap.putAll(toAdd);
 
     //write access listeners
     removeOurListener();
@@ -346,6 +349,8 @@ public class NodeTypesComponent implements EditorMessageOwner, Cloneable {
     }
 
     for (SNode nodeToDependOn : nodesToDependOn) {
+      if (nodeToDependOn == null) continue;
+
       final SModel sModel = nodeToDependOn.getModel();
       final SModelDescriptor sm = sModel.getModelDescriptor();
       if (sm != null) {

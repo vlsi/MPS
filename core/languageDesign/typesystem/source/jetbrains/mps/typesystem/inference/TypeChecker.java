@@ -210,13 +210,15 @@ public class TypeChecker implements ApplicationComponent {
       NodeReadAccessCaster.setNodeAccessListener(listener);
       checkingAction.run();
 
-      for (SNode nodeToDependOn : listener.getNodesToDependOn()) {
-        WeakSet<SNode> dependentRoots = myNodesToDependentRoots.get(nodeToDependOn);
-        if (dependentRoots == null) {
-          dependentRoots = new WeakSet<SNode>(1);
-          myNodesToDependentRoots.put(nodeToDependOn, dependentRoots);
+      synchronized (listener.myLock) {
+        for (SNode nodeToDependOn : listener.myNodesToDependOn) {
+          WeakSet<SNode> dependentRoots = myNodesToDependentRoots.get(nodeToDependOn);
+          if (dependentRoots == null) {
+            dependentRoots = new WeakSet<SNode>(1);
+            myNodesToDependentRoots.put(nodeToDependOn, dependentRoots);
+          }
+          dependentRoots.add(node.getContainingRoot());
         }
-        dependentRoots.add(node.getContainingRoot());
       }
 
       SModel model = node.getModel();
