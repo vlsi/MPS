@@ -34,7 +34,6 @@ import jetbrains.mps.smodel.persistence.IModelRootManager;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.vfs.IFile;
-import jetbrains.mps.vfs.VFileSystem;
 
 import java.util.*;
 
@@ -151,7 +150,7 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor {
   private void doPostLoadStuff() {
     myModelRootManager.updateAfterLoad(this);
     LOG.assertLog(mySModel != null, "Couldn't load model \"" + getSModelReference().getLongName() + "\"");
-    
+
     tryFixingVersion();
     updateModelWithRefactorings();
 
@@ -170,9 +169,15 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor {
     }
     boolean wasLoading = mySModel.setLoading(true);
     try {
-      for (SModelDescriptor modelDescriptor : mySModel.getDependenciesModels()) {
-        playUsedModelDescriptorsRefactoring(modelDescriptor);
-      }
+      boolean played;
+      do {
+        played = false;
+        for (SModelDescriptor modelDescriptor : mySModel.getDependenciesModels()) {
+          if (playUsedModelDescriptorsRefactoring(modelDescriptor)) {
+            played = true;
+          }
+        }
+      } while (played);
     } finally {
       mySModel.setLoading(wasLoading);
     }
@@ -196,7 +201,8 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor {
     }
   }
 
-  private void playUsedModelDescriptorsRefactoring(SModelDescriptor modelDescriptor) {
+  //true if any refactoring was played
+  private boolean playUsedModelDescriptorsRefactoring(SModelDescriptor modelDescriptor) {
     int currentVersion = modelDescriptor.getVersion();
     int usedVersion = mySModel.getUsedVersion(modelDescriptor.getSModelReference());
     if (myIsTestRefactoringMode) {
@@ -204,6 +210,7 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor {
     }
 
     if (currentVersion > usedVersion) {
+      boolean result = false;
       if (myIsTestRefactoringMode) {
         System.err.println("updating a model " + this);
       }
@@ -211,6 +218,7 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor {
       RefactoringHistory refactoringHistory = importedModel.getRefactoringHistory();
       for (RefactoringContext refactoringContext : refactoringHistory.getRefactoringContexts()) {
         if (refactoringContext.getModelVersion() <= usedVersion) continue;
+        result = true;
         refactoringContext.getRefactoring().updateModel(mySModel, refactoringContext);
       }
       mySModel.updateImportedModelUsedVersion(modelDescriptor.getSModelReference(), currentVersion);
@@ -218,6 +226,7 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor {
       if (modelFile != null && !modelFile.isReadOnly()) {
         SModelRepository.getInstance().markChanged(mySModel);
       }
+      return result;
     }
 
     // broken model fixing code
@@ -229,7 +238,7 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor {
           modelDescriptor.getSModel();
         }
 
-        if (modelDescriptor.getVersion() == usedVersion) return;
+        if (modelDescriptor.getVersion() == usedVersion) return false;
       }
 
       LOG.error("Model version mismatch for import " + modelDescriptor.getSModelFqName() + " in model " + getSModelFqName());
@@ -238,6 +247,8 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor {
       SModelRepository.getInstance().markChanged(mySModel);
       LOG.error("Mismatch fixed");
     }
+
+    return false;
   }
 
   private void addListenersToNewModel() {
@@ -698,7 +709,7 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor {
     String attributeValue = getAttribute(VERSION);
     if (attributeValue == null) {
       return -1;
-    }     
+    }
     try {
       return Integer.parseInt(attributeValue);
     } catch (NumberFormatException e) {

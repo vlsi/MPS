@@ -222,7 +222,7 @@ public class RefactoringContext {
     for (SNode node : sourceNodes) {
       node.delete();
     }
-    targetModel.validateLanguagesAndImports();
+    targetModel.validateLanguagesAndImports(false, true);
     // targetModel.addImportedModel(sourceModel.getUID());
     myCachesAreUpToDate = false;
     return targetNodes;
@@ -418,7 +418,7 @@ public class RefactoringContext {
         }
       }
     }
-    model.validateLanguagesAndImports(true);
+    model.validateLanguagesAndImports(true, true);
   }
 
   public void setUpMembersAccessModifier(RefactoringNodeMembersAccessModifier modifier) {

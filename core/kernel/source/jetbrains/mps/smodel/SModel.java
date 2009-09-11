@@ -640,11 +640,11 @@ public class SModel implements Iterable<SNode> {
     addLanguage(ref, false);
   }
 
-  public void addLanguage(@NotNull ModuleReference ref, boolean executeImportedRefactorings) {
+  public void addLanguage(@NotNull ModuleReference ref, boolean firstVersion) {
     addLanguage_internal(ref);
     Language language = GlobalScope.getInstance().getLanguage(ref);
     if (language != null) {
-      addAspectModelsVersions(language, executeImportedRefactorings);
+      addAspectModelsVersions(language, firstVersion);
     }
   }
 
@@ -652,12 +652,12 @@ public class SModel implements Iterable<SNode> {
     addAspectModelsVersions(language, false);
   }
 
-  public void addAspectModelsVersions(@NotNull Language language,boolean executeImportedRefactorings) {
+  public void addAspectModelsVersions(@NotNull Language language, boolean firstVersion) {
     if (myVersionedLanguages.contains(language.getModuleReference())) {
       return;
     }
     for (SModelDescriptor modelDescriptor : language.getAspectModelDescriptors()) {
-      addAdditionalModelVersion(modelDescriptor.getSModelReference(), modelDescriptor.getVersion());
+      addAdditionalModelVersion(modelDescriptor.getSModelReference(), firstVersion ? -1 : modelDescriptor.getVersion());
     }
     myVersionedLanguages.add(language.getModuleReference());
     for (Language l : language.getExtendedLanguages()) {
@@ -822,11 +822,11 @@ public class SModel implements Iterable<SNode> {
     addImportedModel(modelReference, false);
   }
 
-  public void addImportedModel(@NotNull SModelReference modelReference, boolean executeRefactorings) {
-    addImportElement(modelReference, executeRefactorings);
+  public void addImportedModel(@NotNull SModelReference modelReference, boolean firstVersion) {
+    addImportElement(modelReference, firstVersion);
   }
 
-  void addImportElement(@NotNull SModelReference modelReference, boolean executeRefactorings) {
+  void addImportElement(@NotNull SModelReference modelReference, boolean firstVersion) {
     ImportElement importElement = getImportElement(modelReference);
     if (importElement != null) return;
     SModelDescriptor modelDescriptor = SModelRepository.getInstance().getModelDescriptor(modelReference);
@@ -834,8 +834,9 @@ public class SModel implements Iterable<SNode> {
     if (modelDescriptor != null) {
       usedVersion = modelDescriptor.getVersion();
     }
-    importElement = new ImportElement(modelReference, ++myMaxImportIndex, usedVersion);
+    importElement = new ImportElement(modelReference, ++myMaxImportIndex, firstVersion ? -1 : usedVersion);
     myImports.add(importElement);
+
     fireImportAddedEvent(modelReference);
   }
 
@@ -1095,11 +1096,11 @@ public class SModel implements Iterable<SNode> {
     validateLanguagesAndImports(false);
   }
 
-  public void validateLanguagesAndImports(boolean respectModulesScopes){
-    validateLanguagesAndImports(respectModulesScopes,false);
+  public void validateLanguagesAndImports(boolean respectModulesScopes) {
+    validateLanguagesAndImports(respectModulesScopes, false);
   }
 
-  public void validateLanguagesAndImports(boolean respectModulesScopes, boolean executeImportedRefactorings) {
+  public void validateLanguagesAndImports(boolean respectModulesScopes, boolean firstVersion) {
     GlobalScope scope = GlobalScope.getInstance();
     Set<ModuleReference> usedLanguages = new HashSet<ModuleReference>(getLanguageRefs(scope));
     Set<SModelReference> importedModels = new HashSet<SModelReference>();
@@ -1125,7 +1126,7 @@ public class SModel implements Iterable<SNode> {
 
         usedLanguages.add(ref);
 
-        addLanguage(ref, executeImportedRefactorings);
+        addLanguage(ref, firstVersion);
       }
 
       List<SReference> references = node.getReferences();
@@ -1133,7 +1134,7 @@ public class SModel implements Iterable<SNode> {
         if (reference.isExternal()) {
           SModelReference targetModelReference = reference.getTargetSModelReference();
           if (targetModelReference != null && !importedModels.contains(targetModelReference)) {
-            addImportedModel(targetModelReference, executeImportedRefactorings);
+            addImportedModel(targetModelReference, firstVersion);
             importedModels.add(targetModelReference);
           }
         }
