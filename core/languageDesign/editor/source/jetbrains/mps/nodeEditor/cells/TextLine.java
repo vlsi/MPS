@@ -382,7 +382,6 @@ public class TextLine {
     Color textBackgroundColor;
 
     FontMetrics metrics = getFontMetrics();
-    Rectangle2D stringBounds = metrics.getStringBounds(myText, g);
 
     backgroundColor = getBackgroundColor();
     if (mySelected) {
@@ -397,7 +396,7 @@ public class TextLine {
       g.setColor(backgroundColor);
       g.fillRect(shiftX + getPaddingLeft(),
         shiftY + getPaddingTop(),
-        (int) stringBounds.getWidth() - 1,
+        myWidth - 1,
         myTextHeight - 1);
     }
 
@@ -405,7 +404,7 @@ public class TextLine {
       g.setColor(textBackgroundColor);
       g.fillRect(shiftX + getPaddingLeft(),
         shiftY + getPaddingTop(),
-        (int) stringBounds.getWidth() - 1,
+        myWidth - 1,
         myTextHeight - 1);
     }
 
