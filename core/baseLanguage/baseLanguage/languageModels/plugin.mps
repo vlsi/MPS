@@ -13897,7 +13897,7 @@
       <node role="returnType" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1221666899174" />
     </node>
     <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1221667150661">
-      <property name="name" value="getContainerType" />
+      <property name="name" value="getContainerReturnType" />
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1221667150663" />
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1221667150664">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1221671738004">
@@ -13945,19 +13945,19 @@
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1221671757943">
           <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1221671757944">
             <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1221671773713">
-              <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1221671835571">
-                <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1221671810718">
+              <node role="expression" type="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" id="2761339624019642143">
+                <link role="concept" targetNodeId="1.1068431790189" resolveInfo="Type" />
+                <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1221671835571">
                   <node role="operand" type="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" id="1239490690095">
                     <link role="concept" targetNodeId="1.1137021947720" resolveInfo="ConceptFunction" />
                     <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1221671773718">
                       <link role="variableDeclaration" targetNodeId="1221671738005" resolveInfo="containerMethod" />
                     </node>
                   </node>
-                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.SConceptLinkAccess" id="1221671817301">
-                    <link role="conceptLinkDeclaration" targetNodeId="1.1137545148427" resolveInfo="conceptFunctionReturnType" />
+                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="2761339624019642141">
+                    <link role="baseMethodDeclaration" targetNodeId="69.1213877374441" resolveInfo="getExpectedReturnType" />
                   </node>
                 </node>
-                <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.GetFirstOperation" id="1239499931654" />
               </node>
             </node>
           </node>
@@ -20037,7 +20037,7 @@
     </node>
     <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1223473134029">
       <property name="isAbstract" value="true" />
-      <property name="name" value="getContainerType" />
+      <property name="name" value="getContainerReturnType" />
       <node role="returnType" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1223473139798">
         <link role="concept" targetNodeId="1.1068431790189" resolveInfo="Type" />
       </node>
