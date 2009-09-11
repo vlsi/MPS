@@ -7,6 +7,7 @@ import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
+import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.nodeEditor.style.Style;
@@ -22,7 +23,23 @@ public class TestNode_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_4312_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_4312_0");
+    editorCell.addEditorCell(this.createConstant_4312_0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_4312_0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_4312_1(editorContext, node));
+    return editorCell;
+  }
+
+  private EditorCell createConstant_4312_0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "(");
+    editorCell.setCellId("Constant_4312_0");
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+
+  private EditorCell createConstant_4312_1(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ")");
+    editorCell.setCellId("Constant_4312_1");
+    editorCell.setDefaultText("");
     return editorCell;
   }
 
