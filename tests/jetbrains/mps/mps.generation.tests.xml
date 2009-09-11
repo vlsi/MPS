@@ -1,0 +1,46 @@
+<project name="mps.generation.tests" default="all">
+    <property name="mps.home" value="${ant.file}/../../../.."/>
+
+    <taskdef resource="jetbrains/mps/build/ant/antlib.xml"
+             classpath="${mps.home}/platform/buildlanguage/ant/classes"/>
+
+    <target name="all" depends="bootstrap.tests"/>
+
+    <target name="bootstrap.tests">
+        <mps.test.generation fork="true" compile="true" showdiff="true" invoketests="true" loglevel="info">
+            <jvmarg value="-Xss1024k"/>
+            <jvmarg value="-Xmx1000m"/>
+            <jvmarg value="-XX:MaxPermSize=92m"/>
+            <!--<jvmarg value="-Xdebug"/>-->
+            <!--<jvmarg value="-Xrunjdwp:transport=dt_socket,server=y,suspend=n,address=5005"/>-->
+            <project file="${mps.home}/core/baseLanguage/baseLanguage/baseLanguage.mpr"/>
+            <project file="${mps.home}/core/baseLanguage/baseLanguageInternal/baseLanguageInternal.mpr"/>
+            <project file="${mps.home}/core/languageDesign/core/core.mpr"/>
+            <project file="${mps.home}/core/languageDesign/structure/structure.mpr"/>
+            <project file="${mps.home}/core/languageDesign/editor/editor.mpr"/>
+            <project file="${mps.home}/core/languageDesign/constraints/constraints.mpr"/>
+            <project file="${mps.home}/core/languageDesign/smodel/smodel.mpr"/>
+            <project file="${mps.home}/core/languageDesign/actions/actions.mpr"/>
+            <project file="${mps.home}/core/languageDesign/typesystem/typesystem.mpr"/>
+            <project file="${mps.home}/core/languageDesign/refactoring/refactoring.mpr"/>
+            <project file="${mps.home}/core/languageDesign/sharedConcepts/sharedConcepts.mpr"/>
+            <project file="${mps.home}/core/baseLanguage/collections/collections.mpr"/>
+            <project file="${mps.home}/core/baseLanguage/dates/dates.mpr"/>
+            <project file="${mps.home}/core/baseLanguage/tuples/tuples.mpr"/>
+            <project file="${mps.home}/core/baseLanguage/closures/closures.mpr"/>
+            <project file="${mps.home}/core/languageDesign/generator/generator.mpr"/>
+            <project file="${mps.home}/core/languageDesign/intentions/intentions.mpr"/>
+            <project file="${mps.home}/core/languageDesign/findUsages/findUsages.mpr"/>
+            <project file="${mps.home}/core/languageDesign/plugin/plugin.mpr"/>
+            <project file="${mps.home}/platform/xmlDeprecated/xmlDeprecated.mpr"/>
+            <project file="${mps.home}/platform/regexp/regexp.mpr"/>
+            <project file="${mps.home}/core/languageDesign/quotation/quotation.mpr"/>
+            <project file="${mps.home}/core/languageDesign/annotations/annotations.mpr"/>
+            <project file="${mps.home}/core/languageDesign/pattern/pattern.mpr"/>
+            <project file="${mps.home}/core/languageDesign/dataFlow/dataFlow.mpr"/>
+            <project file="${mps.home}/core/languageDesign/script/script.mpr"/>
+            <project file="${mps.home}/core/languageDesign/test/test.mpr"/>
+            <project file="${mps.home}/platform/xml/xml/xml.mpr"/>
+        </mps.test.generation>
+    </target>
+</project>

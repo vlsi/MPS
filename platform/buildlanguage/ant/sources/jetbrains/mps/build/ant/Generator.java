@@ -108,9 +108,15 @@ public class Generator {
     com.intellij.openapi.project.Project ideaProject = ProjectManager.getInstance().getDefaultProject();
 
     File projectFile = FileUtil.createTmpFile();
-    MPSProject project = new MPSProject(projectFile, new ProjectDescriptor(), ideaProject);
+    final MPSProject project = new MPSProject(projectFile, new ProjectDescriptor(), ideaProject);
 
-    generateModels(project, collectModelsToGenerate());
+    final List<SModelDescriptor> models = collectModelsToGenerate();
+
+    ModelAccess.instance().runWriteAction(new Runnable() {
+      public void run() {
+        generateModels(project, models);
+      }
+    });
 
     unloadLoadedStuff();
     showStatistic();
