@@ -40,6 +40,7 @@ public class MapElement_Editor extends DefaultNodeEditor {
       style.set(StyleAttributes.PUNCTUATION_LEFT, true);
       style.set(StyleAttributes.PUNCTUATION_RIGHT, true);
     }
+    MapElement_DELETE.setCellActions(editorCell, node, editorContext);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -52,6 +53,7 @@ public class MapElement_Editor extends DefaultNodeEditor {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.PUNCTUATION_LEFT, true);
     }
+    MapElement_DELETE.setCellActions(editorCell, node, editorContext);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -79,6 +81,7 @@ public class MapElement_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no key>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
+    MapElement_DELETE.setCellActions(editorCell, node, editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
