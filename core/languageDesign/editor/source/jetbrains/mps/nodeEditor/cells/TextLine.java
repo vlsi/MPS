@@ -84,6 +84,9 @@ public class TextLine {
   private Color mySelectedTextBackground;
   private Color myNulLSelectedTextBackground;
 
+  private boolean myShowCaret;
+  private boolean mySelected;
+
   public TextLine(String text) {
     this(text, new Style(), false);
   }
@@ -357,7 +360,23 @@ public class TextLine {
     return myFont;
   }
 
-  public void paint(Graphics g, int shiftX, int shiftY, boolean isSelected, boolean toShowCaret) {
+  public boolean isSelected() {
+    return mySelected;
+  }
+
+  public void setSelected(boolean isSelected) {
+    mySelected = isSelected;
+  }
+
+  public boolean isShowCaret() {
+    return myShowCaret;
+  }
+
+  public void setShowCaret(boolean showCaret) {
+    myShowCaret = showCaret;
+  }
+
+  public void paint(Graphics g, int shiftX, int shiftY) {
     Color backgroundColor;
     Color textColor;
     Color textBackgroundColor;
@@ -366,7 +385,7 @@ public class TextLine {
     Rectangle2D stringBounds = metrics.getStringBounds(myText, g);
 
     backgroundColor = getBackgroundColor();
-    if (isSelected) {
+    if (mySelected) {
       textColor = getEffectiveSelectedTextColor();
       textBackgroundColor = getSelectedTextBackgroundColor();
     } else {
@@ -374,7 +393,7 @@ public class TextLine {
       textBackgroundColor = getTextBackgroundColor();
     }
 
-    if (backgroundColor != null && !g.getColor().equals(backgroundColor) && !isSelected) {
+    if (backgroundColor != null && !g.getColor().equals(backgroundColor) && !mySelected) {
       g.setColor(backgroundColor);
       g.fillRect(shiftX + getPaddingLeft(),
         shiftY + getPaddingTop(),
@@ -441,7 +460,7 @@ public class TextLine {
     }
 
 
-    if (toShowCaret) {
+    if (myShowCaret) {
       drawCaret(g, shiftX, shiftY);
     }
   }

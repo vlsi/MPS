@@ -154,7 +154,9 @@ public class NodeSubstitutePatternEditor {
       EditorComponent.turnOnAliasingIfPossible((Graphics2D) g);
 
       TextLine textLine = myTextLine;
-      textLine.paint(g, 0, 0, false, true);
+      textLine.setSelected(false);
+      textLine.setShowCaret(true);
+      textLine.paint(g, 0, 0);
     }
 
     public boolean processKeyTyped(KeyEvent keyEvent) {

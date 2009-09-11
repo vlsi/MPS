@@ -402,10 +402,12 @@ public abstract class EditorCell_Label extends EditorCell_Basic {
     TextLine textLine = getRenderedTextLine();
     boolean toShowCaret = toShowCaret();
     boolean selected = isSelectionPaintedOnAncestor();
+    textLine.setSelected(selected);
+    textLine.setShowCaret(toShowCaret);
     if (isDrawBrackets()) {
-      textLine.paint(g, myX + myGapLeft + BRACKET_WIDTH, myY, selected, toShowCaret);
+      textLine.paint(g, myX + myGapLeft + BRACKET_WIDTH, myY);
     } else {
-      textLine.paint(g, myX + myGapLeft, myY, selected, toShowCaret);
+      textLine.paint(g, myX + myGapLeft, myY);
     }
   }
 
