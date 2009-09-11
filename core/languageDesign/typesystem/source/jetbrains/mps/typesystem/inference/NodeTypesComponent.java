@@ -505,7 +505,8 @@ public class NodeTypesComponent implements EditorMessageOwner, Cloneable {
           if (isIncrementalMode()) {
             synchronized (ACCESS_LOCK) {
               myNodesReadListener.setAccessReport(true);
-              addDepedentNodesTypesystem(sNode, new HashSet<SNode>(myNodesReadListener.myAccessedNodes));
+              Set<SNode> accessedNodes = myNodesReadListener.myAccessedNodes;
+              addDepedentNodesTypesystem(sNode, accessedNodes);
               myNodesReadListener.setAccessReport(false);
             }
             myNodesReadListener.clear();
