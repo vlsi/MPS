@@ -26,39 +26,54 @@ import com.intellij.openapi.vcs.changes.VcsDirtyScopeManager;
 import com.intellij.openapi.vcs.changes.ChangeListManager;
 import com.intellij.openapi.vcs.checkin.CheckinEnvironment;
 import com.intellij.openapi.vcs.impl.VcsFileStatusProvider;
+import com.intellij.openapi.vcs.impl.ExcludedFileIndex;
 import com.intellij.openapi.vfs.VirtualFile;
+import com.intellij.openapi.fileTypes.FileTypeManager;
 import jetbrains.mps.fileTypes.MPSFileTypesManager;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.vfs.VFileSystem;
+import jetbrains.mps.util.CollectionUtil;
+import jetbrains.mps.util.Condition;
 import org.jetbrains.annotations.NotNull;
 
-import javax.print.attribute.DocAttributeSet;
 import java.io.File;
 import java.util.*;
 
 class AddOperation extends VcsOperation {
   private static final Logger LOG = Logger.getLogger(AddOperation.class);
   private final List<File> myFilesToAdd = new ArrayList<File>();
-  private final Set<VirtualFile> myVirtualFilesToAdd = new HashSet<VirtualFile>();
+  private final List<VirtualFile> myVirtualFilesToAdd = new ArrayList<VirtualFile>();
   private final boolean myRecursive;
-  private final Set<VirtualFile> myVirtualFilesToRevert = new HashSet<VirtualFile>();
+  private final List<VirtualFile> myVirtualFilesToRevert = new ArrayList<VirtualFile>();
+  private final VcsShowConfirmationOption myConfirmationOption;
+  private final boolean mySilently;
 
-  public AddOperation(Set<VirtualFile> filesToAdd, ProjectLevelVcsManager manager, Project project, boolean recursive) {
+  public AddOperation(Set<VirtualFile> filesToAdd, ProjectLevelVcsManager manager, Project project,
+                      VcsShowConfirmationOption option, boolean recursive, boolean silently) {
     super(manager, project);
     myRecursive = recursive;
-    myVirtualFilesToAdd.addAll(filesToAdd);
+    myVirtualFilesToAdd.addAll(CollectionUtil.filter(filesToAdd, new Condition<VirtualFile>() {
+      public boolean met(VirtualFile object) {
+        return !isIgnored(object);
+      }
+    }));
+    myConfirmationOption = option;
+    mySilently = silently;
   }
 
-  public AddOperation(List<File> filesToAdd, ProjectLevelVcsManager manager, Project project, boolean recursive) {
+  public AddOperation(List<File> filesToAdd, ProjectLevelVcsManager manager, Project project,
+                      VcsShowConfirmationOption option, boolean recursive, boolean silently) {
     super(manager, project);
     myRecursive = recursive;
     myFilesToAdd.addAll(filesToAdd);
+    myConfirmationOption = option;
+    mySilently = silently;
   }
 
   public void performInternal() {
     for (File f : myFilesToAdd) {
       VirtualFile virtualFile = VFileSystem.refreshAndGetFile(f);
-      if (virtualFile != null) {
+      if (virtualFile != null && !isIgnored(virtualFile)) {
         if (ChangeListManager.getInstance(myProject).getStatus(virtualFile).equals(FileStatus.DELETED)) {
           myVirtualFilesToRevert.add(virtualFile);
         } else {
@@ -74,25 +89,47 @@ class AddOperation extends VcsOperation {
       myVirtualFilesToRevert.addAll(getAllChildren(myVirtualFilesToRevert, new LinkedHashSet<VirtualFile>()));
     }
 
-    reallyPerform();
+    askAndPerform();
   }
 
-  private Set<VirtualFile> getAllChildren(final Set<VirtualFile> parentFiles, final Set<VirtualFile> allChildren) {
+  private Set<VirtualFile> getAllChildren(final Collection<VirtualFile> parentFiles, final Set<VirtualFile> allChildren) {
     for (VirtualFile f : parentFiles) {
       if (!f.isDirectory()) continue;
       VirtualFile[] children = f.getChildren();
       for (VirtualFile child : children) {
-        allChildren.add(child);
-        getAllChildren(Collections.singleton(child), allChildren);
+        if (!isIgnored(child)) {
+          allChildren.add(child);
+          getAllChildren(Collections.singleton(child), allChildren);
+        }
       }
     }
     return allChildren;
   }
 
-  private void reallyPerform() {
+  private void askAndPerform() {
+    if (mySilently || myConfirmationOption.getValue() == VcsShowConfirmationOption.Value.DO_ACTION_SILENTLY) {
+      reallyPerform(myVirtualFilesToRevert, myVirtualFilesToAdd);
+    } else if (myConfirmationOption.getValue() == VcsShowConfirmationOption.Value.DO_NOTHING_SILENTLY) {
+      return;
+    } else {
+      final AbstractVcsHelper helper = AbstractVcsHelper.getInstance(myProject);
+      Collection<VirtualFile> filesToProcess = helper.selectFilesToProcess(CollectionUtil.union(myVirtualFilesToAdd, myVirtualFilesToRevert), "Add Files To Vcs", null,
+        "Add File To Vcs",
+        "Do you want to add the following file to Vcs?|\n|{0}|\n|\n|If you say NO, you can still add it later manually.",
+        myConfirmationOption);
+      if (filesToProcess != null) {
+        reallyPerform(CollectionUtil.intersect(myVirtualFilesToRevert, filesToProcess),
+          CollectionUtil.intersect(myVirtualFilesToAdd, filesToProcess));
+      }
+    }
+
+
+  }
+
+  private void reallyPerform(final List<VirtualFile> virtualFilesToRevert, final List<VirtualFile> virtualFilesToAdd) {
     ApplicationManager.getApplication().runReadAction(new Runnable() {
       public void run() {
-        for (VirtualFile vf : myVirtualFilesToRevert) {
+        for (VirtualFile vf : virtualFilesToRevert) {
           if (vf == null) {
             continue;
           }
@@ -100,7 +137,7 @@ class AddOperation extends VcsOperation {
           scheduleDeletedFileForRevertInternal(vf);
         }
 
-        for (VirtualFile vf : myVirtualFilesToAdd) {
+        for (VirtualFile vf : virtualFilesToAdd) {
           if (vf == null) {
             continue;
           }

@@ -69,7 +69,7 @@ public class FileGenerationUtil {
     generateFiles(status, outputRootDirectory, gm, outputNodeContents, generatedFiles, directories);
 
     MPSVCSManager manager = context.getProject().getComponent(MPSVCSManager.class);
-    manager.addFilesToVcs(new ArrayList<File>(generatedFiles), false);
+    manager.addFilesToVcs(new ArrayList<File>(generatedFiles), false, false);
 
     refreshGeneratedFiles(generatedFiles);
 
@@ -191,7 +191,7 @@ public class FileGenerationUtil {
       }
     }
     MPSVCSManager manager = context.getComponent(MPSVCSManager.class);
-    manager.deleteFilesAndRemoveFromVcs(filesToDelete);
+    manager.deleteFilesAndRemoveFromVcs(filesToDelete, false);
   }
 
   public static void cleanUpDefaultOutputDir(GenerationStatus status, String outputDir, IOperationContext context) {

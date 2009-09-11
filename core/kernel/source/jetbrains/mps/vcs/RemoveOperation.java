@@ -17,9 +17,7 @@ package jetbrains.mps.vcs;
 
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.project.Project;
-import com.intellij.openapi.vcs.AbstractVcs;
-import com.intellij.openapi.vcs.FilePath;
-import com.intellij.openapi.vcs.ProjectLevelVcsManager;
+import com.intellij.openapi.vcs.*;
 import com.intellij.openapi.vcs.actions.VcsContextFactory;
 import com.intellij.openapi.vcs.changes.VcsDirtyScopeManager;
 import com.intellij.openapi.vcs.checkin.CheckinEnvironment;
@@ -28,33 +26,57 @@ import jetbrains.mps.logging.Logger;
 
 import java.io.File;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 
 class RemoveOperation extends VcsOperation {
   private final List<FilePath> myFilePathsToDelete = new ArrayList<FilePath>(10);
   private static final Logger LOG = Logger.getLogger(RemoveOperation.class);
+  private final VcsShowConfirmationOption myConfirmationOption;
+  private final boolean mySilently;
 
-  public RemoveOperation(Set<VirtualFile> filesToDelete, ProjectLevelVcsManager manager, Project project) {
+  public RemoveOperation(Set<VirtualFile> filesToDelete, ProjectLevelVcsManager manager, Project project, VcsShowConfirmationOption option, boolean silently) {
     super(manager, project);
     for (VirtualFile file : filesToDelete) {
-      FilePath path = VcsContextFactory.SERVICE.getInstance().createFilePathOn(file);
-      myFilePathsToDelete.add(path);
+      if (!isIgnored(file)) {
+        FilePath path = VcsContextFactory.SERVICE.getInstance().createFilePathOn(file);
+        myFilePathsToDelete.add(path);
+      }
     }
+    myConfirmationOption = option;
+    mySilently = silently;
   }
 
-  public RemoveOperation(List<File> filesToDelete, ProjectLevelVcsManager manager, Project project) {
+  public RemoveOperation(List<File> filesToDelete, ProjectLevelVcsManager manager, Project project, VcsShowConfirmationOption option, boolean silently) {
     super(manager, project);
     for (File file : filesToDelete) {
-      FilePath path = VcsContextFactory.SERVICE.getInstance().createFilePathOnDeleted(file, file.isDirectory());
-      myFilePathsToDelete.add(path);
+      if (!isIgnored(file.getAbsolutePath())) {
+        FilePath path = VcsContextFactory.SERVICE.getInstance().createFilePathOnDeleted(file, file.isDirectory());
+        myFilePathsToDelete.add(path);
+      }
     }
+    myConfirmationOption = option;
+    mySilently = silently;
   }
 
   public void performInternal() {
-    for (FilePath filePath : myFilePathsToDelete) {
+    if (mySilently || myConfirmationOption.getValue() == VcsShowConfirmationOption.Value.DO_ACTION_SILENTLY) {
+      performWithoutAsking(myFilePathsToDelete);
+    } else if (myConfirmationOption.getValue() != VcsShowConfirmationOption.Value.DO_NOTHING_SILENTLY) {
+      ApplicationManager.getApplication().invokeLater(new Runnable() {
+        public void run() {
+          AbstractVcsHelper helper = AbstractVcsHelper.getInstance(myProject);
+          Collection<FilePath> filePathCollection = helper.selectFilePathsToProcess(myFilePathsToDelete, "Delete Files From Vcs", null, "Delete File From Vcs",
+            "Do you want to delete the following file from Vcs?\n{0}\n\nIf you say NO, you can still delete it later manually.", myConfirmationOption);
+          if (filePathCollection != null) {
+            performWithoutAsking(filePathCollection);
+          }
+        }
+      });
+    }
+  }
+
+  private void performWithoutAsking(Collection<FilePath> filePathsToDelete) {
+    for (FilePath filePath : filePathsToDelete) {
       AbstractVcs vcs = myManager.getVcsFor(filePath);
       if (vcs != null) {
         CheckinEnvironment ci = vcs.getCheckinEnvironment();

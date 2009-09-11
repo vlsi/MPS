@@ -69,7 +69,7 @@ public class LanguageRenamer {
 
   private void deleteOldFiles(List<File> oldModelRoots) {
     List<File> newModelRoots = getModelOutputRoots();
-    MPSVCSManager.getInstance(myProject).deleteFilesAndRemoveFromVcs(getFilesToDelete(oldModelRoots, newModelRoots));
+    MPSVCSManager.getInstance(myProject).deleteFilesAndRemoveFromVcs(getFilesToDelete(oldModelRoots, newModelRoots), true);
   }
 
   private void renameLanguage(String oldFqName) {

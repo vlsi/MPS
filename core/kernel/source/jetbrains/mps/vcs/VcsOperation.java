@@ -17,6 +17,8 @@ package jetbrains.mps.vcs;
 
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.vcs.ProjectLevelVcsManager;
+import com.intellij.openapi.vfs.VirtualFile;
+import com.intellij.openapi.fileTypes.FileTypeManager;
 
 abstract class VcsOperation {
   protected final ProjectLevelVcsManager myManager;
@@ -31,5 +33,13 @@ abstract class VcsOperation {
 
   public void runPerform(Runnable runnable) {
     runnable.run();
+  }
+
+  protected boolean isIgnored(VirtualFile virtualFile) {
+    return isIgnored(virtualFile.getName());
+  }
+
+  protected boolean isIgnored(String fileName) {
+    return FileTypeManager.getInstance().isFileIgnored(fileName);
   }
 }

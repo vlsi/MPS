@@ -219,7 +219,7 @@ public class ApplicationLevelVcsManager implements ApplicationComponent, Persist
 
     // add
     for (MPSVCSManager manager : vcsManagerToFile.keySet()) {
-      manager.addVirtualFilesToVcs(vcsManagerToFile.get(manager), recursive);
+      manager.addVirtualFilesToVcs(vcsManagerToFile.get(manager), recursive, true);
     }
   }
 
@@ -228,7 +228,7 @@ public class ApplicationLevelVcsManager implements ApplicationComponent, Persist
     if (project != null) {
       MPSVCSManager manager = MPSVCSManager.getInstance(project);
       if (manager != null) {
-        manager.addVirtualFilesToVcs(Collections.singletonList(file), recursive);
+        manager.addVirtualFilesToVcs(Collections.singletonList(file), recursive, true);
       } else {
         LOG.debug("Can not find " + MPSVCSManager.class.getName() + " instance for file " + file + ".");
       }
@@ -261,7 +261,7 @@ public class ApplicationLevelVcsManager implements ApplicationComponent, Persist
 
     // remove
     for (MPSVCSManager manager : vcsManagerToFile.keySet()) {
-      manager.deleteFilesAndRemoveFromVcs(vcsManagerToFile.get(manager));
+      manager.deleteFilesAndRemoveFromVcs(vcsManagerToFile.get(manager), true);
     }
   }
 
