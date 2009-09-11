@@ -103,7 +103,16 @@ public abstract class EditorCell_Basic implements EditorCell {
   }
 
   public void setErrorState(boolean errorState) {
+    boolean wasState = myErrorState;
     myErrorState = errorState;
+
+    if (myInTree && wasState != myErrorState) {
+      if (myErrorState) {
+        getEditor().getErrorStateTracker().add(this);
+      } else {
+        getEditor().getErrorStateTracker().remove(this);
+      }
+    }
   }
 
   public boolean validate(boolean strict, boolean canActivatePopup) {
@@ -1258,10 +1267,18 @@ public abstract class EditorCell_Basic implements EditorCell {
 
   public void onAdd() {
     myInTree = true;
+
+    if (isErrorState()) {
+      getEditor().getErrorStateTracker().add(this);
+    }
   }
 
   public void onRemove() {
     myInTree = false;
+
+    if (isErrorState()) {
+      getEditor().getErrorStateTracker().remove(this);
+    }
   }
 
   public void setLeftGap(int gap) {

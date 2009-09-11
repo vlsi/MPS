@@ -114,6 +114,8 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
   private Set<EditorCell> myFoldedCells = new HashSet<EditorCell>();
   private Set<EditorCell> myBracesEnabledCells = new HashSet<EditorCell>();
 
+  private ErrorStateTracker myErrorStateTracker = new ErrorStateTracker();
+
   private boolean myRelayoutRequested = false;
   private boolean myIsEditable = true;
 
@@ -2556,6 +2558,10 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     if (!isEditable) {
       setFocusable(false);
     }
+  }
+
+  public ErrorStateTracker getErrorStateTracker() {
+    return myErrorStateTracker;    
   }
 
   private class MySimpleModelListener extends SModelAdapter {

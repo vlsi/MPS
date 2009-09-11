@@ -68,25 +68,19 @@ class Memento {
     }
 
     if (full) {
-      collectErrors(nodeEditor.getRootCell());
+      collectErrors(nodeEditor);
     }
   }
 
-  private void collectErrors(EditorCell cell) {
-    if (cell instanceof EditorCell_Collection) {
-      EditorCell_Collection collection = (EditorCell_Collection) cell;
-      for (EditorCell child : collection) {
-        collectErrors(child);
+  private void collectErrors(EditorComponent editor) {
+    for (EditorCell cell : editor.getErrorStateTracker().getCellsWithErrorState()) {
+      if (cell instanceof EditorCell_Label) {
+        EditorCell_Label label = (EditorCell_Label) cell;
+        if (!"".equals(label.getText())) {
+          myErrorTexts.put(label.getCellInfo(), label.getText());
+        }
       }
     }
-
-    if (cell instanceof EditorCell_Label) {
-      EditorCell_Label label = (EditorCell_Label) cell;
-      if (label.isErrorState() && !"".equals(label.getText())) {
-        myErrorTexts.put(label.getCellInfo(), label.getText());
-      }
-    }
-
   }
 
   void restore(EditorComponent editor) {
