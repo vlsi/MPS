@@ -12197,6 +12197,7 @@
         </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode" id="1214568090087">
+        <property name="attractsFocus" value="2" />
         <link role="relationDeclaration" targetNodeId="17.1137022507850" />
         <node role="styleItem" type="jetbrains.mps.lang.editor.structure.IndentLayoutIndentStyleClassItem" id="1237647619014">
           <property name="flag" value="true" />

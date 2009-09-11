@@ -6356,6 +6356,7 @@
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode" id="1186412603348">
         <property name="noTargetText" value="&lt;no query&gt;" />
+        <property name="attractsFocus" value="3" />
         <link role="relationDeclaration" targetNodeId="2.1186403803051" />
         <node role="renderingCondition" type="jetbrains.mps.lang.editor.structure.QueryFunction_NodeCondition" id="1186412621877">
           <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1186412621878">
@@ -6508,6 +6509,7 @@
         </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode" id="1220975756218">
+        <property name="attractsFocus" value="3" />
         <link role="relationDeclaration" targetNodeId="2.1220975211821" />
         <node role="renderingCondition" type="jetbrains.mps.lang.editor.structure.QueryFunction_NodeCondition" id="1220975770016">
           <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1220975770017">
@@ -6686,6 +6688,7 @@
         </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode" id="1223461953254">
+        <property name="attractsFocus" value="3" />
         <link role="relationDeclaration" targetNodeId="2.1223387335081" />
         <node role="renderingCondition" type="jetbrains.mps.lang.editor.structure.QueryFunction_NodeCondition" id="1223461957913">
           <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1223461957914">
@@ -6771,6 +6774,7 @@
         </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode" id="1221064737626">
+        <property name="attractsFocus" value="3" />
         <link role="relationDeclaration" targetNodeId="2.1221064706952" />
         <node role="renderingCondition" type="jetbrains.mps.lang.editor.structure.QueryFunction_NodeCondition" id="1221214215445">
           <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1221214215446">
@@ -7674,6 +7678,7 @@
         </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode" id="1221219095122">
+        <property name="attractsFocus" value="3" />
         <link role="relationDeclaration" targetNodeId="2.1221219051630" />
         <node role="renderingCondition" type="jetbrains.mps.lang.editor.structure.QueryFunction_NodeCondition" id="1221219156229">
           <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1221219156230">
@@ -8563,6 +8568,7 @@
         </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode" id="1236443694263">
+        <property name="attractsFocus" value="3" />
         <link role="relationDeclaration" targetNodeId="2.1221064706952" />
         <node role="renderingCondition" type="jetbrains.mps.lang.editor.structure.QueryFunction_NodeCondition" id="1237984825194">
           <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1237984825195">

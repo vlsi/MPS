@@ -16,6 +16,7 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
+import jetbrains.mps.nodeEditor.FocusPolicy;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_ReplaceNode_CustomNodeConcept;
@@ -93,6 +94,9 @@ public class UnderlinedStyleClassItem_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no query>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
+    if (true) {
+      editorCell.setFocusPolicy(FocusPolicy.ATTRACTS_RECURSIVELY);
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();

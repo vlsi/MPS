@@ -16,6 +16,7 @@ import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
+import jetbrains.mps.nodeEditor.FocusPolicy;
 import jetbrains.mps.smodel.IScope;
 import org.apache.commons.lang.ObjectUtils;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
@@ -87,6 +88,9 @@ public class FontStyleStyleClassItem_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no query>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
+    if (true) {
+      editorCell.setFocusPolicy(FocusPolicy.ATTRACTS_RECURSIVELY);
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPart[]{new FontStyleStyleClassItem_Editor.FontStyleStyleClassItem_generic_cellMenu1(),new FontStyleStyleClassItem_Editor.FontStyleStyleClassItem_generic_cellMenu0()}));
     SNode attributeConcept = provider.getRoleAttribute();

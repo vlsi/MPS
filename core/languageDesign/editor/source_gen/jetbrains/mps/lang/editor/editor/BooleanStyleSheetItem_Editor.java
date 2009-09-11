@@ -18,6 +18,7 @@ import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
+import jetbrains.mps.nodeEditor.FocusPolicy;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.editor.behavior.BooleanStyleSheetItem_Behavior;
@@ -105,6 +106,9 @@ public class BooleanStyleSheetItem_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no query>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
+    if (true) {
+      editorCell.setFocusPolicy(FocusPolicy.ATTRACTS_RECURSIVELY);
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
