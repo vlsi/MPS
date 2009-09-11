@@ -35,7 +35,7 @@ public abstract class BaseModuleModel extends BaseMPSChooseModel<IModule> {
   public String doGetObjectName(IModule module) {
     if (module instanceof Generator) {
       Generator gen = (Generator) module;
-      return gen.getModuleFqName();
+      return gen.getAlias();
     }
     return module.getModuleNamespace();
   }
