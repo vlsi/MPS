@@ -1168,7 +1168,7 @@ public class ClassConcept_Editor extends DefaultNodeEditor {
         Style style = editorCell.getStyle();
         style.set(StyleAttributes.EDITABLE, true);
       }
-      editorCell.setDefaultText("<<static inner classifiers>>");
+      editorCell.setDefaultText("<<inner classifiers>>");
       return editorCell;
     }
   }

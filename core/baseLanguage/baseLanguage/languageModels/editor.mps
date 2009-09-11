@@ -630,7 +630,7 @@
         <property name="vertical" value="false" />
         <link role="relationDeclaration" targetNodeId="17.1178616825527" />
         <node role="emptyCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1178616865558">
-          <property name="nullText" value="&lt;&lt;static inner classifiers&gt;&gt;" />
+          <property name="nullText" value="&lt;&lt;inner classifiers&gt;&gt;" />
           <node role="styleItem" type="jetbrains.mps.lang.editor.structure.EditableStyleClassItem" id="1214579834105">
             <property name="flag" value="true" />
           </node>
