@@ -17,6 +17,7 @@ package jetbrains.mps.vcs;
 
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.vcs.ProjectLevelVcsManager;
+import com.intellij.openapi.vcs.changes.ChangeListManager;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.openapi.fileTypes.FileTypeManager;
 
@@ -36,7 +37,7 @@ abstract class VcsOperation {
   }
 
   protected boolean isIgnored(VirtualFile virtualFile) {
-    return isIgnored(virtualFile.getName());
+    return isIgnored(virtualFile.getName()) || ChangeListManager.getInstance(myProject).isIgnoredFile(virtualFile);
   }
 
   protected boolean isIgnored(String fileName) {
