@@ -124,15 +124,23 @@ public class IntentionsSupport {
     myShowIntentionsThread.set(new Thread("Intentions") {
       public void run() {
         try {
-          if (isInconsistentEditor()) return;
+          final boolean[] finished = new boolean[1];
           final boolean[] enabledPresent = new boolean[1];
           final boolean[] availablePresent = new boolean[1];
           ModelAccess.instance().runReadAction(new Runnable() {
             public void run() {
+              if (isInconsistentEditor()) {
+                finished[0] = false;
+                return;
+              }
               enabledPresent[0] = !getEnabledIntentions().isEmpty();
               availablePresent[0] = hasIntentions();
+              finished[0] = true;
             }
           });
+          if (!finished[0]) {
+            return;
+          }
 
           ModelAccess.instance().runReadInEDT(new Runnable() {
             public void run() {
