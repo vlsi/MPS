@@ -135,7 +135,7 @@ public class LeftEditorHighlighter {
     g2d.setStroke(ColorAndGraphicsUtil.dottedStroke());
 
     Rectangle bounds = g.getClipBounds();
-    g.drawLine(myWidth, bounds.y, myWidth, bounds.height);
+    g.drawLine(myWidth, bounds.y, myWidth, bounds.y + bounds.height);
     g2d.setStroke(s);
     for (FoldingButton button : myFoldingButtons.values()) {
       if (button.myMouseOver && !button.myIsFolded) {
