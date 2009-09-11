@@ -21,10 +21,9 @@
       <solutionPath path="${project}/solutions/constraintLanguageSandbox/constraintLanguageSandbox.msd" />
     </projectSolutions>
     <projectLanguages>
-      <languagePath path="${project}/constraintsLanguage.mpl" />
-      <languagePath path="${mps_home}/core/languageDesign/actionsLanguage/languageDescriptor.mpl" />
-      <languagePath path="${mps_home}/core/languageDesign/structureLanguage/languageDescriptor.mpl" />
+      <languagePath path="${mps_home}/core/languageDesign/actions/languageDescriptor.mpl" />
       <languagePath path="${project}/constraints.mpl" />
+      <languagePath path="${mps_home}/core/languageDesign/structure/languageDescriptor.mpl" />
     </projectLanguages>
     <projectDevkits />
     <genConfs>
