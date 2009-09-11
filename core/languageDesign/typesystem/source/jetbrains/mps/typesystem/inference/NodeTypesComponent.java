@@ -339,8 +339,12 @@ public class NodeTypesComponent implements EditorMessageOwner, Cloneable {
 
     //write access listeners
     removeOurListener();
-    Set<SNode> nodesToDependOn = new HashSet<SNode>(myNodesToDependentNodes.keySet());
-    nodesToDependOn.add(myRootNode);
+    
+    List<SNode> nodesToDependOn = new ArrayList<SNode>(myNodesToDependentNodes.keySet());
+    if (!myNodesToDependentNodes.keySet().contains(myRootNode)) {
+      nodesToDependOn.add(myRootNode);
+    }
+
     for (SNode nodeToDependOn : nodesToDependOn) {
       final SModel sModel = nodeToDependOn.getModel();
       final SModelDescriptor sm = sModel.getModelDescriptor();
