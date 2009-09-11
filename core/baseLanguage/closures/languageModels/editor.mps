@@ -269,6 +269,7 @@
       <node role="cellLayout" type="jetbrains.mps.lang.editor.structure.CellLayout_Indent" id="1237725445624" />
     </node>
   </node>
+  <visible index="2" modelUID="r:00000000-0000-4000-0000-011c89590333(jetbrains.mps.baseLanguage.closures.behavior)" />
   <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" id="1225797570688">
     <link role="conceptDeclaration" targetNodeId="1.1225797177491" resolveInfo="InvokeFunctionOperation" />
     <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="1225797571954">
@@ -285,6 +286,7 @@
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNodeList" id="1225797571961">
         <property name="separatorText" value="," />
+        <property name="attractsFocus" value="2" />
         <link role="relationDeclaration" targetNodeId="1.1199548008404" />
         <node role="emptyCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1225797571962">
           <node role="styleItem" type="jetbrains.mps.lang.editor.structure.EditableStyleClassItem" id="3013813967663753654">
@@ -295,10 +297,51 @@
           </node>
         </node>
         <node role="cellLayout" type="jetbrains.mps.lang.editor.structure.CellLayout_Indent" id="1237820996147" />
+        <node role="focusPolicyApplicable" type="jetbrains.mps.lang.editor.structure.QueryFunction_NodeCondition" id="418758558327459703">
+          <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="418758558327459704">
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="418758558327459705">
+              <node role="expression" type="jetbrains.mps.baseLanguage.structure.GreaterThanExpression" id="418758558327459714">
+                <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="418758558327459715">
+                  <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="418758558327459716">
+                    <node role="operand" type="jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_node" id="418758558327459717" />
+                    <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="418758558327459718">
+                      <link role="baseMethodDeclaration" targetNodeId="2v.418758558327452981" resolveInfo="getParameters" />
+                    </node>
+                  </node>
+                  <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.GetSizeOperation" id="418758558327459719" />
+                </node>
+                <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="418758558327459720">
+                  <property name="value" value="0" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1225797571964">
         <property name="text" value=")" />
+        <property name="attractsFocus" value="1" />
         <link role="styleClass" targetNodeId="3.1215088010675" resolveInfo="RightParen" />
+        <node role="focusPolicyApplicable" type="jetbrains.mps.lang.editor.structure.QueryFunction_NodeCondition" id="418758558327452937">
+          <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="418758558327452938">
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="418758558327452948">
+              <node role="expression" type="jetbrains.mps.baseLanguage.structure.EqualsExpression" id="418758558327459697">
+                <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="418758558327459701">
+                  <property name="value" value="0" />
+                </node>
+                <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="418758558327459689">
+                  <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="418758558327459684">
+                    <node role="operand" type="jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_node" id="418758558327452952" />
+                    <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="418758558327459688">
+                      <link role="baseMethodDeclaration" targetNodeId="2v.418758558327452981" resolveInfo="getParameters" />
+                    </node>
+                  </node>
+                  <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.GetSizeOperation" id="418758558327459693" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
       </node>
       <node role="cellLayout" type="jetbrains.mps.lang.editor.structure.CellLayout_Indent" id="1237725440663" />
     </node>

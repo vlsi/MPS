@@ -9,6 +9,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
+import jetbrains.mps.nodeEditor.FocusPolicy;
 import jetbrains.mps.nodeEditor.cellProviders.AbstractCellListHandler;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Indent;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
@@ -19,6 +20,9 @@ import jetbrains.mps.nodeEditor.style.Padding;
 import jetbrains.mps.nodeEditor.style.Measure;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
+import jetbrains.mps.smodel.IScope;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.baseLanguage.closures.behavior.InvokeFunctionOperation_Behavior;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandler;
 import jetbrains.mps.smodel.action.NodeFactoryManager;
 import jetbrains.mps.nodeEditor.CellActionType;
@@ -54,6 +58,9 @@ public class InvokeFunctionOperation_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ")");
     editorCell.setCellId("Constant_2165_2");
     BaseLanguageStyle_StyleSheet.getRightParen(editorCell).apply(editorCell);
+    if (renderingCondition2165_0(node, editorContext, editorContext.getScope())) {
+      editorCell.setFocusPolicy(FocusPolicy.ATTRACTS_FOCUS);
+    }
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -62,6 +69,9 @@ public class InvokeFunctionOperation_Editor extends DefaultNodeEditor {
     AbstractCellListHandler handler = new InvokeFunctionOperation_Editor.parameterListHandler_2165_0(node, "parameter", editorContext);
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Indent(), false);
     editorCell.setCellId("refNodeList_parameter");
+    if (renderingCondition2165_1(node, editorContext, editorContext.getScope())) {
+      editorCell.setFocusPolicy(FocusPolicy.FIRST_EDITABLE_CELL);
+    }
     editorCell.setRole(handler.getElementRole());
     return editorCell;
   }
@@ -86,6 +96,14 @@ public class InvokeFunctionOperation_Editor extends DefaultNodeEditor {
       return manager.createRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
     } else
     return editorCell;
+  }
+
+  private static boolean renderingCondition2165_0(SNode node, EditorContext editorContext, IScope scope) {
+    return ListSequence.fromList(InvokeFunctionOperation_Behavior.call_getParameters_418758558327452981(node)).count() == 0;
+  }
+
+  private static boolean renderingCondition2165_1(SNode node, EditorContext editorContext, IScope scope) {
+    return ListSequence.fromList(InvokeFunctionOperation_Behavior.call_getParameters_418758558327452981(node)).count() > 0;
   }
 
   private static class parameterListHandler_2165_0 extends RefNodeListHandler {
