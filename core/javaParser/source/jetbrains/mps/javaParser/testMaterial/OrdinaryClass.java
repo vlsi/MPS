@@ -11,6 +11,11 @@ public class OrdinaryClass {
   String myName;
   public OrdinaryClass(String name) {
     myName = name;
+    int i = 2+2;
+    i++;
+    if (i < 0) {
+      return;
+    }
     name.toString();
     String.valueOf(2);
   }

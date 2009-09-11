@@ -1213,6 +1213,7 @@ public class JavaConverterTreeBuilder {
     StatementList result;
     if (possibleBlock instanceof BlockStatement) {
       result = ((BlockStatement)possibleBlock).getStatements();
+      possibleBlock.removeChild(result);
     } else {
       result = StatementList.newInstance(myCurrentModel);
       if (possibleBlock != null) {
