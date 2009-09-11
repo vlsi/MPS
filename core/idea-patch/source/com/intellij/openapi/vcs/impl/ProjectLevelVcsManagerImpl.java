@@ -96,12 +96,18 @@ public class ProjectLevelVcsManagerImpl extends ProjectLevelVcsManagerEx impleme
   private ContentManager myContentManager;
   private EditorAdapter myEditorAdapter;
 
-  @NonNls private static final String ELEMENT_MAPPING = "mapping";
-  @NonNls private static final String ATTRIBUTE_DIRECTORY = "directory";
-  @NonNls private static final String ATTRIBUTE_VCS = "vcs";
-  @NonNls private static final String ATTRIBUTE_DEFAULT_PROJECT = "defaultProject";
-  @NonNls private static final String ELEMENT_ROOT_SETTINGS = "rootSettings";
-  @NonNls private static final String ATTRIBUTE_CLASS = "class";
+  @NonNls
+  private static final String ELEMENT_MAPPING = "mapping";
+  @NonNls
+  private static final String ATTRIBUTE_DIRECTORY = "directory";
+  @NonNls
+  private static final String ATTRIBUTE_VCS = "vcs";
+  @NonNls
+  private static final String ATTRIBUTE_DEFAULT_PROJECT = "defaultProject";
+  @NonNls
+  private static final String ELEMENT_ROOT_SETTINGS = "rootSettings";
+  @NonNls
+  private static final String ATTRIBUTE_CLASS = "class";
 
   private final List<CheckinHandlerFactory> myRegisteredBeforeCheckinHandlers = new ArrayList<CheckinHandlerFactory>();
   private final EventDispatcher<VcsListener> myEventDispatcher = EventDispatcher.create(VcsListener.class);
@@ -155,7 +161,7 @@ public class ProjectLevelVcsManagerImpl extends ProjectLevelVcsManagerEx impleme
   }
 
   public boolean haveVcses() {
-    return ! AllVcses.getInstance(myProject).isEmpty();
+    return !AllVcses.getInstance(myProject).isEmpty();
   }
 
   public void disposeComponent() {
@@ -215,7 +221,7 @@ public class ProjectLevelVcsManagerImpl extends ProjectLevelVcsManagerEx impleme
     return ApplicationManager.getApplication().runReadAction(new Computable<AbstractVcs>() {
       @Nullable
       public AbstractVcs compute() {
-        if (! myProject.isInitialized()) return null;
+        if (!myProject.isInitialized()) return null;
         if (myProject.isDisposed()) throw new ProcessCanceledException();
         VirtualFile vFile = ChangesUtil.findValidParent(file);
         if (vFile != null) {
@@ -274,7 +280,7 @@ public class ProjectLevelVcsManagerImpl extends ProjectLevelVcsManagerEx impleme
   }
 
   public void unregisterVcs(AbstractVcs vcs) {
-    if ((! ApplicationManager.getApplication().isUnitTestMode()) && (myMappings.haveActiveVcs(vcs.getName()))) {
+    if ((!ApplicationManager.getApplication().isUnitTestMode()) && (myMappings.haveActiveVcs(vcs.getName()))) {
       // unlikely
       LOG.warn("Active vcs '" + vcs.getName() + "' is being unregistered. Remove from mappings first.");
     }
@@ -299,7 +305,7 @@ public class ProjectLevelVcsManagerImpl extends ProjectLevelVcsManagerEx impleme
   }
 
   public boolean hasAnyMappings() {
-    return ! myMappings.isEmpty();
+    return !myMappings.isEmpty();
   }
 
   public void addMessageToConsoleWindow(final String message, final TextAttributes attributes) {
@@ -310,8 +316,7 @@ public class ProjectLevelVcsManagerImpl extends ProjectLevelVcsManagerEx impleme
         final ContentManager contentManager = getContentManager();
         if (contentManager == null) {
           myPendingOutput.add(new Pair<String, TextAttributes>(message, attributes));
-        }
-        else {
+        } else {
           getOrCreateConsoleContent(contentManager);
           myEditorAdapter.appendString(message, attributes);
         }
@@ -419,7 +424,7 @@ public class ProjectLevelVcsManagerImpl extends ProjectLevelVcsManagerEx impleme
 
   public boolean hasExplicitMapping(final VirtualFile vFile) {
     final VcsDirectoryMapping mapping = myMappings.getMappingFor(vFile);
-    return mapping != null && (! mapping.isDefaultMapping());
+    return mapping != null && (!mapping.isDefaultMapping());
   }
 
   public void setDirectoryMapping(final String path, final String activeVcsName) {
@@ -504,7 +509,7 @@ public class ProjectLevelVcsManagerImpl extends ProjectLevelVcsManagerEx impleme
   @Patch
   public void stopBackgroundVcsOperation() {
     // in fact, the condition is "should not be called under ApplicationManager.invokeLater() and similiar"
-    assert ! ApplicationManager.getApplication().isDispatchThread();
+    assert !ApplicationManager.getApplication().isDispatchThread();
     LOG.assertTrue(myBackgroundOperationCounter > 0, "myBackgroundOperationCounter > 0");
     myBackgroundOperationCounter--;
     // MPS Patch begins:
@@ -537,7 +542,7 @@ public class ProjectLevelVcsManagerImpl extends ProjectLevelVcsManagerEx impleme
     final AbstractVcs[] vcses = myMappings.getActiveVcses();
     for (AbstractVcs vcs : vcses) {
       final VirtualFile[] roots = getRootsUnderVcs(vcs);
-      for(VirtualFile root: roots) {
+      for (VirtualFile root : roots) {
         vcsRoots.add(new VcsRoot(vcs, root));
       }
     }
@@ -552,13 +557,14 @@ public class ProjectLevelVcsManagerImpl extends ProjectLevelVcsManagerEx impleme
     myEventDispatcher.getMulticaster().directoryMappingChanged();
   }
 
+  @Patch
   public void readDirectoryMappings(final Element element) {
     myMappings.clear();
 
     final List<VcsDirectoryMapping> mappingsList = new ArrayList<VcsDirectoryMapping>();
     final List list = element.getChildren(ELEMENT_MAPPING);
     boolean haveNonEmptyMappings = false;
-    for(Object childObj: list) {
+    for (Object childObj : list) {
       Element child = (Element) childObj;
       final String vcs = child.getAttributeValue(ATTRIBUTE_VCS);
       if (vcs != null && vcs.length() > 0) {
@@ -579,7 +585,7 @@ public class ProjectLevelVcsManagerImpl extends ProjectLevelVcsManagerEx impleme
             mapping.setRootSettings(instance);
           }
           catch (Exception e) {
-            LOG.error("Failed to load VCS root settings class "+ className + " for VCS " + vcsInstance.getClass().getName(), e);
+            LOG.error("Failed to load VCS root settings class " + className + " for VCS " + vcsInstance.getClass().getName(), e);
           }
         }
       }
@@ -589,18 +595,24 @@ public class ProjectLevelVcsManagerImpl extends ProjectLevelVcsManagerEx impleme
     if (haveNonEmptyMappings || !defaultProject) {
       myMappingsLoaded = true;
     }
-    StartupManager.getInstance(myProject).registerStartupActivity(new Runnable() {
-      public void run() {
-        myMappings.setDirectoryMappings(mappingsList);
-      }
-    });
+    // MPS Patch Start:
+    // condition was added
+    // do not register activity if we are in unit test mode
+    if (!ApplicationManager.getApplication().isUnitTestMode()) {
+      StartupManager.getInstance(myProject).registerStartupActivity(new Runnable() {
+        public void run() {
+          myMappings.setDirectoryMappings(mappingsList);
+        }
+      });
+    }
+    // MPS Patch End
   }
 
   public void writeDirectoryMappings(final Element element) {
     if (myProject.isDefault()) {
       element.setAttribute(ATTRIBUTE_DEFAULT_PROJECT, Boolean.TRUE.toString());
     }
-    for(VcsDirectoryMapping mapping: getDirectoryMappings()) {
+    for (VcsDirectoryMapping mapping : getDirectoryMappings()) {
       Element child = new Element(ELEMENT_MAPPING);
       child.setAttribute(ATTRIBUTE_DIRECTORY, mapping.getDirectory());
       child.setAttribute(ATTRIBUTE_VCS, mapping.getVcs());
@@ -626,7 +638,7 @@ public class ProjectLevelVcsManagerImpl extends ProjectLevelVcsManagerEx impleme
 
   @Nullable
   public AbstractVcs findVersioningVcs(VirtualFile file) {
-    for(AbstractVcs vcs: getAllVcss()) {
+    for (AbstractVcs vcs : getAllVcss()) {
       if (vcs.isVersionedDirectory(file)) {
         return vcs;
       }
@@ -639,7 +651,7 @@ public class ProjectLevelVcsManagerImpl extends ProjectLevelVcsManagerEx impleme
   }
 
   public void fireDirectoryMappingsChanged() {
-    if (! myIsDisposed) {
+    if (!myIsDisposed) {
       myMappings.mappingsChanged();
     }
   }
@@ -698,6 +710,7 @@ public class ProjectLevelVcsManagerImpl extends ProjectLevelVcsManagerEx impleme
   //Patched by MPS
   public interface IBackgroundVcsOperationsListener {
     public void backgroundOperationStarted();
+
     public void allBackgroundOperationsStopped();
   }
 }
