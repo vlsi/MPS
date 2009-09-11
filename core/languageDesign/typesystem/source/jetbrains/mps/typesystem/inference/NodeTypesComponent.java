@@ -703,7 +703,6 @@ public class NodeTypesComponent implements EditorMessageOwner, Cloneable {
   }
 
   private void addOurListener(SModelDescriptor sm) {
-    if (sm.hasSModelCommandListener(myModelListener)) return;
     sm.addModelCommandListener(myModelListener);
     myModelDescriptorsWithListener.add(sm);
   }
