@@ -110,6 +110,11 @@ public class TypesProvider {
           }
           return result;
         }
+        if (binding instanceof SourceTypeBinding) {
+          ClassifierType classifierType = ClassifierType.newInstance(model);
+          classifierType.setClassifier((Classifier) myReferentsCreator.myBindingMap.get(binding));
+          return classifierType;
+        }
         if (binding instanceof BinaryTypeBinding) {
           //in java stubs
           ClassifierType classifierType = ClassifierType.newInstance(model);
@@ -177,6 +182,10 @@ public class TypesProvider {
       sb.append(asString(method.returnType));
     }
     return new SNodeId.Foreign(SNodeId.Foreign.ID_PREFIX + sb.toString());
+  }
+
+  private SNodeId createFieldId(FieldBinding field, BinaryTypeBinding classBinding) {
+    return new SNodeId.Foreign(SNodeId.Foreign.ID_PREFIX + new String(classBinding.sourceName) + "." + new String(field.name));
   }
 
   private static String asString(TypeBinding type) {
@@ -264,5 +273,20 @@ public class TypesProvider {
       }
     }
     throw new JavaConverterException("no classifier for class "+new String(aClass.sourceName));
+  }
+
+  public SReference createFieldReference(FieldBinding binding, String role, SNode sourceNode) {
+    INodeAdapter adapter = myReferentsCreator.myBindingMap.get(binding);
+    if (adapter != null) {
+      return SReference.create(role, sourceNode, adapter.getNode());
+    }
+     if (binding.declaringClass instanceof BinaryTypeBinding) {
+       //java stub
+       BinaryTypeBinding binaryTypeBinding = (BinaryTypeBinding) binding.declaringClass;
+       SNodeId nodeId = createFieldId(binding, binaryTypeBinding);
+       SModelReference modelReference = modelReferenceFromBinaryClassBinding(binaryTypeBinding);
+       return SReference.create(role, sourceNode, modelReference, nodeId);
+     }
+     return null;
   }
 }

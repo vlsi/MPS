@@ -554,7 +554,7 @@ public class JavaConverterTreeBuilder {
       result = smc;
       SReference classifierReference =
         myTypesProvider.createClassifierReference(x.binding.declaringClass, StaticMethodCall.CLASS_CONCEPT, smc.getNode());
-        smc.getNode().addReference(classifierReference);
+      smc.getNode().addReference(classifierReference);
     } else if (x.receiver instanceof SuperReference || x.receiver instanceof QualifiedSuperReference) {
       //todo add Qualified Super Method Call to BL
       SuperMethodCall smc = SuperMethodCall.newInstance(myCurrentModel);
@@ -685,6 +685,84 @@ public class JavaConverterTreeBuilder {
     result = createVariableRef(variable, binding);
     return result;
   }
+
+  jetbrains.mps.baseLanguage.structure.Expression processExpression(QualifiedNameReference x) {
+    FieldBinding binding = (FieldBinding) x.binding;
+
+    boolean isStatic = binding.isStatic();
+    INodeAdapter varRef;
+    String role;
+    jetbrains.mps.baseLanguage.structure.Expression result;
+
+    if (isStatic) {
+      StaticFieldReference fieldReference = StaticFieldReference.newInstance(myCurrentModel);
+      varRef = fieldReference;
+      role = StaticFieldReference.VARIABLE_DECLARATION;
+      fieldReference.getNode().addReference(
+        myTypesProvider.createClassifierReference(binding.declaringClass, StaticFieldReference.CLASSIFIER, fieldReference.getNode()));
+      result = fieldReference;
+    } else {
+      FieldReferenceOperation operation = FieldReferenceOperation.newInstance(myCurrentModel);
+      varRef = operation;
+      DotExpression dotExpression = DotExpression.newInstance(myCurrentModel);
+      role = FieldReferenceOperation.FIELD_DECLARATION;
+      dotExpression.setOperation(operation);
+
+      ThisExpression thisExpression = ThisExpression.newInstance(myCurrentModel);
+      ReferenceBinding declaredClassBinding = binding.declaringClass;
+      if (myCurrentClass != myBindingMap.get(declaredClassBinding)) {
+        thisExpression.getNode().addReference(
+          myTypesProvider.createClassifierReference(declaredClassBinding, ThisExpression.CLASS_CONCEPT, thisExpression.getNode()));
+      }
+      dotExpression.setOperand(thisExpression);
+      result = dotExpression;
+    }
+    SReference reference = myTypesProvider.createFieldReference(binding, role, varRef.getNode());
+    varRef.getNode().addReference(reference);
+
+    /*
+    * Wackiness: JDT represents multiple field access as an array of fields,
+    * each qualified by everything to the left. So each subsequent item in
+    * otherBindings takes the current expression as a qualifier.
+    */
+    if (x.otherBindings != null) {
+      for (int i = 0; i < x.otherBindings.length; ++i) {
+        FieldBinding fieldBinding = x.otherBindings[i];
+        if (fieldBinding.declaringClass == null) {
+          // probably array.length
+          /*  field = program.getIndexedField("Array.length");
+            if (!field.getName().equals(String.valueOf(fieldBinding.name))) {
+              throw new InternalCompilerException(
+                  "Error matching fieldBinding.");
+            }*/    //todo add such reference later
+        } else {
+          INodeAdapter fieldAdapter;
+          if (fieldBinding.isStatic()) {
+            StaticFieldReference fieldReference = StaticFieldReference.newInstance(myCurrentModel);
+            result = fieldReference;
+            role = StaticFieldReference.VARIABLE_DECLARATION;
+
+            fieldReference.getNode().addReference(
+              myTypesProvider.createClassifierReference(fieldBinding.declaringClass, StaticFieldReference.CLASSIFIER, fieldReference.getNode()));
+            fieldAdapter = fieldReference;
+          } else {
+            FieldReferenceOperation operation = FieldReferenceOperation.newInstance(myCurrentModel);
+            DotExpression newDotExpression = DotExpression.newInstance(myCurrentModel);
+            role = FieldReferenceOperation.FIELD_DECLARATION;
+            newDotExpression.setOperation(operation);
+            newDotExpression.setOperand(result);
+            result = newDotExpression;
+            fieldAdapter = operation;
+          }
+          SReference fieldReference = myTypesProvider.createFieldReference(fieldBinding, role, fieldAdapter.getNode());
+          fieldAdapter.getNode().addReference(fieldReference);
+        }
+      }
+    }
+
+    return result;
+  }
+
 
   private jetbrains.mps.baseLanguage.structure.Expression createVariableRef(VariableDeclaration variable,
                                                                             Binding binding) {
@@ -1100,10 +1178,12 @@ public class JavaConverterTreeBuilder {
       // currentMethodScope = x.scope;
 
       StatementList methodBody = method.getBody();
-      if (methodBody != null) {
-        for (Statement statement : processStatements(x.statements)) {
-          methodBody.addStatement(statement);
-        }
+      if (methodBody == null) {
+        methodBody = StatementList.newInstance(myCurrentModel);
+        method.setBody(methodBody);
+      }
+      for (Statement statement : processStatements(x.statements)) {
+        methodBody.addStatement(statement);
       }
       // currentMethodScope = null;
       // currentMethodBody = null;

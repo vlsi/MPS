@@ -116,12 +116,12 @@ public class ReferentsCreator {
 
       TypeParameter[] typeParameters = typeDeclaration.typeParameters;
       if (typeParameters != null) {
-      for (TypeParameter typeParameter : typeParameters) {
-        TypeVariableDeclaration typeVariableDeclaration = TypeVariableDeclaration.newInstance(model);
-        typeVariableDeclaration.setName(new String(typeParameter.name));
-        // typeVariableDeclaration.setExtends(typeParameter.bounds); //todo process variable bounds
-        classifier.addTypeVariableDeclaration(typeVariableDeclaration);
-      }
+        for (TypeParameter typeParameter : typeParameters) {
+          TypeVariableDeclaration typeVariableDeclaration = TypeVariableDeclaration.newInstance(model);
+          typeVariableDeclaration.setName(new String(typeParameter.name));
+          // typeVariableDeclaration.setExtends(typeParameter.bounds); //todo process variable bounds
+          classifier.addTypeVariableDeclaration(typeVariableDeclaration);
+        }
       }
 
       return true;
@@ -315,11 +315,14 @@ public class ReferentsCreator {
       Classifier enclosingClassifier = (Classifier) myReferentsCreator.myBindingMap.get(scope.enclosingSourceType());
       BaseMethodDeclaration newMethod = processMethodBinding(b, enclosingClassifier, methodDeclaration instanceof AnnotationMethodDeclaration);
       SModel model = myReferentsCreator.myCurrentModel;
-      for (TypeParameter typeParameter : methodDeclaration.typeParameters) {
-        TypeVariableDeclaration typeVariableDeclaration = TypeVariableDeclaration.newInstance(model);
-        typeVariableDeclaration.setName(new String(typeParameter.name));
-        // typeVariableDeclaration.setExtends(typeParameter.bounds); //todo process variable bounds
-        newMethod.addTypeVariableDeclaration(typeVariableDeclaration);
+      TypeParameter[] typeParameters = methodDeclaration.typeParameters;
+      if (typeParameters != null) {
+        for (TypeParameter typeParameter : typeParameters) {
+          TypeVariableDeclaration typeVariableDeclaration = TypeVariableDeclaration.newInstance(model);
+          typeVariableDeclaration.setName(new String(typeParameter.name));
+          // typeVariableDeclaration.setExtends(typeParameter.bounds); //todo process variable bounds
+          newMethod.addTypeVariableDeclaration(typeVariableDeclaration);
+        }
       }
       newMethod.setReturnType(createType(b.returnType));
       mapParameters(newMethod, methodDeclaration);
