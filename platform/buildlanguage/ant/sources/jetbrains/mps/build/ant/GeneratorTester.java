@@ -9,6 +9,8 @@ import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.TestResult;
 import jetbrains.mps.project.ProjectTester;
+import jetbrains.mps.project.MPSProject;
+import jetbrains.mps.project.structure.project.testconfigurations.BaseTestConfiguration;
 import jetbrains.mps.project.tester.EditorGenerateType;
 import jetbrains.mps.project.tester.DiffReporter;
 import jetbrains.mps.generator.generationTypes.BaseGenerationType;
@@ -20,6 +22,7 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.util.Pair;
 import jetbrains.mps.ide.progress.IAdaptiveProgressMonitor;
+import jetbrains.mps.ide.genconf.GenParameters;
 
 import java.util.Set;
 import java.util.List;
@@ -110,6 +113,19 @@ public class GeneratorTester extends Generator {
       System.out.println("##teamcity[testFailed name='" + currentTestName + "' message='generation errors' details='" + sb.toString() + "']");
     }
     System.out.println("##teamcity[testFinished name='" + currentTestName + "']");
+  }
+
+  @Override
+  protected void extractModels(final Set<SModelDescriptor> modelDescriptors, final MPSProject project) {
+    ModelAccess.instance().runReadAction(new Runnable() {
+      public void run() {
+        List<BaseTestConfiguration> testConfigurationList = project.getProjectDescriptor().getTestConfigurations();
+        for (BaseTestConfiguration config : testConfigurationList) {
+          GenParameters genParams = config.getGenParams(project, true);
+          modelDescriptors.addAll(genParams.getModelDescriptors());
+        }
+      }
+    });
   }
 
   private StringBuffer createDetailedReport(@NotNull List<CompilationResult> compilationResult, List<TestFailure> testFailures, @NotNull List<String> diffReports) {
