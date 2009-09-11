@@ -2643,20 +2643,17 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
 
   private class ReferenceUnderliner {
     private EditorCell myLastReferenceCell;
-    private boolean myControlDown;
 
     private ReferenceUnderliner() {
       addKeyListener(new KeyAdapter() {
         public void keyPressed(KeyEvent e) {
           if (e.getKeyCode() == KeyEvent.VK_CONTROL) {
-            myControlDown = true;
             setControlOver();
           }
         }
 
         public void keyReleased(KeyEvent e) {
           if (e.getKeyCode() == KeyEvent.VK_CONTROL) {
-            myControlDown = false;
             clearControlOver();
           }
         }
@@ -2669,6 +2666,10 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
           if (!myEditorContext.getNodeEditorComponent().isFocusOwner()) return;
 
           clearControlOver();
+          if (!e.isControlDown()) {
+            myLastReferenceCell = null;
+            return;            
+          }
 
           if (myRootCell == null) {
             myLastReferenceCell = null;
@@ -2697,8 +2698,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
         public void focusGained(FocusEvent e) {
         }
 
-        public void focusLost(FocusEvent e) {
-          myControlDown = false;
+        public void focusLost(FocusEvent e) {          
           clearControlOver();
           myLastReferenceCell = null;
         }
@@ -2718,7 +2718,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     }
 
     private void setControlOver() {
-      if (myControlDown && myLastReferenceCell != null) {
+      if (myLastReferenceCell != null) {
         ModelAccess.instance().runReadAction(new Runnable() {
           public void run() {
             myLastReferenceCell.getStyle().set(StyleAttributes.CONTROL_OVERED_REFERENCE, true);
