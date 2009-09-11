@@ -18,6 +18,7 @@ package jetbrains.mps.workbench.choose.modules;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.workbench.choose.base.BaseMPSChooseModel;
+import jetbrains.mps.smodel.Generator;
 
 public abstract class BaseModuleModel extends BaseMPSChooseModel<IModule> {
   //---------------------FIND STUFF------------------------
@@ -27,10 +28,15 @@ public abstract class BaseModuleModel extends BaseMPSChooseModel<IModule> {
   }
 
   public String doGetFullName(Object element) {
-    return ((BaseModuleItem) element).getModule().getModuleNamespace();
+    IModule module = ((BaseModuleItem) element).getModule();
+    return doGetObjectName(module);
   }
 
   public String doGetObjectName(IModule module) {
+    if (module instanceof Generator) {
+      Generator gen = (Generator) module;
+      return gen.getModuleFqName();
+    }
     return module.getModuleNamespace();
   }
 }
