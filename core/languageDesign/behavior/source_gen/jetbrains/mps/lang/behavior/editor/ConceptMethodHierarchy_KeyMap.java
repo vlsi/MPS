@@ -11,7 +11,12 @@ import jetbrains.mps.smodel.SNode;
 import java.util.List;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import javax.swing.SwingUtilities;
-import jetbrains.mps.baseLanguage.plugin.uiActions.ImplementBehaviorMethodDialog;
+import jetbrains.mps.baseLanguage.plugin.uiActions.StratergyAddMethodDialog;
+import jetbrains.mps.baseLanguage.plugin.uiActions.strategies.AddConceptMethodStrategy;
+import jetbrains.mps.ide.actions.MethodsToOverrideStrategy;
+import jetbrains.mps.ide.actions.OverrideMethodStrategy;
+import jetbrains.mps.ide.actions.MethodsToImplementStrategy;
+import jetbrains.mps.ide.actions.ImplementMethodStrategy;
 
 public class ConceptMethodHierarchy_KeyMap extends EditorCellKeyMap {
   public ConceptMethodHierarchy_KeyMap() {
@@ -60,7 +65,7 @@ public class ConceptMethodHierarchy_KeyMap extends EditorCellKeyMap {
     private void execute_internal(final KeyEvent keyEvent, final EditorContext editorContext, final SNode node, final List<SNode> selectedNodes) {
       SwingUtilities.invokeLater(new Runnable() {
         public void run() {
-          new OverrideMethodDialog(node, editorContext, editorContext.getOperationContext().getMainFrame()).showDialog();
+          new StratergyAddMethodDialog(editorContext, editorContext.getOperationContext().getMainFrame(), new AddConceptMethodStrategy(node), new MethodsToOverrideStrategy(), new OverrideMethodStrategy()).showDialog();
         }
       });
     }
@@ -107,7 +112,7 @@ public class ConceptMethodHierarchy_KeyMap extends EditorCellKeyMap {
     private void execute_internal(final KeyEvent keyEvent, final EditorContext editorContext, final SNode node, final List<SNode> selectedNodes) {
       SwingUtilities.invokeLater(new Runnable() {
         public void run() {
-          new ImplementBehaviorMethodDialog(node, editorContext, editorContext.getOperationContext().getMainFrame()).showDialog();
+          new StratergyAddMethodDialog(editorContext, editorContext.getOperationContext().getMainFrame(), new AddConceptMethodStrategy(node), new MethodsToImplementStrategy(), new ImplementMethodStrategy()).showDialog();
         }
       });
     }

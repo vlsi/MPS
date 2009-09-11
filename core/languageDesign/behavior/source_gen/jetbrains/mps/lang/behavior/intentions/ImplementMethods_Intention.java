@@ -8,7 +8,10 @@ import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.behavior.behavior.ConceptBehavior_Behavior;
 import javax.swing.SwingUtilities;
-import jetbrains.mps.baseLanguage.plugin.uiActions.ImplementBehaviorMethodDialog;
+import jetbrains.mps.baseLanguage.plugin.uiActions.StratergyAddMethodDialog;
+import jetbrains.mps.baseLanguage.plugin.uiActions.strategies.AddConceptMethodStrategy;
+import jetbrains.mps.ide.actions.MethodsToImplementStrategy;
+import jetbrains.mps.ide.actions.ImplementMethodStrategy;
 
 public class ImplementMethods_Intention extends BaseIntention {
   public ImplementMethods_Intention() {
@@ -48,7 +51,7 @@ public class ImplementMethods_Intention extends BaseIntention {
   public void execute(final SNode node, final EditorContext editorContext) {
     SwingUtilities.invokeLater(new Runnable() {
       public void run() {
-        new ImplementBehaviorMethodDialog(node, editorContext, editorContext.getOperationContext().getMainFrame()).showDialog();
+        new StratergyAddMethodDialog(editorContext, editorContext.getOperationContext().getMainFrame(), new AddConceptMethodStrategy(node), new MethodsToImplementStrategy(), new ImplementMethodStrategy()).showDialog();
       }
     });
   }
