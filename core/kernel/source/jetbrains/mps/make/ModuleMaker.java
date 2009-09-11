@@ -210,7 +210,7 @@ public class ModuleMaker {
               LOG.error("Can't write to " + output.getAbsolutePath());
             }
           } else {
-            if (!(output.delete())) {
+            if (output.exists() && !(output.delete())) {
               LOG.error("Can't delete " + output.getPath());
             }
           }
