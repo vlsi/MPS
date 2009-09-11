@@ -211,7 +211,13 @@ public class TypeChecker implements ApplicationComponent {
       checkingAction.run();
 
       synchronized (listener.myLock) {
-        for (SNode nodeToDependOn : listener.myNodesToDependOn) {
+        // We need to copy collection, because call node.getContainingRoot will eventually trigger
+        // fireNodeReadAccess()
+        // which will cause to MyReadAccessListener.readAccess to be called
+        // for the same listener object (we talled NodeReadAccessCaster about our listener several lines earlier).
+        // ReadAccess will modify listener.myNodesToDependOn.
+        // That will lead to j.u.ConcurrentModificationException.
+        for (SNode nodeToDependOn : listener.getNodesToDependOn()) {
           WeakSet<SNode> dependentRoots = myNodesToDependentRoots.get(nodeToDependOn);
           if (dependentRoots == null) {
             dependentRoots = new WeakSet<SNode>(1);
