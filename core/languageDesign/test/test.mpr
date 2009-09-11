@@ -23,7 +23,6 @@
     <projectSolutions>
       <solutionPath path="${project}/solutions/jetbrains.mps.transformationTest.sandbox/jetbrains.mps.transformationTest.sandbox.msd" />
       <solutionPath path="${project}/solutions/jetbrains.mps.transformationTest.test/jetbrains.mps.transformationTest.test.msd" />
-      <solutionPath path="${mps_home}/core/baseLanguage/baseLanguage/solutions/jetbrains.mps.transformationTest.runtime/jetbrains.mps.transformationTest.runtime.msd" />
     </projectSolutions>
     <projectLanguages>
       <languagePath path="${mps_home}/core/baseLanguage/unitTest/unitTest.mpl" />
