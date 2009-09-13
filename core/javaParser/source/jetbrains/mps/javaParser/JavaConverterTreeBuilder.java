@@ -285,9 +285,9 @@ public class JavaConverterTreeBuilder {
       case BinaryExpression.RIGHT_SHIFT:
         op = ShiftRightExpression.newInstance(myCurrentModel);
         break;
-      //todo add to BL
-      /* case BinaryExpression.UNSIGNED_RIGHT_SHIFT:
-      break;*/
+        //todo add to BL
+        /* case BinaryExpression.UNSIGNED_RIGHT_SHIFT:
+        break;*/
       case BinaryExpression.PLUS:
         op = PlusExpression.newInstance(myCurrentModel);
         break;
@@ -348,34 +348,34 @@ public class JavaConverterTreeBuilder {
       case CompoundAssignment.MINUS:
         op = MinusAssignmentExpression.newInstance(myCurrentModel);
         break;
-      //todo make those expressions' counterparts in BL
-      /* case CompoundAssignment.MULTIPLY:
-      op = JBinaryOperator.ASG_MUL;
-      break;
-    case CompoundAssignment.DIVIDE:
-      op = JBinaryOperator.ASG_DIV;
-      break;
-    case CompoundAssignment.AND:
-      op = JBinaryOperator.ASG_BIT_AND;
-      break;
-    case CompoundAssignment.OR:
-      op = JBinaryOperator.ASG_BIT_OR;
-      break;
-    case CompoundAssignment.XOR:
-      op = JBinaryOperator.ASG_BIT_XOR;
-      break;
-    case CompoundAssignment.REMAINDER:
-      op = JBinaryOperator.ASG_MOD;
-      break;
-    case CompoundAssignment.LEFT_SHIFT:
-      op = JBinaryOperator.ASG_SHL;
-      break;
-    case CompoundAssignment.RIGHT_SHIFT:
-      op = JBinaryOperator.ASG_SHR;
-      break;
-    case CompoundAssignment.UNSIGNED_RIGHT_SHIFT:
-      op = JBinaryOperator.ASG_SHRU;
-      break;*/
+        //todo make those expressions' counterparts in BL
+        /* case CompoundAssignment.MULTIPLY:
+        op = JBinaryOperator.ASG_MUL;
+        break;
+      case CompoundAssignment.DIVIDE:
+        op = JBinaryOperator.ASG_DIV;
+        break;
+      case CompoundAssignment.AND:
+        op = JBinaryOperator.ASG_BIT_AND;
+        break;
+      case CompoundAssignment.OR:
+        op = JBinaryOperator.ASG_BIT_OR;
+        break;
+      case CompoundAssignment.XOR:
+        op = JBinaryOperator.ASG_BIT_XOR;
+        break;
+      case CompoundAssignment.REMAINDER:
+        op = JBinaryOperator.ASG_MOD;
+        break;
+      case CompoundAssignment.LEFT_SHIFT:
+        op = JBinaryOperator.ASG_SHL;
+        break;
+      case CompoundAssignment.RIGHT_SHIFT:
+        op = JBinaryOperator.ASG_SHR;
+        break;
+      case CompoundAssignment.UNSIGNED_RIGHT_SHIFT:
+        op = JBinaryOperator.ASG_SHRU;
+        break;*/
       default:
         throw new JavaConverterException("Unsupported operator for CompoundAssignment");
     }
@@ -807,6 +807,7 @@ public class JavaConverterTreeBuilder {
       //unqualified static field reference
       LocalStaticFieldReference lsfr = LocalStaticFieldReference.newInstance(myCurrentModel);
       lsfr.setStaticFieldDeclaration((StaticFieldDeclaration) variable);
+      return lsfr;
     }
     throw new JavaConverterException("Unknown VariableDeclaration subclass.");
   }
@@ -1022,7 +1023,7 @@ public class JavaConverterTreeBuilder {
           if (caseStatement.constantExpression == null) {
             currentSwitchCase = result.getDefaultBlock();
           } else {
-          SwitchCase switchCase = processCaseStatement((CaseStatement) stmt);
+            SwitchCase switchCase = processCaseStatement((CaseStatement) stmt);
             if (switchCase != null) {
               result.addCase(switchCase);
             }
@@ -1137,8 +1138,8 @@ public class JavaConverterTreeBuilder {
 
 
           if (fieldDeclaration instanceof Initializer) {
-            assert (myCurrentClass instanceof ClassConcept);
-            // processInitializer((Initializer) fieldDeclaration); //todo what's this?
+            assert (classifier instanceof ClassConcept);
+            processInitializer((Initializer) fieldDeclaration, (ClassConcept) classifier);
           } else {
             processField(fieldDeclaration);
           }
@@ -1148,13 +1149,14 @@ public class JavaConverterTreeBuilder {
       if (x.methods != null) {
         // Process methods
         for (int i = 0, n = x.methods.length; i < n; ++i) {
-          if (x.methods[i].isConstructor()) {
+          AbstractMethodDeclaration method = x.methods[i];
+          if (method.isConstructor()) {
             assert (myCurrentClass instanceof ClassConcept);
-            processConstructor((ConstructorDeclaration) x.methods[i]);
-          } else if (x.methods[i].isClinit()) {
+            processConstructor((ConstructorDeclaration) method);
+          } else if (method.isClinit()) {
             // nothing to do
           } else {
-            processMethod(x.methods[i]);
+            processMethod(method);
           }
         }
       }
@@ -1236,6 +1238,26 @@ public class JavaConverterTreeBuilder {
 
     } catch (Throwable e) {
       throw new JavaConverterException(e);
+    }
+  }
+
+  void processInitializer(Initializer initializer, ClassConcept classConcept) {
+    StatementList body;
+    if (initializer.isStatic()) {
+      StatementList statementList = StatementList.newInstance(myCurrentModel);
+      classConcept.setStaticInitializer(statementList);
+      body = statementList;
+    } else {
+      InstanceInitializer instanceInitializer = InstanceInitializer.newInstance(myCurrentModel);
+      classConcept.setInstanceInitializer(instanceInitializer);
+      instanceInitializer.setStatementList(StatementList.newInstance(myCurrentModel));
+      body = instanceInitializer.getStatementList();
+    }
+    if (initializer.block != null && initializer.block.statements != null) {
+      List<Statement> stmts = processStatements(initializer.block.statements);
+      for (Statement statement : stmts) {
+        body.addStatement(statement);
+      }
     }
   }
 
