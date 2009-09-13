@@ -16,11 +16,14 @@ public class OrdinaryClass2 {
   }
 
   public void foo(int a) {
-  /*  switch (a) {
+    switch (a) {
       case 1:
-        System.err.println("");
+        System.err.println("1");
+        System.err.println("239");
       case 2:
-        System.out.println("");
-    }*/
+        System.out.println("2");
+      default:
+        System.err.println("hello");
+    }
   }
 }

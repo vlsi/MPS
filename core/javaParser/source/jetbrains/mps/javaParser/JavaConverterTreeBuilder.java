@@ -871,7 +871,7 @@ public class JavaConverterTreeBuilder {
     jetbrains.mps.baseLanguage.structure.Expression expression = processExpressionRefl(x.constantExpression);
     SwitchCase switchCase = SwitchCase.newInstance(myCurrentModel);
     switchCase.setExpression(expression);
-    //todo set body
+    switchCase.setBody(StatementList.newInstance(myCurrentModel));
     return switchCase;
   }
 
@@ -1012,17 +1012,27 @@ public class JavaConverterTreeBuilder {
       jetbrains.mps.baseLanguage.structure.SwitchStatement.newInstance(myCurrentModel);
 
     result.setExpression(expression);
+    result.setDefaultBlock(StatementList.newInstance(myCurrentModel));
 
-    // Don't use processStatements here, because it stops at control breaks
     if (x.statements != null) {
+      StatementList currentSwitchCase = null;
       for (org.eclipse.jdt.internal.compiler.ast.Statement stmt : x.statements) {
-        SwitchCase switchCase = processCaseStatement((CaseStatement) stmt); //todo debug this
-        if (switchCase != null) {
-          result.addCase(switchCase);
+        if (stmt instanceof CaseStatement) {
+          CaseStatement caseStatement = (CaseStatement) stmt;
+          if (caseStatement.constantExpression == null) {
+            currentSwitchCase = result.getDefaultBlock();
+          } else {
+          SwitchCase switchCase = processCaseStatement((CaseStatement) stmt);
+            if (switchCase != null) {
+              result.addCase(switchCase);
+            }
+            currentSwitchCase = switchCase == null ? null : switchCase.getBody();
+          }
+        } else if (currentSwitchCase != null) {
+          currentSwitchCase.addStatement(processStatementRefl(stmt));
         }
       }
     }
-    //todo add default case
     return result;
   }
 
