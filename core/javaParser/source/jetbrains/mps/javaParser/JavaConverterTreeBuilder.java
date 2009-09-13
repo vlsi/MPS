@@ -508,6 +508,7 @@ public class JavaConverterTreeBuilder {
   }
 
   jetbrains.mps.baseLanguage.structure.Expression processExpression(FieldReference x) {
+    //todo don't look in map, ask types provider
     FieldBinding fieldBinding = x.binding;
     if (fieldBinding.isStatic()) {
       StaticFieldDeclaration staticFieldDeclaration = (StaticFieldDeclaration) myBindingMap.get(fieldBinding);
@@ -517,27 +518,18 @@ public class JavaConverterTreeBuilder {
       return sfr;
     } else {
       FieldDeclaration field;
+      jetbrains.mps.baseLanguage.structure.Expression instance = processExpressionRefl(x.receiver);
       if (fieldBinding.declaringClass == null) {
-        // probably array.length
-        // field = program.getIndexedField("Array.length");  //todo process such a case
-        throw new JavaConverterException("no class for a field");
+        return createArrayLengthExpression(instance, fieldBinding);
       } else {
         field = (FieldDeclaration) myBindingMap.get(fieldBinding);
       }
-      jetbrains.mps.baseLanguage.structure.Expression instance = processExpressionRefl(x.receiver);
       FieldReferenceOperation fieldRef = FieldReferenceOperation.newInstance(myCurrentModel);
       DotExpression dotExpression = DotExpression.newInstance(myCurrentModel);
       fieldRef.setFieldDeclaration(field);
       dotExpression.setOperation(fieldRef);
       dotExpression.setOperand(instance);
-      /*  if (x.genericCast != null) {
-      JType castType = (JType) typeMap.get(x.genericCast);
-      *//*
-         * Note, this may result in an invalid AST due to an LHS cast operation.
-         * We fix this up in FixAssignmentToUnbox.
-         *//*
-        return maybeCast(castType, fieldRef);
-      }*/
+
       return dotExpression;
     }
   }
@@ -676,6 +668,10 @@ public class JavaConverterTreeBuilder {
 
   jetbrains.mps.baseLanguage.structure.Expression processExpression(SingleNameReference x) {
     Binding binding = x.binding;
+    return varFromVariableBinding(binding);
+  }
+
+  private jetbrains.mps.baseLanguage.structure.Expression varFromVariableBinding(Binding binding) {
     INodeAdapter target = myBindingMap.get(binding);
     if (!(target instanceof VariableDeclaration)) {
       return null;
@@ -687,38 +683,43 @@ public class JavaConverterTreeBuilder {
   }
 
   jetbrains.mps.baseLanguage.structure.Expression processExpression(QualifiedNameReference x) {
-    FieldBinding binding = (FieldBinding) x.binding;
+    Binding binding = x.binding;
 
-    boolean isStatic = binding.isStatic();
     INodeAdapter varRef;
     String role;
     jetbrains.mps.baseLanguage.structure.Expression result;
 
-    if (isStatic) {
-      StaticFieldReference fieldReference = StaticFieldReference.newInstance(myCurrentModel);
-      varRef = fieldReference;
-      role = StaticFieldReference.VARIABLE_DECLARATION;
-      fieldReference.getNode().addReference(
-        myTypesProvider.createClassifierReference(binding.declaringClass, StaticFieldReference.CLASSIFIER, fieldReference.getNode()));
-      result = fieldReference;
-    } else {
-      FieldReferenceOperation operation = FieldReferenceOperation.newInstance(myCurrentModel);
-      varRef = operation;
-      DotExpression dotExpression = DotExpression.newInstance(myCurrentModel);
-      role = FieldReferenceOperation.FIELD_DECLARATION;
-      dotExpression.setOperation(operation);
+    if (binding instanceof FieldBinding) {
+      FieldBinding fieldBinding = (FieldBinding) binding;
+      boolean isStatic = fieldBinding.isStatic();
+      if (isStatic) {
+        StaticFieldReference fieldReference = StaticFieldReference.newInstance(myCurrentModel);
+        varRef = fieldReference;
+        role = StaticFieldReference.VARIABLE_DECLARATION;
+        fieldReference.getNode().addReference(
+          myTypesProvider.createClassifierReference(fieldBinding.declaringClass, StaticFieldReference.CLASSIFIER, fieldReference.getNode()));
+        result = fieldReference;
+      } else {
+        FieldReferenceOperation operation = FieldReferenceOperation.newInstance(myCurrentModel);
+        varRef = operation;
+        DotExpression dotExpression = DotExpression.newInstance(myCurrentModel);
+        role = FieldReferenceOperation.FIELD_DECLARATION;
+        dotExpression.setOperation(operation);
 
-      ThisExpression thisExpression = ThisExpression.newInstance(myCurrentModel);
-      ReferenceBinding declaredClassBinding = binding.declaringClass;
-      if (myCurrentClass != myBindingMap.get(declaredClassBinding)) {
-        thisExpression.getNode().addReference(
-          myTypesProvider.createClassifierReference(declaredClassBinding, ThisExpression.CLASS_CONCEPT, thisExpression.getNode()));
+        ThisExpression thisExpression = ThisExpression.newInstance(myCurrentModel);
+        ReferenceBinding declaredClassBinding = fieldBinding.declaringClass;
+        if (myCurrentClass != myBindingMap.get(declaredClassBinding)) {
+          thisExpression.getNode().addReference(
+            myTypesProvider.createClassifierReference(declaredClassBinding, ThisExpression.CLASS_CONCEPT, thisExpression.getNode()));
+        }
+        dotExpression.setOperand(thisExpression);
+        result = dotExpression;
       }
-      dotExpression.setOperand(thisExpression);
-      result = dotExpression;
+      SReference reference = myTypesProvider.createFieldReference(fieldBinding, role, varRef.getNode());
+      varRef.getNode().addReference(reference);
+    } else {
+      result = varFromVariableBinding(binding);
     }
-    SReference reference = myTypesProvider.createFieldReference(binding, role, varRef.getNode());
-    varRef.getNode().addReference(reference);
 
     /*
     * Wackiness: JDT represents multiple field access as an array of fields,
@@ -729,12 +730,7 @@ public class JavaConverterTreeBuilder {
       for (int i = 0; i < x.otherBindings.length; ++i) {
         FieldBinding fieldBinding = x.otherBindings[i];
         if (fieldBinding.declaringClass == null) {
-          // probably array.length
-          /*  field = program.getIndexedField("Array.length");
-            if (!field.getName().equals(String.valueOf(fieldBinding.name))) {
-              throw new InternalCompilerException(
-                  "Error matching fieldBinding.");
-            }*/    //todo add such reference later
+          return createArrayLengthExpression(result, fieldBinding);
         } else {
           INodeAdapter fieldAdapter;
           if (fieldBinding.isStatic()) {
@@ -761,6 +757,17 @@ public class JavaConverterTreeBuilder {
     }
 
     return result;
+  }
+
+  private jetbrains.mps.baseLanguage.structure.Expression createArrayLengthExpression(jetbrains.mps.baseLanguage.structure.Expression operand, FieldBinding fieldBinding) {
+    if ("length".equals(new String(fieldBinding.name))) {
+      DotExpression dotExpression = DotExpression.newInstance(myCurrentModel);
+      dotExpression.setOperand(operand);
+      dotExpression.setOperation(ArrayLengthOperation.newInstance(myCurrentModel));
+      return dotExpression;
+    } else {
+      throw new JavaConverterException("error matching field binding");
+    }
   }
 
 
@@ -1126,11 +1133,6 @@ public class JavaConverterTreeBuilder {
     }
     myCurrentClass = classifier;
     try {
-      //  currentClassScope = x.scope;
-      //  currentSeparatorPositions = x.compilationResult.lineSeparatorPositions;
-      //  currentFileName = String.valueOf(x.compilationResult.fileName);
-      //todo add clinit and init
-
       if (x.fields != null) {
         // Process fields
         for (int i = 0, n = x.fields.length; i < n; ++i) {
