@@ -478,6 +478,11 @@ public class Generator {
     public List<String> getGenerationWarnings() {
       return myGenerationWarnings;
     }
+
+	public void clean() {
+	  myGenerationErrors.clear();
+	  myGenerationWarnings.clear();
+	}
   }
 
   private static class ModuleDecorator implements IModuleDecorator<IModule> {

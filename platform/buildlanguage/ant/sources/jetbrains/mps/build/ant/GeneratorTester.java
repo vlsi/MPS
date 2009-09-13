@@ -107,7 +107,7 @@ public class GeneratorTester extends Generator {
     }
 
     StringBuffer sb = createDetailedReport(compilationResult, testResults, diffReports);
-
+    myMessageHandler.clean();
     if (sb.length() > 0) {
       myTestFailed = true;
       System.out.println("##teamcity[testFailed name='" + currentTestName + "' message='generation errors' details='" + sb.toString() + "']");
