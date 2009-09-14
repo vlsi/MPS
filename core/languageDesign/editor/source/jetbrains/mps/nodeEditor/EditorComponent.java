@@ -1014,6 +1014,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
   private Set<SModelReference> getModels(Set<SNode> nodes) {
     Set<SModelReference> result = new HashSet<SModelReference>();
     for (SNode node : nodes) {
+      if (node == null) continue;
       result.add(node.getModel().getSModelReference());
     }
     return result;
