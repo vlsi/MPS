@@ -434,7 +434,7 @@ public class SModelRepository implements ApplicationComponent {
   public <M extends ModelOwner> Set<M> getOwners(SModelDescriptor modelDescriptor, Class<M> cls) {
     Set<M> result = new HashSet<M>();
     for (ModelOwner o : getOwners(modelDescriptor)) {
-      if (cls == IModule.class || cls.isInstance(o)) {
+      if (cls.isInstance(o)) {
         result.add((M) o);
       }
     }
