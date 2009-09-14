@@ -25,8 +25,6 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="1" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590373(jetbrains.mps.baseLanguage.classifiers.structure)" version="0" />
   <maxImportIndex value="2" />
-  <import index="1" modelUID="r:00000000-0000-4000-0000-011c895904c3(jetbrains.mps.buildlanguage.generated)" version="0" />
-  <import index="2" modelUID="r:00000000-0000-4000-0000-011c895904c6(jetbrains.mps.buildlanguage.optional)" version="0" />
   <node type="jetbrains.mps.build.packaging.structure.MPSLayout" id="1237299779833">
     <property name="name" value="MPS" />
     <property name="scriptsFolder" value="build" />
@@ -439,7 +437,7 @@
           <node role="atributes" type="jetbrains.mps.build.generictasks.structure.Attribute" id="2240426702285079534">
             <link role="attributeDeclaration" targetNodeId="2v.353793545802811542" resolveInfo="includes" />
             <node role="value" type="jetbrains.mps.buildlanguage.structure.StringLiteral" id="2240426702285079536">
-              <property name="value" value="**com/intellij/execution/**" />
+              <property name="value" value="**com/intellij/execution/**, **com/intellij/ide/highlighter/**" />
             </node>
           </node>
         </node>

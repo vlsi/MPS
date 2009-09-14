@@ -28,7 +28,7 @@
     <mkdir dir="${openapi.tmpdir}" />
     <unzip src="${tmp}/idea/lib/openapi.jar" dest="${openapi.tmpdir}" />
     <copy todir="${tmpdir}">
-      <fileset dir="${openapi.tmpdir}" includes="**com/intellij/execution/**" />
+      <fileset dir="${openapi.tmpdir}" includes="**com/intellij/execution/**, **com/intellij/ide/highlighter/**" />
     </copy>
     <delete dir="${openapi.tmpdir}" />
     <jar basedir="${tmpdir}" destfile="${platform.jar}" update="false" />
