@@ -135,17 +135,17 @@ public abstract class AbstractNodeSubstituteInfo implements NodeSubstituteInfo {
     return ModelAccess.instance().runReadAction(new Computable<List<INodeSubstituteAction>>() {
       public List<INodeSubstituteAction> compute() {
         Pair<String, List<INodeSubstituteAction>> pair = getPatternAndActions(pattern, strictMatching);
-        List<INodeSubstituteAction> result = pair.o2;
-        Iterator<INodeSubstituteAction> iterator = result.iterator();
 
-        while (iterator.hasNext()) {
-          INodeSubstituteAction item = iterator.next();
+        List<INodeSubstituteAction> result = new ArrayList<INodeSubstituteAction>();
+        for (INodeSubstituteAction item : pair.o2) {
           if (strictMatching) {
-            if (item.canSubstituteStrictly(pattern)) continue;
-            iterator.remove();
+            if (item.canSubstituteStrictly(pattern)) {
+              result.add(item);
+            }
           } else {
-            if (item.canSubstitute(pattern)) continue;
-            iterator.remove();
+            if (item.canSubstitute(pattern)) {
+              result.add(item);
+            }
           }
         }
 
