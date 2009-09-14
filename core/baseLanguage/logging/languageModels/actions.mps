@@ -42,12 +42,6 @@
         <node role="part" type="jetbrains.mps.lang.actions.structure.ParameterizedSubstituteMenuPart" id="1178200228686">
           <node role="query" type="jetbrains.mps.lang.actions.structure.QueryFunction_ParameterizedSubstitute_Query" id="1178200228688">
             <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1178200228689">
-              <node role="statement" type="jetbrains.mps.baseLanguage.logging.structure.LogStatement" id="1232621537225">
-                <property name="severity" value="info" />
-                <node role="logExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1232621537226">
-                  <property name="value" value="test info" />
-                </node>
-              </node>
               <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1240932331955">
                 <node role="expression" type="jetbrains.mps.lang.smodel.structure.SEnumOperationInvocation" id="1240932331956">
                   <link role="enumDeclaration" targetNodeId="1.1167245107475" resolveInfo="Severity" />
