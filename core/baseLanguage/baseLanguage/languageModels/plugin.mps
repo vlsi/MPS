@@ -45926,14 +45926,14 @@
     </node>
   </node>
   <node type="jetbrains.mps.uiLanguage.structure.ComponentDeclaration" id="5001211796553476117">
-    <property name="package" value="run" />
+    <property name="package" value="run.component" />
     <property name="stub" value="true" />
     <property name="name" value="ParameterBrowser" />
     <link role="extendedComponent" targetNodeId="2v.1202816402995" resolveInfo="Panel" />
     <link role="mapTo" targetNodeId="65.~RawCommandLineEditor" resolveInfo="RawCommandLineEditor" />
   </node>
   <node type="jetbrains.mps.uiLanguage.structure.ComponentController" id="5001211796553488833">
-    <property name="package" value="run" />
+    <property name="package" value="run.component" />
     <link role="component" targetNodeId="5001211796553476117" resolveInfo="ParameterBrowser" />
     <node role="attribute" type="jetbrains.mps.uiLanguage.structure.AttributeDeclaration" id="5001211796553488834">
       <property name="name" value="text" />
@@ -46237,14 +46237,14 @@
     </node>
   </node>
   <node type="jetbrains.mps.uiLanguage.structure.ComponentDeclaration" id="426276280371601258">
-    <property name="package" value="run" />
+    <property name="package" value="run.component" />
     <property name="name" value="FieldWithBrowseButton" />
     <property name="stub" value="true" />
     <link role="extendedComponent" targetNodeId="2v.1202816402995" resolveInfo="Panel" />
     <link role="mapTo" targetNodeId="8398380099657262850" resolveInfo="FieldWithPathChooseDialog" />
   </node>
   <node type="jetbrains.mps.uiLanguage.structure.ComponentController" id="426276280371601259">
-    <property name="package" value="run" />
+    <property name="package" value="run.component" />
     <link role="component" targetNodeId="426276280371601258" resolveInfo="FieldWithBrowseButton" />
     <node role="attribute" type="jetbrains.mps.uiLanguage.structure.AttributeDeclaration" id="426276280371601260">
       <property name="name" value="text" />
@@ -46252,7 +46252,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="8398380099657262850">
-    <property name="package" value="run" />
+    <property name="package" value="run.component" />
     <property name="name" value="FieldWithPathChooseDialog" />
     <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="8398380099657310591">
       <property name="name" value="setText" />
@@ -46544,14 +46544,14 @@
     </node>
   </node>
   <node type="jetbrains.mps.uiLanguage.structure.ComponentDeclaration" id="2812396586451580692">
-    <property name="package" value="run" />
+    <property name="package" value="run.component" />
     <property name="name" value="ComboBoxFieldPanel" />
     <property name="stub" value="true" />
     <link role="extendedComponent" targetNodeId="2v.1202816402995" resolveInfo="Panel" />
     <link role="mapTo" targetNodeId="2812396586451615970" resolveInfo="CheckedComboBoxFieldPanel" />
   </node>
   <node type="jetbrains.mps.uiLanguage.structure.ComponentController" id="2812396586451588607">
-    <property name="package" value="run" />
+    <property name="package" value="run.component" />
     <link role="component" targetNodeId="2812396586451580692" resolveInfo="ComboBoxFieldPanel" />
     <node role="attribute" type="jetbrains.mps.uiLanguage.structure.AttributeDeclaration" id="2812396586451588608">
       <property name="name" value="selected" />
@@ -46567,7 +46567,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="2812396586451615970">
-    <property name="package" value="run" />
+    <property name="package" value="run.component" />
     <property name="name" value="CheckedComboBoxFieldPanel" />
     <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="2812396586451649449">
       <property name="name" value="getSelected" />
@@ -46927,6 +46927,31 @@
             </node>
             <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="848968122542706170">
               <link role="baseMethodDeclaration" targetNodeId="65.~ComboBoxFieldPanel.createComponent():void" resolveInfo="createComponent" />
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="4480483412814185279">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="4480483412814185288">
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="4480483412814185283">
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="4480483412814185280">
+                <node role="operation" type="jetbrains.mps.baseLanguage.structure.FieldReferenceOperation" id="4480483412814185281">
+                  <link role="fieldDeclaration" targetNodeId="2812396586451615977" resolveInfo="comboField" />
+                </node>
+                <node role="operand" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="4480483412814185282" />
+              </node>
+              <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="4480483412814185287">
+                <link role="baseMethodDeclaration" targetNodeId="65.~ComboBoxFieldPanel.getComboBox():javax.swing.JComboBox" resolveInfo="getComboBox" />
+              </node>
+            </node>
+            <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="4480483412814185293">
+              <link role="baseMethodDeclaration" targetNodeId="16.~JComponent.setToolTipText(java.lang.String):void" resolveInfo="setToolTipText" />
+              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="4480483412814185970">
+                <link role="baseMethodDeclaration" targetNodeId="9.~System.getProperty(java.lang.String):java.lang.String" resolveInfo="getProperty" />
+                <link role="classConcept" targetNodeId="9.~System" resolveInfo="System" />
+                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="4480483412814185971">
+                  <property name="value" value="java.home" />
+                </node>
+              </node>
             </node>
           </node>
         </node>
