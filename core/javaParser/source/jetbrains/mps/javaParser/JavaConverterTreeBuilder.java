@@ -523,12 +523,20 @@ public class JavaConverterTreeBuilder {
     SNode sourceNode;
     jetbrains.mps.baseLanguage.structure.Expression result;
     if (fieldBinding.isStatic()) {
-      role = StaticFieldReference.VARIABLE_DECLARATION;
-      StaticFieldReference sfr = StaticFieldReference.newInstance(myCurrentModel);
-      sourceNode = sfr.getNode();
-      sfr.getNode().addReference(
-        myTypesProvider.createClassifierReference(fieldBinding.declaringClass, StaticFieldReference.CLASSIFIER, sourceNode));
-      result = sfr;
+      if (myCurrentClass == myBindingMap.get(fieldBinding.declaringClass)) {
+        //unqualified static field reference
+        role = LocalStaticFieldReference.VARIABLE_DECLARATION;
+        LocalStaticFieldReference lsfr = LocalStaticFieldReference.newInstance(myCurrentModel);
+        sourceNode = lsfr.getNode();
+        result = lsfr;
+      } else {
+        StaticFieldReference sfr = StaticFieldReference.newInstance(myCurrentModel);
+        sourceNode = sfr.getNode();
+        role = StaticFieldReference.VARIABLE_DECLARATION;
+        sfr.getNode().addReference(
+          myTypesProvider.createClassifierReference(fieldBinding.declaringClass, StaticFieldReference.CLASSIFIER, sourceNode));
+        result = sfr;
+      }
     } else {
       role = FieldReferenceOperation.FIELD_DECLARATION;
       jetbrains.mps.baseLanguage.structure.Expression instance;
@@ -692,7 +700,11 @@ public class JavaConverterTreeBuilder {
 
   jetbrains.mps.baseLanguage.structure.Expression processExpression(SingleNameReference x) {
     Binding binding = x.binding;
-    return varFromVariableBinding(binding);
+    if (binding instanceof FieldBinding) {
+      return expressionFromFieldBinding((FieldBinding) binding, null);
+    } else {
+      return varFromVariableBinding(binding);
+    }
   }
 
   private jetbrains.mps.baseLanguage.structure.Expression varFromVariableBinding(Binding binding) {
@@ -701,8 +713,19 @@ public class JavaConverterTreeBuilder {
       return null;
     }
     VariableDeclaration variable = (VariableDeclaration) target;
-    jetbrains.mps.baseLanguage.structure.Expression result = null;
-    result = createVariableRef(variable, binding);
+
+    jetbrains.mps.baseLanguage.structure.Expression result;
+    if (variable instanceof LocalVariableDeclaration) {
+      LocalVariableReference reference = LocalVariableReference.newInstance(myCurrentModel);
+      reference.setLocalVariableDeclaration((LocalVariableDeclaration) variable);
+      result = reference;
+    } else if (variable instanceof ParameterDeclaration) {
+      ParameterReference parameterReference = ParameterReference.newInstance(myCurrentModel);
+      parameterReference.setParameterDeclaration((ParameterDeclaration) variable);
+      result = parameterReference;
+    } else {
+      throw new JavaConverterException("Unknown VariableDeclaration subclass.");
+    }
     return result;
   }
 
@@ -741,55 +764,6 @@ public class JavaConverterTreeBuilder {
     } else {
       throw new JavaConverterException("error matching field binding");
     }
-  }
-
-
-  private jetbrains.mps.baseLanguage.structure.Expression createVariableRef(VariableDeclaration variable,
-                                                                            Binding binding) {
-    // Fix up the reference if it's to an outer local/param
-    // variable = possiblyReferenceOuterLocal(variable, binding);
-    //todo fix above case or delete if unnecessary
-    if (variable == null) {
-      return null;
-    }
-    return createVariableRef(variable);
-  }
-
-  /**
-   * Creates an appropriate VariableReference (or DotExpression, with field reference within)
-   *  for the polymorphic type of the
-   * requested VariableDeclaration.
-   */
-  private jetbrains.mps.baseLanguage.structure.Expression createVariableRef(VariableDeclaration variable) {
-    if (variable instanceof LocalVariableDeclaration) {
-      LocalVariableReference reference = LocalVariableReference.newInstance(myCurrentModel);
-      reference.setLocalVariableDeclaration((LocalVariableDeclaration) variable);
-      return reference;
-    } else if (variable instanceof ParameterDeclaration) {
-      ParameterReference parameterReference = ParameterReference.newInstance(myCurrentModel);
-      parameterReference.setParameterDeclaration((ParameterDeclaration) variable);
-      return parameterReference;
-    } else if (variable instanceof FieldDeclaration) {
-      //unqualified field reference
-      FieldDeclaration field = (FieldDeclaration) variable;
-      FieldReferenceOperation fro = FieldReferenceOperation.newInstance(myCurrentModel);
-      fro.setFieldDeclaration(field);
-      DotExpression dotExpression = DotExpression.newInstance(myCurrentModel);
-
-      ThisExpression thisExpression = ThisExpression.newInstance(myCurrentModel);
-      if (!myCurrentClass.equals(field.getParent())) {
-        thisExpression.setClassConcept((Classifier) field.getParent());
-      }
-      dotExpression.setOperand(thisExpression);
-      dotExpression.setOperation(fro);
-      return dotExpression;
-    } else if (variable instanceof StaticFieldDeclaration) {
-      //unqualified static field reference
-      LocalStaticFieldReference lsfr = LocalStaticFieldReference.newInstance(myCurrentModel);
-      lsfr.setStaticFieldDeclaration((StaticFieldDeclaration) variable);
-      return lsfr;
-    }
-    throw new JavaConverterException("Unknown VariableDeclaration subclass.");
   }
 
   // statements ==========================================================================================
