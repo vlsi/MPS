@@ -10,7 +10,7 @@ import junit.framework.Assert;
 
 public class Null_Test extends TestCase {
   @Test
-  public void 1() throws Exception {
+  public void test_1() throws Exception {
     List<String> l = null;
     ListSequence.fromList(l).addElement("");
     ListSequence.fromList(l).addSequence(ListSequence.fromList(l));

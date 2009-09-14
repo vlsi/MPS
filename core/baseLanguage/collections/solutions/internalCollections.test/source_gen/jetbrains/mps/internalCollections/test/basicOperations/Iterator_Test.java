@@ -18,7 +18,7 @@ import java.util.HashSet;
 
 public class Iterator_Test extends Util_Test {
   @Test
-  public void null() throws Exception {
+  public void test_null() throws Exception {
     Iterable<Integer> test = null;
     Assert.assertFalse(Sequence.fromIterable(test).iterator() == null);
     Assert.assertFalse(Sequence.fromIterable(test).iterator().hasNext());
