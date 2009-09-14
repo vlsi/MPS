@@ -283,7 +283,6 @@
         <link role="classifier" targetNodeId="2.~Exception" resolveInfo="Exception" />
       </node>
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1178546169616" />
-      <node role="annotation" type="jetbrains.mps.baseLanguage.structure.AnnotationInstance" id="3895595027706066205" />
     </node>
   </node>
   <node type="jetbrains.mps.lang.generator.structure.TemplateDeclaration" id="1171978794607">

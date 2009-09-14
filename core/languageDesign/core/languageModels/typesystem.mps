@@ -449,6 +449,17 @@
               </node>
             </node>
           </node>
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="8988738528464529955">
+            <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="8988738528464529956">
+              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ContinueStatement" id="8988738528464529964" />
+            </node>
+            <node role="condition" type="jetbrains.mps.baseLanguage.structure.EqualsExpression" id="8988738528464529960">
+              <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="8988738528464529963" />
+              <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="8988738528464529959">
+                <link role="variableDeclaration" targetNodeId="5622704259074611072" resolveInfo="link" />
+              </node>
+            </node>
+          </node>
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="5622704259074611034">
             <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="5622704259074611035">
               <node role="statement" type="jetbrains.mps.lang.typesystem.structure.ReportErrorStatement" id="5622704259074611096">

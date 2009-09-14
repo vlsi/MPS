@@ -67,6 +67,9 @@ public class check_Constraints_NonTypesystemRule extends AbstractNonTypesystemRu
     for (SNode child : node.getChildren()) {
       SNode childConcept = BaseAdapter.fromAdapter(child.getConceptDeclarationAdapter());
       LinkDeclaration link = node.getLinkDeclaration(child.getRole_());
+      if (link == null) {
+        continue;
+      }
       if (!(cm.canBeParent(node, childConcept, link.getNode(), operationContext))) {
         {
           BaseIntentionProvider intentionProvider = null;
