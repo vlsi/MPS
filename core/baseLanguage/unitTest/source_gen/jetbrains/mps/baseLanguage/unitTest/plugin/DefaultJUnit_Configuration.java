@@ -181,6 +181,7 @@ public class DefaultJUnit_Configuration extends BaseRunConfig {
     }
 
     protected void resetEditorFrom(DefaultJUnit_Configuration c) {
+      MySettingsEditor.this.myComponent.reset(c);
     }
 
     protected void applyEditorTo(DefaultJUnit_Configuration c) {
