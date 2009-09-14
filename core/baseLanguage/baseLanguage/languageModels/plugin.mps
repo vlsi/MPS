@@ -39613,7 +39613,38 @@
             </node>
           </node>
         </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.Statement" id="5360151489983367080" />
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="4207373968435976172">
+          <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="4207373968435976173">
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="4207373968435976186">
+              <node role="expression" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression" id="4207373968435976193">
+                <node role="rValue" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="4207373968435976196">
+                  <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="4207373968435976197">
+                    <link role="baseMethodDeclaration" targetNodeId="5001211796553540578" resolveInfo="RunParameters" />
+                  </node>
+                </node>
+                <node role="lValue" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="4207373968435976188">
+                  <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="4207373968435976187">
+                    <link role="variableDeclaration" targetNodeId="60375257504271429" resolveInfo="config" />
+                  </node>
+                  <node role="operation" type="jetbrains.mps.lang.plugin.structure.PersistentPropertyReference" id="4207373968435976192">
+                    <link role="member" targetNodeId="5001211796553540699" resolveInfo="parameters" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+          <node role="condition" type="jetbrains.mps.baseLanguage.structure.EqualsExpression" id="4207373968435976182">
+            <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="4207373968435976185" />
+            <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="4207373968435976177">
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="4207373968435976176">
+                <link role="variableDeclaration" targetNodeId="60375257504271429" resolveInfo="config" />
+              </node>
+              <node role="operation" type="jetbrains.mps.lang.plugin.structure.PersistentPropertyReference" id="4207373968435976181">
+                <link role="member" targetNodeId="5001211796553540699" resolveInfo="parameters" />
+              </node>
+            </node>
+          </node>
+        </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="5360151489983367082">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="5360151489983367084">
             <node role="operand" type="jetbrains.mps.uiLanguage.structure.ComponentReference" id="5360151489983367083">
@@ -45891,21 +45922,33 @@
       <property name="name" value="vmParam" />
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PrivateVisibility" id="5001211796553540583" />
       <node role="type" type="jetbrains.mps.baseLanguage.structure.StringType" id="5001211796553540594" />
+      <node role="initializer" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="4207373968436027591">
+        <property name="value" value="" />
+      </node>
     </node>
     <node role="field" type="jetbrains.mps.baseLanguage.structure.FieldDeclaration" id="5001211796553540585">
       <property name="name" value="programParam" />
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PrivateVisibility" id="5001211796553540586" />
       <node role="type" type="jetbrains.mps.baseLanguage.structure.StringType" id="5001211796553540595" />
+      <node role="initializer" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="4207373968436027593">
+        <property name="value" value="" />
+      </node>
     </node>
     <node role="field" type="jetbrains.mps.baseLanguage.structure.FieldDeclaration" id="5001211796553540588">
       <property name="name" value="workingDir" />
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PrivateVisibility" id="5001211796553540589" />
       <node role="type" type="jetbrains.mps.baseLanguage.structure.StringType" id="5001211796553540596" />
+      <node role="initializer" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="4207373968436027595">
+        <property name="value" value="" />
+      </node>
     </node>
     <node role="field" type="jetbrains.mps.baseLanguage.structure.FieldDeclaration" id="5001211796553540591">
       <property name="name" value="make" />
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PrivateVisibility" id="5001211796553540592" />
       <node role="type" type="jetbrains.mps.baseLanguage.structure.BooleanType" id="5001211796553540604" />
+      <node role="initializer" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="4207373968436027597">
+        <property name="value" value="false" />
+      </node>
     </node>
     <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="5001211796553540577" />
     <node role="constructor" type="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" id="5001211796553540578">
