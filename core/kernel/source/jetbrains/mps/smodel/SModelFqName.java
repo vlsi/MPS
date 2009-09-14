@@ -72,7 +72,13 @@ public class SModelFqName implements Comparable<Object> {
   }
 
   public String getCompactPresentation() {
-    return NameUtil.compactNamespace(getLongName()) + (myStereotype.length() == 0 ? "" : "@" + myStereotype.charAt(0));
+    String compactNamespace = NameUtil.compactNamespace(getLongName());
+    if (myStereotype.length() == 0) {
+      return compactNamespace;
+    } else {
+      return compactNamespace + "@" + myStereotype.charAt(0);
+    }
+
   }
 
   public String getNamespace() {
