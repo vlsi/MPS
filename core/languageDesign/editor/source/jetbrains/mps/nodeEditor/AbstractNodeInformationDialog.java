@@ -19,8 +19,9 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.util.WindowsUtil;
 
 import javax.swing.JDialog;
-import javax.swing.JTextArea;
 import javax.swing.JScrollPane;
+import javax.swing.JTextPane;
+import javax.swing.border.LineBorder;
 import java.awt.*;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
@@ -28,7 +29,7 @@ import java.awt.event.WindowFocusListener;
 import java.awt.event.WindowEvent;
 
 public abstract class AbstractNodeInformationDialog extends JDialog {
-  private JTextArea myTextArea;
+  private JTextPane myTextPane;
 
   public AbstractNodeInformationDialog(Frame owner, Point location, SNode node) {
     super(owner);
@@ -36,44 +37,42 @@ public abstract class AbstractNodeInformationDialog extends JDialog {
     setUndecorated(true);
     setModal(false);
 
-    myTextArea = new JTextArea(createNodeInfo(node));
+    myTextPane = new JTextPane();
+    myTextPane.setText(createNodeInfo(node));
 
 
-    myTextArea.setFont(EditorSettings.getInstance().getDefaultEditorFont());
-    myTextArea.setEditable(false);
-    myTextArea.setLineWrap(getLineWrap());
+    myTextPane.setFont(EditorSettings.getInstance().getDefaultEditorFont());
+    myTextPane.setEditable(false);
 
-    Dimension preferredSize = myTextArea.getPreferredSize();
-    
-    myTextArea.setBackground(new Color(255, 255, 200));
+    Dimension preferredSize = myTextPane.getPreferredSize();
 
-    add(new JScrollPane(myTextArea));
+    myTextPane.setBackground(new Color(255, 255, 200));
+
+    JScrollPane scrollPane = new JScrollPane(myTextPane);
+    scrollPane.setBorder(new LineBorder(Color.BLACK));
+    add(scrollPane);
 
     Dimension newSize = null;
 
 
-    if (!getLineWrap()) {
-      newSize = new Dimension(Math.min(getDefaultSize().width, preferredSize.width) + 30,
-              Math.min(getDefaultSize().height, preferredSize.height) + 30);          
-    } else {
-      newSize = getDefaultSize();
-    }
+    //newSize = new Dimension(Math.min(getDefaultSize().width, preferredSize.width) + 1,
+//        Math.min(getDefaultSize().height, preferredSize.height));
 
 
-    setSize(newSize);
+    pack();
     setLocation(location);
 
     Rectangle rect = WindowsUtil.findDeviceBoundsAt(location);
 
-    if (rect.x + rect.width  < getX() + getWidth()) {
+    if (rect.x + rect.width < getX() + getWidth()) {
       setLocation(rect.x + rect.width - getWidth(), getY());
     }
 
     if (rect.y + rect.height < getY() + getHeight()) {
-      setLocation(getX(), rect.y + rect.height - getHeight());              
+      setLocation(getX(), rect.y + rect.height - getHeight());
     }
 
-    myTextArea.addKeyListener(new KeyAdapter() {
+    myTextPane.addKeyListener(new KeyAdapter() {
       public void keyPressed(KeyEvent e) {
         if (e.getKeyCode() == KeyEvent.VK_ESCAPE) {
           dispose();
@@ -84,17 +83,13 @@ public abstract class AbstractNodeInformationDialog extends JDialog {
 
     addWindowFocusListener(new WindowFocusListener() {
       public void windowGainedFocus(WindowEvent e) {
-        myTextArea.requestFocus();
+        myTextPane.requestFocus();
       }
 
       public void windowLostFocus(WindowEvent e) {
         dispose();
       }
     });
-  }
-
-  protected boolean getLineWrap() {
-    return true;
   }
 
 

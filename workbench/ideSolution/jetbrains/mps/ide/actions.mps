@@ -15479,7 +15479,7 @@
                       <link role="variableDeclaration" targetNodeId="7422882203271980125" resolveInfo="params" />
                     </node>
                     <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="7422882203271981220">
-                      <link role="baseMethodDeclaration" targetNodeId="73.~StringBuilder.append(java.lang.CharSequence):java.lang.StringBuilder" resolveInfo="append" />
+                      <link role="baseMethodDeclaration" targetNodeId="73.~StringBuilder.append(java.lang.String):java.lang.StringBuilder" resolveInfo="append" />
                       <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="7422882203271981221">
                         <property name="value" value="??? " />
                       </node>
@@ -15538,7 +15538,7 @@
                     <link role="variableDeclaration" targetNodeId="7422882203271980125" resolveInfo="params" />
                   </node>
                   <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="7422882203271981244">
-                    <link role="baseMethodDeclaration" targetNodeId="73.~StringBuilder.append(java.lang.CharSequence):java.lang.StringBuilder" resolveInfo="append" />
+                    <link role="baseMethodDeclaration" targetNodeId="73.~StringBuilder.append(java.lang.String):java.lang.StringBuilder" resolveInfo="append" />
                     <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="7422882203271981245">
                       <property name="value" value=" " />
                     </node>
@@ -15554,7 +15554,7 @@
               <link role="variableDeclaration" targetNodeId="7422882203271980125" resolveInfo="params" />
             </node>
             <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="7422882203271981186">
-              <link role="baseMethodDeclaration" targetNodeId="73.~StringBuilder.append(java.lang.CharSequence):java.lang.StringBuilder" resolveInfo="append" />
+              <link role="baseMethodDeclaration" targetNodeId="73.~StringBuilder.append(java.lang.String):java.lang.StringBuilder" resolveInfo="append" />
               <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="7422882203271981189">
                 <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="7422882203271981190">
                   <link role="variableDeclaration" targetNodeId="7422882203271980121" resolveInfo="method" />
@@ -15572,7 +15572,7 @@
               <link role="variableDeclaration" targetNodeId="7422882203271980125" resolveInfo="params" />
             </node>
             <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="7422882203271981212">
-              <link role="baseMethodDeclaration" targetNodeId="73.~StringBuilder.append(java.lang.CharSequence):java.lang.StringBuilder" resolveInfo="append" />
+              <link role="baseMethodDeclaration" targetNodeId="73.~StringBuilder.append(java.lang.String):java.lang.StringBuilder" resolveInfo="append" />
               <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="7422882203271981213">
                 <property name="value" value="(" />
               </node>
@@ -15620,7 +15620,7 @@
                   <link role="variableDeclaration" targetNodeId="7422882203271980125" resolveInfo="params" />
                 </node>
                 <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="7422882203271981282">
-                  <link role="baseMethodDeclaration" targetNodeId="73.~StringBuilder.append(java.lang.CharSequence):java.lang.StringBuilder" resolveInfo="append" />
+                  <link role="baseMethodDeclaration" targetNodeId="73.~StringBuilder.append(java.lang.String):java.lang.StringBuilder" resolveInfo="append" />
                   <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="7422882203271981307">
                     <link role="variableDeclaration" targetNodeId="7422882203271981300" resolveInfo="paramType" />
                   </node>
@@ -15633,7 +15633,7 @@
                   <link role="variableDeclaration" targetNodeId="7422882203271980125" resolveInfo="params" />
                 </node>
                 <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="7422882203271981313">
-                  <link role="baseMethodDeclaration" targetNodeId="73.~StringBuilder.append(java.lang.CharSequence):java.lang.StringBuilder" resolveInfo="append" />
+                  <link role="baseMethodDeclaration" targetNodeId="73.~StringBuilder.append(java.lang.String):java.lang.StringBuilder" resolveInfo="append" />
                   <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="7422882203271981320">
                     <property name="value" value=" " />
                   </node>
@@ -15646,7 +15646,7 @@
                   <link role="variableDeclaration" targetNodeId="7422882203271980125" resolveInfo="params" />
                 </node>
                 <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="7422882203271981318">
-                  <link role="baseMethodDeclaration" targetNodeId="73.~StringBuilder.append(java.lang.Object):java.lang.StringBuilder" resolveInfo="append" />
+                  <link role="baseMethodDeclaration" targetNodeId="73.~StringBuilder.append(java.lang.String):java.lang.StringBuilder" resolveInfo="append" />
                   <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="7422882203271981325">
                     <node role="operand" type="jetbrains.mps.baseLanguage.collections.structure.ForEachVariableReference" id="7422882203271981321">
                       <link role="variable" targetNodeId="7422882203271981263" resolveInfo="parameter" />
@@ -15666,7 +15666,7 @@
                       <link role="variableDeclaration" targetNodeId="7422882203271980125" resolveInfo="params" />
                     </node>
                     <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="7422882203271981374">
-                      <link role="baseMethodDeclaration" targetNodeId="73.~StringBuilder.append(java.lang.CharSequence):java.lang.StringBuilder" resolveInfo="append" />
+                      <link role="baseMethodDeclaration" targetNodeId="73.~StringBuilder.append(java.lang.String):java.lang.StringBuilder" resolveInfo="append" />
                       <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="7422882203271981375">
                         <property name="value" value=", " />
                       </node>
@@ -15699,7 +15699,7 @@
               <link role="variableDeclaration" targetNodeId="7422882203271980125" resolveInfo="params" />
             </node>
             <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="7422882203271981250">
-              <link role="baseMethodDeclaration" targetNodeId="73.~StringBuilder.append(java.lang.CharSequence):java.lang.StringBuilder" resolveInfo="append" />
+              <link role="baseMethodDeclaration" targetNodeId="73.~StringBuilder.append(java.lang.String):java.lang.StringBuilder" resolveInfo="append" />
               <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="7422882203271981251">
                 <property name="value" value=")" />
               </node>

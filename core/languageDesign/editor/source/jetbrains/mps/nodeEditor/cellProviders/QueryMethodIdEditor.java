@@ -181,10 +181,6 @@ public abstract class QueryMethodIdEditor extends AbstractCellProvider {
           }, KeyStroke.getKeyStroke("control B"), JComponent.WHEN_IN_FOCUSED_WINDOW);
         }
 
-        protected boolean getLineWrap() {
-          return false;
-        }
-
         protected String createNodeInfo(SNode node) {
           return methodText;
         }
