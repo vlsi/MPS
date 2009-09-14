@@ -30,8 +30,10 @@ import jetbrains.mps.util.JDOMUtil;
 import jetbrains.mps.vcs.ApplicationLevelVcsManager;
 import jetbrains.mps.project.ModuleContext;
 import jetbrains.mps.project.MPSProject;
+import jetbrains.mps.project.GlobalOperationContext;
 import jetbrains.mps.MPSProjectHolder;
 import org.jdom.Document;
+import org.jdom.Element;
 import org.jetbrains.annotations.NotNull;
 
 import javax.swing.JFrame;
@@ -51,7 +53,16 @@ public class ModelDiffTool implements DiffTool {
       final ModelDifferenceDialog d = ModelAccess.instance().runReadAction(new Computable<ModelDifferenceDialog>() {
         public ModelDifferenceDialog compute() {
           MPSProject project = request.getProject().getComponent(MPSProjectHolder.class).getMPSProject();
-          IOperationContext context = new ModuleContext(oldModel.getModelDescriptor().getModule(), project);
+          SModelDescriptor sModelDescriptor = oldModel.getModelDescriptor();
+          if (sModelDescriptor == null) {
+            sModelDescriptor = newModel.getModelDescriptor();
+          }
+          IOperationContext context;
+          if (sModelDescriptor == null) {
+            context = new GlobalOperationContext();
+          } else {
+            context = new ModuleContext(sModelDescriptor.getModule(), project);
+          }
           boolean modal = !request.getHints().contains(DiffTool.HINT_SHOW_FRAME);
           JFrame frame = WindowManager.getInstance().getFrame(request.getProject());
           return new ModelDifferenceDialog(context, frame, oldModel, newModel, request.getWindowTitle(), modal, request.getContentTitles());
@@ -123,6 +134,9 @@ public class ModelDiffTool implements DiffTool {
   public static SModel readModel(byte[] bytes, String path) throws IOException, ReadException {
     final String[] modelNameAndStereotype = getModelNameAndStereotype(path);
     try {
+      if (bytes.length == 0) {
+        return new SModel(SModelReference.fromString(modelNameAndStereotype[0] + "@" + modelNameAndStereotype[1]));
+      }
       final Document document = JDOMUtil.loadDocument(new ByteArrayInputStream(bytes));
       return ModelAccess.instance().runReadAction(new Computable<SModel>() {
         public SModel compute() {
@@ -144,7 +158,7 @@ public class ModelDiffTool implements DiffTool {
   private boolean isModelFile(@NotNull DiffContent contents) {
     FileType type = contents.getContentType();
     if (type == null) {
-      return false;
+      return true;
     }
     return type.equals(MPSFileTypeFactory.MODEL_FILE_TYPE);
   }
