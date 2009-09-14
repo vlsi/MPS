@@ -948,7 +948,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     myNodesToBigCellsMap.clear();
     myRefNodeContextsToBigCellsMap.clear();
     myNodePropertiesAccessedCleanlyToDependentCellsMap.clear();
-    myNodePropertiesAcc`essedDirtilyToDependentCellsMap.clear();
+    myNodePropertiesAccessedDirtilyToDependentCellsMap.clear();
     myNodePropertiesWhichExistenceWasCheckedToDependentCellsMap.clear();
   }
 
