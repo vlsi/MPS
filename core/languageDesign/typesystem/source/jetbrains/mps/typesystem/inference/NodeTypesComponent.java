@@ -34,6 +34,8 @@ import jetbrains.mps.typesystem.debug.NullSlicer;
 
 import java.util.*;
 import java.util.Map.Entry;
+import java.lang.ref.ReferenceQueue;
+import java.lang.ref.WeakReference;
 
 public class NodeTypesComponent implements EditorMessageOwner, Cloneable {
 
@@ -67,6 +69,8 @@ public class NodeTypesComponent implements EditorMessageOwner, Cloneable {
 
 
   private MyModelListener myModelListener = new MyModelListener();
+  private MyModelListenerManager myModelListenerManager = new MyModelListenerManager(myModelListener);
+
   private MyEventsReadListener myNodesReadListener = new MyEventsReadListener();
   private MyTypeRecalculatedListener myTypeRecalculatedListener = new MyTypeRecalculatedListener();
 
@@ -118,6 +122,8 @@ public class NodeTypesComponent implements EditorMessageOwner, Cloneable {
     myTypeChecker = typeChecker;
     myTypeCheckingContext = typeCheckingContext;
     myEquationManager = new EquationManager(myTypeChecker, myTypeCheckingContext);
+
+    myModelListenerManager.track(myRootNode);
   }
 
   private TypeCheckingContext getTypeCheckingContext() {
@@ -337,30 +343,11 @@ public class NodeTypesComponent implements EditorMessageOwner, Cloneable {
         iErrorReporter.getMessageStatus(), iErrorReporter.getErrorTarget());
       reporter.setIntentionProvider(iErrorReporter.getIntentionProvider());
       toAdd.put(node, reporter);
-    }    
+    }
     myNodesToErrorsMap.putAll(toAdd);
 
-    //write access listeners
-    removeOurListener();
-    
-    List<SNode> nodesToDependOn = new ArrayList<SNode>(myNodesToDependentNodes.keySet());
-    if (!myNodesToDependentNodes.keySet().contains(myRootNode)) {
-      nodesToDependOn.add(myRootNode);
-    }
+    myModelListenerManager.updateGCedNodes();
 
-    for (SNode nodeToDependOn : nodesToDependOn) {
-      if (nodeToDependOn == null) continue;
-
-      final SModel sModel = nodeToDependOn.getModel();
-      final SModelDescriptor sm = sModel.getModelDescriptor();
-      if (sm != null) {
-        addOurListener(sm);
-      } else {
-        if (SModelStereotype.isUserModel(sModel)) {
-          LOG.error("model descriptor is null: " + sModel);
-        }
-      }
-    }
     TypeChecker.getInstance().addTypeRecalculatedListener(myTypeRecalculatedListener);//method checks if already exists
   }
 
@@ -533,6 +520,7 @@ public class NodeTypesComponent implements EditorMessageOwner, Cloneable {
       if (dependentNodes == null) {
         dependentNodes = new WeakSet<SNode>();
         myNodesToDependentNodes.put(nodeToDependOn, dependentNodes);
+        myModelListenerManager.track(nodeToDependOn);
       }
       dependentNodes.add(sNode);
     }
@@ -1026,8 +1014,8 @@ public class NodeTypesComponent implements EditorMessageOwner, Cloneable {
     public void clear() {
       synchronized (ACCESS_LOCK) {
         reportAccess();
-        myAccessedNodes.clear();
-        myAccessedProperties.clear();
+        myAccessedNodes = new HashSet<SNode>();
+        myAccessedProperties = new HashSet<Pair<SNode, String>>();
       }
     }
   }
@@ -1050,6 +1038,55 @@ public class NodeTypesComponent implements EditorMessageOwner, Cloneable {
       synchronized (ACCESS_LOCK) {
         reportAccess();
         myAccessedNodes.add(term);
+      }
+    }
+  }
+
+  private class MyModelListenerManager {
+    private ReferenceQueue<SNode> myReferenceQueue = new ReferenceQueue<SNode>();
+    private Map<SModelDescriptor, Integer> myNodesCount = new HashMap<SModelDescriptor, Integer>();
+    private Map<WeakReference, SModelDescriptor> myDescriptors = new HashMap<WeakReference, SModelDescriptor>();
+    private SModelCommandListener myListener;
+
+    MyModelListenerManager(SModelCommandListener listener) {
+      myListener = listener;
+    }
+
+
+    /**
+     * Warning: this method should be called only once for each node
+     * We do not check for duplicated nodes
+     */
+    void track(SNode node) {
+      SModelDescriptor sm = node.getModel().getModelDescriptor();
+      if (!myNodesCount.containsKey(sm)) {
+        sm.addModelCommandListener(myListener);
+        myNodesCount.put(sm, 1);
+      } else {
+        Integer oldValue = myNodesCount.get(sm);
+        myNodesCount.put(sm, oldValue + 1);
+      }
+
+      WeakReference<SNode> ref = new WeakReference<SNode>(node, myReferenceQueue);
+      myDescriptors.put(ref, sm);
+    }
+
+
+    void updateGCedNodes() {
+      while (true) {
+        WeakReference<SNode> ref = (WeakReference<SNode>) myReferenceQueue.poll();
+        if (ref == null) return;
+
+        SModelDescriptor sm = myDescriptors.get(ref);
+        Integer count = myNodesCount.get(sm);
+        if (count == 1) {
+          sm.removeModelCommandListener(myListener);
+          myNodesCount.remove(sm);
+        } else {
+          myNodesCount.put(sm, count - 1);
+        }
+
+        myDescriptors.remove(ref);
       }
     }
   }
