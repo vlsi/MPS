@@ -25,6 +25,7 @@ import jetbrains.mps.smodel.event.SModelRenamedEvent;
 import jetbrains.mps.util.ManyToManyMap;
 import jetbrains.mps.util.WeakSet;
 import jetbrains.mps.vfs.IFile;
+import jetbrains.mps.project.IModule;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 
@@ -433,7 +434,7 @@ public class SModelRepository implements ApplicationComponent {
   public <M extends ModelOwner> Set<M> getOwners(SModelDescriptor modelDescriptor, Class<M> cls) {
     Set<M> result = new HashSet<M>();
     for (ModelOwner o : getOwners(modelDescriptor)) {
-      if (cls.isInstance(o)) {
+      if (cls == IModule.class || cls.isInstance(o)) {
         result.add((M) o);
       }
     }
