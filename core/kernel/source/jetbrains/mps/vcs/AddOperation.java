@@ -79,7 +79,7 @@ class AddOperation extends VcsOperation {
         } else {
           myVirtualFilesToAdd.add(virtualFile);
         }
-      } else if (f.exists()) {
+      } else if (virtualFile == null && f.exists()) {
         LOG.error("Cannot find virtual file for IO file " + f);
       }
     }
