@@ -1212,7 +1212,7 @@
         </node>
       </node>
       <node role="testMethod" type="jetbrains.mps.baseLanguage.unitTest.structure.TestMethod" id="1237215802010">
-        <property name="methodName" value="toString" />
+        <property name="methodName" value="_toString" />
         <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1237215802011" />
         <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1237215802012">
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1237216141956">
@@ -4641,7 +4641,7 @@
         </node>
       </node>
       <node role="testMethod" type="jetbrains.mps.baseLanguage.unitTest.structure.TestMethod" id="1239090345115">
-        <property name="methodName" value="toString" />
+        <property name="methodName" value="_toString" />
         <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1239090345116" />
         <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1239090345117">
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1239090357942">
@@ -5874,7 +5874,7 @@
         </node>
       </node>
       <node role="testMethod" type="jetbrains.mps.baseLanguage.unitTest.structure.TestMethod" id="1239091401618">
-        <property name="methodName" value="toString" />
+        <property name="methodName" value="_toString" />
         <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1239091401619" />
         <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1239091401620">
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1239092127115">
@@ -7333,7 +7333,7 @@
         </node>
       </node>
       <node role="testMethod" type="jetbrains.mps.baseLanguage.unitTest.structure.TestMethod" id="1239091286728">
-        <property name="methodName" value="toString" />
+        <property name="methodName" value="_toString" />
         <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1239091286729" />
         <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1239091286730">
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1239091290464">

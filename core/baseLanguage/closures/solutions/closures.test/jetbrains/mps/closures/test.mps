@@ -6404,7 +6404,7 @@
         </node>
       </node>
       <node role="testMethod" type="jetbrains.mps.baseLanguage.unitTest.structure.TestMethod" id="1215520948177">
-        <property name="methodName" value="returnWorker" />
+        <property name="methodName" value="_returnWorker" />
         <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1215520948178" />
         <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1215520948179">
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1215520963534">
@@ -6424,7 +6424,7 @@
         </node>
       </node>
       <node role="testMethod" type="jetbrains.mps.baseLanguage.unitTest.structure.TestMethod" id="1215526259409">
-        <property name="methodName" value="returnProcessor" />
+        <property name="methodName" value="_returnProcessor" />
         <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1215526259410" />
         <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1215526259411">
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1215526271371">
