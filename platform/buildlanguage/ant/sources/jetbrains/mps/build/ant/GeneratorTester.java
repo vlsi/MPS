@@ -23,6 +23,7 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.util.Pair;
 import jetbrains.mps.ide.progress.IAdaptiveProgressMonitor;
 import jetbrains.mps.ide.genconf.GenParameters;
+import jetbrains.mps.reloading.ClassLoaderManager;
 
 import java.util.Set;
 import java.util.List;
@@ -59,6 +60,7 @@ public class GeneratorTester extends Generator {
 
   @Override
   protected void generateModulesCircle(GeneratorManager gm, EmptyProgressIndicator emptyProgressIndicator, Set<IModule> modulesSet, List<Pair<SModelDescriptor, IOperationContext>> modelsToContext) {
+    ClassLoaderManager.getInstance().reloadAll(new EmptyProgressIndicator());
     String currentTestName = escapeMessageForTeamCity("generating " + modulesSet);
     System.out.println("##teamcity[testStarted name='" + currentTestName + "' captureStandardOutput='true']");
 
@@ -120,9 +122,13 @@ public class GeneratorTester extends Generator {
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
         List<BaseTestConfiguration> testConfigurationList = project.getProjectDescriptor().getTestConfigurations();
-        for (BaseTestConfiguration config : testConfigurationList) {
-          GenParameters genParams = config.getGenParams(project, true);
-          modelDescriptors.addAll(genParams.getModelDescriptors());
+        if (testConfigurationList.isEmpty()) {
+          GeneratorTester.super.extractModels(modelDescriptors, project);
+        } else {
+          for (BaseTestConfiguration config : testConfigurationList) {
+            GenParameters genParams = config.getGenParams(project, true);
+            modelDescriptors.addAll(genParams.getModelDescriptors());
+          }
         }
       }
     });
