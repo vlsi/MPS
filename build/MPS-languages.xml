@@ -13,12 +13,10 @@
     </jar>
   </target>
   <target name="pack.jetbrains.mps.baseLanguage0">
-    <mkdir dir="core/baseLanguage/baseLanguage/classes_gen" />
     <mkdir dir="core/baseLanguage/baseLanguage/classes" />
     <jar destfile="${deploy.dir}/MPS/core/baseLanguage/jetbrains.mps.baseLanguage.mpsarch.jar" compress="true" duplicate="preserve" filesonly="true">
       <zipfileset file="core/baseLanguage/baseLanguage/baseLanguage.mpl" prefix="module" />
       <zipfileset dir="core/baseLanguage/baseLanguage" excludes="**/*.iml, **/*.java, **/*.class, **/*.mpr, **/*.mws, **/*.mpl, **/*.msd, **/*.devkit, **/*.ipr" prefix="module" />
-      <zipfileset dir="core/baseLanguage/baseLanguage/classes_gen" />
       <zipfileset dir="core/baseLanguage/baseLanguage/classes" />
     </jar>
     <jar destfile="${deploy.dir}/MPS/core/baseLanguage/jetbrains.mps.baseLanguage.runtime.jar" duplicate="preserve" filesonly="true">
@@ -171,11 +169,9 @@
   </target>
   <target name="pack.jetbrains.mps.baseLanguage.test0">
     <mkdir dir="core/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.refactoringTest/classes_gen" />
-    <mkdir dir="core/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.refactoringTest/classes_gen" />
     <jar destfile="${deploy.dir}/MPS/core/baseLanguage/jetbrains.mps.baseLanguage.test.mpsarch.jar" compress="true" duplicate="preserve" filesonly="true">
       <zipfileset file="core/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.refactoringTest/jetbrains.mps.baseLanguage.refactoringTest.msd" prefix="module" />
       <zipfileset dir="core/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.refactoringTest" excludes="**/*.iml, **/*.java, **/*.class, **/*.mpr, **/*.mws, **/*.mpl, **/*.msd, **/*.devkit, **/*.ipr" prefix="module" />
-      <zipfileset dir="core/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.refactoringTest/classes_gen" />
       <zipfileset dir="core/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.refactoringTest/classes_gen" />
     </jar>
   </target>
@@ -455,12 +451,10 @@
     </jar>
   </target>
   <target name="pack.jetbrains.mps.lang.textGen0">
-    <mkdir dir="core/languageDesign/textGen/classes_gen" />
     <mkdir dir="core/languageDesign/textGen/classes" />
     <jar destfile="${deploy.dir}/MPS/core/languageDesign/jetbrains.mps.lang.textGen.mpsarch.jar" compress="true" duplicate="preserve" filesonly="true">
       <zipfileset file="core/languageDesign/textGen/textGen.mpl" prefix="module" />
       <zipfileset dir="core/languageDesign/textGen" excludes="**/*.iml, **/*.java, **/*.class, **/*.mpr, **/*.mws, **/*.mpl, **/*.msd, **/*.devkit, **/*.ipr" prefix="module" />
-      <zipfileset dir="core/languageDesign/textGen/classes_gen" />
       <zipfileset dir="core/languageDesign/textGen/classes" />
     </jar>
     <jar destfile="${deploy.dir}/MPS/core/languageDesign/jetbrains.mps.lang.textGen.runtime.jar" duplicate="preserve" filesonly="true">
