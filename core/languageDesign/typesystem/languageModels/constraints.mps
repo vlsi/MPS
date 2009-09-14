@@ -2696,5 +2696,28 @@
       </node>
     </node>
   </node>
+  <node type="jetbrains.mps.lang.constraints.structure.ConceptConstraints" id="5622704259074443414">
+    <link role="concept" targetNodeId="1.5622704259074429274" resolveInfo="OperationContextExpression" />
+    <node role="canBeChild" type="jetbrains.mps.lang.constraints.structure.ConstraintFunction_CanBeAChild" id="5622704259074443415">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="5622704259074443416">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="5622704259074443963">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="5622704259074443976">
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="5622704259074443965">
+              <node role="operand" type="jetbrains.mps.lang.constraints.structure.ConstraintFunctionParameter_parentNode" id="5622704259074443964" />
+              <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_GetAncestorOperation" id="5622704259074443969">
+                <node role="parameter" type="jetbrains.mps.lang.smodel.structure.OperationParm_Concept" id="5622704259074443970">
+                  <node role="conceptArgument" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" id="5622704259074443973">
+                    <link role="conceptDeclaration" targetNodeId="1.1195214364922" resolveInfo="NonTypesystemRule" />
+                  </node>
+                </node>
+                <node role="parameter" type="jetbrains.mps.lang.smodel.structure.OperationParm_Inclusion" id="5622704259074443975" />
+              </node>
+            </node>
+            <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_IsNotNullOperation" id="5622704259074443980" />
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
 </model>
 

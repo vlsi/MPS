@@ -18,7 +18,7 @@ public class typeof_OverloadedOpTypeRule_OneTypeSpecified_InferenceRule extends 
     {
       SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(rule, "operandType", true);
       BaseIntentionProvider intentionProvider = null;
-      typeCheckingContext.createLessThanInequation((SNode)typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902b1(jetbrains.mps.lang.typesystem.typesystem)", "8124453027370845375", true), (SNode)new _Quotations.QuotationClass_57().createNode(typeCheckingContext), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902b1(jetbrains.mps.lang.typesystem.typesystem)", "8124453027370845370", false, 0, intentionProvider);
+      typeCheckingContext.createLessThanInequation((SNode)typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902b1(jetbrains.mps.lang.typesystem.typesystem)", "8124453027370845375", true), (SNode)new _Quotations.QuotationClass_58().createNode(typeCheckingContext), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902b1(jetbrains.mps.lang.typesystem.typesystem)", "8124453027370845370", false, 0, intentionProvider);
     }
   }
 

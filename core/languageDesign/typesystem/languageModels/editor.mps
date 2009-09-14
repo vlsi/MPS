@@ -4289,5 +4289,11 @@
       <node role="cellLayout" type="jetbrains.mps.lang.editor.structure.CellLayout_Vertical" id="8124453027370845411" />
     </node>
   </node>
+  <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" id="5622704259074429276">
+    <link role="conceptDeclaration" targetNodeId="1.5622704259074429274" resolveInfo="OperationContextExpression" />
+    <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_ConceptProperty" id="5622704259074443413">
+      <link role="relationDeclaration" targetNodeId="2.1137473891462" resolveInfo="alias" />
+    </node>
+  </node>
 </model>
 

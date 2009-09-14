@@ -600,11 +600,13 @@ public class NodeTypesComponent implements EditorMessageOwner, Cloneable {
     }
   }
 
-  public void applyNonTypesystemRulesToRoot() {
+
+  public void applyNonTypesystemRulesToRoot(IOperationContext context) {
     SNode root = myRootNode;
     if (root == null) return;
     doInvalidateNonTypesystem();
     myIsNonTypesystemCheckingInProgress = true;
+    getTypeCheckingContext().setOperationContext(context);
     try {
       Set<SNode> frontier = new LinkedHashSet<SNode>();
       Set<SNode> newFrontier = new LinkedHashSet<SNode>();
@@ -619,6 +621,7 @@ public class NodeTypesComponent implements EditorMessageOwner, Cloneable {
       }
       //all error reporters must be simple reporters, no error expansion needed
     } finally {
+      getTypeCheckingContext().setOperationContext(null);
       myIsNonTypesystemCheckingInProgress = false;
     }
   }

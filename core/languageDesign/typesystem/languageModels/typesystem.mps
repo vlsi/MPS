@@ -3247,5 +3247,30 @@
       <link role="concept" targetNodeId="1.8124453027370766044" resolveInfo="OverloadedOpTypeRule_OneTypeSpecified" />
     </node>
   </node>
+  <node type="jetbrains.mps.lang.typesystem.structure.InferenceRule" id="5622704259074446614">
+    <property name="name" value="typeof_OperationContextExpression" />
+    <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="5622704259074446615">
+      <node role="statement" type="jetbrains.mps.lang.typesystem.structure.CreateEquationStatement" id="5622704259074446621">
+        <node role="rightExpression" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause" id="5622704259074446625">
+          <node role="normalType" type="jetbrains.mps.lang.quotation.structure.Quotation" id="5622704259074446626">
+            <node role="quotedNode" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="5622704259074446629">
+              <link role="classifier" targetNodeId="4.~IOperationContext" resolveInfo="IOperationContext" />
+            </node>
+          </node>
+        </node>
+        <node role="leftExpression" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause" id="5622704259074446624">
+          <node role="normalType" type="jetbrains.mps.lang.typesystem.structure.TypeOfExpression" id="5622704259074446618">
+            <node role="term" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference" id="5622704259074446620">
+              <link role="applicableNode" targetNodeId="5622704259074446616" resolveInfo="expression" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="applicableNode" type="jetbrains.mps.lang.typesystem.structure.ConceptReference" id="5622704259074446616">
+      <property name="name" value="expression" />
+      <link role="concept" targetNodeId="1.5622704259074429274" resolveInfo="OperationContextExpression" />
+    </node>
+  </node>
 </model>
 

@@ -29,7 +29,6 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.smodel.SReference;
-import jetbrains.mps.smodel.constraints.ConstraintsChecker;
 import jetbrains.mps.nodeEditor.EditorMessage;
 
 import javax.swing.JComponent;
@@ -75,7 +74,6 @@ public class NodeExplorerComponent {
       if (myNode == null || myNode.getNode() == null) {
         return new TextTreeNode("no node");
       } else {
-        myAncestorNodeContext.collectModelConstraintsErrors();
         TextTreeNode textTreeNode = new TextTreeNode("node");
         SNodeTreeNode sNodeTreeNode = new MySNodeTreeNode(myNode.getNode(), myOperationContext, myAncestorNodeContext);
         textTreeNode.add(sNodeTreeNode);
@@ -91,8 +89,6 @@ public class NodeExplorerComponent {
   }
 
   private class AncestorNodeContext {
-    private Map<SNode, Set<EditorMessage>> myModelConstraintsMessages = new HashMap<SNode, Set<EditorMessage>>();
-    private Map<SNode, Set<EditorMessage>> myModelConstraintsMessagesOfDescendants = new HashMap<SNode, Set<EditorMessage>>();
     private SNodePointer myNode;
     private IOperationContext myOperationContext;
 
@@ -105,30 +101,6 @@ public class NodeExplorerComponent {
       myNode = ancestorNode;
       myOperationContext = operationContext;
     }
-
-    private void collectModelConstraintsErrors() {
-      Set<EditorMessage> messages = new ConstraintsChecker().messagesForNodeAndDescendants(myNode.getNode(), myOperationContext);
-      for (EditorMessage message : messages) {
-        SNode node = message.getNode();
-        if (node != null) {
-          Set<EditorMessage> existingMessages = myModelConstraintsMessages.get(node);
-          if (existingMessages == null) {
-            existingMessages = new HashSet<EditorMessage>();
-            myModelConstraintsMessages.put(node, existingMessages);
-          }
-          existingMessages.add(message);
-          while (node.getParent() != null) {
-            node = node.getParent();
-            Set<EditorMessage> existingMessagesOfDescendants = myModelConstraintsMessagesOfDescendants.get(node);
-            if (existingMessagesOfDescendants == null) {
-              existingMessagesOfDescendants = new HashSet<EditorMessage>();
-              myModelConstraintsMessagesOfDescendants.put(node, existingMessagesOfDescendants);
-            }
-            existingMessagesOfDescendants.add(message);
-          }
-        }
-      }
-    }
   }
 
   private class MySNodeTreeNode extends SNodeTreeNode {
@@ -137,35 +109,11 @@ public class NodeExplorerComponent {
     public MySNodeTreeNode(SNode node, IOperationContext operationContext, AncestorNodeContext ancestorNodeContext) {
       super(node, operationContext);
       myAncestorNodeContext = ancestorNodeContext;
-      collectModelConstraintsErrors();
     }
 
     public MySNodeTreeNode(SNode node, String role, IOperationContext operationContext, AncestorNodeContext ancestorNodeContext) {
       super(node, role, operationContext);
       myAncestorNodeContext = ancestorNodeContext;
-      collectModelConstraintsErrors();
-    }
-
-
-    private void collectModelConstraintsErrors() {
-      Set<EditorMessage> messages = myAncestorNodeContext.myModelConstraintsMessages.get(getSNode());
-      if (messages == null) {
-        messages = new HashSet<EditorMessage>();
-      }
-      Set<EditorMessage> descendantsMessages = myAncestorNodeContext.myModelConstraintsMessagesOfDescendants.get(getSNode());
-      if (descendantsMessages == null) {
-        descendantsMessages = new HashSet<EditorMessage>();
-      }
-      setErrorState(messages.isEmpty() && descendantsMessages.isEmpty() ? ErrorState.NONE : ErrorState.ERROR);
-      if (messages.isEmpty()) {
-        setTooltipText(null);
-      } else {
-        String result = "<html>";
-        for (EditorMessage editorMessage : messages) {
-          result += editorMessage.getMessage() + "<br>";
-        }
-        setTooltipText(result);
-      }
     }
 
     protected void doUpdatePresentation() {
@@ -204,7 +152,6 @@ public class NodeExplorerComponent {
         SNode referent = reference.getTargetNode();
         if (referent != null) {
           AncestorNodeContext ancestorNodeContext = new AncestorNodeContext(referent, getOperationContext());
-          ancestorNodeContext.collectModelConstraintsErrors();
           add(new MySNodeTreeNode(referent, reference.getRole(), getOperationContext(), ancestorNodeContext));
         }
       }

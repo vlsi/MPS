@@ -66,7 +66,7 @@ public class TypesEditorChecker extends EditorCheckerAdapter {
       //non-typesystem checks
       if (!wasCheckedOnce || hasDramaticalEvent(events)) {
         try {
-          typesComponent.applyNonTypesystemRulesToRoot();
+          typesComponent.applyNonTypesystemRulesToRoot(operationContext);
         } catch (Throwable t) {
           LOG.error(t);
         }

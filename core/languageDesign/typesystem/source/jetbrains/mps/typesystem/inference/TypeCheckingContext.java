@@ -15,10 +15,7 @@
  */
 package jetbrains.mps.typesystem.inference;
 
-import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.smodel.SModelUtil_new;
-import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.smodel.CopyUtil;
+import jetbrains.mps.smodel.*;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.intentions.IntentionProvider;
 import jetbrains.mps.lang.pattern.util.MatchingUtil;
@@ -35,6 +32,9 @@ import java.util.List;
 import java.util.Stack;
 
 public class TypeCheckingContext {
+  private static final Logger LOG = Logger.getLogger(TypeCheckingContext.class);
+  private static final boolean GREY_TYPEOF_ENABLED = false;
+
   private NodeTypesComponent myNodeTypesComponent;
   private SNode myRootNode;
   private TypeChecker myTypeChecker;
@@ -42,9 +42,7 @@ public class TypeCheckingContext {
   private Stack<Boolean> myIsInEditorQueriesStack = new Stack<Boolean>();
   private Stack<NodeTypesComponent> myTemporaryComponentsStack = new Stack<NodeTypesComponent>();
   private Stack<SNode> myNodesToComputeDuringResolve = new Stack<SNode>();
-
-  private static final Logger LOG = Logger.getLogger(TypeCheckingContext.class);
-  private static final boolean GREY_TYPEOF_ENABLED = false;
+  private IOperationContext myOperationContext;
 
   public TypeCheckingContext(SNode rootNode, TypeChecker typeChecker) {
     if (rootNode == null) {
@@ -485,6 +483,14 @@ public class TypeCheckingContext {
       SNode poppedNode = myNodesToComputeDuringResolve.pop();
       assert poppedNode == node;
     }
+  }
+
+  public void setOperationContext(IOperationContext context) {
+    myOperationContext = context;
+  }
+
+  public IOperationContext getOperationContext() {
+    return myOperationContext;
   }
 
   public static class NodeInfo {
