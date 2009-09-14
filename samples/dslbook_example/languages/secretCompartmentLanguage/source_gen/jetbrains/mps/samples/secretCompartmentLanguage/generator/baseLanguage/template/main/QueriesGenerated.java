@@ -13,7 +13,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
 
 public class QueriesGenerated {
-
   public static Object propertyMacro_GetPropertyValue_1197167547634(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return SPropertyOperations.getString(_context.getNode(), "stateMachineName") + "_StateMachineFactory";
   }
@@ -84,7 +83,7 @@ public class QueriesGenerated {
 
   public static Iterable sourceNodesQuery_1197241595255(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     SLinkOperations.getTargets(_context.getNode(), "state", true);
-    return SNodeOperations.getDescendants(_context.getNode(), "jetbrains.mps.samples.secretCompartmentLanguage.structure.Transition", false);
+    return SNodeOperations.getDescendants(_context.getNode(), "jetbrains.mps.samples.secretCompartmentLanguage.structure.Transition", false, new String[]{});
   }
 
   public static Iterable sourceNodesQuery_1197253174254(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
@@ -94,5 +93,4 @@ public class QueriesGenerated {
   public static Iterable sourceNodesQuery_1197256505990(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     return SLinkOperations.getTargets(_context.getNode(), "handleEvent", true);
   }
-
 }

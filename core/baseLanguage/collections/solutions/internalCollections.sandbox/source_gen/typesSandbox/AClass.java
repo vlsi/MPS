@@ -8,11 +8,9 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 
 public class AClass {
-
   public AClass() {
     List<SNode> res = null;
-    ListSequence.fromList(res).visitAll(new IVisitor <SNode>() {
-
+    ListSequence.fromList(res).visitAll(new IVisitor<SNode>() {
       public void visit(SNode it) {
         System.out.println(it);
       }
