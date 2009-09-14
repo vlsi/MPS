@@ -506,26 +506,43 @@ public class JavaConverterTreeBuilder {
   }
 
   jetbrains.mps.baseLanguage.structure.Expression processExpression(QualifiedThisReference x) {
-    Classifier qualType = (Classifier) myBindingMap.get(x.qualification.resolvedType);
     jetbrains.mps.baseLanguage.structure.ThisExpression thisRef = ThisExpression.newInstance(myCurrentModel);
-    thisRef.setClassConcept(qualType);
+    TypeBinding typeBinding = x.qualification.resolvedType;
+    thisRef.getNode().addReference(
+      myTypesProvider.createClassifierReference((ReferenceBinding) typeBinding, ThisExpression.CLASS_CONCEPT, thisRef.getNode()));
     return thisRef;
   }
 
   jetbrains.mps.baseLanguage.structure.Expression processExpression(FieldReference x) {
+    FieldBinding fieldBinding = x.binding;
+    return expressionFromFieldBinding(fieldBinding, processExpressionRefl(x.receiver));
+  }
+
+  private jetbrains.mps.baseLanguage.structure.Expression expressionFromFieldBinding(FieldBinding fieldBinding, jetbrains.mps.baseLanguage.structure.Expression instanceExpression) {
     String role;
     SNode sourceNode;
     jetbrains.mps.baseLanguage.structure.Expression result;
-    FieldBinding fieldBinding = x.binding;
     if (fieldBinding.isStatic()) {
       role = StaticFieldReference.VARIABLE_DECLARATION;
       StaticFieldReference sfr = StaticFieldReference.newInstance(myCurrentModel);
-      sfr.setClassifier((Classifier) myBindingMap.get(fieldBinding));
       sourceNode = sfr.getNode();
+      sfr.getNode().addReference(
+        myTypesProvider.createClassifierReference(fieldBinding.declaringClass, StaticFieldReference.CLASSIFIER, sourceNode));
       result = sfr;
     } else {
       role = FieldReferenceOperation.FIELD_DECLARATION;
-      jetbrains.mps.baseLanguage.structure.Expression instance = processExpressionRefl(x.receiver);
+      jetbrains.mps.baseLanguage.structure.Expression instance;
+      if (instanceExpression == null) {
+        ThisExpression thisExpression = ThisExpression.newInstance(myCurrentModel);
+        ReferenceBinding declaredClassBinding = fieldBinding.declaringClass;
+        if (myCurrentClass != myBindingMap.get(declaredClassBinding)) {
+          thisExpression.getNode().addReference(
+            myTypesProvider.createClassifierReference(declaredClassBinding, ThisExpression.CLASS_CONCEPT, thisExpression.getNode()));
+        }
+        instance = thisExpression;
+      } else {
+        instance = instanceExpression;
+      }
       if (fieldBinding.declaringClass == null) {
         return createArrayLengthExpression(instance, fieldBinding);
       }
@@ -536,7 +553,7 @@ public class JavaConverterTreeBuilder {
       sourceNode = fieldRef.getNode();
       result = dotExpression;
     }
-    SReference fieldReference = myTypesProvider.createFieldReference(x.binding, role, sourceNode);
+    SReference fieldReference = myTypesProvider.createFieldReference(fieldBinding, role, sourceNode);
     sourceNode.addReference(fieldReference);
     return result;
   }
@@ -692,38 +709,10 @@ public class JavaConverterTreeBuilder {
   jetbrains.mps.baseLanguage.structure.Expression processExpression(QualifiedNameReference x) {
     Binding binding = x.binding;
 
-    INodeAdapter varRef;
-    String role;
     jetbrains.mps.baseLanguage.structure.Expression result;
 
     if (binding instanceof FieldBinding) {
-      FieldBinding fieldBinding = (FieldBinding) binding;
-      boolean isStatic = fieldBinding.isStatic();
-      if (isStatic) {
-        StaticFieldReference fieldReference = StaticFieldReference.newInstance(myCurrentModel);
-        varRef = fieldReference;
-        role = StaticFieldReference.VARIABLE_DECLARATION;
-        fieldReference.getNode().addReference(
-          myTypesProvider.createClassifierReference(fieldBinding.declaringClass, StaticFieldReference.CLASSIFIER, fieldReference.getNode()));
-        result = fieldReference;
-      } else {
-        FieldReferenceOperation operation = FieldReferenceOperation.newInstance(myCurrentModel);
-        varRef = operation;
-        DotExpression dotExpression = DotExpression.newInstance(myCurrentModel);
-        role = FieldReferenceOperation.FIELD_DECLARATION;
-        dotExpression.setOperation(operation);
-
-        ThisExpression thisExpression = ThisExpression.newInstance(myCurrentModel);
-        ReferenceBinding declaredClassBinding = fieldBinding.declaringClass;
-        if (myCurrentClass != myBindingMap.get(declaredClassBinding)) {
-          thisExpression.getNode().addReference(
-            myTypesProvider.createClassifierReference(declaredClassBinding, ThisExpression.CLASS_CONCEPT, thisExpression.getNode()));
-        }
-        dotExpression.setOperand(thisExpression);
-        result = dotExpression;
-      }
-      SReference reference = myTypesProvider.createFieldReference(fieldBinding, role, varRef.getNode());
-      varRef.getNode().addReference(reference);
+      result = expressionFromFieldBinding((FieldBinding) binding, null);
     } else {
       result = varFromVariableBinding(binding);
     }
@@ -736,30 +725,7 @@ public class JavaConverterTreeBuilder {
     if (x.otherBindings != null) {
       for (int i = 0; i < x.otherBindings.length; ++i) {
         FieldBinding fieldBinding = x.otherBindings[i];
-        if (fieldBinding.declaringClass == null) {
-          return createArrayLengthExpression(result, fieldBinding);
-        } else {
-          INodeAdapter fieldAdapter;
-          if (fieldBinding.isStatic()) {
-            StaticFieldReference fieldReference = StaticFieldReference.newInstance(myCurrentModel);
-            result = fieldReference;
-            role = StaticFieldReference.VARIABLE_DECLARATION;
-
-            fieldReference.getNode().addReference(
-              myTypesProvider.createClassifierReference(fieldBinding.declaringClass, StaticFieldReference.CLASSIFIER, fieldReference.getNode()));
-            fieldAdapter = fieldReference;
-          } else {
-            FieldReferenceOperation operation = FieldReferenceOperation.newInstance(myCurrentModel);
-            DotExpression newDotExpression = DotExpression.newInstance(myCurrentModel);
-            role = FieldReferenceOperation.FIELD_DECLARATION;
-            newDotExpression.setOperation(operation);
-            newDotExpression.setOperand(result);
-            result = newDotExpression;
-            fieldAdapter = operation;
-          }
-          SReference fieldReference = myTypesProvider.createFieldReference(fieldBinding, role, fieldAdapter.getNode());
-          fieldAdapter.getNode().addReference(fieldReference);
-        }
+        result = expressionFromFieldBinding(fieldBinding, result);
       }
     }
 
