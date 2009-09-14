@@ -68,6 +68,7 @@ import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.workbench.action.ActionUtils;
 import jetbrains.mps.workbench.action.BaseAction;
 import jetbrains.mps.workbench.action.BaseGroup;
+import jetbrains.mps.project.GlobalScope;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -929,12 +930,16 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     myModelDescriptorsWithListener.add(sm);
   }
 
+  private void removeOurListeners(SModelDescriptor sm) {
+    myEventsCollector.remove(sm);
+    sm.removeModelListener(mySimpleModelListener);
+    myModelDescriptorsWithListener.remove(sm);
+  }
+
   private void removeOurListeners() {
     for (SModelDescriptor sm : myModelDescriptorsWithListener) {
-      myEventsCollector.remove(sm);
-      sm.removeModelListener(mySimpleModelListener);
+      removeOurListeners(sm);
     }
-    myModelDescriptorsWithListener.clear();
   }
 
   private void clearCaches() {
@@ -948,7 +953,10 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
   }
 
   private void setRootCell(EditorCell rootCell) {
-    removeOurListeners();
+    Set<SNode> nodesWhichEditorDependedOn = myCellsToNodesToDependOnMap.get(myRootCell);
+    if (nodesWhichEditorDependedOn == null) {
+      nodesWhichEditorDependedOn = new HashSet<SNode>();
+    }
 
     if (myRootCell != null) {
       ((EditorCell_Basic) myRootCell).onRemove();
@@ -964,13 +972,25 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
 
     Set<SNode> nodesWhichEditorDependsOn = myCellsToNodesToDependOnMap.get(myRootCell);
     if (nodesWhichEditorDependsOn != null) {
-      for (SNode node : nodesWhichEditorDependsOn) {
-        SModelDescriptor modelDescriptor = node.getModel().getModelDescriptor();
-        if (modelDescriptor != null) {
-          addOurListeners(modelDescriptor);
-        }
+      nodesWhichEditorDependedOn = new HashSet<SNode>();
+    }
+
+    Set<SModelReference> oldsDeps = getModels(nodesWhichEditorDependedOn);            
+    Set<SModelReference> newDeps = getModels(nodesWhichEditorDependedOn);
+
+    IScope scope = GlobalScope.getInstance();
+
+    for (SModelReference newDep : newDeps) {
+      if (!oldsDeps.contains(newDep)) {
+        addOurListeners(scope.getModelDescriptor(newDep));
       }
     }
+    for (SModelReference oldDep : oldsDeps) {
+      if (!newDeps.contains(oldDep)) {
+        removeOurListeners(scope.getModelDescriptor(oldDep));
+      }
+    }
+
 
     Set<SNodePointer> refTargetsWhichEditorDependsOn = myCellsToRefTargetsToDependOnMap.get(myRootCell);
     if (refTargetsWhichEditorDependsOn != null) {
@@ -989,6 +1009,14 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
 
     revalidate();
     repaint();
+  }
+
+  private Set<SModelReference> getModels(Set<SNode> nodes) {
+    Set<SModelReference> result = new HashSet<SModelReference>();
+    for (SNode node : nodes) {
+      result.add(node.getModel().getSModelReference());
+    }
+    return result;
   }
 
   public EditorCell getRootCell() {
