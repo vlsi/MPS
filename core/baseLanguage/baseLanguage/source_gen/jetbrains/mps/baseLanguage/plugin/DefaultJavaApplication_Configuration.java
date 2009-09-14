@@ -136,6 +136,9 @@ public class DefaultJavaApplication_Configuration extends BaseRunConfig {
           final Wrappers._T<Process> process = new Wrappers._T<Process>();
           ModelAccess.instance().runReadAction(new Runnable() {
             public void run() {
+              if (DefaultJavaApplication_Configuration.this.getStateObject().parameters.getUseAlternativeJRE()) {
+                classRunner.setJavaHomePath(DefaultJavaApplication_Configuration.this.getStateObject().parameters.getAlternativeJRE());
+              }
               process.value = classRunner.run(node.value, DefaultJavaApplication_Configuration.this.getStateObject().parameters.getProgramParameters(), DefaultJavaApplication_Configuration.this.getStateObject().parameters.getVMParameters(), DefaultJavaApplication_Configuration.this.getStateObject().parameters.getWorkingDirectory());
             }
           });
