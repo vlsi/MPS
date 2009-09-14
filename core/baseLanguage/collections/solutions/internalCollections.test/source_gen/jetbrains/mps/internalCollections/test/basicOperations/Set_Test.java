@@ -112,7 +112,7 @@ public class Set_Test extends Util_Test {
   }
 
   @Test
-  public void toString() throws Exception {
+  public void _toString() throws Exception {
     Set<Integer> test = SetSequence.fromSetAndArray(new HashSet<Integer>(), 9);
     Assert.assertEquals("[9]", String.valueOf(test));
   }

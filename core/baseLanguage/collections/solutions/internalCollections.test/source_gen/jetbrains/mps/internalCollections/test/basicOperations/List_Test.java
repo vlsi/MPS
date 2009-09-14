@@ -226,7 +226,7 @@ public class List_Test extends Util_Test {
   }
 
   @Test
-  public void toString() throws Exception {
+  public void _toString() throws Exception {
     List<Integer> test = ListSequence.fromListAndArray(new ArrayList<Integer>(), 1, 2, 3, 4, 5);
     Assert.assertEquals("[1, 2, 3, 4, 5]", String.valueOf(test));
     List<List<Integer>> test2 = ListSequence.fromListAndArray(new ArrayList<List<Integer>>(), ListSequence.fromListAndArray(new ArrayList<Integer>(), 1), ListSequence.fromListAndArray(new LinkedList<Integer>(), 2));

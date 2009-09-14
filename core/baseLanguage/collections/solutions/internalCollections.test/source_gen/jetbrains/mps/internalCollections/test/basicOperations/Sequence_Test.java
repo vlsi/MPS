@@ -375,7 +375,7 @@ __switch__:
   }
 
   @Test
-  public void toString() throws Exception {
+  public void _toString() throws Exception {
     final Wrappers._int count = new Wrappers._int(1);
     Iterable<String> test = Sequence.fromClosure(new ISequenceClosure<String>() {
       public Iterable<String> iterable() {

@@ -122,7 +122,7 @@ public class Map_Test extends Util_Test {
   }
 
   @Test
-  public void toString() throws Exception {
+  public void _toString() throws Exception {
     Map<Integer, String> test = MapSequence.<Integer, String>fromKeysArray(1).withValues("a");
     Assert.assertEquals("[1=a]", String.valueOf(test));
   }

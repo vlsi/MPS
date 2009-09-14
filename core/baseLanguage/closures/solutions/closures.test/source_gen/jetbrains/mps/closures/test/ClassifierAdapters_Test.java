@@ -241,12 +241,12 @@ __switch__:
   }
 
   @Test
-  public void returnWorker() throws Exception {
+  public void _returnWorker() throws Exception {
     Worker wrk = this.returnWorker();
   }
 
   @Test
-  public void returnProcessor() throws Exception {
+  public void _returnProcessor() throws Exception {
     Processor prc = this.returnProcessor();
     try {
       prc.process("foobar");
