@@ -68,10 +68,10 @@ public class TextLine {
   private Style myStyle;
   private boolean myBraceSelected = false;
 
-  private Padding myPaddingLeft;
-  private Padding myPaddingRight;
-  private Padding myPaddingTop;
-  private Padding myPaddingBottom;
+  private int myPaddingLeft;
+  private int myPaddingRight;
+  private int myPaddingTop;
+  private int myPaddingBottom;
 
   private boolean myControlOvered;
   private boolean myStrikeOut;
@@ -168,10 +168,10 @@ public class TextLine {
       myFont = new Font(family, style, fontSize);
     }
 
-    myPaddingLeft = myStyle.get(StyleAttributes.PADDING_LEFT);
-    myPaddingRight = myStyle.get(StyleAttributes.PADDING_RIGHT);
-    myPaddingTop = myStyle.get(StyleAttributes.PADDING_LEFT);
-    myPaddingBottom = myStyle.get(StyleAttributes.PADDING_LEFT);
+    myPaddingLeft = getHorizontalInternalInset(myStyle.get(StyleAttributes.PADDING_LEFT));
+    myPaddingRight = getHorizontalInternalInset(myStyle.get(StyleAttributes.PADDING_RIGHT));
+    myPaddingTop = getVerticalInternalInset(myStyle.get(StyleAttributes.PADDING_LEFT));
+    myPaddingBottom = getVerticalInternalInset(myStyle.get(StyleAttributes.PADDING_LEFT));
 
     myControlOvered = myStyle.get(StyleAttributes.CONTROL_OVERED_REFERENCE);
     myStrikeOut = myStyle.get(StyleAttributes.STRIKE_OUT);
@@ -204,7 +204,10 @@ public class TextLine {
     return Math.max(myMinimalLength * metrics.charWidth('w'), 2);
   }
 
-  private int getHorizontalInternalInsert(double value, Measure type) {
+  private int getHorizontalInternalInset(Padding p) {
+    double value = p.getValue();
+    Measure type = p.getType();
+
     if (type == null) {
       type = Measure.SPACES;
     }
@@ -218,7 +221,10 @@ public class TextLine {
     return 0;
   }
 
-  private int getVerticalInternalInsert(double value, Measure type) {
+  private int getVerticalInternalInset(Padding p) {
+    double value = p.getValue();
+    Measure type = p.getType();
+
     if (type == null) {
       type = Measure.SPACES;
     }
@@ -233,31 +239,19 @@ public class TextLine {
   }
 
   public int getPaddingLeft() {
-    Padding padding = myPaddingLeft;
-    Double value = padding.getValue();
-    Measure type = padding.getType();
-    return getHorizontalInternalInsert(value, type);
+    return myPaddingLeft;
   }
 
   public int getPaddingRight() {
-    Padding padding = myPaddingRight;
-    Double value = padding.getValue();
-    Measure type = padding.getType();
-    return getHorizontalInternalInsert(value, type);
+    return myPaddingRight;
   }
 
   public int getPaddingTop() {
-    Padding padding = myPaddingTop;
-    Double value = padding.getValue();
-    Measure type = padding.getType();
-    return getVerticalInternalInsert(value, type);
+    return myPaddingTop;
   }
 
   public int getPaddingBottom() {
-    Padding padding = myPaddingBottom;
-    Double value = padding.getValue();
-    Measure type = padding.getType();
-    return getVerticalInternalInsert(value, type);
+    return myPaddingBottom;
   }
 
   public int charWidth() {
