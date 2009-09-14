@@ -485,7 +485,7 @@ public abstract class AbstractModule implements IModule {
   public List<String> getClassPath() {
     ArrayList<String> result = new ArrayList<String>();
 
-    if (getClassesGen() != null && getClassesGen().exists()) {
+    if (getClassesGen() != null && getClassesGen().exists() && isCompileInMPS()) {
       result.add(getClassesGen().getCanonicalPath());
     }
     ModuleDescriptor descriptor = getModuleDescriptor();
