@@ -36,106 +36,109 @@ public class TypesProvider {
   }
 
   public Type createType(TypeBinding binding) {
-      SModel model = myReferentsCreator.myCurrentModel;
-      if (binding instanceof BaseTypeBinding) {
-        if (binding == TypeBinding.BOOLEAN) {
-          return BooleanType.newInstance(model);
-        }
-        if (binding == TypeBinding.BYTE) {
-          return ByteType.newInstance(model);
-        }
-        if (binding == TypeBinding.CHAR) {
-          return CharType.newInstance(model);
-        }
-        if (binding == TypeBinding.DOUBLE) {
-          return DoubleType.newInstance(model);
-        }
-        if (binding == TypeBinding.FLOAT) {
-          return FloatType.newInstance(model);
-        }
-        if (binding == TypeBinding.INT) {
-          return IntegerType.newInstance(model);
-        }
-        if (binding == TypeBinding.LONG) {
-          return LongType.newInstance(model);
-        }
-        if (binding == TypeBinding.SHORT) {
-          return ShortType.newInstance(model);
-        }
-        if (binding == TypeBinding.VOID) {
-          return VoidType.newInstance(model);
-        }
-        throw new JavaConverterException("Unknown base type : " + binding);
+    SModel model = myReferentsCreator.myCurrentModel;
+    if (binding instanceof BaseTypeBinding) {
+      if (binding == TypeBinding.BOOLEAN) {
+        return BooleanType.newInstance(model);
       }
-      if (binding instanceof ArrayBinding) {
-        ArrayBinding arrayBinding = (ArrayBinding) binding;
-        TypeBinding componentTypeBinding = arrayBinding.leafComponentType;
-        int dimensions = arrayBinding.dimensions;
-        ArrayType arrayType = ArrayType.newInstance(model);
-        ArrayType smallestArrayType = arrayType;
-        while (dimensions > 1) {
-          ArrayType newArrayType = ArrayType.newInstance(model);
-          smallestArrayType.setComponentType(newArrayType);
-          smallestArrayType = newArrayType;
-          dimensions--;
-        }
-        smallestArrayType.setComponentType(createType(componentTypeBinding));
-        return arrayType;
+      if (binding == TypeBinding.BYTE) {
+        return ByteType.newInstance(model);
       }
-      if (binding instanceof ReferenceBinding) {
-        if (binding instanceof WildcardBinding) {
-          WildcardBinding wildcardBinding = (WildcardBinding) binding;
-          if (wildcardBinding.isUnboundWildcard()) {
-            return WildCardType.newInstance(model);
+      if (binding == TypeBinding.CHAR) {
+        return CharType.newInstance(model);
+      }
+      if (binding == TypeBinding.DOUBLE) {
+        return DoubleType.newInstance(model);
+      }
+      if (binding == TypeBinding.FLOAT) {
+        return FloatType.newInstance(model);
+      }
+      if (binding == TypeBinding.INT) {
+        return IntegerType.newInstance(model);
+      }
+      if (binding == TypeBinding.LONG) {
+        return LongType.newInstance(model);
+      }
+      if (binding == TypeBinding.SHORT) {
+        return ShortType.newInstance(model);
+      }
+      if (binding == TypeBinding.VOID) {
+        return VoidType.newInstance(model);
+      }
+      throw new JavaConverterException("Unknown base type : " + binding);
+    }
+    if (binding instanceof ArrayBinding) {
+      ArrayBinding arrayBinding = (ArrayBinding) binding;
+      TypeBinding componentTypeBinding = arrayBinding.leafComponentType;
+      int dimensions = arrayBinding.dimensions;
+      ArrayType arrayType = ArrayType.newInstance(model);
+      ArrayType smallestArrayType = arrayType;
+      while (dimensions > 1) {
+        ArrayType newArrayType = ArrayType.newInstance(model);
+        smallestArrayType.setComponentType(newArrayType);
+        smallestArrayType = newArrayType;
+        dimensions--;
+      }
+      smallestArrayType.setComponentType(createType(componentTypeBinding));
+      return arrayType;
+    }
+    if (binding instanceof ReferenceBinding) {
+      if (binding instanceof WildcardBinding) {
+        WildcardBinding wildcardBinding = (WildcardBinding) binding;
+        if (wildcardBinding.isUnboundWildcard()) {
+          return WildCardType.newInstance(model);
+        } else {
+          if (wildcardBinding.boundKind == Wildcard.EXTENDS) {
+            UpperBoundType upperBoundType = UpperBoundType.newInstance(model);
+            upperBoundType.setBound(createType(wildcardBinding.bound)); //todo add other bounds to BL
+            return upperBoundType;
           } else {
-            if (wildcardBinding.boundKind == Wildcard.EXTENDS) {
-              UpperBoundType upperBoundType = UpperBoundType.newInstance(model);
-              upperBoundType.setBound(createType(wildcardBinding.bound)); //todo add other bounds to BL
-              return upperBoundType;
-            } else {
-              //SUPER
-              LowerBoundType lowerBoundType = LowerBoundType.newInstance(model);
-              lowerBoundType.setBound(createType(wildcardBinding.bound));
-              return lowerBoundType;
-            }
+            //SUPER
+            LowerBoundType lowerBoundType = LowerBoundType.newInstance(model);
+            lowerBoundType.setBound(createType(wildcardBinding.bound));
+            return lowerBoundType;
           }
         }
-        if (binding instanceof ParameterizedTypeBinding) {   //todo debug this carefully
-          ParameterizedTypeBinding parameterizedTypeBinding = (ParameterizedTypeBinding) binding;
-          ReferenceBinding originalType = parameterizedTypeBinding.genericType();
-          ClassifierType result = ClassifierType.newInstance(model);
-          result.setClassifier((Classifier) myReferentsCreator.myBindingMap.get(originalType));
-          for (TypeBinding typeBinding : parameterizedTypeBinding.arguments) {
+      }
+      if (binding instanceof ParameterizedTypeBinding) {   //todo debug this carefully
+        ParameterizedTypeBinding parameterizedTypeBinding = (ParameterizedTypeBinding) binding;
+        ReferenceBinding originalType = parameterizedTypeBinding.genericType();
+        ClassifierType result = ClassifierType.newInstance(model);
+        result.getNode().addReference(createClassifierReference(originalType, ClassifierType.CLASSIFIER, result.getNode()));
+        TypeBinding[] typeBindings = parameterizedTypeBinding.arguments;
+        if (typeBindings != null) {
+          for (TypeBinding typeBinding : typeBindings) {
             result.addParameter(createType(typeBinding));
           }
-          return result;
         }
-        if (binding instanceof SourceTypeBinding) {
-          ClassifierType classifierType = ClassifierType.newInstance(model);
-          classifierType.setClassifier((Classifier) myReferentsCreator.myBindingMap.get(binding));
-          return classifierType;
-        }
-        if (binding instanceof BinaryTypeBinding) {
-          //in java stubs
-          ClassifierType classifierType = ClassifierType.newInstance(model);
-          BinaryTypeBinding binaryTypeBinding = (BinaryTypeBinding) binding;
-          SReference reference = createClassifierReference(binaryTypeBinding, ClassifierType.CLASSIFIER, classifierType.getNode());
-          classifierType.getNode().addReference(reference);
-          return classifierType;
-        }
-        if (binding instanceof TypeVariableBinding) {
-          TypeVariableBinding typeVariableBinding = (TypeVariableBinding) binding;
-          TypeVariableReference tvr = TypeVariableReference.newInstance(model);
-          INodeAdapter declaringGeneric = myReferentsCreator.myBindingMap.get(typeVariableBinding.declaringElement);
-          if (declaringGeneric instanceof GenericDeclaration) {
-            tvr.setTypeVariableDeclaration(((GenericDeclaration) declaringGeneric).getTypeVariableDeclarations().get(typeVariableBinding.rank));
-          } else {
-            throw new JavaConverterException("Declaring element for a type var is not a GenericDeclaration");
-          }
+        return result;
+      }
+      if (binding instanceof SourceTypeBinding) {
+        ClassifierType classifierType = ClassifierType.newInstance(model);
+        classifierType.setClassifier((Classifier) myReferentsCreator.myBindingMap.get(binding));
+        return classifierType;
+      }
+      if (binding instanceof BinaryTypeBinding) {
+        //in java stubs
+        ClassifierType classifierType = ClassifierType.newInstance(model);
+        BinaryTypeBinding binaryTypeBinding = (BinaryTypeBinding) binding;
+        SReference reference = createClassifierReference(binaryTypeBinding, ClassifierType.CLASSIFIER, classifierType.getNode());
+        classifierType.getNode().addReference(reference);
+        return classifierType;
+      }
+      if (binding instanceof TypeVariableBinding) {
+        TypeVariableBinding typeVariableBinding = (TypeVariableBinding) binding;
+        TypeVariableReference tvr = TypeVariableReference.newInstance(model);
+        INodeAdapter declaringGeneric = myReferentsCreator.myBindingMap.get(typeVariableBinding.declaringElement);
+        if (declaringGeneric instanceof GenericDeclaration) {
+          tvr.setTypeVariableDeclaration(((GenericDeclaration) declaringGeneric).getTypeVariableDeclarations().get(typeVariableBinding.rank));
+        } else {
+          throw new JavaConverterException("Declaring element for a type var is not a GenericDeclaration");
         }
       }
-      return null;
     }
+    return null;
+  }
 
   private Foreign getClassifierNodeId(BinaryTypeBinding binaryTypeBinding) {
     return new Foreign(Foreign.ID_PREFIX
@@ -143,19 +146,28 @@ public class TypesProvider {
   }
 
   public SReference createMethodReference(MethodBinding binding, String role, SNode sourceNode) {
-     INodeAdapter adapter = myReferentsCreator.myBindingMap.get(binding);
-     if (adapter != null) {
-       return SReference.create(role, sourceNode, adapter.getNode());
-     }
-     if (binding.declaringClass instanceof BinaryTypeBinding) {
-       //java stub
-       BinaryTypeBinding binaryTypeBinding = (BinaryTypeBinding) binding.declaringClass;
-       SNodeId nodeId = createMethodId(binding, binaryTypeBinding);
-       SModelReference modelReference = modelReferenceFromBinaryClassBinding(binaryTypeBinding);
-       return SReference.create(role, sourceNode, modelReference, nodeId);
-     }
-     return null;
-   }
+    INodeAdapter adapter = myReferentsCreator.myBindingMap.get(binding);
+    if (adapter != null) {
+      return SReference.create(role, sourceNode, adapter.getNode());
+    }
+    if (binding.declaringClass instanceof BinaryTypeBinding) {
+      //java stub
+      BinaryTypeBinding binaryTypeBinding = (BinaryTypeBinding) binding.declaringClass;
+      SNodeId nodeId = createMethodId(binding, binaryTypeBinding);
+      SModelReference modelReference = modelReferenceFromBinaryClassBinding(binaryTypeBinding);
+      return SReference.create(role, sourceNode, modelReference, nodeId);
+    }
+    if (binding.declaringClass instanceof ParameterizedTypeBinding) {
+      ParameterizedTypeBinding parameterizedTypeBinding = (ParameterizedTypeBinding) binding.declaringClass;
+      if (parameterizedTypeBinding.genericType() instanceof BinaryTypeBinding) {
+        BinaryTypeBinding binaryTypeBinding = (BinaryTypeBinding) parameterizedTypeBinding.genericType();
+         SNodeId nodeId = createMethodId(binding, binaryTypeBinding);
+      SModelReference modelReference = modelReferenceFromBinaryClassBinding(binaryTypeBinding);
+      return SReference.create(role, sourceNode, modelReference, nodeId);
+      }
+    }
+    return null;
+  }
 
   private SModelReference modelReferenceFromBinaryClassBinding(BinaryTypeBinding binaryTypeBinding) {
     String classFQName = classFqNameFromCompoundName(binaryTypeBinding.compoundName);
@@ -246,9 +258,9 @@ public class TypesProvider {
     throw new RuntimeException("unexpected type: " + type);
   }
 
-   private static void appendList(StringBuilder sb, TypeBinding[] types) {
-     appendList(sb, types, null);
-   }
+  private static void appendList(StringBuilder sb, TypeBinding[] types) {
+    appendList(sb, types, null);
+  }
 
   private static void appendList(StringBuilder sb, TypeBinding[] types, MethodBinding context) {
     for (int i = 0; i < types.length; i++) {
@@ -280,13 +292,17 @@ public class TypesProvider {
     if (adapter != null) {
       return SReference.create(role, sourceNode, adapter.getNode());
     }
-     if (binding.declaringClass instanceof BinaryTypeBinding) {
-       //java stub
-       BinaryTypeBinding binaryTypeBinding = (BinaryTypeBinding) binding.declaringClass;
-       SNodeId nodeId = createFieldId(binding, binaryTypeBinding);
-       SModelReference modelReference = modelReferenceFromBinaryClassBinding(binaryTypeBinding);
-       return SReference.create(role, sourceNode, modelReference, nodeId);
-     }
-     return null;
+    if (binding.declaringClass instanceof BinaryTypeBinding) {
+      //java stub
+      BinaryTypeBinding binaryTypeBinding = (BinaryTypeBinding) binding.declaringClass;
+      SNodeId nodeId = createFieldId(binding, binaryTypeBinding);
+      SModelReference modelReference = modelReferenceFromBinaryClassBinding(binaryTypeBinding);
+      return SReference.create(role, sourceNode, modelReference, nodeId);
+    }
+    return null;
+  }
+
+  public INodeAdapter getRaw(Binding binding) {
+    return myReferentsCreator.myBindingMap.get(binding);
   }
 }

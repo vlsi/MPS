@@ -831,5 +831,45 @@
       </node>
     </node>
   </node>
+  <node type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="9208986239681942393">
+    <property name="name" value="OrdinaryClass6" />
+    <node role="superclass" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="9208986239681942394">
+      <link role="classifier" targetNodeId="150.~Object" />
+    </node>
+    <node role="constructor" type="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" id="9208986239681942395">
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="9208986239681942396" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="9208986239681942397" />
+    </node>
+    <node role="instanceInitializer" type="jetbrains.mps.baseLanguage.structure.InstanceInitializer" id="9208986239681942398">
+      <node role="statementList" type="jetbrains.mps.baseLanguage.structure.StatementList" id="9208986239681942399">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="9208986239681942400">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="9208986239681942401">
+            <property name="name" value="s" />
+            <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="9208986239681942402">
+              <link role="classifier" targetNodeId="150.~String" />
+            </node>
+            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="9208986239681942403">
+              <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="9208986239681942404">
+                <link role="baseMethodDeclaration" targetNodeId="150.~String.&lt;init&gt;()" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="9208986239681942405">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="9208986239681942406">
+            <property name="name" value="l" />
+            <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="9208986239681942407">
+              <link role="classifier" targetNodeId="149.~List" />
+            </node>
+            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="9208986239681942408">
+              <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="9208986239681942409">
+                <link role="baseMethodDeclaration" targetNodeId="149.~ArrayList.&lt;init&gt;()" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
 </model>
 

@@ -523,7 +523,7 @@ public class JavaConverterTreeBuilder {
     SNode sourceNode;
     jetbrains.mps.baseLanguage.structure.Expression result;
     if (fieldBinding.isStatic()) {
-      if (myCurrentClass == myBindingMap.get(fieldBinding.declaringClass)) {
+      if (myCurrentClass == myTypesProvider.getRaw(fieldBinding.declaringClass)) {
         //unqualified static field reference
         role = LocalStaticFieldReference.VARIABLE_DECLARATION;
         LocalStaticFieldReference lsfr = LocalStaticFieldReference.newInstance(myCurrentModel);
@@ -543,7 +543,7 @@ public class JavaConverterTreeBuilder {
       if (instanceExpression == null) {
         ThisExpression thisExpression = ThisExpression.newInstance(myCurrentModel);
         ReferenceBinding declaredClassBinding = fieldBinding.declaringClass;
-        if (myCurrentClass != myBindingMap.get(declaredClassBinding)) {
+        if (myCurrentClass != myTypesProvider.getRaw(declaredClassBinding)) {
           thisExpression.getNode().addReference(
             myTypesProvider.createClassifierReference(declaredClassBinding, ThisExpression.CLASS_CONCEPT, thisExpression.getNode()));
         }
@@ -624,36 +624,21 @@ public class JavaConverterTreeBuilder {
     return result;
   }
 
-  private SourceTypeBinding erasure(TypeBinding typeBinding) {
-    if (typeBinding instanceof ParameterizedTypeBinding) {
-      typeBinding = ((ParameterizedTypeBinding) typeBinding).erasure();
-    }
-    return (SourceTypeBinding) typeBinding;
-  }
-
   jetbrains.mps.baseLanguage.structure.Expression processExpression(AllocationExpression x) {
-    SourceTypeBinding typeBinding = erasure(x.resolvedType);
-    if (typeBinding.constantPoolName() == null) {
-      /*
-      * Weird case: if JDT determines that this local class is totally
-      * uninstantiable, it won't bother allocating a local name.
-      */
-      return jetbrains.mps.baseLanguage.structure.NullLiteral.newInstance(myCurrentModel);
-    }
-    Classifier newClassifier = (Classifier) myBindingMap.get(typeBinding);
     MethodBinding b = x.binding;
-    jetbrains.mps.baseLanguage.structure.ConstructorDeclaration ctor =
-      (jetbrains.mps.baseLanguage.structure.ConstructorDeclaration) myBindingMap.get(b);
-    // JMethodCall call;
     ClassCreator classCreator = ClassCreator.newInstance(myCurrentModel);
-    classCreator.setConstructorDeclaration(ctor);
+    SReference methodReference = myTypesProvider.createMethodReference(b, ClassCreator.BASE_METHOD_DECLARATION, classCreator.getNode());
+    classCreator.getNode().addReference(methodReference);
 
     if (x.enumConstant != null) {
       throw new JavaConverterException("unexpected enum constant creation");
     }
 
-    for (TypeReference typeReference : x.typeArguments) {
-      classCreator.addTypeParameter(createType(typeReference.resolvedType));
+    TypeReference[] references = x.typeArguments;
+    if (references != null) {
+      for (TypeReference typeReference : references) {
+        classCreator.addTypeParameter(createType(typeReference.resolvedType));
+      }
     }
 
     // Plain old regular user arguments
@@ -708,7 +693,7 @@ public class JavaConverterTreeBuilder {
   }
 
   private jetbrains.mps.baseLanguage.structure.Expression varFromVariableBinding(Binding binding) {
-    INodeAdapter target = myBindingMap.get(binding);
+    INodeAdapter target = myTypesProvider.getRaw(binding);
     if (!(target instanceof VariableDeclaration)) {
       return null;
     }
@@ -861,7 +846,7 @@ public class JavaConverterTreeBuilder {
   }
 
   private LocalVariableDeclaration getLocalVariableDeclaration(LocalDeclaration x) {
-    LocalVariableDeclaration local = (LocalVariableDeclaration) myBindingMap.get(x.binding);
+    LocalVariableDeclaration local = (LocalVariableDeclaration) myTypesProvider.getRaw(x.binding);
     jetbrains.mps.baseLanguage.structure.Expression initializer = processExpressionRefl(x.initialization);
     local.setInitializer(initializer);
     return local;
@@ -879,7 +864,7 @@ public class JavaConverterTreeBuilder {
       jetbrains.mps.baseLanguage.structure.ForeachStatement.newInstance(myCurrentModel);
     Statement action = processStatementRefl(x.action);
     StatementList body = getStatementListFromStatement(action);
-    LocalVariableDeclaration elementVar = (LocalVariableDeclaration) myBindingMap.get(x.elementVariable.binding);
+    LocalVariableDeclaration elementVar = (LocalVariableDeclaration) myTypesProvider.getRaw(x.elementVariable.binding);
     jetbrains.mps.baseLanguage.structure.Expression iterable = processExpressionRefl(x.collection);
     result.setIterable(iterable);
     result.setVariable(elementVar);
