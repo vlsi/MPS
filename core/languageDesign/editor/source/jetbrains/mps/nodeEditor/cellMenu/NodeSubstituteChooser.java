@@ -34,9 +34,7 @@ import javax.swing.*;
 import javax.swing.event.ListDataListener;
 import java.awt.*;
 import java.awt.event.*;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Comparator;
+import java.util.*;
 import java.util.List;
 
 /**
@@ -177,9 +175,20 @@ public class NodeSubstituteChooser implements KeyboardHandler {
 
         try {
           Collections.sort(matchingActions, new Comparator<INodeSubstituteAction>() {
+            private Map<INodeSubstituteAction, Integer> mySortPriorities = new HashMap<INodeSubstituteAction, Integer>();
+
+            private int getSortPriority(INodeSubstituteAction a) {
+              Integer result = mySortPriorities.get(a);
+              if (result == null) {
+                result = a.getSortPriority(pattern);
+                mySortPriorities.put(a, result);
+              }
+              return result;
+            }
+
             public int compare(INodeSubstituteAction i1, INodeSubstituteAction i2) {
-              int p1 = i1.getSortPriority(pattern);
-              int p2 = i2.getSortPriority(pattern);
+              int p1 = getSortPriority(i1);
+              int p2 = getSortPriority(i2);
               if (p1 != p2) {
                 return p1 - p2;
               }
