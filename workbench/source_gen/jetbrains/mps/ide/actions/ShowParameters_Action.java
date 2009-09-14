@@ -83,7 +83,7 @@ public class ShowParameters_Action extends GeneratedAction {
 
   public void doExecute(@NotNull final AnActionEvent event) {
     try {
-      Point p = new Point(ShowParameters_Action.this.cell.getX() + ShowParameters_Action.this.cell.getWidth(), ShowParameters_Action.this.cell.getY());
+      Point p = new Point(ShowParameters_Action.this.cell.getX() + ShowParameters_Action.this.cell.getWidth(), ShowParameters_Action.this.cell.getY() + ShowParameters_Action.this.cell.getHeight());
       SwingUtilities.convertPointToScreen(p, ShowParameters_Action.this.editor);
       new ParametersInformationDialog(ShowParameters_Action.this.frame, p, ShowParameters_Action.this.getMethod()).setVisible(true);
     } catch (Throwable t) {

@@ -25,22 +25,41 @@ import javax.swing.JTextPane;
 import javax.swing.text.html.HTMLDocument;
 import javax.swing.border.LineBorder;
 import java.awt.*;
-import java.awt.event.KeyAdapter;
-import java.awt.event.KeyEvent;
-import java.awt.event.WindowFocusListener;
-import java.awt.event.WindowEvent;
+import java.awt.event.*;
 
 public abstract class AbstractNodeInformationDialog extends JDialog {
   private JTextPane myLabel;
   private static final Color BACKGROUND_COLOR = new Color(253, 254, 226);
+  private Component prevFocusOwner;
+  private FocusListener myOwnerFocusListener = new FocusAdapter() {
+    @Override
+    public void focusLost(FocusEvent focusEvent) {
+      dispose();
+    }
+  };
+
+  private MouseListener myOwnerMouseListener = new MouseAdapter() {
+    @Override
+    public void mousePressed(MouseEvent mouseEvent) {
+      dispose();
+    }
+  };
+
+  private KeyListener myOwnerKeyListener = new KeyAdapter() {
+    @Override
+    public void keyPressed(KeyEvent keyEvent) {
+      dispose();
+    }
+  };
 
   public AbstractNodeInformationDialog(Frame owner, Point location, SNode node) {
     super(owner);
 
+    prevFocusOwner = owner.getFocusOwner();
+
     setUndecorated(true);
     setModal(false);
-
-    HTMLDocument htmlDocument = new HTMLDocument();
+    setFocusableWindowState(false);
 
     myLabel = new JTextPane();
 
@@ -59,7 +78,7 @@ public abstract class AbstractNodeInformationDialog extends JDialog {
 
     JScrollPane scrollPane = new JScrollPane(myLabel);
     scrollPane.setBorder(new LineBorder(Color.BLACK));
-    add(scrollPane);    
+    add(scrollPane);
 
     pack();
     setLocation(location);
@@ -83,17 +102,23 @@ public abstract class AbstractNodeInformationDialog extends JDialog {
       }
     });
 
-    addWindowFocusListener(new WindowFocusListener() {
-      public void windowGainedFocus(WindowEvent e) {
-        myLabel.requestFocus();
-      }
-
-      public void windowLostFocus(WindowEvent e) {
-        dispose();
-      }
-    });
+    addListeners();    
   }
 
+  private void addListeners() {
+    prevFocusOwner.addFocusListener(myOwnerFocusListener);
+    prevFocusOwner.addKeyListener(myOwnerKeyListener);
+    prevFocusOwner.addMouseListener(myOwnerMouseListener);
+  }
+
+
+  @Override
+  public void dispose() {
+    prevFocusOwner.removeFocusListener(myOwnerFocusListener);
+    prevFocusOwner.removeKeyListener(myOwnerKeyListener);
+    prevFocusOwner.removeMouseListener(myOwnerMouseListener);
+    super.dispose();
+  }
 
   protected Dimension getDefaultSize() {
     return new Dimension(400, 300);
