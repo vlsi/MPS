@@ -20,7 +20,9 @@ import jetbrains.mps.util.WindowsUtil;
 
 import javax.swing.JDialog;
 import javax.swing.JScrollPane;
+import javax.swing.JLabel;
 import javax.swing.JTextPane;
+import javax.swing.text.html.HTMLDocument;
 import javax.swing.border.LineBorder;
 import java.awt.*;
 import java.awt.event.KeyAdapter;
@@ -29,7 +31,8 @@ import java.awt.event.WindowFocusListener;
 import java.awt.event.WindowEvent;
 
 public abstract class AbstractNodeInformationDialog extends JDialog {
-  private JTextPane myTextPane;
+  private JTextPane myLabel;
+  private static final Color BACKGROUND_COLOR = new Color(253, 254, 226);
 
   public AbstractNodeInformationDialog(Frame owner, Point location, SNode node) {
     super(owner);
@@ -37,27 +40,26 @@ public abstract class AbstractNodeInformationDialog extends JDialog {
     setUndecorated(true);
     setModal(false);
 
-    myTextPane = new JTextPane();
-    myTextPane.setText(createNodeInfo(node));
+    HTMLDocument htmlDocument = new HTMLDocument();
+
+    myLabel = new JTextPane();
+
+    myLabel.setEditable(false);
+    String text = createNodeInfo(node);
+    if (text.startsWith("<html>")) {
+      myLabel.setContentType("text/html");
+    }
+    myLabel.setText(text);
+
+    myLabel.setFont(EditorSettings.getInstance().getDefaultEditorFont());
 
 
-    myTextPane.setFont(EditorSettings.getInstance().getDefaultEditorFont());
-    myTextPane.setEditable(false);
+    myLabel.setOpaque(true);
+    myLabel.setBackground(BACKGROUND_COLOR);
 
-    Dimension preferredSize = myTextPane.getPreferredSize();
-
-    myTextPane.setBackground(new Color(255, 255, 200));
-
-    JScrollPane scrollPane = new JScrollPane(myTextPane);
+    JScrollPane scrollPane = new JScrollPane(myLabel);
     scrollPane.setBorder(new LineBorder(Color.BLACK));
-    add(scrollPane);
-
-    Dimension newSize = null;
-
-
-    //newSize = new Dimension(Math.min(getDefaultSize().width, preferredSize.width) + 1,
-//        Math.min(getDefaultSize().height, preferredSize.height));
-
+    add(scrollPane);    
 
     pack();
     setLocation(location);
@@ -72,7 +74,7 @@ public abstract class AbstractNodeInformationDialog extends JDialog {
       setLocation(getX(), rect.y + rect.height - getHeight());
     }
 
-    myTextPane.addKeyListener(new KeyAdapter() {
+    myLabel.addKeyListener(new KeyAdapter() {
       public void keyPressed(KeyEvent e) {
         if (e.getKeyCode() == KeyEvent.VK_ESCAPE) {
           dispose();
@@ -83,7 +85,7 @@ public abstract class AbstractNodeInformationDialog extends JDialog {
 
     addWindowFocusListener(new WindowFocusListener() {
       public void windowGainedFocus(WindowEvent e) {
-        myTextPane.requestFocus();
+        myLabel.requestFocus();
       }
 
       public void windowLostFocus(WindowEvent e) {
