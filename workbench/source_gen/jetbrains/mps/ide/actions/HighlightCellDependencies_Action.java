@@ -68,9 +68,9 @@ public class HighlightCellDependencies_Action extends GeneratedAction {
       NodeHighlightManager highlightManager = HighlightCellDependencies_Action.this.editorComponent.getHighlightManager();
       EditorMessageOwner messageOwner = HighlightCellDependencies_Action.this.editorComponent.getHighlightMessagesOwner();
       highlightManager.mark(HighlightCellDependencies_Action.this.editorCell.getSNode(), HighlightConstants.NODE_COLOR, "node", messageOwner);
-      Set<SNode> copyOfNodes = HighlightCellDependencies_Action.this.editorComponent.getCopyOfNodesCellDependsOn(HighlightCellDependencies_Action.this.editorCell);
-      if (copyOfNodes != null) {
-        for (SNode node : SetSequence.fromSet(copyOfNodes)) {
+      Set<SNode> nodes = HighlightCellDependencies_Action.this.editorComponent.getNodesCellDependOn(HighlightCellDependencies_Action.this.editorCell);
+      if (nodes != null) {
+        for (SNode node : SetSequence.fromSet(nodes)) {
           highlightManager.mark(node, HighlightConstants.DEPENDENCY_COLOR, "usage", messageOwner);
         }
       }

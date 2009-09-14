@@ -18334,7 +18334,7 @@
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="227146524086775790">
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="227146524086775791">
-            <property name="name" value="copyOfNodes" />
+            <property name="name" value="nodes" />
             <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="227146524086775792">
               <link role="classifier" targetNodeId="78.~Set" resolveInfo="Set" />
               <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="227146524086775793">
@@ -18349,7 +18349,7 @@
                 </node>
               </node>
               <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="227146524086775798">
-                <link role="baseMethodDeclaration" targetNodeId="65.~EditorComponent.getCopyOfNodesCellDependsOn(jetbrains.mps.nodeEditor.cells.EditorCell):java.util.Set" resolveInfo="getCopyOfNodesCellDependsOn" />
+                <link role="baseMethodDeclaration" targetNodeId="65.~EditorComponent.getNodesCellDependOn(jetbrains.mps.nodeEditor.cells.EditorCell):java.util.Set" resolveInfo="getNodesCellDependOn" />
                 <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="227146524086775799">
                   <node role="operand" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpression" id="227146524086775800" />
                   <node role="operation" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterReferenceOperation" id="227146524086775801">

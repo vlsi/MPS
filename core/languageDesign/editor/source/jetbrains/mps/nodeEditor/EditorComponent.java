@@ -937,7 +937,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
   }
 
   private void removeOurListeners() {
-    for (SModelDescriptor sm : myModelDescriptorsWithListener) {
+    for (SModelDescriptor sm : myModelDescriptorsWithListener.toArray(new SModelDescriptor[myModelDescriptorsWithListener.size()])) {
       removeOurListeners(sm);
     }
   }
@@ -948,7 +948,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     myNodesToBigCellsMap.clear();
     myRefNodeContextsToBigCellsMap.clear();
     myNodePropertiesAccessedCleanlyToDependentCellsMap.clear();
-    myNodePropertiesAccessedDirtilyToDependentCellsMap.clear();
+    myNodePropertiesAcc`essedDirtilyToDependentCellsMap.clear();
     myNodePropertiesWhichExistenceWasCheckedToDependentCellsMap.clear();
   }
 
@@ -2102,10 +2102,10 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     myCellsToRefTargetsToDependOnMap.put(cell, refTargets);
   }
 
-  public Set<SNode> getCopyOfNodesCellDependsOn(EditorCell cell) {
+  public Set<SNode> getNodesCellDependOn(EditorCell cell) {
     Set<SNode> nodes = myCellsToNodesToDependOnMap.get(cell);
     if (nodes == null) return null;
-    return new HashSet<SNode>(nodes);
+    return Collections.unmodifiableSet(nodes);
   }
 
   public Set<SNodePointer> getCopyOfRefTargetsCellDependsOn(EditorCell cell) {

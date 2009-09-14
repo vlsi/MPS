@@ -174,7 +174,7 @@ public class EditorManager {
       if (!nodeChanged) {
         if (myMap.containsKey(refContext)) {
           EditorCell editorCell = myMap.get(refContext);
-          final Set<SNode> nodesOldCellDependsOn = nodeEditorComponent.getCopyOfNodesCellDependsOn(editorCell);
+          final Set<SNode> nodesOldCellDependsOn = nodeEditorComponent.getNodesCellDependOn(editorCell);
           final Set<SNodePointer> refTargetsOldCellDependsOn = nodeEditorComponent.getCopyOfRefTargetsCellDependsOn(editorCell);
           if (nodesOldCellDependsOn != null || refTargetsOldCellDependsOn != null) {
             //voodoo for editor incremental rebuild support:
