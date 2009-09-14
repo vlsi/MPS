@@ -6,10 +6,7 @@ import jetbrains.mps.baseLanguage.structure.StringLiteral;
 import jetbrains.mps.baseLanguage.structure.Statement;
 import jetbrains.mps.baseLanguage.structure.FieldDeclaration;
 import jetbrains.mps.baseLanguage.structure.CastExpression;
-import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.smodel.INodeAdapter;
-import jetbrains.mps.smodel.CopyUtil;
-import jetbrains.mps.smodel.SReference;
+import jetbrains.mps.smodel.*;
 import org.eclipse.jdt.internal.compiler.impl.*;
 import org.eclipse.jdt.internal.compiler.impl.BooleanConstant;
 import org.eclipse.jdt.internal.compiler.impl.CharConstant;
@@ -516,30 +513,32 @@ public class JavaConverterTreeBuilder {
   }
 
   jetbrains.mps.baseLanguage.structure.Expression processExpression(FieldReference x) {
-    //todo don't look in map, ask types provider
+    String role;
+    SNode sourceNode;
+    jetbrains.mps.baseLanguage.structure.Expression result;
     FieldBinding fieldBinding = x.binding;
     if (fieldBinding.isStatic()) {
-      StaticFieldDeclaration staticFieldDeclaration = (StaticFieldDeclaration) myBindingMap.get(fieldBinding);
+      role = StaticFieldReference.VARIABLE_DECLARATION;
       StaticFieldReference sfr = StaticFieldReference.newInstance(myCurrentModel);
-      sfr.setStaticFieldDeclaration(staticFieldDeclaration);
       sfr.setClassifier((Classifier) myBindingMap.get(fieldBinding));
-      return sfr;
+      sourceNode = sfr.getNode();
+      result = sfr;
     } else {
-      FieldDeclaration field;
+      role = FieldReferenceOperation.FIELD_DECLARATION;
       jetbrains.mps.baseLanguage.structure.Expression instance = processExpressionRefl(x.receiver);
       if (fieldBinding.declaringClass == null) {
         return createArrayLengthExpression(instance, fieldBinding);
-      } else {
-        field = (FieldDeclaration) myBindingMap.get(fieldBinding);
       }
       FieldReferenceOperation fieldRef = FieldReferenceOperation.newInstance(myCurrentModel);
       DotExpression dotExpression = DotExpression.newInstance(myCurrentModel);
-      fieldRef.setFieldDeclaration(field);
       dotExpression.setOperation(fieldRef);
       dotExpression.setOperand(instance);
-
-      return dotExpression;
+      sourceNode = fieldRef.getNode();
+      result = dotExpression;
     }
+    SReference fieldReference = myTypesProvider.createFieldReference(x.binding, role, sourceNode);
+    sourceNode.addReference(fieldReference);
+    return result;
   }
 
 

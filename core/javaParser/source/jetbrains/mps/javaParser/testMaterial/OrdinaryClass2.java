@@ -13,6 +13,7 @@ public class OrdinaryClass2 {
   public OrdinaryClass2() {
     System.err.println("");
     OrdinaryClass2 ordinaryClass2 = ourOrdinaryClass2.myOrdinaryClass2.myOrdinaryClass2;
+    OrdinaryClass2 ordinaryClass3 = this.myOrdinaryClass2;
   }
 
   public void foo(int a) {
