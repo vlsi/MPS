@@ -17,7 +17,7 @@ import junit.framework.Assert;
 
 public class SelectTest_Test extends Util_Test {
   @Test
-  public void test_selectMethod() throws Exception {
+  public void selectMethod() throws Exception {
     ISequence<Integer> seq = Sequence.fromIterable(this.input5());
     ISequence<Integer> test = seq.select(new ISelector<Integer, Integer>() {
       public Integer select(Integer it) {
@@ -31,7 +31,7 @@ public class SelectTest_Test extends Util_Test {
   }
 
   @Test
-  public void test_selectMethod2() throws Exception {
+  public void selectMethod2() throws Exception {
     int a = Character.valueOf('a').charValue();
     Iterable<Integer> input = Arrays.asList(a, a + 1, a + 2, a + 3, a + 4);
     ISequence<Integer> seq = Sequence.fromIterable(input);
@@ -44,7 +44,7 @@ public class SelectTest_Test extends Util_Test {
   }
 
   @Test
-  public void test_selectorVar() throws Exception {
+  public void selectorVar() throws Exception {
     ISequence<Integer> seq = Sequence.fromIterable(this.input5());
     ISelector<Integer, Integer> selector = new ISelector<Integer, Integer>() {
       public Integer select(Integer it) {
@@ -59,7 +59,7 @@ public class SelectTest_Test extends Util_Test {
   }
 
   @Test
-  public void test_selectOperation() throws Exception {
+  public void selectOperation() throws Exception {
     Iterable<Integer> test = Sequence.fromIterable(this.input5()).select(new ISelector<Integer, Integer>() {
       public Integer select(Integer it) {
         return it * 2;
@@ -69,7 +69,7 @@ public class SelectTest_Test extends Util_Test {
   }
 
   @Test
-  public void test_legacySelector() throws Exception {
+  public void legacySelector() throws Exception {
     Iterable<Integer> test = Sequence.fromIterable(this.input5()).select(new ISelector<Integer, Integer>() {
       public Integer select(Integer it) {
         return it * 2;
@@ -79,7 +79,7 @@ public class SelectTest_Test extends Util_Test {
   }
 
   @Test
-  public void test_selectMany() throws Exception {
+  public void selectMany() throws Exception {
     final List<Integer> list = ListSequence.fromListAndArray(new ArrayList<Integer>(), 1, 2, 3);
     Iterable<Integer> test = Sequence.fromClosure(new ISequenceClosure<Integer>() {
       public Iterable<Integer> iterable() {
@@ -128,7 +128,7 @@ __switch__:
   }
 
   @Test
-  public void test_nextWithoutHasNext() throws Exception {
+  public void nextWithoutHasNext() throws Exception {
     this.assertIteratorYields(ListSequence.fromList(ListSequence.fromListAndArray(new ArrayList<Integer>(), 1, 2, 3)).select(new ISelector<Integer, Integer>() {
       public Integer select(Integer i) {
         return i * 2;

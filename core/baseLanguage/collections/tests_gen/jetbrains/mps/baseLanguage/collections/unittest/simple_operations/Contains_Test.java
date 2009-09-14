@@ -15,7 +15,7 @@ import java.util.ArrayList;
 
 public class Contains_Test extends TestCase {
   @Test
-  public void test_test1() throws Exception {
+  public void test1() throws Exception {
     Iterable<Integer> intS = Sequence.fromClosure(new ISequenceClosure<Integer>() {
       public Iterable<Integer> iterable() {
         return new Iterable<Integer>() {
@@ -62,7 +62,7 @@ __switch__:
   }
 
   @Test
-  public void test_test2() throws Exception {
+  public void test2() throws Exception {
     List<Integer> intL = ListSequence.fromListAndArray(new ArrayList<Integer>(), 10, 20, 30);
     Assert.assertTrue(ListSequence.fromList(intL).contains(10));
     Assert.assertFalse(ListSequence.fromList(intL).contains(15));

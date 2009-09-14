@@ -16,7 +16,7 @@ import jetbrains.mps.baseLanguage.closures.runtime.YieldingIterator;
 
 public class Distinct_Test extends TestCase {
   @Test
-  public void test_distinct1() throws Exception {
+  public void distinct1() throws Exception {
     Iterable<Integer> source;
     source = ListSequence.fromListAndArray(new ArrayList<Integer>(), 1, 2, 2, 3, 4, 4, 5);
     source = Sequence.fromIterable(source).distinct();
@@ -44,7 +44,7 @@ public class Distinct_Test extends TestCase {
   }
 
   @Test
-  public void test_distinct2() throws Exception {
+  public void distinct2() throws Exception {
     Iterable<Integer> source;
     source = Sequence.fromClosure(new ISequenceClosure<Integer>() {
       public Iterable<Integer> iterable() {
@@ -128,7 +128,7 @@ __switch__:
   }
 
   @Test
-  public void test_null() throws Exception {
+  public void null() throws Exception {
     Iterable<Integer> source = null;
     source = Sequence.fromIterable(source).distinct();
     Assert.assertTrue(Sequence.fromIterable(source).count() == 0);

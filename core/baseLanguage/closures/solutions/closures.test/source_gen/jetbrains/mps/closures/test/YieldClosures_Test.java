@@ -20,7 +20,7 @@ import jetbrains.mps.baseLanguage.closures.runtime.DelayedException;
 
 public class YieldClosures_Test extends ClosuresBase_Test {
   @Test
-  public void test_ifStatement() throws Exception {
+  public void ifStatement() throws Exception {
     this.assertResultsEqual(new _FunctionTypes._void_P1_E0<List<Integer>>() {
       public void invoke(List<Integer> exp) {
         ListSequence.fromList(exp).addElement(1);
@@ -126,7 +126,7 @@ __switch__:
   }
 
   @Test
-  public void test_whileStatement() throws Exception {
+  public void whileStatement() throws Exception {
     this.assertResultsEqual(new _FunctionTypes._void_P1_E0<List<Integer>>() {
       public void invoke(List<Integer> exp) {
         int i = 3;
@@ -232,7 +232,7 @@ __switch__:
   }
 
   @Test
-  public void test_doWhileStatement() throws Exception {
+  public void doWhileStatement() throws Exception {
     this.assertResultsEqual(new _FunctionTypes._void_P1_E0<List<Integer>>() {
       public void invoke(List<Integer> exp) {
         ListSequence.fromList(exp).addElement(-1);
@@ -351,7 +351,7 @@ __switch__:
   }
 
   @Test
-  public void test_forStatement() throws Exception {
+  public void forStatement() throws Exception {
     this.assertResultsEqual(new _FunctionTypes._void_P1_E0<List<Integer>>() {
       public void invoke(List<Integer> exp) {
         for (int i = 0 ; i < 3 ; i++ ) {
@@ -435,7 +435,7 @@ __switch__:
   }
 
   @Test
-  public void test_foreachStatement() throws Exception {
+  public void foreachStatement() throws Exception {
     final List<Integer> data1 = (List<Integer>)Arrays.asList(1, 2, 3, 4, 5);
     final List<Integer> data2 = (List<Integer>)Arrays.asList(1, 2, 3, 4, 5);
     this.assertResultsEqual(new _FunctionTypes._void_P1_E0<List<Integer>>() {
@@ -527,7 +527,7 @@ __switch__:
   }
 
   @Test
-  public void test_dmitriev() throws Exception {
+  public void dmitriev() throws Exception {
     this.assertResultsEqual(new _FunctionTypes._void_P1_E0<List<Integer>>() {
       public void invoke(List<Integer> exp) {
         int a = 0;
@@ -636,7 +636,7 @@ __switch__:
   }
 
   @Test
-  public void test_switchStatement() throws Exception {
+  public void switchStatement() throws Exception {
     this.assertResultsEqual(new _FunctionTypes._void_P1_E0<List<Integer>>() {
       public void invoke(List<Integer> exp) {
         for (Fruits fr : Arrays.asList(new Fruits[]{Fruits.APPLES,Fruits.ORANGES,Fruits.CARS})) {
@@ -748,7 +748,7 @@ __switch__:
   }
 
   @Test
-  public void test_elseIfClauses() throws Exception {
+  public void elseIfClauses() throws Exception {
     this.assertResultsEqual(new _FunctionTypes._void_P1_E0<List<Integer>>() {
       public void invoke(List<Integer> exp) {
         for (int i = 1 ; i <= 10 ; i++ ) {
@@ -873,7 +873,7 @@ __switch__:
   }
 
   @Test
-  public void test_mps_1503() throws Exception {
+  public void mps_1503() throws Exception {
     this.assertResultsEqual(new _FunctionTypes._void_P1_E0<List<Integer>>() {
       public void invoke(List<Integer> exp) {
         int val = 0;
@@ -960,7 +960,7 @@ __switch__:
   }
 
   @Test
-  public void test_yieldAllLast() throws Exception {
+  public void yieldAllLast() throws Exception {
     this.assertResultsEqual(new _FunctionTypes._return_P0_E0<Iterable<Integer>>() {
       public Iterable<Integer> invoke() {
         return ListSequence.fromListAndArray(new ArrayList<Integer>(), 1, 2, 3);
@@ -974,7 +974,7 @@ __switch__:
   }
 
   @Test
-  public void test_yieldAll() throws Exception {
+  public void yieldAll() throws Exception {
     this.assertResultsEqual(new _FunctionTypes._return_P0_E0<Iterable<Integer>>() {
       public Iterable<Integer> invoke() {
         return ListSequence.fromListAndArray(new ArrayList<Integer>(), 1, 2, 3);
@@ -1034,7 +1034,7 @@ __switch__:
   }
 
   @Test
-  public void test_yieldYieldAll() throws Exception {
+  public void yieldYieldAll() throws Exception {
     this.assertResultsEqual(new _FunctionTypes._return_P0_E0<Iterable<Integer>>() {
       public Iterable<Integer> invoke() {
         return ListSequence.fromListAndArray(new ArrayList<Integer>(), 1, 2, 3);
@@ -1094,7 +1094,7 @@ __switch__:
   }
 
   @Test
-  public void test_yieldAllYieldAll() throws Exception {
+  public void yieldAllYieldAll() throws Exception {
     this.assertResultsEqual(new _FunctionTypes._return_P0_E0<Iterable<Integer>>() {
       public Iterable<Integer> invoke() {
         return ListSequence.fromListAndArray(new ArrayList<Integer>(), 1, 2, 3, 4);
@@ -1169,7 +1169,7 @@ __switch__:
   }
 
   @Test
-  public void test_yieldAllInCycle() throws Exception {
+  public void yieldAllInCycle() throws Exception {
     this.assertResultsEqual(new _FunctionTypes._return_P0_E0<Iterable<Integer>>() {
       public Iterable<Integer> invoke() {
         return ListSequence.fromListAndArray(new ArrayList<Integer>(), 1, 2, 3, 4);
@@ -1242,7 +1242,7 @@ __switch__:
   }
 
   @Test
-  public void test_timur1() throws Exception {
+  public void timur1() throws Exception {
     //  {1, 2, 3}.select{ it => yield 4; yield 5; }
     final List<Integer> input = ListSequence.fromListAndArray(new ArrayList<Integer>(), 1, 2, 3);
     List<Iterable<Integer>> exp = ListSequence.fromListAndArray(new ArrayList<Iterable<Integer>>(), ListSequence.fromListAndArray(new ArrayList<Integer>(), 4, 5), ListSequence.fromListAndArray(new ArrayList<Integer>(), 4, 5), ListSequence.fromListAndArray(new ArrayList<Integer>(), 4, 5));
@@ -1292,7 +1292,7 @@ __switch__:
   }
 
   @Test
-  public void test_timur2() throws Exception {
+  public void timur2() throws Exception {
     //  {1, 2, 3}.select{ it => if (it == 2) {yield 4;}; }
     final List<Integer> input = ListSequence.fromListAndArray(new ArrayList<Integer>(), 1, 2, 3);
     List<Iterable<Integer>> exp = ListSequence.fromListAndArray(new ArrayList<Iterable<Integer>>(), ListSequence.fromList(new ArrayList<Integer>()), ListSequence.fromListAndArray(new ArrayList<Integer>(), 4), ListSequence.fromList(new ArrayList<Integer>()));
@@ -1348,7 +1348,7 @@ __switch__:
   }
 
   @Test
-  public void test_mps3477() throws Exception {
+  public void mps3477() throws Exception {
     List<Integer> exp = ListSequence.fromListAndArray(new ArrayList<Integer>(), 10, 0, 20, 11, 1, 21, 12, 2, 22, 13, 3, 23, 14, 4, 24, 15, 5, 25, 16, 6, 26, 17, 7, 27, 18, 8, 28, 19, 9, 29);
     final List<Integer> res = ListSequence.fromList(new ArrayList<Integer>());
     _FunctionTypes._return_P2_E0<? extends Iterable<Integer>, ? super Integer, ? super Integer> foo = new _FunctionTypes._return_P2_E0<Iterable<Integer>, Integer, Integer>() {
@@ -1414,7 +1414,7 @@ __switch__:
   }
 
   @Test
-  public void test_yieldNext() throws Exception {
+  public void yieldNext() throws Exception {
     Iterable<Integer> test = Sequence.fromClosure(new ISequenceClosure<Integer>() {
       public Iterable<Integer> iterable() {
         return new Iterable<Integer>() {
@@ -1467,7 +1467,7 @@ __switch__:
   }
 
   @Test
-  public void test_delayedException() throws Exception {
+  public void delayedException() throws Exception {
     Iterable<Integer> seq = Sequence.fromClosure(new ISequenceClosure<Integer>() {
       public Iterable<Integer> iterable() {
         return new Iterable<Integer>() {

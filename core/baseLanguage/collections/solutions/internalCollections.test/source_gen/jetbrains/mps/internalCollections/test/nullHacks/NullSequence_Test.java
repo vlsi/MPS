@@ -14,7 +14,7 @@ import jetbrains.mps.internal.collections.runtime.ISequence;
 
 public class NullSequence_Test extends Util_Test {
   @Test
-  public void test_nullSequence() throws Exception {
+  public void nullSequence() throws Exception {
     if (Sequence.USE_NULL_SEQUENCE) {
       Iterable<Integer> nullSeq = null;
       Assert.assertNull(nullSeq);
@@ -31,7 +31,7 @@ public class NullSequence_Test extends Util_Test {
   }
 
   @Test
-  public void test_nullCompareOperations() throws Exception {
+  public void nullCompareOperations() throws Exception {
     if (Sequence.USE_NULL_SEQUENCE) {
       Iterable<Integer> input = this.input5();
       this.assertIterableEquals(this.expect5(), Sequence.fromIterable(input).concat(null));
@@ -43,7 +43,7 @@ public class NullSequence_Test extends Util_Test {
   }
 
   @Test
-  public void test_nullTranslate() throws Exception {
+  public void nullTranslate() throws Exception {
     if (Sequence.USE_NULL_SEQUENCE) {
       Iterable<Integer> input = this.input5();
       Iterable<String> nullSeq = Sequence.fromIterable(input).translate(new ITranslator2<Integer, String>() {
@@ -57,7 +57,7 @@ public class NullSequence_Test extends Util_Test {
   }
 
   @Test
-  public void test_nullList() throws Exception {
+  public void nullList() throws Exception {
     if (Sequence.USE_NULL_SEQUENCE) {
       List<Integer> nullList = null;
       Assert.assertNull(nullList);
@@ -71,7 +71,7 @@ public class NullSequence_Test extends Util_Test {
   }
 
   @Test
-  public void test_forEach() throws Exception {
+  public void forEach() throws Exception {
     if (Sequence.USE_NULL_SEQUENCE) {
       for (Object foo : Sequence.emptySequence()) {
       }
@@ -79,7 +79,7 @@ public class NullSequence_Test extends Util_Test {
   }
 
   @Test
-  public void test_nullArray() throws Exception {
+  public void nullArray() throws Exception {
     int[] arr = null;
     /*
       for (int i : arr) {

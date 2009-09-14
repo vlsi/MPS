@@ -14,7 +14,7 @@ import java.util.ArrayList;
 
 public class Sort_Test extends Util_Test {
   @Test
-  public void test_sortMethod() throws Exception {
+  public void sortMethod() throws Exception {
     ISequence<String> input = Sequence.fromArray("ZZZ", "Y", "XXXX", "WW");
     ISequence<String> test = input.sort(new ISelector<String, Comparable<?>>() {
       public Comparable<?> select(String it) {
@@ -25,7 +25,7 @@ public class Sort_Test extends Util_Test {
   }
 
   @Test
-  public void test_toComparableVar() throws Exception {
+  public void toComparableVar() throws Exception {
     ISequence<String> input = Sequence.fromArray("ZZZ", "Y", "XXXX", "WW");
     ISelector<String, Comparable<?>> length = new ISelector<String, Comparable<?>>() {
       public Comparable<?> select(String it) {
@@ -45,7 +45,7 @@ public class Sort_Test extends Util_Test {
   }
 
   @Test
-  public void test_sortOperationInternal() throws Exception {
+  public void sortOperationInternal() throws Exception {
     Iterable<String> input = Arrays.asList("Z", "YY", "XXX", "WWWW");
     Iterable<String> test = Sequence.fromIterable(input).sort(new ISelector<String, Comparable<?>>() {
       public Comparable<?> select(String it) {
@@ -67,7 +67,7 @@ public class Sort_Test extends Util_Test {
   }
 
   @Test
-  public void test_caseSensitive() throws Exception {
+  public void caseSensitive() throws Exception {
     List<String> test = ListSequence.fromListAndArray(new ArrayList<String>(), "abc", "ABC", "aBC", "Abc", "abcd", "ABCD", "abcD");
     this.assertIterableEquals(Arrays.asList("ABC", "ABCD", "Abc", "aBC", "abc", "abcD", "abcd"), ListSequence.fromList(test).sort(new ISelector<String, Comparable<?>>() {
       public Comparable<?> select(String it) {
@@ -77,7 +77,7 @@ public class Sort_Test extends Util_Test {
   }
 
   @Test
-  public void test_caseInsensitive() throws Exception {
+  public void caseInsensitive() throws Exception {
     List<String> test = ListSequence.fromListAndArray(new ArrayList<String>(), "abc", "ABC", "aBC", "Abc", "abcd", "ABCD", "abcD");
     this.assertIterableEquals(test, ListSequence.fromList(test).sort(new Comparator<String>() {
       public int compare(String a, String b) {
@@ -87,7 +87,7 @@ public class Sort_Test extends Util_Test {
   }
 
   @Test
-  public void test_legacySort() throws Exception {
+  public void legacySort() throws Exception {
     Iterable<String> input = Arrays.asList("Z", "YY", "XXX", "WWWW");
     Iterable<String> test = Sequence.fromIterable(input).sort(new ISelector<String, Comparable<?>>() {
       public Comparable<?> select(String it) {
@@ -98,7 +98,7 @@ public class Sort_Test extends Util_Test {
   }
 
   @Test
-  public void test_alsoSort() throws Exception {
+  public void alsoSort() throws Exception {
     List<String> test = ListSequence.fromListAndArray(new ArrayList<String>(), "a", "b", "cd", "xy", "ABC", "abcd", "X", "Y", "XYZ");
     Iterable<String> l1 = ListSequence.fromList(test).sort(new ISelector<String, Comparable<?>>() {
       public Comparable<?> select(String it) {

@@ -12,7 +12,7 @@ import junit.framework.Assert;
 
 public class Union_Test extends TestCase {
   @Test
-  public void test_union1() throws Exception {
+  public void union1() throws Exception {
     Iterable<Integer> s1 = Sequence.fromClosure(new ISequenceClosure<Integer>() {
       public Iterable<Integer> iterable() {
         return new Iterable<Integer>() {

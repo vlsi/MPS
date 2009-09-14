@@ -18,7 +18,7 @@ import org.apache.commons.lang.ObjectUtils;
 
 public class Set_Test extends Util_Test {
   @Test
-  public void test_emptyCreator() throws Exception {
+  public void emptyCreator() throws Exception {
     Set<String> test = SetSequence.fromSet(new HashSet<String>());
     Assert.assertTrue(SetSequence.fromSet(test).isEmpty());
     Assert.assertFalse(SetSequence.fromSet(test).isNotEmpty());
@@ -26,7 +26,7 @@ public class Set_Test extends Util_Test {
   }
 
   @Test
-  public void test_nonEmptyCreator() throws Exception {
+  public void nonEmptyCreator() throws Exception {
     Set<String> test = SetSequence.fromSetAndArray(new HashSet<String>(), "A", "B", "C");
     Assert.assertFalse(SetSequence.fromSet(test).isEmpty());
     Assert.assertTrue(SetSequence.fromSet(test).isNotEmpty());
@@ -34,14 +34,14 @@ public class Set_Test extends Util_Test {
   }
 
   @Test
-  public void test_clear() throws Exception {
+  public void clear() throws Exception {
     Set<String> test = SetSequence.fromSetAndArray(new HashSet<String>(), "A", "B", "C");
     SetSequence.fromSet(test).clear();
     Assert.assertTrue(SetSequence.fromSet(test).isEmpty());
   }
 
   @Test
-  public void test_add() throws Exception {
+  public void add() throws Exception {
     Set<String> test = SetSequence.fromSetAndArray(new HashSet<String>(), "A", "B", "C");
     SetSequence.fromSet(test).addElement("D");
     Assert.assertEquals(4, SetSequence.fromSet(test).count());
@@ -52,7 +52,7 @@ public class Set_Test extends Util_Test {
   }
 
   @Test
-  public void test_addAll() throws Exception {
+  public void addAll() throws Exception {
     Set<String> test = SetSequence.fromSetAndArray(new HashSet<String>(), "A", "B", "C");
     this.assertIterableEqualsIgnoreOrder(this.inputABC(), test);
     SetSequence.fromSet(test).addSequence(Sequence.fromIterable(this.inputABCDEF()));
@@ -60,7 +60,7 @@ public class Set_Test extends Util_Test {
   }
 
   @Test
-  public void test_copy() throws Exception {
+  public void copy() throws Exception {
     Set<Integer> test = SetSequence.fromSetAndArray(new HashSet<Integer>(), 1, 2, 3, 4, 5);
     Set<Integer> copy = SetSequence.fromSetWithValues(new HashSet<Integer>(), test);
     this.assertIterableEqualsIgnoreOrder(this.input5(), copy);
@@ -70,7 +70,7 @@ public class Set_Test extends Util_Test {
   }
 
   @Test
-  public void test_remove() throws Exception {
+  public void remove() throws Exception {
     Set<String> test = SetSequence.fromSetAndArray(new HashSet<String>(), "A", "B", "C", "D", "E", "F");
     SetSequence.fromSet(test).removeElement("F");
     SetSequence.fromSet(test).removeElement("D");
@@ -79,14 +79,14 @@ public class Set_Test extends Util_Test {
   }
 
   @Test
-  public void test_removeAll() throws Exception {
+  public void removeAll() throws Exception {
     Set<String> test = SetSequence.fromSetAndArray(new HashSet<String>(), "A", "B", "C");
     SetSequence.fromSet(test).removeSequence(Sequence.fromIterable(this.inputABC()));
     Assert.assertTrue(SetSequence.fromSet(test).isEmpty());
   }
 
   @Test
-  public void test_primitiveParameter() throws Exception {
+  public void primitiveParameter() throws Exception {
     Set<Integer> test = SetSequence.fromSetAndArray(new HashSet<Integer>(), 1, 2, 3, 4, 5);
     this.assertIterableEqualsIgnoreOrder(this.input5(), test);
     int[] array = ArrayUtils.toIntArray(SetSequence.fromSet(test));
@@ -94,13 +94,13 @@ public class Set_Test extends Util_Test {
   }
 
   @Test
-  public void test_contains() throws Exception {
+  public void contains() throws Exception {
     Set<Integer> test = SetSequence.fromSetAndArray(new HashSet<Integer>(), 1, 2, 3, 4, 5);
     Assert.assertTrue(SetSequence.fromSet(test).contains(3));
   }
 
   @Test
-  public void test_linkedHashSet() throws Exception {
+  public void linkedHashSet() throws Exception {
     Set<Integer> set = SetSequence.fromSet(new LinkedHashSet<Integer>());
     SetSequence.fromSet(set).addElement(11);
     SetSequence.fromSet(set).addElement(3);
@@ -112,20 +112,20 @@ public class Set_Test extends Util_Test {
   }
 
   @Test
-  public void test_toString() throws Exception {
+  public void toString() throws Exception {
     Set<Integer> test = SetSequence.fromSetAndArray(new HashSet<Integer>(), 9);
     Assert.assertEquals("[9]", String.valueOf(test));
   }
 
   @Test
-  public void test_array() throws Exception {
+  public void array() throws Exception {
     String[] arr = new String[]{"A","B","C"};
     Set<String> test = SetSequence.fromSetAndArray(new LinkedHashSet<String>(), arr);
     this.assertIterableEquals(this.inputABC(), test);
   }
 
   @Test
-  public void test_eq() throws Exception {
+  public void eq() throws Exception {
     Set<Integer> seta = SetSequence.fromSetAndArray(new HashSet<Integer>(), 111, 222, 333);
     Set<Integer> setb = SetSequence.fromSetAndArray(new HashSet<Integer>(), 333, 222, 111);
     Assert.assertTrue(ObjectUtils.equals(seta, setb));

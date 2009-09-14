@@ -22,7 +22,7 @@ import java.util.LinkedHashMap;
 
 public class Map_Test extends Util_Test {
   @Test
-  public void test_mapMethod() throws Exception {
+  public void mapMethod() throws Exception {
     IMapSequence<Integer, String> map = MapSequence.fromMap(new HashMap<Integer, String>());
     map.put(1, "a");
     map.put(2, "b");
@@ -33,7 +33,7 @@ public class Map_Test extends Util_Test {
   }
 
   @Test
-  public void test_mapInitializer() throws Exception {
+  public void mapInitializer() throws Exception {
     Map<Integer, String> map = MapSequence.<Integer, String>fromKeysArray(1, 2, 3).withValues("a", "b", "c");
     List<String> values = Arrays.asList("a", "b", "c");
     for (Integer i : Arrays.asList(1, 2, 3)) {
@@ -52,7 +52,7 @@ public class Map_Test extends Util_Test {
   }
 
   @Test
-  public void test_mapNoInitializer() throws Exception {
+  public void mapNoInitializer() throws Exception {
     Map<Integer, String> map = MapSequence.fromMap(new HashMap<Integer, String>());
     List<String> values = Arrays.asList("a", "b", "c");
     Integer idx = 1;
@@ -70,7 +70,7 @@ public class Map_Test extends Util_Test {
   }
 
   @Test
-  public void test_clear() throws Exception {
+  public void clear() throws Exception {
     Map<Integer, String> map1 = MapSequence.<Integer, String>fromKeysArray(1, 2, 3).withValues("a", "b", "c");
     Assert.assertFalse(SetSequence.fromSet(MapSequence.fromMap(map1).keySet()).isEmpty());
     Assert.assertFalse(Sequence.fromIterable(MapSequence.fromMap(map1).values()).isEmpty());
@@ -80,7 +80,7 @@ public class Map_Test extends Util_Test {
   }
 
   @Test
-  public void test_primitiveParameter() throws Exception {
+  public void primitiveParameter() throws Exception {
     Map<Integer, Character> ascii = MapSequence.<Integer, Character>fromKeysArray(48, 49, 50).withValues('0', '1', '2');
     Assert.assertSame('1', MapSequence.fromMap(ascii).get(49));
     Iterable<Integer> keys = MapSequence.fromMap(ascii).keySet();
@@ -90,7 +90,7 @@ public class Map_Test extends Util_Test {
   }
 
   @Test
-  public void test_array() throws Exception {
+  public void array() throws Exception {
     Map<String, String[]> test = MapSequence.<String, String[]>fromKeysArray("foo").withValues(new String[]{"bar","baz"});
     Iterable<String> seq = MapSequence.fromMap(test).keySet();
     Assert.assertTrue(Sequence.fromIterable(seq).contains("foo"));
@@ -99,7 +99,7 @@ public class Map_Test extends Util_Test {
   }
 
   @Test
-  public void test_arrayOfString() throws Exception {
+  public void arrayOfString() throws Exception {
     Map<String, String[]> test = MapSequence.<String, String[]>fromKeysArray("foo").withValues(new String[]{"bar","baz"});
     Iterable<String> seq = MapSequence.fromMap(test).keySet();
     Assert.assertTrue(Sequence.fromIterable(seq).contains("foo"));
@@ -108,11 +108,11 @@ public class Map_Test extends Util_Test {
   }
 
   @Test
-  public void test_contains() throws Exception {
+  public void contains() throws Exception {
   }
 
   @Test
-  public void test_mps4050() throws Exception {
+  public void mps4050() throws Exception {
     /*
       Map<Foo, List<Bar>> mmap = MapSequence.fromMap(new HashMap<Foo, List<Bar>>());
       for (List<Bar> lst : Sequence.fromIterable(mmap.values())) {
@@ -122,13 +122,13 @@ public class Map_Test extends Util_Test {
   }
 
   @Test
-  public void test_toString() throws Exception {
+  public void toString() throws Exception {
     Map<Integer, String> test = MapSequence.<Integer, String>fromKeysArray(1).withValues("a");
     Assert.assertEquals("[1=a]", String.valueOf(test));
   }
 
   @Test
-  public void test_mappings() throws Exception {
+  public void mappings() throws Exception {
     Map<Integer, String> test = MapSequence.<Integer, String>fromKeysArray(1, 2, 3).withValues("a", "b", "c");
     List<Integer> nums = ListSequence.fromListAndArray(new ArrayList<Integer>(), 1, 2, 3);
     Set<IMapping<Integer, String>> ms = MapSequence.fromMap(test).mappingsSet();
@@ -151,7 +151,7 @@ public class Map_Test extends Util_Test {
   }
 
   @Test
-  public void test_mapIsASequence() throws Exception {
+  public void mapIsASequence() throws Exception {
     Map<String, Integer> test = MapSequence.<String, Integer>fromKeysArray("a", "b", "c").withValues(1, 2, 3);
     Iterable<IMapping<String, Integer>> seq = MapSequence.fromMap(test);
     Assert.assertSame(3, Sequence.fromIterable(seq).count());
@@ -163,7 +163,7 @@ public class Map_Test extends Util_Test {
   }
 
   @Test
-  public void test_putAll() throws Exception {
+  public void putAll() throws Exception {
     Map<String, String> map = MapSequence.<String, String>fromKeysArray("a", "b", "c").withValues("A", "B", "C");
     Map<String, String> test = MapSequence.fromMap(new HashMap<String, String>());
     Assert.assertTrue(MapSequence.fromMap(test).isEmpty());

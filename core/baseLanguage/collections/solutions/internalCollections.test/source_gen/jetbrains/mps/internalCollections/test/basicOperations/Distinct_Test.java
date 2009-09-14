@@ -15,19 +15,19 @@ import java.util.NoSuchElementException;
 
 public class Distinct_Test extends Util_Test {
   @Test
-  public void test_distinctMethod() throws Exception {
+  public void distinctMethod() throws Exception {
     ISequence<Integer> input = Sequence.fromArray(1, 2, 3, 2, 1, 3);
     this.assertIterableEquals(Arrays.asList(1, 2, 3), input.distinct());
   }
 
   @Test
-  public void test_distinctOperation() throws Exception {
+  public void distinctOperation() throws Exception {
     Iterable<Integer> input = Arrays.asList(1, 2, 3, 2, 1, 3);
     this.assertIterableEquals(Arrays.asList(1, 2, 3), Sequence.fromIterable(input).distinct());
   }
 
   @Test
-  public void test_nextWithoutHasNext() throws Exception {
+  public void nextWithoutHasNext() throws Exception {
     Iterator<Integer> it = ListSequence.fromList(ListSequence.fromListAndArray(new ArrayList<Integer>(), 1, 2, 2, 3)).distinct().iterator();
     Assert.assertSame(1, it.next());
     Assert.assertSame(2, it.next());

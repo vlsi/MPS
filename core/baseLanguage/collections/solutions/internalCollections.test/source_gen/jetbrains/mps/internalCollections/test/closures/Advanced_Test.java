@@ -10,7 +10,7 @@ import jetbrains.mps.baseLanguage.closures.runtime.YieldingIterator;
 
 public class Advanced_Test extends Util_Test {
   @Test
-  public void test_nestedYield() throws Exception {
+  public void nestedYield() throws Exception {
     Iterable<String> test = Sequence.fromClosure(new ISequenceClosure<String>() {
       public Iterable<String> iterable() {
         return new Iterable<String>() {

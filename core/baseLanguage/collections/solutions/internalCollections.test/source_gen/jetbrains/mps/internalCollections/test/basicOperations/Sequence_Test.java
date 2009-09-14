@@ -22,7 +22,7 @@ import jetbrains.mps.internal.collections.runtime.IterableUtils;
 
 public class Sequence_Test extends Util_Test {
   @Test
-  public void test_sequenceMethods() throws Exception {
+  public void sequenceMethods() throws Exception {
     ISequence<Integer> input = Sequence.fromIterable(this.input5());
     Assert.assertEquals(((Integer)1), input.first());
     Assert.assertEquals(((Integer)5), input.last());
@@ -39,7 +39,7 @@ public class Sequence_Test extends Util_Test {
   }
 
   @Test
-  public void test_sequenceFromClosure() throws Exception {
+  public void sequenceFromClosure() throws Exception {
     Iterable<Integer> seq = new _FunctionTypes._return_P0_E0<Iterable<Integer>>() {
       public Iterable<Integer> invoke() {
         return new Iterable<Integer>() {
@@ -94,7 +94,7 @@ __switch__:
   }
 
   @Test
-  public void test_sequenceInitializer() throws Exception {
+  public void sequenceInitializer() throws Exception {
     Iterable<Integer> seq = Sequence.fromClosure(new ISequenceClosure<Integer>() {
       public Iterable<Integer> iterable() {
         return new Iterable<Integer>() {
@@ -149,7 +149,7 @@ __switch__:
   }
 
   @Test
-  public void test_sequenceInitializer2() throws Exception {
+  public void sequenceInitializer2() throws Exception {
     Iterable<Integer> seq = Sequence.fromClosure(new ISequenceClosure<Integer>() {
       public Iterable<Integer> iterable() {
         return new Iterable<Integer>() {
@@ -277,7 +277,7 @@ __switch__:
   }
 
   @Test
-  public void test_sequenceOperations() throws Exception {
+  public void sequenceOperations() throws Exception {
     Iterable<Integer> input = this.input5();
     Assert.assertEquals(((Integer)1), Sequence.fromIterable(input).first());
     Assert.assertEquals(((Integer)5), Sequence.fromIterable(input).last());
@@ -294,7 +294,7 @@ __switch__:
   }
 
   @Test
-  public void test_toOperations() throws Exception {
+  public void toOperations() throws Exception {
     Iterable<Integer> input = this.input5();
     Assert.assertTrue(Arrays.equals(new Integer[]{1,2,3,4,5}, Sequence.fromIterable(input).toListSequence().toGenericArray(Integer.class)));
     this.assertIterableEquals(this.expect5(), Sequence.fromIterable(input).toListSequence());
@@ -315,7 +315,7 @@ __switch__:
   }
 
   @Test
-  public void test_primitiveParameter() throws Exception {
+  public void primitiveParameter() throws Exception {
     Iterable<Integer> test = Sequence.fromClosure(new ISequenceClosure<Integer>() {
       public Iterable<Integer> iterable() {
         return new Iterable<Integer>() {
@@ -368,14 +368,14 @@ __switch__:
   }
 
   @Test
-  public void test_singleton() throws Exception {
+  public void singleton() throws Exception {
     Iterable<Integer> ssl = Sequence.<Integer>singleton(42);
     Assert.assertSame(1, Sequence.fromIterable(ssl).count());
     Assert.assertSame(42, Sequence.fromIterable(ssl).first());
   }
 
   @Test
-  public void test_toString() throws Exception {
+  public void toString() throws Exception {
     final Wrappers._int count = new Wrappers._int(1);
     Iterable<String> test = Sequence.fromClosure(new ISequenceClosure<String>() {
       public Iterable<String> iterable() {
@@ -451,13 +451,13 @@ __switch__:
   }
 
   @Test
-  public void test_asSequence() throws Exception {
+  public void asSequence() throws Exception {
     String[] arr = new String[]{"A","B","C"};
     this.assertIterableEquals(this.inputABC(), Sequence.fromArray(arr));
   }
 
   @Test
-  public void test_join() throws Exception {
+  public void join() throws Exception {
     Iterable<String> test = ListSequence.fromListAndArray(new ArrayList<String>(), "vodka", "tequila", "whisky");
     Assert.assertEquals("vodka tequila whisky", IterableUtils.join(Sequence.fromIterable(test), " "));
     Assert.assertEquals("vodka, tequila, whisky", IterableUtils.join(Sequence.fromIterable(test), ", "));

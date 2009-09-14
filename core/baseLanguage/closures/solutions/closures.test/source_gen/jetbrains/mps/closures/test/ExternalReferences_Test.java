@@ -12,7 +12,7 @@ import jetbrains.mps.baseLanguage.closures.runtime.YieldingIterator;
 
 public class ExternalReferences_Test extends TestCase {
   @Test
-  public void test_localVariableDeclaration() throws Exception {
+  public void localVariableDeclaration() throws Exception {
     final Wrappers._int foo = new Wrappers._int(42);
     int bar = new _FunctionTypes._return_P0_E0<Integer>() {
       public Integer invoke() {
@@ -23,7 +23,7 @@ public class ExternalReferences_Test extends TestCase {
   }
 
   @Test
-  public void test_alteredLocalvariable() throws Exception {
+  public void alteredLocalvariable() throws Exception {
     final Wrappers._int res = new Wrappers._int(0);
     for (int i = 1 ; i <= 5 ; i++ ) {
       new _FunctionTypes._return_P0_E0<Integer>() {
@@ -37,7 +37,7 @@ public class ExternalReferences_Test extends TestCase {
   }
 
   @Test
-  public void test_alteredLocalVariable2() throws Exception {
+  public void alteredLocalVariable2() throws Exception {
     final Wrappers._int res = new Wrappers._int(0);
     for (int i = 1 ; i <= 5 ; i++ ) {
       for (int j : new _FunctionTypes._return_P0_E0<Iterable<Integer>>() {
@@ -81,7 +81,7 @@ __switch__:
   }
 
   @Test
-  public void test_alteredLocalVariable3() throws Exception {
+  public void alteredLocalVariable3() throws Exception {
     final Wrappers._T<byte[]> bytes = new Wrappers._T<byte[]>(new byte[1]);
     new _FunctionTypes._void_P0_E0() {
       public void invoke() {
@@ -93,7 +93,7 @@ __switch__:
   }
 
   @Test
-  public void test_methodParameter() throws Exception {
+  public void methodParameter() throws Exception {
     Worker wrk = new Worker() {
       public String doWork(final Integer d) {
         return new _FunctionTypes._return_P0_E0<String>() {
@@ -107,7 +107,7 @@ __switch__:
   }
 
   @Test
-  public void test_methodParameter2() throws Exception {
+  public void methodParameter2() throws Exception {
     Worker wrk = new Worker() {
       public String doWork(Integer d) {
         final Wrappers._T<Integer> _d = new Wrappers._T<Integer>(d);
@@ -123,7 +123,7 @@ __switch__:
   }
 
   @Test
-  public void test_field() throws Exception {
+  public void field() throws Exception {
     Worker wrk = new Worker() {
       public int field;
       public int foo;
@@ -142,7 +142,7 @@ __switch__:
   }
 
   @Test
-  public void test_mps4102() throws Exception {
+  public void mps4102() throws Exception {
     int a;
     for (final Wrappers._int i = new Wrappers._int(0) ; i.value < 10 ; i.value++ ) {
       a = new _FunctionTypes._return_P0_E0<Integer>() {

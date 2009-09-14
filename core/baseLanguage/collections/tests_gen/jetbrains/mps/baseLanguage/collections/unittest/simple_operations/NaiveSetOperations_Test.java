@@ -546,13 +546,13 @@ __switch__:
   });
 
   @Test
-  public void test_union() throws Exception {
+  public void union() throws Exception {
     this.assertIterableEqualsIgnoreOrder(aabbcccdde, Sequence.fromIterable(aabbcc).union(Sequence.fromIterable(cccdde)));
     this.assertIterableEqualsIgnoreOrder(aabbcccdde, Sequence.fromIterable(cccdde).union(Sequence.fromIterable(aabbcc)));
   }
 
   @Test
-  public void test_exclude() throws Exception {
+  public void exclude() throws Exception {
     this.assertIterableEqualsIgnoreOrder(cc, Sequence.fromIterable(aabbcc).subtract(Sequence.fromIterable(aabb)));
     this.assertIterableEqualsIgnoreOrder(aabb, Sequence.fromIterable(aabbcc).subtract(Sequence.fromIterable(ccc)));
     this.assertIterableEqualsIgnoreOrder(aabbc, Sequence.fromIterable(aabbcc).subtract(Sequence.fromIterable(c)));
@@ -560,7 +560,7 @@ __switch__:
   }
 
   @Test
-  public void test_intersect() throws Exception {
+  public void intersect() throws Exception {
     this.assertIterableEqualsIgnoreOrder(cc, Sequence.fromIterable(aabbcc).intersect(Sequence.fromIterable(cccdde)));
     this.assertIterableEqualsIgnoreOrder(cc, Sequence.fromIterable(cccdde).intersect(Sequence.fromIterable(aabbcc)));
     this.assertIterableEqualsIgnoreOrder(cc, Sequence.fromIterable(ccc).intersect(Sequence.fromIterable(cc)));

@@ -13,55 +13,55 @@ public class MatrixTest_Test extends TestCase {
   private static double EPSILON = 0.00001;
 
   @Test
-  public void test_matixCreation() throws Exception {
+  public void matixCreation() throws Exception {
     Matrix<Double> m = this.makeMatrix();
     Assert.assertEquals(10.0, m.getValueAt(0, 0).doubleValue());
     Assert.assertEquals(20.0, m.getValueAt(1, 0).doubleValue());
   }
 
   @Test
-  public void test_matrixCopy() throws Exception {
+  public void matrixCopy() throws Exception {
     Matrix m = this.makeMatrix();
     Matrix c = m.clone();
     Assert.assertEquals(10.0, c.getValueAt(0, 0));
   }
 
   @Test
-  public void test_multiplicationByDouble() throws Exception {
+  public void multiplicationByDouble() throws Exception {
     Matrix m = this.makeMatrix();
     Matrix result = m.mult(2.0);
     Assert.assertEquals(20.0, result.getValueAt(0, 0));
   }
 
   @Test
-  public void test_matrixAddition() throws Exception {
+  public void matrixAddition() throws Exception {
     Matrix m = this.makeMatrix();
     Matrix d = m.add(m);
     Assert.assertEquals(20.0, d.getValueAt(0, 0));
   }
 
   @Test
-  public void test_matrixDeterminant2() throws Exception {
+  public void matrixDeterminant2() throws Exception {
     Matrix<Double> m = new Matrix<Double>(new Double[][]{{1.0 ,2.0},{3.0 ,4.0}}, new DoubleFieldOperations());
     Assert.assertTrue(m.determinant() + 2 < EPSILON);
   }
 
   @Test
-  public void test_matrixTranspose() throws Exception {
+  public void matrixTranspose() throws Exception {
     Matrix m = this.makeMatrix();
     Matrix t = m.transpose();
     Assert.assertEquals(20.0, t.getValueAt(0, 1));
   }
 
   @Test
-  public void test_matrixMultiplication() throws Exception {
+  public void matrixMultiplication() throws Exception {
     Matrix m = this.makeMatrix();
     Matrix t = m.transpose();
     Assert.assertEquals(500.0, t.mult(m).getValueAt(0, 0));
   }
 
   @Test
-  public void test_iteratorTest() throws Exception {
+  public void iteratorTest() throws Exception {
     Matrix<Double> m = this.makeMatrix();
     MatrixIterator i = new MatrixIterator(m);
     Assert.assertEquals(10.0, i.getNext());

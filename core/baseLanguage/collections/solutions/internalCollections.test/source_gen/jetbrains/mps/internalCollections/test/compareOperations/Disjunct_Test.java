@@ -15,21 +15,21 @@ import java.util.NoSuchElementException;
 
 public class Disjunct_Test extends Util_Test {
   @Test
-  public void test_disjunctionMethod() throws Exception {
+  public void disjunctionMethod() throws Exception {
     ISequence<Integer> input = Sequence.fromArray(1, 2, 3, 3, 3);
     ISequence<Integer> test = input.disjunction(Sequence.fromArray(1, 2, 2, 3, 3, 4));
     this.assertIterableEqualsIgnoreOrder(Arrays.asList(2, 3, 4), test);
   }
 
   @Test
-  public void test_discjunctOperation() throws Exception {
+  public void discjunctOperation() throws Exception {
     Iterable<Integer> input = Arrays.asList(1, 2, 2, 3, 4, 4);
     Iterable<Integer> test = Sequence.fromIterable(input).disjunction(ListSequence.fromList(Arrays.asList(1, 2, 4, 4, 5)));
     this.assertIterableEqualsIgnoreOrder(Arrays.asList(2, 3, 5), test);
   }
 
   @Test
-  public void test_disjunctionEquivalence() throws Exception {
+  public void disjunctionEquivalence() throws Exception {
     Iterable<String> a = Arrays.asList("X", "W", "Z", "Y", "X", "Z", "X", "Y", "W");
     Iterable<String> b = Arrays.asList("V", "X", "V", "Z", "Z", "Z", "Y");
     this.assertIterableEqualsIgnoreOrder(Sequence.fromIterable(a).disjunction(Sequence.fromIterable(b)), Sequence.fromIterable(a).union(Sequence.fromIterable(b)).subtract(Sequence.fromIterable(a).intersect(Sequence.fromIterable(b))));
@@ -37,7 +37,7 @@ public class Disjunct_Test extends Util_Test {
   }
 
   @Test
-  public void test_nextWithoutHasNext() throws Exception {
+  public void nextWithoutHasNext() throws Exception {
     Iterator<Integer> it = ListSequence.fromList(ListSequence.fromListAndArray(new ArrayList<Integer>(), 1, 2, 3, 4)).disjunction(ListSequence.fromList(ListSequence.fromListAndArray(new ArrayList<Integer>(), 3, 4, 5, 6))).iterator();
     Assert.assertSame(1, it.next());
     Assert.assertSame(2, it.next());

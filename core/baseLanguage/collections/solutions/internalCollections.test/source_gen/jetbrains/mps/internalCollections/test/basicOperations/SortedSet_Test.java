@@ -12,7 +12,7 @@ import java.util.Arrays;
 
 public class SortedSet_Test extends Util_Test {
   @Test
-  public void test_order() throws Exception {
+  public void order() throws Exception {
     SortedSet<Integer> set = SortedSetSequence.fromSetAndArray(new TreeSet<Integer>(), 4, 5, 3, 2, 1);
     this.assertIterableEquals(this.input5(), set);
     Assert.assertSame(1, SortedSetSequence.fromSet(set).first());
@@ -20,7 +20,7 @@ public class SortedSet_Test extends Util_Test {
   }
 
   @Test
-  public void test_multiOrder() throws Exception {
+  public void multiOrder() throws Exception {
     SortedSet<Integer> set = SortedSetSequence.fromSetAndArray(new TreeSet<Integer>(), 2, 1, 2, 5, 4, 3, 1, 5, 3, 2, 3, 1);
     this.assertIterableEquals(this.input5(), set);
     Assert.assertSame(1, SortedSetSequence.fromSet(set).first());
@@ -28,20 +28,20 @@ public class SortedSet_Test extends Util_Test {
   }
 
   @Test
-  public void test_headSet() throws Exception {
+  public void headSet() throws Exception {
     SortedSet<String> set = SortedSetSequence.fromSetWithValues(new TreeSet<String>(), this.inputABCDEF());
     this.assertIterableEquals(Arrays.asList("A", "B"), SortedSetSequence.fromSet(set).headSet("C"));
     this.assertIterableEquals(Arrays.asList("A", "B", "C"), SortedSetSequence.fromSet(set).headSet("C\0"));
   }
 
   @Test
-  public void test_tailSet() throws Exception {
+  public void tailSet() throws Exception {
     SortedSet<String> set = SortedSetSequence.fromSetWithValues(new TreeSet<String>(), this.inputABCDEF());
     this.assertIterableEquals(Arrays.asList("C", "D", "E", "F"), SortedSetSequence.fromSet(set).tailSet("C"));
   }
 
   @Test
-  public void test_subSet() throws Exception {
+  public void subSet() throws Exception {
     SortedSet<String> set = SortedSetSequence.fromSetWithValues(new TreeSet<String>(), this.inputABCDEF());
     this.assertIterableEquals(Arrays.asList("C", "D"), SortedSetSequence.fromSet(set).subSet("C", "E"));
     this.assertIterableEquals(Arrays.asList("C", "D", "E"), SortedSetSequence.fromSet(set).subSet("C", "E\0"));

@@ -9,7 +9,7 @@ import junit.framework.Assert;
 
 public class ForEach_Test extends Util_Test {
   @Test
-  public void test_legacyForeach() throws Exception {
+  public void legacyForeach() throws Exception {
     ArrayList<Integer> res = new ArrayList<Integer>();
     for (Integer foo : Sequence.fromIterable(this.input5())) {
       res.add(foo * 2);
@@ -18,7 +18,7 @@ public class ForEach_Test extends Util_Test {
   }
 
   @Test
-  public void test_iterateArray() throws Exception {
+  public void iterateArray() throws Exception {
     int[] arr = new int[]{1,2,3,4,5};
     Iterable<Integer> exp = this.input5();
     for (int i : arr) {
@@ -32,7 +32,7 @@ public class ForEach_Test extends Util_Test {
   }
 
   @Test
-  public void test_noWrapperForGNE() throws Exception {
+  public void noWrapperForGNE() throws Exception {
     Iterable<Integer> exp = this.input5();
     for (int i : new int[]{1,2,3,4,5}) {
       Assert.assertTrue(Sequence.fromIterable(exp).contains(i));
@@ -41,7 +41,7 @@ public class ForEach_Test extends Util_Test {
   }
 
   @Test
-  public void test_noWrapperForArray() throws Exception {
+  public void noWrapperForArray() throws Exception {
     Iterable<Integer> exp = this.input5();
     int[] arr = new int[]{1,2,3,4,5};
     for (int i : arr) {

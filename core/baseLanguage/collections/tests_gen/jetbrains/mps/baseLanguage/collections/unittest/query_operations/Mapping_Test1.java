@@ -18,7 +18,7 @@ import java.util.ArrayList;
 
 public class Mapping_Test1 extends TestCase {
   @Test
-  public void test__1() throws Exception {
+  public void _1() throws Exception {
     Iterable<Integer> nums = Sequence.fromClosure(new ISequenceClosure<Integer>() {
       public Iterable<Integer> iterable() {
         return new Iterable<Integer>() {
@@ -162,7 +162,7 @@ __switch__:
   }
 
   @Test
-  public void test__yieldNull() throws Exception {
+  public void _yieldNull() throws Exception {
     if (Sequence.IGNORE_NULL_VALUES) {
       List<String> strings = ListSequence.fromListAndArray(new ArrayList<String>(), "a");
       List<String> strings2 = ListSequence.fromList(strings).translate(new ITranslator2<String, String>() {
@@ -241,7 +241,7 @@ __switch__:
   }
 
   @Test
-  public void test__null() throws Exception {
+  public void _null() throws Exception {
     List<String> s1 = null;
     Iterable<String> s2 = ListSequence.fromList(s1).translate(new ITranslator2<String, String>() {
       public Iterable<String> translate(final String it) {

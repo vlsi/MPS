@@ -8,7 +8,7 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 
 public class Runtime_Test extends Util_Test {
   @Test
-  public void test_fromIterable() throws Exception {
+  public void fromIterable() throws Exception {
     ISequence<Integer> seq = Sequence.fromIterable(this.input5());
     this.assertIterableEquals(this.input5(), seq.toIterable());
   }

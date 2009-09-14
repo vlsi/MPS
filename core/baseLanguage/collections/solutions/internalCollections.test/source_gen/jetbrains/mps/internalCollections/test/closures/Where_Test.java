@@ -15,7 +15,7 @@ import java.util.NoSuchElementException;
 
 public class Where_Test extends Util_Test {
   @Test
-  public void test_whereMethod() throws Exception {
+  public void whereMethod() throws Exception {
     ISequence<Integer> seq = Sequence.fromIterable(this.input5());
     ISequence<Integer> test = seq.where(new IWhereFilter<Integer>() {
       public boolean accept(Integer it) {
@@ -26,7 +26,7 @@ public class Where_Test extends Util_Test {
   }
 
   @Test
-  public void test_whereFilterVar() throws Exception {
+  public void whereFilterVar() throws Exception {
     ISequence<Integer> seq = Sequence.fromIterable(this.input5());
     IWhereFilter<Integer> filter = new IWhereFilter<Integer>() {
       public boolean accept(Integer it) {
@@ -38,7 +38,7 @@ public class Where_Test extends Util_Test {
   }
 
   @Test
-  public void test_whereOperation() throws Exception {
+  public void whereOperation() throws Exception {
     Iterable<Integer> seq = this.input5();
     Iterable<Integer> test = Sequence.fromIterable(seq).where(new IWhereFilter<Integer>() {
       public boolean accept(Integer it) {
@@ -50,7 +50,7 @@ public class Where_Test extends Util_Test {
   }
 
   @Test
-  public void test_nextWithoutHasNext() throws Exception {
+  public void nextWithoutHasNext() throws Exception {
     Iterator<Integer> it = ListSequence.fromList(ListSequence.fromListAndArray(new ArrayList<Integer>(), 1, 2, 3, 4, 5, 6)).where(new IWhereFilter<Integer>() {
       public boolean accept(Integer i) {
         return i % 2 == 0;

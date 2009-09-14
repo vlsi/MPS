@@ -17,7 +17,7 @@ import java.util.ArrayList;
 
 public class Chunks_Test extends Util_Test {
   @Test
-  public void test_chunkMethods() throws Exception {
+  public void chunkMethods() throws Exception {
     ISequence<Integer> input = Sequence.fromIterable(this.input10());
     this.assertIterableEquals(Arrays.asList(1, 2, 3), input.take(3));
     this.assertIterableEquals(Arrays.asList(8, 9, 10), input.skip(7));
@@ -28,7 +28,7 @@ public class Chunks_Test extends Util_Test {
   }
 
   @Test
-  public void test_chunkOperations() throws Exception {
+  public void chunkOperations() throws Exception {
     Iterable<Integer> input = this.input10();
     this.assertIterableEquals(Arrays.asList(1, 2, 3), Sequence.fromIterable(input).take(3));
     this.assertIterableEquals(Arrays.asList(8, 9, 10), Sequence.fromIterable(input).skip(7));
@@ -39,7 +39,7 @@ public class Chunks_Test extends Util_Test {
   }
 
   @Test
-  public void test_pageOperationNoSideEffects() throws Exception {
+  public void pageOperationNoSideEffects() throws Exception {
     Iterable<Integer> input = this.input10();
     int from = 3;
     int to = 8;
@@ -47,7 +47,7 @@ public class Chunks_Test extends Util_Test {
   }
 
   @Test
-  public void test_takeAll() throws Exception {
+  public void takeAll() throws Exception {
     Iterable<Integer> test = Sequence.fromClosure(new ISequenceClosure<Integer>() {
       public Iterable<Integer> iterable() {
         return new Iterable<Integer>() {
@@ -102,7 +102,7 @@ __switch__:
   }
 
   @Test
-  public void test_nextWithoutHasNext() throws Exception {
+  public void nextWithoutHasNext() throws Exception {
     List<Integer> test = ListSequence.fromListAndArray(new ArrayList<Integer>(), 1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
     this.assertIteratorYields(ListSequence.fromList(test).take(3).iterator(), 1, 2, 3);
     this.assertIteratorYields(ListSequence.fromList(test).skip(7).iterator(), 8, 9, 10);

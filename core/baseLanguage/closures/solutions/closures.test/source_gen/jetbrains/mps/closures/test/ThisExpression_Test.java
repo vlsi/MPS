@@ -9,7 +9,7 @@ import junit.framework.Assert;
 
 public class ThisExpression_Test extends TestCase {
   @Test
-  public void test_anonymousClass() throws Exception {
+  public void anonymousClass() throws Exception {
     Runnable run = new Runnable() {
       private Integer foo = 0;
 
@@ -26,7 +26,7 @@ public class ThisExpression_Test extends TestCase {
   }
 
   @Test
-  public void test_topLevelClass() throws Exception {
+  public void topLevelClass() throws Exception {
     ThisProvider tp = new ThisProvider();
     tp.testThisExpression();
   }

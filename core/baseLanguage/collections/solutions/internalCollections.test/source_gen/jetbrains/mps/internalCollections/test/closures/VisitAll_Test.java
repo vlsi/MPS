@@ -16,7 +16,7 @@ import junit.framework.Assert;
 
 public class VisitAll_Test extends Util_Test {
   @Test
-  public void test_visitAllMethod() throws Exception {
+  public void visitAllMethod() throws Exception {
     ISequence<Integer> seq = Sequence.fromIterable(this.input5());
     final ArrayList<Integer> res = new ArrayList<Integer>();
     seq.visitAll(new IVisitor<Integer>() {
@@ -28,7 +28,7 @@ public class VisitAll_Test extends Util_Test {
   }
 
   @Test
-  public void test_visitorVar() throws Exception {
+  public void visitorVar() throws Exception {
     ISequence<Integer> seq = Sequence.fromIterable(this.input5());
     final ArrayList<Integer> res = new ArrayList<Integer>();
     IVisitor<Integer> visitor = new IVisitor<Integer>() {
@@ -41,7 +41,7 @@ public class VisitAll_Test extends Util_Test {
   }
 
   @Test
-  public void test_visitOperation() throws Exception {
+  public void visitOperation() throws Exception {
     final ArrayList<Integer> res = new ArrayList<Integer>();
     Sequence.fromIterable(this.input5()).visitAll(new IVisitor<Integer>() {
       public void visit(Integer it) {
@@ -52,7 +52,7 @@ public class VisitAll_Test extends Util_Test {
   }
 
   @Test
-  public void test_legacyForEach() throws Exception {
+  public void legacyForEach() throws Exception {
     final ArrayList<Integer> res = new ArrayList<Integer>();
     Sequence.fromIterable(this.input5()).visitAll(new IVisitor<Integer>() {
       public void visit(Integer it) {
@@ -63,7 +63,7 @@ public class VisitAll_Test extends Util_Test {
   }
 
   @Test
-  public void test_skipStop() throws Exception {
+  public void skipStop() throws Exception {
     final ArrayList<Integer> res = new ArrayList<Integer>();
     Sequence.fromIterable(this.input10()).visitAll(new IVisitor<Integer>() {
       public void visit(Integer it) {
@@ -99,7 +99,7 @@ __skip__:
   }
 
   @Test
-  public void test_parameterizedAdaptation() throws Exception {
+  public void parameterizedAdaptation() throws Exception {
     List<String> ls = ListSequence.fromListAndArray(new ArrayList<String>(), "A", "BB", "CCC", "DDDD");
     final Wrappers._int len = new Wrappers._int(0);
     this.forEach(ls, new IVisitor<String>() {
@@ -111,7 +111,7 @@ __skip__:
   }
 
   @Test
-  public void test_typing() throws Exception {
+  public void typing() throws Exception {
     List<Integer> test = ListSequence.fromListAndArray(new ArrayList<Integer>(), 2, 4, 6);
     final List<Integer> out = ListSequence.fromList(new ArrayList<Integer>());
     ListSequence.fromList(test).visitAll(new IVisitor<Integer>() {

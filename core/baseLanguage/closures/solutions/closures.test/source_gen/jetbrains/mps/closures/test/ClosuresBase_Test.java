@@ -13,7 +13,7 @@ import java.util.Iterator;
 
 public class ClosuresBase_Test extends TestCase {
   @Test
-  public void test_stub() throws Exception {
+  public void stub() throws Exception {
     // this method exists only to calm down the JUnit complaining about lacking tests
   }
 

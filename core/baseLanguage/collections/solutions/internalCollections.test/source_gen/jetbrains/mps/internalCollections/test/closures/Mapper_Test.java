@@ -17,7 +17,7 @@ import java.util.ArrayList;
 
 public class Mapper_Test extends Util_Test {
   @Test
-  public void test_mapMethod() throws Exception {
+  public void mapMethod() throws Exception {
     ISequence<Integer> seq = Sequence.fromIterable(this.input5());
     ISequence<Integer> test = seq.translate(new ITranslator2<Integer, Integer>() {
       public Iterable<Integer> translate(final Integer it1) {
@@ -61,7 +61,7 @@ __switch__:
   }
 
   @Test
-  public void test_mapperVar() throws Exception {
+  public void mapperVar() throws Exception {
     ISequence<Integer> seq = Sequence.fromIterable(this.input5());
     ITranslator2<Integer, Integer> trans = new ITranslator2<Integer, Integer>() {
       public Iterable<Integer> translate(final Integer i) {
@@ -106,7 +106,7 @@ __switch__:
   }
 
   @Test
-  public void test_mappingOperation() throws Exception {
+  public void mappingOperation() throws Exception {
     Iterable<Integer> test = Sequence.fromIterable(this.input5()).translate(new ITranslator2<Integer, Integer>() {
       public Iterable<Integer> translate(final Integer i) {
         return new Iterable<Integer>() {
@@ -148,7 +148,7 @@ __switch__:
   }
 
   @Test
-  public void test_legacyMapper() throws Exception {
+  public void legacyMapper() throws Exception {
     Iterable<Integer> test = Sequence.fromIterable(this.input5()).translate(new ITranslator2<Integer, Integer>() {
       public Iterable<Integer> translate(final Integer it) {
         return new Iterable<Integer>() {
@@ -190,7 +190,7 @@ __switch__:
   }
 
   @Test
-  public void test_stopSkip() throws Exception {
+  public void stopSkip() throws Exception {
     Iterable<Integer> test = Sequence.fromIterable(this.input10()).translate(new ITranslator2<Integer, Integer>() {
       public Iterable<Integer> translate(final Integer it) {
         return new Iterable<Integer>() {
@@ -320,7 +320,7 @@ __switch__:
   }
 
   @Test
-  public void test_stopBug() throws Exception {
+  public void stopBug() throws Exception {
     Iterable<Integer> test = Sequence.fromIterable(this.input5()).translate(new ITranslator2<Integer, Integer>() {
       public Iterable<Integer> translate(final Integer it) {
         return new Iterable<Integer>() {
@@ -548,7 +548,7 @@ __switch__:
   }
 
   @Test
-  public void test_selectMany() throws Exception {
+  public void selectMany() throws Exception {
     //  only testing compileability of the generated code
     Iterable<B> bs = Sequence.fromIterable(Collections.<B>emptyList());
     Sequence.fromIterable(bs).translate(new ITranslator2<B, A>() {
@@ -574,7 +574,7 @@ __switch__:
   }
 
   @Test
-  public void test_nextWithoutHasNext() throws Exception {
+  public void nextWithoutHasNext() throws Exception {
     this.assertIteratorYields(ListSequence.fromList(ListSequence.fromListAndArray(new ArrayList<Integer>(), 1, 3)).translate(new ITranslator2<Integer, Integer>() {
       public Iterable<Integer> translate(final Integer i) {
         return new Iterable<Integer>() {

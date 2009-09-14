@@ -18,7 +18,7 @@ import java.util.HashSet;
 
 public class Iterator_Test extends Util_Test {
   @Test
-  public void test_null() throws Exception {
+  public void null() throws Exception {
     Iterable<Integer> test = null;
     Assert.assertFalse(Sequence.fromIterable(test).iterator() == null);
     Assert.assertFalse(Sequence.fromIterable(test).iterator().hasNext());
@@ -38,7 +38,7 @@ public class Iterator_Test extends Util_Test {
   }
 
   @Test
-  public void test_singleton() throws Exception {
+  public void singleton() throws Exception {
     Iterable<Integer> test = Sequence.<Integer>singleton(42);
     Iterator<Integer> is = Sequence.fromIterable(test).iterator();
     Assert.assertTrue(is.hasNext());
@@ -63,7 +63,7 @@ public class Iterator_Test extends Util_Test {
   }
 
   @Test
-  public void test_iterating() throws Exception {
+  public void iterating() throws Exception {
     Iterable<String> test = this.inputABC();
     String res = "";
     for (Iterator<String> itr = Sequence.fromIterable(test).iterator() ; itr.hasNext() ; ) {
@@ -79,7 +79,7 @@ public class Iterator_Test extends Util_Test {
   }
 
   @Test
-  public void test_containerIterator() throws Exception {
+  public void containerIterator() throws Exception {
     List<Integer> list = ListSequence.fromListAndArray(new ArrayList<Integer>(), 1, 2, 3);
     for (Iterator<Integer> cit = ListSequence.fromList(list).iterator() ; cit.hasNext() ; ) {
       cit.next();

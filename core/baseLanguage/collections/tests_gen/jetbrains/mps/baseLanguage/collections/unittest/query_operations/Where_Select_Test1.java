@@ -18,7 +18,7 @@ import java.util.ArrayList;
 
 public class Where_Select_Test1 extends TestCase {
   @Test
-  public void test__1() throws Exception {
+  public void _1() throws Exception {
     Iterable<Integer> nums = Sequence.fromClosure(new ISequenceClosure<Integer>() {
       public Iterable<Integer> iterable() {
         return new Iterable<Integer>() {
@@ -93,7 +93,7 @@ __switch__:
   }
 
   @Test
-  public void test__2() throws Exception {
+  public void _2() throws Exception {
     // 'where' and 'select' tolerate 'null' operand 
     List<Integer> nums = null;
     Iterable<Integer> evenNums = ListSequence.fromList(nums).where(new IWhereFilter<Integer>() {
@@ -110,7 +110,7 @@ __switch__:
   }
 
   @Test
-  public void test__3() throws Exception {
+  public void _3() throws Exception {
     if (Sequence.IGNORE_NULL_VALUES) {
       // 'select' skips all 'null'-s
       List<String> list = ListSequence.fromListAndArray(new ArrayList<String>(), "1", "2", "3");

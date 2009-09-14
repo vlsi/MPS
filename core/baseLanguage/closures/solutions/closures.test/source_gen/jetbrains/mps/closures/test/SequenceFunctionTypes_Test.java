@@ -13,7 +13,7 @@ import java.util.ArrayList;
 
 public class SequenceFunctionTypes_Test extends ClosuresBase_Test {
   @Test
-  public void test_returnSequence() throws Exception {
+  public void returnSequence() throws Exception {
     _FunctionTypes._return_P0_E0<? extends Iterable<Integer>> fun1 = null;
     _FunctionTypes._return_P0_E0<? extends Iterable<Integer>> fun2 = null;
     fun1 = fun2;
@@ -130,7 +130,7 @@ __switch__:
   }
 
   @Test
-  public void test_acceptSequence() throws Exception {
+  public void acceptSequence() throws Exception {
     _FunctionTypes._void_P1_E0<? super Iterable<Integer>> fun1 = new _FunctionTypes._void_P1_E0<Iterable<Integer>>() {
       public void invoke(Iterable<Integer> p) {
       }
@@ -144,7 +144,7 @@ __switch__:
   }
 
   @Test
-  public void test_resultsReturnSequence() throws Exception {
+  public void resultsReturnSequence() throws Exception {
     final Iterable<Integer> seq = Sequence.fromClosure(new ISequenceClosure<Integer>() {
       public Iterable<Integer> iterable() {
         return new Iterable<Integer>() {

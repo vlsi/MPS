@@ -15,7 +15,7 @@ import jetbrains.mps.internal.collections.runtime.DequeSequence;
 
 public class QueueDequeStack_Test extends TestCase {
   @Test
-  public void test_queue() throws Exception {
+  public void queue() throws Exception {
     Queue<Integer> q = QueueSequence.fromQueue(new LinkedList<Integer>());
     QueueSequence.fromQueue(q).addLastElement(1);
     QueueSequence.fromQueue(q).addLastElement(2);
@@ -32,7 +32,7 @@ public class QueueDequeStack_Test extends TestCase {
   }
 
   @Test
-  public void test_priorityQueue() throws Exception {
+  public void priorityQueue() throws Exception {
     Queue<Integer> q = QueueSequence.fromQueue(new PriorityQueue<Integer>());
     QueueSequence.fromQueue(q).addLastElement(3);
     QueueSequence.fromQueue(q).addLastElement(2);
@@ -47,7 +47,7 @@ public class QueueDequeStack_Test extends TestCase {
   }
 
   @Test
-  public void test_stack() throws Exception {
+  public void stack() throws Exception {
     Deque<Integer> s = DequeSequence.fromDeque(new LinkedList<Integer>());
     DequeSequence.fromDeque(s).addFirstElement(1);
     DequeSequence.fromDeque(s).addFirstElement(2);
@@ -62,7 +62,7 @@ public class QueueDequeStack_Test extends TestCase {
   }
 
   @Test
-  public void test_stackClassic() throws Exception {
+  public void stackClassic() throws Exception {
     Deque<Integer> s = DequeSequence.fromDeque(new LinkedList<Integer>());
     DequeSequence.fromDeque(s).pushElement(1);
     DequeSequence.fromDeque(s).pushElement(2);
@@ -77,7 +77,7 @@ public class QueueDequeStack_Test extends TestCase {
   }
 
   @Test
-  public void test_deque() throws Exception {
+  public void deque() throws Exception {
     Deque<Integer> d = DequeSequence.fromDeque(new LinkedList<Integer>());
     DequeSequence.fromDeque(d).addFirstElement(1);
     DequeSequence.fromDeque(d).addFirstElement(2);

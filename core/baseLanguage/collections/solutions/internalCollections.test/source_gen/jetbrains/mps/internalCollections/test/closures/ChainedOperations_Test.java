@@ -14,7 +14,7 @@ import java.util.Arrays;
 
 public class ChainedOperations_Test extends Util_Test {
   @Test
-  public void test_chainedCall() throws Exception {
+  public void chainedCall() throws Exception {
     ISequence<String> test = Sequence.fromIterable(this.input5()).select(new ISelector<Integer, Integer>() {
       public Integer select(Integer it) {
         return it * 3;
@@ -60,7 +60,7 @@ __switch__:
   }
 
   @Test
-  public void test_chainedOperations() throws Exception {
+  public void chainedOperations() throws Exception {
     Iterable<String> test = Sequence.fromIterable(this.input5()).select(new ISelector<Integer, Integer>() {
       public Integer select(Integer it) {
         return it * 3;

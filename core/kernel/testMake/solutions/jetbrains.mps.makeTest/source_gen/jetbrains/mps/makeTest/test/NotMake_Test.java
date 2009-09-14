@@ -14,7 +14,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 
 public class NotMake_Test extends TestCase {
   @Test
-  public void test_abstractMethodNotImplement() throws Exception {
+  public void abstractMethodNotImplement() throws Exception {
     MakeAssert.assertNotMake("abstractMethodNotImplement", new ChangeModel() {
       @Override
       public void change(SModel model) {
@@ -25,7 +25,7 @@ public class NotMake_Test extends TestCase {
   }
 
   @Test
-  public void test_finalClass() throws Exception {
+  public void finalClass() throws Exception {
     MakeAssert.assertNotMake("finalClass", new ChangeModel() {
       @Override
       public void change(SModel model) {
@@ -36,7 +36,7 @@ public class NotMake_Test extends TestCase {
   }
 
   @Test
-  public void test_recursiveInHierarchy() throws Exception {
+  public void recursiveInHierarchy() throws Exception {
     MakeAssert.assertNotMake("recursiveInHierarchy", new ChangeModel() {
       @Override
       public void change(SModel model) {
@@ -53,7 +53,7 @@ public class NotMake_Test extends TestCase {
   }
 
   @Test
-  public void test_anonymousClass() throws Exception {
+  public void anonymousClass() throws Exception {
     MakeAssert.assertNotMake("anonymousClass", new ChangeModel() {
       @Override
       public void change(SModel model) {

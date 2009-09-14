@@ -13,7 +13,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 
 public class CheckDependencies_Test extends TestCase {
   @Test
-  public void test_staticConst() throws Exception {
+  public void staticConst() throws Exception {
     MakeAssert.assertDependenciesChecked("staticConst", new ChangeModel() {
       @Override
       public void change(SModel model) {

@@ -12,7 +12,7 @@ import junit.framework.Assert;
 
 public class SkipTakePage_Test extends TestCase {
   @Test
-  public void test_skip1() throws Exception {
+  public void skip1() throws Exception {
     Iterable<Integer> s = Sequence.fromClosure(new ISequenceClosure<Integer>() {
       public Iterable<Integer> iterable() {
         return new Iterable<Integer>() {
@@ -73,7 +73,7 @@ __switch__:
   }
 
   @Test
-  public void test_take1() throws Exception {
+  public void take1() throws Exception {
     Iterable<Integer> s = Sequence.fromClosure(new ISequenceClosure<Integer>() {
       public Iterable<Integer> iterable() {
         return new Iterable<Integer>() {
@@ -134,7 +134,7 @@ __switch__:
   }
 
   @Test
-  public void test_takeSkip() throws Exception {
+  public void takeSkip() throws Exception {
     Iterable<Integer> s = Sequence.fromClosure(new ISequenceClosure<Integer>() {
       public Iterable<Integer> iterable() {
         return new Iterable<Integer>() {
@@ -192,7 +192,7 @@ __switch__:
   }
 
   @Test
-  public void test_page() throws Exception {
+  public void page() throws Exception {
     Iterable<Integer> s = Sequence.fromClosure(new ISequenceClosure<Integer>() {
       public Iterable<Integer> iterable() {
         return new Iterable<Integer>() {

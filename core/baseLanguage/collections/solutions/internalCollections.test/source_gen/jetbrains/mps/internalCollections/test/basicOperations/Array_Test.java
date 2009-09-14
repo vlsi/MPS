@@ -13,7 +13,7 @@ import jetbrains.mps.baseLanguage.closures.runtime.YieldingIterator;
 
 public class Array_Test extends Util_Test {
   @Test
-  public void test_iterateArrayFor() throws Exception {
+  public void iterateArrayFor() throws Exception {
     int[] arr = new int[]{1,2,3,4,5};
     List test = new ArrayList();
     for (int i : arr) {
@@ -23,7 +23,7 @@ public class Array_Test extends Util_Test {
   }
 
   @Test
-  public void test_iterateArrayYield() throws Exception {
+  public void iterateArrayYield() throws Exception {
     final int[] arr = new int[]{1,2,3,4,5};
     Iterable<Integer> test = Sequence.fromClosure(new ISequenceClosure<Integer>() {
       public Iterable<Integer> iterable() {

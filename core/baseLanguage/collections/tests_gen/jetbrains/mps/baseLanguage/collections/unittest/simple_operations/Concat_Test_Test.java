@@ -14,7 +14,7 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 
 public class Concat_Test_Test extends TestCase {
   @Test
-  public void test_test1() throws Exception {
+  public void test1() throws Exception {
     Iterable<Integer> s1 = Sequence.fromClosure(new ISequenceClosure<Integer>() {
       public Iterable<Integer> iterable() {
         return new Iterable<Integer>() {

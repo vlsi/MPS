@@ -13,7 +13,7 @@ import java.util.Collections;
 
 public class Find_Test extends Util_Test {
   @Test
-  public void test_findFirstLast() throws Exception {
+  public void findFirstLast() throws Exception {
     Iterable<Integer> test = Sequence.fromClosure(new ISequenceClosure<Integer>() {
       public Iterable<Integer> iterable() {
         return new Iterable<Integer>() {
@@ -79,7 +79,7 @@ __switch__:
   }
 
   @Test
-  public void test_anyAll() throws Exception {
+  public void anyAll() throws Exception {
     Iterable<Integer> test = Sequence.fromClosure(new ISequenceClosure<Integer>() {
       public Iterable<Integer> iterable() {
         return new Iterable<Integer>() {

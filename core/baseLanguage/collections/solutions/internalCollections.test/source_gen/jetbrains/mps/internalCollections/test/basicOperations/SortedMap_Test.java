@@ -10,13 +10,13 @@ import java.util.Arrays;
 
 public class SortedMap_Test extends Util_Test {
   @Test
-  public void test_sortedMap() throws Exception {
+  public void sortedMap() throws Exception {
     SortedMap<String, Integer> smap = SortedMapSequence.<String, Integer>fromKeysArray("C", "A", "B", "E", "D").withValues(3, 1, 2, 5, 4);
     this.assertIterableEquals(SortedMapSequence.fromMap(smap).values(), this.input5());
   }
 
   @Test
-  public void test_headMap() throws Exception {
+  public void headMap() throws Exception {
     SortedMap<String, Integer> smap = SortedMapSequence.<String, Integer>fromKeysArray("C", "A", "B", "E", "D").withValues(3, 1, 2, 5, 4);
     SortedMap<String, Integer> submap = SortedMapSequence.fromMap(smap).headMap("C");
     this.assertIterableEquals(Arrays.asList(1, 2), SortedMapSequence.fromMap(submap).values());
@@ -24,14 +24,14 @@ public class SortedMap_Test extends Util_Test {
   }
 
   @Test
-  public void test_tailMap() throws Exception {
+  public void tailMap() throws Exception {
     SortedMap<String, Integer> smap = SortedMapSequence.<String, Integer>fromKeysArray("C", "A", "B", "E", "D").withValues(3, 1, 2, 5, 4);
     SortedMap<String, Integer> submap = SortedMapSequence.fromMap(smap).tailMap("C");
     this.assertIterableEquals(Arrays.asList(3, 4, 5), SortedMapSequence.fromMap(submap).values());
   }
 
   @Test
-  public void test_subMap() throws Exception {
+  public void subMap() throws Exception {
     SortedMap<String, Integer> smap = SortedMapSequence.<String, Integer>fromKeysArray("C", "A", "B", "E", "D").withValues(3, 1, 2, 5, 4);
     SortedMap<String, Integer> submap = SortedMapSequence.fromMap(smap).subMap("B", "E");
     this.assertIterableEquals(Arrays.asList(2, 3, 4), SortedMapSequence.fromMap(submap).values());

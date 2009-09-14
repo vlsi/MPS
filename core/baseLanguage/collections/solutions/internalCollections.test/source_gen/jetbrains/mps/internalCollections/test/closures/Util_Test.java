@@ -14,7 +14,7 @@ import java.util.NoSuchElementException;
 
 public class Util_Test extends TestCase {
   @Test
-  public void test_dummy() throws Exception {
+  public void dummy() throws Exception {
   }
 
   public void assertIterableEquals(Iterable exp, Iterable test) {

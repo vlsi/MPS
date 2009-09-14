@@ -10,7 +10,7 @@ import junit.framework.Assert;
 
 public class FinalClosureParameter_Test extends TestCase {
   @Test
-  public void test_runnable() throws Exception {
+  public void runnable() throws Exception {
     final Wrappers._T<String> foo = new Wrappers._T<String>("foo");
     this.acceptFunction(new _FunctionTypes._void_P1_E0<String>() {
       public void invoke(final String s) {

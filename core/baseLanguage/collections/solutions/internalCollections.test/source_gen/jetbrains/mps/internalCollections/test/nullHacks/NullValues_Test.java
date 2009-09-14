@@ -19,7 +19,7 @@ import java.util.Arrays;
 
 public class NullValues_Test extends Util_Test {
   @Test
-  public void test_nullValues() throws Exception {
+  public void nullValues() throws Exception {
     if (Sequence.IGNORE_NULL_VALUES) {
       Iterable<Integer> input = this.input5();
       this.assertIterableEquals(this.expectEmpty(), Sequence.fromIterable(input).select(new ISelector<Integer, Integer>() {
@@ -120,7 +120,7 @@ __switch__:
   }
 
   @Test
-  public void test_nullElements() throws Exception {
+  public void nullElements() throws Exception {
     if (Sequence.IGNORE_NULL_VALUES) {
       List<Integer> list5 = ListSequence.fromListAndArray(new ArrayList<Integer>(), 1, 2, 3, 4, 5);
       ListSequence.fromList(list5).addElement(null);
@@ -194,7 +194,7 @@ __switch__:
   }
 
   @Test
-  public void test_nullsViaBackdoor() throws Exception {
+  public void nullsViaBackdoor() throws Exception {
     if (Sequence.IGNORE_NULL_VALUES) {
       List<String> listWithNulls = Arrays.asList("foo", null, "bar");
       String[] arr = ListSequence.fromList(listWithNulls).toGenericArray(String.class);

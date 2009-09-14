@@ -11,7 +11,7 @@ import jetbrains.mps.baseLanguage.closures.runtime.YieldingIterator;
 
 public class FunctionTypes_Test extends TestCase {
   @Test
-  public void test_functionTypeAdapter_simple() throws Exception {
+  public void functionTypeAdapter_simple() throws Exception {
     _FunctionTypes._return_P0_E0<? extends Integer> fun1 = new _FunctionTypes._return_P0_E0<Integer>() {
       public Integer invoke() {
         return 1;
@@ -42,7 +42,7 @@ public class FunctionTypes_Test extends TestCase {
   }
 
   @Test
-  public void test_exceptions() throws Exception {
+  public void exceptions() throws Exception {
     _FunctionTypes._void_P0_E1<? extends Exception> throwsException = new _FunctionTypes._void_P0_E1<Exception>() {
       public void invoke() throws Exception {
         throw new Exception();
@@ -76,7 +76,7 @@ public class FunctionTypes_Test extends TestCase {
   }
 
   @Test
-  public void test_exceptionsYield() throws Exception {
+  public void exceptionsYield() throws Exception {
     _FunctionTypes._return_P0_E1<? extends Iterable<Integer>, ? extends IllegalArgumentException> throwsOne = new _FunctionTypes._return_P0_E1<Iterable<Integer>, IllegalArgumentException>() {
       public Iterable<Integer> invoke() {
         return new Iterable<Integer>() {
@@ -201,7 +201,7 @@ __switch__:
   }
 
   @Test
-  public void test_functionTypeAdapter_complex() throws Exception {
+  public void functionTypeAdapter_complex() throws Exception {
     _FunctionTypes._return_P1_E0<? extends Integer, ? super Integer> fun1 = new _FunctionTypes._return_P1_E0<Integer, Integer>() {
       public Integer invoke(Integer i) {
         return i.intValue();

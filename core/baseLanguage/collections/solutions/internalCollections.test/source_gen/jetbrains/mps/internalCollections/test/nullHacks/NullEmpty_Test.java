@@ -16,7 +16,7 @@ import java.util.HashSet;
 
 public class NullEmpty_Test extends Util_Test {
   @Test
-  public void test_nullFirstLast() throws Exception {
+  public void nullFirstLast() throws Exception {
     if (Sequence.NULL_WHEN_EMPTY) {
       Iterable<Integer> emptySeq = Sequence.fromIterable(Collections.<Integer>emptyList());
       Assert.assertNull(Sequence.fromIterable(emptySeq).first());
@@ -30,7 +30,7 @@ public class NullEmpty_Test extends Util_Test {
   }
 
   @Test
-  public void test_nullAddAll() throws Exception {
+  public void nullAddAll() throws Exception {
     List<Integer> test = ListSequence.fromListAndArray(new ArrayList<Integer>(), 1, 2, 3, 4, 5);
     List<Integer> nullList = null;
     ListSequence.fromList(test).addSequence(ListSequence.fromList(nullList));

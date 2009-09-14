@@ -14,7 +14,7 @@ import java.util.PriorityQueue;
 
 public class RemoveWhereTest_Test extends Util_Test {
   @Test
-  public void test_listRemoveWhere() throws Exception {
+  public void listRemoveWhere() throws Exception {
     List<String> l1 = Sequence.fromIterable(Sequence.fromArray(new String[]{"a","bb","ccc","dddd"})).toListSequence();
     ListSequence.fromList(l1).removeWhere(new IWhereFilter<String>() {
       public boolean accept(String it) {
@@ -26,7 +26,7 @@ public class RemoveWhereTest_Test extends Util_Test {
   }
 
   @Test
-  public void test_queueRemoveWhere() throws Exception {
+  public void queueRemoveWhere() throws Exception {
     Queue<String> pq = QueueSequence.fromQueueAndArray(new PriorityQueue<String>(), "a", "aa", "b", "bb");
     Queue<String> q = QueueSequence.fromQueue(pq).removeWhere(new IWhereFilter<String>() {
       public boolean accept(String it) {
