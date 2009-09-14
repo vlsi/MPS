@@ -11,6 +11,9 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.project.IModule;
+import jetbrains.mps.project.GlobalScope;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
+import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.workbench.dialogs.choosers.CommonChoosers;
 import java.util.Collections;
 
@@ -22,10 +25,18 @@ public class ModelChooserComponent extends BaseChooserComponent {
         final MPSProject project = ModelChooserComponent.this.getProject();
         StringBuilder result = new StringBuilder();
         final List<SModelDescriptor> models = ListSequence.fromList(new ArrayList<SModelDescriptor>());
+        final List<SModelDescriptor> checkedModels = ListSequence.fromList(new ArrayList<SModelDescriptor>());
         ModelAccess.instance().runReadAction(new Runnable() {
           public void run() {
-            for (IModule module : project.getModules()) {
+            for (IModule module : GlobalScope.getInstance().getVisibleModules()) {
               ListSequence.fromList(models).addSequence(ListSequence.fromList(module.getOwnModelDescriptors()));
+            }
+            for (IModule module : project.getModules()) {
+              for (SModelDescriptor descriptor : module.getOwnModelDescriptors()) {
+                if (ListSequence.fromList(SModelOperations.getRoots(((SModel)descriptor.getSModel()), "jetbrains.mps.baseLanguage.unitTest.structure.BTestCase")).isNotEmpty()) {
+                  ListSequence.fromList(checkedModels).addElement(descriptor);
+                }
+              }
             }
           }
         });

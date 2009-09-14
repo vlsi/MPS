@@ -20,18 +20,15 @@ import jetbrains.mps.workbench.MPSDataKeys;
 import com.intellij.ide.DataManager;
 import java.awt.GridBagLayout;
 import jetbrains.mps.baseLanguage.plugin.LayoutUtil;
-import org.jdesktop.beansbinding.Property;
-import org.jdesktop.beansbinding.BeanProperty;
-import org.jdesktop.beansbinding.Bindings;
 import java.awt.FlowLayout;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import javax.swing.border.TitledBorder;
-import jetbrains.mps.lang.core.behavior.INamedConcept_Behavior;
+import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.baseLanguage.unitTest.behavior.ITestMethod_Behavior;
+import jetbrains.mps.lang.core.behavior.INamedConcept_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
-import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.project.GlobalScope;
@@ -60,8 +57,8 @@ public class JUnitConfigEditor extends JPanel {
   private NodeChooserComponent myNodeName0;
   private JPanel myMethodPanel0;
   private JLabel myComponent13;
-  private NodeChooserComponent myComponent14;
-  private JLabel myComponent15;
+  private NodeChooserComponent myNodeNameWithMethod0;
+  private JLabel myComponent14;
   private MethodChooserComponent myMethodName0;
   private JavaConfigOptions myJavaOptions0;
   private MPSProject myMyProject;
@@ -108,15 +105,6 @@ public class JUnitConfigEditor extends JPanel {
   }
 
   private void bind() {
-    {
-      Object sourceObject = myThis.myNodeName0;
-      Property sourceProperty = BeanProperty.create("text");
-      Object targetObject = this.myComponent14;
-      Property targetProperty = BeanProperty.create("text");
-      AutoBinding binding = Bindings.createAutoBinding(AutoBinding.UpdateStrategy.READ_WRITE, sourceObject, sourceProperty, targetObject, targetProperty);
-      binding.bind();
-      ListSequence.fromList(this.myBindings).addElement(binding);
-    }
   }
 
   private void unbind() {
@@ -297,13 +285,13 @@ public class JUnitConfigEditor extends JPanel {
 
   private NodeChooserComponent createComponent26() {
     NodeChooserComponent component = new NodeChooserComponent();
-    this.myComponent14 = component;
+    this.myNodeNameWithMethod0 = component;
     return component;
   }
 
   private JLabel createComponent27() {
     JLabel component = new JLabel();
-    this.myComponent15 = component;
+    this.myComponent14 = component;
     component.setText("Method");
     return component;
   }
@@ -311,7 +299,6 @@ public class JUnitConfigEditor extends JPanel {
   private MethodChooserComponent createComponent28() {
     MethodChooserComponent component = new MethodChooserComponent();
     this.myMethodName0 = component;
-    component.setTestCase(INamedConcept_Behavior.call_getFqName_1213877404258(myThis.getMyNode()));
     return component;
   }
 
@@ -415,7 +402,9 @@ public class JUnitConfigEditor extends JPanel {
       myThis.myIsClass0.setSelected(needSelect.value);
       ModelAccess.instance().runReadAction(new Runnable() {
         public void run() {
-          myThis.myNodeName0.setText(config.getStateObject().node);
+          myThis.myNodeName0.setText(INamedConcept_Behavior.call_getFqName_1213877404258(myThis.getMyNode()));
+          myThis.myNodeNameWithMethod0.setText(INamedConcept_Behavior.call_getFqName_1213877404258(myThis.getMyNode()));
+          myThis.myMethodName0.setTestCase(INamedConcept_Behavior.call_getFqName_1213877404258(myThis.getMyNode()));
           myThis.myModelName0.setText(SModelOperations.getModelName(SNodeOperations.getModel(myThis.getMyNode())));
           myThis.myModuleName0.setText(SNodeOperations.getModel(myThis.getMyNode()).getModelDescriptor().getModule().getModuleFqName());
         }
@@ -466,5 +455,9 @@ public class JUnitConfigEditor extends JPanel {
     } else if (myThis.myIsMethod0.isSelected()) {
       myThis.myMethodPanel0.setVisible(true);
     }
+  }
+
+  public void setMethodOwner() {
+    myThis.myMethodName0.setTestCase(myThis.myNodeNameWithMethod0.getText());
   }
 }
