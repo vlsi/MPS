@@ -19,7 +19,7 @@ public class Map_Test extends TestCase {
   }
 
   @Test
-  public void test_null() throws Exception {
+  public void _null() throws Exception {
     /*
       Map<String, String> map = null;
       MapSequence.fromMap(map).put("key1", "value1");

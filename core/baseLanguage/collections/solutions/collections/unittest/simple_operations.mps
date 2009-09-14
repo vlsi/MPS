@@ -2112,7 +2112,7 @@
         <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1198168231696" />
       </node>
       <node role="testMethod" type="jetbrains.mps.baseLanguage.unitTest.structure.TestMethod" id="1205788070346">
-        <property name="methodName" value="null" />
+        <property name="methodName" value="_null" />
         <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1205788070347" />
         <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1205788070348">
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1205788081005">
@@ -3779,7 +3779,7 @@
         <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1198168231582" />
       </node>
       <node role="testMethod" type="jetbrains.mps.baseLanguage.unitTest.structure.TestMethod" id="1205788230525">
-        <property name="methodName" value="null" />
+        <property name="methodName" value="_null" />
         <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1205788230526" />
         <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1205788230527">
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.CommentedStatementsBlock" id="1205788410897">
@@ -3885,7 +3885,7 @@
     <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1205789243373" />
     <node role="testMethodList" type="jetbrains.mps.baseLanguage.unitTest.structure.TestMethodList" id="1205789243374">
       <node role="testMethod" type="jetbrains.mps.baseLanguage.unitTest.structure.TestMethod" id="1205789257750">
-        <property name="methodName" value="1" />
+        <property name="methodName" value="_1" />
         <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1205789257751" />
         <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1205789257752">
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1205789273097">

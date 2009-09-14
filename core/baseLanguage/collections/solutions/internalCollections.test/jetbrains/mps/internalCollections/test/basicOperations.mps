@@ -7877,7 +7877,7 @@
     </node>
     <node role="testMethodList" type="jetbrains.mps.baseLanguage.unitTest.structure.TestMethodList" id="1237471372428">
       <node role="testMethod" type="jetbrains.mps.baseLanguage.unitTest.structure.TestMethod" id="1237492318812">
-        <property name="methodName" value="null" />
+        <property name="methodName" value="_null" />
         <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1237492318813" />
         <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1237492318814">
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1237492356447">

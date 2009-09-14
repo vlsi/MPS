@@ -128,7 +128,7 @@ __switch__:
   }
 
   @Test
-  public void test_null() throws Exception {
+  public void _null() throws Exception {
     Iterable<Integer> source = null;
     source = Sequence.fromIterable(source).distinct();
     Assert.assertTrue(Sequence.fromIterable(source).count() == 0);
