@@ -976,7 +976,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     }
 
     Set<SModelReference> oldsDeps = getModels(nodesWhichEditorDependedOn);            
-    Set<SModelReference> newDeps = getModels(nodesWhichEditorDependedOn);
+    Set<SModelReference> newDeps = getModels(nodesWhichEditorDependsOn);
 
     IScope scope = GlobalScope.getInstance();
 
