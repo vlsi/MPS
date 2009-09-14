@@ -972,7 +972,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
 
     Set<SNode> nodesWhichEditorDependsOn = myCellsToNodesToDependOnMap.get(myRootCell);
     if (nodesWhichEditorDependsOn == null) {
-      nodesWhichEditorDependedOn = new HashSet<SNode>();
+      nodesWhichEditorDependsOn = new HashSet<SNode>();
     }
 
     Set<SModelReference> oldsDeps = getModels(nodesWhichEditorDependedOn);            
