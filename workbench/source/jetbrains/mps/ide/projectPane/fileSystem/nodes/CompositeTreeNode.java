@@ -25,6 +25,7 @@ import jetbrains.mps.vfs.VFileSystem;
 
 import java.util.LinkedHashSet;
 import java.util.Set;
+import java.io.File;
 
 public class CompositeTreeNode extends MPSTreeNode {
   private Project myProject;
@@ -46,7 +47,7 @@ public class CompositeTreeNode extends MPSTreeNode {
           continue;
         }
       }
-      dir = FileUtil.toSystemIndependentName(dir);
+      dir = FileUtil.toSystemIndependentName(new File(dir).getAbsolutePath());
       if (!roots.contains(dir)) {
         roots.add(dir);
       }
