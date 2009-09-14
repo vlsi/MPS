@@ -20,6 +20,7 @@ import jetbrains.mps.smodel.BaseAdapter;
 import jetbrains.mps.smodel.INodeAdapter;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.util.misc.StringBuilderSpinAllocator;
+import jetbrains.mps.util.misc.ObjectCache;
 import org.jetbrains.annotations.NotNull;
 
 import java.io.File;
@@ -39,6 +40,8 @@ public class NameUtil {
   private static final HashSet<String> PARTICLES;
   private static final HashSet<String> ARTICLES;
 
+  private static final ObjectCache<String, String> ourCompactNamespaceCache = new ObjectCache<String, String>(1000);
+
   static {
     String[] preps = {
       "about", "above", "across", "after", "against", "along", "among", "around", "at",
@@ -55,6 +58,7 @@ public class NameUtil {
     String[] particles = {"and", "or", "not", "as"};
     PARTICLES = new HashSet<String>(Arrays.asList(particles));
   }
+
 
   //todo make it return textual representation of an error
   public static boolean satisfiesNamingPolicy(@NotNull String s) {
@@ -434,7 +438,19 @@ public class NameUtil {
     return quotedString;
   }
 
+
   public static String compactNamespace(String namespace) {
+    synchronized (ourCompactNamespaceCache) {
+      String result = ourCompactNamespaceCache.tryKey(namespace);
+      if (result == null) {
+        result = _compactNamespace(namespace);
+        ourCompactNamespaceCache.put(namespace, result);
+      }
+      return result;
+    }
+  }
+
+  private static String _compactNamespace(String namespace) {
     if (namespace.length() > 10) {
       String[] parts = namespace.split("\\.");
       StringBuilder result = new StringBuilder();
