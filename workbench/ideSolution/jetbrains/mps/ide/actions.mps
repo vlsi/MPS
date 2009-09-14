@@ -15357,7 +15357,7 @@
               </node>
             </node>
             <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="3518235802936344674">
-              <link role="baseMethodDeclaration" targetNodeId="67.~Dialog.setVisible(boolean):void" resolveInfo="setVisible" />
+              <link role="baseMethodDeclaration" targetNodeId="67.~Component.setVisible(boolean):void" resolveInfo="setVisible" />
               <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="3518235802936361457">
                 <property name="value" value="true" />
               </node>

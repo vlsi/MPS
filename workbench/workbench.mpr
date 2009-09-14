@@ -26,7 +26,7 @@
     <projectLanguages />
     <projectDevkits />
     <genConfs>
-      <genConfModels runnable="false" name="newLanguageDialog">
+      <genConfModels name="newLanguageDialog">
         <models>
           <model modelRef="r:00000000-0000-4000-0000-011c895904a9(jetbrains.mps.ide.newLanguageDialog)" />
         </models>
