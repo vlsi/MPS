@@ -6,7 +6,9 @@
   </models>
   <accessoryModels />
   <generators />
-  <classPath />
+  <classPath>
+    <entry path="${language_descriptor}/classes_gen" include="false" />
+  </classPath>
   <languageRuntimeClassPath />
   <sourcePath />
   <dependencies>
