@@ -5,6 +5,7 @@ import jetbrains.mps.baseLanguage.structure.LongLiteral;
 import jetbrains.mps.baseLanguage.structure.StringLiteral;
 import jetbrains.mps.baseLanguage.structure.Statement;
 import jetbrains.mps.baseLanguage.structure.FieldDeclaration;
+import jetbrains.mps.baseLanguage.structure.CastExpression;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.INodeAdapter;
 import jetbrains.mps.smodel.CopyUtil;
@@ -144,7 +145,7 @@ public class JavaConverterTreeBuilder {
 
   FloatingPointFloatConstant processConstant(FloatConstant x) {
     FloatingPointFloatConstant result = FloatingPointFloatConstant.newInstance(myCurrentModel);
-    result.setValue(x.floatValue()+"");
+    result.setValue(x.floatValue()+"f");
     return result;
   }
 
@@ -483,6 +484,13 @@ public class JavaConverterTreeBuilder {
 
     op.setExpression(processExpressionRefl(x.lhs));
     return op;
+  }
+
+  jetbrains.mps.baseLanguage.structure.Expression processExpression(org.eclipse.jdt.internal.compiler.ast.CastExpression x) {
+    CastExpression result = CastExpression.newInstance(myCurrentModel);
+    result.setExpression(processExpressionRefl(x.expression));
+    result.setType(createType(x.expectedType));
+    return result;
   }
 
   jetbrains.mps.baseLanguage.structure.Expression processExpression(NullLiteral x) {
