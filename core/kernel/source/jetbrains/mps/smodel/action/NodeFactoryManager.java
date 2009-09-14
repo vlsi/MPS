@@ -95,55 +95,22 @@ public class NodeFactoryManager extends NodeFactoryManager_deprecated {
   }
 
   private static boolean setupNode_internal(ConceptDeclaration nodeConcept, SNode newNode, SNode sampleNode, SNode enclosingNode, SModel model, IScope scope) {
-    // find node factory
     List<NodeFactory> nodeFactories = new ArrayList<NodeFactory>();
-
-    List<AbstractConceptDeclaration> currentConcepts = new ArrayList<AbstractConceptDeclaration>();
-    List<AbstractConceptDeclaration> newFrontier = new ArrayList<AbstractConceptDeclaration>();
-    Set<AbstractConceptDeclaration> processed = new HashSet<AbstractConceptDeclaration>();
-    currentConcepts.add(nodeConcept);
-
-    outer : while (!currentConcepts.isEmpty()) {
-      for (AbstractConceptDeclaration currentConcept : currentConcepts) {
-        if (processed.contains(currentConcept)) {
-          continue;
-        }
-        Language language = SModelUtil_new.getDeclaringLanguage(currentConcept, scope);
-        if (language == null) break;
-        SModelDescriptor actionsModelDescriptor = language.getActionsModelDescriptor();
-        if (actionsModelDescriptor != null) {
-          List<NodeFactories> nodeFactoriesList = actionsModelDescriptor.getSModel().getRootsAdapters(NodeFactories.class);
-          for (NodeFactories nodeFactoriesContainer : nodeFactoriesList) {
-            for (NodeFactory nodeFactory : nodeFactoriesContainer.getNodeFactories()) {
-              if (nodeFactory.getApplicableConcept() == currentConcept) {
-                nodeFactories.add(nodeFactory);
-              }
+    for (String ancestor : LanguageHierarchyCache.getInstance().getAncestorsNames(NameUtil.nodeFQName(nodeConcept))) {
+      AbstractConceptDeclaration acd = SModelUtil_new.findConceptDeclaration(ancestor, scope);
+      Language language = SModelUtil_new.getDeclaringLanguage(acd, scope);
+      if (language == null) break;
+      SModelDescriptor actionsModelDescriptor = language.getActionsModelDescriptor();
+      if (actionsModelDescriptor != null) {
+        List<NodeFactories> nodeFactoriesList = actionsModelDescriptor.getSModel().getRootsAdapters(NodeFactories.class);
+        for (NodeFactories nodeFactoriesContainer : nodeFactoriesList) {
+          for (NodeFactory nodeFactory : nodeFactoriesContainer.getNodeFactories()) {
+            if (nodeFactory.getApplicableConcept() == acd) {
+              nodeFactories.add(nodeFactory);
             }
           }
         }
-        if (!nodeFactories.isEmpty()) {
-          break outer;
-        }
-        processed.add(currentConcept);
-
-        if (currentConcept instanceof ConceptDeclaration) {
-          ConceptDeclaration conceptDeclaration = (ConceptDeclaration) currentConcept;
-          ConceptDeclaration anExtends = conceptDeclaration.getExtends();
-          if (anExtends != null) {
-            newFrontier.add(anExtends);
-          }
-          for (InterfaceConceptReference reference : conceptDeclaration.getImplementses()) {
-            newFrontier.add(reference.getIntfc());
-          }
-        } else if (currentConcept instanceof InterfaceConceptDeclaration) {
-          InterfaceConceptDeclaration interfaceConcept = (InterfaceConceptDeclaration) currentConcept;
-          for (InterfaceConceptReference reference : interfaceConcept.getExtendses()) {
-            newFrontier.add(reference.getIntfc());
-          }
-        }
       }
-      currentConcepts = newFrontier;
-      newFrontier = new ArrayList<AbstractConceptDeclaration>();
     }
 
     if (nodeFactories.isEmpty()) return false;
