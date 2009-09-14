@@ -22,6 +22,6 @@ public class TestMethod_name_PropertyConstraint implements IModelConstraints, IN
   }
 
   public Object execPropertyGet(SNode node, String propertyName, IScope scope) {
-    return "test_" + SPropertyOperations.getString(node, "methodName");
+    return SPropertyOperations.getString(node, "methodName");
   }
 }

@@ -59,15 +59,10 @@
       <node role="propertyGetter" type="jetbrains.mps.lang.constraints.structure.ConstraintFunction_PropertyGetter" id="1213104847598">
         <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1213104847599">
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1213104847600">
-            <node role="expression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1213104847601">
-              <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1213104847602">
-                <node role="operand" type="jetbrains.mps.lang.constraints.structure.ConstraintsFunctionParameter_node" id="1213104847603" />
-                <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="1213104847604">
-                  <link role="property" targetNodeId="1.1171931690128" resolveInfo="methodName" />
-                </node>
-              </node>
-              <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1213104847605">
-                <property name="value" value="test_" />
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1213104847602">
+              <node role="operand" type="jetbrains.mps.lang.constraints.structure.ConstraintsFunctionParameter_node" id="1213104847603" />
+              <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="1213104847604">
+                <link role="property" targetNodeId="1.1171931690128" resolveInfo="methodName" />
               </node>
             </node>
           </node>
