@@ -99,11 +99,17 @@ public class InvokeFunctionOperation_Editor extends DefaultNodeEditor {
   }
 
   private static boolean renderingCondition2165_0(SNode node, EditorContext editorContext, IScope scope) {
-    return ListSequence.fromList(InvokeFunctionOperation_Behavior.call_getParameters_418758558327452981(node)).count() == 0;
+    /*
+      ListSequence.fromList(InvokeFunctionOperation_Behavior.call_getParameters_418758558327452981(node)).count() == 0;
+    */
+    return false;
   }
 
   private static boolean renderingCondition2165_1(SNode node, EditorContext editorContext, IScope scope) {
-    return ListSequence.fromList(InvokeFunctionOperation_Behavior.call_getParameters_418758558327452981(node)).count() > 0;
+    /*
+      ListSequence.fromList(InvokeFunctionOperation_Behavior.call_getParameters_418758558327452981(node)).count() > 0;
+    */
+    return false;
   }
 
   private static class parameterListHandler_2165_0 extends RefNodeListHandler {
