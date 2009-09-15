@@ -10,6 +10,7 @@ import org.eclipse.jdt.internal.compiler.ast.FieldDeclaration;
 import org.eclipse.jdt.internal.compiler.ast.ConstructorDeclaration;
 import jetbrains.mps.smodel.INodeAdapter;
 import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.smodel.CopyUtil;
 import jetbrains.mps.baseLanguage.structure.*;
 
 import java.util.*;
@@ -104,10 +105,14 @@ public class ReferentsCreator {
       Classifier classifier;
       Visibility visibility = getClassVisibility(binding);
       if (binding.isClass()) {
-        ClassConcept classConcept = ClassConcept.newInstance(model);
-        classConcept.setAbstractClass(binding.isAbstract());
-        classConcept.setIsFinal(binding.isFinal());
-        classifier = classConcept;
+        if (binding.isLocalType()) {
+          classifier = AnonymousClass.newInstance(model);
+        } else {
+          ClassConcept classConcept = ClassConcept.newInstance(model);
+          classConcept.setAbstractClass(binding.isAbstract());
+          classConcept.setIsFinal(binding.isFinal());
+          classifier = classConcept;
+        }
       } else if (binding.isInterface() && !binding.isAnnotationType()) {
         classifier = Interface.newInstance(model);
       } else if (binding.isAnnotationType()) {
@@ -191,39 +196,54 @@ public class ReferentsCreator {
       }
       Classifier classifier = (Classifier) myReferentsCreator.myBindingMap.get(binding);
       try {
-
-        ReferenceBinding superClassBinding = binding.superclass();
-        if (superClassBinding != null) {
-          assert (binding.superclass().isClass() || binding.superclass().isEnum());
-          if (classifier instanceof ClassConcept) {
-            ClassConcept classConcept = (ClassConcept) classifier;
-            ClassifierType superClass = (ClassifierType) createType(superClassBinding);
-            classConcept.setSuperclass(superClass);
-          }
-        }
-
-        ReferenceBinding[] superInterfaces = binding.superInterfaces();
-        for (ReferenceBinding superInterfaceBinding : superInterfaces) {
-          assert (superInterfaceBinding.isInterface());
-          ClassifierType superInterface = (ClassifierType) createType(superInterfaceBinding);
-          if (classifier instanceof ClassConcept) {
-            ClassConcept classConcept = (ClassConcept) classifier;
-            classConcept.addImplementedInterface(superInterface);
-          }
-          if (classifier instanceof Interface) {
-            Interface intfc = (Interface) classifier;
-            intfc.addExtendedInterface(superInterface);
-          }
-        }
         boolean isTopLevel = true;
-        if (binding instanceof MemberTypeBinding) {
-          //inner class
+        if (binding instanceof LocalTypeBinding) {
           isTopLevel = false;
-          MemberTypeBinding memberTypeBinding = (MemberTypeBinding) binding;
-          SourceTypeBinding enclosingClass = memberTypeBinding.enclosingType;
-          ClassConcept classConcept = (ClassConcept) myReferentsCreator.myBindingMap.get(enclosingClass);
-          classifier.setNonStatic(!memberTypeBinding.isStatic());
-          classConcept.addStaticInnerClassifiers(classifier);
+          AnonymousClass anonymousClass = (AnonymousClass) classifier;
+          anonymousClass.setName("");
+          ReferenceBinding superClassBinding = binding.superclass();
+          if (superClassBinding != null) {
+            ClassifierType superClass = (ClassifierType) createType(superClassBinding);
+            anonymousClass.setClassifier(superClass.getClassifier()); //todo reference resolve is performed here, maybe not necessary (copy reference instead)
+            for (Type t : superClass.getParameters()) {
+              anonymousClass.addTypeParameter(CopyUtil.copy(t));
+            }
+          }
+        } else {
+
+          ReferenceBinding superClassBinding = binding.superclass();
+          if (superClassBinding != null) {
+            assert (binding.superclass().isClass() || binding.superclass().isEnum());
+            if (classifier instanceof ClassConcept) {
+              ClassConcept classConcept = (ClassConcept) classifier;
+              ClassifierType superClass = (ClassifierType) createType(superClassBinding);
+              classConcept.setSuperclass(superClass);
+            }
+          }
+
+          ReferenceBinding[] superInterfaces = binding.superInterfaces();
+          for (ReferenceBinding superInterfaceBinding : superInterfaces) {
+            assert (superInterfaceBinding.isInterface());
+            ClassifierType superInterface = (ClassifierType) createType(superInterfaceBinding);
+            if (classifier instanceof ClassConcept) {
+              ClassConcept classConcept = (ClassConcept) classifier;
+              classConcept.addImplementedInterface(superInterface);
+            }
+            if (classifier instanceof Interface) {
+              Interface intfc = (Interface) classifier;
+              intfc.addExtendedInterface(superInterface);
+            }
+          }
+
+          if (binding instanceof MemberTypeBinding) {
+            //inner class
+            isTopLevel = false;
+            MemberTypeBinding memberTypeBinding = (MemberTypeBinding) binding;
+            SourceTypeBinding enclosingClass = memberTypeBinding.enclosingType;
+            ClassConcept classConcept = (ClassConcept) myReferentsCreator.myBindingMap.get(enclosingClass);
+            classifier.setNonStatic(!memberTypeBinding.isStatic());
+            classConcept.addStaticInnerClassifiers(classifier);
+          }
         }
         myReferentsCreator.myTypeDecls.add(typeDeclaration);
         if (isTopLevel) {

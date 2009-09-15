@@ -652,6 +652,47 @@ public class JavaConverterTreeBuilder {
     return result;
   }
 
+  jetbrains.mps.baseLanguage.structure.Expression processExpression(QualifiedAllocationExpression x) {
+
+    MethodBinding b = x.binding;
+    AbstractCreator creator = null;
+    if (x.anonymousType != null) {
+      AnonymousClassCreator anonymousClassCreator = AnonymousClassCreator.newInstance(myCurrentModel);
+      creator = anonymousClassCreator;
+      AnonymousClass anonymousClass = (AnonymousClass) myTypesProvider.getRaw(x.anonymousType.binding);
+      // myTypesProvider.createMethodReference(b, AnonymousClassCreator.BASE_METHOD_DECLARATION, anonymousClassCreator.getNode());
+      // addCallArgs(x.arguments, anonymousClassCreator);
+      //todo: make an AnonymousClassCreator an IMethodCall
+
+      anonymousClassCreator.setCls(anonymousClass);
+
+      if (x.arguments != null) {
+        for (Expression arg : x.arguments) {
+          anonymousClass.addParameter(processExpressionRefl(arg));
+        }
+      }
+    } else {
+
+      /*
+      * Weird: sometimes JDT will create a QualifiedAllocationExpression with
+      * no qualifier. I guess this is supposed to let us know that we need to
+      * synthesize a synthetic this arg based on our own current "this"? But
+      * plain old regular AllocationExpression also must be treated as if it
+      * might be be implicitly qualified, so I'm not sure what the point is.
+      * Let's just defer to the AllocationExpression logic if there's no
+      * qualifier.
+      */
+      if (x.enclosingInstance() == null) {
+        return processExpression((AllocationExpression) x);
+      }
+    }
+
+
+    GenericNewExpression result = GenericNewExpression.newInstance(myCurrentModel);
+    result.setCreator(creator);
+    return result;
+  }
+
   private void addCallArgs(Expression[] args, IMethodCall call) {
     if (args == null) {
       args = new Expression[0];
