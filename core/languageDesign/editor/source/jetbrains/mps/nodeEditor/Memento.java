@@ -73,7 +73,7 @@ class Memento {
   }
 
   private void collectErrors(EditorComponent editor) {
-    for (EditorCell cell : editor.getErrorStateTracker().getCellsWithErrorState()) {
+    for (EditorCell cell : editor.getCellTracker().getErrorCells()) {
       if (cell instanceof EditorCell_Label) {
         EditorCell_Label label = (EditorCell_Label) cell;
         if (!"".equals(label.getText())) {

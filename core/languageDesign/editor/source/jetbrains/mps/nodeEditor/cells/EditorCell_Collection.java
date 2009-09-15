@@ -708,14 +708,6 @@ public class EditorCell_Collection extends EditorCell_Basic implements Iterable<
     return myEditorCells[0];
   }
 
-  public Set<JComponent> getSwingComponents() {
-    Set<JComponent> result = new HashSet<JComponent>();
-    for (EditorCell cell : myEditorCells) {
-      result.addAll(cell.getSwingComponents());
-    }
-    return result;
-  }
-
   public String toString() {
     return NameUtil.shortNameFromLongName(getClass().getName());
   }

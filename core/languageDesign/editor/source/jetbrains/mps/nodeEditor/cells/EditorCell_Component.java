@@ -34,7 +34,6 @@ public class EditorCell_Component extends EditorCell_Basic {
     super(editorContext, node);
     final EditorComponent nodeEditorComponent = editorContext.getNodeEditorComponent();
     myComponent = component;
-    myJComponents.add(component);
 
     myComponent.addKeyListener(new KeyAdapter() {
       public void keyPressed(KeyEvent e) {
@@ -109,6 +108,18 @@ public class EditorCell_Component extends EditorCell_Basic {
 
   public void paintSelection(Graphics g) {
     paintSelection(g, getSelectionColor(), true);
+  }
+
+  @Override
+  public void onAdd() {
+    super.onAdd();
+    getEditor().getCellTracker().addComponentCell(this);
+  }
+
+  @Override
+  public void onRemove() {
+    getEditor().getCellTracker().removeComponentCell(this);
+    super.onRemove();
   }
 
   public String toString() {

@@ -34,7 +34,6 @@ import jetbrains.mps.util.ListMap;
 import jetbrains.mps.lang.structure.structure.LinkDeclaration;
 import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
 import jetbrains.mps.lang.structure.structure.LinkMetaclass;
-import jetbrains.mps.kernel.model.SModelUtil;
 
 import javax.swing.JComponent;
 import java.awt.*;
@@ -108,9 +107,9 @@ public abstract class EditorCell_Basic implements EditorCell {
 
     if (myInTree && wasState != myErrorState) {
       if (myErrorState) {
-        getEditor().getErrorStateTracker().add(this);
+        getEditor().getCellTracker().addErrorCell(this);
       } else {
-        getEditor().getErrorStateTracker().remove(this);
+        getEditor().getCellTracker().removeErrorCell(this);
       }
     }
   }
@@ -756,12 +755,6 @@ public abstract class EditorCell_Basic implements EditorCell {
     return null;
   }
 
-  protected Set<JComponent> myJComponents = new HashSet<JComponent>();
-
-  public Set<JComponent> getSwingComponents() {
-    return myJComponents;
-  }
-
   public void synchronizeViewWithModel() {
   }
 
@@ -1269,7 +1262,7 @@ public abstract class EditorCell_Basic implements EditorCell {
     myInTree = true;
 
     if (isErrorState()) {
-      getEditor().getErrorStateTracker().add(this);
+      getEditor().getCellTracker().addErrorCell(this);
     }
   }
 
@@ -1277,7 +1270,7 @@ public abstract class EditorCell_Basic implements EditorCell {
     myInTree = false;
 
     if (isErrorState()) {
-      getEditor().getErrorStateTracker().remove(this);
+      getEditor().getCellTracker().removeErrorCell(this);
     }
   }
 

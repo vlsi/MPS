@@ -146,8 +146,6 @@ public interface EditorCell extends Cloneable {
   void putUserObject(Object key, Object value);
   Object getUserObject(Object key);
 
-  Set<JComponent> getSwingComponents();
-
   EditorComponent getEditor();
 
   void switchCaretVisible();
