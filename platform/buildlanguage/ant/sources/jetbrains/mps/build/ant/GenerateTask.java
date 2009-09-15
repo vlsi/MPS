@@ -238,7 +238,9 @@ public class GenerateTask extends org.apache.tools.ant.Task {
     Set<File> classPaths = new LinkedHashSet<File>();
     for (File path : pathsToLook) {
       if (!path.exists() || (!path.isDirectory() && !path.getAbsolutePath().endsWith(".jar"))) {
-        throw new BuildException(myMpsHome + " is invalid MPS home path: path " + path + " does not exist or is not a directory.");
+        throw new BuildException(myMpsHome + " is invalid MPS home path: path " + path + " does not exist or is not a directory or a jar file.");
+      } else if (!path.isDirectory()) {
+        classPaths.add(path.getAbsoluteFile());  
       }
 
       gatherAllClassesAndJarsUnder(path, classPaths);
