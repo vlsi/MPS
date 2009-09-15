@@ -348,7 +348,7 @@ public class TypeChecker implements ApplicationComponent {
       checkRoot(containingRoot);
 
       if (useNonTypesystemRules) {
-//        component.applyNonTypesystemRulesToRoot(null);
+        component.applyNonTypesystemRulesToRoot(null);
       }
     }
     return true;
