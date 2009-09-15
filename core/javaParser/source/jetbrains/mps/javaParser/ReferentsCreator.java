@@ -12,10 +12,7 @@ import jetbrains.mps.smodel.INodeAdapter;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.baseLanguage.structure.*;
 
-import java.util.Map;
-import java.util.HashMap;
-import java.util.List;
-import java.util.ArrayList;
+import java.util.*;
 
 /**
  * Created by IntelliJ IDEA.
@@ -29,6 +26,7 @@ public class ReferentsCreator {
   SModel myCurrentModel;
   TypesProvider myTypesProvider;
   List<TypeDeclaration> myTypeDecls = new ArrayList<TypeDeclaration>();
+  Set<TypeDeclaration> myTopLevelTypeDecls = new HashSet<TypeDeclaration>();
 
   public ReferentsCreator(SModel currentModel) {
     myCurrentModel = currentModel;
@@ -45,6 +43,14 @@ public class ReferentsCreator {
 
   public TypeDeclaration[] getClassifierTypeDecls() {
     return myTypeDecls.toArray(new TypeDeclaration[myTypeDecls.size()]);
+  }
+
+  public Set<TypeDeclaration> getClassifierTopLevelTypeDecls() {
+    return new HashSet<TypeDeclaration>(myTopLevelTypeDecls);
+  }
+
+  public boolean isTopLevelClassifier(TypeDeclaration typeDeclaration) {
+    return myTopLevelTypeDecls.contains(typeDeclaration);
   }
 
   public static class ClassesCreator extends ASTVisitor {
@@ -96,6 +102,7 @@ public class ReferentsCreator {
 
       SModel model = myReferentsCreator.myCurrentModel;
       Classifier classifier;
+      Visibility visibility = getClassVisibility(binding);
       if (binding.isClass()) {
         ClassConcept classConcept = ClassConcept.newInstance(model);
         classConcept.setAbstractClass(binding.isAbstract());
@@ -110,7 +117,13 @@ public class ReferentsCreator {
       } else {
         return false;
       }
-      classifier.setName(new String(name[name.length - 1]));
+      String shortName = new String(name[name.length - 1]);
+      int dollarIndex = shortName.indexOf('$');
+      if (dollarIndex != -1) {
+        shortName = shortName.substring(dollarIndex+1);
+      }
+      classifier.setName(shortName);
+      classifier.setVisibility(visibility);
 
       myReferentsCreator.myBindingMap.put(binding, classifier);
 
@@ -125,6 +138,21 @@ public class ReferentsCreator {
       }
 
       return true;
+    }
+
+
+
+    private Visibility getClassVisibility(ReferenceBinding b) {
+      SModel model = myReferentsCreator.myCurrentModel;
+      if (b.isPublic()) {
+        return PublicVisibility.newInstance(model);
+      } else if (b.isPrivate()) {
+        return PrivateVisibility.newInstance(model);
+      } else if (b.isProtected()) {
+        return ProtectedVisibility.newInstance(model);
+      } else {
+        return null;
+      }
     }
   }
 
@@ -187,8 +215,20 @@ public class ReferentsCreator {
             intfc.addExtendedInterface(superInterface);
           }
         }
-
+        boolean isTopLevel = true;
+        if (binding instanceof MemberTypeBinding) {
+          //inner class
+          isTopLevel = false;
+          MemberTypeBinding memberTypeBinding = (MemberTypeBinding) binding;
+          SourceTypeBinding enclosingClass = memberTypeBinding.enclosingType;
+          ClassConcept classConcept = (ClassConcept) myReferentsCreator.myBindingMap.get(enclosingClass);
+          classifier.setNonStatic(!memberTypeBinding.isStatic());
+          classConcept.addStaticInnerClassifiers(classifier);
+        }
         myReferentsCreator.myTypeDecls.add(typeDeclaration);
+        if (isTopLevel) {
+          myReferentsCreator.myTopLevelTypeDecls.add(typeDeclaration);
+        }
         return true;
       } catch (Throwable e) {
         throw new JavaConverterException(e);
@@ -392,6 +432,8 @@ public class ReferentsCreator {
       }
     }
   }
+
+
 
   public static boolean isEnumConstant(FieldDeclaration fieldDeclaration) {
     Expression initialization = fieldDeclaration.initialization;

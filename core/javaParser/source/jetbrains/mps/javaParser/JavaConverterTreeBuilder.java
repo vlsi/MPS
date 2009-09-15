@@ -1245,7 +1245,7 @@ public class JavaConverterTreeBuilder {
   }
 
   // exec ==========================================================================
-  public void exec(TypeDeclaration[] types, ReferentsCreator referentsCreator,
+  public void exec(ReferentsCreator referentsCreator,
                    SModel currentModel) {
     // Construct the basic AST.
     myBindingMap = referentsCreator.getBindingMap();
@@ -1253,8 +1253,11 @@ public class JavaConverterTreeBuilder {
     myCurrentModel = currentModel;
     myCurrentClass = null;
     myCurrentMethod = null;
-    for (TypeDeclaration type : types) {
-      myCurrentModel.addRoot(processType(type));
+    for (TypeDeclaration type : referentsCreator.getClassifierTypeDecls()) {
+      Classifier classifier = processType(type);
+      if (referentsCreator.isTopLevelClassifier(type)) {
+        myCurrentModel.addRoot(classifier);
+      }
     }
   }
 

@@ -115,7 +115,7 @@ public class JavaCompiler {
   public void buildAST() {
     ReferentsCreator referentsCreator = new ReferentsCreator(myModel);
     referentsCreator.exec(myCompilationUnitDeclarations.toArray(new CompilationUnitDeclaration[myCompilationUnitDeclarations.size()]));
-    new JavaConverterTreeBuilder().exec(referentsCreator.getClassifierTypeDecls(), referentsCreator, myModel);
+    new JavaConverterTreeBuilder().exec(referentsCreator, myModel);
   }
 
   public List<CompilationResult> getCompilationResults() {
