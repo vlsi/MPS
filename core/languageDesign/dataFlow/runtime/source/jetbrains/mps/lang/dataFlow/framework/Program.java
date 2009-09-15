@@ -31,6 +31,7 @@ public class Program {
   private Map<Object, Integer> myStarts = new HashMap<Object, Integer>();
   private Map<Object, Integer> myEnds = new HashMap<Object, Integer>();
   private Stack<Object> myCreationStack = new Stack<Object>();
+  private Set<Object> myVariables = new HashSet<Object>();
 
   public List<Instruction> getInstructions() {
     return Collections.unmodifiableList((List<? extends Instruction>) myInstructions);
@@ -61,16 +62,7 @@ public class Program {
   }
 
   public Set<Object> getVariables() {
-    Set<Object> result = new HashSet<Object>();
-    for (Instruction i : myInstructions) {
-      if (i instanceof ReadInstruction) {
-        result.add(((ReadInstruction) i).getVariable());
-      }
-      if (i instanceof WriteInstruction) {
-        result.add(((WriteInstruction) i).getVariable());
-      }
-    }
-    return result;
+    return new HashSet<Object>(myVariables);
   }
 
   void add(Instruction instruction) {
@@ -132,6 +124,7 @@ public class Program {
 
     buildBlockInfos();
     buildInstructionCaches();
+    collectVariables();
 
     sanityCheck();
   }
@@ -140,6 +133,19 @@ public class Program {
     for (Instruction i : myInstructions) {
       i.buildCaches();
     }
+  }
+
+  private void collectVariables() {
+    Set<Object> result = new HashSet<Object>();
+    for (Instruction i : myInstructions) {
+      if (i instanceof ReadInstruction) {
+        result.add(((ReadInstruction) i).getVariable());
+      }
+      if (i instanceof WriteInstruction) {
+        result.add(((WriteInstruction) i).getVariable());
+      }
+    }
+    myVariables = result;
   }
 
   private void buildBlockInfos() {

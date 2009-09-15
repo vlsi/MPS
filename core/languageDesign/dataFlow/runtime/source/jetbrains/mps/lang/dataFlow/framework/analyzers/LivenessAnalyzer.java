@@ -41,7 +41,7 @@ public class LivenessAnalyzer implements DataFlowAnalyzer<Set<Object>> {
 
   public Set<Object> fun(Set<Object> input, ProgramState s) {
     Instruction instruction = s.getInstruction();
-    Set<Object> result = new HashSet<Object>(input);
+    Set<Object> result = input;
 
     if (instruction instanceof ReadInstruction) {
       ReadInstruction read = (ReadInstruction) instruction;
