@@ -65,6 +65,18 @@ public class Program {
     return new ArrayList<Object>(myVariables);
   }
 
+  public int getVariablesCount() {
+    return myVariables.size();
+  }
+
+  public int getVariableIndex(Object var) {
+    return myVariables.indexOf(var);
+  }
+
+  public Object getVariable(int index) {
+    return myVariables.get(index);
+  }
+
   void add(Instruction instruction) {
     instruction.setProgram(this);
     instruction.setSource(getCurrent());
@@ -216,13 +228,13 @@ public class Program {
   }
 
   public Set<ReadInstruction> getUninitializedReads() {
-    AnalysisResult<Set<Object>> analysisResult = analyze(new InitializedVariablesAnalyzer());
+    AnalysisResult<VarSet> analysisResult = analyze(new InitializedVariablesAnalyzer());
     Set<ReadInstruction> result = new HashSet<ReadInstruction>();
     for (Instruction i : myInstructions) {
       if (i instanceof ReadInstruction) {
         ReadInstruction read = (ReadInstruction) i;
-        Set<Object> initializedVars = analysisResult.get(read);
-        if (!initializedVars.contains(read.getVariable())) {
+        VarSet initializedVars = analysisResult.get(read);
+        if (!initializedVars.contains(read.getVariableIndex())) {
           result.add(read);
         }
       }
@@ -231,16 +243,16 @@ public class Program {
   }
 
   public Set<WriteInstruction> getUnusedAssignments() {
-    AnalysisResult<Set<Object>> analysisResult = analyze(new LivenessAnalyzer());
+    AnalysisResult<VarSet> analysisResult = analyze(new LivenessAnalyzer());
     Set<WriteInstruction> result = new HashSet<WriteInstruction>();
     for (ProgramState s : analysisResult.getStates()) {
       if (s.getInstruction() instanceof WriteInstruction) {
         WriteInstruction write = (WriteInstruction) s.getInstruction();
-        Set<Object> liveAfter = new HashSet<Object>();
+        VarSet liveAfter = new VarSet(this);
         for (ProgramState succ : s.succ()) {
           liveAfter.addAll(analysisResult.get(succ));
         }        
-        if (!liveAfter.contains(write.getVariable())) {
+        if (!liveAfter.contains(write.getVariableIndex())) {
           result.add(write);
         }
       }

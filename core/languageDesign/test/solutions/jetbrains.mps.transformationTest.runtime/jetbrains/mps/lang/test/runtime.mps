@@ -711,11 +711,8 @@
             <property name="name" value="initialized" />
             <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1215615074249">
               <link role="classifier" targetNodeId="5.~AnalysisResult" resolveInfo="AnalysisResult" />
-              <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="8300881521997452941">
-                <link role="classifier" targetNodeId="8.~Set" resolveInfo="Set" />
-                <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="8300881521997452949">
-                  <link role="classifier" targetNodeId="10.~Object" resolveInfo="Object" />
-                </node>
+              <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="5396662088166669283">
+                <link role="classifier" targetNodeId="5.~VarSet" resolveInfo="VarSet" />
               </node>
             </node>
             <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1215615113459">
@@ -738,11 +735,8 @@
             <property name="name" value="live" />
             <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1215617240414">
               <link role="classifier" targetNodeId="5.~AnalysisResult" resolveInfo="AnalysisResult" />
-              <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="8300881521997452953">
-                <link role="classifier" targetNodeId="8.~Set" resolveInfo="Set" />
-                <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="8300881521997452961">
-                  <link role="classifier" targetNodeId="10.~Object" resolveInfo="Object" />
-                </node>
+              <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="5396662088166669287">
+                <link role="classifier" targetNodeId="5.~VarSet" resolveInfo="VarSet" />
               </node>
             </node>
             <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1215617240417">

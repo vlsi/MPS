@@ -6285,7 +6285,7 @@
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PrivateVisibility" id="1220359622814" />
     </node>
     <node role="field" type="jetbrains.mps.baseLanguage.structure.FieldDeclaration" id="1220359695216">
-      <property name="name" value="myProgramm" />
+      <property name="name" value="myProgram" />
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PrivateVisibility" id="1220359695217" />
       <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1220359700584">
         <link role="classifier" targetNodeId="25.~Program" resolveInfo="Program" />
@@ -6313,10 +6313,8 @@
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PrivateVisibility" id="1220370820588" />
       <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1220370833812">
         <link role="classifier" targetNodeId="25.~AnalysisResult" resolveInfo="AnalysisResult" />
-        <node role="parameter" type="jetbrains.mps.baseLanguage.collections.structure.SetType" id="1237386037968">
-          <node role="elementType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1237386037969">
-            <link role="classifier" targetNodeId="9.~Object" resolveInfo="Object" />
-          </node>
+        <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="3324440618606125067">
+          <link role="classifier" targetNodeId="25.~VarSet" resolveInfo="VarSet" />
         </node>
       </node>
     </node>

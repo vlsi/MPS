@@ -15,10 +15,7 @@
  */
 package jetbrains.mps.lang.dataFlow.framework.analyzers;
 
-import jetbrains.mps.lang.dataFlow.framework.AnalysisDirection;
-import jetbrains.mps.lang.dataFlow.framework.DataFlowAnalyzer;
-import jetbrains.mps.lang.dataFlow.framework.Program;
-import jetbrains.mps.lang.dataFlow.framework.ProgramState;
+import jetbrains.mps.lang.dataFlow.framework.*;
 import jetbrains.mps.lang.dataFlow.framework.instructions.ReadInstruction;
 import jetbrains.mps.lang.dataFlow.framework.instructions.WriteInstruction;
 import jetbrains.mps.lang.dataFlow.framework.instructions.Instruction;
@@ -27,31 +24,31 @@ import java.util.HashSet;
 import java.util.Set;
 import java.util.List;
 
-public class LivenessAnalyzer implements DataFlowAnalyzer<Set<Object>> {
-  public Set<Object> initial(Program p) {
-    return new HashSet<Object>();
+public class LivenessAnalyzer implements DataFlowAnalyzer<VarSet> {
+  public VarSet initial(Program p) {
+    return new VarSet(p);
   }
 
-  public Set<Object> merge(Program p, List<Set<Object>> input) {
-    Set<Object> result = new HashSet<Object>();
-    for (Set<Object> inputSet : input) {
+  public VarSet merge(Program p, List<VarSet> input) {
+    VarSet result = new VarSet(p);
+    for (VarSet inputSet : input) {
       result.addAll(inputSet);
     }
     return result;
   }
 
-  public Set<Object> fun(Set<Object> input, ProgramState s) {
+  public VarSet fun(VarSet input, ProgramState s) {
     Instruction instruction = s.getInstruction();
-    Set<Object> result = input;
+    VarSet result = input;
 
     if (instruction instanceof ReadInstruction) {
       ReadInstruction read = (ReadInstruction) instruction;
-      result.add(read.getVariable());
+      result.add(read.getVariableIndex());
     }
 
     if (instruction instanceof WriteInstruction) {
       WriteInstruction write = (WriteInstruction) instruction;
-      result.remove(write.getVariable());
+      result.remove(write.getVariableIndex());
     }
 
     return result;

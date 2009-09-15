@@ -24,6 +24,7 @@ import jetbrains.mps.lang.dataFlow.framework.analyzers.LivenessAnalyzer;
 import jetbrains.mps.lang.dataFlow.framework.SimpleProgramBuilder;
 import jetbrains.mps.lang.dataFlow.framework.AnalysisResult;
 import jetbrains.mps.lang.dataFlow.framework.Program;
+import jetbrains.mps.lang.dataFlow.framework.VarSet;
 
 public class LivenessAnalysisTest {
 
@@ -36,7 +37,7 @@ public class LivenessAnalysisTest {
         .emitRead("z")
         .buildProgram();
 
-      AnalysisResult<Set<Object>> analysisResult = p.analyze(new LivenessAnalyzer());
+      AnalysisResult<VarSet> analysisResult = p.analyze(new LivenessAnalyzer());
 
     Assert.assertEquals(
       "0: read x [x, z]\n" +
@@ -55,7 +56,7 @@ public class LivenessAnalysisTest {
         .emitWrite("x")
         .buildProgram();
 
-      AnalysisResult<Set<Object>> analysisResult = p.analyze(new LivenessAnalyzer());
+      AnalysisResult<VarSet> analysisResult = p.analyze(new LivenessAnalyzer());
 
     Assert.assertEquals(
       "0: read x [x]\n" +
@@ -74,7 +75,7 @@ public class LivenessAnalysisTest {
         .emitIfJump(0)
         .buildProgram();
 
-      AnalysisResult<Set<Object>> analysisResult = p.analyze(new LivenessAnalyzer());
+      AnalysisResult<VarSet> analysisResult = p.analyze(new LivenessAnalyzer());
 
     Assert.assertEquals(
       "0: read y [x, y]\n" +

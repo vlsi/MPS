@@ -12,7 +12,7 @@ import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.lang.dataFlow.framework.Program;
 import jetbrains.mps.lang.dataFlow.DataFlowManager;
 import jetbrains.mps.lang.dataFlow.framework.AnalysisResult;
-import java.util.Set;
+import jetbrains.mps.lang.dataFlow.framework.VarSet;
 import jetbrains.mps.lang.dataFlow.framework.analyzers.InitializedVariablesAnalyzer;
 
 public class PrintInitializationInformation_Action extends GeneratedAction {
@@ -61,7 +61,7 @@ public class PrintInitializationInformation_Action extends GeneratedAction {
   public void doExecute(@NotNull final AnActionEvent event) {
     try {
       Program program = DataFlowManager.getInstance().buildProgramFor(PrintInitializationInformation_Action.this.node);
-      AnalysisResult<Set<Object>> result = program.analyze(new InitializedVariablesAnalyzer());
+      AnalysisResult<VarSet> result = program.analyze(new InitializedVariablesAnalyzer());
       System.out.println(result.toString());
     } catch (Throwable t) {
       LOG.error("User's action execute method failed. Action:" + "PrintInitializationInformation", t);

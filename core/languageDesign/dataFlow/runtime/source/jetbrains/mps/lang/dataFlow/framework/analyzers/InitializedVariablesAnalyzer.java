@@ -26,27 +26,27 @@ import java.util.Set;
 import java.util.HashSet;
 import java.util.List;
 
-public class InitializedVariablesAnalyzer implements DataFlowAnalyzer<Set<Object>> {
+public class InitializedVariablesAnalyzer implements DataFlowAnalyzer<VarSet> {
 
-  public Set<Object> initial(Program p) {
-    return new HashSet<Object>(p.getVariables());
+  public VarSet initial(Program p) {
+    return new VarSet(p, true);
   }
 
-  public Set<Object> merge(Program p, List<Set<Object>> input) {
+  public VarSet merge(Program p, List<VarSet> input) {
     if (input.isEmpty()) {
       return initial(p);
     }
 
-    Set<Object> result = new HashSet<Object>(input.get(0));
-    for (int i = 1; i < input.size(); i++) {
-      result.retainAll(input.get(i));
+    VarSet result = new VarSet(p, true);
+    for (VarSet anInput : input) {
+      result.retainAll(anInput);     
     }
     return result;
   }
 
-  public Set<Object> fun(Set<Object> input, ProgramState s) {
+  public VarSet fun(VarSet input, ProgramState s) {
     Instruction instruction = s.getInstruction();
-    Set<Object> result = input;
+    VarSet result = input;
 
     if (s.isStart()) {
       result.clear();
@@ -54,7 +54,7 @@ public class InitializedVariablesAnalyzer implements DataFlowAnalyzer<Set<Object
 
     if (instruction instanceof WriteInstruction) {
       WriteInstruction write = (WriteInstruction) instruction;
-      result.add(write.getVariable());
+      result.add(write.getVariableIndex());
     }
 
     return result;

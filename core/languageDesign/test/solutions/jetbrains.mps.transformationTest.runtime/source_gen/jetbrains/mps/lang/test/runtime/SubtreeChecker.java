@@ -19,6 +19,7 @@ import jetbrains.mps.lang.dataFlow.DataFlowManager;
 import java.util.Set;
 import jetbrains.mps.lang.dataFlow.framework.instructions.Instruction;
 import jetbrains.mps.lang.dataFlow.framework.AnalysisResult;
+import jetbrains.mps.lang.dataFlow.framework.VarSet;
 import jetbrains.mps.lang.dataFlow.framework.analyzers.InitializedVariablesAnalyzer;
 import jetbrains.mps.lang.dataFlow.framework.analyzers.LivenessAnalyzer;
 import java.util.List;
@@ -90,8 +91,8 @@ public class SubtreeChecker {
   public static void checkDataFlow(SNode node) {
     Program program = DataFlowManager.getInstance().buildProgramFor(node);
     Set<Instruction> unreachable = program.getUnreachableInstructions();
-    AnalysisResult<Set<Object>> initialized = program.analyze(new InitializedVariablesAnalyzer());
-    AnalysisResult<Set<Object>> live = program.analyze(new LivenessAnalyzer());
+    AnalysisResult<VarSet> initialized = program.analyze(new InitializedVariablesAnalyzer());
+    AnalysisResult<VarSet> live = program.analyze(new LivenessAnalyzer());
     for (SNode child : SNodeOperations.getDescendants(node, "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{})) {
       if (SLinkOperations.getTarget(child, AttributesRolesUtil.childRoleFromAttributeRole("nodePropertiesMarker"), true) != null) {
         SNode container = SLinkOperations.getTarget(child, AttributesRolesUtil.childRoleFromAttributeRole("nodePropertiesMarker"), true);

@@ -21,6 +21,7 @@ import jetbrains.mps.lang.dataFlow.framework.analyzers.InitializedVariablesAnaly
 import jetbrains.mps.lang.dataFlow.framework.AnalysisResult;
 import jetbrains.mps.lang.dataFlow.framework.Program;
 import jetbrains.mps.lang.dataFlow.framework.SimpleProgramBuilder;
+import jetbrains.mps.lang.dataFlow.framework.VarSet;
 
 import java.util.Set;
 
@@ -31,7 +32,7 @@ public class InitializedVariablesAnalysisTest {
       .emitWrite("x")
       .buildProgram();
 
-    AnalysisResult<Set<Object>> result = p.analyze(new InitializedVariablesAnalyzer());
+    AnalysisResult<VarSet> result = p.analyze(new InitializedVariablesAnalyzer());
 
     Assert.assertEquals(
       "0: write x [x]\n" +
@@ -47,7 +48,7 @@ public class InitializedVariablesAnalysisTest {
       .emitWrite("x")
       .buildProgram();
         
-    AnalysisResult<Set<Object>> result = p.analyze(new InitializedVariablesAnalyzer());
+    AnalysisResult<VarSet> result = p.analyze(new InitializedVariablesAnalyzer());
 
     Assert.assertEquals(
       "0: ifjump 2 []\n" +
@@ -66,7 +67,7 @@ public class InitializedVariablesAnalysisTest {
       .emitWrite("x")
       .buildProgram();
 
-    AnalysisResult<Set<Object>> result = p.analyze(new InitializedVariablesAnalyzer());
+    AnalysisResult<VarSet> result = p.analyze(new InitializedVariablesAnalyzer());
 
     Assert.assertEquals(
       "0: ifjump 3 []\n" +
@@ -87,7 +88,7 @@ public class InitializedVariablesAnalysisTest {
       .emitIfJump(2)
       .buildProgram();
 
-    AnalysisResult<Set<Object>> result = p.analyze(new InitializedVariablesAnalyzer());
+    AnalysisResult<VarSet> result = p.analyze(new InitializedVariablesAnalyzer());
 
     Assert.assertEquals(
       "0: nop []\n" +
@@ -107,7 +108,7 @@ public class InitializedVariablesAnalysisTest {
      .emitJump(3)
      .buildProgram();
 
-    AnalysisResult<Set<Object>> result = p.analyze(new InitializedVariablesAnalyzer());
+    AnalysisResult<VarSet> result = p.analyze(new InitializedVariablesAnalyzer());
 
     Assert.assertEquals(
       "0: write x [x]\n" +

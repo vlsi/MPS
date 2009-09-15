@@ -299,10 +299,8 @@
             <property name="name" value="result" />
             <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1211451948556">
               <link role="classifier" targetNodeId="21.~AnalysisResult" resolveInfo="AnalysisResult" />
-              <node role="parameter" type="jetbrains.mps.baseLanguage.collections.structure.SetType" id="1237221573083">
-                <node role="elementType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1237221573084">
-                  <link role="classifier" targetNodeId="4.~Object" resolveInfo="Object" />
-                </node>
+              <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="5396662088166561642">
+                <link role="classifier" targetNodeId="21.~VarSet" resolveInfo="VarSet" />
               </node>
             </node>
             <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1211451948559">
