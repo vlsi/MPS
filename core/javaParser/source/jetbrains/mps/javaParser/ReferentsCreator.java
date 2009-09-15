@@ -241,6 +241,7 @@ public class ReferentsCreator {
       SModel model = myReferentsCreator.myCurrentModel;
       EnumClass enumClass = (EnumClass) enclosingClassifier;
       EnumConstantDeclaration enumConstant = EnumConstantDeclaration.newInstance(model);
+      enumConstant.setName(new String(binding.name));
       enumClass.addEnumConstant(enumConstant);
       myReferentsCreator.myBindingMap.put(binding, enumConstant);
       return enumConstant;

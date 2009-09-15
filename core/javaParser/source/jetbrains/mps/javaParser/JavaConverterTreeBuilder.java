@@ -634,10 +634,13 @@ public class JavaConverterTreeBuilder {
       throw new JavaConverterException("unexpected enum constant creation");
     }
 
-    TypeReference[] references = x.typeArguments;
-    if (references != null) {
-      for (TypeReference typeReference : references) {
-        classCreator.addTypeParameter(createType(typeReference.resolvedType));
+    if (x.resolvedType instanceof ParameterizedTypeBinding) {
+      ParameterizedTypeBinding ptb = (ParameterizedTypeBinding) x.resolvedType;
+      TypeBinding[] typeArguments = ptb.arguments;
+      if (typeArguments != null) {
+        for (TypeBinding typeBinding : typeArguments) {
+          classCreator.addTypeParameter(createType(typeBinding));
+        }
       }
     }
 
@@ -1229,8 +1232,11 @@ public class JavaConverterTreeBuilder {
         jetbrains.mps.baseLanguage.structure.ConstructorDeclaration constructor =
           (jetbrains.mps.baseLanguage.structure.ConstructorDeclaration) myBindingMap.get(initializer.binding);
         enumConstant.setConstructor(constructor);
-        for (Expression arg : initializer.arguments) {
-          enumConstant.addActualArgument(processExpressionRefl(arg));
+        Expression[] arguments = initializer.arguments;
+        if (arguments != null) {
+          for (Expression arg : arguments) {
+            enumConstant.addActualArgument(processExpressionRefl(arg));
+          }
         }
       } catch (Throwable t) {
         throw new JavaConverterException(t);
