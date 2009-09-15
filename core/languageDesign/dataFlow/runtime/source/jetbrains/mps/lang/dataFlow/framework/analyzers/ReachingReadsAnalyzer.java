@@ -41,7 +41,7 @@ public class ReachingReadsAnalyzer implements DataFlowAnalyzer<Set<ReadInstructi
 
   public Set<ReadInstruction> fun(Set<ReadInstruction> input, ProgramState s) {
     Instruction instruction = s.getInstruction();
-    Set<ReadInstruction> result = new HashSet<ReadInstruction>(input);
+    Set<ReadInstruction> result = input;
     if (instruction instanceof WriteInstruction) {
       WriteInstruction write = (WriteInstruction) instruction;
 

@@ -20,6 +20,10 @@ import java.util.Set;
 public interface DataFlowAnalyzer<E> {
   E initial(Program p);
   E merge(Program p, Set<E> input);
+
+  /**
+   * input parameter can be changed
+   */
   E fun(E input, ProgramState s);
   AnalysisDirection getDirection();
 }

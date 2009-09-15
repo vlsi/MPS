@@ -40,7 +40,7 @@ public class ReachingDefinitionsAnalyzer implements DataFlowAnalyzer<Set<WriteIn
 
   public Set<WriteInstruction> fun(Set<WriteInstruction> input, ProgramState s) {
     Instruction instruction = s.getInstruction();
-    Set<WriteInstruction> result = new HashSet<WriteInstruction>(input); 
+    Set<WriteInstruction> result = input;
     if (instruction instanceof WriteInstruction) {
       WriteInstruction write = (WriteInstruction) instruction;
 
