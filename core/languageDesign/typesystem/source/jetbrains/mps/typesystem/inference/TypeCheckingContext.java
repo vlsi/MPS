@@ -437,11 +437,11 @@ public class TypeCheckingContext {
     };
   }
 
-  public void clearListeners() { //todo more attentively
-    getNodeTypesComponent().clearListeners();
+  public void dispose() { //todo more attentively
+    getNodeTypesComponent().dispose();
     if (!myTemporaryComponentsStack.isEmpty()) {
       for (NodeTypesComponent nodeTypesComponent : myTemporaryComponentsStack) {
-        nodeTypesComponent.clearListeners();
+        nodeTypesComponent.dispose();
       }
     }
   }
@@ -458,7 +458,7 @@ public class TypeCheckingContext {
   }
 
   public NodeTypesComponent createTemporaryTypesComponent() {
-    NodeTypesComponent component = myNodeTypesComponent.clone(this);
+    NodeTypesComponent component = myNodeTypesComponent.copy(this);
     myTemporaryComponentsStack.push(component);
     return component;
   }
@@ -478,7 +478,7 @@ public class TypeCheckingContext {
     try {
       return temporaryComponent.computeTypesForNodeDuringResolving(node);
     } finally {
-      temporaryComponent.clearListeners(); //in order to prevent memory leaks.
+      temporaryComponent.dispose(); //in order to prevent memory leaks.
       this.popTemporaryTypesComponent();
       SNode poppedNode = myNodesToComputeDuringResolve.pop();
       assert poppedNode == node;

@@ -34,8 +34,10 @@ import jetbrains.mps.typesystem.debug.NullSlicer;
 
 import java.util.*;
 import java.util.Map.Entry;
+import java.lang.ref.ReferenceQueue;
+import java.lang.ref.WeakReference;
 
-public class NodeTypesComponent implements EditorMessageOwner, Cloneable {
+public class NodeTypesComponent implements EditorMessageOwner {
 
   private static final char A_CHAR = 'a';
   private static final char Z_CHAR = 'z';
@@ -63,10 +65,9 @@ public class NodeTypesComponent implements EditorMessageOwner, Cloneable {
   private EquationManager myEquationManager;
   private Map<String, Set<SNode>> myRegisteredVariables = new HashMap<String, Set<SNode>>();
 
-  private Set<SModelDescriptor> myModelDescriptorsWithListener = new HashSet<SModelDescriptor>();
-
-
   private MyModelListener myModelListener = new MyModelListener();
+  private MyModelListenerManager myModelListenerManager = new MyModelListenerManager(myModelListener);
+
   private MyEventsReadListener myNodesReadListener = new MyEventsReadListener();
   private MyTypeRecalculatedListener myTypeRecalculatedListener = new MyTypeRecalculatedListener();
 
@@ -105,19 +106,20 @@ public class NodeTypesComponent implements EditorMessageOwner, Cloneable {
   boolean myIsNonTypesystemCheckingInProgress = false;
 
   private TypeCheckingContext myTypeCheckingContext;
-  private ISlicer mySlicer;
 
+  private ISlicer mySlicer;
   private boolean myIsSmartCompletion = false;
   private SNode myHole = null;
   private HoleWrapper myHoleTypeWrapper = null;
   private boolean myHoleIsAType = false;
-
 
   public NodeTypesComponent(SNode rootNode, TypeChecker typeChecker, TypeCheckingContext typeCheckingContext) {
     myRootNode = rootNode;
     myTypeChecker = typeChecker;
     myTypeCheckingContext = typeCheckingContext;
     myEquationManager = new EquationManager(myTypeChecker, myTypeCheckingContext);
+
+    myModelListenerManager.track(myRootNode);
   }
 
   private TypeCheckingContext getTypeCheckingContext() {
@@ -128,46 +130,17 @@ public class NodeTypesComponent implements EditorMessageOwner, Cloneable {
     return myTypeChecker;
   }
 
-  @Deprecated
-  public NodeTypesComponent clone() throws CloneNotSupportedException {
-    NodeTypesComponent result = (NodeTypesComponent) super.clone();
-    result.myNodesToTypesMap = new HashMap<SNode, SNode>();
-    result.myNodesToErrorsMap = new HashMap<SNode, IErrorReporter>();
-    result.myNodesToNonTypesystemErrorsMap = new HashMap<SNode, Stack<IErrorReporter>>();
-    result.myFullyCheckedNodes = new WeakSet<SNode>();
-    result.myPartlyCheckedNodes = new WeakSet<SNode>();
-    result.myCheckedNodesNonTypesystem = new HashSet<Pair<SNode, NonTypesystemRule_Runtime>>();
-    result.myNodesAndNTRulesToErrors = new HashMap<SNode, Map<NonTypesystemRule_Runtime, Set<IErrorReporter>>>();
-    result.myNodesToDependentNodesWithNTRules = new HashMap<SNode, WeakHashMap<SNode, Set<NonTypesystemRule_Runtime>>>();
-    result.myPropertiesToDependentNodesWithNTRules = new HashMap<Pair<SNode, String>, WeakHashMap<SNode, Set<NonTypesystemRule_Runtime>>>();
-    result.myTypedTermsToDependentNodesWithNTRules = new HashMap<SNode, WeakHashMap<SNode, Set<NonTypesystemRule_Runtime>>>();
-    result.myTypeCheckingContext = null;
-    result.myEquationManager = new EquationManager(result.myTypeChecker, result.myTypeCheckingContext);
-    result.myNodesToDependentNodes = new WeakHashMap<SNode, WeakSet<SNode>>();
-    result.myModelDescriptorsWithListener = new HashSet<SModelDescriptor>();
-    result.myModelListener = new MyModelListener();
-    result.myTypeRecalculatedListener = new MyTypeRecalculatedListener();
-    result.myNodesReadListener = new MyEventsReadListener();
-    result.myCurrentNodesToInvalidate = new HashSet<SNode>();
-    result.myCurrentNodesToInvalidateNonTypesystem = new HashSet<SNode>();
-    result.myCurrentPropertiesToInvalidateNonTypesystem = new HashSet<Pair<SNode, String>>();
-    result.myCurrentTypedTermsToInvalidateNonTypesystem = new HashSet<SNode>();
-    result.myCurrentFrontier = null;
-    result.myCurrentCheckedNode = null;
-    result.myNodesToRules = new WeakHashMap<SNode, Set<Pair<String, String>>>();
-    result.myRegisteredVariables = new HashMap<String, Set<SNode>>();
-    return result;
-  }
+  public NodeTypesComponent copy(TypeCheckingContext typeCheckingContext) {
+    NodeTypesComponent result = new NodeTypesComponent(myRootNode, myTypeChecker, typeCheckingContext);
 
-  public NodeTypesComponent clone(TypeCheckingContext typeCheckingContext) {
-    try {
-      NodeTypesComponent clone = this.clone();
-      clone.myTypeCheckingContext = typeCheckingContext;
-      return clone;
-    } catch (CloneNotSupportedException ex) {
-      LOG.error(ex);
-      return null;
-    }
+    result.myIsSpecial = myIsSpecial;
+    result.mySlicer = mySlicer;
+    result.myIsSmartCompletion = myIsSmartCompletion;
+    result.myHole = myHole;
+    result.myHoleTypeWrapper = myHoleTypeWrapper;
+    result.myHoleIsAType = myHoleIsAType;
+
+    return result;
   }
 
   public void clear() {
@@ -337,30 +310,11 @@ public class NodeTypesComponent implements EditorMessageOwner, Cloneable {
         iErrorReporter.getMessageStatus(), iErrorReporter.getErrorTarget());
       reporter.setIntentionProvider(iErrorReporter.getIntentionProvider());
       toAdd.put(node, reporter);
-    }    
+    }
     myNodesToErrorsMap.putAll(toAdd);
 
-    //write access listeners
-    removeOurListener();
-    
-    List<SNode> nodesToDependOn = new ArrayList<SNode>(myNodesToDependentNodes.keySet());
-    if (!myNodesToDependentNodes.keySet().contains(myRootNode)) {
-      nodesToDependOn.add(myRootNode);
-    }
+    myModelListenerManager.updateGCedNodes();
 
-    for (SNode nodeToDependOn : nodesToDependOn) {
-      if (nodeToDependOn == null) continue;
-
-      final SModel sModel = nodeToDependOn.getModel();
-      final SModelDescriptor sm = sModel.getModelDescriptor();
-      if (sm != null) {
-        addOurListener(sm);
-      } else {
-        if (SModelStereotype.isUserModel(sModel)) {
-          LOG.error("model descriptor is null: " + sModel);
-        }
-      }
-    }
     TypeChecker.getInstance().addTypeRecalculatedListener(myTypeRecalculatedListener);//method checks if already exists
   }
 
@@ -533,6 +487,7 @@ public class NodeTypesComponent implements EditorMessageOwner, Cloneable {
       if (dependentNodes == null) {
         dependentNodes = new WeakSet<SNode>();
         myNodesToDependentNodes.put(nodeToDependOn, dependentNodes);
+        myModelListenerManager.track(nodeToDependOn);
       }
       dependentNodes.add(sNode);
     }
@@ -705,20 +660,8 @@ public class NodeTypesComponent implements EditorMessageOwner, Cloneable {
     }
   }
 
-  private void addOurListener(SModelDescriptor sm) {
-    sm.addModelCommandListener(myModelListener);
-    myModelDescriptorsWithListener.add(sm);
-  }
-
-  private void removeOurListener() {
-    for (SModelDescriptor sm : myModelDescriptorsWithListener) {
-      sm.removeModelCommandListener(myModelListener);
-    }
-    myModelDescriptorsWithListener.clear();
-  }
-
-  public void clearListeners() {
-    removeOurListener();
+  public void dispose() {
+    myModelListenerManager.dispose();
     TypeChecker.getInstance().removeTypeRecalculatedListener(myTypeRecalculatedListener);
   }
 
@@ -915,7 +858,6 @@ public class NodeTypesComponent implements EditorMessageOwner, Cloneable {
     mySlicer = slicer;
   }
 
-
   private class MyModelListener implements SModelCommandListener {
     public void eventsHappenedInCommand(List<SModelEvent> events) {
       for (SModelEvent event : events) {
@@ -976,6 +918,9 @@ public class NodeTypesComponent implements EditorMessageOwner, Cloneable {
   }
 
   private class MyTypeRecalculatedListener implements TypeRecalculatedListener {
+    MyTypeRecalculatedListener() {
+    }
+
     public void typeWillBeRecalculatedForTerm(SNode term) {
       myCurrentTypedTermsToInvalidateNonTypesystem.add(term);
     }
@@ -1029,8 +974,8 @@ public class NodeTypesComponent implements EditorMessageOwner, Cloneable {
     public void clear() {
       synchronized (ACCESS_LOCK) {
         reportAccess();
-        myAccessedNodes.clear();
-        myAccessedProperties.clear();
+        myAccessedNodes = new HashSet<SNode>();
+        myAccessedProperties = new HashSet<Pair<SNode, String>>();
       }
     }
   }
@@ -1056,4 +1001,62 @@ public class NodeTypesComponent implements EditorMessageOwner, Cloneable {
       }
     }
   }
+
+  private class MyModelListenerManager {
+    private ReferenceQueue<SNode> myReferenceQueue = new ReferenceQueue<SNode>();
+    private Map<SModelDescriptor, Integer> myNodesCount = new HashMap<SModelDescriptor, Integer>();
+    private Map<WeakReference, SModelDescriptor> myDescriptors = new HashMap<WeakReference, SModelDescriptor>();
+    private SModelCommandListener myListener;
+
+    MyModelListenerManager(SModelCommandListener listener) {
+      myListener = listener;
+    }
+
+    /**
+     * Warning: this method should be called only once for each node
+     * We do not check for duplicated nodes
+     */
+    void track(SNode node) {
+      SModelDescriptor sm = node.getModel().getModelDescriptor();
+
+      if (sm == null) return;
+
+      if (!myNodesCount.containsKey(sm)) {
+        sm.addModelCommandListener(myListener);
+        myNodesCount.put(sm, 1);
+      } else {
+        Integer oldValue = myNodesCount.get(sm);
+        myNodesCount.put(sm, oldValue + 1);
+      }
+
+      WeakReference<SNode> ref = new WeakReference<SNode>(node, myReferenceQueue);
+      myDescriptors.put(ref, sm);
+    }
+
+
+    void updateGCedNodes() {
+      while (true) {
+        WeakReference<SNode> ref = (WeakReference<SNode>) myReferenceQueue.poll();
+        if (ref == null) return;
+
+        SModelDescriptor sm = myDescriptors.get(ref);
+        Integer count = myNodesCount.get(sm);
+        if (count == 1) {
+          sm.removeModelCommandListener(myListener);
+          myNodesCount.remove(sm);
+        } else {
+          myNodesCount.put(sm, count - 1);
+        }
+
+        myDescriptors.remove(ref);
+      }
+    }
+
+    void dispose() {
+      for (SModelDescriptor sm : myNodesCount.keySet()) {
+        sm.removeModelCommandListener(myListener);
+      }
+    }
+  }
+
 }

@@ -59,7 +59,7 @@ public class NodeTypesComponentsRepository implements ApplicationComponent {
         for (final TypeCheckingContext typeCheckingContext :
           myNodesToContexts.values().toArray(new TypeCheckingContext[myNodesToContexts.size()])) {
           if (typeCheckingContext.getNode().getModel().getSModelReference().equals(modelDescriptor.getSModelReference())) {
-            typeCheckingContext.clearListeners();
+            typeCheckingContext.dispose();
             myNodesToContexts.remove(typeCheckingContext.getNode());
           }
         }
@@ -138,11 +138,9 @@ public class NodeTypesComponentsRepository implements ApplicationComponent {
   public void clear() {
     synchronized (myLock) {
       for (final TypeCheckingContext typeCheckingContext : myNodesToContexts.values()) {
-        typeCheckingContext.clearListeners();
+        typeCheckingContext.dispose();
       }
-      for (SNode node : new HashSet<SNode>(myNodesToContexts.keySet())) {
-        myNodesToContexts.remove(node);
-      }
+      myNodesToContexts.clear();
     }
   }
 

@@ -270,7 +270,7 @@ public class TypeChecker implements ApplicationComponent {
     try {
       return temporaryComponent.computeInequationsForHole(hole, holeIsAType);
     } finally {
-      temporaryComponent.clearListeners(); //in order to prevent memory leaks.
+      temporaryComponent.dispose(); //in order to prevent memory leaks.
       typeCheckingContext.popTemporaryTypesComponent();
     }
   }
@@ -348,7 +348,7 @@ public class TypeChecker implements ApplicationComponent {
       checkRoot(containingRoot);
 
       if (useNonTypesystemRules) {
-        component.applyNonTypesystemRulesToRoot(null);
+//        component.applyNonTypesystemRulesToRoot(null);
       }
     }
     return true;
