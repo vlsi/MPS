@@ -11,10 +11,16 @@ import java.util.ArrayList;
  */
 public class OrdinaryWithAnonymousClass {
   {
+    final int i = getNumber();
     ArrayList<String> arrayList = new ArrayList<String>() {
       public boolean isEmpty() {
+        System.err.println(i);
         return true;
       }
     };
+  }
+
+  public int getNumber() {
+    return 3;
   }
 }
