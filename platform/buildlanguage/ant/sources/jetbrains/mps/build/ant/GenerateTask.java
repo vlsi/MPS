@@ -223,7 +223,7 @@ public class GenerateTask extends org.apache.tools.ant.Task {
       pathsToLook = new File[]{new File(myMpsHome.getAbsolutePath() + File.separator + "core"),
         new File(myMpsHome.getAbsolutePath() + File.separator + "lib"),
         new File(myMpsHome.getAbsolutePath() + File.separator + "platform" + File.separator + "buildlanguage" + File.separator + "ant"),
-        new File(myMpsHome.getAbsolutePath() + File.separator + "platform" + File.separator + "buildlanguage" + File.separator + "languages" + File.separator + "packaging"),
+        new File(myMpsHome.getAbsolutePath() + File.separator + "platform" + File.separator + "buildlanguage" + File.separator + "packaging.runtime"),
         new File(myMpsHome.getAbsolutePath() + File.separator + "workbench"),
         new File(myMpsHome.getAbsolutePath() + File.separator + "MPSPlugin" + File.separator + "MPSSupport")};
     } else {
@@ -234,7 +234,6 @@ public class GenerateTask extends org.apache.tools.ant.Task {
         new File(myMpsHome.getAbsolutePath() + File.separator + "workbench"),
         new File(myMpsHome.getAbsolutePath() + File.separator + "plugin")};
     }
-
 
     Set<File> classPaths = new LinkedHashSet<File>();
     for (File path : pathsToLook) {

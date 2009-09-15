@@ -11,19 +11,8 @@
             <jvmarg value="-Xss1024k"/>
             <jvmarg value="-Xmx1000m"/>
             <jvmarg value="-XX:MaxPermSize=92m"/>
-            <!--<jvmarg value="-Xdebug"/>-->
-            <!--<jvmarg value="-Xrunjdwp:transport=dt_socket,server=y,suspend=n,address=5005"/>-->
-            <project file="${mps.home}/core/baseLanguage/baseLanguage/baseLanguage.mpr"/>
-            <project file="${mps.home}/core/baseLanguage/baseLanguageInternal/baseLanguageInternal.mpr"/>
-            <project file="${mps.home}/core/baseLanguage/collections/collections.mpr"/>
-            <project file="${mps.home}/core/baseLanguage/dates/dates.mpr"/>
-            <project file="${mps.home}/core/baseLanguage/tuples/tuples.mpr"/>
-            <project file="${mps.home}/core/baseLanguage/closures/closures.mpr"/>
-        </mps.test.generation>
-        <mps.test.generation fork="true" compile="true" showdiff="true" invoketests="true" loglevel="info">
-            <jvmarg value="-Xss1024k"/>
-            <jvmarg value="-Xmx1000m"/>
-            <jvmarg value="-XX:MaxPermSize=92m"/>
+            <jvmarg value="-Xdebug"/>
+            <jvmarg value="-Xrunjdwp:transport=dt_socket,server=y,suspend=n,address=5005"/>
             <project file="${mps.home}/core/languageDesign/actions/actions.mpr"/>
             <project file="${mps.home}/core/languageDesign/annotations/annotations.mpr"/>
             <project file="${mps.home}/core/languageDesign/constraints/constraints.mpr"/>
@@ -43,6 +32,19 @@
             <project file="${mps.home}/core/languageDesign/structure/structure.mpr"/>
             <project file="${mps.home}/core/languageDesign/test/test.mpr"/>
             <project file="${mps.home}/core/languageDesign/typesystem/typesystem.mpr"/>
+        </mps.test.generation>
+        <mps.test.generation fork="true" compile="true" showdiff="true" invoketests="true" loglevel="info">
+            <jvmarg value="-Xss1024k"/>
+            <jvmarg value="-Xmx1000m"/>
+            <jvmarg value="-XX:MaxPermSize=92m"/>
+            <!--<jvmarg value="-Xdebug"/>-->
+            <!--<jvmarg value="-Xrunjdwp:transport=dt_socket,server=y,suspend=n,address=5005"/>-->
+            <project file="${mps.home}/core/baseLanguage/baseLanguage/baseLanguage.mpr"/>
+            <project file="${mps.home}/core/baseLanguage/baseLanguageInternal/baseLanguageInternal.mpr"/>
+            <project file="${mps.home}/core/baseLanguage/collections/collections.mpr"/>
+            <project file="${mps.home}/core/baseLanguage/dates/dates.mpr"/>
+            <project file="${mps.home}/core/baseLanguage/tuples/tuples.mpr"/>
+            <project file="${mps.home}/core/baseLanguage/closures/closures.mpr"/>
         </mps.test.generation>
         <mps.test.generation fork="true" compile="true" showdiff="true" invoketests="true" loglevel="info">
             <jvmarg value="-Xss1024k"/>
@@ -69,6 +71,8 @@
             <jvmarg value="-Xss1024k"/>
             <jvmarg value="-Xmx1000m"/>
             <jvmarg value="-XX:MaxPermSize=92m"/>
+            <!--<jvmarg value="-Xdebug"/>-->
+            <!--<jvmarg value="-Xrunjdwp:transport=dt_socket,server=y,suspend=y,address=5005"/>-->
             <project file="${mps.home}/platform/buildlanguage/BuildLanguage.mpr"/>
         </mps.test.generation>
         <mps.test.generation fork="true" compile="true" showdiff="true" invoketests="true" loglevel="info">

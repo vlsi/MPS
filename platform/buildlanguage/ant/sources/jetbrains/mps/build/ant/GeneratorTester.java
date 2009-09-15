@@ -60,7 +60,6 @@ public class GeneratorTester extends Generator {
 
   @Override
   protected void generateModulesCircle(GeneratorManager gm, EmptyProgressIndicator emptyProgressIndicator, Set<IModule> modulesSet, List<Pair<SModelDescriptor, IOperationContext>> modelsToContext) {
-    ClassLoaderManager.getInstance().reloadAll(new EmptyProgressIndicator());
     String currentTestName = escapeMessageForTeamCity("generating " + modulesSet);
     System.out.println("##teamcity[testStarted name='" + currentTestName + "' captureStandardOutput='true']");
 

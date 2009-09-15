@@ -14,9 +14,6 @@
   <dependencies>
     <dependency reexport="false">a79f53b6-9aaa-48eb-9fbb-aaec80a6da9a(jetbrains.mps.build.custommps)</dependency>
   </dependencies>
-  <usedLanguages>
-    <usedLanguages>8d09fa8b-0d65-4c2f-aae6-d4847a49d862(jetbrains.mps.build.custommpsInternal)</usedLanguages>
-  </usedLanguages>
   <usedDevKits>
     <usedDevKit>2677cb18-f558-4e33-bc38-a5139cee06dc(jetbrains.mps.devkit.language-design)</usedDevKit>
   </usedDevKits>

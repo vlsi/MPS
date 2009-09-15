@@ -23,6 +23,7 @@ import com.intellij.openapi.util.Computable;
 import com.intellij.util.PathUtil;
 import com.intellij.util.Processor;
 import jetbrains.mps.TestMain;
+import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.build.buildgeneration.StronglyConnectedModules;
 import jetbrains.mps.build.buildgeneration.StronglyConnectedModules.IModuleDecorator;
 import jetbrains.mps.build.buildgeneration.StronglyConnectedModules.IModuleDecoratorBuilder;
@@ -43,7 +44,6 @@ import jetbrains.mps.logging.LogEntry;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.ModuleContext;
-import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.project.structure.project.ProjectDescriptor;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.persistence.DefaultModelRootManager;
@@ -112,6 +112,7 @@ public class Generator {
 
     final List<SModelDescriptor> models = collectModelsToGenerate();
 
+    ClassLoaderManager.getInstance().reloadAll(new EmptyProgressIndicator());
     ModelAccess.instance().runWriteAction(new Runnable() {
       public void run() {
         generateModels(project, models);
@@ -479,10 +480,10 @@ public class Generator {
       return myGenerationWarnings;
     }
 
-	public void clean() {
-	  myGenerationErrors.clear();
-	  myGenerationWarnings.clear();
-	}
+    public void clean() {
+      myGenerationErrors.clear();
+      myGenerationWarnings.clear();
+    }
   }
 
   private static class ModuleDecorator implements IModuleDecorator<IModule> {
