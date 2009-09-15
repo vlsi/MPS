@@ -222,13 +222,15 @@ public class GenerateTask extends org.apache.tools.ant.Task {
     if (new File(myMpsHome.getAbsolutePath() + File.separator + "classes").exists()) {
       pathsToLook = new File[]{new File(myMpsHome.getAbsolutePath() + File.separator + "core"),
         new File(myMpsHome.getAbsolutePath() + File.separator + "lib"),
-        new File(myMpsHome.getAbsolutePath() + File.separator + "platform" + File.separator + "buildlanguage"),
+        new File(myMpsHome.getAbsolutePath() + File.separator + "platform" + File.separator + "buildlanguage" + File.separator + "ant"),
+        new File(myMpsHome.getAbsolutePath() + File.separator + "platform" + File.separator + "buildlanguage" + File.separator + "languages" + File.separator + "packaging"),
         new File(myMpsHome.getAbsolutePath() + File.separator + "workbench"),
         new File(myMpsHome.getAbsolutePath() + File.separator + "MPSPlugin" + File.separator + "MPSSupport")};
     } else {
       pathsToLook = new File[]{new File(myMpsHome.getAbsolutePath() + File.separator + "core"),
         new File(myMpsHome.getAbsolutePath() + File.separator + "lib"),
-        new File(myMpsHome.getAbsolutePath() + File.separator + "platform"),
+        new File(myMpsHome.getAbsolutePath() + File.separator + "platform" + File.separator + "generate.ant.task.jar"),
+        new File(myMpsHome.getAbsolutePath() + File.separator + "platform" + File.separator + "jetbrains.mps.build.packaging.runtime.jar"),
         new File(myMpsHome.getAbsolutePath() + File.separator + "workbench"),
         new File(myMpsHome.getAbsolutePath() + File.separator + "plugin")};
     }
