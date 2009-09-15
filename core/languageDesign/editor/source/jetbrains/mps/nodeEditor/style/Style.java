@@ -106,8 +106,6 @@ public class Style {
       }
     }
 
-    boolean changed = false;
-
     Set<StyleAttribute> changedAttributes = new HashSet<StyleAttribute>();
 
     for (StyleAttribute attribute : attributes) {
