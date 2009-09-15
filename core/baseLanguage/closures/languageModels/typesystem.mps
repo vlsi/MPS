@@ -3745,14 +3745,14 @@
       <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="81108310549155632">
         <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="81108310549155633">
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="81108310549155644">
-            <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="81108310549155645">
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="8249991444799099530">
+              <link role="baseMethodDeclaration" targetNodeId="2v.8249991444799099355" resolveInfo="checkDataFlow" />
               <link role="classConcept" targetNodeId="2v.1223640197349" resolveInfo="DataFlowUtil" />
-              <link role="baseMethodDeclaration" targetNodeId="2v.1223640221746" resolveInfo="checkDataFlow" />
-              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="81108310549155646">
-                <node role="operand" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference" id="81108310549155647">
+              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="8249991444799099531">
+                <node role="operand" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference" id="8249991444799099532">
                   <link role="applicableNode" targetNodeId="81108310549037925" resolveInfo="closureLiteral" />
                 </node>
-                <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="81108310549155648">
+                <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="8249991444799099533">
                   <link role="link" targetNodeId="1.1199569916463" />
                 </node>
               </node>

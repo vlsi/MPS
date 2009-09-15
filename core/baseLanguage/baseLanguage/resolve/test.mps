@@ -97,6 +97,50 @@
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.Statement" id="3793054284049061556" />
         </node>
       </node>
+      <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="8249991444799260807">
+        <property name="name" value="govno" />
+        <node role="returnType" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="8249991444799262732" />
+        <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="8249991444799260809" />
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="8249991444799260810">
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="8249991444799262733">
+            <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="8249991444799262735">
+              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="8249991444799267707">
+                <node role="expression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="8249991444799267709">
+                  <property name="value" value="2" />
+                </node>
+              </node>
+            </node>
+            <node role="condition" type="jetbrains.mps.baseLanguage.structure.EqualsExpression" id="8249991444799267703">
+              <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="8249991444799267706">
+                <property name="value" value="3" />
+              </node>
+              <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="8249991444799267702">
+                <property name="value" value="2" />
+              </node>
+            </node>
+          </node>
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.Statement" id="8249991444799267710" />
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="8249991444799267712">
+            <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="8249991444799267713">
+              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="8249991444799267722">
+                <node role="expression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="8249991444799267724">
+                  <property name="value" value="11" />
+                </node>
+              </node>
+            </node>
+            <node role="condition" type="jetbrains.mps.baseLanguage.structure.EqualsExpression" id="8249991444799267718">
+              <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="8249991444799267721">
+                <property name="value" value="4" />
+              </node>
+              <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="8249991444799267717">
+                <property name="value" value="3" />
+              </node>
+            </node>
+          </node>
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.Statement" id="8249991444799267725" />
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.Statement" id="8249991444799267726" />
+        </node>
+      </node>
     </node>
     <node role="staticInnerClassifiers" type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="3949393327309101377">
       <property name="name" value="B" />

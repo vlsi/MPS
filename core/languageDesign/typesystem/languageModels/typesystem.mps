@@ -1990,11 +1990,16 @@
       <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1235663796518">
         <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1235663796519">
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1235663812110">
-            <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1235663812111">
-              <link role="baseMethodDeclaration" targetNodeId="12.1223640221746" resolveInfo="checkDataFlow" />
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="8249991444799099538">
+              <link role="baseMethodDeclaration" targetNodeId="12.8249991444799099355" resolveInfo="checkDataFlow" />
               <link role="classConcept" targetNodeId="12.1223640197349" resolveInfo="DataFlowUtil" />
-              <node role="actualArgument" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference" id="1235663812113">
-                <link role="applicableNode" targetNodeId="1207314761302" resolveInfo="abstractCheckingRule" />
+              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="8249991444799099539">
+                <node role="operand" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference" id="8249991444799099540">
+                  <link role="applicableNode" targetNodeId="1207314761302" resolveInfo="abstractCheckingRule" />
+                </node>
+                <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="8249991444799099541">
+                  <link role="link" targetNodeId="1.1195213635060" />
+                </node>
               </node>
             </node>
           </node>
@@ -2022,10 +2027,15 @@
     <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1207314836438">
       <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1223643098606">
         <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1223643101983">
-          <link role="baseMethodDeclaration" targetNodeId="12.1223640221746" resolveInfo="checkDataFlow" />
           <link role="classConcept" targetNodeId="12.1223640197349" resolveInfo="DataFlowUtil" />
-          <node role="actualArgument" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference" id="1223643105782">
-            <link role="applicableNode" targetNodeId="1207314899253" resolveInfo="abstractSubtypingRule" />
+          <link role="baseMethodDeclaration" targetNodeId="12.8249991444799099355" resolveInfo="checkDataFlow" />
+          <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="8249991444799100537">
+            <node role="operand" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference" id="1223643105782">
+              <link role="applicableNode" targetNodeId="1207314899253" resolveInfo="abstractSubtypingRule" />
+            </node>
+            <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="8249991444799100541">
+              <link role="link" targetNodeId="1.1175147624276" />
+            </node>
           </node>
         </node>
       </node>
@@ -2039,14 +2049,14 @@
     <property name="name" value="check_ComparisonRule_ExpectedReturns" />
     <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1207316035497">
       <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1223643240955">
-        <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1223643243988">
-          <link role="baseMethodDeclaration" targetNodeId="12.1223640283876" resolveInfo="checkReturns" />
+        <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="8249991444799178610">
           <link role="classConcept" targetNodeId="12.1223640197349" resolveInfo="DataFlowUtil" />
-          <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1223643250036">
-            <node role="operand" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference" id="1223643250037">
+          <link role="baseMethodDeclaration" targetNodeId="12.8249991444799164481" resolveInfo="checkReturns" />
+          <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="8249991444799178611">
+            <node role="operand" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference" id="8249991444799178612">
               <link role="applicableNode" targetNodeId="1207316038186" resolveInfo="comparisonRule" />
             </node>
-            <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1223643250038">
+            <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="8249991444799178613">
               <link role="link" targetNodeId="1.1175147624276" />
             </node>
           </node>
@@ -2062,14 +2072,14 @@
     <property name="name" value="check_SubtypingRule_ExpectedReturns" />
     <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1207316078728">
       <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1223643259900">
-        <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1223643262589">
-          <link role="baseMethodDeclaration" targetNodeId="12.1223640283876" resolveInfo="checkReturns" />
+        <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="8249991444799164575">
+          <link role="baseMethodDeclaration" targetNodeId="12.8249991444799164481" resolveInfo="checkReturns" />
           <link role="classConcept" targetNodeId="12.1223640197349" resolveInfo="DataFlowUtil" />
-          <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1223643266075">
-            <node role="operand" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference" id="1223643266076">
+          <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="8249991444799164576">
+            <node role="operand" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference" id="8249991444799164577">
               <link role="applicableNode" targetNodeId="1207316092090" resolveInfo="subtypingRule" />
             </node>
-            <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1223643266077">
+            <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="8249991444799164578">
               <link role="link" targetNodeId="1.1175147624276" />
             </node>
           </node>
@@ -2086,8 +2096,8 @@
     <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1207316363416">
       <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1223643119238">
         <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1223643122162">
-          <link role="baseMethodDeclaration" targetNodeId="12.1223640221746" resolveInfo="checkDataFlow" />
           <link role="classConcept" targetNodeId="12.1223640197349" resolveInfo="DataFlowUtil" />
+          <link role="baseMethodDeclaration" targetNodeId="12.8249991444799099355" resolveInfo="checkDataFlow" />
           <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1223643125554">
             <node role="operand" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference" id="1223643125555">
               <link role="applicableNode" targetNodeId="1207316366308" resolveInfo="whenConcreteStatement" />

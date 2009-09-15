@@ -5,9 +5,10 @@ package jetbrains.mps.baseLanguage.typesystem;
 import jetbrains.mps.lang.typesystem.dependencies.CheckingMethod;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.lang.dataFlow.framework.Program;
+import jetbrains.mps.lang.dataFlow.DataFlow;
 import jetbrains.mps.lang.dataFlow.DataflowBuilderException;
 import java.util.Set;
-import jetbrains.mps.lang.dataFlow.DataFlow;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
@@ -25,14 +26,23 @@ public class DataFlowUtil {
 
   @CheckingMethod
   public static void checkDataFlow(final TypeCheckingContext typeCheckingContext, SNode statementList) {
+    checkDataFlow(typeCheckingContext, statementList, false);
+  }
+
+  @CheckingMethod
+  public static void checkDataFlow(final TypeCheckingContext typeCheckingContext, SNode statementList, boolean checkReturns) {
     if (statementList == null) {
       return;
     }
     try {
-      checkUnreachable(typeCheckingContext, statementList);
-      checkUninitializedReads(typeCheckingContext, statementList);
-      checkUnusedAssignments(typeCheckingContext, statementList);
-      checkUnusedVariables(typeCheckingContext, statementList);
+      Program program = DataFlow.buildProgram(statementList);
+      checkUnreachable(typeCheckingContext, program);
+      checkUninitializedReads(typeCheckingContext, program);
+      checkUnusedAssignments(typeCheckingContext, program);
+      checkUnusedVariables(typeCheckingContext, statementList, program);
+      if (checkReturns) {
+        checkReturns(typeCheckingContext, program);
+      }
       /*
         checkNullable(typeCheckingContext, statementList);
       */
@@ -42,8 +52,8 @@ public class DataFlowUtil {
   }
 
   @CheckingMethod
-  public static void checkReturns(final TypeCheckingContext typeCheckingContext, SNode statementList) {
-    Set<SNode> expectedReturns = DataFlow.getExpectedReturns(statementList);
+  public static void checkReturns(final TypeCheckingContext typeCheckingContext, Program program) {
+    Set<SNode> expectedReturns = DataFlow.getExpectedReturns(program);
     for (SNode n : expectedReturns) {
       if (n != null) {
         SNode nodeToSelect;
@@ -71,8 +81,13 @@ public class DataFlowUtil {
   }
 
   @CheckingMethod
-  private static void checkUnreachable(final TypeCheckingContext typeCheckingContext, SNode statementList) {
-    Set<SNode> unreachable = DataFlow.getUnreachableNodes(statementList);
+  public static void checkReturns(final TypeCheckingContext typeCheckingContext, SNode node) {
+    checkReturns(typeCheckingContext, DataFlow.buildProgram(node));
+  }
+
+  @CheckingMethod
+  private static void checkUnreachable(final TypeCheckingContext typeCheckingContext, Program program) {
+    Set<SNode> unreachable = DataFlow.getUnreachableNodes(program);
     for (SNode n : unreachable) {
       {
         BaseIntentionProvider intentionProvider = null;
@@ -83,8 +98,8 @@ public class DataFlowUtil {
   }
 
   @CheckingMethod
-  private static void checkUninitializedReads(final TypeCheckingContext typeCheckingContext, SNode statementList) {
-    Set<SNode> uninitializedReads = DataFlow.getUninitializedReads(statementList);
+  private static void checkUninitializedReads(final TypeCheckingContext typeCheckingContext, Program program) {
+    Set<SNode> uninitializedReads = DataFlow.getUninitializedReads(program);
     for (SNode read : uninitializedReads) {
       if (SNodeOperations.isInstanceOf(read, "jetbrains.mps.baseLanguage.structure.LocalVariableReference") && !(LocalVariableDeclaration_Behavior.call_isVariableReferencedInClosures_1229352990212(SLinkOperations.getTarget(SNodeOperations.cast(read, "jetbrains.mps.baseLanguage.structure.LocalVariableReference"), "variableDeclaration", false)))) {
         {
@@ -104,8 +119,8 @@ public class DataFlowUtil {
   }
 
   @CheckingMethod
-  private static void checkUnusedAssignments(final TypeCheckingContext typeCheckingContext, SNode statementList) {
-    Set<SNode> unusedAssignments = DataFlow.getUnusedAssignments(statementList);
+  private static void checkUnusedAssignments(final TypeCheckingContext typeCheckingContext, Program program) {
+    Set<SNode> unusedAssignments = DataFlow.getUnusedAssignments(program);
     for (SNode write : unusedAssignments) {
       if (SNodeOperations.isInstanceOf(write, "jetbrains.mps.baseLanguage.structure.BaseAssignmentExpression")) {
         SNode assignment = SNodeOperations.cast(write, "jetbrains.mps.baseLanguage.structure.BaseAssignmentExpression");
@@ -142,8 +157,8 @@ public class DataFlowUtil {
   }
 
   @CheckingMethod
-  public static void checkUnusedVariables(final TypeCheckingContext typeCheckingContext, @NotNull SNode statementList) {
-    Set<SNode> unusedVariables = DataFlow.getUnusedVariables(statementList);
+  public static void checkUnusedVariables(final TypeCheckingContext typeCheckingContext, @NotNull SNode statementList, Program program) {
+    Set<SNode> unusedVariables = DataFlow.getUnusedVariables(program, statementList);
     for (SNode var : unusedVariables) {
       if (!(SNodeOperations.isInstanceOf(SNodeOperations.getParent(var), "jetbrains.mps.baseLanguage.structure.CatchClause")) && SNodeOperations.getAncestor(var, "jetbrains.mps.lang.quotation.structure.Quotation", false, false) == null) {
         {

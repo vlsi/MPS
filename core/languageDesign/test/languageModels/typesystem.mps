@@ -219,14 +219,14 @@
     <property name="name" value="CheckTestMethodDataflow" />
     <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1217855694004">
       <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1223643137089">
-        <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1223643139216">
-          <link role="baseMethodDeclaration" targetNodeId="6.1223640221746" resolveInfo="checkDataFlow" />
+        <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="8249991444799099534">
+          <link role="baseMethodDeclaration" targetNodeId="6.8249991444799099355" resolveInfo="checkDataFlow" />
           <link role="classConcept" targetNodeId="6.1223640197349" resolveInfo="DataFlowUtil" />
-          <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1223643143078">
-            <node role="operand" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference" id="1223643142295">
+          <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="8249991444799099535">
+            <node role="operand" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference" id="8249991444799099536">
               <link role="applicableNode" targetNodeId="1217855714267" resolveInfo="nodesTestMethod" />
             </node>
-            <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1225109813504">
+            <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="8249991444799099537">
               <link role="link" targetNodeId="5.1068580123135" />
             </node>
           </node>

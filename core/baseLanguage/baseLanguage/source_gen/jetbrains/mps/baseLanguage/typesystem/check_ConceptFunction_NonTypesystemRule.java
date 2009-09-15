@@ -17,10 +17,11 @@ public class check_ConceptFunction_NonTypesystemRule extends AbstractNonTypesyst
 
   public void applyRule(final SNode nodeToCheck, final TypeCheckingContext typeCheckingContext) {
     if (SLinkOperations.getTarget(nodeToCheck, "body", true) != null) {
+      boolean checkReturns = false;
       if (ConceptFunction_Behavior.call_getExpectedReturnType_1213877374441(nodeToCheck) != null && !(SNodeOperations.isInstanceOf(ConceptFunction_Behavior.call_getExpectedReturnType_1213877374441(nodeToCheck), "jetbrains.mps.baseLanguage.structure.VoidType"))) {
-        DataFlowUtil.checkReturns(typeCheckingContext, SLinkOperations.getTarget(nodeToCheck, "body", true));
+        checkReturns = true;
       }
-      DataFlowUtil.checkDataFlow(typeCheckingContext, SLinkOperations.getTarget(nodeToCheck, "body", true));
+      DataFlowUtil.checkDataFlow(typeCheckingContext, SLinkOperations.getTarget(nodeToCheck, "body", true), checkReturns);
     }
   }
 

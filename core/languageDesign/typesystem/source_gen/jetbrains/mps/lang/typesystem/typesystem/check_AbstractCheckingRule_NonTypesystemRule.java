@@ -16,7 +16,7 @@ public class check_AbstractCheckingRule_NonTypesystemRule extends AbstractNonTyp
 
   public void applyRule(final SNode abstractCheckingRule, final TypeCheckingContext typeCheckingContext) {
     if (SLinkOperations.getTarget(abstractCheckingRule, "body", true) != null) {
-      DataFlowUtil.checkDataFlow(typeCheckingContext, abstractCheckingRule);
+      DataFlowUtil.checkDataFlow(typeCheckingContext, SLinkOperations.getTarget(abstractCheckingRule, "body", true));
     }
   }
 
