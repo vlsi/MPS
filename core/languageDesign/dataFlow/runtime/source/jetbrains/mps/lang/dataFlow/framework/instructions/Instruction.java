@@ -118,7 +118,7 @@ public abstract class Instruction {
   }
 
   public int getIndex() {
-    return myProgram.indexOf(this);
+    return myIndex;
   }
 
   public void setIndex(int index) {
