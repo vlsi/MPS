@@ -24,12 +24,12 @@ import java.util.*;
 
 public abstract class Instruction {
   private Program myProgram;
-
   private Object mySource;
 
   private Set<Instruction> myJumps = new HashSet<Instruction>();
   private Map<Object, Object> myUserObjects = new HashMap<Object, Object>();
   private TryFinallyInfo myBlockInfo;
+  private int myIndex;
 
   Instruction() {
   }
@@ -60,9 +60,8 @@ public abstract class Instruction {
 
   public void buildCaches() {
     TryFinallyInfo bestMatch = null;
-    int index = getIndex();
     for (TryFinallyInfo info : getProgram().getBlockInfos()) {
-      if (index > info.getTry().getIndex() && index < info.getEndTry().getIndex()) {
+      if (myIndex > info.getTry().getIndex() && myIndex < info.getEndTry().getIndex()) {
         bestMatch = info;
       }
     }
@@ -120,6 +119,10 @@ public abstract class Instruction {
 
   public int getIndex() {
     return myProgram.indexOf(this);
+  }
+
+  public void setIndex(int index) {
+    myIndex = index;
   }
 
   public boolean isBefore(Instruction i) {

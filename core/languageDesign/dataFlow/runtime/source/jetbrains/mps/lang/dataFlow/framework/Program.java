@@ -68,6 +68,7 @@ public class Program {
   void add(Instruction instruction) {
     instruction.setProgram(this);
     instruction.setSource(getCurrent());
+    instruction.setIndex(myInstructions.size());
     myInstructions.add(instruction);
   }
 
