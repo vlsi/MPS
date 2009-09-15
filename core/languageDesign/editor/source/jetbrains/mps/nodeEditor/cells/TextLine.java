@@ -29,6 +29,7 @@ public class TextLine {
   private static final Color ERROR_COLOR = new Color(255, 220, 220);
   
   private static Map<Font, FontMetrics> ourFontMetricsCache = new HashMap<Font, FontMetrics>();
+  private static Map<String, Font> ourFontsCache = new HashMap<String, Font>();
 
   private static FontMetrics getFontMetrics(Font font) {
     FontMetrics result = ourFontMetricsCache.get(font);
@@ -36,6 +37,17 @@ public class TextLine {
       result = Toolkit.getDefaultToolkit().getFontMetrics(font);
     }
     ourFontMetricsCache.put(font, result);
+    return result;
+  }
+
+
+  private static Font getFont(String fontName, int style, int size) {
+    String key = fontName + "#" + style + "#" + size;
+    Font result = ourFontsCache.get(key);
+    if (result == null) {
+      result = new Font(fontName, style, size);
+      ourFontsCache.put(key, result);
+    }
     return result;
   }
 
@@ -165,7 +177,7 @@ public class TextLine {
       String family = settings.getFontFamily();
       Integer style = myStyle.get(StyleAttributes.FONT_STYLE);
       int fontSize = styleFontSize != null ? styleFontSize : settings.getFontSize();
-      myFont = new Font(family, style, fontSize);
+      myFont = getFont(family, style, fontSize);
     }
 
     myPaddingLeft = getHorizontalInternalInset(myStyle.get(StyleAttributes.PADDING_LEFT));
