@@ -20,15 +20,13 @@ import jetbrains.mps.util.WindowsUtil;
 
 import javax.swing.JDialog;
 import javax.swing.JScrollPane;
-import javax.swing.JLabel;
-import javax.swing.JTextPane;
-import javax.swing.text.html.HTMLDocument;
+import javax.swing.JTextArea;
 import javax.swing.border.LineBorder;
 import java.awt.*;
 import java.awt.event.*;
 
 public abstract class AbstractNodeInformationDialog extends JDialog {
-  private JTextPane myLabel;
+  private JTextArea myTextArea;
   private static final Color BACKGROUND_COLOR = new Color(253, 254, 226);
   private Component prevFocusOwner;
   private FocusListener myOwnerFocusListener = new FocusAdapter() {
@@ -61,22 +59,16 @@ public abstract class AbstractNodeInformationDialog extends JDialog {
     setModal(false);
     setFocusableWindowState(false);
 
-    myLabel = new JTextPane();
+    myTextArea = new JTextArea();
+    myTextArea.setEditable(false);
+    String text = createNodeInfo(node);    
+    myTextArea.setText(text);
+    myTextArea.setFont(EditorSettings.getInstance().getDefaultEditorFont());
 
-    myLabel.setEditable(false);
-    String text = createNodeInfo(node);
-    if (text.startsWith("<html>")) {
-      myLabel.setContentType("text/html");
-    }
-    myLabel.setText(text);
+    myTextArea.setOpaque(true);
+    myTextArea.setBackground(BACKGROUND_COLOR);
 
-    myLabel.setFont(EditorSettings.getInstance().getDefaultEditorFont());
-
-
-    myLabel.setOpaque(true);
-    myLabel.setBackground(BACKGROUND_COLOR);
-
-    JScrollPane scrollPane = new JScrollPane(myLabel);
+    JScrollPane scrollPane = new JScrollPane(myTextArea);
     scrollPane.setBorder(new LineBorder(Color.BLACK));
     add(scrollPane);
 
@@ -91,18 +83,8 @@ public abstract class AbstractNodeInformationDialog extends JDialog {
 
     if (rect.y + rect.height < getY() + getHeight()) {
       setLocation(getX(), rect.y + rect.height - getHeight());
-    }
-
-    myLabel.addKeyListener(new KeyAdapter() {
-      public void keyPressed(KeyEvent e) {
-        if (e.getKeyCode() == KeyEvent.VK_ESCAPE) {
-          dispose();
-          e.consume();
-        }
-      }
-    });
-
-    addListeners();    
+    }    
+    addListeners();
   }
 
   private void addListeners() {
@@ -118,11 +100,7 @@ public abstract class AbstractNodeInformationDialog extends JDialog {
     prevFocusOwner.removeKeyListener(myOwnerKeyListener);
     prevFocusOwner.removeMouseListener(myOwnerMouseListener);
     super.dispose();
-  }
-
-  protected Dimension getDefaultSize() {
-    return new Dimension(400, 300);
-  }
+  }  
 
   protected abstract String createNodeInfo(SNode node);
 }

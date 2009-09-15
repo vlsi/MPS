@@ -184,11 +184,7 @@ public abstract class QueryMethodIdEditor extends AbstractCellProvider {
         protected String createNodeInfo(SNode node) {
           return methodText;
         }
-
-
-        protected Dimension getDefaultSize() {
-          return new Dimension(1000, 400);
-        }
+        
       }.setVisible(true);
 
     } catch (IOException e) {
