@@ -65,18 +65,6 @@ public class Program {
     return new ArrayList<Object>(myVariables);
   }
 
-  public int getVariablesCount() {
-    return myVariables.size();
-  }
-
-  public int getVariableIndex(Object var) {
-    return myVariables.indexOf(var);
-  }
-
-  public Object getVariable(int index) {
-    return myVariables.get(index);
-  }
-
   void add(Instruction instruction) {
     instruction.setProgram(this);
     instruction.setSource(getCurrent());

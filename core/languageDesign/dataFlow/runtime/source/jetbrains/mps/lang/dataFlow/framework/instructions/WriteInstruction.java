@@ -17,7 +17,6 @@ package jetbrains.mps.lang.dataFlow.framework.instructions;
 
 public class WriteInstruction extends Instruction {
   private Object myVar;
-  private int myIndex;
   private Object myValue;
 
   public WriteInstruction(Object var, Object value) {
@@ -29,18 +28,8 @@ public class WriteInstruction extends Instruction {
     return myVar;
   }
 
-  public int getVariableIndex() {
-    return myIndex;
-  }
-
   public Object getValue() {
     return myValue;
-  }
-
-  @Override
-  public void buildCaches() {
-    super.buildCaches();
-    myIndex = getProgram().getVariableIndex(myVar);
   }
 
   String commandPresentation() {
