@@ -25,13 +25,14 @@ import jetbrains.mps.lang.dataFlow.framework.instructions.Instruction;
 
 import java.util.HashSet;
 import java.util.Set;
+import java.util.List;
 
 public class LivenessAnalyzer implements DataFlowAnalyzer<Set<Object>> {
   public Set<Object> initial(Program p) {
     return new HashSet<Object>();
   }
 
-  public Set<Object> merge(Program p, Set<Set<Object>> input) {
+  public Set<Object> merge(Program p, List<Set<Object>> input) {
     Set<Object> result = new HashSet<Object>();
     for (Set<Object> inputSet : input) {
       result.addAll(inputSet);

@@ -25,13 +25,14 @@ import jetbrains.mps.lang.dataFlow.framework.AnalysisDirection;
 
 import java.util.Set;
 import java.util.HashSet;
+import java.util.List;
 
 public class ReachingReadsAnalyzer implements DataFlowAnalyzer<Set<ReadInstruction>> {
   public Set<ReadInstruction> initial(Program p) {
     return new HashSet<ReadInstruction>();
   }
 
-  public Set<ReadInstruction> merge(Program p, Set<Set<ReadInstruction>> input) {
+  public Set<ReadInstruction> merge(Program p, List<Set<ReadInstruction>> input) {
     Set<ReadInstruction> result = new HashSet<ReadInstruction>();
     for (Set<ReadInstruction> i : input) {
       result.addAll(i);

@@ -21,13 +21,14 @@ import jetbrains.mps.lang.dataFlow.framework.Program;
 import jetbrains.mps.lang.dataFlow.framework.ProgramState;
 
 import java.util.Set;
+import java.util.List;
 
 public class ReachabilityAnalyzer implements DataFlowAnalyzer<Boolean> {
   public Boolean initial(Program p) {
     return false;
   }
 
-  public Boolean merge(Program p, Set<Boolean> input) {
+  public Boolean merge(Program p, List<Boolean> input) {
     for (Boolean value : input) {
       if (value) {
         return true;

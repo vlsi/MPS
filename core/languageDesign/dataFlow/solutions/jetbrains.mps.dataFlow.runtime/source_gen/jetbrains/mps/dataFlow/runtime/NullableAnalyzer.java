@@ -9,8 +9,7 @@ import jetbrains.mps.lang.dataFlow.framework.Program;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import java.util.Set;
-import jetbrains.mps.internal.collections.runtime.SetSequence;
+import java.util.List;
 import jetbrains.mps.lang.dataFlow.framework.ProgramState;
 import jetbrains.mps.lang.dataFlow.framework.instructions.WriteInstruction;
 import jetbrains.mps.lang.dataFlow.framework.instructions.VariableValueInstruction;
@@ -31,11 +30,11 @@ public class NullableAnalyzer<T> implements DataFlowAnalyzer<Map<T, NullableVari
     return result;
   }
 
-  public Map<T, NullableVariableState> merge(Program program, Set<Map<T, NullableVariableState>> values) {
+  public Map<T, NullableVariableState> merge(Program program, List<Map<T, NullableVariableState>> values) {
     Map<T, NullableVariableState> result = this.initial(program);
     for (Object var : ListSequence.fromList(program.getVariables())) {
       T variable = (T)var;
-      for (Map<T, NullableVariableState> value : SetSequence.fromSet(values)) {
+      for (Map<T, NullableVariableState> value : ListSequence.fromList(values)) {
         MapSequence.fromMap(result).put(variable, MapSequence.fromMap(result).get(variable).merge(MapSequence.fromMap(value).get(variable)));
       }
     }

@@ -16,10 +16,11 @@
 package jetbrains.mps.lang.dataFlow.framework;
 
 import java.util.Set;
+import java.util.List;
 
 public interface DataFlowAnalyzer<E> {
   E initial(Program p);
-  E merge(Program p, Set<E> input);
+  E merge(Program p, List<E> input);
 
   /**
    * input parameter can be changed

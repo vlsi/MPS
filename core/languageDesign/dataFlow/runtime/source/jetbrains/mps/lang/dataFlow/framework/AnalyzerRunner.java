@@ -31,16 +31,16 @@ class AnalyzerRunner<E> {
 
   AnalysisResult analyze() {
     Map<ProgramState, E> stateValues = doAnalyze();
-    Map<Instruction, Set<E>> possibleValues = new HashMap<Instruction, Set<E>>();
+    Map<Instruction, List<E>> possibleValues = new HashMap<Instruction, List<E>>();
     for (Map.Entry<ProgramState, E> entry : stateValues.entrySet()) {
       if (!possibleValues.containsKey(entry.getKey().getInstruction())) {
-        possibleValues.put(entry.getKey().getInstruction(), new HashSet<E>());
+        possibleValues.put(entry.getKey().getInstruction(), new ArrayList<E>());
       }
       possibleValues.get(entry.getKey().getInstruction()).add(entry.getValue());
     }
 
     Map<Instruction, E> result = new HashMap<Instruction, E>();
-    for (Entry<Instruction, Set<E>> entry : possibleValues.entrySet()) {
+    for (Entry<Instruction, List<E>> entry : possibleValues.entrySet()) {
       result.put(entry.getKey(), myAnalyzer.merge(myProgram, entry.getValue()));
     }
 
@@ -64,7 +64,7 @@ class AnalyzerRunner<E> {
     while (!workList.isEmpty()) {
       ProgramState current = workList.remove();
 
-      Set<E> input = new HashSet<E>();
+      List<E> input = new ArrayList<E>();
       for (ProgramState s : direction.dependencies(current)) {
         if (stateValues.containsKey(s)) {
           input.add(stateValues.get(s));

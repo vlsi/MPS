@@ -24,13 +24,14 @@ import jetbrains.mps.lang.dataFlow.framework.instructions.Instruction;
 
 import java.util.HashSet;
 import java.util.Set;
+import java.util.List;
 
 public class ReachingDefinitionsAnalyzer implements DataFlowAnalyzer<Set<WriteInstruction>> {
   public Set<WriteInstruction> initial(Program p) {
     return new HashSet<WriteInstruction>();
   }
 
-  public Set<WriteInstruction> merge(Program p, Set<Set<WriteInstruction>> input) {
+  public Set<WriteInstruction> merge(Program p, List<Set<WriteInstruction>> input) {
     Set<WriteInstruction> result = new HashSet<WriteInstruction>();
     for (Set<WriteInstruction> i : input) {
       result.addAll(i);

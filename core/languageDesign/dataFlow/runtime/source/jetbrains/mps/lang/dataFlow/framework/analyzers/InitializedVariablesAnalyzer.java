@@ -24,6 +24,7 @@ import jetbrains.mps.lang.dataFlow.framework.*;
 
 import java.util.Set;
 import java.util.HashSet;
+import java.util.List;
 
 public class InitializedVariablesAnalyzer implements DataFlowAnalyzer<Set<Object>> {
 
@@ -31,7 +32,7 @@ public class InitializedVariablesAnalyzer implements DataFlowAnalyzer<Set<Object
     return new HashSet<Object>(p.getVariables());
   }
 
-  public Set<Object> merge(Program p, Set<Set<Object>> input) {
+  public Set<Object> merge(Program p, List<Set<Object>> input) {
     Set<Object> result = initial(p);
     for (Set<Object> item : input) {
       result.retainAll(item);
