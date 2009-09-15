@@ -16,9 +16,8 @@ import jetbrains.mps.lang.dataFlow.framework.AnalysisResult;
 import jetbrains.mps.lang.dataFlow.framework.instructions.Instruction;
 
 public class NullableUtil {
-
   public static NullableVariableState getVariableStateByAnnotation(List<SNode> annotations) {
-    for(SNode annotation : ListSequence.fromList(annotations)) {
+    for (SNode annotation : ListSequence.fromList(annotations)) {
       if (SLinkOperations.getTarget(annotation, "annotation", false) == SNodeOperations.getNode("f:java_stub#org.jetbrains.annotations(org.jetbrains.annotations@java_stub)", "~Nullable")) {
         return NullableVariableState.NULLABLE;
       }
@@ -33,7 +32,7 @@ public class NullableUtil {
     Program p = DataFlowManager.getInstance().buildProgramFor(node);
     Map<SNode, NullableVariableState> result = MapSequence.fromMap(new HashMap<SNode, NullableVariableState>());
     AnalysisResult<Map<SNode, NullableVariableState>> analysisResult = p.analyze(new NullableAnalyzer<SNode>());
-    for(SNode reference : ListSequence.fromList(SNodeOperations.getDescendants(node, "jetbrains.mps.baseLanguage.structure.LocalVariableReference", false))) {
+    for (SNode reference : ListSequence.fromList(SNodeOperations.getDescendants(node, "jetbrains.mps.baseLanguage.structure.LocalVariableReference", false, new String[]{}))) {
       if (!(p.getInstructionsFor(reference).isEmpty())) {
         Instruction instruction = p.getInstructionsFor(reference).get(0);
         NullableVariableState state = MapSequence.fromMap(analysisResult.get(instruction)).get(SLinkOperations.getTarget(reference, "variableDeclaration", false));
@@ -49,5 +48,4 @@ public class NullableUtil {
     NullableAnalysisResult analizysResult = new NullableAnalysisResult(node);
     return analizysResult.checkNodes(node);
   }
-
 }

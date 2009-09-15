@@ -8,14 +8,14 @@ import jetbrains.mps.lang.dataFlow.framework.AnalysisDirection;
 import jetbrains.mps.lang.dataFlow.framework.Program;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
-import jetbrains.mps.internal.collections.runtime.SetSequence;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.Set;
+import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.lang.dataFlow.framework.ProgramState;
 import jetbrains.mps.lang.dataFlow.framework.instructions.WriteInstruction;
 import jetbrains.mps.lang.dataFlow.framework.instructions.VariableValueInstruction;
 
-public class NullableAnalyzer <T> implements DataFlowAnalyzer<Map<T, NullableVariableState>> {
-
+public class NullableAnalyzer<T> implements DataFlowAnalyzer<Map<T, NullableVariableState>> {
   public NullableAnalyzer() {
   }
 
@@ -25,7 +25,7 @@ public class NullableAnalyzer <T> implements DataFlowAnalyzer<Map<T, NullableVar
 
   public Map<T, NullableVariableState> initial(Program p) {
     Map<T, NullableVariableState> result = MapSequence.fromMap(new HashMap<T, NullableVariableState>());
-    for(Object var : SetSequence.fromSet(p.getVariables())) {
+    for (Object var : ListSequence.fromList(p.getVariables())) {
       MapSequence.fromMap(result).put(((T)var), NullableVariableState.NOT_INIT);
     }
     return result;
@@ -33,9 +33,9 @@ public class NullableAnalyzer <T> implements DataFlowAnalyzer<Map<T, NullableVar
 
   public Map<T, NullableVariableState> merge(Program program, Set<Map<T, NullableVariableState>> values) {
     Map<T, NullableVariableState> result = this.initial(program);
-    for(Object var : SetSequence.fromSet(program.getVariables())) {
+    for (Object var : ListSequence.fromList(program.getVariables())) {
       T variable = (T)var;
-      for(Map<T, NullableVariableState> value : SetSequence.fromSet(values)) {
+      for (Map<T, NullableVariableState> value : SetSequence.fromSet(values)) {
         MapSequence.fromMap(result).put(variable, MapSequence.fromMap(result).get(variable).merge(MapSequence.fromMap(value).get(variable)));
       }
     }
@@ -51,8 +51,7 @@ public class NullableAnalyzer <T> implements DataFlowAnalyzer<Map<T, NullableVar
       T variable = (T)write.getVariable();
       if (value == null) {
         MapSequence.fromMap(result).put(variable, NullableVariableState.UNKNOWN);
-      } else
-      {
+      } else {
         MapSequence.fromMap(result).put(variable, value);
       }
     }
@@ -66,5 +65,4 @@ public class NullableAnalyzer <T> implements DataFlowAnalyzer<Map<T, NullableVar
     }
     return result;
   }
-
 }

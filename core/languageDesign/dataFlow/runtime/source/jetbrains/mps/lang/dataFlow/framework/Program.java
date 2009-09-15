@@ -31,7 +31,7 @@ public class Program {
   private Map<Object, Integer> myStarts = new HashMap<Object, Integer>();
   private Map<Object, Integer> myEnds = new HashMap<Object, Integer>();
   private Stack<Object> myCreationStack = new Stack<Object>();
-  private Set<Object> myVariables = new HashSet<Object>();
+  private List<Object> myVariables = new ArrayList<Object>();
 
   public List<Instruction> getInstructions() {
     return Collections.unmodifiableList((List<? extends Instruction>) myInstructions);
@@ -61,8 +61,20 @@ public class Program {
     return new AnalyzerRunner<E>(this, analyzer).analyze();
   }
 
-  public Set<Object> getVariables() {
-    return new HashSet<Object>(myVariables);
+  public List<Object> getVariables() {
+    return new ArrayList<Object>(myVariables);
+  }
+
+  public int getVariablesCount() {
+    return myVariables.size();
+  }
+
+  public int getVariableIndex(Object var) {
+    return myVariables.indexOf(var);
+  }
+
+  public Object getVariable(int index) {
+    return myVariables.get(index);
   }
 
   void add(Instruction instruction) {
@@ -122,9 +134,9 @@ public class Program {
   void init() {
     add(new EndInstruction());
 
+    collectVariables();
     buildBlockInfos();
     buildInstructionCaches();
-    collectVariables();
 
     sanityCheck();
   }
@@ -136,7 +148,7 @@ public class Program {
   }
 
   private void collectVariables() {
-    Set<Object> result = new HashSet<Object>();
+    Set<Object> result = new LinkedHashSet<Object>();
     for (Instruction i : myInstructions) {
       if (i instanceof ReadInstruction) {
         result.add(((ReadInstruction) i).getVariable());
@@ -145,7 +157,8 @@ public class Program {
         result.add(((WriteInstruction) i).getVariable());
       }
     }
-    myVariables = result;
+
+    myVariables = new ArrayList<Object>(result);
   }
 
   private void buildBlockInfos() {

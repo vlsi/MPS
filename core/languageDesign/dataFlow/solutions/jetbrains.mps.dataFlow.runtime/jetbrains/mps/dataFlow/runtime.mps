@@ -112,7 +112,7 @@
               <link role="variableDeclaration" targetNodeId="1232016624726" resolveInfo="p" />
             </node>
             <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1232016817413">
-              <link role="baseMethodDeclaration" targetNodeId="1.~Program.getVariables():java.util.Set" resolveInfo="getVariables" />
+              <link role="baseMethodDeclaration" targetNodeId="1.~Program.getVariables():java.util.List" resolveInfo="getVariables" />
             </node>
           </node>
           <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1232016804218">
@@ -198,7 +198,7 @@
             </node>
             <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1230493039323">
               <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1230493039324">
-                <link role="baseMethodDeclaration" targetNodeId="1.~DataFlowAnalyzer.initial(jetbrains.mps.lang.dataFlow.framework.Program):java.lang.Object" resolveInfo="initial" />
+                <link role="baseMethodDeclaration" targetNodeId="1232016579636" resolveInfo="initial" />
                 <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1230493041717">
                   <link role="variableDeclaration" targetNodeId="1230466520793" resolveInfo="programm" />
                 </node>
@@ -216,7 +216,7 @@
               <link role="variableDeclaration" targetNodeId="1230466520793" resolveInfo="programm" />
             </node>
             <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1230492904339">
-              <link role="baseMethodDeclaration" targetNodeId="1.~Program.getVariables():java.util.Set" resolveInfo="getVariables" />
+              <link role="baseMethodDeclaration" targetNodeId="1.~Program.getVariables():java.util.List" resolveInfo="getVariables" />
             </node>
           </node>
           <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1230492885378">
