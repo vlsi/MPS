@@ -29,7 +29,7 @@ import jetbrains.mps.lang.core.structure.BaseConcept;
 import java.util.*;
 import java.awt.event.KeyEvent;
 
-public abstract class AbstractCellListHandler implements KeyboardHandler {
+public abstract class AbstractCellListHandler {
   public static final String ELEMENT_CELL_ACTIONS_SET = "element-cell-actions-set";
 
   protected SNode myOwnerNode;
@@ -63,9 +63,7 @@ public abstract class AbstractCellListHandler implements KeyboardHandler {
   public void startInsertMode(EditorContext editorContext, EditorCell anchorCell, boolean insertBefore) {
     SNode anchorNode = getAnchorNode(anchorCell);
     myInsertedNode = createNodeToInsert(editorContext);
-    doInsertNode(anchorNode, insertBefore);
-    EditorComponent editor = editorContext.getNodeEditorComponent();
-    editor.pushKeyboardHandler(this);
+    doInsertNode(anchorNode, insertBefore);    
   }
 
   protected void finishInsertMode(EditorContext editorContext) {
@@ -153,39 +151,6 @@ public abstract class AbstractCellListHandler implements KeyboardHandler {
     separatorCell = createSeparatorCell(editorContext);
     return separatorCell;
   }
-
-  public boolean processKeyPressed(final EditorContext editorContext, KeyEvent keyEvent) {
-    EditorComponent editor = editorContext.getNodeEditorComponent();
-    final CellActionType actionType = editor.getActionType(keyEvent, editorContext);
-    if (actionType == CellActionType.INSERT || actionType == CellActionType.INSERT_BEFORE) {
-      ModelAccess.instance().runWriteActionInCommand(new Runnable() {
-        public void run() {
-          cancelInsertMode(editorContext);
-          myListEditorCell_Collection.getParent().executeAction(actionType);
-        }
-      });      
-    } else {
-      finishInsertMode(editorContext);
-      editor.processKeyPressed(keyEvent);
-    }
-    return true;
-  }
-
-  public boolean processKeyTyped(EditorContext editorContext, KeyEvent keyEvent) {
-    return false;
-  }
-
-  public boolean processKeyReleased(EditorContext editorContext, KeyEvent keyEvent) {
-    EditorComponent editor = editorContext.getNodeEditorComponent();
-    CellActionType actionType = editor.getActionType(keyEvent, editorContext);
-    if (!(actionType == CellActionType.INSERT || actionType == CellActionType.INSERT_BEFORE) ||
-            keyEvent.getModifiers() == 0) { // disable this feature if 'insert' keystroke doesn't contain modifiers
-      finishInsertMode(editorContext);
-      return true;
-    }
-    return false;
-  }
-
 
   // important: create such a method in every descendant of this class, it will be invoked via reflection
   @SuppressWarnings({"UnusedDeclaration"})
