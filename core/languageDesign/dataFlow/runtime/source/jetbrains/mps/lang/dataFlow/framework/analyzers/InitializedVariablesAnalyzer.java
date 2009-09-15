@@ -28,7 +28,7 @@ import java.util.HashSet;
 public class InitializedVariablesAnalyzer implements DataFlowAnalyzer<Set<Object>> {
 
   public Set<Object> initial(Program p) {
-    return new HashSet<Object>(p.getVariables());
+    return p.getVariables();
   }
 
   public Set<Object> merge(Program p, Set<Set<Object>> input) {
