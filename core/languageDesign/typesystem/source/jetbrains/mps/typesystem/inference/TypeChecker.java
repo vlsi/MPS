@@ -329,7 +329,7 @@ public class TypeChecker implements ApplicationComponent {
   @Nullable
   private SNode getTypeOf_normalMode(SNode node) {
     if (node == null) return null;
-    if (!checkIfNotChecked(node, true)) return null;
+    if (!checkIfNotChecked(node, false)) return null;
     return getTypeDontCheck(node);
   }
 
