@@ -51,7 +51,7 @@ class MergeModelsDialog extends BaseDialog {
     if (!myMergeView.isResolved()) {
       int result;
       String message = "You have unresolved conflicts.\n" +
-        "Do you want to exit and let MPS resolve them automatically\n(conflicted changes from server would be biscarded)?";
+        "Do you want to exit and let MPS resolve them automatically\n(conflicted changes from server would be discarded)?";
       String title = "Exit And Resolve Conflicts Automatically?";
       if (ApplicationManager.getApplication().isUnitTestMode()) {
         result = JOptionPane.showConfirmDialog(myMergeView, message, title, JOptionPane.OK_CANCEL_OPTION | JOptionPane.WARNING_MESSAGE);
