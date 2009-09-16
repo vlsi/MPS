@@ -1184,5 +1184,59 @@
       </node>
     </node>
   </node>
+  <node type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="8417647056279096638">
+    <property name="name" value="OrdinaryClassWithGenericMethod" />
+    <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="8417647056279096639" />
+    <node role="superclass" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="8417647056279096640">
+      <link role="classifier" targetNodeId="150.~Object" />
+    </node>
+    <node role="constructor" type="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" id="8417647056279096641">
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="8417647056279096642" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="8417647056279096643" />
+    </node>
+    <node role="staticMethod" type="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" id="8417647056279096644">
+      <property name="name" value="doSomething" />
+      <node role="typeVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.TypeVariableDeclaration" id="8417647056279096645">
+        <property name="name" value="T" />
+        <property name="extends" value="true" />
+        <node role="bound" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="8417647056279096646">
+          <link role="classifier" targetNodeId="149.~ArrayList" />
+        </node>
+      </node>
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="8417647056279096647" />
+      <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="8417647056279096648">
+        <property name="name" value="param" />
+        <node role="type" type="jetbrains.mps.baseLanguage.structure.TypeVariableReference" id="8417647056279096649">
+          <link role="typeVariableDeclaration" targetNodeId="8417647056279096645" resolveInfo="T" />
+        </node>
+      </node>
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="8417647056279096650">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="8417647056279096651">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="8417647056279096652">
+            <property name="name" value="result" />
+            <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="8417647056279096653">
+              <link role="classifier" targetNodeId="149.~List" />
+              <node role="parameter" type="jetbrains.mps.baseLanguage.structure.LowerBoundType" id="8417647056279096654">
+                <node role="bound" type="jetbrains.mps.baseLanguage.structure.TypeVariableReference" id="8417647056279096655">
+                  <link role="typeVariableDeclaration" targetNodeId="8417647056279096645" resolveInfo="T" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="8417647056279096656">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="8417647056279096657">
+            <property name="name" value="t" />
+            <node role="type" type="jetbrains.mps.baseLanguage.structure.TypeVariableReference" id="8417647056279096658">
+              <link role="typeVariableDeclaration" targetNodeId="8417647056279096645" resolveInfo="T" />
+            </node>
+            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="8417647056279096659">
+              <link role="variableDeclaration" targetNodeId="8417647056279096648" resolveInfo="param" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
 </model>
 
