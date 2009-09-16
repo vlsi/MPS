@@ -518,12 +518,21 @@ public class JavaConverterTreeBuilder {
     return expressionFromFieldBinding(fieldBinding, processExpressionRefl(x.receiver));
   }
 
+  private ReferenceBinding getDeclaredClassBinding(FieldBinding fieldBinding) {
+    if (fieldBinding instanceof ParameterizedFieldBinding) {
+      return ((ParameterizedFieldBinding)fieldBinding).originalField.declaringClass;
+    } else {
+      return fieldBinding.declaringClass;
+    }
+  }
+
   private jetbrains.mps.baseLanguage.structure.Expression expressionFromFieldBinding(FieldBinding fieldBinding, jetbrains.mps.baseLanguage.structure.Expression instanceExpression) {
     String role;
     SNode sourceNode;
     jetbrains.mps.baseLanguage.structure.Expression result;
+    ReferenceBinding declaredClassBinding = getDeclaredClassBinding(fieldBinding);
     if (fieldBinding.isStatic()) {
-      if (myCurrentClass == myTypesProvider.getRaw(fieldBinding.declaringClass)) {
+      if (myCurrentClass == myTypesProvider.getRaw(declaredClassBinding)) {
         //unqualified static field reference
         role = LocalStaticFieldReference.VARIABLE_DECLARATION;
         LocalStaticFieldReference lsfr = LocalStaticFieldReference.newInstance(myCurrentModel);
@@ -534,7 +543,7 @@ public class JavaConverterTreeBuilder {
         sourceNode = sfr.getNode();
         role = StaticFieldReference.VARIABLE_DECLARATION;
         sfr.getNode().addReference(
-          myTypesProvider.createClassifierReference(fieldBinding.declaringClass, StaticFieldReference.CLASSIFIER, sourceNode));
+          myTypesProvider.createClassifierReference(declaredClassBinding, StaticFieldReference.CLASSIFIER, sourceNode));
         result = sfr;
       }
     } else {
@@ -542,7 +551,6 @@ public class JavaConverterTreeBuilder {
       jetbrains.mps.baseLanguage.structure.Expression instance;
       if (instanceExpression == null) {
         ThisExpression thisExpression = ThisExpression.newInstance(myCurrentModel);
-        ReferenceBinding declaredClassBinding = fieldBinding.declaringClass;
         if (myCurrentClass != myTypesProvider.getRaw(declaredClassBinding)) {
           thisExpression.getNode().addReference(
             myTypesProvider.createClassifierReference(declaredClassBinding, ThisExpression.CLASS_CONCEPT, thisExpression.getNode()));
@@ -551,7 +559,7 @@ public class JavaConverterTreeBuilder {
       } else {
         instance = instanceExpression;
       }
-      if (fieldBinding.declaringClass == null) {
+      if (declaredClassBinding == null) {
         return createArrayLengthExpression(instance, fieldBinding);
       }
       FieldReferenceOperation fieldRef = FieldReferenceOperation.newInstance(myCurrentModel);

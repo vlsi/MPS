@@ -1129,5 +1129,60 @@
       </node>
     </node>
   </node>
+  <node type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="6484744099914741358">
+    <property name="name" value="OrdinaryGenericClass" />
+    <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="6484744099914741359" />
+    <node role="typeVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.TypeVariableDeclaration" id="6484744099914741360">
+      <property name="name" value="T" />
+      <property name="extends" value="true" />
+      <node role="bound" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="6484744099914741361">
+        <link role="classifier" targetNodeId="149.~List" />
+      </node>
+    </node>
+    <node role="superclass" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="6484744099914741362">
+      <link role="classifier" targetNodeId="150.~Object" />
+    </node>
+    <node role="field" type="jetbrains.mps.baseLanguage.structure.FieldDeclaration" id="6484744099914741363">
+      <property name="name" value="myTField" />
+      <node role="type" type="jetbrains.mps.baseLanguage.structure.TypeVariableReference" id="6484744099914741364">
+        <link role="typeVariableDeclaration" targetNodeId="6484744099914741360" resolveInfo="T" />
+      </node>
+    </node>
+    <node role="constructor" type="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" id="6484744099914741365">
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="6484744099914741366" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="6484744099914741367" />
+    </node>
+    <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="6484744099914741368">
+      <property name="name" value="getT" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="6484744099914741369" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.TypeVariableReference" id="6484744099914741370">
+        <link role="typeVariableDeclaration" targetNodeId="6484744099914741360" resolveInfo="T" />
+      </node>
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="6484744099914741371">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="6484744099914741372">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="6484744099914741373">
+            <property name="name" value="t" />
+            <node role="type" type="jetbrains.mps.baseLanguage.structure.TypeVariableReference" id="6484744099914741374">
+              <link role="typeVariableDeclaration" targetNodeId="6484744099914741360" resolveInfo="T" />
+            </node>
+            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="6484744099914741375">
+              <node role="operation" type="jetbrains.mps.baseLanguage.structure.FieldReferenceOperation" id="6484744099914741376">
+                <link role="fieldDeclaration" targetNodeId="6484744099914741363" resolveInfo="myTField" />
+              </node>
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="6484744099914741377" />
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="6484744099914741378">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="6484744099914741379">
+            <node role="operation" type="jetbrains.mps.baseLanguage.structure.FieldReferenceOperation" id="6484744099914741380">
+              <link role="fieldDeclaration" targetNodeId="6484744099914741363" resolveInfo="myTField" />
+            </node>
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="6484744099914741381" />
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
 </model>
 

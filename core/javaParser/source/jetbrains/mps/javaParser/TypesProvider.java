@@ -135,6 +135,7 @@ public class TypesProvider {
         } else {
           throw new JavaConverterException("Declaring element for a type var is not a GenericDeclaration");
         }
+        return tvr;
       }
     }
     return null;
@@ -284,10 +285,18 @@ public class TypesProvider {
         return SReference.create(role, sourceNode, adapter.getNode());
       }
     }
+    if (aClass instanceof ParameterizedTypeBinding) {
+      ParameterizedTypeBinding parameterizedTypeBinding = (ParameterizedTypeBinding) aClass;
+      return createClassifierReference(parameterizedTypeBinding.genericType(), role, sourceNode);
+    }
     throw new JavaConverterException("no classifier for class "+new String(aClass.sourceName));
   }
 
   public SReference createFieldReference(FieldBinding binding, String role, SNode sourceNode) {
+    if (binding instanceof ParameterizedFieldBinding) {
+      ParameterizedFieldBinding parameterizedFieldBinding = (ParameterizedFieldBinding) binding;
+      return createFieldReference(parameterizedFieldBinding.originalField, role, sourceNode);
+    }
     INodeAdapter adapter = myReferentsCreator.myBindingMap.get(binding);
     if (adapter != null) {
       return SReference.create(role, sourceNode, adapter.getNode());

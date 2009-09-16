@@ -137,7 +137,6 @@ public class ReferentsCreator {
         for (TypeParameter typeParameter : typeParameters) {
           TypeVariableDeclaration typeVariableDeclaration = TypeVariableDeclaration.newInstance(model);
           typeVariableDeclaration.setName(new String(typeParameter.name));
-          // typeVariableDeclaration.setExtends(typeParameter.bounds); //todo process variable bounds
           classifier.addTypeVariableDeclaration(typeVariableDeclaration);
         }
       }
@@ -245,6 +244,28 @@ public class ReferentsCreator {
             classConcept.addStaticInnerClassifiers(classifier);
           }
         }
+
+        TypeParameter[] typeParameters = typeDeclaration.typeParameters;
+        TypeVariableDeclaration[] tvds =
+          classifier.getTypeVariableDeclarations().toArray(new TypeVariableDeclaration[typeParameters.length]);
+        if (typeParameters != null) {
+          for (int i = 0; i < typeParameters.length; i++) {
+            TypeParameter typeParameter = typeParameters[i];
+            TypeVariableDeclaration typeVar = tvds[i];
+            TypeVariableBinding typeVariableBinding = typeParameter.binding;
+            if (typeVariableBinding.firstBound != null) {
+              typeVar.setBound(createType(typeVariableBinding.firstBound));
+            }
+            for (TypeBinding auxBoundBinding : typeVariableBinding.otherUpperBounds()) {
+              typeVar.addAuxBounds((ClassifierType) createType(auxBoundBinding));
+            }
+            boolean isExtends = (typeVariableBinding.superclass != null
+              && typeVariableBinding.firstBound == typeVariableBinding.superclass) ||
+              (typeVariableBinding.superInterfaces != null && typeVariableBinding.superInterfaces != Binding.NO_SUPERINTERFACES);
+            typeVar.setExtends(isExtends);
+          }
+        }
+
         myReferentsCreator.myTypeDecls.add(typeDeclaration);
         if (isTopLevel) {
           myReferentsCreator.myTopLevelTypeDecls.add(typeDeclaration);
