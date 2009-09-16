@@ -30,7 +30,16 @@ class AnalyzerRunner<E> {
   }
 
   AnalysisResult analyze() {
-    Map<ProgramState, E> stateValues = doAnalyze();
+    List<E> stateValuesArray = doAnalyze();
+    Map<ProgramState, E> stateValues = new HashMap<ProgramState, E>();
+    for (Instruction i : myProgram.getInstructions()) {
+      ProgramState ps1 = new ProgramState(i, true);
+      stateValues.put(ps1, stateValuesArray.get(ps1.getIndex()));
+
+      ProgramState ps2 = new ProgramState(i, false);
+      stateValues.put(ps2, stateValuesArray.get(ps2.getIndex()));
+    }
+
     Map<Instruction, List<E>> possibleValues = new HashMap<Instruction, List<E>>();
     for (Map.Entry<ProgramState, E> entry : stateValues.entrySet()) {
       if (!possibleValues.containsKey(entry.getKey().getInstruction())) {
@@ -47,11 +56,10 @@ class AnalyzerRunner<E> {
     return new AnalysisResult<E>(myProgram, myAnalyzer, stateValues, result);
   }
 
-  private Map<ProgramState, E> doAnalyze() {
-    final Map<ProgramState, E> stateValues = new HashMap<ProgramState, E>();
-    for (Instruction i : myProgram.getInstructions()) {
-      stateValues.put(new ProgramState(i, false), myAnalyzer.initial(myProgram));
-      stateValues.put(new ProgramState(i, true), myAnalyzer.initial(myProgram));
+  private List<E> doAnalyze() {
+    final List<E> stateValues = new ArrayList<E>();
+    for (int i = 0; i < myProgram.getInstructions().size() * 2; i++) {
+      stateValues.add(myAnalyzer.initial(myProgram));
     }
 
     Queue<ProgramState> workList = new LinkedList<ProgramState>();
@@ -66,17 +74,15 @@ class AnalyzerRunner<E> {
 
       List<E> input = new ArrayList<E>();
       for (ProgramState s : direction.dependencies(current)) {
-        if (stateValues.containsKey(s)) {
-          input.add(stateValues.get(s));
-        }
+        input.add(stateValues.get(s.getIndex()));
       }
 
-      E oldValue = stateValues.get(current);
+      E oldValue = stateValues.get(current.getIndex());
       E mergedValue = myAnalyzer.merge(myProgram, input);
       E newValue = myAnalyzer.fun(mergedValue, current);
 
       if (!newValue.equals(oldValue)) {
-        stateValues.put(current, newValue);
+        stateValues.set(current.getIndex(), newValue);
         for (ProgramState s : direction.dependents(current)) {
           workList.add(s);
         }

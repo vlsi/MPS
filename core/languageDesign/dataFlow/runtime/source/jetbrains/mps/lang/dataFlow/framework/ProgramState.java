@@ -48,6 +48,14 @@ public class ProgramState {
     return myInstruction.pred(this);
   }
 
+  public int getIndex() {
+    if (myReturnMode) {
+      return myInstruction.getIndex() << 1;
+    } else {
+      return (myInstruction.getIndex() << 1) + 1;
+    }
+  }
+
   public String toString() {
     return "(state " + myInstruction + ", " + myReturnMode + ")";
   }
@@ -58,10 +66,10 @@ public class ProgramState {
     }
 
     ProgramState s = (ProgramState) obj;
-    return s.myInstruction.equals(myInstruction) && s.myReturnMode == myReturnMode;
+    return s.getIndex() == getIndex();
   }
 
   public int hashCode() {
-    return myInstruction.hashCode() + ((myReturnMode) ? 1 : 0);
+    return getIndex();
   }
 }
