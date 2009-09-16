@@ -103,7 +103,7 @@ public class RunManagerImpl extends RunManagerEx implements JDOMExternalizable, 
   }
 
   private void initConfigurationTypes() {
-    final ConfigurationType[] configurationTypes = Extensions.getExtensions(ConfigurationType.CONFIGURATION_TYPE_EP);
+    final ConfigurationType[] configurationTypes = getConfigurationTypes();
     initializeConfigurationTypes(configurationTypes);
   }
 
@@ -119,6 +119,19 @@ public class RunManagerImpl extends RunManagerEx implements JDOMExternalizable, 
   @NotNull
   public RunnerAndConfigurationSettingsImpl createConfiguration(final String name, final ConfigurationFactory factory) {
     return createConfiguration(doCreateConfiguration(name, factory), factory);
+  }
+
+  public ConfigurationType[] getConfigurationTypes() {
+    final ConfigurationType[] configurationTypes = Extensions.getExtensions(ConfigurationType.CONFIGURATION_TYPE_EP);
+    final List<ConfigurationType> result = new ArrayList<ConfigurationType>();
+    Set<String> uniqTypes = new HashSet<String>();
+    for (ConfigurationType type : configurationTypes) {
+      if (!uniqTypes.contains(type.getClass().getName())) {
+        result.add(type);
+        uniqTypes.add(type.getClass().getName());
+      }
+    }
+    return result.toArray(new ConfigurationType[result.size()]);
   }
 
   protected RunConfiguration doCreateConfiguration(String name, ConfigurationFactory factory) {

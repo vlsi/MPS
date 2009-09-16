@@ -82,7 +82,7 @@ public class RunConfigManager implements ProjectComponent {
 
     addConfigTypes();
 
-    final ConfigurationType[] configurationTypes = Extensions.getExtensions(ConfigurationType.CONFIGURATION_TYPE_EP);
+    final ConfigurationType[] configurationTypes = getRunManager().getConfigurationTypes();
     getRunManager().initializeConfigurationTypes(configurationTypes);
 
     ModelAccess.instance().runReadAction(new Runnable() {
