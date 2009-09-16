@@ -69,12 +69,14 @@ public class AbstractConceptDeclaration_Behavior {
     if (constraints == null) {
       return null;
     }
+
     SModel model = constraints.getSModel();
     for (SNode constraintsRoot : SModelOperations.getRoots(model, "jetbrains.mps.lang.constraints.structure.ConceptConstraints")) {
       if (SLinkOperations.getTarget(constraintsRoot, "concept", false) == thisNode) {
         return constraintsRoot;
       }
     }
+
     return null;
   }
 
