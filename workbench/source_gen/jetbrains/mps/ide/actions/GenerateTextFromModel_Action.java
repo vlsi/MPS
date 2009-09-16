@@ -26,7 +26,7 @@ public class GenerateTextFromModel_Action extends GeneratedAction {
 
   @NotNull
   public String getKeyStroke() {
-    return "shift F10";
+    return "ctrl alt shift F9";
   }
 
   public void doUpdate(@NotNull AnActionEvent event) {
