@@ -37,6 +37,15 @@ public class Program {
     return Collections.unmodifiableList((List<? extends Instruction>) myInstructions);
   }
 
+  public List<ProgramState> getStates() {
+    List<ProgramState> result = new ArrayList<ProgramState>();
+    for (Instruction i : myInstructions) {
+      result.add(new ProgramState(i, true));
+      result.add(new ProgramState(i, false));
+    }
+    return result;
+  }
+
   public Instruction get(int index) {
     return myInstructions.get(index);
   }
@@ -278,6 +287,10 @@ public class Program {
 
   public List<TryFinallyInfo> getBlockInfos() {
     return Collections.unmodifiableList(myTryFinallyInfo);
+  }
+
+  public ProgramState getState(int n) {
+    return new ProgramState(myInstructions.get(n >> 1), (n & 1) == 0);
   }
 
   private void sanityCheck() {

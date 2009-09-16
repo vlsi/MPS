@@ -30,36 +30,31 @@ class AnalyzerRunner<E> {
   }
 
   AnalysisResult analyze() {
-    List<E> stateValuesArray = doAnalyze();
-    Map<ProgramState, E> stateValues = new HashMap<ProgramState, E>();
-    for (Instruction i : myProgram.getInstructions()) {
-      ProgramState ps1 = new ProgramState(i, true);
-      stateValues.put(ps1, stateValuesArray.get(ps1.getIndex()));
-
-      ProgramState ps2 = new ProgramState(i, false);
-      stateValues.put(ps2, stateValuesArray.get(ps2.getIndex()));
-    }
-
-    Map<Instruction, List<E>> possibleValues = new HashMap<Instruction, List<E>>();
-    for (Map.Entry<ProgramState, E> entry : stateValues.entrySet()) {
-      if (!possibleValues.containsKey(entry.getKey().getInstruction())) {
-        possibleValues.put(entry.getKey().getInstruction(), new ArrayList<E>());
-      }
-      possibleValues.get(entry.getKey().getInstruction()).add(entry.getValue());
-    }
-
+    Map<ProgramState, E> stateValues = doAnalyze();
     Map<Instruction, E> result = new HashMap<Instruction, E>();
-    for (Entry<Instruction, List<E>> entry : possibleValues.entrySet()) {
-      result.put(entry.getKey(), myAnalyzer.merge(myProgram, entry.getValue()));
+    for (Instruction i : myProgram.getInstructions()) {
+      List<E> input = new ArrayList<E>();
+      input.add(stateValues.get(new ProgramState(i, true)));
+      input.add(stateValues.get(new ProgramState(i, false)));
+      result.put(i, myAnalyzer.merge(myProgram, input));
     }
-
     return new AnalysisResult<E>(myProgram, myAnalyzer, stateValues, result);
   }
 
-  private List<E> doAnalyze() {
-    final List<E> stateValues = new ArrayList<E>();
-    for (int i = 0; i < myProgram.getInstructions().size() * 2; i++) {
-      stateValues.add(myAnalyzer.initial(myProgram));
+  private Map<ProgramState, E> doAnalyze() {
+    Map<ProgramState, E> stateValues = new ProgramStateMap<E>(myProgram);
+
+    for (ProgramState ps : myProgram.getStates()) {
+      stateValues.put(ps, myAnalyzer.initial(myProgram));
+    }
+
+    AnalysisDirection direction = myAnalyzer.getDirection();
+
+    Map<ProgramState, List<ProgramState>> dependencies = new ProgramStateMap<List<ProgramState>>(myProgram);
+    Map<ProgramState, List<ProgramState>> dependents = new ProgramStateMap<List<ProgramState>>(myProgram);
+    for (ProgramState ps : myProgram.getStates()) {
+      dependencies.put(ps, direction.dependencies(ps));
+      dependents.put(ps, direction.dependents(ps));
     }
 
     Queue<ProgramState> workList = new LinkedList<ProgramState>();
@@ -68,22 +63,21 @@ class AnalyzerRunner<E> {
       workList.add(new ProgramState(i, true));
     }
 
-    AnalysisDirection direction = myAnalyzer.getDirection();
     while (!workList.isEmpty()) {
       ProgramState current = workList.remove();
 
       List<E> input = new ArrayList<E>();
-      for (ProgramState s : direction.dependencies(current)) {
-        input.add(stateValues.get(s.getIndex()));
+      for (ProgramState s : dependencies.get(current)) {
+        input.add(stateValues.get(s));
       }
 
-      E oldValue = stateValues.get(current.getIndex());
+      E oldValue = stateValues.get(current);
       E mergedValue = myAnalyzer.merge(myProgram, input);
       E newValue = myAnalyzer.fun(mergedValue, current);
 
       if (!newValue.equals(oldValue)) {
-        stateValues.set(current.getIndex(), newValue);
-        for (ProgramState s : direction.dependents(current)) {
+        stateValues.put(current, newValue);
+        for (ProgramState s : dependents.get(current)) {
           workList.add(s);
         }
       }

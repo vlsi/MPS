@@ -20,7 +20,7 @@ import jetbrains.mps.lang.dataFlow.framework.instructions.Instruction;
 import java.util.Set;
 import java.util.List;
 
-public class ProgramState {
+public class ProgramState {  
   private Instruction myInstruction;
   private boolean myReturnMode;
 
