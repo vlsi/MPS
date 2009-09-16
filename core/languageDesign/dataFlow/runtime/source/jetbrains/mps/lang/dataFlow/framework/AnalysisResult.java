@@ -28,8 +28,8 @@ public class AnalysisResult<E> {
   AnalysisResult(Program program, DataFlowAnalyzer<E> analyzer, Map<ProgramState, E> result, Map<Instruction, E> instrResult) {
     myProgram = program;
     myAnalyzer = analyzer;
-    myResult = new HashMap<ProgramState,E>(result);
-    myInstructionsResult = new HashMap<Instruction, E>(instrResult);
+    myResult = result;
+    myInstructionsResult = instrResult;
   }
 
   public E get(Instruction i) {
