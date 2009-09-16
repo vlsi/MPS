@@ -94,14 +94,14 @@ public abstract class Instruction {
     return result;
   }
 
-  public Set<ProgramState> succ(ProgramState s) {
-    Set<ProgramState> result = new HashSet<ProgramState>();
+  public List<ProgramState> succ(ProgramState s) {
+    List<ProgramState> result = new ArrayList<ProgramState>();
     result.add(new ProgramState(getProgram().get(getIndex() + 1), s.isReturnMode()));
     return result;
   }
 
-  public Set<ProgramState> pred(ProgramState s) {
-    Set<ProgramState> result = new HashSet<ProgramState>();
+  public List<ProgramState> pred(ProgramState s) {
+    List<ProgramState> result = new ArrayList<ProgramState>();
     if (this != getProgram().getStart()) {
       Instruction prev = getProgram().get(getIndex() - 1);
       if (!(prev instanceof RetInstruction) &&

@@ -18,8 +18,7 @@ package jetbrains.mps.lang.dataFlow.framework.instructions;
 import jetbrains.mps.lang.dataFlow.framework.ProgramState;
 import jetbrains.mps.lang.dataFlow.framework.Program.TryFinallyInfo;
 
-import java.util.Set;
-import java.util.HashSet;
+import java.util.*;
 
 public class EndInstruction extends Instruction {
   private Set<RetInstruction> myReturns = new HashSet<RetInstruction>();
@@ -43,8 +42,8 @@ public class EndInstruction extends Instruction {
     }
   }
 
-  public Set<ProgramState> pred(ProgramState s) {
-    Set<ProgramState> result = new HashSet<ProgramState>();
+  public List<ProgramState> pred(ProgramState s) {
+    List<ProgramState> result = new ArrayList<ProgramState>();
     if (s.isReturnMode()) {
       for (RetInstruction ret : myReturns) {
         if (ret.getEnclosingBlock() == null) {
@@ -60,7 +59,7 @@ public class EndInstruction extends Instruction {
     return result;
   }
 
-  public Set<ProgramState> succ(ProgramState s) {
-    return new HashSet<ProgramState>();
+  public List<ProgramState> succ(ProgramState s) {
+    return new ArrayList<ProgramState>();
   }
 }

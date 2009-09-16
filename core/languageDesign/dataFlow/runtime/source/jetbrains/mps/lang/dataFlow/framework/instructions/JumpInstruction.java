@@ -19,6 +19,8 @@ import jetbrains.mps.lang.dataFlow.framework.ProgramState;
 
 import java.util.Set;
 import java.util.HashSet;
+import java.util.List;
+import java.util.ArrayList;
 
 public class JumpInstruction extends Instruction {
   private int myJumpTo;
@@ -35,8 +37,8 @@ public class JumpInstruction extends Instruction {
     getProgram().get(myJumpTo).addJump(this);
   }
 
-  public Set<ProgramState> succ(ProgramState s) {
-    Set<ProgramState> result = new HashSet<ProgramState>();
+  public List<ProgramState> succ(ProgramState s) {
+    List<ProgramState> result = new ArrayList<ProgramState>();
     result.add(new ProgramState(getProgram().get(myJumpTo), s.isReturnMode()));
     return result;
   }

@@ -20,13 +20,15 @@ import jetbrains.mps.lang.dataFlow.framework.Program.TryFinallyInfo;
 
 import java.util.Set;
 import java.util.HashSet;
+import java.util.ArrayList;
+import java.util.List;
 
 public class RetInstruction extends Instruction {
   public RetInstruction() {
   }
 
-  public Set<ProgramState> succ(ProgramState s) {
-    Set<ProgramState> result = new HashSet<ProgramState>();
+  public List<ProgramState> succ(ProgramState s) {
+    List<ProgramState> result = new ArrayList<ProgramState>();
     TryFinallyInfo blockInfo = getEnclosingBlock();
     if (blockInfo == null) {
       result.add(new ProgramState(getProgram().getEnd(), true));

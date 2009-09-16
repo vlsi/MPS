@@ -18,6 +18,7 @@ package jetbrains.mps.lang.dataFlow.framework.instructions;
 import jetbrains.mps.lang.dataFlow.framework.ProgramState;
 
 import java.util.Set;
+import java.util.List;
 
 public class IfJumpInstruction extends Instruction {
   private int myJumpTo;
@@ -38,8 +39,8 @@ public class IfJumpInstruction extends Instruction {
     getProgram().get(myJumpTo).addJump(this);
   }
 
-  public Set<ProgramState> succ(ProgramState s) {
-    Set<ProgramState> result = super.succ(s);
+  public List<ProgramState> succ(ProgramState s) {
+    List<ProgramState> result = super.succ(s);
     result.add(new ProgramState(getProgram().get(myJumpTo), s.isReturnMode()));
     return result;    
   }

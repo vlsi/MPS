@@ -16,30 +16,31 @@
 package jetbrains.mps.lang.dataFlow.framework;
 
 import java.util.Set;
+import java.util.List;
 
 public enum AnalysisDirection {
 
   FORWARD() {
-    public Set<ProgramState> dependencies(ProgramState s) {
+    public List<ProgramState> dependencies(ProgramState s) {
       return s.pred();
     }
 
-    public Set<ProgramState> dependents(ProgramState s) {
+    public List<ProgramState> dependents(ProgramState s) {
       return s.succ();
     }
   },
 
   BACKWARD() {
-    public Set<ProgramState> dependencies(ProgramState s) {
+    public List<ProgramState> dependencies(ProgramState s) {
       return s.succ();
     }
 
-    public Set<ProgramState> dependents(ProgramState s) {
+    public List<ProgramState> dependents(ProgramState s) {
       return s.pred();
     }
   };
 
-  public abstract Set<ProgramState> dependencies(ProgramState s);
-  public abstract Set<ProgramState> dependents(ProgramState s);
+  public abstract List<ProgramState> dependencies(ProgramState s);
+  public abstract List<ProgramState> dependents(ProgramState s);
 
 }

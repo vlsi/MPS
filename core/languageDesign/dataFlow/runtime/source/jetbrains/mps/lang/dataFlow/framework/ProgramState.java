@@ -18,6 +18,7 @@ package jetbrains.mps.lang.dataFlow.framework;
 import jetbrains.mps.lang.dataFlow.framework.instructions.Instruction;
 
 import java.util.Set;
+import java.util.List;
 
 public class ProgramState {
   private Instruction myInstruction;
@@ -40,11 +41,11 @@ public class ProgramState {
     return !isReturnMode() && myInstruction.isStart();
   }
 
-  public Set<ProgramState> succ() {
+  public List<ProgramState> succ() {
     return myInstruction.succ(this);
   }
 
-  public Set<ProgramState> pred() {
+  public List<ProgramState> pred() {
     return myInstruction.pred(this);
   }
 

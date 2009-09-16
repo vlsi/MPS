@@ -58,9 +58,9 @@ public class FinallyInstruction extends Instruction {
     }
   }
 
-  public Set<ProgramState> pred(ProgramState s) {
+  public List<ProgramState> pred(ProgramState s) {
     if (s.isReturnMode()) {
-      Set<ProgramState> result = new HashSet<ProgramState>();
+      List<ProgramState> result = new ArrayList<ProgramState>();
       for (RetInstruction ret : myReturns) {
         result.add(new ProgramState(ret, false));
         result.add(new ProgramState(ret, true));

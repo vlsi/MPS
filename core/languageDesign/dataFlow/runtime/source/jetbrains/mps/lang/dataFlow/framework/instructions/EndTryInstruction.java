@@ -49,17 +49,17 @@ public class EndTryInstruction extends Instruction {
     for (Instruction i : getProgram().getInstructions().subList(start + 1, end)) {
       if (i instanceof RetInstruction &&
         i.getEnclosingBlock() == myInfo &&
-        i.isBefore(this)) {
+        i.isBefore(this)) {                     
         myReturns.add((RetInstruction) i);
       }
     }
   }
 
-  public Set<ProgramState> succ(ProgramState s) {
+  public List<ProgramState> succ(ProgramState s) {
     if (!s.isReturnMode()) {
       return super.succ(s);
     } else {
-      Set<ProgramState> result = new HashSet<ProgramState>();
+      List<ProgramState> result = new ArrayList<ProgramState>();
       TryFinallyInfo info = getEnclosingBlock();
       if (info != null) {
         if (isBefore(info.getFinally())) {
@@ -70,12 +70,13 @@ public class EndTryInstruction extends Instruction {
       } else {
         result.add(new ProgramState(getProgram().getEnd(), true));
       }
+
       return result;
     }
   }
 
-  public Set<ProgramState> pred(ProgramState s) {
-    Set<ProgramState> result = super.pred(s);
+  public List<ProgramState> pred(ProgramState s) {
+    List<ProgramState> result = super.pred(s);
 
     if (s.isReturnMode()) {
       for (TryFinallyInfo child : myInfo.getChildren()) {
