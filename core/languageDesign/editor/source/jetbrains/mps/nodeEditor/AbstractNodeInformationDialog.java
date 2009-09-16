@@ -20,13 +20,18 @@ import jetbrains.mps.util.WindowsUtil;
 
 import javax.swing.JDialog;
 import javax.swing.JScrollPane;
+import javax.swing.JTextPane;
 import javax.swing.JTextArea;
+import javax.swing.text.AttributeSet;
+import javax.swing.text.Style;
+import javax.swing.text.html.HTMLDocument;
+import javax.swing.text.html.StyleSheet;
 import javax.swing.border.LineBorder;
 import java.awt.*;
 import java.awt.event.*;
 
 public abstract class AbstractNodeInformationDialog extends JDialog {
-  private JTextArea myTextArea;
+  private JTextArea myTextPane;
   private static final Color BACKGROUND_COLOR = new Color(253, 254, 226);
   private Component prevFocusOwner;
   private FocusListener myOwnerFocusListener = new FocusAdapter() {
@@ -59,16 +64,16 @@ public abstract class AbstractNodeInformationDialog extends JDialog {
     setModal(false);
     setFocusableWindowState(false);
 
-    myTextArea = new JTextArea();
-    myTextArea.setEditable(false);
+    myTextPane = new JTextArea();
+    myTextPane.setEditable(false);
     String text = createNodeInfo(node);    
-    myTextArea.setText(text);
-    myTextArea.setFont(EditorSettings.getInstance().getDefaultEditorFont());
+    myTextPane.setText(text);
+    myTextPane.setFont(EditorSettings.getInstance().getDefaultEditorFont());
 
-    myTextArea.setOpaque(true);
-    myTextArea.setBackground(BACKGROUND_COLOR);
+    myTextPane.setOpaque(true);
+    myTextPane.setBackground(BACKGROUND_COLOR);
 
-    JScrollPane scrollPane = new JScrollPane(myTextArea);
+    JScrollPane scrollPane = new JScrollPane(myTextPane);
     scrollPane.setBorder(new LineBorder(Color.BLACK));
     add(scrollPane);
 

@@ -945,6 +945,14 @@ public class QueriesGenerated {
     return QueriesUtil.getGeneratedClassByAncestor(SLinkOperations.getTarget(_context.getNode(), "query", true), _context);
   }
 
+  public static Object referenceMacro_GetReferent_3352983106930440083(final IOperationContext operationContext, final ReferenceMacroContext _context) {
+    return _context.getOutputNodeByInputNodeAndMappingLabel(SLinkOperations.getTarget(_context.getNode(), "query", true), "styleParameter_query_method");
+  }
+
+  public static Object referenceMacro_GetReferent_3352983106930440093(final IOperationContext operationContext, final ReferenceMacroContext _context) {
+    return QueriesUtil.getGeneratedClassByAncestor(SLinkOperations.getTarget(_context.getNode(), "query", true), _context);
+  }
+
   public static Object referenceMacro_GetReferent_3710678335995670557(final IOperationContext operationContext, final ReferenceMacroContext _context) {
     SNode editorComponent = SLinkOperations.getTarget(SNodeOperations.cast(_context.getNode(), "jetbrains.mps.lang.editor.structure.CellModel_RefCell"), "editorComponent", true);
     SNode editorComponentClass = SNodeOperations.cast(_context.getOutputNodeByInputNodeAndMappingLabel(editorComponent, "generatedClass"), "jetbrains.mps.baseLanguage.structure.ClassConcept");
@@ -1590,6 +1598,10 @@ public class QueriesGenerated {
 
   public static SNode sourceNodeQuery_3031123562488321479(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "cellProvider", true), "body", true);
+  }
+
+  public static SNode sourceNodeQuery_3352983106930439990(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return StyleClassItem_Behavior.call_getStyleConstant_1215703564594(_context.getNode());
   }
 
   public static SNode sourceNodeQuery_5170495790389308644(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
