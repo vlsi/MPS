@@ -17,7 +17,6 @@ package jetbrains.mps.nodeEditor.style;
 
 import jetbrains.mps.nodeEditor.FocusPolicy;
 import jetbrains.mps.nodeEditor.CaretPosition;
-import jetbrains.mps.nodeEditor.NodeInformation;
 import jetbrains.mps.lang.editor.structure._Enum_Measure;
 import jetbrains.mps.lang.editor.structure.RightTransformAnchorTag;
 import jetbrains.mps.smodel.SNode;
@@ -83,8 +82,6 @@ public class StyleAttributes {
   public static final StyleAttribute<Boolean> INDENT_LAYOUT_ON_NEW_LINE = new SimpleStyleAttribute<Boolean>("indent-layout-on-new-line", false);
   public static final StyleAttribute<Boolean> INDENT_LAYOUT_CHILDREN_NEWLINE = new SimpleStyleAttribute<Boolean>("indent-layout-children-new-line", false);
   public static final StyleAttribute<Boolean> INDENT_LAYOUT_NO_WRAP = new SimpleStyleAttribute<Boolean>("indent-layout-no-wrap", false);
-
-  public static final StyleAttribute<NodeInformation> NODE_INFORMATION = new SimpleStyleAttribute<NodeInformation>("node-information");
 
   @Deprecated
   public static final StyleAttribute<Boolean> GET_PARENT_SUBSTITUDE_INFO = new SimpleStyleAttribute<Boolean>("get-parent-substitude-info", false);

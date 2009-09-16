@@ -647,7 +647,6 @@
   <language namespace="f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)" />
   <language namespace="83888646-71ce-4f1c-9c53-c54016f6ad4f(jetbrains.mps.baseLanguage.collections)" />
   <language namespace="7866978e-a0f0-4cc7-81bc-4d213d9375e1(jetbrains.mps.lang.smodel)" />
-  <language namespace="ceab5195-25ea-4f22-9b92-103b95ca8c0c(jetbrains.mps.lang.core)" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959028c(jetbrains.mps.lang.structure.constraints)" version="11" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)" version="83" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="1" />
@@ -4255,38 +4254,6 @@
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="625126330682991093">
       <property name="value" value="ref. presentation" />
       <link role="conceptPropertyDeclaration" targetNodeId="3.1137473891462" resolveInfo="alias" />
-    </node>
-  </node>
-  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="7744173612195823082">
-    <property name="package" value="Stylesheet" />
-    <property name="name" value="NodeInformationStyleClassItem" />
-    <link role="extends" targetNodeId="1186402475462" resolveInfo="StyleClassItem" />
-    <node role="conceptLink" type="jetbrains.mps.lang.structure.structure.AggregationConceptLink" id="1621499437637198838">
-      <link role="conceptLinkDeclaration" targetNodeId="1215701938122" resolveInfo="attributeConstant" />
-      <node role="target" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference" id="1621499437637198839">
-        <link role="classifier" targetNodeId="41.~StyleAttributes" resolveInfo="StyleAttributes" />
-        <link role="variableDeclaration" targetNodeId="41.~StyleAttributes.NODE_INFORMATION" resolveInfo="NODE_INFORMATION" />
-      </node>
-    </node>
-    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1621499437637040445">
-      <property name="value" value="node-information" />
-      <link role="conceptPropertyDeclaration" targetNodeId="3.1137473891462" resolveInfo="alias" />
-    </node>
-    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="7744173612195825011">
-      <property name="metaClass" value="aggregation" />
-      <property name="role" value="query" />
-      <link role="target" targetNodeId="7744173612195825012" resolveInfo="QueryFunction_NodeInformation" />
-    </node>
-  </node>
-  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="7744173612195825012">
-    <property name="package" value="QueryFunction.Style" />
-    <property name="name" value="QueryFunction_NodeInformation" />
-    <link role="extends" targetNodeId="1221059528506" resolveInfo="QueryFunction_StyleParameter" />
-    <node role="conceptLink" type="jetbrains.mps.lang.structure.structure.AggregationConceptLink" id="7744173612195825015">
-      <link role="conceptLinkDeclaration" targetNodeId="4.1137545148427" resolveInfo="conceptFunctionReturnType" />
-      <node role="target" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1621499437636819392">
-        <link role="classifier" targetNodeId="29.~NodeInformation" resolveInfo="NodeInformation" />
-      </node>
     </node>
   </node>
 </model>
