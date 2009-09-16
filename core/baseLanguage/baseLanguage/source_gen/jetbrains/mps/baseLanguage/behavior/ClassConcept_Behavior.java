@@ -59,6 +59,7 @@ public class ClassConcept_Behavior {
   public static List<SNode> call_getMethodsToImplement_1221637841398(SNode thisNode) {
     List<SNode> methods = new ArrayList<SNode>();
     ClassifierAndSuperClassifiersScope scope = new ClassifierAndSuperClassifiersScope(((ClassConcept)SNodeOperations.getAdapter(thisNode)), IClassifiersSearchScope.INSTANCE_METHOD);
+    // todo do not show already implemented methods
     for (SNode method : scope.getNodes()) {
       SNode container = SNodeOperations.getAncestor(method, "jetbrains.mps.baseLanguage.structure.Classifier", false, false);
       if (container == thisNode || container == null) {

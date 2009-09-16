@@ -27,6 +27,7 @@ public class Type_Behavior {
   private static Class[] PARAMETERS_1213877337352 = {SNode.class};
   private static Class[] PARAMETERS_1213877337357 = {SNode.class};
   private static Class[] PARAMETERS_1220438914705 = {SNode.class ,SNode.class};
+  private static Class[] PARAMETERS_3359611512358152580 = {SNode.class};
 
   public static void init(SNode thisNode) {
   }
@@ -92,6 +93,10 @@ public class Type_Behavior {
     return false;
   }
 
+  public static SNode virtual_createDefaultTypeExpression_3359611512358152580(SNode thisNode) {
+    return null;
+  }
+
   public static List<String> call_getVariableSuffixes_1213877337304(SNode thisNode) {
     return (List<String>)BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.Type"), "virtual_getVariableSuffixes_1213877337304", PARAMETERS_1213877337304);
   }
@@ -128,6 +133,10 @@ public class Type_Behavior {
     return (Boolean)BehaviorManager.getInstance().invoke(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.Type"), "virtual_isSupersetOf_1220438914705", PARAMETERS_1220438914705, t);
   }
 
+  public static SNode call_createDefaultTypeExpression_3359611512358152580(SNode thisNode) {
+    return (SNode)BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.Type"), "virtual_createDefaultTypeExpression_3359611512358152580", PARAMETERS_3359611512358152580);
+  }
+
   public static List<String> callSuper_getVariableSuffixes_1213877337304(SNode thisNode, String callerConceptFqName) {
     return (List<String>)BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.Type"), callerConceptFqName, "virtual_getVariableSuffixes_1213877337304", PARAMETERS_1213877337304);
   }
@@ -162,5 +171,9 @@ public class Type_Behavior {
 
   public static boolean callSuper_isSupersetOf_1220438914705(SNode thisNode, String callerConceptFqName, SNode t) {
     return (Boolean)BehaviorManager.getInstance().invokeSuper(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.Type"), callerConceptFqName, "virtual_isSupersetOf_1220438914705", PARAMETERS_1220438914705, t);
+  }
+
+  public static SNode callSuper_createDefaultTypeExpression_3359611512358152580(SNode thisNode, String callerConceptFqName) {
+    return (SNode)BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.Type"), callerConceptFqName, "virtual_createDefaultTypeExpression_3359611512358152580", PARAMETERS_3359611512358152580);
   }
 }

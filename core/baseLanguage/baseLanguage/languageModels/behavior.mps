@@ -3439,6 +3439,23 @@
       </node>
       <node role="returnType" type="jetbrains.mps.baseLanguage.structure.BooleanType" id="1220439559759" />
     </node>
+    <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="9011026350741578236">
+      <property name="isVirtual" value="true" />
+      <property name="name" value="createDefaultTypeExpression" />
+      <link role="overriddenMethod" targetNodeId="3359611512358152580" resolveInfo="createDefaultTypeExpression" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="9011026350741578237" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="9011026350741578238">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="9011026350741578241">
+          <node role="expression" type="jetbrains.mps.lang.quotation.structure.Quotation" id="9011026350741579289">
+            <node role="quotedNode" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="9011026350741579291" />
+          </node>
+        </node>
+      </node>
+      <node role="returnType" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="9011026350741578239" />
+      <node role="annotation" type="jetbrains.mps.baseLanguage.structure.AnnotationInstance" id="9011026350741578240">
+        <link role="annotation" targetNodeId="2.~Override" />
+      </node>
+    </node>
     <node role="constructor" type="jetbrains.mps.lang.behavior.structure.ConceptConstructorDeclaration" id="1213877316004">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1213877316005" />
     </node>
@@ -3879,6 +3896,23 @@
       </node>
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1219155723860" />
     </node>
+    <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="9011026350741579292">
+      <property name="isVirtual" value="true" />
+      <property name="name" value="createDefaultTypeExpression" />
+      <link role="overriddenMethod" targetNodeId="3359611512358152580" resolveInfo="createDefaultTypeExpression" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="9011026350741579293" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="9011026350741579294">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="9011026350741579297">
+          <node role="expression" type="jetbrains.mps.lang.quotation.structure.Quotation" id="9011026350741579300">
+            <node role="quotedNode" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="9011026350741579302" />
+          </node>
+        </node>
+      </node>
+      <node role="returnType" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="9011026350741579295" />
+      <node role="annotation" type="jetbrains.mps.baseLanguage.structure.AnnotationInstance" id="9011026350741579296">
+        <link role="annotation" targetNodeId="2.~Override" />
+      </node>
+    </node>
     <node role="constructor" type="jetbrains.mps.lang.behavior.structure.ConceptConstructorDeclaration" id="1213877329516">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1213877329517" />
     </node>
@@ -4178,6 +4212,17 @@
         <property name="name" value="t" />
         <node role="type" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1220439072313">
           <link role="concept" targetNodeId="1.1068431790189" resolveInfo="Type" />
+        </node>
+      </node>
+    </node>
+    <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="3359611512358152580">
+      <property name="isVirtual" value="true" />
+      <property name="name" value="createDefaultTypeExpression" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="3359611512358152581" />
+      <node role="returnType" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="3359611512358152585" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="3359611512358152583">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="3359611512358152586">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="3359611512358152588" />
         </node>
       </node>
     </node>
@@ -6324,6 +6369,9 @@
               </node>
             </node>
           </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="3359611512358101214">
+          <property name="value" value="todo do not show already implemented methods" />
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ForeachStatement" id="1221637921582">
           <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1221637921583">

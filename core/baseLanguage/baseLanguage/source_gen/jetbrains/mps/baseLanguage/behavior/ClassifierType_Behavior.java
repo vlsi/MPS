@@ -15,8 +15,11 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import java.util.Iterator;
 import jetbrains.mps.lang.pattern.util.MatchingUtil;
+import jetbrains.mps.smodel.behaviour.BehaviorManager;
 
 public class ClassifierType_Behavior {
+  private static Class[] PARAMETERS_9011026350741578236 = {SNode.class};
+
   public static void init(SNode thisNode) {
   }
 
@@ -122,5 +125,17 @@ public class ClassifierType_Behavior {
       }
     }
     return Type_Behavior.callSuper_isSupersetOf_1220438914705(thisNode, "jetbrains.mps.baseLanguage.structure.ClassifierType", t);
+  }
+
+  public static SNode virtual_createDefaultTypeExpression_3359611512358152580(SNode thisNode) {
+    return new _Quotations.QuotationClass_30().createNode();
+  }
+
+  public static SNode call_createDefaultTypeExpression_9011026350741578236(SNode thisNode) {
+    return (SNode)BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.ClassifierType"), "virtual_createDefaultTypeExpression_3359611512358152580", PARAMETERS_9011026350741578236);
+  }
+
+  public static SNode callSuper_createDefaultTypeExpression_9011026350741578236(SNode thisNode, String callerConceptFqName) {
+    return (SNode)BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.ClassifierType"), callerConceptFqName, "virtual_createDefaultTypeExpression_3359611512358152580", PARAMETERS_9011026350741578236);
   }
 }
