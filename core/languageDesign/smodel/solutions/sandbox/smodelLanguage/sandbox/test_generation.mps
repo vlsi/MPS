@@ -29,6 +29,20 @@
   <import index="5" modelUID="f:java_stub#java.lang(java.lang@java_stub)" version="-1" />
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="1205367917534">
     <property name="name" value="Class1" />
+    <node role="staticMethod" type="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" id="4207373968435921673">
+      <property name="name" value="main" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="4207373968435921674" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="4207373968435921675" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="4207373968435921676" />
+      <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="4207373968435921677">
+        <property name="name" value="arg" />
+        <node role="type" type="jetbrains.mps.baseLanguage.structure.ArrayType" id="4207373968435921679">
+          <node role="componentType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="4207373968435921678">
+            <link role="classifier" targetNodeId="5.~String" resolveInfo="String" />
+          </node>
+        </node>
+      </node>
+    </node>
     <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1205367929770">
       <property name="name" value="method1" />
       <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1205367929771" />

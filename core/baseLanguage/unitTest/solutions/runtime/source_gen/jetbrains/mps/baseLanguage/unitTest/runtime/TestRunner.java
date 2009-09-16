@@ -65,5 +65,6 @@ public class TestRunner extends BaseTestRunner {
       t.printStackTrace(System.err);
       System.exit(1);
     }
+    System.out.println("Hello");
   }
 }

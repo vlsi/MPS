@@ -28,7 +28,6 @@ import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.baseLanguage.unitTest.behavior.ITestMethod_Behavior;
 import jetbrains.mps.lang.core.behavior.INamedConcept_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
-import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.project.GlobalScope;
@@ -86,8 +85,6 @@ public class JUnitConfigEditor extends JPanel {
     component.add(this.createComponent14(), LayoutUtil.createPanelConstraints(1));
     component.add(this.createComponent29(), LayoutUtil.createPanelConstraints(2));
     this.myEvents.initialize();
-    myThis.myIsModule0.setSelected(true);
-    myThis.onSelect();
   }
 
   public Events getEvents() {
@@ -377,12 +374,37 @@ public class JUnitConfigEditor extends JPanel {
         if (config.getStateObject().module != null) {
           config.getStateObject().module = myThis.getMyModule().getModuleFqName();
         }
+        JUnitRunTypes type;
+        if (myThis.myIsModule0.isSelected()) {
+          type = JUnitRunTypes.MODULE;
+        } else if (myThis.myIsModel0.isSelected()) {
+          type = JUnitRunTypes.MODEL;
+        } else if (myThis.myIsClass0.isSelected()) {
+          type = JUnitRunTypes.TESTCLASS;
+        } else {
+          type = JUnitRunTypes.METHOD;
+        }
+        config.getStateObject().type = type;
       }
     });
   }
 
   public void reset(final DefaultJUnit_Configuration config) {
-    final Wrappers._boolean needSelect = new Wrappers._boolean(true);
+    if (config.getStateObject().type != null) {
+      switch (config.getStateObject().type) {
+        case METHOD:
+          myThis.myIsMethod0.setSelected(true);
+        case TESTCLASS:
+          myThis.myIsClass0.setSelected(true);
+        case MODEL:
+          myThis.myIsModel0.setSelected(true);
+        case MODULE:
+          myThis.myIsModule0.setSelected(true);
+        default:
+      }
+    } else {
+      myThis.myIsModule0.setSelected(true);
+    }
     if (config.getStateObject().node != null) {
       ModelAccess.instance().runReadAction(new Runnable() {
         public void run() {
@@ -395,11 +417,8 @@ public class JUnitConfigEditor extends JPanel {
             myThis.setMyMethod(((SNode)new SNodePointer(config.getStateObject().model, config.getStateObject().method).getNode()));
           }
         });
-        myThis.myIsMethod0.setSelected(true);
         myThis.myMethodName0.setText(config.getStateObject().method);
-        needSelect.value = false;
       }
-      myThis.myIsClass0.setSelected(needSelect.value);
       ModelAccess.instance().runReadAction(new Runnable() {
         public void run() {
           myThis.myNodeName0.setText(INamedConcept_Behavior.call_getFqName_1213877404258(myThis.getMyNode()));
@@ -409,19 +428,16 @@ public class JUnitConfigEditor extends JPanel {
           myThis.myModuleName0.setText(SNodeOperations.getModel(myThis.getMyNode()).getModelDescriptor().getModule().getModuleFqName());
         }
       });
-      needSelect.value = false;
     }
     if (config.getStateObject().model != null) {
       ModelAccess.instance().runReadAction(new Runnable() {
         public void run() {
           SModelDescriptor descriptor = myThis.getMyProject().getScope().getModelDescriptor(SModelReference.fromString(config.getStateObject().model));
           myThis.setMyModel(descriptor.getSModel());
-          myThis.myIsModel0.setSelected(needSelect.value);
           myThis.myModelName0.setText(config.getStateObject().model);
           myThis.myModuleName0.setText(myThis.getMyModel().getModelDescriptor().getModule().getModuleFqName());
         }
       });
-      needSelect.value = false;
     }
     if (config.getStateObject().module != null) {
       ModelAccess.instance().runReadAction(new Runnable() {
@@ -429,7 +445,6 @@ public class JUnitConfigEditor extends JPanel {
           for (IModule module : myThis.getMyProject().getScope().getVisibleModules()) {
             if (module.getModuleFqName().equals(config.getStateObject().module)) {
               myThis.setMyModule(module);
-              myThis.myIsModule0.setSelected(needSelect.value);
               myThis.myModuleName0.setText(config.getStateObject().module);
               break;
             }

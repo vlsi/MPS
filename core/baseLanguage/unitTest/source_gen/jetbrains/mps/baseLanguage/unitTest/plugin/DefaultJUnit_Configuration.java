@@ -8,6 +8,11 @@ import com.intellij.openapi.project.Project;
 import com.intellij.execution.configurations.ConfigurationFactory;
 import com.intellij.execution.configurations.RunConfiguration;
 import com.intellij.execution.configurations.RuntimeConfigurationException;
+import jetbrains.mps.kernel.model.SModelUtil;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.project.GlobalScope;
+import jetbrains.mps.smodel.SModelReference;
+import jetbrains.mps.project.IModule;
 import com.intellij.execution.configurations.RunProfileState;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.execution.Executor;
@@ -22,13 +27,12 @@ import com.intellij.openapi.actionSystem.AnAction;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import com.intellij.execution.process.ProcessHandler;
-import jetbrains.mps.baseLanguage.plugin.RunParameters;
-import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
-import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.baseLanguage.plugin.RunComponent;
+import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
+import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.baseLanguage.plugin.BLProcessHandler;
 import java.nio.charset.Charset;
 import com.intellij.execution.ui.ExecutionConsole;
@@ -41,6 +45,7 @@ import org.jdom.Element;
 import com.intellij.openapi.util.WriteExternalException;
 import com.intellij.util.xmlb.XmlSerializer;
 import com.intellij.openapi.util.InvalidDataException;
+import jetbrains.mps.baseLanguage.plugin.RunParameters;
 
 public class DefaultJUnit_Configuration extends BaseRunConfig {
   @Tag(value = "state")
@@ -62,6 +67,37 @@ public class DefaultJUnit_Configuration extends BaseRunConfig {
 
   public void checkConfiguration() throws RuntimeConfigurationException {
     StringBuilder error = new StringBuilder();
+    {
+      if (DefaultJUnit_Configuration.this.getStateObject().type != null) {
+        if (DefaultJUnit_Configuration.this.getStateObject().type == JUnitRunTypes.METHOD) {
+          if (DefaultJUnit_Configuration.this.getStateObject().method == null || SModelUtil.findNodeByFQName(DefaultJUnit_Configuration.this.getStateObject().method, SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.unitTest.structure.ITestMethod"), GlobalScope.getInstance()) == null) {
+            error.append("method is not selected or does not exist").append("\n");
+          }
+        } else if (DefaultJUnit_Configuration.this.getStateObject().type == JUnitRunTypes.TESTCLASS) {
+          if (DefaultJUnit_Configuration.this.getStateObject().node == null || SModelUtil.findNodeByFQName(DefaultJUnit_Configuration.this.getStateObject().node, SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.unitTest.structure.BTestCase"), GlobalScope.getInstance()) == null) {
+            error.append("node is not selected or does not exist").append("\n");
+          }
+        } else if (DefaultJUnit_Configuration.this.getStateObject().type == JUnitRunTypes.MODEL) {
+          if (DefaultJUnit_Configuration.this.getStateObject().model == null || GlobalScope.getInstance().getModelDescriptor(SModelReference.fromString(DefaultJUnit_Configuration.this.getStateObject().model)).getSModel() == null) {
+            error.append("model is not selected or does not exist").append("\n");
+          }
+        } else if (DefaultJUnit_Configuration.this.getStateObject().type == JUnitRunTypes.MODULE) {
+          if (DefaultJUnit_Configuration.this.getStateObject().module != null) {
+            for (IModule module : GlobalScope.getInstance().getVisibleModules()) {
+              if (module.getModuleFqName().equals(module)) {
+                break;
+              }
+            }
+          }
+          error.append("module is not selected or does not exist").append("\n");
+        }
+      }
+
+      String paramsReport = DefaultJUnit_Configuration.this.getStateObject().myParams.getErrorReport();
+      if (paramsReport != null) {
+        error.append(paramsReport).append("\n");
+      }
+    }
     if (error.length() != 0) {
       throw new RuntimeConfigurationException(error.toString());
     }
@@ -76,13 +112,6 @@ public class DefaultJUnit_Configuration extends BaseRunConfig {
         final List<AnAction> actions = ListSequence.fromList(new ArrayList<AnAction>());
         ProcessHandler handler = null;
         {
-          DefaultJUnit_Configuration.this.getStateObject().myParams = new RunParameters();
-          final Wrappers._T<SNode> node = new Wrappers._T<SNode>();
-          ModelAccess.instance().runReadAction(new Runnable() {
-            public void run() {
-              node.value = new SNodePointer(DefaultJUnit_Configuration.this.getStateObject().model, DefaultJUnit_Configuration.this.getStateObject().node).getNode();
-            }
-          });
           Project project = MPSDataKeys.PROJECT.getData(environment.getDataContext());
           final RunComponent runComponent = new RunComponent(project);
           final UnitTestClassRunner testRunner = new UnitTestClassRunner(runComponent);
@@ -96,15 +125,35 @@ public class DefaultJUnit_Configuration extends BaseRunConfig {
             }
           };
 
-          final Wrappers._T<Process> process = new Wrappers._T<Process>();
+          final Wrappers._T<Process> process = new Wrappers._T<Process>(null);
           ModelAccess.instance().runReadAction(new Runnable() {
             public void run() {
-              testRunner.runTest(node.value);
-              process.value = testRunner.getProcess();
+              if (DefaultJUnit_Configuration.this.getStateObject().type != null) {
+                if (DefaultJUnit_Configuration.this.getStateObject().type == JUnitRunTypes.METHOD) {
+                  SNode method = (SNode)SModelUtil.findNodeByFQName(DefaultJUnit_Configuration.this.getStateObject().method, SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.unitTest.structure.ITestMethod"), GlobalScope.getInstance());
+                  testRunner.runTestMethod(method);
+                } else if (DefaultJUnit_Configuration.this.getStateObject().type == JUnitRunTypes.TESTCLASS) {
+                  SNode test = (SNode)SModelUtil.findNodeByFQName(DefaultJUnit_Configuration.this.getStateObject().node, SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.unitTest.structure.BTestCase"), GlobalScope.getInstance());
+                  testRunner.runTest(test);
+                } else if (DefaultJUnit_Configuration.this.getStateObject().type == JUnitRunTypes.MODEL) {
+                  SModel model = GlobalScope.getInstance().getModelDescriptor(SModelReference.fromString(DefaultJUnit_Configuration.this.getStateObject().model)).getSModel();
+                  testRunner.runTestInModel(model);
+                } else if (DefaultJUnit_Configuration.this.getStateObject().type == JUnitRunTypes.MODULE) {
+                  for (IModule module : GlobalScope.getInstance().getVisibleModules()) {
+                    if (module.getModuleFqName().equals(module)) {
+                      testRunner.runTestInModule(module);
+                      break;
+                    }
+                  }
+                }
+                process.value = testRunner.getProcess();
+              }
             }
           });
 
-          handler = new BLProcessHandler(runComponent, process.value, "", Charset.defaultCharset());
+          if (process.value != null) {
+            handler = new BLProcessHandler(runComponent, process.value, "", Charset.defaultCharset());
+          }
         }
         final JComponent finalConsoleComponent = consoleComponent;
         final Runnable finalConsoleDispose = consoleDispose;
@@ -203,6 +252,7 @@ public class DefaultJUnit_Configuration extends BaseRunConfig {
     public String model;
     public String module;
     public String method;
+    public JUnitRunTypes type;
     public RunParameters myParams;
 
     public MyState() {

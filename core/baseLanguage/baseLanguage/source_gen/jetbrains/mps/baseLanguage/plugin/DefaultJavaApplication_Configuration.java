@@ -78,6 +78,14 @@ public class DefaultJavaApplication_Configuration extends BaseRunConfig {
       if (node.value == null) {
         error.append("node is not selected or does not exist").append("\n");
       }
+
+      if (DefaultJavaApplication_Configuration.this.getStateObject().parameters == null) {
+        DefaultJavaApplication_Configuration.this.getStateObject().parameters = new RunParameters();
+      }
+      String paramsReport = DefaultJavaApplication_Configuration.this.getStateObject().parameters.getErrorReport();
+      if (paramsReport != null) {
+        error.append(paramsReport).append("\n");
+      }
     }
     if (error.length() != 0) {
       throw new RuntimeConfigurationException(error.toString());
