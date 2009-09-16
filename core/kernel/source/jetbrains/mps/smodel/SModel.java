@@ -1093,11 +1093,7 @@ public class SModel implements Iterable<SNode> {
   }
 
   public void validateLanguagesAndImports() {
-    validateLanguagesAndImports(false);
-  }
-
-  public void validateLanguagesAndImports(boolean respectModulesScopes) {
-    validateLanguagesAndImports(respectModulesScopes, false);
+    validateLanguagesAndImports(false, false);
   }
 
   public void validateLanguagesAndImports(boolean respectModulesScopes, boolean firstVersion) {
