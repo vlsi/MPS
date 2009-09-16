@@ -109,6 +109,10 @@ public class DefaultJavaApplication_Configuration extends BaseRunConfig {
           Project project = MPSDataKeys.PROJECT.getData(environment.getDataContext());
           MPSProject mpsProject = project.getComponent(MPSProjectHolder.class).getMPSProject();
 
+          if (DefaultJavaApplication_Configuration.this.getStateObject().parameters == null) {
+            DefaultJavaApplication_Configuration.this.getStateObject().parameters = new RunParameters();
+          }
+
           if (DefaultJavaApplication_Configuration.this.getStateObject().parameters.getMake()) {
             GeneratorManager genManager = mpsProject.getComponent(GeneratorManager.class);
             final Wrappers._T<SModelDescriptor> md = new Wrappers._T<SModelDescriptor>();
