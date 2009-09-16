@@ -43,18 +43,6 @@ public class ModelActions {
     return ChildSubstituteActionsHelper.createActions(parentNode, currentChild, childConcept, childSetter, context);
   }
 
-  /**
-   * helper method
-   */
-  public static List<INodeSubstituteAction> createPrimaryChildSubstituteActions(SNode parentNode, SNode currentChild, AbstractConceptDeclaration childConcept, IChildNodeSetter childSetter, Condition<SNode> filter, IOperationContext context) {
-    return ChildSubstituteActionsHelper.createPrimaryChildSubstituteActions(
-      parentNode,
-      currentChild,
-      childConcept,
-      childSetter,
-      filter,
-      context);
-  }
 
   //-------------------
   // referent substitute

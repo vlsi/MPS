@@ -23,6 +23,7 @@ import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
 import jetbrains.mps.lang.structure.structure.ConceptDeclaration;
 import jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration;
 import jetbrains.mps.lang.structure.structure.InterfaceConceptReference;
+import jetbrains.mps.lang.structure.behavior.AbstractConceptDeclaration_Behavior;
 import jetbrains.mps.nodeEditor.NodeReadAccessCaster;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.smodel.event.SModelCommandListener;
@@ -40,7 +41,11 @@ public class LanguageHierarchyCache implements ApplicationComponent {
   private Map<String, Set<String>> myAncestorsNamesMap = new HashMap<String, Set<String>>();
   private Map<String, Set<String>> myParentsNamesMap = new HashMap<String, Set<String>>();
   private Map<String, Set<String>> myDirectDescendantsCache = new HashMap<String, Set<String>>();
+
   private boolean myDescendantsCachesAreValid = false;
+
+  private Map<Language, LanguageConceptsCache> myLanguageSpecificCaches = new HashMap<Language, LanguageConceptsCache>();
+  
 
   private MPSModuleRepository myModuleRepository;
 
@@ -78,6 +83,7 @@ public class LanguageHierarchyCache implements ApplicationComponent {
     myDirectDescendantsCache.clear();
     myParentsNamesMap.clear();
     myAncestorsNamesMap.clear();
+    myLanguageSpecificCaches.clear();
     myDescendantsCachesAreValid = false;
   }
 
@@ -228,5 +234,57 @@ public class LanguageHierarchyCache implements ApplicationComponent {
       }
     });
     myDescendantsCachesAreValid = true;
+  }
+
+
+  private LanguageConceptsCache getLanguageCache(Language l) {
+    LanguageConceptsCache result = myLanguageSpecificCaches.get(l);
+
+    if (result == null) {
+      result = new LanguageConceptsCache(l);
+      myLanguageSpecificCaches.put(l, result);
+    }
+
+    return result;
+  }
+
+  public Set<String> getDefaultSubstitutableDescendantsOf(String concept, Language l) {
+    Set<String> result = getLanguageCache(l).getSubconcepts(concept);
+    if (result == null) {
+      return Collections.EMPTY_SET;
+    }
+    return Collections.unmodifiableSet(result);
+  }
+
+  private class LanguageConceptsCache {
+    private Language myLanguage;
+    private Map<String, Set<String>> mySubconcepts = new HashMap<String, Set<String>>();
+
+    LanguageConceptsCache(Language language) {
+      myLanguage = language;
+
+      build();
+    }
+
+    void build() {
+      for (ConceptDeclaration cd : myLanguage.getConceptDeclarations()) {
+        if (!AbstractConceptDeclaration_Behavior.call_isDefaultSubstitutable_7429110134803670673(cd.getNode())) continue;
+
+        String fqName = NameUtil.nodeFQName(cd);
+
+        for (String ancestor : getAncestorsNames_internal(fqName)) {
+          Set<String> addTo = mySubconcepts.get(ancestor);
+          if (addTo == null) {
+            addTo = new HashSet<String>();
+            mySubconcepts.put(ancestor, addTo);
+          }
+          addTo.add(fqName);
+        }
+      }
+    }
+
+    Set<String> getSubconcepts(String fqName) {
+      return mySubconcepts.get(fqName);      
+    }   
   }
 }

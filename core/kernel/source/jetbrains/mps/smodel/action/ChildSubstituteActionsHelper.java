@@ -162,7 +162,7 @@ public class ChildSubstituteActionsHelper {
         
 
     if (!containsRemoveDefaults(allBuilders)) {
-      resultActions.addAll(createPrimaryChildSubstituteActions(parentNode, currentChild, childConcept, childSetter, TRUE_CONDITION, context));
+      resultActions.addAll(createPrimaryChildSubstituteActions(parentNode, currentChild, childConcept, childSetter, context));
     }
 
     for (NodeSubstituteActionsBuilder builder : allBuilders) {
@@ -210,7 +210,6 @@ public class ChildSubstituteActionsHelper {
     SNode currentChild,
     final AbstractConceptDeclaration childConcept,
     IChildNodeSetter childSetter,
-    final Condition<SNode> filter,
     IOperationContext context) {
 
     if (childConcept == null) {
@@ -218,19 +217,16 @@ public class ChildSubstituteActionsHelper {
     }
     final IScope scope = context.getScope();
 
-    // create search scope that only includes root concepts.
-    // case: concept-function-parameters declared as child-concepts are not added to substitute menue by default
-    ISearchScope conceptsSearchScope = SModelSearchUtil.createConceptsFromModelLanguagesScope(parentNode.getModel(), true, scope);
-    List<SNode> applicableConcepts = conceptsSearchScope.getNodes(new Condition<SNode>() {
-      public boolean met(SNode object) {
-        return isDefaultSubstitutableConcept((AbstractConceptDeclaration) BaseAdapter.fromNode(object), childConcept, scope) &&
-          filter.met(object);
-      }
-    });
+    String childConceptFqName = NameUtil.nodeFQName(childConcept);
+    Set<String> concepts = new HashSet<String>();
+    for (Language l : parentNode.getModel().getLanguages(scope)) {
+      concepts.addAll(LanguageHierarchyCache.getInstance().getDefaultSubstitutableDescendantsOf(childConceptFqName, l));
+    }
 
     List<INodeSubstituteAction> actions = new ArrayList<INodeSubstituteAction>();
-    for (SNode applicableConcept : applicableConcepts) {
-      actions.addAll(createDefaultActions((ConceptDeclaration) BaseAdapter.fromNode(applicableConcept), parentNode, currentChild, childSetter, context));
+    for (String fqName : concepts) {
+      ConceptDeclaration applicableConcept = (ConceptDeclaration) SModelUtil_new.findConceptDeclaration(fqName, scope);
+      actions.addAll(createDefaultActions(applicableConcept, parentNode, currentChild, childSetter, context));
     }
 
     return actions;
