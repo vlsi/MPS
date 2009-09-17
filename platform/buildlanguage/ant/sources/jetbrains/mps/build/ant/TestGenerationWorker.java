@@ -30,26 +30,27 @@ import com.intellij.openapi.util.Computable;
 import com.intellij.openapi.progress.EmptyProgressIndicator;
 import junit.framework.TestFailure;
 
-public class TesterWorker extends GeneratorWorker {
+public class TestGenerationWorker extends GeneratorWorker {
   private boolean myTestFailed = false;
+  private final IBuildServerMessageFormat myBuildServerMessageFormat = new TeamCityMessageFormat();
 
   public static void main(String[] args) {
-    TesterWorker generator = new TesterWorker(WhatToDo.fromDumpInFile(new File(args[0])), new SystemOutLogger());
+    TestGenerationWorker generator = new TestGenerationWorker(WhatToDo.fromDumpInFile(new File(args[0])), new SystemOutLogger());
     generator.doTheJob();
   }
 
-  public TesterWorker(WhatToDo whatToDo, ProjectComponent component) {
+  public TestGenerationWorker(WhatToDo whatToDo, ProjectComponent component) {
     super(whatToDo, component);
   }
 
-  public TesterWorker(WhatToDo whatToDo, AntLogger logger) {
+  public TestGenerationWorker(WhatToDo whatToDo, AntLogger logger) {
     super(whatToDo, logger);
   }
 
   @Override
   protected void generateModulesCircle(GeneratorManager gm, EmptyProgressIndicator emptyProgressIndicator, Set<IModule> modulesSet, List<Pair<SModelDescriptor, IOperationContext>> modelsToContext) {
-    String currentTestName = escapeMessageForTeamCity("generating " + modulesSet);
-    System.out.println("##teamcity[testStarted name='" + currentTestName + "' captureStandardOutput='true']");
+    String currentTestName = myBuildServerMessageFormat.escapeBuildMessage("generate " + modulesSet);
+    System.out.println(myBuildServerMessageFormat.formatTestStart(currentTestName));
 
     final EditorGenerateType generationType = new EditorGenerateType(true);
     gm.generateModels(modelsToContext,
@@ -99,9 +100,9 @@ public class TesterWorker extends GeneratorWorker {
     myMessageHandler.clean();
     if (sb.length() > 0) {
       myTestFailed = true;
-      System.out.println("##teamcity[testFailed name='" + currentTestName + "' message='generation errors' details='" + sb.toString() + "']");
+      System.out.println(myBuildServerMessageFormat.formatTestFailure(currentTestName, "Generation Errors", sb.toString()));
     }
-    System.out.println("##teamcity[testFinished name='" + currentTestName + "']");
+    System.out.println(myBuildServerMessageFormat.formatTestFinifsh(currentTestName));
   }
 
   @Override
@@ -110,7 +111,7 @@ public class TesterWorker extends GeneratorWorker {
       public void run() {
         List<BaseTestConfiguration> testConfigurationList = project.getProjectDescriptor().getTestConfigurations();
         if (testConfigurationList.isEmpty()) {
-          TesterWorker.super.extractModels(modelDescriptors, project);
+          TestGenerationWorker.super.extractModels(modelDescriptors, project);
         } else {
           for (BaseTestConfiguration config : testConfigurationList) {
             GenParameters genParams = config.getGenParams(project, true);
@@ -125,66 +126,66 @@ public class TesterWorker extends GeneratorWorker {
     StringBuffer sb = new StringBuffer();
 
     if (myMessageHandler.getGenerationErrors().size() > 0) {
-      sb.append("Generation errors:|n");
+      sb.append("Generation errors:");
+      sb.append(myBuildServerMessageFormat.getLinesSeparator());
       for (String e : myMessageHandler.getGenerationErrors()) {
         sb.append("  ");
-        sb.append(escapeMessageForTeamCity(e));
-        sb.append("|n");
+        sb.append(myBuildServerMessageFormat.escapeBuildMessage(e));
+        sb.append(myBuildServerMessageFormat.getLinesSeparator());
       }
-      sb.append("|n");
+      sb.append(myBuildServerMessageFormat.getLinesSeparator());
     }
 
     boolean headerPrinted = false;
     for (CompilationResult r : compilationResult) {
       if (r.getErrors() != null && r.getErrors().length > 0) {
         if (!headerPrinted) {
-          sb.append("Compilation problems:|n");
+          sb.append("Compilation problems:");
+          sb.append(myBuildServerMessageFormat.getLinesSeparator());
           headerPrinted = true;
         }
         for (CategorizedProblem p : r.getErrors()) {
           sb.append("  ");
-          sb.append(escapeMessageForTeamCity(new String(r.getCompilationUnit().getFileName())));
+          sb.append(myBuildServerMessageFormat.escapeBuildMessage(new String(r.getCompilationUnit().getFileName())));
           sb.append(" (");
           sb.append(p.getSourceLineNumber());
           sb.append("): ");
           sb.append(p.getMessage());
-          sb.append("|n");
+          sb.append(myBuildServerMessageFormat.getLinesSeparator());
         }
       }
     }
     if (headerPrinted) {
-      sb.append("|n");
+      sb.append(myBuildServerMessageFormat.getLinesSeparator());
     }
 
     if (testFailures.size() > 0) {
-      sb.append("Test Failures:|n");
+      sb.append("Test Failures:");
+      sb.append(myBuildServerMessageFormat.getLinesSeparator());
       for (TestFailure failure : testFailures) {
         sb.append("  ");
         StringWriter writer = new StringWriter();
         failure.thrownException().printStackTrace(new PrintWriter(writer));
-        sb.append(escapeMessageForTeamCity(writer.toString()));
-        sb.append("|n");
+        sb.append(myBuildServerMessageFormat.escapeBuildMessage(writer.toString()));
+        sb.append(myBuildServerMessageFormat.getLinesSeparator());
       }
-      sb.append("|n");
+      sb.append(myBuildServerMessageFormat.getLinesSeparator());
     }
 
     if (Boolean.parseBoolean(myWhatToDo.getProperty(TestGenerationOnTeamcity.SHOW_DIFF))) {
       if (diffReports.size() > 0) {
-        sb.append("Difference:|n");
+        sb.append("Difference:");
+        sb.append(myBuildServerMessageFormat.getLinesSeparator());
         for (String diffReport : diffReports) {
           sb.append("  ");
-          sb.append(escapeMessageForTeamCity(diffReport));
-          sb.append("|n");
+          sb.append(myBuildServerMessageFormat.escapeBuildMessage(diffReport));
+          sb.append(myBuildServerMessageFormat.getLinesSeparator());
         }
-        sb.append("|n");
+        sb.append(myBuildServerMessageFormat.getLinesSeparator());
       }
     }
 
     return sb;
-  }
-
-  private String escapeMessageForTeamCity(String rawMessage) {
-    return rawMessage.replace("|", "||").replace("'", "|'").replace("\n", "|n").replace("\r", "|r").replace("]", "|]");
   }
 
   @Override

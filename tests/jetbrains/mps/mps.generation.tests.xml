@@ -4,7 +4,7 @@
     <taskdef resource="jetbrains/mps/build/ant/antlib.xml"
              classpath="${mps.home}/platform/buildlanguage/ant/classes"/>
 
-    <target name="all" depends="bootstrap.tests, application.tests"/>
+    <target name="all" depends="bootstrap.tests, application.tests, broken.references.test"/>
 
     <target name="bootstrap.tests">
         <mps.test.generation fork="true" compile="true" showdiff="true" invoketests="true" loglevel="info">
@@ -121,5 +121,14 @@
             <jvmarg value="-XX:MaxPermSize=92m"/>
             <project file="${mps.home}/samples/xmlLiterals/jetbrains.mps.samples.xmlLiterals.mpr"/>
         </mps.test.generation>
+    </target>
+
+    <target  name="broken.references.test">
+        <mps.test.broken.references fork="true" loglevel="info">
+            <jvmarg value="-Xss1024k"/>
+            <jvmarg value="-Xmx1000m"/>
+            <jvmarg value="-XX:MaxPermSize=92m"/>
+            <models dir="${mps.home}"/>
+        </mps.test.broken.references>
     </target>
 </project>

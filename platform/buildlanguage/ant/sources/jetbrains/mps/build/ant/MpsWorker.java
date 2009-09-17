@@ -305,7 +305,8 @@ public abstract class MpsWorker {
   }
 
   public void log(Exception e) {
-    StringBuffer sb = new StringBuffer(e.getMessage());
+    StringBuffer sb = new StringBuffer("");
+    sb.append(e.getMessage());
     sb.append("\n");
     for (StackTraceElement el : e.getStackTrace()) {
       sb.append("    ");

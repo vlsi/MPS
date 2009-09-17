@@ -122,7 +122,7 @@ public abstract class MpsLoadTask extends org.apache.tools.ant.Task {
       }
       commandLine.add("-classpath");
       commandLine.add(currentClassPathString + sb.toString());
-      commandLine.add(getGeneratorClass().getCanonicalName());
+      commandLine.add(getWorkerClass().getCanonicalName());
       try {
         commandLine.add(myWhatToDo.dumpToTmpFile().getAbsolutePath());
       } catch (FileNotFoundException e) {
@@ -158,7 +158,7 @@ public abstract class MpsLoadTask extends org.apache.tools.ant.Task {
         Object whatToGenerate = whatToGenerateClass.newInstance();
         myWhatToDo.cloneTo(whatToGenerate);
 
-        Class<?> generatorClass = classLoader.loadClass(getGeneratorClass().getCanonicalName());
+        Class<?> generatorClass = classLoader.loadClass(getWorkerClass().getCanonicalName());
         Constructor<?> constructor = generatorClass.getConstructor(whatToGenerateClass, ProjectComponent.class);
         Object generator = constructor.newInstance(whatToGenerate, this);
 
@@ -231,7 +231,7 @@ public abstract class MpsLoadTask extends org.apache.tools.ant.Task {
     return classPaths;
   }
 
-  protected abstract Class<? extends MpsWorker> getGeneratorClass();
+  protected abstract Class<? extends MpsWorker> getWorkerClass();
 
   private void gatherAllClassesAndJarsUnder(File dir, Set<File> result) {
     File[] children = dir.listFiles();

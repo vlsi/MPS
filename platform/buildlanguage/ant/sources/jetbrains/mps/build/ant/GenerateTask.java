@@ -22,7 +22,7 @@ public class GenerateTask extends MpsLoadTask {
     myWhatToDo.putProperty(COMPILE, Boolean.toString(true));
   }
 
-  protected Class<? extends MpsWorker> getGeneratorClass() {
+  protected Class<? extends MpsWorker> getWorkerClass() {
     return GeneratorWorker.class;
   }
 
