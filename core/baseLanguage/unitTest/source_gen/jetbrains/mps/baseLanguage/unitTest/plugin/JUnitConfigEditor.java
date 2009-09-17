@@ -25,15 +25,15 @@ import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import javax.swing.border.TitledBorder;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.baseLanguage.unitTest.behavior.ITestMethod_Behavior;
-import jetbrains.mps.lang.core.behavior.INamedConcept_Behavior;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.project.GlobalScope;
+import jetbrains.mps.baseLanguage.unitTest.behavior.ITestMethod_Behavior;
+import jetbrains.mps.lang.core.behavior.INamedConcept_Behavior;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class JUnitConfigEditor extends JPanel {
   public JUnitConfigEditor myThis;
@@ -388,6 +388,58 @@ public class JUnitConfigEditor extends JPanel {
     this.firePropertyChange("method", oldValue, newValue);
   }
 
+  private void setModuleValue(final String m) {
+    if (m == null) {
+      myThis.setModule(null);
+    }
+    ModelAccess.instance().runReadAction(new Runnable() {
+      public void run() {
+        for (IModule module : myThis.getProject().getScope().getVisibleModules()) {
+          if (module.getModuleFqName().equals(m)) {
+            myThis.setModule(module);
+            break;
+          }
+        }
+      }
+    });
+  }
+
+  private void setModelValue(final String m) {
+    if (m == null) {
+      myThis.setModel(null);
+    }
+    ModelAccess.instance().runReadAction(new Runnable() {
+      public void run() {
+        SModelDescriptor descriptor = myThis.getProject().getScope().getModelDescriptor(SModelReference.fromString(m));
+        if (descriptor != null) {
+          myThis.setModel(descriptor.getSModel());
+        }
+      }
+    });
+  }
+
+  private void setNodeValue(final String n) {
+    if (n == null) {
+      myThis.setNode(null);
+    }
+    ModelAccess.instance().runReadAction(new Runnable() {
+      public void run() {
+        myThis.setNode((SNode)SModelUtil.findNodeByFQName(n, SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.unitTest.structure.BTestCase"), GlobalScope.getInstance()));
+      }
+    });
+  }
+
+  private void setMethodValue(String m, final String n) {
+    if (m == null) {
+      myThis.setMethod(null);
+    }
+    ModelAccess.instance().runReadAction(new Runnable() {
+      public void run() {
+        myThis.setMethod((SNode)SModelUtil.findNodeByFQName(n, SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.unitTest.structure.ITestMethod"), GlobalScope.getInstance()));
+      }
+    });
+  }
+
   public void apply(final DefaultJUnit_Configuration config) {
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
@@ -435,9 +487,9 @@ public class JUnitConfigEditor extends JPanel {
       myThis.myIsModule0.setSelected(true);
     }
     if (config.getStateObject().node != null) {
-      myThis.setNode(config.getStateObject().node);
+      myThis.setNodeValue(config.getStateObject().node);
       if (config.getStateObject().method != null) {
-        myThis.setMethod(config.getStateObject().node, config.getStateObject().method);
+        myThis.setMethodValue(config.getStateObject().node, config.getStateObject().method);
         myThis.myMethodName0.setText(config.getStateObject().method);
       }
       ModelAccess.instance().runReadAction(new Runnable() {
@@ -445,25 +497,25 @@ public class JUnitConfigEditor extends JPanel {
           myThis.myNodeName0.setText(INamedConcept_Behavior.call_getFqName_1213877404258(myThis.getNode()));
           myThis.myNodeNameWithMethod0.setText(INamedConcept_Behavior.call_getFqName_1213877404258(myThis.getNode()));
           myThis.myMethodName0.setTestCase(INamedConcept_Behavior.call_getFqName_1213877404258(myThis.getNode()));
-          myThis.setModel(SModelOperations.getModelName(SNodeOperations.getModel(myThis.getNode())));
+          myThis.setModelValue(SModelOperations.getModelName(SNodeOperations.getModel(myThis.getNode())));
           myThis.myModelName0.setText(SModelOperations.getModelName(SNodeOperations.getModel(myThis.getNode())));
-          myThis.setModule(SNodeOperations.getModel(myThis.getNode()).getModelDescriptor().getModule().getModuleFqName());
+          myThis.setModuleValue(SNodeOperations.getModel(myThis.getNode()).getModelDescriptor().getModule().getModuleFqName());
           myThis.myModuleName0.setText(SNodeOperations.getModel(myThis.getNode()).getModelDescriptor().getModule().getModuleFqName());
         }
       });
     }
     if (myThis.getModel() != null) {
-      myThis.setModel(config.getStateObject().model);
+      myThis.setModelValue(config.getStateObject().model);
       ModelAccess.instance().runReadAction(new Runnable() {
         public void run() {
           myThis.myModelName0.setText(config.getStateObject().model);
-          myThis.setModule(myThis.getModel().getModelDescriptor().getModule().getModuleFqName());
+          myThis.setModuleValue(myThis.getModel().getModelDescriptor().getModule().getModuleFqName());
           myThis.myModuleName0.setText(myThis.getModel().getModelDescriptor().getModule().getModuleFqName());
         }
       });
     }
     if (myThis.getModule() != null) {
-      myThis.setModule(config.getStateObject().module);
+      myThis.setModuleValue(config.getStateObject().module);
       myThis.myModuleName0.setText(config.getStateObject().module);
     }
     myThis.onSelect();
@@ -491,75 +543,23 @@ public class JUnitConfigEditor extends JPanel {
   }
 
   public void onModelChange() {
-    myThis.setModel(myThis.myModelName0.getText());
+    myThis.setModelValue(myThis.myModelName0.getText());
   }
 
   public void onModuleChange() {
-    myThis.setModule(myThis.myModuleName0.getText());
+    myThis.setModuleValue(myThis.myModuleName0.getText());
   }
 
   public void onNodeChange() {
-    myThis.setNode(myThis.myNodeName0.getText());
+    myThis.setNodeValue(myThis.myNodeName0.getText());
   }
 
   public void onMainNodeChange() {
-    myThis.setNode(myThis.myNodeNameWithMethod0.getText());
+    myThis.setNodeValue(myThis.myNodeNameWithMethod0.getText());
     myThis.myMethodName0.setTestCase(myThis.myNodeNameWithMethod0.getText());
   }
 
   public void onMethodChange() {
-    myThis.setMethod(myThis.myNodeName0.getText(), myThis.myMethodName0.getText());
-  }
-
-  private void setModule(final String m) {
-    if (m == null) {
-      return;
-    }
-    ModelAccess.instance().runReadAction(new Runnable() {
-      public void run() {
-        for (IModule module : myThis.getProject().getScope().getVisibleModules()) {
-          if (module.getModuleFqName().equals(m)) {
-            myThis.setModule(module);
-            break;
-          }
-        }
-      }
-    });
-  }
-
-  private void setModel(final String m) {
-    if (m == null) {
-      return;
-    }
-    ModelAccess.instance().runReadAction(new Runnable() {
-      public void run() {
-        SModelDescriptor descriptor = myThis.getProject().getScope().getModelDescriptor(SModelReference.fromString(m));
-        if (descriptor != null) {
-          myThis.setModel(descriptor.getSModel());
-        }
-      }
-    });
-  }
-
-  private void setNode(final String n) {
-    if (n == null) {
-      return;
-    }
-    ModelAccess.instance().runReadAction(new Runnable() {
-      public void run() {
-        myThis.setNode((SNode)SModelUtil.findNodeByFQName(n, SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.unitTest.structure.BTestCase"), GlobalScope.getInstance()));
-      }
-    });
-  }
-
-  private void setMethod(String m, final String n) {
-    if (m == null) {
-      return;
-    }
-    ModelAccess.instance().runReadAction(new Runnable() {
-      public void run() {
-        myThis.setMethod((SNode)SModelUtil.findNodeByFQName(n, SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.unitTest.structure.ITestMethod"), GlobalScope.getInstance()));
-      }
-    });
+    myThis.setMethodValue(myThis.myNodeName0.getText(), myThis.myMethodName0.getText());
   }
 }
