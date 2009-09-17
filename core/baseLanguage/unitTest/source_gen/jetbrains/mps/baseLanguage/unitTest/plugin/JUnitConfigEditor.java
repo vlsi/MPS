@@ -28,13 +28,12 @@ import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.baseLanguage.unitTest.behavior.ITestMethod_Behavior;
 import jetbrains.mps.lang.core.behavior.INamedConcept_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
-import jetbrains.mps.kernel.model.SModelUtil;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
-import jetbrains.mps.project.GlobalScope;
-import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SModelReference;
+import jetbrains.mps.kernel.model.SModelUtil;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.project.GlobalScope;
 
 public class JUnitConfigEditor extends JPanel {
   public JUnitConfigEditor myThis;
@@ -60,12 +59,12 @@ public class JUnitConfigEditor extends JPanel {
   private JLabel myComponent14;
   private MethodChooserComponent myMethodName0;
   private JavaConfigOptions myJavaOptions0;
-  private MPSProject myMyProject;
-  private ButtonGroup myMyButtonGroup;
-  private SModel myMyModel;
-  private IModule myMyModule;
-  private SNode myMyNode;
-  private SNode myMyMethod;
+  private MPSProject myProject;
+  private ButtonGroup myGroup;
+  private SModel myModel;
+  private IModule myModule;
+  private SNode myNode;
+  private SNode myMethod;
   public List<AutoBinding> myBindings = ListSequence.fromList(new ArrayList<AutoBinding>());
   private Events myEvents = new Events(null) {
     {
@@ -78,8 +77,8 @@ public class JUnitConfigEditor extends JPanel {
   public JUnitConfigEditor() {
     this.myThis = this;
     JUnitConfigEditor component = this;
-    myThis.setMyProject(MPSDataKeys.MPS_PROJECT.getData(DataManager.getInstance().getDataContext()));
-    myThis.setMyButtonGroup(new ButtonGroup());
+    myThis.setProject(MPSDataKeys.MPS_PROJECT.getData(DataManager.getInstance().getDataContext()));
+    myThis.setGroup(new ButtonGroup());
     component.setLayout(new GridBagLayout());
     component.add(this.createComponent8(), LayoutUtil.createFieldConstraints(0));
     component.add(this.createComponent14(), LayoutUtil.createPanelConstraints(1));
@@ -136,7 +135,7 @@ public class JUnitConfigEditor extends JPanel {
     this.myIsModule0 = component;
     component.setText("All in Module");
     component.setSelected(true);
-    component.setGroup(myThis.getMyButtonGroup());
+    component.setGroup(myThis.getGroup());
     component.addActionListener(new ActionListener() {
       public void actionPerformed(ActionEvent event) {
         myThis.onSelect();
@@ -149,7 +148,7 @@ public class JUnitConfigEditor extends JPanel {
     JbRadioButton component = new JbRadioButton();
     this.myIsModel0 = component;
     component.setText("All in Model");
-    component.setGroup(myThis.getMyButtonGroup());
+    component.setGroup(myThis.getGroup());
     component.addActionListener(new ActionListener() {
       public void actionPerformed(ActionEvent event) {
         myThis.onSelect();
@@ -162,7 +161,7 @@ public class JUnitConfigEditor extends JPanel {
     JbRadioButton component = new JbRadioButton();
     this.myIsClass0 = component;
     component.setText("Class");
-    component.setGroup(myThis.getMyButtonGroup());
+    component.setGroup(myThis.getGroup());
     component.addActionListener(new ActionListener() {
       public void actionPerformed(ActionEvent event) {
         myThis.onSelect();
@@ -175,7 +174,7 @@ public class JUnitConfigEditor extends JPanel {
     JbRadioButton component = new JbRadioButton();
     this.myIsMethod0 = component;
     component.setText("Method");
-    component.setGroup(myThis.getMyButtonGroup());
+    component.setGroup(myThis.getGroup());
     component.addActionListener(new ActionListener() {
       public void actionPerformed(ActionEvent event) {
         myThis.onSelect();
@@ -215,6 +214,11 @@ public class JUnitConfigEditor extends JPanel {
   private ModuleChooserComponent createComponent17() {
     ModuleChooserComponent component = new ModuleChooserComponent();
     this.myModuleName0 = component;
+    component.addActionListener(new ActionListener() {
+      public void actionPerformed(ActionEvent event) {
+        myThis.onModuleChange();
+      }
+    });
     return component;
   }
 
@@ -237,6 +241,11 @@ public class JUnitConfigEditor extends JPanel {
   private ModelChooserComponent createComponent20() {
     ModelChooserComponent component = new ModelChooserComponent();
     this.myModelName0 = component;
+    component.addActionListener(new ActionListener() {
+      public void actionPerformed(ActionEvent event) {
+        myThis.onModelChange();
+      }
+    });
     return component;
   }
 
@@ -259,6 +268,11 @@ public class JUnitConfigEditor extends JPanel {
   private NodeChooserComponent createComponent23() {
     NodeChooserComponent component = new NodeChooserComponent();
     this.myNodeName0 = component;
+    component.addActionListener(new ActionListener() {
+      public void actionPerformed(ActionEvent event) {
+        myThis.onNodeChange();
+      }
+    });
     return component;
   }
 
@@ -283,6 +297,11 @@ public class JUnitConfigEditor extends JPanel {
   private NodeChooserComponent createComponent26() {
     NodeChooserComponent component = new NodeChooserComponent();
     this.myNodeNameWithMethod0 = component;
+    component.addActionListener(new ActionListener() {
+      public void actionPerformed(ActionEvent event) {
+        myThis.onMethodChange();
+      }
+    });
     return component;
   }
 
@@ -296,6 +315,11 @@ public class JUnitConfigEditor extends JPanel {
   private MethodChooserComponent createComponent28() {
     MethodChooserComponent component = new MethodChooserComponent();
     this.myMethodName0 = component;
+    component.addActionListener(new ActionListener() {
+      public void actionPerformed(ActionEvent event) {
+        myThis.onMethodChange();
+      }
+    });
     return component;
   }
 
@@ -305,74 +329,74 @@ public class JUnitConfigEditor extends JPanel {
     return component;
   }
 
-  public MPSProject getMyProject() {
-    return this.myMyProject;
+  public MPSProject getProject() {
+    return this.myProject;
   }
 
-  public ButtonGroup getMyButtonGroup() {
-    return this.myMyButtonGroup;
+  public ButtonGroup getGroup() {
+    return this.myGroup;
   }
 
-  public SModel getMyModel() {
-    return this.myMyModel;
+  public SModel getModel() {
+    return this.myModel;
   }
 
-  public IModule getMyModule() {
-    return this.myMyModule;
+  public IModule getModule() {
+    return this.myModule;
   }
 
-  public SNode getMyNode() {
-    return this.myMyNode;
+  public SNode getNode() {
+    return this.myNode;
   }
 
-  public SNode getMyMethod() {
-    return this.myMyMethod;
+  public SNode getMethod() {
+    return this.myMethod;
   }
 
-  public void setMyProject(MPSProject newValue) {
-    MPSProject oldValue = this.myMyProject;
-    this.myMyProject = newValue;
-    this.firePropertyChange("myProject", oldValue, newValue);
+  public void setProject(MPSProject newValue) {
+    MPSProject oldValue = this.myProject;
+    this.myProject = newValue;
+    this.firePropertyChange("project", oldValue, newValue);
   }
 
-  public void setMyButtonGroup(ButtonGroup newValue) {
-    ButtonGroup oldValue = this.myMyButtonGroup;
-    this.myMyButtonGroup = newValue;
-    this.firePropertyChange("myButtonGroup", oldValue, newValue);
+  public void setGroup(ButtonGroup newValue) {
+    ButtonGroup oldValue = this.myGroup;
+    this.myGroup = newValue;
+    this.firePropertyChange("group", oldValue, newValue);
   }
 
-  public void setMyModel(SModel newValue) {
-    SModel oldValue = this.myMyModel;
-    this.myMyModel = newValue;
-    this.firePropertyChange("myModel", oldValue, newValue);
+  public void setModel(SModel newValue) {
+    SModel oldValue = this.myModel;
+    this.myModel = newValue;
+    this.firePropertyChange("model", oldValue, newValue);
   }
 
-  public void setMyModule(IModule newValue) {
-    IModule oldValue = this.myMyModule;
-    this.myMyModule = newValue;
-    this.firePropertyChange("myModule", oldValue, newValue);
+  public void setModule(IModule newValue) {
+    IModule oldValue = this.myModule;
+    this.myModule = newValue;
+    this.firePropertyChange("module", oldValue, newValue);
   }
 
-  public void setMyNode(SNode newValue) {
-    SNode oldValue = this.myMyNode;
-    this.myMyNode = newValue;
-    this.firePropertyChange("myNode", oldValue, newValue);
+  public void setNode(SNode newValue) {
+    SNode oldValue = this.myNode;
+    this.myNode = newValue;
+    this.firePropertyChange("node", oldValue, newValue);
   }
 
-  public void setMyMethod(SNode newValue) {
-    SNode oldValue = this.myMyMethod;
-    this.myMyMethod = newValue;
-    this.firePropertyChange("myMethod", oldValue, newValue);
+  public void setMethod(SNode newValue) {
+    SNode oldValue = this.myMethod;
+    this.myMethod = newValue;
+    this.firePropertyChange("method", oldValue, newValue);
   }
 
   public void apply(final DefaultJUnit_Configuration config) {
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
-        config.getStateObject().method = ITestMethod_Behavior.call_getTestName_1216136419751(myThis.getMyMethod());
-        config.getStateObject().node = INamedConcept_Behavior.call_getFqName_1213877404258(myThis.getMyNode());
-        config.getStateObject().model = SModelOperations.getModelName(myThis.getMyModel());
+        config.getStateObject().method = ITestMethod_Behavior.call_getTestName_1216136419751(myThis.getMethod());
+        config.getStateObject().node = INamedConcept_Behavior.call_getFqName_1213877404258(myThis.getNode());
+        config.getStateObject().model = SModelOperations.getModelName(myThis.getModel());
         if (config.getStateObject().module != null) {
-          config.getStateObject().module = myThis.getMyModule().getModuleFqName();
+          config.getStateObject().module = myThis.getModule().getModuleFqName();
         }
         JUnitRunTypes type;
         if (myThis.myIsModule0.isSelected()) {
@@ -406,51 +430,33 @@ public class JUnitConfigEditor extends JPanel {
       myThis.myIsModule0.setSelected(true);
     }
     if (config.getStateObject().node != null) {
-      ModelAccess.instance().runReadAction(new Runnable() {
-        public void run() {
-          myThis.setMyNode((SNode)SModelUtil.findNodeByFQName(config.getStateObject().node, SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.unitTest.structure.BTestCase"), GlobalScope.getInstance()));
-        }
-      });
+      myThis.setNode(config.getStateObject().node);
       if (config.getStateObject().method != null) {
-        ModelAccess.instance().runReadAction(new Runnable() {
-          public void run() {
-            myThis.setMyMethod(((SNode)new SNodePointer(config.getStateObject().model, config.getStateObject().method).getNode()));
-          }
-        });
+        myThis.setMethod(config.getStateObject().node, config.getStateObject().method);
         myThis.myMethodName0.setText(config.getStateObject().method);
       }
       ModelAccess.instance().runReadAction(new Runnable() {
         public void run() {
-          myThis.myNodeName0.setText(INamedConcept_Behavior.call_getFqName_1213877404258(myThis.getMyNode()));
-          myThis.myNodeNameWithMethod0.setText(INamedConcept_Behavior.call_getFqName_1213877404258(myThis.getMyNode()));
-          myThis.myMethodName0.setTestCase(INamedConcept_Behavior.call_getFqName_1213877404258(myThis.getMyNode()));
-          myThis.myModelName0.setText(SModelOperations.getModelName(SNodeOperations.getModel(myThis.getMyNode())));
-          myThis.myModuleName0.setText(SNodeOperations.getModel(myThis.getMyNode()).getModelDescriptor().getModule().getModuleFqName());
+          myThis.myNodeName0.setText(INamedConcept_Behavior.call_getFqName_1213877404258(myThis.getNode()));
+          myThis.myNodeNameWithMethod0.setText(INamedConcept_Behavior.call_getFqName_1213877404258(myThis.getNode()));
+          myThis.myMethodName0.setTestCase(INamedConcept_Behavior.call_getFqName_1213877404258(myThis.getNode()));
+          myThis.myModelName0.setText(SModelOperations.getModelName(SNodeOperations.getModel(myThis.getNode())));
+          myThis.myModuleName0.setText(SNodeOperations.getModel(myThis.getNode()).getModelDescriptor().getModule().getModuleFqName());
         }
       });
     }
     if (config.getStateObject().model != null) {
+      myThis.setModel(config.getStateObject().model);
       ModelAccess.instance().runReadAction(new Runnable() {
         public void run() {
-          SModelDescriptor descriptor = myThis.getMyProject().getScope().getModelDescriptor(SModelReference.fromString(config.getStateObject().model));
-          myThis.setMyModel(descriptor.getSModel());
           myThis.myModelName0.setText(config.getStateObject().model);
-          myThis.myModuleName0.setText(myThis.getMyModel().getModelDescriptor().getModule().getModuleFqName());
+          myThis.myModuleName0.setText(myThis.getModel().getModelDescriptor().getModule().getModuleFqName());
         }
       });
     }
     if (config.getStateObject().module != null) {
-      ModelAccess.instance().runReadAction(new Runnable() {
-        public void run() {
-          for (IModule module : myThis.getMyProject().getScope().getVisibleModules()) {
-            if (module.getModuleFqName().equals(config.getStateObject().module)) {
-              myThis.setMyModule(module);
-              myThis.myModuleName0.setText(config.getStateObject().module);
-              break;
-            }
-          }
-        }
-      });
+      myThis.setModule(config.getStateObject().module);
+      myThis.myModuleName0.setText(config.getStateObject().module);
     }
     myThis.onSelect();
     myThis.myJavaOptions0.reset(config.getStateObject().myParams);
@@ -474,5 +480,72 @@ public class JUnitConfigEditor extends JPanel {
 
   public void setMethodOwner() {
     myThis.myMethodName0.setTestCase(myThis.myNodeNameWithMethod0.getText());
+  }
+
+  public void onModelChange() {
+    myThis.setModel(myThis.myModelName0.getText());
+  }
+
+  public void onModuleChange() {
+    myThis.setModule(myThis.myModuleName0.getText());
+  }
+
+  public void onNodeChange() {
+    myThis.setNode(myThis.myNodeName0.getText());
+  }
+
+  public void onMethodChange() {
+    myThis.setMethod(myThis.myNodeName0.getText(), myThis.myMethodName0.getText());
+  }
+
+  private void setModule(final String m) {
+    if (m == null) {
+      return;
+    }
+    ModelAccess.instance().runReadAction(new Runnable() {
+      public void run() {
+        for (IModule module : myThis.getProject().getScope().getVisibleModules()) {
+          if (module.getModuleFqName().equals(m)) {
+            myThis.setModule(module);
+            break;
+          }
+        }
+      }
+    });
+  }
+
+  private void setModel(final String m) {
+    if (m == null) {
+      return;
+    }
+    ModelAccess.instance().runReadAction(new Runnable() {
+      public void run() {
+        SModelDescriptor descriptor = myThis.getProject().getScope().getModelDescriptor(SModelReference.fromString(m));
+        myThis.setModel(descriptor.getSModel());
+      }
+    });
+  }
+
+  private void setNode(final String n) {
+    if (n == null) {
+      return;
+    }
+    ModelAccess.instance().runReadAction(new Runnable() {
+      public void run() {
+        myThis.setNode((SNode)SModelUtil.findNodeByFQName(n, SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.unitTest.structure.BTestCase"), GlobalScope.getInstance()));
+      }
+    });
+  }
+
+  private void setMethod(String m, final String n) {
+    myThis.setNode(n);
+    if (m == null) {
+      return;
+    }
+    ModelAccess.instance().runReadAction(new Runnable() {
+      public void run() {
+        myThis.setMethod((SNode)SModelUtil.findNodeByFQName(n, SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.unitTest.structure.ITestMethod"), GlobalScope.getInstance()));
+      }
+    });
   }
 }
