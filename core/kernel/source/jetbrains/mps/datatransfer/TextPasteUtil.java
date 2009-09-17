@@ -21,10 +21,15 @@ import java.awt.datatransfer.DataFlavor;
 import java.awt.datatransfer.Transferable;
 
 public class TextPasteUtil {
+  public static boolean hasStringInClipboard() {
+    Clipboard cb = Toolkit.getDefaultToolkit().getSystemClipboard();
+    return cb.isDataFlavorAvailable(DataFlavor.stringFlavor);
+  }  
+
   public static String getStringFromClipboard() {
     Clipboard cb = Toolkit.getDefaultToolkit().getSystemClipboard();
     Transferable content = null;
-    if (! cb.isDataFlavorAvailable(DataFlavor.stringFlavor)) {
+    if (!cb.isDataFlavorAvailable(DataFlavor.stringFlavor)) {
       return null;
     }
     try {

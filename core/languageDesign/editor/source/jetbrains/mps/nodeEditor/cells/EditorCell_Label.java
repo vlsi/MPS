@@ -965,7 +965,7 @@ public abstract class EditorCell_Label extends EditorCell_Basic {
       if (!(context.getSelectedCell() instanceof EditorCell_Label)) return false;
       EditorCell_Label label = (EditorCell_Label) context.getSelectedCell();
       SNode node = label.getSNode();
-      return node != null && label.canPasteText() && TextPasteUtil.getStringFromClipboard() != null && !(CopyPasteUtil.doesClipboardContainNode());
+      return node != null && label.canPasteText() && TextPasteUtil.hasStringInClipboard() && !(CopyPasteUtil.doesClipboardContainNode());
     }
 
     public void execute(EditorContext context) {
