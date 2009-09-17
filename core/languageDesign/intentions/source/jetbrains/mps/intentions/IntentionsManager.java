@@ -92,17 +92,17 @@ public class IntentionsManager implements ApplicationComponent, PersistentStateC
   public void disposeComponent() {
   }
 
-  private Set<Pair<Intention, SNode>> getAvailableIntentions_delete(final SNode node, @NotNull final EditorContext context) {
+  private Set<Pair<Intention, SNode>> getAvailableIntentions_delete(final SNode node, @NotNull final EditorContext context, @Nullable final Computable<Boolean> terminated) {
     return ModelAccess.instance().runReadAction(new Computable<Set<Pair<Intention, SNode>>>() {
       public Set<Pair<Intention, SNode>> compute() {
         Set<Pair<Intention, SNode>> result = new HashSet<Pair<Intention, SNode>>();
 
-        for (Intention intention : getAvailableIntentionsForExactNode(node, context, false, false)) {
+        for (Intention intention : getAvailableIntentionsForExactNode(node, context, false, false, terminated)) {
           result.add(new Pair<Intention, SNode>(intention, node));
         }
         SNode parent = node.getParent();
         while (parent != null) {
-          for (Intention intention : getAvailableIntentionsForExactNode(parent, context, true, false)) {
+          for (Intention intention : getAvailableIntentionsForExactNode(parent, context, true, false, terminated)) {
             result.add(new Pair<Intention, SNode>(intention, parent));
           }
           parent = parent.getParent();
@@ -113,19 +113,19 @@ public class IntentionsManager implements ApplicationComponent, PersistentStateC
     });
   }
 
-  public Collection<Pair<Intention, SNode>> getAvailableIntentions(final SNode node, final EditorContext context) {
+  public Collection<Pair<Intention, SNode>> getAvailableIntentions(final SNode node, final EditorContext context,@Nullable final Computable<Boolean> terminated) {
     try {
       TypeChecker.getInstance().enableGlobalSubtypingCache();
       Set<Pair<Intention, SNode>> intentions = ModelAccess.instance().runReadAction(new Computable<Set<Pair<Intention, SNode>>>() {
         public Set<Pair<Intention, SNode>> compute() {
           Set<Pair<Intention, SNode>> result = new HashSet<Pair<Intention, SNode>>();
 
-          for (Intention intention : getAvailableIntentionsForExactNode(node, context, false, true)) {
+          for (Intention intention : getAvailableIntentionsForExactNode(node, context, false, true, terminated)) {
             result.add(new Pair<Intention, SNode>(intention, node));
           }
           SNode parent = node.getParent();
           while (parent != null) {
-            for (Intention intention : getAvailableIntentionsForExactNode(parent, context, true, true)) {
+            for (Intention intention : getAvailableIntentionsForExactNode(parent, context, true, true, terminated)) {
               result.add(new Pair<Intention, SNode>(intention, parent));
             }
             parent = parent.getParent();
@@ -140,16 +140,17 @@ public class IntentionsManager implements ApplicationComponent, PersistentStateC
     }
   }
 
-  public boolean hasAvailableIntentions(SNode node, EditorContext editorContext) {
-    return !getAvailableIntentions_delete(node, editorContext).isEmpty();
+  public boolean hasAvailableIntentions(SNode node, EditorContext editorContext,@Nullable Computable<Boolean> terminated) {
+    return !getAvailableIntentions_delete(node, editorContext, terminated).isEmpty();
   }
 
-  private List<Intention> getIntentionsFor(String conceptFqName, IScope scope) {
+  private List<Intention> getIntentionsFor(String conceptFqName, IScope scope, @Nullable Computable<Boolean> terminated) {
     List<Intention> result = new ArrayList<Intention>();
     for (String ancestor : LanguageHierarchyCache.getInstance().getAncestorsNames(conceptFqName)) {
       Set<Intention> intentions = myIntentions.get(ancestor);
       if (intentions == null) continue;
       for (Intention intention : intentions) {
+        if (terminated != null && terminated.compute()) return new ArrayList<Intention>();
         Language language = getIntentionLanguage(intention);
         if (language != null && !scope.isVisibleLanguage(language.getModuleReference())) continue;
         result.add(intention);
@@ -158,14 +159,15 @@ public class IntentionsManager implements ApplicationComponent, PersistentStateC
     return result;
   }
 
-  public List<Intention> getAvailableIntentionsForExactNode(final SNode node, @NotNull final EditorContext context, boolean onlyAvailableInChildren, boolean instantiateParameterized) {
+  public List<Intention> getAvailableIntentionsForExactNode(final SNode node, @NotNull final EditorContext context, boolean onlyAvailableInChildren, boolean instantiateParameterized, @Nullable Computable<Boolean> terminated) {
     assert node != null : "node == null - inconsistent editor state";
     List<Intention> intentions;
     if (instantiateParameterized) {
-      intentions = getIntentionsFor(node.getConceptFqName(), context.getScope());;
+      intentions = getIntentionsFor(node.getConceptFqName(), context.getScope(), terminated);
     } else {
       intentions = new ArrayList<Intention>();
-      for (Intention intention : getIntentionsFor(node.getConceptFqName(), context.getScope())) {
+      for (Intention intention : getIntentionsFor(node.getConceptFqName(), context.getScope(), terminated)) {
+        if (terminated != null && terminated.compute()) return new ArrayList<Intention>();
         if (intention.isParameterized()) {
           Method method = null;
           try {
@@ -223,11 +225,11 @@ public class IntentionsManager implements ApplicationComponent, PersistentStateC
     return result;
   }
 
-  public Set<Pair<Intention, SNode>> getEnabledAvailableIntentions(SNode node, EditorContext context) {
+  public Set<Pair<Intention, SNode>> getEnabledAvailableIntentions(SNode node, EditorContext context, @Nullable Computable<Boolean> terminated) {
     Set<Pair<Intention, SNode>> result = new HashSet<Pair<Intention, SNode>>();
     Set<Intention> disabled = getDisabledIntentions();
 
-    for (Pair<Intention, SNode> ip : getAvailableIntentions_delete(node, context)) {
+    for (Pair<Intention, SNode> ip : getAvailableIntentions_delete(node, context, terminated)) {
       if (!disabled.contains(ip.first)) {
         result.add(ip);
       }
@@ -235,8 +237,8 @@ public class IntentionsManager implements ApplicationComponent, PersistentStateC
     return result;
   }
 
-  public Set<Pair<Intention, SNode>> getDisabledAvailableIntentions(SNode node, EditorContext context) {
-    Set<Pair<Intention, SNode>> result = new HashSet<Pair<Intention, SNode>>(getAvailableIntentions_delete(node, context));
+  public Set<Pair<Intention, SNode>> getDisabledAvailableIntentions(SNode node, EditorContext context, @Nullable Computable<Boolean> terminated) {
+    Set<Pair<Intention, SNode>> result = new HashSet<Pair<Intention, SNode>>(getAvailableIntentions_delete(node, context, terminated));
     result.retainAll(getDisabledIntentions());
     return result;
   }

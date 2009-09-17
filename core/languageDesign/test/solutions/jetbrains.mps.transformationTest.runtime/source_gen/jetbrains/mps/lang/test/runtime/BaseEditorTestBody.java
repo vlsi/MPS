@@ -91,7 +91,7 @@ public class BaseEditorTestBody extends BaseTestBody {
         ModelAccess.instance().runWriteActionInCommand(new Runnable() {
           public void run() {
             editor.selectNode(node);
-            List<Intention> availableIntentions = IntentionsManager.getInstance().getAvailableIntentionsForExactNode(node, editor.getEditorContext(), false, true);
+            List<Intention> availableIntentions = IntentionsManager.getInstance().getAvailableIntentionsForExactNode(node, editor.getEditorContext(), false, true, null);
             for (Intention intention : ListSequence.fromList(availableIntentions)) {
               if (intention.getClass().getCanonicalName().equals(name)) {
                 intention.execute(node, editor.getEditorContext());

@@ -36,6 +36,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.workbench.action.BaseAction;
 import jetbrains.mps.workbench.action.BaseGroup;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 import javax.swing.AbstractAction;
 import javax.swing.Icon;
@@ -85,7 +86,7 @@ public class IntentionsSupport {
         ModelAccess.instance().runReadAction(new Runnable() {
           public void run() {
             if (myEditor.getEditedNode().getModel().isNotEditable()) return;
-            if (!hasIntentions()) return;
+            if (!hasIntentions(null)) return;
             showIntentionsMenu();
           }
         });
@@ -124,48 +125,50 @@ public class IntentionsSupport {
       public void run() {
         try {
           Thread.sleep(IntentionsSupport.INTENTION_SHOW_DELAY);
-          if (interrupted()) return;
-
-          final boolean[] finished = new boolean[1];
-          final boolean[] enabledPresent = new boolean[1];
-          ModelAccess.instance().runReadAction(new Runnable() {
-            public void run() {
-              if (isInconsistentEditor()) {
-                finished[0] = false;
-                return;
-              }
-              enabledPresent[0] = !getEnabledIntentions().isEmpty();
-              finished[0] = true;
-            }
-          });
-
-          if (!finished[0]) return;
-          if (interrupted()) return;
-
-          ModelAccess.instance().runReadInEDT(new Runnable() {
-            public void run() {
-              if (isInconsistentEditor()) return;
-              if (myEditor.getSelectedCell() != null) {
-                adjustLightBulbLocation();
-              }
-            }
-          });
-
-          ModelAccess.instance().runReadInEDT(new Runnable() {
-            public void run() {
-              if (isInconsistentEditor()) return;
-              if (myEditor.getSelectedCell() != null) {
-                setLightBulbVisibility(enabledPresent[0]);
-              } else {
-                hideLightBulb();
-              }
-            }
-          });
-
-          myShowIntentionsThread.compareAndSet(this, null);
         } catch (InterruptedException e) {
+          return;
         } catch (RuntimeInterruptedException e) {
+          return;
         }
+
+        final boolean[] finished = new boolean[1];
+        final boolean[] enabledPresent = new boolean[1];
+        ModelAccess.instance().runReadAction(new Runnable() {
+          public void run() {
+            if (isInconsistentEditor()) {
+              finished[0] = false;
+              return;
+            }
+            enabledPresent[0] = !getEnabledIntentions(new Computable<Boolean>() {
+              public Boolean compute() {
+                return interrupted();
+              }
+            }).isEmpty();
+            finished[0] = true;
+          }
+        });
+
+        if (!finished[0]) return;
+        if (interrupted()) return;
+
+        ModelAccess.instance().runReadInEDT(new Runnable() {
+          public void run() {
+            if (isInconsistentEditor()) return;
+            if (myEditor.getSelectedCell() == null || !enabledPresent[0]) {
+              hideLightBulb();
+              return;
+            }
+
+            adjustLightBulbLocation();
+            showLightBulb(new Computable<Boolean>() {
+              public Boolean compute() {
+                return interrupted();
+              }
+            });
+          }
+        });
+
+        myShowIntentionsThread.compareAndSet(this, null);
       }
     });
 
@@ -187,7 +190,7 @@ public class IntentionsSupport {
     myLightBulb.setLocation(myLightBulbLocation);
   }
 
-  private void showLightBulb(Icon icon) {
+  private void showLightBulbComponent(Icon icon) {
     myLightBulb.setIcon(icon);
     myEditor.add(myLightBulb);
     myLightBulb.setLocation(myLightBulbLocation);
@@ -223,7 +226,7 @@ public class IntentionsSupport {
   private BaseGroup getIntentionGroup() {
     BaseGroup group = new BaseGroup("");
     List<Pair<Intention, SNode>> groupItems = new ArrayList<Pair<Intention, SNode>>();
-    groupItems.addAll(getAvailableIntentions());
+    groupItems.addAll(getAvailableIntentions(null));
     Collections.sort(groupItems, new Comparator<Pair<Intention, SNode>>() {
       public int compare(Pair<Intention, SNode> o1, Pair<Intention, SNode> o2) {
         Intention intention1 = o1.getFirst();
@@ -289,58 +292,44 @@ public class IntentionsSupport {
     }
   }
 
-  private void setLightBulbVisibility(final boolean value) {
-    ModelAccess.instance().runReadAction(new Runnable() {
-      public void run() {
-        if (value) {
-          Set<Pair<Intention, SNode>> enabledIntentions = getEnabledIntentions();
-          SNode node = myEditor.getEditedNode();
-          if ((!enabledIntentions.isEmpty()) && (node == null || !node.getModel().isNotEditable())) {
-            IntentionType typeToShow = IntentionType.getLowestPriorityType();
-            for (Pair<Intention, SNode> pair : enabledIntentions) {
-              if (pair.first.getType().getPriority() < typeToShow.getPriority()) {
-                typeToShow = pair.first.getType();
-              }
-            }
-            showLightBulb(typeToShow.getIcon());
-          }
-        } else {
-          hideLightBulb();
-        }
+  private void showLightBulb(Computable<Boolean> terminated) {
+    SNode node = myEditor.getEditedNode();
+    if (node != null && node.getModel().isNotEditable()) return;
+
+    Set<Pair<Intention, SNode>> enabledIntentions = getEnabledIntentions(terminated);
+    if (enabledIntentions.isEmpty()) return;
+
+    IntentionType typeToShow = IntentionType.getLowestPriorityType();
+    for (Pair<Intention, SNode> pair : enabledIntentions) {
+      if (pair.first.getType().getPriority() < typeToShow.getPriority()) {
+        typeToShow = pair.first.getType();
       }
-    });
+    }
+    showLightBulbComponent(typeToShow.getIcon());
   }
 
-  private boolean hasIntentions() {
-    return ModelAccess.instance().runReadAction(new Computable<Boolean>() {
-      public Boolean compute() {
-        SNode node = myEditor.getSelectedNode();
-        EditorContext editorContext = myEditor.getEditorContext();
-        return IntentionsManager.getInstance().hasAvailableIntentions(node, editorContext);
-      }
-    });
+  private boolean hasIntentions(@Nullable Computable<Boolean> terminated) {
+    SNode node = myEditor.getSelectedNode();
+    EditorContext editorContext = myEditor.getEditorContext();
+    return IntentionsManager.getInstance().hasAvailableIntentions(node, editorContext, terminated);
   }
 
-  private Set<Pair<Intention, SNode>> getAvailableIntentions() {
-    final Set<Pair<Intention, SNode>> result = new LinkedHashSet<Pair<Intention, SNode>>();
-    ModelAccess.instance().runReadAction(new Runnable() {
-      public void run() {
-        SNode node = myEditor.getSelectedNode();
-        EditorContext editorContext = myEditor.getEditorContext();
-        if (node != null && editorContext != null) {
-          result.addAll(IntentionsManager.getInstance().getAvailableIntentions(node, editorContext));
-        }
-      }
-    });
-    return result;
-  }
-
-  private Set<Pair<Intention, SNode>> getEnabledIntentions() {
+  private Set<Pair<Intention, SNode>> getAvailableIntentions(@Nullable Computable<Boolean> terminated) {
     final Set<Pair<Intention, SNode>> result = new LinkedHashSet<Pair<Intention, SNode>>();
     SNode node = myEditor.getSelectedNode();
     EditorContext editorContext = myEditor.getEditorContext();
     if (node != null && editorContext != null) {
-      result.addAll(IntentionsManager.getInstance().getEnabledAvailableIntentions(node, editorContext));
+      result.addAll(IntentionsManager.getInstance().getAvailableIntentions(node, editorContext,terminated));
+    }
+    return result;
+  }
+
+  private Set<Pair<Intention, SNode>> getEnabledIntentions(Computable<Boolean> terminated) {
+    final Set<Pair<Intention, SNode>> result = new LinkedHashSet<Pair<Intention, SNode>>();
+    SNode node = myEditor.getSelectedNode();
+    EditorContext editorContext = myEditor.getEditorContext();
+    if (node != null && editorContext != null) {
+      result.addAll(IntentionsManager.getInstance().getEnabledAvailableIntentions(node, editorContext, terminated));
     }
     return result;
   }

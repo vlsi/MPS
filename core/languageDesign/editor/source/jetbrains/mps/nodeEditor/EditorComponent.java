@@ -137,7 +137,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
             public void run() {
               if (isProjectDisposed()) return;
               rebuildEditorContent();
-              myNodeSubstituteChooser.clearContent();               
+              myNodeSubstituteChooser.clearContent();
             }
           });
         }
@@ -891,7 +891,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
   }
 
   public void dispose() {
-    if (myDisposed) throw new IllegalStateException(); 
+    if (myDisposed) throw new IllegalStateException();
     myDisposed = true;
 
     if (IdeMain.getTestMode() != TestMode.CORE_TEST) {
@@ -981,7 +981,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
       nodesWhichEditorDependsOn = new HashSet<SNode>();
     }
 
-    Set<SModelReference> oldsDeps = getModels(nodesWhichEditorDependedOn);            
+    Set<SModelReference> oldsDeps = getModels(nodesWhichEditorDependedOn);
     Set<SModelReference> newDeps = getModels(nodesWhichEditorDependsOn);
 
     IScope scope = GlobalScope.getInstance();
@@ -1055,7 +1055,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     if (keyEvent.getKeyCode() == KeyEvent.VK_ENTER && noKeysDown(keyEvent)) {
       EditorCell contextCell = editorContext.getContextCell();
       if (contextCell != null && contextCell.isFirstCaretPosition()) {
-        if (!contextCell.isLastCaretPosition() || (contextCell instanceof EditorCell_Label && !((EditorCell_Label)contextCell).isLastPositionAllowed())) {          
+        if (!contextCell.isLastCaretPosition() || (contextCell instanceof EditorCell_Label && !((EditorCell_Label)contextCell).isLastPositionAllowed())) {
           return CellActionType.INSERT_BEFORE;
         }
       }
@@ -2702,7 +2702,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
           clearControlOver();
           if (!e.isControlDown()) {
             myLastReferenceCell = null;
-            return;            
+            return;
           }
 
           if (myRootCell == null) {
@@ -2732,7 +2732,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
         public void focusGained(FocusEvent e) {
         }
 
-        public void focusLost(FocusEvent e) {          
+        public void focusLost(FocusEvent e) {
           clearControlOver();
           myLastReferenceCell = null;
         }
