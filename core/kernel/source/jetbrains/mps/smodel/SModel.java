@@ -1518,29 +1518,4 @@ public class SModel implements Iterable<SNode> {
       }
     }
   }
-
-  public IScope getScope(){
-    return new ModelScope(getModelDescriptor());
-  }
-
-  public static class ModelScope extends DefaultScope {
-    private SModelDescriptor myModelDescriptor;
-
-    public ModelScope(SModelDescriptor modelDescriptor) {
-      super();
-      myModelDescriptor = modelDescriptor;
-    }
-
-    protected ModelOwner getModelOwner() {
-      return null;
-    }
-
-    protected Set<IModule> getInitialModules() {
-      Set<IModule> result = new HashSet<IModule>();
-      result.addAll(myModelDescriptor.getSModel().getDevkits(GlobalScope.getInstance()));
-      result.addAll(myModelDescriptor.getSModel().getLanguages(GlobalScope.getInstance()));
-      return result;
-    }
-  }
-
 }
