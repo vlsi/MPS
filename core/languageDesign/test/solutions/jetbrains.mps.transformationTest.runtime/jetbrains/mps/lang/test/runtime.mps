@@ -3457,8 +3457,8 @@
                             <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="7633582661619344927">
                               <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="7633582661619344928">
                                 <property name="name" value="availableIntentions" />
-                                <node role="type" type="jetbrains.mps.baseLanguage.collections.structure.SetType" id="7633582661619344929">
-                                  <node role="elementType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="7633582661619344930">
+                                <node role="type" type="jetbrains.mps.baseLanguage.collections.structure.ListType" id="2893085686537231039">
+                                  <node role="elementType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="2893085686537231040">
                                     <link role="classifier" targetNodeId="33.~Intention" resolveInfo="Intention" />
                                   </node>
                                 </node>
@@ -3468,7 +3468,7 @@
                                     <link role="classConcept" targetNodeId="33.~IntentionsManager" resolveInfo="IntentionsManager" />
                                   </node>
                                   <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="7633582661619344933">
-                                    <link role="baseMethodDeclaration" targetNodeId="33.~IntentionsManager.getAvailableIntentionsForExactNode(jetbrains.mps.smodel.SNode,jetbrains.mps.nodeEditor.EditorContext,boolean,boolean):java.util.Set" resolveInfo="getAvailableIntentionsForExactNode" />
+                                    <link role="baseMethodDeclaration" targetNodeId="33.~IntentionsManager.getAvailableIntentionsForExactNode(jetbrains.mps.smodel.SNode,jetbrains.mps.nodeEditor.EditorContext,boolean,boolean):java.util.List" resolveInfo="getAvailableIntentionsForExactNode" />
                                     <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="7633582661619344934">
                                       <link role="variableDeclaration" targetNodeId="1225991152924" resolveInfo="node" />
                                     </node>

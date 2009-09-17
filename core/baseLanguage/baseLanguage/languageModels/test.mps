@@ -458,6 +458,10 @@
                           </node>
                         </node>
                       </node>
+                      <node role="statement" type="jetbrains.mps.baseLanguage.structure.Statement" id="6389100286634543502" />
+                      <node role="statement" type="jetbrains.mps.baseLanguage.structure.Statement" id="6389100286634543541" />
+                      <node role="statement" type="jetbrains.mps.baseLanguage.structure.Statement" id="6389100286634543790" />
+                      <node role="statement" type="jetbrains.mps.baseLanguage.structure.Statement" id="6389100286634543794" />
                       <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1227876791314">
                         <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1227876791315">
                           <property name="name" value="b" />

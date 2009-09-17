@@ -144,71 +144,69 @@ public class IntentionsManager implements ApplicationComponent, PersistentStateC
     return !getAvailableIntentions_delete(node, editorContext).isEmpty();
   }
 
-  public Set<Intention> getAvailableIntentionsForExactNode(final SNode node, @NotNull final EditorContext context, boolean onlyAvailableInChildren, boolean instantiateParameterized) {
+  private List<Intention> getIntentionsFor(String conceptFqName, IScope scope) {
+    List<Intention> result = new ArrayList<Intention>();
+    for (String ancestor : LanguageHierarchyCache.getInstance().getAncestorsNames(conceptFqName)) {
+      Set<Intention> intentions = myIntentions.get(ancestor);
+      if (intentions == null) continue;
+      for (Intention intention : intentions) {
+        Language language = getIntentionLanguage(intention);
+        if (language != null && !scope.isVisibleLanguage(language.getModuleReference())) continue;
+        result.add(intention);
+      }
+    }
+    return result;
+  }
+
+  public List<Intention> getAvailableIntentionsForExactNode(final SNode node, @NotNull final EditorContext context, boolean onlyAvailableInChildren, boolean instantiateParameterized) {
     assert node != null : "node == null - inconsistent editor state";
-    Set<Intention> result = new HashSet<Intention>();
-
-    for (String conceptFQName : myIntentions.keySet()) {
-      if (node.isInstanceOfConcept(conceptFQName)) {
-        List<Intention> intentions = new ArrayList<Intention>();
-        if (!instantiateParameterized) {
-          intentions.addAll(myIntentions.get(conceptFQName));
-        } else {
-          for (Intention intention : myIntentions.get(conceptFQName)) {
-            if (intention.isParameterized()) {
-              Method method = null;
-              try {
-                method = intention.getClass().getMethod("instances", SNode.class, EditorContext.class);
-              } catch (NoSuchMethodException e) {
-                e.printStackTrace();
-              }
-              Object[] arguments = new Object[]{node, context};
-              try {
-                List<Intention> parameterizedIntentions = (List<Intention>) method.invoke(null, arguments);
-                intentions.addAll(parameterizedIntentions);
-              } catch (IllegalAccessException e) {
-                e.printStackTrace();
-              } catch (InvocationTargetException e) {
-                e.printStackTrace();
-              }
-            } else {
-              intentions.add(intention);
-            }
-          }
-        }
-        Collections.sort(intentions, new Comparator<Intention>() {
-          public int compare(Intention i1, Intention i2) {
-            IntentionsManager manager = IntentionsManager.getInstance();
-            if (manager.intentionIsDisabled(i1) && !(manager.intentionIsDisabled(i2))) {
-              return 1;
-            }
-            if (!manager.intentionIsDisabled(i1) && manager.intentionIsDisabled(i2)) {
-              return -1;
-            }
-            int prio = i1.getType().getPriority() - i2.getType().getPriority();
-            return prio;
-          }
-        });
-        for (final Intention intention : intentions) {
+    List<Intention> intentions;
+    if (instantiateParameterized) {
+      intentions = getIntentionsFor(node.getConceptFqName(), context.getScope());;
+    } else {
+      intentions = new ArrayList<Intention>();
+      for (Intention intention : getIntentionsFor(node.getConceptFqName(), context.getScope())) {
+        if (intention.isParameterized()) {
+          Method method = null;
           try {
-            boolean isApplicable = false;
-
-            if (!onlyAvailableInChildren || intention.isAvailableInChildNodes()) {
-              isApplicable = ModelAccess.instance().runReadAction(new Computable<Boolean>() {
-                public Boolean compute() {
-                  return intention.isApplicable(node, context);
-                }
-              });
-            }
-            if (isApplicable) {
-              result.add(intention);
-            }
-          } catch (Throwable t) {
-            LOG.error("Intention's isApplicable method failed " + t.getMessage(), t);
+            method = intention.getClass().getMethod("instances", SNode.class, EditorContext.class);
+          } catch (NoSuchMethodException e) {
+            LOG.error(e);
           }
+          Object[] arguments = new Object[]{node, context};
+          try {
+            List<Intention> parameterizedIntentions = (List<Intention>) method.invoke(null, arguments);
+            intentions.addAll(parameterizedIntentions);
+          } catch (IllegalAccessException e) {
+            LOG.error(e);
+          } catch (InvocationTargetException e) {
+            LOG.error(e);
+          }
+        } else {
+          intentions.add(intention);
         }
       }
     }
+
+    List<Intention> result = new ArrayList<Intention>();
+    for (final Intention intention : intentions) {
+      try {
+        boolean isApplicable = false;
+        if (!onlyAvailableInChildren || intention.isAvailableInChildNodes()) {
+          isApplicable = ModelAccess.instance().runReadAction(new Computable<Boolean>() {
+            public Boolean compute() {
+              return intention.isApplicable(node, context);
+            }
+          });
+        }
+        if (isApplicable) {
+          result.add(intention);
+        }
+      } catch (Throwable t) {
+        LOG.error("Intention's isApplicable method failed " + t.getMessage(), t);
+      }
+    }
+
     List<EditorMessage> messages = context.getNodeEditorComponent().getHighlightManager().getMessagesFor(node);
     for (EditorMessage message : messages) {
       IntentionProvider intentionProvider = message.getIntentionProvider();
@@ -221,7 +219,8 @@ public class IntentionsManager implements ApplicationComponent, PersistentStateC
         }
       }
     }
-    return Collections.unmodifiableSet(result);
+
+    return result;
   }
 
   public Set<Pair<Intention, SNode>> getEnabledAvailableIntentions(SNode node, EditorContext context) {
