@@ -12,6 +12,7 @@
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module" module-name="unitTest" />
     <orderEntry type="module" module-name="dataFlow" />
+    <orderEntry type="module" module-name="MPSSupport" />
   </component>
 </module>
 

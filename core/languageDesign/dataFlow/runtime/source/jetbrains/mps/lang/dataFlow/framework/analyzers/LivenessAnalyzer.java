@@ -19,6 +19,7 @@ import jetbrains.mps.lang.dataFlow.framework.*;
 import jetbrains.mps.lang.dataFlow.framework.instructions.ReadInstruction;
 import jetbrains.mps.lang.dataFlow.framework.instructions.WriteInstruction;
 import jetbrains.mps.lang.dataFlow.framework.instructions.Instruction;
+import jetbrains.mps.util.IndexableObjectSet;
 
 import java.util.HashSet;
 import java.util.Set;
