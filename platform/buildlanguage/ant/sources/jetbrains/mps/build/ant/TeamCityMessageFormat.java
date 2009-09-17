@@ -20,6 +20,6 @@ public class TeamCityMessageFormat implements IBuildServerMessageFormat {
   }
 
   public String formatTestFailure(String testName, String message, String detailes) {
-    return "##teamcity[testFailed name='" + testName + "' message='" + escapeBuildMessage(message) + "' details='" + escapeBuildMessage(detailes) + "']";
+    return "##teamcity[testFailed name='" + testName + "' message='" + message + "' details='" + detailes + "']";
   }
 }
