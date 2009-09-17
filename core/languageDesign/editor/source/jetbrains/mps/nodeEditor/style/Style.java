@@ -75,20 +75,20 @@ public class Style {
 
   public<T> void set(StyleAttribute<T> attribute, T value) {
     myAttributeValues[attribute.getIndex()] = value;
-    updateCache(singletonList(attribute));
+    updateCache(singletonSet(attribute));
   }
 
   public<T> void set(StyleAttribute<T> attribute, AttributeCalculator<T> valueCalculator) {
     myAttributeValues[attribute.getIndex()] = valueCalculator;
-    updateCache(singletonList(attribute));
+    updateCache(singletonSet(attribute));
   }
 
-  private List<StyleAttribute> singletonList(StyleAttribute sa) {
-    return Collections.singletonList(sa);
+  private Set<StyleAttribute> singletonSet(StyleAttribute sa) {
+    return Collections.singleton(sa);
   }
 
-  private List<StyleAttribute> getNonDefaultValuedAttributes() {
-    List<StyleAttribute> result = new ArrayList<StyleAttribute>();
+  private Set<StyleAttribute> getNonDefaultValuedAttributes() {
+    Set<StyleAttribute> result = new StyleAttributeSet();
     for (int i = 0; i < myCachedAttributeValues.length; i++) {
       Object values = myCachedAttributeValues[i];
       if (values != null) {
@@ -99,7 +99,7 @@ public class Style {
   }
 
   public void putAll(Style s) {
-    List<StyleAttribute> added = new ArrayList<StyleAttribute>();
+    Set<StyleAttribute> added = new StyleAttributeSet();
     for (int i = 0; i < s.myAttributeValues.length; i++) {
       Object value = s.myAttributeValues[i];
       if (value != null) {
@@ -114,16 +114,12 @@ public class Style {
     return myParent;
   }
 
-  private void updateCache(List<StyleAttribute> attributes) {
+  private void updateCache(Set<StyleAttribute> attributes) {
     Object[] oldCachedValues = myCachedAttributeValues;
     myCachedAttributeValues = new Object[StyleAttributes.getAttributesCount()];
     System.arraycopy(oldCachedValues, 0, myCachedAttributeValues, 0, myCachedAttributeValues.length);
 
-    List<StyleAttribute> changedAttributes = new ArrayList<StyleAttribute>();
-    if (attributes == null) {
-      attributes = StyleAttributes.getAttributes();
-    }
-
+    Set<StyleAttribute> changedAttributes = new StyleAttributeSet();
     for (StyleAttribute attribute : attributes) {
       Object parentValue = getParentStyle() == null ? null : getParentStyle().get(attribute);
       Object currentValue = myAttributeValues[attribute.getIndex()];

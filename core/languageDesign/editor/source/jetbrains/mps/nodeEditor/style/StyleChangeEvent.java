@@ -9,9 +9,9 @@ public class StyleChangeEvent {
   private Style myStyle;
   private Set<StyleAttribute> myChangedAttributes;
 
-  public StyleChangeEvent(Style style, Collection<StyleAttribute> changedAttributes) {
+  public StyleChangeEvent(Style style, Set<StyleAttribute> changedAttributes) {
     myStyle = style;
-    myChangedAttributes = new HashSet<StyleAttribute>(changedAttributes);
+    myChangedAttributes = changedAttributes;
   }
 
   public Style getStyle() {
