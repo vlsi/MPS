@@ -19,8 +19,8 @@ public class TestGenerationOnTeamcity extends GenerateTask {
   }
 
   @Override
-  protected Class<? extends Generator> getGeneratorClass() {
-    return GeneratorTester.class;
+  protected Class<? extends MpsWorker> getGeneratorClass() {
+    return TesterWorker.class;
   }
 
   @Override

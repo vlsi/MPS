@@ -65,36 +65,34 @@ import org.apache.tools.ant.ProjectComponent;
 import java.io.File;
 import java.util.*;
 
-public class Generator {
-  protected final MyMessageHandler myMessageHandler = new MyMessageHandler();
+public abstract class MpsWorker {
+  protected final List<String> myErrors = new ArrayList<String>();
+  protected final List<String> myWarnings = new ArrayList<String>();
   protected final WhatToGenerate myWhatToGenerate;
   private final AntLogger myLogger;
-  private final List<String> myErrors = new ArrayList<String>();
-  private final List<String> myWarnings = new ArrayList<String>();
-
+  
   private final Set<MPSProject> myLoadedProjects = new HashSet<MPSProject>();
 
-  public static void main(String[] args) {
-    Generator generator = new Generator(WhatToGenerate.fromDumpInFile(new File(args[0])), new SystemOutLogger());
-    try {
-      generator.generate();
-      System.exit(0);
-    } catch (Exception e) {
-      generator.log(e);
-      System.exit(1);
-    }
-  }
-
-  public Generator(WhatToGenerate whatToGenerate, ProjectComponent component) {
+  public MpsWorker(WhatToGenerate whatToGenerate, ProjectComponent component) {
     this(whatToGenerate, new ProjectComponentLogger(component));
   }
 
-  public Generator(WhatToGenerate whatToGenerate, AntLogger logger) {
+  public MpsWorker(WhatToGenerate whatToGenerate, AntLogger logger) {
     myWhatToGenerate = whatToGenerate;
     myLogger = logger;
   }
 
-  public void generate() {
+  protected void doTheJob() {
+    try {
+      loadObjects();
+      System.exit(0);
+    } catch (Exception e) {
+      log(e);
+      System.exit(1);
+    }
+  }
+
+  public void loadObjects() {
     BasicConfigurator.configure(new NullAppender());
     Logger.getRootLogger().setLevel(getLog4jLevel());
     jetbrains.mps.logging.Logger.addLoggingHandler(new MyMessageHandlerAppender());
@@ -112,16 +110,14 @@ public class Generator {
 
     final List<SModelDescriptor> models = collectModelsToGenerate();
 
-    ClassLoaderManager.getInstance().reloadAll(new EmptyProgressIndicator());
-    ModelAccess.instance().runWriteAction(new Runnable() {
-      public void run() {
-        generateModels(project, models);
-      }
-    });
+    executeTask(project, models);
 
     unloadLoadedStuff();
     showStatistic();
   }
+
+  protected abstract void executeTask(MPSProject project, List<SModelDescriptor> models);
+  protected abstract void showStatistic();
 
   private void unloadLoadedStuff() {
     for (final MPSProject project : myLoadedProjects) {
@@ -295,100 +291,6 @@ public class Generator {
     }
   }
 
-  protected void showStatistic() {
-    if (!myErrors.isEmpty() && myWhatToGenerate.getFailOnError()) {
-      StringBuffer sb = new StringBuffer();
-      sb.append(myErrors.size());
-      sb.append(" errors during generation:\n");
-      for (String error : myErrors) {
-        sb.append(error);
-        sb.append("\n");
-      }
-      throw new BuildException(sb.toString());
-    }
-  }
-
-  private void generateModels(MPSProject project, List<SModelDescriptor> models) {
-    StringBuffer s = new StringBuffer("Generating models:");
-    for (SModelDescriptor m : models) {
-      s.append("\n    ");
-      s.append(m);
-    }
-    info(s.toString());
-    GeneratorManager gm = project.getComponentSafe(GeneratorManager.class);
-
-    final Map<IModule, List<SModelDescriptor>> moduleToModels = new HashMap<IModule, List<SModelDescriptor>>();
-    List<Set<IModule>> modulesOrder = computeModulesOrder(models, moduleToModels);
-
-    EmptyProgressIndicator emptyProgressIndicator = new EmptyProgressIndicator();
-    for (Set<IModule> modulesSet : modulesOrder) {
-      List<Pair<SModelDescriptor, IOperationContext>> modelsToContext = new ArrayList<Pair<SModelDescriptor, IOperationContext>>();
-      for (IModule module : modulesSet) {
-        ModuleContext moduleContext = new ModuleContext(module, project);
-        List<SModelDescriptor> modelsToGenerateNow = moduleToModels.get(module);
-        for (SModelDescriptor model : modelsToGenerateNow) {
-          modelsToContext.add(new Pair<SModelDescriptor, IOperationContext>(model, moduleContext));
-        }
-
-      }
-      generateModulesCircle(gm, emptyProgressIndicator, modulesSet, modelsToContext);
-    }
-  }
-
-  protected void generateModulesCircle(GeneratorManager gm, EmptyProgressIndicator emptyProgressIndicator, Set<IModule> modulesSet, List<Pair<SModelDescriptor, IOperationContext>> modelsToContext) {
-    info("Start generating " + modulesSet);
-    gm.generateModels(modelsToContext,
-      new GenerateFilesGenerationType() {
-        @Override
-        public boolean requiresCompilationAfterGeneration() {
-          return myWhatToGenerate.getCompile();
-        }
-      },
-      emptyProgressIndicator,
-      myMessageHandler,
-      false);
-    info("Finished generating " + modulesSet);
-  }
-
-  private List<Set<IModule>> computeModulesOrder(List<SModelDescriptor> models, final Map<IModule, List<SModelDescriptor>> moduleToModels) {
-    for (final SModelDescriptor model : models) {
-      assert model != null;
-
-      Set<IModule> owningModules = ModelAccess.instance().runReadAction(new Computable<Set<IModule>>() {
-        public Set<IModule> compute() {
-          return SModelRepository.getInstance().getOwners(model, IModule.class);
-        }
-      });
-
-      IModule module = null;
-      if (owningModules.size() > 0) {
-        module = owningModules.iterator().next();
-      }
-
-      if (module == null) {
-        warning("Model " + model.getLongName() + " won't be generated");
-      } else {
-        List<SModelDescriptor> modelsList = moduleToModels.get(module);
-        if (modelsList == null) {
-          modelsList = new ArrayList<SModelDescriptor>();
-          moduleToModels.put(module, modelsList);
-        }
-        modelsList.add(model);
-      }
-    }
-
-    List<Set<IModule>> modulesOrder = ModelAccess.instance().runReadAction(new Computable<List<Set<IModule>>>() {
-      public List<Set<IModule>> compute() {
-        return StronglyConnectedModules.getInstance().getStronglyConnectedComponents(moduleToModels.keySet(), new IModuleDecoratorBuilder<IModule, IModuleDecorator<IModule>>() {
-          public IModuleDecorator<IModule> decorate(IModule module) {
-            return new ModuleDecorator(module);
-          }
-        });
-      }
-    });
-    return modulesOrder;
-  }
-
   private void log(String text, int level) {
     if (level <= myWhatToGenerate.getLogLevel()) myLogger.log(text, level);
   }
@@ -429,99 +331,23 @@ public class Generator {
   public class MyMessageHandlerAppender implements ILoggingHandler {
 
     public void info(LogEntry e) {
-      Generator.this.verbose(e.getMessage());
+      MpsWorker.this.verbose(e.getMessage());
     }
 
     public void warning(LogEntry e) {
-      Generator.this.warning(e.getMessage());
+      MpsWorker.this.warning(e.getMessage());
     }
 
     public void debug(LogEntry e) {
-      Generator.this.debug(e.getMessage());
+      MpsWorker.this.debug(e.getMessage());
     }
 
     public void error(LogEntry e) {
-      Generator.this.error(e.getMessage());
+      MpsWorker.this.error(e.getMessage());
     }
 
     public void fatal(LogEntry e) {
-      Generator.this.error(e.getMessage());
-    }
-  }
-
-  /*package private*/ class MyMessageHandler implements IMessageHandler {
-    private final List<String> myGenerationErrors = new ArrayList<String>();
-    private final List<String> myGenerationWarnings = new ArrayList<String>();
-
-    public void handle(Message msg) {
-      switch (msg.getKind()) {
-        case ERROR:
-          Generator.this.error(msg.getText());
-          myGenerationErrors.add(msg.getText());
-          break;
-
-        case WARNING:
-          Generator.this.warning(msg.getText());
-          myGenerationWarnings.add(msg.getText());
-          break;
-
-        case INFORMATION:
-          Generator.this.verbose(msg.getText());
-          break;
-
-      }
-    }
-
-    public List<String> getGenerationErrors() {
-      return myGenerationErrors;
-    }
-
-    public List<String> getGenerationWarnings() {
-      return myGenerationWarnings;
-    }
-
-    public void clean() {
-      myGenerationErrors.clear();
-      myGenerationWarnings.clear();
-    }
-  }
-
-  private static class ModuleDecorator implements IModuleDecorator<IModule> {
-    private final IModule myModule;
-    private final Set<ModuleDecorator> myNext = new HashSet<ModuleDecorator>();
-
-    public ModuleDecorator(IModule module) {
-      myModule = module;
-    }
-
-    public IModule getModule() {
-      return myModule;
-    }
-
-    public void fill(Map<IModule, IModuleDecorator<IModule>> map) {
-      for (IModule m : myModule.getExplicitlyDependOnModules(true)) {
-        ModuleDecorator next = (ModuleDecorator) map.get(m);
-        if (next != null) myNext.add(next);
-      }
-
-      if (myModule instanceof Language) {
-        Language language = (Language) myModule;
-        for (jetbrains.mps.smodel.Generator gen : language.getGenerators()) {
-          ModuleDecorator generatorDecorator = (ModuleDecorator) map.get(gen);
-          if (generatorDecorator != null) {
-            generatorDecorator.myNext.add(this);
-            myNext.add(generatorDecorator);
-          }
-        }
-      }
-    }
-
-    public Set<? extends IVertex> getNexts() {
-      return Collections.unmodifiableSet(myNext);
-    }
-
-    public int compareTo(IModuleDecorator<IModule> o) {
-      return hashCode() - ((ModuleDecorator) o).hashCode();
+      MpsWorker.this.error(e.getMessage());
     }
   }
 

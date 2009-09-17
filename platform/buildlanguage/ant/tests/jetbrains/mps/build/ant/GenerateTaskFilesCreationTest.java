@@ -122,7 +122,7 @@ public class GenerateTaskFilesCreationTest extends BaseMPSTest {
   }
 
   private void doGenerate(WhatToGenerate whatToGenerate) {
-    Generator generator = new Generator(whatToGenerate, new ProjectComponent() {
+    MpsWorker mpsWorker = new GeneratorWorker(whatToGenerate, new ProjectComponent() {
       public void log(String msg) {
         System.out.println(msg);
       }
@@ -152,7 +152,7 @@ public class GenerateTaskFilesCreationTest extends BaseMPSTest {
         System.out.println(levelText + ": " + msg);
       }
     });
-    generator.generate();
+    mpsWorker.loadObjects();
   }
 
   private String getStructurePath(File destdir, String projectName, String languageName) {

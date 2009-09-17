@@ -2,19 +2,15 @@ package jetbrains.mps.build.ant;
 
 import org.apache.tools.ant.ProjectComponent;
 import org.apache.tools.ant.BuildException;
-import org.apache.tools.ant.util.LineOrientedOutputStream;
 import org.eclipse.jdt.internal.compiler.CompilationResult;
 import org.eclipse.jdt.core.compiler.CategorizedProblem;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.project.IModule;
-import jetbrains.mps.project.TestResult;
 import jetbrains.mps.project.ProjectTester;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.structure.project.testconfigurations.BaseTestConfiguration;
 import jetbrains.mps.project.tester.EditorGenerateType;
 import jetbrains.mps.project.tester.DiffReporter;
-import jetbrains.mps.generator.generationTypes.BaseGenerationType;
-import jetbrains.mps.generator.generationTypes.GenerateFilesGenerationType;
 import jetbrains.mps.generator.GeneratorManager;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModelDescriptor;
@@ -23,7 +19,6 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.util.Pair;
 import jetbrains.mps.ide.progress.IAdaptiveProgressMonitor;
 import jetbrains.mps.ide.genconf.GenParameters;
-import jetbrains.mps.reloading.ClassLoaderManager;
 
 import java.util.Set;
 import java.util.List;
@@ -33,28 +28,21 @@ import java.io.*;
 
 import com.intellij.openapi.util.Computable;
 import com.intellij.openapi.progress.EmptyProgressIndicator;
-import com.intellij.psi.stubs.StubOutputStream;
 import junit.framework.TestFailure;
 
-public class GeneratorTester extends Generator {
+public class TesterWorker extends GeneratorWorker {
   private boolean myTestFailed = false;
 
   public static void main(String[] args) {
-    GeneratorTester generator = new GeneratorTester(WhatToGenerate.fromDumpInFile(new File(args[0])), new SystemOutLogger());
-    try {
-      generator.generate();
-      System.exit(0);
-    } catch (Exception e) {
-      generator.log(e);
-      System.exit(1);
-    }
+    TesterWorker generator = new TesterWorker(WhatToGenerate.fromDumpInFile(new File(args[0])), new SystemOutLogger());
+    generator.doTheJob();
   }
 
-  public GeneratorTester(WhatToGenerate whatToGenerate, ProjectComponent component) {
+  public TesterWorker(WhatToGenerate whatToGenerate, ProjectComponent component) {
     super(whatToGenerate, component);
   }
 
-  public GeneratorTester(WhatToGenerate whatToGenerate, AntLogger logger) {
+  public TesterWorker(WhatToGenerate whatToGenerate, AntLogger logger) {
     super(whatToGenerate, logger);
   }
 
@@ -122,7 +110,7 @@ public class GeneratorTester extends Generator {
       public void run() {
         List<BaseTestConfiguration> testConfigurationList = project.getProjectDescriptor().getTestConfigurations();
         if (testConfigurationList.isEmpty()) {
-          GeneratorTester.super.extractModels(modelDescriptors, project);
+          TesterWorker.super.extractModels(modelDescriptors, project);
         } else {
           for (BaseTestConfiguration config : testConfigurationList) {
             GenParameters genParams = config.getGenParams(project, true);
