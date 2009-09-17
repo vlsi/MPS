@@ -400,9 +400,9 @@ public class JUnitConfigEditor extends JPanel {
             return;
           }
         }
+        myThis.setModule(null);
       }
     });
-    myThis.setModule(null);
   }
 
   private void setModelValue(final String m) {
@@ -448,7 +448,7 @@ public class JUnitConfigEditor extends JPanel {
         config.getStateObject().method = ITestMethod_Behavior.call_getTestName_1216136419751(myThis.getMethod());
         config.getStateObject().node = INamedConcept_Behavior.call_getFqName_1213877404258(myThis.getNode());
         config.getStateObject().model = SModelOperations.getModelName(myThis.getModel());
-        if (config.getStateObject().module != null) {
+        if (myThis.getModule() != null) {
           config.getStateObject().module = myThis.getModule().getModuleFqName();
         }
         JUnitRunTypes type = null;

@@ -13157,16 +13157,16 @@
                   </node>
                 </node>
               </node>
-            </node>
-          </node>
-        </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="718178759443699372">
-          <node role="expression" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression" id="718178759443699377">
-            <node role="rValue" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="718178759443699381" />
-            <node role="lValue" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="718178759443699373">
-              <node role="operand" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpression" id="718178759443699374" />
-              <node role="operation" type="jetbrains.mps.uiLanguage.structure.AttributeReferenceOperation" id="718178759443699386">
-                <link role="member" targetNodeId="145554711892086652" resolveInfo="module" />
+              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="718178759443699372">
+                <node role="expression" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression" id="718178759443699377">
+                  <node role="rValue" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="718178759443699381" />
+                  <node role="lValue" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="718178759443699373">
+                    <node role="operand" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpression" id="718178759443699374" />
+                    <node role="operation" type="jetbrains.mps.uiLanguage.structure.AttributeReferenceOperation" id="718178759443699386">
+                      <link role="member" targetNodeId="145554711892086652" resolveInfo="module" />
+                    </node>
+                  </node>
+                </node>
               </node>
             </node>
           </node>
@@ -13515,11 +13515,9 @@
                 <node role="condition" type="jetbrains.mps.baseLanguage.structure.NotEqualsExpression" id="2865170255397109047">
                   <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="2865170255397109050" />
                   <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="2865170255397109042">
-                    <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="2865170255397109041">
-                      <link role="variableDeclaration" targetNodeId="1930019848839359706" resolveInfo="config" />
-                    </node>
-                    <node role="operation" type="jetbrains.mps.lang.plugin.structure.PersistentPropertyReference" id="2865170255397109046">
-                      <link role="member" targetNodeId="145554711892086639" resolveInfo="module" />
+                    <node role="operand" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpression" id="718178759443722182" />
+                    <node role="operation" type="jetbrains.mps.uiLanguage.structure.AttributeReferenceOperation" id="718178759443722183">
+                      <link role="member" targetNodeId="145554711892086652" resolveInfo="module" />
                     </node>
                   </node>
                 </node>
