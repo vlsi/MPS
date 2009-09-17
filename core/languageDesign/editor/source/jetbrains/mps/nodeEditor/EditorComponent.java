@@ -27,10 +27,10 @@ import jetbrains.mps.ide.IdeMain;
 import jetbrains.mps.ide.IdeMain.TestMode;
 import jetbrains.mps.ide.SystemInfo;
 import jetbrains.mps.ide.ThreadUtils;
-import jetbrains.mps.ide.tooltips.MPSToolTipManager;
 import jetbrains.mps.ide.actions.EditorInternal_ActionGroup;
 import jetbrains.mps.ide.actions.EditorPopup_ActionGroup;
 import jetbrains.mps.ide.actions.GoByCurrentReference_Action;
+import jetbrains.mps.ide.tooltips.MPSToolTipManager;
 import jetbrains.mps.ide.ui.MPSErrorDialog;
 import jetbrains.mps.intentions.Intention;
 import jetbrains.mps.intentions.IntentionsManager;
@@ -49,6 +49,7 @@ import jetbrains.mps.nodeEditor.folding.CellAction_FoldCell;
 import jetbrains.mps.nodeEditor.folding.CellAction_UnfoldAll;
 import jetbrains.mps.nodeEditor.folding.CellAction_UnfoldCell;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
+import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.reloading.ReloadAdapter;
 import jetbrains.mps.reloading.ReloadListener;
@@ -69,7 +70,6 @@ import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.workbench.action.ActionUtils;
 import jetbrains.mps.workbench.action.BaseAction;
 import jetbrains.mps.workbench.action.BaseGroup;
-import jetbrains.mps.project.GlobalScope;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -798,7 +798,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
         SNode node = getSelectedNode();
         EditorContext editorContext = getEditorContext();
         if (node != null && editorContext != null) {
-          result.addAll(IntentionsManager.getInstance().getAvailableIntentions(node, editorContext));
+          result.addAll(IntentionsManager.getInstance().getAvailableIntentions(node, editorContext, null));
         }
       }
     });
@@ -922,8 +922,8 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     }
   }
 
-  public boolean hasNode(){
-    return getSelectedNode()!=null;
+  public boolean hasNode() {
+    return getSelectedNode() != null;
   }
 
   public boolean isDisposed() {
@@ -1055,7 +1055,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     if (keyEvent.getKeyCode() == KeyEvent.VK_ENTER && noKeysDown(keyEvent)) {
       EditorCell contextCell = editorContext.getContextCell();
       if (contextCell != null && contextCell.isFirstCaretPosition()) {
-        if (!contextCell.isLastCaretPosition() || (contextCell instanceof EditorCell_Label && !((EditorCell_Label)contextCell).isLastPositionAllowed())) {
+        if (!contextCell.isLastCaretPosition() || (contextCell instanceof EditorCell_Label && !((EditorCell_Label) contextCell).isLastPositionAllowed())) {
           return CellActionType.INSERT_BEFORE;
         }
       }
@@ -1511,7 +1511,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
       public void run() {
         GoByCurrentReference_Action action = new GoByCurrentReference_Action();
         AnActionEvent event = ActionUtils.createEvent(ActionPlaces.EDITOR_POPUP, dataContext);
-        ActionUtils.updateAndPerformAction(action,event);
+        ActionUtils.updateAndPerformAction(action, event);
       }
     });
   }
