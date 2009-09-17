@@ -397,11 +397,12 @@ public class JUnitConfigEditor extends JPanel {
         for (IModule module : myThis.getProject().getScope().getVisibleModules()) {
           if (module.getModuleFqName().equals(m)) {
             myThis.setModule(module);
-            break;
+            return;
           }
         }
       }
     });
+    myThis.setModule(null);
   }
 
   private void setModelValue(final String m) {
@@ -411,9 +412,10 @@ public class JUnitConfigEditor extends JPanel {
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
         SModelDescriptor descriptor = myThis.getProject().getScope().getModelDescriptor(SModelReference.fromString(m));
-        if (descriptor != null) {
-          myThis.setModel(descriptor.getSModel());
-        }
+        myThis.setModel((descriptor != null ?
+          descriptor.getSModel() :
+          null
+        ));
       }
     });
   }
