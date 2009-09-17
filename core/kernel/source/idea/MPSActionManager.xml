@@ -36,7 +36,7 @@
             <reference ref="Runner.CloseView"/>
           </group>
         </group>
-        
+
 
         <group id="RunMenu" popup="true">
             <group id="RunnerActions"/>
@@ -57,6 +57,11 @@
             <reference ref="RunnerActions"/>
 
             <add-to-group group-id="MainToolBar" relative-to-action="Forward" anchor="after"/>
+        </group>
+
+        <group id="MPSToolbarRunGroup">
+            <!--for integration purposes-->
+            <add-to-group group-id="ToolbarRunGroup" relative-to-action="RunConfiguration" anchor="before"/>
         </group>
 
         <!--add "select in" action to all the editors-->

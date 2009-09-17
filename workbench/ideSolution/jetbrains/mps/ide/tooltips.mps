@@ -66,7 +66,7 @@
               </node>
             </node>
             <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="6773493145900289018">
-              <link role="baseMethodDeclaration" targetNodeId="2.~Window.setVisible(boolean):void" resolveInfo="setVisible" />
+              <link role="baseMethodDeclaration" targetNodeId="2.~Component.setVisible(boolean):void" resolveInfo="setVisible" />
               <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="6773493145900289019">
                 <property name="value" value="true" />
               </node>
@@ -295,7 +295,7 @@
         <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="5522183980949036980" />
         <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="5522183980949036981">
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" id="1841229352184927592">
-            <link role="baseMethodDeclaration" targetNodeId="2.~Dialog.&lt;init&gt;(java.awt.Frame)" resolveInfo="Dialog" />
+            <link role="baseMethodDeclaration" targetNodeId="2.~Window.&lt;init&gt;(java.awt.Frame)" resolveInfo="Window" />
             <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1841229352184927593">
               <link role="variableDeclaration" targetNodeId="1657638272963062307" resolveInfo="owner" />
             </node>

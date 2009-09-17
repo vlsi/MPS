@@ -21753,6 +21753,9 @@
       <link role="modifiedGroup" targetNodeId="1204991231476" resolveInfo="EditorPopup" />
       <link role="point" targetNodeId="2841218117793440883" resolveInfo="generateModel" />
     </node>
+    <node role="modifier" type="jetbrains.mps.lang.plugin.structure.ModificationStatement" id="1087177419518311697">
+      <link role="modifiedGroup" targetNodeId="1087177419518375880" resolveInfo="IDEAToolbarRun" />
+    </node>
     <node role="contents" type="jetbrains.mps.lang.plugin.structure.ElementListContents" id="954487605981816759">
       <node role="reference" type="jetbrains.mps.lang.plugin.structure.ActionInstance" id="954487605981816760">
         <link role="action" targetNodeId="954487605981816731" resolveInfo="GenerateFilesFromModel" />
@@ -23137,6 +23140,7 @@
     <property name="name" value="GenerateFilesFromModel" />
     <property name="outsideCommandExecution" value="true" />
     <property name="caption" value="Generate Files from Current Model" />
+    <property name="iconPath" value="${solution_descriptor}/icons/generate.png" />
     <node role="constructionParameter" type="jetbrains.mps.lang.plugin.structure.ActionConstructionParameterDeclaration" id="954487605981816732">
       <property name="name" value="action" />
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PrivateVisibility" id="954487605981816733" />
@@ -23200,6 +23204,7 @@
     <property name="name" value="GenerateTextFromModel" />
     <property name="outsideCommandExecution" value="true" />
     <property name="caption" value="Generate Text from Current Model" />
+    <property name="iconPath" value="${solution_descriptor}/icons/generateText.png" />
     <node role="constructionParameter" type="jetbrains.mps.lang.plugin.structure.ActionConstructionParameterDeclaration" id="954487605981816765">
       <property name="name" value="action" />
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PrivateVisibility" id="954487605981816766" />
@@ -27961,6 +27966,22 @@
     <node role="implementedInterface" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="7347712222697817253">
       <link role="classifier" targetNodeId="214.~StratergyAddMethodDialog$CollectMethodsStrategy" resolveInfo="StratergyAddMethodDialog.CollectMethodsStrategy" />
     </node>
+  </node>
+  <node type="jetbrains.mps.lang.plugin.structure.InterfaceGroup" id="1087177419518270657">
+    <property name="package" value="Integration" />
+    <property name="name" value="IDEAToolBar" />
+    <node role="groupID" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1087177419518311692">
+      <property name="value" value="MainToolBar" />
+    </node>
+    <node role="contents" type="jetbrains.mps.lang.plugin.structure.ElementListContents" id="1087177419518270659" />
+  </node>
+  <node type="jetbrains.mps.lang.plugin.structure.InterfaceGroup" id="1087177419518375880">
+    <property name="package" value="Integration" />
+    <property name="name" value="MPSToolBarRun" />
+    <node role="groupID" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1087177419518375883">
+      <property name="value" value="MPSToolbarRunGroup" />
+    </node>
+    <node role="contents" type="jetbrains.mps.lang.plugin.structure.ElementListContents" id="1087177419518375882" />
   </node>
 </model>
 
