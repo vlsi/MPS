@@ -590,6 +590,23 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     });
   }
 
+  @Override
+  public Point getToolTipLocation(final MouseEvent event) {
+    return ModelAccess.instance().tryRead(new Computable<Point>() {
+      public Point compute() {
+        if (myRootCell == null) {
+          return null;
+        }
+
+        EditorCell cell = myRootCell.findLeaf(event.getX(), event.getY());
+        if (cell == null) {
+          return null;
+        }
+        return new Point(cell.getX(), cell.getY());
+      }
+    });
+  }
+
   public void updateStatusBarMessage() {
     ModelAccess.instance().runReadInEDT(new Runnable() {
       public void run() {
@@ -619,54 +636,70 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
   }
 
   private HighlighterMessage getHighlighterMessageFor(EditorCell cell) {
-
-    while (cell != null) {
-      List<HighlighterMessage> messages = cell.getMessages(HighlighterMessage.class);
+    EditorCell parent = cell;
+    while (parent != null) {
+      if (cell.getBounds().getMaxY() < parent.getBounds().getMaxY()) {
+        return null;
+      }
+      List<HighlighterMessage> messages = parent.getMessages(HighlighterMessage.class);
       if (!messages.isEmpty()) {
         return messages.get(0);
       }
-      cell = cell.getParent();
+      parent = parent.getParent();
     }
 
     return null;
   }
 
   public void showMessageTooltip() {
-    try {
-      //todo this is a hack but I don't know other way to show tooltip programatically
-      //probably we should create our own tooltip facility instead
+    if (USE_NEW_TOOLTIPS) {
       EditorCell cell = getSelectedCell();
       if (cell == null) {
         return;
       }
+      String text = getMessageTextFor(cell);
+      Point point = new Point(cell.getX(), cell.getY());
+      MPSToolTipManager.getInstance().showToolTip(text, this, point);
+    } else {
+      try {
+        //todo this is a hack but I don't know other way to show tooltip programatically
+        //probably we should create our own tooltip facility instead
+        EditorCell cell = getSelectedCell();
+        if (cell == null) {
+          return;
+        }
 
-      ToolTipManager toolTipManager = ToolTipManager.sharedInstance();
+        ToolTipManager toolTipManager = ToolTipManager.sharedInstance();
 
-      Field showImmediatelyField = toolTipManager.getClass().getDeclaredField("showImmediately");
-      showImmediatelyField.setAccessible(true);
-      showImmediatelyField.set(toolTipManager, true);
+        Field showImmediatelyField = toolTipManager.getClass().getDeclaredField("showImmediately");
+        showImmediatelyField.setAccessible(true);
+        showImmediatelyField.set(toolTipManager, true);
 
-      toolTipManager.mouseMoved(new MouseEvent(
-        this,
-        Event.MOUSE_MOVE, 0, 0,
-        cell.getX(), cell.getY(), 0, false));
-    } catch (Exception e) {
-      LOG.error(e);
+        toolTipManager.mouseMoved(new MouseEvent(
+          this,
+          Event.MOUSE_MOVE, 0, 0,
+          cell.getX(), cell.getY(), 0, false));
+      } catch (Exception e) {
+        LOG.error(e);
+      }
     }
   }
 
   public void hideMessageToolTip() {
-    try {
-      //todo this is a hack but I don't know other way to show tooltip programatically
-      ToolTipManager toolTipManager = ToolTipManager.sharedInstance();
-      toolTipManager.mousePressed(new MouseEvent(
-        this,
-        Event.MOUSE_MOVE, 0, 0,
-        0, 0, 0, false));
-    } catch (Exception e) {
-      LOG.error(e);
+    if (USE_NEW_TOOLTIPS) {
+      MPSToolTipManager.getInstance().hideToolTip();
+    } else {
+      try {
+        //todo this is a hack but I don't know other way to show tooltip programatically
+        ToolTipManager toolTipManager = ToolTipManager.sharedInstance();
+        toolTipManager.mousePressed(new MouseEvent(
+          this,
+          Event.MOUSE_MOVE, 0, 0,
+          0, 0, 0, false));
+      } catch (Exception e) {
+        LOG.error(e);
+      }
     }
-
   }
 
   public void editNode(SNode node, IOperationContext operationContext) {

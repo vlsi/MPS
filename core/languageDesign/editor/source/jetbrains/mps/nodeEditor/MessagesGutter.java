@@ -16,6 +16,7 @@
 package jetbrains.mps.nodeEditor;
 
 import jetbrains.mps.ide.ThreadUtils;
+import jetbrains.mps.ide.tooltips.MPSToolTipManager;
 import jetbrains.mps.nodeEditor.icons.Icons;
 
 import javax.swing.JLabel;
@@ -139,7 +140,11 @@ public class MessagesGutter extends JPanel {
 
   private class MyMessagesGutter extends JPanel {
     public MyMessagesGutter() {
-      ToolTipManager.sharedInstance().registerComponent(this);
+      if (EditorComponent.USE_NEW_TOOLTIPS) {
+        MPSToolTipManager.getInstance().registerComponent(this);
+      } else {
+        ToolTipManager.sharedInstance().registerComponent(this);
+      }
 
 
       addMouseListener(new MouseAdapter() {

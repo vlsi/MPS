@@ -13,8 +13,9 @@ import java.awt.event.MouseEvent;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 import javax.swing.JComponent;
-import java.awt.Frame;
 import java.awt.Point;
+import java.awt.Frame;
+import org.apache.commons.lang.ObjectUtils;
 import javax.swing.SwingUtilities;
 import com.intellij.openapi.application.ApplicationManager;
 
@@ -50,19 +51,15 @@ public class MPSToolTipManager implements ApplicationComponent {
 
   private void mouseMoved(MouseEvent event) {
     JComponent component = (JComponent)event.getComponent();
-    String text = (component).getToolTipText(event);
+    Point point = component.getToolTipLocation(event);
+    if (point == null) {
+      point = event.getPoint();
+    }
+    String text = component.getToolTipText(event);
     if (text != null) {
-      if (this.myToolTip == null) {
-        this.myToolTip = new ToolTip();
-        Frame frame = this.getContainingFrame(component);
-        Point point = SwingUtilities.convertPoint(component, event.getPoint(), frame);
-        this.myToolTip.show(frame, point, new ToolTipData(text));
-      }
+      this.showToolTip(text, component, point);
     } else {
-      if (this.myToolTip != null) {
-        this.myToolTip.hide();
-        this.myToolTip = null;
-      }
+      this.hideToolTip();
     }
   }
 
@@ -71,6 +68,26 @@ public class MPSToolTipManager implements ApplicationComponent {
       component = component.getParent();
     }
     return (Frame)component;
+  }
+
+  public void showToolTip(String text, JComponent component, Point point) {
+    if (this.myToolTip != null) {
+      if (ObjectUtils.equals(this.myToolTip.getText(), text)) {
+        return;
+      }
+      this.hideToolTip();
+    }
+    this.myToolTip = new ToolTip();
+    Frame frame = this.getContainingFrame(component);
+    Point widowPoint = SwingUtilities.convertPoint(component, point, frame);
+    this.myToolTip.show(frame, widowPoint, new ToolTipData(text));
+  }
+
+  public void hideToolTip() {
+    if (this.myToolTip != null) {
+      this.myToolTip.hide();
+      this.myToolTip = null;
+    }
   }
 
   public static MPSToolTipManager getInstance() {

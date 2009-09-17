@@ -15435,10 +15435,10 @@
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="7889856925553596713">
             <property name="name" value="node" />
             <node role="type" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="7889856925553596714">
-              <link role="concept" targetNodeId="92.1068390468198" resolveInfo="ClassConcept" />
+              <link role="concept" targetNodeId="92.1194952169813" resolveInfo="IMemberContainer" />
             </node>
             <node role="initializer" type="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" id="7889856925553596715">
-              <link role="concept" targetNodeId="92.1068390468198" resolveInfo="ClassConcept" />
+              <link role="concept" targetNodeId="92.1194952169813" resolveInfo="IMemberContainer" />
               <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="7889856925553596716">
                 <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="7889856925553596717">
                   <link role="variableDeclaration" targetNodeId="7889856925553596687" resolveInfo="method" />

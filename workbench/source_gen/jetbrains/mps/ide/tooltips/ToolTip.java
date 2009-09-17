@@ -27,18 +27,26 @@ public class ToolTip {
   private static final Color BACKGROUND_COLOR = new Color(253, 254, 226);
 
   private ToolTip.MyDialog myDialog;
+  private ToolTipData myHintInformation;
 
   public ToolTip() {
   }
 
   public void show(Frame owner, Point location, ToolTipData hintInformation) {
+    this.myHintInformation = hintInformation;
     this.myDialog = new ToolTip.MyDialog(owner, location, hintInformation);
     this.myDialog.setVisible(true);
   }
 
   public void hide() {
-    this.myDialog.dispose();
-    this.myDialog = null;
+    if (this.myDialog != null) {
+      this.myDialog.dispose();
+      this.myDialog = null;
+    }
+  }
+
+  public String getText() {
+    return this.myHintInformation.getText();
   }
 
   public static class MyDialog extends Window {
@@ -101,17 +109,21 @@ public class ToolTip {
     }
 
     public void addListeners() {
-      this.myPrevFocusOwner.addFocusListener(this.myOwnerFocusListener);
-      this.myPrevFocusOwner.addMouseListener(this.myOwnerMouseListener);
-      this.myPrevFocusOwner.addKeyListener(this.myOwnerKeyListener);
+      if (this.myPrevFocusOwner != null) {
+        this.myPrevFocusOwner.addFocusListener(this.myOwnerFocusListener);
+        this.myPrevFocusOwner.addMouseListener(this.myOwnerMouseListener);
+        this.myPrevFocusOwner.addKeyListener(this.myOwnerKeyListener);
+      }
       super.dispose();
     }
 
     @Override
     public void dispose() {
-      this.myPrevFocusOwner.removeFocusListener(this.myOwnerFocusListener);
-      this.myPrevFocusOwner.removeMouseListener(this.myOwnerMouseListener);
-      this.myPrevFocusOwner.removeKeyListener(this.myOwnerKeyListener);
+      if (this.myPrevFocusOwner != null) {
+        this.myPrevFocusOwner.removeFocusListener(this.myOwnerFocusListener);
+        this.myPrevFocusOwner.removeMouseListener(this.myOwnerMouseListener);
+        this.myPrevFocusOwner.removeKeyListener(this.myOwnerKeyListener);
+      }
       super.dispose();
     }
   }
