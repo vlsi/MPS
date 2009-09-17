@@ -299,7 +299,7 @@ public class JUnitConfigEditor extends JPanel {
     this.myNodeNameWithMethod0 = component;
     component.addActionListener(new ActionListener() {
       public void actionPerformed(ActionEvent event) {
-        myThis.onNodeChange();
+        myThis.onMainNodeChange();
       }
     });
     return component;
@@ -492,6 +492,11 @@ public class JUnitConfigEditor extends JPanel {
 
   public void onNodeChange() {
     myThis.setNode(myThis.myNodeName0.getText());
+  }
+
+  public void onMainNodeChange() {
+    myThis.setNode(myThis.myNodeNameWithMethod0.getText());
+    myThis.myMethodName0.setTestCase(myThis.myNodeNameWithMethod0.getText());
   }
 
   public void onMethodChange() {
