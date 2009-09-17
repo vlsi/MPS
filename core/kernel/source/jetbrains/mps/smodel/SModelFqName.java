@@ -101,6 +101,10 @@ public class SModelFqName implements Comparable<Object> {
     return myStereotype.length() > 0;
   }
 
+  public SModelFqName withoutStereotype() {
+    return new SModelFqName(this.getLongName(), "");
+  }
+
   public int compareTo(Object o) {
     int compareStereotypes = this.getStereotype().compareTo(((SModelFqName) o).getStereotype());
     if (compareStereotypes != 0) return compareStereotypes;
