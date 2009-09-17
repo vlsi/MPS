@@ -441,7 +441,17 @@ public class EditorCell_Collection extends EditorCell_Basic implements Iterable<
   }
 
   public void setCanBeFolded(boolean canBeFolded) {
+    boolean wasPossiblyFolded = canBePossiblyFolded();
     myCanBeFolded = canBeFolded;
+
+    if (isInTree()) {
+      if (wasPossiblyFolded && !canBePossiblyFolded()) {
+        getEditor().getCellTracker().removeFoldableCell(this);
+      }
+      if (!wasPossiblyFolded && canBePossiblyFolded()) {
+        getEditor().getCellTracker().addFoldableCell(this);
+      }
+    }
   }
 
   public void unfold(boolean programmaticaly) {
@@ -720,9 +730,16 @@ public class EditorCell_Collection extends EditorCell_Basic implements Iterable<
     if (myLastCellSelectionListener != null) {
       getEditor().addCellSelectionListener(myLastCellSelectionListener);
     }
+
+    if (canBePossiblyFolded()) {
+      getEditor().getCellTracker().addFoldableCell(this);
+    }
   }
 
   public void onRemove() {
+    if (canBePossiblyFolded()) {
+      getEditor().getCellTracker().removeFoldableCell(this);
+    }
     if (myLastCellSelectionListener != null) {
       setBracesEnabled(false);
       getEditor().removeCellSelectionListener(myLastCellSelectionListener);
@@ -781,6 +798,9 @@ public class EditorCell_Collection extends EditorCell_Basic implements Iterable<
   public boolean isTransparentCollection() {
     return getChildCount() == 1 && getStyle().get(StyleAttributes.SELECTABLE);
   }
+
+
+
 
   class EditorCell_Brace extends EditorCell_Constant {
     public static final String OPENING_TEXT = "(";

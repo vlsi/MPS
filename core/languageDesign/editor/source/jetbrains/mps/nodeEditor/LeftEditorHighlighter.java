@@ -108,23 +108,9 @@ public class LeftEditorHighlighter {
 
   private void doUpdateCellInfos() {
     myFoldingButtons.clear();
-    EditorCell rootCell = myEditorComponent.getRootCell();
-    if (rootCell instanceof EditorCell_Collection) {
-      EditorCell_Collection collection = (EditorCell_Collection) rootCell;
-      List<EditorCell> cells = new ArrayList<EditorCell>();
-      cells.addAll(collection.dfsCells());
-      cells.add(collection);
-      for (EditorCell cell : cells) {
-        if (cell instanceof EditorCell_Collection) {
-          EditorCell_Collection collectionToAdd = (EditorCell_Collection) cell;
-          if (collectionToAdd.canBePossiblyFolded()) {
-            markFoldable(collectionToAdd);
-          }
-        }
-      }
+    for (EditorCell_Collection folded : myEditorComponent.getCellTracker().getFoldableCells()) {
+      markFoldable(folded);
     }
-
-
     relayout(true, false);
   }
 
