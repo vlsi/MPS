@@ -53,6 +53,19 @@ public abstract class IndexableObjectSet<E> extends AbstractSet<E> {
     return result;
   }
 
+
+  @Override
+  public boolean isEmpty() {
+    return myBitSet.isEmpty();
+  }
+
+  @Override
+  public boolean contains(Object o) {
+    int index = getIndex((E) o);
+    if (index == -1) return false;
+    return myBitSet.get(index);
+  }
+
   @Override
   public boolean add(E e) {
     int index = getIndex(e);
