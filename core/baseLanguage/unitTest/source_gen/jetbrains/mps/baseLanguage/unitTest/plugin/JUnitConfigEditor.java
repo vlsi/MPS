@@ -299,7 +299,7 @@ public class JUnitConfigEditor extends JPanel {
     this.myNodeNameWithMethod0 = component;
     component.addActionListener(new ActionListener() {
       public void actionPerformed(ActionEvent event) {
-        myThis.onMethodChange();
+        myThis.onNodeChange();
       }
     });
     return component;
@@ -540,7 +540,6 @@ public class JUnitConfigEditor extends JPanel {
   }
 
   private void setMethod(String m, final String n) {
-    myThis.setNode(n);
     if (m == null) {
       return;
     }

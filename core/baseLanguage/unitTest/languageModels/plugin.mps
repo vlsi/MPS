@@ -13120,8 +13120,8 @@
             <node role="content" type="jetbrains.mps.uiLanguage.structure.ActionHandler" id="3030983492493770196">
               <node role="handler" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="3030983492493770198">
                 <node role="operand" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpression" id="3030983492493770199" />
-                <node role="operation" type="jetbrains.mps.baseLanguage.classifiers.structure.DefaultClassifierMethodCallOperation" id="3030983492493770200">
-                  <link role="member" targetNodeId="3030983492493716138" resolveInfo="onMethodChange" />
+                <node role="operation" type="jetbrains.mps.baseLanguage.classifiers.structure.DefaultClassifierMethodCallOperation" id="6329135220356903356">
+                  <link role="member" targetNodeId="3030983492493716134" resolveInfo="onNodeChange" />
                 </node>
               </node>
             </node>
@@ -14456,17 +14456,6 @@
       <property name="name" value="setMethod" />
       <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="3030983492493770236" />
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="3030983492493770237">
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="3030983492493770389">
-          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="3030983492493770390">
-            <node role="operand" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpression" id="3030983492493770391" />
-            <node role="operation" type="jetbrains.mps.baseLanguage.classifiers.structure.DefaultClassifierMethodCallOperation" id="3030983492493770392">
-              <link role="member" targetNodeId="3030983492493770231" resolveInfo="setNode" />
-              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="3030983492493770393">
-                <link role="variableDeclaration" targetNodeId="3030983492493770257" resolveInfo="n" />
-              </node>
-            </node>
-          </node>
-        </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="3030983492493770395">
           <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="3030983492493770396">
             <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="3030983492493770397" />
