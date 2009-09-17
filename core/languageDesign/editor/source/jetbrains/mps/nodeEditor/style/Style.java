@@ -41,7 +41,6 @@ public class Style {
 
   public Style(EditorCell contextCell) {
     myEditorCell = contextCell;
-    updateCache();
   }
 
   public void apply(EditorCell cell) {
@@ -61,7 +60,15 @@ public class Style {
   }
 
   public <T> T get(StyleAttribute<T> attribute) {
-    return (T) myCachedAttributeValues[attribute.getIndex()];
+    int index = attribute.getIndex();
+    T value = (T) myCachedAttributeValues[index];
+    if (value != null) {
+      return value;
+    } else {
+      T result = attribute.combine(null, null);
+      myCachedAttributeValues[index] = result;
+      return result;
+    }
   }
 
   public <T> T getCurrent(StyleAttribute<T> attribute) {
@@ -102,16 +109,19 @@ public class Style {
       Object parentValue = getParentStyle() == null ? null : getParentStyle().get(attribute);
       Object currentValue = myAttributeValues[attribute.getIndex()];
 
-      if (currentValue instanceof AttributeCalculator) {
-        currentValue = ((AttributeCalculator) currentValue).calculate(myEditorCell);
-      }
-      Object newValue = attribute.combine(parentValue, currentValue);
+      if (parentValue != null || currentValue != null) {
+        if (currentValue instanceof AttributeCalculator) {
+          currentValue = ((AttributeCalculator) currentValue).calculate(myEditorCell);
+        }
 
-      if (!EqualUtil.equals(newValue, oldCachedValues[attribute.getIndex()])) {
-        changedAttributes.add(attribute);
-      }
+        Object newValue = attribute.combine(parentValue, currentValue);
 
-      myCachedAttributeValues[attribute.getIndex()] =  newValue;
+        if (!EqualUtil.equals(newValue, oldCachedValues[attribute.getIndex()])) {
+          changedAttributes.add(attribute);
+        }
+
+        myCachedAttributeValues[attribute.getIndex()] =  newValue;
+      }
     }
 
     if (!changedAttributes.isEmpty()) {
