@@ -17,25 +17,15 @@ package jetbrains.mps.build.ant;
 
 import com.intellij.ide.IdeEventQueue;
 import com.intellij.openapi.application.PathMacros;
-import com.intellij.openapi.progress.EmptyProgressIndicator;
 import com.intellij.openapi.project.ProjectManager;
 import com.intellij.openapi.util.Computable;
 import com.intellij.util.PathUtil;
 import com.intellij.util.Processor;
 import jetbrains.mps.TestMain;
-import jetbrains.mps.reloading.ClassLoaderManager;
-import jetbrains.mps.build.buildgeneration.StronglyConnectedModules;
-import jetbrains.mps.build.buildgeneration.StronglyConnectedModules.IModuleDecorator;
-import jetbrains.mps.build.buildgeneration.StronglyConnectedModules.IModuleDecoratorBuilder;
-import jetbrains.mps.build.buildgeneration.graph.IVertex;
-import jetbrains.mps.generator.GeneratorManager;
 import jetbrains.mps.generator.ModelGenerationStatusManager;
-import jetbrains.mps.generator.generationTypes.GenerateFilesGenerationType;
 import jetbrains.mps.ide.IdeMain;
 import jetbrains.mps.ide.IdeMain.TestMode;
 import jetbrains.mps.ide.ThreadUtils;
-import jetbrains.mps.ide.messages.IMessageHandler;
-import jetbrains.mps.ide.messages.Message;
 import jetbrains.mps.library.BaseLibraryManager.MyState;
 import jetbrains.mps.library.Library;
 import jetbrains.mps.library.LibraryManager;
@@ -43,14 +33,12 @@ import jetbrains.mps.logging.ILoggingHandler;
 import jetbrains.mps.logging.LogEntry;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.MPSProject;
-import jetbrains.mps.project.ModuleContext;
 import jetbrains.mps.project.structure.project.ProjectDescriptor;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.persistence.DefaultModelRootManager;
 import jetbrains.mps.smodel.persistence.def.ModelFileReadException;
 import jetbrains.mps.smodel.persistence.def.ModelPersistence;
 import jetbrains.mps.util.FileUtil;
-import jetbrains.mps.util.Pair;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.MPSExtentions;
@@ -58,7 +46,6 @@ import org.apache.log4j.BasicConfigurator;
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
 import org.apache.log4j.varia.NullAppender;
-import org.apache.tools.ant.BuildException;
 import org.apache.tools.ant.Project;
 import org.apache.tools.ant.ProjectComponent;
 
@@ -68,17 +55,17 @@ import java.util.*;
 public abstract class MpsWorker {
   protected final List<String> myErrors = new ArrayList<String>();
   protected final List<String> myWarnings = new ArrayList<String>();
-  protected final WhatToGenerate myWhatToGenerate;
+  protected final WhatToDo myWhatToDo;
   private final AntLogger myLogger;
   
   private final Set<MPSProject> myLoadedProjects = new HashSet<MPSProject>();
 
-  public MpsWorker(WhatToGenerate whatToGenerate, ProjectComponent component) {
-    this(whatToGenerate, new ProjectComponentLogger(component));
+  public MpsWorker(WhatToDo whatToDo, ProjectComponent component) {
+    this(whatToDo, new ProjectComponentLogger(component));
   }
 
-  public MpsWorker(WhatToGenerate whatToGenerate, AntLogger logger) {
-    myWhatToGenerate = whatToGenerate;
+  public MpsWorker(WhatToDo whatToDo, AntLogger logger) {
+    myWhatToDo = whatToDo;
     myLogger = logger;
   }
 
@@ -133,7 +120,7 @@ public abstract class MpsWorker {
   }
 
   private Level getLog4jLevel() {
-    switch (myWhatToGenerate.getLogLevel()) {
+    switch (myWhatToDo.getLogLevel()) {
       case Project.MSG_ERR:
         return Level.ERROR;
       case Project.MSG_WARN:
@@ -150,7 +137,7 @@ public abstract class MpsWorker {
   }
 
   private void setMacro() {
-    Map<String, String> macro = myWhatToGenerate.getMacro();
+    Map<String, String> macro = myWhatToDo.getMacro();
     for (String macroName : macro.keySet()) {
       String canonicalPath = PathUtil.getCanonicalPath(macro.get(macroName));
       File file = new File(canonicalPath);
@@ -164,10 +151,10 @@ public abstract class MpsWorker {
     MyState state = LibraryManager.getInstance().getState();
     Map<String, Library> libraries = state.getLibraries();
 
-    for (String libName : myWhatToGenerate.getLibraries().keySet()) {
+    for (String libName : myWhatToDo.getLibraries().keySet()) {
       Library library = new Library();
       library.setName(libName);
-      library.setPath(myWhatToGenerate.getLibraries().get(libName).getAbsolutePath());
+      library.setPath(myWhatToDo.getLibraries().get(libName).getAbsolutePath());
       libraries.put(libName, library);
     }
 
@@ -196,7 +183,7 @@ public abstract class MpsWorker {
   }
 
   private void collectFromProjects(Set<SModelDescriptor> modelDescriptors) {
-    for (File projectFile : myWhatToGenerate.getMPSProjectFiles()) {
+    for (File projectFile : myWhatToDo.getMPSProjectFiles()) {
       final MPSProject project = TestMain.loadProject(projectFile);
       info("Loaded project " + project);
       myLoadedProjects.add(project);
@@ -220,7 +207,7 @@ public abstract class MpsWorker {
   }
 
   private void collectFromModuleDirs(Set<SModelDescriptor> modelDescriptors) {
-    for (final File f : myWhatToGenerate.getModuleDirectories()) {
+    for (final File f : myWhatToDo.getModuleDirectories()) {
       List<IModule> modules = ModelAccess.instance().runWriteAction(new Computable<List<IModule>>() {
         public List<IModule> compute() {
           return MPSModuleRepository.getInstance().readModuleDescriptors(FileSystem.getFile(f.getPath()), new MPSModuleOwner() {
@@ -253,7 +240,7 @@ public abstract class MpsWorker {
   private void collectFromModelDirs(Set<SModelDescriptor> modelDescriptors) {
     final Set<File> probablyModelFiles = new LinkedHashSet<File>();
 
-    for (File f : myWhatToGenerate.getModelDirectories()) {
+    for (File f : myWhatToDo.getModelDirectories()) {
       com.intellij.openapi.util.io.FileUtil.processFilesRecursively(f, new Processor<File>() {
         public boolean process(File file) {
           if (file.getPath().endsWith(MPSExtentions.DOT_MODEL)) {
@@ -292,7 +279,7 @@ public abstract class MpsWorker {
   }
 
   private void log(String text, int level) {
-    if (level <= myWhatToGenerate.getLogLevel()) myLogger.log(text, level);
+    if (level <= myWhatToDo.getLogLevel()) myLogger.log(text, level);
   }
 
   public void info(String text) {

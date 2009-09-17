@@ -16,8 +16,21 @@
 package jetbrains.mps.build.ant;
 
 public class GenerateTask extends MpsLoadTask {
+  static final String COMPILE = "COMPILE";
+
+  public GenerateTask() {
+    myWhatToDo.putProperty(COMPILE, Boolean.toString(true));
+  }
 
   protected Class<? extends MpsWorker> getGeneratorClass() {
     return GeneratorWorker.class;
+  }
+
+  public void setCompile(boolean compile) {
+    myWhatToDo.putProperty(COMPILE, Boolean.toString(compile));
+  }
+
+  protected boolean getCompile() {
+    return Boolean.parseBoolean(myWhatToDo.getProperty(COMPILE));
   }
 }

@@ -1,21 +1,28 @@
 package jetbrains.mps.build.ant;
 
 public class TestGenerationOnTeamcity extends GenerateTask {
+  public static final String INVOKE_TESTS = "INVOKE_TESTS";
+  public static final String SHOW_DIFF = "SHOW_DIFF";
+
+  public TestGenerationOnTeamcity() {
+    myWhatToDo.putProperty(INVOKE_TESTS, Boolean.toString(false));
+    myWhatToDo.putProperty(SHOW_DIFF, Boolean.toString(false));
+  }
 
   public boolean getShowDiff() {
-    return myWhatToGenerate.getShowDiff();
+    return Boolean.parseBoolean(myWhatToDo.getProperty(SHOW_DIFF));
   }
 
   public void setShowDiff(boolean isDifferenceCalculated) {
-    myWhatToGenerate.updateShowDiff(isDifferenceCalculated);
+     myWhatToDo.putProperty(SHOW_DIFF, Boolean.toString(isDifferenceCalculated));
   }
 
   public boolean getInvokeTests() {
-    return myWhatToGenerate.getInvokeTests();
+    return Boolean.parseBoolean(myWhatToDo.getProperty(INVOKE_TESTS));
   }
 
   public void setInvokeTests(boolean invokeTests) {
-    myWhatToGenerate.updateInvokeTests(invokeTests);    
+    myWhatToDo.putProperty(INVOKE_TESTS, Boolean.toString(invokeTests));
   }
 
   @Override

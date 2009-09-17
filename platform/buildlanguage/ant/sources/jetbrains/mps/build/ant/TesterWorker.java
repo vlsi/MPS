@@ -34,16 +34,16 @@ public class TesterWorker extends GeneratorWorker {
   private boolean myTestFailed = false;
 
   public static void main(String[] args) {
-    TesterWorker generator = new TesterWorker(WhatToGenerate.fromDumpInFile(new File(args[0])), new SystemOutLogger());
+    TesterWorker generator = new TesterWorker(WhatToDo.fromDumpInFile(new File(args[0])), new SystemOutLogger());
     generator.doTheJob();
   }
 
-  public TesterWorker(WhatToGenerate whatToGenerate, ProjectComponent component) {
-    super(whatToGenerate, component);
+  public TesterWorker(WhatToDo whatToDo, ProjectComponent component) {
+    super(whatToDo, component);
   }
 
-  public TesterWorker(WhatToGenerate whatToGenerate, AntLogger logger) {
-    super(whatToGenerate, logger);
+  public TesterWorker(WhatToDo whatToDo, AntLogger logger) {
+    super(whatToDo, logger);
   }
 
   @Override
@@ -59,7 +59,7 @@ public class TesterWorker extends GeneratorWorker {
       false);
 
     List<String> diffReports;
-    if (myWhatToGenerate.getShowDiff()) {
+    if (Boolean.parseBoolean(myWhatToDo.getProperty(TestGenerationOnTeamcity.SHOW_DIFF))) {
       diffReports = ModelAccess.instance().runReadAction(new Computable<List<String>>() {
         public List<String> compute() {
           return DiffReporter.createDiffReports(generationType);
@@ -70,7 +70,7 @@ public class TesterWorker extends GeneratorWorker {
     }
 
     List<CompilationResult> compilationResult;
-    if (myWhatToGenerate.getCompile()) {
+    if (Boolean.parseBoolean(myWhatToDo.getProperty(GenerateTask.COMPILE))) {
       compilationResult = ModelAccess.instance().runReadAction(new Computable<List<CompilationResult>>() {
         public List<CompilationResult> compute() {
           return generationType.compile(IAdaptiveProgressMonitor.NULL_PROGRESS_MONITOR);
@@ -81,7 +81,7 @@ public class TesterWorker extends GeneratorWorker {
     }
 
     List<TestFailure> testResults;
-    if (myWhatToGenerate.getInvokeTests() && myWhatToGenerate.getCompile()) {
+    if ( Boolean.parseBoolean(myWhatToDo.getProperty(TestGenerationOnTeamcity.INVOKE_TESTS)) && Boolean.parseBoolean(myWhatToDo.getProperty(GenerateTask.COMPILE))) {
       final List<SModel> models = new ArrayList<SModel>();
       for (Pair<SModelDescriptor, IOperationContext> pair : modelsToContext) {
         models.add(pair.o1.getSModel());
@@ -168,7 +168,7 @@ public class TesterWorker extends GeneratorWorker {
       sb.append("|n");
     }
 
-    if (myWhatToGenerate.getShowDiff()) {
+    if (Boolean.parseBoolean(myWhatToDo.getProperty(TestGenerationOnTeamcity.SHOW_DIFF))) {
       if (diffReports.size() > 0) {
         sb.append("Difference:|n");
         for (String diffReport : diffReports) {
@@ -189,7 +189,7 @@ public class TesterWorker extends GeneratorWorker {
 
   @Override
   protected void showStatistic() {
-    if (myTestFailed && myWhatToGenerate.getFailOnError()) {
+    if (myTestFailed && myWhatToDo.getFailOnError()) {
       throw new BuildException("Tests Failed");
     }
   }

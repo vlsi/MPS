@@ -23,18 +23,16 @@ import java.lang.reflect.Method;
 import java.lang.reflect.InvocationTargetException;
 
 import jetbrains.mps.util.FileUtil;
+import com.sun.xml.internal.bind.v2.util.QNameMap;
 
-public class WhatToGenerate {
+public class WhatToDo {
   private final Set<File> myModelDirectories = new LinkedHashSet<File>();
   private final Set<File> myModuleDirectories = new LinkedHashSet<File>();
   private final Set<File> myMPSProjects = new LinkedHashSet<File>();
   private boolean myFailOnError = false;
-  private boolean myCompile = true;
-  private boolean myInvokeTests = false;
   private final Map<String, File> myLibraries = new LinkedHashMap<String, File>();
   private final Map<String, String> myMacro = new LinkedHashMap<String, String>();
   private int myLogLevel = org.apache.tools.ant.Project.MSG_INFO;
-  private boolean myShowDiff = true;
   private static final String MODEL_DIR = "MODEL_DIR";
   private static final String MODULE_DIR = "MODULE_DIR";
   private static final String MPS_PROJECT = "MPS_PROJECT";
@@ -42,25 +40,7 @@ public class WhatToGenerate {
   private static final String MPS_MACRO = "MPS_MACRO";
   private static final String FAIL_ON_ERROR = "FAIL_ON_ERROR";
   private static final String LOG_LEVEL = "LOG_LEVEL";
-  private static final String SHOW_DIFF = "SHOW_DIFF";
-  private static final String COMPILE = "COMPILE";
-  private static final String INVOKE_TESTS = "INVOKE_TESTS";
-
-  public void updateShowDiff(boolean isDifferenceCalculated) {
-    myShowDiff = isDifferenceCalculated;
-  }
-
-  public boolean getShowDiff() {
-    return myShowDiff;
-  }
-
-  public void updateInvokeTests(boolean invokeTests) {
-    myInvokeTests = invokeTests;
-  }
-
-  public boolean getInvokeTests() {
-    return myInvokeTests;
-  }
+  private final Map<String, String> myProperties = new LinkedHashMap<String, String>();
 
   public void addModuleDirectory(File dir) {
     assert dir.exists() && dir.isDirectory();
@@ -109,12 +89,12 @@ public class WhatToGenerate {
     myFailOnError = showError;
   }
 
-  public boolean getCompile() {
-    return myCompile;
+  public Map<String, String> getProperties() {
+    return Collections.unmodifiableMap(myProperties);
   }
 
-  public void updateCompile(boolean compile) {
-    myCompile = compile;
+  public void updateProperties(Map<String, String> properties) {
+    myProperties.putAll(properties);
   }
 
   public void addLibrary(String name, File dir) {
@@ -150,7 +130,7 @@ public class WhatToGenerate {
   }
 
   public void cloneTo(Object dest) {
-    Class<? extends WhatToGenerate> srcClass = this.getClass();
+    Class<? extends WhatToDo> srcClass = this.getClass();
     Class<? extends Object> destClass = dest.getClass();
 
     Method[] srcMethods = srcClass.getMethods();
@@ -211,6 +191,14 @@ public class WhatToGenerate {
       sb.append(myMacro.get(macroName));
       sb.append(" ");
     }
+
+    for (String name : myProperties.keySet()) {
+      sb.append(name);
+      sb.append("=");
+      sb.append(myProperties.get(name));
+      sb.append(" ");
+    }
+
     sb.append(FAIL_ON_ERROR);
     sb.append("=");
     sb.append(myFailOnError);
@@ -220,20 +208,6 @@ public class WhatToGenerate {
     sb.append("=");
     sb.append(myLogLevel);
     sb.append(" ");
-
-    sb.append(SHOW_DIFF);
-    sb.append("=");
-    sb.append(myShowDiff);
-    sb.append(" ");
-
-    sb.append(COMPILE);
-    sb.append("=");
-    sb.append(myCompile);
-    sb.append(" ");
-
-    sb.append(INVOKE_TESTS);
-    sb.append("=");
-    sb.append(myInvokeTests);
 
     return sb.toString();
   }
@@ -267,43 +241,47 @@ public class WhatToGenerate {
     return result;
   }
 
-  public static WhatToGenerate fromDumpInFile(File file) {
+  public static WhatToDo fromDumpInFile(File file) {
     String dump = FileUtil.read(file);
     file.delete();
     return fromCommandLine(dump);
   }
 
-  public static WhatToGenerate fromCommandLine(String ... args) {
-    WhatToGenerate whatToGenerate = new WhatToGenerate();
+  public static WhatToDo fromCommandLine(String... args) {
+    WhatToDo whatToDo = new WhatToDo();
     for (String arg : args) {
       String[] argsplit = arg.split("\\s+");
       for (String s : argsplit) {
         String[] propertyValuePair = s.split("=");
-        if (propertyValuePair[0].equals(MODEL_DIR)){
-          whatToGenerate.addModelDirectory(new File(propertyValuePair[1]));
-        } else if (propertyValuePair[0].equals(MODULE_DIR)){
-          whatToGenerate.addModuleDirectory(new File(propertyValuePair[1]));
-        } else if (propertyValuePair[0].equals(MPS_LIBRARY)){
+        if (propertyValuePair[0].equals(MODEL_DIR)) {
+          whatToDo.addModelDirectory(new File(propertyValuePair[1]));
+        } else if (propertyValuePair[0].equals(MODULE_DIR)) {
+          whatToDo.addModuleDirectory(new File(propertyValuePair[1]));
+        } else if (propertyValuePair[0].equals(MPS_LIBRARY)) {
           String[] nameValuePair = propertyValuePair[1].split("\\[|\\]");
-          whatToGenerate.addLibrary(nameValuePair[0], new File(nameValuePair[1]));
-        } else if (propertyValuePair[0].equals(MPS_MACRO)){
+          whatToDo.addLibrary(nameValuePair[0], new File(nameValuePair[1]));
+        } else if (propertyValuePair[0].equals(MPS_MACRO)) {
           String[] nameValuePair = propertyValuePair[1].split("\\[|\\]");
-          whatToGenerate.addMacro(nameValuePair[0], nameValuePair[1]);
-        } else if (propertyValuePair[0].equals(MPS_PROJECT)){
-          whatToGenerate.addProjectFile(new File(propertyValuePair[1]));
-        } else if (propertyValuePair[0].equals(FAIL_ON_ERROR)){
-          whatToGenerate.myFailOnError = Boolean.parseBoolean(propertyValuePair[1]);
-        } else if (propertyValuePair[0].equals(LOG_LEVEL)){
-          whatToGenerate.myLogLevel = Integer.parseInt(propertyValuePair[1]);          
-        } else if (propertyValuePair[0].equals(SHOW_DIFF)){
-          whatToGenerate.myShowDiff = Boolean.parseBoolean(propertyValuePair[1]);          
-        } else if (propertyValuePair[0].equals(COMPILE)){
-          whatToGenerate.myCompile = Boolean.parseBoolean(propertyValuePair[1]);          
-        } else if (propertyValuePair[0].equals(INVOKE_TESTS)){
-          whatToGenerate.myInvokeTests = Boolean.parseBoolean(propertyValuePair[1]);
+          whatToDo.addMacro(nameValuePair[0], nameValuePair[1]);
+        } else if (propertyValuePair[0].equals(MPS_PROJECT)) {
+          whatToDo.addProjectFile(new File(propertyValuePair[1]));
+        } else if (propertyValuePair[0].equals(FAIL_ON_ERROR)) {
+          whatToDo.myFailOnError = Boolean.parseBoolean(propertyValuePair[1]);
+        } else if (propertyValuePair[0].equals(LOG_LEVEL)) {
+          whatToDo.myLogLevel = Integer.parseInt(propertyValuePair[1]);
+        } else {
+          whatToDo.putProperty(propertyValuePair[0], propertyValuePair[1]);
         }
       }
     }
-    return whatToGenerate;
+    return whatToDo;
+  }
+
+  public void putProperty(String name, String value) {
+    myProperties.put(name, value);
+  }
+
+  public String getProperty(String name) {
+    return myProperties.get(name);
   }
 }

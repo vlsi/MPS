@@ -27,16 +27,16 @@ public class GeneratorWorker extends MpsWorker {
   protected final MyMessageHandler myMessageHandler = new MyMessageHandler();
 
   public static void main(String[] args) {
-    MpsWorker mpsWorker = new GeneratorWorker(WhatToGenerate.fromDumpInFile(new File(args[0])), new SystemOutLogger());
+    MpsWorker mpsWorker = new GeneratorWorker(WhatToDo.fromDumpInFile(new File(args[0])), new SystemOutLogger());
     mpsWorker.doTheJob();
   }
 
-  public GeneratorWorker(WhatToGenerate whatToGenerate, ProjectComponent component) {
-    super(whatToGenerate, component);
+  public GeneratorWorker(WhatToDo whatToDo, ProjectComponent component) {
+    super(whatToDo, component);
   }
 
-  public GeneratorWorker(WhatToGenerate whatToGenerate, AntLogger logger) {
-    super(whatToGenerate, logger);
+  public GeneratorWorker(WhatToDo whatToDo, AntLogger logger) {
+    super(whatToDo, logger);
   }
 
   protected void executeTask(final MPSProject project, final List<SModelDescriptor> models) {
@@ -49,7 +49,7 @@ public class GeneratorWorker extends MpsWorker {
   }
 
   protected void showStatistic() {
-    if (!myErrors.isEmpty() && myWhatToGenerate.getFailOnError()) {
+    if (!myErrors.isEmpty() && myWhatToDo.getFailOnError()) {
       StringBuffer sb = new StringBuffer();
       sb.append(myErrors.size());
       sb.append(" errors during generation:\n");
@@ -94,7 +94,7 @@ public class GeneratorWorker extends MpsWorker {
       new GenerateFilesGenerationType() {
         @Override
         public boolean requiresCompilationAfterGeneration() {
-          return myWhatToGenerate.getCompile();
+          return Boolean.parseBoolean(myWhatToDo.getProperty(GenerateTask.COMPILE));
         }
       },
       emptyProgressIndicator,

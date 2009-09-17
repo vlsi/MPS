@@ -64,9 +64,9 @@ public class GenerateTaskFilesCreationTest extends BaseMPSTest {
 
     File destdir = extractProject(projectName);
 
-    WhatToGenerate whatToGenerate = new WhatToGenerate();
-    whatToGenerate.addModuleDirectory(new File(getLanguagePath(destdir, projectName, languageName)));
-    doGenerate(whatToGenerate);
+    WhatToDo whatToDo = new WhatToDo();
+    whatToDo.addModuleDirectory(new File(getLanguagePath(destdir, projectName, languageName)));
+    doGenerate(whatToDo);
 
     assertStructureGenerated(projectName, languageName, destdir, CONCEPT_NAME);
     assertEditorGenerated(projectName, languageName, destdir, CONCEPT_NAME);
@@ -103,9 +103,9 @@ public class GenerateTaskFilesCreationTest extends BaseMPSTest {
   private File generateProjectFromZipFile(String projectName) throws IOException {
     File destdir = extractProject(projectName);
 
-    WhatToGenerate whatToGenerate = new WhatToGenerate();
-    whatToGenerate.addProjectFile(new File(destdir.getAbsolutePath() + File.separator + projectName + File.separator + projectName + ".mpr"));
-    doGenerate(whatToGenerate);
+    WhatToDo whatToDo = new WhatToDo();
+    whatToDo.addProjectFile(new File(destdir.getAbsolutePath() + File.separator + projectName + File.separator + projectName + ".mpr"));
+    doGenerate(whatToDo);
 
     return destdir;
   }
@@ -121,8 +121,8 @@ public class GenerateTaskFilesCreationTest extends BaseMPSTest {
     return destdir;
   }
 
-  private void doGenerate(WhatToGenerate whatToGenerate) {
-    MpsWorker mpsWorker = new GeneratorWorker(whatToGenerate, new ProjectComponent() {
+  private void doGenerate(WhatToDo whatToDo) {
+    MpsWorker mpsWorker = new GeneratorWorker(whatToDo, new ProjectComponent() {
       public void log(String msg) {
         System.out.println(msg);
       }

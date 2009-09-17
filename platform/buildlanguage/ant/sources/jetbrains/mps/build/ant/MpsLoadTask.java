@@ -21,7 +21,7 @@ import java.lang.reflect.InvocationTargetException;
 
 public abstract class MpsLoadTask extends org.apache.tools.ant.Task {
   private File myMpsHome;
-  protected final WhatToGenerate myWhatToGenerate = new WhatToGenerate();
+  protected final WhatToDo myWhatToDo = new WhatToDo();
   private boolean myUsePropertiesAsMacro = false;
   private boolean myFork = false;
   private final List<String> myJvmArgs = new ArrayList<String>();
@@ -35,26 +35,22 @@ public abstract class MpsLoadTask extends org.apache.tools.ant.Task {
   }
 
   public void setFailOnError(boolean failOnError) {
-    myWhatToGenerate.updateFailOnError(failOnError);
+    myWhatToDo.updateFailOnError(failOnError);
   }
 
   public void setLogLevel(LogLevelAttribute logLevel) {
-    myWhatToGenerate.updateLogLevel(logLevel.getLevel());
+    myWhatToDo.updateLogLevel(logLevel.getLevel());
   }
 
   public void setFork(boolean fork) {
     myFork = fork;
   }
 
-  public void setCompile(boolean compile) {
-    myWhatToGenerate.updateCompile(compile);
-  }
-
   public void addConfiguredModels(DirSet modelsInner) {
     Iterator it = modelsInner.iterator();
     while (it.hasNext()) {
       FileResource next = (FileResource) it.next();
-      myWhatToGenerate.addModelDirectory(next.getFile());
+      myWhatToDo.addModelDirectory(next.getFile());
     }
   }
 
@@ -62,20 +58,20 @@ public abstract class MpsLoadTask extends org.apache.tools.ant.Task {
     Iterator it = modulesInner.iterator();
     while (it.hasNext()) {
       FileResource next = (FileResource) it.next();
-      myWhatToGenerate.addModuleDirectory(next.getFile());
+      myWhatToDo.addModuleDirectory(next.getFile());
     }
   }
 
   public void addConfiguredProject(ProjectDataType projectInner) {
-    myWhatToGenerate.addProjectFile(projectInner.getFile());
+    myWhatToDo.addProjectFile(projectInner.getFile());
   }
 
   public void addConfiguredLibrary(LibraryDataType libraryInner) {
-    myWhatToGenerate.addLibrary(libraryInner.getName(), libraryInner.getDir());
+    myWhatToDo.addLibrary(libraryInner.getName(), libraryInner.getDir());
   }
 
   public void addConfiguredMacro(Macro macro) {
-    myWhatToGenerate.addMacro(macro.getName(), macro.getPath().getAbsolutePath());
+    myWhatToDo.addMacro(macro.getName(), macro.getPath().getAbsolutePath());
   }
 
   public boolean getUsePropertiesAsMacro() {
@@ -102,7 +98,7 @@ public abstract class MpsLoadTask extends org.apache.tools.ant.Task {
       Hashtable properties = getProject().getProperties();
       for (Object name : properties.keySet()) {
         Object value = properties.get(name);
-        myWhatToGenerate.addMacro((String) name, (String) value);
+        myWhatToDo.addMacro((String) name, (String) value);
       }
     }
 
@@ -128,7 +124,7 @@ public abstract class MpsLoadTask extends org.apache.tools.ant.Task {
       commandLine.add(currentClassPathString + sb.toString());
       commandLine.add(getGeneratorClass().getCanonicalName());
       try {
-        commandLine.add(myWhatToGenerate.dumpToTmpFile().getAbsolutePath());
+        commandLine.add(myWhatToDo.dumpToTmpFile().getAbsolutePath());
       } catch (FileNotFoundException e) {
         throw new BuildException(e);
       }
@@ -158,9 +154,9 @@ public abstract class MpsLoadTask extends org.apache.tools.ant.Task {
       URLClassLoader classLoader = new URLClassLoader(classPathUrls.toArray(new URL[classPathUrls.size()]), ProjectComponent.class.getClassLoader());
       try {
 
-        Class<?> whatToGenerateClass = classLoader.loadClass(WhatToGenerate.class.getCanonicalName());
+        Class<?> whatToGenerateClass = classLoader.loadClass(WhatToDo.class.getCanonicalName());
         Object whatToGenerate = whatToGenerateClass.newInstance();
-        myWhatToGenerate.cloneTo(whatToGenerate);
+        myWhatToDo.cloneTo(whatToGenerate);
 
         Class<?> generatorClass = classLoader.loadClass(getGeneratorClass().getCanonicalName());
         Constructor<?> constructor = generatorClass.getConstructor(whatToGenerateClass, ProjectComponent.class);
