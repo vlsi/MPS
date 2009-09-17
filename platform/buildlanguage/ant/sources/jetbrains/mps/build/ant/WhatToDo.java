@@ -23,7 +23,6 @@ import java.lang.reflect.Method;
 import java.lang.reflect.InvocationTargetException;
 
 import jetbrains.mps.util.FileUtil;
-import com.sun.xml.internal.bind.v2.util.QNameMap;
 
 public class WhatToDo {
   private final Set<File> myModelDirectories = new LinkedHashSet<File>();
