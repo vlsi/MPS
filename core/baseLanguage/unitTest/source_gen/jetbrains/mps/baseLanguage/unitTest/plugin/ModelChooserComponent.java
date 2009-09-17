@@ -42,7 +42,7 @@ public class ModelChooserComponent extends BaseChooserComponent {
         });
         SModelDescriptor modelDescriptor = CommonChoosers.showDialogModelChooser(ModelChooserComponent.this, models, Collections.EMPTY_LIST);
         if (modelDescriptor != null) {
-          result.append(modelDescriptor.getName());
+          result.append(modelDescriptor.getLongName());
           ModelChooserComponent.this.setText(result.toString());
         }
       }

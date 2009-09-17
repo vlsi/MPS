@@ -504,7 +504,7 @@ public class JUnitConfigEditor extends JPanel {
         }
       });
     }
-    if (myThis.getModel() != null) {
+    if (config.getStateObject().model != null) {
       myThis.setModelValue(config.getStateObject().model);
       ModelAccess.instance().runReadAction(new Runnable() {
         public void run() {
@@ -514,7 +514,7 @@ public class JUnitConfigEditor extends JPanel {
         }
       });
     }
-    if (myThis.getModule() != null) {
+    if (config.getStateObject().module != null) {
       myThis.setModuleValue(config.getStateObject().module);
       myThis.myModuleName0.setText(config.getStateObject().module);
     }

@@ -546,20 +546,6 @@
             </node>
           </node>
         </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1719835910174526224">
-          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1719835910174526225">
-            <node role="operand" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference" id="1719835910174526226">
-              <link role="classifier" targetNodeId="3.~System" />
-              <link role="variableDeclaration" targetNodeId="3.~System.out" />
-            </node>
-            <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1719835910174526227">
-              <link role="baseMethodDeclaration" targetNodeId="4.~PrintStream.println(java.lang.String):void" />
-              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1719835910174526228">
-                <property name="value" value="Hello" />
-              </node>
-            </node>
-          </node>
-        </node>
       </node>
       <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1208532410181">
         <property name="name" value="argv" />
@@ -1755,6 +1741,7 @@
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1208869162853">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" id="1208869167256">
           <link role="constructorDeclaration" targetNodeId="4.~FilterOutputStream.&lt;init&gt;(java.io.OutputStream)" resolveInfo="FilterOutputStream" />
+          <link role="baseMethodDeclaration" targetNodeId="4.~FilterOutputStream.&lt;init&gt;(java.io.OutputStream)" resolveInfo="FilterOutputStream" />
           <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1208869177656">
             <link role="variableDeclaration" targetNodeId="1208869171607" resolveInfo="out" />
           </node>
