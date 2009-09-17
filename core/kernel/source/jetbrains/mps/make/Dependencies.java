@@ -59,6 +59,8 @@ class Dependencies {
   }
 
   private void collectDependencies(IModule m) {
+    if (m.getGeneratorOutputPath() == null) return;
+
     List<SModelDescriptor> models = m.getOwnModelDescriptors();
     for (SModelDescriptor md : models) {
       if (SModelStereotype.isUserModel(md)) continue;

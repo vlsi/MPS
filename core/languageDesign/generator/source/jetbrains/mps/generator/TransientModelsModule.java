@@ -108,7 +108,7 @@ public class TransientModelsModule extends AbstractModule implements ProjectComp
   }
 
   public String getGeneratorOutputPath() {
-    throw new UnsupportedOperationException();
+    return null;
   }
 
   public void save() {
