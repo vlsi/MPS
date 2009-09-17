@@ -61,7 +61,7 @@ public abstract class AbstractNodeInformationDialog extends JDialog {
 
     myTextArea = new JTextArea();
     myTextArea.setEditable(false);
-    String text = createNodeInfo(node);    
+    String text = createNodeInfo(node);
     myTextArea.setText(text);
     myTextArea.setFont(EditorSettings.getInstance().getDefaultEditorFont());
 
@@ -83,7 +83,7 @@ public abstract class AbstractNodeInformationDialog extends JDialog {
 
     if (rect.y + rect.height < getY() + getHeight()) {
       setLocation(getX(), rect.y + rect.height - getHeight());
-    }    
+    }
     addListeners();
   }
 
@@ -100,7 +100,7 @@ public abstract class AbstractNodeInformationDialog extends JDialog {
     prevFocusOwner.removeKeyListener(myOwnerKeyListener);
     prevFocusOwner.removeMouseListener(myOwnerMouseListener);
     super.dispose();
-  }  
+  }
 
   protected abstract String createNodeInfo(SNode node);
 }

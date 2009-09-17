@@ -324,6 +324,10 @@
         <component>
             <implementation-class>jetbrains.mps.smodel.OnReloadingUndoCleaner</implementation-class>
         </component>
+
+        <component>
+            <implementation-class>jetbrains.mps.ide.tooltips.MPSToolTipManager</implementation-class>
+        </component>
     </application-components>
 
     <project-components>

@@ -44836,7 +44836,7 @@
       <node role="type" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="2216248270835510468" />
     </node>
     <node role="keystroke" type="jetbrains.mps.lang.plugin.structure.KeyMapKeystroke" id="2216248270835510463">
-      <property name="modifiers" value="ctrl+shift" />
+      <property name="modifiers" value="alt+shift" />
       <property name="keycode" value="VK_F6" />
     </node>
     <node role="parameter" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterDeclaration" id="2219586235488973608">

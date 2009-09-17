@@ -27,6 +27,7 @@ import jetbrains.mps.ide.IdeMain;
 import jetbrains.mps.ide.IdeMain.TestMode;
 import jetbrains.mps.ide.SystemInfo;
 import jetbrains.mps.ide.ThreadUtils;
+import jetbrains.mps.ide.tooltips.MPSToolTipManager;
 import jetbrains.mps.ide.actions.EditorInternal_ActionGroup;
 import jetbrains.mps.ide.actions.EditorPopup_ActionGroup;
 import jetbrains.mps.ide.actions.GoByCurrentReference_Action;
@@ -92,6 +93,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
   public static final String EDITOR_POPUP_MENU_ACTIONS_INTERNAL = EditorInternal_ActionGroup.ID;
 
   private static final int SCROLL_GAP = 15;
+  public static final boolean USE_NEW_TOOLTIPS = false;
 
   public static void turnOnAliasingIfPossible(Graphics2D g) {
     if (EditorSettings.getInstance().isUseAntialiasing()) {
@@ -456,7 +458,11 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     myIntentionsSupport = new IntentionsSupport(this);
     myAutoValidator = new AutoValidator(this);
 
-    ToolTipManager.sharedInstance().registerComponent(this);
+    if (USE_NEW_TOOLTIPS) {
+      MPSToolTipManager.getInstance().registerComponent(this);
+    } else {
+      ToolTipManager.sharedInstance().registerComponent(this);
+    }
     CaretBlinker.getInstance().registerEditor(this);
 
     KeyboardFocusManager.getCurrentKeyboardFocusManager().addPropertyChangeListener("focusOwner", myFocusListener = new PropertyChangeListener() {
