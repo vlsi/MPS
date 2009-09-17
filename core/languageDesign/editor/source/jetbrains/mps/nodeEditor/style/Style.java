@@ -41,6 +41,7 @@ public class Style {
 
   public Style(EditorCell contextCell) {
     myEditorCell = contextCell;
+    updateCache();
   }
 
   public void apply(EditorCell cell) {
@@ -60,12 +61,7 @@ public class Style {
   }
 
   public <T> T get(StyleAttribute<T> attribute) {
-    Object value = myCachedAttributeValues[attribute.getIndex()];
-    if (value != null) {
-      return (T) value;
-    } else {
-      return attribute.combine(null, null);
-    }
+    return (T) myCachedAttributeValues[attribute.getIndex()];
   }
 
   public <T> T getCurrent(StyleAttribute<T> attribute) {
@@ -115,9 +111,7 @@ public class Style {
         changedAttributes.add(attribute);
       }
 
-      if (newValue != null) {
-        myCachedAttributeValues[attribute.getIndex()] =  newValue;
-      }
+      myCachedAttributeValues[attribute.getIndex()] =  newValue;
     }
 
     if (!changedAttributes.isEmpty()) {
