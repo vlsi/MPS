@@ -176,12 +176,22 @@ public class NodeSubstituteChooser implements KeyboardHandler {
         try {
           Collections.sort(matchingActions, new Comparator<INodeSubstituteAction>() {
             private Map<INodeSubstituteAction, Integer> mySortPriorities = new HashMap<INodeSubstituteAction, Integer>();
+            private Map<INodeSubstituteAction, String> myVisibleMatchingTexts = new HashMap<INodeSubstituteAction, String>();
 
             private int getSortPriority(INodeSubstituteAction a) {
               Integer result = mySortPriorities.get(a);
               if (result == null) {
                 result = a.getSortPriority(pattern);
                 mySortPriorities.put(a, result);
+              }
+              return result;
+            }
+
+            private String getVisibleMatchingText(INodeSubstituteAction a) {
+              String result = myVisibleMatchingTexts.get(a);
+              if (result == null) {
+                result = a.getVisibleMatchingText(pattern);
+                myVisibleMatchingTexts.put(a, result);
               }
               return result;
             }
@@ -193,8 +203,8 @@ public class NodeSubstituteChooser implements KeyboardHandler {
                 return p1 - p2;
               }
 
-              String s1 = i1.getVisibleMatchingText(pattern);
-              String s2 = i2.getVisibleMatchingText(pattern);
+              String s1 = getVisibleMatchingText(i1);
+              String s2 = getVisibleMatchingText(i2);
               boolean null_s1 = (s1 == null || s1.length() == 0);
               boolean null_s2 = (s2 == null || s2.length() == 0);
               if (null_s1 && null_s2) return 0;
