@@ -15,11 +15,15 @@
  */
 package jetbrains.mps.nodeEditor.style;
 
+import java.util.*;
+
 public abstract class StyleAttribute<T> {
+  private int myIndex;
   private String myName;
 
-  public StyleAttribute(String name) {
+  StyleAttribute(String name) {
     myName = name;
+    myIndex = StyleAttributes.register(this);
   }
 
   public String getName() {
@@ -28,6 +32,10 @@ public abstract class StyleAttribute<T> {
 
   public String toString() {
     return myName;
+  }
+
+  public int getIndex() {
+    return myIndex;
   }
 
   public abstract T combine(T parentValue, T currentValue);

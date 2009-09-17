@@ -15,15 +15,15 @@
  */
 package jetbrains.mps.nodeEditor.style;
 
-public class InheritableStyleAttribute<T> extends StyleAttribute<T> {
+class InheritableStyleAttribute<T> extends StyleAttribute<T> {
   private T myDefaultValue;
 
-  public InheritableStyleAttribute(String name, T defaultValue) {
+  InheritableStyleAttribute(String name, T defaultValue) {
     super(name);
     myDefaultValue = defaultValue;
   }
 
-  public InheritableStyleAttribute(String name) {
+  InheritableStyleAttribute(String name) {
     this(name, null);
   }
 

@@ -29,8 +29,10 @@ public class Style {
   private Style myParent;
   private EditorCell myEditorCell;
   private List<Style> myChildren = new ArrayList<Style>(0);
-  private Map<StyleAttribute, Object> myAttributeValues = new HashMap<StyleAttribute, Object>(1);
-  private Map<StyleAttribute, Object> myCachedAttributeValues = new HashMap<StyleAttribute, Object>(1);
+
+  private Object[] myAttributeValues = new Object[StyleAttributes.getAttributesCount()];
+  private Object[] myCachedAttributeValues = new Object[StyleAttributes.getAttributesCount()];
+
   private List<StyleListener> myStyleListeners = null;
 
   public Style() {
@@ -58,7 +60,7 @@ public class Style {
   }
 
   public <T> T get(StyleAttribute<T> attribute) {
-    Object value = myCachedAttributeValues.get(attribute);
+    Object value = myCachedAttributeValues[attribute.getIndex()];
     if (value != null) {
       return (T) value;
     } else {
@@ -67,22 +69,25 @@ public class Style {
   }
 
   public <T> T getCurrent(StyleAttribute<T> attribute) {
-    return (T) myAttributeValues.get(attribute);
+    return (T) myAttributeValues[attribute.getIndex()];
   }
 
   public<T> void set(StyleAttribute<T> attribute, T value) {
-    myAttributeValues.put(attribute, value);
+    myAttributeValues[attribute.getIndex()] = value;
     updateCache();
   }
 
   public<T> void set(StyleAttribute<T> attribute, AttributeCalculator<T> valueCalculator) {
-    myAttributeValues.put(attribute, valueCalculator);
+    myAttributeValues[attribute.getIndex()] = valueCalculator;
     updateCache();
   }
 
   public void putAll(Style s) {
-    for (StyleAttribute sa : s.myAttributeValues.keySet()) {
-      myAttributeValues.put(sa, s.myAttributeValues.get(sa));      
+    for (int i = 0; i < s.myAttributeValues.length; i++) {
+      Object value = s.myAttributeValues[i];
+      if (value != null) {
+        myAttributeValues[i] = value;
+      }
     }
     updateCache();
   }
@@ -91,38 +96,27 @@ public class Style {
     return myParent;
   }
 
-  private void updateCache() {
-    Map<StyleAttribute, Object> oldCachedValues = myCachedAttributeValues;
-
-    myCachedAttributeValues = new HashMap<StyleAttribute, Object>();
-    Set<StyleAttribute> attributes = new HashSet<StyleAttribute>();
-    attributes.addAll(myAttributeValues.keySet());
-
-    if (getParentStyle() != null) {
-      for (StyleAttribute sa : getParentStyle().myCachedAttributeValues.keySet()) {
-        if (!(sa instanceof SimpleStyleAttribute)) {
-          attributes.add(sa);
-        }
-      }
-    }
+  private void updateCache() {    
+    Object[] oldCachedValues = myCachedAttributeValues;
+    myCachedAttributeValues = new Object[StyleAttributes.getAttributesCount()];
 
     Set<StyleAttribute> changedAttributes = new HashSet<StyleAttribute>();
 
-    for (StyleAttribute attribute : attributes) {
+    for (StyleAttribute attribute : StyleAttributes.getAttributes()) {
       Object parentValue = getParentStyle() == null ? null : getParentStyle().get(attribute);
-      Object currentValue = myAttributeValues.get(attribute);
+      Object currentValue = myAttributeValues[attribute.getIndex()];
 
       if (currentValue instanceof AttributeCalculator) {
         currentValue = ((AttributeCalculator) currentValue).calculate(myEditorCell);
       }
       Object newValue = attribute.combine(parentValue, currentValue);
 
-      if (!EqualUtil.equals(newValue, oldCachedValues.get(attribute))) {
+      if (!EqualUtil.equals(newValue, oldCachedValues[attribute.getIndex()])) {
         changedAttributes.add(attribute);
       }
 
       if (newValue != null) {
-        myCachedAttributeValues.put(attribute, newValue);
+        myCachedAttributeValues[attribute.getIndex()] =  newValue;
       }
     }
 

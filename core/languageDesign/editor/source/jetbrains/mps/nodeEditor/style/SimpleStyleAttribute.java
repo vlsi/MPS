@@ -15,15 +15,15 @@
  */
 package jetbrains.mps.nodeEditor.style;
 
-public class SimpleStyleAttribute<T> extends StyleAttribute<T> {
+class SimpleStyleAttribute<T> extends StyleAttribute<T> {
   private T myDefaultValue;
 
-  public SimpleStyleAttribute(String name, T defaultValue) {
+  SimpleStyleAttribute(String name, T defaultValue) {
     super(name);
     myDefaultValue = defaultValue;
   }
 
-  public SimpleStyleAttribute(String name) {
+  SimpleStyleAttribute(String name) {
     this(name, null);
   }
 

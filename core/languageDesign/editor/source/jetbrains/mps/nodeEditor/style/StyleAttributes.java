@@ -23,8 +23,37 @@ import jetbrains.mps.smodel.SNode;
 
 import java.awt.Color;
 import java.awt.Font;
+import java.util.List;
+import java.util.ArrayList;
+import java.util.Collections;
 
 public class StyleAttributes {
+  private static List<StyleAttribute> ourAttributes = new ArrayList<StyleAttribute>();
+  private static boolean ourFrozen = false;
+
+  static int getAttributesCount() {
+    return ourAttributes.size();
+  }
+
+  static List<StyleAttribute> getAttributes() {
+    ourFrozen = true;
+    return Collections.unmodifiableList(ourAttributes);
+  }
+
+  static StyleAttribute getAttribute(int index) {
+    ourFrozen = true;
+    return ourAttributes.get(index);
+  }
+
+  static int register(StyleAttribute a) {
+    if (ourFrozen) {
+      throw new RuntimeException();
+    }
+    ourAttributes.add(a);    
+    return ourAttributes.size() - 1;
+  }
+
+
   public static final StyleAttribute<Color> BACKGROUND_COLOR = new InheritableStyleAttribute<Color>("background-color");
   public static final StyleAttribute<Color> BRACKETS_COLOR = new InheritableStyleAttribute<Color>("bracket-color", Color.BLACK);
   public static final StyleAttribute<Color> TEXT_COLOR = new InheritableStyleAttribute<Color>("text-color", Color.BLACK);
