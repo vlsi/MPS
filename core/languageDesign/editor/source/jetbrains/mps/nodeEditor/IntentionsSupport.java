@@ -138,9 +138,9 @@ public class IntentionsSupport {
               finished[0] = true;
             }
           });
-          if (!finished[0]) {
-            return;
-          }
+
+          if (!finished[0]) return;
+          if (interrupted()) return;
 
           ModelAccess.instance().runReadInEDT(new Runnable() {
             public void run() {
