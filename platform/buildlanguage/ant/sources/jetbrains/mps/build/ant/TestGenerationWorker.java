@@ -150,7 +150,7 @@ public class TestGenerationWorker extends GeneratorWorker {
           sb.append(" (");
           sb.append(p.getSourceLineNumber());
           sb.append("): ");
-          sb.append(p.getMessage());
+          sb.append(myBuildServerMessageFormat.escapeBuildMessage(p.getMessage()));
           sb.append(myBuildServerMessageFormat.getLinesSeparator());
         }
       }
