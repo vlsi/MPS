@@ -84,14 +84,18 @@ public class DefaultJUnit_Configuration extends BaseRunConfig {
                 error.append("model is not selected or does not exist").append("\n");
               }
             } else if (DefaultJUnit_Configuration.this.getStateObject().type == JUnitRunTypes.MODULE) {
+              boolean checked = false;
               if (DefaultJUnit_Configuration.this.getStateObject().module != null) {
                 for (IModule module : GlobalScope.getInstance().getVisibleModules()) {
-                  if (module.getModuleFqName().equals(module)) {
+                  if (module.getModuleFqName().equals(module.getModuleFqName())) {
+                    checked = true;
                     break;
                   }
                 }
               }
-              error.append("module is not selected or does not exist").append("\n");
+              if (!(checked)) {
+                error.append("module is not selected or does not exist").append("\n");
+              }
             }
           }
         });

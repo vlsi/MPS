@@ -134,7 +134,6 @@ public class JUnitConfigEditor extends JPanel {
     JbRadioButton component = new JbRadioButton();
     this.myIsModule0 = component;
     component.setText("All in Module");
-    component.setSelected(true);
     component.setGroup(myThis.getGroup());
     component.addActionListener(new ActionListener() {
       public void actionPerformed(ActionEvent event) {
@@ -398,17 +397,19 @@ public class JUnitConfigEditor extends JPanel {
         if (config.getStateObject().module != null) {
           config.getStateObject().module = myThis.getModule().getModuleFqName();
         }
-        JUnitRunTypes type;
+        JUnitRunTypes type = null;
         if (myThis.myIsModule0.isSelected()) {
           type = JUnitRunTypes.MODULE;
         } else if (myThis.myIsModel0.isSelected()) {
           type = JUnitRunTypes.MODEL;
         } else if (myThis.myIsClass0.isSelected()) {
           type = JUnitRunTypes.TESTCLASS;
-        } else {
+        } else if (myThis.myIsMethod0.isSelected()) {
           type = JUnitRunTypes.METHOD;
         }
-        config.getStateObject().type = type;
+        if (type != null) {
+          config.getStateObject().type = type;
+        }
       }
     });
   }
@@ -418,12 +419,16 @@ public class JUnitConfigEditor extends JPanel {
       switch (config.getStateObject().type) {
         case METHOD:
           myThis.myIsMethod0.setSelected(true);
+          break;
         case TESTCLASS:
           myThis.myIsClass0.setSelected(true);
+          break;
         case MODEL:
           myThis.myIsModel0.setSelected(true);
+          break;
         case MODULE:
           myThis.myIsModule0.setSelected(true);
+          break;
         default:
       }
     } else {
@@ -440,21 +445,24 @@ public class JUnitConfigEditor extends JPanel {
           myThis.myNodeName0.setText(INamedConcept_Behavior.call_getFqName_1213877404258(myThis.getNode()));
           myThis.myNodeNameWithMethod0.setText(INamedConcept_Behavior.call_getFqName_1213877404258(myThis.getNode()));
           myThis.myMethodName0.setTestCase(INamedConcept_Behavior.call_getFqName_1213877404258(myThis.getNode()));
+          myThis.setModel(SModelOperations.getModelName(SNodeOperations.getModel(myThis.getNode())));
           myThis.myModelName0.setText(SModelOperations.getModelName(SNodeOperations.getModel(myThis.getNode())));
+          myThis.setModule(SNodeOperations.getModel(myThis.getNode()).getModelDescriptor().getModule().getModuleFqName());
           myThis.myModuleName0.setText(SNodeOperations.getModel(myThis.getNode()).getModelDescriptor().getModule().getModuleFqName());
         }
       });
     }
-    if (config.getStateObject().model != null) {
+    if (myThis.getModel() != null) {
       myThis.setModel(config.getStateObject().model);
       ModelAccess.instance().runReadAction(new Runnable() {
         public void run() {
           myThis.myModelName0.setText(config.getStateObject().model);
+          myThis.setModule(myThis.getModel().getModelDescriptor().getModule().getModuleFqName());
           myThis.myModuleName0.setText(myThis.getModel().getModelDescriptor().getModule().getModuleFqName());
         }
       });
     }
-    if (config.getStateObject().module != null) {
+    if (myThis.getModule() != null) {
       myThis.setModule(config.getStateObject().module);
       myThis.myModuleName0.setText(config.getStateObject().module);
     }
