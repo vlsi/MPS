@@ -54,7 +54,7 @@ import java.util.*;
 import java.util.concurrent.atomic.AtomicReference;
 
 public class IntentionsSupport {
-  static final long INTENTION_SHOW_DELAY = 700;
+  static final long INTENTION_SHOW_DELAY = 1000;
 
   private AbstractAction myShowIntentionsAction;
   private Point myLightBulbLocation = new Point();
