@@ -1230,9 +1230,10 @@ public class JavaConverterTreeBuilder {
   void processInitializer(Initializer initializer, ClassConcept classConcept) {
     StatementList body;
     if (initializer.isStatic()) {
-      StatementList statementList = StatementList.newInstance(myCurrentModel);
-      classConcept.setStaticInitializer(statementList);
-      body = statementList;
+      StaticInitializer staticInitializer = StaticInitializer.newInstance(myCurrentModel);
+      classConcept.setClassInitializer(staticInitializer);
+      staticInitializer.setStatementList(StatementList.newInstance(myCurrentModel));
+      body = staticInitializer.getStatementList();
     } else {
       InstanceInitializer instanceInitializer = InstanceInitializer.newInstance(myCurrentModel);
       classConcept.setInstanceInitializer(instanceInitializer);

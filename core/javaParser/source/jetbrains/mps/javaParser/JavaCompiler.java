@@ -91,6 +91,25 @@ public class JavaCompiler {
     }
   }
 
+  public void addSourceFromDirectory(File dir) {
+    assert dir.isDirectory();
+    for (File file : dir.listFiles()) {
+      if (file.isDirectory()) {
+        addSourceFromDirectory(file);
+      } else {
+        String extension;
+        String nameAndExtension = file.getName();
+        int offset = nameAndExtension.lastIndexOf('.');
+        if (offset >= 0) {
+          extension = nameAndExtension.substring(offset + 1);
+          if ("java".equals(extension)) {
+            addSourceFromFile(file);
+          }
+        }
+      }
+    }
+  }
+
   public void addSource(String classFqName, String text) {
     CompilationUnit compilationUnit = new CompilationUnit(text.toCharArray(), classFqName.replace(".", File.separator) + MPSExtentions.DOT_JAVAFILE, "UTF-8");
     myCompilationUnits.put(classFqName, compilationUnit);
@@ -110,6 +129,7 @@ public class JavaCompiler {
     //c.options.verbose = true;
 
     c.compile(myCompilationUnits.values().toArray(new CompilationUnit[0]));
+    buildAST();
   }
 
   public void buildAST() {
@@ -149,7 +169,6 @@ public class JavaCompiler {
   private class MyCompilerRequestor implements ICompilerRequestor {
     public void acceptResult(CompilationResult result) {
       myCompilationResults.add(result);
-      buildAST();
     }
   }
 

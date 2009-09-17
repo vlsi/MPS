@@ -27023,6 +27023,20 @@
             </node>
           </node>
         </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="6232617081787066606">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="6232617081787066608">
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="6232617081787066607">
+              <link role="variableDeclaration" targetNodeId="3302512009684130214" resolveInfo="fileChooser" />
+            </node>
+            <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="6232617081787068421">
+              <link role="baseMethodDeclaration" targetNodeId="72.~JFileChooser.setFileSelectionMode(int):void" resolveInfo="setFileSelectionMode" />
+              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference" id="6232617081787068422">
+                <link role="classifier" targetNodeId="72.~JFileChooser" resolveInfo="JFileChooser" />
+                <link role="variableDeclaration" targetNodeId="72.~JFileChooser.FILES_AND_DIRECTORIES" resolveInfo="FILES_AND_DIRECTORIES" />
+              </node>
+            </node>
+          </node>
+        </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="3302512009684150776">
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="3302512009684150777">
             <property name="name" value="fileFilter" />
@@ -27301,15 +27315,44 @@
                 </node>
               </node>
             </node>
-            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="5976481792694995280">
-              <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="5976481792694995282">
-                <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="5976481792694995281">
-                  <link role="variableDeclaration" targetNodeId="5976481792694816417" resolveInfo="javaCompiler" />
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="6232617081787068472">
+              <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="6232617081787068473">
+                <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="6232617081787068482">
+                  <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="6232617081787068484">
+                    <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="6232617081787068483">
+                      <link role="variableDeclaration" targetNodeId="5976481792694816417" resolveInfo="javaCompiler" />
+                    </node>
+                    <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="6232617081787068488">
+                      <link role="baseMethodDeclaration" targetNodeId="211.~JavaCompiler.addSourceFromDirectory(java.io.File):void" resolveInfo="addSourceFromDirectory" />
+                      <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="6232617081787068489">
+                        <link role="variableDeclaration" targetNodeId="3302512009684204938" resolveInfo="chosenFile" />
+                      </node>
+                    </node>
+                  </node>
                 </node>
-                <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="5976481792694995286">
-                  <link role="baseMethodDeclaration" targetNodeId="211.~JavaCompiler.addSourceFromFile(java.io.File):void" resolveInfo="addSourceFromFile" />
-                  <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="5976481792695001935">
-                    <link role="variableDeclaration" targetNodeId="3302512009684204938" resolveInfo="chosenFile" />
+              </node>
+              <node role="condition" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="6232617081787068477">
+                <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="6232617081787068476">
+                  <link role="variableDeclaration" targetNodeId="3302512009684204938" resolveInfo="chosenFile" />
+                </node>
+                <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="6232617081787068481">
+                  <link role="baseMethodDeclaration" targetNodeId="88.~File.isDirectory():boolean" resolveInfo="isDirectory" />
+                </node>
+              </node>
+              <node role="ifFalseStatement" type="jetbrains.mps.baseLanguage.structure.BlockStatement" id="6232617081787068490">
+                <node role="statements" type="jetbrains.mps.baseLanguage.structure.StatementList" id="6232617081787068491">
+                  <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="5976481792694995280">
+                    <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="5976481792694995282">
+                      <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="5976481792694995281">
+                        <link role="variableDeclaration" targetNodeId="5976481792694816417" resolveInfo="javaCompiler" />
+                      </node>
+                      <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="5976481792694995286">
+                        <link role="baseMethodDeclaration" targetNodeId="211.~JavaCompiler.addSourceFromFile(java.io.File):void" resolveInfo="addSourceFromFile" />
+                        <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="5976481792695001935">
+                          <link role="variableDeclaration" targetNodeId="3302512009684204938" resolveInfo="chosenFile" />
+                        </node>
+                      </node>
+                    </node>
                   </node>
                 </node>
               </node>
