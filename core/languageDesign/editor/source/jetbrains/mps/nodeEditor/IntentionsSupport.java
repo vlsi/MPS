@@ -125,50 +125,48 @@ public class IntentionsSupport {
       public void run() {
         try {
           Thread.sleep(IntentionsSupport.INTENTION_SHOW_DELAY);
+
+          final boolean[] finished = new boolean[1];
+          final boolean[] enabledPresent = new boolean[1];
+          ModelAccess.instance().runReadAction(new Runnable() {
+            public void run() {
+              if (isInconsistentEditor()) {
+                finished[0] = false;
+                return;
+              }
+              enabledPresent[0] = !getEnabledIntentions(new Computable<Boolean>() {
+                public Boolean compute() {
+                  return interrupted();
+                }
+              }).isEmpty();
+              finished[0] = true;
+            }
+          });
+
+          if (!finished[0]) return;
+          if (interrupted()) return;
+
+          ModelAccess.instance().runReadInEDT(new Runnable() {
+            public void run() {
+              if (isInconsistentEditor()) return;
+              if (myEditor.getSelectedCell() == null || !enabledPresent[0]) {
+                hideLightBulb();
+                return;
+              }
+
+              adjustLightBulbLocation();
+              showLightBulb(new Computable<Boolean>() {
+                public Boolean compute() {
+                  return interrupted();
+                }
+              });
+            }
+          });
+
+          myShowIntentionsThread.compareAndSet(this, null);
         } catch (InterruptedException e) {
-          return;
         } catch (RuntimeInterruptedException e) {
-          return;
         }
-
-        final boolean[] finished = new boolean[1];
-        final boolean[] enabledPresent = new boolean[1];
-        ModelAccess.instance().runReadAction(new Runnable() {
-          public void run() {
-            if (isInconsistentEditor()) {
-              finished[0] = false;
-              return;
-            }
-            enabledPresent[0] = !getEnabledIntentions(new Computable<Boolean>() {
-              public Boolean compute() {
-                return interrupted();
-              }
-            }).isEmpty();
-            finished[0] = true;
-          }
-        });
-
-        if (!finished[0]) return;
-        if (interrupted()) return;
-
-        ModelAccess.instance().runReadInEDT(new Runnable() {
-          public void run() {
-            if (isInconsistentEditor()) return;
-            if (myEditor.getSelectedCell() == null || !enabledPresent[0]) {
-              hideLightBulb();
-              return;
-            }
-
-            adjustLightBulbLocation();
-            showLightBulb(new Computable<Boolean>() {
-              public Boolean compute() {
-                return interrupted();
-              }
-            });
-          }
-        });
-
-        myShowIntentionsThread.compareAndSet(this, null);
       }
     });
 
@@ -319,7 +317,7 @@ public class IntentionsSupport {
     SNode node = myEditor.getSelectedNode();
     EditorContext editorContext = myEditor.getEditorContext();
     if (node != null && editorContext != null) {
-      result.addAll(IntentionsManager.getInstance().getAvailableIntentions(node, editorContext,terminated));
+      result.addAll(IntentionsManager.getInstance().getAvailableIntentions(node, editorContext, terminated));
     }
     return result;
   }
