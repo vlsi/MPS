@@ -94,7 +94,7 @@ public class GenerateTask extends org.apache.tools.ant.Task {
     myWhatToGenerate.addLibrary(libraryInner.getName(), libraryInner.getDir());
   }
 
-  public void addConfiguredMacro(Macro macro){
+  public void addConfiguredMacro(Macro macro) {
     myWhatToGenerate.addMacro(macro.getName(), macro.getPath().getAbsolutePath());
   }
 
@@ -243,10 +243,10 @@ public class GenerateTask extends org.apache.tools.ant.Task {
       if (!path.exists() || (!path.isDirectory() && !path.getAbsolutePath().endsWith(".jar"))) {
         throw new BuildException(myMpsHome + " is invalid MPS home path: path " + path + " does not exist or is not a directory or a jar file.");
       } else if (!path.isDirectory()) {
-        classPaths.add(path.getAbsoluteFile());  
+        classPaths.add(path.getAbsoluteFile());
+      } else {
+        gatherAllClassesAndJarsUnder(path, classPaths);
       }
-
-      gatherAllClassesAndJarsUnder(path, classPaths);
     }
     File mpsClasses = new File(myMpsHome + File.separator + "classes");
     if (mpsClasses.exists()) {
