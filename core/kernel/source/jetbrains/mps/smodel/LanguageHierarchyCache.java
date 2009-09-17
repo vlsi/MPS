@@ -268,6 +268,7 @@ public class LanguageHierarchyCache implements ApplicationComponent {
 
     void build() {
       for (ConceptDeclaration cd : myLanguage.getConceptDeclarations()) {
+        if (!cd.isRoot()) continue;
         if (!AbstractConceptDeclaration_Behavior.call_isDefaultSubstitutable_7429110134803670673(cd.getNode())) continue;
 
         String fqName = NameUtil.nodeFQName(cd);
