@@ -182,8 +182,8 @@ public class TextLine {
 
     myPaddingLeft = getHorizontalInternalInset(myStyle.get(StyleAttributes.PADDING_LEFT));
     myPaddingRight = getHorizontalInternalInset(myStyle.get(StyleAttributes.PADDING_RIGHT));
-    myPaddingTop = getVerticalInternalInset(myStyle.get(StyleAttributes.PADDING_LEFT));
-    myPaddingBottom = getVerticalInternalInset(myStyle.get(StyleAttributes.PADDING_LEFT));
+    myPaddingTop = getVerticalInternalInset(myStyle.get(StyleAttributes.PADDING_TOP));
+    myPaddingBottom = getVerticalInternalInset(myStyle.get(StyleAttributes.PADDING_BOTTOM));
 
     myControlOvered = myStyle.get(StyleAttributes.CONTROL_OVERED_REFERENCE);
     myStrikeOut = myStyle.get(StyleAttributes.STRIKE_OUT);
