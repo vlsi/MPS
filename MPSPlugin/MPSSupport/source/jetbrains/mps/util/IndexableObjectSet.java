@@ -22,13 +22,25 @@ public abstract class IndexableObjectSet<E> extends AbstractSet<E> {
   protected abstract E getObject(int index);
 
   public Iterator<E> iterator() {
-    Set<E> result = new HashSet<E>();
-    for (int i = 0; i < myBitSet.size(); i++) {
-      if (myBitSet.get(i)) {
-        result.add(getObject(i));
+    return new Iterator<E>() {
+      private int myCurrent = 0;
+
+      public boolean hasNext() {
+        return myBitSet.nextSetBit(myCurrent) != -1;
       }
-    }
-    return result.iterator();
+
+      public E next() {
+        int nextSetBit = myBitSet.nextSetBit(myCurrent);
+        if (nextSetBit == -1) throw new NoSuchElementException();
+        myCurrent = nextSetBit + 1;
+        return getObject(nextSetBit);
+      }
+
+      public void remove() {
+        if (myCurrent == 0) throw new IllegalStateException();
+        myBitSet.set(myCurrent - 1, false);
+      }
+    };
   }
 
   public int size() {
@@ -104,3 +116,4 @@ public abstract class IndexableObjectSet<E> extends AbstractSet<E> {
     return super.equals(o);
   }
 }
+
