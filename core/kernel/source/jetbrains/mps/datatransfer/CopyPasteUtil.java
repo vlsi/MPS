@@ -353,22 +353,6 @@ public class CopyPasteUtil {
   public static boolean doesClipboardContainNode() {
     Clipboard cb = Toolkit.getDefaultToolkit().getSystemClipboard();
     Transferable content = cb.getContents(null);
-    boolean hasNodes = false;
-    if (content.isDataFlavorSupported(SModelDataFlavor.sNode)) {
-      SNodeTransferable nodeTransferable;
-      try {
-        nodeTransferable = (SNodeTransferable) content.getTransferData(SModelDataFlavor.sNode);
-        hasNodes = nodeTransferable.containsNodes();
-      } catch (UnsupportedFlavorException e) {
-        LOG.error(e);
-      } catch (IOException e) {
-        LOG.error(e);
-      }
-    }
-
-    if (hasNodes) {
-      return true;
-    }
-    return false;
+    return content.isDataFlavorSupported(SModelDataFlavor.sNode);
   }
 }
