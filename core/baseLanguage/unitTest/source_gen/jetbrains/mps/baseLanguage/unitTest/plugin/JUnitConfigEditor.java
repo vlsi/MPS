@@ -521,7 +521,9 @@ public class JUnitConfigEditor extends JPanel {
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
         SModelDescriptor descriptor = myThis.getProject().getScope().getModelDescriptor(SModelReference.fromString(m));
-        myThis.setModel(descriptor.getSModel());
+        if (descriptor != null) {
+          myThis.setModel(descriptor.getSModel());
+        }
       }
     });
   }
