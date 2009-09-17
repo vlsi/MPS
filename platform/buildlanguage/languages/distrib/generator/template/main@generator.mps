@@ -9484,6 +9484,29 @@
         </node>
         <node role="terminator" type="jetbrains.mps.bash.structure.CommandTerminator" id="1635896182103904804" />
       </node>
+      <node role="lines" type="jetbrains.mps.bash.structure.CommandList" id="2286753013029695775">
+        <node role="head" type="jetbrains.mps.bash.structure.HeadCommandList" id="2286753013029695776">
+          <node role="base" type="jetbrains.mps.bash.structure.HeadPipeline" id="2286753013029695777">
+            <node role="command" type="jetbrains.mps.bash.structure.VariableAssingment" id="2286753013029695778">
+              <node role="value" type="jetbrains.mps.bash.structure.GeneralizedWord" id="2286753013029695779">
+                <node role="units" type="jetbrains.mps.bash.structure.BasicParameterExpansion" id="2286753013029695780">
+                  <link role="variable" targetNodeId="2286753013029695773" resolveInfo="DYLD_LIBRARY_PATH" />
+                </node>
+                <node role="units" type="jetbrains.mps.bash.structure.SimpleWord" id="2286753013029695781">
+                  <property name="word" value=":" />
+                </node>
+                <node role="units" type="jetbrains.mps.bash.structure.BasicParameterExpansion" id="2286753013029695782">
+                  <link role="variable" targetNodeId="1635896182103904840" resolveInfo="PWD" />
+                </node>
+              </node>
+              <node role="lvalue" type="jetbrains.mps.bash.structure.VariableReference" id="2286753013029695793">
+                <link role="variable" targetNodeId="2286753013029695773" resolveInfo="DYLD_LIBRARY_PATH" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="terminator" type="jetbrains.mps.bash.structure.CommandTerminator" id="2286753013029695784" />
+      </node>
       <node role="lines" type="jetbrains.mps.bash.structure.CommandList" id="1635896182103904805">
         <node role="head" type="jetbrains.mps.bash.structure.HeadCommandList" id="1635896182103904806">
           <node role="base" type="jetbrains.mps.bash.structure.HeadPipeline" id="1635896182103904807">
@@ -9501,6 +9524,24 @@
           </node>
         </node>
         <node role="terminator" type="jetbrains.mps.bash.structure.CommandTerminator" id="1635896182103904812" />
+      </node>
+      <node role="lines" type="jetbrains.mps.bash.structure.CommandList" id="2286753013029695785">
+        <node role="head" type="jetbrains.mps.bash.structure.HeadCommandList" id="2286753013029695786">
+          <node role="base" type="jetbrains.mps.bash.structure.HeadPipeline" id="2286753013029695787">
+            <node role="command" type="jetbrains.mps.bash.structure.ExternalCommandCall" id="2286753013029695788">
+              <link role="declaration" targetNodeId="6v.3263637656462774233" resolveInfo="export" />
+              <node role="refToOptions" type="jetbrains.mps.bash.structure.ArgumentReference" id="2286753013029695789">
+                <link role="arg" targetNodeId="6v.3263637656462774246" resolveInfo="name" />
+                <node role="value" type="jetbrains.mps.bash.structure.GeneralizedWord" id="2286753013029695790">
+                  <node role="units" type="jetbrains.mps.bash.structure.VariableReference" id="2286753013029695796">
+                    <link role="variable" targetNodeId="2286753013029695773" resolveInfo="DYLD_LIBRARY_PATH" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="terminator" type="jetbrains.mps.bash.structure.CommandTerminator" id="2286753013029695792" />
       </node>
       <node role="lines" type="jetbrains.mps.bash.structure.CommandList" id="1635896182103904813">
         <node role="head" type="jetbrains.mps.bash.structure.HeadCommandList" id="1635896182103904814">
@@ -9579,6 +9620,9 @@
     </node>
     <node role="usedVars" type="jetbrains.mps.bash.structure.VariableNameDeclaration" id="1635896182103904840">
       <property name="name" value="PWD" />
+    </node>
+    <node role="usedVars" type="jetbrains.mps.bash.structure.VariableNameDeclaration" id="2286753013029695773">
+      <property name="name" value="DYLD_LIBRARY_PATH" />
     </node>
     <node role="rootTemplateAnnotation$attribute" type="jetbrains.mps.lang.generator.structure.RootTemplateAnnotation" id="1635896182103904841">
       <link role="applicableConcept" targetNodeId="1.1230292331281" resolveInfo="UniversalConfig" />
