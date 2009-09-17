@@ -50,13 +50,13 @@ public class Style {
   public void add(Style child) {
     myChildren.add(child);
     child.myParent = this;
-    child.updateCache();
+    child.updateCache(getNonDefaultValuedAttributes());
   }
 
   public void remove(Style child) {
     myChildren.remove(child);
     child.myParent = null;
-    child.updateCache();
+    child.updateCache(getNonDefaultValuedAttributes());
   }
 
   public <T> T get(StyleAttribute<T> attribute) {
@@ -65,9 +65,7 @@ public class Style {
     if (value != null) {
       return value;
     } else {
-      T result = attribute.combine(null, null);
-      myCachedAttributeValues[index] = result;
-      return result;
+      return attribute.combine(null, null);
     }
   }
 
@@ -77,35 +75,56 @@ public class Style {
 
   public<T> void set(StyleAttribute<T> attribute, T value) {
     myAttributeValues[attribute.getIndex()] = value;
-    updateCache();
+    updateCache(singletonList(attribute));
   }
 
   public<T> void set(StyleAttribute<T> attribute, AttributeCalculator<T> valueCalculator) {
     myAttributeValues[attribute.getIndex()] = valueCalculator;
-    updateCache();
+    updateCache(singletonList(attribute));
+  }
+
+  private List<StyleAttribute> singletonList(StyleAttribute sa) {
+    return Collections.singletonList(sa);
+  }
+
+  private List<StyleAttribute> getNonDefaultValuedAttributes() {
+    List<StyleAttribute> result = new ArrayList<StyleAttribute>();
+    for (int i = 0; i < myCachedAttributeValues.length; i++) {
+      Object values = myCachedAttributeValues[i];
+      if (values != null) {
+        result.add(StyleAttributes.getAttribute(i));
+      }
+    }
+    return result;
   }
 
   public void putAll(Style s) {
+    List<StyleAttribute> added = new ArrayList<StyleAttribute>();
     for (int i = 0; i < s.myAttributeValues.length; i++) {
       Object value = s.myAttributeValues[i];
       if (value != null) {
         myAttributeValues[i] = value;
+        added.add(StyleAttributes.getAttribute(i));
       }
     }
-    updateCache();
+    updateCache(added);
   }
 
   private Style getParentStyle() {
     return myParent;
   }
 
-  private void updateCache() {    
+  private void updateCache(List<StyleAttribute> attributes) {
     Object[] oldCachedValues = myCachedAttributeValues;
     myCachedAttributeValues = new Object[StyleAttributes.getAttributesCount()];
+    System.arraycopy(oldCachedValues, 0, myCachedAttributeValues, 0, myCachedAttributeValues.length);
 
-    Set<StyleAttribute> changedAttributes = new HashSet<StyleAttribute>();
+    List<StyleAttribute> changedAttributes = new ArrayList<StyleAttribute>();
+    if (attributes == null) {
+      attributes = StyleAttributes.getAttributes();
+    }
 
-    for (StyleAttribute attribute : StyleAttributes.getAttributes()) {
+    for (StyleAttribute attribute : attributes) {
       Object parentValue = getParentStyle() == null ? null : getParentStyle().get(attribute);
       Object currentValue = myAttributeValues[attribute.getIndex()];
 
@@ -120,13 +139,13 @@ public class Style {
           changedAttributes.add(attribute);
         }
 
-        myCachedAttributeValues[attribute.getIndex()] =  newValue;
+        myCachedAttributeValues[attribute.getIndex()] = newValue;
       }
     }
 
     if (!changedAttributes.isEmpty()) {
       for (Style style : myChildren) {
-        style.updateCache();
+        style.updateCache(changedAttributes);
       }
 
       fireStyleChanged(new StyleChangeEvent(this, changedAttributes));
