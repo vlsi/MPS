@@ -84,9 +84,9 @@ public class IntentionsSupport {
         //setEnabled(false);
         ModelAccess.instance().runReadAction(new Runnable() {
           public void run() {
-            if (!myEditor.getEditedNode().getModel().isNotEditable()) {
-              showIntentionsMenu();
-            }
+            if (myEditor.getEditedNode().getModel().isNotEditable()) return;
+            if (!hasIntentions()) return;
+            showIntentionsMenu();
           }
         });
       }
@@ -119,14 +119,15 @@ public class IntentionsSupport {
     }
 
     hideLightBulb();
-    myShowIntentionsAction.setEnabled(false);
 
     myShowIntentionsThread.set(new Thread("Intentions") {
       public void run() {
         try {
+          Thread.sleep(IntentionsSupport.INTENTION_SHOW_DELAY);
+          if (interrupted()) return;
+
           final boolean[] finished = new boolean[1];
           final boolean[] enabledPresent = new boolean[1];
-          final boolean[] availablePresent = new boolean[1];
           ModelAccess.instance().runReadAction(new Runnable() {
             public void run() {
               if (isInconsistentEditor()) {
@@ -134,7 +135,6 @@ public class IntentionsSupport {
                 return;
               }
               enabledPresent[0] = !getEnabledIntentions().isEmpty();
-              availablePresent[0] = hasIntentions();
               finished[0] = true;
             }
           });
@@ -147,14 +147,9 @@ public class IntentionsSupport {
               if (isInconsistentEditor()) return;
               if (myEditor.getSelectedCell() != null) {
                 adjustLightBulbLocation();
-                myShowIntentionsAction.setEnabled(availablePresent[0]);
-              } else {
-                myShowIntentionsAction.setEnabled(false);
               }
             }
           });
-
-          Thread.sleep(IntentionsSupport.INTENTION_SHOW_DELAY);
 
           ModelAccess.instance().runReadInEDT(new Runnable() {
             public void run() {
@@ -177,7 +172,7 @@ public class IntentionsSupport {
     myShowIntentionsThread.get().start();
   }
 
-  private boolean isInconsistentEditor(){
+  private boolean isInconsistentEditor() {
     return myEditor.isDisposed() || !myEditor.hasNode();
   }
 
