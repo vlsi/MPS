@@ -13100,7 +13100,7 @@
               <node role="statement" type="jetbrains.mps.baseLanguage.structure.ForeachStatement" id="1679097422730608434">
                 <node role="iterable" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1679097422730608435">
                   <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1679097422730608441">
-                    <link role="baseMethodDeclaration" targetNodeId="9.~IScope.getVisibleModules():java.util.Set" resolveInfo="getVisibleModules" />
+                    <link role="baseMethodDeclaration" targetNodeId="8.~GlobalScope.getVisibleModules():java.util.Set" resolveInfo="getVisibleModules" />
                   </node>
                   <node role="operand" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="8880901618841167426">
                     <link role="baseMethodDeclaration" targetNodeId="8.~GlobalScope.getInstance():jetbrains.mps.project.GlobalScope" resolveInfo="getInstance" />
@@ -13207,7 +13207,7 @@
                   </node>
                   <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1679097422730608483">
                     <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1679097422730608489">
-                      <link role="baseMethodDeclaration" targetNodeId="9.~IScope.getModelDescriptor(jetbrains.mps.smodel.SModelReference):jetbrains.mps.smodel.SModelDescriptor" resolveInfo="getModelDescriptor" />
+                      <link role="baseMethodDeclaration" targetNodeId="8.~GlobalScope.getModelDescriptor(jetbrains.mps.smodel.SModelReference):jetbrains.mps.smodel.SModelDescriptor" resolveInfo="getModelDescriptor" />
                       <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1679097422730608490">
                         <link role="classConcept" targetNodeId="9.~SModelReference" resolveInfo="SModelReference" />
                         <link role="baseMethodDeclaration" targetNodeId="9.~SModelReference.fromString(java.lang.String):jetbrains.mps.smodel.SModelReference" resolveInfo="fromString" />
@@ -13631,6 +13631,24 @@
                   <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="3114565385890730946" />
                   <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="3114565385890730940">
                     <link role="variableDeclaration" targetNodeId="5068927335440176471" resolveInfo="type" />
+                  </node>
+                </node>
+              </node>
+              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="148014226128330144">
+                <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="148014226128330145">
+                  <node role="operand" type="jetbrains.mps.uiLanguage.structure.ComponentReference" id="148014226128338053">
+                    <link role="component" targetNodeId="1104580685292496829" resolveInfo="javaOptions" />
+                  </node>
+                  <node role="operation" type="jetbrains.mps.baseLanguage.classifiers.structure.DefaultClassifierMethodCallOperation" id="148014226128330147">
+                    <link role="member" targetNodeId="44.5360151489983366115" resolveInfo="apply" />
+                    <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="148014226128330148">
+                      <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="148014226128330149">
+                        <link role="variableDeclaration" targetNodeId="1930019848839359706" resolveInfo="config" />
+                      </node>
+                      <node role="operation" type="jetbrains.mps.lang.plugin.structure.PersistentPropertyReference" id="148014226128338056">
+                        <link role="member" targetNodeId="8843743496753415242" resolveInfo="myParams" />
+                      </node>
+                    </node>
                   </node>
                 </node>
               </node>
