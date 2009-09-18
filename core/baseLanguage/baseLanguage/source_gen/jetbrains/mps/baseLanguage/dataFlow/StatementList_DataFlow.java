@@ -9,8 +9,8 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.baseLanguage.LastStatementUtil;
-import jetbrains.mps.project.GlobalScope;
+import jetbrains.mps.baseLanguage.behavior.IMethodLike_Behavior;
+import jetbrains.mps.baseLanguage.behavior.ExpressionStatement_Behavior;
 
 public class StatementList_DataFlow extends DataFlowBuilder {
   public StatementList_DataFlow() {
@@ -24,12 +24,18 @@ public class StatementList_DataFlow extends DataFlowBuilder {
       }
     }
     _context.getBuilder().emitNop();
+    SNode lastStatement = null;
+    if (ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "statement", true)).isNotEmpty()) {
+      SNode methodLike = SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.baseLanguage.structure.IMethodLike", false, false);
+      if ((methodLike != null)) {
+        if (IMethodLike_Behavior.call_getBody_1239354440022(methodLike) == _context.getNode()) {
+          lastStatement = IMethodLike_Behavior.call_getLastStatement_1239354409446(methodLike);
+        }
+      }
+    }
     for (SNode s : SLinkOperations.getTargets(_context.getNode(), "statement", true)) {
       _context.getBuilder().build((SNode)s);
-    }
-    if (ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "statement", true)).isNotEmpty()) {
-      SNode lastStatement = ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "statement", true)).last();
-      if (LastStatementUtil.canMakeReturnStatement(lastStatement, GlobalScope.getInstance())) {
+      if (s == lastStatement && SNodeOperations.isInstanceOf(s, "jetbrains.mps.baseLanguage.structure.ExpressionStatement") && ExpressionStatement_Behavior.call_canServeAsReturn_1239355137616(SNodeOperations.cast(s, "jetbrains.mps.baseLanguage.structure.ExpressionStatement"))) {
         _context.getBuilder().emitRet();
       }
     }
