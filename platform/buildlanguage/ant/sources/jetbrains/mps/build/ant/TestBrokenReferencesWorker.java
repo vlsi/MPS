@@ -11,7 +11,7 @@ import java.util.List;
 import java.io.File;
 
 public class TestBrokenReferencesWorker extends MpsWorker {
-  private final IBuildServerMessageFormat myBuildServerMessageFormat = new TeamCityMessageFormat();
+  private final IBuildServerMessageFormat myBuildServerMessageFormat = TestBrokenReferencesWorker.getBuildServerMessageFormat();
 
   public TestBrokenReferencesWorker(WhatToDo whatToDo, SystemOutLogger systemOutLogger) {
     super(whatToDo, systemOutLogger);
@@ -20,6 +20,10 @@ public class TestBrokenReferencesWorker extends MpsWorker {
   public static void main(String[] args) {
     MpsWorker generator = new TestBrokenReferencesWorker(WhatToDo.fromDumpInFile(new File(args[0])), new SystemOutLogger());
     generator.doTheJob();
+  }
+
+  public static IBuildServerMessageFormat getBuildServerMessageFormat() {
+    return new TeamCityMessageFormat();
   }
 
   protected void executeTask(MPSProject project, final List<SModelDescriptor> models) {

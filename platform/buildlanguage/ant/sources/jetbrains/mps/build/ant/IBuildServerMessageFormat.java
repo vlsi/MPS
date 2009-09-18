@@ -6,4 +6,6 @@ public interface IBuildServerMessageFormat {
   String formatTestStart(String testName);
   String formatTestFinifsh(String testName);
   String formatTestFailure(String testName, String message, String detailes);
+
+  boolean isBuildServerMessage(String message);
 }

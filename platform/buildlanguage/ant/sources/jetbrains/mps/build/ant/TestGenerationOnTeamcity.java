@@ -1,5 +1,7 @@
 package jetbrains.mps.build.ant;
 
+import org.apache.tools.ant.Task;
+
 public class TestGenerationOnTeamcity extends GenerateTask {
   public static final String INVOKE_TESTS = "INVOKE_TESTS";
   public static final String SHOW_DIFF = "SHOW_DIFF";
@@ -14,7 +16,7 @@ public class TestGenerationOnTeamcity extends GenerateTask {
   }
 
   public void setShowDiff(boolean isDifferenceCalculated) {
-     myWhatToDo.putProperty(SHOW_DIFF, Boolean.toString(isDifferenceCalculated));
+    myWhatToDo.putProperty(SHOW_DIFF, Boolean.toString(isDifferenceCalculated));
   }
 
   public boolean getInvokeTests() {
@@ -32,14 +34,18 @@ public class TestGenerationOnTeamcity extends GenerateTask {
 
   @Override
   protected MyExecuteStreamHandler getExecuteStreamHandler() {
-    return new MyTeamcityAwareExecuteStreamHandler();
+    return new MyTeamcityAwareExecuteStreamHandler(this);
   }
 
-  private class MyTeamcityAwareExecuteStreamHandler extends MyExecuteStreamHandler {
+  public static class MyTeamcityAwareExecuteStreamHandler extends MyExecuteStreamHandler {
+    public MyTeamcityAwareExecuteStreamHandler(Task task) {
+      super(task);
+    }
+
     @Override
     protected void logOutput(String line) {
-      if (line.matches("##teamcity\\[.*\\].*")){
-        System.out.println(line);        
+      if (TestGenerationWorker.getBuildServerMessageFormat().isBuildServerMessage(line)) {
+        System.out.println(line);
       } else {
         super.logOutput(line);
       }

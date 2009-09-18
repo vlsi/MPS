@@ -6,6 +6,7 @@ import org.apache.tools.ant.types.resources.FileResource;
 import org.apache.tools.ant.BuildException;
 import org.apache.tools.ant.Project;
 import org.apache.tools.ant.ProjectComponent;
+import org.apache.tools.ant.Task;
 import org.apache.tools.ant.taskdefs.Execute;
 import org.apache.tools.ant.taskdefs.ExecuteStreamHandler;
 import org.apache.tools.ant.util.JavaEnvUtils;
@@ -180,7 +181,7 @@ public abstract class MpsLoadTask extends org.apache.tools.ant.Task {
   }
 
   protected GenerateTask.MyExecuteStreamHandler getExecuteStreamHandler() {
-    return new MyExecuteStreamHandler();
+    return new MyExecuteStreamHandler(this);
   }
 
   private void checkMpsHome() {
@@ -317,9 +318,14 @@ public abstract class MpsLoadTask extends org.apache.tools.ant.Task {
     protected abstract void addMessage(String message);
   }
 
-  protected class MyExecuteStreamHandler implements ExecuteStreamHandler {
+  protected static class MyExecuteStreamHandler implements ExecuteStreamHandler {
     private Thread myOutputReadingThread;
     private Thread myErrorReadingThread;
+    private final Task myTask;
+
+    public MyExecuteStreamHandler(Task task) {
+      myTask = task;
+    }
 
     public void setProcessInputStream(OutputStream os) throws IOException {
     }
@@ -336,7 +342,7 @@ public abstract class MpsLoadTask extends org.apache.tools.ant.Task {
     }
 
     protected void logError(String line) {
-      log(line, Project.MSG_ERR);
+      myTask.log(line, Project.MSG_ERR);
     }
 
     public void setProcessOutputStream(final InputStream is) throws IOException {
@@ -351,7 +357,7 @@ public abstract class MpsLoadTask extends org.apache.tools.ant.Task {
     }
 
     protected void logOutput(String line) {
-      log(line);
+      myTask.log(line);
     }
 
     public void start() throws IOException {

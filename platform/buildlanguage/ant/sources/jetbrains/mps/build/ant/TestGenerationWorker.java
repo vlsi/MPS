@@ -32,11 +32,15 @@ import junit.framework.TestFailure;
 
 public class TestGenerationWorker extends GeneratorWorker {
   private boolean myTestFailed = false;
-  private final IBuildServerMessageFormat myBuildServerMessageFormat = new TeamCityMessageFormat();
+  private final IBuildServerMessageFormat myBuildServerMessageFormat = getBuildServerMessageFormat();
 
   public static void main(String[] args) {
     TestGenerationWorker generator = new TestGenerationWorker(WhatToDo.fromDumpInFile(new File(args[0])), new SystemOutLogger());
     generator.doTheJob();
+  }
+
+  public static IBuildServerMessageFormat getBuildServerMessageFormat() {
+    return new TeamCityMessageFormat();
   }
 
   public TestGenerationWorker(WhatToDo whatToDo, ProjectComponent component) {
