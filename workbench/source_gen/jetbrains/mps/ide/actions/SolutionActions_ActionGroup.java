@@ -24,6 +24,8 @@ public class SolutionActions_ActionGroup extends GeneratedActionGroup {
       SolutionActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.DeleteModules_Action", "jetbrains.mps.ide");
       SolutionActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.CopyModuleName_Action", "jetbrains.mps.ide");
       SolutionActions_ActionGroup.this.addSeparator();
+      SolutionActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.GetSolutionContentsFromSource_Action", "jetbrains.mps.ide");
+      SolutionActions_ActionGroup.this.addSeparator();
       SolutionActions_ActionGroup.this.addAnchor(SolutionActions_ActionGroup.LABEL_ID_generateModule);
       SolutionActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.GenerateTextFromSolution_Action", "jetbrains.mps.ide");
       SolutionActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.CheckSolution_Action", "jetbrains.mps.ide");
