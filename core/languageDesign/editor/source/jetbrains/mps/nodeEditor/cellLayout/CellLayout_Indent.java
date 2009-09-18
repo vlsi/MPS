@@ -127,42 +127,31 @@ public class CellLayout_Indent extends AbstractCellLayout {
 
   private List<EditorCell> getIndentLeafs(EditorCell_Collection current) {
     List<EditorCell> result = new ArrayList<EditorCell>();
-    collectFrontier(current, result);
+    collectCells(current, result, null);
     return result;
   }
 
-  private List<EditorCell_Collection> getInternalIndentCollections(EditorCell_Collection current) {
-    List<EditorCell_Collection> result = new ArrayList<EditorCell_Collection>();
-    collectCollections(current, result);
-    return result;
-  }
+  private void collectCells(
+      EditorCell_Collection current,
+      List<EditorCell> frontier,
+      List<EditorCell_Collection> collections) {
 
-  private void collectFrontier(EditorCell_Collection current, List<EditorCell> frontier) {
     for (EditorCell child : current) {
       if (child instanceof EditorCell_Collection) {
         EditorCell_Collection collection = (EditorCell_Collection) child;
         if (isIndentCollection(collection)) {
-          collectFrontier(collection, frontier);
+          collectCells(collection, frontier, collections);
         } else {
           frontier.add(child);
         }
       } else {
         frontier.add(child);
       }
-    }
-  }
 
-  private void collectCollections(EditorCell_Collection current, List<EditorCell_Collection> result) {
-    for (EditorCell child : current) {
-      if (child instanceof EditorCell_Collection) {
-        EditorCell_Collection collection = (EditorCell_Collection) child;
-        if (isIndentCollection(collection)) {
-          collectCollections(collection, result);
-        }
+      if (collections != null) {
+        collections.add(current);
       }
     }
-
-    result.add(current);
   }
 
   private boolean isIndentCollection(EditorCell_Collection collection) {
@@ -204,12 +193,17 @@ public class CellLayout_Indent extends AbstractCellLayout {
     }
 
     public void layout() {
-      layoutLeafs();
-      fixupCollections();
+      List<EditorCell> leafs = new ArrayList<EditorCell>();
+      List<EditorCell_Collection> collections = new ArrayList<EditorCell_Collection>();
+
+      collectCells(myCell, leafs, collections);
+
+      layoutLeafs(leafs);
+      fixupCollections(collections);
     }
 
-    private void layoutLeafs() {
-      for (EditorCell current : getIndentLeafs(myCell)) {
+    private void layoutLeafs(List<EditorCell> leafs) {
+      for (EditorCell current : leafs) {
         if (isOnNewLine(myCell, current)) {
           newLine();
         }
@@ -227,8 +221,8 @@ public class CellLayout_Indent extends AbstractCellLayout {
       newLine();
     }
 
-    private void fixupCollections() {
-      for (EditorCell_Collection collection : getInternalIndentCollections(myCell)) {
+    private void fixupCollections(List<EditorCell_Collection> collections) {
+      for (EditorCell_Collection collection : collections) {
         int x0 = Integer.MAX_VALUE;
         int y0 = Integer.MAX_VALUE;
         int x1 = Integer.MIN_VALUE;
