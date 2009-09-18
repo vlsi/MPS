@@ -32,17 +32,21 @@ public class TestBrokenReferencesWorker extends MpsWorker {
         for (SModelDescriptor sm : models) {
           if (!SModelStereotype.isUserModel(sm)) continue;
           String testName = "test references for " + sm.getLongName();
-          System.out.println(myBuildServerMessageFormat.formatTestStart(testName));
+          output(myBuildServerMessageFormat.formatTestStart(testName));
 
           StringBuffer errorMessages = checkModel(sm);
 
           if (errorMessages.length() > 0) {
-            System.out.println(myBuildServerMessageFormat.formatTestFailure(testName, "Broken References", errorMessages.toString()));
+            output(myBuildServerMessageFormat.formatTestFailure(testName, "Broken References", errorMessages.toString()));
           }
-          System.out.println(myBuildServerMessageFormat.formatTestFinifsh(testName));
+          output(myBuildServerMessageFormat.formatTestFinifsh(testName));
         }
       }
     });
+  }
+
+  protected void output(String s) {
+    System.out.println(s);
   }
 
   private StringBuffer checkModel(SModelDescriptor sm) {

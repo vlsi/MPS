@@ -26,4 +26,8 @@ public class TeamCityMessageFormat implements IBuildServerMessageFormat {
   public boolean isBuildServerMessage(String message) {
     return message.matches("##teamcity\\[.*\\].*");
   }
+
+  public boolean isTestFailMessage(String text) {
+    return text.matches("##teamcity\\[testFailed.*\\].*");
+  }
 }
