@@ -93,7 +93,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
   public static final String EDITOR_POPUP_MENU_ACTIONS_INTERNAL = EditorInternal_ActionGroup.ID;
 
   private static final int SCROLL_GAP = 15;
-  public static final boolean USE_NEW_TOOLTIPS = false;
+  public static final boolean USE_NEW_TOOLTIPS = true;
 
   public static void turnOnAliasingIfPossible(Graphics2D g) {
     if (EditorSettings.getInstance().isUseAntialiasing()) {
@@ -602,7 +602,11 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
         if (cell == null) {
           return null;
         }
-        return new Point(cell.getX(), cell.getY() + cell.getHeight());
+        if (getMessageTextFor(cell) != null) {
+          return new Point(cell.getX(), cell.getY() + cell.getHeight());
+        } else {
+          return null;            
+        }
       }
     });
   }
@@ -658,7 +662,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
         return;
       }
       String text = getMessageTextFor(cell);
-      Point point = new Point(cell.getX(), cell.getY());
+      Point point = new Point(cell.getX(), cell.getY() + cell.getHeight());
       MPSToolTipManager.getInstance().showToolTip(text, this, point);
     } else {
       try {

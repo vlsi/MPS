@@ -79,8 +79,8 @@ public class MPSToolTipManager implements ApplicationComponent {
     }
     this.myToolTip = new ToolTip();
     Frame frame = this.getContainingFrame(component);
-    Point widowPoint = SwingUtilities.convertPoint(component, point, frame);
-    this.myToolTip.show(frame, widowPoint, new ToolTipData(text));
+    SwingUtilities.convertPointToScreen(point, component);
+    this.myToolTip.show(frame, point, new ToolTipData(text));
   }
 
   public void hideToolTip() {

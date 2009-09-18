@@ -530,30 +530,9 @@
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1657638272963252746">
             <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1657638272963252747">
               <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1657638272963252748">
-                <link role="baseMethodDeclaration" targetNodeId="2.~Component.setLocation(int,int):void" resolveInfo="setLocation" />
-                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1104302755530028865">
-                  <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1104302755530028864">
-                    <link role="variableDeclaration" targetNodeId="1657638272963062309" resolveInfo="location" />
-                  </node>
-                  <node role="operation" type="jetbrains.mps.baseLanguage.structure.FieldReferenceOperation" id="1104302755530028869">
-                    <link role="fieldDeclaration" targetNodeId="2.~Point.x" resolveInfo="x" />
-                  </node>
-                </node>
-                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1104302755530028877">
-                  <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1104302755530028872">
-                    <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1104302755530028871">
-                      <link role="variableDeclaration" targetNodeId="1657638272963062309" resolveInfo="location" />
-                    </node>
-                    <node role="operation" type="jetbrains.mps.baseLanguage.structure.FieldReferenceOperation" id="1104302755530028876">
-                      <link role="fieldDeclaration" targetNodeId="2.~Point.y" resolveInfo="y" />
-                    </node>
-                  </node>
-                  <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1104302755530028881">
-                    <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1104302755530028882">
-                      <link role="baseMethodDeclaration" targetNodeId="2.~Component.getHeight():int" resolveInfo="getHeight" />
-                    </node>
-                    <node role="operand" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="1104302755530028883" />
-                  </node>
+                <link role="baseMethodDeclaration" targetNodeId="2.~Component.setLocation(java.awt.Point):void" resolveInfo="setLocation" />
+                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1104302755530028871">
+                  <link role="variableDeclaration" targetNodeId="1657638272963062309" resolveInfo="location" />
                 </node>
               </node>
               <node role="operand" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="1657638272963252749" />
@@ -1460,24 +1439,15 @@
             </node>
           </node>
         </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="7182957271087794182">
-          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="7182957271087794183">
-            <property name="name" value="widowPoint" />
-            <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="7182957271087794184">
-              <link role="classifier" targetNodeId="2.~Point" resolveInfo="Point" />
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="7716364716505198771">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="7716364716505198772">
+            <link role="baseMethodDeclaration" targetNodeId="1.~SwingUtilities.convertPointToScreen(java.awt.Point,java.awt.Component):void" resolveInfo="convertPointToScreen" />
+            <link role="classConcept" targetNodeId="1.~SwingUtilities" resolveInfo="SwingUtilities" />
+            <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="7716364716505198773">
+              <link role="variableDeclaration" targetNodeId="78827631726060882" resolveInfo="point" />
             </node>
-            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="7182957271087794185">
-              <link role="baseMethodDeclaration" targetNodeId="1.~SwingUtilities.convertPoint(java.awt.Component,java.awt.Point,java.awt.Component):java.awt.Point" resolveInfo="convertPoint" />
-              <link role="classConcept" targetNodeId="1.~SwingUtilities" resolveInfo="SwingUtilities" />
-              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="7182957271087794186">
-                <link role="variableDeclaration" targetNodeId="78827631726060880" resolveInfo="component" />
-              </node>
-              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="7182957271087794187">
-                <link role="variableDeclaration" targetNodeId="78827631726060882" resolveInfo="point" />
-              </node>
-              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="7182957271087794188">
-                <link role="variableDeclaration" targetNodeId="7182957271087794176" resolveInfo="frame" />
-              </node>
+            <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="7716364716505198774">
+              <link role="variableDeclaration" targetNodeId="78827631726060880" resolveInfo="component" />
             </node>
           </node>
         </node>
@@ -1494,8 +1464,8 @@
               <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="7182957271087794195">
                 <link role="variableDeclaration" targetNodeId="7182957271087794176" resolveInfo="frame" />
               </node>
-              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="7182957271087794196">
-                <link role="variableDeclaration" targetNodeId="7182957271087794183" resolveInfo="widowPoint" />
+              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="7716364716505200050">
+                <link role="variableDeclaration" targetNodeId="78827631726060882" resolveInfo="point" />
               </node>
               <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="7182957271087794197">
                 <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="7182957271087794198">

@@ -89,7 +89,7 @@ public class ToolTip {
       this.add(scrollPane);
 
       this.pack();
-      this.setLocation(location.x, location.y + this.getHeight());
+      this.setLocation(location);
 
       Rectangle rect = WindowsUtil.findDeviceBoundsAt(location);
       if (rect.x + rect.width < this.getX() + this.getWidth()) {
