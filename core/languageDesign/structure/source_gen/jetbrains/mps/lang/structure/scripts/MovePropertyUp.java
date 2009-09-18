@@ -34,7 +34,7 @@ public class MovePropertyUp extends BaseGeneratedRefactoring {
   }
 
   public String getUserFriendlyName() {
-    return "Move Property Up (under construction)";
+    return "Move Property Up";
   }
 
   public String getKeyStroke() {

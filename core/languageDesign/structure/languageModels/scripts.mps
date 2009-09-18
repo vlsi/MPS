@@ -2050,7 +2050,7 @@
   </node>
   <node type="jetbrains.mps.lang.refactoring.structure.Refactoring" id="1198776916667">
     <property name="name" value="MovePropertyUp" />
-    <property name="userFriendlyName" value="Move Property Up (under construction)" />
+    <property name="userFriendlyName" value="Move Property Up" />
     <property name="oneTargetOnly" value="true" />
     <link role="applicableConcept" targetNodeId="1.1071489288299" resolveInfo="PropertyDeclaration" />
     <link role="overrides" targetNodeId="7.1198076144993" resolveInfo="MoveNodes" />
