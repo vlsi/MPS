@@ -16,6 +16,7 @@
 package jetbrains.mps.intentions;
 
 import com.intellij.openapi.application.ApplicationManager;
+import com.intellij.openapi.application.RuntimeInterruptedException;
 import com.intellij.openapi.components.ApplicationComponent;
 import com.intellij.openapi.components.PersistentStateComponent;
 import com.intellij.openapi.components.State;
@@ -113,7 +114,7 @@ public class IntentionsManager implements ApplicationComponent, PersistentStateC
     });
   }
 
-  public Collection<Pair<Intention, SNode>> getAvailableIntentions(final SNode node, final EditorContext context,@Nullable final Computable<Boolean> terminated) {
+  public Collection<Pair<Intention, SNode>> getAvailableIntentions(final SNode node, final EditorContext context, @Nullable final Computable<Boolean> terminated) {
     try {
       TypeChecker.getInstance().enableGlobalSubtypingCache();
       Set<Pair<Intention, SNode>> intentions = ModelAccess.instance().runReadAction(new Computable<Set<Pair<Intention, SNode>>>() {
@@ -140,7 +141,7 @@ public class IntentionsManager implements ApplicationComponent, PersistentStateC
     }
   }
 
-  public boolean hasAvailableIntentions(SNode node, EditorContext editorContext,@Nullable Computable<Boolean> terminated) {
+  public boolean hasAvailableIntentions(SNode node, EditorContext editorContext, @Nullable Computable<Boolean> terminated) {
     return !getAvailableIntentions_delete(node, editorContext, terminated).isEmpty();
   }
 
@@ -184,6 +185,9 @@ public class IntentionsManager implements ApplicationComponent, PersistentStateC
           } catch (IllegalAccessException e) {
             LOG.error(e);
           } catch (InvocationTargetException e) {
+            if (e.getTargetException() instanceof RuntimeInterruptedException) {
+              throw (RuntimeInterruptedException) e.getTargetException();
+            }
             LOG.error(e);
           }
         } else {
