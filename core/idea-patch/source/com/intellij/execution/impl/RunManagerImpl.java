@@ -344,7 +344,7 @@ public class RunManagerImpl extends RunManagerEx implements JDOMExternalizable, 
 
   @Patch
   public void setSelectedConfiguration(final RunnerAndConfigurationSettingsImpl configuration) {
-    mySelectedConfig = getUniqueName(configuration.getConfiguration());
+    mySelectedConfig = configuration == null ? null : getUniqueName(configuration.getConfiguration()); 
   }
 
   public static boolean canRunConfiguration(@NotNull final RunnerAndConfigurationSettingsImpl configuration, final @NotNull Executor executor) {
