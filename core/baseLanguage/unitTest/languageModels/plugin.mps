@@ -13099,19 +13099,12 @@
             <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1679097422730608433">
               <node role="statement" type="jetbrains.mps.baseLanguage.structure.ForeachStatement" id="1679097422730608434">
                 <node role="iterable" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1679097422730608435">
-                  <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1679097422730608436">
-                    <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1679097422730608437">
-                      <node role="operand" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpression" id="1679097422730608438" />
-                      <node role="operation" type="jetbrains.mps.uiLanguage.structure.AttributeReferenceOperation" id="1679097422730608439">
-                        <link role="member" targetNodeId="1104580685292496967" resolveInfo="project" />
-                      </node>
-                    </node>
-                    <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1679097422730608440">
-                      <link role="baseMethodDeclaration" targetNodeId="8.~MPSProject.getScope():jetbrains.mps.smodel.IScope" resolveInfo="getScope" />
-                    </node>
-                  </node>
                   <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1679097422730608441">
                     <link role="baseMethodDeclaration" targetNodeId="9.~IScope.getVisibleModules():java.util.Set" resolveInfo="getVisibleModules" />
+                  </node>
+                  <node role="operand" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="8880901618841167426">
+                    <link role="baseMethodDeclaration" targetNodeId="8.~GlobalScope.getInstance():jetbrains.mps.project.GlobalScope" resolveInfo="getInstance" />
+                    <link role="classConcept" targetNodeId="8.~GlobalScope" resolveInfo="GlobalScope" />
                   </node>
                 </node>
                 <node role="variable" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1679097422730608442">
@@ -13213,17 +13206,6 @@
                     <link role="classifier" targetNodeId="9.~SModelDescriptor" resolveInfo="SModelDescriptor" />
                   </node>
                   <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1679097422730608483">
-                    <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1679097422730608484">
-                      <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1679097422730608485">
-                        <node role="operand" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpression" id="1679097422730608486" />
-                        <node role="operation" type="jetbrains.mps.uiLanguage.structure.AttributeReferenceOperation" id="1679097422730608487">
-                          <link role="member" targetNodeId="1104580685292496967" resolveInfo="project" />
-                        </node>
-                      </node>
-                      <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1679097422730608488">
-                        <link role="baseMethodDeclaration" targetNodeId="8.~MPSProject.getScope():jetbrains.mps.smodel.IScope" resolveInfo="getScope" />
-                      </node>
-                    </node>
                     <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1679097422730608489">
                       <link role="baseMethodDeclaration" targetNodeId="9.~IScope.getModelDescriptor(jetbrains.mps.smodel.SModelReference):jetbrains.mps.smodel.SModelDescriptor" resolveInfo="getModelDescriptor" />
                       <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1679097422730608490">
@@ -13233,6 +13215,10 @@
                           <link role="variableDeclaration" targetNodeId="1679097422730608506" resolveInfo="m" />
                         </node>
                       </node>
+                    </node>
+                    <node role="operand" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="8880901618841167434">
+                      <link role="baseMethodDeclaration" targetNodeId="8.~GlobalScope.getInstance():jetbrains.mps.project.GlobalScope" resolveInfo="getInstance" />
+                      <link role="classConcept" targetNodeId="8.~GlobalScope" resolveInfo="GlobalScope" />
                     </node>
                   </node>
                 </node>
@@ -16353,7 +16339,7 @@
                                   <link role="variableDeclaration" targetNodeId="5972510671724576081" resolveInfo="result" />
                                 </node>
                                 <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="5972510671724576094">
-                                  <link role="baseMethodDeclaration" targetNodeId="2.~StringBuilder.append(java.lang.Object):java.lang.StringBuilder" resolveInfo="append" />
+                                  <link role="baseMethodDeclaration" targetNodeId="2.~StringBuilder.append(java.lang.String):java.lang.StringBuilder" resolveInfo="append" />
                                   <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="718178759443686145">
                                     <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="5972510671724576096">
                                       <link role="variableDeclaration" targetNodeId="145554711892089556" resolveInfo="modelDescriptor" />

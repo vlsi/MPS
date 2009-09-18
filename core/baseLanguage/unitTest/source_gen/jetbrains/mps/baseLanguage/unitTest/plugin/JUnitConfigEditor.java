@@ -25,11 +25,11 @@ import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import javax.swing.border.TitledBorder;
 import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
-import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.baseLanguage.unitTest.behavior.ITestMethod_Behavior;
 import jetbrains.mps.lang.core.behavior.INamedConcept_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
@@ -394,7 +394,7 @@ public class JUnitConfigEditor extends JPanel {
     }
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
-        for (IModule module : myThis.getProject().getScope().getVisibleModules()) {
+        for (IModule module : GlobalScope.getInstance().getVisibleModules()) {
           if (module.getModuleFqName().equals(m)) {
             myThis.setModule(module);
             return;
@@ -411,7 +411,7 @@ public class JUnitConfigEditor extends JPanel {
     }
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
-        SModelDescriptor descriptor = myThis.getProject().getScope().getModelDescriptor(SModelReference.fromString(m));
+        SModelDescriptor descriptor = GlobalScope.getInstance().getModelDescriptor(SModelReference.fromString(m));
         myThis.setModel((descriptor != null ?
           descriptor.getSModel() :
           null
