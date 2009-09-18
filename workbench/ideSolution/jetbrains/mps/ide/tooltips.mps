@@ -79,7 +79,7 @@
               </node>
             </node>
             <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="6773493145900289018">
-              <link role="baseMethodDeclaration" targetNodeId="2.~Window.setVisible(boolean):void" resolveInfo="setVisible" />
+              <link role="baseMethodDeclaration" targetNodeId="2.~Component.setVisible(boolean):void" resolveInfo="setVisible" />
               <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="6773493145900289019">
                 <property name="value" value="true" />
               </node>
@@ -365,32 +365,6 @@
             </node>
           </node>
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.Statement" id="1657638272963248477" />
-          <node role="statement" type="jetbrains.mps.baseLanguage.structure.CommentedStatement" id="6773493145900287929">
-            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1657638272963248480">
-              <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1657638272963248481">
-                <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1657638272963248482">
-                  <link role="baseMethodDeclaration" targetNodeId="2.~Dialog.setUndecorated(boolean):void" resolveInfo="setUndecorated" />
-                  <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1657638272963248484">
-                    <property name="value" value="true" />
-                  </node>
-                </node>
-                <node role="operand" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="1657638272963248483" />
-              </node>
-            </node>
-          </node>
-          <node role="statement" type="jetbrains.mps.baseLanguage.structure.CommentedStatement" id="6773493145900287930">
-            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1657638272963248486">
-              <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1657638272963248487">
-                <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1657638272963248488">
-                  <link role="baseMethodDeclaration" targetNodeId="2.~Dialog.setModal(boolean):void" resolveInfo="setModal" />
-                  <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1657638272963248490">
-                    <property name="value" value="false" />
-                  </node>
-                </node>
-                <node role="operand" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="1657638272963248489" />
-              </node>
-            </node>
-          </node>
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1657638272963248493">
             <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1657638272963248494">
               <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1657638272963248495">
@@ -556,9 +530,30 @@
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1657638272963252746">
             <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1657638272963252747">
               <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1657638272963252748">
-                <link role="baseMethodDeclaration" targetNodeId="2.~Component.setLocation(java.awt.Point):void" resolveInfo="setLocation" />
-                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1657638272963252750">
-                  <link role="variableDeclaration" targetNodeId="1657638272963062309" resolveInfo="location" />
+                <link role="baseMethodDeclaration" targetNodeId="2.~Component.setLocation(int,int):void" resolveInfo="setLocation" />
+                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1104302755530028865">
+                  <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1104302755530028864">
+                    <link role="variableDeclaration" targetNodeId="1657638272963062309" resolveInfo="location" />
+                  </node>
+                  <node role="operation" type="jetbrains.mps.baseLanguage.structure.FieldReferenceOperation" id="1104302755530028869">
+                    <link role="fieldDeclaration" targetNodeId="2.~Point.x" resolveInfo="x" />
+                  </node>
+                </node>
+                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1104302755530028877">
+                  <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1104302755530028872">
+                    <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1104302755530028871">
+                      <link role="variableDeclaration" targetNodeId="1657638272963062309" resolveInfo="location" />
+                    </node>
+                    <node role="operation" type="jetbrains.mps.baseLanguage.structure.FieldReferenceOperation" id="1104302755530028876">
+                      <link role="fieldDeclaration" targetNodeId="2.~Point.y" resolveInfo="y" />
+                    </node>
+                  </node>
+                  <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1104302755530028881">
+                    <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1104302755530028882">
+                      <link role="baseMethodDeclaration" targetNodeId="2.~Component.getHeight():int" resolveInfo="getHeight" />
+                    </node>
+                    <node role="operand" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="1104302755530028883" />
+                  </node>
                 </node>
               </node>
               <node role="operand" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="1657638272963252749" />

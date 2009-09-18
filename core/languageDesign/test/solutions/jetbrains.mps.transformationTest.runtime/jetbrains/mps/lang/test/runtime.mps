@@ -41,7 +41,7 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)" version="32" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959033d(jetbrains.mps.lang.annotations.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590373(jetbrains.mps.baseLanguage.classifiers.structure)" version="0" />
-  <maxImportIndex value="41" />
+  <maxImportIndex value="42" />
   <import index="1" modelUID="f:java_stub#jetbrains.mps.typesystem.inference(jetbrains.mps.typesystem.inference@java_stub)" version="-1" />
   <import index="2" modelUID="r:00000000-0000-4000-0000-011c89590388(jetbrains.mps.lang.test.structure)" version="4" />
   <import index="3" modelUID="r:00000000-0000-4000-0000-011c89590380(jetbrains.mps.lang.test.behavior)" version="-1" />
@@ -80,6 +80,7 @@
   <import index="37" modelUID="f:java_stub#com.intellij.openapi.diagnostic(com.intellij.openapi.diagnostic@java_stub)" version="-1" />
   <import index="40" modelUID="f:java_stub#jetbrains.mps.generator(jetbrains.mps.generator@java_stub)" version="-1" />
   <import index="41" modelUID="f:java_stub#jetbrains.mps.generator.template(jetbrains.mps.generator.template@java_stub)" version="-1" />
+  <import index="42" modelUID="f:java_stub#com.intellij.openapi.util(com.intellij.openapi.util@java_stub)" version="-1" />
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="1215078243118">
     <property name="name" value="SubtreeChecker" />
     <node role="staticMethod" type="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" id="852155438141188210">
@@ -3468,7 +3469,7 @@
                                     <link role="classConcept" targetNodeId="33.~IntentionsManager" resolveInfo="IntentionsManager" />
                                   </node>
                                   <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="7633582661619344933">
-                                    <link role="baseMethodDeclaration" targetNodeId="33.~IntentionsManager.getAvailableIntentionsForExactNode(jetbrains.mps.smodel.SNode,jetbrains.mps.nodeEditor.EditorContext,boolean,boolean):java.util.List" resolveInfo="getAvailableIntentionsForExactNode" />
+                                    <link role="baseMethodDeclaration" targetNodeId="33.~IntentionsManager.getAvailableIntentionsForExactNode(jetbrains.mps.smodel.SNode,jetbrains.mps.nodeEditor.EditorContext,boolean,boolean,com.intellij.openapi.util.Computable):java.util.List" resolveInfo="getAvailableIntentionsForExactNode" />
                                     <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="7633582661619344934">
                                       <link role="variableDeclaration" targetNodeId="1225991152924" resolveInfo="node" />
                                     </node>
@@ -3485,6 +3486,33 @@
                                     </node>
                                     <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="7633582661619344939">
                                       <property name="value" value="true" />
+                                    </node>
+                                    <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="3535806480635812969">
+                                      <node role="creator" type="jetbrains.mps.baseLanguage.structure.AnonymousClassCreator" id="3535806480635834413">
+                                        <node role="cls" type="jetbrains.mps.baseLanguage.structure.AnonymousClass" id="3535806480635834414">
+                                          <property name="nonStatic" value="true" />
+                                          <link role="classifier" targetNodeId="42.~Computable" resolveInfo="Computable" />
+                                          <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="3535806480635834415" />
+                                          <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="3535806480635834416">
+                                            <property name="isAbstract" value="false" />
+                                            <property name="name" value="compute" />
+                                            <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="3535806480635834417" />
+                                            <node role="returnType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="7897650224184732455">
+                                              <link role="classifier" targetNodeId="10.~Boolean" resolveInfo="Boolean" />
+                                            </node>
+                                            <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="3535806480635834419">
+                                              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="3535806480635834421">
+                                                <node role="expression" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="3535806480635834423">
+                                                  <property name="value" value="false" />
+                                                </node>
+                                              </node>
+                                            </node>
+                                          </node>
+                                          <node role="typeParameter" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="3535806480635834426">
+                                            <link role="classifier" targetNodeId="10.~Boolean" resolveInfo="Boolean" />
+                                          </node>
+                                        </node>
+                                      </node>
                                     </node>
                                   </node>
                                 </node>
@@ -4377,13 +4405,6 @@
       <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1226949310943" />
     </node>
     <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1226949310941" />
-  </node>
-  <node type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="9114978211826502716">
-    <property name="name" value="BaseEdmitorTestBody" />
-    <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="9114978211826503071" />
-    <node role="superclass" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="9114978211826504014">
-      <link role="classifier" targetNodeId="1225981767950" resolveInfo="BaseEditorTestBody" />
-    </node>
   </node>
 </model>
 

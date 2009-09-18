@@ -602,7 +602,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
         if (cell == null) {
           return null;
         }
-        return new Point(cell.getX(), cell.getY());
+        return new Point(cell.getX(), cell.getY() + cell.getHeight());
       }
     });
   }

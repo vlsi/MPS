@@ -18,6 +18,7 @@ import jetbrains.mps.lang.test.matcher.NodesMatcher;
 import java.util.ArrayList;
 import jetbrains.mps.intentions.Intention;
 import jetbrains.mps.intentions.IntentionsManager;
+import com.intellij.openapi.util.Computable;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.SModelDescriptor;
 import com.intellij.openapi.project.Project;
@@ -91,7 +92,11 @@ public class BaseEditorTestBody extends BaseTestBody {
         ModelAccess.instance().runWriteActionInCommand(new Runnable() {
           public void run() {
             editor.selectNode(node);
-            List<Intention> availableIntentions = IntentionsManager.getInstance().getAvailableIntentionsForExactNode(node, editor.getEditorContext(), false, true, null);
+            List<Intention> availableIntentions = IntentionsManager.getInstance().getAvailableIntentionsForExactNode(node, editor.getEditorContext(), false, true, new Computable<Boolean>() {
+              public Boolean compute() {
+                return false;
+              }
+            });
             for (Intention intention : ListSequence.fromList(availableIntentions)) {
               if (intention.getClass().getCanonicalName().equals(name)) {
                 intention.execute(node, editor.getEditorContext());

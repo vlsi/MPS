@@ -76,12 +76,6 @@ public class ToolTip {
       super(owner);
       this.myPrevFocusOwner = owner.getFocusOwner();
 
-      /*
-        this.setUndecorated(true);
-      */
-      /*
-        this.setModal(false);
-      */
       this.setFocusableWindowState(false);
 
       this.myTextArea = new JTextArea();
@@ -95,7 +89,7 @@ public class ToolTip {
       this.add(scrollPane);
 
       this.pack();
-      this.setLocation(location);
+      this.setLocation(location.x, location.y + this.getHeight());
 
       Rectangle rect = WindowsUtil.findDeviceBoundsAt(location);
       if (rect.x + rect.width < this.getX() + this.getWidth()) {
