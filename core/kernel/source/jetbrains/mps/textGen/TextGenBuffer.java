@@ -64,6 +64,9 @@ public final class TextGenBuffer {
   }
 
   protected void append(String s) {
+    if (s == null) {
+      return;
+    }
     String lineSeparator = getLineSeparator();
     if (s.contains(lineSeparator)) {
       myLineNumbers[myCurrBuffer] += s.split(lineSeparator, -1).length - 1;
