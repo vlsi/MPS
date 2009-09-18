@@ -16,8 +16,10 @@
 package jetbrains.mps.intentions;
 
 import jetbrains.mps.intentions.icons.Icons;
+import jetbrains.mps.ide.tooltips.MPSToolTipManager;
 
 import javax.swing.JLabel;
+import javax.swing.ToolTipManager;
 import javax.swing.border.EmptyBorder;
 import java.awt.Color;
 import java.awt.Dimension;
@@ -32,6 +34,8 @@ public abstract class LightBulbMenu extends JLabel {
     setBackground(Color.WHITE);
 
     setToolTipText("press alt+enter to view intentions list");
+    ToolTipManager.sharedInstance().unregisterComponent(this);
+    MPSToolTipManager.getInstance().registerComponent(this);        
 
     setPreferredSize(new Dimension(getWidth(), getHeight()));
     setSize(getWidth(), getHeight());
