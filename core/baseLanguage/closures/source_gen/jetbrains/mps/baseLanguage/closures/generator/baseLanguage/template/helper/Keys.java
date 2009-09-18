@@ -18,7 +18,6 @@ public enum Keys {
     return this.name + "." + String.valueOf(o);
   }
 
-
   private static String PREFIX(String str) {
     return "jetbrains.mps.baselanguage.closures.generator." + str;
   }

@@ -10,4 +10,5 @@ public enum JUnitRunTypes {
   MODULE();
 
   JUnitRunTypes() {
-  }}
+  }
+}

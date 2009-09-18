@@ -119,5 +119,6 @@ public class BuildScriptRunnerComponent extends JPanel implements DataProvider {
     STOPPED();
 
     BuildState() {
-    }}
+    }
+  }
 }

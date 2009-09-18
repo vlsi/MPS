@@ -29,7 +29,6 @@ public enum Values {
     return node.getUserObject(this) != null;
   }
 
-
   public static void copy(SNode from, SNode to) {
     for (Values val : Values.values()) {
       val.set(to, val.get(from));

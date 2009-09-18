@@ -52,40 +52,14 @@ public class EnumClass_TextGen extends SNodeTextGen {
         TextGenManager.instance().appendNodeText(this.getContext(), this.getBuffer(), item, this.getSNode());
       }
     }
-    if (ListSequence.fromList(SLinkOperations.getTargets(node, "field", true)).isNotEmpty()) {
-      this.appendNewLine();
-      if (ListSequence.fromList(SLinkOperations.getTargets(node, "field", true)).isNotEmpty()) {
-        for (SNode item : SLinkOperations.getTargets(node, "field", true)) {
-          TextGenManager.instance().appendNodeText(this.getContext(), this.getBuffer(), item, this.getSNode());
-        }
-      }
-    }
-    if (ListSequence.fromList(SLinkOperations.getTargets(node, "constructor", true)).isNotEmpty()) {
-      this.appendNewLine();
-      if (ListSequence.fromList(SLinkOperations.getTargets(node, "constructor", true)).isNotEmpty()) {
-        for (SNode item : SLinkOperations.getTargets(node, "constructor", true)) {
-          TextGenManager.instance().appendNodeText(this.getContext(), this.getBuffer(), item, this.getSNode());
-        }
-      }
-    }
-    if (ListSequence.fromList(SLinkOperations.getTargets(node, "method", true)).isNotEmpty()) {
-      this.appendNewLine();
-      if (ListSequence.fromList(SLinkOperations.getTargets(node, "method", true)).isNotEmpty()) {
-        for (SNode item : SLinkOperations.getTargets(node, "method", true)) {
-          TextGenManager.instance().appendNodeText(this.getContext(), this.getBuffer(), item, this.getSNode());
-        }
-      }
-    }
-    if (ListSequence.fromList(SLinkOperations.getTargets(node, "staticMethod", true)).isNotEmpty()) {
-      this.appendNewLine();
-      if (ListSequence.fromList(SLinkOperations.getTargets(node, "staticMethod", true)).isNotEmpty()) {
-        for (SNode item : SLinkOperations.getTargets(node, "staticMethod", true)) {
-          TextGenManager.instance().appendNodeText(this.getContext(), this.getBuffer(), item, this.getSNode());
-        }
-      }
-    }
+    this.appendNewLine();
+    BaseClassConceptTextGen.body(node, this);
     this.decreaseDepth();
-    this.append("}");
+    if (!(node.isRoot())) {
+      this.appendWithIndent("}");
+    } else {
+      this.append("}");
+    }
     this.appendNewLine();
   }
 

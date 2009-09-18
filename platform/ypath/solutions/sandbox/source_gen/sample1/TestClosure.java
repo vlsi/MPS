@@ -523,5 +523,6 @@ __switch__:
   public static   enum Enm {
     A(),
     B(),
-    C();}
+    C();
+  }
 }
