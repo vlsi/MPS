@@ -103,7 +103,7 @@ public class SearchQuery implements IExternalizeable {
       scopeXML.setAttribute(SCOPE_TYPE, SCOPE_TYPE_PROJECT);
     } else if (myScope instanceof ModuleScope) {
       scopeXML.setAttribute(SCOPE_TYPE, SCOPE_TYPE_MODULE);
-      AbstractModule abstractModule = (AbstractModule) ((ModuleScope) myScope).getModelOwner();
+      AbstractModule abstractModule = (AbstractModule) ((ModuleScope) myScope).getModule();
       if (abstractModule == null) {
         LOG.warning("Owner is not found for module");
         throw new CantSaveSomethingException("Module is not found for module. Maybe the module was deleted.");

@@ -89,8 +89,6 @@ public abstract class DefaultScope extends BaseScope {
     return myFqNameToDevKit.get(ref.getModuleFqName());
   }
 
-  protected abstract ModelOwner getModelOwner();
-
   protected abstract Set<IModule> getInitialModules();
 
   protected Set<Language> getInitialUsedLanguages() {

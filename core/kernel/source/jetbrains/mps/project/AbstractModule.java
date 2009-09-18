@@ -819,7 +819,7 @@ public abstract class AbstractModule implements IModule {
   }
 
   public class ModuleScope extends DefaultScope {
-    public ModelOwner getModelOwner() {
+    public AbstractModule getModule(){
       return AbstractModule.this;
     }
 
