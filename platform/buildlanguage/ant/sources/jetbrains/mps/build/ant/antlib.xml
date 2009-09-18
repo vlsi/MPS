@@ -14,9 +14,9 @@
   ~ limitations under the License.
   -->
 <antlib>
-    <taskdef name="mps.generate" classname="jetbrains.mps.build.ant.GenerateTask"/>
-    <taskdef name="mps.test.generation" classname="jetbrains.mps.build.ant.TestGenerationOnTeamcity"/>
-    <taskdef name="mps.test.broken.references" classname="jetbrains.mps.build.ant.TestBrokenReferencesOnTeamcity"/>
+    <taskdef name="mps.generate" classname="jetbrains.mps.build.ant.generation.GenerateTask"/>
+    <taskdef name="mps.test.generation" classname="jetbrains.mps.build.ant.generation.TestGenerationOnTeamcity"/>
+    <taskdef name="mps.test.broken.references" classname="jetbrains.mps.build.ant.brokenRefs.TestBrokenReferencesOnTeamcity"/>
     <typedef name="models" classname="org.apache.tools.ant.types.DirSet"/>
     <typedef name="modules" classname="org.apache.tools.ant.types.DirSet"/>
     <typedef name="project" classname="jetbrains.mps.build.ant.ProjectDataType"/>

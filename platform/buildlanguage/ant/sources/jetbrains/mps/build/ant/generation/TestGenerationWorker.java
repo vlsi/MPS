@@ -1,4 +1,4 @@
-package jetbrains.mps.build.ant;
+package jetbrains.mps.build.ant.generation;
 
 import org.apache.tools.ant.ProjectComponent;
 import org.apache.tools.ant.BuildException;
@@ -19,6 +19,9 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.util.Pair;
 import jetbrains.mps.ide.progress.IAdaptiveProgressMonitor;
 import jetbrains.mps.ide.genconf.GenParameters;
+import jetbrains.mps.build.ant.IBuildServerMessageFormat;
+import jetbrains.mps.build.ant.WhatToDo;
+import jetbrains.mps.build.ant.TeamCityMessageFormat;
 
 import java.util.Set;
 import java.util.List;

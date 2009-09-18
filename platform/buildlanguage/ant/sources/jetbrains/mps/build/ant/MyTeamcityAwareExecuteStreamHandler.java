@@ -2,7 +2,7 @@ package jetbrains.mps.build.ant;
 
 import org.apache.tools.ant.Task;
 
-class MyTeamcityAwareExecuteStreamHandler extends MyExecuteStreamHandler {
+public class MyTeamcityAwareExecuteStreamHandler extends MyExecuteStreamHandler {
   private final IBuildServerMessageFormat myBuildServerMessageFormat;
 
   public MyTeamcityAwareExecuteStreamHandler(Task task, IBuildServerMessageFormat buildServerMessageFormat) {

@@ -1,4 +1,4 @@
-package jetbrains.mps.build.ant;
+package jetbrains.mps.build.ant.generation;
 
 import org.apache.tools.ant.ProjectComponent;
 import org.apache.tools.ant.BuildException;
@@ -18,6 +18,8 @@ import jetbrains.mps.build.buildgeneration.StronglyConnectedModules;
 import jetbrains.mps.build.buildgeneration.graph.IVertex;
 import jetbrains.mps.build.buildgeneration.StronglyConnectedModules.IModuleDecorator;
 import jetbrains.mps.build.buildgeneration.StronglyConnectedModules.IModuleDecoratorBuilder;
+import jetbrains.mps.build.ant.MpsWorker;
+import jetbrains.mps.build.ant.WhatToDo;
 import jetbrains.mps.ide.messages.IMessageHandler;
 import jetbrains.mps.ide.messages.Message;
 import com.intellij.openapi.progress.EmptyProgressIndicator;

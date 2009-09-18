@@ -13,10 +13,13 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.build.ant;
+package jetbrains.mps.build.ant.generation;
+
+import jetbrains.mps.build.ant.MpsLoadTask;
+import jetbrains.mps.build.ant.MpsWorker;
 
 public class GenerateTask extends MpsLoadTask {
-  static final String COMPILE = "COMPILE";
+  public static final String COMPILE = "COMPILE";
 
   {
     myWhatToDo.putProperty(COMPILE, Boolean.toString(true));

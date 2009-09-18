@@ -1,10 +1,14 @@
-package jetbrains.mps.build.ant;
+package jetbrains.mps.build.ant.brokenRefs;
 
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.lang.generator.structure.ReferenceMacro_AnnotationLink;
 import jetbrains.mps.lang.core.structure.BaseConcept;
+import jetbrains.mps.build.ant.MpsWorker;
+import jetbrains.mps.build.ant.IBuildServerMessageFormat;
+import jetbrains.mps.build.ant.WhatToDo;
+import jetbrains.mps.build.ant.TeamCityMessageFormat;
 
 import java.util.List;
 import java.io.File;

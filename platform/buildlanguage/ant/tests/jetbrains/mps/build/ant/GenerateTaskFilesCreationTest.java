@@ -12,6 +12,8 @@ import java.net.URL;
 import org.apache.tools.ant.ProjectComponent;
 import org.apache.tools.ant.Project;
 import jetbrains.mps.BaseMPSTest;
+import jetbrains.mps.build.ant.generation.GeneratorWorker;
+import jetbrains.mps.build.ant.generation.GenerateTask;
 
 public class GenerateTaskFilesCreationTest extends BaseMPSTest {
   private static final String CONCEPT_NAME = "SomeConcept";

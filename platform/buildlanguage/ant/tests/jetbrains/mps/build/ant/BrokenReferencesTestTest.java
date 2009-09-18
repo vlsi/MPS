@@ -10,6 +10,7 @@ import java.net.URL;
 import com.intellij.openapi.util.io.FileUtil;
 import com.intellij.util.io.ZipUtil;
 import jetbrains.mps.build.ant.MpsWorker.SystemOutLogger;
+import jetbrains.mps.build.ant.brokenRefs.TestBrokenReferencesWorker;
 
 public class BrokenReferencesTestTest extends TestCase {
   public void testFailOnBrokenReferences() throws IOException {

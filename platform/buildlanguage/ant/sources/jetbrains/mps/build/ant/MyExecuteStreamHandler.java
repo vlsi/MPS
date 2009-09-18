@@ -9,7 +9,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.util.Scanner;
 
-class MyExecuteStreamHandler implements ExecuteStreamHandler {
+public class MyExecuteStreamHandler implements ExecuteStreamHandler {
   private Thread myOutputReadingThread;
   private Thread myErrorReadingThread;
   private final Task myTask;

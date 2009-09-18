@@ -1,6 +1,9 @@
-package jetbrains.mps.build.ant;
+package jetbrains.mps.build.ant.generation;
 
-import org.apache.tools.ant.Task;
+import jetbrains.mps.build.ant.MpsWorker;
+import jetbrains.mps.build.ant.MyExecuteStreamHandler;
+import jetbrains.mps.build.ant.MyTeamcityAwareExecuteStreamHandler;
+import jetbrains.mps.build.ant.TeamCityMessageFormat;
 
 public class TestGenerationOnTeamcity extends GenerateTask {
   public static final String INVOKE_TESTS = "INVOKE_TESTS";

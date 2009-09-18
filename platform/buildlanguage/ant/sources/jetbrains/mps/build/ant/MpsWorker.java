@@ -70,7 +70,7 @@ public abstract class MpsWorker {
     myLogger = logger;
   }
 
-  protected void workFromMain() {
+  public void workFromMain() {
     try {
       work();
       System.exit(0);
@@ -365,7 +365,7 @@ public abstract class MpsWorker {
     }
   }
 
-  protected static class SystemOutLogger implements AntLogger {
+  public static class SystemOutLogger implements AntLogger {
 
     public void log(String text, int level) {
       if (level == Project.MSG_ERR) {
