@@ -24,24 +24,32 @@ public class NodeReadEventsCaster {
   private static Stack<INodesReadListener> ourNodesReadListenersStack = new Stack<INodesReadListener>();
 
   public static void fireNodeChildReadAccess(SNode node, String childRole, SNode child) {
+    if (node.getModel().isLoading()) return;
+
     if (ourNodesReadListener != null) {
       ourNodesReadListener.nodeChildReadAccess(node, childRole, child);
     }
   }
 
   public static void fireNodePropertyReadAccess(SNode node, String propertyName, String value) {
+    if (node.getModel().isLoading()) return;
+
     if (ourNodesReadListener != null) {
       ourNodesReadListener.nodePropertyReadAccess(node, propertyName, value);
     }
   }
 
   public static void fireNodeReferentReadAccess(SNode node, String referentRole, SNode referent) {
+    if (node.getModel().isLoading()) return;
+
     if (ourNodesReadListener != null) {
       ourNodesReadListener.nodeReferentReadAccess(node, referentRole, referent);
     }
   }
 
   public static void fireNodeUnclassifiedReadAccess(SNode node) {
+    if (node.getModel().isLoading()) return;
+
     if (ourNodesReadListener != null) {
       ourNodesReadListener.nodeUnclassifiedReadAccess(node);
     }
