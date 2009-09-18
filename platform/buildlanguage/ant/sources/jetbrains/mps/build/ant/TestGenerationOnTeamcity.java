@@ -4,7 +4,7 @@ public class TestGenerationOnTeamcity extends GenerateTask {
   public static final String INVOKE_TESTS = "INVOKE_TESTS";
   public static final String SHOW_DIFF = "SHOW_DIFF";
 
-  public TestGenerationOnTeamcity() {
+  {
     myWhatToDo.putProperty(INVOKE_TESTS, Boolean.toString(false));
     myWhatToDo.putProperty(SHOW_DIFF, Boolean.toString(false));
   }

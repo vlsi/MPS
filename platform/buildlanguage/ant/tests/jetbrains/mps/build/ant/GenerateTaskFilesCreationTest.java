@@ -104,6 +104,7 @@ public class GenerateTaskFilesCreationTest extends BaseMPSTest {
     File destdir = extractProject(projectName);
 
     WhatToDo whatToDo = new WhatToDo();
+    whatToDo.putProperty(GenerateTask.COMPILE, Boolean.toString(true));
     whatToDo.addProjectFile(new File(destdir.getAbsolutePath() + File.separator + projectName + File.separator + projectName + ".mpr"));
     doGenerate(whatToDo);
 
