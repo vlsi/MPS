@@ -22,6 +22,7 @@ import com.intellij.openapi.util.Computable;
 import com.intellij.util.PathUtil;
 import com.intellij.util.Processor;
 import jetbrains.mps.TestMain;
+import jetbrains.mps.fileTypes.MPSFileTypesManager;
 import jetbrains.mps.generator.ModelGenerationStatusManager;
 import jetbrains.mps.ide.IdeMain;
 import jetbrains.mps.ide.IdeMain.TestMode;
@@ -57,7 +58,7 @@ public abstract class MpsWorker {
   protected final List<String> myWarnings = new ArrayList<String>();
   protected final WhatToDo myWhatToDo;
   private final AntLogger myLogger;
-  
+
   private final Set<MPSProject> myLoadedProjects = new HashSet<MPSProject>();
 
   public MpsWorker(WhatToDo whatToDo, ProjectComponent component) {
@@ -69,9 +70,9 @@ public abstract class MpsWorker {
     myLogger = logger;
   }
 
-  protected void doTheJob() {
+  protected void workFromMain() {
     try {
-      loadObjects();
+      work();
       System.exit(0);
     } catch (Exception e) {
       log(e);
@@ -79,7 +80,7 @@ public abstract class MpsWorker {
     }
   }
 
-  public void loadObjects() {
+  public void work() {
     BasicConfigurator.configure(new NullAppender());
     Logger.getRootLogger().setLevel(getLog4jLevel());
     jetbrains.mps.logging.Logger.addLoggingHandler(new MyMessageHandlerAppender());
@@ -104,6 +105,7 @@ public abstract class MpsWorker {
   }
 
   protected abstract void executeTask(MPSProject project, List<SModelDescriptor> models);
+
   protected abstract void showStatistic();
 
   private void unloadLoadedStuff() {
@@ -207,30 +209,37 @@ public abstract class MpsWorker {
   }
 
   private void collectFromModuleDirs(Set<SModelDescriptor> modelDescriptors) {
-    for (final File f : myWhatToDo.getModuleDirectories()) {
-      List<IModule> modules = ModelAccess.instance().runWriteAction(new Computable<List<IModule>>() {
-        public List<IModule> compute() {
-          return MPSModuleRepository.getInstance().readModuleDescriptors(FileSystem.getFile(f.getPath()), new MPSModuleOwner() {
+    for (File dir : myWhatToDo.getModuleDirectories()) {
+      File[] files = dir.listFiles();
+      if (files != null) {
+        for (final File moduleFile : files) {
+          String path = moduleFile.getAbsolutePath();
+          if (!path.endsWith(MPSExtentions.DOT_LANGUAGE) && !path.endsWith(MPSExtentions.DOT_SOLUTION) && !path.endsWith(MPSExtentions.DOT_DEVKIT)) continue;
+          List<IModule> modules = ModelAccess.instance().runWriteAction(new Computable<List<IModule>>() {
+            public List<IModule> compute() {
+              return MPSModuleRepository.getInstance().readModuleDescriptors(FileSystem.getFile(moduleFile.getPath()), new MPSModuleOwner() {
+              });
+            }
           });
-        }
-      });
 
-      for (IModule module : modules) {
-        info("Loaded module " + module);
+          for (IModule module : modules) {
+            info("Loaded module " + module);
 
-        if (module.isPackaged()) continue;
+            if (module.isPackaged()) continue;
 
-        List<SModelDescriptor> modelDescriptorList = module.getOwnModelDescriptors();
-        for (SModelDescriptor sm : modelDescriptorList) {
-          if (SModelStereotype.isUserModel(sm)) {
-            modelDescriptors.add(sm);
-          }
-        }
+            List<SModelDescriptor> modelDescriptorList = module.getOwnModelDescriptors();
+            for (SModelDescriptor sm : modelDescriptorList) {
+              if (SModelStereotype.isUserModel(sm)) {
+                modelDescriptors.add(sm);
+              }
+            }
 
-        if (module instanceof Language) {
-          Language language = (Language) module;
-          for (jetbrains.mps.smodel.Generator gen : language.getGenerators()) {
-            modelDescriptors.addAll(gen.getOwnModelDescriptors());
+            if (module instanceof Language) {
+              Language language = (Language) module;
+              for (jetbrains.mps.smodel.Generator gen : language.getGenerators()) {
+                modelDescriptors.addAll(gen.getOwnModelDescriptors());
+              }
+            }
           }
         }
       }

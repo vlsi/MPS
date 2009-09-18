@@ -1,7 +1,5 @@
 package jetbrains.mps.build.ant;
 
-import org.apache.tools.ant.Task;
-
 public class TestBrokenReferencesOnTeamcity extends MpsLoadTask{
   protected Class<? extends MpsWorker> getWorkerClass() {
     return TestBrokenReferencesWorker.class;
@@ -9,21 +7,7 @@ public class TestBrokenReferencesOnTeamcity extends MpsLoadTask{
 
   @Override
   protected MyExecuteStreamHandler getExecuteStreamHandler() {
-    return new MyTeamcityAwareExecuteStreamHandler(this);
+    return new MyTeamcityAwareExecuteStreamHandler(this, new TeamCityMessageFormat());
   }
 
-  private class MyTeamcityAwareExecuteStreamHandler extends MyExecuteStreamHandler {
-    public MyTeamcityAwareExecuteStreamHandler(Task task) {
-      super(task);
-    }
-
-    @Override
-    protected void logOutput(String line) {
-      if (TestBrokenReferencesWorker.getBuildServerMessageFormat().isBuildServerMessage(line)){
-        System.out.println(line);
-      } else {
-        super.logOutput(line);
-      }
-    }
-  }
 }

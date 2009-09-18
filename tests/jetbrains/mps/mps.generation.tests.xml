@@ -1,4 +1,4 @@
-<project name="mps.generation.tests" default="all">
+<project name="mps.tests" default="all">
     <property name="mps.home" value="${ant.file}/../../../.."/>
 
     <taskdef resource="jetbrains/mps/build/ant/antlib.xml"
@@ -128,7 +128,13 @@
             <jvmarg value="-Xss1024k"/>
             <jvmarg value="-Xmx1000m"/>
             <jvmarg value="-XX:MaxPermSize=92m"/>
-            <models dir="${mps.home}"/>
+            <!--<jvmarg value="-Xdebug"/>-->
+            <!--<jvmarg value="-Xrunjdwp:transport=dt_socket,server=y,suspend=y,address=5005"/>-->
+            <modules dir="${mps.home}">
+                <exclude name="**/classes/**"/>
+                <exclude name="**/classes_gen/**"/>
+                <exclude name="**/lib/**"/>
+            </modules>
         </mps.test.broken.references>
     </target>
 </project>

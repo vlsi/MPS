@@ -35,7 +35,7 @@ public class BrokenReferencesTestTest extends TestCase {
         }
       }
     };
-    worker.loadObjects();
+    worker.work();
     if (brokenReferenceFound[0]) return;
 
     fail("Did not found any broken references in model.");

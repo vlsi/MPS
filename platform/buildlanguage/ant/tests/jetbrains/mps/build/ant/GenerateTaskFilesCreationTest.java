@@ -153,7 +153,7 @@ public class GenerateTaskFilesCreationTest extends BaseMPSTest {
         System.out.println(levelText + ": " + msg);
       }
     });
-    mpsWorker.loadObjects();
+    mpsWorker.work();
   }
 
   private String getStructurePath(File destdir, String projectName, String languageName) {

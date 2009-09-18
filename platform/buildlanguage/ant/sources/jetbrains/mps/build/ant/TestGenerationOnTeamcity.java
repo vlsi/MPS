@@ -34,21 +34,6 @@ public class TestGenerationOnTeamcity extends GenerateTask {
 
   @Override
   protected MyExecuteStreamHandler getExecuteStreamHandler() {
-    return new MyTeamcityAwareExecuteStreamHandler(this);
-  }
-
-  public static class MyTeamcityAwareExecuteStreamHandler extends MyExecuteStreamHandler {
-    public MyTeamcityAwareExecuteStreamHandler(Task task) {
-      super(task);
-    }
-
-    @Override
-    protected void logOutput(String line) {
-      if (TestGenerationWorker.getBuildServerMessageFormat().isBuildServerMessage(line)) {
-        System.out.println(line);
-      } else {
-        super.logOutput(line);
-      }
-    }
+    return new MyTeamcityAwareExecuteStreamHandler(this, new TeamCityMessageFormat());
   }
 }

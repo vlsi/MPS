@@ -1,7 +1,6 @@
 package jetbrains.mps.build.ant;
 
 import jetbrains.mps.project.MPSProject;
-import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.lang.generator.structure.ReferenceMacro_AnnotationLink;
@@ -19,7 +18,7 @@ public class TestBrokenReferencesWorker extends MpsWorker {
 
   public static void main(String[] args) {
     MpsWorker generator = new TestBrokenReferencesWorker(WhatToDo.fromDumpInFile(new File(args[0])), new SystemOutLogger());
-    generator.doTheJob();
+    generator.workFromMain();
   }
 
   public static IBuildServerMessageFormat getBuildServerMessageFormat() {
