@@ -133,6 +133,23 @@
           </node>
         </node>
       </node>
+      <node role="throwsItem" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="2922006788899445641">
+        <link role="classifier" targetNodeId="3.~Exception" resolveInfo="Exception" />
+        <node role="nodeMacro$attribute" type="jetbrains.mps.lang.generator.structure.CopySrcListMacro" id="2922006788899445645">
+          <node role="sourceNodesQuery" type="jetbrains.mps.lang.generator.structure.SourceSubstituteMacro_SourceNodesQuery" id="2922006788899445646">
+            <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="2922006788899445647">
+              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="2922006788899445648">
+                <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="2922006788899445650">
+                  <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="2922006788899445649" />
+                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkListAccess" id="2922006788899445654">
+                    <link role="link" targetNodeId="5.1164879685961" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
     </node>
   </node>
   <node type="jetbrains.mps.lang.generator.structure.TemplateDeclaration" id="1213999885532">

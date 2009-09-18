@@ -54,4 +54,8 @@ public class QueriesGenerated {
   public static Iterable sourceNodesQuery_1221310523876(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     return SLinkOperations.getTargets(_context.getNode(), "annotation", true);
   }
+
+  public static Iterable sourceNodesQuery_2922006788899445646(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
+    return SLinkOperations.getTargets(_context.getNode(), "throwsItem", true);
+  }
 }
