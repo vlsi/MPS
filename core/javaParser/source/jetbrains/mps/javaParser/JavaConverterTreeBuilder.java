@@ -42,6 +42,7 @@ import java.lang.reflect.InvocationTargetException;
  */
 public class JavaConverterTreeBuilder {
   private SModel myCurrentModel;
+  private Map<String, SModel> myModelMap;
 
   private Classifier myCurrentClass;
   private BaseMethodDeclaration myCurrentMethod;
@@ -1296,19 +1297,26 @@ public class JavaConverterTreeBuilder {
 
   // exec ==========================================================================
   public void exec(ReferentsCreator referentsCreator,
-                   SModel currentModel) {
+                   Map<String, SModel> modelMap) {
     // Construct the basic AST.
     myBindingMap = referentsCreator.getBindingMap();
     myTypesProvider = referentsCreator.getTypesProvider();
-    myCurrentModel = currentModel;
+    myModelMap = modelMap;
     myCurrentClass = null;
     myCurrentMethod = null;
+    myCurrentModel = null;
     for (TypeDeclaration type : referentsCreator.getClassifierTypeDecls()) {
+      myCurrentModel = getModelByTypeDecalration(type);
       Classifier classifier = processType(type);
       if (referentsCreator.isTopLevelClassifier(type)) {
         myCurrentModel.addRoot(classifier);
       }
+      myCurrentModel = null;
     }
+  }
+
+  public SModel getModelByTypeDecalration(TypeDeclaration typeDeclaration) {
+    return myModelMap.get(JavaCompiler.packageNameFromCompoundName(typeDeclaration.binding.compoundName));
   }
 
 

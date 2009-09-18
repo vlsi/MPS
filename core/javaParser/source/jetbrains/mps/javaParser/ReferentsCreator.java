@@ -2,7 +2,6 @@ package jetbrains.mps.javaParser;
 
 import org.eclipse.jdt.internal.compiler.lookup.*;
 import org.eclipse.jdt.internal.compiler.ASTVisitor;
-import org.eclipse.jdt.internal.compiler.CompilationResult;
 import org.eclipse.jdt.internal.compiler.ast.*;
 import org.eclipse.jdt.internal.compiler.ast.AnnotationMethodDeclaration;
 import org.eclipse.jdt.internal.compiler.ast.Expression;
@@ -25,12 +24,13 @@ import java.util.*;
 public class ReferentsCreator {
   Map<Binding, INodeAdapter> myBindingMap = new HashMap<Binding, INodeAdapter>();
   SModel myCurrentModel;
+  Map<String, SModel> myPackageNamesToModels;
   TypesProvider myTypesProvider;
   List<TypeDeclaration> myTypeDecls = new ArrayList<TypeDeclaration>();
   Set<TypeDeclaration> myTopLevelTypeDecls = new HashSet<TypeDeclaration>();
 
-  public ReferentsCreator(SModel currentModel) {
-    myCurrentModel = currentModel;
+  public ReferentsCreator(Map<String, SModel> modelMap) {
+    myPackageNamesToModels = modelMap;
     myTypesProvider = new TypesProvider(this);
   }
 
@@ -75,7 +75,12 @@ public class ReferentsCreator {
     @Override
     public boolean visit(TypeDeclaration typeDeclaration,
                          CompilationUnitScope scope) {
-      return process(typeDeclaration);
+      String fqName = JavaCompiler.packageNameFromCompoundName(typeDeclaration.binding.compoundName);
+      myReferentsCreator.myCurrentModel =
+        myReferentsCreator.myPackageNamesToModels.get(fqName);
+      boolean result = process(typeDeclaration);
+      myReferentsCreator.myCurrentModel = null;
+      return result;
     }
 
     private boolean process(TypeDeclaration typeDeclaration) {
@@ -180,7 +185,12 @@ public class ReferentsCreator {
 
     @Override
     public boolean visit(TypeDeclaration typeDeclaration, CompilationUnitScope scope) {
-      return process(typeDeclaration);
+       String fqName = JavaCompiler.packageNameFromCompoundName(typeDeclaration.binding.compoundName);
+      myReferentsCreator.myCurrentModel =
+        myReferentsCreator.myPackageNamesToModels.get(fqName);
+      boolean result = process(typeDeclaration);
+      myReferentsCreator.myCurrentModel = null;
+      return result;
     }
 
     private boolean process(TypeDeclaration typeDeclaration) {

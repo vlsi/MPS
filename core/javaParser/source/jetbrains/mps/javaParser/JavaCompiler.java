@@ -1,7 +1,6 @@
 package jetbrains.mps.javaParser;
 
 import org.eclipse.jdt.internal.compiler.ast.CompilationUnitDeclaration;
-import org.eclipse.jdt.internal.compiler.ast.TypeDeclaration;
 import org.eclipse.jdt.internal.compiler.env.ICompilationUnit;
 import org.eclipse.jdt.internal.compiler.env.NameEnvironmentAnswer;
 import org.eclipse.jdt.internal.compiler.*;
@@ -11,17 +10,16 @@ import org.eclipse.jdt.internal.compiler.classfmt.ClassFileConstants;
 import org.eclipse.jdt.internal.compiler.impl.CompilerOptions;
 import org.eclipse.jdt.internal.compiler.batch.CompilationUnit;
 import org.eclipse.jdt.core.compiler.CategorizedProblem;
-import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.smodel.*;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.reloading.IClassPathItem;
 import jetbrains.mps.reloading.CompositeClassPathItem;
 import jetbrains.mps.reloading.CommonPaths;
 import jetbrains.mps.vfs.MPSExtentions;
-import jetbrains.mps.util.AbstractClassLoader;
 import jetbrains.mps.util.FileUtil;
-import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.compiler.MPSNameEnvironment;
 import jetbrains.mps.project.IModule;
+import jetbrains.mps.project.Solution;
 
 import java.util.*;
 import java.io.*;
@@ -41,15 +39,18 @@ public class JavaCompiler {
   private Set<ICompilationUnit> myProcessedCompilationUnits = new HashSet<ICompilationUnit>();
   private List<CompilationUnitDeclaration> myCompilationUnitDeclarations = new ArrayList<CompilationUnitDeclaration>();
   private IClassPathItem myClassPathItem;
-  private IModule myModule;
-  private SModel myModel;
+  private Solution mySolution;
   private List<CompilationResult> myCompilationResults = new ArrayList<CompilationResult>();
+  private File mySourceDir;
+  private String myPrefix;
+  private Map<String, SModel> myPackageFQNamesToModels = new HashMap<String, SModel>();
 
-  public JavaCompiler(IModule module, SModel model) {
-    myModule = module;
-    myModel = model;
-    assert myModule.getScope().getModelDescriptor(model.getSModelId()) != null;
-    initClassPathItem(module);
+  public JavaCompiler(Solution solution, File sourceDir) {
+    mySolution = solution;
+    mySourceDir = sourceDir;
+    myPrefix = solution.getModuleFqName();
+    initClassPathItem(solution);
+    addSourceFromDirectory(mySourceDir, myPrefix);
   }
 
   private void initClassPathItem(IModule module) {
@@ -60,7 +61,7 @@ public class JavaCompiler {
     myClassPathItem = compositeClassPathItem;
   }
 
-  public void addSourceFromFile(File file) {
+  public void addSourceFromFile(File file, String packageName) {
     try {
       String fileContents = FileUtil.read(file);
       String str = "package ";
@@ -75,6 +76,12 @@ public class JavaCompiler {
         }
         classFQName.append(c);
       }
+      String packageNameFromFile = classFQName.toString();
+      if (!(packageName.equals(packageNameFromFile))) {
+        LOG.error("package name in a source file does not correpond to file path");
+        return;
+      }
+      SModel model = getModel(packageName);
       String fileName;
       String nameAndExtension = file.getName();
       int offset = nameAndExtension.lastIndexOf('.');
@@ -85,17 +92,21 @@ public class JavaCompiler {
       }
       classFQName.append(".");
       classFQName.append(fileName);
-      addSource(classFQName.toString(), fileContents);
+      myPackageFQNamesToModels.put(packageName, model);
+      addSource(classFQName.toString(), fileContents, model);
     } catch (Throwable t) {
       LOG.error(t);
     }
   }
 
-  public void addSourceFromDirectory(File dir) {
+  public void addSourceFromDirectory(File dir, String packageName) {
     assert dir.isDirectory();
     for (File file : dir.listFiles()) {
       if (file.isDirectory()) {
-        addSourceFromDirectory(file);
+        //create model if necessary
+        String dirName = file.getName();
+        String nestedPackageName = packageName + '.' + dirName;
+        addSourceFromDirectory(file, nestedPackageName);
       } else {
         String extension;
         String nameAndExtension = file.getName();
@@ -103,14 +114,29 @@ public class JavaCompiler {
         if (offset >= 0) {
           extension = nameAndExtension.substring(offset + 1);
           if ("java".equals(extension)) {
-            addSourceFromFile(file);
+            addSourceFromFile(file, packageName);
           }
         }
       }
     }
   }
 
-  public void addSource(String classFqName, String text) {
+  private SModel getModel(String fqName) {
+    SModelFqName sModelFqName = SModelFqName.fromString(fqName);
+    SModelDescriptor modelDescriptor = SModelRepository.getInstance().getModelDescriptor(sModelFqName);
+    if (modelDescriptor != null) {
+      if (!mySolution.getOwnModelDescriptors().contains(modelDescriptor)) {
+        LOG.error("model descriptor with fq name " + fqName + " is not owned by module "+mySolution.getModuleFqName());
+        return null;
+      }
+    } else {
+      modelDescriptor =
+        mySolution.createModel(sModelFqName, mySolution.getSModelRoots().get(0));//todo get model root from UI
+    }
+    return modelDescriptor.getSModel();
+  }
+
+  public void addSource(String classFqName, String text, SModel model) {
     CompilationUnit compilationUnit = new CompilationUnit(text.toCharArray(), classFqName.replace(".", File.separator) + MPSExtentions.DOT_JAVAFILE, "UTF-8");
     myCompilationUnits.put(classFqName, compilationUnit);
   }
@@ -133,14 +159,26 @@ public class JavaCompiler {
   }
 
   public void buildAST() {
-    ReferentsCreator referentsCreator = new ReferentsCreator(myModel);
+    ReferentsCreator referentsCreator = new ReferentsCreator(new HashMap<String, SModel>(myPackageFQNamesToModels));
     referentsCreator.exec(myCompilationUnitDeclarations.toArray(new CompilationUnitDeclaration[myCompilationUnitDeclarations.size()]));
-    new JavaConverterTreeBuilder().exec(referentsCreator, myModel);
+    new JavaConverterTreeBuilder().exec(referentsCreator, myPackageFQNamesToModels);
   }
 
   public List<CompilationResult> getCompilationResults() {
     return myCompilationResults;
   }
+
+  public static String packageNameFromCompoundName(char[][] name) {
+     StringBuilder result = new StringBuilder();
+     for (int i = 0; i < name.length - 1; i++) {
+       char[] namePart = name[i];
+       result.append(namePart);
+       if (i < name.length - 2) {
+         result.append('.');
+       }
+     }
+     return result.toString();
+   }
 
   private class MyNameEnvironment extends MPSNameEnvironment {
     protected IClassPathItem getClassPathItem() {
