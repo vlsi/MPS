@@ -25,7 +25,7 @@ public class check_HasSuperConstructorCall_NonTypesystemRule extends AbstractNon
       SNode classConcept = SNodeOperations.getAncestor(constructorDeclaration, "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false);
       SNode classifierType = SLinkOperations.getTarget(classConcept, "superclass", true);
       SNode classifier = SLinkOperations.getTarget(classifierType, "classifier", false);
-      if ((classifier != null) && SNodeOperations.isInstanceOf(classifier, "jetbrains.mps.baseLanguage.structure.ClassConcept") && classifier != SNodeOperations.getNode("f:java_stub#java.lang(java.lang@java_stub)", "~Object")) {
+      if ((classifier != null) && SNodeOperations.isInstanceOf(classifier, "jetbrains.mps.baseLanguage.structure.ClassConcept") && classifier != SNodeOperations.getNode("f:java_stub#java.lang(java.lang@java_stub)", "~Object") && classifier != SNodeOperations.getNode("f:java_stub#java.lang(java.lang@java_stub)", "~Enum")) {
         List<SNode> constructors = SLinkOperations.getTargets(SNodeOperations.cast(classifier, "jetbrains.mps.baseLanguage.structure.ClassConcept"), "constructor", true);
         if (ListSequence.fromList(constructors).isEmpty()) {
           return;
