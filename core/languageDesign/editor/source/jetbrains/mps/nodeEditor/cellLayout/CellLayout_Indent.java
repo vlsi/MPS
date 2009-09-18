@@ -241,8 +241,10 @@ public class CellLayout_Indent extends AbstractCellLayout {
         collection.setHeight(y1 - y0);
 
         if (collection != myCell) {
-          collection.setAscent(getAscent(collection));
-          collection.setDescent(getDescent(collection));
+          int ascent = getAscent(collection);
+          int descent = collection.getHeight() - ascent;
+          collection.setAscent(ascent);
+          collection.setDescent(descent);
         }
       }
     }
