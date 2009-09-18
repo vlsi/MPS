@@ -404,8 +404,9 @@ public class RunManagerImpl extends RunManagerEx implements JDOMExternalizable, 
         addConfigurationElement(parentNode, configurationSettings, CONFIGURATION);
       }
     }
-    if (getSelectedConfiguration() != null) {
-      parentNode.setAttribute(SELECTED_ATTR, getUniqueName(getSelectedConfiguration().getConfiguration()));
+    RunnerAndConfigurationSettingsImpl config = getSelectedConfiguration();
+    if (config != null) {
+      parentNode.setAttribute(SELECTED_ATTR, getUniqueName(config.getConfiguration()));
     }
   }
 
