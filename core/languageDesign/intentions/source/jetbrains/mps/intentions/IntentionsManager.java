@@ -144,7 +144,9 @@ public class IntentionsManager implements ApplicationComponent, PersistentStateC
     return !getAvailableIntentions_delete(node, editorContext, terminated).isEmpty();
   }
 
-  private List<Intention> getIntentionsFor(String conceptFqName, IScope scope, @Nullable Computable<Boolean> terminated) {
+  private List<Intention> getIntentionsFor(SNode node, IScope scope, @Nullable Computable<Boolean> terminated) {
+    String conceptFqName = node.getConceptFqName();
+    Set<Language> visibleLanguages = new HashSet<Language>(node.getModel().getLanguages(scope));
     List<Intention> result = new ArrayList<Intention>();
     for (String ancestor : LanguageHierarchyCache.getInstance().getAncestorsNames(conceptFqName)) {
       Set<Intention> intentions = myIntentions.get(ancestor);
@@ -152,7 +154,7 @@ public class IntentionsManager implements ApplicationComponent, PersistentStateC
       for (Intention intention : intentions) {
         if (terminated != null && terminated.compute()) return new ArrayList<Intention>();
         Language language = getIntentionLanguage(intention);
-        if (language != null && !scope.isVisibleLanguage(language.getModuleReference())) continue;
+        if (language != null && !visibleLanguages.contains(language)) continue;
         result.add(intention);
       }
     }
@@ -163,10 +165,10 @@ public class IntentionsManager implements ApplicationComponent, PersistentStateC
     assert node != null : "node == null - inconsistent editor state";
     List<Intention> intentions;
     if (instantiateParameterized) {
-      intentions = getIntentionsFor(node.getConceptFqName(), context.getScope(), terminated);
+      intentions = getIntentionsFor(node, context.getScope(), terminated);
     } else {
       intentions = new ArrayList<Intention>();
-      for (Intention intention : getIntentionsFor(node.getConceptFqName(), context.getScope(), terminated)) {
+      for (Intention intention : getIntentionsFor(node, context.getScope(), terminated)) {
         if (terminated != null && terminated.compute()) return new ArrayList<Intention>();
         if (intention.isParameterized()) {
           Method method = null;
