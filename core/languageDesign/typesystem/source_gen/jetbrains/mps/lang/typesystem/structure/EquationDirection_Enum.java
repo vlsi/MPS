@@ -31,7 +31,6 @@ public enum EquationDirection_Enum {
     return this.myValue;
   }
 
-
   public static List<EquationDirection_Enum> getConstants() {
     List<EquationDirection_Enum> list = ListSequence.fromList(new LinkedList<EquationDirection_Enum>());
     ListSequence.fromList(list).addElement(EquationDirection_Enum.none);

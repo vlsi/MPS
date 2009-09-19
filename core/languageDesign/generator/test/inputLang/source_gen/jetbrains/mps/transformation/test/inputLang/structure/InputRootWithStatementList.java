@@ -72,7 +72,6 @@ public class InputRootWithStatementList extends BaseConcept implements INamedCon
     super.setChild(InputRootWithStatementList.STATEMENT_LIST, node);
   }
 
-
   public static InputRootWithStatementList newInstance(SModel sm, boolean init) {
     return (InputRootWithStatementList)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.transformation.test.inputLang.structure.InputRootWithStatementList", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -80,5 +79,4 @@ public class InputRootWithStatementList extends BaseConcept implements INamedCon
   public static InputRootWithStatementList newInstance(SModel sm) {
     return InputRootWithStatementList.newInstance(sm, false);
   }
-
 }

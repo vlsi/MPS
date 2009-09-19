@@ -75,7 +75,6 @@ public class EventType extends BaseConcept implements INamedConcept {
     this.insertChild(prev, EventType.VARIABLE, node);
   }
 
-
   public static EventType newInstance(SModel sm, boolean init) {
     return (EventType)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.samples.agreementLanguage.structure.EventType", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -83,5 +82,4 @@ public class EventType extends BaseConcept implements INamedConcept {
   public static EventType newInstance(SModel sm) {
     return EventType.newInstance(sm, false);
   }
-
 }

@@ -22,7 +22,6 @@ public class QuantityTemporalProperty extends TemporalProperty {
     this.setValue(node);
   }
 
-
   public static QuantityTemporalProperty newInstance(SModel sm, boolean init) {
     return (QuantityTemporalProperty)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.samples.agreementLanguage.structure.QuantityTemporalProperty", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -30,5 +29,4 @@ public class QuantityTemporalProperty extends TemporalProperty {
   public static QuantityTemporalProperty newInstance(SModel sm) {
     return QuantityTemporalProperty.newInstance(sm, false);
   }
-
 }

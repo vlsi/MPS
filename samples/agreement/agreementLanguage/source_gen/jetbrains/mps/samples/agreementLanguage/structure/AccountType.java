@@ -52,7 +52,6 @@ public class AccountType extends BaseConcept implements INamedConcept {
     this.setProperty(AccountType.VIRTUAL_PACKAGE, value);
   }
 
-
   public static AccountType newInstance(SModel sm, boolean init) {
     return (AccountType)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.samples.agreementLanguage.structure.AccountType", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -60,5 +59,4 @@ public class AccountType extends BaseConcept implements INamedConcept {
   public static AccountType newInstance(SModel sm) {
     return AccountType.newInstance(sm, false);
   }
-
 }

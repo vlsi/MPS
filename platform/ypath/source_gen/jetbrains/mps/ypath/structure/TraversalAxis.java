@@ -37,7 +37,6 @@ public enum TraversalAxis {
     return this.myValue;
   }
 
-
   public static List<TraversalAxis> getConstants() {
     List<TraversalAxis> list = ListSequence.fromList(new LinkedList<TraversalAxis>());
     ListSequence.fromList(list).addElement(TraversalAxis.DESCENDANTS);

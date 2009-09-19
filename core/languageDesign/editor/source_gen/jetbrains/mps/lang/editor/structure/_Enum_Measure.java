@@ -30,7 +30,6 @@ public enum _Enum_Measure {
     return this.myValue;
   }
 
-
   public static List<_Enum_Measure> getConstants() {
     List<_Enum_Measure> list = ListSequence.fromList(new LinkedList<_Enum_Measure>());
     ListSequence.fromList(list).addElement(_Enum_Measure.pixels);

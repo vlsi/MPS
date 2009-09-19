@@ -34,7 +34,6 @@ public enum Severity {
     return this.myValue;
   }
 
-
   public static List<Severity> getConstants() {
     List<Severity> list = ListSequence.fromList(new LinkedList<Severity>());
     ListSequence.fromList(list).addElement(Severity.fatal);

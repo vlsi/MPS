@@ -42,7 +42,6 @@ public class Date extends BaseConcept {
     this.setIntegerProperty(Date.DAY, value);
   }
 
-
   public static Date newInstance(SModel sm, boolean init) {
     return (Date)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.samples.agreementLanguage.structure.Date", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -50,5 +49,4 @@ public class Date extends BaseConcept {
   public static Date newInstance(SModel sm) {
     return Date.newInstance(sm, false);
   }
-
 }

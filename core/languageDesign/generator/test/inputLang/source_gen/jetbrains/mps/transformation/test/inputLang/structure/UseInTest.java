@@ -4,7 +4,7 @@ package jetbrains.mps.transformation.test.inputLang.structure;
 
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import java.util.LinkedList;
+import jetbrains.mps.internal.collections.runtime.backports.LinkedList;
 
 public enum UseInTest {
   test1("test1", "test1"),
@@ -35,7 +35,6 @@ public enum UseInTest {
   public String getValue() {
     return this.myValue;
   }
-
 
   public static List<UseInTest> getConstants() {
     List<UseInTest> list = ListSequence.fromList(new LinkedList<UseInTest>());
@@ -84,5 +83,4 @@ public enum UseInTest {
     }
     return UseInTest.getDefault();
   }
-
 }

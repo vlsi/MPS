@@ -31,7 +31,6 @@ public enum _NextLine_Enum {
     return this.myValue;
   }
 
-
   public static List<_NextLine_Enum> getConstants() {
     List<_NextLine_Enum> list = ListSequence.fromList(new LinkedList<_NextLine_Enum>());
     ListSequence.fromList(list).addElement(_NextLine_Enum.right);

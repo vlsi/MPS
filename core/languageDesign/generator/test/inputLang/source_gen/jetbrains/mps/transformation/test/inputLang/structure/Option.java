@@ -4,7 +4,7 @@ package jetbrains.mps.transformation.test.inputLang.structure;
 
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import java.util.LinkedList;
+import jetbrains.mps.internal.collections.runtime.backports.LinkedList;
 
 public enum Option {
   option_default("option_default", "option_default"),
@@ -30,7 +30,6 @@ public enum Option {
   public String getValue() {
     return this.myValue;
   }
-
 
   public static List<Option> getConstants() {
     List<Option> list = ListSequence.fromList(new LinkedList<Option>());
@@ -59,5 +58,4 @@ public enum Option {
     }
     return Option.getDefault();
   }
-
 }

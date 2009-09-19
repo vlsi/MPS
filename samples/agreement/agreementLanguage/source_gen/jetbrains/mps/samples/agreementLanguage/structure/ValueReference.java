@@ -24,7 +24,6 @@ public class ValueReference extends Expression {
     super.setReferent(ValueReference.VALUE, node);
   }
 
-
   public static ValueReference newInstance(SModel sm, boolean init) {
     return (ValueReference)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.samples.agreementLanguage.structure.ValueReference", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -32,5 +31,4 @@ public class ValueReference extends Expression {
   public static ValueReference newInstance(SModel sm) {
     return ValueReference.newInstance(sm, false);
   }
-
 }

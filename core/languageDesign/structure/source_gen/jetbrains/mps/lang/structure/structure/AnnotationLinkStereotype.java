@@ -31,7 +31,6 @@ public enum AnnotationLinkStereotype {
     return this.myValue;
   }
 
-
   public static List<AnnotationLinkStereotype> getConstants() {
     List<AnnotationLinkStereotype> list = ListSequence.fromList(new LinkedList<AnnotationLinkStereotype>());
     ListSequence.fromList(list).addElement(AnnotationLinkStereotype.node);

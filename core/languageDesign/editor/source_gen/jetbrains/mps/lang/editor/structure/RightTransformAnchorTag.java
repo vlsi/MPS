@@ -35,7 +35,6 @@ public enum RightTransformAnchorTag {
     return this.myValue;
   }
 
-
   public static List<RightTransformAnchorTag> getConstants() {
     List<RightTransformAnchorTag> list = ListSequence.fromList(new LinkedList<RightTransformAnchorTag>());
     ListSequence.fromList(list).addElement(RightTransformAnchorTag.none);

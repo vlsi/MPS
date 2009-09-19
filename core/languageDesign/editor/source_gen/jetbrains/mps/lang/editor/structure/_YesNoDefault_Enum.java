@@ -31,7 +31,6 @@ public enum _YesNoDefault_Enum {
     return this.myValue;
   }
 
-
   public static List<_YesNoDefault_Enum> getConstants() {
     List<_YesNoDefault_Enum> list = ListSequence.fromList(new LinkedList<_YesNoDefault_Enum>());
     ListSequence.fromList(list).addElement(_YesNoDefault_Enum.yes);

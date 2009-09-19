@@ -4,7 +4,7 @@ package jetbrains.mps.samples.agreementLanguage.structure;
 
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import java.util.LinkedList;
+import jetbrains.mps.internal.collections.runtime.backports.LinkedList;
 
 public enum Taxable {
   taxable("TAXABLE", true),
@@ -30,7 +30,6 @@ public enum Taxable {
     return this.myValue;
   }
 
-
   public static List<Taxable> getConstants() {
     List<Taxable> list = ListSequence.fromList(new LinkedList<Taxable>());
     ListSequence.fromList(list).addElement(Taxable.taxable);
@@ -54,5 +53,4 @@ public enum Taxable {
     }
     return Taxable.getDefault();
   }
-
 }

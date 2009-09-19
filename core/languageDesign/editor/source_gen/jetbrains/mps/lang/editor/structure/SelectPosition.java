@@ -30,7 +30,6 @@ public enum SelectPosition {
     return this.myValue;
   }
 
-
   public static List<SelectPosition> getConstants() {
     List<SelectPosition> list = ListSequence.fromList(new LinkedList<SelectPosition>());
     ListSequence.fromList(list).addElement(SelectPosition.before);

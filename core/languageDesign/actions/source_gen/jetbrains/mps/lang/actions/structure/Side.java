@@ -30,7 +30,6 @@ public enum Side {
     return this.myValue;
   }
 
-
   public static List<Side> getConstants() {
     List<Side> list = ListSequence.fromList(new LinkedList<Side>());
     ListSequence.fromList(list).addElement(Side.right);

@@ -32,7 +32,6 @@ public enum Keymap {
     return this.myValue;
   }
 
-
   public static List<Keymap> getConstants() {
     List<Keymap> list = ListSequence.fromList(new LinkedList<Keymap>());
     ListSequence.fromList(list).addElement(Keymap.Mac_OS_X);

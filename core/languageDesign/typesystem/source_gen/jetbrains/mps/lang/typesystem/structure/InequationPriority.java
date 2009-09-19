@@ -33,7 +33,6 @@ public enum InequationPriority {
     return this.myValue;
   }
 
-
   public static List<InequationPriority> getConstants() {
     List<InequationPriority> list = ListSequence.fromList(new LinkedList<InequationPriority>());
     ListSequence.fromList(list).addElement(InequationPriority._0);

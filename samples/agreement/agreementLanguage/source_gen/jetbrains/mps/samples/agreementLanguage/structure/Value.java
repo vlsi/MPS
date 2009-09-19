@@ -85,7 +85,6 @@ public class Value extends BaseConcept implements INamedConcept {
     this.insertChild(prev, Value.QUANTITY, node);
   }
 
-
   public static Value newInstance(SModel sm, boolean init) {
     return (Value)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.samples.agreementLanguage.structure.Value", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -93,5 +92,4 @@ public class Value extends BaseConcept implements INamedConcept {
   public static Value newInstance(SModel sm) {
     return Value.newInstance(sm, false);
   }
-
 }

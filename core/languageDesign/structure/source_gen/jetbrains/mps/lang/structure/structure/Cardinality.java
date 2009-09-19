@@ -32,7 +32,6 @@ public enum Cardinality {
     return this.myValue;
   }
 
-
   public static List<Cardinality> getConstants() {
     List<Cardinality> list = ListSequence.fromList(new LinkedList<Cardinality>());
     ListSequence.fromList(list).addElement(Cardinality._0__1);

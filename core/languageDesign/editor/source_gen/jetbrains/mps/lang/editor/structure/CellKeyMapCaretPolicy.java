@@ -32,7 +32,6 @@ public enum CellKeyMapCaretPolicy {
     return this.myValue;
   }
 
-
   public static List<CellKeyMapCaretPolicy> getConstants() {
     List<CellKeyMapCaretPolicy> list = ListSequence.fromList(new LinkedList<CellKeyMapCaretPolicy>());
     ListSequence.fromList(list).addElement(CellKeyMapCaretPolicy.ANY_POSITION);

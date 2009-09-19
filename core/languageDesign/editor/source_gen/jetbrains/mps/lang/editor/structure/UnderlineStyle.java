@@ -31,7 +31,6 @@ public enum UnderlineStyle {
     return this.myValue;
   }
 
-
   public static List<UnderlineStyle> getConstants() {
     List<UnderlineStyle> list = ListSequence.fromList(new LinkedList<UnderlineStyle>());
     ListSequence.fromList(list).addElement(UnderlineStyle.as_is);

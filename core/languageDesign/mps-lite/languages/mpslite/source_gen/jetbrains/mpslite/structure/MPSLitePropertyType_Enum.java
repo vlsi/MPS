@@ -30,7 +30,6 @@ public enum MPSLitePropertyType_Enum {
     return this.myValue;
   }
 
-
   public static List<MPSLitePropertyType_Enum> getConstants() {
     List<MPSLitePropertyType_Enum> list = ListSequence.fromList(new LinkedList<MPSLitePropertyType_Enum>());
     ListSequence.fromList(list).addElement(MPSLitePropertyType_Enum.string);

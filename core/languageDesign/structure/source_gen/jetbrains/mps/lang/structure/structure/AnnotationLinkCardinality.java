@@ -30,7 +30,6 @@ public enum AnnotationLinkCardinality {
     return this.myValue;
   }
 
-
   public static List<AnnotationLinkCardinality> getConstants() {
     List<AnnotationLinkCardinality> list = ListSequence.fromList(new LinkedList<AnnotationLinkCardinality>());
     ListSequence.fromList(list).addElement(AnnotationLinkCardinality._0__1);

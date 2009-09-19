@@ -24,7 +24,6 @@ public class PostingRule extends Formula {
     super.setReferent(PostingRule.ACCOUNT, node);
   }
 
-
   public static PostingRule newInstance(SModel sm, boolean init) {
     return (PostingRule)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.samples.agreementLanguage.structure.PostingRule", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -32,5 +31,4 @@ public class PostingRule extends Formula {
   public static PostingRule newInstance(SModel sm) {
     return PostingRule.newInstance(sm, false);
   }
-
 }

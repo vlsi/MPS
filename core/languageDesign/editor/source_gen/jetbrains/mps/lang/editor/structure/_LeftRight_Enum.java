@@ -30,7 +30,6 @@ public enum _LeftRight_Enum {
     return this.myValue;
   }
 
-
   public static List<_LeftRight_Enum> getConstants() {
     List<_LeftRight_Enum> list = ListSequence.fromList(new LinkedList<_LeftRight_Enum>());
     ListSequence.fromList(list).addElement(_LeftRight_Enum.left);

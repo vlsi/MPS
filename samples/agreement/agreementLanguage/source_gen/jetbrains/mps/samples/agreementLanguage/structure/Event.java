@@ -57,7 +57,6 @@ public class Event extends BaseConcept {
     this.insertChild(prev, Event.POSTING_RULE, node);
   }
 
-
   public static Event newInstance(SModel sm, boolean init) {
     return (Event)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.samples.agreementLanguage.structure.Event", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -65,5 +64,4 @@ public class Event extends BaseConcept {
   public static Event newInstance(SModel sm) {
     return Event.newInstance(sm, false);
   }
-
 }

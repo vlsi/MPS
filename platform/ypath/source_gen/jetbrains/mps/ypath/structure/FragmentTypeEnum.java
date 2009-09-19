@@ -38,7 +38,6 @@ public enum FragmentTypeEnum {
     return this.myValue;
   }
 
-
   public static List<FragmentTypeEnum> getConstants() {
     List<FragmentTypeEnum> list = ListSequence.fromList(new LinkedList<FragmentTypeEnum>());
     ListSequence.fromList(list).addElement(FragmentTypeEnum.replace_single);

@@ -33,7 +33,6 @@ public class TemporalProperty extends BaseConcept {
     super.setChild(TemporalProperty.VALUE, node);
   }
 
-
   public static TemporalProperty newInstance(SModel sm, boolean init) {
     return (TemporalProperty)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.samples.agreementLanguage.structure.TemporalProperty", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -41,5 +40,4 @@ public class TemporalProperty extends BaseConcept {
   public static TemporalProperty newInstance(SModel sm) {
     return TemporalProperty.newInstance(sm, false);
   }
-
 }

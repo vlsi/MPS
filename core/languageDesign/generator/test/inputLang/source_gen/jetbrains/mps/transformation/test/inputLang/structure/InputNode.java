@@ -75,7 +75,6 @@ public class InputNode extends BaseConcept implements INamedConcept {
     this.insertChild(prev, InputNode.INPUT_CHILD, node);
   }
 
-
   public static InputNode newInstance(SModel sm, boolean init) {
     return (InputNode)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.transformation.test.inputLang.structure.InputNode", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -83,5 +82,4 @@ public class InputNode extends BaseConcept implements INamedConcept {
   public static InputNode newInstance(SModel sm) {
     return InputNode.newInstance(sm, false);
   }
-
 }

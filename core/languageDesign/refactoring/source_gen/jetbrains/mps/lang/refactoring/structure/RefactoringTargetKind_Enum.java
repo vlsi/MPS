@@ -33,7 +33,6 @@ public enum RefactoringTargetKind_Enum {
     return this.myValue;
   }
 
-
   public static List<RefactoringTargetKind_Enum> getConstants() {
     List<RefactoringTargetKind_Enum> list = ListSequence.fromList(new LinkedList<RefactoringTargetKind_Enum>());
     ListSequence.fromList(list).addElement(RefactoringTargetKind_Enum.node);

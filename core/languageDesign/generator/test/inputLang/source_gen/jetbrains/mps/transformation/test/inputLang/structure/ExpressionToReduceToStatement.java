@@ -22,5 +22,4 @@ public class ExpressionToReduceToStatement extends Expression {
   public static ExpressionToReduceToStatement newInstance(SModel sm) {
     return ExpressionToReduceToStatement.newInstance(sm, false);
   }
-
 }

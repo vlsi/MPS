@@ -31,7 +31,6 @@ public enum _ImageAlignment_Enum {
     return this.myValue;
   }
 
-
   public static List<_ImageAlignment_Enum> getConstants() {
     List<_ImageAlignment_Enum> list = ListSequence.fromList(new LinkedList<_ImageAlignment_Enum>());
     ListSequence.fromList(list).addElement(_ImageAlignment_Enum.alignmentJustify);

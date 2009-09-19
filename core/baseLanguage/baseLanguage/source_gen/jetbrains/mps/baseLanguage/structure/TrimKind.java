@@ -31,7 +31,6 @@ public enum TrimKind {
     return this.myValue;
   }
 
-
   public static List<TrimKind> getConstants() {
     List<TrimKind> list = ListSequence.fromList(new LinkedList<TrimKind>());
     ListSequence.fromList(list).addElement(TrimKind.both);

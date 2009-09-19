@@ -31,7 +31,6 @@ public enum GeneratorMessageType {
     return this.myValue;
   }
 
-
   public static List<GeneratorMessageType> getConstants() {
     List<GeneratorMessageType> list = ListSequence.fromList(new LinkedList<GeneratorMessageType>());
     ListSequence.fromList(list).addElement(GeneratorMessageType.info);

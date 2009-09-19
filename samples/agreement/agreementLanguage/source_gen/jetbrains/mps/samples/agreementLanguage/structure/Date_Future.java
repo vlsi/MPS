@@ -21,5 +21,4 @@ public class Date_Future extends Date {
   public static Date_Future newInstance(SModel sm) {
     return Date_Future.newInstance(sm, false);
   }
-
 }

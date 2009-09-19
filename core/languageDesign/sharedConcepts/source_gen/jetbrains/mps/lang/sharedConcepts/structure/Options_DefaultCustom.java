@@ -30,7 +30,6 @@ public enum Options_DefaultCustom {
     return this.myValue;
   }
 
-
   public static List<Options_DefaultCustom> getConstants() {
     List<Options_DefaultCustom> list = ListSequence.fromList(new LinkedList<Options_DefaultCustom>());
     ListSequence.fromList(list).addElement(Options_DefaultCustom.default_);

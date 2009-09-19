@@ -31,7 +31,6 @@ public enum _CaretPosition_Enum {
     return this.myValue;
   }
 
-
   public static List<_CaretPosition_Enum> getConstants() {
     List<_CaretPosition_Enum> list = ListSequence.fromList(new LinkedList<_CaretPosition_Enum>());
     ListSequence.fromList(list).addElement(_CaretPosition_Enum.none);

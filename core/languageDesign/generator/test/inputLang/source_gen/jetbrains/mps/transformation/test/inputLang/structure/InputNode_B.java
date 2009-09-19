@@ -21,5 +21,4 @@ public class InputNode_B extends InputNode_A {
   public static InputNode_B newInstance(SModel sm) {
     return InputNode_B.newInstance(sm, false);
   }
-
 }

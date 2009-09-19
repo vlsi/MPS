@@ -31,7 +31,6 @@ public enum NodePresentationOptions {
     return this.myValue;
   }
 
-
   public static List<NodePresentationOptions> getConstants() {
     List<NodePresentationOptions> list = ListSequence.fromList(new LinkedList<NodePresentationOptions>());
     ListSequence.fromList(list).addElement(NodePresentationOptions.default_);

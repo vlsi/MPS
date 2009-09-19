@@ -96,7 +96,6 @@ public class Plan extends BaseConcept implements INamedConcept {
     this.insertChild(prev, Plan.EVENT, node);
   }
 
-
   public static Plan newInstance(SModel sm, boolean init) {
     return (Plan)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.samples.agreementLanguage.structure.Plan", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -104,5 +103,4 @@ public class Plan extends BaseConcept implements INamedConcept {
   public static Plan newInstance(SModel sm) {
     return Plan.newInstance(sm, false);
   }
-
 }

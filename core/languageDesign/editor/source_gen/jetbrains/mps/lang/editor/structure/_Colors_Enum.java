@@ -45,7 +45,6 @@ public enum _Colors_Enum {
     return this.myValue;
   }
 
-
   public static List<_Colors_Enum> getConstants() {
     List<_Colors_Enum> list = ListSequence.fromList(new LinkedList<_Colors_Enum>());
     ListSequence.fromList(list).addElement(_Colors_Enum.none);

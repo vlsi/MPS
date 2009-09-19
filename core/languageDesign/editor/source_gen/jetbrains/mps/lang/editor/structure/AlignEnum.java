@@ -31,7 +31,6 @@ public enum AlignEnum {
     return this.myValue;
   }
 
-
   public static List<AlignEnum> getConstants() {
     List<AlignEnum> list = ListSequence.fromList(new LinkedList<AlignEnum>());
     ListSequence.fromList(list).addElement(AlignEnum.left);

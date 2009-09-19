@@ -33,7 +33,6 @@ public enum _FontStyle_Enum {
     return this.myValue;
   }
 
-
   public static List<_FontStyle_Enum> getConstants() {
     List<_FontStyle_Enum> list = ListSequence.fromList(new LinkedList<_FontStyle_Enum>());
     ListSequence.fromList(list).addElement(_FontStyle_Enum.bold);

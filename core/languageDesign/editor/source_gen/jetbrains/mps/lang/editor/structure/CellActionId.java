@@ -30,7 +30,6 @@ public enum CellActionId {
     return this.myValue;
   }
 
-
   public static List<CellActionId> getConstants() {
     List<CellActionId> list = ListSequence.fromList(new LinkedList<CellActionId>());
     ListSequence.fromList(list).addElement(CellActionId.RIGHT_TRANSFORM);

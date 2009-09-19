@@ -30,7 +30,6 @@ public enum RestrictionKind {
     return this.myValue;
   }
 
-
   public static List<RestrictionKind> getConstants() {
     List<RestrictionKind> list = ListSequence.fromList(new LinkedList<RestrictionKind>());
     ListSequence.fromList(list).addElement(RestrictionKind.equals);

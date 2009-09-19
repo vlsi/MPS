@@ -31,7 +31,6 @@ public enum _Layout_Constraints_Enum {
     return this.myValue;
   }
 
-
   public static List<_Layout_Constraints_Enum> getConstants() {
     List<_Layout_Constraints_Enum> list = ListSequence.fromList(new LinkedList<_Layout_Constraints_Enum>());
     ListSequence.fromList(list).addElement(_Layout_Constraints_Enum.punctuation);

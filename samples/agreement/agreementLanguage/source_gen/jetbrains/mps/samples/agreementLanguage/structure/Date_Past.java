@@ -21,5 +21,4 @@ public class Date_Past extends Date {
   public static Date_Past newInstance(SModel sm) {
     return Date_Past.newInstance(sm, false);
   }
-
 }

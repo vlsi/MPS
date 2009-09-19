@@ -31,7 +31,6 @@ public enum EnumerationMemberIdentifierPolicy {
     return this.myValue;
   }
 
-
   public static List<EnumerationMemberIdentifierPolicy> getConstants() {
     List<EnumerationMemberIdentifierPolicy> list = ListSequence.fromList(new LinkedList<EnumerationMemberIdentifierPolicy>());
     ListSequence.fromList(list).addElement(EnumerationMemberIdentifierPolicy.derive_from_presentation);

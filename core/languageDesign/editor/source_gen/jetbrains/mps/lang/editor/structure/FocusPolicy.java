@@ -32,7 +32,6 @@ public enum FocusPolicy {
     return this.myValue;
   }
 
-
   public static List<FocusPolicy> getConstants() {
     List<FocusPolicy> list = ListSequence.fromList(new LinkedList<FocusPolicy>());
     ListSequence.fromList(list).addElement(FocusPolicy.noAttraction);

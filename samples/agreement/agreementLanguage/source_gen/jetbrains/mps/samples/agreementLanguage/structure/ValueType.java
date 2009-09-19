@@ -4,7 +4,7 @@ package jetbrains.mps.samples.agreementLanguage.structure;
 
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import java.util.LinkedList;
+import jetbrains.mps.internal.collections.runtime.backports.LinkedList;
 
 public enum ValueType {
   Quantity("QUANTITY", "Quantity"),
@@ -30,7 +30,6 @@ public enum ValueType {
     return this.myValue;
   }
 
-
   public static List<ValueType> getConstants() {
     List<ValueType> list = ListSequence.fromList(new LinkedList<ValueType>());
     ListSequence.fromList(list).addElement(ValueType.Quantity);
@@ -54,5 +53,4 @@ public enum ValueType {
     }
     return ValueType.getDefault();
   }
-
 }

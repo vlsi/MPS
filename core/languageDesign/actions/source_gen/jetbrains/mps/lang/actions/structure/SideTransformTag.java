@@ -34,7 +34,6 @@ public enum SideTransformTag {
     return this.myValue;
   }
 
-
   public static List<SideTransformTag> getConstants() {
     List<SideTransformTag> list = ListSequence.fromList(new LinkedList<SideTransformTag>());
     ListSequence.fromList(list).addElement(SideTransformTag.default_);

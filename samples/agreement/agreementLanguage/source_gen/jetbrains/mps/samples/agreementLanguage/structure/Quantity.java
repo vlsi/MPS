@@ -35,7 +35,6 @@ public class Quantity extends Constant {
     super.setChild(Quantity.AMOUNT, node);
   }
 
-
   public static Quantity newInstance(SModel sm, boolean init) {
     return (Quantity)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.samples.agreementLanguage.structure.Quantity", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -43,5 +42,4 @@ public class Quantity extends Constant {
   public static Quantity newInstance(SModel sm) {
     return Quantity.newInstance(sm, false);
   }
-
 }

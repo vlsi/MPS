@@ -30,7 +30,6 @@ public enum LinkedHashMapOrder {
     return this.myValue;
   }
 
-
   public static List<LinkedHashMapOrder> getConstants() {
     List<LinkedHashMapOrder> list = ListSequence.fromList(new LinkedList<LinkedHashMapOrder>());
     ListSequence.fromList(list).addElement(LinkedHashMapOrder.insertion_order);

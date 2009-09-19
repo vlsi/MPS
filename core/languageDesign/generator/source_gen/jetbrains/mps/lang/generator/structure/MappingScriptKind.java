@@ -30,7 +30,6 @@ public enum MappingScriptKind {
     return this.myValue;
   }
 
-
   public static List<MappingScriptKind> getConstants() {
     List<MappingScriptKind> list = ListSequence.fromList(new LinkedList<MappingScriptKind>());
     ListSequence.fromList(list).addElement(MappingScriptKind.pre_process_input_model);
