@@ -6,7 +6,6 @@ import java.awt.Color;
 import java.awt.Frame;
 import java.awt.Point;
 import java.awt.Window;
-import javax.swing.JTextArea;
 import java.awt.Component;
 import java.awt.event.FocusListener;
 import java.awt.event.FocusAdapter;
@@ -17,14 +16,13 @@ import java.awt.event.MouseEvent;
 import java.awt.event.KeyListener;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
-import jetbrains.mps.nodeEditor.EditorSettings;
 import javax.swing.JScrollPane;
 import javax.swing.border.LineBorder;
 import java.awt.Rectangle;
 import jetbrains.mps.util.WindowsUtil;
 
 public class ToolTip {
-  private static final Color BACKGROUND_COLOR = new Color(253, 254, 226);
+  public static final Color BACKGROUND_COLOR = new Color(253, 254, 226);
 
   private ToolTip.MyDialog myDialog;
   private ToolTipData myHintInformation;
@@ -50,7 +48,6 @@ public class ToolTip {
   }
 
   public static class MyDialog extends Window {
-    private JTextArea myTextArea;
     private Component myPrevFocusOwner;
     private FocusListener myOwnerFocusListener = new FocusAdapter() {
       @Override
@@ -72,19 +69,13 @@ public class ToolTip {
       }
     };
 
-    public MyDialog(Frame owner, Point location, ToolTipData nodeInformation) {
+    public MyDialog(Frame owner, Point location, ToolTipData toolTipData) {
       super(owner);
       this.myPrevFocusOwner = owner.getFocusOwner();
 
       this.setFocusableWindowState(false);
 
-      this.myTextArea = new JTextArea();
-      this.myTextArea.setEditable(false);
-      this.myTextArea.setText(nodeInformation.getText());
-      this.myTextArea.setFont(EditorSettings.getInstance().getDefaultEditorFont());
-
-      this.myTextArea.setBackground(ToolTip.BACKGROUND_COLOR);
-      JScrollPane scrollPane = new JScrollPane(this.myTextArea);
+      JScrollPane scrollPane = new JScrollPane(toolTipData.getComponent());
       scrollPane.setBorder(new LineBorder(Color.BLACK));
       this.add(scrollPane);
 

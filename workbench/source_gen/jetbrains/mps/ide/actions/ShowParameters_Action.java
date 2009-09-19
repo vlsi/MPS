@@ -12,7 +12,9 @@ import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import jetbrains.mps.workbench.MPSDataKeys;
 import java.awt.Point;
+import java.awt.Component;
 import jetbrains.mps.ide.tooltips.MPSToolTipManager;
+import jetbrains.mps.ide.tooltips.ToolTipData;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
@@ -78,8 +80,8 @@ public class ShowParameters_Action extends GeneratedAction {
   public void doExecute(@NotNull final AnActionEvent event) {
     try {
       Point p = new Point(ShowParameters_Action.this.cell.getX() + ShowParameters_Action.this.cell.getWidth(), ShowParameters_Action.this.cell.getY() + ShowParameters_Action.this.cell.getHeight());
-      String text = ParametersInformationDialog.getNodeInfoText(ShowParameters_Action.this.getMethod());
-      MPSToolTipManager.getInstance().showToolTip(text, ShowParameters_Action.this.editor, p);
+      Component componet = ParametersInformationUtil.getMethodInfoComponent(ShowParameters_Action.this.getMethod());
+      MPSToolTipManager.getInstance().showToolTip(new ToolTipData(componet), ShowParameters_Action.this.editor, p);
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
         log.error("User's action execute method failed. Action:" + "ShowParameters", t);
