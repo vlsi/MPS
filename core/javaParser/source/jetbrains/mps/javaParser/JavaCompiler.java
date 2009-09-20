@@ -51,6 +51,8 @@ public class JavaCompiler {
     myPrefix = solution.getModuleFqName();
     initClassPathItem(solution);
     addSourceFromDirectory(mySourceDir, myPrefix);
+    mySolution.getSolutionDescriptor().setOutputPath(mySourceDir.getPath());  //todo strangely, this does not work properly
+    mySolution.save();
   }
 
   private void initClassPathItem(IModule module) {
