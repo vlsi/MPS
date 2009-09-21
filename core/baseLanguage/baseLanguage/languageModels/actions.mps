@@ -6645,11 +6645,6 @@
           <link role="wrappedConcept" targetNodeId="1.1146644584814" resolveInfo="Visibility" />
           <node role="wrapperBlock" type="jetbrains.mps.lang.actions.structure.QueryFunction_SubstituteWrapper" id="1214830475238">
             <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1214830475239">
-              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1221634586826">
-                <node role="expression" type="jetbrains.mps.lang.smodel.structure.ConceptRefExpression" id="1221634586827">
-                  <link role="conceptDeclaration" targetNodeId="1.1068390468198" resolveInfo="ClassConcept" />
-                </node>
-              </node>
               <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1214831437288">
                 <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1214831437289">
                   <property name="name" value="method" />
@@ -6691,9 +6686,6 @@
       </node>
       <node role="precondition" type="jetbrains.mps.lang.actions.structure.NodeSubstitutePreconditionFunction" id="1225898267857">
         <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1225898267858">
-          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1225898298033">
-            <node role="expression" type="jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_parentNode" id="1225898298034" />
-          </node>
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1225898299723">
             <node role="expression" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1225898300413">
               <property name="value" value="true" />

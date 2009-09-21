@@ -122,7 +122,6 @@ public class QueriesGenerated {
   }
 
   public static boolean nodeSubstituteActionsBuilder_Precondition_InstanceMethodDeclaration_1225898267857(final IOperationContext operationContext, final NodeSubstitutePreconditionContext _context) {
-    _context.getParentNode();
     return true;
   }
 
@@ -1319,7 +1318,6 @@ __switch__:
       SNode wrappedConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.Visibility");
       IChildNodeSetter setter = new AbstractChildNodeSetter() {
         public SNode wrapNode(SNode nodeToWrap, SModel model) {
-          SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassConcept");
           SNode method = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration", null);
           SLinkOperations.setTarget(method, "visibility", nodeToWrap, true);
           return method;
