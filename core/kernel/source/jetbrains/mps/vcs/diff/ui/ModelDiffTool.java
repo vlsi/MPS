@@ -125,8 +125,12 @@ public class ModelDiffTool implements DiffTool {
     SModel sModel = readModel(content.getBytes(), path);
     if (content instanceof DocumentContent || content instanceof FileContent) {
       SModelRepository repository = SModelRepository.getInstance();
-      SModelDescriptor sModelDescriptor = repository.getModelDescriptor(sModel.getSModelFqName());
-      return sModelDescriptor.getSModel();
+      final SModelDescriptor sModelDescriptor = repository.getModelDescriptor(sModel.getSModelFqName());
+      return ModelAccess.instance().runReadAction(new Computable<SModel>() {
+        public SModel compute() {
+          return sModelDescriptor.getSModel();
+        }
+      });         
     }
     return sModel;
   }
