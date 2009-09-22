@@ -9,7 +9,7 @@
   <language namespace="0eddeefa-c2d6-4437-bc2c-de50fd4ce470(jetbrains.mps.lang.script)" />
   <language namespace="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)" version="83" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="1" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="3" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902fb(jetbrains.mps.lang.smodel.constraints)" version="21" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" version="16" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590328(jetbrains.mps.baseLanguage.collections.constraints)" version="6" />
@@ -31,7 +31,7 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902db(jetbrains.mps.baseLanguage.blTypes.constraints)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" version="0" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590319(jetbrains.mps.lang.refactoring.structure)" version="0" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590319(jetbrains.mps.lang.refactoring.structure)" version="1" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590353(jetbrains.mps.lang.intentions.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902bc(jetbrains.mps.lang.sharedConcepts.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959033d(jetbrains.mps.lang.annotations.structure)" version="0" />
@@ -56,7 +56,7 @@
   <import index="36" modelUID="f:java_stub#jetbrains.mps.util(jetbrains.mps.util@java_stub)" version="-1" />
   <import index="37" modelUID="f:java_stub#javax.swing(javax.swing@java_stub)" version="-1" />
   <import index="38" modelUID="f:java_stub#jetbrains.mps.smodel.presentation(jetbrains.mps.smodel.presentation@java_stub)" version="-1" />
-  <node type="jetbrains.mps.lang.refactoring.structure.Refactoring" id="1198085953023">
+  <node type="jetbrains.mps.lang.refactoring.structure.OldRefactoring" id="1198085953023">
     <property name="name" value="RenameConcept" />
     <property name="userFriendlyName" value="Rename Concept" />
     <property name="oneTargetOnly" value="true" />
@@ -212,7 +212,7 @@
       </node>
     </node>
   </node>
-  <node type="jetbrains.mps.lang.refactoring.structure.Refactoring" id="1198173570106">
+  <node type="jetbrains.mps.lang.refactoring.structure.OldRefactoring" id="1198173570106">
     <property name="name" value="MoveConcepts" />
     <property name="userFriendlyName" value="Move Concepts" />
     <link role="applicableConcept" targetNodeId="1.1169125787135" resolveInfo="AbstractConceptDeclaration" />
@@ -1380,7 +1380,7 @@
       </node>
     </node>
   </node>
-  <node type="jetbrains.mps.lang.refactoring.structure.Refactoring" id="1198587937318">
+  <node type="jetbrains.mps.lang.refactoring.structure.OldRefactoring" id="1198587937318">
     <property name="name" value="RenameLink" />
     <property name="userFriendlyName" value="Rename Link" />
     <property name="oneTargetOnly" value="true" />
@@ -1561,7 +1561,7 @@
       </node>
     </node>
   </node>
-  <node type="jetbrains.mps.lang.refactoring.structure.Refactoring" id="1198592945615">
+  <node type="jetbrains.mps.lang.refactoring.structure.OldRefactoring" id="1198592945615">
     <property name="name" value="MoveLinkUp" />
     <property name="userFriendlyName" value="Move Link Up" />
     <property name="oneTargetOnly" value="true" />
@@ -1881,7 +1881,7 @@
       </node>
     </node>
   </node>
-  <node type="jetbrains.mps.lang.refactoring.structure.Refactoring" id="1198764756152">
+  <node type="jetbrains.mps.lang.refactoring.structure.OldRefactoring" id="1198764756152">
     <property name="name" value="RenameProperty" />
     <property name="userFriendlyName" value="Rename Property" />
     <property name="oneTargetOnly" value="true" />
@@ -2048,7 +2048,7 @@
       </node>
     </node>
   </node>
-  <node type="jetbrains.mps.lang.refactoring.structure.Refactoring" id="1198776916667">
+  <node type="jetbrains.mps.lang.refactoring.structure.OldRefactoring" id="1198776916667">
     <property name="name" value="MovePropertyUp" />
     <property name="userFriendlyName" value="Move Property Up" />
     <property name="oneTargetOnly" value="true" />
@@ -2374,7 +2374,7 @@
     </node>
   </node>
   <visible index="2" modelUID="r:00000000-0000-4000-0000-011c8959028b(jetbrains.mps.lang.structure.behavior)" />
-  <node type="jetbrains.mps.lang.refactoring.structure.Refactoring" id="1201019507868">
+  <node type="jetbrains.mps.lang.refactoring.structure.OldRefactoring" id="1201019507868">
     <property name="name" value="SafeDeleteConcept" />
     <property name="userFriendlyName" value="Safe Delete Concept" />
     <property name="refactorImmediatelyIfNoUsages" value="true" />
@@ -2710,7 +2710,7 @@
       </node>
     </node>
   </node>
-  <node type="jetbrains.mps.lang.refactoring.structure.Refactoring" id="1201283571431">
+  <node type="jetbrains.mps.lang.refactoring.structure.OldRefactoring" id="1201283571431">
     <property name="name" value="SafeDeleteLink" />
     <property name="userFriendlyName" value="Safe Delete Link" />
     <property name="refactorImmediatelyIfNoUsages" value="true" />

@@ -15,7 +15,7 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902e2(jetbrains.mps.lang.generator.constraints)" version="16" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" version="2" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)" version="83" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="1" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="3" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902fb(jetbrains.mps.lang.smodel.constraints)" version="21" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" version="16" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902ae(jetbrains.mps.lang.typesystem.constraints)" version="17" />
@@ -43,7 +43,7 @@
   <maxImportIndex value="26" />
   <import index="1" modelUID="r:00000000-0000-4000-0000-011c89590338(jetbrains.mps.baseLanguage.closures.structure)" version="3" />
   <import index="2" modelUID="f:java_stub#java.lang(java.lang@java_stub)" version="-1" />
-  <import index="3" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="1" />
+  <import index="3" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="3" />
   <import index="4" modelUID="r:00000000-0000-4000-0000-011c89590334(jetbrains.mps.baseLanguage.closures.constraints)" version="2" />
   <import index="5" modelUID="f:java_stub#jetbrains.mps.generator.template(jetbrains.mps.generator.template@java_stub)" version="-1" />
   <import index="6" modelUID="f:java_stub#java.util(java.util@java_stub)" version="-1" />
@@ -1183,7 +1183,7 @@
                         </node>
                       </node>
                       <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1207147322166">
-                        <link role="link" targetNodeId="3.1068431790188" />
+                        <link role="link" targetNodeId="3.5680397130376446158" />
                       </node>
                     </node>
                   </node>
@@ -1475,7 +1475,7 @@
                         </node>
                       </node>
                       <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1219934508836">
-                        <link role="link" targetNodeId="3.1068431790188" />
+                        <link role="link" targetNodeId="3.5680397130376446158" />
                       </node>
                     </node>
                   </node>
@@ -2163,7 +2163,7 @@
                           </node>
                         </node>
                         <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1232364338280">
-                          <link role="link" targetNodeId="3.1068431790188" />
+                          <link role="link" targetNodeId="3.5680397130376446158" />
                         </node>
                       </node>
                     </node>
@@ -2202,7 +2202,7 @@
                           </node>
                         </node>
                         <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1232364387242">
-                          <link role="link" targetNodeId="3.1068431790188" />
+                          <link role="link" targetNodeId="3.5680397130376446158" />
                         </node>
                       </node>
                     </node>
@@ -5318,7 +5318,7 @@
                                 <link role="variableDeclaration" targetNodeId="1201862095515" resolveInfo="pd" />
                               </node>
                               <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1201862095527">
-                                <link role="link" targetNodeId="3.1068431790188" />
+                                <link role="link" targetNodeId="3.5680397130376446158" />
                               </node>
                             </node>
                             <node role="operation" type="jetbrains.mps.lang.smodel.structure.Link_SetTargetOperation" id="1201862095522">
@@ -5668,7 +5668,7 @@
                                         <link role="variableDeclaration" targetNodeId="1215457601339" resolveInfo="pd" />
                                       </node>
                                       <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1215457601348">
-                                        <link role="link" targetNodeId="3.1068431790188" />
+                                        <link role="link" targetNodeId="3.5680397130376446158" />
                                       </node>
                                     </node>
                                     <node role="operation" type="jetbrains.mps.lang.smodel.structure.Link_SetTargetOperation" id="1215457601349">
@@ -5680,7 +5680,7 @@
                                             <link role="variableDeclaration" targetNodeId="1215457441154" resolveInfo="pd" />
                                           </node>
                                           <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1215457682121">
-                                            <link role="link" targetNodeId="3.1068431790188" />
+                                            <link role="link" targetNodeId="3.5680397130376446158" />
                                           </node>
                                         </node>
                                         <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1215457682122">
@@ -6936,7 +6936,7 @@
                                 <link role="variableDeclaration" targetNodeId="1201862221320" resolveInfo="pd" />
                               </node>
                               <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1201862221332">
-                                <link role="link" targetNodeId="3.1068431790188" />
+                                <link role="link" targetNodeId="3.5680397130376446158" />
                               </node>
                             </node>
                             <node role="operation" type="jetbrains.mps.lang.smodel.structure.Link_SetTargetOperation" id="1201862221327">
@@ -8180,7 +8180,7 @@
                   <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204227959051">
                     <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1201019308734" />
                     <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1201019313373">
-                      <link role="link" targetNodeId="3.1068431790188" />
+                      <link role="link" targetNodeId="3.5680397130376446158" />
                     </node>
                   </node>
                 </node>
@@ -8281,7 +8281,7 @@
                       <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204227942642">
                         <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1201536331949" />
                         <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1201536333990">
-                          <link role="link" targetNodeId="3.1068431790188" />
+                          <link role="link" targetNodeId="3.5680397130376446158" />
                         </node>
                       </node>
                     </node>
@@ -12029,7 +12029,7 @@
                             <link role="variableDeclaration" targetNodeId="1201686987885" resolveInfo="pdecl" />
                           </node>
                           <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1215470764575">
-                            <link role="link" targetNodeId="3.1068431790188" />
+                            <link role="link" targetNodeId="3.5680397130376446158" />
                           </node>
                         </node>
                         <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1215470775713">
@@ -12176,7 +12176,7 @@
                     <link role="variableDeclaration" targetNodeId="1201705474342" resolveInfo="vd" />
                   </node>
                   <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1215470947370">
-                    <link role="link" targetNodeId="3.1068431790188" />
+                    <link role="link" targetNodeId="3.5680397130376446158" />
                   </node>
                 </node>
                 <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1215470961991">
@@ -12627,7 +12627,7 @@
                               <link role="variableDeclaration" targetNodeId="1201861269718" resolveInfo="pdecl" />
                             </node>
                             <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1202761491548">
-                              <link role="link" targetNodeId="3.1068431790188" />
+                              <link role="link" targetNodeId="3.5680397130376446158" />
                             </node>
                           </node>
                         </node>
@@ -12663,7 +12663,7 @@
                                   <link role="variableDeclaration" targetNodeId="1201861294718" resolveInfo="pd" />
                                 </node>
                                 <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1202761555675">
-                                  <link role="link" targetNodeId="3.1068431790188" />
+                                  <link role="link" targetNodeId="3.5680397130376446158" />
                                 </node>
                               </node>
                               <node role="operation" type="jetbrains.mps.lang.smodel.structure.Link_SetTargetOperation" id="1202761557607">
@@ -12705,7 +12705,7 @@
                                     <link role="variableDeclaration" targetNodeId="1201861294718" resolveInfo="pd" />
                                   </node>
                                   <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1201861294730">
-                                    <link role="link" targetNodeId="3.1068431790188" />
+                                    <link role="link" targetNodeId="3.5680397130376446158" />
                                   </node>
                                 </node>
                                 <node role="operation" type="jetbrains.mps.lang.smodel.structure.Link_SetTargetOperation" id="1201861294725">
@@ -13508,7 +13508,7 @@
                               <link role="variableDeclaration" targetNodeId="1201861468937" resolveInfo="pd" />
                             </node>
                             <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1201861468949">
-                              <link role="link" targetNodeId="3.1068431790188" />
+                              <link role="link" targetNodeId="3.5680397130376446158" />
                             </node>
                           </node>
                           <node role="operation" type="jetbrains.mps.lang.smodel.structure.Link_SetTargetOperation" id="1201861468944">
@@ -14277,7 +14277,7 @@
                                 <link role="variableDeclaration" targetNodeId="1202821975453" resolveInfo="pdecl" />
                               </node>
                               <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1202821975394">
-                                <link role="link" targetNodeId="3.1068431790188" />
+                                <link role="link" targetNodeId="3.5680397130376446158" />
                               </node>
                             </node>
                           </node>
@@ -14313,7 +14313,7 @@
                                     <link role="variableDeclaration" targetNodeId="1202821975384" resolveInfo="pd" />
                                   </node>
                                   <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1202821975416">
-                                    <link role="link" targetNodeId="3.1068431790188" />
+                                    <link role="link" targetNodeId="3.5680397130376446158" />
                                   </node>
                                 </node>
                                 <node role="operation" type="jetbrains.mps.lang.smodel.structure.Link_SetTargetOperation" id="1202821975409">
@@ -14355,7 +14355,7 @@
                                       <link role="variableDeclaration" targetNodeId="1202821975384" resolveInfo="pd" />
                                     </node>
                                     <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1202821975432">
-                                      <link role="link" targetNodeId="3.1068431790188" />
+                                      <link role="link" targetNodeId="3.5680397130376446158" />
                                     </node>
                                   </node>
                                   <node role="operation" type="jetbrains.mps.lang.smodel.structure.Link_SetTargetOperation" id="1202821975426">
@@ -14977,7 +14977,7 @@
                                   <link role="variableDeclaration" targetNodeId="1204637673341" resolveInfo="pdecl" />
                                 </node>
                                 <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1226347192313">
-                                  <link role="link" targetNodeId="3.1068431790188" />
+                                  <link role="link" targetNodeId="3.5680397130376446158" />
                                 </node>
                               </node>
                               <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1238702338408">
@@ -15296,7 +15296,7 @@
               <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1207146240008">
                 <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1207146239332" />
                 <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1207146242947">
-                  <link role="link" targetNodeId="3.1068431790188" />
+                  <link role="link" targetNodeId="3.5680397130376446158" />
                 </node>
               </node>
               <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation" id="1207146245288">
@@ -15337,7 +15337,7 @@
               <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1219933368511">
                 <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1219933368512" />
                 <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1219933389586">
-                  <link role="link" targetNodeId="3.1068431790188" />
+                  <link role="link" targetNodeId="3.5680397130376446158" />
                 </node>
               </node>
               <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation" id="1219933368514">
@@ -15382,7 +15382,7 @@
               <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1207146621018">
                 <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1207146621019" />
                 <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1207146621020">
-                  <link role="link" targetNodeId="3.1068431790188" />
+                  <link role="link" targetNodeId="3.5680397130376446158" />
                 </node>
               </node>
               <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation" id="1207146621021">
@@ -15423,7 +15423,7 @@
               <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1219933453752">
                 <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1219933453753" />
                 <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1219933453754">
-                  <link role="link" targetNodeId="3.1068431790188" />
+                  <link role="link" targetNodeId="3.5680397130376446158" />
                 </node>
               </node>
               <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation" id="1219933453755">
@@ -15468,7 +15468,7 @@
               <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1207146446418">
                 <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1207146446419" />
                 <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1207146446420">
-                  <link role="link" targetNodeId="3.1068431790188" />
+                  <link role="link" targetNodeId="3.5680397130376446158" />
                 </node>
               </node>
               <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation" id="1207146446421">
@@ -15509,7 +15509,7 @@
               <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1219933477565">
                 <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1219933477566" />
                 <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1219933477567">
-                  <link role="link" targetNodeId="3.1068431790188" />
+                  <link role="link" targetNodeId="3.5680397130376446158" />
                 </node>
               </node>
               <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation" id="1219933477568">
@@ -15554,7 +15554,7 @@
               <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1207146459766">
                 <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1207146459767" />
                 <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1207146459768">
-                  <link role="link" targetNodeId="3.1068431790188" />
+                  <link role="link" targetNodeId="3.5680397130376446158" />
                 </node>
               </node>
               <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation" id="1207146459769">
@@ -15595,7 +15595,7 @@
               <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1219933487994">
                 <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1219933487995" />
                 <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1219933487996">
-                  <link role="link" targetNodeId="3.1068431790188" />
+                  <link role="link" targetNodeId="3.5680397130376446158" />
                 </node>
               </node>
               <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation" id="1219933487997">
@@ -15640,7 +15640,7 @@
               <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1207146473727">
                 <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1207146473728" />
                 <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1207146473729">
-                  <link role="link" targetNodeId="3.1068431790188" />
+                  <link role="link" targetNodeId="3.5680397130376446158" />
                 </node>
               </node>
               <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation" id="1207146473730">
@@ -15681,7 +15681,7 @@
               <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1219933498238">
                 <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1219933498239" />
                 <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1219933498240">
-                  <link role="link" targetNodeId="3.1068431790188" />
+                  <link role="link" targetNodeId="3.5680397130376446158" />
                 </node>
               </node>
               <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation" id="1219933498241">
@@ -15726,7 +15726,7 @@
               <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1207146484009">
                 <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1207146484010" />
                 <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1207146484011">
-                  <link role="link" targetNodeId="3.1068431790188" />
+                  <link role="link" targetNodeId="3.5680397130376446158" />
                 </node>
               </node>
               <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation" id="1207146484012">
@@ -15767,7 +15767,7 @@
               <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1219933514971">
                 <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1219933514972" />
                 <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1219933514973">
-                  <link role="link" targetNodeId="3.1068431790188" />
+                  <link role="link" targetNodeId="3.5680397130376446158" />
                 </node>
               </node>
               <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation" id="1219933514974">
@@ -15812,7 +15812,7 @@
               <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1207146505525">
                 <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1207146505526" />
                 <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1207146505527">
-                  <link role="link" targetNodeId="3.1068431790188" />
+                  <link role="link" targetNodeId="3.5680397130376446158" />
                 </node>
               </node>
               <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation" id="1207146505528">
@@ -15853,7 +15853,7 @@
               <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1219933526640">
                 <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1219933526641" />
                 <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1219933526642">
-                  <link role="link" targetNodeId="3.1068431790188" />
+                  <link role="link" targetNodeId="3.5680397130376446158" />
                 </node>
               </node>
               <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation" id="1219933526643">
@@ -15898,7 +15898,7 @@
               <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1207146608416">
                 <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1207146608417" />
                 <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1207146608418">
-                  <link role="link" targetNodeId="3.1068431790188" />
+                  <link role="link" targetNodeId="3.5680397130376446158" />
                 </node>
               </node>
               <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation" id="1207146608419">
@@ -15939,7 +15939,7 @@
               <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1219933537765">
                 <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1219933537766" />
                 <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1219933537767">
-                  <link role="link" targetNodeId="3.1068431790188" />
+                  <link role="link" targetNodeId="3.5680397130376446158" />
                 </node>
               </node>
               <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation" id="1219933537768">
@@ -15966,7 +15966,7 @@
                       <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1215557592367">
                         <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1215557592331" />
                         <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1219933590018">
-                          <link role="link" targetNodeId="3.1068431790188" />
+                          <link role="link" targetNodeId="3.5680397130376446158" />
                         </node>
                       </node>
                     </node>
@@ -16000,7 +16000,7 @@
               <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1215557569396">
                 <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1215557569397" />
                 <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1215557569398">
-                  <link role="link" targetNodeId="3.1068431790188" />
+                  <link role="link" targetNodeId="3.5680397130376446158" />
                 </node>
               </node>
               <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation" id="1215557581454">
@@ -16039,7 +16039,7 @@
                       <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1219933603025">
                         <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1219933602578" />
                         <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1219933606311">
-                          <link role="link" targetNodeId="3.1068431790188" />
+                          <link role="link" targetNodeId="3.5680397130376446158" />
                         </node>
                       </node>
                     </node>
@@ -16057,7 +16057,7 @@
               <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1219933549985">
                 <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1219933549986" />
                 <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1219933549987">
-                  <link role="link" targetNodeId="3.1068431790188" />
+                  <link role="link" targetNodeId="3.5680397130376446158" />
                 </node>
               </node>
               <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation" id="1219933549988">
@@ -16089,7 +16089,7 @@
                         <node role="nodeToCoerce" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1209571526356">
                           <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1209571526357" />
                           <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1219933902203">
-                            <link role="link" targetNodeId="3.1068431790188" />
+                            <link role="link" targetNodeId="3.5680397130376446158" />
                           </node>
                         </node>
                       </node>
@@ -16129,7 +16129,7 @@
                 <node role="nodeToCoerce" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1209571496328">
                   <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1209571495894" />
                   <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1219933768161">
-                    <link role="link" targetNodeId="3.1068431790188" />
+                    <link role="link" targetNodeId="3.5680397130376446158" />
                   </node>
                 </node>
               </node>
@@ -16170,7 +16170,7 @@
                         <node role="nodeToCoerce" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1219933878458">
                           <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1219933878459" />
                           <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1219933898715">
-                            <link role="link" targetNodeId="3.1068431790188" />
+                            <link role="link" targetNodeId="3.5680397130376446158" />
                           </node>
                         </node>
                       </node>
@@ -16194,7 +16194,7 @@
                 <node role="nodeToCoerce" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1219933878475">
                   <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1219933878476" />
                   <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1219933887128">
-                    <link role="link" targetNodeId="3.1068431790188" />
+                    <link role="link" targetNodeId="3.5680397130376446158" />
                   </node>
                 </node>
               </node>
@@ -16222,7 +16222,7 @@
               <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1207146698873">
                 <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1207146698874" />
                 <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1207146698875">
-                  <link role="link" targetNodeId="3.1068431790188" />
+                  <link role="link" targetNodeId="3.5680397130376446158" />
                 </node>
               </node>
               <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation" id="1207146698876">
@@ -16245,7 +16245,7 @@
               <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1207146698893">
                 <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1207146698894" />
                 <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1207146698895">
-                  <link role="link" targetNodeId="3.1068431790188" />
+                  <link role="link" targetNodeId="3.5680397130376446158" />
                 </node>
               </node>
               <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation" id="1207146698896">
@@ -16273,7 +16273,7 @@
               <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1207146698913">
                 <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1207146698914" />
                 <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1207146698915">
-                  <link role="link" targetNodeId="3.1068431790188" />
+                  <link role="link" targetNodeId="3.5680397130376446158" />
                 </node>
               </node>
               <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation" id="1207146698916">
@@ -16301,7 +16301,7 @@
               <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1207146698933">
                 <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1207146698934" />
                 <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1207146698935">
-                  <link role="link" targetNodeId="3.1068431790188" />
+                  <link role="link" targetNodeId="3.5680397130376446158" />
                 </node>
               </node>
               <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation" id="1207146698936">
@@ -16329,7 +16329,7 @@
               <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1207146698953">
                 <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1207146698954" />
                 <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1207146698955">
-                  <link role="link" targetNodeId="3.1068431790188" />
+                  <link role="link" targetNodeId="3.5680397130376446158" />
                 </node>
               </node>
               <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation" id="1207146698956">
@@ -16357,7 +16357,7 @@
               <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1207146698973">
                 <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1207146698974" />
                 <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1207146698975">
-                  <link role="link" targetNodeId="3.1068431790188" />
+                  <link role="link" targetNodeId="3.5680397130376446158" />
                 </node>
               </node>
               <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation" id="1207146698976">
@@ -16385,7 +16385,7 @@
               <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1207146698993">
                 <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1207146698994" />
                 <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1207146698995">
-                  <link role="link" targetNodeId="3.1068431790188" />
+                  <link role="link" targetNodeId="3.5680397130376446158" />
                 </node>
               </node>
               <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation" id="1207146698996">
@@ -16413,7 +16413,7 @@
               <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1207146699013">
                 <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1207146699014" />
                 <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1207146699015">
-                  <link role="link" targetNodeId="3.1068431790188" />
+                  <link role="link" targetNodeId="3.5680397130376446158" />
                 </node>
               </node>
               <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation" id="1207146699016">
@@ -16445,7 +16445,7 @@
                     <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1215557515330">
                       <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1215557515261" />
                       <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1219934090427">
-                        <link role="link" targetNodeId="3.1068431790188" />
+                        <link role="link" targetNodeId="3.5680397130376446158" />
                       </node>
                     </node>
                   </node>
@@ -16462,7 +16462,7 @@
               <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1215557472442">
                 <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1215557472443" />
                 <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1215557472444">
-                  <link role="link" targetNodeId="3.1068431790188" />
+                  <link role="link" targetNodeId="3.5680397130376446158" />
                 </node>
               </node>
               <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation" id="1215557472445">
@@ -16490,7 +16490,7 @@
                 <node role="nodeToCoerce" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1209571355801">
                   <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1209571355469" />
                   <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1219934103389">
-                    <link role="link" targetNodeId="3.1068431790188" />
+                    <link role="link" targetNodeId="3.5680397130376446158" />
                   </node>
                 </node>
               </node>
@@ -16515,7 +16515,7 @@
                       <node role="nodeToCoerce" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1209571409757">
                         <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1209571409758" />
                         <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1219934107510">
-                          <link role="link" targetNodeId="3.1068431790188" />
+                          <link role="link" targetNodeId="3.5680397130376446158" />
                         </node>
                       </node>
                     </node>
@@ -16739,7 +16739,7 @@
                                                   </node>
                                                 </node>
                                                 <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1227570407559">
-                                                  <link role="link" targetNodeId="3.1068431790188" />
+                                                  <link role="link" targetNodeId="3.5680397130376446158" />
                                                 </node>
                                               </node>
                                               <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_CopyOperation" id="1227570407560" />
@@ -17215,7 +17215,7 @@
                             <link role="variableDeclaration" targetNodeId="1219747408210" resolveInfo="pdecl" />
                           </node>
                           <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1219747408195">
-                            <link role="link" targetNodeId="3.1068431790188" />
+                            <link role="link" targetNodeId="3.5680397130376446158" />
                           </node>
                         </node>
                         <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1219747408196">
@@ -18224,7 +18224,7 @@
                             <link role="variableDeclaration" targetNodeId="1229014089071" resolveInfo="var" />
                           </node>
                           <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1229015025580">
-                            <link role="link" targetNodeId="3.1068431790188" />
+                            <link role="link" targetNodeId="3.5680397130376446158" />
                           </node>
                         </node>
                         <node role="operation" type="jetbrains.mps.lang.smodel.structure.Link_SetTargetOperation" id="1229015071921">
@@ -30969,7 +30969,7 @@
                                 <link role="variableDeclaration" targetNodeId="1232141276395" resolveInfo="pd" />
                               </node>
                               <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1232141276404">
-                                <link role="link" targetNodeId="3.1068431790188" />
+                                <link role="link" targetNodeId="3.5680397130376446158" />
                               </node>
                             </node>
                             <node role="operation" type="jetbrains.mps.lang.smodel.structure.Link_SetTargetOperation" id="1232141276405">
@@ -31630,7 +31630,7 @@
                                 <link role="variableDeclaration" targetNodeId="1232360774854" resolveInfo="lvd" />
                               </node>
                               <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1232360792667">
-                                <link role="link" targetNodeId="3.1068431790188" />
+                                <link role="link" targetNodeId="3.5680397130376446158" />
                               </node>
                             </node>
                             <node role="operation" type="jetbrains.mps.lang.smodel.structure.Link_SetTargetOperation" id="1232360800776">
@@ -31987,7 +31987,7 @@
                               </node>
                             </node>
                             <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="8665905049776863495">
-                              <link role="link" targetNodeId="3.1068431790188" />
+                              <link role="link" targetNodeId="3.5680397130376446158" />
                             </node>
                           </node>
                         </node>
@@ -32062,7 +32062,7 @@
                               </node>
                             </node>
                             <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="8665905049776863528">
-                              <link role="link" targetNodeId="3.1068431790188" />
+                              <link role="link" targetNodeId="3.5680397130376446158" />
                             </node>
                           </node>
                         </node>
@@ -32136,7 +32136,7 @@
                               </node>
                             </node>
                             <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="8665905049776863560">
-                              <link role="link" targetNodeId="3.1068431790188" />
+                              <link role="link" targetNodeId="3.5680397130376446158" />
                             </node>
                           </node>
                         </node>
@@ -32211,7 +32211,7 @@
                               </node>
                             </node>
                             <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="8665905049776863593">
-                              <link role="link" targetNodeId="3.1068431790188" />
+                              <link role="link" targetNodeId="3.5680397130376446158" />
                             </node>
                           </node>
                         </node>
@@ -32284,7 +32284,7 @@
                             </node>
                           </node>
                           <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="8665905049776863624">
-                            <link role="link" targetNodeId="3.1068431790188" />
+                            <link role="link" targetNodeId="3.5680397130376446158" />
                           </node>
                         </node>
                       </node>
@@ -32393,7 +32393,7 @@
                                 </node>
                               </node>
                               <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="8665905049776863672">
-                                <link role="link" targetNodeId="3.1068431790188" />
+                                <link role="link" targetNodeId="3.5680397130376446158" />
                               </node>
                             </node>
                           </node>
@@ -32468,7 +32468,7 @@
                                 </node>
                               </node>
                               <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="8665905049776863705">
-                                <link role="link" targetNodeId="3.1068431790188" />
+                                <link role="link" targetNodeId="3.5680397130376446158" />
                               </node>
                             </node>
                           </node>
@@ -32542,7 +32542,7 @@
                                 </node>
                               </node>
                               <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="8665905049776863737">
-                                <link role="link" targetNodeId="3.1068431790188" />
+                                <link role="link" targetNodeId="3.5680397130376446158" />
                               </node>
                             </node>
                           </node>
@@ -32617,7 +32617,7 @@
                                 </node>
                               </node>
                               <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="8665905049776863770">
-                                <link role="link" targetNodeId="3.1068431790188" />
+                                <link role="link" targetNodeId="3.5680397130376446158" />
                               </node>
                             </node>
                           </node>
@@ -32690,7 +32690,7 @@
                               </node>
                             </node>
                             <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="8665905049776863801">
-                              <link role="link" targetNodeId="3.1068431790188" />
+                              <link role="link" targetNodeId="3.5680397130376446158" />
                             </node>
                           </node>
                         </node>
@@ -33172,7 +33172,7 @@
                               </node>
                             </node>
                             <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="8665905049776864058">
-                              <link role="link" targetNodeId="3.1068431790188" />
+                              <link role="link" targetNodeId="3.5680397130376446158" />
                             </node>
                           </node>
                         </node>
@@ -33252,7 +33252,7 @@
                               </node>
                             </node>
                             <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="8665905049776864093">
-                              <link role="link" targetNodeId="3.1068431790188" />
+                              <link role="link" targetNodeId="3.5680397130376446158" />
                             </node>
                           </node>
                         </node>
@@ -33807,7 +33807,7 @@
                               </node>
                             </node>
                             <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="8665905049776865374">
-                              <link role="link" targetNodeId="3.1068431790188" />
+                              <link role="link" targetNodeId="3.5680397130376446158" />
                             </node>
                           </node>
                         </node>
@@ -33899,7 +33899,7 @@
                               </node>
                             </node>
                             <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="8665905049776865416">
-                              <link role="link" targetNodeId="3.1068431790188" />
+                              <link role="link" targetNodeId="3.5680397130376446158" />
                             </node>
                           </node>
                         </node>
@@ -33990,7 +33990,7 @@
                               </node>
                             </node>
                             <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="8665905049776865457">
-                              <link role="link" targetNodeId="3.1068431790188" />
+                              <link role="link" targetNodeId="3.5680397130376446158" />
                             </node>
                           </node>
                         </node>
@@ -34082,7 +34082,7 @@
                               </node>
                             </node>
                             <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="8665905049776865499">
-                              <link role="link" targetNodeId="3.1068431790188" />
+                              <link role="link" targetNodeId="3.5680397130376446158" />
                             </node>
                           </node>
                         </node>
@@ -34172,7 +34172,7 @@
                             </node>
                           </node>
                           <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="8665905049776865539">
-                            <link role="link" targetNodeId="3.1068431790188" />
+                            <link role="link" targetNodeId="3.5680397130376446158" />
                           </node>
                         </node>
                       </node>
@@ -34298,7 +34298,7 @@
                                 </node>
                               </node>
                               <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="8665905049776865596">
-                                <link role="link" targetNodeId="3.1068431790188" />
+                                <link role="link" targetNodeId="3.5680397130376446158" />
                               </node>
                             </node>
                           </node>
@@ -34404,7 +34404,7 @@
                                 </node>
                               </node>
                               <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="8665905049776865645">
-                                <link role="link" targetNodeId="3.1068431790188" />
+                                <link role="link" targetNodeId="3.5680397130376446158" />
                               </node>
                             </node>
                           </node>
@@ -34495,7 +34495,7 @@
                                 </node>
                               </node>
                               <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="8665905049776865686">
-                                <link role="link" targetNodeId="3.1068431790188" />
+                                <link role="link" targetNodeId="3.5680397130376446158" />
                               </node>
                             </node>
                           </node>
@@ -34587,7 +34587,7 @@
                                 </node>
                               </node>
                               <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="8665905049776865728">
-                                <link role="link" targetNodeId="3.1068431790188" />
+                                <link role="link" targetNodeId="3.5680397130376446158" />
                               </node>
                             </node>
                           </node>
@@ -34677,7 +34677,7 @@
                               </node>
                             </node>
                             <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="8665905049776865768">
-                              <link role="link" targetNodeId="3.1068431790188" />
+                              <link role="link" targetNodeId="3.5680397130376446158" />
                             </node>
                           </node>
                         </node>
@@ -35081,7 +35081,7 @@
                               </node>
                             </node>
                             <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="8665905049776866005">
-                              <link role="link" targetNodeId="3.1068431790188" />
+                              <link role="link" targetNodeId="3.5680397130376446158" />
                             </node>
                           </node>
                         </node>
@@ -35178,7 +35178,7 @@
                               </node>
                             </node>
                             <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="8665905049776866049">
-                              <link role="link" targetNodeId="3.1068431790188" />
+                              <link role="link" targetNodeId="3.5680397130376446158" />
                             </node>
                           </node>
                         </node>

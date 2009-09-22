@@ -15,7 +15,7 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902e2(jetbrains.mps.lang.generator.constraints)" version="16" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" version="2" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)" version="83" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="1" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="3" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902fb(jetbrains.mps.lang.smodel.constraints)" version="21" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" version="16" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590328(jetbrains.mps.baseLanguage.collections.constraints)" version="6" />
@@ -46,7 +46,7 @@
   <maxImportIndex value="74" />
   <import index="2" modelUID="f:java_stub#java.lang(java.lang@java_stub)" version="-1" />
   <import index="5" modelUID="f:java_stub#jetbrains.mps.smodel(jetbrains.mps.smodel@java_stub)" version="-1" />
-  <import index="10" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="1" />
+  <import index="10" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="3" />
   <import index="11" modelUID="f:java_stub#jetbrains.mps.nodeEditor(jetbrains.mps.nodeEditor@java_stub)" version="-1" />
   <import index="19" modelUID="f:java_stub#java.awt.event(java.awt.event@java_stub)" version="-1" />
   <import index="20" modelUID="f:java_stub#jetbrains.mps.util(jetbrains.mps.util@java_stub)" version="-1" />
@@ -8610,7 +8610,7 @@
                                                 <link role="variableDeclaration" targetNodeId="1176796988020" resolveInfo="pd" />
                                               </node>
                                               <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1176798631938">
-                                                <link role="link" targetNodeId="10.1068431790188" />
+                                                <link role="link" targetNodeId="10.5680397130376446158" />
                                               </node>
                                             </node>
                                             <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="1176798631939">
@@ -8776,7 +8776,7 @@
                                               <link role="variableDeclaration" targetNodeId="1176797321986" resolveInfo="pd" />
                                             </node>
                                             <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1176797349073">
-                                              <link role="link" targetNodeId="10.1068431790188" />
+                                              <link role="link" targetNodeId="10.5680397130376446158" />
                                             </node>
                                           </node>
                                           <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation" id="1176797352298">
@@ -8800,7 +8800,7 @@
                                                         <link role="variableDeclaration" targetNodeId="1176797321986" resolveInfo="pd" />
                                                       </node>
                                                       <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1237221607882">
-                                                        <link role="link" targetNodeId="10.1068431790188" />
+                                                        <link role="link" targetNodeId="10.5680397130376446158" />
                                                       </node>
                                                     </node>
                                                   </node>

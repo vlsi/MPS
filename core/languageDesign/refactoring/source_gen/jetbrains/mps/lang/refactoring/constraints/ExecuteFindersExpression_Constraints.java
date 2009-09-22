@@ -13,7 +13,7 @@ public class ExecuteFindersExpression_Constraints {
     if (function == null) {
       return false;
     } else {
-      return SNodeOperations.getAncestor(function, "jetbrains.mps.lang.refactoring.structure.Refactoring", false, false) != null;
+      return SNodeOperations.getAncestor(function, "jetbrains.mps.lang.refactoring.structure.OldRefactoring", false, false) != null;
     }
   }
 }

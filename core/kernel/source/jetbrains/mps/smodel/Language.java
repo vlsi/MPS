@@ -18,7 +18,7 @@ package jetbrains.mps.smodel;
 import com.intellij.openapi.progress.EmptyProgressIndicator;
 import jetbrains.mps.lang.core.structure.Core_Language;
 import jetbrains.mps.lang.plugin.generator.baseLanguage.template.util.PluginNameUtils;
-import jetbrains.mps.lang.refactoring.structure.Refactoring;
+import jetbrains.mps.lang.refactoring.structure.OldRefactoring;
 import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
 import jetbrains.mps.lang.structure.structure.ConceptDeclaration;
 import jetbrains.mps.lang.structure.structure.Structure_Language;
@@ -688,7 +688,7 @@ public class Language extends AbstractModule {
     }
     SModel scriptsModel = scriptsModelDescriptor.getSModel();
     String packageName = scriptsModel.getLongName();
-    for (Refactoring refactoring : scriptsModel.getRootsAdapters(Refactoring.class)) {
+    for (OldRefactoring refactoring : scriptsModel.getRootsAdapters(OldRefactoring.class)) {
       try {
         String fqName = packageName + "." + refactoring.getName();
         Class<ILoggableRefactoring> cls = getClass(fqName);

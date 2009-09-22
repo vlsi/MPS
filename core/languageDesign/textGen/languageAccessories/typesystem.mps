@@ -22,7 +22,7 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902ae(jetbrains.mps.lang.typesystem.constraints)" version="17" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" version="3" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902fb(jetbrains.mps.lang.smodel.constraints)" version="21" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="1" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="3" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590328(jetbrains.mps.baseLanguage.collections.constraints)" version="6" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" version="7" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959034b(jetbrains.mps.lang.quotation.structure)" version="0" />
@@ -290,7 +290,7 @@
               <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.GetLastOperation" id="1234279065004" />
             </node>
             <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1234279065005">
-              <link role="link" targetNodeId="2v.1068431790188" />
+              <link role="link" targetNodeId="2v.5680397130376446158" />
             </node>
           </node>
           <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation" id="1234279065006">
@@ -482,7 +482,7 @@
               <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.GetLastOperation" id="1234529496712" />
             </node>
             <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1234529496713">
-              <link role="link" targetNodeId="2v.1068431790188" />
+              <link role="link" targetNodeId="2v.5680397130376446158" />
             </node>
           </node>
           <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation" id="1234529496714">

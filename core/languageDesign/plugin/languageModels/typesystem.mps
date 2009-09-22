@@ -10,7 +10,7 @@
   <language namespace="28f9e497-3b42-4291-aeba-0a1039153ab1(jetbrains.mps.lang.plugin)" />
   <language namespace="ceab5195-25ea-4f22-9b92-103b95ca8c0c(jetbrains.mps.lang.core)" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)" version="83" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="1" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="3" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902fb(jetbrains.mps.lang.smodel.constraints)" version="21" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" version="16" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902ae(jetbrains.mps.lang.typesystem.constraints)" version="17" />
@@ -37,7 +37,7 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590373(jetbrains.mps.baseLanguage.classifiers.structure)" version="0" />
   <maxImportIndex value="36" />
   <import index="4" modelUID="r:00000000-0000-4000-0000-011c89590368(jetbrains.mps.lang.plugin.structure)" version="21" />
-  <import index="6" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="1" />
+  <import index="6" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="3" />
   <import index="18" modelUID="f:java_stub#javax.swing(javax.swing@java_stub)" version="-1" />
   <import index="19" modelUID="f:java_stub#jetbrains.mps.plugins.pluginparts.tool(jetbrains.mps.plugins.pluginparts.tool@java_stub)" version="-1" />
   <import index="23" modelUID="f:java_stub#com.intellij.openapi.actionSystem(com.intellij.openapi.actionSystem@java_stub)" version="-1" />
@@ -267,7 +267,7 @@
               </node>
             </node>
             <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1206093183651">
-              <link role="link" targetNodeId="6.1068431790188" />
+              <link role="link" targetNodeId="6.5680397130376446158" />
             </node>
           </node>
         </node>
@@ -722,7 +722,7 @@
               <link role="applicableNode" targetNodeId="1217414870172" resolveInfo="parameter" />
             </node>
             <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1217414920368">
-              <link role="link" targetNodeId="6.1068431790188" />
+              <link role="link" targetNodeId="6.5680397130376446158" />
             </node>
           </node>
           <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation" id="1217414924029">
@@ -741,7 +741,7 @@
                 <link role="applicableNode" targetNodeId="1217414870172" resolveInfo="parameter" />
               </node>
               <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1217414943211">
-                <link role="link" targetNodeId="6.1068431790188" />
+                <link role="link" targetNodeId="6.5680397130376446158" />
               </node>
             </node>
           </node>
@@ -836,7 +836,7 @@
                 <link role="applicableNode" targetNodeId="1227019888885" resolveInfo="parameter" />
               </node>
               <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1227020423981">
-                <link role="link" targetNodeId="6.1068431790188" />
+                <link role="link" targetNodeId="6.5680397130376446158" />
               </node>
             </node>
             <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation" id="1227020423982">
@@ -1824,7 +1824,7 @@
                   </node>
                 </node>
                 <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="7066926174333307584">
-                  <link role="link" targetNodeId="6.1068431790188" />
+                  <link role="link" targetNodeId="6.5680397130376446158" />
                 </node>
               </node>
             </node>

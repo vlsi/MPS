@@ -12,7 +12,7 @@ public class RequiredAdditionalArgument_Behavior {
   }
 
   public static boolean call_isTransient_1213877343864(SNode thisNode) {
-    SNode refactoring = SNodeOperations.getAncestor(thisNode, "jetbrains.mps.lang.refactoring.structure.Refactoring", false, false);
+    SNode refactoring = SNodeOperations.getAncestor(thisNode, "jetbrains.mps.lang.refactoring.structure.OldRefactoring", false, false);
     if (refactoring == null) {
       return true;
     }

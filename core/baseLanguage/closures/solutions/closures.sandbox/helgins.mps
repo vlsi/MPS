@@ -7,7 +7,7 @@
   <language namespace="7866978e-a0f0-4cc7-81bc-4d213d9375e1(jetbrains.mps.lang.smodel)" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902ae(jetbrains.mps.lang.typesystem.constraints)" version="17" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)" version="83" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="1" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="3" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590328(jetbrains.mps.baseLanguage.collections.constraints)" version="6" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" version="4" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902fb(jetbrains.mps.lang.smodel.constraints)" version="21" />
@@ -28,7 +28,7 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895903fe(jetbrains.mps.baseLanguage.strings.constraints)" version="1" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590402(jetbrains.mps.baseLanguage.strings.structure)" version="9" />
   <maxImportIndex value="13" />
-  <import index="8" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="1" />
+  <import index="8" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="3" />
   <node type="jetbrains.mps.lang.typesystem.structure.SimpleRulesContainer" id="1223035817400">
     <node role="simpleRule" type="jetbrains.mps.lang.typesystem.structure.SimpleRule_VarRef" id="1223035830316">
       <link role="link" targetNodeId="8.1068581517664" />
@@ -49,7 +49,7 @@
       <node role="pathExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1223036917774">
         <node role="operand" type="jetbrains.mps.lang.typesystem.structure.SimpleRule_Annotated_Parameter" id="1223036915781" />
         <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1223036936740">
-          <link role="link" targetNodeId="8.1068431790188" />
+          <link role="link" targetNodeId="8.5680397130376446158" />
         </node>
       </node>
     </node>

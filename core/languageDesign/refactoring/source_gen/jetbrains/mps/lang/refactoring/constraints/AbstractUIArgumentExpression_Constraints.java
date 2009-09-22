@@ -4,16 +4,10 @@ package jetbrains.mps.lang.refactoring.constraints;
 
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.constraints.CanBeAChildContext;
-import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class AbstractUIArgumentExpression_Constraints {
   public static boolean canBeAChild(final IOperationContext operationContext, final CanBeAChildContext _context) {
-    SNode function = SNodeOperations.getAncestor(_context.getParentNode(), "jetbrains.mps.baseLanguage.structure.ConceptFunction", false, false);
-    if (function == null) {
-      return false;
-    } else {
-      return SNodeOperations.getAncestor(function, "jetbrains.mps.lang.refactoring.structure.Refactoring", false, false) != null;
-    }
+    return SNodeOperations.getAncestor(_context.getParentNode(), "jetbrains.mps.lang.refactoring.structure.OldRefactoring", false, false) != null;
   }
 }

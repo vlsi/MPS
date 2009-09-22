@@ -12,11 +12,41 @@
         </entry>
       </conceptFeatureMap>
     </refactoringContext>
+    <refactoringContext modelVersion="2">
+      <refactoring refactoringClass="jetbrains.mps.lang.structure.scripts.MovePropertyUp" />
+      <moveMap>
+        <entry>
+          <key modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" nodeId="1083152972671" />
+          <value modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" nodeId="5680397130376129217" />
+        </entry>
+      </moveMap>
+      <conceptFeatureMap>
+        <entry>
+          <key featureName="name" featureKind="PROPERTY" />
+          <value featureName="name" conceptFQName="jetbrains.mps.baseLanguage.structure.BaseVariableDeclaration" featureKind="PROPERTY" />
+        </entry>
+      </conceptFeatureMap>
+    </refactoringContext>
+    <refactoringContext modelVersion="3">
+      <refactoring refactoringClass="jetbrains.mps.lang.structure.scripts.MoveLinkUp" />
+      <moveMap>
+        <entry>
+          <key modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" nodeId="1068431790188" />
+          <value modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" nodeId="5680397130376446158" />
+        </entry>
+      </moveMap>
+      <conceptFeatureMap>
+        <entry>
+          <key featureName="type" featureKind="CHILD" />
+          <value featureName="type" conceptFQName="jetbrains.mps.baseLanguage.structure.BaseVariableDeclaration" featureKind="CHILD" />
+        </entry>
+      </conceptFeatureMap>
+    </refactoringContext>
   </refactoringHistory>
   <language namespace="c72da2b9-7cce-4447-8389-f407dc1158b7(jetbrains.mps.lang.structure)" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959028c(jetbrains.mps.lang.structure.constraints)" version="11" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)" version="83" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="1" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="3" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" version="1" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" version="1" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590338(jetbrains.mps.baseLanguage.closures.structure)" version="0" />
@@ -205,30 +235,16 @@
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1068431474542">
     <property name="name" value="VariableDeclaration" />
-    <link role="extends" targetNodeId="4.1133920641626" resolveInfo="BaseConcept" />
-    <node role="propertyDeclaration" type="jetbrains.mps.lang.structure.structure.PropertyDeclaration" id="1083152972671">
-      <property name="name" value="name" />
-      <property name="propertyType" value="string" />
-      <link role="dataType" targetNodeId="4.1082983041843" resolveInfo="string" />
-    </node>
+    <link role="extends" targetNodeId="4972933694980447171" resolveInfo="BaseVariableDeclaration" />
     <node role="propertyDeclaration" type="jetbrains.mps.lang.structure.structure.PropertyDeclaration" id="1176718929932">
       <property name="name" value="isFinal" />
       <link role="dataType" targetNodeId="4.1082983657063" />
-    </node>
-    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1068431790188">
-      <property name="sourceCardinality" value="1" />
-      <property name="role" value="type" />
-      <property name="metaClass" value="aggregation" />
-      <link role="target" targetNodeId="1068431790189" resolveInfo="Type" />
     </node>
     <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1068431790190">
       <property name="sourceCardinality" value="0..1" />
       <property name="role" value="initializer" />
       <property name="metaClass" value="aggregation" />
       <link role="target" targetNodeId="1068431790191" resolveInfo="Expression" />
-    </node>
-    <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="1212170670345">
-      <link role="intfc" targetNodeId="1212170275853" resolveInfo="IValidIdentifier" />
     </node>
     <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="1188211976433">
       <link role="intfc" targetNodeId="1188208481402" resolveInfo="Annotable" />
@@ -3387,6 +3403,24 @@
   <node type="jetbrains.mps.lang.structure.structure.ConstrainedDataTypeDeclaration" id="6734604082923916973">
     <property name="name" value="_HexNumberValue" />
     <property name="constraint" value="[0-9a-fA-F]+" />
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="4972933694980447171">
+    <property name="name" value="BaseVariableDeclaration" />
+    <link role="extends" targetNodeId="4.1133920641626" resolveInfo="BaseConcept" />
+    <node role="propertyDeclaration" type="jetbrains.mps.lang.structure.structure.PropertyDeclaration" id="5680397130376129217">
+      <property name="name" value="name" />
+      <property name="propertyType" value="string" />
+      <link role="dataType" targetNodeId="4.1082983041843" resolveInfo="string" />
+    </node>
+    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="5680397130376446158">
+      <property name="sourceCardinality" value="1" />
+      <property name="role" value="type" />
+      <property name="metaClass" value="aggregation" />
+      <link role="target" targetNodeId="1068431790189" resolveInfo="Type" />
+    </node>
+    <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="5680397130376446159">
+      <link role="intfc" targetNodeId="1212170275853" resolveInfo="IValidIdentifier" />
+    </node>
   </node>
 </model>
 
