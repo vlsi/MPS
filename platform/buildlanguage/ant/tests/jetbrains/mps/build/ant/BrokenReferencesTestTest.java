@@ -34,6 +34,7 @@ public class BrokenReferencesTestTest extends TestCase {
         if (teamCityMessageFormat.isBuildServerMessage(text) && teamCityMessageFormat.isTestFailMessage(text)) {
           brokenReferenceFound[0] = true;
         }
+        System.out.println(teamCityMessageFormat.escapeBuildMessage(text));
       }
     };
     worker.work();
