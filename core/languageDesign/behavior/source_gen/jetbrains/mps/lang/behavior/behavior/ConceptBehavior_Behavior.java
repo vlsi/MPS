@@ -148,7 +148,7 @@ method:
   public static List<SNode> call_getConceptMethods_5466054087443746043(SNode thisNode, IScope scope) {
     List<SNode> methods = new ArrayList<SNode>();
     for (SNode concept : SConceptOperations.getAllSuperConcepts(SLinkOperations.getTarget(thisNode, "concept", false), false)) {
-      SNode behaviour = AbstractConceptDeclaration_Behavior.call_findBehaviour_1213877394029(concept, scope);
+      SNode behaviour = AbstractConceptDeclaration_Behavior.call_findBehavior_1213877394029(concept, scope);
       if (behaviour != null) {
         for (SNode method : SLinkOperations.getTargets(behaviour, "method", true)) {
           ListSequence.fromList(methods).addElement(method);

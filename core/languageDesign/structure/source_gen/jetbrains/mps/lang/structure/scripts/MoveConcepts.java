@@ -20,6 +20,7 @@ import java.util.List;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.SModelDescriptor;
 import java.util.ArrayList;
+import jetbrains.mps.lang.structure.behavior.AbstractConceptDeclaration_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.LanguageAspect;
 import java.util.Map;
@@ -98,7 +99,7 @@ public class MoveConcepts extends BaseGeneratedRefactoring {
     SModelDescriptor editorModelDescriptor = sourceLanguage.getEditorModelDescriptor();
     if (editorModelDescriptor != null) {
       for (SNode node : nodes) {
-        SNode editor = RefUtil.findEditorDeclaration(editorModelDescriptor.getSModel(), node);
+        SNode editor = AbstractConceptDeclaration_Behavior.call_findEditor_8941943470987277231(node, editorModelDescriptor.getSModel());
         if (editor != null) {
           ListSequence.fromList(editors).addElement(editor);
         }
@@ -108,7 +109,7 @@ public class MoveConcepts extends BaseGeneratedRefactoring {
     SModelDescriptor behaviorModelDescriptor = sourceLanguage.getBehaviorModelDescriptor();
     if (behaviorModelDescriptor != null) {
       for (SNode node : nodes) {
-        SNode behavior = RefUtil.findBehaviorDeclaration(behaviorModelDescriptor.getSModel(), node);
+        SNode behavior = AbstractConceptDeclaration_Behavior.call_findBehavior_8941943470987278671(node, behaviorModelDescriptor.getSModel());
         if (behavior != null) {
           ListSequence.fromList(behaviors).addElement(behavior);
         }
@@ -118,7 +119,7 @@ public class MoveConcepts extends BaseGeneratedRefactoring {
     SModelDescriptor constraintsModelDescriptor = sourceLanguage.getConstraintsModelDescriptor();
     if (constraintsModelDescriptor != null) {
       for (SNode node : nodes) {
-        SNode constraint = RefUtil.findConstraintsDeclaration(constraintsModelDescriptor.getSModel(), node);
+        SNode constraint = AbstractConceptDeclaration_Behavior.call_findConstraints_8941943470987278548(node, constraintsModelDescriptor.getSModel());
         if (constraint != null) {
           ListSequence.fromList(constraints).addElement(constraint);
         }
@@ -128,7 +129,7 @@ public class MoveConcepts extends BaseGeneratedRefactoring {
     SModelDescriptor dataflowModelDescriptor = sourceLanguage.getDataFlowModelDescriptor();
     if (dataflowModelDescriptor != null) {
       for (SNode node : nodes) {
-        SNode dataFlow = RefUtil.findDataFlowDeclaration(dataflowModelDescriptor.getSModel(), node);
+        SNode dataFlow = AbstractConceptDeclaration_Behavior.call_findDataFlow_8941943470987398480(node, dataflowModelDescriptor.getSModel());
         if (dataFlow != null) {
           ListSequence.fromList(dataFlows).addElement(dataFlow);
         }

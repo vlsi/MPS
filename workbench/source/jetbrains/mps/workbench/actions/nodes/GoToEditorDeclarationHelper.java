@@ -20,11 +20,14 @@ import jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration;
 import jetbrains.mps.lang.structure.structure.ConceptDeclaration;
 import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
 import jetbrains.mps.lang.structure.scripts.RefUtil;
+import jetbrains.mps.lang.findUsages.structure.FinderDeclaration;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.NameUtil;
+import jetbrains.mps.util.Condition;
 import jetbrains.mps.kernel.model.SModelUtil;
 
 import javax.swing.JOptionPane;
+import java.util.List;
 
 /**
  * @author Kostik
@@ -82,8 +85,19 @@ public class GoToEditorDeclarationHelper {
     return language.getEditorModelDescriptor();
   }
 
-  public static ConceptEditorDeclaration findEditorDeclaration(SModel editorModel, AbstractConceptDeclaration conceptDeclaration) {
-    return (ConceptEditorDeclaration) BaseAdapter.fromNode(RefUtil.findEditorDeclaration(editorModel, BaseAdapter.fromAdapter(conceptDeclaration)));
+  public static ConceptEditorDeclaration findEditorDeclaration(SModel editorModel, final AbstractConceptDeclaration conceptDeclaration) {
+    List<SNode> editors = editorModel.getRoots(new Condition<SNode>() {
+      public boolean met(SNode n) {
+        INodeAdapter object = BaseAdapter.fromNode(n);
+        if (object instanceof ConceptEditorDeclaration) {
+          ConceptEditorDeclaration editor = (ConceptEditorDeclaration) object;
+          return editor.getConceptDeclaration() == conceptDeclaration;
+        }
+        return false;
+      }
+    });
+    if (editors.isEmpty()) return null;
+    return ((ConceptEditorDeclaration) editors.get(0).getAdapter());
   }
 
   public static ConceptEditorDeclaration createEditorDeclaration(AbstractConceptDeclaration conceptDeclaration, SModelDescriptor editorModelDescriptor, IScope scope) {
