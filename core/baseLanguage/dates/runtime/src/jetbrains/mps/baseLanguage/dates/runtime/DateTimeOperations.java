@@ -16,15 +16,13 @@
 package jetbrains.mps.baseLanguage.dates.runtime;
 
 import org.apache.log4j.Logger;
-import org.joda.time.format.DateTimeFormatter;
 import org.joda.time.*;
 import org.joda.time.field.FieldUtils;
+import org.joda.time.format.DateTimeFormatter;
 
-import java.util.Date;
 import java.util.Calendar;
+import java.util.Date;
 import java.util.Locale;
-
-import javax.swing.text.DateFormatter;
 
 /**
  * @author Maxim.Mazin at date: 21.02.2007 time: 17:25:49
@@ -36,7 +34,7 @@ public class DateTimeOperations {
   private static InheritableThreadLocal<DateTimeZone> currentZone = new InheritableThreadLocal<DateTimeZone> () {
       protected DateTimeZone initialValue() {
           return DateTimeZone.getDefault();
-      };
+      }
   };
   
   private DateTimeOperations() {
@@ -59,8 +57,18 @@ public class DateTimeOperations {
     return dateTimeFormatter.print(dateTime);
   }
 
+  public static String print(DateTime value, DateTimeFormatter formatter, Locale locale, DateTimeZone zone) {
+    DateTime dateTime = (value != null) ? value : Constants.NULL_DATE_TIME;
+    DateTimeFormatter dateTimeFormatter = (locale == null)? formatter : formatter.withLocale(locale);
+    return dateTimeFormatter.print(dateTime);
+  }
+
   public static String print(Period period, DateTimeFormatter formatter, Locale locale, DateTimeZone zone) {
     return print(convert(period), formatter, locale, zone);
+  }
+
+  public static DateTime convert(Long l, DateTimeZone zone) {
+    return l != null ? new DateTime(l,zone) : null;
   }
 
   public static Long convert(DateTime dateTime) {
@@ -152,16 +160,55 @@ public class DateTimeOperations {
     return result;
   }
 
+  public static boolean compare(DateTime op1, CompareType cmp, DateTime op2, DateTimeFieldType type) {
+    DateTimeComparator dtc = type != null ? DateTimeComparator.getInstance(type) : DateTimeComparator.getInstance();
+    int compareValue;
+
+    if(op1 == null) {
+      compareValue = op2 != null ? -1 : 0;
+    } else {
+      compareValue = op2 != null ? dtc.compare(op1, op2) : 1;
+    }
+
+    boolean result;
+    switch (cmp) {
+      case EQ: result = compareValue == 0; break;
+      case NE: result = compareValue != 0; break;
+      case LT: result = compareValue < 0;  break;
+      case GT: result = compareValue > 0;  break;
+      case LE: result = compareValue <= 0; break;
+      case GE: result = compareValue >= 0; break;
+      default:
+        throw new UnsupportedOperationException("Unsupported compare type: " + cmp);
+    }
+    return result;
+  }
+
+  @Deprecated
   public static Long roundFloor(Long datetime, DateTimeFieldType type) {
     return datetime != null ? new DateTime(datetime, currentZone.get()).property(type).roundFloorCopy().getMillis() : null;
   }
 
+  public static DateTime roundFloor(DateTime datetime, DateTimeFieldType type) {
+    return datetime != null ? datetime.property(type).roundFloorCopy() : null;
+  }
+
+  @Deprecated
   public static Long roundCeiling(Long datetime, DateTimeFieldType type) {
     return datetime != null ? new DateTime(datetime, currentZone.get()).property(type).roundCeilingCopy().getMillis() : null;
   }
 
+  public static DateTime roundCeiling(DateTime datetime, DateTimeFieldType type) {
+    return datetime != null ? datetime.property(type).roundCeilingCopy() : null;
+  }
+
+  @Deprecated
   public static Long round(Long datetime, DateTimeFieldType type) {
     return datetime != null ? new DateTime(datetime, currentZone.get()).property(type).roundHalfCeilingCopy().getMillis() : null;
+  }
+
+  public static DateTime round(DateTime datetime, DateTimeFieldType type) {
+    return datetime != null ? datetime.property(type).roundHalfCeilingCopy() : null;
   }
 
   public static Integer get(Long datetime, DateTimeFieldType type) {
@@ -222,6 +269,20 @@ public class DateTimeOperations {
     return plus(right, left);
   }
 
+  public static DateTime plus(DateTime leftExpression, Period rightExpression) {
+    DateTime result;
+    if (leftExpression == null) {
+      result = null;
+    } else {
+      result = leftExpression.plus(rightExpression);
+    }
+    return result;
+  }
+
+  public static DateTime plus(Period left, DateTime right) {
+    return plus(right, left);
+  }
+
   public static Long plus(Long left, Long right) {
     return left + right;
   }
@@ -266,6 +327,31 @@ public class DateTimeOperations {
     return null;
   }
 
+  public static boolean compare(Period op1, CompareType cmp, Period op2) {
+    DateTime now = new DateTime(currentZone.get());
+    int compareValue;
+
+    if(op1 == null) {
+      compareValue = op2 != null ? -1 : 0;
+    } else {
+      compareValue = op2 != null ? op1.toDurationFrom(now).compareTo(op2.toDurationFrom(now)) : 1;
+    }
+
+    boolean result;
+    switch (cmp) {
+      case EQ: result = compareValue == 0; break;
+      case NE: result = compareValue != 0; break;
+      case LT: result = compareValue < 0;  break;
+      case GT: result = compareValue > 0;  break;
+      case LE: result = compareValue <= 0; break;
+      case GE: result = compareValue >= 0; break;
+      default:
+        throw new UnsupportedOperationException("Unsupported compare type: " + cmp);
+    }
+    return result;
+  }
+
+  @Deprecated
   public static boolean equals(Period leftExpression, Period rightExpression) {
     boolean result;
     if (leftExpression == null || rightExpression == null) {
@@ -277,6 +363,7 @@ public class DateTimeOperations {
     return result;
   }
 
+  @Deprecated
   public static boolean less(Period leftExpression, Period rightExpression) {
     boolean result;
     if (leftExpression == null || rightExpression == null) {
