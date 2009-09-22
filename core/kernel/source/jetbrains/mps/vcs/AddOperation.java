@@ -114,9 +114,10 @@ class AddOperation extends VcsOperation {
       return;
     } else {
       Collection<VirtualFile> filesToProcess = null;
-      if (!myFilesToAdd.isEmpty()) {
+      List<VirtualFile> virtualFileList = CollectionUtil.union(myVirtualFilesToAdd, myVirtualFilesToRevert);
+      if (!virtualFileList.isEmpty()) {
         final AbstractVcsHelper helper = AbstractVcsHelper.getInstance(myProject);
-        filesToProcess = helper.selectFilesToProcess(CollectionUtil.union(myVirtualFilesToAdd, myVirtualFilesToRevert), "Add Files To Vcs", null,
+        filesToProcess = helper.selectFilesToProcess(virtualFileList, "Add Files To Vcs", null,
           "Add File To Vcs",
           "Do you want to add the following file to Vcs?\n{0}\n\nIf you say NO, you can still add it later manually.",
           myConfirmationOption);
