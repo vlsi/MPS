@@ -198,11 +198,11 @@ public class CellLayout_Indent extends AbstractCellLayout {
 
       collectCells(myCell, leafs, collections);
 
-      layoutLeafs(leafs);
-      fixupCollections(collections);
+      layoutLeafs(leafs.toArray(new EditorCell[leafs.size()]));
+      fixupCollections(collections.toArray(new EditorCell_Collection[collections.size()]));
     }
 
-    private void layoutLeafs(List<EditorCell> leafs) {
+    private void layoutLeafs(EditorCell[] leafs) {
       for (EditorCell current : leafs) {
         if (isOnNewLine(myCell, current)) {
           newLine();
@@ -221,7 +221,7 @@ public class CellLayout_Indent extends AbstractCellLayout {
       newLine();
     }
 
-    private void fixupCollections(List<EditorCell_Collection> collections) {
+    private void fixupCollections(EditorCell_Collection[] collections) {
       for (EditorCell_Collection collection : collections) {
         int x0 = Integer.MAX_VALUE;
         int y0 = Integer.MAX_VALUE;
