@@ -74,9 +74,10 @@ class AddOperation extends VcsOperation {
     for (File f : myFilesToAdd) {
       VirtualFile virtualFile = VFileSystem.refreshAndGetFile(f);
       if (virtualFile != null && !isIgnored(virtualFile)) {
-        if (ChangeListManager.getInstance(myProject).getStatus(virtualFile).equals(FileStatus.DELETED)) {
+        FileStatus status = ChangeListManager.getInstance(myProject).getStatus(virtualFile);
+        if (status.equals(FileStatus.DELETED)) {
           myVirtualFilesToRevert.add(virtualFile);
-        } else {
+        } else if (!status.equals(FileStatus.MODIFIED) && !status.equals(FileStatus.NOT_CHANGED)) {
           myVirtualFilesToAdd.add(virtualFile);
         }
       } else if (virtualFile == null && f.exists()) {
@@ -115,7 +116,7 @@ class AddOperation extends VcsOperation {
       final AbstractVcsHelper helper = AbstractVcsHelper.getInstance(myProject);
       Collection<VirtualFile> filesToProcess = helper.selectFilesToProcess(CollectionUtil.union(myVirtualFilesToAdd, myVirtualFilesToRevert), "Add Files To Vcs", null,
         "Add File To Vcs",
-        "Do you want to add the following file to Vcs?|\n|{0}|\n|\n|If you say NO, you can still add it later manually.",
+        "Do you want to add the following file to Vcs?\n{0}\n\nIf you say NO, you can still add it later manually.",
         myConfirmationOption);
       if (filesToProcess != null) {
         reallyPerform(CollectionUtil.intersect(myVirtualFilesToRevert, filesToProcess),
