@@ -259,7 +259,7 @@ public class DefaultJavaApplication_Configuration extends BaseRunConfig {
 
     public Object clone() throws CloneNotSupportedException {
       DefaultJavaApplication_Configuration.MyState object = (DefaultJavaApplication_Configuration.MyState)super.clone();
-      if (parameters != null) {
+      if (this.parameters != null) {
         object.parameters = (RunParameters)this.parameters.clone();
       }
       return object;
