@@ -37,8 +37,11 @@ public class BrokenReferencesTestTest extends TestCase {
       }
     };
     worker.work();
+
+    FileUtil.delete(destdir);
+
     if (brokenReferenceFound[0]) return;
 
-    fail("Did not found any broken references in model.");
+    fail("Did not find any broken references in solution.");
   }
 }
