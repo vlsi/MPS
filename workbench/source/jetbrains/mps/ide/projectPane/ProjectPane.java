@@ -19,6 +19,7 @@ import com.intellij.ide.*;
 import com.intellij.ide.projectView.ProjectView;
 import com.intellij.ide.projectView.impl.AbstractProjectViewPane;
 import com.intellij.ide.projectView.impl.ProjectViewPane;
+import com.intellij.ide.projectView.impl.ProjectViewImpl;
 import com.intellij.openapi.actionSystem.*;
 import com.intellij.openapi.command.CommandAdapter;
 import com.intellij.openapi.command.CommandEvent;
@@ -72,6 +73,7 @@ import jetbrains.mps.reloading.ReloadListener;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.Condition;
 import jetbrains.mps.util.Pair;
+import jetbrains.mps.util.annotation.Hack;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.VFileSystem;
 import jetbrains.mps.workbench.ActionPlace;
@@ -253,8 +255,14 @@ public class ProjectPane extends AbstractProjectViewPane implements PersistentSt
     group.add(myPAndRToggle);
   }
 
+  @Hack
   public static ProjectPane getInstance(Project project){
     final ProjectView projectView = ProjectView.getInstance(project);
+
+    //to ensure panes are initialized
+    //filed http://jetbrains.net/tracker/issue/IDEA-24732
+    projectView.getSelectInTargets();
+
     return (ProjectPane) projectView.getProjectViewPaneById(ID);
   }
 

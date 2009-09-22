@@ -27,6 +27,7 @@ import com.intellij.openapi.progress.Task;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.project.ex.ProjectManagerEx;
 import com.intellij.openapi.ui.Messages;
+import com.intellij.openapi.startup.StartupManager;
 import jetbrains.mps.MPSProjectHolder;
 import jetbrains.mps.ide.projectPane.ProjectPane;
 import jetbrains.mps.library.LanguageDesign_DevKit;
@@ -164,15 +165,11 @@ public class NewProjectWizard extends AbstractWizard<BaseStep> {
 
     if (!opened) return;
 
-    ApplicationManager.getApplication().invokeLater(new Runnable() {
+    StartupManager.getInstance(myCreatedProject).runWhenProjectIsInitialized(new Runnable() {
       public void run() {
-        ApplicationManager.getApplication().invokeLater(new Runnable() {
-          public void run() {
-            ProjectPane.getInstance(myCreatedProject).activate(true);
-          }
-        }, ModalityState.NON_MODAL);
+        ProjectPane.getInstance(myCreatedProject).activate(true);
       }
-    }, ModalityState.NON_MODAL);
+    });
   }
 
   private void createProject() {
