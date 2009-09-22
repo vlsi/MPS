@@ -261,7 +261,11 @@ public class DefaultJUnit_Configuration extends BaseRunConfig {
     }
 
     public Object clone() throws CloneNotSupportedException {
-      return super.clone();
+      DefaultJUnit_Configuration.MyState object = (DefaultJUnit_Configuration.MyState)super.clone();
+      if (this.myParams != null) {
+        object.myParams = (RunParameters)this.myParams.clone();
+      }
+      return object;
     }
   }
 }
