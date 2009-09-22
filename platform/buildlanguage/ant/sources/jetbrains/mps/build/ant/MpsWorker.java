@@ -214,13 +214,24 @@ public abstract class MpsWorker {
       if (files != null) {
         for (final File moduleFile : files) {
           String path = moduleFile.getAbsolutePath();
-          if (!path.endsWith(MPSExtentions.DOT_LANGUAGE) && !path.endsWith(MPSExtentions.DOT_SOLUTION) && !path.endsWith(MPSExtentions.DOT_DEVKIT)) continue;
-          List<IModule> modules = ModelAccess.instance().runWriteAction(new Computable<List<IModule>>() {
-            public List<IModule> compute() {
-              return MPSModuleRepository.getInstance().readModuleDescriptors(FileSystem.getFile(moduleFile.getPath()), new MPSModuleOwner() {
-              });
+          if (!path.endsWith(MPSExtentions.DOT_LANGUAGE) && !path.endsWith(MPSExtentions.DOT_SOLUTION) && !path.endsWith(MPSExtentions.DOT_DEVKIT))
+            continue;
+          List<IModule> modules;
+          IModule moduleByFile = ModelAccess.instance().runReadAction(new Computable<IModule>() {
+            public IModule compute() {
+              return MPSModuleRepository.getInstance().getModuleByFile(moduleFile);
             }
           });
+          if (moduleByFile != null) {
+            modules = Collections.singletonList(moduleByFile);
+          } else {
+            modules = ModelAccess.instance().runWriteAction(new Computable<List<IModule>>() {
+              public List<IModule> compute() {
+                return MPSModuleRepository.getInstance().readModuleDescriptors(FileSystem.getFile(moduleFile.getPath()), new MPSModuleOwner() {
+                });
+              }
+            });
+          }
 
           for (IModule module : modules) {
             info("Loaded module " + module);
