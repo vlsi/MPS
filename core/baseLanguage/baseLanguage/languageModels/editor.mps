@@ -15120,5 +15120,24 @@
       </node>
     </node>
   </node>
+  <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" id="554301099359799248">
+    <link role="conceptDeclaration" targetNodeId="17.4972933694980447171" resolveInfo="BaseVariableDeclaration" />
+    <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="554301099359799250">
+      <property name="vertical" value="false" />
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Property" id="554301099359799251">
+        <link role="relationDeclaration" targetNodeId="18.1169194664001" resolveInfo="name" />
+        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.ForegroundColorStyleClassItem" id="554301099359799252">
+          <property name="color" value="DARK_MAGENTA" />
+        </node>
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="554301099359799253">
+        <property name="text" value=":" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode" id="554301099359799254">
+        <link role="relationDeclaration" targetNodeId="17.5680397130376446158" />
+      </node>
+      <node role="cellLayout" type="jetbrains.mps.lang.editor.structure.CellLayout_Horizontal" id="554301099359799255" />
+    </node>
+  </node>
 </model>
 

@@ -320,10 +320,6 @@
       <property name="sourceCardinality" value="1" />
       <link role="target" targetNodeId="2.1068431790189" resolveInfo="Type" />
     </node>
-    <node role="propertyDeclaration" type="jetbrains.mps.lang.structure.structure.PropertyDeclaration" id="1189768565365">
-      <property name="name" value="presentation" />
-      <link role="dataType" targetNodeId="1.1082983041843" />
-    </node>
     <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="1189693905781">
       <link role="intfc" targetNodeId="1.1169194658468" />
     </node>
@@ -447,6 +443,10 @@
     <property name="name" value="RequiredUserEnteredArgument" />
     <property name="package" value="RefDecl.UserArgs" />
     <link role="extends" targetNodeId="1189693830529" resolveInfo="RequiredAdditionalArgument" />
+    <node role="propertyDeclaration" type="jetbrains.mps.lang.structure.structure.PropertyDeclaration" id="3938648747446564583">
+      <property name="name" value="presentation" />
+      <link role="dataType" targetNodeId="1.1082983041843" resolveInfo="string" />
+    </node>
     <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1192793165066">
       <property name="metaClass" value="aggregation" />
       <property name="role" value="filterClause" />

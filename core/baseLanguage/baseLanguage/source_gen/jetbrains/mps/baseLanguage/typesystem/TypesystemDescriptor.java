@@ -73,7 +73,7 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
       this.myInferenceRules.add(inferenceRule);
     }
     {
-      InferenceRule_Runtime inferenceRule = new typeOf_VariableDeclaration_InferenceRule();
+      InferenceRule_Runtime inferenceRule = new typeof_BaseVariableDeclaration_InferenceRule();
       this.myInferenceRules.add(inferenceRule);
     }
     {
@@ -350,6 +350,10 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
     }
     {
       InferenceRule_Runtime inferenceRule = new typeof_AsExpression_InferenceRule();
+      this.myInferenceRules.add(inferenceRule);
+    }
+    {
+      InferenceRule_Runtime inferenceRule = new typeof_VariableDeclaration_InferenceRule();
       this.myInferenceRules.add(inferenceRule);
     }
     {
@@ -813,7 +817,7 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
     {
       IDependency_Runtime dependency_Runtime = new AbstractDependency_Runtime() {
         public String getSourceConceptFQName() {
-          return "jetbrains.mps.baseLanguage.structure.VariableDeclaration";
+          return "jetbrains.mps.baseLanguage.structure.BaseVariableDeclaration";
         }
 
         public SNode getSourceNode(SNode targetNode) {
@@ -886,6 +890,25 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
 
         public String getTargetConceptFQName() {
           return "jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation";
+        }
+      };
+      this.myDependencies.add(dependency_Runtime);
+    }
+    {
+      IDependency_Runtime dependency_Runtime = new AbstractDependency_Runtime() {
+        public String getSourceConceptFQName() {
+          return "jetbrains.mps.baseLanguage.structure.VariableDeclaration";
+        }
+
+        public SNode getSourceNode(SNode targetNode) {
+          if ("initializer".equals(targetNode.getRole_())) {
+            return SNodeOperations.getParent(targetNode);
+          }
+          return null;
+        }
+
+        public String getTargetConceptFQName() {
+          return "jetbrains.mps.baseLanguage.structure.Expression";
         }
       };
       this.myDependencies.add(dependency_Runtime);

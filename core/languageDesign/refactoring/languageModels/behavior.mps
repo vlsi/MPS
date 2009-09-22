@@ -93,13 +93,6 @@
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1219155724079" />
     </node>
   </node>
-  <node type="jetbrains.mps.lang.behavior.structure.ConceptBehavior" id="1213877332272">
-    <property name="package" value="RefDecl" />
-    <link role="concept" targetNodeId="1.1189694084608" resolveInfo="RequiredAdditionalArgumentReference" />
-    <node role="constructor" type="jetbrains.mps.lang.behavior.structure.ConceptConstructorDeclaration" id="1213877332273">
-      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1213877332274" />
-    </node>
-  </node>
   <node type="jetbrains.mps.lang.behavior.structure.ConceptBehavior" id="1213877343861">
     <property name="package" value="RefDecl" />
     <link role="concept" targetNodeId="1.1189693830529" resolveInfo="RequiredAdditionalArgument" />

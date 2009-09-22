@@ -2654,7 +2654,7 @@
                             <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="7110754463748604253">
                               <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="7110754463748604254" />
                               <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="7110754463748604255">
-                                <link role="property" targetNodeId="1.1189768565365" resolveInfo="presentation" />
+                                <link role="property" targetNodeId="1.3938648747446564583" resolveInfo="presentation" />
                               </node>
                             </node>
                           </node>

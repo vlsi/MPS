@@ -407,8 +407,8 @@
           <property name="text" value="  caption:" />
         </node>
         <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Property" id="1213020579721">
-          <link role="relationDeclaration" targetNodeId="1.1189768565365" resolveInfo="presentation" />
           <link role="styleClass" targetNodeId="4.1186415563770" resolveInfo="StringLiteral" />
+          <link role="relationDeclaration" targetNodeId="1.3938648747446564583" resolveInfo="presentation" />
         </node>
         <node role="styleItem" type="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem" id="1214310993676">
           <property name="flag" value="false" />

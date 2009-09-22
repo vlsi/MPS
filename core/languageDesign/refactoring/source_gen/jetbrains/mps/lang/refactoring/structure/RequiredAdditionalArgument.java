@@ -12,7 +12,6 @@ import jetbrains.mps.project.GlobalScope;
 
 public class RequiredAdditionalArgument extends BaseConcept implements INamedConcept {
   public static final String concept = "jetbrains.mps.lang.refactoring.structure.RequiredAdditionalArgument";
-  public static final String PRESENTATION = "presentation";
   public static final String NAME = "name";
   public static final String SHORT_DESCRIPTION = "shortDescription";
   public static final String ALIAS = "alias";
@@ -21,14 +20,6 @@ public class RequiredAdditionalArgument extends BaseConcept implements INamedCon
 
   public RequiredAdditionalArgument(SNode node) {
     super(node);
-  }
-
-  public String getPresentation() {
-    return this.getProperty(RequiredAdditionalArgument.PRESENTATION);
-  }
-
-  public void setPresentation(String value) {
-    this.setProperty(RequiredAdditionalArgument.PRESENTATION, value);
   }
 
   public String getName() {
