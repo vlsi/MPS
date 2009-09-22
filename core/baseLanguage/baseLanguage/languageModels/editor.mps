@@ -13523,6 +13523,9 @@
         <property name="text" value="++" />
         <property name="attractsFocus" value="1" />
         <link role="actionMap" targetNodeId="1236610315254" resolveInfo="AbstractUnariOperationActions" />
+        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.FontStyleStyleClassItem" id="2583220156311752620">
+          <property name="style" value="PLAIN" />
+        </node>
         <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PunctuationLeftStyleClassItem" id="1234443248937">
           <property name="flag" value="true" />
         </node>
