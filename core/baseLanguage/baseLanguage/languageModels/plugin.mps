@@ -1775,22 +1775,15 @@
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1208523375759">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="6033914263941967391">
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="6033914263941967392">
-            <property name="name" value="descriptor" />
-            <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="6033914263941967393">
-              <link role="classifier" targetNodeId="5.~SModelDescriptor" resolveInfo="SModelDescriptor" />
+            <property name="name" value="model" />
+            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="6033914263941967397">
+              <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_GetModelOperation" id="6033914263941967398" />
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="6033914263941967399">
+                <link role="variableDeclaration" targetNodeId="1208523393897" resolveInfo="node" />
+              </node>
             </node>
-            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="6033914263941967395">
-              <node role="operand" type="jetbrains.mps.lang.smodel.structure.SemanticDowncastExpression" id="6033914263941967396">
-                <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="6033914263941967397">
-                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_GetModelOperation" id="6033914263941967398" />
-                  <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="6033914263941967399">
-                    <link role="variableDeclaration" targetNodeId="1208523393897" resolveInfo="node" />
-                  </node>
-                </node>
-              </node>
-              <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="6033914263941967400">
-                <link role="baseMethodDeclaration" targetNodeId="5.~SModel.getModelDescriptor():jetbrains.mps.smodel.SModelDescriptor" resolveInfo="getModelDescriptor" />
-              </node>
+            <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="6033914263942014588">
+              <link role="classifier" targetNodeId="5.~SModel" resolveInfo="SModel" />
             </node>
           </node>
         </node>
@@ -1802,8 +1795,8 @@
           </node>
           <node role="condition" type="jetbrains.mps.baseLanguage.structure.EqualsExpression" id="6033914263941969041">
             <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="6033914263941969044" />
-            <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="6033914263941969040">
-              <link role="variableDeclaration" targetNodeId="6033914263941967392" resolveInfo="descriptor" />
+            <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="6033914263942014589">
+              <link role="variableDeclaration" targetNodeId="6033914263941967392" resolveInfo="model" />
             </node>
           </node>
         </node>
@@ -1814,8 +1807,13 @@
               <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="6033914263941967402">
                 <link role="baseMethodDeclaration" targetNodeId="5.~SModelDescriptor.getModule():jetbrains.mps.project.IModule" resolveInfo="getModule" />
               </node>
-              <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="6033914263941967401">
-                <link role="variableDeclaration" targetNodeId="6033914263941967392" resolveInfo="descriptor" />
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="6033914263942014590">
+                <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="6033914263941967401">
+                  <link role="variableDeclaration" targetNodeId="6033914263941967392" resolveInfo="descriptor" />
+                </node>
+                <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="6033914263942015998">
+                  <link role="baseMethodDeclaration" targetNodeId="5.~SModel.getModelDescriptor():jetbrains.mps.smodel.SModelDescriptor" resolveInfo="getModelDescriptor" />
+                </node>
               </node>
             </node>
             <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1208523431033">
