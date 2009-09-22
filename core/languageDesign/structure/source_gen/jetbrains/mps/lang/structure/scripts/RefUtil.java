@@ -7,6 +7,8 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.lang.structure.behavior.AbstractConceptDeclaration_Behavior;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 public class RefUtil {
   public static SNode findEditorDeclaration(SModel editorModel, SNode concept) {
@@ -40,6 +42,24 @@ public class RefUtil {
     for (SNode root : ListSequence.fromList(SModelOperations.getRoots(dataFlowModel, "jetbrains.mps.lang.dataFlow.structure.DataFlowBuilderDeclaration"))) {
       if (concept == SLinkOperations.getTarget(root, "conceptDeclaration", false)) {
         return root;
+      }
+    }
+    return null;
+  }
+
+  public static SNode findLinkToMerge(SNode concept, SNode linkNode) {
+    for (SNode linkDecl : ListSequence.fromList(AbstractConceptDeclaration_Behavior.call_getLinkDeclarations_1213877394480(concept))) {
+      if (SPropertyOperations.getString_def(linkDecl, "metaClass", "reference") == SPropertyOperations.getString_def(linkNode, "metaClass", "reference") && SPropertyOperations.getString(linkDecl, "role").equals(SPropertyOperations.getString(linkNode, "role"))) {
+        return linkDecl;
+      }
+    }
+    return null;
+  }
+
+  public static SNode findPropertyToMerge(SNode concept, SNode propNode) {
+    for (SNode propDecl : ListSequence.fromList(AbstractConceptDeclaration_Behavior.call_getPropertyDeclarations_1213877394546(concept))) {
+      if (SPropertyOperations.getString(propDecl, "name").equals(SPropertyOperations.getString(propNode, "name"))) {
+        return propDecl;
       }
     }
     return null;

@@ -55,6 +55,7 @@ public class MoveLinkUp extends BaseGeneratedRefactoring {
 
   public boolean isApplicable(RefactoringContext refactoringContext) {
     SNode concept = SNodeOperations.getAncestor(refactoringContext.getSelectedNode(), "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration", false, false);
+
     if (concept == null) {
       return false;
     }
@@ -74,6 +75,14 @@ public class MoveLinkUp extends BaseGeneratedRefactoring {
   }
 
   public void doRefactor(final RefactoringContext refactoringContext) {
+    /*
+      SNode linkToReplace = RefUtil.findLinkToMerge(((SNode)refactoringContext.getParameter("targetConcept")), refactoringContext.getSelectedNode());
+      if ((linkToReplace != null)) {
+        refactoringContext.replaceRefsToNodeWithNode(refactoringContext.getSelectedNode(), linkToReplace);
+      } else {
+        refactoringContext.moveNodeToNode(refactoringContext.getSelectedNode(), refactoringContext.getSelectedNode().getRole_(), ((SNode)refactoringContext.getParameter("targetConcept")));
+      }
+    */
     refactoringContext.moveNodeToNode(refactoringContext.getSelectedNode(), refactoringContext.getSelectedNode().getRole_(), ((SNode)refactoringContext.getParameter("targetConcept")));
     refactoringContext.changeFeatureName(refactoringContext.getSelectedNode(), SNodeOperations.getModel(((SNode)refactoringContext.getParameter("targetConcept"))).getSModelFqName() + "." + SPropertyOperations.getString(((SNode)refactoringContext.getParameter("targetConcept")), "name"), SPropertyOperations.getString(refactoringContext.getSelectedNode(), "role"));
   }

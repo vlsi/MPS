@@ -62,9 +62,16 @@ public class MovePropertyUp extends BaseGeneratedRefactoring {
   }
 
   public void doRefactor(final RefactoringContext refactoringContext) {
+    /*
+      SNode propertyToMerge = RefUtil.findPropertyToMerge(((SNode)refactoringContext.getParameter("targetConcept")), refactoringContext.getSelectedNode());
+      if ((propertyToMerge != null)) {
+        refactoringContext.replaceRefsToNodeWithNode(refactoringContext.getSelectedNode(), propertyToMerge);
+      } else {
+        refactoringContext.moveNodeToNode(refactoringContext.getSelectedNode(), refactoringContext.getSelectedNode().getRole_(), ((SNode)refactoringContext.getParameter("targetConcept")));
+      }
+    */
     refactoringContext.moveNodeToNode(refactoringContext.getSelectedNode(), refactoringContext.getSelectedNode().getRole_(), ((SNode)refactoringContext.getParameter("targetConcept")));
-    SNode propertyDeclaration = SNodeOperations.cast(refactoringContext.getSelectedNode(), "jetbrains.mps.lang.structure.structure.PropertyDeclaration");
-    refactoringContext.changeFeatureName(propertyDeclaration, SNodeOperations.getModel(((SNode)refactoringContext.getParameter("targetConcept"))).getSModelFqName() + "." + SPropertyOperations.getString(((SNode)refactoringContext.getParameter("targetConcept")), "name"), SPropertyOperations.getString(propertyDeclaration, "name"));
+    refactoringContext.changeFeatureName(refactoringContext.getSelectedNode(), SNodeOperations.getModel(((SNode)refactoringContext.getParameter("targetConcept"))).getSModelFqName() + "." + SPropertyOperations.getString(((SNode)refactoringContext.getParameter("targetConcept")), "name"), SPropertyOperations.getString(refactoringContext.getSelectedNode(), "name"));
   }
 
   public Map<IModule, List<SModel>> getModelsToGenerate(final RefactoringContext refactoringContext) {
