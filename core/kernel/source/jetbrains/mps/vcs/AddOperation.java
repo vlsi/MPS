@@ -113,11 +113,14 @@ class AddOperation extends VcsOperation {
     } else if (myConfirmationOption.getValue() == VcsShowConfirmationOption.Value.DO_NOTHING_SILENTLY) {
       return;
     } else {
-      final AbstractVcsHelper helper = AbstractVcsHelper.getInstance(myProject);
-      Collection<VirtualFile> filesToProcess = helper.selectFilesToProcess(CollectionUtil.union(myVirtualFilesToAdd, myVirtualFilesToRevert), "Add Files To Vcs", null,
-        "Add File To Vcs",
-        "Do you want to add the following file to Vcs?\n{0}\n\nIf you say NO, you can still add it later manually.",
-        myConfirmationOption);
+      Collection<VirtualFile> filesToProcess = null;
+      if (!myFilesToAdd.isEmpty()) {
+        final AbstractVcsHelper helper = AbstractVcsHelper.getInstance(myProject);
+        filesToProcess = helper.selectFilesToProcess(CollectionUtil.union(myVirtualFilesToAdd, myVirtualFilesToRevert), "Add Files To Vcs", null,
+          "Add File To Vcs",
+          "Do you want to add the following file to Vcs?\n{0}\n\nIf you say NO, you can still add it later manually.",
+          myConfirmationOption);
+      }
       if (filesToProcess != null) {
         reallyPerform(CollectionUtil.intersect(myVirtualFilesToRevert, filesToProcess),
           CollectionUtil.intersect(myVirtualFilesToAdd, filesToProcess));
