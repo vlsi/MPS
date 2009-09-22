@@ -56,7 +56,7 @@ public class VcsRootsManager implements ProjectComponent {
         VirtualFile file = VFileSystem.getFile(modelFile.getParent());
         if (file == null) return;
         AbstractVcs vcs = myVcsManager.findVersioningVcs(file);
-        if (vcs == null) return;
+        if (vcs == null || !Arrays.asList(myVcsManager.getAllActiveVcss()).contains(vcs)) return;
         if (myVcsManager.getVcsRootFor(file) != null) return;
         VirtualFile root = file;
         while ((root.getParent() != null) && vcs.isVersionedDirectory(root.getParent())) {
