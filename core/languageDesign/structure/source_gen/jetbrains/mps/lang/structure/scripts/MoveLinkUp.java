@@ -123,7 +123,7 @@ public class MoveLinkUp extends BaseGeneratedRefactoring {
       IChooseComponent<SNode> chooseComponent;
       chooseComponent = MoveLinkUp.this.targetConcept_componentCreator(refactoringContext);
       chooseComponent.setPropertyName("targetConcept");
-      chooseComponent.setCaption("chooseTargetConcept");
+      chooseComponent.setCaption("choose target concept");
       chooseComponent.initComponent();
       ListSequence.fromList(components).addElement(chooseComponent);
     }

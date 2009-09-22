@@ -110,7 +110,7 @@ public class MovePropertyUp extends BaseGeneratedRefactoring {
       IChooseComponent<SNode> chooseComponent;
       chooseComponent = MovePropertyUp.this.targetConcept_componentCreator(refactoringContext);
       chooseComponent.setPropertyName("targetConcept");
-      chooseComponent.setCaption("chooseTargetConcept");
+      chooseComponent.setCaption("choose target concept");
       chooseComponent.initComponent();
       ListSequence.fromList(components).addElement(chooseComponent);
     }

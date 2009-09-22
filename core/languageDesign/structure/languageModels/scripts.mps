@@ -1574,7 +1574,7 @@
     <link role="overrides" targetNodeId="7.1198076144993" resolveInfo="MoveNodes" />
     <node role="arguments" type="jetbrains.mps.lang.refactoring.structure.RequiredUserEnteredArgument" id="1198592978857">
       <property name="name" value="targetConcept" />
-      <property name="presentation" value="chooseTargetConcept" />
+      <property name="presentation" value="choose target concept" />
       <node role="argumentType" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1198593001176">
         <link role="concept" targetNodeId="1.1169125787135" resolveInfo="AbstractConceptDeclaration" />
       </node>
@@ -2118,7 +2118,7 @@
     <link role="overrides" targetNodeId="7.1198076144993" resolveInfo="MoveNodes" />
     <node role="arguments" type="jetbrains.mps.lang.refactoring.structure.RequiredUserEnteredArgument" id="1198776978561">
       <property name="name" value="targetConcept" />
-      <property name="presentation" value="chooseTargetConcept" />
+      <property name="presentation" value="choose target concept" />
       <node role="argumentType" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1198776978562">
         <link role="concept" targetNodeId="1.1169125787135" resolveInfo="AbstractConceptDeclaration" />
       </node>
