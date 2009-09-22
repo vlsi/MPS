@@ -19,6 +19,7 @@ import com.intellij.openapi.ui.VerticalFlowLayout;
 
 import javax.swing.JCheckBox;
 import javax.swing.JPanel;
+import javax.swing.border.TitledBorder;
 import java.awt.BorderLayout;
 import java.awt.FlowLayout;
 
@@ -30,11 +31,20 @@ public class VcsSettingsPanel extends JPanel {
   public VcsSettingsPanel(VcsIdeSettings settings) {
     super(new VerticalFlowLayout(true, false));
     mySettings = settings;
-    myTextModeDifferenceCheckBox = new JCheckBox("View model difference as text", mySettings.getTextModeEnabled());
+
+    JPanel diffPanel = new JPanel(new BorderLayout());
+    diffPanel.setBorder(new TitledBorder("Differences view"));
+    myTextModeDifferenceCheckBox = new JCheckBox("Use text diff for models", mySettings.getTextModeEnabled());
+    diffPanel.add(myTextModeDifferenceCheckBox);
+
+    JPanel notificationsPanel = new JPanel(new BorderLayout());
+    notificationsPanel.setBorder(new TitledBorder("Notifications"));
     myNotifyWhenChangedOutsideAreMade = new JCheckBox("Show warning when changing model outside of vcs roots",
       mySettings.getNotifyWhenChangedOutsideAreMade());
-    add(myTextModeDifferenceCheckBox);
-    add(myNotifyWhenChangedOutsideAreMade);
+    notificationsPanel.add(myNotifyWhenChangedOutsideAreMade);
+
+    add(notificationsPanel);
+    add(diffPanel);
   }
 
   public boolean isModified() {
