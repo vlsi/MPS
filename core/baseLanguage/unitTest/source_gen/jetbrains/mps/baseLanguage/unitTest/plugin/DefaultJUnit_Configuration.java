@@ -24,17 +24,21 @@ import com.intellij.openapi.actionSystem.AnAction;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import com.intellij.execution.process.ProcessHandler;
+import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.workbench.MPSDataKeys;
-import jetbrains.mps.baseLanguage.plugin.RunComponent;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
+import jetbrains.mps.MPSProjectHolder;
+import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelReference;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.project.IModule;
-import jetbrains.mps.baseLanguage.plugin.BLProcessHandler;
+import jetbrains.mps.smodel.SModelDescriptor;
+import com.intellij.execution.process.DefaultJavaProcessHandler;
 import java.nio.charset.Charset;
 import com.intellij.execution.ui.ExecutionConsole;
 import com.intellij.execution.configurations.RunnerSettings;
@@ -114,12 +118,16 @@ public class DefaultJUnit_Configuration extends BaseRunConfig {
         final List<AnAction> actions = ListSequence.fromList(new ArrayList<AnAction>());
         ProcessHandler handler = null;
         {
-          Project project = MPSDataKeys.PROJECT.getData(environment.getDataContext());
-          final RunComponent runComponent = new RunComponent(project);
-          final UnitTestClassRunner testRunner = new UnitTestClassRunner(runComponent);
-          testRunner.setRunParams(DefaultJUnit_Configuration.this.getStateObject().myParams);
+          MPSProject project = MPSDataKeys.MPS_PROJECT.getData(environment.getDataContext());
+          final JUnitTestViewComponent runComponent = new JUnitTestViewComponent(project, null);
+          final Wrappers._T<UnitTestRunner> testRunner = new Wrappers._T<UnitTestRunner>(null);
+          try {
+            testRunner.value = new UnitTestRunner(project.getComponent(MPSProjectHolder.class).getMPSProject().getPluginManager().getPrefsComponent(UnitTest_PreferencesComponent.class), runComponent);
+          } catch (NullPointerException npe) {
+            npe.printStackTrace();
+          }
 
-          ListSequence.fromList(actions).addSequence(ListSequence.fromList(ListSequence.fromListAndArray(new ArrayList<AnAction>(), runComponent.getConsoleView().createConsoleActions())));
+          ListSequence.fromList(actions).addSequence(ListSequence.fromList(ListSequence.fromList(new ArrayList<AnAction>())));
           consoleComponent = runComponent;
           consoleDispose = new Runnable() {
             public void run() {
@@ -131,30 +139,41 @@ public class DefaultJUnit_Configuration extends BaseRunConfig {
           ModelAccess.instance().runReadAction(new Runnable() {
             public void run() {
               if (DefaultJUnit_Configuration.this.getStateObject().type != null) {
+                IOperationContext context = MPSDataKeys.OPERATION_CONTEXT.getData(environment.getDataContext());
+                List<SNode> tests = new ArrayList<SNode>();
+                List<SNode> methods = new ArrayList<SNode>();
                 if (DefaultJUnit_Configuration.this.getStateObject().type == JUnitRunTypes.METHOD) {
                   SNode method = (SNode)SModelUtil.findNodeByFQName(DefaultJUnit_Configuration.this.getStateObject().method, SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.unitTest.structure.ITestMethod"), GlobalScope.getInstance());
-                  testRunner.runTestMethod(method);
+                  ListSequence.fromList(methods).addElement(method);
                 } else if (DefaultJUnit_Configuration.this.getStateObject().type == JUnitRunTypes.TESTCLASS) {
                   SNode test = (SNode)SModelUtil.findNodeByFQName(DefaultJUnit_Configuration.this.getStateObject().node, SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.unitTest.structure.BTestCase"), GlobalScope.getInstance());
-                  testRunner.runTest(test);
+                  ListSequence.fromList(tests).addElement(test);
                 } else if (DefaultJUnit_Configuration.this.getStateObject().type == JUnitRunTypes.MODEL) {
                   SModel model = GlobalScope.getInstance().getModelDescriptor(SModelReference.fromString(DefaultJUnit_Configuration.this.getStateObject().model)).getSModel();
-                  testRunner.runTestInModel(model);
+                  ListSequence.fromList(tests).addSequence(ListSequence.fromList(SModelOperations.getRoots(model, "jetbrains.mps.baseLanguage.unitTest.structure.BTestCase")));
                 } else if (DefaultJUnit_Configuration.this.getStateObject().type == JUnitRunTypes.MODULE) {
                   for (IModule module : GlobalScope.getInstance().getVisibleModules()) {
-                    if (module.getModuleFqName().equals(module)) {
-                      testRunner.runTestInModule(module);
+                    if (module.getModuleFqName().equals(DefaultJUnit_Configuration.this.getStateObject().module)) {
+                      for (SModelDescriptor modelDescriptor : module.getOwnModelDescriptors()) {
+                        SModel model = modelDescriptor.getSModel();
+                        ListSequence.fromList(tests).addSequence(ListSequence.fromList(SModelOperations.getRoots(model, "jetbrains.mps.baseLanguage.unitTest.structure.BTestCase")));
+                      }
                       break;
                     }
                   }
                 }
-                process.value = testRunner.getProcess();
+                runComponent.setTestCaseAndMethod(context, tests, methods);
+                List<SNode> all = new ArrayList<SNode>();
+                ListSequence.fromList(all).addSequence(ListSequence.fromList(tests));
+                ListSequence.fromList(all).addSequence(ListSequence.fromList(methods));
+                testRunner.value.run(all);
+                process.value = testRunner.value.getProcess();
               }
             }
           });
 
           if (process.value != null) {
-            handler = new BLProcessHandler(runComponent, process.value, "", Charset.defaultCharset());
+            handler = new DefaultJavaProcessHandler(process.value, "Test", Charset.defaultCharset());
           }
         }
         final JComponent finalConsoleComponent = consoleComponent;
