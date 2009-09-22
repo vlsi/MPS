@@ -8,13 +8,40 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
-public class AbstractMoveExpression extends Expression {
+public class AbstractMoveExpression extends Expression implements RefactoringAction {
   public static final String concept = "jetbrains.mps.lang.refactoring.structure.AbstractMoveExpression";
+  public static final String SHORT_DESCRIPTION = "shortDescription";
+  public static final String ALIAS = "alias";
+  public static final String VIRTUAL_PACKAGE = "virtualPackage";
   public static final String WHAT_TO_MOVE = "whatToMove";
   public static final String DESTINATION = "destination";
 
   public AbstractMoveExpression(SNode node) {
     super(node);
+  }
+
+  public String getShortDescription() {
+    return this.getProperty(AbstractMoveExpression.SHORT_DESCRIPTION);
+  }
+
+  public void setShortDescription(String value) {
+    this.setProperty(AbstractMoveExpression.SHORT_DESCRIPTION, value);
+  }
+
+  public String getAlias() {
+    return this.getProperty(AbstractMoveExpression.ALIAS);
+  }
+
+  public void setAlias(String value) {
+    this.setProperty(AbstractMoveExpression.ALIAS, value);
+  }
+
+  public String getVirtualPackage() {
+    return this.getProperty(AbstractMoveExpression.VIRTUAL_PACKAGE);
+  }
+
+  public void setVirtualPackage(String value) {
+    this.setProperty(AbstractMoveExpression.VIRTUAL_PACKAGE, value);
   }
 
   public Expression getWhatToMove() {

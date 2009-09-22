@@ -207,5 +207,29 @@
       </node>
     </node>
   </node>
+  <node type="jetbrains.mps.lang.constraints.structure.ConceptConstraints" id="3242588059496701744">
+    <property name="package" value="RefActions" />
+    <link role="concept" targetNodeId="1.3242588059496701743" resolveInfo="RefactoringAction" />
+    <node role="canBeChild" type="jetbrains.mps.lang.constraints.structure.ConstraintFunction_CanBeAChild" id="3242588059496701745">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="3242588059496701746">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="3242588059496701747">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="3242588059496701758">
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="3242588059496701749">
+              <node role="operand" type="jetbrains.mps.lang.constraints.structure.ConstraintFunctionParameter_parentNode" id="3242588059496701748" />
+              <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_GetAncestorOperation" id="3242588059496701753">
+                <node role="parameter" type="jetbrains.mps.lang.smodel.structure.OperationParm_Inclusion" id="3242588059496701764" />
+                <node role="parameter" type="jetbrains.mps.lang.smodel.structure.OperationParm_Concept" id="3242588059496701754">
+                  <node role="conceptArgument" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" id="3242588059496701757">
+                    <link role="conceptDeclaration" targetNodeId="1.1189694053795" resolveInfo="DoRefactorClause" />
+                  </node>
+                </node>
+              </node>
+            </node>
+            <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_IsNotNullOperation" id="3242588059496701762" />
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
 </model>
 

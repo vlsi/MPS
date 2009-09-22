@@ -526,6 +526,9 @@
       <property name="value" value="changeFeatureName" />
       <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" resolveInfo="alias" />
     </node>
+    <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="3242588059496701766">
+      <link role="intfc" targetNodeId="3242588059496701743" resolveInfo="RefactoringAction" />
+    </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1197983858784">
     <property name="name" value="ChooseComponentClause" />
@@ -582,6 +585,9 @@
     </node>
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.BooleanConceptProperty" id="1199619464389">
       <link role="conceptPropertyDeclaration" targetNodeId="1.1137473854053" resolveInfo="abstract" />
+    </node>
+    <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="3242588059496701765">
+      <link role="intfc" targetNodeId="3242588059496701743" resolveInfo="RefactoringAction" />
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1199620122561">
@@ -692,6 +698,9 @@
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1204723025601">
       <property name="value" value="deleteFeature" />
       <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" resolveInfo="alias" />
+    </node>
+    <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="3242588059496701767">
+      <link role="intfc" targetNodeId="3242588059496701743" resolveInfo="RefactoringAction" />
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1209559069560">
@@ -901,6 +910,10 @@
       <property name="value" value="operationContext" />
       <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" resolveInfo="alias" />
     </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration" id="3242588059496701743">
+    <property name="package" value="RefActions" />
+    <property name="name" value="RefactoringAction" />
   </node>
 </model>
 

@@ -9,14 +9,41 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
-public class ChangeFeatureNameOperation extends Statement {
+public class ChangeFeatureNameOperation extends Statement implements RefactoringAction {
   public static final String concept = "jetbrains.mps.lang.refactoring.structure.ChangeFeatureNameOperation";
+  public static final String SHORT_DESCRIPTION = "shortDescription";
+  public static final String ALIAS = "alias";
+  public static final String VIRTUAL_PACKAGE = "virtualPackage";
   public static final String FEATURE = "feature";
   public static final String NEW_CONCEPT_F_Q_NAME = "newConceptFQName";
   public static final String NEW_FEATURE_NAME = "newFeatureName";
 
   public ChangeFeatureNameOperation(SNode node) {
     super(node);
+  }
+
+  public String getShortDescription() {
+    return this.getProperty(ChangeFeatureNameOperation.SHORT_DESCRIPTION);
+  }
+
+  public void setShortDescription(String value) {
+    this.setProperty(ChangeFeatureNameOperation.SHORT_DESCRIPTION, value);
+  }
+
+  public String getAlias() {
+    return this.getProperty(ChangeFeatureNameOperation.ALIAS);
+  }
+
+  public void setAlias(String value) {
+    this.setProperty(ChangeFeatureNameOperation.ALIAS, value);
+  }
+
+  public String getVirtualPackage() {
+    return this.getProperty(ChangeFeatureNameOperation.VIRTUAL_PACKAGE);
+  }
+
+  public void setVirtualPackage(String value) {
+    this.setProperty(ChangeFeatureNameOperation.VIRTUAL_PACKAGE, value);
   }
 
   public Expression getFeature() {

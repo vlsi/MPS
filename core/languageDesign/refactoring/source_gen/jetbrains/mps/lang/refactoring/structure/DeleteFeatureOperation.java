@@ -9,12 +9,39 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
-public class DeleteFeatureOperation extends Statement {
+public class DeleteFeatureOperation extends Statement implements RefactoringAction {
   public static final String concept = "jetbrains.mps.lang.refactoring.structure.DeleteFeatureOperation";
+  public static final String SHORT_DESCRIPTION = "shortDescription";
+  public static final String ALIAS = "alias";
+  public static final String VIRTUAL_PACKAGE = "virtualPackage";
   public static final String FEATURE = "feature";
 
   public DeleteFeatureOperation(SNode node) {
     super(node);
+  }
+
+  public String getShortDescription() {
+    return this.getProperty(DeleteFeatureOperation.SHORT_DESCRIPTION);
+  }
+
+  public void setShortDescription(String value) {
+    this.setProperty(DeleteFeatureOperation.SHORT_DESCRIPTION, value);
+  }
+
+  public String getAlias() {
+    return this.getProperty(DeleteFeatureOperation.ALIAS);
+  }
+
+  public void setAlias(String value) {
+    this.setProperty(DeleteFeatureOperation.ALIAS, value);
+  }
+
+  public String getVirtualPackage() {
+    return this.getProperty(DeleteFeatureOperation.VIRTUAL_PACKAGE);
+  }
+
+  public void setVirtualPackage(String value) {
+    this.setProperty(DeleteFeatureOperation.VIRTUAL_PACKAGE, value);
   }
 
   public Expression getFeature() {
