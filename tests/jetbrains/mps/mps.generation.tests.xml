@@ -134,6 +134,7 @@
                 <exclude name="**/classes/**"/>
                 <exclude name="**/classes_gen/**"/>
                 <exclude name="**/lib/**"/>
+                <exclude nmae="**/testMaterial/**"/>
             </modules>
         </mps.test.broken.references>
     </target>
