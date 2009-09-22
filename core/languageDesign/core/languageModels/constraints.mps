@@ -51,6 +51,25 @@
           </node>
         </node>
       </node>
+      <node role="propertySetter" type="jetbrains.mps.lang.constraints.structure.ConstraintFunction_PropertySetter" id="6895093993902376992">
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="6895093993902376993">
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="6895093993902376994">
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="6895093993902376995">
+              <node role="operand" type="jetbrains.mps.lang.smodel.structure.SemanticDowncastExpression" id="6895093993902376996">
+                <node role="leftExpression" type="jetbrains.mps.lang.constraints.structure.ConstraintsFunctionParameter_node" id="6895093993902376997" />
+              </node>
+              <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="6895093993902376998">
+                <link role="baseMethodDeclaration" targetNodeId="3.~SNode.setProperty(java.lang.String,java.lang.String):void" resolveInfo="setProperty" />
+                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference" id="6895093993902376999">
+                  <link role="classifier" targetNodeId="4.~SModelTreeNode" resolveInfo="SModelTreeNode" />
+                  <link role="variableDeclaration" targetNodeId="4.~SModelTreeNode.PACK" resolveInfo="PACK" />
+                </node>
+                <node role="actualArgument" type="jetbrains.mps.lang.constraints.structure.ConstraintsFunctionParameter_propertyValue" id="6895093993902379618" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
     </node>
   </node>
   <node type="jetbrains.mps.lang.constraints.structure.ConceptConstraints" id="1213104856824">
