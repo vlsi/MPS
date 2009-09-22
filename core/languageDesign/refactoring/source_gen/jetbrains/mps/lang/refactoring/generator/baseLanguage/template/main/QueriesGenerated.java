@@ -437,6 +437,14 @@ public class QueriesGenerated {
     return SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "isApplicableClause", true), "body", true);
   }
 
+  public static SNode sourceNodeQuery_3242588059496756733(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return SLinkOperations.getTarget(_context.getNode(), "whatToMove", true);
+  }
+
+  public static SNode sourceNodeQuery_3242588059496756749(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return SLinkOperations.getTarget(_context.getNode(), "destination", true);
+  }
+
   public static SNode sourceNodeQuery_7110754463748604052(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "argumentType", true);
   }

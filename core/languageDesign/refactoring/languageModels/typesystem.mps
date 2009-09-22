@@ -812,5 +812,34 @@
       <link role="concept" targetNodeId="1.1215084612287" resolveInfo="OperationContextExpression" />
     </node>
   </node>
+  <node type="jetbrains.mps.lang.typesystem.structure.InferenceRule" id="3242588059496747671">
+    <property name="name" value="typeof_MergeNodeWithAnotherNodeExpression" />
+    <property name="package" value="RefActions" />
+    <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="3242588059496747672">
+      <node role="statement" type="jetbrains.mps.lang.typesystem.structure.CreateLessThanInequationStatement" id="3242588059496747674">
+        <node role="rightExpression" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause" id="3242588059496747675">
+          <node role="normalType" type="jetbrains.mps.lang.quotation.structure.Quotation" id="3242588059496747676">
+            <node role="quotedNode" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="3242588059496747677" />
+          </node>
+        </node>
+        <node role="leftExpression" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause" id="3242588059496747678">
+          <node role="normalType" type="jetbrains.mps.lang.typesystem.structure.TypeOfExpression" id="3242588059496747679">
+            <node role="term" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="3242588059496747680">
+              <node role="operand" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference" id="3242588059496747683">
+                <link role="applicableNode" targetNodeId="3242588059496747673" resolveInfo="expression" />
+              </node>
+              <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="3242588059496756716">
+                <link role="link" targetNodeId="1.1199619459779" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="applicableNode" type="jetbrains.mps.lang.typesystem.structure.ConceptReference" id="3242588059496747673">
+      <property name="name" value="expression" />
+      <link role="concept" targetNodeId="1.3242588059496747656" resolveInfo="MergeNodeWithAnotherNodeExpression" />
+    </node>
+  </node>
 </model>
 

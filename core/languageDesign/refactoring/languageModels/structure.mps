@@ -915,5 +915,18 @@
     <property name="package" value="RefActions" />
     <property name="name" value="RefactoringAction" />
   </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="3242588059496747656">
+    <property name="name" value="MergeNodeWithAnotherNodeExpression" />
+    <property name="package" value="RefActions" />
+    <link role="extends" targetNodeId="1199620122561" resolveInfo="AbstractMoveNodeExpression" />
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="3242588059496747658">
+      <property name="value" value="mergeNode" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" resolveInfo="alias" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="3242588059496747659">
+      <property name="value" value="merge node with another node" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473914776" resolveInfo="shortDescription" />
+    </node>
+  </node>
 </model>
 

@@ -723,5 +723,27 @@
       </node>
     </node>
   </node>
+  <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" id="3242588059496747660">
+    <property name="package" value="RefActions" />
+    <link role="conceptDeclaration" targetNodeId="1.3242588059496747656" resolveInfo="MergeNodeWithAnotherNodeExpression" />
+    <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="3242588059496747662">
+      <property name="vertical" value="false" />
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="3242588059496747663">
+        <property name="text" value="mergeNode" />
+        <link role="styleClass" targetNodeId="4.1186415544875" resolveInfo="KeyWord" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode" id="3242588059496747664">
+        <link role="relationDeclaration" targetNodeId="1.1199619459778" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="3242588059496747665">
+        <property name="text" value="with" />
+        <link role="styleClass" targetNodeId="4.1186415544875" resolveInfo="KeyWord" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode" id="3242588059496747666">
+        <link role="relationDeclaration" targetNodeId="1.1199619459779" />
+      </node>
+      <node role="cellLayout" type="jetbrains.mps.lang.editor.structure.CellLayout_Indent" id="3242588059496747669" />
+    </node>
+  </node>
 </model>
 
