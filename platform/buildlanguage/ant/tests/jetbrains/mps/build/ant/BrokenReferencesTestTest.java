@@ -26,6 +26,7 @@ public class BrokenReferencesTestTest extends TestCase {
     WhatToDo whatToDo = new WhatToDo();
     whatToDo.addModelDirectory(destdir);
     whatToDo.addLibrary(solutionName, destdir);
+    whatToDo.updateLogLevel(4); // debug log level
     final boolean[] brokenReferenceFound = new boolean[1];
     TestBrokenReferencesWorker worker = new TestBrokenReferencesWorker(whatToDo, new SystemOutLogger()) {
       @Override

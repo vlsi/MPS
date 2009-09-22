@@ -62,6 +62,7 @@ public class TestBrokenReferencesWorker extends MpsWorker {
     }
 
     for (SNode node : sm.getSModel().allNodes()) {
+      debug("Checking node " + node);
       if (SModelUtil_new.findConceptDeclaration(node.getConceptFqName(), GlobalScope.getInstance()) == null) {
         errorMessages.append(myBuildServerMessageFormat.escapeBuildMessage("Unknown concept "));
         errorMessages.append(myBuildServerMessageFormat.escapeBuildMessage(node.getConceptFqName()));
