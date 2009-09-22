@@ -47,7 +47,7 @@
   <import index="9" modelUID="f:java_stub#jetbrains.mps.project(jetbrains.mps.project@java_stub)" version="-1" />
   <node type="jetbrains.mps.lang.typesystem.structure.InferenceRule" id="1190728555341">
     <property name="name" value="typeof_RequiredAdditionalArgument" />
-    <property name="package" value="RefDecl.UserArgs" />
+    <property name="package" value="RefDecl.Deprecated" />
     <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1190728555342">
       <node role="statement" type="jetbrains.mps.lang.typesystem.structure.CreateEquationStatement" id="1190728908074">
         <node role="rightExpression" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause" id="1190728915530">
@@ -76,7 +76,7 @@
   </node>
   <node type="jetbrains.mps.lang.typesystem.structure.InferenceRule" id="1190728582079">
     <property name="name" value="typeof_RequiredAdditionalArgumentReference" />
-    <property name="package" value="RefDecl" />
+    <property name="package" value="RefDecl.Deprecated" />
     <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1190728582080">
       <node role="statement" type="jetbrains.mps.lang.typesystem.structure.CreateEquationStatement" id="1190728604337">
         <node role="rightExpression" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause" id="1190728606543">
@@ -108,7 +108,7 @@
   <node type="jetbrains.mps.lang.typesystem.structure.InferenceRule" id="1192794377384">
     <property name="name" value="typeof_ConceptFunctionParameter_UserArgument" />
     <property name="overrides" value="true" />
-    <property name="package" value="RefDecl" />
+    <property name="package" value="RefDecl.Parameters" />
     <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1192794377385">
       <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1192794963353">
         <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1192794963354">

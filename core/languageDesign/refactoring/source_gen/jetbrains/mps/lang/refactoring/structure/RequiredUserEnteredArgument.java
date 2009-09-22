@@ -9,21 +9,12 @@ import jetbrains.mps.project.GlobalScope;
 
 public class RequiredUserEnteredArgument extends RequiredAdditionalArgument {
   public static final String concept = "jetbrains.mps.lang.refactoring.structure.RequiredUserEnteredArgument";
-  public static final String PRESENTATION = "presentation";
   public static final String FILTER_CLAUSE = "filterClause";
   public static final String CHOOSE_COMPONENT_CLAUSE = "chooseComponentClause";
   public static final String INITIAL_VALUE = "initialValue";
 
   public RequiredUserEnteredArgument(SNode node) {
     super(node);
-  }
-
-  public String getPresentation() {
-    return this.getProperty(RequiredUserEnteredArgument.PRESENTATION);
-  }
-
-  public void setPresentation(String value) {
-    this.setProperty(RequiredUserEnteredArgument.PRESENTATION, value);
   }
 
   public FilterArgumentClause getFilterClause() {

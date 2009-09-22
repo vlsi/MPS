@@ -2661,7 +2661,7 @@
                             <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="7110754463748604253">
                               <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="7110754463748604254" />
                               <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="7110754463748604255">
-                                <link role="property" targetNodeId="1.3938648747446564583" resolveInfo="presentation" />
+                                <link role="property" targetNodeId="1.6895093993902236769" resolveInfo="presentation" />
                               </node>
                             </node>
                           </node>
@@ -2889,7 +2889,7 @@
   </node>
   <node type="jetbrains.mps.lang.generator.structure.TemplateDeclaration" id="1189764622534">
     <property name="name" value="ArgumentReference_to_get" />
-    <property name="package" value="RefDecl" />
+    <property name="package" value="RefDecl.Deprecated" />
     <link role="applicableConcept" targetNodeId="1.1189694084608" />
     <node role="contentNode" type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="1189764645508">
       <property name="name" value="class" />

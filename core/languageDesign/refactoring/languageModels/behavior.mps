@@ -44,7 +44,7 @@
   <import index="4" modelUID="r:00000000-0000-4000-0000-011c895902c0(jetbrains.mps.baseLanguage.behavior)" version="-1" />
   <import index="5" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="3" />
   <node type="jetbrains.mps.lang.behavior.structure.ConceptBehavior" id="1213877320624">
-    <property name="package" value="RefDecl.UserArgs" />
+    <property name="package" value="RefDecl.Deprecated.UserArgs" />
     <link role="concept" targetNodeId="1.1197983858784" resolveInfo="ChooseComponentClause" />
     <node role="constructor" type="jetbrains.mps.lang.behavior.structure.ConceptConstructorDeclaration" id="1213877320625">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1213877320626" />
@@ -94,7 +94,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.behavior.structure.ConceptBehavior" id="1213877343861">
-    <property name="package" value="RefDecl" />
+    <property name="package" value="RefDecl.Deprecated" />
     <link role="concept" targetNodeId="1.1189693830529" resolveInfo="RequiredAdditionalArgument" />
     <node role="constructor" type="jetbrains.mps.lang.behavior.structure.ConceptConstructorDeclaration" id="1213877343862">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1213877343863" />
@@ -212,7 +212,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.behavior.structure.ConceptBehavior" id="1213877405900">
-    <property name="package" value="RefDecl.UserArgs" />
+    <property name="package" value="RefDecl.Deprecated.UserArgs" />
     <link role="concept" targetNodeId="1.1198599668934" resolveInfo="InitialValueClause" />
     <node role="constructor" type="jetbrains.mps.lang.behavior.structure.ConceptConstructorDeclaration" id="1213877405901">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1213877405902" />
