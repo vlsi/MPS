@@ -198,6 +198,12 @@ public class RefactoringContext {
     return targetNodes;
   }
 
+  public void replaceRefsToNodeWithNode(SNode whatNode, SNode withNode){
+    myMoveMap.put(new FullNodeId(whatNode), new FullNodeId(withNode));
+    whatNode.delete();
+    myCachesAreUpToDate = false;
+  }
+
   public SNode moveNodeToModel(SNode sourceNode, SModel targetModel) {
     List<SNode> nodes = new ArrayList<SNode>();
     nodes.add(sourceNode);
