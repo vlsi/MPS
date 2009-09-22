@@ -497,7 +497,7 @@ public class ClassConcept_Editor extends DefaultNodeEditor {
       style.set(StyleAttributes.EDITABLE, false);
       style.set(StyleAttributes.POSITION_CHILDREN, "indented");
       style.set(StyleAttributes.INDENT_LAYOUT_INDENT, true);
-      style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
+      style.set(StyleAttributes.INDENT_LAYOUT_CHILDREN_NEWLINE, true);
     }
     editorCell.setRole(handler.getElementRole());
     return editorCell;
