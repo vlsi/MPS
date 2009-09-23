@@ -37,10 +37,12 @@ abstract class VcsOperation {
   }
 
   protected boolean isIgnored(VirtualFile virtualFile) {
+    if (myProject.isDisposed()) return false;
     return isIgnored(virtualFile.getName()) || ChangeListManager.getInstance(myProject).isIgnoredFile(virtualFile);
   }
 
   protected boolean isIgnored(String fileName) {
+    if (myProject.isDisposed()) return false;
     return FileTypeManager.getInstance().isFileIgnored(fileName);
   }
 }
