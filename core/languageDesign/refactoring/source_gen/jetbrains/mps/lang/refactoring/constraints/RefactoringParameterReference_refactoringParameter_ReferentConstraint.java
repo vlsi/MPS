@@ -15,11 +15,11 @@ public class RefactoringParameterReference_refactoringParameter_ReferentConstrai
   }
 
   public void registerSelf(ModelConstraintsManager manager) {
-    manager.registerNodeReferentSearchScopeProvider("jetbrains.mps.lang.refactoring.structure.RefactoringParameterReference", "baseVariableDeclaration", this);
+    manager.registerNodeReferentSearchScopeProvider("jetbrains.mps.lang.refactoring.structure.RefactoringParameterReference", "refactoringParameter", this);
   }
 
   public void unRegisterSelf(ModelConstraintsManager manager) {
-    manager.unRegisterNodeReferentSearchScopeProvider("jetbrains.mps.lang.refactoring.structure.RefactoringParameterReference", "baseVariableDeclaration");
+    manager.unRegisterNodeReferentSearchScopeProvider("jetbrains.mps.lang.refactoring.structure.RefactoringParameterReference", "refactoringParameter");
   }
 
   public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferentConstraintContext _context) {
