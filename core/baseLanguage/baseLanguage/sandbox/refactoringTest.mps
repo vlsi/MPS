@@ -74,5 +74,40 @@
       </node>
     </node>
   </node>
+  <node type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="5626639541500581272">
+    <property name="name" value="Test" />
+    <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="5626639541500581273" />
+    <node role="constructor" type="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" id="5626639541500581274">
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="5626639541500581275" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="5626639541500581276" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="5626639541500581277">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="5626639541500705957">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="5626639541500705958">
+            <property name="name" value="a" />
+            <node role="type" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="5626639541500705959" />
+            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="5626639541500705961">
+              <property name="value" value="10" />
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="5626639541500627334">
+          <node role="expression" type="jetbrains.mps.baseLanguage.closures.structure.UnrestrictedClosureLiteral" id="5626639541500627335">
+            <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="5626639541500627336">
+              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="5626639541500697685">
+                <node role="expression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="5626639541500705948">
+                  <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="5626639541500697686">
+                    <link role="variableDeclaration" targetNodeId="5626639541500705958" resolveInfo="a" />
+                  </node>
+                  <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="5626639541500705953">
+                    <property name="value" value="1" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
 </model>
 
