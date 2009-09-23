@@ -33,6 +33,8 @@ import java.util.*;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.project.ProjectManager;
 import com.intellij.openapi.actionSystem.ActionGroup;
+import com.intellij.openapi.editor.colors.EditorColorsManager;
+import com.intellij.openapi.vcs.FileStatus;
 import org.jetbrains.annotations.NotNull;
 
 class ModelChangesTree extends MPSTree {
@@ -151,7 +153,12 @@ class ModelChangesTree extends MPSTree {
     rebuildNow();
     expandRoot();
 
+//    expandChanges(changes);
 
+    return this;
+  }
+
+  private void expandChanges(final List<Change> changes) {
     runWithoutExpansion(new Runnable() {
       public void run() {
         for (Change c : changes) {
@@ -174,7 +181,6 @@ class ModelChangesTree extends MPSTree {
         }
       }
     });
-    return this;
   }
 
   public void expandNode(SNodeId affectedNode) {
@@ -271,14 +277,15 @@ class ModelChangesTree extends MPSTree {
     public void doUpdatePresentation() {
       super.doUpdatePresentation();
       SNodeId id = getSNode().getSNodeId();
+
       if (myAddedNodes.contains(id)) {
-        setColor(new Color(0, 120, 0));
+        setColor(FileStatus.COLOR_ADDED);
       } else if (myChangedNodes.contains(id)) {
-        setColor(new Color(0, 0, 120));
+        setColor(FileStatus.COLOR_MODIFIED);
       } else if (myDeletedNodes.contains(id)) {
-        setColor(new Color(120, 120, 120));
+        setColor(FileStatus.COLOR_MISSING);
       } else {
-        setColor(Color.BLACK);
+        setColor(FileStatus.COLOR_NOT_CHANGED);
       }
 
       if (myConflicts.contains(id)) {
@@ -350,37 +357,5 @@ class ModelChangesTree extends MPSTree {
 
   protected ActionGroup getActionGroupForChanges(List<Change> changes) {
     return null;
-  }
-
-  private class ChangeNode extends MPSTreeNode {
-    private Change myChange;
-
-    public void updatePresentation() {
-      if (myChange.isError()) {
-        setColor(Color.RED);
-      }
-
-      setText(myChange.toString());
-    }
-
-    public ChangeNode(Change change) {
-      super(change, null);
-      myChange = change;
-
-      setNodeIdentifier(myChange.toString());
-      setIcon(Icons.DEFAULT_ICON);
-      updatePresentation();
-    }
-
-    public ActionGroup getActionGroup() {
-      return getActionGroupForChanges(Collections.singletonList(myChange));
-    }
-
-    public void doubleClick() {      
-    }
-
-    public boolean isLeaf() {
-      return true;
-    }
   }
 }
