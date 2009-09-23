@@ -80,7 +80,7 @@ public class DefaultJavaApplication_Configuration extends BaseRunConfig {
       }
 
       if (DefaultJavaApplication_Configuration.this.getStateObject().parameters == null) {
-        DefaultJavaApplication_Configuration.this.getStateObject().parameters = new RunParameters();
+        DefaultJavaApplication_Configuration.this.getStateObject().parameters = new ConfigRunParameters();
       }
       String paramsReport = DefaultJavaApplication_Configuration.this.getStateObject().parameters.getErrorReport();
       if (paramsReport != null) {
@@ -118,7 +118,7 @@ public class DefaultJavaApplication_Configuration extends BaseRunConfig {
           MPSProject mpsProject = project.getComponent(MPSProjectHolder.class).getMPSProject();
 
           if (DefaultJavaApplication_Configuration.this.getStateObject().parameters == null) {
-            DefaultJavaApplication_Configuration.this.getStateObject().parameters = new RunParameters();
+            DefaultJavaApplication_Configuration.this.getStateObject().parameters = new ConfigRunParameters();
           }
 
           if (DefaultJavaApplication_Configuration.this.getStateObject().parameters.getMake()) {
@@ -252,7 +252,7 @@ public class DefaultJavaApplication_Configuration extends BaseRunConfig {
   public static class MyState implements Cloneable {
     public String nodeId;
     public String modelId;
-    public RunParameters parameters;
+    public ConfigRunParameters parameters;
 
     public MyState() {
     }
@@ -260,7 +260,7 @@ public class DefaultJavaApplication_Configuration extends BaseRunConfig {
     public Object clone() throws CloneNotSupportedException {
       DefaultJavaApplication_Configuration.MyState object = (DefaultJavaApplication_Configuration.MyState)super.clone();
       if (this.parameters != null) {
-        object.parameters = (RunParameters)this.parameters.clone();
+        object.parameters = (ConfigRunParameters)this.parameters.clone();
       }
       return object;
     }

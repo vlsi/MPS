@@ -2200,7 +2200,7 @@
       </node>
     </node>
     <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1216640033137">
-      <property name="name" value="getCalssPath" />
+      <property name="name" value="getClassPath" />
       <node role="returnType" type="jetbrains.mps.baseLanguage.collections.structure.ListType" id="1216640037251">
         <node role="elementType" type="jetbrains.mps.baseLanguage.structure.StringType" id="1225195949653" />
       </node>

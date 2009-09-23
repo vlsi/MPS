@@ -38597,7 +38597,7 @@
               <node role="expression" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression" id="8226459646154620533">
                 <node role="rValue" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="8226459646154620536">
                   <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="8226459646154620537">
-                    <link role="baseMethodDeclaration" targetNodeId="5001211796553540578" resolveInfo="RunParameters" />
+                    <link role="baseMethodDeclaration" targetNodeId="5001211796553540578" resolveInfo="ConfigRunParameters" />
                   </node>
                 </node>
                 <node role="lValue" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="8226459646154620530">
@@ -39061,7 +39061,7 @@
               <node role="expression" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression" id="4904812266890516874">
                 <node role="rValue" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="4904812266890516875">
                   <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="4904812266890516876">
-                    <link role="baseMethodDeclaration" targetNodeId="5001211796553540578" resolveInfo="RunParameters" />
+                    <link role="baseMethodDeclaration" targetNodeId="5001211796553540578" resolveInfo="ConfigRunParameters" />
                   </node>
                 </node>
                 <node role="lValue" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="4904812266890516877">
@@ -39901,7 +39901,7 @@
               <node role="expression" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression" id="4207373968435976193">
                 <node role="rValue" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="4207373968435976196">
                   <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="4207373968435976197">
-                    <link role="baseMethodDeclaration" targetNodeId="5001211796553540578" resolveInfo="RunParameters" />
+                    <link role="baseMethodDeclaration" targetNodeId="5001211796553540578" resolveInfo="ConfigRunParameters" />
                   </node>
                 </node>
                 <node role="lValue" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="4207373968435976188">
@@ -43118,7 +43118,7 @@
       <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="5360151489983366036">
         <property name="name" value="config" />
         <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="5001211796553544072">
-          <link role="classifier" targetNodeId="5001211796553540576" resolveInfo="RunParameters" />
+          <link role="classifier" targetNodeId="5001211796553540576" resolveInfo="ConfigRunParameters" />
         </node>
       </node>
       <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="5360151489983366038" />
@@ -43249,7 +43249,7 @@
       <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="5360151489983366116">
         <property name="name" value="config" />
         <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="5001211796553544073">
-          <link role="classifier" targetNodeId="5001211796553540576" resolveInfo="RunParameters" />
+          <link role="classifier" targetNodeId="5001211796553540576" resolveInfo="ConfigRunParameters" />
         </node>
       </node>
       <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="5360151489983366118" />
@@ -46362,7 +46362,7 @@
   </node>
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="5001211796553540576">
     <property name="package" value="run" />
-    <property name="name" value="RunParameters" />
+    <property name="name" value="ConfigRunParameters" />
     <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="4798874726883047478">
       <property name="name" value="getJavaFileName" />
       <node role="returnType" type="jetbrains.mps.baseLanguage.structure.StringType" id="4798874726883047483" />

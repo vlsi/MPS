@@ -9,7 +9,7 @@ import com.intellij.execution.configurations.ConfigurationFactory;
 import com.intellij.execution.configurations.RunConfiguration;
 import com.intellij.execution.configurations.RuntimeConfigurationException;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.baseLanguage.plugin.RunParameters;
+import jetbrains.mps.baseLanguage.plugin.ConfigRunParameters;
 import com.intellij.execution.configurations.RunProfileState;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.execution.Executor;
@@ -97,7 +97,7 @@ public class DefaultJUnit_Configuration extends BaseRunConfig {
       }
 
       if (DefaultJUnit_Configuration.this.getStateObject().myParams == null) {
-        DefaultJUnit_Configuration.this.getStateObject().myParams = new RunParameters();
+        DefaultJUnit_Configuration.this.getStateObject().myParams = new ConfigRunParameters();
       }
       String paramsReport = DefaultJUnit_Configuration.this.getStateObject().myParams.getErrorReport();
       if (paramsReport != null) {
@@ -276,7 +276,7 @@ public class DefaultJUnit_Configuration extends BaseRunConfig {
     public String module;
     public String method;
     public JUnitRunTypes type;
-    public RunParameters myParams;
+    public ConfigRunParameters myParams;
 
     public MyState() {
     }
@@ -284,7 +284,7 @@ public class DefaultJUnit_Configuration extends BaseRunConfig {
     public Object clone() throws CloneNotSupportedException {
       DefaultJUnit_Configuration.MyState object = (DefaultJUnit_Configuration.MyState)super.clone();
       if (this.myParams != null) {
-        object.myParams = (RunParameters)this.myParams.clone();
+        object.myParams = (ConfigRunParameters)this.myParams.clone();
       }
       return object;
     }
