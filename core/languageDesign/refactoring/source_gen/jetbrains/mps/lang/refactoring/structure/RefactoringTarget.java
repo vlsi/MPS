@@ -4,6 +4,7 @@ package jetbrains.mps.lang.refactoring.structure;
 
 import jetbrains.mps.lang.core.structure.BaseConcept;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.baseLanguage.structure.ConceptFunction;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
@@ -11,6 +12,7 @@ import jetbrains.mps.project.GlobalScope;
 public class RefactoringTarget extends BaseConcept {
   public static final String concept = "jetbrains.mps.lang.refactoring.structure.RefactoringTarget";
   public static final String ALLOW_MULTIPLE = "allowMultiple";
+  public static final String IS_APPLICABLE_BLOCK = "isApplicableBlock";
 
   public RefactoringTarget(SNode node) {
     super(node);
@@ -22,6 +24,14 @@ public class RefactoringTarget extends BaseConcept {
 
   public void setAllowMultiple(boolean value) {
     this.setBooleanProperty(RefactoringTarget.ALLOW_MULTIPLE, value);
+  }
+
+  public ConceptFunction getIsApplicableBlock() {
+    return (ConceptFunction)this.getChild(ConceptFunction.class, RefactoringTarget.IS_APPLICABLE_BLOCK);
+  }
+
+  public void setIsApplicableBlock(ConceptFunction node) {
+    super.setChild(RefactoringTarget.IS_APPLICABLE_BLOCK, node);
   }
 
   public static RefactoringTarget newInstance(SModel sm, boolean init) {

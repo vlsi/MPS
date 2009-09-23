@@ -22,10 +22,11 @@ public class Refactoring extends BaseConcept implements INamedConcept {
   public static final String OVERRIDES = "overrides";
   public static final String TARGET = "target";
   public static final String KEYSTROKE = "keystroke";
-  public static final String IS_APPLICABLE_CLAUSE = "isApplicableClause";
-  public static final String AFFECTED_NODES_CLAUSE = "affectedNodesClause";
-  public static final String DO_REFACTOR_CLAUSE = "doRefactorClause";
-  public static final String ARGUMENT = "argument";
+  public static final String INIT_BLOCK = "initBlock";
+  public static final String IS_APPLICABLE_BLOCK = "isApplicableBlock";
+  public static final String AFFECTED_NODES_BLOCK = "affectedNodesBlock";
+  public static final String DO_REFACTOR_BLOCK = "doRefactorBlock";
+  public static final String PARAMETER = "parameter";
   public static final String FIELD = "field";
 
   public Refactoring(SNode node) {
@@ -96,48 +97,56 @@ public class Refactoring extends BaseConcept implements INamedConcept {
     super.setChild(Refactoring.KEYSTROKE, node);
   }
 
-  public IsApplicableClause getIsApplicableClause() {
-    return (IsApplicableClause)this.getChild(IsApplicableClause.class, Refactoring.IS_APPLICABLE_CLAUSE);
+  public InitClause getInitBlock() {
+    return (InitClause)this.getChild(InitClause.class, Refactoring.INIT_BLOCK);
   }
 
-  public void setIsApplicableClause(IsApplicableClause node) {
-    super.setChild(Refactoring.IS_APPLICABLE_CLAUSE, node);
+  public void setInitBlock(InitClause node) {
+    super.setChild(Refactoring.INIT_BLOCK, node);
   }
 
-  public AffectedNodesClause getAffectedNodesClause() {
-    return (AffectedNodesClause)this.getChild(AffectedNodesClause.class, Refactoring.AFFECTED_NODES_CLAUSE);
+  public IsApplicableClause getIsApplicableBlock() {
+    return (IsApplicableClause)this.getChild(IsApplicableClause.class, Refactoring.IS_APPLICABLE_BLOCK);
   }
 
-  public void setAffectedNodesClause(AffectedNodesClause node) {
-    super.setChild(Refactoring.AFFECTED_NODES_CLAUSE, node);
+  public void setIsApplicableBlock(IsApplicableClause node) {
+    super.setChild(Refactoring.IS_APPLICABLE_BLOCK, node);
   }
 
-  public DoRefactorClause getDoRefactorClause() {
-    return (DoRefactorClause)this.getChild(DoRefactorClause.class, Refactoring.DO_REFACTOR_CLAUSE);
+  public AffectedNodesClause getAffectedNodesBlock() {
+    return (AffectedNodesClause)this.getChild(AffectedNodesClause.class, Refactoring.AFFECTED_NODES_BLOCK);
   }
 
-  public void setDoRefactorClause(DoRefactorClause node) {
-    super.setChild(Refactoring.DO_REFACTOR_CLAUSE, node);
+  public void setAffectedNodesBlock(AffectedNodesClause node) {
+    super.setChild(Refactoring.AFFECTED_NODES_BLOCK, node);
   }
 
-  public int getArgumentsCount() {
-    return this.getChildCount(Refactoring.ARGUMENT);
+  public DoRefactorClause getDoRefactorBlock() {
+    return (DoRefactorClause)this.getChild(DoRefactorClause.class, Refactoring.DO_REFACTOR_BLOCK);
   }
 
-  public Iterator<RefactoringParameter> arguments() {
-    return this.children(RefactoringParameter.class, Refactoring.ARGUMENT);
+  public void setDoRefactorBlock(DoRefactorClause node) {
+    super.setChild(Refactoring.DO_REFACTOR_BLOCK, node);
   }
 
-  public List<RefactoringParameter> getArguments() {
-    return this.getChildren(RefactoringParameter.class, Refactoring.ARGUMENT);
+  public int getParametersCount() {
+    return this.getChildCount(Refactoring.PARAMETER);
   }
 
-  public void addArgument(RefactoringParameter node) {
-    this.addChild(Refactoring.ARGUMENT, node);
+  public Iterator<RefactoringParameter> parameters() {
+    return this.children(RefactoringParameter.class, Refactoring.PARAMETER);
   }
 
-  public void insertArgument(RefactoringParameter prev, RefactoringParameter node) {
-    this.insertChild(prev, Refactoring.ARGUMENT, node);
+  public List<RefactoringParameter> getParameters() {
+    return this.getChildren(RefactoringParameter.class, Refactoring.PARAMETER);
+  }
+
+  public void addParameter(RefactoringParameter node) {
+    this.addChild(Refactoring.PARAMETER, node);
+  }
+
+  public void insertParameter(RefactoringParameter prev, RefactoringParameter node) {
+    this.insertChild(prev, Refactoring.PARAMETER, node);
   }
 
   public int getFieldsCount() {

@@ -13,6 +13,8 @@ public class ConstraintsDescriptor implements IModelConstraints {
 
   public ConstraintsDescriptor() {
     ListSequence.fromList(this.myConstraints).addElement(new RequiredAdditionalArgumentReference_argument_ReferentConstraint());
+    ListSequence.fromList(this.myConstraints).addElement(new RefactoringFieldReference_refactoringField_ReferentConstraint());
+    ListSequence.fromList(this.myConstraints).addElement(new RefactoringParameterReference_refactoringParameter_ReferentConstraint());
   }
 
   public void unRegisterSelf(ModelConstraintsManager p0) {

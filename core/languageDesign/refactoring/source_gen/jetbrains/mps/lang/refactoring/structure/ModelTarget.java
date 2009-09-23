@@ -9,18 +9,9 @@ import jetbrains.mps.project.GlobalScope;
 
 public class ModelTarget extends RefactoringTarget {
   public static final String concept = "jetbrains.mps.lang.refactoring.structure.ModelTarget";
-  public static final String IS_APPLICABLE_BLOCK = "isApplicableBlock";
 
   public ModelTarget(SNode node) {
     super(node);
-  }
-
-  public IsApplicableToModelClause getIsApplicableBlock() {
-    return (IsApplicableToModelClause)this.getChild(IsApplicableToModelClause.class, ModelTarget.IS_APPLICABLE_BLOCK);
-  }
-
-  public void setIsApplicableBlock(IsApplicableToModelClause node) {
-    super.setChild(ModelTarget.IS_APPLICABLE_BLOCK, node);
   }
 
   public static ModelTarget newInstance(SModel sm, boolean init) {

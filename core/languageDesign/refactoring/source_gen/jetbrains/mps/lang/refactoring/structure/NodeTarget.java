@@ -11,7 +11,6 @@ import jetbrains.mps.project.GlobalScope;
 public class NodeTarget extends RefactoringTarget {
   public static final String concept = "jetbrains.mps.lang.refactoring.structure.NodeTarget";
   public static final String CONCEPT = "concept";
-  public static final String IS_APPLICABLE_BLOCK = "isApplicableBlock";
 
   public NodeTarget(SNode node) {
     super(node);
@@ -23,14 +22,6 @@ public class NodeTarget extends RefactoringTarget {
 
   public void setConcept(AbstractConceptDeclaration node) {
     super.setReferent(NodeTarget.CONCEPT, node);
-  }
-
-  public IsApplicableToNodeClause getIsApplicableBlock() {
-    return (IsApplicableToNodeClause)this.getReferent(IsApplicableToNodeClause.class, NodeTarget.IS_APPLICABLE_BLOCK);
-  }
-
-  public void setIsApplicableBlock(IsApplicableToNodeClause node) {
-    super.setReferent(NodeTarget.IS_APPLICABLE_BLOCK, node);
   }
 
   public static NodeTarget newInstance(SModel sm, boolean init) {
