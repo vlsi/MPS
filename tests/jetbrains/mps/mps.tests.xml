@@ -4,7 +4,7 @@
     <taskdef resource="jetbrains/mps/build/ant/antlib.xml"
              classpath="${mps.home}/platform/buildlanguage/ant/classes"/>
 
-    <target name="all" depends="bootstrap.tests, application.tests, broken.references.test, refactorings.test"/>
+    <target name="all" depends="bootstrap.tests, application.tests, broken.references.test"/>
 
     <target name="bootstrap.tests">
         <mps.test.generation fork="true" compile="true" showdiff="true" invoketests="true" loglevel="info">
@@ -139,48 +139,4 @@
         </mps.test.broken.references>
     </target>
 
-    <target name="refactorings.test">
-        <mps.test.refactorings fork="true" loglevel="info"
-                               refactoringclass="jetbrains.mps.refactoring.framework.tests.RenameConceptRefactoringTester">
-            <jvmarg value="-Xss1024k"/>
-            <jvmarg value="-Xmx1000m"/>
-            <jvmarg value="-XX:MaxPermSize=92m"/>
-            <project file="${mps.home}/testMaterial/testRefactoring/testRefactoring.mpr"/>
-        </mps.test.refactorings>
-        <mps.test.refactorings fork="true" loglevel="info"
-                               refactoringclass="jetbrains.mps.refactoring.framework.tests.RenameLinkRefactoringTester_Hierarchy">
-            <jvmarg value="-Xss1024k"/>
-            <jvmarg value="-Xmx1000m"/>
-            <jvmarg value="-XX:MaxPermSize=92m"/>
-            <project file="${mps.home}/testMaterial/testRefactoring/testRefactoring.mpr"/>
-        </mps.test.refactorings>
-        <mps.test.refactorings fork="true" loglevel="info"
-                               refactoringclass="jetbrains.mps.refactoring.framework.tests.RenameLinkRefactoringTester_Simple">
-            <jvmarg value="-Xss1024k"/>
-            <jvmarg value="-Xmx1000m"/>
-            <jvmarg value="-XX:MaxPermSize=92m"/>
-            <project file="${mps.home}/testMaterial/testRefactoring/testRefactoring.mpr"/>
-        </mps.test.refactorings>
-        <mps.test.refactorings fork="true" loglevel="info"
-                               refactoringclass="jetbrains.mps.refactoring.framework.tests.MoveConceptRefactoringTester">
-            <jvmarg value="-Xss1024k"/>
-            <jvmarg value="-Xmx1000m"/>
-            <jvmarg value="-XX:MaxPermSize=92m"/>
-            <project file="${mps.home}/testMaterial/testRefactoring/testRefactoring.mpr"/>
-        </mps.test.refactorings>
-        <mps.test.refactorings fork="true" loglevel="info"
-                               refactoringclass="jetbrains.mps.refactoring.framework.tests.RenamePropertyRefactoringTester_Simple">
-            <jvmarg value="-Xss1024k"/>
-            <jvmarg value="-Xmx1000m"/>
-            <jvmarg value="-XX:MaxPermSize=92m"/>
-            <project file="${mps.home}/testMaterial/testRefactoring/testRefactoring.mpr"/>
-        </mps.test.refactorings>
-        <mps.test.refactorings fork="true" loglevel="info"
-                               refactoringclass="jetbrains.mps.refactoring.framework.tests.DeleteLinkRefactoringTester_Simple">
-            <jvmarg value="-Xss1024k"/>
-            <jvmarg value="-Xmx1000m"/>
-            <jvmarg value="-XX:MaxPermSize=92m"/>
-            <project file="${mps.home}/testMaterial/testRefactoring/testRefactoring.mpr"/>
-        </mps.test.refactorings>
-    </target>
 </project>
