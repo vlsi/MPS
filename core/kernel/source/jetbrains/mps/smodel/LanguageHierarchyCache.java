@@ -85,7 +85,13 @@ public class LanguageHierarchyCache implements ApplicationComponent {
   }
 
   public void addCacheChangeListener(CacheChangeListener listener) {
-    myCacheChangeListeners.add(listener);
+    if (!myCacheChangeListeners.contains(listener)) {
+      myCacheChangeListeners.add(listener);
+    }
+  }
+
+  public void removeCacheChangeListener(CacheChangeListener listener) {
+    myCacheChangeListeners.remove(listener);
   }
 
   public void setReadAccessListener(CacheReadAccessListener listener) {

@@ -16,6 +16,8 @@
 package jetbrains.mps.typesystem.inference;
 
 import jetbrains.mps.smodel.*;
+import jetbrains.mps.smodel.LanguageHierarchyCache.CacheReadAccessListener;
+import jetbrains.mps.smodel.LanguageHierarchyCache.CacheChangeListener;
 import jetbrains.mps.smodel.event.*;
 import jetbrains.mps.util.WeakSet;
 import jetbrains.mps.util.Pair;
@@ -61,7 +63,7 @@ public class NodeTypesComponent implements EditorMessageOwner {
     = new HashSet<Pair<SNode, NonTypesystemRule_Runtime>>(); // nodes which are checked themselves but not children
 
   private WeakHashMap<SNode, WeakSet<SNode>> myNodesToDependentNodes = new WeakHashMap<SNode, WeakSet<SNode>>();
-  // private WeakSet<SNode>
+  private WeakSet<SNode> myNodesDependentOnCaches = new WeakSet<SNode>();
 
   private EquationManager myEquationManager;
   private Map<String, Set<SNode>> myRegisteredVariables = new HashMap<String, Set<SNode>>();
@@ -71,11 +73,14 @@ public class NodeTypesComponent implements EditorMessageOwner {
 
   private MyEventsReadListener myNodesReadListener = new MyEventsReadListener();
   private MyTypeRecalculatedListener myTypeRecalculatedListener = new MyTypeRecalculatedListener();
+  private MyLanguageCacheListener myLanguageCacheListener = new MyLanguageCacheListener();
 
   private Set<SNode> myCurrentNodesToInvalidate = new HashSet<SNode>();
+    private boolean myCacheWasCurrentlyRebuiltTypesystem = false;
   private Set<SNode> myCurrentNodesToInvalidateNonTypesystem = new HashSet<SNode>();
   private Set<Pair<SNode, String>> myCurrentPropertiesToInvalidateNonTypesystem = new HashSet<Pair<SNode, String>>();
   private Set<SNode> myCurrentTypedTermsToInvalidateNonTypesystem = new HashSet<SNode>();
+  private boolean myCacheWasCurrentlyRebuiltNonTypesystem = false;
 
   // nodes to rules which depend on this nodes
   private Map<SNode, WeakHashMap<SNode, Set<NonTypesystemRule_Runtime>>> myNodesToDependentNodesWithNTRules =
@@ -88,6 +93,9 @@ public class NodeTypesComponent implements EditorMessageOwner {
   // typed terms to rules which depend on this nodes
   private Map<SNode, WeakHashMap<SNode, Set<NonTypesystemRule_Runtime>>> myTypedTermsToDependentNodesWithNTRules =
     new HashMap<SNode, WeakHashMap<SNode, Set<NonTypesystemRule_Runtime>>>();
+
+  private WeakHashMap<SNode, Set<NonTypesystemRule_Runtime>> myNodesDependentOnCachesWithNTRules =
+    new WeakHashMap<SNode, Set<NonTypesystemRule_Runtime>>();
 
   //checked node & NT rule -> set of errors
   private Map<SNode, Map<NonTypesystemRule_Runtime, Set<IErrorReporter>>> myNodesAndNTRulesToErrors =
@@ -164,10 +172,12 @@ public class NodeTypesComponent implements EditorMessageOwner {
     myPartlyCheckedNodes.clear();
     myCheckedNodesNonTypesystem.clear();
     myNodesToDependentNodes.clear();
+    myNodesDependentOnCaches.clear();
     myNodesAndNTRulesToErrors.clear();
     myNodesToDependentNodesWithNTRules.clear();
     myPropertiesToDependentNodesWithNTRules.clear();
     myTypedTermsToDependentNodesWithNTRules.clear();
+    myNodesDependentOnCachesWithNTRules.clear();
     myNodesToRules.clear();
   }
 
@@ -317,6 +327,7 @@ public class NodeTypesComponent implements EditorMessageOwner {
     myModelListenerManager.updateGCedNodes();
 
     TypeChecker.getInstance().addTypeRecalculatedListener(myTypeRecalculatedListener);//method checks if already exists
+    LanguageHierarchyCache.getInstance().addCacheChangeListener(myLanguageCacheListener);
   }
 
   public void solveInequationsAndExpandTypes() {
@@ -450,14 +461,18 @@ public class NodeTypesComponent implements EditorMessageOwner {
           myNotSkippedNodes.add(new SNodePointer(sNode));
           myCurrentFrontier = newFrontier;
 
+          MyLanguageCachesReadListener languageCachesReadListener = null;
           if (isIncrementalMode()) {
+            languageCachesReadListener = new MyLanguageCachesReadListener();
             myNodesReadListener.clear();
             NodeReadEventsCaster.setNodesReadListener(myNodesReadListener);
+            LanguageHierarchyCache.getInstance().setReadAccessListener(languageCachesReadListener);
           }
           try {
             applyRulesToNode(sNode);
           } finally {
             if (isIncrementalMode()) {
+              LanguageHierarchyCache.getInstance().removeReadAccessListener();
               NodeReadEventsCaster.removeNodesReadListener();
             }
             myCurrentFrontier = null;
@@ -468,6 +483,13 @@ public class NodeTypesComponent implements EditorMessageOwner {
               Set<SNode> accessedNodes = myNodesReadListener.myAccessedNodes;
               addDepedentNodesTypesystem(sNode, accessedNodes);
               myNodesReadListener.setAccessReport(false);
+              if (languageCachesReadListener != null) { //redundant checking, in fact; but without this IDEA underlines the next line with red
+                languageCachesReadListener.setAccessReport(true);
+                if (languageCachesReadListener.myIsCacheAccessed) {
+                  addCacheDependentNodesTypesystem(sNode);
+                }
+                languageCachesReadListener.setAccessReport(false);
+              }
             }
             myNodesReadListener.clear();
           }
@@ -492,6 +514,10 @@ public class NodeTypesComponent implements EditorMessageOwner {
       }
       dependentNodes.add(sNode);
     }
+  }
+
+  private void addCacheDependentNodesTypesystem(SNode node) {
+    myNodesDependentOnCaches.add(node);
   }
 
   private void addDepedentNodesNonTypesystem(SNode sNode, NonTypesystemRule_Runtime rule, Set<SNode> nodesToDependOn) {
@@ -538,6 +564,16 @@ public class NodeTypesComponent implements EditorMessageOwner {
       }
       rules.add(rule);
     }
+  }
+
+  private void addCacheDependentNodesNonTypesystem(SNode node, NonTypesystemRule_Runtime rule) {
+    WeakHashMap<SNode, Set<NonTypesystemRule_Runtime>> dependentNodes = myNodesDependentOnCachesWithNTRules;
+    Set<NonTypesystemRule_Runtime> rules = dependentNodes.get(node);
+    if (rules == null) {
+      rules = new HashSet<NonTypesystemRule_Runtime>();
+      dependentNodes.put(node, rules);
+    }
+    rules.add(rule);
   }
 
   public void addDependcyOnCurrent(SNode node) {
@@ -600,6 +636,7 @@ public class NodeTypesComponent implements EditorMessageOwner {
       for (NonTypesystemRule_Runtime rule : nonTypesystemRules) {
         Pair<SNode, NonTypesystemRule_Runtime> nodeAndRule = new Pair<SNode, NonTypesystemRule_Runtime>(node, rule);
         MyTypesReadListener typesReadListener = new MyTypesReadListener();
+        MyLanguageCachesReadListener languageCachesReadListener = new MyLanguageCachesReadListener();
         if (isIncrementalMode()) {
           if (myCheckedNodesNonTypesystem.contains(nodeAndRule)) {
             continue;
@@ -607,16 +644,18 @@ public class NodeTypesComponent implements EditorMessageOwner {
           myNodesReadListener.clear();
           NodeReadEventsCaster.setNodesReadListener(myNodesReadListener);
           TypeChecker.getInstance().setTypesReadListener(typesReadListener);
+          LanguageHierarchyCache.getInstance().setReadAccessListener(languageCachesReadListener);
           myNonTypesystemRuleAndNodeBeingChecked = new Pair<SNode, NonTypesystemRule_Runtime>(node, rule);
         }
         try {
           applyRuleToNode(node, rule);
         } finally {
-          if (isIncrementalMode()) {
-            NodeReadEventsCaster.removeNodesReadListener();
-            TypeChecker.getInstance().removeTypesReadListener();
-          }
           myNonTypesystemRuleAndNodeBeingChecked = null;
+          if (isIncrementalMode()) {
+            LanguageHierarchyCache.getInstance().removeReadAccessListener();
+            TypeChecker.getInstance().removeTypesReadListener();
+            NodeReadEventsCaster.removeNodesReadListener();
+          }
         }
 
         if (isIncrementalMode()) {
@@ -625,6 +664,12 @@ public class NodeTypesComponent implements EditorMessageOwner {
             addDepedentNodesNonTypesystem(node, rule, new HashSet<SNode>(myNodesReadListener.myAccessedNodes));
             addDepedentPropertiesNonTypesystem(node, rule, new HashSet<Pair<SNode, String>>(myNodesReadListener.myAccessedProperties));
             myNodesReadListener.setAccessReport(false);
+
+            languageCachesReadListener.setAccessReport(true);
+            if (languageCachesReadListener.myIsCacheAccessed) {
+              addCacheDependentNodesNonTypesystem(node, rule);
+            }
+            languageCachesReadListener.setAccessReport(false);
 
             typesReadListener.setAccessReport(true);
             addDepedentTypeTermsNonTypesystem(node, rule, new HashSet<SNode>(typesReadListener.myAccessedNodes));
@@ -664,6 +709,7 @@ public class NodeTypesComponent implements EditorMessageOwner {
   public void dispose() {
     myModelListenerManager.dispose();
     TypeChecker.getInstance().removeTypeRecalculatedListener(myTypeRecalculatedListener);
+    LanguageHierarchyCache.getInstance().removeCacheChangeListener(myLanguageCacheListener);
   }
 
   public SNode getType(SNode node) {
@@ -774,6 +820,18 @@ public class NodeTypesComponent implements EditorMessageOwner {
       }
     }
 
+    //cache-dependent
+    if (myCacheWasCurrentlyRebuiltNonTypesystem) {
+      for (SNode nodeOfRule : myNodesDependentOnCachesWithNTRules.keySet()) {
+        Set<NonTypesystemRule_Runtime> rules = myNodesDependentOnCachesWithNTRules.get(nodeOfRule);
+        if (rules != null) {
+          for (NonTypesystemRule_Runtime rule : rules) {
+            invalidatedNodesAndRules.add(new Pair<SNode, NonTypesystemRule_Runtime>(nodeOfRule, rule));
+          }
+        }
+      }
+    }
+
     for (Pair<SNode, NonTypesystemRule_Runtime> nodeAndRule : invalidatedNodesAndRules) {
       myCheckedNodesNonTypesystem.remove(nodeAndRule);
       Map<NonTypesystemRule_Runtime, Set<IErrorReporter>> rulesAndErrors = myNodesAndNTRulesToErrors.get(nodeAndRule.o1);
@@ -792,12 +850,16 @@ public class NodeTypesComponent implements EditorMessageOwner {
     myCurrentNodesToInvalidateNonTypesystem.clear();
     myCurrentPropertiesToInvalidateNonTypesystem.clear();
     myCurrentTypedTermsToInvalidateNonTypesystem.clear();
+    myCacheWasCurrentlyRebuiltNonTypesystem = true;
   }
 
   private void doInvalidateTypesystem() {
     Set<SNode> invalidatedNodes = new HashSet<SNode>();
     Set<SNode> newNodesToInvalidate = new HashSet<SNode>();
     Set<SNode> currentNodesToInvalidate = myCurrentNodesToInvalidate;
+    if (myCacheWasCurrentlyRebuiltTypesystem) {
+      currentNodesToInvalidate.addAll(myNodesDependentOnCaches); //todo maybe clear this set here?
+    }
     while (!currentNodesToInvalidate.isEmpty()) {
       for (SNode nodeToInvalidate : currentNodesToInvalidate) {
         if (invalidatedNodes.contains(nodeToInvalidate)) continue;
@@ -812,6 +874,7 @@ public class NodeTypesComponent implements EditorMessageOwner {
       newNodesToInvalidate = new HashSet<SNode>();
     }
     myCurrentNodesToInvalidate.clear();
+    myCacheWasCurrentlyRebuiltTypesystem = false;
   }
 
   public void markNodeAsAffectedByRule(SNode node, String ruleModel, String ruleId) {
@@ -927,6 +990,13 @@ public class NodeTypesComponent implements EditorMessageOwner {
     }
   }
 
+  private class MyLanguageCacheListener implements CacheChangeListener {
+    public void languageCacheChanged() {
+      myCacheWasCurrentlyRebuiltNonTypesystem = true;
+      myCacheWasCurrentlyRebuiltTypesystem = true;
+    }
+  }
+
   private class MyEventsReadListener implements INodesReadListener {
     private Set<SNode> myAccessedNodes = new HashSet<SNode>(1);
     private Set<Pair<SNode, String>> myAccessedProperties = new HashSet<Pair<SNode, String>>(1);
@@ -999,6 +1069,28 @@ public class NodeTypesComponent implements EditorMessageOwner {
       synchronized (ACCESS_LOCK) {
         reportAccess();
         myAccessedNodes.add(term);
+      }
+    }
+  }
+
+  private class MyLanguageCachesReadListener implements CacheReadAccessListener {
+    private boolean myIsCacheAccessed = false;
+    private boolean myIsSetAccessReport = false;
+
+    public void setAccessReport(boolean accessReport) {
+      myIsSetAccessReport = accessReport;
+    }
+
+    private void reportAccess() {
+      if (myIsSetAccessReport) {
+        new Throwable().printStackTrace();
+      }
+    }
+
+    public void languageCacheRead() {
+      synchronized (ACCESS_LOCK) {
+        reportAccess();
+        myIsCacheAccessed = true;
       }
     }
   }
