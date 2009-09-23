@@ -377,7 +377,6 @@
                   </node>
                 </node>
                 <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefCell" id="6895093993902318319">
-                  <link role="relationDeclaration" targetNodeId="10.6895093993902311019" />
                   <node role="editorComponent" type="jetbrains.mps.lang.editor.structure.InlineEditorComponent" id="6895093993902318320">
                     <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Property" id="6895093993902318321">
                       <property name="readOnly" value="true" />

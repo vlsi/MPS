@@ -908,9 +908,8 @@
           <property name="text" value="keystroke:" />
           <link role="styleClass" targetNodeId="4.1186415544875" resolveInfo="KeyWord" />
         </node>
-        <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode" id="6895093993902236451">
-          <property name="noTargetText" value="no keystroke" />
-          <link role="relationDeclaration" targetNodeId="1.1199455308722" />
+        <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode" id="7021888202892997575">
+          <link role="relationDeclaration" targetNodeId="1.6895093993902236375" />
         </node>
         <node role="renderingCondition" type="jetbrains.mps.lang.editor.structure.QueryFunction_NodeCondition" id="6895093993902236452">
           <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="6895093993902236453">
@@ -918,8 +917,8 @@
               <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="6895093993902236455">
                 <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="6895093993902236456">
                   <node role="operand" type="jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_node" id="6895093993902236457" />
-                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="6895093993902236458">
-                    <link role="link" targetNodeId="1.1199455378190" />
+                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="7021888202892997576">
+                    <link role="link" targetNodeId="1.6895093993902236387" />
                   </node>
                 </node>
                 <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_IsNullOperation" id="6895093993902236459" />
@@ -974,9 +973,6 @@
         <node role="styleItem" type="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem" id="6895093993902236476">
           <property name="flag" value="false" />
         </node>
-      </node>
-      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Component" id="6895093993902236477">
-        <link role="editorComponent" targetNodeId="null" resolveInfo="AffectedNodesClauseInParent" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode" id="6895093993902236478">
         <link role="relationDeclaration" targetNodeId="1.1200932683928" />
