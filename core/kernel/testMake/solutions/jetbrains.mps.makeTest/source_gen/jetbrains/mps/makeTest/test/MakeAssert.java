@@ -38,8 +38,8 @@ import jetbrains.mps.generator.generationTypes.GenerateFilesGenerationType;
 public class MakeAssert {
   private static final String MESSAGE_COMPILATION_FAILED = "Compilation failed";
   private static final String MESSAGE_DEPENDENCY_NOT_CHECKED = "Compilation finished with Unchecked Dependencies";
-  private static final String PROJECT_FILE = "platform/testMake/testMake.mpr";
-  private static final String TEST_RESOURCES_PATH = "platform/testMake/solutions/jetbrains.mps.testModels/jetbrains/mps/testModels/";
+  private static final String PROJECT_FILE = "core/kernel/testMake/testMake.mpr";
+  private static final String TEST_RESOURCES_PATH = "core/kernel/testMake/solutions/jetbrains.mps.testModels/jetbrains/mps/testModels/";
   private static final String STEP_TYPE_CHANGE = "changed";
   private static final String STEP_TYPE_REVERT = "reverted";
 

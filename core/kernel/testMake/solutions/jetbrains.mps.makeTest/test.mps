@@ -1804,7 +1804,7 @@
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PrivateVisibility" id="1957199320903968396" />
       <node role="type" type="jetbrains.mps.baseLanguage.structure.StringType" id="1957199320903968397" />
       <node role="initializer" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1957199320903968398">
-        <property name="value" value="platform/testMake/testMake.mpr" />
+        <property name="value" value="core/kernel/testMake/testMake.mpr" />
       </node>
     </node>
     <node role="staticField" type="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" id="1957199320903968399">
@@ -1813,7 +1813,7 @@
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PrivateVisibility" id="1957199320903968400" />
       <node role="type" type="jetbrains.mps.baseLanguage.structure.StringType" id="1957199320903968401" />
       <node role="initializer" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1957199320903968402">
-        <property name="value" value="platform/testMake/solutions/jetbrains.mps.testModels/jetbrains/mps/testModels/" />
+        <property name="value" value="core/kernel/testMake/solutions/jetbrains.mps.testModels/jetbrains/mps/testModels/" />
       </node>
     </node>
     <node role="staticField" type="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" id="1957199320903968403">
