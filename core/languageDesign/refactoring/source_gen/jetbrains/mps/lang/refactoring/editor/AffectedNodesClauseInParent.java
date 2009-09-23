@@ -16,8 +16,6 @@ import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
-import jetbrains.mps.smodel.IScope;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class AffectedNodesClauseInParent extends AbstractCellProvider {
   public AffectedNodesClauseInParent(SNode node) {
@@ -29,7 +27,7 @@ public class AffectedNodesClauseInParent extends AbstractCellProvider {
   }
 
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_5723_3(editorContext, node);
+    return this.createCollection_5723_2(editorContext, node);
   }
 
   private EditorCell createCollection_5723_2(EditorContext editorContext, SNode node) {
@@ -41,15 +39,6 @@ public class AffectedNodesClauseInParent extends AbstractCellProvider {
     }
     editorCell.addEditorCell(this.createConstant_5723_1(editorContext, node));
     editorCell.addEditorCell(this.createProperty_5723_1(editorContext, node));
-    return editorCell;
-  }
-
-  private EditorCell createCollection_5723_3(EditorContext editorContext, SNode node) {
-    EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
-    editorCell.setCellId("Collection_5723_3");
-    if (renderingCondition5723_1(node, editorContext, editorContext.getOperationContext().getScope())) {
-      editorCell.addEditorCell(this.createCollection_5723_2(editorContext, node));
-    }
     return editorCell;
   }
 
@@ -81,9 +70,5 @@ public class AffectedNodesClauseInParent extends AbstractCellProvider {
       return manager.createRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
     } else
     return editorCell;
-  }
-
-  private static boolean renderingCondition5723_1(SNode node, EditorContext editorContext, IScope scope) {
-    return SLinkOperations.getTarget(node, "affectedNodesBlock", true) != null;
   }
 }

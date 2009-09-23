@@ -24,7 +24,6 @@ public class Refactoring extends BaseConcept implements INamedConcept {
   public static final String KEYSTROKE = "keystroke";
   public static final String INIT_BLOCK = "initBlock";
   public static final String IS_APPLICABLE_BLOCK = "isApplicableBlock";
-  public static final String AFFECTED_NODES_BLOCK = "affectedNodesBlock";
   public static final String DO_REFACTOR_BLOCK = "doRefactorBlock";
   public static final String PARAMETER = "parameter";
   public static final String FIELD = "field";
@@ -111,14 +110,6 @@ public class Refactoring extends BaseConcept implements INamedConcept {
 
   public void setIsApplicableBlock(IsApplicableClause node) {
     super.setChild(Refactoring.IS_APPLICABLE_BLOCK, node);
-  }
-
-  public AffectedNodesClause getAffectedNodesBlock() {
-    return (AffectedNodesClause)this.getChild(AffectedNodesClause.class, Refactoring.AFFECTED_NODES_BLOCK);
-  }
-
-  public void setAffectedNodesBlock(AffectedNodesClause node) {
-    super.setChild(Refactoring.AFFECTED_NODES_BLOCK, node);
   }
 
   public DoRefactorClause getDoRefactorBlock() {
