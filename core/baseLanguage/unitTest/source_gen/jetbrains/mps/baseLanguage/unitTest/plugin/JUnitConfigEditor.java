@@ -30,7 +30,10 @@ import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.baseLanguage.unitTest.behavior.ITestMethod_Behavior;
+import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.lang.core.behavior.INamedConcept_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
@@ -391,6 +394,7 @@ public class JUnitConfigEditor extends JPanel {
   private void setModuleValue(final String m) {
     if (m == null) {
       myThis.setModule(null);
+      return;
     }
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
@@ -408,6 +412,7 @@ public class JUnitConfigEditor extends JPanel {
   private void setModelValue(final String m) {
     if (m == null) {
       myThis.setModel(null);
+      return;
     }
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
@@ -423,6 +428,7 @@ public class JUnitConfigEditor extends JPanel {
   private void setNodeValue(final String n) {
     if (n == null) {
       myThis.setNode(null);
+      return;
     }
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
@@ -431,13 +437,28 @@ public class JUnitConfigEditor extends JPanel {
     });
   }
 
-  private void setMethodValue(String m, final String n) {
-    if (m == null) {
+  private void setMethodValue(final String n, final String m) {
+    if (m == null || n == null) {
       myThis.setMethod(null);
+      return;
     }
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
-        myThis.setMethod((SNode)SModelUtil.findNodeByFQName(n, SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.unitTest.structure.ITestMethod"), GlobalScope.getInstance()));
+        SNode node = (SNode)SModelUtil.findNodeByFQName(n, SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.unitTest.structure.BTestCase"), GlobalScope.getInstance());
+        if ((node == null)) {
+          myThis.setMethod(null);
+          return;
+        }
+        Iterable<SNode> methods = ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(node, "testMethodList", true), "testMethod", true)).where(new IWhereFilter<SNode>() {
+          public boolean accept(SNode it) {
+            return ITestMethod_Behavior.call_getTestName_1216136419751(it).equals(m);
+          }
+        });
+        if (Sequence.fromIterable(methods).isEmpty()) {
+          myThis.setMethod(null);
+          return;
+        }
+        myThis.setMethod(Sequence.fromIterable(methods).first());
       }
     });
   }
