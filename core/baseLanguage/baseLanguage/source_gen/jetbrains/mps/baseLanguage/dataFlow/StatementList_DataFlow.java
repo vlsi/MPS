@@ -10,7 +10,8 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.baseLanguage.behavior.IMethodLike_Behavior;
-import jetbrains.mps.baseLanguage.behavior.ExpressionStatement_Behavior;
+import jetbrains.mps.baseLanguage.LastStatementUtil;
+import jetbrains.mps.project.GlobalScope;
 
 public class StatementList_DataFlow extends DataFlowBuilder {
   public StatementList_DataFlow() {
@@ -35,7 +36,7 @@ public class StatementList_DataFlow extends DataFlowBuilder {
     }
     for (SNode s : SLinkOperations.getTargets(_context.getNode(), "statement", true)) {
       _context.getBuilder().build((SNode)s);
-      if (s == lastStatement && SNodeOperations.isInstanceOf(s, "jetbrains.mps.baseLanguage.structure.ExpressionStatement") && ExpressionStatement_Behavior.call_canServeAsReturn_1239355137616(SNodeOperations.cast(s, "jetbrains.mps.baseLanguage.structure.ExpressionStatement"))) {
+      if (s == lastStatement && SNodeOperations.isInstanceOf(s, "jetbrains.mps.baseLanguage.structure.ExpressionStatement") && LastStatementUtil.canMakeReturnStatement(s, GlobalScope.getInstance())) {
         _context.getBuilder().emitRet();
       }
     }
