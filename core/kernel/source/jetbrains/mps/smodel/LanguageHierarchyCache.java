@@ -45,6 +45,9 @@ public class LanguageHierarchyCache implements ApplicationComponent {
   private boolean myDescendantsCachesAreValid = false;
 
   private Map<Language, LanguageConceptsCache> myLanguageSpecificCaches = new HashMap<Language, LanguageConceptsCache>();
+
+  private List<CacheChangeListener> myCacheChangeListeners = new ArrayList<CacheChangeListener>(1);
+  private CacheReadAccessListener myCacheReadAccessListener = null;
   
 
   private MPSModuleRepository myModuleRepository;
@@ -77,6 +80,32 @@ public class LanguageHierarchyCache implements ApplicationComponent {
   }
 
   public void disposeComponent() {
+    myCacheChangeListeners.clear();
+    myCacheReadAccessListener = null;
+  }
+
+  public void addCacheChangeListener(CacheChangeListener listener) {
+    myCacheChangeListeners.add(listener);
+  }
+
+  public void setReadAccessListener(CacheReadAccessListener listener) {
+    myCacheReadAccessListener = listener;
+  }
+
+  public void removeReadAccessListener() {
+    myCacheReadAccessListener = null;
+  }
+
+  private void fireCacheChanged() {
+    for (CacheChangeListener listener : myCacheChangeListeners) {
+      listener.languageCacheChanged();
+    }
+  }
+
+  private void fireReadAccessPerformed() {
+    if (myCacheReadAccessListener != null) {
+      myCacheReadAccessListener.languageCacheRead();
+    }
   }
 
   public void invalidateCache() {
@@ -85,9 +114,12 @@ public class LanguageHierarchyCache implements ApplicationComponent {
     myAncestorsNamesMap.clear();
     myLanguageSpecificCaches.clear();
     myDescendantsCachesAreValid = false;
+
+    fireCacheChanged();
   }
 
   public Set<String> getParentsNames(final String conceptFqName) {
+    fireReadAccessPerformed();
     if (myParentsNamesMap.containsKey(conceptFqName)) {
       return Collections.unmodifiableSet(myParentsNamesMap.get(conceptFqName));
     } else {
@@ -129,6 +161,7 @@ public class LanguageHierarchyCache implements ApplicationComponent {
   }
 
   private Set<String> getAncestorsNames_internal(final String conceptFqName) {
+    fireReadAccessPerformed();
     Set<String> result = myAncestorsNamesMap.get(conceptFqName);
     if (result != null) {
       return result;
@@ -186,6 +219,7 @@ public class LanguageHierarchyCache implements ApplicationComponent {
   }
 
   public Set<String> getDescendantsOfConcept(String congeptFQName) {
+    fireReadAccessPerformed();
     if (!myDescendantsCachesAreValid) {
       rebuildCaches();
     }
@@ -287,5 +321,13 @@ public class LanguageHierarchyCache implements ApplicationComponent {
     Set<String> getSubconcepts(String fqName) {
       return mySubconcepts.get(fqName);      
     }   
+  }
+
+  public static interface CacheChangeListener {
+    public void languageCacheChanged();
+  }
+
+  public static interface CacheReadAccessListener {
+    public void languageCacheRead();
   }
 }

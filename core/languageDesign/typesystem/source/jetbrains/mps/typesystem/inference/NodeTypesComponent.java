@@ -61,6 +61,7 @@ public class NodeTypesComponent implements EditorMessageOwner {
     = new HashSet<Pair<SNode, NonTypesystemRule_Runtime>>(); // nodes which are checked themselves but not children
 
   private WeakHashMap<SNode, WeakSet<SNode>> myNodesToDependentNodes = new WeakHashMap<SNode, WeakSet<SNode>>();
+  // private WeakSet<SNode>
 
   private EquationManager myEquationManager;
   private Map<String, Set<SNode>> myRegisteredVariables = new HashMap<String, Set<SNode>>();
