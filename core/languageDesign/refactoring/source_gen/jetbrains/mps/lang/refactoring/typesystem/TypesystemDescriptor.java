@@ -87,5 +87,13 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
       InferenceRule_Runtime inferenceRule = new typeof_OperationContextExpression_InferenceRule();
       this.myInferenceRules.add(inferenceRule);
     }
+    {
+      InferenceRule_Runtime inferenceRule = new typeof_ConceptFunctionParameter_Module_InferenceRule();
+      this.myInferenceRules.add(inferenceRule);
+    }
+    {
+      InferenceRule_Runtime inferenceRule = new typeof_ConceptFunctionParameter_SNode_InferenceRule();
+      this.myInferenceRules.add(inferenceRule);
+    }
   }
 }

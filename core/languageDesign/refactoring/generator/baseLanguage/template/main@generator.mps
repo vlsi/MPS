@@ -3151,7 +3151,7 @@
   </node>
   <node type="jetbrains.mps.lang.generator.structure.TemplateDeclaration" id="1197382724363">
     <property name="name" value="reduce_UpdateModelByDefaultOperation" />
-    <property name="package" value="RefDecl" />
+    <property name="package" value="RefDecl.Methods.UpdateModel" />
     <link role="applicableConcept" targetNodeId="1.1197382578687" resolveInfo="UpdateModelByDefaultOperation" />
     <node role="contentNode" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1197382741521">
       <property name="name" value="updateModel" />
@@ -3264,7 +3264,6 @@
   </node>
   <node type="jetbrains.mps.lang.generator.structure.TemplateDeclaration" id="1198577610202">
     <property name="name" value="reduce_UpdateModelProcedure" />
-    <property name="package" value="RefDecl" />
     <link role="applicableConcept" targetNodeId="1.1198577376375" resolveInfo="UpdateModelProcedure" />
     <node role="contentNode" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1198577765521">
       <property name="name" value="doRefactor" />

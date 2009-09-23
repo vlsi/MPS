@@ -5,7 +5,6 @@ package jetbrains.mps.lang.refactoring.structure;
 import jetbrains.mps.lang.core.structure.BaseConcept;
 import jetbrains.mps.lang.core.structure.INamedConcept;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
 import jetbrains.mps.lang.editor.structure.CellKeyMapKeystroke;
 import java.util.Iterator;
 import java.util.List;
@@ -20,22 +19,14 @@ public class Refactoring extends BaseConcept implements INamedConcept {
   public static final String SHORT_DESCRIPTION = "shortDescription";
   public static final String ALIAS = "alias";
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
-  public static final String ONE_TARGET_ONLY = "oneTargetOnly";
-  public static final String REFACTOR_IMMEDIATELY_IF_NO_USAGES = "refactorImmediatelyIfNoUsages";
-  public static final String REFACTORING_TARGET_KIND = "refactoringTargetKind";
-  public static final String APPLICABLE_CONCEPT = "applicableConcept";
   public static final String OVERRIDES = "overrides";
+  public static final String TARGET = "target";
   public static final String KEYSTROKE = "keystroke";
   public static final String IS_APPLICABLE_CLAUSE = "isApplicableClause";
-  public static final String IS_APPLICABLE_TO_MODEL_CLAUSE = "isApplicableToModelClause";
   public static final String AFFECTED_NODES_CLAUSE = "affectedNodesClause";
   public static final String DO_REFACTOR_CLAUSE = "doRefactorClause";
-  public static final String GET_MODELS_TO_GENERATE_CLAUSE = "getModelsToGenerateClause";
-  public static final String GET_MODELS_TO_UPDATE_CLAUSE = "getModelsToUpdateClause";
-  public static final String NODES_TO_OPEN_CLAUSE = "nodesToOpenClause";
-  public static final String UPDATE_MODEL_CLAUSE = "updateModelClause";
-  public static final String ARGUMENTS = "arguments";
-  public static final String INTERNAL_ARGUMENTS = "internalArguments";
+  public static final String ARGUMENT = "argument";
+  public static final String FIELD = "field";
 
   public Refactoring(SNode node) {
     super(node);
@@ -81,45 +72,20 @@ public class Refactoring extends BaseConcept implements INamedConcept {
     this.setProperty(Refactoring.VIRTUAL_PACKAGE, value);
   }
 
-  public boolean getOneTargetOnly() {
-    return this.getBooleanProperty(Refactoring.ONE_TARGET_ONLY);
+  public Refactoring getOverrides() {
+    return (Refactoring)this.getReferent(Refactoring.class, Refactoring.OVERRIDES);
   }
 
-  public void setOneTargetOnly(boolean value) {
-    this.setBooleanProperty(Refactoring.ONE_TARGET_ONLY, value);
-  }
-
-  public boolean getRefactorImmediatelyIfNoUsages() {
-    return this.getBooleanProperty(Refactoring.REFACTOR_IMMEDIATELY_IF_NO_USAGES);
-  }
-
-  public void setRefactorImmediatelyIfNoUsages(boolean value) {
-    this.setBooleanProperty(Refactoring.REFACTOR_IMMEDIATELY_IF_NO_USAGES, value);
-  }
-
-  public RefactoringTargetKind_Enum getRefactoringTargetKind() {
-    String value = super.getProperty(Refactoring.REFACTORING_TARGET_KIND);
-    return RefactoringTargetKind_Enum.parseValue(value);
-  }
-
-  public void setRefactoringTargetKind(RefactoringTargetKind_Enum value) {
-    super.setProperty(Refactoring.REFACTORING_TARGET_KIND, value.getValueAsString());
-  }
-
-  public AbstractConceptDeclaration getApplicableConcept() {
-    return (AbstractConceptDeclaration)this.getReferent(AbstractConceptDeclaration.class, Refactoring.APPLICABLE_CONCEPT);
-  }
-
-  public void setApplicableConcept(AbstractConceptDeclaration node) {
-    super.setReferent(Refactoring.APPLICABLE_CONCEPT, node);
-  }
-
-  public OldRefactoring getOverrides() {
-    return (OldRefactoring)this.getReferent(OldRefactoring.class, Refactoring.OVERRIDES);
-  }
-
-  public void setOverrides(OldRefactoring node) {
+  public void setOverrides(Refactoring node) {
     super.setReferent(Refactoring.OVERRIDES, node);
+  }
+
+  public RefactoringTarget getTarget() {
+    return (RefactoringTarget)this.getChild(RefactoringTarget.class, Refactoring.TARGET);
+  }
+
+  public void setTarget(RefactoringTarget node) {
+    super.setChild(Refactoring.TARGET, node);
   }
 
   public CellKeyMapKeystroke getKeystroke() {
@@ -138,14 +104,6 @@ public class Refactoring extends BaseConcept implements INamedConcept {
     super.setChild(Refactoring.IS_APPLICABLE_CLAUSE, node);
   }
 
-  public IsApplicableToModelClause getIsApplicableToModelClause() {
-    return (IsApplicableToModelClause)this.getChild(IsApplicableToModelClause.class, Refactoring.IS_APPLICABLE_TO_MODEL_CLAUSE);
-  }
-
-  public void setIsApplicableToModelClause(IsApplicableToModelClause node) {
-    super.setChild(Refactoring.IS_APPLICABLE_TO_MODEL_CLAUSE, node);
-  }
-
   public AffectedNodesClause getAffectedNodesClause() {
     return (AffectedNodesClause)this.getChild(AffectedNodesClause.class, Refactoring.AFFECTED_NODES_CLAUSE);
   }
@@ -162,76 +120,44 @@ public class Refactoring extends BaseConcept implements INamedConcept {
     super.setChild(Refactoring.DO_REFACTOR_CLAUSE, node);
   }
 
-  public GetModelsToGenerateClause getGetModelsToGenerateClause() {
-    return (GetModelsToGenerateClause)this.getChild(GetModelsToGenerateClause.class, Refactoring.GET_MODELS_TO_GENERATE_CLAUSE);
+  public int getArgumentsCount() {
+    return this.getChildCount(Refactoring.ARGUMENT);
   }
 
-  public void setGetModelsToGenerateClause(GetModelsToGenerateClause node) {
-    super.setChild(Refactoring.GET_MODELS_TO_GENERATE_CLAUSE, node);
+  public Iterator<RefactoringParameter> arguments() {
+    return this.children(RefactoringParameter.class, Refactoring.ARGUMENT);
   }
 
-  public GetModelsToUpdateClause getGetModelsToUpdateClause() {
-    return (GetModelsToUpdateClause)this.getChild(GetModelsToUpdateClause.class, Refactoring.GET_MODELS_TO_UPDATE_CLAUSE);
+  public List<RefactoringParameter> getArguments() {
+    return this.getChildren(RefactoringParameter.class, Refactoring.ARGUMENT);
   }
 
-  public void setGetModelsToUpdateClause(GetModelsToUpdateClause node) {
-    super.setChild(Refactoring.GET_MODELS_TO_UPDATE_CLAUSE, node);
+  public void addArgument(RefactoringParameter node) {
+    this.addChild(Refactoring.ARGUMENT, node);
   }
 
-  public NodesToOpenClause getNodesToOpenClause() {
-    return (NodesToOpenClause)this.getChild(NodesToOpenClause.class, Refactoring.NODES_TO_OPEN_CLAUSE);
+  public void insertArgument(RefactoringParameter prev, RefactoringParameter node) {
+    this.insertChild(prev, Refactoring.ARGUMENT, node);
   }
 
-  public void setNodesToOpenClause(NodesToOpenClause node) {
-    super.setChild(Refactoring.NODES_TO_OPEN_CLAUSE, node);
+  public int getFieldsCount() {
+    return this.getChildCount(Refactoring.FIELD);
   }
 
-  public UpdateModelClause getUpdateModelClause() {
-    return (UpdateModelClause)this.getChild(UpdateModelClause.class, Refactoring.UPDATE_MODEL_CLAUSE);
+  public Iterator<RefactoringField> fields() {
+    return this.children(RefactoringField.class, Refactoring.FIELD);
   }
 
-  public void setUpdateModelClause(UpdateModelClause node) {
-    super.setChild(Refactoring.UPDATE_MODEL_CLAUSE, node);
+  public List<RefactoringField> getFields() {
+    return this.getChildren(RefactoringField.class, Refactoring.FIELD);
   }
 
-  public int getArgumentsesCount() {
-    return this.getChildCount(Refactoring.ARGUMENTS);
+  public void addField(RefactoringField node) {
+    this.addChild(Refactoring.FIELD, node);
   }
 
-  public Iterator<RequiredUserEnteredArgument> argumentses() {
-    return this.children(RequiredUserEnteredArgument.class, Refactoring.ARGUMENTS);
-  }
-
-  public List<RequiredUserEnteredArgument> getArgumentses() {
-    return this.getChildren(RequiredUserEnteredArgument.class, Refactoring.ARGUMENTS);
-  }
-
-  public void addArguments(RequiredUserEnteredArgument node) {
-    this.addChild(Refactoring.ARGUMENTS, node);
-  }
-
-  public void insertArguments(RequiredUserEnteredArgument prev, RequiredUserEnteredArgument node) {
-    this.insertChild(prev, Refactoring.ARGUMENTS, node);
-  }
-
-  public int getInternalArgumentsesCount() {
-    return this.getChildCount(Refactoring.INTERNAL_ARGUMENTS);
-  }
-
-  public Iterator<RequiredAdditionalArgument> internalArgumentses() {
-    return this.children(RequiredAdditionalArgument.class, Refactoring.INTERNAL_ARGUMENTS);
-  }
-
-  public List<RequiredAdditionalArgument> getInternalArgumentses() {
-    return this.getChildren(RequiredAdditionalArgument.class, Refactoring.INTERNAL_ARGUMENTS);
-  }
-
-  public void addInternalArguments(RequiredAdditionalArgument node) {
-    this.addChild(Refactoring.INTERNAL_ARGUMENTS, node);
-  }
-
-  public void insertInternalArguments(RequiredAdditionalArgument prev, RequiredAdditionalArgument node) {
-    this.insertChild(prev, Refactoring.INTERNAL_ARGUMENTS, node);
+  public void insertField(RefactoringField prev, RefactoringField node) {
+    this.insertChild(prev, Refactoring.FIELD, node);
   }
 
   public static Refactoring newInstance(SModel sm, boolean init) {
