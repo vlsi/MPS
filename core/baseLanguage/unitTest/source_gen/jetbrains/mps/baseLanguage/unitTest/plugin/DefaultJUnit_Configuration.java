@@ -173,7 +173,9 @@ public class DefaultJUnit_Configuration extends BaseRunConfig {
           });
 
           if (process.value != null) {
-            handler = new DefaultJavaProcessHandler(process.value, "Test", Charset.defaultCharset());
+            ProcessHandler processHandler = new DefaultJavaProcessHandler(process.value, "Test", Charset.defaultCharset());
+            runComponent.onStart(processHandler);
+            handler = processHandler;
           }
         }
         final JComponent finalConsoleComponent = consoleComponent;
