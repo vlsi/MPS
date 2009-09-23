@@ -159,10 +159,10 @@ public class MakeAssert {
         cr[0] = new ModuleMaker().make(Collections.singleton(getModel(modelName + '1').getModule()), new EmptyProgressIndicator());
       }
     });
-    if (!(cr[0].isOk())) {
-      System.out.println("Compilation failed");
-    } else {
+    if (cr[0].isOk()) {
       System.out.println("No compilation problem");
+    } else {
+      System.out.println("Compilation failed");
     }
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
@@ -185,7 +185,9 @@ public class MakeAssert {
         }
       }
     };
+    model.getModule().getModuleDescriptor().setCompileInMPS(false);
     gm.generateModels(models, new ModuleContext(model.getModule(), project), genType, new EmptyProgressIndicator(), handler);
+    model.getModule().getModuleDescriptor().setCompileInMPS(true);
     return results;
   }
 
