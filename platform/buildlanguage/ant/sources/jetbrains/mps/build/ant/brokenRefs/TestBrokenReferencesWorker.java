@@ -42,7 +42,7 @@ public class TestBrokenReferencesWorker extends MpsWorker {
           if (errorMessages.length() > 0) {
             output(myBuildServerMessageFormat.formatTestFailure(testName, "Broken References", errorMessages.toString()));
           }
-          output(myBuildServerMessageFormat.formatTestFinifsh(testName));
+          output(myBuildServerMessageFormat.formatTestFinish(testName));
         }
       }
     });

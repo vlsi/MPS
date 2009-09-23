@@ -81,15 +81,7 @@ public abstract class MpsWorker {
   }
 
   public void work() {
-    BasicConfigurator.configure(new NullAppender());
-    Logger.getRootLogger().setLevel(getLog4jLevel());
-    jetbrains.mps.logging.Logger.addLoggingHandler(new MyMessageHandlerAppender());
-
-    IdeMain.setTestMode(TestMode.CORE_TEST);
-    TestMain.configureMPS();
-
-    setMacro();
-    loadLibraries();
+    setupEnvironment();
 
     com.intellij.openapi.project.Project ideaProject = ProjectManager.getInstance().getDefaultProject();
 
@@ -104,11 +96,23 @@ public abstract class MpsWorker {
     showStatistic();
   }
 
+  protected void setupEnvironment() {
+    BasicConfigurator.configure(new NullAppender());
+    Logger.getRootLogger().setLevel(getLog4jLevel());
+    jetbrains.mps.logging.Logger.addLoggingHandler(new MyMessageHandlerAppender());
+
+    IdeMain.setTestMode(TestMode.CORE_TEST);
+    TestMain.configureMPS();
+
+    setMacro();
+    loadLibraries();
+  }
+
   protected abstract void executeTask(MPSProject project, List<SModelDescriptor> models);
 
   protected abstract void showStatistic();
 
-  private void unloadLoadedStuff() {
+  protected void unloadLoadedStuff() {
     for (final MPSProject project : myLoadedProjects) {
       ThreadUtils.runInUIThreadAndWait(new Runnable() {
         public void run() {

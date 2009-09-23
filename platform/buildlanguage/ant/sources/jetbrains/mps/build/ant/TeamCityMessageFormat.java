@@ -15,7 +15,7 @@ public class TeamCityMessageFormat implements IBuildServerMessageFormat {
     return "##teamcity[testStarted name='" + testName + "' captureStandardOutput='true']";
   }
 
-  public String formatTestFinifsh(String testName) {
+  public String formatTestFinish(String testName) {
     return "##teamcity[testFinished name='" + testName + "']";
   }
 

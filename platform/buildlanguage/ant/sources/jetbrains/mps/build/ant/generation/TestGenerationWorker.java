@@ -109,7 +109,7 @@ public class TestGenerationWorker extends GeneratorWorker {
       myTestFailed = true;
       System.out.println(myBuildServerMessageFormat.formatTestFailure(currentTestName, "Generation Errors", sb.toString()));
     }
-    System.out.println(myBuildServerMessageFormat.formatTestFinifsh(currentTestName));
+    System.out.println(myBuildServerMessageFormat.formatTestFinish(currentTestName));
   }
 
   @Override
