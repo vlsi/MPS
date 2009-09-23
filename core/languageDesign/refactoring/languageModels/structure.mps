@@ -1281,12 +1281,33 @@
       <property name="sourceCardinality" value="1" />
       <link role="target" targetNodeId="1189694053795" resolveInfo="DoRefactorClause" />
     </node>
+    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="2058726427123891193">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="doWhenDoneBlock" />
+      <link role="target" targetNodeId="2058726427123891188" resolveInfo="DoWhenDoneClause" />
+    </node>
     <node role="propertyDeclaration" type="jetbrains.mps.lang.structure.structure.PropertyDeclaration" id="6895093993902236371">
       <property name="name" value="userFriendlyName" />
       <link role="dataType" targetNodeId="1.1082983041843" resolveInfo="string" />
     </node>
     <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="6895093993902236370">
       <link role="intfc" targetNodeId="1.1169194658468" resolveInfo="INamedConcept" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="2058726427123891188">
+    <property name="name" value="DoWhenDoneClause" />
+    <property name="package" value="RefDecl.Methods" />
+    <link role="extends" targetNodeId="2.1137021947720" resolveInfo="ConceptFunction" />
+    <node role="conceptLink" type="jetbrains.mps.lang.structure.structure.AggregationConceptLink" id="2058726427123891189">
+      <link role="conceptLinkDeclaration" targetNodeId="2.1137545148427" resolveInfo="conceptFunctionReturnType" />
+      <node role="target" type="jetbrains.mps.baseLanguage.structure.VoidType" id="2058726427123891190" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="2058726427123891191">
+      <property name="value" value="doWhenDone" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" resolveInfo="alias" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.BooleanConceptProperty" id="2058726427123891192">
+      <link role="conceptPropertyDeclaration" targetNodeId="2.1216468774225" resolveInfo="showName" />
     </node>
   </node>
 </model>

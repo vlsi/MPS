@@ -56,7 +56,7 @@ public class RefactoringContext {
   private Map<FullNodeId, FullNodeId> myMoveMap = new HashMap<FullNodeId, FullNodeId>();
   private Map<ConceptFeature, ConceptFeature> myConceptFeatureMap = new HashMap<ConceptFeature, ConceptFeature>();
   private int myModelVersion = -1;
-  private ILoggableRefactoring myRefactoring;
+  private ILoggableRefactoringOld myRefactoring;
   private String myRefactoringClassName = null;
   //-----------------
 
@@ -85,7 +85,7 @@ public class RefactoringContext {
 
   //-----------------
 
-  public RefactoringContext(ILoggableRefactoring refactoring) {
+  public RefactoringContext(ILoggableRefactoringOld refactoring) {
     myRefactoring = refactoring;
   }
 
@@ -454,7 +454,7 @@ public class RefactoringContext {
     return myModelVersion;
   }
 
-  public void setRefactoring(ILoggableRefactoring refactoring) {
+  public void setRefactoring(ILoggableRefactoringOld refactoring) {
     myRefactoring = refactoring;
     if (myRefactoring != null) {
       myRefactoringClassName = refactoring.getClass().getName();
@@ -463,7 +463,7 @@ public class RefactoringContext {
     }
   }
 
-  public ILoggableRefactoring getRefactoring() {
+  public ILoggableRefactoringOld getRefactoring() {
     return myRefactoring;
   }
 
@@ -588,11 +588,11 @@ public class RefactoringContext {
         if (l == null) {
           LOG.errorWithTrace("can't find a language " + namespace);
         } else {
-          Class<ILoggableRefactoring> refactoringClass = (Class<ILoggableRefactoring>) l.getClass(className);
+          Class<ILoggableRefactoringOld> refactoringClass = (Class<ILoggableRefactoringOld>) l.getClass(className);
           if (refactoringClass == null) {
             LOG.errorWithTrace("can't find a class " + className + " in a language " + namespace);
           } else {
-            Constructor<ILoggableRefactoring> constructor = refactoringClass.getConstructor();
+            Constructor<ILoggableRefactoringOld> constructor = refactoringClass.getConstructor();
             myRefactoring = constructor.newInstance();
           }
         }

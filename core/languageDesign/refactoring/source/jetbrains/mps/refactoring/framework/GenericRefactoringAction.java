@@ -25,9 +25,9 @@ import org.jetbrains.annotations.NotNull;
 import java.util.*;
 
 public class GenericRefactoringAction extends BaseAction {
-  private ILoggableRefactoring myRefactoring;
+  private ILoggableRefactoringOld myRefactoring;
 
-  public GenericRefactoringAction(ILoggableRefactoring refactoring) {
+  public GenericRefactoringAction(ILoggableRefactoringOld refactoring) {
     super("".equals(refactoring.getUserFriendlyName()) ? refactoring.getClass().getName() : refactoring.getUserFriendlyName());
     myRefactoring = refactoring;
     setExecuteOutsideCommand(true);

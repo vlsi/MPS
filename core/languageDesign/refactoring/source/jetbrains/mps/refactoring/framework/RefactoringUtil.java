@@ -27,12 +27,12 @@ import java.util.*;
 public class RefactoringUtil {
   private static Logger LOG = Logger.getLogger(RefactoringUtil.class);
 
-  public static Map<Class, ILoggableRefactoring> getAllRefactorings() {
-    Map<Class, ILoggableRefactoring> allRefactorings = new HashMap<Class, ILoggableRefactoring>();
+  public static Map<Class, ILoggableRefactoringOld> getAllRefactorings() {
+    Map<Class, ILoggableRefactoringOld> allRefactorings = new HashMap<Class, ILoggableRefactoringOld>();
     List<Language> languages = GlobalScope.getInstance().getVisibleLanguages();
 
     for (Language language : languages) {
-      for (ILoggableRefactoring refactoring : language.getRefactorings()) {
+      for (ILoggableRefactoringOld refactoring : language.getRefactorings()) {
         allRefactorings.put(refactoring.getClass(), refactoring);
       }
     }
@@ -40,12 +40,12 @@ public class RefactoringUtil {
     return allRefactorings;
   }
 
-  public static Map<Class, ILoggableRefactoring> getRefactorings(RefactoringTarget target) {
-    Map<Class, ILoggableRefactoring> result = new HashMap<Class, ILoggableRefactoring>();
+  public static Map<Class, ILoggableRefactoringOld> getRefactorings(RefactoringTarget target) {
+    Map<Class, ILoggableRefactoringOld> result = new HashMap<Class, ILoggableRefactoringOld>();
 
-    Map<Class, ILoggableRefactoring> refactorings = getAllRefactorings();
+    Map<Class, ILoggableRefactoringOld> refactorings = getAllRefactorings();
     for (Class refClass : refactorings.keySet()) {
-      ILoggableRefactoring refactoring = refactorings.get(refClass);
+      ILoggableRefactoringOld refactoring = refactorings.get(refClass);
       if (refactoring.getRefactoringTarget() == target) {
         result.put(refClass, refactoring);
       }
@@ -53,14 +53,14 @@ public class RefactoringUtil {
     return result;
   }
 
-  public static boolean isApplicableInContext(ILoggableRefactoring refactoring, Collection entities) {
+  public static boolean isApplicableInContext(ILoggableRefactoringOld refactoring, Collection entities) {
     assert !entities.isEmpty();
     assert (entities.size() == 1 || !refactoring.isOneTargetOnly());
 
     if (!isApplicableToEntities(refactoring, entities)) return false;
     RefactoringTarget refTarget = refactoring.getRefactoringTarget();
 
-    for (ILoggableRefactoring r : getAllRefactorings().values()) {
+    for (ILoggableRefactoringOld r : getAllRefactorings().values()) {
       if (r.getRefactoringTarget() != refTarget) continue;
       if (!isApplicableToEntities(r, entities)) continue;
       if (r.getOverridenRefactoringClass() == refactoring.getClass()) return false;
@@ -69,7 +69,7 @@ public class RefactoringUtil {
     return true;
   }
 
-  private static boolean isApplicableToEntities(ILoggableRefactoring refactoring, Collection entities) {
+  private static boolean isApplicableToEntities(ILoggableRefactoringOld refactoring, Collection entities) {
     RefactoringTarget refTarget = refactoring.getRefactoringTarget();
 
     if (refTarget == RefactoringTarget.NODE) {
@@ -81,7 +81,7 @@ public class RefactoringUtil {
     }
   }
 
-  private static boolean isApplicableToNodes(ILoggableRefactoring r, Collection<SNode> nodes) {
+  private static boolean isApplicableToNodes(ILoggableRefactoringOld r, Collection<SNode> nodes) {
     for (SNode node : nodes) {
       if (!r.isApplicableWRTConcept(node)) {
         return false;
@@ -90,7 +90,7 @@ public class RefactoringUtil {
     return true;
   }
 
-  private static boolean isApplicableToModels(ILoggableRefactoring refactoring, Collection<SModelDescriptor> models) {
+  private static boolean isApplicableToModels(ILoggableRefactoringOld refactoring, Collection<SModelDescriptor> models) {
     for (SModelDescriptor model : models) {
       if (!refactoring.isApplicableToModel(model)) {
         return false;
@@ -99,7 +99,7 @@ public class RefactoringUtil {
     return true;
   }
 
-  private static boolean isApplicableToModules(ILoggableRefactoring refactoring, Collection<IModule> modules) {
+  private static boolean isApplicableToModules(ILoggableRefactoringOld refactoring, Collection<IModule> modules) {
     for (IModule module : modules) {
       if (!refactoring.isApplicableToModule(module)) {
         return false;

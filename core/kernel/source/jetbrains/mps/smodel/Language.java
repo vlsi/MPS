@@ -21,7 +21,6 @@ import jetbrains.mps.lang.plugin.generator.baseLanguage.template.util.PluginName
 import jetbrains.mps.lang.refactoring.structure.OldRefactoring;
 import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
 import jetbrains.mps.lang.structure.structure.ConceptDeclaration;
-import jetbrains.mps.lang.structure.structure.Structure_Language;
 import jetbrains.mps.library.LibraryManager;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.AbstractModule;
@@ -30,7 +29,7 @@ import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.persistence.LanguageDescriptorPersistence;
 import jetbrains.mps.project.structure.model.ModelRoot;
 import jetbrains.mps.project.structure.modules.*;
-import jetbrains.mps.refactoring.framework.ILoggableRefactoring;
+import jetbrains.mps.refactoring.framework.ILoggableRefactoringOld;
 import jetbrains.mps.reloading.*;
 import jetbrains.mps.util.Condition;
 import jetbrains.mps.util.EqualUtil;
@@ -65,7 +64,7 @@ public class Language extends AbstractModule {
   private Set<SNodePointer> myNotFoundRefactorings = new HashSet<SNodePointer>(2);
   private
   @Nullable
-  Set<ILoggableRefactoring> myCachedRefactorings = null;
+  Set<ILoggableRefactoringOld> myCachedRefactorings = null;
 
   private List<Language> myAllExtendedLanguages = new ArrayList<Language>();
 
@@ -676,8 +675,8 @@ public class Language extends AbstractModule {
     return getLanguageDescriptor().getModelRoots().iterator().next();
   }
 
-  public Set<ILoggableRefactoring> getRefactorings() {
-    Set<ILoggableRefactoring> result = new HashSet<ILoggableRefactoring>();
+  public Set<ILoggableRefactoringOld> getRefactorings() {
+    Set<ILoggableRefactoringOld> result = new HashSet<ILoggableRefactoringOld>();
     if (myCachedRefactorings != null) {
       result.addAll(myCachedRefactorings);
       return result;
@@ -691,7 +690,7 @@ public class Language extends AbstractModule {
     for (OldRefactoring refactoring : scriptsModel.getRootsAdapters(OldRefactoring.class)) {
       try {
         String fqName = packageName + "." + refactoring.getName();
-        Class<ILoggableRefactoring> cls = getClass(fqName);
+        Class<ILoggableRefactoringOld> cls = getClass(fqName);
         SNodePointer pointer = new SNodePointer(refactoring.getNode());
         if (cls == null) {
           if (!myNotFoundRefactorings.contains(pointer)) {
@@ -700,14 +699,14 @@ public class Language extends AbstractModule {
           }
           continue;
         }
-        Constructor<ILoggableRefactoring> constructor = cls.getConstructor();
+        Constructor<ILoggableRefactoringOld> constructor = cls.getConstructor();
         constructor.setAccessible(false);
         result.add(constructor.newInstance());
       } catch (Throwable t) {
         LOG.error(t);
       }
     }
-    myCachedRefactorings = new HashSet<ILoggableRefactoring>(result);
+    myCachedRefactorings = new HashSet<ILoggableRefactoringOld>(result);
     return result;
   }
 

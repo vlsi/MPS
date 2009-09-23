@@ -32,12 +32,12 @@ public class ChooseRefactoringInputDataDialog extends BaseDialog {
   private JPanel myInnerPanel;
   private boolean myIsCancelled = true;
   private List<IChooseComponent> myComponents;
-  private ILoggableRefactoring myRefactoring;
+  private ILoggableRefactoringOld myRefactoring;
   private RefactoringContext myRefactoringContext;
   private IChooseComponent myFirstComponent = null;
   private IChooseComponent myLastComponent = null;
 
-  public ChooseRefactoringInputDataDialog(ILoggableRefactoring refactoring, final RefactoringContext refactoringContext, List<IChooseComponent> components) throws HeadlessException {
+  public ChooseRefactoringInputDataDialog(ILoggableRefactoringOld refactoring, final RefactoringContext refactoringContext, List<IChooseComponent> components) throws HeadlessException {
     super(refactoringContext.getCurrentOperationContext().getMainFrame(), "Input Data for " + refactoring.getUserFriendlyName());
     myRefactoring = refactoring;
     myRefactoringContext = refactoringContext;

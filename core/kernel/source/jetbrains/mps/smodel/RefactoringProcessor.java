@@ -57,7 +57,7 @@ public class RefactoringProcessor {
     }
   }
 
-  public void execute(final ILoggableRefactoring refactoring, final RefactoringContext refactoringContext) {
+  public void execute(final ILoggableRefactoringOld refactoring, final RefactoringContext refactoringContext) {
     refactoringContext.setRefactoring(refactoring);
 
     final boolean[] success = new boolean[1];
@@ -94,7 +94,7 @@ public class RefactoringProcessor {
     final boolean[] cancelled = new boolean[]{true};
     ThreadUtils.runInUIThreadAndWait(new Runnable() {
       public void run() {
-        ILoggableRefactoring refactoring = refactoringContext.getRefactoring();
+        ILoggableRefactoringOld refactoring = refactoringContext.getRefactoring();
         Frame mainFrame = refactoringContext.getCurrentOperationContext().getMainFrame();
         RefactoringOptionsDialog dialog = new RefactoringOptionsDialog(mainFrame, refactoringContext, refactoring);
         dialog.showDialog();
@@ -165,7 +165,7 @@ public class RefactoringProcessor {
   }
 
   private void doExecute(final @NotNull RefactoringContext refactoringContext, final Runnable continuation) {
-    final ILoggableRefactoring refactoring = refactoringContext.getRefactoring();
+    final ILoggableRefactoringOld refactoring = refactoringContext.getRefactoring();
     final Map<IModule, List<SModel>> moduleToModelsMap = ModelAccess.instance().runReadAction(new Computable<Map<IModule, List<SModel>>>() {
       public Map<IModule, List<SModel>> compute() {
         return refactoring.getModelsToGenerate(refactoringContext);
@@ -236,7 +236,7 @@ public class RefactoringProcessor {
     ThreadUtils.runInUIThreadNoWait(runnable);
   }
 
-  private void updateModels(SModelDescriptor modelDescriptor, RefactoringContext refactoringContext, ILoggableRefactoring refactoring, SModelReference initialModelReference) {
+  private void updateModels(SModelDescriptor modelDescriptor, RefactoringContext refactoringContext, ILoggableRefactoringOld refactoring, SModelReference initialModelReference) {
     SModel model = modelDescriptor.getSModel();
     refactoringContext.computeCaches();
     SearchResults usages = refactoringContext.getUsages();

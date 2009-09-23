@@ -28,7 +28,7 @@ import java.util.List;
 import java.util.Map;
 
 //do not merge this class with BaseGeneratedRefactoring - this is for compatibility
-public abstract class AbstractLoggableRefactoring implements ILoggableRefactoring {
+public abstract class AbstractLoggableRefactoring implements ILoggableRefactoringOld {
   public String getUserFriendlyName() {
     return null;
   }

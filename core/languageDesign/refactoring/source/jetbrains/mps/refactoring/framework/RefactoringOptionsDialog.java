@@ -15,12 +15,8 @@
  */
 package jetbrains.mps.refactoring.framework;
 
-import com.intellij.openapi.util.Computable;
 import jetbrains.mps.ide.dialogs.BaseDialog;
 import jetbrains.mps.ide.dialogs.DialogDimensionsSettings.DialogDimensions;
-import jetbrains.mps.project.IModule;
-import jetbrains.mps.smodel.Language;
-import jetbrains.mps.smodel.ModelAccess;
 
 import javax.swing.JCheckBox;
 import javax.swing.JComponent;
@@ -32,7 +28,7 @@ import java.awt.HeadlessException;
 
 public class RefactoringOptionsDialog extends BaseDialog {
   private RefactoringContext myRefactoringContext;
-  private ILoggableRefactoring myRefactoring;
+  private ILoggableRefactoringOld myRefactoring;
 
   private JCheckBox myIsLocalCheckBox;
   private JCheckBox myGenerateModelsCheckBox;
@@ -40,7 +36,7 @@ public class RefactoringOptionsDialog extends BaseDialog {
 
   private boolean myIsCancelled = true;
 
-  public RefactoringOptionsDialog(Frame mainFrame, RefactoringContext refactoringContext, ILoggableRefactoring refactoring) throws HeadlessException {
+  public RefactoringOptionsDialog(Frame mainFrame, RefactoringContext refactoringContext, ILoggableRefactoringOld refactoring) throws HeadlessException {
     super(mainFrame, "Refactoring Options");
     myRefactoringContext = refactoringContext;
     myRefactoring = refactoring;

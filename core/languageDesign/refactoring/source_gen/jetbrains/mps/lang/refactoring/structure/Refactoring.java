@@ -25,6 +25,7 @@ public class Refactoring extends BaseConcept implements INamedConcept {
   public static final String INIT_BLOCK = "initBlock";
   public static final String IS_APPLICABLE_BLOCK = "isApplicableBlock";
   public static final String DO_REFACTOR_BLOCK = "doRefactorBlock";
+  public static final String DO_WHEN_DONE_BLOCK = "doWhenDoneBlock";
   public static final String PARAMETER = "parameter";
   public static final String FIELD = "field";
 
@@ -118,6 +119,14 @@ public class Refactoring extends BaseConcept implements INamedConcept {
 
   public void setDoRefactorBlock(DoRefactorClause node) {
     super.setChild(Refactoring.DO_REFACTOR_BLOCK, node);
+  }
+
+  public DoWhenDoneClause getDoWhenDoneBlock() {
+    return (DoWhenDoneClause)this.getChild(DoWhenDoneClause.class, Refactoring.DO_WHEN_DONE_BLOCK);
+  }
+
+  public void setDoWhenDoneBlock(DoWhenDoneClause node) {
+    super.setChild(Refactoring.DO_WHEN_DONE_BLOCK, node);
   }
 
   public int getParametersCount() {
