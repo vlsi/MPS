@@ -8,16 +8,26 @@ import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
+import jetbrains.mps.nodeEditor.EditorContext;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import jetbrains.mps.workbench.MPSDataKeys;
 import java.awt.Point;
+import jetbrains.mps.editor.runtime.ParametersInformation;
+import jetbrains.mps.nodeEditor.style.StyleAttributes;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.SNode;
+import java.util.List;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.baseLanguage.behavior.IMemberContainer_Behavior;
+import java.util.ArrayList;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import org.apache.commons.lang.ObjectUtils;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.lang.core.behavior.BaseConcept_Behavior;
 import java.awt.Component;
 import jetbrains.mps.ide.tooltips.MPSToolTipManager;
 import jetbrains.mps.ide.tooltips.ToolTipData;
-import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class ShowParameters_Action extends GeneratedAction {
   private static final Icon ICON = null;
@@ -25,6 +35,7 @@ public class ShowParameters_Action extends GeneratedAction {
 
   private EditorComponent editor;
   private EditorCell cell;
+  private EditorContext editorContext;
 
   public ShowParameters_Action() {
     super("Show Parameters", "", ICON);
@@ -39,9 +50,6 @@ public class ShowParameters_Action extends GeneratedAction {
 
   public boolean isApplicable(AnActionEvent event) {
     if (ShowParameters_Action.this.getCellNode() == null) {
-      return false;
-    }
-    if (ShowParameters_Action.this.getMethod() == null) {
       return false;
     }
     return true;
@@ -74,27 +82,58 @@ public class ShowParameters_Action extends GeneratedAction {
     if (this.cell == null) {
       return false;
     }
+    this.editorContext = event.getData(MPSDataKeys.EDITOR_CONTEXT);
+    if (this.editorContext == null) {
+      return false;
+    }
     return true;
   }
 
   public void doExecute(@NotNull final AnActionEvent event) {
     try {
       Point p = new Point(ShowParameters_Action.this.cell.getX() + ShowParameters_Action.this.cell.getWidth(), ShowParameters_Action.this.cell.getY() + ShowParameters_Action.this.cell.getHeight());
-      Component componet = ParametersInformationUtil.getMethodInfoComponent(ShowParameters_Action.this.getMethod());
-      MPSToolTipManager.getInstance().showToolTip(new ToolTipData(componet), ShowParameters_Action.this.editor, p);
+      EditorCell currentCell = ShowParameters_Action.this.cell;
+      while (currentCell != null) {
+        ParametersInformation parametersInformation = currentCell.getStyle().get(StyleAttributes.PARAMETERS_INFORMATION);
+        if (parametersInformation == null && SNodeOperations.isInstanceOf(((SNode)currentCell.getSNode()), "jetbrains.mps.baseLanguage.structure.IMethodCall")) {
+          parametersInformation = new ParametersInformation() {
+            @Override
+            public List<SNode> getMethods(SNode node, EditorContext editorContext) {
+              SNode method = SLinkOperations.getTarget(SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.IMethodCall"), "baseMethodDeclaration", false);
+              SNode classifier = SNodeOperations.cast(SNodeOperations.getParent(method), "jetbrains.mps.baseLanguage.structure.IMemberContainer");
+              List<SNode> members = IMemberContainer_Behavior.call_getMembers_1213877531970(classifier);
+              List<SNode> methodsToShow = new ArrayList<SNode>();
+              for (SNode member : ListSequence.fromList(members)) {
+                if (SNodeOperations.isInstanceOf(member, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration") && ObjectUtils.equals(SPropertyOperations.getString(SNodeOperations.cast(member, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration"), "name"), SPropertyOperations.getString(method, "name"))) {
+                  ListSequence.fromList(methodsToShow).addElement(SNodeOperations.cast(member, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration"));
+                }
+              }
+              return methodsToShow;
+            }
+
+            @Override
+            public String getMethodPresentation(SNode node, EditorContext editorContext, SNode method) {
+              return BaseConcept_Behavior.call_getPresentation_1213877396640(SNodeOperations.cast(method, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration"));
+            }
+
+            @Override
+            public boolean isMethodCurrent(SNode node, EditorContext editorContext, SNode method) {
+              return SLinkOperations.getTarget(SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.IMethodCall"), "baseMethodDeclaration", false) == method;
+            }
+          };
+        }
+        if (parametersInformation != null) {
+          Component componet = parametersInformation.getComponent(currentCell.getSNode(), ShowParameters_Action.this.editorContext);
+          MPSToolTipManager.getInstance().showToolTip(new ToolTipData(componet), ShowParameters_Action.this.editor, p);
+          return;
+        }
+        currentCell = currentCell.getParent();
+      }
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
         log.error("User's action execute method failed. Action:" + "ShowParameters", t);
       }
     }
-  }
-
-  /*package*/ SNode getMethod() {
-    SNode methodCall = SNodeOperations.getAncestor(ShowParameters_Action.this.getCellNode(), "jetbrains.mps.baseLanguage.structure.IMethodCall", true, false);
-    if (methodCall == null) {
-      return null;
-    }
-    return SLinkOperations.getTarget(methodCall, "baseMethodDeclaration", false);
   }
 
   /*package*/ SNode getCellNode() {
