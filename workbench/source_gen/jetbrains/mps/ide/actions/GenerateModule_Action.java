@@ -26,7 +26,7 @@ public class GenerateModule_Action extends GeneratedAction {
 
   @NotNull
   public String getKeyStroke() {
-    return "ctrl shift F9";
+    return "ctrl F9";
   }
 
   public void doUpdate(@NotNull AnActionEvent event) {

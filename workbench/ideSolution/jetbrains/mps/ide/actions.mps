@@ -23362,7 +23362,7 @@
     </node>
     <node role="keystroke" type="jetbrains.mps.lang.plugin.structure.KeyMapKeystroke" id="954487605981801036">
       <property name="keycode" value="VK_F9" />
-      <property name="modifiers" value="ctrl+shift" />
+      <property name="modifiers" value="ctrl" />
     </node>
     <node role="places" type="jetbrains.mps.lang.plugin.structure.EverywhereActionPlace" id="954487605981801037" />
     <node role="updateBlock" type="jetbrains.mps.lang.plugin.structure.DoUpdateBlock" id="954487605981816670">
@@ -23485,7 +23485,7 @@
     </node>
     <node role="keystroke" type="jetbrains.mps.lang.plugin.structure.KeyMapKeystroke" id="954487605981816748">
       <property name="keycode" value="VK_F9" />
-      <property name="modifiers" value="ctrl" />
+      <property name="modifiers" value="ctrl+shift" />
     </node>
     <node role="places" type="jetbrains.mps.lang.plugin.structure.EverywhereActionPlace" id="954487605981816749" />
     <node role="updateBlock" type="jetbrains.mps.lang.plugin.structure.DoUpdateBlock" id="954487605981816750">
