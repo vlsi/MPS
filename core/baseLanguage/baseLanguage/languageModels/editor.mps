@@ -15139,5 +15139,17 @@
       <node role="cellLayout" type="jetbrains.mps.lang.editor.structure.CellLayout_Horizontal" id="554301099359799255" />
     </node>
   </node>
+  <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" id="5497648299878491910">
+    <link role="conceptDeclaration" targetNodeId="17.5497648299878491908" resolveInfo="BaseVariableDeclarationReference" />
+    <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefCell" id="5497648299878491911">
+      <link role="relationDeclaration" targetNodeId="17.5497648299878491909" />
+      <node role="editorComponent" type="jetbrains.mps.lang.editor.structure.InlineEditorComponent" id="5497648299878491912">
+        <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Property" id="5497648299878491913">
+          <property name="readOnly" value="true" />
+          <link role="relationDeclaration" targetNodeId="18.1169194664001" />
+        </node>
+      </node>
+    </node>
+  </node>
 </model>
 

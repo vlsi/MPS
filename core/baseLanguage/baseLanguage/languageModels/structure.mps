@@ -3422,5 +3422,15 @@
       <link role="intfc" targetNodeId="1212170275853" resolveInfo="IValidIdentifier" />
     </node>
   </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="5497648299878491908">
+    <property name="name" value="BaseVariableReference" />
+    <link role="extends" targetNodeId="1068431790191" />
+    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="5497648299878491909">
+      <property name="metaClass" value="reference" />
+      <property name="role" value="baseVariableDeclaration" />
+      <property name="sourceCardinality" value="1" />
+      <link role="target" targetNodeId="4972933694980447171" resolveInfo="BaseVariableDeclaration" />
+    </node>
+  </node>
 </model>
 
