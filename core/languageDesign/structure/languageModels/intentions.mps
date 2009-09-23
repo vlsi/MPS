@@ -226,6 +226,7 @@
                 <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="6895093993902318253">
                   <property name="metaClass" value="reference" />
                   <property name="role" value="role" />
+                  <property name="sourceCardinality" value="1" />
                   <link role="target" targetNodeId="2v.1133920641626" resolveInfo="BaseConcept" />
                   <node role="propertyAntiquotation$property_attribute$role" type="jetbrains.mps.lang.quotation.structure.PropertyAntiquotation" id="6895093993902318274">
                     <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="6895093993902318276">
