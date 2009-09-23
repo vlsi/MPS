@@ -28,7 +28,7 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895904d4(jetbrains.mps.build.packaging.constraints)" version="20" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895904c1(jetbrains.mps.buildlanguage.constraints)" version="32" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="1" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="3" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959028c(jetbrains.mps.lang.structure.constraints)" version="11" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" version="16" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895904de(jetbrains.mps.build.property.constraints)" version="0" />
@@ -1986,6 +1986,10 @@
             <node role="entry" type="jetbrains.mps.build.custommpsInternal.structure.MPSModule" id="1237544286717">
               <property name="id" value="18bc6592-03a6-4e29-a83a-7ff23bde13ba" />
               <property name="name" value="jetbrains.mps.lang.editor" />
+            </node>
+            <node role="entry" type="jetbrains.mps.build.custommpsInternal.structure.MPSModule" id="6933674372315272470">
+              <property name="id" value="d568f86b-af37-4d5b-8d74-867bd13f2ff4" />
+              <property name="name" value="jetbrains.mps.editor.runtime" />
             </node>
             <node role="entry" type="jetbrains.mps.build.custommpsInternal.structure.MPSModule" id="1237544294346">
               <property name="id" value="64d34fcd-ad02-4e73-aff8-a581124c2e30" />
