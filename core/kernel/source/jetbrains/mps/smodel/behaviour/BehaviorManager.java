@@ -139,7 +139,7 @@ public final class BehaviorManager implements ApplicationComponent {
             List<InterfaceConceptReference> references = conceptDeclaration.getImplementses();
             for (InterfaceConceptReference reference : references) {
               InterfaceConceptDeclaration intfc = reference.getIntfc();
-              assert intfc != null;
+              if (intfc == null) continue;
               newFrontier.add(intfc);
             }
             ConceptDeclaration parentConcept = conceptDeclaration.getExtends();
@@ -151,7 +151,7 @@ public final class BehaviorManager implements ApplicationComponent {
             List<InterfaceConceptReference> references = interfaceConcept.getExtendses();
             for (InterfaceConceptReference reference : references) {
               InterfaceConceptDeclaration intfc = reference.getIntfc();
-              assert intfc != null;
+              if (intfc == null) continue;
               newFrontier.add(intfc);              
             }
           }
