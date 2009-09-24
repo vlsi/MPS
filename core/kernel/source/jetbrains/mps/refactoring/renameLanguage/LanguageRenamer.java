@@ -187,6 +187,10 @@ public class LanguageRenamer {
   }
 
   public static class MyRefactoring extends AbstractLoggableRefactoring {
+    public boolean doesUpdateModel() {
+      return true;
+    }
+
     public void updateModel(SModel model, RefactoringContext refactoringContext) {
       refactoringContext.updateModelWithMaps(model);
     }
