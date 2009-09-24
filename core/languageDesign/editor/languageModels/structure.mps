@@ -4261,11 +4261,11 @@
     <property name="package" value="Stylesheet" />
     <property name="name" value="ParametersInformationStyleClassItem" />
     <link role="extends" targetNodeId="1186402475462" resolveInfo="StyleClassItem" />
-    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="7667276221847632137">
-      <property name="metaClass" value="aggregation" />
+    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="8863456892852949148">
+      <property name="metaClass" value="reference" />
       <property name="role" value="parametersInformation" />
       <property name="sourceCardinality" value="1" />
-      <link role="target" targetNodeId="7667276221847612622" resolveInfo="ParametersInformation" />
+      <link role="target" targetNodeId="7667276221847612622" resolveInfo="ParametersInformationQuery" />
     </node>
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="7667276221847632140">
       <property name="value" value="parameters-information" />
@@ -4275,6 +4275,7 @@
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="7667276221847612622">
     <property name="package" value="QueryFunction" />
     <property name="name" value="ParametersInformationQuery" />
+    <property name="rootable" value="true" />
     <link role="extends" targetNodeId="3.1133920641626" resolveInfo="BaseConcept" />
     <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="7667276221847612623">
       <property name="metaClass" value="aggregation" />
@@ -4293,6 +4294,9 @@
       <property name="role" value="isMethodCurrent" />
       <property name="sourceCardinality" value="1" />
       <link role="target" targetNodeId="6419604448124516209" resolveInfo="QueryFunction_IsMethodCurrent" />
+    </node>
+    <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="4755152624708547702">
+      <link role="intfc" targetNodeId="3.1169194658468" resolveInfo="INamedConcept" />
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="7667276221847612943">

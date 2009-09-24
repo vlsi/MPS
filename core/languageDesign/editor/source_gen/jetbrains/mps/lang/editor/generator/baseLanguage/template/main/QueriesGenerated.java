@@ -655,6 +655,10 @@ public class QueriesGenerated {
     return SPropertyOperations.getBoolean(_context.getNode(), "runInCommand");
   }
 
+  public static Object propertyMacro_GetPropertyValue_4755152624710446386(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return SPropertyOperations.getString(_context.getNode(), "name");
+  }
+
   public static Object propertyMacro_GetPropertyValue_5170495790389308440(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return QueriesUtil.getUnicName(EditorCellModel_Behavior.call_createCellId_1216737839993(_context.getNode(), _context), SNodeOperations.getContainingRoot(_context.getNode()), _context);
   }
@@ -1026,6 +1030,10 @@ public class QueriesGenerated {
 
   public static Object referenceMacro_GetReferent_7533883740977706824(final IOperationContext operationContext, final ReferenceMacroContext _context) {
     return QueriesUtil.getGeneratedClassByAncestor(SLinkOperations.getTarget(_context.getNode(), "query", true), _context);
+  }
+
+  public static Object referenceMacro_GetReferent_8863456892853003386(final IOperationContext operationContext, final ReferenceMacroContext _context) {
+    return SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "parametersInformation", false), "name");
   }
 
   public static boolean ifMacro_Condition_1168384460946(final IOperationContext operationContext, final IfMacroContext _context) {
@@ -1544,14 +1552,6 @@ public class QueriesGenerated {
     return SLinkOperations.getTarget(_context.getNode(), "body", true);
   }
 
-  public static SNode sourceNodeQuery_671290755173947148(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return SLinkOperations.getTarget(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "parametersInformation", true), "methods", true), "body", true);
-  }
-
-  public static SNode sourceNodeQuery_671290755174411983(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return SLinkOperations.getTarget(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "parametersInformation", true), "presentation", true), "body", true);
-  }
-
   public static SNode sourceNodeQuery_996730828436727092(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "ifTrueCellModel", true);
   }
@@ -1600,16 +1600,24 @@ public class QueriesGenerated {
     return SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "cellProvider", true), "body", true);
   }
 
+  public static SNode sourceNodeQuery_4755152624710446323(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "methods", true), "body", true);
+  }
+
+  public static SNode sourceNodeQuery_4755152624710446344(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "presentation", true), "body", true);
+  }
+
+  public static SNode sourceNodeQuery_4755152624710446367(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "isMethodCurrent", true), "body", true);
+  }
+
   public static SNode sourceNodeQuery_5170495790389308644(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "actionMap", false);
   }
 
   public static SNode sourceNodeQuery_5170495790389308678(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "keyMap", false);
-  }
-
-  public static SNode sourceNodeQuery_6419604448124856227(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return SLinkOperations.getTarget(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "parametersInformation", true), "isMethodCurrent", true), "body", true);
   }
 
   public static SNode sourceNodeQuery_7533883740977706405(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {

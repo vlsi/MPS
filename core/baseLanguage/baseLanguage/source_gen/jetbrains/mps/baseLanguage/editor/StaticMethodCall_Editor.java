@@ -34,6 +34,10 @@ public class StaticMethodCall_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_7119_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_7119_0");
+    {
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.PARAMETERS_INFORMATION, new BaseMethodParameterInformationQuery());
+    }
     editorCell.addEditorCell(this.createRefCell_7119_1(editorContext, node));
     editorCell.addEditorCell(this.createConstant_7119_0(editorContext, node));
     editorCell.addEditorCell(this.createCollection_7119_1(editorContext, node));

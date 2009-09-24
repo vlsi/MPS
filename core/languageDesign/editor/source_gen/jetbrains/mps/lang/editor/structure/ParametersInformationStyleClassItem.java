@@ -16,11 +16,11 @@ public class ParametersInformationStyleClassItem extends StyleClassItem {
   }
 
   public ParametersInformationQuery getParametersInformation() {
-    return (ParametersInformationQuery)this.getChild(ParametersInformationQuery.class, ParametersInformationStyleClassItem.PARAMETERS_INFORMATION);
+    return (ParametersInformationQuery)this.getReferent(ParametersInformationQuery.class, ParametersInformationStyleClassItem.PARAMETERS_INFORMATION);
   }
 
   public void setParametersInformation(ParametersInformationQuery node) {
-    super.setChild(ParametersInformationStyleClassItem.PARAMETERS_INFORMATION, node);
+    super.setReferent(ParametersInformationStyleClassItem.PARAMETERS_INFORMATION, node);
   }
 
   public static ParametersInformationStyleClassItem newInstance(SModel sm, boolean init) {
