@@ -190,18 +190,21 @@
     <node role="canBeChild" type="jetbrains.mps.lang.constraints.structure.ConstraintFunction_CanBeAChild" id="1216118089593">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1216118089594">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="4972933694980428024">
-          <node role="expression" type="jetbrains.mps.baseLanguage.structure.NotEqualsExpression" id="4972933694980428025">
-            <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="4972933694980428026" />
-            <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="4972933694980428027">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="478744034994492666">
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="4972933694980428027">
               <node role="operand" type="jetbrains.mps.lang.constraints.structure.ConstraintFunctionParameter_parentNode" id="4972933694980428028" />
               <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_GetAncestorOperation" id="4972933694980428029">
-                <node role="parameter" type="jetbrains.mps.lang.smodel.structure.OperationParm_Concept" id="4972933694980428030">
-                  <node role="conceptArgument" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" id="4972933694980428031">
-                    <link role="conceptDeclaration" targetNodeId="1.1189693812263" resolveInfo="OldRefactoring" />
+                <node role="parameter" type="jetbrains.mps.lang.smodel.structure.OperationParm_ConceptList" id="478744034994492662">
+                  <node role="concept" type="jetbrains.mps.lang.smodel.structure.ConceptReference" id="478744034994492663">
+                    <link role="concept" targetNodeId="1.1189693812263" resolveInfo="OldRefactoring" />
+                  </node>
+                  <node role="concept" type="jetbrains.mps.lang.smodel.structure.ConceptReference" id="478744034994492665">
+                    <link role="concept" targetNodeId="1.6895093993902236229" resolveInfo="Refactoring" />
                   </node>
                 </node>
               </node>
             </node>
+            <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_IsNotNullOperation" id="478744034994492670" />
           </node>
         </node>
       </node>

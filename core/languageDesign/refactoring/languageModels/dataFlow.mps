@@ -5,6 +5,7 @@
   <language namespace="7fa12e9c-b949-4976-b4fa-19accbc320b4(jetbrains.mps.lang.dataFlow)" />
   <language namespace="7866978e-a0f0-4cc7-81bc-4d213d9375e1(jetbrains.mps.lang.smodel)" />
   <language namespace="f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)" />
+  <language namespace="83888646-71ce-4f1c-9c53-c54016f6ad4f(jetbrains.mps.baseLanguage.collections)" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590377(jetbrains.mps.lang.dataFlow.constraints)" version="4" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902fb(jetbrains.mps.lang.smodel.constraints)" version="21" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" version="16" />
@@ -129,6 +130,32 @@
             <node role="operand" type="jetbrains.mps.lang.dataFlow.structure.NodeParameter" id="6528618226609613342" />
             <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="6528618226609613347">
               <link role="link" targetNodeId="1.1199620651934" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.dataFlow.structure.DataFlowBuilderDeclaration" id="478744034994505060">
+    <property name="package" value="RefDecl.Parameters" />
+    <link role="conceptDeclaration" targetNodeId="1.6895093993902311015" resolveInfo="AskStatement" />
+    <node role="builderBlock" type="jetbrains.mps.lang.dataFlow.structure.BuilderBlock" id="478744034994505061">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="478744034994505062">
+        <node role="statement" type="jetbrains.mps.baseLanguage.collections.structure.ForEachStatement" id="478744034994505074">
+          <node role="variable" type="jetbrains.mps.baseLanguage.collections.structure.ForEachVariable" id="478744034994505075">
+            <property name="name" value="parameter" />
+          </node>
+          <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="478744034994505077">
+            <node role="statement" type="jetbrains.mps.lang.dataFlow.structure.EmitReadStatement" id="478744034994505083">
+              <node role="variable" type="jetbrains.mps.baseLanguage.collections.structure.ForEachVariableReference" id="478744034994505085">
+                <link role="variable" targetNodeId="478744034994505075" resolveInfo="parameter" />
+              </node>
+            </node>
+          </node>
+          <node role="inputSequence" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="478744034994505079">
+            <node role="operand" type="jetbrains.mps.lang.dataFlow.structure.NodeParameter" id="478744034994505080" />
+            <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkListAccess" id="478744034994505081">
+              <link role="link" targetNodeId="1.6895093993902311020" />
             </node>
           </node>
         </node>

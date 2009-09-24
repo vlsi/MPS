@@ -3143,12 +3143,6 @@
       <node role="templateFragment$attribute" type="jetbrains.mps.lang.generator.structure.TemplateFragment" id="1192803829369" />
     </node>
   </node>
-  <node type="jetbrains.mps.lang.generator.structure.TemplateSwitch" id="1192804187738">
-    <property name="name" value="Use_FilterCondition" />
-    <node role="defaultConsequence" type="jetbrains.mps.lang.generator.structure.TemplateDeclarationReference" id="1192804218364">
-      <link role="template" targetNodeId="1192803360232" resolveInfo="FilterCondition" />
-    </node>
-  </node>
   <node type="jetbrains.mps.lang.generator.structure.TemplateDeclaration" id="1197382724363">
     <property name="name" value="reduce_UpdateModelByDefaultOperation" />
     <property name="package" value="RefDecl.Methods.UpdateModel" />
