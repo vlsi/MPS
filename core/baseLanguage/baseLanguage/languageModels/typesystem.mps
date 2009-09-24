@@ -18442,5 +18442,35 @@
       <link role="concept" targetNodeId="1.1068431474542" resolveInfo="VariableDeclaration" />
     </node>
   </node>
+  <node type="jetbrains.mps.lang.typesystem.structure.InferenceRule" id="478744034994496655">
+    <property name="name" value="typeof_BaseVariableReference" />
+    <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="478744034994496656">
+      <node role="statement" type="jetbrains.mps.lang.typesystem.structure.CreateEquationStatement" id="478744034994504839">
+        <node role="rightExpression" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause" id="478744034994504843">
+          <node role="normalType" type="jetbrains.mps.lang.typesystem.structure.TypeOfExpression" id="478744034994504844">
+            <node role="term" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="478744034994504847">
+              <node role="operand" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference" id="478744034994504846">
+                <link role="applicableNode" targetNodeId="478744034994496657" resolveInfo="reference" />
+              </node>
+              <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="478744034994504851">
+                <link role="link" targetNodeId="1.5497648299878491909" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="leftExpression" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause" id="478744034994504842">
+          <node role="normalType" type="jetbrains.mps.lang.typesystem.structure.TypeOfExpression" id="478744034994504836">
+            <node role="term" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference" id="478744034994504838">
+              <link role="applicableNode" targetNodeId="478744034994496657" resolveInfo="reference" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="applicableNode" type="jetbrains.mps.lang.typesystem.structure.ConceptReference" id="478744034994496657">
+      <property name="name" value="reference" />
+      <link role="concept" targetNodeId="1.5497648299878491908" resolveInfo="BaseVariableReference" />
+    </node>
+  </node>
 </model>
 
