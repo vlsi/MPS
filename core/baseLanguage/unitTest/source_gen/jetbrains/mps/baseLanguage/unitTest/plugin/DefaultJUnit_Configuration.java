@@ -28,8 +28,8 @@ import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.MPSProjectHolder;
-import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.project.GlobalScope;
@@ -136,6 +136,7 @@ public class DefaultJUnit_Configuration extends BaseRunConfig {
           };
 
           final Wrappers._T<Process> process = new Wrappers._T<Process>(null);
+          final List<SNode> all = new ArrayList<SNode>();
           ModelAccess.instance().runReadAction(new Runnable() {
             public void run() {
               if (DefaultJUnit_Configuration.this.getStateObject().type != null) {
@@ -163,9 +164,12 @@ public class DefaultJUnit_Configuration extends BaseRunConfig {
                   }
                 }
                 runComponent.setTestCaseAndMethod(context, tests, methods);
-                List<SNode> all = new ArrayList<SNode>();
                 ListSequence.fromList(all).addSequence(ListSequence.fromList(tests));
                 ListSequence.fromList(all).addSequence(ListSequence.fromList(methods));
+                testRunner.value.setConfigParameters(DefaultJUnit_Configuration.this.getStateObject().myParams);
+                if (DefaultJUnit_Configuration.this.getStateObject().myParams.getUseAlternativeJRE()) {
+                  testRunner.value.setJavaHomePath(DefaultJUnit_Configuration.this.getStateObject().myParams.getAlternativeJRE());
+                }
                 testRunner.value.run(all);
                 process.value = testRunner.value.getProcess();
               }
@@ -174,7 +178,7 @@ public class DefaultJUnit_Configuration extends BaseRunConfig {
 
           if (process.value != null) {
             ProcessHandler processHandler = new DefaultJavaProcessHandler(process.value, "Test", Charset.defaultCharset());
-            runComponent.onStart(processHandler);
+            runComponent.onStart(processHandler, ListSequence.fromList(all).count());
             handler = processHandler;
           }
         }

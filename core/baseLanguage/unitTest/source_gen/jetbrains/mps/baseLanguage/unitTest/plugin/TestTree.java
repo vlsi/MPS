@@ -47,6 +47,14 @@ public class TestTree extends MPSTree {
     this.rebuildNow();
   }
 
+  public int getMethodCount() {
+    int result = 0;
+    for (List<SNode> values : MapSequence.fromMap(this.tests).values()) {
+      result = result + ListSequence.fromList(values).count();
+    }
+    return result;
+  }
+
   public TestCaseTreeNode get(String className) {
     return this.map.get(className);
   }

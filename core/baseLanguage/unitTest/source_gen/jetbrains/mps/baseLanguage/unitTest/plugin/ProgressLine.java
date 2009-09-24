@@ -9,6 +9,7 @@ import java.awt.GridLayout;
 import java.awt.GridBagLayout;
 import java.awt.GridBagConstraints;
 import java.awt.Insets;
+import jetbrains.mps.baseLanguage.unitTest.runtime.TestEvent;
 import com.intellij.execution.process.ProcessHandler;
 import com.intellij.execution.process.ProcessAdapter;
 import com.intellij.execution.process.ProcessEvent;
@@ -26,14 +27,25 @@ public class ProgressLine extends JPanel {
     final JPanel progress = new JPanel(new GridBagLayout());
     this.add(progress);
     progress.add(this.progressBar, new GridBagConstraints(0, 0, 0, 0, 1, 1, GridBagConstraints.CENTER, GridBagConstraints.HORIZONTAL, new Insets(0, 0, 0, 0), 0, 0));
-  }
-
-  public void setModel() {
     this.testsBuilt = true;
     this.progressBar.setColor(ColorProgressBar.GREEN);
   }
 
-  public void onProcessStarted(final ProcessHandler processHandler) {
+  public void onEvent(TestEvent event) {
+    String token = event.getToken();
+    if (token.equals(TestEvent.END_TEST_PREFIX)) {
+      this.stateInfo.onComplete();
+    } else if (token.equals(TestEvent.ERROR_TEST_PREFIX) || token.equals(TestEvent.ERROR_TEST_SUFFIX)) {
+      this.stateInfo.onDefect();
+      this.progressBar.setColor(ColorProgressBar.RED);
+    }
+    this.stateInfo.setTestName(event.getTestMethodName());
+    this.progressBar.setFraction(this.stateInfo.getCompletedPercent());
+    this.stateInfo.updateLabel(this.state);
+  }
+
+  public void onProcessStarted(final ProcessHandler processHandler, int total) {
+    this.stateInfo.setTotal(total);
     if (this.testsBuilt) {
       return;
     }
@@ -62,12 +74,35 @@ public class ProgressLine extends JPanel {
     public StateInfo() {
     }
 
-    public void updateCounters() {
+    public void onComplete() {
+      this.completed++ ;
     }
-  }
 
-  private class TestProgressListener {
-    public TestProgressListener() {
+    public void onDefect() {
+      this.defects++ ;
+      this.completed++ ;
+    }
+
+    public void setTestName(String name) {
+      this.testName = name;
+    }
+
+    public void setTotal(int total) {
+      this.total = total;
+    }
+
+    public double getCompletedPercent() {
+      return (double)this.completed / (double)this.total;
+    }
+
+    public void updateLabel(final JLabel label) {
+      String testCount;
+      if (this.defects > 0) {
+        testCount = " Failed: " + this.defects + " ";
+      } else {
+        testCount = " Terminated: " + this.completed + " of " + this.total;
+      }
+      label.setText(testCount);
     }
   }
 }

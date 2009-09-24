@@ -472,16 +472,7 @@ public class JUnitConfigEditor extends JPanel {
         if (myThis.getModule() != null) {
           config.getStateObject().module = myThis.getModule().getModuleFqName();
         }
-        JUnitRunTypes type = null;
-        if (myThis.myIsModule0.isSelected()) {
-          type = JUnitRunTypes.MODULE;
-        } else if (myThis.myIsModel0.isSelected()) {
-          type = JUnitRunTypes.MODEL;
-        } else if (myThis.myIsClass0.isSelected()) {
-          type = JUnitRunTypes.TESTCLASS;
-        } else if (myThis.myIsMethod0.isSelected()) {
-          type = JUnitRunTypes.METHOD;
-        }
+        JUnitRunTypes type = JUnitRunTypes.getType(myThis.myIsModule0.isSelected(), myThis.myIsModel0.isSelected(), myThis.myIsClass0.isSelected(), myThis.myIsMethod0.isSelected());
         if (type != null) {
           config.getStateObject().type = type;
         }
