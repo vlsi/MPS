@@ -721,24 +721,26 @@ public class Language extends AbstractModule {
     //todo {--end} for compatibility with old refactorings
 
     SModel refactoringsModel = getRefactoringsModelDescriptor().getSModel();
-    String packageName = refactoringsModel.getLongName();
-    for (Refactoring refactoring : refactoringsModel.getRootsAdapters(Refactoring.class)) {
-      try {
-        String fqName = packageName + "." + refactoring.getName();
-        Class<IRefactoring> cls = getClass(fqName);
-        SNodePointer pointer = new SNodePointer(refactoring.getNode());
-        if (cls == null) {
-          if (!myNotFoundRefactorings.contains(pointer)) {
-            LOG.error("Can't find " + fqName);
-            myNotFoundRefactorings.add(pointer);
+    if (refactoringsModel!=null){
+      String packageName = refactoringsModel.getLongName();
+      for (Refactoring refactoring : refactoringsModel.getRootsAdapters(Refactoring.class)) {
+        try {
+          String fqName = packageName + "." + refactoring.getName();
+          Class<IRefactoring> cls = getClass(fqName);
+          SNodePointer pointer = new SNodePointer(refactoring.getNode());
+          if (cls == null) {
+            if (!myNotFoundRefactorings.contains(pointer)) {
+              LOG.error("Can't find " + fqName);
+              myNotFoundRefactorings.add(pointer);
+            }
+            continue;
           }
-          continue;
+          Constructor<IRefactoring> constructor = cls.getConstructor();
+          constructor.setAccessible(false);
+          result.add(constructor.newInstance());
+        } catch (Throwable t) {
+          LOG.error(t);
         }
-        Constructor<IRefactoring> constructor = cls.getConstructor();
-        constructor.setAccessible(false);
-        result.add(constructor.newInstance());
-      } catch (Throwable t) {
-        LOG.error(t);
       }
     }
 
