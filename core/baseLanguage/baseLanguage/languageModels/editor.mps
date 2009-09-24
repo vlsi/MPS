@@ -4583,6 +4583,7 @@
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1116615336905">
         <property name="text" value="class" />
+        <property name="attractsFocus" value="1" />
         <link role="styleClass" targetNodeId="1186415544875" resolveInfo="KeyWord" />
       </node>
       <node role="cellLayout" type="jetbrains.mps.lang.editor.structure.CellLayout_Indent" id="1237472816890" />
