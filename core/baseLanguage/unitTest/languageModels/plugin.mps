@@ -373,6 +373,15 @@
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="1208270545572">
     <property name="name" value="JUnitTestViewComponent" />
     <property name="package" value="tool" />
+    <node role="staticField" type="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" id="1074418013501318445">
+      <property name="isFinal" value="true" />
+      <property name="name" value="DEVIDER_LOCATION" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PrivateVisibility" id="1074418013501318446" />
+      <node role="type" type="jetbrains.mps.baseLanguage.structure.DoubleType" id="1074418013501318467" />
+      <node role="initializer" type="jetbrains.mps.baseLanguage.structure.FloatingPointConstant" id="1074418013501318470">
+        <property name="value" value="0.35" />
+      </node>
+    </node>
     <node role="staticMethod" type="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" id="5928813260156624671">
       <property name="name" value="getLanguage" />
       <node role="returnType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="5928813260156624693">
@@ -700,6 +709,22 @@
                 <link role="fieldDeclaration" targetNodeId="1210678810416" resolveInfo="toolSplitPane" />
               </node>
               <node role="operand" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="1210678850646" />
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1074418013501160869">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1074418013501160873">
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1074418013501160870">
+              <node role="operation" type="jetbrains.mps.baseLanguage.structure.FieldReferenceOperation" id="1074418013501160871">
+                <link role="fieldDeclaration" targetNodeId="1210678810416" resolveInfo="toolSplitPane" />
+              </node>
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="1074418013501160872" />
+            </node>
+            <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1074418013501160877">
+              <link role="baseMethodDeclaration" targetNodeId="7.~JSplitPane.setDividerLocation(double):void" resolveInfo="setDividerLocation" />
+              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalStaticFieldReference" id="1074418013501319391">
+                <link role="variableDeclaration" targetNodeId="1074418013501318445" resolveInfo="DEVIDER_LOCATION" />
+              </node>
             </node>
           </node>
         </node>
@@ -4427,7 +4452,7 @@
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1208285478273">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1208285478274">
             <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1208285478275">
-              <link role="baseMethodDeclaration" targetNodeId="11.~MPSTreeNode.updatePresentation():void" resolveInfo="updatePresentation" />
+              <link role="baseMethodDeclaration" targetNodeId="1208285478286" resolveInfo="updatePresentation" />
             </node>
             <node role="operand" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="1208285478276" />
           </node>
