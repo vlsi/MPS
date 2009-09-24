@@ -5,11 +5,14 @@ package jetbrains.mps.baseLanguage.unitTest.plugin;
 import javax.swing.JPanel;
 import com.intellij.openapi.progress.util.ColorProgressBar;
 import javax.swing.JLabel;
+import java.util.Set;
+import jetbrains.mps.baseLanguage.unitTest.runtime.TestEvent;
+import jetbrains.mps.internal.collections.runtime.SetSequence;
+import java.util.HashSet;
 import java.awt.GridLayout;
 import java.awt.GridBagLayout;
 import java.awt.GridBagConstraints;
 import java.awt.Insets;
-import jetbrains.mps.baseLanguage.unitTest.runtime.TestEvent;
 import com.intellij.execution.process.ProcessHandler;
 import com.intellij.execution.process.ProcessAdapter;
 import com.intellij.execution.process.ProcessEvent;
@@ -20,6 +23,7 @@ public class ProgressLine extends JPanel {
   private final JLabel state = new JLabel("Starting...");
   private final ProgressLine.StateInfo stateInfo = new ProgressLine.StateInfo();
   private boolean testsBuilt = false;
+  private Set<TestEvent> events = SetSequence.fromSet(new HashSet<TestEvent>());
 
   public ProgressLine() {
     super(new GridLayout(1, 2));
@@ -31,7 +35,16 @@ public class ProgressLine extends JPanel {
     this.progressBar.setColor(ColorProgressBar.GREEN);
   }
 
+  public void setTotal(int total) {
+    this.stateInfo.setTotal(total);
+  }
+
   public void onEvent(TestEvent event) {
+    if (SetSequence.fromSet(this.events).contains(event)) {
+      return;
+    } else {
+      SetSequence.fromSet(this.events).addElement(event);
+    }
     String token = event.getToken();
     if (token.equals(TestEvent.END_TEST_PREFIX)) {
       this.stateInfo.onComplete();
@@ -39,13 +52,12 @@ public class ProgressLine extends JPanel {
       this.stateInfo.onDefect();
       this.progressBar.setColor(ColorProgressBar.RED);
     }
-    this.stateInfo.setTestName(event.getTestMethodName());
+    this.stateInfo.setTestName(event.getTestMethodName(), event.getTestCaseName());
     this.progressBar.setFraction(this.stateInfo.getCompletedPercent());
     this.stateInfo.updateLabel(this.state);
   }
 
-  public void onProcessStarted(final ProcessHandler processHandler, int total) {
-    this.stateInfo.setTotal(total);
+  public void onProcessStarted(final ProcessHandler processHandler) {
     if (this.testsBuilt) {
       return;
     }
@@ -80,10 +92,9 @@ public class ProgressLine extends JPanel {
 
     public void onDefect() {
       this.defects++ ;
-      this.completed++ ;
     }
 
-    public void setTestName(String name) {
+    public void setTestName(String name, String className) {
       this.testName = name;
     }
 
@@ -98,11 +109,11 @@ public class ProgressLine extends JPanel {
     public void updateLabel(final JLabel label) {
       String testCount;
       if (this.defects > 0) {
-        testCount = " Failed: " + this.defects + " ";
+        testCount = " Failed: " + this.defects;
       } else {
         testCount = " Terminated: " + this.completed + " of " + this.total;
       }
-      label.setText(testCount);
+      label.setText(testCount + "  " + this.testName);
     }
   }
 }

@@ -136,6 +136,7 @@ public class DefaultJUnit_Configuration extends BaseRunConfig {
           };
 
           final Wrappers._T<Process> process = new Wrappers._T<Process>(null);
+          final ProcessHandler[] progressHandler = new ProcessHandler[]{null};
           final List<SNode> all = new ArrayList<SNode>();
           ModelAccess.instance().runReadAction(new Runnable() {
             public void run() {
@@ -167,19 +168,21 @@ public class DefaultJUnit_Configuration extends BaseRunConfig {
                 ListSequence.fromList(all).addSequence(ListSequence.fromList(tests));
                 ListSequence.fromList(all).addSequence(ListSequence.fromList(methods));
                 testRunner.value.setConfigParameters(DefaultJUnit_Configuration.this.getStateObject().myParams);
-                if (DefaultJUnit_Configuration.this.getStateObject().myParams.getUseAlternativeJRE()) {
+                if (DefaultJUnit_Configuration.this.getStateObject().myParams != null && DefaultJUnit_Configuration.this.getStateObject().myParams.getUseAlternativeJRE()) {
                   testRunner.value.setJavaHomePath(DefaultJUnit_Configuration.this.getStateObject().myParams.getAlternativeJRE());
                 }
                 testRunner.value.run(all);
                 process.value = testRunner.value.getProcess();
+                if (process.value != null) {
+                  progressHandler[0] = new DefaultJavaProcessHandler(process.value, "Test", Charset.defaultCharset());
+                }
               }
             }
           });
 
-          if (process.value != null) {
-            ProcessHandler processHandler = new DefaultJavaProcessHandler(process.value, "Test", Charset.defaultCharset());
-            runComponent.onStart(processHandler, ListSequence.fromList(all).count());
-            handler = processHandler;
+          if (progressHandler[0] != null) {
+            runComponent.onStart(progressHandler[0]);
+            handler = progressHandler[0];
           }
         }
         final JComponent finalConsoleComponent = consoleComponent;

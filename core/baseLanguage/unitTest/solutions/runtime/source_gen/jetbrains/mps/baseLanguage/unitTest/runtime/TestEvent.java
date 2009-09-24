@@ -71,6 +71,20 @@ public class TestEvent {
     return this.time;
   }
 
+  @Override
+  public boolean equals(Object p0) {
+    if (p0 == null || !(p0 instanceof TestEvent)) {
+      return false;
+    }
+    TestEvent event = (TestEvent)p0;
+    return event.token.equals(this.token) && event.testCaseName.equals(this.testCaseName) && event.testMethodName.equals(this.testMethodName);
+  }
+
+  @Override
+  public int hashCode() {
+    return this.token.hashCode() + 10 * this.testCaseName.hashCode() + 10 * this.testMethodName.hashCode();
+  }
+
   public static String isTestEvent(String messageString) {
     String token = null;
     for (String expectedToken : ListSequence.fromList(ALL_TOKENS)) {

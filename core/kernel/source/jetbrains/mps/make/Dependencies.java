@@ -22,9 +22,9 @@ class Dependencies {
   private Map<String, IModule> myModules = new HashMap<String, IModule>();
 
   public Dependencies(Collection<IModule> ms) {
-    for (IModule m : ms) {
+    /*for (IModule m : ms) {
       collectDependencies(m);
-    }
+    }*/
   }
 
   public Set<String> getAllDependencies(String fqName) {
