@@ -50,7 +50,6 @@ public class DiffReporter {
         if (testFile.exists() && testFile.canRead()) {
           oldContent = FileUtil.read(testFile);
           files.remove(fileName);
-         FileUtil.write(testFile, newContent);
         }
         final boolean created = oldContent == null && newContent != null;
         final String title = getDiffReportTitle(outputRoot, filePath, created, false);
