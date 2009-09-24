@@ -457,6 +457,10 @@ public class TypeCheckingContext {
     return myNodeTypesComponent;
   }
 
+  public NodeTypesComponent getBaseNodeTypesComponent() {
+    return myNodeTypesComponent;
+  }
+
   public NodeTypesComponent createTemporaryTypesComponent() {
     NodeTypesComponent component = myNodeTypesComponent.copy(this);
     myTemporaryComponentsStack.push(component);

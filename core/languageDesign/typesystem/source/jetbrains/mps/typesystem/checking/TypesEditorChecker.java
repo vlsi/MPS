@@ -48,8 +48,7 @@ public class TypesEditorChecker extends EditorCheckerAdapter {
 
   public Set<EditorMessage> createMessages(final SNode node, IOperationContext operationContext, List<SModelEvent> events, boolean wasCheckedOnce) {
     Set<EditorMessage> messages = new LinkedHashSet<EditorMessage>();
-    if (!wasCheckedOnce || hasNonPropertyDramaticalEvent(events)) {
-      if (!TypeChecker.getInstance().isCheckedRoot(node.getContainingRoot())) {
+      if (!wasCheckedOnce || !TypeChecker.getInstance().isCheckedRoot(node.getContainingRoot())) {
         try {
           TypeChecker.getInstance().checkRoot(node.getContainingRoot());
         } catch (Throwable t) {
@@ -58,13 +57,12 @@ public class TypesEditorChecker extends EditorCheckerAdapter {
           return messages;
         }
       }
-    }
 
 
     NodeTypesComponent typesComponent = getNodeTypesComponent(node);
     if (typesComponent != null) {
       //non-typesystem checks
-      if (!wasCheckedOnce || hasDramaticalEvent(events)) {
+      if (!wasCheckedOnce || !typesComponent.isCheckedNonTypesystem()) {
         try {
           typesComponent.applyNonTypesystemRulesToRoot(operationContext);
         } catch (Throwable t) {
@@ -112,15 +110,6 @@ public class TypesEditorChecker extends EditorCheckerAdapter {
     return messages;
   }
 
-  private boolean hasNonPropertyDramaticalEvent(List<SModelEvent> events) {
-    for (SModelEvent event : events) {
-      if (event instanceof SModelRootEvent || event instanceof SModelChildEvent || event instanceof SModelReferenceEvent) {
-        return true;
-      }
-    }
-    return false;
-  }
-
   private NodeTypesComponent getNodeTypesComponent(SNode node) {
     NodeTypesComponent typesComponent = NodeTypesComponentsRepository.getInstance().
       createNodeTypesComponent(node.getContainingRoot());
@@ -138,6 +127,10 @@ public class TypesEditorChecker extends EditorCheckerAdapter {
 
   protected boolean isPropertyEventDramatical(SModelPropertyEvent event) {
     return true;
+  }
+
+  public boolean hasDramaticalEvent(List<SModelEvent> events) {
+    return true; //processed in another place
   }
 
   public void dispose() {

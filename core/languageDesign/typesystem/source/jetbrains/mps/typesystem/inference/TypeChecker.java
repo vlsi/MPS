@@ -51,8 +51,6 @@ public class TypeChecker implements ApplicationComponent {
 
   private Set<SNode> myCheckedRoots = new WeakSet<SNode>();
 
-  private Map<SNode, WeakSet<SNode>> myNodesToDependentRoots = new WeakHashMap<SNode, WeakSet<SNode>>();
-
   private MySModelCommandListener myListener = new MySModelCommandListener();
 
   private SubtypingManager mySubtypingManager;
@@ -130,7 +128,6 @@ public class TypeChecker implements ApplicationComponent {
   }
 
   public void clearForReload() {
-    myNodesToDependentRoots.clear();
     myRulesManager.clear();
     myCheckedRoots.clear();
   }
@@ -168,8 +165,16 @@ public class TypeChecker implements ApplicationComponent {
     return null;
   }
 
-  public boolean isCheckedRoot(SNode node) {
-    return myCheckedRoots.contains(node);
+  public boolean isCheckedRoot(SNode node) { 
+    TypeCheckingContext context = NodeTypesComponentsRepository.getInstance().getTypeCheckingContext(node);
+    if (context == null) {
+      return false;
+    }
+    if (!myCheckedRoots.contains(node)) {
+      return false;
+    }
+    NodeTypesComponent baseNodeTypesComponent = context.getBaseNodeTypesComponent();
+    return baseNodeTypesComponent.isChecked();
   }
 
   public void checkRoot(SNode node) {
@@ -204,36 +209,12 @@ public class TypeChecker implements ApplicationComponent {
   }
 
   public void checkWithinRoot(SNode node, Runnable checkingAction) {
-
     try {
-      MyReadAccessListener listener = new MyReadAccessListener();
-      NodeReadAccessCaster.setNodeAccessListener(listener);
       checkingAction.run();
-
-      synchronized (listener.myLock) {
-        // We need to copy collection, because call node.getContainingRoot will eventually trigger
-        // fireNodeReadAccess()
-        // which will cause to MyReadAccessListener.readAccess to be called
-        // for the same listener object (we talled NodeReadAccessCaster about our listener several lines earlier).
-        // ReadAccess will modify listener.myNodesToDependOn.
-        // That will lead to j.u.ConcurrentModificationException.
-        for (SNode nodeToDependOn : listener.getNodesToDependOn()) {
-          WeakSet<SNode> dependentRoots = myNodesToDependentRoots.get(nodeToDependOn);
-          if (dependentRoots == null) {
-            dependentRoots = new WeakSet<SNode>(1);
-            myNodesToDependentRoots.put(nodeToDependOn, dependentRoots);
-          }
-          dependentRoots.add(node.getContainingRoot());
-        }
-      }
-
       SModel model = node.getModel();
-      model.removeModelCommandListener(myListener);
       model.removeModelListener(myListener);
-      model.addModelCommandListener(myListener);
       model.addWeakSModelListener(myListener);
     } finally {
-      NodeReadAccessCaster.removeNodeAccessListener();
     }
   }
 
@@ -246,7 +227,7 @@ public class TypeChecker implements ApplicationComponent {
 
     NodeTypesComponent component = NodeTypesComponentsRepository.getInstance().
       getNodeTypesComponent(node.getContainingRoot());
-    if (!myCheckedRoots.contains(containingRoot) || component == null) {
+    if (!isCheckedRoot(containingRoot) || component == null) {
       final SNode[] result = new SNode[1];
       final NodeTypesComponent component1 = NodeTypesComponentsRepository.getInstance().createNodeTypesComponent(containingRoot);
       checkWithinRoot(node, new Runnable() {
@@ -283,7 +264,7 @@ public class TypeChecker implements ApplicationComponent {
       return myComputedTypesForCompletion.get(node);
     }
     TypeCheckingContext typeCheckingContext = NodeTypesComponentsRepository.getInstance().getTypeCheckingContext(node.getContainingRoot());
-    if (nodeIsNotChecked || !myCheckedRoots.contains(containingRoot) || typeCheckingContext == null) {
+    if (nodeIsNotChecked || !isCheckedRoot(containingRoot) || typeCheckingContext == null) {
       final SNode[] result = new SNode[1];
       typeCheckingContext = NodeTypesComponentsRepository.getInstance().createTypeCheckingContext(containingRoot);
       final TypeCheckingContext finalTypeCheckingContext = typeCheckingContext;
@@ -342,7 +323,7 @@ public class TypeChecker implements ApplicationComponent {
     if (containingRoot == null) return false;
     NodeTypesComponent component = NodeTypesComponentsRepository.getInstance().
       getNodeTypesComponent(node.getContainingRoot());
-    if (!myCheckedRoots.contains(containingRoot) || component == null) {
+    if (!isCheckedRoot(containingRoot) || component == null) {
       component = NodeTypesComponentsRepository.getInstance().
         createNodeTypesComponent(node.getContainingRoot());
       checkRoot(containingRoot);
@@ -432,68 +413,7 @@ public class TypeChecker implements ApplicationComponent {
     }
   }
 
-  private static class MyReadAccessListener implements INodeReadAccessListener {
-    protected HashSet<SNode> myNodesToDependOn = new HashSet<SNode>();
-    private final Object myLock = new Object();
-
-    public void readAccess(SNode node) {
-      synchronized(myLock) {
-        myNodesToDependOn.add(node);
-      }
-    }
-
-    public SNode[] getNodesToDependOn() {
-      synchronized(myLock) {
-        return myNodesToDependOn.toArray(new SNode[myNodesToDependOn.size()]);
-      }
-    }
-  }
-
-  private class MySModelCommandListener extends SModelAdapter implements SModelCommandListener {
-    private SModelEventVisitor myVisitor = new SModelEventVisitorAdapter() {
-      public void visitRootEvent(SModelRootEvent event) {
-        Set<SNode> dependentRoots = myNodesToDependentRoots.get(event.getRoot());
-        if (dependentRoots != null) {
-          myCheckedRoots.removeAll(dependentRoots);
-        }
-        myCheckedRoots.remove(event.getRoot());
-      }
-
-      public void visitChildEvent(SModelChildEvent event) {
-        Set<SNode> dependentRoots = myNodesToDependentRoots.get(event.getParent());
-        if (dependentRoots != null) {
-          myCheckedRoots.removeAll(dependentRoots);
-        }
-        myCheckedRoots.remove(event.getParent().getContainingRoot());
-      }
-
-      public void visitPropertyEvent(SModelPropertyEvent event) {
-        /*  Set<SNode> dependentRoots = myNodesToDependentRoots.get(event.getNode());
-        if (dependentRoots != null) {
-          myCheckedRoots.removeAll(dependentRoots);
-        }
-        myCheckedRoots.remove(event.getNode().getContainingRoot());*/
-      }
-
-      public void visitReferenceEvent(SModelReferenceEvent event) {
-        Set<SNode> dependentRoots = myNodesToDependentRoots.get(event.getReference().getSourceNode());
-        if (dependentRoots != null) {
-          myCheckedRoots.removeAll(dependentRoots);
-        }
-        myCheckedRoots.remove(event.getReference().getSourceNode().getContainingRoot());
-      }
-    };
-
-    public void eventsHappenedInCommand(List<SModelEvent> events) {
-      for (SModelEvent event : events) {
-        event.accept(myVisitor);
-      }
-    }
-
-    public void eventFired(SModelEvent event) {
-      if (CommandProcessor.getInstance().getCurrentCommand() != null) return;
-      event.accept(myVisitor);
-    }
+  private class MySModelCommandListener extends SModelAdapter  {
 
     public void modelReloaded(SModelDescriptor sm) {
       for (SNode root : new ArrayList<SNode>(myCheckedRoots)) {

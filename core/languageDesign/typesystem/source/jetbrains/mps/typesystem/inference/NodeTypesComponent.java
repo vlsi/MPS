@@ -103,6 +103,11 @@ public class NodeTypesComponent implements EditorMessageOwner {
 
   private Pair<SNode, NonTypesystemRule_Runtime> myNonTypesystemRuleAndNodeBeingChecked = null;
 
+  private boolean myInvalidationWasPerformedNT = false;
+  private boolean myInvalidationResultNT = false;
+   private boolean myInvalidationWasPerformed = false;
+  private boolean myInvalidationResult = false;
+
   // for diagnostics
   private Set<SNodePointer> myNotSkippedNodes = new HashSet<SNodePointer>(1);
 
@@ -307,6 +312,7 @@ public class NodeTypesComponent implements EditorMessageOwner {
     } finally {
       myNotSkippedNodes.clear();
       clearEquationManager();
+      myInvalidationWasPerformed = false;
     }
   }
 
@@ -627,6 +633,7 @@ public class NodeTypesComponent implements EditorMessageOwner {
     } finally {
       getTypeCheckingContext().setOperationContext(null);
       myIsNonTypesystemCheckingInProgress = false;
+      myInvalidationWasPerformedNT = false;
     }
   }
 
@@ -773,7 +780,11 @@ public class NodeTypesComponent implements EditorMessageOwner {
     return result;
   }
 
-  private void doInvalidateNonTypesystem() {
+  //returns true if something was invalidated
+  private boolean doInvalidateNonTypesystem() {
+    if (myInvalidationWasPerformedNT) {
+      return myInvalidationResultNT;
+    }
     Set<Pair<SNode, NonTypesystemRule_Runtime>> invalidatedNodesAndRules = new HashSet<Pair<SNode, NonTypesystemRule_Runtime>>();
     //nodes
     for (SNode node : myCurrentNodesToInvalidateNonTypesystem) {
@@ -832,6 +843,7 @@ public class NodeTypesComponent implements EditorMessageOwner {
       }
     }
 
+    boolean result = !invalidatedNodesAndRules.isEmpty();
     for (Pair<SNode, NonTypesystemRule_Runtime> nodeAndRule : invalidatedNodesAndRules) {
       myCheckedNodesNonTypesystem.remove(nodeAndRule);
       Map<NonTypesystemRule_Runtime, Set<IErrorReporter>> rulesAndErrors = myNodesAndNTRulesToErrors.get(nodeAndRule.o1);
@@ -851,9 +863,17 @@ public class NodeTypesComponent implements EditorMessageOwner {
     myCurrentPropertiesToInvalidateNonTypesystem.clear();
     myCurrentTypedTermsToInvalidateNonTypesystem.clear();
     myCacheWasCurrentlyRebuiltNonTypesystem = true;
+    myInvalidationWasPerformedNT = true;
+    myInvalidationResultNT = result;
+    return result;
   }
 
-  private void doInvalidateTypesystem() {
+  //returns true if something was invalidated
+  private boolean doInvalidateTypesystem() {
+    if (myInvalidationWasPerformed) {
+      return myInvalidationResult;
+    }
+    boolean result = false;
     Set<SNode> invalidatedNodes = new HashSet<SNode>();
     Set<SNode> newNodesToInvalidate = new HashSet<SNode>();
     Set<SNode> currentNodesToInvalidate = myCurrentNodesToInvalidate;
@@ -873,8 +893,12 @@ public class NodeTypesComponent implements EditorMessageOwner {
       currentNodesToInvalidate = newNodesToInvalidate;
       newNodesToInvalidate = new HashSet<SNode>();
     }
+    result = !invalidatedNodes.isEmpty();
     myCurrentNodesToInvalidate.clear();
     myCacheWasCurrentlyRebuiltTypesystem = false;
+    myInvalidationWasPerformed = true;
+    myInvalidationResult = result;
+    return result;
   }
 
   public void markNodeAsAffectedByRule(SNode node, String ruleModel, String ruleId) {
@@ -920,6 +944,18 @@ public class NodeTypesComponent implements EditorMessageOwner {
 
   public void setSlicer(ISlicer slicer) {
     mySlicer = slicer;
+  }
+
+  public boolean isChecked() {
+    return isCheckedTypesystem() && isCheckedNonTypesystem();
+  }
+
+  private boolean isCheckedTypesystem() {
+    return !doInvalidateTypesystem();
+  }
+
+  public boolean isCheckedNonTypesystem() {
+    return !doInvalidateNonTypesystem();
   }
 
   private class MyModelListener implements SModelCommandListener {
