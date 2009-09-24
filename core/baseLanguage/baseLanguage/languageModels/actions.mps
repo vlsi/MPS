@@ -425,14 +425,17 @@
                     </node>
                   </node>
                   <node role="operation" type="jetbrains.mps.lang.smodel.structure.Link_SetTargetOperation" id="1778632853271226024">
-                    <node role="linkTarget" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1778632853271226044">
-                      <node role="operand" type="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" id="1778632853271226040">
-                        <link role="concept" targetNodeId="1.1178549954367" resolveInfo="IVisible" />
-                        <node role="leftExpression" type="jetbrains.mps.lang.actions.structure.NodeSetupFunction_EnclosingNode" id="1778632853271226027" />
+                    <node role="linkTarget" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="3595464867508293752">
+                      <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1778632853271226044">
+                        <node role="operand" type="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" id="1778632853271226040">
+                          <link role="concept" targetNodeId="1.1178549954367" resolveInfo="IVisible" />
+                          <node role="leftExpression" type="jetbrains.mps.lang.actions.structure.NodeSetupFunction_EnclosingNode" id="1778632853271226027" />
+                        </node>
+                        <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1778632853271226049">
+                          <link role="link" targetNodeId="1.1178549979242" />
+                        </node>
                       </node>
-                      <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1778632853271226049">
-                        <link role="link" targetNodeId="1.1178549979242" />
-                      </node>
+                      <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_CopyOperation" id="3595464867508293757" />
                     </node>
                   </node>
                 </node>
@@ -521,14 +524,17 @@
                     </node>
                   </node>
                   <node role="operation" type="jetbrains.mps.lang.smodel.structure.Link_SetTargetOperation" id="1778632853271226059">
-                    <node role="linkTarget" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1778632853271226060">
-                      <node role="operand" type="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" id="1778632853271226061">
-                        <link role="concept" targetNodeId="1.1178549954367" resolveInfo="IVisible" />
-                        <node role="leftExpression" type="jetbrains.mps.lang.actions.structure.NodeSetupFunction_EnclosingNode" id="1778632853271226062" />
+                    <node role="linkTarget" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="3595464867508293744">
+                      <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1778632853271226060">
+                        <node role="operand" type="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" id="1778632853271226061">
+                          <link role="concept" targetNodeId="1.1178549954367" resolveInfo="IVisible" />
+                          <node role="leftExpression" type="jetbrains.mps.lang.actions.structure.NodeSetupFunction_EnclosingNode" id="1778632853271226062" />
+                        </node>
+                        <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1778632853271226063">
+                          <link role="link" targetNodeId="1.1178549979242" />
+                        </node>
                       </node>
-                      <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1778632853271226063">
-                        <link role="link" targetNodeId="1.1178549979242" />
-                      </node>
+                      <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_CopyOperation" id="3595464867508293749" />
                     </node>
                   </node>
                 </node>
@@ -597,14 +603,17 @@
                     </node>
                   </node>
                   <node role="operation" type="jetbrains.mps.lang.smodel.structure.Link_SetTargetOperation" id="1778632853271226094">
-                    <node role="linkTarget" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1778632853271226095">
-                      <node role="operand" type="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" id="1778632853271226096">
-                        <link role="concept" targetNodeId="1.1178549954367" resolveInfo="IVisible" />
-                        <node role="leftExpression" type="jetbrains.mps.lang.actions.structure.NodeSetupFunction_EnclosingNode" id="1778632853271226097" />
+                    <node role="linkTarget" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="3595464867508293760">
+                      <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1778632853271226095">
+                        <node role="operand" type="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" id="1778632853271226096">
+                          <link role="concept" targetNodeId="1.1178549954367" resolveInfo="IVisible" />
+                          <node role="leftExpression" type="jetbrains.mps.lang.actions.structure.NodeSetupFunction_EnclosingNode" id="1778632853271226097" />
+                        </node>
+                        <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1778632853271226098">
+                          <link role="link" targetNodeId="1.1178549979242" />
+                        </node>
                       </node>
-                      <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1778632853271226098">
-                        <link role="link" targetNodeId="1.1178549979242" />
-                      </node>
+                      <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_CopyOperation" id="3595464867508293765" />
                     </node>
                   </node>
                 </node>

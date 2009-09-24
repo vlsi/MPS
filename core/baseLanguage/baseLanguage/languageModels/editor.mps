@@ -15332,5 +15332,26 @@
       </node>
     </node>
   </node>
+  <node type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="3595464867508207000">
+    <node role="constructor" type="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" id="3595464867508207001">
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="3595464867508207002" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="3595464867508207003" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="3595464867508207004" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="3595464867508293533">
+    <node role="constructor" type="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" id="3595464867508293534">
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="3595464867508293535" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="3595464867508293536" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="3595464867508293537" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="3595464867508293694">
+    <node role="constructor" type="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" id="3595464867508293695">
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="3595464867508293696" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="3595464867508293697" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="3595464867508293698" />
+    </node>
+  </node>
 </model>
 
