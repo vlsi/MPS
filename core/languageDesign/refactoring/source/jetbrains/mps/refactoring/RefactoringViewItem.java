@@ -29,6 +29,7 @@ import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.refactoring.framework.RefactoringContext;
 import jetbrains.mps.refactoring.framework.RefactoringUtil;
+import jetbrains.mps.refactoring.framework.ILoggableRefactoring;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.workbench.MPSDataKeys;
 import org.jdom.Element;
@@ -113,7 +114,7 @@ public class RefactoringViewItem {
       myGenerateModelsCheckbox.setSelected(true);
       myButtonsPanel.add(myGenerateModelsCheckbox);
 
-      if (refactoringContext.getRefactoring().doesUpdateModel()) {
+      if (refactoringContext.getRefactoring() instanceof ILoggableRefactoring) {
         myIsLocalCheckbox = new JCheckBox("is local");
         myIsLocalCheckbox.setSelected(false);
         myButtonsPanel.add(myIsLocalCheckbox);
@@ -177,7 +178,7 @@ public class RefactoringViewItem {
 
   private void doRefactor() {
     if (myRefactoringContext!=null){
-      if (myRefactoringContext.getRefactoring().doesUpdateModel()) {
+      if (myRefactoringContext.getRefactoring() instanceof ILoggableRefactoring) {
         //noinspection ConstantConditions
         myRefactoringContext.setLocal(myIsLocalCheckbox.isSelected());
       }

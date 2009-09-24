@@ -24,6 +24,7 @@ import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.lang.core.scripts.SafeDelete;
 import jetbrains.mps.lang.structure.structure.ConceptDeclaration;
 import jetbrains.mps.refactoring.framework.GenericRefactoringAction;
+import jetbrains.mps.refactoring.framework.OldRefactoringAdapter;
 import jetbrains.mps.smodel.BaseAdapter;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SNode;
@@ -98,7 +99,7 @@ public class DeleteNodesHelper {
   }
 
   private void safeDelete(final IOperationContext context, final SNode node) {
-    final GenericRefactoringAction safeDeleteAction = new GenericRefactoringAction(new SafeDelete());
+    final GenericRefactoringAction safeDeleteAction = new GenericRefactoringAction(OldRefactoringAdapter.createAdapterFor(new SafeDelete()));
 
     DataContext dc = new DataContext() {
       private DataContext myRealContext = DataManager.getInstance().getDataContext();

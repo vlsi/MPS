@@ -1123,25 +1123,6 @@
           <property name="flag" value="false" />
         </node>
       </node>
-      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="2058726427123891206">
-        <property name="vertical" value="false" />
-        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem" id="2058726427123891207">
-          <property name="flag" value="false" />
-        </node>
-        <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="2058726427123891208">
-          <property name="text" value="refactor immediately on no usages:" />
-          <node role="styleItem" type="jetbrains.mps.lang.editor.structure.FontStyleStyleClassItem" id="2058726427123891209">
-            <property name="style" value="PLAIN" />
-          </node>
-          <node role="styleItem" type="jetbrains.mps.lang.editor.structure.ForegroundColorStyleClassItem" id="2058726427123891210">
-            <property name="color" value="DARK_BLUE" />
-          </node>
-        </node>
-        <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Property" id="2058726427123891211">
-          <link role="relationDeclaration" targetNodeId="1.6895093993902311013" resolveInfo="refactorImmediatelyIfNoUsages" />
-        </node>
-        <node role="cellLayout" type="jetbrains.mps.lang.editor.structure.CellLayout_Indent" id="2058726427123891212" />
-      </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode" id="2058726427123891198">
         <link role="relationDeclaration" targetNodeId="1.2058726427123468412" />
       </node>

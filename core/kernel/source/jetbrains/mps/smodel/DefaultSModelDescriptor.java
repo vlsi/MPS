@@ -26,6 +26,8 @@ import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.refactoring.PlayRefactoringsFlag;
 import jetbrains.mps.refactoring.framework.RefactoringContext;
 import jetbrains.mps.refactoring.framework.RefactoringHistory;
+import jetbrains.mps.refactoring.framework.IRefactoring;
+import jetbrains.mps.refactoring.framework.ILoggableRefactoring;
 import jetbrains.mps.smodel.event.EventUtil;
 import jetbrains.mps.smodel.event.SModelCommandListener;
 import jetbrains.mps.smodel.event.SModelEvent;
@@ -219,7 +221,14 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor {
       for (RefactoringContext refactoringContext : refactoringHistory.getRefactoringContexts()) {
         if (refactoringContext.getModelVersion() <= usedVersion) continue;
         result = true;
-        refactoringContext.getRefactoring().updateModel(mySModel, refactoringContext);
+
+
+        IRefactoring refactoring = refactoringContext.getRefactoring();
+        if (!(refactoring instanceof ILoggableRefactoring)){
+          LOG.error("Non-loggable refactoring was logged: "+refactoring.getClass().getName());
+        }else{
+          ((ILoggableRefactoring)refactoring).updateModel(mySModel, refactoringContext);
+        }
       }
       mySModel.updateImportedModelUsedVersion(modelDescriptor.getSModelReference(), currentVersion);
       IFile modelFile = modelDescriptor.getModelFile();

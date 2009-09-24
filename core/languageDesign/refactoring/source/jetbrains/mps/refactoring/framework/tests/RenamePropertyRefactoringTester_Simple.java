@@ -20,6 +20,7 @@ import jetbrains.mps.lang.structure.structure.ConceptDeclaration;
 import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.refactoring.framework.RefactoringContext;
+import jetbrains.mps.refactoring.framework.OldRefactoringAdapter;
 import jetbrains.mps.smodel.*;
 
 public class RenamePropertyRefactoringTester_Simple implements IRefactoringTester {
@@ -27,10 +28,10 @@ public class RenamePropertyRefactoringTester_Simple implements IRefactoringTeste
                                  final SModelDescriptor sandbox1,
                                  final SModelDescriptor sandbox2,
                                  final Language testRefactoringLanguage,
-                                 final Language testRefactoringTargetLanguage, Runnable continuation) {
+                                 final Language testRefactoringTargetLanguage) {
     System.err.println("preparing arguments for refactoring");
     RenameProperty renameProperty = new RenameProperty();
-    final RefactoringContext refactoringContext = new RefactoringContext(renameProperty);
+    final RefactoringContext refactoringContext = new RefactoringContext(OldRefactoringAdapter.createAdapterFor(renameProperty));
     refactoringContext.setCurrentOperationContext(project.createOperationContext());
     final String newPropertyName = "niceProperty";
 
@@ -48,7 +49,7 @@ public class RenamePropertyRefactoringTester_Simple implements IRefactoringTeste
     });
 
     System.err.println("executing a refactoring");
-    new RefactoringProcessor().doExecuteInTest(refactoringContext, continuation);
+    new RefactoringProcessor().doExecuteInTest(refactoringContext);
 
     final boolean[] result = new boolean[]{false};
     ThreadUtils.runInUIThreadAndWait(new Runnable() {

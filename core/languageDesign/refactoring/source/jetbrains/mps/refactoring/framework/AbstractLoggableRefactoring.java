@@ -17,9 +17,9 @@ package jetbrains.mps.refactoring.framework;
 
 import com.intellij.openapi.util.Computable;
 import jetbrains.mps.ide.findusages.model.SearchResults;
+import jetbrains.mps.project.DevKit;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.Solution;
-import jetbrains.mps.project.DevKit;
 import jetbrains.mps.smodel.*;
 
 import java.util.ArrayList;
@@ -28,7 +28,7 @@ import java.util.List;
 import java.util.Map;
 
 //do not merge this class with BaseGeneratedRefactoring - this is for compatibility
-public abstract class AbstractLoggableRefactoring implements ILoggableRefactoringOld {
+public abstract class AbstractLoggableRefactoring {
   public String getUserFriendlyName() {
     return null;
   }
@@ -73,7 +73,7 @@ public abstract class AbstractLoggableRefactoring implements ILoggableRefactorin
     return true;
   }
 
-  public boolean isOneTargetOnly(){
+  public boolean isOneTargetOnly() {
     return false;
   }
 
@@ -86,23 +86,19 @@ public abstract class AbstractLoggableRefactoring implements ILoggableRefactorin
   }
 
   public boolean isApplicableToModule(IModule module) {
-    if (getRefactoringTarget()==RefactoringTarget.SOLUTION){
+    if (getRefactoringTarget() == RefactoringTarget.SOLUTION) {
       return module instanceof Solution;
     }
-    if (getRefactoringTarget()==RefactoringTarget.LANGUAGE){
+    if (getRefactoringTarget() == RefactoringTarget.LANGUAGE) {
       return module instanceof Language;
     }
-    if (getRefactoringTarget()==RefactoringTarget.DEVKIT){
+    if (getRefactoringTarget() == RefactoringTarget.DEVKIT) {
       return module instanceof DevKit;
     }
     return false;
   }
 
   public boolean refactorImmediatelyIfNoUsages() {
-    return false;
-  }
-
-  public boolean isNonLocalByDefault(){
     return false;
   }
 

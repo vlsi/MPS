@@ -54,27 +54,39 @@
           <node role="variable" type="jetbrains.mps.baseLanguage.collections.structure.ForEachVariable" id="5003188907306244658">
             <property name="name" value="refactoring" />
           </node>
-          <node role="inputSequence" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="5003188907306244659">
-            <node role="operand" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="7464679235281554383">
-              <link role="baseMethodDeclaration" targetNodeId="2.~RefactoringUtil.getRefactorings(jetbrains.mps.refactoring.framework.RefactoringTarget):java.util.Map" resolveInfo="getRefactorings" />
-              <link role="classConcept" targetNodeId="2.~RefactoringUtil" resolveInfo="RefactoringUtil" />
-              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.EnumConstantReference" id="7464679235281554389">
-                <link role="enumClass" targetNodeId="2.~RefactoringTarget" resolveInfo="RefactoringTarget" />
-                <link role="enumConstantDeclaration" targetNodeId="2.~RefactoringTarget.NODE" resolveInfo="NODE" />
-              </node>
-            </node>
-            <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="5003188907306244661">
-              <link role="baseMethodDeclaration" targetNodeId="20.~Map.values():java.util.Collection" resolveInfo="values" />
-            </node>
+          <node role="inputSequence" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1909926480506228492">
+            <link role="baseMethodDeclaration" targetNodeId="2.~RefactoringUtil.getAllRefactorings():java.util.List" resolveInfo="getAllRefactorings" />
+            <link role="classConcept" targetNodeId="2.~RefactoringUtil" resolveInfo="RefactoringUtil" />
           </node>
           <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="5003188907306244662">
-            <node role="statement" type="jetbrains.mps.baseLanguage.structure.CommentedStatementsBlock" id="2512836976517921558">
-              <node role="statement" type="jetbrains.mps.lang.plugin.structure.AddElementStatement" id="7464679235281555548">
-                <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="7464679235281556586">
-                  <link role="baseMethodDeclaration" targetNodeId="7464679235281555556" resolveInfo="getActionForRefactoring" />
-                  <link role="classConcept" targetNodeId="7464679235281555550" resolveInfo="RefactoringHelper" />
-                  <node role="actualArgument" type="jetbrains.mps.baseLanguage.collections.structure.ForEachVariableReference" id="7464679235281556587">
-                    <link role="variable" targetNodeId="5003188907306244658" resolveInfo="refactoring" />
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1909926480506229857">
+              <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1909926480506229858">
+                <node role="statement" type="jetbrains.mps.lang.plugin.structure.AddElementStatement" id="1909926480506229896">
+                  <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1909926480506230995">
+                    <link role="baseMethodDeclaration" targetNodeId="7464679235281555556" resolveInfo="getActionForRefactoring" />
+                    <link role="classConcept" targetNodeId="7464679235281555550" resolveInfo="RefactoringHelper" />
+                    <node role="actualArgument" type="jetbrains.mps.baseLanguage.collections.structure.ForEachVariableReference" id="1909926480506230996">
+                      <link role="variable" targetNodeId="5003188907306244658" resolveInfo="refactoring" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+              <node role="condition" type="jetbrains.mps.baseLanguage.structure.EqualsExpression" id="1909926480506229885">
+                <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.EnumConstantReference" id="1909926480506229892">
+                  <link role="enumConstantDeclaration" targetNodeId="2.~IRefactoringTarget$TargetType.NODE" resolveInfo="NODE" />
+                  <link role="enumClass" targetNodeId="2.~IRefactoringTarget$TargetType" resolveInfo="IRefactoringTarget.TargetType" />
+                </node>
+                <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1909926480506229874">
+                  <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1909926480506229864">
+                    <node role="operand" type="jetbrains.mps.baseLanguage.collections.structure.ForEachVariableReference" id="1909926480506229861">
+                      <link role="variable" targetNodeId="5003188907306244658" resolveInfo="refactoring" />
+                    </node>
+                    <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1909926480506229870">
+                      <link role="baseMethodDeclaration" targetNodeId="2.~IRefactoring.getRefactoringTarget():jetbrains.mps.refactoring.framework.IRefactoringTarget" resolveInfo="getRefactoringTarget" />
+                    </node>
+                  </node>
+                  <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1909926480506229881">
+                    <link role="baseMethodDeclaration" targetNodeId="2.~IRefactoringTarget.getTarget():jetbrains.mps.refactoring.framework.IRefactoringTarget$TargetType" resolveInfo="getTarget" />
                   </node>
                 </node>
               </node>
@@ -139,8 +151,8 @@
       </node>
       <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="7464679235281555575">
         <property name="name" value="refactoring" />
-        <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="7464679235281555576">
-          <link role="classifier" targetNodeId="2.~ILoggableRefactoring" resolveInfo="ILoggableRefactoring" />
+        <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1909926480506230994">
+          <link role="classifier" targetNodeId="2.~IRefactoring" resolveInfo="IRefactoring" />
         </node>
       </node>
     </node>

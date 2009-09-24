@@ -7,7 +7,9 @@ public interface IRefactoring {
 
   Class getOverridenRefactoringClass();
 
-  boolean init();
+  IRefactoringTarget getRefactoringTarget();
+
+  boolean init(RefactoringContext refactoringContext);
 
   boolean isApplicable(RefactoringContext refactoringContext);
 

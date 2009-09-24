@@ -19,6 +19,7 @@ import jetbrains.mps.lang.structure.scripts.RenameConcept;
 import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.refactoring.framework.RefactoringContext;
+import jetbrains.mps.refactoring.framework.OldRefactoringAdapter;
 import jetbrains.mps.smodel.*;
 
 public class RenameConceptRefactoringTester implements IRefactoringTester {
@@ -28,11 +29,11 @@ public class RenameConceptRefactoringTester implements IRefactoringTester {
                                  final SModelDescriptor sandbox1,
                                  final SModelDescriptor sandbox2,
                                  final Language testRefactoringLanguage,
-                                 final Language testRefactoringTargetLanguage, Runnable continuation) {
+                                 final Language testRefactoringTargetLanguage) {
     System.err.println("preparing arguments for refactoring");
     final String newConceptName = "MyVeryGoodConcept2";
     RenameConcept renameConcept = new RenameConcept();
-    final RefactoringContext refactoringContext = new RefactoringContext(renameConcept);
+    final RefactoringContext refactoringContext = new RefactoringContext(OldRefactoringAdapter.createAdapterFor(renameConcept));
     refactoringContext.setCurrentOperationContext(project.createOperationContext());
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
@@ -47,7 +48,7 @@ public class RenameConceptRefactoringTester implements IRefactoringTester {
     });
 
     System.err.println("executing a refactoring");
-    new RefactoringProcessor().doExecuteInTest(refactoringContext, continuation);
+    new RefactoringProcessor().doExecuteInTest(refactoringContext);
 
     final boolean[] result = new boolean[]{false};
     ThreadUtils.runInUIThreadAndWait(new Runnable() {

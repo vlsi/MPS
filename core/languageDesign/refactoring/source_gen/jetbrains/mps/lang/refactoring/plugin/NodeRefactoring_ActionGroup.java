@@ -4,10 +4,10 @@ package jetbrains.mps.lang.refactoring.plugin;
 
 import jetbrains.mps.plugins.pluginparts.actions.GeneratedActionGroup;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.refactoring.framework.ILoggableRefactoringOld;
-import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.refactoring.framework.IRefactoring;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.refactoring.framework.RefactoringUtil;
-import jetbrains.mps.refactoring.framework.RefactoringTarget;
+import jetbrains.mps.refactoring.framework.IRefactoringTarget;
 import jetbrains.mps.ide.actions.NodeActions_ActionGroup;
 import jetbrains.mps.ide.actions.EditorPopup_ActionGroup;
 
@@ -20,10 +20,10 @@ public class NodeRefactoring_ActionGroup extends GeneratedActionGroup {
     this.setIsInternal(false);
     this.setPopup(true);
     try {
-      for (ILoggableRefactoringOld refactoring : Sequence.fromIterable(RefactoringUtil.getRefactorings(RefactoringTarget.NODE).values())) {
-        /*
+      for (IRefactoring refactoring : ListSequence.fromList(RefactoringUtil.getAllRefactorings())) {
+        if (refactoring.getRefactoringTarget().getTarget() == IRefactoringTarget.TargetType.NODE) {
           NodeRefactoring_ActionGroup.this.add(RefactoringHelper.getActionForRefactoring(refactoring));
-        */
+        }
       }
     } catch (Throwable t) {
       LOG.error("User group error", t);

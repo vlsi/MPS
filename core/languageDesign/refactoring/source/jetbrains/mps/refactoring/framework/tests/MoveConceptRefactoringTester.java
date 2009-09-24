@@ -19,6 +19,7 @@ import jetbrains.mps.lang.structure.scripts.MoveConcepts;
 import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.refactoring.framework.RefactoringContext;
+import jetbrains.mps.refactoring.framework.OldRefactoringAdapter;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.CollectionUtil;
 
@@ -27,11 +28,11 @@ public class MoveConceptRefactoringTester implements IRefactoringTester {
                                  final SModelDescriptor sandbox1,
                                  final SModelDescriptor sandbox2,
                                  final Language testRefactoringLanguage,
-                                 final Language testRefactoringTargetLanguage, Runnable continuation) {
+                                 final Language testRefactoringTargetLanguage) {
     System.err.println("preparing arguments for refactoring");
     final String conceptName = "MyVeryGoodConcept1";
     MoveConcepts moveConcepts = new MoveConcepts();
-    final RefactoringContext refactoringContext = new RefactoringContext(moveConcepts);
+    final RefactoringContext refactoringContext = new RefactoringContext(OldRefactoringAdapter.createAdapterFor(moveConcepts));
     refactoringContext.setCurrentOperationContext(project.createOperationContext());
     final SModelDescriptor targetStructureModelDescriptor[] = new SModelDescriptor[]{null};
 
@@ -50,7 +51,7 @@ public class MoveConceptRefactoringTester implements IRefactoringTester {
 
 
     System.err.println("executing a refactoring");
-    new RefactoringProcessor().doExecuteInTest(refactoringContext, continuation);
+    new RefactoringProcessor().doExecuteInTest(refactoringContext);
 
     final boolean[] result = new boolean[]{false};
     ThreadUtils.runInUIThreadAndWait(new Runnable() {

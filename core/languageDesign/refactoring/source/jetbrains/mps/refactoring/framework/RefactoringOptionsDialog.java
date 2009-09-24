@@ -28,7 +28,7 @@ import java.awt.HeadlessException;
 
 public class RefactoringOptionsDialog extends BaseDialog {
   private RefactoringContext myRefactoringContext;
-  private ILoggableRefactoringOld myRefactoring;
+  private IRefactoring myRefactoring;
 
   private JCheckBox myIsLocalCheckBox;
   private JCheckBox myGenerateModelsCheckBox;
@@ -36,7 +36,7 @@ public class RefactoringOptionsDialog extends BaseDialog {
 
   private boolean myIsCancelled = true;
 
-  public RefactoringOptionsDialog(Frame mainFrame, RefactoringContext refactoringContext, ILoggableRefactoringOld refactoring) throws HeadlessException {
+  public RefactoringOptionsDialog(Frame mainFrame, RefactoringContext refactoringContext, IRefactoring refactoring) throws HeadlessException {
     super(mainFrame, "Refactoring Options");
     myRefactoringContext = refactoringContext;
     myRefactoring = refactoring;
@@ -48,8 +48,8 @@ public class RefactoringOptionsDialog extends BaseDialog {
     c.weighty = 0;
     c.anchor = GridBagConstraints.NORTHWEST;
 
-    if (myRefactoring.doesUpdateModel()) {
-     myIsLocalCheckBox = new JCheckBox("is local");
+    if (myRefactoring instanceof ILoggableRefactoring) {
+      myIsLocalCheckBox = new JCheckBox("is local");
       myIsLocalCheckBox.setSelected(false);
 
       c.gridy = 0;
@@ -78,10 +78,10 @@ public class RefactoringOptionsDialog extends BaseDialog {
     return myIsCancelled;
   }
 
-  @Button(position = 0, name = "OK",mnemonic = 'O', defaultButton = true)
+  @Button(position = 0, name = "OK", mnemonic = 'O', defaultButton = true)
   public void onOk() {
     myIsCancelled = false;
-    if (myRefactoring.doesUpdateModel()) {
+    if (myRefactoring instanceof ILoggableRefactoring) {
       myRefactoringContext.setLocal(myIsLocalCheckBox.isSelected());
     }
     myRefactoringContext.setDoesGenerateModels(myGenerateModelsCheckBox.isSelected());
@@ -90,7 +90,7 @@ public class RefactoringOptionsDialog extends BaseDialog {
   }
 
 
-  @Button(position = 1, name = "Cancel",mnemonic = 'C')
+  @Button(position = 1, name = "Cancel", mnemonic = 'C')
   public void onCancel() {
     dispose();
   }

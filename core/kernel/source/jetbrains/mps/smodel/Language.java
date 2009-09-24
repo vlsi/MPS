@@ -19,6 +19,7 @@ import com.intellij.openapi.progress.EmptyProgressIndicator;
 import jetbrains.mps.lang.core.structure.Core_Language;
 import jetbrains.mps.lang.plugin.generator.baseLanguage.template.util.PluginNameUtils;
 import jetbrains.mps.lang.refactoring.structure.OldRefactoring;
+import jetbrains.mps.lang.refactoring.structure.Refactoring;
 import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
 import jetbrains.mps.lang.structure.structure.ConceptDeclaration;
 import jetbrains.mps.library.LibraryManager;
@@ -29,7 +30,10 @@ import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.persistence.LanguageDescriptorPersistence;
 import jetbrains.mps.project.structure.model.ModelRoot;
 import jetbrains.mps.project.structure.modules.*;
-import jetbrains.mps.refactoring.framework.ILoggableRefactoringOld;
+import jetbrains.mps.refactoring.framework.IRefactoring;
+import jetbrains.mps.refactoring.framework.AbstractLoggableRefactoring;
+import jetbrains.mps.refactoring.framework.OldLoggableRefactoringAdapter;
+import jetbrains.mps.refactoring.framework.OldRefactoringAdapter;
 import jetbrains.mps.reloading.*;
 import jetbrains.mps.util.Condition;
 import jetbrains.mps.util.EqualUtil;
@@ -64,7 +68,7 @@ public class Language extends AbstractModule {
   private Set<SNodePointer> myNotFoundRefactorings = new HashSet<SNodePointer>(2);
   private
   @Nullable
-  Set<ILoggableRefactoringOld> myCachedRefactorings = null;
+  Set<IRefactoring> myCachedRefactorings = null;
 
   private List<Language> myAllExtendedLanguages = new ArrayList<Language>();
 
@@ -675,8 +679,8 @@ public class Language extends AbstractModule {
     return getLanguageDescriptor().getModelRoots().iterator().next();
   }
 
-  public Set<ILoggableRefactoringOld> getRefactorings() {
-    Set<ILoggableRefactoringOld> result = new HashSet<ILoggableRefactoringOld>();
+  public Set<IRefactoring> getRefactorings() {
+    Set<IRefactoring> result = new HashSet<IRefactoring>();
     if (myCachedRefactorings != null) {
       result.addAll(myCachedRefactorings);
       return result;
@@ -687,10 +691,13 @@ public class Language extends AbstractModule {
     }
     SModel scriptsModel = scriptsModelDescriptor.getSModel();
     String packageName = scriptsModel.getLongName();
+
+
+    //todo {begin} for compatibility with old refactorings
     for (OldRefactoring refactoring : scriptsModel.getRootsAdapters(OldRefactoring.class)) {
       try {
         String fqName = packageName + "." + refactoring.getName();
-        Class<ILoggableRefactoringOld> cls = getClass(fqName);
+        Class<AbstractLoggableRefactoring> cls = getClass(fqName);
         SNodePointer pointer = new SNodePointer(refactoring.getNode());
         if (cls == null) {
           if (!myNotFoundRefactorings.contains(pointer)) {
@@ -699,14 +706,38 @@ public class Language extends AbstractModule {
           }
           continue;
         }
-        Constructor<ILoggableRefactoringOld> constructor = cls.getConstructor();
+        Constructor<AbstractLoggableRefactoring> constructor = cls.getConstructor();
+        constructor.setAccessible(false);
+        AbstractLoggableRefactoring oldRefactoring = constructor.newInstance();
+        result.add(OldRefactoringAdapter.createAdapterFor(oldRefactoring));
+      } catch (Throwable t) {
+        LOG.error(t);
+      }
+    }
+    //todo {--end} for compatibility with old refactorings
+
+
+    for (Refactoring refactoring : scriptsModel.getRootsAdapters(Refactoring.class)) {
+      try {
+        String fqName = packageName + "." + refactoring.getName();
+        Class<IRefactoring> cls = getClass(fqName);
+        SNodePointer pointer = new SNodePointer(refactoring.getNode());
+        if (cls == null) {
+          if (!myNotFoundRefactorings.contains(pointer)) {
+            LOG.error("Can't find " + fqName);
+            myNotFoundRefactorings.add(pointer);
+          }
+          continue;
+        }
+        Constructor<IRefactoring> constructor = cls.getConstructor();
         constructor.setAccessible(false);
         result.add(constructor.newInstance());
       } catch (Throwable t) {
         LOG.error(t);
       }
     }
-    myCachedRefactorings = new HashSet<ILoggableRefactoringOld>(result);
+
+    myCachedRefactorings = new HashSet<IRefactoring>(result);
     return result;
   }
 

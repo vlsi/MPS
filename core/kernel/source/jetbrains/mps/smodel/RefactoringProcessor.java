@@ -16,75 +16,58 @@
 package jetbrains.mps.smodel;
 
 import com.intellij.ide.DataManager;
-import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.progress.ProgressIndicator;
 import com.intellij.openapi.progress.ProgressManager;
 import com.intellij.openapi.progress.Task.Modal;
 import com.intellij.openapi.project.Project;
-import com.intellij.openapi.util.Computable;
-import jetbrains.mps.generator.GenerationSettings;
-import jetbrains.mps.generator.GeneratorManager;
-import jetbrains.mps.generator.IGenerationType;
 import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.ide.findusages.model.SearchResults;
-import jetbrains.mps.ide.messages.DefaultMessageHandler;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.MPSProject;
-import jetbrains.mps.project.ModuleContext;
 import jetbrains.mps.project.ProjectOperationContext;
 import jetbrains.mps.refactoring.RefactoringView;
 import jetbrains.mps.refactoring.RefactoringViewAction;
 import jetbrains.mps.refactoring.RefactoringViewItem;
 import jetbrains.mps.refactoring.framework.*;
 import jetbrains.mps.workbench.MPSDataKeys;
-import jetbrains.mps.workbench.editors.MPSEditorOpener;
 import org.jetbrains.annotations.NotNull;
 
 import javax.swing.JOptionPane;
-import javax.swing.SwingUtilities;
 import java.awt.Frame;
-import java.util.*;
+import java.util.LinkedHashSet;
+import java.util.Set;
 
 public class RefactoringProcessor {
   private static final Logger LOG = Logger.getLogger(RefactoringProcessor.class);
 
-  public void doExecuteInTest(RefactoringContext refactoringContext, Runnable continuation) {
+  public void doExecuteInTest(RefactoringContext refactoringContext) {
     try {
-      doExecute(refactoringContext, continuation);
+      doExecute(refactoringContext);
     } catch (Throwable t) {
       LOG.error(t);
     }
   }
 
-  public void execute(final ILoggableRefactoringOld refactoring, final RefactoringContext refactoringContext) {
+  public void execute(final IRefactoring refactoring, final RefactoringContext refactoringContext) {
     refactoringContext.setRefactoring(refactoring);
 
     final boolean[] success = new boolean[1];
     ThreadUtils.runInUIThreadAndWait(new Runnable() {
       public void run() {
-        success[0] = refactoring.askForInfo(refactoringContext);
+        success[0] = refactoring.init(refactoringContext);
       }
     });
     if (!success[0]) return;
 
-    final boolean show = ModelAccess.instance().runReadAction(new Computable<Boolean>() {
-      public Boolean compute() {
-        return refactoring.showsAffectedNodes();
-      }
-    });
+    SearchResults usages = null;
 
-    if (show) {
-      if (findUsages(refactoringContext)){
-        SearchResults usages = refactoringContext.getUsages();
-        boolean refactorImmediately = refactoringContext.getRefactoring().refactorImmediatelyIfNoUsages();
-        
-        if (usages == null || (usages.getSearchResults().isEmpty() && refactorImmediately)) {
-          doExecuteWithDialog(refactoringContext);
-        } else {
-          showRefactoring(refactoringContext);
-        }
-      }
+    if (refactoring instanceof ILoggableRefactoring) {
+      if (!findUsages(refactoringContext)) return;
+      usages = refactoringContext.getUsages();
+    }
+
+    if (usages != null && (!usages.getSearchResults().isEmpty())) {
+      showRefactoring(refactoringContext);
     } else {
       doExecuteWithDialog(refactoringContext);
     }
@@ -94,7 +77,7 @@ public class RefactoringProcessor {
     final boolean[] cancelled = new boolean[]{true};
     ThreadUtils.runInUIThreadAndWait(new Runnable() {
       public void run() {
-        ILoggableRefactoringOld refactoring = refactoringContext.getRefactoring();
+        IRefactoring refactoring = refactoringContext.getRefactoring();
         Frame mainFrame = refactoringContext.getCurrentOperationContext().getMainFrame();
         RefactoringOptionsDialog dialog = new RefactoringOptionsDialog(mainFrame, refactoringContext, refactoring);
         dialog.showDialog();
@@ -102,7 +85,7 @@ public class RefactoringProcessor {
       }
     });
     if (cancelled[0]) return;
-    doExecute(refactoringContext, null);
+    doExecute(refactoringContext);
   }
 
   private void showRefactoring(final RefactoringContext refactoringContext) {
@@ -116,7 +99,7 @@ public class RefactoringProcessor {
                 new Thread() {
                   public void run() {
                     refactoringViewItem.close();
-                    doExecute(refactoringContext, null);
+                    doExecute(refactoringContext);
                   }
                 }.start();
               }
@@ -141,7 +124,10 @@ public class RefactoringProcessor {
               public void run() {
                 try {
                   refactoringContext.setCurrentOperationContext(new ProjectOperationContext(refactoringContext.getSelectedMPSProject()));
-                  refactoringContext.setUsages(refactoringContext.getRefactoring().getAffectedNodes(refactoringContext));
+                  IRefactoring refactoring = refactoringContext.getRefactoring();
+                  if (!(refactoring instanceof ILoggableRefactoring))
+                    throw new IllegalStateException("Trying to get affected nodes from non-loggable refactoring");
+                  refactoringContext.setUsages(((ILoggableRefactoring) refactoring).getAffectedNodes(refactoringContext));
                 } catch (Throwable t) {
                   LOG.error(t);
                   wasError[0] = true;
@@ -164,106 +150,72 @@ public class RefactoringProcessor {
     return result[0];
   }
 
-  private void doExecute(final @NotNull RefactoringContext refactoringContext, final Runnable continuation) {
-    final ILoggableRefactoringOld refactoring = refactoringContext.getRefactoring();
-    final Map<IModule, List<SModel>> moduleToModelsMap = ModelAccess.instance().runReadAction(new Computable<Map<IModule, List<SModel>>>() {
-      public Map<IModule, List<SModel>> compute() {
-        return refactoring.getModelsToGenerate(refactoringContext);
-      }
-    });
+  private void doExecute(final @NotNull RefactoringContext refactoringContext) {
+    final IRefactoring refactoring = refactoringContext.getRefactoring();
     final SModelDescriptor modelDescriptor = refactoringContext.getSelectedModel();
     final SModelReference initialModelReference = modelDescriptor.getSModelReference();
     Runnable runnable = new Runnable() {
       public void run() {
         ModelAccess.instance().runWriteActionInCommand(new Runnable() {
           public void run() {
-            refactoring.doRefactor(refactoringContext);
-          }
-        });
-
-        final List<SNode> nodesToOpen = ModelAccess.instance().runReadAction(new Computable<List<SNode>>() {
-          public List<SNode> compute() {
-            return refactoring.getNodesToOpen(refactoringContext);
-          }
-        });
-
-        ApplicationManager.getApplication().invokeLater(new Runnable() {
-          public void run() {
-            for (SNode nodeToOpen : nodesToOpen) {
-              // we can't open node outside of EDT
-              IOperationContext context = refactoringContext.getCurrentOperationContext();
-              context.getComponent(MPSEditorOpener.class).editNode(nodeToOpen, context);
-            }
+            refactoring.refactor(refactoringContext);
           }
         });
 
         MPSProject mpsProject = refactoringContext.getSelectedMPSProject();
-        ProgressManager.getInstance().run(new Modal(mpsProject.getComponent(Project.class), "Updating models...", false) {
-          @Override
-          public void run(@NotNull ProgressIndicator indicator) {
-            indicator.pushState();
-            try {
-              indicator.setIndeterminate(true);
 
-              ModelAccess.instance().runWriteAction(new Runnable() {
-                public void run() {
-                  updateModels(modelDescriptor, refactoringContext, refactoring, initialModelReference);
-                }
-              });
-            } finally {
-              indicator.popState();
-            }
-          }
-        });
+        if (refactoring instanceof ILoggableRefactoring) {
+          ProgressManager.getInstance().run(new Modal(mpsProject.getComponent(Project.class), "Updating models...", false) {
+            public void run(@NotNull ProgressIndicator indicator) {
+              indicator.pushState();
+              try {
+                indicator.setIndeterminate(true);
 
-        SwingUtilities.invokeLater(new Runnable() {
-          public void run() {
-            if (moduleToModelsMap != null && !moduleToModelsMap.isEmpty()) {
-              ProgressManager.getInstance().run(new Modal(refactoringContext.getCurrentOperationContext().getComponent(Project.class), "Generation", true) {
-                public void run(@NotNull ProgressIndicator progress) {
-                  generateModels(moduleToModelsMap, refactoringContext, progress);
-                }
-              });
-              if (continuation != null) {
-                continuation.run();
+                ModelAccess.instance().runWriteAction(new Runnable() {
+                  public void run() {
+                    updateModels(modelDescriptor, refactoringContext, ((ILoggableRefactoring) refactoring), initialModelReference);
+                  }
+                });
+              } finally {
+                indicator.popState();
               }
             }
-          }
-        });
+          });
+        }
+
+        refactoring.doWhenDone(refactoringContext);
       }
     };
 
     ThreadUtils.runInUIThreadNoWait(runnable);
   }
 
-  private void updateModels(SModelDescriptor modelDescriptor, RefactoringContext refactoringContext, ILoggableRefactoringOld refactoring, SModelReference initialModelReference) {
+  private void updateModels(SModelDescriptor modelDescriptor, RefactoringContext refactoringContext, ILoggableRefactoring refactoring, SModelReference initialModelReference) {
+    assert refactoringContext.getRefactoring() instanceof ILoggableRefactoring;
+
     SModel model = modelDescriptor.getSModel();
     refactoringContext.computeCaches();
     SearchResults usages = refactoringContext.getUsages();
-    List<SModel> modelsToUpdate = refactoring.getModelsToUpdate(refactoringContext);
-    if (refactoring.doesUpdateModel()) {
-      if (!refactoringContext.isLocal()) {
-        writeInLogAndUpdateModels(initialModelReference, model, refactoringContext);
-      } else {
-        Set<SModel> modelsToProcess = new LinkedHashSet<SModel>();
-        if (usages != null) {
-          modelsToProcess.addAll(usages.getModelsWithResults());
-        }
-        modelsToProcess.addAll(modelsToUpdate);
 
-        for (SModel anotherModel : modelsToProcess) {
-          processModel(anotherModel, model, refactoringContext);
-        }
+    if (!refactoringContext.isLocal()) {
+      writeIntoLog(model, refactoringContext);
+      updateAllModels(initialModelReference, model, refactoringContext);
+    } else {
+      Set<SModel> modelsToProcess = new LinkedHashSet<SModel>();
+      if (usages != null) {
+        modelsToProcess.addAll(usages.getModelsWithResults());
+      }
+      //modelsToProcess.addAll(refactoring.getModelsToUpdate(refactoringContext));
+
+      for (SModel anotherModel : modelsToProcess) {
+        updateModel(anotherModel, model, refactoringContext);
       }
     }
   }
 
-  private void writeInLogAndUpdateModels(SModelReference initialModelReference, SModel model, RefactoringContext refactoringContext) {
-    writeIntoLog(model, refactoringContext);
-    updateModels(initialModelReference, model, refactoringContext);
-  }
+  public void updateAllModels(SModelReference initialModelReference, SModel model, RefactoringContext refactoringContext) {
+    assert refactoringContext.getRefactoring() instanceof ILoggableRefactoring;
 
-  public void updateModels(SModelReference initialModelReference, SModel model, RefactoringContext refactoringContext) {
     for (SModelDescriptor anotherDescriptor : SModelRepository.getInstance().getModelDescriptors()) {
       if (!SModelStereotype.isUserModel(anotherDescriptor)) continue;
       if (!anotherDescriptor.isInitialized()) continue;
@@ -272,48 +224,17 @@ public class RefactoringProcessor {
       Set<SModelReference> dependenciesModels = anotherModel.getDependenciesModelUIDs();
       if (model != anotherModel
         && !dependenciesModels.contains(initialModelReference)) continue;
-      processModel(anotherModel, model, refactoringContext);
+      updateModel(anotherModel, model, refactoringContext);
     }
   }
 
-  private void generateModels(final Map<IModule, List<SModel>> sourceModels, final RefactoringContext refactoringContext, final ProgressIndicator progressIndicator) {
-    if (!refactoringContext.getDoesGenerateModels()) {
-      return;
-    }
-    final RefactoringNodeMembersAccessModifier modifier = new RefactoringNodeMembersAccessModifier();
-    for (final IModule sourceModule : sourceModels.keySet()) {
-      ModelAccess.instance().runWriteAction(new Runnable() {
-        public void run() {
-          try {
-            refactoringContext.setUpMembersAccessModifier(modifier);
-            IOperationContext operationContext = new ModuleContext(sourceModule, refactoringContext.getSelectedMPSProject());
-            final List<SModel> models = sourceModels.get(sourceModule);
-            modifier.addModelsToModify(models);
-            SNode.setNodeMemeberAccessModifier(modifier);
+  private void updateModel(final SModel model, final SModel usedModel, final RefactoringContext refactoringContext) {
+    assert refactoringContext.getRefactoring() instanceof ILoggableRefactoring;
 
-            List<SModelDescriptor> descriptors = new ArrayList<SModelDescriptor>();
-            for (SModel model : models) {
-              descriptors.add(model.getModelDescriptor());
-            }
-
-            new GeneratorManager(operationContext.getComponent(Project.class), new GenerationSettings()).generateModels(descriptors,
-              operationContext,
-              IGenerationType.FILES,
-              progressIndicator,
-              new DefaultMessageHandler(operationContext.getMPSProject())
-            );
-          } finally {
-            SNode.setNodeMemeberAccessModifier(null);
-          }
-        }
-      });
-    }
-  }
-
-  private void processModel(final SModel model, final SModel usedModel, final RefactoringContext refactoringContext) {
     model.runLoadingAction(new Runnable() {
       public void run() {
-        refactoringContext.getRefactoring().updateModel(model, refactoringContext);
+        IRefactoring refactoring = refactoringContext.getRefactoring();
+        ((ILoggableRefactoring) refactoring).updateModel(model, refactoringContext);
         model.updateImportedModelUsedVersion(usedModel.getSModelReference(), usedModel.getVersion());
         SModelRepository.getInstance().markChanged(model);
       }
@@ -321,12 +242,13 @@ public class RefactoringProcessor {
   }
 
   public void writeIntoLog(SModel model, RefactoringContext refactoringContext) {
-    if (refactoringContext.isLocal()) return;
+    assert !refactoringContext.isLocal();
+    assert refactoringContext.getRefactoring() instanceof ILoggableRefactoring;
+
     RefactoringHistory refactoringHistory = model.getRefactoringHistory();
     refactoringHistory.addRefactoringContext(refactoringContext);
     model.increaseVersion();
     refactoringContext.setModelVersion(model.getVersion());
     SModelRepository.getInstance().markChanged(model);
   }
-
 }

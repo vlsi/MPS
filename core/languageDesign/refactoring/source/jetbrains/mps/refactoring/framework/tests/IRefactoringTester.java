@@ -31,7 +31,6 @@ public interface IRefactoringTester {
                           SModelDescriptor sandbox1,
                           SModelDescriptor sandbox2,
                           Language testRefactoringlanguage,
-                          Language testRefactoringTargetLanguage,
-                          Runnable continuation);
+                          Language testRefactoringTargetLanguage);
   //boolean checkModel
 }

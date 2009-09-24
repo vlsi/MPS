@@ -56,7 +56,7 @@ public class RefactoringContext {
   private Map<FullNodeId, FullNodeId> myMoveMap = new HashMap<FullNodeId, FullNodeId>();
   private Map<ConceptFeature, ConceptFeature> myConceptFeatureMap = new HashMap<ConceptFeature, ConceptFeature>();
   private int myModelVersion = -1;
-  private ILoggableRefactoringOld myRefactoring;
+  private IRefactoring myRefactoring;
   private String myRefactoringClassName = null;
   //-----------------
 
@@ -85,7 +85,7 @@ public class RefactoringContext {
 
   //-----------------
 
-  public RefactoringContext(ILoggableRefactoringOld refactoring) {
+  public RefactoringContext(IRefactoring refactoring) {
     myRefactoring = refactoring;
   }
 
@@ -198,7 +198,7 @@ public class RefactoringContext {
     return targetNodes;
   }
 
-  public void replaceRefsToNodeWithNode(SNode whatNode, SNode withNode){
+  public void replaceRefsToNodeWithNode(SNode whatNode, SNode withNode) {
     myMoveMap.put(new FullNodeId(whatNode), new FullNodeId(withNode));
     whatNode.delete();
     myCachesAreUpToDate = false;
@@ -454,16 +454,16 @@ public class RefactoringContext {
     return myModelVersion;
   }
 
-  public void setRefactoring(ILoggableRefactoringOld refactoring) {
+  public void setRefactoring(IRefactoring refactoring) {
     myRefactoring = refactoring;
     if (myRefactoring != null) {
-      myRefactoringClassName = refactoring.getClass().getName();
+      myRefactoringClassName = getRefactoringClassName(refactoring);
     } else {
       myRefactoringClassName = null;
     }
   }
 
-  public ILoggableRefactoringOld getRefactoring() {
+  public IRefactoring getRefactoring() {
     return myRefactoring;
   }
 
@@ -482,7 +482,7 @@ public class RefactoringContext {
           refactoringElement.setAttribute(REFACTORING_CLASS, myRefactoringClassName);
         }
       } else {
-        refactoringElement.setAttribute(REFACTORING_CLASS, myRefactoring.getClass().getName());
+        refactoringElement.setAttribute(REFACTORING_CLASS, getRefactoringClassName(myRefactoring));
       }
       refactoringContextElement.addContent(refactoringElement);
     }
@@ -588,12 +588,17 @@ public class RefactoringContext {
         if (l == null) {
           LOG.errorWithTrace("can't find a language " + namespace);
         } else {
-          Class<ILoggableRefactoringOld> refactoringClass = (Class<ILoggableRefactoringOld>) l.getClass(className);
+          Class refactoringClass = l.getClass(className);
           if (refactoringClass == null) {
             LOG.errorWithTrace("can't find a class " + className + " in a language " + namespace);
           } else {
-            Constructor<ILoggableRefactoringOld> constructor = refactoringClass.getConstructor();
-            myRefactoring = constructor.newInstance();
+            Constructor constructor = refactoringClass.getConstructor();
+            Object refactoring = constructor.newInstance();
+            if (refactoring instanceof AbstractLoggableRefactoring) {
+              myRefactoring = OldRefactoringAdapter.createAdapterFor(((AbstractLoggableRefactoring) refactoring));
+            } else {
+              myRefactoring = (IRefactoring) refactoring;
+            }
           }
         }
       } catch (Throwable t) {
@@ -636,6 +641,13 @@ public class RefactoringContext {
       }
     }
     computeCaches();
+  }
+
+  private static String getRefactoringClassName(IRefactoring refactoring) {
+    if (refactoring instanceof OldRefactoringAdapter) {
+      return ((OldRefactoringAdapter) refactoring).getRefactoringClassName();
+    }
+    return refactoring.getClass().getName();
   }
 
   private void serialize(Element element, Object value) {
@@ -789,7 +801,6 @@ public class RefactoringContext {
 
   public static enum ConceptFeatureKind {
     NONE, CONCEPT, PROPERTY, CHILD, REFERENCE
-
   }
 
   public static class ConceptFeature implements Comparable<ConceptFeature> {

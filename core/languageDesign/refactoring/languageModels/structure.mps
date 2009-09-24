@@ -944,10 +944,6 @@
       <property name="sourceCardinality" value="1" />
       <link role="target" targetNodeId="1189694434958" resolveInfo="UpdateModelClause" />
     </node>
-    <node role="propertyDeclaration" type="jetbrains.mps.lang.structure.structure.PropertyDeclaration" id="6895093993902311013">
-      <property name="name" value="refactorImmediatelyIfNoUsages" />
-      <link role="dataType" targetNodeId="1.1082983657063" resolveInfo="boolean" />
-    </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="6895093993902310761">
     <property name="package" value="RefDecl.Target" />

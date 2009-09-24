@@ -20,6 +20,7 @@ import jetbrains.mps.lang.structure.structure.ConceptDeclaration;
 import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.refactoring.framework.RefactoringContext;
+import jetbrains.mps.refactoring.framework.OldRefactoringAdapter;
 import jetbrains.mps.smodel.*;
 
 public class RenameLinkRefactoringTester_Simple implements IRefactoringTester {
@@ -27,11 +28,11 @@ public class RenameLinkRefactoringTester_Simple implements IRefactoringTester {
                                  final SModelDescriptor sandbox1,
                                  final SModelDescriptor sandbox2,
                                  final Language testRefactoringLanguage,
-                                 final Language testRefactoringTargetLanguage, Runnable continuation) {
+                                 final Language testRefactoringTargetLanguage) {
     System.err.println("preparing arguments for refactoring");
     final String newLinkName = "sister";
     RenameLink renameLink = new RenameLink();
-    final RefactoringContext refactoringContext = new RefactoringContext(renameLink);
+    final RefactoringContext refactoringContext = new RefactoringContext(OldRefactoringAdapter.createAdapterFor(renameLink));
     refactoringContext.setCurrentOperationContext(project.createOperationContext());
 
     ModelAccess.instance().runReadAction(new Runnable() {
@@ -49,7 +50,7 @@ public class RenameLinkRefactoringTester_Simple implements IRefactoringTester {
 
 
     System.err.println("executing a refactoring");
-    new RefactoringProcessor().doExecuteInTest(refactoringContext, continuation);
+    new RefactoringProcessor().doExecuteInTest(refactoringContext);
 
     final boolean[] result = new boolean[]{false};
 

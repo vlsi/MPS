@@ -20,14 +20,15 @@ import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.workbench.action.BaseAction;
+import jetbrains.mps.refactoring.framework.IRefactoringTarget.TargetType;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.*;
 
 public class GenericRefactoringAction extends BaseAction {
-  private ILoggableRefactoringOld myRefactoring;
+  private IRefactoring myRefactoring;
 
-  public GenericRefactoringAction(ILoggableRefactoringOld refactoring) {
+  public GenericRefactoringAction(IRefactoring refactoring) {
     super("".equals(refactoring.getUserFriendlyName()) ? refactoring.getClass().getName() : refactoring.getUserFriendlyName());
     myRefactoring = refactoring;
     setExecuteOutsideCommand(true);
@@ -42,7 +43,7 @@ public class GenericRefactoringAction extends BaseAction {
       }
     });
 
-    boolean isOneTarget = myRefactoring.isOneTargetOnly();
+    boolean isOneTarget = !myRefactoring.getRefactoringTarget().allowMultipleTargets();
 
     final RefactoringContext context = new RefactoringContext(myRefactoring);
     context.setCurrentOperationContext(e.getData(MPSDataKeys.OPERATION_CONTEXT));
@@ -71,13 +72,21 @@ public class GenericRefactoringAction extends BaseAction {
     StringBuilder res = new StringBuilder(500);
     res.append(GenericRefactoringAction.class.getName());
     res.append("#");
-    res.append(myRefactoring.getClass().getName());
+    res.append(getRefactoringClassName(myRefactoring));
     return res.toString();
   }
 
   @NotNull
   public String getKeyStroke() {
     return myRefactoring.getKeyStroke();
+  }
+
+  private static String getRefactoringClassName(IRefactoring refactoring){
+    if (refactoring instanceof OldRefactoringAdapter){
+      return ((OldRefactoringAdapter)refactoring).getRefactoringClassName();
+    }else{
+      return refactoring.getClass().getName();
+    }
   }
 
   private <T> List<T> toList(Collection<T> c) {
@@ -123,16 +132,18 @@ public class GenericRefactoringAction extends BaseAction {
   }
 
   protected void doUpdate(AnActionEvent e) {
-    RefactoringTarget refTarget = myRefactoring.getRefactoringTarget();
-    boolean oneEntity = myRefactoring.isOneTargetOnly();
+    IRefactoringTarget refTarget = myRefactoring.getRefactoringTarget();
+    boolean oneEntity = !refTarget.allowMultipleTargets();
 
     Set entities;
-    if (refTarget == RefactoringTarget.NODE) {
+    if (refTarget.getTarget() == TargetType.NODE) {
       entities = getNodes(e, oneEntity);
-    } else if (refTarget == RefactoringTarget.MODEL) {
+    } else if (refTarget.getTarget() == TargetType.MODEL) {
       entities = getModels(e, oneEntity);
-    } else {
+    } else if (refTarget.getTarget() == TargetType.MODULE) {
       entities = getModules(e, oneEntity);
+    } else{
+      throw new IllegalArgumentException("Wrong refatctoring type"+refTarget.getTarget().getClass().getName());
     }
 
     boolean enabled;

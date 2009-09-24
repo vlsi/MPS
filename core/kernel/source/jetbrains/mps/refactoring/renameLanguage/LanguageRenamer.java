@@ -25,6 +25,7 @@ import jetbrains.mps.project.structure.modules.GeneratorDescriptor;
 import jetbrains.mps.project.structure.modules.LanguageDescriptor;
 import jetbrains.mps.refactoring.framework.AbstractLoggableRefactoring;
 import jetbrains.mps.refactoring.framework.RefactoringContext;
+import jetbrains.mps.refactoring.framework.OldRefactoringAdapter;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.FileUtil;
@@ -41,7 +42,7 @@ public class LanguageRenamer {
   private Language myLanguage;
   private String myNewName;
   private RefactoringProcessor myProcessor;
-  private RefactoringContext myContext = new RefactoringContext(new MyRefactoring());
+  private RefactoringContext myContext = new RefactoringContext(OldRefactoringAdapter.createAdapterFor(new MyRefactoring()));
 
   public LanguageRenamer(Project project, Language language, String newName) {
     myProject = project;
@@ -123,7 +124,7 @@ public class LanguageRenamer {
   public void update() {
     updateReferences();
     SModelDescriptor structure = myLanguage.getStructureModelDescriptor();
-    myProcessor.updateModels(structure.getSModelReference(), structure.getSModel(), myContext);
+    myProcessor.updateAllModels(structure.getSModelReference(), structure.getSModel(), myContext);
   }
 
   private void updateReferences() {
