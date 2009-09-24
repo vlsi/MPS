@@ -17,6 +17,7 @@ package jetbrains.mps.smodel;
 
 import jetbrains.mps.ide.projectPane.Icons;
 import jetbrains.mps.lang.actions.structure.Actions_Language;
+import jetbrains.mps.lang.behavior.structure.Behavior_Language;
 import jetbrains.mps.lang.constraints.structure.Constraints_Language;
 import jetbrains.mps.lang.dataFlow.structure.DataFlow_Language;
 import jetbrains.mps.lang.editor.structure.Editor_Language;
@@ -28,18 +29,17 @@ import jetbrains.mps.lang.structure.structure.Structure_Language;
 import jetbrains.mps.lang.test.structure.Test_Language;
 import jetbrains.mps.lang.textGen.structure.TextGen_Language;
 import jetbrains.mps.lang.typesystem.structure.Typesystem_Language;
-import jetbrains.mps.lang.behavior.structure.Behavior_Language;
+import jetbrains.mps.lang.refactoring.structure.Refactoring_Language;
 import jetbrains.mps.library.LanguageDesign_DevKit;
-import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.project.SModelRoot;
+import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mpslite.behavior.Mpslite_Language;
+import org.jetbrains.annotations.Nullable;
 
 import javax.swing.Icon;
 import java.util.ArrayList;
 import java.util.List;
-
-import org.jetbrains.annotations.Nullable;
 
 public enum LanguageAspect {
   STRUCTURE("structure") {
@@ -138,6 +138,16 @@ public enum LanguageAspect {
 
     public String getHelpURL() {
       return "http://www.jetbrains.net/confluence/display/MPS/Typesystem";
+    }
+  },
+
+  REFACTORINGS("refactorings") {
+    public ModuleReference getMainLanguage() {
+      return Refactoring_Language.MODULE_REFERENCE;
+    }
+
+    public String getHelpURL() {
+      return "";
     }
   },
 
@@ -285,9 +295,9 @@ public enum LanguageAspect {
 
     SModelRoot modelRoot;
     SModelDescriptor structureModel = l.getStructureModelDescriptor();
-    if (structureModel==null){
+    if (structureModel == null) {
       modelRoot = l.getSModelRoots().get(0);
-    }else{
+    } else {
       modelRoot = structureModel.getSModelRoot();
     }
     final SModelDescriptor model = l.createModel(getModuleUID(l), modelRoot);
@@ -296,7 +306,7 @@ public enum LanguageAspect {
       public void run() {
         model.getSModel().addDevKit(LanguageDesign_DevKit.get());
 
-        for (ModuleReference impLang:getAllLanguagesToImport(l)){
+        for (ModuleReference impLang : getAllLanguagesToImport(l)) {
           model.getSModel().addLanguage(impLang);
         }
 
