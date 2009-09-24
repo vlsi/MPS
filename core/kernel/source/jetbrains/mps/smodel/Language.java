@@ -720,8 +720,9 @@ public class Language extends AbstractModule {
     }
     //todo {--end} for compatibility with old refactorings
 
-    SModel refactoringsModel = getRefactoringsModelDescriptor().getSModel();
-    if (refactoringsModel!=null){
+    SModelDescriptor refModelDescriptor = getRefactoringsModelDescriptor();
+    if (refModelDescriptor != null) {
+      SModel refactoringsModel = refModelDescriptor.getSModel();
       String packageName = refactoringsModel.getLongName();
       for (Refactoring refactoring : refactoringsModel.getRootsAdapters(Refactoring.class)) {
         try {
