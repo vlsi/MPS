@@ -68,12 +68,14 @@
             </node>
           </node>
           <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="5003188907306244662">
-            <node role="statement" type="jetbrains.mps.lang.plugin.structure.AddElementStatement" id="7464679235281555548">
-              <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="7464679235281556586">
-                <link role="baseMethodDeclaration" targetNodeId="7464679235281555556" resolveInfo="getActionForRefactoring" />
-                <link role="classConcept" targetNodeId="7464679235281555550" resolveInfo="RefactoringHelper" />
-                <node role="actualArgument" type="jetbrains.mps.baseLanguage.collections.structure.ForEachVariableReference" id="7464679235281556587">
-                  <link role="variable" targetNodeId="5003188907306244658" resolveInfo="refactoring" />
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.CommentedStatementsBlock" id="2512836976517921558">
+              <node role="statement" type="jetbrains.mps.lang.plugin.structure.AddElementStatement" id="7464679235281555548">
+                <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="7464679235281556586">
+                  <link role="baseMethodDeclaration" targetNodeId="7464679235281555556" resolveInfo="getActionForRefactoring" />
+                  <link role="classConcept" targetNodeId="7464679235281555550" resolveInfo="RefactoringHelper" />
+                  <node role="actualArgument" type="jetbrains.mps.baseLanguage.collections.structure.ForEachVariableReference" id="7464679235281556587">
+                    <link role="variable" targetNodeId="5003188907306244658" resolveInfo="refactoring" />
+                  </node>
                 </node>
               </node>
             </node>

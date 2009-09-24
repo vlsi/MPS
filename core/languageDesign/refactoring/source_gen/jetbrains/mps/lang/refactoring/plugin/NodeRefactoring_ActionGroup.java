@@ -21,7 +21,9 @@ public class NodeRefactoring_ActionGroup extends GeneratedActionGroup {
     this.setPopup(true);
     try {
       for (ILoggableRefactoringOld refactoring : Sequence.fromIterable(RefactoringUtil.getRefactorings(RefactoringTarget.NODE).values())) {
-        NodeRefactoring_ActionGroup.this.add(RefactoringHelper.getActionForRefactoring(refactoring));
+        /*
+          NodeRefactoring_ActionGroup.this.add(RefactoringHelper.getActionForRefactoring(refactoring));
+        */
       }
     } catch (Throwable t) {
       LOG.error("User group error", t);
