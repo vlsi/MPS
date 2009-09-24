@@ -155,7 +155,7 @@ public class DefaultJavaApplication_Configuration extends BaseRunConfig {
             }
           });
 
-          handler = new BLProcessHandler(runComponent, process.value, "", Charset.defaultCharset());
+          handler = new BLProcessHandler(runComponent.getConsoleView(), process.value, "", Charset.defaultCharset());
         }
         final JComponent finalConsoleComponent = consoleComponent;
         final Runnable finalConsoleDispose = consoleDispose;

@@ -48,7 +48,7 @@ public class ProgressLine extends JPanel {
     String token = event.getToken();
     if (token.equals(TestEvent.END_TEST_PREFIX)) {
       this.stateInfo.onComplete();
-    } else if (token.equals(TestEvent.ERROR_TEST_PREFIX) || token.equals(TestEvent.ERROR_TEST_SUFFIX)) {
+    } else if (token.equals(TestEvent.ERROR_TEST_PREFIX)) {
       this.stateInfo.onDefect();
       this.progressBar.setColor(ColorProgressBar.RED);
     }
@@ -111,7 +111,7 @@ public class ProgressLine extends JPanel {
       if (this.defects > 0) {
         testCount = " Failed: " + this.defects;
       } else {
-        testCount = " Terminated: " + this.completed + " of " + this.total;
+        testCount = " Running: " + this.completed + " of " + this.total;
       }
       label.setText(testCount + "  " + this.testName);
     }

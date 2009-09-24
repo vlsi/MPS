@@ -38,7 +38,7 @@ import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.SModelDescriptor;
-import com.intellij.execution.process.DefaultJavaProcessHandler;
+import jetbrains.mps.baseLanguage.plugin.BLProcessHandler;
 import java.nio.charset.Charset;
 import com.intellij.execution.ui.ExecutionConsole;
 import com.intellij.execution.configurations.RunnerSettings;
@@ -174,7 +174,7 @@ public class DefaultJUnit_Configuration extends BaseRunConfig {
                 testRunner.value.run(all);
                 process.value = testRunner.value.getProcess();
                 if (process.value != null) {
-                  progressHandler[0] = new DefaultJavaProcessHandler(process.value, "Test", Charset.defaultCharset());
+                  progressHandler[0] = new BLProcessHandler(runComponent.getConsole(), process.value, "Test", Charset.defaultCharset());
                 }
               }
             }
