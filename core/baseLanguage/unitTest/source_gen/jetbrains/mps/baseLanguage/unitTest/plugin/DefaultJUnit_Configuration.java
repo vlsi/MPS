@@ -33,6 +33,8 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.project.GlobalScope;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.baseLanguage.unitTest.behavior.ITestMethod_Behavior;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
@@ -145,8 +147,13 @@ public class DefaultJUnit_Configuration extends BaseRunConfig {
                 List<SNode> tests = new ArrayList<SNode>();
                 List<SNode> methods = new ArrayList<SNode>();
                 if (DefaultJUnit_Configuration.this.getStateObject().type == JUnitRunTypes.METHOD) {
-                  SNode method = (SNode)SModelUtil.findNodeByFQName(DefaultJUnit_Configuration.this.getStateObject().method, SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.unitTest.structure.ITestMethod"), GlobalScope.getInstance());
-                  ListSequence.fromList(methods).addElement(method);
+                  SNode test = (SNode)SModelUtil.findNodeByFQName(DefaultJUnit_Configuration.this.getStateObject().node, SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.unitTest.structure.BTestCase"), GlobalScope.getInstance());
+                  for (SNode method : SLinkOperations.getTargets(SLinkOperations.getTarget(test, "testMethodList", true), "testMethod", true)) {
+                    if (ITestMethod_Behavior.call_getTestName_1216136419751(method).equals(DefaultJUnit_Configuration.this.getStateObject().method)) {
+                      ListSequence.fromList(methods).addElement(method);
+                      break;
+                    }
+                  }
                 } else if (DefaultJUnit_Configuration.this.getStateObject().type == JUnitRunTypes.TESTCLASS) {
                   SNode test = (SNode)SModelUtil.findNodeByFQName(DefaultJUnit_Configuration.this.getStateObject().node, SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.unitTest.structure.BTestCase"), GlobalScope.getInstance());
                   ListSequence.fromList(tests).addElement(test);
