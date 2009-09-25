@@ -13,12 +13,15 @@ import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.ide.ui.TextTreeNode;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.baseLanguage.unitTest.behavior.ITestCase_Behavior;
+import jetbrains.mps.baseLanguage.unitTest.behavior.ITestMethod_Behavior;
 
 public class TestTree extends MPSTree {
   private IOperationContext operationContext;
   private Map<SNode, List<SNode>> tests;
   private TestNameMap<TestCaseTreeNode, TestMethodTreeNode> map;
   private boolean isAllTree = true;
+  private boolean isRebuilded = true;
 
   public TestTree() {
     this.tests = MapSequence.fromMap(new LinkedHashMap<SNode, List<SNode>>(16, (float)0.75, false));
@@ -28,24 +31,32 @@ public class TestTree extends MPSTree {
 
   public MPSTreeNode rebuild() {
     MPSTreeNode root = new TextTreeNode("Tests");
-    this.map.clear();
+    TestNameMap<TestCaseTreeNode, TestMethodTreeNode> temp = new TestNameMap<TestCaseTreeNode, TestMethodTreeNode>();
     for (SNode testCase : SetSequence.fromSet(MapSequence.fromMap(this.tests).keySet())) {
       TestCaseTreeNode testCaseTreeNode = new TestCaseTreeNode(this.operationContext, testCase);
       root.add(testCaseTreeNode);
-      this.map.put(testCase, testCaseTreeNode);
+      temp.put(testCase, testCaseTreeNode);
       for (SNode method : ListSequence.fromList(MapSequence.fromMap(this.tests).get(testCase))) {
-        TestMethodTreeNode testMethodTreeNode = new TestMethodTreeNode(this.operationContext, method);
-        if (this.isAllTree || isFailed(testMethodTreeNode)) {
+        TestMethodTreeNode testMethodTreeNode;
+        if (this.isRebuilded) {
+          testMethodTreeNode = new TestMethodTreeNode(this.operationContext, method);
+        } else {
+          testMethodTreeNode = this.map.get(ITestCase_Behavior.call_getClassName_1216136193905(testCase), ITestMethod_Behavior.call_getTestName_1216136419751(method));
+        }
+        if (this.isAllTree || !(testMethodTreeNode.getState().equals(TestState.PASSED))) {
           testCaseTreeNode.add(testMethodTreeNode);
         }
-        this.map.put(testCase, method, testMethodTreeNode);
+        temp.put(testCase, method, testMethodTreeNode);
       }
     }
+    this.map = temp;
+    this.isRebuilded = true;
     return root;
   }
 
   public void hidePassed(boolean hide) {
     this.isAllTree = !(hide);
+    this.isRebuilded = false;
     this.rebuildNow();
   }
 
