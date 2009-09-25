@@ -82,6 +82,18 @@ public class TestTree extends MPSTree {
     return this.map.get(className, methodName);
   }
 
+  public void selectFirstDefectNode() {
+    for (SNode testCase : SetSequence.fromSet(MapSequence.fromMap(this.tests).keySet())) {
+      for (SNode method : ListSequence.fromList(MapSequence.fromMap(this.tests).get(testCase))) {
+        TestMethodTreeNode testMethodTreeNode = this.map.get(ITestCase_Behavior.call_getClassName_1216136193905(testCase), ITestMethod_Behavior.call_getTestName_1216136419751(method));
+        if (isFailed(testMethodTreeNode)) {
+          this.setCurrentNode(testMethodTreeNode);
+          return;
+        }
+      }
+    }
+  }
+
   public static boolean isFailed(MPSTreeNode node) {
     if (!(node.isLeaf())) {
       return false;

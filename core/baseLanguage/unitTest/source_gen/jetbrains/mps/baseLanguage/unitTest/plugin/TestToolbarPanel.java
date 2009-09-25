@@ -20,6 +20,7 @@ public class TestToolbarPanel extends JPanel {
   private TestTree tree;
   private TestOccurenceNavigator navigator;
   private boolean isTrackRunning = false;
+  private boolean isNeedSelectFailed = false;
 
   public TestToolbarPanel(TestTree tree, TestOccurenceNavigator navigator) {
     super(new BorderLayout());
@@ -113,8 +114,13 @@ public class TestToolbarPanel extends JPanel {
   }
 
   private AnAction createSelectFirstFailedAction() {
-    return new AnAction("Select First Failed Test When Finished", "", TestsUIUtil.loadIcon("selectFirstDefect")) {
-      public void actionPerformed(AnActionEvent p0) {
+    return new ToggleAction("", "Select First Failed Test When Finished", TestsUIUtil.loadIcon("selectFirstDefect")) {
+      public boolean isSelected(AnActionEvent p0) {
+        return TestToolbarPanel.this.isNeedSelectFailed;
+      }
+
+      public void setSelected(AnActionEvent p0, boolean p1) {
+        TestToolbarPanel.this.isNeedSelectFailed = p1;
       }
     };
   }
@@ -128,5 +134,9 @@ public class TestToolbarPanel extends JPanel {
 
   public boolean isTrackRunning() {
     return this.isTrackRunning;
+  }
+
+  public boolean isNeedSelectFirstFailedTest() {
+    return this.isNeedSelectFailed;
   }
 }
