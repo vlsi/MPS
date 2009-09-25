@@ -30,7 +30,8 @@ import java.util.Locale;
 public class DateTimeOperations {
     
   private static final Logger LOG = Logger.getLogger(DateTimeOperations.class);
-  
+
+  @Deprecated
   private static InheritableThreadLocal<DateTimeZone> currentZone = new InheritableThreadLocal<DateTimeZone> () {
       protected DateTimeZone initialValue() {
           return DateTimeZone.getDefault();
@@ -50,6 +51,7 @@ public class DateTimeOperations {
     return print(datetime, formatter.withLocale(locale));
   }
 
+  @Deprecated
   public static String print(Long value, DateTimeFormatter formatter, Locale locale, DateTimeZone zone) {
     DateTime dateTime = (value != null)?
       ((zone != null)? new DateTime(value, zone) : new DateTime(value, currentZone.get())) : Constants.NULL_DATE_TIME;
@@ -57,12 +59,13 @@ public class DateTimeOperations {
     return dateTimeFormatter.print(dateTime);
   }
 
-  public static String print(DateTime value, DateTimeFormatter formatter, Locale locale, DateTimeZone zone) {
+  public static String print(DateTime value, DateTimeFormatter formatter, Locale locale) {
     DateTime dateTime = (value != null) ? value : Constants.NULL_DATE_TIME;
     DateTimeFormatter dateTimeFormatter = (locale == null)? formatter : formatter.withLocale(locale);
     return dateTimeFormatter.print(dateTime);
   }
 
+  @Deprecated
   public static String print(Period period, DateTimeFormatter formatter, Locale locale, DateTimeZone zone) {
     return print(convert(period), formatter, locale, zone);
   }
@@ -97,7 +100,8 @@ public class DateTimeOperations {
       * ((long) DateTimeConstants.MILLIS_PER_WEEK));
     return seconds;
   }
-  
+
+  @Deprecated
   public static Long parse (String datetimeString, DateTimeFormatter formatter, Locale locale, DateTimeZone zone, Long defValues) {
       if (zone == null) {
           zone = currentZone.get();
@@ -135,6 +139,38 @@ public class DateTimeOperations {
       return null;
   }   
 
+  public static DateTime parseDateTime(String datetimeString, DateTimeFormatter formatter, DateTimeZone zone, Locale locale, DateTime defValue) {
+      if (locale != null) {
+          formatter = formatter.withLocale(locale);
+      }
+      formatter = formatter.withZone(zone);
+      try {
+          if (defValue != null) {
+              MutableDateTime mdt = new MutableDateTime (defValue);
+              int res = formatter.parseInto(mdt, datetimeString, 0);
+              if (res <= 0) {
+                  // parsing error
+                  LOG.debug("Error parsing the string \""+datetimeString+"\"");
+                  return null;
+              }
+              return mdt.toDateTime();
+          }
+          else {
+              return formatter.parseDateTime(datetimeString);
+          }
+      }
+      catch (UnsupportedOperationException uoe) {
+          // parsing is not supported with this formatter
+          LOG.debug("Error parsing date/time ("+uoe.getMessage()+")");
+      }
+      catch (IllegalArgumentException iae) {
+          // the string is not a datetime
+          LOG.debug("Error parsing date/time ("+iae.getMessage()+")");
+      }
+      return null;
+  }
+
+  @Deprecated
   public static boolean compare(Long op1, CompareType cmp, Long op2, DateTimeFieldType type) {
     op1 = roundFloor(op1, type);
     op2 = roundFloor(op2, type);
@@ -211,12 +247,22 @@ public class DateTimeOperations {
     return datetime != null ? datetime.property(type).roundHalfCeilingCopy() : null;
   }
 
+  @Deprecated
   public static Integer get(Long datetime, DateTimeFieldType type) {
     return datetime != null ? new DateTime(datetime, currentZone.get()).property(type).get() : null;
   }
 
+  public static Integer get(DateTime datetime, DateTimeFieldType type) {
+    return datetime != null ? datetime.property(type).get() : null;
+  }
+
+  @Deprecated
   public static Long with(Long datetime, DateTimeFieldType type, int value) {
     return datetime != null ? new DateTime(datetime, currentZone.get()).property(type).setCopy(value).getMillis() : null;
+  }
+
+  public static DateTime with(DateTime datetime, DateTimeFieldType type, int value) {
+    return datetime != null ? datetime.property(type).setCopy(value) : null;
   }
 
   public static Period plus(Period leftExpression, Period rightExpression) {
@@ -255,6 +301,7 @@ public class DateTimeOperations {
             leftExpression.getMillis() - rightExpression.getMillis());
   }
 
+  @Deprecated
   public static Long plus(Long leftExpression, Period rightExpression) {
     Long result;
     if (leftExpression == null) {
@@ -291,6 +338,7 @@ public class DateTimeOperations {
     return new Period(right.longValue(), left.longValue());
   }
 
+  @Deprecated
   public static Long minus(Long leftExpression, Period rightExpression) {
     Long result;
     if (leftExpression == null) {
@@ -299,6 +347,10 @@ public class DateTimeOperations {
       result = new DateTime(leftExpression, currentZone.get()).minus(rightExpression).getMillis();
     }
     return result;
+  }
+
+  public static DateTime minus(DateTime leftExpression, Period rightExpression) {
+    return leftExpression == null ? null : leftExpression.minus(rightExpression);
   }
 
   @Deprecated
