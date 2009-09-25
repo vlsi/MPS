@@ -19,6 +19,7 @@ import jetbrains.mps.ide.ui.MPSTreeNode;
 public class TestToolbarPanel extends JPanel {
   private TestTree tree;
   private TestOccurenceNavigator navigator;
+  private boolean isTrackRunning = false;
 
   public TestToolbarPanel(TestTree tree, TestOccurenceNavigator navigator) {
     super(new BorderLayout());
@@ -61,10 +62,11 @@ public class TestToolbarPanel extends JPanel {
   private AnAction cteateTrackRunningAction() {
     return new ToggleAction("Track Running Test", "Select currently running test in tree", TestsUIUtil.loadIcon("trackTests")) {
       public boolean isSelected(AnActionEvent p0) {
-        return false;
+        return TestToolbarPanel.this.isTrackRunning;
       }
 
       public void setSelected(AnActionEvent p0, boolean p1) {
+        TestToolbarPanel.this.isTrackRunning = p1;
       }
     };
   }
@@ -122,5 +124,9 @@ public class TestToolbarPanel extends JPanel {
       public void actionPerformed(AnActionEvent p0) {
       }
     };
+  }
+
+  public boolean isTrackRunning() {
+    return this.isTrackRunning;
   }
 }
