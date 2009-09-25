@@ -49,6 +49,7 @@ public class TestToolbarPanel extends JPanel {
 
       public void setSelected(AnActionEvent p0, boolean p1) {
         this.hidden = p1;
+        TestToolbarPanel.this.tree.hidePassed(p1);
       }
     };
   }

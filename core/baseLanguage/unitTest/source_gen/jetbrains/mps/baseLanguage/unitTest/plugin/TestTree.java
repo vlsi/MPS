@@ -18,6 +18,7 @@ public class TestTree extends MPSTree {
   private IOperationContext operationContext;
   private Map<SNode, List<SNode>> tests;
   private TestNameMap<TestCaseTreeNode, TestMethodTreeNode> map;
+  private boolean isAllTree = true;
 
   public TestTree() {
     this.tests = MapSequence.fromMap(new LinkedHashMap<SNode, List<SNode>>(16, (float)0.75, false));
@@ -34,11 +35,18 @@ public class TestTree extends MPSTree {
       this.map.put(testCase, testCaseTreeNode);
       for (SNode method : ListSequence.fromList(MapSequence.fromMap(this.tests).get(testCase))) {
         TestMethodTreeNode testMethodTreeNode = new TestMethodTreeNode(this.operationContext, method);
-        testCaseTreeNode.add(testMethodTreeNode);
+        if (this.isAllTree || isFailed(testMethodTreeNode)) {
+          testCaseTreeNode.add(testMethodTreeNode);
+        }
         this.map.put(testCase, method, testMethodTreeNode);
       }
     }
     return root;
+  }
+
+  public void hidePassed(boolean hide) {
+    this.isAllTree = !(hide);
+    this.rebuildNow();
   }
 
   public void setTests(IOperationContext operationContext, Map<SNode, List<SNode>> tests) {
@@ -61,5 +69,14 @@ public class TestTree extends MPSTree {
 
   public TestMethodTreeNode get(String className, String methodName) {
     return this.map.get(className, methodName);
+  }
+
+  public static boolean isFailed(MPSTreeNode node) {
+    if (!(node.isLeaf())) {
+      return false;
+    }
+    TestMethodTreeNode leaf = (TestMethodTreeNode)node;
+    TestState state = leaf.getState();
+    return state.equals(TestState.ERROR) || state.equals(TestState.FAILED);
   }
 }
