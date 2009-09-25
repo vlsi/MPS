@@ -31,9 +31,7 @@ import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.baseLanguage.unitTest.behavior.ITestMethod_Behavior;
-import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.lang.core.behavior.INamedConcept_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
@@ -449,16 +447,13 @@ public class JUnitConfigEditor extends JPanel {
           myThis.setMethod(null);
           return;
         }
-        Iterable<SNode> methods = ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(node, "testMethodList", true), "testMethod", true)).where(new IWhereFilter<SNode>() {
-          public boolean accept(SNode it) {
-            return ITestMethod_Behavior.call_getTestName_1216136419751(it).equals(m);
+        for (SNode method : SLinkOperations.getTargets(SLinkOperations.getTarget(node, "testMethodList", true), "testMethod", true)) {
+          if (ITestMethod_Behavior.call_getTestName_1216136419751(method).equals(m)) {
+            myThis.setMethod(method);
+            return;
           }
-        });
-        if (Sequence.fromIterable(methods).isEmpty()) {
-          myThis.setMethod(null);
-          return;
         }
-        myThis.setMethod(Sequence.fromIterable(methods).first());
+        myThis.setMethod(null);
       }
     });
   }
@@ -503,10 +498,6 @@ public class JUnitConfigEditor extends JPanel {
     }
     if (config.getStateObject().node != null) {
       myThis.setNodeValue(config.getStateObject().node);
-      if (config.getStateObject().method != null) {
-        myThis.setMethodValue(config.getStateObject().node, config.getStateObject().method);
-        myThis.myMethodName0.setText(config.getStateObject().method);
-      }
       ModelAccess.instance().runReadAction(new Runnable() {
         public void run() {
           myThis.myNodeName0.setText(INamedConcept_Behavior.call_getFqName_1213877404258(myThis.getNode()));
@@ -518,6 +509,10 @@ public class JUnitConfigEditor extends JPanel {
           myThis.myModuleName0.setText(SNodeOperations.getModel(myThis.getNode()).getModelDescriptor().getModule().getModuleFqName());
         }
       });
+      if (config.getStateObject().method != null) {
+        myThis.setMethodValue(config.getStateObject().node, config.getStateObject().method);
+        myThis.myMethodName0.setText(config.getStateObject().method);
+      }
     }
     if (config.getStateObject().model != null) {
       myThis.setModelValue(config.getStateObject().model);
@@ -575,6 +570,6 @@ public class JUnitConfigEditor extends JPanel {
   }
 
   public void onMethodChange() {
-    myThis.setMethodValue(myThis.myNodeName0.getText(), myThis.myMethodName0.getText());
+    myThis.setMethodValue(myThis.myNodeNameWithMethod0.getText(), myThis.myMethodName0.getText());
   }
 }
