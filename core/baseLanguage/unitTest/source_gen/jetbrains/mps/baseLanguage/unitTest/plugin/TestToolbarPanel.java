@@ -21,22 +21,26 @@ public class TestToolbarPanel extends JPanel {
   private TestOccurenceNavigator navigator;
 
   public TestToolbarPanel(TestTree tree, TestOccurenceNavigator navigator) {
+    super(new BorderLayout());
     this.tree = tree;
     this.navigator = navigator;
+    this.setLayout(new BorderLayout());
     this.init();
   }
 
   private void init() {
-    this.setLayout(new BorderLayout());
     final DefaultActionGroup actionGroup = new DefaultActionGroup();
     actionGroup.addAction(this.createHidePassedAction());
+    actionGroup.addAction(this.cteateTrackRunningAction());
     actionGroup.addAction(this.createCollapseAllAction());
     actionGroup.addAction(this.createExpandAllAction());
     actionGroup.addAction(this.createNextOccurrenceAction());
     actionGroup.addAction(this.createPreviousOccurrenceAction());
+    actionGroup.addAction(this.createSelectFirstFailedAction());
+    actionGroup.addAction(this.createRerunFailedTestAction());
     ActionToolbar toolbarActions = ActionManager.getInstance().createActionToolbar(ActionPlaces.UNKNOWN, actionGroup, false);
     toolbarActions.setOrientation(SwingConstants.HORIZONTAL);
-    this.add(toolbarActions.getComponent(), BorderLayout.LINE_START);
+    this.add(toolbarActions.getComponent(), BorderLayout.WEST);
   }
 
   private AnAction createHidePassedAction() {
@@ -50,6 +54,17 @@ public class TestToolbarPanel extends JPanel {
       public void setSelected(AnActionEvent p0, boolean p1) {
         this.hidden = p1;
         TestToolbarPanel.this.tree.hidePassed(p1);
+      }
+    };
+  }
+
+  private AnAction cteateTrackRunningAction() {
+    return new ToggleAction("Track Running Test", "Select currently running test in tree", TestsUIUtil.loadIcon("trackTests")) {
+      public boolean isSelected(AnActionEvent p0) {
+        return false;
+      }
+
+      public void setSelected(AnActionEvent p0, boolean p1) {
       }
     };
   }
@@ -91,6 +106,20 @@ public class TestToolbarPanel extends JPanel {
         if (TestToolbarPanel.this.navigator.hasPreviousOccurence()) {
           TestToolbarPanel.this.navigator.goPreviousOccurence();
         }
+      }
+    };
+  }
+
+  private AnAction createSelectFirstFailedAction() {
+    return new AnAction("Select First Failed Test When Finished", "", TestsUIUtil.loadIcon("selectFirstDefect")) {
+      public void actionPerformed(AnActionEvent p0) {
+      }
+    };
+  }
+
+  private AnAction createRerunFailedTestAction() {
+    return new AnAction("Rerun Failed Tests", "Rerun only tests that failed/crached after last run", TestsUIUtil.loadIcon("rerunFailedTests")) {
+      public void actionPerformed(AnActionEvent p0) {
       }
     };
   }
