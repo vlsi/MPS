@@ -42,17 +42,34 @@ public class JavaCompiler {
   private Solution mySolution;
   private List<CompilationResult> myCompilationResults = new ArrayList<CompilationResult>();
   private File mySourceDir;
-  private String myPrefix;
   private Map<String, SModel> myPackageFQNamesToModels = new HashMap<String, SModel>();
+  private String myPrefix = null;
 
   public JavaCompiler(Solution solution, File sourceDir) {
     mySolution = solution;
     mySourceDir = sourceDir;
-    myPrefix = solution.getModuleFqName();
     initClassPathItem(solution);
-    addSourceFromDirectory(mySourceDir, myPrefix);
-    mySolution.getSolutionDescriptor().setOutputPath(mySourceDir.getPath());  //todo strangely, this does not work properly
+    addSourceFromDirectory(mySourceDir, "");
+    File generalSourceDirectory = getGeneralSourceDirectory();
+    if (generalSourceDirectory != null) {
+      mySolution.getSolutionDescriptor().setOutputPath(generalSourceDirectory.getPath());
+    }
     mySolution.save();
+  }
+
+  private File getGeneralSourceDirectory() {
+    if (myPrefix == null) {
+      return null; //no source files detected
+    }
+    String prefixPath = myPrefix.replace('.', File.separatorChar);
+    String sourcePath = mySourceDir.getPath();
+    if (!(sourcePath.endsWith(prefixPath))) {
+      LOG.warning("source directory path does not match package structure");
+      return null;
+    }
+    int index = sourcePath.length() - prefixPath.length();
+    String generalSourcePath = sourcePath.substring(0,index);
+    return new File(generalSourcePath);
   }
 
   private void initClassPathItem(IModule module) {
@@ -63,7 +80,7 @@ public class JavaCompiler {
     myClassPathItem = compositeClassPathItem;
   }
 
-  public void addSourceFromFile(File file, String packageName) {
+  public void addSourceFromFile(File file, String packageNameWithoutPrefix) {
     try {
       String fileContents = FileUtil.read(file);
       String str = "package ";
@@ -79,11 +96,21 @@ public class JavaCompiler {
         classFQName.append(c);
       }
       String packageNameFromFile = classFQName.toString();
-      if (!(packageName.equals(packageNameFromFile))) {
-        LOG.error("package name in a source file does not correpond to file path");
-        return;
+      if (myPrefix != null) {
+        if (!((myPrefix + packageNameWithoutPrefix).equals(packageNameFromFile))) {
+          LOG.error("package name in a source file does not correpond to file path");
+          return;
+        }
+      } else {
+        if (packageNameFromFile.endsWith(packageNameWithoutPrefix)) {
+          int index = packageNameFromFile.length() - packageNameWithoutPrefix.length();
+          myPrefix = packageNameFromFile.substring(0, index);
+        } else {
+          LOG.error("package name in a source file does not correpond to file path");
+          return;
+        }
       }
-      SModel model = getModel(packageName);
+      SModel model = getModel(packageNameFromFile);
       String fileName;
       String nameAndExtension = file.getName();
       int offset = nameAndExtension.lastIndexOf('.');
@@ -94,20 +121,20 @@ public class JavaCompiler {
       }
       classFQName.append(".");
       classFQName.append(fileName);
-      myPackageFQNamesToModels.put(packageName, model);
+      myPackageFQNamesToModels.put(packageNameFromFile, model);
       addSource(classFQName.toString(), fileContents, model);
     } catch (Throwable t) {
       LOG.error(t);
     }
   }
 
-  public void addSourceFromDirectory(File dir, String packageName) {
+  public void addSourceFromDirectory(File dir, String packageNameWithoutPrefix) {
     assert dir.isDirectory();
     for (File file : dir.listFiles()) {
       if (file.isDirectory()) {
         //create model if necessary
         String dirName = file.getName();
-        String nestedPackageName = packageName + '.' + dirName;
+        String nestedPackageName = packageNameWithoutPrefix + '.' + dirName;
         addSourceFromDirectory(file, nestedPackageName);
       } else {
         String extension;
@@ -116,7 +143,7 @@ public class JavaCompiler {
         if (offset >= 0) {
           extension = nameAndExtension.substring(offset + 1);
           if ("java".equals(extension)) {
-            addSourceFromFile(file, packageName);
+            addSourceFromFile(file, packageNameWithoutPrefix);
           }
         }
       }
@@ -171,16 +198,16 @@ public class JavaCompiler {
   }
 
   public static String packageNameFromCompoundName(char[][] name) {
-     StringBuilder result = new StringBuilder();
-     for (int i = 0; i < name.length - 1; i++) {
-       char[] namePart = name[i];
-       result.append(namePart);
-       if (i < name.length - 2) {
-         result.append('.');
-       }
-     }
-     return result.toString();
-   }
+    StringBuilder result = new StringBuilder();
+    for (int i = 0; i < name.length - 1; i++) {
+      char[] namePart = name[i];
+      result.append(namePart);
+      if (i < name.length - 2) {
+        result.append('.');
+      }
+    }
+    return result.toString();
+  }
 
   private class MyNameEnvironment extends MPSNameEnvironment {
     protected IClassPathItem getClassPathItem() {

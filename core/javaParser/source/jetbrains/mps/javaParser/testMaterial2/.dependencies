@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dependenciesRoot>
+  <dependency className="jetbrains.mps.javaParser.testMaterial2.OrdinaryClassWithLinksOutside">
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.javaParser.testMaterial2.OrdinaryClassWithLinksOutside2" />
+    <classNode extendsClassName="java.lang.Object" />
+  </dependency>
+  <dependency className="jetbrains.mps.javaParser.testMaterial2.OrdinaryClassWithLinksOutside2">
+    <classNode dependClassName="jetbrains.mps.javaParser.testMaterial2.OrdinaryClassWithLinksOutside" />
+    <classNode extendsClassName="java.lang.Object" />
+  </dependency>
+</dependenciesRoot>
+
