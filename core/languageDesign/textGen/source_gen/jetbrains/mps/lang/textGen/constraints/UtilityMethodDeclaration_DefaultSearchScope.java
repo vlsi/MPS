@@ -29,7 +29,13 @@ public class UtilityMethodDeclaration_DefaultSearchScope extends BaseNodeReferen
     List<SNode> methods = new ArrayList<SNode>();
     SNode textGen = SNodeOperations.getAncestor(_context.getEnclosingNode(), "jetbrains.mps.lang.textGen.structure.LanguageTextGenDeclaration", false, false);
     if (textGen != null) {
-      ListSequence.fromList(methods).addSequence(ListSequence.fromList(SLinkOperations.getTargets(textGen, "function", true)));
+      while (true) {
+        ListSequence.fromList(methods).addSequence(ListSequence.fromList(SLinkOperations.getTargets(textGen, "function", true)));
+        if ((SLinkOperations.getTarget(textGen, "baseTextGen", false) == null)) {
+          break;
+        }
+        textGen = SLinkOperations.getTarget(textGen, "baseTextGen", false);
+      }
     }
     return methods;
   }

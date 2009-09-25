@@ -387,21 +387,59 @@
           </node>
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1237206889550">
             <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1237206889551">
-              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1237206943226">
-                <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1237206945025">
-                  <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1237206943227">
-                    <link role="variableDeclaration" targetNodeId="1237206517642" resolveInfo="methods" />
-                  </node>
-                  <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.AddAllElementsOperation" id="1237207012748">
-                    <node role="argument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1237207028584">
-                      <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1237207028190">
-                        <link role="variableDeclaration" targetNodeId="1237206949688" resolveInfo="textGen" />
+              <node role="statement" type="jetbrains.mps.baseLanguage.structure.WhileStatement" id="5211164146776772763">
+                <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="5211164146776772765">
+                  <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1237206943226">
+                    <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1237206945025">
+                      <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1237206943227">
+                        <link role="variableDeclaration" targetNodeId="1237206517642" resolveInfo="methods" />
                       </node>
-                      <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkListAccess" id="1237207043387">
-                        <link role="link" targetNodeId="1.1234526822589" />
+                      <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.AddAllElementsOperation" id="1237207012748">
+                        <node role="argument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1237207028584">
+                          <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1237207028190">
+                            <link role="variableDeclaration" targetNodeId="1237206949688" resolveInfo="textGen" />
+                          </node>
+                          <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkListAccess" id="1237207043387">
+                            <link role="link" targetNodeId="1.1234526822589" />
+                          </node>
+                        </node>
                       </node>
                     </node>
                   </node>
+                  <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="5211164146776772789">
+                    <node role="condition" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="5211164146776772772">
+                      <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="5211164146776772767">
+                        <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="5211164146776772766">
+                          <link role="variableDeclaration" targetNodeId="1237206949688" resolveInfo="textGen" />
+                        </node>
+                        <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="5211164146776772771">
+                          <link role="link" targetNodeId="1.1234781160172" />
+                        </node>
+                      </node>
+                      <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_IsNullOperation" id="5211164146776772796" />
+                    </node>
+                    <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="5211164146776772794">
+                      <node role="statement" type="jetbrains.mps.baseLanguage.structure.BreakStatement" id="5211164146776772792" />
+                    </node>
+                  </node>
+                  <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="5211164146776772777">
+                    <node role="expression" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression" id="5211164146776772779">
+                      <node role="rValue" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="5211164146776772784">
+                        <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="5211164146776772783">
+                          <link role="variableDeclaration" targetNodeId="1237206949688" resolveInfo="textGen" />
+                        </node>
+                        <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="5211164146776772788">
+                          <link role="link" targetNodeId="1.1234781160172" />
+                        </node>
+                      </node>
+                      <node role="lValue" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="5211164146776772778">
+                        <link role="variableDeclaration" targetNodeId="1237206949688" resolveInfo="textGen" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+                <node role="condition" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="5211164146776772793">
+                  <property name="value" value="true" />
                 </node>
               </node>
             </node>
