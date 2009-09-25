@@ -14,6 +14,7 @@
         <property name="name" value="asdasd" />
         <node role="attribute" type="jetbrains.mps.sampleXML.structure.Attribute" id="1225240178066">
           <property name="name" value="aaa" />
+          <property name="value" value="jkjkljklj" />
         </node>
         <node role="content" type="jetbrains.mps.sampleXML.structure.Text" id="1225240180848">
           <property name="name" value="a" />
@@ -21,6 +22,13 @@
         </node>
         <node role="content" type="jetbrains.mps.sampleXML.structure.Element" id="1225240190819">
           <property name="name" value="element" />
+        </node>
+      </node>
+      <node role="content" type="jetbrains.mps.sampleXML.structure.Element" id="5211164146775932546">
+        <property name="name" value="asd" />
+        <node role="attribute" type="jetbrains.mps.sampleXML.structure.Attribute" id="5211164146775932547">
+          <property name="name" value="asdasd" />
+          <property name="value" value="21233123" />
         </node>
       </node>
     </node>

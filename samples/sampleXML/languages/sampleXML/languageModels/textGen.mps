@@ -420,11 +420,19 @@
             </node>
             <node role="catchBody" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1236700827382">
               <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1236701106380">
-                <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1236701176929">
-                  <link role="baseMethodDeclaration" targetNodeId="5.~Logger.getLogger(java.lang.Class):jetbrains.mps.logging.Logger" resolveInfo="getLogger" />
-                  <link role="classConcept" targetNodeId="5.~Logger" resolveInfo="Logger" />
-                  <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.ClassifierClassExpression" id="1236701176930">
-                    <link role="classifier" targetNodeId="2.~Document" resolveInfo="Document" />
+                <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="5211164146776838055">
+                  <node role="operand" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1236701176929">
+                    <link role="baseMethodDeclaration" targetNodeId="5.~Logger.getLogger(java.lang.Class):jetbrains.mps.logging.Logger" resolveInfo="getLogger" />
+                    <link role="classConcept" targetNodeId="5.~Logger" resolveInfo="Logger" />
+                    <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.ClassifierClassExpression" id="1236701176930">
+                      <link role="classifier" targetNodeId="2.~Document" resolveInfo="Document" />
+                    </node>
+                  </node>
+                  <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="5211164146776838059">
+                    <link role="baseMethodDeclaration" targetNodeId="5.~Logger.error(java.lang.Throwable):void" resolveInfo="error" />
+                    <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="5211164146776838060">
+                      <link role="variableDeclaration" targetNodeId="1236700827380" resolveInfo="e" />
+                    </node>
                   </node>
                 </node>
               </node>

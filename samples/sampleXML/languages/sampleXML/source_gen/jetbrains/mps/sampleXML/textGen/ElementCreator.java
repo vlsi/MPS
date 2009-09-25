@@ -26,7 +26,7 @@ public abstract class ElementCreator {
       String output = xmlOutputter.outputString(document);
       textGen.append(output);
     } catch (Exception e) {
-      Logger.getLogger(Document.class);
+      Logger.getLogger(Document.class).error(e);
     }
   }
 
