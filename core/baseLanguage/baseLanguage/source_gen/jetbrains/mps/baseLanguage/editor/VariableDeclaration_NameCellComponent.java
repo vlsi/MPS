@@ -72,7 +72,7 @@ public class VariableDeclaration_NameCellComponent extends AbstractCellProvider 
     }
 
     public List<String> getPostfixes(SNode node, IScope scope, IOperationContext operationContext) {
-      List<String> result;                                                                                                                  
+      List<String> result;
       SNode nodeType = SLinkOperations.getTarget(node, "type", true);
       if (nodeType != null) {
         result = Type_Behavior.call_getVariableSuffixes_1213877337304(nodeType);
