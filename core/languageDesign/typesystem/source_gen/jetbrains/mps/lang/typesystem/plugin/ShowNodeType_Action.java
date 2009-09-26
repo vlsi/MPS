@@ -80,14 +80,15 @@ public class ShowNodeType_Action extends GeneratedAction {
         JOptionPane.showMessageDialog(ShowNodeType_Action.this.frame, "no type");
         return;
       }
-      final Wrappers._T<MyBaseNodeDialog> dialog = new Wrappers._T<MyBaseNodeDialog>();
+      MyBaseNodeDialog dialog;
+      final Wrappers._T<IErrorReporter> reporter = new Wrappers._T<IErrorReporter>();
       ModelAccess.instance().runReadAction(new Runnable() {
         public void run() {
-          IErrorReporter reporter = TypeChecker.getInstance().getTypeMessageDontCheck(ShowNodeType_Action.this.node);
-          dialog.value = new MyBaseNodeDialog(ShowNodeType_Action.this.context, ShowNodeType_Action.this.node, type.value, reporter);
+          reporter.value = TypeChecker.getInstance().getTypeMessageDontCheck(ShowNodeType_Action.this.node);
         }
       });
-      dialog.value.showDialog();
+      dialog = new MyBaseNodeDialog(ShowNodeType_Action.this.context, ShowNodeType_Action.this.node, type.value, reporter.value);
+      dialog.showDialog();
     } catch (Throwable t) {
       LOG.error("User's action execute method failed. Action:" + "ShowNodeType", t);
     }

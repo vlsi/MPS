@@ -19,10 +19,7 @@ import jetbrains.mps.ide.dialogs.BaseNodeDialog;
 import jetbrains.mps.ide.dialogs.DialogDimensionsSettings.DialogDimensions;
 import jetbrains.mps.lang.typesystem.plugin.GoToTypeErrorRuleUtil;
 import jetbrains.mps.nodeEditor.IErrorReporter;
-import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.*;
 import jetbrains.mps.typesystem.uiActions.SupertypesViewTool;
 import jetbrains.mps.util.JSplitPaneWithoutBorders;
 
@@ -33,15 +30,17 @@ import javax.swing.JSplitPane;
 import java.awt.HeadlessException;
 import java.awt.event.ActionEvent;
 
+import com.intellij.openapi.util.Computable;
+
 public class MyBaseNodeDialog extends BaseNodeDialog {
   private final SNode myType;
-  private final SModel myModel;
+  private SModel myModel;
   private final IErrorReporter myError;
   private boolean myWasRegistered = true;
   private JSplitPane myMainComponent;
 
   public MyBaseNodeDialog(IOperationContext operationContext, SNode node, SNode type, IErrorReporter error) throws HeadlessException {
-    super("Type For Node " + node, operationContext);
+    super(getTitle(node), operationContext);
 
     SupertypesViewTool supertypesView = operationContext.getMPSProject().getComponent(SupertypesViewTool.class);
 
@@ -50,7 +49,13 @@ public class MyBaseNodeDialog extends BaseNodeDialog {
     myMainComponent.setResizeWeight(0.8);
 
     myType = type;
-    myModel = myType.getModel();
+    final BaseAdapter[] adapter = new BaseAdapter[1];
+    ModelAccess.instance().runReadAction(new Runnable() {
+      public void run() {
+        myModel =myType.getModel();
+        adapter[0] = myType.getAdapter();
+      }
+    });
     ModelAccess.instance().runWriteActionInCommand(new Runnable() {
       public void run() {
         if (!myType.isRegistered()) {
@@ -66,7 +71,15 @@ public class MyBaseNodeDialog extends BaseNodeDialog {
       }
     });
     myError = error;
-    supertypesView.showConceptInHierarchy(myType.getAdapter(), operationContext);
+    supertypesView.showConceptInHierarchy(adapter[0], operationContext);
+  }
+
+  private static String getTitle(final SNode node) {
+    return ModelAccess.instance().runWriteActionInCommand(new Computable<String>() {
+      public String compute() {
+        return "Type For Node " + node;
+      }
+    });
   }
 
   protected JComponent getMainComponent() {
