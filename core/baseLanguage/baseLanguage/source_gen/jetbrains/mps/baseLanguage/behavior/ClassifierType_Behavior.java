@@ -131,6 +131,10 @@ public class ClassifierType_Behavior {
     return new _Quotations.QuotationClass_30().createNode();
   }
 
+  public static boolean virtual_hasMissingParameters_3508583411997314206(SNode thisNode) {
+    return ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(thisNode, "classifier", false), "typeVariableDeclaration", true)).count() != ListSequence.fromList(SLinkOperations.getTargets(thisNode, "parameter", true)).count();
+  }
+
   public static SNode call_createDefaultTypeExpression_9011026350741578236(SNode thisNode) {
     return (SNode)BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.ClassifierType"), "virtual_createDefaultTypeExpression_3359611512358152580", PARAMETERS_9011026350741578236);
   }

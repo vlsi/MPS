@@ -9396,7 +9396,7 @@
       <property name="writable" value="true" />
       <property name="defaultValue" value="?" />
       <property name="noTargetText" value="&lt;no name&gt;" />
-      <property name="attractsFocus" value="0" />
+      <property name="attractsFocus" value="2" />
       <link role="relationDeclaration" targetNodeId="18.1169194664001" />
       <link role="styleClass" targetNodeId="1215090010725" resolveInfo="VariableName" />
       <node role="menuDescriptor" type="jetbrains.mps.lang.editor.structure.CellMenuDescriptor" id="1181823199383">
@@ -9477,6 +9477,36 @@
       </node>
       <node role="styleItem" type="jetbrains.mps.lang.editor.structure.SideTransformAnchorTagStyleClassItem" id="1214321202510">
         <property name="tag" value="default_RTransform" />
+      </node>
+      <node role="focusPolicyApplicable" type="jetbrains.mps.lang.editor.structure.QueryFunction_NodeCondition" id="3508583411997322804">
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="3508583411997322805">
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="3508583411997370254">
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.AndExpression" id="3508583411997370270">
+              <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.NotExpression" id="3508583411997370284">
+                <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="3508583411997370285">
+                  <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="3508583411997370286">
+                    <node role="operand" type="jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_node" id="3508583411997370287" />
+                    <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="3508583411997370288">
+                      <link role="link" targetNodeId="17.5680397130376446158" />
+                    </node>
+                  </node>
+                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="3508583411997370289">
+                    <link role="baseMethodDeclaration" targetNodeId="75.3508583411997314206" resolveInfo="isParameterized" />
+                  </node>
+                </node>
+              </node>
+              <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="3508583411997370265">
+                <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="3508583411997370256">
+                  <node role="operand" type="jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_node" id="3508583411997370255" />
+                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="3508583411997370260">
+                    <link role="link" targetNodeId="17.5680397130376446158" />
+                  </node>
+                </node>
+                <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_IsNotNullOperation" id="3508583411997370269" />
+              </node>
+            </node>
+          </node>
+        </node>
       </node>
     </node>
   </node>

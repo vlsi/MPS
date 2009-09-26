@@ -3456,6 +3456,41 @@
         <link role="annotation" targetNodeId="2.~Override" />
       </node>
     </node>
+    <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="3508583411997837249">
+      <property name="name" value="hasMissingParameters" />
+      <link role="overriddenMethod" targetNodeId="3508583411997314206" resolveInfo="hasMissingParameters" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="3508583411997837252">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="3508583411997837255">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.NotEqualsExpression" id="3508583411997837275">
+            <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="3508583411997837288">
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="3508583411997837281">
+                <node role="operand" type="jetbrains.mps.lang.behavior.structure.ThisNodeExpression" id="3508583411997837279" />
+                <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkListAccess" id="3508583411997837286">
+                  <link role="link" targetNodeId="1.1109201940907" />
+                </node>
+              </node>
+              <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.GetSizeOperation" id="3508583411997837293" />
+            </node>
+            <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="3508583411997837267">
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="3508583411997837262">
+                <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="3508583411997837257">
+                  <node role="operand" type="jetbrains.mps.lang.behavior.structure.ThisNodeExpression" id="3508583411997837256" />
+                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="3508583411997837261">
+                    <link role="link" targetNodeId="1.1107535924139" />
+                  </node>
+                </node>
+                <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkListAccess" id="3508583411997837266">
+                  <link role="link" targetNodeId="1.1109279881614" />
+                </node>
+              </node>
+              <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.GetSizeOperation" id="3508583411997837271" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.BooleanType" id="3508583411997837253" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="3508583411997837254" />
+    </node>
     <node role="constructor" type="jetbrains.mps.lang.behavior.structure.ConceptConstructorDeclaration" id="1213877316004">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1213877316005" />
     </node>
@@ -4122,8 +4157,11 @@
       <node role="returnType" type="jetbrains.mps.baseLanguage.structure.BooleanType" id="1213877337353" />
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1213877337354">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1213877337355">
-          <node role="expression" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1213877337356">
-            <property name="value" value="false" />
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="3508583411997977285">
+            <node role="operand" type="jetbrains.mps.lang.behavior.structure.ThisNodeExpression" id="3508583411997977286" />
+            <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="3508583411997977287">
+              <link role="baseMethodDeclaration" targetNodeId="3508583411997314206" resolveInfo="hasMissingParameters" />
+            </node>
           </node>
         </node>
       </node>
@@ -4223,6 +4261,20 @@
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="3359611512358152583">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="3359611512358152586">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="3359611512358152588" />
+        </node>
+      </node>
+    </node>
+    <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="3508583411997314206">
+      <property name="name" value="hasMissingParameters" />
+      <property name="isVirtual" value="true" />
+      <property name="isAbstract" value="false" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="3508583411997314207" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.BooleanType" id="3508583411997322675" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="3508583411997314209">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="3508583411997322676">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="2105032875079568805">
+            <property name="value" value="false" />
+          </node>
         </node>
       </node>
     </node>

@@ -43,7 +43,7 @@ public class SNodeType_Behavior {
     return new _Quotations.QuotationClass_1().createNode();
   }
 
-  public static boolean virtual_selectOnVariableCreation_1213877337352(SNode thisNode) {
-    return true;
+  public static boolean virtual_hasMissingParameters_3508583411997314206(SNode thisNode) {
+    return (SLinkOperations.getTarget(thisNode, "concept", false) == null);
   }
 }

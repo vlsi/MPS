@@ -28,6 +28,7 @@ public class Type_Behavior {
   private static Class[] PARAMETERS_1213877337357 = {SNode.class};
   private static Class[] PARAMETERS_1220438914705 = {SNode.class ,SNode.class};
   private static Class[] PARAMETERS_3359611512358152580 = {SNode.class};
+  private static Class[] PARAMETERS_3508583411997314206 = {SNode.class};
 
   public static void init(SNode thisNode) {
   }
@@ -66,7 +67,7 @@ public class Type_Behavior {
   }
 
   public static boolean virtual_selectOnVariableCreation_1213877337352(SNode thisNode) {
-    return false;
+    return Type_Behavior.call_hasMissingParameters_3508583411997314206(thisNode);
   }
 
   public static SNode virtual_getClassExpression_1213877337357(SNode thisNode) {
@@ -95,6 +96,10 @@ public class Type_Behavior {
 
   public static SNode virtual_createDefaultTypeExpression_3359611512358152580(SNode thisNode) {
     return null;
+  }
+
+  public static boolean virtual_hasMissingParameters_3508583411997314206(SNode thisNode) {
+    return false;
   }
 
   public static List<String> call_getVariableSuffixes_1213877337304(SNode thisNode) {
@@ -137,6 +142,10 @@ public class Type_Behavior {
     return (SNode)BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.Type"), "virtual_createDefaultTypeExpression_3359611512358152580", PARAMETERS_3359611512358152580);
   }
 
+  public static boolean call_hasMissingParameters_3508583411997314206(SNode thisNode) {
+    return (Boolean)BehaviorManager.getInstance().invoke(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.Type"), "virtual_hasMissingParameters_3508583411997314206", PARAMETERS_3508583411997314206);
+  }
+
   public static List<String> callSuper_getVariableSuffixes_1213877337304(SNode thisNode, String callerConceptFqName) {
     return (List<String>)BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.Type"), callerConceptFqName, "virtual_getVariableSuffixes_1213877337304", PARAMETERS_1213877337304);
   }
@@ -175,5 +184,9 @@ public class Type_Behavior {
 
   public static SNode callSuper_createDefaultTypeExpression_3359611512358152580(SNode thisNode, String callerConceptFqName) {
     return (SNode)BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.Type"), callerConceptFqName, "virtual_createDefaultTypeExpression_3359611512358152580", PARAMETERS_3359611512358152580);
+  }
+
+  public static boolean callSuper_hasMissingParameters_3508583411997314206(SNode thisNode, String callerConceptFqName) {
+    return (Boolean)BehaviorManager.getInstance().invokeSuper(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.Type"), callerConceptFqName, "virtual_hasMissingParameters_3508583411997314206", PARAMETERS_3508583411997314206);
   }
 }
