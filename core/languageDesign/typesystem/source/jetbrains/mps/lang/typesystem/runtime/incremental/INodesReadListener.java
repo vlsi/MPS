@@ -22,6 +22,12 @@ public interface INodesReadListener {
 
   public void nodePropertyReadAccess(SNode node, String propertyName, String value);
 
+  public void propertyExistenceAccess(SNode node, String propertyName);
+
+  public void propertyDirtyReadAccess(SNode node, String propertyName);
+
+  public void propertyCleanReadAccess(SNode node, String propertyName);
+
   public void nodeReferentReadAccess(SNode node, String referentRole, SNode referent);
 
   public void nodeUnclassifiedReadAccess(SNode node);

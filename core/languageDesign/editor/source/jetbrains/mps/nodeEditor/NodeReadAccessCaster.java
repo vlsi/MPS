@@ -28,7 +28,6 @@ import com.intellij.openapi.util.Computable;
 public class NodeReadAccessCaster {
   private static Stack<CellBuildNodeAccessListener> ourReadAccessListenerStack = new Stack<CellBuildNodeAccessListener>();
   private static CellBuildNodeAccessListener ourReadAccessListener;
-  private static INodeReadAccessListener ourAbstractReadAccessListener;
   private static PropertyCellCreationNodeReadAccessListener ourPropertyCellCreationAccessListener;
   private static PropertyAccessor ourPropertyAccessor;
 
@@ -52,14 +51,6 @@ public class NodeReadAccessCaster {
       ourReadAccessListener.addNodesToDependOn(nodesWhichChildCellDependsOn);
       ourReadAccessListener.addRefTargetsToDependOn(refTargetsWhichCellDependsOn);
     }
-  }
-
-  public static void setNodeAccessListener(INodeReadAccessListener listener) {
-    ourAbstractReadAccessListener = listener;
-  }
-
-  public static void removeNodeAccessListener() {
-    ourAbstractReadAccessListener = null;
   }
 
   public static void beforeCreatingPropertyCell(PropertyCellCreationNodeReadAccessListener listener) {
@@ -89,8 +80,7 @@ public class NodeReadAccessCaster {
     if (ourEventsBlocked) return;
     if (!node.isRegistered()) return;
     if (node.isModelLoading()) return;
-    if (ourReadAccessListener != null) ourReadAccessListener.readAccess(node);
-    if (ourAbstractReadAccessListener != null) ourAbstractReadAccessListener.readAccess(node);
+    if (ourReadAccessListener != null) ourReadAccessListener.nodeUnclassifiedReadAccess(node);
   }
 
   @Hack
@@ -111,7 +101,7 @@ public class NodeReadAccessCaster {
     if (ourPropertyAccessor != null) {
       if (ourPropertyCellCreationAccessListener != null) {
         switchOffFiringPropertyReadAccessedEvent();
-        ourPropertyCellCreationAccessListener.propertyCleanReadAccess(new SNodePointer(node), propertyName);
+        ourPropertyCellCreationAccessListener.propertyCleanReadAccess(node, propertyName);
         switchOnFiringPropertyReadAccessedEvent();
       }
       return;
@@ -119,13 +109,8 @@ public class NodeReadAccessCaster {
 
     if (propertyExistenceCheck && ourReadAccessListener != null) {
       ourReadAccessListener.propertyExistenceAccess(node, propertyName);
-      ourReadAccessListener.readAccess(node);
     } else if (ourReadAccessListener != null) {
       ourReadAccessListener.propertyDirtyReadAccess(node, propertyName);
-      ourReadAccessListener.readAccess(node);
-    }
-    if (ourAbstractReadAccessListener != null) {
-      ourAbstractReadAccessListener.readAccess(node);
     }
   }
 

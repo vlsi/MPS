@@ -25,6 +25,7 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.lang.typesystem.runtime.*;
 import jetbrains.mps.lang.typesystem.runtime.incremental.INodesReadListener;
+import jetbrains.mps.lang.typesystem.runtime.incremental.AbstractNodesReadListener;
 import jetbrains.mps.lang.typesystem.structure.RuntimeErrorType;
 import jetbrains.mps.lang.typesystem.structure.RuntimeTypeVariable;
 import jetbrains.mps.lang.typesystem.structure.RuntimeHoleType;
@@ -1033,7 +1034,7 @@ public class NodeTypesComponent implements EditorMessageOwner {
     }
   }
 
-  private class MyEventsReadListener implements INodesReadListener {
+  private class MyEventsReadListener extends AbstractNodesReadListener {
     private Set<SNode> myAccessedNodes = new HashSet<SNode>(1);
     private Set<Pair<SNode, String>> myAccessedProperties = new HashSet<Pair<SNode, String>>(1);
     private boolean myIsSetAccessReport = false;

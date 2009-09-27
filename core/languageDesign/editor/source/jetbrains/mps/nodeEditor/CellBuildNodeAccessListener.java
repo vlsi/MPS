@@ -71,10 +71,16 @@ public class CellBuildNodeAccessListener extends AbstractNodeReadAccessOnCellCre
     NodeReadAccessCaster.switchOffFiringPropertyReadAccessedEvent();
     myDirtilyReadAccessedProperties.add(new Pair<SNodePointer, String>(new SNodePointer(node), propertyName));
     NodeReadAccessCaster.switchOnFiringPropertyReadAccessedEvent();
+    //refactored here from calling after unique usage
+    nodeUnclassifiedReadAccess(node);
   }
 
-  public void readAccess(SNode node) {
+  public void nodeUnclassifiedReadAccess(SNode node) {
     myNodesToDependOn.add(node);
+  }
+
+  public void nodeReferentReadAccess(SNode node, String referentRole, SNode referent) {
+     addRefTargetToDependOn(new SNodePointer(referent));
   }
 
   public void addRefTargetToDependOn(SNodePointer target) {
@@ -85,5 +91,7 @@ public class CellBuildNodeAccessListener extends AbstractNodeReadAccessOnCellCre
     NodeReadAccessCaster.switchOffFiringPropertyReadAccessedEvent();
     myExistenceReadAccessProperties.add(new Pair<SNodePointer, String>(new SNodePointer(node), propertyName));
     NodeReadAccessCaster.switchOnFiringPropertyReadAccessedEvent();
+    //refactored here from from calling after unique usage
+    nodeUnclassifiedReadAccess(node);
   }
 }

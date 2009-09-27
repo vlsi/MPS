@@ -16,6 +16,7 @@
 package jetbrains.mps.smodel;
 
 import jetbrains.mps.lang.typesystem.runtime.incremental.INodesReadListener;
+import jetbrains.mps.lang.typesystem.runtime.incremental.AbstractNodesReadListener;
 import jetbrains.mps.util.ManyToManyMap;
 
 import java.util.Collections;
@@ -51,7 +52,7 @@ public class DependencyRecorder<T> {
     return myObjectsToNodes.getBySecond(n);
   }
 
-  private class MyNodeReadListener implements INodesReadListener {
+  private class MyNodeReadListener extends AbstractNodesReadListener {
     private Set<SNode> myDependencies = new HashSet<SNode>();
 
     private Set<SNode> getDependencies() {

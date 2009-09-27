@@ -881,7 +881,7 @@
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="2164176144466640384">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="2164176144466662832">
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="2164176144466662833">
-            <property name="name" value="a" />
+            <property name="name" value="aaaaaaaaaaa" />
             <node role="type" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="2164176144466662834" />
             <node role="initializer" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="2164176144466662836">
               <property name="value" value="3" />
@@ -891,7 +891,7 @@
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="2164176144466662838">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.MinusExpression" id="2164176144466735584">
             <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="2164176144466735587">
-              <property name="value" value="67" />
+              <property name="value" value="673435" />
             </node>
             <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.MinusExpression" id="2164176144466735580">
               <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.MinusExpression" id="2164176144466735576">
