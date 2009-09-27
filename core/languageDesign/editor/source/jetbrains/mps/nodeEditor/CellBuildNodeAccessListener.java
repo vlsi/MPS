@@ -23,8 +23,8 @@ import jetbrains.mps.util.Pair;
 import java.util.HashSet;
 import java.util.Set;
 
-public class CellBuildNodeAccessListener extends AbstractNodeReadAccessOnCellCreationListener {
-
+public class CellBuildNodeAccessListener {
+  protected EditorComponent myEditor;
 
   protected HashSet<SNode> myNodesToDependOn = new HashSet<SNode>();
   protected HashSet<SNodePointer> myReferentTargetsToDependOn = new HashSet<SNodePointer>();
@@ -36,7 +36,7 @@ public class CellBuildNodeAccessListener extends AbstractNodeReadAccessOnCellCre
   private static final Logger LOG = Logger.getLogger(CellBuildNodeAccessListener.class);
 
   public CellBuildNodeAccessListener(EditorComponent editor) {
-    super(editor);
+    myEditor = editor;
   }
 
   public Set<SNode> getNodesToDependOn() {
