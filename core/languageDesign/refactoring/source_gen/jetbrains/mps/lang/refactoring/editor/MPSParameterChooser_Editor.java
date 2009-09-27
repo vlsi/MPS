@@ -23,8 +23,10 @@ public class MPSParameterChooser_Editor extends DefaultNodeEditor {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_5978_0");
     editorCell.setGridLayout(true);
-    editorCell.addEditorCell(this.createCollection_5978_2(editorContext, node));
     editorCell.addEditorCell(this.createCollection_5978_1(editorContext, node));
+    editorCell.addEditorCell(this.createCollection_5978_2(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_5978_0(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_5978_1(editorContext, node));
     return editorCell;
   }
 
@@ -32,7 +34,7 @@ public class MPSParameterChooser_Editor extends DefaultNodeEditor {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_5978_1");
     editorCell.addEditorCell(this.createConstant_5978_0(editorContext, node));
-    editorCell.addEditorCell(this.createRefNode_5978_0(editorContext, node));
+    editorCell.addEditorCell(this.createProperty_5978_0(editorContext, node));
     return editorCell;
   }
 
@@ -40,19 +42,19 @@ public class MPSParameterChooser_Editor extends DefaultNodeEditor {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_5978_2");
     editorCell.addEditorCell(this.createConstant_5978_1(editorContext, node));
-    editorCell.addEditorCell(this.createProperty_5978_0(editorContext, node));
+    editorCell.addEditorCell(this.createProperty_5978_1(editorContext, node));
     return editorCell;
   }
 
   private EditorCell createConstant_5978_0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "filter:");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "type:");
     editorCell.setCellId("Constant_5978_0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   private EditorCell createConstant_5978_1(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "type:");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "title:");
     editorCell.setCellId("Constant_5978_1");
     editorCell.setDefaultText("");
     return editorCell;
@@ -76,10 +78,45 @@ public class MPSParameterChooser_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
+  private EditorCell createProperty_5978_1(EditorContext editorContext, SNode node) {
+    CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
+    provider.setRole("title");
+    provider.setNoTargetText("<no title>");
+    EditorCell editorCell;
+    editorCell = provider.createEditorCell(editorContext);
+    editorCell.setCellId("property_title");
+    editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
+    SNode attributeConcept = provider.getRoleAttribute();
+    Class attributeKind = provider.getRoleAttributeClass();
+    if (attributeConcept != null) {
+      IOperationContext opContext = editorContext.getOperationContext();
+      EditorManager manager = EditorManager.getInstanceFromContext(opContext);
+      return manager.createRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
+    } else
+    return editorCell;
+  }
+
   private EditorCell createRefNode_5978_0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("filterBlock");
-    provider.setNoTargetText("<no filterBlock>");
+    provider.setNoTargetText("<no filter>");
+    EditorCell editorCell;
+    editorCell = provider.createEditorCell(editorContext);
+    editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
+    SNode attributeConcept = provider.getRoleAttribute();
+    Class attributeKind = provider.getRoleAttributeClass();
+    if (attributeConcept != null) {
+      IOperationContext opContext = editorContext.getOperationContext();
+      EditorManager manager = EditorManager.getInstanceFromContext(opContext);
+      return manager.createRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
+    } else
+    return editorCell;
+  }
+
+  private EditorCell createRefNode_5978_1(EditorContext editorContext, SNode node) {
+    CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
+    provider.setRole("initialValueBlock");
+    provider.setNoTargetText("<no initial value>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());

@@ -8,11 +8,38 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
-public class RefactoringField extends BaseVariableDeclaration {
+public class RefactoringField extends BaseVariableDeclaration implements RefactoringArgument {
   public static final String concept = "jetbrains.mps.lang.refactoring.structure.RefactoringField";
+  public static final String SHORT_DESCRIPTION = "shortDescription";
+  public static final String ALIAS = "alias";
+  public static final String VIRTUAL_PACKAGE = "virtualPackage";
 
   public RefactoringField(SNode node) {
     super(node);
+  }
+
+  public String getShortDescription() {
+    return this.getProperty(RefactoringField.SHORT_DESCRIPTION);
+  }
+
+  public void setShortDescription(String value) {
+    this.setProperty(RefactoringField.SHORT_DESCRIPTION, value);
+  }
+
+  public String getAlias() {
+    return this.getProperty(RefactoringField.ALIAS);
+  }
+
+  public void setAlias(String value) {
+    this.setProperty(RefactoringField.ALIAS, value);
+  }
+
+  public String getVirtualPackage() {
+    return this.getProperty(RefactoringField.VIRTUAL_PACKAGE);
+  }
+
+  public void setVirtualPackage(String value) {
+    this.setProperty(RefactoringField.VIRTUAL_PACKAGE, value);
   }
 
   public static RefactoringField newInstance(SModel sm, boolean init) {

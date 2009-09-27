@@ -11,8 +11,6 @@ public interface IRefactoring {
 
   boolean init(RefactoringContext refactoringContext);
 
-  boolean isApplicable(RefactoringContext refactoringContext);
-
   void refactor(RefactoringContext refactoringContext);
 
   void doWhenDone(RefactoringContext refactoringContext);

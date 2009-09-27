@@ -11,6 +11,6 @@ public class DFABuilders extends DataFlowBuilders {
     manager.register("jetbrains.mps.lang.refactoring.structure.AbstractMoveExpression", new AbstractMoveExpression_DataFlow());
     manager.register("jetbrains.mps.lang.refactoring.structure.ChangeFeatureNameOperation", new ChangeFeatureNameOperation_DataFlow());
     manager.register("jetbrains.mps.lang.refactoring.structure.MoveNodeToNodeExpression", new MoveNodeToNodeExpression_DataFlow());
-    manager.register("jetbrains.mps.lang.refactoring.structure.AskStatement", new AskStatement_DataFlow());
+    manager.register("jetbrains.mps.lang.refactoring.structure.AskExpression", new AskExpression_DataFlow());
   }
 }

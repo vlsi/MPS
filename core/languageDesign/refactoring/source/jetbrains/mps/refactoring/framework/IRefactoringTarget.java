@@ -5,7 +5,7 @@ public interface IRefactoringTarget {
 
   boolean allowMultipleTargets();
 
-  boolean isApplicable(Object o);
+  boolean isApplicable(Object entity);
 
   public static enum TargetType {
     NODE, MODEL, MODULE

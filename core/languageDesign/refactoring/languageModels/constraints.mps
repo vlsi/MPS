@@ -259,7 +259,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.constraints.structure.ConceptConstraints" id="5497648299878491777">
-    <property name="package" value="RefDecl.Field" />
+    <property name="package" value="RefDecl.Arg.Field" />
     <link role="concept" targetNodeId="1.5497648299878398634" resolveInfo="RefactoringFieldReference" />
     <node role="referent" type="jetbrains.mps.lang.constraints.structure.NodeReferentConstraint" id="5497648299878491778">
       <link role="applicableLink" targetNodeId="1.5497648299878398635" />
@@ -287,7 +287,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.constraints.structure.ConceptConstraints" id="5497648299878491895">
-    <property name="package" value="RefDecl.Parameters" />
+    <property name="package" value="RefDecl.Arg.Parameters" />
     <link role="concept" targetNodeId="1.6895093993902496262" resolveInfo="RefactoringParameterReference" />
     <node role="referent" type="jetbrains.mps.lang.constraints.structure.NodeReferentConstraint" id="5497648299878491896">
       <link role="applicableLink" targetNodeId="1.6895093993902496263" />
@@ -315,7 +315,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.constraints.structure.ConceptConstraints" id="5497648299878742060">
-    <property name="package" value="RefDecl.Parameters" />
+    <property name="package" value="RefDecl.Arg.Parameters" />
     <link role="concept" targetNodeId="1.6895093993902311015" resolveInfo="AskStatement" />
     <node role="canBeChild" type="jetbrains.mps.lang.constraints.structure.ConstraintFunction_CanBeAChild" id="5497648299878742061">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="5497648299878742062">

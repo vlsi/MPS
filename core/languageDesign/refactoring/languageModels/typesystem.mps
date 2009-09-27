@@ -7,8 +7,6 @@
   <language namespace="f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)" />
   <language namespace="3a13115c-633c-4c5c-bbcc-75c4219e9555(jetbrains.mps.lang.quotation)" />
   <language namespace="83888646-71ce-4f1c-9c53-c54016f6ad4f(jetbrains.mps.baseLanguage.collections)" />
-  <language namespace="ceab5195-25ea-4f22-9b92-103b95ca8c0c(jetbrains.mps.lang.core)" />
-  <language namespace="3ecd7c84-cde3-45de-886c-135ecc69b742(jetbrains.mps.lang.refactoring)" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902ae(jetbrains.mps.lang.typesystem.constraints)" version="17" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902fb(jetbrains.mps.lang.smodel.constraints)" version="21" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" version="16" />
@@ -981,7 +979,7 @@
   </node>
   <node type="jetbrains.mps.lang.typesystem.structure.InferenceRule" id="5497648299878978965">
     <property name="name" value="typeof_ConceptFunctionParameter_RefactoringParameter" />
-    <property name="package" value="RefDecl.Parameters.Chooser.MPS" />
+    <property name="package" value="RefDecl.Arg.Parameters.Chooser.MPS" />
     <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="5497648299878978966">
       <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="5497648299879035568">
         <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="5497648299879035569">
@@ -1112,19 +1110,19 @@
   </node>
   <node type="jetbrains.mps.lang.typesystem.structure.InferenceRule" id="478744034994504852">
     <property name="name" value="typeof_RefactoringParameter" />
-    <property name="package" value="RefDecl.Parameters" />
+    <property name="package" value="RefDecl.Arg.Parameters" />
     <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="478744034994504853">
       <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="478744034994504882">
         <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="478744034994504883">
           <property name="name" value="chooser" />
           <node role="type" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="478744034994504884">
-            <link role="concept" targetNodeId="1.5497648299878741977" resolveInfo="RefactoringParameterChooser" />
+            <link role="concept" targetNodeId="1.7573235936722759491" resolveInfo="RefactoringParameterChooser" />
           </node>
           <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="478744034994504935">
-            <node role="operand" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference" id="478744034994504886">
+            <node role="operand" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference" id="7573235936722759533">
               <link role="applicableNode" targetNodeId="478744034994504854" resolveInfo="parameter" />
             </node>
-            <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="478744034994504939">
+            <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="7573235936722759532">
               <link role="link" targetNodeId="1.5497648299878741978" />
             </node>
           </node>
@@ -1303,7 +1301,7 @@
   </node>
   <node type="jetbrains.mps.lang.typesystem.structure.InferenceRule" id="478744034994505040">
     <property name="name" value="typeof_RefactoringParameterReference" />
-    <property name="package" value="RefDecl.Parameters" />
+    <property name="package" value="RefDecl.Arg.Parameters" />
     <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="478744034994505041">
       <node role="statement" type="jetbrains.mps.lang.typesystem.structure.CreateEquationStatement" id="478744034994505047">
         <node role="rightExpression" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause" id="478744034994505051">
@@ -1330,6 +1328,30 @@
     <node role="applicableNode" type="jetbrains.mps.lang.typesystem.structure.ConceptReference" id="478744034994505042">
       <property name="name" value="reference" />
       <link role="concept" targetNodeId="1.6895093993902496262" resolveInfo="RefactoringParameterReference" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.typesystem.structure.InferenceRule" id="8041810900052415307">
+    <property name="name" value="typeof_AskExpression" />
+    <property name="package" value="RefDecl.Arg.Parameters" />
+    <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="8041810900052415308">
+      <node role="statement" type="jetbrains.mps.lang.typesystem.structure.CreateEquationStatement" id="8041810900052415314">
+        <node role="rightExpression" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause" id="8041810900052415318">
+          <node role="normalType" type="jetbrains.mps.lang.quotation.structure.Quotation" id="8041810900052415319">
+            <node role="quotedNode" type="jetbrains.mps.baseLanguage.structure.BooleanType" id="8041810900052415321" />
+          </node>
+        </node>
+        <node role="leftExpression" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause" id="8041810900052415317">
+          <node role="normalType" type="jetbrains.mps.lang.typesystem.structure.TypeOfExpression" id="8041810900052415311">
+            <node role="term" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference" id="8041810900052415313">
+              <link role="applicableNode" targetNodeId="8041810900052415309" resolveInfo="expression" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="applicableNode" type="jetbrains.mps.lang.typesystem.structure.ConceptReference" id="8041810900052415309">
+      <property name="name" value="expression" />
+      <link role="concept" targetNodeId="1.6895093993902311015" resolveInfo="AskExpression" />
     </node>
   </node>
 </model>

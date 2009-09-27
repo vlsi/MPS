@@ -9,7 +9,7 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
-public class RefactoringParameter extends BaseConcept implements INamedConcept {
+public class RefactoringParameter extends BaseConcept implements INamedConcept, RefactoringArgument {
   public static final String concept = "jetbrains.mps.lang.refactoring.structure.RefactoringParameter";
   public static final String NAME = "name";
   public static final String SHORT_DESCRIPTION = "shortDescription";

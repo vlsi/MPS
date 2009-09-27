@@ -53,10 +53,6 @@ public class OldRefactoringAdapter implements IRefactoring{
     return myOldRefactoring.askForInfo(refactoringContext);
   }
 
-  public boolean isApplicable(RefactoringContext refactoringContext) {
-    return myOldRefactoring.isApplicable(refactoringContext);
-  }
-
   public void refactor(final RefactoringContext refactoringContext) {
     myModuleToModelsMap = ModelAccess.instance().runReadAction(new Computable<Map<IModule, List<SModel>>>() {
       public Map<IModule, List<SModel>> compute() {

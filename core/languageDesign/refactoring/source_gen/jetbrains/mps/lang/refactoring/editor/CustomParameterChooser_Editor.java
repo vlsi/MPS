@@ -23,7 +23,8 @@ public class CustomParameterChooser_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Collection_6311_0");
     editorCell.setGridLayout(true);
     editorCell.addEditorCell(this.createCollection_6311_1(editorContext, node));
-    editorCell.addEditorCell(this.createCollection_6311_2(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_6311_1(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_6311_2(editorContext, node));
     return editorCell;
   }
 
@@ -31,14 +32,6 @@ public class CustomParameterChooser_Editor extends DefaultNodeEditor {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_6311_1");
     editorCell.addEditorCell(this.createConstant_6311_0(editorContext, node));
-    editorCell.addEditorCell(this.createRefNode_6311_1(editorContext, node));
-    return editorCell;
-  }
-
-  private EditorCell createCollection_6311_2(EditorContext editorContext, SNode node) {
-    EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
-    editorCell.setCellId("Collection_6311_2");
-    editorCell.addEditorCell(this.createConstant_6311_1(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_6311_0(editorContext, node));
     return editorCell;
   }
@@ -50,14 +43,24 @@ public class CustomParameterChooser_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_6311_1(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "component:");
-    editorCell.setCellId("Constant_6311_1");
-    editorCell.setDefaultText("");
+  private EditorCell createRefNode_6311_0(EditorContext editorContext, SNode node) {
+    CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
+    provider.setRole("entityType");
+    provider.setNoTargetText("<no entityType>");
+    EditorCell editorCell;
+    editorCell = provider.createEditorCell(editorContext);
+    editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
+    SNode attributeConcept = provider.getRoleAttribute();
+    Class attributeKind = provider.getRoleAttributeClass();
+    if (attributeConcept != null) {
+      IOperationContext opContext = editorContext.getOperationContext();
+      EditorManager manager = EditorManager.getInstanceFromContext(opContext);
+      return manager.createRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
+    } else
     return editorCell;
   }
 
-  private EditorCell createRefNode_6311_0(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_6311_1(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("componentBlock");
     provider.setNoTargetText("<no componentBlock>");
@@ -74,10 +77,10 @@ public class CustomParameterChooser_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefNode_6311_1(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_6311_2(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
-    provider.setRole("entityType");
-    provider.setNoTargetText("<no entityType>");
+    provider.setRole("initialValueBlock");
+    provider.setNoTargetText("<no initial value>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());

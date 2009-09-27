@@ -8,11 +8,38 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
-public class RefactoringFieldReference extends BaseVariableReference {
+public class RefactoringFieldReference extends BaseVariableReference implements RefactoringArgumentReference {
   public static final String concept = "jetbrains.mps.lang.refactoring.structure.RefactoringFieldReference";
+  public static final String SHORT_DESCRIPTION = "shortDescription";
+  public static final String ALIAS = "alias";
+  public static final String VIRTUAL_PACKAGE = "virtualPackage";
 
   public RefactoringFieldReference(SNode node) {
     super(node);
+  }
+
+  public String getShortDescription() {
+    return this.getProperty(RefactoringFieldReference.SHORT_DESCRIPTION);
+  }
+
+  public void setShortDescription(String value) {
+    this.setProperty(RefactoringFieldReference.SHORT_DESCRIPTION, value);
+  }
+
+  public String getAlias() {
+    return this.getProperty(RefactoringFieldReference.ALIAS);
+  }
+
+  public void setAlias(String value) {
+    this.setProperty(RefactoringFieldReference.ALIAS, value);
+  }
+
+  public String getVirtualPackage() {
+    return this.getProperty(RefactoringFieldReference.VIRTUAL_PACKAGE);
+  }
+
+  public void setVirtualPackage(String value) {
+    this.setProperty(RefactoringFieldReference.VIRTUAL_PACKAGE, value);
   }
 
   public RefactoringField getRefactoringField() {

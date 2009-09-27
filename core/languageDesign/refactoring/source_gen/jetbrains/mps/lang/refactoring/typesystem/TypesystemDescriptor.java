@@ -107,5 +107,9 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
       InferenceRule_Runtime inferenceRule = new typeof_RefactoringParameterReference_InferenceRule();
       this.myInferenceRules.add(inferenceRule);
     }
+    {
+      InferenceRule_Runtime inferenceRule = new typeof_AskExpression_InferenceRule();
+      this.myInferenceRules.add(inferenceRule);
+    }
   }
 }

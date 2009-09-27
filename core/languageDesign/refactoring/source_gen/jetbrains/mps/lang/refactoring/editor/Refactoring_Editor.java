@@ -53,8 +53,6 @@ public class Refactoring_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createRefNode_6756_3(editorContext, node));
     editorCell.addEditorCell(this.createConstant_6756_12(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_6756_4(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_6756_13(editorContext, node));
-    editorCell.addEditorCell(this.createRefNode_6756_5(editorContext, node));
     editorCell.addEditorCell(this.createConstant_6756_0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_6756_0(editorContext, node));
     return editorCell;
@@ -220,17 +218,6 @@ public class Refactoring_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_6756_13(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
-    editorCell.setCellId("Constant_6756_13");
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.SELECTABLE, false);
-    }
-    editorCell.setDefaultText("");
-    return editorCell;
-  }
-
   private EditorCell createRefNodeList_6756_0(EditorContext editorContext, SNode node) {
     AbstractCellListHandler handler = new Refactoring_Editor.parameterListHandler_6756_0(node, "parameter", editorContext);
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Vertical(), false);
@@ -360,7 +347,7 @@ public class Refactoring_Editor extends DefaultNodeEditor {
   private EditorCell createRefNode_6756_3(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("initBlock");
-    provider.setNoTargetText("<applicability: always>");
+    provider.setNoTargetText("<no init block>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
@@ -375,23 +362,6 @@ public class Refactoring_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createRefNode_6756_4(EditorContext editorContext, SNode node) {
-    CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
-    provider.setRole("isApplicableBlock");
-    provider.setNoTargetText("<applicability: always>");
-    EditorCell editorCell;
-    editorCell = provider.createEditorCell(editorContext);
-    editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
-    SNode attributeConcept = provider.getRoleAttribute();
-    Class attributeKind = provider.getRoleAttributeClass();
-    if (attributeConcept != null) {
-      IOperationContext opContext = editorContext.getOperationContext();
-      EditorManager manager = EditorManager.getInstanceFromContext(opContext);
-      return manager.createRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
-    } else
-    return editorCell;
-  }
-
-  private EditorCell createRefNode_6756_5(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("doRefactorBlock");
     provider.setNoTargetText("<no doRefactorBlock>");

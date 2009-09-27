@@ -137,7 +137,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.dataFlow.structure.DataFlowBuilderDeclaration" id="478744034994505060">
-    <property name="package" value="RefDecl.Parameters" />
+    <property name="package" value="RefDecl.Arg.Parameters" />
     <link role="conceptDeclaration" targetNodeId="1.6895093993902311015" resolveInfo="AskStatement" />
     <node role="builderBlock" type="jetbrains.mps.lang.dataFlow.structure.BuilderBlock" id="478744034994505061">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="478744034994505062">
