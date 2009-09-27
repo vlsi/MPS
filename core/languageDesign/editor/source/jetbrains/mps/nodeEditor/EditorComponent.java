@@ -959,8 +959,9 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     }
   }
 
-  public boolean hasNode() {
-    return getSelectedNode() != null;
+  public boolean hasValidSelectedNode() {
+    SNode selectedNode = getSelectedNode();
+    return selectedNode != null && selectedNode.getModel()!=null;
   }
 
   public boolean isDisposed() {
@@ -1052,7 +1053,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
 
     revalidate();
     repaint();
-  }
+  }            
 
   private Set<SModelReference> getModels(Set<SNode> nodes) {
     Set<SModelReference> result = new HashSet<SModelReference>();

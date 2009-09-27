@@ -70,7 +70,7 @@ public class IntentionsSupport {
 
     myLightBulb = new LightBulbMenu() {
       public void activate() {
-        showIntentionsMenu();
+        checkAndShowMenu();
       }
     };
 
@@ -82,12 +82,9 @@ public class IntentionsSupport {
 
     myShowIntentionsAction = new AbstractAction() {
       public void actionPerformed(ActionEvent e) {
-        //setEnabled(false);
         ModelAccess.instance().runReadAction(new Runnable() {
           public void run() {
-            if (myEditor.getEditedNode().getModel().isNotEditable()) return;
-            if (!hasIntentions(null)) return;
-            showIntentionsMenu();
+            checkAndShowMenu();
           }
         });
       }
@@ -111,6 +108,14 @@ public class IntentionsSupport {
         updateIntentionsStatus();
       }
     });
+  }
+
+  private void checkAndShowMenu() {
+    if (isInconsistentEditor()) return;
+    if (myEditor.getSelectedNode().getModel().isNotEditable()) return;
+    if (!hasIntentions(null)) return;
+
+    showIntentionsMenu();
   }
 
   private void updateIntentionsStatus() {
@@ -174,7 +179,7 @@ public class IntentionsSupport {
   }
 
   private boolean isInconsistentEditor() {
-    return myEditor.isDisposed() || !myEditor.hasNode();
+    return myEditor.isDisposed() || !myEditor.hasValidSelectedNode();
   }
 
   private void adjustLightBulbLocation() {
