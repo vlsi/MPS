@@ -30,6 +30,9 @@ public class CellBuildNodeAccessListener extends AbstractNodeReadAccessOnCellCre
   protected HashSet<SNodePointer> myReferentTargetsToDependOn = new HashSet<SNodePointer>();
   protected HashSet<Pair<SNodePointer, String>> myDirtilyReadAccessedProperties = new HashSet<Pair<SNodePointer, String>>();
   protected HashSet<Pair<SNodePointer, String>> myExistenceReadAccessProperties = new HashSet<Pair<SNodePointer, String>>();
+
+  private Set<Pair<SNodePointer, String>> myCleanlyReadAccessedProperties = new HashSet<Pair<SNodePointer, String>>();
+
   private static final Logger LOG = Logger.getLogger(CellBuildNodeAccessListener.class);
 
   public CellBuildNodeAccessListener(EditorComponent editor) {
@@ -52,6 +55,12 @@ public class CellBuildNodeAccessListener extends AbstractNodeReadAccessOnCellCre
     return myExistenceReadAccessProperties;
   }
 
+  public Set<Pair<SNodePointer, String>> popCleanlyReadAccessedProperties() {
+    Set<Pair<SNodePointer, String>> result = myCleanlyReadAccessedProperties;
+    myCleanlyReadAccessedProperties = new HashSet<Pair<SNodePointer, String>>();
+    return result;
+  }
+
   public void addNodesToDependOn(Set<SNode> nodes) {
     if (nodes == null) {
       LOG.error("passing null nodes collection to depend on");
@@ -72,6 +81,12 @@ public class CellBuildNodeAccessListener extends AbstractNodeReadAccessOnCellCre
     nodeUnclassifiedReadAccess(node);
   }
 
+  public void propertyCleanReadAccess(SNode node, String propertyName) {
+    NodeReadAccessCasterInEditor.switchOffFiringPropertyReadAccessedEvent();
+    myCleanlyReadAccessedProperties.add(new Pair<SNodePointer, String>(new SNodePointer(node), propertyName));
+    NodeReadAccessCasterInEditor.switchOnFiringPropertyReadAccessedEvent();
+  }
+
   public void nodeUnclassifiedReadAccess(SNode node) {
     myNodesToDependOn.add(node);
   }
@@ -90,5 +105,9 @@ public class CellBuildNodeAccessListener extends AbstractNodeReadAccessOnCellCre
     NodeReadAccessCasterInEditor.switchOnFiringPropertyReadAccessedEvent();
     //refactored here from from calling after unique usage
     nodeUnclassifiedReadAccess(node);
+  }
+
+  public void clearCleanlyReadAccessProperties() {
+    myCleanlyReadAccessedProperties = new HashSet<Pair<SNodePointer, String>>();
   }
 }

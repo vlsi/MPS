@@ -42,18 +42,20 @@ public class EditorCell_Property extends EditorCell_Label {
   }
 
   public static EditorCell_Property create(EditorContext editorContext, ModelAccessor modelAccessor, SNode node) {
+    CellBuildNodeAccessListener listener = NodeReadAccessCasterInEditor.getReadAccessListener();
     if (modelAccessor instanceof PropertyAccessor) {
-      NodeReadAccessCasterInEditor.setPropertyCellCreationReadListener(new PropertyCellCreationNodeReadAccessListener(editorContext.getNodeEditorComponent()));
+      if (listener != null) {
+        listener.clearCleanlyReadAccessProperties();
+      }
     }
     EditorCell_Property result = new EditorCell_Property(editorContext, modelAccessor, node);
-    PropertyCellCreationNodeReadAccessListener readAccessListener = NodeReadAccessCasterInEditor.removePropertyCellCreationReadListener(result);
-    if (readAccessListener != null) {
-      addPropertyDependenciesToEditor(readAccessListener, result);
+    if (listener != null) {
+      addPropertyDependenciesToEditor(listener, result);
     }
     return result;
   }
 
-  private static void addPropertyDependenciesToEditor(PropertyCellCreationNodeReadAccessListener listener, EditorCell_Property result) {
+  private static void addPropertyDependenciesToEditor(CellBuildNodeAccessListener listener, EditorCell_Property result) {
     for (Pair<SNodePointer, String> pair : listener.popCleanlyReadAccessedProperties()) {
       result.getEditor().addCellDependentOnNodeProperty(result, pair);
     }

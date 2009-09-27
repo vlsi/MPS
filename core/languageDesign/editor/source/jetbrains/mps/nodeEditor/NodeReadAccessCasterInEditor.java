@@ -28,7 +28,6 @@ import com.intellij.openapi.util.Computable;
 public class NodeReadAccessCasterInEditor {
   private static Stack<CellBuildNodeAccessListener> ourReadAccessListenerStack = new Stack<CellBuildNodeAccessListener>();
   private static CellBuildNodeAccessListener ourReadAccessListener;
-  private static PropertyCellCreationNodeReadAccessListener ourPropertyCellCreationAccessListener;
   private static PropertyAccessor ourPropertyAccessor;
 
   private static boolean ourCanFirePropertyReadAccessedEvent = true;
@@ -51,16 +50,6 @@ public class NodeReadAccessCasterInEditor {
       ourReadAccessListener.addNodesToDependOn(nodesWhichChildCellDependsOn);
       ourReadAccessListener.addRefTargetsToDependOn(refTargetsWhichCellDependsOn);
     }
-  }
-
-  public static void setPropertyCellCreationReadListener(PropertyCellCreationNodeReadAccessListener listener) {
-    ourPropertyCellCreationAccessListener = listener;
-  }
-
-  public static PropertyCellCreationNodeReadAccessListener removePropertyCellCreationReadListener(EditorCell_Property cell) {
-    PropertyCellCreationNodeReadAccessListener result = ourPropertyCellCreationAccessListener;
-    ourPropertyCellCreationAccessListener = null;
-    return result;
   }
 
   public static String runEditorCellPropertyAccessAction(PropertyAccessor accessor) {
@@ -98,9 +87,9 @@ public class NodeReadAccessCasterInEditor {
     if (node.isModelLoading()) return;
     if (!ourCanFirePropertyReadAccessedEvent) return;
     if (ourPropertyAccessor != null) {
-      if (ourPropertyCellCreationAccessListener != null) {
+      if (ourReadAccessListener != null) {
         switchOffFiringPropertyReadAccessedEvent();
-        ourPropertyCellCreationAccessListener.propertyCleanReadAccess(node, propertyName);
+        ourReadAccessListener.propertyCleanReadAccess(node, propertyName);
         switchOnFiringPropertyReadAccessedEvent();
       }
       return;
@@ -121,6 +110,10 @@ public class NodeReadAccessCasterInEditor {
     if (ourReadAccessListener != null) {
       ourReadAccessListener.addRefTargetToDependOn(new SNodePointer(targetModelReference, targetNodeId));
     }
+  }
+
+  public static CellBuildNodeAccessListener getReadAccessListener() {
+    return ourReadAccessListener;
   }
 
   public static boolean areEventsBlocked() {

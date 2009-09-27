@@ -874,6 +874,8 @@
   </node>
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="8703963746976779599">
     <property name="name" value="MyIntfcImpl" />
+    <property name="abstractClass" value="false" />
+    <property name="isFinal" value="false" />
     <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="2164176144466640381">
       <property name="name" value="a" />
       <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="2164176144466640382" />
@@ -881,7 +883,7 @@
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="2164176144466640384">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="2164176144466662832">
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="2164176144466662833">
-            <property name="name" value="aaaa" />
+            <property name="name" value="aaaaaaaaaaaaaaaaaaaaaaaaa" />
             <node role="type" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="2164176144466662834" />
             <node role="initializer" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="2164176144466662836">
               <property name="value" value="3" />
@@ -948,6 +950,24 @@
               </node>
             </node>
             <node role="operand" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="2164176144466735644" />
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="885057371410529915">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="885057371410529918">
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="885057371410529916" />
+            <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="885057371410529922">
+              <link role="baseMethodDeclaration" targetNodeId="2164176144466735630" resolveInfo="id" />
+              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="885057371410529923">
+                <node role="creator" type="jetbrains.mps.baseLanguage.structure.ArrayCreator" id="885057371410536488">
+                  <node role="componentType" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="885057371410536492" />
+                  <node role="dimensionExpression" type="jetbrains.mps.baseLanguage.structure.DimensionExpression" id="885057371410536490">
+                    <node role="expression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="885057371410536493">
+                      <property name="value" value="2" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
           </node>
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="4812584645673359638">
