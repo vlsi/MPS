@@ -19,11 +19,12 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.util.Pair;
+import jetbrains.mps.lang.typesystem.runtime.incremental.INodesReadListener;
 
 import java.util.HashSet;
 import java.util.Set;
 
-public class CellBuildNodeAccessListener {
+public class CellBuildNodeAccessListener implements INodesReadListener {
   protected EditorComponent myEditor;
 
   protected HashSet<SNode> myNodesToDependOn = new HashSet<SNode>();
@@ -109,5 +110,13 @@ public class CellBuildNodeAccessListener {
 
   public void clearCleanlyReadAccessProperties() {
     myCleanlyReadAccessedProperties = new HashSet<Pair<SNodePointer, String>>();
+  }
+
+  public void nodeChildReadAccess(SNode node, String childRole, SNode child) {
+    nodeUnclassifiedReadAccess(node);
+  }
+
+  public void nodePropertyReadAccess(SNode node, String propertyName, String value) {
+    // todo remove when refactoring completed
   }
 }
