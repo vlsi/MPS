@@ -30,6 +30,7 @@ import jetbrains.mps.smodel.event.SModelReferenceEvent;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.cells.*;
 import jetbrains.mps.nodeEditor.cellMenu.AbstractNodeSubstituteInfo;
+import jetbrains.mps.util.Pair;
 
 import java.awt.event.KeyEvent;
 import java.util.*;
@@ -152,7 +153,7 @@ public class EditorManager {
     SNode node = refContext.getNode();
 
     if (areAttributesShown()) {
-      for (SNode attribute : node.getNodeAttributes()) {        
+      for (SNode attribute : node.getNodeAttributes()) {
         assert attribute != null;
         //if creating this cell for this attribute for the first time
         if (!myAttributesStack.contains(attribute)) {
@@ -181,11 +182,11 @@ public class EditorManager {
             // add listen-nothing listener, fill it up,
             // remove listener to report recorded nodes to parent listener
             CellBuildNodeAccessListener listensNothingListener = new CellBuildNodeAccessListener(nodeEditorComponent);
-            NodeReadAccessCaster.setCellBuildNodeReadAccessListener(listensNothingListener);
+            NodeReadAccessCasterInEditor.setCellBuildNodeReadAccessListener(listensNothingListener);
             if (nodesOldCellDependsOn != null) listensNothingListener.addNodesToDependOn(nodesOldCellDependsOn);
             if (refTargetsOldCellDependsOn != null)
               listensNothingListener.addRefTargetsToDependOn(refTargetsOldCellDependsOn);
-            NodeReadAccessCaster.removeCellBuildNodeAccessListener();
+            NodeReadAccessCasterInEditor.removeCellBuildNodeAccessListener();
             //--voodoo
           }
           return editorCell;
@@ -237,7 +238,7 @@ public class EditorManager {
     nodeAccessListener.addNodesToDependOn(new HashSet<SNode>(node.getAncestors(false)));
     try {
       //voodoo for editor incremental rebuild support
-      NodeReadAccessCaster.setCellBuildNodeReadAccessListener(nodeAccessListener);
+      NodeReadAccessCasterInEditor.setCellBuildNodeReadAccessListener(nodeAccessListener);
       nodeCell = isInspectorCell ? editor.createInspectedCell(context, node) : editor.createEditorCell(context, node);
       //-voodoo
 
@@ -258,13 +259,24 @@ public class EditorManager {
         ReferencedNodeContext refContextWithoutAttributes = refContext.contextWihtNoAttributes();
         nodeCell.putUserObject(BIG_CELL_CONTEXT, refContextWithoutAttributes);
         editorComponent.registerAsBigCell(nodeCell, refContextWithoutAttributes, this);
-        nodeAccessListener.recordingFinishedForCell(nodeCell);
+        addNodeDependenciesToEditor(nodeCell, nodeAccessListener, context);
       }
-      NodeReadAccessCaster.removeCellBuildNodeAccessListener();
+      NodeReadAccessCasterInEditor.removeCellBuildNodeAccessListener();
     }
 
     assert nodeCell != null;
     return nodeCell;
+  }
+
+  private void addNodeDependenciesToEditor(EditorCell cell, CellBuildNodeAccessListener listener, EditorContext editorContext) {
+    EditorComponent editor = editorContext.getNodeEditorComponent();
+    editor.putCellAndNodesToDependOn(cell, listener.myNodesToDependOn, listener.myReferentTargetsToDependOn);
+    for (Pair<SNodePointer, String> pair : listener.myDirtilyReadAccessedProperties) {
+      editor.addCellDependentOnNodePropertyWhichWasAccessedDirtily(cell, pair);
+    }
+    for (Pair<SNodePointer, String> pair : listener.myExistenceReadAccessProperties) {
+      editor.addCellDependentOnNodePropertyWhichExistenceWasChecked(cell, pair);
+    }
   }
 
   private EditorCell addSideTransformHintCell(final SNode node, EditorCell nodeCell, final EditorContext context, final CellSide side) {

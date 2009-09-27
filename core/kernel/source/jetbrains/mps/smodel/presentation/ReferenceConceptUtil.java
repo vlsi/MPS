@@ -20,7 +20,7 @@ import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
 import jetbrains.mps.lang.structure.structure.Cardinality;
 import jetbrains.mps.lang.structure.structure.LinkDeclaration;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.nodeEditor.NodeReadAccessCaster;
+import jetbrains.mps.nodeEditor.NodeReadAccessCasterInEditor;
 import jetbrains.mps.smodel.DynamicReference;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.smodel.SNode;
@@ -53,7 +53,7 @@ public class ReferenceConceptUtil {
    * @return characteristic reference or NULL
    */
   public static LinkDeclaration getCharacteristicReference(final AbstractConceptDeclaration concept) {
-    return NodeReadAccessCaster.runReadTransparentAction(new Computable<LinkDeclaration>() {
+    return NodeReadAccessCasterInEditor.runReadTransparentAction(new Computable<LinkDeclaration>() {
       public LinkDeclaration compute() {
         String expectedReferentRole = null;
         String alias = concept.getConceptProperty("alias");

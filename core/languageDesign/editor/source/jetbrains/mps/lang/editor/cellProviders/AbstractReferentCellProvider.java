@@ -65,7 +65,7 @@ public abstract class AbstractReferentCellProvider extends CellProviderWithRole 
       return;
     }
 
-    NodeReadAccessCaster.runReadTransparentAction(new Runnable() {
+    NodeReadAccessCasterInEditor.runReadTransparentAction(new Runnable() {
       public void run() {
         myGenuineLinkDeclaration = SModelUtil_new.getGenuineLinkDeclaration(myLinkDeclaration);
         myGenuineRole = myGenuineLinkDeclaration.getRole();

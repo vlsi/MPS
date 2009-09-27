@@ -18,7 +18,6 @@ package jetbrains.mps.nodeEditor.cellMenu;
 import jetbrains.mps.lang.structure.structure.Cardinality;
 import jetbrains.mps.lang.structure.structure.LinkDeclaration;
 import jetbrains.mps.lang.structure.structure.LinkMetaclass;
-import jetbrains.mps.lang.typesystem.structure.RuntimeTypeVariable;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.smodel.SNode;
@@ -31,7 +30,7 @@ import jetbrains.mps.smodel.action.DefaultChildNodeSetter;
 import jetbrains.mps.nodeEditor.cellMenu.AbstractNodeSubstituteInfo;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.nodeEditor.EditorComponent;
-import jetbrains.mps.nodeEditor.NodeReadAccessCaster;
+import jetbrains.mps.nodeEditor.NodeReadAccessCasterInEditor;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.typesystem.inference.InequationSystem;
 import jetbrains.mps.typesystem.inference.TypeChecker;
@@ -54,7 +53,7 @@ public class DefaultReferenceSubstituteInfo extends AbstractNodeSubstituteInfo {
   public DefaultReferenceSubstituteInfo(final SNode sourceNode, final LinkDeclaration linkDeclaration, final EditorContext editorContext) {
     super(editorContext);
 
-    NodeReadAccessCaster.runReadTransparentAction(new Runnable() {
+    NodeReadAccessCasterInEditor.runReadTransparentAction(new Runnable() {
       public void run() {
         LinkDeclaration genuineLink = SModelUtil_new.getGenuineLinkDeclaration(linkDeclaration);
         myLinkDeclaration = linkDeclaration;

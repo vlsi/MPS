@@ -15,8 +15,7 @@
  */
 package jetbrains.mps.smodel;
 
-import jetbrains.mps.nodeEditor.NodeReadAccessCaster;
-import jetbrains.mps.lang.core.structure.IResolveInfo;
+import jetbrains.mps.nodeEditor.NodeReadAccessCasterInEditor;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -55,7 +54,7 @@ public class StaticReference extends SReferenceBase {
   }
 
   protected SNode getTargetNode_internal() {
-    NodeReadAccessCaster.fireReferenceTargetReadAccessed(getSourceNode(), getTargetSModelReference(), getTargetNodeId());
+    NodeReadAccessCasterInEditor.fireReferenceTargetReadAccessed(getSourceNode(), getTargetSModelReference(), getTargetNodeId());
 
     if (!mature()) {
       return myImmatureTargetNode;

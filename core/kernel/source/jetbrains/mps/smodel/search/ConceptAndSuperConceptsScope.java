@@ -20,7 +20,7 @@ import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
 import jetbrains.mps.lang.structure.structure.ConceptProperty;
 import jetbrains.mps.lang.structure.structure.LinkDeclaration;
 import jetbrains.mps.lang.structure.structure.PropertyDeclaration;
-import jetbrains.mps.nodeEditor.NodeReadAccessCaster;
+import jetbrains.mps.nodeEditor.NodeReadAccessCasterInEditor;
 import jetbrains.mps.smodel.INodeAdapter;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.util.Condition;
@@ -48,7 +48,7 @@ public class ConceptAndSuperConceptsScope extends AbstractSearchScope {
 
   public PropertyDeclaration getPropertyDeclarationByName(final String name) {
     if (myTopConcept == null) return null;
-    return NodeReadAccessCaster.runReadTransparentAction(new Computable<PropertyDeclaration>() {
+    return NodeReadAccessCasterInEditor.runReadTransparentAction(new Computable<PropertyDeclaration>() {
       public PropertyDeclaration compute() {
         return ConceptAndSuperConceptsCache.getInstance(myTopConcept).getPropertyDeclarationByName(name);
       }
@@ -57,7 +57,7 @@ public class ConceptAndSuperConceptsScope extends AbstractSearchScope {
 
   public List<PropertyDeclaration> getPropertyDeclarations() {
     if (myTopConcept == null) return new ArrayList(1);
-    return NodeReadAccessCaster.runReadTransparentAction(new Computable<List<PropertyDeclaration>>() {
+    return NodeReadAccessCasterInEditor.runReadTransparentAction(new Computable<List<PropertyDeclaration>>() {
       public List<PropertyDeclaration> compute() {
         return ConceptAndSuperConceptsCache.getInstance(myTopConcept).getPropertyDeclarations();
       }
@@ -66,7 +66,7 @@ public class ConceptAndSuperConceptsScope extends AbstractSearchScope {
 
   public LinkDeclaration getLinkDeclarationByRole(final String role) {
     if (myTopConcept == null) return null;
-    return NodeReadAccessCaster.runReadTransparentAction(new Computable<LinkDeclaration>() {
+    return NodeReadAccessCasterInEditor.runReadTransparentAction(new Computable<LinkDeclaration>() {
       public LinkDeclaration compute() {
         return ConceptAndSuperConceptsCache.getInstance(myTopConcept).getLinkDeclarationByRole(role);
       }
@@ -75,7 +75,7 @@ public class ConceptAndSuperConceptsScope extends AbstractSearchScope {
 
   public LinkDeclaration getMostSpecificLinkDeclarationByRole(final String role) {
     if (myTopConcept == null) return null;
-    return NodeReadAccessCaster.runReadTransparentAction(new Computable<LinkDeclaration>() {
+    return NodeReadAccessCasterInEditor.runReadTransparentAction(new Computable<LinkDeclaration>() {
       public LinkDeclaration compute() {
         return ConceptAndSuperConceptsCache.getInstance(myTopConcept).getMostSpecificLinkDeclarationByRole(role);
       }
@@ -84,7 +84,7 @@ public class ConceptAndSuperConceptsScope extends AbstractSearchScope {
 
   public List<LinkDeclaration> getLinkDeclarationsExcludingOverridden() {
     if (myTopConcept == null) return new ArrayList<LinkDeclaration>(1);
-    return NodeReadAccessCaster.runReadTransparentAction(new Computable<List<LinkDeclaration>>() {
+    return NodeReadAccessCasterInEditor.runReadTransparentAction(new Computable<List<LinkDeclaration>>() {
       public List<LinkDeclaration> compute() {
         return ConceptAndSuperConceptsCache.getInstance(myTopConcept).getLinkDeclarationsExcludingOverridden();
       }
@@ -93,7 +93,7 @@ public class ConceptAndSuperConceptsScope extends AbstractSearchScope {
 
   public ConceptProperty getConceptPropertyByName(final String name) {
     if (myTopConcept == null) return null;
-    return NodeReadAccessCaster.runReadTransparentAction(new Computable<ConceptProperty>() {
+    return NodeReadAccessCasterInEditor.runReadTransparentAction(new Computable<ConceptProperty>() {
       public ConceptProperty compute() {
         return ConceptAndSuperConceptsCache.getInstance(myTopConcept).getConceptPropertyByName(name);
       }

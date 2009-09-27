@@ -21,7 +21,7 @@ import jetbrains.mps.lang.core.structure.INamedConcept;
 import jetbrains.mps.lang.core.structure.IResolveInfo;
 import jetbrains.mps.lang.structure.structure.*;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.nodeEditor.NodeReadAccessCaster;
+import jetbrains.mps.nodeEditor.NodeReadAccessCasterInEditor;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.constraints.INodePropertyGetter;
@@ -619,7 +619,7 @@ public final class SNode {
   public final boolean hasProperty(String propertyName) {
     ModelAccess.assertLegalRead(this);
 
-    NodeReadAccessCaster.firePropertyReadAccessed(this, propertyName, true);
+    NodeReadAccessCasterInEditor.firePropertyReadAccessed(this, propertyName, true);
     String property_internal = getProperty_internal(propertyName);
     return !SModelUtil_new.isEmptyPropertyValue(property_internal);
   }
@@ -627,7 +627,7 @@ public final class SNode {
   public final String getProperty(String propertyName) {
     ModelAccess.assertLegalRead(this);
 
-    NodeReadAccessCaster.firePropertyReadAccessed(this, propertyName, false);
+    NodeReadAccessCasterInEditor.firePropertyReadAccessed(this, propertyName, false);
     String propertyValue = getProperty_internal(propertyName);
     NodeReadEventsCaster.fireNodePropertyReadAccess(this, propertyName, propertyValue);
     return propertyValue;
@@ -882,7 +882,7 @@ public final class SNode {
 
   private void fireNodeReadAccess() {
     if (myModel.isLoading()) return;
-    NodeReadAccessCaster.fireNodeReadAccessed(this);
+    NodeReadAccessCasterInEditor.fireNodeReadAccessed(this);
   }
 
   public int getChildCount() {

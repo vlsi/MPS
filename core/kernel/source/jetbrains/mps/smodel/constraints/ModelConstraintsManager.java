@@ -25,7 +25,7 @@ import jetbrains.mps.lang.structure.structure.ConceptDeclaration;
 import jetbrains.mps.lang.structure.structure.LinkDeclaration;
 import jetbrains.mps.lang.typesystem.structure.RuntimeTypeVariable;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.nodeEditor.NodeReadAccessCaster;
+import jetbrains.mps.nodeEditor.NodeReadAccessCasterInEditor;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.reloading.ClassLoaderManager;
@@ -283,7 +283,7 @@ public class ModelConstraintsManager implements ApplicationComponent {
         }
       }
 
-      return NodeReadAccessCaster.runReadTransparentAction(new Computable<IModelConstraints>() {
+      return NodeReadAccessCasterInEditor.runReadTransparentAction(new Computable<IModelConstraints>() {
         public IModelConstraints compute() {
           AbstractConceptDeclaration conceptDeclaration = SModelUtil_new.findConceptDeclaration(conceptFqName, GlobalScope.getInstance());
           List<AbstractConceptDeclaration> hierarchy = SModelUtil_new.getConceptAndSuperConcepts(conceptDeclaration);
@@ -347,7 +347,7 @@ public class ModelConstraintsManager implements ApplicationComponent {
       return myNodePropertyValidatorsCache.get(originalKey);
     }
 
-    return NodeReadAccessCaster.runReadTransparentAction(new Computable<INodePropertyValidator>() {
+    return NodeReadAccessCasterInEditor.runReadTransparentAction(new Computable<INodePropertyValidator>() {
       public INodePropertyValidator compute() {
         // find validator and put to cache
         List<AbstractConceptDeclaration> hierarchy = SModelUtil_new.getConceptAndSuperConcepts(node.getConceptDeclarationAdapter());

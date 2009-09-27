@@ -35,7 +35,6 @@ import jetbrains.mps.lang.structure.structure.LinkDeclaration;
 import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
 import jetbrains.mps.lang.structure.structure.LinkMetaclass;
 
-import javax.swing.JComponent;
 import java.awt.*;
 import java.awt.event.KeyEvent;
 import java.awt.event.MouseEvent;
@@ -364,7 +363,7 @@ public abstract class EditorCell_Basic implements EditorCell {
   }
 
   public void setLinkDeclaration(final LinkDeclaration link) {
-    NodeReadAccessCaster.runReadTransparentAction(new Runnable() {
+    NodeReadAccessCasterInEditor.runReadTransparentAction(new Runnable() {
       public void run() {
         myLinkDeclaration = link;
         if (myLinkDeclaration != null) {

@@ -80,7 +80,7 @@ public class PropertyCellProvider extends CellProviderWithRole {
 
 
   public NodeSubstituteInfo createDefaultSubstituteInfo() {
-    return NodeReadAccessCaster.runReadTransparentAction(new Computable<NodeSubstituteInfo>() {
+    return NodeReadAccessCasterInEditor.runReadTransparentAction(new Computable<NodeSubstituteInfo>() {
       public NodeSubstituteInfo compute() {
         if (myPropertyDeclaration == null) {
           return null;

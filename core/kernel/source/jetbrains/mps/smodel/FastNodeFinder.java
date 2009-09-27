@@ -16,10 +16,9 @@
 package jetbrains.mps.smodel;
 
 import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
-import jetbrains.mps.nodeEditor.NodeReadAccessCaster;
+import jetbrains.mps.nodeEditor.NodeReadAccessCasterInEditor;
 import jetbrains.mps.smodel.event.SModelChildEvent;
 import jetbrains.mps.smodel.event.SModelRootEvent;
-import jetbrains.mps.smodel.SNodeId.Regular;
 import jetbrains.mps.util.NameUtil;
 
 import java.util.*;
@@ -89,9 +88,9 @@ public class FastNodeFinder {
   }
 
   private void addToCache(final SNode root) {
-    boolean wereBlocked = NodeReadAccessCaster.areEventsBlocked();
+    boolean wereBlocked = NodeReadAccessCasterInEditor.areEventsBlocked();
     try {
-      NodeReadAccessCaster.blockEvents();
+      NodeReadAccessCasterInEditor.blockEvents();
 
       for (SNode child : root.getChildren()) {
         addToCache(child);
@@ -105,14 +104,14 @@ public class FastNodeFinder {
         add(acd, root, false);
       }
     } finally {
-      NodeReadAccessCaster.setEventsBlocked(wereBlocked);
+      NodeReadAccessCasterInEditor.setEventsBlocked(wereBlocked);
     }
   }
 
   private void removeFromCache(final SNode root) {
-    boolean wereBlocked = NodeReadAccessCaster.areEventsBlocked();
+    boolean wereBlocked = NodeReadAccessCasterInEditor.areEventsBlocked();
     try {
-      NodeReadAccessCaster.blockEvents();
+      NodeReadAccessCasterInEditor.blockEvents();
 
       for (SNode child : root.getChildren()) {
         removeFromCache(child);
@@ -125,7 +124,7 @@ public class FastNodeFinder {
         remove(acd, root, false);
       }
     } finally {
-      NodeReadAccessCaster.setEventsBlocked(wereBlocked);
+      NodeReadAccessCasterInEditor.setEventsBlocked(wereBlocked);
     }
   }
 

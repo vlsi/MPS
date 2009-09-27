@@ -19,7 +19,6 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.util.Pair;
-import jetbrains.mps.nodeEditor.cells.EditorCell;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -37,22 +36,20 @@ public class CellBuildNodeAccessListener extends AbstractNodeReadAccessOnCellCre
     super(editor);
   }
 
-  public void recordingFinishedForCell(EditorCell cell) {
-    myEditor.putCellAndNodesToDependOn(cell, myNodesToDependOn, myReferentTargetsToDependOn);
-    for (Pair<SNodePointer, String> pair : myDirtilyReadAccessedProperties) {
-      myEditor.addCellDependentOnNodePropertyWhichWasAccessedDirtily(cell, pair);
-    }
-    for (Pair<SNodePointer, String> pair : myExistenceReadAccessProperties) {
-      myEditor.addCellDependentOnNodePropertyWhichExistenceWasChecked(cell, pair);
-    }
-  }
-
   public Set<SNode> getNodesToDependOn() {
     return myNodesToDependOn;
   }
 
   public Set<SNodePointer> getRefTargetsToDependOn() {
     return myReferentTargetsToDependOn;
+  }
+
+  public HashSet<Pair<SNodePointer, String>> getDirtilyReadAccessedProperties() {
+    return myDirtilyReadAccessedProperties;
+  }
+
+  public HashSet<Pair<SNodePointer, String>> getExistenceReadAccessProperties() {
+    return myExistenceReadAccessProperties;
   }
 
   public void addNodesToDependOn(Set<SNode> nodes) {
@@ -68,9 +65,9 @@ public class CellBuildNodeAccessListener extends AbstractNodeReadAccessOnCellCre
   }
 
   public void propertyDirtyReadAccess(SNode node, String propertyName) {
-    NodeReadAccessCaster.switchOffFiringPropertyReadAccessedEvent();
+    NodeReadAccessCasterInEditor.switchOffFiringPropertyReadAccessedEvent();
     myDirtilyReadAccessedProperties.add(new Pair<SNodePointer, String>(new SNodePointer(node), propertyName));
-    NodeReadAccessCaster.switchOnFiringPropertyReadAccessedEvent();
+    NodeReadAccessCasterInEditor.switchOnFiringPropertyReadAccessedEvent();
     //refactored here from calling after unique usage
     nodeUnclassifiedReadAccess(node);
   }
@@ -88,9 +85,9 @@ public class CellBuildNodeAccessListener extends AbstractNodeReadAccessOnCellCre
   }
 
   public void propertyExistenceAccess(SNode node, String propertyName) {
-    NodeReadAccessCaster.switchOffFiringPropertyReadAccessedEvent();
+    NodeReadAccessCasterInEditor.switchOffFiringPropertyReadAccessedEvent();
     myExistenceReadAccessProperties.add(new Pair<SNodePointer, String>(new SNodePointer(node), propertyName));
-    NodeReadAccessCaster.switchOnFiringPropertyReadAccessedEvent();
+    NodeReadAccessCasterInEditor.switchOnFiringPropertyReadAccessedEvent();
     //refactored here from from calling after unique usage
     nodeUnclassifiedReadAccess(node);
   }

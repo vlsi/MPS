@@ -24,7 +24,7 @@ import jetbrains.mps.lang.structure.structure.ConceptDeclaration;
 import jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration;
 import jetbrains.mps.lang.structure.structure.InterfaceConceptReference;
 import jetbrains.mps.lang.structure.behavior.AbstractConceptDeclaration_Behavior;
-import jetbrains.mps.nodeEditor.NodeReadAccessCaster;
+import jetbrains.mps.nodeEditor.NodeReadAccessCasterInEditor;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.smodel.event.SModelCommandListener;
 import jetbrains.mps.smodel.event.SModelEvent;
@@ -129,7 +129,7 @@ public class LanguageHierarchyCache implements ApplicationComponent {
     if (myParentsNamesMap.containsKey(conceptFqName)) {
       return Collections.unmodifiableSet(myParentsNamesMap.get(conceptFqName));
     } else {
-      return NodeReadAccessCaster.runReadTransparentAction(new Computable<Set<String>>() {
+      return NodeReadAccessCasterInEditor.runReadTransparentAction(new Computable<Set<String>>() {
         public Set<String> compute() {
           Set<String> result = new LinkedHashSet<String>();
           AbstractConceptDeclaration declaration = SModelUtil_new.findConceptDeclaration(conceptFqName, GlobalScope.getInstance());
@@ -172,7 +172,7 @@ public class LanguageHierarchyCache implements ApplicationComponent {
     if (result != null) {
       return result;
     } else {
-      return NodeReadAccessCaster.runReadTransparentAction(new Computable<Set<String>>() {
+      return NodeReadAccessCasterInEditor.runReadTransparentAction(new Computable<Set<String>>() {
         public Set<String> compute() {
           Set<String> result = new HashSet<String>();
           collectAncestorNames(conceptFqName, result);

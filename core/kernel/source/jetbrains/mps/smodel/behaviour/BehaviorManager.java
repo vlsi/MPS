@@ -23,7 +23,7 @@ import jetbrains.mps.lang.structure.structure.ConceptDeclaration;
 import jetbrains.mps.lang.structure.structure.InterfaceConceptReference;
 import jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.nodeEditor.NodeReadAccessCaster;
+import jetbrains.mps.nodeEditor.NodeReadAccessCasterInEditor;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.reloading.ReloadAdapter;
@@ -206,7 +206,7 @@ public final class BehaviorManager implements ApplicationComponent {
   }
 
   private Method getMethod(final AbstractConceptDeclaration concept, final String methodName, final Class[] parameterTypes) {
-    return NodeReadAccessCaster.runReadTransparentAction(new Computable<Method>() {
+    return NodeReadAccessCasterInEditor.runReadTransparentAction(new Computable<Method>() {
       public Method compute() {
         Language l = SModelUtil_new.getDeclaringLanguage(concept, GlobalScope.getInstance());
 

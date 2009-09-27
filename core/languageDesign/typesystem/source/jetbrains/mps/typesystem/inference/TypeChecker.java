@@ -17,11 +17,9 @@ package jetbrains.mps.typesystem.inference;
 
 import jetbrains.mps.lang.typesystem.runtime.RuntimeSupport;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.nodeEditor.NodeReadAccessCaster;
 import jetbrains.mps.nodeEditor.IErrorReporter;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.persistence.IModelRootManager;
-import jetbrains.mps.smodel.event.*;
 import jetbrains.mps.util.WeakSet;
 import jetbrains.mps.typesystem.integration.TypesystemPreferencesComponent;
 import jetbrains.mps.typesystem.inference.util.SubtypingCache;
@@ -38,7 +36,6 @@ import java.util.*;
 
 import com.intellij.openapi.components.ApplicationComponent;
 import com.intellij.openapi.application.ApplicationManager;
-import com.intellij.openapi.command.CommandProcessor;
 import com.intellij.openapi.util.Computable;
 
 public class TypeChecker implements ApplicationComponent {

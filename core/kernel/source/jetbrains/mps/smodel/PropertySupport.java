@@ -22,7 +22,7 @@ import jetbrains.mps.lang.structure.structure.DataTypeDeclaration;
 import jetbrains.mps.lang.structure.structure.PrimitiveDataTypeDeclaration;
 import jetbrains.mps.lang.structure.structure.PropertyDeclaration;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.nodeEditor.NodeReadAccessCaster;
+import jetbrains.mps.nodeEditor.NodeReadAccessCasterInEditor;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.smodel.constraints.INodePropertyValidator;
 import jetbrains.mps.smodel.constraints.ModelConstraintsManager;
@@ -62,7 +62,7 @@ public abstract class PropertySupport {
   }
 
   public static PropertySupport getPropertySupport(final PropertyDeclaration propertyDeclaration) {
-    return NodeReadAccessCaster.runReadTransparentAction(new Computable<PropertySupport>() {
+    return NodeReadAccessCasterInEditor.runReadTransparentAction(new Computable<PropertySupport>() {
       public PropertySupport compute() {
         DataTypeDeclaration dataType = propertyDeclaration.getDataType();
         if (dataType != null) {

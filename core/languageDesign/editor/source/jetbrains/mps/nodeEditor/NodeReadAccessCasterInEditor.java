@@ -25,7 +25,7 @@ import java.util.Stack;
 
 import com.intellij.openapi.util.Computable;
 
-public class NodeReadAccessCaster {
+public class NodeReadAccessCasterInEditor {
   private static Stack<CellBuildNodeAccessListener> ourReadAccessListenerStack = new Stack<CellBuildNodeAccessListener>();
   private static CellBuildNodeAccessListener ourReadAccessListener;
   private static PropertyCellCreationNodeReadAccessListener ourPropertyCellCreationAccessListener;
@@ -53,15 +53,14 @@ public class NodeReadAccessCaster {
     }
   }
 
-  public static void beforeCreatingPropertyCell(PropertyCellCreationNodeReadAccessListener listener) {
+  public static void setPropertyCellCreationReadListener(PropertyCellCreationNodeReadAccessListener listener) {
     ourPropertyCellCreationAccessListener = listener;
   }
 
-  public static void propertyCellCreatingFinished(EditorCell_Property cell) {
-    if (ourPropertyCellCreationAccessListener != null) {
-      ourPropertyCellCreationAccessListener.recordingFinishedForCell(cell);
-      ourPropertyCellCreationAccessListener = null;
-    }
+  public static PropertyCellCreationNodeReadAccessListener removePropertyCellCreationReadListener(EditorCell_Property cell) {
+    PropertyCellCreationNodeReadAccessListener result = ourPropertyCellCreationAccessListener;
+    ourPropertyCellCreationAccessListener = null;
+    return result;
   }
 
   public static String runEditorCellPropertyAccessAction(PropertyAccessor accessor) {

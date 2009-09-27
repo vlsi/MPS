@@ -25,13 +25,12 @@ import jetbrains.mps.smodel.action.ModelActions;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.nodeEditor.cellMenu.AbstractNodeSubstituteInfo;
 import jetbrains.mps.nodeEditor.EditorContext;
-import jetbrains.mps.nodeEditor.NodeReadAccessCaster;
+import jetbrains.mps.nodeEditor.NodeReadAccessCasterInEditor;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
 import jetbrains.mps.lang.structure.structure.Cardinality;
 import jetbrains.mps.lang.structure.structure.LinkDeclaration;
 import jetbrains.mps.lang.structure.structure.LinkMetaclass;
-import jetbrains.mps.lang.typesystem.structure.RuntimeTypeVariable;
 import jetbrains.mps.typesystem.inference.InequationSystem;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.util.CollectionUtil;
@@ -52,7 +51,7 @@ public class DefaultChildSubstituteInfo extends AbstractNodeSubstituteInfo {
 
   public DefaultChildSubstituteInfo(final SNode sourceNode, final LinkDeclaration linkDeclaration, final EditorContext editorContext) {
     super(editorContext);
-    NodeReadAccessCaster.runReadTransparentAction(new Runnable() {
+    NodeReadAccessCasterInEditor.runReadTransparentAction(new Runnable() {
       public void run() {
         if (isNotAggregation(linkDeclaration)) {
           LOG.error("only aggregation links are allowed here", linkDeclaration.getNode());
@@ -71,7 +70,7 @@ public class DefaultChildSubstituteInfo extends AbstractNodeSubstituteInfo {
 
   public DefaultChildSubstituteInfo(final SNode parentNode, final SNode currChildNode, final LinkDeclaration linkDeclaration, final EditorContext editorContext) {
     super(editorContext);
-    NodeReadAccessCaster.runReadTransparentAction(new Runnable() {
+    NodeReadAccessCasterInEditor.runReadTransparentAction(new Runnable() {
       public void run() {
         if (linkDeclaration == null) {
           LOG.error("link declaration is null", new IllegalArgumentException("link declaration is null"));

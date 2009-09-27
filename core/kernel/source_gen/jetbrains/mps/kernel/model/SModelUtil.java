@@ -23,7 +23,7 @@ import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
-import jetbrains.mps.nodeEditor.NodeReadAccessCaster;
+import jetbrains.mps.nodeEditor.NodeReadAccessCasterInEditor;
 import com.intellij.openapi.util.Computable;
 import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
 import jetbrains.mps.smodel.BaseAdapter;
@@ -106,7 +106,7 @@ public class SModelUtil {
     if (conceptFQName.equals("jetbrains.mps.smodel.structure.ModelPersistence$UnknownSNode")) {
       return null;
     }
-    return NodeReadAccessCaster.runReadTransparentAction(new Computable<SNode>() {
+    return NodeReadAccessCasterInEditor.runReadTransparentAction(new Computable<SNode>() {
       public SNode compute() {
         String languageNamespace = NameUtil.namespaceFromConceptFQName(conceptFQName);
         Language language = scope.getLanguage(languageNamespace);

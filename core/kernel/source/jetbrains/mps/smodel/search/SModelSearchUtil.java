@@ -17,7 +17,7 @@ package jetbrains.mps.smodel.search;
 
 import com.intellij.openapi.util.Computable;
 import jetbrains.mps.lang.structure.structure.*;
-import jetbrains.mps.nodeEditor.NodeReadAccessCaster;
+import jetbrains.mps.nodeEditor.NodeReadAccessCasterInEditor;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.SModel;
@@ -77,7 +77,7 @@ public class SModelSearchUtil {
   }
 
   public static List<LinkDeclaration> getReferenceLinkDeclarations(final AbstractConceptDeclaration concept) {
-    return NodeReadAccessCaster.runReadTransparentAction(new Computable<List<LinkDeclaration>>() {
+    return NodeReadAccessCasterInEditor.runReadTransparentAction(new Computable<List<LinkDeclaration>>() {
       public List<LinkDeclaration> compute() {
         List<LinkDeclaration> list = new ConceptAndSuperConceptsScope(concept).getLinkDeclarationsExcludingOverridden();
         List<LinkDeclaration> result = new ArrayList<LinkDeclaration>();

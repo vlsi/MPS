@@ -19,7 +19,7 @@ import jetbrains.mps.lang.structure.structure.PropertyDeclaration;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.annotation.Hack;
 import jetbrains.mps.nodeEditor.EditorContext;
-import jetbrains.mps.nodeEditor.NodeReadAccessCaster;
+import jetbrains.mps.nodeEditor.NodeReadAccessCasterInEditor;
 
 public class PropertyAccessor implements ModelAccessor {
   private SNode myNode;
@@ -72,7 +72,7 @@ public class PropertyAccessor implements ModelAccessor {
   }
 
   protected String doGetValue() {
-    return NodeReadAccessCaster.runEditorCellPropertyAccessAction(this);
+    return NodeReadAccessCasterInEditor.runEditorCellPropertyAccessAction(this);
   }
 
   protected void doSetValue(String newText) {
@@ -86,7 +86,7 @@ public class PropertyAccessor implements ModelAccessor {
 
   private boolean isValidText_internal(String text) {
     if (myReadOnly) {
-      String propertyValue = NodeReadAccessCaster.runEditorCellPropertyAccessAction(this);
+      String propertyValue = NodeReadAccessCasterInEditor.runEditorCellPropertyAccessAction(this);
       return (text == null && propertyValue == null) || (text != null && text.equals(propertyValue));
     }
 

@@ -116,7 +116,7 @@ public class EditorsFinderManager implements ApplicationComponent {
   }
 
   public INodeEditor findEditor(final SNode nodeToEdit, final EditorContext context) {
-    return NodeReadAccessCaster.runReadTransparentAction(new Computable<INodeEditor>() {
+    return NodeReadAccessCasterInEditor.runReadTransparentAction(new Computable<INodeEditor>() {
       public INodeEditor compute() {
         IScope scope = context.getOperationContext().getScope();
         AbstractConceptDeclaration abstractConcept = (AbstractConceptDeclaration) BaseAdapter.fromNode(BaseAdapter.fromAdapter(nodeToEdit.getConceptDeclarationAdapter()));

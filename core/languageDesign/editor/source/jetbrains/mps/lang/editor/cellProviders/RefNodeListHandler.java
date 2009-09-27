@@ -23,7 +23,7 @@ import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.EditorContext;
-import jetbrains.mps.nodeEditor.NodeReadAccessCaster;
+import jetbrains.mps.nodeEditor.NodeReadAccessCasterInEditor;
 import jetbrains.mps.nodeEditor.cellProviders.AbstractCellListHandler;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.smodel.SNode;
@@ -39,7 +39,7 @@ public abstract class RefNodeListHandler extends AbstractCellListHandler {
 
   public RefNodeListHandler(final SNode ownerNode, final String childRole, EditorContext editorContext) {
     super(ownerNode, childRole, editorContext);
-    NodeReadAccessCaster.runReadTransparentAction(new Runnable() {
+    NodeReadAccessCasterInEditor.runReadTransparentAction(new Runnable() {
       public void run() {
         myLinkDeclaration = ownerNode.getLinkDeclaration(childRole);
         LinkDeclaration genuineLink = SModelUtil_new.getGenuineLinkDeclaration(myLinkDeclaration);
