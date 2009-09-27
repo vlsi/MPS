@@ -23,7 +23,7 @@ import javax.swing.SwingUtilities;
 import jetbrains.mps.baseLanguage.plugin.uiActions.StratergyAddMethodDialog;
 import jetbrains.mps.baseLanguage.plugin.uiActions.strategies.AddClassMethodStrategy;
 import jetbrains.mps.ide.actions.MethodsToOverrideStrategy;
-import jetbrains.mps.ide.actions.OverrideMethodStrategy;
+import jetbrains.mps.ide.actions.OverrideClassMethodStrategy;
 import jetbrains.mps.ide.actions.MethodsToImplementStrategy;
 import jetbrains.mps.ide.actions.ImplementMethodStrategy;
 
@@ -129,7 +129,7 @@ public class MethodHierarchy_KeyMap extends EditorCellKeyMap {
     private void execute_internal(final KeyEvent keyEvent, final EditorContext editorContext, final SNode node, final List<SNode> selectedNodes) {
       SwingUtilities.invokeLater(new Runnable() {
         public void run() {
-          new StratergyAddMethodDialog(editorContext, editorContext.getOperationContext().getMainFrame(), new AddClassMethodStrategy(node), new MethodsToOverrideStrategy(), new OverrideMethodStrategy()).showDialog();
+          new StratergyAddMethodDialog(editorContext, editorContext.getOperationContext().getMainFrame(), new AddClassMethodStrategy(node), new MethodsToOverrideStrategy(), new OverrideClassMethodStrategy()).showDialog();
         }
       });
     }

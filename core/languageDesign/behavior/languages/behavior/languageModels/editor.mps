@@ -1330,8 +1330,8 @@
                                   </node>
                                 </node>
                                 <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="7347712222698060942">
-                                  <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="7347712222698060943">
-                                    <link role="baseMethodDeclaration" targetNodeId="4v.8300784086089079436" resolveInfo="OverrideMethodStrategy" />
+                                  <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="6276897598755436140">
+                                    <link role="baseMethodDeclaration" targetNodeId="4v.6276897598755404963" resolveInfo="OverrideConceptMethodStrategy" />
                                   </node>
                                 </node>
                               </node>

@@ -6868,7 +6868,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.intentions.structure.IntentionDeclaration" id="1221638394062">
-    <property name="name" value="ImplementMethodsIntention" />
+    <property name="name" value="ImplementMethods" />
     <property name="isErrorIntention" value="true" />
     <link role="forConcept" targetNodeId="1.1068390468198" resolveInfo="ClassConcept" />
     <node role="descriptionFunction" type="jetbrains.mps.lang.intentions.structure.DescriptionBlock" id="1221638394063">
