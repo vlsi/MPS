@@ -116,7 +116,7 @@ public class SModelUtil {
         String conceptName = NameUtil.shortNameFromLongName(conceptFQName);
         AbstractConceptDeclaration resultAdapter = language.findConceptDeclaration(conceptName);
         SNode result = ((SNode)BaseAdapter.fromAdapter(resultAdapter));
-        MapSequence.fromMap(myFQNameToConcepDecl).put(conceptFQName, result);
+        MapSequence.fromMap(SModelUtil.myFQNameToConcepDecl).put(conceptFQName, result);
         return result;
       }
     });
