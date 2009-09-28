@@ -169,7 +169,7 @@ public class SModelUtil {
     for (SNode superConcept : ListSequence.fromList(getDirectSuperConcepts(concept))) {
       if (SNodeOperations.isInstanceOf(superConcept, "jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration") && !(SetSequence.fromSet(result).contains(superConcept))) {
         for (AbstractConceptDeclaration adapter : ListSequence.fromList(new ConceptAndSuperConceptsScope(((AbstractConceptDeclaration)SNodeOperations.getAdapter(superConcept))).getConcepts())) {
-          SetSequence.fromSet(result).addElement(adapter.getNode());
+          SetSequence.fromSet(result).addElement((SNode)adapter.getNode());
         }
       }
     }
