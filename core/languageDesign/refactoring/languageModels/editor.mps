@@ -935,7 +935,7 @@
           <link role="styleClass" targetNodeId="4.1186415544875" resolveInfo="KeyWord" />
         </node>
         <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Property" id="5497648299878742205">
-          <property name="noTargetText" value="empty" />
+          <property name="noTargetText" value="&lt;no name&gt;" />
           <link role="relationDeclaration" targetNodeId="2.1169194664001" resolveInfo="name" />
         </node>
         <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="5497648299878742206">
@@ -943,7 +943,7 @@
           <link role="styleClass" targetNodeId="4.1238143818889" resolveInfo="Matching" />
         </node>
         <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Property" id="5497648299878742207">
-          <property name="noTargetText" value="no user friendly name" />
+          <property name="noTargetText" value="&lt;no caption&gt;" />
           <link role="relationDeclaration" targetNodeId="1.6895093993902236371" resolveInfo="userFriendlyName" />
           <link role="styleClass" targetNodeId="4.1186415563770" resolveInfo="StringLiteral" />
           <node role="styleItem" type="jetbrains.mps.lang.editor.structure.ForegroundColorStyleClassItem" id="5497648299878742208">
