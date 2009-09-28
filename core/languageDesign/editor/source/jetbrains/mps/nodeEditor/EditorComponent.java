@@ -605,7 +605,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
         if (getMessageTextFor(cell) != null) {
           return new Point(cell.getX(), cell.getY() + cell.getHeight());
         } else {
-          return null;            
+          return null;
         }
       }
     });
@@ -961,7 +961,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
 
   public boolean hasValidSelectedNode() {
     SNode selectedNode = getSelectedNode();
-    return selectedNode != null && selectedNode.getModel()!=null;
+    return selectedNode != null && selectedNode.getModel() != null;
   }
 
   public boolean isDisposed() {
@@ -1026,7 +1026,11 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
 
     for (SModelReference newDep : newDeps) {
       if (!oldsDeps.contains(newDep)) {
-        addOurListeners(scope.getModelDescriptor(newDep));
+        SModelDescriptor md = scope.getModelDescriptor(newDep);
+        if (md == null) {
+          LOG.error(newDep.getLongName());
+        }
+        addOurListeners(md);
       }
     }
     for (SModelReference oldDep : oldsDeps) {
@@ -1053,7 +1057,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
 
     revalidate();
     repaint();
-  }            
+  }
 
   private Set<SModelReference> getModels(Set<SNode> nodes) {
     Set<SModelReference> result = new HashSet<SModelReference>();
