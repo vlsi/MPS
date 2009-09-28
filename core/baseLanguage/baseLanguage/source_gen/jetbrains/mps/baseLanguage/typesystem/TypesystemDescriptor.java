@@ -791,8 +791,28 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
     {
       OverloadedOperationsTypesProvider provider = new OverloadedOperationsTypesProvider() {
         {
-          this.myLeftOperandType = SLinkOperations.getTarget(new _Quotations.QuotationClass_120().createNode(), "descriptor", false);
-          this.myRightOperandType = new _Quotations.QuotationClass_121().createNode();
+          this.myLeftOperandType = SLinkOperations.getTarget(new _Quotations.QuotationClass_118().createNode(), "descriptor", false);
+          this.myRightOperandType = SLinkOperations.getTarget(new _Quotations.QuotationClass_119().createNode(), "descriptor", false);
+          this.myOperationConceptFQName = "jetbrains.mps.baseLanguage.structure.BinaryBitwiseOperation";
+          this.myLeftTypeIsExact = false;
+          this.myRightTypeIsExact = false;
+        }
+
+        public SNode getOperationType(SNode operation, SNode leftOperandType, SNode rightOperandType) {
+          if (SNodeOperations.isInstanceOf(leftOperandType, "jetbrains.mps.baseLanguage.structure.NullType") || SNodeOperations.isInstanceOf(rightOperandType, "jetbrains.mps.baseLanguage.structure.NullType")) {
+            return null;
+          } else {
+            return Queries.getBinaryOperationType(leftOperandType, rightOperandType);
+          }
+        }
+      };
+      this.myOverloadedOperationsTypesProviders.add(provider);
+    }
+    {
+      OverloadedOperationsTypesProvider provider = new OverloadedOperationsTypesProvider() {
+        {
+          this.myLeftOperandType = SLinkOperations.getTarget(new _Quotations.QuotationClass_122().createNode(), "descriptor", false);
+          this.myRightOperandType = new _Quotations.QuotationClass_123().createNode();
           this.myOperationConceptFQName = "jetbrains.mps.baseLanguage.structure.UnaryMinus";
           this.myLeftTypeIsExact = false;
           this.myRightTypeIsExact = false;
@@ -807,13 +827,13 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
     {
       OverloadedOpsProvider_OneTypeSpecified provider = new OverloadedOpsProvider_OneTypeSpecified() {
         {
-          this.myOperandType = new _Quotations.QuotationClass_127().createNode();
+          this.myOperandType = new _Quotations.QuotationClass_129().createNode();
           this.myOperationConceptFQName = "jetbrains.mps.baseLanguage.structure.PlusExpression";
           this.myTypeIsExact = false;
         }
 
         public SNode getOperationType(SNode operation, SNode leftOperandType, SNode rightOperandType) {
-          return new _Quotations.QuotationClass_128().createNode();
+          return new _Quotations.QuotationClass_130().createNode();
         }
       };
       this.myOverloadedOperationsTypesProviders.add(provider);

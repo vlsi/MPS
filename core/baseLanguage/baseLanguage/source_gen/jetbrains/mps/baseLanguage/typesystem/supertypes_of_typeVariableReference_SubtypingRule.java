@@ -26,7 +26,7 @@ public class supertypes_of_typeVariableReference_SubtypingRule extends Subtyping
       ListSequence.fromList(supertypes).addElement(bound);
     }
     if (ListSequence.fromList(supertypes).isEmpty()) {
-      ListSequence.fromList(supertypes).addElement(new _Quotations.QuotationClass_126().createNode(typeCheckingContext));
+      ListSequence.fromList(supertypes).addElement(new _Quotations.QuotationClass_128().createNode(typeCheckingContext));
     }
     return supertypes;
   }

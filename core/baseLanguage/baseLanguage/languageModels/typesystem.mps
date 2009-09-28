@@ -16094,6 +16094,72 @@
         <link role="concept" targetNodeId="1.1068581242875" resolveInfo="PlusExpression" />
       </node>
     </node>
+    <node role="rule" type="jetbrains.mps.lang.typesystem.structure.OverloadedOperatorTypeRule" id="2543078871749081229">
+      <node role="operationConcept" type="jetbrains.mps.lang.smodel.structure.ConceptReference" id="2543078871749081243">
+        <link role="concept" targetNodeId="1.1224500579375" resolveInfo="BinaryBitwiseOperation" />
+      </node>
+      <node role="function" type="jetbrains.mps.lang.typesystem.structure.OverloadedOperatorTypeFunction" id="2543078871749081233">
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="2543078871749081234">
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="2543078871749081244">
+            <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="2543078871749081245">
+              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="2543078871749081246">
+                <node role="expression" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="2543078871749081247" />
+              </node>
+            </node>
+            <node role="condition" type="jetbrains.mps.baseLanguage.structure.OrExpression" id="2543078871749081248">
+              <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="2543078871749081249">
+                <node role="operand" type="jetbrains.mps.lang.typesystem.structure.RightOperandType_parameter" id="2543078871749081250" />
+                <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation" id="2543078871749081251">
+                  <node role="conceptArgument" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" id="2543078871749081252">
+                    <link role="conceptDeclaration" targetNodeId="1.1204200696010" resolveInfo="NullType" />
+                  </node>
+                </node>
+              </node>
+              <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="2543078871749081253">
+                <node role="operand" type="jetbrains.mps.lang.typesystem.structure.LeftOperandType_parameter" id="2543078871749081254" />
+                <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation" id="2543078871749081255">
+                  <node role="conceptArgument" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" id="2543078871749081256">
+                    <link role="conceptDeclaration" targetNodeId="1.1204200696010" resolveInfo="NullType" />
+                  </node>
+                </node>
+              </node>
+            </node>
+            <node role="ifFalseStatement" type="jetbrains.mps.baseLanguage.structure.BlockStatement" id="2543078871749081257">
+              <node role="statements" type="jetbrains.mps.baseLanguage.structure.StatementList" id="2543078871749081258">
+                <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="2543078871749081259">
+                  <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="2543078871749081260">
+                    <link role="classConcept" targetNodeId="40.~Queries" resolveInfo="Queries" />
+                    <link role="baseMethodDeclaration" targetNodeId="40.~Queries.getBinaryOperationType(jetbrains.mps.smodel.SNode,jetbrains.mps.smodel.SNode):jetbrains.mps.smodel.SNode" resolveInfo="getBinaryOperationType" />
+                    <node role="actualArgument" type="jetbrains.mps.lang.typesystem.structure.LeftOperandType_parameter" id="2543078871749081261" />
+                    <node role="actualArgument" type="jetbrains.mps.lang.typesystem.structure.RightOperandType_parameter" id="2543078871749081262" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="leftOperandType" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="2543078871749081235">
+        <node role="operand" type="jetbrains.mps.lang.quotation.structure.Quotation" id="2543078871749081236">
+          <node role="quotedNode" type="jetbrains.mps.baseLanguage.blTypes.structure.PrimitiveTypeRef" id="2543078871749081237">
+            <link role="descriptor" targetNodeId="28.1196683729865" resolveInfo="Numeric" />
+          </node>
+        </node>
+        <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="2543078871749081238">
+          <link role="link" targetNodeId="6.1159268661479" />
+        </node>
+      </node>
+      <node role="rightOperandType" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="2543078871749081239">
+        <node role="operand" type="jetbrains.mps.lang.quotation.structure.Quotation" id="2543078871749081240">
+          <node role="quotedNode" type="jetbrains.mps.baseLanguage.blTypes.structure.PrimitiveTypeRef" id="2543078871749081241">
+            <link role="descriptor" targetNodeId="28.1196683729865" resolveInfo="Numeric" />
+          </node>
+        </node>
+        <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="2543078871749081242">
+          <link role="link" targetNodeId="6.1159268661479" />
+        </node>
+      </node>
+    </node>
     <node role="rule" type="jetbrains.mps.lang.typesystem.structure.OverloadedOperatorTypeRule" id="1239449442584">
       <node role="operationConcept" type="jetbrains.mps.lang.smodel.structure.ConceptReference" id="1239450020582">
         <link role="concept" targetNodeId="1.1239448985469" resolveInfo="BinaryCompareOperation" />
