@@ -133,6 +133,19 @@ public class BaseMethodDeclaration_Behavior {
     return same;
   }
 
+  public static String call_getErasureSignature_2830572026628006618(SNode thisNode) {
+    StringBuilder sb = new StringBuilder();
+    List<SNode> parameters = SLinkOperations.getTargets(thisNode, "parameter", true);
+    for (int i = 0 ; i < ListSequence.fromList(parameters).count() ; i++ ) {
+      SNode param = ListSequence.fromList(parameters).getElement(i);
+      sb.append(Type_Behavior.call_getErasureSignature_1213877337313(SLinkOperations.getTarget(param, "type", true)));
+      if (i < ListSequence.fromList(parameters).count() - 1) {
+        sb.append(",");
+      }
+    }
+    return sb.toString();
+  }
+
   public static boolean virtual_isAbstract_1232982539764(SNode thisNode) {
     return false;
   }

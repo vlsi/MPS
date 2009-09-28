@@ -17,4 +17,11 @@ public class TypeVariableReference_Behavior {
     }
     return "?typevar_ref?";
   }
+
+  public static String virtual_getErasureSignature_1213877337313(SNode thisNode) {
+    if ((SLinkOperations.getTarget(SLinkOperations.getTarget(thisNode, "typeVariableDeclaration", false), "bound", true) != null)) {
+      return Type_Behavior.call_getErasureSignature_1213877337313(SLinkOperations.getTarget(SLinkOperations.getTarget(thisNode, "typeVariableDeclaration", false), "bound", true));
+    }
+    return "java.lang.Object";
+  }
 }
