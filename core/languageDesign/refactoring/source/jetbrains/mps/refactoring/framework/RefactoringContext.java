@@ -599,6 +599,9 @@ public class RefactoringContext {
             } else {
               myRefactoring = (IRefactoring) refactoring;
             }
+            if (!(myRefactoring instanceof ILoggableRefactoring)){
+              LOG.error("Non-loggable refactoring was logged: "+myRefactoring.getUserFriendlyName());
+            }
           }
         }
       } catch (Throwable t) {
