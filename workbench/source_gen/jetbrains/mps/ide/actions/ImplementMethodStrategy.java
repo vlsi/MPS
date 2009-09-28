@@ -25,9 +25,9 @@ public class ImplementMethodStrategy implements StratergyAddMethodDialog.Additio
     if (!(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(method, "returnType", true), "jetbrains.mps.baseLanguage.structure.VoidType"))) {
       SNode defaultReturnExpr = Type_Behavior.call_createDefaultTypeExpression_3359611512358152580(SLinkOperations.getTarget(method, "returnType", true));
       if ((defaultReturnExpr == null)) {
-        SLinkOperations.addChild(SLinkOperations.getTarget(method, "body", true), "statement", new _Quotations.QuotationClass_10().createNode());
+        SLinkOperations.addChild(SLinkOperations.getTarget(method, "body", true), "statement", new _Quotations.QuotationClass_11().createNode());
       } else {
-        SLinkOperations.addChild(SLinkOperations.getTarget(method, "body", true), "statement", new _Quotations.QuotationClass_9().createNode(defaultReturnExpr));
+        SLinkOperations.addChild(SLinkOperations.getTarget(method, "body", true), "statement", new _Quotations.QuotationClass_10().createNode(defaultReturnExpr));
       }
     }
   }

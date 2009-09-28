@@ -254,7 +254,7 @@ public class Refactoring_Editor extends DefaultNodeEditor {
   private EditorCell createProperty_6756_0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("name");
-    provider.setNoTargetText("empty");
+    provider.setNoTargetText("<no name>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setCellId("property_name");
@@ -272,7 +272,7 @@ public class Refactoring_Editor extends DefaultNodeEditor {
   private EditorCell createProperty_6756_1(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("userFriendlyName");
-    provider.setNoTargetText("no user friendly name");
+    provider.setNoTargetText("<no caption>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setCellId("property_userFriendlyName");

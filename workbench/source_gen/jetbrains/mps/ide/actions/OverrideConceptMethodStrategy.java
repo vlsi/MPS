@@ -18,14 +18,14 @@ public class OverrideConceptMethodStrategy implements StratergyAddMethodDialog.A
   public void updateMethod(SNode sourceMethod, SNode method) {
     Iterable<SNode> paramList = ListSequence.fromList(SLinkOperations.getTargets(method, "parameter", true)).select(new ISelector<SNode, SNode>() {
       public SNode select(SNode it) {
-        return new _Quotations.QuotationClass_4().createNode(it);
+        return new _Quotations.QuotationClass_5().createNode(it);
       }
     });
-    SNode superCallExpr = new _Quotations.QuotationClass_5().createNode(sourceMethod, Sequence.fromIterable(paramList).toListSequence());
+    SNode superCallExpr = new _Quotations.QuotationClass_6().createNode(sourceMethod, Sequence.fromIterable(paramList).toListSequence());
     if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(method, "returnType", true), "jetbrains.mps.baseLanguage.structure.VoidType")) {
-      SLinkOperations.addChild(SLinkOperations.getTarget(method, "body", true), "statement", new _Quotations.QuotationClass_6().createNode(superCallExpr));
-    } else {
       SLinkOperations.addChild(SLinkOperations.getTarget(method, "body", true), "statement", new _Quotations.QuotationClass_7().createNode(superCallExpr));
+    } else {
+      SLinkOperations.addChild(SLinkOperations.getTarget(method, "body", true), "statement", new _Quotations.QuotationClass_8().createNode(superCallExpr));
     }
   }
 

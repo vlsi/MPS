@@ -1305,6 +1305,9 @@
     <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="6895093993902236370">
       <link role="intfc" targetNodeId="1.1169194658468" resolveInfo="INamedConcept" />
     </node>
+    <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="4205271146524200388">
+      <link role="intfc" targetNodeId="5.2621449412040133764" resolveInfo="IConceptAspect" />
+    </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="2058726427123891188">
     <property name="name" value="DoWhenDoneClause" />

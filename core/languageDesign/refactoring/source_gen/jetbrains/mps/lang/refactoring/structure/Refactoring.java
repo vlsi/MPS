@@ -4,6 +4,7 @@ package jetbrains.mps.lang.refactoring.structure;
 
 import jetbrains.mps.lang.core.structure.BaseConcept;
 import jetbrains.mps.lang.core.structure.INamedConcept;
+import jetbrains.mps.lang.structure.structure.IConceptAspect;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.editor.structure.CellKeyMapKeystroke;
 import java.util.Iterator;
@@ -12,7 +13,7 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
-public class Refactoring extends BaseConcept implements INamedConcept {
+public class Refactoring extends BaseConcept implements INamedConcept, IConceptAspect {
   public static final String concept = "jetbrains.mps.lang.refactoring.structure.Refactoring";
   public static final String USER_FRIENDLY_NAME = "userFriendlyName";
   public static final String NAME = "name";

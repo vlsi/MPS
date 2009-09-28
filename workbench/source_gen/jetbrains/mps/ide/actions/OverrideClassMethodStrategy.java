@@ -20,19 +20,19 @@ public class OverrideClassMethodStrategy implements StratergyAddMethodDialog.Add
 
   public void updateMethod(SNode sourceMethod, SNode method) {
     if (this.myCheckBox.isSelected()) {
-      SLinkOperations.addChild(method, "annotation", new _Quotations.QuotationClass_0().createNode());
+      SLinkOperations.addChild(method, "annotation", new _Quotations.QuotationClass_1().createNode());
     }
 
     Iterable<SNode> paramList = ListSequence.fromList(SLinkOperations.getTargets(method, "parameter", true)).select(new ISelector<SNode, SNode>() {
       public SNode select(SNode it) {
-        return new _Quotations.QuotationClass_8().createNode(it);
+        return new _Quotations.QuotationClass_9().createNode(it);
       }
     });
-    SNode superCallExpr = new _Quotations.QuotationClass_3().createNode(sourceMethod, Sequence.fromIterable(paramList).toListSequence());
+    SNode superCallExpr = new _Quotations.QuotationClass_4().createNode(sourceMethod, Sequence.fromIterable(paramList).toListSequence());
     if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(method, "returnType", true), "jetbrains.mps.baseLanguage.structure.VoidType")) {
-      SLinkOperations.addChild(SLinkOperations.getTarget(method, "body", true), "statement", new _Quotations.QuotationClass_1().createNode(superCallExpr));
-    } else {
       SLinkOperations.addChild(SLinkOperations.getTarget(method, "body", true), "statement", new _Quotations.QuotationClass_2().createNode(superCallExpr));
+    } else {
+      SLinkOperations.addChild(SLinkOperations.getTarget(method, "body", true), "statement", new _Quotations.QuotationClass_3().createNode(superCallExpr));
     }
   }
 
