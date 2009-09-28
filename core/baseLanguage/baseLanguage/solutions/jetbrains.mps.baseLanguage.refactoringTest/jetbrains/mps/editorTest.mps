@@ -4120,16 +4120,16 @@
       </node>
     </node>
     <node role="result" type="jetbrains.mps.baseLanguage.structure.BlockStatement" id="5778786395602485272">
-      <node role="statements" type="jetbrains.mps.baseLanguage.structure.StatementList" id="5778786395602485273">
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="2600341035666016322">
-          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="2600341035666016323">
-            <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="2600341035666016324">
-              <link role="classifier" targetNodeId="7.~Map" resolveInfo="Map" />
-              <node role="testNode$attribute" type="jetbrains.mps.lang.test.structure.AnonymousCellAnnotation" id="368004458608097448">
+      <node role="statements" type="jetbrains.mps.baseLanguage.structure.StatementList" id="2494233300340549959">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="2494233300340549966">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="2494233300340549967">
+            <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="2494233300340549968">
+              <link role="classifier" targetNodeId="1.~Integer" resolveInfo="Integer" />
+              <node role="testNode$attribute" type="jetbrains.mps.lang.test.structure.AnonymousCellAnnotation" id="2494233300340549969">
                 <property name="isLastPosition" value="true" />
                 <property name="useLabelSelection" value="true" />
-                <property name="selectionStart" value="3" />
-                <property name="selectionEnd" value="3" />
+                <property name="selectionStart" value="7" />
+                <property name="selectionEnd" value="7" />
                 <property name="cellId" value="ReferencePresentation_9185_0" />
               </node>
             </node>
@@ -4139,7 +4139,7 @@
     </node>
     <node role="code" type="jetbrains.mps.baseLanguage.structure.StatementList" id="5778786395602485275">
       <node role="statement" type="jetbrains.mps.lang.test.structure.TypeKeyStatement" id="5778786395602485276">
-        <property name="keys" value="Map&lt;" />
+        <property name="keys" value="Integer%" />
       </node>
       <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1417804842392945630">
         <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1417804842392951164">
