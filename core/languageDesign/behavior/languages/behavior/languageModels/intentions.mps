@@ -33,7 +33,7 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590402(jetbrains.mps.baseLanguage.strings.structure)" version="9" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590345(jetbrains.mps.lang.pattern.structure)" version="0" />
   <devkit namespace="2677cb18-f558-4e33-bc38-a5139cee06dc(jetbrains.mps.devkit.language-design)" />
-  <maxImportIndex value="11" />
+  <maxImportIndex value="13" />
   <import index="1" modelUID="r:3270011d-8b2d-4938-8dff-d256a759e017(jetbrains.mps.lang.behavior.structure)" version="-1" />
   <import index="2" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="3" />
   <import index="3" modelUID="f:java_stub#java.lang(java.lang@java_stub)" version="-1" />
@@ -45,6 +45,8 @@
   <import index="9" modelUID="r:00000000-0000-4000-0000-011c895902c0(jetbrains.mps.baseLanguage.behavior)" version="-1" />
   <import index="10" modelUID="r:00000000-0000-4000-0000-011c895904a4(jetbrains.mps.ide.actions)" version="-1" />
   <import index="11" modelUID="f:java_stub#jetbrains.mps.baseLanguage.plugin.uiActions.strategies(jetbrains.mps.baseLanguage.plugin.uiActions.strategies@java_stub)" version="-1" />
+  <import index="12" modelUID="f:java_stub#jetbrains.mps.project(jetbrains.mps.project@java_stub)" version="-1" />
+  <import index="13" modelUID="r:00000000-0000-4000-0000-011c8959028b(jetbrains.mps.lang.structure.behavior)" version="-1" />
   <node type="jetbrains.mps.lang.intentions.structure.IntentionDeclaration" id="1225201879279">
     <property name="name" value="MakeAbstract" />
     <link role="forConcept" targetNodeId="1.1225194472830" resolveInfo="ConceptMethodDeclaration" />
@@ -588,9 +590,18 @@
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="5167929551696755316">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="5167929551696755318">
             <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="5167929551696755319">
-              <node role="operand" type="jetbrains.mps.lang.intentions.structure.ConceptFunctionParameter_node" id="5167929551696755320" />
-              <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="5167929551696768603">
-                <link role="baseMethodDeclaration" targetNodeId="2v.5167929551696729662" resolveInfo="getMethodsToImplement" />
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="2595466108082594837">
+                <node role="operand" type="jetbrains.mps.lang.intentions.structure.ConceptFunctionParameter_node" id="5167929551696755320" />
+                <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="2595466108082594841">
+                  <link role="link" targetNodeId="1.1225194240799" />
+                </node>
+              </node>
+              <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="2595466108082594842">
+                <link role="baseMethodDeclaration" targetNodeId="13.1213877394339" resolveInfo="getNotImplementedConceptMethods" />
+                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="2595466108082594844">
+                  <link role="baseMethodDeclaration" targetNodeId="12.~GlobalScope.getInstance():jetbrains.mps.project.GlobalScope" resolveInfo="getInstance" />
+                  <link role="classConcept" targetNodeId="12.~GlobalScope" resolveInfo="GlobalScope" />
+                </node>
               </node>
             </node>
             <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.IsNotEmptyOperation" id="5167929551696755322" />

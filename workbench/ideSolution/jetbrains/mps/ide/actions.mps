@@ -27017,14 +27017,23 @@
                 <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="8300784086089115191">
                   <link role="classConcept" targetNodeId="40.~BaseAdapter" resolveInfo="BaseAdapter" />
                   <link role="baseMethodDeclaration" targetNodeId="40.~BaseAdapter.toAdapters(java.util.List):java.util.List" resolveInfo="toAdapters" />
-                  <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="8300784086089115192">
-                    <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="8300784086089115198">
-                      <link role="baseMethodDeclaration" targetNodeId="216.5167929551696729662" resolveInfo="getMethodsToImplement" />
+                  <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="2595466108082588494">
+                    <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="8300784086089115192">
+                      <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="2595466108082588491">
+                        <link role="link" targetNodeId="199.1225194240799" />
+                      </node>
+                      <node role="operand" type="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" id="8300784086089115194">
+                        <link role="concept" targetNodeId="199.1225194240794" resolveInfo="ConceptBehavior" />
+                        <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="8300784086089115195">
+                          <link role="variableDeclaration" targetNodeId="8300784086089115151" resolveInfo="container" />
+                        </node>
+                      </node>
                     </node>
-                    <node role="operand" type="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" id="8300784086089115194">
-                      <link role="concept" targetNodeId="199.1225194240794" resolveInfo="ConceptBehavior" />
-                      <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="8300784086089115195">
-                        <link role="variableDeclaration" targetNodeId="8300784086089115151" resolveInfo="container" />
+                    <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="2595466108082588502">
+                      <link role="baseMethodDeclaration" targetNodeId="177.1213877394339" resolveInfo="getNotImplementedConceptMethods" />
+                      <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="2595466108082594811">
+                        <link role="baseMethodDeclaration" targetNodeId="63.~GlobalScope.getInstance():jetbrains.mps.project.GlobalScope" resolveInfo="getInstance" />
+                        <link role="classConcept" targetNodeId="63.~GlobalScope" resolveInfo="GlobalScope" />
                       </node>
                     </node>
                   </node>

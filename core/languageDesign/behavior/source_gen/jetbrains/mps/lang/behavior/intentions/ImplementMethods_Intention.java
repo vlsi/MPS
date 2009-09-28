@@ -6,7 +6,9 @@ import jetbrains.mps.intentions.BaseIntention;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.lang.behavior.behavior.ConceptBehavior_Behavior;
+import jetbrains.mps.lang.structure.behavior.AbstractConceptDeclaration_Behavior;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.project.GlobalScope;
 import javax.swing.SwingUtilities;
 import jetbrains.mps.baseLanguage.plugin.uiActions.StratergyAddMethodDialog;
 import jetbrains.mps.baseLanguage.plugin.uiActions.strategies.AddConceptMethodStrategy;
@@ -45,7 +47,7 @@ public class ImplementMethods_Intention extends BaseIntention {
   }
 
   public boolean isApplicableToNode(final SNode node, final EditorContext editorContext) {
-    return ListSequence.fromList(ConceptBehavior_Behavior.call_getMethodsToImplement_5167929551696729662(node)).isNotEmpty();
+    return ListSequence.fromList(AbstractConceptDeclaration_Behavior.call_getNotImplementedConceptMethods_1213877394339(SLinkOperations.getTarget(node, "concept", false), GlobalScope.getInstance())).isNotEmpty();
   }
 
   public void execute(final SNode node, final EditorContext editorContext) {
