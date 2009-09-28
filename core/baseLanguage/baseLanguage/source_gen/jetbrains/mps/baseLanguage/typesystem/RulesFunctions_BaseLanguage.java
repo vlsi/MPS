@@ -243,18 +243,18 @@ __switch__:
         }
       }
       do {
-        SNode matchedNode_3 = SLinkOperations.getTarget(formalParam, "type", true);
+        SNode matchedNode_4 = SLinkOperations.getTarget(formalParam, "type", true);
         {
-          boolean matches_3 = false;
+          boolean matches_4 = false;
           {
-            SNode matchingNode_3 = SLinkOperations.getTarget(formalParam, "type", true);
-            if (matchingNode_3 != null) {
-              matches_3 = SModelUtil_new.isAssignableConcept(matchingNode_3.getConceptFqName(), "jetbrains.mps.baseLanguage.structure.VariableArityType");
+            SNode matchingNode_4 = SLinkOperations.getTarget(formalParam, "type", true);
+            if (matchingNode_4 != null) {
+              matches_4 = SModelUtil_new.isAssignableConcept(matchingNode_4.getConceptFqName(), "jetbrains.mps.baseLanguage.structure.VariableArityType");
             }
           }
-          if (matches_3) {
+          if (matches_4) {
             {
-              SNode componentType = SLinkOperations.getTarget(matchedNode_3, "componentType", true);
+              SNode componentType = SLinkOperations.getTarget(matchedNode_4, "componentType", true);
               final SNode matchedType = inference_matchTypeWithTypeVariables(typeCheckingContext, componentType, mmap);
               if (SLinkOperations.getCount(mc, "actualArgument") == ListSequence.fromList(parameterDeclarations).count()) {
                 // the actual parameter may appear to be an array instead of vararg
@@ -446,17 +446,17 @@ __switch__:
     }
     if ((prevStatementList != null)) {
       do {
-        SNode matchedNode_4 = SNodeOperations.getParent(prevStatementList);
+        SNode matchedNode_5 = SNodeOperations.getParent(prevStatementList);
         {
-          boolean matches_4 = false;
+          boolean matches_5 = false;
           {
-            SNode matchingNode_4 = SNodeOperations.getParent(prevStatementList);
-            if (matchingNode_4 != null) {
-              matches_4 = SModelUtil_new.isAssignableConcept(matchingNode_4.getConceptFqName(), "jetbrains.mps.baseLanguage.structure.ClassConcept");
+            SNode matchingNode_5 = SNodeOperations.getParent(prevStatementList);
+            if (matchingNode_5 != null) {
+              matches_5 = SModelUtil_new.isAssignableConcept(matchingNode_5.getConceptFqName(), "jetbrains.mps.baseLanguage.structure.ClassConcept");
             }
           }
-          if (matches_4) {
-            return SLinkOperations.getTarget(matchedNode_4, "staticInitializer", true) == prevStatementList;
+          if (matches_5) {
+            return SLinkOperations.getTarget(matchedNode_5, "staticInitializer", true) == prevStatementList;
           }
         }
       } while(false);
