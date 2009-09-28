@@ -147,7 +147,6 @@ public class IntelligentInputUtil {
       && substituteInfo.hasExactlyNActions(smallPattern + tail, false, 0)) {
       newNode = cell.getSNode();
       cellForNewNode = cell;
-      editorContext.getNodeEditorComponent().requestRelayout();
       return applyRigthTransform(editorContext, smallPattern, tail, cellForNewNode, newNode);
     } else if (canCompleteSmallPatternImmediately(substituteInfo, smallPattern, tail) ||
       canCompleteSmallPatternImmediately(substituteInfo, trimLeft(smallPattern), tail)) {
@@ -220,7 +219,8 @@ public class IntelligentInputUtil {
       return false;
     }
 
-    if (cellForNewNode instanceof EditorCell_Label) {      
+    if (cellForNewNode instanceof EditorCell_Label) {
+      editorContext.getNodeEditorComponent().requestRelayout();
       ((EditorCell_Label)cellForNewNode).changeText(smallPattern);
     }
 
