@@ -22,7 +22,9 @@ import com.intellij.openapi.vcs.actions.VcsContextFactory;
 import com.intellij.openapi.vcs.changes.VcsDirtyScopeManager;
 import com.intellij.openapi.vcs.checkin.CheckinEnvironment;
 import com.intellij.openapi.vfs.VirtualFile;
+import com.intellij.openapi.util.io.FileUtil;
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.util.CollectionUtil;
 
 import java.io.File;
 import java.io.IOException;
@@ -69,9 +71,20 @@ class RemoveOperation extends VcsOperation {
             "Do you want to delete the following file from Vcs?\n{0}\n\nIf you say NO, you can still delete it later manually.", myConfirmationOption);
           if (filePathCollection != null) {
             performWithoutAsking(filePathCollection);
+            justDelete(CollectionUtil.subtract(myFilePathsToDelete, filePathCollection));
+          } else {
+            justDelete(myFilePathsToDelete);
           }
         }
       });
+    } else {
+      justDelete(myFilePathsToDelete);
+    }
+  }
+
+  private void justDelete(Collection<FilePath> filePathsToDelete) {
+    for (FilePath filePath : filePathsToDelete) {
+      FileUtil.delete(filePath.getIOFile());
     }
   }
 
