@@ -136,7 +136,6 @@ public class IntelligentInputUtil {
   }
 
   private static boolean processCellAtEnd(EditorCell_Label cell, final EditorContext editorContext, String smallPattern, final String tail) {
-    boolean sourceCellRemains = false;
     NodeSubstituteInfo substituteInfo = cell.getSubstituteInfo();
     if (substituteInfo == null) {
         substituteInfo = new NullSubstituteInfo();
@@ -148,8 +147,8 @@ public class IntelligentInputUtil {
       && substituteInfo.hasExactlyNActions(smallPattern + tail, false, 0)) {
       newNode = cell.getSNode();
       cellForNewNode = cell;
-      sourceCellRemains = true;
-      return applyRigthTransform(editorContext, smallPattern, tail, sourceCellRemains, cellForNewNode, newNode);
+      editorContext.getNodeEditorComponent().requestRelayout();
+      return applyRigthTransform(editorContext, smallPattern, tail, cellForNewNode, newNode);
     } else if (canCompleteSmallPatternImmediately(substituteInfo, smallPattern, tail) ||
       canCompleteSmallPatternImmediately(substituteInfo, trimLeft(smallPattern), tail)) {
 
@@ -178,7 +177,7 @@ public class IntelligentInputUtil {
         editorContext.getNodeEditorComponent().requestRelayout();
         return true;
       }
-      return applyRigthTransform(editorContext, smallPattern, tail, sourceCellRemains, cellForNewNode, newNode);
+      return applyRigthTransform(editorContext, smallPattern, tail, cellForNewNode, newNode);
     } else if (canCompleteTheWholeStringImmediately(substituteInfo, smallPattern + tail) ||
       canCompleteTheWholeStringImmediately(substituteInfo, trimLeft(smallPattern) + tail)) {
 
@@ -208,7 +207,7 @@ public class IntelligentInputUtil {
     }
   }
 
-  private static boolean applyRigthTransform(EditorContext editorContext, String smallPattern, String tail, boolean sourceCellRemains, EditorCell cellForNewNode, SNode newNode) {
+  private static boolean applyRigthTransform(EditorContext editorContext, String smallPattern, String tail, EditorCell cellForNewNode, SNode newNode) {
     EditorCellAction rtAction = cellForNewNode.findChild(CellFinders.LAST_SELECTABLE_LEAF, true).getApplicableCellAction(CellActionType.RIGHT_TRANSFORM);
 
     TypeCheckingContext typeCheckingContext = NodeTypesComponentsRepository.getInstance().createTypeCheckingContext(cellForNewNode.getSNode());
@@ -221,9 +220,8 @@ public class IntelligentInputUtil {
       return false;
     }
 
-    if (sourceCellRemains) {
+    if (cellForNewNode instanceof EditorCell_Label) {      
       ((EditorCell_Label)cellForNewNode).changeText(smallPattern);
-      editorContext.getNodeEditorComponent().requestRelayout();
     }
 
     rtAction.execute(editorContext);
