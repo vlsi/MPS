@@ -149,6 +149,7 @@ public class IntelligentInputUtil {
       newNode = cell.getSNode();
       cellForNewNode = cell;
       sourceCellRemains = true;
+      return applyRigthTransform(editorContext, smallPattern, tail, sourceCellRemains, cellForNewNode, newNode);
     } else if (canCompleteSmallPatternImmediately(substituteInfo, smallPattern, tail) ||
       canCompleteSmallPatternImmediately(substituteInfo, trimLeft(smallPattern), tail)) {
 
@@ -177,6 +178,7 @@ public class IntelligentInputUtil {
         editorContext.getNodeEditorComponent().requestRelayout();
         return true;
       }
+      return applyRigthTransform(editorContext, smallPattern, tail, sourceCellRemains, cellForNewNode, newNode);
     } else if (canCompleteTheWholeStringImmediately(substituteInfo, smallPattern + tail) ||
       canCompleteTheWholeStringImmediately(substituteInfo, trimLeft(smallPattern) + tail)) {
 
@@ -204,7 +206,9 @@ public class IntelligentInputUtil {
       }
       return true;
     }
+  }
 
+  private static boolean applyRigthTransform(EditorContext editorContext, String smallPattern, String tail, boolean sourceCellRemains, EditorCell cellForNewNode, SNode newNode) {
     EditorCellAction rtAction = cellForNewNode.findChild(CellFinders.LAST_SELECTABLE_LEAF, true).getApplicableCellAction(CellActionType.RIGHT_TRANSFORM);
 
     TypeCheckingContext typeCheckingContext = NodeTypesComponentsRepository.getInstance().createTypeCheckingContext(cellForNewNode.getSNode());
@@ -218,7 +222,7 @@ public class IntelligentInputUtil {
     }
 
     if (sourceCellRemains) {
-      cell.changeText(smallPattern);
+      ((EditorCell_Label)cellForNewNode).changeText(smallPattern);
       editorContext.getNodeEditorComponent().requestRelayout();
     }
 
