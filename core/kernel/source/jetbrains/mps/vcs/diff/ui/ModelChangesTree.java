@@ -6,11 +6,7 @@ import jetbrains.mps.ide.ui.TextTreeNode;
 import jetbrains.mps.ide.ui.TreeTextUtil;
 import jetbrains.mps.ide.ui.smodel.SNodeTreeNode;
 import jetbrains.mps.ide.ui.smodel.SModelTreeNode;
-import jetbrains.mps.ide.ui.smodel.PropertiesTreeNode;
-import jetbrains.mps.ide.ui.smodel.ReferencesTreeNode;
-import jetbrains.mps.ide.projectPane.Icons;
 import jetbrains.mps.vcs.diff.changes.*;
-import jetbrains.mps.vcs.diff.Merger;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.MPSProjectHolder;
@@ -23,17 +19,14 @@ import javax.swing.KeyStroke;
 import javax.swing.AbstractAction;
 import javax.swing.tree.DefaultTreeModel;
 import javax.swing.tree.TreeNode;
-import javax.swing.tree.MutableTreeNode;
 import java.awt.event.KeyEvent;
 import java.awt.event.ActionEvent;
 import java.awt.Color;
-import java.awt.Component;
 import java.util.*;
 
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.project.ProjectManager;
 import com.intellij.openapi.actionSystem.ActionGroup;
-import com.intellij.openapi.editor.colors.EditorColorsManager;
 import com.intellij.openapi.vcs.FileStatus;
 import org.jetbrains.annotations.NotNull;
 
@@ -115,7 +108,7 @@ class ModelChangesTree extends MPSTree {
     myDeletedNodes.clear();
     myChangedSubtree.clear();
 
-    for (Change change: changes) {
+    for (Change change : changes) {
       SNodeId id = change.getAffectedNodeId();
       if (id != null) {
         addToChangeSubtree(change, change.getAffectedNodeId(), newModel, oldModel);
@@ -193,7 +186,7 @@ class ModelChangesTree extends MPSTree {
 
   private void addToChangeSubtree(Change change, SNodeId nodeId, SModel newModel, SModel oldModel) {
     if (!myChangesMap.containsKey(nodeId)) {
-          myChangesMap.put(nodeId, new ArrayList<Change>());
+      myChangesMap.put(nodeId, new ArrayList<Change>());
     }
     myChangesMap.get(nodeId).add(change);
 
@@ -208,13 +201,13 @@ class ModelChangesTree extends MPSTree {
       }
     }
   }
-  
+
   protected void doubleClickOnNode(SNode node) {
   }
 
   public void setShowOnlyConflicts(boolean b) {
     myChangedSubtree.clear();
-    for (Change change: myChanges) {
+    for (Change change : myChanges) {
       SNodeId id = change.getAffectedNodeId();
       if (id != null && (!b || myConflicts.contains(id))) {
         addToChangeSubtree(change, change.getAffectedNodeId(), myNewModel, myOldModel);
@@ -232,7 +225,7 @@ class ModelChangesTree extends MPSTree {
         public boolean met(SNode object) {
           return myChangedSubtree.contains(object.getSNodeId());
         }
-      });          
+      });
       myModel = model;
       updatePresentation();
     }
@@ -244,9 +237,62 @@ class ModelChangesTree extends MPSTree {
       super.updatePresentation();
     }
 
+    private boolean processNode(SNodeId nodeId, SNodeTreeNode parent, Map<SNodeId, SNodeTreeNode> visited, Set<SNodeId> rootNodes) {
+      if (visited.containsKey(nodeId)) {
+        SNodeTreeNode node = visited.get(nodeId);
+        if (parent != null) {
+          parent.add(node);
+        }
+        rootNodes.remove(nodeId);
+        return false;
+      }
+
+      SNode node = myOldModel.getNodeById(nodeId);
+      assert node != null;
+
+      SNodeTreeNode nodeTreeNode = createSNodeTreeNode(node, myContext);
+      visited.put(nodeId, nodeTreeNode);
+      if (parent != null) {
+        parent.add(nodeTreeNode);
+      }
+
+      for (SNode childNode : node.getChildren()) {
+        processNode(childNode.getSNodeId(), nodeTreeNode, visited, rootNodes);
+      }
+
+      return true;
+    }
+
     @Override
     protected void doInit() {
-      super.doInit();      
+      super.doInit();
+
+      Map<SNodeId, SNodeTreeNode> idToTreeNode = new HashMap();
+      Set<SNodeId> rootNodes = new HashSet<SNodeId>();
+
+      for (SNodeId deletedNodeId : myDeletedNodes) {
+        boolean firstTime = processNode(deletedNodeId, null, idToTreeNode, rootNodes);
+        if (firstTime) {
+          rootNodes.add(deletedNodeId);
+        }
+      }
+
+      for (SNodeId root : rootNodes) {
+        SNode parent = myOldModel.getNodeById(root).getParent();
+        if (parent == null) {
+          add(idToTreeNode.get(root));
+        } else {
+          final SNodeId deletedNodeParentId = parent.getSNodeId();
+          MPSTreeNode parentTreeNode = findDescendantWith(new Condition<Object>() {
+            public boolean met(Object object) {
+              if (object == null) return false;
+              return ((SNode) object).getSNodeId().equals(deletedNodeParentId);
+            }
+          });
+          assert parentTreeNode != null;
+          parentTreeNode.add(idToTreeNode.get(root));
+        }
+      }
     }
 
     public SNodeTreeNode createSNodeTreeNode(SNode node, String role, IOperationContext operationContext, Condition<SNode> condition) {
@@ -321,13 +367,13 @@ class ModelChangesTree extends MPSTree {
       }
       SNode oldNode = myOldModel.getNodeById(id);
       if (oldNode != null) {
-        for (SNode node: oldNode.getChildren()) {
+        for (SNode node : oldNode.getChildren()) {
           if (myDeletedNodes.contains(node.getSNodeId())) {
             children.add(node);
           }
         }
       }
-      
+
       Set<SNode> filteredChildren = CollectionUtil.filter(children, new Condition<SNode>() {
 
         public boolean met(SNode object) {
