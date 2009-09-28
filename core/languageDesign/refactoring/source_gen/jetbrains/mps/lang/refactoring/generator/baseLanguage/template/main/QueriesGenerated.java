@@ -594,9 +594,9 @@ public class QueriesGenerated {
   }
 
   public static SNode sourceNodeQuery_3634404331181603612(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    if (SPropertyOperations.hasValue(_context.getNode(), "type", null, null)) {
+    if (SPropertyOperations.hasValue(_context.getNode(), "type", "node", "node")) {
       return new _Quotations.QuotationClass_7().createNode();
-    } else if (SPropertyOperations.hasValue(_context.getNode(), "type", null, null)) {
+    } else if (SPropertyOperations.hasValue(_context.getNode(), "type", "model", "node")) {
       return new _Quotations.QuotationClass_8().createNode();
     } else {
       return new _Quotations.QuotationClass_9().createNode();
