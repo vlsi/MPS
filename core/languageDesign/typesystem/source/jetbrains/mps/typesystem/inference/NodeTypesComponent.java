@@ -863,7 +863,7 @@ public class NodeTypesComponent implements EditorMessageOwner {
     myCurrentNodesToInvalidateNonTypesystem.clear();
     myCurrentPropertiesToInvalidateNonTypesystem.clear();
     myCurrentTypedTermsToInvalidateNonTypesystem.clear();
-    myCacheWasCurrentlyRebuiltNonTypesystem = true;
+    myCacheWasCurrentlyRebuiltNonTypesystem = false;
     myInvalidationWasPerformedNT = true;
     myInvalidationResultNT = result;
     return result;
@@ -1004,17 +1004,20 @@ public class NodeTypesComponent implements EditorMessageOwner {
     private void markDependentNodesForInvalidation(SNode eventNode, boolean nonTypesystem) {
       if (nonTypesystem) {
         myCurrentNodesToInvalidateNonTypesystem.add(eventNode);
+        myInvalidationWasPerformedNT = false;
       } else {
         Set<SNode> nodes = myNodesToDependentNodes.get(eventNode);    // todo don't use here myNodesToDependentNodes
         if (nodes != null) {
           myCurrentNodesToInvalidate.addAll(nodes);
         }
         myCurrentNodesToInvalidate.add(eventNode);
+        myInvalidationWasPerformed = false;
       }
     }
 
     private void markDependentOnPropertyNodesForInvalidation(SNode eventNode, String propertyName) {
       myCurrentPropertiesToInvalidateNonTypesystem.add(new Pair<SNode, String>(eventNode, propertyName));
+      myInvalidationWasPerformedNT = false;
     }
   }
 
@@ -1024,6 +1027,7 @@ public class NodeTypesComponent implements EditorMessageOwner {
 
     public void typeWillBeRecalculatedForTerm(SNode term) {
       myCurrentTypedTermsToInvalidateNonTypesystem.add(term);
+      myInvalidationWasPerformedNT = false;
     }
   }
 
@@ -1031,6 +1035,8 @@ public class NodeTypesComponent implements EditorMessageOwner {
     public void languageCacheChanged() {
       myCacheWasCurrentlyRebuiltNonTypesystem = true;
       myCacheWasCurrentlyRebuiltTypesystem = true;
+      myInvalidationWasPerformed = false;
+      myInvalidationWasPerformedNT = false;
     }
   }
 
