@@ -16,7 +16,6 @@ import java.awt.BorderLayout;
 public abstract class BaseMPSChooser<T> implements IChooser {
   private String myParamName;
 
-  private JPanel myMainPanel;
   private SmartChooseByNamePanel myChooser;
 
   protected BaseMPSChooser(@Nullable String title, ChooserType type, String paramName) {
@@ -25,24 +24,16 @@ public abstract class BaseMPSChooser<T> implements IChooser {
   }
 
   private void createUI(String title, ChooserType type) {
-    myChooser = new SmartChooseByNamePanel(type.createChooserModel(), false);
+    myChooser = new SmartChooseByNamePanel(type.createChooserModel(title), false);
 
     myChooser.invoke(new Callback() {
       public void elementChosen(Object element) {
       }
     }, ModalityState.current(), false);
-
-    if (title == null) {
-      myMainPanel = myChooser.getPanel();
-    } else {
-      myMainPanel = new JPanel(new BorderLayout());
-      myMainPanel.add(new JLabel(title), BorderLayout.NORTH);
-      myMainPanel.add(myChooser.getPanel(), BorderLayout.CENTER);
-    }
   }
 
   public final JComponent getMainComponent() {
-    return myMainPanel;
+    return myChooser.getPanel();
   }
 
   public final JComponent getComponentToFocus() {

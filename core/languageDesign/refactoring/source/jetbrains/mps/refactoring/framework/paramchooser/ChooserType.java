@@ -2,48 +2,36 @@ package jetbrains.mps.refactoring.framework.paramchooser;
 
 import com.intellij.ide.DataManager;
 import com.intellij.ide.util.gotoByName.ChooseByNameModel;
+import com.intellij.ide.util.gotoByName.ChooseByNamePopup;
 import com.intellij.navigation.NavigationItem;
 import com.intellij.openapi.actionSystem.DataContext;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.workbench.MPSDataKeys;
+import jetbrains.mps.workbench.actions.goTo.index.MPSChooseSNodeDescriptor;
+import jetbrains.mps.workbench.actions.goTo.index.NamedNodeIndex;
 import jetbrains.mps.workbench.choose.models.BaseModelItem;
 import jetbrains.mps.workbench.choose.models.BaseModelModel;
 import jetbrains.mps.workbench.choose.modules.BaseModuleItem;
 import jetbrains.mps.workbench.choose.modules.BaseModuleModel;
 import jetbrains.mps.workbench.choose.nodes.BaseNodeItem;
 import jetbrains.mps.workbench.choose.nodes.BaseNodeModel;
+import jetbrains.mps.workbench.choose.base.FakePsiContext;
 
 public abstract class ChooserType {
-  public abstract ChooseByNameModel createChooserModel();
+  public abstract ChooseByNameModel createChooserModel(String text);
 
   public static class NodeChooserType extends ChooserType {
     public NodeChooserType() {
     }
 
-    public ChooseByNameModel createChooserModel() {
+    public ChooseByNameModel createChooserModel(final String text) {
       DataContext dataContext = DataManager.getInstance().getDataContext();
       final MPSProject mpsProject = MPSDataKeys.MPS_PROJECT.getData(dataContext);
-
-      return new BaseNodeModel(mpsProject) {
-        public NavigationItem doGetNavigationItem(final SNode node) {
-          return new BaseNodeItem(node) {
-            public void navigate(boolean requestFocus) {
-            }
-          };
-        }
-
-        public SNode[] find(boolean checkboxState) {
-          return null;
-        }
-
-        public SNode[] find(IScope scope) {
-          throw new UnsupportedOperationException("must not be used");
-        }
-
-        public boolean loadInitialCheckBoxState() {
-          return false;
+      return new MPSChooseSNodeDescriptor(mpsProject, new NamedNodeIndex()){
+        public String getPromptText() {
+          return text;
         }
       };
     }
@@ -53,7 +41,7 @@ public abstract class ChooserType {
     public ModelChooserType() {
     }
 
-    public ChooseByNameModel createChooserModel() {
+    public ChooseByNameModel createChooserModel(final String text) {
       DataContext dataContext = DataManager.getInstance().getDataContext();
       final MPSProject mpsProject = MPSDataKeys.MPS_PROJECT.getData(dataContext);
 
@@ -76,6 +64,10 @@ public abstract class ChooserType {
         public boolean loadInitialCheckBoxState() {
           return false;
         }
+
+        public String getPromptText() {
+          return text;
+        }
       };
     }
   }
@@ -85,7 +77,7 @@ public abstract class ChooserType {
     public ModuleChooserType() {
     }
 
-    public ChooseByNameModel createChooserModel() {
+    public ChooseByNameModel createChooserModel(final String text) {
       DataContext dataContext = DataManager.getInstance().getDataContext();
       final MPSProject mpsProject = MPSDataKeys.MPS_PROJECT.getData(dataContext);
 
@@ -107,6 +99,10 @@ public abstract class ChooserType {
 
         public boolean loadInitialCheckBoxState() {
           return false;
+        }
+
+        public String getPromptText() {
+          return text;
         }
       };
     }
