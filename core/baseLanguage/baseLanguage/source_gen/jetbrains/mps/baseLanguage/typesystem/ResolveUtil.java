@@ -129,7 +129,11 @@ outer:
     List<SNode> params = SLinkOperations.getTargets(concreteSuperClassifierType, "parameter", true);
     for (SNode typeToModify : types) {
       for (SNode varRef : SNodeOperations.getDescendants(typeToModify, "jetbrains.mps.baseLanguage.structure.TypeVariableReference", true, new String[]{})) {
-        SNodeOperations.replaceWithAnother(varRef, SNodeOperations.copyNode(ListSequence.fromList(params).getElement(SNodeOperations.getIndexInParent(SLinkOperations.getTarget(varRef, "typeVariableDeclaration", false)))));
+        // maybe a var from method
+        SNode typeVariableDeclaration = SLinkOperations.getTarget(varRef, "typeVariableDeclaration", false);
+        if (SNodeOperations.getParent(typeVariableDeclaration) != result) {
+          SNodeOperations.replaceWithAnother(varRef, SNodeOperations.copyNode(ListSequence.fromList(params).getElement(SNodeOperations.getIndexInParent(typeVariableDeclaration))));
+        }
       }
     }
     return result;
