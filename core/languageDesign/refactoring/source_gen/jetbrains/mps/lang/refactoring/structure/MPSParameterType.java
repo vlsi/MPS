@@ -7,9 +7,9 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.backports.LinkedList;
 
 public enum MPSParameterType {
-  node("node", null),
-  model("model", null),
-  module("module", null);
+  node("node", "node"),
+  model("model", "model"),
+  module("module", "module");
 
   private String myName;
   private String myValue;

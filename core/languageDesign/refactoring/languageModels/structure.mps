@@ -1178,12 +1178,15 @@
     <link role="memberDataType" targetNodeId="1.1082983041843" resolveInfo="string" />
     <node role="member" type="jetbrains.mps.lang.structure.structure.EnumerationMemberDeclaration" id="5497648299878994266">
       <property name="externalValue" value="node" />
+      <property name="internalValue" value="node" />
     </node>
     <node role="member" type="jetbrains.mps.lang.structure.structure.EnumerationMemberDeclaration" id="5497648299878742014">
       <property name="externalValue" value="model" />
+      <property name="internalValue" value="model" />
     </node>
     <node role="member" type="jetbrains.mps.lang.structure.structure.EnumerationMemberDeclaration" id="5497648299878994264">
       <property name="externalValue" value="module" />
+      <property name="internalValue" value="module" />
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="5497648299878742016">
