@@ -2465,7 +2465,7 @@
       </node>
     </node>
     <node role="staticMethod" type="jetbrains.mps.lang.behavior.structure.StaticConceptMethodDeclaration" id="669019847198843527">
-      <property name="name" value="getAssesableMembers" />
+      <property name="name" value="getAccessibleMembers" />
       <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="669019847198843540">
         <property name="name" value="contextNode" />
         <node role="type" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="669019847198843541" />

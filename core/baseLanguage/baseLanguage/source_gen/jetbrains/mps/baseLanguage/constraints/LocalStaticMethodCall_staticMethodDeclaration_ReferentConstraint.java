@@ -23,6 +23,6 @@ public class LocalStaticMethodCall_staticMethodDeclaration_ReferentConstraint ex
   }
 
   public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferentConstraintContext _context) {
-    return Classifier_Behavior.getAssesableMembers_669019847198843527(_context.getEnclosingNode(), IClassifiersSearchScope.STATIC_METHOD);
+    return Classifier_Behavior.getAccessibleMembers_669019847198843527(_context.getEnclosingNode(), IClassifiersSearchScope.STATIC_METHOD);
   }
 }

@@ -144,7 +144,7 @@ public class Classifier_Behavior {
     return result;
   }
 
-  public static List<SNode> getAssesableMembers_669019847198843527(SNode contextNode, int constraint) {
+  public static List<SNode> getAccessibleMembers_669019847198843527(SNode contextNode, int constraint) {
     SNode classifier = ClassConcept_Behavior.getContextClass_8008512149545173402(contextNode);
     List<SNode> result = new ArrayList<SNode>();
     while (classifier != null) {
