@@ -12,6 +12,7 @@ import javax.swing.JComponent;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import java.awt.BorderLayout;
+import java.awt.GridBagConstraints;
 
 public abstract class BaseMPSChooser<T> implements IChooser {
   private String myParamName;
@@ -30,6 +31,10 @@ public abstract class BaseMPSChooser<T> implements IChooser {
       public void elementChosen(Object element) {
       }
     }, ModalityState.current(), false);
+  }
+
+  public boolean isStretchable() {
+    return true;
   }
 
   public final JComponent getMainComponent() {

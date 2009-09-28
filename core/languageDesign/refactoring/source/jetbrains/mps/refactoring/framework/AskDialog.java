@@ -46,15 +46,23 @@ public class AskDialog extends BaseDialog {
     constraints.gridwidth = 1;
     constraints.fill = GridBagConstraints.BOTH;
     constraints.weightx = 1;
-    constraints.weighty = 0;
     myInnerPanel.setLayout(layout);
 
+    boolean hasStretchableChild = false;
     for (IChooser chooser : myChoosers) {
+      if (chooser.isStretchable()){
+        constraints.weighty = 1;
+        hasStretchableChild = true;
+      }else{
+        constraints.weighty = 0;
+      }
       myInnerPanel.add(chooser.getMainComponent(), constraints);
     }
 
-    constraints.weighty = 1;
-    myInnerPanel.add(new JPanel(), constraints);
+    if (!hasStretchableChild){
+      constraints.weighty = 1;
+      myInnerPanel.add(new JPanel(), constraints);
+    }
   }
 
   public DialogDimensions getDefaultDimensionSettings() {
