@@ -6427,6 +6427,33 @@
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ForeachStatement" id="1221637921582">
           <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1221637921583">
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="2595466108082377250">
+              <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="2595466108082377251">
+                <node role="statement" type="jetbrains.mps.baseLanguage.structure.ContinueStatement" id="2595466108082377295" />
+              </node>
+              <node role="condition" type="jetbrains.mps.baseLanguage.structure.NotExpression" id="2595466108082377285">
+                <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="2595466108082377286">
+                  <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="2595466108082377287">
+                    <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="2595466108082377288">
+                      <link role="variableDeclaration" targetNodeId="1221637887269" resolveInfo="scope" />
+                    </node>
+                    <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="2595466108082377289">
+                      <link role="baseMethodDeclaration" targetNodeId="7.~ClassifierAndSuperClassifiersScope.getOverriddenMethods(jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration):java.util.List" resolveInfo="getOverriddenMethods" />
+                      <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="2595466108082377290">
+                        <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="2595466108082377291">
+                          <link role="variableDeclaration" targetNodeId="1221637921586" resolveInfo="method" />
+                        </node>
+                        <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_GetAdapterOperation" id="2595466108082377292" />
+                      </node>
+                    </node>
+                  </node>
+                  <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="2595466108082377293">
+                    <link role="baseMethodDeclaration" targetNodeId="8.~List.isEmpty():boolean" resolveInfo="isEmpty" />
+                  </node>
+                </node>
+              </node>
+            </node>
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.Statement" id="2595466108082377296" />
             <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1221637954106">
               <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1221637954107">
                 <property name="name" value="container" />
@@ -6672,7 +6699,7 @@
                 <link role="variableDeclaration" targetNodeId="6603209858471717112" resolveInfo="scope" />
               </node>
               <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="6603209858471717511">
-                <link role="baseMethodDeclaration" targetNodeId="6.~AbstractSearchScope.getAdapters(jetbrains.mps.util.Condition):java.util.List" resolveInfo="getAdapters" />
+                <link role="baseMethodDeclaration" targetNodeId="6.~AbstractSearchScope.getAdapters(java.lang.Class):java.util.List" resolveInfo="getAdapters" />
                 <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.ClassifierClassExpression" id="6603209858471717512">
                   <link role="classifier" targetNodeId="27.~InstanceMethodDeclaration" resolveInfo="InstanceMethodDeclaration" />
                 </node>

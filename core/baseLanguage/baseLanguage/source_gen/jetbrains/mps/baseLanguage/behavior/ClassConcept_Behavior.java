@@ -14,9 +14,9 @@ import jetbrains.mps.baseLanguage.search.ClassifierAndSuperClassifiersScope;
 import jetbrains.mps.baseLanguage.structure.ClassConcept;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.baseLanguage.search.IClassifiersSearchScope;
+import jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.BaseAdapter;
-import jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
 
 public class ClassConcept_Behavior {
@@ -61,6 +61,10 @@ public class ClassConcept_Behavior {
     ClassifierAndSuperClassifiersScope scope = new ClassifierAndSuperClassifiersScope(((ClassConcept)SNodeOperations.getAdapter(thisNode)), IClassifiersSearchScope.INSTANCE_METHOD);
     // todo do not show already implemented methods
     for (SNode method : scope.getNodes()) {
+      if (!(scope.getOverriddenMethods(((InstanceMethodDeclaration)SNodeOperations.getAdapter(method))).isEmpty())) {
+        continue;
+      }
+
       SNode container = SNodeOperations.getAncestor(method, "jetbrains.mps.baseLanguage.structure.Classifier", false, false);
       if (container == thisNode || container == null) {
         continue;
