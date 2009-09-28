@@ -273,14 +273,6 @@ public class QueriesGenerated {
     return _context.getOutputNodeByInputNodeAndMappingLabel(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "refactoringParameter", false), "chooser", true), "chooserConstructor");
   }
 
-  public static boolean ifMacro_Condition_1192803873886(final IOperationContext operationContext, final IfMacroContext _context) {
-    return (SLinkOperations.getTarget(_context.getNode(), "filterClause", true) != null);
-  }
-
-  public static boolean ifMacro_Condition_1192803930628(final IOperationContext operationContext, final IfMacroContext _context) {
-    return (SLinkOperations.getTarget(_context.getNode(), "filterClause", true) == null);
-  }
-
   public static boolean ifMacro_Condition_1198674172362(final IOperationContext operationContext, final IfMacroContext _context) {
     return true;
   }
@@ -455,18 +447,6 @@ public class QueriesGenerated {
 
   public static boolean ifMacro_Condition_8041810900052686613(final IOperationContext operationContext, final IfMacroContext _context) {
     return (SLinkOperations.getTarget(_context.getNode(), "initialValueBlock", true) != null);
-  }
-
-  public static SNode sourceNodeQuery_1192803833747(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "filterClause", true), "body", true);
-  }
-
-  public static SNode sourceNodeQuery_1192804088431(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return SLinkOperations.getTarget(_context.getNode(), "argumentType", true);
-  }
-
-  public static SNode sourceNodeQuery_1192804118336(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return SLinkOperations.getTarget(_context.getNode(), "argumentType", true);
   }
 
   public static SNode sourceNodeQuery_1197373531048(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
