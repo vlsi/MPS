@@ -1098,6 +1098,10 @@
       <property name="sourceCardinality" value="1..n" />
       <link role="target" targetNodeId="6895093993902496262" resolveInfo="RefactoringParameterReference" />
     </node>
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="7786266509745282515">
+      <property name="value" value="ask" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" resolveInfo="alias" />
+    </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="6895093993902496262">
     <property name="name" value="RefactoringParameterReference" />
@@ -1337,6 +1341,9 @@
     <property name="package" value="RefDecl.Arg.Parameters.Chooser" />
     <property name="name" value="RefactoringParameterChooser" />
     <link role="extends" targetNodeId="1.1133920641626" resolveInfo="BaseConcept" />
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.BooleanConceptProperty" id="7786266509745282419">
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473854053" resolveInfo="abstract" />
+    </node>
     <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="7573235936722759493">
       <property name="metaClass" value="aggregation" />
       <property name="role" value="initialValueBlock" />
