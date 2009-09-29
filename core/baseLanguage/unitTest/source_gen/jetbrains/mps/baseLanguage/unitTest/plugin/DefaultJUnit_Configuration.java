@@ -130,7 +130,7 @@ public class DefaultJUnit_Configuration extends BaseRunConfig {
             npe.printStackTrace();
           }
 
-          ListSequence.fromList(actions).addSequence(ListSequence.fromList(ListSequence.fromList(new ArrayList<AnAction>())));
+          ListSequence.fromList(actions).addSequence(ListSequence.fromList(ListSequence.fromListAndArray(new ArrayList<AnAction>(), runComponent.getConsole().createConsoleActions())));
           consoleComponent = runComponent;
           consoleDispose = new Runnable() {
             public void run() {
@@ -139,7 +139,6 @@ public class DefaultJUnit_Configuration extends BaseRunConfig {
           };
 
           Process process = null;
-          final ProcessHandler[] progressHandler = new ProcessHandler[]{null};
           final List<SNode> all = new ArrayList<SNode>();
           ModelAccess.instance().runReadAction(new Runnable() {
             public void run() {
@@ -194,13 +193,11 @@ public class DefaultJUnit_Configuration extends BaseRunConfig {
             }
           });
           process = testRunner.value.getProcess();
-          if (process != null) {
-            progressHandler[0] = new BLProcessHandler(runComponent.getConsole(), process, "Test", Charset.defaultCharset());
-          }
 
-          if (progressHandler[0] != null) {
-            runComponent.onStart(progressHandler[0]);
-            handler = progressHandler[0];
+          if (process != null) {
+            BLProcessHandler processHandler = new BLProcessHandler(runComponent.getConsole(), process, "Test", Charset.defaultCharset());
+            runComponent.onStart(processHandler);
+            handler = new BLProcessHandler(runComponent.getConsole(), process, "Test", Charset.defaultCharset());
           }
         }
         final JComponent finalConsoleComponent = consoleComponent;
