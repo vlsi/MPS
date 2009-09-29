@@ -199,11 +199,15 @@ public class ModelGenerationStatusManager implements ApplicationComponent {
     String sourcesDir = outputPath + File.separator + sm.getLongName().replace('.', File.separatorChar);
 
     File[] files = new File(sourcesDir).listFiles();
+    String result = null;
     if (files != null) {
       for (File f : files) {
         String name = f.getName();
         if (name.startsWith(HASH_PREFIX)) {
-          return name.substring(HASH_PREFIX.length());
+          if (result != null) {
+            return null; //we have several hash files so it was probably caused by merge
+          }
+          result = name.substring(HASH_PREFIX.length());
         }
       }
     }
