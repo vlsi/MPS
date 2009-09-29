@@ -14,6 +14,9 @@ import com.intellij.openapi.actionSystem.ToggleAction;
 import com.intellij.execution.testframework.TestsUIUtil;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import jetbrains.mps.ide.findusages.view.icons.Icons;
+import com.intellij.openapi.actionSystem.CustomShortcutSet;
+import com.intellij.openapi.keymap.KeymapManager;
+import com.intellij.openapi.actionSystem.IdeActions;
 import jetbrains.mps.ide.ui.MPSTreeNode;
 
 public class TestToolbarPanel extends JPanel {
@@ -74,6 +77,10 @@ public class TestToolbarPanel extends JPanel {
 
   private AnAction createCollapseAllAction() {
     return new AnAction("Collapse All", "Collapse all test suites", Icons.COLLAPSE_ICON) {
+      {
+        this.registerCustomShortcutSet(new CustomShortcutSet(KeymapManager.getInstance().getActiveKeymap().getShortcuts(IdeActions.ACTION_COLLAPSE_ALL)), TestToolbarPanel.this.tree);
+      }
+
       public void actionPerformed(AnActionEvent p0) {
         MPSTreeNode root = TestToolbarPanel.this.tree.getRootNode();
         MPSTreeNode child = (MPSTreeNode)root.getFirstChild();
@@ -87,6 +94,10 @@ public class TestToolbarPanel extends JPanel {
 
   private AnAction createExpandAllAction() {
     return new AnAction("Expand All", "Expande all test suites", Icons.EXPAND_ICON) {
+      {
+        this.registerCustomShortcutSet(new CustomShortcutSet(KeymapManager.getInstance().getActiveKeymap().getShortcuts(IdeActions.ACTION_EXPAND_ALL)), TestToolbarPanel.this.tree);
+      }
+
       public void actionPerformed(AnActionEvent p0) {
         TestToolbarPanel.this.tree.expandAll();
       }
@@ -95,6 +106,10 @@ public class TestToolbarPanel extends JPanel {
 
   private AnAction createNextOccurrenceAction() {
     return new AnAction("Next Failed Test", "Navigate to the next occurrence", Icons.NEXT_ICON) {
+      {
+        this.registerCustomShortcutSet(new CustomShortcutSet(KeymapManager.getInstance().getActiveKeymap().getShortcuts(IdeActions.ACTION_NEXT_OCCURENCE)), TestToolbarPanel.this.tree);
+      }
+
       public void actionPerformed(AnActionEvent p0) {
         if (TestToolbarPanel.this.navigator.hasNextOccurence()) {
           TestToolbarPanel.this.navigator.goNextOccurence();
@@ -105,6 +120,10 @@ public class TestToolbarPanel extends JPanel {
 
   private AnAction createPreviousOccurrenceAction() {
     return new AnAction("Previous Failed Test", "Navigate to the previous occurrence", Icons.PREVIOUS_ICON) {
+      {
+        this.registerCustomShortcutSet(new CustomShortcutSet(KeymapManager.getInstance().getActiveKeymap().getShortcuts(IdeActions.ACTION_PREVIOUS_OCCURENCE)), TestToolbarPanel.this.tree);
+      }
+
       public void actionPerformed(AnActionEvent p0) {
         if (TestToolbarPanel.this.navigator.hasPreviousOccurence()) {
           TestToolbarPanel.this.navigator.goPreviousOccurence();

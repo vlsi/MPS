@@ -20,7 +20,7 @@ import java.util.Collections;
 public class ModelChooserComponent extends BaseChooserComponent {
   public ModelChooserComponent() {
     super();
-    this.setActionListener(new ActionListener() {
+    this.init(new ActionListener() {
       public void actionPerformed(ActionEvent p0) {
         final MPSProject project = ModelChooserComponent.this.getProject();
         StringBuilder result = new StringBuilder();

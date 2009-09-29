@@ -20,7 +20,7 @@ import jetbrains.mps.workbench.dialogs.choosers.CommonChoosers;
 public class ModuleChooserComponent extends BaseChooserComponent {
   public ModuleChooserComponent() {
     super();
-    this.setActionListener(new ActionListener() {
+    this.init(new ActionListener() {
       private List<IModule> check(final List<IModule> modules) {
         final List<IModule> result = ListSequence.fromList(new ArrayList<IModule>());
         ModelAccess.instance().runReadAction(new Runnable() {
