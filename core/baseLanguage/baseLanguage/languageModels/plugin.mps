@@ -41288,6 +41288,7 @@
     </node>
     <node role="staticField" type="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" id="6173548178016197546">
       <property name="name" value="DEBUG_INFO" />
+      <property name="isFinal" value="true" />
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PrivateVisibility" id="6173548178016197547" />
       <node role="type" type="jetbrains.mps.baseLanguage.structure.StringType" id="6173548178016197548" />
       <node role="initializer" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="6173548178016197549">
@@ -41296,6 +41297,7 @@
     </node>
     <node role="staticField" type="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" id="6173548178016197550">
       <property name="name" value="NODE_INFO" />
+      <property name="isFinal" value="true" />
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PrivateVisibility" id="6173548178016197551" />
       <node role="type" type="jetbrains.mps.baseLanguage.structure.StringType" id="6173548178016197552" />
       <node role="initializer" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="6173548178016197553">
