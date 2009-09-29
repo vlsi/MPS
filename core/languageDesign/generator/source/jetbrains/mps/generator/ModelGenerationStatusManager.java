@@ -32,7 +32,7 @@ import java.util.*;
 import org.jetbrains.annotations.NotNull;
 
 public class ModelGenerationStatusManager implements ApplicationComponent {
-  public static final String HASH_EXTENSION = ".hash";
+  public static final String HASH_PREFIX = ".hash.";
 
   public static final boolean USE_HASHES = true;
 
@@ -202,8 +202,8 @@ public class ModelGenerationStatusManager implements ApplicationComponent {
     if (files != null) {
       for (File f : files) {
         String name = f.getName();
-        if (name.endsWith(HASH_EXTENSION)) {
-          return name.substring(0, name.length() - HASH_EXTENSION.length());
+        if (name.startsWith(HASH_PREFIX)) {
+          return name.substring(HASH_PREFIX.length());
         }
       }
     }
