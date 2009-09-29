@@ -193,6 +193,10 @@ public class MPSEditorOpener implements ProjectComponent {
   private IEditor doOpenNode(final SNode node, IOperationContext context, final boolean focus, boolean select, boolean openBaseNode) {
     assert node.isRegistered() : "You can't edit unregistered node";
 
+    if (node.getModel().getModelDescriptor() == null) {
+          return null;
+        }
+
     //open editor
     SNode containingRoot = node.getContainingRoot();
     final IEditor nodeEditor = openEditor(containingRoot, context, openBaseNode);

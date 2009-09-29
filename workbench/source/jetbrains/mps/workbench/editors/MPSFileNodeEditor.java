@@ -192,8 +192,9 @@ public class MPSFileNodeEditor extends UserDataHolderBase implements DocumentRef
       myNodeEditor.dispose();
     }
 
-    myNodeEditor = myProject.getComponent(MPSEditorOpener.class)
-      .createEditorFor(createOperationContext(), myFile.getNode());
+    IOperationContext context = createOperationContext();
+    assert context != null;
+    myNodeEditor = myProject.getComponent(MPSEditorOpener.class).createEditorFor(context, myFile.getNode());
 
     if (state != null) {
       setState(state);
@@ -213,7 +214,7 @@ public class MPSFileNodeEditor extends UserDataHolderBase implements DocumentRef
 
     if (sm == null) {
       myIsValid = false;
-      return mpsProject.createOperationContext();
+      return null;
     }
 
     return new ModuleContext(sm.getModule(), mpsProject);
