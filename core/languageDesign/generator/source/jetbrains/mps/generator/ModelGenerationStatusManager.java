@@ -34,7 +34,7 @@ import org.jetbrains.annotations.NotNull;
 public class ModelGenerationStatusManager implements ApplicationComponent {
   public static final String HASH_EXTENSION = ".hash";
 
-  public static final boolean USE_HASHES = false;
+  public static final boolean USE_HASHES = true;
 
   private static final Logger LOG = Logger.getLogger(ModelGenerationStatusManager.class);
 
