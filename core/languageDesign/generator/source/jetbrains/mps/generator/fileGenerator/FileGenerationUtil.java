@@ -157,12 +157,8 @@ public class FileGenerationUtil {
       root.addDependencies(new RootDependencies(NameUtil.nodeFQName(outputNode), getValues(result, TextGenManager.DEPENDENCY),
         getValues(result, TextGenManager.EXTENDS)));
     }
-    SNode input = outputNode;
-    while (input != null && (input.getModel().getModelDescriptor() == null || input.getModel().getModelDescriptor().isTransient())) {
-      input = (SNode) input.getUserObject(TemplateQueryContext.ORIGINAL_INPUT_NODE);
-    }
-    if (input != null) {
-      root.setModel(input.getModel());
+    if (outputNode != null) {
+      root.setModel(outputNode.getModel());
     }
   }
 
