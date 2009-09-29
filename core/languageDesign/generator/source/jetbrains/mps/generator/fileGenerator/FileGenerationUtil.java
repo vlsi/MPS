@@ -260,7 +260,7 @@ public class FileGenerationUtil {
     }
 
     String hash = ModelDigestIndex.hash(content);        
-    File result = new File(FileGenerationUtil.getDefaultOutputDir(status.getInputModel(), outputDir), ModelGenerationStatusManager.HASH_PREFIX + hash);
+    File result = new File(FileGenerationUtil.getDefaultOutputDir(status.getInputModel(), outputDir), ModelGenerationStatusManager.HASH_PREFIX);
     if (result.exists()) return;
     try {
       if (!result.createNewFile()) {
