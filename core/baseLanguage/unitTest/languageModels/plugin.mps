@@ -13868,6 +13868,34 @@
             </node>
           </node>
         </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="840235346666984412">
+          <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="840235346666984413">
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="840235346666984423">
+              <node role="expression" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression" id="840235346666984427">
+                <node role="rValue" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="840235346666984430">
+                  <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="840235346666984431">
+                    <link role="baseMethodDeclaration" targetNodeId="44.5001211796553540578" resolveInfo="ConfigRunParameters" />
+                  </node>
+                </node>
+                <node role="lValue" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="840235346666984424">
+                  <node role="operand" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpression" id="840235346666984425" />
+                  <node role="operation" type="jetbrains.mps.lang.plugin.structure.PersistentPropertyReference" id="840235346666984426">
+                    <link role="member" targetNodeId="8843743496753415242" resolveInfo="myParams" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+          <node role="condition" type="jetbrains.mps.baseLanguage.structure.EqualsExpression" id="840235346666984419">
+            <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="840235346666984422" />
+            <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="840235346666984416">
+              <node role="operand" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpression" id="840235346666984417" />
+              <node role="operation" type="jetbrains.mps.lang.plugin.structure.PersistentPropertyReference" id="840235346666984418">
+                <link role="member" targetNodeId="8843743496753415242" resolveInfo="myParams" />
+              </node>
+            </node>
+          </node>
+        </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1393679353838087321">
           <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1393679353838087322">
             <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="7689922788309583054">

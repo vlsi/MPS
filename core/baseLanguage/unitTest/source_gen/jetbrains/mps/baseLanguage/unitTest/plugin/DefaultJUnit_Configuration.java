@@ -178,6 +178,9 @@ public class DefaultJUnit_Configuration extends BaseRunConfig {
               }
             }
           });
+          if (DefaultJUnit_Configuration.this.getStateObject().myParams == null) {
+            DefaultJUnit_Configuration.this.getStateObject().myParams = new ConfigRunParameters();
+          }
           if (DefaultJUnit_Configuration.this.getStateObject().myParams.getMake()) {
             RunUtil.makeBeforeRun(project, all);
           }
