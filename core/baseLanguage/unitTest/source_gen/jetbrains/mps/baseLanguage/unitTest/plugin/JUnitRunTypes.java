@@ -5,7 +5,7 @@ package jetbrains.mps.baseLanguage.unitTest.plugin;
 
 public enum JUnitRunTypes {
   METHOD(),
-  TESTCLASS(),
+  NODE(),
   MODEL(),
   MODULE();
 
@@ -18,7 +18,7 @@ public enum JUnitRunTypes {
     } else if (isModel) {
       return JUnitRunTypes.MODEL;
     } else if (isTest) {
-      return JUnitRunTypes.TESTCLASS;
+      return JUnitRunTypes.NODE;
     } else if (isMethod) {
       return JUnitRunTypes.METHOD;
     }

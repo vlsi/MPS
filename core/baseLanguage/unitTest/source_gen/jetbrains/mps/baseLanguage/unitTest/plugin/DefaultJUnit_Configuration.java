@@ -82,7 +82,7 @@ public class DefaultJUnit_Configuration extends BaseRunConfig {
               if (DefaultJUnit_Configuration.this.getStateObject().method == null) {
                 error.append("method is not selected or does not exist").append("\n");
               }
-            } else if (DefaultJUnit_Configuration.this.getStateObject().type == JUnitRunTypes.TESTCLASS) {
+            } else if (DefaultJUnit_Configuration.this.getStateObject().type == JUnitRunTypes.NODE) {
               if (DefaultJUnit_Configuration.this.getStateObject().node == null) {
                 error.append("node is not selected or does not exist").append("\n");
               }
@@ -97,6 +97,9 @@ public class DefaultJUnit_Configuration extends BaseRunConfig {
             }
           }
         });
+        if (!(DefaultJUnit_Configuration.this.getStateObject().compileInMPS) && DefaultJUnit_Configuration.this.getStateObject().myParams != null && DefaultJUnit_Configuration.this.getStateObject().myParams.getMake()) {
+          error.append("can't make").append("\n");
+        }
       }
 
       if (DefaultJUnit_Configuration.this.getStateObject().myParams == null) {
@@ -154,7 +157,7 @@ public class DefaultJUnit_Configuration extends BaseRunConfig {
                       break;
                     }
                   }
-                } else if (DefaultJUnit_Configuration.this.getStateObject().type == JUnitRunTypes.TESTCLASS) {
+                } else if (DefaultJUnit_Configuration.this.getStateObject().type == JUnitRunTypes.NODE) {
                   SNode test = (SNode)SModelUtil.findNodeByFQName(DefaultJUnit_Configuration.this.getStateObject().node, SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.unitTest.structure.BTestCase"), GlobalScope.getInstance());
                   ListSequence.fromList(tests).addElement(test);
                 } else if (DefaultJUnit_Configuration.this.getStateObject().type == JUnitRunTypes.MODEL) {
@@ -297,6 +300,7 @@ public class DefaultJUnit_Configuration extends BaseRunConfig {
     public String model;
     public String module;
     public String method;
+    public boolean compileInMPS;
     public JUnitRunTypes type;
     public ConfigRunParameters myParams;
 

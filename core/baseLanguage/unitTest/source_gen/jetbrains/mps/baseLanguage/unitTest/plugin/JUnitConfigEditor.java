@@ -466,6 +466,7 @@ public class JUnitConfigEditor extends JPanel {
         config.getStateObject().model = SModelOperations.getModelName(myThis.getModel());
         if (myThis.getModule() != null) {
           config.getStateObject().module = myThis.getModule().getModuleFqName();
+          config.getStateObject().compileInMPS = myThis.getModule().isCompileInMPS();
         }
         JUnitRunTypes type = JUnitRunTypes.getType(myThis.myIsModule0.isSelected(), myThis.myIsModel0.isSelected(), myThis.myIsClass0.isSelected(), myThis.myIsMethod0.isSelected());
         if (type != null) {
@@ -482,7 +483,7 @@ public class JUnitConfigEditor extends JPanel {
         case METHOD:
           myThis.myIsMethod0.setSelected(true);
           break;
-        case TESTCLASS:
+        case NODE:
           myThis.myIsClass0.setSelected(true);
           break;
         case MODEL:

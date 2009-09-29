@@ -82,6 +82,9 @@ public class DefaultJavaApplication_Configuration extends BaseRunConfig {
       if (paramsReport != null) {
         error.append(paramsReport).append("\n");
       }
+      if (!(DefaultJavaApplication_Configuration.this.getStateObject().compileInMPS) && DefaultJavaApplication_Configuration.this.getStateObject().parameters != null && DefaultJavaApplication_Configuration.this.getStateObject().parameters.getMake()) {
+        error.append("can't make").append("\n");
+      }
     }
     if (error.length() != 0) {
       throw new RuntimeConfigurationException(error.toString());
@@ -239,6 +242,7 @@ public class DefaultJavaApplication_Configuration extends BaseRunConfig {
   public static class MyState implements Cloneable {
     public String nodeId;
     public String modelId;
+    public boolean compileInMPS;
     public ConfigRunParameters parameters;
 
     public MyState() {
