@@ -24,6 +24,7 @@ import com.intellij.openapi.vcs.rollback.RollbackEnvironment;
 import com.intellij.openapi.vcs.rollback.RollbackProgressListener;
 import com.intellij.openapi.vcs.changes.VcsDirtyScopeManager;
 import com.intellij.openapi.vcs.changes.ChangeListManager;
+import com.intellij.openapi.vcs.changes.InvokeAfterUpdateMode;
 import com.intellij.openapi.vcs.checkin.CheckinEnvironment;
 import com.intellij.openapi.vcs.impl.VcsFileStatusProvider;
 import com.intellij.openapi.vcs.impl.ExcludedFileIndex;
@@ -77,7 +78,7 @@ class AddOperation extends VcsOperation {
         FileStatus status = ChangeListManager.getInstance(myProject).getStatus(virtualFile);
         if (status.equals(FileStatus.DELETED)) {
           myVirtualFilesToRevert.add(virtualFile);
-        } else if (!status.equals(FileStatus.MODIFIED)) {
+        } else if (!status.equals(FileStatus.MODIFIED) && !status.equals(FileStatus.NOT_CHANGED)) {
           myVirtualFilesToAdd.add(virtualFile);
         }
       } else if (virtualFile == null && f.exists()) {
@@ -127,8 +128,6 @@ class AddOperation extends VcsOperation {
           CollectionUtil.intersect(myVirtualFilesToAdd, filesToProcess));
       }
     }
-
-
   }
 
   private void reallyPerform(final List<VirtualFile> virtualFilesToRevert, final List<VirtualFile> virtualFilesToAdd) {
@@ -157,8 +156,12 @@ class AddOperation extends VcsOperation {
   }
 
   @Override
-  public void runPerform(Runnable runnable) {
-    ApplicationManager.getApplication().invokeLater(runnable, ModalityState.NON_MODAL);
+  public void runPerform(final Runnable runnable) {
+    ApplicationManager.getApplication().invokeLater(new Runnable() {
+      public void run() {
+        ChangeListManager.getInstance(myProject).invokeAfterUpdate(runnable, InvokeAfterUpdateMode.BACKGROUND_NOT_CANCELLABLE, "Checking for files to add to Version Control", ModalityState.NON_MODAL);
+      }
+    }, ModalityState.NON_MODAL);
   }
 
   private void scheduleUnversionedFileForAdditionInternal(@NotNull VirtualFile vf) {
