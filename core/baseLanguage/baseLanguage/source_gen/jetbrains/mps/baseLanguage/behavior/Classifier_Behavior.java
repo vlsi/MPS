@@ -19,6 +19,7 @@ import jetbrains.mps.baseLanguage.search.IClassifiersSearchScope;
 
 public class Classifier_Behavior {
   private static Class[] PARAMETERS_1214840444586 = {SNode.class};
+  private static Class[] PARAMETERS_1906502351318572840 = {SNode.class};
 
   public static void init(SNode thisNode) {
     SLinkOperations.setNewChild(thisNode, "visibility", "jetbrains.mps.baseLanguage.structure.PublicVisibility");
@@ -115,12 +116,24 @@ public class Classifier_Behavior {
     return true;
   }
 
+  public static List<SNode> virtual_getOwnMethods_1906502351318572840(SNode thisNode) {
+    return SLinkOperations.getTargets(thisNode, "method", true);
+  }
+
   public static boolean call_hasStaticMemebers_1214840444586(SNode thisNode) {
     return (Boolean)BehaviorManager.getInstance().invoke(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.Classifier"), "virtual_hasStaticMemebers_1214840444586", PARAMETERS_1214840444586);
   }
 
+  public static List<SNode> call_getOwnMethods_1906502351318572840(SNode thisNode) {
+    return (List<SNode>)BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.Classifier"), "virtual_getOwnMethods_1906502351318572840", PARAMETERS_1906502351318572840);
+  }
+
   public static boolean callSuper_hasStaticMemebers_1214840444586(SNode thisNode, String callerConceptFqName) {
     return (Boolean)BehaviorManager.getInstance().invokeSuper(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.Classifier"), callerConceptFqName, "virtual_hasStaticMemebers_1214840444586", PARAMETERS_1214840444586);
+  }
+
+  public static List<SNode> callSuper_getOwnMethods_1906502351318572840(SNode thisNode, String callerConceptFqName) {
+    return (List<SNode>)BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.Classifier"), callerConceptFqName, "virtual_getOwnMethods_1906502351318572840", PARAMETERS_1906502351318572840);
   }
 
   public static List<SNode> getNonStaticContextClassifiers_6775591514230482802(SNode context) {

@@ -106,6 +106,12 @@ public class ClassConcept_Behavior {
     );
   }
 
+  public static List<SNode> virtual_getOwnMethods_1906502351318572840(SNode thisNode) {
+    List<SNode> baseMethodDeclarations = SLinkOperations.getTargets(thisNode, "method", true);
+    ListSequence.fromList(baseMethodDeclarations).addSequence(ListSequence.fromList(SLinkOperations.getTargets(thisNode, "staticMethod", true)));
+    return baseMethodDeclarations;
+  }
+
   public static SNode call_getSuperclass_1240936569950(SNode thisNode) {
     return (SNode)BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.ClassConcept"), "virtual_getSuperclass_1240936569950", PARAMETERS_1240936569950);
   }
