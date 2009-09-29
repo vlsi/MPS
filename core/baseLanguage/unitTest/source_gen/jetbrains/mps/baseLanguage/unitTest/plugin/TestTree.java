@@ -37,16 +37,16 @@ public class TestTree extends MPSTree {
       root.add(testCaseTreeNode);
       temp.put(testCase, testCaseTreeNode);
       for (SNode method : ListSequence.fromList(MapSequence.fromMap(this.tests).get(testCase))) {
-        TestMethodTreeNode testMethodTreeNode;
-        if (this.isRebuilded) {
-          testMethodTreeNode = new TestMethodTreeNode(this.operationContext, method);
-        } else {
-          testMethodTreeNode = this.map.get(ITestCase_Behavior.call_getClassName_1216136193905(testCase), ITestMethod_Behavior.call_getTestName_1216136419751(method));
+        TestMethodTreeNode oldMethodTreeNode = this.map.get(ITestCase_Behavior.call_getClassName_1216136193905(testCase), ITestMethod_Behavior.call_getTestName_1216136419751(method));
+        TestMethodTreeNode newMethodTreeNode = new TestMethodTreeNode(this.operationContext, method);
+        TestMethodTreeNode methodTreeNode = (this.isRebuilded ?
+          newMethodTreeNode :
+          oldMethodTreeNode
+        );
+        if (this.isAllTree || !(oldMethodTreeNode.getState().equals(TestState.PASSED))) {
+          testCaseTreeNode.add(methodTreeNode);
         }
-        if (this.isAllTree || !(testMethodTreeNode.getState().equals(TestState.PASSED))) {
-          testCaseTreeNode.add(testMethodTreeNode);
-        }
-        temp.put(testCase, method, testMethodTreeNode);
+        temp.put(testCase, method, methodTreeNode);
       }
     }
     this.map = temp;
@@ -60,9 +60,16 @@ public class TestTree extends MPSTree {
     this.rebuildNow();
   }
 
+  public void buildFailedTestTree() {
+    this.isAllTree = false;
+    this.isRebuilded = true;
+    this.rebuildNow();
+  }
+
   public void setTests(IOperationContext operationContext, Map<SNode, List<SNode>> tests) {
     this.operationContext = operationContext;
     this.tests = tests;
+    this.isRebuilded = true;
     this.rebuildNow();
   }
 

@@ -128,6 +128,7 @@ public class TestToolbarPanel extends JPanel {
   private AnAction createRerunFailedTestAction() {
     return new AnAction("Rerun Failed Tests", "Rerun only tests that failed/crached after last run", TestsUIUtil.loadIcon("rerunFailedTests")) {
       public void actionPerformed(AnActionEvent p0) {
+        TestToolbarPanel.this.tree.buildFailedTestTree();
       }
     };
   }
