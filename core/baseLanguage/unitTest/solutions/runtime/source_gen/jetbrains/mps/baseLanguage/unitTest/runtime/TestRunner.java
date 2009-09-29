@@ -14,6 +14,7 @@ import java.io.PrintStream;
 
 public class TestRunner extends BaseTestRunner {
   public TestRunner() {
+
   }
 
   public void start(String[] argv) throws Throwable {

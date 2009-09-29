@@ -40,10 +40,7 @@ import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.SModelDescriptor;
-import jetbrains.mps.generator.GeneratorManager;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.generator.ModelGenerationStatusManager;
-import jetbrains.mps.generator.IGenerationType;
+import jetbrains.mps.baseLanguage.plugin.RunUtil;
 import jetbrains.mps.baseLanguage.plugin.BLProcessHandler;
 import java.nio.charset.Charset;
 import com.intellij.execution.ui.ExecutionConsole;
@@ -182,21 +179,7 @@ public class DefaultJUnit_Configuration extends BaseRunConfig {
             }
           });
           if (DefaultJUnit_Configuration.this.getStateObject().myParams.getMake()) {
-            GeneratorManager genManager = project.getComponent(GeneratorManager.class);
-            final List<SModelDescriptor> models = ListSequence.fromList(new ArrayList<SModelDescriptor>());
-            for (final SNode testable : all) {
-              ModelAccess.instance().runReadAction(new Runnable() {
-                public void run() {
-                  SModelDescriptor md = SNodeOperations.getModel(testable).getModelDescriptor();
-                  if (!(ListSequence.fromList(models).contains(md)) && ModelGenerationStatusManager.getInstance().generationRequired(md)) {
-                    ListSequence.fromList(models).addElement(md);
-                  }
-                }
-              });
-            }
-            if (ListSequence.fromList(models).isNotEmpty()) {
-              genManager.generateModelsFromDifferentModules(project.createOperationContext(), models, IGenerationType.FILES);
-            }
+            RunUtil.makeBeforeRun(project, all);
           }
           testRunner.value.setConfigParameters(DefaultJUnit_Configuration.this.getStateObject().myParams);
           if (DefaultJUnit_Configuration.this.getStateObject().myParams != null && DefaultJUnit_Configuration.this.getStateObject().myParams.getUseAlternativeJRE()) {

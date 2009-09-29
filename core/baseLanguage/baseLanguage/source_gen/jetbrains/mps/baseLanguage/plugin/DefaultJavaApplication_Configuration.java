@@ -29,11 +29,7 @@ import com.intellij.execution.process.ProcessHandler;
 import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.MPSProjectHolder;
-import jetbrains.mps.generator.GeneratorManager;
-import jetbrains.mps.smodel.SModelDescriptor;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.generator.ModelGenerationStatusManager;
-import jetbrains.mps.generator.IGenerationType;
+import java.util.Collections;
 import java.nio.charset.Charset;
 import com.intellij.execution.ui.ExecutionConsole;
 import com.intellij.execution.configurations.RunnerSettings;
@@ -122,16 +118,7 @@ public class DefaultJavaApplication_Configuration extends BaseRunConfig {
           }
 
           if (DefaultJavaApplication_Configuration.this.getStateObject().parameters.getMake()) {
-            GeneratorManager genManager = mpsProject.getComponent(GeneratorManager.class);
-            final Wrappers._T<SModelDescriptor> md = new Wrappers._T<SModelDescriptor>();
-            ModelAccess.instance().runReadAction(new Runnable() {
-              public void run() {
-                md.value = SNodeOperations.getModel(node.value).getModelDescriptor();
-              }
-            });
-            if (ModelGenerationStatusManager.getInstance().generationRequired(md.value)) {
-              genManager.generateModelsFromDifferentModules(mpsProject.createOperationContext(), ListSequence.fromListAndArray(new ArrayList<SModelDescriptor>(), md.value), IGenerationType.FILES);
-            }
+            RunUtil.makeBeforeRun(mpsProject, Collections.singletonList(node.value));
           }
 
           final RunComponent runComponent = new RunComponent(project);
