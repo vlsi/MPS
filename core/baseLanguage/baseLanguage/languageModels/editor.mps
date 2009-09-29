@@ -9495,14 +9495,20 @@
                   </node>
                 </node>
               </node>
-              <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="3508583411997370265">
-                <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="3508583411997370256">
-                  <node role="operand" type="jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_node" id="3508583411997370255" />
-                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="3508583411997370260">
-                    <link role="link" targetNodeId="17.5680397130376446158" />
+              <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.NotExpression" id="1736565090428669523">
+                <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1736565090428669524">
+                  <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1736565090428669525">
+                    <node role="operand" type="jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_node" id="1736565090428669526" />
+                    <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1736565090428669527">
+                      <link role="link" targetNodeId="17.5680397130376446158" />
+                    </node>
+                  </node>
+                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation" id="1736565090428669528">
+                    <node role="conceptArgument" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" id="1736565090428669529">
+                      <link role="conceptDeclaration" targetNodeId="17.1068431790189" resolveInfo="Type" />
+                    </node>
                   </node>
                 </node>
-                <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_IsNotNullOperation" id="3508583411997370269" />
               </node>
             </node>
           </node>
