@@ -443,7 +443,7 @@ public class SModelTreeNode extends MPSTreeNodeEx {
     myEventsCollector = null;
   }
 
-  private void updateNodePresentation(final boolean reloadSubTree) {
+  private void updateNodePresentation(final boolean reloadSubTree, final boolean updateAncesotrs) {
     ModelAccess.instance().runReadInEDT(new Runnable() {
       public void run() {
         if (getTree() == null) {
@@ -454,6 +454,10 @@ public class SModelTreeNode extends MPSTreeNodeEx {
         updateNodePresentationInTree();
         if (reloadSubTree) {
           updateSubTree();
+        }
+
+        if (updateAncesotrs) {
+          updateAncestorsPresentationInTree();
         }
       }
     });
@@ -751,22 +755,22 @@ public class SModelTreeNode extends MPSTreeNodeEx {
 
   private class MySimpleModelListener extends SModelAdapter {
     public void modelSaved(SModelDescriptor sm) {
-      updateNodePresentation(false);
+      updateNodePresentation(false, true);
     }
 
     public void modelInitialized(SModelDescriptor sm) {
-      updateNodePresentation(false);
+      updateNodePresentation(false, false);
     }
 
     public void modelReloaded(SModelDescriptor sm) {
-      updateNodePresentation(true);
+      updateNodePresentation(true, true);
     }
   }
 
   private class MyGenerationStatusListener implements ModelGenerationStatusListener {
     public void generatedFilesChanged(SModelDescriptor sm) {
       if (sm == getSModelDescriptor()) {
-        updateNodePresentation(false);
+        updateNodePresentation(false, true);
       }
     }
   }
