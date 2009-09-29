@@ -90,14 +90,13 @@ public class MPSVCSManager implements ProjectComponent {
     return myManager.getAllVersionedRoots().length > 0;
   }
 
-  public boolean deleteFilesAndRemoveFromVcs(final List<File> files, final boolean silently) {
-    if (files.size() == 0) return true;
+  public void deleteFilesAndRemoveFromVcs(final List<File> files, final boolean silently) {
+    if (files.size() == 0) return;
     if (!isProjectUnderVcs()) {
-      boolean b = true;
       for (File f : files) {
-        b &= f.delete();
+        f.delete();
       }
-      return b;
+      return;
     }
     myTasksQueue.invokeLater(new Runnable() {
       public void run() {
@@ -105,22 +104,20 @@ public class MPSVCSManager implements ProjectComponent {
           myRemoveOption, silently));
       }
     });
-    return true;
+    return;
   }
 
-  public boolean deleteVirtualFilesAndRemoveFromVcs(final Set<VirtualFile> files, final boolean silently) {
-    if (files.size() == 0) return true;
+  public void deleteVirtualFilesAndRemoveFromVcs(final Set<VirtualFile> files, final boolean silently) {
+    if (files.size() == 0) return;
     if (!isProjectUnderVcs()) {
-      boolean b = true;
       for (VirtualFile f : files) {
         try {
           f.delete(this);
         } catch (IOException e) {
           LOG.error("Error while deleting file " + f + "\n", e);
-          b = false;
         }
       }
-      return b;
+      return;
     }
     myTasksQueue.invokeLater(new Runnable() {
       public void run() {
@@ -128,29 +125,27 @@ public class MPSVCSManager implements ProjectComponent {
           myRemoveOption, silently));
       }
     });
-    return true;
+    return;
   }
 
-  public boolean addFilesToVcs(final List<File> files, final boolean recursive, final boolean silently) {
-    if ((files.size() == 0) || (!isProjectUnderVcs())) return true;
+  public void addFilesToVcs(final List<File> files, final boolean recursive, final boolean silently) {
+    if ((files.size() == 0) || (!isProjectUnderVcs())) return;
     myTasksQueue.invokeLater(new Runnable() {
       public void run() {
         perform(new AddOperation(files, myManager, myProject,
           myAddOption, recursive, silently));
       }
     });
-    return true;
   }
 
-  public boolean addVirtualFilesToVcs(final Set<VirtualFile> files, final boolean recursive, final boolean silently) {
-    if (files.size() == 0 || (!isProjectUnderVcs())) return true;
+  public void addVirtualFilesToVcs(final Set<VirtualFile> files, final boolean recursive, final boolean silently) {
+    if (files.size() == 0 || (!isProjectUnderVcs())) return;
     myTasksQueue.invokeLater(new Runnable() {
       public void run() {
         perform(new AddOperation(files, myManager, myProject,
           myAddOption, recursive, silently));
       }
     });
-    return true;
   }
 
   private void perform(final VcsOperation operation) {
