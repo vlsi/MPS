@@ -16,6 +16,8 @@ public class UnitTest_ApplicationPlugin extends BaseApplicationPlugin {
     this.addGroup(groups, moduleName, "jetbrains.mps.baseLanguage.unitTest.plugin.JUnitTestRoot_ActionGroup");
     this.addGroup(groups, moduleName, "jetbrains.mps.baseLanguage.unitTest.plugin.JUnitTestModel_ActionGroup");
     this.addGroup(groups, moduleName, "jetbrains.mps.baseLanguage.unitTest.plugin.JUnitTestModule_ActionGroup");
+    this.addGroup(groups, moduleName, "jetbrains.mps.baseLanguage.unitTest.plugin.JUnitTestCaseActions_ActionGroup");
+    this.addGroup(groups, moduleName, "jetbrains.mps.baseLanguage.unitTest.plugin.JUnitTestMethodActions_ActionGroup");
     return groups;
   }
 

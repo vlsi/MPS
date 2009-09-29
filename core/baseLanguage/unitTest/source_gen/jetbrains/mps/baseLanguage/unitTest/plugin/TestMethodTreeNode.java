@@ -9,6 +9,8 @@ import jetbrains.mps.baseLanguage.unitTest.behavior.ITestMethod_Behavior;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.baseLanguage.unitTest.behavior.ITestCase_Behavior;
+import com.intellij.openapi.actionSystem.ActionGroup;
+import jetbrains.mps.workbench.action.ActionUtils;
 import jetbrains.mps.workbench.editors.MPSEditorOpener;
 
 public class TestMethodTreeNode extends MPSTreeNode {
@@ -66,6 +68,11 @@ public class TestMethodTreeNode extends MPSTreeNode {
 
   public boolean isLeaf() {
     return true;
+  }
+
+  @Override
+  public ActionGroup getActionGroup() {
+    return ActionUtils.getGroup("jetbrains.mps.baseLanguage.unitTest.plugin.JUnitTestMethodActions");
   }
 
   public void doubleClick() {
