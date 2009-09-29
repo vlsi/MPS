@@ -26,19 +26,19 @@ public class typeof_RefactoringParameter_InferenceRule extends AbstractInference
       }
     } else if (SNodeOperations.isInstanceOf(chooser, "jetbrains.mps.lang.refactoring.structure.MPSParameterChooser")) {
       SNode mpsChooser = SNodeOperations.cast(chooser, "jetbrains.mps.lang.refactoring.structure.MPSParameterChooser");
-      if (SPropertyOperations.hasValue(mpsChooser, "type", null, null)) {
+      if (SPropertyOperations.hasValue(mpsChooser, "type", "node", "node")) {
         {
           SNode _nodeToCheck_1029348928467 = parameter;
           BaseIntentionProvider intentionProvider = null;
           typeCheckingContext.createEquation((SNode)typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c89590316(jetbrains.mps.lang.refactoring.typesystem)", "478744034994504991", true), (SNode)new _Quotations.QuotationClass_25().createNode(typeCheckingContext), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c89590316(jetbrains.mps.lang.refactoring.typesystem)", "478744034994504986", intentionProvider);
         }
-      } else if (SPropertyOperations.hasValue(mpsChooser, "type", null, null)) {
+      } else if (SPropertyOperations.hasValue(mpsChooser, "type", "model", "node")) {
         {
           SNode _nodeToCheck_1029348928467 = parameter;
           BaseIntentionProvider intentionProvider = null;
           typeCheckingContext.createEquation((SNode)typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c89590316(jetbrains.mps.lang.refactoring.typesystem)", "478744034994505006", true), (SNode)new _Quotations.QuotationClass_26().createNode(typeCheckingContext), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c89590316(jetbrains.mps.lang.refactoring.typesystem)", "478744034994505001", intentionProvider);
         }
-      } else if (SPropertyOperations.hasValue(mpsChooser, "type", null, null)) {
+      } else if (SPropertyOperations.hasValue(mpsChooser, "type", "module", "node")) {
         {
           SNode _nodeToCheck_1029348928467 = parameter;
           BaseIntentionProvider intentionProvider = null;

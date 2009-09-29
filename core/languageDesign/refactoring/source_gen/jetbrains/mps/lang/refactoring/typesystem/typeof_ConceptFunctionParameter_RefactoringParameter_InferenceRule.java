@@ -17,19 +17,19 @@ public class typeof_ConceptFunctionParameter_RefactoringParameter_InferenceRule 
 
   public void applyRule(final SNode parameter, final TypeCheckingContext typeCheckingContext) {
     SNode chooser = SNodeOperations.getAncestor(parameter, "jetbrains.mps.lang.refactoring.structure.MPSParameterChooser", false, false);
-    if (SPropertyOperations.hasValue(chooser, "type", null, null)) {
+    if (SPropertyOperations.hasValue(chooser, "type", "node", "node")) {
       {
         SNode _nodeToCheck_1029348928467 = parameter;
         BaseIntentionProvider intentionProvider = null;
         typeCheckingContext.createEquation((SNode)typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c89590316(jetbrains.mps.lang.refactoring.typesystem)", "5497648299879035588", true), (SNode)new _Quotations.QuotationClass_28().createNode(typeCheckingContext), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c89590316(jetbrains.mps.lang.refactoring.typesystem)", "5497648299879035585", intentionProvider);
       }
-    } else if (SPropertyOperations.hasValue(chooser, "type", null, null)) {
+    } else if (SPropertyOperations.hasValue(chooser, "type", "model", "node")) {
       {
         SNode _nodeToCheck_1029348928467 = parameter;
         BaseIntentionProvider intentionProvider = null;
         typeCheckingContext.createEquation((SNode)typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c89590316(jetbrains.mps.lang.refactoring.typesystem)", "5497648299879035619", true), (SNode)new _Quotations.QuotationClass_29().createNode(typeCheckingContext), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c89590316(jetbrains.mps.lang.refactoring.typesystem)", "5497648299879035614", intentionProvider);
       }
-    } else if (SPropertyOperations.hasValue(chooser, "type", null, null)) {
+    } else if (SPropertyOperations.hasValue(chooser, "type", "module", "node")) {
       {
         SNode _nodeToCheck_1029348928467 = parameter;
         BaseIntentionProvider intentionProvider = null;
