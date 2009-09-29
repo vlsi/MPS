@@ -17,17 +17,13 @@ package jetbrains.mps.generator;
 
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.vfs.VirtualFile;
-import com.intellij.openapi.project.Project;
 import com.intellij.openapi.module.Module;
 import com.intellij.openapi.components.ApplicationComponent;
 import com.intellij.util.indexing.FileBasedIndex;
-import com.intellij.util.indexing.FileBasedIndex.AllValuesProcessor;
 import com.intellij.psi.search.GlobalSearchScope;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.*;
-import jetbrains.mps.smodel.event.SModelCommandListener;
-import jetbrains.mps.smodel.event.SModelEvent;
 import jetbrains.mps.util.FileUtil;
 
 import java.io.File;
@@ -178,7 +174,7 @@ public class ModelGenerationStatusManager implements ApplicationComponent {
 
   private void fireStatusChange(SModelDescriptor sm) {
     for (ModelGenerationStatusListener l : myListeners) {
-      l.generationStatusChanged(sm);
+      l.generatedFilesChanged(sm);
     }
   }
 

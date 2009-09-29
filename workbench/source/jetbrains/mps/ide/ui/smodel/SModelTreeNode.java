@@ -764,7 +764,7 @@ public class SModelTreeNode extends MPSTreeNodeEx {
   }
 
   private class MyGenerationStatusListener implements ModelGenerationStatusListener {
-    public void generationStatusChanged(SModelDescriptor sm) {
+    public void generatedFilesChanged(SModelDescriptor sm) {
       if (sm == getSModelDescriptor()) {
         updateNodePresentation(false);
       }
