@@ -91,6 +91,10 @@
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="3702466984434609595">
     <property name="name" value="TestBlockList" />
     <link role="extends" targetNodeId="2v.1133920641626" resolveInfo="BaseConcept" />
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="3727822333335546449">
+      <property name="value" value="{" />
+      <link role="conceptPropertyDeclaration" targetNodeId="2v.1137473891462" resolveInfo="alias" />
+    </node>
     <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="3702466984434609602">
       <property name="metaClass" value="aggregation" />
       <property name="role" value="statement" />

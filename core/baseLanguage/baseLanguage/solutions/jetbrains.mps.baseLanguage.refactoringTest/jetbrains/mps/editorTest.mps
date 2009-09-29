@@ -5155,5 +5155,45 @@
   <node type="jetbrains.mps.lang.test.structure.TestInfo" id="418758558327350365">
     <property name="projectPath" value="${mps_home}/core/baseLanguage/baseLanguage/baseLanguage.mpr" />
   </node>
+  <node type="jetbrains.mps.lang.test.structure.EditorTestCase" id="3727822333335494274">
+    <property name="package" value="intelligentInputUtil" />
+    <property name="name" value="NodeAfterSubstitutionHasNoErrorCell" />
+    <node role="nodeToEdit" type="jetbrains.mps.lang.editor.editorTest.structure.TestBlockList" id="3727822333335546447">
+      <node role="statement" type="jetbrains.mps.lang.editor.editorTest.structure.VariableDeclarationBlock" id="3727822333335739721">
+        <property name="name" value="stubs" />
+        <node role="testNode$attribute" type="jetbrains.mps.lang.test.structure.AnonymousCellAnnotation" id="8664476900639779224">
+          <property name="isLastPosition" value="true" />
+          <property name="useLabelSelection" value="true" />
+          <property name="selectionStart" value="5" />
+          <property name="selectionEnd" value="5" />
+          <property name="cellId" value="property_name" />
+        </node>
+      </node>
+    </node>
+    <node role="code" type="jetbrains.mps.baseLanguage.structure.StatementList" id="2280755559669631288">
+      <node role="statement" type="jetbrains.mps.lang.test.structure.PressKeyStatement" id="8664476900639842688">
+        <node role="keyStrokes" type="jetbrains.mps.lang.plugin.structure.KeyMapKeystroke" id="8664476900639842689">
+          <property name="keycode" value="VK_ENTER" />
+        </node>
+      </node>
+      <node role="statement" type="jetbrains.mps.lang.test.structure.TypeKeyStatement" id="8664476900639842695">
+        <property name="keys" value="stub@" />
+      </node>
+    </node>
+    <node role="result" type="jetbrains.mps.lang.editor.editorTest.structure.TestBlockList" id="8664476900639779216">
+      <node role="statement" type="jetbrains.mps.lang.editor.editorTest.structure.VariableDeclarationBlock" id="8664476900639779217">
+        <property name="name" value="stubs" />
+      </node>
+      <node role="statement" type="jetbrains.mps.lang.editor.editorTest.structure.StubBlock" id="8664476900639842691">
+        <node role="testNode$attribute" type="jetbrains.mps.lang.test.structure.AnonymousCellAnnotation" id="8664476900639842692">
+          <property name="isLastPosition" value="true" />
+          <property name="useLabelSelection" value="true" />
+          <property name="selectionStart" value="5" />
+          <property name="selectionEnd" value="5" />
+          <property name="cellId" value="Constant_9987_0" />
+        </node>
+      </node>
+    </node>
+  </node>
 </model>
 

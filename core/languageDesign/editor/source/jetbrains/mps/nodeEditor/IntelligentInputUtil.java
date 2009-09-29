@@ -176,6 +176,9 @@ public class IntelligentInputUtil {
         editorContext.getNodeEditorComponent().requestRelayout();
         return true;
       }
+      
+      editorContext.getNodeEditorComponent().requestRelayout();
+      ((EditorCell_Label) editorContext.getSelectedCell()).changeText(smallPattern + tail);
       return applyRigthTransform(editorContext, smallPattern, tail, cellForNewNode, newNode);
     } else if (canCompleteTheWholeStringImmediately(substituteInfo, smallPattern + tail) ||
       canCompleteTheWholeStringImmediately(substituteInfo, trimLeft(smallPattern) + tail)) {
