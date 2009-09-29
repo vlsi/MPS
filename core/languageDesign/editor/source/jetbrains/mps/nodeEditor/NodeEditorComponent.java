@@ -67,7 +67,11 @@ public class NodeEditorComponent extends EditorComponent {
         if (getSelectedNode() != null) {
           ModelAccess.instance().runReadAction(new Runnable() {
             public void run() {
-              inspect(getSelectedNode());
+              SNode selectedNode = getSelectedNode();
+              if (selectedNode != null && selectedNode.getModel().isDisposed()) {
+                return;
+              }
+              inspect(selectedNode);
             }
           });
         }
