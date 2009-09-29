@@ -16,17 +16,30 @@
 package jetbrains.mps.generator;
 
 import com.intellij.openapi.application.ApplicationManager;
+import com.intellij.openapi.vfs.VirtualFile;
+import com.intellij.openapi.project.Project;
+import com.intellij.openapi.module.Module;
+import com.intellij.openapi.components.ApplicationComponent;
+import com.intellij.util.indexing.FileBasedIndex;
+import com.intellij.util.indexing.FileBasedIndex.AllValuesProcessor;
+import com.intellij.psi.search.GlobalSearchScope;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.IModule;
-import jetbrains.mps.smodel.Language;
-import jetbrains.mps.smodel.SModelDescriptor;
-import jetbrains.mps.smodel.SModelStereotype;
+import jetbrains.mps.smodel.*;
+import jetbrains.mps.smodel.event.SModelCommandListener;
+import jetbrains.mps.smodel.event.SModelEvent;
 import jetbrains.mps.util.FileUtil;
 
 import java.io.File;
 import java.util.*;
 
-public class ModelGenerationStatusManager {
+import org.jetbrains.annotations.NotNull;
+
+public class ModelGenerationStatusManager implements ApplicationComponent {
+  public static final String HASH_EXTENSION = ".hash";
+
+  public static final boolean USE_HASHES = false;
+
   private static final Logger LOG = Logger.getLogger(ModelGenerationStatusManager.class);
 
   private static final String DO_NOT_GENERATE = "doNotGenerate";
@@ -47,7 +60,20 @@ public class ModelGenerationStatusManager {
   private Map<SModelDescriptor, Boolean> myEmptyStatus = new HashMap<SModelDescriptor, Boolean>();
   private Map<SModelDescriptor, Long> myEmptyStatusRetrievalTime = new HashMap<SModelDescriptor, Long>();
 
+  private Map<SModelDescriptor, String> myGeneratedFilesHashes = new HashMap<SModelDescriptor, String>();
+
   private List<ModelGenerationStatusListener> myListeners = new ArrayList<ModelGenerationStatusListener>();
+
+  @NotNull
+  public String getComponentName() {
+    return "Model Status Manager";
+  }
+
+  public void initComponent() {
+  }
+
+  public void disposeComponent() {
+  }
 
   public boolean generationRequired(SModelDescriptor sm) {
     if (sm.isPackaged()) {
@@ -66,11 +92,47 @@ public class ModelGenerationStatusManager {
       return false;
     }
 
-    if (isEmpty(sm)) {
-      return getLastGenerationTime(sm) != 0 && sm.lastChangeTime() >= getLastGenerationTime(sm);
-    }
+    if (!USE_HASHES) {
+      if (isEmpty(sm)) {
+        return getLastGenerationTime(sm) != 0 && sm.lastChangeTime() >= getLastGenerationTime(sm);
+      }
+      return sm.lastChangeTime() >= getLastGenerationTime(sm);
+    } else {
+      if (SModelRepository.getInstance().isChanged(sm)) return true;
 
-    return sm.lastChangeTime() >= getLastGenerationTime(sm);
+      if (isEmpty(sm)) {
+        return false;
+      }
+
+      String generatedHash = getGenerationHash(sm);
+
+      if (generatedHash == null) return true;
+
+      Collection<VirtualFile> files = FileBasedIndex.getInstance().getContainingFiles(ModelDigestIndex.NAME,
+        generatedHash,
+        new GlobalSearchScope() {
+          @Override
+          public boolean contains(VirtualFile file) {
+            return true;
+          }
+
+          @Override
+          public int compare(VirtualFile file1, VirtualFile file2) {
+            return file1.getPath().compareTo(file2.getPath());
+          }
+
+          @Override
+          public boolean isSearchInModuleContent(@NotNull Module aModule) {
+            return true;
+          }
+
+          @Override
+          public boolean isSearchInLibraries() {
+            return false;
+          }
+        });
+      return files.isEmpty();
+    }
   }
 
   private boolean isEmpty(SModelDescriptor sm) {
@@ -92,8 +154,17 @@ public class ModelGenerationStatusManager {
     return myLastGenerationTime.get(sm);
   }
 
+  private String getGenerationHash(SModelDescriptor sm) {
+    if (!myGeneratedFilesHashes.containsKey(sm)) {
+      String hash = calculateGeneratedHash(sm);
+      myGeneratedFilesHashes.put(sm, hash);
+    }
+    return myGeneratedFilesHashes.get(sm);
+  }
+
   public void invalidateData(SModelDescriptor sm) {
     myLastGenerationTime.remove(sm);
+    myGeneratedFilesHashes.remove(sm);
     fireStatusChange(sm);
   }
 
@@ -120,5 +191,27 @@ public class ModelGenerationStatusManager {
     String outputPath = module.getGeneratorOutputPath();
     String sourcesDir = outputPath + File.separator + sm.getLongName().replace('.', File.separatorChar);
     return FileUtil.getNewestFileTime(new File(sourcesDir));
+  }
+
+  private String calculateGeneratedHash(SModelDescriptor sm) {
+    Set<IModule> modules = sm.getModules();
+    if (modules.size() != 1) {
+      LOG.warning("model " + sm.getSModelReference() + " has too many owners : " + modules);
+    }
+    IModule module = modules.iterator().next();
+    String outputPath = module.getGeneratorOutputPath();
+    String sourcesDir = outputPath + File.separator + sm.getLongName().replace('.', File.separatorChar);
+
+    File[] files = new File(sourcesDir).listFiles();
+    if (files != null) {
+      for (File f : files) {
+        String name = f.getName();
+        if (name.endsWith(HASH_EXTENSION)) {
+          return name.substring(0, name.length() - HASH_EXTENSION.length());
+        }
+      }
+    }
+
+    return null;
   }
 }

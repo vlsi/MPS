@@ -247,6 +247,7 @@ public class GenerationController {
           progress.startLeafTask(taskName, myProgress, totalJob, startJobTime);
 
           GenerationStatus status = generationSession.generateModel(inputModel);
+          status.setOriginalInputModel(inputModel);
           currentGenerationOK = currentGenerationOK && status.isOk();
 
           info("handling output...");

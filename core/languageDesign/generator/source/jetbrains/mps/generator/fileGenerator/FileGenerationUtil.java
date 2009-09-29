@@ -22,9 +22,7 @@ import jetbrains.mps.baseLanguage.plugin.DebugInfo;
 import jetbrains.mps.baseLanguage.plugin.PositionInfo;
 import jetbrains.mps.baseLanguage.textGen.ModelDependencies;
 import jetbrains.mps.baseLanguage.textGen.RootDependencies;
-import jetbrains.mps.generator.GenerationStatus;
-import jetbrains.mps.generator.GeneratorManager;
-import jetbrains.mps.generator.JavaNameUtil;
+import jetbrains.mps.generator.*;
 import jetbrains.mps.generator.generationTypes.TextGenerationUtil;
 import jetbrains.mps.generator.generationTypes.TextGenerationUtil.TextGenerationResult;
 import jetbrains.mps.generator.template.TemplateQueryContext;
@@ -35,10 +33,13 @@ import jetbrains.mps.vcs.MPSVCSManager;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.VFileSystem;
 import jetbrains.mps.util.NameUtil;
+import jetbrains.mps.util.FileUtil;
+import jetbrains.mps.util.ReadUtil;
 import jetbrains.mps.ide.IdeMain;
 
 import java.io.File;
 import java.io.IOException;
+import java.io.InputStream;
 import java.util.*;
 
 public class FileGenerationUtil {
@@ -230,17 +231,66 @@ public class FileGenerationUtil {
         LOG.error(e);
       }
     }
-    if (status.getDebugInfo() != null && status.getDebugInfo().getModel() != null) {
-      IFile file = DebugInfo.getDebugFileOfModel(outputRootDirectory.getAbsolutePath(), status.getDebugInfo().getModel().getModelDescriptor());
-      status.getDebugInfo().saveTo(file);
-      generatedFiles.add(file.toFile());
+
+    //todo we need to create some kind of listener for this place since we already have 3 things which we
+    //todo need to generate
+    generateDebugInfo(status, outputRootDirectory, generatedFiles);
+    generateDependencyInfo(status, outputRootDirectory, generatedFiles);
+
+    if (ModelGenerationStatusManager.USE_HASHES) {
+      generateHashFile(status, outputRootDirectory, generatedFiles);
     }
+  }
+
+  private static void generateHashFile(GenerationStatus status, File outputDir, Set<File> generatedFiles) {
+    SModelDescriptor descriptor = status.getOriginalInputModel();
+    IFile file = descriptor.getModelFile();
+    assert file != null;
+    byte[] content = new byte[(int) file.length()];
+
+    InputStream is = null;
+    try {
+      is = file.openInputStream();
+      ReadUtil.read(content, is);
+    } catch (IOException e) {
+      LOG.error(e);
+    } finally {
+      if (is != null) {
+        try {
+          is.close();
+        } catch (IOException e) {
+        }
+      }
+    }
+
+    String hash = ModelDigestIndex.hash(content);        
+    File result = new File(FileGenerationUtil.getDefaultOutputDir(status.getInputModel(), outputDir), hash + ".hash");
+    if (result.exists()) return;
+    try {
+      if (!result.createNewFile()) {
+        LOG.error("Can't create hash file");
+      }
+    } catch (IOException e) {
+      LOG.error(e);
+    }
+    generatedFiles.add(result);
+  }
+
+  private static void generateDependencyInfo(GenerationStatus status, File outputRootDirectory, Set<File> generatedFiles) {
     if (status.getDependenciesRoot() != null && status.getDependenciesRoot().getModel() != null) {
       IFile file = ModelDependencies.getOutputFileOfModel(outputRootDirectory.getAbsolutePath(), status.getDependenciesRoot().getModel().getModelDescriptor());
       boolean saved = status.getDependenciesRoot().saveTo(file);
       if (saved) {
         generatedFiles.add(file.toFile());
       }
+    }
+  }
+
+  private static void generateDebugInfo(GenerationStatus status, File outputRootDirectory, Set<File> generatedFiles) {
+    if (status.getDebugInfo() != null && status.getDebugInfo().getModel() != null) {
+      IFile file = DebugInfo.getDebugFileOfModel(outputRootDirectory.getAbsolutePath(), status.getDebugInfo().getModel().getModelDescriptor());
+      status.getDebugInfo().saveTo(file);
+      generatedFiles.add(file.toFile());
     }
   }
 }
