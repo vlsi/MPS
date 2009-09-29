@@ -90,7 +90,7 @@ public class MPSVCSManager implements ProjectComponent {
     return myManager.getAllVersionedRoots().length > 0;
   }
 
-  public boolean deleteFilesAndRemoveFromVcs(List<File> files, final boolean silently) {
+  public boolean deleteFilesAndRemoveFromVcs(final List<File> files, final boolean silently) {
     if (files.size() == 0) return true;
     if (!isProjectUnderVcs()) {
       boolean b = true;
@@ -99,17 +99,16 @@ public class MPSVCSManager implements ProjectComponent {
       }
       return b;
     }
-    final List<File> copiedFileList = new ArrayList<File>(files);
     myTasksQueue.invokeLater(new Runnable() {
       public void run() {
-        perform(new RemoveOperation(copiedFileList, myManager, myProject,
+        perform(new RemoveOperation(files, myManager, myProject,
           myRemoveOption, silently));
       }
     });
     return true;
   }
 
-  public boolean deleteVirtualFilesAndRemoveFromVcs(List<VirtualFile> files, final boolean silently) {
+  public boolean deleteVirtualFilesAndRemoveFromVcs(final Set<VirtualFile> files, final boolean silently) {
     if (files.size() == 0) return true;
     if (!isProjectUnderVcs()) {
       boolean b = true;
@@ -123,34 +122,31 @@ public class MPSVCSManager implements ProjectComponent {
       }
       return b;
     }
-    final HashSet<VirtualFile> filesCopy = new HashSet<VirtualFile>(files);
     myTasksQueue.invokeLater(new Runnable() {
       public void run() {
-        perform(new RemoveOperation(filesCopy, myManager, myProject,
+        perform(new RemoveOperation(files, myManager, myProject,
           myRemoveOption, silently));
       }
     });
     return true;
   }
 
-  public boolean addFilesToVcs(List<File> files, final boolean recursive, final boolean silently) {
+  public boolean addFilesToVcs(final List<File> files, final boolean recursive, final boolean silently) {
     if ((files.size() == 0) || (!isProjectUnderVcs())) return true;
-    final List<File> copiedFileList = new ArrayList<File>(files); //a list "files" can be modified by caller before invokeLater calls its runnable
     myTasksQueue.invokeLater(new Runnable() {
       public void run() {
-        perform(new AddOperation(copiedFileList, myManager, myProject,
+        perform(new AddOperation(files, myManager, myProject,
           myAddOption, recursive, silently));
       }
     });
     return true;
   }
 
-  public boolean addVirtualFilesToVcs(List<VirtualFile> files, final boolean recursive, final boolean silently) {
+  public boolean addVirtualFilesToVcs(final Set<VirtualFile> files, final boolean recursive, final boolean silently) {
     if (files.size() == 0 || (!isProjectUnderVcs())) return true;
-    final HashSet<VirtualFile> filesCopy = new HashSet<VirtualFile>(files);
     myTasksQueue.invokeLater(new Runnable() {
       public void run() {
-        perform(new AddOperation(filesCopy, myManager, myProject,
+        perform(new AddOperation(files, myManager, myProject,
           myAddOption, recursive, silently));
       }
     });
@@ -269,7 +265,7 @@ public class MPSVCSManager implements ProjectComponent {
     public void modelFileChanged(SModelDescriptor modelDescriptor, IFile ifrom) {
       if (ifrom != null) {
         VirtualFile from = VFileSystem.getFile(ifrom);
-        deleteVirtualFilesAndRemoveFromVcs(Collections.singletonList(from), true);
+        deleteVirtualFilesAndRemoveFromVcs(Collections.singleton(from), true);
         modelDescriptor.addModelListener(myModelInitializationListener);
       }
     }

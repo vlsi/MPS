@@ -197,15 +197,15 @@ public class ApplicationLevelVcsManager implements ApplicationComponent, Persist
 
   public void addFilesToVcs(List<VirtualFile> files, boolean recursive) {
     // collect
-    Map<MPSVCSManager, List<VirtualFile>> vcsManagerToFile = new HashMap<MPSVCSManager, List<VirtualFile>>();
+    Map<MPSVCSManager, Set<VirtualFile>> vcsManagerToFile = new HashMap<MPSVCSManager, Set<VirtualFile>>();
     for (VirtualFile file : files) {
       Project projectForFile = getProjectForFile(file);
       if (projectForFile != null) {
         MPSVCSManager mpsVcsManager = MPSVCSManager.getInstance(projectForFile);
         if (mpsVcsManager != null) {
-          List<VirtualFile> filesForManager = vcsManagerToFile.get(mpsVcsManager);
+          Set<VirtualFile> filesForManager = vcsManagerToFile.get(mpsVcsManager);
           if (filesForManager == null) {
-            filesForManager = new LinkedList<VirtualFile>();
+            filesForManager = new HashSet<VirtualFile>();
             vcsManagerToFile.put(mpsVcsManager, filesForManager);
           }
           filesForManager.add(file);
@@ -228,7 +228,7 @@ public class ApplicationLevelVcsManager implements ApplicationComponent, Persist
     if (project != null) {
       MPSVCSManager manager = MPSVCSManager.getInstance(project);
       if (manager != null) {
-        manager.addVirtualFilesToVcs(Collections.singletonList(file), recursive, true);
+        manager.addVirtualFilesToVcs(Collections.singleton(file), recursive, true);
       } else {
         LOG.debug("Can not find " + MPSVCSManager.class.getName() + " instance for file " + file + ".");
       }

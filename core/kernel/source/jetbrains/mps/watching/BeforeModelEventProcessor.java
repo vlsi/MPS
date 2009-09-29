@@ -44,7 +44,7 @@ class BeforeModelEventProcessor extends EventProcessor {
       if (MPSFileTypesManager.instance().isModelFile(vfile)) {
         Project project = ApplicationLevelVcsManager.instance().getProjectForFile(vfile);
         if (project != null) {
-          MPSVCSManager.getInstance(project).deleteVirtualFilesAndRemoveFromVcs(Collections.singletonList(vfile), true);
+          MPSVCSManager.getInstance(project).deleteVirtualFilesAndRemoveFromVcs(Collections.singleton(vfile), true);
         }
       }
     } else {
