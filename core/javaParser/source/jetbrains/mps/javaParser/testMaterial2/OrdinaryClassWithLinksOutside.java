@@ -8,5 +8,6 @@ public class OrdinaryClassWithLinksOutside extends Object {
   /*package*/ String myS;
 
   public OrdinaryClassWithLinksOutside() {
+    System.err.println("hello world!");
   }
 }

@@ -34,10 +34,6 @@ public class ReferentsCreator {
     myTypesProvider = new TypesProvider(this);
   }
 
-  public Map<Binding, INodeAdapter> getBindingMap() {
-    return new HashMap<Binding, INodeAdapter>(myBindingMap);
-  }
-
   public TypesProvider getTypesProvider() {
     return myTypesProvider;
   }

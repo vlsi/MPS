@@ -7,5 +7,8 @@ public class OrdinaryClassWithLinksOutside2 extends Object {
   /*package*/ OrdinaryClassWithLinksOutside myFieldO1;
 
   public OrdinaryClassWithLinksOutside2() {
+
+
+    
   }
 }

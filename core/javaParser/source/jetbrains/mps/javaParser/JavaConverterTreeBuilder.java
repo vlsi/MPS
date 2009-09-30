@@ -48,7 +48,6 @@ public class JavaConverterTreeBuilder {
   private BaseMethodDeclaration myCurrentMethod;
   private TypesProvider myTypesProvider;
 
-  private Map<Binding, INodeAdapter> myBindingMap = new HashMap<Binding, INodeAdapter>();
 
   public jetbrains.mps.baseLanguage.structure.Expression processExpressionRefl(Expression expression) {
     /*
@@ -1056,7 +1055,7 @@ public class JavaConverterTreeBuilder {
     Statement finallyBlock = processStatementRefl(x.finallyBlock);
     if (x.catchBlocks != null) {
       for (int i = 0, c = x.catchArguments.length; i < c; ++i) {
-        LocalVariableDeclaration local = (LocalVariableDeclaration) myBindingMap.get(x.catchArguments[i].binding);
+        LocalVariableDeclaration local = (LocalVariableDeclaration) myTypesProvider.getRaw(x.catchArguments[i].binding);
         catchArgs.add(local);
       }
       for (int i = 0, c = x.catchBlocks.length; i < c; ++i) {
@@ -1111,7 +1110,7 @@ public class JavaConverterTreeBuilder {
   // classes ====================================================================
 
   public Classifier processType(TypeDeclaration x) {
-    Classifier classifier = (Classifier) myBindingMap.get(x.binding);
+    Classifier classifier = (Classifier) myTypesProvider.getRaw(x.binding);
     if (x.binding.isAnnotationType()) {
       // Do not process.          //todo methods
       return classifier;
@@ -1134,17 +1133,36 @@ public class JavaConverterTreeBuilder {
       }
 
       if (x.methods != null) {
+        int constructorsCount = 0;
+        for (AbstractMethodDeclaration abstractMethodDeclaration : x.methods) {
+          if (abstractMethodDeclaration instanceof ConstructorDeclaration) {
+            constructorsCount++;
+          }
+        }
         // Process methods
         for (int i = 0, n = x.methods.length; i < n; ++i) {
           AbstractMethodDeclaration method = x.methods[i];
           if (method.isConstructor()) {
             assert (myCurrentClass instanceof ClassConcept);
+            if (constructorsCount == 1 && (method.arguments == null || method.arguments.length == 0)) {
+              if (method.statements == null || method.statements.length == 0) {
+                //default constructor; could be omitted
+                MethodBinding b = method.binding;
+                BaseMethodDeclaration bmd = (BaseMethodDeclaration) myTypesProvider.getRaw(b);
+                if (bmd != null) {
+                  bmd.delete();
+                }
+                continue;
+              }
+            }
             processConstructor((ConstructorDeclaration) method);
           } else if (method.isClinit()) {
             // nothing to do
+            continue;
           } else {
             processMethod(method);
           }
+          addExceptionsToMethod(method);
         }
       }
 
@@ -1162,9 +1180,18 @@ public class JavaConverterTreeBuilder {
     return classifier;
   }
 
+  void addExceptionsToMethod(AbstractMethodDeclaration x) {
+    MethodBinding b = x.binding;
+    BaseMethodDeclaration method = (BaseMethodDeclaration) myTypesProvider.getRaw(b);
+    for (ReferenceBinding referenceBinding : b.thrownExceptions) {
+      ClassifierType exceptionType = (ClassifierType) myTypesProvider.createType(referenceBinding);
+      method.addThrowsItem(exceptionType);
+    }
+  }
+
   void processMethod(AbstractMethodDeclaration x) {
     MethodBinding b = x.binding;
-    BaseMethodDeclaration method = (BaseMethodDeclaration) myBindingMap.get(b);
+    BaseMethodDeclaration method = (BaseMethodDeclaration) myTypesProvider.getRaw(b);
     try {
 
       if (x.isNative()) {
@@ -1194,7 +1221,7 @@ public class JavaConverterTreeBuilder {
 
   void processConstructor(ConstructorDeclaration x) {
     jetbrains.mps.baseLanguage.structure.ConstructorDeclaration ctor =
-      (jetbrains.mps.baseLanguage.structure.ConstructorDeclaration) myBindingMap.get(x.binding);
+      (jetbrains.mps.baseLanguage.structure.ConstructorDeclaration) myTypesProvider.getRaw(x.binding);
     try {
 
       myCurrentMethod = ctor;
@@ -1250,7 +1277,7 @@ public class JavaConverterTreeBuilder {
   }
 
   void processField(org.eclipse.jdt.internal.compiler.ast.FieldDeclaration declaration) {
-    INodeAdapter adapter = myBindingMap.get(declaration.binding);
+    INodeAdapter adapter = myTypesProvider.getRaw(declaration.binding);
     if (adapter == null) {
       /*
       * When anonymous classes declare constant fields, the field declaration
@@ -1281,7 +1308,7 @@ public class JavaConverterTreeBuilder {
         assert(myCurrentClass instanceof EnumClass);
         AllocationExpression initializer = (AllocationExpression) declaration.initialization;
         jetbrains.mps.baseLanguage.structure.ConstructorDeclaration constructor =
-          (jetbrains.mps.baseLanguage.structure.ConstructorDeclaration) myBindingMap.get(initializer.binding);
+          (jetbrains.mps.baseLanguage.structure.ConstructorDeclaration) myTypesProvider.getRaw(initializer.binding);
         enumConstant.setConstructor(constructor);
         Expression[] arguments = initializer.arguments;
         if (arguments != null) {
@@ -1299,7 +1326,6 @@ public class JavaConverterTreeBuilder {
   public void exec(ReferentsCreator referentsCreator,
                    Map<String, SModel> modelMap) {
     // Construct the basic AST.
-    myBindingMap = referentsCreator.getBindingMap();
     myTypesProvider = referentsCreator.getTypesProvider();
     myModelMap = modelMap;
     myCurrentClass = null;
