@@ -52,14 +52,14 @@ public class check_ClassifierType_NonTypesystemRule extends AbstractNonTypesyste
             if (!(TypeChecker.getInstance().getSubtypingManager().isSubtype(typeArgument, SLinkOperations.getTarget(typeVar, "bound", true)))) {
               BaseIntentionProvider intentionProvider = null;
               IErrorTarget errorTarget = new NodeErrorTarget();
-              typeCheckingContext.reportTypeError(typeArgument, "type parameter does not satisfy its bound", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "904196553350157450", intentionProvider, errorTarget);
+              typeCheckingContext.reportTypeError(typeArgument, "type parameter is not within its bounds", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "904196553350157450", intentionProvider, errorTarget);
             }
           }
           for (SNode auxBound : SLinkOperations.getTargets(typeVar, "auxBounds", true)) {
             if (!(TypeChecker.getInstance().getSubtypingManager().isSubtype(typeArgument, auxBound))) {
               BaseIntentionProvider intentionProvider = null;
               IErrorTarget errorTarget = new NodeErrorTarget();
-              typeCheckingContext.reportTypeError(typeArgument, "type parameter does not satisfy its bound", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "904196553350157495", intentionProvider, errorTarget);
+              typeCheckingContext.reportTypeError(typeArgument, "type parameter is not within its bounds", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "904196553350157495", intentionProvider, errorTarget);
             }
           }
         }

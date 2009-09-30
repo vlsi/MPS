@@ -7332,7 +7332,7 @@
                       </node>
                     </node>
                     <node role="errorString" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="904196553350157465">
-                      <property name="value" value="type parameter does not satisfy its bound" />
+                      <property name="value" value="type parameter is not within its bounds" />
                     </node>
                     <node role="nodeToReport" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="904196553350157464">
                       <link role="variableDeclaration" targetNodeId="904196553350157390" resolveInfo="typeArgument" />
@@ -7363,7 +7363,7 @@
                       </node>
                     </node>
                     <node role="errorString" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="904196553350157501">
-                      <property name="value" value="type parameter does not satisfy its bound" />
+                      <property name="value" value="type parameter is not within its bounds" />
                     </node>
                     <node role="nodeToReport" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="904196553350157502">
                       <link role="variableDeclaration" targetNodeId="904196553350157390" resolveInfo="typeArgument" />
