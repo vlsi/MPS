@@ -21,11 +21,11 @@ import jetbrains.mps.ide.ui.MPSTreeNode;
 
 public class TestToolbarPanel extends JPanel {
   private TestTree tree;
-  private TestOccurenceNavigator navigator;
+  private FailedTestOccurenceNavigator navigator;
   private boolean isTrackRunning = false;
   private boolean isNeedSelectFailed = false;
 
-  public TestToolbarPanel(TestTree tree, TestOccurenceNavigator navigator) {
+  public TestToolbarPanel(TestTree tree, FailedTestOccurenceNavigator navigator) {
     super(new BorderLayout());
     this.tree = tree;
     this.navigator = navigator;
