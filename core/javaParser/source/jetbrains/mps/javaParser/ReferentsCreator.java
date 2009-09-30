@@ -181,7 +181,7 @@ public class ReferentsCreator {
 
     @Override
     public boolean visit(TypeDeclaration typeDeclaration, CompilationUnitScope scope) {
-       String fqName = JavaCompiler.packageNameFromCompoundName(typeDeclaration.binding.compoundName);
+      String fqName = JavaCompiler.packageNameFromCompoundName(typeDeclaration.binding.compoundName);
       myReferentsCreator.myCurrentModel =
         myReferentsCreator.myPackageNamesToModels.get(fqName);
       boolean result = process(typeDeclaration);
@@ -219,10 +219,14 @@ public class ReferentsCreator {
           ReferenceBinding superClassBinding = binding.superclass();
           if (superClassBinding != null) {
             assert (binding.superclass().isClass() || binding.superclass().isEnum());
-            if (classifier instanceof ClassConcept) {
-              ClassConcept classConcept = (ClassConcept) classifier;
-              ClassifierType superClass = (ClassifierType) createType(superClassBinding);
-              classConcept.setSuperclass(superClass);
+            if ("java.lang.Object".equals(new String(superClassBinding.readableName()))) {
+              //don't set superclass if it is java.lang.Object
+            } else {
+              if (classifier instanceof ClassConcept) {
+                ClassConcept classConcept = (ClassConcept) classifier;
+                ClassifierType superClass = (ClassifierType) createType(superClassBinding);
+                classConcept.setSuperclass(superClass);
+              }
             }
           }
 
