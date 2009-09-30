@@ -28,13 +28,13 @@ public class subtypesOfClassifierTypeWWildcards_InequationReplacementRule extend
       typeCheckingContext.whenConcrete(t, new Runnable() {
         public void run() {
           {
-            _Patterns.Pattern_9 pattern_0 = new _Patterns.Pattern_9(SLinkOperations.getTarget(supertype, "classifier", false));
-            SNode coercedNode_0 = TypeChecker.getInstance().getRuntimeSupport().coerce_(typeCheckingContext.getEquationManager().getRepresentator(t), pattern_0, typeCheckingContext);
-            if (coercedNode_0 != null) {
+            _Patterns.Pattern_9 pattern_1 = new _Patterns.Pattern_9(SLinkOperations.getTarget(supertype, "classifier", false));
+            SNode coercedNode_1 = TypeChecker.getInstance().getRuntimeSupport().coerce_(typeCheckingContext.getEquationManager().getRepresentator(t), pattern_1, typeCheckingContext);
+            if (coercedNode_1 != null) {
               {
                 SNode typeParam;
                 SNode myParam;
-                Iterator<SNode> typeParam_iterator = ListSequence.fromList(SLinkOperations.getTargets(coercedNode_0, "parameter", true)).iterator();
+                Iterator<SNode> typeParam_iterator = ListSequence.fromList(SLinkOperations.getTargets(coercedNode_1, "parameter", true)).iterator();
                 Iterator<SNode> myParam_iterator = ListSequence.fromList(SLinkOperations.getTargets(supertype, "parameter", true)).iterator();
                 while (true) {
                   if (!(typeParam_iterator.hasNext())) {
@@ -103,13 +103,13 @@ public class subtypesOfClassifierTypeWWildcards_InequationReplacementRule extend
     {
       final SNode t = subtype;
       {
-        _Patterns.Pattern_9 pattern_1 = new _Patterns.Pattern_9(SLinkOperations.getTarget(supertype, "classifier", false));
-        SNode coercedNode_1 = TypeChecker.getInstance().getRuntimeSupport().coerce_(t, pattern_1);
-        if (coercedNode_1 != null) {
+        _Patterns.Pattern_9 pattern_2 = new _Patterns.Pattern_9(SLinkOperations.getTarget(supertype, "classifier", false));
+        SNode coercedNode_2 = TypeChecker.getInstance().getRuntimeSupport().coerce_(t, pattern_2);
+        if (coercedNode_2 != null) {
           {
             SNode typeParam;
             SNode myParam;
-            Iterator<SNode> typeParam_iterator = ListSequence.fromList(SLinkOperations.getTargets(coercedNode_1, "parameter", true)).iterator();
+            Iterator<SNode> typeParam_iterator = ListSequence.fromList(SLinkOperations.getTargets(coercedNode_2, "parameter", true)).iterator();
             Iterator<SNode> myParam_iterator = ListSequence.fromList(SLinkOperations.getTargets(supertype, "parameter", true)).iterator();
             while (true) {
               if (!(typeParam_iterator.hasNext())) {

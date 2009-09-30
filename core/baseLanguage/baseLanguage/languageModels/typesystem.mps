@@ -19132,5 +19132,99 @@
       <link role="concept" targetNodeId="1.1068390468198" resolveInfo="ClassConcept" />
     </node>
   </node>
+  <node type="jetbrains.mps.lang.typesystem.structure.NonTypesystemRule" id="1032178265900242657">
+    <property name="name" value="check_ForeachWithErasure" />
+    <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1032178265900242658">
+      <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1032178265900242673">
+        <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1032178265900242674">
+          <property name="name" value="iterableType" />
+          <node role="type" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1032178265900242675" />
+          <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1032178265900242676">
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1032178265900242677">
+              <node role="operand" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference" id="1032178265900242678">
+                <link role="applicableNode" targetNodeId="1032178265900242660" resolveInfo="foreachStatement" />
+              </node>
+              <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1032178265900242679">
+                <link role="link" targetNodeId="1.1144226360166" />
+              </node>
+            </node>
+            <node role="operation" type="jetbrains.mps.lang.typesystem.structure.Node_TypeOperation" id="1032178265900242680" />
+          </node>
+        </node>
+      </node>
+      <node role="statement" type="jetbrains.mps.lang.typesystem.structure.CoerceStatement" id="1032178265900313081">
+        <node role="nodeToCoerce" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1032178265900313085">
+          <link role="variableDeclaration" targetNodeId="1032178265900242674" resolveInfo="iterableType" />
+        </node>
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1032178265900313084" />
+        <node role="pattern" type="jetbrains.mps.lang.typesystem.structure.PatternCondition" id="1032178265900313086">
+          <property name="name" value="iterable" />
+          <node role="pattern" type="jetbrains.mps.lang.pattern.structure.PatternExpression" id="1032178265900313087">
+            <node role="patternNode" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1032178265900313091">
+              <link role="classifier" targetNodeId="4.~Iterable" resolveInfo="Iterable" />
+              <node role="parameter" type="jetbrains.mps.baseLanguage.structure.Type" id="1032178265900313092">
+                <node role="_attr_$attribute" type="jetbrains.mps.lang.pattern.structure.PatternVariableDeclaration" id="1032178265900313093">
+                  <property name="varName" value="p" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="elseClause" type="jetbrains.mps.baseLanguage.structure.StatementList" id="4312449433287189195">
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="4312449433287208637">
+            <property name="value" value="not an iterable or an erasure" />
+          </node>
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="4312449433287189196">
+            <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="4312449433287189197">
+              <node role="statement" type="jetbrains.mps.lang.typesystem.structure.ReportErrorStatement" id="4312449433287189198">
+                <node role="errorString" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="4312449433287189199">
+                  <property name="value" value="java.lang.Object expected" />
+                </node>
+                <node role="nodeToReport" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="4312449433287189200">
+                  <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="4312449433287189201">
+                    <node role="operand" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference" id="4312449433287189202">
+                      <link role="applicableNode" targetNodeId="1032178265900242660" resolveInfo="foreachStatement" />
+                    </node>
+                    <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="4312449433287189203">
+                      <link role="link" targetNodeId="1.1144230900587" />
+                    </node>
+                  </node>
+                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="4312449433287189204">
+                    <link role="link" targetNodeId="1.5680397130376446158" />
+                  </node>
+                </node>
+              </node>
+            </node>
+            <node role="condition" type="jetbrains.mps.baseLanguage.structure.NotExpression" id="4312449433287189205">
+              <node role="expression" type="jetbrains.mps.lang.smodel.structure.EqualsStructurallyExpression" id="4312449433287189206">
+                <node role="rightExpression" type="jetbrains.mps.lang.quotation.structure.Quotation" id="4312449433287189207">
+                  <node role="quotedNode" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="4312449433287189208">
+                    <link role="classifier" targetNodeId="4.~Object" resolveInfo="Object" />
+                  </node>
+                </node>
+                <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="4312449433287189209">
+                  <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="4312449433287189210">
+                    <node role="operand" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference" id="4312449433287189211">
+                      <link role="applicableNode" targetNodeId="1032178265900242660" resolveInfo="foreachStatement" />
+                    </node>
+                    <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="4312449433287189212">
+                      <link role="link" targetNodeId="1.1144230900587" />
+                    </node>
+                  </node>
+                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="4312449433287189213">
+                    <link role="link" targetNodeId="1.5680397130376446158" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="applicableNode" type="jetbrains.mps.lang.typesystem.structure.ConceptReference" id="1032178265900242660">
+      <property name="name" value="foreachStatement" />
+      <link role="concept" targetNodeId="1.1144226303539" resolveInfo="ForeachStatement" />
+    </node>
+  </node>
 </model>
 

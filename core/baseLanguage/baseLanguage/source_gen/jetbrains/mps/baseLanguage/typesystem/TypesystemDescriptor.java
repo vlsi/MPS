@@ -501,6 +501,10 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
       this.myNonTypesystemRules.add(nonTypesystemRule);
     }
     {
+      NonTypesystemRule_Runtime nonTypesystemRule = new check_ForeachWithErasure_NonTypesystemRule();
+      this.myNonTypesystemRules.add(nonTypesystemRule);
+    }
+    {
       SubtypingRule_Runtime subtypingRule = new subtyping_classifier_SubtypingRule();
       this.mySubtypingRules.add(subtypingRule);
     }
@@ -835,13 +839,13 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
     {
       OverloadedOpsProvider_OneTypeSpecified provider = new OverloadedOpsProvider_OneTypeSpecified() {
         {
-          this.myOperandType = new _Quotations.QuotationClass_129().createNode();
+          this.myOperandType = new _Quotations.QuotationClass_130().createNode();
           this.myOperationConceptFQName = "jetbrains.mps.baseLanguage.structure.PlusExpression";
           this.myTypeIsExact = false;
         }
 
         public SNode getOperationType(SNode operation, SNode leftOperandType, SNode rightOperandType) {
-          return new _Quotations.QuotationClass_130().createNode();
+          return new _Quotations.QuotationClass_131().createNode();
         }
       };
       this.myOverloadedOperationsTypesProviders.add(provider);
