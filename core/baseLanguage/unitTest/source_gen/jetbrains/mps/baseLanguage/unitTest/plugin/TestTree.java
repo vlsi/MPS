@@ -16,6 +16,7 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.baseLanguage.unitTest.behavior.ITestCase_Behavior;
 import jetbrains.mps.baseLanguage.unitTest.behavior.ITestMethod_Behavior;
 import java.util.HashMap;
+import java.util.ArrayList;
 
 public class TestTree extends MPSTree {
   private IOperationContext operationContext;
@@ -103,10 +104,12 @@ public class TestTree extends MPSTree {
     return temp;
   }
 
-  public int getMethodCount() {
-    int result = 0;
+  public List<String> getMethodName() {
+    List<String> result = ListSequence.fromList(new ArrayList<String>());
     for (List<SNode> values : MapSequence.fromMap(this.tests).values()) {
-      result = result + ListSequence.fromList(values).count();
+      for (SNode value : values) {
+        ListSequence.fromList(result).addElement(ITestMethod_Behavior.call_getTestName_1216136419751(value));
+      }
     }
     return result;
   }

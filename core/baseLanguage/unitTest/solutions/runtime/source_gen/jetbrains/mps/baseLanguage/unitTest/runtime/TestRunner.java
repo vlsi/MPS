@@ -47,6 +47,7 @@ public class TestRunner extends BaseTestRunner {
       }
       test.run(testResult);
     }
+    System.out.println("Finish!");
   }
 
   public void testFailed(int status, Test test, Throwable t) {

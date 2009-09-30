@@ -9,6 +9,9 @@ import java.util.Set;
 import jetbrains.mps.baseLanguage.unitTest.runtime.TestEvent;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
+import java.util.List;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import java.util.ArrayList;
 import java.awt.GridLayout;
 import java.awt.GridBagLayout;
 import java.awt.GridBagConstraints;
@@ -24,6 +27,7 @@ public class ProgressLine extends JPanel {
   private final ProgressLine.StateInfo stateInfo = new ProgressLine.StateInfo();
   private boolean testsBuilt = false;
   private Set<TestEvent> events = SetSequence.fromSet(new HashSet<TestEvent>());
+  private List<String> methodName = ListSequence.fromList(new ArrayList<String>());
 
   public ProgressLine() {
     super(new GridLayout(1, 2));
@@ -35,12 +39,13 @@ public class ProgressLine extends JPanel {
     this.progressBar.setColor(ColorProgressBar.GREEN);
   }
 
-  public void setTotal(int total) {
-    this.stateInfo.setTotal(total);
+  public void setMethods(List<String> methods) {
+    ListSequence.fromList(this.methodName).addSequence(ListSequence.fromList(methods));
+    this.stateInfo.setTotal(ListSequence.fromList(this.methodName).count());
   }
 
   public void onEvent(TestEvent event) {
-    if (SetSequence.fromSet(this.events).contains(event)) {
+    if (SetSequence.fromSet(this.events).contains(event) || !(ListSequence.fromList(this.methodName).contains(event.getTestMethodName()))) {
       return;
     } else {
       SetSequence.fromSet(this.events).addElement(event);
