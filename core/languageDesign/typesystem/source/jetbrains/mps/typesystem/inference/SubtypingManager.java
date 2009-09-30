@@ -621,6 +621,9 @@ System.out.println("alltypes = " + allTypes);*/
         for (int j = i + 1; j < size; j++) {
           SNode node1 = nodesToIterate.get(i);
           SNode node2 = nodesToIterate.get(j);
+          if (node1 == null || node2 == null) {
+            residualNodes.remove(null);
+          }
           if (isSubtype(node1, node2)) {
             residualNodes.remove(node2);
             wasChange = true;
