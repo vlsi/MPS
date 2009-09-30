@@ -70,7 +70,11 @@ public class IntentionsSupport {
 
     myLightBulb = new LightBulbMenu() {
       public void activate() {
-        checkAndShowMenu();
+        ModelAccess.instance().runReadAction(new Runnable() {
+          public void run() {
+            checkAndShowMenu();
+          }
+        });
       }
     };
 
