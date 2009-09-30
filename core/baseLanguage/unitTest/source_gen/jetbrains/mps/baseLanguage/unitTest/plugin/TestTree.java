@@ -48,6 +48,9 @@ public class TestTree extends MPSTree {
           continue;
         }
         if (this.isAllTree || !(isPassed(oldMethodTreeNode))) {
+          if (methodTreeNode == null) {
+            continue;
+          }
           testCaseTreeNode.add(methodTreeNode);
           temp.put(testCase, method, methodTreeNode);
         } else if (!(this.isRebuilded)) {
