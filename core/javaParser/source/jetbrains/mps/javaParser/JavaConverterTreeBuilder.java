@@ -1133,18 +1133,18 @@ public class JavaConverterTreeBuilder {
       }
 
       if (x.methods != null) {
-        int constructorsCount = 0;
+     /*   int constructorsCount = 0;
         for (AbstractMethodDeclaration abstractMethodDeclaration : x.methods) {
           if (abstractMethodDeclaration instanceof ConstructorDeclaration) {
             constructorsCount++;
           }
-        }
+        }*/
         // Process methods
         for (int i = 0, n = x.methods.length; i < n; ++i) {
           AbstractMethodDeclaration method = x.methods[i];
           if (method.isConstructor()) {
             assert (myCurrentClass instanceof ClassConcept);
-            if (constructorsCount == 1 && (method.arguments == null || method.arguments.length == 0)) {
+           /* if (constructorsCount == 1 && (method.arguments == null || method.arguments.length == 0)) {
               if (method.statements == null || method.statements.length == 0) {
                 //default constructor; could be omitted
                 MethodBinding b = method.binding;
@@ -1154,7 +1154,8 @@ public class JavaConverterTreeBuilder {
                 }
                 continue;
               }
-            }
+            }*/
+            //it was a bad idea
             processConstructor((ConstructorDeclaration) method);
           } else if (method.isClinit()) {
             // nothing to do
