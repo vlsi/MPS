@@ -14,7 +14,6 @@ import jetbrains.mps.project.MPSProject;
 public class BaseLanguage_ProjectPlugin extends BaseProjectPlugin {
   public List<GeneratedTool> initTools(Project project) {
     List<GeneratedTool> tools = ListSequence.fromList(new ArrayList<GeneratedTool>());
-    ListSequence.fromList(tools).addElement(new RunClass_Tool(project));
     ListSequence.fromList(tools).addElement(new TodoViewer_Tool(project));
     ListSequence.fromList(tools).addElement(new AnalyzeStacktrace_Tool(project));
     return tools;
