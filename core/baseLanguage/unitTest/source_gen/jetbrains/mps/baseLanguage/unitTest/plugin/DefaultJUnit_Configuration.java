@@ -125,7 +125,7 @@ public class DefaultJUnit_Configuration extends BaseRunConfig {
         ProcessHandler handler = null;
         {
           MPSProject project = MPSDataKeys.MPS_PROJECT.getData(environment.getDataContext());
-          final JUnitTestViewComponent runComponent = new JUnitTestViewComponent(project, null);
+          final JUnitTestViewComponent runComponent = new JUnitTestViewComponent(project);
           final Wrappers._T<UnitTestRunner> testRunner = new Wrappers._T<UnitTestRunner>(null);
           try {
             testRunner.value = new UnitTestRunner(project.getComponent(MPSProjectHolder.class).getMPSProject().getPluginManager().getPrefsComponent(UnitTest_PreferencesComponent.class), runComponent);
