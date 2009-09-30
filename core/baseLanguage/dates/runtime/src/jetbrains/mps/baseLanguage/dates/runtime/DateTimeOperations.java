@@ -435,6 +435,14 @@ public class DateTimeOperations {
     return datetime != null;
   }
 
+  public static boolean isNull(DateTime datetime) {
+    return datetime == null;
+  }
+
+  public static boolean isNotNull(DateTime datetime) {
+    return datetime != null;
+  }
+
   public static boolean isNull(long datetime) {
     return false;
   }
@@ -451,4 +459,29 @@ public class DateTimeOperations {
       return currentZone.get();
   }
 
+  @Deprecated
+  public static Long min(Long a, Long b) {
+    return a == null || b == null ? null : Math.min(a,b);
+  }
+
+  @Deprecated
+  public static Long max(Long a, Long b) {
+    return a == null ? b : (b == null ? a : Math.max(a,b));
+  }
+
+  public static DateTime min(DateTime a, DateTime b) {
+    if(a == null || b == null) {
+      return null;
+    }
+    int res = DateTimeComparator.getInstance().compare(a, b);
+    return res < 0 ? a : b;
+  }
+
+  public static DateTime max(DateTime a, DateTime b) {
+    if(a == null || b == null) {
+      return a != null ? a : b;
+    }
+    int res = DateTimeComparator.getInstance().compare(a, b);
+    return res > 0 ? a : b;
+  }
 }
