@@ -19052,5 +19052,85 @@
       <link role="concept" targetNodeId="1.1107461130800" resolveInfo="Classifier" />
     </node>
   </node>
+  <node type="jetbrains.mps.lang.typesystem.structure.NonTypesystemRule" id="3293010995237496520">
+    <property name="name" value="check_ClassDoesNotExtendFinalClass" />
+    <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="3293010995237496521">
+      <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="3293010995237528225">
+        <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="3293010995237528226">
+          <property name="name" value="superclass" />
+          <node role="type" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="3293010995237528227">
+            <link role="concept" targetNodeId="1.1107535904670" resolveInfo="ClassifierType" />
+          </node>
+          <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="3293010995237528228">
+            <node role="operand" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference" id="3293010995237528229">
+              <link role="applicableNode" targetNodeId="3293010995237497051" resolveInfo="classConcept" />
+            </node>
+            <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="3293010995237528230">
+              <link role="link" targetNodeId="1.1165602531693" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="3293010995237528233">
+        <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="3293010995237528234">
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="3293010995237528240">
+            <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="3293010995237528241">
+              <node role="statement" type="jetbrains.mps.lang.typesystem.structure.ReportErrorStatement" id="3293010995237528278">
+                <node role="errorString" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="3293010995237528281">
+                  <property name="value" value="cannot inherit from final" />
+                </node>
+                <node role="nodeToReport" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="3293010995237528282">
+                  <link role="variableDeclaration" targetNodeId="3293010995237528226" resolveInfo="superclass" />
+                </node>
+              </node>
+            </node>
+            <node role="condition" type="jetbrains.mps.baseLanguage.structure.AndExpression" id="3293010995237528257">
+              <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="3293010995237528272">
+                <node role="operand" type="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" id="3293010995237528270">
+                  <link role="concept" targetNodeId="1.1068390468198" resolveInfo="ClassConcept" />
+                  <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="3293010995237528261">
+                    <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="3293010995237528260">
+                      <link role="variableDeclaration" targetNodeId="3293010995237528226" resolveInfo="superclass" />
+                    </node>
+                    <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="3293010995237528265">
+                      <link role="link" targetNodeId="1.1107535924139" />
+                    </node>
+                  </node>
+                </node>
+                <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="3293010995237528276">
+                  <link role="property" targetNodeId="1.1221565133444" resolveInfo="isFinal" />
+                </node>
+              </node>
+              <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="3293010995237528250">
+                <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="3293010995237528245">
+                  <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="3293010995237528244">
+                    <link role="variableDeclaration" targetNodeId="3293010995237528226" resolveInfo="superclass" />
+                  </node>
+                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="3293010995237528249">
+                    <link role="link" targetNodeId="1.1107535924139" />
+                  </node>
+                </node>
+                <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation" id="3293010995237528254">
+                  <node role="conceptArgument" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" id="3293010995237528256">
+                    <link role="conceptDeclaration" targetNodeId="1.1068390468198" resolveInfo="ClassConcept" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="condition" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="3293010995237528237">
+          <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="3293010995237528238">
+            <link role="variableDeclaration" targetNodeId="3293010995237528226" resolveInfo="superclass" />
+          </node>
+          <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_IsNotNullOperation" id="3293010995237528239" />
+        </node>
+      </node>
+    </node>
+    <node role="applicableNode" type="jetbrains.mps.lang.typesystem.structure.ConceptReference" id="3293010995237497051">
+      <property name="name" value="classConcept" />
+      <link role="concept" targetNodeId="1.1068390468198" resolveInfo="ClassConcept" />
+    </node>
+  </node>
 </model>
 

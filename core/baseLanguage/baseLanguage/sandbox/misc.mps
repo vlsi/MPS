@@ -918,5 +918,27 @@
       </node>
     </node>
   </node>
+  <node type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="3293010995237620828">
+    <property name="name" value="FinalClass" />
+    <property name="isFinal" value="true" />
+    <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="3293010995237620829" />
+    <node role="constructor" type="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" id="3293010995237620830">
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="3293010995237620831" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="3293010995237620832" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="3293010995237620833" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="3293010995237625800">
+    <property name="name" value="FinalClassInheritor" />
+    <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="3293010995237625801" />
+    <node role="constructor" type="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" id="3293010995237625802">
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="3293010995237625803" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="3293010995237625804" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="3293010995237625805" />
+    </node>
+    <node role="superclass" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="3293010995237625806">
+      <link role="classifier" targetNodeId="3293010995237620828" resolveInfo="FinalClass" />
+    </node>
+  </node>
 </model>
 
