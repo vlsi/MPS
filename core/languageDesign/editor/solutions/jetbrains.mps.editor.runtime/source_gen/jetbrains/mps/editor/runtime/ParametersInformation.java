@@ -33,7 +33,7 @@ public class ParametersInformation {
 
   public void getStyledMethodPresentation(SNode node, EditorContext editorContext, SNode method, StyledTextPrinter printer) {
     String text = this.getMethodPresentation(node, editorContext, method);
-    printer.print(text);
+    printer.append(text);
   }
 
   public boolean isMethodCurrent(SNode node, EditorContext editorContext, SNode method) {

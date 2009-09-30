@@ -34,7 +34,50 @@ public class BaseMethodParameterInformationQuery extends ParametersInformation {
   }
 
   public void getStyledMethodPresentation(SNode node, EditorContext editorContext, SNode method, StyledTextPrinter styledText) {
-    styledText.print(BaseConcept_Behavior.call_getPresentation_1213877396640(SNodeOperations.cast(method, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration")));
+    SNode argument = editorContext.getSelectedNode();
+    SNode methodCall = SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.IMethodCall");
+    while (argument != null && !(ListSequence.fromList(SLinkOperations.getTargets(methodCall, "actualArgument", true)).contains(argument))) {
+      argument = SNodeOperations.getParent(argument);
+    }
+    int argumentIndex = -1;
+    if (argument != null) {
+      for (int i = 0 ; i < ListSequence.fromList(SLinkOperations.getTargets(methodCall, "actualArgument", true)).count() ; i++ ) {
+        if (ListSequence.fromList(ListSequence.fromList(SLinkOperations.getTargets(methodCall, "actualArgument", true)).toListSequence()).getElement(i) == argument) {
+          argumentIndex = i;
+        }
+      }
+    }
+    SNode methodDeclaration = SNodeOperations.cast(method, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration");
+    if (SLinkOperations.getTarget(methodDeclaration, "returnType", true) != null) {
+      styledText.append(BaseConcept_Behavior.call_getPresentation_1213877396640(SLinkOperations.getTarget(methodDeclaration, "returnType", true)) + " ");
+    } else {
+      styledText.append("??? ");
+    }
+    if (SPropertyOperations.getString(methodDeclaration, "name") != null) {
+      styledText.append(SPropertyOperations.getString(methodDeclaration, "name"));
+    } else {
+      styledText.append("<no name>");
+    }
+    styledText.append("(");
+    boolean first = true;
+    int i = 0;
+    for (SNode parm : SLinkOperations.getTargets(methodDeclaration, "parameter", true)) {
+      if (i > 0) {
+        styledText.append(", ");
+      }
+      first = false;
+      if (i == argumentIndex) {
+        styledText.setBold(true);
+      }
+      if (SLinkOperations.getTarget(parm, "type", true) != null) {
+        styledText.append(BaseConcept_Behavior.call_getPresentation_1213877396640(SLinkOperations.getTarget(parm, "type", true)));
+      } else {
+        styledText.append("???");
+      }
+      styledText.setBold(false);
+      i++ ;
+    }
+    styledText.append(")");
   }
 
   public boolean isMethodCurrent(SNode node, EditorContext editorContext, SNode method) {

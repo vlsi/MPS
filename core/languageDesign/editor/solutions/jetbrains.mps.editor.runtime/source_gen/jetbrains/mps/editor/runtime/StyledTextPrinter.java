@@ -19,7 +19,7 @@ public class StyledTextPrinter {
     StyleConstants.setBold(this.myAttributeSet, flag);
   }
 
-  public void print(String text) {
+  public void append(String text) {
     try {
       this.myDocument.insertString(this.myDocument.getLength(), text, this.myAttributeSet);
     } catch (BadLocationException badLocationException) {

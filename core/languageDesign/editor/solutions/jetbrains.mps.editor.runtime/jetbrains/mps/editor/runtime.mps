@@ -713,7 +713,7 @@
       </node>
     </node>
     <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="8394433674396747697">
-      <property name="name" value="print" />
+      <property name="name" value="append" />
       <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="8394433674396747698" />
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="8394433674396747699" />
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="8394433674396747700">
