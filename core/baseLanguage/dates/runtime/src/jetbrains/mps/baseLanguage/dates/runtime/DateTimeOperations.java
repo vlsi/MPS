@@ -353,6 +353,14 @@ public class DateTimeOperations {
     return leftExpression == null ? null : leftExpression.minus(rightExpression);
   }
 
+  public static Period minus(DateTime leftExpression, DateTime rightExpression) {
+    if(leftExpression == null || rightExpression == null || leftExpression.compareTo(rightExpression) < 0) {
+      return Period.ZERO;
+    }
+    Interval i = new Interval(rightExpression, leftExpression);
+    return i.toPeriod();
+  }
+
   @Deprecated
   public static Period minus(Long leftExpression, Long rightExpression, PeriodType periodType) {
     Period result;
