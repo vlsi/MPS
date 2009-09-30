@@ -25,6 +25,7 @@ import com.intellij.openapi.roots.ContentIterator;
 import com.intellij.openapi.startup.StartupManager;
 import com.intellij.openapi.vfs.VfsUtil;
 import com.intellij.openapi.vfs.VirtualFile;
+import com.intellij.openapi.util.Computable;
 import com.intellij.util.indexing.FileBasedIndex;
 import com.intellij.util.indexing.IndexableFileSet;
 import jetbrains.mps.make.StartupModuleMaker;
@@ -35,8 +36,7 @@ import java.util.Set;
 
 public class MPSFileBasedIndexProjectHandler extends AbstractProjectComponent implements IndexableFileSet {
   private final FileBasedIndex myIndex;
-
-  private Set<VirtualFile> myIndexableRoots;
+  private boolean myFirstUpdate = true;
 
   public MPSFileBasedIndexProjectHandler(final Project project, FileBasedIndex index, StartupModuleMaker maker) {
     super(project);
@@ -62,22 +62,22 @@ public class MPSFileBasedIndexProjectHandler extends AbstractProjectComponent im
     }
   }
 
-  public void updateRoots() {
-    boolean firstTime = myIndexableRoots == null;
-    ModelAccess.instance().runReadAction(new Runnable() {
-      public void run() {
-        myIndexableRoots = CacheUtil.getIndexableRoots();
-      }
-    });
-    if (!firstTime) {
+  private void updateRoots() {
+    if (!myFirstUpdate) {
       FileSystemSynchronizer synchronizer = new FileSystemSynchronizer();
       synchronizer.registerCacheUpdater(new MPSUnindexedFilesUpdater(myIndex));
       synchronizer.executeFileUpdate();
     }
+    myFirstUpdate = false;
   }
 
   public boolean isInSet(VirtualFile file) {
-    for (VirtualFile vf : myIndexableRoots) {
+    Set<VirtualFile> files = ModelAccess.instance().runReadAction(new Computable<Set<VirtualFile>>() {
+      public Set<VirtualFile> compute() {
+        return CacheUtil.getIndexableRoots();
+      }
+    });
+    for (VirtualFile vf : files) {
       if (VfsUtil.isAncestor(vf, file, true)) {
         return true;
       }
