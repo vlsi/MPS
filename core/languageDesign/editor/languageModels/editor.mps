@@ -9040,7 +9040,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" id="7667276221847618816">
-    <property name="package" value="QueryFunction" />
+    <property name="package" value="MethodParameters" />
     <link role="conceptDeclaration" targetNodeId="2.7667276221847612622" resolveInfo="ParametersInformation" />
     <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="7667276221847632119">
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="7667276221847632122">

@@ -30,7 +30,7 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959033d(jetbrains.mps.lang.annotations.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895903fe(jetbrains.mps.baseLanguage.strings.constraints)" version="1" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590402(jetbrains.mps.baseLanguage.strings.structure)" version="9" />
-  <maxImportIndex value="16" />
+  <maxImportIndex value="17" />
   <import index="1" modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" version="16" />
   <import index="2" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" />
   <import index="3" modelUID="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" version="0" />
@@ -40,6 +40,7 @@
   <import index="14" modelUID="r:3270011d-8b2d-4938-8dff-d256a759e017(jetbrains.mps.lang.behavior.structure)" version="-1" />
   <import index="15" modelUID="r:00000000-0000-4000-0000-011c895902c0(jetbrains.mps.baseLanguage.behavior)" version="-1" />
   <import index="16" modelUID="r:00000000-0000-4000-0000-011c89590282(jetbrains.mps.lang.core.behavior)" version="-1" />
+  <import index="17" modelUID="r:2af017c2-293f-4ebb-99f3-81e353b3d6e6(jetbrains.mps.editor.runtime)" version="-1" />
   <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" id="1138063451695">
     <link role="conceptDeclaration" targetNodeId="1.1138056022639" />
     <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefCell" id="1138412409274">
@@ -3005,14 +3006,20 @@
     </node>
     <node role="presentation" type="jetbrains.mps.lang.editor.structure.QueryFunction_MethodPresentation" id="7372435214633781119">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="7372435214633781120">
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="7372435214633781121">
-          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="7372435214633781124">
-            <node role="operand" type="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" id="7372435214633781125">
-              <link role="concept" targetNodeId="4.1068580123132" resolveInfo="BaseMethodDeclaration" />
-              <node role="leftExpression" type="jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_method" id="7372435214633781126" />
-            </node>
-            <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="7372435214633781127">
-              <link role="baseMethodDeclaration" targetNodeId="16.1213877396640" resolveInfo="getPresentation" />
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="4526149749187960758">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="4526149749187960760">
+            <node role="operand" type="jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_StyledText" id="4526149749187960759" />
+            <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="4526149749187960764">
+              <link role="baseMethodDeclaration" targetNodeId="17.8394433674396747697" resolveInfo="print" />
+              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="4526149749187960765">
+                <node role="operand" type="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" id="4526149749187960766">
+                  <link role="concept" targetNodeId="4.1068580123132" resolveInfo="BaseMethodDeclaration" />
+                  <node role="leftExpression" type="jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_method" id="4526149749187960767" />
+                </node>
+                <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="4526149749187960768">
+                  <link role="baseMethodDeclaration" targetNodeId="16.1213877396640" resolveInfo="getPresentation" />
+                </node>
+              </node>
             </node>
           </node>
         </node>

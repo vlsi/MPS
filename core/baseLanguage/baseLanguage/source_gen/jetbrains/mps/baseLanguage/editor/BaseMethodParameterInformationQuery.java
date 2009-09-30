@@ -13,6 +13,7 @@ import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import org.apache.commons.lang.ObjectUtils;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.editor.runtime.StyledTextPrinter;
 import jetbrains.mps.lang.core.behavior.BaseConcept_Behavior;
 
 public class BaseMethodParameterInformationQuery extends ParametersInformation {
@@ -32,8 +33,8 @@ public class BaseMethodParameterInformationQuery extends ParametersInformation {
     return methodsToShow;
   }
 
-  public String getMethodPresentation(SNode node, EditorContext editorContext, SNode method) {
-    return BaseConcept_Behavior.call_getPresentation_1213877396640(SNodeOperations.cast(method, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration"));
+  public void getStyledMethodPresentation(SNode node, EditorContext editorContext, SNode method, StyledTextPrinter styledText) {
+    styledText.print(BaseConcept_Behavior.call_getPresentation_1213877396640(SNodeOperations.cast(method, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration")));
   }
 
   public boolean isMethodCurrent(SNode node, EditorContext editorContext, SNode method) {

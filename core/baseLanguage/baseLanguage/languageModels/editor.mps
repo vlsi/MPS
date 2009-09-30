@@ -45,7 +45,7 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590368(jetbrains.mps.lang.plugin.structure)" version="21" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959036e(jetbrains.mps.baseLanguage.classifiers.constraints)" version="7" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590373(jetbrains.mps.baseLanguage.classifiers.structure)" version="0" />
-  <maxImportIndex value="94" />
+  <maxImportIndex value="95" />
   <import index="17" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="3" />
   <import index="18" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" />
   <import index="20" modelUID="f:java_stub#jetbrains.mps.smodel(jetbrains.mps.smodel@java_stub)" version="-1" />
@@ -79,6 +79,7 @@
   <import index="92" modelUID="f:java_stub#java.util(java.util@java_stub)" version="-1" />
   <import index="93" modelUID="f:java_stub#javax.swing.tree(javax.swing.tree@java_stub)" version="-1" />
   <import index="94" modelUID="f:java_stub#jetbrains.mps.baseLanguage.plugin.uiActions.strategies(jetbrains.mps.baseLanguage.plugin.uiActions.strategies@java_stub)" version="-1" />
+  <import index="95" modelUID="r:2af017c2-293f-4ebb-99f3-81e353b3d6e6(jetbrains.mps.editor.runtime)" version="-1" />
   <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" id="1073416106125">
     <property name="name" value="StatementList_Editor" />
     <link role="conceptDeclaration" targetNodeId="17.1068580123136" />
@@ -15336,14 +15337,20 @@
     </node>
     <node role="presentation" type="jetbrains.mps.lang.editor.structure.QueryFunction_MethodPresentation" id="4755152624708725524">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="4755152624708725525">
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="4755152624709102500">
-          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="4755152624709102501">
-            <node role="operand" type="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" id="4755152624709102502">
-              <link role="concept" targetNodeId="17.1068580123132" resolveInfo="BaseMethodDeclaration" />
-              <node role="leftExpression" type="jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_method" id="4755152624709102505" />
-            </node>
-            <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="4755152624709102504">
-              <link role="baseMethodDeclaration" targetNodeId="74.1213877396640" resolveInfo="getPresentation" />
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="4526149749187960737">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="4526149749187960739">
+            <node role="operand" type="jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_StyledText" id="4526149749187960738" />
+            <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="4526149749187960743">
+              <link role="baseMethodDeclaration" targetNodeId="95.8394433674396747697" resolveInfo="print" />
+              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="4526149749187960744">
+                <node role="operand" type="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" id="4526149749187960745">
+                  <link role="concept" targetNodeId="17.1068580123132" resolveInfo="BaseMethodDeclaration" />
+                  <node role="leftExpression" type="jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_method" id="4526149749187960746" />
+                </node>
+                <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="4526149749187960747">
+                  <link role="baseMethodDeclaration" targetNodeId="74.1213877396640" resolveInfo="getPresentation" />
+                </node>
+              </node>
             </node>
           </node>
         </node>

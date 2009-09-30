@@ -8,12 +8,16 @@ import jetbrains.mps.nodeEditor.EditorContext;
 import java.awt.Component;
 import javax.swing.JPanel;
 import java.awt.GridBagLayout;
+import jetbrains.mps.ide.tooltips.ToolTip;
+import javax.swing.border.EmptyBorder;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import javax.swing.JLabel;
+import javax.swing.JTextPane;
 import jetbrains.mps.nodeEditor.EditorSettings;
 import java.awt.Color;
-import jetbrains.mps.ide.tooltips.ToolTip;
 import java.awt.GridBagConstraints;
+import javax.swing.JComponent;
+import java.awt.Dimension;
+import java.awt.Graphics;
 
 public class ParametersInformation {
   public ParametersInformation() {
@@ -27,6 +31,11 @@ public class ParametersInformation {
     return null;
   }
 
+  public void getStyledMethodPresentation(SNode node, EditorContext editorContext, SNode method, StyledTextPrinter printer) {
+    String text = this.getMethodPresentation(node, editorContext, method);
+    printer.print(text);
+  }
+
   public boolean isMethodCurrent(SNode node, EditorContext editorContext, SNode method) {
     return false;
   }
@@ -35,20 +44,43 @@ public class ParametersInformation {
     List<SNode> methods = this.getMethods(node, editorContext);
     int lineNumber = 0;
     JPanel panel = new JPanel(new GridBagLayout());
+    panel.setBackground(ToolTip.BACKGROUND_COLOR);
+    panel.setBorder(new EmptyBorder(0, 4, 0, 4));
     for (SNode method : ListSequence.fromList(methods)) {
-      JLabel jLabel = new JLabel(this.getMethodPresentation(node, editorContext, method));
-      jLabel.setFont(EditorSettings.getInstance().getDefaultEditorFont());
-      jLabel.setOpaque(true);
+      StyledTextPrinter printer = new StyledTextPrinter();
+      this.getStyledMethodPresentation(node, editorContext, method, printer);
+      JTextPane textPane = new JTextPane(printer.getDocument());
+      textPane.setBorder(null);
+      textPane.setFont(EditorSettings.getInstance().getDefaultEditorFont());
+      textPane.setOpaque(true);
       if (ListSequence.fromList(methods).count() > 1 && this.isMethodCurrent(node, editorContext, method)) {
-        jLabel.setBackground(new Color(0xe7, 0xfe, 0xea));
+        textPane.setBackground(new Color(0xe7, 0xfe, 0xea));
       } else {
-        jLabel.setBackground(ToolTip.BACKGROUND_COLOR);
+        textPane.setBackground(ToolTip.BACKGROUND_COLOR);
       }
       GridBagConstraints constraints = new GridBagConstraints();
       constraints.fill = GridBagConstraints.BOTH;
       constraints.gridy = lineNumber++ ;
-      panel.add(jLabel, constraints);
+      panel.add(textPane, constraints);
+      if (ListSequence.fromList(methods).last() != method) {
+        constraints = new GridBagConstraints();
+        constraints.fill = GridBagConstraints.HORIZONTAL;
+        constraints.gridy = lineNumber++ ;
+        panel.add(new ParametersInformation.Line(), constraints);
+      }
     }
     return panel;
+  }
+
+  public static class Line extends JComponent {
+    public Line() {
+      this.setPreferredSize(new Dimension(1, 1));
+    }
+
+    @Override
+    protected void paintComponent(Graphics g) {
+      g.setColor(Color.LIGHT_GRAY);
+      g.drawLine(0, 0, this.getWidth(), 0);
+    }
   }
 }
