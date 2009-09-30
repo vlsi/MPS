@@ -11,6 +11,8 @@ import jetbrains.mps.intentions.BaseIntentionProvider;
 import jetbrains.mps.typesystem.inference.IErrorTarget;
 import jetbrains.mps.typesystem.inference.NodeErrorTarget;
 import jetbrains.mps.typesystem.inference.TypeChecker;
+import java.util.Iterator;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class check_ClassifierType_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
@@ -18,7 +20,8 @@ public class check_ClassifierType_NonTypesystemRule extends AbstractNonTypesyste
   }
 
   public void applyRule(final SNode classifierType, final TypeCheckingContext typeCheckingContext) {
-    if (!(SLinkOperations.getCount(classifierType, "parameter") == 0 || SLinkOperations.getCount(classifierType, "parameter") == SLinkOperations.getCount(SLinkOperations.getTarget(classifierType, "classifier", false), "typeVariableDeclaration"))) {
+    SNode classifier = SLinkOperations.getTarget(classifierType, "classifier", false);
+    if (!(SLinkOperations.getCount(classifierType, "parameter") == 0 || SLinkOperations.getCount(classifierType, "parameter") == SLinkOperations.getCount(classifier, "typeVariableDeclaration"))) {
       BaseIntentionProvider intentionProvider = null;
       IErrorTarget errorTarget = new NodeErrorTarget();
       typeCheckingContext.reportTypeError(classifierType, "wrong number of type parameters", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1195494591081", intentionProvider, errorTarget);
@@ -28,6 +31,38 @@ public class check_ClassifierType_NonTypesystemRule extends AbstractNonTypesyste
         BaseIntentionProvider intentionProvider = null;
         IErrorTarget errorTarget = new NodeErrorTarget();
         typeCheckingContext.reportTypeError(typeParameter, "primitive types not allowed", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1195494591112", intentionProvider, errorTarget);
+      }
+    }
+    if (SLinkOperations.getCount(classifierType, "parameter") == SLinkOperations.getCount(classifier, "typeVariableDeclaration")) {
+      {
+        SNode typeArgument;
+        SNode typeVar;
+        Iterator<SNode> typeArgument_iterator = ListSequence.fromList(SLinkOperations.getTargets(classifierType, "parameter", true)).iterator();
+        Iterator<SNode> typeVar_iterator = ListSequence.fromList(SLinkOperations.getTargets(classifier, "typeVariableDeclaration", true)).iterator();
+        while (true) {
+          if (!(typeArgument_iterator.hasNext())) {
+            break;
+          }
+          if (!(typeVar_iterator.hasNext())) {
+            break;
+          }
+          typeArgument = typeArgument_iterator.next();
+          typeVar = typeVar_iterator.next();
+          if ((SLinkOperations.getTarget(typeVar, "bound", true) != null)) {
+            if (!(TypeChecker.getInstance().getSubtypingManager().isSubtype(typeArgument, SLinkOperations.getTarget(typeVar, "bound", true)))) {
+              BaseIntentionProvider intentionProvider = null;
+              IErrorTarget errorTarget = new NodeErrorTarget();
+              typeCheckingContext.reportTypeError(typeArgument, "type parameter does not satisfy its bound", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "904196553350157450", intentionProvider, errorTarget);
+            }
+          }
+          for (SNode auxBound : SLinkOperations.getTargets(typeVar, "auxBounds", true)) {
+            if (!(TypeChecker.getInstance().getSubtypingManager().isSubtype(typeArgument, auxBound))) {
+              BaseIntentionProvider intentionProvider = null;
+              IErrorTarget errorTarget = new NodeErrorTarget();
+              typeCheckingContext.reportTypeError(typeArgument, "type parameter does not satisfy its bound", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "904196553350157495", intentionProvider, errorTarget);
+            }
+          }
+        }
       }
     }
   }

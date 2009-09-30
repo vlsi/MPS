@@ -722,15 +722,11 @@
       <node role="returnType" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="2960683430231998463" />
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="2960683430231998461" />
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="2960683430231998462">
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.Statement" id="4447433352191913328" />
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.Statement" id="4447433352191913332" />
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="4447433352191913334">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="4447433352191913335">
             <property name="value" value="3" />
           </node>
         </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.Statement" id="4447433352191913336" />
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.Statement" id="4447433352191913337" />
       </node>
     </node>
     <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="7367456871926097393" />
@@ -884,6 +880,42 @@
     </node>
     <node role="implementedInterface" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="8703963746976779605">
       <link role="classifier" targetNodeId="8703963746976779593" resolveInfo="MyIntfc" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="904196553350231880">
+    <property name="name" value="ClassWithBoundVariable1" />
+    <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="904196553350231881" />
+    <node role="constructor" type="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" id="904196553350231882">
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="904196553350231883" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="904196553350231884" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="904196553350231885" />
+    </node>
+    <node role="typeVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.TypeVariableDeclaration" id="904196553350236852">
+      <property name="name" value="T" />
+      <node role="bound" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="904196553350236854">
+        <link role="classifier" targetNodeId="150.~String" resolveInfo="String" />
+      </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="904196553350236855">
+    <property name="name" value="ClassWithBoundVariable2" />
+    <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="904196553350236856" />
+    <node role="constructor" type="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" id="904196553350236857">
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="904196553350236858" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="904196553350236859" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="904196553350236860" />
+    </node>
+    <node role="typeVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.TypeVariableDeclaration" id="904196553350236861">
+      <property name="name" value="S" />
+      <node role="bound" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="904196553350236868">
+        <link role="classifier" targetNodeId="150.~String" resolveInfo="String" />
+      </node>
+    </node>
+    <node role="superclass" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="904196553350236863">
+      <link role="classifier" targetNodeId="904196553350231880" resolveInfo="ClassWithBoundVariable1" />
+      <node role="parameter" type="jetbrains.mps.baseLanguage.structure.TypeVariableReference" id="904196553350236866">
+        <link role="typeVariableDeclaration" targetNodeId="904196553350236861" resolveInfo="S" />
+      </node>
     </node>
   </node>
 </model>
