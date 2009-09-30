@@ -929,6 +929,22 @@ public class QueriesGenerated {
     return SLinkOperations.getTarget(_context.getNode(), "initBlock", true) != null;
   }
 
+  public static boolean ifMacro_Condition_3001545589053200118(final IOperationContext operationContext, final IfMacroContext _context) {
+    return (SLinkOperations.getTarget(_context.getNode(), "beforeWriteBlock", true) != null);
+  }
+
+  public static boolean ifMacro_Condition_3001545589053201566(final IOperationContext operationContext, final IfMacroContext _context) {
+    return (SLinkOperations.getTarget(_context.getNode(), "afterReadBlock", true) != null);
+  }
+
+  public static boolean ifMacro_Condition_3001545589053201584(final IOperationContext operationContext, final IfMacroContext _context) {
+    return (SLinkOperations.getTarget(_context.getNode(), "afterReadBlock", true) != null);
+  }
+
+  public static boolean ifMacro_Condition_3001545589053201601(final IOperationContext operationContext, final IfMacroContext _context) {
+    return (SLinkOperations.getTarget(_context.getNode(), "beforeWriteBlock", true) != null);
+  }
+
   public static boolean ifMacro_Condition_3618415754251518870(final IOperationContext operationContext, final IfMacroContext _context) {
     return !(StringUtils.isEmpty(SPropertyOperations.getString(_context.getNode(), "shortcutChar")));
   }

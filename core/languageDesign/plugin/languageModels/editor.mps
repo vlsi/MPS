@@ -2009,6 +2009,7 @@
           </node>
         </node>
         <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode" id="1210676971782">
+          <property name="noTargetText" value="&lt;no afterRead block&gt;" />
           <link role="relationDeclaration" targetNodeId="1.1210676907584" />
         </node>
         <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1210676976648">
@@ -2018,6 +2019,7 @@
           </node>
         </node>
         <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode" id="1210676976650">
+          <property name="noTargetText" value="&lt;no beforeWrite block&gt;" />
           <link role="relationDeclaration" targetNodeId="1.1210676918600" />
         </node>
         <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1210684445465">

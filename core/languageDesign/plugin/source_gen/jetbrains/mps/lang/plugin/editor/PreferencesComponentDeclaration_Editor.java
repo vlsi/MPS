@@ -215,7 +215,7 @@ public class PreferencesComponentDeclaration_Editor extends DefaultNodeEditor {
   private EditorCell createRefNode_4007_0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("afterReadBlock");
-    provider.setNoTargetText("<no afterReadBlock>");
+    provider.setNoTargetText("<no afterRead block>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
@@ -232,7 +232,7 @@ public class PreferencesComponentDeclaration_Editor extends DefaultNodeEditor {
   private EditorCell createRefNode_4007_1(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("beforeWriteBlock");
-    provider.setNoTargetText("<no beforeWriteBlock>");
+    provider.setNoTargetText("<no beforeWrite block>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());

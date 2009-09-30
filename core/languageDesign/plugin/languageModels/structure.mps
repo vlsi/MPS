@@ -1609,13 +1609,13 @@
     <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1210676907584">
       <property name="metaClass" value="aggregation" />
       <property name="role" value="afterReadBlock" />
-      <property name="sourceCardinality" value="1" />
+      <property name="sourceCardinality" value="0..1" />
       <link role="target" targetNodeId="1210676879526" resolveInfo="OnAfterReadBlock" />
     </node>
     <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1210676918600">
       <property name="metaClass" value="aggregation" />
       <property name="role" value="beforeWriteBlock" />
-      <property name="sourceCardinality" value="1" />
+      <property name="sourceCardinality" value="0..1" />
       <link role="target" targetNodeId="1210676672555" resolveInfo="OnBeforeWriteBlock" />
     </node>
     <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1210684426855">
