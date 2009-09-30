@@ -112,13 +112,17 @@ public class ProgressLine extends JPanel {
     }
 
     public void updateLabel(final JLabel label) {
-      String testCount;
-      if (this.defects > 0) {
-        testCount = " Failed: " + this.defects;
-      } else {
-        testCount = " Running: " + this.completed + " of " + this.total;
+      StringBuilder sb = new StringBuilder();
+      if (this.total == this.completed) {
+        sb.append(" Done: " + this.completed + " of " + this.total + " ");
+        this.testName = "";
       }
-      label.setText(testCount + "  " + this.testName);
+      if (this.defects > 0) {
+        sb.append(" Failed: " + this.defects);
+      } else if (sb.length() == 0) {
+        sb.append(" Running: " + this.completed + " of " + this.total);
+      }
+      label.setText(sb + "  " + this.testName);
     }
   }
 }
