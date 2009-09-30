@@ -14,7 +14,6 @@ import java.io.PrintStream;
 
 public class TestRunner extends BaseTestRunner {
   public TestRunner() {
-
   }
 
   public void start(String[] argv) throws Throwable {
@@ -42,6 +41,10 @@ public class TestRunner extends BaseTestRunner {
     System.setErr(new PrintStream(err));
     testResult.addListener(new MyTestListener(out, err));
     for (Test test : ListSequence.fromList(tests)) {
+      if (test == null) {
+        System.err.print("Can't run test");
+        continue;
+      }
       test.run(testResult);
     }
   }

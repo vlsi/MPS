@@ -50,14 +50,14 @@ public class TestToolbarPanel extends JPanel {
 
   private AnAction createHidePassedAction() {
     return new ToggleAction("Hide Passed", "Hide passed tests", TestsUIUtil.loadIcon("hidePassed")) {
-      private boolean hidden;
+      private boolean isHidden = false;
 
       public boolean isSelected(AnActionEvent p0) {
-        return this.hidden;
+        return this.isHidden;
       }
 
       public void setSelected(AnActionEvent p0, boolean p1) {
-        this.hidden = p1;
+        this.isHidden = p1;
         TestToolbarPanel.this.tree.hidePassed(p1);
       }
     };
@@ -133,7 +133,7 @@ public class TestToolbarPanel extends JPanel {
   }
 
   private AnAction createSelectFirstFailedAction() {
-    return new ToggleAction("", "Select First Failed Test When Finished", TestsUIUtil.loadIcon("selectFirstDefect")) {
+    return new ToggleAction("Select First Failed Test When Finished", "", TestsUIUtil.loadIcon("selectFirstDefect")) {
       public boolean isSelected(AnActionEvent p0) {
         return TestToolbarPanel.this.isNeedSelectFailed;
       }

@@ -15,6 +15,7 @@ import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.baseLanguage.unitTest.behavior.ITestCase_Behavior;
 import jetbrains.mps.baseLanguage.unitTest.behavior.ITestMethod_Behavior;
+import java.util.HashMap;
 
 public class TestTree extends MPSTree {
   private IOperationContext operationContext;
@@ -43,15 +44,24 @@ public class TestTree extends MPSTree {
           newMethodTreeNode :
           oldMethodTreeNode
         );
-        if (this.isAllTree || !(oldMethodTreeNode.getState().equals(TestState.PASSED))) {
-          testCaseTreeNode.add(methodTreeNode);
+        if (oldMethodTreeNode == null && !(this.isAllTree)) {
+          continue;
         }
-        temp.put(testCase, method, methodTreeNode);
+        if (this.isAllTree || !(isPassed(oldMethodTreeNode))) {
+          testCaseTreeNode.add(methodTreeNode);
+          temp.put(testCase, method, methodTreeNode);
+        } else if (!(this.isRebuilded)) {
+          temp.put(testCase, method, oldMethodTreeNode);
+        }
       }
     }
     this.map = temp;
     this.isRebuilded = true;
     return root;
+  }
+
+  public IOperationContext getContext() {
+    return this.operationContext;
   }
 
   public void hidePassed(boolean hide) {
@@ -71,6 +81,23 @@ public class TestTree extends MPSTree {
     this.tests = tests;
     this.isRebuilded = true;
     this.rebuildNow();
+  }
+
+  public Map<SNode, List<SNode>> getFailedTests() {
+    Map<SNode, List<SNode>> temp = MapSequence.fromMap(new HashMap<SNode, List<SNode>>());
+    MapSequence.fromMap(temp).putAll(this.tests);
+    for (SNode testCase : SetSequence.fromSet(MapSequence.fromMap(this.tests).keySet())) {
+      for (SNode method : ListSequence.fromList(MapSequence.fromMap(this.tests).get(testCase))) {
+        TestMethodTreeNode methodTreeNode = this.map.get(ITestCase_Behavior.call_getClassName_1216136193905(testCase), ITestMethod_Behavior.call_getTestName_1216136419751(method));
+        if (isPassed(methodTreeNode)) {
+          ListSequence.fromList(MapSequence.fromMap(temp).get(testCase)).removeElement(method);
+        }
+      }
+      if (ListSequence.fromList(MapSequence.fromMap(temp).get(testCase)).isEmpty()) {
+        MapSequence.fromMap(temp).remove(testCase);
+      }
+    }
+    return temp;
   }
 
   public int getMethodCount() {
@@ -108,5 +135,12 @@ public class TestTree extends MPSTree {
     TestMethodTreeNode leaf = (TestMethodTreeNode)node;
     TestState state = leaf.getState();
     return state.equals(TestState.ERROR) || state.equals(TestState.FAILED);
+  }
+
+  public static boolean isPassed(TestMethodTreeNode method) {
+    if (method == null) {
+      return false;
+    }
+    return method.getState() != null && method.getState().equals(TestState.PASSED);
   }
 }
