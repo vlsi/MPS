@@ -797,14 +797,34 @@
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="6830288638224323658">
           <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="6830288638224323659">
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="8171690958903851270">
+              <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="8171690958903851271">
+                <property name="name" value="paramList" />
+                <node role="type" type="jetbrains.mps.baseLanguage.structure.ArrayType" id="8171690958903851273">
+                  <node role="componentType" type="jetbrains.mps.baseLanguage.structure.StringType" id="8171690958903851272" />
+                </node>
+                <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="8171690958903851276">
+                  <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="8171690958903851277">
+                    <link role="baseMethodDeclaration" targetNodeId="7014940388742900054" resolveInfo="splitParams" />
+                    <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="8171690958903851280">
+                      <link role="variableDeclaration" targetNodeId="335465233322498783" resolveInfo="vmParams" />
+                    </node>
+                  </node>
+                  <node role="operand" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="8171690958903851278" />
+                </node>
+              </node>
+            </node>
             <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="6830288638224323667">
-              <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="6830288638224323668">
+              <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="8171690958903851281">
                 <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="6830288638224323669">
                   <link role="variableDeclaration" targetNodeId="1210262504326" resolveInfo="params" />
                 </node>
-                <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.AddElementOperation" id="6830288638224323670">
-                  <node role="argument" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="6830288638224323671">
-                    <link role="variableDeclaration" targetNodeId="335465233322498783" resolveInfo="vmParams" />
+                <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.AddAllElementsOperation" id="8171690958903851285">
+                  <node role="argument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="8171690958903851298">
+                    <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="8171690958903851292">
+                      <link role="variableDeclaration" targetNodeId="8171690958903851271" resolveInfo="paramList" />
+                    </node>
+                    <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.AsSequenceOperation" id="8171690958903851307" />
                   </node>
                 </node>
               </node>
