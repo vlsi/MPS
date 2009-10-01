@@ -27,15 +27,13 @@ public class Annotation_TextGen extends SNodeTextGen {
     this.append(" {");
     this.increaseDepth();
     if (ListSequence.fromList(SLinkOperations.getTargets(node, "method", true)).isNotEmpty()) {
-      this.appendNewLine();
-      if (ListSequence.fromList(SLinkOperations.getTargets(node, "method", true)).isNotEmpty()) {
-        for (SNode item : SLinkOperations.getTargets(node, "method", true)) {
-          TextGenManager.instance().appendNodeText(this.getContext(), this.getBuffer(), item, this.getSNode());
-        }
+      for (SNode item : SLinkOperations.getTargets(node, "method", true)) {
+        TextGenManager.instance().appendNodeText(this.getContext(), this.getBuffer(), item, this.getSNode());
       }
     }
     this.decreaseDepth();
     this.decreaseDepth();
+    this.appendNewLine();
     this.append("}");
     this.appendNewLine();
   }
