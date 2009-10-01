@@ -41,7 +41,7 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895903fe(jetbrains.mps.baseLanguage.strings.constraints)" version="1" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590402(jetbrains.mps.baseLanguage.strings.structure)" version="9" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590373(jetbrains.mps.baseLanguage.classifiers.structure)" version="0" />
-  <maxImportIndex value="57" />
+  <maxImportIndex value="58" />
   <import index="1" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="3" />
   <import index="4" modelUID="f:java_stub#java.lang(java.lang@java_stub)" version="-1" />
   <import index="6" modelUID="r:00000000-0000-4000-0000-011c895902dd(jetbrains.mps.baseLanguage.blTypes.structure)" version="-1" />
@@ -69,6 +69,7 @@
   <import index="55" modelUID="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" version="2" />
   <import index="56" modelUID="f:java_stub#jetbrains.mps.lang.dataFlow.framework(jetbrains.mps.lang.dataFlow.framework@java_stub)" version="-1" />
   <import index="57" modelUID="f:java_stub#jetbrains.mps.baseLanguage.structure(jetbrains.mps.baseLanguage.structure@java_stub)" version="-1" />
+  <import index="58" modelUID="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" version="3" />
   <node type="jetbrains.mps.lang.typesystem.structure.InferenceRule" id="1175495245176">
     <property name="name" value="typeOf_andExpression" />
     <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1175495245177">
@@ -8795,6 +8796,24 @@
     <node role="applicableNode" type="jetbrains.mps.lang.typesystem.structure.ConceptReference" id="1204200802990">
       <property name="name" value="nullType" />
       <link role="concept" targetNodeId="1.1204200696010" resolveInfo="NullType" />
+    </node>
+    <node role="isApplicableClause" type="jetbrains.mps.lang.typesystem.structure.IsReplacementRuleApplicable_ConceptFunction" id="1490671888444422588">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1490671888444422589">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1490671888444437728">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.NotExpression" id="1490671888444437739">
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1490671888444437740">
+              <node role="operand" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference" id="1490671888444437741">
+                <link role="applicableNode" targetNodeId="1204200619692" resolveInfo="baseConcept" />
+              </node>
+              <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation" id="1490671888444437742">
+                <node role="conceptArgument" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" id="1490671888444437743">
+                  <link role="conceptDeclaration" targetNodeId="58.1185281562363" resolveInfo="RuntimeTypeVariable" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
     </node>
   </node>
   <node type="jetbrains.mps.lang.typesystem.structure.ComparisonRule" id="1204296261755">

@@ -943,6 +943,16 @@
   </node>
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="3293010995237625808">
     <property name="name" value="A" />
+    <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="3592071576955705077">
+      <property name="name" value="foo" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.BooleanType" id="3592071576955705081" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="3592071576955705079" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="3592071576955705080">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="3592071576955705082">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="3592071576955705084" />
+        </node>
+      </node>
+    </node>
     <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="3293010995237625809" />
     <node role="constructor" type="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" id="3293010995237625810">
       <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="3293010995237625811" />

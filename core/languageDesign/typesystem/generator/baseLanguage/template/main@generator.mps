@@ -11961,6 +11961,57 @@
         </node>
       </node>
     </node>
+    <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="8224738963706825760">
+      <property name="name" value="isApplicableCustom" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.BooleanType" id="8224738963706830972" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="8224738963706825762" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="8224738963706825763">
+        <node role="nodeMacro$attribute" type="jetbrains.mps.lang.generator.structure.CopySrcNodeMacro" id="8224738963706830990">
+          <node role="sourceNodeQuery" type="jetbrains.mps.lang.generator.structure.SourceSubstituteMacro_SourceNodeQuery" id="8224738963706830991">
+            <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="8224738963706830992">
+              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="8224738963706830993">
+                <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="8224738963706831000">
+                  <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="8224738963706830995">
+                    <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="8224738963706830994" />
+                    <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="8224738963706830999">
+                      <link role="link" targetNodeId="1.3592071576955708909" />
+                    </node>
+                  </node>
+                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="8224738963706831004">
+                    <link role="link" targetNodeId="3.1137022507850" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="8224738963706830963">
+        <property name="name" value="subtype" />
+        <node role="type" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="8224738963706830964" />
+      </node>
+      <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="8224738963706830965">
+        <property name="name" value="supertype" />
+        <node role="type" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="8224738963706830967" />
+      </node>
+      <node role="nodeMacro$attribute" type="jetbrains.mps.lang.generator.structure.IfMacro" id="8224738963706830969">
+        <node role="conditionFunction" type="jetbrains.mps.lang.generator.structure.IfMacro_Condition" id="8224738963706830970">
+          <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="8224738963706830971">
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="8224738963706830973">
+              <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="8224738963706830981">
+                <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="8224738963706830975">
+                  <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="8224738963706830974" />
+                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="8224738963706830980">
+                    <link role="link" targetNodeId="1.3592071576955708909" />
+                  </node>
+                </node>
+                <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_IsNotNullOperation" id="8224738963706830985" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
     <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1201609469717">
       <property name="name" value="processInequation" />
       <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1201614290711" />

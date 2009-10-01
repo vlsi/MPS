@@ -10,6 +10,7 @@ import jetbrains.mps.project.GlobalScope;
 public class InequationReplacementRule extends AbstractSubtypingRule {
   public static final String concept = "jetbrains.mps.lang.typesystem.structure.InequationReplacementRule";
   public static final String SUPERTYPE_NODE = "supertypeNode";
+  public static final String IS_APPLICABLE_CLAUSE = "isApplicableClause";
 
   public InequationReplacementRule(SNode node) {
     super(node);
@@ -21,6 +22,14 @@ public class InequationReplacementRule extends AbstractSubtypingRule {
 
   public void setSupertypeNode(ApplicableNodeCondition node) {
     super.setChild(InequationReplacementRule.SUPERTYPE_NODE, node);
+  }
+
+  public IsReplacementRuleApplicable_ConceptFunction getIsApplicableClause() {
+    return (IsReplacementRuleApplicable_ConceptFunction)this.getChild(IsReplacementRuleApplicable_ConceptFunction.class, InequationReplacementRule.IS_APPLICABLE_CLAUSE);
+  }
+
+  public void setIsApplicableClause(IsReplacementRuleApplicable_ConceptFunction node) {
+    super.setChild(InequationReplacementRule.IS_APPLICABLE_CLAUSE, node);
   }
 
   public static InequationReplacementRule newInstance(SModel sm, boolean init) {

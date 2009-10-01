@@ -22,7 +22,7 @@ public abstract class InequationReplacementRule_Runtime implements IRuleWithTwoA
   public abstract void processInequation(SNode subtype, SNode supertype, EquationInfo errorInfo);
 
   public boolean isApplicable(SNode subtype, SNode supertype) {
-    return isApplicableSubtype(subtype) && isApplicableSupertype(supertype);
+    return isApplicableSubtype(subtype) && isApplicableSupertype(supertype) && isApplicableCustom(subtype, supertype);
   }
 
   public abstract boolean isApplicableSubtype(SNode node);
@@ -51,5 +51,9 @@ public abstract class InequationReplacementRule_Runtime implements IRuleWithTwoA
 
   public boolean checkInequation(SNode subtype, SNode supertype, EquationInfo equationInfo) {
     return false;
+  }
+
+  public boolean isApplicableCustom(SNode subtype, SNode supertype) {
+    return true;
   }
 }
