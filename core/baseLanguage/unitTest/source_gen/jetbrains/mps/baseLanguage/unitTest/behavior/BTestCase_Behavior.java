@@ -8,6 +8,9 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.lang.core.behavior.INamedConcept_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.baseLanguage.unitTest.runtime.TestRunParameters;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.lang.test.behavior.NodesTestCase_Behavior;
 import jetbrains.mps.baseLanguage.behavior.IMemberContainer_Behavior;
 
 public class BTestCase_Behavior {
@@ -28,6 +31,17 @@ public class BTestCase_Behavior {
 
   public static String virtual_getClassName_1216136193905(SNode thisNode) {
     return INamedConcept_Behavior.call_getFqName_1213877404258(thisNode);
+  }
+
+  public static TestRunParameters virtual_getTestRunParameters_1216045139515(SNode thisNode) {
+    for (SNode method : SLinkOperations.getTargets(SLinkOperations.getTarget(thisNode, "testMethodList", true), "testMethod", true)) {
+      for (SNode annotationInstance : SLinkOperations.getTargets(method, "annotation", true)) {
+        if (SLinkOperations.getTarget(annotationInstance, "annotation", false).equals(SNodeOperations.getNode("r:00000000-0000-4000-0000-011c895902d5(jetbrains.mps.baseLanguage.unitTest.plugin)", "7691748101595371862"))) {
+          return NodesTestCase_Behavior.getTestRunParameters_1217424543047();
+        }
+      }
+    }
+    return new TestRunParameters();
   }
 
   public static List<SNode> virtual_getMembers_1213877531970(SNode thisNode) {

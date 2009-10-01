@@ -21002,5 +21002,9 @@
       <link role="classifier" targetNodeId="25.~TreeSelectionListener" resolveInfo="TreeSelectionListener" />
     </node>
   </node>
+  <node type="jetbrains.mps.baseLanguage.structure.Annotation" id="7691748101595371862">
+    <property name="name" value="MPSLaunch" />
+    <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="7691748101595371863" />
+  </node>
 </model>
 
