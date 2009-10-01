@@ -289,8 +289,9 @@ class ModelChangesTree extends MPSTree {
               return ((SNode) object).getSNodeId().equals(deletedNodeParentId);
             }
           });
-          assert parentTreeNode != null;
-          parentTreeNode.add(idToTreeNode.get(root));
+          if (parentTreeNode != null) {
+            parentTreeNode.add(idToTreeNode.get(root));
+          }
         }
       }
     }
