@@ -276,6 +276,39 @@
     <property name="overrides" value="true" />
     <property name="name" value="typeof_Property_SetOperation" />
     <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1178287490583">
+      <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="7231914416748704760">
+        <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="7231914416748704761">
+          <property name="name" value="leftOperation" />
+          <node role="type" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="7231914416748704762">
+            <link role="concept" targetNodeId="8.1197027803184" resolveInfo="IOperation" />
+          </node>
+          <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="7231914416748704763">
+            <node role="operand" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference" id="7231914416748704764">
+              <link role="applicableNode" targetNodeId="1178287490189" resolveInfo="op" />
+            </node>
+            <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="7231914416748704765">
+              <link role="baseMethodDeclaration" targetNodeId="32.1213877508946" resolveInfo="getLeftExpressionOperation" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="7231914416748706891">
+        <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="7231914416748706892">
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="7231914416748706908" />
+        </node>
+        <node role="condition" type="jetbrains.mps.baseLanguage.structure.NotExpression" id="7231914416748706903">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="7231914416748706904">
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="7231914416748706905">
+              <link role="variableDeclaration" targetNodeId="7231914416748704761" resolveInfo="leftOperation" />
+            </node>
+            <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation" id="7231914416748706906">
+              <node role="conceptArgument" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" id="7231914416748706907">
+                <link role="conceptDeclaration" targetNodeId="1.1138056022639" resolveInfo="SPropertyAccess" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
       <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1186059295946">
         <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1186059295947">
           <property name="name" value="propertyAccessOp" />
@@ -284,13 +317,8 @@
           </node>
           <node role="initializer" type="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" id="1186059295949">
             <link role="concept" targetNodeId="1.1138056022639" />
-            <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1203710588358">
-              <node role="operand" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference" id="1203710586951">
-                <link role="applicableNode" targetNodeId="1178287490189" resolveInfo="op" />
-              </node>
-              <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1203710592438">
-                <link role="baseMethodDeclaration" targetNodeId="32.1213877508946" resolveInfo="getLeftExpressionOperation" />
-              </node>
+            <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="7231914416748704766">
+              <link role="variableDeclaration" targetNodeId="7231914416748704761" resolveInfo="leftOperation" />
             </node>
           </node>
         </node>
