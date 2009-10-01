@@ -16,9 +16,8 @@
 package jetbrains.mps.runtime;
 
 import static jetbrains.mps.runtime.BundleUtil.bundle;
-
-import org.junit.Test;
 import static org.junit.Assert.*;
+import org.junit.Test;
 
 
 public class BundleLoadingTest {
@@ -38,11 +37,56 @@ public class BundleLoadingTest {
   }
 
   @Test
+  public void bundleIsNotAccessibleAfterClear() {
+    RuntimeEnvironment<String> re = new RuntimeEnvironment<String>();
+    RBundle<String> a = bundle("a", A.class);
+    RBundle<String> b = bundle("b", B.class).addDependency("a");
+
+    re.add(a, b);
+
+    re.init(b);
+
+    ClassLoader aClassLoader;
+    boolean canLoadFromBundle;
+
+    aClassLoader = b.getClass(A.class.getName()).getClassLoader();
+    canLoadFromBundle = aClassLoader instanceof BundleClassLoader;
+    assertTrue(canLoadFromBundle);
+
+    b.clearDependencies();
+
+    re.reloadAll();
+
+    aClassLoader = b.getClass(A.class.getName()).getClassLoader();
+    canLoadFromBundle = aClassLoader instanceof BundleClassLoader;
+    assertFalse(canLoadFromBundle);
+  }
+
+  @Test
+  public void nonDependantBundlesReloading() {
+    RuntimeEnvironment<String> re = new RuntimeEnvironment<String>();
+    RBundle<String> a = bundle("a", A.class);
+    RBundle<String> b = bundle("b", B.class).addDependency("a");
+
+    re.add(a, b);
+
+    re.init(b);
+
+    b.clearDependencies();
+
+    try {
+      re.unload(a);
+    } catch (RuntimeEnvironmentException e) {
+      fail(e.getMessage());
+    }
+  }
+
+  @Test
   public void dependenciesAreReloadedToo() {
     RuntimeEnvironment<String> re = new RuntimeEnvironment<String>();
     RBundle<String> a = bundle("a", A.class);
     RBundle<String> b = bundle("b", B.class).addDependency("a");
-                                 
+
     re.add(a, b);
 
     re.init(b);
@@ -150,7 +194,7 @@ public class BundleLoadingTest {
 
     re.replace(newA);
 
-    assertSame(newA, re.get("a"));    
+    assertSame(newA, re.get("a"));
   }
 
   @Test

@@ -234,7 +234,7 @@ public class RuntimeEnvironment<T> {
   }
 
   public RuntimeEnvironment<T> reloadAll() {
-    reload(myBundles.values().toArray(new RBundle[0]));
+    reload(myBundles.values().toArray(new RBundle[myBundles.values().size()]));
     return this;
   }
 

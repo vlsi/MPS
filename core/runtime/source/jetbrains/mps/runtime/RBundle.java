@@ -49,6 +49,10 @@ public class RBundle<T> {
     return Collections.unmodifiableSet(myDependencies);
   }
 
+  public void clearDependencies() {
+    myDependencies.clear();
+  }
+
   public void unload() {
     if (myClassLoader != null) {
       myClassLoader.dispose();

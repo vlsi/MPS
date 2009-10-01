@@ -30,11 +30,11 @@ import jetbrains.mps.util.NameUtil;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 
-import java.util.concurrent.CopyOnWriteArrayList;
+import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
-import java.util.HashSet;
-import java.util.ArrayList;
+import java.util.concurrent.CopyOnWriteArrayList;
 
 public class ClassLoaderManager implements ApplicationComponent {
   private static Logger LOG = Logger.getLogger(ClassLoaderManager.class);
@@ -147,9 +147,10 @@ public class ClassLoaderManager implements ApplicationComponent {
             }
           }
 
-          for (ModuleReference addedUID : added) {
-            IModule m = myRepository.getModule(addedUID);
-            RBundle<ModuleReference> b = myRuntimeEnvironment.get(addedUID);
+          for (IModule m : myRepository.getAllModules()) {
+            RBundle<ModuleReference> b = myRuntimeEnvironment.get(m.getModuleReference());
+            assert b != null : "There is no budle for module " + m.getModuleFqName();
+            b.clearDependencies();
             for (IModule dep : m.getDesignTimeDependOnModules()) {
               b.addDependency(dep.getModuleReference());
             }
@@ -167,7 +168,7 @@ public class ClassLoaderManager implements ApplicationComponent {
               toRemove.add(b);
             }
           }
-          myRuntimeEnvironment.unload(toRemove.toArray(new RBundle[0]));
+          myRuntimeEnvironment.unload(toRemove.toArray(new RBundle[toRemove.size()]));
 
           myRuntimeEnvironment.reloadAll();
 
