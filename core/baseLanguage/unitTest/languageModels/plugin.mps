@@ -12562,7 +12562,7 @@
               <link role="variableDeclaration" targetNodeId="1210759549892" resolveInfo="frame" />
             </node>
             <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1210759579791">
-              <link role="baseMethodDeclaration" targetNodeId="5.~Window.setSize(int,int):void" resolveInfo="setSize" />
+              <link role="baseMethodDeclaration" targetNodeId="5.~Component.setSize(int,int):void" resolveInfo="setSize" />
               <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1210759581587">
                 <property name="value" value="800" />
               </node>
@@ -12592,7 +12592,7 @@
               <link role="variableDeclaration" targetNodeId="1210759549892" resolveInfo="frame" />
             </node>
             <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1210759606569">
-              <link role="baseMethodDeclaration" targetNodeId="5.~Window.setVisible(boolean):void" resolveInfo="setVisible" />
+              <link role="baseMethodDeclaration" targetNodeId="5.~Component.setVisible(boolean):void" resolveInfo="setVisible" />
               <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1210759608827">
                 <property name="value" value="true" />
               </node>
