@@ -73,9 +73,7 @@ public class EventsCollector {
             return this.hashCode();
           }
 
-          if (myDisposed) {
-            throw new IllegalStateException("Disposed events collector was called");
-          }
+          checkNotDisposed();
 
           if (method.getName().equals("beforeChildRemoved")) {
             return null;
@@ -97,22 +95,28 @@ public class EventsCollector {
     );
   }
 
+  private void checkNotDisposed() {
+    if (myDisposed) {
+      throw new IllegalStateException("Disposed events collector was called");
+    }
+  }
+
   public void add(SModelDescriptor sm) {
-    assert !myDisposed;
+    checkNotDisposed();
 
     myModelDescriptors.add(sm);
     sm.addModelListener(myListener);
   }
 
   public void remove(SModelDescriptor sm) {
-    assert !myDisposed;
+    checkNotDisposed();
 
     myModelDescriptors.remove(sm);
     sm.removeModelListener(myListener);
   }
 
   public void flush() {
-    assert !myDisposed;
+    checkNotDisposed();
 
     if (myEvents.isEmpty()) return;
     ModelAccess.instance().runWriteAction(new Runnable() {
