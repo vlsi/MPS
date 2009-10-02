@@ -2245,24 +2245,6 @@
                   </node>
                 </node>
               </node>
-              <node role="statement" type="jetbrains.mps.baseLanguage.structure.CommentedStatementsBlock" id="4793162989682187870">
-                <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="226730285127012690">
-                  <node role="expression" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression" id="226730285127854393">
-                    <node role="rValue" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="226730285127854396">
-                      <link role="variableDeclaration" targetNodeId="226730285127399210" resolveInfo="abstractOperation" />
-                    </node>
-                    <node role="lValue" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="226730285127854388">
-                      <node role="operand" type="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" id="226730285127854386">
-                        <link role="concept" targetNodeId="2v.1197027756228" resolveInfo="DotExpression" />
-                        <node role="leftExpression" type="jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_parentNode" id="226730285127854385" />
-                      </node>
-                      <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="226730285127854392">
-                        <link role="link" targetNodeId="2v.1197027833540" />
-                      </node>
-                    </node>
-                  </node>
-                </node>
-              </node>
               <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="226730285127012701">
                 <node role="expression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="226730285127399217">
                   <link role="variableDeclaration" targetNodeId="226730285127399210" resolveInfo="abstractOperation" />

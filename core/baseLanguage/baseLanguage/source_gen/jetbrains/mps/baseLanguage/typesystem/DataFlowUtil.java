@@ -15,7 +15,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.intentions.BaseIntentionProvider;
 import jetbrains.mps.typesystem.inference.IErrorTarget;
 import jetbrains.mps.typesystem.inference.NodeErrorTarget;
-import jetbrains.mps.baseLanguage.behavior.LocalVariableDeclaration_Behavior;
+import jetbrains.mps.baseLanguage.behavior.LocalVariableReference_Behavior;
 import jetbrains.mps.baseLanguage.behavior.IVariableAssignment_Behavior;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.dataFlow.runtime.NullableAnalysisResult;
@@ -101,7 +101,7 @@ public class DataFlowUtil {
   private static void checkUninitializedReads(final TypeCheckingContext typeCheckingContext, Program program) {
     Set<SNode> uninitializedReads = DataFlow.getUninitializedReads(program);
     for (SNode read : uninitializedReads) {
-      if (SNodeOperations.isInstanceOf(read, "jetbrains.mps.baseLanguage.structure.LocalVariableReference") && !(LocalVariableDeclaration_Behavior.call_isVariableReferencedInClosures_1229352990212(SLinkOperations.getTarget(SNodeOperations.cast(read, "jetbrains.mps.baseLanguage.structure.LocalVariableReference"), "variableDeclaration", false)))) {
+      if (SNodeOperations.isInstanceOf(read, "jetbrains.mps.baseLanguage.structure.LocalVariableReference") && !(LocalVariableReference_Behavior.call_isVariableDefinedInThisMethod_1225456272518(SNodeOperations.cast(read, "jetbrains.mps.baseLanguage.structure.LocalVariableReference")))) {
         {
           BaseIntentionProvider intentionProvider = null;
           IErrorTarget errorTarget = new NodeErrorTarget();

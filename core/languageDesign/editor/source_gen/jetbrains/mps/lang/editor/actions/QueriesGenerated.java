@@ -762,9 +762,6 @@ public class QueriesGenerated {
             ListSequence.fromList(result).addElement(new DefaultChildNodeSubstituteAction(outputConcept, item, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope()) {
               public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
                 SNode abstractOperation = SConceptOperations.createNewNode(NameUtil.nodeFQName((item)), null);
-                /*
-                  SLinkOperations.setTarget(SNodeOperations.cast(_context.getParentNode(), "jetbrains.mps.baseLanguage.structure.DotExpression"), "operation", abstractOperation, true);
-                */
                 return abstractOperation;
               }
             });

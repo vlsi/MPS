@@ -6,8 +6,6 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import java.util.Iterator;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
 
 public class LocalVariableDeclaration_Behavior {
   public static void init(SNode thisNode) {
@@ -22,26 +20,5 @@ public class LocalVariableDeclaration_Behavior {
     SNode ref = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.LocalVariableReference", null);
     SLinkOperations.setTarget(ref, "variableDeclaration", thisNode, false);
     return ref;
-  }
-
-  public static boolean call_isVariableReferencedInClosures_1229352990212(SNode thisNode) {
-    SNode container = SNodeOperations.getAncestor(thisNode, "jetbrains.mps.baseLanguage.structure.IStatementListContainer", false, false);
-    {
-      SNode ref;
-      Iterator<SNode> ref_iterator = ListSequence.fromList(SNodeOperations.getDescendants(container, "jetbrains.mps.baseLanguage.structure.LocalVariableReference", false, new String[]{})).iterator();
-      while (true) {
-        if (!(ref_iterator.hasNext())) {
-          break;
-        }
-        ref = ref_iterator.next();
-        if (SLinkOperations.getTarget(ref, "variableDeclaration", false) == thisNode) {
-          SNode referenceContainer = SNodeOperations.getAncestor(ref, "jetbrains.mps.baseLanguage.structure.IStatementListContainer", false, false);
-          if (referenceContainer != container && SNodeOperations.isInstanceOf(referenceContainer, "jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral")) {
-            return true;
-          }
-        }
-      }
-    }
-    return false;
   }
 }

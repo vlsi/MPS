@@ -11,7 +11,7 @@ public class LocalVariableReference_Behavior {
   }
 
   public static boolean call_isVariableDefinedInThisMethod_1225456272518(SNode thisNode) {
-    if (SNodeOperations.getAncestor(thisNode, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration", false, false) == SNodeOperations.getAncestor(SLinkOperations.getTarget(thisNode, "variableDeclaration", false), "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration", false, false)) {
+    if (SNodeOperations.getAncestor(thisNode, "jetbrains.mps.baseLanguage.structure.IStatementListContainer", false, false) == SNodeOperations.getAncestor(SLinkOperations.getTarget(thisNode, "variableDeclaration", false), "jetbrains.mps.baseLanguage.structure.IStatementListContainer", false, false)) {
       if (SNodeOperations.getAncestor(thisNode, "jetbrains.mps.baseLanguage.structure.Closureoid", false, false) == SNodeOperations.getAncestor(SLinkOperations.getTarget(thisNode, "variableDeclaration", false), "jetbrains.mps.baseLanguage.structure.Closureoid", false, false)) {
         return true;
       }
