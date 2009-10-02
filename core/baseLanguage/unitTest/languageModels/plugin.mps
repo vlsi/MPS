@@ -14912,6 +14912,38 @@
                   </node>
                 </node>
               </node>
+              <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="4098745120222971259">
+                <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="4098745120222971260">
+                  <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="4098745120222971278">
+                    <node role="expression" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression" id="4098745120222971287">
+                      <node role="rValue" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="4098745120222971291">
+                        <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="4098745120222971292">
+                          <link role="baseMethodDeclaration" targetNodeId="44.5001211796553540578" resolveInfo="ConfigRunParameters" />
+                        </node>
+                      </node>
+                      <node role="lValue" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="4098745120222971280">
+                        <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="4098745120222971279">
+                          <link role="variableDeclaration" targetNodeId="1930019848839359706" resolveInfo="config" />
+                        </node>
+                        <node role="operation" type="jetbrains.mps.lang.plugin.structure.PersistentPropertyReference" id="4098745120222971285">
+                          <link role="member" targetNodeId="8843743496753415242" resolveInfo="myParams" />
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                </node>
+                <node role="condition" type="jetbrains.mps.baseLanguage.structure.EqualsExpression" id="4098745120222971272">
+                  <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="4098745120222971276" />
+                  <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="4098745120222971265">
+                    <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="4098745120222971264">
+                      <link role="variableDeclaration" targetNodeId="1930019848839359706" resolveInfo="config" />
+                    </node>
+                    <node role="operation" type="jetbrains.mps.lang.plugin.structure.PersistentPropertyReference" id="4098745120222971270">
+                      <link role="member" targetNodeId="8843743496753415242" resolveInfo="myParams" />
+                    </node>
+                  </node>
+                </node>
+              </node>
               <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="148014226128330144">
                 <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="148014226128330145">
                   <node role="operand" type="jetbrains.mps.uiLanguage.structure.ComponentReference" id="148014226128338053">
@@ -15951,6 +15983,25 @@
               <node role="operand" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpression" id="8964497854882463301" />
               <node role="operation" type="jetbrains.mps.uiLanguage.structure.AttributeReferenceOperation" id="8964497854882463302">
                 <link role="member" targetNodeId="8666759864083941205" resolveInfo="myButtonGroup" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="afterConstruction" type="jetbrains.mps.uiLanguage.structure.AfterConstructionBlock" id="2583095906305348268">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="2583095906305348269">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="2583095906305348277">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression" id="2583095906305348278">
+            <node role="rValue" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="2583095906305348279">
+              <property name="value" value="true" />
+            </node>
+            <node role="lValue" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="2583095906305348280">
+              <node role="operand" type="jetbrains.mps.uiLanguage.structure.ComponentReference" id="2583095906305348281">
+                <link role="component" targetNodeId="1104580685292496829" resolveInfo="javaOptions" />
+              </node>
+              <node role="operation" type="jetbrains.mps.uiLanguage.structure.AttributeReferenceOperation" id="2583095906305348282">
+                <link role="member" targetNodeId="44.5360151489983366028" resolveInfo="makeBeforeRun" />
               </node>
             </node>
           </node>

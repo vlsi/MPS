@@ -34,6 +34,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.baseLanguage.unitTest.behavior.ITestMethod_Behavior;
 import jetbrains.mps.lang.core.behavior.INamedConcept_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
+import jetbrains.mps.baseLanguage.plugin.ConfigRunParameters;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class JUnitConfigEditor extends JPanel {
@@ -85,6 +86,7 @@ public class JUnitConfigEditor extends JPanel {
     component.add(this.createComponent14(), LayoutUtil.createPanelConstraints(1));
     component.add(this.createComponent29(), LayoutUtil.createPanelConstraints(2));
     this.myEvents.initialize();
+    myThis.myJavaOptions0.setMakeBeforeRun(true);
   }
 
   public Events getEvents() {
@@ -471,6 +473,9 @@ public class JUnitConfigEditor extends JPanel {
         JUnitRunTypes type = JUnitRunTypes.getType(myThis.myIsModule0.isSelected(), myThis.myIsModel0.isSelected(), myThis.myIsClass0.isSelected(), myThis.myIsMethod0.isSelected());
         if (type != null) {
           config.getStateObject().type = type;
+        }
+        if (config.getStateObject().myParams == null) {
+          config.getStateObject().myParams = new ConfigRunParameters();
         }
         myThis.myJavaOptions0.apply(config.getStateObject().myParams);
       }
