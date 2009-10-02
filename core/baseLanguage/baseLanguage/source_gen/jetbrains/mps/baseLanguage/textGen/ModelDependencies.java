@@ -86,8 +86,7 @@ public class ModelDependencies {
   }
 
   public static IFile getOutputFileOfModel(String outputDir, SModelDescriptor model) {
-    File cachesOutput = FileGenerationUtil.getCachesOutputDir(new File(outputDir));
-    File modelDir = FileGenerationUtil.getDefaultOutputDir(model, cachesOutput);
+    File modelDir = FileGenerationUtil.getDefaultOutputDir(model, new File(outputDir));
     return FileSystem.getFile(modelDir.getPath() + File.separator + ".dependencies");
   }
 }
