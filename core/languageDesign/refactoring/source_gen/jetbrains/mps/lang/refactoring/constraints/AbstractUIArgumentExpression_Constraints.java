@@ -8,6 +8,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class AbstractUIArgumentExpression_Constraints {
   public static boolean canBeAChild(final IOperationContext operationContext, final CanBeAChildContext _context) {
-    return (SNodeOperations.getAncestorWhereConceptInList(_context.getParentNode(), new String[]{"jetbrains.mps.lang.refactoring.structure.OldRefactoring","jetbrains.mps.lang.refactoring.structure.Refactoring"}, false, false) != null);
+    return (SNodeOperations.getAncestorWhereConceptInList(_context.getParentNode(), new String[]{"jetbrains.mps.lang.refactoring.structure.OldRefactoring"}, false, false) != null);
   }
 }

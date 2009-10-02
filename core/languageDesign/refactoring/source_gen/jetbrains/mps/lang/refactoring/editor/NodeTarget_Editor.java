@@ -67,7 +67,7 @@ public class NodeTarget_Editor extends DefaultNodeEditor {
   private EditorCell createRefCell_2921_0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, editorContext);
     provider.setRole("concept");
-    provider.setNoTargetText("<no concept>");
+    provider.setNoTargetText("any");
     EditorCell editorCell;
     provider.setAuxiliaryCellProvider(new NodeTarget_Editor._Inline2921_0());
     editorCell = provider.createEditorCell(editorContext);

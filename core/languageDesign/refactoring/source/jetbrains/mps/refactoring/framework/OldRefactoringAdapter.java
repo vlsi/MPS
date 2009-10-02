@@ -1,31 +1,23 @@
 package jetbrains.mps.refactoring.framework;
 
-import jetbrains.mps.smodel.*;
-import jetbrains.mps.project.IModule;
-import jetbrains.mps.project.ModuleContext;
-import jetbrains.mps.workbench.editors.MPSEditorOpener;
-import jetbrains.mps.generator.GeneratorManager;
+import com.intellij.openapi.application.ApplicationManager;
+import com.intellij.openapi.progress.ProgressIndicator;
+import com.intellij.openapi.project.Project;
+import com.intellij.openapi.util.Computable;
 import jetbrains.mps.generator.GenerationSettings;
+import jetbrains.mps.generator.GeneratorManager;
 import jetbrains.mps.generator.IGenerationType;
 import jetbrains.mps.ide.messages.DefaultMessageHandler;
+import jetbrains.mps.project.IModule;
+import jetbrains.mps.project.ModuleContext;
+import jetbrains.mps.smodel.*;
+import jetbrains.mps.workbench.editors.MPSEditorOpener;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
-import java.util.ArrayList;
 
-import com.intellij.openapi.util.Computable;
-import com.intellij.openapi.application.ApplicationManager;
-import com.intellij.openapi.progress.ProgressManager;
-import com.intellij.openapi.progress.ProgressIndicator;
-import com.intellij.openapi.progress.Task.Modal;
-import com.intellij.openapi.project.Project;
-
-import javax.swing.SwingUtilities;
-
-import org.jetbrains.annotations.NotNull;
-
-public class OldRefactoringAdapter implements IRefactoring{
-  private Map<IModule, List<SModel>> myModuleToModelsMap;
+public class OldRefactoringAdapter implements IRefactoring {
   private List<SNode> myNodesToOpen;
   protected AbstractLoggableRefactoring myOldRefactoring;
 
@@ -54,12 +46,6 @@ public class OldRefactoringAdapter implements IRefactoring{
   }
 
   public void refactor(final RefactoringContext refactoringContext) {
-    myModuleToModelsMap = ModelAccess.instance().runReadAction(new Computable<Map<IModule, List<SModel>>>() {
-      public Map<IModule, List<SModel>> compute() {
-        return myOldRefactoring.getModelsToGenerate(refactoringContext);
-      }
-    });
-
     myOldRefactoring.doRefactor(refactoringContext);
 
     myNodesToOpen = ModelAccess.instance().runReadAction(new Computable<List<SNode>>() {
@@ -67,6 +53,17 @@ public class OldRefactoringAdapter implements IRefactoring{
         return myOldRefactoring.getNodesToOpen(refactoringContext);
       }
     });
+  }
+
+  public List<SModel> getModelsToGenerate(RefactoringContext refactoringContext) {
+    Map<IModule, List<SModel>> modelsToGenerate = myOldRefactoring.getModelsToGenerate(refactoringContext);
+    if (modelsToGenerate == null) return new ArrayList<SModel>();
+
+    List<SModel> result = new ArrayList<SModel>();
+    for (List<SModel> models : modelsToGenerate.values()) {
+      result.addAll(models);
+    }
+    return result;
   }
 
   public void doWhenDone(final RefactoringContext refactoringContext) {
@@ -79,63 +76,17 @@ public class OldRefactoringAdapter implements IRefactoring{
         }
       }
     });
-
-    SwingUtilities.invokeLater(new Runnable() {
-      public void run() {
-        if (myModuleToModelsMap != null && !myModuleToModelsMap.isEmpty()) {
-          ProgressManager.getInstance().run(new Modal(refactoringContext.getCurrentOperationContext().getComponent(Project.class), "Generation", true) {
-            public void run(@NotNull ProgressIndicator progress) {
-              generateModels(myModuleToModelsMap, refactoringContext, progress);
-            }
-          });
-        }
-      }
-    });
-  }
-
-  private void generateModels(final Map<IModule, List<SModel>> sourceModels, final RefactoringContext refactoringContext, final ProgressIndicator progressIndicator) {
-    if (!refactoringContext.getDoesGenerateModels()) {
-      return;
-    }
-    final RefactoringNodeMembersAccessModifier modifier = new RefactoringNodeMembersAccessModifier();
-    for (final IModule sourceModule : sourceModels.keySet()) {
-      ModelAccess.instance().runWriteAction(new Runnable() {
-        public void run() {
-          try {
-            refactoringContext.setUpMembersAccessModifier(modifier);
-            IOperationContext operationContext = new ModuleContext(sourceModule, refactoringContext.getSelectedMPSProject());
-            final List<SModel> models = sourceModels.get(sourceModule);
-            modifier.addModelsToModify(models);
-            SNode.setNodeMemeberAccessModifier(modifier);
-
-            List<SModelDescriptor> descriptors = new ArrayList<SModelDescriptor>();
-            for (SModel model : models) {
-              descriptors.add(model.getModelDescriptor());
-            }
-
-            new GeneratorManager(operationContext.getComponent(Project.class), new GenerationSettings()).generateModels(descriptors,
-              operationContext,
-              IGenerationType.FILES,
-              progressIndicator,
-              new DefaultMessageHandler(operationContext.getMPSProject())
-            );
-          } finally {
-            SNode.setNodeMemeberAccessModifier(null);
-          }
-        }
-      });
-    }
   }
 
   private class MyRefactoringTarget implements IRefactoringTarget {
     private RefactoringTarget myTarget = myOldRefactoring.getRefactoringTarget();
 
     public TargetType getTarget() {
-      if(myTarget ==RefactoringTarget.NODE){
+      if (myTarget == RefactoringTarget.NODE) {
         return TargetType.NODE;
-      } else if (myTarget ==RefactoringTarget.MODEL){
+      } else if (myTarget == RefactoringTarget.MODEL) {
         return TargetType.MODEL;
-      } else{
+      } else {
         return TargetType.MODULE;
       }
     }
@@ -145,30 +96,30 @@ public class OldRefactoringAdapter implements IRefactoring{
     }
 
     public boolean isApplicable(Object o) {
-      if (myTarget==RefactoringTarget.NODE){
-        return myOldRefactoring.isApplicableWRTConcept((SNode)o);
-      } else if (myTarget==RefactoringTarget.MODEL){
-        return myOldRefactoring.isApplicableToModel((SModelDescriptor)o);
+      if (myTarget == RefactoringTarget.NODE) {
+        return myOldRefactoring.isApplicableWRTConcept((SNode) o);
+      } else if (myTarget == RefactoringTarget.MODEL) {
+        return myOldRefactoring.isApplicableToModel((SModelDescriptor) o);
       } else {
-        return myOldRefactoring.isApplicableToModule((IModule)o);
+        return myOldRefactoring.isApplicableToModule((IModule) o);
       }
     }
   }
 
   // adapter integration
 
-  public String getRefactoringClassName(){
+  public String getRefactoringClassName() {
     return myOldRefactoring.getClass().getName();
   }
 
-  public Class getRefactoringClass(){
+  public Class getRefactoringClass() {
     return myOldRefactoring.getClass();
   }
 
   public static IRefactoring createAdapterFor(AbstractLoggableRefactoring oldRefactoring) {
-    if (oldRefactoring.doesUpdateModel()){
+    if (oldRefactoring.doesUpdateModel()) {
       return new OldLoggableRefactoringAdapter(oldRefactoring);
-    } else{
+    } else {
       return new OldRefactoringAdapter(oldRefactoring);
     }
   }

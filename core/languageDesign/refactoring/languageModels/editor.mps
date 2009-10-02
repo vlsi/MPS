@@ -671,7 +671,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" id="1214999768401">
-    <property name="package" value="Environment" />
+    <property name="package" value="Deprecated.Environment" />
     <link role="conceptDeclaration" targetNodeId="1.1214999734945" resolveInfo="AbstractUIArgumentExpression" />
     <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_ConceptProperty" id="1214999790482">
       <link role="relationDeclaration" targetNodeId="2.1137473891462" resolveInfo="alias" />
@@ -882,6 +882,14 @@
           <property name="flag" value="false" />
         </node>
       </node>
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode" id="616550569929016708">
+        <link role="relationDeclaration" targetNodeId="1.616550569928923871" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="616550569929016706">
+        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem" id="616550569929016707">
+          <property name="flag" value="false" />
+        </node>
+      </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode" id="2058726427123891194">
         <link role="relationDeclaration" targetNodeId="1.2058726427123891193" />
       </node>
@@ -1066,6 +1074,14 @@
           <property name="flag" value="false" />
         </node>
       </node>
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode" id="616550569929016709">
+        <link role="relationDeclaration" targetNodeId="1.616550569928923871" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="616550569929016710">
+        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem" id="616550569929016711">
+          <property name="flag" value="false" />
+        </node>
+      </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode" id="2058726427123891204">
         <link role="relationDeclaration" targetNodeId="1.2058726427123891193" />
       </node>
@@ -1194,6 +1210,7 @@
           <property name="text" value="target: node&lt;" />
         </node>
         <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefCell" id="3634404331181406123">
+          <property name="noTargetText" value="any" />
           <link role="relationDeclaration" targetNodeId="1.6895093993902310806" />
           <node role="editorComponent" type="jetbrains.mps.lang.editor.structure.InlineEditorComponent" id="3634404331181406124">
             <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Property" id="3634404331181406126">
@@ -1255,6 +1272,21 @@
         <link role="editorComponent" targetNodeId="3634404331181406067" resolveInfo="RefactoringTarget" />
       </node>
       <node role="cellLayout" type="jetbrains.mps.lang.editor.structure.CellLayout_Vertical" id="3634404331181406111" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" id="7953996722066254320">
+    <property name="package" value="Context" />
+    <link role="conceptDeclaration" targetNodeId="1.7953996722066252909" resolveInfo="ContextMemberOperation" />
+    <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_ConceptProperty" id="7953996722066254322">
+      <link role="styleClass" targetNodeId="4.1186415544875" resolveInfo="KeyWord" />
+      <link role="relationDeclaration" targetNodeId="2.1137473891462" resolveInfo="alias" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" id="7953996722066536523">
+    <property name="package" value="Context" />
+    <link role="conceptDeclaration" targetNodeId="1.7953996722066536522" resolveInfo="ContextType" />
+    <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="7953996722066536525">
+      <property name="text" value="context" />
     </node>
   </node>
 </model>

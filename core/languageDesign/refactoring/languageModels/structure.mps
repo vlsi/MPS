@@ -183,6 +183,7 @@
   <language namespace="f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)" />
   <language namespace="7866978e-a0f0-4cc7-81bc-4d213d9375e1(jetbrains.mps.lang.smodel)" />
   <language namespace="83888646-71ce-4f1c-9c53-c54016f6ad4f(jetbrains.mps.baseLanguage.collections)" />
+  <language namespace="ceab5195-25ea-4f22-9b92-103b95ca8c0c(jetbrains.mps.lang.core)" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959028c(jetbrains.mps.lang.structure.constraints)" version="11" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)" version="83" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="3" />
@@ -352,6 +353,10 @@
       <link role="conceptLinkDeclaration" targetNodeId="2.1137545148427" />
       <node role="target" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1189695018767" />
     </node>
+    <node role="conceptLink" type="jetbrains.mps.lang.structure.structure.ReferenceConceptLink" id="7953996722066278808">
+      <link role="conceptLinkDeclaration" targetNodeId="2.1161119487665" resolveInfo="applicableConceptFunctionParameter" />
+      <link role="target" targetNodeId="7953996722066256458" resolveInfo="RefactoringContext_ConceptFunctionParameter" />
+    </node>
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="6528618226609509173">
       <property name="value" value="refactor" />
       <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" resolveInfo="alias" />
@@ -384,6 +389,10 @@
     <node role="conceptLink" type="jetbrains.mps.lang.structure.structure.ReferenceConceptLink" id="1189695039800">
       <link role="conceptLinkDeclaration" targetNodeId="2.1161119487665" />
       <link role="target" targetNodeId="1189694741717" resolveInfo="ConceptFunctionParameter_SModel" />
+    </node>
+    <node role="conceptLink" type="jetbrains.mps.lang.structure.structure.ReferenceConceptLink" id="7953996722066278804">
+      <link role="conceptLinkDeclaration" targetNodeId="2.1161119487665" resolveInfo="applicableConceptFunctionParameter" />
+      <link role="target" targetNodeId="7953996722066256458" resolveInfo="RefactoringContext_ConceptFunctionParameter" />
     </node>
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="6528618226609509185">
       <property name="value" value="updateModel" />
@@ -422,7 +431,7 @@
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1191591349007">
     <property name="name" value="GetModelsToGenerateClause" />
-    <property name="package" value="Deprecated" />
+    <property name="package" value="RefDecl.Methods" />
     <link role="extends" targetNodeId="2.1137021947720" resolveInfo="ConceptFunction" />
     <node role="conceptLink" type="jetbrains.mps.lang.structure.structure.AggregationConceptLink" id="1191591414955">
       <link role="conceptLinkDeclaration" targetNodeId="2.1137545148427" resolveInfo="conceptFunctionReturnType" />
@@ -434,6 +443,10 @@
           <node role="elementType" type="jetbrains.mps.lang.smodel.structure.SModelType" id="1239574004549" />
         </node>
       </node>
+    </node>
+    <node role="conceptLink" type="jetbrains.mps.lang.structure.structure.ReferenceConceptLink" id="7953996722066278814">
+      <link role="conceptLinkDeclaration" targetNodeId="2.1161119487665" resolveInfo="applicableConceptFunctionParameter" />
+      <link role="target" targetNodeId="7953996722066256458" resolveInfo="RefactoringContext_ConceptFunctionParameter" />
     </node>
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="6528618226609509176">
       <property name="value" value="models to generate" />
@@ -676,6 +689,10 @@
         <link role="classifier" targetNodeId="14.~SearchResults" resolveInfo="SearchResults" />
       </node>
     </node>
+    <node role="conceptLink" type="jetbrains.mps.lang.structure.structure.ReferenceConceptLink" id="7953996722066278810">
+      <link role="conceptLinkDeclaration" targetNodeId="2.1161119487665" resolveInfo="applicableConceptFunctionParameter" />
+      <link role="target" targetNodeId="7953996722066256458" resolveInfo="RefactoringContext_ConceptFunctionParameter" />
+    </node>
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="6528618226609509170">
       <property name="value" value="affected nodes" />
       <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" resolveInfo="alias" />
@@ -770,6 +787,10 @@
         <node role="elementType" type="jetbrains.mps.lang.smodel.structure.SModelType" id="1238601828532" />
       </node>
     </node>
+    <node role="conceptLink" type="jetbrains.mps.lang.structure.structure.ReferenceConceptLink" id="7953996722066278816">
+      <link role="conceptLinkDeclaration" targetNodeId="2.1161119487665" resolveInfo="applicableConceptFunctionParameter" />
+      <link role="target" targetNodeId="7953996722066256458" resolveInfo="RefactoringContext_ConceptFunctionParameter" />
+    </node>
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="6528618226609509179">
       <property name="value" value="additional models to update" />
       <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" resolveInfo="alias" />
@@ -839,7 +860,7 @@
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1214999715318">
     <property name="name" value="NodesExpression" />
-    <property name="package" value="Environment" />
+    <property name="package" value="Deprecated.Environment" />
     <link role="extends" targetNodeId="1214999734945" resolveInfo="AbstractUIArgumentExpression" />
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1214999818608">
       <property name="value" value="nodes" />
@@ -848,7 +869,7 @@
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1214999734945">
     <property name="name" value="AbstractUIArgumentExpression" />
-    <property name="package" value="Environment" />
+    <property name="package" value="Deprecated.Environment" />
     <link role="extends" targetNodeId="2.1068431790191" resolveInfo="Expression" />
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.BooleanConceptProperty" id="1214999756915">
       <link role="conceptPropertyDeclaration" targetNodeId="1.1137473854053" resolveInfo="abstract" />
@@ -856,7 +877,7 @@
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1215000036307">
     <property name="name" value="NodeExpression" />
-    <property name="package" value="Environment" />
+    <property name="package" value="Deprecated.Environment" />
     <link role="extends" targetNodeId="1214999734945" resolveInfo="AbstractUIArgumentExpression" />
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1215000062262">
       <property name="value" value="node" />
@@ -865,7 +886,7 @@
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1215000134655">
     <property name="name" value="ModelDescriptorExpression" />
-    <property name="package" value="Environment" />
+    <property name="package" value="Deprecated.Environment" />
     <link role="extends" targetNodeId="1214999734945" resolveInfo="AbstractUIArgumentExpression" />
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1215000157344">
       <property name="value" value="modelDescriptor" />
@@ -874,7 +895,7 @@
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1215084399714">
     <property name="name" value="ModuleExpression" />
-    <property name="package" value="Environment" />
+    <property name="package" value="Deprecated.Environment" />
     <link role="extends" targetNodeId="1214999734945" resolveInfo="AbstractUIArgumentExpression" />
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1215084427352">
       <property name="value" value="module" />
@@ -883,7 +904,7 @@
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1215084496797">
     <property name="name" value="ProjectExpression" />
-    <property name="package" value="Environment" />
+    <property name="package" value="Deprecated.Environment" />
     <link role="extends" targetNodeId="1214999734945" resolveInfo="AbstractUIArgumentExpression" />
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1215084512267">
       <property name="value" value="project" />
@@ -892,7 +913,7 @@
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1215084545440">
     <property name="name" value="ScopeExpression" />
-    <property name="package" value="Environment" />
+    <property name="package" value="Deprecated.Environment" />
     <link role="extends" targetNodeId="1214999734945" resolveInfo="AbstractUIArgumentExpression" />
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1215084563863">
       <property name="value" value="scope" />
@@ -901,7 +922,7 @@
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1215084612287">
     <property name="name" value="OperationContextExpression" />
-    <property name="package" value="Environment" />
+    <property name="package" value="Deprecated.Environment" />
     <link role="extends" targetNodeId="1214999734945" resolveInfo="AbstractUIArgumentExpression" />
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1215084635570">
       <property name="value" value="operationContext" />
@@ -1141,6 +1162,10 @@
       <link role="conceptLinkDeclaration" targetNodeId="2.1137545148427" resolveInfo="conceptFunctionReturnType" />
       <node role="target" type="jetbrains.mps.baseLanguage.structure.BooleanType" id="5497648299878741975" />
     </node>
+    <node role="conceptLink" type="jetbrains.mps.lang.structure.structure.ReferenceConceptLink" id="7953996722066278818">
+      <link role="conceptLinkDeclaration" targetNodeId="2.1161119487665" resolveInfo="applicableConceptFunctionParameter" />
+      <link role="target" targetNodeId="7953996722066256458" resolveInfo="RefactoringContext_ConceptFunctionParameter" />
+    </node>
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="5497648299878741973">
       <property name="value" value="init" />
       <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" resolveInfo="alias" />
@@ -1300,6 +1325,11 @@
       <property name="sourceCardinality" value="1" />
       <link role="target" targetNodeId="1189694053795" resolveInfo="DoRefactorClause" />
     </node>
+    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="616550569928923871">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="modelsToGenerateBlock" />
+      <link role="target" targetNodeId="1191591349007" resolveInfo="GetModelsToGenerateClause" />
+    </node>
     <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="2058726427123891193">
       <property name="metaClass" value="aggregation" />
       <property name="role" value="doWhenDoneBlock" />
@@ -1323,6 +1353,10 @@
     <node role="conceptLink" type="jetbrains.mps.lang.structure.structure.AggregationConceptLink" id="2058726427123891189">
       <link role="conceptLinkDeclaration" targetNodeId="2.1137545148427" resolveInfo="conceptFunctionReturnType" />
       <node role="target" type="jetbrains.mps.baseLanguage.structure.VoidType" id="2058726427123891190" />
+    </node>
+    <node role="conceptLink" type="jetbrains.mps.lang.structure.structure.ReferenceConceptLink" id="7953996722066278812">
+      <link role="conceptLinkDeclaration" targetNodeId="2.1161119487665" resolveInfo="applicableConceptFunctionParameter" />
+      <link role="target" targetNodeId="7953996722066256458" resolveInfo="RefactoringContext_ConceptFunctionParameter" />
     </node>
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="2058726427123891191">
       <property name="value" value="doWhenDone" />
@@ -1369,6 +1403,97 @@
     </node>
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.BooleanConceptProperty" id="7573235936722759516">
       <link role="conceptPropertyDeclaration" targetNodeId="2.1216468774225" resolveInfo="showName" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="7953996722066252909">
+    <property name="name" value="ContextMemberOperation" />
+    <property name="package" value="Context" />
+    <link role="extends" targetNodeId="1.1133920641626" resolveInfo="BaseConcept" />
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.BooleanConceptProperty" id="7953996722066252910">
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473854053" resolveInfo="abstract" />
+    </node>
+    <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="7953996722066654455">
+      <link role="intfc" targetNodeId="2.1197027803184" resolveInfo="IOperation" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="7953996722066252911">
+    <property name="name" value="ModelDescriptorOperation" />
+    <property name="package" value="Context" />
+    <link role="extends" targetNodeId="7953996722066252909" resolveInfo="AbstractUIArgumentOperation" />
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="7953996722066252912">
+      <property name="value" value="modelDescriptor" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" resolveInfo="alias" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="7953996722066252913">
+    <property name="name" value="ModuleOperation" />
+    <property name="package" value="Context" />
+    <link role="extends" targetNodeId="7953996722066252909" resolveInfo="AbstractUIArgumentOperation" />
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="7953996722066252914">
+      <property name="value" value="module" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" resolveInfo="alias" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="7953996722066252915">
+    <property name="name" value="NodeOperation" />
+    <property name="package" value="Context" />
+    <link role="extends" targetNodeId="7953996722066252909" resolveInfo="AbstractUIArgumentOperation" />
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="7953996722066252916">
+      <property name="value" value="node" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" resolveInfo="alias" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="7953996722066252917">
+    <property name="name" value="NodesOperation" />
+    <property name="package" value="Context" />
+    <link role="extends" targetNodeId="7953996722066252909" resolveInfo="AbstractUIArgumentOperation" />
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="7953996722066252918">
+      <property name="value" value="nodes" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" resolveInfo="alias" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="7953996722066252919">
+    <property name="name" value="OperationContextOperation" />
+    <property name="package" value="Context" />
+    <link role="extends" targetNodeId="7953996722066252909" resolveInfo="AbstractUIArgumentOperation" />
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="7953996722066252920">
+      <property name="value" value="operationContext" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" resolveInfo="alias" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="7953996722066252921">
+    <property name="name" value="ProjectOperation" />
+    <property name="package" value="Context" />
+    <link role="extends" targetNodeId="7953996722066252909" resolveInfo="AbstractUIArgumentOperation" />
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="7953996722066252922">
+      <property name="value" value="project" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" resolveInfo="alias" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="7953996722066252923">
+    <property name="name" value="ScopeOperation" />
+    <property name="package" value="Context" />
+    <link role="extends" targetNodeId="7953996722066252909" resolveInfo="AbstractUIArgumentOperation" />
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="7953996722066252924">
+      <property name="value" value="scope" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" resolveInfo="alias" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="7953996722066256458">
+    <property name="package" value="Context" />
+    <property name="name" value="RefactoringContext_ConceptFunctionParameter" />
+    <link role="extends" targetNodeId="2.1107135704075" resolveInfo="ConceptFunctionParameter" />
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="7953996722066257061">
+      <property name="value" value="refactoringContext" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" resolveInfo="alias" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="7953996722066536522">
+    <property name="package" value="Context" />
+    <property name="name" value="ContextType" />
+    <link role="extends" targetNodeId="2.1068431790189" resolveInfo="Type" />
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.BooleanConceptProperty" id="7953996722066536549">
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473994950" resolveInfo="dontSubstituteByDefault" />
     </node>
   </node>
 </model>

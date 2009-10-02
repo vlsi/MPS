@@ -313,6 +313,10 @@ public class QueriesGenerated {
     return (SLinkOperations.getTarget(_context.getNode(), "overrides", false) != null);
   }
 
+  public static boolean ifMacro_Condition_616550569929040368(final IOperationContext operationContext, final IfMacroContext _context) {
+    return (SLinkOperations.getTarget(_context.getNode(), "modelsToGenerateBlock", true) != null);
+  }
+
   public static boolean ifMacro_Condition_700745782152520300(final IOperationContext operationContext, final IfMacroContext _context) {
     return SPropertyOperations.getBoolean(_context.getNode(), "oneTargetOnly");
   }
@@ -551,6 +555,10 @@ public class QueriesGenerated {
 
   public static SNode sourceNodeQuery_1212243880040(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "searchScope", true);
+  }
+
+  public static SNode sourceNodeQuery_616550569929040349(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "modelsToGenerateBlock", true), "body", true);
   }
 
   public static SNode sourceNodeQuery_1789893890062301545(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {

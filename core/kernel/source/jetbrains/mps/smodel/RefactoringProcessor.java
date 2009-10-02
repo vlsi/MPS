@@ -20,10 +20,14 @@ import com.intellij.openapi.progress.ProgressIndicator;
 import com.intellij.openapi.progress.ProgressManager;
 import com.intellij.openapi.progress.Task.Modal;
 import com.intellij.openapi.project.Project;
+import jetbrains.mps.generator.GenerationSettings;
+import jetbrains.mps.generator.GeneratorManager;
+import jetbrains.mps.generator.IGenerationType;
 import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.ide.findusages.model.SearchResults;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.MPSProject;
+import jetbrains.mps.project.ModuleContext;
 import jetbrains.mps.project.ProjectOperationContext;
 import jetbrains.mps.refactoring.RefactoringView;
 import jetbrains.mps.refactoring.RefactoringViewAction;
@@ -33,8 +37,11 @@ import jetbrains.mps.workbench.MPSDataKeys;
 import org.jetbrains.annotations.NotNull;
 
 import javax.swing.JOptionPane;
+import javax.swing.SwingUtilities;
 import java.awt.Frame;
+import java.util.ArrayList;
 import java.util.LinkedHashSet;
+import java.util.List;
 import java.util.Set;
 
 public class RefactoringProcessor {
@@ -156,6 +163,8 @@ public class RefactoringProcessor {
     final SModelReference initialModelReference = modelDescriptor.getSModelReference();
     Runnable runnable = new Runnable() {
       public void run() {
+        final List<SModel> modelsToGenerate = refactoring.getModelsToGenerate(refactoringContext);
+
         ModelAccess.instance().runWriteActionInCommand(new Runnable() {
           public void run() {
             refactoring.refactor(refactoringContext);
@@ -183,11 +192,42 @@ public class RefactoringProcessor {
           });
         }
 
+        if (!modelsToGenerate.isEmpty()) {
+          generateModels(modelsToGenerate, refactoringContext);
+        }
+
         refactoring.doWhenDone(refactoringContext);
       }
     };
 
     ThreadUtils.runInUIThreadNoWait(runnable);
+  }
+
+  private void generateModels(final List<SModel> sourceModels, final RefactoringContext refactoringContext) {
+    assert !sourceModels.isEmpty();
+
+    final RefactoringNodeMembersAccessModifier modifier = new RefactoringNodeMembersAccessModifier();
+
+    try {
+      ModelAccess.instance().runWriteAction(new Runnable() {
+        public void run() {
+          refactoringContext.setUpMembersAccessModifier(modifier);
+          modifier.addModelsToModify(sourceModels);
+          SNode.setNodeMemeberAccessModifier(modifier);
+
+
+          List<SModelDescriptor> descriptors = new ArrayList<SModelDescriptor>();
+          for (SModel model : sourceModels) {
+            descriptors.add(model.getModelDescriptor());
+          }
+
+          IOperationContext operationContext = refactoringContext.getSelectedMPSProject().createOperationContext();
+          new GeneratorManager(operationContext.getComponent(Project.class), new GenerationSettings()).generateModelsFromDifferentModules(operationContext, descriptors, IGenerationType.FILES);
+        }
+      });
+    } finally {
+      SNode.setNodeMemeberAccessModifier(null);
+    }
   }
 
   private void updateModels(SModelDescriptor modelDescriptor, RefactoringContext refactoringContext, ILoggableRefactoring refactoring, SModelReference initialModelReference) {

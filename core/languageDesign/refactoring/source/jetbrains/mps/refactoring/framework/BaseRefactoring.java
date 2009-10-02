@@ -1,9 +1,12 @@
 package jetbrains.mps.refactoring.framework;
 
 import jetbrains.mps.refactoring.framework.paramchooser.IChooser;
+import jetbrains.mps.smodel.SModel;
 
 import java.util.HashSet;
 import java.util.Set;
+import java.util.List;
+import java.util.ArrayList;
 
 public abstract class BaseRefactoring implements IRefactoring {
   private Set<String> myTransientParameters = new HashSet<String>();
@@ -32,6 +35,10 @@ public abstract class BaseRefactoring implements IRefactoring {
 
   public boolean init(RefactoringContext refactoringContext) {
     return true;
+  }
+
+  public List<SModel> getModelsToGenerate(RefactoringContext refactoringContext) {
+    return new ArrayList<SModel>();
   }
 
   public void doWhenDone(RefactoringContext refactoringContext) {

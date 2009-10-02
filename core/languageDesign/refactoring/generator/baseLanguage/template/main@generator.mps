@@ -3527,9 +3527,9 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.generator.structure.TemplateDeclaration" id="1215084894629">
-    <property name="name" value="reduce_ModuleExpression" />
+    <property name="name" value="reduce_ModuleOperation" />
     <property name="package" value="RefParams" />
-    <link role="applicableConcept" targetNodeId="1.1215084399714" resolveInfo="ModuleExpression" />
+    <link role="applicableConcept" targetNodeId="1.7953996722066252913" resolveInfo="ModuleOperation" />
     <node role="contentNode" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1215084894630">
       <property name="name" value="doRefactor" />
       <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1215084894631" />
@@ -3542,8 +3542,8 @@
             </node>
             <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1215084894637">
               <link role="baseMethodDeclaration" targetNodeId="3.~RefactoringContext.getSelectedModule():jetbrains.mps.project.IModule" resolveInfo="getSelectedModule" />
+              <node role="templateFragment$attribute" type="jetbrains.mps.lang.generator.structure.TemplateFragment" id="7953996722066278783" />
             </node>
-            <node role="templateFragment$attribute" type="jetbrains.mps.lang.generator.structure.TemplateFragment" id="1215084894638" />
           </node>
         </node>
       </node>
@@ -4543,6 +4543,60 @@
                     <link role="link" targetNodeId="5.1137022507850" />
                   </node>
                 </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="616550569929016724">
+      <property name="name" value="getModelsToGenerate" />
+      <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="616550569929040382">
+        <property name="name" value="refactoringContext" />
+        <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="616550569929040383">
+          <link role="classifier" targetNodeId="3.~RefactoringContext" resolveInfo="RefactoringContext" />
+        </node>
+      </node>
+      <node role="returnType" type="jetbrains.mps.baseLanguage.collections.structure.ListType" id="616550569929040342">
+        <node role="elementType" type="jetbrains.mps.lang.smodel.structure.SModelType" id="616550569929040344" />
+      </node>
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="616550569929016726" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="616550569929016727">
+        <node role="nodeMacro$attribute" type="jetbrains.mps.lang.generator.structure.CopySrcNodeMacro" id="616550569929040348">
+          <node role="sourceNodeQuery" type="jetbrains.mps.lang.generator.structure.SourceSubstituteMacro_SourceNodeQuery" id="616550569929040349">
+            <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="616550569929040350">
+              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="616550569929040354">
+                <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="616550569929040361">
+                  <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="616550569929040356">
+                    <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="616550569929040355" />
+                    <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="616550569929040360">
+                      <link role="link" targetNodeId="1.616550569928923871" />
+                    </node>
+                  </node>
+                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="616550569929040365">
+                    <link role="link" targetNodeId="5.1137022507850" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="616550569929040351">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="616550569929040353" />
+        </node>
+      </node>
+      <node role="nodeMacro$attribute" type="jetbrains.mps.lang.generator.structure.IfMacro" id="616550569929040367">
+        <node role="conditionFunction" type="jetbrains.mps.lang.generator.structure.IfMacro_Condition" id="616550569929040368">
+          <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="616550569929040369">
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="616550569929040370">
+              <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="616550569929040377">
+                <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="616550569929040372">
+                  <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="616550569929040371" />
+                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="616550569929040376">
+                    <link role="link" targetNodeId="1.616550569928923871" />
+                  </node>
+                </node>
+                <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_IsNotNullOperation" id="616550569929040381" />
               </node>
             </node>
           </node>
@@ -6189,6 +6243,263 @@
               <property name="value" value="true" />
             </node>
           </node>
+        </node>
+      </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.generator.structure.MappingConfiguration" id="7953996722066276218">
+    <property name="package" value="Context" />
+    <property name="name" value="context" />
+    <node role="reductionMappingRule" type="jetbrains.mps.lang.generator.structure.Reduction_MappingRule" id="7953996722066536543">
+      <link role="applicableConcept" targetNodeId="1.7953996722066536522" resolveInfo="ContextType" />
+      <node role="ruleConsequence" type="jetbrains.mps.lang.generator.structure.InlineTemplate_RuleConsequence" id="7953996722066536545">
+        <node role="templateNode" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="7953996722066536548">
+          <link role="classifier" targetNodeId="3.~RefactoringContext" resolveInfo="RefactoringContext" />
+        </node>
+      </node>
+    </node>
+    <node role="reductionMappingRule" type="jetbrains.mps.lang.generator.structure.Reduction_MappingRule" id="7953996722066276219">
+      <link role="applicableConcept" targetNodeId="1.7953996722066252911" resolveInfo="ModelDescriptorOperation" />
+      <node role="ruleConsequence" type="jetbrains.mps.lang.generator.structure.TemplateDeclarationReference" id="7953996722066276220">
+        <link role="template" targetNodeId="7953996722066276233" resolveInfo="reduce_ModelDescriptorExpression" />
+      </node>
+    </node>
+    <node role="reductionMappingRule" type="jetbrains.mps.lang.generator.structure.Reduction_MappingRule" id="7953996722066276221">
+      <link role="applicableConcept" targetNodeId="1.7953996722066252917" resolveInfo="NodesOperation" />
+      <node role="ruleConsequence" type="jetbrains.mps.lang.generator.structure.TemplateDeclarationReference" id="7953996722066276222">
+        <link role="template" targetNodeId="7953996722066276269" resolveInfo="reduce_NodesExpression" />
+      </node>
+    </node>
+    <node role="reductionMappingRule" type="jetbrains.mps.lang.generator.structure.Reduction_MappingRule" id="7953996722066276223">
+      <link role="applicableConcept" targetNodeId="1.7953996722066252915" resolveInfo="NodeOperation" />
+      <node role="ruleConsequence" type="jetbrains.mps.lang.generator.structure.TemplateDeclarationReference" id="7953996722066276224">
+        <link role="template" targetNodeId="7953996722066276257" resolveInfo="reduce_NodeExpression" />
+      </node>
+    </node>
+    <node role="reductionMappingRule" type="jetbrains.mps.lang.generator.structure.Reduction_MappingRule" id="7953996722066276225">
+      <link role="applicableConcept" targetNodeId="1.7953996722066252913" resolveInfo="ModuleOperation" />
+      <node role="ruleConsequence" type="jetbrains.mps.lang.generator.structure.TemplateDeclarationReference" id="7953996722066278790">
+        <link role="template" targetNodeId="1215084894629" resolveInfo="reduce_ModuleOperation" />
+      </node>
+    </node>
+    <node role="reductionMappingRule" type="jetbrains.mps.lang.generator.structure.Reduction_MappingRule" id="7953996722066276227">
+      <link role="applicableConcept" targetNodeId="1.7953996722066252921" resolveInfo="ProjectOperation" />
+      <node role="ruleConsequence" type="jetbrains.mps.lang.generator.structure.TemplateDeclarationReference" id="7953996722066276228">
+        <link role="template" targetNodeId="7953996722066276293" resolveInfo="reduce_ProjectExpression" />
+      </node>
+    </node>
+    <node role="reductionMappingRule" type="jetbrains.mps.lang.generator.structure.Reduction_MappingRule" id="7953996722066276229">
+      <link role="applicableConcept" targetNodeId="1.7953996722066252923" resolveInfo="ScopeOperation" />
+      <node role="ruleConsequence" type="jetbrains.mps.lang.generator.structure.TemplateDeclarationReference" id="7953996722066276230">
+        <link role="template" targetNodeId="7953996722066276305" resolveInfo="reduce_ScopeExpression" />
+      </node>
+    </node>
+    <node role="reductionMappingRule" type="jetbrains.mps.lang.generator.structure.Reduction_MappingRule" id="7953996722066276231">
+      <link role="applicableConcept" targetNodeId="1.7953996722066252919" resolveInfo="OperationContextOperation" />
+      <node role="ruleConsequence" type="jetbrains.mps.lang.generator.structure.TemplateDeclarationReference" id="7953996722066276232">
+        <link role="template" targetNodeId="7953996722066276281" resolveInfo="reduce_OperationContextExpression" />
+      </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.generator.structure.TemplateDeclaration" id="7953996722066276233">
+    <property name="name" value="reduce_ModelDescriptorOperation" />
+    <property name="package" value="Context" />
+    <link role="applicableConcept" targetNodeId="1.7953996722066252911" resolveInfo="ModelDescriptorOperation" />
+    <node role="contentNode" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="7953996722066276234">
+      <property name="name" value="doRefactor" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="7953996722066276235" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="7953996722066276236" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="7953996722066276237">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="7953996722066276238">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="7953996722066276239">
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="7953996722066276240">
+              <link role="variableDeclaration" targetNodeId="7953996722066276243" resolveInfo="refactoringContext" />
+            </node>
+            <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="7953996722066276241">
+              <link role="baseMethodDeclaration" targetNodeId="3.~RefactoringContext.getSelectedModel():jetbrains.mps.smodel.SModelDescriptor" resolveInfo="getSelectedModel" />
+              <node role="templateFragment$attribute" type="jetbrains.mps.lang.generator.structure.TemplateFragment" id="7953996722066278782" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="7953996722066276243">
+        <property name="name" value="refactoringContext" />
+        <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="7953996722066276244">
+          <link role="classifier" targetNodeId="3.~RefactoringContext" resolveInfo="RefactoringContext" />
+        </node>
+      </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.generator.structure.TemplateDeclaration" id="7953996722066276245">
+    <property name="name" value="reduce_ModuleExpression" />
+    <property name="package" value="Context" />
+    <link role="applicableConcept" targetNodeId="1.1215084399714" resolveInfo="ModuleExpression" />
+    <node role="contentNode" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="7953996722066276246">
+      <property name="name" value="doRefactor" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="7953996722066276247" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="7953996722066276248" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="7953996722066276249">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="7953996722066276250">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="7953996722066276251">
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="7953996722066276252">
+              <link role="variableDeclaration" targetNodeId="7953996722066276255" resolveInfo="refactoringContext" />
+            </node>
+            <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="7953996722066276253">
+              <link role="baseMethodDeclaration" targetNodeId="3.~RefactoringContext.getSelectedModule():jetbrains.mps.project.IModule" resolveInfo="getSelectedModule" />
+            </node>
+            <node role="templateFragment$attribute" type="jetbrains.mps.lang.generator.structure.TemplateFragment" id="7953996722066276254" />
+          </node>
+        </node>
+      </node>
+      <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="7953996722066276255">
+        <property name="name" value="refactoringContext" />
+        <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="7953996722066276256">
+          <link role="classifier" targetNodeId="3.~RefactoringContext" resolveInfo="RefactoringContext" />
+        </node>
+      </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.generator.structure.TemplateDeclaration" id="7953996722066276257">
+    <property name="name" value="reduce_NodeOperation" />
+    <property name="package" value="Context" />
+    <link role="applicableConcept" targetNodeId="1.7953996722066252915" resolveInfo="NodeOperation" />
+    <node role="contentNode" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="7953996722066276258">
+      <property name="name" value="doRefactor" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="7953996722066276259" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="7953996722066276260" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="7953996722066276261">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="7953996722066276262">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="7953996722066276263">
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="7953996722066276264">
+              <link role="variableDeclaration" targetNodeId="7953996722066276267" resolveInfo="refactoringContext" />
+            </node>
+            <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="7953996722066276265">
+              <link role="baseMethodDeclaration" targetNodeId="3.~RefactoringContext.getSelectedNode():jetbrains.mps.smodel.SNode" resolveInfo="getSelectedNode" />
+              <node role="templateFragment$attribute" type="jetbrains.mps.lang.generator.structure.TemplateFragment" id="7953996722066278785" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="7953996722066276267">
+        <property name="name" value="refactoringContext" />
+        <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="7953996722066276268">
+          <link role="classifier" targetNodeId="3.~RefactoringContext" resolveInfo="RefactoringContext" />
+        </node>
+      </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.generator.structure.TemplateDeclaration" id="7953996722066276269">
+    <property name="name" value="reduce_NodesOperation" />
+    <property name="package" value="Context" />
+    <link role="applicableConcept" targetNodeId="1.7953996722066252917" resolveInfo="NodesOperation" />
+    <node role="contentNode" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="7953996722066276270">
+      <property name="name" value="doRefactor" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="7953996722066276271" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="7953996722066276272" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="7953996722066276273">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="7953996722066276274">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="7953996722066276275">
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="7953996722066276276">
+              <link role="variableDeclaration" targetNodeId="7953996722066276279" resolveInfo="refactoringContext" />
+            </node>
+            <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="7953996722066276277">
+              <link role="baseMethodDeclaration" targetNodeId="3.~RefactoringContext.getSelectedNodes():java.util.List" resolveInfo="getSelectedNodes" />
+              <node role="templateFragment$attribute" type="jetbrains.mps.lang.generator.structure.TemplateFragment" id="7953996722066278786" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="7953996722066276279">
+        <property name="name" value="refactoringContext" />
+        <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="7953996722066276280">
+          <link role="classifier" targetNodeId="3.~RefactoringContext" resolveInfo="RefactoringContext" />
+        </node>
+      </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.generator.structure.TemplateDeclaration" id="7953996722066276281">
+    <property name="name" value="reduce_OperationContextOperation" />
+    <property name="package" value="Context" />
+    <link role="applicableConcept" targetNodeId="1.7953996722066252919" resolveInfo="OperationContextOperation" />
+    <node role="contentNode" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="7953996722066276282">
+      <property name="name" value="doRefactor" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="7953996722066276283" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="7953996722066276284" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="7953996722066276285">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="7953996722066276286">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="7953996722066276287">
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="7953996722066276288">
+              <link role="variableDeclaration" targetNodeId="7953996722066276291" resolveInfo="refactoringContext" />
+            </node>
+            <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="7953996722066276289">
+              <link role="baseMethodDeclaration" targetNodeId="3.~RefactoringContext.getCurrentOperationContext():jetbrains.mps.smodel.IOperationContext" resolveInfo="getCurrentOperationContext" />
+              <node role="templateFragment$attribute" type="jetbrains.mps.lang.generator.structure.TemplateFragment" id="7953996722066278787" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="7953996722066276291">
+        <property name="name" value="refactoringContext" />
+        <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="7953996722066276292">
+          <link role="classifier" targetNodeId="3.~RefactoringContext" resolveInfo="RefactoringContext" />
+        </node>
+      </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.generator.structure.TemplateDeclaration" id="7953996722066276293">
+    <property name="package" value="Context" />
+    <property name="name" value="reduce_ProjectOperation" />
+    <link role="applicableConcept" targetNodeId="1.7953996722066252921" resolveInfo="ProjectOperation" />
+    <node role="contentNode" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="7953996722066276294">
+      <property name="name" value="doRefactor" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="7953996722066276295" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="7953996722066276296" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="7953996722066276297">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="7953996722066276298">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="7953996722066276299">
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="7953996722066276300">
+              <link role="variableDeclaration" targetNodeId="7953996722066276303" resolveInfo="refactoringContext" />
+            </node>
+            <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="7953996722066276301">
+              <link role="baseMethodDeclaration" targetNodeId="3.~RefactoringContext.getSelectedMPSProject():jetbrains.mps.project.MPSProject" resolveInfo="getSelectedMPSProject" />
+              <node role="templateFragment$attribute" type="jetbrains.mps.lang.generator.structure.TemplateFragment" id="7953996722066278788" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="7953996722066276303">
+        <property name="name" value="refactoringContext" />
+        <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="7953996722066276304">
+          <link role="classifier" targetNodeId="3.~RefactoringContext" resolveInfo="RefactoringContext" />
+        </node>
+      </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.generator.structure.TemplateDeclaration" id="7953996722066276305">
+    <property name="name" value="reduce_ScopeOperation" />
+    <property name="package" value="Context" />
+    <link role="applicableConcept" targetNodeId="1.7953996722066252923" resolveInfo="ScopeOperation" />
+    <node role="contentNode" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="7953996722066276306">
+      <property name="name" value="doRefactor" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="7953996722066276307" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="7953996722066276308" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="7953996722066276309">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="7953996722066276310">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="7953996722066276311">
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="7953996722066276312">
+              <link role="variableDeclaration" targetNodeId="7953996722066276315" resolveInfo="refactoringContext" />
+            </node>
+            <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="7953996722066276313">
+              <link role="baseMethodDeclaration" targetNodeId="3.~RefactoringContext.getCurrentScope():jetbrains.mps.smodel.IScope" resolveInfo="getCurrentScope" />
+              <node role="templateFragment$attribute" type="jetbrains.mps.lang.generator.structure.TemplateFragment" id="7953996722066278789" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="7953996722066276315">
+        <property name="name" value="refactoringContext" />
+        <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="7953996722066276316">
+          <link role="classifier" targetNodeId="3.~RefactoringContext" resolveInfo="RefactoringContext" />
         </node>
       </node>
     </node>
