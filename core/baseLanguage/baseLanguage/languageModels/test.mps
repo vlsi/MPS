@@ -1225,7 +1225,7 @@
           <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1220265313994" />
           <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1220265317131">
             <property name="name" value="a" />
-            <node role="type" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="1220265317132" />
+            <node role="type" type="jetbrains.mps.baseLanguage.structure.StringType" id="3485746156533314957" />
           </node>
         </node>
         <node role="constructor" type="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" id="1220265318983">
