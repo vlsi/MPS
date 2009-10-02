@@ -43,7 +43,7 @@ __switch__:
                     case 0:
                       this.__CP__ = 2;
                       break;
-                     default:
+                    default:
                       break __loop__;
                   }
                 } while(true);
