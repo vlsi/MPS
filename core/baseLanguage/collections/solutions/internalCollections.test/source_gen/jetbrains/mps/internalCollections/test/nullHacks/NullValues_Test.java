@@ -166,6 +166,10 @@ __switch__:
                         this.yield((Integer)null);
                         return true;
                       case 3:
+                        this.__CP__ = 4;
+                        this.yield((Integer)null);
+                        return true;
+                      case 4:
                         this.__CP__ = 1;
                         this.yield(nullvalue);
                         return true;

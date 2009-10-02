@@ -1425,6 +1425,14 @@
                                 <node role="expression" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="7556115255731760297" />
                               </node>
                             </node>
+                            <node role="statement" type="jetbrains.mps.baseLanguage.closures.structure.YieldStatement" id="4650868106319805241">
+                              <node role="expression" type="jetbrains.mps.baseLanguage.structure.CastExpression" id="4650868106319805242">
+                                <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="4650868106319805243">
+                                  <link role="classifier" targetNodeId="4.~Integer" resolveInfo="Integer" />
+                                </node>
+                                <node role="expression" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="4650868106319805244" />
+                              </node>
+                            </node>
                             <node role="statement" type="jetbrains.mps.baseLanguage.closures.structure.YieldStatement" id="7556115255731760313">
                               <node role="expression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="7556115255731760325">
                                 <link role="variableDeclaration" targetNodeId="7556115255731760142" resolveInfo="nullvalue" />
