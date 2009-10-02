@@ -1,7 +1,6 @@
 package jetbrains.mps.generator.fileGenerator;
 
 import com.intellij.openapi.components.ApplicationComponent;
-import com.intellij.openapi.application.Application;
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.application.ModalityState;
 import com.intellij.openapi.vfs.VirtualFile;
@@ -10,7 +9,6 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.generator.GenerationStatus;
-import jetbrains.mps.generator.GeneratorManager;
 import jetbrains.mps.generator.ModelGenerationStatusManager;
 import jetbrains.mps.generator.ModelDigestIndex;
 import jetbrains.mps.generator.template.TemplateQueryContext;
@@ -35,7 +33,8 @@ import java.io.InputStream;
 import java.util.*;
 
 public class FileGenerationManager implements ApplicationComponent {
-  private static Logger LOG = Logger.getLogger(FileGenerationManager.class);
+  private static final Logger LOG = Logger.getLogger(FileGenerationManager.class);
+  private static final String CACHES_SUFFIX = ".caches";
 
   public static FileGenerationManager getInstance() {
     return ApplicationManager.getApplication().getComponent(FileGenerationManager.class);
@@ -64,11 +63,10 @@ public class FileGenerationManager implements ApplicationComponent {
     }
 
     File outputRootDirectory = new File(outputDir);
-    GeneratorManager gm = context.getComponent(GeneratorManager.class);
     Map<SNode, String> outputNodeContents = new LinkedHashMap<SNode, String>();
 
     boolean ok = true;
-    if (!generateText(context, status, outputNodeContents, outputDir)) {
+    if (!generateText(context, status, outputNodeContents)) {
       return false;
     }
 
@@ -76,7 +74,7 @@ public class FileGenerationManager implements ApplicationComponent {
     Set<File> generatedFiles = new HashSet<File>();
     Set<File> directories = new HashSet<File>();
 
-    generateFiles(status, outputRootDirectory, gm, outputNodeContents, generatedFiles, directories);
+    generateFiles(status, outputRootDirectory, outputNodeContents, generatedFiles, directories);
 
     MPSVCSManager manager = context.getProject().getComponent(MPSVCSManager.class);
     manager.addFilesToVcs(new ArrayList<File>(generatedFiles), false, false);
@@ -134,7 +132,7 @@ public class FileGenerationManager implements ApplicationComponent {
     }
   }
 
-  private boolean generateText(IOperationContext context, GenerationStatus status, Map<SNode, String> outputNodeContents, String outputRootDir) {
+  private boolean generateText(IOperationContext context, GenerationStatus status, Map<SNode, String> outputNodeContents) {
     boolean hasErrors = false;
     ModelDependencies dependRoot = new ModelDependencies();
     DebugInfo info = new DebugInfo();
@@ -208,7 +206,7 @@ public class FileGenerationManager implements ApplicationComponent {
     }
   }
 
-  private void generateFiles(GenerationStatus status, File outputRootDirectory, GeneratorManager gm, Map<SNode, String> outputNodeContents, Set<File> generatedFiles, Set<File> directories) {
+  private void generateFiles(GenerationStatus status, File outputRootDirectory, Map<SNode, String> outputNodeContents, Set<File> generatedFiles, Set<File> directories) {
     DefaultFileGenerator fileGenerator = new DefaultFileGenerator();
     for (SNode outputRootNode : outputNodeContents.keySet()) {
       try {
