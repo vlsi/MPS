@@ -114,11 +114,11 @@ public class Refactoring extends BaseConcept implements INamedConcept, IConceptA
     super.setChild(Refactoring.DO_REFACTOR_BLOCK, node);
   }
 
-  public GetModelsToGenerateClause getModelsToGenerateBlock() {
-    return (GetModelsToGenerateClause)this.getChild(GetModelsToGenerateClause.class, Refactoring.MODELS_TO_GENERATE_BLOCK);
+  public ModelsToGenerateClause getModelsToGenerateBlock() {
+    return (ModelsToGenerateClause)this.getChild(ModelsToGenerateClause.class, Refactoring.MODELS_TO_GENERATE_BLOCK);
   }
 
-  public void setModelsToGenerateBlock(GetModelsToGenerateClause node) {
+  public void setModelsToGenerateBlock(ModelsToGenerateClause node) {
     super.setChild(Refactoring.MODELS_TO_GENERATE_BLOCK, node);
   }
 

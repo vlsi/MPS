@@ -431,7 +431,7 @@
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1191591349007">
     <property name="name" value="GetModelsToGenerateClause" />
-    <property name="package" value="RefDecl.Methods" />
+    <property name="package" value="Deprecated.Environment" />
     <link role="extends" targetNodeId="2.1137021947720" resolveInfo="ConceptFunction" />
     <node role="conceptLink" type="jetbrains.mps.lang.structure.structure.AggregationConceptLink" id="1191591414955">
       <link role="conceptLinkDeclaration" targetNodeId="2.1137545148427" resolveInfo="conceptFunctionReturnType" />
@@ -1328,7 +1328,7 @@
     <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="616550569928923871">
       <property name="metaClass" value="aggregation" />
       <property name="role" value="modelsToGenerateBlock" />
-      <link role="target" targetNodeId="1191591349007" resolveInfo="GetModelsToGenerateClause" />
+      <link role="target" targetNodeId="1682834381185132063" resolveInfo="ModelsToGenerateClause" />
     </node>
     <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="2058726427123891193">
       <property name="metaClass" value="aggregation" />
@@ -1494,6 +1494,28 @@
     <link role="extends" targetNodeId="2.1068431790189" resolveInfo="Type" />
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.BooleanConceptProperty" id="7953996722066536549">
       <link role="conceptPropertyDeclaration" targetNodeId="1.1137473994950" resolveInfo="dontSubstituteByDefault" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1682834381185132063">
+    <property name="name" value="ModelsToGenerateClause" />
+    <property name="package" value="RefDecl.Methods" />
+    <link role="extends" targetNodeId="2.1137021947720" resolveInfo="ConceptFunction" />
+    <node role="conceptLink" type="jetbrains.mps.lang.structure.structure.AggregationConceptLink" id="1682834381185132064">
+      <link role="conceptLinkDeclaration" targetNodeId="2.1137545148427" resolveInfo="conceptFunctionReturnType" />
+      <node role="target" type="jetbrains.mps.baseLanguage.collections.structure.ListType" id="1682834381185132072">
+        <node role="elementType" type="jetbrains.mps.lang.smodel.structure.SModelType" id="1682834381185132073" />
+      </node>
+    </node>
+    <node role="conceptLink" type="jetbrains.mps.lang.structure.structure.ReferenceConceptLink" id="1682834381185132069">
+      <link role="conceptLinkDeclaration" targetNodeId="2.1161119487665" resolveInfo="applicableConceptFunctionParameter" />
+      <link role="target" targetNodeId="7953996722066256458" resolveInfo="RefactoringContext_ConceptFunctionParameter" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1682834381185132070">
+      <property name="value" value="models to generate" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" resolveInfo="alias" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.BooleanConceptProperty" id="1682834381185132071">
+      <link role="conceptPropertyDeclaration" targetNodeId="2.1216468774225" resolveInfo="showName" />
     </node>
   </node>
 </model>
