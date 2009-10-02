@@ -4382,7 +4382,7 @@
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="280151408461567367">
     <property name="package" value="MethodParameters" />
-    <property name="name" value="AppentTextOperation" />
+    <property name="name" value="AppendTextOperation" />
     <link role="extends" targetNodeId="4531786690998636238" resolveInfo="AbstractOperation" />
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="280151408461603512">
       <property name="value" value="append" />

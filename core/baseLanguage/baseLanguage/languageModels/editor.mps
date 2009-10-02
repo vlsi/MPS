@@ -15507,7 +15507,7 @@
             <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="4531786690999757847">
               <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="4531786690999757849">
                 <node role="operand" type="jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_StyledText" id="4531786690999757848" />
-                <node role="operation" type="jetbrains.mps.lang.editor.structure.AppentTextOperation" id="4531786690999759056">
+                <node role="operation" type="jetbrains.mps.lang.editor.structure.AppendTextOperation" id="4531786690999759056">
                   <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="4531786690999759057">
                     <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="4531786690999759058">
                       <property name="value" value=" " />
@@ -15546,7 +15546,7 @@
               <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="4514257407427190580">
                 <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="4531786690999168331">
                   <node role="operand" type="jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_StyledText" id="4514257407427190582" />
-                  <node role="operation" type="jetbrains.mps.lang.editor.structure.AppentTextOperation" id="4531786690999169538">
+                  <node role="operation" type="jetbrains.mps.lang.editor.structure.AppendTextOperation" id="4531786690999169538">
                     <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="4531786690999358696">
                       <property name="value" value="??? " />
                     </node>
@@ -15561,7 +15561,7 @@
             <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="4531786690999759065">
               <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="4531786690999759067">
                 <node role="operand" type="jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_StyledText" id="4531786690999759066" />
-                <node role="operation" type="jetbrains.mps.lang.editor.structure.AppentTextOperation" id="4531786690999759071">
+                <node role="operation" type="jetbrains.mps.lang.editor.structure.AppendTextOperation" id="4531786690999759071">
                   <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="4531786690999759072">
                     <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="4531786690999759073">
                       <link role="variableDeclaration" targetNodeId="8578539587488584465" resolveInfo="methodDeclaration" />
@@ -15590,7 +15590,7 @@
               <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="4531786690999759076">
                 <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="4531786690999759078">
                   <node role="operand" type="jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_StyledText" id="4531786690999759077" />
-                  <node role="operation" type="jetbrains.mps.lang.editor.structure.AppentTextOperation" id="4531786690999759082">
+                  <node role="operation" type="jetbrains.mps.lang.editor.structure.AppendTextOperation" id="4531786690999759082">
                     <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="4531786690999759083">
                       <property name="value" value="&lt;no name&gt;" />
                     </node>
@@ -15603,7 +15603,7 @@
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="4531786690999759085">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="4531786690999759087">
             <node role="operand" type="jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_StyledText" id="4531786690999759086" />
-            <node role="operation" type="jetbrains.mps.lang.editor.structure.AppentTextOperation" id="4531786690999759091">
+            <node role="operation" type="jetbrains.mps.lang.editor.structure.AppendTextOperation" id="4531786690999759091">
               <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="4531786690999759092">
                 <property name="value" value="(" />
               </node>
@@ -15640,7 +15640,7 @@
                 <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="226730285127854347">
                   <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="226730285127854352">
                     <node role="operand" type="jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_StyledText" id="226730285127854349" />
-                    <node role="operation" type="jetbrains.mps.lang.editor.structure.AppentTextOperation" id="226730285127854356">
+                    <node role="operation" type="jetbrains.mps.lang.editor.structure.AppendTextOperation" id="226730285127854356">
                       <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="226730285127854357">
                         <property name="value" value=", " />
                       </node>
@@ -15684,7 +15684,7 @@
                 <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="226730285127854359">
                   <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="226730285127854360">
                     <node role="operand" type="jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_StyledText" id="226730285127854361" />
-                    <node role="operation" type="jetbrains.mps.lang.editor.structure.AppentTextOperation" id="226730285127854362">
+                    <node role="operation" type="jetbrains.mps.lang.editor.structure.AppendTextOperation" id="226730285127854362">
                       <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="226730285127854370">
                         <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="226730285127854371">
                           <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="226730285127854372">
@@ -15718,7 +15718,7 @@
                   <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="226730285127854365">
                     <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="226730285127854366">
                       <node role="operand" type="jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_StyledText" id="226730285127854367" />
-                      <node role="operation" type="jetbrains.mps.lang.editor.structure.AppentTextOperation" id="226730285127854368">
+                      <node role="operation" type="jetbrains.mps.lang.editor.structure.AppendTextOperation" id="226730285127854368">
                         <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="226730285127854375">
                           <property name="value" value="???" />
                         </node>
@@ -15750,7 +15750,7 @@
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="226730285128041291">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="226730285128041296">
             <node role="operand" type="jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_StyledText" id="226730285128041292" />
-            <node role="operation" type="jetbrains.mps.lang.editor.structure.AppentTextOperation" id="226730285128041300">
+            <node role="operation" type="jetbrains.mps.lang.editor.structure.AppendTextOperation" id="226730285128041300">
               <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="226730285128301690">
                 <property name="value" value=")" />
               </node>
