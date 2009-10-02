@@ -13,8 +13,6 @@
     <string>mps</string>
     <key>CFBundleIconFile</key>
     <string>mps.icns</string>
-    <key>WorkingDirectory</key>
-    <string>$APP_PACKAGE/bin</string>
     <key>CFBundleDevelopmentRegion</key>
     <string>English</string>
     <key>CFBundleInfoDictionaryVersion</key>
@@ -57,6 +55,8 @@
       </dict>
       <key>VMOptions</key>
       <string>-client -Xss1024k -ea -Xmx1200m -XX:MaxPermSize=92m -XX:+HeapDumpOnOutOfMemoryError -Dfile.encoding=UTF-8</string>
+      <key>WorkingDirectory</key>
+      <string>$APP_PACKAGE/bin</string>
     </dict>
   </dict>
 </plist>
