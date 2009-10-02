@@ -18,6 +18,10 @@ import java.util.Map;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.math.BigInteger;
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.io.ByteArrayInputStream;
+import java.io.IOException;
 
 public class ModelDigestIndex extends ScalarIndexExtension<String> {
   private static final Logger LOG = Logger.getLogger(ModelDigestIndex.class);
@@ -26,8 +30,18 @@ public class ModelDigestIndex extends ScalarIndexExtension<String> {
 
   public static String hash(byte[] content) {
     try {
+      BufferedReader reader = new BufferedReader(new InputStreamReader(new ByteArrayInputStream(content)));
+
       MessageDigest digest = MessageDigest.getInstance("SHA");
-      digest.update(content);
+      String line;
+      try {
+        while ((line = reader.readLine()) != null) {
+          digest.update(line.getBytes()); 
+        }
+      } catch (IOException e) {
+        LOG.error(e); //it can't happen
+      }
+
       byte[] res = digest.digest();
       return new BigInteger(res).toString(Character.MAX_RADIX);
     } catch (NoSuchAlgorithmException e) {
