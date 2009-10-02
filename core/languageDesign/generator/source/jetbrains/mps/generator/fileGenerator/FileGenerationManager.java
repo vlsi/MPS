@@ -39,6 +39,8 @@ public class FileGenerationManager implements ApplicationComponent {
     return ApplicationManager.getApplication().getComponent(FileGenerationManager.class);
   }
 
+  private List<CacheGenerator> myCacheGenerators = new ArrayList<CacheGenerator>();
+
   @NotNull
   public String getComponentName() {
     return "File Generation Manager";
@@ -79,6 +81,19 @@ public class FileGenerationManager implements ApplicationComponent {
     return ok;
   }
 
+  public void handleEmptyOutput(IOperationContext context, GenerationStatus status, File outputDir) {
+    cleanUpDefaultOutputDir(status, outputDir, context);
+    touchOutputDir(status, outputDir);
+  }
+
+  public void addCachesGenerator(CacheGenerator g) {
+    myCacheGenerators.add(g);
+  }
+
+  public void removeCachesGenerator(CacheGenerator g) {
+    myCacheGenerators.remove(g);
+  }
+
   private void processGeneratedFiles(
       GenerationStatus status,
       File outputRoot,
@@ -92,10 +107,6 @@ public class FileGenerationManager implements ApplicationComponent {
     cleanUp(status, context, outputRoot, generatedFiles);
   }
 
-  public void handleEmptyOutput(IOperationContext context, GenerationStatus status, File outputDir) {
-    cleanUpDefaultOutputDir(status, outputDir, context);
-    touchOutputDir(status, outputDir);
-  }
 
   private void cleanUpDefaultOutputDir(GenerationStatus status, File outputDir, IOperationContext context) {
     cleanUp(status, context, outputDir, new HashSet<File>(0));
@@ -251,6 +262,14 @@ public class FileGenerationManager implements ApplicationComponent {
     }
 
     Set<File> generatedCaches = new HashSet<File>();
+
+    for (CacheGenerator g : myCacheGenerators) {
+      try {
+        generatedCaches.addAll(g.generateCaches(new CacheGenerationContext(status, outputRootDirectory)));
+      } catch (Throwable t) {
+        LOG.error(t);
+      }
+    }
 
     generatedCaches.addAll(generateDebugInfo(status, outputRootDirectory));
     generatedCaches.addAll(generateDependencyInfo(status, outputRootDirectory));
