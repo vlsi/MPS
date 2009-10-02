@@ -328,6 +328,10 @@
         <component>
             <implementation-class>jetbrains.mps.ide.tooltips.MPSToolTipManager</implementation-class>
         </component>
+
+        <component>
+            <implementation-class>jetbrains.mps.generator.fileGenerator.FileGenerationManager</implementation-class>
+        </component>
     </application-components>
 
     <project-components>

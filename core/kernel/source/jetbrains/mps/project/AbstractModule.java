@@ -814,6 +814,10 @@ public abstract class AbstractModule implements IModule {
     return getModuleDescriptor().updateModuleRefs();
   }
 
+  public String getGeneratedCachesOutputPath() {
+    return getGeneratorOutputPath() + File.separator + ".caches";
+  }
+
   protected ModuleDescriptor loadDescriptor() {
     return null;
   }
