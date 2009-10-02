@@ -93,8 +93,6 @@ public interface IModule extends ModelOwner, MPSModuleOwner {
 
   String getGeneratorOutputPath();
 
-  String getGeneratedCachesOutputPath();
-
   IFile getClassesGen();
 
   File getBundleHome();
