@@ -967,7 +967,7 @@ public class QueriesGenerated {
   }
 
   public static Object referenceMacro_GetReferent_4531786690998911335(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return SConceptPropertyOperations.getString(_context.getNode(), "generatedName");
+    return SConceptPropertyOperations.getString(_context.getNode(), "methodToGenerate");
   }
 
   public static Object referenceMacro_GetReferent_5170495790389308592(final IOperationContext operationContext, final ReferenceMacroContext _context) {
