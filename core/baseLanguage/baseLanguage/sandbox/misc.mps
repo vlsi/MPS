@@ -1024,6 +1024,15 @@
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="5766921824837040040">
     <property name="name" value="TestSequence" />
     <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="5766921824837040041" />
+    <node role="constructor" type="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" id="3115327157610151737">
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="3115327157610151738" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="3115327157610151739" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="3115327157610151740" />
+      <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="3115327157610151741">
+        <property name="name" value="a" />
+        <node role="type" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="3115327157610151742" />
+      </node>
+    </node>
     <node role="constructor" type="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" id="5766921824837040042">
       <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="5766921824837040043" />
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="5766921824837040044" />
@@ -1068,6 +1077,10 @@
             </node>
           </node>
         </node>
+      </node>
+      <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="3115327157610151743">
+        <property name="name" value="a" />
+        <node role="type" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="3115327157610151744" />
       </node>
     </node>
   </node>

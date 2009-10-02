@@ -14,13 +14,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.baseLanguage.search.IClassifiersSearchScope;
 import jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.baseLanguage.behavior.BaseMethodDeclaration_Behavior;
-import jetbrains.mps.intentions.BaseIntentionProvider;
-import jetbrains.mps.typesystem.inference.IErrorTarget;
-import jetbrains.mps.typesystem.inference.NodeErrorTarget;
-import jetbrains.mps.lang.core.behavior.INamedConcept_Behavior;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class check_DuplicateMethods_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
@@ -31,36 +24,11 @@ public class check_DuplicateMethods_NonTypesystemRule extends AbstractNonTypesys
     List<SNode> ownMethods = Classifier_Behavior.call_getOwnMethods_1906502351318572840(classifier);
     ClassifierAndSuperClassifiersScope scope = new ClassifierAndSuperClassifiersScope(((Classifier)SNodeOperations.getAdapter(classifier)), IClassifiersSearchScope.INSTANCE_METHOD | IClassifiersSearchScope.STATIC_METHOD);
     for (SNode ownMethod : ownMethods) {
-      String erasureSignature = null;
       List<BaseMethodDeclaration> namesakes = scope.getMethodsByName(SPropertyOperations.getString(ownMethod, "name"));
       if (namesakes.size() < 2) {
         continue;
       }
-      for (BaseMethodDeclaration namesakeAdapter : namesakes) {
-        SNode namesake = (SNode)namesakeAdapter.getNode();
-        if (namesake == ownMethod) {
-          continue;
-        }
-        if (SNodeOperations.getParent(namesake) != classifier) {
-          // can't be duplicated, is overriden
-          continue;
-        }
-        if (ListSequence.fromList(SLinkOperations.getTargets(namesake, "parameter", true)).count() != ListSequence.fromList(SLinkOperations.getTargets(ownMethod, "parameter", true)).count()) {
-          continue;
-        }
-        if (erasureSignature == null) {
-          erasureSignature = BaseMethodDeclaration_Behavior.call_getErasureSignature_2830572026628006618(ownMethod);
-        }
-        String namesakeErasureSignature = BaseMethodDeclaration_Behavior.call_getErasureSignature_2830572026628006618(namesake);
-        if (namesakeErasureSignature.equals(erasureSignature)) {
-          {
-            BaseIntentionProvider intentionProvider = null;
-            IErrorTarget errorTarget = new NodeErrorTarget();
-            typeCheckingContext.reportTypeError(ownMethod, "method has duplicate erasure with " + INamedConcept_Behavior.call_getFqName_1213877404258(SNodeOperations.getAncestor(namesake, "jetbrains.mps.baseLanguage.structure.Classifier", false, false)) + "." + SPropertyOperations.getString(ownMethod, "name") + "(" + namesakeErasureSignature + ")", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1906502351318608245", intentionProvider, errorTarget);
-          }
-          break;
-        }
-      }
+      RulesFunctions_BaseLanguage.checkDuplicates(typeCheckingContext, ownMethod, classifier, namesakes);
     }
   }
 

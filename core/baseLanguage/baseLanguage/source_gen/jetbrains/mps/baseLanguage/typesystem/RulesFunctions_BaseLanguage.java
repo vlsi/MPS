@@ -23,6 +23,10 @@ import jetbrains.mps.lang.core.behavior.BaseConcept_Behavior;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.baseLanguage.behavior.TypeVariableDeclaration_Behavior;
 import jetbrains.mps.lang.typesystem.dependencies.CheckingMethod;
+import jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration;
+import jetbrains.mps.baseLanguage.behavior.BaseMethodDeclaration_Behavior;
+import jetbrains.mps.lang.core.behavior.INamedConcept_Behavior;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import java.util.Set;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
@@ -462,6 +466,36 @@ __switch__:
       } while(false);
     }
     return false;
+  }
+
+  @CheckingMethod
+  public static void checkDuplicates(final TypeCheckingContext typeCheckingContext, SNode ownMethod, SNode classifier, List<BaseMethodDeclaration> namesakes) {
+    String erasureSignature = null;
+    for (BaseMethodDeclaration namesakeAdapter : namesakes) {
+      SNode namesake = (SNode)namesakeAdapter.getNode();
+      if (namesake == ownMethod) {
+        continue;
+      }
+      if (SNodeOperations.getParent(namesake) != classifier) {
+        // can't be duplicated, is overriden
+        continue;
+      }
+      if (ListSequence.fromList(SLinkOperations.getTargets(namesake, "parameter", true)).count() != ListSequence.fromList(SLinkOperations.getTargets(ownMethod, "parameter", true)).count()) {
+        continue;
+      }
+      if (erasureSignature == null) {
+        erasureSignature = BaseMethodDeclaration_Behavior.call_getErasureSignature_2830572026628006618(ownMethod);
+      }
+      String namesakeErasureSignature = BaseMethodDeclaration_Behavior.call_getErasureSignature_2830572026628006618(namesake);
+      if (namesakeErasureSignature.equals(erasureSignature)) {
+        {
+          BaseIntentionProvider intentionProvider = null;
+          IErrorTarget errorTarget = new NodeErrorTarget();
+          typeCheckingContext.reportTypeError(ownMethod, "method has duplicate erasure with " + INamedConcept_Behavior.call_getFqName_1213877404258(SNodeOperations.getAncestor(namesake, "jetbrains.mps.baseLanguage.structure.Classifier", false, false)) + "." + SPropertyOperations.getString(ownMethod, "name") + "(" + namesakeErasureSignature + ")", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "3115327157609989939", intentionProvider, errorTarget);
+        }
+        break;
+      }
+    }
   }
 
   @CheckingMethod
