@@ -38,7 +38,7 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)" version="32" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590298(jetbrains.mps.lang.editor.constraints)" version="21" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590402(jetbrains.mps.baseLanguage.strings.structure)" version="9" />
-  <maxImportIndex value="155" />
+  <maxImportIndex value="157" />
   <import index="125" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" />
   <import index="138" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="3" />
   <import index="149" modelUID="f:java_stub#java.util(java.util@java_stub)" version="-1" />
@@ -48,6 +48,8 @@
   <import index="153" modelUID="f:java_stub#org.jdom(org.jdom@java_stub)" version="-1" />
   <import index="154" modelUID="r:00000000-0000-4000-0000-011c895903ee(jetbrains.mps.internalCollections.test.closures)" version="-1" />
   <import index="155" modelUID="f:java_stub#jetbrains.mps.internal.collections.runtime(jetbrains.mps.internal.collections.runtime@java_stub)" version="-1" />
+  <import index="156" modelUID="f:java_stub#javax.swing(javax.swing@java_stub)" version="-1" />
+  <import index="157" modelUID="f:java_stub#java.awt(java.awt@java_stub)" version="-1" />
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="7367456871926097103">
     <property name="name" value="OrdinaryWithInnerClass" />
     <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="7367456871926097104" />
@@ -1081,6 +1083,51 @@
       <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="3115327157610151743">
         <property name="name" value="a" />
         <node role="type" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="3115327157610151744" />
+      </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="5258314681672091282">
+    <property name="name" value="TestAddComponent" />
+    <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="5258314681672091283" />
+    <node role="constructor" type="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" id="5258314681672091284">
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="5258314681672091285" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="5258314681672091286" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="5258314681672091287">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="5258314681672096739">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="5258314681672096740">
+            <property name="name" value="tree" />
+            <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="5258314681672096741">
+              <link role="classifier" targetNodeId="156.~JComponent" resolveInfo="JComponent" />
+            </node>
+            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="5258314681672096743" />
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="5258314681672093209">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="5258314681672093210">
+            <property name="name" value="p" />
+            <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="5258314681672093211">
+              <link role="classifier" targetNodeId="156.~JPanel" resolveInfo="JPanel" />
+            </node>
+            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="5258314681672093213" />
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="5258314681672093215">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="5258314681672093217">
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="5258314681672093216">
+              <link role="variableDeclaration" targetNodeId="5258314681672093210" resolveInfo="p" />
+            </node>
+            <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="5258314681672096737">
+              <link role="baseMethodDeclaration" targetNodeId="157.~Container.add(java.awt.Component,java.lang.Object):void" resolveInfo="add" />
+              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="5258314681672096744">
+                <link role="variableDeclaration" targetNodeId="5258314681672096740" resolveInfo="tree" />
+              </node>
+              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference" id="5258314681672096746">
+                <link role="classifier" targetNodeId="157.~BorderLayout" resolveInfo="BorderLayout" />
+                <link role="variableDeclaration" targetNodeId="157.~BorderLayout.CENTER" resolveInfo="CENTER" />
+              </node>
+            </node>
+          </node>
+        </node>
       </node>
     </node>
   </node>
