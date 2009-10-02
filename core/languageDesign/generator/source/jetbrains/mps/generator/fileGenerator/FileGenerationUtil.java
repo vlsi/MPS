@@ -18,6 +18,7 @@ package jetbrains.mps.generator.fileGenerator;
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.application.ModalityState;
 import com.intellij.openapi.vfs.VirtualFile;
+import com.intellij.openapi.progress.ProgressIndicator;
 import jetbrains.mps.baseLanguage.plugin.DebugInfo;
 import jetbrains.mps.baseLanguage.plugin.PositionInfo;
 import jetbrains.mps.baseLanguage.textGen.ModelDependencies;
@@ -36,6 +37,7 @@ import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.util.ReadUtil;
 import jetbrains.mps.ide.IdeMain;
+import jetbrains.mps.ide.messages.IMessageHandler;
 
 import java.io.File;
 import java.io.IOException;
@@ -44,6 +46,21 @@ import java.util.*;
 
 public class FileGenerationUtil {
   public static final Logger LOG = Logger.getLogger(FileGenerationUtil.class);
+
+  public static File getDefaultOutputDir(SModelDescriptor inputModelDescriptor, File outputRootDir) {
+    SModelReference reference = inputModelDescriptor.getSModelReference();
+    return getDefaultOutputDir(reference, outputRootDir);
+  }
+
+  public static File getDefaultOutputDir(SModel inputModel, File outputRootDir) {
+    return getDefaultOutputDir(inputModel.getSModelReference(), outputRootDir);
+  }
+
+  private static File getDefaultOutputDir(SModelReference reference, File outputRootDir) {
+    String packageName = JavaNameUtil.packageNameForModelUID(reference);
+    File file = new File(outputRootDir, packageName.replace('.', File.separatorChar));
+    return file;
+  }
 
   public static boolean handleOutput(IOperationContext context,
                                      GenerationStatus status,
@@ -81,6 +98,36 @@ public class FileGenerationUtil {
     return ok;
   }
 
+  public static void handleEmptyOutput(GenerationStatus status, String outputDir, IOperationContext context) {
+    cleanUpDefaultOutputDir(status, outputDir, context);
+    touchOutputDir(status, new File(outputDir));
+  }
+
+  private static void cleanUpDefaultOutputDir(GenerationStatus status, String outputDir, IOperationContext context) {
+    Set<File> directories = new HashSet<File>(1);
+    directories.add(getDefaultOutputDir(status.getInputModel(), new File(outputDir)));
+    cleanUp(context, new HashSet<File>(0), directories);
+  }
+
+  private static void cleanUp(IOperationContext context, Set<File> generatedFiles, Set<File> directories) {
+    // clear garbage
+    List<File> filesToDelete = new ArrayList<File>();
+    for (File dir : directories) {
+      File[] files = dir.listFiles();
+      if (files != null) {
+        for (File outputDirectoryFile : files) {
+          if (!outputDirectoryFile.isDirectory() && !outputDirectoryFile.isHidden()) {
+            if (!generatedFiles.contains(outputDirectoryFile)) {
+              filesToDelete.add(outputDirectoryFile);
+            }
+          }
+        }
+      }
+    }
+    MPSVCSManager manager = context.getComponent(MPSVCSManager.class);
+    manager.deleteFilesAndRemoveFromVcs(filesToDelete, false);
+  }
+
   private static void refreshGeneratedFiles(final Set<File> generatedFiles) {
     if (IdeMain.getTestMode().equals(IdeMain.TestMode.NO_TEST)) {
       ApplicationManager.getApplication().invokeLater(new Runnable() {
@@ -95,22 +142,7 @@ public class FileGenerationUtil {
     }
   }
 
-  public static File getDefaultOutputDir(SModelDescriptor inputModelDescriptor, File outputRootDir) {
-    SModelReference reference = inputModelDescriptor.getSModelReference();
-    return getDefaultOutputDir(reference, outputRootDir);
-  }
-
-  private static File getDefaultOutputDir(SModelReference reference, File outputRootDir) {
-    String packageName = JavaNameUtil.packageNameForModelUID(reference);
-    File file = new File(outputRootDir, packageName.replace('.', File.separatorChar));
-    return file;
-  }
-
-  public static File getDefaultOutputDir(SModel inputModel, File outputRootDir) {
-    return getDefaultOutputDir(inputModel.getSModelReference(), outputRootDir);
-  }
-
-  public static boolean generateText(IOperationContext context, GenerationStatus status, Map<SNode, String> outputNodeContents, String outputRootDir) {
+  private static boolean generateText(IOperationContext context, GenerationStatus status, Map<SNode, String> outputNodeContents, String outputRootDir) {
     boolean hasErrors = false;
     ModelDependencies dependRoot = new ModelDependencies();
     DebugInfo info = new DebugInfo();
@@ -172,32 +204,7 @@ public class FileGenerationUtil {
     return result;
   }
 
-  public static void cleanUp(IOperationContext context, Set<File> generatedFiles, Set<File> directories) {
-    // clear garbage
-    List<File> filesToDelete = new ArrayList<File>();
-    for (File dir : directories) {
-      File[] files = dir.listFiles();
-      if (files != null) {
-        for (File outputDirectoryFile : files) {
-          if (!outputDirectoryFile.isDirectory() && !outputDirectoryFile.isHidden()) {
-            if (!generatedFiles.contains(outputDirectoryFile)) {
-              filesToDelete.add(outputDirectoryFile);
-            }
-          }
-        }
-      }
-    }
-    MPSVCSManager manager = context.getComponent(MPSVCSManager.class);
-    manager.deleteFilesAndRemoveFromVcs(filesToDelete, false);
-  }
-
-  public static void cleanUpDefaultOutputDir(GenerationStatus status, String outputDir, IOperationContext context) {
-    Set<File> directories = new HashSet<File>(1);
-    directories.add(getDefaultOutputDir(status.getInputModel(), new File(outputDir)));
-    cleanUp(context, new HashSet<File>(0), directories);
-  }
-
-  public static void touchOutputDir(GenerationStatus status, File outputRootDirectory) {
+  private static void touchOutputDir(GenerationStatus status, File outputRootDirectory) {
     File outDir = FileGenerationUtil.getDefaultOutputDir(status.getInputModel(), outputRootDirectory);
     if (!outDir.exists()) {
       if (!outDir.mkdirs()) {
@@ -209,7 +216,7 @@ public class FileGenerationUtil {
     }
   }
 
-  public static void generateFiles(GenerationStatus status, File outputRootDirectory, GeneratorManager gm, Map<SNode, String> outputNodeContents, Set<File> generatedFiles, Set<File> directories) {
+  private static void generateFiles(GenerationStatus status, File outputRootDirectory, GeneratorManager gm, Map<SNode, String> outputNodeContents, Set<File> generatedFiles, Set<File> directories) {
     DefaultFileGenerator fileGenerator = new DefaultFileGenerator();
     for (SNode outputRootNode : outputNodeContents.keySet()) {
       try {
