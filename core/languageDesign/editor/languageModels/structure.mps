@@ -4380,5 +4380,94 @@
       </node>
     </node>
   </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="280151408461567367">
+    <property name="package" value="MethodParameters" />
+    <property name="name" value="AppentTextOperation" />
+    <link role="extends" targetNodeId="4531786690998636238" resolveInfo="AbstractOperation" />
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="280151408461603512">
+      <property name="value" value="append" />
+      <link role="conceptPropertyDeclaration" targetNodeId="3.1137473891462" resolveInfo="alias" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="4531786690998911346">
+      <property name="value" value="append" />
+      <link role="conceptPropertyDeclaration" targetNodeId="4531786690998812995" resolveInfo="generatedName" />
+    </node>
+    <node role="conceptLink" type="jetbrains.mps.lang.structure.structure.AggregationConceptLink" id="4531786690998911347">
+      <link role="conceptLinkDeclaration" targetNodeId="4531786690998812992" resolveInfo="operationArgumentType" />
+      <node role="target" type="jetbrains.mps.baseLanguage.structure.StringType" id="4531786690998911349" />
+    </node>
+    <node role="conceptLink" type="jetbrains.mps.lang.structure.structure.AggregationConceptLink" id="4531786690998911351">
+      <link role="conceptLinkDeclaration" targetNodeId="4531786690998780612" resolveInfo="operationReturnType" />
+      <node role="target" type="jetbrains.mps.baseLanguage.structure.VoidType" id="4531786690998911353" />
+    </node>
+    <node role="conceptLink" type="jetbrains.mps.lang.structure.structure.AggregationConceptLink" id="6050628152419742300">
+      <link role="conceptLinkDeclaration" targetNodeId="6050628152419604261" resolveInfo="operandType" />
+      <node role="target" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="6050628152419774680">
+        <link role="classifier" targetNodeId="42.8394433674396727873" resolveInfo="StyledTextPrinter" />
+      </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="280151408461909164">
+    <property name="package" value="MethodParameters" />
+    <property name="name" value="SetBoldOperation" />
+    <link role="extends" targetNodeId="4531786690998636238" resolveInfo="AbstractOperation" />
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="280151408461967237">
+      <property name="value" value="setBold" />
+      <link role="conceptPropertyDeclaration" targetNodeId="3.1137473891462" resolveInfo="alias" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="226730285128288237">
+      <property name="value" value="setBold" />
+      <link role="conceptPropertyDeclaration" targetNodeId="4531786690998812995" resolveInfo="methodToGenerate" />
+    </node>
+    <node role="conceptLink" type="jetbrains.mps.lang.structure.structure.AggregationConceptLink" id="226730285128288238">
+      <link role="conceptLinkDeclaration" targetNodeId="6050628152419604261" resolveInfo="operandType" />
+      <node role="target" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="226730285128288244">
+        <link role="classifier" targetNodeId="42.8394433674396727873" resolveInfo="StyledTextPrinter" />
+      </node>
+    </node>
+    <node role="conceptLink" type="jetbrains.mps.lang.structure.structure.AggregationConceptLink" id="226730285128288247">
+      <link role="conceptLinkDeclaration" targetNodeId="4531786690998780612" resolveInfo="operationReturnType" />
+      <node role="target" type="jetbrains.mps.baseLanguage.structure.VoidType" id="226730285128288249" />
+    </node>
+    <node role="conceptLink" type="jetbrains.mps.lang.structure.structure.AggregationConceptLink" id="7686902624460872740">
+      <link role="conceptLinkDeclaration" targetNodeId="4531786690998812992" resolveInfo="operationArgumentType" />
+      <node role="target" type="jetbrains.mps.baseLanguage.structure.BooleanType" id="7686902624460905120" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="4531786690998636238">
+    <property name="package" value="MethodParameters" />
+    <property name="name" value="AbstractOperation" />
+    <link role="extends" targetNodeId="3.1133920641626" resolveInfo="BaseConcept" />
+    <node role="conceptLinkDeclaration" type="jetbrains.mps.lang.structure.structure.AggregationConceptLinkDeclaration" id="6050628152419604261">
+      <property name="name" value="operandType" />
+      <link role="targetType" targetNodeId="4.1068431790189" resolveInfo="Type" />
+    </node>
+    <node role="conceptLinkDeclaration" type="jetbrains.mps.lang.structure.structure.AggregationConceptLinkDeclaration" id="4531786690998780612">
+      <property name="name" value="operationReturnType" />
+      <link role="targetType" targetNodeId="4.1068431790189" resolveInfo="Type" />
+    </node>
+    <node role="conceptLinkDeclaration" type="jetbrains.mps.lang.structure.structure.AggregationConceptLinkDeclaration" id="4531786690998812992">
+      <property name="name" value="operationArgumentType" />
+      <link role="targetType" targetNodeId="4.1068431790189" resolveInfo="Type" />
+    </node>
+    <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="4531786690998636239">
+      <link role="intfc" targetNodeId="4.1197027803184" resolveInfo="IOperation" />
+    </node>
+    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="4531786690998636240">
+      <property name="metaClass" value="aggregation" />
+      <property name="sourceCardinality" value="0..n" />
+      <property name="role" value="actualArgument" />
+      <link role="target" targetNodeId="4.1068431790191" resolveInfo="Expression" />
+    </node>
+    <node role="conceptPropertyDeclaration" type="jetbrains.mps.lang.structure.structure.StringConceptPropertyDeclaration" id="4531786690998812995">
+      <property name="name" value="methodToGenerate" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.BooleanConceptProperty" id="2835407828667813404">
+      <link role="conceptPropertyDeclaration" targetNodeId="3.1137473854053" resolveInfo="abstract" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.BooleanConceptProperty" id="226730285126749472">
+      <link role="conceptPropertyDeclaration" targetNodeId="3.1137473994950" resolveInfo="dontSubstituteByDefault" />
+    </node>
+  </node>
 </model>
 

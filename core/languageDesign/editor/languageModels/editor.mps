@@ -9139,5 +9139,34 @@
       </node>
     </node>
   </node>
+  <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" id="4531786690998636241">
+    <property name="package" value="MethodParameters" />
+    <link role="conceptDeclaration" targetNodeId="2.4531786690998636238" resolveInfo="AbstractOperation" />
+    <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="4531786690998643495">
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_ConceptProperty" id="4531786690998643498">
+        <link role="relationDeclaration" targetNodeId="3.1137473891462" resolveInfo="alias" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="4531786690998643500">
+        <property name="text" value="(" />
+        <link role="styleClass" targetNodeId="26.1234958090348" resolveInfo="LeftParenAfterName" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNodeList" id="4531786690998643504">
+        <property name="separatorText" value="," />
+        <property name="attractsFocus" value="1" />
+        <link role="relationDeclaration" targetNodeId="2.4531786690998636240" />
+        <node role="cellLayout" type="jetbrains.mps.lang.editor.structure.CellLayout_Indent" id="4531786690998643505" />
+        <node role="emptyCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="4531786690999175821">
+          <node role="styleItem" type="jetbrains.mps.lang.editor.structure.EditableStyleClassItem" id="226730285128041306">
+            <property name="flag" value="true" />
+          </node>
+        </node>
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="4531786690998643502">
+        <property name="text" value=")" />
+        <link role="styleClass" targetNodeId="26.1215088010675" resolveInfo="RightParen" />
+      </node>
+      <node role="cellLayout" type="jetbrains.mps.lang.editor.structure.CellLayout_Indent" id="4531786690998643497" />
+    </node>
+  </node>
 </model>
 

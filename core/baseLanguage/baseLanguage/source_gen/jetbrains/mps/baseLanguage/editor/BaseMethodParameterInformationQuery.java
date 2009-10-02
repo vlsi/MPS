@@ -59,13 +59,11 @@ public class BaseMethodParameterInformationQuery extends ParametersInformation {
       styledText.append("<no name>");
     }
     styledText.append("(");
-    boolean first = true;
     int i = 0;
     for (SNode parm : SLinkOperations.getTargets(methodDeclaration, "parameter", true)) {
       if (i > 0) {
         styledText.append(", ");
       }
-      first = false;
       if (i == argumentIndex) {
         styledText.setBold(true);
       }

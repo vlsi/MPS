@@ -5733,6 +5733,7 @@
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1220377841650">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" id="1220378585178">
           <link role="constructorDeclaration" targetNodeId="1220377860700" resolveInfo="_ExtractMethodRefactoring" />
+          <link role="baseMethodDeclaration" targetNodeId="1220377860700" resolveInfo="ExtractMethodRefactoring" />
           <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1220378587601">
             <link role="variableDeclaration" targetNodeId="1220377999661" resolveInfo="params" />
           </node>
@@ -10928,6 +10929,7 @@
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1220539339111">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" id="1220539646573">
           <link role="constructorDeclaration" targetNodeId="1220377860700" resolveInfo="_ExtractMethodRefactoring" />
+          <link role="baseMethodDeclaration" targetNodeId="1220377860700" resolveInfo="ExtractMethodRefactoring" />
           <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1220539649996">
             <link role="variableDeclaration" targetNodeId="1220539593057" resolveInfo="params" />
           </node>
@@ -12845,6 +12847,7 @@
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1221225784269">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" id="1221225941696">
           <link role="constructorDeclaration" targetNodeId="1220539339108" resolveInfo="_ExtractMethodFromStatementsRefactoring" />
+          <link role="baseMethodDeclaration" targetNodeId="1220539339108" resolveInfo="ExtractMethodFromStatementsRefactoring" />
           <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1221225942978">
             <link role="variableDeclaration" targetNodeId="1221225932147" resolveInfo="parameters" />
           </node>
@@ -13053,6 +13056,7 @@
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1221233092700">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" id="1222435685262">
           <link role="constructorDeclaration" targetNodeId="1220539339108" resolveInfo="_ExtractMethodFromStatementsRefactoring" />
+          <link role="baseMethodDeclaration" targetNodeId="1220539339108" resolveInfo="ExtractMethodFromStatementsRefactoring" />
           <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1222435686670">
             <link role="variableDeclaration" targetNodeId="1221233214145" resolveInfo="parameters" />
           </node>
@@ -13323,6 +13327,7 @@
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1221235524103">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" id="1221235638420">
           <link role="constructorDeclaration" targetNodeId="1220539339108" resolveInfo="_ExtractMethodFromStatementsRefactoring" />
+          <link role="baseMethodDeclaration" targetNodeId="1220539339108" resolveInfo="ExtractMethodFromStatementsRefactoring" />
           <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1221235645687">
             <link role="variableDeclaration" targetNodeId="1221235634637" resolveInfo="params" />
           </node>
@@ -13646,6 +13651,7 @@
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1221395108892">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" id="1221582861684">
           <link role="constructorDeclaration" targetNodeId="1221578571955" resolveInfo="ExtractMethodRefactoringProcessor" />
+          <link role="baseMethodDeclaration" targetNodeId="1221578571955" resolveInfo="AbstractExtractMethodRefactoringProcessor" />
           <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1221582863762">
             <link role="variableDeclaration" targetNodeId="1221395181840" resolveInfo="clazz" />
           </node>
