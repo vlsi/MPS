@@ -12848,15 +12848,20 @@
               </node>
               <node role="condition" type="jetbrains.mps.baseLanguage.structure.AndExpression" id="1239367922613">
                 <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.NotExpression" id="1239368334970">
-                  <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1239367943604">
-                    <node role="operand" type="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" id="1239367931976">
-                      <link role="concept" targetNodeId="1.1068581242866" resolveInfo="LocalVariableReference" />
-                      <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1239367924546">
-                        <link role="variableDeclaration" targetNodeId="1223640624833" resolveInfo="read" />
+                  <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1239368289643">
+                    <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1239367943604">
+                      <node role="operand" type="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" id="1239367931976">
+                        <link role="concept" targetNodeId="1.1068581242866" resolveInfo="LocalVariableReference" />
+                        <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1239367924546">
+                          <link role="variableDeclaration" targetNodeId="1223640624833" resolveInfo="read" />
+                        </node>
+                      </node>
+                      <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1239368289223">
+                        <link role="link" targetNodeId="1.1070568296581" />
                       </node>
                     </node>
-                    <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="2852729307629359018">
-                      <link role="baseMethodDeclaration" targetNodeId="37.1225456272518" resolveInfo="isVariableDefinedInThisMethod" />
+                    <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1239368311635">
+                      <link role="baseMethodDeclaration" targetNodeId="37.1229352990212" resolveInfo="isVariableReferencedInClosures" />
                     </node>
                   </node>
                 </node>
