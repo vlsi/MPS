@@ -15,8 +15,6 @@
  */
 package jetbrains.mps.textGen;
 
-import jetbrains.mps.baseLanguage.plugin.PositionInfo;
-import jetbrains.mps.baseLanguage.plugin.DebugInfo;
 import jetbrains.mps.baseLanguage.structure.Statement;
 import jetbrains.mps.lang.structure.structure.ConceptDeclaration;
 import jetbrains.mps.logging.Logger;
@@ -28,6 +26,8 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.misc.hash.HashMap;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
+import jetbrains.mps.debug.baseLanguage.PositionInfo;
+import jetbrains.mps.debug.baseLanguage.DebugInfo;
 
 import java.util.Map;
 import java.util.List;

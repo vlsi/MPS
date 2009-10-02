@@ -21,9 +21,9 @@ import jetbrains.mps.compiler.JavaCompiler;
 import jetbrains.mps.generator.JavaNameUtil;
 import jetbrains.mps.baseLanguage.structure.ClassConcept;
 import jetbrains.mps.baseLanguage.structure.Interface;
-import jetbrains.mps.baseLanguage.plugin.PositionInfo;
 import jetbrains.mps.reloading.CompositeClassPathItem;
 import jetbrains.mps.reloading.CommonPaths;
+import jetbrains.mps.debug.baseLanguage.PositionInfo;
 import org.eclipse.jdt.core.compiler.CategorizedProblem;
 import com.intellij.openapi.progress.ProgressIndicator;
 

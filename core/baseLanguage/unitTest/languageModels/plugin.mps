@@ -57,7 +57,7 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590402(jetbrains.mps.baseLanguage.strings.structure)" version="9" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590373(jetbrains.mps.baseLanguage.classifiers.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902d5(jetbrains.mps.baseLanguage.unitTest.plugin)" version="0" />
-  <maxImportIndex value="92" />
+  <maxImportIndex value="93" />
   <import index="1" modelUID="r:00000000-0000-4000-0000-011c895902d7(jetbrains.mps.baseLanguage.unitTest.structure)" version="-1" />
   <import index="2" modelUID="f:java_stub#java.lang(java.lang@java_stub)" version="-1" />
   <import index="5" modelUID="f:java_stub#java.awt(java.awt@java_stub)" version="-1" />
@@ -132,6 +132,7 @@
   <import index="90" modelUID="r:00000000-0000-4000-0000-011c89590368(jetbrains.mps.lang.plugin.structure)" version="21" />
   <import index="91" modelUID="f:java_stub#com.intellij.openapi.keymap(com.intellij.openapi.keymap@java_stub)" version="-1" />
   <import index="92" modelUID="f:java_stub#jetbrains.mps.project.structure.modules(jetbrains.mps.project.structure.modules@java_stub)" version="-1" />
+  <import index="93" modelUID="r:af5efca5-3385-45cc-9441-f2124214c2e2(jetbrains.mps.debug.baseLanguage)" version="-1" />
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="1208270545572">
     <property name="name" value="JUnitTestViewComponent" />
     <property name="package" value="tool" />
@@ -7267,8 +7268,8 @@
               <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1208781508798">
                 <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="4558549435474305175">
                   <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="4558549435474305178">
-                    <link role="baseMethodDeclaration" targetNodeId="44.7079439422377518123" resolveInfo="appendStacktraceToConsole" />
-                    <link role="classConcept" targetNodeId="44.7079439422377517829" resolveInfo="StacktraceUtil" />
+                    <link role="classConcept" targetNodeId="93.4494976841093370953" resolveInfo="StacktraceUtil" />
+                    <link role="baseMethodDeclaration" targetNodeId="93.4494976841093370958" resolveInfo="appendStacktraceToConsole" />
                     <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="4558549435474305180">
                       <node role="operation" type="jetbrains.mps.baseLanguage.structure.FieldReferenceOperation" id="4558549435474305181">
                         <link role="fieldDeclaration" targetNodeId="1213183072332" resolveInfo="consoleView" />

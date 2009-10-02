@@ -11,7 +11,9 @@ import jetbrains.mps.project.IModule;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import jetbrains.mps.workbench.MPSDataKeys;
-import jetbrains.mps.vfs.IFile;
+import jetbrains.mps.debug.baseLanguage.DebugInfo;
+import jetbrains.mps.debug.baseLanguage.BLDebugInfoCache;
+import jetbrains.mps.debug.baseLanguage.PositionInfo;
 
 public class PrintNodePosition_Action extends GeneratedAction {
   private static final Icon ICON = null;
@@ -68,9 +70,8 @@ public class PrintNodePosition_Action extends GeneratedAction {
 
   public void doExecute(@NotNull final AnActionEvent event) {
     try {
-      IFile file = DebugInfo.getDebugFileOfModel(PrintNodePosition_Action.this.module.getGeneratorOutputPath(), PrintNodePosition_Action.this.model);
-      if (file.exists()) {
-        DebugInfo result = DebugInfo.load(file);
+      DebugInfo result = BLDebugInfoCache.getInstance().get(PrintNodePosition_Action.this.model);
+      if (result != null) {
         PositionInfo positionInfo = result.getPositionForNode(PrintNodePosition_Action.this.node.getSNodeId().toString());
         System.out.println(positionInfo);
       }

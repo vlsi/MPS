@@ -336,6 +336,10 @@
         <component>
             <implementation-class>jetbrains.mps.baseLanguage.textGen.BLDependenciesCache</implementation-class>
         </component>
+
+        <component>
+            <implementation-class>jetbrains.mps.debug.baseLanguage.BLDebugInfoCache</implementation-class>
+        </component>
     </application-components>
 
     <project-components>

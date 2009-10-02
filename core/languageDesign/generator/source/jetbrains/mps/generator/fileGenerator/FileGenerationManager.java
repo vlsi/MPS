@@ -20,12 +20,12 @@ import jetbrains.mps.vfs.VFileSystem;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.baseLanguage.textGen.ModelDependencies;
 import jetbrains.mps.baseLanguage.textGen.RootDependencies;
-import jetbrains.mps.baseLanguage.plugin.DebugInfo;
-import jetbrains.mps.baseLanguage.plugin.PositionInfo;
 import jetbrains.mps.textGen.TextGenManager;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.ReadUtil;
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.debug.baseLanguage.DebugInfo;
+import jetbrains.mps.debug.baseLanguage.PositionInfo;
 
 import java.io.File;
 import java.io.IOException;
@@ -271,8 +271,6 @@ public class FileGenerationManager implements ApplicationComponent {
       }
     }
 
-    generatedCaches.addAll(generateDebugInfo(status, outputRootDirectory));
-
     if (ModelGenerationStatusManager.USE_HASHES) {
       generatedCaches.addAll(generateHashFile(status, outputRootDirectory));
     }
@@ -314,18 +312,6 @@ public class FileGenerationManager implements ApplicationComponent {
       LOG.error(e);
     }
     generatedFiles.add(result);
-
-    return generatedFiles;
-  }
-
-  private Set<File> generateDebugInfo(GenerationStatus status, File outputRootDirectory) {
-    Set<File> generatedFiles = new HashSet<File>();
-
-    if (status.getDebugInfo() != null && status.getDebugInfo().getModel() != null) {
-      IFile file = DebugInfo.getDebugFileOfModel(outputRootDirectory.getAbsolutePath(), status.getDebugInfo().getModel().getModelDescriptor());
-      status.getDebugInfo().saveTo(file);
-      generatedFiles.add(file.toFile());
-    }
 
     return generatedFiles;
   }

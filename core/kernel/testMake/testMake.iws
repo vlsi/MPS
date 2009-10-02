@@ -53,21 +53,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" readonly="true" id="1d336031-6925-4498-bf5b-b75f3fdf1c56" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/solutions/jetbrains.mps.testModels/source_gen.caches/jetbrains/mps/testModels/anonymousClass2/.dependencies" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/solutions/jetbrains.mps.testModels/source_gen.caches/jetbrains/mps/testModels/finalClass2/.dependencies" />
-      <change type="MODIFICATION" beforePath="$APPLICATION_HOME_DIR$/core/baseLanguage/baseLanguage/source_gen/jetbrains/mps/baseLanguage/textGen/ModelDependencies.java" afterPath="$APPLICATION_HOME_DIR$/core/baseLanguage/baseLanguage/source_gen/jetbrains/mps/baseLanguage/textGen/ModelDependencies.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/testMake.iws" afterPath="$PROJECT_DIR$/testMake.iws" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/solutions/jetbrains.mps.testModels/source_gen.caches/jetbrains/mps/testModels/recursiveInHierarchy2/.dependencies" />
-      <change type="MODIFICATION" beforePath="$APPLICATION_HOME_DIR$/core/baseLanguage/baseLanguage/languageModels/textGen.mps" afterPath="$APPLICATION_HOME_DIR$/core/baseLanguage/baseLanguage/languageModels/textGen.mps" />
-      <change type="MODIFICATION" beforePath="$APPLICATION_HOME_DIR$/core/baseLanguage/baseLanguage/source/jetbrains/mps/baseLanguage/textGen/BLDependenciesCache.java" afterPath="$APPLICATION_HOME_DIR$/core/baseLanguage/baseLanguage/source/jetbrains/mps/baseLanguage/textGen/BLDependenciesCache.java" />
-      <change type="MODIFICATION" beforePath="$APPLICATION_HOME_DIR$/core/baseLanguage/baseLanguage/source_gen.caches/jetbrains/mps/baseLanguage/textGen/.debug" afterPath="$APPLICATION_HOME_DIR$/core/baseLanguage/baseLanguage/source_gen.caches/jetbrains/mps/baseLanguage/textGen/.debug" />
-      <change type="MODIFICATION" beforePath="$APPLICATION_HOME_DIR$/core/kernel/source/jetbrains/mps/make/ModuleSources.java" afterPath="$APPLICATION_HOME_DIR$/core/kernel/source/jetbrains/mps/make/ModuleSources.java" />
-      <change type="DELETED" beforePath="C:\MPS\core\baseLanguage\baseLanguage\source_gen.caches\jetbrains\mps\baseLanguage\textGen\.dependencies" afterPath="" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/solutions/jetbrains.mps.testModels/source_gen.caches/jetbrains/mps/testModels/abstractMethodNotImplement2/.dependencies" />
-      <change type="MODIFICATION" beforePath="$APPLICATION_HOME_DIR$/core/languageDesign/generator/source/jetbrains/mps/generator/fileGenerator/BaseModelCache.java" afterPath="$APPLICATION_HOME_DIR$/core/languageDesign/generator/source/jetbrains/mps/generator/fileGenerator/BaseModelCache.java" />
+      <change type="MODIFICATION" beforePath="$APPLICATION_HOME_DIR$/core/baseLanguage/baseLanguage/source_gen/jetbrains/mps/baseLanguage/plugin/PrintNodePosition_Action.java" afterPath="$APPLICATION_HOME_DIR$/core/baseLanguage/baseLanguage/source_gen/jetbrains/mps/baseLanguage/plugin/PrintNodePosition_Action.java" />
+      <change type="DELETED" beforePath="$APPLICATION_HOME_DIR$/core/baseLanguage/baseLanguage/source_gen.caches/jetbrains/mps/baseLanguage/plugin/.debug" afterPath="" />
+      <change type="MODIFICATION" beforePath="$APPLICATION_HOME_DIR$/core/baseLanguage/baseLanguage/languageModels/plugin.mps" afterPath="$APPLICATION_HOME_DIR$/core/baseLanguage/baseLanguage/languageModels/plugin.mps" />
+      <change type="MODIFICATION" beforePath="$APPLICATION_HOME_DIR$/core/kernel/source/componentSets/MPSComponents.xml" afterPath="$APPLICATION_HOME_DIR$/core/kernel/source/componentSets/MPSComponents.xml" />
+      <change type="MODIFICATION" beforePath="$APPLICATION_HOME_DIR$/core/baseLanguage/baseLanguage/source_gen.caches/jetbrains/mps/baseLanguage/plugin/.dependencies" afterPath="$APPLICATION_HOME_DIR$/core/baseLanguage/baseLanguage/source_gen.caches/jetbrains/mps/baseLanguage/plugin/.dependencies" />
+      <change type="MODIFICATION" beforePath="$APPLICATION_HOME_DIR$/core/baseLanguage/baseLanguage/source_gen/jetbrains/mps/baseLanguage/plugin/StacktraceUtil.java" afterPath="$APPLICATION_HOME_DIR$/core/baseLanguage/baseLanguage/source_gen/jetbrains/mps/baseLanguage/plugin/StacktraceUtil.java" />
+      <change type="MODIFICATION" beforePath="$APPLICATION_HOME_DIR$/core/baseLanguage/baseLanguage/source/jetbrains/mps/baseLanguage/plugin/BLDebugInfoCache.java" afterPath="$APPLICATION_HOME_DIR$/core/baseLanguage/baseLanguage/source/jetbrains/mps/baseLanguage/plugin/BLDebugInfoCache.java" />
+      <change type="MODIFICATION" beforePath="$APPLICATION_HOME_DIR$/core/languageDesign/generator/source/jetbrains/mps/generator/fileGenerator/FileGenerationManager.java" afterPath="$APPLICATION_HOME_DIR$/core/languageDesign/generator/source/jetbrains/mps/generator/fileGenerator/FileGenerationManager.java" />
+      <change type="MODIFICATION" beforePath="$APPLICATION_HOME_DIR$/core/baseLanguage/baseLanguage/source_gen/jetbrains/mps/baseLanguage/plugin/DebugInfo.java" afterPath="$APPLICATION_HOME_DIR$/core/baseLanguage/baseLanguage/source_gen/jetbrains/mps/baseLanguage/plugin/DebugInfo.java" />
     </list>
-    <ignored path="testMake.iws" />
     <ignored path=".idea/workspace.xml" />
+    <ignored path="testMake.iws" />
   </component>
   <component name="ChangesViewManager" flattened_view="true" show_ignored="false" />
   <component name="CreatePatchCommitExecutor">
@@ -89,73 +87,31 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="CheckDependencies_Test" pinned="false" current="false" current-in-tab="false">
-        <entry file="mps://jetbrains.mps.makeTest.test/CheckDependencies_Test">
+      <file leaf-file-name="DebugInfo" pinned="false" current="false" current-in-tab="false">
+        <entry file="mps://jetbrains.mps.baseLanguage.plugin/DebugInfo">
           <provider selected="true" editor-type-id="MPSFileEditor">
             <state class="jetbrains.mps.ide.NodeEditor$MyFileEditorState" />
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="NotMake_Test" pinned="false" current="false" current-in-tab="false">
-        <entry file="mps://jetbrains.mps.makeTest.test/NotMake_Test">
+      <file leaf-file-name="StacktraceUtil" pinned="false" current="true" current-in-tab="true">
+        <entry file="mps://jetbrains.mps.baseLanguage.plugin/StacktraceUtil">
           <provider selected="true" editor-type-id="MPSFileEditor">
             <state class="jetbrains.mps.ide.NodeEditor$MyFileEditorState" />
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MakeAssert" pinned="false" current="false" current-in-tab="false">
-        <entry file="mps://jetbrains.mps.makeTest.test/MakeAssert">
+      <file leaf-file-name="PrintNodePosition" pinned="false" current="false" current-in-tab="false">
+        <entry file="mps://jetbrains.mps.baseLanguage.plugin/PrintNodePosition">
           <provider selected="true" editor-type-id="MPSFileEditor">
             <state class="jetbrains.mps.ide.NodeEditor$MyFileEditorState" />
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ModelDependencies" pinned="false" current="false" current-in-tab="false">
-        <entry file="mps://jetbrains.mps.baseLanguage.textGen/ModelDependencies">
+      <file leaf-file-name="PositionInfo" pinned="false" current="false" current-in-tab="false">
+        <entry file="mps://jetbrains.mps.baseLanguage.plugin/PositionInfo">
           <provider selected="true" editor-type-id="MPSFileEditor">
             <state class="jetbrains.mps.ide.NodeEditor$MyFileEditorState" />
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Superclass" pinned="false" current="true" current-in-tab="true">
-        <entry file="mps://jetbrains.mps.testModels.abstractMethodNotImplement2/Superclass">
-          <provider selected="true" editor-type-id="MPSFileEditor">
-            <state class="jetbrains.mps.ide.NodeEditor$MyFileEditorState" />
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="RootDependencies" pinned="false" current="false" current-in-tab="false">
-        <entry file="mps://jetbrains.mps.baseLanguage.textGen/RootDependencies">
-          <provider selected="true" editor-type-id="MPSFileEditor">
-            <state class="jetbrains.mps.ide.NodeEditor$MyFileEditorState" />
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MyClass" pinned="false" current="false" current-in-tab="false">
-        <entry file="mps://jetbrains.mps.testModels.abstractMethodNotImplement1/MyClass">
-          <provider selected="true" editor-type-id="MPSFileEditor">
-            <state class="jetbrains.mps.ide.NodeEditor$MyFileEditorState" />
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MyClass1" pinned="false" current="false" current-in-tab="false">
-        <entry file="mps://jetbrains.mps.testModels.recursiveInHierarchy1/MyClass1">
-          <provider selected="true" editor-type-id="MPSFileEditor">
-            <state class="jetbrains.mps.ide.NodeEditor$MyFileEditorState" />
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MyClass" pinned="false" current="false" current-in-tab="false">
-        <entry file="mps://jetbrains.mps.testModels.finalClass1/MyClass">
-          <provider selected="true" editor-type-id="MPSFileEditor">
-            <state class="jetbrains.mps.ide.NodeEditor$MyFileEditorState" />
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MakeAssert.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/solutions/jetbrains.mps.makeTest/source_gen/jetbrains/mps/makeTest/test/MakeAssert.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="10" column="22" selection-start="356" selection-end="356" vertical-scroll-proportion="0.0" />
           </provider>
         </entry>
       </file>
@@ -349,6 +305,16 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="FileSystem">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -360,16 +326,6 @@
         </subPane>
       </pane>
       <pane id="VCSRoots">
-        <subPane>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-        </subPane>
-      </pane>
-      <pane id="FileSystem">
         <subPane>
           <PATH>
             <PATH_ELEMENT>
@@ -465,7 +421,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="1272" y="-8" width="1296" height="1040" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Concept Structure" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" />
       <window_info id="cell explorer view" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" />
@@ -484,9 +440,9 @@
       <window_info id="Typechecker State" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" />
       <window_info id="Class Hierarchy" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" />
       <window_info id="Build Custom MPS" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" />
-      <window_info id="Inspector" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.34906697" sideWeight="0.27662957" order="7" side_tool="true" />
-      <window_info id="MPS Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.34906697" sideWeight="0.71780604" order="7" side_tool="false" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.30683625" sideWeight="0.64324915" order="1" side_tool="false" />
+      <window_info id="Inspector" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.34906697" sideWeight="0.2853736" order="7" side_tool="true" />
+      <window_info id="MPS Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.34906697" sideWeight="0.709062" order="7" side_tool="false" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.27662957" sideWeight="0.64324915" order="1" side_tool="false" />
       <window_info id="Output" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" />
       <window_info id="Replacement" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" />
       <window_info id="Dependency Viewer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" />
@@ -584,37 +540,12 @@
     </GetOptions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="mps://jetbrains.mps.testModels.finalClass2/Superclass">
-      <provider selected="true" editor-type-id="MPSFileEditor">
-        <state class="jetbrains.mps.ide.NodeEditor$MyFileEditorState" />
-      </provider>
-    </entry>
-    <entry file="mps://org.jdom@java_stub/Element">
-      <provider selected="true" editor-type-id="MPSFileEditor">
-        <state class="jetbrains.mps.ide.NodeEditor$MyFileEditorState" />
-      </provider>
-    </entry>
-    <entry file="mps://jetbrains.mps.testModels.recursiveInHierarchy2/MyInterface">
-      <provider selected="true" editor-type-id="MPSFileEditor">
-        <state class="jetbrains.mps.ide.NodeEditor$MyFileEditorState" />
-      </provider>
-    </entry>
-    <entry file="mps://jetbrains.mps.plugin@java_stub/CompilationResult">
-      <provider selected="true" editor-type-id="MPSFileEditor">
-        <state class="jetbrains.mps.ide.NodeEditor$MyFileEditorState" />
-      </provider>
-    </entry>
     <entry file="mps://jetbrains.mps.make@java_stub/ModuleMaker">
       <provider selected="true" editor-type-id="MPSFileEditor">
         <state class="jetbrains.mps.ide.NodeEditor$MyFileEditorState" />
       </provider>
     </entry>
     <entry file="mps://jetbrains.mps.makeTest.test/ChangeModel">
-      <provider selected="true" editor-type-id="MPSFileEditor">
-        <state class="jetbrains.mps.ide.NodeEditor$MyFileEditorState" />
-      </provider>
-    </entry>
-    <entry file="mps://jetbrains.mps.makeTest.test/CheckDependencies_Test">
       <provider selected="true" editor-type-id="MPSFileEditor">
         <state class="jetbrains.mps.ide.NodeEditor$MyFileEditorState" />
       </provider>
@@ -660,6 +591,31 @@
       </provider>
     </entry>
     <entry file="mps://jetbrains.mps.testModels.abstractMethodNotImplement2/Superclass">
+      <provider selected="true" editor-type-id="MPSFileEditor">
+        <state class="jetbrains.mps.ide.NodeEditor$MyFileEditorState" />
+      </provider>
+    </entry>
+    <entry file="mps://jetbrains.mps.makeTest.test/CheckDependencies_Test">
+      <provider selected="true" editor-type-id="MPSFileEditor">
+        <state class="jetbrains.mps.ide.NodeEditor$MyFileEditorState" />
+      </provider>
+    </entry>
+    <entry file="mps://jetbrains.mps.baseLanguage.plugin/PositionInfo">
+      <provider selected="true" editor-type-id="MPSFileEditor">
+        <state class="jetbrains.mps.ide.NodeEditor$MyFileEditorState" />
+      </provider>
+    </entry>
+    <entry file="mps://jetbrains.mps.baseLanguage.plugin/DebugInfo">
+      <provider selected="true" editor-type-id="MPSFileEditor">
+        <state class="jetbrains.mps.ide.NodeEditor$MyFileEditorState" />
+      </provider>
+    </entry>
+    <entry file="mps://jetbrains.mps.baseLanguage.plugin/PrintNodePosition">
+      <provider selected="true" editor-type-id="MPSFileEditor">
+        <state class="jetbrains.mps.ide.NodeEditor$MyFileEditorState" />
+      </provider>
+    </entry>
+    <entry file="mps://jetbrains.mps.baseLanguage.plugin/StacktraceUtil">
       <provider selected="true" editor-type-id="MPSFileEditor">
         <state class="jetbrains.mps.ide.NodeEditor$MyFileEditorState" />
       </provider>
