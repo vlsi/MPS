@@ -51,6 +51,7 @@ public abstract class BaseModelCache<T> implements ApplicationComponent {
             }
           }
         }
+        result.add(cacheFile);
 
         return result;
       }

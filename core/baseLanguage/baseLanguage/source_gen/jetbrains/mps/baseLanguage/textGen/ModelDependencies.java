@@ -10,11 +10,6 @@ import jetbrains.mps.smodel.SModel;
 import java.util.Collections;
 import org.jdom.Element;
 import java.util.List;
-import jetbrains.mps.vfs.IFile;
-import jetbrains.mps.smodel.SModelDescriptor;
-import java.io.File;
-import jetbrains.mps.generator.fileGenerator.FileGenerationUtil;
-import jetbrains.mps.vfs.FileSystem;
 
 public class ModelDependencies {
   private static final String DEPENDENCY = "dependency";
@@ -59,11 +54,5 @@ public class ModelDependencies {
       result.addDependencies(new RootDependencies(e));
     }
     return result;
-  }
-
-  public static IFile getOutputFileOfModel(String outputDir, SModelDescriptor model) {
-    File cachesOutput = FileGenerationUtil.getCachesOutputDir(new File(outputDir));
-    File modelDir = FileGenerationUtil.getDefaultOutputDir(model, cachesOutput);
-    return FileSystem.getFile(modelDir.getPath() + File.separator + ".dependencies");
   }
 }

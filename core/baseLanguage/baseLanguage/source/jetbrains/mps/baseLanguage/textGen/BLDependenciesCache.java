@@ -3,6 +3,7 @@ package jetbrains.mps.baseLanguage.textGen;
 import jetbrains.mps.generator.fileGenerator.XmlBasedModelCache;
 import jetbrains.mps.generator.fileGenerator.FileGenerationManager;
 import jetbrains.mps.generator.fileGenerator.CacheGenerationContext;
+import jetbrains.mps.smodel.SModelDescriptor;
 import org.jdom.Element;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.application.ApplicationManager;
