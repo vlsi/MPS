@@ -159,6 +159,18 @@ class AddOperation extends VcsOperation {
   public void runPerform(final Runnable runnable) {
     ApplicationManager.getApplication().invokeLater(new Runnable() {
       public void run() {
+        ApplicationManager.getApplication().runReadAction(new Runnable() {
+          public void run() {
+            for (File f : myFilesToAdd) {
+              VirtualFile file = VFileSystem.refreshAndGetFile(f);
+              if (file == null) {
+                VcsDirtyScopeManager.getInstance(myProject).fileDirty(VFileSystem.getFilePath(f));
+              } else {
+                VcsDirtyScopeManager.getInstance(myProject).fileDirty(file);
+              }
+            }
+          }
+        });
         ChangeListManager.getInstance(myProject).invokeAfterUpdate(runnable, InvokeAfterUpdateMode.BACKGROUND_NOT_CANCELLABLE, "Checking for files to add to Version Control", ModalityState.NON_MODAL);
       }
     }, ModalityState.NON_MODAL);
