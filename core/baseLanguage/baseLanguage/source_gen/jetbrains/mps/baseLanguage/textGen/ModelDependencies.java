@@ -16,6 +16,7 @@ import org.jdom.Document;
 import java.util.List;
 import jetbrains.mps.smodel.SModelDescriptor;
 import java.io.File;
+import jetbrains.mps.generator.fileGenerator.FileGenerationUtil;
 import jetbrains.mps.vfs.FileSystem;
 
 public class ModelDependencies {
@@ -85,8 +86,8 @@ public class ModelDependencies {
   }
 
   public static IFile getOutputFileOfModel(String outputDir, SModelDescriptor model) {
-    String modelName = model.getLongName().replace(".", File.separator);
-    String path = modelName.substring(0, modelName.length()) + File.separator + ".dependencies";
-    return FileSystem.getFile(outputDir + File.separator + path);
+    File cachesOutput = FileGenerationUtil.getCachesOutputDir(new File(outputDir));
+    File modelDir = FileGenerationUtil.getDefaultOutputDir(model, cachesOutput);
+    return FileSystem.getFile(modelDir.getPath() + File.separator + ".dependencies");
   }
 }

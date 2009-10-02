@@ -34,7 +34,6 @@ import java.util.*;
 
 public class FileGenerationManager implements ApplicationComponent {
   private static final Logger LOG = Logger.getLogger(FileGenerationManager.class);
-  private static final String CACHES_SUFFIX = ".caches";
 
   public static FileGenerationManager getInstance() {
     return ApplicationManager.getApplication().getComponent(FileGenerationManager.class);
@@ -240,19 +239,17 @@ public class FileGenerationManager implements ApplicationComponent {
       }
     }
 
-    //todo we need to create some kind of listener for this place since we already have 3 things which we
-    //todo need to generate
-    generatedFiles.addAll(generateDebugInfo(status, outputRootDirectory));
-    generatedFiles.addAll(generateDependencyInfo(status, outputRootDirectory));
-
-    if (ModelGenerationStatusManager.USE_HASHES) {
-      generatedFiles.addAll(generateHashFile(status, outputRootDirectory));
-    }
-
     return generatedFiles;
   }
 
   private Set<File> generateCaches(GenerationStatus status, File outputRootDirectory, Map<SNode, String> outputNodeContents) {
+    File modelOutput = FileGenerationUtil.getDefaultOutputDir(status.getInputModel(), outputRootDirectory);
+    if (!modelOutput.exists()) {
+      if (!modelOutput.mkdirs()) {
+        LOG.error("Can't create output dir");
+      }
+    }
+
     Set<File> generatedCaches = new HashSet<File>();
 
     generatedCaches.addAll(generateDebugInfo(status, outputRootDirectory));
@@ -308,6 +305,7 @@ public class FileGenerationManager implements ApplicationComponent {
 
     if (status.getDependenciesRoot() != null && status.getDependenciesRoot().getModel() != null) {
       IFile file = ModelDependencies.getOutputFileOfModel(outputRootDirectory.getAbsolutePath(), status.getDependenciesRoot().getModel().getModelDescriptor());
+
       boolean saved = status.getDependenciesRoot().saveTo(file);
       if (saved) {
         generatedFiles.add(file.toFile());

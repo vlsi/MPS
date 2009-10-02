@@ -12,6 +12,7 @@ import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.MPSExtentions;
+import jetbrains.mps.generator.fileGenerator.FileGenerationUtil;
 
 import java.util.*;
 import java.io.File;
@@ -59,13 +60,14 @@ class Dependencies {
   }
 
   private void collectDependencies(IModule m) {
-    if (m.getGeneratorOutputPath() == null) return;
+    String outputPath = m.getGeneratorOutputPath();
+    if (outputPath == null) return;
 
     List<SModelDescriptor> models = m.getOwnModelDescriptors();
     for (SModelDescriptor md : models) {
       if (SModelStereotype.isUserModel(md)) continue;
       
-      IFile file = ModelDependencies.getOutputFileOfModel(m.getGeneratorOutputPath(), md);
+      IFile file = ModelDependencies.getOutputFileOfModel(outputPath, md);
       if (!file.exists()) continue;
       ModelDependencies dependRoot = ModelDependencies.load(file);
       if (dependRoot == null) continue;
