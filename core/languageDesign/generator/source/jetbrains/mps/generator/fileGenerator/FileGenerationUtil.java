@@ -19,8 +19,6 @@ import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.application.ModalityState;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.openapi.progress.ProgressIndicator;
-import jetbrains.mps.baseLanguage.plugin.DebugInfo;
-import jetbrains.mps.baseLanguage.plugin.PositionInfo;
 import jetbrains.mps.baseLanguage.textGen.ModelDependencies;
 import jetbrains.mps.baseLanguage.textGen.RootDependencies;
 import jetbrains.mps.generator.*;
