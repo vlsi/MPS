@@ -5,6 +5,7 @@ import jetbrains.mps.util.misc.hash.HashMap;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.baseLanguage.textGen.ModelDependencies;
 import jetbrains.mps.baseLanguage.textGen.RootDependencies;
+import jetbrains.mps.baseLanguage.textGen.BLDependenciesCache;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.smodel.SModelReference;
@@ -65,11 +66,9 @@ class Dependencies {
 
     List<SModelDescriptor> models = m.getOwnModelDescriptors();
     for (SModelDescriptor md : models) {
-      if (SModelStereotype.isUserModel(md)) continue;
-      
-      IFile file = ModelDependencies.getOutputFileOfModel(outputPath, md);
-      if (!file.exists()) continue;
-      ModelDependencies dependRoot = ModelDependencies.load(file);
+      if (!SModelStereotype.isUserModel(md)) continue;
+
+      ModelDependencies dependRoot = BLDependenciesCache.getInstance().get(md);
       if (dependRoot == null) continue;
       add(m, dependRoot);
     }

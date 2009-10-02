@@ -161,7 +161,7 @@ public class FileGenerationManager implements ApplicationComponent {
     ModelDependencies dependRoot = new ModelDependencies();
     DebugInfo info = new DebugInfo();
     status.setDebugInfo(info);
-    status.setDependenciesRoot(dependRoot);
+    status.setBLDependencies(dependRoot);
     for (SNode outputNode : status.getOutputModel().getRoots()) {
       try {
         TextGenerationResult result = TextGenerationUtil.generateText(context, outputNode);
@@ -272,7 +272,6 @@ public class FileGenerationManager implements ApplicationComponent {
     }
 
     generatedCaches.addAll(generateDebugInfo(status, outputRootDirectory));
-    generatedCaches.addAll(generateDependencyInfo(status, outputRootDirectory));
 
     if (ModelGenerationStatusManager.USE_HASHES) {
       generatedCaches.addAll(generateHashFile(status, outputRootDirectory));
@@ -315,21 +314,6 @@ public class FileGenerationManager implements ApplicationComponent {
       LOG.error(e);
     }
     generatedFiles.add(result);
-
-    return generatedFiles;
-  }
-
-  private Set<File> generateDependencyInfo(GenerationStatus status, File outputRootDirectory) {
-    Set<File> generatedFiles = new HashSet<File>();
-
-    if (status.getDependenciesRoot() != null && status.getDependenciesRoot().getModel() != null) {
-      IFile file = ModelDependencies.getOutputFileOfModel(outputRootDirectory.getAbsolutePath(), status.getDependenciesRoot().getModel().getModelDescriptor());
-
-      boolean saved = status.getDependenciesRoot().saveTo(file);
-      if (saved) {
-        generatedFiles.add(file.toFile());
-      }
-    }
 
     return generatedFiles;
   }

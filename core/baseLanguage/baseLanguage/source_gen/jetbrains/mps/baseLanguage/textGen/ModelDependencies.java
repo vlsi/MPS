@@ -8,12 +8,9 @@ import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.TreeSet;
 import jetbrains.mps.smodel.SModel;
 import java.util.Collections;
-import jetbrains.mps.vfs.IFile;
-import jetbrains.mps.watching.ModelChangesWatcher;
 import org.jdom.Element;
-import jetbrains.mps.util.JDOMUtil;
-import org.jdom.Document;
 import java.util.List;
+import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.smodel.SModelDescriptor;
 import java.io.File;
 import jetbrains.mps.generator.fileGenerator.FileGenerationUtil;
@@ -46,47 +43,27 @@ public class ModelDependencies {
     return this.myModel;
   }
 
-  public boolean saveTo(IFile file) {
-    if (!(file.exists())) {
-      IFile dir = file.getParent();
-      if (dir != null) {
-        dir.mkdirs();
-      }
-      file.createNewFile();
-      ModelChangesWatcher.instance().fireDataFileCreated(file);
-    }
+  public Element toXml() {
     Element root = new Element(DEPENDENCIES_ROOT);
     for (RootDependencies dependency : this.myDependencies) {
       Element e = new Element(DEPENDENCY);
       dependency.saveTo(e);
       root.addContent(e);
     }
-    try {
-      JDOMUtil.writeDocument(new Document(root), file);
-      return true;
-    } catch (Exception e) {
-      LOG.error(e);
-      return false;
-    }
+    return root;
   }
 
-  public static ModelDependencies load(IFile file) {
-    try {
-      Document document = JDOMUtil.loadDocument(file);
-      Element root = document.getRootElement();
-      ModelDependencies result = new ModelDependencies();
-      for (Element e : ((List<Element>)root.getChildren(DEPENDENCY))) {
-        result.addDependencies(new RootDependencies(e));
-      }
-      return result;
-    } catch (Exception e) {
-      LOG.error(e);
+  public static ModelDependencies fromXml(Element root) {
+    ModelDependencies result = new ModelDependencies();
+    for (Element e : ((List<Element>)root.getChildren(DEPENDENCY))) {
+      result.addDependencies(new RootDependencies(e));
     }
-    return null;
+    return result;
   }
 
   public static IFile getOutputFileOfModel(String outputDir, SModelDescriptor model) {
-    File modelDir = FileGenerationUtil.getDefaultOutputDir(model, new File(outputDir));
+    File cachesOutput = FileGenerationUtil.getCachesOutputDir(new File(outputDir));
+    File modelDir = FileGenerationUtil.getDefaultOutputDir(model, cachesOutput);
     return FileSystem.getFile(modelDir.getPath() + File.separator + ".dependencies");
   }
 }

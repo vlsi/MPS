@@ -32,7 +32,7 @@ public class GenerationStatus extends Status {
   private boolean myWarnings;
   private TraceMap myTraceMap;
   private DebugInfo myDebugInfo;
-  private ModelDependencies myDependenciesRoot;
+  private ModelDependencies myBLDependencies;
 
   private SModelDescriptor myOriginalInputModel;
 
@@ -77,12 +77,12 @@ public class GenerationStatus extends Status {
     myDebugInfo = debugInfo;
   }
 
-  public ModelDependencies getDependenciesRoot() {
-    return myDependenciesRoot;
+  public ModelDependencies getBLDependencies() {
+    return myBLDependencies;
   }
 
-  public void setDependenciesRoot(ModelDependencies dependencies) {
-    myDependenciesRoot = dependencies;
+  public void setBLDependencies(ModelDependencies dependencies) {
+    myBLDependencies = dependencies;
   }
 
   public SModelDescriptor getOriginalInputModel() {

@@ -46,7 +46,9 @@ public abstract class BaseModelCache<T> implements ApplicationComponent {
           if (os != null) {
             try {
               os.close();
-            } catch (IOException e) { }
+            } catch (IOException e) {
+              LOG.error(e);
+            }
           }
         }
 
@@ -75,7 +77,9 @@ public abstract class BaseModelCache<T> implements ApplicationComponent {
         if (is != null) {
           is.close();
         }
-      } catch (IOException e) { }
+      } catch (IOException e) {
+        LOG.error(e);
+      }
     }
 
     return null;
