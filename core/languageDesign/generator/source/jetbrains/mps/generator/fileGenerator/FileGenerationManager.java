@@ -53,16 +53,16 @@ public class FileGenerationManager implements ApplicationComponent {
 
   }
 
-  public boolean handleOutput(IOperationContext context,
-                                     GenerationStatus status,
-                                     String outputRoot) {
+  public boolean handleOutput(
+      IOperationContext context,
+      GenerationStatus status,
+      File outputRoot) {
     if (outputRoot == null) throw new RuntimeException("unspecified output path for file generation.");
 
     if (!status.isOk()) {
       return false;
     }
 
-    File outputRootDirectory = new File(outputRoot);
     Map<SNode, String> outputNodeContents = new LinkedHashMap<SNode, String>();
 
     boolean ok = true;
@@ -70,15 +70,19 @@ public class FileGenerationManager implements ApplicationComponent {
       return false;
     }
 
-    Set<File> generatedFiles = generateFiles(status, outputRootDirectory, outputNodeContents);
-    processGeneratedFile(status, outputRoot, context, generatedFiles);
+    Set<File> generatedFiles = generateFiles(status, outputRoot, outputNodeContents);
+    processGeneratedFiles(status, outputRoot, context, generatedFiles);
+
+    File cachesOutput = FileGenerationUtil.getCachesOutputDir(outputRoot);
+    Set<File> generatedCaches = generateCaches(status, cachesOutput, outputNodeContents);
+    processGeneratedFiles(status, cachesOutput, context, generatedCaches);
 
     return ok;
   }
 
-  private void processGeneratedFile(
+  private void processGeneratedFiles(
       GenerationStatus status,
-      String outputRoot,
+      File outputRoot,
       IOperationContext context,
       Set<File> generatedFiles) {
 
@@ -89,25 +93,26 @@ public class FileGenerationManager implements ApplicationComponent {
     cleanUp(status, context, outputRoot, generatedFiles);
   }
 
-  public void handleEmptyOutput(GenerationStatus status, String outputDir, IOperationContext context) {
+  public void handleEmptyOutput(IOperationContext context, GenerationStatus status, File outputDir) {
     cleanUpDefaultOutputDir(status, outputDir, context);
-    touchOutputDir(status, new File(outputDir));
+    touchOutputDir(status, outputDir);
   }
 
-  private void cleanUpDefaultOutputDir(GenerationStatus status, String outputDir, IOperationContext context) {
+  private void cleanUpDefaultOutputDir(GenerationStatus status, File outputDir, IOperationContext context) {
     cleanUp(status, context, outputDir, new HashSet<File>(0));
   }
 
-  private void cleanUp(GenerationStatus status,
-                       IOperationContext context,
-                       String outputDir,
-                       Set<File> generatedFiles) {
+  private void cleanUp(
+      GenerationStatus status,
+      IOperationContext context,
+      File outputDir,
+      Set<File> generatedFiles) {
 
     Set<File> directories = new HashSet<File>();
     for (File f : generatedFiles) {
       directories.add(f.getParentFile());
     }
-    directories.add(FileGenerationUtil.getDefaultOutputDir(status.getInputModel(), new File(outputDir)));
+    directories.add(FileGenerationUtil.getDefaultOutputDir(status.getInputModel(), outputDir));
 
     // clear garbage
     List<File> filesToDelete = new ArrayList<File>();
@@ -237,17 +242,32 @@ public class FileGenerationManager implements ApplicationComponent {
 
     //todo we need to create some kind of listener for this place since we already have 3 things which we
     //todo need to generate
-    generateDebugInfo(status, outputRootDirectory, generatedFiles);
-    generateDependencyInfo(status, outputRootDirectory, generatedFiles);
+    generatedFiles.addAll(generateDebugInfo(status, outputRootDirectory));
+    generatedFiles.addAll(generateDependencyInfo(status, outputRootDirectory));
 
     if (ModelGenerationStatusManager.USE_HASHES) {
-      generateHashFile(status, outputRootDirectory, generatedFiles);
+      generatedFiles.addAll(generateHashFile(status, outputRootDirectory));
     }
 
     return generatedFiles;
   }
 
-  private void generateHashFile(GenerationStatus status, File outputDir, Set<File> generatedFiles) {
+  private Set<File> generateCaches(GenerationStatus status, File outputRootDirectory, Map<SNode, String> outputNodeContents) {
+    Set<File> generatedCaches = new HashSet<File>();
+
+    generatedCaches.addAll(generateDebugInfo(status, outputRootDirectory));
+    generatedCaches.addAll(generateDependencyInfo(status, outputRootDirectory));
+
+    if (ModelGenerationStatusManager.USE_HASHES) {
+      generatedCaches.addAll(generateHashFile(status, outputRootDirectory));
+    }
+
+    return generatedCaches;
+  }
+
+  private Set<File> generateHashFile(GenerationStatus status, File outputDir) {
+    Set<File> generatedFiles = new HashSet<File>();
+
     SModelDescriptor descriptor = status.getOriginalInputModel();
     IFile file = descriptor.getModelFile();
     assert file != null;
@@ -270,7 +290,7 @@ public class FileGenerationManager implements ApplicationComponent {
 
     String hash = ModelDigestIndex.hash(content);
     File result = new File(FileGenerationUtil.getDefaultOutputDir(status.getInputModel(), outputDir), ModelGenerationStatusManager.HASH_PREFIX + hash);
-    if (result.exists()) return;
+    if (result.exists()) return generatedFiles;
     try {
       if (!result.createNewFile()) {
         LOG.error("Can't create hash file");
@@ -279,9 +299,13 @@ public class FileGenerationManager implements ApplicationComponent {
       LOG.error(e);
     }
     generatedFiles.add(result);
+
+    return generatedFiles;
   }
 
-  private void generateDependencyInfo(GenerationStatus status, File outputRootDirectory, Set<File> generatedFiles) {
+  private Set<File> generateDependencyInfo(GenerationStatus status, File outputRootDirectory) {
+    Set<File> generatedFiles = new HashSet<File>();
+
     if (status.getDependenciesRoot() != null && status.getDependenciesRoot().getModel() != null) {
       IFile file = ModelDependencies.getOutputFileOfModel(outputRootDirectory.getAbsolutePath(), status.getDependenciesRoot().getModel().getModelDescriptor());
       boolean saved = status.getDependenciesRoot().saveTo(file);
@@ -289,14 +313,20 @@ public class FileGenerationManager implements ApplicationComponent {
         generatedFiles.add(file.toFile());
       }
     }
+
+    return generatedFiles;
   }
 
-  private void generateDebugInfo(GenerationStatus status, File outputRootDirectory, Set<File> generatedFiles) {
+  private Set<File> generateDebugInfo(GenerationStatus status, File outputRootDirectory) {
+    Set<File> generatedFiles = new HashSet<File>();
+
     if (status.getDebugInfo() != null && status.getDebugInfo().getModel() != null) {
       IFile file = DebugInfo.getDebugFileOfModel(outputRootDirectory.getAbsolutePath(), status.getDebugInfo().getModel().getModelDescriptor());
       status.getDebugInfo().saveTo(file);
       generatedFiles.add(file.toFile());
     }
+
+    return generatedFiles;
   }
 
 }

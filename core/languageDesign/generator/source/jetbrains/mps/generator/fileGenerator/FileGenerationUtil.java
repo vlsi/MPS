@@ -45,7 +45,7 @@ import java.io.InputStream;
 import java.util.*;
 
 public class FileGenerationUtil {
-  public static final Logger LOG = Logger.getLogger(FileGenerationUtil.class);
+  private static final String CACHES_SUFFIX = ".caches";
 
   public static File getDefaultOutputDir(SModelDescriptor inputModelDescriptor, File outputRootDir) {
     SModelReference reference = inputModelDescriptor.getSModelReference();
@@ -54,6 +54,10 @@ public class FileGenerationUtil {
 
   public static File getDefaultOutputDir(SModel inputModel, File outputRootDir) {
     return getDefaultOutputDir(inputModel.getSModelReference(), outputRootDir);
+  }
+
+  public static File getCachesOutputDir(File outputDir) {
+    return new File(outputDir.getAbsolutePath() + CACHES_SUFFIX);
   }
 
   private static File getDefaultOutputDir(SModelReference reference, File outputRootDir) {
