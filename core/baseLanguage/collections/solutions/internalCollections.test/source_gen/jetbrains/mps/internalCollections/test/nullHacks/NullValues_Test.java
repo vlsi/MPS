@@ -163,13 +163,9 @@ __switch__:
                         return false;
                       case 2:
                         this.__CP__ = 3;
-                        this.yield(null);
+                        this.yield((Integer)null);
                         return true;
                       case 3:
-                        this.__CP__ = 4;
-                        this.yield(null);
-                        return true;
-                      case 4:
                         this.__CP__ = 1;
                         this.yield(nullvalue);
                         return true;

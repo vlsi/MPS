@@ -1418,10 +1418,12 @@
                         <node role="initializer" type="jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral" id="7556115255731760291">
                           <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="7556115255731760292">
                             <node role="statement" type="jetbrains.mps.baseLanguage.closures.structure.YieldStatement" id="7556115255731760293">
-                              <node role="expression" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="7556115255731760297" />
-                            </node>
-                            <node role="statement" type="jetbrains.mps.baseLanguage.closures.structure.YieldStatement" id="7556115255731760303">
-                              <node role="expression" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="7556115255731760307" />
+                              <node role="expression" type="jetbrains.mps.baseLanguage.structure.CastExpression" id="8769465775559992050">
+                                <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="8769465775559992056">
+                                  <link role="classifier" targetNodeId="4.~Integer" resolveInfo="Integer" />
+                                </node>
+                                <node role="expression" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="7556115255731760297" />
+                              </node>
                             </node>
                             <node role="statement" type="jetbrains.mps.baseLanguage.closures.structure.YieldStatement" id="7556115255731760313">
                               <node role="expression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="7556115255731760325">
