@@ -20,6 +20,7 @@ import com.intellij.openapi.progress.ProgressIndicator;
 import com.intellij.openapi.progress.ProgressManager;
 import com.intellij.openapi.progress.Task.Modal;
 import com.intellij.openapi.project.Project;
+import com.intellij.openapi.util.Computable;
 import jetbrains.mps.generator.GenerationSettings;
 import jetbrains.mps.generator.GeneratorManager;
 import jetbrains.mps.generator.IGenerationType;
@@ -163,7 +164,11 @@ public class RefactoringProcessor {
     final SModelReference initialModelReference = modelDescriptor.getSModelReference();
     Runnable runnable = new Runnable() {
       public void run() {
-        final List<SModel> modelsToGenerate = refactoring.getModelsToGenerate(refactoringContext);
+        final List<SModel> modelsToGenerate = ModelAccess.instance().runReadAction(new Computable<List<SModel>>() {
+          public List<SModel> compute() {
+            return refactoring.getModelsToGenerate(refactoringContext);
+          }
+        });
 
         ModelAccess.instance().runWriteActionInCommand(new Runnable() {
           public void run() {
