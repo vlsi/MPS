@@ -4,12 +4,10 @@ package jetbrains.mps.internalCollections.test.closures;
 
 import jetbrains.mps.internal.collections.runtime.ISequence;
 import jetbrains.mps.internal.collections.runtime.Sequence;
-import jetbrains.mps.internal.collections.runtime.ITranslator;
-import jetbrains.mps.internal.collections.runtime.ISequenceIterableAdapter;
+import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import java.util.Iterator;
 import jetbrains.mps.baseLanguage.closures.runtime.YieldingIterator;
 import java.util.Arrays;
-import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import jetbrains.mps.internal.collections.runtime.StopIteratingException;
 import junit.framework.Assert;
 import java.util.Collections;
@@ -19,9 +17,9 @@ import java.util.ArrayList;
 public class Mapper_Test extends Util_Test {
   public void test_mapMethod() throws Exception {
     ISequence<Integer> seq = Sequence.fromIterable(this.input5());
-    ISequence<Integer> test = seq.translate(new ITranslator<Integer>() {
-      public ISequence<S> translate(final Integer it1) {
-        return new ISequenceIterableAdapter<Integer>() {
+    ISequence<Integer> test = seq.translate(new ITranslator2<Integer, Integer>() {
+      public Iterable<Integer> translate(final Integer it1) {
+        return new Iterable<Integer>() {
           public Iterator<Integer> iterator() {
             return new YieldingIterator<Integer>() {
               private int __CP__ = 0;
@@ -45,7 +43,7 @@ __switch__:
                     case 0:
                       this.__CP__ = 2;
                       break;
-                    default:
+                     default:
                       break __loop__;
                   }
                 } while(true);
