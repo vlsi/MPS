@@ -271,49 +271,6 @@ public class FileGenerationManager implements ApplicationComponent {
       }
     }
 
-    if (ModelGenerationStatusManager.USE_HASHES) {
-      generatedCaches.addAll(generateHashFile(status, outputRootDirectory));
-    }
-
     return generatedCaches;
   }
-
-  private Set<File> generateHashFile(GenerationStatus status, File outputDir) {
-    Set<File> generatedFiles = new HashSet<File>();
-
-    SModelDescriptor descriptor = status.getOriginalInputModel();
-    IFile file = descriptor.getModelFile();
-    assert file != null;
-    byte[] content = new byte[(int) file.length()];
-
-    InputStream is = null;
-    try {
-      is = file.openInputStream();
-      ReadUtil.read(content, is);
-    } catch (IOException e) {
-      LOG.error(e);
-    } finally {
-      if (is != null) {
-        try {
-          is.close();
-        } catch (IOException e) {
-        }
-      }
-    }
-
-    String hash = ModelDigestIndex.hash(content);
-    File result = new File(FileGenerationUtil.getDefaultOutputDir(status.getInputModel(), outputDir), ModelGenerationStatusManager.HASH_PREFIX + hash);
-    if (result.exists()) return generatedFiles;
-    try {
-      if (!result.createNewFile()) {
-        LOG.error("Can't create hash file");
-      }
-    } catch (IOException e) {
-      LOG.error(e);
-    }
-    generatedFiles.add(result);
-
-    return generatedFiles;
-  }
-
 }

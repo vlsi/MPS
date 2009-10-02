@@ -25,8 +25,16 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.FileUtil;
+import jetbrains.mps.util.ReadUtil;
+import jetbrains.mps.generator.fileGenerator.FileGenerationManager;
+import jetbrains.mps.generator.fileGenerator.CacheGenerator;
+import jetbrains.mps.generator.fileGenerator.CacheGenerationContext;
+import jetbrains.mps.generator.fileGenerator.FileGenerationUtil;
+import jetbrains.mps.vfs.IFile;
 
 import java.io.File;
+import java.io.InputStream;
+import java.io.IOException;
 import java.util.*;
 
 import org.jetbrains.annotations.NotNull;
@@ -34,7 +42,7 @@ import org.jetbrains.annotations.NotNull;
 public class ModelGenerationStatusManager implements ApplicationComponent {
   public static final String HASH_PREFIX = ".hash.";
 
-  public static final boolean USE_HASHES = false;
+  public static final boolean USE_HASHES = true;
 
   private static final Logger LOG = Logger.getLogger(ModelGenerationStatusManager.class);
 
@@ -60,12 +68,23 @@ public class ModelGenerationStatusManager implements ApplicationComponent {
 
   private List<ModelGenerationStatusListener> myListeners = new ArrayList<ModelGenerationStatusListener>();
 
+  private FileGenerationManager myFileGenerationManager;
+
+  public ModelGenerationStatusManager(FileGenerationManager fileGenerationManager) {
+    myFileGenerationManager = fileGenerationManager;
+  }
+
   @NotNull
   public String getComponentName() {
     return "Model Status Manager";
   }
 
   public void initComponent() {
+    myFileGenerationManager.addCachesGenerator(new CacheGenerator() {
+      public Set<File> generateCaches(CacheGenerationContext context) {
+        return generateHashFile(context);
+      }
+    });
   }
 
   public void disposeComponent() {
@@ -190,15 +209,11 @@ public class ModelGenerationStatusManager implements ApplicationComponent {
   }
 
   private String calculateGeneratedHash(SModelDescriptor sm) {
-    Set<IModule> modules = sm.getModules();
-    if (modules.size() != 1) {
-      LOG.warning("model " + sm.getSModelReference() + " has too many owners : " + modules);
-    }
-    IModule module = modules.iterator().next();
-    String outputPath = module.getGeneratorOutputPath();
-    String sourcesDir = outputPath + File.separator + sm.getLongName().replace('.', File.separatorChar);
+    IModule module = sm.getModule();
+    File outputPath = FileGenerationUtil.getCachesOutputDir(new File(module.getGeneratorOutputPath()));
+    File sourcesDir = FileGenerationUtil.getDefaultOutputDir(sm, outputPath);
 
-    File[] files = new File(sourcesDir).listFiles();
+    File[] files = sourcesDir.listFiles();
     String result = null;
     if (files != null) {
       for (File f : files) {
@@ -212,6 +227,49 @@ public class ModelGenerationStatusManager implements ApplicationComponent {
       }
     }
 
-    return null;
+    return result;
+  }
+
+  private Set<File> generateHashFile(CacheGenerationContext context) {
+    GenerationStatus status = context.getStatus();
+    File outputDir = context.getOutputDir();
+
+    Set<File> generatedFiles = new HashSet<File>();
+
+    SModelDescriptor descriptor = status.getOriginalInputModel();
+    IFile file = descriptor.getModelFile();
+    assert file != null;
+    byte[] content = new byte[(int) file.length()];
+
+    InputStream is = null;
+    try {
+      is = file.openInputStream();
+      ReadUtil.read(content, is);
+    } catch (IOException e) {
+      LOG.error(e);
+    } finally {
+      if (is != null) {
+        try {
+          is.close();
+        } catch (IOException e) {
+          LOG.error(e);
+        }
+      }
+    }
+
+    String hash = ModelDigestIndex.hash(content);
+    File result = new File(FileGenerationUtil.getDefaultOutputDir(status.getInputModel(), outputDir), ModelGenerationStatusManager.HASH_PREFIX + hash);
+    if (!result.exists()) {
+      try {
+        if (!result.createNewFile()) {
+          LOG.error("Can't create hash file");
+        }
+      } catch (IOException e) {
+        LOG.error(e);
+      }
+    }
+    generatedFiles.add(result);
+
+    return generatedFiles;
   }
 }
