@@ -19,12 +19,10 @@ import com.intellij.ide.*;
 import com.intellij.ide.projectView.ProjectView;
 import com.intellij.ide.projectView.impl.AbstractProjectViewPane;
 import com.intellij.ide.projectView.impl.ProjectViewPane;
-import com.intellij.ide.projectView.impl.ProjectViewImpl;
 import com.intellij.openapi.actionSystem.*;
 import com.intellij.openapi.command.CommandAdapter;
 import com.intellij.openapi.command.CommandEvent;
 import com.intellij.openapi.command.CommandProcessor;
-import com.intellij.openapi.components.PersistentStateComponent;
 import com.intellij.openapi.components.State;
 import com.intellij.openapi.components.Storage;
 import com.intellij.openapi.fileEditor.FileEditor;
@@ -51,10 +49,8 @@ import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.ide.actions.*;
 import jetbrains.mps.ide.projectPane.ProjectLanguageTreeNode.AccessoriesModelTreeNode;
 import jetbrains.mps.ide.projectPane.ProjectLanguageTreeNode.RuntimeModulesTreeNode;
-import jetbrains.mps.ide.projectPane.ProjectPane.MyState;
 import jetbrains.mps.ide.projectPane.SModelsSubtree.JavaStubsTreeNode;
 import jetbrains.mps.ide.ui.MPSTree;
-import jetbrains.mps.ide.ui.MPSTree.TreeState;
 import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.ide.ui.MPSTreeNodeEx;
 import jetbrains.mps.ide.ui.TextTreeNode;
@@ -94,7 +90,6 @@ import javax.swing.tree.TreeNode;
 import javax.swing.tree.TreePath;
 import javax.swing.tree.TreeSelectionModel;
 import java.awt.Component;
-import java.awt.Point;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 import java.io.File;
@@ -112,7 +107,7 @@ import java.util.List;
     )
   }
 )
-public class ProjectPane extends AbstractProjectViewPane implements PersistentStateComponent<MyState> {
+public class ProjectPane extends AbstractProjectViewPane {
   private static final Logger LOG = Logger.getLogger(ProjectPane.class);
 
   public static final String PROJECT_PANE_NODE_ACTIONS = NodeActions_ActionGroup.ID;
@@ -213,12 +208,6 @@ public class ProjectPane extends AbstractProjectViewPane implements PersistentSt
       }
     });
 
-    //todo code issues
-    initComponent();
-    projectOpened();
-  }
-
-  public void initComponent() {
     addListeners();
 
     if (IdeMain.getTestMode() != TestMode.CORE_TEST) {
@@ -228,11 +217,6 @@ public class ProjectPane extends AbstractProjectViewPane implements PersistentSt
         }
       });
     }
-  }
-
-  public void projectOpened() {
-    myReloadListener.onAfterReload();
-    ClassLoaderManager.getInstance().addReloadHandler(myReloadListener);
   }
 
   public void addToolbarActions(final DefaultActionGroup group) {
@@ -256,7 +240,7 @@ public class ProjectPane extends AbstractProjectViewPane implements PersistentSt
   }
 
   @Hack
-  public static ProjectPane getInstance(Project project){
+  public static ProjectPane getInstance(Project project) {
     final ProjectView projectView = ProjectView.getInstance(project);
 
     //to ensure panes are initialized
@@ -538,6 +522,7 @@ public class ProjectPane extends AbstractProjectViewPane implements PersistentSt
     MPSModuleRepository.getInstance().addModuleRepositoryListener(myRepositoryListener);
     getMPSProject().getComponent(GeneratorManager.class).addGenerationListener(myGenerationListener);
     getProject().getComponent(FileEditorManager.class).addFileEditorManagerListener(myEditorListener);
+    ClassLoaderManager.getInstance().addReloadHandler(myReloadListener);    
   }
 
   private AnActionEvent createEvent(DataContext context) {
@@ -984,51 +969,6 @@ public class ProjectPane extends AbstractProjectViewPane implements PersistentSt
       SModelDescriptor modelDescriptor = modelNode.getSModelDescriptor();
       SModelReference modelReference = modelDescriptor.getSModelReference();
       return modelReference.equals(myModel.getSModelReference());
-    }
-  }
-
-  //----state----
-
-  public MyState getState() {
-    return new MyState((int) myScrollPane.getViewport().getViewPosition().getY(), getTree().saveState());
-  }
-
-  public void loadState(final MyState state) {
-    ModelAccess.instance().runReadInEDT(new Runnable() {
-      public void run() {
-        rebuildTreeNow();
-        getTree().loadState(state.getState());
-        myScrollPane.getViewport().setViewPosition(new Point(0, state.getVerticalScrollPosition()));
-      }
-    });
-  }
-
-  public static class MyState {
-    private TreeState myState;
-    private int myVerticalScrollPosition = 0;
-
-    public MyState() {
-    }
-
-    public MyState(int verticalScrollPosition, TreeState state) {
-      myVerticalScrollPosition = verticalScrollPosition;
-      myState = state;
-    }
-
-    public TreeState getState() {
-      return myState;
-    }
-
-    public void setState(TreeState state) {
-      myState = state;
-    }
-
-    public int getVerticalScrollPosition() {
-      return myVerticalScrollPosition;
-    }
-
-    public void setVerticalScrollPosition(int verticalScrollPosition) {
-      myVerticalScrollPosition = verticalScrollPosition;
     }
   }
 

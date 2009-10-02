@@ -556,6 +556,7 @@ public final class ProjectViewImpl extends ProjectView implements PersistentStat
     myLabel.removeFocusListener(myLabelFocusListener);
   }
 
+  @Patch
   private boolean viewSelectionChanged() {
     Pair<String, String> ids = (Pair<String, String>)myCombo.getSelectedItem();
     if (ids == null) return false;
@@ -564,6 +565,11 @@ public final class ProjectViewImpl extends ProjectView implements PersistentStat
     if (ids.equals(Pair.create(myCurrentViewId, myCurrentViewSubId))) return false;
     final AbstractProjectViewPane newPane = getProjectViewPaneById(id);
     if (newPane == null) return false;
+
+    //begin patch
+    newPane.restoreExpandedPaths();
+    //end patch
+
     newPane.setSubId(subId);
     String[] subIds = newPane.getSubIds();
 

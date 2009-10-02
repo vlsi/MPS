@@ -12,7 +12,6 @@ import com.intellij.util.containers.ContainerUtil;
 import com.intellij.util.containers.WeakHashMap;
 import jetbrains.mps.runconfigs.RunConfigManager;
 import jetbrains.mps.util.annotation.Patch;
-import jetbrains.mps.util.annotation.PatchConstr;
 import org.jdom.Element;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
@@ -57,7 +56,7 @@ public class RunManagerImpl extends RunManagerEx implements JDOMExternalizable, 
   private List<Element> myUnloadedElements = null;
   private JDOMExternalizableStringList myOrder = new JDOMExternalizableStringList();
 
-  @PatchConstr
+  @Patch
   public RunManagerImpl(final Project project,
                         PropertiesComponent propertiesComponent,
                         RunConfigManager runManager) {
