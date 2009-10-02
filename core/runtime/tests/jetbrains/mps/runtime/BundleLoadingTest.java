@@ -46,20 +46,13 @@ public class BundleLoadingTest {
 
     re.init(b);
 
-    ClassLoader aClassLoader;
-    boolean canLoadFromBundle;
-
-    aClassLoader = b.getClass(A.class.getName()).getClassLoader();
-    canLoadFromBundle = aClassLoader instanceof BundleClassLoader;
-    assertTrue(canLoadFromBundle);
+    assertCanBeLoadedFromBundle(b, A.class.getName());
 
     b.clearDependencies();
 
     re.reloadAll();
 
-    aClassLoader = b.getClass(A.class.getName()).getClassLoader();
-    canLoadFromBundle = aClassLoader instanceof BundleClassLoader;
-    assertFalse(canLoadFromBundle);
+    assertCanNotBeLoadedFromBundle(b, A.class.getName());
   }
 
   @Test
@@ -74,11 +67,8 @@ public class BundleLoadingTest {
 
     b.clearDependencies();
 
-    try {
-      re.unload(a);
-    } catch (RuntimeEnvironmentException e) {
-      fail(e.getMessage());
-    }
+    //test that no exceptions are thrown
+    re.unload(a);
   }
 
   @Test
@@ -242,6 +232,19 @@ public class BundleLoadingTest {
     re.init(b);
 
     assertSame(ca, a.getClassLoader());
+  }
+
+  private static void assertCanNotBeLoadedFromBundle(RBundle b, String className) {
+    assertFalse(canBeLoadedFromBundle(b, className));
+  }
+
+  private static void assertCanBeLoadedFromBundle(RBundle b, String className) {
+    assertTrue(canBeLoadedFromBundle(b, className));
+  }
+
+  private static boolean canBeLoadedFromBundle(RBundle b, String className) {
+    ClassLoader aClassLoader = b.getClass(className).getClassLoader();
+    return aClassLoader instanceof BundleClassLoader;
   }
 
   public static class A {
