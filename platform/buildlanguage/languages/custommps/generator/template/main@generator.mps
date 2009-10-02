@@ -1960,6 +1960,10 @@
               <property name="id" value="37a3367b-1fb2-44d8-aa6b-18075e74e003" />
               <property name="name" value="MPS.Classpath" />
             </node>
+            <node role="entry" type="jetbrains.mps.build.custommpsInternal.structure.MPSModule" id="4929640625457836996">
+              <property name="id" value="88f8bc48-a7a1-4edf-93ec-38cb00d0c9d5" />
+              <property name="name" value="jetbrains.mps.debug.baseLanguage" />
+            </node>
             <node role="title" type="jetbrains.mps.build.packaging.structure.SimpleString" id="1234971270490">
               <property name="name" value="baseLanguage" />
             </node>
