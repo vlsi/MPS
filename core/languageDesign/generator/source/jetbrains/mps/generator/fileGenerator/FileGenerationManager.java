@@ -73,7 +73,7 @@ public class FileGenerationManager implements ApplicationComponent {
     processGeneratedFiles(status, outputRoot, context, generatedFiles);
 
     File cachesOutput = FileGenerationUtil.getCachesOutputDir(outputRoot);
-    Set<File> generatedCaches = generateCaches(status, cachesOutput, outputNodeContents);
+    Set<File> generatedCaches = generateCaches(status, cachesOutput);
     processGeneratedFiles(status, cachesOutput, context, generatedCaches);
 
     return ok;
@@ -242,7 +242,7 @@ public class FileGenerationManager implements ApplicationComponent {
     return generatedFiles;
   }
 
-  private Set<File> generateCaches(GenerationStatus status, File outputRootDirectory, Map<SNode, String> outputNodeContents) {
+  private Set<File> generateCaches(GenerationStatus status, File outputRootDirectory) {
     File modelOutput = FileGenerationUtil.getDefaultOutputDir(status.getInputModel(), outputRootDirectory);
     if (!modelOutput.exists()) {
       if (!modelOutput.mkdirs()) {
