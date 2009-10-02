@@ -48,6 +48,7 @@ class AddOperation extends VcsOperation {
   private final List<VirtualFile> myVirtualFilesToRevert = new ArrayList<VirtualFile>();
   private final VcsShowConfirmationOption myConfirmationOption;
   private final boolean mySilently;
+  private final VcsDirtyScopeManager myVcsDirtyScopeManager;
 
   public AddOperation(Set<VirtualFile> filesToAdd, ProjectLevelVcsManager manager, Project project,
                       VcsShowConfirmationOption option, boolean recursive, boolean silently) {
@@ -60,6 +61,7 @@ class AddOperation extends VcsOperation {
     }));
     myConfirmationOption = option;
     mySilently = silently;
+    myVcsDirtyScopeManager = VcsDirtyScopeManager.getInstance(myProject);
   }
 
   public AddOperation(List<File> filesToAdd, ProjectLevelVcsManager manager, Project project,
@@ -69,6 +71,7 @@ class AddOperation extends VcsOperation {
     myFilesToAdd.addAll(filesToAdd);
     myConfirmationOption = option;
     mySilently = silently;
+    myVcsDirtyScopeManager = VcsDirtyScopeManager.getInstance(myProject);
   }
 
   public void performInternal() {
@@ -165,7 +168,7 @@ class AddOperation extends VcsOperation {
             for (File f : myFilesToAdd) {
               filesToAdd.add(VFileSystem.getFilePath(f));
             }
-            VcsDirtyScopeManager.getInstance(myProject).filePathsDirty(filesToAdd, Collections.EMPTY_SET);
+            myVcsDirtyScopeManager.filePathsDirty(filesToAdd, Collections.EMPTY_SET);
           }
         });
         ChangeListManager.getInstance(myProject).invokeAfterUpdate(runnable, InvokeAfterUpdateMode.BACKGROUND_NOT_CANCELLABLE, "Checking for files to add to Version Control", ModalityState.NON_MODAL);
@@ -187,7 +190,7 @@ class AddOperation extends VcsOperation {
               LOG.error(e);
             }
           }
-          VcsDirtyScopeManager.getInstance(myProject).fileDirty(vf);
+          myVcsDirtyScopeManager.fileDirty(vf);
         }
       }
     }
@@ -205,7 +208,7 @@ class AddOperation extends VcsOperation {
           for (VcsException e : result) {
             LOG.error(e);
           }
-          VcsDirtyScopeManager.getInstance(myProject).fileDirty(vf);
+          myVcsDirtyScopeManager.fileDirty(vf);
         }
       }
     }
