@@ -81,6 +81,6 @@ public class ModelDigestIndex extends ScalarIndexExtension<String> {
   }
 
   public int getVersion() {
-    return 0;
+    return 1;
   }
 }
