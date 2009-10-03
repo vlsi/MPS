@@ -73,7 +73,7 @@ public class EventsCollector {
             return this.hashCode();
           }
 
-          checkNotDisposed();
+          checkDisposed();
 
           if (method.getName().equals("beforeChildRemoved")) {
             return null;
@@ -95,28 +95,22 @@ public class EventsCollector {
     );
   }
 
-  private void checkNotDisposed() {
-    if (myDisposed) {
-      throw new IllegalStateException("Disposed events collector was called");
-    }
-  }
-
   public void add(SModelDescriptor sm) {
-    checkNotDisposed();
+    checkDisposed();
 
     myModelDescriptors.add(sm);
     sm.addModelListener(myListener);
   }
 
   public void remove(SModelDescriptor sm) {
-    checkNotDisposed();
+    checkDisposed();
 
     myModelDescriptors.remove(sm);
     sm.removeModelListener(myListener);
   }
 
   public void flush() {
-    checkNotDisposed();
+    checkDisposed();
 
     if (myEvents.isEmpty()) return;
     ModelAccess.instance().runWriteAction(new Runnable() {
@@ -132,12 +126,22 @@ public class EventsCollector {
   }
 
   public void dispose() {
+    checkDisposed();
+
     for (SModelDescriptor sm : new LinkedHashSet<SModelDescriptor>(myModelDescriptors)) {
       remove(sm);
     }
     ourListenersSupport.removeCommandListener(myCommandListener);
     myDisposed = true;
   }
+
+
+  private void checkDisposed() {
+    if (myDisposed) {
+      throw new IllegalStateException("Disposed events collector was called");
+    }
+  }
+
 
   private static class CommandListenersSupport {
     private final Object myLock = new Object();
