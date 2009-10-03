@@ -138,7 +138,6 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor {
     if (mySModel == null) {
       mySModel = loadModel();
       doPostLoadStuff();
-      addListenersToSModel();
       mySModel.fireModelInitialized();
     }
     return mySModel;
