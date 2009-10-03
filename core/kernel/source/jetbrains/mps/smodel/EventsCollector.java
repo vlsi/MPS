@@ -138,7 +138,7 @@ public class EventsCollector {
 
   private void checkDisposed() {
     if (myDisposed) {
-      throw new IllegalStateException("Disposed events collector was called");
+      throw new IllegalStateException("Disposed events collector was called: " + getClass());
     }
   }
 
