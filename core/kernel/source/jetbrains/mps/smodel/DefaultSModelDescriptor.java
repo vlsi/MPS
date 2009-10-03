@@ -336,9 +336,7 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor {
   public void addModelCommandListener(SModelCommandListener listener) {
     synchronized (myListenersLock) {
       if (mySModel != null) {
-        if (!mySModel.hasModelCommandListener(listener)) {
-          mySModel.addModelCommandListener(listener);
-        }
+        mySModel.addModelCommandListener(listener);
       } else {
         myModelCommandListeners.add(listener);
       }
