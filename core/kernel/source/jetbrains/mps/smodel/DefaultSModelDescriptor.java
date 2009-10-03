@@ -407,7 +407,6 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor {
 
   public void refresh() {
     if (isInitialized()) {
-      long start = System.currentTimeMillis();
       synchronized (myListenersLock) {
         myWeakModelListeners.addAll(mySModel.getWeakModelListeners());
         myModelListeners.addAll(mySModel.getModelListeners());
@@ -432,7 +431,6 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor {
           }
         }
       }
-      LOG.debug("Refresh  " + getSModelReference() + ". Took " + (System.currentTimeMillis() - start) + " ms");
     }
   }
 
