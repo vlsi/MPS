@@ -423,7 +423,15 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor {
       }
 
       if (mySModel != null) {
-        addListenersToNewModel();
+        if (mySModel != oldModel) {
+          addListenersToNewModel();
+        } else {
+          synchronized (myListenersLock) {
+            myWeakModelListeners.clear();
+            myModelListeners.clear();
+            myModelCommandListeners.clear();
+          }
+        }
       }
       LOG.debug("Refresh  " + getSModelReference() + ". Took " + (System.currentTimeMillis() - start) + " ms");
     }
