@@ -136,7 +136,6 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor {
 
   public SModel getSModel() {
     if (mySModel == null) {
-      mySModel = new SModel(getSModelReference());
       mySModel = loadModel();
       doPostLoadStuff();
       addListenersToSModel();
