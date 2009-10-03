@@ -295,9 +295,7 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor {
   public void addWeakModelListener(SModelListener listener) {
     synchronized (myListenersLock) {
       if (mySModel != null) {
-        if (!mySModel.hasModelListener(listener)) {
-          mySModel.addWeakSModelListener(listener);
-        }
+        mySModel.addWeakSModelListener(listener);
       } else {
         myWeakModelListeners.add(listener);
       }
@@ -307,9 +305,7 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor {
   public void addModelListener(SModelListener listener) {
     synchronized (myListenersLock) {
       if (mySModel != null) {
-        if (!mySModel.hasModelListener(listener)) {
-          mySModel.addModelListener(listener);
-        }
+        mySModel.addModelListener(listener);
       } else {
         myModelListeners.add(listener);
       }
