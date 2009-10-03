@@ -45,7 +45,7 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor {
 
   private static final Logger LOG = Logger.getLogger(DefaultSModelDescriptor.class);
 
-  protected SModel mySModel = null;
+  private SModel mySModel = null;
 
   private Map<String, String> myMetadata;
   private boolean myMetadataLoaded;
@@ -54,7 +54,7 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor {
   //access to other fields is synchronized with ModelAccess
   private final Object myListenersLock = new Object();
   private Set<SModelListener> myWeakModelListeners = new WeakSet<SModelListener>();
-  private Set<SModelListener> myModelListeners = new LinkedHashSet<SModelListener>(0);
+  private Set<SModelListener> myModelListeners = new HashSet<SModelListener>(0);
   private Set<SModelCommandListener> myModelCommandListeners = new LinkedHashSet<SModelCommandListener>(0);
 
   private long myLastStructuralChange = System.currentTimeMillis();
