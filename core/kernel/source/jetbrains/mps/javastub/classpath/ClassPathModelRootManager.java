@@ -129,7 +129,7 @@ public abstract class ClassPathModelRootManager extends AbstractModelRootManager
           SModelRepository.getInstance().addOwnerForDescriptor(descriptor, myOwner);
           descriptors.add(descriptor);
 
-          if (!descriptor.isInitialized()) {
+          if (!descriptor.isInitialized() && !myDescriptorsWithListener.contains(descriptor)) {
             descriptor.addModelListener(myInitializationListener);
             myDescriptorsWithListener.add(descriptor);
           } else {
