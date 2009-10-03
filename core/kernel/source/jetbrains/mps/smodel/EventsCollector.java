@@ -62,7 +62,7 @@ public class EventsCollector {
   private SModelListener createCommandEventsCollector() {
     return (SModelListener) Proxy.newProxyInstance(
       getClass().getClassLoader(),
-      new Class[]{SModelListener.class},
+      new Class[] { SModelListener.class },
       new InvocationHandler() {
         public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
           if (method.getName().equals("equals") && args.length == 1) {

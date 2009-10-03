@@ -22,5 +22,4 @@ public class GammaConcept extends BaseConcept {
   public static GammaConcept newInstance(SModel sm) {
     return GammaConcept.newInstance(sm, false);
   }
-
 }
