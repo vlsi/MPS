@@ -35,6 +35,7 @@ import jetbrains.mps.smodel.event.SModelListener;
 import jetbrains.mps.smodel.persistence.IModelRootManager;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.NameUtil;
+import jetbrains.mps.util.WeakSet;
 import jetbrains.mps.vfs.IFile;
 
 import java.util.*;
@@ -53,9 +54,9 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor {
   //it should be possible to add listeners from any thread so we use lock here
   //access to other fields is synchronized with ModelAccess
   private final Object myListenersLock = new Object();
-  private List<SModelListener> myWeakModelListeners = new WeakList<SModelListener>();
-  private List<SModelListener> myModelListeners = new ArrayList<SModelListener>(0);
-  private List<SModelCommandListener> myModelCommandListeners = new ArrayList<SModelCommandListener>(0);
+  private Set<SModelListener> myWeakModelListeners = new WeakSet<SModelListener>();
+  private Set<SModelListener> myModelListeners = new LinkedHashSet<SModelListener>(0);
+  private Set<SModelCommandListener> myModelCommandListeners = new LinkedHashSet<SModelCommandListener>(0);
 
   private long myLastStructuralChange = System.currentTimeMillis();
   private long myLastChange;
@@ -270,7 +271,7 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor {
 
       //do not use myWeakModelListener.clear() since it can cause ConcurrentModificationException (see code in
       //WeakList.remove() which can change modCount because it removes collected items
-      myWeakModelListeners = new WeakList<SModelListener>();
+      myWeakModelListeners = new WeakSet<SModelListener>();
 
       for (SModelListener listener : myModelListeners) {
         mySModel.addModelListener(listener);

@@ -97,6 +97,10 @@ public class EventsCollector {
   }
 
   public void add(SModelDescriptor sm) {
+    if (myModelDescriptors.contains(sm) && !sm.isInitialized()) {
+      System.out.println("Aha!!!");
+    }
+
     checkDisposed();
 
     myModelDescriptors.add(sm);

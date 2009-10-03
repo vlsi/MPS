@@ -47,6 +47,7 @@ public class SModel implements Iterable<SNode> {
   //it should be possible to add listeners from any thread so we use lock here
   //access to other fields is synchronized with ModelAccess
   private final Object myListenersLock = new Object();
+  
   private Set<SModelListener> myWeakListeners = new WeakSet<SModelListener>(0);
   private Set<SModelListener> myListeners = new LinkedHashSet<SModelListener>(0);
   private Set<SModelCommandListener> myCommandListeners = new LinkedHashSet<SModelCommandListener>(0);
