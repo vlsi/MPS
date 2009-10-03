@@ -23,6 +23,7 @@ import jetbrains.mps.smodel.event.SModelEvent;
 import jetbrains.mps.smodel.event.SModelListener;
 import jetbrains.mps.logging.Logger;
 
+import javax.swing.SwingUtilities;
 import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Method;
 import java.lang.reflect.Proxy;
@@ -73,13 +74,13 @@ public class EventsCollector {
             return this.hashCode();
           }
 
-          checkDisposed();
-
           if (method.getName().equals("beforeChildRemoved")) {
             return null;
           }
 
           if (args != null && args.length == 1 && args[0] instanceof SModelEvent) {
+            checkDisposed();
+            
             SModelEvent e = (SModelEvent) args[0];
 
             if (myCurrentCommand == null) {
@@ -137,6 +138,10 @@ public class EventsCollector {
 
 
   private void checkDisposed() {
+    if (!SwingUtilities.isEventDispatchThread() && getClass().getName().contains("Global")) {
+      System.out.println("");
+    }
+
     if (myDisposed) {
       throw new IllegalStateException("Disposed events collector was called: " + getClass());
     }
