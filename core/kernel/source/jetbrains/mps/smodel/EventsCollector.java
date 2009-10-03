@@ -78,9 +78,9 @@ public class EventsCollector {
             return null;
           }
 
-          if (args != null && args.length == 1 && args[0] instanceof SModelEvent) {
-            checkDisposed();
+          checkDisposed();          
 
+          if (args != null && args.length == 1 && args[0] instanceof SModelEvent) {
             SModelEvent e = (SModelEvent) args[0];
 
             if (myCurrentCommand == null) {
