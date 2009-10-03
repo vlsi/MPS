@@ -265,9 +265,7 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor {
 
     synchronized (myListenersLock) {
       for (SModelListener listener : myWeakModelListeners) {
-        if (!mySModel.hasModelListener(listener)) {
-          mySModel.addWeakSModelListener(listener);
-        }
+        mySModel.addWeakSModelListener(listener);
       }
 
       //do not use myWeakModelListener.clear() since it can cause ConcurrentModificationException (see code in
@@ -275,16 +273,12 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor {
       myWeakModelListeners = new WeakList<SModelListener>();
 
       for (SModelListener listener : myModelListeners) {
-        if (!mySModel.hasModelListener(listener)) {
-          mySModel.addModelListener(listener);
-        }
+        mySModel.addModelListener(listener);
       }
       myModelListeners.clear();
 
       for (SModelCommandListener listener : myModelCommandListeners) {
-        if (!mySModel.hasModelCommandListener(listener)) {
-          mySModel.addModelCommandListener(listener);
-        }
+        mySModel.addModelCommandListener(listener);
       }
       myModelCommandListeners.clear();
     }

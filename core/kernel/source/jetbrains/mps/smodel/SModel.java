@@ -228,14 +228,12 @@ public class SModel implements Iterable<SNode> {
 
   public void addWeakSModelListener(@NotNull SModelListener listener) {
     synchronized (myListenersLock) {
-      LOG.assertLog(!myWeakListeners.contains(listener), "Duplicated weak listener");
       myWeakListeners.add(listener);
     }
   }
 
   public void addModelListener(@NotNull SModelListener listener) {
     synchronized (myListenersLock) {
-      LOG.assertLog(!myListeners.contains(listener), "Duplicated listener");
       myListeners.add(listener);
     }
   }
@@ -579,7 +577,6 @@ public class SModel implements Iterable<SNode> {
 
   public void addModelCommandListener(@NotNull SModelCommandListener listener) {
     synchronized (myListenersLock) {
-      LOG.assertLog(!myCommandListeners.contains(listener), "Duplicated listener");
       myCommandListeners.add(listener);
     }
   }
