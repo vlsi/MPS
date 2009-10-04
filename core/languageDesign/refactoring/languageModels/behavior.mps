@@ -416,7 +416,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.behavior.structure.ConceptBehavior" id="7573235936722759518">
-    <property name="package" value="RefDecl.Arg.Parameters.Chooser" />
+    <property name="package" value="RefDecl.Arg.Parameters.Chooser.MPS" />
     <link role="concept" targetNodeId="1.7573235936722759511" resolveInfo="InitialPropertyValueClause" />
     <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="7573235936722759521">
       <property name="name" value="getExpectedReturnType" />

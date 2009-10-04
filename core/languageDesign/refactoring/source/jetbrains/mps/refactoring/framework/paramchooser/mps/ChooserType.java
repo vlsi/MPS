@@ -1,8 +1,7 @@
-package jetbrains.mps.refactoring.framework.paramchooser;
+package jetbrains.mps.refactoring.framework.paramchooser.mps;
 
 import com.intellij.ide.DataManager;
 import com.intellij.ide.util.gotoByName.ChooseByNameModel;
-import com.intellij.ide.util.gotoByName.ChooseByNamePopup;
 import com.intellij.navigation.NavigationItem;
 import com.intellij.openapi.actionSystem.DataContext;
 import jetbrains.mps.project.IModule;
@@ -15,9 +14,6 @@ import jetbrains.mps.workbench.choose.models.BaseModelItem;
 import jetbrains.mps.workbench.choose.models.BaseModelModel;
 import jetbrains.mps.workbench.choose.modules.BaseModuleItem;
 import jetbrains.mps.workbench.choose.modules.BaseModuleModel;
-import jetbrains.mps.workbench.choose.nodes.BaseNodeItem;
-import jetbrains.mps.workbench.choose.nodes.BaseNodeModel;
-import jetbrains.mps.workbench.choose.base.FakePsiContext;
 
 import java.util.List;
 import java.util.ArrayList;

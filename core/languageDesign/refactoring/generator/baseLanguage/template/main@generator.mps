@@ -51,7 +51,7 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895903fe(jetbrains.mps.baseLanguage.strings.constraints)" version="1" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590402(jetbrains.mps.baseLanguage.strings.structure)" version="9" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959057f(jetbrains.mps.baseLanguage.logging.structure)" version="0" />
-  <maxImportIndex value="42" />
+  <maxImportIndex value="43" />
   <import index="1" modelUID="r:00000000-0000-4000-0000-011c89590319(jetbrains.mps.lang.refactoring.structure)" version="1" />
   <import index="2" modelUID="f:java_stub#java.lang(java.lang@java_stub)" version="-1" />
   <import index="3" modelUID="f:java_stub#jetbrains.mps.refactoring.framework(jetbrains.mps.refactoring.framework@java_stub)" version="-1" />
@@ -71,6 +71,7 @@
   <import index="40" modelUID="f:java_stub#javax.swing(javax.swing@java_stub)" version="-1" />
   <import index="41" modelUID="f:java_stub#jetbrains.mps.refactoring.framework.paramchooser(jetbrains.mps.refactoring.framework.paramchooser@java_stub)" version="-1" />
   <import index="42" modelUID="f:java_stub#com.intellij.ide.util.gotoByName(com.intellij.ide.util.gotoByName@java_stub)" version="-1" />
+  <import index="43" modelUID="f:java_stub#jetbrains.mps.refactoring.framework.paramchooser.mps(jetbrains.mps.refactoring.framework.paramchooser.mps@java_stub)" version="-1" />
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="1189697446192">
     <property name="name" value="OldRefactoringClass" />
     <property name="package" value="Deprecated.RefDecl" />
@@ -5779,7 +5780,7 @@
         <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="3644668945279457777" />
         <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="3644668945279457778">
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" id="3644668945279555471">
-            <link role="baseMethodDeclaration" targetNodeId="41.~IChooserSettings$BaseChooserSettings.&lt;init&gt;(java.lang.String)" resolveInfo="IChooserSettings.BaseChooserSettings" />
+            <link role="baseMethodDeclaration" targetNodeId="43.~IChooserSettings$BaseChooserSettings.&lt;init&gt;(java.lang.String)" resolveInfo="IChooserSettings.BaseChooserSettings" />
             <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="3644668945279555472">
               <property name="value" value="title" />
               <node role="propertyMacro$property_attribute$value" type="jetbrains.mps.lang.generator.structure.PropertyMacro" id="3644668945279555473">
@@ -5820,7 +5821,7 @@
         </node>
       </node>
       <node role="superclass" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="3644668945279555456">
-        <link role="classifier" targetNodeId="41.~IChooserSettings$BaseChooserSettings" resolveInfo="IChooserSettings.BaseChooserSettings" />
+        <link role="classifier" targetNodeId="43.~IChooserSettings$BaseChooserSettings" resolveInfo="IChooserSettings.BaseChooserSettings" />
         <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="3644668945279555459">
           <link role="classifier" targetNodeId="2.~Object" resolveInfo="Object" />
           <node role="nodeMacro$attribute" type="jetbrains.mps.lang.generator.structure.CopySrcNodeMacro" id="3644668945279555460">
@@ -6000,7 +6001,7 @@
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="6647259624309048776" />
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="6647259624309048777">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" id="8041810900052632094">
-          <link role="baseMethodDeclaration" targetNodeId="41.~BaseMPSChooser.&lt;init&gt;(jetbrains.mps.refactoring.framework.RefactoringContext,java.lang.String,jetbrains.mps.refactoring.framework.paramchooser.ChooserType,jetbrains.mps.refactoring.framework.paramchooser.IChooserSettings)" resolveInfo="BaseMPSChooser" />
+          <link role="baseMethodDeclaration" targetNodeId="43.~BaseMPSChooser.&lt;init&gt;(jetbrains.mps.refactoring.framework.RefactoringContext,java.lang.String,jetbrains.mps.refactoring.framework.paramchooser.mps.ChooserType,jetbrains.mps.refactoring.framework.paramchooser.mps.IChooserSettings)" resolveInfo="BaseMPSChooser" />
           <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="3644668945279457770">
             <link role="variableDeclaration" targetNodeId="3644668945279457767" resolveInfo="context" />
           </node>
@@ -6032,7 +6033,7 @@
           </node>
           <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="3644668945279596004">
             <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="3644668945279596005">
-              <link role="baseMethodDeclaration" targetNodeId="41.~ChooserType$ModelChooserType.&lt;init&gt;()" resolveInfo="ChooserType.ModelChooserType" />
+              <link role="baseMethodDeclaration" targetNodeId="43.~ChooserType$ModelChooserType.&lt;init&gt;()" resolveInfo="ChooserType.ModelChooserType" />
             </node>
             <node role="nodeMacro$attribute" type="jetbrains.mps.lang.generator.structure.CopySrcNodeMacro" id="3644668945279596006">
               <node role="sourceNodeQuery" type="jetbrains.mps.lang.generator.structure.SourceSubstituteMacro_SourceNodeQuery" id="3644668945279596007">
@@ -6043,7 +6044,7 @@
                         <node role="expression" type="jetbrains.mps.lang.quotation.structure.Quotation" id="3644668945279596012">
                           <node role="quotedNode" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="3644668945279596013">
                             <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="3644668945279596014">
-                              <link role="baseMethodDeclaration" targetNodeId="41.~ChooserType$NodeChooserType.&lt;init&gt;()" resolveInfo="ChooserType.NodeChooserType" />
+                              <link role="baseMethodDeclaration" targetNodeId="43.~ChooserType$NodeChooserType.&lt;init&gt;()" resolveInfo="ChooserType.NodeChooserType" />
                             </node>
                           </node>
                         </node>
@@ -6068,7 +6069,7 @@
                           <node role="expression" type="jetbrains.mps.lang.quotation.structure.Quotation" id="3644668945279596024">
                             <node role="quotedNode" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="3644668945279596025">
                               <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="3644668945279596026">
-                                <link role="baseMethodDeclaration" targetNodeId="41.~ChooserType$ModelChooserType.&lt;init&gt;()" resolveInfo="ChooserType.ModelChooserType" />
+                                <link role="baseMethodDeclaration" targetNodeId="43.~ChooserType$ModelChooserType.&lt;init&gt;()" resolveInfo="ChooserType.ModelChooserType" />
                               </node>
                             </node>
                           </node>
@@ -6094,7 +6095,7 @@
                           <node role="expression" type="jetbrains.mps.lang.quotation.structure.Quotation" id="3644668945279596036">
                             <node role="quotedNode" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="3644668945279596037">
                               <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="3644668945279596038">
-                                <link role="baseMethodDeclaration" targetNodeId="41.~ChooserType$ModuleChooserType.&lt;init&gt;()" resolveInfo="ChooserType.ModuleChooserType" />
+                                <link role="baseMethodDeclaration" targetNodeId="43.~ChooserType$ModuleChooserType.&lt;init&gt;()" resolveInfo="ChooserType.ModuleChooserType" />
                               </node>
                             </node>
                           </node>
@@ -6180,7 +6181,7 @@
       </node>
     </node>
     <node role="superclass" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="8041810900052577820">
-      <link role="classifier" targetNodeId="41.~BaseMPSChooser" resolveInfo="BaseMPSChooser" />
+      <link role="classifier" targetNodeId="43.~BaseMPSChooser" resolveInfo="BaseMPSChooser" />
       <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="8041810900052632118">
         <link role="classifier" targetNodeId="2.~Object" resolveInfo="Object" />
         <node role="nodeMacro$attribute" type="jetbrains.mps.lang.generator.structure.CopySrcNodeMacro" id="8041810900052632172">

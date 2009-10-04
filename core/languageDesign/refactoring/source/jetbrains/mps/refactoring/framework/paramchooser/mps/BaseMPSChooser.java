@@ -1,11 +1,11 @@
-package jetbrains.mps.refactoring.framework.paramchooser;
+package jetbrains.mps.refactoring.framework.paramchooser.mps;
 
 import com.intellij.ide.util.gotoByName.ChooseByNamePopupComponent.Callback;
 import com.intellij.openapi.application.ModalityState;
 import jetbrains.mps.refactoring.framework.InvalidInputValueException;
 import jetbrains.mps.refactoring.framework.RefactoringContext;
+import jetbrains.mps.refactoring.framework.paramchooser.IChooser;
 import jetbrains.mps.workbench.dialogs.choosers.SmartChooseByNamePanel;
-import org.jetbrains.annotations.Nullable;
 
 import javax.swing.JComponent;
 

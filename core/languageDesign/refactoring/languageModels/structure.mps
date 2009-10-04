@@ -1393,7 +1393,7 @@
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="7573235936722759511">
     <property name="name" value="InitialPropertyValueClause" />
-    <property name="package" value="RefDecl.Arg.Parameters.Chooser" />
+    <property name="package" value="RefDecl.Arg.Parameters.Chooser.MPS" />
     <link role="extends" targetNodeId="2.1137021947720" resolveInfo="ConceptFunction" />
     <node role="conceptLink" type="jetbrains.mps.lang.structure.structure.AggregationConceptLink" id="7573235936722759512">
       <link role="conceptLinkDeclaration" targetNodeId="2.1137545148427" resolveInfo="conceptFunctionReturnType" />

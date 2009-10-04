@@ -1,7 +1,6 @@
-package jetbrains.mps.refactoring.framework.paramchooser;
+package jetbrains.mps.refactoring.framework.paramchooser.mps;
 
 import org.jetbrains.annotations.Nullable;
-import com.intellij.ide.util.gotoByName.ChooseByNameModel;
 
 public interface IChooserSettings<T> {
   @Nullable String getTitle();
