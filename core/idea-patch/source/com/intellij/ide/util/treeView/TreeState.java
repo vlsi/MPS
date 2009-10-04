@@ -310,15 +310,18 @@ public class TreeState implements JDOMExternalizable {
   }
 
 
-  @Patch //selection by caption
+  @Patch
+  //selection by caption
   private static DefaultMutableTreeNode findMatchedChild(DefaultMutableTreeNode parent, PathElement pathElement) {
 
+    //patch begin
     for (int j = 0; j < parent.getChildCount(); j++) {
       final TreeNode child = parent.getChildAt(j);
       if (!(child instanceof MPSTreeNode)) continue;
       final MPSTreeNode childNode = (MPSTreeNode) child;
       if (childNode.getText().equals(pathElement.myItemId)) return childNode;
     }
+    //patch end
 
     for (int j = 0; j < parent.getChildCount(); j++) {
       final TreeNode child = parent.getChildAt(j);
@@ -343,6 +346,9 @@ public class TreeState implements JDOMExternalizable {
       if (index >= parent.getChildCount()) {
         index = parent.getChildCount() - 1;
       }
+      //patch begin
+      if (index == -1) return null;
+      //patch end
       final TreeNode child = parent.getChildAt(index);
       if (child instanceof DefaultMutableTreeNode) {
         return (DefaultMutableTreeNode) child;
