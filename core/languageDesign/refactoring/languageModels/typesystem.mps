@@ -1578,5 +1578,29 @@
       <link role="concept" targetNodeId="1.7953996722066256458" resolveInfo="RefactoringContext_ConceptFunctionParameter" />
     </node>
   </node>
+  <node type="jetbrains.mps.lang.typesystem.structure.InferenceRule" id="3060724424231313007">
+    <property name="name" value="typeof_ChooserRefactoringContext_ConceptFunctionParameter" />
+    <property name="package" value="Context" />
+    <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="3060724424231313008">
+      <node role="statement" type="jetbrains.mps.lang.typesystem.structure.CreateEquationStatement" id="3060724424231313009">
+        <node role="rightExpression" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause" id="3060724424231313010">
+          <node role="normalType" type="jetbrains.mps.lang.quotation.structure.Quotation" id="3060724424231313011">
+            <node role="quotedNode" type="jetbrains.mps.lang.refactoring.structure.ContextType" id="3060724424231313012" />
+          </node>
+        </node>
+        <node role="leftExpression" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause" id="3060724424231313013">
+          <node role="normalType" type="jetbrains.mps.lang.typesystem.structure.TypeOfExpression" id="3060724424231313014">
+            <node role="term" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference" id="3060724424231313015">
+              <link role="applicableNode" targetNodeId="3060724424231313016" resolveInfo="parameter" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="applicableNode" type="jetbrains.mps.lang.typesystem.structure.ConceptReference" id="3060724424231313016">
+      <property name="name" value="parameter" />
+      <link role="concept" targetNodeId="1.3644668945279694356" resolveInfo="ChooserRefactoringContext_ConceptFunctionParameter" />
+    </node>
+  </node>
 </model>
 

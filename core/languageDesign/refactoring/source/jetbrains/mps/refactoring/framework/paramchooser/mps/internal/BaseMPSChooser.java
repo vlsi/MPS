@@ -1,10 +1,11 @@
-package jetbrains.mps.refactoring.framework.paramchooser.mps;
+package jetbrains.mps.refactoring.framework.paramchooser.mps.internal;
 
 import com.intellij.ide.util.gotoByName.ChooseByNamePopupComponent.Callback;
 import com.intellij.openapi.application.ModalityState;
 import jetbrains.mps.refactoring.framework.InvalidInputValueException;
 import jetbrains.mps.refactoring.framework.RefactoringContext;
 import jetbrains.mps.refactoring.framework.paramchooser.IChooser;
+import jetbrains.mps.refactoring.framework.paramchooser.mps.IChooserSettings;
 import jetbrains.mps.workbench.dialogs.choosers.SmartChooseByNamePanel;
 
 import javax.swing.JComponent;
@@ -15,7 +16,7 @@ public class BaseMPSChooser<T> implements IChooser {
 
   private SmartChooseByNamePanel myChooser;
 
-  protected BaseMPSChooser(RefactoringContext context, String paramName, ChooserType type, IChooserSettings<T> settings) {
+  public BaseMPSChooser(RefactoringContext context, String paramName, ChooserType type, IChooserSettings<T> settings) {
     myContext = context;
     myParamName = paramName;
 

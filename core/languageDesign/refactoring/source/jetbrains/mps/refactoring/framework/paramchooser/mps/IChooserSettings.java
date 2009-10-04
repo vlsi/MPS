@@ -25,7 +25,7 @@ public interface IChooserSettings<T> {
       return null;
     }
 
-    public boolean filter(Object entity) {
+    public boolean filter(T entity) {
       return false;
     }
   }

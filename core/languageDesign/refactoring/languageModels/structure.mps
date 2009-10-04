@@ -1529,7 +1529,7 @@
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="3644668945279694356">
     <property name="package" value="RefDecl.Arg.Parameters.Chooser.MPS" />
     <property name="name" value="ChooserRefactoringContext_ConceptFunctionParameter" />
-    <link role="extends" targetNodeId="2.1107135704075" resolveInfo="ConceptFunctionParameter" />
+    <link role="extends" targetNodeId="7953996722066256458" resolveInfo="RefactoringContext_ConceptFunctionParameter" />
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="3644668945279694357">
       <property name="value" value="refactoringContext" />
       <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" resolveInfo="alias" />

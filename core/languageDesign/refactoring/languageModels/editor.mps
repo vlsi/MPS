@@ -796,6 +796,7 @@
           <link role="styleClass" targetNodeId="4.1186415544875" resolveInfo="KeyWord" />
         </node>
         <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode" id="5497648299878742158">
+          <property name="emptyNoTargetText" value="false" />
           <link role="relationDeclaration" targetNodeId="1.6895093993902310998" />
         </node>
         <node role="styleItem" type="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem" id="5497648299878742159">

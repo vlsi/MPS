@@ -1,4 +1,4 @@
-package jetbrains.mps.refactoring.framework.paramchooser.mps;
+package jetbrains.mps.refactoring.framework.paramchooser.mps.internal;
 
 import com.intellij.ide.DataManager;
 import com.intellij.ide.util.gotoByName.ChooseByNameModel;
@@ -14,6 +14,7 @@ import jetbrains.mps.workbench.choose.models.BaseModelItem;
 import jetbrains.mps.workbench.choose.models.BaseModelModel;
 import jetbrains.mps.workbench.choose.modules.BaseModuleItem;
 import jetbrains.mps.workbench.choose.modules.BaseModuleModel;
+import jetbrains.mps.refactoring.framework.paramchooser.mps.IChooserSettings;
 
 import java.util.List;
 import java.util.ArrayList;
