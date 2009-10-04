@@ -25,6 +25,7 @@ import jetbrains.mps.ide.blame.dialog.BlameDialogComponent;
 import jetbrains.mps.ide.blame.perform.Response;
 import jetbrains.mps.logging.Logger;
 
+import javax.swing.JOptionPane;
 import java.awt.Component;
 
 public class CharismaReporter extends ErrorReportSubmitter {
@@ -52,12 +53,8 @@ public class CharismaReporter extends ErrorReportSubmitter {
     } else {
       Response response = blameDialog.getResult();
       assert response != null : "Response must not be null";
-      if (response.isSuccess()) {
-        return new SubmittedReportInfo(null, "", SubmissionStatus.NEW_ISSUE);
-      } else {
-        LOG.error("Submit failed: " + response.getMessage(), response.getThrowable());
-        return new SubmittedReportInfo(null, "Submit failed: " + response.getMessage(), SubmissionStatus.FAILED);
-      }
+      assert response.isSuccess(): "Responce is not 'cancelled' or 'success'";
+      return new SubmittedReportInfo(null, "", SubmissionStatus.NEW_ISSUE);
     }
   }
 }

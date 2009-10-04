@@ -185,6 +185,11 @@ public class BlameDialog extends BaseDialog {
     Query query = new Query(getLogin(), getPassword(), title, description.toString());
     myResult = poster.send(query);
 
+    if (!myResult.isSuccess()) {
+      JOptionPane.showMessageDialog(BlameDialog.this, myResult.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+      return;
+    }
+
     myIsCancelled = false;
     BlameDialogComponent.getInstance().loadState(getState());
     dispose();
