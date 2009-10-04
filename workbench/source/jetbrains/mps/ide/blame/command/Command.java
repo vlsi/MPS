@@ -24,7 +24,7 @@ import org.jetbrains.annotations.NotNull;
 import java.io.IOException;
 
 public class Command {
-  public static final String TEAMSYS = "http://jetbrains.net/tracker";
+  public static final String TEAMSYS = "http://youtrack.jetbrains.net";
   public static final String LOGIN = "/rest/user/login";
   public static final String ISSUE = "XX-1";
   public static final String POST_ISSUE = "/rest/issue/";
