@@ -4324,7 +4324,9 @@
       <property name="isVirtual" value="true" />
       <property name="name" value="createDefaultTypeExpression" />
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="3359611512358152581" />
-      <node role="returnType" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="3359611512358152585" />
+      <node role="returnType" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="3359611512358152585">
+        <link role="concept" targetNodeId="1.1068431790191" resolveInfo="Expression" />
+      </node>
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="3359611512358152583">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="3359611512358152586">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="3359611512358152588" />
