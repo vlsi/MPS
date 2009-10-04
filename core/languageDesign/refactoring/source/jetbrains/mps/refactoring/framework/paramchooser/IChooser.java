@@ -13,5 +13,5 @@ public interface IChooser{
 
   public JComponent getComponentToFocus();
 
-  public void commit(RefactoringContext refactoringContext) throws InvalidInputValueException;
+  public void commit() throws InvalidInputValueException;
 }

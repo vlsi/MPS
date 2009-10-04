@@ -19,19 +19,39 @@ import jetbrains.mps.workbench.choose.nodes.BaseNodeItem;
 import jetbrains.mps.workbench.choose.nodes.BaseNodeModel;
 import jetbrains.mps.workbench.choose.base.FakePsiContext;
 
+import java.util.List;
+import java.util.ArrayList;
+import java.util.Arrays;
+
 public abstract class ChooserType {
-  public abstract ChooseByNameModel createChooserModel(String text);
+  public abstract ChooseByNameModel createChooserModel(IChooserSettings settings);
+
+  protected List filter(IChooserSettings settings, List list){
+    List result = new ArrayList<SNode>();
+    for (Object entity:list){
+      if (settings.filter(entity)){
+        result.add(entity);
+      }
+    }
+    return result;
+  }
 
   public static class NodeChooserType extends ChooserType {
     public NodeChooserType() {
     }
 
-    public ChooseByNameModel createChooserModel(final String text) {
+    
+    public ChooseByNameModel createChooserModel(final IChooserSettings settings) {
       DataContext dataContext = DataManager.getInstance().getDataContext();
       final MPSProject mpsProject = MPSDataKeys.MPS_PROJECT.getData(dataContext);
-      return new MPSChooseSNodeDescriptor(mpsProject, new NamedNodeIndex()){
+      NamedNodeIndex nodeIndex = new NamedNodeIndex(){
+        public List<SNode> getNodesToIterate(SModel model) {
+          return filter(settings,super.getNodesToIterate(model));
+        }
+      };
+      return new MPSChooseSNodeDescriptor(mpsProject, nodeIndex){
         public String getPromptText() {
-          return text;
+          return settings.getTitle();
         }
       };
     }
@@ -41,7 +61,7 @@ public abstract class ChooserType {
     public ModelChooserType() {
     }
 
-    public ChooseByNameModel createChooserModel(final String text) {
+    public ChooseByNameModel createChooserModel(final IChooserSettings settings) {
       DataContext dataContext = DataManager.getInstance().getDataContext();
       final MPSProject mpsProject = MPSDataKeys.MPS_PROJECT.getData(dataContext);
 
@@ -54,7 +74,9 @@ public abstract class ChooserType {
         }
 
         public SModelDescriptor[] find(boolean checkboxState) {
-          return SModelRepository.getInstance().getModelDescriptors().toArray(new SModelDescriptor[SModelRepository.getInstance().getModelDescriptors().size()]);
+          List<SModelDescriptor> modelDescriptors = SModelRepository.getInstance().getModelDescriptors();
+          List filteredModelDescriptors = filter(settings, Arrays.asList(modelDescriptors));
+          return (SModelDescriptor[]) filteredModelDescriptors.toArray();
         }
 
         public SModelDescriptor[] find(IScope scope) {
@@ -66,7 +88,7 @@ public abstract class ChooserType {
         }
 
         public String getPromptText() {
-          return text;
+          return settings.getTitle();
         }
       };
     }
@@ -77,7 +99,7 @@ public abstract class ChooserType {
     public ModuleChooserType() {
     }
 
-    public ChooseByNameModel createChooserModel(final String text) {
+    public ChooseByNameModel createChooserModel(final IChooserSettings settings) {
       DataContext dataContext = DataManager.getInstance().getDataContext();
       final MPSProject mpsProject = MPSDataKeys.MPS_PROJECT.getData(dataContext);
 
@@ -90,7 +112,9 @@ public abstract class ChooserType {
         }
 
         public IModule[] find(boolean checkboxState) {
-          return MPSModuleRepository.getInstance().getAllModules().toArray(new IModule[MPSModuleRepository.getInstance().getAllModules().size()]);
+          List<IModule> modules = MPSModuleRepository.getInstance().getAllModules();
+          List filteredModules = filter(settings, Arrays.asList(modules));
+          return (IModule[]) filteredModules.toArray();
         }
 
         public IModule[] find(IScope scope) {
@@ -102,7 +126,7 @@ public abstract class ChooserType {
         }
 
         public String getPromptText() {
-          return text;
+          return settings.getTitle();
         }
       };
     }

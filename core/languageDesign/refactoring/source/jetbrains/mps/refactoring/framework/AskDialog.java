@@ -30,13 +30,11 @@ public class AskDialog extends BaseDialog {
   private JPanel myInnerPanel;
   private boolean myIsCancelled = true;
   private ArrayList<IChooser> myChoosers;
-  private RefactoringContext myRefactoringContext;
   private IChooseComponent myFirstChooser = null;
   private IChooseComponent myLastChooser = null;
 
   public AskDialog(final RefactoringContext refactoringContext, IChooser... choosers) throws HeadlessException {
     super(refactoringContext.getCurrentOperationContext().getMainFrame(), "Input Data for " + refactoringContext.getRefactoring().getUserFriendlyName());
-    myRefactoringContext = refactoringContext;
     myChoosers = new ArrayList<IChooser>(Arrays.asList(choosers));
     myInnerPanel = new JPanel();
     GridBagLayout layout = new GridBagLayout();
@@ -114,7 +112,7 @@ public class AskDialog extends BaseDialog {
   public void onOk() {
     try {
       for (IChooser chooser : myChoosers) {
-        chooser.commit(myRefactoringContext);
+        chooser.commit();
       }
 
       myIsCancelled = false;
