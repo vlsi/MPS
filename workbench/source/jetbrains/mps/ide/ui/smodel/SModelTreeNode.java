@@ -491,7 +491,7 @@ public class SModelTreeNode extends MPSTreeNodeEx {
   }
 
   private void eventsHappenedInCommand(final List<SModelEvent> events) {
-    Runnable action = new Runnable() {
+    final Runnable action = new Runnable() {
       public void run() {
         final Set<SNode> addedRoots = new LinkedHashSet<SNode>();
         final Set<SNode> removedRoots = new LinkedHashSet<SNode>();
@@ -576,7 +576,12 @@ public class SModelTreeNode extends MPSTreeNodeEx {
     if (ThreadUtils.isEventDispatchThread()) {
       action.run();
     } else {
-      getTree().rebuildTreeLater(action, false);
+      getTree().rebuildTreeLater(new Runnable() {
+        public void run() {
+          if (getOperationContext().getProject().isDisposed()) return;
+          action.run();
+        }
+      }, false);
     }
   }
 
