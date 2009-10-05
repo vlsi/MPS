@@ -30,6 +30,9 @@ abstract class VcsOperation {
     myProject = project;
   }
 
+  /**
+   * This is what really being executed.
+   */
   public abstract void performInternal();
 
   public void runPerform(Runnable runnable) {

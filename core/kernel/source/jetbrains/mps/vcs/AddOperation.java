@@ -22,20 +22,21 @@ import com.intellij.openapi.vcs.*;
 import com.intellij.openapi.vcs.actions.VcsContextFactory;
 import com.intellij.openapi.vcs.rollback.RollbackEnvironment;
 import com.intellij.openapi.vcs.rollback.RollbackProgressListener;
-import com.intellij.openapi.vcs.changes.VcsDirtyScopeManager;
-import com.intellij.openapi.vcs.changes.ChangeListManager;
-import com.intellij.openapi.vcs.changes.InvokeAfterUpdateMode;
+import com.intellij.openapi.vcs.changes.*;
 import com.intellij.openapi.vcs.checkin.CheckinEnvironment;
 import com.intellij.openapi.vcs.impl.VcsFileStatusProvider;
 import com.intellij.openapi.vcs.impl.ExcludedFileIndex;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.openapi.fileTypes.FileTypeManager;
+import com.intellij.openapi.progress.EmptyProgressIndicator;
 import jetbrains.mps.fileTypes.MPSFileTypesManager;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.vfs.VFileSystem;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.Condition;
+import jetbrains.mps.vcs.ApplicationLevelVcsManager.StubChangeListManagerGate;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 import java.io.File;
 import java.util.*;
@@ -74,27 +75,30 @@ class AddOperation extends VcsOperation {
     myVcsDirtyScopeManager = VcsDirtyScopeManager.getInstance(myProject);
   }
 
+  /**
+   * Here we dermine which files to process.
+   */
   public void performInternal() {
+    // collect virtual files
+    Set<VirtualFile> filesToCheckStatuses = new HashSet<VirtualFile>(myVirtualFilesToAdd);
+    myVirtualFilesToAdd.clear();
     for (File f : myFilesToAdd) {
       VirtualFile virtualFile = VFileSystem.refreshAndGetFile(f);
       if (virtualFile != null && !isIgnored(virtualFile)) {
-        FileStatus status = ChangeListManager.getInstance(myProject).getStatus(virtualFile);
-        if (status.equals(FileStatus.DELETED)) {
-          myVirtualFilesToRevert.add(virtualFile);
-        } else if (!status.equals(FileStatus.MODIFIED)/* && !status.equals(FileStatus.NOT_CHANGED)*/) {
-          // previous line is partly commented until IDEA-24846 fixed
-          myVirtualFilesToAdd.add(virtualFile);
-        }
+        filesToCheckStatuses.add(virtualFile);
       } else if (virtualFile == null && f.exists()) {
         LOG.error("Cannot find virtual file for IO file " + f);
       }
     }
 
     if (myRecursive) {
-      myVirtualFilesToAdd.addAll(getAllChildren(myVirtualFilesToAdd, new LinkedHashSet<VirtualFile>()));
-      myVirtualFilesToRevert.addAll(getAllChildren(myVirtualFilesToRevert, new LinkedHashSet<VirtualFile>()));
+      filesToCheckStatuses.addAll(getAllChildren(filesToCheckStatuses, new LinkedHashSet<VirtualFile>()));
     }
 
+    // calculate unversioned and deleted
+    reliablyGetUnversionedFiles(filesToCheckStatuses, myVirtualFilesToAdd, myVirtualFilesToRevert);
+
+    // PROFIT!
     askAndPerform();
   }
 
@@ -112,6 +116,9 @@ class AddOperation extends VcsOperation {
     return allChildren;
   }
 
+  /**
+   * Here we ask user (or do not ask) what to do with the files we found.
+   */
   private void askAndPerform() {
     if (mySilently || myConfirmationOption.getValue() == VcsShowConfirmationOption.Value.DO_ACTION_SILENTLY) {
       reallyPerform(myVirtualFilesToRevert, myVirtualFilesToAdd);
@@ -134,6 +141,12 @@ class AddOperation extends VcsOperation {
     }
   }
 
+  /**
+   * Here we do our dirty job.
+   *
+   * @param virtualFilesToRevert
+   * @param virtualFilesToAdd
+   */
   private void reallyPerform(final List<VirtualFile> virtualFilesToRevert, final List<VirtualFile> virtualFilesToAdd) {
     ApplicationManager.getApplication().runReadAction(new Runnable() {
       public void run() {
@@ -159,22 +172,98 @@ class AddOperation extends VcsOperation {
     });
   }
 
+  /**
+   * Here we point out that everything should be done in EDT.
+   *
+   * @param runnable
+   */
   @Override
   public void runPerform(final Runnable runnable) {
     ApplicationManager.getApplication().invokeLater(new Runnable() {
       public void run() {
-        ApplicationManager.getApplication().runReadAction(new Runnable() {
-          public void run() {
-            Set<FilePath> filesToAdd = new HashSet<FilePath>();
-            for (File f : myFilesToAdd) {
-              filesToAdd.add(VFileSystem.getFilePath(f));
-            }
-            myVcsDirtyScopeManager.filePathsDirty(filesToAdd, Collections.EMPTY_SET);
-          }
-        });
-        ChangeListManager.getInstance(myProject).invokeAfterUpdate(runnable, InvokeAfterUpdateMode.BACKGROUND_NOT_CANCELLABLE, "Checking for files to add to Version Control", ModalityState.NON_MODAL);
+        runnable.run();
       }
     }, ModalityState.NON_MODAL);
+  }
+
+  /**
+   * This is a dirty hack which exists here while IDEA-24846 is not fixed.
+   *
+   * @param files
+   * @param unversioned
+   * @param deleted
+   */
+  private void reliablyGetUnversionedFiles(final Set<VirtualFile> files, final List<VirtualFile> unversioned, List<VirtualFile> deleted) {
+    MPSVCSManager.getInstance(myProject).ensureVcssInitialized();
+
+    Map<AbstractVcs, List<VirtualFile>> vcsToFiles = new HashMap<AbstractVcs, List<VirtualFile>>();
+    for (VirtualFile f : files) {
+      AbstractVcs vcs = myManager.getVcsFor(f);
+      if (vcs == null) continue;
+      List<VirtualFile> filesList = vcsToFiles.get(vcs);
+      if (filesList == null) {
+        filesList = new ArrayList<VirtualFile>();
+        vcsToFiles.put(vcs, filesList);
+      }
+      filesList.add(f);
+    }
+
+    final List<FilePath> deletedPaths = new ArrayList<FilePath>();
+
+    for (AbstractVcs vcs : vcsToFiles.keySet()) {
+      VcsDirtyScopeImpl scope = new VcsDirtyScopeImpl(vcs, myProject); // TODO don't use Impl classes
+      List<VirtualFile> currentFiles = vcsToFiles.get(vcs);
+      for (VirtualFile f : currentFiles) {
+        scope.addDirtyFile(VcsContextFactory.SERVICE.getInstance().createFilePathOn(f));
+      }
+      ChangeProvider changeProvider = vcs.getChangeProvider();
+
+      if (changeProvider == null) {
+        return;
+      }
+
+      try {
+        changeProvider.getChanges(scope, new EmptyChangelistBuilder() {
+          @Override
+          public void processChangeInList(Change change, @Nullable ChangeList changeList, VcsKey vcsKey) {
+            processChange(change);
+          }
+
+          @Override
+          public void processChangeInList(Change change, String changeListName, VcsKey vcsKey) {
+            processChange(change);
+          }
+
+          public void processChange(Change change) {
+            if (change.getFileStatus().equals(FileStatus.DELETED)) {
+              ContentRevision contentRevision = change.getBeforeRevision();
+              if (contentRevision != null) {
+                deletedPaths.add(contentRevision.getFile());
+              }
+            }
+          }
+
+          @Override
+          public void processUnversionedFile(VirtualFile file) {
+            if (files.contains(file)) {
+              unversioned.add(file);
+            }
+          }
+        }, new EmptyProgressIndicator(), new StubChangeListManagerGate());
+
+      } catch (VcsException e) {
+        LOG.error(e);
+      }
+    }
+
+    for (FilePath path : deletedPaths) {
+      for (VirtualFile f : files) {
+        if (f.getPresentableUrl().equals(path.getPresentableUrl())) {
+          deleted.add(f);
+        }
+      }
+    }
+
   }
 
   private void scheduleUnversionedFileForAdditionInternal(@NotNull VirtualFile vf) {

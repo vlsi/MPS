@@ -347,7 +347,7 @@ public class ApplicationLevelVcsManager implements ApplicationComponent, Persist
     }
   }
 
-  private static class StubChangeListManagerGate implements ChangeListManagerGate {
+  public static class StubChangeListManagerGate implements ChangeListManagerGate {
     @Nullable
     public LocalChangeList findChangeList(String name) {
       return null;
