@@ -111,32 +111,6 @@ public class QueriesGenerated {
     return result;
   }
 
-  public static List<INodeSubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_ISideTransform_String_1196932866446(final IOperationContext operationContext, final NodeSubstituteActionsFactoryContext _context) {
-    List<INodeSubstituteAction> result = ListSequence.fromList(new ArrayList<INodeSubstituteAction>());
-    {
-      SNode outputConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.actions.structure.SideTransform_SimpleString");
-      SNode childConcept = (SNode)_context.getChildConcept();
-      if (outputConcept == null || SConceptOperations.isSuperConceptOf(childConcept, NameUtil.nodeFQName(outputConcept))) {
-        ListSequence.fromList(result).addElement(new DefaultSimpleSubstituteAction(outputConcept, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope()) {
-          public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
-            SNode result = SModelOperations.createNewNode(model, "jetbrains.mps.lang.actions.structure.SideTransform_SimpleString", null);
-            SPropertyOperations.set(result, "text", pattern);
-            return result;
-          }
-
-          public String getMatchingText(String pattern) {
-            return pattern;
-          }
-
-          public String getVisibleMatchingText(String pattern) {
-            return this.getMatchingText(pattern);
-          }
-        });
-      }
-    }
-    return result;
-  }
-
   public static void removeActionsByCondition_1177495897822(final IOperationContext operationContext, final RemoveSubstituteActionByConditionContext _context) {
     Iterator<INodeSubstituteAction> actions = _context.getActions();
     while (actions.hasNext()) {
