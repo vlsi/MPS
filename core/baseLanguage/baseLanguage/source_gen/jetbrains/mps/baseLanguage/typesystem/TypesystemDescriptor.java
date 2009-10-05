@@ -696,6 +696,8 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
           this.myOperationConceptFQName = "jetbrains.mps.baseLanguage.structure.PlusExpression";
           this.myLeftTypeIsExact = false;
           this.myRightTypeIsExact = false;
+          this.myRightIsStrong = false;
+          this.myLeftIsStrong = false;
         }
 
         public SNode getOperationType(SNode operation, SNode leftOperandType, SNode rightOperandType) {
@@ -716,6 +718,8 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
           this.myOperationConceptFQName = "jetbrains.mps.baseLanguage.structure.MinusExpression";
           this.myLeftTypeIsExact = false;
           this.myRightTypeIsExact = false;
+          this.myRightIsStrong = false;
+          this.myLeftIsStrong = false;
         }
 
         public SNode getOperationType(SNode operation, SNode leftOperandType, SNode rightOperandType) {
@@ -736,6 +740,8 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
           this.myOperationConceptFQName = "jetbrains.mps.baseLanguage.structure.DivExpression";
           this.myLeftTypeIsExact = false;
           this.myRightTypeIsExact = false;
+          this.myRightIsStrong = false;
+          this.myLeftIsStrong = false;
         }
 
         public SNode getOperationType(SNode operation, SNode leftOperandType, SNode rightOperandType) {
@@ -756,6 +762,8 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
           this.myOperationConceptFQName = "jetbrains.mps.baseLanguage.structure.MulExpression";
           this.myLeftTypeIsExact = false;
           this.myRightTypeIsExact = false;
+          this.myRightIsStrong = false;
+          this.myLeftIsStrong = false;
         }
 
         public SNode getOperationType(SNode operation, SNode leftOperandType, SNode rightOperandType) {
@@ -776,6 +784,8 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
           this.myOperationConceptFQName = "jetbrains.mps.baseLanguage.structure.BinaryCompareOperation";
           this.myLeftTypeIsExact = false;
           this.myRightTypeIsExact = false;
+          this.myRightIsStrong = false;
+          this.myLeftIsStrong = false;
         }
 
         public SNode getOperationType(SNode operation, SNode leftOperandType, SNode rightOperandType) {
@@ -792,6 +802,8 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
           this.myOperationConceptFQName = "jetbrains.mps.baseLanguage.structure.RemExpression";
           this.myLeftTypeIsExact = false;
           this.myRightTypeIsExact = false;
+          this.myRightIsStrong = false;
+          this.myLeftIsStrong = false;
         }
 
         public SNode getOperationType(SNode operation, SNode leftOperandType, SNode rightOperandType) {
@@ -812,6 +824,8 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
           this.myOperationConceptFQName = "jetbrains.mps.baseLanguage.structure.BinaryBitwiseOperation";
           this.myLeftTypeIsExact = false;
           this.myRightTypeIsExact = false;
+          this.myRightIsStrong = false;
+          this.myLeftIsStrong = false;
         }
 
         public SNode getOperationType(SNode operation, SNode leftOperandType, SNode rightOperandType) {
@@ -832,6 +846,8 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
           this.myOperationConceptFQName = "jetbrains.mps.baseLanguage.structure.UnaryMinus";
           this.myLeftTypeIsExact = false;
           this.myRightTypeIsExact = false;
+          this.myRightIsStrong = false;
+          this.myLeftIsStrong = false;
         }
 
         public SNode getOperationType(SNode operation, SNode leftOperandType, SNode rightOperandType) {
