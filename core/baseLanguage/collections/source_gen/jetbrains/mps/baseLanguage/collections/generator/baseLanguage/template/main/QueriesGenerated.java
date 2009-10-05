@@ -1755,8 +1755,10 @@ public class QueriesGenerated {
     if ((dType == null)) {
       dType = TypeChecker.getInstance().getTypeOf(_context.getNode());
     }
-    Values.CREATOR.set(dType, SLinkOperations.getTarget(_context.getNode(), "creator", true));
-    Values.CREATOR_COPY_SEQUENCE.set(dType, Boolean.TRUE);
+    if ((dType != null)) {
+      Values.CREATOR.set(dType, SLinkOperations.getTarget(_context.getNode(), "creator", true));
+      Values.CREATOR_COPY_SEQUENCE.set(dType, Boolean.TRUE);
+    }
     return dType;
   }
 
