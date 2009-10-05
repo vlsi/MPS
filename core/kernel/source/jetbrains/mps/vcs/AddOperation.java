@@ -81,7 +81,7 @@ class AddOperation extends VcsOperation {
         FileStatus status = ChangeListManager.getInstance(myProject).getStatus(virtualFile);
         if (status.equals(FileStatus.DELETED)) {
           myVirtualFilesToRevert.add(virtualFile);
-        } else if (!status.equals(FileStatus.MODIFIED) && !status.equals(FileStatus.NOT_CHANGED)) {
+        } else if (!status.equals(FileStatus.MODIFIED)/* && !status.equals(FileStatus.NOT_CHANGED)*/) {
           myVirtualFilesToAdd.add(virtualFile);
         }
       } else if (virtualFile == null && f.exists()) {
