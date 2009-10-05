@@ -1134,7 +1134,7 @@
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode" id="7573235936722759497">
         <property name="noTargetText" value="&lt;no initial value&gt;" />
-        <link role="relationDeclaration" targetNodeId="1.7573235936722759493" />
+        <link role="relationDeclaration" targetNodeId="1.3060724424231928628" />
       </node>
       <node role="cellLayout" type="jetbrains.mps.lang.editor.structure.CellLayout_VerticalGrid" id="5497648299878978996" />
     </node>
@@ -1167,10 +1167,6 @@
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode" id="7573235936722759499">
         <link role="relationDeclaration" targetNodeId="1.5497648299878979018" />
-      </node>
-      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode" id="7573235936722759501">
-        <property name="noTargetText" value="&lt;no initial value&gt;" />
-        <link role="relationDeclaration" targetNodeId="1.7573235936722759493" />
       </node>
       <node role="cellLayout" type="jetbrains.mps.lang.editor.structure.CellLayout_VerticalGrid" id="5497648299878979037" />
     </node>

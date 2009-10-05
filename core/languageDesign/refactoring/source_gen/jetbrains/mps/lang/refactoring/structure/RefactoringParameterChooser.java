@@ -10,18 +10,9 @@ import jetbrains.mps.project.GlobalScope;
 
 public class RefactoringParameterChooser extends BaseConcept {
   public static final String concept = "jetbrains.mps.lang.refactoring.structure.RefactoringParameterChooser";
-  public static final String INITIAL_VALUE_BLOCK = "initialValueBlock";
 
   public RefactoringParameterChooser(SNode node) {
     super(node);
-  }
-
-  public InitialPropertyValueClause getInitialValueBlock() {
-    return (InitialPropertyValueClause)this.getChild(InitialPropertyValueClause.class, RefactoringParameterChooser.INITIAL_VALUE_BLOCK);
-  }
-
-  public void setInitialValueBlock(InitialPropertyValueClause node) {
-    super.setChild(RefactoringParameterChooser.INITIAL_VALUE_BLOCK, node);
   }
 
   public static RefactoringParameterChooser newInstance(SModel sm, boolean init) {

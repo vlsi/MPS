@@ -1187,6 +1187,11 @@
       <property name="role" value="filterBlock" />
       <link role="target" targetNodeId="5497648299878742016" resolveInfo="FilterParameterClause" />
     </node>
+    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="3060724424231928628">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="initialValueBlock" />
+      <link role="target" targetNodeId="7573235936722759511" resolveInfo="InitialPropertyValueClause" />
+    </node>
     <node role="propertyDeclaration" type="jetbrains.mps.lang.structure.structure.PropertyDeclaration" id="5497648299878742015">
       <property name="name" value="type" />
       <link role="dataType" targetNodeId="5497648299878742013" resolveInfo="MPSParameter" />
@@ -1284,6 +1289,10 @@
       <node role="target" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="5497648299878994263">
         <link role="classifier" targetNodeId="17.~IChooser" resolveInfo="IChooser" />
       </node>
+    </node>
+    <node role="conceptLink" type="jetbrains.mps.lang.structure.structure.ReferenceConceptLink" id="3060724424231848474">
+      <link role="conceptLinkDeclaration" targetNodeId="2.1161119487665" resolveInfo="applicableConceptFunctionParameter" />
+      <link role="target" targetNodeId="3060724424231848615" resolveInfo="ChooserRefactoringContext_ConceptFunctionParameter" />
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="6895093993902236229">
@@ -1384,11 +1393,6 @@
     <link role="extends" targetNodeId="1.1133920641626" resolveInfo="BaseConcept" />
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.BooleanConceptProperty" id="7786266509745282419">
       <link role="conceptPropertyDeclaration" targetNodeId="1.1137473854053" resolveInfo="abstract" />
-    </node>
-    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="7573235936722759493">
-      <property name="metaClass" value="aggregation" />
-      <property name="role" value="initialValueBlock" />
-      <link role="target" targetNodeId="7573235936722759511" resolveInfo="InitialPropertyValueClause" />
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="7573235936722759511">
@@ -1528,9 +1532,18 @@
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="3644668945279694356">
     <property name="package" value="RefDecl.Arg.Parameters.Chooser.MPS" />
-    <property name="name" value="ChooserRefactoringContext_ConceptFunctionParameter" />
+    <property name="name" value="SettingsRefactoringContext_ConceptFunctionParameter" />
     <link role="extends" targetNodeId="7953996722066256458" resolveInfo="RefactoringContext_ConceptFunctionParameter" />
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="3644668945279694357">
+      <property name="value" value="refactoringContext" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" resolveInfo="alias" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="3060724424231848615">
+    <property name="package" value="RefDecl.Arg.Parameters.Chooser.Custom" />
+    <property name="name" value="ChooserRefactoringContext_ConceptFunctionParameter" />
+    <link role="extends" targetNodeId="7953996722066256458" resolveInfo="RefactoringContext_ConceptFunctionParameter" />
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="3060724424231848616">
       <property name="value" value="refactoringContext" />
       <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" resolveInfo="alias" />
     </node>

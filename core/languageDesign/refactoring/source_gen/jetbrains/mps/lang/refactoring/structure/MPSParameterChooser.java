@@ -12,6 +12,7 @@ public class MPSParameterChooser extends RefactoringParameterChooser {
   public static final String TITLE = "title";
   public static final String TYPE = "type";
   public static final String FILTER_BLOCK = "filterBlock";
+  public static final String INITIAL_VALUE_BLOCK = "initialValueBlock";
 
   public MPSParameterChooser(SNode node) {
     super(node);
@@ -40,6 +41,14 @@ public class MPSParameterChooser extends RefactoringParameterChooser {
 
   public void setFilterBlock(FilterParameterClause node) {
     super.setChild(MPSParameterChooser.FILTER_BLOCK, node);
+  }
+
+  public InitialPropertyValueClause getInitialValueBlock() {
+    return (InitialPropertyValueClause)this.getChild(InitialPropertyValueClause.class, MPSParameterChooser.INITIAL_VALUE_BLOCK);
+  }
+
+  public void setInitialValueBlock(InitialPropertyValueClause node) {
+    super.setChild(MPSParameterChooser.INITIAL_VALUE_BLOCK, node);
   }
 
   public static MPSParameterChooser newInstance(SModel sm, boolean init) {
