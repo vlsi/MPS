@@ -35,9 +35,16 @@ public class ShowDifferencesWithModelOnDisk_Action extends GeneratedAction {
     return "";
   }
 
+  public boolean isApplicable(AnActionEvent event) {
+    return (ShowDifferencesWithModelOnDisk_Action.this.modelDescriptor != null) && !(ShowDifferencesWithModelOnDisk_Action.this.modelDescriptor.isTransient());
+  }
+
   public void doUpdate(@NotNull AnActionEvent event) {
     try {
-      this.enable(event.getPresentation());
+      {
+        boolean enabled = this.isApplicable(event);
+        this.setEnabledState(event.getPresentation(), enabled);
+      }
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
         log.error("User's action doUpdate method failed. Action:" + "ShowDifferencesWithModelOnDisk", t);
