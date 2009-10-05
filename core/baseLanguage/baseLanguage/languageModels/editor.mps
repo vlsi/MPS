@@ -2179,6 +2179,9 @@
               <link role="styleClass" targetNodeId="1215189282959" resolveInfo="ClassName" />
             </node>
           </node>
+          <node role="styleItem" type="jetbrains.mps.lang.editor.structure.EditableStyleClassItem" id="1899207519885183290">
+            <property name="flag" value="false" />
+          </node>
         </node>
         <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1182955075319">
           <property name="text" value="." />
