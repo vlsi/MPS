@@ -16,6 +16,8 @@ import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
+import jetbrains.mps.smodel.IScope;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 public class OverloadedOperatorTypeRule_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
@@ -46,6 +48,9 @@ public class OverloadedOperatorTypeRule_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createRefNode_2759_0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_2759_6(editorContext, node));
     editorCell.addEditorCell(this.createProperty_2759_0(editorContext, node));
+    if (renderingCondition2759_0(node, editorContext, editorContext.getOperationContext().getScope())) {
+      editorCell.addEditorCell(this.createCollection_2759_4(editorContext, node));
+    }
     editorCell.addEditorCell(this.createConstant_2759_2(editorContext, node));
     return editorCell;
   }
@@ -75,6 +80,33 @@ public class OverloadedOperatorTypeRule_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createRefNode_2759_1(editorContext, node));
     editorCell.addEditorCell(this.createConstant_2759_7(editorContext, node));
     editorCell.addEditorCell(this.createProperty_2759_1(editorContext, node));
+    if (renderingCondition2759_1(node, editorContext, editorContext.getOperationContext().getScope())) {
+      editorCell.addEditorCell(this.createCollection_2759_5(editorContext, node));
+    }
+    return editorCell;
+  }
+
+  private EditorCell createCollection_2759_4(EditorContext editorContext, SNode node) {
+    EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
+    editorCell.setCellId("Collection_2759_4");
+    {
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.SELECTABLE, false);
+    }
+    editorCell.addEditorCell(this.createConstant_2759_8(editorContext, node));
+    editorCell.addEditorCell(this.createProperty_2759_2(editorContext, node));
+    return editorCell;
+  }
+
+  private EditorCell createCollection_2759_5(EditorContext editorContext, SNode node) {
+    EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
+    editorCell.setCellId("Collection_2759_5");
+    {
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.SELECTABLE, false);
+    }
+    editorCell.addEditorCell(this.createConstant_2759_9(editorContext, node));
+    editorCell.addEditorCell(this.createProperty_2759_3(editorContext, node));
     return editorCell;
   }
 
@@ -139,6 +171,20 @@ public class OverloadedOperatorTypeRule_Editor extends DefaultNodeEditor {
   private EditorCell createConstant_2759_7(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "is exact:");
     editorCell.setCellId("Constant_2759_7");
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+
+  private EditorCell createConstant_2759_8(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "use strong subtyping");
+    editorCell.setCellId("Constant_2759_8");
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+
+  private EditorCell createConstant_2759_9(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "use strong subtyping");
+    editorCell.setCellId("Constant_2759_9");
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -245,5 +291,49 @@ public class OverloadedOperatorTypeRule_Editor extends DefaultNodeEditor {
       return manager.createRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
     } else
     return editorCell;
+  }
+
+  private EditorCell createProperty_2759_2(EditorContext editorContext, SNode node) {
+    CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
+    provider.setRole("leftIsStrong");
+    provider.setNoTargetText("<no leftIsStrong>");
+    EditorCell editorCell;
+    editorCell = provider.createEditorCell(editorContext);
+    editorCell.setCellId("property_leftIsStrong");
+    editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
+    SNode attributeConcept = provider.getRoleAttribute();
+    Class attributeKind = provider.getRoleAttributeClass();
+    if (attributeConcept != null) {
+      IOperationContext opContext = editorContext.getOperationContext();
+      EditorManager manager = EditorManager.getInstanceFromContext(opContext);
+      return manager.createRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
+    } else
+    return editorCell;
+  }
+
+  private EditorCell createProperty_2759_3(EditorContext editorContext, SNode node) {
+    CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
+    provider.setRole("rightIsStrong");
+    provider.setNoTargetText("<no rightIsStrong>");
+    EditorCell editorCell;
+    editorCell = provider.createEditorCell(editorContext);
+    editorCell.setCellId("property_rightIsStrong");
+    editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
+    SNode attributeConcept = provider.getRoleAttribute();
+    Class attributeKind = provider.getRoleAttributeClass();
+    if (attributeConcept != null) {
+      IOperationContext opContext = editorContext.getOperationContext();
+      EditorManager manager = EditorManager.getInstanceFromContext(opContext);
+      return manager.createRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
+    } else
+    return editorCell;
+  }
+
+  private static boolean renderingCondition2759_0(SNode node, EditorContext editorContext, IScope scope) {
+    return !(SPropertyOperations.getBoolean(node, "leftIsExact"));
+  }
+
+  private static boolean renderingCondition2759_1(SNode node, EditorContext editorContext, IScope scope) {
+    return !(SPropertyOperations.getBoolean(node, "rightIsExact"));
   }
 }

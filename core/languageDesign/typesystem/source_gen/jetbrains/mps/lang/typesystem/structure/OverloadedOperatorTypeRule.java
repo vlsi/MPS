@@ -12,6 +12,8 @@ public class OverloadedOperatorTypeRule extends AbstractOverloadedOpsTypeRule {
   public static final String concept = "jetbrains.mps.lang.typesystem.structure.OverloadedOperatorTypeRule";
   public static final String LEFT_IS_EXACT = "leftIsExact";
   public static final String RIGHT_IS_EXACT = "rightIsExact";
+  public static final String RIGHT_IS_STRONG = "rightIsStrong";
+  public static final String LEFT_IS_STRONG = "leftIsStrong";
   public static final String LEFT_OPERAND_TYPE = "leftOperandType";
   public static final String RIGHT_OPERAND_TYPE = "rightOperandType";
 
@@ -33,6 +35,22 @@ public class OverloadedOperatorTypeRule extends AbstractOverloadedOpsTypeRule {
 
   public void setRightIsExact(boolean value) {
     this.setBooleanProperty(OverloadedOperatorTypeRule.RIGHT_IS_EXACT, value);
+  }
+
+  public boolean getRightIsStrong() {
+    return this.getBooleanProperty(OverloadedOperatorTypeRule.RIGHT_IS_STRONG);
+  }
+
+  public void setRightIsStrong(boolean value) {
+    this.setBooleanProperty(OverloadedOperatorTypeRule.RIGHT_IS_STRONG, value);
+  }
+
+  public boolean getLeftIsStrong() {
+    return this.getBooleanProperty(OverloadedOperatorTypeRule.LEFT_IS_STRONG);
+  }
+
+  public void setLeftIsStrong(boolean value) {
+    this.setBooleanProperty(OverloadedOperatorTypeRule.LEFT_IS_STRONG, value);
   }
 
   public Expression getLeftOperandType() {

@@ -960,6 +960,14 @@ public class QueriesGenerated {
     return SPropertyOperations.getBoolean(_context.getNode(), "isExact");
   }
 
+  public static Object propertyMacro_GetPropertyValue_9171912057556824574(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return SPropertyOperations.getBoolean(_context.getNode(), "rightIsStrong");
+  }
+
+  public static Object propertyMacro_GetPropertyValue_9171912057556824588(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return SPropertyOperations.getBoolean(_context.getNode(), "leftIsStrong");
+  }
+
   public static Object referenceMacro_GetReferent_1174655195413(final IOperationContext operationContext, final ReferenceMacroContext _context) {
     SNode rule = SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.lang.typesystem.structure.AbstractRule", false, false);
     SNode method = _context.getOutputNodeByInputNodeAndMappingLabel(rule, "mainMethodForRule");

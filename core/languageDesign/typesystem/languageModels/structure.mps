@@ -2297,6 +2297,14 @@
       <property name="name" value="rightIsExact" />
       <link role="dataType" targetNodeId="1.1082983657063" resolveInfo="boolean" />
     </node>
+    <node role="propertyDeclaration" type="jetbrains.mps.lang.structure.structure.PropertyDeclaration" id="4888149946184983007">
+      <property name="name" value="rightIsStrong" />
+      <link role="dataType" targetNodeId="1.1082983657063" resolveInfo="boolean" />
+    </node>
+    <node role="propertyDeclaration" type="jetbrains.mps.lang.structure.structure.PropertyDeclaration" id="4888149946184983008">
+      <property name="name" value="leftIsStrong" />
+      <link role="dataType" targetNodeId="1.1082983657063" resolveInfo="boolean" />
+    </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1236083146670">
     <property name="name" value="OverloadedOperatorTypeFunction" />

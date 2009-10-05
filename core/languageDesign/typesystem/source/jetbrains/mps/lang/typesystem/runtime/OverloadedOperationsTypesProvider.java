@@ -26,6 +26,8 @@ public abstract class OverloadedOperationsTypesProvider implements IOverloadedOp
 
   protected boolean myLeftTypeIsExact = false;
   protected boolean myRightTypeIsExact = false;
+   protected boolean myLeftIsStrong = false;
+  protected boolean myRightIsStrong = false;
 
 
   public String getApplicableConceptFQName() {
@@ -38,7 +40,7 @@ public abstract class OverloadedOperationsTypesProvider implements IOverloadedOp
         return false;
       }
     } else {
-      if (!subtypingManager.isSubtype(leftOperandType, myLeftOperandType)) {
+      if (!subtypingManager.isSubtype(leftOperandType, myLeftOperandType, !myLeftIsStrong)) {
         return false;
       }
     }
@@ -47,7 +49,7 @@ public abstract class OverloadedOperationsTypesProvider implements IOverloadedOp
         return false;
       }
     } else {
-      if (!subtypingManager.isSubtype(rightOperandType, myRightOperandType)) {
+      if (!subtypingManager.isSubtype(rightOperandType, myRightOperandType, !myRightIsStrong)) {
         return false;
       }
     }
