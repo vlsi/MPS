@@ -1,5 +1,5 @@
 <project name="get-idea" default="default" basedir="..">
-  <property name="main.url" value="http://buildserver/guestAuth/repository/download/bt24/.lastSuccessful" />
+  <property name="main.url" value="http://buildserver/guestAuth/repository/download/bt24/.lastPinned" />
   <property name="lib.dir" value="lib" />
   <property name="idea.platform.dir" value="${lib.dir}/jetbrains-ideframework" />
   <property name="tmp" value="idea.new" />

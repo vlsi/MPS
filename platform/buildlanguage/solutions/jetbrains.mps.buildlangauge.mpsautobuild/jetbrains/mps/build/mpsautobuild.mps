@@ -75,7 +75,7 @@
       <property name="name" value="main.url" />
       <node role="type" type="jetbrains.mps.buildlanguage.structure.StringType" id="1239364393104" />
       <node role="propertyValue" type="jetbrains.mps.buildlanguage.structure.StringLiteral" id="1239364393105">
-        <property name="value" value="http://buildserver/guestAuth/repository/download/bt24/.lastSuccessful" />
+        <property name="value" value="http://buildserver/guestAuth/repository/download/bt24/.lastPinned" />
       </node>
     </node>
     <node role="property" type="jetbrains.mps.buildlanguage.structure.PropertyDeclaration" id="1239364393106">
