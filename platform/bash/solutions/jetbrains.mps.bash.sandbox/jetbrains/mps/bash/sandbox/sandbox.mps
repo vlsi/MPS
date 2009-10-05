@@ -1739,23 +1739,5 @@
       </node>
     </node>
   </node>
-  <node type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="475190209107304131">
-    <property name="name" value="Sfhjdskfhjdskfhsdjf" />
-    <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="475190209107304132" />
-    <node role="constructor" type="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" id="475190209107304133">
-      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="475190209107304134" />
-      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="475190209107304135" />
-      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="475190209107304136" />
-    </node>
-  </node>
-  <node type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="475190209107312172">
-    <property name="name" value="Shgjfkhgkjdfytuityi45689478" />
-    <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="475190209107312173" />
-    <node role="constructor" type="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" id="475190209107312174">
-      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="475190209107312175" />
-      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="475190209107312176" />
-      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="475190209107312177" />
-    </node>
-  </node>
 </model>
 
