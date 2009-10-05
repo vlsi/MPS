@@ -99,7 +99,11 @@ public class MPSEditorWarningsManager implements ProjectComponent {
           return;
         }
 
-        SModel smodel = editor.getFile().getNode().getModel();
+        SNode node = editor.getFile().getNode();
+        if (node == null) {
+          return;
+        }
+        SModel smodel = node.getModel();
 
         if (smodel == null) {
           return;
