@@ -43,4 +43,8 @@ public abstract class StandaloneMPSContext implements IOperationContext {
     if (component != null) return component;
     return null;
   }
+
+  public boolean isValid() {
+    return true;
+  }
 }

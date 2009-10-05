@@ -169,6 +169,10 @@ public abstract class NamespaceTreeBuilder<N extends MPSTreeNode, T extends MPST
       return myOperationContext.getMainFrame();
     }
 
+    public boolean isValid() {
+      return true;
+    }
+
     public IModule getModule() {
       return myModule;
     }

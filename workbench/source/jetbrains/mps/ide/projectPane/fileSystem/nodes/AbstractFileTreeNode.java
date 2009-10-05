@@ -118,6 +118,10 @@ public abstract class AbstractFileTreeNode extends MPSTreeNode {
       return null;
     }
 
+    public boolean isValid() {
+      return true;
+    }
+
     public boolean isTestMode() {
       return false;
     }

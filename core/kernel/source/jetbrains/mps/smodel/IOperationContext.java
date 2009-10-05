@@ -40,6 +40,8 @@ public interface IOperationContext {
 
   Frame getMainFrame();
 
+  boolean isValid();
+
   boolean isTestMode();
 
   <T> T getComponent(Class<T> clazz);

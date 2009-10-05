@@ -60,6 +60,10 @@ public class ModuleContext extends StandaloneMPSContext {
     return myProject;
   }
 
+  public boolean isValid() {
+    return getModule() != null;
+  }
+
   @NotNull
   public IScope getScope() {
     if (getModule() == null) {

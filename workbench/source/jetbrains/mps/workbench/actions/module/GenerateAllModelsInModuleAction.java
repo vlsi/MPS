@@ -177,6 +177,10 @@ public class GenerateAllModelsInModuleAction extends BaseAction {
       return myOperationContext.getMainFrame();
     }
 
+    public boolean isValid() {
+      return true;
+    }
+
     public IModule getModule() {
       return myModule;
     }

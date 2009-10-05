@@ -16,7 +16,6 @@
 package jetbrains.mps.ide.ui.smodel;
 
 import com.intellij.openapi.actionSystem.ActionGroup;
-import com.intellij.openapi.util.Computable;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.generator.ModelGenerationStatusListener;
 import jetbrains.mps.generator.ModelGenerationStatusManager;
@@ -446,9 +445,10 @@ public class SModelTreeNode extends MPSTreeNodeEx {
   private void updateNodePresentation(final boolean reloadSubTree, final boolean updateAncesotrs) {
     ModelAccess.instance().runReadInEDT(new Runnable() {
       public void run() {
-        if (getTree() == null) {
-          return;
-        }
+        if (getTree() == null) return;
+
+        //module has been already removed  
+        if (getOperationContext().isValid()) return;
 
         updatePresentation();
         updateNodePresentationInTree();
