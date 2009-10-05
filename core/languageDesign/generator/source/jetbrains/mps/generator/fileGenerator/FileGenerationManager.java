@@ -130,7 +130,7 @@ public class FileGenerationManager implements ApplicationComponent {
       File[] files = dir.listFiles();
       if (files != null) {
         for (File outputDirectoryFile : files) {
-          if (!outputDirectoryFile.isDirectory() && !outputDirectoryFile.isHidden()) {
+          if (!outputDirectoryFile.isDirectory()) {
             if (!generatedFiles.contains(outputDirectoryFile)) {
               filesToDelete.add(outputDirectoryFile);
             }
