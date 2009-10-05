@@ -28,6 +28,7 @@ import java.awt.Toolkit;
 import java.awt.datatransfer.Clipboard;
 import java.awt.datatransfer.Transferable;
 import java.awt.datatransfer.UnsupportedFlavorException;
+import java.awt.datatransfer.StringSelection;
 import java.io.IOException;
 import java.util.*;
 
@@ -233,7 +234,7 @@ public class CopyPasteUtil {
 
   public static void copyTextToClipboard(String text) {
     Clipboard cb = Toolkit.getDefaultToolkit().getSystemClipboard();
-    cb.setContents(new SNodeTransferable(new ArrayList<SNode>(), text), null);
+    cb.setContents(new StringSelection(text), null);
   }
 
   public static void copyNodesAndTextToClipboard(List<SNode> nodes, String text) {
