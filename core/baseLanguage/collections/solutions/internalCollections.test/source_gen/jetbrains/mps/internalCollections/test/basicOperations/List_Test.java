@@ -222,6 +222,12 @@ public class List_Test extends Util_Test {
     */
   }
 
+  public void test_mps6093() throws Exception {
+    List<String> strings = ListSequence.fromListAndArray(new ArrayList<String>(), "A", "B", "C");
+    List<Object> objs = ListSequence.fromListWithValues(new ArrayList<Object>(), strings);
+    this.assertIterableEquals(this.inputABC(), objs);
+  }
+
   public List<Foo> mps5684helper() {
     List<Bar> bars = ListSequence.fromListAndArray(new ArrayList<Bar>(), new Bar());
     return ListSequence.fromListWithValues(new ArrayList<Foo>(), bars);

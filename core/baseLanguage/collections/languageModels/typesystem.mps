@@ -3169,41 +3169,6 @@
       <link role="concept" targetNodeId="3.1208542034276" resolveInfo="MapClearOperation" />
     </node>
   </node>
-  <node type="jetbrains.mps.lang.typesystem.structure.InequationReplacementRule" id="1210356787605">
-    <property name="name" value="sequence_subtypeof_sequence" />
-    <node role="supertypeNode" type="jetbrains.mps.lang.typesystem.structure.ConceptReference" id="1210356827725">
-      <property name="name" value="rightST" />
-      <link role="concept" targetNodeId="3.1151689724996" resolveInfo="SequenceType" />
-    </node>
-    <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1210356787607">
-      <node role="statement" type="jetbrains.mps.lang.typesystem.structure.CreateLessThanInequationStatement" id="1210356854439">
-        <node role="rightExpression" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause" id="1210356862066">
-          <node role="normalType" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1210356863265">
-            <node role="operand" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference" id="1210356862067">
-              <link role="applicableNode" targetNodeId="1210356827725" resolveInfo="rightST" />
-            </node>
-            <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1210356863935">
-              <link role="link" targetNodeId="3.1151689745422" />
-            </node>
-          </node>
-        </node>
-        <node role="leftExpression" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause" id="1210356854443">
-          <node role="normalType" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1210356847777">
-            <node role="operand" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference" id="1210356846915">
-              <link role="applicableNode" targetNodeId="1210356805246" resolveInfo="leftST" />
-            </node>
-            <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1210356849082">
-              <link role="link" targetNodeId="3.1151689745422" />
-            </node>
-          </node>
-        </node>
-      </node>
-    </node>
-    <node role="applicableNode" type="jetbrains.mps.lang.typesystem.structure.ConceptReference" id="1210356805246">
-      <property name="name" value="leftST" />
-      <link role="concept" targetNodeId="3.1151689724996" resolveInfo="SequenceType" />
-    </node>
-  </node>
   <node type="jetbrains.mps.lang.typesystem.structure.InferenceRule" id="1202115927796">
     <property name="name" value="typeof_MappingOperation" />
     <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1202115927797">
@@ -9267,6 +9232,41 @@
     <node role="applicableNode" type="jetbrains.mps.lang.typesystem.structure.ConceptReference" id="1241438188119">
       <property name="name" value="listType" />
       <link role="concept" targetNodeId="3.1151688443754" resolveInfo="ListType" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.typesystem.structure.InequationReplacementRule" id="5108199730660923207">
+    <property name="name" value="sequence_subtypeOf_sequence" />
+    <node role="supertypeNode" type="jetbrains.mps.lang.typesystem.structure.ConceptReference" id="5108199730660924411">
+      <property name="name" value="rightSeq" />
+      <link role="concept" targetNodeId="3.1151689724996" resolveInfo="SequenceType" />
+    </node>
+    <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="5108199730660923209">
+      <node role="statement" type="jetbrains.mps.lang.typesystem.structure.CreateLessThanInequationStatement" id="5108199730660924415">
+        <node role="rightExpression" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause" id="5108199730660924419">
+          <node role="normalType" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="5108199730660924426">
+            <node role="operand" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference" id="5108199730660924420">
+              <link role="applicableNode" targetNodeId="5108199730660924411" resolveInfo="rightSeq" />
+            </node>
+            <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="5108199730660924430">
+              <link role="link" targetNodeId="3.1151689745422" />
+            </node>
+          </node>
+        </node>
+        <node role="leftExpression" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause" id="5108199730660924418">
+          <node role="normalType" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="5108199730660924421">
+            <node role="operand" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference" id="5108199730660924414">
+              <link role="applicableNode" targetNodeId="5108199730660923211" resolveInfo="leftSeq" />
+            </node>
+            <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="5108199730660924425">
+              <link role="link" targetNodeId="3.1151689745422" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="applicableNode" type="jetbrains.mps.lang.typesystem.structure.ConceptReference" id="5108199730660923211">
+      <property name="name" value="leftSeq" />
+      <link role="concept" targetNodeId="3.1151689724996" resolveInfo="SequenceType" />
     </node>
   </node>
 </model>

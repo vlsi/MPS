@@ -544,10 +544,6 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
       this.myComparisonRules.add(comparisonRule);
     }
     {
-      InequationReplacementRule_Runtime eliminationRule = new sequence_subtypeof_sequence_InequationReplacementRule();
-      this.myInequationReplacementRules.add(eliminationRule);
-    }
-    {
       InequationReplacementRule_Runtime eliminationRule = new set_type_equivalent_to_subcepts_InequationReplacementRule();
       this.myInequationReplacementRules.add(eliminationRule);
     }
@@ -561,6 +557,10 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
     }
     {
       InequationReplacementRule_Runtime eliminationRule = new containerIterator_subtrypeOf_containerIterator_InequationReplacementRule();
+      this.myInequationReplacementRules.add(eliminationRule);
+    }
+    {
+      InequationReplacementRule_Runtime eliminationRule = new sequence_subtypeOf_sequence_InequationReplacementRule();
       this.myInequationReplacementRules.add(eliminationRule);
     }
     {

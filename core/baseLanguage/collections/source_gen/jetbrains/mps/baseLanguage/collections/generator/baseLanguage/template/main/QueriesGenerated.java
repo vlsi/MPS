@@ -1516,8 +1516,10 @@ public class QueriesGenerated {
   public static SNode sourceNodeQuery_3002214349487398477(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     SNode creator = (SNode)Values.CREATOR.get(_context.getNode());
     SNode actualType = TypeChecker.getInstance().getTypeOf(SNodeOperations.getParent(creator));
-    Values.copy(_context.getNode(), actualType);
-    Values.ACTUAL_TYPE.set(actualType, Boolean.TRUE);
+    if ((actualType != null)) {
+      Values.copy(_context.getNode(), actualType);
+      Values.ACTUAL_TYPE.set(actualType, Boolean.TRUE);
+    }
     return actualType;
   }
 
