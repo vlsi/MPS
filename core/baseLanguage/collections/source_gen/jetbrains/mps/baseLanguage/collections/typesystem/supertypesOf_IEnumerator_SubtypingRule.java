@@ -14,7 +14,7 @@ public class supertypesOf_IEnumerator_SubtypingRule extends SubtypingRule_Runtim
   }
 
   public SNode getSubOrSuperType(SNode enumerator, TypeCheckingContext typeCheckingContext) {
-    return new _Quotations.QuotationClass_111().createNode(this.myMatchingPattern.PatternVar8, typeCheckingContext);
+    return new _Quotations.QuotationClass_110().createNode(this.myMatchingPattern.PatternVar8, typeCheckingContext);
   }
 
   public String getApplicableConceptFQName() {

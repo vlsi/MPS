@@ -14,7 +14,7 @@ public class SortedSet_comparableTo_sorted_set_SubtypingRule extends SubtypingRu
   }
 
   public SNode getSubOrSuperType(SNode sortedSet, TypeCheckingContext typeCheckingContext) {
-    return new _Quotations.QuotationClass_141().createNode(this.myMatchingPattern.PatternVar11, typeCheckingContext);
+    return new _Quotations.QuotationClass_140().createNode(this.myMatchingPattern.PatternVar11, typeCheckingContext);
   }
 
   public String getApplicableConceptFQName() {

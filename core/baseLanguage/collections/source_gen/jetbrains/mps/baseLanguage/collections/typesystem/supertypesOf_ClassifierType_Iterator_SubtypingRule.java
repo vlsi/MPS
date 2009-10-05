@@ -14,7 +14,7 @@ public class supertypesOf_ClassifierType_Iterator_SubtypingRule extends Subtypin
   }
 
   public SNode getSubOrSuperType(SNode iterator, TypeCheckingContext typeCheckingContext) {
-    return new _Quotations.QuotationClass_101().createNode(this.myMatchingPattern.PatternVar7, typeCheckingContext);
+    return new _Quotations.QuotationClass_100().createNode(this.myMatchingPattern.PatternVar7, typeCheckingContext);
   }
 
   public String getApplicableConceptFQName() {

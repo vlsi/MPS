@@ -13,7 +13,7 @@ public class supertypesOf_StackType_StackType_withWildcard_SubtypingRule extends
   }
 
   public SNode getSubOrSuperType(SNode stackType, TypeCheckingContext typeCheckingContext) {
-    return new _Quotations.QuotationClass_175().createNode(typeCheckingContext);
+    return new _Quotations.QuotationClass_174().createNode(typeCheckingContext);
   }
 
   public String getApplicableConceptFQName() {

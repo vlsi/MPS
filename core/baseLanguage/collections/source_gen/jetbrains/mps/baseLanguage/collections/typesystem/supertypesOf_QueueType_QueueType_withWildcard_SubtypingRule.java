@@ -13,7 +13,7 @@ public class supertypesOf_QueueType_QueueType_withWildcard_SubtypingRule extends
   }
 
   public SNode getSubOrSuperType(SNode queueType, TypeCheckingContext typeCheckingContext) {
-    return new _Quotations.QuotationClass_170().createNode(typeCheckingContext);
+    return new _Quotations.QuotationClass_169().createNode(typeCheckingContext);
   }
 
   public String getApplicableConceptFQName() {

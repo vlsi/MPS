@@ -388,10 +388,6 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
       this.mySubtypingRules.add(subtypingRule);
     }
     {
-      SubtypingRule_Runtime subtypingRule = new supertypesOf_ListType_ListType_SubtypingRule();
-      this.mySubtypingRules.add(subtypingRule);
-    }
-    {
       SubtypingRule_Runtime subtypingRule = new map_extends_java_util_Map_SubtypingRule();
       this.mySubtypingRules.add(subtypingRule);
     }
@@ -528,10 +524,6 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
       this.myComparisonRules.add(comparisonRule);
     }
     {
-      ComparisonRule_Runtime comparisonRule = new list_type_comparableWith_List_ComparisonRule();
-      this.myComparisonRules.add(comparisonRule);
-    }
-    {
       ComparisonRule_Runtime comparisonRule = new map_type_comparableWith_Map_ComparisonRule();
       this.myComparisonRules.add(comparisonRule);
     }
@@ -549,6 +541,10 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
     }
     {
       ComparisonRule_Runtime comparisonRule = new stack_type_comparableWith_Deque_ComparisonRule();
+      this.myComparisonRules.add(comparisonRule);
+    }
+    {
+      ComparisonRule_Runtime comparisonRule = new list_type_comparableWith_List_ComparisonRule();
       this.myComparisonRules.add(comparisonRule);
     }
     {

@@ -14,7 +14,7 @@ public class supertypesOf_ContainerIteratorType_SubtypingRule extends SubtypingR
   }
 
   public SNode getSubOrSuperType(SNode cit, TypeCheckingContext typeCheckingContext) {
-    return new _Quotations.QuotationClass_119().createNode(SLinkOperations.getTarget(cit, "elementType", true), typeCheckingContext);
+    return new _Quotations.QuotationClass_118().createNode(SLinkOperations.getTarget(cit, "elementType", true), typeCheckingContext);
   }
 
   public String getApplicableConceptFQName() {

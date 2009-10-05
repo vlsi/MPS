@@ -18,9 +18,9 @@ public class supertypesOf_linkedlist_SubtypingRule extends SubtypingRule_Runtime
 
   public List<SNode> getSubOrSuperTypes(SNode llt, TypeCheckingContext typeCheckingContext) {
     List<SNode> res = new ArrayList<SNode>();
+    ListSequence.fromList(res).addElement(new _Quotations.QuotationClass_166().createNode(SLinkOperations.getTarget(llt, "elementType", true), typeCheckingContext));
     ListSequence.fromList(res).addElement(new _Quotations.QuotationClass_167().createNode(SLinkOperations.getTarget(llt, "elementType", true), typeCheckingContext));
     ListSequence.fromList(res).addElement(new _Quotations.QuotationClass_168().createNode(SLinkOperations.getTarget(llt, "elementType", true), typeCheckingContext));
-    ListSequence.fromList(res).addElement(new _Quotations.QuotationClass_169().createNode(SLinkOperations.getTarget(llt, "elementType", true), typeCheckingContext));
     return res;
   }
 

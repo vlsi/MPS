@@ -208,8 +208,12 @@ public class List_Test extends Util_Test {
     Assert.assertEquals("[[1], [2]]", String.valueOf(test2));
   }
 
-  public void test_mps5684() throws Exception {
-    //  just make sure the code compiles
+  public void test_mps5845() throws Exception {
+    /*
+      List<String> abc = ListSequence.fromList(new ArrayList<String>());
+      ListSequence.fromList(abc).addElement(new Integer(123));
+      Assert.assertEquals("123", ListSequence.fromList(abc).first());
+    */
   }
 
   public List<Foo> mps5684helper() {

@@ -4733,11 +4733,51 @@
         </node>
       </node>
       <node role="testMethod" type="jetbrains.mps.baseLanguage.unitTest.structure.TestMethod" id="8115675450774583007">
-        <property name="methodName" value="mps5684" />
+        <property name="methodName" value="mps5845" />
         <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="8115675450774583008" />
         <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="8115675450774583009">
-          <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="8115675450774611051">
-            <property name="value" value=" just make sure the code compiles" />
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.CommentedStatementsBlock" id="9103385281676518492">
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="4966327669329978230">
+              <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="4966327669329978231">
+                <property name="name" value="abc" />
+                <node role="type" type="jetbrains.mps.baseLanguage.collections.structure.ListType" id="4966327669329978232">
+                  <node role="elementType" type="jetbrains.mps.baseLanguage.structure.StringType" id="4966327669329978234" />
+                </node>
+                <node role="initializer" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="4966327669329978237">
+                  <node role="creator" type="jetbrains.mps.baseLanguage.collections.structure.ListCreatorWithInit" id="4966327669329978238">
+                    <node role="elementType" type="jetbrains.mps.baseLanguage.structure.StringType" id="4966327669329978239" />
+                  </node>
+                </node>
+              </node>
+            </node>
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="4966327669329978241">
+              <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="4966327669329978243">
+                <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="4966327669329978242">
+                  <link role="variableDeclaration" targetNodeId="4966327669329978231" resolveInfo="abc" />
+                </node>
+                <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.AddElementOperation" id="4966327669329978247">
+                  <node role="argument" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="4966327669329978251">
+                    <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="4966327669329984385">
+                      <link role="baseMethodDeclaration" targetNodeId="4.~Integer.&lt;init&gt;(int)" resolveInfo="Integer" />
+                      <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="4966327669329984386">
+                        <property name="value" value="123" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+            <node role="statement" type="jetbrains.mps.baseLanguage.unitTest.structure.AssertEquals" id="4966327669329984388">
+              <node role="expected" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="4966327669329984391">
+                <property name="value" value="123" />
+              </node>
+              <node role="actual" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="4966327669329984393">
+                <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="4966327669329984392">
+                  <link role="variableDeclaration" targetNodeId="4966327669329978231" resolveInfo="abc" />
+                </node>
+                <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.GetFirstOperation" id="4966327669329984397" />
+              </node>
+            </node>
           </node>
         </node>
       </node>

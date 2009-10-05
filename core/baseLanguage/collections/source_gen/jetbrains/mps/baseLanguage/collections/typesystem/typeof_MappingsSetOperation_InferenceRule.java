@@ -20,18 +20,18 @@ public class typeof_MappingsSetOperation_InferenceRule extends AbstractInference
     {
       SNode _nodeToCheck_1029348928467 = IOperation_Behavior.call_getOperand_1213877410070(operation);
       BaseIntentionProvider intentionProvider = null;
-      typeCheckingContext.createLessThanInequation((SNode)typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)", "1240854449114", true), (SNode)new _Quotations.QuotationClass_153().createNode(typeCheckingContext.getEquationManager().getRepresentator(KEY_typevar_1240854441569), typeCheckingContext.getEquationManager().getRepresentator(VALUE_typevar_1240854445546), typeCheckingContext), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)", "1240854465372", false, 0, intentionProvider);
+      typeCheckingContext.createLessThanInequation((SNode)typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)", "1240854449114", true), (SNode)new _Quotations.QuotationClass_152().createNode(typeCheckingContext.getEquationManager().getRepresentator(KEY_typevar_1240854441569), typeCheckingContext.getEquationManager().getRepresentator(VALUE_typevar_1240854445546), typeCheckingContext), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)", "1240854465372", false, 0, intentionProvider);
     }
     final SNode MAPPING_typevar_1240854519783 = typeCheckingContext.createNewRuntimeTypesVariable();
     {
       SNode _nodeToCheck_1029348928467 = operation;
       BaseIntentionProvider intentionProvider = null;
-      typeCheckingContext.createEquation((SNode)typeCheckingContext.getEquationManager().getRepresentator(MAPPING_typevar_1240854519783), (SNode)new _Quotations.QuotationClass_154().createNode(typeCheckingContext.getEquationManager().getRepresentator(KEY_typevar_1240854441569), typeCheckingContext.getEquationManager().getRepresentator(VALUE_typevar_1240854445546), typeCheckingContext), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)", "1240854488447", intentionProvider);
+      typeCheckingContext.createEquation((SNode)typeCheckingContext.getEquationManager().getRepresentator(MAPPING_typevar_1240854519783), (SNode)new _Quotations.QuotationClass_153().createNode(typeCheckingContext.getEquationManager().getRepresentator(KEY_typevar_1240854441569), typeCheckingContext.getEquationManager().getRepresentator(VALUE_typevar_1240854445546), typeCheckingContext), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)", "1240854488447", intentionProvider);
     }
     {
       SNode _nodeToCheck_1029348928467 = operation;
       BaseIntentionProvider intentionProvider = null;
-      typeCheckingContext.createEquation((SNode)typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)", "1240854533220", true), (SNode)new _Quotations.QuotationClass_155().createNode(typeCheckingContext.getEquationManager().getRepresentator(MAPPING_typevar_1240854519783), typeCheckingContext), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)", "1240854537317", intentionProvider);
+      typeCheckingContext.createEquation((SNode)typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)", "1240854533220", true), (SNode)new _Quotations.QuotationClass_154().createNode(typeCheckingContext.getEquationManager().getRepresentator(MAPPING_typevar_1240854519783), typeCheckingContext), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)", "1240854537317", intentionProvider);
     }
   }
 

@@ -14,7 +14,7 @@ public class sorted_set_subtypeOf_set_SubtypingRule extends SubtypingRule_Runtim
   }
 
   public SNode getSubOrSuperType(SNode sortedSetType, TypeCheckingContext typeCheckingContext) {
-    return new _Quotations.QuotationClass_139().createNode(SLinkOperations.getTarget(sortedSetType, "elementType", true), typeCheckingContext);
+    return new _Quotations.QuotationClass_138().createNode(SLinkOperations.getTarget(sortedSetType, "elementType", true), typeCheckingContext);
   }
 
   public String getApplicableConceptFQName() {
