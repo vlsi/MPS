@@ -45,4 +45,6 @@ abstract class VcsOperation {
     if (myProject.isDisposed()) return false;
     return FileTypeManager.getInstance().isFileIgnored(fileName);
   }
+
+  public abstract void absorb(VcsOperation operation);
 }

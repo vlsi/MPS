@@ -34,7 +34,7 @@ class RemoveOperation extends VcsOperation {
   private final List<FilePath> myFilePathsToDelete = new ArrayList<FilePath>(10);
   private static final Logger LOG = Logger.getLogger(RemoveOperation.class);
   private final VcsShowConfirmationOption myConfirmationOption;
-  private final boolean mySilently;
+  private boolean mySilently;
 
   public RemoveOperation(Set<VirtualFile> filesToDelete, ProjectLevelVcsManager manager, Project project, VcsShowConfirmationOption option, boolean silently) {
     super(manager, project);
@@ -80,6 +80,13 @@ class RemoveOperation extends VcsOperation {
     } else {
       justDelete(myFilePathsToDelete);
     }
+  }
+
+  public void absorb(VcsOperation operation) {
+    if (!(operation instanceof RemoveOperation)) return;
+    RemoveOperation removeOperation = (RemoveOperation) operation;
+    myFilePathsToDelete.addAll(removeOperation.myFilePathsToDelete);
+    mySilently |= removeOperation.mySilently;
   }
 
   private void justDelete(Collection<FilePath> filePathsToDelete) {

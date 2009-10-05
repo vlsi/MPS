@@ -44,10 +44,10 @@ class AddOperation extends VcsOperation {
   private static final Logger LOG = Logger.getLogger(AddOperation.class);
   private final List<File> myFilesToAdd = new ArrayList<File>();
   private final List<VirtualFile> myVirtualFilesToAdd = new ArrayList<VirtualFile>();
-  private final boolean myRecursive;
+  private boolean myRecursive;
   private final List<VirtualFile> myVirtualFilesToRevert = new ArrayList<VirtualFile>();
   private final VcsShowConfirmationOption myConfirmationOption;
-  private final boolean mySilently;
+  private boolean mySilently;
   private final VcsDirtyScopeManager myVcsDirtyScopeManager;
 
   public AddOperation(Set<VirtualFile> filesToAdd, ProjectLevelVcsManager manager, Project project,
@@ -270,5 +270,15 @@ class AddOperation extends VcsOperation {
     VcsFileStatusProvider provider = myProject.getComponent(VcsFileStatusProvider.class);
     FileStatus status = provider.getFileStatus(f);
     return status.equals(FileStatus.DELETED);
+  }
+
+  public void absorb(VcsOperation operation) {
+    if (!(operation instanceof AddOperation)) return;
+    AddOperation addOperation = (AddOperation) operation;
+    myFilesToAdd.addAll(addOperation.myFilesToAdd);
+    myVirtualFilesToAdd.addAll(addOperation.myVirtualFilesToAdd);
+    // this might not be right
+    mySilently |= addOperation.mySilently;
+    myRecursive |= addOperation.myRecursive;
   }
 }

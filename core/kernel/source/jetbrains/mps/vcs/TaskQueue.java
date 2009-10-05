@@ -21,17 +21,12 @@ import java.util.Collections;
 import java.util.LinkedList;
 import java.util.List;
 
-abstract class TaskQueue<T> {
+abstract class TaskQueue<T> extends BansHolder {
   private final static Logger LOG = Logger.getLogger(TaskQueue.class);
   private final List<T> myTasks = new LinkedList<T>();
-  private int myProcessingBans;
 
   public TaskQueue(boolean isProcessingAllowed) {
-    if (isProcessingAllowed) {
-      myProcessingBans = 0;
-    } else {
-      myProcessingBans = 1;
-    }
+    super(isProcessingAllowed);
   }
 
   public final synchronized void invokeLater(T task) {
@@ -44,27 +39,12 @@ abstract class TaskQueue<T> {
     }
   }
 
-  public final synchronized void removeProcessingBan() {
-    myProcessingBans--;
-    if (myProcessingBans <= 0) {
-      doProcess();
-    }
-  }
-
-  public final synchronized void removeAllProcessingBans() {
-    doProcess();
-  }
-
-  private synchronized void doProcess() {
+  protected synchronized void doProcess() {
     myProcessingBans = 0;
     if (!myTasks.isEmpty()) {
       processTask(new LinkedList<T>(myTasks));
       myTasks.clear();
     }
-  }
-
-  public final synchronized void banProcessing() {
-    myProcessingBans++;
   }
 
   public abstract void processTask(List<T> tasks);

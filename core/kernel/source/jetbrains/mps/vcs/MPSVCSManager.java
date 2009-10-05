@@ -29,6 +29,7 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.Pair;
+import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.VFileSystem;
 import jetbrains.mps.watching.ModelChangesWatcher;
@@ -57,12 +58,16 @@ public class MPSVCSManager implements ProjectComponent {
   private volatile boolean myChangeListManagerInitialized = false;
   private final Object myMonitor = new Object();
 
-  private final TaskQueue<Runnable> myTasksQueue = new TaskQueue<Runnable>(true) {
-
-    public void processTask(List<Runnable> tasks) {
-      for (Runnable task : tasks) {
-        task.run();
-      }
+  private final VcsOperationsScheduler<AddOperation> myAddOperationScheduler = new VcsOperationsScheduler<AddOperation>(true) {
+    @Override
+    public void processTask(AddOperation operation) {
+      perform(operation);
+    }
+  };
+  private final VcsOperationsScheduler<RemoveOperation> myRemoveOperationScheduler = new VcsOperationsScheduler<RemoveOperation>(true) {
+    @Override
+    public void processTask(RemoveOperation operation) {
+      perform(operation);
     }
   };
 
@@ -98,12 +103,8 @@ public class MPSVCSManager implements ProjectComponent {
       }
       return;
     }
-    myTasksQueue.invokeLater(new Runnable() {
-      public void run() {
-        perform(new RemoveOperation(files, myManager, myProject,
-          myRemoveOption, silently));
-      }
-    });
+    myRemoveOperationScheduler.invokeLater(new RemoveOperation(files, myManager, myProject,
+      myRemoveOption, silently));
     return;
   }
 
@@ -119,33 +120,21 @@ public class MPSVCSManager implements ProjectComponent {
       }
       return;
     }
-    myTasksQueue.invokeLater(new Runnable() {
-      public void run() {
-        perform(new RemoveOperation(files, myManager, myProject,
-          myRemoveOption, silently));
-      }
-    });
+    myRemoveOperationScheduler.invokeLater(new RemoveOperation(files, myManager, myProject,
+      myRemoveOption, silently));
     return;
   }
 
   public void addFilesToVcs(final List<File> files, final boolean recursive, final boolean silently) {
     if ((files.size() == 0) || (!isProjectUnderVcs())) return;
-    myTasksQueue.invokeLater(new Runnable() {
-      public void run() {
-        perform(new AddOperation(files, myManager, myProject,
-          myAddOption, recursive, silently));
-      }
-    });
+    myAddOperationScheduler.invokeLater(new AddOperation(files, myManager, myProject,
+      myAddOption, recursive, silently));
   }
 
   public void addVirtualFilesToVcs(final Set<VirtualFile> files, final boolean recursive, final boolean silently) {
     if (files.size() == 0 || (!isProjectUnderVcs())) return;
-    myTasksQueue.invokeLater(new Runnable() {
-      public void run() {
-        perform(new AddOperation(files, myManager, myProject,
-          myAddOption, recursive, silently));
-      }
-    });
+    myAddOperationScheduler.invokeLater(new AddOperation(files, myManager, myProject,
+      myAddOption, recursive, silently));
   }
 
   private void perform(final VcsOperation operation) {
@@ -198,7 +187,8 @@ public class MPSVCSManager implements ProjectComponent {
     ModelChangesWatcher.instance().removeDataListener(myMetadataListener);
     myChangeListManager.removeChangeListListener(myChangeListUpdateListener);
 
-    myTasksQueue.removeProcessingBan();
+    myAddOperationScheduler.removeProcessingBan();
+    myRemoveOperationScheduler.removeProcessingBan();
   }
 
   private class ModelSavedListener extends SModelAdapter {
@@ -229,11 +219,13 @@ public class MPSVCSManager implements ProjectComponent {
           LOG.info("Model " + smodelDescriptor + " reloaded from disk.");
         }
       }
-      myTasksQueue.banProcessing();
+      myAddOperationScheduler.banProcessing();
+      myRemoveOperationScheduler.banProcessing();
     }
 
     public void modelsGenerated(List<Pair<SModelDescriptor, IOperationContext>> models, boolean success) {
-      myTasksQueue.removeProcessingBan();
+      myAddOperationScheduler.removeProcessingBan();
+      myRemoveOperationScheduler.removeProcessingBan();
     }
 
     public void afterGeneration(List<Pair<SModelDescriptor, IOperationContext>> inputModels) {
@@ -243,7 +235,8 @@ public class MPSVCSManager implements ProjectComponent {
   private class CompilationWatcher implements CompilationListener {
 
     public void beforeModelsCompiled(List<Pair<SModelDescriptor, IOperationContext>> models, boolean success) {
-      myTasksQueue.removeAllProcessingBans();
+      myAddOperationScheduler.removeAllProcessingBans();
+      myRemoveOperationScheduler.removeAllProcessingBans();
     }
 
     public void afterModelsCompiled(List<Pair<SModelDescriptor, IOperationContext>> models, boolean success) {
