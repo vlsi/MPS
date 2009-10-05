@@ -216,6 +216,12 @@ public class List_Test extends Util_Test {
     */
   }
 
+  public void test_mps5818() throws Exception {
+    /*
+      List<Object> abc = ListSequence.fromList(new ArrayList<String>());
+    */
+  }
+
   public List<Foo> mps5684helper() {
     List<Bar> bars = ListSequence.fromListAndArray(new ArrayList<Bar>(), new Bar());
     return ListSequence.fromListWithValues(new ArrayList<Foo>(), bars);

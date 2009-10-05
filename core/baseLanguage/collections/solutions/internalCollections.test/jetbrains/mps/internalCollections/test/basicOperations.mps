@@ -4781,6 +4781,30 @@
           </node>
         </node>
       </node>
+      <node role="testMethod" type="jetbrains.mps.baseLanguage.unitTest.structure.TestMethod" id="8420919522915975751">
+        <property name="methodName" value="mps5818" />
+        <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="8420919522915975752" />
+        <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="8420919522915975753" />
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="8420919522915975754">
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.CommentedStatementsBlock" id="8420919522915981920">
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="8420919522915975755">
+              <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="8420919522915975756">
+                <property name="name" value="abc" />
+                <node role="type" type="jetbrains.mps.baseLanguage.collections.structure.ListType" id="8420919522915975757">
+                  <node role="elementType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="8420919522915975759">
+                    <link role="classifier" targetNodeId="4.~Object" resolveInfo="Object" />
+                  </node>
+                </node>
+                <node role="initializer" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="8420919522915975762">
+                  <node role="creator" type="jetbrains.mps.baseLanguage.collections.structure.ListCreatorWithInit" id="8420919522915981783">
+                    <node role="elementType" type="jetbrains.mps.baseLanguage.structure.StringType" id="8420919522915981785" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
     </node>
     <node role="superclass" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1205949265850">
       <link role="classifier" targetNodeId="1.1204129267857" resolveInfo="Util_Test" />
