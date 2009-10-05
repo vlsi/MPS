@@ -4261,6 +4261,12 @@
     <property name="name" value="ParametersInformationQuery" />
     <property name="rootable" value="true" />
     <link role="extends" targetNodeId="3.1133920641626" resolveInfo="BaseConcept" />
+    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="8178273524755058633">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="type" />
+      <property name="sourceCardinality" value="1" />
+      <link role="target" targetNodeId="4.1068431790189" resolveInfo="Type" />
+    </node>
     <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="7667276221847612623">
       <property name="metaClass" value="aggregation" />
       <property name="role" value="methods" />
@@ -4285,7 +4291,7 @@
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="7667276221847612943">
     <property name="package" value="MethodParameters" />
-    <property name="name" value="QueryFunction_NodeList" />
+    <property name="name" value="QueryFunction_ParametersList" />
     <link role="extends" targetNodeId="4.1137021947720" resolveInfo="ConceptFunction" />
     <node role="conceptLink" type="jetbrains.mps.lang.structure.structure.ReferenceConceptLink" id="671290755173763930">
       <link role="conceptLinkDeclaration" targetNodeId="4.1161119487665" resolveInfo="applicableConceptFunctionParameter" />
@@ -4294,10 +4300,6 @@
     <node role="conceptLink" type="jetbrains.mps.lang.structure.structure.ReferenceConceptLink" id="671290755173777668">
       <link role="conceptLinkDeclaration" targetNodeId="4.1161119487665" resolveInfo="applicableConceptFunctionParameter" />
       <link role="target" targetNodeId="1161622981231" resolveInfo="ConceptFunctionParameter_editorContext" />
-    </node>
-    <node role="conceptLink" type="jetbrains.mps.lang.structure.structure.AggregationConceptLink" id="7667276221847612945">
-      <link role="conceptLinkDeclaration" targetNodeId="4.1137545148427" resolveInfo="conceptFunctionReturnType" />
-      <node role="target" type="jetbrains.mps.lang.smodel.structure.SNodeListType" id="7667276221847612947" />
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="671290755174094686">
@@ -4326,19 +4328,18 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="671290755174094691">
-    <property name="name" value="ConceptFunctionParameter_method" />
+    <property name="name" value="ConceptFunctionParameter_parameterObject" />
     <property name="package" value="MethodParameters" />
     <link role="extends" targetNodeId="4.1107135704075" resolveInfo="ConceptFunctionParameter" />
-    <node role="conceptLink" type="jetbrains.mps.lang.structure.structure.AggregationConceptLink" id="671290755174094692">
-      <link role="conceptLinkDeclaration" targetNodeId="4.1137545963098" resolveInfo="conceptFunctionParameterType" />
-      <node role="target" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="671290755174094696" />
-    </node>
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="671290755174094694">
-      <property name="value" value="method" />
+      <property name="value" value="parameterObject" />
       <link role="conceptPropertyDeclaration" targetNodeId="3.1137473891462" resolveInfo="alias" />
     </node>
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.BooleanConceptProperty" id="671290755174094695">
       <link role="conceptPropertyDeclaration" targetNodeId="3.1137473994950" resolveInfo="dontSubstituteByDefault" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.BooleanConceptProperty" id="7806530711847278494">
+      <link role="conceptPropertyDeclaration" targetNodeId="4.1199886518837" resolveInfo="dontUseParameterObject" />
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="6419604448124516209">

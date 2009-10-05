@@ -15205,7 +15205,7 @@
   <node type="jetbrains.mps.lang.editor.structure.ParametersInformationQuery" id="4755152624708725521">
     <property name="package" value="method" />
     <property name="name" value="BaseMethodParameterInformationQuery" />
-    <node role="methods" type="jetbrains.mps.lang.editor.structure.QueryFunction_NodeList" id="4755152624708725522">
+    <node role="methods" type="jetbrains.mps.lang.editor.structure.QueryFunction_ParametersList" id="4755152624708725522">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="4755152624708725523">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="4755152624709088876">
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="4755152624709088877">
@@ -15499,10 +15499,7 @@
             <node role="type" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="8578539587488584466">
               <link role="concept" targetNodeId="17.1068580123132" resolveInfo="BaseMethodDeclaration" />
             </node>
-            <node role="initializer" type="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" id="8578539587488584467">
-              <link role="concept" targetNodeId="17.1068580123132" resolveInfo="BaseMethodDeclaration" />
-              <node role="leftExpression" type="jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_method" id="8578539587488584468" />
-            </node>
+            <node role="initializer" type="jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_parameterObject" id="8578539587488584468" />
           </node>
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="8578539587488584478">
@@ -15775,10 +15772,13 @@
                 <link role="link" targetNodeId="17.1068499141037" />
               </node>
             </node>
-            <node role="rightExpression" type="jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_method" id="4755152624709102514" />
+            <node role="rightExpression" type="jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_parameterObject" id="4755152624709102514" />
           </node>
         </node>
       </node>
+    </node>
+    <node role="type" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="7806530711847275845">
+      <link role="concept" targetNodeId="17.1068580123132" resolveInfo="BaseMethodDeclaration" />
     </node>
   </node>
 </model>

@@ -33,7 +33,7 @@ public class BaseMethodParameterInformationQuery extends ParametersInformation {
     return methodsToShow;
   }
 
-  public void getStyledMethodPresentation(SNode node, EditorContext editorContext, SNode method, StyledTextPrinter styledText) {
+  public void getStyledMethodPresentation(SNode node, EditorContext editorContext, SNode parameterObject, StyledTextPrinter styledText) {
     SNode argument = editorContext.getSelectedNode();
     SNode methodCall = SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.IMethodCall");
     while (argument != null && !(ListSequence.fromList(SLinkOperations.getTargets(methodCall, "actualArgument", true)).contains(argument))) {
@@ -47,7 +47,7 @@ public class BaseMethodParameterInformationQuery extends ParametersInformation {
         }
       }
     }
-    SNode methodDeclaration = SNodeOperations.cast(method, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration");
+    SNode methodDeclaration = parameterObject;
     if (SLinkOperations.getTarget(methodDeclaration, "returnType", true) != null) {
       styledText.append(BaseConcept_Behavior.call_getPresentation_1213877396640(SLinkOperations.getTarget(methodDeclaration, "returnType", true)) + " ");
     } else {
@@ -78,7 +78,7 @@ public class BaseMethodParameterInformationQuery extends ParametersInformation {
     styledText.append(")");
   }
 
-  public boolean isMethodCurrent(SNode node, EditorContext editorContext, SNode method) {
-    return SLinkOperations.getTarget(SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.IMethodCall"), "baseMethodDeclaration", false) == method;
+  public boolean isMethodCurrent(SNode node, EditorContext editorContext, SNode parameterObject) {
+    return SLinkOperations.getTarget(SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.IMethodCall"), "baseMethodDeclaration", false) == parameterObject;
   }
 }

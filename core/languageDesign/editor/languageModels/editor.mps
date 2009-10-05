@@ -9044,7 +9044,7 @@
     <link role="conceptDeclaration" targetNodeId="2.7667276221847612622" resolveInfo="ParametersInformation" />
     <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="7667276221847632119">
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="7667276221847632122">
-        <property name="text" value="parameters information" />
+        <property name="text" value="parameters hint" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Property" id="4755152624708557664">
         <link role="relationDeclaration" targetNodeId="3.1169194664001" resolveInfo="name" />
@@ -9059,8 +9059,25 @@
         <node role="styleItem" type="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem" id="7667276221847632130">
           <property name="flag" value="false" />
         </node>
+        <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="8178273524755078812">
+          <property name="text" value="type" />
+          <node role="styleItem" type="jetbrains.mps.lang.editor.structure.ForegroundColorStyleClassItem" id="8178273524755078820">
+            <property name="color" value="DARK_BLUE" />
+          </node>
+        </node>
+        <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode" id="8178273524755078815">
+          <link role="relationDeclaration" targetNodeId="2.8178273524755058633" />
+          <node role="styleItem" type="jetbrains.mps.lang.editor.structure.IndentLayoutNewLineStyleClassItem" id="8178273524755078816">
+            <property name="flag" value="true" />
+          </node>
+        </node>
+        <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="8178273524755078818">
+          <node role="styleItem" type="jetbrains.mps.lang.editor.structure.IndentLayoutNewLineStyleClassItem" id="8178273524755078819">
+            <property name="flag" value="true" />
+          </node>
+        </node>
         <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="4755152624708399739">
-          <property name="text" value="method declarations" />
+          <property name="text" value="applicable list" />
           <node role="styleItem" type="jetbrains.mps.lang.editor.structure.ForegroundColorStyleClassItem" id="4755152624708738284">
             <property name="color" value="DARK_BLUE" />
           </node>
@@ -9077,7 +9094,7 @@
           </node>
         </node>
         <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="4755152624708399742">
-          <property name="text" value="method presentation" />
+          <property name="text" value="parameters presentation" />
           <node role="styleItem" type="jetbrains.mps.lang.editor.structure.ForegroundColorStyleClassItem" id="4755152624708738286">
             <property name="color" value="DARK_BLUE" />
           </node>
@@ -9094,7 +9111,7 @@
           </node>
         </node>
         <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="4755152624708399745">
-          <property name="text" value="is method current" />
+          <property name="text" value="is current" />
           <node role="styleItem" type="jetbrains.mps.lang.editor.structure.ForegroundColorStyleClassItem" id="4755152624708738287">
             <property name="color" value="DARK_BLUE" />
           </node>

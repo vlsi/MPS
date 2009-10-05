@@ -1625,6 +1625,18 @@ public class QueriesGenerated {
     return SLinkOperations.getTarget(_context.getNode(), "keyMap", false);
   }
 
+  public static SNode sourceNodeQuery_7193555954039707366(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return SLinkOperations.getTarget(_context.getNode(), "type", true);
+  }
+
+  public static SNode sourceNodeQuery_7193555954039707377(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return SLinkOperations.getTarget(_context.getNode(), "type", true);
+  }
+
+  public static SNode sourceNodeQuery_7193555954039749588(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return SLinkOperations.getTarget(_context.getNode(), "type", true);
+  }
+
   public static SNode sourceNodeQuery_7533883740977706405(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return StyleClassItem_Behavior.call_getStyleConstant_1215703564594(_context.getNode());
   }

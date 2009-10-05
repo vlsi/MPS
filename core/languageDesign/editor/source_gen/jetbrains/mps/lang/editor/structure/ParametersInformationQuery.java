@@ -5,6 +5,7 @@ package jetbrains.mps.lang.editor.structure;
 import jetbrains.mps.lang.core.structure.BaseConcept;
 import jetbrains.mps.lang.core.structure.INamedConcept;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.baseLanguage.structure.Type;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
@@ -15,6 +16,7 @@ public class ParametersInformationQuery extends BaseConcept implements INamedCon
   public static final String SHORT_DESCRIPTION = "shortDescription";
   public static final String ALIAS = "alias";
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
+  public static final String TYPE = "type";
   public static final String METHODS = "methods";
   public static final String PRESENTATION = "presentation";
   public static final String IS_METHOD_CURRENT = "isMethodCurrent";
@@ -55,11 +57,19 @@ public class ParametersInformationQuery extends BaseConcept implements INamedCon
     this.setProperty(ParametersInformationQuery.VIRTUAL_PACKAGE, value);
   }
 
-  public QueryFunction_NodeList getMethods() {
-    return (QueryFunction_NodeList)this.getChild(QueryFunction_NodeList.class, ParametersInformationQuery.METHODS);
+  public Type getType() {
+    return (Type)this.getChild(Type.class, ParametersInformationQuery.TYPE);
   }
 
-  public void setMethods(QueryFunction_NodeList node) {
+  public void setType(Type node) {
+    super.setChild(ParametersInformationQuery.TYPE, node);
+  }
+
+  public QueryFunction_ParametersList getMethods() {
+    return (QueryFunction_ParametersList)this.getChild(QueryFunction_ParametersList.class, ParametersInformationQuery.METHODS);
+  }
+
+  public void setMethods(QueryFunction_ParametersList node) {
     super.setChild(ParametersInformationQuery.METHODS, node);
   }
 
