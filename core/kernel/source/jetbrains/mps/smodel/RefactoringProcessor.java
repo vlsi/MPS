@@ -28,7 +28,6 @@ import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.ide.findusages.model.SearchResults;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.MPSProject;
-import jetbrains.mps.project.ModuleContext;
 import jetbrains.mps.project.ProjectOperationContext;
 import jetbrains.mps.refactoring.RefactoringView;
 import jetbrains.mps.refactoring.RefactoringViewAction;
@@ -38,7 +37,6 @@ import jetbrains.mps.workbench.MPSDataKeys;
 import org.jetbrains.annotations.NotNull;
 
 import javax.swing.JOptionPane;
-import javax.swing.SwingUtilities;
 import java.awt.Frame;
 import java.util.ArrayList;
 import java.util.LinkedHashSet;
@@ -135,7 +133,9 @@ public class RefactoringProcessor {
                   IRefactoring refactoring = refactoringContext.getRefactoring();
                   if (!(refactoring instanceof ILoggableRefactoring))
                     throw new IllegalStateException("Trying to get affected nodes from non-loggable refactoring");
-                  refactoringContext.setUsages(((ILoggableRefactoring) refactoring).getAffectedNodes(refactoringContext));
+                  ILoggableRefactoring loggableRefactoring = (ILoggableRefactoring) refactoring;
+                  SearchResults usages = loggableRefactoring.getAffectedNodes(refactoringContext);
+                  refactoringContext.setUsages(usages);
                 } catch (Throwable t) {
                   LOG.error(t);
                   wasError[0] = true;
@@ -166,13 +166,22 @@ public class RefactoringProcessor {
       public void run() {
         final List<SModel> modelsToGenerate = ModelAccess.instance().runReadAction(new Computable<List<SModel>>() {
           public List<SModel> compute() {
-            return refactoring.getModelsToGenerate(refactoringContext);
+            try {
+              return refactoring.getModelsToGenerate(refactoringContext);
+            } catch (Throwable t) {
+              LOG.error("An error occured while trying to collect models to generate from refactoring " + refactoring.getUserFriendlyName() + ". No models will be generated", t);
+              return new ArrayList<SModel>();
+            }
           }
         });
 
         ModelAccess.instance().runWriteActionInCommand(new Runnable() {
           public void run() {
-            refactoring.refactor(refactoringContext);
+            try {
+              refactoring.refactor(refactoringContext);
+            } catch (Throwable t) {
+              LOG.error("An exception occyred while trying to execute refactoring " + refactoring.getUserFriendlyName() + ". Models could have been corrupted.", t);
+            }
           }
         });
 
@@ -201,7 +210,11 @@ public class RefactoringProcessor {
           generateModels(modelsToGenerate, refactoringContext);
         }
 
-        refactoring.doWhenDone(refactoringContext);
+        try {
+          refactoring.doWhenDone(refactoringContext);
+        } catch (Throwable t) {
+          LOG.error("An error occured in doWhenDone(), refactoring: " + refactoring.getUserFriendlyName(), t);
+        }
       }
     };
 
@@ -279,7 +292,11 @@ public class RefactoringProcessor {
     model.runLoadingAction(new Runnable() {
       public void run() {
         IRefactoring refactoring = refactoringContext.getRefactoring();
-        ((ILoggableRefactoring) refactoring).updateModel(model, refactoringContext);
+        try{
+          ((ILoggableRefactoring) refactoring).updateModel(model, refactoringContext);
+        } catch (Throwable t){
+          LOG.error("An exception was thrown by refactoring "+refactoring.getUserFriendlyName()+" while updating model "+model.getLongName()+". Models could have been corrupted.");
+        }
         model.updateImportedModelUsedVersion(usedModel.getSModelReference(), usedModel.getVersion());
         SModelRepository.getInstance().markChanged(model);
       }

@@ -1,16 +1,17 @@
 package jetbrains.mps.refactoring.framework.paramchooser.mps;
 
 import org.jetbrains.annotations.Nullable;
+import jetbrains.mps.util.Condition;
 
-public interface IChooserSettings<T> {
+public interface IChooserSettings<T> extends Condition<T>{
   @Nullable String getTitle();
 
   @Nullable
   T getInitialValue();
 
-  boolean filter(T entity);
+  boolean met(T entity);
 
-  public abstract class BaseChooserSettings<T> implements IChooserSettings<T>{
+  public abstract class BaseChooserSettings<T> implements IChooserSettings<T> {
     private String myTitle;
 
     protected BaseChooserSettings(String title) {
@@ -25,8 +26,8 @@ public interface IChooserSettings<T> {
       return null;
     }
 
-    public boolean filter(T entity) {
-      return false;
+    public boolean met(T entity) {
+      return true;
     }
   }
 }

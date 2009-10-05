@@ -221,7 +221,11 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor {
         if (!(refactoring instanceof ILoggableRefactoring)){
           LOG.error("Non-loggable refactoring was logged: "+refactoring.getClass().getName());
         }else{
-          ((ILoggableRefactoring)refactoring).updateModel(mySModel, refactoringContext);
+          try{
+            ((ILoggableRefactoring)refactoring).updateModel(mySModel, refactoringContext);
+          } catch (Throwable t){
+            LOG.error("An exception was thrown by refactoring "+refactoring.getUserFriendlyName()+" while updating model "+mySModel.getLongName()+". Models could have been corrupted.");
+          }
         }
       }
       mySModel.updateImportedModelUsedVersion(modelDescriptor.getSModelReference(), currentVersion);

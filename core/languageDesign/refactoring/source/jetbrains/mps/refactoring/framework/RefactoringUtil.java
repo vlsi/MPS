@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.refactoring.framework;
 
+import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.MPSProject;
@@ -26,6 +27,8 @@ import jetbrains.mps.smodel.SModel;
 import java.util.*;
 
 public class RefactoringUtil {
+  private static final Logger LOG = Logger.getLogger(RefactoringUtil.class);
+
   public static List<IRefactoring> getAllRefactorings() {
     List<IRefactoring> allRefactorings = new ArrayList<IRefactoring>();
     List<Language> languages = GlobalScope.getInstance().getVisibleLanguages();
@@ -42,11 +45,11 @@ public class RefactoringUtil {
     assert (entities.size() == 1 || refactoring.getRefactoringTarget().allowMultipleTargets());
 
     IRefactoringTarget target = refactoring.getRefactoringTarget();
-    if (!isApplicableToEntities(target, entities)) return false;
+    if (!isApplicableToEntities(refactoring.getUserFriendlyName(), target, entities)) return false;
 
     for (IRefactoring r : getAllRefactorings()) {
       if (r.getRefactoringTarget().getTarget() != target.getTarget()) continue;
-      if (!isApplicableToEntities(r.getRefactoringTarget(), entities)) continue;
+      if (!isApplicableToEntities(r.getUserFriendlyName(), r.getRefactoringTarget(), entities)) continue;
 
       //todo {begin} for compatibility. Can be removed when all refactorings are rewritten
       Class refClass = refactoring instanceof OldRefactoringAdapter ? ((OldRefactoringAdapter) refactoring).getRefactoringClass() : refactoring.getClass();
@@ -57,9 +60,16 @@ public class RefactoringUtil {
     return true;
   }
 
-  private static boolean isApplicableToEntities(IRefactoringTarget target, Collection entities) {
+  private static boolean isApplicableToEntities(String refactoringName, IRefactoringTarget target, Collection entities) {
     for (Object entity : entities) {
-      if (!target.isApplicable(entity)) {
+      boolean applicable;
+      try {
+        applicable = target.isApplicable(entity);
+      } catch (Throwable t) {
+        LOG.error("An error occured while executing "+refactoringName+".isApplicable(). This refactoring will not be available.",t);
+        applicable = false;
+      }
+      if (!applicable) {
         return false;
       }
     }

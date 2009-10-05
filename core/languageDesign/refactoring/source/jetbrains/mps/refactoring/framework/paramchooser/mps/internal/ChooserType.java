@@ -9,8 +9,6 @@ import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.refactoring.framework.paramchooser.mps.IChooserSettings;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.workbench.MPSDataKeys;
-import jetbrains.mps.workbench.actions.goTo.index.MPSChooseSNodeDescriptor;
-import jetbrains.mps.workbench.actions.goTo.index.NamedNodeIndex;
 import jetbrains.mps.workbench.choose.models.BaseModelItem;
 import jetbrains.mps.workbench.choose.models.BaseModelModel;
 import jetbrains.mps.workbench.choose.modules.BaseModuleItem;
@@ -26,32 +24,11 @@ public abstract class ChooserType {
   protected List filter(IChooserSettings settings, List list) {
     List result = new ArrayList<SNode>();
     for (Object entity : list) {
-      if (settings.filter(entity)) {
+      if (settings.met(entity)) {
         result.add(entity);
       }
     }
     return result;
-  }
-
-  public static class NodeChooserType extends ChooserType {
-    public NodeChooserType() {
-    }
-
-
-    public ChooseByNameModel createChooserModel(final IChooserSettings settings) {
-      DataContext dataContext = DataManager.getInstance().getDataContext();
-      final MPSProject mpsProject = MPSDataKeys.MPS_PROJECT.getData(dataContext);
-      NamedNodeIndex nodeIndex = new NamedNodeIndex() {
-        public List<SNode> getNodesToIterate(SModel model) {
-          return filter(settings, super.getNodesToIterate(model));
-        }
-      };
-      return new MPSChooseSNodeDescriptor(mpsProject, nodeIndex) {
-        public String getPromptText() {
-          return settings.getTitle();
-        }
-      };
-    }
   }
 
   public static class ModelChooserType extends ChooserType {

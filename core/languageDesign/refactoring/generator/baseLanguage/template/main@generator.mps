@@ -6365,7 +6365,7 @@
       </node>
     </node>
     <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="3644668945280073804">
-      <property name="name" value="filter" />
+      <property name="name" value="met" />
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="3060724424231421109" />
       <node role="returnType" type="jetbrains.mps.baseLanguage.structure.BooleanType" id="3644668945280073806" />
       <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="3644668945280073807">
