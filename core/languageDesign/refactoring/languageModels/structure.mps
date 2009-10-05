@@ -1123,6 +1123,9 @@
       <property name="value" value="ask" />
       <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" resolveInfo="alias" />
     </node>
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.BooleanConceptProperty" id="8391626475154464071">
+      <link role="conceptPropertyDeclaration" targetNodeId="2.1241531154556" resolveInfo="legalAsStatement" />
+    </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="6895093993902496262">
     <property name="name" value="RefactoringParameterReference" />
