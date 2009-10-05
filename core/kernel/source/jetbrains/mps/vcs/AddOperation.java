@@ -82,6 +82,7 @@ class AddOperation extends VcsOperation {
         if (status.equals(FileStatus.DELETED)) {
           myVirtualFilesToRevert.add(virtualFile);
         } else if (!status.equals(FileStatus.MODIFIED)/* && !status.equals(FileStatus.NOT_CHANGED)*/) {
+          // previous line is partly commented until IDEA-24846 fixed
           myVirtualFilesToAdd.add(virtualFile);
         }
       } else if (virtualFile == null && f.exists()) {
