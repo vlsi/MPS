@@ -6,6 +6,7 @@ import com.intellij.navigation.NavigationItem;
 import com.intellij.openapi.actionSystem.DataContext;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.MPSProject;
+import jetbrains.mps.refactoring.framework.paramchooser.mps.IChooserSettings;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.workbench.actions.goTo.index.MPSChooseSNodeDescriptor;
@@ -14,19 +15,18 @@ import jetbrains.mps.workbench.choose.models.BaseModelItem;
 import jetbrains.mps.workbench.choose.models.BaseModelModel;
 import jetbrains.mps.workbench.choose.modules.BaseModuleItem;
 import jetbrains.mps.workbench.choose.modules.BaseModuleModel;
-import jetbrains.mps.refactoring.framework.paramchooser.mps.IChooserSettings;
 
-import java.util.List;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 public abstract class ChooserType {
   public abstract ChooseByNameModel createChooserModel(IChooserSettings settings);
 
-  protected List filter(IChooserSettings settings, List list){
+  protected List filter(IChooserSettings settings, List list) {
     List result = new ArrayList<SNode>();
-    for (Object entity:list){
-      if (settings.filter(entity)){
+    for (Object entity : list) {
+      if (settings.filter(entity)) {
         result.add(entity);
       }
     }
@@ -37,16 +37,16 @@ public abstract class ChooserType {
     public NodeChooserType() {
     }
 
-    
+
     public ChooseByNameModel createChooserModel(final IChooserSettings settings) {
       DataContext dataContext = DataManager.getInstance().getDataContext();
       final MPSProject mpsProject = MPSDataKeys.MPS_PROJECT.getData(dataContext);
-      NamedNodeIndex nodeIndex = new NamedNodeIndex(){
+      NamedNodeIndex nodeIndex = new NamedNodeIndex() {
         public List<SNode> getNodesToIterate(SModel model) {
-          return filter(settings,super.getNodesToIterate(model));
+          return filter(settings, super.getNodesToIterate(model));
         }
       };
-      return new MPSChooseSNodeDescriptor(mpsProject, nodeIndex){
+      return new MPSChooseSNodeDescriptor(mpsProject, nodeIndex) {
         public String getPromptText() {
           return settings.getTitle();
         }

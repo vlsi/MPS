@@ -6618,7 +6618,7 @@
         </node>
       </node>
       <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="3060724424231928613">
-        <property name="name" value="context" />
+        <property name="name" value="refactoringContext" />
         <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="3060724424231928614">
           <link role="classifier" targetNodeId="3.~RefactoringContext" resolveInfo="RefactoringContext" />
         </node>
