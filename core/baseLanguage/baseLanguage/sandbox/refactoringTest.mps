@@ -55,20 +55,12 @@
       <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="6208804448825809380" />
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="6208804448825809381" />
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="6208804448825809382">
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="6208804448825816341">
-          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="6208804448825816342">
-            <property name="name" value="a" />
-            <node role="type" type="jetbrains.mps.baseLanguage.structure.ArrayType" id="6208804448825816344">
-              <node role="componentType" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="6208804448825816343" />
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="5102468593876989322">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="5102468593876989323">
+            <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="5102468593876989324">
+              <link role="classifier" targetNodeId="31.~List" resolveInfo="List" />
+              <node role="parameter" type="jetbrains.mps.baseLanguage.structure.WildCardType" id="5102468593876989326" />
             </node>
-          </node>
-        </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="6208804448825816347">
-          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="6208804448825816349">
-            <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="6208804448825816348">
-              <link role="variableDeclaration" targetNodeId="6208804448825816342" resolveInfo="a" />
-            </node>
-            <node role="operation" type="jetbrains.mps.baseLanguage.structure.ArrayLengthOperation" id="6208804448825816353" />
           </node>
         </node>
       </node>
