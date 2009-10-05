@@ -445,6 +445,11 @@ __switch__:
     this.assertIterableEquals(this.inputABC(), Sequence.fromArray(arr));
   }
 
+  public void test_asSequencePrim() throws Exception {
+    int[] iarr = new int[]{1,2,3,4,5};
+    this.assertIterableEquals(this.input5(), ArrayUtils.fromIntegerArray(iarr));
+  }
+
   public void test_join() throws Exception {
     Iterable<String> test = ListSequence.fromListAndArray(new ArrayList<String>(), "vodka", "tequila", "whisky");
     Assert.assertEquals("vodka tequila whisky", IterableUtils.join(Sequence.fromIterable(test), " "));

@@ -7895,64 +7895,6 @@
       <link role="concept" targetNodeId="3.1240325842691" resolveInfo="AsSequenceOperation" />
     </node>
   </node>
-  <node type="jetbrains.mps.lang.typesystem.structure.NonTypesystemRule" id="1240326022304">
-    <property name="name" value="check_asSequence_operand_not_primitive_array" />
-    <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1240326022305">
-      <node role="statement" type="jetbrains.mps.lang.typesystem.structure.CoerceStatement" id="1240326067071">
-        <node role="pattern" type="jetbrains.mps.lang.typesystem.structure.ConceptReference" id="1240326067072">
-          <property name="name" value="arrayType" />
-          <link role="concept" targetNodeId="7.1070534760951" resolveInfo="ArrayType" />
-        </node>
-        <node role="nodeToCoerce" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1240326067073">
-          <node role="operation" type="jetbrains.mps.lang.typesystem.structure.Node_TypeOperation" id="1240326067077" />
-          <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1240326072618">
-            <node role="operand" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference" id="1240326072209">
-              <link role="applicableNode" targetNodeId="1240326042183" resolveInfo="asSequenceOperation" />
-            </node>
-            <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1240326075453">
-              <link role="baseMethodDeclaration" targetNodeId="18.1213877410070" resolveInfo="getOperand" />
-            </node>
-          </node>
-        </node>
-        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1240326067078">
-          <node role="statement" type="jetbrains.mps.lang.typesystem.structure.AssertStatement" id="1240326067079">
-            <node role="condition" type="jetbrains.mps.baseLanguage.structure.NotExpression" id="1240326067080">
-              <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1240326067081">
-                <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1240326067082">
-                  <node role="operand" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference" id="1240326067083">
-                    <link role="applicableNode" targetNodeId="1240326067072" resolveInfo="arrayType" />
-                  </node>
-                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1240326067084">
-                    <link role="link" targetNodeId="7.1070534760952" />
-                  </node>
-                </node>
-                <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation" id="1240326067085">
-                  <node role="conceptArgument" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" id="1240326067086">
-                    <link role="conceptDeclaration" targetNodeId="7.1164118113764" resolveInfo="PrimitiveType" />
-                  </node>
-                </node>
-              </node>
-            </node>
-            <node role="errorString" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1240326067087">
-              <property name="value" value="Primitive arrays not supported" />
-            </node>
-            <node role="nodeToReport" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1240326090147">
-              <node role="operand" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference" id="1240326088471">
-                <link role="applicableNode" targetNodeId="1240326042183" resolveInfo="asSequenceOperation" />
-              </node>
-              <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1240326092076">
-                <link role="baseMethodDeclaration" targetNodeId="18.1213877410070" resolveInfo="getOperand" />
-              </node>
-            </node>
-          </node>
-        </node>
-      </node>
-    </node>
-    <node role="applicableNode" type="jetbrains.mps.lang.typesystem.structure.ConceptReference" id="1240326042183">
-      <property name="name" value="asSequenceOperation" />
-      <link role="concept" targetNodeId="3.1240325842691" resolveInfo="AsSequenceOperation" />
-    </node>
-  </node>
   <node type="jetbrains.mps.lang.typesystem.structure.InferenceRule" id="1240687811538">
     <property name="name" value="typeof_JoinOperation" />
     <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1240687811539">

@@ -13,6 +13,6 @@ import jetbrains.mps.lang.typesystem.runtime.HUtil;
 public class AsSequenceOperation_Constraints {
   public static boolean canBeAChild(final IOperationContext operationContext, final CanBeAChildContext _context) {
     SNode operandType = TypeChecker.getInstance().getRuntimeSupport().coerce_(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(SNodeOperations.as(_context.getParentNode(), "jetbrains.mps.baseLanguage.structure.DotExpression"), "operand", true)), HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.structure.ArrayType"), false);
-    return (operandType != null) && !(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(operandType, "componentType", true), "jetbrains.mps.baseLanguage.structure.PrimitiveType"));
+    return (operandType != null);
   }
 }

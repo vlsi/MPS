@@ -18,6 +18,7 @@
       </dependencies>
       <usedLanguages>
         <usedLanguages>df345b11-b8c7-4213-ac66-48d2a9b75d88(jetbrains.mps.baseLanguageInternal)</usedLanguages>
+        <usedLanguages>3f4bc5f5-c6c1-4a28-8b10-c83066ffa4a1(jetbrains.mps.lang.constraints)</usedLanguages>
       </usedLanguages>
       <mapping-priorities>
         <mapping-priority-rule kind="strictly_before">

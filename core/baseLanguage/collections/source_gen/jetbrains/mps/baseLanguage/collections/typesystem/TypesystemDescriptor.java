@@ -360,10 +360,6 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
       this.myNonTypesystemRules.add(nonTypesystemRule);
     }
     {
-      NonTypesystemRule_Runtime nonTypesystemRule = new check_asSequence_operand_not_primitive_array_NonTypesystemRule();
-      this.myNonTypesystemRules.add(nonTypesystemRule);
-    }
-    {
       SubtypingRule_Runtime subtypingRule = new supertypesOf_ListType_SequenceType_SubtypingRule();
       this.mySubtypingRules.add(subtypingRule);
     }
