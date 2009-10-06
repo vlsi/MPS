@@ -100,7 +100,7 @@ public class RenameLanguageDialog extends BaseDialog {
       }
     });
 
-    ProgressManager.getInstance().run(new Modal(myProject, "Updating langauge references...", false) {
+    ProgressManager.getInstance().run(new Modal(myProject, "Updating language references...", false) {
       @Override
       public void run(@NotNull ProgressIndicator indicator) {
         indicator.pushState();

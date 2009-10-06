@@ -282,13 +282,13 @@ public class Generator extends AbstractModule {
       result.add(getSourceLanguage().getConstraintsModelDescriptor());
     }
 
-    for (Language langauge : getSourceLanguage().getExtendedLanguages()) {
-      SModelDescriptor structure = langauge.getStructureModelDescriptor();
+    for (Language language : getSourceLanguage().getExtendedLanguages()) {
+      SModelDescriptor structure = language.getStructureModelDescriptor();
       if (structure != null) {
         result.add(structure);
       }
-      if (langauge.getConstraintsModelDescriptor() != null) {
-        result.add(langauge.getConstraintsModelDescriptor());
+      if (language.getConstraintsModelDescriptor() != null) {
+        result.add(language.getConstraintsModelDescriptor());
       }
     }
 
