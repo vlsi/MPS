@@ -31,6 +31,7 @@ import jetbrains.mps.textGen.TextGenManager;
 import jetbrains.mps.vcs.MPSVCSManager;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.VFileSystem;
+import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.util.ReadUtil;
@@ -45,23 +46,34 @@ import java.util.*;
 public class FileGenerationUtil {
   private static final String CACHES_SUFFIX = ".caches";
 
-  public static File getDefaultOutputDir(SModelDescriptor inputModelDescriptor, File outputRootDir) {
+  public static IFile getDefaultOutputDir(SModelDescriptor inputModelDescriptor, IFile outputRootDir) {
     SModelReference reference = inputModelDescriptor.getSModelReference();
     return getDefaultOutputDir(reference, outputRootDir);
   }
 
-  public static File getDefaultOutputDir(SModel inputModel, File outputRootDir) {
+  public static File getDefaultOutputDir(SModelDescriptor inputModelDescriptor, File outputRootDir) {
+    return getDefaultOutputDir(inputModelDescriptor, FileSystem.getFile(outputRootDir)).toFile();
+  }
+
+  public static IFile getDefaultOutputDir(SModel inputModel, IFile outputRootDir) {
     return getDefaultOutputDir(inputModel.getSModelReference(), outputRootDir);
   }
 
-  public static File getCachesOutputDir(File outputDir) {
-    return new File(outputDir.getAbsolutePath() + CACHES_SUFFIX);
+  public static File getDefaultOutputDir(SModel inputModel, File outputRootDir) {
+    return getDefaultOutputDir(inputModel, FileSystem.getFile(outputRootDir)).toFile();    
   }
 
-  private static File getDefaultOutputDir(SModelReference reference, File outputRootDir) {
+  public static File getCachesOutputDir(File outputDir) {
+    return new File(getCachesPath(outputDir.getAbsolutePath()));
+  }
+
+  public static String getCachesPath(String outputDir) {
+    return outputDir + CACHES_SUFFIX;
+  }
+
+  private static IFile getDefaultOutputDir(SModelReference reference, IFile outputRootDir) {
     String packageName = JavaNameUtil.packageNameForModelUID(reference);
-    File file = new File(outputRootDir, packageName.replace('.', File.separatorChar));
-    return file;
+    return outputRootDir.child(packageName.replace('.', File.separatorChar));
   }
 
 }

@@ -8,13 +8,16 @@ import java.io.File;
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.util.Macros;
+import java.util.List;
+import jetbrains.mps.generator.fileGenerator.BaseModelCache;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import java.util.ArrayList;
+import jetbrains.mps.debug.baseLanguage.BLDebugInfoCache;
+import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.vfs.MPSExtentions;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import java.util.List;
-import java.util.ArrayList;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.MPSModuleRepository;
@@ -43,6 +46,16 @@ public class Module_Behavior {
     IFile descriptor = Module_Behavior.call_getModule_1213877515148(thisNode).getDescriptorFile();
     String str = Module_Behavior.call_getMacros_1213877515158(thisNode).expandPath(Macros.getMacroString(Module_Behavior.call_getModule_1213877515148(thisNode)), descriptor);
     return ModuleUtil.getRelativePath(str, AbstractProjectComponent_Behavior.call_getHomePath_1213877333764(thisNode).getPath());
+  }
+
+  public static List<String> call_getCachesDirs_8196794507570019546(final SNode thisNode) {
+    List<BaseModelCache> caches = ListSequence.fromList(new ArrayList<BaseModelCache>());
+    ListSequence.fromList(caches).addElement(BLDebugInfoCache.getInstance());
+    return ListSequence.fromList(caches).select(new ISelector<BaseModelCache, String>() {
+      public String select(BaseModelCache it) {
+        return ModuleUtil.getRelativePath(it.getCachesDir(Module_Behavior.call_getModule_1213877515148(thisNode)).getPath(), AbstractProjectComponent_Behavior.call_getHomePath_1213877333764(thisNode).getPath());
+      }
+    }).toListSequence();
   }
 
   public static String call_findMPSProjectFile_1213877514840(SNode thisNode, File file) {
