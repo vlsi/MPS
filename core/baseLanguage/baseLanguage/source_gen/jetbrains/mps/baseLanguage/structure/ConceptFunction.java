@@ -8,7 +8,7 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
-public class ConceptFunction extends BaseConcept implements IMethodLike {
+public class ConceptFunction extends BaseConcept implements IMethodLike, IStatementListContainer {
   public static final String concept = "jetbrains.mps.baseLanguage.structure.ConceptFunction";
   public static final String CPR_UsesParameterObject = "usesParameterObject";
   public static final String CPR_ShowName = "showName";

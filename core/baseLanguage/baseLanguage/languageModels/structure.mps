@@ -1479,6 +1479,9 @@
     <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="1239354708927">
       <link role="intfc" targetNodeId="1239354281271" resolveInfo="IMethodLike" />
     </node>
+    <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="2853288968476527693">
+      <link role="intfc" targetNodeId="1199653749349" resolveInfo="IStatementListContainer" />
+    </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1144226303539">
     <property name="name" value="ForeachStatement" />
