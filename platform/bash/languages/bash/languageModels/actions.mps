@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<model modelUID="r:4540c583-43a1-44b6-928f-88a12097f498(jetbrains.mps.bash.actions)">
+<model modelUID="r:4540c583-43a1-44b6-928f-88a12097f498(jetbrains.mps.shell.actions)">
   <persistence version="3" />
   <refactoringHistory />
   <language namespace="aee9cad2-acd4-4608-aef2-0004f6a1cdbd(jetbrains.mps.lang.actions)" />
@@ -33,11 +33,13 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959034b(jetbrains.mps.lang.quotation.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590515(jetbrains.mps.baseLanguage.regexp.constraints)" version="3" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590518(jetbrains.mps.baseLanguage.regexp.structure)" version="0" />
+  <languageAspect modelUID="r:49b10014-fe6b-4682-a69d-1c3d6188eba3(jetbrains.mps.shell.structure)" version="0" />
   <devkit namespace="2677cb18-f558-4e33-bc38-a5139cee06dc(jetbrains.mps.devkit.language-design)" />
-  <maxImportIndex value="3" />
-  <import index="1" modelUID="r:49b10014-fe6b-4682-a69d-1c3d6188eba3(jetbrains.mps.bash.structure)" version="-1" />
+  <maxImportIndex value="4" />
+  <import index="1" modelUID="r:49b10014-fe6b-4682-a69d-1c3d6188eba3(jetbrains.mps.shell.structure)" version="0" />
   <import index="2" modelUID="f:java_stub#java.lang(java.lang@java_stub)" version="-1" />
   <import index="3" modelUID="f:java_stub#jetbrains.mps.smodel(jetbrains.mps.smodel@java_stub)" version="-1" />
+  <import index="4" modelUID="r:c574a83a-ec69-4fe6-915d-e101a0ad8839(jetbrains.mps.shell.behavior)" version="-1" />
   <node type="jetbrains.mps.lang.actions.structure.SideTransformHintSubstituteActions" id="3147078024758607985">
     <property name="name" value="ArithmeticExpansion" />
     <node role="actionsBuilder" type="jetbrains.mps.lang.actions.structure.SideTransformHintSubstituteActionsBuilder" id="3147078024758607987">
@@ -1544,8 +1546,7 @@
       </node>
     </node>
   </node>
-  <visible index="3" modelUID="r:c574a83a-ec69-4fe6-915d-e101a0ad8839(jetbrains.mps.bash.behavior)" />
-  <visible index="4" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
+  <visible index="3" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
   <node type="jetbrains.mps.lang.actions.structure.NodeSubstituteActions" id="9034131902186646659">
     <property name="name" value="VariableAssingment" />
     <node role="actionsBuilder" type="jetbrains.mps.lang.actions.structure.NodeSubstituteActionsBuilder" id="9034131902186646660">
@@ -1638,7 +1639,7 @@
                   </node>
                   <node role="initializer" type="jetbrains.mps.lang.smodel.structure.StaticConceptMethodCall" id="9034131902190619403">
                     <link role="concept" targetNodeId="1.7633559109506263695" resolveInfo="VariableName" />
-                    <link role="baseMethodDeclaration" targetNodeId="3v.9034131902194480300" resolveInfo="testName" />
+                    <link role="baseMethodDeclaration" targetNodeId="4.9034131902194480300" resolveInfo="testName" />
                     <node role="actualArgument" type="jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_currentTargetNode" id="2362837471604681439" />
                     <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="9034131902190619406">
                       <link role="variableDeclaration" targetNodeId="9034131902188989678" resolveInfo="newVarName" />
@@ -1716,7 +1717,7 @@
                           </node>
                         </node>
                         <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="9034131902190403580">
-                          <link role="property" targetNodeId="4v.1169194664001" resolveInfo="name" />
+                          <link role="property" targetNodeId="3v.1169194664001" resolveInfo="name" />
                         </node>
                       </node>
                       <node role="operation" type="jetbrains.mps.lang.smodel.structure.Property_SetOperation" id="9034131902190403581">
@@ -1768,7 +1769,7 @@
                   </node>
                   <node role="initializer" type="jetbrains.mps.lang.smodel.structure.StaticConceptMethodCall" id="9034131902192099514">
                     <link role="concept" targetNodeId="1.7633559109506263695" resolveInfo="VariableName" />
-                    <link role="baseMethodDeclaration" targetNodeId="3v.9034131902194480300" resolveInfo="testName" />
+                    <link role="baseMethodDeclaration" targetNodeId="4.9034131902194480300" resolveInfo="testName" />
                     <node role="actualArgument" type="jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_currentTargetNode" id="2362837471604681441" />
                     <node role="actualArgument" type="jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_pattern" id="9034131902192099516" />
                   </node>
@@ -1957,7 +1958,7 @@
                       <link role="variableDeclaration" targetNodeId="9034131902188178450" resolveInfo="name" />
                     </node>
                     <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="9034131902188447984">
-                      <link role="property" targetNodeId="4v.1169194664001" resolveInfo="name" />
+                      <link role="property" targetNodeId="3v.1169194664001" resolveInfo="name" />
                     </node>
                   </node>
                   <node role="operation" type="jetbrains.mps.lang.smodel.structure.Property_SetOperation" id="9034131902188663037">
@@ -1982,7 +1983,7 @@
                   </node>
                   <node role="initializer" type="jetbrains.mps.lang.smodel.structure.StaticConceptMethodCall" id="9034131902190632494">
                     <link role="concept" targetNodeId="1.7633559109506263695" resolveInfo="VariableName" />
-                    <link role="baseMethodDeclaration" targetNodeId="3v.9034131902194480300" resolveInfo="testName" />
+                    <link role="baseMethodDeclaration" targetNodeId="4.9034131902194480300" resolveInfo="testName" />
                     <node role="actualArgument" type="jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_currentTargetNode" id="2362837471604681431" />
                     <node role="actualArgument" type="jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_pattern" id="2362837471604681433" />
                   </node>

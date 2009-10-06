@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<model modelUID="r:c6893696-a0eb-4e7f-85af-ba0fc30305cd(jetbrains.mps.bash.editor)">
+<model modelUID="r:c6893696-a0eb-4e7f-85af-ba0fc30305cd(jetbrains.mps.shell.editor)">
   <persistence version="3" />
   <refactoringHistory />
   <language namespace="18bc6592-03a6-4e29-a83a-7ff23bde13ba(jetbrains.mps.lang.editor)" />
@@ -29,14 +29,16 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" version="3" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590328(jetbrains.mps.baseLanguage.collections.constraints)" version="6" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" version="7" />
+  <languageAspect modelUID="r:49b10014-fe6b-4682-a69d-1c3d6188eba3(jetbrains.mps.shell.structure)" version="0" />
   <devkit namespace="2677cb18-f558-4e33-bc38-a5139cee06dc(jetbrains.mps.devkit.language-design)" />
-  <maxImportIndex value="6" />
-  <import index="1" modelUID="r:49b10014-fe6b-4682-a69d-1c3d6188eba3(jetbrains.mps.bash.structure)" version="-1" />
+  <maxImportIndex value="7" />
+  <import index="1" modelUID="r:49b10014-fe6b-4682-a69d-1c3d6188eba3(jetbrains.mps.shell.structure)" version="0" />
   <import index="2" modelUID="f:java_stub#jetbrains.mps.nodeEditor.style(jetbrains.mps.nodeEditor.style@java_stub)" version="-1" />
   <import index="3" modelUID="f:java_stub#jetbrains.mps.nodeEditor.cells(jetbrains.mps.nodeEditor.cells@java_stub)" version="-1" />
   <import index="4" modelUID="f:java_stub#jetbrains.mps.nodeEditor(jetbrains.mps.nodeEditor@java_stub)" version="-1" />
   <import index="5" modelUID="f:java_stub#jetbrains.mps.smodel(jetbrains.mps.smodel@java_stub)" version="-1" />
   <import index="6" modelUID="f:java_stub#java.lang(java.lang@java_stub)" version="-1" />
+  <import index="7" modelUID="r:c574a83a-ec69-4fe6-915d-e101a0ad8839(jetbrains.mps.shell.behavior)" version="-1" />
   <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" id="3321051580269922208">
     <link role="conceptDeclaration" targetNodeId="1.3321051580269917239" resolveInfo="CommandList" />
     <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="3321051580270635009">
@@ -118,7 +120,6 @@
       </node>
     </node>
   </node>
-  <visible index="3" modelUID="r:c574a83a-ec69-4fe6-915d-e101a0ad8839(jetbrains.mps.bash.behavior)" />
   <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" id="3321051580270761365">
     <link role="conceptDeclaration" targetNodeId="1.3321051580269894529" resolveInfo="Command" />
     <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="3321051580273396579">
@@ -154,7 +155,7 @@
                   <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="3905757829894475569">
                     <node role="operand" type="jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_node" id="3905757829894475568" />
                     <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="3905757829894475573">
-                      <link role="baseMethodDeclaration" targetNodeId="3v.3905757829894475414" resolveInfo="isBaseCommandExists" />
+                      <link role="baseMethodDeclaration" targetNodeId="7.3905757829894475414" resolveInfo="isBaseCommandExists" />
                     </node>
                   </node>
                 </node>
@@ -1902,7 +1903,7 @@
                     </node>
                   </node>
                   <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="3905757829909421710">
-                    <link role="baseMethodDeclaration" targetNodeId="3v.3905757829907341138" resolveInfo="isAbstractCommand" />
+                    <link role="baseMethodDeclaration" targetNodeId="7.3905757829907341138" resolveInfo="isAbstractCommand" />
                   </node>
                 </node>
               </node>
@@ -1972,7 +1973,7 @@
                     </node>
                   </node>
                   <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="3905757829909264689">
-                    <link role="baseMethodDeclaration" targetNodeId="3v.3905757829907341138" resolveInfo="isAbstractCommand" />
+                    <link role="baseMethodDeclaration" targetNodeId="7.3905757829907341138" resolveInfo="isAbstractCommand" />
                   </node>
                 </node>
               </node>

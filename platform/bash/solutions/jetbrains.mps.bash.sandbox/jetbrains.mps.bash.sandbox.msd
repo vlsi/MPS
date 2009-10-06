@@ -6,7 +6,7 @@
   <classPath />
   <sourcePath />
   <usedLanguages>
-    <usedLanguages>4a1e4a24-105b-44ed-959c-6586fc957db3(jetbrains.mps.bash)</usedLanguages>
+    <usedLanguages>4a1e4a24-105b-44ed-959c-6586fc957db3(jetbrains.mps.shell)</usedLanguages>
   </usedLanguages>
 </solution>
 
