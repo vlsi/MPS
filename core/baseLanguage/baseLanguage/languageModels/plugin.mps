@@ -44625,6 +44625,23 @@
             </node>
           </node>
         </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="7077764025363922815">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="7077764025363922816">
+            <property name="name" value="cp" />
+            <node role="type" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="7077764025363922817" />
+            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="7077764025363922822">
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="7077764025363922819">
+                <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="7077764025363922820">
+                  <link role="baseMethodDeclaration" targetNodeId="8795513460990302323" resolveInfo="getTextField" />
+                </node>
+                <node role="operand" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="7077764025363922821" />
+              </node>
+              <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="7077764025363922826">
+                <link role="baseMethodDeclaration" targetNodeId="56.~JTextComponent.getCaretPosition():int" resolveInfo="getCaretPosition" />
+              </node>
+            </node>
+          </node>
+        </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="8795513460990302308">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="8795513460990302309">
             <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="8795513460990302310">
@@ -44640,6 +44657,22 @@
                   <link role="baseMethodDeclaration" targetNodeId="8795513460990302269" resolveInfo="getText" />
                 </node>
                 <node role="operand" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="8795513460990302316" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="7077764025363922828">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="7077764025363922832">
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="7077764025363922829">
+              <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="7077764025363922830">
+                <link role="baseMethodDeclaration" targetNodeId="8795513460990302323" resolveInfo="getTextField" />
+              </node>
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="7077764025363922831" />
+            </node>
+            <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="7077764025363922836">
+              <link role="baseMethodDeclaration" targetNodeId="56.~JTextComponent.setCaretPosition(int):void" resolveInfo="setCaretPosition" />
+              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="7077764025363922837">
+                <link role="variableDeclaration" targetNodeId="7077764025363922816" resolveInfo="cp" />
               </node>
             </node>
           </node>
