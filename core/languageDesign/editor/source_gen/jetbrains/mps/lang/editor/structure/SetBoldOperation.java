@@ -7,7 +7,7 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
-public class SetBoldOperation extends AbstractOperation {
+public class SetBoldOperation extends AbstractStyledTextOperation {
   public static final String concept = "jetbrains.mps.lang.editor.structure.SetBoldOperation";
 
   public SetBoldOperation(SNode node) {

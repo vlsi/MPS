@@ -4437,7 +4437,7 @@
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="4531786690998636238">
     <property name="package" value="MethodParameters" />
-    <property name="name" value="AbstractOperation" />
+    <property name="name" value="AbstractStyledTextOperation" />
     <link role="extends" targetNodeId="3.1133920641626" resolveInfo="BaseConcept" />
     <node role="conceptLinkDeclaration" type="jetbrains.mps.lang.structure.structure.AggregationConceptLinkDeclaration" id="6050628152419604261">
       <property name="name" value="operandType" />

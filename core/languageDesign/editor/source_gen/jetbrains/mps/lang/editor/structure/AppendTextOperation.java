@@ -7,7 +7,7 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
-public class AppendTextOperation extends AbstractOperation {
+public class AppendTextOperation extends AbstractStyledTextOperation {
   public static final String concept = "jetbrains.mps.lang.editor.structure.AppendTextOperation";
 
   public AppendTextOperation(SNode node) {

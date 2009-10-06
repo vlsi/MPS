@@ -2098,7 +2098,7 @@
   </node>
   <visible index="2" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
   <node type="jetbrains.mps.lang.actions.structure.NodeSubstituteActions" id="226730285127010423">
-    <property name="name" value="CubstitudeAbstractOperation" />
+    <property name="name" value="SubstituteAbstractStyledTextOperation" />
     <node role="actionsBuilder" type="jetbrains.mps.lang.actions.structure.NodeSubstituteActionsBuilder" id="226730285127010424">
       <link role="applicableConcept" targetNodeId="2v.1197027803184" resolveInfo="IOperation" />
       <node role="part" type="jetbrains.mps.lang.actions.structure.AddMenuPart" id="226730285127011743">
