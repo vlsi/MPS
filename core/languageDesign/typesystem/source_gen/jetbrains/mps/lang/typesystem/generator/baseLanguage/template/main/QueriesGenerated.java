@@ -952,6 +952,10 @@ public class QueriesGenerated {
     return LinkDeclaration_Behavior.call_getGenuineRole_1213877254542(SLinkOperations.getTarget(_context.getNode(), "linkDeclaration", false));
   }
 
+  public static Object propertyMacro_GetPropertyValue_3790659035762526678(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return SPropertyOperations.getBoolean(_context.getNode(), "isStrong");
+  }
+
   public static Object propertyMacro_GetPropertyValue_8124453027370845472(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return INamedConcept_Behavior.call_getFqName_1213877404258(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "operationConcept", true), "concept", false));
   }

@@ -8,6 +8,7 @@ public abstract class OverloadedOpsProvider_OneTypeSpecified implements IOverloa
   protected SNode myOperandType;
   protected String myOperationConceptFQName;
   protected boolean myTypeIsExact = false;
+  protected boolean myIsStrong = false;
 
   public String getApplicableConceptFQName() {
     return myOperationConceptFQName;
@@ -19,7 +20,8 @@ public abstract class OverloadedOpsProvider_OneTypeSpecified implements IOverloa
         return false;
       }
     } else {
-      if (!(subtypingManager.isSubtype(leftOperandType, myOperandType) || subtypingManager.isSubtype(rightOperandType, myOperandType))) {
+      if (!(subtypingManager.isSubtype(leftOperandType, myOperandType, !myIsStrong)
+        || subtypingManager.isSubtype(rightOperandType, myOperandType, !myIsStrong))) {
         return false;
       }
     }

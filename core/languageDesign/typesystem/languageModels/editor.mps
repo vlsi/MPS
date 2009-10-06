@@ -4341,6 +4341,32 @@
         <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Property" id="8124453027370845394">
           <link role="relationDeclaration" targetNodeId="1.8124453027370766045" resolveInfo="isExact" />
         </node>
+        <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="2885635457272643343">
+          <node role="styleItem" type="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem" id="2885635457272643344">
+            <property name="flag" value="false" />
+          </node>
+          <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="2885635457272643347">
+            <property name="text" value="use strong subtyping" />
+          </node>
+          <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Property" id="2885635457272643349">
+            <link role="relationDeclaration" targetNodeId="1.2885635457272624477" resolveInfo="isStrong" />
+          </node>
+          <node role="cellLayout" type="jetbrains.mps.lang.editor.structure.CellLayout_Horizontal" id="2885635457272643346" />
+          <node role="renderingCondition" type="jetbrains.mps.lang.editor.structure.QueryFunction_NodeCondition" id="2885635457272643350">
+            <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="2885635457272643351">
+              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="2885635457272643352">
+                <node role="expression" type="jetbrains.mps.baseLanguage.structure.NotExpression" id="2885635457272643353">
+                  <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="2885635457272643356">
+                    <node role="operand" type="jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_node" id="2885635457272643355" />
+                    <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="2885635457272643360">
+                      <link role="property" targetNodeId="1.8124453027370766045" resolveInfo="isExact" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
         <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="8124453027370845395">
           <property name="text" value="    " />
           <node role="styleItem" type="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem" id="8124453027370845396" />

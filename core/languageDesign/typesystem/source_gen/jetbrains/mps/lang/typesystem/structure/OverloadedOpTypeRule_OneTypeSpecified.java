@@ -11,6 +11,7 @@ import jetbrains.mps.project.GlobalScope;
 public class OverloadedOpTypeRule_OneTypeSpecified extends AbstractOverloadedOpsTypeRule {
   public static final String concept = "jetbrains.mps.lang.typesystem.structure.OverloadedOpTypeRule_OneTypeSpecified";
   public static final String IS_EXACT = "isExact";
+  public static final String IS_STRONG = "isStrong";
   public static final String OPERAND_TYPE = "operandType";
 
   public OverloadedOpTypeRule_OneTypeSpecified(SNode node) {
@@ -23,6 +24,14 @@ public class OverloadedOpTypeRule_OneTypeSpecified extends AbstractOverloadedOps
 
   public void setIsExact(boolean value) {
     this.setBooleanProperty(OverloadedOpTypeRule_OneTypeSpecified.IS_EXACT, value);
+  }
+
+  public boolean getIsStrong() {
+    return this.getBooleanProperty(OverloadedOpTypeRule_OneTypeSpecified.IS_STRONG);
+  }
+
+  public void setIsStrong(boolean value) {
+    this.setBooleanProperty(OverloadedOpTypeRule_OneTypeSpecified.IS_STRONG, value);
   }
 
   public Expression getOperandType() {

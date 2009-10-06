@@ -2552,6 +2552,10 @@
       <property name="name" value="isExact" />
       <link role="dataType" targetNodeId="1.1082983657063" resolveInfo="boolean" />
     </node>
+    <node role="propertyDeclaration" type="jetbrains.mps.lang.structure.structure.PropertyDeclaration" id="2885635457272624477">
+      <property name="name" value="isStrong" />
+      <link role="dataType" targetNodeId="1.1082983657063" resolveInfo="boolean" />
+    </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="8124453027370845339">
     <property name="name" value="AbstractOverloadedOpsTypeRule" />

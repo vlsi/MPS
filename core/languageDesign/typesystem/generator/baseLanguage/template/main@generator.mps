@@ -4862,6 +4862,33 @@
                               </node>
                             </node>
                           </node>
+                          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="3790659035762526666">
+                            <node role="expression" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression" id="3790659035762526673">
+                              <node role="rValue" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="3790659035762526676">
+                                <property name="value" value="false" />
+                                <node role="propertyMacro$property_attribute$value" type="jetbrains.mps.lang.generator.structure.PropertyMacro" id="3790659035762526677">
+                                  <node role="propertyValueFunction" type="jetbrains.mps.lang.generator.structure.PropertyMacro_GetPropertyValue" id="3790659035762526678">
+                                    <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="3790659035762526679">
+                                      <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="3790659035762526680">
+                                        <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="3790659035762526684">
+                                          <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="3790659035762526681" />
+                                          <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="3790659035762526691">
+                                            <link role="property" targetNodeId="1.2885635457272624477" resolveInfo="isStrong" />
+                                          </node>
+                                        </node>
+                                      </node>
+                                    </node>
+                                  </node>
+                                </node>
+                              </node>
+                              <node role="lValue" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="3790659035762526668">
+                                <node role="operand" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="3790659035762526667" />
+                                <node role="operation" type="jetbrains.mps.baseLanguage.structure.FieldReferenceOperation" id="3790659035762526672">
+                                  <link role="fieldDeclaration" targetNodeId="15.~OverloadedOpsProvider_OneTypeSpecified.myIsStrong" resolveInfo="myIsStrong" />
+                                </node>
+                              </node>
+                            </node>
+                          </node>
                         </node>
                       </node>
                     </node>

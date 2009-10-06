@@ -862,6 +862,7 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
           this.myOperandType = new _Quotations.QuotationClass_130().createNode();
           this.myOperationConceptFQName = "jetbrains.mps.baseLanguage.structure.PlusExpression";
           this.myTypeIsExact = false;
+          this.myIsStrong = false;
         }
 
         public SNode getOperationType(SNode operation, SNode leftOperandType, SNode rightOperandType) {
