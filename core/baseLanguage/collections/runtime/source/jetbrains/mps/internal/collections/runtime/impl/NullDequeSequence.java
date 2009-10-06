@@ -108,6 +108,10 @@ public class NullDequeSequence<T> extends NullQueueSequence<T> implements IDeque
         return null;
     }
 
+    public T peekElement() {
+        return null;
+    }
+    
     public T popElement() {
         return null;
     }

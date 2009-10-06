@@ -10621,6 +10621,17 @@
               <property name="value" value="3" />
             </node>
           </node>
+          <node role="statement" type="jetbrains.mps.baseLanguage.unitTest.structure.AssertSame" id="5784983078885298349">
+            <node role="expected" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="5784983078885298352">
+              <property name="value" value="3" />
+            </node>
+            <node role="actual" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="5784983078885298354">
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="5784983078885298353">
+                <link role="variableDeclaration" targetNodeId="3002214349487781561" resolveInfo="s" />
+              </node>
+              <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.PeekOperation" id="5784983078885298358" />
+            </node>
+          </node>
           <node role="statement" type="jetbrains.mps.baseLanguage.unitTest.structure.AssertSame" id="3002214349487781587">
             <node role="actual" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="3002214349487781588">
               <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="3002214349487781589">
@@ -10641,6 +10652,17 @@
             </node>
             <node role="expected" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="3002214349487781596">
               <property name="value" value="2" />
+            </node>
+          </node>
+          <node role="statement" type="jetbrains.mps.baseLanguage.unitTest.structure.AssertSame" id="5784983078885353123">
+            <node role="expected" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="5784983078885353126">
+              <property name="value" value="2" />
+            </node>
+            <node role="actual" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="5784983078885353128">
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="5784983078885353127">
+                <link role="variableDeclaration" targetNodeId="3002214349487781561" resolveInfo="s" />
+              </node>
+              <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.PeekOperation" id="5784983078885353132" />
             </node>
           </node>
           <node role="statement" type="jetbrains.mps.baseLanguage.unitTest.structure.AssertSame" id="3002214349487781597">
@@ -10808,6 +10830,17 @@
               <property name="value" value="2" />
             </node>
           </node>
+          <node role="statement" type="jetbrains.mps.baseLanguage.unitTest.structure.AssertSame" id="5784983078885335079">
+            <node role="expected" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="5784983078885335082">
+              <property name="value" value="2" />
+            </node>
+            <node role="actual" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="5784983078885335084">
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="5784983078885335083">
+                <link role="variableDeclaration" targetNodeId="3444116434173802078" resolveInfo="d" />
+              </node>
+              <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.PeekOperation" id="5784983078885335088" />
+            </node>
+          </node>
           <node role="statement" type="jetbrains.mps.baseLanguage.unitTest.structure.AssertSame" id="3444116434173802193">
             <node role="actual" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="3444116434173802194">
               <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="3444116434173802195">
@@ -10852,6 +10885,17 @@
               <property name="value" value="1" />
             </node>
           </node>
+          <node role="statement" type="jetbrains.mps.baseLanguage.unitTest.structure.AssertSame" id="5784983078885335098">
+            <node role="expected" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="5784983078885335101">
+              <property name="value" value="1" />
+            </node>
+            <node role="actual" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="5784983078885335103">
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="5784983078885335102">
+                <link role="variableDeclaration" targetNodeId="3444116434173802078" resolveInfo="d" />
+              </node>
+              <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.PeekOperation" id="5784983078885335111" />
+            </node>
+          </node>
           <node role="statement" type="jetbrains.mps.baseLanguage.unitTest.structure.AssertSame" id="3444116434173802231">
             <node role="actual" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="3444116434173802232">
               <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="3444116434173802233">
@@ -10872,6 +10916,17 @@
             </node>
             <node role="expected" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="3444116434173802262">
               <property name="value" value="4" />
+            </node>
+          </node>
+          <node role="statement" type="jetbrains.mps.baseLanguage.unitTest.structure.AssertSame" id="5784983078885317051">
+            <node role="expected" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="5784983078885317054">
+              <property name="value" value="4" />
+            </node>
+            <node role="actual" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="5784983078885317056">
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="5784983078885317055">
+                <link role="variableDeclaration" targetNodeId="3444116434173802078" resolveInfo="d" />
+              </node>
+              <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.PeekOperation" id="5784983078885317060" />
             </node>
           </node>
           <node role="statement" type="jetbrains.mps.baseLanguage.unitTest.structure.AssertSame" id="3444116434173802263">

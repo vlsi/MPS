@@ -9539,5 +9539,59 @@
       <link role="concept" targetNodeId="3.5633809102336885303" resolveInfo="SubListOperation" />
     </node>
   </node>
+  <node type="jetbrains.mps.lang.typesystem.structure.InferenceRule" id="5784983078884872753">
+    <property name="name" value="typeof_PeekOperation" />
+    <property name="package" value="stack" />
+    <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="5784983078884872754">
+      <node role="statement" type="jetbrains.mps.lang.typesystem.structure.TypeVarDeclaration" id="5784983078884872756">
+        <property name="name" value="ELEMENT_TYPE" />
+      </node>
+      <node role="statement" type="jetbrains.mps.lang.typesystem.structure.CreateLessThanInequationStatement" id="5784983078884872757">
+        <node role="leftExpression" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause" id="5784983078884872758">
+          <node role="normalType" type="jetbrains.mps.lang.typesystem.structure.TypeOfExpression" id="5784983078884872759">
+            <node role="term" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="5784983078884872760">
+              <node role="operand" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference" id="5784983078884872761">
+                <link role="applicableNode" targetNodeId="5784983078884872755" resolveInfo="op" />
+              </node>
+              <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="5784983078884872762">
+                <link role="baseMethodDeclaration" targetNodeId="18.1213877410070" resolveInfo="getOperand" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="rightExpression" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause" id="5784983078884872763">
+          <node role="normalType" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="5784983078884872764">
+            <node role="operand" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference" id="5784983078884872765">
+              <link role="applicableNode" targetNodeId="5784983078884872755" resolveInfo="op" />
+            </node>
+            <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="5784983078884872766">
+              <link role="baseMethodDeclaration" targetNodeId="2v.2141797557973018589" resolveInfo="expectedOperandType" />
+              <node role="actualArgument" type="jetbrains.mps.lang.typesystem.structure.TypeVarReference" id="5784983078884872767">
+                <link role="typeVarDeclaration" targetNodeId="5784983078884872756" resolveInfo="ELEMENT_TYPE" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="statement" type="jetbrains.mps.lang.typesystem.structure.CreateEquationStatement" id="5784983078884872768">
+        <node role="rightExpression" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause" id="5784983078884872769">
+          <node role="normalType" type="jetbrains.mps.lang.typesystem.structure.TypeVarReference" id="5784983078884872770">
+            <link role="typeVarDeclaration" targetNodeId="5784983078884872756" resolveInfo="ELEMENT_TYPE" />
+          </node>
+        </node>
+        <node role="leftExpression" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause" id="5784983078884872771">
+          <node role="normalType" type="jetbrains.mps.lang.typesystem.structure.TypeOfExpression" id="5784983078884872772">
+            <node role="term" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference" id="5784983078884872773">
+              <link role="applicableNode" targetNodeId="5784983078884872755" resolveInfo="op" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="applicableNode" type="jetbrains.mps.lang.typesystem.structure.ConceptReference" id="5784983078884872755">
+      <property name="name" value="op" />
+      <link role="concept" targetNodeId="3.5784983078884872741" resolveInfo="PeekOperation" />
+    </node>
+  </node>
 </model>
 

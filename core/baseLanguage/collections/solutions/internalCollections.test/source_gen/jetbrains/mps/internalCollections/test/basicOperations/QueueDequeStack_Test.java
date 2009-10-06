@@ -63,8 +63,10 @@ public class QueueDequeStack_Test extends TestCase {
     DequeSequence.fromDeque(s).pushElement(2);
     DequeSequence.fromDeque(s).pushElement(3);
     Assert.assertSame(3, DequeSequence.fromDeque(s).first());
+    Assert.assertSame(3, DequeSequence.fromDeque(s).peekElement());
     Assert.assertSame(3, DequeSequence.fromDeque(s).popElement());
     Assert.assertSame(2, DequeSequence.fromDeque(s).first());
+    Assert.assertSame(2, DequeSequence.fromDeque(s).peekElement());
     Assert.assertSame(1, DequeSequence.fromDeque(s).last());
     Assert.assertSame(2, DequeSequence.fromDeque(s).popElement());
     Assert.assertSame(1, DequeSequence.fromDeque(s).popElement());
@@ -82,12 +84,15 @@ public class QueueDequeStack_Test extends TestCase {
     DequeSequence.fromDeque(d).addLastElement(5);
     DequeSequence.fromDeque(d).addLastElement(6);
     Assert.assertSame(2, DequeSequence.fromDeque(d).first());
+    Assert.assertSame(2, DequeSequence.fromDeque(d).peekElement());
     Assert.assertSame(6, DequeSequence.fromDeque(d).last());
     Assert.assertSame(6, DequeSequence.fromDeque(d).removeLastElement());
     Assert.assertSame(2, DequeSequence.fromDeque(d).removeFirstElement());
     Assert.assertSame(1, DequeSequence.fromDeque(d).first());
+    Assert.assertSame(1, DequeSequence.fromDeque(d).peekElement());
     Assert.assertSame(1, DequeSequence.fromDeque(d).removeFirstElement());
     Assert.assertSame(4, DequeSequence.fromDeque(d).first());
+    Assert.assertSame(4, DequeSequence.fromDeque(d).peekElement());
     Assert.assertSame(4, DequeSequence.fromDeque(d).removeFirstElement());
     Assert.assertSame(5, DequeSequence.fromDeque(d).last());
     Assert.assertSame(5, DequeSequence.fromDeque(d).removeLastElement());

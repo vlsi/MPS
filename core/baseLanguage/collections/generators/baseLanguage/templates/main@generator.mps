@@ -5074,6 +5074,14 @@
         </node>
       </node>
     </node>
+    <node role="reductionMappingRule" type="jetbrains.mps.lang.generator.structure.Reduction_MappingRule" id="5784983078884983838">
+      <link role="applicableConcept" targetNodeId="8.5784983078884872741" resolveInfo="PeekOperation" />
+      <node role="ruleConsequence" type="jetbrains.mps.lang.generator.structure.InlineTemplate_RuleConsequence" id="5784983078884986569">
+        <node role="templateNode" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="5784983078885018276">
+          <link role="baseMethodDeclaration" targetNodeId="13.~IDequeSequence.peekElement():java.lang.Object" resolveInfo="peekElement" />
+        </node>
+      </node>
+    </node>
     <node role="reductionMappingRule" type="jetbrains.mps.lang.generator.structure.Reduction_MappingRule" id="3358009230509160059">
       <link role="applicableConcept" targetNodeId="8.3358009230508699637" resolveInfo="PopOperation" />
       <node role="ruleConsequence" type="jetbrains.mps.lang.generator.structure.InlineTemplate_RuleConsequence" id="3358009230509160063">

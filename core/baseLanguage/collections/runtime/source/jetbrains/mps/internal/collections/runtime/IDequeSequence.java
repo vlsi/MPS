@@ -23,6 +23,8 @@ public interface IDequeSequence<T> extends IQueueSequence<T>, Deque<T> {
     
     T removeLastElement ();
     
+    T peekElement ();
+    
     T popElement ();
     
     T pushElement (T t);

@@ -2876,5 +2876,32 @@
       <link role="conceptPropertyDeclaration" targetNodeId="1.1137473914776" resolveInfo="shortDescription" />
     </node>
   </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="5784983078884872741">
+    <property name="package" value="stack" />
+    <property name="name" value="PeekOperation" />
+    <link role="extends" targetNodeId="540871147943782829" resolveInfo="NoArgumentsSequenceOperation" />
+    <node role="conceptLink" type="jetbrains.mps.lang.structure.structure.AggregationConceptLink" id="5784983078884872745">
+      <link role="conceptLinkDeclaration" targetNodeId="497032923610147119" resolveInfo="expectedOperandType" />
+      <node role="target" type="jetbrains.mps.baseLanguage.collections.structure.StackType" id="5784983078884872746">
+        <node role="elementType" type="jetbrains.mps.baseLanguage.structure.WildCardType" id="5784983078884872747" />
+      </node>
+    </node>
+    <node role="conceptLink" type="jetbrains.mps.lang.structure.structure.AggregationConceptLink" id="5784983078884872748">
+      <link role="conceptLinkDeclaration" targetNodeId="497032923610147119" resolveInfo="expectedOperandType" />
+      <node role="target" type="jetbrains.mps.baseLanguage.collections.structure.DequeType" id="5784983078884872749">
+        <node role="elementType" type="jetbrains.mps.baseLanguage.structure.WildCardType" id="5784983078884872750" />
+      </node>
+    </node>
+    <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="5784983078884872742">
+      <link role="intfc" targetNodeId="6801639034384909355" resolveInfo="IStackOperation" />
+    </node>
+    <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="5784983078884872744">
+      <link role="intfc" targetNodeId="6801639034384909353" resolveInfo="IDequeOperation" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="5784983078884872751">
+      <property name="value" value="peek" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" resolveInfo="alias" />
+    </node>
+  </node>
 </model>
 

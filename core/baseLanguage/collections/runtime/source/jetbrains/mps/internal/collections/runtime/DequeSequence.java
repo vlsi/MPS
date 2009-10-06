@@ -200,6 +200,15 @@ public class DequeSequence<T> extends QueueSequence<T> implements Deque<T>, IDeq
         }
         return getDeque().removeLast();
     }
+    
+    public T peekElement() {
+        if (Sequence.NULL_WHEN_EMPTY) {
+            if (getDeque().isEmpty()) {
+                return null;
+            }
+        }
+        return getDeque().peek();
+    }
 
     public T popElement() {
         if (Sequence.NULL_WHEN_EMPTY) {
