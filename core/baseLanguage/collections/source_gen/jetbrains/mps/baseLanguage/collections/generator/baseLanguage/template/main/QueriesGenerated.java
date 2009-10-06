@@ -1854,7 +1854,7 @@ public class QueriesGenerated {
     return SLinkOperations.getTarget(_context.getNode(), "upToIndex", true);
   }
 
-  public static SNode sourceNodeQuery_6126991172894276816(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+  public static SNode sourceNodeQuery_6312172641078680120(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "argument", true);
   }
 

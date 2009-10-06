@@ -70,7 +70,7 @@ public interface ISequence<T> extends Iterable<T>, IEnumerable<T> {
 
     boolean contains(T t);
     
-    boolean containsAll(ISequence<T> that);    
+    boolean containsSequence(ISequence<T> that);    
 
     int indexOf(T t);
 

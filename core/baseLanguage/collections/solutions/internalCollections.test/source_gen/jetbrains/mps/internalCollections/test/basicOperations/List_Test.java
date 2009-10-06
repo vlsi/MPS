@@ -15,6 +15,11 @@ import java.io.ObjectOutputStream;
 import java.io.ByteArrayInputStream;
 import java.io.ObjectInputStream;
 import jetbrains.mps.internal.collections.runtime.ArrayUtils;
+import jetbrains.mps.internal.collections.runtime.ISequenceClosure;
+import java.util.Iterator;
+import jetbrains.mps.baseLanguage.closures.runtime.YieldingIterator;
+import java.util.Collections;
+import jetbrains.mps.internal.collections.runtime.ISelector;
 
 public class List_Test extends Util_Test {
   public void test_listCreator() throws Exception {
@@ -235,6 +240,82 @@ public class List_Test extends Util_Test {
     ListSequence.fromList(sublist).addSequence(ListSequence.fromList(sublist).reversedList());
     this.assertIterableEquals(ArrayUtils.fromIntegerArray(new int[]{1,2,3,4,5,5,4,3,2,1,6,7,8,9,10}), list);
 
+  }
+
+  public void test_containsAll() throws Exception {
+    Iterable<Integer> bigSeq = Sequence.fromClosure(new ISequenceClosure<Integer>() {
+      public Iterable<Integer> iterable() {
+        return new Iterable<Integer>() {
+          public Iterator<Integer> iterator() {
+            return new YieldingIterator<Integer>() {
+              private int __CP__ = 0;
+              private int _2_i;
+
+              protected boolean moveToNext() {
+__loop__:
+                do {
+__switch__:
+                  switch (this.__CP__) {
+                    case -1:
+                      assert false : "Internal error";
+                      return false;
+                    case 2:
+                      this._2_i = 0;
+                    case 3:
+                      if (!(_2_i < 10000)) {
+                        this.__CP__ = 1;
+                        break;
+                      }
+                      this.__CP__ = 4;
+                      break;
+                    case 5:
+                      _2_i++ ;
+                      this.__CP__ = 3;
+                      break;
+                    case 6:
+                      this.__CP__ = 5;
+                      this.yield(_2_i);
+                      return true;
+                    case 0:
+                      this.__CP__ = 2;
+                      break;
+                    case 4:
+                      this.__CP__ = 6;
+                      break;
+                    default:
+                      break __loop__;
+                  }
+                } while(true);
+                return false;
+              }
+            };
+          }
+        };
+      }
+    });
+    List<Integer> bigList = Sequence.fromIterable(bigSeq).toListSequence();
+    Collections.shuffle(bigList);
+    List<Integer> anotherBigList = ListSequence.fromList(bigList).select(new ISelector<Integer, Integer>() {
+      public Integer select(Integer i) {
+        return i;
+      }
+    }).toListSequence();
+    Collections.shuffle(anotherBigList);
+    long start = System.currentTimeMillis();
+    Assert.assertTrue(ListSequence.fromList(bigList).select(new ISelector<Integer, Integer>() {
+      public Integer select(Integer i) {
+        return i;
+      }
+    }).containsSequence(ListSequence.fromList(anotherBigList).select(new ISelector<Integer, Integer>() {
+      public Integer select(Integer i) {
+        return i;
+      }
+    })));
+    long seqDuration = System.currentTimeMillis() - start;
+    long startAgain = System.currentTimeMillis();
+    Assert.assertTrue(ListSequence.fromList(bigList).containsSequence(ListSequence.fromList(anotherBigList)));
+    long listDuration = System.currentTimeMillis() - startAgain;
+    Assert.assertTrue(seqDuration * 3 < listDuration);
   }
 
   public List<Foo> mps5684helper() {

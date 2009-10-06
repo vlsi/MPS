@@ -232,7 +232,7 @@ public abstract class Sequence<T> implements ISequence<T>, Iterable<T> {
         return IterableUtils.contains(toIterable(), t);
     }
 
-    public boolean containsAll(ISequence<T> that) {
+    public boolean containsSequence(ISequence<T> that) {
         if (USE_NULL_SEQUENCE) {
             if (that == null) {
                 return false;

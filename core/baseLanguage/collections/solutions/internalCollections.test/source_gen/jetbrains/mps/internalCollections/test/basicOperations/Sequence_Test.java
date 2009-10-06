@@ -452,11 +452,11 @@ __switch__:
 
   public void test_containsAll() throws Exception {
     Iterable<Integer> seq = ArrayUtils.fromIntegerArray(new int[]{2,4,3,1,5});
-    Assert.assertFalse(Sequence.fromIterable(seq).containsAll(Sequence.fromIterable(this.input10())));
-    Assert.assertTrue(Sequence.fromIterable(seq).containsAll(Sequence.fromIterable(this.input5())));
+    Assert.assertFalse(Sequence.fromIterable(seq).containsSequence(Sequence.fromIterable(this.input10())));
+    Assert.assertTrue(Sequence.fromIterable(seq).containsSequence(Sequence.fromIterable(this.input5())));
     Iterable<Integer> seq2 = ArrayUtils.fromIntegerArray(new int[]{5,3,5,1,1,4,2,1});
-    Assert.assertTrue(Sequence.fromIterable(seq2).containsAll(Sequence.fromIterable(seq)));
-    Assert.assertFalse(Sequence.fromIterable(seq).containsAll(Sequence.fromIterable(seq2)));
+    Assert.assertTrue(Sequence.fromIterable(seq2).containsSequence(Sequence.fromIterable(seq)));
+    Assert.assertFalse(Sequence.fromIterable(seq).containsSequence(Sequence.fromIterable(seq2)));
   }
 
   public void test_join() throws Exception {

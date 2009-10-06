@@ -147,6 +147,14 @@ public abstract class CollectionSequence<T> extends Sequence<T> implements IColl
         return getCollection().size();
     }
     
+    @Override
+    public boolean containsSequence(ISequence<T> that) {
+        if (that instanceof CollectionSequence<?>) {
+            return getCollection().containsAll(((CollectionSequence<?>)that).getCollection());
+        }
+        return super.containsSequence(that);
+    }
+    
     // Object 
     
     @SuppressWarnings("unchecked")
