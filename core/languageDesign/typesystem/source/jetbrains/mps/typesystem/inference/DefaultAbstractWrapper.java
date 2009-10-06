@@ -74,4 +74,8 @@ public abstract class DefaultAbstractWrapper implements IWrapper {
   public SNode fromWrapper() {
     return getNode();
   }
+
+  public String getConceptFQName() {
+    return null;
+  }
 }

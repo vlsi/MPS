@@ -259,4 +259,8 @@ public class NodeWrapper extends DefaultAbstractWrapper implements IWrapper {
   public int getDegree() {
     return 10;
   }
+
+  public String getConceptFQName() {
+    return myNode.getConceptFqName();
+  }
 }

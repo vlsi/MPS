@@ -18,14 +18,12 @@ package jetbrains.mps.typesystem.inference;
 import jetbrains.mps.lang.typesystem.runtime.*;
 import jetbrains.mps.lang.typesystem.structure.RuntimeErrorType;
 import jetbrains.mps.lang.typesystem.structure.MeetType;
-import jetbrains.mps.lang.typesystem.structure.JoinType;
 import jetbrains.mps.typesystem.inference.util.*;
 import jetbrains.mps.typesystem.inference.EquationInfo;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.lang.pattern.util.MatchingUtil;
 import jetbrains.mps.lang.pattern.IMatchingPattern;
 import jetbrains.mps.smodel.*;
-import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.Pair;
 import jetbrains.mps.lang.core.structure.BaseConcept;
 
@@ -181,7 +179,7 @@ public class SubtypingManager {
       //collecting a set of frontier's ancestors
       StructuralNodeSet<?> ancestors = new StructuralNodeSet();
       for (SNode node : frontier) {
-        collectImmediateSupertypes_internal(node, isWeak, ancestors, equationManager);
+        collectImmediateSupertypes_internal(node, isWeak, ancestors, equationManager, superRepresentator.getConceptFQName());
         yetPassedRaw.add(node);
         //    yetPassed.add(node);
       }
@@ -286,17 +284,25 @@ public class SubtypingManager {
 
   public StructuralNodeSet collectImmediateSupertypes(SNode term, boolean isWeak) {
     StructuralNodeSet result = new StructuralNodeSet();
-    collectImmediateSupertypes_internal(term, isWeak, result, null);
+    collectImmediateSupertypes_internal(term, isWeak, result, null, null);
     return result;
   }
 
-  private void collectImmediateSupertypes_internal(SNode term, boolean isWeak, StructuralNodeSet result, EquationManager equationManager) {
+  private void collectImmediateSupertypes_internal(SNode term, boolean isWeak, StructuralNodeSet result, EquationManager equationManager, String supertypeConceptFQName) {
     if (term == null) {
       return;
     }
     Set<SubtypingRule_Runtime> subtypingRule_runtimes = myTypeChecker.getRulesManager().getSubtypingRules(term, isWeak);
+    boolean possiblyBlindAlley = false;
+    if (supertypeConceptFQName != null && !(supertypeConceptFQName.equals(term.getConceptFqName()))) {
+      possiblyBlindAlley = myTypeChecker.getRulesManager().subtypingRulesByNodeAreAllByConcept(term, isWeak);
+    }
     if (subtypingRule_runtimes != null) {
       for (SubtypingRule_Runtime subtypingRule : subtypingRule_runtimes) {
+        if (possiblyBlindAlley && subtypingRule.surelyKeepsConcept()) {
+          //skip a rule, it will give us nothing
+          continue;
+        }
         List<SNode> supertypes = subtypingRule.getSubOrSuperTypes(term, equationManager == null ? null : equationManager.getTypeCheckingContext());
         result.addAll(supertypes);
       }
@@ -672,6 +678,10 @@ System.out.println("alltypes = " + allTypes);*/
 
     public IMatchingPattern getMatchingPattern() {
       return myPattern;
+    }
+
+    public String getConceptFQName() {
+      return myPattern.getConceptFQName();
     }
   }
 }

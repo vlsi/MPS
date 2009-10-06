@@ -17,4 +17,7 @@ package jetbrains.mps.lang.typesystem.runtime;
 
 public abstract class SubtypingRule_Runtime extends AbstractSubtypingRule_Runtime {
 
+  public boolean surelyKeepsConcept() {
+    return false;
+  }
 }

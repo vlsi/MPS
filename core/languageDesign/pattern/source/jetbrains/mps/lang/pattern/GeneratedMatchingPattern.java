@@ -15,6 +15,8 @@
  */
 package jetbrains.mps.lang.pattern;
 
+import jetbrains.mps.smodel.SNode;
+
 public class GeneratedMatchingPattern extends DefaultMatchingPattern {
   public Object getFieldValue(String s) {
     return null;
@@ -27,4 +29,5 @@ public class GeneratedMatchingPattern extends DefaultMatchingPattern {
   public void fillFieldValuesFrom(GeneratedMatchingPattern pattern) {
 
   }
+
 }

@@ -16,10 +16,13 @@
 package jetbrains.mps.typesystem.inference;
 
 import jetbrains.mps.typesystem.inference.EquationInfo;
+import jetbrains.mps.smodel.SNode;
 import org.jetbrains.annotations.Nullable;
 
 public interface IMatcher {
   public boolean matchesWith(IWrapper wrapper, @Nullable EquationManager equationManager, @Nullable EquationInfo errorInfo);
 
   public boolean matchesWith(IWrapper wrapper, @Nullable EquationManager equationManager, @Nullable EquationInfo errorInfo, Object matchParameter);
+
+  public String getConceptFQName();
 }

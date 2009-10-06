@@ -193,4 +193,8 @@ public class ConceptWrapper extends DefaultAbstractWrapper {
   public int getDegree() {
     return 2;
   }
+
+  public String getConceptFQName() {
+    return myConceptFQName;
+  }
 }

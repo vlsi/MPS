@@ -22,4 +22,7 @@ public class DefaultMatchingPattern implements IMatchingPattern {
     return true;
   }
 
+  public String getConceptFQName() {
+    return null;
+  }
 }

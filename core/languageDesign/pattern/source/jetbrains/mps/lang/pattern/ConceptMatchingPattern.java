@@ -16,6 +16,8 @@
 package jetbrains.mps.lang.pattern;
 
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.project.GlobalScope;
+import jetbrains.mps.kernel.model.SModelUtil;
 
 /**
  * Created by IntelliJ IDEA.
@@ -39,4 +41,5 @@ public class ConceptMatchingPattern implements IMatchingPattern {
   public String getConceptFQName() {
     return myConceptFQName;
   }
+
 }

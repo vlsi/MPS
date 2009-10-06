@@ -160,6 +160,19 @@ public class RulesManager {
     });
   }
 
+  public boolean subtypingRulesByNodeAreAllByConcept(final SNode node, boolean isWeak) {
+    loadLanguage(node.getLanguageNamespace());
+    for (SubtypingRule_Runtime rule : mySubtypingRules.getRules(node)) {
+      if (!isWeak && rule.isWeak()) {
+        continue;
+      }
+      if (!rule.isApplicable(node)) {
+        return false;
+      }
+    }
+    return true;
+  }
+
   public Set<ComparisonRule_Runtime> getComparisonRules(final SNode node1, final SNode node2, final boolean isWeak) {
     loadLanguage(node1.getLanguageNamespace());
     loadLanguage(node2.getLanguageNamespace());

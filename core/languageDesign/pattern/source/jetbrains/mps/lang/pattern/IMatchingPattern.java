@@ -20,4 +20,5 @@ import jetbrains.mps.smodel.SNode;
 public interface IMatchingPattern {
   public boolean match(SNode nodeToMatch);
   //public Object getFieldValue(String s);
+  public String getConceptFQName();
 }
