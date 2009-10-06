@@ -16,10 +16,15 @@ public class SubtypingRule_Behavior {
     for (SNode returnStatement : SNodeOperations.getDescendants(SLinkOperations.getTarget(thisNode, "body", true), "jetbrains.mps.baseLanguage.structure.ReturnStatement", false, new String[]{})) {
       SNode expression = SLinkOperations.getTarget(returnStatement, "expression", true);
       SNode supertype = TypeChecker.getInstance().getTypeOf(expression);
-      if (!(SNodeOperations.isInstanceOf(supertype, "jetbrains.mps.lang.smodel.structure.SNodeType"))) {
-        return false;
-      }
-      if (SLinkOperations.getTarget(SNodeOperations.cast(supertype, "jetbrains.mps.lang.smodel.structure.SNodeType"), "concept", false) != initialConcept) {
+      if (SNodeOperations.isInstanceOf(supertype, "jetbrains.mps.lang.smodel.structure.SNodeType")) {
+        if (SLinkOperations.getTarget(SNodeOperations.cast(supertype, "jetbrains.mps.lang.smodel.structure.SNodeType"), "concept", false) != initialConcept) {
+          return false;
+        }
+      } else if (SNodeOperations.isInstanceOf(supertype, "jetbrains.mps.lang.smodel.structure.SNodeListType")) {
+        if (SLinkOperations.getTarget(SNodeOperations.cast(supertype, "jetbrains.mps.lang.smodel.structure.SNodeListType"), "elementConcept", false) != initialConcept) {
+          return false;
+        }
+      } else {
         return false;
       }
     }
