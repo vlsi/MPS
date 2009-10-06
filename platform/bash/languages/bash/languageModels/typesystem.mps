@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<model modelUID="r:c749d3bf-8edd-4b6f-b0b4-a7dc66f5ff06(jetbrains.mps.shell.typesystem)">
+<model modelUID="r:c749d3bf-8edd-4b6f-b0b4-a7dc66f5ff06(jetbrains.mps.bash.typesystem)">
   <persistence version="3" />
   <refactoringHistory />
   <language namespace="f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)" />
@@ -23,7 +23,6 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959034b(jetbrains.mps.lang.quotation.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590328(jetbrains.mps.baseLanguage.collections.constraints)" version="6" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" version="7" />
-  <languageAspect modelUID="r:49b10014-fe6b-4682-a69d-1c3d6188eba3(jetbrains.mps.shell.structure)" version="0" />
   <maxImportIndex value="1" />
 </model>
 

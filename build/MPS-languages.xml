@@ -728,10 +728,10 @@
       <zipfileset dir="platform/buildlanguage/languages/property/classes" />
     </jar>
   </target>
-  <target name="pack.jetbrains.mps.shell0">
+  <target name="pack.jetbrains.mps.bash0">
     <mkdir dir="platform/bash/languages/bash/classes_gen" />
     <mkdir dir="platform/bash/languages/bash/source_gen.caches" />
-    <jar destfile="${deploy.dir}/MPS/platform/jetbrains.mps.shell.mpsarch.jar" compress="true" duplicate="preserve" filesonly="true">
+    <jar destfile="${deploy.dir}/MPS/platform/jetbrains.mps.bash.mpsarch.jar" compress="true" duplicate="preserve" filesonly="true">
       <zipfileset file="platform/bash/languages/bash/bash.mpl" prefix="module" />
       <zipfileset dir="platform/bash/languages/bash/source_gen.caches" prefix="source_gen.caches" />
       <zipfileset dir="platform/bash/languages/bash" excludes="**/*.iml, **/*.java, **/*.class, **/*.mpr, **/*.mws, **/*.mpl, **/*.msd, **/*.devkit, **/*.ipr" prefix="module" />

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<model modelUID="r:0c717a24-7cfd-444b-8c1a-bb7f81471ed8(jetbrains.mps.shell.intentions)">
+<model modelUID="r:0c717a24-7cfd-444b-8c1a-bb7f81471ed8(jetbrains.mps.bash.intentions)">
   <persistence version="3" />
   <refactoringHistory />
   <language namespace="d7a92d38-f7db-40d0-8431-763b0c3c9f20(jetbrains.mps.lang.intentions)" />
@@ -28,12 +28,10 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" version="7" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590340(jetbrains.mps.lang.pattern.constraints)" version="2" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590338(jetbrains.mps.baseLanguage.closures.structure)" version="3" />
-  <languageAspect modelUID="r:49b10014-fe6b-4682-a69d-1c3d6188eba3(jetbrains.mps.shell.structure)" version="0" />
   <devkit namespace="2677cb18-f558-4e33-bc38-a5139cee06dc(jetbrains.mps.devkit.language-design)" />
-  <maxImportIndex value="3" />
-  <import index="1" modelUID="r:49b10014-fe6b-4682-a69d-1c3d6188eba3(jetbrains.mps.shell.structure)" version="0" />
+  <maxImportIndex value="2" />
+  <import index="1" modelUID="r:49b10014-fe6b-4682-a69d-1c3d6188eba3(jetbrains.mps.bash.structure)" version="-1" />
   <import index="2" modelUID="f:java_stub#jetbrains.mps.nodeEditor(jetbrains.mps.nodeEditor@java_stub)" version="-1" />
-  <import index="3" modelUID="r:c574a83a-ec69-4fe6-915d-e101a0ad8839(jetbrains.mps.shell.behavior)" version="-1" />
   <node type="jetbrains.mps.lang.intentions.structure.IntentionDeclaration" id="2362837471607836376">
     <property name="name" value="AddCommentedText" />
     <property name="isAvailableInChildNodes" value="true" />
@@ -141,6 +139,7 @@
       </node>
     </node>
   </node>
+  <visible index="2" modelUID="r:c574a83a-ec69-4fe6-915d-e101a0ad8839(jetbrains.mps.bash.behavior)" />
   <node type="jetbrains.mps.lang.intentions.structure.IntentionDeclaration" id="2362837471608610775">
     <property name="name" value="AsyncExecution" />
     <property name="isAvailableInChildNodes" value="true" />
@@ -243,7 +242,7 @@
                 <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="2362837471608610798">
                   <node role="operand" type="jetbrains.mps.lang.intentions.structure.ConceptFunctionParameter_node" id="2362837471608610797" />
                   <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="2362837471608610802">
-                    <link role="baseMethodDeclaration" targetNodeId="3.3905757829894475414" resolveInfo="isBaseCommandExists" />
+                    <link role="baseMethodDeclaration" targetNodeId="2v.3905757829894475414" resolveInfo="isBaseCommandExists" />
                   </node>
                 </node>
                 <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="2362837471608610812">
@@ -275,10 +274,10 @@
       </node>
     </node>
   </node>
-  <visible index="2" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
+  <visible index="3" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
   <node type="jetbrains.mps.lang.intentions.structure.IntentionDeclaration" id="1109366303090554669">
     <property name="name" value="CommentOutCommand" />
-    <link role="forConcept" targetNodeId="2v.1133920641626" resolveInfo="BaseConcept" />
+    <link role="forConcept" targetNodeId="3v.1133920641626" resolveInfo="BaseConcept" />
     <node role="descriptionFunction" type="jetbrains.mps.lang.intentions.structure.DescriptionBlock" id="1109366303090554670">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1109366303090554671">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1109366303090554734">
@@ -396,7 +395,7 @@
   </node>
   <node type="jetbrains.mps.lang.intentions.structure.IntentionDeclaration" id="3138930635767444923">
     <property name="name" value="UncommentCommand" />
-    <link role="forConcept" targetNodeId="2v.1133920641626" resolveInfo="BaseConcept" />
+    <link role="forConcept" targetNodeId="3v.1133920641626" resolveInfo="BaseConcept" />
     <node role="descriptionFunction" type="jetbrains.mps.lang.intentions.structure.DescriptionBlock" id="3138930635767444924">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="3138930635767444925">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="3138930635767444945">

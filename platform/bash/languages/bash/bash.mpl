@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<language namespace="jetbrains.mps.shell" uuid="4a1e4a24-105b-44ed-959c-6586fc957db3" java-stubs-enabled="false" compileInMPS="true">
+<language namespace="jetbrains.mps.bash" uuid="4a1e4a24-105b-44ed-959c-6586fc957db3" java-stubs-enabled="false" compileInMPS="true">
   <models>
-    <modelRoot path="${language_descriptor}/languageModels" namespacePrefix="jetbrains.mps.shell" />
-    <modelRoot path="${language_descriptor}/languageAccessories" namespacePrefix="jetbrains.mps.shell" />
-    <modelRoot path="${language_descriptor}/languageAccessories" namespacePrefix="jetbrains.mps.shell" />
+    <modelRoot path="${language_descriptor}/languageModels" namespacePrefix="jetbrains.mps.bash" />
+    <modelRoot path="${language_descriptor}/languageAccessories" namespacePrefix="jetbrains.mps.bash" />
+    <modelRoot path="${language_descriptor}/languageAccessories" namespacePrefix="jetbrains.mps.bash" />
   </models>
   <accessoryModels>
-    <model modelUID="r:a8223385-58f6-47fc-9412-c59396fbedb5(jetbrains.mps.shell.builtin)" />
+    <model modelUID="r:a8223385-58f6-47fc-9412-c59396fbedb5(jetbrains.mps.bash.builtin)" />
     <model modelUID="jetbrains.mps.bash.messages" />
   </accessoryModels>
   <generators>
-    <generator name="" generatorUID="jetbrains.mps.shell#6382090206697067824" uuid="a9772ef0-5f51-48a7-8cb0-e217639912db">
+    <generator name="" generatorUID="jetbrains.mps.bash#6382090206697067824" uuid="a9772ef0-5f51-48a7-8cb0-e217639912db">
       <models>
-        <modelRoot path="${language_descriptor}/generator/template" namespacePrefix="jetbrains.mps.shell.generator.template" />
+        <modelRoot path="${language_descriptor}/generator/template" namespacePrefix="jetbrains.mps.bash.generator.template" />
       </models>
       <external-templates />
       <usedLanguages>
