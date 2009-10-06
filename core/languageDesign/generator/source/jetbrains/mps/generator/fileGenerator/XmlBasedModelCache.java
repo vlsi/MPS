@@ -11,8 +11,8 @@ import java.io.IOException;
 import jetbrains.mps.util.JDOMUtil;
 
 public abstract class XmlBasedModelCache<T> extends BaseModelCache<T> {
-  protected XmlBasedModelCache(FileGenerationManager fileGeneratorManager) {
-    super(fileGeneratorManager);
+  protected XmlBasedModelCache(FileGenerationManager fileGeneratorManager, AllCaches allCaches) {
+    super(fileGeneratorManager, allCaches);
   }
 
   protected abstract Element toXml(T t);

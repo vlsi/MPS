@@ -334,6 +334,10 @@
         </component>
 
         <component>
+            <implementation-class>jetbrains.mps.generator.fileGenerator.AllCaches</implementation-class>
+        </component>
+
+        <component>
             <implementation-class>jetbrains.mps.baseLanguage.textGen.BLDependenciesCache</implementation-class>
         </component>
 

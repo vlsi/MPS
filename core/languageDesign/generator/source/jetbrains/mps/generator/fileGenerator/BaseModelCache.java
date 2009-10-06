@@ -15,7 +15,8 @@ import jetbrains.mps.vfs.*;
 public abstract class BaseModelCache<T> implements ApplicationComponent {
   private static Logger LOG = Logger.getLogger(BaseModelCache.class);
 
-  private FileGenerationManager myFileGeneratorManager;
+  private final FileGenerationManager myFileGeneratorManager;
+  private final AllCaches myAllCaches;
 
   protected abstract void save(T t, OutputStream os) throws IOException;
 
@@ -25,11 +26,13 @@ public abstract class BaseModelCache<T> implements ApplicationComponent {
 
   protected abstract String getCacheFileName();
 
-  protected BaseModelCache(FileGenerationManager fileGeneratorManager) {
+  protected BaseModelCache(FileGenerationManager fileGeneratorManager, AllCaches allCaches) {
     myFileGeneratorManager = fileGeneratorManager;
+    myAllCaches = allCaches;
   }
 
   public void initComponent() {
+    myAllCaches.registerCache(this);
     myFileGeneratorManager.addCachesGenerator(new CacheGenerator() {
       public Set<File> generateCaches(CacheGenerationContext context) {
         Set<File> result = new HashSet<File>();
