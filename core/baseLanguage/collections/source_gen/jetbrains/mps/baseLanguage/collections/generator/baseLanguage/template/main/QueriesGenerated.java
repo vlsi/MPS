@@ -1721,8 +1721,10 @@ public class QueriesGenerated {
     if ((dType == null)) {
       dType = TypeChecker.getInstance().getTypeOf(_context.getNode());
     }
-    Values.CREATOR.set(dType, SLinkOperations.getTarget(_context.getNode(), "creator", true));
-    Values.CREATOR_INIT_VALUES.set(dType, Boolean.TRUE);
+    if ((dType != null)) {
+      Values.CREATOR.set(dType, SLinkOperations.getTarget(_context.getNode(), "creator", true));
+      Values.CREATOR_INIT_VALUES.set(dType, Boolean.TRUE);
+    }
     return dType;
   }
 
@@ -1846,6 +1848,10 @@ public class QueriesGenerated {
 
   public static SNode sourceNodeQuery_5478544378670483647(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return _context.getNode();
+  }
+
+  public static SNode sourceNodeQuery_6126991172894276816(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return SLinkOperations.getTarget(_context.getNode(), "argument", true);
   }
 
   public static SNode sourceNodeQuery_8420919522916181819(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {

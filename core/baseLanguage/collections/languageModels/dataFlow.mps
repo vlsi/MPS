@@ -946,5 +946,21 @@
       </node>
     </node>
   </node>
+  <node type="jetbrains.mps.lang.dataFlow.structure.DataFlowBuilderDeclaration" id="6126991172893688561">
+    <property name="package" value="sequence" />
+    <link role="conceptDeclaration" targetNodeId="1.6126991172893676625" resolveInfo="ContainsAllOperation" />
+    <node role="builderBlock" type="jetbrains.mps.lang.dataFlow.structure.BuilderBlock" id="6126991172893688562">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="6126991172893688563">
+        <node role="statement" type="jetbrains.mps.lang.dataFlow.structure.EmitCodeForStatement" id="6126991172893688564">
+          <node role="codeFor" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="6126991172893688567">
+            <node role="operand" type="jetbrains.mps.lang.dataFlow.structure.NodeParameter" id="6126991172893688566" />
+            <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="6126991172893688571">
+              <link role="link" targetNodeId="1.6126991172893676626" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
 </model>
 

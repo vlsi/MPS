@@ -231,6 +231,15 @@ public abstract class Sequence<T> implements ISequence<T>, Iterable<T> {
     public boolean contains (T t) {
         return IterableUtils.contains(toIterable(), t);
     }
+
+    public boolean containsAll(ISequence<T> that) {
+        if (USE_NULL_SEQUENCE) {
+            if (that == null) {
+                return false;
+            }
+        }
+        return that.subtract(this).isEmpty();
+    }
     
     public int indexOf (T t) {
         return IterableUtils.indexOf(toIterable(), t);

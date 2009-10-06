@@ -18,16 +18,16 @@ public class typeof_IsNotEmptyOperation_InferenceRule extends AbstractInferenceR
 
   public void applyRule(final SNode op, final TypeCheckingContext typeCheckingContext) {
     do {
-      SNode matchedNode_2 = SNodeOperations.getParent(op);
+      SNode matchedNode_1 = SNodeOperations.getParent(op);
       {
-        boolean matches_2 = false;
+        boolean matches_1 = false;
         {
-          SNode matchingNode_2 = SNodeOperations.getParent(op);
-          if (matchingNode_2 != null) {
-            matches_2 = SModelUtil_new.isAssignableConcept(matchingNode_2.getConceptFqName(), "jetbrains.mps.baseLanguage.structure.DotExpression");
+          SNode matchingNode_1 = SNodeOperations.getParent(op);
+          if (matchingNode_1 != null) {
+            matches_1 = SModelUtil_new.isAssignableConcept(matchingNode_1.getConceptFqName(), "jetbrains.mps.baseLanguage.structure.DotExpression");
           }
         }
-        if (matches_2) {
+        if (matches_1) {
           {
             SNode _nodeToCheck_1029348928467 = op;
             BaseIntentionProvider intentionProvider = null;

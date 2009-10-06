@@ -69,6 +69,8 @@ public interface ISequence<T> extends Iterable<T>, IEnumerable<T> {
     ISequence<T> disjunction(ISequence<T> that);
 
     boolean contains(T t);
+    
+    boolean containsAll(ISequence<T> that);    
 
     int indexOf(T t);
 
