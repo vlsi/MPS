@@ -5196,5 +5196,84 @@
       </node>
     </node>
   </node>
+  <node type="jetbrains.mps.lang.test.structure.EditorTestCase" id="3891087596588926733">
+    <property name="package" value="VariableDeclaration_NameCellComponent" />
+    <property name="name" value="AddingParameterThroughtWrapper" />
+    <node role="nodeToEdit" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="3891087596588953785">
+      <property name="name" value="method" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="3891087596588953786" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="3891087596588953787" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="3891087596588953788" />
+      <node role="testNode$attribute" type="jetbrains.mps.lang.test.structure.AnonymousCellAnnotation" id="3891087596588953789">
+        <property name="isLastPosition" value="true" />
+        <property name="useLabelSelection" value="true" />
+        <property name="selectionStart" value="0" />
+        <property name="selectionEnd" value="0" />
+        <property name="cellId" value="Constant_5704_3" />
+      </node>
+    </node>
+    <node role="result" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="3891087596588953790">
+      <property name="name" value="method" />
+      <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="3891087596588955404">
+        <node role="type" type="jetbrains.mps.baseLanguage.structure.Type" id="3891087596588955405">
+          <node role="testNode$attribute" type="jetbrains.mps.lang.test.structure.AnonymousCellAnnotation" id="3891087596588955406">
+            <property name="isLastPosition" value="true" />
+            <property name="useLabelSelection" value="true" />
+            <property name="selectionStart" value="0" />
+            <property name="selectionEnd" value="0" />
+            <property name="cellId" value="Error_9010_0" />
+          </node>
+        </node>
+      </node>
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="3891087596588953791" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="3891087596588953792" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="3891087596588953793" />
+    </node>
+    <node role="code" type="jetbrains.mps.baseLanguage.structure.StatementList" id="3891087596588955387">
+      <node role="statement" type="jetbrains.mps.lang.test.structure.PressKeyStatement" id="3891087596588955407">
+        <node role="keyStrokes" type="jetbrains.mps.lang.plugin.structure.KeyMapKeystroke" id="3891087596588955408">
+          <property name="keycode" value="VK_ENTER" />
+        </node>
+      </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.test.structure.EditorTestCase" id="3891087596588955389">
+    <property name="package" value="VariableDeclaration_NameCellComponent" />
+    <property name="name" value="AddingParameterWithEnter" />
+    <node role="nodeToEdit" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="3891087596588955390">
+      <property name="name" value="method" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="3891087596588955391" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="3891087596588955392" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="3891087596588955393" />
+      <node role="testNode$attribute" type="jetbrains.mps.lang.test.structure.AnonymousCellAnnotation" id="3891087596588955394">
+        <property name="isLastPosition" value="true" />
+        <property name="useLabelSelection" value="true" />
+        <property name="selectionStart" value="0" />
+        <property name="selectionEnd" value="0" />
+        <property name="cellId" value="Constant_5704_3" />
+      </node>
+    </node>
+    <node role="result" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="3891087596588955395">
+      <property name="name" value="method" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="3891087596588955396" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="3891087596588955397" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="3891087596588955398" />
+      <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="3891087596588955399">
+        <node role="type" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="3891087596588955400" />
+        <node role="testNode$attribute" type="jetbrains.mps.lang.test.structure.AnonymousCellAnnotation" id="3891087596588955401">
+          <property name="isLastPosition" value="true" />
+          <property name="useLabelSelection" value="true" />
+          <property name="selectionStart" value="0" />
+          <property name="selectionEnd" value="0" />
+          <property name="cellId" value="property_name" />
+        </node>
+      </node>
+    </node>
+    <node role="code" type="jetbrains.mps.baseLanguage.structure.StatementList" id="3891087596588955402">
+      <node role="statement" type="jetbrains.mps.lang.test.structure.TypeKeyStatement" id="3891087596588955403">
+        <property name="keys" value="int" />
+      </node>
+    </node>
+  </node>
 </model>
 
