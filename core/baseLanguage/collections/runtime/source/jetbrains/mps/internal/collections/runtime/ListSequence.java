@@ -306,6 +306,10 @@ public class ListSequence<T> extends CollectionSequence<T> implements IListSeque
         return reversed;
     }
     
+    public IListSequence<T> subListSequence(int fromIdx, int upToIdx) {
+        return new ListSequence<T> (list.subList(fromIdx, upToIdx));
+    }
+    
     @Override
     public IListSequence<T> asUnmodifiable() {
         return new ListSequence<T> (Collections.unmodifiableList(getList())); 

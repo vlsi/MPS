@@ -54,5 +54,6 @@ public class DFABuilders extends DataFlowBuilders {
     manager.register("jetbrains.mps.baseLanguage.collections.structure.ComparatorSortOperation", new ComparatorSortOperation_DataFlow());
     manager.register("jetbrains.mps.baseLanguage.collections.structure.SortOperation", new SortOperation_DataFlow());
     manager.register("jetbrains.mps.baseLanguage.collections.structure.ContainsAllOperation", new ContainsAllOperation_DataFlow());
+    manager.register("jetbrains.mps.baseLanguage.collections.structure.SubListOperation", new SubListOperation_DataFlow());
   }
 }

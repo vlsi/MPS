@@ -14,7 +14,7 @@ public class stack_supertypeOf_deque_SubtypingRule extends SubtypingRule_Runtime
   }
 
   public SNode getSubOrSuperType(SNode dequeType, TypeCheckingContext typeCheckingContext) {
-    return new _Quotations.QuotationClass_180().createNode(SLinkOperations.getTarget(dequeType, "elementType", true), typeCheckingContext);
+    return new _Quotations.QuotationClass_184().createNode(SLinkOperations.getTarget(dequeType, "elementType", true), typeCheckingContext);
   }
 
   public String getApplicableConceptFQName() {

@@ -228,6 +228,15 @@ public class List_Test extends Util_Test {
     this.assertIterableEquals(this.inputABC(), objs);
   }
 
+  public void test_subList() throws Exception {
+    List<Integer> list = ListSequence.fromListAndArray(new ArrayList<Integer>(), 1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
+    List<Integer> sublist = ListSequence.fromList(list).subListSequence(0, 5);
+    this.assertIterableEquals(this.input5(), sublist);
+    ListSequence.fromList(sublist).addSequence(ListSequence.fromList(sublist).reversedList());
+    this.assertIterableEquals(ArrayUtils.fromIntegerArray(new int[]{1,2,3,4,5,5,4,3,2,1,6,7,8,9,10}), list);
+
+  }
+
   public List<Foo> mps5684helper() {
     List<Bar> bars = ListSequence.fromListAndArray(new ArrayList<Bar>(), new Bar());
     return ListSequence.fromListWithValues(new ArrayList<Foo>(), bars);

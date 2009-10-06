@@ -962,5 +962,29 @@
       </node>
     </node>
   </node>
+  <node type="jetbrains.mps.lang.dataFlow.structure.DataFlowBuilderDeclaration" id="5633809102336891218">
+    <property name="package" value="list" />
+    <link role="conceptDeclaration" targetNodeId="1.5633809102336885303" resolveInfo="SubListOperation" />
+    <node role="builderBlock" type="jetbrains.mps.lang.dataFlow.structure.BuilderBlock" id="5633809102336891219">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="5633809102336891220">
+        <node role="statement" type="jetbrains.mps.lang.dataFlow.structure.EmitCodeForStatement" id="5633809102336891221">
+          <node role="codeFor" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="5633809102336891224">
+            <node role="operand" type="jetbrains.mps.lang.dataFlow.structure.NodeParameter" id="5633809102336891223" />
+            <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="5633809102336891228">
+              <link role="link" targetNodeId="1.5633809102336885320" />
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.lang.dataFlow.structure.EmitCodeForStatement" id="5633809102336891230">
+          <node role="codeFor" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="5633809102336891233">
+            <node role="operand" type="jetbrains.mps.lang.dataFlow.structure.NodeParameter" id="5633809102336891232" />
+            <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="5633809102336891237">
+              <link role="link" targetNodeId="1.5633809102336885321" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
 </model>
 

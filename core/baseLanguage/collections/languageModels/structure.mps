@@ -2842,5 +2842,39 @@
       <link role="target" targetNodeId="2.1068431790191" resolveInfo="Expression" />
     </node>
   </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="5633809102336885303">
+    <property name="package" value="list" />
+    <property name="name" value="SubListOperation" />
+    <link role="extends" targetNodeId="1151701983961" resolveInfo="SequenceOperation" />
+    <node role="conceptLink" type="jetbrains.mps.lang.structure.structure.AggregationConceptLink" id="5633809102337159883">
+      <link role="conceptLinkDeclaration" targetNodeId="497032923610147119" resolveInfo="expectedOperandType" />
+      <node role="target" type="jetbrains.mps.baseLanguage.collections.structure.ListType" id="5633809102337159884">
+        <node role="elementType" type="jetbrains.mps.baseLanguage.structure.WildCardType" id="5633809102337159885" />
+      </node>
+    </node>
+    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="5633809102336885320">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="fromIndex" />
+      <property name="sourceCardinality" value="1" />
+      <link role="target" targetNodeId="2.1068431790191" resolveInfo="Expression" />
+    </node>
+    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="5633809102336885321">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="upToIndex" />
+      <property name="sourceCardinality" value="1" />
+      <link role="target" targetNodeId="2.1068431790191" resolveInfo="Expression" />
+    </node>
+    <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="5633809102336885304">
+      <link role="intfc" targetNodeId="2141797557973018607" resolveInfo="IListOperation" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="5633809102336885305">
+      <property name="value" value="subList" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" resolveInfo="alias" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="5633809102336885307">
+      <property name="value" value="sub list" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473914776" resolveInfo="shortDescription" />
+    </node>
+  </node>
 </model>
 
