@@ -27,4 +27,8 @@ public class supertypesOf_ListType_ListType_withWildcard_SubtypingRule extends S
   public boolean isWeak() {
     return false;
   }
+
+  public boolean surelyKeepsConcept() {
+    return true;
+  }
 }

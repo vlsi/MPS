@@ -28,6 +28,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SearchScopeOperations;
 import jetbrains.mps.generator.template.IfMacroContext;
 import jetbrains.mps.lang.typesystem.behavior.FindSourceBlock_Behavior;
 import jetbrains.mps.smodel.SModelUtil_new;
+import jetbrains.mps.lang.typesystem.behavior.SubtypingRule_Behavior;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
 import jetbrains.mps.lang.smodel.behavior.SNodeOperation_Behavior;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
@@ -329,7 +330,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_1175607860006(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return SPropertyOperations.getBoolean(SNodeOperations.cast(_context.getNode(), "jetbrains.mps.lang.typesystem.structure.AbstractSubtypingRule"), "isWeak") + "";
+    return SPropertyOperations.getBoolean(SNodeOperations.cast(_context.getNode(), "jetbrains.mps.lang.typesystem.structure.AbstractSubtypingRule"), "isWeak");
   }
 
   public static Object propertyMacro_GetPropertyValue_1176545770677(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -1811,6 +1812,10 @@ public class QueriesGenerated {
 
   public static boolean ifMacro_Condition_1238605633330(final IOperationContext operationContext, final IfMacroContext _context) {
     return true;
+  }
+
+  public static boolean ifMacro_Condition_4214710807058424065(final IOperationContext operationContext, final IfMacroContext _context) {
+    return SNodeOperations.isInstanceOf(_context.getNode(), "jetbrains.mps.lang.typesystem.structure.SubtypingRule") && SubtypingRule_Behavior.call_surelyKeepsConcept_4214710807058415622(SNodeOperations.cast(_context.getNode(), "jetbrains.mps.lang.typesystem.structure.SubtypingRule"));
   }
 
   public static boolean ifMacro_Condition_8224738963706830970(final IOperationContext operationContext, final IfMacroContext _context) {

@@ -27,4 +27,8 @@ public class supertypesOf_QueueType_QueueType_withWildcard_SubtypingRule extends
   public boolean isWeak() {
     return false;
   }
+
+  public boolean surelyKeepsConcept() {
+    return true;
+  }
 }
