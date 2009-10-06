@@ -9,12 +9,12 @@ import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.baseLanguage.unitTest.behavior.ITestCase_Behavior;
 import jetbrains.mps.baseLanguage.unitTest.behavior.ITestMethod_Behavior;
 import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SModelReference;
 import java.util.List;
 import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.project.IModule;
-import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 
 public class TestRunUtil {
@@ -48,7 +48,11 @@ public class TestRunUtil {
     if (modelName == null) {
       return null;
     }
-    return GlobalScope.getInstance().getModelDescriptor(SModelReference.fromString(modelName)).getSModel();
+    SModelDescriptor modelDescriptor = GlobalScope.getInstance().getModelDescriptor(SModelReference.fromString(modelName));
+    if (modelDescriptor == null) {
+      return null;
+    }
+    return modelDescriptor.getSModel();
   }
 
   public static List<SNode> getModelTests(SModel model) {

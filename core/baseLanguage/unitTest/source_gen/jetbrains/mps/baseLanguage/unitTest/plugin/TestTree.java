@@ -98,7 +98,7 @@ public class TestTree extends MPSTree {
         }
       }
       if (ListSequence.fromList(MapSequence.fromMap(temp).get(testCase)).isEmpty()) {
-        MapSequence.fromMap(temp).remove(testCase);
+        MapSequence.fromMap(temp).removeKey(testCase);
       }
     }
     return temp;
