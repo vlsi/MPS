@@ -40340,7 +40340,10 @@
       </node>
     </node>
     <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="5318473047306188823">
-      <property name="name" value="getDefaultDementionSettings" />
+      <property name="name" value="getDefaultDimensionSettings" />
+      <node role="annotation" type="jetbrains.mps.baseLanguage.structure.AnnotationInstance" id="9058619306454153994">
+        <link role="annotation" targetNodeId="9.~Override" resolveInfo="Override" />
+      </node>
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="5318473047306188825" />
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="5318473047306188826">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="5318473047306188829">

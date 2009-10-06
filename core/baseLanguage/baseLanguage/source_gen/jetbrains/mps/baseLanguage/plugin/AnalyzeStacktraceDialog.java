@@ -44,7 +44,8 @@ public class AnalyzeStacktraceDialog extends BaseDialog {
     return scrollPane;
   }
 
-  public DialogDimensionsSettings.DialogDimensions getDefaultDementionSettings() {
+  @Override
+  public DialogDimensionsSettings.DialogDimensions getDefaultDimensionSettings() {
     return new DialogDimensionsSettings.DialogDimensions(100, 200, 400, 600);
   }
 
