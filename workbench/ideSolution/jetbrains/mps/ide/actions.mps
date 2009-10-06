@@ -28249,13 +28249,6 @@
         <property name="keycode" value="VK_L" />
       </node>
     </node>
-    <node role="shortcutChange" type="jetbrains.mps.lang.plugin.structure.SimpleShortcutChange" id="4512422011404647539">
-      <link role="action" targetNodeId="3906874221886742388" resolveInfo="GoToModel" />
-      <node role="keystroke" type="jetbrains.mps.lang.plugin.structure.KeyMapKeystroke" id="4512422011404647540">
-        <property name="modifiers" value="ctrl+shift" />
-        <property name="keycode" value="VK_M" />
-      </node>
-    </node>
     <node role="shortcutChange" type="jetbrains.mps.lang.plugin.structure.SimpleShortcutChange" id="4512422011404764794">
       <link role="action" targetNodeId="3906874221886742488" resolveInfo="GoToDevkit" />
       <node role="keystroke" type="jetbrains.mps.lang.plugin.structure.KeyMapKeystroke" id="4512422011404764795">

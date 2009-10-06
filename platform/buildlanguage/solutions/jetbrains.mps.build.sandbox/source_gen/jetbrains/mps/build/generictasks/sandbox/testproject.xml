@@ -1,0 +1,15 @@
+<project name="testproject" default="default">
+  <target name="default">
+    <test attr1="true" attr2="hfjkdfhasdkf"><!TextGen not found for 'jetbrains.mps.buildlanguage.structure.AbstractCall'!>      <nested1>
+        <echonested />
+        <nested1>
+          <nested1>
+            <nested2 />
+            <nested2 />
+          </nested1>
+        </nested1>
+      </nested1>
+    </test>
+    <echo />
+  </target>
+</project>
