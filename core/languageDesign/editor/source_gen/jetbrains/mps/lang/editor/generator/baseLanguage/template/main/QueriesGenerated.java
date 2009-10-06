@@ -25,6 +25,7 @@ import jetbrains.mps.lang.editor.behavior.CellModel_WithRole_Behavior;
 import jetbrains.mps.lang.editor.behavior.StyleSheetClass_Behavior;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandler;
 import jetbrains.mps.lang.core.structure.BaseConcept;
+import jetbrains.mps.lang.core.behavior.INamedConcept_Behavior;
 import jetbrains.mps.generator.template.ReferenceMacroContext;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.editor.behavior.CellModel_ListWithRole_Behavior;
@@ -660,6 +661,10 @@ public class QueriesGenerated {
     return SPropertyOperations.getString(_context.getNode(), "name");
   }
 
+  public static Object propertyMacro_GetPropertyValue_5102468593878051201(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return INamedConcept_Behavior.call_getFqName_1213877404258(SLinkOperations.getTarget(_context.getNode(), "parametersInformation", false));
+  }
+
   public static Object propertyMacro_GetPropertyValue_5170495790389308440(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return QueriesUtil.getUnicName(EditorCellModel_Behavior.call_createCellId_1216737839993(_context.getNode(), _context), SNodeOperations.getContainingRoot(_context.getNode()), _context);
   }
@@ -1035,10 +1040,6 @@ public class QueriesGenerated {
 
   public static Object referenceMacro_GetReferent_7533883740977706824(final IOperationContext operationContext, final ReferenceMacroContext _context) {
     return QueriesUtil.getGeneratedClassByAncestor(SLinkOperations.getTarget(_context.getNode(), "query", true), _context);
-  }
-
-  public static Object referenceMacro_GetReferent_8863456892853003386(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "parametersInformation", false), "name");
   }
 
   public static boolean ifMacro_Condition_1168384460946(final IOperationContext operationContext, final IfMacroContext _context) {

@@ -9060,7 +9060,7 @@
           <property name="flag" value="false" />
         </node>
         <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="8178273524755078812">
-          <property name="text" value="type" />
+          <property name="text" value="type =" />
           <node role="styleItem" type="jetbrains.mps.lang.editor.structure.ForegroundColorStyleClassItem" id="8178273524755078820">
             <property name="color" value="DARK_BLUE" />
           </node>
@@ -9077,7 +9077,7 @@
           </node>
         </node>
         <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="4755152624708399739">
-          <property name="text" value="applicable list" />
+          <property name="text" value="applicable parameters list" />
           <node role="styleItem" type="jetbrains.mps.lang.editor.structure.ForegroundColorStyleClassItem" id="4755152624708738284">
             <property name="color" value="DARK_BLUE" />
           </node>

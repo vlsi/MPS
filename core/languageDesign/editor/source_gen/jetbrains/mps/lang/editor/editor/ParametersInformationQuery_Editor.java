@@ -57,7 +57,7 @@ public class ParametersInformationQuery_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_3930_0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "applicable list");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "applicable parameters list");
     editorCell.setCellId("Constant_3930_0");
     {
       Style style = editorCell.getStyle();
@@ -137,7 +137,7 @@ public class ParametersInformationQuery_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_3930_8(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "type");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "type =");
     editorCell.setCellId("Constant_3930_8");
     {
       Style style = editorCell.getStyle();
