@@ -89,14 +89,14 @@ public abstract class BaseModelCache<T> implements ApplicationComponent {
   }
 
   private IFile getCacheFile(SModelDescriptor sm) {
-    IFile cachesDir = getCachesDir(sm);
-    if (cachesDir == null) return null;
+    IFile cachesModuleDir = getCachesDir(sm.getModule());
+    if (cachesModuleDir == null) return null;
+    IFile cachesDir = FileGenerationUtil.getDefaultOutputDir(sm, cachesModuleDir);
 
     return cachesDir.child(getCacheFileName());
   }
 
-  public IFile getCachesDir(SModelDescriptor sm) {
-    IModule module = sm.getModule();
+  public IFile getCachesDir(IModule module) {
     String outputPath = module.getGeneratorOutputPath();
 
     if (outputPath == null) return null;
@@ -113,10 +113,9 @@ public abstract class BaseModelCache<T> implements ApplicationComponent {
       } else {
         descriptorFile = module.getDescriptorFile();
       }
-      return FileGenerationUtil.getDefaultOutputDir(sm, descriptorFile.getParent().getParent().child(FileGenerationUtil.getCachesPath(suffix)));
+      return descriptorFile.getParent().getParent().child(FileGenerationUtil.getCachesPath(suffix));
     } else {
-      IFile cachesDir = FileSystem.getFile(FileGenerationUtil.getCachesOutputDir(new File(outputPath)));
-      return FileGenerationUtil.getDefaultOutputDir(sm, cachesDir);
+      return FileSystem.getFile(FileGenerationUtil.getCachesOutputDir(new File(outputPath)));
     }
   }
 }
