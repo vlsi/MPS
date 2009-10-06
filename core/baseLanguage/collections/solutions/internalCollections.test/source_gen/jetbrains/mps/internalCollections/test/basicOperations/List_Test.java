@@ -315,7 +315,7 @@ __switch__:
     long startAgain = System.currentTimeMillis();
     Assert.assertTrue(ListSequence.fromList(bigList).containsSequence(ListSequence.fromList(anotherBigList)));
     long listDuration = System.currentTimeMillis() - startAgain;
-    Assert.assertTrue(seqDuration * 3 < listDuration);
+    Assert.assertTrue(seqDuration * 2.5 < listDuration);
   }
 
   public List<Foo> mps5684helper() {
