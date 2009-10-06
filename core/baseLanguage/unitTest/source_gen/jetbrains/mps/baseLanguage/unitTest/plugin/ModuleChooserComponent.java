@@ -9,8 +9,6 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModelDescriptor;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
-import jetbrains.mps.smodel.SModel;
 import java.awt.event.ActionEvent;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
@@ -27,7 +25,7 @@ public class ModuleChooserComponent extends BaseChooserComponent {
           public void run() {
             for (IModule module : modules) {
               for (SModelDescriptor descriptor : module.getOwnModelDescriptors()) {
-                if (ListSequence.fromList(SModelOperations.getRoots(((SModel)descriptor.getSModel()), "jetbrains.mps.baseLanguage.unitTest.structure.BTestCase")).isNotEmpty()) {
+                if (ListSequence.fromList(TestRunUtil.getModelTests(descriptor.getSModel())).isNotEmpty()) {
                   ListSequence.fromList(result).addElement(module);
                 }
               }

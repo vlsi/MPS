@@ -301,6 +301,29 @@
       </node>
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="7691748101595403498" />
     </node>
+    <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="2148145109766219661">
+      <property name="name" value="getTestMethods" />
+      <link role="overriddenMethod" targetNodeId="2148145109766218395" resolveInfo="getTestMethods" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="2148145109766219664">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="2148145109766219681">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="2148145109766219688">
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="2148145109766219683">
+              <node role="operand" type="jetbrains.mps.lang.behavior.structure.ThisNodeExpression" id="2148145109766219682" />
+              <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="2148145109766219687">
+                <link role="link" targetNodeId="1.1171931851044" />
+              </node>
+            </node>
+            <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkListAccess" id="2148145109766219692">
+              <link role="link" targetNodeId="1.1171931858462" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="returnType" type="jetbrains.mps.lang.smodel.structure.SNodeListType" id="2148145109766219679">
+        <link role="elementConcept" targetNodeId="1.1216134482493" resolveInfo="ITestMethod" />
+      </node>
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="2148145109766219680" />
+    </node>
     <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="1227020751285">
       <property name="name" value="getMembers" />
       <link role="overriddenMethod" targetNodeId="3v.1213877531970" resolveInfo="getMembers" />
@@ -513,6 +536,25 @@
         <node role="elementType" type="jetbrains.mps.baseLanguage.structure.StringType" id="1188338037704975675" />
       </node>
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1229281657469" />
+    </node>
+    <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="2148145109766218395">
+      <property name="name" value="getTestMethods" />
+      <property name="isVirtual" value="true" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="2148145109766218396" />
+      <node role="returnType" type="jetbrains.mps.lang.smodel.structure.SNodeListType" id="2148145109766218401">
+        <link role="elementConcept" targetNodeId="1.1216134482493" resolveInfo="ITestMethod" />
+      </node>
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="2148145109766218398">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="2148145109766218410">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="2148145109766218411">
+            <node role="creator" type="jetbrains.mps.lang.smodel.structure.SNodeListCreator" id="2148145109766219640">
+              <node role="createdType" type="jetbrains.mps.lang.smodel.structure.SNodeListType" id="2148145109766219641">
+                <link role="elementConcept" targetNodeId="1.1216134482493" resolveInfo="ITestMethod" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
     </node>
     <node role="constructor" type="jetbrains.mps.lang.behavior.structure.ConceptConstructorDeclaration" id="1216130717293">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1216130717294" />

@@ -32,6 +32,10 @@ public class NodesTestCase_Behavior {
     return NodesTestCase_Behavior.getTestRunParameters_1217424543047();
   }
 
+  public static List<SNode> virtual_getTestMethods_2148145109766218395(SNode thisNode) {
+    return SLinkOperations.getTargets(thisNode, "testMethods", true);
+  }
+
   public static boolean isIntentionApplicable_1217250498008(SNode node) {
     SNode test = SNodeOperations.getAncestorWhereConceptInList(node, new String[]{"jetbrains.mps.lang.test.structure.TestNode","jetbrains.mps.lang.test.structure.EditorTestCase"}, true, false);
     return test != null;

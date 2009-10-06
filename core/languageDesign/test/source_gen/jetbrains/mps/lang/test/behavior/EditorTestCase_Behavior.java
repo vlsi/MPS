@@ -28,4 +28,10 @@ public class EditorTestCase_Behavior {
   public static TestRunParameters virtual_getTestRunParameters_1216045139515(SNode thisNode) {
     return NodesTestCase_Behavior.getTestRunParameters_1217424543047();
   }
+
+  public static List<SNode> virtual_getTestMethods_2148145109766218395(SNode thisNode) {
+    List<SNode> result = new ArrayList<SNode>();
+    ListSequence.fromList(result).addElement(thisNode);
+    return result;
+  }
 }

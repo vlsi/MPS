@@ -25,12 +25,6 @@ import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import javax.swing.border.TitledBorder;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.project.GlobalScope;
-import jetbrains.mps.smodel.SModelDescriptor;
-import jetbrains.mps.smodel.SModelReference;
-import jetbrains.mps.kernel.model.SModelUtil;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.baseLanguage.unitTest.behavior.ITestMethod_Behavior;
 import jetbrains.mps.lang.core.behavior.INamedConcept_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
@@ -391,71 +385,34 @@ public class JUnitConfigEditor extends JPanel {
     this.firePropertyChange("method", oldValue, newValue);
   }
 
-  private void setModuleValue(final String m) {
-    if (m == null) {
-      myThis.setModule(null);
-      return;
-    }
+  private void setModuleValue(final String moduleName) {
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
-        for (IModule module : GlobalScope.getInstance().getVisibleModules()) {
-          if (module.getModuleFqName().equals(m)) {
-            myThis.setModule(module);
-            return;
-          }
-        }
-        myThis.setModule(null);
+        myThis.setModule(TestRunUtil.getModule(moduleName));
       }
     });
   }
 
-  private void setModelValue(final String m) {
-    if (m == null) {
-      myThis.setModel(null);
-      return;
-    }
+  private void setModelValue(final String modelName) {
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
-        SModelDescriptor descriptor = GlobalScope.getInstance().getModelDescriptor(SModelReference.fromString(m));
-        myThis.setModel((descriptor != null ?
-          descriptor.getSModel() :
-          null
-        ));
+        myThis.setModel(TestRunUtil.getModel(modelName));
       }
     });
   }
 
-  private void setNodeValue(final String n) {
-    if (n == null) {
-      myThis.setNode(null);
-      return;
-    }
+  private void setNodeValue(final String nodeName) {
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
-        myThis.setNode((SNode)SModelUtil.findNodeByFQName(n, SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.unitTest.structure.BTestCase"), GlobalScope.getInstance()));
+        myThis.setNode(TestRunUtil.getTestNode(nodeName));
       }
     });
   }
 
-  private void setMethodValue(final String n, final String m) {
-    if (m == null || n == null) {
-      myThis.setMethod(null);
-      return;
-    }
+  private void setMethodValue(final String nodeName, final String methodName) {
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
-        SNode node = (SNode)SModelUtil.findNodeByFQName(n, SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.unitTest.structure.BTestCase"), GlobalScope.getInstance());
-        if ((node == null)) {
-          myThis.setMethod(null);
-          return;
-        }
-        for (SNode method : SLinkOperations.getTargets(SLinkOperations.getTarget(node, "testMethodList", true), "testMethod", true)) {
-          if (ITestMethod_Behavior.call_getTestName_1216136419751(method).equals(m)) {
-            myThis.setMethod(method);
-            return;
-          }
-        }
-        myThis.setMethod(null);
+        myThis.setMethod(TestRunUtil.getTestMethod(nodeName, methodName));
       }
     });
   }

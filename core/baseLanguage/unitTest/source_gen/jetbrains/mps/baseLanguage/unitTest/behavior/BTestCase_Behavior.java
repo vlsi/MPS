@@ -44,6 +44,10 @@ public class BTestCase_Behavior {
     return new TestRunParameters();
   }
 
+  public static List<SNode> virtual_getTestMethods_2148145109766218395(SNode thisNode) {
+    return SLinkOperations.getTargets(SLinkOperations.getTarget(thisNode, "testMethodList", true), "testMethod", true);
+  }
+
   public static List<SNode> virtual_getMembers_1213877531970(SNode thisNode) {
     List<SNode> members = IMemberContainer_Behavior.callSuper_getMembers_1213877531970(thisNode, "jetbrains.mps.baseLanguage.unitTest.structure.BTestCase");
     ListSequence.fromList(members).addSequence(ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(thisNode, "testMethodList", true), "testMethod", true)));

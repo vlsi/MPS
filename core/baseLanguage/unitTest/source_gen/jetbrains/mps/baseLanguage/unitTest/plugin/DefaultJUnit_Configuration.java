@@ -30,16 +30,6 @@ import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.MPSProjectHolder;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.kernel.model.SModelUtil;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
-import jetbrains.mps.project.GlobalScope;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.baseLanguage.unitTest.behavior.ITestMethod_Behavior;
-import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.smodel.SModelReference;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
-import jetbrains.mps.project.IModule;
-import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.baseLanguage.plugin.RunUtil;
 import jetbrains.mps.baseLanguage.plugin.BLProcessHandler;
 import java.nio.charset.Charset;
@@ -150,29 +140,13 @@ public class DefaultJUnit_Configuration extends BaseRunConfig {
                 List<SNode> tests = new ArrayList<SNode>();
                 List<SNode> methods = new ArrayList<SNode>();
                 if (DefaultJUnit_Configuration.this.getStateObject().type == JUnitRunTypes.METHOD) {
-                  SNode test = (SNode)SModelUtil.findNodeByFQName(DefaultJUnit_Configuration.this.getStateObject().node, SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.unitTest.structure.BTestCase"), GlobalScope.getInstance());
-                  for (SNode method : SLinkOperations.getTargets(SLinkOperations.getTarget(test, "testMethodList", true), "testMethod", true)) {
-                    if (ITestMethod_Behavior.call_getTestName_1216136419751(method).equals(DefaultJUnit_Configuration.this.getStateObject().method)) {
-                      ListSequence.fromList(methods).addElement(method);
-                      break;
-                    }
-                  }
+                  ListSequence.fromList(methods).addElement(TestRunUtil.getTestMethod(DefaultJUnit_Configuration.this.getStateObject().node, DefaultJUnit_Configuration.this.getStateObject().method));
                 } else if (DefaultJUnit_Configuration.this.getStateObject().type == JUnitRunTypes.NODE) {
-                  SNode test = (SNode)SModelUtil.findNodeByFQName(DefaultJUnit_Configuration.this.getStateObject().node, SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.unitTest.structure.BTestCase"), GlobalScope.getInstance());
-                  ListSequence.fromList(tests).addElement(test);
+                  ListSequence.fromList(tests).addElement(TestRunUtil.getTestNode(DefaultJUnit_Configuration.this.getStateObject().node));
                 } else if (DefaultJUnit_Configuration.this.getStateObject().type == JUnitRunTypes.MODEL) {
-                  SModel model = GlobalScope.getInstance().getModelDescriptor(SModelReference.fromString(DefaultJUnit_Configuration.this.getStateObject().model)).getSModel();
-                  ListSequence.fromList(tests).addSequence(ListSequence.fromList(SModelOperations.getRoots(model, "jetbrains.mps.baseLanguage.unitTest.structure.BTestCase")));
+                  ListSequence.fromList(tests).addSequence(ListSequence.fromList(TestRunUtil.getModelTests(TestRunUtil.getModel(DefaultJUnit_Configuration.this.getStateObject().model))));
                 } else if (DefaultJUnit_Configuration.this.getStateObject().type == JUnitRunTypes.MODULE) {
-                  for (IModule module : GlobalScope.getInstance().getVisibleModules()) {
-                    if (module.getModuleFqName().equals(DefaultJUnit_Configuration.this.getStateObject().module)) {
-                      for (SModelDescriptor modelDescriptor : module.getOwnModelDescriptors()) {
-                        SModel model = modelDescriptor.getSModel();
-                        ListSequence.fromList(tests).addSequence(ListSequence.fromList(SModelOperations.getRoots(model, "jetbrains.mps.baseLanguage.unitTest.structure.BTestCase")));
-                      }
-                      break;
-                    }
-                  }
+                  ListSequence.fromList(tests).addSequence(ListSequence.fromList(TestRunUtil.getModuleTests(DefaultJUnit_Configuration.this.getStateObject().module)));
                 }
                 runComponent.setTestCaseAndMethod(context, tests, methods);
                 ListSequence.fromList(all).addSequence(ListSequence.fromList(tests));

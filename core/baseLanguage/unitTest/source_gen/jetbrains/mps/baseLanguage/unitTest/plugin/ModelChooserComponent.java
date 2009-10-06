@@ -12,8 +12,6 @@ import java.util.ArrayList;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.GlobalScope;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
-import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.workbench.dialogs.choosers.CommonChoosers;
 import java.util.Collections;
 
@@ -33,7 +31,7 @@ public class ModelChooserComponent extends BaseChooserComponent {
             }
             for (IModule module : project.getModules()) {
               for (SModelDescriptor descriptor : module.getOwnModelDescriptors()) {
-                if (ListSequence.fromList(SModelOperations.getRoots(((SModel)descriptor.getSModel()), "jetbrains.mps.baseLanguage.unitTest.structure.BTestCase")).isNotEmpty()) {
+                if (ListSequence.fromList(TestRunUtil.getModelTests(descriptor.getSModel())).isNotEmpty()) {
                   ListSequence.fromList(checkedModels).addElement(descriptor);
                 }
               }
