@@ -210,6 +210,11 @@ public class ModelGenerationStatusManager implements ApplicationComponent {
 
   private String calculateGeneratedHash(SModelDescriptor sm) {
     IModule module = sm.getModule();
+
+    if (module == null) {
+      throw new IllegalStateException();
+    }
+
     File outputPath = FileGenerationUtil.getCachesOutputDir(new File(module.getGeneratorOutputPath()));
     File sourcesDir = FileGenerationUtil.getDefaultOutputDir(sm, outputPath);
 
