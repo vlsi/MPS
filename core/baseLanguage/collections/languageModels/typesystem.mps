@@ -9281,68 +9281,6 @@
       <link role="concept" targetNodeId="3.1151689724996" resolveInfo="SequenceType" />
     </node>
   </node>
-  <node type="jetbrains.mps.lang.typesystem.structure.SubtypingRule" id="243315401540079387">
-    <property name="name" value="supertypesOf_sequence" />
-    <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="243315401540079388">
-      <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="7952831768768515781">
-        <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="7952831768768515782">
-          <property name="name" value="result" />
-          <node role="type" type="jetbrains.mps.lang.smodel.structure.SNodeListType" id="7952831768768515783" />
-          <node role="initializer" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="7952831768768515785">
-            <node role="creator" type="jetbrains.mps.lang.smodel.structure.SNodeListCreator" id="7952831768768515786">
-              <node role="createdType" type="jetbrains.mps.lang.smodel.structure.SNodeListType" id="7952831768768515787" />
-            </node>
-          </node>
-        </node>
-      </node>
-      <node role="statement" type="jetbrains.mps.baseLanguage.collections.structure.ForEachStatement" id="7952831768768515807">
-        <node role="variable" type="jetbrains.mps.baseLanguage.collections.structure.ForEachVariable" id="7952831768768515808">
-          <property name="name" value="ist" />
-        </node>
-        <node role="inputSequence" type="jetbrains.mps.lang.typesystem.structure.ImmediateSupertypesExpression" id="7952831768768515814">
-          <node role="subtypeExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="7952831768768515815">
-            <node role="operand" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference" id="7952831768768515816">
-              <link role="applicableNode" targetNodeId="243315401540079390" resolveInfo="sequenceType" />
-            </node>
-            <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="7952831768768515817">
-              <link role="link" targetNodeId="3.1151689745422" />
-            </node>
-          </node>
-        </node>
-        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="7952831768768515810">
-          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="7952831768768515819">
-            <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="7952831768768515821">
-              <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="7952831768768515820">
-                <link role="variableDeclaration" targetNodeId="7952831768768515782" resolveInfo="result" />
-              </node>
-              <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.AddElementOperation" id="7952831768768515825">
-                <node role="argument" type="jetbrains.mps.lang.quotation.structure.Quotation" id="7952831768768515829">
-                  <node role="quotedNode" type="jetbrains.mps.baseLanguage.collections.structure.SequenceType" id="7952831768768515833">
-                    <node role="elementType" type="jetbrains.mps.baseLanguage.structure.Type" id="7952831768768515834">
-                      <node role="_attr_$attribute" type="jetbrains.mps.lang.quotation.structure.Antiquotation" id="7952831768768515837">
-                        <node role="expression" type="jetbrains.mps.baseLanguage.collections.structure.ForEachVariableReference" id="7952831768768515839">
-                          <link role="variable" targetNodeId="7952831768768515808" resolveInfo="ist" />
-                        </node>
-                      </node>
-                    </node>
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-      </node>
-      <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="7952831768768515841">
-        <node role="expression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="7952831768768515843">
-          <link role="variableDeclaration" targetNodeId="7952831768768515782" resolveInfo="result" />
-        </node>
-      </node>
-    </node>
-    <node role="applicableNode" type="jetbrains.mps.lang.typesystem.structure.ConceptReference" id="243315401540079390">
-      <property name="name" value="sequenceType" />
-      <link role="concept" targetNodeId="3.1151689724996" resolveInfo="SequenceType" />
-    </node>
-  </node>
   <node type="jetbrains.mps.lang.typesystem.structure.InferenceRule" id="6126991172893688510">
     <property name="name" value="typeof_ContainsAllOperation" />
     <property name="package" value="sequence" />
