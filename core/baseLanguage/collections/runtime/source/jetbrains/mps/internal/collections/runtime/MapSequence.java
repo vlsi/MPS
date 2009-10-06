@@ -191,6 +191,10 @@ public class MapSequence<U, V> extends Sequence<IMapping<U, V>> implements IMapS
         getMap().putAll(map);
         return this;
     }
+    
+    public V removeKey(U u) {
+        return getMap().remove (u);
+    }
 
     public Map<U, V> toMap() {
         return this;

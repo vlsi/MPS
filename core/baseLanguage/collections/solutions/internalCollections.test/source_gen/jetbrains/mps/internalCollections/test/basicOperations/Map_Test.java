@@ -40,7 +40,7 @@ public class Map_Test extends Util_Test {
     }
     this.assertIterableEqualsIgnoreOrder(Arrays.asList(1, 2, 3), MapSequence.fromMap(map).keySet());
     for (Integer i : Arrays.asList(1, 2, 3)) {
-      MapSequence.fromMap(map).remove(i);
+      MapSequence.fromMap(map).removeKey(i);
     }
     for (Integer i : Arrays.asList(1, 2, 3)) {
       Assert.assertFalse(MapSequence.fromMap(map).containsKey(i));
@@ -158,5 +158,14 @@ public class Map_Test extends Util_Test {
     this.assertIterableEqualsIgnoreOrder(MapSequence.fromMap(map).values(), MapSequence.fromMap(test).values());
     this.assertIterableEqualsIgnoreOrder(MapSequence.fromMap(map).keySet(), MapSequence.fromMap(test).keySet());
     this.assertIterableEqualsIgnoreOrder(MapSequence.fromMap(map).mappingsSet(), MapSequence.fromMap(test).mappingsSet());
+  }
+
+  public void test_removeKey() throws Exception {
+    Map<String, Integer> map = MapSequence.<String, Integer>fromKeysArray("a", "b", "c").withValues(1, 2, 3);
+    int removed = MapSequence.fromMap(map).removeKey("a");
+    Assert.assertEquals(1, removed);
+    Assert.assertSame(2, MapSequence.fromMap(map).count());
+    Assert.assertSame(2, MapSequence.fromMap(map).get("b"));
+    Assert.assertSame(3, MapSequence.fromMap(map).get("c"));
   }
 }

@@ -26,5 +26,7 @@ public interface IMapSequence<U, V> extends ISequence<IMapping<U, V>>, Map<U, V>
 	
 	IMapSequence<U,V> putAll(IMapSequence<? extends U, ? extends V> map); 
 	
-    Map<U, V> toMap();
+	V removeKey (U u);
+	
+        Map<U, V> toMap();
 }

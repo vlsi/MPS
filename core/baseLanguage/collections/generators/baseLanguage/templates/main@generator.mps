@@ -5205,16 +5205,16 @@
     <node role="reductionMappingRule" type="jetbrains.mps.lang.generator.structure.Reduction_MappingRule" id="1208428483943">
       <link role="applicableConcept" targetNodeId="8.1207233427108" resolveInfo="MapRemoveOperation" />
       <node role="ruleConsequence" type="jetbrains.mps.lang.generator.structure.InlineTemplate_RuleConsequence" id="1208428498262">
-        <node role="templateNode" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1208694666732">
-          <link role="baseMethodDeclaration" targetNodeId="1.~Map.remove(java.lang.Object):java.lang.Object" resolveInfo="remove" />
-          <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.Expression" id="1208694666733">
-            <node role="nodeMacro$attribute" type="jetbrains.mps.lang.generator.structure.CopySrcNodeMacro" id="1208694666734">
-              <node role="sourceNodeQuery" type="jetbrains.mps.lang.generator.structure.SourceSubstituteMacro_SourceNodeQuery" id="1208694666735">
-                <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1208694666736">
-                  <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1208694666737">
-                    <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1208694666738">
-                      <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1208694666739" />
-                      <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1208694666740">
+        <node role="templateNode" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="6494704088086139476">
+          <link role="baseMethodDeclaration" targetNodeId="13.~IMapSequence.removeKey(java.lang.Object):java.lang.Object" resolveInfo="removeKey" />
+          <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.Expression" id="6494704088086139477">
+            <node role="nodeMacro$attribute" type="jetbrains.mps.lang.generator.structure.CopySrcNodeMacro" id="6494704088086139478">
+              <node role="sourceNodeQuery" type="jetbrains.mps.lang.generator.structure.SourceSubstituteMacro_SourceNodeQuery" id="6494704088086139479">
+                <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="6494704088086139480">
+                  <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="6494704088086139481">
+                    <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="6494704088086139482">
+                      <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="6494704088086139483" />
+                      <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="6494704088086139484">
                         <link role="link" targetNodeId="8.1207233489861" />
                       </node>
                     </node>
@@ -10396,7 +10396,7 @@
       <node role="ruleConsequence" type="jetbrains.mps.lang.generator.structure.InlineTemplate_RuleConsequence" id="3358009230509159565">
         <node role="templateNode" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="3358009230509159566">
           <link role="classConcept" targetNodeId="13.~DequeSequence" resolveInfo="DequeSequence" />
-          <link role="baseMethodDeclaration" targetNodeId="13.~DequeSequence.fromIterable(java.lang.Iterable):jetbrains.mps.internal.collections.runtime.IDequeSequence" resolveInfo="fromIterable" />
+          <link role="baseMethodDeclaration" targetNodeId="13.~DequeSequence.fromIterable(java.lang.Iterable):jetbrains.mps.internal.collections.runtime.IQueueSequence" resolveInfo="fromIterable" />
           <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.Expression" id="3358009230509159567">
             <node role="nodeMacro$attribute" type="jetbrains.mps.lang.generator.structure.CopySrcNodeMacro" id="3358009230509159568">
               <node role="sourceNodeQuery" type="jetbrains.mps.lang.generator.structure.SourceSubstituteMacro_SourceNodeQuery" id="3358009230509159569">

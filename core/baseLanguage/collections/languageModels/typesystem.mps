@@ -3041,8 +3041,8 @@
       </node>
       <node role="statement" type="jetbrains.mps.lang.typesystem.structure.CreateEquationStatement" id="1207233776685">
         <node role="rightExpression" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause" id="1207233776686">
-          <node role="normalType" type="jetbrains.mps.lang.typesystem.structure.TypeVarReference" id="1207233880533">
-            <link role="typeVarDeclaration" targetNodeId="1207233776692" resolveInfo="KEY" />
+          <node role="normalType" type="jetbrains.mps.lang.typesystem.structure.TypeVarReference" id="6494704088086227630">
+            <link role="typeVarDeclaration" targetNodeId="1207233776693" resolveInfo="VALUE" />
           </node>
         </node>
         <node role="leftExpression" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause" id="1207233776689">
