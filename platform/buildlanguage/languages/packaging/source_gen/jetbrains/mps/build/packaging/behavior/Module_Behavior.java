@@ -13,6 +13,8 @@ import jetbrains.mps.generator.fileGenerator.BaseModelCache;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.debug.baseLanguage.BLDebugInfoCache;
+import com.intellij.openapi.application.ApplicationManager;
+import jetbrains.mps.baseLanguage.textGen.BLDependenciesCache;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.vfs.MPSExtentions;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
@@ -28,6 +30,7 @@ import jetbrains.mps.project.Solution;
 
 public class Module_Behavior {
   public static void init(SNode thisNode) {
+
   }
 
   public static String call_getTemporalDir_1213877514765(SNode thisNode) {
@@ -51,11 +54,17 @@ public class Module_Behavior {
   public static List<String> call_getCachesDirs_8196794507570019546(final SNode thisNode) {
     List<BaseModelCache> caches = ListSequence.fromList(new ArrayList<BaseModelCache>());
     ListSequence.fromList(caches).addElement(BLDebugInfoCache.getInstance());
+    try {
+      BaseModelCache cache = (BaseModelCache)ApplicationManager.getApplication().getComponent(((SNode)thisNode).getClass().getClassLoader().loadClass(BLDependenciesCache.class.getCanonicalName()));
+      ListSequence.fromList(caches).addElement(cache);
+    } catch (ClassNotFoundException cl) {
+      cl.printStackTrace();
+    }
     return ListSequence.fromList(caches).select(new ISelector<BaseModelCache, String>() {
       public String select(BaseModelCache it) {
         return ModuleUtil.getRelativePath(it.getCachesDir(Module_Behavior.call_getModule_1213877515148(thisNode)).getPath(), AbstractProjectComponent_Behavior.call_getHomePath_1213877333764(thisNode).getPath());
       }
-    }).toListSequence();
+    }).distinct().toListSequence();
   }
 
   public static String call_findMPSProjectFile_1213877514840(SNode thisNode, File file) {
