@@ -18,12 +18,13 @@ package jetbrains.mps.workbench.editors;
 import com.intellij.codeHighlighting.BackgroundEditorHighlighter;
 import com.intellij.ide.structureView.StructureViewBuilder;
 import com.intellij.openapi.command.undo.DocumentReference;
-import com.intellij.openapi.command.undo.DocumentReferenceByVirtualFile;
+import com.intellij.openapi.command.impl.DocumentReferenceManagerImpl;
 import com.intellij.openapi.editor.Document;
 import com.intellij.openapi.fileEditor.*;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.util.Computable;
 import com.intellij.openapi.util.UserDataHolderBase;
+import com.intellij.openapi.application.Application;
 import jetbrains.mps.MPSProjectHolder;
 import jetbrains.mps.ide.IEditor;
 import jetbrains.mps.ide.NodeEditor;
@@ -43,7 +44,7 @@ import java.beans.PropertyChangeListener;
 import java.util.ArrayList;
 import java.util.List;
 
-public class MPSFileNodeEditor extends UserDataHolderBase implements DocumentReferenceEditor, DocumentsEditor {
+public class MPSFileNodeEditor extends UserDataHolderBase implements FileEditor {
   private IEditor myNodeEditor;
   private JPanel myComponent = new JPanel(new BorderLayout());
   private Project myProject;
@@ -74,7 +75,7 @@ public class MPSFileNodeEditor extends UserDataHolderBase implements DocumentRef
   public DocumentReference[] getDocumentReferences() {
     List<DocumentReference> docRefs = new ArrayList<DocumentReference>();
     for (SNode node : myNodeEditor.getEditedNodes()) {
-      docRefs.add(new DocumentReferenceByVirtualFile(MPSNodesVirtualFileSystem.getInstance().getFileFor(node)));
+      docRefs.add(DocumentReferenceManagerImpl.getInstance().create(MPSNodesVirtualFileSystem.getInstance().getFileFor(node)));
     }
     return docRefs.toArray(new DocumentReference[docRefs.size()]);
   }

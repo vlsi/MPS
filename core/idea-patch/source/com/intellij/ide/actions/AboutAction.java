@@ -49,7 +49,12 @@ import java.util.Calendar;
 import java.util.List;
 import java.util.Properties;
 
+import org.jetbrains.annotations.NonNls;
+
 public class AboutAction extends AnAction {
+  @NonNls
+    private static final String COMPANY_URL = "http://www.jetbrains.com/";
+
   private static final int TEXT_HEIGHT = 140;
   private static final int TEXT_WIDTH = 398;
   private static final int IMAGE_HEADER_HEIGHT = 150;
@@ -237,7 +242,7 @@ public class AboutAction extends AnAction {
       myLines.add(new AboutBoxLine(" "));
       //noinspection HardCodedStringLiteral
       myLines.add(new AboutBoxLine("JetBrains s.r.o.", true, false));
-      myLines.add(new AboutBoxLine(LicenseUrls.getCompanyUrl(), true, true));
+      myLines.add(new AboutBoxLine(COMPANY_URL, true, true));
 
       addMouseListener(new MouseAdapter() {
         public void mousePressed(MouseEvent event) {

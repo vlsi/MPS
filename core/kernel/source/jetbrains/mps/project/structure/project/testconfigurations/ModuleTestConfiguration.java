@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.project.structure.project.testconfigurations;
 
+import com.intellij.openapi.project.Project;
 import jetbrains.mps.generator.IllegalGeneratorConfigurationException;
 import jetbrains.mps.generator.ModelGenerationStatusManager;
 import jetbrains.mps.ide.genconf.GenParameters;
@@ -45,19 +46,20 @@ public class ModuleTestConfiguration extends BaseTestConfiguration {
     myModuleRef = moduleRef;
   }
 
-  public GenParameters getGenParams(MPSProject project, boolean fullRegeneration) throws IllegalGeneratorConfigurationException {
+  public GenParameters getGenParams(MPSProject mpsProject, boolean fullRegeneration) throws IllegalGeneratorConfigurationException {
     IModule module = MPSModuleRepository.getInstance().getModule(myModuleRef);
 
     if (module == null) {
       throw new IllegalGeneratorConfigurationException("Can't find module " + myModuleRef.getModuleFqName());
     }
 
+    Project project = mpsProject.getComponent(Project.class);
     if (module instanceof Solution) {
       Solution solution = (Solution) module;
 
       List<SModelDescriptor> models = new ArrayList<SModelDescriptor>();
       for (SModelDescriptor sm : solution.getOwnModelDescriptors()) {
-        if (!fullRegeneration && !ModelGenerationStatusManager.getInstance().generationRequired(sm)) {
+        if (!fullRegeneration && !ModelGenerationStatusManager.getInstance().generationRequired(sm, project)) {
           continue;
         }
 
@@ -80,7 +82,7 @@ public class ModuleTestConfiguration extends BaseTestConfiguration {
       Iterator<SModelDescriptor> it = inputModels.iterator();
       while (it.hasNext()) {
         SModelDescriptor model = it.next();
-        if ((!fullRegeneration && !ModelGenerationStatusManager.getInstance().generationRequired(model)) ||
+        if ((!fullRegeneration && !ModelGenerationStatusManager.getInstance().generationRequired(model, project)) ||
           ModelGenerationStatusManager.isDoNotGenerate(model)) {
           it.remove();
         }

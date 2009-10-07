@@ -34,4 +34,9 @@ class RemoveRootUndoableAction extends SNodeUndoableAction {
   protected void doRedo() {
     myRoot.getModel().removeRoot(myRoot);
   }
+
+  @Override
+  public boolean isGlobal() {
+    return true;
+  }
 }

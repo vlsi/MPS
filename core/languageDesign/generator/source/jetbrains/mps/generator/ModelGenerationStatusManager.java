@@ -19,6 +19,8 @@ import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.openapi.module.Module;
 import com.intellij.openapi.components.ApplicationComponent;
+import com.intellij.openapi.project.ProjectManager;
+import com.intellij.openapi.project.Project;
 import com.intellij.util.indexing.FileBasedIndex;
 import com.intellij.psi.search.GlobalSearchScope;
 import jetbrains.mps.logging.Logger;
@@ -90,7 +92,7 @@ public class ModelGenerationStatusManager implements ApplicationComponent {
   public void disposeComponent() {
   }
 
-  public boolean generationRequired(SModelDescriptor sm) {
+  public boolean generationRequired(SModelDescriptor sm, Project project) {
     if (sm.isPackaged()) {
       return false;
     }
@@ -125,7 +127,7 @@ public class ModelGenerationStatusManager implements ApplicationComponent {
 
       Collection<VirtualFile> files = FileBasedIndex.getInstance().getContainingFiles(ModelDigestIndex.NAME,
         generatedHash,
-        new GlobalSearchScope() {
+        new GlobalSearchScope(project) {
           @Override
           public boolean contains(VirtualFile file) {
             return true;

@@ -119,6 +119,7 @@ public class MainImpl {
       }
     }
 
+/*
     if (IdeMain.getTestMode() == TestMode.NO_TEST) {
       LicenseManager.getInstance().startUp(new LicenseManager.StartupAction() {
         public void proceed() {
@@ -130,8 +131,9 @@ public class MainImpl {
         }
       });
     }else {
+*/
       startApplication(args);
-    }
+//    }
   }
 
   private static void startApplication(final String[] args) {

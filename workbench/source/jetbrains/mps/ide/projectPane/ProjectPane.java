@@ -1127,6 +1127,10 @@ public class ProjectPane extends AbstractProjectViewPane {
       myAction.update(event);
       return event.getPresentation().isEnabled();
     }
+
+    public boolean isCopyVisible(DataContext dataContext) {
+      return true;
+    }
   }
 
   private class MyPasteProvider implements PasteProvider {
@@ -1160,6 +1164,10 @@ public class ProjectPane extends AbstractProjectViewPane {
       AnActionEvent event = createEvent(dataContext);
       myAction.update(event);
       return event.getPresentation().isEnabled();
+    }
+
+    public boolean isCutVisible(DataContext dataContext) {
+      return true;
     }
   }
 

@@ -50,8 +50,16 @@ public class FilePaneCopyProvider implements CopyProvider, CutProvider {
     return isEnabled(dataContext, false);
   }
 
+  public boolean isCopyVisible(DataContext dataContext) {
+    return true;
+  }
+
   public boolean isCutEnabled(DataContext dataContext) {
     return isEnabled(dataContext, true);
+  }
+
+  public boolean isCutVisible(DataContext dataContext) {
+    return true;
   }
 
   private boolean isEnabled(DataContext dataContext, boolean cut) {

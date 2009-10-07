@@ -1,6 +1,9 @@
 <idea-plugin version="2" xmlns:xi="http://www.w3.org/2001/XInclude">
     <id>com.intellij</id>
-    <name>IDEA CORE</name>
+    <name>MPS CORE</name>
+
+    <xi:include href="/META-INF/MPSComponents.xml" xpointer="xpointer(/components/*)"/>
+    <xi:include href="/idea/MPSActionManager.xml" xpointer="xpointer(/component/*)"/>
 
     <extensionPoints>
         <xi:include href="/META-INF/PlatformExtensionPoints.xml" xpointer="xpointer(/extensionPoints/*)"/>

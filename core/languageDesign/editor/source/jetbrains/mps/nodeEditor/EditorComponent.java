@@ -2823,6 +2823,10 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
         }
       });
     }
+
+    public boolean isCutVisible(DataContext dataContext) {
+      return true;
+    }
   }
 
   private class MyCopyProvider implements CopyProvider {
@@ -2844,6 +2848,10 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
           return getSelectedCell().canExecuteAction(CellActionType.COPY);
         }
       });
+    }
+
+    public boolean isCopyVisible(DataContext dataContext) {
+      return true;
     }
   }
 

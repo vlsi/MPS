@@ -16,9 +16,10 @@
 package jetbrains.mps.smodel;
 
 import com.intellij.openapi.command.undo.DocumentReference;
-import com.intellij.openapi.command.undo.DocumentReferenceByVirtualFile;
 import com.intellij.openapi.command.undo.UndoableAction;
 import com.intellij.openapi.command.undo.UnexpectedUndoException;
+import com.intellij.openapi.command.undo.DocumentReferenceManager;
+import com.intellij.openapi.command.impl.DocumentReferenceByVirtualFile;
 import jetbrains.mps.workbench.nodesFs.MPSNodeVirtualFile;
 import jetbrains.mps.workbench.nodesFs.MPSNodesVirtualFileSystem;
 
@@ -33,7 +34,7 @@ public abstract class SNodeUndoableAction implements UndoableAction {
       myAffectedDocuments = new DocumentReference[0];
     } else {
       myFile = MPSNodesVirtualFileSystem.getInstance().getFileFor(containingRoot);
-      myAffectedDocuments = new DocumentReference[]{new DocumentReferenceByVirtualFile(myFile)};
+      myAffectedDocuments = new DocumentReference[]{DocumentReferenceManager.getInstance().create(myFile)};
       myModifcationStamp = myFile.getModificationStamp();
     }
   }
@@ -66,6 +67,10 @@ public abstract class SNodeUndoableAction implements UndoableAction {
   }
 
   public boolean isComplex() {
+    return false;
+  }
+
+  public boolean isGlobal() {
     return false;
   }
 }

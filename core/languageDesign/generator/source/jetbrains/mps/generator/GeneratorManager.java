@@ -230,13 +230,13 @@ public class GeneratorManager {
     ModelGenerationStatusManager statusManager = ModelGenerationStatusManager.getInstance();
     for (Generator g : GenerationPartitioningUtil.getAllPossiblyEngagedGenerators(model.getSModel(), context.getScope())) {
       for (SModelDescriptor sm : g.getOwnModelDescriptors()) {
-        if (SModelStereotype.isUserModel(sm) && statusManager.generationRequired(sm)) {
+        if (SModelStereotype.isUserModel(sm) && statusManager.generationRequired(sm,context.getProject())) {
           result.add(sm);
         }
       }
 
       for (SModelDescriptor sm : g.getSourceLanguage().getAspectModelDescriptors()) {
-        if (statusManager.generationRequired(sm)) {
+        if (statusManager.generationRequired(sm,context.getProject())) {
           result.add(sm);
         }
       }

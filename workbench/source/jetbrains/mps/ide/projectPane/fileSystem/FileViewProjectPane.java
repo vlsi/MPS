@@ -207,7 +207,7 @@ public abstract class FileViewProjectPane extends AbstractProjectViewPane implem
 
   public void projectOpened() {
     rebuildTreeLater();
-    StartupManager.getInstance(myProject).registerPostStartupActivity(new Runnable() {
+    StartupManager.getInstance(myProject).runWhenProjectIsInitialized(new Runnable() {
       public void run() {
         myProjectView.addProjectPane(FileViewProjectPane.this);
       }

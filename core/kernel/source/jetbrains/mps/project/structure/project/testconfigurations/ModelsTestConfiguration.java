@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.project.structure.project.testconfigurations;
 
+import com.intellij.openapi.project.Project;
 import jetbrains.mps.generator.IllegalGeneratorConfigurationException;
 import jetbrains.mps.generator.ModelGenerationStatusManager;
 import jetbrains.mps.ide.genconf.GenParameters;
@@ -44,11 +45,11 @@ public class ModelsTestConfiguration extends BaseTestConfiguration {
     myModels.add(m);
   }
 
-  public GenParameters getGenParams(MPSProject project, boolean fullRegeneration) throws IllegalGeneratorConfigurationException {
+  public GenParameters getGenParams(MPSProject mpsProject, boolean fullRegeneration) throws IllegalGeneratorConfigurationException {
     Set<SModelDescriptor> modelDescriptors = new LinkedHashSet<SModelDescriptor>();
 
     for (SModelReference m : getModels()) {
-      modelDescriptors.add(project.getScope().getModelDescriptor(m));
+      modelDescriptors.add(mpsProject.getScope().getModelDescriptor(m));
     }
 
     if (modelDescriptors.isEmpty()) {
@@ -67,9 +68,10 @@ public class ModelsTestConfiguration extends BaseTestConfiguration {
       throw new IllegalGeneratorConfigurationException("there is no module that can be used to generate models " + modelDescriptors);
     }
 
+    Project project = mpsProject.getComponent(Project.class);
     List<SModelDescriptor> models = new ArrayList<SModelDescriptor>();
     for (SModelDescriptor sm : modelDescriptors) {
-      if (!fullRegeneration && !ModelGenerationStatusManager.getInstance().generationRequired(sm)) {
+      if (!fullRegeneration && !ModelGenerationStatusManager.getInstance().generationRequired(sm, project)) {
         continue;
       }
       models.add(sm);

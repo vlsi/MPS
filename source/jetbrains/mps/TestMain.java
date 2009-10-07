@@ -409,7 +409,7 @@ public class TestMain {
     System.setProperty("idea.platform.prefix", "MPS");
 
     try {
-      IdeaTestApplication.getInstance();
+      IdeaTestApplication.getInstance(null);
     } catch (Exception e) {
       throw new RuntimeException(e);
     }

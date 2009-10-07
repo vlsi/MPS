@@ -20,4 +20,9 @@ class AddRootUndoableAction extends SNodeUndoableAction {
   protected void doRedo() {
     myRoot.getModel().addRoot(myRoot);
   }
+
+  @Override
+  public boolean isGlobal() {
+    return true;
+  }
 }

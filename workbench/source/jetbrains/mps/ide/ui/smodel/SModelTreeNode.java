@@ -336,7 +336,7 @@ public class SModelTreeNode extends MPSTreeNodeEx {
       return false;
     }
 
-    return ModelGenerationStatusManager.getInstance().generationRequired(getSModelDescriptor());
+    return ModelGenerationStatusManager.getInstance().generationRequired(getSModelDescriptor(),getOperationContext().getProject());
   }
 
   public boolean isPackaged() {
