@@ -20,6 +20,7 @@ import com.intellij.ide.structureView.StructureViewBuilder;
 import com.intellij.openapi.command.undo.DocumentReference;
 import com.intellij.openapi.command.impl.DocumentReferenceManagerImpl;
 import com.intellij.openapi.editor.Document;
+import com.intellij.openapi.editor.impl.DocumentImpl;
 import com.intellij.openapi.fileEditor.*;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.util.Computable;
@@ -44,7 +45,7 @@ import java.beans.PropertyChangeListener;
 import java.util.ArrayList;
 import java.util.List;
 
-public class MPSFileNodeEditor extends UserDataHolderBase implements FileEditor {
+public class MPSFileNodeEditor extends UserDataHolderBase implements FileEditor,DocumentsEditor {
   private IEditor myNodeEditor;
   private JPanel myComponent = new JPanel(new BorderLayout());
   private Project myProject;
@@ -81,7 +82,7 @@ public class MPSFileNodeEditor extends UserDataHolderBase implements FileEditor 
   }
 
   public Document[] getDocuments() {
-    //todo this is a workaround for MPS-2447: [build:913] update failed for AnAction with ID=$Undo 
+    //todo this is a workaround for MPS-2447: [build:913] update failed for AnAction with ID=$Undo
     return new Document[0];
   }
 
