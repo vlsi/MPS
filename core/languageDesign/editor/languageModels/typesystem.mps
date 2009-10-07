@@ -1133,17 +1133,13 @@
             </node>
           </node>
         </node>
-        <node role="rightExpression" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause" id="4531786690999950662">
-          <node role="normalType" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="4531786690999950665">
-            <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="4531786690999950666">
-              <node role="operand" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference" id="4531786690999950667">
-                <link role="applicableNode" targetNodeId="4531786690999948573" resolveInfo="operation" />
-              </node>
-              <node role="operation" type="jetbrains.mps.lang.smodel.structure.SConceptLinkAccess" id="6050628152419436287">
-                <link role="conceptLinkDeclaration" targetNodeId="3.4531786690998780612" resolveInfo="operationReturnType" />
+        <node role="rightExpression" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause" id="3903367331818351762">
+          <node role="normalType" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="3903367331818351763">
+            <node role="creator" type="jetbrains.mps.lang.smodel.structure.SNodeCreator" id="3903367331818356368">
+              <node role="createdType" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="3903367331818356369">
+                <link role="concept" targetNodeId="3.3903367331818357915" resolveInfo="StyledText" />
               </node>
             </node>
-            <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.GetFirstOperation" id="4531786690999950669" />
           </node>
         </node>
       </node>

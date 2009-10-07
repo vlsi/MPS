@@ -5452,8 +5452,8 @@
           <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="7806530711846849331">
             <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="7806530711846849332">
               <node role="expression" type="jetbrains.mps.lang.quotation.structure.Quotation" id="7806530711846849333">
-                <node role="quotedNode" type="jetbrains.mps.baseLanguage.collections.structure.ListType" id="7806530711846849334">
-                  <node role="elementType" type="jetbrains.mps.baseLanguage.structure.WildCardType" id="7806530711846849335" />
+                <node role="quotedNode" type="jetbrains.mps.baseLanguage.collections.structure.SequenceType" id="6552123473822747817">
+                  <node role="elementType" type="jetbrains.mps.baseLanguage.structure.WildCardType" id="6552123473822749311" />
                 </node>
               </node>
             </node>
@@ -5465,12 +5465,12 @@
             </node>
           </node>
         </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="7806530711846849339">
-          <node role="expression" type="jetbrains.mps.lang.quotation.structure.Quotation" id="7806530711846849340">
-            <node role="quotedNode" type="jetbrains.mps.baseLanguage.collections.structure.ListType" id="7806530711846849341">
-              <node role="elementType" type="jetbrains.mps.baseLanguage.structure.Type" id="7806530711846849342">
-                <node role="_attr_$attribute" type="jetbrains.mps.lang.quotation.structure.Antiquotation" id="7806530711846849343">
-                  <node role="expression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="7806530711846849344">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="6552123473822749317">
+          <node role="expression" type="jetbrains.mps.lang.quotation.structure.Quotation" id="6552123473822749318">
+            <node role="quotedNode" type="jetbrains.mps.baseLanguage.collections.structure.SequenceType" id="6552123473822749323">
+              <node role="elementType" type="jetbrains.mps.baseLanguage.structure.Type" id="6552123473822749325">
+                <node role="_attr_$attribute" type="jetbrains.mps.lang.quotation.structure.Antiquotation" id="6552123473822749326">
+                  <node role="expression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="6552123473822749327">
                     <link role="variableDeclaration" targetNodeId="7806530711846849313" resolveInfo="expectedType" />
                   </node>
                 </node>

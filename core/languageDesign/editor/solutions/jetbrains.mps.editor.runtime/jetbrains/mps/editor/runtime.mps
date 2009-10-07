@@ -115,7 +115,11 @@
     </node>
     <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="6090996390710375686">
       <property name="name" value="getMethods" />
-      <node role="returnType" type="jetbrains.mps.lang.smodel.structure.SNodeListType" id="6090996390710375687" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.collections.structure.SequenceType" id="5479017698521753287">
+        <node role="elementType" type="jetbrains.mps.baseLanguage.structure.TypeVariableReference" id="5479017698522153547">
+          <link role="typeVariableDeclaration" targetNodeId="5479017698522153543" resolveInfo="T" />
+        </node>
+      </node>
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="6090996390710375688" />
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="6090996390710375689">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="6090996390710375690">
@@ -154,7 +158,9 @@
       </node>
       <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="6090996390710375706">
         <property name="name" value="method" />
-        <node role="type" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="6090996390710375707" />
+        <node role="type" type="jetbrains.mps.baseLanguage.structure.TypeVariableReference" id="5479017698522153555">
+          <link role="typeVariableDeclaration" targetNodeId="5479017698522153543" resolveInfo="T" />
+        </node>
       </node>
     </node>
     <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="8394433674396748094">
@@ -209,7 +215,9 @@
       </node>
       <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="8394433674396748104">
         <property name="name" value="method" />
-        <node role="type" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="8394433674396748105" />
+        <node role="type" type="jetbrains.mps.baseLanguage.structure.TypeVariableReference" id="5479017698522153560">
+          <link role="typeVariableDeclaration" targetNodeId="5479017698522153543" resolveInfo="T" />
+        </node>
       </node>
       <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="8394433674396748113">
         <property name="name" value="printer" />
@@ -241,7 +249,9 @@
       </node>
       <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="6090996390710375718">
         <property name="name" value="method" />
-        <node role="type" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="6090996390710375719" />
+        <node role="type" type="jetbrains.mps.baseLanguage.structure.TypeVariableReference" id="5479017698522153575">
+          <link role="typeVariableDeclaration" targetNodeId="5479017698522153543" resolveInfo="T" />
+        </node>
       </node>
     </node>
     <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="6090996390710375720">
@@ -266,8 +276,10 @@
               </node>
               <node role="operand" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="6090996390710375731" />
             </node>
-            <node role="type" type="jetbrains.mps.baseLanguage.collections.structure.ListType" id="8394433674396747920">
-              <node role="elementType" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="8394433674396747925" />
+            <node role="type" type="jetbrains.mps.baseLanguage.collections.structure.SequenceType" id="5479017698521868471">
+              <node role="elementType" type="jetbrains.mps.baseLanguage.structure.TypeVariableReference" id="5479017698522153566">
+                <link role="typeVariableDeclaration" targetNodeId="5479017698522153543" resolveInfo="T" />
+              </node>
             </node>
           </node>
         </node>
@@ -683,12 +695,17 @@
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="6090996390710375833" />
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="6090996390710375834" />
     </node>
+    <node role="typeVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.TypeVariableDeclaration" id="5479017698522153543">
+      <property name="name" value="T" />
+    </node>
   </node>
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="8394433674396727873">
     <property name="name" value="StyledTextPrinter" />
     <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="8394433674396747675">
       <property name="name" value="setBold" />
-      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="8394433674396747676" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="5479017698521441932">
+        <link role="classifier" targetNodeId="8394433674396727873" resolveInfo="StyledTextPrinter" />
+      </node>
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="8394433674396747677" />
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="8394433674396747678">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="8394433674396747689">
@@ -706,6 +723,9 @@
             </node>
           </node>
         </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="5479017698521441934">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="5479017698521441936" />
+        </node>
       </node>
       <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="8394433674396747679">
         <property name="name" value="flag" />
@@ -714,7 +734,9 @@
     </node>
     <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="8394433674396747697">
       <property name="name" value="append" />
-      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="8394433674396747698" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="5479017698521441931">
+        <link role="classifier" targetNodeId="8394433674396727873" resolveInfo="StyledTextPrinter" />
+      </node>
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="8394433674396747699" />
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="8394433674396747700">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.TryCatchStatement" id="8394433674396747729">
@@ -773,6 +795,9 @@
               </node>
             </node>
           </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="5479017698521441938">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="5479017698521441940" />
         </node>
       </node>
       <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="8394433674396747701">

@@ -28,7 +28,6 @@ import javax.swing.Icon;
 import jetbrains.mps.smodel.action.ChildSubstituteActionsHelper;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import jetbrains.mps.lang.pattern.util.MatchingUtil;
 
 public class QueriesGenerated {
   public static boolean nodeSubstituteActionsBuilder_Precondition_CellMenuPart_Abstract_1199894693230(final IOperationContext operationContext, final NodeSubstitutePreconditionContext _context) {
@@ -740,18 +739,20 @@ public class QueriesGenerated {
       if (SConceptOperations.isSuperConceptOf(childConcept, NameUtil.nodeFQName(outputConcept))) {
         Calculable calc = new Calculable() {
           public Object calculate() {
+            List<SNode> emptyList = ListSequence.fromList(new ArrayList<SNode>());
             if (!(SNodeOperations.isInstanceOf(_context.getParentNode(), "jetbrains.mps.baseLanguage.structure.DotExpression"))) {
-              return ListSequence.fromList(new ArrayList<SNode>());
+              return emptyList;
             }
             SNode operand = SLinkOperations.getTarget(SNodeOperations.cast(_context.getParentNode(), "jetbrains.mps.baseLanguage.structure.DotExpression"), "operand", true);
             if (operand == null) {
-              return null;
+              return emptyList;
             }
             final SNode type = TypeChecker.getInstance().getTypeOf(operand);
             List<SNode> list = SConceptOperations.getAllSubConcepts(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.editor.structure.AbstractStyledTextOperation"), _context.getModel(), operationContext.getScope());
+            ListSequence.fromList(list).removeElement(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.editor.structure.AbstractStyledTextOperation"));
             return ListSequence.fromList(list).where(new IWhereFilter<SNode>() {
               public boolean accept(SNode it) {
-                return MatchingUtil.matchNodes(type, ListSequence.fromList(SLinkOperations.getConceptLinkTargets(it, "operandType")).first());
+                return SNodeOperations.isInstanceOf(type, "jetbrains.mps.lang.editor.structure.StyledTextType");
               }
             }).toListSequence();
           }

@@ -15,8 +15,6 @@ import jetbrains.mps.project.GlobalScope;
 public class AbstractStyledTextOperation extends BaseConcept implements IOperation {
   public static final String concept = "jetbrains.mps.lang.editor.structure.AbstractStyledTextOperation";
   public static final String CPR_MethodToGenerate = "methodToGenerate";
-  public static final String CLNK_OperandType = "operandType";
-  public static final String CLNK_OperationReturnType = "operationReturnType";
   public static final String CLNK_OperationArgumentType = "operationArgumentType";
   public static final String SHORT_DESCRIPTION = "shortDescription";
   public static final String ALIAS = "alias";

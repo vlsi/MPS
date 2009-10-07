@@ -17,9 +17,9 @@ public class QueryFunction_ParametersList_Behavior {
     SNode ancestor = SNodeOperations.getAncestor(thisNode, "jetbrains.mps.lang.editor.structure.ParametersInformationQuery", false, false);
     SNode expectedType = SLinkOperations.getTarget(ancestor, "type", true);
     if (expectedType == null) {
-      return new _Quotations.QuotationClass_5().createNode();
+      return new _Quotations.QuotationClass_6().createNode();
     }
-    return new _Quotations.QuotationClass_6().createNode(expectedType);
+    return new _Quotations.QuotationClass_5().createNode(expectedType);
   }
 
   public static SNode call_getExpectedReturnType_7806530711846755632(SNode thisNode) {

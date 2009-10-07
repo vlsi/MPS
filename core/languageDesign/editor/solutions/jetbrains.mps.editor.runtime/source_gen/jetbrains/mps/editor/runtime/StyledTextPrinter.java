@@ -15,16 +15,18 @@ public class StyledTextPrinter {
   public StyledTextPrinter() {
   }
 
-  public void setBold(boolean flag) {
+  public StyledTextPrinter setBold(boolean flag) {
     StyleConstants.setBold(this.myAttributeSet, flag);
+    return this;
   }
 
-  public void append(String text) {
+  public StyledTextPrinter append(String text) {
     try {
       this.myDocument.insertString(this.myDocument.getLength(), text, this.myAttributeSet);
     } catch (BadLocationException badLocationException) {
       badLocationException.printStackTrace();
     }
+    return this;
   }
 
   public StyledDocument getDocument() {

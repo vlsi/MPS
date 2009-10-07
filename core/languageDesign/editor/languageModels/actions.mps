@@ -2109,15 +2109,28 @@
           </node>
           <node role="query" type="jetbrains.mps.lang.actions.structure.QueryFunction_ParameterizedSubstitute_Query" id="226730285127012659">
             <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="226730285127012660">
+              <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="3903367331817991756">
+                <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="3903367331817991757">
+                  <property name="name" value="emptyList" />
+                  <node role="type" type="jetbrains.mps.baseLanguage.collections.structure.ListType" id="3903367331817991754">
+                    <node role="elementType" type="jetbrains.mps.lang.smodel.structure.SConceptType" id="3903367331817991755">
+                      <link role="conceptDeclaraton" targetNodeId="1.4531786690998636238" resolveInfo="AbstractStyledTextOperation" />
+                    </node>
+                  </node>
+                  <node role="initializer" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="3903367331817991758">
+                    <node role="creator" type="jetbrains.mps.baseLanguage.collections.structure.ListCreatorWithInit" id="3903367331817991759">
+                      <node role="elementType" type="jetbrains.mps.lang.smodel.structure.SConceptType" id="3903367331817991760">
+                        <link role="conceptDeclaraton" targetNodeId="1.4531786690998636238" resolveInfo="AbstractStyledTextOperation" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
               <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="226730285127012743">
                 <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="226730285127012744">
                   <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="226730285127012761">
-                    <node role="expression" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="226730285127012763">
-                      <node role="creator" type="jetbrains.mps.baseLanguage.collections.structure.ListCreatorWithInit" id="226730285127017404">
-                        <node role="elementType" type="jetbrains.mps.lang.smodel.structure.SConceptType" id="7630810368327719621">
-                          <link role="conceptDeclaraton" targetNodeId="1.4531786690998636238" resolveInfo="AbstractStyledTextOperation" />
-                        </node>
-                      </node>
+                    <node role="expression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="3903367331817991761">
+                      <link role="variableDeclaration" targetNodeId="3903367331817991757" resolveInfo="emptyList" />
                     </node>
                   </node>
                 </node>
@@ -2152,7 +2165,9 @@
               <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="226730285127017408">
                 <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="226730285127017409">
                   <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="226730285127017432">
-                    <node role="expression" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="226730285127017434" />
+                    <node role="expression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="3903367331817993850">
+                      <link role="variableDeclaration" targetNodeId="3903367331817991757" resolveInfo="emptyList" />
+                    </node>
                   </node>
                 </node>
                 <node role="condition" type="jetbrains.mps.baseLanguage.structure.EqualsExpression" id="226730285127212107">
@@ -2193,6 +2208,18 @@
                   </node>
                 </node>
               </node>
+              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1511134095826094343">
+                <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1511134095826094354">
+                  <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1511134095826094344">
+                    <link role="variableDeclaration" targetNodeId="226730285127399053" resolveInfo="list" />
+                  </node>
+                  <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.RemoveElementOperation" id="1511134095826094375">
+                    <node role="argument" type="jetbrains.mps.lang.smodel.structure.ConceptRefExpression" id="1511134095826094390">
+                      <link role="conceptDeclaration" targetNodeId="1.4531786690998636238" resolveInfo="AbstractStyledTextOperation" />
+                    </node>
+                  </node>
+                </node>
+              </node>
               <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="226730285127012720">
                 <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="226730285127018091">
                   <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="226730285127018092">
@@ -2203,20 +2230,14 @@
                       <node role="closure" type="jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral" id="226730285127018095">
                         <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="226730285127018096">
                           <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="226730285127018097">
-                            <node role="expression" type="jetbrains.mps.lang.smodel.structure.EqualsStructurallyExpression" id="226730285127018098">
-                              <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="226730285127018099">
-                                <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="226730285127018100">
-                                  <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="226730285127018101">
-                                    <link role="variableDeclaration" targetNodeId="226730285127018105" resolveInfo="it" />
-                                  </node>
-                                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.SConceptLinkAccess" id="226730285127399166">
-                                    <link role="conceptLinkDeclaration" targetNodeId="1.6050628152419604261" resolveInfo="operandType" />
-                                  </node>
-                                </node>
-                                <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.GetFirstOperation" id="226730285127018103" />
-                              </node>
-                              <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="226730285127018104">
+                            <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="6552123473822747782">
+                              <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="226730285127018104">
                                 <link role="variableDeclaration" targetNodeId="226730285127017444" resolveInfo="type" />
+                              </node>
+                              <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation" id="6552123473822747793">
+                                <node role="conceptArgument" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" id="6552123473822747809">
+                                  <link role="conceptDeclaration" targetNodeId="1.3903367331818357915" resolveInfo="StyledTextType" />
+                                </node>
                               </node>
                             </node>
                           </node>
