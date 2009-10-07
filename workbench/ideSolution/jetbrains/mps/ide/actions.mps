@@ -26836,6 +26836,15 @@
     <node role="modifier" type="jetbrains.mps.lang.plugin.structure.ModificationStatement" id="1177638545603697297">
       <link role="modifiedGroup" targetNodeId="1204991215587" resolveInfo="NodeActions" />
     </node>
+    <node role="modifier" type="jetbrains.mps.lang.plugin.structure.ModificationStatement" id="6462695515358244108">
+      <link role="modifiedGroup" targetNodeId="1204991218714" resolveInfo="ModelActions" />
+    </node>
+    <node role="modifier" type="jetbrains.mps.lang.plugin.structure.ModificationStatement" id="2594916007743946175">
+      <link role="modifiedGroup" targetNodeId="1204991226689" resolveInfo="SolutionActions" />
+    </node>
+    <node role="modifier" type="jetbrains.mps.lang.plugin.structure.ModificationStatement" id="2594916007743946176">
+      <link role="modifiedGroup" targetNodeId="1204991224874" resolveInfo="LanguageActions" />
+    </node>
   </node>
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="8300784086089079434">
     <property name="name" value="OverrideClassMethodStrategy" />
