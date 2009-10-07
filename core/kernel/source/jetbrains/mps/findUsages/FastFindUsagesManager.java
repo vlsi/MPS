@@ -16,6 +16,7 @@
 package jetbrains.mps.findUsages;
 
 import com.intellij.ide.startup.FileSystemSynchronizer;
+import com.intellij.ide.DataManager;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.project.ProjectManager;
 import com.intellij.openapi.roots.ProjectRootManager;
@@ -40,6 +41,7 @@ import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.VFileSystem;
 import jetbrains.mps.kernel.model.SModelUtil;
+import jetbrains.mps.workbench.MPSDataKeys;
 import org.jetbrains.annotations.NotNull;
 import org.apache.commons.lang.StringEscapeUtils;
 
@@ -207,7 +209,7 @@ class FastFindUsagesManager extends FindUsagesManager {
           candidates.add(file);
           return true;
         }
-      }, new GlobalSearchScope() {
+      }, new GlobalSearchScope(MPSDataKeys.PROJECT.getData(DataManager.getInstance().getDataContext())) {
         @Override
         public boolean contains(VirtualFile file) {
           return scopeFiles.contains(file);  

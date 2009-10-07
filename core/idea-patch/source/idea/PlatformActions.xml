@@ -114,6 +114,8 @@
         <action id="CompareTwoFiles" class="com.intellij.openapi.diff.actions.CompareFiles"/>
         <action id="CompareFileWithEditor" class="com.intellij.openapi.diff.actions.CompareFileWithEditor"/>
 
+        <action id="PinToolwindowTab" class="com.intellij.ui.content.tabs.PinToolwindowTabAction"/>
+        
         <group id="MainMenu">
             <group id="FileMenu" popup="true">
                 <group id="FileOpenGroup">
