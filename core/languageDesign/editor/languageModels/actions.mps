@@ -2114,7 +2114,9 @@
                   <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="226730285127012761">
                     <node role="expression" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="226730285127012763">
                       <node role="creator" type="jetbrains.mps.baseLanguage.collections.structure.ListCreatorWithInit" id="226730285127017404">
-                        <node role="elementType" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="226730285127017406" />
+                        <node role="elementType" type="jetbrains.mps.lang.smodel.structure.SConceptType" id="7630810368327719621">
+                          <link role="conceptDeclaraton" targetNodeId="1.4531786690998636238" resolveInfo="AbstractStyledTextOperation" />
+                        </node>
                       </node>
                     </node>
                   </node>
