@@ -44994,9 +44994,20 @@
                           <link role="classConcept" targetNodeId="115.~ModelGenerationStatusManager" resolveInfo="ModelGenerationStatusManager" />
                         </node>
                         <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="7689922788309574894">
-                          <link role="baseMethodDeclaration" targetNodeId="115.~ModelGenerationStatusManager.generationRequired(jetbrains.mps.smodel.SModelDescriptor):boolean" resolveInfo="generationRequired" />
+                          <link role="baseMethodDeclaration" targetNodeId="115.~ModelGenerationStatusManager.generationRequired(jetbrains.mps.smodel.SModelDescriptor,com.intellij.openapi.project.Project):boolean" resolveInfo="generationRequired" />
                           <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="7689922788309574895">
                             <link role="variableDeclaration" targetNodeId="7689922788309574871" resolveInfo="md" />
+                          </node>
+                          <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="3334464602250631396">
+                            <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="3334464602250631394">
+                              <link role="variableDeclaration" targetNodeId="7689922788309574842" resolveInfo="project" />
+                            </node>
+                            <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="3334464602250631486">
+                              <link role="baseMethodDeclaration" targetNodeId="10.~MPSProject.getComponent(java.lang.Class):java.lang.Object" resolveInfo="getComponent" />
+                              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.ClassifierClassExpression" id="3334464602250631515">
+                                <link role="classifier" targetNodeId="43.~Project" resolveInfo="Project" />
+                              </node>
+                            </node>
                           </node>
                         </node>
                       </node>
