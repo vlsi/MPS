@@ -1131,5 +1131,34 @@
       </node>
     </node>
   </node>
+  <node type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="3694488050387762593">
+    <property name="name" value="RedundantInstanceof" />
+    <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="3694488050387762594" />
+    <node role="constructor" type="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" id="3694488050387762595">
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="3694488050387762596" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="3694488050387762597" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="3694488050387762598">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="3694488050387813506">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="3694488050387813507">
+            <property name="name" value="o" />
+            <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="3694488050387813508">
+              <link role="classifier" targetNodeId="150.~Object" resolveInfo="Object" />
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="3694488050387813502">
+          <node role="condition" type="jetbrains.mps.baseLanguage.structure.InstanceOfExpression" id="3694488050387813510">
+            <node role="classType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="3694488050387813513">
+              <link role="classifier" targetNodeId="150.~Object" resolveInfo="Object" />
+            </node>
+            <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="3694488050387813509">
+              <link role="variableDeclaration" targetNodeId="3694488050387813507" resolveInfo="o" />
+            </node>
+          </node>
+          <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="3694488050387813504" />
+        </node>
+      </node>
+    </node>
+  </node>
 </model>
 

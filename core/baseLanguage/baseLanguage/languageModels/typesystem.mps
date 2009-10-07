@@ -19471,5 +19471,67 @@
       <link role="concept" targetNodeId="1.1068390468198" resolveInfo="ClassConcept" />
     </node>
   </node>
+  <node type="jetbrains.mps.lang.typesystem.structure.NonTypesystemRule" id="3545977178604749608">
+    <property name="name" value="checkUnnecessaryInstanceof" />
+    <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="3545977178604749609">
+      <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="3545977178604772268">
+        <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="3545977178604772269">
+          <property name="name" value="classifierType" />
+          <node role="type" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="3545977178604772270">
+            <link role="concept" targetNodeId="1.1107535904670" resolveInfo="ClassifierType" />
+          </node>
+          <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="3545977178604772271">
+            <node role="operand" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference" id="3545977178604772272">
+              <link role="applicableNode" targetNodeId="3545977178604759351" resolveInfo="instanceOfExpression" />
+            </node>
+            <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="3545977178604772273">
+              <link role="link" targetNodeId="1.1081256993305" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="3545977178604772275">
+        <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="3545977178604772276">
+          <property name="name" value="expressionType" />
+          <node role="type" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="3545977178604772277" />
+          <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="3545977178604772285">
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="3545977178604772280">
+              <node role="operand" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference" id="3545977178604772279">
+                <link role="applicableNode" targetNodeId="3545977178604759351" resolveInfo="instanceOfExpression" />
+              </node>
+              <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="3545977178604772284">
+                <link role="link" targetNodeId="1.1081256993304" />
+              </node>
+            </node>
+            <node role="operation" type="jetbrains.mps.lang.typesystem.structure.Node_TypeOperation" id="3545977178604772289" />
+          </node>
+        </node>
+      </node>
+      <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="3545977178604772291">
+        <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="3545977178604772292">
+          <node role="statement" type="jetbrains.mps.lang.typesystem.structure.WarningStatement" id="3545977178604772302">
+            <node role="warningText" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="3545977178604772305">
+              <property name="value" value="unnecessary instanceof" />
+            </node>
+            <node role="nodeToReport" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference" id="3545977178604772306">
+              <link role="applicableNode" targetNodeId="3545977178604759351" resolveInfo="instanceOfExpression" />
+            </node>
+          </node>
+        </node>
+        <node role="condition" type="jetbrains.mps.lang.typesystem.structure.IsSubtypeExpression" id="3545977178604772297">
+          <node role="subtypeExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="3545977178604772300">
+            <link role="variableDeclaration" targetNodeId="3545977178604772276" resolveInfo="expressionType" />
+          </node>
+          <node role="supertypeExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="3545977178604772301">
+            <link role="variableDeclaration" targetNodeId="3545977178604772269" resolveInfo="classifierType" />
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="applicableNode" type="jetbrains.mps.lang.typesystem.structure.ConceptReference" id="3545977178604759351">
+      <property name="name" value="instanceOfExpression" />
+      <link role="concept" targetNodeId="1.1081256982272" resolveInfo="InstanceOfExpression" />
+    </node>
+  </node>
 </model>
 
