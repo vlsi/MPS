@@ -3160,6 +3160,9 @@
         <link role="styleClass" targetNodeId="1215094139260" resolveInfo="Semicolon" />
       </node>
       <node role="cellLayout" type="jetbrains.mps.lang.editor.structure.CellLayout_Indent" id="1237641190890" />
+      <node role="styleItem" type="jetbrains.mps.lang.editor.structure.ParametersInformationStyleClassItem" id="6922796699472257561">
+        <link role="parametersInformation" targetNodeId="4755152624708725521" resolveInfo="BaseMethodParameterInformationQuery" />
+      </node>
     </node>
   </node>
   <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" id="1081792356328">
@@ -8843,6 +8846,9 @@
         <link role="styleClass" targetNodeId="1215094139260" resolveInfo="Semicolon" />
       </node>
       <node role="cellLayout" type="jetbrains.mps.lang.editor.structure.CellLayout_Indent" id="1237641196933" />
+      <node role="styleItem" type="jetbrains.mps.lang.editor.structure.ParametersInformationStyleClassItem" id="6922796699472234080">
+        <link role="parametersInformation" targetNodeId="4755152624708725521" resolveInfo="BaseMethodParameterInformationQuery" />
+      </node>
     </node>
   </node>
   <node type="jetbrains.mps.lang.editor.structure.CellKeyMapDeclaration" id="1178925890397">
