@@ -10396,7 +10396,7 @@
       <node role="ruleConsequence" type="jetbrains.mps.lang.generator.structure.InlineTemplate_RuleConsequence" id="3358009230509159565">
         <node role="templateNode" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="3358009230509159566">
           <link role="classConcept" targetNodeId="13.~DequeSequence" resolveInfo="DequeSequence" />
-          <link role="baseMethodDeclaration" targetNodeId="13.~DequeSequence.fromIterable(java.lang.Iterable):jetbrains.mps.internal.collections.runtime.IQueueSequence" resolveInfo="fromIterable" />
+          <link role="baseMethodDeclaration" targetNodeId="13.~DequeSequence.fromIterable(java.lang.Iterable):jetbrains.mps.internal.collections.runtime.IDequeSequence" resolveInfo="fromIterable" />
           <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.Expression" id="3358009230509159567">
             <node role="nodeMacro$attribute" type="jetbrains.mps.lang.generator.structure.CopySrcNodeMacro" id="3358009230509159568">
               <node role="sourceNodeQuery" type="jetbrains.mps.lang.generator.structure.SourceSubstituteMacro_SourceNodeQuery" id="3358009230509159569">
