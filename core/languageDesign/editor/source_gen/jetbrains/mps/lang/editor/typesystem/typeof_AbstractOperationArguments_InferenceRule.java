@@ -53,7 +53,7 @@ public class typeof_AbstractOperationArguments_InferenceRule extends AbstractInf
   }
 
   public String getApplicableConceptFQName() {
-    return "jetbrains.mps.lang.editor.structure.AbstractOperation";
+    return "jetbrains.mps.lang.editor.structure.AbstractStyledTextOperation";
   }
 
   public boolean isApplicable(SNode argument) {

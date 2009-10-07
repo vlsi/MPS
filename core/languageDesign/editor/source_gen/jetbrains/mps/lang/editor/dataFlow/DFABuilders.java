@@ -7,6 +7,6 @@ import jetbrains.mps.lang.dataFlow.DataFlowManager;
 
 public class DFABuilders extends DataFlowBuilders {
   public void install(DataFlowManager manager) {
-    manager.register("jetbrains.mps.lang.editor.structure.AbstractOperation", new AbstractOperation_DataFlow());
+    manager.register("jetbrains.mps.lang.editor.structure.AbstractStyledTextOperation", new AbstractStyledTextOperation_DataFlow());
   }
 }

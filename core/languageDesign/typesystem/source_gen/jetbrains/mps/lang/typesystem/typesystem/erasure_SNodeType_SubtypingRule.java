@@ -27,4 +27,8 @@ public class erasure_SNodeType_SubtypingRule extends SubtypingRule_Runtime imple
   public boolean isWeak() {
     return false;
   }
+
+  public boolean surelyKeepsConcept() {
+    return true;
+  }
 }

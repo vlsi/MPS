@@ -24,7 +24,7 @@ public class typeof_AbstractOperation_InferenceRule extends AbstractInferenceRul
   }
 
   public String getApplicableConceptFQName() {
-    return "jetbrains.mps.lang.editor.structure.AbstractOperation";
+    return "jetbrains.mps.lang.editor.structure.AbstractStyledTextOperation";
   }
 
   public boolean isApplicable(SNode argument) {
