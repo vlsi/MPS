@@ -831,10 +831,18 @@
               </node>
             </node>
           </node>
-          <node role="condition" type="jetbrains.mps.baseLanguage.structure.NotEqualsExpression" id="6830288638224323663">
-            <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="6830288638224323666" />
-            <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="6830288638224323662">
-              <link role="variableDeclaration" targetNodeId="335465233322498783" resolveInfo="vmParams" />
+          <node role="condition" type="jetbrains.mps.baseLanguage.structure.AndExpression" id="1552918343118808596">
+            <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1552918343118808600">
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1552918343118808599">
+                <link role="variableDeclaration" targetNodeId="335465233322498783" resolveInfo="vmParams" />
+              </node>
+              <node role="operation" type="jetbrains.mps.baseLanguage.structure.IsNotEmptyOperation" id="1552918343118808604" />
+            </node>
+            <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.NotEqualsExpression" id="6830288638224323663">
+              <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="6830288638224323662">
+                <link role="variableDeclaration" targetNodeId="335465233322498783" resolveInfo="vmParams" />
+              </node>
+              <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="6830288638224323666" />
             </node>
           </node>
         </node>
@@ -885,10 +893,18 @@
               </node>
             </node>
           </node>
-          <node role="condition" type="jetbrains.mps.baseLanguage.structure.NotEqualsExpression" id="6830288638224323679">
-            <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="6830288638224323682" />
-            <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="6830288638224323678">
-              <link role="variableDeclaration" targetNodeId="335465233322498780" resolveInfo="programParams" />
+          <node role="condition" type="jetbrains.mps.baseLanguage.structure.AndExpression" id="1552918343118808611">
+            <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1552918343118808615">
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1552918343118808614">
+                <link role="variableDeclaration" targetNodeId="335465233322498780" resolveInfo="programParams" />
+              </node>
+              <node role="operation" type="jetbrains.mps.baseLanguage.structure.IsNotEmptyOperation" id="1552918343118808619" />
+            </node>
+            <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.NotEqualsExpression" id="6830288638224323679">
+              <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="6830288638224323678">
+                <link role="variableDeclaration" targetNodeId="335465233322498780" resolveInfo="programParams" />
+              </node>
+              <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="6830288638224323682" />
             </node>
           </node>
         </node>
@@ -931,24 +947,17 @@
             </node>
           </node>
           <node role="condition" type="jetbrains.mps.baseLanguage.structure.AndExpression" id="1460617595354700755">
-            <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.GreaterThanExpression" id="1460617595354700764">
-              <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1460617595354700767">
-                <property name="value" value="0" />
-              </node>
-              <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1460617595354700759">
-                <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1460617595354700758">
-                  <link role="variableDeclaration" targetNodeId="335465233322498786" resolveInfo="workingDir" />
-                </node>
-                <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1460617595354700763">
-                  <link role="baseMethodDeclaration" targetNodeId="9.~String.length():int" resolveInfo="length" />
-                </node>
-              </node>
-            </node>
             <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.NotEqualsExpression" id="6830288638224323695">
               <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="6830288638224323694">
                 <link role="variableDeclaration" targetNodeId="335465233322498786" resolveInfo="workingDir" />
               </node>
               <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="6830288638224323698" />
+            </node>
+            <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1552918343118808606">
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1552918343118808605">
+                <link role="variableDeclaration" targetNodeId="335465233322498786" resolveInfo="workingDir" />
+              </node>
+              <node role="operation" type="jetbrains.mps.baseLanguage.structure.IsNotEmptyOperation" id="1552918343118808610" />
             </node>
           </node>
         </node>
