@@ -6,6 +6,7 @@ import jetbrains.mps.plugins.pluginparts.actions.GeneratedAction;
 import javax.swing.Icon;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
+import com.intellij.openapi.project.Project;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.IOperationContext;
 import org.jetbrains.annotations.NotNull;
@@ -28,6 +29,7 @@ public class GenerateTemplateQueries_Action extends GeneratedAction {
   private static final Icon ICON = null;
   protected static Log log = LogFactory.getLog(GenerateTemplateQueries_Action.class);
 
+  private Project project;
   private IModule module;
   private IOperationContext context;
   private boolean regenerate;
@@ -67,6 +69,10 @@ public class GenerateTemplateQueries_Action extends GeneratedAction {
     if (!(super.collectActionData(event))) {
       return false;
     }
+    this.project = event.getData(MPSDataKeys.PROJECT);
+    if (this.project == null) {
+      return false;
+    }
     this.module = event.getData(MPSDataKeys.MODULE);
     if (this.module == null) {
       return false;
@@ -89,7 +95,7 @@ public class GenerateTemplateQueries_Action extends GeneratedAction {
           if (!(GenerateTemplateQueries_Action.this.regenerate)) {
             models.value = ListSequence.fromList(models.value).where(new IWhereFilter<SModelDescriptor>() {
               public boolean accept(SModelDescriptor it) {
-                return ModelGenerationStatusManager.getInstance().generationRequired(it,null);
+                return ModelGenerationStatusManager.getInstance().generationRequired(it, GenerateTemplateQueries_Action.this.project);
               }
             }).toListSequence();
           }

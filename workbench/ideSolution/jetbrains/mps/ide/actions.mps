@@ -9613,6 +9613,10 @@
     <property name="name" value="GenerateTemplateQueries" />
     <property name="caption" value="Generate Template Queries" />
     <property name="outsideCommandExecution" value="true" />
+    <node role="parameter" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterDeclaration" id="1370449523394267082">
+      <property name="name" value="project" />
+      <link role="key" targetNodeId="100.~PlatformDataKeys.PROJECT" resolveInfo="PROJECT" />
+    </node>
     <node role="parameter" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterDeclaration" id="1229274266489">
       <property name="name" value="module" />
       <link role="key" targetNodeId="107.~MPSDataKeys.MODULE" resolveInfo="MODULE" />
@@ -9729,9 +9733,15 @@
                                       <link role="classConcept" targetNodeId="52.~ModelGenerationStatusManager" resolveInfo="ModelGenerationStatusManager" />
                                     </node>
                                     <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1232133232071">
-                                      <link role="baseMethodDeclaration" targetNodeId="52.~ModelGenerationStatusManager.generationRequired(jetbrains.mps.smodel.SModelDescriptor):boolean" resolveInfo="generationRequired" />
+                                      <link role="baseMethodDeclaration" targetNodeId="52.~ModelGenerationStatusManager.generationRequired(jetbrains.mps.smodel.SModelDescriptor,com.intellij.openapi.project.Project):boolean" resolveInfo="generationRequired" />
                                       <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1232133232072">
                                         <link role="variableDeclaration" targetNodeId="1232133232073" resolveInfo="it" />
+                                      </node>
+                                      <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1370449523394358579">
+                                        <node role="operand" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpression" id="1370449523394358580" />
+                                        <node role="operation" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterReferenceOperation" id="1370449523394358581">
+                                          <link role="member" targetNodeId="1370449523394267082" resolveInfo="project" />
+                                        </node>
                                       </node>
                                     </node>
                                   </node>
