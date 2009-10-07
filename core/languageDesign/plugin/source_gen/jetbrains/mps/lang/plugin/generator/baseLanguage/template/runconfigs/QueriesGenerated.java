@@ -178,6 +178,10 @@ public class QueriesGenerated {
     return _context.getOutputNodeByInputNodeAndMappingLabel(SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(_context.getNode(), "operation", true), "jetbrains.mps.lang.plugin.structure.PersistentPropertyReference"), "member", false), "map_PersistentProperty");
   }
 
+  public static Object referenceMacro_GetReferent_7603318568954580210(final IOperationContext operationContext, final ReferenceMacroContext _context) {
+    return RunConfigCreator_Behavior.call_getCreatorTypeParameter_5528847031674330314(_context.getNode());
+  }
+
   public static Object referenceMacro_GetReferent_7840798570674946672(final IOperationContext operationContext, final ReferenceMacroContext _context) {
     return _context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "map_FactoryConstructor");
   }

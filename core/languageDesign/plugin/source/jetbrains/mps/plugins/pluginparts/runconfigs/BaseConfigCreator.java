@@ -10,7 +10,6 @@ import com.intellij.execution.junit.RuntimeConfigurationProducer;
 import com.intellij.openapi.util.Computable;
 import com.intellij.psi.PsiElement;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.smodel.SNode;
 
 public abstract class BaseConfigCreator<T> extends RuntimeConfigurationProducer {
   private PsiElement mySourceElement;
@@ -37,6 +36,7 @@ public abstract class BaseConfigCreator<T> extends RuntimeConfigurationProducer 
     if (!(location instanceof MPSLocation)) return null;
     MPSLocation mpsLocation = (MPSLocation) location;
     final MPSPsiElement nodePsiElement = mpsLocation.getPsiElement();
+    if (!isApplicable(nodePsiElement.getMPSItem())) return null;
 
     RunConfiguration config = ModelAccess.instance().runReadAction(new Computable<RunConfiguration>() {
       public RunConfiguration compute() {
@@ -49,6 +49,8 @@ public abstract class BaseConfigCreator<T> extends RuntimeConfigurationProducer 
   }
 
   protected abstract RunConfiguration doCreateConfiguration(T node);
+
+  protected abstract boolean isApplicable(Object element);  
 
   public int compareTo(Object o) {
     return PREFERED;

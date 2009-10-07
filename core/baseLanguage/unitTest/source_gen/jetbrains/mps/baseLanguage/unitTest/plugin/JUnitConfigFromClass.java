@@ -45,4 +45,8 @@ public class JUnitConfigFromClass extends BaseConfigCreator<SNode> implements Cl
   public JUnitConfigFromClass clone() {
     return ((JUnitConfigFromClass)super.clone());
   }
+
+  protected boolean isApplicable(Object element) {
+    return element instanceof SNode;
+  }
 }
