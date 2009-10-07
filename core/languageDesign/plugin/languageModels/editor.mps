@@ -4539,11 +4539,6 @@
       <node role="cellLayout" type="jetbrains.mps.lang.editor.structure.CellLayout_Horizontal" id="8415911927033050430" />
     </node>
   </node>
-  <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" id="5854436268949471922">
-    <property name="package" value="RunConfigs.Create" />
-    <link role="conceptDeclaration" targetNodeId="1.8415911927033048374" resolveInfo="RunConfigCreator" />
-    <node role="cellModel" type="jetbrains.mps.lang.editor.structure.EditorCellModel" id="5854436268949471923" />
-  </node>
   <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" id="5528847031674321872">
     <property name="package" value="RunConfigs.Create.Creator" />
     <link role="conceptDeclaration" targetNodeId="1.5528847031674321868" resolveInfo="RunModelConfigCreator" />
