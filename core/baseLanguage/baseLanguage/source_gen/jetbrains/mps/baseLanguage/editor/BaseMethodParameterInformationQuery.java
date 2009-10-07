@@ -36,7 +36,7 @@ public class BaseMethodParameterInformationQuery extends ParametersInformation {
   public void getStyledMethodPresentation(SNode node, EditorContext editorContext, SNode parameterObject, StyledTextPrinter styledText) {
     SNode argument = editorContext.getSelectedNode();
     SNode methodCall = SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.IMethodCall");
-    while (argument != null && !(ListSequence.fromList(SLinkOperations.getTargets(methodCall, "actualArgument", true)).contains(argument))) {
+    while (argument != null && !(SNodeOperations.isInstanceOf(argument, "jetbrains.mps.baseLanguage.structure.Expression") && ListSequence.fromList(SLinkOperations.getTargets(methodCall, "actualArgument", true)).contains(SNodeOperations.cast(argument, "jetbrains.mps.baseLanguage.structure.Expression")))) {
       argument = SNodeOperations.getParent(argument);
     }
     int argumentIndex = -1;
