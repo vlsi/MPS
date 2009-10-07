@@ -16,7 +16,6 @@ public class RunConfigCreator extends BaseConcept implements INamedConcept {
   public static final String ALIAS = "alias";
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
   public static final String RC_TYPE = "rcType";
-  public static final String CREATE_BLOCK = "createBlock";
 
   public RunConfigCreator(SNode node) {
     super(node);
@@ -60,14 +59,6 @@ public class RunConfigCreator extends BaseConcept implements INamedConcept {
 
   public void setRcType(RunConfigurationTypeDeclaration node) {
     super.setReferent(RunConfigCreator.RC_TYPE, node);
-  }
-
-  public CreateRunConfigBlock getCreateBlock() {
-    return (CreateRunConfigBlock)this.getChild(CreateRunConfigBlock.class, RunConfigCreator.CREATE_BLOCK);
-  }
-
-  public void setCreateBlock(CreateRunConfigBlock node) {
-    super.setChild(RunConfigCreator.CREATE_BLOCK, node);
   }
 
   public static RunConfigCreator newInstance(SModel sm, boolean init) {

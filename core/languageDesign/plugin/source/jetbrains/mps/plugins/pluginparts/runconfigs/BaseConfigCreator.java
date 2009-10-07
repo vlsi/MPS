@@ -12,7 +12,7 @@ import com.intellij.psi.PsiElement;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SNode;
 
-public abstract class BaseConfigCreator extends RuntimeConfigurationProducer {
+public abstract class BaseConfigCreator<T> extends RuntimeConfigurationProducer {
   private PsiElement mySourceElement;
   private ConfigurationContext myContext;
 
@@ -36,11 +36,11 @@ public abstract class BaseConfigCreator extends RuntimeConfigurationProducer {
     myContext = context;
     if (!(location instanceof MPSLocation)) return null;
     MPSLocation mpsLocation = (MPSLocation) location;
-    final NodePsiElement nodePsiElement = mpsLocation.getPsiElement();
+    final MPSPsiElement nodePsiElement = mpsLocation.getPsiElement();
 
     RunConfiguration config = ModelAccess.instance().runReadAction(new Computable<RunConfiguration>() {
       public RunConfiguration compute() {
-        return doCreateConfiguration(nodePsiElement.getMPSNode());
+        return doCreateConfiguration((T) nodePsiElement.getMPSItem());
       }
     });
 
@@ -48,7 +48,7 @@ public abstract class BaseConfigCreator extends RuntimeConfigurationProducer {
     return new RunnerAndConfigurationSettingsImpl(RunManagerImpl.getInstanceImpl(location.getProject()), config, false);
   }
 
-  protected abstract RunConfiguration doCreateConfiguration(SNode node);
+  protected abstract RunConfiguration doCreateConfiguration(T node);
 
   public int compareTo(Object o) {
     return PREFERED;

@@ -941,7 +941,7 @@
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1203853034639">
     <property name="package" value="Shared" />
     <property name="name" value="ConceptFunctionParameter_node" />
-    <link role="extends" targetNodeId="2.1107135704075" resolveInfo="ConceptFunctionParameter" />
+    <link role="extends" targetNodeId="5854436268949437211" resolveInfo="ConceptFunctionParameter_CreatorType" />
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1204041802621">
       <property name="value" value="node" />
       <link role="conceptPropertyDeclaration" targetNodeId="6.1137473891462" resolveInfo="alias" />
@@ -1091,7 +1091,7 @@
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1204477852167">
     <property name="package" value="Shared" />
     <property name="name" value="ConceptFunctionParameter_IModule" />
-    <link role="extends" targetNodeId="2.1107135704075" resolveInfo="ConceptFunctionParameter" />
+    <link role="extends" targetNodeId="5854436268949437211" resolveInfo="ConceptFunctionParameter_CreatorType" />
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1204477987839">
       <property name="value" value="module" />
       <link role="conceptPropertyDeclaration" targetNodeId="6.1137473891462" resolveInfo="alias" />
@@ -3140,9 +3140,9 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="8415911927033048374">
-    <property name="package" value="RunConfigs.Create" />
+    <property name="package" value="RunConfigs.Create.Creator" />
     <property name="name" value="RunConfigCreator" />
-    <property name="rootable" value="true" />
+    <property name="rootable" value="false" />
     <link role="extends" targetNodeId="6.1133920641626" resolveInfo="BaseConcept" />
     <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="8415911927033051518">
       <property name="metaClass" value="reference" />
@@ -3153,27 +3153,18 @@
     <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="8415911927033048377">
       <link role="intfc" targetNodeId="6.1169194658468" resolveInfo="INamedConcept" />
     </node>
-    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="8415911927033048378">
-      <property name="metaClass" value="aggregation" />
-      <property name="role" value="createBlock" />
-      <property name="sourceCardinality" value="1" />
-      <link role="target" targetNodeId="8415911927033048375" resolveInfo="CreateRunConfigBlock" />
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.BooleanConceptProperty" id="5528847031674323619">
+      <link role="conceptPropertyDeclaration" targetNodeId="6.1137473854053" resolveInfo="abstract" />
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="8415911927033048375">
-    <property name="package" value="RunConfigs.Create" />
-    <property name="name" value="CreateRunConfigBlock" />
-    <link role="extends" targetNodeId="2.1137021947720" resolveInfo="ConceptFunction" />
+    <property name="package" value="RunConfigs.Create.Function" />
+    <property name="name" value="CreateNodeRunConfigBlock" />
+    <property name="rootable" value="false" />
+    <link role="extends" targetNodeId="5854436268949437223" resolveInfo="BaseCreateRunConfigFunction" />
     <node role="conceptLink" type="jetbrains.mps.lang.structure.structure.ReferenceConceptLink" id="8415911927033051532">
       <link role="conceptLinkDeclaration" targetNodeId="2.1161119487665" resolveInfo="applicableConceptFunctionParameter" />
       <link role="target" targetNodeId="1203853034639" resolveInfo="ConceptFunctionParameter_node" />
-    </node>
-    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="8415911927033050423">
-      <property name="value" value="create" />
-      <link role="conceptPropertyDeclaration" targetNodeId="6.1137473891462" resolveInfo="alias" />
-    </node>
-    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.BooleanConceptProperty" id="8415911927033050425">
-      <link role="conceptPropertyDeclaration" targetNodeId="2.1216468774225" resolveInfo="showName" />
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="8415911927033048376">
@@ -3182,13 +3173,106 @@
     <link role="extends" targetNodeId="2.1068580123157" resolveInfo="Statement" />
     <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="8415911927033050433">
       <property name="metaClass" value="aggregation" />
-      <property name="role" value="nodeExpr" />
+      <property name="role" value="contextItem" />
       <property name="sourceCardinality" value="1" />
       <link role="target" targetNodeId="2.1068431790191" resolveInfo="Expression" />
     </node>
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="8415911927033295831">
-      <property name="value" value="main node" />
+      <property name="value" value="main context item" />
       <link role="conceptPropertyDeclaration" targetNodeId="6.1137473891462" resolveInfo="alias" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="5854436268949437205">
+    <property name="package" value="Shared" />
+    <property name="name" value="ConceptFunctionParameter_Model" />
+    <link role="extends" targetNodeId="5854436268949437211" resolveInfo="ConceptFunctionParameter_CreatorType" />
+    <node role="conceptLink" type="jetbrains.mps.lang.structure.structure.AggregationConceptLink" id="5854436268949437208">
+      <link role="conceptLinkDeclaration" targetNodeId="2.1137545963098" resolveInfo="conceptFunctionParameterType" />
+      <node role="target" type="jetbrains.mps.lang.smodel.structure.SModelType" id="5854436268949437210" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="5854436268949437206">
+      <property name="value" value="model" />
+      <link role="conceptPropertyDeclaration" targetNodeId="6.1137473891462" resolveInfo="alias" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.BooleanConceptProperty" id="5854436268949437207">
+      <link role="conceptPropertyDeclaration" targetNodeId="6.1137473994950" resolveInfo="dontSubstituteByDefault" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="5854436268949437211">
+    <property name="package" value="Shared" />
+    <property name="name" value="ConceptFunctionParameter_CreatorType" />
+    <link role="extends" targetNodeId="2.1107135704075" resolveInfo="ConceptFunctionParameter" />
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.BooleanConceptProperty" id="5854436268949437212">
+      <link role="conceptPropertyDeclaration" targetNodeId="6.1137473854053" resolveInfo="abstract" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="5854436268949437221">
+    <property name="package" value="RunConfigs.Create.Function" />
+    <property name="name" value="CreateModuleRunConfigBlock" />
+    <link role="extends" targetNodeId="5854436268949437223" resolveInfo="BaseCreateRunConfigFunction" />
+    <node role="conceptLink" type="jetbrains.mps.lang.structure.structure.ReferenceConceptLink" id="5854436268949437226">
+      <link role="conceptLinkDeclaration" targetNodeId="2.1161119487665" resolveInfo="applicableConceptFunctionParameter" />
+      <link role="target" targetNodeId="1204477852167" resolveInfo="ConceptFunctionParameter_IModule" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="5854436268949437222">
+    <property name="package" value="RunConfigs.Create.Function" />
+    <property name="name" value="CreateModelRunConfigBlock" />
+    <link role="extends" targetNodeId="5854436268949437223" resolveInfo="BaseCreateRunConfigFunction" />
+    <node role="conceptLink" type="jetbrains.mps.lang.structure.structure.ReferenceConceptLink" id="5854436268949437227">
+      <link role="conceptLinkDeclaration" targetNodeId="2.1161119487665" resolveInfo="applicableConceptFunctionParameter" />
+      <link role="target" targetNodeId="5854436268949437205" resolveInfo="ConceptFunctionParameter_Model" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="5854436268949437223">
+    <property name="package" value="RunConfigs.Create.Function" />
+    <property name="name" value="BaseCreateRunConfigFunction" />
+    <link role="extends" targetNodeId="2.1137021947720" resolveInfo="ConceptFunction" />
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="5854436268949437224">
+      <property name="value" value="create" />
+      <link role="conceptPropertyDeclaration" targetNodeId="6.1137473891462" resolveInfo="alias" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.BooleanConceptProperty" id="5528847031674340437">
+      <link role="conceptPropertyDeclaration" targetNodeId="6.1137473854053" resolveInfo="abstract" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.BooleanConceptProperty" id="5854436268949437225">
+      <link role="conceptPropertyDeclaration" targetNodeId="2.1216468774225" resolveInfo="showName" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="5528847031674321866">
+    <property name="package" value="RunConfigs.Create.Creator" />
+    <property name="name" value="RunNodeConfigCreator" />
+    <property name="rootable" value="true" />
+    <link role="extends" targetNodeId="8415911927033048374" resolveInfo="RunConfigCreator" />
+    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="5528847031674321871">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="createNodeRunConfigBlock" />
+      <property name="sourceCardinality" value="1" />
+      <link role="target" targetNodeId="8415911927033048375" resolveInfo="CreateNodeRunConfigBlock" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="5528847031674321867">
+    <property name="package" value="RunConfigs.Create.Creator" />
+    <property name="name" value="RunModuleConfigCreator" />
+    <property name="rootable" value="true" />
+    <link role="extends" targetNodeId="8415911927033048374" resolveInfo="RunConfigCreator" />
+    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="5528847031674321870">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="createModuleRunConfigBlock" />
+      <property name="sourceCardinality" value="1" />
+      <link role="target" targetNodeId="5854436268949437221" resolveInfo="CreateModuleRunConfigBlock" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="5528847031674321868">
+    <property name="package" value="RunConfigs.Create.Creator" />
+    <property name="name" value="RunModelConfigCreator" />
+    <property name="rootable" value="true" />
+    <link role="extends" targetNodeId="8415911927033048374" resolveInfo="RunConfigCreator" />
+    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="5528847031674321869">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="createModelRunConfigBlock" />
+      <property name="sourceCardinality" value="1" />
+      <link role="target" targetNodeId="5854436268949437222" resolveInfo="CreateModelRunConfigBlock" />
     </node>
   </node>
 </model>

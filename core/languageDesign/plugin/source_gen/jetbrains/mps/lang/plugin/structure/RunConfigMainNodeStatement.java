@@ -11,18 +11,18 @@ import jetbrains.mps.project.GlobalScope;
 
 public class RunConfigMainNodeStatement extends Statement {
   public static final String concept = "jetbrains.mps.lang.plugin.structure.RunConfigMainNodeStatement";
-  public static final String NODE_EXPR = "nodeExpr";
+  public static final String CONTEXT_ITEM = "contextItem";
 
   public RunConfigMainNodeStatement(SNode node) {
     super(node);
   }
 
-  public Expression getNodeExpr() {
-    return (Expression)this.getChild(Expression.class, RunConfigMainNodeStatement.NODE_EXPR);
+  public Expression getContextItem() {
+    return (Expression)this.getChild(Expression.class, RunConfigMainNodeStatement.CONTEXT_ITEM);
   }
 
-  public void setNodeExpr(Expression node) {
-    super.setChild(RunConfigMainNodeStatement.NODE_EXPR, node);
+  public void setContextItem(Expression node) {
+    super.setChild(RunConfigMainNodeStatement.CONTEXT_ITEM, node);
   }
 
   public static RunConfigMainNodeStatement newInstance(SModel sm, boolean init) {

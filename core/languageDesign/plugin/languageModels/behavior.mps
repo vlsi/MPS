@@ -2855,5 +2855,158 @@
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="7974234327424528834" />
     </node>
   </node>
+  <node type="jetbrains.mps.lang.behavior.structure.ConceptBehavior" id="5528847031674330311">
+    <property name="package" value="RunConfigs.Create.Creator" />
+    <link role="concept" targetNodeId="1.8415911927033048374" resolveInfo="RunConfigCreator" />
+    <node role="constructor" type="jetbrains.mps.lang.behavior.structure.ConceptConstructorDeclaration" id="5528847031674330312">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="5528847031674330313" />
+    </node>
+    <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="5528847031674330314">
+      <property name="isVirtual" value="true" />
+      <property name="name" value="getCreatorTypeParameter" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="5528847031674330315" />
+      <node role="returnType" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="5528847031674340349">
+        <link role="concept" targetNodeId="6.1107461130800" resolveInfo="Classifier" />
+      </node>
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="5528847031674330317">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="5528847031674334458">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="5528847031674334460" />
+        </node>
+      </node>
+    </node>
+    <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="5528847031674340387">
+      <property name="name" value="getFunction" />
+      <property name="isVirtual" value="true" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="5528847031674340388" />
+      <node role="returnType" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="5528847031674340391">
+        <link role="concept" targetNodeId="1.5854436268949437223" resolveInfo="BaseCreateRunConfigFunction" />
+      </node>
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="5528847031674340390">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="5528847031674340394">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="5528847031674340396" />
+        </node>
+      </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.behavior.structure.ConceptBehavior" id="5528847031674334461">
+    <property name="package" value="RunConfigs.Create.Creator" />
+    <link role="concept" targetNodeId="1.5528847031674321868" resolveInfo="RunModelConfigCreator" />
+    <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="5528847031674334464">
+      <property name="name" value="getCreatorTypeParameter" />
+      <link role="overriddenMethod" targetNodeId="5528847031674330314" resolveInfo="getCreatorTypeParameter" />
+      <node role="returnType" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="5528847031674340353">
+        <link role="concept" targetNodeId="6.1107461130800" resolveInfo="Classifier" />
+      </node>
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="5528847031674334469" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="5528847031674334473">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="5528847031674340350">
+          <node role="expression" type="jetbrains.mps.lang.smodel.structure.NodeRefExpression" id="5528847031674340351">
+            <link role="referentNode" targetNodeId="5.~SModel" resolveInfo="SModel" />
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="5528847031674340397">
+      <property name="name" value="getFunction" />
+      <link role="overriddenMethod" targetNodeId="5528847031674340387" resolveInfo="getFunction" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="5528847031674340400">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="5528847031674340403">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="5528847031674340405">
+            <node role="operand" type="jetbrains.mps.lang.behavior.structure.ThisNodeExpression" id="5528847031674340404" />
+            <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="5528847031674340409">
+              <link role="link" targetNodeId="1.5528847031674321869" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="returnType" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="5528847031674340401">
+        <link role="concept" targetNodeId="1.5854436268949437223" resolveInfo="BaseCreateRunConfigFunction" />
+      </node>
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="5528847031674340402" />
+    </node>
+    <node role="constructor" type="jetbrains.mps.lang.behavior.structure.ConceptConstructorDeclaration" id="5528847031674334462">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="5528847031674334463" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.behavior.structure.ConceptBehavior" id="5528847031674340330">
+    <property name="package" value="RunConfigs.Create.Creator" />
+    <link role="concept" targetNodeId="1.5528847031674321867" resolveInfo="RunModuleConfigCreator" />
+    <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="5528847031674340333">
+      <property name="name" value="getCreatorTypeParameter" />
+      <link role="overriddenMethod" targetNodeId="5528847031674330314" resolveInfo="getCreatorTypeParameter" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="5528847031674340336">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="5528847031674340347">
+          <node role="expression" type="jetbrains.mps.lang.smodel.structure.NodeRefExpression" id="5528847031674340348">
+            <link role="referentNode" targetNodeId="9.~IModule" resolveInfo="IModule" />
+          </node>
+        </node>
+      </node>
+      <node role="returnType" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="5528847031674340354">
+        <link role="concept" targetNodeId="6.1107461130800" resolveInfo="Classifier" />
+      </node>
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="5528847031674340338" />
+    </node>
+    <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="5528847031674340410">
+      <property name="name" value="getFunction" />
+      <link role="overriddenMethod" targetNodeId="5528847031674340387" resolveInfo="getFunction" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="5528847031674340413">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="5528847031674340416">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="5528847031674340418">
+            <node role="operand" type="jetbrains.mps.lang.behavior.structure.ThisNodeExpression" id="5528847031674340417" />
+            <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="5528847031674340422">
+              <link role="link" targetNodeId="1.5528847031674321870" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="returnType" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="5528847031674340414">
+        <link role="concept" targetNodeId="1.5854436268949437223" resolveInfo="BaseCreateRunConfigFunction" />
+      </node>
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="5528847031674340415" />
+    </node>
+    <node role="constructor" type="jetbrains.mps.lang.behavior.structure.ConceptConstructorDeclaration" id="5528847031674340331">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="5528847031674340332" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.behavior.structure.ConceptBehavior" id="5528847031674340355">
+    <property name="package" value="RunConfigs.Create.Creator" />
+    <link role="concept" targetNodeId="1.5528847031674321866" resolveInfo="RunNodeConfigCreator" />
+    <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="5528847031674340358">
+      <property name="name" value="getCreatorTypeParameter" />
+      <link role="overriddenMethod" targetNodeId="5528847031674330314" resolveInfo="getCreatorTypeParameter" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="5528847031674340361">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="5528847031674340364">
+          <node role="expression" type="jetbrains.mps.lang.smodel.structure.NodeRefExpression" id="5528847031674340365">
+            <link role="referentNode" targetNodeId="5.~SNode" resolveInfo="SNode" />
+          </node>
+        </node>
+      </node>
+      <node role="returnType" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="5528847031674340362">
+        <link role="concept" targetNodeId="6.1107461130800" resolveInfo="Classifier" />
+      </node>
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="5528847031674340363" />
+    </node>
+    <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="5528847031674340423">
+      <property name="name" value="getFunction" />
+      <link role="overriddenMethod" targetNodeId="5528847031674340387" resolveInfo="getFunction" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="5528847031674340426">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="5528847031674340429">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="5528847031674340431">
+            <node role="operand" type="jetbrains.mps.lang.behavior.structure.ThisNodeExpression" id="5528847031674340430" />
+            <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="5528847031674340435">
+              <link role="link" targetNodeId="1.5528847031674321871" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="returnType" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="5528847031674340427">
+        <link role="concept" targetNodeId="1.5854436268949437223" resolveInfo="BaseCreateRunConfigFunction" />
+      </node>
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="5528847031674340428" />
+    </node>
+    <node role="constructor" type="jetbrains.mps.lang.behavior.structure.ConceptConstructorDeclaration" id="5528847031674340356">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="5528847031674340357" />
+    </node>
+  </node>
 </model>
 

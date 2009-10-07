@@ -1,8 +1,8 @@
 package jetbrains.mps.plugins.pluginparts.runconfigs;
 
 import com.intellij.execution.Location;
-import com.intellij.psi.PsiElement;
 import com.intellij.openapi.project.Project;
+import com.intellij.psi.PsiElement;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.Iterator;
@@ -10,18 +10,18 @@ import java.util.ArrayList;
 
 import jetbrains.mps.smodel.SNode;
 
-public class MPSLocation extends Location {
+public class MPSLocation<T> extends Location {
   private Project myProject;
-  private SNode myNode;
+  private T myItem;
 
-  public MPSLocation(Project project,SNode node) {
+  public MPSLocation(Project project, T item) {
     myProject = project;
-    myNode = node;
+    myItem = item;
   }
 
   @NotNull
-  public NodePsiElement getPsiElement() {
-    return new NodePsiElement(myNode);
+  public MPSPsiElement<T> getPsiElement() {
+    return new MPSPsiElement<T>(myItem);
   }
 
   @NotNull

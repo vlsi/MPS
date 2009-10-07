@@ -17,8 +17,9 @@ import jetbrains.mps.lang.plugin.behavior.RunConfigurationDeclaration_Behavior;
 import jetbrains.mps.lang.plugin.behavior.ActionDeclaration_Behavior;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.generator.template.ReferenceMacroContext;
-import jetbrains.mps.generator.template.IfMacroContext;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.lang.plugin.behavior.RunConfigCreator_Behavior;
+import jetbrains.mps.generator.template.IfMacroContext;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
@@ -137,7 +138,7 @@ public class QueriesGenerated {
   }
 
   public static Object referenceMacro_GetReferent_5447563960349298683(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return _context.getOutputNodeByInputNodeAndMappingLabel(SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.lang.plugin.structure.RunConfigCreator", false, false), "map_ConfigCreatorClass");
+    return _context.getOutputNodeByInputNodeAndMappingLabel((SNode)SNodeOperations.getContainingRoot(_context.getNode()), "map_ConfigCreatorClass");
   }
 
   public static Object referenceMacro_GetReferent_5447563960349298700(final IOperationContext operationContext, final ReferenceMacroContext _context) {
@@ -145,7 +146,23 @@ public class QueriesGenerated {
   }
 
   public static Object referenceMacro_GetReferent_5447563960349298714(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return _context.getOutputNodeByInputNodeAndMappingLabel(SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.lang.plugin.structure.RunConfigCreator", false, false), "map_ConfigCreatorClass");
+    return _context.getOutputNodeByInputNodeAndMappingLabel((SNode)SNodeOperations.getContainingRoot(_context.getNode()), "map_ConfigCreatorClass");
+  }
+
+  public static Object referenceMacro_GetReferent_5528847031674334455(final IOperationContext operationContext, final ReferenceMacroContext _context) {
+    return RunConfigCreator_Behavior.call_getCreatorTypeParameter_5528847031674330314(_context.getNode());
+  }
+
+  public static Object referenceMacro_GetReferent_5528847031674340374(final IOperationContext operationContext, final ReferenceMacroContext _context) {
+    return RunConfigCreator_Behavior.call_getCreatorTypeParameter_5528847031674330314(_context.getNode());
+  }
+
+  public static Object referenceMacro_GetReferent_5528847031674340381(final IOperationContext operationContext, final ReferenceMacroContext _context) {
+    return RunConfigCreator_Behavior.call_getCreatorTypeParameter_5528847031674330314(_context.getNode());
+  }
+
+  public static Object referenceMacro_GetReferent_5528847031674365850(final IOperationContext operationContext, final ReferenceMacroContext _context) {
+    return RunConfigCreator_Behavior.call_getCreatorTypeParameter_5528847031674330314(((SNode)SNodeOperations.getContainingRoot(_context.getNode())));
   }
 
   public static Object referenceMacro_GetReferent_6707043251018967862(final IOperationContext operationContext, final ReferenceMacroContext _context) {
@@ -177,7 +194,7 @@ public class QueriesGenerated {
   }
 
   public static Object referenceMacro_GetReferent_9068086904326281899(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return _context.getOutputNodeByInputNodeAndMappingLabel(SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.lang.plugin.structure.RunConfigCreator", false, false), "map_ConfigCreatorClass");
+    return _context.getOutputNodeByInputNodeAndMappingLabel((SNode)SNodeOperations.getContainingRoot(_context.getNode()), "map_ConfigCreatorClass");
   }
 
   public static Object referenceMacro_GetReferent_9068086904326285594(final IOperationContext operationContext, final ReferenceMacroContext _context) {
@@ -234,7 +251,11 @@ public class QueriesGenerated {
   }
 
   public static SNode sourceNodeQuery_5447563960349298753(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "createBlock", true), "body", true);
+    return SLinkOperations.getTarget(RunConfigCreator_Behavior.call_getFunction_5528847031674340387(_context.getNode()), "body", true);
+  }
+
+  public static SNode sourceNodeQuery_5528847031674365840(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return SLinkOperations.getTarget(_context.getNode(), "contextItem", true);
   }
 
   public static SNode sourceNodeQuery_6586153900349333382(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
@@ -287,10 +308,6 @@ public class QueriesGenerated {
 
   public static SNode sourceNodeQuery_8821770403474041737(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "error", true);
-  }
-
-  public static SNode sourceNodeQuery_9068086904326281910(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return SLinkOperations.getTarget(_context.getNode(), "nodeExpr", true);
   }
 
   public static SNode sourceNodeQuery_9068086904326285561(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {

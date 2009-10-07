@@ -847,8 +847,8 @@
               <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_GetAncestorOperation" id="8415911927033051492">
                 <node role="parameter" type="jetbrains.mps.lang.smodel.structure.OperationParm_Inclusion" id="8415911927033051498" />
                 <node role="parameter" type="jetbrains.mps.lang.smodel.structure.OperationParm_Concept" id="8415911927033051493">
-                  <node role="conceptArgument" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" id="8415911927033051496">
-                    <link role="conceptDeclaration" targetNodeId="7.8415911927033048375" resolveInfo="CreateRunConfigBlock" />
+                  <node role="conceptArgument" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" id="5528847031674323631">
+                    <link role="conceptDeclaration" targetNodeId="7.5854436268949437223" resolveInfo="BaseCreateRunConfigFunction" />
                   </node>
                 </node>
               </node>
