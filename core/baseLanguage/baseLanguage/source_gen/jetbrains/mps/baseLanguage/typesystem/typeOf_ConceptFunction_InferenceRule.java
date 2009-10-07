@@ -66,6 +66,13 @@ public class typeOf_ConceptFunction_InferenceRule extends AbstractInferenceRule_
             BaseIntentionProvider intentionProvider = null;
             typeCheckingContext.createGreaterThanInequation((SNode)typeCheckingContext.getEquationManager().getRepresentator(LCS_typevar_1186052624152), (SNode)typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1186053304515", true), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1186053304511", false, 0, intentionProvider);
           }
+          if ((expectedRetType != null)) {
+            {
+              SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(returnStatement, "expression", true);
+              BaseIntentionProvider intentionProvider = null;
+              typeCheckingContext.createLessThanInequation((SNode)typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "7630810368327770718", true), (SNode)expectedRetType, _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "7630810368327770735", true, 0, intentionProvider);
+            }
+          }
         }
       }
       // last expression statement can serve as return statement
@@ -76,6 +83,13 @@ public class typeOf_ConceptFunction_InferenceRule extends AbstractInferenceRule_
           SNode _nodeToCheck_1029348928467 = expression;
           BaseIntentionProvider intentionProvider = null;
           typeCheckingContext.createGreaterThanInequation((SNode)typeCheckingContext.getEquationManager().getRepresentator(LCS_typevar_1186052624152), (SNode)typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1186053084979", true), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1186053063874", false, 0, intentionProvider);
+        }
+        if ((expectedRetType != null)) {
+          {
+            SNode _nodeToCheck_1029348928467 = expression;
+            BaseIntentionProvider intentionProvider = null;
+            typeCheckingContext.createLessThanInequation((SNode)typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "7630810368327770753", true), (SNode)expectedRetType, _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "7630810368327770756", true, 0, intentionProvider);
+          }
         }
         somethingReturned = true;
       }

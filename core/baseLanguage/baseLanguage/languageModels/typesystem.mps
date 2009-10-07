@@ -6944,6 +6944,36 @@
                           </node>
                         </node>
                       </node>
+                      <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="7630810368327770707">
+                        <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="7630810368327770708">
+                          <node role="statement" type="jetbrains.mps.lang.typesystem.structure.CreateLessThanInequationStatement" id="7630810368327770735">
+                            <property name="checkOnly" value="true" />
+                            <node role="rightExpression" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause" id="7630810368327770739">
+                              <node role="normalType" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="7630810368327770740">
+                                <link role="variableDeclaration" targetNodeId="1178586646437" resolveInfo="expectedRetType" />
+                              </node>
+                            </node>
+                            <node role="leftExpression" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause" id="7630810368327770738">
+                              <node role="normalType" type="jetbrains.mps.lang.typesystem.structure.TypeOfExpression" id="7630810368327770718">
+                                <node role="term" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="7630810368327770723">
+                                  <node role="operand" type="jetbrains.mps.baseLanguage.collections.structure.ForEachVariableReference" id="7630810368327770720">
+                                    <link role="variable" targetNodeId="1186053304496" resolveInfo="returnStatement" />
+                                  </node>
+                                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="7630810368327770729">
+                                    <link role="link" targetNodeId="1.1068581517676" />
+                                  </node>
+                                </node>
+                              </node>
+                            </node>
+                          </node>
+                        </node>
+                        <node role="condition" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="7630810368327770712">
+                          <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="7630810368327770711">
+                            <link role="variableDeclaration" targetNodeId="1178586646437" resolveInfo="expectedRetType" />
+                          </node>
+                          <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_IsNotNullOperation" id="7630810368327770716" />
+                        </node>
+                      </node>
                     </node>
                   </node>
                 </node>
@@ -7001,6 +7031,31 @@
                     <node role="normalType" type="jetbrains.mps.lang.typesystem.structure.TypeVarReference" id="1186053055826">
                       <link role="typeVarDeclaration" targetNodeId="1186052624152" resolveInfo="LCS" />
                     </node>
+                  </node>
+                </node>
+                <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="7630810368327770742">
+                  <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="7630810368327770743">
+                    <node role="statement" type="jetbrains.mps.lang.typesystem.structure.CreateLessThanInequationStatement" id="7630810368327770756">
+                      <property name="checkOnly" value="true" />
+                      <node role="rightExpression" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause" id="7630810368327770760">
+                        <node role="normalType" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="7630810368327770761">
+                          <link role="variableDeclaration" targetNodeId="1178586646437" resolveInfo="expectedRetType" />
+                        </node>
+                      </node>
+                      <node role="leftExpression" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause" id="7630810368327770759">
+                        <node role="normalType" type="jetbrains.mps.lang.typesystem.structure.TypeOfExpression" id="7630810368327770753">
+                          <node role="term" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="7630810368327770755">
+                            <link role="variableDeclaration" targetNodeId="1179436928030" resolveInfo="expression" />
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                  <node role="condition" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="7630810368327770747">
+                    <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="7630810368327770746">
+                      <link role="variableDeclaration" targetNodeId="1178586646437" resolveInfo="expectedRetType" />
+                    </node>
+                    <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_IsNotNullOperation" id="7630810368327770751" />
                   </node>
                 </node>
                 <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1179436928043">
