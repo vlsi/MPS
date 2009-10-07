@@ -5,7 +5,7 @@ package jetbrains.mps.baseLanguage.dates.structure;
 import jetbrains.mps.baseLanguage.structure.Expression;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.baseLanguage.datesInternal.structure.DateTimeProperty;
-import jetbrains.mps.baseLanguage.structure.BinaryCompareOperation;
+import jetbrains.mps.baseLanguage.structure.BinaryOperation;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
@@ -28,11 +28,11 @@ public class WithPropertyCompareExpression extends Expression {
     super.setReferent(WithPropertyCompareExpression.DATETIME_PROPERTY, node);
   }
 
-  public BinaryCompareOperation getOperation() {
-    return (BinaryCompareOperation)this.getChild(BinaryCompareOperation.class, WithPropertyCompareExpression.OPERATION);
+  public BinaryOperation getOperation() {
+    return (BinaryOperation)this.getChild(BinaryOperation.class, WithPropertyCompareExpression.OPERATION);
   }
 
-  public void setOperation(BinaryCompareOperation node) {
+  public void setOperation(BinaryOperation node) {
     super.setChild(WithPropertyCompareExpression.OPERATION, node);
   }
 

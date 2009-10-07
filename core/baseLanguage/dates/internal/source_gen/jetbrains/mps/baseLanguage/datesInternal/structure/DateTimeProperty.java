@@ -19,6 +19,7 @@ public class DateTimeProperty extends BaseConcept implements INamedConcept {
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
   public static final String JODA_DATE_TIME_FIELD_TYPE = "jodaDateTimeFieldType";
   public static final String JODA_PERIOD_TYPE = "jodaPeriodType";
+  public static final String JODA_DURATION_TYPE = "jodaDurationType";
 
   public DateTimeProperty(SNode node) {
     super(node);
@@ -78,6 +79,14 @@ public class DateTimeProperty extends BaseConcept implements INamedConcept {
 
   public void setJodaPeriodType(StaticMethodDeclaration node) {
     super.setReferent(DateTimeProperty.JODA_PERIOD_TYPE, node);
+  }
+
+  public StaticMethodDeclaration getJodaDurationType() {
+    return (StaticMethodDeclaration)this.getReferent(StaticMethodDeclaration.class, DateTimeProperty.JODA_DURATION_TYPE);
+  }
+
+  public void setJodaDurationType(StaticMethodDeclaration node) {
+    super.setReferent(DateTimeProperty.JODA_DURATION_TYPE, node);
   }
 
   public static DateTimeProperty newInstance(SModel sm, boolean init) {

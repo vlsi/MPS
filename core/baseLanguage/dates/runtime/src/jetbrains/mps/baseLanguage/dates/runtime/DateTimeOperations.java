@@ -87,18 +87,15 @@ public class DateTimeOperations {
   }
 
   public static Long convert(Period period) {
-    long seconds = period.getMillis();
-    seconds = FieldUtils.safeAdd(seconds, ((long) period.getSeconds())
-      * ((long) DateTimeConstants.MILLIS_PER_SECOND));
-    seconds = FieldUtils.safeAdd(seconds, ((long) period.getMinutes())
-      * ((long) DateTimeConstants.MILLIS_PER_MINUTE));
-    seconds = FieldUtils.safeAdd(seconds, ((long) period.getHours())
-      * ((long) DateTimeConstants.MILLIS_PER_HOUR));
-    seconds = FieldUtils.safeAdd(seconds, ((long) period.getDays())
-      * ((long) DateTimeConstants.MILLIS_PER_DAY));
-    seconds = FieldUtils.safeAdd(seconds, ((long) period.getWeeks())
-      * ((long) DateTimeConstants.MILLIS_PER_WEEK));
-    return seconds;
+    return period != null ? period.toStandardDuration().getMillis() : null;
+  }
+
+  public static Long convert(Duration period) {
+    return period != null ? period.getMillis() : null;
+  }
+
+  public static Duration toDuration(Period p) {
+    return p != null ? p.toStandardDuration() : null;
   }
 
   @Deprecated
@@ -182,18 +179,7 @@ public class DateTimeOperations {
       op2 = Long.MIN_VALUE;
     }
 
-    boolean result;
-    switch (cmp) {
-      case EQ: result = op1.compareTo(op2) == 0; break;
-      case NE: result = op1.compareTo(op2) != 0; break;
-      case LT: result = op1.compareTo(op2) < 0;  break;
-      case GT: result = op1.compareTo(op2) > 0;  break;
-      case LE: result = op1.compareTo(op2) <= 0; break;
-      case GE: result = op1.compareTo(op2) >= 0; break;
-      default:
-        throw new UnsupportedOperationException("Unsupported compare type: " + cmp);
-    }
-    return result;
+    return compareResult(op1.compareTo(op2), cmp);
   }
 
   public static boolean compare(DateTime op1, CompareType cmp, DateTime op2, DateTimeFieldType type) {
@@ -206,18 +192,7 @@ public class DateTimeOperations {
       compareValue = op2 != null ? dtc.compare(op1, op2) : 1;
     }
 
-    boolean result;
-    switch (cmp) {
-      case EQ: result = compareValue == 0; break;
-      case NE: result = compareValue != 0; break;
-      case LT: result = compareValue < 0;  break;
-      case GT: result = compareValue > 0;  break;
-      case LE: result = compareValue <= 0; break;
-      case GE: result = compareValue >= 0; break;
-      default:
-        throw new UnsupportedOperationException("Unsupported compare type: " + cmp);
-    }
-    return result;
+    return compareResult(compareValue, cmp);
   }
 
   @Deprecated
@@ -265,6 +240,7 @@ public class DateTimeOperations {
     return datetime != null ? datetime.property(type).setCopy(value) : null;
   }
 
+  @Deprecated
   public static Period plus(Period leftExpression, Period rightExpression) {
     if (leftExpression == null) {
       leftExpression = Period.ZERO;
@@ -283,6 +259,7 @@ public class DateTimeOperations {
             leftExpression.getMillis() + rightExpression.getMillis());
   }
 
+  @Deprecated
   public static Period minus(Period leftExpression, Period rightExpression) {
     if (leftExpression == null) {
       leftExpression = Period.ZERO;
@@ -312,28 +289,17 @@ public class DateTimeOperations {
     return result;
   }
 
+  @Deprecated
   public static Long plus(Period left, Long right) {
     return plus(right, left);
   }
 
-  public static DateTime plus(DateTime leftExpression, Period rightExpression) {
-    DateTime result;
-    if (leftExpression == null) {
-      result = null;
-    } else {
-      result = leftExpression.plus(rightExpression);
-    }
-    return result;
-  }
-
-  public static DateTime plus(Period left, DateTime right) {
-    return plus(right, left);
-  }
-
+  @Deprecated
   public static Long plus(Long left, Long right) {
     return left + right;
   }
 
+  @Deprecated
   public static Period minus(Long left, Long right) {
     return new Period(right.longValue(), left.longValue());
   }
@@ -347,18 +313,6 @@ public class DateTimeOperations {
       result = new DateTime(leftExpression, currentZone.get()).minus(rightExpression).getMillis();
     }
     return result;
-  }
-
-  public static DateTime minus(DateTime leftExpression, Period rightExpression) {
-    return leftExpression == null ? null : leftExpression.minus(rightExpression);
-  }
-
-  public static Period minus(DateTime leftExpression, DateTime rightExpression) {
-    if(leftExpression == null || rightExpression == null || leftExpression.compareTo(rightExpression) < 0) {
-      return Period.ZERO;
-    }
-    Interval i = new Interval(rightExpression, leftExpression);
-    return i.toPeriod();
   }
 
   @Deprecated
@@ -387,6 +341,30 @@ public class DateTimeOperations {
     return null;
   }
 
+  public static boolean compare(Duration op1, CompareType cmp, Period op2) {
+    return compare(op1, cmp, op2 != null ? op2.toStandardDuration() : null);
+  }
+
+  public static boolean compare(Period op1, CompareType cmp, Duration op2) {
+    return compare(op1 != null ? op1.toStandardDuration() : null, cmp, op2);
+  }
+
+  public static boolean compare(Long op1, CompareType cmp, Period op2) {
+    return compare(op1 != null ? new Duration(op1) : null, cmp, op2 != null ? op2.toStandardDuration() : null);
+  }
+
+  public static boolean compare(Period op1, CompareType cmp, Long op2) {
+    return compare(op1 != null ? op1.toStandardDuration() : null, cmp, op2 != null ? new Duration(op2) : null);
+  }
+
+  public static boolean compare(Long op1, CompareType cmp, Duration op2) {
+    return compare(op1 != null ? new Duration(op1) : null, cmp, op2);
+  }
+
+  public static boolean compare(Duration op1, CompareType cmp, Long op2) {
+    return compare(op1, cmp, op2 != null ? new Duration(op2) : null);
+  }
+
   public static boolean compare(Period op1, CompareType cmp, Period op2) {
     DateTime now = new DateTime(currentZone.get());
     int compareValue;
@@ -397,8 +375,23 @@ public class DateTimeOperations {
       compareValue = op2 != null ? op1.toDurationFrom(now).compareTo(op2.toDurationFrom(now)) : 1;
     }
 
+    return compareResult(compareValue, cmp);
+  }
+
+  public static boolean compare(Duration op1, CompareType cmp, Duration op2) {
+    int compareValue;
+    if(op1 == null) {
+      compareValue = op2 != null ? -1 : 0;
+    } else {
+      compareValue = op2 != null ? op1.compareTo(op2) : 1;
+    }
+
+    return compareResult(compareValue, cmp);
+  }
+
+  private static boolean compareResult(int compareValue, CompareType kind) {
     boolean result;
-    switch (cmp) {
+    switch (kind) {
       case EQ: result = compareValue == 0; break;
       case NE: result = compareValue != 0; break;
       case LT: result = compareValue < 0;  break;
@@ -406,7 +399,7 @@ public class DateTimeOperations {
       case LE: result = compareValue <= 0; break;
       case GE: result = compareValue >= 0; break;
       default:
-        throw new UnsupportedOperationException("Unsupported compare type: " + cmp);
+        throw new UnsupportedOperationException("Unsupported compare type: " + kind);
     }
     return result;
   }
@@ -458,38 +451,14 @@ public class DateTimeOperations {
   public static boolean isNotNull(long datetime) {
     return true;
   }
-  
+
+  @Deprecated
   public static void withTimeZone (DateTimeZone tz) {
     currentZone.set(tz);
   }
-  
+
+  @Deprecated
   public static DateTimeZone getCurrentTimeZone () {
       return currentZone.get();
-  }
-
-  @Deprecated
-  public static Long min(Long a, Long b) {
-    return a == null || b == null ? null : Math.min(a,b);
-  }
-
-  @Deprecated
-  public static Long max(Long a, Long b) {
-    return a == null ? b : (b == null ? a : Math.max(a,b));
-  }
-
-  public static DateTime min(DateTime a, DateTime b) {
-    if(a == null || b == null) {
-      return null;
-    }
-    int res = DateTimeComparator.getInstance().compare(a, b);
-    return res < 0 ? a : b;
-  }
-
-  public static DateTime max(DateTime a, DateTime b) {
-    if(a == null || b == null) {
-      return a != null ? a : b;
-    }
-    int res = DateTimeComparator.getInstance().compare(a, b);
-    return res > 0 ? a : b;
   }
 }
