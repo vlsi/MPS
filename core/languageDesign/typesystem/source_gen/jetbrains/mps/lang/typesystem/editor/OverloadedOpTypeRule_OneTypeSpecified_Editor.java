@@ -11,6 +11,8 @@ import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
+import jetbrains.mps.nodeEditor.cellProviders.AbstractCellListHandler;
+import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Horizontal;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
@@ -18,6 +20,12 @@ import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandler;
+import jetbrains.mps.smodel.action.NodeFactoryManager;
+import jetbrains.mps.nodeEditor.CellActionType;
+import jetbrains.mps.nodeEditor.cellActions.CellAction_DeleteNode;
+import jetbrains.mps.nodeEditor.cellMenu.DefaultReferenceSubstituteInfo;
+import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
 
 public class OverloadedOpTypeRule_OneTypeSpecified_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
@@ -42,7 +50,7 @@ public class OverloadedOpTypeRule_OneTypeSpecified_Editor extends DefaultNodeEdi
     editorCell.addEditorCell(this.createCollection_5389_2(editorContext, node));
     editorCell.addEditorCell(this.createCollection_5389_3(editorContext, node));
     editorCell.addEditorCell(this.createConstant_5389_5(editorContext, node));
-    editorCell.addEditorCell(this.createRefNode_5389_2(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_5389_1(editorContext, node));
     editorCell.addEditorCell(this.createConstant_5389_6(editorContext, node));
     return editorCell;
   }
@@ -56,7 +64,7 @@ public class OverloadedOpTypeRule_OneTypeSpecified_Editor extends DefaultNodeEdi
       style.set(StyleAttributes.SELECTABLE, false);
     }
     editorCell.addEditorCell(this.createConstant_5389_1(editorContext, node));
-    editorCell.addEditorCell(this.createRefNode_5389_0(editorContext, node));
+    editorCell.addEditorCell(this.createRefNodeList_5389_0(editorContext, node));
     return editorCell;
   }
 
@@ -69,7 +77,7 @@ public class OverloadedOpTypeRule_OneTypeSpecified_Editor extends DefaultNodeEdi
       style.set(StyleAttributes.SELECTABLE, false);
     }
     editorCell.addEditorCell(this.createConstant_5389_2(editorContext, node));
-    editorCell.addEditorCell(this.createRefNode_5389_1(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_5389_0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_5389_3(editorContext, node));
     editorCell.addEditorCell(this.createProperty_5389_1(editorContext, node));
     if (renderingCondition5389_0(node, editorContext, editorContext.getOperationContext().getScope())) {
@@ -87,7 +95,7 @@ public class OverloadedOpTypeRule_OneTypeSpecified_Editor extends DefaultNodeEdi
   }
 
   private EditorCell createConstant_5389_1(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "operation concept:");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "operation concepts:");
     editorCell.setCellId("Constant_5389_1");
     editorCell.setDefaultText("");
     return editorCell;
@@ -137,6 +145,14 @@ public class OverloadedOpTypeRule_OneTypeSpecified_Editor extends DefaultNodeEdi
     return editorCell;
   }
 
+  private EditorCell createRefNodeList_5389_0(EditorContext editorContext, SNode node) {
+    AbstractCellListHandler handler = new OverloadedOpTypeRule_OneTypeSpecified_Editor.operationConceptListHandler_5389_0(node, "operationConcept", editorContext);
+    EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Horizontal(), false);
+    editorCell.setCellId("refNodeList_operationConcept");
+    editorCell.setRole(handler.getElementRole());
+    return editorCell;
+  }
+
   private EditorCell createProperty_5389_0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("isStrong");
@@ -156,23 +172,6 @@ public class OverloadedOpTypeRule_OneTypeSpecified_Editor extends DefaultNodeEdi
   }
 
   private EditorCell createRefNode_5389_0(EditorContext editorContext, SNode node) {
-    CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
-    provider.setRole("operationConcept");
-    provider.setNoTargetText("<no operationConcept>");
-    EditorCell editorCell;
-    editorCell = provider.createEditorCell(editorContext);
-    editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
-    SNode attributeConcept = provider.getRoleAttribute();
-    Class attributeKind = provider.getRoleAttributeClass();
-    if (attributeConcept != null) {
-      IOperationContext opContext = editorContext.getOperationContext();
-      EditorManager manager = EditorManager.getInstanceFromContext(opContext);
-      return manager.createRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
-    } else
-    return editorCell;
-  }
-
-  private EditorCell createRefNode_5389_1(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("operandType");
     provider.setNoTargetText("<no operandType>");
@@ -207,7 +206,7 @@ public class OverloadedOpTypeRule_OneTypeSpecified_Editor extends DefaultNodeEdi
     return editorCell;
   }
 
-  private EditorCell createRefNode_5389_2(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_5389_1(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("function");
     provider.setNoTargetText("<no function>");
@@ -226,5 +225,47 @@ public class OverloadedOpTypeRule_OneTypeSpecified_Editor extends DefaultNodeEdi
 
   private static boolean renderingCondition5389_0(SNode node, EditorContext editorContext, IScope scope) {
     return !(SPropertyOperations.getBoolean(node, "isExact"));
+  }
+
+  private static class operationConceptListHandler_5389_0 extends RefNodeListHandler {
+    public operationConceptListHandler_5389_0(SNode ownerNode, String childRole, EditorContext context) {
+      super(ownerNode, childRole, context, false);
+    }
+
+    public SNode createNodeToInsert(EditorContext editorContext) {
+      SNode listOwner = super.getOwner();
+      return NodeFactoryManager.createNode(listOwner, editorContext, super.getElementRole());
+    }
+
+    public EditorCell createNodeCell(EditorContext editorContext, SNode elementNode) {
+      EditorCell elementCell = super.createNodeCell(editorContext, elementNode);
+      this.installElementCellActions(this.getOwner(), elementNode, elementCell, editorContext);
+      return elementCell;
+    }
+
+    public EditorCell createEmptyCell(EditorContext editorContext) {
+      EditorCell emptyCell = null;
+      emptyCell = super.createEmptyCell(editorContext);
+      this.installElementCellActions(super.getOwner(), null, emptyCell, editorContext);
+      return emptyCell;
+    }
+
+    public void installElementCellActions(SNode listOwner, SNode elementNode, EditorCell elementCell, EditorContext editorContext) {
+      if (elementCell.getUserObject(AbstractCellListHandler.ELEMENT_CELL_ACTIONS_SET) == null) {
+        elementCell.putUserObject(AbstractCellListHandler.ELEMENT_CELL_ACTIONS_SET, AbstractCellListHandler.ELEMENT_CELL_ACTIONS_SET);
+        SNode substituteInfoNode = listOwner;
+        if (elementNode != null) {
+          substituteInfoNode = elementNode;
+          elementCell.setAction(CellActionType.DELETE, new CellAction_DeleteNode(elementNode));
+        }
+        if (elementCell.getSubstituteInfo() == null || elementCell.getSubstituteInfo() instanceof DefaultReferenceSubstituteInfo) {
+          elementCell.setSubstituteInfo(new DefaultChildSubstituteInfo(listOwner, elementNode, super.getLinkDeclaration(), editorContext));
+        }
+      }
+    }
+
+    public EditorCell createSeparatorCell(EditorContext editorContext) {
+      return super.createSeparatorCell(editorContext);
+    }
   }
 }

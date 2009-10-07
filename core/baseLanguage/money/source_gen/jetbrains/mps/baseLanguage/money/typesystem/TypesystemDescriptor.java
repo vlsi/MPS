@@ -37,6 +37,8 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
           this.myOperationConceptFQName = "jetbrains.mps.baseLanguage.structure.PlusExpression";
           this.myLeftTypeIsExact = true;
           this.myRightTypeIsExact = true;
+          this.myRightIsStrong = false;
+          this.myLeftIsStrong = false;
         }
 
         public SNode getOperationType(SNode operation, SNode leftOperandType, SNode rightOperandType) {
@@ -53,6 +55,8 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
           this.myOperationConceptFQName = "jetbrains.mps.baseLanguage.structure.MinusExpression";
           this.myLeftTypeIsExact = true;
           this.myRightTypeIsExact = true;
+          this.myRightIsStrong = false;
+          this.myLeftIsStrong = false;
         }
 
         public SNode getOperationType(SNode operation, SNode leftOperandType, SNode rightOperandType) {
@@ -69,6 +73,8 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
           this.myOperationConceptFQName = "jetbrains.mps.baseLanguage.structure.DivExpression";
           this.myLeftTypeIsExact = true;
           this.myRightTypeIsExact = true;
+          this.myRightIsStrong = false;
+          this.myLeftIsStrong = false;
         }
 
         public SNode getOperationType(SNode operation, SNode leftOperandType, SNode rightOperandType) {
@@ -85,6 +91,8 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
           this.myOperationConceptFQName = "jetbrains.mps.baseLanguage.structure.MulExpression";
           this.myLeftTypeIsExact = true;
           this.myRightTypeIsExact = true;
+          this.myRightIsStrong = false;
+          this.myLeftIsStrong = false;
         }
 
         public SNode getOperationType(SNode operation, SNode leftOperandType, SNode rightOperandType) {
@@ -101,6 +109,8 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
           this.myOperationConceptFQName = "jetbrains.mps.baseLanguage.structure.MulExpression";
           this.myLeftTypeIsExact = true;
           this.myRightTypeIsExact = true;
+          this.myRightIsStrong = false;
+          this.myLeftIsStrong = false;
         }
 
         public SNode getOperationType(SNode operation, SNode leftOperandType, SNode rightOperandType) {

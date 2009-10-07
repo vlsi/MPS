@@ -4,26 +4,20 @@ package jetbrains.mps.lang.typesystem.structure;
 
 import jetbrains.mps.lang.core.structure.BaseConcept;
 import jetbrains.mps.smodel.SNode;
+import java.util.Iterator;
 import jetbrains.mps.lang.smodel.structure.ConceptReference;
+import java.util.List;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class AbstractOverloadedOpsTypeRule extends BaseConcept {
   public static final String concept = "jetbrains.mps.lang.typesystem.structure.AbstractOverloadedOpsTypeRule";
-  public static final String OPERATION_CONCEPT = "operationConcept";
   public static final String FUNCTION = "function";
+  public static final String OPERATION_CONCEPT = "operationConcept";
 
   public AbstractOverloadedOpsTypeRule(SNode node) {
     super(node);
-  }
-
-  public ConceptReference getOperationConcept() {
-    return (ConceptReference)this.getChild(ConceptReference.class, AbstractOverloadedOpsTypeRule.OPERATION_CONCEPT);
-  }
-
-  public void setOperationConcept(ConceptReference node) {
-    super.setChild(AbstractOverloadedOpsTypeRule.OPERATION_CONCEPT, node);
   }
 
   public OverloadedOperatorTypeFunction getFunction() {
@@ -32,6 +26,26 @@ public class AbstractOverloadedOpsTypeRule extends BaseConcept {
 
   public void setFunction(OverloadedOperatorTypeFunction node) {
     super.setChild(AbstractOverloadedOpsTypeRule.FUNCTION, node);
+  }
+
+  public int getOperationConceptsCount() {
+    return this.getChildCount(AbstractOverloadedOpsTypeRule.OPERATION_CONCEPT);
+  }
+
+  public Iterator<ConceptReference> operationConcepts() {
+    return this.children(ConceptReference.class, AbstractOverloadedOpsTypeRule.OPERATION_CONCEPT);
+  }
+
+  public List<ConceptReference> getOperationConcepts() {
+    return this.getChildren(ConceptReference.class, AbstractOverloadedOpsTypeRule.OPERATION_CONCEPT);
+  }
+
+  public void addOperationConcept(ConceptReference node) {
+    this.addChild(AbstractOverloadedOpsTypeRule.OPERATION_CONCEPT, node);
+  }
+
+  public void insertOperationConcept(ConceptReference prev, ConceptReference node) {
+    this.insertChild(prev, AbstractOverloadedOpsTypeRule.OPERATION_CONCEPT, node);
   }
 
   public static AbstractOverloadedOpsTypeRule newInstance(SModel sm, boolean init) {

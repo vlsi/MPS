@@ -2563,7 +2563,7 @@
     <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="8124453027370845341">
       <property name="metaClass" value="aggregation" />
       <property name="role" value="operationConcept" />
-      <property name="sourceCardinality" value="1" />
+      <property name="sourceCardinality" value="1..n" />
       <link role="target" targetNodeId="5.1154546950173" resolveInfo="ConceptReference" />
     </node>
     <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="8124453027370845343">

@@ -3834,10 +3834,11 @@
           <property name="flag" value="false" />
         </node>
         <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1236083701322">
-          <property name="text" value="operation concept:" />
+          <property name="text" value="operation concepts:" />
         </node>
-        <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode" id="1236083701323">
+        <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNodeList" id="5031556731835763031">
           <link role="relationDeclaration" targetNodeId="1.8124453027370845341" />
+          <node role="cellLayout" type="jetbrains.mps.lang.editor.structure.CellLayout_Horizontal" id="5031556731835763032" />
         </node>
         <node role="styleItem" type="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem" id="1236083700368">
           <property name="flag" value="false" />
@@ -4314,10 +4315,11 @@
           <property name="flag" value="false" />
         </node>
         <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="8124453027370845385">
-          <property name="text" value="operation concept:" />
+          <property name="text" value="operation concepts:" />
         </node>
-        <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode" id="8124453027370845386">
+        <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNodeList" id="5031556731835763029">
           <link role="relationDeclaration" targetNodeId="1.8124453027370845341" />
+          <node role="cellLayout" type="jetbrains.mps.lang.editor.structure.CellLayout_Horizontal" id="5031556731835763030" />
         </node>
         <node role="styleItem" type="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem" id="8124453027370845387">
           <property name="flag" value="false" />
