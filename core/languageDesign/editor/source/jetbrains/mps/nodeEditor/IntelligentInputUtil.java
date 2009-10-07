@@ -280,6 +280,12 @@ public class IntelligentInputUtil {
   private static boolean tryToSubstitudeFirstSutable(EditorContext editorContext, String text, NodeSubstituteInfo substituteInfo) {
     String property = substituteInfo.getMatchingActions(text, true).get(0).getOutputConcept().getConceptProperty("substituteInAmbigousPosition");
     if ("true".equals(property)) {
+      SNode outputConcept = substituteInfo.getMatchingActions(text, true).get(0).getOutputConcept();
+      for (INodeSubstituteAction action: substituteInfo.getMatchingActions(text, true)) {
+        if (outputConcept != action.getOutputConcept()) {
+          return false;
+        }
+      }
       INodeSubstituteAction action = substituteInfo.getMatchingActions(text, true).get(0);
       action.substitute(editorContext, text);
       return true;
