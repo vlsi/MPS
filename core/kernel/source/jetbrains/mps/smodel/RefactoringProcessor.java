@@ -227,22 +227,20 @@ public class RefactoringProcessor {
     final RefactoringNodeMembersAccessModifier modifier = new RefactoringNodeMembersAccessModifier();
 
     try {
+      final List<SModelDescriptor> descriptors = new ArrayList<SModelDescriptor>();
       ModelAccess.instance().runWriteAction(new Runnable() {
         public void run() {
           refactoringContext.setUpMembersAccessModifier(modifier);
           modifier.addModelsToModify(sourceModels);
           SNode.setNodeMemeberAccessModifier(modifier);
 
-
-          List<SModelDescriptor> descriptors = new ArrayList<SModelDescriptor>();
           for (SModel model : sourceModels) {
             descriptors.add(model.getModelDescriptor());
           }
-
-          IOperationContext operationContext = refactoringContext.getSelectedMPSProject().createOperationContext();
-          new GeneratorManager(operationContext.getComponent(Project.class), new GenerationSettings()).generateModelsFromDifferentModules(operationContext, descriptors, IGenerationType.FILES);
         }
       });
+      IOperationContext operationContext = refactoringContext.getSelectedMPSProject().createOperationContext();
+      new GeneratorManager(operationContext.getComponent(Project.class), new GenerationSettings()).generateModelsFromDifferentModules(operationContext, descriptors, IGenerationType.FILES);
     } finally {
       SNode.setNodeMemeberAccessModifier(null);
     }
