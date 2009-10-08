@@ -19162,17 +19162,17 @@
                           <node role="closure" type="jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral" id="9138927109407481298">
                             <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="9138927109407481299">
                               <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="9138927109407481300">
-                                <node role="expression" type="jetbrains.mps.baseLanguage.structure.EqualsExpression" id="9138927109407481301">
-                                  <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="9138927109407481302">
-                                    <link role="variableDeclaration" targetNodeId="9138927109407481218" resolveInfo="methodName" />
-                                  </node>
-                                  <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="9138927109407481303">
-                                    <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="9138927109407481304">
+                                <node role="expression" type="jetbrains.mps.baseLanguage.structure.NPEEqualsExpression" id="6075520769444520333">
+                                  <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="6075520769444520334">
+                                    <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="6075520769444520335">
                                       <link role="variableDeclaration" targetNodeId="9138927109407481306" resolveInfo="it" />
                                     </node>
-                                    <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="9138927109407481305">
+                                    <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="6075520769444520336">
                                       <link role="property" targetNodeId="46.1169194664001" resolveInfo="name" />
                                     </node>
+                                  </node>
+                                  <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="6075520769444520337">
+                                    <link role="variableDeclaration" targetNodeId="9138927109407481218" resolveInfo="methodName" />
                                   </node>
                                 </node>
                               </node>

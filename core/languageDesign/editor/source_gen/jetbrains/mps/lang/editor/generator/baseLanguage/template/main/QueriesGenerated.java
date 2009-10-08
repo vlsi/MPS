@@ -33,6 +33,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.lang.editor.behavior.CellModel_Collection_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptPropertyOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import org.apache.commons.lang.ObjectUtils;
 import jetbrains.mps.generator.template.IfMacroContext;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
 import jetbrains.mps.lang.smodel.behavior.SNodeOperation_Behavior;
@@ -976,7 +977,7 @@ public class QueriesGenerated {
     final String methodName = SConceptPropertyOperations.getString(_context.getNode(), "methodToGenerate");
     return ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.getNode("r:2af017c2-293f-4ebb-99f3-81e353b3d6e6(jetbrains.mps.editor.runtime)", "8394433674396727873"), "method", true)).findFirst(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return SPropertyOperations.getString(it, "name") == methodName;
+        return ObjectUtils.equals(SPropertyOperations.getString(it, "name"), methodName);
       }
     });
   }
