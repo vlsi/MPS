@@ -4,17 +4,29 @@ package jetbrains.mps.lang.refactoring.structure;
 
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.baseLanguage.structure.Type;
+import jetbrains.mps.baseLanguage.structure.Expression;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class CustomParameterChooser extends RefactoringParameterChooser {
   public static final String concept = "jetbrains.mps.lang.refactoring.structure.CustomParameterChooser";
+  public static final String STRETCH = "stretch";
   public static final String ENTITY_TYPE = "entityType";
-  public static final String COMPONENT_BLOCK = "componentBlock";
+  public static final String MAIN_COMPONENT = "mainComponent";
+  public static final String FOCUSED_COMPONENT = "focusedComponent";
+  public static final String COMMIT_BLOCK = "commitBlock";
 
   public CustomParameterChooser(SNode node) {
     super(node);
+  }
+
+  public boolean getStretch() {
+    return this.getBooleanProperty(CustomParameterChooser.STRETCH);
+  }
+
+  public void setStretch(boolean value) {
+    this.setBooleanProperty(CustomParameterChooser.STRETCH, value);
   }
 
   public Type getEntityType() {
@@ -25,12 +37,28 @@ public class CustomParameterChooser extends RefactoringParameterChooser {
     super.setChild(CustomParameterChooser.ENTITY_TYPE, node);
   }
 
-  public ParameterChooserComponentClause getComponentBlock() {
-    return (ParameterChooserComponentClause)this.getChild(ParameterChooserComponentClause.class, CustomParameterChooser.COMPONENT_BLOCK);
+  public Expression getMainComponent() {
+    return (Expression)this.getChild(Expression.class, CustomParameterChooser.MAIN_COMPONENT);
   }
 
-  public void setComponentBlock(ParameterChooserComponentClause node) {
-    super.setChild(CustomParameterChooser.COMPONENT_BLOCK, node);
+  public void setMainComponent(Expression node) {
+    super.setChild(CustomParameterChooser.MAIN_COMPONENT, node);
+  }
+
+  public Expression getFocusedComponent() {
+    return (Expression)this.getChild(Expression.class, CustomParameterChooser.FOCUSED_COMPONENT);
+  }
+
+  public void setFocusedComponent(Expression node) {
+    super.setChild(CustomParameterChooser.FOCUSED_COMPONENT, node);
+  }
+
+  public CommitClause getCommitBlock() {
+    return (CommitClause)this.getChild(CommitClause.class, CustomParameterChooser.COMMIT_BLOCK);
+  }
+
+  public void setCommitBlock(CommitClause node) {
+    super.setChild(CustomParameterChooser.COMMIT_BLOCK, node);
   }
 
   public static CustomParameterChooser newInstance(SModel sm, boolean init) {

@@ -371,5 +371,77 @@
       </node>
     </node>
   </node>
+  <node type="jetbrains.mps.lang.constraints.structure.ConceptConstraints" id="5934994956485884288">
+    <property name="package" value="RefDecl.Arg.Parameters.Chooser.Custom" />
+    <link role="concept" targetNodeId="1.5934994956485884215" resolveInfo="SetValueStatement" />
+    <node role="canBeChild" type="jetbrains.mps.lang.constraints.structure.ConstraintFunction_CanBeAChild" id="5934994956485884289">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="5934994956485884290">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="5934994956485959603">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="5934994956485959618">
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="5934994956485959605">
+              <node role="operand" type="jetbrains.mps.lang.constraints.structure.ConstraintFunctionParameter_parentNode" id="5934994956485959604" />
+              <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_GetAncestorOperation" id="5934994956485959609">
+                <node role="parameter" type="jetbrains.mps.lang.smodel.structure.OperationParm_Inclusion" id="5934994956485959615" />
+                <node role="parameter" type="jetbrains.mps.lang.smodel.structure.OperationParm_Concept" id="5934994956485959610">
+                  <node role="conceptArgument" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" id="5934994956485959617">
+                    <link role="conceptDeclaration" targetNodeId="1.5497648299878742031" resolveInfo="CommitClause" />
+                  </node>
+                </node>
+              </node>
+            </node>
+            <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_IsNotNullOperation" id="5934994956485959622" />
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.constraints.structure.ConceptConstraints" id="5934994956485965505">
+    <property name="package" value="RefDecl.Arg.Parameters.Chooser.Custom" />
+    <link role="concept" targetNodeId="1.5934994956485965463" resolveInfo="ErrorStatement" />
+    <node role="canBeChild" type="jetbrains.mps.lang.constraints.structure.ConstraintFunction_CanBeAChild" id="5934994956485965506">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="5934994956485965507">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="5934994956485965508">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="5934994956485965523">
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="5934994956485965510">
+              <node role="operand" type="jetbrains.mps.lang.constraints.structure.ConstraintFunctionParameter_parentNode" id="5934994956485965509" />
+              <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_GetAncestorOperation" id="5934994956485965514">
+                <node role="parameter" type="jetbrains.mps.lang.smodel.structure.OperationParm_Inclusion" id="5934994956485965520" />
+                <node role="parameter" type="jetbrains.mps.lang.smodel.structure.OperationParm_Concept" id="5934994956485965515">
+                  <node role="conceptArgument" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" id="5934994956485965522">
+                    <link role="conceptDeclaration" targetNodeId="1.5497648299878742031" resolveInfo="CommitClause" />
+                  </node>
+                </node>
+              </node>
+            </node>
+            <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_IsNotNullOperation" id="5934994956485965527" />
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.constraints.structure.ConceptConstraints" id="5934994956486307258">
+    <property name="package" value="RefDecl.Arg.Parameters.Chooser.Custom" />
+    <link role="concept" targetNodeId="1.5934994956486307251" resolveInfo="ComponentExpression" />
+    <node role="canBeChild" type="jetbrains.mps.lang.constraints.structure.ConstraintFunction_CanBeAChild" id="5934994956486307259">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="5934994956486307260">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="5934994956486307261">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="5934994956486307276">
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="5934994956486307263">
+              <node role="operand" type="jetbrains.mps.lang.constraints.structure.ConstraintFunctionParameter_parentNode" id="5934994956486307262" />
+              <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_GetAncestorOperation" id="5934994956486307267">
+                <node role="parameter" type="jetbrains.mps.lang.smodel.structure.OperationParm_Inclusion" id="5934994956486307273" />
+                <node role="parameter" type="jetbrains.mps.lang.smodel.structure.OperationParm_Concept" id="5934994956486307268">
+                  <node role="conceptArgument" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" id="5934994956486307275">
+                    <link role="conceptDeclaration" targetNodeId="1.5497648299878742029" resolveInfo="CustomParameterChooser" />
+                  </node>
+                </node>
+              </node>
+            </node>
+            <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_IsNotNullOperation" id="5934994956486307280" />
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
 </model>
 

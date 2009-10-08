@@ -1259,15 +1259,31 @@
     <property name="package" value="RefDecl.Arg.Parameters.Chooser.Custom" />
     <property name="name" value="CustomParameterChooser" />
     <link role="extends" targetNodeId="7573235936722759491" resolveInfo="RefactoringParameterChooser" />
+    <node role="propertyDeclaration" type="jetbrains.mps.lang.structure.structure.PropertyDeclaration" id="5934994956485846035">
+      <property name="name" value="stretch" />
+      <link role="dataType" targetNodeId="1.1082983657063" resolveInfo="boolean" />
+    </node>
     <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="5497648299878979017">
       <property name="metaClass" value="aggregation" />
       <property name="role" value="entityType" />
       <property name="sourceCardinality" value="1" />
       <link role="target" targetNodeId="2.1068431790189" resolveInfo="Type" />
     </node>
+    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="5934994956485838241">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="mainComponent" />
+      <property name="sourceCardinality" value="1" />
+      <link role="target" targetNodeId="2.1068431790191" resolveInfo="Expression" />
+    </node>
     <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="5497648299878979018">
       <property name="metaClass" value="aggregation" />
-      <property name="role" value="componentBlock" />
+      <property name="role" value="focusedComponent" />
+      <property name="sourceCardinality" value="0..1" />
+      <link role="target" targetNodeId="2.1068431790191" resolveInfo="Expression" />
+    </node>
+    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="5934994956485846034">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="commitBlock" />
       <property name="sourceCardinality" value="1" />
       <link role="target" targetNodeId="5497648299878742031" resolveInfo="ParameterChooserComponentClause" />
     </node>
@@ -1277,21 +1293,15 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="5497648299878742031">
-    <property name="name" value="ParameterChooserComponentClause" />
+    <property name="name" value="CommitClause" />
     <property name="package" value="RefDecl.Arg.Parameters.Chooser.Custom" />
     <link role="extends" targetNodeId="2.1137021947720" resolveInfo="ConceptFunction" />
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="7573235936722759503">
-      <property name="value" value="getComponent" />
+      <property name="value" value="commit" />
       <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" resolveInfo="alias" />
     </node>
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.BooleanConceptProperty" id="7573235936722759506">
       <link role="conceptPropertyDeclaration" targetNodeId="2.1216468774225" resolveInfo="showName" />
-    </node>
-    <node role="conceptLink" type="jetbrains.mps.lang.structure.structure.AggregationConceptLink" id="5497648299878742032">
-      <link role="conceptLinkDeclaration" targetNodeId="2.1137545148427" resolveInfo="conceptFunctionReturnType" />
-      <node role="target" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="5497648299878994263">
-        <link role="classifier" targetNodeId="17.~IChooser" resolveInfo="IChooser" />
-      </node>
     </node>
     <node role="conceptLink" type="jetbrains.mps.lang.structure.structure.ReferenceConceptLink" id="3060724424231848474">
       <link role="conceptLinkDeclaration" targetNodeId="2.1161119487665" resolveInfo="applicableConceptFunctionParameter" />
@@ -1548,6 +1558,45 @@
     <link role="extends" targetNodeId="7953996722066256458" resolveInfo="RefactoringContext_ConceptFunctionParameter" />
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="3060724424231848616">
       <property name="value" value="refactoringContext" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" resolveInfo="alias" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="5934994956485884215">
+    <property name="package" value="RefDecl.Arg.Parameters.Chooser.Custom" />
+    <property name="name" value="SetValueStatement" />
+    <link role="extends" targetNodeId="2.1068580123157" resolveInfo="Statement" />
+    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="5934994956485884218">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="value" />
+      <property name="sourceCardinality" value="1" />
+      <link role="target" targetNodeId="2.1068431790191" resolveInfo="Expression" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="5934994956485884217">
+      <property name="value" value="setValue" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" resolveInfo="alias" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="5934994956485965463">
+    <property name="package" value="RefDecl.Arg.Parameters.Chooser.Custom" />
+    <property name="name" value="ErrorStatement" />
+    <link role="extends" targetNodeId="2.1068580123157" resolveInfo="Statement" />
+    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="5934994956485965470">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="error" />
+      <property name="sourceCardinality" value="1" />
+      <link role="target" targetNodeId="2.1068431790191" resolveInfo="Expression" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="5934994956485965465">
+      <property name="value" value="error" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" resolveInfo="alias" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="5934994956486307251">
+    <property name="package" value="RefDecl.Arg.Parameters.Chooser.Custom" />
+    <property name="name" value="ComponentExpression" />
+    <link role="extends" targetNodeId="2.1068431790191" resolveInfo="Expression" />
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="5934994956486307253">
+      <property name="value" value="component" />
       <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" resolveInfo="alias" />
     </node>
   </node>
