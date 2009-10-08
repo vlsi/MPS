@@ -260,6 +260,10 @@ public class QueriesGenerated {
     return _context.getOutputNodeByInputNodeAndMappingLabel(SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.lang.refactoring.structure.CustomParameterChooser", false, false), "customChooserClass");
   }
 
+  public static Object referenceMacro_GetReferent_5934994956487138577(final IOperationContext operationContext, final ReferenceMacroContext _context) {
+    return _context.getOutputNodeByInputNodeAndMappingLabel(SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.lang.refactoring.structure.CustomParameterChooser", false, false), "customChooserClass");
+  }
+
   public static Object referenceMacro_GetReferent_6528618226609334501(final IOperationContext operationContext, final ReferenceMacroContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "applicableConcept", false);
   }

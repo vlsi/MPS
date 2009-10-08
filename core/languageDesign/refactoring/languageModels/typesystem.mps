@@ -1557,7 +1557,7 @@
   </node>
   <node type="jetbrains.mps.lang.typesystem.structure.InferenceRule" id="7953996722066536529">
     <property name="name" value="typeof_RefactoringContext_ConceptFunctionParameter" />
-    <property name="package" value="Context" />
+    <property name="package" value="RefDecl.Methods" />
     <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="7953996722066536530">
       <node role="statement" type="jetbrains.mps.lang.typesystem.structure.CreateEquationStatement" id="7953996722066536536">
         <node role="rightExpression" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause" id="7953996722066536540">
@@ -1789,6 +1789,30 @@
     <node role="applicableNode" type="jetbrains.mps.lang.typesystem.structure.ConceptReference" id="5934994956486426176">
       <property name="name" value="expression" />
       <link role="concept" targetNodeId="1.5934994956486307251" resolveInfo="ComponentExpression" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.typesystem.structure.InferenceRule" id="5934994956487114987">
+    <property name="name" value="typeof_RefactoringContextExpression" />
+    <property name="package" value="RefDecl.Arg.Parameters.Chooser.Custom" />
+    <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="5934994956487114988">
+      <node role="statement" type="jetbrains.mps.lang.typesystem.structure.CreateEquationStatement" id="5934994956487114991">
+        <node role="rightExpression" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause" id="5934994956487114992">
+          <node role="normalType" type="jetbrains.mps.lang.quotation.structure.Quotation" id="5934994956487114993">
+            <node role="quotedNode" type="jetbrains.mps.lang.refactoring.structure.ContextType" id="5934994956487114994" />
+          </node>
+        </node>
+        <node role="leftExpression" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause" id="5934994956487114995">
+          <node role="normalType" type="jetbrains.mps.lang.typesystem.structure.TypeOfExpression" id="5934994956487114996">
+            <node role="term" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference" id="5934994956487117013">
+              <link role="applicableNode" targetNodeId="5934994956487114989" resolveInfo="expression" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="applicableNode" type="jetbrains.mps.lang.typesystem.structure.ConceptReference" id="5934994956487114989">
+      <property name="name" value="expression" />
+      <link role="concept" targetNodeId="1.5934994956487113631" resolveInfo="RefactoringContextExpression" />
     </node>
   </node>
 </model>

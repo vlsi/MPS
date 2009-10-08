@@ -1505,7 +1505,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="7953996722066256458">
-    <property name="package" value="Context" />
+    <property name="package" value="RefDecl.Methods" />
     <property name="name" value="RefactoringContext_ConceptFunctionParameter" />
     <link role="extends" targetNodeId="2.1107135704075" resolveInfo="ConceptFunctionParameter" />
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="7953996722066257061">
@@ -1517,9 +1517,6 @@
     <property name="package" value="Context" />
     <property name="name" value="ContextType" />
     <link role="extends" targetNodeId="2.1068431790189" resolveInfo="Type" />
-    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.BooleanConceptProperty" id="7953996722066536549">
-      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473994950" resolveInfo="dontSubstituteByDefault" />
-    </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1682834381185132063">
     <property name="name" value="ModelsToGenerateClause" />
@@ -1546,7 +1543,7 @@
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="3644668945279694356">
     <property name="package" value="RefDecl.Arg.Parameters.Chooser.MPS" />
     <property name="name" value="SettingsRefactoringContext_ConceptFunctionParameter" />
-    <link role="extends" targetNodeId="7953996722066256458" resolveInfo="RefactoringContext_ConceptFunctionParameter" />
+    <link role="extends" targetNodeId="2.1107135704075" resolveInfo="ConceptFunctionParameter" />
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="3644668945279694357">
       <property name="value" value="refactoringContext" />
       <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" resolveInfo="alias" />
@@ -1555,7 +1552,7 @@
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="3060724424231848615">
     <property name="package" value="RefDecl.Arg.Parameters.Chooser.Custom" />
     <property name="name" value="ChooserRefactoringContext_ConceptFunctionParameter" />
-    <link role="extends" targetNodeId="7953996722066256458" resolveInfo="RefactoringContext_ConceptFunctionParameter" />
+    <link role="extends" targetNodeId="2.1107135704075" resolveInfo="ConceptFunctionParameter" />
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="3060724424231848616">
       <property name="value" value="refactoringContext" />
       <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" resolveInfo="alias" />
@@ -1597,6 +1594,15 @@
     <link role="extends" targetNodeId="2.1068431790191" resolveInfo="Expression" />
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="5934994956486307253">
       <property name="value" value="component" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" resolveInfo="alias" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="5934994956487113631">
+    <property name="package" value="RefDecl.Arg.Parameters.Chooser.Custom" />
+    <property name="name" value="RefactoringContextExpression" />
+    <link role="extends" targetNodeId="2.1068431790191" resolveInfo="Expression" />
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="5934994956487114982">
+      <property name="value" value="refactoringContext" />
       <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" resolveInfo="alias" />
     </node>
   </node>

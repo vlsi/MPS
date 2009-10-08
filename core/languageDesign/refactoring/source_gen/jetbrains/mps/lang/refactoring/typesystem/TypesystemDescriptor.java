@@ -167,5 +167,9 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
       InferenceRule_Runtime inferenceRule = new typeof_ComponentExpression_InferenceRule();
       this.myInferenceRules.add(inferenceRule);
     }
+    {
+      InferenceRule_Runtime inferenceRule = new typeof_RefactoringContextExpression_InferenceRule();
+      this.myInferenceRules.add(inferenceRule);
+    }
   }
 }

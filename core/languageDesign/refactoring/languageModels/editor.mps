@@ -1348,5 +1348,12 @@
       <property name="text" value="component" />
     </node>
   </node>
+  <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" id="5934994956487114983">
+    <property name="package" value="RefDecl.Arg.Parameters.Chooser.Custom" />
+    <link role="conceptDeclaration" targetNodeId="1.5934994956487113631" resolveInfo="RefactoringContextExpression" />
+    <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="5934994956487114985">
+      <property name="text" value="refactoringContext" />
+    </node>
+  </node>
 </model>
 
