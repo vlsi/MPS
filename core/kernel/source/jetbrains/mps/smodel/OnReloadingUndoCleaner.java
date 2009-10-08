@@ -6,6 +6,7 @@ import com.intellij.openapi.command.impl.UndoManagerImpl;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.project.ProjectManager;
 import com.intellij.openapi.application.ApplicationManager;
+import com.intellij.openapi.application.ModalityState;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.workbench.nodesFs.MPSNodeVirtualFile;
@@ -38,7 +39,7 @@ class OnReloadingUndoCleaner implements ApplicationComponent {
               public void run() {
                 ((UndoManagerImpl) UndoManager.getInstance(p)).clearUndoRedoQueueInTests(file);
               }
-            });
+            }, ModalityState.NON_MODAL);
           }
         }
       }
