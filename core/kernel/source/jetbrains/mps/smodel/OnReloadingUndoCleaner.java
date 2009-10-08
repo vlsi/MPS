@@ -5,6 +5,7 @@ import com.intellij.openapi.command.undo.UndoManager;
 import com.intellij.openapi.command.impl.UndoManagerImpl;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.project.ProjectManager;
+import com.intellij.openapi.application.ApplicationManager;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.workbench.nodesFs.MPSNodeVirtualFile;
@@ -31,9 +32,13 @@ class OnReloadingUndoCleaner implements ApplicationComponent {
       @Override
       public void modelReloaded(SModelDescriptor sm) {
         for (SNode root : sm.getSModel().getRoots()) {
-          MPSNodeVirtualFile file = MPSNodesVirtualFileSystem.getInstance().getFileFor(root);
-          for (Project p : myProjectManager.getOpenProjects()) {
-            ((UndoManagerImpl) UndoManager.getInstance(p)).clearUndoRedoQueueInTests(file);
+          final MPSNodeVirtualFile file = MPSNodesVirtualFileSystem.getInstance().getFileFor(root);
+          for (final Project p : myProjectManager.getOpenProjects()) {
+            ApplicationManager.getApplication().invokeLater(new Runnable() {
+              public void run() {
+                ((UndoManagerImpl) UndoManager.getInstance(p)).clearUndoRedoQueueInTests(file);
+              }
+            });
           }
         }
       }
