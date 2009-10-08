@@ -219,7 +219,15 @@
     </node>
     <node role="constructor" type="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" id="7367456871926097179">
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="7367456871926097180" />
-      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="7367456871926097181" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="7367456871926097181">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="4814759296880293481">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="4814759296880293482">
+            <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="4814759296880330996">
+              <link role="baseMethodDeclaration" targetNodeId="150.~Object.&lt;init&gt;()" resolveInfo="Object" />
+            </node>
+          </node>
+        </node>
+      </node>
     </node>
     <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="7367456871926097182">
       <property name="name" value="getNumber" />
@@ -262,8 +270,7 @@
                 <node role="cls" type="jetbrains.mps.baseLanguage.structure.AnonymousClass" id="7367456871926097202">
                   <property name="name" value="" />
                   <link role="classifier" targetNodeId="149.~ArrayList" resolveInfo="ArrayList" />
-                  <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.Expression" id="181611915341260990" />
-                  <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.Expression" id="181611915341260991" />
+                  <link role="baseMethodDeclaration" targetNodeId="149.~ArrayList.&lt;init&gt;(int)" resolveInfo="ArrayList" />
                   <node role="typeParameter" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="7367456871926097203">
                     <link role="classifier" targetNodeId="150.~String" resolveInfo="String" />
                   </node>
@@ -295,6 +302,9 @@
                         </node>
                       </node>
                     </node>
+                  </node>
+                  <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="6221274254710961136">
+                    <property name="value" value="2" />
                   </node>
                 </node>
               </node>

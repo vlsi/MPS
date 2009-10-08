@@ -5,6 +5,8 @@ package jetbrains.mps.baseLanguage.behavior;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import java.util.List;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class AnonymousClass_Behavior {
   public static void init(SNode thisNode) {
@@ -13,5 +15,14 @@ public class AnonymousClass_Behavior {
 
   public static SNode virtual_getSuperclass_1240936569950(SNode thisNode) {
     return new _Quotations.QuotationClass_19().createNode(SLinkOperations.getTargets(thisNode, "typeParameter", true), SLinkOperations.getTarget(thisNode, "classifier", false));
+  }
+
+  public static List<SNode> virtual_getAvailableMethodDeclarations_5776618742611315379(SNode thisNode, String methodName) {
+    SNode classifier = SLinkOperations.getTarget(thisNode, "classifier", false);
+    if (SNodeOperations.isInstanceOf(classifier, "jetbrains.mps.baseLanguage.structure.ClassConcept")) {
+      return SLinkOperations.getTargets(SNodeOperations.cast(classifier, "jetbrains.mps.baseLanguage.structure.ClassConcept"), "constructor", true);
+    } else {
+      return SLinkOperations.getTargets(SNodeOperations.getNode("f:java_stub#java.lang(java.lang@java_stub)", "~Object"), "constructor", true);
+    }
   }
 }

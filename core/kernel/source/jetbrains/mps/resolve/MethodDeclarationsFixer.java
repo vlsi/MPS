@@ -149,10 +149,21 @@ public class MethodDeclarationsFixer extends EditorCheckerAdapter {
   private void testAndFixMethodCall(SNode methodCallNode, Map<SNode, SNode> reResolvedTargets) {
     IMethodCall methodCall = (IMethodCall) BaseAdapter.fromNode(methodCallNode);
     BaseMethodDeclaration baseMethodDeclaration = methodCall.getBaseMethodDeclaration();
+    String methodName;
     if (baseMethodDeclaration == null) {
-      return;
+      if (methodCall instanceof AnonymousClass) {
+        Classifier classifier = ((AnonymousClass) methodCall).getClassifier();
+        if (classifier != null) {
+          methodName = classifier.getName();
+        } else {
+          return;
+        }
+      } else {
+        return;
+      }
+    } else {
+      methodName = baseMethodDeclaration.getName();
     }
-    String methodName = baseMethodDeclaration.getName();
     List<Expression> actualArgs = methodCall.getActualArguments();
 
     List<? extends BaseMethodDeclaration> candidates = getCandidates(methodCall, methodName);
@@ -169,7 +180,7 @@ public class MethodDeclarationsFixer extends EditorCheckerAdapter {
       newTarget = MethodResolveUtil.chooseByParameterType(methodDeclarationsGoodParams, actualArgs, typeByTypeVar);
     }
     if (newTarget != null) {
-      if (newTarget.getNode() != baseMethodDeclaration.getNode()) {
+      if (baseMethodDeclaration == null || newTarget.getNode() != baseMethodDeclaration.getNode()) {
         reResolvedTargets.put(methodCall.getNode(), newTarget.getNode());
       }
       myMethodCallsToSetDecls.put(methodCall.getNode(), newTarget.getNode());

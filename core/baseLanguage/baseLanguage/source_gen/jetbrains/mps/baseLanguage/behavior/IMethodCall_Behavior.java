@@ -15,6 +15,7 @@ import jetbrains.mps.baseLanguage.structure.TypeVariableDeclaration;
 import jetbrains.mps.baseLanguage.structure.Type;
 import java.util.HashMap;
 import java.util.Iterator;
+import jetbrains.mps.smodel.INodeAdapter;
 import java.util.ArrayList;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
 
