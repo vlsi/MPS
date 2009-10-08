@@ -759,6 +759,19 @@
       <node role="returnType" type="jetbrains.mps.baseLanguage.structure.BooleanType" id="3508583411998065081" />
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="3508583411998065082" />
     </node>
+    <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="6367692956145441457">
+      <property name="name" value="getErasureSignature" />
+      <link role="overriddenMethod" targetNodeId="12.1213877337313" resolveInfo="getErasureSignature" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="6367692956145441460">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="6367692956145457422">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="6367692956145457424">
+            <property name="value" value="jetbrains.mps.smodel.SNode" />
+          </node>
+        </node>
+      </node>
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.StringType" id="6367692956145441463" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="6367692956145441464" />
+    </node>
     <node role="constructor" type="jetbrains.mps.lang.behavior.structure.ConceptConstructorDeclaration" id="1213877317206">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1213877317207" />
     </node>

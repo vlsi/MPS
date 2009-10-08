@@ -46,4 +46,8 @@ public class SNodeType_Behavior {
   public static boolean virtual_hasMissingParameters_3508583411997314206(SNode thisNode) {
     return (SLinkOperations.getTarget(thisNode, "concept", false) == null);
   }
+
+  public static String virtual_getErasureSignature_1213877337313(SNode thisNode) {
+    return "jetbrains.mps.smodel.SNode";
+  }
 }
