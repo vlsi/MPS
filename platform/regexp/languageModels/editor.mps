@@ -583,9 +583,6 @@
         <node role="styleItem" type="jetbrains.mps.lang.editor.structure.ForegroundColorStyleClassItem" id="1214399678497">
           <property name="color" value="DARK_BLUE" />
         </node>
-        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PunctuationRightStyleClassItem" id="5169131996394264431">
-          <property name="flag" value="true" />
-        </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode" id="1174564178985">
         <link role="relationDeclaration" targetNodeId="1.1174564160889" />

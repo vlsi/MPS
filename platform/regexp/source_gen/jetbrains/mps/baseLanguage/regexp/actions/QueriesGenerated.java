@@ -266,7 +266,7 @@ public class QueriesGenerated {
             SNode ref = SModelOperations.createNewNode(_context.getModel(), "jetbrains.mps.baseLanguage.regexp.structure.RegexpDeclarationReferenceRegexp", null);
             SLinkOperations.setTarget(ref, "regexp", (item), false);
             SLinkOperations.setTarget(seq, "right", ref, true);
-            return seq;
+            return SLinkOperations.getTarget(seq, "right", true);
           }
 
           public SNode getOutputConcept() {

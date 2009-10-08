@@ -37,7 +37,7 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" version="3" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895903fe(jetbrains.mps.baseLanguage.strings.constraints)" version="1" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590402(jetbrains.mps.baseLanguage.strings.structure)" version="9" />
-  <maxImportIndex value="14" />
+  <maxImportIndex value="15" />
   <import index="1" modelUID="r:00000000-0000-4000-0000-011c89590518(jetbrains.mps.baseLanguage.regexp.structure)" version="0" />
   <import index="2" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" />
   <import index="3" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="3" />
@@ -45,6 +45,7 @@
   <import index="6" modelUID="f:java_stub#jetbrains.mps.smodel(jetbrains.mps.smodel@java_stub)" version="-1" />
   <import index="9" modelUID="f:java_stub#jetbrains.mps.smodel.constraints(jetbrains.mps.smodel.constraints@java_stub)" version="-1" />
   <import index="11" modelUID="f:java_stub#jetbrains.mps.smodel.search(jetbrains.mps.smodel.search@java_stub)" version="-1" />
+  <import index="15" modelUID="f:java_stub#java.io(java.io@java_stub)" version="-1" />
   <node type="jetbrains.mps.lang.actions.structure.SideTransformHintSubstituteActions" id="1174484726883">
     <property name="name" value="stringOperations" />
     <node role="actionsBuilder" type="jetbrains.mps.lang.actions.structure.SideTransformHintSubstituteActionsBuilder" id="1175165206848">
@@ -884,8 +885,13 @@
                 </node>
               </node>
               <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1177531988886">
-                <node role="expression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1177531992833">
-                  <link role="variableDeclaration" targetNodeId="1177531921276" resolveInfo="seq" />
+                <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="4729494792200593243">
+                  <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1177531992833">
+                    <link role="variableDeclaration" targetNodeId="1177531921276" resolveInfo="seq" />
+                  </node>
+                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="4729494792200593247">
+                    <link role="link" targetNodeId="1.1174485181039" />
+                  </node>
                 </node>
               </node>
             </node>
@@ -938,7 +944,7 @@
                   </node>
                   <node role="initializer" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1186083020595">
                     <link role="classConcept" targetNodeId="9.~ModelConstraintsUtil" resolveInfo="ModelConstraintsUtil" />
-                    <link role="baseMethodDeclaration" targetNodeId="9.~ModelConstraintsUtil.getSearchScope(jetbrains.mps.smodel.SNode,jetbrains.mps.smodel.SNode,jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration,jetbrains.mps.lang.structure.structure.LinkDeclaration,jetbrains.mps.smodel.IOperationContext):jetbrains.mps.smodel.constraints.SearchScopeStatus" resolveInfo="getSearchScope" />
+                    <link role="baseMethodDeclaration" targetNodeId="9.~ModelConstraintsUtil.getSearchScope(jetbrains.mps.smodel.SNode,jetbrains.mps.smodel.SNode,jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration,java.lang.String,jetbrains.mps.smodel.IOperationContext):jetbrains.mps.smodel.constraints.SearchScopeStatus" resolveInfo="getSearchScope" />
                     <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1186083130909" />
                     <node role="actualArgument" type="jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_sourceNode" id="1186083134880" />
                     <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204672721567">
