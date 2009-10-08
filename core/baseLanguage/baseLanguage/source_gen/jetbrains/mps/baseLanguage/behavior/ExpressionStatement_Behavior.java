@@ -18,7 +18,8 @@ public class ExpressionStatement_Behavior {
     if (SNodeOperations.isInstanceOf(expression, "jetbrains.mps.baseLanguage.structure.IMethodCall")) {
       methodCall = SNodeOperations.cast(expression, "jetbrains.mps.baseLanguage.structure.IMethodCall");
     } else if (SNodeOperations.isInstanceOf(expression, "jetbrains.mps.baseLanguage.structure.DotExpression") && SNodeOperations.isInstanceOf(SLinkOperations.getTarget(SNodeOperations.cast(expression, "jetbrains.mps.baseLanguage.structure.DotExpression"), "operation", true), "jetbrains.mps.baseLanguage.structure.IMethodCall")) {
-      methodCall = SNodeOperations.cast(SLinkOperations.getTarget(SNodeOperations.cast(expression, "jetbrains.mps.baseLanguage.structure.DotExpression"), "operation", true), "jetbrains.mps.baseLanguage.structure.IMethodCall");
+      SNode operation = SLinkOperations.getTarget(SNodeOperations.cast(expression, "jetbrains.mps.baseLanguage.structure.DotExpression"), "operation", true);
+      methodCall = SNodeOperations.cast(operation, "jetbrains.mps.baseLanguage.structure.IMethodCall");
     }
     if (methodCall != null && SNodeOperations.isInstanceOf(SLinkOperations.getTarget(SLinkOperations.getTarget(methodCall, "baseMethodDeclaration", false), "returnType", true), "jetbrains.mps.baseLanguage.structure.VoidType")) {
       return false;
