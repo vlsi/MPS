@@ -1016,6 +1016,23 @@
         </node>
       </node>
     </node>
+    <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="6295887419091300985">
+      <property name="name" value="o" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="6295887419091337653">
+        <link role="classifier" targetNodeId="150.~Object" resolveInfo="Object" />
+      </node>
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="6295887419091300987" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="6295887419091300988">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="4267944454053948022">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="4267944454053948023">
+            <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="4267944454053948024">
+              <link role="baseMethodDeclaration" targetNodeId="3293010995237633995" resolveInfo="foo" />
+            </node>
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="4267944454053948025" />
+          </node>
+        </node>
+      </node>
+    </node>
     <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="3293010995237625815" />
     <node role="constructor" type="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" id="3293010995237625816">
       <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="3293010995237625817" />

@@ -939,7 +939,8 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
                 param = param_iterator.next();
                 arg = arg_iterator.next();
                 for (SNode tvr : SNodeOperations.getDescendants(SLinkOperations.getTarget(param, "type", true), "jetbrains.mps.baseLanguage.structure.TypeVariableReference", true, new String[]{})) {
-                  if (ListSequence.fromList(declarations).contains(SLinkOperations.getTarget(tvr, "typeVariableDeclaration", false))) {
+                  SNode variableDeclaration = SLinkOperations.getTarget(tvr, "typeVariableDeclaration", false);
+                  if (ListSequence.fromList(declarations).contains(variableDeclaration)) {
                     SetSequence.fromSet(result).addElement(arg);
                   }
                 }

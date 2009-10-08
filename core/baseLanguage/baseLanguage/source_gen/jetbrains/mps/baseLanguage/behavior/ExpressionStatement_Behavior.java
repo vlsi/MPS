@@ -4,6 +4,7 @@ package jetbrains.mps.baseLanguage.behavior;
 
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class ExpressionStatement_Behavior {
   public static void init(SNode thisNode) {
@@ -12,6 +13,16 @@ public class ExpressionStatement_Behavior {
   public static boolean call_canServeAsReturn_1239355137616(SNode thisNode) {
     SNode methodLike = SNodeOperations.getAncestor(thisNode, "jetbrains.mps.baseLanguage.structure.IMethodLike", false, false);
     SNode retType = IMethodLike_Behavior.call_getExpectedRetType_1239354342632(methodLike);
+    SNode methodCall = null;
+    SNode expression = SLinkOperations.getTarget(thisNode, "expression", true);
+    if (SNodeOperations.isInstanceOf(expression, "jetbrains.mps.baseLanguage.structure.IMethodCall")) {
+      methodCall = SNodeOperations.cast(expression, "jetbrains.mps.baseLanguage.structure.IMethodCall");
+    } else if (SNodeOperations.isInstanceOf(expression, "jetbrains.mps.baseLanguage.structure.DotExpression") && SNodeOperations.isInstanceOf(SLinkOperations.getTarget(SNodeOperations.cast(expression, "jetbrains.mps.baseLanguage.structure.DotExpression"), "operation", true), "jetbrains.mps.baseLanguage.structure.IMethodCall")) {
+      methodCall = SNodeOperations.cast(SLinkOperations.getTarget(SNodeOperations.cast(expression, "jetbrains.mps.baseLanguage.structure.DotExpression"), "operation", true), "jetbrains.mps.baseLanguage.structure.IMethodCall");
+    }
+    if (methodCall != null && SNodeOperations.isInstanceOf(SLinkOperations.getTarget(SLinkOperations.getTarget(methodCall, "baseMethodDeclaration", false), "returnType", true), "jetbrains.mps.baseLanguage.structure.VoidType")) {
+      return false;
+    }
     return IMethodLike_Behavior.call_getLastStatement_1239354409446(methodLike) == thisNode && retType != null && !(SNodeOperations.isInstanceOf(retType, "jetbrains.mps.baseLanguage.structure.VoidType"));
   }
 }

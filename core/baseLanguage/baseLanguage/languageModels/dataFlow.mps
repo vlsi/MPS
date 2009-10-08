@@ -477,15 +477,15 @@
                 <node role="statement" type="jetbrains.mps.lang.dataFlow.structure.EmitRetStatement" id="4447433352191878575" />
               </node>
               <node role="condition" type="jetbrains.mps.baseLanguage.structure.AndExpression" id="5486827543644482146">
-                <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="5486827543644489051">
-                  <link role="classConcept" targetNodeId="2.~LastStatementUtil" resolveInfo="LastStatementUtil" />
-                  <link role="baseMethodDeclaration" targetNodeId="2.~LastStatementUtil.canMakeReturnStatement(jetbrains.mps.smodel.SNode,jetbrains.mps.smodel.IScope):boolean" resolveInfo="canMakeReturnStatement" />
-                  <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="5486827543644489052">
-                    <link role="variableDeclaration" targetNodeId="1206460272133" resolveInfo="s" />
+                <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="6295887419091348875">
+                  <node role="operand" type="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" id="6295887419091348873">
+                    <link role="concept" targetNodeId="1.1068580123155" resolveInfo="ExpressionStatement" />
+                    <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="6295887419091348872">
+                      <link role="variableDeclaration" targetNodeId="1206460272133" resolveInfo="s" />
+                    </node>
                   </node>
-                  <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="5486827543644489055">
-                    <link role="baseMethodDeclaration" targetNodeId="3.~GlobalScope.getInstance():jetbrains.mps.project.GlobalScope" resolveInfo="getInstance" />
-                    <link role="classConcept" targetNodeId="3.~GlobalScope" resolveInfo="GlobalScope" />
+                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="6295887419091348879">
+                    <link role="baseMethodDeclaration" targetNodeId="6.1239355137616" resolveInfo="canServeAsReturn" />
                   </node>
                 </node>
                 <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.AndExpression" id="4447433352191878540">
