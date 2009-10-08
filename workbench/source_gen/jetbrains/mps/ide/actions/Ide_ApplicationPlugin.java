@@ -58,6 +58,8 @@ public class Ide_ApplicationPlugin extends BaseApplicationPlugin {
     this.addGroup(groups, moduleName, "jetbrains.mps.ide.actions.GenerateModels_ActionGroup");
     this.addGroup(groups, moduleName, "jetbrains.mps.ide.actions.SaveTransientModels_ActionGroup");
     this.addGroup(groups, moduleName, "jetbrains.mps.ide.actions.GoByReference_ActionGroup");
+    this.addGroup(groups, moduleName, "jetbrains.mps.ide.actions.JUnitTestCaseActions_ActionGroup");
+    this.addGroup(groups, moduleName, "jetbrains.mps.ide.actions.JUnitTestMethodActions_ActionGroup");
     return groups;
   }
 
@@ -78,6 +80,8 @@ public class Ide_ApplicationPlugin extends BaseApplicationPlugin {
     this.insertGroupIntoAnother(ModelActions_ActionGroup.ID, "RunContextGroup", null);
     this.insertGroupIntoAnother(SolutionActions_ActionGroup.ID, "RunContextGroup", null);
     this.insertGroupIntoAnother(LanguageActions_ActionGroup.ID, "RunContextGroup", null);
+    this.insertGroupIntoAnother(JUnitTestCaseActions_ActionGroup.ID, "RunContextGroup", null);
+    this.insertGroupIntoAnother(JUnitTestMethodActions_ActionGroup.ID, "RunContextGroup", null);
   }
 
   public void insertGroupIntoAnother(String toId, String whatId, String labelName) {

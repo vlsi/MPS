@@ -48,7 +48,7 @@ public class TestCaseTreeNode extends MPSTreeNode {
 
   @Override
   public ActionGroup getActionGroup() {
-    return ActionUtils.getGroup("jetbrains.mps.baseLanguage.unitTest.plugin.JUnitTestCaseActions");
+    return ActionUtils.getGroup("jetbrains.mps.ide.actions.JUnitTestCaseActions");
   }
 
   public void doubleClick() {
@@ -57,5 +57,10 @@ public class TestCaseTreeNode extends MPSTreeNode {
 
   public int getToggleClickCount() {
     return -1;
+  }
+
+  @Override
+  public Object getUserObject() {
+    return this.testCase;
   }
 }

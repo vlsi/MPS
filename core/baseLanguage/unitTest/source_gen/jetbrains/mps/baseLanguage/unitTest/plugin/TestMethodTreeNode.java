@@ -72,10 +72,15 @@ public class TestMethodTreeNode extends MPSTreeNode {
 
   @Override
   public ActionGroup getActionGroup() {
-    return ActionUtils.getGroup("jetbrains.mps.baseLanguage.unitTest.plugin.JUnitTestMethodActions");
+    return ActionUtils.getGroup("jetbrains.mps.ide.actions.JUnitTestMethodActions");
   }
 
   public void doubleClick() {
     this.getOperationContext().getComponent(MPSEditorOpener.class).openNode(this.testMethod);
+  }
+
+  @Override
+  public Object getUserObject() {
+    return this.testMethod;
   }
 }

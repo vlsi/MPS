@@ -95,7 +95,7 @@ public abstract class BaseRunConfigurationAction extends AnAction {
     final ConfigurationContext context = new ConfigurationContext(event.getDataContext());
     final Presentation presentation = event.getPresentation();
     final RunnerAndConfigurationSettings configuration = context.getConfiguration();
-    if (configuration == null){
+    if (configuration == null) {
       presentation.setEnabled(false);
       presentation.setVisible(false);
     }

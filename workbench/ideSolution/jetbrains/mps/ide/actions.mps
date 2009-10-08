@@ -26845,6 +26845,12 @@
     <node role="modifier" type="jetbrains.mps.lang.plugin.structure.ModificationStatement" id="2594916007743946176">
       <link role="modifiedGroup" targetNodeId="1204991224874" resolveInfo="LanguageActions" />
     </node>
+    <node role="modifier" type="jetbrains.mps.lang.plugin.structure.ModificationStatement" id="1341091614641347438">
+      <link role="modifiedGroup" targetNodeId="1341091614641347434" resolveInfo="JUnitTestCaseActions" />
+    </node>
+    <node role="modifier" type="jetbrains.mps.lang.plugin.structure.ModificationStatement" id="1341091614641347439">
+      <link role="modifiedGroup" targetNodeId="1341091614641347436" resolveInfo="JUnitTestMethodActions" />
+    </node>
   </node>
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="8300784086089079434">
     <property name="name" value="OverrideClassMethodStrategy" />
@@ -28275,6 +28281,18 @@
         <property name="keycode" value="VK_D" />
       </node>
     </node>
+  </node>
+  <node type="jetbrains.mps.lang.plugin.structure.ActionGroupDeclaration" id="1341091614641347434">
+    <property name="package" value="Menu.JUnitOutput" />
+    <property name="name" value="JUnitTestCaseActions" />
+    <property name="isPopup" value="true" />
+    <node role="contents" type="jetbrains.mps.lang.plugin.structure.ElementListContents" id="1341091614641347435" />
+  </node>
+  <node type="jetbrains.mps.lang.plugin.structure.ActionGroupDeclaration" id="1341091614641347436">
+    <property name="package" value="Menu.JUnitOutput" />
+    <property name="name" value="JUnitTestMethodActions" />
+    <property name="isPopup" value="true" />
+    <node role="contents" type="jetbrains.mps.lang.plugin.structure.ElementListContents" id="1341091614641347437" />
   </node>
 </model>
 
