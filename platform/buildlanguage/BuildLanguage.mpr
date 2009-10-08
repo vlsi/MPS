@@ -22,7 +22,6 @@
   <component name="MPSProject">
     <projectSolutions>
       <solutionPath path="${mps_home}/platform/bash/solutions/jetbrains.mps.bash.sandbox/jetbrains.mps.bash.sandbox.msd" />
-      <solutionPath path="${project}/solutions/jetbrains.mps.build.sandbox/jetbrains.mps.build.sandbox.msd" folder="" />
       <solutionPath path="${project}/solutions/jetbrains.mps.buildlangauge.mpsautobuild/jetbrains.mps.buildlangauge.mpsautobuild.msd" folder="customMPS" />
     </projectSolutions>
     <projectLanguages>
