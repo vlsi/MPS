@@ -6,7 +6,6 @@
     <property name="idea.platform.build.property" value="idea.platform.build.number"/>
     <property name="platfrom.src.zip" value="idea-platform-src.zip"/>
     <property name="srcdir" value="${tmp}/idea-src/community/platform"/>
-
     <target name="default" depends="prepare,download,replace.libraries,unpack.sources,upgrade.plugins,clean"/>
     <target name="prepare">
         <mkdir dir="${tmp}"/>
@@ -89,12 +88,6 @@
             <fileset dir="${srcdir}/platform-impl/src/"/>
             <fileset dir="${srcdir}/platform-resources/src/"/>
             <fileset dir="${srcdir}/platform-resources-en/src/"/>
-
-<!--
-            <fileset dir="${srcdir}/plugins-management/src/"/>
-            <fileset dir="${srcdir}/psi-extapi/src/"/>
--->
-
             <fileset dir="${srcdir}/testRunner/src/"/>
             <fileset dir="${srcdir}/usageView/src/"/>
             <fileset dir="${srcdir}/util/src/"/>
