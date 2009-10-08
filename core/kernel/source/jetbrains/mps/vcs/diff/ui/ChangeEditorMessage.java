@@ -1,3 +1,18 @@
+/*
+ * Copyright 2003-2009 JetBrains s.r.o.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
 package jetbrains.mps.vcs.diff.ui;
 
 import jetbrains.mps.nodeEditor.DefaultEditorMessage;
@@ -36,10 +51,9 @@ public class ChangeEditorMessage extends DefaultEditorMessage {
   public boolean acceptCell(EditorCell cell, EditorComponent editor) {
     if (cell == null) return false;
     boolean accept = acceptCellInternal(cell, editor);
-    
+
     return accept;
   }
-
 
 
   @Override
@@ -53,18 +67,18 @@ public class ChangeEditorMessage extends DefaultEditorMessage {
   }
 
 
-  private boolean acceptCellInternal(EditorCell cell, EditorComponent editor) {    
+  private boolean acceptCellInternal(EditorCell cell, EditorComponent editor) {
     if (!(editor.isValid(cell) && cell.getSNode() == getNode())) {
       return false;
     }
     if (myProperty != null) {
-      if (! (cell instanceof EditorCell_Property)) {
+      if (!(cell instanceof EditorCell_Property)) {
         return false;
       }
 
       ModelAccessor modelAccessor = ((EditorCell_Property) cell).getModelAccessor();
       if (modelAccessor instanceof PropertyAccessor) {
-        return myProperty.equals(((PropertyAccessor)modelAccessor).getPropertyName());
+        return myProperty.equals(((PropertyAccessor) modelAccessor).getPropertyName());
       }
       return true;
     }

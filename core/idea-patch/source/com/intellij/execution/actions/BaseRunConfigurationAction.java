@@ -1,3 +1,18 @@
+/*
+ * Copyright 2003-2009 JetBrains s.r.o.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
 package com.intellij.execution.actions;
 
 import com.intellij.execution.ExecutionBundle;
@@ -61,7 +76,7 @@ public abstract class BaseRunConfigurationAction extends AnAction {
           });
         final InputEvent event = e.getInputEvent();
         if (event instanceof MouseEvent) {
-          popup.show(new RelativePoint((MouseEvent)event));
+          popup.show(new RelativePoint((MouseEvent) event));
         } else if (editor != null) {
           popup.showInBestPositionFor(editor);
         } else {
@@ -91,15 +106,14 @@ public abstract class BaseRunConfigurationAction extends AnAction {
             in IDEA class ClassCastException is thrown. Fix it and rewrite this -
             config.isGeneratedName should return true, getSuggestedName - the same as getName.
   */
-  public void update(final AnActionEvent event){
+  public void update(final AnActionEvent event) {
     final ConfigurationContext context = new ConfigurationContext(event.getDataContext());
     final Presentation presentation = event.getPresentation();
     final RunnerAndConfigurationSettings configuration = context.getConfiguration();
     if (configuration == null) {
       presentation.setEnabled(false);
       presentation.setVisible(false);
-    }
-    else{
+    } else {
       presentation.setEnabled(true);
       presentation.setVisible(true);
       final String name = configuration.getConfiguration().getName();

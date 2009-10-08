@@ -1,3 +1,18 @@
+/*
+ * Copyright 2003-2009 JetBrains s.r.o.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
 package jetbrains.mps.javaParser;
 
 import org.eclipse.jdt.internal.compiler.lookup.*;
@@ -126,7 +141,7 @@ public class ReferentsCreator {
       String shortName = new String(name[name.length - 1]);
       int dollarIndex = shortName.indexOf('$');
       if (dollarIndex != -1) {
-        shortName = shortName.substring(dollarIndex+1);
+        shortName = shortName.substring(dollarIndex + 1);
       }
       classifier.setName(shortName);
       classifier.setVisibility(visibility);
@@ -144,7 +159,6 @@ public class ReferentsCreator {
 
       return true;
     }
-
 
 
     private Visibility getClassVisibility(ReferenceBinding b) {
@@ -352,7 +366,7 @@ public class ReferentsCreator {
         jetbrains.mps.baseLanguage.structure.FieldDeclaration fieldDeclaration = jetbrains.mps.baseLanguage.structure.FieldDeclaration.newInstance(myReferentsCreator.myCurrentModel);
         fieldDeclaration.setIsVolatile(binding.isVolatile());
         assert (enclosingClassifier instanceof ClassConcept);
-        ((ClassConcept)enclosingClassifier).addField(fieldDeclaration);
+        ((ClassConcept) enclosingClassifier).addField(fieldDeclaration);
         field = fieldDeclaration;
       } else {
         StaticFieldDeclaration staticFieldDeclaration = StaticFieldDeclaration.newInstance(myReferentsCreator.myCurrentModel);
@@ -487,7 +501,6 @@ public class ReferentsCreator {
       }
     }
   }
-
 
 
   public static boolean isEnumConstant(FieldDeclaration fieldDeclaration) {

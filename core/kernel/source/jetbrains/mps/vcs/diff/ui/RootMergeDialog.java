@@ -1,3 +1,18 @@
+/*
+ * Copyright 2003-2009 JetBrains s.r.o.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
 package jetbrains.mps.vcs.diff.ui;
 
 import jetbrains.mps.smodel.*;
@@ -164,13 +179,13 @@ public class RootMergeDialog extends BaseDialog implements EditorMessageOwner {
 
           public void run() {
             Set<SNodeId> ids = collectRootIds();
-            for (Change change: new ArrayList<Change>(myMerger.getExcludedChanges())) {
+            for (Change change : new ArrayList<Change>(myMerger.getExcludedChanges())) {
               if (ids.contains(change.getAffectedNodeId())) {
                 myMerger.includeChange(change);
               }
             }
 
-            for (Change change: new ArrayList<Change>(myMerger.getApplyedChanges())) {
+            for (Change change : new ArrayList<Change>(myMerger.getApplyedChanges())) {
               if (ids.contains(change.getAffectedNodeId())) {
                 myMerger.getApplyedChanges().remove(change);
               }
@@ -194,12 +209,12 @@ public class RootMergeDialog extends BaseDialog implements EditorMessageOwner {
             changes.addAll(myMerger.getBaseRepoChange());
 
             changes.removeAll(myMerger.getExcludedChanges());
-            for (Conflict conflict: myMerger.getUnresolvedConflicts()) {
+            for (Conflict conflict : myMerger.getUnresolvedConflicts()) {
               changes.remove(conflict.getC1());
               changes.remove(conflict.getC2());
             }
 
-            for (Change change: changes) {
+            for (Change change : changes) {
               if (ids.contains(change.getAffectedNodeId())) {
                 myMerger.getApplyedChanges().add(change);
               }
@@ -225,7 +240,7 @@ public class RootMergeDialog extends BaseDialog implements EditorMessageOwner {
     SNode change1Node = model.getRootByName(myRoot.getName());
     if (change1Node != null) {
       ids.add(change1Node.getSNodeId());
-      for (SNode node: change1Node.getDescendants()) {
+      for (SNode node : change1Node.getDescendants()) {
         ids.add(node.getSNodeId());
       }
     }
@@ -235,7 +250,7 @@ public class RootMergeDialog extends BaseDialog implements EditorMessageOwner {
     return new DialogDimensionsSettings.DialogDimensions(10, 10, 1000, 900);
   }
 
-  @Button(name = "Close",mnemonic = 'C',position = 0, defaultButton = true)
+  @Button(name = "Close", mnemonic = 'C', position = 0, defaultButton = true)
   public void onClose() {
     dispose();
   }

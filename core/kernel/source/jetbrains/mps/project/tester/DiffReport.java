@@ -1,3 +1,18 @@
+/*
+ * Copyright 2003-2009 JetBrains s.r.o.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
 package jetbrains.mps.project.tester;
 
 import java.util.List;
@@ -20,13 +35,13 @@ public class DiffReport {
   private String getChangeReport(Change change, String[] content, boolean isOld) {
     StringBuilder stringBuilder = new StringBuilder();
     char type = change.getType();
-    int count = (isOld)? change.myDeleted : change.myAdded;
-    int startIndex = (isOld)? change.myIndexOld : change.myIndexNew;
+    int count = (isOld) ? change.myDeleted : change.myAdded;
+    int startIndex = (isOld) ? change.myIndexOld : change.myIndexNew;
     for (int i = -CONTEXT_LINE_COUNT; i < count + CONTEXT_LINE_COUNT; i++) {
       final int idx = startIndex + i;
       if (idx >= 0 && idx < content.length && count != 0) {
         String currentUserObject = content[idx];
-        stringBuilder.append((i < 0 || i >= count)? " " : type).append(currentUserObject).append("\n");
+        stringBuilder.append((i < 0 || i >= count) ? " " : type).append(currentUserObject).append("\n");
       }
     }
     return stringBuilder.toString();
@@ -34,9 +49,9 @@ public class DiffReport {
 
   private String getChangeHeader(Change change, boolean isOld) {
     StringBuilder stringBuilder = new StringBuilder();
-    int index = (isOld)? change.myIndexOld : change.myIndexNew;
-    int endIndex = index + ((isOld)? change.myDeleted : change.myAdded);
-    String symbols = (isOld)? OLD_CONTENT_SYMBOL : NEW_CONTENT_SYMBOL;
+    int index = (isOld) ? change.myIndexOld : change.myIndexNew;
+    int endIndex = index + ((isOld) ? change.myDeleted : change.myAdded);
+    String symbols = (isOld) ? OLD_CONTENT_SYMBOL : NEW_CONTENT_SYMBOL;
     stringBuilder.append(symbols).append(" ").append(index);
     if (endIndex != index) {
       stringBuilder.append(", ").append(endIndex);

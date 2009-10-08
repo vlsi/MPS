@@ -60,7 +60,7 @@ public class LicenseUpdater {
           updateLicense(f, inSourceDir, inSourceGen);
         }
       }
-    } else if (inSourceDir && current.getName().endsWith(".java")) {
+    } else if (inSourceDir && !inSourceGen && current.getName().endsWith(".java")) {
       System.out.println("updating " + current);
 
       String contents = FileUtil.read(current);

@@ -1,3 +1,18 @@
+/*
+ * Copyright 2003-2009 JetBrains s.r.o.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
 package com.intellij.openapi.command.impl;
 
 import com.intellij.CommonBundle;
@@ -106,8 +121,7 @@ public class UndoManagerImpl extends UndoManager implements ProjectComponent, Ap
   private void initialize() {
     if (myProject == null) {
       runStartupActivity();
-    }
-    else {
+    } else {
       myStartupManager.registerStartupActivity(new Runnable() {
         public void run() {
           runStartupActivity();
@@ -148,11 +162,11 @@ public class UndoManagerImpl extends UndoManager implements ProjectComponent, Ap
     Disposer.register(this, new DocumentUndoProvider(myProject));
 
     myUndoProviders = myProject == null
-                      ? Extensions.getExtensions(UndoProvider.EP_NAME)
-                      : Extensions.getExtensions(UndoProvider.PROJECT_EP_NAME, myProject);
+      ? Extensions.getExtensions(UndoProvider.EP_NAME)
+      : Extensions.getExtensions(UndoProvider.PROJECT_EP_NAME, myProject);
     for (UndoProvider undoProvider : myUndoProviders) {
       if (undoProvider instanceof Disposable) {
-        Disposer.register(this, (Disposable)undoProvider);
+        Disposer.register(this, (Disposable) undoProvider);
       }
     }
   }
@@ -265,8 +279,7 @@ public class UndoManagerImpl extends UndoManager implements ProjectComponent, Ap
         if (document != null && EditorFactory.getInstance().getEditors(document, myProject).length > 0) {
           openDocs.add(each);
         }
-      }
-      else {
+      } else {
         if (myProject != null && FileEditorManager.getInstance(myProject).isFileOpen(file)) {
           openDocs.add(each);
         }
@@ -306,7 +319,7 @@ public class UndoManagerImpl extends UndoManager implements ProjectComponent, Ap
 
     if (myCommandLevel == 0) {
       LOG.assertTrue(action instanceof NonUndoableAction,
-                     "Undoable actions allowed inside commands only (see com.intellij.openapi.command.CommandProcessor.executeCommand())");
+        "Undoable actions allowed inside commands only (see com.intellij.openapi.command.CommandProcessor.executeCommand())");
       commandStarted(UndoConfirmationPolicy.DEFAULT);
       myCurrentMerger.addAction(action, false);
       commandFinished("", null);
@@ -348,8 +361,7 @@ public class UndoManagerImpl extends UndoManager implements ProjectComponent, Ap
         try {
           if (isUndoInProgress()) {
             myMerger.undoOrRedo(editor, true);
-          }
-          else {
+          } else {
             myMerger.undoOrRedo(editor, false);
           }
         }
@@ -381,7 +393,7 @@ public class UndoManagerImpl extends UndoManager implements ProjectComponent, Ap
   }
 
   private Collection<DocumentReference> getDocRefs(FileEditor editor) {
-    if (editor instanceof TextEditor && ((TextEditor)editor).getEditor().isViewer()) return null;
+    if (editor instanceof TextEditor && ((TextEditor) editor).getEditor().isViewer()) return null;
     return getDocumentReferences(editor);
   }
 
@@ -408,7 +420,7 @@ public class UndoManagerImpl extends UndoManager implements ProjectComponent, Ap
   @Patch
   static Set<DocumentReference> getDocumentReferences(FileEditor editor) {
     //patch begin
-    if (editor instanceof MPSFileNodeEditor){
+    if (editor instanceof MPSFileNodeEditor) {
       MPSFileNodeEditor mpsEditor = (MPSFileNodeEditor) editor;
       Set<DocumentReference> result = new java.util.HashSet<DocumentReference>();
       result.addAll(Arrays.asList(mpsEditor.getDocumentReferences()));

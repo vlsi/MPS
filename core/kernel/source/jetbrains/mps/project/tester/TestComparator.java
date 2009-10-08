@@ -1,3 +1,18 @@
+/*
+ * Copyright 2003-2009 JetBrains s.r.o.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
 package jetbrains.mps.project.tester;
 
 import java.util.*;
@@ -56,7 +71,7 @@ public class TestComparator {
         result[i] = 0;
         continue;
       }
-      int number = myStuff == null || !myStuff.containsKey(object)? 0 : myStuff.get(object);
+      int number = myStuff == null || !myStuff.containsKey(object) ? 0 : myStuff.get(object);
       if (number == 0) {
         number = myNextNumber++;
         myStuff.put(object, number);
@@ -119,14 +134,14 @@ public class TestComparator {
     }
     return removeEquals(x, y);
   }
-  
+
   private int initChangeArray() {
     int oldSize = myUniqueOld.length;
     int newSize = myUniqueNew.length;
     int[] tempEnds = new int[myUniqueOld.length + myUniqueNew.length + 1];
     for (int i = 0; i <= oldSize + newSize; i++) {
-      int min = (i <= newSize)? -i : i - 2 * newSize;
-      int max = (i <= oldSize)? i : 2 * oldSize - i;
+      int min = (i <= newSize) ? -i : i - 2 * newSize;
+      int max = (i <= oldSize) ? i : 2 * oldSize - i;
       if (i != 0) {
         System.arraycopy(myFinishes, min + newSize, tempEnds, min + newSize, max - min);
       } else {

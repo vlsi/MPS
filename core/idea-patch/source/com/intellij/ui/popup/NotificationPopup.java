@@ -13,7 +13,6 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
 package com.intellij.ui.popup;
 
 import com.intellij.openapi.ui.popup.Balloon;
@@ -119,6 +118,7 @@ public class NotificationPopup {
 
   interface Impl {
     void addListener(JBPopupListener listener);
+
     void hide();
   }
 

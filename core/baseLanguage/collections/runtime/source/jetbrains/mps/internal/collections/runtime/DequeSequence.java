@@ -1,3 +1,18 @@
+/*
+ * Copyright 2003-2009 JetBrains s.r.o.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
 package jetbrains.mps.internal.collections.runtime;
 
 import java.io.Serializable;
@@ -12,255 +27,254 @@ import jetbrains.mps.internal.collections.runtime.impl.NullDequeSequence;
 
 public class DequeSequence<T> extends QueueSequence<T> implements Deque<T>, IDequeSequence<T>, Serializable {
 
-    /**
-     *  Auto-computed serialVersionUID
-     */
-    private static final long serialVersionUID = 4041418285223704058L;
+  /**
+   * Auto-computed serialVersionUID
+   */
+  private static final long serialVersionUID = 4041418285223704058L;
 
-    public static <U> IDequeSequence<U> fromDeque (Deque<U> deque) {
-        if (Sequence.USE_NULL_SEQUENCE) {
-            if (deque == null) {
-                return NullDequeSequence.instance();
-            }
+  public static <U> IDequeSequence<U> fromDeque(Deque<U> deque) {
+    if (Sequence.USE_NULL_SEQUENCE) {
+      if (deque == null) {
+        return NullDequeSequence.instance();
+      }
+    }
+    if (deque instanceof IDequeSequence) {
+      return (IDequeSequence<U>) deque;
+    }
+    return new DequeSequence<U>(deque);
+  }
+
+  public static <U> IDequeSequence<U> fromIterable(Iterable<U> it) {
+    if (Sequence.USE_NULL_SEQUENCE) {
+      if (it == null) {
+        return NullDequeSequence.instance();
+      }
+    }
+    if (it instanceof IDequeSequence) {
+      return (IDequeSequence<U>) it;
+    }
+    Deque<U> deque = new LinkedList<U>();
+    if (Sequence.IGNORE_NULL_VALUES) {
+      for (U u : it) {
+        if (u != null) {
+          deque.add(u);
         }
+      }
+    } else if (it instanceof Collection) {
+      deque.addAll((Collection<? extends U>) it);
+    } else {
+      for (U u : it) {
+        deque.add(u);
+      }
+    }
+    return new DequeSequence<U>(deque);
+  }
+
+  public static <U> IDequeSequence<U> fromDequeAndArray(Deque<U> deque, U... array) {
+    if (Sequence.USE_NULL_SEQUENCE) {
+      if (deque == null && array == null) {
+        return NullDequeSequence.instance();
+      } else if (deque == null) {
+        deque = new LinkedList<U>();
+      } else if (array == null) {
         if (deque instanceof IDequeSequence) {
-            return (IDequeSequence<U>) deque;
+          return (IDequeSequence<U>) deque;
         }
-        return new DequeSequence<U> (deque);
-    }
-    
-    public static <U> IDequeSequence<U> fromIterable (Iterable<U> it) {
-        if (Sequence.USE_NULL_SEQUENCE) {
-            if (it == null) {
-                return NullDequeSequence.instance();
-            }
-        }
-        if (it instanceof IDequeSequence) {
-            return (IDequeSequence<U>) it;
-        }
-        Deque<U> deque = new LinkedList<U> ();
-        if (Sequence.IGNORE_NULL_VALUES) {
-            for (U u : it) {
-                if (u != null) {
-                    deque.add(u);
-                }
-            }
-        }
-        else if (it instanceof Collection){
-            deque.addAll((Collection<? extends U>) it);
-        }
-        else {
-            for (U u: it) {
-                deque.add(u);
-            }
-        }
-        return new DequeSequence<U> (deque);
-    }
-    
-    public static <U> IDequeSequence<U> fromDequeAndArray(Deque<U> deque, U... array) {
-        if (Sequence.USE_NULL_SEQUENCE) {
-            if (deque == null && array == null) {
-                return NullDequeSequence.instance();
-            }
-            else if (deque == null) {
-                deque = new LinkedList<U>();
-            }
-            else if (array == null) {
-                if (deque instanceof IDequeSequence) { return (IDequeSequence<U>) deque; }
-                return new DequeSequence<U>(deque);
-            }
-        }
-        List<U> input = Arrays.asList(array);
-        if (Sequence.IGNORE_NULL_VALUES) {
-            for (U u : input) {
-                if (u != null) {
-                    deque.add(u);
-                }
-            }
-        }
-        else {
-            deque.addAll(input);
-        }
-        if (deque instanceof IDequeSequence) { return (IDequeSequence<U>) deque; }
         return new DequeSequence<U>(deque);
+      }
     }
-    
-    public static <U> IDequeSequence<U> fromDequeWithValues(Deque<U> deque, Iterable<? extends U> it) {
-        Deque<U> tmp = deque;
-        if (Sequence.USE_NULL_SEQUENCE) {
-            if (deque == null && it == null) {
-                return NullDequeSequence.instance();
-            }
-            else if (deque == null) {
-                tmp = new LinkedList<U>();
-            }
-            else if (it == null) { return fromDeque(deque); }
+    List<U> input = Arrays.asList(array);
+    if (Sequence.IGNORE_NULL_VALUES) {
+      for (U u : input) {
+        if (u != null) {
+          deque.add(u);
         }
-        if (Sequence.IGNORE_NULL_VALUES) {
-            for (U u : it) {
-                if (u != null) {
-                    tmp.add(u);
-                }
-            }
+      }
+    } else {
+      deque.addAll(input);
+    }
+    if (deque instanceof IDequeSequence) {
+      return (IDequeSequence<U>) deque;
+    }
+    return new DequeSequence<U>(deque);
+  }
+
+  public static <U> IDequeSequence<U> fromDequeWithValues(Deque<U> deque, Iterable<? extends U> it) {
+    Deque<U> tmp = deque;
+    if (Sequence.USE_NULL_SEQUENCE) {
+      if (deque == null && it == null) {
+        return NullDequeSequence.instance();
+      } else if (deque == null) {
+        tmp = new LinkedList<U>();
+      } else if (it == null) {
+        return fromDeque(deque);
+      }
+    }
+    if (Sequence.IGNORE_NULL_VALUES) {
+      for (U u : it) {
+        if (u != null) {
+          tmp.add(u);
         }
-        else if (it instanceof Collection) {
-            tmp.addAll((Collection<? extends U>) it);
-        }
-        else {
-            for (U u : it) {
-                tmp.add(u);
-            }
-        }
-        if (tmp instanceof IDequeSequence) { return (IDequeSequence<U>) tmp; }
-        return new DequeSequence<U>(tmp);
+      }
+    } else if (it instanceof Collection) {
+      tmp.addAll((Collection<? extends U>) it);
+    } else {
+      for (U u : it) {
+        tmp.add(u);
+      }
     }
-    
-    // Delegate methods 
+    if (tmp instanceof IDequeSequence) {
+      return (IDequeSequence<U>) tmp;
+    }
+    return new DequeSequence<U>(tmp);
+  }
 
-    public void addFirst(T t) {
-        getDeque().addFirst(t);
-    }
+  // Delegate methods
 
-    public void addLast(T t) {
-        getDeque().addLast(t);
-    }
+  public void addFirst(T t) {
+    getDeque().addFirst(t);
+  }
 
-    public Iterator<T> descendingIterator() {
-        return getDeque().descendingIterator();
-    }
+  public void addLast(T t) {
+    getDeque().addLast(t);
+  }
 
-    public T getFirst() {
-        return getDeque().getFirst();
-    }
+  public Iterator<T> descendingIterator() {
+    return getDeque().descendingIterator();
+  }
 
-    public T getLast() {
-        return getDeque().getLast();
-    }
+  public T getFirst() {
+    return getDeque().getFirst();
+  }
 
-    public boolean offerFirst(T t) {
-        return getDeque().offerFirst(t);
-    }
+  public T getLast() {
+    return getDeque().getLast();
+  }
 
-    public boolean offerLast(T t) {
-        return getDeque().offerLast(t);
-    }
+  public boolean offerFirst(T t) {
+    return getDeque().offerFirst(t);
+  }
 
-    public T peekFirst() {
-        return getDeque().peekFirst();
-    }
+  public boolean offerLast(T t) {
+    return getDeque().offerLast(t);
+  }
 
-    public T peekLast() {
-        return getDeque().peekLast();
-    }
+  public T peekFirst() {
+    return getDeque().peekFirst();
+  }
 
-    public T pollFirst() {
-        return getDeque().pollFirst();
-    }
+  public T peekLast() {
+    return getDeque().peekLast();
+  }
 
-    public T pollLast() {
-        return getDeque().pollLast();
-    }
+  public T pollFirst() {
+    return getDeque().pollFirst();
+  }
 
-    public T pop() {
-        return getDeque().pop();
-    }
+  public T pollLast() {
+    return getDeque().pollLast();
+  }
 
-    public void push(T t) {
-        getDeque().push(t);
-    }
+  public T pop() {
+    return getDeque().pop();
+  }
 
-    public T removeFirst() {
-        return getDeque().removeFirst();
-    }
+  public void push(T t) {
+    getDeque().push(t);
+  }
 
-    public boolean removeFirstOccurrence(Object o) {
-        return getDeque().removeFirstOccurrence(o);
-    }
+  public T removeFirst() {
+    return getDeque().removeFirst();
+  }
 
-    public T removeLast() {
-        return getDeque().removeLast();
-    }
+  public boolean removeFirstOccurrence(Object o) {
+    return getDeque().removeFirstOccurrence(o);
+  }
 
-    public boolean removeLastOccurrence(Object o) {
-        return getDeque().removeLastOccurrence(o);
-    }
+  public T removeLast() {
+    return getDeque().removeLast();
+  }
 
-    // IDequeSequence
-    
-    public T addFirstElement(T t) {
-        getDeque().addFirst(t);
-        return t;
-    }
+  public boolean removeLastOccurrence(Object o) {
+    return getDeque().removeLastOccurrence(o);
+  }
 
-    public T removeLastElement() {
-        if (Sequence.NULL_WHEN_EMPTY) {
-            if (getDeque().isEmpty()) {
-                return null;
-            }
-        }
-        return getDeque().removeLast();
-    }
-    
-    public T peekElement() {
-        if (Sequence.NULL_WHEN_EMPTY) {
-            if (getDeque().isEmpty()) {
-                return null;
-            }
-        }
-        return getDeque().peek();
-    }
+  // IDequeSequence
 
-    public T popElement() {
-        if (Sequence.NULL_WHEN_EMPTY) {
-            if (getDeque().isEmpty()) {
-                return null;
-            }
-        }
-        return getDeque().pop();
-    }
+  public T addFirstElement(T t) {
+    getDeque().addFirst(t);
+    return t;
+  }
 
-    public T pushElement(T t) {
-        getDeque().push(t);
-        return t;
+  public T removeLastElement() {
+    if (Sequence.NULL_WHEN_EMPTY) {
+      if (getDeque().isEmpty()) {
+        return null;
+      }
     }
+    return getDeque().removeLast();
+  }
 
-    @Override
-    public IDequeSequence<T> addSequence(ISequence<? extends T> seq) {
-        return (IDequeSequence<T>) super.addSequence(seq);
+  public T peekElement() {
+    if (Sequence.NULL_WHEN_EMPTY) {
+      if (getDeque().isEmpty()) {
+        return null;
+      }
     }
-    
-    @Override
-    public IDequeSequence<T> removeSequence(ISequence<? extends T> seq) {
-        return (IDequeSequence<T>) super.removeSequence(seq);
-    }
-    
-    @Override
-    public IDequeSequence<T> removeWhere(IWhereFilter<T> filter) {
-        return (IDequeSequence<T>) super.removeWhere(filter);
-    }
-    
-    @Override
-    public IDequeSequence<T> asUnmodifiable() {
-        // TODO Auto-generated method stub
-        return (IDequeSequence<T>) super.asUnmodifiable();
-    }
-    
-    @Override
-    public IDequeSequence<T> asSynchronized() {
-        // TODO Auto-generated method stub
-        return (IDequeSequence<T>) super.asSynchronized();
-    }
+    return getDeque().peek();
+  }
 
-    public Deque<T> toDeque() {
-        return this;
+  public T popElement() {
+    if (Sequence.NULL_WHEN_EMPTY) {
+      if (getDeque().isEmpty()) {
+        return null;
+      }
     }
+    return getDeque().pop();
+  }
 
-    protected DequeSequence (Deque<T> deque) {
-        super (deque);
-    }
+  public T pushElement(T t) {
+    getDeque().push(t);
+    return t;
+  }
 
-    protected Deque<T> getDeque() {
-        return (Deque<T>) getQueue();
-    }
+  @Override
+  public IDequeSequence<T> addSequence(ISequence<? extends T> seq) {
+    return (IDequeSequence<T>) super.addSequence(seq);
+  }
+
+  @Override
+  public IDequeSequence<T> removeSequence(ISequence<? extends T> seq) {
+    return (IDequeSequence<T>) super.removeSequence(seq);
+  }
+
+  @Override
+  public IDequeSequence<T> removeWhere(IWhereFilter<T> filter) {
+    return (IDequeSequence<T>) super.removeWhere(filter);
+  }
+
+  @Override
+  public IDequeSequence<T> asUnmodifiable() {
+    // TODO Auto-generated method stub
+    return (IDequeSequence<T>) super.asUnmodifiable();
+  }
+
+  @Override
+  public IDequeSequence<T> asSynchronized() {
+    // TODO Auto-generated method stub
+    return (IDequeSequence<T>) super.asSynchronized();
+  }
+
+  public Deque<T> toDeque() {
+    return this;
+  }
+
+  protected DequeSequence(Deque<T> deque) {
+    super(deque);
+  }
+
+  protected Deque<T> getDeque() {
+    return (Deque<T>) getQueue();
+  }
 
 }

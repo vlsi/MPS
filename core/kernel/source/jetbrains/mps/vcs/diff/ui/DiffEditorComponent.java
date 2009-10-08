@@ -1,3 +1,18 @@
+/*
+ * Copyright 2003-2009 JetBrains s.r.o.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
 package jetbrains.mps.vcs.diff.ui;
 
 import jetbrains.mps.nodeEditor.*;
@@ -25,7 +40,7 @@ public abstract class DiffEditorComponent extends EditorComponent {
     super(context);
     myInspector = new InspectorEditorComponent();
     editNode(node, context);
-    
+
   }
 
   public void inspect(SNode node) {
@@ -102,7 +117,7 @@ public abstract class DiffEditorComponent extends EditorComponent {
           }
 
           if (change instanceof DeleteNodeChange) {
-            if (isNew) {             
+            if (isNew) {
               ChangeEditorMessage message = createEditorMessage(change, model, revertedChanges, !newChanges.contains(change));
               resultChanges.add(message);
               getHighlightManager().mark(message);
@@ -128,10 +143,10 @@ public abstract class DiffEditorComponent extends EditorComponent {
     Set<Change> newChanges = new HashSet<Change>();
     for (Change change : changes) {
       if (change instanceof NewNodeChange) {
-        SNodeId id = ((NewNodeChange)change).getNodeParent();
+        SNodeId id = ((NewNodeChange) change).getNodeParent();
         if (id != null && newNodes.contains(id)) {
           newChanges.add(change);
-        }        
+        }
       } else {
         SNodeId id = change.getAffectedNodeId();
         if (id != null && newNodes.contains(id)) {
@@ -203,7 +218,7 @@ public abstract class DiffEditorComponent extends EditorComponent {
     }
   }
 
-  public abstract void configureBlock(ChangesBlock block);    
+  public abstract void configureBlock(ChangesBlock block);
 
   public void removeAllChanges() {
     for (ChangeEditorMessage message : myChanges) {
@@ -227,15 +242,15 @@ public abstract class DiffEditorComponent extends EditorComponent {
     if (cell.getY() > getViewport().getViewPosition().y) {
       return node;
     }
-    for (SNode child: node.getChildrenArray()) {
-        SNode result = getFirtsVisibleNode(child);
-        if (result != null) {
-          return result;
-        }
+    for (SNode child : node.getChildrenArray()) {
+      SNode result = getFirtsVisibleNode(child);
+      if (result != null) {
+        return result;
+      }
 
     }
     return null;
-}
+  }
 
   public void synchronizeViewWith(final DiffEditorComponent otherComponent) {
     if (this == otherComponent) {

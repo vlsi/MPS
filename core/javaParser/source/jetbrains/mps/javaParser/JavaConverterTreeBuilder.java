@@ -1,3 +1,18 @@
+/*
+ * Copyright 2003-2009 JetBrains s.r.o.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
 package jetbrains.mps.javaParser;
 
 import jetbrains.mps.baseLanguage.structure.*;
@@ -130,19 +145,19 @@ public class JavaConverterTreeBuilder {
   jetbrains.mps.baseLanguage.structure.CharConstant processConstant(CharConstant x) {
     jetbrains.mps.baseLanguage.structure.CharConstant result =
       jetbrains.mps.baseLanguage.structure.CharConstant.newInstance(myCurrentModel);
-    result.setCharConstant(x.charValue()+"");
+    result.setCharConstant(x.charValue() + "");
     return result;
   }
 
   FloatingPointConstant processConstant(DoubleConstant x) {
     FloatingPointConstant result = FloatingPointConstant.newInstance(myCurrentModel);
-    result.setValue(x.doubleValue()+"");
+    result.setValue(x.doubleValue() + "");
     return result;
   }
 
   FloatingPointFloatConstant processConstant(FloatConstant x) {
     FloatingPointFloatConstant result = FloatingPointFloatConstant.newInstance(myCurrentModel);
-    result.setValue(x.floatValue()+"f");
+    result.setValue(x.floatValue() + "f");
     return result;
   }
 
@@ -154,7 +169,7 @@ public class JavaConverterTreeBuilder {
 
   LongLiteral processConstant(LongConstant x) {
     LongLiteral result = LongLiteral.newInstance(myCurrentModel);
-    result.setValue(x.longValue()+"");
+    result.setValue(x.longValue() + "");
     return result;
   }
 
@@ -283,9 +298,9 @@ public class JavaConverterTreeBuilder {
       case BinaryExpression.RIGHT_SHIFT:
         op = ShiftRightExpression.newInstance(myCurrentModel);
         break;
-        //todo add to BL
-        /* case BinaryExpression.UNSIGNED_RIGHT_SHIFT:
-        break;*/
+      //todo add to BL
+      /* case BinaryExpression.UNSIGNED_RIGHT_SHIFT:
+      break;*/
       case BinaryExpression.PLUS:
         op = PlusExpression.newInstance(myCurrentModel);
         break;
@@ -346,34 +361,34 @@ public class JavaConverterTreeBuilder {
       case CompoundAssignment.MINUS:
         op = MinusAssignmentExpression.newInstance(myCurrentModel);
         break;
-        //todo make those expressions' counterparts in BL
-        /* case CompoundAssignment.MULTIPLY:
-        op = JBinaryOperator.ASG_MUL;
-        break;
-      case CompoundAssignment.DIVIDE:
-        op = JBinaryOperator.ASG_DIV;
-        break;
-      case CompoundAssignment.AND:
-        op = JBinaryOperator.ASG_BIT_AND;
-        break;
-      case CompoundAssignment.OR:
-        op = JBinaryOperator.ASG_BIT_OR;
-        break;
-      case CompoundAssignment.XOR:
-        op = JBinaryOperator.ASG_BIT_XOR;
-        break;
-      case CompoundAssignment.REMAINDER:
-        op = JBinaryOperator.ASG_MOD;
-        break;
-      case CompoundAssignment.LEFT_SHIFT:
-        op = JBinaryOperator.ASG_SHL;
-        break;
-      case CompoundAssignment.RIGHT_SHIFT:
-        op = JBinaryOperator.ASG_SHR;
-        break;
-      case CompoundAssignment.UNSIGNED_RIGHT_SHIFT:
-        op = JBinaryOperator.ASG_SHRU;
-        break;*/
+      //todo make those expressions' counterparts in BL
+      /* case CompoundAssignment.MULTIPLY:
+      op = JBinaryOperator.ASG_MUL;
+      break;
+    case CompoundAssignment.DIVIDE:
+      op = JBinaryOperator.ASG_DIV;
+      break;
+    case CompoundAssignment.AND:
+      op = JBinaryOperator.ASG_BIT_AND;
+      break;
+    case CompoundAssignment.OR:
+      op = JBinaryOperator.ASG_BIT_OR;
+      break;
+    case CompoundAssignment.XOR:
+      op = JBinaryOperator.ASG_BIT_XOR;
+      break;
+    case CompoundAssignment.REMAINDER:
+      op = JBinaryOperator.ASG_MOD;
+      break;
+    case CompoundAssignment.LEFT_SHIFT:
+      op = JBinaryOperator.ASG_SHL;
+      break;
+    case CompoundAssignment.RIGHT_SHIFT:
+      op = JBinaryOperator.ASG_SHR;
+      break;
+    case CompoundAssignment.UNSIGNED_RIGHT_SHIFT:
+      op = JBinaryOperator.ASG_SHRU;
+      break;*/
       default:
         throw new JavaConverterException("Unsupported operator for CompoundAssignment");
     }
@@ -497,7 +512,7 @@ public class JavaConverterTreeBuilder {
   jetbrains.mps.baseLanguage.structure.Expression processExpression(SuperReference x) {
     //we have no "super-reference" in BL; only super method call
     //so this case should be analyzed in a method for method calls
-    throw  new JavaConverterException("we have no super-references; this case should be analyzed as method call");
+    throw new JavaConverterException("we have no super-references; this case should be analyzed as method call");
   }
 
   jetbrains.mps.baseLanguage.structure.Expression processExpression(ThisReference x) {
@@ -520,7 +535,7 @@ public class JavaConverterTreeBuilder {
 
   private ReferenceBinding getDeclaredClassBinding(FieldBinding fieldBinding) {
     if (fieldBinding instanceof ParameterizedFieldBinding) {
-      return ((ParameterizedFieldBinding)fieldBinding).originalField.declaringClass;
+      return ((ParameterizedFieldBinding) fieldBinding).originalField.declaringClass;
     } else {
       return fieldBinding.declaringClass;
     }
@@ -1133,7 +1148,7 @@ public class JavaConverterTreeBuilder {
       }
 
       if (x.methods != null) {
-     /*   int constructorsCount = 0;
+        /*   int constructorsCount = 0;
         for (AbstractMethodDeclaration abstractMethodDeclaration : x.methods) {
           if (abstractMethodDeclaration instanceof ConstructorDeclaration) {
             constructorsCount++;
@@ -1144,7 +1159,7 @@ public class JavaConverterTreeBuilder {
           AbstractMethodDeclaration method = x.methods[i];
           if (method.isConstructor()) {
             assert (myCurrentClass instanceof ClassConcept);
-           /* if (constructorsCount == 1 && (method.arguments == null || method.arguments.length == 0)) {
+            /* if (constructorsCount == 1 && (method.arguments == null || method.arguments.length == 0)) {
               if (method.statements == null || method.statements.length == 0) {
                 //default constructor; could be omitted
                 MethodBinding b = method.binding;
@@ -1306,7 +1321,7 @@ public class JavaConverterTreeBuilder {
     if (adapter instanceof EnumConstantDeclaration) {
       try {
         EnumConstantDeclaration enumConstant = (EnumConstantDeclaration) adapter;
-        assert(myCurrentClass instanceof EnumClass);
+        assert (myCurrentClass instanceof EnumClass);
         AllocationExpression initializer = (AllocationExpression) declaration.initialization;
         jetbrains.mps.baseLanguage.structure.ConstructorDeclaration constructor =
           (jetbrains.mps.baseLanguage.structure.ConstructorDeclaration) myTypesProvider.getRaw(initializer.binding);
@@ -1352,7 +1367,7 @@ public class JavaConverterTreeBuilder {
   private StatementList getStatementListFromStatement(Statement possibleBlock) {
     StatementList result;
     if (possibleBlock instanceof BlockStatement) {
-      result = ((BlockStatement)possibleBlock).getStatements();
+      result = ((BlockStatement) possibleBlock).getStatements();
       possibleBlock.removeChild(result);
     } else {
       result = StatementList.newInstance(myCurrentModel);

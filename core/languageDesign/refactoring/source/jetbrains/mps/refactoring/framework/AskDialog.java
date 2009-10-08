@@ -48,16 +48,16 @@ public class AskDialog extends BaseDialog {
 
     boolean hasStretchableChild = false;
     for (IChooser chooser : myChoosers) {
-      if (chooser.isStretchable()){
+      if (chooser.isStretchable()) {
         constraints.weighty = 1;
         hasStretchableChild = true;
-      }else{
+      } else {
         constraints.weighty = 0;
       }
       myInnerPanel.add(chooser.getMainComponent(), constraints);
     }
 
-    if (!hasStretchableChild){
+    if (!hasStretchableChild) {
       constraints.weighty = 1;
       myInnerPanel.add(new JPanel(), constraints);
     }

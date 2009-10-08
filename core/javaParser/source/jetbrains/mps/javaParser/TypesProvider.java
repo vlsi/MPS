@@ -1,3 +1,18 @@
+/*
+ * Copyright 2003-2009 JetBrains s.r.o.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
 package jetbrains.mps.javaParser;
 
 import org.eclipse.jdt.internal.compiler.lookup.*;
@@ -209,7 +224,7 @@ public class TypesProvider {
         target = getMPSMethodById(model, nodeId).getNode();
         break;
       }
-      default : {
+      default: {
         target = null;
       }
     }
@@ -247,7 +262,7 @@ public class TypesProvider {
       }
     }
     if (classifier instanceof ClassConcept) {
-      for (FieldDeclaration field : ((ClassConcept)classifier).getFields()) {
+      for (FieldDeclaration field : ((ClassConcept) classifier).getFields()) {
         if (field.getName().equals(fieldName)) {
           return field;
         }
@@ -334,7 +349,7 @@ public class TypesProvider {
       if (typeParameters != null && !typeParameters.isEmpty()) {
         sb.append('<');
         appendTypesList(sb, typeParameters);
-      sb.append('>');
+        sb.append('>');
       }
       return sb.toString();
     }
@@ -433,10 +448,10 @@ public class TypesProvider {
       }
       return name;
     }
-    if (type instanceof WildcardBinding && ((WildcardBinding)type).boundKind == Wildcard.EXTENDS) {
+    if (type instanceof WildcardBinding && ((WildcardBinding) type).boundKind == Wildcard.EXTENDS) {
       return "? extends " + asString(((WildcardBinding) type).bound); //todo multiple bounds (much later)
     }
-    if (type instanceof WildcardBinding && ((WildcardBinding)type).boundKind == Wildcard.SUPER) {
+    if (type instanceof WildcardBinding && ((WildcardBinding) type).boundKind == Wildcard.SUPER) {
       return "? super " + asString(((WildcardBinding) type).bound);
     }
     if (type.isUnboundWildcard()) {
@@ -476,7 +491,7 @@ public class TypesProvider {
       ParameterizedTypeBinding parameterizedTypeBinding = (ParameterizedTypeBinding) aClass;
       return createClassifierReference(parameterizedTypeBinding.genericType(), role, sourceNode);
     }
-    throw new JavaConverterException("no classifier for class "+new String(aClass.sourceName));
+    throw new JavaConverterException("no classifier for class " + new String(aClass.sourceName));
   }
 
   public SReference createFieldReference(FieldBinding binding, String role, SNode sourceNode) {
