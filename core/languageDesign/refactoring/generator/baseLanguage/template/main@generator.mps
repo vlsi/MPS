@@ -4828,6 +4828,7 @@
     </node>
     <node role="rootMappingRule" type="jetbrains.mps.lang.generator.structure.Root_MappingRule" id="478744034994715840">
       <property name="keepSourceRoot" value="true" />
+      <property name="applyToConceptInheritors" value="true" />
       <link role="labelDeclaration" targetNodeId="478744034994715833" resolveInfo="refactoringToClass" />
       <link role="template" targetNodeId="478744034994714482" resolveInfo="RefactoringClass" />
       <link role="applicableConcept" targetNodeId="1.6895093993902236229" resolveInfo="Refactoring" />
