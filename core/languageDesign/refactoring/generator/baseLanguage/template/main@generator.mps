@@ -4722,6 +4722,53 @@
         <link role="template" targetNodeId="7573235936722758880" resolveInfo="reduce_ConceptFunctionParameter_Target_IsApplicable_Parameter" />
       </node>
     </node>
+    <node role="reductionMappingRule" type="jetbrains.mps.lang.generator.structure.Reduction_MappingRule" id="5934994956486892155">
+      <property name="applyToConceptInheritors" value="true" />
+      <link role="applicableConcept" targetNodeId="1.478744034994716100" resolveInfo="RefactoringArgumentReference" />
+      <node role="conditionFunction" type="jetbrains.mps.lang.generator.structure.BaseMappingRule_Condition" id="5934994956486892156">
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="5934994956486892157">
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="5934994956486892158">
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.NotExpression" id="5934994956486892159">
+              <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="5934994956486892160">
+                <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="5934994956486892161" />
+                <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_IsRoleOperation" id="5934994956486892162">
+                  <link role="linkInParent" targetNodeId="5.1068498886295" />
+                  <link role="conceptOfParent" targetNodeId="5.1068498886294" resolveInfo="AssignmentExpression" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="ruleConsequence" type="jetbrains.mps.lang.generator.structure.TemplateDeclarationReference" id="5934994956486892163">
+        <link role="template" targetNodeId="7573235936722759742" resolveInfo="reduce_RefactoringArgumentReference_get" />
+      </node>
+    </node>
+    <node role="reductionMappingRule" type="jetbrains.mps.lang.generator.structure.Reduction_MappingRule" id="5934994956486892164">
+      <link role="applicableConcept" targetNodeId="5.1068498886294" resolveInfo="AssignmentExpression" />
+      <node role="conditionFunction" type="jetbrains.mps.lang.generator.structure.BaseMappingRule_Condition" id="5934994956486892165">
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="5934994956486892166">
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="5934994956486892167">
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="5934994956486892168">
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="5934994956486892169">
+                <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="5934994956486892170" />
+                <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="5934994956486892171">
+                  <link role="link" targetNodeId="5.1068498886295" />
+                </node>
+              </node>
+              <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation" id="5934994956486892172">
+                <node role="conceptArgument" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" id="5934994956486892173">
+                  <link role="conceptDeclaration" targetNodeId="1.478744034994716100" resolveInfo="RefactoringArgumentReference" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="ruleConsequence" type="jetbrains.mps.lang.generator.structure.TemplateDeclarationReference" id="5934994956486892174">
+        <link role="template" targetNodeId="7573235936722759685" resolveInfo="reduce_RefactoringArgumentReference_put" />
+      </node>
+    </node>
     <node role="mappingLabel" type="jetbrains.mps.lang.generator.structure.MappingLabelDeclaration" id="478744034994715833">
       <property name="name" value="refactoringClass" />
       <link role="sourceConcept" targetNodeId="1.6895093993902236229" resolveInfo="Refactoring" />
@@ -6755,52 +6802,6 @@
       <link role="applicableConcept" targetNodeId="1.6895093993902311015" resolveInfo="AskExpression" />
       <node role="ruleConsequence" type="jetbrains.mps.lang.generator.structure.TemplateDeclarationReference" id="5934994956485963355">
         <link role="template" targetNodeId="7573235936722759978" resolveInfo="reduce_AskStatement" />
-      </node>
-    </node>
-    <node role="reductionMappingRule" type="jetbrains.mps.lang.generator.structure.Reduction_MappingRule" id="5934994956485963356">
-      <link role="applicableConcept" targetNodeId="1.478744034994716100" resolveInfo="RefactoringArgumentReference" />
-      <node role="conditionFunction" type="jetbrains.mps.lang.generator.structure.BaseMappingRule_Condition" id="5934994956485963357">
-        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="5934994956485963358">
-          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="5934994956485963359">
-            <node role="expression" type="jetbrains.mps.baseLanguage.structure.NotExpression" id="5934994956485963360">
-              <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="5934994956485963361">
-                <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="5934994956485963362" />
-                <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_IsRoleOperation" id="5934994956485963363">
-                  <link role="linkInParent" targetNodeId="5.1068498886295" />
-                  <link role="conceptOfParent" targetNodeId="5.1068498886294" resolveInfo="AssignmentExpression" />
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-      </node>
-      <node role="ruleConsequence" type="jetbrains.mps.lang.generator.structure.TemplateDeclarationReference" id="5934994956485963364">
-        <link role="template" targetNodeId="7573235936722759742" resolveInfo="reduce_RefactoringArgumentReference_get" />
-      </node>
-    </node>
-    <node role="reductionMappingRule" type="jetbrains.mps.lang.generator.structure.Reduction_MappingRule" id="5934994956485963365">
-      <link role="applicableConcept" targetNodeId="5.1068498886294" resolveInfo="AssignmentExpression" />
-      <node role="conditionFunction" type="jetbrains.mps.lang.generator.structure.BaseMappingRule_Condition" id="5934994956485963366">
-        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="5934994956485963367">
-          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="5934994956485963368">
-            <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="5934994956485963369">
-              <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="5934994956485963370">
-                <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="5934994956485963371" />
-                <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="5934994956485963372">
-                  <link role="link" targetNodeId="5.1068498886295" />
-                </node>
-              </node>
-              <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation" id="5934994956485963373">
-                <node role="conceptArgument" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" id="5934994956485963374">
-                  <link role="conceptDeclaration" targetNodeId="1.478744034994716100" resolveInfo="RefactoringArgumentReference" />
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-      </node>
-      <node role="ruleConsequence" type="jetbrains.mps.lang.generator.structure.TemplateDeclarationReference" id="5934994956485963375">
-        <link role="template" targetNodeId="7573235936722759685" resolveInfo="reduce_RefactoringArgumentReference_put" />
       </node>
     </node>
     <node role="reductionMappingRule" type="jetbrains.mps.lang.generator.structure.Reduction_MappingRule" id="5934994956485963376">
