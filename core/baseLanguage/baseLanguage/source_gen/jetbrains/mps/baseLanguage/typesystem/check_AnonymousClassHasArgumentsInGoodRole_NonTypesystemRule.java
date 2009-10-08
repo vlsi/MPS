@@ -6,28 +6,31 @@ import jetbrains.mps.lang.typesystem.runtime.AbstractNonTypesystemRule_Runtime;
 import jetbrains.mps.lang.typesystem.runtime.NonTypesystemRule_Runtime;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.intentions.BaseIntentionProvider;
 import jetbrains.mps.typesystem.inference.IErrorTarget;
 import jetbrains.mps.typesystem.inference.NodeErrorTarget;
 import jetbrains.mps.smodel.SModelUtil_new;
 
-public class check_StringTypeClassifierType_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
-  public check_StringTypeClassifierType_NonTypesystemRule() {
+public class check_AnonymousClassHasArgumentsInGoodRole_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
+  public check_AnonymousClassHasArgumentsInGoodRole_NonTypesystemRule() {
   }
 
-  public void applyRule(final SNode node, final TypeCheckingContext typeCheckingContext) {
-    if (SLinkOperations.getTarget(node, "classifier", false) == SLinkOperations.getTarget(new _Quotations.QuotationClass_82().createNode(typeCheckingContext), "classifier", false)) {
+  public void applyRule(final SNode anonymousClass, final TypeCheckingContext typeCheckingContext) {
+    if (ListSequence.fromList(SLinkOperations.getTargets(anonymousClass, "parameter", true)).isNotEmpty()) {
       {
         BaseIntentionProvider intentionProvider = null;
+        intentionProvider = new BaseIntentionProvider("jetbrains.mps.baseLanguage.typesystem.FixParametersInAnonymousClass_QuickFix");
+        intentionProvider.putArgument("anonymousClass", anonymousClass);
         IErrorTarget errorTarget = new NodeErrorTarget();
-        typeCheckingContext.reportInfo(node, "It's recommended to use string type", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1225197259595", intentionProvider, errorTarget);
+        typeCheckingContext.reportWarning(anonymousClass, "parameters in deprecated role", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "2925336694746295123", intentionProvider, errorTarget);
       }
     }
   }
 
   public String getApplicableConceptFQName() {
-    return "jetbrains.mps.baseLanguage.structure.ClassifierType";
+    return "jetbrains.mps.baseLanguage.structure.AnonymousClass";
   }
 
   public boolean isApplicable(SNode argument) {

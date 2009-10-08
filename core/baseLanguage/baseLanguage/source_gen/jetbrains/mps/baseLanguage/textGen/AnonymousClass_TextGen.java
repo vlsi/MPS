@@ -23,16 +23,29 @@ public class AnonymousClass_TextGen extends SNodeTextGen {
       }
       this.append(">");
     }
-    this.append("(");
     if (ListSequence.fromList(SLinkOperations.getTargets(node, "parameter", true)).isNotEmpty()) {
-      for (SNode item : SLinkOperations.getTargets(node, "parameter", true)) {
-        TextGenManager.instance().appendNodeText(this.getContext(), this.getBuffer(), item, this.getSNode());
-        if (item != ListSequence.fromList(SLinkOperations.getTargets(node, "parameter", true)).last()) {
-          this.append(", ");
+      this.append("(");
+      if (ListSequence.fromList(SLinkOperations.getTargets(node, "parameter", true)).isNotEmpty()) {
+        for (SNode item : SLinkOperations.getTargets(node, "parameter", true)) {
+          TextGenManager.instance().appendNodeText(this.getContext(), this.getBuffer(), item, this.getSNode());
+          if (item != ListSequence.fromList(SLinkOperations.getTargets(node, "parameter", true)).last()) {
+            this.append(", ");
+          }
         }
       }
+      this.append(")");
+    } else {
+      this.append("(");
+      if (ListSequence.fromList(SLinkOperations.getTargets(node, "actualArgument", true)).isNotEmpty()) {
+        for (SNode item : SLinkOperations.getTargets(node, "actualArgument", true)) {
+          TextGenManager.instance().appendNodeText(this.getContext(), this.getBuffer(), item, this.getSNode());
+          if (item != ListSequence.fromList(SLinkOperations.getTargets(node, "actualArgument", true)).last()) {
+            this.append(", ");
+          }
+        }
+      }
+      this.append(")");
     }
-    this.append(")");
     if ((SLinkOperations.getTarget(node, "superclass", true) != null)) {
       this.append(" extends ");
       TextGenManager.instance().appendNodeText(this.getContext(), this.getBuffer(), SLinkOperations.getTarget(node, "superclass", true), this.getSNode());

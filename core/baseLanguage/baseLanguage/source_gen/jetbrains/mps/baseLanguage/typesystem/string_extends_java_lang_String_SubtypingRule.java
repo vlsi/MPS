@@ -13,7 +13,7 @@ public class string_extends_java_lang_String_SubtypingRule extends SubtypingRule
   }
 
   public SNode getSubOrSuperType(SNode stringType, TypeCheckingContext typeCheckingContext) {
-    return new _Quotations.QuotationClass_85().createNode(typeCheckingContext);
+    return new _Quotations.QuotationClass_84().createNode(typeCheckingContext);
   }
 
   public String getApplicableConceptFQName() {

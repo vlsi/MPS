@@ -1979,17 +1979,35 @@
       <property name="role" value="classifier" />
       <link role="target" targetNodeId="1107461130800" resolveInfo="Classifier" />
     </node>
+    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="2925336694746234972">
+      <property name="metaClass" value="reference" />
+      <property name="role" value="constructorDeclaration" />
+      <property name="sourceCardinality" value="1" />
+      <link role="specializedLink" targetNodeId="1068499141037" />
+      <link role="target" targetNodeId="1068580123140" resolveInfo="ConstructorDeclaration" />
+    </node>
     <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1170346101385">
       <property name="metaClass" value="aggregation" />
       <property name="sourceCardinality" value="0..n" />
       <property name="role" value="parameter" />
       <link role="target" targetNodeId="1068431790191" resolveInfo="Expression" />
+      <node role="deprecatedNode$attribute" type="jetbrains.mps.lang.structure.structure.DeprecatedNodeAnnotation" id="2925336694746234975" />
+    </node>
+    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="2925336694746234974">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="constructorArgument" />
+      <property name="sourceCardinality" value="0..n" />
+      <link role="target" targetNodeId="1068431790191" resolveInfo="Expression" />
+      <link role="specializedLink" targetNodeId="1068499141038" />
     </node>
     <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1201186121363">
       <property name="metaClass" value="aggregation" />
       <property name="role" value="typeParameter" />
       <property name="sourceCardinality" value="0..n" />
       <link role="target" targetNodeId="1068431790189" resolveInfo="Type" />
+    </node>
+    <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="2925336694746234973">
+      <link role="intfc" targetNodeId="1204053956946" resolveInfo="IMethodCall" />
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1171903607971">

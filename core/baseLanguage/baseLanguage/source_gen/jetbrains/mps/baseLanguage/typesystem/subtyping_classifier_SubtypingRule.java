@@ -33,7 +33,7 @@ public class subtyping_classifier_SubtypingRule extends SubtypingRule_Runtime im
       ListSequence.fromList(supertypes).addSequence(ListSequence.fromList(SLinkOperations.getTargets(interfaceConcept, "extendedInterface", true)));
     }
     if (ListSequence.fromList(supertypes).isEmpty()) {
-      ListSequence.fromList(result).addElement(new _Quotations.QuotationClass_105().createNode(typeCheckingContext));
+      ListSequence.fromList(result).addElement(new _Quotations.QuotationClass_104().createNode(typeCheckingContext));
     }
     for (SNode supertype : supertypes) {
       SNode supertypeCopy = SNodeOperations.cast(SNodeOperations.copyNode(supertype), "jetbrains.mps.baseLanguage.structure.ClassifierType");

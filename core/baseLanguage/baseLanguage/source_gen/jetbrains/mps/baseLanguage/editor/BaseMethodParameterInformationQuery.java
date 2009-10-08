@@ -65,7 +65,6 @@ public class BaseMethodParameterInformationQuery extends ParametersInformation<S
         styledText.append(", ");
       }
       if (i == argumentIndex) {
-        styledText.setBold(true);
       }
       if (SLinkOperations.getTarget(param, "type", true) != null) {
         styledText.append(BaseConcept_Behavior.call_getPresentation_1213877396640(SLinkOperations.getTarget(param, "type", true)));
@@ -75,7 +74,6 @@ public class BaseMethodParameterInformationQuery extends ParametersInformation<S
       if (SPropertyOperations.getString(param, "name") != null) {
         styledText.append(" " + SPropertyOperations.getString(param, "name"));
       }
-      styledText.setBold(false);
       i++ ;
     }
     styledText.append(")");

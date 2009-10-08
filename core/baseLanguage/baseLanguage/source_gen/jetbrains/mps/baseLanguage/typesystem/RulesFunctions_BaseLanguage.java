@@ -214,7 +214,7 @@ __switch__:
       {
         SNode _nodeToCheck_1029348928467 = null;
         BaseIntentionProvider intentionProvider = null;
-        typeCheckingContext.createLessThanInequation((SNode)instanceType, (SNode)new _Quotations.QuotationClass_122().createNode(params, genericClassifier, typeCheckingContext), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "7790104442347402833", false, 0, intentionProvider);
+        typeCheckingContext.createLessThanInequation((SNode)instanceType, (SNode)new _Quotations.QuotationClass_123().createNode(params, genericClassifier, typeCheckingContext), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "7790104442347402833", false, 0, intentionProvider);
       }
     }
   }
@@ -333,7 +333,7 @@ __switch__:
       {
         SNode _nodeToCheck_1029348928467 = null;
         BaseIntentionProvider intentionProvider = null;
-        typeCheckingContext.createLessThanInequation((SNode)typeCheckingContext.typeOf(mc, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "3254522536313044077", true), (SNode)new _Quotations.QuotationClass_110().createNode(typeCheckingContext), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "3254522536313044080", false, 500, intentionProvider);
+        typeCheckingContext.createLessThanInequation((SNode)typeCheckingContext.typeOf(mc, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "3254522536313044077", true), (SNode)new _Quotations.QuotationClass_111().createNode(typeCheckingContext), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "3254522536313044080", false, 500, intentionProvider);
       }
     }
   }
@@ -501,7 +501,7 @@ __switch__:
   @CheckingMethod
   /*package*/ static void check(final TypeCheckingContext typeCheckingContext, Set<SNode> throwables, SNode mainNode) {
     for (SNode livingThrowable : SetSequence.fromSetWithValues(new HashSet<SNode>(), throwables)) {
-      if (TypeChecker.getInstance().getSubtypingManager().isSubtype(livingThrowable, new _Quotations.QuotationClass_72().createNode(typeCheckingContext)) || TypeChecker.getInstance().getSubtypingManager().isSubtype(livingThrowable, new _Quotations.QuotationClass_71().createNode(typeCheckingContext))) {
+      if (TypeChecker.getInstance().getSubtypingManager().isSubtype(livingThrowable, new _Quotations.QuotationClass_71().createNode(typeCheckingContext)) || TypeChecker.getInstance().getSubtypingManager().isSubtype(livingThrowable, new _Quotations.QuotationClass_70().createNode(typeCheckingContext))) {
         SetSequence.fromSet(throwables).removeElement(livingThrowable);
       }
     }

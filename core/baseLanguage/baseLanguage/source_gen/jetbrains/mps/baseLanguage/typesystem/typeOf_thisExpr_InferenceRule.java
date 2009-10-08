@@ -27,12 +27,12 @@ public class typeOf_thisExpr_InferenceRule extends AbstractInferenceRule_Runtime
     }
     List<SNode> typeVarRefs = new ArrayList<SNode>();
     for (SNode typeVariableDeclaration : SLinkOperations.getTargets(classifier, "typeVariableDeclaration", true)) {
-      ListSequence.fromList(typeVarRefs).addElement(new _Quotations.QuotationClass_70().createNode(typeVariableDeclaration, typeCheckingContext));
+      ListSequence.fromList(typeVarRefs).addElement(new _Quotations.QuotationClass_69().createNode(typeVariableDeclaration, typeCheckingContext));
     }
     {
       SNode _nodeToCheck_1029348928467 = thisExpr;
       BaseIntentionProvider intentionProvider = null;
-      typeCheckingContext.createEquation((SNode)typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1215004810739", true), (SNode)new _Quotations.QuotationClass_76().createNode(typeVarRefs, classifier, typeCheckingContext), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1215004810737", intentionProvider);
+      typeCheckingContext.createEquation((SNode)typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1215004810739", true), (SNode)new _Quotations.QuotationClass_75().createNode(typeVarRefs, classifier, typeCheckingContext), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1215004810737", intentionProvider);
     }
   }
 

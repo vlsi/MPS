@@ -262,6 +262,8 @@
                 <node role="cls" type="jetbrains.mps.baseLanguage.structure.AnonymousClass" id="7367456871926097202">
                   <property name="name" value="" />
                   <link role="classifier" targetNodeId="149.~ArrayList" resolveInfo="ArrayList" />
+                  <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.Expression" id="181611915341260990" />
+                  <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.Expression" id="181611915341260991" />
                   <node role="typeParameter" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="7367456871926097203">
                     <link role="classifier" targetNodeId="150.~String" resolveInfo="String" />
                   </node>
