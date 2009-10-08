@@ -24,6 +24,31 @@
     <modules />
   </component>
   <component name="ProjectRootManager" version="2" />
+  <component name="ProjectRunConfigurationManager">
+    <configuration default="false" name="Sequence_Test" type="JUnit" factoryName="JUnit">
+      <MyState>
+        <option name="node" value="jetbrains.mps.internalCollections.test.basicOperations.Sequence_Test" />
+        <option name="model" value="jetbrains.mps.internalCollections.test.basicOperations" />
+        <option name="module" value="internalCollections.test" />
+        <option name="method" />
+        <option name="compileInMPS" value="false" />
+        <option name="type" value="NODE" />
+        <option name="myParams">
+          <ConfigRunParameters>
+            <option name="VMParameters" value="" />
+            <option name="alternativeJRE" value="" />
+            <option name="make" value="false" />
+            <option name="programParameters" value="" />
+            <option name="useAlternativeJRE" value="false" />
+            <option name="workingDirectory" value="" />
+          </ConfigRunParameters>
+        </option>
+      </MyState>
+      <RunnerSettings RunnerId="Default Runner" />
+      <ConfigurationWrapper RunnerId="Default Runner" />
+      <method />
+    </configuration>
+  </component>
   <component name="SvnBranchConfigurationManager">
     <option name="myConfigurationMap">
       <map>
