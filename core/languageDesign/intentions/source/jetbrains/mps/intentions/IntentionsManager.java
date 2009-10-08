@@ -165,7 +165,7 @@ public class IntentionsManager implements ApplicationComponent, PersistentStateC
   public List<Intention> getAvailableIntentionsForExactNode(final SNode node, @NotNull final EditorContext context, boolean onlyAvailableInChildren, boolean instantiateParameterized, @Nullable Computable<Boolean> terminated) {
     assert node != null : "node == null - inconsistent editor state";
     List<Intention> intentions;
-    if (instantiateParameterized) {
+    if (!instantiateParameterized) {
       intentions = getIntentionsFor(node, context.getScope(), terminated);
     } else {
       intentions = new ArrayList<Intention>();
