@@ -3837,6 +3837,7 @@
           <property name="text" value="operation concepts:" />
         </node>
         <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNodeList" id="5031556731835763031">
+          <property name="separatorText" value="|" />
           <link role="relationDeclaration" targetNodeId="1.8124453027370845341" />
           <node role="cellLayout" type="jetbrains.mps.lang.editor.structure.CellLayout_Horizontal" id="5031556731835763032" />
         </node>
@@ -4318,6 +4319,7 @@
           <property name="text" value="operation concepts:" />
         </node>
         <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNodeList" id="5031556731835763029">
+          <property name="separatorText" value="|" />
           <link role="relationDeclaration" targetNodeId="1.8124453027370845341" />
           <node role="cellLayout" type="jetbrains.mps.lang.editor.structure.CellLayout_Horizontal" id="5031556731835763030" />
         </node>
