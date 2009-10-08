@@ -33,10 +33,11 @@ public class RefactoringOptionsDialog extends BaseDialog {
   private JCheckBox myIsLocalCheckBox;
   private JCheckBox myGenerateModelsCheckBox;
   private JPanel myInnerPanel;
+  private boolean myNeedToBeShown = false;
 
   private boolean myIsCancelled = true;
 
-  public RefactoringOptionsDialog(Frame mainFrame, RefactoringContext refactoringContext, IRefactoring refactoring) throws HeadlessException {
+  public RefactoringOptionsDialog(Frame mainFrame, RefactoringContext refactoringContext, IRefactoring refactoring, boolean hasModelsToGenerate) throws HeadlessException {
     super(mainFrame, "Refactoring Options");
     myRefactoringContext = refactoringContext;
     myRefactoring = refactoring;
@@ -44,6 +45,7 @@ public class RefactoringOptionsDialog extends BaseDialog {
 
     GridBagConstraints c = new GridBagConstraints();
     c.gridx = 0;
+    c.gridy = GridBagConstraints.RELATIVE;
     c.weightx = 1;
     c.weighty = 0;
     c.anchor = GridBagConstraints.NORTHWEST;
@@ -51,18 +53,18 @@ public class RefactoringOptionsDialog extends BaseDialog {
     if (myRefactoring instanceof ILoggableRefactoring) {
       myIsLocalCheckBox = new JCheckBox("is local");
       myIsLocalCheckBox.setSelected(false);
-
-      c.gridy = 0;
       myInnerPanel.add(myIsLocalCheckBox, c);
+      myNeedToBeShown = true;
     }
 
-    c.gridy = 1;
-    myInnerPanel.add(myGenerateModelsCheckBox = new JCheckBox("generate models"), c);
-    myGenerateModelsCheckBox.setSelected(true);
+    if (hasModelsToGenerate) {
+      myGenerateModelsCheckBox = new JCheckBox("generate models");
+      myInnerPanel.add(myGenerateModelsCheckBox, c);
+      myGenerateModelsCheckBox.setSelected(true);
+      myNeedToBeShown = true;
+    }
 
-    c.gridy = 2;
     c.weighty = 1;
-
     myInnerPanel.add(new JPanel(), c);
   }
 
@@ -84,14 +86,22 @@ public class RefactoringOptionsDialog extends BaseDialog {
     if (myRefactoring instanceof ILoggableRefactoring) {
       myRefactoringContext.setLocal(myIsLocalCheckBox.isSelected());
     }
-    myRefactoringContext.setDoesGenerateModels(myGenerateModelsCheckBox.isSelected());
+
+    if (myGenerateModelsCheckBox!=null){
+      myRefactoringContext.setDoesGenerateModels(myGenerateModelsCheckBox.isSelected());
+    } else{
+      myRefactoringContext.setDoesGenerateModels(false);
+    }
 
     dispose();
   }
 
-
   @Button(position = 1, name = "Cancel", mnemonic = 'C')
   public void onCancel() {
     dispose();
+  }
+
+  public boolean needToBeShown() {
+    return myNeedToBeShown;
   }
 }

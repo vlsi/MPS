@@ -63,8 +63,8 @@ public class RefactoringView extends BaseProjectTool implements INavigateableToo
 
   //first parameter is null - no checkboxes will be shown
   public void showRefactoringView(@Nullable RefactoringContext refactoringContext, @NotNull RefactoringViewAction refactoringViewAction,
-                                  SearchResults searchResults) {
-    final RefactoringViewItem refactoringViewItem = new RefactoringViewItem(refactoringContext, refactoringViewAction, searchResults, this);
+                                  SearchResults searchResults, boolean hasModelsToGenerate) {
+    final RefactoringViewItem refactoringViewItem = new RefactoringViewItem(refactoringContext, refactoringViewAction, searchResults, this, hasModelsToGenerate);
     myRefactoringViewItems.add(refactoringViewItem);
     String tabCaption = refactoringContext == null ? "refactoring" : refactoringContext.getRefactoring().getUserFriendlyName();
     addContent(refactoringViewItem.getComponent(), tabCaption, null, false);

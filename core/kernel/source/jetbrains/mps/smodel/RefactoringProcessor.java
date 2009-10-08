@@ -85,9 +85,14 @@ public class RefactoringProcessor {
       public void run() {
         IRefactoring refactoring = refactoringContext.getRefactoring();
         Frame mainFrame = refactoringContext.getCurrentOperationContext().getMainFrame();
-        RefactoringOptionsDialog dialog = new RefactoringOptionsDialog(mainFrame, refactoringContext, refactoring);
-        dialog.showDialog();
-        cancelled[0] = dialog.isCancelled();
+        List<SModel> modelsToGenerate = getModelsToGenerate(refactoring, refactoringContext);
+        RefactoringOptionsDialog dialog = new RefactoringOptionsDialog(mainFrame, refactoringContext, refactoring, !modelsToGenerate.isEmpty());
+        if (dialog.needToBeShown()) {
+          dialog.showDialog();
+          cancelled[0] = dialog.isCancelled();
+        } else {
+          cancelled[0] = false;
+        }
       }
     });
     if (cancelled[0]) return;
@@ -110,7 +115,8 @@ public class RefactoringProcessor {
                 }.start();
               }
             };
-            refactorintView.showRefactoringView(refactoringContext, okAction, refactoringContext.getUsages());
+            List<SModel> modelsToGenerate = getModelsToGenerate(refactoringContext.getRefactoring(), refactoringContext);
+            refactorintView.showRefactoringView(refactoringContext, okAction, refactoringContext.getUsages(),!modelsToGenerate.isEmpty());
           }
         });
       }
@@ -164,16 +170,7 @@ public class RefactoringProcessor {
     final SModelReference initialModelReference = modelDescriptor.getSModelReference();
     Runnable runnable = new Runnable() {
       public void run() {
-        final List<SModel> modelsToGenerate = ModelAccess.instance().runReadAction(new Computable<List<SModel>>() {
-          public List<SModel> compute() {
-            try {
-              return refactoring.getModelsToGenerate(refactoringContext);
-            } catch (Throwable t) {
-              LOG.error("An error occured while trying to collect models to generate from refactoring " + refactoring.getUserFriendlyName() + ". No models will be generated", t);
-              return new ArrayList<SModel>();
-            }
-          }
-        });
+        List<SModel> modelsToGenerate = getModelsToGenerate(refactoring, refactoringContext);
 
         ModelAccess.instance().runWriteActionInCommand(new Runnable() {
           public void run() {
@@ -219,6 +216,19 @@ public class RefactoringProcessor {
     };
 
     ThreadUtils.runInUIThreadNoWait(runnable);
+  }
+
+  private List<SModel> getModelsToGenerate(final IRefactoring refactoring, final RefactoringContext refactoringContext) {
+    return ModelAccess.instance().runReadAction(new Computable<List<SModel>>() {
+      public List<SModel> compute() {
+        try {
+          return refactoring.getModelsToGenerate(refactoringContext);
+        } catch (Throwable t) {
+          LOG.error("An error occured while trying to collect models to generate from refactoring " + refactoring.getUserFriendlyName() + ". No models will be generated", t);
+          return new ArrayList<SModel>();
+        }
+      }
+    });
   }
 
   private void generateModels(final List<SModel> sourceModels, final RefactoringContext refactoringContext) {
@@ -290,10 +300,10 @@ public class RefactoringProcessor {
     model.runLoadingAction(new Runnable() {
       public void run() {
         IRefactoring refactoring = refactoringContext.getRefactoring();
-        try{
+        try {
           ((ILoggableRefactoring) refactoring).updateModel(model, refactoringContext);
-        } catch (Throwable t){
-          LOG.error("An exception was thrown by refactoring "+refactoring.getUserFriendlyName()+" while updating model "+model.getLongName()+". Models could have been corrupted.");
+        } catch (Throwable t) {
+          LOG.error("An exception was thrown by refactoring " + refactoring.getUserFriendlyName() + " while updating model " + model.getLongName() + ". Models could have been corrupted.");
         }
         model.updateImportedModelUsedVersion(usedModel.getSModelReference(), usedModel.getVersion());
         SModelRepository.getInstance().markChanged(model);
