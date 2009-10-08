@@ -985,6 +985,10 @@
     <property name="package" value="RefDecl.Target.Model" />
     <property name="name" value="ModelTarget" />
     <link role="extends" targetNodeId="6895093993902310761" resolveInfo="RefactoringTarget" />
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="3177157035599249713">
+      <property name="value" value="model" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" resolveInfo="alias" />
+    </node>
     <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="6895093993902310765">
       <property name="metaClass" value="aggregation" />
       <property name="role" value="isApplicableBlock" />
@@ -1008,6 +1012,10 @@
       <link role="target" targetNodeId="6895093993902310769" resolveInfo="IsApplicableToModuleClause" />
       <link role="specializedLink" targetNodeId="5497648299878742039" />
     </node>
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="3177157035599249714">
+      <property name="value" value="module" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" resolveInfo="alias" />
+    </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="6895093993902310764">
     <property name="package" value="RefDecl.Target.Node" />
@@ -1024,6 +1032,10 @@
       <property name="role" value="concept" />
       <property name="sourceCardinality" value="0..1" />
       <link role="target" targetNodeId="5.1169125787135" resolveInfo="AbstractConceptDeclaration" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="3177157035599249715">
+      <property name="value" value="node" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" resolveInfo="alias" />
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="6895093993902310769">

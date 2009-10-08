@@ -116,7 +116,7 @@ public class RefactoringProcessor {
               }
             };
             List<SModel> modelsToGenerate = getModelsToGenerate(refactoringContext.getRefactoring(), refactoringContext);
-            refactorintView.showRefactoringView(refactoringContext, okAction, refactoringContext.getUsages(),!modelsToGenerate.isEmpty());
+            refactorintView.showRefactoringView(refactoringContext, okAction, refactoringContext.getUsages(), !modelsToGenerate.isEmpty());
           }
         });
       }
@@ -203,7 +203,7 @@ public class RefactoringProcessor {
           });
         }
 
-        if (!modelsToGenerate.isEmpty()) {
+        if (refactoringContext.getDoesGenerateModels() && !modelsToGenerate.isEmpty()) {
           generateModels(modelsToGenerate, refactoringContext);
         }
 
