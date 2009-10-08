@@ -3883,8 +3883,8 @@
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="8055462100388645106">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="8055462100388645107">
             <node role="operand" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="8055462100388645108">
-              <link role="baseMethodDeclaration" targetNodeId="27.~IdeaTestApplication.getInstance():com.intellij.idea.IdeaTestApplication" resolveInfo="getInstance" />
               <link role="classConcept" targetNodeId="27.~IdeaTestApplication" resolveInfo="IdeaTestApplication" />
+              <link role="baseMethodDeclaration" targetNodeId="27.~IdeaTestApplication.getInstance(java.lang.String):com.intellij.idea.IdeaTestApplication" resolveInfo="getInstance" />
             </node>
             <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="8055462100388645109">
               <link role="baseMethodDeclaration" targetNodeId="27.~IdeaTestApplication.setDataProvider(com.intellij.openapi.actionSystem.DataProvider):void" resolveInfo="setDataProvider" />

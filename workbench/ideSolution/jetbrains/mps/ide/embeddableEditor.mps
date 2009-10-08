@@ -921,6 +921,7 @@
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1219653381256">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" id="1219653630796">
           <link role="constructorDeclaration" targetNodeId="9.~GenerateClassesGenerationType.&lt;init&gt;(boolean)" resolveInfo="GenerateClassesGenerationType" />
+          <link role="baseMethodDeclaration" targetNodeId="9.~GenerateClassesGenerationType.&lt;init&gt;(boolean)" resolveInfo="GenerateClassesGenerationType" />
           <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1219653633235">
             <property name="value" value="false" />
           </node>
@@ -959,6 +960,7 @@
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1220433141279">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" id="1220433474908">
           <link role="constructorDeclaration" targetNodeId="1.~JPanel.&lt;init&gt;(java.awt.LayoutManager)" resolveInfo="JPanel" />
+          <link role="baseMethodDeclaration" targetNodeId="1.~JPanel.&lt;init&gt;(java.awt.LayoutManager)" resolveInfo="JPanel" />
           <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1220433476893">
             <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1220434122932">
               <link role="baseMethodDeclaration" targetNodeId="4.~BorderLayout.&lt;init&gt;()" resolveInfo="BorderLayout" />
