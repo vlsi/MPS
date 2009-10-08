@@ -49,6 +49,7 @@ import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.ide.actions.*;
 import jetbrains.mps.ide.projectPane.ProjectLanguageTreeNode.AccessoriesModelTreeNode;
 import jetbrains.mps.ide.projectPane.ProjectLanguageTreeNode.RuntimeModulesTreeNode;
+import jetbrains.mps.ide.projectPane.ProjectLanguageTreeNode.AllModelsTreeNode;
 import jetbrains.mps.ide.projectPane.SModelsSubtree.JavaStubsTreeNode;
 import jetbrains.mps.ide.ui.MPSTree;
 import jetbrains.mps.ide.ui.MPSTreeNode;
@@ -919,6 +920,7 @@ public class ProjectPane extends AbstractProjectViewPane {
       if (node instanceof NamespaceTextNode) descent = true;
       if (node instanceof AccessoriesModelTreeNode) descent = true;
       if (node instanceof JavaStubsTreeNode) descent = true;
+      if (node instanceof AllModelsTreeNode) descent = true;
 
       if (!descent) return false;
 
