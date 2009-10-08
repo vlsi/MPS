@@ -1,3 +1,18 @@
+/*
+ * Copyright 2003-2009 JetBrains s.r.o.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
 package jetbrains.mps.generator.fileGenerator;
 
 import com.intellij.openapi.components.ApplicationComponent;
@@ -55,9 +70,9 @@ public class FileGenerationManager implements ApplicationComponent {
   }
 
   public boolean handleOutput(
-      IOperationContext context,
-      GenerationStatus status,
-      File outputRoot) {
+    IOperationContext context,
+    GenerationStatus status,
+    File outputRoot) {
     if (outputRoot == null) throw new RuntimeException("unspecified output path for file generation.");
 
     if (!status.isOk()) {
@@ -95,10 +110,10 @@ public class FileGenerationManager implements ApplicationComponent {
   }
 
   private void processGeneratedFiles(
-      GenerationStatus status,
-      File outputRoot,
-      IOperationContext context,
-      Set<File> generatedFiles) {
+    GenerationStatus status,
+    File outputRoot,
+    IOperationContext context,
+    Set<File> generatedFiles) {
 
     MPSVCSManager manager = context.getProject().getComponent(MPSVCSManager.class);
     manager.addFilesToVcs(new ArrayList<File>(generatedFiles), false, false);
@@ -113,10 +128,10 @@ public class FileGenerationManager implements ApplicationComponent {
   }
 
   private void cleanUp(
-      GenerationStatus status,
-      IOperationContext context,
-      File outputDir,
-      Set<File> generatedFiles) {
+    GenerationStatus status,
+    IOperationContext context,
+    File outputDir,
+    Set<File> generatedFiles) {
 
     Set<File> directories = new HashSet<File>();
     for (File f : generatedFiles) {
