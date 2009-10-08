@@ -2408,7 +2408,10 @@
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="5633809102336885319">
         <property name="text" value="," />
-        <link role="styleClass" targetNodeId="15.1215096040201" resolveInfo="Dot" />
+        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PunctuationLeftStyleClassItem" id="6931923016234661528">
+          <property name="flag" value="true" />
+        </node>
+        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem" id="6931923016234661530" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode" id="5633809102336891242">
         <link role="relationDeclaration" targetNodeId="1.5633809102336885321" />
