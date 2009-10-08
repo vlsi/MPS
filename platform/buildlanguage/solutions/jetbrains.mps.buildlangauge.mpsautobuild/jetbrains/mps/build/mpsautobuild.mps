@@ -105,8 +105,13 @@
       <property name="name" value="tmp" />
       <node role="type" type="jetbrains.mps.buildlanguage.structure.FileType" id="1239364393117" />
       <node role="propertyValue" type="jetbrains.mps.buildlanguage.structure.FileName" id="1239364393118">
-        <node role="value" type="jetbrains.mps.buildlanguage.structure.StringLiteral" id="1239364393119">
-          <property name="value" value="idea.new" />
+        <node role="value" type="jetbrains.mps.buildlanguage.structure.PlusOperation" id="5932458081781713457">
+          <node role="left" type="jetbrains.mps.buildlanguage.structure.StringLiteral" id="5932458081781713460">
+            <property name="value" value="${java.io.tmpdir}" />
+          </node>
+          <node role="right" type="jetbrains.mps.buildlanguage.structure.StringLiteral" id="1239364393119">
+            <property name="value" value="/idea.new" />
+          </node>
         </node>
       </node>
     </node>
@@ -1382,13 +1387,8 @@
                 <node role="right" type="jetbrains.mps.buildlanguage.structure.StringLiteral" id="1239364393559">
                   <property name="value" value="/idea/build.txt" />
                 </node>
-                <node role="left" type="jetbrains.mps.buildlanguage.structure.PlusOperation" id="1239364393560">
-                  <node role="right" type="jetbrains.mps.buildlanguage.structure.PropertyReference" id="1239364393561">
-                    <link role="propertyDeclaration" targetNodeId="1239364393116" resolveInfo="tmp" />
-                  </node>
-                  <node role="left" type="jetbrains.mps.buildlanguage.structure.StringLiteral" id="1239364393562">
-                    <property name="value" value="${basedir}/" />
-                  </node>
+                <node role="left" type="jetbrains.mps.buildlanguage.structure.PropertyReference" id="1239364393561">
+                  <link role="propertyDeclaration" targetNodeId="1239364393116" resolveInfo="tmp" />
                 </node>
               </node>
             </node>
