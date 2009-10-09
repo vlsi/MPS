@@ -11,6 +11,8 @@ import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.AbstractCellProvider;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
+import jetbrains.mps.baseLanguage.collections.editor.Collections_Style_StyleSheet;
+import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
@@ -38,9 +40,10 @@ public class NodeTarget_Editor extends DefaultNodeEditor {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
     }
+    editorCell.addEditorCell(this.createConstant_2921_1(editorContext, node));
     editorCell.addEditorCell(this.createConstant_2921_0(editorContext, node));
     editorCell.addEditorCell(this.createRefCell_2921_0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_2921_1(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_2921_2(editorContext, node));
     return editorCell;
   }
 
@@ -51,15 +54,25 @@ public class NodeTarget_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_2921_0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "target: node<");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "<");
     editorCell.setCellId("Constant_2921_0");
+    Collections_Style_StyleSheet.getRightAngleBracket(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   private EditorCell createConstant_2921_1(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ">");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "node");
     editorCell.setCellId("Constant_2921_1");
+    BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+
+  private EditorCell createConstant_2921_2(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ">");
+    editorCell.setCellId("Constant_2921_2");
+    Collections_Style_StyleSheet.getLeftAngleBracket(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
