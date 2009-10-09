@@ -173,9 +173,12 @@
                       <link role="variableDeclaration" targetNodeId="1213107436101" resolveInfo="function" />
                     </node>
                     <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_GetAncestorOperation" id="1213107436122">
-                      <node role="parameter" type="jetbrains.mps.lang.smodel.structure.OperationParm_Concept" id="1213107436123">
-                        <node role="conceptArgument" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" id="1213107436124">
-                          <link role="conceptDeclaration" targetNodeId="1.1189693812263" resolveInfo="Refactoring" />
+                      <node role="parameter" type="jetbrains.mps.lang.smodel.structure.OperationParm_ConceptList" id="8311321388555498388">
+                        <node role="concept" type="jetbrains.mps.lang.smodel.structure.ConceptReference" id="8311321388555498389">
+                          <link role="concept" targetNodeId="1.1189693812263" resolveInfo="OldRefactoring" />
+                        </node>
+                        <node role="concept" type="jetbrains.mps.lang.smodel.structure.ConceptReference" id="8311321388555498391">
+                          <link role="concept" targetNodeId="1.6895093993902236229" resolveInfo="Refactoring" />
                         </node>
                       </node>
                     </node>

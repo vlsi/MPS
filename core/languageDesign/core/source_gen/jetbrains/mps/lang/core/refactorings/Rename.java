@@ -34,7 +34,6 @@ public class Rename extends BaseRefactoring {
   }
 
   public boolean init(RefactoringContext refactoringContext) {
-    Rename.this.ask(refactoringContext, new newName_Chooser(refactoringContext));
     final RefactoringContext context = refactoringContext;
     final Wrappers._boolean result = new Wrappers._boolean();
     ModelAccess.instance().runReadAction(new Runnable() {
@@ -42,7 +41,10 @@ public class Rename extends BaseRefactoring {
         result.value = RenameUtil.canBeRenamed(context.getSelectedNode());
       }
     });
-    return result.value;
+    if (!(result.value)) {
+      return false;
+    }
+    return Rename.this.ask(refactoringContext, new newName_Chooser(refactoringContext));
   }
 
   public void refactor(RefactoringContext refactoringContext) {

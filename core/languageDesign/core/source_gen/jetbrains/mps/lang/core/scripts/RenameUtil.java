@@ -11,6 +11,9 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import javax.swing.JPanel;
+import javax.swing.JTextField;
+import javax.swing.JLabel;
 
 public class RenameUtil {
   public static boolean canBeRenamed(SNode node) {
@@ -29,5 +32,25 @@ public class RenameUtil {
       }
     });
     return result.value;
+  }
+
+  public static class NameCompoent extends JPanel {
+    private JTextField myTextField;
+
+    public NameCompoent(final SNode node, String text) {
+      final Wrappers._T<String> result = new Wrappers._T<String>();
+      ModelAccess.instance().runReadAction(new Runnable() {
+        public void run() {
+          result.value = SPropertyOperations.getString(SNodeOperations.cast(node, "jetbrains.mps.lang.core.structure.INamedConcept"), "name");
+        }
+      });
+      this.add(new JLabel(text));
+      this.myTextField = new JTextField(result.value);
+      this.add(this.myTextField);
+    }
+
+    public String getName() {
+      return this.myTextField.getText();
+    }
   }
 }
