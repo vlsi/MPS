@@ -150,7 +150,7 @@ public class ModuleSources {
   }
 
   private boolean isIgnored(IFile file) {
-    return file.isDirectory() && ".svn".equals(file.getName());
+    return ".svn".equals(file.getName());
   }
 
   private String addSubPath(String path, String name) {
