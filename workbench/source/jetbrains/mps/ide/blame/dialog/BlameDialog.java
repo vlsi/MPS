@@ -15,12 +15,14 @@
  */
 package jetbrains.mps.ide.blame.dialog;
 
+import com.intellij.ide.BrowserUtil;
 import com.intellij.ide.DataManager;
 import com.intellij.openapi.application.ApplicationInfo;
 import com.intellij.openapi.project.Project;
 import com.intellij.uiDesigner.core.GridConstraints;
 import com.intellij.uiDesigner.core.GridLayoutManager;
 import com.intellij.uiDesigner.core.Spacer;
+import jetbrains.mps.ide.blame.command.Command;
 import jetbrains.mps.ide.blame.command.Poster;
 import jetbrains.mps.ide.blame.perform.Query;
 import jetbrains.mps.ide.blame.perform.Response;
@@ -28,6 +30,9 @@ import jetbrains.mps.ide.dialogs.BaseDialog;
 import jetbrains.mps.ide.dialogs.DialogDimensionsSettings.DialogDimensions;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.workbench.MPSDataKeys;
+import org.jdom.Document;
+import org.jdom.Element;
+import org.jdom.input.SAXBuilder;
 import org.jetbrains.annotations.NotNull;
 
 import javax.swing.*;
@@ -41,6 +46,7 @@ import java.awt.Insets;
 import java.awt.event.ActionEvent;
 import java.io.PrintWriter;
 import java.io.StringWriter;
+import java.io.StringReader;
 
 public class BlameDialog extends BaseDialog {
   private static final Logger LOG = Logger.getLogger(BlameDialog.class);
@@ -104,7 +110,7 @@ public class BlameDialog extends BaseDialog {
           JOptionPane.showMessageDialog(BlameDialog.this, response.getMessage(), "Info", JOptionPane.INFORMATION_MESSAGE);
         } else {
           JOptionPane.showMessageDialog(BlameDialog.this, response.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
-          LOG.error("Submit failed: " + response.getMessage(), response.getThrowable());
+          LOG.error("Submit failed: " + response.getMessage() + ":" + response.getResponseString(), response.getThrowable());
         }
       }
     });
@@ -186,13 +192,31 @@ public class BlameDialog extends BaseDialog {
     myResult = poster.send(query);
 
     if (!myResult.isSuccess()) {
-      JOptionPane.showMessageDialog(BlameDialog.this, myResult.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+      JOptionPane.showMessageDialog(BlameDialog.this, myResult.getMessage() + ":" + myResult.getResponseString(), "Error", JOptionPane.ERROR_MESSAGE);
       return;
     }
+
+    openIssueInBrowser();
 
     myIsCancelled = false;
     BlameDialogComponent.getInstance().loadState(getState());
     dispose();
+  }
+
+  private void openIssueInBrowser() {
+    final String ID = "id";
+    SAXBuilder saxBuilder = new SAXBuilder();
+    Document document = null;
+    try {
+      document = saxBuilder.build(new StringReader(myResult.getResponseString()));
+    } catch (Exception e) {
+      LOG.error("Can't open created issue", e);
+      return;
+    }
+    Element responseXML = document.getRootElement();
+    String issueId = responseXML.getChildText(ID);
+
+    BrowserUtil.launchBrowser(Command.ISSUE_URL + issueId);
   }
 
   @Button(position = 1, name = "Cancel", mnemonic = 'C')

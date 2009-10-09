@@ -15,18 +15,22 @@
  */
 package jetbrains.mps.ide.blame.perform;
 
+import org.jdom.Element;
+
 public class Response {
   private boolean mySuccess = true;
   private String myMessage = "";
   private Throwable myThrowable = null;
+  private String myResponseString = null;
 
   public Response() {
   }
 
-  public Response(String message, boolean success, Throwable throwable) {
+  public Response(String message, String response, boolean success, Throwable throwable) {
     myMessage = message;
     mySuccess = success;
     myThrowable = throwable;
+    myResponseString  = response;
   }
 
   public String getMessage() {
@@ -39,6 +43,14 @@ public class Response {
 
   public Throwable getThrowable() {
     return myThrowable;
+  }
+
+  public String getResponseString() {
+    return myResponseString;
+  }
+
+  public void setResponseString(String responseString) {
+    myResponseString = responseString;
   }
 
   public void setMessage(String message) {

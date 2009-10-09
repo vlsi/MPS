@@ -26,8 +26,8 @@ import java.io.IOException;
 public class Command {
   public static final String TEAMSYS = "http://youtrack.jetbrains.net";
   public static final String LOGIN = "/rest/user/login";
-  public static final String ISSUE = "XX-1";
   public static final String POST_ISSUE = "/rest/issue/";
+  public static final String ISSUE_URL = TEAMSYS + "/issue/";
 
   private static final String PROJECT = "MPS";
 
@@ -40,9 +40,9 @@ public class Command {
     int statusCode = p.getStatusCode();
     String responseString = p.getResponseBodyAsString();
     if (statusCode != 200 || responseString.indexOf("ok") == -1) {
-      return new Response("Can't login into issue tracker: " + responseString, false, null);
+      return new Response("Can't login into issue tracker", responseString, false, null);
     } else {
-      return new Response("Logged in correctly", true, null);
+      return new Response("Logged in correctly", responseString, true, null);
     }
   }
 
@@ -57,9 +57,9 @@ public class Command {
     int statusCode = p.getStatusCode();
     String responseString = p.getResponseBodyAsString();
     if (statusCode == 200) {
-      return new Response("Issue posted", true, null);
+      return new Response("Issue posted", responseString, true, null);
     } else {
-      return new Response("Can't post issue: " + responseString, false, null);
+      return new Response("Can't post issue", responseString, false, null);
     }
   }
 }
