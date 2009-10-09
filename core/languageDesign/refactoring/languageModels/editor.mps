@@ -355,20 +355,6 @@
       <node role="cellLayout" type="jetbrains.mps.lang.editor.structure.CellLayout_Vertical" id="1239880386954" />
     </node>
   </node>
-  <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" id="1190811449288">
-    <link role="conceptDeclaration" targetNodeId="1.1190811398315" />
-    <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="1190815352984">
-      <property name="vertical" value="false" />
-      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode" id="1190815365081">
-        <link role="relationDeclaration" targetNodeId="1.1190811425145" />
-      </node>
-      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1190815352985">
-        <property name="text" value=".getNodeId" />
-        <link role="styleClass" targetNodeId="4.1186415544875" resolveInfo="KeyWord" />
-      </node>
-      <node role="cellLayout" type="jetbrains.mps.lang.editor.structure.CellLayout_Indent" id="1237813148026" />
-    </node>
-  </node>
   <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" id="1192793556170">
     <property name="package" value="Deprecated.UserArgs" />
     <link role="conceptDeclaration" targetNodeId="1.1192792808079" resolveInfo="RequiredUserEnteredArgument" />
