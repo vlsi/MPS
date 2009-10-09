@@ -3250,12 +3250,20 @@
       <property name="sourceCardinality" value="1" />
       <link role="target" targetNodeId="8415911927033048375" resolveInfo="CreateNodeRunConfigBlock" />
     </node>
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1890954770481144568">
+      <property name="value" value="run configuration creator from node" />
+      <link role="conceptPropertyDeclaration" targetNodeId="6.1137473891462" resolveInfo="alias" />
+    </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="5528847031674321867">
     <property name="package" value="RunConfigs.Create.Creator" />
     <property name="name" value="RunModuleConfigCreator" />
     <property name="rootable" value="true" />
     <link role="extends" targetNodeId="8415911927033048374" resolveInfo="RunConfigCreator" />
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1890954770481145788">
+      <property name="value" value="run configuration creator from module" />
+      <link role="conceptPropertyDeclaration" targetNodeId="6.1137473891462" resolveInfo="alias" />
+    </node>
     <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="5528847031674321870">
       <property name="metaClass" value="aggregation" />
       <property name="role" value="createModuleRunConfigBlock" />
@@ -3268,6 +3276,10 @@
     <property name="name" value="RunModelConfigCreator" />
     <property name="rootable" value="true" />
     <link role="extends" targetNodeId="8415911927033048374" resolveInfo="RunConfigCreator" />
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1890954770481145789">
+      <property name="value" value="run configuration creator from model" />
+      <link role="conceptPropertyDeclaration" targetNodeId="6.1137473891462" resolveInfo="alias" />
+    </node>
     <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="5528847031674321869">
       <property name="metaClass" value="aggregation" />
       <property name="role" value="createModelRunConfigBlock" />
