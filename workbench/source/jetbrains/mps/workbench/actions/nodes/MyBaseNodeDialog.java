@@ -116,7 +116,7 @@ public class MyBaseNodeDialog extends BaseNodeDialog {
   }
 
   public DialogDimensions getDefaultDimensionSettings() {
-    return new DialogDimensions(200, 200, 200, 150);
+    return new DialogDimensions(200, 200, 500, 400);
   }
 
   public void showDialog() {
