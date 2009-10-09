@@ -19574,6 +19574,7 @@
               <link role="applicableNode" targetNodeId="2925336694746295108" resolveInfo="anonymousClass" />
             </node>
             <node role="helginsIntention" type="jetbrains.mps.lang.typesystem.structure.TypesystemIntention" id="2925336694746295197">
+              <property name="applyImmediately" value="true" />
               <link role="quickFix" targetNodeId="2925336694746295128" resolveInfo="fix_ParametersInAnonymousClass" />
               <node role="actualArgument" type="jetbrains.mps.lang.typesystem.structure.TypesystemIntentionArgument" id="2925336694746295198">
                 <link role="quickFixArgument" targetNodeId="2925336694746295145" resolveInfo="anonymousClass" />
@@ -19634,15 +19635,6 @@
             <node role="type" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="2925336694746295140">
               <link role="concept" targetNodeId="1.1068431790191" resolveInfo="Expression" />
             </node>
-          </node>
-        </node>
-      </node>
-    </node>
-    <node role="descriptionBlock" type="jetbrains.mps.lang.typesystem.structure.QuickFixDescriptionBlock" id="1171944190373530814">
-      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1171944190373530815">
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1171944190373538931">
-          <node role="expression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1171944190373538932">
-            <property name="value" value="Fix Parameters" />
           </node>
         </node>
       </node>

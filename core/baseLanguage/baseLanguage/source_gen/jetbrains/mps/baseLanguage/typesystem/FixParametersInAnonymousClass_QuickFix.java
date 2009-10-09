@@ -11,7 +11,7 @@ public class FixParametersInAnonymousClass_QuickFix extends QuickFix_Runtime {
   }
 
   public String getDescription() {
-    return "Fix Parameters";
+    throw new RuntimeException("NOT IMPLEMENTED");
   }
 
   public void execute(SNode node) {

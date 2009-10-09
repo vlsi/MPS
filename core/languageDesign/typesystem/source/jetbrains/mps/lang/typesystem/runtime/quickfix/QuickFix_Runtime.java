@@ -17,8 +17,8 @@ package jetbrains.mps.lang.typesystem.runtime.quickfix;
 
 import jetbrains.mps.smodel.SNode;
 
-import java.util.Map;
 import java.util.HashMap;
+import java.util.Map;
 
 public abstract class QuickFix_Runtime {
   private Map<String, Object[]> myMap = new HashMap<String, Object[]>();
@@ -38,5 +38,8 @@ public abstract class QuickFix_Runtime {
 
   public abstract void execute(SNode node);
 
-  public abstract String getDescription();
+  public String getDescription() {
+    //quickFix w/o description was added to intentions menu
+    return "<ERROR>: " + this.getClass().getName();
+  }
 }

@@ -3282,5 +3282,67 @@
       <link role="concept" targetNodeId="1.5622704259074429274" resolveInfo="OperationContextExpression" />
     </node>
   </node>
+  <node type="jetbrains.mps.lang.typesystem.structure.NonTypesystemRule" id="1035511193819763968">
+    <property name="name" value="check_TypesystemIntentionWithoutDescription" />
+    <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1035511193819763969">
+      <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1035511193819765988">
+        <node role="condition" type="jetbrains.mps.baseLanguage.structure.AndExpression" id="1035511193819770986">
+          <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1035511193819771005">
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1035511193819771000">
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1035511193819770995">
+                <node role="operand" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference" id="1035511193819770994">
+                  <link role="applicableNode" targetNodeId="1035511193819763972" resolveInfo="typesystemIntention" />
+                </node>
+                <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1035511193819770999">
+                  <link role="link" targetNodeId="1.1216388525179" />
+                </node>
+              </node>
+              <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1035511193819771004">
+                <link role="link" targetNodeId="1.1216391046856" />
+              </node>
+            </node>
+            <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_IsNullOperation" id="1035511193819771009" />
+          </node>
+          <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.AndExpression" id="1035511193819770969">
+            <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.NotExpression" id="1035511193819765997">
+              <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1035511193819765992">
+                <node role="operand" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference" id="1035511193819765991">
+                  <link role="applicableNode" targetNodeId="1035511193819763972" resolveInfo="typesystemIntention" />
+                </node>
+                <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="1035511193819765996">
+                  <link role="property" targetNodeId="1.1216127910019" resolveInfo="applyImmediately" />
+                </node>
+              </node>
+            </node>
+            <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1035511193819770989">
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1035511193819770973">
+                <node role="operand" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference" id="1035511193819770972">
+                  <link role="applicableNode" targetNodeId="1035511193819763972" resolveInfo="typesystemIntention" />
+                </node>
+                <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1035511193819770977">
+                  <link role="link" targetNodeId="1.1216388525179" />
+                </node>
+              </node>
+              <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_IsNotNullOperation" id="1035511193819770993" />
+            </node>
+          </node>
+        </node>
+        <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1035511193819765990">
+          <node role="statement" type="jetbrains.mps.lang.typesystem.structure.ReportErrorStatement" id="1035511193819771010">
+            <node role="errorString" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1035511193819771019">
+              <property name="value" value="QuickFix that is not applied immediately will be shown in intentions menu. It must have a description." />
+            </node>
+            <node role="nodeToReport" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference" id="1035511193819771013">
+              <link role="applicableNode" targetNodeId="1035511193819763972" resolveInfo="typesystemIntention" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="applicableNode" type="jetbrains.mps.lang.typesystem.structure.ConceptReference" id="1035511193819763972">
+      <property name="name" value="typesystemIntention" />
+      <link role="concept" targetNodeId="1.1210784285454" resolveInfo="TypesystemIntention" />
+    </node>
+  </node>
 </model>
 
