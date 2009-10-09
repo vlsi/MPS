@@ -36,6 +36,7 @@ import jetbrains.mps.vfs.VFileSystem;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.*;
+import java.io.File;
 
 public class GlobalClassPathIndex implements ApplicationComponent {
   private static final Logger LOG = Logger.getLogger(GlobalClassPathIndex.class);
@@ -137,7 +138,7 @@ public class GlobalClassPathIndex implements ApplicationComponent {
     if (!modules.contains(module)) {
       modules.add(module);
     }
-    if (module.isClassPathExcluded(classPathFile.getPath()) && !myExcludedClassPath.contains(classPathFile)) {
+    if (isClassPathExcludedInModule(module, classPathFile) && !myExcludedClassPath.contains(classPathFile)) {
       // should exclude classPath
       for (IModule m : myClassPathIndex.get(classPathFile)) {
         if (m == module) continue;
@@ -145,7 +146,7 @@ public class GlobalClassPathIndex implements ApplicationComponent {
       }
       myExcludedClassPath.add(classPathFile);
       myIsChanged = true;
-    } else if (!module.isClassPathExcluded(classPathFile.getPath()) && myExcludedClassPath.contains(classPathFile)) {
+    } else if (!isClassPathExcludedInModule(module, classPathFile) && myExcludedClassPath.contains(classPathFile)) {
       // should include classPath
       for (IModule m : myClassPathIndex.get(classPathFile)) {
         if (m == module) continue;
@@ -181,7 +182,7 @@ public class GlobalClassPathIndex implements ApplicationComponent {
       boolean removed = modules.remove(module);
       LOG.assertLog(removed, "Classpath index does not contain module " + module + " for classpath " + classPathFile);
     }
-    if (module.isClassPathExcluded(classPathFile.getPath())) {
+    if (isClassPathExcludedInModule(module, classPathFile)) {
       // if we exclude this class path and nobody else does, we remove classPath from excluded
       if (myExcludedClassPath.contains(classPathFile) && (modules == null || modules.isEmpty())) {
         myExcludedClassPath.remove(classPathFile);
@@ -210,7 +211,7 @@ public class GlobalClassPathIndex implements ApplicationComponent {
   }
 
   private void dealWithClassPathOnModuleAdd(IModule module, FilePath classPathFile) {
-    if (module.isClassPathExcluded(classPathFile.getPath())) {
+    if (isClassPathExcludedInModule(module, classPathFile)) {
       // we only need to update this module if classPath is included in other modules
       ArrayList<IModule> modules = myClassPathIndex.get(classPathFile);
       if (!myExcludedClassPath.contains(classPathFile) && (modules != null) && !modules.isEmpty()) {
@@ -238,6 +239,10 @@ public class GlobalClassPathIndex implements ApplicationComponent {
         modules.add(module);
       }
     }
+  }
+
+  private boolean isClassPathExcludedInModule(IModule module, FilePath classPathFile) {
+    return module.isClassPathExcluded(classPathFile.getPath().replace("/", File.separator));
   }
 
   private void putModuleInIndex(IModule module, FilePath classPathFile) {
