@@ -1176,6 +1176,7 @@
           <property name="text" value="focused component:" />
         </node>
         <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode" id="5934994956485846045">
+          <property name="noTargetText" value="&lt;main component&gt;" />
           <link role="relationDeclaration" targetNodeId="1.5497648299878979018" />
         </node>
       </node>

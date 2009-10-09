@@ -415,16 +415,16 @@ public class QueriesGenerated {
     return (SLinkOperations.getTarget(_context.getNode(), "overrides", false) != null);
   }
 
+  public static boolean ifMacro_Condition_3302086321379147975(final IOperationContext operationContext, final IfMacroContext _context) {
+    return (SLinkOperations.getTarget(_context.getNode(), "focusedComponent", true) == null);
+  }
+
   public static boolean ifMacro_Condition_3644668945280073833(final IOperationContext operationContext, final IfMacroContext _context) {
     return (SLinkOperations.getTarget(_context.getNode(), "filterBlock", true) != null);
   }
 
   public static boolean ifMacro_Condition_3644668945280073856(final IOperationContext operationContext, final IfMacroContext _context) {
     return (SLinkOperations.getTarget(_context.getNode(), "initialValueBlock", true) != null);
-  }
-
-  public static boolean ifMacro_Condition_5934994956486316555(final IOperationContext operationContext, final IfMacroContext _context) {
-    return (SLinkOperations.getTarget(_context.getNode(), "focusedComponent", true) != null);
   }
 
   public static boolean ifMacro_Condition_6528618226609334511(final IOperationContext operationContext, final IfMacroContext _context) {
@@ -639,6 +639,10 @@ public class QueriesGenerated {
     return SLinkOperations.getTarget(_context.getNode(), "destination", true);
   }
 
+  public static SNode sourceNodeQuery_3302086321379147988(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return SLinkOperations.getTarget(_context.getNode(), "focusedComponent", true);
+  }
+
   public static SNode sourceNodeQuery_3644668945280073794(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return TypeChecker.getInstance().getTypeOf(SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.lang.refactoring.structure.RefactoringParameter", false, false));
   }
@@ -677,10 +681,6 @@ public class QueriesGenerated {
 
   public static SNode sourceNodeQuery_5934994956486316508(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "mainComponent", true);
-  }
-
-  public static SNode sourceNodeQuery_5934994956486316562(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return SLinkOperations.getTarget(_context.getNode(), "focusedComponent", true);
   }
 
   public static SNode sourceNodeQuery_5934994956486433145(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {

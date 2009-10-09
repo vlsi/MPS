@@ -128,7 +128,7 @@ public class CustomParameterChooser_Editor extends DefaultNodeEditor {
   private EditorCell createRefNode_6311_2(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("focusedComponent");
-    provider.setNoTargetText("<no focusedComponent>");
+    provider.setNoTargetText("<main component>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
