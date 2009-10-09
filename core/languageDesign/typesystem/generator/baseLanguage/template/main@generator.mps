@@ -16119,6 +16119,23 @@
           </node>
         </node>
       </node>
+      <node role="nodeMacro$attribute" type="jetbrains.mps.lang.generator.structure.IfMacro" id="3302086321378840159">
+        <node role="conditionFunction" type="jetbrains.mps.lang.generator.structure.IfMacro_Condition" id="3302086321378840160">
+          <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="3302086321378840161">
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="3302086321378848225">
+              <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="3302086321378848232">
+                <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="3302086321378848227">
+                  <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="3302086321378848226" />
+                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="3302086321378848231">
+                    <link role="link" targetNodeId="1.1216391046856" />
+                  </node>
+                </node>
+                <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_IsNotNullOperation" id="3302086321378848236" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
     </node>
     <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1216641779879">
       <property name="name" value="execute" />
