@@ -25,14 +25,14 @@ public class check_NamingPolicy_NonTypesystemRule extends AbstractNonTypesystemR
       if (!(NameUtil.satisfiesPartNamingPolicy(SPropertyOperations.getString(s, "value")))) {
         {
           BaseIntentionProvider intentionProvider = null;
-          intentionProvider = new BaseIntentionProvider("jetbrains.mps.lang.plugin.typesystem.FixNamingPolicy_QuickFix");
+          intentionProvider = new BaseIntentionProvider("jetbrains.mps.lang.plugin.typesystem.FixNamingPolicy_QuickFix", false);
           intentionProvider.putArgument("nodeToFix", node);
           IErrorTarget errorTarget = new NodeErrorTarget();
           typeCheckingContext.reportWarning(s, "String does not satisfy naming policies", "r:00000000-0000-4000-0000-011c89590364(jetbrains.mps.lang.plugin.typesystem)", "1628770029971140725", intentionProvider, errorTarget);
         }
         {
           BaseIntentionProvider intentionProvider = null;
-          intentionProvider = new BaseIntentionProvider("jetbrains.mps.lang.plugin.typesystem.FixNamingPolicy_literal_once_QuickFix");
+          intentionProvider = new BaseIntentionProvider("jetbrains.mps.lang.plugin.typesystem.FixNamingPolicy_literal_once_QuickFix", false);
           intentionProvider.putArgument("caption", "Fix String");
           intentionProvider.putArgument("literal", s);
           IErrorTarget errorTarget = new NodeErrorTarget();
@@ -47,7 +47,7 @@ public class check_NamingPolicy_NonTypesystemRule extends AbstractNonTypesystemR
       if (!(NameUtil.satisfiesNamingPolicy(p.getValue()))) {
         {
           BaseIntentionProvider intentionProvider = null;
-          intentionProvider = new BaseIntentionProvider("jetbrains.mps.lang.plugin.typesystem.FixNamingPolicy_QuickFix");
+          intentionProvider = new BaseIntentionProvider("jetbrains.mps.lang.plugin.typesystem.FixNamingPolicy_QuickFix", false);
           intentionProvider.putArgument("nodeToFix", node);
           IErrorTarget errorTarget = new NodeErrorTarget();
           errorTarget = new PropertyErrorTarget(p.getProperty());
@@ -55,7 +55,7 @@ public class check_NamingPolicy_NonTypesystemRule extends AbstractNonTypesystemR
         }
         {
           BaseIntentionProvider intentionProvider = null;
-          intentionProvider = new BaseIntentionProvider("jetbrains.mps.lang.plugin.typesystem.FixNamingPolicy_property_once_QuickFix");
+          intentionProvider = new BaseIntentionProvider("jetbrains.mps.lang.plugin.typesystem.FixNamingPolicy_property_once_QuickFix", false);
           intentionProvider.putArgument("caption", "Fix " + NameUtil.capitalize(p.getProperty()));
           intentionProvider.putArgument("property", p);
           IErrorTarget errorTarget = new NodeErrorTarget();
