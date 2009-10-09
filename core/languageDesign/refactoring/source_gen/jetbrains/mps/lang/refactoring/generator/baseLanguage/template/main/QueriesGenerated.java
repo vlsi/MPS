@@ -154,7 +154,9 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_3060724424231928584(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return SPropertyOperations.getString(SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.lang.refactoring.structure.RefactoringParameter", false, false), "name") + "_Chooser";
+    SNode refactoringParameter = SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.lang.refactoring.structure.RefactoringParameter", false, false);
+    SNode refactoring = SNodeOperations.getAncestor(refactoringParameter, "jetbrains.mps.lang.refactoring.structure.Refactoring", false, false);
+    return SPropertyOperations.getString(refactoring, "name") + "_" + SPropertyOperations.getString(refactoringParameter, "name") + "_Chooser";
   }
 
   public static Object propertyMacro_GetPropertyValue_3644668945280030591(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -166,7 +168,9 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_3644668945280073883(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return SPropertyOperations.getString(SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.lang.refactoring.structure.RefactoringParameter", false, false), "name") + "_Settings";
+    SNode refactoringParameter = SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.lang.refactoring.structure.RefactoringParameter", false, false);
+    SNode refactoring = SNodeOperations.getAncestor(refactoringParameter, "jetbrains.mps.lang.refactoring.structure.Refactoring", false, false);
+    return SPropertyOperations.getString(refactoring, "name") + "_" + SPropertyOperations.getString(refactoringParameter, "name") + "_Settings";
   }
 
   public static Object propertyMacro_GetPropertyValue_5934994956485965416(final IOperationContext operationContext, final PropertyMacroContext _context) {
