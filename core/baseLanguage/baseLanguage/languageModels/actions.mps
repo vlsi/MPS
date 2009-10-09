@@ -10027,6 +10027,7 @@
                 <node role="creator" type="jetbrains.mps.baseLanguage.structure.AnonymousClassCreator" id="1235760608715">
                   <node role="cls" type="jetbrains.mps.baseLanguage.structure.AnonymousClass" id="1235760608716">
                     <link role="classifier" targetNodeId="60.~SmartActionUIPanel" resolveInfo="SmartActionUIPanel" />
+                    <link role="baseMethodDeclaration" targetNodeId="60.~SmartActionUIPanel.&lt;init&gt;()" resolveInfo="SmartActionUIPanel" />
                     <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1235760608717" />
                     <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1235760608718">
                       <property name="isAbstract" value="false" />
@@ -10189,6 +10190,7 @@
                               <node role="creator" type="jetbrains.mps.baseLanguage.structure.AnonymousClassCreator" id="1235760608787">
                                 <node role="cls" type="jetbrains.mps.baseLanguage.structure.AnonymousClass" id="1235760608788">
                                   <link role="classifier" targetNodeId="58.~MPSTree" resolveInfo="MPSTree" />
+                                  <link role="baseMethodDeclaration" targetNodeId="58.~MPSTree.&lt;init&gt;()" resolveInfo="MPSTree" />
                                   <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1235760608789" />
                                   <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1235760608790">
                                     <property name="isAbstract" value="false" />
@@ -10303,6 +10305,7 @@
                                 <node role="creator" type="jetbrains.mps.baseLanguage.structure.AnonymousClassCreator" id="1235760608833">
                                   <node role="cls" type="jetbrains.mps.baseLanguage.structure.AnonymousClass" id="1235760608834">
                                     <link role="classifier" targetNodeId="63.~KeyAdapter" resolveInfo="KeyAdapter" />
+                                    <link role="baseMethodDeclaration" targetNodeId="63.~KeyAdapter.&lt;init&gt;()" resolveInfo="KeyAdapter" />
                                     <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1235760608835" />
                                     <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1235760608836">
                                       <property name="name" value="keyPressed" />

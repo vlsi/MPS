@@ -19225,6 +19225,21 @@
           </node>
         </node>
       </node>
+      <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="5620366456317465120">
+        <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="5620366456317465121">
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="5620366456317465132" />
+        </node>
+        <node role="condition" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="5620366456317465125">
+          <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="5620366456317465124">
+            <link role="variableDeclaration" targetNodeId="1032178265900242674" resolveInfo="iterableType" />
+          </node>
+          <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation" id="5620366456317465129">
+            <node role="conceptArgument" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" id="5620366456317465131">
+              <link role="conceptDeclaration" targetNodeId="1.1070534760951" resolveInfo="ArrayType" />
+            </node>
+          </node>
+        </node>
+      </node>
       <node role="statement" type="jetbrains.mps.lang.typesystem.structure.CoerceStatement" id="1032178265900313081">
         <node role="nodeToCoerce" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1032178265900313085">
           <link role="variableDeclaration" targetNodeId="1032178265900242674" resolveInfo="iterableType" />

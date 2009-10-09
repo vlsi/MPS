@@ -8,6 +8,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.pattern.util.MatchingUtil;
 import jetbrains.mps.intentions.BaseIntentionProvider;
 import jetbrains.mps.typesystem.inference.IErrorTarget;
@@ -20,6 +21,9 @@ public class check_ForeachWithErasure_NonTypesystemRule extends AbstractNonTypes
 
   public void applyRule(final SNode foreachStatement, final TypeCheckingContext typeCheckingContext) {
     SNode iterableType = TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(foreachStatement, "iterable", true));
+    if (SNodeOperations.isInstanceOf(iterableType, "jetbrains.mps.baseLanguage.structure.ArrayType")) {
+      return;
+    }
     {
       _Patterns.Pattern_11 pattern_0 = new _Patterns.Pattern_11();
       SNode coercedNode_0 = TypeChecker.getInstance().getRuntimeSupport().coerce_(iterableType, pattern_0, typeCheckingContext);
