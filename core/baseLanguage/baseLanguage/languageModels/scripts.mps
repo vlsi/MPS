@@ -2100,6 +2100,32 @@
           </node>
         </node>
       </node>
+      <node role="affectedInstancePredicate" type="jetbrains.mps.lang.script.structure.MigrationScriptPart_Instance_Predicate" id="119214807404908476">
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="119214807404908477">
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="119214807404908478">
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.OrExpression" id="119214807404909485">
+              <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="119214807404909494">
+                <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="119214807404909489">
+                  <node role="operand" type="jetbrains.mps.lang.script.structure.MigrationScriptPart_node" id="119214807404909488" />
+                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkListAccess" id="119214807404909493">
+                    <link role="link" targetNodeId="1.1170346101385" />
+                  </node>
+                </node>
+                <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.IsNotEmptyOperation" id="119214807404909498" />
+              </node>
+              <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="119214807404908485">
+                <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="119214807404908480">
+                  <node role="operand" type="jetbrains.mps.lang.script.structure.MigrationScriptPart_node" id="119214807404908479" />
+                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="119214807404908484">
+                    <link role="link" targetNodeId="1.2925336694746234972" />
+                  </node>
+                </node>
+                <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_IsNullOperation" id="119214807404909484" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
     </node>
   </node>
 </model>

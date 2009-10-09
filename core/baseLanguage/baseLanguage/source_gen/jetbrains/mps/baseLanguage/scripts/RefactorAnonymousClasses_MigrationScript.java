@@ -7,6 +7,7 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.lang.script.runtime.AbstractMigrationRefactoring;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.Map;
 import java.util.HashMap;
 import jetbrains.mps.resolve.MethodDeclarationsFixer;
@@ -28,7 +29,7 @@ public class RefactorAnonymousClasses_MigrationScript extends BaseMigrationScrip
       }
 
       public boolean isApplicableInstanceNode(SNode node) {
-        return true;
+        return (SLinkOperations.getTarget(node, "baseMethodDeclaration", false) == null) || ListSequence.fromList(SLinkOperations.getTargets(node, "parameter", true)).isNotEmpty();
       }
 
       public void doUpdateInstanceNode(SNode node) {
