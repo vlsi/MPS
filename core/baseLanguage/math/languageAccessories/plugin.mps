@@ -68,10 +68,6 @@
                 <node role="cls" type="jetbrains.mps.baseLanguage.structure.AnonymousClass" id="5990338083470604771">
                   <link role="classifier" targetNodeId="2.~EditorCell_Basic" resolveInfo="EditorCell_Basic" />
                   <link role="baseMethodDeclaration" targetNodeId="2.~EditorCell_Basic.&lt;init&gt;(jetbrains.mps.nodeEditor.EditorContext,jetbrains.mps.smodel.SNode)" resolveInfo="EditorCell_Basic" />
-                  <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="5990338083470604772">
-                    <link role="variableDeclaration" targetNodeId="5990338083470604763" resolveInfo="p0" />
-                  </node>
-                  <node role="parameter" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="5990338083470604773" />
                   <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="5990338083470604774" />
                   <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="5990338083470604775">
                     <property name="isAbstract" value="false" />
@@ -273,6 +269,10 @@
                       </node>
                     </node>
                   </node>
+                  <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="5990338083470604772">
+                    <link role="variableDeclaration" targetNodeId="5990338083470604763" resolveInfo="p0" />
+                  </node>
+                  <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="5990338083470604773" />
                 </node>
               </node>
             </node>
