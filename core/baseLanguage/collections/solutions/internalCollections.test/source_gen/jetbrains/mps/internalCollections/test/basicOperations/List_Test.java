@@ -117,6 +117,14 @@ public class List_Test extends Util_Test {
     Assert.assertEquals(5, val);
     ListSequence.fromList(test).setElement(3, 4);
     Assert.assertEquals(Arrays.asList(new Integer[]{1,2,3,4}), test);
+    List<Integer> foo = ListSequence.fromList(new ArrayList<Integer>());
+    ListSequence.fromList(foo).addElement(1);
+    Assert.assertSame(1, ListSequence.fromList(foo).getElement(0));
+    ListSequence.fromList(foo).setElement(0, 2);
+    Assert.assertSame(2, ListSequence.fromList(foo).getElement(0));
+    int i = 0;
+    ListSequence.fromList(foo).setElement(i, 42);
+    Assert.assertSame(42, ListSequence.fromList(foo).getElement(i));
   }
 
   public void test_serializeList() throws Exception {

@@ -1531,6 +1531,9 @@
       <property name="sourceCardinality" value="1" />
       <link role="target" targetNodeId="2.1068431790191" resolveInfo="Expression" />
     </node>
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.BooleanConceptProperty" id="6794234262918168018">
+      <link role="conceptPropertyDeclaration" targetNodeId="2.1146528679895" resolveInfo="lvalue" />
+    </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1225727723840">
     <property name="name" value="FindFirstOperation" />
