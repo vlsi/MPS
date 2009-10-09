@@ -67,6 +67,7 @@
               <node role="creator" type="jetbrains.mps.baseLanguage.structure.AnonymousClassCreator" id="5990338083470604770">
                 <node role="cls" type="jetbrains.mps.baseLanguage.structure.AnonymousClass" id="5990338083470604771">
                   <link role="classifier" targetNodeId="2.~EditorCell_Basic" resolveInfo="EditorCell_Basic" />
+                  <link role="baseMethodDeclaration" targetNodeId="2.~EditorCell_Basic.&lt;init&gt;(jetbrains.mps.nodeEditor.EditorContext,jetbrains.mps.smodel.SNode)" resolveInfo="EditorCell_Basic" />
                   <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="5990338083470604772">
                     <link role="variableDeclaration" targetNodeId="5990338083470604763" resolveInfo="p0" />
                   </node>

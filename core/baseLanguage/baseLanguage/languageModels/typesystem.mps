@@ -19585,8 +19585,11 @@
             <node role="warningText" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="2925336694746295126">
               <property name="value" value="parameters in deprecated role" />
             </node>
-            <node role="nodeToReport" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference" id="2925336694746295127">
-              <link role="applicableNode" targetNodeId="2925336694746295108" resolveInfo="anonymousClass" />
+            <node role="nodeToReport" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="2577420937785810823">
+              <node role="operand" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference" id="2925336694746295127">
+                <link role="applicableNode" targetNodeId="2925336694746295108" resolveInfo="anonymousClass" />
+              </node>
+              <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_GetParentOperation" id="2577420937785810827" />
             </node>
             <node role="helginsIntention" type="jetbrains.mps.lang.typesystem.structure.TypesystemIntention" id="2925336694746295197">
               <property name="applyImmediately" value="true" />

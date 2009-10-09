@@ -161,7 +161,7 @@ public class MethodDeclarationsFixer extends EditorCheckerAdapter {
     myMethodCallsToSetDecls.clear();
   }
 
-  private void testAndFixMethodCall(SNode methodCallNode, Map<SNode, SNode> reResolvedTargets) {
+  public void testAndFixMethodCall(SNode methodCallNode, Map<SNode, SNode> reResolvedTargets) {
     IMethodCall methodCall = (IMethodCall) BaseAdapter.fromNode(methodCallNode);
     BaseMethodDeclaration baseMethodDeclaration = methodCall.getBaseMethodDeclaration();
     String methodName;

@@ -957,6 +957,14 @@ public class QueriesGenerated {
     return SPropertyOperations.getBoolean(SNodeOperations.cast(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.lang.typesystem.structure.OverloadedOpTypeRule_OneTypeSpecified"), "isStrong");
   }
 
+  public static Object propertyMacro_GetPropertyValue_7488229814397846045(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return SPropertyOperations.getBoolean(SLinkOperations.getTarget(_context.getNode(), "helginsIntention", true), "applyImmediately");
+  }
+
+  public static Object propertyMacro_GetPropertyValue_7488229814397846059(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return SPropertyOperations.getBoolean(SLinkOperations.getTarget(_context.getNode(), "helginsIntention", true), "applyImmediately");
+  }
+
   public static Object propertyMacro_GetPropertyValue_8124453027370845472(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return INamedConcept_Behavior.call_getFqName_1213877404258(SLinkOperations.getTarget(_context.getNode(), "concept", false));
   }
