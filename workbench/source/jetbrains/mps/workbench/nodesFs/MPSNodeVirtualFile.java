@@ -28,7 +28,6 @@ import org.jetbrains.annotations.Nullable;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
-import java.lang.ref.WeakReference;
 
 public class MPSNodeVirtualFile extends DeprecatedVirtualFile {
   private SNodePointer myNode;
@@ -43,14 +42,23 @@ public class MPSNodeVirtualFile extends DeprecatedVirtualFile {
     if (modelDescriptor != null) {
       myTimeStamp = modelDescriptor.lastChangeTime();
     }
-    updateFields();
+    updateFields(node);
   }
 
   void updateFields() {
+    final SNode node = ModelAccess.instance().runReadAction(new Computable<SNode>() {
+      public SNode compute(){
+        return myNode.getNode();
+      }
+    });
+    updateFields(node);
+  }
+
+  private void updateFields(final SNode node) {
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
-        myName = "" + myNode.getNode().getPresentation();
-        myPath = myNode.getNode().getModel().getSModelFqName() + "/" + myName;
+        myName = "" + node.getPresentation();
+        myPath = node.getModel().getSModelFqName() + "/" + myName;
       }
     });
   }
