@@ -288,6 +288,11 @@ public class TypeChecker implements ApplicationComponent {
     myCheckedRoots.add(node);
   }
 
+  public void invalidateRoot(SNode node) {
+    if (node == null) return;
+    myCheckedRoots.remove(node);
+  }
+
   @Nullable
   public SNode getTypeOf(SNode node) {
     if (node == null) return null;

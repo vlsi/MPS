@@ -163,6 +163,7 @@ public class NodeTypesComponent implements EditorMessageOwner {
     clearNodesTypes();
     myRegisteredVariables.clear();
     clearCaches();
+    myTypeChecker.invalidateRoot(myRootNode);
   }
 
   private void clearEquationManager() {
