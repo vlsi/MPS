@@ -23,6 +23,9 @@ import com.intellij.openapi.actionSystem.*;
 import com.intellij.openapi.util.Computable;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.openapi.wm.WindowManager;
+import com.intellij.openapi.wm.IdeFrame;
+import com.intellij.openapi.wm.ex.StatusBarEx;
+import com.intellij.openapi.project.Project;
 import jetbrains.mps.ide.IdeMain;
 import jetbrains.mps.ide.IdeMain.TestMode;
 import jetbrains.mps.ide.SystemInfo;
@@ -148,6 +151,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
   private boolean myHasLastCaretX = false;
   private int myLastCaretX;
   private boolean myReadOnly = false;
+  private String myLastWrittenStatus ="";
 
   @NotNull
   private JScrollPane myScrollPane;
@@ -605,7 +609,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
         if (getMessageTextFor(cell) != null) {
           return new Point(cell.getX(), cell.getY() + cell.getHeight());
         } else {
-          return null;            
+          return null;
         }
       }
     });
@@ -626,7 +630,18 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
             info = message;
           }
         }
-        WindowManager.getInstance().getIdeFrame(getOperationContext().getProject()).getStatusBar().setInfo(info);
+
+        Project project = getOperationContext().getProject();
+        IdeFrame ideFrame = WindowManager.getInstance().getIdeFrame(project);
+        StatusBarEx statusBar = (StatusBarEx)ideFrame.getStatusBar();
+
+        //current info is significant or the editor removes its own message
+        if (!info.equals("") || myLastWrittenStatus.equals(statusBar.getInfo())){
+          statusBar.setInfo(info);
+          if (!info.equals("")){
+            myLastWrittenStatus = info;
+          }
+        }
       }
     });
   }
@@ -961,7 +976,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
 
   public boolean hasValidSelectedNode() {
     SNode selectedNode = getSelectedNode();
-    return selectedNode != null && selectedNode.getModel()!=null;
+    return selectedNode != null && selectedNode.getModel() != null;
   }
 
   public boolean isDisposed() {
@@ -1053,7 +1068,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
 
     revalidate();
     repaint();
-  }            
+  }
 
   private Set<SModelReference> getModels(Set<SNode> nodes) {
     Set<SModelReference> result = new HashSet<SModelReference>();
