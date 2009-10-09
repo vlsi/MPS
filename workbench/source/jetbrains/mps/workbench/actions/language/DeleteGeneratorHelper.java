@@ -24,6 +24,7 @@ import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.workbench.MPSDataKeys;
+import jetbrains.mps.logging.Logger;
 
 import javax.swing.SwingUtilities;
 import java.awt.Frame;
@@ -31,6 +32,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class DeleteGeneratorHelper {
+  private static final Logger LOG = Logger.getLogger(DeleteGeneratorHelper.class);
+
   public static void deleteGenerator(Project project, Language sourceLanguage, Generator generator, GeneratorDescriptor generatorDescriptor, boolean safeDelete, boolean deleteFiles) {
     if (safeDelete) {
       safeDelete(project, sourceLanguage, generator, generatorDescriptor, deleteFiles);
@@ -74,6 +77,7 @@ public class DeleteGeneratorHelper {
     languageDescriptor.getGenerators().remove(generator.getGeneratorDescriptor());
     sourceLanguage.setLanguageDescriptor(languageDescriptor);
     if (deleteFiles) {
+      LOG.error("DELETE GENERATOR FILES - NOT IMPLEMENTED",new Throwable());
       //todo
     }
     sourceLanguage.save();

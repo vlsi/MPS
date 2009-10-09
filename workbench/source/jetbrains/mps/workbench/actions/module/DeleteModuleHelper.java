@@ -45,6 +45,14 @@ public class DeleteModuleHelper {
       JOptionPane.showMessageDialog(WindowManager.getInstance().getFrame(project), "Non-project modules can only be deleted with files deletion enabled", "Can't delete module", JOptionPane.WARNING_MESSAGE);
     }
 
+/*
+    for (IModule depModule:MPSModuleRepository.getInstance().getAllModules()){
+      if (depModule.getDependOnModules().contains(module)){
+        depModule.get
+      }
+    }
+
+*/
     //remove from project
     if (mpsProject.isProjectModule(module)) {
       if (module instanceof Language) {
@@ -69,7 +77,7 @@ public class DeleteModuleHelper {
   }
 
   private static void safeDelete(Project project, MPSProject mpsProject, IModule module, boolean deleteFiles) {
-
+    LOG.error("SAFE DELETE MODULE - NOT IMPLEMENTED",new Throwable());
   }
 
   private static void reportUnsupportedModuleType(IModule module) {
