@@ -2098,6 +2098,53 @@
               </node>
             </node>
           </node>
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="420955509724271463">
+            <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="420955509724271464">
+              <property name="name" value="target" />
+              <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="420955509724271465">
+                <link role="classifier" targetNodeId="2.~SNode" resolveInfo="SNode" />
+              </node>
+              <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="420955509724271466">
+                <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="420955509724271467">
+                  <link role="variableDeclaration" targetNodeId="5098418897313098734" resolveInfo="map" />
+                </node>
+                <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="420955509724271468">
+                  <link role="baseMethodDeclaration" targetNodeId="36.~Map.get(java.lang.Object):java.lang.Object" resolveInfo="get" />
+                  <node role="actualArgument" type="jetbrains.mps.lang.script.structure.MigrationScriptPart_node" id="420955509724271469" />
+                </node>
+              </node>
+            </node>
+          </node>
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="420955509724271473">
+            <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="420955509724271474">
+              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="420955509724271482">
+                <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="420955509724271489">
+                  <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="420955509724271484">
+                    <node role="operand" type="jetbrains.mps.lang.script.structure.MigrationScriptPart_node" id="420955509724271483" />
+                    <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="420955509724271488">
+                      <link role="link" targetNodeId="1.2925336694746234972" />
+                    </node>
+                  </node>
+                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.Link_SetTargetOperation" id="420955509724272488">
+                    <node role="linkTarget" type="jetbrains.mps.baseLanguage.structure.CastExpression" id="420955509724272495">
+                      <node role="type" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="420955509724272499">
+                        <link role="concept" targetNodeId="1.1068580123140" resolveInfo="ConstructorDeclaration" />
+                      </node>
+                      <node role="expression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="420955509724272491">
+                        <link role="variableDeclaration" targetNodeId="420955509724271464" resolveInfo="target" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+            <node role="condition" type="jetbrains.mps.baseLanguage.structure.NotEqualsExpression" id="420955509724271478">
+              <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="420955509724271481" />
+              <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="420955509724271477">
+                <link role="variableDeclaration" targetNodeId="420955509724271464" resolveInfo="target" />
+              </node>
+            </node>
+          </node>
         </node>
       </node>
       <node role="affectedInstancePredicate" type="jetbrains.mps.lang.script.structure.MigrationScriptPart_Instance_Predicate" id="119214807404908476">
