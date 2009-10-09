@@ -10,10 +10,6 @@ public class FixParametersInAnonymousClass_QuickFix extends QuickFix_Runtime {
   public FixParametersInAnonymousClass_QuickFix() {
   }
 
-  public String getDescription() {
-    throw new RuntimeException("NOT IMPLEMENTED");
-  }
-
   public void execute(SNode node) {
     for (SNode parameter : SLinkOperations.getTargets(((SNode)FixParametersInAnonymousClass_QuickFix.this.getField("anonymousClass")[0]), "parameter", true)) {
       SLinkOperations.addChild(((SNode)FixParametersInAnonymousClass_QuickFix.this.getField("anonymousClass")[0]), "actualArgument", parameter);
