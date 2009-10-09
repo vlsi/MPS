@@ -448,7 +448,7 @@ public class SModelTreeNode extends MPSTreeNodeEx {
         if (getTree() == null) return;
 
         //module has been already removed  
-        if (getOperationContext().isValid()) return;
+        if (!getOperationContext().isValid()) return;
 
         updatePresentation();
         updateNodePresentationInTree();
