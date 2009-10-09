@@ -17,12 +17,14 @@ package jetbrains.mps.datatransfer;
 
 import jetbrains.mps.ide.ui.smodel.SModelTreeNode;
 import jetbrains.mps.lang.structure.structure.*;
+import jetbrains.mps.lang.structure.behavior.LinkDeclaration_Behavior;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.search.ConceptAndSuperConceptsScope;
+import jetbrains.mps.kernel.model.SModelUtil;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -173,7 +175,7 @@ public class NodePaster {
     SNode _anchorNode = anchorNode;
     boolean insertBefore = placeHint == PastePlaceHint.BEFORE_ANCHOR;
     for (SNode pasteNode : myPasteNodes) {
-      pasteTarget.insertChild(_anchorNode, link.getRole(), normalizeForLink(pasteNode, link), insertBefore);
+      pasteTarget.insertChild(_anchorNode, SModelUtil.getGenuineLinkRole(link.getNode()), normalizeForLink(pasteNode, link), insertBefore);
 
       _anchorNode = pasteNode;
       insertBefore = false;
