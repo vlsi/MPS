@@ -40,16 +40,17 @@ import jetbrains.mps.fileTypes.MPSFileTypesManager;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.VFileSystem;
-import jetbrains.mps.util.misc.hash.HashSet;
 import jetbrains.mps.ide.IdeMain;
 import jetbrains.mps.ide.IdeMain.TestMode;
+import jetbrains.mps.library.LibraryManager;
+import jetbrains.mps.library.Library;
+import jetbrains.mps.library.ProjectLibraryManager;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 
 import java.io.File;
-import java.util.LinkedHashSet;
-import java.util.List;
-import java.util.Set;
+import java.io.IOException;
+import java.util.*;
 
 public class ModelChangesWatcher implements ApplicationComponent {
   public static final Logger LOG = Logger.getLogger(ModelChangesWatcher.class);
@@ -90,12 +91,12 @@ public class ModelChangesWatcher implements ApplicationComponent {
   private final ProjectManagerListener myProjectManagerListener = new ProjectManagerAdapter() {
     @Override
     public void projectOpened(Project project) {
-      ((ProjectLevelVcsManagerImpl)project.getComponent(ProjectLevelVcsManager.class)).addBackgroundOperationsListener(myVcsListener);
+      ((ProjectLevelVcsManagerImpl) project.getComponent(ProjectLevelVcsManager.class)).addBackgroundOperationsListener(myVcsListener);
     }
 
     @Override
     public void projectClosing(Project project) {
-      ((ProjectLevelVcsManagerImpl)project.getComponent(ProjectLevelVcsManager.class)).removeBackgroundOperationsListener(myVcsListener);
+      ((ProjectLevelVcsManagerImpl) project.getComponent(ProjectLevelVcsManager.class)).removeBackgroundOperationsListener(myVcsListener);
     }
   };
 
@@ -191,6 +192,58 @@ public class ModelChangesWatcher implements ApplicationComponent {
     void dataFileCreated(IFile f);
   }
 
+  /**
+   * Return all roots, under which file changes do really matter for us.
+   * Those roots are: all opened project basedirs, all project libraries, all vcs roots, all global libraries.
+   *
+   * @return List of all opened project basedirs, all project libraries, all vcs roots, all global libraries.
+   */
+  public Set<VirtualFile> getSignificantRoots() {
+
+    Set<VirtualFile> roots = new HashSet<VirtualFile>();
+    for (Project p : myProjectManager.getOpenProjects()) {
+      roots.add(p.getBaseDir());
+      ProjectLibraryManager projectLibraryManager = p.getComponent(ProjectLibraryManager.class);
+      if (projectLibraryManager != null) {
+        for (Library lib : projectLibraryManager.getLibraries()) {
+          VirtualFile file = VFileSystem.getFile(lib.getPath());
+          if (file != null) {
+            roots.add(file);
+          }
+        }
+      }
+      ProjectLevelVcsManager manager = ProjectLevelVcsManager.getInstance(p);
+      if (manager != null) {
+        for (VirtualFile f : manager.getAllVersionedRoots()) {
+          roots.add(f);
+        }
+      }
+    }
+
+    LibraryManager libraryManager = LibraryManager.getInstance();
+    for (Library lib : libraryManager.getLibraries()) {
+      VirtualFile file = VFileSystem.getFile(lib.getPath());
+      if (file != null) {
+        roots.add(file);
+      }
+    }
+
+    return roots;
+  }
+
+  private boolean isUnderSignificantRoots(File file) {
+    for (VirtualFile f : getSignificantRoots()) {
+      try {
+        if (FileUtil.isAncestor(VFileSystem.toFile(f), file, false)) {
+          return true;
+        }
+      } catch (IOException e) {
+        LOG.error(e);
+      }
+    }
+    return false;
+  }
+
   private class BulkFileChangesListener implements BulkFileListener {
     public void before(List<? extends VFileEvent> events) {
 
@@ -207,12 +260,14 @@ public class ModelChangesWatcher implements ApplicationComponent {
           VirtualFile file = VFileSystem.getFile(filePath);
           if (file == null) continue;
           if (file.isDirectory() && file.exists() && (file.getChildren() != null)) {
-            VFileSystem.processFilesRecursively(file, new Processor<VirtualFile>() {
-              public boolean process(VirtualFile file) {
-                processBeforeEvent(new VFileEventDecorator(event, file.getPath()), file.getPath(), reloadSession);
-                return true;
-              }
-            });
+            if (isUnderSignificantRoots(VFileSystem.toFile(file))) {
+              VFileSystem.processFilesRecursively(file, new Processor<VirtualFile>() {
+                public boolean process(VirtualFile file) {
+                  processBeforeEvent(new VFileEventDecorator(event, file.getPath()), file.getPath(), reloadSession);
+                  return true;
+                }
+              });
+            }
           } else if (!file.isDirectory()) {
             processBeforeEvent(event, filePath, reloadSession);
           }
@@ -250,14 +305,16 @@ public class ModelChangesWatcher implements ApplicationComponent {
           // last part of condition was added due to MPS-4780 [build:3180] null
           // (NPE in Arrays.asList())
           if (file.isDirectory() && file.exists() && (file.listFiles() != null)) {
-            FileUtil.processFilesRecursively(file, new Processor<File>() {
-              public boolean process(File file) {
-                processAfterEvent(file.getAbsolutePath(),
-                  new VFileEventDecorator(event, file.getAbsolutePath()),
-                  reloadSession);
-                return true;
-              }
-            });
+            if (isUnderSignificantRoots(file)) {
+              FileUtil.processFilesRecursively(file, new Processor<File>() {
+                public boolean process(File file) {
+                  processAfterEvent(file.getAbsolutePath(),
+                    new VFileEventDecorator(event, file.getAbsolutePath()),
+                    reloadSession);
+                  return true;
+                }
+              });
+            }
           }
           processAfterEvent(path, event, reloadSession);
         }
@@ -299,6 +356,7 @@ public class ModelChangesWatcher implements ApplicationComponent {
 
   public interface IReloadListener {
     public void reloadStarted();
+
     public void reloadFinished();
   }
 }
