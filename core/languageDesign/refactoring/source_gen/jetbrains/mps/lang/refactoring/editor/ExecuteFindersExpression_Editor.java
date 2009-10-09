@@ -10,7 +10,7 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
 import jetbrains.mps.nodeEditor.cellProviders.AbstractCellListHandler;
-import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Indent;
+import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Vertical;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
@@ -81,7 +81,7 @@ public class ExecuteFindersExpression_Editor extends DefaultNodeEditor {
 
   private EditorCell createRefNodeList_0628_0(EditorContext editorContext, SNode node) {
     AbstractCellListHandler handler = new ExecuteFindersExpression_Editor.findersListHandler_0628_0(node, "finders", editorContext);
-    EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Indent(), false);
+    EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Vertical(), false);
     editorCell.setCellId("refNodeList_finders");
     editorCell.setRole(handler.getElementRole());
     return editorCell;

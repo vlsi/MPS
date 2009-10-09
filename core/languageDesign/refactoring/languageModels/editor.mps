@@ -640,7 +640,7 @@
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNodeList" id="1212242818597">
         <property name="vertical" value="true" />
         <link role="relationDeclaration" targetNodeId="1.1212242658590" />
-        <node role="cellLayout" type="jetbrains.mps.lang.editor.structure.CellLayout_Indent" id="1238692452997" />
+        <node role="cellLayout" type="jetbrains.mps.lang.editor.structure.CellLayout_Vertical" id="3302086321380744642" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1212242984484">
         <property name="text" value="," />

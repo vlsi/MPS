@@ -491,5 +491,51 @@
       </node>
     </node>
   </node>
+  <node type="jetbrains.mps.lang.constraints.structure.ConceptConstraints" id="3302086321381138249">
+    <property name="package" value="Deprecated" />
+    <link role="concept" targetNodeId="1.1204722970897" resolveInfo="DeleteFeatureOperation" />
+    <node role="canBeChild" type="jetbrains.mps.lang.constraints.structure.ConstraintFunction_CanBeAChild" id="3302086321381138250">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="3302086321381138251">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="3302086321381138252">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="3302086321381138253">
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="3302086321381138254">
+              <node role="operand" type="jetbrains.mps.lang.constraints.structure.ConstraintFunctionParameter_parentNode" id="3302086321381138255" />
+              <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_GetAncestorOperation" id="3302086321381138256">
+                <node role="parameter" type="jetbrains.mps.lang.smodel.structure.OperationParm_ConceptList" id="3302086321381138257">
+                  <node role="concept" type="jetbrains.mps.lang.smodel.structure.ConceptReference" id="3302086321381138258">
+                    <link role="concept" targetNodeId="1.1189693812263" resolveInfo="OldRefactoring" />
+                  </node>
+                </node>
+              </node>
+            </node>
+            <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_IsNotNullOperation" id="3302086321381138259" />
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.constraints.structure.ConceptConstraints" id="3302086321381138260">
+    <property name="package" value="Deprecated" />
+    <link role="concept" targetNodeId="1.1197386846879" resolveInfo="ChangeFeatureNameOperation" />
+    <node role="canBeChild" type="jetbrains.mps.lang.constraints.structure.ConstraintFunction_CanBeAChild" id="3302086321381138261">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="3302086321381138262">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="3302086321381138263">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="3302086321381138264">
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="3302086321381138265">
+              <node role="operand" type="jetbrains.mps.lang.constraints.structure.ConstraintFunctionParameter_parentNode" id="3302086321381138266" />
+              <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_GetAncestorOperation" id="3302086321381138267">
+                <node role="parameter" type="jetbrains.mps.lang.smodel.structure.OperationParm_ConceptList" id="3302086321381138268">
+                  <node role="concept" type="jetbrains.mps.lang.smodel.structure.ConceptReference" id="3302086321381138269">
+                    <link role="concept" targetNodeId="1.1189693812263" resolveInfo="OldRefactoring" />
+                  </node>
+                </node>
+              </node>
+            </node>
+            <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_IsNotNullOperation" id="3302086321381138270" />
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
 </model>
 

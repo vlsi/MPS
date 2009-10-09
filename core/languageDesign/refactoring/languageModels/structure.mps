@@ -537,7 +537,6 @@
     <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="3242588059496701766">
       <link role="intfc" targetNodeId="3242588059496701743" resolveInfo="RefactoringAction" />
     </node>
-    <node role="deprecatedNode$attribute" type="jetbrains.mps.lang.structure.structure.DeprecatedNodeAnnotation" id="3302086321379695496" />
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1197983858784">
     <property name="name" value="ChooseComponentClause" />
@@ -867,15 +866,6 @@
       <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" resolveInfo="alias" />
     </node>
     <node role="deprecatedNode$attribute" type="jetbrains.mps.lang.structure.structure.DeprecatedNodeAnnotation" id="3302086321379695488" />
-  </node>
-  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1214999734945">
-    <property name="name" value="AbstractUIArgumentExpression" />
-    <property name="package" value="Deprecated.Environment" />
-    <link role="extends" targetNodeId="2.1068431790191" resolveInfo="Expression" />
-    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.BooleanConceptProperty" id="1214999756915">
-      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473854053" resolveInfo="abstract" />
-    </node>
-    <node role="deprecatedNode$attribute" type="jetbrains.mps.lang.structure.structure.DeprecatedNodeAnnotation" id="3302086321379695483" />
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1215000036307">
     <property name="name" value="NodeExpression" />
@@ -1679,6 +1669,15 @@
     <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="3302086321379403350">
       <link role="intfc" targetNodeId="3242588059496701743" resolveInfo="RefactoringAction" />
     </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1214999734945">
+    <property name="name" value="AbstractUIArgumentExpression" />
+    <property name="package" value="Deprecated.Environment" />
+    <link role="extends" targetNodeId="2.1068431790191" resolveInfo="Expression" />
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.BooleanConceptProperty" id="1214999756915">
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473854053" resolveInfo="abstract" />
+    </node>
+    <node role="deprecatedNode$attribute" type="jetbrains.mps.lang.structure.structure.DeprecatedNodeAnnotation" id="3302086321379695483" />
   </node>
 </model>
 
