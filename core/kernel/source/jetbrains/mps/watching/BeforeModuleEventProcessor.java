@@ -39,7 +39,18 @@ class BeforeModuleEventProcessor extends EventProcessor {
   protected void processDelete(VFileEvent event, ReloadSession reloadSession) {
     IModule module = ModuleFileProcessor.getModuleByEvent(event);
     if (module != null) {
+      // we should unload module
       reloadSession.addDeletedModule(module);
+    } else {
+      // if module is null, then it was removed by user
+      VirtualFile vfile = getVFile(event);
+      if (vfile == null) return;
+      if (MPSFileTypesManager.instance().isModuleFile(vfile)) {
+        Project project = ApplicationLevelVcsManager.instance().getProjectForFile(vfile);
+        if (project != null) {
+          MPSVCSManager.getInstance(project).deleteVirtualFilesAndRemoveFromVcs(Collections.singleton(vfile), true);
+        }
+      }
     }
   }
 }
