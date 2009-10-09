@@ -525,6 +525,7 @@
                   <node role="creator" type="jetbrains.mps.baseLanguage.structure.AnonymousClassCreator" id="1215444400369">
                     <node role="cls" type="jetbrains.mps.baseLanguage.structure.AnonymousClass" id="1215444400370">
                       <link role="classifier" targetNodeId="5.~Exception" resolveInfo="Exception" />
+                      <link role="baseMethodDeclaration" targetNodeId="5.~Exception.&lt;init&gt;()" resolveInfo="Exception" />
                       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1215444400371" />
                       <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1215444400372">
                         <property name="name" value="method" />
@@ -638,6 +639,7 @@
                   <node role="creator" type="jetbrains.mps.baseLanguage.structure.AnonymousClassCreator" id="1215444376226">
                     <node role="cls" type="jetbrains.mps.baseLanguage.structure.AnonymousClass" id="1215444376227">
                       <link role="classifier" targetNodeId="5.~NullPointerException" resolveInfo="NullPointerException" />
+                      <link role="baseMethodDeclaration" targetNodeId="5.~NullPointerException.&lt;init&gt;()" resolveInfo="NullPointerException" />
                       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1215444376228" />
                       <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1215444376229">
                         <property name="name" value="maethod" />
