@@ -12,9 +12,8 @@ public class ExpressionStatement_Behavior {
 
   public static boolean call_canServeAsReturn_1239355137616(SNode thisNode) {
     SNode methodLike = SNodeOperations.getAncestor(thisNode, "jetbrains.mps.baseLanguage.structure.IMethodLike", false, false);
-    SNode listContainer = SNodeOperations.getParent(SNodeOperations.getParent(thisNode));
-    if (SNodeOperations.isInstanceOf(listContainer, "jetbrains.mps.baseLanguage.structure.IStatementListContainer")) {
-      if (IStatementListContainer_Behavior.call_isExecuteSynchronous_1230212745736(SNodeOperations.cast(listContainer, "jetbrains.mps.baseLanguage.structure.IStatementListContainer"))) {
+    if (SNodeOperations.isInstanceOf(methodLike, "jetbrains.mps.baseLanguage.structure.IStatementListContainer")) {
+      if (IStatementListContainer_Behavior.call_isExecuteSynchronous_1230212745736(SNodeOperations.cast(methodLike, "jetbrains.mps.baseLanguage.structure.IStatementListContainer"))) {
         return false;
       }
     }

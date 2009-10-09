@@ -683,9 +683,8 @@ public class JavaConverterTreeBuilder {
       AnonymousClassCreator anonymousClassCreator = AnonymousClassCreator.newInstance(myCurrentModel);
       creator = anonymousClassCreator;
       AnonymousClass anonymousClass = (AnonymousClass) myTypesProvider.getRaw(x.anonymousType.binding);
-      // myTypesProvider.createMethodReference(b, AnonymousClassCreator.BASE_METHOD_DECLARATION, anonymousClassCreator.getNode());
-      // addCallArgs(x.arguments, anonymousClassCreator);
-      //todo: make an AnonymousClassCreator an IMethodCall
+     // myTypesProvider.createMethodReference(b, AnonymousClass.BASE_METHOD_DECLARATION, anonymousClass.getNode());
+     // addCallArgs(x.arguments, anonymousClass);
 
       anonymousClassCreator.setCls(anonymousClass);
 
