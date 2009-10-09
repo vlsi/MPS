@@ -17,10 +17,10 @@ package jetbrains.mps.refactoring.framework;
 
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import jetbrains.mps.project.IModule;
+import jetbrains.mps.refactoring.framework.IRefactoringTarget.TargetType;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.workbench.action.BaseAction;
-import jetbrains.mps.refactoring.framework.IRefactoringTarget.TargetType;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.*;
@@ -81,10 +81,10 @@ public class GenericRefactoringAction extends BaseAction {
     return myRefactoring.getKeyStroke();
   }
 
-  private static String getRefactoringClassName(IRefactoring refactoring){
-    if (refactoring instanceof OldRefactoringAdapter){
-      return ((OldRefactoringAdapter)refactoring).getRefactoringClassName();
-    }else{
+  private static String getRefactoringClassName(IRefactoring refactoring) {
+    if (refactoring instanceof OldRefactoringAdapter) {
+      return ((OldRefactoringAdapter) refactoring).getRefactoringClassName();
+    } else {
       return refactoring.getClass().getName();
     }
   }
@@ -93,7 +93,7 @@ public class GenericRefactoringAction extends BaseAction {
     return new ArrayList<T>(c);
   }
 
-  private<T> Set<T> getEntities(AnActionEvent e, boolean oneEntity, T single, List<T> list) {
+  private <T> Set<T> getEntities(boolean oneEntity, T single, List<T> list) {
     Set<T> result = new HashSet<T>();
 
     if (single != null) {
@@ -101,7 +101,7 @@ public class GenericRefactoringAction extends BaseAction {
     }
 
     if (oneEntity) {
-      if (list != null && !list.isEmpty() && !(list.size()==1 && list.contains(single))) {
+      if (list != null && !list.isEmpty() && !(list.size() == 1 && list.contains(single))) {
         result.clear();
       }
     } else {
@@ -116,19 +116,19 @@ public class GenericRefactoringAction extends BaseAction {
   private Set<SNode> getNodes(AnActionEvent e, boolean oneEntity) {
     SNode node = MPSDataKeys.NODE.getData(e.getDataContext());
     List<SNode> nodes = MPSDataKeys.NODES.getData(e.getDataContext());
-    return getEntities(e,oneEntity, node,nodes);
+    return getEntities(oneEntity, node, nodes);
   }
 
   private Set<SModelDescriptor> getModels(AnActionEvent e, boolean oneEntity) {
     SModelDescriptor node = MPSDataKeys.CONTEXT_MODEL.getData(e.getDataContext());
     List<SModelDescriptor> nodes = MPSDataKeys.MODELS.getData(e.getDataContext());
-    return getEntities(e,oneEntity, node,nodes);
+    return getEntities(oneEntity, node, nodes);
   }
 
   private Set<IModule> getModules(AnActionEvent e, boolean oneEntity) {
     IModule node = MPSDataKeys.MODULE.getData(e.getDataContext());
     List<IModule> nodes = MPSDataKeys.MODULES.getData(e.getDataContext());
-    return getEntities(e,oneEntity, node,nodes);
+    return getEntities(oneEntity, node, nodes);
   }
 
   protected void doUpdate(AnActionEvent e) {
@@ -142,8 +142,8 @@ public class GenericRefactoringAction extends BaseAction {
       entities = getModels(e, oneEntity);
     } else if (refTarget.getTarget() == TargetType.MODULE) {
       entities = getModules(e, oneEntity);
-    } else{
-      throw new IllegalArgumentException("Wrong refatctoring type"+refTarget.getTarget().getClass().getName());
+    } else {
+      throw new IllegalArgumentException("Wrong refatctoring type" + refTarget.getTarget().getClass().getName());
     }
 
     boolean enabled;

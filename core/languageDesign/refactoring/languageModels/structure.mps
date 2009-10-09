@@ -515,7 +515,7 @@
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1197386846879">
     <property name="name" value="ChangeFeatureNameOperation" />
-    <property name="package" value="RefActions" />
+    <property name="package" value="Deprecated" />
     <link role="extends" targetNodeId="2.1068580123157" resolveInfo="Statement" />
     <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1197386861552">
       <property name="metaClass" value="aggregation" />
@@ -703,7 +703,7 @@
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1204722970897">
     <property name="name" value="DeleteFeatureOperation" />
-    <property name="package" value="RefActions" />
+    <property name="package" value="Deprecated" />
     <link role="extends" targetNodeId="2.1068580123157" resolveInfo="Statement" />
     <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1204722988476">
       <property name="metaClass" value="aggregation" />
@@ -1616,6 +1616,60 @@
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="5934994956487114982">
       <property name="value" value="refactoringContext" />
       <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" resolveInfo="alias" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="3302086321379400330">
+    <property name="name" value="ChangeFeatureNameExpression" />
+    <property name="package" value="RefActions" />
+    <link role="extends" targetNodeId="2.1068431790191" resolveInfo="Expression" />
+    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="3302086321379400331">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="feature" />
+      <property name="sourceCardinality" value="1" />
+      <link role="target" targetNodeId="2.1068431790191" resolveInfo="Expression" />
+    </node>
+    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="3302086321379400332">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="newConceptFQName" />
+      <property name="sourceCardinality" value="1" />
+      <link role="target" targetNodeId="2.1068431790191" resolveInfo="Expression" />
+    </node>
+    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="3302086321379400333">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="newFeatureName" />
+      <property name="sourceCardinality" value="1" />
+      <link role="target" targetNodeId="2.1068431790191" resolveInfo="Expression" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="3302086321379400334">
+      <property name="value" value="changeFeatureName" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" resolveInfo="alias" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.BooleanConceptProperty" id="3302086321379400337">
+      <link role="conceptPropertyDeclaration" targetNodeId="2.1241531154556" resolveInfo="legalAsStatement" />
+    </node>
+    <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="3302086321379400335">
+      <link role="intfc" targetNodeId="3242588059496701743" resolveInfo="RefactoringAction" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="3302086321379403347">
+    <property name="name" value="DeleteFeatureExpression" />
+    <property name="package" value="RefActions" />
+    <link role="extends" targetNodeId="2.1068431790191" resolveInfo="Expression" />
+    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="3302086321379403348">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="feature" />
+      <property name="sourceCardinality" value="1" />
+      <link role="target" targetNodeId="2.1068431790191" resolveInfo="Expression" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="3302086321379403349">
+      <property name="value" value="deleteFeature" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" resolveInfo="alias" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.BooleanConceptProperty" id="3302086321379469348">
+      <link role="conceptPropertyDeclaration" targetNodeId="2.1241531154556" resolveInfo="legalAsStatement" />
+    </node>
+    <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="3302086321379403350">
+      <link role="intfc" targetNodeId="3242588059496701743" resolveInfo="RefactoringAction" />
     </node>
   </node>
 </model>

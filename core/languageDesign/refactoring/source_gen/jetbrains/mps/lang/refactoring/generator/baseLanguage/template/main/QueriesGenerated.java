@@ -643,6 +643,22 @@ public class QueriesGenerated {
     return SLinkOperations.getTarget(_context.getNode(), "focusedComponent", true);
   }
 
+  public static SNode sourceNodeQuery_3302086321379403314(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return SLinkOperations.getTarget(_context.getNode(), "feature", true);
+  }
+
+  public static SNode sourceNodeQuery_3302086321379403322(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return SLinkOperations.getTarget(_context.getNode(), "newConceptFQName", true);
+  }
+
+  public static SNode sourceNodeQuery_3302086321379403330(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return SLinkOperations.getTarget(_context.getNode(), "newFeatureName", true);
+  }
+
+  public static SNode sourceNodeQuery_3302086321379403391(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return SLinkOperations.getTarget(_context.getNode(), "feature", true);
+  }
+
   public static SNode sourceNodeQuery_3644668945280073794(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return TypeChecker.getInstance().getTypeOf(SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.lang.refactoring.structure.RefactoringParameter", false, false));
   }
