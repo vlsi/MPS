@@ -8,6 +8,9 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
+import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class RenameUtil {
   public static boolean canBeRenamed(SNode node) {
@@ -16,5 +19,15 @@ public class RenameUtil {
     ModelConstraintsManager manager = ModelConstraintsManager.getInstance();
     String nameProperty = SPropertyOperations.getString(ListSequence.fromList(SLinkOperations.getTargets(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.core.structure.INamedConcept"), "propertyDeclaration", true)).first(), "name");
     return manager.getNodePropertyGetter(node, nameProperty) == null;
+  }
+
+  public static String getName(final SNode node) {
+    final Wrappers._T<String> result = new Wrappers._T<String>();
+    ModelAccess.instance().runReadAction(new Runnable() {
+      public void run() {
+        result.value = SPropertyOperations.getString(SNodeOperations.cast(node, "jetbrains.mps.lang.core.structure.INamedConcept"), "name");
+      }
+    });
+    return result.value;
   }
 }

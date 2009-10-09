@@ -17,6 +17,10 @@
     <dependency reexport="false">3fe6ec39-7405-4314-abfd-5964c9c40e6b(jetbrains.mpslite)</dependency>
     <dependency reexport="false">2d3c70e9-aab2-4870-8d8d-6036800e4103(jetbrains.mps.kernel)</dependency>
   </dependencies>
+  <usedLanguages>
+    <usedLanguages>28f9e497-3b42-4291-aeba-0a1039153ab1(jetbrains.mps.lang.plugin)</usedLanguages>
+    <usedLanguages>28f9e497-3b42-4291-aeba-0a1039153ab1(jetbrains.mps.lang.plugin)</usedLanguages>
+  </usedLanguages>
   <extendedLanguages />
 </language>
 
