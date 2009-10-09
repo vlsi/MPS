@@ -7724,6 +7724,14 @@
           <property name="separatorText" value="," />
           <link role="relationDeclaration" targetNodeId="17.2925336694746234974" />
           <node role="cellLayout" type="jetbrains.mps.lang.editor.structure.CellLayout_Indent" id="2925336694746289575" />
+          <node role="emptyCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="652334783620578422">
+            <node role="styleItem" type="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem" id="652334783620578423">
+              <property name="flag" value="true" />
+            </node>
+            <node role="styleItem" type="jetbrains.mps.lang.editor.structure.EditableStyleClassItem" id="652334783620578424">
+              <property name="flag" value="true" />
+            </node>
+          </node>
         </node>
         <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1170346142297">
           <property name="text" value=")" />
