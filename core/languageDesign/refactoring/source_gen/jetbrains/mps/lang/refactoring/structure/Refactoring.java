@@ -6,7 +6,7 @@ import jetbrains.mps.lang.core.structure.BaseConcept;
 import jetbrains.mps.lang.core.structure.INamedConcept;
 import jetbrains.mps.lang.structure.structure.IConceptAspect;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.lang.editor.structure.CellKeyMapKeystroke;
+import jetbrains.mps.lang.plugin.structure.KeyMapKeystroke;
 import java.util.Iterator;
 import java.util.List;
 import jetbrains.mps.smodel.SModel;
@@ -90,11 +90,11 @@ public class Refactoring extends BaseConcept implements INamedConcept, IConceptA
     super.setChild(Refactoring.TARGET, node);
   }
 
-  public CellKeyMapKeystroke getKeystroke() {
-    return (CellKeyMapKeystroke)this.getChild(CellKeyMapKeystroke.class, Refactoring.KEYSTROKE);
+  public KeyMapKeystroke getKeystroke() {
+    return (KeyMapKeystroke)this.getChild(KeyMapKeystroke.class, Refactoring.KEYSTROKE);
   }
 
-  public void setKeystroke(CellKeyMapKeystroke node) {
+  public void setKeystroke(KeyMapKeystroke node) {
     super.setChild(Refactoring.KEYSTROKE, node);
   }
 

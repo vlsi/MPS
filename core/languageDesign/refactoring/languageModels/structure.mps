@@ -207,7 +207,7 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590319(jetbrains.mps.lang.refactoring.structure)" version="1" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895903fe(jetbrains.mps.baseLanguage.strings.constraints)" version="1" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590402(jetbrains.mps.baseLanguage.strings.structure)" version="9" />
-  <maxImportIndex value="17" />
+  <maxImportIndex value="18" />
   <import index="1" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" />
   <import index="2" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="3" />
   <import index="5" modelUID="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" version="0" />
@@ -218,6 +218,7 @@
   <import index="14" modelUID="f:java_stub#jetbrains.mps.ide.findusages.model(jetbrains.mps.ide.findusages.model@java_stub)" version="-1" />
   <import index="16" modelUID="r:00000000-0000-4000-0000-011c8959035b(jetbrains.mps.lang.findUsages.structure)" version="2" />
   <import index="17" modelUID="f:java_stub#jetbrains.mps.refactoring.framework.paramchooser(jetbrains.mps.refactoring.framework.paramchooser@java_stub)" version="-1" />
+  <import index="18" modelUID="r:00000000-0000-4000-0000-011c89590368(jetbrains.mps.lang.plugin.structure)" version="21" />
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1189693812263">
     <property name="name" value="OldRefactoring" />
     <property name="rootable" value="true" />
@@ -1345,7 +1346,7 @@
     <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="6895093993902236375">
       <property name="metaClass" value="aggregation" />
       <property name="role" value="keystroke" />
-      <link role="target" targetNodeId="11.1136916976737" resolveInfo="CellKeyMapKeystroke" />
+      <link role="target" targetNodeId="18.1207318242772" resolveInfo="KeyMapKeystroke" />
     </node>
     <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="6895093993902236376">
       <property name="metaClass" value="aggregation" />
