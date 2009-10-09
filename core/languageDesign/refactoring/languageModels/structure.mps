@@ -310,6 +310,7 @@
     <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="1189695238818">
       <link role="intfc" targetNodeId="1.1169194658468" />
     </node>
+    <node role="deprecatedNode$attribute" type="jetbrains.mps.lang.structure.structure.DeprecatedNodeAnnotation" id="3302086321379697516" />
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1189693830529">
     <property name="name" value="RequiredAdditionalArgument" />
@@ -328,6 +329,7 @@
     <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="1189693905781">
       <link role="intfc" targetNodeId="1.1169194658468" />
     </node>
+    <node role="deprecatedNode$attribute" type="jetbrains.mps.lang.structure.structure.DeprecatedNodeAnnotation" id="3302086321379697517" />
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1189694022607">
     <property name="name" value="IsApplicableClause" />
@@ -344,6 +346,7 @@
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.BooleanConceptProperty" id="6528618226609591701">
       <link role="conceptPropertyDeclaration" targetNodeId="2.1216468774225" resolveInfo="showName" />
     </node>
+    <node role="deprecatedNode$attribute" type="jetbrains.mps.lang.structure.structure.DeprecatedNodeAnnotation" id="3302086321379695499" />
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1189694053795">
     <property name="name" value="DoRefactorClause" />
@@ -377,6 +380,7 @@
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.BooleanConceptProperty" id="1189695055720">
       <link role="conceptPropertyDeclaration" targetNodeId="2.1146528679895" />
     </node>
+    <node role="deprecatedNode$attribute" type="jetbrains.mps.lang.structure.structure.DeprecatedNodeAnnotation" id="3302086321379698035" />
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1189694434958">
     <property name="name" value="UpdateModelClause" />
@@ -455,6 +459,7 @@
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.BooleanConceptProperty" id="6528618226609509178">
       <link role="conceptPropertyDeclaration" targetNodeId="2.1216468774225" resolveInfo="showName" />
     </node>
+    <node role="deprecatedNode$attribute" type="jetbrains.mps.lang.structure.structure.DeprecatedNodeAnnotation" id="3302086321379695484" />
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1192792808079">
     <property name="name" value="RequiredUserEnteredArgument" />
@@ -475,6 +480,7 @@
       <property name="role" value="initialValue" />
       <link role="target" targetNodeId="1198599668934" resolveInfo="InitialValueClause" />
     </node>
+    <node role="deprecatedNode$attribute" type="jetbrains.mps.lang.structure.structure.DeprecatedNodeAnnotation" id="3302086321379695495" />
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1192793302394">
     <property name="name" value="FilterArgumentClause" />
@@ -488,6 +494,7 @@
       <link role="conceptLinkDeclaration" targetNodeId="2.1161119487665" resolveInfo="applicableConceptFunctionParameter" />
       <link role="target" targetNodeId="1192793411861" resolveInfo="ConceptFunctionParameter_UserArgument" />
     </node>
+    <node role="deprecatedNode$attribute" type="jetbrains.mps.lang.structure.structure.DeprecatedNodeAnnotation" id="3302086321379695493" />
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1192793411861">
     <property name="name" value="ConceptFunctionParameter_UserArgument" />
@@ -503,6 +510,7 @@
         <link role="classifier" targetNodeId="7.~Object" resolveInfo="Object" />
       </node>
     </node>
+    <node role="deprecatedNode$attribute" type="jetbrains.mps.lang.structure.structure.DeprecatedNodeAnnotation" id="3302086321379695497" />
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1197382578687">
     <property name="name" value="UpdateModelByDefaultOperation" />
@@ -542,6 +550,7 @@
     <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="3242588059496701766">
       <link role="intfc" targetNodeId="3242588059496701743" resolveInfo="RefactoringAction" />
     </node>
+    <node role="deprecatedNode$attribute" type="jetbrains.mps.lang.structure.structure.DeprecatedNodeAnnotation" id="3302086321379695496" />
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1197983858784">
     <property name="name" value="ChooseComponentClause" />
@@ -553,6 +562,7 @@
         <link role="classifier" targetNodeId="10.~IChooseComponent" resolveInfo="IChooseComponent" />
       </node>
     </node>
+    <node role="deprecatedNode$attribute" type="jetbrains.mps.lang.structure.structure.DeprecatedNodeAnnotation" id="3302086321379695492" />
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1198577376375">
     <property name="name" value="UpdateModelProcedure" />
@@ -578,6 +588,7 @@
         <link role="classifier" targetNodeId="7.~Object" resolveInfo="Object" />
       </node>
     </node>
+    <node role="deprecatedNode$attribute" type="jetbrains.mps.lang.structure.structure.DeprecatedNodeAnnotation" id="3302086321379695494" />
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1199619425400">
     <property name="name" value="AbstractMoveExpression" />
@@ -718,6 +729,7 @@
     <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="3242588059496701767">
       <link role="intfc" targetNodeId="3242588059496701743" resolveInfo="RefactoringAction" />
     </node>
+    <node role="deprecatedNode$attribute" type="jetbrains.mps.lang.structure.structure.DeprecatedNodeAnnotation" id="3302086321379695498" />
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1209559069560">
     <property name="name" value="IsApplicableToModelClause" />
@@ -857,6 +869,7 @@
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.BooleanConceptProperty" id="6528618226609509184">
       <link role="conceptPropertyDeclaration" targetNodeId="2.1216468774225" resolveInfo="showName" />
     </node>
+    <node role="deprecatedNode$attribute" type="jetbrains.mps.lang.structure.structure.DeprecatedNodeAnnotation" id="3302086321379695500" />
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1214999715318">
     <property name="name" value="NodesExpression" />
@@ -866,6 +879,7 @@
       <property name="value" value="nodes" />
       <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" resolveInfo="alias" />
     </node>
+    <node role="deprecatedNode$attribute" type="jetbrains.mps.lang.structure.structure.DeprecatedNodeAnnotation" id="3302086321379695488" />
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1214999734945">
     <property name="name" value="AbstractUIArgumentExpression" />
@@ -874,6 +888,7 @@
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.BooleanConceptProperty" id="1214999756915">
       <link role="conceptPropertyDeclaration" targetNodeId="1.1137473854053" resolveInfo="abstract" />
     </node>
+    <node role="deprecatedNode$attribute" type="jetbrains.mps.lang.structure.structure.DeprecatedNodeAnnotation" id="3302086321379695483" />
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1215000036307">
     <property name="name" value="NodeExpression" />
@@ -883,6 +898,7 @@
       <property name="value" value="node" />
       <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" resolveInfo="alias" />
     </node>
+    <node role="deprecatedNode$attribute" type="jetbrains.mps.lang.structure.structure.DeprecatedNodeAnnotation" id="3302086321379695487" />
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1215000134655">
     <property name="name" value="ModelDescriptorExpression" />
@@ -892,6 +908,7 @@
       <property name="value" value="modelDescriptor" />
       <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" resolveInfo="alias" />
     </node>
+    <node role="deprecatedNode$attribute" type="jetbrains.mps.lang.structure.structure.DeprecatedNodeAnnotation" id="3302086321379695485" />
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1215084399714">
     <property name="name" value="ModuleExpression" />
@@ -901,6 +918,7 @@
       <property name="value" value="module" />
       <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" resolveInfo="alias" />
     </node>
+    <node role="deprecatedNode$attribute" type="jetbrains.mps.lang.structure.structure.DeprecatedNodeAnnotation" id="3302086321379695486" />
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1215084496797">
     <property name="name" value="ProjectExpression" />
@@ -910,6 +928,7 @@
       <property name="value" value="project" />
       <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" resolveInfo="alias" />
     </node>
+    <node role="deprecatedNode$attribute" type="jetbrains.mps.lang.structure.structure.DeprecatedNodeAnnotation" id="3302086321379695490" />
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1215084545440">
     <property name="name" value="ScopeExpression" />
@@ -919,6 +938,7 @@
       <property name="value" value="scope" />
       <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" resolveInfo="alias" />
     </node>
+    <node role="deprecatedNode$attribute" type="jetbrains.mps.lang.structure.structure.DeprecatedNodeAnnotation" id="3302086321379695491" />
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1215084612287">
     <property name="name" value="OperationContextExpression" />
@@ -928,6 +948,7 @@
       <property name="value" value="operationContext" />
       <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" resolveInfo="alias" />
     </node>
+    <node role="deprecatedNode$attribute" type="jetbrains.mps.lang.structure.structure.DeprecatedNodeAnnotation" id="3302086321379695489" />
   </node>
   <node type="jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration" id="3242588059496701743">
     <property name="package" value="RefActions" />
