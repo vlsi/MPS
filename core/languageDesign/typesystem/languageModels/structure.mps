@@ -1532,6 +1532,7 @@
     <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1216391046856">
       <property name="metaClass" value="aggregation" />
       <property name="role" value="descriptionBlock" />
+      <property name="sourceCardinality" value="1" />
       <link role="target" targetNodeId="1216390987552" resolveInfo="QuickFixDescriptionBlock" />
     </node>
     <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1216383476350">

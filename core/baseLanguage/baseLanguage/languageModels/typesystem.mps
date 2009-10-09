@@ -19638,6 +19638,15 @@
         </node>
       </node>
     </node>
+    <node role="descriptionBlock" type="jetbrains.mps.lang.typesystem.structure.QuickFixDescriptionBlock" id="1171944190373530814">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1171944190373530815">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1171944190373538931">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1171944190373538932">
+            <property name="value" value="Fix Parameters" />
+          </node>
+        </node>
+      </node>
+    </node>
   </node>
 </model>
 
