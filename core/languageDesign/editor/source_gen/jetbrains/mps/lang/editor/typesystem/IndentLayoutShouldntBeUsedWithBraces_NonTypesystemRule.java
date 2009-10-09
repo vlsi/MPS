@@ -24,6 +24,8 @@ public class IndentLayoutShouldntBeUsedWithBraces_NonTypesystemRule extends Abst
       if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(collection, "cellLayout", true), "jetbrains.mps.lang.editor.structure.CellLayout_Indent") && SPropertyOperations.getBoolean(collection, "usesBraces")) {
         {
           BaseIntentionProvider intentionProvider = null;
+          intentionProvider = new BaseIntentionProvider("jetbrains.mps.lang.editor.typesystem.fix_Braces_QuickFix", false);
+          intentionProvider.putArgument("collectionCell", collection);
           IErrorTarget errorTarget = new NodeErrorTarget();
           typeCheckingContext.reportTypeError(editorCellModel, "Braces shouldn't be used with indent layout.", "r:00000000-0000-4000-0000-011c8959029a(jetbrains.mps.lang.editor.typesystem)", "4575971948964608918", intentionProvider, errorTarget);
         }

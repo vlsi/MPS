@@ -999,6 +999,15 @@
                 <node role="errorString" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="4575971948964608922">
                   <property name="value" value="Braces shouldn't be used with indent layout." />
                 </node>
+                <node role="helginsIntention" type="jetbrains.mps.lang.typesystem.structure.TypesystemIntention" id="3302086321380659370">
+                  <link role="quickFix" targetNodeId="3302086321380659367" resolveInfo="fix_" />
+                  <node role="actualArgument" type="jetbrains.mps.lang.typesystem.structure.TypesystemIntentionArgument" id="3302086321380661394">
+                    <link role="quickFixArgument" targetNodeId="3302086321380661397" resolveInfo="myNode" />
+                    <node role="value" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="3302086321380661409">
+                      <link role="variableDeclaration" targetNodeId="4575971948964608898" resolveInfo="collection" />
+                    </node>
+                  </node>
+                </node>
               </node>
             </node>
           </node>
@@ -1330,6 +1339,43 @@
     <node role="applicableNode" type="jetbrains.mps.lang.typesystem.structure.ConceptReference" id="7806530711847278497">
       <property name="name" value="parameterObject" />
       <link role="concept" targetNodeId="3.671290755174094691" resolveInfo="ConceptFunctionParameter_method" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.typesystem.structure.TypesystemQuickFix" id="3302086321380659367">
+    <property name="name" value="fix_Braces" />
+    <node role="quickFixArgument" type="jetbrains.mps.lang.typesystem.structure.QuickFixArgument" id="3302086321380661397">
+      <property name="name" value="collectionCell" />
+      <node role="argumentType" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="3302086321380661399">
+        <link role="concept" targetNodeId="3.1073389446423" resolveInfo="CellModel_Collection" />
+      </node>
+    </node>
+    <node role="executeBlock" type="jetbrains.mps.lang.typesystem.structure.QuickFixExecuteBlock" id="3302086321380659368">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="3302086321380659369">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="3302086321380661401">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression" id="3302086321380661411">
+            <node role="rValue" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="3302086321380661414">
+              <property name="value" value="false" />
+            </node>
+            <node role="lValue" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="3302086321380661404">
+              <node role="operand" type="jetbrains.mps.lang.typesystem.structure.QuickFixArgumentReference" id="3302086321380661402">
+                <link role="quickFixArgument" targetNodeId="3302086321380661397" resolveInfo="myNode" />
+              </node>
+              <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="3302086321380661410">
+                <link role="property" targetNodeId="3.1139416841293" resolveInfo="usesBraces" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="descriptionBlock" type="jetbrains.mps.lang.typesystem.structure.QuickFixDescriptionBlock" id="3302086321380659371">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="3302086321380659372">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="3302086321380661388">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="3302086321380661389">
+            <property name="value" value="Do Not Use Braces" />
+          </node>
+        </node>
+      </node>
     </node>
   </node>
 </model>
