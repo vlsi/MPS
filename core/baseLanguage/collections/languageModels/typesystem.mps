@@ -2645,6 +2645,40 @@
           </node>
         </node>
       </node>
+      <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1562299158921037837">
+        <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1562299158921037838">
+          <node role="statement" type="jetbrains.mps.lang.typesystem.structure.CreateLessThanInequationStatement" id="1562299158921037865">
+            <node role="rightExpression" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause" id="1562299158921037869">
+              <node role="normalType" type="jetbrains.mps.lang.quotation.structure.Quotation" id="1562299158921037870">
+                <node role="quotedNode" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="1562299158921037872" />
+              </node>
+            </node>
+            <node role="leftExpression" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause" id="1562299158921037868">
+              <node role="normalType" type="jetbrains.mps.lang.typesystem.structure.TypeOfExpression" id="1562299158921037853">
+                <node role="term" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1562299158921037856">
+                  <node role="operand" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference" id="1562299158921037855">
+                    <link role="applicableNode" targetNodeId="1197927835819" resolveInfo="hashMapCreator" />
+                  </node>
+                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1562299158921037860">
+                    <link role="link" targetNodeId="3.1562299158921034623" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="condition" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1562299158921037847">
+          <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1562299158921037842">
+            <node role="operand" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference" id="1562299158921037841">
+              <link role="applicableNode" targetNodeId="1197927835819" resolveInfo="hashMapCreator" />
+            </node>
+            <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1562299158921037846">
+              <link role="link" targetNodeId="3.1562299158921034623" />
+            </node>
+          </node>
+          <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_IsNotNullOperation" id="1562299158921037851" />
+        </node>
+      </node>
     </node>
     <node role="applicableNode" type="jetbrains.mps.lang.typesystem.structure.ConceptReference" id="1197927835819">
       <property name="name" value="hashMapCreator" />
@@ -6628,6 +6662,40 @@
             </node>
           </node>
           <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_IsNotNullOperation" id="1237732287011" />
+        </node>
+      </node>
+      <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1562299158921037874">
+        <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1562299158921037875">
+          <node role="statement" type="jetbrains.mps.lang.typesystem.structure.CreateLessThanInequationStatement" id="1562299158921037898">
+            <node role="rightExpression" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause" id="1562299158921037902">
+              <node role="normalType" type="jetbrains.mps.lang.quotation.structure.Quotation" id="1562299158921037903">
+                <node role="quotedNode" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="1562299158921037905" />
+              </node>
+            </node>
+            <node role="leftExpression" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause" id="1562299158921037901">
+              <node role="normalType" type="jetbrains.mps.lang.typesystem.structure.TypeOfExpression" id="1562299158921037890">
+                <node role="term" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1562299158921037893">
+                  <node role="operand" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference" id="1562299158921037892">
+                    <link role="applicableNode" targetNodeId="1237723040303" resolveInfo="creator" />
+                  </node>
+                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1562299158921037897">
+                    <link role="link" targetNodeId="3.1562299158920737514" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="condition" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1562299158921037884">
+          <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1562299158921037879">
+            <node role="operand" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference" id="1562299158921037878">
+              <link role="applicableNode" targetNodeId="1237723040303" resolveInfo="creator" />
+            </node>
+            <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1562299158921037883">
+              <link role="link" targetNodeId="3.1562299158920737514" />
+            </node>
+          </node>
+          <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_IsNotNullOperation" id="1562299158921037888" />
         </node>
       </node>
       <node role="statement" type="jetbrains.mps.lang.typesystem.structure.CreateEquationStatement" id="1237723275733">

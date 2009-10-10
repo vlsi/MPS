@@ -6,16 +6,25 @@ import jetbrains.mps.internalCollections.test.closures.Util_Test;
 import java.util.Set;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
+import java.util.LinkedHashSet;
+import java.util.SortedSet;
+import jetbrains.mps.internal.collections.runtime.SortedSetSequence;
+import java.util.TreeSet;
 import junit.framework.Assert;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.ArrayUtils;
-import java.util.LinkedHashSet;
 import java.util.Arrays;
 import org.apache.commons.lang.ObjectUtils;
 
 public class Set_Test extends Util_Test {
+  public void test_initSize() throws Exception {
+    Set<Integer> hs = SetSequence.fromSet(new HashSet<Integer>(10));
+    Set<Integer> lhs = SetSequence.fromSet(new LinkedHashSet<Integer>(20));
+    SortedSet<Integer> ss = SortedSetSequence.fromSet(new TreeSet<Integer>());
+  }
+
   public void test_emptyCreator() throws Exception {
     Set<String> test = SetSequence.fromSet(new HashSet<String>());
     Assert.assertTrue(SetSequence.fromSet(test).isEmpty());

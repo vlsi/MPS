@@ -496,6 +496,9 @@
       <property name="value" value="create new array list" />
       <link role="conceptPropertyDeclaration" targetNodeId="1.1137473914776" />
     </node>
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.BooleanConceptProperty" id="1562299158921287422">
+      <link role="conceptPropertyDeclaration" targetNodeId="1562299158921240591" resolveInfo="hasInitSize" />
+    </node>
     <node role="conceptLink" type="jetbrains.mps.lang.structure.structure.ReferenceConceptLink" id="3358009230509441386">
       <link role="conceptLinkDeclaration" targetNodeId="3358009230509381714" resolveInfo="availableFor" />
       <link role="target" targetNodeId="1151688443754" resolveInfo="ListType" />
@@ -1019,6 +1022,9 @@
     <property name="package" value="mapType" />
     <property name="name" value="HashMapCreator" />
     <link role="extends" targetNodeId="2.1145552809883" resolveInfo="AbstractCreator" />
+    <node role="conceptPropertyDeclaration" type="jetbrains.mps.lang.structure.structure.BooleanConceptPropertyDeclaration" id="1562299158921287427">
+      <property name="name" value="hasInitSize" />
+    </node>
     <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1197687026896">
       <property name="metaClass" value="aggregation" />
       <property name="sourceCardinality" value="1" />
@@ -1036,9 +1042,17 @@
       <property name="role" value="initializer" />
       <link role="target" targetNodeId="1206655653991" resolveInfo="MapInitializer" />
     </node>
+    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1562299158921034623">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="initSize" />
+      <link role="target" targetNodeId="2.1068431790191" resolveInfo="Expression" />
+    </node>
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1197686889666">
       <property name="value" value="hashmap" />
       <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" resolveInfo="alias" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.BooleanConceptProperty" id="1562299158921810830">
+      <link role="conceptPropertyDeclaration" targetNodeId="1562299158921287427" resolveInfo="hasInitSize" />
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1197932370469">
@@ -1610,6 +1624,9 @@
       <property name="value" value="create new hashset" />
       <link role="conceptPropertyDeclaration" targetNodeId="1.1137473914776" resolveInfo="short_description" />
     </node>
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.BooleanConceptProperty" id="1562299158921287418">
+      <link role="conceptPropertyDeclaration" targetNodeId="1562299158921240591" resolveInfo="hasInitSize" />
+    </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1226566831166">
     <property name="package" value="set" />
@@ -2161,6 +2178,9 @@
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1237721394592">
     <property name="name" value="AbstractContainerCreator" />
     <link role="extends" targetNodeId="2.1145552809883" resolveInfo="AbstractCreator" />
+    <node role="conceptPropertyDeclaration" type="jetbrains.mps.lang.structure.structure.BooleanConceptPropertyDeclaration" id="1562299158921240591">
+      <property name="name" value="hasInitSize" />
+    </node>
     <node role="conceptLink" type="jetbrains.mps.lang.structure.structure.ReferenceConceptLink" id="3358009230509441382">
       <link role="conceptLinkDeclaration" targetNodeId="3358009230509381714" resolveInfo="availableFor" />
       <link role="target" targetNodeId="1151689724996" resolveInfo="SequenceType" />
@@ -2180,6 +2200,11 @@
     <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1237731803878">
       <property name="metaClass" value="aggregation" />
       <property name="role" value="copyFrom" />
+      <link role="target" targetNodeId="2.1068431790191" resolveInfo="Expression" />
+    </node>
+    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1562299158920737514">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="initSize" />
       <link role="target" targetNodeId="2.1068431790191" resolveInfo="Expression" />
     </node>
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.BooleanConceptProperty" id="1237721421221">
@@ -2257,6 +2282,9 @@
       <property name="value" value="linked_hashmap" />
       <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" resolveInfo="alias" />
     </node>
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.BooleanConceptProperty" id="1562299158921811109">
+      <link role="conceptPropertyDeclaration" targetNodeId="1562299158921287427" resolveInfo="hasInitSize" />
+    </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1240217271293">
     <property name="name" value="LinkedHashSetCreator" />
@@ -2277,6 +2305,9 @@
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1240217271295">
       <property name="value" value="create new linked hashset" />
       <link role="conceptPropertyDeclaration" targetNodeId="1.1137473914776" resolveInfo="shortDescription" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.BooleanConceptProperty" id="1562299158921287420">
+      <link role="conceptPropertyDeclaration" targetNodeId="1562299158921240591" resolveInfo="hasInitSize" />
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.EnumerationDataTypeDeclaration" id="1240219850850">
@@ -2717,6 +2748,9 @@
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="3358009230509514607">
       <property name="value" value="create new priority queue" />
       <link role="conceptPropertyDeclaration" targetNodeId="1.1137473914776" resolveInfo="shortDescription" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.BooleanConceptProperty" id="1562299158921287424">
+      <link role="conceptPropertyDeclaration" targetNodeId="1562299158921240591" resolveInfo="hasInitSize" />
     </node>
     <node role="conceptLink" type="jetbrains.mps.lang.structure.structure.ReferenceConceptLink" id="3358009230509514608">
       <link role="conceptLinkDeclaration" targetNodeId="3358009230509381714" resolveInfo="availableFor" />

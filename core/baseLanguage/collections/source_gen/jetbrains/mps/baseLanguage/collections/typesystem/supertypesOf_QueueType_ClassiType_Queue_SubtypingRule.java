@@ -14,7 +14,7 @@ public class supertypesOf_QueueType_ClassiType_Queue_SubtypingRule extends Subty
   }
 
   public SNode getSubOrSuperType(SNode queueType, TypeCheckingContext typeCheckingContext) {
-    return new _Quotations.QuotationClass_163().createNode(SLinkOperations.getTarget(queueType, "elementType", true), typeCheckingContext);
+    return new _Quotations.QuotationClass_165().createNode(SLinkOperations.getTarget(queueType, "elementType", true), typeCheckingContext);
   }
 
   public String getApplicableConceptFQName() {

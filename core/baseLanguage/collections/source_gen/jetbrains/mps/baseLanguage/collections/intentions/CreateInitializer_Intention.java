@@ -6,6 +6,7 @@ import jetbrains.mps.intentions.BaseIntention;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptPropertyOperations;
 
 public class CreateInitializer_Intention extends BaseIntention {
   public CreateInitializer_Intention() {
@@ -39,7 +40,7 @@ public class CreateInitializer_Intention extends BaseIntention {
   }
 
   public boolean isApplicableToNode(final SNode node, final EditorContext editorContext) {
-    return (SLinkOperations.getTarget(node, "initializer", true) == null);
+    return (SLinkOperations.getTarget(node, "initializer", true) == null) && ((SLinkOperations.getTarget(node, "initSize", true) == null) || !(SConceptPropertyOperations.getBoolean(node, "hasInitSize")));
   }
 
   public void execute(final SNode node, final EditorContext editorContext) {

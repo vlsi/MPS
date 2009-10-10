@@ -6,8 +6,8 @@ import jetbrains.mps.internalCollections.test.closures.Util_Test;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
-import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.backports.LinkedList;
+import jetbrains.mps.internal.collections.runtime.Sequence;
 import java.util.Arrays;
 import junit.framework.Assert;
 import java.io.ByteArrayOutputStream;
@@ -25,6 +25,12 @@ public class List_Test extends Util_Test {
   public void test_listCreator() throws Exception {
     List<Integer> test = ListSequence.fromListAndArray(new ArrayList<Integer>(), 1, 2, 3, 4, 5);
     this.assertIterableEquals(this.expect5(), test);
+  }
+
+  public void test_initSize() throws Exception {
+    List<Integer> ali = ListSequence.fromList(new ArrayList<Integer>(10));
+    List<Integer> lli = ListSequence.fromListWithValues(new LinkedList<Integer>(), ali);
+    ali = lli;
   }
 
   public void test_add() throws Exception {

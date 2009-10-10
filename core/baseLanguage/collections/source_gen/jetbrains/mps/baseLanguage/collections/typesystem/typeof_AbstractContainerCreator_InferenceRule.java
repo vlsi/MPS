@@ -53,6 +53,13 @@ public class typeof_AbstractContainerCreator_InferenceRule extends AbstractInfer
         typeCheckingContext.createLessThanInequation((SNode)typeCheckingContext.getEquationManager().getRepresentator(PARAM_ELEM_TYPE_typevar_9049087841018946828), (SNode)SLinkOperations.getTarget(creator, "elementType", true), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)", "9049087841018946836", false, 0, intentionProvider);
       }
     }
+    if ((SLinkOperations.getTarget(creator, "initSize", true) != null)) {
+      {
+        SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(creator, "initSize", true);
+        BaseIntentionProvider intentionProvider = null;
+        typeCheckingContext.createLessThanInequation((SNode)typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)", "1562299158921037890", true), (SNode)new _Quotations.QuotationClass_163().createNode(typeCheckingContext), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)", "1562299158921037898", false, 0, intentionProvider);
+      }
+    }
     {
       SNode _nodeToCheck_1029348928467 = creator;
       BaseIntentionProvider intentionProvider = null;

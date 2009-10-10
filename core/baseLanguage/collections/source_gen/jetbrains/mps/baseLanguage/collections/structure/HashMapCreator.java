@@ -5,15 +5,18 @@ package jetbrains.mps.baseLanguage.collections.structure;
 import jetbrains.mps.baseLanguage.structure.AbstractCreator;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.baseLanguage.structure.Type;
+import jetbrains.mps.baseLanguage.structure.Expression;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class HashMapCreator extends AbstractCreator {
   public static final String concept = "jetbrains.mps.baseLanguage.collections.structure.HashMapCreator";
+  public static final String CPR_HasInitSize = "hasInitSize";
   public static final String KEY_TYPE = "keyType";
   public static final String VALUE_TYPE = "valueType";
   public static final String INITIALIZER = "initializer";
+  public static final String INIT_SIZE = "initSize";
 
   public HashMapCreator(SNode node) {
     super(node);
@@ -41,6 +44,14 @@ public class HashMapCreator extends AbstractCreator {
 
   public void setInitializer(MapInitializer node) {
     super.setChild(HashMapCreator.INITIALIZER, node);
+  }
+
+  public Expression getInitSize() {
+    return (Expression)this.getChild(Expression.class, HashMapCreator.INIT_SIZE);
+  }
+
+  public void setInitSize(Expression node) {
+    super.setChild(HashMapCreator.INIT_SIZE, node);
   }
 
   public static HashMapCreator newInstance(SModel sm, boolean init) {

@@ -14,7 +14,7 @@ public class supertypesOf_ClassifierType_Queue_QueueType_SubtypingRule extends S
   }
 
   public SNode getSubOrSuperType(SNode classQueueType, TypeCheckingContext typeCheckingContext) {
-    return new _Quotations.QuotationClass_164().createNode(this.myMatchingPattern.PatternVar20, typeCheckingContext);
+    return new _Quotations.QuotationClass_166().createNode(this.myMatchingPattern.PatternVar20, typeCheckingContext);
   }
 
   public String getApplicableConceptFQName() {

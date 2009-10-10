@@ -20,6 +20,13 @@ public class typeof_HashMapCreator_InferenceRule extends AbstractInferenceRule_R
       BaseIntentionProvider intentionProvider = null;
       typeCheckingContext.createEquation((SNode)typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)", "1198082325421", true), (SNode)new _Quotations.QuotationClass_34().createNode(SLinkOperations.getTarget(hashMapCreator, "keyType", true), SLinkOperations.getTarget(hashMapCreator, "valueType", true), typeCheckingContext), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)", "1198082330971", intentionProvider);
     }
+    if ((SLinkOperations.getTarget(hashMapCreator, "initSize", true) != null)) {
+      {
+        SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(hashMapCreator, "initSize", true);
+        BaseIntentionProvider intentionProvider = null;
+        typeCheckingContext.createLessThanInequation((SNode)typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)", "1562299158921037853", true), (SNode)new _Quotations.QuotationClass_162().createNode(typeCheckingContext), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)", "1562299158921037865", false, 0, intentionProvider);
+      }
+    }
   }
 
   public String getApplicableConceptFQName() {

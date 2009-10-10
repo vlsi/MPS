@@ -53,6 +53,9 @@ public class AbstractContainerCreator_Editor extends DefaultNodeEditor {
     if (renderingCondition7023_1(node, editorContext, editorContext.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.createCollection_7023_2(editorContext, node));
     }
+    if (renderingCondition7023_2(node, editorContext, editorContext.getOperationContext().getScope())) {
+      editorCell.addEditorCell(this.createCollection_7023_3(editorContext, node));
+    }
     return editorCell;
   }
 
@@ -79,8 +82,22 @@ public class AbstractContainerCreator_Editor extends DefaultNodeEditor {
       style.set(StyleAttributes.SELECTABLE, false);
     }
     editorCell.addEditorCell(this.createConstant_7023_5(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_7023_9(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_7023_1(editorContext, node));
     editorCell.addEditorCell(this.createConstant_7023_6(editorContext, node));
+    return editorCell;
+  }
+
+  private EditorCell createCollection_7023_3(EditorContext editorContext, SNode node) {
+    EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
+    editorCell.setCellId("Collection_7023_3");
+    {
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.SELECTABLE, false);
+    }
+    editorCell.addEditorCell(this.createConstant_7023_7(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_7023_2(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_7023_8(editorContext, node));
     return editorCell;
   }
 
@@ -152,6 +169,30 @@ public class AbstractContainerCreator_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
+  private EditorCell createConstant_7023_7(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "(");
+    editorCell.setCellId("Constant_7023_7");
+    BaseLanguageStyle_StyleSheet.getLeftParenAfterName(editorCell).apply(editorCell);
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+
+  private EditorCell createConstant_7023_8(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ")");
+    editorCell.setCellId("Constant_7023_8");
+    BaseLanguageStyle_StyleSheet.getRightParen(editorCell).apply(editorCell);
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+
+  private EditorCell createConstant_7023_9(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "copy:");
+    editorCell.setCellId("Constant_7023_9");
+    BaseLanguageStyle_StyleSheet.getAnnotation(editorCell).apply(editorCell);
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+
   private EditorCell createRefNodeList_7023_0(EditorContext editorContext, SNode node) {
     AbstractCellListHandler handler = new AbstractContainerCreator_Editor.initValueListHandler_7023_0(node, "initValue", editorContext);
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Indent(), false);
@@ -218,12 +259,33 @@ public class AbstractContainerCreator_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
+  private EditorCell createRefNode_7023_2(EditorContext editorContext, SNode node) {
+    CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
+    provider.setRole("initSize");
+    provider.setNoTargetText("<no initSize>");
+    EditorCell editorCell;
+    editorCell = provider.createEditorCell(editorContext);
+    editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
+    SNode attributeConcept = provider.getRoleAttribute();
+    Class attributeKind = provider.getRoleAttributeClass();
+    if (attributeConcept != null) {
+      IOperationContext opContext = editorContext.getOperationContext();
+      EditorManager manager = EditorManager.getInstanceFromContext(opContext);
+      return manager.createRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
+    } else
+    return editorCell;
+  }
+
   private static boolean renderingCondition7023_0(SNode node, EditorContext editorContext, IScope scope) {
     return SLinkOperations.getCount(node, "initValue") > 0;
   }
 
   private static boolean renderingCondition7023_1(SNode node, EditorContext editorContext, IScope scope) {
     return (SLinkOperations.getTarget(node, "copyFrom", true) != null);
+  }
+
+  private static boolean renderingCondition7023_2(SNode node, EditorContext editorContext, IScope scope) {
+    return (SLinkOperations.getTarget(node, "initSize", true) != null);
   }
 
   private static class initValueListHandler_7023_0 extends RefNodeListHandler {

@@ -14,9 +14,11 @@ import jetbrains.mps.project.GlobalScope;
 
 public class AbstractContainerCreator extends AbstractCreator {
   public static final String concept = "jetbrains.mps.baseLanguage.collections.structure.AbstractContainerCreator";
+  public static final String CPR_HasInitSize = "hasInitSize";
   public static final String CLNK_AvailableFor = "availableFor";
   public static final String ELEMENT_TYPE = "elementType";
   public static final String COPY_FROM = "copyFrom";
+  public static final String INIT_SIZE = "initSize";
   public static final String INIT_VALUE = "initValue";
 
   public AbstractContainerCreator(SNode node) {
@@ -37,6 +39,14 @@ public class AbstractContainerCreator extends AbstractCreator {
 
   public void setCopyFrom(Expression node) {
     super.setChild(AbstractContainerCreator.COPY_FROM, node);
+  }
+
+  public Expression getInitSize() {
+    return (Expression)this.getChild(Expression.class, AbstractContainerCreator.INIT_SIZE);
+  }
+
+  public void setInitSize(Expression node) {
+    super.setChild(AbstractContainerCreator.INIT_SIZE, node);
   }
 
   public int getInitValuesCount() {
