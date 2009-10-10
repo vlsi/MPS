@@ -18,11 +18,11 @@ public class RenameConcept_Target implements IRefactoringTarget {
     return false;
   }
 
-  public boolean isApplicableToEntityType(Object entity) {
+  public boolean isApplicableToEntityType(final Object entity) {
     return SNodeOperations.isInstanceOf(((SNode)entity), "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration");
   }
 
-  public boolean isApplicable(Object entity) {
+  public boolean isApplicable(final Object entity) {
     if (!(this.isApplicableToEntityType(entity))) {
       return false;
     }

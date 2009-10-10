@@ -41,12 +41,12 @@ public class RenameConcept extends BaseRefactoring {
     return new RenameConcept_Target();
   }
 
-  public void refactor(RefactoringContext refactoringContext) {
+  public void refactor(final RefactoringContext refactoringContext) {
     SNode node = refactoringContext.getSelectedNode();
     refactoringContext.changeFeatureName(node, SNodeOperations.getModel(node).getSModelFqName() + "." + ((String)refactoringContext.getParameter("newName")), ((String)refactoringContext.getParameter("newName")));
   }
 
-  public List<SModel> getModelsToGenerate(RefactoringContext refactoringContext) {
+  public List<SModel> getModelsToGenerate(final RefactoringContext refactoringContext) {
     List<SModel> result = ListSequence.fromList(new LinkedList<SModel>());
     Language sourceLanguage = Language.getLanguageFor(SNodeOperations.getModel(refactoringContext.getSelectedNode()).getModelDescriptor());
     if (sourceLanguage != null) {
@@ -61,7 +61,7 @@ public class RenameConcept extends BaseRefactoring {
     return FindUtils.getSearchResults(new EmptyProgressIndicator(), refactoringContext.getSelectedNode(), GlobalScope.getInstance(), "jetbrains.mps.lang.structure.findUsages.ConceptInstances_Finder", "jetbrains.mps.lang.structure.findUsages.NodeAndDescendantsUsages_Finder");
   }
 
-  public void updateModel(SModel model, final RefactoringContext refactoringContext) {
+  public void updateModel(final SModel model, final RefactoringContext refactoringContext) {
     refactoringContext.updateModelWithMaps(model);
   }
 

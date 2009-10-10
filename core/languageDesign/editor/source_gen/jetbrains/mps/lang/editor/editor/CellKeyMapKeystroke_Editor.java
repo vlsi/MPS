@@ -30,7 +30,7 @@ public class CellKeyMapKeystroke_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createCollection_3628_0(EditorContext editorContext, SNode node) {
-    EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
+    EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_3628_0");
     editorCell.setUsesBraces(true);
     editorCell.addEditorCell(this.createConstant_3628_0(editorContext, node));
