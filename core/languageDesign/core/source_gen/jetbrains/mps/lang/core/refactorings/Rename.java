@@ -33,7 +33,7 @@ public class Rename extends BaseRefactoring {
     return new Rename_Target();
   }
 
-  public boolean init(RefactoringContext refactoringContext) {
+  public boolean init(final RefactoringContext refactoringContext) {
     final RefactoringContext context = refactoringContext;
     final Wrappers._boolean result = new Wrappers._boolean();
     ModelAccess.instance().runReadAction(new Runnable() {
@@ -44,10 +44,10 @@ public class Rename extends BaseRefactoring {
     if (!(result.value)) {
       return false;
     }
-    return Rename.this.ask(refactoringContext, new newName_Chooser(refactoringContext));
+    return Rename.this.ask(refactoringContext, new Rename_newName_Chooser(refactoringContext));
   }
 
-  public void refactor(RefactoringContext refactoringContext) {
+  public void refactor(final RefactoringContext refactoringContext) {
     SPropertyOperations.set(SNodeOperations.cast(refactoringContext.getSelectedNode(), "jetbrains.mps.lang.core.structure.INamedConcept"), "name", ((String)refactoringContext.getParameter("newName")));
   }
 
@@ -55,7 +55,7 @@ public class Rename extends BaseRefactoring {
     return FindUtils.getSearchResults(new EmptyProgressIndicator(), refactoringContext.getSelectedNode(), GlobalScope.getInstance(), "jetbrains.mps.lang.structure.findUsages.NodeAndDescendantsUsages_Finder");
   }
 
-  public void updateModel(SModel model, final RefactoringContext refactoringContext) {
+  public void updateModel(final SModel model, final RefactoringContext refactoringContext) {
   }
 
   public static String getKeyStroke_static() {
