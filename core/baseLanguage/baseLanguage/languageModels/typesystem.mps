@@ -7873,6 +7873,45 @@
               </node>
             </node>
             <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="904196553350157393">
+              <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="9088216150083598147">
+                <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="9088216150083598148">
+                  <node role="statement" type="jetbrains.mps.baseLanguage.structure.ContinueStatement" id="9088216150083598292" />
+                </node>
+                <node role="condition" type="jetbrains.mps.baseLanguage.structure.OrExpression" id="9088216150083598264">
+                  <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="9088216150083598284">
+                    <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="9088216150083598283">
+                      <link role="variableDeclaration" targetNodeId="904196553350157390" resolveInfo="typeArgument" />
+                    </node>
+                    <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation" id="9088216150083598288">
+                      <node role="conceptArgument" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" id="9088216150083598290">
+                        <link role="conceptDeclaration" targetNodeId="1.1171903916106" resolveInfo="UpperBoundType" />
+                      </node>
+                    </node>
+                  </node>
+                  <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.OrExpression" id="9088216150083598256">
+                    <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="9088216150083598268">
+                      <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="9088216150083598267">
+                        <link role="variableDeclaration" targetNodeId="904196553350157390" resolveInfo="typeArgument" />
+                      </node>
+                      <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation" id="9088216150083598272">
+                        <node role="conceptArgument" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" id="9088216150083598274">
+                          <link role="conceptDeclaration" targetNodeId="1.1171903607971" resolveInfo="WildCardType" />
+                        </node>
+                      </node>
+                    </node>
+                    <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="9088216150083598276">
+                      <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="9088216150083598275">
+                        <link role="variableDeclaration" targetNodeId="904196553350157390" resolveInfo="typeArgument" />
+                      </node>
+                      <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation" id="9088216150083598280">
+                        <node role="conceptArgument" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" id="9088216150083598282">
+                          <link role="conceptDeclaration" targetNodeId="1.1171903862077" resolveInfo="LowerBoundType" />
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
               <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="904196553350157435">
                 <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="904196553350157436">
                   <node role="statement" type="jetbrains.mps.lang.typesystem.structure.AssertStatement" id="904196553350157450">

@@ -13,6 +13,7 @@ import jetbrains.mps.typesystem.inference.NodeErrorTarget;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import java.util.Iterator;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class check_ClassifierType_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
@@ -48,6 +49,9 @@ public class check_ClassifierType_NonTypesystemRule extends AbstractNonTypesyste
           }
           typeArgument = typeArgument_iterator.next();
           typeVar = typeVar_iterator.next();
+          if (SNodeOperations.isInstanceOf(typeArgument, "jetbrains.mps.baseLanguage.structure.WildCardType") || SNodeOperations.isInstanceOf(typeArgument, "jetbrains.mps.baseLanguage.structure.LowerBoundType") || SNodeOperations.isInstanceOf(typeArgument, "jetbrains.mps.baseLanguage.structure.UpperBoundType")) {
+            continue;
+          }
           if ((SLinkOperations.getTarget(typeVar, "bound", true) != null)) {
             if (!(TypeChecker.getInstance().getSubtypingManager().isSubtype(typeArgument, SLinkOperations.getTarget(typeVar, "bound", true)))) {
               BaseIntentionProvider intentionProvider = null;
