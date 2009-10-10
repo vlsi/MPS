@@ -48,10 +48,12 @@ public class BaseMethodParameterInformationQuery extends ParametersInformation<S
       }
     }
     SNode methodDeclaration = parameterObject;
-    if (SLinkOperations.getTarget(methodDeclaration, "returnType", true) != null) {
-      styledText.append(BaseConcept_Behavior.call_getPresentation_1213877396640(SLinkOperations.getTarget(methodDeclaration, "returnType", true)) + " ");
-    } else {
-      styledText.append("??? ");
+    if (!(SNodeOperations.isInstanceOf(methodDeclaration, "jetbrains.mps.baseLanguage.structure.ConstructorDeclaration"))) {
+      if (SLinkOperations.getTarget(methodDeclaration, "returnType", true) != null) {
+        styledText.append(BaseConcept_Behavior.call_getPresentation_1213877396640(SLinkOperations.getTarget(methodDeclaration, "returnType", true)) + " ");
+      } else {
+        styledText.append("??? ");
+      }
     }
     if (SPropertyOperations.getString(methodDeclaration, "name") != null) {
       styledText.append(SPropertyOperations.getString(methodDeclaration, "name"));
