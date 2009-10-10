@@ -2231,6 +2231,7 @@
                 <node role="creator" type="jetbrains.mps.baseLanguage.structure.AnonymousClassCreator" id="1209147315303">
                   <node role="cls" type="jetbrains.mps.baseLanguage.structure.AnonymousClass" id="1209147315304">
                     <link role="classifier" targetNodeId="21.~AbstractCellProvider" resolveInfo="AbstractCellProvider" />
+                    <link role="baseMethodDeclaration" targetNodeId="21.~AbstractCellProvider.&lt;init&gt;()" resolveInfo="AbstractCellProvider" />
                     <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1209147315305">
                       <property name="name" value="createEditorCell" />
                       <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1209147315306">
@@ -4677,6 +4678,7 @@
               <node role="creator" type="jetbrains.mps.baseLanguage.structure.AnonymousClassCreator" id="1207578411928">
                 <node role="cls" type="jetbrains.mps.baseLanguage.structure.AnonymousClass" id="1207578411929">
                   <link role="classifier" targetNodeId="21.~AbstractCellProvider" resolveInfo="AbstractCellProvider" />
+                  <link role="baseMethodDeclaration" targetNodeId="21.~AbstractCellProvider.&lt;init&gt;()" resolveInfo="AbstractCellProvider" />
                   <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1207578411930" />
                   <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1207578426068">
                     <property name="name" value="createEditorCell" />
@@ -11905,6 +11907,7 @@
                 <node role="creator" type="jetbrains.mps.baseLanguage.structure.AnonymousClassCreator" id="1235246308561">
                   <node role="cls" type="jetbrains.mps.baseLanguage.structure.AnonymousClass" id="1235246308562">
                     <link role="classifier" targetNodeId="24.~Runnable" resolveInfo="Runnable" />
+                    <link role="baseMethodDeclaration" targetNodeId="24.~Object.&lt;init&gt;()" resolveInfo="Object" />
                     <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1235246308563" />
                     <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1235246308564">
                       <property name="isAbstract" value="false" />
@@ -12582,6 +12585,7 @@
                 <node role="creator" type="jetbrains.mps.baseLanguage.structure.AnonymousClassCreator" id="1216033620648">
                   <node role="cls" type="jetbrains.mps.baseLanguage.structure.AnonymousClass" id="1216033620649">
                     <link role="classifier" targetNodeId="24.~Runnable" resolveInfo="Runnable" />
+                    <link role="baseMethodDeclaration" targetNodeId="24.~Object.&lt;init&gt;()" resolveInfo="Object" />
                     <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1216033620650" />
                     <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1216033620651">
                       <property name="isAbstract" value="false" />
@@ -12676,6 +12680,7 @@
                 <node role="creator" type="jetbrains.mps.baseLanguage.structure.AnonymousClassCreator" id="1216033639708">
                   <node role="cls" type="jetbrains.mps.baseLanguage.structure.AnonymousClass" id="1216033639709">
                     <link role="classifier" targetNodeId="24.~Runnable" resolveInfo="Runnable" />
+                    <link role="baseMethodDeclaration" targetNodeId="24.~Object.&lt;init&gt;()" resolveInfo="Object" />
                     <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1216033639710" />
                     <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1216033639711">
                       <property name="isAbstract" value="false" />
@@ -13459,6 +13464,7 @@
               <node role="creator" type="jetbrains.mps.baseLanguage.structure.AnonymousClassCreator" id="1208623526507">
                 <node role="cls" type="jetbrains.mps.baseLanguage.structure.AnonymousClass" id="1208623526508">
                   <link role="classifier" targetNodeId="21.~AbstractCellProvider" resolveInfo="AbstractCellProvider" />
+                  <link role="baseMethodDeclaration" targetNodeId="21.~AbstractCellProvider.&lt;init&gt;()" resolveInfo="AbstractCellProvider" />
                   <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1208623526509">
                     <property name="name" value="createEditorCell" />
                     <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1208623526510">
