@@ -8233,6 +8233,9 @@
         <link role="editorComponent" targetNodeId="1173990860683" resolveInfo="IMethodCall_actualArguments" />
       </node>
       <node role="cellLayout" type="jetbrains.mps.lang.editor.structure.CellLayout_Indent" id="1237641280905" />
+      <node role="styleItem" type="jetbrains.mps.lang.editor.structure.ParametersInformationStyleClassItem" id="4390452642328993929">
+        <link role="parametersInformation" targetNodeId="4755152624708725521" resolveInfo="BaseMethodParameterInformationQuery" />
+      </node>
     </node>
   </node>
   <node type="jetbrains.mps.lang.editor.structure.CellActionMapDeclaration" id="1172061831827">
