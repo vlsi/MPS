@@ -4098,6 +4098,7 @@
                         <node role="creator" type="jetbrains.mps.baseLanguage.structure.AnonymousClassCreator" id="1231426655271">
                           <node role="cls" type="jetbrains.mps.baseLanguage.structure.AnonymousClass" id="1231426655272">
                             <link role="classifier" targetNodeId="15.~ReloadAdapter" resolveInfo="ReloadAdapter" />
+                            <link role="baseMethodDeclaration" targetNodeId="15.~ReloadAdapter.&lt;init&gt;()" resolveInfo="ReloadAdapter" />
                             <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1231426655273" />
                             <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1231426655274">
                               <property name="name" value="onReload" />

@@ -391,6 +391,7 @@
                 <node role="creator" type="jetbrains.mps.baseLanguage.structure.AnonymousClassCreator" id="1217961230498">
                   <node role="cls" type="jetbrains.mps.baseLanguage.structure.AnonymousClass" id="1217961230499">
                     <link role="classifier" targetNodeId="13.~Task$Modal" resolveInfo="Task.Modal" />
+                    <link role="baseMethodDeclaration" targetNodeId="13.~Task$Modal.&lt;init&gt;(com.intellij.openapi.project.Project,java.lang.String,boolean)" resolveInfo="Task.Modal" />
                     <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1217961230500" />
                     <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1217961230501">
                       <property name="name" value="run" />
@@ -453,13 +454,13 @@
                         </node>
                       </node>
                     </node>
-                    <node role="parameter" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1217961860107">
+                    <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1217961860107">
                       <link role="variableDeclaration" targetNodeId="1217961860099" resolveInfo="ideaProject" />
                     </node>
-                    <node role="parameter" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1217961783330">
+                    <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1217961783330">
                       <property name="value" value="Creating" />
                     </node>
-                    <node role="parameter" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1217961797710">
+                    <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1217961797710">
                       <property name="value" value="false" />
                     </node>
                   </node>
@@ -771,6 +772,7 @@
                 <node role="creator" type="jetbrains.mps.baseLanguage.structure.AnonymousClassCreator" id="1226081869740">
                   <node role="cls" type="jetbrains.mps.baseLanguage.structure.AnonymousClass" id="1226081869741">
                     <link role="classifier" targetNodeId="2.~Runnable" resolveInfo="Runnable" />
+                    <link role="baseMethodDeclaration" targetNodeId="2.~Object.&lt;init&gt;()" resolveInfo="Object" />
                     <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1226081869742" />
                     <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1226081869743">
                       <property name="isAbstract" value="false" />

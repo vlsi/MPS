@@ -859,6 +859,7 @@
                     <node role="creator" type="jetbrains.mps.baseLanguage.structure.AnonymousClassCreator" id="2444892561513600768">
                       <node role="cls" type="jetbrains.mps.baseLanguage.structure.AnonymousClass" id="2444892561513600769">
                         <link role="classifier" targetNodeId="2444892561513578146" resolveInfo="RunnerActions" />
+                        <link role="baseMethodDeclaration" targetNodeId="22.~Object.&lt;init&gt;()" resolveInfo="Object" />
                         <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="2444892561513600770" />
                         <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="2444892561513600771">
                           <property name="isAbstract" value="false" />
@@ -908,14 +909,7 @@
                   <node role="creator" type="jetbrains.mps.baseLanguage.structure.AnonymousClassCreator" id="1225567254015">
                     <node role="cls" type="jetbrains.mps.baseLanguage.structure.AnonymousClass" id="1225567254016">
                       <link role="classifier" targetNodeId="45.1208520470121" resolveInfo="BaseOutputReader" />
-                      <node role="parameter" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1225567254017">
-                        <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1225567254018">
-                          <link role="variableDeclaration" targetNodeId="1225567254006" resolveInfo="process" />
-                        </node>
-                        <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1225567254019">
-                          <link role="baseMethodDeclaration" targetNodeId="22.~Process.getInputStream():java.io.InputStream" resolveInfo="getInputStream" />
-                        </node>
-                      </node>
+                      <link role="baseMethodDeclaration" targetNodeId="45.1208520470125" resolveInfo="BaseOutputReader" />
                       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1225567254020" />
                       <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1225567254021">
                         <property name="name" value="addMessage" />
@@ -953,6 +947,14 @@
                           </node>
                         </node>
                       </node>
+                      <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1225567254017">
+                        <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1225567254018">
+                          <link role="variableDeclaration" targetNodeId="1225567254006" resolveInfo="process" />
+                        </node>
+                        <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1225567254019">
+                          <link role="baseMethodDeclaration" targetNodeId="22.~Process.getInputStream():java.io.InputStream" resolveInfo="getInputStream" />
+                        </node>
+                      </node>
                     </node>
                   </node>
                 </node>
@@ -978,14 +980,7 @@
                   <node role="creator" type="jetbrains.mps.baseLanguage.structure.AnonymousClassCreator" id="1225567254042">
                     <node role="cls" type="jetbrains.mps.baseLanguage.structure.AnonymousClass" id="1225567254043">
                       <link role="classifier" targetNodeId="45.1208520470121" resolveInfo="BaseOutputReader" />
-                      <node role="parameter" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1225567254044">
-                        <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1225567254045">
-                          <link role="variableDeclaration" targetNodeId="1225567254006" resolveInfo="process" />
-                        </node>
-                        <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1225567254046">
-                          <link role="baseMethodDeclaration" targetNodeId="22.~Process.getErrorStream():java.io.InputStream" resolveInfo="getErrorStream" />
-                        </node>
-                      </node>
+                      <link role="baseMethodDeclaration" targetNodeId="45.1208520470125" resolveInfo="BaseOutputReader" />
                       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1225567254047" />
                       <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1225567254048">
                         <property name="name" value="addMessage" />
@@ -1021,6 +1016,14 @@
                               </node>
                             </node>
                           </node>
+                        </node>
+                      </node>
+                      <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1225567254044">
+                        <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1225567254045">
+                          <link role="variableDeclaration" targetNodeId="1225567254006" resolveInfo="process" />
+                        </node>
+                        <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1225567254046">
+                          <link role="baseMethodDeclaration" targetNodeId="22.~Process.getErrorStream():java.io.InputStream" resolveInfo="getErrorStream" />
                         </node>
                       </node>
                     </node>
@@ -2451,6 +2454,7 @@
                 <node role="creator" type="jetbrains.mps.baseLanguage.structure.AnonymousClassCreator" id="2444892561513953726">
                   <node role="cls" type="jetbrains.mps.baseLanguage.structure.AnonymousClass" id="2444892561513953727">
                     <link role="classifier" targetNodeId="52.~AnAction" resolveInfo="AnAction" />
+                    <link role="baseMethodDeclaration" targetNodeId="52.~AnAction.&lt;init&gt;(java.lang.String,java.lang.String,javax.swing.Icon)" resolveInfo="AnAction" />
                     <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="2444892561513953728" />
                     <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="2444892561513953729">
                       <property name="isAbstract" value="false" />
@@ -2474,23 +2478,6 @@
                             </node>
                           </node>
                         </node>
-                      </node>
-                    </node>
-                    <node role="parameter" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="2444892561513953748">
-                      <property name="value" value="Stop" />
-                    </node>
-                    <node role="parameter" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="2444892561513953749">
-                      <property name="value" value="Stop executing ant task." />
-                    </node>
-                    <node role="parameter" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="2444892561513959370">
-                      <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="2444892561513959372">
-                        <link role="baseMethodDeclaration" targetNodeId="2444892561513959360" resolveInfo="loadIcon" />
-                        <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="2444892561513962032">
-                          <property name="value" value="suspend" />
-                        </node>
-                      </node>
-                      <node role="operand" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="2444892561513962035">
-                        <link role="classConcept" targetNodeId="1225567254164" resolveInfo="BuildScriptRunnerComponent" />
                       </node>
                     </node>
                     <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="6103486036061424711">
@@ -2574,6 +2561,23 @@
                         </node>
                       </node>
                     </node>
+                    <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="2444892561513953748">
+                      <property name="value" value="Stop" />
+                    </node>
+                    <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="2444892561513953749">
+                      <property name="value" value="Stop executing ant task." />
+                    </node>
+                    <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="2444892561513959370">
+                      <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="2444892561513959372">
+                        <link role="baseMethodDeclaration" targetNodeId="2444892561513959360" resolveInfo="loadIcon" />
+                        <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="2444892561513962032">
+                          <property name="value" value="suspend" />
+                        </node>
+                      </node>
+                      <node role="operand" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="2444892561513962035">
+                        <link role="classConcept" targetNodeId="1225567254164" resolveInfo="BuildScriptRunnerComponent" />
+                      </node>
+                    </node>
                   </node>
                 </node>
               </node>
@@ -2591,6 +2595,7 @@
                 <node role="creator" type="jetbrains.mps.baseLanguage.structure.AnonymousClassCreator" id="2444892561514147920">
                   <node role="cls" type="jetbrains.mps.baseLanguage.structure.AnonymousClass" id="2444892561514147921">
                     <link role="classifier" targetNodeId="52.~AnAction" resolveInfo="AnAction" />
+                    <link role="baseMethodDeclaration" targetNodeId="52.~AnAction.&lt;init&gt;(java.lang.String,java.lang.String,javax.swing.Icon)" resolveInfo="AnAction" />
                     <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="2444892561514147922" />
                     <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="2444892561514147923">
                       <property name="isAbstract" value="false" />
@@ -2631,13 +2636,13 @@
                         </node>
                       </node>
                     </node>
-                    <node role="parameter" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="2444892561514147942">
+                    <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="2444892561514147942">
                       <property name="value" value="Close" />
                     </node>
-                    <node role="parameter" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="2444892561514147943">
+                    <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="2444892561514147943">
                       <property name="value" value="Stop executing ant task and close tool." />
                     </node>
-                    <node role="parameter" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="2444892561514147944">
+                    <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="2444892561514147944">
                       <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="2444892561514147945">
                         <link role="baseMethodDeclaration" targetNodeId="2444892561513959360" resolveInfo="loadIcon" />
                         <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="2444892561514147946">
@@ -2814,6 +2819,7 @@
                   <node role="creator" type="jetbrains.mps.baseLanguage.structure.AnonymousClassCreator" id="2444892561514411708">
                     <node role="cls" type="jetbrains.mps.baseLanguage.structure.AnonymousClass" id="2444892561514411709">
                       <link role="classifier" targetNodeId="2444892561514378835" resolveInfo="CloseAction" />
+                      <link role="baseMethodDeclaration" targetNodeId="22.~Object.&lt;init&gt;()" resolveInfo="Object" />
                       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="2444892561514411710" />
                       <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="2444892561514411711">
                         <property name="isAbstract" value="false" />
@@ -3114,6 +3120,7 @@
               <node role="creator" type="jetbrains.mps.baseLanguage.structure.AnonymousClassCreator" id="1225569919318">
                 <node role="cls" type="jetbrains.mps.baseLanguage.structure.AnonymousClass" id="1225569919319">
                   <link role="classifier" targetNodeId="38.~GenerateFilesGenerationType" resolveInfo="GenerateFilesGenerationType" />
+                  <link role="baseMethodDeclaration" targetNodeId="38.~GenerateFilesGenerationType.&lt;init&gt;()" resolveInfo="GenerateFilesGenerationType" />
                   <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1225569919320" />
                   <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1225569929724">
                     <property name="name" value="handleOutput" />
@@ -4889,6 +4896,7 @@
                 <node role="creator" type="jetbrains.mps.baseLanguage.structure.AnonymousClassCreator" id="1240833723780">
                   <node role="cls" type="jetbrains.mps.baseLanguage.structure.AnonymousClass" id="1240833723781">
                     <link role="classifier" targetNodeId="51.~TableModelListener" resolveInfo="TableModelListener" />
+                    <link role="baseMethodDeclaration" targetNodeId="22.~Object.&lt;init&gt;()" resolveInfo="Object" />
                     <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1240833723782" />
                     <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1240833723783">
                       <property name="isAbstract" value="false" />

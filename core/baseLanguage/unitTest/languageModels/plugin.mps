@@ -888,6 +888,7 @@
                 <node role="cls" type="jetbrains.mps.baseLanguage.structure.AnonymousClass" id="2380206470256882143">
                   <property name="nonStatic" value="true" />
                   <link role="classifier" targetNodeId="53.~AnAction" resolveInfo="AnAction" />
+                  <link role="baseMethodDeclaration" targetNodeId="53.~AnAction.&lt;init&gt;(java.lang.String,java.lang.String,javax.swing.Icon)" resolveInfo="AnAction" />
                   <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="2380206470256882144" />
                   <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="2380206470256882145">
                     <property name="isAbstract" value="false" />
@@ -925,11 +926,11 @@
                       </node>
                     </node>
                   </node>
-                  <node role="parameter" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="2380206470256882160">
+                  <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="2380206470256882160">
                     <property name="value" value="Previous Test" />
                   </node>
-                  <node role="parameter" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="2380206470256882161" />
-                  <node role="parameter" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference" id="2380206470256882162">
+                  <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="2380206470256882161" />
+                  <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference" id="2380206470256882162">
                     <link role="classifier" targetNodeId="48.~Icons" resolveInfo="Icons" />
                     <link role="variableDeclaration" targetNodeId="48.~Icons.PREVIOUS_ICON" resolveInfo="PREVIOUS_ICON" />
                   </node>
@@ -949,6 +950,7 @@
                 <node role="cls" type="jetbrains.mps.baseLanguage.structure.AnonymousClass" id="2380206470256845087">
                   <property name="nonStatic" value="true" />
                   <link role="classifier" targetNodeId="53.~AnAction" resolveInfo="AnAction" />
+                  <link role="baseMethodDeclaration" targetNodeId="53.~AnAction.&lt;init&gt;(java.lang.String,java.lang.String,javax.swing.Icon)" resolveInfo="AnAction" />
                   <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="2380206470256845088" />
                   <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="2380206470256845089">
                     <property name="isAbstract" value="false" />
@@ -986,11 +988,11 @@
                       </node>
                     </node>
                   </node>
-                  <node role="parameter" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="2380206470256845108">
+                  <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="2380206470256845108">
                     <property name="value" value="Next Test" />
                   </node>
-                  <node role="parameter" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="2380206470256845109" />
-                  <node role="parameter" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference" id="2380206470256845110">
+                  <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="2380206470256845109" />
+                  <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference" id="2380206470256845110">
                     <link role="classifier" targetNodeId="48.~Icons" resolveInfo="Icons" />
                     <link role="variableDeclaration" targetNodeId="48.~Icons.NEXT_ICON" resolveInfo="NEXT_ICON" />
                   </node>
@@ -5388,6 +5390,7 @@
                   <node role="creator" type="jetbrains.mps.baseLanguage.structure.AnonymousClassCreator" id="1217505469097">
                     <node role="cls" type="jetbrains.mps.baseLanguage.structure.AnonymousClass" id="1217505469098">
                       <link role="classifier" targetNodeId="2.~Runnable" resolveInfo="Runnable" />
+                      <link role="baseMethodDeclaration" targetNodeId="2.~Object.&lt;init&gt;()" resolveInfo="Object" />
                       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1217505469099" />
                       <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1217505469100">
                         <property name="isAbstract" value="false" />
@@ -15757,6 +15760,7 @@
                   <node role="cls" type="jetbrains.mps.baseLanguage.structure.AnonymousClass" id="145554711892089348">
                     <property name="nonStatic" value="true" />
                     <link role="classifier" targetNodeId="66.~ActionListener" resolveInfo="ActionListener" />
+                    <link role="baseMethodDeclaration" targetNodeId="2.~Object.&lt;init&gt;()" resolveInfo="Object" />
                     <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="145554711892089349" />
                     <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="145554711892089350">
                       <property name="isAbstract" value="false" />
@@ -16263,6 +16267,7 @@
                   <node role="cls" type="jetbrains.mps.baseLanguage.structure.AnonymousClass" id="145554711892089441">
                     <property name="nonStatic" value="true" />
                     <link role="classifier" targetNodeId="66.~ActionListener" resolveInfo="ActionListener" />
+                    <link role="baseMethodDeclaration" targetNodeId="2.~Object.&lt;init&gt;()" resolveInfo="Object" />
                     <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="145554711892089442" />
                     <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="145554711892089443">
                       <property name="isAbstract" value="false" />
@@ -16571,6 +16576,7 @@
                   <node role="cls" type="jetbrains.mps.baseLanguage.structure.AnonymousClass" id="145554711892090303">
                     <property name="nonStatic" value="true" />
                     <link role="classifier" targetNodeId="66.~ActionListener" resolveInfo="ActionListener" />
+                    <link role="baseMethodDeclaration" targetNodeId="2.~Object.&lt;init&gt;()" resolveInfo="Object" />
                     <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="6406886181382196222">
                       <property name="name" value="check" />
                       <node role="returnType" type="jetbrains.mps.baseLanguage.collections.structure.ListType" id="6406886181382196231">
@@ -17047,6 +17053,7 @@
                   <node role="cls" type="jetbrains.mps.baseLanguage.structure.AnonymousClass" id="981052285580751730">
                     <property name="nonStatic" value="true" />
                     <link role="classifier" targetNodeId="66.~ActionListener" resolveInfo="ActionListener" />
+                    <link role="baseMethodDeclaration" targetNodeId="2.~Object.&lt;init&gt;()" resolveInfo="Object" />
                     <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="981052285580751731" />
                     <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="981052285580751732">
                       <property name="isAbstract" value="false" />
@@ -17811,6 +17818,7 @@
                   <node role="cls" type="jetbrains.mps.baseLanguage.structure.AnonymousClass" id="2542933092629992163">
                     <property name="nonStatic" value="true" />
                     <link role="classifier" targetNodeId="75.~ProcessAdapter" resolveInfo="ProcessAdapter" />
+                    <link role="baseMethodDeclaration" targetNodeId="75.~ProcessAdapter.&lt;init&gt;()" resolveInfo="ProcessAdapter" />
                     <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="2542933092629992164" />
                     <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="2542933092629992165">
                       <property name="name" value="processTerminated" />
@@ -17836,6 +17844,7 @@
                                   <node role="cls" type="jetbrains.mps.baseLanguage.structure.AnonymousClass" id="2542933092629994844">
                                     <property name="nonStatic" value="true" />
                                     <link role="classifier" targetNodeId="2.~Runnable" resolveInfo="Runnable" />
+                                    <link role="baseMethodDeclaration" targetNodeId="2.~Object.&lt;init&gt;()" resolveInfo="Object" />
                                     <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="2542933092629994845" />
                                     <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="2542933092629994846">
                                       <property name="isAbstract" value="false" />
@@ -18822,20 +18831,8 @@
               <node role="cls" type="jetbrains.mps.baseLanguage.structure.AnonymousClass" id="7450159848769281275">
                 <property name="nonStatic" value="true" />
                 <link role="classifier" targetNodeId="53.~ToggleAction" resolveInfo="ToggleAction" />
+                <link role="baseMethodDeclaration" targetNodeId="53.~ToggleAction.&lt;init&gt;(java.lang.String,java.lang.String,javax.swing.Icon)" resolveInfo="ToggleAction" />
                 <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="7450159848769281276" />
-                <node role="parameter" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="7450159848769281277">
-                  <property name="value" value="Hide Passed" />
-                </node>
-                <node role="parameter" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="7450159848769281278">
-                  <property name="value" value="Hide passed tests" />
-                </node>
-                <node role="parameter" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="7450159848769281279">
-                  <link role="classConcept" targetNodeId="76.~TestsUIUtil" resolveInfo="TestsUIUtil" />
-                  <link role="baseMethodDeclaration" targetNodeId="76.~TestsUIUtil.loadIcon(java.lang.String):javax.swing.Icon" resolveInfo="loadIcon" />
-                  <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="7450159848769281280">
-                    <property name="value" value="hidePassed" />
-                  </node>
-                </node>
                 <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="7450159848769281281">
                   <property name="name" value="isSelected" />
                   <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="7450159848769281282" />
@@ -18913,6 +18910,19 @@
                     <property name="value" value="false" />
                   </node>
                 </node>
+                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="7450159848769281277">
+                  <property name="value" value="Hide Passed" />
+                </node>
+                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="7450159848769281278">
+                  <property name="value" value="Hide passed tests" />
+                </node>
+                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="7450159848769281279">
+                  <link role="classConcept" targetNodeId="76.~TestsUIUtil" resolveInfo="TestsUIUtil" />
+                  <link role="baseMethodDeclaration" targetNodeId="76.~TestsUIUtil.loadIcon(java.lang.String):javax.swing.Icon" resolveInfo="loadIcon" />
+                  <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="7450159848769281280">
+                    <property name="value" value="hidePassed" />
+                  </node>
+                </node>
               </node>
             </node>
           </node>
@@ -18929,6 +18939,7 @@
               <node role="cls" type="jetbrains.mps.baseLanguage.structure.AnonymousClass" id="2531203453721129659">
                 <property name="nonStatic" value="true" />
                 <link role="classifier" targetNodeId="53.~ToggleAction" resolveInfo="ToggleAction" />
+                <link role="baseMethodDeclaration" targetNodeId="53.~ToggleAction.&lt;init&gt;(java.lang.String,java.lang.String,javax.swing.Icon)" resolveInfo="ToggleAction" />
                 <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="2531203453721129660" />
                 <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="2531203453721129661">
                   <property name="isAbstract" value="false" />
@@ -18987,13 +18998,13 @@
                     </node>
                   </node>
                 </node>
-                <node role="parameter" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="2531203453721129675">
+                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="2531203453721129675">
                   <property name="value" value="Track Running Test" />
                 </node>
-                <node role="parameter" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="2531203453721129677">
+                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="2531203453721129677">
                   <property name="value" value="Select currently running test in tree" />
                 </node>
-                <node role="parameter" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="2531203453721130600">
+                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="2531203453721130600">
                   <link role="baseMethodDeclaration" targetNodeId="76.~TestsUIUtil.loadIcon(java.lang.String):javax.swing.Icon" resolveInfo="loadIcon" />
                   <link role="classConcept" targetNodeId="76.~TestsUIUtil" resolveInfo="TestsUIUtil" />
                   <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="2531203453721130601">
@@ -19022,6 +19033,7 @@
               <node role="cls" type="jetbrains.mps.baseLanguage.structure.AnonymousClass" id="7450159848769282239">
                 <property name="nonStatic" value="true" />
                 <link role="classifier" targetNodeId="53.~AnAction" resolveInfo="AnAction" />
+                <link role="baseMethodDeclaration" targetNodeId="53.~AnAction.&lt;init&gt;(java.lang.String,java.lang.String,javax.swing.Icon)" resolveInfo="AnAction" />
                 <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="7450159848769282240" />
                 <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="7450159848769282241">
                   <property name="isAbstract" value="false" />
@@ -19127,16 +19139,6 @@
                     </node>
                   </node>
                 </node>
-                <node role="parameter" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="7450159848769282253">
-                  <property name="value" value="Collapse All" />
-                </node>
-                <node role="parameter" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="7450159848769282254">
-                  <property name="value" value="Collapse all test suites" />
-                </node>
-                <node role="parameter" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference" id="7450159848769282255">
-                  <link role="classifier" targetNodeId="48.~Icons" resolveInfo="Icons" />
-                  <link role="variableDeclaration" targetNodeId="48.~Icons.COLLAPSE_ICON" resolveInfo="COLLAPSE_ICON" />
-                </node>
                 <node role="instanceInitializer" type="jetbrains.mps.baseLanguage.structure.InstanceInitializer" id="840235346667955514">
                   <node role="statementList" type="jetbrains.mps.baseLanguage.structure.StatementList" id="840235346667955515">
                     <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="840235346667955516">
@@ -19180,6 +19182,16 @@
                     </node>
                   </node>
                 </node>
+                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="7450159848769282253">
+                  <property name="value" value="Collapse All" />
+                </node>
+                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="7450159848769282254">
+                  <property name="value" value="Collapse all test suites" />
+                </node>
+                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference" id="7450159848769282255">
+                  <link role="classifier" targetNodeId="48.~Icons" resolveInfo="Icons" />
+                  <link role="variableDeclaration" targetNodeId="48.~Icons.COLLAPSE_ICON" resolveInfo="COLLAPSE_ICON" />
+                </node>
               </node>
             </node>
           </node>
@@ -19199,6 +19211,7 @@
               <node role="cls" type="jetbrains.mps.baseLanguage.structure.AnonymousClass" id="7450159848769282277">
                 <property name="nonStatic" value="true" />
                 <link role="classifier" targetNodeId="53.~AnAction" resolveInfo="AnAction" />
+                <link role="baseMethodDeclaration" targetNodeId="53.~AnAction.&lt;init&gt;(java.lang.String,java.lang.String,javax.swing.Icon)" resolveInfo="AnAction" />
                 <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="7450159848769282278" />
                 <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="7450159848769282279">
                   <property name="isAbstract" value="false" />
@@ -19228,16 +19241,6 @@
                       </node>
                     </node>
                   </node>
-                </node>
-                <node role="parameter" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="7450159848769282291">
-                  <property name="value" value="Expand All" />
-                </node>
-                <node role="parameter" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="7450159848769282292">
-                  <property name="value" value="Expande all test suites" />
-                </node>
-                <node role="parameter" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference" id="7450159848769282293">
-                  <link role="classifier" targetNodeId="48.~Icons" resolveInfo="Icons" />
-                  <link role="variableDeclaration" targetNodeId="48.~Icons.EXPAND_ICON" resolveInfo="EXPAND_ICON" />
                 </node>
                 <node role="instanceInitializer" type="jetbrains.mps.baseLanguage.structure.InstanceInitializer" id="840235346667955531">
                   <node role="statementList" type="jetbrains.mps.baseLanguage.structure.StatementList" id="840235346667955532">
@@ -19282,6 +19285,16 @@
                     </node>
                   </node>
                 </node>
+                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="7450159848769282291">
+                  <property name="value" value="Expand All" />
+                </node>
+                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="7450159848769282292">
+                  <property name="value" value="Expande all test suites" />
+                </node>
+                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference" id="7450159848769282293">
+                  <link role="classifier" targetNodeId="48.~Icons" resolveInfo="Icons" />
+                  <link role="variableDeclaration" targetNodeId="48.~Icons.EXPAND_ICON" resolveInfo="EXPAND_ICON" />
+                </node>
               </node>
             </node>
           </node>
@@ -19301,6 +19314,7 @@
               <node role="cls" type="jetbrains.mps.baseLanguage.structure.AnonymousClass" id="7450159848769282306">
                 <property name="nonStatic" value="true" />
                 <link role="classifier" targetNodeId="53.~AnAction" resolveInfo="AnAction" />
+                <link role="baseMethodDeclaration" targetNodeId="53.~AnAction.&lt;init&gt;(java.lang.String,java.lang.String,javax.swing.Icon)" resolveInfo="AnAction" />
                 <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="7450159848769282307" />
                 <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="7450159848769282308">
                   <property name="isAbstract" value="false" />
@@ -19348,16 +19362,6 @@
                     </node>
                   </node>
                 </node>
-                <node role="parameter" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="7450159848769282327">
-                  <property name="value" value="Next Failed Test" />
-                </node>
-                <node role="parameter" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="7450159848769282328">
-                  <property name="value" value="Navigate to the next occurrence" />
-                </node>
-                <node role="parameter" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference" id="7450159848769282329">
-                  <link role="classifier" targetNodeId="48.~Icons" resolveInfo="Icons" />
-                  <link role="variableDeclaration" targetNodeId="48.~Icons.NEXT_ICON" resolveInfo="NEXT_ICON" />
-                </node>
                 <node role="instanceInitializer" type="jetbrains.mps.baseLanguage.structure.InstanceInitializer" id="840235346667955552">
                   <node role="statementList" type="jetbrains.mps.baseLanguage.structure.StatementList" id="840235346667955553">
                     <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="840235346667955554">
@@ -19401,6 +19405,16 @@
                     </node>
                   </node>
                 </node>
+                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="7450159848769282327">
+                  <property name="value" value="Next Failed Test" />
+                </node>
+                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="7450159848769282328">
+                  <property name="value" value="Navigate to the next occurrence" />
+                </node>
+                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference" id="7450159848769282329">
+                  <link role="classifier" targetNodeId="48.~Icons" resolveInfo="Icons" />
+                  <link role="variableDeclaration" targetNodeId="48.~Icons.NEXT_ICON" resolveInfo="NEXT_ICON" />
+                </node>
               </node>
             </node>
           </node>
@@ -19420,6 +19434,7 @@
               <node role="cls" type="jetbrains.mps.baseLanguage.structure.AnonymousClass" id="7450159848769282352">
                 <property name="nonStatic" value="true" />
                 <link role="classifier" targetNodeId="53.~AnAction" resolveInfo="AnAction" />
+                <link role="baseMethodDeclaration" targetNodeId="53.~AnAction.&lt;init&gt;(java.lang.String,java.lang.String,javax.swing.Icon)" resolveInfo="AnAction" />
                 <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="7450159848769282353" />
                 <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="7450159848769282354">
                   <property name="isAbstract" value="false" />
@@ -19467,16 +19482,6 @@
                     </node>
                   </node>
                 </node>
-                <node role="parameter" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="7450159848769282373">
-                  <property name="value" value="Previous Failed Test" />
-                </node>
-                <node role="parameter" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="7450159848769282374">
-                  <property name="value" value="Navigate to the previous occurrence" />
-                </node>
-                <node role="parameter" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference" id="7450159848769282375">
-                  <link role="classifier" targetNodeId="48.~Icons" resolveInfo="Icons" />
-                  <link role="variableDeclaration" targetNodeId="48.~Icons.PREVIOUS_ICON" resolveInfo="PREVIOUS_ICON" />
-                </node>
                 <node role="instanceInitializer" type="jetbrains.mps.baseLanguage.structure.InstanceInitializer" id="840235346667955569">
                   <node role="statementList" type="jetbrains.mps.baseLanguage.structure.StatementList" id="840235346667955570">
                     <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="840235346667955571">
@@ -19520,6 +19525,16 @@
                     </node>
                   </node>
                 </node>
+                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="7450159848769282373">
+                  <property name="value" value="Previous Failed Test" />
+                </node>
+                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="7450159848769282374">
+                  <property name="value" value="Navigate to the previous occurrence" />
+                </node>
+                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference" id="7450159848769282375">
+                  <link role="classifier" targetNodeId="48.~Icons" resolveInfo="Icons" />
+                  <link role="variableDeclaration" targetNodeId="48.~Icons.PREVIOUS_ICON" resolveInfo="PREVIOUS_ICON" />
+                </node>
               </node>
             </node>
           </node>
@@ -19539,19 +19554,7 @@
               <node role="cls" type="jetbrains.mps.baseLanguage.structure.AnonymousClass" id="8687133559625150011">
                 <property name="nonStatic" value="true" />
                 <link role="classifier" targetNodeId="53.~ToggleAction" resolveInfo="ToggleAction" />
-                <node role="parameter" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="8687133559625150028">
-                  <property name="value" value="Select First Failed Test When Finished" />
-                </node>
-                <node role="parameter" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="659465136380273344">
-                  <property name="value" value="" />
-                </node>
-                <node role="parameter" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="8687133559625150029">
-                  <link role="classConcept" targetNodeId="76.~TestsUIUtil" resolveInfo="TestsUIUtil" />
-                  <link role="baseMethodDeclaration" targetNodeId="76.~TestsUIUtil.loadIcon(java.lang.String):javax.swing.Icon" resolveInfo="loadIcon" />
-                  <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="8687133559625150030">
-                    <property name="value" value="selectFirstDefect" />
-                  </node>
-                </node>
+                <link role="baseMethodDeclaration" targetNodeId="53.~ToggleAction.&lt;init&gt;(java.lang.String,java.lang.String,javax.swing.Icon)" resolveInfo="ToggleAction" />
                 <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="8687133559625150012" />
                 <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="8687133559625150013">
                   <property name="isAbstract" value="false" />
@@ -19610,6 +19613,19 @@
                     </node>
                   </node>
                 </node>
+                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="8687133559625150028">
+                  <property name="value" value="Select First Failed Test When Finished" />
+                </node>
+                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="659465136380273344">
+                  <property name="value" value="" />
+                </node>
+                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="8687133559625150029">
+                  <link role="classConcept" targetNodeId="76.~TestsUIUtil" resolveInfo="TestsUIUtil" />
+                  <link role="baseMethodDeclaration" targetNodeId="76.~TestsUIUtil.loadIcon(java.lang.String):javax.swing.Icon" resolveInfo="loadIcon" />
+                  <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="8687133559625150030">
+                    <property name="value" value="selectFirstDefect" />
+                  </node>
+                </node>
               </node>
             </node>
           </node>
@@ -19629,6 +19645,7 @@
               <node role="cls" type="jetbrains.mps.baseLanguage.structure.AnonymousClass" id="2531203453721130641">
                 <property name="nonStatic" value="true" />
                 <link role="classifier" targetNodeId="53.~AnAction" resolveInfo="AnAction" />
+                <link role="baseMethodDeclaration" targetNodeId="53.~AnAction.&lt;init&gt;(java.lang.String,java.lang.String,javax.swing.Icon)" resolveInfo="AnAction" />
                 <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="2531203453721130642" />
                 <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="2531203453721130643">
                   <property name="isAbstract" value="false" />
@@ -19659,13 +19676,13 @@
                     </node>
                   </node>
                 </node>
-                <node role="parameter" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="2531203453721130649">
+                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="2531203453721130649">
                   <property name="value" value="Rerun Failed Tests" />
                 </node>
-                <node role="parameter" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="2531203453721130651">
+                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="2531203453721130651">
                   <property name="value" value="Rerun only tests that failed/crached after last run" />
                 </node>
-                <node role="parameter" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="2531203453721130654">
+                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="2531203453721130654">
                   <link role="baseMethodDeclaration" targetNodeId="76.~TestsUIUtil.loadIcon(java.lang.String):javax.swing.Icon" resolveInfo="loadIcon" />
                   <link role="classConcept" targetNodeId="76.~TestsUIUtil" resolveInfo="TestsUIUtil" />
                   <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="2531203453721130689">

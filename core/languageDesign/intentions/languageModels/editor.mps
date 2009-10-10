@@ -213,6 +213,7 @@
               <node role="creator" type="jetbrains.mps.baseLanguage.structure.AnonymousClassCreator" id="1240319640310">
                 <node role="cls" type="jetbrains.mps.baseLanguage.structure.AnonymousClass" id="1240319640311">
                   <link role="classifier" targetNodeId="6.~AbstractCellProvider" resolveInfo="AbstractCellProvider" />
+                  <link role="baseMethodDeclaration" targetNodeId="6.~AbstractCellProvider.&lt;init&gt;()" resolveInfo="AbstractCellProvider" />
                   <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1240319640312" />
                   <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1240319640313">
                     <property name="name" value="createEditorCell" />

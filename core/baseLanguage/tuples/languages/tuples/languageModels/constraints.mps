@@ -993,16 +993,8 @@
               <node role="creator" type="jetbrains.mps.baseLanguage.structure.AnonymousClassCreator" id="1652220223504374046">
                 <node role="cls" type="jetbrains.mps.baseLanguage.structure.AnonymousClass" id="1652220223504374047">
                   <link role="classifier" targetNodeId="8.~VisibleClassifiersScope" resolveInfo="VisibleClassifiersScope" />
+                  <link role="baseMethodDeclaration" targetNodeId="8.~VisibleClassifiersScope.&lt;init&gt;(jetbrains.mps.smodel.SModel,int,jetbrains.mps.smodel.IScope)" resolveInfo="VisibleClassifiersScope" />
                   <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1652220223504374048" />
-                  <node role="parameter" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1652220223504372079">
-                    <node role="operand" type="jetbrains.mps.lang.constraints.structure.ConceptParameter_ReferentSearchScope_enclosingNode" id="1652220223504372078" />
-                    <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_GetModelOperation" id="1652220223504372083" />
-                  </node>
-                  <node role="parameter" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference" id="1652220223504372097">
-                    <link role="classifier" targetNodeId="8.~IClassifiersSearchScope" resolveInfo="IClassifiersSearchScope" />
-                    <link role="variableDeclaration" targetNodeId="8.~IClassifiersSearchScope.ANYTHING" resolveInfo="ANYTHING" />
-                  </node>
-                  <node role="parameter" type="jetbrains.mps.lang.sharedConcepts.structure.ConceptFunctionParameter_scope" id="1652220223504372086" />
                   <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1652220223504375449">
                     <property name="name" value="getNodesFormClassifiersList" />
                     <node role="visibility" type="jetbrains.mps.baseLanguage.structure.ProtectedVisibility" id="1652220223504375450" />
@@ -1099,6 +1091,15 @@
                       </node>
                     </node>
                   </node>
+                  <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1652220223504372079">
+                    <node role="operand" type="jetbrains.mps.lang.constraints.structure.ConceptParameter_ReferentSearchScope_enclosingNode" id="1652220223504372078" />
+                    <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_GetModelOperation" id="1652220223504372083" />
+                  </node>
+                  <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference" id="1652220223504372097">
+                    <link role="classifier" targetNodeId="8.~IClassifiersSearchScope" resolveInfo="IClassifiersSearchScope" />
+                    <link role="variableDeclaration" targetNodeId="8.~IClassifiersSearchScope.ANYTHING" resolveInfo="ANYTHING" />
+                  </node>
+                  <node role="actualArgument" type="jetbrains.mps.lang.sharedConcepts.structure.ConceptFunctionParameter_scope" id="1652220223504372086" />
                 </node>
               </node>
             </node>

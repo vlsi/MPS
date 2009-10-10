@@ -5199,6 +5199,7 @@
       <node role="creator" type="jetbrains.mps.baseLanguage.structure.AnonymousClassCreator" id="1199624838636">
         <node role="cls" type="jetbrains.mps.baseLanguage.structure.AnonymousClass" id="1199624838637">
           <link role="classifier" targetNodeId="2.~Object" resolveInfo="Object" />
+          <link role="baseMethodDeclaration" targetNodeId="2.~Object.&lt;init&gt;()" resolveInfo="Object" />
           <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1199624907450">
             <property name="name" value="invoke" />
             <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1199624928352">
@@ -6867,6 +6868,7 @@
       <node role="creator" type="jetbrains.mps.baseLanguage.structure.AnonymousClassCreator" id="1201016866809">
         <node role="cls" type="jetbrains.mps.baseLanguage.structure.AnonymousClass" id="1201016866810">
           <link role="classifier" targetNodeId="2.~Object" resolveInfo="Object" />
+          <link role="baseMethodDeclaration" targetNodeId="2.~Object.&lt;init&gt;()" resolveInfo="Object" />
           <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1201044612680">
             <property name="name" value="invoke" />
             <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1201044612681">
@@ -13995,6 +13997,7 @@
       <node role="creator" type="jetbrains.mps.baseLanguage.structure.AnonymousClassCreator" id="1201863347040">
         <node role="cls" type="jetbrains.mps.baseLanguage.structure.AnonymousClass" id="1201863347041">
           <link role="classifier" targetNodeId="21.~YieldingIterator" resolveInfo="YieldingIterator" />
+          <link role="baseMethodDeclaration" targetNodeId="21.~YieldingIterator.&lt;init&gt;()" resolveInfo="YieldingIterator" />
           <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1201863419698">
             <property name="name" value="moveToNext" />
             <node role="returnType" type="jetbrains.mps.baseLanguage.structure.BooleanType" id="1201863424787" />
@@ -30898,6 +30901,7 @@
       <node role="creator" type="jetbrains.mps.baseLanguage.structure.AnonymousClassCreator" id="1232140802816">
         <node role="cls" type="jetbrains.mps.baseLanguage.structure.AnonymousClass" id="1232140802817">
           <link role="classifier" targetNodeId="1232027821328" resolveInfo="_return_terminate" />
+          <link role="baseMethodDeclaration" targetNodeId="2.~Object.&lt;init&gt;()" resolveInfo="Object" />
           <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1232140802818" />
           <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1232140802819">
             <property name="name" value="invokeUnrestricted" />

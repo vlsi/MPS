@@ -71,6 +71,7 @@
                       <node role="creator" type="jetbrains.mps.baseLanguage.structure.AnonymousClassCreator" id="1241365883194">
                         <node role="cls" type="jetbrains.mps.baseLanguage.structure.AnonymousClass" id="1241365883195">
                           <link role="classifier" targetNodeId="8.~Runnable" resolveInfo="Runnable" />
+                          <link role="baseMethodDeclaration" targetNodeId="8.~Object.&lt;init&gt;()" resolveInfo="Object" />
                           <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1241365883196" />
                           <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1241365883197">
                             <property name="isAbstract" value="false" />

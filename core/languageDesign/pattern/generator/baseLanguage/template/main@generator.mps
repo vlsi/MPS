@@ -3158,6 +3158,7 @@
                 <node role="creator" type="jetbrains.mps.baseLanguage.structure.AnonymousClassCreator" id="1220015651944">
                   <node role="cls" type="jetbrains.mps.baseLanguage.structure.AnonymousClass" id="1220015651945">
                     <link role="classifier" targetNodeId="30.~SubstitutionComputable" resolveInfo="SubstitutionComputable" />
+                    <link role="baseMethodDeclaration" targetNodeId="2.~Object.&lt;init&gt;()" resolveInfo="Object" />
                     <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1220015651946" />
                     <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1220015651947">
                       <property name="isAbstract" value="false" />
@@ -3242,6 +3243,7 @@
       <node role="creator" type="jetbrains.mps.baseLanguage.structure.AnonymousClassCreator" id="1220025184875">
         <node role="cls" type="jetbrains.mps.baseLanguage.structure.AnonymousClass" id="1220025184876">
           <link role="classifier" targetNodeId="30.~SubstitutionComputable" resolveInfo="SubstitutionComputable" />
+          <link role="baseMethodDeclaration" targetNodeId="2.~Object.&lt;init&gt;()" resolveInfo="Object" />
           <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1220025184877" />
           <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1220025184878">
             <property name="isAbstract" value="false" />

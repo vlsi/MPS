@@ -8741,10 +8741,8 @@
                 <node role="creator" type="jetbrains.mps.baseLanguage.structure.AnonymousClassCreator" id="1239461758141">
                   <node role="cls" type="jetbrains.mps.baseLanguage.structure.AnonymousClass" id="1239461758142">
                     <link role="classifier" targetNodeId="25.~AbstractAction" resolveInfo="AbstractAction" />
+                    <link role="baseMethodDeclaration" targetNodeId="25.~AbstractAction.&lt;init&gt;(java.lang.String)" resolveInfo="AbstractAction" />
                     <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1239461758143" />
-                    <node role="parameter" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1239461763048">
-                      <property name="value" value=" ... " />
-                    </node>
                     <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1239461771014">
                       <property name="name" value="actionPerformed" />
                       <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1239461771015" />
@@ -8958,6 +8956,9 @@
                           <link role="classifier" targetNodeId="40.~ActionEvent" resolveInfo="ActionEvent" />
                         </node>
                       </node>
+                    </node>
+                    <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1239461763048">
+                      <property name="value" value=" ... " />
                     </node>
                   </node>
                 </node>

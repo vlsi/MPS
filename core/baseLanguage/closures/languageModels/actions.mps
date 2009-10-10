@@ -37,7 +37,7 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895903fe(jetbrains.mps.baseLanguage.strings.constraints)" version="1" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590402(jetbrains.mps.baseLanguage.strings.structure)" version="9" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959034b(jetbrains.mps.lang.quotation.structure)" version="0" />
-  <maxImportIndex value="12" />
+  <maxImportIndex value="13" />
   <import index="1" modelUID="r:00000000-0000-4000-0000-011c89590338(jetbrains.mps.baseLanguage.closures.structure)" version="3" />
   <import index="4" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="3" />
   <import index="6" modelUID="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" version="7" />
@@ -45,6 +45,7 @@
   <import index="9" modelUID="f:java_stub#jetbrains.mps.baseLanguage.search(jetbrains.mps.baseLanguage.search@java_stub)" version="-1" />
   <import index="10" modelUID="f:java_stub#jetbrains.mps.util(jetbrains.mps.util@java_stub)" version="-1" />
   <import index="12" modelUID="r:00000000-0000-4000-0000-011c89590282(jetbrains.mps.lang.core.behavior)" version="-1" />
+  <import index="13" modelUID="f:java_stub#java.lang(java.lang@java_stub)" version="-1" />
   <node type="jetbrains.mps.lang.actions.structure.NodeSubstituteActions" id="1199651296107">
     <property name="name" value="subs_ThisExpression" />
     <node role="actionsBuilder" type="jetbrains.mps.lang.actions.structure.NodeSubstituteActionsBuilder" id="1199651306154">
@@ -233,6 +234,7 @@
                     <node role="creator" type="jetbrains.mps.baseLanguage.structure.AnonymousClassCreator" id="1229707001498">
                       <node role="cls" type="jetbrains.mps.baseLanguage.structure.AnonymousClass" id="1229707001499">
                         <link role="classifier" targetNodeId="10.~Condition" resolveInfo="Condition" />
+                        <link role="baseMethodDeclaration" targetNodeId="13.~Object.&lt;init&gt;()" resolveInfo="Object" />
                         <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1229707001500" />
                         <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1229707001501">
                           <property name="isAbstract" value="false" />
@@ -324,6 +326,7 @@
                         <node role="creator" type="jetbrains.mps.baseLanguage.structure.AnonymousClassCreator" id="1229707121324">
                           <node role="cls" type="jetbrains.mps.baseLanguage.structure.AnonymousClass" id="1229707121325">
                             <link role="classifier" targetNodeId="10.~Condition" resolveInfo="Condition" />
+                            <link role="baseMethodDeclaration" targetNodeId="13.~Object.&lt;init&gt;()" resolveInfo="Object" />
                             <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1229707121326" />
                             <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1229707121327">
                               <property name="isAbstract" value="false" />

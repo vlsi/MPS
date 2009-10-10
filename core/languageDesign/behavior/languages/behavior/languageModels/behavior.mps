@@ -415,6 +415,7 @@
               <node role="creator" type="jetbrains.mps.baseLanguage.structure.AnonymousClassCreator" id="1225194243465">
                 <node role="cls" type="jetbrains.mps.baseLanguage.structure.AnonymousClass" id="1225194243466">
                   <link role="classifier" targetNodeId="7.1221578571953" resolveInfo="AbstractExtractMethodRefactoringProcessor" />
+                  <link role="baseMethodDeclaration" targetNodeId="7.1221578571955" resolveInfo="AbstractExtractMethodRefactoringProcessor" />
                   <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1225194243467" />
                   <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1225194243468">
                     <property name="name" value="createMethodCall" />
@@ -653,8 +654,8 @@
                       </node>
                     </node>
                   </node>
-                  <node role="parameter" type="jetbrains.mps.lang.behavior.structure.ThisNodeExpression" id="1225194243569" />
-                  <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1225194243570">
+                  <node role="actualArgument" type="jetbrains.mps.lang.behavior.structure.ThisNodeExpression" id="1225194243569" />
+                  <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1225194243570">
                     <link role="variableDeclaration" targetNodeId="1225194243574" resolveInfo="nodesToExtract" />
                   </node>
                 </node>
@@ -686,10 +687,8 @@
             <node role="creator" type="jetbrains.mps.baseLanguage.structure.AnonymousClassCreator" id="1225194243581">
               <node role="cls" type="jetbrains.mps.baseLanguage.structure.AnonymousClass" id="1225194243582">
                 <link role="classifier" targetNodeId="7.1222173596072" resolveInfo="AbstractStaticContainerProcessor" />
+                <link role="baseMethodDeclaration" targetNodeId="7.1222173596074" resolveInfo="AbstractStaticContainerProcessor" />
                 <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1225194243583" />
-                <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1225194243584">
-                  <link role="variableDeclaration" targetNodeId="1225194243685" resolveInfo="node" />
-                </node>
                 <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1225194243585">
                   <property name="name" value="createNewMethod" />
                   <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1225194243586" />
@@ -763,6 +762,9 @@
                       <link role="elementConcept" targetNodeId="5.1068431790191" resolveInfo="Expression" />
                     </node>
                   </node>
+                </node>
+                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1225194243584">
+                  <link role="variableDeclaration" targetNodeId="1225194243685" resolveInfo="node" />
                 </node>
               </node>
             </node>

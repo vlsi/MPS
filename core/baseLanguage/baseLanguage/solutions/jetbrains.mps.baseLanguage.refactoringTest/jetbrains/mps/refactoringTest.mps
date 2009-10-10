@@ -1006,6 +1006,7 @@
                 <node role="creator" type="jetbrains.mps.baseLanguage.structure.AnonymousClassCreator" id="1230052406975">
                   <node role="cls" type="jetbrains.mps.baseLanguage.structure.AnonymousClass" id="1230052406976">
                     <link role="classifier" targetNodeId="6.~Runnable" resolveInfo="Runnable" />
+                    <link role="baseMethodDeclaration" targetNodeId="6.~Object.&lt;init&gt;()" resolveInfo="Object" />
                     <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1230052406977" />
                     <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1230052406978">
                       <property name="isAbstract" value="false" />
@@ -1061,6 +1062,7 @@
                 <node role="creator" type="jetbrains.mps.baseLanguage.structure.AnonymousClassCreator" id="1230052407002">
                   <node role="cls" type="jetbrains.mps.baseLanguage.structure.AnonymousClass" id="1230052407003">
                     <link role="classifier" targetNodeId="6.~Runnable" resolveInfo="Runnable" />
+                    <link role="baseMethodDeclaration" targetNodeId="6.~Object.&lt;init&gt;()" resolveInfo="Object" />
                     <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1230052407004" />
                     <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1230052407005">
                       <property name="isAbstract" value="false" />
@@ -4181,6 +4183,7 @@
                 <node role="creator" type="jetbrains.mps.baseLanguage.structure.AnonymousClassCreator" id="1230052642355">
                   <node role="cls" type="jetbrains.mps.baseLanguage.structure.AnonymousClass" id="1230052642356">
                     <link role="classifier" targetNodeId="6.~Object" resolveInfo="Object" />
+                    <link role="baseMethodDeclaration" targetNodeId="6.~Object.&lt;init&gt;()" resolveInfo="Object" />
                     <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1230052642357" />
                     <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1230052642358">
                       <property name="name" value="zero" />

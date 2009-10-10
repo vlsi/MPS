@@ -4316,6 +4316,7 @@
                         <node role="cls" type="jetbrains.mps.baseLanguage.structure.AnonymousClass" id="1179397258961">
                           <property name="abstractClass" value="true" />
                           <link role="classifier" targetNodeId="2.~IFilter" resolveInfo="IFilter" />
+                          <link role="baseMethodDeclaration" targetNodeId="3.~Object.&lt;init&gt;()" resolveInfo="Object" />
                           <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1179397308442">
                             <property name="name" value="accept" />
                             <node role="returnType" type="jetbrains.mps.baseLanguage.structure.BooleanType" id="1179397308443" />
@@ -4465,6 +4466,7 @@
                           <node role="cls" type="jetbrains.mps.baseLanguage.structure.AnonymousClass" id="1179397493747">
                             <property name="abstractClass" value="true" />
                             <link role="classifier" targetNodeId="2.~IFilter" resolveInfo="IFilter" />
+                            <link role="baseMethodDeclaration" targetNodeId="3.~Object.&lt;init&gt;()" resolveInfo="Object" />
                             <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1179397532459">
                               <property name="name" value="accept" />
                               <node role="returnType" type="jetbrains.mps.baseLanguage.structure.BooleanType" id="1179397532460" />

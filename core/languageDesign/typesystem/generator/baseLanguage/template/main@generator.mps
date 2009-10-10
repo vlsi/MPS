@@ -4328,6 +4328,7 @@
                   <node role="creator" type="jetbrains.mps.baseLanguage.structure.AnonymousClassCreator" id="1228490277280">
                     <node role="cls" type="jetbrains.mps.baseLanguage.structure.AnonymousClass" id="1228490277281">
                       <link role="classifier" targetNodeId="6.~IVariableConverter_Runtime" resolveInfo="IVariableConverter_Runtime" />
+                      <link role="baseMethodDeclaration" targetNodeId="2.~Object.&lt;init&gt;()" resolveInfo="Object" />
                       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1228490277282" />
                       <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1228490277283">
                         <property name="isAbstract" value="false" />
@@ -4471,6 +4472,7 @@
                       <node role="creator" type="jetbrains.mps.baseLanguage.structure.AnonymousClassCreator" id="1236101120979">
                         <node role="cls" type="jetbrains.mps.baseLanguage.structure.AnonymousClass" id="1236101120980">
                           <link role="classifier" targetNodeId="15.~OverloadedOperationsTypesProvider" resolveInfo="OverloadedOperationsTypesProvider" />
+                          <link role="baseMethodDeclaration" targetNodeId="15.~OverloadedOperationsTypesProvider.&lt;init&gt;()" resolveInfo="OverloadedOperationsTypesProvider" />
                           <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1236101120981" />
                           <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1236101120982">
                             <property name="isAbstract" value="false" />
@@ -4821,6 +4823,7 @@
                       <node role="creator" type="jetbrains.mps.baseLanguage.structure.AnonymousClassCreator" id="8124453027370845418">
                         <node role="cls" type="jetbrains.mps.baseLanguage.structure.AnonymousClass" id="8124453027370845419">
                           <link role="classifier" targetNodeId="15.~OverloadedOpsProvider_OneTypeSpecified" resolveInfo="OverloadedOpsProvider_OneTypeSpecified" />
+                          <link role="baseMethodDeclaration" targetNodeId="15.~OverloadedOpsProvider_OneTypeSpecified.&lt;init&gt;()" resolveInfo="OverloadedOpsProvider_OneTypeSpecified" />
                           <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="8124453027370845420" />
                           <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="8124453027370845421">
                             <property name="isAbstract" value="false" />
@@ -5071,6 +5074,7 @@
                   <node role="creator" type="jetbrains.mps.baseLanguage.structure.AnonymousClassCreator" id="1193740606590">
                     <node role="cls" type="jetbrains.mps.baseLanguage.structure.AnonymousClass" id="1193740606591">
                       <link role="classifier" targetNodeId="29.~AbstractDependency_Runtime" resolveInfo="AbstractDependency_Runtime" />
+                      <link role="baseMethodDeclaration" targetNodeId="29.~AbstractDependency_Runtime.&lt;init&gt;()" resolveInfo="AbstractDependency_Runtime" />
                       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1193740606592" />
                       <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1193740624530">
                         <property name="name" value="getSourceConceptFQName" />
@@ -9641,6 +9645,7 @@
                 <node role="creator" type="jetbrains.mps.baseLanguage.structure.AnonymousClassCreator" id="1205764543380">
                   <node role="cls" type="jetbrains.mps.baseLanguage.structure.AnonymousClass" id="1205764543381">
                     <link role="classifier" targetNodeId="2.~Runnable" resolveInfo="Runnable" />
+                    <link role="baseMethodDeclaration" targetNodeId="2.~Object.&lt;init&gt;()" resolveInfo="Object" />
                     <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1205764543382" />
                     <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1205764543383">
                       <property name="name" value="run" />
@@ -10818,6 +10823,7 @@
                   <node role="creator" type="jetbrains.mps.baseLanguage.structure.AnonymousClassCreator" id="1194972375094">
                     <node role="cls" type="jetbrains.mps.baseLanguage.structure.AnonymousClass" id="1194972375095">
                       <link role="classifier" targetNodeId="29.~IDependency_Runtime" resolveInfo="IDependency_Runtime" />
+                      <link role="baseMethodDeclaration" targetNodeId="2.~Object.&lt;init&gt;()" resolveInfo="Object" />
                       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1194972375096" />
                       <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1194972375097">
                         <property name="name" value="getSourceConceptFQName" />
@@ -14392,6 +14398,7 @@
                 <node role="creator" type="jetbrains.mps.baseLanguage.structure.AnonymousClassCreator" id="1212596302635">
                   <node role="cls" type="jetbrains.mps.baseLanguage.structure.AnonymousClass" id="1212596302636">
                     <link role="classifier" targetNodeId="2.~Runnable" resolveInfo="Runnable" />
+                    <link role="baseMethodDeclaration" targetNodeId="2.~Object.&lt;init&gt;()" resolveInfo="Object" />
                     <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1212596302637" />
                     <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1212596312419">
                       <property name="name" value="run" />

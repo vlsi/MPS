@@ -3093,6 +3093,7 @@
                 <node role="creator" type="jetbrains.mps.baseLanguage.structure.AnonymousClassCreator" id="1218031031838">
                   <node role="cls" type="jetbrains.mps.baseLanguage.structure.AnonymousClass" id="1218031031839">
                     <link role="classifier" targetNodeId="54.~MPSEditorOpenHandler" resolveInfo="MPSEditorOpenHandler" />
+                    <link role="baseMethodDeclaration" targetNodeId="2.~Object.&lt;init&gt;()" resolveInfo="Object" />
                     <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1218031031840">
                       <property name="name" value="getBaseNode" />
                       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1218031031842" />

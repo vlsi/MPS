@@ -28,6 +28,7 @@
                 <node role="cls" type="jetbrains.mps.baseLanguage.structure.AnonymousClass" id="1196985119947853655">
                   <property name="nonStatic" value="true" />
                   <link role="classifier" targetNodeId="1.1196985119947853632" resolveInfo="Superclass" />
+                  <link role="baseMethodDeclaration" targetNodeId="1.1196985119947853634" resolveInfo="Superclass" />
                   <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1196985119947853656" />
                 </node>
               </node>

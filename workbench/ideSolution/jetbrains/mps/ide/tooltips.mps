@@ -212,6 +212,7 @@
             <node role="cls" type="jetbrains.mps.baseLanguage.structure.AnonymousClass" id="5522183980949037014">
               <property name="nonStatic" value="true" />
               <link role="classifier" targetNodeId="3.~FocusAdapter" resolveInfo="FocusAdapter" />
+              <link role="baseMethodDeclaration" targetNodeId="3.~FocusAdapter.&lt;init&gt;()" resolveInfo="FocusAdapter" />
               <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="5522183980949037015" />
               <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="5522183980949037016">
                 <property name="name" value="focusLost" />
@@ -255,6 +256,7 @@
             <node role="cls" type="jetbrains.mps.baseLanguage.structure.AnonymousClass" id="5522183980949037036">
               <property name="nonStatic" value="true" />
               <link role="classifier" targetNodeId="3.~MouseAdapter" resolveInfo="MouseAdapter" />
+              <link role="baseMethodDeclaration" targetNodeId="3.~MouseAdapter.&lt;init&gt;()" resolveInfo="MouseAdapter" />
               <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="5522183980949037037" />
               <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="5522183980949037038">
                 <property name="name" value="mousePressed" />
@@ -297,6 +299,7 @@
             <node role="cls" type="jetbrains.mps.baseLanguage.structure.AnonymousClass" id="1657638272963061113">
               <property name="nonStatic" value="true" />
               <link role="classifier" targetNodeId="3.~KeyAdapter" resolveInfo="KeyAdapter" />
+              <link role="baseMethodDeclaration" targetNodeId="3.~KeyAdapter.&lt;init&gt;()" resolveInfo="KeyAdapter" />
               <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1657638272963061114" />
               <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1657638272963061115">
                 <property name="name" value="keyPressed" />
@@ -1053,6 +1056,7 @@
           <node role="cls" type="jetbrains.mps.baseLanguage.structure.AnonymousClass" id="1657638272963450952">
             <property name="nonStatic" value="true" />
             <link role="classifier" targetNodeId="3.~MouseMotionAdapter" resolveInfo="MouseMotionAdapter" />
+            <link role="baseMethodDeclaration" targetNodeId="3.~MouseMotionAdapter.&lt;init&gt;()" resolveInfo="MouseMotionAdapter" />
             <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1657638272963450953" />
             <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="6543815770065587493">
               <property name="name" value="mouseMoved" />

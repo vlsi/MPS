@@ -81,6 +81,7 @@
                 <node role="creator" type="jetbrains.mps.baseLanguage.structure.AnonymousClassCreator" id="1182161166529">
                   <node role="cls" type="jetbrains.mps.baseLanguage.structure.AnonymousClass" id="1177465195992">
                     <link role="classifier" targetNodeId="6.~AbstractMigrationRefactoring" resolveInfo="AbstractMigrationRefactoring" />
+                    <link role="baseMethodDeclaration" targetNodeId="6.~AbstractMigrationRefactoring.&lt;init&gt;(jetbrains.mps.smodel.IOperationContext)" resolveInfo="AbstractMigrationRefactoring" />
                     <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1177555338045">
                       <property name="name" value="getName" />
                       <node role="returnType" type="jetbrains.mps.baseLanguage.structure.StringType" id="1225192995641" />
@@ -334,10 +335,10 @@
                         </node>
                       </node>
                     </node>
-                    <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1177465301993">
+                    <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1178550081565" />
+                    <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1177465301993">
                       <link role="variableDeclaration" targetNodeId="1177464748270" resolveInfo="operationContext" />
                     </node>
-                    <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1178550081565" />
                   </node>
                 </node>
               </node>

@@ -3825,6 +3825,7 @@
                 <node role="creator" type="jetbrains.mps.baseLanguage.structure.AnonymousClassCreator" id="1227305822782">
                   <node role="cls" type="jetbrains.mps.baseLanguage.structure.AnonymousClass" id="1227305822783">
                     <link role="classifier" targetNodeId="29.~ActionListener" resolveInfo="ActionListener" />
+                    <link role="baseMethodDeclaration" targetNodeId="17.~Object.&lt;init&gt;()" resolveInfo="Object" />
                     <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1227305822784" />
                     <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1227305822785">
                       <property name="isAbstract" value="false" />

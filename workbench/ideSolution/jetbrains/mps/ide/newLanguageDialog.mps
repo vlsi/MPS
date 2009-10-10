@@ -329,27 +329,8 @@
                 <node role="creator" type="jetbrains.mps.baseLanguage.structure.AnonymousClassCreator" id="1218129899947">
                   <node role="cls" type="jetbrains.mps.baseLanguage.structure.AnonymousClass" id="1218129899948">
                     <link role="classifier" targetNodeId="16.~Task$Modal" resolveInfo="Task.Modal" />
+                    <link role="baseMethodDeclaration" targetNodeId="16.~Task$Modal.&lt;init&gt;(com.intellij.openapi.project.Project,java.lang.String,boolean)" resolveInfo="Task.Modal" />
                     <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1218129899949" />
-                    <node role="parameter" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1218129899950">
-                      <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1218129899951">
-                        <node role="operand" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpression" id="1218129899952" />
-                        <node role="operation" type="jetbrains.mps.uiLanguage.structure.AttributeReferenceOperation" id="1218129899953">
-                          <link role="member" targetNodeId="1203685262317" resolveInfo="project" />
-                        </node>
-                      </node>
-                      <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1218129899954">
-                        <link role="baseMethodDeclaration" targetNodeId="2.~MPSProject.getComponent(java.lang.Class):java.lang.Object" resolveInfo="getComponent" />
-                        <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.ClassifierClassExpression" id="1218129899955">
-                          <link role="classifier" targetNodeId="17.~Project" resolveInfo="Project" />
-                        </node>
-                      </node>
-                    </node>
-                    <node role="parameter" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1218129899956">
-                      <property name="value" value="Creating" />
-                    </node>
-                    <node role="parameter" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1218129899957">
-                      <property name="value" value="false" />
-                    </node>
                     <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1218129899958">
                       <property name="name" value="run" />
                       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1218129899959" />
@@ -392,6 +373,26 @@
                           </node>
                         </node>
                       </node>
+                    </node>
+                    <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1218129899950">
+                      <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1218129899951">
+                        <node role="operand" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpression" id="1218129899952" />
+                        <node role="operation" type="jetbrains.mps.uiLanguage.structure.AttributeReferenceOperation" id="1218129899953">
+                          <link role="member" targetNodeId="1203685262317" resolveInfo="project" />
+                        </node>
+                      </node>
+                      <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1218129899954">
+                        <link role="baseMethodDeclaration" targetNodeId="2.~MPSProject.getComponent(java.lang.Class):java.lang.Object" resolveInfo="getComponent" />
+                        <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.ClassifierClassExpression" id="1218129899955">
+                          <link role="classifier" targetNodeId="17.~Project" resolveInfo="Project" />
+                        </node>
+                      </node>
+                    </node>
+                    <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1218129899956">
+                      <property name="value" value="Creating" />
+                    </node>
+                    <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1218129899957">
+                      <property name="value" value="false" />
                     </node>
                   </node>
                 </node>

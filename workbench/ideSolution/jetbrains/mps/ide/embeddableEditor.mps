@@ -102,23 +102,8 @@
               <node role="creator" type="jetbrains.mps.baseLanguage.structure.AnonymousClassCreator" id="1237823694078">
                 <node role="cls" type="jetbrains.mps.baseLanguage.structure.AnonymousClass" id="1237823694079">
                   <link role="classifier" targetNodeId="11.~GeneratorManager" resolveInfo="GeneratorManager" />
+                  <link role="baseMethodDeclaration" targetNodeId="11.~GeneratorManager.&lt;init&gt;(com.intellij.openapi.project.Project,jetbrains.mps.generator.GenerationSettings)" resolveInfo="GeneratorManager" />
                   <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1237823694080" />
-                  <node role="parameter" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1237823726200">
-                    <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1237823724150">
-                      <node role="operation" type="jetbrains.mps.baseLanguage.structure.FieldReferenceOperation" id="1237823724151">
-                        <link role="fieldDeclaration" targetNodeId="1219408662419" resolveInfo="myContext" />
-                      </node>
-                      <node role="operand" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="1237823724152" />
-                    </node>
-                    <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1237823729485">
-                      <link role="baseMethodDeclaration" targetNodeId="5.~IOperationContext.getProject():com.intellij.openapi.project.Project" resolveInfo="getProject" />
-                    </node>
-                  </node>
-                  <node role="parameter" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1237823879155">
-                    <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1237823903655">
-                      <link role="baseMethodDeclaration" targetNodeId="11.~GenerationSettings.&lt;init&gt;()" resolveInfo="GenerationSettings" />
-                    </node>
-                  </node>
                   <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1237823926907">
                     <property name="name" value="generateRequirements" />
                     <node role="returnType" type="jetbrains.mps.baseLanguage.structure.BooleanType" id="1237823979603" />
@@ -129,6 +114,22 @@
                           <property name="value" value="false" />
                         </node>
                       </node>
+                    </node>
+                  </node>
+                  <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1237823726200">
+                    <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1237823724150">
+                      <node role="operation" type="jetbrains.mps.baseLanguage.structure.FieldReferenceOperation" id="1237823724151">
+                        <link role="fieldDeclaration" targetNodeId="1219408662419" resolveInfo="myContext" />
+                      </node>
+                      <node role="operand" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="1237823724152" />
+                    </node>
+                    <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1237823729485">
+                      <link role="baseMethodDeclaration" targetNodeId="5.~IOperationContext.getProject():com.intellij.openapi.project.Project" resolveInfo="getProject" />
+                    </node>
+                  </node>
+                  <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1237823879155">
+                    <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1237823903655">
+                      <link role="baseMethodDeclaration" targetNodeId="11.~GenerationSettings.&lt;init&gt;()" resolveInfo="GenerationSettings" />
                     </node>
                   </node>
                 </node>
@@ -517,6 +518,7 @@
                 <node role="creator" type="jetbrains.mps.baseLanguage.structure.AnonymousClassCreator" id="1220432333281">
                   <node role="cls" type="jetbrains.mps.baseLanguage.structure.AnonymousClass" id="1220432333282">
                     <link role="classifier" targetNodeId="6.~Runnable" resolveInfo="Runnable" />
+                    <link role="baseMethodDeclaration" targetNodeId="6.~Object.&lt;init&gt;()" resolveInfo="Object" />
                     <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1220432333283" />
                     <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1220432333284">
                       <property name="isAbstract" value="false" />

@@ -1070,10 +1070,7 @@
             <node role="creator" type="jetbrains.mps.baseLanguage.structure.AnonymousClassCreator" id="1221661952190">
               <node role="cls" type="jetbrains.mps.baseLanguage.structure.AnonymousClass" id="1221661952191">
                 <link role="classifier" targetNodeId="5.1221578571953" resolveInfo="ExtractMethodRefactoringProcessor" />
-                <node role="parameter" type="jetbrains.mps.lang.behavior.structure.ThisNodeExpression" id="1221661952192" />
-                <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1221670664941">
-                  <link role="variableDeclaration" targetNodeId="1221670644669" resolveInfo="nodesToRefactor" />
-                </node>
+                <link role="baseMethodDeclaration" targetNodeId="5.1221578571955" resolveInfo="AbstractExtractMethodRefactoringProcessor" />
                 <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1221661952193" />
                 <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1221661952194">
                   <property name="name" value="createNewMethod" />
@@ -1216,6 +1213,10 @@
                   <node role="returnType" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1221661897775">
                     <link role="concept" targetNodeId="6.1068431790191" resolveInfo="Expression" />
                   </node>
+                </node>
+                <node role="actualArgument" type="jetbrains.mps.lang.behavior.structure.ThisNodeExpression" id="1221661952192" />
+                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1221670664941">
+                  <link role="variableDeclaration" targetNodeId="1221670644669" resolveInfo="nodesToRefactor" />
                 </node>
               </node>
             </node>

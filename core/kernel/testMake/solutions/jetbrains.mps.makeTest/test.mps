@@ -52,6 +52,11 @@
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="1957199320903967681">
     <property name="name" value="ChangeModel" />
     <property name="abstractClass" value="true" />
+    <node role="constructor" type="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" id="7137969394171673935">
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="7137969394171673936" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="7137969394171673937" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="7137969394171673938" />
+    </node>
     <node role="field" type="jetbrains.mps.baseLanguage.structure.FieldDeclaration" id="1957199320903967682">
       <property name="name" value="myModel" />
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PrivateVisibility" id="1957199320903967683" />
@@ -147,6 +152,7 @@
                   <node role="cls" type="jetbrains.mps.baseLanguage.structure.AnonymousClass" id="1957199320903967730">
                     <property name="nonStatic" value="true" />
                     <link role="classifier" targetNodeId="1957199320903967681" resolveInfo="ChangeModel" />
+                    <link role="baseMethodDeclaration" targetNodeId="7137969394171673935" resolveInfo="ChangeModel" />
                     <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1957199320903967731" />
                     <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1957199320903967732">
                       <property name="name" value="change" />
@@ -334,6 +340,7 @@
                   <node role="cls" type="jetbrains.mps.baseLanguage.structure.AnonymousClass" id="1957199320903967811">
                     <property name="nonStatic" value="true" />
                     <link role="classifier" targetNodeId="4.~Runnable" resolveInfo="Runnable" />
+                    <link role="baseMethodDeclaration" targetNodeId="4.~Object.&lt;init&gt;()" resolveInfo="Object" />
                     <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1957199320903967812" />
                     <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1957199320903967813">
                       <property name="isAbstract" value="false" />
@@ -390,6 +397,7 @@
                   <node role="cls" type="jetbrains.mps.baseLanguage.structure.AnonymousClass" id="1957199320903967835">
                     <property name="nonStatic" value="true" />
                     <link role="classifier" targetNodeId="4.~Runnable" resolveInfo="Runnable" />
+                    <link role="baseMethodDeclaration" targetNodeId="4.~Object.&lt;init&gt;()" resolveInfo="Object" />
                     <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1957199320903967836" />
                     <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1957199320903967837">
                       <property name="isAbstract" value="false" />
@@ -612,6 +620,7 @@
                 <node role="cls" type="jetbrains.mps.baseLanguage.structure.AnonymousClass" id="1957199320903967928">
                   <property name="nonStatic" value="true" />
                   <link role="classifier" targetNodeId="4.~Runnable" resolveInfo="Runnable" />
+                  <link role="baseMethodDeclaration" targetNodeId="4.~Object.&lt;init&gt;()" resolveInfo="Object" />
                   <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1957199320903967929" />
                   <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1957199320903967930">
                     <property name="isAbstract" value="false" />
@@ -950,6 +959,7 @@
                           <node role="cls" type="jetbrains.mps.baseLanguage.structure.AnonymousClass" id="1957199320903968059">
                             <property name="nonStatic" value="true" />
                             <link role="classifier" targetNodeId="4.~Runnable" resolveInfo="Runnable" />
+                            <link role="baseMethodDeclaration" targetNodeId="4.~Object.&lt;init&gt;()" resolveInfo="Object" />
                             <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1957199320903968060" />
                             <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1957199320903968061">
                               <property name="isAbstract" value="false" />
@@ -1238,6 +1248,7 @@
                 <node role="cls" type="jetbrains.mps.baseLanguage.structure.AnonymousClass" id="1957199320903968176">
                   <property name="nonStatic" value="true" />
                   <link role="classifier" targetNodeId="4.~Runnable" resolveInfo="Runnable" />
+                  <link role="baseMethodDeclaration" targetNodeId="4.~Object.&lt;init&gt;()" resolveInfo="Object" />
                   <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1957199320903968177" />
                   <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1957199320903968178">
                     <property name="isAbstract" value="false" />
@@ -1649,6 +1660,7 @@
                 <node role="cls" type="jetbrains.mps.baseLanguage.structure.AnonymousClass" id="1957199320903968326">
                   <property name="nonStatic" value="true" />
                   <link role="classifier" targetNodeId="10.~IMessageHandler" resolveInfo="IMessageHandler" />
+                  <link role="baseMethodDeclaration" targetNodeId="4.~Object.&lt;init&gt;()" resolveInfo="Object" />
                   <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1957199320903968327" />
                   <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1957199320903968328">
                     <property name="isAbstract" value="false" />
@@ -1911,6 +1923,7 @@
                   <node role="cls" type="jetbrains.mps.baseLanguage.structure.AnonymousClass" id="1957199320903968426">
                     <property name="nonStatic" value="true" />
                     <link role="classifier" targetNodeId="1957199320903967681" resolveInfo="ChangeModel" />
+                    <link role="baseMethodDeclaration" targetNodeId="7137969394171673935" resolveInfo="ChangeModel" />
                     <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1957199320903968427" />
                     <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1957199320903968428">
                       <property name="name" value="change" />
@@ -1991,6 +2004,7 @@
                   <node role="cls" type="jetbrains.mps.baseLanguage.structure.AnonymousClass" id="1957199320903968460">
                     <property name="nonStatic" value="true" />
                     <link role="classifier" targetNodeId="1957199320903967681" resolveInfo="ChangeModel" />
+                    <link role="baseMethodDeclaration" targetNodeId="7137969394171673935" resolveInfo="ChangeModel" />
                     <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1957199320903968461" />
                     <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1957199320903968462">
                       <property name="name" value="change" />
@@ -2063,6 +2077,7 @@
                   <node role="cls" type="jetbrains.mps.baseLanguage.structure.AnonymousClass" id="1957199320903968490">
                     <property name="nonStatic" value="true" />
                     <link role="classifier" targetNodeId="1957199320903967681" resolveInfo="ChangeModel" />
+                    <link role="baseMethodDeclaration" targetNodeId="7137969394171673935" resolveInfo="ChangeModel" />
                     <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1957199320903968491" />
                     <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1957199320903968492">
                       <property name="name" value="change" />
@@ -2207,6 +2222,7 @@
                   <node role="cls" type="jetbrains.mps.baseLanguage.structure.AnonymousClass" id="1957199320903968548">
                     <property name="nonStatic" value="true" />
                     <link role="classifier" targetNodeId="1957199320903967681" resolveInfo="ChangeModel" />
+                    <link role="baseMethodDeclaration" targetNodeId="7137969394171673935" resolveInfo="ChangeModel" />
                     <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1957199320903968549" />
                     <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1957199320903968550">
                       <property name="name" value="change" />
