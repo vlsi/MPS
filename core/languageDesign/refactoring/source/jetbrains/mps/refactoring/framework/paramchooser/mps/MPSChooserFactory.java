@@ -15,17 +15,21 @@
  */
 package jetbrains.mps.refactoring.framework.paramchooser.mps;
 
+import com.intellij.openapi.util.Computable;
 import jetbrains.mps.project.IModule;
+import jetbrains.mps.refactoring.framework.InvalidInputValueException;
 import jetbrains.mps.refactoring.framework.RefactoringContext;
 import jetbrains.mps.refactoring.framework.paramchooser.IChooser;
 import jetbrains.mps.refactoring.framework.paramchooser.mps.internal.BaseMPSChooser;
 import jetbrains.mps.refactoring.framework.paramchooser.mps.internal.ChooserType.ModelChooserType;
 import jetbrains.mps.refactoring.framework.paramchooser.mps.internal.ChooserType.ModuleChooserType;
 import jetbrains.mps.refactoring.framework.paramchooser.mps.internal.MPSNodeChooser;
+import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.smodel.ModelAccess;
-import com.intellij.openapi.util.Computable;
+
+import javax.swing.*;
+import java.awt.BorderLayout;
 
 public class MPSChooserFactory {
   public static IChooser createNodeChooser(final RefactoringContext context, final String paramName, final IChooserSettings<SNode> settings) {
@@ -52,25 +56,83 @@ public class MPSChooserFactory {
     });
   }
 
-  public static IChooser createStringChooser(final RefactoringContext context, final String paramName, final IChooserSettings<IModule> settings) {
-    return null;/*ModelAccess.instance().runReadAction(new Computable<IChooser>() {
-      public IChooser compute() {
-        return new BaseMPSChooser(context, paramName, new ModuleChooserType(), settings);
-      }
-    });*/
+  public static IChooser createStringChooser(final RefactoringContext context, final String paramName, final IChooserSettings<String> settings) {
+    return new StringChooser(context, paramName, settings);
   }
-  public static IChooser createBooleanChooser(final RefactoringContext context, final String paramName, final IChooserSettings<IModule> settings) {
-    return null;/*ModelAccess.instance().runReadAction(new Computable<IChooser>() {
-      public IChooser compute() {
-        return new BaseMPSChooser(context, paramName, new ModuleChooserType(), settings);
-      }
-    });*/
+
+  public static IChooser createBooleanChooser(final RefactoringContext context, final String paramName, final IChooserSettings<Boolean> settings) {
+    return new BooleanChooser(context, paramName, settings);
   }
-  public static IChooser createIntChooser(final RefactoringContext context, final String paramName, final IChooserSettings<IModule> settings) {
-    return null;/*ModelAccess.instance().runReadAction(new Computable<IChooser>() {
-      public IChooser compute() {
-        return new BaseMPSChooser(context, paramName, new ModuleChooserType(), settings);
+
+  public static IChooser createIntChooser(final RefactoringContext context, final String paramName, final IChooserSettings<Integer> settings) {
+    return null;
+  }
+
+  private static class StringChooser implements IChooser {
+    private JPanel myPanel;
+    private JTextField myTextField;
+    private RefactoringContext myContext;
+    private String myParamName;
+
+    private StringChooser(RefactoringContext context, String paramName, IChooserSettings<String> settings) {
+      myContext = context;
+      myParamName = paramName;
+
+      myPanel = new JPanel(new BorderLayout());
+      myPanel.add(new JLabel(settings.getTitle()), BorderLayout.WEST);
+
+      myTextField = new JTextField(settings.getInitialValue());
+      myPanel.add(myTextField, BorderLayout.CENTER);
+    }
+
+    public boolean isStretchable() {
+      return false;
+    }
+
+    public JComponent getMainComponent() {
+      return myPanel;
+    }
+
+    public JComponent getComponentToFocus() {
+      return myTextField;
+    }
+
+    public void commit() throws InvalidInputValueException {
+      myContext.setParameter(myParamName, myTextField.getText());
+    }
+  }
+
+  private static class BooleanChooser implements IChooser {
+    private JCheckBox myCheckBox;
+    private RefactoringContext myContext;
+    private String myParamName;
+
+    public BooleanChooser(RefactoringContext context, String paramName, IChooserSettings<Boolean> settings) {
+      myContext = context;
+      myParamName = paramName;
+
+      myCheckBox = new JCheckBox(settings.getTitle());
+
+      Boolean initialValue = settings.getInitialValue();
+      if (initialValue != null) {
+        myCheckBox.setSelected(initialValue);
       }
-    });*/
+    }
+
+    public boolean isStretchable() {
+      return false;
+    }
+
+    public JComponent getMainComponent() {
+      return myCheckBox;
+    }
+
+    public JComponent getComponentToFocus() {
+      return myCheckBox;
+    }
+
+    public void commit() throws InvalidInputValueException {
+      myContext.setParameter(myParamName, myCheckBox.isSelected());
+    }
   }
 }
