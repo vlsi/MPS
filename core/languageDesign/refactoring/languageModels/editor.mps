@@ -1420,52 +1420,11 @@
       <node role="cellLayout" type="jetbrains.mps.lang.editor.structure.CellLayout_Indent" id="3302086321379403358" />
     </node>
   </node>
-  <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" id="4413749148913695138">
+  <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" id="3673527736022208478">
     <property name="package" value="RefDecl.Arg.Parameters.Chooser.MPS.type" />
-    <link role="conceptDeclaration" targetNodeId="1.4413749148913695137" resolveInfo="ModelMPSParameterType" />
-    <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="4413749148913695140">
-      <property name="text" value="model" />
-      <link role="styleClass" targetNodeId="4.1186415544875" resolveInfo="KeyWord" />
-    </node>
-  </node>
-  <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" id="4413749148913695145">
-    <property name="package" value="RefDecl.Arg.Parameters.Chooser.MPS.type" />
-    <link role="conceptDeclaration" targetNodeId="1.4413749148913695141" resolveInfo="ModuleMPSParameterType" />
-    <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="4413749148913695147">
-      <property name="text" value="module" />
-      <link role="styleClass" targetNodeId="4.1186415544875" resolveInfo="KeyWord" />
-    </node>
-  </node>
-  <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" id="4413749148913695148">
-    <property name="package" value="RefDecl.Arg.Parameters.Chooser.MPS.type" />
-    <link role="conceptDeclaration" targetNodeId="1.4413749148913695144" resolveInfo="BooleanMPSParameterType" />
-    <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="4413749148913695150">
-      <property name="text" value="boolean" />
-      <link role="styleClass" targetNodeId="4.1186415544875" resolveInfo="KeyWord" />
-    </node>
-  </node>
-  <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" id="4413749148913695151">
-    <property name="package" value="RefDecl.Arg.Parameters.Chooser.MPS.type" />
-    <link role="conceptDeclaration" targetNodeId="1.4413749148913695143" resolveInfo="StringMPSParameterType" />
-    <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="4413749148913695153">
-      <property name="text" value="string" />
-      <link role="styleClass" targetNodeId="4.1186415544875" resolveInfo="KeyWord" />
-    </node>
-  </node>
-  <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" id="4413749148913695154">
-    <property name="package" value="RefDecl.Arg.Parameters.Chooser.MPS.type" />
-    <link role="conceptDeclaration" targetNodeId="1.4413749148913695142" resolveInfo="NodeMPSParameterType" />
-    <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="4413749148913695156">
-      <property name="text" value="node" />
-      <link role="styleClass" targetNodeId="4.1186415544875" resolveInfo="KeyWord" />
-    </node>
-  </node>
-  <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" id="4413749148913695244">
-    <property name="package" value="RefDecl.Arg.Parameters.Chooser.MPS.type" />
-    <link role="conceptDeclaration" targetNodeId="1.4413749148913695243" resolveInfo="IntMPSParameterType" />
-    <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="4413749148913695246">
-      <property name="text" value="int" />
-      <link role="styleClass" targetNodeId="4.1186415544875" resolveInfo="KeyWord" />
+    <link role="conceptDeclaration" targetNodeId="1.4413749148913695136" resolveInfo="MPSParameterType" />
+    <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_ConceptProperty" id="3673527736022208480">
+      <link role="relationDeclaration" targetNodeId="2.1137473891462" resolveInfo="alias" />
     </node>
   </node>
 </model>

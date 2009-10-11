@@ -1680,6 +1680,10 @@
       <link role="conceptLinkDeclaration" targetNodeId="4413749148913757059" resolveInfo="paramType" />
       <node role="target" type="jetbrains.mps.lang.smodel.structure.SModelType" id="4413749148913757075" />
     </node>
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="3673527736022208474">
+      <property name="value" value="model" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" resolveInfo="alias" />
+    </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="4413749148913695141">
     <property name="package" value="RefDecl.Arg.Parameters.Chooser.MPS.type" />
@@ -1691,6 +1695,10 @@
         <link role="classifier" targetNodeId="9.~IModule" resolveInfo="IModule" />
       </node>
     </node>
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="3673527736022208475">
+      <property name="value" value="module" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" resolveInfo="alias" />
+    </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="4413749148913695142">
     <property name="package" value="RefDecl.Arg.Parameters.Chooser.MPS.type" />
@@ -1699,6 +1707,10 @@
     <node role="conceptLink" type="jetbrains.mps.lang.structure.structure.AggregationConceptLink" id="4413749148913757080">
       <link role="conceptLinkDeclaration" targetNodeId="4413749148913757059" resolveInfo="paramType" />
       <node role="target" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="4413749148913757082" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="3673527736022208476">
+      <property name="value" value="node" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" resolveInfo="alias" />
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="4413749148913695143">
@@ -1709,6 +1721,10 @@
       <link role="conceptLinkDeclaration" targetNodeId="4413749148913757059" resolveInfo="paramType" />
       <node role="target" type="jetbrains.mps.baseLanguage.structure.StringType" id="4413749148913757085" />
     </node>
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="3673527736022208477">
+      <property name="value" value="string" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" resolveInfo="alias" />
+    </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="4413749148913695144">
     <property name="package" value="RefDecl.Arg.Parameters.Chooser.MPS.type" />
@@ -1718,6 +1734,10 @@
       <link role="conceptLinkDeclaration" targetNodeId="4413749148913757059" resolveInfo="paramType" />
       <node role="target" type="jetbrains.mps.baseLanguage.structure.BooleanType" id="4413749148913757065" />
     </node>
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="3673527736022208472">
+      <property name="value" value="boolean" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" resolveInfo="alias" />
+    </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="4413749148913695243">
     <property name="package" value="RefDecl.Arg.Parameters.Chooser.MPS.type" />
@@ -1726,6 +1746,10 @@
     <node role="conceptLink" type="jetbrains.mps.lang.structure.structure.AggregationConceptLink" id="4413749148913757066">
       <link role="conceptLinkDeclaration" targetNodeId="4413749148913757059" resolveInfo="paramType" />
       <node role="target" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="4413749148913757069" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="3673527736022208473">
+      <property name="value" value="int" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" resolveInfo="alias" />
     </node>
   </node>
 </model>

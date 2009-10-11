@@ -57,15 +57,27 @@ public class MPSChooserFactory {
   }
 
   public static IChooser createStringChooser(final RefactoringContext context, final String paramName, final IChooserSettings<String> settings) {
-    return new StringChooser(context, paramName, settings);
+    return ModelAccess.instance().runReadAction(new Computable<IChooser>() {
+      public IChooser compute() {
+        return new StringChooser(context, paramName, settings);
+      }
+    });
   }
 
   public static IChooser createBooleanChooser(final RefactoringContext context, final String paramName, final IChooserSettings<Boolean> settings) {
-    return new BooleanChooser(context, paramName, settings);
+    return ModelAccess.instance().runReadAction(new Computable<IChooser>() {
+      public IChooser compute() {
+        return new BooleanChooser(context, paramName, settings);
+      }
+    });
   }
 
   public static IChooser createIntChooser(final RefactoringContext context, final String paramName, final IChooserSettings<Integer> settings) {
-    return null;
+    return ModelAccess.instance().runReadAction(new Computable<IChooser>() {
+      public IChooser compute() {
+        throw new IllegalStateException("NOT SUPPORTED");
+      }
+    });
   }
 
   private static class StringChooser implements IChooser {
