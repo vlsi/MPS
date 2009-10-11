@@ -10,7 +10,6 @@ import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import java.util.List;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.baseLanguage.plugin.MethodRefactoringUtils;
 import com.intellij.openapi.progress.EmptyProgressIndicator;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -48,7 +47,7 @@ public class RenameMethod extends BaseRefactoring {
     final Wrappers._T<SNode> methodDeclNode = new Wrappers._T<SNode>();
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
-        methodDeclNode.value = SLinkOperations.getTarget(refactoringContext.getSelectedNode(), "baseMethodDeclaration", false);
+        methodDeclNode.value = RenameUtil.getMethodDeclaration(refactoringContext.getSelectedNode());
         overriding.value = MethodRefactoringUtils.findOverridingMethods(methodDeclNode.value, new EmptyProgressIndicator());
       }
     });
@@ -63,7 +62,7 @@ public class RenameMethod extends BaseRefactoring {
   }
 
   public void refactor(final RefactoringContext refactoringContext) {
-    SNode methodDeclNode = SLinkOperations.getTarget(refactoringContext.getSelectedNode(), "baseMethodDeclaration", false);
+    SNode methodDeclNode = RenameUtil.getMethodDeclaration(refactoringContext.getSelectedNode());
     List<SNode> overriding = MethodRefactoringUtils.findOverridingMethods(methodDeclNode, new EmptyProgressIndicator());
 
     SPropertyOperations.set(methodDeclNode, "name", ((String)refactoringContext.getParameter("newName")));

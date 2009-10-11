@@ -40875,7 +40875,7 @@
   <node type="jetbrains.mps.lang.plugin.structure.ActionDeclaration" id="5161861506211846594">
     <property name="package" value="refactoring.actions" />
     <property name="name" value="RenameMethod" />
-    <property name="caption" value="Rename Variable" />
+    <property name="caption" value="Rename Method" />
     <property name="outsideCommandExecution" value="true" />
     <node role="executeFunction" type="jetbrains.mps.lang.plugin.structure.ExecuteBlock" id="5161861506211846595">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="5161861506211846596">
@@ -42430,7 +42430,7 @@
   <node type="jetbrains.mps.lang.plugin.structure.ActionDeclaration" id="2216248270835510460">
     <property name="package" value="refactoring.actions" />
     <property name="name" value="RenameMethodDeclaration" />
-    <property name="caption" value="RanameMethod" />
+    <property name="caption" value="Rename Method" />
     <property name="outsideCommandExecution" value="true" />
     <node role="parameter" type="jetbrains.mps.lang.plugin.structure.ActionParameterDeclaration" id="2216248270835510466">
       <property name="name" value="node" />

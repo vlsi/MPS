@@ -18,14 +18,14 @@ public class RenameMethod_Target implements IRefactoringTarget {
     return false;
   }
 
-  public boolean isApplicableToEntityType(final Object entity) {
-    return SNodeOperations.isInstanceOf(((SNode)entity), "jetbrains.mps.baseLanguage.structure.IMethodCall");
+  public boolean isApplicableToEntityType(Object entity) {
+    return true;
   }
 
   public boolean isApplicable(final Object entity) {
     if (!(this.isApplicableToEntityType(entity))) {
       return false;
     }
-    return true;
+    return SNodeOperations.isInstanceOf(((SNode)entity), "jetbrains.mps.baseLanguage.structure.IMethodCall") || SNodeOperations.isInstanceOf(((SNode)entity), "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration");
   }
 }

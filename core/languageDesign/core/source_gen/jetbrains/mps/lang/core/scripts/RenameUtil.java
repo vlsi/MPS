@@ -35,8 +35,6 @@ public class RenameUtil {
         public void run() {
           if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.lang.structure.structure.LinkDeclaration")) {
             result.value = SPropertyOperations.getString(SNodeOperations.cast(node, "jetbrains.mps.lang.structure.structure.LinkDeclaration"), "role");
-          } else if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.IMethodCall")) {
-            result.value = SPropertyOperations.getString(SLinkOperations.getTarget(SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.IMethodCall"), "baseMethodDeclaration", false), "name");
           } else if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.lang.core.structure.INamedConcept")) {
             result.value = SPropertyOperations.getString(SNodeOperations.cast(node, "jetbrains.mps.lang.core.structure.INamedConcept"), "name");
           }
