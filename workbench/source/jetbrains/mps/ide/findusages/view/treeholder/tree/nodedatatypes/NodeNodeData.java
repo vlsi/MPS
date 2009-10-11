@@ -138,7 +138,7 @@ public class NodeNodeData extends BaseNodeData {
   }
 
   public String getText(TextOptions options) {
-    boolean showCounter = options.myCounters && isResultsSection() && (!isResultNode());
+    boolean showCounter = options.myCounters && isResultsSection();
     String counter = showCounter ? " " + sizeRepresentation(options.mySubresultsCount) : "";
     return super.getText(options) + counter;
   }

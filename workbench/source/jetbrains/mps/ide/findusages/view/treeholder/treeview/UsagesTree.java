@@ -324,11 +324,11 @@ public abstract class UsagesTree extends MPSTree {
       num += buildCounters(child);
     }
 
+    root.setSubresultsCount(num);
+
     if (root.getUserObject().getData().isResultNode()) {
       num++;
     }
-
-    root.setSubresultsCount(num);
 
     return num;
   }
@@ -370,7 +370,7 @@ public abstract class UsagesTree extends MPSTree {
     root.setIcon(data.getIcon());
 
     String invalid = data.isInvalid() ? "<font color=red>[Invalid]</font> " : "";
-    String caption = data.getText(new TextOptions(myAdditionalInfoNeeded, true, root.getSubresultsCount()));
+    String caption = data.getText(new TextOptions(myAdditionalInfoNeeded, !root.isLeaf(), root.getSubresultsCount()));
     if (data.isExcluded()) {
       root.setText(invalid + "<font color=gray><s>" + caption + "</s></font>");
     } else {
