@@ -6,6 +6,7 @@ import jetbrains.mps.refactoring.framework.BaseRefactoring;
 import jetbrains.mps.lang.core.refactorings.Rename;
 import jetbrains.mps.refactoring.framework.IRefactoringTarget;
 import jetbrains.mps.refactoring.framework.RefactoringContext;
+import jetbrains.mps.refactoring.framework.paramchooser.mps.MPSChooserFactory;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import java.util.List;
 import jetbrains.mps.smodel.SNode;
@@ -38,7 +39,7 @@ public class RenameMethod extends BaseRefactoring {
   }
 
   public boolean init(final RefactoringContext refactoringContext) {
-    boolean result = RenameMethod.this.ask(refactoringContext, new RenameMethod_newName_Chooser(refactoringContext));
+    boolean result = RenameMethod.this.ask(refactoringContext, MPSChooserFactory.createStringChooser(refactoringContext, "newName", new RenameMethod_newName_Settings(refactoringContext)));
     if (!(result)) {
       return false;
     }
@@ -52,7 +53,7 @@ public class RenameMethod extends BaseRefactoring {
       }
     });
     if (ListSequence.fromList(overriding.value).isNotEmpty()) {
-      result = RenameMethod.this.ask(refactoringContext, new RenameMethod_refactorOverriding_Chooser(refactoringContext));
+      result = RenameMethod.this.ask(refactoringContext, MPSChooserFactory.createBooleanChooser(refactoringContext, "refactorOverriding", new RenameMethod_refactorOverriding_Settings(refactoringContext)));
       if (!(result)) {
         return false;
       }

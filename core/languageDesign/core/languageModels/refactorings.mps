@@ -40,37 +40,33 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902ae(jetbrains.mps.lang.typesystem.constraints)" version="17" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590345(jetbrains.mps.lang.pattern.structure)" version="0" />
   <devkit namespace="2677cb18-f558-4e33-bc38-a5139cee06dc(jetbrains.mps.devkit.language-design)" />
-  <maxImportIndex value="5" />
+  <maxImportIndex value="6" />
   <import index="1" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" />
   <import index="2" modelUID="f:java_stub#javax.swing(javax.swing@java_stub)" version="-1" />
   <import index="3" modelUID="r:00000000-0000-4000-0000-011c8959028e(jetbrains.mps.lang.structure.findUsages)" version="-1" />
   <import index="4" modelUID="r:00000000-0000-4000-0000-011c89590287(jetbrains.mps.lang.core.scripts)" version="-1" />
   <import index="5" modelUID="f:java_stub#javax.swing.text(javax.swing.text@java_stub)" version="-1" />
+  <import index="6" modelUID="f:java_stub#jetbrains.mps.util(jetbrains.mps.util@java_stub)" version="-1" />
   <node type="jetbrains.mps.lang.refactoring.structure.LoggableRefactoring" id="5663240094077654749">
     <property name="name" value="Rename" />
     <property name="userFriendlyName" value="Rename" />
     <node role="parameter" type="jetbrains.mps.lang.refactoring.structure.RefactoringParameter" id="5663240094077754182">
       <property name="name" value="newName" />
-      <node role="chooser" type="jetbrains.mps.lang.refactoring.structure.CustomParameterChooser" id="5663240094077754184">
-        <node role="entityType" type="jetbrains.mps.baseLanguage.structure.StringType" id="5663240094077772831" />
-        <node role="commitBlock" type="jetbrains.mps.lang.refactoring.structure.CommitClause" id="5663240094077754187">
-          <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="5663240094077754188">
-            <node role="statement" type="jetbrains.mps.lang.refactoring.structure.SetValueStatement" id="5663240094077806205">
-              <node role="value" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="5663240094077811747">
-                <node role="operand" type="jetbrains.mps.lang.refactoring.structure.ComponentExpression" id="5663240094077806207" />
-                <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="8311321388555194532">
-                  <link role="baseMethodDeclaration" targetNodeId="4.8311321388555090847" resolveInfo="getName" />
+      <node role="chooser" type="jetbrains.mps.lang.refactoring.structure.MPSParameterChooser" id="3673527736022207260">
+        <property name="title" value="New name:" />
+        <node role="paramType" type="jetbrains.mps.lang.refactoring.structure.StringMPSParameterType" id="6635062342941196727" />
+        <node role="initialValueBlock" type="jetbrains.mps.lang.refactoring.structure.InitialPropertyValueClause" id="3673527736022443489">
+          <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="3673527736022443490">
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="6635062342941365973">
+              <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="6635062342941481154">
+                <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="6635062342941365975">
+                  <node role="operand" type="jetbrains.mps.lang.refactoring.structure.SettingsRefactoringContext_ConceptFunctionParameter" id="6635062342941365982" />
+                  <node role="operation" type="jetbrains.mps.lang.refactoring.structure.NodeOperation" id="6635062342941481153" />
+                </node>
+                <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="6635062342941481159">
+                  <link role="property" targetNodeId="1.1169194664001" resolveInfo="name" />
                 </node>
               </node>
-            </node>
-          </node>
-        </node>
-        <node role="mainComponent" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="5663240094077772835">
-          <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="8311321388555190674">
-            <link role="baseMethodDeclaration" targetNodeId="4.8311321388555090794" resolveInfo="RenameUtil.NameCompoent" />
-            <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="8311321388555194534">
-              <node role="operand" type="jetbrains.mps.lang.refactoring.structure.RefactoringContextExpression" id="8311321388555194533" />
-              <node role="operation" type="jetbrains.mps.lang.refactoring.structure.NodeOperation" id="8311321388555194538" />
             </node>
           </node>
         </node>

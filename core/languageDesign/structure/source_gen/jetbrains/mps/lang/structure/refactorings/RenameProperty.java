@@ -6,6 +6,7 @@ import jetbrains.mps.refactoring.framework.BaseRefactoring;
 import jetbrains.mps.lang.core.refactorings.Rename;
 import jetbrains.mps.refactoring.framework.IRefactoringTarget;
 import jetbrains.mps.refactoring.framework.RefactoringContext;
+import jetbrains.mps.refactoring.framework.paramchooser.mps.MPSChooserFactory;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
@@ -41,7 +42,7 @@ public class RenameProperty extends BaseRefactoring {
   }
 
   public boolean init(final RefactoringContext refactoringContext) {
-    return RenameProperty.this.ask(refactoringContext, new RenameProperty_newName_Chooser(refactoringContext));
+    return RenameProperty.this.ask(refactoringContext, MPSChooserFactory.createStringChooser(refactoringContext, "newName", new RenameProperty_newName_Settings(refactoringContext)));
   }
 
   public void refactor(final RefactoringContext refactoringContext) {

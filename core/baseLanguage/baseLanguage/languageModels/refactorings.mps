@@ -57,29 +57,24 @@
     <link role="overrides" targetNodeId="2v.5663240094077654749" resolveInfo="Rename" />
     <node role="parameter" type="jetbrains.mps.lang.refactoring.structure.RefactoringParameter" id="7874812549549772010">
       <property name="name" value="newName" />
-      <node role="chooser" type="jetbrains.mps.lang.refactoring.structure.CustomParameterChooser" id="7874812549549772011">
-        <node role="entityType" type="jetbrains.mps.baseLanguage.structure.StringType" id="7874812549549772012" />
-        <node role="commitBlock" type="jetbrains.mps.lang.refactoring.structure.CommitClause" id="7874812549549772013">
-          <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="7874812549549772014">
-            <node role="statement" type="jetbrains.mps.lang.refactoring.structure.SetValueStatement" id="7874812549549772015">
-              <node role="value" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="7874812549549772016">
-                <node role="operand" type="jetbrains.mps.lang.refactoring.structure.ComponentExpression" id="7874812549549772017" />
-                <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="7874812549549772018">
-                  <link role="baseMethodDeclaration" targetNodeId="3.8311321388555090847" resolveInfo="getName" />
+      <node role="chooser" type="jetbrains.mps.lang.refactoring.structure.MPSParameterChooser" id="6635062342941536631">
+        <property name="title" value="New name:" />
+        <node role="paramType" type="jetbrains.mps.lang.refactoring.structure.StringMPSParameterType" id="6635062342941536633" />
+        <node role="initialValueBlock" type="jetbrains.mps.lang.refactoring.structure.InitialPropertyValueClause" id="6635062342941536634">
+          <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="6635062342941536635">
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="6635062342941536636">
+              <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="6635062342941536643">
+                <node role="operand" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="6635062342941536637">
+                  <link role="classConcept" targetNodeId="4413749148913391072" resolveInfo="RenameUtil" />
+                  <link role="baseMethodDeclaration" targetNodeId="4413749148913391078" resolveInfo="getMethodDeclaration" />
+                  <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="6635062342941536638">
+                    <node role="operand" type="jetbrains.mps.lang.refactoring.structure.SettingsRefactoringContext_ConceptFunctionParameter" id="6635062342941539023" />
+                    <node role="operation" type="jetbrains.mps.lang.refactoring.structure.NodeOperation" id="6635062342941536640" />
+                  </node>
                 </node>
-              </node>
-            </node>
-          </node>
-        </node>
-        <node role="mainComponent" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="7874812549549772019">
-          <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="7874812549549772020">
-            <link role="baseMethodDeclaration" targetNodeId="3.8311321388555090794" resolveInfo="RenameUtil.NameComponent" />
-            <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="4413749148913392805">
-              <link role="baseMethodDeclaration" targetNodeId="4413749148913391078" resolveInfo="getMethodDeclaration" />
-              <link role="classConcept" targetNodeId="4413749148913391072" resolveInfo="RenameUtil" />
-              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="4413749148913392806">
-                <node role="operand" type="jetbrains.mps.lang.refactoring.structure.RefactoringContextExpression" id="4413749148913392807" />
-                <node role="operation" type="jetbrains.mps.lang.refactoring.structure.NodeOperation" id="4413749148913392808" />
+                <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="6635062342941537642">
+                  <link role="property" targetNodeId="3v.1169194664001" resolveInfo="name" />
+                </node>
               </node>
             </node>
           </node>
@@ -88,28 +83,9 @@
     </node>
     <node role="parameter" type="jetbrains.mps.lang.refactoring.structure.RefactoringParameter" id="7874812549549919722">
       <property name="name" value="refactorOverriding" />
-      <node role="chooser" type="jetbrains.mps.lang.refactoring.structure.CustomParameterChooser" id="7874812549549919725">
-        <node role="entityType" type="jetbrains.mps.baseLanguage.structure.BooleanType" id="7874812549549919844" />
-        <node role="mainComponent" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="7874812549549919845">
-          <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="7874812549549928411">
-            <link role="baseMethodDeclaration" targetNodeId="6.~JCheckBox.&lt;init&gt;(java.lang.String)" resolveInfo="JCheckBox" />
-            <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="7874812549549928412">
-              <property name="value" value="rename overriding methods" />
-            </node>
-          </node>
-        </node>
-        <node role="commitBlock" type="jetbrains.mps.lang.refactoring.structure.CommitClause" id="7874812549549919728">
-          <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="7874812549549919729">
-            <node role="statement" type="jetbrains.mps.lang.refactoring.structure.SetValueStatement" id="7874812549549928413">
-              <node role="value" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="7874812549549928416">
-                <node role="operand" type="jetbrains.mps.lang.refactoring.structure.ComponentExpression" id="7874812549549928415" />
-                <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="7874812549549930367">
-                  <link role="baseMethodDeclaration" targetNodeId="6.~AbstractButton.isSelected():boolean" resolveInfo="isSelected" />
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
+      <node role="chooser" type="jetbrains.mps.lang.refactoring.structure.MPSParameterChooser" id="6635062342941539024">
+        <property name="title" value="rename overriding methods" />
+        <node role="paramType" type="jetbrains.mps.lang.refactoring.structure.BooleanMPSParameterType" id="6635062342941539026" />
       </node>
     </node>
     <node role="target" type="jetbrains.mps.lang.refactoring.structure.NodeTarget" id="7874812549549771310">

@@ -8,6 +8,7 @@ import jetbrains.mps.refactoring.framework.RefactoringContext;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.lang.core.scripts.RenameUtil;
+import jetbrains.mps.refactoring.framework.paramchooser.mps.MPSChooserFactory;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.ide.findusages.model.SearchResults;
 import jetbrains.mps.ide.findusages.view.FindUtils;
@@ -42,7 +43,7 @@ public class Rename extends BaseRefactoring {
     if (!(result.value)) {
       return false;
     }
-    return Rename.this.ask(refactoringContext, new Rename_newName_Chooser(refactoringContext));
+    return Rename.this.ask(refactoringContext, MPSChooserFactory.createStringChooser(refactoringContext, "newName", new Rename_newName_Settings(refactoringContext)));
   }
 
   public void refactor(final RefactoringContext refactoringContext) {
