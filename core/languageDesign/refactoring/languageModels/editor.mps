@@ -1472,6 +1472,7 @@
     <link role="conceptDeclaration" targetNodeId="1.4413749148913695136" resolveInfo="MPSParameterType" />
     <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_ConceptProperty" id="3673527736022208480">
       <link role="relationDeclaration" targetNodeId="2.1137473891462" resolveInfo="alias" />
+      <link role="styleClass" targetNodeId="4.1186415544875" resolveInfo="KeyWord" />
     </node>
   </node>
   <visible index="3" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />

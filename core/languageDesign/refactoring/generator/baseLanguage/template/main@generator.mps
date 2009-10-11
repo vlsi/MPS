@@ -6306,19 +6306,25 @@
         <node role="nodeMacro$attribute" type="jetbrains.mps.lang.generator.structure.CopySrcNodeMacro" id="3644668945280073793">
           <node role="sourceNodeQuery" type="jetbrains.mps.lang.generator.structure.SourceSubstituteMacro_SourceNodeQuery" id="3644668945280073794">
             <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="3644668945280073795">
-              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="3644668945280073796">
-                <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="3644668945280073797">
-                  <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="3644668945280073798">
-                    <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="3644668945280073799" />
-                    <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_GetAncestorOperation" id="3644668945280073800">
-                      <node role="parameter" type="jetbrains.mps.lang.smodel.structure.OperationParm_Concept" id="3644668945280073801">
-                        <node role="conceptArgument" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" id="3644668945280073802">
-                          <link role="conceptDeclaration" targetNodeId="1.6895093993902311012" resolveInfo="RefactoringParameter" />
+              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="6635062342941544152">
+                <node role="expression" type="jetbrains.mps.lang.typesystem.structure.CoerceExpression" id="6635062342941544153">
+                  <node role="pattern" type="jetbrains.mps.lang.typesystem.structure.ConceptReference" id="6635062342941544156">
+                    <property name="name" value="classifierType" />
+                    <link role="concept" targetNodeId="5.1107535904670" resolveInfo="ClassifierType" />
+                  </node>
+                  <node role="nodeToCoerce" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="6635062342941544157">
+                    <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="6635062342941544158">
+                      <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="6635062342941544159" />
+                      <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_GetAncestorOperation" id="6635062342941544160">
+                        <node role="parameter" type="jetbrains.mps.lang.smodel.structure.OperationParm_Concept" id="6635062342941544161">
+                          <node role="conceptArgument" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" id="6635062342941544162">
+                            <link role="conceptDeclaration" targetNodeId="1.6895093993902311012" resolveInfo="RefactoringParameter" />
+                          </node>
                         </node>
                       </node>
                     </node>
+                    <node role="operation" type="jetbrains.mps.lang.typesystem.structure.Node_TypeOperation" id="6635062342941544163" />
                   </node>
-                  <node role="operation" type="jetbrains.mps.lang.typesystem.structure.Node_TypeOperation" id="3644668945280073803" />
                 </node>
               </node>
             </node>

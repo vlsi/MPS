@@ -668,7 +668,7 @@ public class QueriesGenerated {
   }
 
   public static SNode sourceNodeQuery_3644668945280073794(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return TypeChecker.getInstance().getTypeOf(SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.lang.refactoring.structure.RefactoringParameter", false, false));
+    return TypeChecker.getInstance().getRuntimeSupport().coerce_(TypeChecker.getInstance().getTypeOf(SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.lang.refactoring.structure.RefactoringParameter", false, false)), HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.structure.ClassifierType"), true);
   }
 
   public static SNode sourceNodeQuery_3644668945280073810(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {

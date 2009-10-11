@@ -1198,7 +1198,7 @@
     <property name="name" value="MPSParameterChooser" />
     <link role="extends" targetNodeId="7573235936722759491" resolveInfo="RefactoringParameterChooser" />
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="5497648299878742038">
-      <property name="value" value="MPS entity" />
+      <property name="value" value="predefined" />
       <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" resolveInfo="alias" />
     </node>
     <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="4413749148913695157">
