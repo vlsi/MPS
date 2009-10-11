@@ -29,10 +29,10 @@ public class StraightDerivedClasses_Finder extends GeneratedFinder {
 
   protected void doFind(SNode node, IScope scope, List<SNode> _results, ProgressIndicator indicator) {
     for (SNode nodeUsage : FindUtils.executeFinder("jetbrains.mps.lang.structure.findUsages.NodeUsages_Finder", node, scope, indicator)) {
-      if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(nodeUsage), "jetbrains.mps.baseLanguage.structure.ClassConcept")) {
-        if (SNodeOperations.hasRole(nodeUsage, "jetbrains.mps.baseLanguage.structure.ClassConcept", "superclass")) {
-          ListSequence.fromList(_results).addElement(SNodeOperations.getParent(nodeUsage));
-        }
+      if (SNodeOperations.hasRole(nodeUsage, "jetbrains.mps.baseLanguage.structure.ClassConcept", "superclass")) {
+        ListSequence.fromList(_results).addElement(SNodeOperations.getParent(nodeUsage));
+      } else if (SNodeOperations.isInstanceOf(nodeUsage, "jetbrains.mps.baseLanguage.structure.AnonymousClass")) {
+        ListSequence.fromList(_results).addElement(nodeUsage);
       }
     }
   }
