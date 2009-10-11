@@ -13,6 +13,9 @@ import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
+import jetbrains.mps.smodel.IScope;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class MPSParameterChooser_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
@@ -25,7 +28,10 @@ public class MPSParameterChooser_Editor extends DefaultNodeEditor {
     editorCell.setGridLayout(true);
     editorCell.addEditorCell(this.createCollection_5978_1(editorContext, node));
     editorCell.addEditorCell(this.createCollection_5978_2(editorContext, node));
-    editorCell.addEditorCell(this.createRefNode_5978_1(editorContext, node));
+    if (renderingCondition5978_0(node, editorContext, editorContext.getOperationContext().getScope())) {
+      editorCell.addEditorCell(this.createRefNode_5978_0(editorContext, node));
+    }
+    editorCell.addEditorCell(this.createRefNode_5978_2(editorContext, node));
     return editorCell;
   }
 
@@ -33,7 +39,7 @@ public class MPSParameterChooser_Editor extends DefaultNodeEditor {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_5978_1");
     editorCell.addEditorCell(this.createConstant_5978_0(editorContext, node));
-    editorCell.addEditorCell(this.createRefNode_5978_0(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_5978_1(editorContext, node));
     return editorCell;
   }
 
@@ -60,6 +66,23 @@ public class MPSParameterChooser_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createRefNode_5978_0(EditorContext editorContext, SNode node) {
+    CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
+    provider.setRole("initialValueBlock");
+    provider.setNoTargetText("<no initialValueBlock>");
+    EditorCell editorCell;
+    editorCell = provider.createEditorCell(editorContext);
+    editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
+    SNode attributeConcept = provider.getRoleAttribute();
+    Class attributeKind = provider.getRoleAttributeClass();
+    if (attributeConcept != null) {
+      IOperationContext opContext = editorContext.getOperationContext();
+      EditorManager manager = EditorManager.getInstanceFromContext(opContext);
+      return manager.createRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
+    } else
+    return editorCell;
+  }
+
+  private EditorCell createRefNode_5978_1(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("paramType");
     provider.setNoTargetText("<no paramType>");
@@ -94,7 +117,7 @@ public class MPSParameterChooser_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefNode_5978_1(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_5978_2(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("filterBlock");
     provider.setNoTargetText("<no filter>");
@@ -109,5 +132,9 @@ public class MPSParameterChooser_Editor extends DefaultNodeEditor {
       return manager.createRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
     } else
     return editorCell;
+  }
+
+  private static boolean renderingCondition5978_0(SNode node, EditorContext editorContext, IScope scope) {
+    return !(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(node, "paramType", true), "jetbrains.mps.lang.refactoring.structure.ModelMPSParameterType") || SNodeOperations.isInstanceOf(SLinkOperations.getTarget(node, "paramType", true), "jetbrains.mps.lang.refactoring.structure.ModuleMPSParameterType"));
   }
 }

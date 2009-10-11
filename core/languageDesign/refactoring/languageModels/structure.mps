@@ -1406,12 +1406,6 @@
     <property name="name" value="InitialPropertyValueClause" />
     <property name="package" value="RefDecl.Arg.Parameters.Chooser.MPS" />
     <link role="extends" targetNodeId="2.1137021947720" resolveInfo="ConceptFunction" />
-    <node role="conceptLink" type="jetbrains.mps.lang.structure.structure.AggregationConceptLink" id="7573235936722759512">
-      <link role="conceptLinkDeclaration" targetNodeId="2.1137545148427" resolveInfo="conceptFunctionReturnType" />
-      <node role="target" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="7573235936722759517">
-        <link role="classifier" targetNodeId="7.~Object" resolveInfo="Object" />
-      </node>
-    </node>
     <node role="conceptLink" type="jetbrains.mps.lang.structure.structure.ReferenceConceptLink" id="3644668945279694359">
       <link role="conceptLinkDeclaration" targetNodeId="2.1161119487665" resolveInfo="applicableConceptFunctionParameter" />
       <link role="target" targetNodeId="3644668945279694356" resolveInfo="ChooserRefactoringContext_ConceptFunctionParameter" />

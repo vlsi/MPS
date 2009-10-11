@@ -85,10 +85,12 @@ public class MPSChooserFactory {
     private JTextField myTextField;
     private RefactoringContext myContext;
     private String myParamName;
+    private IChooserSettings<String> mySettings;
 
     private StringChooser(RefactoringContext context, String paramName, IChooserSettings<String> settings) {
       myContext = context;
       myParamName = paramName;
+      mySettings = settings;
 
       myPanel = new JPanel(new BorderLayout());
       myPanel.add(new JLabel(settings.getTitle()), BorderLayout.WEST);
@@ -110,7 +112,10 @@ public class MPSChooserFactory {
     }
 
     public void commit() throws InvalidInputValueException {
-      myContext.setParameter(myParamName, myTextField.getText());
+      String value = myTextField.getText();
+      if (mySettings.met(value)) {
+        myContext.setParameter(myParamName, value);
+      } else throw new InvalidInputValueException(mySettings.getTitle()+": wrong value");
     }
   }
 
@@ -118,10 +123,12 @@ public class MPSChooserFactory {
     private JCheckBox myCheckBox;
     private RefactoringContext myContext;
     private String myParamName;
+    private IChooserSettings<Boolean> mySettings;
 
     public BooleanChooser(RefactoringContext context, String paramName, IChooserSettings<Boolean> settings) {
       myContext = context;
       myParamName = paramName;
+      mySettings = settings;
 
       myCheckBox = new JCheckBox(settings.getTitle());
 
@@ -144,7 +151,10 @@ public class MPSChooserFactory {
     }
 
     public void commit() throws InvalidInputValueException {
-      myContext.setParameter(myParamName, myCheckBox.isSelected());
+      boolean value = myCheckBox.isSelected();
+      if (mySettings.met(value)) {
+        myContext.setParameter(myParamName, value);
+      } else throw new InvalidInputValueException(mySettings.getTitle()+": wrong value");
     }
   }
 }
