@@ -2044,5 +2044,37 @@
       <link role="concept" targetNodeId="1.3302086321379403347" resolveInfo="DeleteFeatureExpression" />
     </node>
   </node>
+  <node type="jetbrains.mps.lang.typesystem.structure.InferenceRule" id="4413749148913634032">
+    <property name="name" value="typeof_ModuleTarget" />
+    <property name="package" value="RefDecl.Target.Module" />
+    <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="4413749148913634033">
+      <node role="statement" type="jetbrains.mps.lang.typesystem.structure.CreateStrongLessThanInequationStatement" id="4413749148913634044">
+        <property name="checkOnly" value="true" />
+        <node role="rightExpression" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause" id="4413749148913634048">
+          <node role="normalType" type="jetbrains.mps.lang.quotation.structure.Quotation" id="4413749148913634049">
+            <node role="quotedNode" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="4413749148913634053">
+              <link role="classifier" targetNodeId="9.~IModule" resolveInfo="IModule" />
+            </node>
+          </node>
+        </node>
+        <node role="leftExpression" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause" id="4413749148913634047">
+          <node role="normalType" type="jetbrains.mps.lang.typesystem.structure.TypeOfExpression" id="4413749148913634036">
+            <node role="term" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="4413749148913634039">
+              <node role="operand" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference" id="4413749148913634038">
+                <link role="applicableNode" targetNodeId="4413749148913634034" resolveInfo="target" />
+              </node>
+              <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="4413749148913634043">
+                <link role="link" targetNodeId="1.6895093993902310767" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="applicableNode" type="jetbrains.mps.lang.typesystem.structure.ConceptReference" id="4413749148913634034">
+      <property name="name" value="target" />
+      <link role="concept" targetNodeId="1.6895093993902310763" resolveInfo="ModuleTarget" />
+    </node>
+  </node>
 </model>
 
