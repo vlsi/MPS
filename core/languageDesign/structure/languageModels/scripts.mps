@@ -1386,9 +1386,9 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.refactoring.structure.OldRefactoring" id="1198587937318">
-    <property name="name" value="RenameLink" />
     <property name="userFriendlyName" value="Rename Link" />
     <property name="oneTargetOnly" value="true" />
+    <property name="name" value="RenameLink" />
     <link role="applicableConcept" targetNodeId="1.1071489288298" resolveInfo="LinkDeclaration" />
     <link role="overrides" targetNodeId="7.1199457919461" resolveInfo="Rename" />
     <node role="arguments" type="jetbrains.mps.lang.refactoring.structure.RequiredUserEnteredArgument" id="1198587985396">

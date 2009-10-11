@@ -82,6 +82,6 @@ public class Rename extends BaseGeneratedRefactoring {
   }
 
   public static String getKeyStroke_static() {
-    return "shift F6";
+    return "";
   }
 }

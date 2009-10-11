@@ -72,12 +72,8 @@
               <node role="operand" type="jetbrains.mps.lang.refactoring.structure.RefactoringContextExpression" id="8311321388555194533" />
               <node role="operation" type="jetbrains.mps.lang.refactoring.structure.NodeOperation" id="8311321388555194538" />
             </node>
-            <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="8311321388555496965">
-              <property name="value" value="new name:" />
-            </node>
           </node>
         </node>
-        <node role="focusedComponent" type="jetbrains.mps.lang.refactoring.structure.ComponentExpression" id="5663240094078010304" />
       </node>
     </node>
     <node role="affectedNodesBlock" type="jetbrains.mps.lang.refactoring.structure.AffectedNodesClause" id="5663240094077654750">
@@ -86,10 +82,6 @@
           <node role="expression" type="jetbrains.mps.lang.refactoring.structure.ExecuteFindersExpression" id="5663240094077817916">
             <node role="finders" type="jetbrains.mps.lang.refactoring.structure.FinderReference" id="5663240094077817917">
               <link role="finderDeclaration" targetNodeId="3.1198430852441" resolveInfo="NodeAndDescendantsUsages" />
-            </node>
-            <node role="searchNode" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="5663240094077817919">
-              <node role="operand" type="jetbrains.mps.lang.refactoring.structure.RefactoringContext_ConceptFunctionParameter" id="5663240094077817918" />
-              <node role="operation" type="jetbrains.mps.lang.refactoring.structure.NodeOperation" id="5663240094077817923" />
             </node>
           </node>
         </node>
@@ -109,12 +101,9 @@
               <link role="refactoringParameter" targetNodeId="5663240094077754182" resolveInfo="newName" />
             </node>
             <node role="lValue" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="5663240094077817953">
-              <node role="operand" type="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" id="5663240094077817951">
-                <link role="concept" targetNodeId="1.1169194658468" resolveInfo="INamedConcept" />
-                <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="5663240094077817942">
-                  <node role="operand" type="jetbrains.mps.lang.refactoring.structure.RefactoringContext_ConceptFunctionParameter" id="5663240094077817941" />
-                  <node role="operation" type="jetbrains.mps.lang.refactoring.structure.NodeOperation" id="5663240094077817946" />
-                </node>
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="5663240094077817942">
+                <node role="operand" type="jetbrains.mps.lang.refactoring.structure.RefactoringContext_ConceptFunctionParameter" id="5663240094077817941" />
+                <node role="operation" type="jetbrains.mps.lang.refactoring.structure.NodeOperation" id="5663240094077817946" />
               </node>
               <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="5663240094077817957">
                 <link role="property" targetNodeId="1.1169194664001" resolveInfo="name" />
@@ -124,20 +113,8 @@
         </node>
       </node>
     </node>
-    <node role="keystroke" type="jetbrains.mps.lang.editor.structure.CellKeyMapKeystroke" id="5663240094077754181">
-      <property name="modifiers" value="ctrl+shift" />
-      <property name="keycode" value="VK_R" />
-    </node>
     <node role="initBlock" type="jetbrains.mps.lang.refactoring.structure.InitClause" id="5663240094077817924">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="5663240094077817925">
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="5663240094078282287">
-          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="5663240094078282288">
-            <property name="name" value="context" />
-            <property name="isFinal" value="true" />
-            <node role="type" type="jetbrains.mps.lang.refactoring.structure.ContextType" id="5663240094078282289" />
-            <node role="initializer" type="jetbrains.mps.lang.refactoring.structure.RefactoringContext_ConceptFunctionParameter" id="5663240094078282290" />
-          </node>
-        </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="5663240094078280491">
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="5663240094078280492">
             <property name="name" value="result" />
@@ -156,9 +133,7 @@
                     <link role="classConcept" targetNodeId="4.4706738529699924056" resolveInfo="RenameUtil" />
                     <link role="baseMethodDeclaration" targetNodeId="4.4706738529699924062" resolveInfo="canBeRenamed" />
                     <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="5663240094078280503">
-                      <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="5663240094078282283">
-                        <link role="variableDeclaration" targetNodeId="5663240094078282288" resolveInfo="type" />
-                      </node>
+                      <node role="operand" type="jetbrains.mps.lang.refactoring.structure.RefactoringContext_ConceptFunctionParameter" id="3302086321379143568" />
                       <node role="operation" type="jetbrains.mps.lang.refactoring.structure.NodeOperation" id="5663240094078280505" />
                     </node>
                   </node>
@@ -189,6 +164,10 @@
           </node>
         </node>
       </node>
+    </node>
+    <node role="keystroke" type="jetbrains.mps.lang.plugin.structure.KeyMapKeystroke" id="3302086321380508735">
+      <property name="keycode" value="VK_F6" />
+      <property name="modifiers" value="shift" />
     </node>
   </node>
 </model>

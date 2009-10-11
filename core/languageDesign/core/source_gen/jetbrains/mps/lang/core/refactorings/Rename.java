@@ -9,7 +9,6 @@ import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.lang.core.scripts.RenameUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.ide.findusages.model.SearchResults;
 import jetbrains.mps.ide.findusages.view.FindUtils;
 import com.intellij.openapi.progress.EmptyProgressIndicator;
@@ -34,11 +33,10 @@ public class Rename extends BaseRefactoring {
   }
 
   public boolean init(final RefactoringContext refactoringContext) {
-    final RefactoringContext context = refactoringContext;
     final Wrappers._boolean result = new Wrappers._boolean();
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
-        result.value = RenameUtil.canBeRenamed(context.getSelectedNode());
+        result.value = RenameUtil.canBeRenamed(refactoringContext.getSelectedNode());
       }
     });
     if (!(result.value)) {
@@ -48,7 +46,7 @@ public class Rename extends BaseRefactoring {
   }
 
   public void refactor(final RefactoringContext refactoringContext) {
-    SPropertyOperations.set(SNodeOperations.cast(refactoringContext.getSelectedNode(), "jetbrains.mps.lang.core.structure.INamedConcept"), "name", ((String)refactoringContext.getParameter("newName")));
+    SPropertyOperations.set(refactoringContext.getSelectedNode(), "name", ((String)refactoringContext.getParameter("newName")));
   }
 
   public SearchResults getAffectedNodes(final RefactoringContext refactoringContext) {
@@ -59,6 +57,6 @@ public class Rename extends BaseRefactoring {
   }
 
   public static String getKeyStroke_static() {
-    return "ctrl shift R";
+    return "shift F6";
   }
 }

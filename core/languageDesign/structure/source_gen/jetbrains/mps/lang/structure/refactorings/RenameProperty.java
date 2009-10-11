@@ -6,26 +6,26 @@ import jetbrains.mps.refactoring.framework.BaseRefactoring;
 import jetbrains.mps.lang.core.refactorings.Rename;
 import jetbrains.mps.refactoring.framework.IRefactoringTarget;
 import jetbrains.mps.refactoring.framework.RefactoringContext;
+import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import java.util.List;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.internal.collections.runtime.backports.LinkedList;
+import java.util.ArrayList;
 import jetbrains.mps.smodel.Language;
-import jetbrains.mps.internal.collections.runtime.Sequence;
+import java.util.Map;
+import jetbrains.mps.project.IModule;
 import jetbrains.mps.refactoring.framework.RefactoringUtil;
 import jetbrains.mps.ide.findusages.model.SearchResults;
-import jetbrains.mps.ide.findusages.view.FindUtils;
-import com.intellij.openapi.progress.EmptyProgressIndicator;
-import jetbrains.mps.project.GlobalScope;
 
-public class RenameConcept extends BaseRefactoring {
-  public RenameConcept() {
+public class RenameProperty extends BaseRefactoring {
+  public RenameProperty() {
     this.addTransientParameter("newName");
   }
 
   public String getUserFriendlyName() {
-    return "RenameConcept";
+    return "Rename Property";
   }
 
   public String getKeyStroke() {
@@ -37,32 +37,36 @@ public class RenameConcept extends BaseRefactoring {
   }
 
   public IRefactoringTarget getRefactoringTarget() {
-    return new RenameConcept_Target();
+    return new RenameProperty_Target();
   }
 
   public boolean init(final RefactoringContext refactoringContext) {
-    return RenameConcept.this.ask(refactoringContext, new RenameConcept_newName_Chooser(refactoringContext));
+    return RenameProperty.this.ask(refactoringContext, new RenameProperty_newName_Chooser(refactoringContext));
   }
 
   public void refactor(final RefactoringContext refactoringContext) {
-    String newConceptName = SNodeOperations.getModel(refactoringContext.getSelectedNode()).getSModelFqName() + "." + ((String)refactoringContext.getParameter("newName"));
+    SNode concept = SNodeOperations.getAncestor(refactoringContext.getSelectedNode(), "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration", false, false);
+    String newPropName = SNodeOperations.getModel(concept).getSModelFqName() + "." + SPropertyOperations.getString(concept, "name");
     
-    refactoringContext.changeFeatureName(refactoringContext.getSelectedNode(), newConceptName, ((String)refactoringContext.getParameter("newName")));;
+    refactoringContext.changeFeatureName(refactoringContext.getSelectedNode(), newPropName, ((String)refactoringContext.getParameter("newName")));;
   }
 
   public List<SModel> getModelsToGenerate(final RefactoringContext refactoringContext) {
-    List<SModel> result = ListSequence.fromList(new LinkedList<SModel>());
+    List<SModel> result = ListSequence.fromList(new ArrayList<SModel>());
     Language sourceLanguage = Language.getLanguageFor(SNodeOperations.getModel(refactoringContext.getSelectedNode()).getModelDescriptor());
-    if (sourceLanguage != null) {
-      for (List<SModel> value : Sequence.fromIterable(RefactoringUtil.getLanguageAndItsExtendingLanguageModels(refactoringContext.getSelectedMPSProject(), sourceLanguage).values())) {
-        ListSequence.fromList(result).addSequence(ListSequence.fromList(value));
-      }
+    if (sourceLanguage == null) {
+      return result;
+    }
+
+    Map<IModule, List<SModel>> modelsMap = RefactoringUtil.getLanguageAndItsExtendingLanguageModels(refactoringContext.getSelectedMPSProject(), sourceLanguage);
+    for (List<SModel> modelList : modelsMap.values()) {
+      ListSequence.fromList(result).addSequence(ListSequence.fromList(modelList));
     }
     return result;
   }
 
   public SearchResults getAffectedNodes(final RefactoringContext refactoringContext) {
-    return FindUtils.getSearchResults(new EmptyProgressIndicator(), refactoringContext.getSelectedNode(), GlobalScope.getInstance(), "jetbrains.mps.lang.structure.findUsages.ConceptInstances_Finder", "jetbrains.mps.lang.structure.findUsages.NodeAndDescendantsUsages_Finder");
+    return new SearchResults();
   }
 
   public void updateModel(final SModel model, final RefactoringContext refactoringContext) {

@@ -8,11 +8,12 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import javax.swing.JPanel;
+import javax.swing.JTextField;
+import java.awt.BorderLayout;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import javax.swing.JPanel;
-import javax.swing.JTextField;
 import javax.swing.JLabel;
 
 public class RenameUtil {
@@ -24,29 +25,26 @@ public class RenameUtil {
     return manager.getNodePropertyGetter(node, nameProperty) == null;
   }
 
-  public static String getName(final SNode node) {
-    final Wrappers._T<String> result = new Wrappers._T<String>();
-    ModelAccess.instance().runReadAction(new Runnable() {
-      public void run() {
-        result.value = SPropertyOperations.getString(SNodeOperations.cast(node, "jetbrains.mps.lang.core.structure.INamedConcept"), "name");
-      }
-    });
-    return result.value;
-  }
-
-  public static class NameCompoent extends JPanel {
+  public static class NameComponent extends JPanel {
     private JTextField myTextField;
 
-    public NameCompoent(final SNode node, String text) {
+    public NameComponent(final SNode node) {
+      this.setLayout(new BorderLayout());
       final Wrappers._T<String> result = new Wrappers._T<String>();
       ModelAccess.instance().runReadAction(new Runnable() {
         public void run() {
-          result.value = SPropertyOperations.getString(SNodeOperations.cast(node, "jetbrains.mps.lang.core.structure.INamedConcept"), "name");
+          if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.lang.structure.structure.LinkDeclaration")) {
+            result.value = SPropertyOperations.getString(SNodeOperations.cast(node, "jetbrains.mps.lang.structure.structure.LinkDeclaration"), "role");
+          } else if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.IMethodCall")) {
+            result.value = SPropertyOperations.getString(SLinkOperations.getTarget(SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.IMethodCall"), "baseMethodDeclaration", false), "name");
+          } else if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.lang.core.structure.INamedConcept")) {
+            result.value = SPropertyOperations.getString(SNodeOperations.cast(node, "jetbrains.mps.lang.core.structure.INamedConcept"), "name");
+          }
         }
       });
-      this.add(new JLabel(text));
+      this.add(new JLabel("new name:"));
       this.myTextField = new JTextField(result.value);
-      this.add(this.myTextField);
+      this.add(this.myTextField, BorderLayout.CENTER);
     }
 
     public String getName() {
