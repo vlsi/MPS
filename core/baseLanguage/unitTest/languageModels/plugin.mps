@@ -6560,7 +6560,7 @@
       </node>
     </node>
     <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1208524225077" />
-    <node role="superclass" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1208524225078">
+    <node role="superclass" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="2915650025107681207">
       <link role="classifier" targetNodeId="44.1208520470121" resolveInfo="BaseOutputReader" />
     </node>
     <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1208524225079">
