@@ -148,10 +148,6 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
       this.myInferenceRules.add(inferenceRule);
     }
     {
-      InferenceRule_Runtime inferenceRule = new typeof_ChooserRefactoringContext_ConceptFunctionParameter_InferenceRule();
-      this.myInferenceRules.add(inferenceRule);
-    }
-    {
       InferenceRule_Runtime inferenceRule = new typeof_CustomParameterChooser_InferenceRule();
       this.myInferenceRules.add(inferenceRule);
     }
@@ -185,6 +181,10 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
     }
     {
       InferenceRule_Runtime inferenceRule = new typeof_MPSParameterType_InferenceRule();
+      this.myInferenceRules.add(inferenceRule);
+    }
+    {
+      InferenceRule_Runtime inferenceRule = new typeof_InitialPropertyValueClause_InferenceRule();
       this.myInferenceRules.add(inferenceRule);
     }
   }
