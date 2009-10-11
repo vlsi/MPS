@@ -10,7 +10,7 @@ import jetbrains.mps.project.GlobalScope;
 public class MPSParameterChooser extends RefactoringParameterChooser {
   public static final String concept = "jetbrains.mps.lang.refactoring.structure.MPSParameterChooser";
   public static final String TITLE = "title";
-  public static final String TYPE = "type";
+  public static final String PARAM_TYPE = "paramType";
   public static final String FILTER_BLOCK = "filterBlock";
   public static final String INITIAL_VALUE_BLOCK = "initialValueBlock";
 
@@ -26,13 +26,12 @@ public class MPSParameterChooser extends RefactoringParameterChooser {
     this.setProperty(MPSParameterChooser.TITLE, value);
   }
 
-  public MPSParameterType getType() {
-    String value = super.getProperty(MPSParameterChooser.TYPE);
-    return MPSParameterType.parseValue(value);
+  public MPSParameterType getParamType() {
+    return (MPSParameterType)this.getChild(MPSParameterType.class, MPSParameterChooser.PARAM_TYPE);
   }
 
-  public void setType(MPSParameterType value) {
-    super.setProperty(MPSParameterChooser.TYPE, value.getValueAsString());
+  public void setParamType(MPSParameterType node) {
+    super.setChild(MPSParameterChooser.PARAM_TYPE, node);
   }
 
   public FilterParameterClause getFilterBlock() {

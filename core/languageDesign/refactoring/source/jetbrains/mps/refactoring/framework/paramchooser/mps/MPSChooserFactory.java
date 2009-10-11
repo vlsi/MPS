@@ -51,4 +51,26 @@ public class MPSChooserFactory {
       }
     });
   }
+
+  public static IChooser createStringChooser(final RefactoringContext context, final String paramName, final IChooserSettings<IModule> settings) {
+    return null;/*ModelAccess.instance().runReadAction(new Computable<IChooser>() {
+      public IChooser compute() {
+        return new BaseMPSChooser(context, paramName, new ModuleChooserType(), settings);
+      }
+    });*/
+  }
+  public static IChooser createBooleanChooser(final RefactoringContext context, final String paramName, final IChooserSettings<IModule> settings) {
+    return null;/*ModelAccess.instance().runReadAction(new Computable<IChooser>() {
+      public IChooser compute() {
+        return new BaseMPSChooser(context, paramName, new ModuleChooserType(), settings);
+      }
+    });*/
+  }
+  public static IChooser createIntChooser(final RefactoringContext context, final String paramName, final IChooserSettings<IModule> settings) {
+    return null;/*ModelAccess.instance().runReadAction(new Computable<IChooser>() {
+      public IChooser compute() {
+        return new BaseMPSChooser(context, paramName, new ModuleChooserType(), settings);
+      }
+    });*/
+  }
 }

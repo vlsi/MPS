@@ -15,6 +15,7 @@ import jetbrains.mps.lang.plugin.behavior.KeyMapKeystroke_Behavior;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.generator.template.ReferenceMacroContext;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
+import jetbrains.mps.lang.refactoring.behavior.MPSParameterType_Behavior;
 import jetbrains.mps.generator.template.IfMacroContext;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
@@ -240,17 +241,19 @@ public class QueriesGenerated {
   }
 
   public static Object referenceMacro_GetReferent_3644668945280030643(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    if (SPropertyOperations.hasValue(_context.getNode(), "type", "node", "node")) {
-      return SLinkOperations.getTarget(new _Quotations.QuotationClass_0().createNode(), "baseMethodDeclaration", false);
-    } else if (SPropertyOperations.hasValue(_context.getNode(), "type", "model", "node")) {
-      return SLinkOperations.getTarget(new _Quotations.QuotationClass_1().createNode(), "baseMethodDeclaration", false);
-    } else {
-      return SLinkOperations.getTarget(new _Quotations.QuotationClass_2().createNode(), "baseMethodDeclaration", false);
-    }
+    return SLinkOperations.getTarget(MPSParameterType_Behavior.call_getCreatorMethod_4413749148913760555(SLinkOperations.getTarget(_context.getNode(), "paramType", true)), "baseMethodDeclaration", false);
   }
 
   public static Object referenceMacro_GetReferent_3644668945280073911(final IOperationContext operationContext, final ReferenceMacroContext _context) {
     return _context.getOutputNodeByInputNodeAndMappingLabel(SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.lang.refactoring.structure.MPSParameterChooser", false, false), "settingsClass");
+  }
+
+  public static Object referenceMacro_GetReferent_4413749148913757642(final IOperationContext operationContext, final ReferenceMacroContext _context) {
+    return _context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "settingsConstructor");
+  }
+
+  public static Object referenceMacro_GetReferent_4413749148913760650(final IOperationContext operationContext, final ReferenceMacroContext _context) {
+    return SLinkOperations.getTarget(MPSParameterType_Behavior.call_getCreatorMethod_4413749148913760555(SLinkOperations.getTarget(_context.getNode(), "paramType", true)), "classConcept", false);
   }
 
   public static Object referenceMacro_GetReferent_5934994956486083401(final IOperationContext operationContext, final ReferenceMacroContext _context) {
@@ -287,11 +290,11 @@ public class QueriesGenerated {
 
   public static Object referenceMacro_GetReferent_7573235936722758662(final IOperationContext operationContext, final ReferenceMacroContext _context) {
     if (SNodeOperations.isInstanceOf(_context.getNode(), "jetbrains.mps.lang.refactoring.structure.NodeTarget")) {
-      return SLinkOperations.getTarget(new _Quotations.QuotationClass_3().createNode(), "enumConstantDeclaration", false);
+      return SLinkOperations.getTarget(new _Quotations.QuotationClass_0().createNode(), "enumConstantDeclaration", false);
     } else if (SNodeOperations.isInstanceOf(_context.getNode(), "jetbrains.mps.lang.refactoring.structure.ModelTarget")) {
-      return SLinkOperations.getTarget(new _Quotations.QuotationClass_4().createNode(), "enumConstantDeclaration", false);
+      return SLinkOperations.getTarget(new _Quotations.QuotationClass_1().createNode(), "enumConstantDeclaration", false);
     } else if (SNodeOperations.isInstanceOf(_context.getNode(), "jetbrains.mps.lang.refactoring.structure.ModuleTarget")) {
-      return SLinkOperations.getTarget(new _Quotations.QuotationClass_5().createNode(), "enumConstantDeclaration", false);
+      return SLinkOperations.getTarget(new _Quotations.QuotationClass_2().createNode(), "enumConstantDeclaration", false);
     }
     return null;
   }
@@ -449,19 +452,19 @@ public class QueriesGenerated {
   }
 
   public static boolean ifMacro_Condition_7110754463748604088(final IOperationContext operationContext, final IfMacroContext _context) {
-    return (SLinkOperations.getTarget(_context.getNode(), "chooseComponentClause", true) == null) && TypeChecker.getInstance().getSubtypingManager().isSubtype(SLinkOperations.getTarget(_context.getNode(), "argumentType", true), new _Quotations.QuotationClass_6().createNode());
+    return (SLinkOperations.getTarget(_context.getNode(), "chooseComponentClause", true) == null) && TypeChecker.getInstance().getSubtypingManager().isSubtype(SLinkOperations.getTarget(_context.getNode(), "argumentType", true), new _Quotations.QuotationClass_3().createNode());
   }
 
   public static boolean ifMacro_Condition_7110754463748604145(final IOperationContext operationContext, final IfMacroContext _context) {
-    return (SLinkOperations.getTarget(_context.getNode(), "chooseComponentClause", true) == null) && TypeChecker.getInstance().getSubtypingManager().isSubtype(SLinkOperations.getTarget(_context.getNode(), "argumentType", true), new _Quotations.QuotationClass_7().createNode());
+    return (SLinkOperations.getTarget(_context.getNode(), "chooseComponentClause", true) == null) && TypeChecker.getInstance().getSubtypingManager().isSubtype(SLinkOperations.getTarget(_context.getNode(), "argumentType", true), new _Quotations.QuotationClass_4().createNode());
   }
 
   public static boolean ifMacro_Condition_7110754463748604169(final IOperationContext operationContext, final IfMacroContext _context) {
-    return (SLinkOperations.getTarget(_context.getNode(), "chooseComponentClause", true) == null) && TypeChecker.getInstance().getSubtypingManager().isSubtype(SLinkOperations.getTarget(_context.getNode(), "argumentType", true), new _Quotations.QuotationClass_8().createNode());
+    return (SLinkOperations.getTarget(_context.getNode(), "chooseComponentClause", true) == null) && TypeChecker.getInstance().getSubtypingManager().isSubtype(SLinkOperations.getTarget(_context.getNode(), "argumentType", true), new _Quotations.QuotationClass_5().createNode());
   }
 
   public static boolean ifMacro_Condition_7110754463748604193(final IOperationContext operationContext, final IfMacroContext _context) {
-    return (SLinkOperations.getTarget(_context.getNode(), "chooseComponentClause", true) == null) && TypeChecker.getInstance().getSubtypingManager().isSubtype(SLinkOperations.getTarget(_context.getNode(), "argumentType", true), new _Quotations.QuotationClass_9().createNode());
+    return (SLinkOperations.getTarget(_context.getNode(), "chooseComponentClause", true) == null) && TypeChecker.getInstance().getSubtypingManager().isSubtype(SLinkOperations.getTarget(_context.getNode(), "argumentType", true), new _Quotations.QuotationClass_6().createNode());
   }
 
   public static boolean ifMacro_Condition_7110754463748604224(final IOperationContext operationContext, final IfMacroContext _context) {

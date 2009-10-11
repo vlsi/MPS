@@ -39,12 +39,13 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" version="3" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895903fe(jetbrains.mps.baseLanguage.strings.constraints)" version="1" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590402(jetbrains.mps.baseLanguage.strings.structure)" version="9" />
-  <maxImportIndex value="6" />
+  <maxImportIndex value="7" />
   <import index="1" modelUID="r:00000000-0000-4000-0000-011c89590319(jetbrains.mps.lang.refactoring.structure)" version="1" />
   <import index="2" modelUID="f:java_stub#jetbrains.mps.refactoring.framework(jetbrains.mps.refactoring.framework@java_stub)" version="-1" />
   <import index="4" modelUID="r:00000000-0000-4000-0000-011c895902c0(jetbrains.mps.baseLanguage.behavior)" version="-1" />
   <import index="5" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="3" />
   <import index="6" modelUID="f:java_stub#jetbrains.mps.smodel(jetbrains.mps.smodel@java_stub)" version="-1" />
+  <import index="7" modelUID="f:java_stub#jetbrains.mps.refactoring.framework.paramchooser.mps(jetbrains.mps.refactoring.framework.paramchooser.mps@java_stub)" version="-1" />
   <node type="jetbrains.mps.lang.behavior.structure.ConceptBehavior" id="1213877320624">
     <property name="package" value="Deprecated.UserArgs" />
     <link role="concept" targetNodeId="1.1197983858784" resolveInfo="ChooseComponentClause" />
@@ -502,6 +503,179 @@
       <node role="returnType" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="4205271146524200395">
         <link role="concept" targetNodeId="3v.1169125787135" resolveInfo="AbstractConceptDeclaration" />
       </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.behavior.structure.ConceptBehavior" id="4413749148913760549">
+    <property name="package" value="RefDecl.Arg.Parameters.Chooser.MPS.type" />
+    <link role="concept" targetNodeId="1.4413749148913695142" resolveInfo="NodeMPSParameterType" />
+    <node role="constructor" type="jetbrains.mps.lang.behavior.structure.ConceptConstructorDeclaration" id="4413749148913760550">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="4413749148913760551" />
+    </node>
+    <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="4413749148913760565">
+      <property name="name" value="getCreatorMethod" />
+      <property name="isVirtual" value="true" />
+      <link role="overriddenMethod" targetNodeId="4413749148913760555" resolveInfo="getCreatorMethod" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="4413749148913760566" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="4413749148913760567">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="4413749148913760569">
+          <node role="expression" type="jetbrains.mps.lang.quotation.structure.Quotation" id="4413749148913760571">
+            <node role="quotedNode" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="4413749148913760572">
+              <link role="classConcept" targetNodeId="7.~MPSChooserFactory" resolveInfo="MPSChooserFactory" />
+              <link role="baseMethodDeclaration" targetNodeId="7.~MPSChooserFactory.createNodeChooser(jetbrains.mps.refactoring.framework.RefactoringContext,java.lang.String,jetbrains.mps.refactoring.framework.paramchooser.mps.IChooserSettings):jetbrains.mps.refactoring.framework.paramchooser.IChooser" resolveInfo="createNodeChooser" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="returnType" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="4413749148913760568">
+        <link role="concept" targetNodeId="5.1081236700937" resolveInfo="StaticMethodCall" />
+      </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.behavior.structure.ConceptBehavior" id="4413749148913760552">
+    <property name="package" value="RefDecl.Arg.Parameters.Chooser.MPS.type" />
+    <link role="concept" targetNodeId="1.4413749148913695136" resolveInfo="MPSParameterType" />
+    <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="4413749148913760555">
+      <property name="name" value="getCreatorMethod" />
+      <property name="isVirtual" value="true" />
+      <property name="isAbstract" value="true" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="4413749148913760556" />
+      <node role="returnType" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="4413749148913760559">
+        <link role="concept" targetNodeId="5.1081236700937" resolveInfo="StaticMethodCall" />
+      </node>
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="4413749148913760558" />
+    </node>
+    <node role="constructor" type="jetbrains.mps.lang.behavior.structure.ConceptConstructorDeclaration" id="4413749148913760553">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="4413749148913760554" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.behavior.structure.ConceptBehavior" id="4413749148913760574">
+    <property name="package" value="RefDecl.Arg.Parameters.Chooser.MPS.type" />
+    <link role="concept" targetNodeId="1.4413749148913695137" resolveInfo="ModelMPSParameterType" />
+    <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="4413749148913760577">
+      <property name="name" value="getCreatorMethod" />
+      <property name="isVirtual" value="true" />
+      <link role="overriddenMethod" targetNodeId="4413749148913760555" resolveInfo="getCreatorMethod" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="4413749148913760578" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="4413749148913760579">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="4413749148913760580">
+          <node role="expression" type="jetbrains.mps.lang.quotation.structure.Quotation" id="4413749148913760582">
+            <node role="quotedNode" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="4413749148913760586">
+              <link role="baseMethodDeclaration" targetNodeId="7.~MPSChooserFactory.createModelChooser(jetbrains.mps.refactoring.framework.RefactoringContext,java.lang.String,jetbrains.mps.refactoring.framework.paramchooser.mps.IChooserSettings):jetbrains.mps.refactoring.framework.paramchooser.IChooser" resolveInfo="createModelChooser" />
+              <link role="classConcept" targetNodeId="7.~MPSChooserFactory" resolveInfo="MPSChooserFactory" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="returnType" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="4413749148913760585">
+        <link role="concept" targetNodeId="5.1081236700937" resolveInfo="StaticMethodCall" />
+      </node>
+    </node>
+    <node role="constructor" type="jetbrains.mps.lang.behavior.structure.ConceptConstructorDeclaration" id="4413749148913760575">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="4413749148913760576" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.behavior.structure.ConceptBehavior" id="4413749148913760587">
+    <property name="package" value="RefDecl.Arg.Parameters.Chooser.MPS.type" />
+    <link role="concept" targetNodeId="1.4413749148913695141" resolveInfo="ModuleMPSParameterType" />
+    <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="4413749148913760590">
+      <property name="name" value="getCreatorMethod" />
+      <property name="isVirtual" value="true" />
+      <link role="overriddenMethod" targetNodeId="4413749148913760555" resolveInfo="getCreatorMethod" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="4413749148913760591" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="4413749148913760592">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="4413749148913760593">
+          <node role="expression" type="jetbrains.mps.lang.quotation.structure.Quotation" id="4413749148913760595">
+            <node role="quotedNode" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="4413749148913760599">
+              <link role="baseMethodDeclaration" targetNodeId="7.~MPSChooserFactory.createModuleChooser(jetbrains.mps.refactoring.framework.RefactoringContext,java.lang.String,jetbrains.mps.refactoring.framework.paramchooser.mps.IChooserSettings):jetbrains.mps.refactoring.framework.paramchooser.IChooser" resolveInfo="createModuleChooser" />
+              <link role="classConcept" targetNodeId="7.~MPSChooserFactory" resolveInfo="MPSChooserFactory" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="returnType" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="4413749148913760598">
+        <link role="concept" targetNodeId="5.1081236700937" resolveInfo="StaticMethodCall" />
+      </node>
+    </node>
+    <node role="constructor" type="jetbrains.mps.lang.behavior.structure.ConceptConstructorDeclaration" id="4413749148913760588">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="4413749148913760589" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.behavior.structure.ConceptBehavior" id="4413749148913760600">
+    <property name="package" value="RefDecl.Arg.Parameters.Chooser.MPS.type" />
+    <link role="concept" targetNodeId="1.4413749148913695143" resolveInfo="StringMPSParameterType" />
+    <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="4413749148913760603">
+      <property name="name" value="getCreatorMethod" />
+      <property name="isVirtual" value="true" />
+      <link role="overriddenMethod" targetNodeId="4413749148913760555" resolveInfo="getCreatorMethod" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="4413749148913760604" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="4413749148913760605">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="4413749148913760606">
+          <node role="expression" type="jetbrains.mps.lang.quotation.structure.Quotation" id="4413749148913760608">
+            <node role="quotedNode" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="4413749148913913950">
+              <link role="baseMethodDeclaration" targetNodeId="7.~MPSChooserFactory.createStringChooser(jetbrains.mps.refactoring.framework.RefactoringContext,java.lang.String,jetbrains.mps.refactoring.framework.paramchooser.mps.IChooserSettings):jetbrains.mps.refactoring.framework.paramchooser.IChooser" resolveInfo="createStringChooser" />
+              <link role="classConcept" targetNodeId="7.~MPSChooserFactory" resolveInfo="MPSChooserFactory" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="returnType" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="4413749148913760611">
+        <link role="concept" targetNodeId="5.1081236700937" resolveInfo="StaticMethodCall" />
+      </node>
+    </node>
+    <node role="constructor" type="jetbrains.mps.lang.behavior.structure.ConceptConstructorDeclaration" id="4413749148913760601">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="4413749148913760602" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.behavior.structure.ConceptBehavior" id="4413749148913760612">
+    <property name="package" value="RefDecl.Arg.Parameters.Chooser.MPS.type" />
+    <link role="concept" targetNodeId="1.4413749148913695243" resolveInfo="IntMPSParameterType" />
+    <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="4413749148913760615">
+      <property name="name" value="getCreatorMethod" />
+      <property name="isVirtual" value="true" />
+      <link role="overriddenMethod" targetNodeId="4413749148913760555" resolveInfo="getCreatorMethod" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="4413749148913760616" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="4413749148913760617">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="4413749148913760618">
+          <node role="expression" type="jetbrains.mps.lang.quotation.structure.Quotation" id="4413749148913760620">
+            <node role="quotedNode" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="4413749148913913949">
+              <link role="baseMethodDeclaration" targetNodeId="7.~MPSChooserFactory.createIntChooser(jetbrains.mps.refactoring.framework.RefactoringContext,java.lang.String,jetbrains.mps.refactoring.framework.paramchooser.mps.IChooserSettings):jetbrains.mps.refactoring.framework.paramchooser.IChooser" resolveInfo="createIntChooser" />
+              <link role="classConcept" targetNodeId="7.~MPSChooserFactory" resolveInfo="MPSChooserFactory" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="returnType" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="4413749148913760623">
+        <link role="concept" targetNodeId="5.1081236700937" resolveInfo="StaticMethodCall" />
+      </node>
+    </node>
+    <node role="constructor" type="jetbrains.mps.lang.behavior.structure.ConceptConstructorDeclaration" id="4413749148913760613">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="4413749148913760614" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.behavior.structure.ConceptBehavior" id="4413749148913760624">
+    <property name="package" value="RefDecl.Arg.Parameters.Chooser.MPS.type" />
+    <link role="concept" targetNodeId="1.4413749148913695144" resolveInfo="BooleanMPSParameterType" />
+    <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="4413749148913760627">
+      <property name="name" value="getCreatorMethod" />
+      <property name="isVirtual" value="true" />
+      <link role="overriddenMethod" targetNodeId="4413749148913760555" resolveInfo="getCreatorMethod" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="4413749148913760628" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="4413749148913760629">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="4413749148913760630">
+          <node role="expression" type="jetbrains.mps.lang.quotation.structure.Quotation" id="4413749148913760632">
+            <node role="quotedNode" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="4413749148913913948">
+              <link role="baseMethodDeclaration" targetNodeId="7.~MPSChooserFactory.createBooleanChooser(jetbrains.mps.refactoring.framework.RefactoringContext,java.lang.String,jetbrains.mps.refactoring.framework.paramchooser.mps.IChooserSettings):jetbrains.mps.refactoring.framework.paramchooser.IChooser" resolveInfo="createBooleanChooser" />
+              <link role="classConcept" targetNodeId="7.~MPSChooserFactory" resolveInfo="MPSChooserFactory" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="returnType" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="4413749148913760635">
+        <link role="concept" targetNodeId="5.1081236700937" resolveInfo="StaticMethodCall" />
+      </node>
+    </node>
+    <node role="constructor" type="jetbrains.mps.lang.behavior.structure.ConceptConstructorDeclaration" id="4413749148913760625">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="4413749148913760626" />
     </node>
   </node>
 </model>

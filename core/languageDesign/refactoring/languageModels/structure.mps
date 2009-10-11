@@ -1195,6 +1195,12 @@
       <property name="value" value="MPS entity" />
       <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" resolveInfo="alias" />
     </node>
+    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="4413749148913695157">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="paramType" />
+      <property name="sourceCardinality" value="1" />
+      <link role="target" targetNodeId="4413749148913695136" resolveInfo="MPSParameterType" />
+    </node>
     <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="5497648299878742028">
       <property name="metaClass" value="aggregation" />
       <property name="role" value="filterBlock" />
@@ -1205,31 +1211,9 @@
       <property name="role" value="initialValueBlock" />
       <link role="target" targetNodeId="7573235936722759511" resolveInfo="InitialPropertyValueClause" />
     </node>
-    <node role="propertyDeclaration" type="jetbrains.mps.lang.structure.structure.PropertyDeclaration" id="5497648299878742015">
-      <property name="name" value="type" />
-      <link role="dataType" targetNodeId="5497648299878742013" resolveInfo="MPSParameter" />
-    </node>
     <node role="propertyDeclaration" type="jetbrains.mps.lang.structure.structure.PropertyDeclaration" id="6647259624309067737">
       <property name="name" value="title" />
       <link role="dataType" targetNodeId="1.1082983041843" resolveInfo="string" />
-    </node>
-  </node>
-  <node type="jetbrains.mps.lang.structure.structure.EnumerationDataTypeDeclaration" id="5497648299878742013">
-    <property name="package" value="RefDecl.Arg.Parameters.Chooser.MPS" />
-    <property name="name" value="MPSParameterType" />
-    <property name="memberIdentifierPolicy" value="derive_from_presentation" />
-    <link role="memberDataType" targetNodeId="1.1082983041843" resolveInfo="string" />
-    <node role="member" type="jetbrains.mps.lang.structure.structure.EnumerationMemberDeclaration" id="5497648299878994266">
-      <property name="externalValue" value="node" />
-      <property name="internalValue" value="node" />
-    </node>
-    <node role="member" type="jetbrains.mps.lang.structure.structure.EnumerationMemberDeclaration" id="5497648299878742014">
-      <property name="externalValue" value="model" />
-      <property name="internalValue" value="model" />
-    </node>
-    <node role="member" type="jetbrains.mps.lang.structure.structure.EnumerationMemberDeclaration" id="5497648299878994264">
-      <property name="externalValue" value="module" />
-      <property name="internalValue" value="module" />
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="5497648299878742016">
@@ -1678,6 +1662,71 @@
       <link role="conceptPropertyDeclaration" targetNodeId="1.1137473854053" resolveInfo="abstract" />
     </node>
     <node role="deprecatedNode$attribute" type="jetbrains.mps.lang.structure.structure.DeprecatedNodeAnnotation" id="3302086321379695483" />
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="4413749148913695136">
+    <property name="package" value="RefDecl.Arg.Parameters.Chooser.MPS.type" />
+    <property name="name" value="MPSParameterType" />
+    <link role="extends" targetNodeId="1.1133920641626" resolveInfo="BaseConcept" />
+    <node role="conceptLinkDeclaration" type="jetbrains.mps.lang.structure.structure.AggregationConceptLinkDeclaration" id="4413749148913757059">
+      <property name="name" value="paramType" />
+      <link role="targetType" targetNodeId="2.1068431790189" resolveInfo="Type" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="4413749148913695137">
+    <property name="package" value="RefDecl.Arg.Parameters.Chooser.MPS.type" />
+    <property name="name" value="ModelMPSParameterType" />
+    <link role="extends" targetNodeId="4413749148913695136" resolveInfo="MPSParameterType" />
+    <node role="conceptLink" type="jetbrains.mps.lang.structure.structure.AggregationConceptLink" id="4413749148913757072">
+      <link role="conceptLinkDeclaration" targetNodeId="4413749148913757059" resolveInfo="paramType" />
+      <node role="target" type="jetbrains.mps.lang.smodel.structure.SModelType" id="4413749148913757075" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="4413749148913695141">
+    <property name="package" value="RefDecl.Arg.Parameters.Chooser.MPS.type" />
+    <property name="name" value="ModuleMPSParameterType" />
+    <link role="extends" targetNodeId="4413749148913695136" resolveInfo="MPSParameterType" />
+    <node role="conceptLink" type="jetbrains.mps.lang.structure.structure.AggregationConceptLink" id="4413749148913757076">
+      <link role="conceptLinkDeclaration" targetNodeId="4413749148913757059" resolveInfo="paramType" />
+      <node role="target" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="4413749148913757078">
+        <link role="classifier" targetNodeId="9.~IModule" resolveInfo="IModule" />
+      </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="4413749148913695142">
+    <property name="package" value="RefDecl.Arg.Parameters.Chooser.MPS.type" />
+    <property name="name" value="NodeMPSParameterType" />
+    <link role="extends" targetNodeId="4413749148913695136" resolveInfo="MPSParameterType" />
+    <node role="conceptLink" type="jetbrains.mps.lang.structure.structure.AggregationConceptLink" id="4413749148913757080">
+      <link role="conceptLinkDeclaration" targetNodeId="4413749148913757059" resolveInfo="paramType" />
+      <node role="target" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="4413749148913757082" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="4413749148913695143">
+    <property name="package" value="RefDecl.Arg.Parameters.Chooser.MPS.type" />
+    <property name="name" value="StringMPSParameterType" />
+    <link role="extends" targetNodeId="4413749148913695136" resolveInfo="MPSParameterType" />
+    <node role="conceptLink" type="jetbrains.mps.lang.structure.structure.AggregationConceptLink" id="4413749148913757083">
+      <link role="conceptLinkDeclaration" targetNodeId="4413749148913757059" resolveInfo="paramType" />
+      <node role="target" type="jetbrains.mps.baseLanguage.structure.StringType" id="4413749148913757085" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="4413749148913695144">
+    <property name="package" value="RefDecl.Arg.Parameters.Chooser.MPS.type" />
+    <property name="name" value="BooleanMPSParameterType" />
+    <link role="extends" targetNodeId="4413749148913695136" resolveInfo="MPSParameterType" />
+    <node role="conceptLink" type="jetbrains.mps.lang.structure.structure.AggregationConceptLink" id="4413749148913757063">
+      <link role="conceptLinkDeclaration" targetNodeId="4413749148913757059" resolveInfo="paramType" />
+      <node role="target" type="jetbrains.mps.baseLanguage.structure.BooleanType" id="4413749148913757065" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="4413749148913695243">
+    <property name="package" value="RefDecl.Arg.Parameters.Chooser.MPS.type" />
+    <property name="name" value="IntMPSParameterType" />
+    <link role="extends" targetNodeId="4413749148913695136" resolveInfo="MPSParameterType" />
+    <node role="conceptLink" type="jetbrains.mps.lang.structure.structure.AggregationConceptLink" id="4413749148913757066">
+      <link role="conceptLinkDeclaration" targetNodeId="4413749148913757059" resolveInfo="paramType" />
+      <node role="target" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="4413749148913757069" />
+    </node>
   </node>
 </model>
 
