@@ -13,6 +13,7 @@ import jetbrains.mps.lang.smodel.generator.baseLanguage.util.QueriesUtil;
 import jetbrains.mps.generator.template.TemplateQueryContext;
 import jetbrains.mps.lang.smodel.behavior.Node_ConceptMethodCall_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.lang.smodel.behavior.ILinkAccess_Behavior;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.structure.behavior.PropertyDeclaration_Behavior;
 import jetbrains.mps.lang.smodel.behavior.SNodeTypeCastExpression_Behavior;
@@ -152,11 +153,12 @@ public class QueriesGenerated {
       // test
       _context.showInformationMessage(_context.getNode(), "TEST!!! type:" + TypeChecker.getInstance().getTypeOf(_context.getNode()));
     */
-    return SNodeOperations.isInstanceOf(TypeChecker.getInstance().getTypeOf(_context.getNode()), "jetbrains.mps.lang.smodel.structure._LinkAccessT");
+    return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(_context.getNode(), "attributeQualifier", true), "jetbrains.mps.lang.smodel.structure.ILinkAccess");
   }
 
   public static boolean baseMappingRule_Condition_1205368387856(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
-    return SPropertyOperations.getBoolean(SNodeOperations.cast(TypeChecker.getInstance().getTypeOf(_context.getNode()), "jetbrains.mps.lang.smodel.structure._LinkAccessT"), "singularCradinality");
+    SNode attributeAccessQualifier = SLinkOperations.getTarget(_context.getNode(), "attributeQualifier", true);
+    return ILinkAccess_Behavior.call_isSingularCardinality_4024382256428848847(SNodeOperations.cast(attributeAccessQualifier, "jetbrains.mps.lang.smodel.structure.ILinkAccess"));
   }
 
   public static boolean baseMappingRule_Condition_1206552037838(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
@@ -486,15 +488,15 @@ public class QueriesGenerated {
   public static Object propertyMacro_GetPropertyValue_1205440206252(final IOperationContext operationContext, final PropertyMacroContext _context) {
     SNode parmConcept = SLinkOperations.getTarget(_context.getNode(), "concept", false);
     if (parmConcept == null) {
-      SNode operandType = TypeChecker.getInstance().getTypeOf(SNodeOperation_Behavior.call_getLeftExpression_1213877508894(_context.getNode()));
-      parmConcept = SLinkOperations.getTarget(SNodeOperations.cast(operandType, "jetbrains.mps.lang.smodel.structure._LinkAccessT"), "targetConcept", false);
+      SNode leftOperation = SNodeOperation_Behavior.call_getLeftExpressionOperation_1213877508946(_context.getNode());
+      parmConcept = ILinkAccess_Behavior.call_getTargetConcept_4024382256428848859(SNodeOperations.cast(leftOperation, "jetbrains.mps.lang.smodel.structure.ILinkAccess"));
     }
     return NameUtil.nodeFQName(parmConcept);
   }
 
   public static Object propertyMacro_GetPropertyValue_1205440400406(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    SNode operandType = TypeChecker.getInstance().getTypeOf(SNodeOperation_Behavior.call_getLeftExpression_1213877508894(_context.getNode()));
-    return SPropertyOperations.getBoolean(SNodeOperations.cast(operandType, "jetbrains.mps.lang.smodel.structure._LinkAccessT"), "aggregation");
+    SNode leftOperation = SNodeOperation_Behavior.call_getLeftExpressionOperation_1213877508946(_context.getNode());
+    return ILinkAccess_Behavior.call_isAggregation_4024382256428848854(SNodeOperations.cast(leftOperation, "jetbrains.mps.lang.smodel.structure.ILinkAccess"));
   }
 
   public static Object propertyMacro_GetPropertyValue_1205529532080(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -504,8 +506,8 @@ public class QueriesGenerated {
   public static Object propertyMacro_GetPropertyValue_1205530218487(final IOperationContext operationContext, final PropertyMacroContext _context) {
     SNode parmConcept = SLinkOperations.getTarget(_context.getNode(), "concept", false);
     if (parmConcept == null) {
-      SNode operandType = TypeChecker.getInstance().getTypeOf(SNodeOperation_Behavior.call_getLeftExpression_1213877508894(_context.getNode()));
-      parmConcept = SLinkOperations.getTarget(SNodeOperations.cast(operandType, "jetbrains.mps.lang.smodel.structure._LinkAccessT"), "targetConcept", false);
+      SNode leftOperation = SNodeOperation_Behavior.call_getLeftExpressionOperation_1213877508946(_context.getNode());
+      parmConcept = ILinkAccess_Behavior.call_getTargetConcept_4024382256428848859(SNodeOperations.cast(leftOperation, "jetbrains.mps.lang.smodel.structure.ILinkAccess"));
     }
     return NameUtil.nodeFQName(parmConcept);
   }
@@ -556,7 +558,8 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_1206558575957(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return SPropertyOperations.getBoolean(SNodeOperations.cast(TypeChecker.getInstance().getTypeOf(SNodeOperations.cast(SLinkOperations.getTarget(_context.getNode(), "lValue", true), "jetbrains.mps.baseLanguage.structure.DotExpression")), "jetbrains.mps.lang.smodel.structure._LinkAccessT"), "aggregation");
+    SNode operation = SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(_context.getNode(), "lValue", true), "jetbrains.mps.baseLanguage.structure.DotExpression"), "operation", true);
+    return ILinkAccess_Behavior.call_isAggregation_4024382256428848854(SNodeOperations.cast(operation, "jetbrains.mps.lang.smodel.structure.ILinkAccess"));
   }
 
   public static Object propertyMacro_GetPropertyValue_1206653862745(final IOperationContext operationContext, final PropertyMacroContext _context) {
