@@ -17,5 +17,6 @@ public class DFABuilders extends DataFlowBuilders {
     manager.register("jetbrains.mps.lang.refactoring.structure.ErrorStatement", new ErrorStatement_DataFlow());
     manager.register("jetbrains.mps.lang.refactoring.structure.ChangeFeatureNameExpression", new ChangeFeatureNameExpression_DataFlow());
     manager.register("jetbrains.mps.lang.refactoring.structure.DeleteFeatureExpression", new DeleteFeatureExpression_DataFlow());
+    manager.register("jetbrains.mps.lang.refactoring.structure.AskBooleanExpression", new AskBooleanExpression_DataFlow());
   }
 }

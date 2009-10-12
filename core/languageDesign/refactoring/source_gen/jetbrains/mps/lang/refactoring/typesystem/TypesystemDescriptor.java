@@ -187,5 +187,9 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
       InferenceRule_Runtime inferenceRule = new typeof_InitialPropertyValueClause_InferenceRule();
       this.myInferenceRules.add(inferenceRule);
     }
+    {
+      InferenceRule_Runtime inferenceRule = new typeof_AskBooleanExpression_InferenceRule();
+      this.myInferenceRules.add(inferenceRule);
+    }
   }
 }

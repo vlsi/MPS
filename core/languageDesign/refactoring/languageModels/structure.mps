@@ -1763,5 +1763,29 @@
       <link role="conceptPropertyDeclaration" targetNodeId="1.1137473994950" resolveInfo="dontSubstituteByDefault" />
     </node>
   </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="4312073247720468747">
+    <property name="package" value="RefDecl.Arg.Parameters" />
+    <property name="name" value="AskBooleanExpression" />
+    <link role="extends" targetNodeId="2.1068431790191" resolveInfo="Expression" />
+    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="4312073247720567558">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="text" />
+      <property name="sourceCardinality" value="1" />
+      <link role="target" targetNodeId="2.1068431790191" resolveInfo="Expression" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="4312073247720468749">
+      <property name="value" value="ask (bool)" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" resolveInfo="alias" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.BooleanConceptProperty" id="4312073247720468750">
+      <link role="conceptPropertyDeclaration" targetNodeId="2.1241531154556" resolveInfo="legalAsStatement" />
+    </node>
+    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="4312073247720715111">
+      <property name="metaClass" value="reference" />
+      <property name="role" value="parameter" />
+      <property name="sourceCardinality" value="1" />
+      <link role="target" targetNodeId="6895093993902311012" resolveInfo="RefactoringParameter" />
+    </node>
+  </node>
 </model>
 

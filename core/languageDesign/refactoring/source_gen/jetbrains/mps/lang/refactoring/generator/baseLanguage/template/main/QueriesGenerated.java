@@ -173,6 +173,10 @@ public class QueriesGenerated {
     return SPropertyOperations.getString(refactoring, "name") + "_" + SPropertyOperations.getString(refactoringParameter, "name") + "_Settings";
   }
 
+  public static Object propertyMacro_GetPropertyValue_4312073247720715217(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "parameter", false), "name");
+  }
+
   public static Object propertyMacro_GetPropertyValue_5934994956485965416(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return SPropertyOperations.getBoolean(_context.getNode(), "stretch");
   }
@@ -245,6 +249,14 @@ public class QueriesGenerated {
 
   public static Object referenceMacro_GetReferent_3644668945280073911(final IOperationContext operationContext, final ReferenceMacroContext _context) {
     return _context.getOutputNodeByInputNodeAndMappingLabel(SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.lang.refactoring.structure.MPSParameterChooser", false, false), "settingsClass");
+  }
+
+  public static Object referenceMacro_GetReferent_4312073247720514254(final IOperationContext operationContext, final ReferenceMacroContext _context) {
+    return _context.getOutputNodeByInputNodeAndMappingLabel(SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.lang.refactoring.structure.Refactoring", false, false), "refactoringClass");
+  }
+
+  public static Object referenceMacro_GetReferent_4312073247720715335(final IOperationContext operationContext, final ReferenceMacroContext _context) {
+    return _context.getOutputNodeByInputNodeAndMappingLabel(SNodeOperations.cast(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "parameter", false), "chooser", true), "jetbrains.mps.lang.refactoring.structure.MPSParameterChooser"), "settingsConstructor");
   }
 
   public static Object referenceMacro_GetReferent_4413749148913757642(final IOperationContext operationContext, final ReferenceMacroContext _context) {
@@ -702,6 +714,10 @@ public class QueriesGenerated {
     return SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "refactoringParameter", false), "chooser", true);
   }
 
+  public static SNode sourceNodeQuery_4312073247720567550(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return SLinkOperations.getTarget(_context.getNode(), "text", true);
+  }
+
   public static SNode sourceNodeQuery_5934994956485965449(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "commitBlock", true), "body", true);
   }
@@ -751,7 +767,7 @@ public class QueriesGenerated {
   }
 
   public static SNode sourceNodeQuery_7573235936722759862(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return TypeChecker.getInstance().getTypeOf(_context.getNode());
+    return TypeChecker.getInstance().getRuntimeSupport().coerce_(TypeChecker.getInstance().getTypeOf(_context.getNode()), HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.structure.ClassifierType"), true);
   }
 
   public static Iterable sourceNodesQuery_1189698183859(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {

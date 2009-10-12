@@ -1570,5 +1570,32 @@
       <node role="cellLayout" type="jetbrains.mps.lang.editor.structure.CellLayout_Indent" id="6635062342941213771" />
     </node>
   </node>
+  <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" id="4312073247720469960">
+    <property name="package" value="RefDecl.Arg.Parameters" />
+    <link role="conceptDeclaration" targetNodeId="1.4312073247720468747" resolveInfo="AskBooleanExpression" />
+    <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="4312073247720469962">
+      <node role="cellLayout" type="jetbrains.mps.lang.editor.structure.CellLayout_Indent" id="4312073247720469963" />
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="4312073247720469964">
+        <property name="text" value="ask for boolean" />
+        <link role="styleClass" targetNodeId="4.1186415544875" resolveInfo="KeyWord" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefCell" id="4312073247720715113">
+        <link role="relationDeclaration" targetNodeId="1.4312073247720715111" />
+        <node role="editorComponent" type="jetbrains.mps.lang.editor.structure.InlineEditorComponent" id="4312073247720715114">
+          <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Property" id="4312073247720715117">
+            <property name="readOnly" value="true" />
+            <link role="relationDeclaration" targetNodeId="2.1169194664001" resolveInfo="name" />
+          </node>
+        </node>
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="4312073247720567579">
+        <property name="text" value="text" />
+        <link role="styleClass" targetNodeId="4.1186415544875" resolveInfo="KeyWord" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode" id="4312073247720567581">
+        <link role="relationDeclaration" targetNodeId="1.4312073247720567558" />
+      </node>
+    </node>
+  </node>
 </model>
 
