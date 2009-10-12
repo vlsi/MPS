@@ -394,6 +394,10 @@ public class QueriesGenerated {
     return (SLinkOperations.getTarget(_context.getNode(), "localVariableDeclaration", true) != null) && Flags.NEEDS_INITIALIZER.isFlagged(SLinkOperations.getTarget(_context.getNode(), "localVariableDeclaration", true));
   }
 
+  public static boolean baseMappingRule_Condition_5451047975132812766(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
+    return (SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "localVariableDeclaration", true), "initializer", true) == null);
+  }
+
   public static boolean baseMappingRule_Condition_7246115176735007897(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
     return !(SNodeOperations.isInstanceOf(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(_context.getNode(), "function", true)), "jetbrains.mps.baseLanguage.closures.structure.UnrestrictedFunctionType"));
   }
@@ -1877,10 +1881,6 @@ public class QueriesGenerated {
     return SLinkOperations.getTarget(_context.getNode(), "type", true);
   }
 
-  public static SNode sourceNodeQuery_1201019808021(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return SLinkOperations.getTarget(_context.getNode(), "localVariableDeclaration", true);
-  }
-
   public static SNode sourceNodeQuery_1201023446671(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "condition", true);
   }
@@ -2181,6 +2181,10 @@ public class QueriesGenerated {
 
   public static SNode sourceNodeQuery_1232469628886(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "controlClosure", true);
+  }
+
+  public static SNode sourceNodeQuery_5451047975132812783(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return SLinkOperations.getTarget(_context.getNode(), "localVariableDeclaration", true);
   }
 
   public static SNode sourceNodeQuery_7246115176735005209(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {

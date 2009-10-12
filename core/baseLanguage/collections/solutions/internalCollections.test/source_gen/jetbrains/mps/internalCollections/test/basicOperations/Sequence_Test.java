@@ -464,4 +464,61 @@ __switch__:
     Assert.assertEquals("vodka tequila whisky", IterableUtils.join(Sequence.fromIterable(test), " "));
     Assert.assertEquals("vodka, tequila, whisky", IterableUtils.join(Sequence.fromIterable(test), ", "));
   }
+
+  public void test_test_MPS6197() throws Exception {
+    this.assertIterableEquals(ArrayUtils.fromIntegerArray(new int[]{2}), this.abc(0));
+    this.assertIterableEquals(ArrayUtils.fromIntegerArray(new int[]{3}), this.abc(1));
+  }
+
+  public Iterable<Integer> abc(final int j) {
+    return Sequence.fromClosure(new ISequenceClosure<Integer>() {
+      public Iterable<Integer> iterable() {
+        return new Iterable<Integer>() {
+          public Iterator<Integer> iterator() {
+            return new YieldingIterator<Integer>() {
+              private int __CP__ = 0;
+              private int _3_i;
+
+              protected boolean moveToNext() {
+__loop__:
+                do {
+__switch__:
+                  switch (this.__CP__) {
+                    case -1:
+                      assert false : "Internal error";
+                      return false;
+                    case 4:
+                      if (j == 0) {
+                        this.__CP__ = 5;
+                        break;
+                      }
+                      this.__CP__ = 8;
+                      break;
+                    case 6:
+                      this.__CP__ = 1;
+                      this.yield(_3_i);
+                      return true;
+                    case 0:
+                      this.__CP__ = 4;
+                      break;
+                    case 5:
+                      _3_i = 2;
+                      this.__CP__ = 6;
+                      break;
+                    case 8:
+                      _3_i = 3;
+                      this.__CP__ = 6;
+                      break;
+                    default:
+                      break __loop__;
+                  }
+                } while(true);
+                return false;
+              }
+            };
+          }
+        };
+      }
+    });
+  }
 }
