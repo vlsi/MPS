@@ -23,4 +23,19 @@ public class AttributeAccessOperation_Behavior {
     }
     return false;
   }
+
+  public static boolean virtual_isAggregation_4024382256428848854(SNode thisNode) {
+    SNode attributeAccessQualifier = SLinkOperations.getTarget(thisNode, "attributeQualifier", true);
+    return ILinkAccess_Behavior.call_isAggregation_4024382256428848854(SNodeOperations.as(attributeAccessQualifier, "jetbrains.mps.lang.smodel.structure.ILinkAccess"));
+  }
+
+  public static boolean virtual_isSingularCardinality_4024382256428848847(SNode thisNode) {
+    SNode attributeAccessQualifier = SLinkOperations.getTarget(thisNode, "attributeQualifier", true);
+    return ILinkAccess_Behavior.call_isSingularCardinality_4024382256428848847(SNodeOperations.as(attributeAccessQualifier, "jetbrains.mps.lang.smodel.structure.ILinkAccess"));
+  }
+
+  public static SNode virtual_getTargetConcept_4024382256428848859(SNode thisNode) {
+    SNode attributeAccessQualifier = SLinkOperations.getTarget(thisNode, "attributeQualifier", true);
+    return ILinkAccess_Behavior.call_getTargetConcept_4024382256428848859(SNodeOperations.as(attributeAccessQualifier, "jetbrains.mps.lang.smodel.structure.ILinkAccess"));
+  }
 }

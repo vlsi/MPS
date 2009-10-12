@@ -2682,6 +2682,9 @@
     <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="1204761852761">
       <link role="intfc" targetNodeId="2.1197027803184" resolveInfo="IOperation" />
     </node>
+    <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="1818067991806882401">
+      <link role="intfc" targetNodeId="4024382256428848843" resolveInfo="ILinkAccess" />
+    </node>
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1204761912669">
       <property name="value" value="@" />
       <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" resolveInfo="alias" />
