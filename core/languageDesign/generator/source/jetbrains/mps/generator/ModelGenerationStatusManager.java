@@ -26,6 +26,7 @@ import com.intellij.psi.search.GlobalSearchScope;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.*;
+import jetbrains.mps.smodel.event.SModelFileChangedEvent;
 import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.util.ReadUtil;
 import jetbrains.mps.generator.fileGenerator.FileGenerationManager;
@@ -70,10 +71,18 @@ public class ModelGenerationStatusManager implements ApplicationComponent {
 
   private List<ModelGenerationStatusListener> myListeners = new ArrayList<ModelGenerationStatusListener>();
 
-  private FileGenerationManager myFileGenerationManager;
+  private final GlobalSModelEventsManager myGlobalEventsManager;
+  private final FileGenerationManager myFileGenerationManager;
+  private final SModelAdapter mySmodelReloadListener = new SModelAdapter() {
+    @Override
+    public void modelReloaded(SModelDescriptor sm) {
+      ModelGenerationStatusManager.this.invalidateData(sm);
+    }
+  };
 
-  public ModelGenerationStatusManager(FileGenerationManager fileGenerationManager) {
+  public ModelGenerationStatusManager(FileGenerationManager fileGenerationManager, GlobalSModelEventsManager globalEventsManager) {
     myFileGenerationManager = fileGenerationManager;
+    myGlobalEventsManager = globalEventsManager;
   }
 
   @NotNull
@@ -87,9 +96,11 @@ public class ModelGenerationStatusManager implements ApplicationComponent {
         return generateHashFile(context);
       }
     });
+    myGlobalEventsManager.addGlobalModelListener(mySmodelReloadListener);
   }
 
   public void disposeComponent() {
+    myGlobalEventsManager.removeGlobalModelListener(mySmodelReloadListener);
   }
 
   public boolean generationRequired(SModelDescriptor sm, Project project) {
