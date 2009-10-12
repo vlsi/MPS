@@ -54,7 +54,7 @@
   <node type="jetbrains.mps.lang.refactoring.structure.Refactoring" id="7874812549549771289">
     <property name="name" value="RenameMethod" />
     <property name="userFriendlyName" value="Rename Method" />
-    <link role="overrides" targetNodeId="2v.5663240094077654749" resolveInfo="Rename" />
+    <link role="overrides" targetNodeId="2v.1347577327951770664" resolveInfo="Rename" />
     <node role="parameter" type="jetbrains.mps.lang.refactoring.structure.RefactoringParameter" id="7874812549549772010">
       <property name="name" value="newName" />
       <node role="chooser" type="jetbrains.mps.lang.refactoring.structure.MPSParameterChooser" id="6635062342941536631">
@@ -84,7 +84,7 @@
     <node role="parameter" type="jetbrains.mps.lang.refactoring.structure.RefactoringParameter" id="7874812549549919722">
       <property name="name" value="refactorOverriding" />
       <node role="chooser" type="jetbrains.mps.lang.refactoring.structure.MPSParameterChooser" id="6635062342941539024">
-        <property name="title" value="rename overriding methods" />
+        <property name="title" value="Overriding Methods" />
         <node role="paramType" type="jetbrains.mps.lang.refactoring.structure.BooleanMPSParameterType" id="6635062342941539026" />
       </node>
     </node>
@@ -132,63 +132,71 @@
             </node>
           </node>
         </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="7874812549549778450">
-          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="7874812549549778451">
-            <property name="name" value="overriding" />
-            <node role="type" type="jetbrains.mps.lang.smodel.structure.SNodeListType" id="7874812549549778452">
-              <link role="elementConcept" targetNodeId="1.1068580123132" resolveInfo="BaseMethodDeclaration" />
-            </node>
-            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="304997259309380384">
-              <link role="baseMethodDeclaration" targetNodeId="2.1227519513467" resolveInfo="findOverridingMethods" />
-              <link role="classConcept" targetNodeId="2.1227519212562" resolveInfo="MethodRefactoringUtils" />
-              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="304997259309380385">
-                <link role="variableDeclaration" targetNodeId="7874812549549876827" resolveInfo="methodDeclNode" />
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.Statement" id="5679731535836386811" />
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="5679731535836386721">
+          <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="5679731535836386722">
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="5679731535836386801">
+              <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="5679731535836386802">
+                <property name="name" value="overriding" />
+                <node role="type" type="jetbrains.mps.lang.smodel.structure.SNodeListType" id="5679731535836386803">
+                  <link role="elementConcept" targetNodeId="1.1068580123132" resolveInfo="BaseMethodDeclaration" />
+                </node>
+                <node role="initializer" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="5679731535836386804">
+                  <link role="baseMethodDeclaration" targetNodeId="2.1227519513467" resolveInfo="findOverridingMethods" />
+                  <link role="classConcept" targetNodeId="2.1227519212562" resolveInfo="MethodRefactoringUtils" />
+                  <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="5679731535836386805">
+                    <link role="variableDeclaration" targetNodeId="7874812549549876827" resolveInfo="methodDeclNode" />
+                  </node>
+                  <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="5679731535836386806">
+                    <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="5679731535836386807">
+                      <link role="baseMethodDeclaration" targetNodeId="7.~EmptyProgressIndicator.&lt;init&gt;()" resolveInfo="EmptyProgressIndicator" />
+                    </node>
+                  </node>
+                </node>
               </node>
-              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="304997259309380386">
-                <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="304997259309380387">
-                  <link role="baseMethodDeclaration" targetNodeId="7.~EmptyProgressIndicator.&lt;init&gt;()" resolveInfo="EmptyProgressIndicator" />
+            </node>
+            <node role="statement" type="jetbrains.mps.baseLanguage.collections.structure.ForEachStatement" id="5679731535836386781">
+              <node role="variable" type="jetbrains.mps.baseLanguage.collections.structure.ForEachVariable" id="5679731535836386782">
+                <property name="name" value="node" />
+              </node>
+              <node role="inputSequence" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="5679731535836386783">
+                <link role="variableDeclaration" targetNodeId="5679731535836386802" resolveInfo="overriding" />
+              </node>
+              <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="5679731535836386784">
+                <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="5679731535836386785">
+                  <node role="expression" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression" id="5679731535836386786">
+                    <node role="rValue" type="jetbrains.mps.lang.refactoring.structure.RefactoringParameterReference" id="5679731535836386787">
+                      <link role="refactoringParameter" targetNodeId="7874812549549772010" resolveInfo="newName" />
+                    </node>
+                    <node role="lValue" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="5679731535836386788">
+                      <node role="operand" type="jetbrains.mps.baseLanguage.collections.structure.ForEachVariableReference" id="5679731535836386789">
+                        <link role="variable" targetNodeId="5679731535836386782" resolveInfo="node" />
+                      </node>
+                      <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="5679731535836386790">
+                        <link role="property" targetNodeId="3v.1169194664001" resolveInfo="name" />
+                      </node>
+                    </node>
+                  </node>
                 </node>
               </node>
             </node>
           </node>
+          <node role="condition" type="jetbrains.mps.lang.refactoring.structure.RefactoringParameterReference" id="5679731535836386725">
+            <link role="refactoringParameter" targetNodeId="7874812549549919722" resolveInfo="refactorOverriding" />
+          </node>
         </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.Statement" id="7874812549549876855" />
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="7874812549549918702">
-          <node role="expression" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression" id="7874812549549919704">
-            <node role="rValue" type="jetbrains.mps.lang.refactoring.structure.RefactoringParameterReference" id="7874812549549919707">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.Statement" id="5679731535836386810" />
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="5679731535836386771">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression" id="5679731535836386772">
+            <node role="rValue" type="jetbrains.mps.lang.refactoring.structure.RefactoringParameterReference" id="5679731535836386773">
               <link role="refactoringParameter" targetNodeId="7874812549549772010" resolveInfo="newName" />
             </node>
-            <node role="lValue" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="7874812549549918704">
-              <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="7874812549549918703">
+            <node role="lValue" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="5679731535836386774">
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="5679731535836386775">
                 <link role="variableDeclaration" targetNodeId="7874812549549876827" resolveInfo="methodDeclNode" />
               </node>
-              <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="7874812549549919703">
+              <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="5679731535836386776">
                 <link role="property" targetNodeId="3v.1169194664001" resolveInfo="name" />
-              </node>
-            </node>
-          </node>
-        </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.collections.structure.ForEachStatement" id="7874812549549876845">
-          <node role="variable" type="jetbrains.mps.baseLanguage.collections.structure.ForEachVariable" id="7874812549549876846">
-            <property name="name" value="node" />
-          </node>
-          <node role="inputSequence" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="7874812549549876847">
-            <link role="variableDeclaration" targetNodeId="7874812549549778451" resolveInfo="overriding" />
-          </node>
-          <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="7874812549549876848">
-            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="7874812549549919709">
-              <node role="expression" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression" id="7874812549549919710">
-                <node role="rValue" type="jetbrains.mps.lang.refactoring.structure.RefactoringParameterReference" id="7874812549549919711">
-                  <link role="refactoringParameter" targetNodeId="7874812549549772010" resolveInfo="newName" />
-                </node>
-                <node role="lValue" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="7874812549549919712">
-                  <node role="operand" type="jetbrains.mps.baseLanguage.collections.structure.ForEachVariableReference" id="7874812549549919715">
-                    <link role="variable" targetNodeId="7874812549549876846" resolveInfo="node" />
-                  </node>
-                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="7874812549549919714">
-                    <link role="property" targetNodeId="3v.1169194664001" resolveInfo="name" />
-                  </node>
-                </node>
               </node>
             </node>
           </node>
@@ -281,15 +289,16 @@
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="7874812549549919754">
           <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="7874812549549919755">
-            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="7874812549549919787">
-              <node role="expression" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression" id="7874812549549919790">
-                <node role="lValue" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="7874812549549919789">
-                  <link role="variableDeclaration" targetNodeId="7874812549549919738" resolveInfo="result" />
-                </node>
-                <node role="rValue" type="jetbrains.mps.lang.refactoring.structure.AskExpression" id="7874812549549919825">
-                  <node role="parameter" type="jetbrains.mps.lang.refactoring.structure.RefactoringParameterReference" id="7874812549549919826">
-                    <link role="refactoringParameter" targetNodeId="7874812549549919722" resolveInfo="refactorOverriding" />
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="7485318338828497646">
+              <node role="expression" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression" id="7485318338828497648">
+                <node role="rValue" type="jetbrains.mps.lang.refactoring.structure.AskBooleanExpression" id="7485318338828497651">
+                  <link role="parameter" targetNodeId="7874812549549919722" resolveInfo="refactorOverriding" />
+                  <node role="text" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="7485318338828497653">
+                    <property name="value" value="Refactor overriding methods?" />
                   </node>
+                </node>
+                <node role="lValue" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="7485318338828497647">
+                  <link role="variableDeclaration" targetNodeId="7874812549549919738" resolveInfo="result" />
                 </node>
               </node>
             </node>

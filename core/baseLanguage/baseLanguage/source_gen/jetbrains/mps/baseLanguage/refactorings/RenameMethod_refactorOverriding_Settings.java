@@ -9,7 +9,7 @@ public class RenameMethod_refactorOverriding_Settings extends IChooserSettings.B
   private RefactoringContext myRefactoringContext;
 
   public RenameMethod_refactorOverriding_Settings(final RefactoringContext context) {
-    super("rename overriding methods");
+    super("Overriding Methods");
     this.myRefactoringContext = context;
   }
 }
