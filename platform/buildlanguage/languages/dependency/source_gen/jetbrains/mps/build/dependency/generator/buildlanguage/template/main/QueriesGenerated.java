@@ -36,15 +36,15 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_1216910679654(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "classes", true), "path");
+    return SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "classes", true), "path").replace("\\", "/");
   }
 
   public static Object propertyMacro_GetPropertyValue_1219772533883(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return SPropertyOperations.getString(_context.getNode(), "path");
+    return SPropertyOperations.getString(_context.getNode(), "path").replace("\\", "/");
   }
 
   public static Object propertyMacro_GetPropertyValue_1219772582497(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return SPropertyOperations.getString(_context.getNode(), "path");
+    return SPropertyOperations.getString(_context.getNode(), "path").replace("\\", "/");
   }
 
   public static Object propertyMacro_GetPropertyValue_1219773202905(final IOperationContext operationContext, final PropertyMacroContext _context) {
