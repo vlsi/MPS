@@ -10,14 +10,14 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.behavior.SNodeOperation_Behavior;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptPropertyOperations;
-import jetbrains.mps.lang.typesystem.runtime.HUtil;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.lang.smodel.behavior.ILinkAccess_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.structure.behavior.DataTypeDeclaration_Behavior;
 import jetbrains.mps.intentions.BaseIntentionProvider;
 import jetbrains.mps.typesystem.inference.IErrorTarget;
 import jetbrains.mps.typesystem.inference.NodeErrorTarget;
 import jetbrains.mps.util.NameUtil;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.typesystem.dependencies.InferenceMethod;
@@ -58,9 +58,9 @@ public class RulesUtil {
     }
     // ===========
     if (SConceptPropertyOperations.getBoolean(op, "applicableToLink")) {
-      SNode linkAccessT = TypeChecker.getInstance().getRuntimeSupport().coerce_(LeftType, HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.lang.smodel.structure._LinkAccessT"), false, typeCheckingContext);
-      if (linkAccessT != null) {
-        isGood = SPropertyOperations.getBoolean(linkAccessT, "singularCradinality");
+      SNode linkAccess = SNodeOperations.as(SNodeOperation_Behavior.call_getLeftExpressionOperation_1213877508946(op), "jetbrains.mps.lang.smodel.structure.ILinkAccess");
+      if (linkAccess != null) {
+        isGood = ILinkAccess_Behavior.call_isSingularCardinality_4024382256428848847(linkAccess);
         if (isGood) {
           // some of ops applicable to 'link' require left-expr to be a concept
           if (SConceptPropertyOperations.getBoolean(op, "applicableToConcept") && !(SConceptPropertyOperations.getBoolean(op, "applicableToNode"))) {
@@ -70,9 +70,9 @@ public class RulesUtil {
       }
     }
     if (SConceptPropertyOperations.getBoolean(op, "applicableToLinkList")) {
-      SNode linkAccessT = TypeChecker.getInstance().getRuntimeSupport().coerce_(LeftType, HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.lang.smodel.structure._LinkAccessT"), false, typeCheckingContext);
-      if (linkAccessT != null) {
-        isGood = !(SPropertyOperations.getBoolean(linkAccessT, "singularCradinality"));
+      SNode linkAccess = SNodeOperations.as(SNodeOperation_Behavior.call_getLeftExpressionOperation_1213877508946(op), "jetbrains.mps.lang.smodel.structure.ILinkAccess");
+      if (linkAccess != null) {
+        isGood = !(ILinkAccess_Behavior.call_isSingularCardinality_4024382256428848847(linkAccess));
       }
     }
     // ===========
@@ -108,12 +108,10 @@ public class RulesUtil {
   @CheckingMethod
   public static void checkAppliedTo_LinkAccess_aggregation(final TypeCheckingContext typeCheckingContext, final SNode op) {
     // expect access to an aggregation link with singular cardinality
-    final SNode leftExpression = SNodeOperation_Behavior.call_getLeftExpression_1213877508894(op);
-    SNode LeftType = TypeChecker.getInstance().getTypeOf(leftExpression);
+    final SNode leftExpressionOp = SNodeOperation_Behavior.call_getLeftExpressionOperation_1213877508946(op);
     boolean isGood = false;
-    SNode linkAccessT = TypeChecker.getInstance().getRuntimeSupport().coerce_(LeftType, HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.lang.smodel.structure._LinkAccessT"), false, typeCheckingContext);
-    if (linkAccessT != null) {
-      if (SPropertyOperations.getBoolean(linkAccessT, "aggregation")) {
+    if (SNodeOperations.isInstanceOf(leftExpressionOp, "jetbrains.mps.lang.smodel.structure.ILinkAccess")) {
+      if (ILinkAccess_Behavior.call_isAggregation_4024382256428848854(SNodeOperations.cast(leftExpressionOp, "jetbrains.mps.lang.smodel.structure.ILinkAccess"))) {
         isGood = true;
       }
     }
@@ -129,12 +127,10 @@ public class RulesUtil {
   public static void checkAppliedNotTo_LinkAccess_reference(final TypeCheckingContext typeCheckingContext, SNode op) {
     // expect access to an aggregation link with singular cardinality
     // left expression could also be something else (like just 'node') but not access to a reference link
-    SNode leftExpression = SNodeOperation_Behavior.call_getLeftExpression_1213877508894(op);
-    SNode leftType = TypeChecker.getInstance().getTypeOf(leftExpression);
+    SNode leftExpressionOp = SNodeOperation_Behavior.call_getLeftExpressionOperation_1213877508946(op);
     boolean isGood = true;
-    SNode linkAccessT = TypeChecker.getInstance().getRuntimeSupport().coerce_(leftType, HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.lang.smodel.structure._LinkAccessT"), false, typeCheckingContext);
-    if (linkAccessT != null) {
-      if (!(SPropertyOperations.getBoolean(linkAccessT, "aggregation"))) {
+    if (SNodeOperations.isInstanceOf(leftExpressionOp, "jetbrains.mps.lang.smodel.structure.ILinkAccess")) {
+      if (!(ILinkAccess_Behavior.call_isAggregation_4024382256428848854(SNodeOperations.cast(leftExpressionOp, "jetbrains.mps.lang.smodel.structure.ILinkAccess")))) {
         isGood = false;
       }
     }
@@ -195,7 +191,9 @@ public class RulesUtil {
     final SNode leftExpression = SNodeOperation_Behavior.call_getLeftExpression_1213877508894(op);
     SNode leftType = TypeChecker.getInstance().getTypeOf(leftExpression);
     SNode conceptDeclaration = null;
-    if (SNodeOperations.isInstanceOf(leftType, "jetbrains.mps.lang.smodel.structure._LinkAccessT")) {
+    if (SNodeOperations.isInstanceOf(SNodeOperation_Behavior.call_getLeftExpressionOperation_1213877508946(op), "jetbrains.mps.lang.smodel.structure.ILinkAccess")) {
+      conceptDeclaration = ILinkAccess_Behavior.call_getTargetConcept_4024382256428848859(SNodeOperations.cast(SNodeOperation_Behavior.call_getLeftExpressionOperation_1213877508946(op), "jetbrains.mps.lang.smodel.structure.ILinkAccess"));
+    } else if (SNodeOperations.isInstanceOf(leftType, "jetbrains.mps.lang.smodel.structure._LinkAccessT")) {
       conceptDeclaration = SLinkOperations.getTarget(SNodeOperations.cast(leftType, "jetbrains.mps.lang.smodel.structure._LinkAccessT"), "targetConcept", false);
     } else
     if (SNodeOperations.isInstanceOf(leftType, "jetbrains.mps.lang.smodel.structure.SNodeType")) {
