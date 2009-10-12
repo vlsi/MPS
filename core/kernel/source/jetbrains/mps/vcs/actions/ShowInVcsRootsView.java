@@ -18,6 +18,7 @@ package jetbrains.mps.vcs.actions;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.vcs.actions.VcsContext;
 import com.intellij.openapi.vfs.VirtualFile;
+import com.intellij.ide.projectView.ProjectView;
 import jetbrains.mps.ide.projectPane.fileSystem.VCSRootsProjectView;
 
 import java.util.List;
@@ -25,7 +26,7 @@ import java.util.List;
 public class ShowInVcsRootsView extends AbstractShowInFileWiew {
 
   protected VCSRootsProjectView getView(Project project) {
-    return project.getComponent(VCSRootsProjectView.class);
+    return (VCSRootsProjectView) ProjectView.getInstance(project).getProjectViewPaneById(VCSRootsProjectView.ID);
   }
 
   protected List<VirtualFile> getRoots(VcsContext vcsContext) {
