@@ -4868,14 +4868,27 @@
               </node>
             </node>
           </node>
-          <node role="condition" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1220985510738">
-            <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1220985509467">
-              <link role="variableDeclaration" targetNodeId="1218647706854" resolveInfo="basedir" />
+          <node role="condition" type="jetbrains.mps.baseLanguage.structure.OrExpression" id="2470425878008548155">
+            <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="2470425878008550058">
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="2470425878008550057">
+                <link role="variableDeclaration" targetNodeId="1218647706854" resolveInfo="basedir" />
+              </node>
+              <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="2470425878008550419">
+                <link role="baseMethodDeclaration" targetNodeId="3.~String.endsWith(java.lang.String):boolean" resolveInfo="endsWith" />
+                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="2470425878008550420">
+                  <property name="value" value="\\" />
+                </node>
+              </node>
             </node>
-            <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1220985513248">
-              <link role="baseMethodDeclaration" targetNodeId="3.~String.endsWith(java.lang.String):boolean" resolveInfo="endsWith" />
-              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1220985515061">
-                <property name="value" value="/" />
+            <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1220985510738">
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1220985509467">
+                <link role="variableDeclaration" targetNodeId="1218647706854" resolveInfo="basedir" />
+              </node>
+              <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1220985513248">
+                <link role="baseMethodDeclaration" targetNodeId="3.~String.endsWith(java.lang.String):boolean" resolveInfo="endsWith" />
+                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1220985515061">
+                  <property name="value" value="/" />
+                </node>
               </node>
             </node>
           </node>

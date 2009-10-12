@@ -4,10 +4,10 @@ package jetbrains.mps.build.packaging.behavior;
 
 import jetbrains.mps.smodel.SNode;
 import java.util.List;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.reloading.IClassPathItem;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.reloading.CompositeClassPathItem;
 import jetbrains.mps.reloading.FileClassPathItem;
@@ -24,7 +24,7 @@ public class ModuleUtil {
     if (basedir == null || basedir.length() == 0 || !(path.startsWith(basedir))) {
       return path;
     }
-    if (basedir.endsWith("/")) {
+    if (basedir.endsWith("/") || basedir.endsWith("\\")) {
       basedir = basedir.substring(0, basedir.length() - 1);
     }
     return path.substring(basedir.length() + 1);
