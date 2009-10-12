@@ -23,7 +23,6 @@ import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
 import java.util.List;
 import java.util.ArrayList;
 import jetbrains.mps.lang.refactoring.behavior.RequiredAdditionalArgument_Behavior;
-import jetbrains.mps.generator.template.WeavingMappingRuleContext;
 
 public class QueriesGenerated {
   public static boolean baseMappingRule_Condition_478744034994714447(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
@@ -367,6 +366,18 @@ public class QueriesGenerated {
     return SLinkOperations.getTarget(_context.getNode(), "affectedNodesClause", true) != null && SPropertyOperations.getBoolean(_context.getNode(), "refactorImmediatelyIfNoUsages");
   }
 
+  public static boolean ifMacro_Condition_1347577327951505984(final IOperationContext operationContext, final IfMacroContext _context) {
+    return (SLinkOperations.getTarget(_context.getNode(), "affectedNodesBlock", true) != null);
+  }
+
+  public static boolean ifMacro_Condition_1347577327951506011(final IOperationContext operationContext, final IfMacroContext _context) {
+    return (SLinkOperations.getTarget(_context.getNode(), "updateModelBlock", true) != null);
+  }
+
+  public static boolean ifMacro_Condition_1347577327951669531(final IOperationContext operationContext, final IfMacroContext _context) {
+    return (SLinkOperations.getTarget(_context.getNode(), "updateModelBlock", true) == null);
+  }
+
   public static boolean ifMacro_Condition_1789893890062301483(final IOperationContext operationContext, final IfMacroContext _context) {
     return (SLinkOperations.getTarget(_context.getNode(), "affectedNodesClause", true) != null);
   }
@@ -487,14 +498,6 @@ public class QueriesGenerated {
     return (SLinkOperations.getTarget(_context.getNode(), "doWhenDoneBlock", true) != null);
   }
 
-  public static boolean ifMacro_Condition_7573235936722749555(final IOperationContext operationContext, final IfMacroContext _context) {
-    return (SLinkOperations.getTarget(_context.getNode(), "affectedNodesBlock", true) != null);
-  }
-
-  public static boolean ifMacro_Condition_7573235936722749583(final IOperationContext operationContext, final IfMacroContext _context) {
-    return (SLinkOperations.getTarget(_context.getNode(), "updateModelBlock", true) != null);
-  }
-
   public static boolean ifMacro_Condition_7573235936722758695(final IOperationContext operationContext, final IfMacroContext _context) {
     return (SLinkOperations.getTarget(_context.getNode(), "isApplicableBlock", true) == null);
   }
@@ -605,6 +608,14 @@ public class QueriesGenerated {
 
   public static SNode sourceNodeQuery_616550569929040349(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "modelsToGenerateBlock", true), "body", true);
+  }
+
+  public static SNode sourceNodeQuery_1347577327951505972(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "affectedNodesBlock", true), "body", true);
+  }
+
+  public static SNode sourceNodeQuery_1347577327951506001(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "updateModelBlock", true), "body", true);
   }
 
   public static SNode sourceNodeQuery_1789893890062301545(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
@@ -727,14 +738,6 @@ public class QueriesGenerated {
     return SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "doWhenDoneBlock", true), "body", true);
   }
 
-  public static SNode sourceNodeQuery_7573235936722749565(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "affectedNodesBlock", true), "body", true);
-  }
-
-  public static SNode sourceNodeQuery_7573235936722749593(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "updateModelBlock", true), "body", true);
-  }
-
   public static SNode sourceNodeQuery_7573235936722758760(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "isApplicableBlock", true), "body", true);
   }
@@ -837,9 +840,5 @@ public class QueriesGenerated {
       }
     }
     return result;
-  }
-
-  public static SNode weaving_MappingRule_ContextNodeQuery_7573235936722712538(final IOperationContext opereationContext, final WeavingMappingRuleContext _context) {
-    return _context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "refactoringClass");
   }
 }

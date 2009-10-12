@@ -23,6 +23,7 @@ import jetbrains.mps.generator.GenerationSettings;
 import jetbrains.mps.generator.GeneratorManager;
 import jetbrains.mps.generator.IGenerationType;
 import jetbrains.mps.ide.messages.DefaultMessageHandler;
+import jetbrains.mps.ide.findusages.model.SearchResults;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.ModuleContext;
 import jetbrains.mps.smodel.*;
@@ -91,6 +92,10 @@ public class OldRefactoringAdapter implements IRefactoring {
         }
       }
     });
+  }
+
+  public SearchResults getAffectedNodes(RefactoringContext refactoringContext) {
+    return myOldRefactoring.getAffectedNodes(refactoringContext);
   }
 
   private class MyRefactoringTarget implements IRefactoringTarget {

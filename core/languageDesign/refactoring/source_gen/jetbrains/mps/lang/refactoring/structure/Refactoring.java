@@ -27,6 +27,8 @@ public class Refactoring extends BaseConcept implements INamedConcept, IConceptA
   public static final String DO_REFACTOR_BLOCK = "doRefactorBlock";
   public static final String MODELS_TO_GENERATE_BLOCK = "modelsToGenerateBlock";
   public static final String DO_WHEN_DONE_BLOCK = "doWhenDoneBlock";
+  public static final String AFFECTED_NODES_BLOCK = "affectedNodesBlock";
+  public static final String UPDATE_MODEL_BLOCK = "updateModelBlock";
   public static final String PARAMETER = "parameter";
   public static final String FIELD = "field";
 
@@ -128,6 +130,22 @@ public class Refactoring extends BaseConcept implements INamedConcept, IConceptA
 
   public void setDoWhenDoneBlock(DoWhenDoneClause node) {
     super.setChild(Refactoring.DO_WHEN_DONE_BLOCK, node);
+  }
+
+  public AffectedNodesClause getAffectedNodesBlock() {
+    return (AffectedNodesClause)this.getChild(AffectedNodesClause.class, Refactoring.AFFECTED_NODES_BLOCK);
+  }
+
+  public void setAffectedNodesBlock(AffectedNodesClause node) {
+    super.setChild(Refactoring.AFFECTED_NODES_BLOCK, node);
+  }
+
+  public UpdateModelClause getUpdateModelBlock() {
+    return (UpdateModelClause)this.getChild(UpdateModelClause.class, Refactoring.UPDATE_MODEL_BLOCK);
+  }
+
+  public void setUpdateModelBlock(UpdateModelClause node) {
+    super.setChild(Refactoring.UPDATE_MODEL_BLOCK, node);
   }
 
   public int getParametersCount() {

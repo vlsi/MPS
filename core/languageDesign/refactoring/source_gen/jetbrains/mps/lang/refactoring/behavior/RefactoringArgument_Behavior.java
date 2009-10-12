@@ -14,12 +14,11 @@ public class RefactoringArgument_Behavior {
 
   public static boolean call_isTransient_478744034994716004(SNode thisNode) {
     SNode refactoring = SNodeOperations.getAncestor(thisNode, "jetbrains.mps.lang.refactoring.structure.Refactoring", false, false);
-    if (!(SNodeOperations.isInstanceOf(refactoring, "jetbrains.mps.lang.refactoring.structure.LoggableRefactoring"))) {
+    if (!(Refactoring_Behavior.call_isLoggable_1347577327951509202(refactoring))) {
       return true;
     }
 
-    SNode loggableRefactoring = SNodeOperations.cast(refactoring, "jetbrains.mps.lang.refactoring.structure.LoggableRefactoring");
-    List<SNode> references = SNodeOperations.getDescendants(SLinkOperations.getTarget(loggableRefactoring, "updateModelBlock", true), "jetbrains.mps.lang.refactoring.structure.RefactoringArgumentReference", false, new String[]{});
+    List<SNode> references = SNodeOperations.getDescendants(SLinkOperations.getTarget(refactoring, "updateModelBlock", true), "jetbrains.mps.lang.refactoring.structure.RefactoringArgumentReference", false, new String[]{});
     for (SNode reference : references) {
       for (SReference sreference : reference.getReferences()) {
         if (sreference.getTargetNode() == thisNode) {

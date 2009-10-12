@@ -951,7 +951,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="6895093993902236495">
-    <property name="package" value="RefDecl" />
+    <property name="package" value="Deprecated" />
     <property name="name" value="LoggableRefactoring" />
     <property name="rootable" value="true" />
     <link role="extends" targetNodeId="6895093993902236229" resolveInfo="Refactoring" />
@@ -960,13 +960,16 @@
       <property name="role" value="affectedNodesBlock" />
       <property name="sourceCardinality" value="1" />
       <link role="target" targetNodeId="1200932465350" resolveInfo="AffectedNodesClause" />
+      <link role="specializedLink" targetNodeId="1347577327951503399" />
     </node>
     <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="6895093993902311014">
       <property name="metaClass" value="aggregation" />
       <property name="role" value="updateModelBlock" />
       <property name="sourceCardinality" value="1" />
       <link role="target" targetNodeId="1189694434958" resolveInfo="UpdateModelClause" />
+      <link role="specializedLink" targetNodeId="1347577327951503400" />
     </node>
+    <node role="deprecatedNode$attribute" type="jetbrains.mps.lang.structure.structure.DeprecatedNodeAnnotation" id="1347577327951509195" />
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="6895093993902310761">
     <property name="package" value="RefDecl.Target" />
@@ -1360,6 +1363,18 @@
       <property name="metaClass" value="aggregation" />
       <property name="role" value="doWhenDoneBlock" />
       <link role="target" targetNodeId="2058726427123891188" resolveInfo="DoWhenDoneClause" />
+    </node>
+    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1347577327951503399">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="affectedNodesBlock" />
+      <property name="sourceCardinality" value="0..1" />
+      <link role="target" targetNodeId="1200932465350" resolveInfo="AffectedNodesClause" />
+    </node>
+    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1347577327951503400">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="updateModelBlock" />
+      <property name="sourceCardinality" value="0..1" />
+      <link role="target" targetNodeId="1189694434958" resolveInfo="UpdateModelClause" />
     </node>
     <node role="propertyDeclaration" type="jetbrains.mps.lang.structure.structure.PropertyDeclaration" id="6895093993902236371">
       <property name="name" value="userFriendlyName" />

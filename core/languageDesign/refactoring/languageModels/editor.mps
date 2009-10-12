@@ -895,6 +895,24 @@
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode" id="2058726427123891194">
         <link role="relationDeclaration" targetNodeId="1.2058726427123891193" />
       </node>
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1347577327951503439">
+        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem" id="1347577327951503440">
+          <property name="flag" value="false" />
+        </node>
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode" id="1347577327951503441">
+        <property name="noTargetText" value="&lt;affected nodes&gt;" />
+        <link role="relationDeclaration" targetNodeId="1.1347577327951503399" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1347577327951503442">
+        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem" id="1347577327951503443">
+          <property name="flag" value="false" />
+        </node>
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode" id="1347577327951503444">
+        <property name="noTargetText" value="&lt;non-loggable&gt;" />
+        <link role="relationDeclaration" targetNodeId="1.6895093993902311014" />
+      </node>
       <node role="cellLayout" type="jetbrains.mps.lang.editor.structure.CellLayout_Vertical" id="5497648299878742199" />
     </node>
   </node>
@@ -935,7 +953,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" id="5497648299878742200">
-    <property name="package" value="RefDecl" />
+    <property name="package" value="Deprecated" />
     <link role="conceptDeclaration" targetNodeId="1.6895093993902236495" resolveInfo="LoggableRefactoring" />
     <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="5497648299878742202">
       <property name="vertical" value="true" />

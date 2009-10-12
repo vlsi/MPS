@@ -20,6 +20,10 @@ public class Refactoring_Behavior {
     return SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(thisNode, "target", true), "jetbrains.mps.lang.refactoring.structure.NodeTarget"), "concept", false);
   }
 
+  public static boolean call_isLoggable_1347577327951509202(SNode thisNode) {
+    return (SLinkOperations.getTarget(thisNode, "updateModelBlock", true) != null);
+  }
+
   public static SNode call_getBaseConcept_4205271146524200392(SNode thisNode) {
     return (SNode)BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.refactoring.structure.Refactoring"), "virtual_getBaseConcept_2621449412040133768", PARAMETERS_4205271146524200392);
   }

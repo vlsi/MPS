@@ -14,7 +14,6 @@ import jetbrains.mps.ide.findusages.model.SearchResults;
 import jetbrains.mps.ide.findusages.view.FindUtils;
 import com.intellij.openapi.progress.EmptyProgressIndicator;
 import jetbrains.mps.project.GlobalScope;
-import jetbrains.mps.smodel.SModel;
 
 public class Rename extends BaseRefactoring {
   public Rename() {
@@ -52,9 +51,6 @@ public class Rename extends BaseRefactoring {
 
   public SearchResults getAffectedNodes(final RefactoringContext refactoringContext) {
     return FindUtils.getSearchResults(new EmptyProgressIndicator(), refactoringContext.getSelectedNode(), GlobalScope.getInstance(), "jetbrains.mps.lang.structure.findUsages.NodeAndDescendantsUsages_Finder");
-  }
-
-  public void updateModel(final SModel model, final RefactoringContext refactoringContext) {
   }
 
   public static String getKeyStroke_static() {

@@ -17,6 +17,7 @@ package jetbrains.mps.refactoring.framework;
 
 import jetbrains.mps.refactoring.framework.paramchooser.IChooser;
 import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.ide.findusages.model.SearchResults;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -58,5 +59,9 @@ public abstract class BaseRefactoring implements IRefactoring {
 
   public void doWhenDone(RefactoringContext refactoringContext) {
 
+  }
+
+  public SearchResults getAffectedNodes(RefactoringContext refactoringContext) {
+    return new SearchResults();
   }
 }
