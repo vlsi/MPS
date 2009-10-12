@@ -950,27 +950,6 @@
       <link role="conceptPropertyDeclaration" targetNodeId="1.1137473914776" resolveInfo="shortDescription" />
     </node>
   </node>
-  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="6895093993902236495">
-    <property name="package" value="Deprecated" />
-    <property name="name" value="LoggableRefactoring" />
-    <property name="rootable" value="true" />
-    <link role="extends" targetNodeId="6895093993902236229" resolveInfo="Refactoring" />
-    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="2058726427123468412">
-      <property name="metaClass" value="aggregation" />
-      <property name="role" value="affectedNodesBlock" />
-      <property name="sourceCardinality" value="1" />
-      <link role="target" targetNodeId="1200932465350" resolveInfo="AffectedNodesClause" />
-      <link role="specializedLink" targetNodeId="1347577327951503399" />
-    </node>
-    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="6895093993902311014">
-      <property name="metaClass" value="aggregation" />
-      <property name="role" value="updateModelBlock" />
-      <property name="sourceCardinality" value="1" />
-      <link role="target" targetNodeId="1189694434958" resolveInfo="UpdateModelClause" />
-      <link role="specializedLink" targetNodeId="1347577327951503400" />
-    </node>
-    <node role="deprecatedNode$attribute" type="jetbrains.mps.lang.structure.structure.DeprecatedNodeAnnotation" id="1347577327951509195" />
-  </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="6895093993902310761">
     <property name="package" value="RefDecl.Target" />
     <property name="name" value="RefactoringTarget" />
