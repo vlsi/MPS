@@ -1307,6 +1307,14 @@
             </node>
           </node>
         </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="6917466149314462205">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="6917466149314462206">
+            <property name="name" value="n" />
+            <node role="type" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="6917466149314462207">
+              <link role="concept" targetNodeId="138.1068390468198" resolveInfo="ClassConcept" />
+            </node>
+          </node>
+        </node>
       </node>
     </node>
   </node>

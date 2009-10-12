@@ -16,12 +16,13 @@ import jetbrains.mps.smodel.action.INodeSubstituteAction;
 import jetbrains.mps.smodel.action.NodeSubstituteActionsFactoryContext;
 import java.util.ArrayList;
 import jetbrains.mps.util.Calculable;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.lang.smodel.behavior.ILinkAccess_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.lang.smodel.behavior.StaticConceptMethodCall_Behavior;
 import jetbrains.mps.smodel.action.DefaultChildNodeSubstituteAction;
 import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.action.ChildSubstituteActionsHelper;
 import jetbrains.mps.smodel.action.SideTransformActionsBuilderContext;
 import jetbrains.mps.smodel.action.AbstractSideTransformHintSubstituteAction;
@@ -129,9 +130,10 @@ public class QueriesGenerated {
           ApplicableTypesInfo result = new ApplicableTypesInfo();
           SNode leftExpression = SLinkOperations.getTarget(SNodeOperations.cast(_context.getParentNode(), "jetbrains.mps.baseLanguage.structure.DotExpression"), "operand", true);
           SNode leftType = TypeChecker.getInstance().getTypeOf(leftExpression);
-          SNode linkAccessT = TypeChecker.getInstance().getRuntimeSupport().coerce_(leftType, HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.lang.smodel.structure._LinkAccessT"), false);
-          result.myLinkAccessT = linkAccessT;
-          if ((linkAccessT != null) && SPropertyOperations.getBoolean(linkAccessT, "singularCradinality")) {
+          SNode operation = SLinkOperations.getTarget(SNodeOperations.as(leftExpression, "jetbrains.mps.baseLanguage.structure.DotExpression"), "operation", true);
+          SNode linkAccess = SNodeOperations.as(operation, "jetbrains.mps.lang.smodel.structure.ILinkAccess");
+          result.myLinkAccess = linkAccess;
+          if ((linkAccess != null) && ILinkAccess_Behavior.call_isSingularCardinality_4024382256428848847(linkAccess)) {
             if (TypeChecker.getInstance().getRuntimeSupport().coerce_(leftType, HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.lang.smodel.structure.SConceptType"), true) != null) {
               result.myLinkToConcept = true;
             }
@@ -354,9 +356,10 @@ public class QueriesGenerated {
           ApplicableTypesInfo result = new ApplicableTypesInfo();
           SNode leftExpression = SLinkOperations.getTarget(SNodeOperations.cast(_context.getParentNode(), "jetbrains.mps.baseLanguage.structure.DotExpression"), "operand", true);
           SNode leftType = TypeChecker.getInstance().getTypeOf(leftExpression);
-          SNode linkAccessT = TypeChecker.getInstance().getRuntimeSupport().coerce_(leftType, HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.lang.smodel.structure._LinkAccessT"), false);
-          result.myLinkAccessT = linkAccessT;
-          if ((linkAccessT != null) && SPropertyOperations.getBoolean(linkAccessT, "singularCradinality")) {
+          SNode operation = SLinkOperations.getTarget(SNodeOperations.as(leftExpression, "jetbrains.mps.baseLanguage.structure.DotExpression"), "operation", true);
+          SNode linkAccess = SNodeOperations.as(operation, "jetbrains.mps.lang.smodel.structure.ILinkAccess");
+          result.myLinkAccess = linkAccess;
+          if ((linkAccess != null) && ILinkAccess_Behavior.call_isSingularCardinality_4024382256428848847(linkAccess)) {
             if (TypeChecker.getInstance().getRuntimeSupport().coerce_(leftType, HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.lang.smodel.structure.SConceptType"), true) != null) {
               result.myLinkToConcept = true;
             }
@@ -406,9 +409,9 @@ public class QueriesGenerated {
             }
           }
           // ==========
-          SNode linkAccessT = appTypesInfo.myLinkAccessT;
-          if (linkAccessT != null) {
-            if (SPropertyOperations.getBoolean(linkAccessT, "singularCradinality")) {
+          SNode linkAccess = appTypesInfo.myLinkAccess;
+          if (linkAccess != null) {
+            if (ILinkAccess_Behavior.call_isSingularCardinality_4024382256428848847(linkAccess)) {
               // some ops are only applicable to 'link to concept'
               if (SConceptPropertyOperations.getBoolean(parameterOp, "applicableToConcept") && !(SConceptPropertyOperations.getBoolean(parameterOp, "applicableToNode"))) {
                 return !(SConceptPropertyOperations.getBoolean(parameterOp, "applicableToLink") && appTypesInfo.myLinkToConcept);
@@ -446,9 +449,10 @@ public class QueriesGenerated {
           ApplicableTypesInfo result = new ApplicableTypesInfo();
           SNode leftExpression = SLinkOperations.getTarget(SNodeOperations.cast(_context.getParentNode(), "jetbrains.mps.baseLanguage.structure.DotExpression"), "operand", true);
           SNode leftType = TypeChecker.getInstance().getTypeOf(leftExpression);
-          SNode linkAccessT = TypeChecker.getInstance().getRuntimeSupport().coerce_(leftType, HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.lang.smodel.structure._LinkAccessT"), false);
-          result.myLinkAccessT = linkAccessT;
-          if ((linkAccessT != null) && SPropertyOperations.getBoolean(linkAccessT, "singularCradinality")) {
+          SNode operation = SLinkOperations.getTarget(SNodeOperations.as(leftExpression, "jetbrains.mps.baseLanguage.structure.DotExpression"), "operation", true);
+          SNode linkAccess = SNodeOperations.as(operation, "jetbrains.mps.lang.smodel.structure.ILinkAccess");
+          result.myLinkAccess = linkAccess;
+          if ((linkAccess != null) && ILinkAccess_Behavior.call_isSingularCardinality_4024382256428848847(linkAccess)) {
             if (TypeChecker.getInstance().getRuntimeSupport().coerce_(leftType, HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.lang.smodel.structure.SConceptType"), true) != null) {
               result.myLinkToConcept = true;
             }
@@ -477,8 +481,8 @@ public class QueriesGenerated {
       SNode applicableConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.smodel.structure.SNodeOperation");
       Condition cond = new Condition() {
         public boolean met(Object object) {
-          SNode linkAccessT = appTypesInfo.myLinkAccessT;
-          if (linkAccessT != null && !(SPropertyOperations.getBoolean(linkAccessT, "aggregation"))) {
+          SNode linkAccess = appTypesInfo.myLinkAccess;
+          if (linkAccess != null && !(ILinkAccess_Behavior.call_isAggregation_4024382256428848854(linkAccess))) {
             //  some operations are only applicable to aggregation links
             if (SConceptOperations.isExactly(concept, "jetbrains.mps.lang.smodel.structure.Link_DeleteChildOperation")) {
               return true;
