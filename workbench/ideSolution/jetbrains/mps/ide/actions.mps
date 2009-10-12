@@ -28108,7 +28108,7 @@
               <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="6359127068906225486">
                 <link role="baseMethodDeclaration" targetNodeId="72.~JCheckBox.&lt;init&gt;(java.lang.String)" resolveInfo="JCheckBox" />
                 <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="6359127068906225487">
-                  <property name="value" value="add \&quot;return\&quot; keyword" />
+                  <property name="value" value="Add \&quot;return\&quot; keyword" />
                 </node>
               </node>
             </node>

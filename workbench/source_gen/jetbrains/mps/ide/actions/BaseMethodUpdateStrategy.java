@@ -15,7 +15,7 @@ public abstract class BaseMethodUpdateStrategy implements StratergyAddMethodDial
   private PersistentOptions_PreferencesComponent myPrefsComponent = this.getPrefsComponent();
 
   public BaseMethodUpdateStrategy() {
-    this.myCheckBox = new JCheckBox("add \"return\" keyword");
+    this.myCheckBox = new JCheckBox("Add \"return\" keyword");
     this.myCheckBox.setSelected(this.myPrefsComponent.getStateObject().addReturnsOnImplement);
   }
 
