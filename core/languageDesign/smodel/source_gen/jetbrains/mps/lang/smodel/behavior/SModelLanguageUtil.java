@@ -30,11 +30,8 @@ public class SModelLanguageUtil {
   public static SNode getConcept(SNode expression) {
     if (SNodeOperations.isInstanceOf(expression, "jetbrains.mps.baseLanguage.structure.DotExpression")) {
       SNode operation = SLinkOperations.getTarget(SNodeOperations.cast(expression, "jetbrains.mps.baseLanguage.structure.DotExpression"), "operation", true);
-      if (SNodeOperations.isInstanceOf(operation, "jetbrains.mps.lang.smodel.structure.SLinkAccess")) {
-        return SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.cast(operation, "jetbrains.mps.lang.smodel.structure.SLinkAccess"), "link", false), "target", false);
-      }
-      if (SNodeOperations.isInstanceOf(operation, "jetbrains.mps.lang.smodel.structure.SLinkListAccess")) {
-        return SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.cast(operation, "jetbrains.mps.lang.smodel.structure.SLinkListAccess"), "link", false), "target", false);
+      if (SNodeOperations.isInstanceOf(operation, "jetbrains.mps.lang.smodel.structure.ILinkAccess")) {
+        return ILinkAccess_Behavior.call_getTargetConcept_4024382256428848859(SNodeOperations.cast(operation, "jetbrains.mps.lang.smodel.structure.ILinkAccess"));
       }
     }
     if (SNodeOperations.isInstanceOf(expression, "jetbrains.mps.baseLanguage.structure.VariableReference")) {

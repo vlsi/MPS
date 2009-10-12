@@ -75,7 +75,7 @@ public class typeof_SemanticDowncastExpression_InferenceRule extends AbstractInf
               {
                 SNode _nodeToCheck_1029348928467 = expr;
                 BaseIntentionProvider intentionProvider = null;
-                typeCheckingContext.createEquation((SNode)typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1221162512076", true), (SNode)new _Quotations.QuotationClass_90().createNode(typeCheckingContext), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1221162518298", intentionProvider);
+                typeCheckingContext.createEquation((SNode)typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1221162512076", true), (SNode)new _Quotations.QuotationClass_89().createNode(typeCheckingContext), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1221162518298", intentionProvider);
               }
             } else {
               {

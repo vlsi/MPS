@@ -19,7 +19,7 @@ public class typeof_Node_DetachOperation_InferenceRule extends AbstractInference
     {
       SNode _nodeToCheck_1029348928467 = node;
       BaseIntentionProvider intentionProvider = null;
-      typeCheckingContext.createEquation((SNode)typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1228341932964", true), (SNode)new _Quotations.QuotationClass_114().createNode(typeCheckingContext.getEquationManager().getRepresentator(Concept_typevar_1228341932957), typeCheckingContext), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1228341932962", intentionProvider);
+      typeCheckingContext.createEquation((SNode)typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1228341932964", true), (SNode)new _Quotations.QuotationClass_113().createNode(typeCheckingContext.getEquationManager().getRepresentator(Concept_typevar_1228341932957), typeCheckingContext), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1228341932962", intentionProvider);
     }
   }
 
