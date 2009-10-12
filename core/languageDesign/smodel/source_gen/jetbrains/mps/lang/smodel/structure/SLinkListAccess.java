@@ -8,12 +8,39 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
-public class SLinkListAccess extends SNodeOperation {
+public class SLinkListAccess extends SNodeOperation implements ILinkAccess {
   public static final String concept = "jetbrains.mps.lang.smodel.structure.SLinkListAccess";
+  public static final String SHORT_DESCRIPTION = "shortDescription";
+  public static final String ALIAS = "alias";
+  public static final String VIRTUAL_PACKAGE = "virtualPackage";
   public static final String LINK = "link";
 
   public SLinkListAccess(SNode node) {
     super(node);
+  }
+
+  public String getShortDescription() {
+    return this.getProperty(SLinkListAccess.SHORT_DESCRIPTION);
+  }
+
+  public void setShortDescription(String value) {
+    this.setProperty(SLinkListAccess.SHORT_DESCRIPTION, value);
+  }
+
+  public String getAlias() {
+    return this.getProperty(SLinkListAccess.ALIAS);
+  }
+
+  public void setAlias(String value) {
+    this.setProperty(SLinkListAccess.ALIAS, value);
+  }
+
+  public String getVirtualPackage() {
+    return this.getProperty(SLinkListAccess.VIRTUAL_PACKAGE);
+  }
+
+  public void setVirtualPackage(String value) {
+    this.setProperty(SLinkListAccess.VIRTUAL_PACKAGE, value);
   }
 
   public LinkDeclaration getLink() {

@@ -959,6 +959,9 @@
       <property name="role" value="link" />
       <link role="target" targetNodeId="3.1071489288298" />
     </node>
+    <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="4024382256428848864">
+      <link role="intfc" targetNodeId="4024382256428848843" resolveInfo="ILinkAccess" />
+    </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1138056282393">
     <property name="name" value="SLinkListAccess" />
@@ -977,6 +980,9 @@
       <property name="sourceCardinality" value="1" />
       <property name="role" value="link" />
       <link role="target" targetNodeId="3.1071489288298" />
+    </node>
+    <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="4024382256428848939">
+      <link role="intfc" targetNodeId="4024382256428848843" resolveInfo="ILinkAccess" />
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1138411891628">
@@ -2512,6 +2518,9 @@
     <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="1204763424573">
       <link role="intfc" targetNodeId="1204762015203" resolveInfo="IAttributeAccessQualifier" />
     </node>
+    <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="4024382256428849248">
+      <link role="intfc" targetNodeId="4024382256428848843" resolveInfo="ILinkAccess" />
+    </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1204832665472">
     <property name="package" value="attribute" />
@@ -2530,6 +2539,9 @@
     </node>
     <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="1204832665474">
       <link role="intfc" targetNodeId="1204762015203" resolveInfo="IAttributeAccessQualifier" />
+    </node>
+    <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="4024382256428849251">
+      <link role="intfc" targetNodeId="4024382256428848843" resolveInfo="ILinkAccess" />
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration" id="1204834061007">
@@ -2598,6 +2610,9 @@
     </node>
     <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="1204848911286">
       <link role="intfc" targetNodeId="1204762015203" resolveInfo="IAttributeAccessQualifier" />
+    </node>
+    <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="4024382256428849245">
+      <link role="intfc" targetNodeId="4024382256428848843" resolveInfo="ILinkAccess" />
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1204851882688">
@@ -3133,6 +3148,9 @@
       <property name="sourceCardinality" value="1" />
       <link role="target" targetNodeId="2.1068431790191" resolveInfo="Expression" />
     </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration" id="4024382256428848843">
+    <property name="name" value="ILinkAccess" />
   </node>
 </model>
 
