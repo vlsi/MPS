@@ -335,6 +335,7 @@ public abstract class FileViewProjectPane extends AbstractProjectViewPane implem
       TreePath treePath = new TreePath(nodeToSelect.getPath());
       getTree().setSelectionPath(treePath);
       getTree().scrollPathToVisible(treePath);
+      getTree().selectNode(nodeToSelect);
       if (changeView) {
         myProjectView.changeView(getId());
       }
