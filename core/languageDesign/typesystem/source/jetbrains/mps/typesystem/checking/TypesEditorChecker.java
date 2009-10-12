@@ -45,11 +45,14 @@ public class TypesEditorChecker extends EditorCheckerAdapter {
 
   private Timer myTimer = new Timer("helgins interruptor");
   private WeakSet<QuickFix_Runtime> myOnceExecutedQuickFixes = new WeakSet<QuickFix_Runtime>();
+  private boolean myMessagesChanged = false;
 
   public Set<EditorMessage> createMessages(final SNode node, IOperationContext operationContext, List<SModelEvent> events, boolean wasCheckedOnce) {
+    myMessagesChanged = false;
     Set<EditorMessage> messages = new LinkedHashSet<EditorMessage>();
       if (!wasCheckedOnce || !TypeChecker.getInstance().isCheckedRoot(node.getContainingRoot())) {
         try {
+          myMessagesChanged = true;
           TypeChecker.getInstance().checkRoot(node.getContainingRoot());
         } catch (Throwable t) {
           LOG.error(t);
@@ -64,6 +67,7 @@ public class TypesEditorChecker extends EditorCheckerAdapter {
       //non-typesystem checks
       if (!wasCheckedOnce || !typesComponent.isCheckedNonTypesystem()) {
         try {
+          myMessagesChanged = true;
           typesComponent.applyNonTypesystemRulesToRoot(operationContext);
         } catch (Throwable t) {
           LOG.error(t);
@@ -135,5 +139,13 @@ public class TypesEditorChecker extends EditorCheckerAdapter {
 
   public void dispose() {
     myTimer.cancel();
+  }
+
+  public boolean messagesChanged() {
+    return myMessagesChanged;
+  }
+
+  public void checkingIterationFinished() {
+    myMessagesChanged = false;
   }
 }

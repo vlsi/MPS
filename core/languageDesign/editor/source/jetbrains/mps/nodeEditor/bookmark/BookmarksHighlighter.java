@@ -61,6 +61,8 @@ public class BookmarksHighlighter extends EditorCheckerAdapter implements Editor
     return myChanged;
   }
 
+
+
   public void checkingIterationFinished() {
     myChanged = false;
   }

@@ -210,6 +210,8 @@ public class Highlighter implements EditorMessageOwner, ProjectComponent {
     }
 
     boolean isUpdated = false;
+    boolean inspectorIsUpdated = false;
+    EditorComponent inspector = null;
     List<IEditor> allEditors = getAllEditors();
 
     try {
@@ -228,15 +230,16 @@ public class Highlighter implements EditorMessageOwner, ProjectComponent {
           e.printStackTrace();
         }
         if (component[0] != null) {
-          if (updateEditorComponent(component[0], events, checkers, checkersToRemove)) {
+          if (updateEditorComponent(component[0], events, checkers, checkersToRemove, false)) {
             isUpdated = true;
           }
         }
       }
 
       if (myInspectorTool != null && myInspectorTool.getInspector() != null) {
-        if (updateEditorComponent(myInspectorTool.getInspector(), events, checkers, checkersToRemove)) {
-          isUpdated = true;
+        inspector = myInspectorTool.getInspector();
+        if (updateEditorComponent(inspector, events, checkers, checkersToRemove, isUpdated)) {
+          inspectorIsUpdated = true;
         }
       }
     } finally {
@@ -251,7 +254,11 @@ public class Highlighter implements EditorMessageOwner, ProjectComponent {
           component.getMessagesGutter().repaint();
         }
       }
-    }        
+    }
+    if (inspectorIsUpdated) {
+      inspector.repaint();
+      inspector.getMessagesGutter().repaint();
+    }
 
     for (IEditorChecker checker : checkers) {
       checker.checkingIterationFinished();
@@ -280,7 +287,7 @@ public class Highlighter implements EditorMessageOwner, ProjectComponent {
     }
   }
 
-  private boolean updateEditorComponent(final EditorComponent component, final List<SModelEvent> events, final Set<IEditorChecker> checkers, final Set<IEditorChecker> checkersToRemove) {
+  private boolean updateEditorComponent(final EditorComponent component, final List<SModelEvent> events, final Set<IEditorChecker> checkers, final Set<IEditorChecker> checkersToRemove, final boolean currentEditorMessagesChanged) {
     return runUpdateMessagesAction(new Computable<Boolean>() {
       public Boolean compute() {
         final SNode editedNode = component.getEditedNode();
@@ -316,7 +323,7 @@ public class Highlighter implements EditorMessageOwner, ProjectComponent {
           }
 
 
-          if (updateEditor(component, events, hackCheckedOnce, checkersToRecheckList, checkersToRemove)) {
+          if (updateEditor(component, events, hackCheckedOnce, checkersToRecheckList, checkersToRemove, currentEditorMessagesChanged)) {
             return true;
           }
         }
@@ -344,32 +351,43 @@ public class Highlighter implements EditorMessageOwner, ProjectComponent {
     });
   }
 
-  private boolean updateEditor(final EditorComponent editor, final List<SModelEvent> events, final boolean wasCheckedOnce, List<IEditorChecker> checkersToRecheck, Set<IEditorChecker> checkersToRemove) {
+  private boolean updateEditor(final EditorComponent editor, final List<SModelEvent> events, final boolean wasCheckedOnce, List<IEditorChecker> checkersToRecheck, Set<IEditorChecker> checkersToRemove, boolean currentEditorMessagesChanged) {
     if (editor == null || editor.getRootCell() == null) {
       return false;
     }
 
     NodeHighlightManager highlightManager = editor.getHighlightManager();
-
+    boolean anyMessageChanged = false;
     for (final IEditorChecker checker : checkersToRecheck) {
       final LinkedHashSet<EditorMessage> messages = new LinkedHashSet<EditorMessage>();
       final EditorMessageOwner[] owners = new EditorMessageOwner[1];
+      final boolean[] messagesChangedContainer = {false};
       Runnable runnable = new Runnable() {
         public void run() {
           SNode node = editor.getEditedNode();
           if (node == null) return;
           owners[0] = checker.getOwner(node);
           messages.addAll(checker.createMessages(node, editor.getOperationContext(), events, wasCheckedOnce));
+          messagesChangedContainer[0] = messagesChangedContainer[0] || checker.messagesChanged();
         }
       };
       ModelAccess.instance().runReadAction(runnable);
-
-      EditorMessageOwner owner = owners[0];
-      if (owner != null) {
-        highlightManager.clearForOwner(owner, false);
+      boolean messagesChanged = messagesChangedContainer[0];
+      if (!messagesChanged && editor instanceof InspectorEditorComponent) {
+        if (currentEditorMessagesChanged) {
+          messagesChanged = true;
+        }
       }
-      for (EditorMessage message : messages) {
-        highlightManager.mark(message, false);
+
+      if (messagesChanged) {
+        anyMessageChanged = true;
+        EditorMessageOwner owner = owners[0];
+        if (owner != null) {
+          highlightManager.clearForOwner(owner, false);
+        }
+        for (EditorMessage message : messages) {
+          highlightManager.mark(message, false);
+        }
       }
     }
     for (final IEditorChecker checker : checkersToRemove) {
@@ -385,11 +403,13 @@ public class Highlighter implements EditorMessageOwner, ProjectComponent {
       highlightManager.clearForOwner(owners[0], false);
     }
 
-    highlightManager.repaintAndRebuildEditorMessages();
+    if (anyMessageChanged) {
+      highlightManager.repaintAndRebuildEditorMessages();
+      editor.updateStatusBarMessage();
+    }
 
-    editor.updateStatusBarMessage();
 
-    return true;
+    return anyMessageChanged;
   }
 
   private class HighlighterThread extends Thread {

@@ -93,4 +93,7 @@ public abstract class EditorCheckerAdapter implements IEditorChecker, EditorMess
     return false;
   }
 
+  public boolean messagesChanged() {
+    return true;
+  }
 }

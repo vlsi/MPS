@@ -37,4 +37,6 @@ public interface IEditorChecker {
   boolean isLaterThan(IEditorChecker editorChecker);
 
   boolean isEarlierThan(IEditorChecker editorChecker);
+
+  boolean messagesChanged();
 }
