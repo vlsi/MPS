@@ -23,7 +23,7 @@ public class typeof_EnumMember_ValueOperation_InferenceRule extends AbstractInfe
     {
       SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(operation), "jetbrains.mps.baseLanguage.structure.DotExpression"), "operand", true);
       BaseIntentionProvider intentionProvider = null;
-      typeCheckingContext.createEquation((SNode)typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1240331895732", true), (SNode)new _Quotations.QuotationClass_116().createNode(typeCheckingContext.getEquationManager().getRepresentator(Enum_typevar_1240331870095), typeCheckingContext), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1240331899146", intentionProvider);
+      typeCheckingContext.createEquation((SNode)typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1240331895732", true), (SNode)new _Quotations.QuotationClass_114().createNode(typeCheckingContext.getEquationManager().getRepresentator(Enum_typevar_1240331870095), typeCheckingContext), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1240331899146", intentionProvider);
     }
     {
       SNode _nodeToCheck_1029348928467 = operation;

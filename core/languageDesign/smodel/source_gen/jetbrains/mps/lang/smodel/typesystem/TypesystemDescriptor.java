@@ -7,7 +7,6 @@ import jetbrains.mps.lang.typesystem.runtime.InferenceRule_Runtime;
 import jetbrains.mps.lang.typesystem.runtime.NonTypesystemRule_Runtime;
 import jetbrains.mps.lang.typesystem.runtime.SubtypingRule_Runtime;
 import jetbrains.mps.lang.typesystem.runtime.ComparisonRule_Runtime;
-import jetbrains.mps.lang.typesystem.runtime.InequationReplacementRule_Runtime;
 import jetbrains.mps.typesystem.inference.IVariableConverter_Runtime;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
@@ -400,18 +399,6 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
       this.mySubtypingRules.add(subtypingRule);
     }
     {
-      SubtypingRule_Runtime subtypingRule = new supertypesOf__LinkAccessT_weak_SubtypingRule();
-      this.mySubtypingRules.add(subtypingRule);
-    }
-    {
-      SubtypingRule_Runtime subtypingRule = new supertypesOf__LinkAccessT_storng_SubtypingRule();
-      this.mySubtypingRules.add(subtypingRule);
-    }
-    {
-      SubtypingRule_Runtime subtypingRule = new supertypesOf_SNodeType__LinkAccessT_SubtypingRule();
-      this.mySubtypingRules.add(subtypingRule);
-    }
-    {
       SubtypingRule_Runtime subtypingRule = new supertypesOf_SearchScopeType_ISearchScope_SubtypingRule();
       this.mySubtypingRules.add(subtypingRule);
     }
@@ -420,20 +407,12 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
       this.mySubtypingRules.add(subtypingRule);
     }
     {
-      ComparisonRule_Runtime comparisonRule = new linkAccessTypesAreComparable_ComparisonRule();
-      this.myComparisonRules.add(comparisonRule);
-    }
-    {
       ComparisonRule_Runtime comparisonRule = new interface_node_types_are_comparable_ComparisonRule();
       this.myComparisonRules.add(comparisonRule);
     }
     {
       ComparisonRule_Runtime comparisonRule = new comparable_SEnumMemberType__node_EnumerationMemberDeclaration_ComparisonRule();
       this.myComparisonRules.add(comparisonRule);
-    }
-    {
-      InequationReplacementRule_Runtime eliminationRule = new linkAccessTypesAreCovariantByConcepts_InequationReplacementRule();
-      this.myInequationReplacementRules.add(eliminationRule);
     }
     {
       IVariableConverter_Runtime converter = new IVariableConverter_Runtime() {
