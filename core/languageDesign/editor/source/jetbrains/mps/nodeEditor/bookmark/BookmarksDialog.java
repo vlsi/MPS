@@ -23,6 +23,7 @@ import java.awt.event.ActionEvent;
 
 import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.ide.dialogs.BaseDialog;
+import jetbrains.mps.ide.dialogs.DialogDimensionsSettings.DialogDimensions;
 import jetbrains.mps.MPSProjectHolder;
 
 public class BookmarksDialog extends BaseDialog {
@@ -115,5 +116,10 @@ public class BookmarksDialog extends BaseDialog {
 
   protected JComponent getMainComponent() {
     return myMainComponent;
+  }
+
+  @Override
+  public DialogDimensions getDefaultDimensionSettings() {
+    return new DialogDimensions(100,100,400,300);
   }
 }
