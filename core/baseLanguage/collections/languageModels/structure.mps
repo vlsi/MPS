@@ -2940,5 +2940,61 @@
       <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" resolveInfo="alias" />
     </node>
   </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="5232196642625574978">
+    <property name="package" value="list" />
+    <property name="name" value="HeadListOperation" />
+    <link role="extends" targetNodeId="1151701983961" resolveInfo="SequenceOperation" />
+    <node role="conceptLink" type="jetbrains.mps.lang.structure.structure.AggregationConceptLink" id="5232196642625574983">
+      <link role="conceptLinkDeclaration" targetNodeId="497032923610147119" resolveInfo="expectedOperandType" />
+      <node role="target" type="jetbrains.mps.baseLanguage.collections.structure.ListType" id="5232196642625574984">
+        <node role="elementType" type="jetbrains.mps.baseLanguage.structure.WildCardType" id="5232196642625574985" />
+      </node>
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="5232196642625574981">
+      <property name="value" value="headList" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" resolveInfo="alias" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="5232196642625574982">
+      <property name="value" value="head list" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473914776" resolveInfo="shortDescription" />
+    </node>
+    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="5232196642625574980">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="upToIndex" />
+      <property name="sourceCardinality" value="1" />
+      <link role="target" targetNodeId="2.1068431790191" resolveInfo="Expression" />
+    </node>
+    <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="5232196642625574979">
+      <link role="intfc" targetNodeId="2141797557973018607" resolveInfo="IListOperation" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="5232196642625575054">
+    <property name="package" value="list" />
+    <property name="name" value="TailListOperation" />
+    <link role="extends" targetNodeId="1151701983961" resolveInfo="SequenceOperation" />
+    <node role="conceptLink" type="jetbrains.mps.lang.structure.structure.AggregationConceptLink" id="5232196642625575059">
+      <link role="conceptLinkDeclaration" targetNodeId="497032923610147119" resolveInfo="expectedOperandType" />
+      <node role="target" type="jetbrains.mps.baseLanguage.collections.structure.ListType" id="5232196642625575060">
+        <node role="elementType" type="jetbrains.mps.baseLanguage.structure.WildCardType" id="5232196642625575061" />
+      </node>
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="5232196642625575057">
+      <property name="value" value="tailList" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" resolveInfo="alias" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="5232196642625575058">
+      <property name="value" value="tail list" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473914776" resolveInfo="shortDescription" />
+    </node>
+    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="5232196642625575056">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="fromIndex" />
+      <property name="sourceCardinality" value="1" />
+      <link role="target" targetNodeId="2.1068431790191" resolveInfo="Expression" />
+    </node>
+    <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="5232196642625575055">
+      <link role="intfc" targetNodeId="2141797557973018607" resolveInfo="IListOperation" />
+    </node>
+  </node>
 </model>
 

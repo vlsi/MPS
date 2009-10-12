@@ -5074,6 +5074,54 @@
         </node>
       </node>
     </node>
+    <node role="reductionMappingRule" type="jetbrains.mps.lang.generator.structure.Reduction_MappingRule" id="5232196642625763169">
+      <link role="applicableConcept" targetNodeId="8.5232196642625574978" resolveInfo="HeadListOperation" />
+      <node role="ruleConsequence" type="jetbrains.mps.lang.generator.structure.InlineTemplate_RuleConsequence" id="5232196642625767177">
+        <node role="templateNode" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="5232196642625767203">
+          <link role="baseMethodDeclaration" targetNodeId="13.~IListSequence.headListSequence(int):jetbrains.mps.internal.collections.runtime.IListSequence" resolveInfo="headListSequence" />
+          <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.Expression" id="5232196642625767204">
+            <node role="nodeMacro$attribute" type="jetbrains.mps.lang.generator.structure.CopySrcNodeMacro" id="5232196642625767205">
+              <node role="sourceNodeQuery" type="jetbrains.mps.lang.generator.structure.SourceSubstituteMacro_SourceNodeQuery" id="5232196642625767206">
+                <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="5232196642625767207">
+                  <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="5232196642625767208">
+                    <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="5232196642625767209">
+                      <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="5232196642625767210" />
+                      <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="5232196642625767211">
+                        <link role="link" targetNodeId="8.5232196642625574980" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="reductionMappingRule" type="jetbrains.mps.lang.generator.structure.Reduction_MappingRule" id="5232196642625767214">
+      <link role="applicableConcept" targetNodeId="8.5232196642625575054" resolveInfo="TailListOperation" />
+      <node role="ruleConsequence" type="jetbrains.mps.lang.generator.structure.InlineTemplate_RuleConsequence" id="5232196642625767216">
+        <node role="templateNode" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="5232196642625767242">
+          <link role="baseMethodDeclaration" targetNodeId="13.~IListSequence.tailListSequence(int):jetbrains.mps.internal.collections.runtime.IListSequence" resolveInfo="tailListSequence" />
+          <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.Expression" id="5232196642625767243">
+            <node role="nodeMacro$attribute" type="jetbrains.mps.lang.generator.structure.CopySrcNodeMacro" id="5232196642625767244">
+              <node role="sourceNodeQuery" type="jetbrains.mps.lang.generator.structure.SourceSubstituteMacro_SourceNodeQuery" id="5232196642625767245">
+                <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="5232196642625767246">
+                  <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="5232196642625767247">
+                    <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="5232196642625767248">
+                      <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="5232196642625767249" />
+                      <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="5232196642625767250">
+                        <link role="link" targetNodeId="8.5232196642625575056" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
     <node role="reductionMappingRule" type="jetbrains.mps.lang.generator.structure.Reduction_MappingRule" id="5784983078884983838">
       <link role="applicableConcept" targetNodeId="8.5784983078884872741" resolveInfo="PeekOperation" />
       <node role="ruleConsequence" type="jetbrains.mps.lang.generator.structure.InlineTemplate_RuleConsequence" id="5784983078884986569">

@@ -253,7 +253,22 @@ public class List_Test extends Util_Test {
     this.assertIterableEquals(this.input5(), sublist);
     ListSequence.fromList(sublist).addSequence(ListSequence.fromList(sublist).reversedList());
     this.assertIterableEquals(ArrayUtils.fromIntegerArray(new int[]{1,2,3,4,5,5,4,3,2,1,6,7,8,9,10}), list);
+  }
 
+  public void test_headList() throws Exception {
+    List<Integer> list = ListSequence.fromListAndArray(new ArrayList<Integer>(), 1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
+    List<Integer> headlist = ListSequence.fromList(list).headListSequence(5);
+    this.assertIterableEquals(this.input5(), headlist);
+    ListSequence.fromList(headlist).addSequence(ListSequence.fromList(headlist).reversedList());
+    this.assertIterableEquals(ArrayUtils.fromIntegerArray(new int[]{1,2,3,4,5,5,4,3,2,1,6,7,8,9,10}), list);
+  }
+
+  public void test_tailList() throws Exception {
+    List<Integer> list = ListSequence.fromListAndArray(new ArrayList<Integer>(), 6, 7, 8, 9, 10, 1, 2, 3, 4, 5);
+    List<Integer> taillist = ListSequence.fromList(list).tailListSequence(5);
+    this.assertIterableEquals(this.input5(), taillist);
+    ListSequence.fromList(taillist).addSequence(ListSequence.fromList(taillist).reversedList());
+    this.assertIterableEquals(ArrayUtils.fromIntegerArray(new int[]{6,7,8,9,10,1,2,3,4,5,5,4,3,2,1}), list);
   }
 
   public void test_containsAll() throws Exception {

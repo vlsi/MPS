@@ -56,7 +56,7 @@ public class ListSequence<T> extends CollectionSequence<T> implements IListSeque
                 return NullListSequence.instance();
             }
         }
-        if (list instanceof IListSequence) {
+        if (list instanceof IListSequence<?>) {
             return (IListSequence<U>) list;
         }
         return new ListSequence<U> (list);
@@ -71,7 +71,7 @@ public class ListSequence<T> extends CollectionSequence<T> implements IListSeque
                 list = new ArrayList<U>();
             }
             else if (array == null) {
-                if (list instanceof IListSequence) {
+                if (list instanceof IListSequence<?>) {
                     return (IListSequence<U>) list;
                 }
                 return new ListSequence<U> (list);
@@ -88,7 +88,7 @@ public class ListSequence<T> extends CollectionSequence<T> implements IListSeque
         else {
             list.addAll (input);
         }
-        if (list instanceof IListSequence) {
+        if (list instanceof IListSequence<?>) {
             return (IListSequence<U>) list;
         }
         return new ListSequence<U> (list);
@@ -100,7 +100,7 @@ public class ListSequence<T> extends CollectionSequence<T> implements IListSeque
                 return NullListSequence.instance();
             }
         }
-        if (it instanceof IListSequence) {
+        if (it instanceof IListSequence<?>) {
             return (IListSequence<U>) it;
         }
         List<U> list = new ArrayList<U> ();
@@ -111,7 +111,7 @@ public class ListSequence<T> extends CollectionSequence<T> implements IListSeque
                 }
             }
         }
-        else if (it instanceof Collection){
+        else if (it instanceof Collection<?>){
             list.addAll((Collection<? extends U>) it);
         }
         else {
@@ -142,7 +142,7 @@ public class ListSequence<T> extends CollectionSequence<T> implements IListSeque
                 }
             }
         }
-        else if (it instanceof Collection){
+        else if (it instanceof Collection<?>){
         	tmp.addAll((Collection<? extends U>) it);
         }
         else {
@@ -150,7 +150,7 @@ public class ListSequence<T> extends CollectionSequence<T> implements IListSeque
         		tmp.add(u);
         	}
         }
-    	if (tmp instanceof IListSequence) {
+    	if (tmp instanceof IListSequence<?>) {
     		return (IListSequence<U>) tmp;
     	}
     	return new ListSequence<U> (tmp);
@@ -212,8 +212,9 @@ public class ListSequence<T> extends CollectionSequence<T> implements IListSeque
     	}
         if (Sequence.NULL_WHEN_EMPTY) {
             return null;
+        } else {
+            throw new IndexOutOfBoundsException ("Empty list");
         }
-        throw new IndexOutOfBoundsException ("Empty list");
     }
     
     @Override
@@ -223,8 +224,9 @@ public class ListSequence<T> extends CollectionSequence<T> implements IListSeque
     	}
         if (Sequence.NULL_WHEN_EMPTY) {
             return null;
+        } else {
+            throw new IndexOutOfBoundsException ("Empty list");
         }
-        throw new IndexOutOfBoundsException ("Empty list");
     }
     
     @Override
@@ -307,7 +309,15 @@ public class ListSequence<T> extends CollectionSequence<T> implements IListSeque
     }
     
     public IListSequence<T> subListSequence(int fromIdx, int upToIdx) {
-        return new ListSequence<T> (list.subList(fromIdx, upToIdx));
+        return new ListSequence<T> (getList().subList(fromIdx, upToIdx));
+    }
+    
+    public IListSequence<T> headListSequence(int upToIdx) {
+        return new ListSequence<T> (getList().subList(0, upToIdx));
+    }
+    
+    public IListSequence<T> tailListSequence(int fromIdx) {
+        return new ListSequence<T> (getList().subList(fromIdx, getList().size()));
     }
     
     @Override

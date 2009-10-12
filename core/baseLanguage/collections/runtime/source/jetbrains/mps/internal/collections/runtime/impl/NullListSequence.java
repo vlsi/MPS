@@ -118,6 +118,14 @@ public class NullListSequence<T> extends NullCollectionSequence<T> implements IL
         return this;
     }
     
+    public IListSequence<T> headListSequence(int upToIdx) {
+        return this;
+    }
+    
+    public IListSequence<T> tailListSequence(int fromIdx) {
+        return this;
+    }
+    
     public IListSequence<T> removeSequence(ISequence<? extends T> seq) {
     	return this;
     }
