@@ -50,9 +50,6 @@ public class QueriesGenerated {
 
   public static boolean sideTransformHintSubstituteActionsBuilder_Precondition_Expression_1179535648215(final IOperationContext operationContext, final SideTransformPreconditionContext _context) {
     SNode expressionType = TypeChecker.getInstance().getTypeOf(_context.getSourceNode());
-    if (SNodeOperations.isInstanceOf(expressionType, "jetbrains.mps.lang.smodel.structure._LinkAccessT")) {
-      return true;
-    }
     if (SNodeOperations.isInstanceOf(expressionType, "jetbrains.mps.lang.smodel.structure.SNodeType")) {
       return true;
     }

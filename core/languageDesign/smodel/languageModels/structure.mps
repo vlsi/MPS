@@ -2652,6 +2652,7 @@
     <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="1206036984625">
       <link role="intfc" targetNodeId="2.1206036041805" resolveInfo="IInternalType" />
     </node>
+    <node role="deprecatedNode$attribute" type="jetbrains.mps.lang.structure.structure.DeprecatedNodeAnnotation" id="6037466102201905966" />
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1205357139746">
     <property name="package" value="attribute" />

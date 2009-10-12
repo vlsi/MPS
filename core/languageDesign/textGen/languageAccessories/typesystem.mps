@@ -655,38 +655,6 @@
       <link role="concept" targetNodeId="1.1234529062040" resolveInfo="PrivateMethodCall" />
     </node>
   </node>
-  <visible index="4" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
-  <node type="jetbrains.mps.lang.typesystem.structure.InferenceRule" id="1237482961667">
-    <property name="name" value="typeof_InfoPart" />
-    <property name="package" value="operation.append.part" />
-    <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1237482961668">
-      <node role="statement" type="jetbrains.mps.lang.typesystem.structure.CreateLessThanInequationStatement" id="1237805850773">
-        <node role="leftExpression" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause" id="1237805850774">
-          <node role="normalType" type="jetbrains.mps.lang.typesystem.structure.TypeOfExpression" id="1237805850775">
-            <node role="term" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1237805850776">
-              <node role="operand" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference" id="1237805850777">
-                <link role="applicableNode" targetNodeId="1237482961669" resolveInfo="part" />
-              </node>
-              <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1237805850778">
-                <link role="link" targetNodeId="1.1237305885953" />
-              </node>
-            </node>
-          </node>
-        </node>
-        <node role="rightExpression" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause" id="1237805850779">
-          <node role="normalType" type="jetbrains.mps.lang.quotation.structure.Quotation" id="1237805850780">
-            <node role="quotedNode" type="jetbrains.mps.lang.smodel.structure._LinkAccessT" id="1237805850781">
-              <link role="targetConcept" targetNodeId="4v.1133920641626" resolveInfo="BaseConcept" />
-            </node>
-          </node>
-        </node>
-      </node>
-    </node>
-    <node role="applicableNode" type="jetbrains.mps.lang.typesystem.structure.ConceptReference" id="1237482961669">
-      <property name="name" value="part" />
-      <link role="concept" targetNodeId="1.1237305275276" resolveInfo="InfoPart" />
-    </node>
-  </node>
   <node type="jetbrains.mps.lang.typesystem.structure.InferenceRule" id="1237483037415">
     <property name="name" value="typeof_AbstractAppendPart" />
     <property name="package" value="operation.append.part" />

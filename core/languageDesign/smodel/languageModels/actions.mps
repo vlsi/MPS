@@ -1504,25 +1504,6 @@
               </node>
             </node>
           </node>
-          <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1206059924539">
-            <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1206059924540">
-              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1206059937315">
-                <node role="expression" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1206059940098">
-                  <property name="value" value="true" />
-                </node>
-              </node>
-            </node>
-            <node role="condition" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1206059929028">
-              <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1206059927293">
-                <link role="variableDeclaration" targetNodeId="1206059813314" resolveInfo="expressionType" />
-              </node>
-              <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation" id="1206059929890">
-                <node role="conceptArgument" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" id="1206059933048">
-                  <link role="conceptDeclaration" targetNodeId="1.1204919674986" resolveInfo="_LinkAccessT" />
-                </node>
-              </node>
-            </node>
-          </node>
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1206059946787">
             <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1206059946788">
               <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1206059965563">
