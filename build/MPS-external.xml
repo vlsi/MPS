@@ -275,6 +275,7 @@
     <antcall target="MPS-languages.pack.jetbrains.mps.lang.annotations0" />
     <antcall target="MPS-languages.pack.jetbrains.mps.lang.behavior0" />
     <antcall target="MPS-languages.pack.jetbrains.mps.lang.constraints0" />
+    <antcall target="MPS-languages.pack.jetbrains.mps.lang.editor.editorTest0" />
     <antcall target="MPS-languages.pack.jetbrains.mps.lang.editor0" />
     <antcall target="MPS-languages.pack.jetbrains.mps.editor.runtime0" />
     <antcall target="MPS-languages.pack.jetbrains.mps.lang.findUsages0" />

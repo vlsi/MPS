@@ -1987,6 +1987,10 @@
               <property name="id" value="3f4bc5f5-c6c1-4a28-8b10-c83066ffa4a1" />
               <property name="name" value="jetbrains.mps.lang.constraints" />
             </node>
+            <node role="entry" type="jetbrains.mps.build.custommpsInternal.structure.MPSModule" id="8882731502890505140">
+              <property name="id" value="81f0abb8-d71e-4d13-a0c1-d2291fbb28b7" />
+              <property name="name" value="jetbrains.mps.lang.editor.editorTest" />
+            </node>
             <node role="entry" type="jetbrains.mps.build.custommpsInternal.structure.MPSModule" id="1237544286717">
               <property name="id" value="18bc6592-03a6-4e29-a83a-7ff23bde13ba" />
               <property name="name" value="jetbrains.mps.lang.editor" />

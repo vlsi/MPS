@@ -308,6 +308,16 @@
       <zipfileset dir="core/languageDesign/constraints/classes" />
     </jar>
   </target>
+  <target name="pack.jetbrains.mps.lang.editor.editorTest0">
+    <mkdir dir="core/languageDesign/editorTest/classes_gen" />
+    <mkdir dir="core/languageDesign/editorTest/source_gen.caches" />
+    <jar destfile="${deploy.dir}/MPS/core/languageDesign/jetbrains.mps.lang.editor.editorTest.mpsarch.jar" compress="true" duplicate="preserve" filesonly="true">
+      <zipfileset file="core/languageDesign/editorTest/editorTest.mpl" prefix="module" />
+      <zipfileset dir="core/languageDesign/editorTest/source_gen.caches" prefix="source_gen.caches" />
+      <zipfileset dir="core/languageDesign/editorTest" excludes="**/*.iml, **/*.java, **/*.class, **/*.mpr, **/*.mws, **/*.mpl, **/*.msd, **/*.devkit, **/*.ipr" prefix="module" />
+      <zipfileset dir="core/languageDesign/editorTest/classes_gen" />
+    </jar>
+  </target>
   <target name="pack.jetbrains.mps.lang.editor0">
     <mkdir dir="core/languageDesign/editor/classes" />
     <mkdir dir="core/languageDesign/editor/source_gen.caches" />
