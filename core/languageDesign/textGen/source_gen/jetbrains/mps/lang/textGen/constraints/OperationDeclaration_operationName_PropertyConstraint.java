@@ -27,7 +27,7 @@ public class OperationDeclaration_operationName_PropertyConstraint implements IM
       return null;
     }
     StringBuilder result = new StringBuilder();
-    for (int i = 0 ; i < name.length() ; i++ ) {
+    for (int i = 0; i < name.length(); i++) {
       if (Character.isUpperCase(name.charAt(i))) {
         result.append(' ');
         result.append(name.toLowerCase().charAt(i));

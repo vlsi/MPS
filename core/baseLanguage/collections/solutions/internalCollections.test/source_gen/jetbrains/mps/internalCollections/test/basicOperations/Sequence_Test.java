@@ -63,7 +63,7 @@ __switch__:
                       this.__CP__ = 4;
                       break;
                     case 5:
-                      _2_i++ ;
+                      _2_i++;
                       this.__CP__ = 3;
                       break;
                     case 6:
@@ -117,7 +117,7 @@ __switch__:
                       this.__CP__ = 4;
                       break;
                     case 5:
-                      _2_i++ ;
+                      _2_i++;
                       this.__CP__ = 3;
                       break;
                     case 6:
@@ -171,7 +171,7 @@ __switch__:
                       this.__CP__ = 4;
                       break;
                     case 5:
-                      _2_i++ ;
+                      _2_i++;
                       this.__CP__ = 3;
                       break;
                     case 6:
@@ -224,7 +224,7 @@ __switch__:
                       this.__CP__ = 6;
                       break;
                     case 7:
-                      _4_i++ ;
+                      _4_i++;
                       this.__CP__ = 5;
                       break;
                     case 9:
@@ -292,7 +292,7 @@ __switch__:
     Assert.assertTrue(Arrays.equals(new Integer[]{1,2,3,4,5}, Sequence.fromIterable(input).toListSequence().toGenericArray(Integer.class)));
     this.assertIterableEquals(this.expect5(), Sequence.fromIterable(input).toListSequence());
     Integer i = 1;
-    for (Iterator<Integer> it = input.iterator(); it.hasNext(); i++ ) {
+    for (Iterator<Integer> it = input.iterator(); it.hasNext(); i++) {
       Assert.assertEquals(i, it.next());
     }
     Assert.assertSame(6, i);
@@ -383,7 +383,7 @@ __switch__:
                       assert false : "Internal error";
                       return false;
                     case 2:
-                      switch (count.value++ ) {
+                      switch (count.value++) {
                         case 3:
                           this.__CP__ = 3;
                           break __switch__;

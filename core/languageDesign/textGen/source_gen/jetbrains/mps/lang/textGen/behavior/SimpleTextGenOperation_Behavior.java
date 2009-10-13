@@ -20,7 +20,7 @@ public class SimpleTextGenOperation_Behavior {
     }
     StringBuilder result = new StringBuilder();
     boolean space = false;
-    for (int i = 0 ; i < name.length() ; i += (space ?
+    for (int i = 0; i < name.length(); i += (space ?
       2 :
       1
     )) {

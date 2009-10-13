@@ -21,7 +21,7 @@ public class Sort_Test1 extends TestCase {
     int index = 0;
     for (Integer i : ListSequence.fromList(list_sorted)) {
       Assert.assertEquals(ListSequence.fromList(expected).getElement(index), i);
-      index++ ;
+      index++;
     }
   }
 
@@ -36,7 +36,7 @@ public class Sort_Test1 extends TestCase {
     int index = 0;
     for (Integer i : ListSequence.fromList(list_sorted)) {
       Assert.assertEquals(ListSequence.fromList(expected).getElement(index), i);
-      index++ ;
+      index++;
     }
   }
 }

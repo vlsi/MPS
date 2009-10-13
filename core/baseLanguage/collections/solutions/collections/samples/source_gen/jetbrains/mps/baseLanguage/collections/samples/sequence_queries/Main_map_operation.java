@@ -47,7 +47,7 @@ __switch__:
                       this.__CP__ = 6;
                       break;
                     case 7:
-                      _3_num++ ;
+                      _3_num++;
                       this.__CP__ = 4;
                       break;
                     default:
@@ -117,7 +117,7 @@ __switch__:
                       this.__CP__ = 4;
                       break;
                     case 13:
-                      count.value++ ;
+                      count.value++;
                       this.__CP__ = 3;
                       break;
                     case 5:

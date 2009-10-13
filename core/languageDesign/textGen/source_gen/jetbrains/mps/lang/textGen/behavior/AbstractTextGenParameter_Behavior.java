@@ -16,7 +16,7 @@ public class AbstractTextGenParameter_Behavior {
   public static String virtual_getGetterName_1234885318469(SNode thisNode) {
     String alias = SConceptPropertyOperations.getString(thisNode, "alias");
     StringBuilder builder = new StringBuilder("get");
-    for (int i = 0 ; i < alias.length() ; i++ ) {
+    for (int i = 0; i < alias.length(); i++) {
       char ch = alias.charAt(i);
       if (i == 0) {
         builder.append(alias.toUpperCase().charAt(i));

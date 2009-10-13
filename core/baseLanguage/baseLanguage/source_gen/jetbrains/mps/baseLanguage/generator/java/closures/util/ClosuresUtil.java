@@ -195,7 +195,7 @@ public class ClosuresUtil {
       int count = 1;
       String name = SPropertyOperations.getString(var, "name");
       while (MapSequence.fromMap(this.myName2Var).containsKey(name)) {
-        name = SPropertyOperations.getString(var, "name") + (count++ );
+        name = SPropertyOperations.getString(var, "name") + (count++);
       }
       MapSequence.fromMap(this.myName2Var).put(name, var);
       MapSequence.fromMap(this.myVar2Name).put(var, name);

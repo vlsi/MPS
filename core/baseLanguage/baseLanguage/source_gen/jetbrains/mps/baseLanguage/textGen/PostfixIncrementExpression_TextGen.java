@@ -10,6 +10,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 public class PostfixIncrementExpression_TextGen extends SNodeTextGen {
   public void doGenerateText(SNode node) {
     TextGenManager.instance().appendNodeText(this.getContext(), this.getBuffer(), SLinkOperations.getTarget(node, "expression", true), this.getSNode());
-    this.append("++ ");
+    this.append("++");
   }
 }

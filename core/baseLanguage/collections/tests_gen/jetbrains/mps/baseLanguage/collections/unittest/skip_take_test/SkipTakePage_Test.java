@@ -37,7 +37,7 @@ __switch__:
                       this.__CP__ = 4;
                       break;
                     case 5:
-                      _2_i++ ;
+                      _2_i++;
                       this.__CP__ = 3;
                       break;
                     case 6:
@@ -97,7 +97,7 @@ __switch__:
                       this.__CP__ = 4;
                       break;
                     case 5:
-                      _2_i++ ;
+                      _2_i++;
                       this.__CP__ = 3;
                       break;
                     case 6:
@@ -157,7 +157,7 @@ __switch__:
                       this.__CP__ = 4;
                       break;
                     case 5:
-                      _2_i++ ;
+                      _2_i++;
                       this.__CP__ = 3;
                       break;
                     case 6:
@@ -214,7 +214,7 @@ __switch__:
                       this.__CP__ = 4;
                       break;
                     case 5:
-                      _2_i++ ;
+                      _2_i++;
                       this.__CP__ = 3;
                       break;
                     case 6:

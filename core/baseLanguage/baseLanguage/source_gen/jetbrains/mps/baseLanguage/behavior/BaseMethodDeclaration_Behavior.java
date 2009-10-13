@@ -123,7 +123,7 @@ public class BaseMethodDeclaration_Behavior {
       return false;
     }
     boolean same = true;
-    for (int i = 0; i < SLinkOperations.getCount(thisNode, "parameter"); i++ ) {
+    for (int i = 0; i < SLinkOperations.getCount(thisNode, "parameter"); i++) {
       String searchedParamType = Type_Behavior.call_getErasureSignature_1213877337313(SLinkOperations.getTarget(ListSequence.fromList(SLinkOperations.getTargets(checked, "parameter", true)).getElement(i), "type", true));
       String foundParamType = Type_Behavior.call_getErasureSignature_1213877337313(SLinkOperations.getTarget(ListSequence.fromList(SLinkOperations.getTargets(thisNode, "parameter", true)).getElement(i), "type", true));
       if (!(foundParamType.equals(searchedParamType))) {
@@ -136,7 +136,7 @@ public class BaseMethodDeclaration_Behavior {
   public static String call_getErasureSignature_2830572026628006618(SNode thisNode) {
     StringBuilder sb = new StringBuilder();
     List<SNode> parameters = SLinkOperations.getTargets(thisNode, "parameter", true);
-    for (int i = 0; i < ListSequence.fromList(parameters).count(); i++ ) {
+    for (int i = 0; i < ListSequence.fromList(parameters).count(); i++) {
       SNode param = ListSequence.fromList(parameters).getElement(i);
       sb.append(Type_Behavior.call_getErasureSignature_1213877337313(SLinkOperations.getTarget(param, "type", true)));
       if (i < ListSequence.fromList(parameters).count() - 1) {

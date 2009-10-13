@@ -114,7 +114,7 @@ __switch__:
       if (curItem == keyMapItem) {
         break;
       }
-      index++ ;
+      index++;
     }
     return SPropertyOperations.getString(keyMapDeclaration, "name") + "_Action" + index;
   }
@@ -130,7 +130,7 @@ __switch__:
     int index = 1;
     while (SetSequence.fromSet(namesSet).contains(result)) {
       result = name + "_" + index;
-      index++ ;
+      index++;
     }
     SetSequence.fromSet(namesSet).addElement(result);
     return result;

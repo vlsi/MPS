@@ -19,7 +19,7 @@ public class StyleSheetClass_Behavior {
   public static String call_getGetterMethodName_1221829967694(SNode thisNode) {
     StringBuffer bufferName = new StringBuffer();
     bufferName.append("get");
-    for (int i = 0; i < SPropertyOperations.getString(thisNode, "name").length(); i++ ) {
+    for (int i = 0; i < SPropertyOperations.getString(thisNode, "name").length(); i++) {
       char ch = SPropertyOperations.getString(thisNode, "name").charAt(i);
       if (i == 0) {
         bufferName.append(Character.toUpperCase(ch));

@@ -131,7 +131,7 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
     int count = 0;
     while (!(this.isValidSolutionName(solutionName))) {
       solutionName = solutionNamePrefix + count;
-      count++ ;
+      count++;
     }
     this.setNewSolutionName(solutionName);
   }

@@ -60,7 +60,7 @@ public class WrappersUtils {
           MapSequence.fromMap(resMap).get(var) :
           0
         );
-        writes++ ;
+        writes++;
         MapSequence.fromMap(resMap).put(var, writes);
       }
     }

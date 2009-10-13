@@ -250,7 +250,7 @@ with_meet:
     for (SNode p : paramTypes) {
       SNode pct = ClassifierTypeUtil.getTypeCoercedToClassifierType(p);
       ListSequence.fromList(resList).addElement(ClassifierTypeUtil.copyTypeRecursively(pct));
-      idx++ ;
+      idx++;
     }
     return resList;
   }

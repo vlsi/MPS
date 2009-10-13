@@ -59,12 +59,12 @@ public class ParametersInformation<T> {
       }
       GridBagConstraints constraints = new GridBagConstraints();
       constraints.fill = GridBagConstraints.BOTH;
-      constraints.gridy = lineNumber++ ;
+      constraints.gridy = lineNumber++;
       panel.add(textPane, constraints);
       if (Sequence.fromIterable(methods).last() != method) {
         constraints = new GridBagConstraints();
         constraints.fill = GridBagConstraints.HORIZONTAL;
-        constraints.gridy = lineNumber++ ;
+        constraints.gridy = lineNumber++;
         panel.add(new ParametersInformation.Line(), constraints);
       }
     }

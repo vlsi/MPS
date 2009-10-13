@@ -43,7 +43,7 @@ public class DerivedInterfaces_Finder extends GeneratedFinder {
       if (passingNode != node) {
         ListSequence.fromList(_results).addElement(passingNode);
       }
-      passed++ ;
+      passed++;
     }
   }
 

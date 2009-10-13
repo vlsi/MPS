@@ -17,7 +17,7 @@ public class StringLiteralRegexp_Behavior {
   public static String virtual_getString_1222432436326(SNode thisNode, List<SNode> vars) {
     char[] chars = new char[]{'\\','(',')','}','{','[',']','+','*','?','|','^','.','$'};
     String text = SPropertyOperations.getString(thisNode, "text");
-    for (int i = 0 ; i < chars.length ; i++ ) {
+    for (int i = 0; i < chars.length; i++) {
       text = text.replaceAll("\\" + chars[i], "\\\\\\\\" + chars[i]);
     }
     return text;

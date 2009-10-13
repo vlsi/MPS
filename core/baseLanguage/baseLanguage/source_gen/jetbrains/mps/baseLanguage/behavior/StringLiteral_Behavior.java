@@ -24,7 +24,7 @@ public class StringLiteral_Behavior {
     if (value == null) {
       return true;
     }
-    for (int i = 0; i < value.length(); i++ ) {
+    for (int i = 0; i < value.length(); i++) {
       char c = SPropertyOperations.getString(thisNode, "value").charAt(i);
       if (isEscapeMode) {
         if (c == 'u') {
@@ -40,7 +40,7 @@ public class StringLiteral_Behavior {
         isEscapeMode = true;
       } else if (isSymbolCodeMode) {
         if (Character.isDigit(c)) {
-          digitNumber++ ;
+          digitNumber++;
         } else {
           return false;
         }
@@ -50,7 +50,7 @@ public class StringLiteral_Behavior {
         }
       } else if (isUnicodeMode) {
         if (Character.isDigit(c) || StringLiteral_Behavior.call_isHexChar_1221565869792(thisNode, c)) {
-          unicodeDigitNumber++ ;
+          unicodeDigitNumber++;
         } else {
           return false;
         }

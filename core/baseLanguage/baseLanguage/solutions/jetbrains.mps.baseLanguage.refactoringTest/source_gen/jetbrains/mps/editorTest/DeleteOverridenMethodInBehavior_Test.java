@@ -33,7 +33,7 @@ public class DeleteOverridenMethodInBehavior_Test extends BaseTransformationTest
       final IEditor editor = editorWrap[0];
       EditorComponent editorComponent = editor.getCurrentEditorComponent();
       BaseEditorTestBody.pressKeys(editorComponent, ListSequence.fromListAndArray(new ArrayList<String>(), " RIGHT"));
-      for (int i = 0 ; i < 5 ; i++ ) {
+      for (int i = 0; i < 5; i++) {
         BaseEditorTestBody.pressKeys(editorComponent, ListSequence.fromListAndArray(new ArrayList<String>(), " DELETE"));
       }
       TestBody.this.finishTest();

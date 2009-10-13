@@ -4407,7 +4407,7 @@
             </node>
           </node>
           <node role="part" type="jetbrains.mps.lang.textGen.structure.ConstantStringAppendPart" id="1237463992218">
-            <property name="value" value="-- " />
+            <property name="value" value="--" />
           </node>
         </node>
       </node>
@@ -4427,7 +4427,7 @@
             </node>
           </node>
           <node role="part" type="jetbrains.mps.lang.textGen.structure.ConstantStringAppendPart" id="1237463991941">
-            <property name="value" value="++ " />
+            <property name="value" value="++" />
           </node>
         </node>
       </node>
@@ -7350,7 +7350,7 @@
         </node>
         <node role="statement" type="jetbrains.mps.lang.textGen.structure.AppendOperation" id="1237558307373">
           <node role="part" type="jetbrains.mps.lang.textGen.structure.ConstantStringAppendPart" id="1237558308547">
-            <property name="value" value=" ; " />
+            <property name="value" value="; " />
           </node>
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1237558316785">
@@ -7378,12 +7378,15 @@
         </node>
         <node role="statement" type="jetbrains.mps.lang.textGen.structure.AppendOperation" id="1237558391826">
           <node role="part" type="jetbrains.mps.lang.textGen.structure.ConstantStringAppendPart" id="1237558393281">
-            <property name="value" value=" ; " />
+            <property name="value" value=";" />
           </node>
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1237558409988">
           <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1237558409989">
             <node role="statement" type="jetbrains.mps.lang.textGen.structure.AppendOperation" id="1237558419035">
+              <node role="part" type="jetbrains.mps.lang.textGen.structure.ConstantStringAppendPart" id="1867727633161807435">
+                <property name="value" value=" " />
+              </node>
               <node role="part" type="jetbrains.mps.lang.textGen.structure.NodeAppendPart" id="1237558423333">
                 <node role="value" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1237558426743">
                   <node role="operand" type="jetbrains.mps.lang.textGen.structure.NodeParameter" id="1237558425882" />

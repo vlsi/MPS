@@ -22462,7 +22462,7 @@
               </node>
             </node>
             <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1224076826889">
-              <link role="baseMethodDeclaration" targetNodeId="84.~RefactoringView.showRefactoringView(jetbrains.mps.refactoring.framework.RefactoringContext,jetbrains.mps.refactoring.RefactoringViewAction,jetbrains.mps.ide.findusages.model.SearchResults,boolean):void" resolveInfo="showRefactoringView" />
+              <link role="baseMethodDeclaration" targetNodeId="84.~RefactoringView.showRefactoringView(jetbrains.mps.refactoring.framework.RefactoringContext,jetbrains.mps.refactoring.RefactoringViewAction,jetbrains.mps.ide.findusages.model.SearchResults):void" resolveInfo="showRefactoringView" />
               <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="2621449412039966007" />
               <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1224077049303">
                 <link role="variableDeclaration" targetNodeId="1224077049262" resolveInfo="refactoringViewAction" />
@@ -22472,9 +22472,6 @@
                   <link role="fieldDeclaration" targetNodeId="1224072276452" resolveInfo="myResults" />
                 </node>
                 <node role="operand" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="1224077059886" />
-              </node>
-              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="3177157035599083072">
-                <property name="value" value="false" />
               </node>
             </node>
           </node>
@@ -39724,7 +39721,6 @@
               <node role="statement" type="jetbrains.mps.lang.plugin.structure.ExecuteLightweightCommandStatement" id="60375257504271271">
                 <node role="commandClosureLiteral" type="jetbrains.mps.lang.plugin.structure.CommandClosureLiteral" id="60375257504271272">
                   <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="60375257504271273">
-                    <node role="statement" type="jetbrains.mps.baseLanguage.structure.Statement" id="6207173404261178316" />
                     <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="60375257504271274">
                       <node role="expression" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression" id="60375257504271275">
                         <node role="lValue" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="60375257504271276">

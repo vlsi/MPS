@@ -12,7 +12,7 @@ outer:
 label:
       do {
 none:
-        for (int i = 0 ; i < 10 ; i++ ) {
+        for (int i = 0; i < 10; i++) {
           System.out.println("i=" + i);
           if (i == 5) {
             continue outer;

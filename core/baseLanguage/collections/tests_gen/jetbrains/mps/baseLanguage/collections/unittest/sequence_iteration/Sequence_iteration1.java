@@ -65,12 +65,12 @@ __switch__:
     int count = 0;
     for (String s : Sequence.fromIterable(ss)) {
       Assert.assertEquals("" + count, s);
-      count++ ;
+      count++;
     }
     Assert.assertEquals(count, 5);
     for (String s : Sequence.fromIterable(ss)) {
       Assert.assertEquals("" + (count - 5), s);
-      count++ ;
+      count++;
     }
     Assert.assertEquals(count, 10);
   }
@@ -104,7 +104,7 @@ __switch__:
                       this.__CP__ = 4;
                       break;
                     case 5:
-                      _2_i++ ;
+                      _2_i++;
                       this.__CP__ = 3;
                       break;
                     case 6:
@@ -118,7 +118,7 @@ __switch__:
                       this.__CP__ = 6;
                       break;
                     case 7:
-                      yield_count.value++ ;
+                      yield_count.value++;
                       this.__CP__ = 5;
                       break;
                     default:
@@ -135,13 +135,13 @@ __switch__:
     int count = 0;
     for (String s : Sequence.fromIterable(ss)) {
       Assert.assertEquals("" + count, s);
-      count++ ;
+      count++;
     }
     Assert.assertEquals(count, 5);
     Assert.assertEquals(yield_count.value, 5);
     for (String s : Sequence.fromIterable(ss)) {
       Assert.assertEquals("" + count, s);
-      count++ ;
+      count++;
     }
     Assert.assertEquals(count, 10);
     Assert.assertEquals(yield_count.value, 10);
@@ -176,7 +176,7 @@ __switch__:
                       this.__CP__ = 4;
                       break;
                     case 5:
-                      _2_i++ ;
+                      _2_i++;
                       this.__CP__ = 3;
                       break;
                     case 6:
@@ -203,12 +203,12 @@ __switch__:
     int count = 0;
     for (String s : Sequence.fromIterable(ss)) {
       Assert.assertEquals("" + count, s);
-      count++ ;
+      count++;
     }
     Assert.assertEquals(count, sequence_size);
     for (String s : Sequence.fromIterable(ss)) {
       Assert.assertEquals("" + (count - sequence_size), s);
-      count++ ;
+      count++;
     }
     Assert.assertEquals(count, sequence_size * 2);
   }
@@ -243,7 +243,7 @@ __switch__:
                       this.__CP__ = 4;
                       break;
                     case 5:
-                      _2_i++ ;
+                      _2_i++;
                       this.__CP__ = 3;
                       break;
                     case 6:
@@ -257,7 +257,7 @@ __switch__:
                       this.__CP__ = 6;
                       break;
                     case 7:
-                      yield_count.value++ ;
+                      yield_count.value++;
                       this.__CP__ = 5;
                       break;
                     default:
@@ -274,13 +274,13 @@ __switch__:
     int count = 0;
     for (String s : Sequence.fromIterable(ss)) {
       Assert.assertEquals("" + count, s);
-      count++ ;
+      count++;
     }
     Assert.assertEquals(count, sequence_size);
     Assert.assertEquals(yield_count.value, sequence_size);
     for (String s : Sequence.fromIterable(ss)) {
       Assert.assertEquals("" + count, s);
-      count++ ;
+      count++;
     }
     Assert.assertEquals(count, sequence_size * 2);
     Assert.assertEquals(yield_count.value, sequence_size * 2);

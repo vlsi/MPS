@@ -90,7 +90,7 @@ public class SplitConstantCellIntoWords_Intention extends BaseIntention {
         SPropertyOperations.set(paddingRightStyleClassItem, "value", "0.5");
       }
       SLinkOperations.addChild(collection, "childCellModel", constantCell);
-      i++ ;
+      i++;
     }
   }
 

@@ -85,7 +85,7 @@ public class LanguagesStep extends AbstractStep {
 
   public <N extends NodeData>void fillChildren(CheckBoxNode<N> node) {
     int childCount = node.getChildCount();
-    for (int i = 0 ; i < childCount ; i++ ) {
+    for (int i = 0; i < childCount; i++) {
       N data = node.getData();
       CheckBoxNode<N> child = (CheckBoxNode<N>)node.getChildAt(i);
       NodeData childData = child.getData();

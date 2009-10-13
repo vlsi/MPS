@@ -47,7 +47,7 @@ public abstract class AbstractBuildGenerator {
       this.myModelName = modelNamePrefix;
       while (!(this.isValidModelName(this.myModelName))) {
         this.myModelName = modelNamePrefix + count;
-        count++ ;
+        count++;
       }
     }
     return this.myModelName;

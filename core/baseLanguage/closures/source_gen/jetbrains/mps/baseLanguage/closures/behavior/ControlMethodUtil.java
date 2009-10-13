@@ -25,7 +25,7 @@ public class ControlMethodUtil {
       int initClosures = 0;
       int controlClosures = 0;
       List<SNode> closureParamTypes = null;
-      for (int idx = ListSequence.fromList(params).count() - 1; idx >= 0; idx-- ) {
+      for (int idx = ListSequence.fromList(params).count() - 1; idx >= 0; idx--) {
         SNode p = ListSequence.fromList(params).getElement(idx);
         SNode ptype = SLinkOperations.getTarget(p, "type", true);
         if (SNodeOperations.isInstanceOf(ptype, "jetbrains.mps.baseLanguage.closures.structure.FunctionType")) {
@@ -36,7 +36,7 @@ public class ControlMethodUtil {
             if (initClosures > 0) {
               return null;
             }
-            controlClosures++ ;
+            controlClosures++;
             inf.addControlClosureType(SNodeOperations.copyNode(ptype));
             if (closureParamTypes == null) {
               closureParamTypes = ListSequence.fromList(new ArrayList<SNode>());
@@ -46,7 +46,7 @@ public class ControlMethodUtil {
             } else if (closureParamTypes != null && ListSequence.fromList(closureParamTypes).count() == SLinkOperations.getCount(SNodeOperations.cast(ptype, "jetbrains.mps.baseLanguage.closures.structure.FunctionType"), "parameterType")) {
               int i = 0;
               for (SNode pt : SLinkOperations.getTargets(SNodeOperations.cast(ptype, "jetbrains.mps.baseLanguage.closures.structure.FunctionType"), "parameterType", true)) {
-                if (!(MatchingUtil.matchNodes(pt, ListSequence.fromList(closureParamTypes).getElement(i++ )))) {
+                if (!(MatchingUtil.matchNodes(pt, ListSequence.fromList(closureParamTypes).getElement(i++)))) {
                   return null;
                 }
               }
@@ -57,7 +57,7 @@ public class ControlMethodUtil {
             if (controlClosures == 0 || initClosures >= ListSequence.fromList(closureParamTypes).count()) {
               return null;
             }
-            initClosures++ ;
+            initClosures++;
             inf.addInitClosureType(SNodeOperations.copyNode(ptype));
             SNode rt = SLinkOperations.getTarget(SNodeOperations.cast(ptype, "jetbrains.mps.baseLanguage.closures.structure.UnrestrictedFunctionType"), "resultType", true);
             if (!(MatchingUtil.matchNodes(rt, ListSequence.fromList(closureParamTypes).getElement(ListSequence.fromList(closureParamTypes).count() - initClosures)))) {
@@ -67,7 +67,7 @@ public class ControlMethodUtil {
             return null;
           }
         } else if (controlClosures > 0) {
-          functionParams++ ;
+          functionParams++;
           inf.addFunctionParameterType(SNodeOperations.copyNode(ptype));
         } else {
           return null;

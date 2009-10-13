@@ -37,7 +37,7 @@ public class Distinct_Test extends TestCase {
     Integer c = 1;
     for (Integer i : Sequence.fromIterable(source)) {
       Assert.assertEquals(i, c);
-      c++ ;
+      c++;
     }
   }
 
@@ -120,7 +120,7 @@ __switch__:
     Integer c = 1;
     for (Integer i : Sequence.fromIterable(source)) {
       Assert.assertEquals(i, c);
-      c++ ;
+      c++;
     }
   }
 

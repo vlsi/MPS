@@ -97,7 +97,7 @@ __switch__:
                       this.__CP__ = 22;
                       break;
                     case 23:
-                      _20_bar++ ;
+                      _20_bar++;
                       this.__CP__ = 21;
                       break;
                     case 11:
@@ -191,7 +191,7 @@ __switch__:
                       this.__CP__ = 4;
                       break;
                     case 5:
-                      _2_i++ ;
+                      _2_i++;
                       this.__CP__ = 3;
                       break;
                     case 6:
@@ -204,7 +204,7 @@ __switch__:
                       this.__CP__ = 8;
                       break;
                     case 9:
-                      _6_j++ ;
+                      _6_j++;
                       this.__CP__ = 7;
                       break;
                     case 10:
@@ -288,14 +288,14 @@ __switch__:
                       this.__CP__ = 8;
                       break;
                     case 10:
-                      _3_i-- ;
+                      _3_i--;
                       this.__CP__ = 4;
                       break;
                     case 8:
                       this.__CP__ = 11;
                       break;
                     case 12:
-                      _7_j-- ;
+                      _7_j--;
                       this.__CP__ = 9;
                       break;
                     default:
@@ -338,7 +338,7 @@ __switch__:
                       this.__CP__ = 4;
                       break;
                     case 5:
-                      _2_i++ ;
+                      _2_i++;
                       this.__CP__ = 3;
                       break;
                     case 6:
@@ -477,7 +477,7 @@ __switch__:
                       this.__CP__ = 10;
                       break;
                     case 12:
-                      _3_i-- ;
+                      _3_i--;
                       this.__CP__ = 6;
                       break;
                     case 10:
@@ -485,7 +485,7 @@ __switch__:
                       this.__CP__ = 15;
                       break;
                     case 26:
-                      _9_j-- ;
+                      _9_j--;
                       this.__CP__ = 11;
                       break;
                     case 24:

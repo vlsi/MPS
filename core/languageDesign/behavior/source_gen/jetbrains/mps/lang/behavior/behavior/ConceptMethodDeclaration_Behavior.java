@@ -46,7 +46,7 @@ public class ConceptMethodDeclaration_Behavior {
     if (parameterCount != SLinkOperations.getCount(SLinkOperations.getTarget(thisNode, "overriddenMethod", false), "parameter")) {
       return false;
     }
-    for (int i = 0 ; i < parameterCount ; i++ ) {
+    for (int i = 0; i < parameterCount; i++) {
       if (!(MatchingUtil.matchNodes(SLinkOperations.getTarget(ListSequence.fromList(SLinkOperations.getTargets(thisNode, "parameter", true)).getElement(i), "type", true), SLinkOperations.getTarget(ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(thisNode, "overriddenMethod", false), "parameter", true)).getElement(i), "type", true)))) {
         return false;
       }

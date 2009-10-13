@@ -92,11 +92,11 @@ public class ProgressLine extends JPanel {
     }
 
     public void onComplete() {
-      this.completed++ ;
+      this.completed++;
     }
 
     public void onDefect() {
-      this.defects++ ;
+      this.defects++;
     }
 
     public void setTestName(String name, String className) {

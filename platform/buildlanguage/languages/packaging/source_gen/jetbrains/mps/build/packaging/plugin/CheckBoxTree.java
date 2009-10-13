@@ -54,7 +54,7 @@ public class CheckBoxTree<N extends NodeData> extends JPanel {
   public void checkNodeRecursively(CheckBoxNode<N> checkBoxNode, boolean check) {
     this.checkNode(checkBoxNode, check);
     int childCount = checkBoxNode.getChildCount();
-    for (int i = 0 ; i < childCount ; i++ ) {
+    for (int i = 0; i < childCount; i++) {
       this.checkNodeRecursively((CheckBoxNode<N>)checkBoxNode.getChildAt(i), check);
     }
   }

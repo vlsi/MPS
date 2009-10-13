@@ -33,9 +33,9 @@ public class TupleIntefaceUtils {
       } else if (SLinkOperations.getCount(method, "parameter") == 1 && MatchingUtil.matchNodes(SLinkOperations.getTarget(method, "returnType", true), ListSequence.fromList(SLinkOperations.getTargets(method, "parameter", true)).toListSequence().first())) {
         ListSequence.fromList(mutators).addElement(new TupleIntefaceUtils.Property(true, SPropertyOperations.getString(method, "name"), SLinkOperations.getTarget(method, "returnType", true)));
       } else if ("equals".equals(SPropertyOperations.getString(method, "name")) && SLinkOperations.getCount(method, "parameter") == 1 && SNodeOperations.isInstanceOf(SLinkOperations.getTarget(method, "returnType", true), "jetbrains.mps.baseLanguage.structure.BooleanType")) {
-        ignored++ ;
+        ignored++;
       } else if ("hashCode".equals(SPropertyOperations.getString(method, "name")) && SLinkOperations.getCount(method, "parameter") == 0 && SNodeOperations.isInstanceOf(SLinkOperations.getTarget(method, "returnType", true), "jetbrains.mps.baseLanguage.structure.IntegerType")) {
-        ignored++ ;
+        ignored++;
       }
     }
     List<TupleIntefaceUtils.Property> result = null;

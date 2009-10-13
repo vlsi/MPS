@@ -86,7 +86,7 @@ public class GoByReference_ActionGroup extends GeneratedActionGroup {
               context.getComponent(MPSEditorOpener.class).editNode(targetNode, context);
             }
           });
-          addedActionsCount++ ;
+          addedActionsCount++;
         }
       }
       if (addedActionsCount == 0) {

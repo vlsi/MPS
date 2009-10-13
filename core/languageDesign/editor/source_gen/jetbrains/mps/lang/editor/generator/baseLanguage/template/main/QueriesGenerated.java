@@ -168,7 +168,7 @@ public class QueriesGenerated {
       result.append(NameUtil.shortNameFromLongName(SPropertyOperations.getString(SLinkOperations.getTarget(pd, "type", true), "name")));
       result.append(" ");
       result.append(SPropertyOperations.getString(pd, "name"));
-      index++ ;
+      index++;
     }
     return result.toString();
   }

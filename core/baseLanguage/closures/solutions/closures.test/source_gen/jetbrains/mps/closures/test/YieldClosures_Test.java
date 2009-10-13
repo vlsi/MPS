@@ -133,10 +133,10 @@ __switch__:
           ListSequence.fromList(exp).addElement(j);
           while (j <= 3) {
             ListSequence.fromList(exp).addElement(i * j);
-            j++ ;
+            j++;
           }
           ListSequence.fromList(exp).addElement(j);
-          i-- ;
+          i--;
         }
         ListSequence.fromList(exp).addElement(i);
         // must not return anything
@@ -205,14 +205,14 @@ __switch__:
                       this.__CP__ = 9;
                       break;
                     case 15:
-                      _3_i-- ;
+                      _3_i--;
                       this.__CP__ = 5;
                       break;
                     case 11:
                       this.__CP__ = 12;
                       break;
                     case 13:
-                      _8_j++ ;
+                      _8_j++;
                       this.__CP__ = 10;
                       break;
                     default:
@@ -239,10 +239,10 @@ __switch__:
           ListSequence.fromList(exp).addElement(j);
           do {
             ListSequence.fromList(exp).addElement(j * i);
-            j-- ;
+            j--;
             ListSequence.fromList(exp).addElement(j + i);
           } while(j > 0);
-          i-- ;
+          i--;
         } while(i > 0);
         i = 0;
         ListSequence.fromList(exp).addElement(i);
@@ -323,14 +323,14 @@ __switch__:
                       this.__CP__ = 11;
                       break;
                     case 14:
-                      _4_i-- ;
+                      _4_i--;
                       this.__CP__ = 7;
                       break;
                     case 12:
                       this.__CP__ = 15;
                       break;
                     case 16:
-                      _10_j-- ;
+                      _10_j--;
                       this.__CP__ = 17;
                       break;
                     default:
@@ -349,8 +349,8 @@ __switch__:
   public void test_forStatement() throws Exception {
     this.assertResultsEqual(new _FunctionTypes._void_P1_E0<List<Integer>>() {
       public void invoke(List<Integer> exp) {
-        for (int i = 0; i < 3; i++ ) {
-          for (int j = 0; j < 3; j++ ) {
+        for (int i = 0; i < 3; i++) {
+          for (int j = 0; j < 3; j++) {
             ListSequence.fromList(exp).addElement(i);
             ListSequence.fromList(exp).addElement(j);
           }
@@ -383,7 +383,7 @@ __switch__:
                       this.__CP__ = 4;
                       break;
                     case 5:
-                      _2_i++ ;
+                      _2_i++;
                       this.__CP__ = 3;
                       break;
                     case 6:
@@ -396,7 +396,7 @@ __switch__:
                       this.__CP__ = 8;
                       break;
                     case 9:
-                      _6_j++ ;
+                      _6_j++;
                       this.__CP__ = 7;
                       break;
                     case 10:
@@ -524,8 +524,8 @@ __switch__:
     this.assertResultsEqual(new _FunctionTypes._void_P1_E0<List<Integer>>() {
       public void invoke(List<Integer> exp) {
         int a = 0;
-        for (int i = 0; i < 10; i++ ) {
-          for (int j = 0; j < 10; j++ ) {
+        for (int i = 0; i < 10; i++) {
+          for (int j = 0; j < 10; j++) {
             if (i + j < 5) {
               continue;
             }
@@ -564,7 +564,7 @@ __switch__:
                       this.__CP__ = 6;
                       break;
                     case 7:
-                      _4_i++ ;
+                      _4_i++;
                       this.__CP__ = 5;
                       break;
                     case 8:
@@ -577,7 +577,7 @@ __switch__:
                       this.__CP__ = 10;
                       break;
                     case 11:
-                      _8_j++ ;
+                      _8_j++;
                       this.__CP__ = 9;
                       break;
                     case 14:
@@ -742,7 +742,7 @@ __switch__:
   public void test_elseIfClauses() throws Exception {
     this.assertResultsEqual(new _FunctionTypes._void_P1_E0<List<Integer>>() {
       public void invoke(List<Integer> exp) {
-        for (int i = 1; i <= 10; i++ ) {
+        for (int i = 1; i <= 10; i++) {
           if (i % 2 == 0) {
             ListSequence.fromList(exp).addElement(i * 10);
           } else if (i % 3 == 0) {
@@ -783,7 +783,7 @@ __switch__:
                       this.__CP__ = 4;
                       break;
                     case 5:
-                      _2_i++ ;
+                      _2_i++;
                       this.__CP__ = 3;
                       break;
                     case 6:
@@ -1187,7 +1187,7 @@ __switch__:
                       this.__CP__ = 4;
                       break;
                     case 5:
-                      _2_i++ ;
+                      _2_i++;
                       this.__CP__ = 3;
                       break;
                     case 6:
@@ -1359,7 +1359,7 @@ __switch__:
                       this.__CP__ = 4;
                       break;
                     case 5:
-                      _2_i++ ;
+                      _2_i++;
                       this.__CP__ = 3;
                       break;
                     case 7:

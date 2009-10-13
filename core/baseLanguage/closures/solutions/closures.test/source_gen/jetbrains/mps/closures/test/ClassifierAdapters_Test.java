@@ -105,7 +105,7 @@ __switch__:
     int i = 0;
     for (Integer in : ng.generate()) {
       Assert.assertEquals(exp[i], in);
-      i++ ;
+      i++;
     }
   }
 
@@ -154,7 +154,7 @@ __switch__:
     Integer exp = 1;
     for (Integer i : g.generate()) {
       Assert.assertEquals(exp, i);
-      exp++ ;
+      exp++;
     }
     Assert.assertEquals(exp, (Integer)4);
   }
@@ -263,20 +263,20 @@ __switch__:
     final Wrappers._int count = new Wrappers._int(0);
     _FunctionTypes._return_P0_E0<? extends Integer> cl = new _FunctionTypes._return_P0_E0<Integer>() {
       public Integer invoke() {
-        return count.value++ ;
+        return count.value++;
       }
     };
     cl.invoke();
     Assert.assertSame(1, count.value);
     new _FunctionTypes._return_P0_E0<Integer>() {
       public Integer invoke() {
-        return count.value++ ;
+        return count.value++;
       }
     }.invoke();
     Assert.assertSame(2, count.value);
     _UnrestrictedFunctionTypes._return_terminate_P0_E0<? extends Integer, ? extends Integer> ucl = new _UnrestrictedFunctionTypes._return_terminate_P0_E0<Integer, Integer>() {
       public Result<Integer, Integer> invokeUnrestricted() {
-        return Result.TERMINATE(count.value++ );
+        return Result.TERMINATE(count.value++);
       }
     };
     
@@ -300,7 +300,7 @@ __switch__:
     {
       Result<? extends Integer, ?> __result__ = new _UnrestrictedFunctionTypes._return_terminate_P0_E0<Integer, Integer>() {
         public Result<Integer, Integer> invokeUnrestricted() {
-          return Result.TERMINATE(count.value++ );
+          return Result.TERMINATE(count.value++);
         }
       }.invokeUnrestricted();
       switch (__result__.getOutcome()) {

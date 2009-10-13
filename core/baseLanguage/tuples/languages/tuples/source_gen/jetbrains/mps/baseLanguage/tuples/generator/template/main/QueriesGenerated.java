@@ -534,7 +534,7 @@ public class QueriesGenerated {
 
   public static Iterable sourceNodesQuery_1238919851689(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     List<SNode> nodes = new ArrayList<SNode>();
-    for (int i = 0 ; i < 10 ; i++ ) {
+    for (int i = 0; i < 10; i++) {
       SNode ic = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.IntegerConstant", null);
       SPropertyOperations.set(ic, "value", "" + (i));
       ListSequence.fromList(nodes).addElement(ic);
@@ -544,7 +544,7 @@ public class QueriesGenerated {
 
   public static Iterable sourceNodesQuery_1238920502902(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     List<SNode> nodes = new ArrayList<SNode>();
-    for (int i = 0 ; i < SPropertyOperations.getInteger(_context.getNode(), "value") ; i++ ) {
+    for (int i = 0; i < SPropertyOperations.getInteger(_context.getNode(), "value"); i++) {
       SNode ic = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.IntegerConstant", null);
       SPropertyOperations.set(ic, "value", "" + (SPropertyOperations.getInteger(_context.getNode(), "value") << 16 | i));
       ListSequence.fromList(nodes).addElement(ic);
@@ -554,7 +554,7 @@ public class QueriesGenerated {
 
   public static Iterable sourceNodesQuery_1238921689094(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     List<SNode> nodes = new ArrayList<SNode>();
-    for (int i = 0 ; i < SPropertyOperations.getInteger(_context.getNode(), "value") ; i++ ) {
+    for (int i = 0; i < SPropertyOperations.getInteger(_context.getNode(), "value"); i++) {
       SNode ic = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.IntegerConstant", null);
       SPropertyOperations.set(ic, "value", "" + (i));
       ListSequence.fromList(nodes).addElement(ic);
@@ -564,7 +564,7 @@ public class QueriesGenerated {
 
   public static Iterable sourceNodesQuery_1238923938928(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     List<SNode> nodes = new ArrayList<SNode>();
-    for (int i = 0 ; i < SPropertyOperations.getInteger(_context.getNode(), "value") ; i++ ) {
+    for (int i = 0; i < SPropertyOperations.getInteger(_context.getNode(), "value"); i++) {
       SNode ic = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.IntegerConstant", null);
       SPropertyOperations.set(ic, "value", "" + (SPropertyOperations.getInteger(_context.getNode(), "value") << 16 | i));
       ListSequence.fromList(nodes).addElement(ic);
@@ -574,7 +574,7 @@ public class QueriesGenerated {
 
   public static Iterable sourceNodesQuery_1238926962464(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     List<SNode> nodes = new ArrayList<SNode>();
-    for (int i = 0 ; i < SPropertyOperations.getInteger(_context.getNode(), "value") ; i++ ) {
+    for (int i = 0; i < SPropertyOperations.getInteger(_context.getNode(), "value"); i++) {
       SNode ic = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.IntegerConstant", null);
       SPropertyOperations.set(ic, "value", "" + (i));
       ListSequence.fromList(nodes).addElement(ic);
@@ -584,7 +584,7 @@ public class QueriesGenerated {
 
   public static Iterable sourceNodesQuery_1238927287735(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     List<SNode> nodes = new ArrayList<SNode>();
-    for (int i = 0 ; i < 10 ; i++ ) {
+    for (int i = 0; i < 10; i++) {
       SNode ic = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.IntegerConstant", null);
       SPropertyOperations.set(ic, "value", "" + (i));
       ListSequence.fromList(nodes).addElement(ic);
@@ -594,7 +594,7 @@ public class QueriesGenerated {
 
   public static Iterable sourceNodesQuery_1238928159658(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     List<SNode> nodes = new ArrayList<SNode>();
-    for (int i = 0 ; i < SPropertyOperations.getInteger(_context.getNode(), "value") ; i++ ) {
+    for (int i = 0; i < SPropertyOperations.getInteger(_context.getNode(), "value"); i++) {
       SNode ic = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.IntegerConstant", null);
       SPropertyOperations.set(ic, "value", "" + (SPropertyOperations.getInteger(_context.getNode(), "value") << 16 | i));
       ListSequence.fromList(nodes).addElement(ic);
@@ -604,7 +604,7 @@ public class QueriesGenerated {
 
   public static Iterable sourceNodesQuery_1238928647255(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     List<SNode> nodes = new ArrayList<SNode>();
-    for (int i = 0 ; i < SPropertyOperations.getInteger(_context.getNode(), "value") ; i++ ) {
+    for (int i = 0; i < SPropertyOperations.getInteger(_context.getNode(), "value"); i++) {
       SNode ic = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.IntegerConstant", null);
       SPropertyOperations.set(ic, "value", "" + (SPropertyOperations.getInteger(_context.getNode(), "value") << 16 | i));
       ListSequence.fromList(nodes).addElement(ic);
@@ -614,7 +614,7 @@ public class QueriesGenerated {
 
   public static Iterable sourceNodesQuery_1238929231834(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     List<SNode> nodes = new ArrayList<SNode>();
-    for (int i = 0 ; i < SPropertyOperations.getInteger(_context.getNode(), "value") ; i++ ) {
+    for (int i = 0; i < SPropertyOperations.getInteger(_context.getNode(), "value"); i++) {
       SNode ic = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.IntegerConstant", null);
       SPropertyOperations.set(ic, "value", "" + (i));
       ListSequence.fromList(nodes).addElement(ic);
@@ -624,7 +624,7 @@ public class QueriesGenerated {
 
   public static Iterable sourceNodesQuery_1238931738356(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     List<SNode> nodes = new ArrayList<SNode>();
-    for (int i = 0 ; i < 10 ; i++ ) {
+    for (int i = 0; i < 10; i++) {
       SNode ic = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.IntegerConstant", null);
       SPropertyOperations.set(ic, "value", "" + (i));
       ListSequence.fromList(nodes).addElement(ic);
@@ -634,7 +634,7 @@ public class QueriesGenerated {
 
   public static Iterable sourceNodesQuery_1238931818535(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     List<SNode> nodes = new ArrayList<SNode>();
-    for (int i = 0 ; i < SPropertyOperations.getInteger(_context.getNode(), "value") ; i++ ) {
+    for (int i = 0; i < SPropertyOperations.getInteger(_context.getNode(), "value"); i++) {
       SNode ic = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.IntegerConstant", null);
       SPropertyOperations.set(ic, "value", "" + (i));
       ListSequence.fromList(nodes).addElement(ic);
@@ -644,7 +644,7 @@ public class QueriesGenerated {
 
   public static Iterable sourceNodesQuery_1238932049115(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     List<SNode> nodes = new ArrayList<SNode>();
-    for (int i = 0 ; i < SPropertyOperations.getInteger(_context.getNode(), "value") ; i++ ) {
+    for (int i = 0; i < SPropertyOperations.getInteger(_context.getNode(), "value"); i++) {
       SNode ic = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.IntegerConstant", null);
       SPropertyOperations.set(ic, "value", "" + (i));
       ListSequence.fromList(nodes).addElement(ic);
@@ -654,7 +654,7 @@ public class QueriesGenerated {
 
   public static Iterable sourceNodesQuery_1238932105413(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     List<SNode> nodes = new ArrayList<SNode>();
-    for (int i = 0 ; i < SPropertyOperations.getInteger(_context.getNode(), "value") ; i++ ) {
+    for (int i = 0; i < SPropertyOperations.getInteger(_context.getNode(), "value"); i++) {
       SNode ic = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.IntegerConstant", null);
       SPropertyOperations.set(ic, "value", "" + (i));
       ListSequence.fromList(nodes).addElement(ic);
@@ -664,7 +664,7 @@ public class QueriesGenerated {
 
   public static Iterable sourceNodesQuery_1238932299932(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     List<SNode> nodes = new ArrayList<SNode>();
-    for (int i = 0 ; i < SPropertyOperations.getInteger(_context.getNode(), "value") ; i++ ) {
+    for (int i = 0; i < SPropertyOperations.getInteger(_context.getNode(), "value"); i++) {
       SNode ic = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.IntegerConstant", null);
       SPropertyOperations.set(ic, "value", "" + (i));
       ListSequence.fromList(nodes).addElement(ic);
@@ -674,7 +674,7 @@ public class QueriesGenerated {
 
   public static Iterable sourceNodesQuery_1238938785142(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     List<SNode> nodes = new ArrayList<SNode>();
-    for (int i = 0 ; i < SPropertyOperations.getInteger(_context.getNode(), "value") ; i++ ) {
+    for (int i = 0; i < SPropertyOperations.getInteger(_context.getNode(), "value"); i++) {
       SNode ic = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.IntegerConstant", null);
       SPropertyOperations.set(ic, "value", "" + (i));
       ListSequence.fromList(nodes).addElement(ic);
@@ -688,7 +688,7 @@ public class QueriesGenerated {
 
   public static Iterable sourceNodesQuery_1238943843686(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     List<SNode> nodes = new ArrayList<SNode>();
-    for (int i = 0 ; i < SPropertyOperations.getInteger(_context.getNode(), "value") ; i++ ) {
+    for (int i = 0; i < SPropertyOperations.getInteger(_context.getNode(), "value"); i++) {
       SNode ic = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.IntegerConstant", null);
       SPropertyOperations.set(ic, "value", "" + (i));
       ListSequence.fromList(nodes).addElement(ic);
@@ -698,7 +698,7 @@ public class QueriesGenerated {
 
   public static Iterable sourceNodesQuery_1238944500094(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     List<SNode> nodes = new ArrayList<SNode>();
-    for (int i = 0 ; i < SPropertyOperations.getInteger(_context.getNode(), "value") ; i++ ) {
+    for (int i = 0; i < SPropertyOperations.getInteger(_context.getNode(), "value"); i++) {
       SNode ic = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.IntegerConstant", null);
       SPropertyOperations.set(ic, "value", "" + (i));
       ListSequence.fromList(nodes).addElement(ic);
@@ -708,7 +708,7 @@ public class QueriesGenerated {
 
   public static Iterable sourceNodesQuery_1238946161000(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     List<SNode> nodes = new ArrayList<SNode>();
-    for (int i = 0 ; i < SPropertyOperations.getInteger(_context.getNode(), "value") ; i++ ) {
+    for (int i = 0; i < SPropertyOperations.getInteger(_context.getNode(), "value"); i++) {
       SNode ic = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.IntegerConstant", null);
       SPropertyOperations.set(ic, "value", "" + (i));
       ListSequence.fromList(nodes).addElement(ic);
@@ -718,7 +718,7 @@ public class QueriesGenerated {
 
   public static Iterable sourceNodesQuery_1238946252892(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     List<SNode> nodes = new ArrayList<SNode>();
-    for (int i = 0 ; i < SPropertyOperations.getInteger(_context.getNode(), "value") ; i++ ) {
+    for (int i = 0; i < SPropertyOperations.getInteger(_context.getNode(), "value"); i++) {
       SNode ic = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.IntegerConstant", null);
       SPropertyOperations.set(ic, "value", "" + (i));
       ListSequence.fromList(nodes).addElement(ic);
@@ -728,7 +728,7 @@ public class QueriesGenerated {
 
   public static Iterable sourceNodesQuery_1238946364358(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     List<SNode> nodes = new ArrayList<SNode>();
-    for (int i = 0 ; i < SPropertyOperations.getInteger(_context.getNode(), "value") ; i++ ) {
+    for (int i = 0; i < SPropertyOperations.getInteger(_context.getNode(), "value"); i++) {
       SNode ic = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.IntegerConstant", null);
       SPropertyOperations.set(ic, "value", "" + (i));
       ListSequence.fromList(nodes).addElement(ic);
@@ -742,7 +742,7 @@ public class QueriesGenerated {
 
   public static Iterable sourceNodesQuery_1238949913818(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     List<SNode> nodes = new ArrayList<SNode>();
-    for (int i = 0 ; i < SPropertyOperations.getInteger(_context.getNode(), "value") ; i++ ) {
+    for (int i = 0; i < SPropertyOperations.getInteger(_context.getNode(), "value"); i++) {
       SNode ic = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.IntegerConstant", null);
       SPropertyOperations.set(ic, "value", "" + (i));
       ListSequence.fromList(nodes).addElement(ic);
@@ -752,7 +752,7 @@ public class QueriesGenerated {
 
   public static Iterable sourceNodesQuery_1238949944913(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     List<SNode> nodes = new ArrayList<SNode>();
-    for (int i = 0 ; i < SPropertyOperations.getInteger(_context.getNode(), "value") ; i++ ) {
+    for (int i = 0; i < SPropertyOperations.getInteger(_context.getNode(), "value"); i++) {
       SNode ic = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.IntegerConstant", null);
       SPropertyOperations.set(ic, "value", "" + (i));
       ListSequence.fromList(nodes).addElement(ic);
@@ -762,7 +762,7 @@ public class QueriesGenerated {
 
   public static Iterable sourceNodesQuery_1238950097280(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     List<SNode> nodes = new ArrayList<SNode>();
-    for (int i = 0 ; i < SPropertyOperations.getInteger(_context.getNode(), "value") ; i++ ) {
+    for (int i = 0; i < SPropertyOperations.getInteger(_context.getNode(), "value"); i++) {
       SNode ic = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.IntegerConstant", null);
       SPropertyOperations.set(ic, "value", "" + (i));
       ListSequence.fromList(nodes).addElement(ic);
@@ -772,7 +772,7 @@ public class QueriesGenerated {
 
   public static Iterable sourceNodesQuery_1238950442258(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     List<SNode> nodes = new ArrayList<SNode>();
-    for (int i = 0 ; i < 10 ; i++ ) {
+    for (int i = 0; i < 10; i++) {
       SNode ic = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.IntegerConstant", null);
       SPropertyOperations.set(ic, "value", "" + (i));
       ListSequence.fromList(nodes).addElement(ic);
@@ -851,7 +851,7 @@ public class QueriesGenerated {
       Values.NUMBER.set(exp, i);
       Values.RVALUE.set(exp, Values.RVALUE.get(_context.getNode()));
       ListSequence.fromList(nodes).addElement(exp);
-      i++ ;
+      i++;
     }
     return nodes;
   }

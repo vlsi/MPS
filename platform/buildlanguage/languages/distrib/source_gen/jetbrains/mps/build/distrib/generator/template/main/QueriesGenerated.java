@@ -456,7 +456,7 @@ public class QueriesGenerated {
     }
     String[] path = startupDir.split("/");
     String pathFromStartupDir = "..";
-    for (int i = 0 ; i < path.length - 1 ; i++ ) {
+    for (int i = 0; i < path.length - 1; i++) {
       pathFromStartupDir += "/..";
     }
     return pathFromStartupDir;

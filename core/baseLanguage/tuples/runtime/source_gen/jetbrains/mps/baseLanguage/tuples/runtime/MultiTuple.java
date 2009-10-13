@@ -46,7 +46,7 @@ public class MultiTuple {
   public String toString() {
     StringBuilder sb = new StringBuilder("[");
     String sep = "";
-    for (int i = 0 ; i < this.values.length ; i++ ) {
+    for (int i = 0; i < this.values.length; i++) {
       sb.append(sep).append(String.valueOf(this.values[i]));
       sep = ", ";
     }

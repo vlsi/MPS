@@ -165,7 +165,7 @@ __switch__:
                         this.__CP__ = 6;
                         break;
                       case 7:
-                        _4_idx++ ;
+                        _4_idx++;
                         this.__CP__ = 5;
                         break;
                       case 8:

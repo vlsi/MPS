@@ -19,7 +19,7 @@ public class Generics1_Test extends TestCase {
     int count = 0;
     for (Integer i : Sequence.fromIterable(ints.get())) {
       Assert.assertEquals(count, i.intValue());
-      count++ ;
+      count++;
     }
   }
 }

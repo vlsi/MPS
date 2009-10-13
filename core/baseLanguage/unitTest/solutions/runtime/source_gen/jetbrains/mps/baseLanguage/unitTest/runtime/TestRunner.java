@@ -18,13 +18,13 @@ public class TestRunner extends BaseTestRunner {
 
   public void start(String[] argv) throws Throwable {
     List<Test> tests = ListSequence.fromList(new ArrayList<Test>());
-    for (int i = 0; i < argv.length; i++ ) {
+    for (int i = 0; i < argv.length; i++) {
       if ("-c".equals(argv[i])) {
-        i++ ;
+        i++;
         Test test = this.getTest(argv[i]);
         ListSequence.fromList(tests).addElement(test);
       } else if ("-m".equals(argv[i])) {
-        i++ ;
+        i++;
         String s = argv[i];
         int index = s.lastIndexOf('.');
         String testCase = s.substring(0, index);
