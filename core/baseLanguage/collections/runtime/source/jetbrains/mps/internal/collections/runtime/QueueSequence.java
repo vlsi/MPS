@@ -74,7 +74,7 @@ public class QueueSequence<T> extends CollectionSequence<T> implements Queue<T>,
   public static <U> IQueueSequence<U> fromQueueAndArray(Queue<U> queue, U... array) {
       if (Sequence.NULL_ARRAY_IS_SINGLETON) {
           if (array == null) {
-              array = nullSingletonArray();
+              array = (U[]) nullSingletonArray();
           }
       }
       if (Sequence.USE_NULL_SEQUENCE) {

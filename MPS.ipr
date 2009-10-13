@@ -948,6 +948,61 @@
         <entry key="$PROJECT_DIR$">
           <value>
             <SvnBranchConfiguration>
+              <option name="branchMap">
+                <map>
+                  <entry key="http://svn.jetbrains.org/mps/branches">
+                    <value>
+                      <list>
+                        <SvnBranchItem>
+                          <option name="creationDateMillis" value="1255445492734" />
+                          <option name="revision" value="47868" />
+                          <option name="url" value="http://svn.jetbrains.org/mps/branches/1.1" />
+                        </SvnBranchItem>
+                        <SvnBranchItem>
+                          <option name="creationDateMillis" value="1248443447918" />
+                          <option name="revision" value="46281" />
+                          <option name="url" value="http://svn.jetbrains.org/mps/branches/1.0" />
+                        </SvnBranchItem>
+                        <SvnBranchItem>
+                          <option name="creationDateMillis" value="1244492536910" />
+                          <option name="revision" value="45490" />
+                          <option name="url" value="http://svn.jetbrains.org/mps/branches/beta3" />
+                        </SvnBranchItem>
+                        <SvnBranchItem>
+                          <option name="creationDateMillis" value="1239891144085" />
+                          <option name="revision" value="44615" />
+                          <option name="url" value="http://svn.jetbrains.org/mps/branches/beta2" />
+                        </SvnBranchItem>
+                        <SvnBranchItem>
+                          <option name="creationDateMillis" value="1233661871421" />
+                          <option name="revision" value="43217" />
+                          <option name="url" value="http://svn.jetbrains.org/mps/branches/hacking_closures" />
+                        </SvnBranchItem>
+                        <SvnBranchItem>
+                          <option name="creationDateMillis" value="1232936205919" />
+                          <option name="revision" value="43107" />
+                          <option name="url" value="http://svn.jetbrains.org/mps/branches/projectLanguage" />
+                        </SvnBranchItem>
+                        <SvnBranchItem>
+                          <option name="creationDateMillis" value="1230051485784" />
+                          <option name="revision" value="42739" />
+                          <option name="url" value="http://svn.jetbrains.org/mps/branches/beta1.0" />
+                        </SvnBranchItem>
+                        <SvnBranchItem>
+                          <option name="creationDateMillis" value="1224609042985" />
+                          <option name="revision" value="41021" />
+                          <option name="url" value="http://svn.jetbrains.org/mps/branches/xmlDeprecatedToXML" />
+                        </SvnBranchItem>
+                        <SvnBranchItem>
+                          <option name="creationDateMillis" value="1128685466811" />
+                          <option name="revision" value="4818" />
+                          <option name="url" value="http://svn.jetbrains.org/mps/branches/JetBrains" />
+                        </SvnBranchItem>
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
               <option name="branchUrls">
                 <list>
                   <option value="http://svn.jetbrains.org/mps/branches" />

@@ -56,7 +56,7 @@ public class SortedSetSequence<T> extends SetSequence<T> implements ISortedSetSe
     public static <U> ISortedSetSequence<U> fromSetAndArray (SortedSet<U> set, U... array) {
         if (Sequence.NULL_ARRAY_IS_SINGLETON) {
             if (array == null) {
-                array = nullSingletonArray();
+                array = (U[]) nullSingletonArray();
             }
         }
         if (Sequence.USE_NULL_SEQUENCE) {

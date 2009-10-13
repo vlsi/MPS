@@ -73,7 +73,7 @@ public class DequeSequence<T> extends QueueSequence<T> implements Deque<T>, IDeq
   public static <U> IDequeSequence<U> fromDequeAndArray(Deque<U> deque, U... array) {
       if (Sequence.NULL_ARRAY_IS_SINGLETON) {
           if (array == null) {
-              array = nullSingletonArray();
+              array = (U[]) nullSingletonArray();
           }
       }
       if (Sequence.USE_NULL_SEQUENCE) {
