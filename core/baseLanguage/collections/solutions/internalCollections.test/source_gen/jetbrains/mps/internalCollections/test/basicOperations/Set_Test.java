@@ -124,4 +124,10 @@ public class Set_Test extends Util_Test {
     Set<Integer> setb = SetSequence.fromSetAndArray(new HashSet<Integer>(), 333, 222, 111);
     Assert.assertTrue(ObjectUtils.equals(seta, setb));
   }
+
+  public void test_mps6232() throws Exception {
+    Set<String> hs = SetSequence.fromSetAndArray(new HashSet<String>(), null);
+    Assert.assertSame(1, SetSequence.fromSet(hs).count());
+    Assert.assertTrue(SetSequence.fromSet(hs).contains(null));
+  }
 }

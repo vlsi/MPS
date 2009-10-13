@@ -57,6 +57,11 @@ public class SetSequence<T> extends Sequence<T> implements ISetSequence<T>, Set<
     }
 
     public static <U> ISetSequence<U> fromSetAndArray (Set<U> set, U... array) {
+        if (Sequence.NULL_ARRAY_IS_SINGLETON) {
+            if (array == null) {
+                array = nullSingletonArray();
+            }
+        }
         if (Sequence.USE_NULL_SEQUENCE) {
             if (set == null && array == null) {
                 return NullSetSequence.instance();

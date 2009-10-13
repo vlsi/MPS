@@ -72,6 +72,15 @@ public abstract class Sequence<T> implements ISequence<T>, Iterable<T> {
      */
     public static final boolean NULL_WHEN_EMPTY = true;
     
+    public static final boolean NULL_ARRAY_IS_SINGLETON = true;
+    
+    protected static final Object[] ARRAY_WITH_NULL = new Object[] {null};
+    
+    @SuppressWarnings("unchecked")
+    protected static <U> U[] nullSingletonArray () {
+        return (U[]) ARRAY_WITH_NULL;
+    }
+    
     public static <U> ISequence<U> emptySequence () {
     	return NullSetSequence.instance();
     }

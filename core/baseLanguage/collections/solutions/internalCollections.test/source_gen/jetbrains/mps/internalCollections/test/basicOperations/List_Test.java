@@ -347,6 +347,12 @@ __switch__:
     Assert.assertTrue(seqDuration * 2.5 < listDuration);
   }
 
+  public void test_mps6232() throws Exception {
+    List<String> hs = ListSequence.fromListAndArray(new ArrayList<String>(), null);
+    Assert.assertSame(1, ListSequence.fromList(hs).count());
+    Assert.assertTrue(ListSequence.fromList(hs).contains(null));
+  }
+
   public List<Foo> mps5684helper() {
     List<Bar> bars = ListSequence.fromListAndArray(new ArrayList<Bar>(), new Bar());
     return ListSequence.fromListWithValues(new ArrayList<Foo>(), bars);

@@ -63,6 +63,11 @@ public class ListSequence<T> extends CollectionSequence<T> implements IListSeque
     }
     
     public static <U> IListSequence<U> fromListAndArray (List<U> list, U...array) {
+        if (Sequence.NULL_ARRAY_IS_SINGLETON) {
+            if (array == null) {
+                array = nullSingletonArray();
+            }
+        }
         if (Sequence.USE_NULL_SEQUENCE) {
             if (list == null && array == null) {
                 return NullListSequence.instance();
