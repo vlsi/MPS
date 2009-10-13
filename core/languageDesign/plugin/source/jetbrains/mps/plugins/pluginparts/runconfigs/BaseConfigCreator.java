@@ -19,6 +19,7 @@ import com.intellij.execution.Location;
 import com.intellij.execution.actions.ConfigurationContext;
 import com.intellij.execution.configurations.ConfigurationType;
 import com.intellij.execution.configurations.RunConfiguration;
+import com.intellij.execution.configurations.UnknownConfigurationType;
 import com.intellij.execution.impl.RunManagerImpl;
 import com.intellij.execution.impl.RunnerAndConfigurationSettingsImpl;
 import com.intellij.execution.junit.RuntimeConfigurationProducer;
@@ -31,7 +32,7 @@ public abstract class BaseConfigCreator<T> extends RuntimeConfigurationProducer 
   private ConfigurationContext myContext;
 
   public BaseConfigCreator(ConfigurationType configurationType) {
-    super(configurationType);
+    super(configurationType != null? configurationType : UnknownConfigurationType.INSTANCE);
   }
 
   public void setSourceElement(PsiElement sourceElement) {
