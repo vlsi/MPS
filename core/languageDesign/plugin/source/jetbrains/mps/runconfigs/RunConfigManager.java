@@ -20,6 +20,7 @@ import com.intellij.execution.junit.RuntimeConfigurationProducer;
 import com.intellij.execution.configurations.ConfigurationType;
 import com.intellij.execution.configurations.LocatableConfiguration;
 import com.intellij.execution.impl.RunManagerImpl;
+import com.intellij.execution.impl.ProjectRunConfigurationManager;
 import com.intellij.openapi.components.ProjectComponent;
 import com.intellij.openapi.extensions.ExtensionPoint;
 import com.intellij.openapi.extensions.Extensions;
@@ -55,6 +56,7 @@ public class RunConfigManager implements ProjectComponent {
   private volatile boolean myLoaded = false; //this is synchronized
   private Project myProject;
   private Element myState = null;
+  private Element mySharedState = null;
 
   private MyReloadListener myReloadListener;
 
@@ -100,6 +102,13 @@ public class RunConfigManager implements ProjectComponent {
       }
     }
 
+    if (mySharedState != null) {
+      try {
+        getSharedConfigurationManager().readExternal(mySharedState);
+      } catch (InvalidDataException e) {
+        LOG.error(e);
+      }
+    }
 
     myLoaded = true;
   }
@@ -161,6 +170,7 @@ public class RunConfigManager implements ProjectComponent {
       mySortedConfigs.clear();
     }
 
+    mySharedState = getSharedConfigurationManager().getState();
     getRunManager().cleanup();
 
     myLoaded = false;
@@ -168,6 +178,10 @@ public class RunConfigManager implements ProjectComponent {
 
   private RunManagerImpl getRunManager() {
     return (RunManagerImpl) RunManagerEx.getInstanceEx(myProject);
+  }
+
+  private ProjectRunConfigurationManager getSharedConfigurationManager() {
+    return myProject.getComponent(ProjectRunConfigurationManager.class);
   }
 
   private List<ConfigurationType> createConfigs(MPSProject project) {
@@ -199,6 +213,7 @@ public class RunConfigManager implements ProjectComponent {
 
     return conTypes;
   }
+  
   private List<ConfigurationType> createCreators(MPSProject project) {
     final List<ConfigurationType> conTypes = new ArrayList<ConfigurationType>();
 
