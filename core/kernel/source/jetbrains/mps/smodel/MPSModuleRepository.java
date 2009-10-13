@@ -295,7 +295,7 @@ public class MPSModuleRepository implements ApplicationComponent {
 
     if (myFqNameToModulesMap.containsKey(moduleFqName)) {
       IModule m = myFqNameToModulesMap.get(moduleFqName);
-      LOG.error("can't add module " + moduleFqName + " : module with the same UID exists at " + m.getDescriptorFile() + " and " + module.getDescriptorFile(), m);
+      LOG.error("duplicate module name " + moduleFqName + " : module with the same UID exists at " + m.getDescriptorFile() + " and " + module.getDescriptorFile(), m);
     }
 
     myFqNameToModulesMap.put(moduleFqName, module);
@@ -303,7 +303,7 @@ public class MPSModuleRepository implements ApplicationComponent {
     ModuleId moduleId = module.getModuleId();
     if (moduleId != null) {
       if (myIdToModuleMap.containsKey(moduleId)) {
-        LOG.error("can't add module " + module.getModuleReference() + " module with the same id already exists " + myIdToModuleMap.get(moduleId).getModuleReference());
+        LOG.warning("duplicate module name " + module.getModuleReference() + " module with the same id already exists " + myIdToModuleMap.get(moduleId).getModuleReference());
       }
 
       myIdToModuleMap.put(module.getModuleId(), module);
