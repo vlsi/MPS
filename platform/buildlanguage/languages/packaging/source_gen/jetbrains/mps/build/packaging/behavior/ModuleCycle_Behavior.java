@@ -9,12 +9,12 @@ import java.util.Set;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.reloading.IClassPathItem;
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.reloading.CommonPaths;
 import java.util.ArrayList;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
