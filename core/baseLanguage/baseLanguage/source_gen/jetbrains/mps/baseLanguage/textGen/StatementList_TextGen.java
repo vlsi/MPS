@@ -14,7 +14,7 @@ import jetbrains.mps.textGen.TextGenManager;
 public class StatementList_TextGen extends SNodeTextGen {
   public void doGenerateText(SNode node) {
     int size = ListSequence.fromList(SLinkOperations.getTargets(node, "statement", true)).count();
-    for (int i = 0 ; i < size ; i++ ) {
+    for (int i = 0; i < size; i++ ) {
       SNode statement = ListSequence.fromList(ListSequence.fromList(SLinkOperations.getTargets(node, "statement", true)).toListSequence()).getElement(i);
       if ((i == size - 1) && (LastStatementUtil.canMakeReturnStatement(statement, null))) {
         SNode expressionStatement = SNodeOperations.cast(statement, "jetbrains.mps.baseLanguage.structure.ExpressionStatement");

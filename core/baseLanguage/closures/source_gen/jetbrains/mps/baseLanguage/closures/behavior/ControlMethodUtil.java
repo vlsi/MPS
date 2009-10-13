@@ -25,7 +25,7 @@ public class ControlMethodUtil {
       int initClosures = 0;
       int controlClosures = 0;
       List<SNode> closureParamTypes = null;
-      for (int idx = ListSequence.fromList(params).count() - 1 ; idx >= 0 ; idx-- ) {
+      for (int idx = ListSequence.fromList(params).count() - 1; idx >= 0; idx-- ) {
         SNode p = ListSequence.fromList(params).getElement(idx);
         SNode ptype = SLinkOperations.getTarget(p, "type", true);
         if (SNodeOperations.isInstanceOf(ptype, "jetbrains.mps.baseLanguage.closures.structure.FunctionType")) {

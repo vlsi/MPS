@@ -22,7 +22,7 @@ public class ExternalReferences_Test extends TestCase {
 
   public void test_alteredLocalvariable() throws Exception {
     final Wrappers._int res = new Wrappers._int(0);
-    for (int i = 1 ; i <= 5 ; i++ ) {
+    for (int i = 1; i <= 5; i++ ) {
       new _FunctionTypes._return_P0_E0<Integer>() {
         public Integer invoke() {
           return res.value++ ;
@@ -35,7 +35,7 @@ public class ExternalReferences_Test extends TestCase {
 
   public void test_alteredLocalVariable2() throws Exception {
     final Wrappers._int res = new Wrappers._int(0);
-    for (int i = 1 ; i <= 5 ; i++ ) {
+    for (int i = 1; i <= 5; i++ ) {
       for (int j : new _FunctionTypes._return_P0_E0<Iterable<Integer>>() {
         public Iterable<Integer> invoke() {
           return new Iterable<Integer>() {
@@ -135,7 +135,7 @@ __switch__:
 
   public void test_mps4102() throws Exception {
     int a;
-    for (final Wrappers._int i = new Wrappers._int(0) ; i.value < 10 ; i.value++ ) {
+    for (final Wrappers._int i = new Wrappers._int(0); i.value < 10; i.value++ ) {
       a = new _FunctionTypes._return_P0_E0<Integer>() {
         public Integer invoke() {
           return i.value;

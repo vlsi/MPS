@@ -8,17 +8,13 @@ import java.util.Iterator;
 import jetbrains.mps.baseLanguage.closures.runtime.YieldingIterator;
 import java.util.List;
 
-/* package */class Main_sequence_as_javaList {
-
-  /* package */static void main(String[] args) {
-    Iterable<Integer> sequence = Sequence.fromClosure(new ISequenceClosure <Integer>() {
-
+/*package*/ class Main_sequence_as_javaList {
+  /*package*/ static void main(String[] args) {
+    Iterable<Integer> sequence = Sequence.fromClosure(new ISequenceClosure<Integer>() {
       public Iterable<Integer> iterable() {
-        return new Iterable <Integer>() {
-
+        return new Iterable<Integer>() {
           public Iterator<Integer> iterator() {
-            return new YieldingIterator <Integer>() {
-
+            return new YieldingIterator<Integer>() {
               private int __CP__ = 0;
               private int _2_i;
 
@@ -67,9 +63,8 @@ __switch__:
     List<Integer> list = Sequence.fromIterable(sequence).toListSequence();
     System.out.println("list: type cast -> java-list");
     List<Integer> javaList = list;
-    for(Integer n : javaList) {
+    for (Integer n : javaList) {
       System.out.println(n);
     }
   }
-
 }

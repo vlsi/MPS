@@ -24,7 +24,7 @@ public class StringLiteral_Behavior {
     if (value == null) {
       return true;
     }
-    for (int i = 0 ; i < value.length() ; i++ ) {
+    for (int i = 0; i < value.length(); i++ ) {
       char c = SPropertyOperations.getString(thisNode, "value").charAt(i);
       if (isEscapeMode) {
         if (c == 'u') {

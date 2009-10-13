@@ -292,7 +292,7 @@ __switch__:
     Assert.assertTrue(Arrays.equals(new Integer[]{1,2,3,4,5}, Sequence.fromIterable(input).toListSequence().toGenericArray(Integer.class)));
     this.assertIterableEquals(this.expect5(), Sequence.fromIterable(input).toListSequence());
     Integer i = 1;
-    for (Iterator<Integer> it = input.iterator() ; it.hasNext() ; i++ ) {
+    for (Iterator<Integer> it = input.iterator(); it.hasNext(); i++ ) {
       Assert.assertEquals(i, it.next());
     }
     Assert.assertSame(6, i);

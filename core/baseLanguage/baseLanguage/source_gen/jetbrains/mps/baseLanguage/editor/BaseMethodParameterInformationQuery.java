@@ -41,7 +41,7 @@ public class BaseMethodParameterInformationQuery extends ParametersInformation<S
     }
     int argumentIndex = -1;
     if (argument != null) {
-      for (int i = 0 ; i < ListSequence.fromList(SLinkOperations.getTargets(methodCall, "actualArgument", true)).count() ; i++ ) {
+      for (int i = 0; i < ListSequence.fromList(SLinkOperations.getTargets(methodCall, "actualArgument", true)).count(); i++ ) {
         if (ListSequence.fromList(ListSequence.fromList(SLinkOperations.getTargets(methodCall, "actualArgument", true)).toListSequence()).getElement(i) == argument) {
           argumentIndex = i;
         }

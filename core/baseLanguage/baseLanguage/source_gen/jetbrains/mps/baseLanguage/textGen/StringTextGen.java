@@ -9,7 +9,7 @@ public abstract class StringTextGen {
     String result = s;
     if (s.indexOf('"') >= 0 || s.indexOf('\n') >= 0 || s.indexOf('\r') >= 0) {
       boolean needsEscaping = false;
-      for (int i = 0 ; i < s.length() ; i++ ) {
+      for (int i = 0; i < s.length(); i++ ) {
         if (StringTextGen.isBadDoubleQuote(s, i, textGen) || result.charAt(i) == '\r' || result.charAt(i) == '\n') {
           needsEscaping = true;
           break;
@@ -17,7 +17,7 @@ public abstract class StringTextGen {
       }
       if (needsEscaping) {
         StringBuilder stringBuilder = new StringBuilder();
-        for (int i = 0 ; i < s.length() ; i++ ) {
+        for (int i = 0; i < s.length(); i++ ) {
           if (StringTextGen.isBadDoubleQuote(s, i, textGen)) {
             stringBuilder.append("\\\"");
           } else if (result.charAt(i) == '\r') {
@@ -40,7 +40,7 @@ public abstract class StringTextGen {
 
   protected static String replaceNonAsciiSymbolsWithUnicodeSymbols(String s, final SNodeTextGen textGen) {
     StringBuilder result = new StringBuilder();
-    for (int i = 0 ; i < s.length() ; i++ ) {
+    for (int i = 0; i < s.length(); i++ ) {
       if (s.charAt(i) < 128) {
         result.append(s.charAt(i));
       } else {

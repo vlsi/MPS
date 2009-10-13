@@ -73,7 +73,7 @@ public class FunctionTypeUtil {
       }
     }, true);
     SNode prev = null;
-    for (Iterator<SNode> it = ListSequence.fromList(typesList).iterator() ; it.hasNext() ; ) {
+    for (Iterator<SNode> it = ListSequence.fromList(typesList).iterator(); it.hasNext();) {
       SNode next = it.next();
       if (prev != null) {
         if (Collator.getInstance().compare(FunctionType_Behavior.call_getSignature_1213877405047(SNodeOperations.cast(prev, "jetbrains.mps.baseLanguage.closures.structure.FunctionType")), FunctionType_Behavior.call_getSignature_1213877405047(SNodeOperations.cast(next, "jetbrains.mps.baseLanguage.closures.structure.FunctionType"))) == 0) {

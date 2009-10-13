@@ -7,17 +7,13 @@ import jetbrains.mps.internal.collections.runtime.ISequenceClosure;
 import java.util.Iterator;
 import jetbrains.mps.baseLanguage.closures.runtime.YieldingIterator;
 
-/* package */class Main_forEach_loop {
-
-  /* package */static void main(String[] args) {
-    Iterable<Integer> nums = Sequence.fromClosure(new ISequenceClosure <Integer>() {
-
+/*package*/ class Main_forEach_loop {
+  /*package*/ static void main(String[] args) {
+    Iterable<Integer> nums = Sequence.fromClosure(new ISequenceClosure<Integer>() {
       public Iterable<Integer> iterable() {
-        return new Iterable <Integer>() {
-
+        return new Iterable<Integer>() {
           public Iterator<Integer> iterator() {
-            return new YieldingIterator <Integer>() {
-
+            return new YieldingIterator<Integer>() {
               private int __CP__ = 0;
               private int _3_num;
 
@@ -65,7 +61,7 @@ __switch__:
     System.out.println("from infinite sequence take first 10 numbers,");
     System.out.println("ignore odd numbers,");
     System.out.println("print even numbers");
-    for(Integer num : Sequence.fromIterable(nums)) {
+    for (Integer num : Sequence.fromIterable(nums)) {
       if (num >= 10) {
         break;
       }
@@ -75,5 +71,4 @@ __switch__:
       System.out.println(num);
     }
   }
-
 }

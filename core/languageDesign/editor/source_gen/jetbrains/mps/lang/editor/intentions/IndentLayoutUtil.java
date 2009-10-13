@@ -32,7 +32,7 @@ public class IndentLayoutUtil {
         ListSequence.fromList(result).addElement(node);
       } else {
         List<SNode> children = SLinkOperations.getTargets(SNodeOperations.cast(node, "jetbrains.mps.lang.editor.structure.CellModel_Collection"), "childCellModel", true);
-        for (int i = 0 ; i < ListSequence.fromList(children).count() ; i++ ) {
+        for (int i = 0; i < ListSequence.fromList(children).count(); i++ ) {
           ListSequence.fromList(result).addSequence(ListSequence.fromList(moveToIndentLayoutChildren(ListSequence.fromList(children).getElement(i), isLast && (i == ListSequence.fromList(children).count() - 1))));
         }
       }

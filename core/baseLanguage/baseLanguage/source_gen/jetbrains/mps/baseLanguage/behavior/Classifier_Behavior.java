@@ -77,7 +77,7 @@ public class Classifier_Behavior {
     }
     if (index != -1) {
       List<SNode> newContainers = new ArrayList<SNode>();
-      for (int i = index + 1 ; i < ListSequence.fromList(containers).count() ; i++ ) {
+      for (int i = index + 1; i < ListSequence.fromList(containers).count(); i++ ) {
         ListSequence.fromList(newContainers).addElement(ListSequence.fromList(containers).getElement(i));
       }
       containers = newContainers;

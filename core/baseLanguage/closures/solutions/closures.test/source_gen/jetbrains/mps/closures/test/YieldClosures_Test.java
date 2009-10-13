@@ -349,8 +349,8 @@ __switch__:
   public void test_forStatement() throws Exception {
     this.assertResultsEqual(new _FunctionTypes._void_P1_E0<List<Integer>>() {
       public void invoke(List<Integer> exp) {
-        for (int i = 0 ; i < 3 ; i++ ) {
-          for (int j = 0 ; j < 3 ; j++ ) {
+        for (int i = 0; i < 3; i++ ) {
+          for (int j = 0; j < 3; j++ ) {
             ListSequence.fromList(exp).addElement(i);
             ListSequence.fromList(exp).addElement(j);
           }
@@ -524,8 +524,8 @@ __switch__:
     this.assertResultsEqual(new _FunctionTypes._void_P1_E0<List<Integer>>() {
       public void invoke(List<Integer> exp) {
         int a = 0;
-        for (int i = 0 ; i < 10 ; i++ ) {
-          for (int j = 0 ; j < 10 ; j++ ) {
+        for (int i = 0; i < 10; i++ ) {
+          for (int j = 0; j < 10; j++ ) {
             if (i + j < 5) {
               continue;
             }
@@ -742,7 +742,7 @@ __switch__:
   public void test_elseIfClauses() throws Exception {
     this.assertResultsEqual(new _FunctionTypes._void_P1_E0<List<Integer>>() {
       public void invoke(List<Integer> exp) {
-        for (int i = 1 ; i <= 10 ; i++ ) {
+        for (int i = 1; i <= 10; i++ ) {
           if (i % 2 == 0) {
             ListSequence.fromList(exp).addElement(i * 10);
           } else if (i % 3 == 0) {

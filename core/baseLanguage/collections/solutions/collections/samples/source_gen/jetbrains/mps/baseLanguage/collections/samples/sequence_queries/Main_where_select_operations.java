@@ -10,17 +10,13 @@ import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 
-/* package */class Main_where_select_operations {
-
-  /* package */static void main(String[] args) {
-    Iterable<Integer> nums = Sequence.fromClosure(new ISequenceClosure <Integer>() {
-
+/*package*/ class Main_where_select_operations {
+  /*package*/ static void main(String[] args) {
+    Iterable<Integer> nums = Sequence.fromClosure(new ISequenceClosure<Integer>() {
       public Iterable<Integer> iterable() {
-        return new Iterable <Integer>() {
-
+        return new Iterable<Integer>() {
           public Iterator<Integer> iterator() {
-            return new YieldingIterator <Integer>() {
-
+            return new YieldingIterator<Integer>() {
               private int __CP__ = 0;
               private int _2_i;
 
@@ -70,23 +66,20 @@ __switch__:
     System.out.println("where num is even,");
     System.out.println("produce string");
     final Wrappers._int count = new Wrappers._int(0);
-    Iterable<String> strings = Sequence.fromIterable(nums).where(new IWhereFilter <Integer>() {
-
+    Iterable<String> strings = Sequence.fromIterable(nums).where(new IWhereFilter<Integer>() {
       public boolean accept(Integer n) {
         return n % 2 == 0;
       }
-    }).select(new ISelector <Integer, String>() {
-
+    }).select(new ISelector<Integer, String>() {
       public String select(Integer n) {
         count.value++ ;
         return "num:" + n;
       }
     });
     System.out.println("count (before):" + count.value);
-    for(String s : Sequence.fromIterable(strings)) {
+    for (String s : Sequence.fromIterable(strings)) {
       System.out.println(s);
     }
     System.out.println("count (after):" + count.value);
   }
-
 }

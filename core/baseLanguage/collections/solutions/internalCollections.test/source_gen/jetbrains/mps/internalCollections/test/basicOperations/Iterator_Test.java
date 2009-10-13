@@ -62,12 +62,12 @@ public class Iterator_Test extends Util_Test {
   public void test_iterating() throws Exception {
     Iterable<String> test = this.inputABC();
     String res = "";
-    for (Iterator<String> itr = Sequence.fromIterable(test).iterator() ; itr.hasNext() ; ) {
+    for (Iterator<String> itr = Sequence.fromIterable(test).iterator(); itr.hasNext();) {
       res = res + itr.next();
     }
     Assert.assertEquals("ABC", res);
     res = "";
-    for (IEnumerator<String> enm = Sequence.fromIterable(test).enumerator() ; enm.moveNext() ; ) {
+    for (IEnumerator<String> enm = Sequence.fromIterable(test).enumerator(); enm.moveNext();) {
       res = res + enm.current();
       res = res + enm.current();
     }
@@ -76,13 +76,13 @@ public class Iterator_Test extends Util_Test {
 
   public void test_containerIterator() throws Exception {
     List<Integer> list = ListSequence.fromListAndArray(new ArrayList<Integer>(), 1, 2, 3);
-    for (Iterator<Integer> cit = ListSequence.fromList(list).iterator() ; cit.hasNext() ; ) {
+    for (Iterator<Integer> cit = ListSequence.fromList(list).iterator(); cit.hasNext();) {
       cit.next();
       cit.remove();
     }
     Assert.assertTrue(ListSequence.fromList(list).isEmpty());
     Set<Integer> set = SetSequence.fromSetAndArray(new HashSet<Integer>(), 1, 2, 3);
-    for (Iterator<Integer> cit = SetSequence.fromSet(set).iterator() ; cit.hasNext() ; ) {
+    for (Iterator<Integer> cit = SetSequence.fromSet(set).iterator(); cit.hasNext();) {
       cit.next();
       cit.remove();
     }

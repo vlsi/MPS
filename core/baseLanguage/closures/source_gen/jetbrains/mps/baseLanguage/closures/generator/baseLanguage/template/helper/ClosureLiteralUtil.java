@@ -221,7 +221,7 @@ public class ClosureLiteralUtil {
         int idx = 0;
         List<SNode> mptypes = SLinkOperations.getTargets(SNodeOperations.as(absType, "jetbrains.mps.baseLanguage.structure.ClassifierType"), "parameter", true);
         List<SNode> rptypes = SLinkOperations.getTargets(SNodeOperations.as(matched, "jetbrains.mps.baseLanguage.structure.ClassifierType"), "parameter", true);
-        for (int i = 0 ; i < ListSequence.fromList(mptypes).count() && i < ListSequence.fromList(rptypes).count() ; i++ ) {
+        for (int i = 0; i < ListSequence.fromList(mptypes).count() && i < ListSequence.fromList(rptypes).count(); i++ ) {
           map = matchType(ListSequence.fromList(mptypes).getElement(i), ListSequence.fromList(rptypes).getElement(i), getMap(map));
         }
       }

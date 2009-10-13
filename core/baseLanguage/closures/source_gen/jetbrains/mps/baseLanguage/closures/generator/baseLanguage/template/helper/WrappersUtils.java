@@ -80,7 +80,7 @@ public class WrappersUtils {
       }
     }
 with_decls:
-    for (Iterator<SNode> it = ListSequence.fromList(vdecls).iterator() ; it.hasNext() ; ) {
+    for (Iterator<SNode> it = ListSequence.fromList(vdecls).iterator(); it.hasNext();) {
       SNode vd = it.next();
       SNode sl = SNodeOperations.getAncestorWhereConceptInList(vd, new String[]{"jetbrains.mps.baseLanguage.structure.StatementList","jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration"}, false, false);
       for (SNode desc : SNodeOperations.getDescendants(sl, null, false, new String[]{})) {

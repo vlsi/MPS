@@ -18,7 +18,7 @@ public class TestRunner extends BaseTestRunner {
 
   public void start(String[] argv) throws Throwable {
     List<Test> tests = ListSequence.fromList(new ArrayList<Test>());
-    for (int i = 0 ; i < argv.length ; i++ ) {
+    for (int i = 0; i < argv.length; i++ ) {
       if ("-c".equals(argv[i])) {
         i++ ;
         Test test = this.getTest(argv[i]);

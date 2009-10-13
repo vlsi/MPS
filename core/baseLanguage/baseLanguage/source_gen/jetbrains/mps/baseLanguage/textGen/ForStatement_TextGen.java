@@ -21,12 +21,13 @@ public class ForStatement_TextGen extends SNodeTextGen {
     if ((SLinkOperations.getTarget(node, "variable", true) != null)) {
       TextGenManager.instance().appendNodeText(this.getContext(), this.getBuffer(), SLinkOperations.getTarget(node, "variable", true), this.getSNode());
     }
-    this.append(" ; ");
+    this.append("; ");
     if ((SLinkOperations.getTarget(node, "condition", true) != null)) {
       TextGenManager.instance().appendNodeText(this.getContext(), this.getBuffer(), SLinkOperations.getTarget(node, "condition", true), this.getSNode());
     }
-    this.append(" ; ");
+    this.append(";");
     if ((SLinkOperations.getTarget(node, "iteration", true) != null)) {
+      this.append(" ");
       TextGenManager.instance().appendNodeText(this.getContext(), this.getBuffer(), SLinkOperations.getTarget(node, "iteration", true), this.getSNode());
     }
     this.append(") {");
