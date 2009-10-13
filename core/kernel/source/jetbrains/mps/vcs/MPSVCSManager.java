@@ -97,10 +97,10 @@ public class MPSVCSManager implements ProjectComponent {
 
   public void deleteFilesAndRemoveFromVcs(final List<File> files, final boolean silently) {
     if (files.size() == 0) return;
-    if (!isProjectUnderVcs()) {
       for (File f : files) {
         f.delete();
       }
+    if (!isProjectUnderVcs()) {
       return;
     }
     myRemoveOperationScheduler.invokeLater(new RemoveOperation(files, myManager, myProject,
@@ -108,21 +108,24 @@ public class MPSVCSManager implements ProjectComponent {
     return;
   }
 
-  public void deleteVirtualFilesAndRemoveFromVcs(final Set<VirtualFile> files, final boolean silently) {
-    if (files.size() == 0) return;
-    if (!isProjectUnderVcs()) {
-      for (VirtualFile f : files) {
+  public void deleteVirtualFilesAndRemoveFromVcs(final Set<VirtualFile> virtualFiles, final boolean silently) {
+    if (virtualFiles.size() == 0) return;
+      for (VirtualFile f : virtualFiles) {
         try {
           f.delete(this);
         } catch (IOException e) {
           LOG.error("Error while deleting file " + f + "\n", e);
         }
       }
+    if (!isProjectUnderVcs()) {
       return;
+    }
+    List<File> files = new ArrayList<File>();
+    for (VirtualFile f : virtualFiles) {
+      files.add(VFileSystem.toFile(f));
     }
     myRemoveOperationScheduler.invokeLater(new RemoveOperation(files, myManager, myProject,
       myRemoveOption, silently));
-    return;
   }
 
   public void addFilesToVcs(final List<File> files, final boolean recursive, final boolean silently) {
