@@ -169,12 +169,15 @@ public class DefaultJUnit_Configuration extends BaseRunConfig {
               testRunner.value.run(all);
             }
           });
-          process = testRunner.value.getProcess();
+
+          while (process == null) {
+            process = testRunner.value.getProcess();
+          }
 
           if (process != null) {
             BLProcessHandler processHandler = new BLProcessHandler(runComponent.getConsole(), process, "Test", Charset.defaultCharset());
             runComponent.onStart(processHandler);
-            handler = new BLProcessHandler(runComponent.getConsole(), process, "Test", Charset.defaultCharset());
+            handler = new JUnitProcessHandler(runComponent, runComponent.getConsole(), process);
           }
         }
         final JComponent finalConsoleComponent = consoleComponent;
