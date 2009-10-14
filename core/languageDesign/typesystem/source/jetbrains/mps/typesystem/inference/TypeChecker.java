@@ -20,7 +20,6 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.nodeEditor.IErrorReporter;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.persistence.IModelRootManager;
-import jetbrains.mps.util.WeakSet;
 import jetbrains.mps.typesystem.integration.TypesystemPreferencesComponent;
 import jetbrains.mps.typesystem.inference.util.SubtypingCache;
 import jetbrains.mps.typesystem.debug.ISlicer;
@@ -45,8 +44,6 @@ public class TypeChecker implements ApplicationComponent {
   private static final String TYPES_MODEL_NAME = "typesModel";
   private static final SModelFqName TYPES_MODEL_UID = new SModelFqName(TYPES_MODEL_NAME, RUNTIME_TYPES);
   private static final ModelOwner RUNTIME_TYPES_MODEL_OWNER = new ModelOwner() {};
-
-  private static final Object CHECKED_ROOTS_STATE_LOCK = new Object();
 
   private SubtypingManager mySubtypingManager;
   private RuntimeSupport myRuntimeSupport;
@@ -160,14 +157,12 @@ public class TypeChecker implements ApplicationComponent {
   }
 
   public boolean isCheckedRoot(SNode node) {
-    synchronized (CHECKED_ROOTS_STATE_LOCK) {
-      TypeCheckingContext context = NodeTypesComponentsRepository.getInstance().getTypeCheckingContext(node);
-      if (context == null) {
-        return false;
-      }
-      NodeTypesComponent baseNodeTypesComponent = context.getBaseNodeTypesComponent();
-      return baseNodeTypesComponent.isChecked();
+    TypeCheckingContext context = NodeTypesComponentsRepository.getInstance().getTypeCheckingContext(node);
+    if (context == null) {
+      return false;
     }
+    NodeTypesComponent baseNodeTypesComponent = context.getBaseNodeTypesComponent();
+    return baseNodeTypesComponent.isChecked();
   }
 
   public void checkRoot(SNode node) {
@@ -189,50 +184,26 @@ public class TypeChecker implements ApplicationComponent {
   private void checkRoot(final SNode node, final boolean refreshTypes, final ISlicer slicer) {
     if (node == null) return;
     assert node.isRoot();
-    checkWithinRoot(node, new Runnable() {
-      public void run() {
-        synchronized (CHECKED_ROOTS_STATE_LOCK) {
-          NodeTypesComponent component = NodeTypesComponentsRepository.getInstance().createNodeTypesComponent(node);
-          if (slicer != null) {
-            component.setSlicer(slicer);
-          }
-          component.computeTypes(refreshTypes);
-          component.setChecked();
-        }
-      }
-    });
-  }
-
-  public void checkWithinRoot(SNode node, Runnable checkingAction) {
-    try {
-      checkingAction.run();
-    } finally {
+    NodeTypesComponent component = NodeTypesComponentsRepository.getInstance().createNodeTypesComponent(node);
+    if (slicer != null) {
+      component.setSlicer(slicer);
     }
+    component.computeTypes(refreshTypes);
+    component.setChecked();
   }
 
   private SNode getTypeOf_generationMode(final SNode node) {
     if (node == null) return null;
     SNode containingRoot = node.getContainingRoot();
     if (containingRoot == null) return null;
-
-    //  System.err.println("getting type of " + node + node.getId() + " in a root " + containingRoot + " in a model " + node.getModel().getModelDescriptor().getSModelFqName());
-
     NodeTypesComponent component = NodeTypesComponentsRepository.getInstance().
       getNodeTypesComponent(node.getContainingRoot());
     if (!isCheckedRoot(containingRoot) || component == null) {
-      final SNode[] result = new SNode[1];
       final NodeTypesComponent component1 = NodeTypesComponentsRepository.getInstance().createNodeTypesComponent(containingRoot);
-      checkWithinRoot(node, new Runnable() {
-        public void run() {
-          result[0] = component1.computeTypesForNodeDuringGeneration(node);
-        }
-      });
-      SNode resultt_type = result[0];
-      //   System.err.println("type is " + resultt_type);
-      return resultt_type;
+      SNode computedType = component1.computeTypesForNodeDuringGeneration(node);
+      return computedType;
     }
     SNode resultType = getTypeDontCheck(node);
-    //  System.err.println("type is " + resultType);
     return resultType;
   }
 
@@ -257,15 +228,9 @@ public class TypeChecker implements ApplicationComponent {
     }
     TypeCheckingContext typeCheckingContext = NodeTypesComponentsRepository.getInstance().getTypeCheckingContext(node.getContainingRoot());
     if (nodeIsNotChecked || !isCheckedRoot(containingRoot) || typeCheckingContext == null) {
-      final SNode[] result = new SNode[1];
       typeCheckingContext = NodeTypesComponentsRepository.getInstance().createTypeCheckingContext(containingRoot);
       final TypeCheckingContext finalTypeCheckingContext = typeCheckingContext;
-      checkWithinRoot(node, new Runnable() {
-        public void run() {
-          result[0] = finalTypeCheckingContext.computeTypeForResolve(node);
-        }
-      });
-      SNode resultType = result[0];
+      SNode resultType = finalTypeCheckingContext.computeTypeForResolve(node);
       if (myComputedTypesForCompletion != null) {
         myComputedTypesForCompletion.put(node, resultType);
       }
