@@ -3,3 +3,7 @@ New Features in 1.1
 - Run Configurations DSL. Run configurations for main classes and unit tests.
 - Navigation from a stacktrace to corresponding part in MPS
 - Ant task for generating / checking MPS models
+
+Attention!
+- Anonymous classes' structure was refactored, old structure of anonymous classes was made deprecated.
+Instant quick fixes and migration script are provided.
