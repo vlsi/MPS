@@ -21,6 +21,7 @@ import jetbrains.mps.smodel.LanguageHierarchyCache.CacheChangeListener;
 import jetbrains.mps.smodel.event.*;
 import jetbrains.mps.util.WeakSet;
 import jetbrains.mps.util.Pair;
+import jetbrains.mps.util.annotation.UseCarefully;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.lang.typesystem.runtime.*;
@@ -51,6 +52,7 @@ public class NodeTypesComponent implements EditorMessageOwner {
   private final Object ACCESS_LOCK = new Object();
 
   private SNode myRootNode;
+  private boolean myIsChecked = false;
   private TypeChecker myTypeChecker;
   private Map<SNode, SNode> myNodesToTypesMap = new HashMap<SNode, SNode>();
   private Map<SNode, IErrorReporter> myNodesToErrorsMap = new HashMap<SNode, IErrorReporter>();
@@ -163,7 +165,7 @@ public class NodeTypesComponent implements EditorMessageOwner {
     clearNodesTypes();
     myRegisteredVariables.clear();
     clearCaches();
-    myTypeChecker.invalidateRoot(myRootNode);
+    myIsChecked = false;
   }
 
   private void clearEquationManager() {
@@ -949,6 +951,9 @@ public class NodeTypesComponent implements EditorMessageOwner {
   }
 
   public boolean isChecked() {
+    if (!myIsChecked) {
+      return false;
+    }
     return isCheckedTypesystem() && isCheckedNonTypesystem();
   }
 
@@ -958,6 +963,11 @@ public class NodeTypesComponent implements EditorMessageOwner {
 
   public boolean isCheckedNonTypesystem() {
     return !doInvalidateNonTypesystem();
+  }
+
+  @UseCarefully
+  public void setChecked() {
+    myIsChecked = true;
   }
 
   private class MyModelListener implements SModelCommandListener {

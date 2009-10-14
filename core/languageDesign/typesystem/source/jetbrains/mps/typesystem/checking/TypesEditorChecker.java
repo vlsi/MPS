@@ -50,19 +50,22 @@ public class TypesEditorChecker extends EditorCheckerAdapter {
   public Set<EditorMessage> createMessages(final SNode node, IOperationContext operationContext, List<SModelEvent> events, boolean wasCheckedOnce) {
     myMessagesChanged = false;
     Set<EditorMessage> messages = new LinkedHashSet<EditorMessage>();
+    NodeTypesComponent typesComponent = getNodeTypesComponent(node);
+    if (typesComponent != null) {
       if (!wasCheckedOnce || !TypeChecker.getInstance().isCheckedRoot(node.getContainingRoot())) {
         try {
           myMessagesChanged = true;
           TypeChecker.getInstance().checkRoot(node.getContainingRoot());
         } catch (Throwable t) {
           LOG.error(t);
-          TypeChecker.getInstance().markAsChecked(node.getContainingRoot()); // for not to check again until the node will be changed
+          typesComponent.setChecked();
           return messages;
         }
       }
+    }
 
 
-    NodeTypesComponent typesComponent = getNodeTypesComponent(node);
+
     if (typesComponent != null) {
       //non-typesystem checks
       if (!wasCheckedOnce || !typesComponent.isCheckedNonTypesystem()) {
@@ -115,8 +118,8 @@ public class TypesEditorChecker extends EditorCheckerAdapter {
   }
 
   private NodeTypesComponent getNodeTypesComponent(SNode node) {
-    NodeTypesComponent typesComponent = NodeTypesComponentsRepository.getInstance().
-      createNodeTypesComponent(node.getContainingRoot());
+    NodeTypesComponent typesComponent =
+      NodeTypesComponentsRepository.getInstance().createTypeCheckingContext(node.getContainingRoot()).getBaseNodeTypesComponent();
     return typesComponent;
   }
 

@@ -48,10 +48,6 @@ public class TypeChecker implements ApplicationComponent {
 
   private static final Object CHECKED_ROOTS_STATE_LOCK = new Object();
 
-  private Set<SNode> myCheckedRoots = new WeakSet<SNode>();
-
-  private MySModelCommandListener myListener = new MySModelCommandListener();
-
   private SubtypingManager mySubtypingManager;
   private RuntimeSupport myRuntimeSupport;
   private RulesManager myRulesManager;
@@ -127,10 +123,7 @@ public class TypeChecker implements ApplicationComponent {
   }
 
   public void clearForReload() {
-    synchronized (CHECKED_ROOTS_STATE_LOCK) {
-      myRulesManager.clear();
-      myCheckedRoots.clear();
-    }
+    myRulesManager.clear();
   }
 
   public void enableTypesComputingForCompletion() {
@@ -172,9 +165,6 @@ public class TypeChecker implements ApplicationComponent {
       if (context == null) {
         return false;
       }
-      if (!myCheckedRoots.contains(node)) {
-        return false;
-      }
       NodeTypesComponent baseNodeTypesComponent = context.getBaseNodeTypesComponent();
       return baseNodeTypesComponent.isChecked();
     }
@@ -207,7 +197,7 @@ public class TypeChecker implements ApplicationComponent {
             component.setSlicer(slicer);
           }
           component.computeTypes(refreshTypes);
-          myCheckedRoots.add(node);
+          component.setChecked();
         }
       }
     });
@@ -216,9 +206,6 @@ public class TypeChecker implements ApplicationComponent {
   public void checkWithinRoot(SNode node, Runnable checkingAction) {
     try {
       checkingAction.run();
-      SModel model = node.getModel();
-      model.removeModelListener(myListener);
-      model.addWeakSModelListener(myListener);
     } finally {
     }
   }
@@ -289,20 +276,6 @@ public class TypeChecker implements ApplicationComponent {
       myComputedTypesForCompletion.put(node, resultType);
     }
     return resultType;
-  }
-
-  public void markAsChecked(SNode node) {
-    synchronized (CHECKED_ROOTS_STATE_LOCK) {
-      if (node == null) return;
-      myCheckedRoots.add(node);
-    }
-  }
-
-  public void invalidateRoot(SNode node) {
-    synchronized (CHECKED_ROOTS_STATE_LOCK) {
-      if (node == null) return;
-      myCheckedRoots.remove(node);
-    }
   }
 
   @Nullable
@@ -428,18 +401,4 @@ public class TypeChecker implements ApplicationComponent {
       typeRecalculatedListener.typeWillBeRecalculatedForTerm(term);
     }
   }
-
-  private class MySModelCommandListener extends SModelAdapter  {
-
-    public void modelReloaded(SModelDescriptor sm) {
-      synchronized (CHECKED_ROOTS_STATE_LOCK) {
-        for (SNode root : new ArrayList<SNode>(myCheckedRoots)) {
-          if (root.getModel().getModelDescriptor() == sm) {
-            myCheckedRoots.remove(root);
-          }
-        }
-      }
-    }
-  }
-
 }
