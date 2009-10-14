@@ -65,8 +65,8 @@ public class RenameMethod extends BaseRefactoring {
   public void refactor(final RefactoringContext refactoringContext) {
     SNode methodDeclNode = RenameUtil.getMethodDeclaration(refactoringContext.getSelectedNode());
 
-    if (((Boolean)refactoringContext.getParameter("refactorOverriding"))) {
-      List<SNode> overriding = MethodRefactoringUtils.findOverridingMethods(methodDeclNode, new EmptyProgressIndicator());
+    List<SNode> overriding = MethodRefactoringUtils.findOverridingMethods(methodDeclNode, new EmptyProgressIndicator());
+    if (ListSequence.fromList(overriding).isNotEmpty() && ((Boolean)refactoringContext.getParameter("refactorOverriding"))) {
       for (SNode node : ListSequence.fromList(overriding)) {
         SPropertyOperations.set(node, "name", ((String)refactoringContext.getParameter("newName")));
       }
