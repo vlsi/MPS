@@ -177,7 +177,7 @@ public class RefactoringProcessor {
             try {
               refactoring.refactor(refactoringContext);
             } catch (Throwable t) {
-              LOG.error("An exception occyred while trying to execute refactoring " + refactoring.getUserFriendlyName() + ". Models could have been corrupted.", t);
+              LOG.error("An exception occured while trying to execute refactoring " + refactoring.getUserFriendlyName() + ". Models could have been corrupted.", t);
             }
           }
         });
