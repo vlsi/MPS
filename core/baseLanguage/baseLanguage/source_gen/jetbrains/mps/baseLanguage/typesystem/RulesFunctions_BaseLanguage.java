@@ -565,4 +565,23 @@ __switch__:
       }
     }
   }
+
+  public static SNode concretifyType(SNode typeWithVars, Map<SNode, SNode> typeParamsToArgs) {
+    if (SNodeOperations.isInstanceOf(typeWithVars, "jetbrains.mps.baseLanguage.structure.TypeVariableReference")) {
+      SNode variableDeclaration = SLinkOperations.getTarget(SNodeOperations.cast(typeWithVars, "jetbrains.mps.baseLanguage.structure.TypeVariableReference"), "typeVariableDeclaration", false);
+      if (MapSequence.fromMap(typeParamsToArgs).containsKey(variableDeclaration)) {
+        return SNodeOperations.copyNode(MapSequence.fromMap(typeParamsToArgs).get(variableDeclaration));
+      } else {
+        return SNodeOperations.copyNode(typeWithVars);
+      }
+    } else {
+      SNode result = SNodeOperations.copyNode(typeWithVars);
+      for (SNode tvr : SNodeOperations.getDescendants(result, "jetbrains.mps.baseLanguage.structure.TypeVariableReference", false, new String[]{})) {
+        if (MapSequence.fromMap(typeParamsToArgs).containsKey(SLinkOperations.getTarget(tvr, "typeVariableDeclaration", false))) {
+          SNodeOperations.replaceWithAnother(tvr, SNodeOperations.copyNode(MapSequence.fromMap(typeParamsToArgs).get(SLinkOperations.getTarget(tvr, "typeVariableDeclaration", false))));
+        }
+      }
+      return result;
+    }
+  }
 }
