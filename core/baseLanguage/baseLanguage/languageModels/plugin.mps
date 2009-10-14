@@ -22462,7 +22462,7 @@
               </node>
             </node>
             <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1224076826889">
-              <link role="baseMethodDeclaration" targetNodeId="84.~RefactoringView.showRefactoringView(jetbrains.mps.refactoring.framework.RefactoringContext,jetbrains.mps.refactoring.RefactoringViewAction,jetbrains.mps.ide.findusages.model.SearchResults):void" resolveInfo="showRefactoringView" />
+              <link role="baseMethodDeclaration" targetNodeId="84.~RefactoringView.showRefactoringView(jetbrains.mps.refactoring.framework.RefactoringContext,jetbrains.mps.refactoring.RefactoringViewAction,jetbrains.mps.ide.findusages.model.SearchResults,boolean):void" resolveInfo="showRefactoringView" />
               <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="2621449412039966007" />
               <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1224077049303">
                 <link role="variableDeclaration" targetNodeId="1224077049262" resolveInfo="refactoringViewAction" />
@@ -22472,6 +22472,9 @@
                   <link role="fieldDeclaration" targetNodeId="1224072276452" resolveInfo="myResults" />
                 </node>
                 <node role="operand" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="1224077059886" />
+              </node>
+              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="2505022928699024979">
+                <property name="value" value="false" />
               </node>
             </node>
           </node>
@@ -41610,10 +41613,6 @@
       <property name="name" value="context" />
       <link role="key" targetNodeId="54.~MPSDataKeys.OPERATION_CONTEXT" resolveInfo="OPERATION_CONTEXT" />
     </node>
-    <node role="parameter" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterDeclaration" id="8596238429278902791">
-      <property name="name" value="scope" />
-      <link role="key" targetNodeId="54.~MPSDataKeys.SCOPE" resolveInfo="SCOPE" />
-    </node>
     <node role="parameter" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterDeclaration" id="8596238429278902952">
       <property name="name" value="frame" />
       <link role="key" targetNodeId="54.~MPSDataKeys.FRAME" resolveInfo="FRAME" />
@@ -41776,13 +41775,9 @@
                                               <link role="member" targetNodeId="8596238429278845812" resolveInfo="methodNode" />
                                             </node>
                                           </node>
-                                          <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="4909195013914308770">
-                                            <node role="operand" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpression" id="4909195013914308771">
-                                              <link role="classifier" targetNodeId="8596238429278788966" resolveInfo="GoToOverridingMethod" />
-                                            </node>
-                                            <node role="operation" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterReferenceOperation" id="4909195013914308772">
-                                              <link role="member" targetNodeId="8596238429278902791" resolveInfo="scope" />
-                                            </node>
+                                          <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="159955519492529593">
+                                            <link role="baseMethodDeclaration" targetNodeId="10.~GlobalScope.getInstance():jetbrains.mps.project.GlobalScope" resolveInfo="getInstance" />
+                                            <link role="classConcept" targetNodeId="10.~GlobalScope" resolveInfo="GlobalScope" />
                                           </node>
                                           <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="4909195013914308773">
                                             <link role="variableDeclaration" targetNodeId="8596238429278902778" resolveInfo="p" />

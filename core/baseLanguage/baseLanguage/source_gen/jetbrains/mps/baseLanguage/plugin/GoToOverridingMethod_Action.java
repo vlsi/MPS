@@ -9,7 +9,6 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.smodel.IScope;
 import java.awt.Frame;
 import com.intellij.openapi.project.Project;
 import java.util.List;
@@ -25,6 +24,7 @@ import jetbrains.mps.ide.findusages.findalgorithm.finders.GeneratedFinder;
 import com.intellij.openapi.progress.ProgressManager;
 import com.intellij.openapi.progress.Task;
 import com.intellij.openapi.progress.ProgressIndicator;
+import jetbrains.mps.project.GlobalScope;
 import javax.swing.SwingUtilities;
 import java.awt.Rectangle;
 import java.awt.Point;
@@ -38,7 +38,6 @@ public class GoToOverridingMethod_Action extends GeneratedAction {
   private EditorComponent editorComponent;
   private EditorContext editorContext;
   private IOperationContext context;
-  private IScope scope;
   private Frame frame;
   private Project project;
   private List<String> finderClasses;
@@ -105,10 +104,6 @@ public class GoToOverridingMethod_Action extends GeneratedAction {
     if (this.context == null) {
       return false;
     }
-    this.scope = event.getData(MPSDataKeys.SCOPE);
-    if (this.scope == null) {
-      return false;
-    }
     this.frame = event.getData(MPSDataKeys.FRAME);
     if (this.frame == null) {
       return false;
@@ -140,7 +135,7 @@ public class GoToOverridingMethod_Action extends GeneratedAction {
           ModelAccess.instance().runReadAction(new Runnable() {
             public void run() {
               for (String finder : ListSequence.fromList(finders)) {
-                ListSequence.fromList(nodes).addSequence(ListSequence.fromList(FindUtils.executeFinder(finder, GoToOverridingMethod_Action.this.methodNode, GoToOverridingMethod_Action.this.scope, p)));
+                ListSequence.fromList(nodes).addSequence(ListSequence.fromList(FindUtils.executeFinder(finder, GoToOverridingMethod_Action.this.methodNode, GlobalScope.getInstance(), p)));
               }
             }
           });
