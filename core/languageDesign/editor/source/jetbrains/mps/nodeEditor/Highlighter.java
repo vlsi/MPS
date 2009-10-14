@@ -16,6 +16,8 @@
 package jetbrains.mps.nodeEditor;
 
 import com.intellij.openapi.command.CommandProcessor;
+import com.intellij.openapi.command.CommandAdapter;
+import com.intellij.openapi.command.CommandEvent;
 import com.intellij.openapi.components.ProjectComponent;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.application.ApplicationManager;
@@ -63,6 +65,8 @@ public class Highlighter implements EditorMessageOwner, ProjectComponent {
   private EditorsProvider myEditorsProvider;
   private InspectorTool myInspectorTool;
 
+  private volatile long myLastCommandTime = 0;
+
   private List<IEditor> myAdditionalEditors = new ArrayList<IEditor>();
 
   private ReloadListener myReloadListener = new ReloadAdapter() {
@@ -72,7 +76,7 @@ public class Highlighter implements EditorMessageOwner, ProjectComponent {
       clearAdditionalEditors();
     }
   };
-  private SModelCommandListener myCommandListener = new SModelCommandListener() {
+  private SModelCommandListener myModelCommandListener = new SModelCommandListener() {
     public void eventsHappenedInCommand(List<SModelEvent> events) {
       synchronized (EVENTS_LOCK) {
         myLastEvents.addAll(events);
@@ -91,6 +95,11 @@ public class Highlighter implements EditorMessageOwner, ProjectComponent {
   };
 
   private Project myProject;
+  private CommandAdapter myCommandListener = new CommandAdapter() {
+    public void commandFinished(CommandEvent event) {
+      myLastCommandTime = System.currentTimeMillis();
+    }
+  };
 
   public Highlighter(Project project, GlobalSModelEventsManager eventsManager, ClassLoaderManager classLoaderManager) {
     myProject = project;
@@ -108,18 +117,19 @@ public class Highlighter implements EditorMessageOwner, ProjectComponent {
       return;
     }
     myClassLoaderManager.addReloadHandler(myReloadListener);
-    myGlobalSModelEventsManager.addGlobalCommandListener(myCommandListener);
+    myGlobalSModelEventsManager.addGlobalCommandListener(myModelCommandListener);
     myGlobalSModelEventsManager.addGlobalModelListener(myModelReloadListener);
 
     myInspectorTool = myProject.getComponent(InspectorTool.class);
-
+    CommandProcessor.getInstance().addCommandListener(myCommandListener);
     myThread = new HighlighterThread();
     myThread.start();
   }
 
   public void projectClosed() {
+    CommandProcessor.getInstance().removeCommandListener(myCommandListener);
     myClassLoaderManager.removeReloadHandler(myReloadListener);
-    myGlobalSModelEventsManager.removeGlobalCommandListener(myCommandListener);
+    myGlobalSModelEventsManager.removeGlobalCommandListener(myModelCommandListener);
     myGlobalSModelEventsManager.removeGlobalModelListener(myModelReloadListener);
 
   }
@@ -424,9 +434,21 @@ public class Highlighter implements EditorMessageOwner, ProjectComponent {
       CommandProcessor commandProcessor = CommandProcessor.getInstance();
       while (true) {
         try {
-          while (commandProcessor.getCurrentCommand() != null) {
-            Thread.sleep(200);
+          while (true) {
+            while (commandProcessor.getCurrentCommand() != null) {
+              Thread.sleep(200);
+            }
+            long current = System.currentTimeMillis();
+            long commandTime = myLastCommandTime;
+            long millisSinceLastCommand = current - commandTime;
+            if (millisSinceLastCommand < 200) {
+              long millis = 200 - millisSinceLastCommand;
+              Thread.sleep(millis);
+            } else {
+              break;
+            }
           }
+
           doUpdate();
           if (myStopThread) {
             break;
