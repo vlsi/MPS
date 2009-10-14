@@ -16,6 +16,8 @@
 package jetbrains.mps.workbench.search;
 
 import com.intellij.openapi.actionSystem.*;
+import com.intellij.openapi.util.SystemInfo;
+import com.intellij.ui.components.panels.NonOpaquePanel;
 import jetbrains.mps.ide.ui.CompletionTextField;
 import jetbrains.mps.workbench.search.icons.Icons;
 
@@ -50,20 +52,15 @@ public abstract class AbstractSearchPanel extends JPanel {
   protected abstract void deactivate();
 
   protected AbstractSearchPanel() {
-
-    setLayout(new BorderLayout());
+    super(new BorderLayout(0, 0));
     setPreferredSize(new Dimension((int) getPreferredSize().getWidth(),
       (int) myText.getPreferredSize().getHeight() + 5));
 
-    JPanel mainPanel = new JPanel();
-    FlowLayout layout = new FlowLayout();
-    layout.setVgap(0);
-    mainPanel.setLayout(layout);
-    mainPanel.setOpaque(false);
-
+    JPanel mainPanel = new NonOpaquePanel(new FlowLayout(FlowLayout.LEFT, 5, 0));
     mainPanel.add(new JLabel("Text:"));
     mainPanel.add(myText);
     myText.setHideCompletionOnClick(true);
+    setSmallerFont(myText);
 
     DefaultActionGroup group = new DefaultActionGroup("search bar", false);
     group.add(new ShowHistoryAction());
@@ -79,7 +76,6 @@ public abstract class AbstractSearchPanel extends JPanel {
     mainPanel.add(myToolbarComponent);
 
     mainPanel.add(myIsCaseSensitive);
-    myIsCaseSensitive.setOpaque(false);
     myIsCaseSensitive.setMnemonic(KeyEvent.VK_C);
     myIsCaseSensitive.setFocusable(false);
     myIsCaseSensitive.addActionListener(new ActionListener() {
@@ -89,7 +85,6 @@ public abstract class AbstractSearchPanel extends JPanel {
     });
 
     mainPanel.add(myIsWordsOnly);
-    myIsWordsOnly.setOpaque(false);
     myIsWordsOnly.setMnemonic(KeyEvent.VK_M);
     myIsWordsOnly.setFocusable(false);
     myIsWordsOnly.addActionListener(new ActionListener() {
@@ -99,7 +94,6 @@ public abstract class AbstractSearchPanel extends JPanel {
     });
 
     mainPanel.add(myIsRegex);
-    myIsRegex.setOpaque(false);
     myIsRegex.setMnemonic(KeyEvent.VK_R);
     myIsRegex.setFocusable(false);
     myIsRegex.addActionListener(new ActionListener() {
@@ -108,21 +102,28 @@ public abstract class AbstractSearchPanel extends JPanel {
       }
     });
 
-    add(mainPanel, BorderLayout.LINE_START);
+    this.add(mainPanel, BorderLayout.WEST);    
 
+    JPanel tailPanel = new NonOpaquePanel(new BorderLayout(5, 0));
+    JPanel tailContainer = new NonOpaquePanel(new BorderLayout(5, 0));
     JLabel escapeLabel = new JLabel(Icons.ESCAPE_ICON);
-    JPanel eastPanel = new JPanel();
-    eastPanel.add(myFindResult);
-    eastPanel.setOpaque(false);
-    eastPanel.setLayout(new FlowLayout(FlowLayout.LEFT));
-    eastPanel.add(escapeLabel);
-    add(eastPanel, BorderLayout.LINE_END);
+
+    tailPanel.add(myFindResult, BorderLayout.CENTER);
+    tailPanel.add(escapeLabel, BorderLayout.EAST);
+
+    tailContainer.add(tailPanel, BorderLayout.EAST);
+    this.add(tailContainer, BorderLayout.CENTER);
 
     escapeLabel.addMouseListener(new MouseAdapter() {
       public void mouseClicked(MouseEvent e) {
         deactivate();
       }
     });
+
+    setSmallerFontAndOpaque(myIsWordsOnly);
+    setSmallerFontAndOpaque(myIsCaseSensitive);
+    setSmallerFontAndOpaque(myIsRegex);
+    setSmallerFontAndOpaque(myFindResult);
 
     myText.getDocument().addDocumentListener(new DocumentListener() {
       public void insertUpdate(DocumentEvent e) {
@@ -200,22 +201,39 @@ public abstract class AbstractSearchPanel extends JPanel {
     myText.requestFocus();
   }
 
+  @Override
   protected void paintComponent(Graphics g) {
     super.paintComponent(g);
 
     //copied from IDEA's class EditorSearchComponent
     Graphics2D g2d = (Graphics2D) g;
+    final Color BORDER_COLOR = new Color(0x87, 0x87, 0x87);
     final Color GRADIENT_C1 = getBackground();
     final Color GRADIENT_C2 = new Color(Math.max(0, GRADIENT_C1.getRed() - 0x18),
       Math.max(0, GRADIENT_C1.getGreen() - 0x18),
       Math.max(0, GRADIENT_C1.getBlue() - 0x18));
     g2d.setPaint(new GradientPaint(0, 0, GRADIENT_C1, 0, getHeight(), GRADIENT_C2));
     g2d.fillRect(1, 1, getWidth(), getHeight() - 1);
+    g.setColor(BORDER_COLOR);
+    g2d.setPaint(null);
+    g.drawLine(0, getHeight() - 1, getWidth(), getHeight() - 1);
   }
 
   protected void addToHistory() {
     myText.addValue(myText.getText());
     getSearchHistory().setSearches(myText.getProposals(myText.getText()));
+  }
+
+  private static void setSmallerFontAndOpaque(final JComponent component) {
+    setSmallerFont(component);
+    component.setOpaque(false);
+  }
+
+  private static void setSmallerFont(final JComponent component) {
+    if (SystemInfo.isMac) {
+      Font f = component.getFont();
+      component.setFont(f.deriveFont(f.getStyle(), f.getSize() - 2));
+    }
   }
 
   protected class NextOccurenceAction extends AnAction {
