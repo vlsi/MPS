@@ -23,6 +23,7 @@ import jetbrains.mps.smodel.event.*;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.typesystem.inference.NodeTypesComponent;
 import jetbrains.mps.typesystem.inference.NodeTypesComponentsRepository;
+import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.nodeEditor.IErrorReporter;
 import jetbrains.mps.util.Pair;
 import jetbrains.mps.util.WeakSet;
@@ -36,6 +37,7 @@ import java.util.*;
 import com.intellij.openapi.command.CommandProcessor;
 import com.intellij.openapi.application.impl.LaterInvocator;
 import com.intellij.openapi.application.ModalityState;
+import org.jetbrains.annotations.Nullable;
 
 public class TypesEditorChecker extends EditorCheckerAdapter {
   private static Logger LOG = Logger.getLogger(TypesEditorChecker.class);
@@ -125,9 +127,17 @@ public class TypesEditorChecker extends EditorCheckerAdapter {
     return messages;
   }
 
+  @Nullable
   private NodeTypesComponent getNodeTypesComponent(SNode node) {
+    if (node == null) {
+      return null;
+    }
+    TypeCheckingContext context = NodeTypesComponentsRepository.getInstance().createTypeCheckingContext(node.getContainingRoot());
+    if (context == null) {
+      return null;
+    }
     NodeTypesComponent typesComponent =
-      NodeTypesComponentsRepository.getInstance().createTypeCheckingContext(node.getContainingRoot()).getBaseNodeTypesComponent();
+      context.getBaseNodeTypesComponent();
     return typesComponent;
   }
 
