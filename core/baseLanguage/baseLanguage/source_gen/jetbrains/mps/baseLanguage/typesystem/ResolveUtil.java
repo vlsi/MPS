@@ -132,7 +132,12 @@ outer:
         // maybe a var from method
         SNode typeVariableDeclaration = SLinkOperations.getTarget(varRef, "typeVariableDeclaration", false);
         if (SNodeOperations.getParent(typeVariableDeclaration) != result) {
-          SNodeOperations.replaceWithAnother(varRef, SNodeOperations.copyNode(ListSequence.fromList(params).getElement(SNodeOperations.getIndexInParent(typeVariableDeclaration))));
+          int index = SNodeOperations.getIndexInParent(typeVariableDeclaration);
+          if (ListSequence.fromList(params).count() > index) {
+            SNodeOperations.replaceWithAnother(varRef, SNodeOperations.copyNode(ListSequence.fromList(params).getElement(index)));
+          } else {
+            SNodeOperations.replaceWithAnother(varRef, new _Quotations.QuotationClass_118().createNode());
+          }
         }
       }
     }
