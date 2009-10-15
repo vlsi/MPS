@@ -29,7 +29,6 @@ import jetbrains.mps.util.WeakSet;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.intentions.IntentionProvider;
-import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.lang.typesystem.runtime.quickfix.QuickFix_Runtime;
 
 import java.util.*;
@@ -64,8 +63,6 @@ public class TypesEditorChecker extends EditorCheckerAdapter {
       }
     }
 
-
-
     if (typesComponent != null) {
       //non-typesystem checks
       if (!wasCheckedOnce || !typesComponent.isCheckedNonTypesystem()) {
@@ -78,41 +75,52 @@ public class TypesEditorChecker extends EditorCheckerAdapter {
       }
 
       // highlight nodes with errors
-      for (Pair<SNode, IErrorReporter> errorNode : typesComponent.getNodesWithErrorStrings()) {
-        MessageStatus status = errorNode.o2.getMessageStatus();
-        String errorString = errorNode.o2.reportError();
-        HighlighterMessage message = createHighlighterMessage(errorNode.o1, NameUtil.capitalize(status.getPresentation()) + ": " + errorString, errorNode.o2);
-        IntentionProvider intentionProvider = errorNode.o2.getIntentionProvider();
+      for (Pair<SNode, List<IErrorReporter>> errorNode : typesComponent.getNodesWithErrors()) {
+        List<IErrorReporter> errors = new ArrayList<IErrorReporter>(errorNode.o2);
+        Collections.sort(errors, new Comparator<IErrorReporter>() {
+          public int compare(IErrorReporter o1, IErrorReporter o2) {
+            return o2.getMessageStatus().compareTo(o1.getMessageStatus());
+          }
+        });
+        boolean instantIntentionApplied = false;
+        for (IErrorReporter errorReporter : errors) {
+          MessageStatus status = errorReporter.getMessageStatus();
+          String errorString = errorReporter.reportError();
+          HighlighterMessage message = createHighlighterMessage(errorNode.o1, NameUtil.capitalize(status.getPresentation()) + ": " + errorString, errorReporter);
+          IntentionProvider intentionProvider = errorReporter.getIntentionProvider();
 
-        if (intentionProvider != null && intentionProvider.isExecutedImmediately() && !IMMEDIATE_QFIX_DISABLED) {
-          final QuickFix_Runtime intention = intentionProvider.getQuickFix();
-          if (intention != null) {
-            if (!myOnceExecutedQuickFixes.contains(intention)) {
-              myOnceExecutedQuickFixes.add(intention);
-              LaterInvocator.invokeLater(new Runnable() {
-                public void run() {
-                  ModelAccess.instance().runWriteActionInCommand(new Runnable() {
+          if (intentionProvider != null && intentionProvider.isExecutedImmediately() && !IMMEDIATE_QFIX_DISABLED) {
+            if (!instantIntentionApplied) {
+              final QuickFix_Runtime intention = intentionProvider.getQuickFix();
+              if (intention != null) {
+                instantIntentionApplied = true;
+                if (!myOnceExecutedQuickFixes.contains(intention)) {
+                  myOnceExecutedQuickFixes.add(intention);
+                  LaterInvocator.invokeLater(new Runnable() {
                     public void run() {
-                      CommandProcessor.getInstance().runUndoTransparentAction(new Runnable() {
+                      ModelAccess.instance().runWriteActionInCommand(new Runnable() {
                         public void run() {
-                          intention.execute(node);
+                          CommandProcessor.getInstance().runUndoTransparentAction(new Runnable() {
+                            public void run() {
+                              intention.execute(node);
+                            }
+                          });
                         }
                       });
                     }
-                  });
+                  }, ModalityState.NON_MODAL);
                 }
-              }, ModalityState.NON_MODAL);
+              }
             }
+          } else {
+            if (intentionProvider != null) {
+              intentionProvider.setIsError(status == MessageStatus.ERROR);
+            }
+            message.setIntentionProvider(intentionProvider);
           }
-        } else {
-          if (intentionProvider != null) {
-            intentionProvider.setIsError(status == MessageStatus.ERROR);
-          }
-          message.setIntentionProvider(intentionProvider);
+          messages.add(message);
         }
-        messages.add(message);
       }
-
     }
     return messages;
   }

@@ -329,10 +329,27 @@ public class TypeChecker implements ApplicationComponent {
     return modelDescriptor.getSModel();
   }
 
-  public IErrorReporter getTypeMessageDontCheck(SNode node) {
+  @NotNull
+  public List<IErrorReporter> getTypeMessagesDontCheck(SNode node) {
     SNode root = node.getContainingRoot();
-    if (root == null) return null;
-    return NodeTypesComponentsRepository.getInstance().createNodeTypesComponent(root).getError(node);
+    if (root == null) return new ArrayList<IErrorReporter>();
+    TypeCheckingContext context = NodeTypesComponentsRepository.getInstance().createTypeCheckingContext(root);
+    if (context == null) return new ArrayList<IErrorReporter>();
+    return context.getBaseNodeTypesComponent().getErrors(node);
+  }
+
+  //returns the most serious error for node (warning if no errors, info if no warnings and errors)
+  public IErrorReporter getTypeMessageDontCheck(SNode node) {  //todo use method above in generated actions
+    List<IErrorReporter> messages = getTypeMessagesDontCheck(node);
+    if (messages.isEmpty()) {
+      return null;
+    }
+    Collections.sort(messages, new Comparator<IErrorReporter>() {
+      public int compare(IErrorReporter o1, IErrorReporter o2) {
+        return o2.getMessageStatus().compareTo(o1.getMessageStatus());
+      }
+    });
+    return messages.get(0);
   }
 
   public boolean isGlobalIncrementalMode() {

@@ -25,7 +25,6 @@ import jetbrains.mps.util.annotation.UseCarefully;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.lang.typesystem.runtime.*;
-import jetbrains.mps.lang.typesystem.runtime.incremental.INodesReadListener;
 import jetbrains.mps.lang.typesystem.runtime.incremental.AbstractNodesReadListener;
 import jetbrains.mps.lang.typesystem.structure.RuntimeErrorType;
 import jetbrains.mps.lang.typesystem.structure.RuntimeTypeVariable;
@@ -41,6 +40,8 @@ import java.util.Map.Entry;
 import java.lang.ref.ReferenceQueue;
 import java.lang.ref.WeakReference;
 
+import org.jetbrains.annotations.NotNull;
+
 public class NodeTypesComponent implements EditorMessageOwner {
 
   private static final char A_CHAR = 'a';
@@ -55,9 +56,9 @@ public class NodeTypesComponent implements EditorMessageOwner {
   private boolean myIsChecked = false;
   private TypeChecker myTypeChecker;
   private Map<SNode, SNode> myNodesToTypesMap = new HashMap<SNode, SNode>();
-  private Map<SNode, IErrorReporter> myNodesToErrorsMap = new HashMap<SNode, IErrorReporter>();
+  private Map<SNode, List<IErrorReporter>> myNodesToErrorsMap = new HashMap<SNode, List<IErrorReporter>>();
 
-  private Map<SNode, Stack<IErrorReporter>> myNodesToNonTypesystemErrorsMap = new HashMap<SNode, Stack<IErrorReporter>>();
+  private Map<SNode, List<IErrorReporter>> myNodesToNonTypesystemErrorsMap = new HashMap<SNode, List<IErrorReporter>>();
 
   private Set<SNode> myFullyCheckedNodes = new HashSet<SNode>(); //nodes which are checked with their children
   private Set<SNode> myPartlyCheckedNodes = new HashSet<SNode>(); // nodes which are checked themselves but not children
@@ -79,7 +80,7 @@ public class NodeTypesComponent implements EditorMessageOwner {
   private MyLanguageCacheListener myLanguageCacheListener = new MyLanguageCacheListener();
 
   private Set<SNode> myCurrentNodesToInvalidate = new HashSet<SNode>();
-    private boolean myCacheWasCurrentlyRebuiltTypesystem = false;
+  private boolean myCacheWasCurrentlyRebuiltTypesystem = false;
   private Set<SNode> myCurrentNodesToInvalidateNonTypesystem = new HashSet<SNode>();
   private Set<Pair<SNode, String>> myCurrentPropertiesToInvalidateNonTypesystem = new HashSet<Pair<SNode, String>>();
   private Set<SNode> myCurrentTypedTermsToInvalidateNonTypesystem = new HashSet<SNode>();
@@ -108,7 +109,7 @@ public class NodeTypesComponent implements EditorMessageOwner {
 
   private boolean myInvalidationWasPerformedNT = false;
   private boolean myInvalidationResultNT = false;
-   private boolean myInvalidationWasPerformed = false;
+  private boolean myInvalidationWasPerformed = false;
   private boolean myInvalidationResult = false;
 
   // for diagnostics
@@ -229,21 +230,23 @@ public class NodeTypesComponent implements EditorMessageOwner {
       return;
     }
 
-    if (myIsNonTypesystemCheckingInProgress) {
-      Stack<IErrorReporter> iErrorReporters = myNodesToNonTypesystemErrorsMap.get(node);
-      if (iErrorReporters == null) {
-        iErrorReporters = new Stack<IErrorReporter>();
-        myNodesToNonTypesystemErrorsMap.put(node, iErrorReporters);
+    Map<SNode, List<IErrorReporter>> errorMap =
+      myIsNonTypesystemCheckingInProgress ? myNodesToNonTypesystemErrorsMap : myNodesToErrorsMap;
+
+    List<IErrorReporter> iErrorReporters = errorMap.get(node);
+    if (iErrorReporters == null) {
+      iErrorReporters = new ArrayList<IErrorReporter>();
+      errorMap.put(node, iErrorReporters);
+    }
+    iErrorReporters.add(errorReporter);
+
+    Collections.sort(iErrorReporters, new Comparator<IErrorReporter>() {
+      public int compare(IErrorReporter o1, IErrorReporter o2) {
+        return o1.getMessageStatus().compareTo(o2.getMessageStatus());
       }
-      iErrorReporters.push(errorReporter);
+    });
 
-      Collections.sort(iErrorReporters, new Comparator<IErrorReporter>() { //todo: right order?
-
-        public int compare(IErrorReporter o1, IErrorReporter o2) {
-          return o1.getMessageStatus().compareTo(o2.getMessageStatus());
-        }
-      });
-
+    if (myIsNonTypesystemCheckingInProgress) {
       //dependencies
       if (myNonTypesystemRuleAndNodeBeingChecked != null) {
         SNode currentNode = myNonTypesystemRuleAndNodeBeingChecked.o1;
@@ -260,12 +263,6 @@ public class NodeTypesComponent implements EditorMessageOwner {
         }
         errorsSet.add(errorReporter);
       }
-    } else {
-      IErrorReporter former = myNodesToErrorsMap.get(node);
-      if (former != null && former.getMessageStatus().compareTo(errorReporter.getMessageStatus()) > 0) {
-        return;
-      }
-      myNodesToErrorsMap.put(node, errorReporter);
     }
   }
 
@@ -321,16 +318,25 @@ public class NodeTypesComponent implements EditorMessageOwner {
   }
 
   private void performActionsAfterChecking() {
-    Map<SNode, IErrorReporter> toAdd = new HashMap<SNode, IErrorReporter>();
+    Map<SNode, List<IErrorReporter>> toAdd = new HashMap<SNode, List<IErrorReporter>>();
 
     // setting expanded errors
     for (SNode node : myNodesToErrorsMap.keySet()) {
-      IErrorReporter iErrorReporter = myNodesToErrorsMap.get(node);
-      String errorString = iErrorReporter.reportError();
-      SimpleErrorReporter reporter = new SimpleErrorReporter(node, errorString, iErrorReporter.getRuleModel(), iErrorReporter.getRuleId(),
-        iErrorReporter.getMessageStatus(), iErrorReporter.getErrorTarget());
-      reporter.setIntentionProvider(iErrorReporter.getIntentionProvider());
-      toAdd.put(node, reporter);
+      List<IErrorReporter> iErrorReporters = myNodesToErrorsMap.get(node);
+      if (iErrorReporters != null) {
+        for (IErrorReporter iErrorReporter : iErrorReporters) {
+          String errorString = iErrorReporter.reportError();
+          SimpleErrorReporter reporter = new SimpleErrorReporter(node, errorString, iErrorReporter.getRuleModel(), iErrorReporter.getRuleId(),
+            iErrorReporter.getMessageStatus(), iErrorReporter.getErrorTarget());
+          reporter.setIntentionProvider(iErrorReporter.getIntentionProvider());
+          List<IErrorReporter> errorReporterList = toAdd.get(node);
+          if (errorReporterList == null) {
+            errorReporterList = new ArrayList<IErrorReporter>();
+            toAdd.put(node, errorReporterList);
+          }
+          errorReporterList.add(iErrorReporter);
+        }
+      }
     }
     myNodesToErrorsMap.putAll(toAdd);
 
@@ -738,17 +744,18 @@ public class NodeTypesComponent implements EditorMessageOwner {
     return myNodesToTypesMap.get(node);
   }
 
-  public IErrorReporter getError(SNode node) {
-    IErrorReporter iErrorReporter = myNodesToErrorsMap.get(node);
-    if (iErrorReporter == null) {
-      Stack<IErrorReporter> iErrorReporters = myNodesToNonTypesystemErrorsMap.get(node);
-      if (iErrorReporters == null || iErrorReporters.isEmpty()) {
-        return null;
-      } else {
-        iErrorReporter = iErrorReporters.peek();
-      }
+  @NotNull
+  public List<IErrorReporter> getErrors(SNode node) {
+    List<IErrorReporter> result = new ArrayList<IErrorReporter>();
+    List<IErrorReporter> iErrorReporters = myNodesToErrorsMap.get(node);
+    if (iErrorReporters != null) {
+      result.addAll(iErrorReporters);
     }
-    return iErrorReporter;
+    iErrorReporters = myNodesToNonTypesystemErrorsMap.get(node);
+    if (iErrorReporters != null) {
+      result.addAll(iErrorReporters);
+    }
+    return result;
   }
 
   private SNode expandType(SNode term, SNode type, SModel typesModel) {
@@ -760,14 +767,14 @@ public class NodeTypesComponent implements EditorMessageOwner {
     return myEquationManager;
   }
 
-  public Set<Pair<SNode, IErrorReporter>> getNodesWithErrorStrings() {
-    Set<Pair<SNode, IErrorReporter>> result = new HashSet<Pair<SNode, IErrorReporter>>();
+  public Set<Pair<SNode, List<IErrorReporter>>> getNodesWithErrors() {
+    Set<Pair<SNode, List<IErrorReporter>>> result = new HashSet<Pair<SNode, List<IErrorReporter>>>();
     Set<SNode> keySet = new HashSet<SNode>(myNodesToErrorsMap.keySet());
     keySet.addAll(myNodesToNonTypesystemErrorsMap.keySet());
     for (SNode key : keySet) {
-      IErrorReporter reporter = getError(key);
-      if (reporter != null) {
-        result.add(new Pair<SNode, IErrorReporter>(key, reporter));
+      List<IErrorReporter> reporter = getErrors(key);
+      if (!reporter.isEmpty()) {
+        result.add(new Pair<SNode, List<IErrorReporter>>(key, reporter));
       }
     }
     return result;
@@ -855,7 +862,7 @@ public class NodeTypesComponent implements EditorMessageOwner {
         Set<IErrorReporter> errors = rulesAndErrors.get(nodeAndRule.o2);
         if (errors != null) {
           for (IErrorReporter errorReporter : errors) {
-            Stack<IErrorReporter> iErrorReporters = myNodesToNonTypesystemErrorsMap.get(errorReporter.getSNode());
+            List<IErrorReporter> iErrorReporters = myNodesToNonTypesystemErrorsMap.get(errorReporter.getSNode());
             if (iErrorReporters != null) {
               iErrorReporters.remove(errorReporter);
             }
