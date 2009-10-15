@@ -17396,7 +17396,7 @@
                 </node>
                 <node role="initializer" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="8308907181189233430">
                   <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="8308907181189233431">
-                    <link role="baseMethodDeclaration" targetNodeId="98.~RootDifferenceDialog.&lt;init&gt;(java.awt.Frame,jetbrains.mps.smodel.SModel,jetbrains.mps.smodel.SModel,boolean)" resolveInfo="RootDifferenceDialog" />
+                    <link role="baseMethodDeclaration" targetNodeId="98.~RootDifferenceDialog.&lt;init&gt;(java.awt.Frame,jetbrains.mps.smodel.SModel,jetbrains.mps.smodel.SModel,boolean,boolean)" resolveInfo="RootDifferenceDialog" />
                     <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="8308907181189233432">
                       <link role="variableDeclaration" targetNodeId="9124496063422627971" resolveInfo="frame" />
                     </node>
@@ -17407,6 +17407,9 @@
                       <link role="variableDeclaration" targetNodeId="8308907181189233418" resolveInfo="oldModel" />
                     </node>
                     <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="8308907181189233435">
+                      <property name="value" value="true" />
+                    </node>
+                    <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="9044552264452424672">
                       <property name="value" value="true" />
                     </node>
                   </node>
