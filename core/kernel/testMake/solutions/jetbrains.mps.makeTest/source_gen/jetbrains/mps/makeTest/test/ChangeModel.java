@@ -8,6 +8,9 @@ import jetbrains.mps.smodel.persistence.def.ModelPersistence;
 public abstract class ChangeModel {
   private SModel myModel;
 
+  public ChangeModel() {
+  }
+
   public void change(SModel model) {
     this.myModel = ModelPersistence.copyModel(model);
   }

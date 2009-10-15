@@ -941,11 +941,6 @@
   <component name="SvnBranchConfigurationManager">
     <option name="myConfigurationMap">
       <map>
-        <entry key="C:/Users/Kostik/Desktop/Rep_PrePostConditions">
-          <value>
-            <SvnBranchConfiguration />
-          </value>
-        </entry>
         <entry key="$PROJECT_DIR$">
           <value>
             <SvnBranchConfiguration>
@@ -1204,6 +1199,11 @@
               </option>
               <option name="trunkUrl" value="http://svn.jetbrains.org/mps/trunk" />
             </SvnBranchConfiguration>
+          </value>
+        </entry>
+        <entry key="C:/Users/Kostik/Desktop/Rep_PrePostConditions">
+          <value>
+            <SvnBranchConfiguration />
           </value>
         </entry>
       </map>

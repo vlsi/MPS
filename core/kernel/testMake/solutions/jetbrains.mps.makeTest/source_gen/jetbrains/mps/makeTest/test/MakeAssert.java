@@ -11,9 +11,13 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.ide.progress.IAdaptiveProgressMonitor;
+
 import java.lang.reflect.Method;
+
 import junit.framework.Assert;
+
 import java.io.File;
+
 import jetbrains.mps.ide.IdeMain;
 import jetbrains.mps.TestMain;
 import jetbrains.mps.ide.ThreadUtils;
@@ -24,10 +28,14 @@ import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.generator.IGenerationType;
 import jetbrains.mps.plugin.CompilationResult;
 import jetbrains.mps.make.ModuleMaker;
+
 import java.util.Collections;
+
 import com.intellij.openapi.progress.EmptyProgressIndicator;
+
 import java.util.List;
 import java.util.ArrayList;
+
 import jetbrains.mps.generator.GeneratorManager;
 import jetbrains.mps.ide.messages.IMessageHandler;
 import jetbrains.mps.ide.messages.Message;
@@ -52,10 +60,13 @@ public class MakeAssert {
         model[0] = getModel(changedModelName).getSModel();
       }
     });
-    model[0].setLoading(true);
     boolean baseIsOk = step(modelName, project, new Runnable() {
       public void run() {
-        changer.change(model[0]);
+        model[0].runLoadingAction(new Runnable() {
+          public void run() {
+            changer.change(model[0]);
+          }
+        });
       }
     }, STEP_TYPE_CHANGE, getFilesGenType());
     boolean newIsOk = step(modelName, project, new Runnable() {
@@ -99,7 +110,7 @@ public class MakeAssert {
           ClassLoader classLoader = genType.getCompiler().getClassLoader(MakeAssert.class.getClassLoader());
           Class testClass = classLoader.loadClass(className);
           Method method = testClass.getMethods()[0];
-          returnValue[0] = (Boolean)method.invoke(null);
+          returnValue[0] = (Boolean) method.invoke(null);
           System.out.println("Test " + className + "." + method.getName() + " return " + returnValue[0]);
           step(modelName, project, new Runnable() {
             public void run() {
