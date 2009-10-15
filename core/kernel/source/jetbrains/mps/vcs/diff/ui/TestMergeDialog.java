@@ -38,6 +38,9 @@ import jetbrains.mps.project.*;
 import jetbrains.mps.project.MPSProject.ProjectScope;
 import jetbrains.mps.MPSProjectHolder;
 import jetbrains.mps.TestMain;
+import jetbrains.mps.library.LibraryManager;
+import jetbrains.mps.library.Library;
+import jetbrains.mps.library.BaseLibraryManager.MyState;
 import jetbrains.mps.nodeEditor.EditorManager;
 import org.jdom.Document;
 import org.jdom.JDOMException;
@@ -49,24 +52,35 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.File;
 import java.util.List;
+import java.util.Set;
 
 public class TestMergeDialog {
   private static EditorManager myEditorManager = new EditorManager();
 
   public static void main(final String[] args) throws JDOMException, IOException {
     IdeMain.setTestMode(TestMode.NO_TEST);
-    configureMPS();        
+    configureMPS();
 
     final SModel baseModel = readModel(args[0]);
     final SModel mineModel = readModel(args[1]);
     final SModel newModel = readModel(args[2]);
 
-    ModelAccess.instance().runWriteAction(new Computable<List<IModule>>() {
-        public List<IModule> compute() {
-          return MPSModuleRepository.getInstance().readModuleDescriptors(FileSystem.getFile("/media/d/devel/webr-dnq"), new MPSModuleOwner() {
-          });
-        }
-      });
+    ModelAccess.instance().runWriteAction(new Runnable() {
+      public void run() {
+        LibraryManager manager = LibraryManager.getInstance();
+        MyState state = manager.getState();
+        Library webrdnq = new Library();
+        webrdnq.setName("webr-dnq");
+        webrdnq.setPath("/media/d/devel/webr-dnq");
+        state.getLibraries().put(webrdnq.getName(), webrdnq);
+        Library charisma = new Library();
+        charisma.setName("charisma");
+        charisma.setPath("/media/d/devel/charisma");
+        state.getLibraries().put(charisma.getName(), charisma);
+        manager.loadState(state);
+        manager.update();
+      }
+    });
 
     SwingUtilities.invokeLater(new Runnable() {
       public void run() {
@@ -90,7 +104,7 @@ public class TestMergeDialog {
               @Override
               public <T> T getComponent(Class<T> clazz) {
                 if (clazz == EditorManager.class) {
-                  return (T)myEditorManager;
+                  return (T) myEditorManager;
                 }
                 return null;
               }

@@ -70,8 +70,9 @@ public class RootDifferenceDialog extends BaseDialog implements EditorMessageOwn
   };
   private boolean veiwportSetInPorgress;
 
-  public RootDifferenceDialog(Frame parent, final SModel newModel, final SModel oldModel, boolean editable) throws HeadlessException {
+  public RootDifferenceDialog(Frame parent, final SModel newModel, final SModel oldModel, boolean editable, boolean modal) throws HeadlessException {
     super(parent, "Difference");
+    setModal(modal);
     myTopPanel = new JPanel(new GridLayout(1, 2));
     myBottomPanel = new JPanel(new GridLayout(1, 2));
     myContainer = new JSplitPane(JSplitPane.VERTICAL_SPLIT, myTopPanel, myBottomPanel);

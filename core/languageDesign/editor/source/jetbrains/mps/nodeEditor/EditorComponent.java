@@ -151,7 +151,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
   private boolean myHasLastCaretX = false;
   private int myLastCaretX;
   private boolean myReadOnly = false;
-  private String myLastWrittenStatus ="";
+  private String myLastWrittenStatus = "";
 
   @NotNull
   private JScrollPane myScrollPane;
@@ -633,12 +633,12 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
 
         Project project = getOperationContext().getProject();
         IdeFrame ideFrame = WindowManager.getInstance().getIdeFrame(project);
-        StatusBarEx statusBar = (StatusBarEx)ideFrame.getStatusBar();
+        StatusBarEx statusBar = (StatusBarEx) ideFrame.getStatusBar();
 
         //current info is significant or the editor removes its own message
-        if (!info.equals("") || myLastWrittenStatus.equals(statusBar.getInfo())){
+        if (!info.equals("") || myLastWrittenStatus.equals(statusBar.getInfo())) {
           statusBar.setInfo(info);
-          if (!info.equals("")){
+          if (!info.equals("")) {
             myLastWrittenStatus = info;
           }
         }
@@ -983,13 +983,13 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     return myDisposed;
   }
 
-  private void addOurListeners(SModelDescriptor sm) {
+  private void addOurListeners(@NotNull SModelDescriptor sm) {
     myEventsCollector.add(sm);
     sm.addModelListener(mySimpleModelListener);
     myModelDescriptorsWithListener.add(sm);
   }
 
-  private void removeOurListeners(SModelDescriptor sm) {
+  private void removeOurListeners(@NotNull SModelDescriptor sm) {
     myEventsCollector.remove(sm);
     sm.removeModelListener(mySimpleModelListener);
     myModelDescriptorsWithListener.remove(sm);
@@ -1041,12 +1041,18 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
 
     for (SModelReference newDep : newDeps) {
       if (!oldsDeps.contains(newDep)) {
-        addOurListeners(scope.getModelDescriptor(newDep));
+        SModelDescriptor sm = scope.getModelDescriptor(newDep);
+        if (sm != null) {
+          addOurListeners(sm);
+        }
       }
     }
     for (SModelReference oldDep : oldsDeps) {
       if (!newDeps.contains(oldDep)) {
-        removeOurListeners(scope.getModelDescriptor(oldDep));
+        SModelDescriptor sm = scope.getModelDescriptor(oldDep);
+        if (sm != null) {
+          removeOurListeners(sm);
+        }
       }
     }
 

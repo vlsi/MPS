@@ -78,8 +78,9 @@ public class RootMergeDialog extends BaseDialog implements EditorMessageOwner {
   private boolean veiwportSetInPorgress = false;
 
 
-  public RootMergeDialog(IOperationContext context, SModel change1, SModel change2) {
+  public RootMergeDialog(IOperationContext context, SModel change1, SModel change2, boolean modal) {
     super(context.getMainFrame(), "Merge");
+    setModal(modal);
     myContext = context;
     myChange1Model = change1;
     myChange2Model = change2;
@@ -144,9 +145,15 @@ public class RootMergeDialog extends BaseDialog implements EditorMessageOwner {
     ModelAccess.instance().runWriteActionInCommand(new Runnable() {
 
       public void run() {
-        change1Node[0] = myChange1Model.getRootByName(node.getName());
-        resultNode[0] = resultModel.getRootByName(node.getName());
-        change2Node[0] = myChange2Model.getRootByName(node.getName());
+        if (node.getName() != null) {
+          change1Node[0] = myChange1Model.getRootByName(node.getName());
+          resultNode[0] = resultModel.getRootByName(node.getName());
+          change2Node[0] = myChange2Model.getRootByName(node.getName());
+        } else {
+          change1Node[0] = myChange1Model.getNodeById(node.getSNodeId());
+          resultNode[0] = resultModel.getNodeById(node.getSNodeId());
+          change2Node[0] = myChange2Model.getNodeById(node.getSNodeId());          
+        }
       }
     });
 
@@ -376,7 +383,12 @@ public class RootMergeDialog extends BaseDialog implements EditorMessageOwner {
     ModelAccess.instance().runWriteActionInCommand(new Runnable() {
 
       public void run() {
-        resultNode[0] = myResultModel.getRootByName(myRoot.getName());
+        String rootName = myRoot.getName();
+        if (rootName != null) {
+          resultNode[0] = myResultModel.getRootByName(rootName);
+        } else {
+          resultNode[0] = myResultModel.getNodeById(myRoot.getSNodeId());
+        }
       }
     });
 

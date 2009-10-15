@@ -42,7 +42,7 @@ public class Merger {
   private Set<Change> myApplyedChanges = new HashSet<Change>();
   private List<Conflict> myConflicts = new ArrayList<Conflict>();
   private List<Warning> myWarnings = new ArrayList<Warning>();
-  private Set<Change> myUnresolded;
+  private Set<Change> myUnresolved;
   private Set<Change> myConflicted = new HashSet<Change>();
   private boolean myPreviewMode = false;
 
@@ -403,15 +403,15 @@ public class Merger {
       myResultModel.addRoot(tmp);
 
       // colleact changes which are involved in unresolved conflicts
-      myUnresolded = new LinkedHashSet<Change>();
+      myUnresolved = new LinkedHashSet<Change>();
       for (Conflict conflict : myConflicts) {
         if (!myExcludedChanges.contains(conflict.getC1()) && !myExcludedChanges.contains(conflict.getC2())) {
-          myUnresolded.add(conflict.getC1());
-          myUnresolded.add(conflict.getC2());
+          myUnresolved.add(conflict.getC1());
+          myUnresolved.add(conflict.getC2());
         }
       }
-      for (Change change : new ArrayList<Change>(myUnresolded)) {
-        myUnresolded.addAll(getChangeGroupOf(change));
+      for (Change change : new ArrayList<Change>(myUnresolved)) {
+        myUnresolved.addAll(getChangeGroupOf(change));
       }
 
       applyImportLanguages();
@@ -607,14 +607,14 @@ public class Merger {
     // we allow changes which are not involved in unresolved conflicts
     // or, if involved, are outgoing changes
     if (myPreviewMode) {
-      return myConflicted.contains(ch) && myUnresolded.contains(ch);
+      return myConflicted.contains(ch) && myUnresolved.contains(ch);
     } else {
-      return myConflicted.contains(ch) && myUnresolded.contains(ch) && myBaseRepoChange.contains(ch);
+      return myConflicted.contains(ch) && myUnresolved.contains(ch) && myBaseRepoChange.contains(ch);
     }
   }
 
   public boolean isResolved() {
-    return myUnresolded.isEmpty();
+    return myUnresolved.isEmpty();
   }
 
   public boolean isMyne(Change change) {
@@ -648,7 +648,7 @@ public class Merger {
   }
 
   public Set<Change> getUnresolvedChanges() {
-    return myUnresolded;
+    return myUnresolved;
   }
 
   public static enum VERSION {

@@ -34,7 +34,7 @@ public class VcsActionsHelper {
       final VcsRevisionNumber revisionNumber = vcs.getDiffProvider().getCurrentRevision(file);
       ContentRevision content = vcs.getDiffProvider().createFileContent(revisionNumber, file);
       SModel oldModel = VcsActionsHelper.loadModel(content.getContent(), model.getModelDescriptor());
-      final RootDifferenceDialog dialog = new RootDifferenceDialog(frame, model, oldModel, true);
+      final RootDifferenceDialog dialog = new RootDifferenceDialog(frame, model, oldModel, true, true);
       ModelAccess.instance().runReadAction(new Runnable() {
         public void run() {
           dialog.init(context, node, "Local", revisionNumber.asString());

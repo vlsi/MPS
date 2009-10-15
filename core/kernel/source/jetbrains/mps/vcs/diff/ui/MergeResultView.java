@@ -147,7 +147,7 @@ class MergeResultView extends JPanel {
       if (!isRoot[0]) {
         return;
       }
-      final RootMergeDialog dialog = new RootMergeDialog(myContext, myChange1, myChange2);      
+      final RootMergeDialog dialog = new RootMergeDialog(myContext, myChange1, myChange2, true);      
       ModelAccess.instance().runReadAction(new Runnable() {
         public void run() {
           dialog.init(getSNode(), myMerger);
