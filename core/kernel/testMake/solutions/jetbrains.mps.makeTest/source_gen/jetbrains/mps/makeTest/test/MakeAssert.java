@@ -90,10 +90,13 @@ public class MakeAssert {
         model[0] = getModel(changedModelName).getSModel();
       }
     });
-    model[0].setLoading(true);
     step(modelName, project, new Runnable() {
       public void run() {
-        changer.change(model[0]);
+        model[0].runLoadingAction(new Runnable() {
+          public void run() {
+            changer.change(model[0]);
+          }
+        });
       }
     }, STEP_TYPE_CHANGE, getFilesGenType());
     final EditorGenerateType genType = new EditorGenerateType(true);
