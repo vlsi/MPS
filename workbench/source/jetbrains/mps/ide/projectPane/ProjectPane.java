@@ -843,6 +843,14 @@ public class ProjectPane extends AbstractProjectViewPane {
         root.init();
       }
       for (MPSTreeNode node : root) {
+        if (node instanceof SModelTreeNode) {
+          for (SModelTreeNode subnode : ((SModelTreeNode) node).getSubfolderSModelTreeNodes()) {
+            MPSTreeNode result = findTreeNode(subnode, descendCondition, resultCondition);
+            if (result != null) {
+              return result;
+            }
+          }
+        }
         MPSTreeNode result = findTreeNode(node, descendCondition, resultCondition);
         if (result != null) {
           return result;

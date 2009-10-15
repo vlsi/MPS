@@ -23,9 +23,9 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.ProjectModels;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SModelStereotype;
+import jetbrains.mps.kernel.model.SModelUtil;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 
 public class SModelsSubtree {
   public static void create(MPSTreeNode rootTreeNode, IOperationContext operationContext) {
@@ -52,14 +52,16 @@ public class SModelsSubtree {
 
 
     SModelNamespaceTreeBuilder builder = new SModelNamespaceTreeBuilder();
-    for (SModelDescriptor md : SortUtil.sortModels(regularModels)) {
+    List<SModelDescriptor> regularModelsToInsert = removeSubModels(SortUtil.sortModels(regularModels));
+    for (SModelDescriptor md : regularModelsToInsert) {
       builder.addNode(new SModelTreeNode(md, null, operationContext, false));
     }
     builder.fillNode(rootTreeNode);
 
     if (!javaStubs.isEmpty()) {
       builder = new SModelNamespaceTreeBuilder();
-      for (SModelDescriptor md : SortUtil.sortModels(javaStubs)) {
+      List<SModelDescriptor> javaStubsToInsert = removeSubModels(SortUtil.sortModels(javaStubs));
+      for (SModelDescriptor md : javaStubsToInsert) {
         builder.addNode(new SModelTreeNode(md, null, operationContext, false));
       }
 
@@ -70,6 +72,15 @@ public class SModelsSubtree {
     }
   }
 
+  private static List<SModelDescriptor> removeSubModels(List<SModelDescriptor> models) {
+    List<SModelDescriptor> result = new ArrayList<SModelDescriptor>();
+    result.addAll(models);
+    for (SModelDescriptor currentDescriptor : models) {
+      List<SModelDescriptor> subfolderModels = SModelUtil.getSubfolderModels(currentDescriptor);
+      result.removeAll(subfolderModels);
+    }
+    return result;
+  }
 
   public static class JavaStubsTreeNode extends TextTreeNode {
     public JavaStubsTreeNode(IOperationContext context) {

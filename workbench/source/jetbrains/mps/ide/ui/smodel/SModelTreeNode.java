@@ -36,6 +36,7 @@ import jetbrains.mps.util.Condition;
 import jetbrains.mps.util.ToStringComparator;
 import jetbrains.mps.workbench.action.ActionUtils;
 import jetbrains.mps.workbench.actions.model.CreateRootNodeGroup;
+import jetbrains.mps.kernel.model.SModelUtil;
 import org.jetbrains.annotations.NotNull;
 
 import javax.swing.tree.DefaultTreeModel;
@@ -146,6 +147,18 @@ public class SModelTreeNode extends MPSTreeNodeEx {
     }
 
     setText(calculateText());
+  }
+
+  public List<SModelTreeNode> getSubfolderSModelTreeNodes() {
+    if (children == null) return Collections.EMPTY_LIST;
+    List<SModelTreeNode> result = new ArrayList<SModelTreeNode>();
+    for (Object child : children) {
+      if (child instanceof SModelTreeNode) {
+        result.add((SModelTreeNode) child);
+        result.addAll(((SModelTreeNode) child).getSubfolderSModelTreeNodes());
+      }
+    }
+    return result;
   }
 
   protected boolean checkForErrors() {
@@ -377,6 +390,11 @@ public class SModelTreeNode extends MPSTreeNodeEx {
       myPackageNodes.clear();
       myRootGroups.clear();
 
+      List<SModelDescriptor> subfolderModels = SModelUtil.getSubfolderModels(myModelDescriptor);
+      for (SModelDescriptor subfolderModel : subfolderModels) {
+        add(new SModelTreeNode(subfolderModel, null, getOperationContext(), false));
+      }
+
       SModelDescriptor sm = getSModelDescriptor();
       for (SNodeGroupTreeNode group : myRootGroups) {
         add(group);
@@ -437,6 +455,7 @@ public class SModelTreeNode extends MPSTreeNodeEx {
     getSModelDescriptor().removeModelListener(mySimpleModelListener);
     ModelGenerationStatusManager.getInstance().removeGenerationStatusListener(myStatusListener);
 
+    if (myEventsCollector == null) return;
     myEventsCollector.remove(myModelDescriptor);
     myEventsCollector.dispose();
     myEventsCollector = null;
@@ -475,7 +494,7 @@ public class SModelTreeNode extends MPSTreeNodeEx {
         return (SNodeTreeNode) child;
       }
 
-      if (child instanceof SNodeGroupTreeNode) {
+      if (child instanceof SNodeGroupTreeNode || child instanceof SModelTreeNode) {
         SNodeTreeNode result = findRootSNodeTreeNode(child, node);
         if (result != null) {
           return result;
