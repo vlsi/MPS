@@ -59,12 +59,6 @@
   <import index="21" modelUID="f:java_stub#jetbrains.mps.nodeEditor.cells(jetbrains.mps.nodeEditor.cells@java_stub)" version="-1" />
   <import index="22" modelUID="f:java_stub#jetbrains.mps.nodeEditor(jetbrains.mps.nodeEditor@java_stub)" version="-1" />
   <import index="23" modelUID="f:java_stub#jetbrains.mps.ide(jetbrains.mps.ide@java_stub)" version="-1" />
-  <node type="jetbrains.mps.lang.behavior.structure.ConceptBehavior" id="1213877365986">
-    <link role="concept" targetNodeId="1.1210674524691" resolveInfo="TestNodeReference" />
-    <node role="constructor" type="jetbrains.mps.lang.behavior.structure.ConceptConstructorDeclaration" id="1213877365987">
-      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1213877365988" />
-    </node>
-  </node>
   <node type="jetbrains.mps.lang.behavior.structure.ConceptBehavior" id="1215601170868">
     <property name="package" value="nodeOperation" />
     <link role="concept" targetNodeId="1.1215601147424" resolveInfo="NodeOperation" />
