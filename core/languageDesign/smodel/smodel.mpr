@@ -18,19 +18,22 @@
   </component>
   <component name="MPSProject">
     <projectSolutions>
+      <solutionPath path="${mps_home}/core/languageDesign/smodelTests/solutions/smodelTestsSandbox/smodelTestsSandbox.msd" />
       <solutionPath path="${project}/solutions/samples/smodelLanguage-samples.msd" />
       <solutionPath path="${project}/solutions/sandbox/sandbox.msd" />
       <solutionPath path="${project}/solutions/typetest/smodelLanguage_typetest.msd" />
     </projectSolutions>
     <projectLanguages>
-      <languagePath path="${project}/smodel.mpl" />
-      <languagePath path="${mps_home}/core/languageDesign/structure/languageDescriptor.mpl" />
       <languagePath path="${mps_home}/core/baseLanguage/baseLanguage/baseLanguage.mpl" />
       <languagePath path="${mps_home}/core/languageDesign/plugin/plugin.mpl" />
+      <languagePath path="${mps_home}/core/languageDesign/smodelTests/smodelTests.mpl" />
+      <languagePath path="${project}/smodel.mpl" />
+      <languagePath path="${mps_home}/core/languageDesign/structure/languageDescriptor.mpl" />
     </projectLanguages>
     <projectDevkits />
     <genConfs>
-      <genConfModule runnable="false" name="smodel language" moduleRef="7866978e-a0f0-4cc7-81bc-4d213d9375e1(jetbrains.mps.lang.smodel)" />
+      <genConfModule name="smodel language" moduleRef="7866978e-a0f0-4cc7-81bc-4d213d9375e1(jetbrains.mps.lang.smodel)" />
+      <genConfModule name="smodelTestsSandbox" moduleRef="smodelTestsSandbox" />
     </genConfs>
   </component>
   <component name="ProjectDetails">

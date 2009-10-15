@@ -2867,5 +2867,21 @@
       <node role="cellLayout" type="jetbrains.mps.lang.editor.structure.CellLayout_Indent" id="2648652578096473317" />
     </node>
   </node>
+  <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" id="8405512791876074467">
+    <property name="package" value="operation.featureAccess" />
+    <link role="conceptDeclaration" targetNodeId="1.3562215692195599741" resolveInfo="SLinkImplicitSelect" />
+    <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefCell" id="8405512791876074471">
+      <link role="relationDeclaration" targetNodeId="1.3562215692195600259" />
+      <node role="editorComponent" type="jetbrains.mps.lang.editor.structure.InlineEditorComponent" id="8405512791876074472">
+        <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Property" id="8405512791876074474">
+          <property name="readOnly" value="true" />
+          <link role="relationDeclaration" targetNodeId="3.1071599776563" resolveInfo="role" />
+          <node role="styleItem" type="jetbrains.mps.lang.editor.structure.FontStyleStyleClassItem" id="288031370649275085">
+            <property name="style" value="ITALIC" />
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
 </model>
 

@@ -3156,5 +3156,19 @@
   <node type="jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration" id="4024382256428848843">
     <property name="name" value="ILinkAccess" />
   </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="3562215692195599741">
+    <property name="package" value="operation.featureAccess" />
+    <property name="name" value="SLinkImplicitSelect" />
+    <link role="extends" targetNodeId="1.1133920641626" resolveInfo="BaseConcept" />
+    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="3562215692195600259">
+      <property name="metaClass" value="reference" />
+      <property name="role" value="link" />
+      <property name="sourceCardinality" value="1" />
+      <link role="target" targetNodeId="3.1071489288298" resolveInfo="LinkDeclaration" />
+    </node>
+    <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="288031370649138922">
+      <link role="intfc" targetNodeId="2.1197027803184" resolveInfo="IOperation" />
+    </node>
+  </node>
 </model>
 

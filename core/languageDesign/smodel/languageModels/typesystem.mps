@@ -10206,5 +10206,47 @@
       <link role="concept" targetNodeId="1.2648652578096473304" resolveInfo="ConceptProperty_SetOperation" />
     </node>
   </node>
+  <node type="jetbrains.mps.lang.typesystem.structure.InferenceRule" id="8405512791876070018">
+    <property name="name" value="typeof_SLinkImplicitSelect" />
+    <property name="package" value="operation.featureAccess" />
+    <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="8405512791876070019">
+      <node role="statement" type="jetbrains.mps.lang.typesystem.structure.CreateEquationStatement" id="8405512791876070126">
+        <node role="rightExpression" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause" id="8405512791876070174">
+          <node role="normalType" type="jetbrains.mps.lang.quotation.structure.Quotation" id="8405512791876070175">
+            <node role="quotedNode" type="jetbrains.mps.baseLanguage.collections.structure.SequenceType" id="8405512791876070177">
+              <node role="elementType" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="8405512791876070179">
+                <node role="referenceAntiquotation$link_attribute$concept" type="jetbrains.mps.lang.quotation.structure.ReferenceAntiquotation" id="8405512791876074457">
+                  <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="8405512791876074462">
+                    <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="8405512791876074459">
+                      <node role="operand" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference" id="8405512791876074460">
+                        <link role="applicableNode" targetNodeId="8405512791876070020" resolveInfo="implicitSelect" />
+                      </node>
+                      <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="3562215692195699705">
+                        <link role="link" targetNodeId="1.3562215692195600259" />
+                      </node>
+                    </node>
+                    <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="8405512791876074466">
+                      <link role="link" targetNodeId="3.1071599976176" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="leftExpression" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause" id="8405512791876070129">
+          <node role="normalType" type="jetbrains.mps.lang.typesystem.structure.TypeOfExpression" id="8405512791876070123">
+            <node role="term" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference" id="8405512791876070125">
+              <link role="applicableNode" targetNodeId="8405512791876070020" resolveInfo="implicitSelect" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="applicableNode" type="jetbrains.mps.lang.typesystem.structure.ConceptReference" id="8405512791876070020">
+      <property name="name" value="implicitSelect" />
+      <link role="concept" targetNodeId="1.3562215692195599741" resolveInfo="SLinkImplicitSelect" />
+    </node>
+  </node>
 </model>
 
