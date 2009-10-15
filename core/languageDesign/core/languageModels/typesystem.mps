@@ -26,11 +26,12 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590402(jetbrains.mps.baseLanguage.strings.structure)" version="9" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590345(jetbrains.mps.lang.pattern.structure)" version="0" />
   <devkit namespace="2677cb18-f558-4e33-bc38-a5139cee06dc(jetbrains.mps.devkit.language-design)" />
-  <maxImportIndex value="7" />
+  <maxImportIndex value="8" />
   <import index="1" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" />
   <import index="4" modelUID="f:java_stub#jetbrains.mps.smodel(jetbrains.mps.smodel@java_stub)" version="-1" />
   <import index="6" modelUID="f:java_stub#jetbrains.mps.lang.structure.structure(jetbrains.mps.lang.structure.structure@java_stub)" version="-1" />
   <import index="7" modelUID="f:java_stub#jetbrains.mps.smodel.constraints(jetbrains.mps.smodel.constraints@java_stub)" version="-1" />
+  <import index="8" modelUID="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" version="0" />
   <visible index="2" modelUID="r:00000000-0000-4000-0000-011c89590282(jetbrains.mps.lang.core.behavior)" />
   <node type="jetbrains.mps.lang.typesystem.structure.NonTypesystemRule" id="1225206150541">
     <property name="name" value="check_DeprecatedReference" />
@@ -518,6 +519,76 @@
     </node>
     <node role="applicableNode" type="jetbrains.mps.lang.typesystem.structure.ConceptReference" id="4950342498455564876">
       <property name="name" value="baseConcept" />
+      <link role="concept" targetNodeId="1.1133920641626" resolveInfo="BaseConcept" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.typesystem.structure.NonTypesystemRule" id="8524227390952646882">
+    <property name="name" value="check_InstanceOfDeprecated" />
+    <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="8524227390952646883">
+      <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="8524227390952646884">
+        <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="8524227390952646885">
+          <property name="name" value="declaration" />
+          <node role="type" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="8524227390952646886">
+            <link role="concept" targetNodeId="8.1169125787135" resolveInfo="AbstractConceptDeclaration" />
+          </node>
+        </node>
+      </node>
+      <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="8524227390952646887">
+        <node role="expression" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression" id="8524227390952646888">
+          <node role="rValue" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="8524227390952646889">
+            <node role="operand" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference" id="8524227390952646890">
+              <link role="applicableNode" targetNodeId="8524227390952646910" resolveInfo="nodeToCheck" />
+            </node>
+            <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_GetConceptOperation" id="8524227390952646891" />
+          </node>
+          <node role="lValue" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="8524227390952646892">
+            <link role="variableDeclaration" targetNodeId="8524227390952646885" resolveInfo="declaration" />
+          </node>
+        </node>
+      </node>
+      <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="8524227390952646893">
+        <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="8524227390952646894">
+          <node role="statement" type="jetbrains.mps.lang.typesystem.structure.WarningStatement" id="8524227390952646895">
+            <node role="nodeToReport" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference" id="8524227390952646896">
+              <link role="applicableNode" targetNodeId="8524227390952646910" resolveInfo="nodeToCheck" />
+            </node>
+            <node role="warningText" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="8524227390952646897">
+              <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="8524227390952646898">
+                <property name="value" value="' is instance of deprecated concept" />
+              </node>
+              <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="8524227390952646899">
+                <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="8524227390952646900">
+                  <property name="value" value="'" />
+                </node>
+                <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="8524227390952646901">
+                  <node role="operand" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference" id="8524227390952646902">
+                    <link role="applicableNode" targetNodeId="8524227390952646910" resolveInfo="nodeToCheck" />
+                  </node>
+                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="8524227390952646903">
+                    <link role="baseMethodDeclaration" targetNodeId="2v.1213877396640" resolveInfo="getPresentation" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="condition" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="8524227390952646904">
+          <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="8524227390952646905">
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="8524227390952646906">
+              <link role="variableDeclaration" targetNodeId="8524227390952646885" resolveInfo="declaration" />
+            </node>
+            <node role="operation" type="jetbrains.mps.lang.smodel.structure.AttributeAccessOperation" id="8524227390952646907">
+              <node role="attributeQualifier" type="jetbrains.mps.lang.smodel.structure.NodeAttributeAccessQualifier" id="8524227390952646908">
+                <link role="annotationLink" targetNodeId="8.1224241293279" resolveInfo="deprecatedNode" />
+              </node>
+            </node>
+          </node>
+          <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_IsNotNullOperation" id="8524227390952646909" />
+        </node>
+      </node>
+    </node>
+    <node role="applicableNode" type="jetbrains.mps.lang.typesystem.structure.ConceptReference" id="8524227390952646910">
+      <property name="name" value="nodeToCheck" />
       <link role="concept" targetNodeId="1.1133920641626" resolveInfo="BaseConcept" />
     </node>
   </node>
