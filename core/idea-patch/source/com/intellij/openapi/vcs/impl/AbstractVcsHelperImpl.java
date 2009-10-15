@@ -572,7 +572,7 @@ public class AbstractVcsHelperImpl extends AbstractVcsHelper {
   public static void zipModel(DiffContent[] contents, VirtualFile file) throws IOException {
     File tmp = FileUtil.createTmpDir();
     writeContentsToFile(contents[ModelMergeRequest.ORIGINAL], file, tmp, "base");
-    writeContentsToFile(contents[ModelMergeRequest.CURRENT], file, tmp, "myne");
+    writeContentsToFile(contents[ModelMergeRequest.CURRENT], file, tmp, "mine");
     writeContentsToFile(contents[ModelMergeRequest.LAST_REVISION], file, tmp, "repository");
     FileUtil.zip(tmp, getZipFile(file));
 

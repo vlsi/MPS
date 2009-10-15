@@ -46,16 +46,16 @@ public class Merger {
   private Set<Change> myConflicted = new HashSet<Change>();
   private boolean myPreviewMode = false;
 
-  public Merger(SModel base, SModel myne, SModel repo) {
+  public Merger(SModel base, SModel mine, SModel repo) {
     mySourceModels[VERSION.BASE.ordinal()] = base;
-    mySourceModels[VERSION.MYNE.ordinal()] = myne;
+    mySourceModels[VERSION.MYNE.ordinal()] = mine;
     mySourceModels[VERSION.REPO.ordinal()] = repo;
 
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
-        DiffBuilder myneDiffBuilder = new DiffBuilder(getBase(mySourceModels), getMyne(mySourceModels));
-        myBaseMyneChange = myneDiffBuilder.getChanges();
-        myChangeGroups.putAll(myneDiffBuilder.getChangeGroups());
+        DiffBuilder mineDiffBuilder = new DiffBuilder(getBase(mySourceModels), getMyne(mySourceModels));
+        myBaseMyneChange = mineDiffBuilder.getChanges();
+        myChangeGroups.putAll(mineDiffBuilder.getChangeGroups());
         DiffBuilder repoDiffBuilder = new DiffBuilder(getBase(mySourceModels), getRepo(mySourceModels));
         myBaseRepoChange = repoDiffBuilder.getChanges();
         myChangeGroups.putAll(repoDiffBuilder.getChangeGroups());

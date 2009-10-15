@@ -382,10 +382,10 @@ public class RootMergeDialog extends BaseDialog implements EditorMessageOwner {
 
     myResultEditorComponent.editNode(resultNode[0], myContext);
 
-    List<Change> myneChange = new ArrayList<Change>(myMerger.getBaseMyneChange());
-    myneChange.removeAll(myMerger.getApplyedChanges());
-    myneChange.removeAll(myMerger.getExcludedChanges());
-    myChange1EditorComponent.hightlight(myneChange, false, false);
+    List<Change> mineChange = new ArrayList<Change>(myMerger.getBaseMyneChange());
+    mineChange.removeAll(myMerger.getApplyedChanges());
+    mineChange.removeAll(myMerger.getExcludedChanges());
+    myChange1EditorComponent.hightlight(mineChange, false, false);
     myChange1EditorComponent.makeChangeBlocks();
 
     ArrayList<Change> removedNodes = new ArrayList<Change>();

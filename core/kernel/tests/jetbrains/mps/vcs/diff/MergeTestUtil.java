@@ -77,7 +77,7 @@ public class MergeTestUtil {
     public String getSuffix() {
       switch (this) {
         case MYNE:
-          return "myne";
+          return "mine";
         case BASE:
           return "base";
         case REPO:
