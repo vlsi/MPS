@@ -131,7 +131,6 @@ public class DefaultJUnit_Configuration extends BaseRunConfig {
             }
           };
 
-          Process process = null;
           final List<SNode> all = new ArrayList<SNode>();
           ModelAccess.instance().runReadAction(new Runnable() {
             public void run() {
@@ -164,20 +163,18 @@ public class DefaultJUnit_Configuration extends BaseRunConfig {
           if (DefaultJUnit_Configuration.this.getStateObject().myParams != null && DefaultJUnit_Configuration.this.getStateObject().myParams.getUseAlternativeJRE()) {
             testRunner.value.setJavaHomePath(DefaultJUnit_Configuration.this.getStateObject().myParams.getAlternativeJRE());
           }
+
+          final Wrappers._T<Process> process = new Wrappers._T<Process>();
           ModelAccess.instance().runReadAction(new Runnable() {
             public void run() {
-              testRunner.value.run(all);
+              process.value = testRunner.value.run(all);
             }
           });
 
-          while (process == null) {
-            process = testRunner.value.getProcess();
-          }
-
-          if (process != null) {
-            BLProcessHandler processHandler = new BLProcessHandler(runComponent.getConsole(), process, "Test", Charset.defaultCharset());
+          if (process.value != null) {
+            BLProcessHandler processHandler = new BLProcessHandler(runComponent.getConsole(), process.value, "Test", Charset.defaultCharset());
             runComponent.onStart(processHandler);
-            handler = new JUnitProcessHandler(runComponent, runComponent.getConsole(), process);
+            handler = new JUnitProcessHandler(runComponent, runComponent.getConsole(), process.value);
           }
         }
         final JComponent finalConsoleComponent = consoleComponent;
