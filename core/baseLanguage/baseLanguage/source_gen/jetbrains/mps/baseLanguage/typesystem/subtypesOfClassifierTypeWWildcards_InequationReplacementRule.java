@@ -64,7 +64,7 @@ public class subtypesOfClassifierTypeWWildcards_InequationReplacementRule extend
                             }
                           }
                         }
-                      }, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1220523357880", false, true);
+                      }, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1220523357880", false, false);
                     }
                   }
                 }

@@ -12565,7 +12565,7 @@
                     </node>
                   </node>
                   <node role="statement" type="jetbrains.mps.lang.typesystem.structure.WhenConcreteStatement" id="1220523357880">
-                    <property name="skipsError" value="true" />
+                    <property name="skipsError" value="false" />
                     <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1220523357881">
                       <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1220523357882">
                         <node role="condition" type="jetbrains.mps.baseLanguage.structure.NotExpression" id="1228175718714">

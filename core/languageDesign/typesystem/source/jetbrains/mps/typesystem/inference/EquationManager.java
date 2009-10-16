@@ -422,14 +422,15 @@ public class EquationManager {
   }
 
   public void addNewWhenConcreteEntity(IWrapper wrapper, WhenConcreteEntity entity, boolean isShallow) {
+    IWrapper representator = getRepresentatorWrapper(wrapper);
     if (!isShallow) {
-      addWhenConcreteEntity(wrapper, entity);
-      checkConcrete(wrapper);
+      addWhenConcreteEntity(representator, entity);
+      checkConcrete(representator);
     } else {
-      if (!wrapper.isVariable()) {
+      if (!representator.isVariable()) {
         entity.run();
       } else {
-        addShallowWhenConcreteEntity(wrapper, entity);
+        addShallowWhenConcreteEntity(representator, entity);
       }
     }
   }
