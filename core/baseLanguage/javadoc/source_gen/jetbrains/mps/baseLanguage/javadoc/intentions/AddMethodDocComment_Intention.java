@@ -51,16 +51,21 @@ public class AddMethodDocComment_Intention extends BaseIntention {
     //  Method parameters
     for (SNode parameterDeclaration : ListSequence.fromList(SLinkOperations.getTargets(node, "parameter", true))) {
       SNode paramTag = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.javadoc.structure.ParameterBlockDocTag", null);
-      SLinkOperations.setTarget(paramTag, "parameter", parameterDeclaration, false);
+      SLinkOperations.setTarget(paramTag, "parameter", new _Quotations.QuotationClass_2().createNode(parameterDeclaration), true);
       SLinkOperations.addChild(SLinkOperations.getTarget(node, AttributesRolesUtil.childRoleFromAttributeRole("methodDocComment"), true), "param", paramTag);
     }
 
-    //  Type variables - TODO
+    //  Type variables
+    for (SNode typeVariableDeclaration : ListSequence.fromList(SLinkOperations.getTargets(node, "typeVariableDeclaration", true))) {
+      SNode paramTag = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.javadoc.structure.ParameterBlockDocTag", null);
+      SLinkOperations.setTarget(paramTag, "parameter", new _Quotations.QuotationClass_0().createNode(typeVariableDeclaration), true);
+      SLinkOperations.addChild(SLinkOperations.getTarget(node, AttributesRolesUtil.childRoleFromAttributeRole("methodDocComment"), true), "param", paramTag);
+    }
 
     //  Thrown exceptions
     for (SNode throwsItem : ListSequence.fromList(SLinkOperations.getTargets(node, "throwsItem", true))) {
       SNode throwsTag = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.javadoc.structure.ThrowsBlockDocTag", null);
-      SLinkOperations.setTarget(throwsTag, "exceptionType", throwsItem, true);
+      SLinkOperations.setTarget(throwsTag, "exceptionType", SNodeOperations.copyNode(throwsItem), true);
       SLinkOperations.addChild(SLinkOperations.getTarget(node, AttributesRolesUtil.childRoleFromAttributeRole("methodDocComment"), true), "throwsTag", throwsTag);
     }
 

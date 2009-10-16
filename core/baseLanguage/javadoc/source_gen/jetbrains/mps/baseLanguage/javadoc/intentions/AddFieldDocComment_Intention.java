@@ -5,16 +5,16 @@ package jetbrains.mps.baseLanguage.javadoc.intentions;
 import jetbrains.mps.intentions.BaseIntention;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorContext;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.AttributesRolesUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 
-public class AddAuthorBlockDocTag_Intention extends BaseIntention {
-  public AddAuthorBlockDocTag_Intention() {
+public class AddFieldDocComment_Intention extends BaseIntention {
+  public AddFieldDocComment_Intention() {
   }
 
   public String getConcept() {
-    return "jetbrains.mps.baseLanguage.javadoc.structure.BaseDocComment";
+    return "jetbrains.mps.baseLanguage.structure.FieldDeclaration";
   }
 
   public boolean isParameterized() {
@@ -30,7 +30,7 @@ public class AddAuthorBlockDocTag_Intention extends BaseIntention {
   }
 
   public String getDescription(final SNode node, final EditorContext editorContext) {
-    return "Add @author Tag";
+    return "Add Documentation Comment";
   }
 
   public boolean isApplicable(final SNode node, final EditorContext editorContext) {
@@ -41,15 +41,11 @@ public class AddAuthorBlockDocTag_Intention extends BaseIntention {
   }
 
   public boolean isApplicableToNode(final SNode node, final EditorContext editorContext) {
-    return ListSequence.fromList(SLinkOperations.getTargets(node, "author", true)).isEmpty();
+    return (SLinkOperations.getTarget(node, AttributesRolesUtil.childRoleFromAttributeRole("fieldDocComment"), true) == null);
   }
 
   public void execute(final SNode node, final EditorContext editorContext) {
-    SNode authorTag = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.javadoc.structure.AuthorBlockDocTag", null);
-    SLinkOperations.addChild(node, "author", authorTag);
-    //  TODO
-    editorContext.getNodeEditorComponent().setSelectionDontClearStack(editorContext.getNodeEditorComponent().findNodeCellWithRole(authorTag, "text"), true, true);
-    editorContext.select(authorTag);
+    SLinkOperations.setTarget(node, AttributesRolesUtil.childRoleFromAttributeRole("fieldDocComment"), SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.javadoc.structure.FieldDocComment", null), true);
   }
 
   public String getLocationString() {

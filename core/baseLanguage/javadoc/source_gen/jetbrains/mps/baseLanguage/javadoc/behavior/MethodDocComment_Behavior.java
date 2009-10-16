@@ -11,6 +11,6 @@ public class MethodDocComment_Behavior {
   }
 
   public static boolean virtual_isTagSectionEmpty_8465538089690623795(SNode thisNode) {
-    return BaseDocComment_Behavior.callSuper_isTagSectionEmpty_8465538089690623795(thisNode, "jetbrains.mps.baseLanguage.javadoc.structure.MethodDocComment") && ListSequence.fromList(SLinkOperations.getTargets(thisNode, "param", true)).isEmpty();
+    return BaseDocComment_Behavior.callSuper_isTagSectionEmpty_8465538089690623795(thisNode, "jetbrains.mps.baseLanguage.javadoc.structure.MethodDocComment") && ListSequence.fromList(SLinkOperations.getTargets(thisNode, "param", true)).isEmpty() && ListSequence.fromList(SLinkOperations.getTargets(thisNode, "throwsTag", true)).isEmpty() && (SLinkOperations.getTarget(thisNode, "return", true) == null);
   }
 }

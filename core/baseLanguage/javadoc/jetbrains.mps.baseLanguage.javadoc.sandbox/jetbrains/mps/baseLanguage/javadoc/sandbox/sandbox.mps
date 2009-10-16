@@ -24,6 +24,17 @@
   <import index="1" modelUID="f:java_stub#java.lang(java.lang@java_stub)" version="-1" />
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="3196018662491356444">
     <property name="name" value="ABC" />
+    <node role="constructor" type="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" id="8970989240998608362">
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="8970989240998608363" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="8970989240998608364" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="8970989240998608365" />
+    </node>
+    <node role="field" type="jetbrains.mps.baseLanguage.structure.FieldDeclaration" id="6832197706140999820">
+      <property name="name" value="x" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PrivateVisibility" id="6832197706140999821" />
+      <node role="type" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="6832197706140999823" />
+      <node role="fieldDocComment$attribute" type="jetbrains.mps.baseLanguage.javadoc.structure.FieldDocComment" id="8970989240998970973" />
+    </node>
     <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="7344646339283099538">
       <property name="name" value="foo" />
       <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="7344646339283099547">
@@ -32,24 +43,30 @@
       </node>
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="7344646339283099540" />
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="7344646339283099541">
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="7344646339284604304">
-          <node role="expression" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression" id="7344646339284604306">
-            <node role="rValue" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="7344646339284604309">
-              <property name="value" value="5" />
-            </node>
-            <node role="lValue" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="7344646339284604305">
-              <link role="variableDeclaration" targetNodeId="7344646339283099547" resolveInfo="a" />
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.CommentedStatementsBlock" id="8970989240998551037">
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="7344646339284604304">
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression" id="7344646339284604306">
+              <node role="rValue" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="7344646339284604309">
+                <property name="value" value="5" />
+              </node>
+              <node role="lValue" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="7344646339284604305">
+                <link role="variableDeclaration" targetNodeId="7344646339283099547" resolveInfo="a" />
+              </node>
             </node>
           </node>
         </node>
       </node>
-      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="6832197706140268169" />
+      <node role="throwsItem" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="6832197706140414139">
+        <link role="classifier" targetNodeId="1.~ArrayStoreException" resolveInfo="ArrayStoreException" />
+      </node>
+      <node role="typeVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.TypeVariableDeclaration" id="6832197706140691338">
+        <property name="name" value="F" />
+      </node>
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="8970989240998608361" />
     </node>
     <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="3196018662491356445" />
-    <node role="constructor" type="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" id="3196018662491356446">
-      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="3196018662491356447" />
-      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="3196018662491356448" />
-      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="3196018662491356449" />
+    <node role="typeVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.TypeVariableDeclaration" id="6832197706140691340">
+      <property name="name" value="TT" />
     </node>
   </node>
 </model>

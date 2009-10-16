@@ -319,7 +319,6 @@
       <link role="keyMap" targetNodeId="7344646339282919245" resolveInfo="CommentLine_KeyMap" />
     </node>
   </node>
-  <visible index="3" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
   <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" id="8465538089690881935">
     <link role="conceptDeclaration" targetNodeId="1.8465538089690881930" resolveInfo="ParameterBlockDocTag" />
     <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="8465538089690881937">
@@ -327,14 +326,8 @@
         <property name="text" value="@param" />
         <link role="styleClass" targetNodeId="7344646339284771309" resolveInfo="CommentTag" />
       </node>
-      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefCell" id="8465538089690881942">
-        <link role="relationDeclaration" targetNodeId="1.8465538089690881931" />
-        <node role="editorComponent" type="jetbrains.mps.lang.editor.structure.InlineEditorComponent" id="8465538089690881943">
-          <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Property" id="8465538089690881945">
-            <property name="readOnly" value="true" />
-            <link role="relationDeclaration" targetNodeId="3v.1169194664001" resolveInfo="name" />
-          </node>
-        </node>
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode" id="6832197706140518133">
+        <link role="relationDeclaration" targetNodeId="1.6832197706140518123" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Property" id="8465538089690881948">
         <link role="relationDeclaration" targetNodeId="1.8465538089690881934" resolveInfo="text" />
@@ -404,8 +397,8 @@
         <property name="text" value="@throws" />
         <link role="styleClass" targetNodeId="7344646339284771309" resolveInfo="CommentTag" />
       </node>
-      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode" id="5858074156538158153">
-        <link role="relationDeclaration" targetNodeId="1.5858074156538158151" />
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode" id="6832197706140448510">
+        <link role="relationDeclaration" targetNodeId="1.6832197706140448505" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Property" id="5858074156537702186">
         <link role="relationDeclaration" targetNodeId="1.5858074156537397874" resolveInfo="text" />
@@ -422,8 +415,364 @@
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Property" id="5858074156537516439">
         <link role="relationDeclaration" targetNodeId="1.5858074156537516431" resolveInfo="text" />
+        <link role="styleClass" targetNodeId="7344646339284548673" resolveInfo="Comment" />
       </node>
       <node role="cellLayout" type="jetbrains.mps.lang.editor.structure.CellLayout_Indent" id="5858074156537516436" />
+    </node>
+  </node>
+  <visible index="3" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
+  <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" id="6832197706140518111">
+    <link role="conceptDeclaration" targetNodeId="1.6832197706140518107" resolveInfo="DocTypeParameterReference" />
+    <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefCell" id="6832197706140518113">
+      <link role="relationDeclaration" targetNodeId="1.6832197706140518110" />
+      <node role="editorComponent" type="jetbrains.mps.lang.editor.structure.InlineEditorComponent" id="6832197706140518114">
+        <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Property" id="6832197706140518116">
+          <property name="readOnly" value="true" />
+          <link role="relationDeclaration" targetNodeId="3v.1169194664001" resolveInfo="name" />
+        </node>
+      </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" id="6832197706140518117">
+    <link role="conceptDeclaration" targetNodeId="1.6832197706140518104" resolveInfo="DocMethodParameterReference" />
+    <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefCell" id="6832197706140518119">
+      <link role="relationDeclaration" targetNodeId="1.6832197706140518109" />
+      <node role="editorComponent" type="jetbrains.mps.lang.editor.structure.InlineEditorComponent" id="6832197706140518120">
+        <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Property" id="6832197706140518122">
+          <property name="readOnly" value="true" />
+          <link role="relationDeclaration" targetNodeId="3v.1169194664001" resolveInfo="name" />
+        </node>
+      </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" id="6832197706140745184">
+    <link role="conceptDeclaration" targetNodeId="1.6832197706140518103" resolveInfo="BaseParameterReference" />
+    <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Error" id="6832197706140745189">
+      <property name="text" value="&lt;no param&gt;" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" id="6832197706140896245">
+    <link role="conceptDeclaration" targetNodeId="1.6832197706140896242" resolveInfo="FieldDocComment" />
+    <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="6832197706140896250">
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="6832197706140896251">
+        <property name="text" value="/**" />
+        <link role="styleClass" targetNodeId="7344646339284548673" resolveInfo="Comment" />
+        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.IndentLayoutNewLineStyleClassItem" id="6832197706140896252">
+          <property name="flag" value="true" />
+        </node>
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNodeList" id="6832197706140896253">
+        <link role="relationDeclaration" targetNodeId="1.8465538089690331502" />
+        <link role="styleClass" targetNodeId="7344646339284548673" resolveInfo="Comment" />
+        <node role="cellLayout" type="jetbrains.mps.lang.editor.structure.CellLayout_Indent" id="6832197706140896254" />
+        <node role="emptyCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="6832197706140896255">
+          <node role="styleItem" type="jetbrains.mps.lang.editor.structure.IndentLayoutNewLineStyleClassItem" id="6832197706140896256">
+            <property name="flag" value="true" />
+          </node>
+        </node>
+        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.IndentLayoutNewLineChildrenStyleClassItem" id="6832197706140896257">
+          <property name="flag" value="true" />
+        </node>
+        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.IndentLayoutIndentStyleClassItem" id="6832197706140896258">
+          <property name="flag" value="true" />
+        </node>
+        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.IndentLayoutNewLineStyleClassItem" id="6832197706140896259">
+          <property name="flag" value="true" />
+        </node>
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="6832197706140896260">
+        <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="6832197706140896261">
+          <node role="styleItem" type="jetbrains.mps.lang.editor.structure.IndentLayoutIndentStyleClassItem" id="6832197706140896262">
+            <property name="flag" value="true" />
+          </node>
+          <node role="styleItem" type="jetbrains.mps.lang.editor.structure.IndentLayoutNewLineStyleClassItem" id="6832197706140896263">
+            <property name="flag" value="true" />
+          </node>
+        </node>
+        <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNodeList" id="6832197706140896264">
+          <link role="relationDeclaration" targetNodeId="1.5349172909345532722" />
+          <link role="styleClass" targetNodeId="7344646339284548673" resolveInfo="Comment" />
+          <node role="cellLayout" type="jetbrains.mps.lang.editor.structure.CellLayout_Indent" id="6832197706140896265" />
+          <node role="styleItem" type="jetbrains.mps.lang.editor.structure.IndentLayoutIndentStyleClassItem" id="6832197706140896266">
+            <property name="flag" value="true" />
+          </node>
+          <node role="styleItem" type="jetbrains.mps.lang.editor.structure.IndentLayoutNewLineChildrenStyleClassItem" id="6832197706140896267">
+            <property name="flag" value="true" />
+          </node>
+          <node role="renderingCondition" type="jetbrains.mps.lang.editor.structure.QueryFunction_NodeCondition" id="6832197706140896268">
+            <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="6832197706140896269">
+              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="6832197706140896270">
+                <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="6832197706140896271">
+                  <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="6832197706140896272">
+                    <node role="operand" type="jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_node" id="6832197706140896273" />
+                    <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkListAccess" id="6832197706140896274">
+                      <link role="link" targetNodeId="1.5349172909345532722" />
+                    </node>
+                  </node>
+                  <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.IsNotEmptyOperation" id="6832197706140896275" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNodeList" id="6832197706140896276">
+          <link role="relationDeclaration" targetNodeId="1.8465538089690331490" />
+          <link role="styleClass" targetNodeId="7344646339284548673" resolveInfo="Comment" />
+          <node role="cellLayout" type="jetbrains.mps.lang.editor.structure.CellLayout_Indent" id="6832197706140896277" />
+          <node role="styleItem" type="jetbrains.mps.lang.editor.structure.IndentLayoutIndentStyleClassItem" id="6832197706140896278">
+            <property name="flag" value="true" />
+          </node>
+          <node role="styleItem" type="jetbrains.mps.lang.editor.structure.IndentLayoutNewLineChildrenStyleClassItem" id="6832197706140896279">
+            <property name="flag" value="true" />
+          </node>
+          <node role="renderingCondition" type="jetbrains.mps.lang.editor.structure.QueryFunction_NodeCondition" id="6832197706140896280">
+            <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="6832197706140896281">
+              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="6832197706140896282">
+                <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="6832197706140896283">
+                  <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="6832197706140896284">
+                    <node role="operand" type="jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_node" id="6832197706140896285" />
+                    <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkListAccess" id="6832197706140896286">
+                      <link role="link" targetNodeId="1.8465538089690331490" />
+                    </node>
+                  </node>
+                  <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.IsNotEmptyOperation" id="6832197706140896287" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNodeList" id="6832197706140896288">
+          <link role="relationDeclaration" targetNodeId="1.8465538089690331491" />
+          <link role="styleClass" targetNodeId="7344646339284548673" resolveInfo="Comment" />
+          <node role="cellLayout" type="jetbrains.mps.lang.editor.structure.CellLayout_Indent" id="6832197706140896289" />
+          <node role="styleItem" type="jetbrains.mps.lang.editor.structure.IndentLayoutIndentStyleClassItem" id="6832197706140896290">
+            <property name="flag" value="true" />
+          </node>
+          <node role="styleItem" type="jetbrains.mps.lang.editor.structure.IndentLayoutNewLineChildrenStyleClassItem" id="6832197706140896291">
+            <property name="flag" value="true" />
+          </node>
+          <node role="renderingCondition" type="jetbrains.mps.lang.editor.structure.QueryFunction_NodeCondition" id="6832197706140896292">
+            <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="6832197706140896293">
+              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="6832197706140896294">
+                <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="6832197706140896295">
+                  <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="6832197706140896296">
+                    <node role="operand" type="jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_node" id="6832197706140896297" />
+                    <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkListAccess" id="6832197706140896298">
+                      <link role="link" targetNodeId="1.8465538089690331491" />
+                    </node>
+                  </node>
+                  <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.IsNotEmptyOperation" id="6832197706140896299" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="cellLayout" type="jetbrains.mps.lang.editor.structure.CellLayout_Indent" id="6832197706140896335" />
+        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem" id="6832197706140896336">
+          <property name="flag" value="false" />
+        </node>
+        <node role="renderingCondition" type="jetbrains.mps.lang.editor.structure.QueryFunction_NodeCondition" id="6832197706140896337">
+          <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="6832197706140896338">
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="6832197706140896339">
+              <node role="expression" type="jetbrains.mps.baseLanguage.structure.NotExpression" id="6832197706140896340">
+                <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="6832197706140896341">
+                  <node role="operand" type="jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_node" id="6832197706140896342" />
+                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="6832197706140896343">
+                    <link role="baseMethodDeclaration" targetNodeId="2v.8465538089690623795" resolveInfo="isTagSectionEmpty" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="6832197706140896344">
+        <property name="text" value=" */" />
+        <link role="styleClass" targetNodeId="7344646339284548673" resolveInfo="Comment" />
+        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.IndentLayoutNewLineStyleClassItem" id="6832197706140896345">
+          <property name="flag" value="true" />
+        </node>
+        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.IndentLayoutOnNewLineStyleClassItem" id="6832197706140896346">
+          <property name="flag" value="true" />
+        </node>
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_AttributedNodeCell" id="6832197706140896347" />
+      <node role="cellLayout" type="jetbrains.mps.lang.editor.structure.CellLayout_Indent" id="6832197706140896348" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" id="2068944020170241615">
+    <link role="conceptDeclaration" targetNodeId="1.2068944020170241612" resolveInfo="ClassifierDocComment" />
+    <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="2068944020170241617">
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="2068944020170241618">
+        <property name="text" value="/**" />
+        <link role="styleClass" targetNodeId="7344646339284548673" resolveInfo="Comment" />
+        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.IndentLayoutNewLineStyleClassItem" id="2068944020170241619">
+          <property name="flag" value="true" />
+        </node>
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNodeList" id="2068944020170241620">
+        <link role="relationDeclaration" targetNodeId="1.8465538089690331502" />
+        <link role="styleClass" targetNodeId="7344646339284548673" resolveInfo="Comment" />
+        <node role="cellLayout" type="jetbrains.mps.lang.editor.structure.CellLayout_Indent" id="2068944020170241621" />
+        <node role="emptyCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="2068944020170241622">
+          <node role="styleItem" type="jetbrains.mps.lang.editor.structure.IndentLayoutNewLineStyleClassItem" id="2068944020170241623">
+            <property name="flag" value="true" />
+          </node>
+        </node>
+        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.IndentLayoutNewLineChildrenStyleClassItem" id="2068944020170241624">
+          <property name="flag" value="true" />
+        </node>
+        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.IndentLayoutIndentStyleClassItem" id="2068944020170241625">
+          <property name="flag" value="true" />
+        </node>
+        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.IndentLayoutNewLineStyleClassItem" id="2068944020170241626">
+          <property name="flag" value="true" />
+        </node>
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="2068944020170241627">
+        <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="2068944020170241628">
+          <node role="styleItem" type="jetbrains.mps.lang.editor.structure.IndentLayoutIndentStyleClassItem" id="2068944020170241629">
+            <property name="flag" value="true" />
+          </node>
+          <node role="styleItem" type="jetbrains.mps.lang.editor.structure.IndentLayoutNewLineStyleClassItem" id="2068944020170241630">
+            <property name="flag" value="true" />
+          </node>
+        </node>
+        <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNodeList" id="2068944020170241631">
+          <link role="relationDeclaration" targetNodeId="1.5349172909345532722" />
+          <link role="styleClass" targetNodeId="7344646339284548673" resolveInfo="Comment" />
+          <node role="cellLayout" type="jetbrains.mps.lang.editor.structure.CellLayout_Indent" id="2068944020170241632" />
+          <node role="styleItem" type="jetbrains.mps.lang.editor.structure.IndentLayoutIndentStyleClassItem" id="2068944020170241633">
+            <property name="flag" value="true" />
+          </node>
+          <node role="styleItem" type="jetbrains.mps.lang.editor.structure.IndentLayoutNewLineChildrenStyleClassItem" id="2068944020170241634">
+            <property name="flag" value="true" />
+          </node>
+          <node role="renderingCondition" type="jetbrains.mps.lang.editor.structure.QueryFunction_NodeCondition" id="2068944020170241635">
+            <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="2068944020170241636">
+              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="2068944020170241637">
+                <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="2068944020170241638">
+                  <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="2068944020170241639">
+                    <node role="operand" type="jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_node" id="2068944020170241640" />
+                    <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkListAccess" id="2068944020170241641">
+                      <link role="link" targetNodeId="1.5349172909345532722" />
+                    </node>
+                  </node>
+                  <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.IsNotEmptyOperation" id="2068944020170241642" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNodeList" id="2068944020170241643">
+          <link role="relationDeclaration" targetNodeId="1.8465538089690331490" />
+          <link role="styleClass" targetNodeId="7344646339284548673" resolveInfo="Comment" />
+          <node role="cellLayout" type="jetbrains.mps.lang.editor.structure.CellLayout_Indent" id="2068944020170241644" />
+          <node role="styleItem" type="jetbrains.mps.lang.editor.structure.IndentLayoutIndentStyleClassItem" id="2068944020170241645">
+            <property name="flag" value="true" />
+          </node>
+          <node role="styleItem" type="jetbrains.mps.lang.editor.structure.IndentLayoutNewLineChildrenStyleClassItem" id="2068944020170241646">
+            <property name="flag" value="true" />
+          </node>
+          <node role="renderingCondition" type="jetbrains.mps.lang.editor.structure.QueryFunction_NodeCondition" id="2068944020170241647">
+            <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="2068944020170241648">
+              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="2068944020170241649">
+                <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="2068944020170241650">
+                  <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="2068944020170241651">
+                    <node role="operand" type="jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_node" id="2068944020170241652" />
+                    <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkListAccess" id="2068944020170241653">
+                      <link role="link" targetNodeId="1.8465538089690331490" />
+                    </node>
+                  </node>
+                  <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.IsNotEmptyOperation" id="2068944020170241654" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNodeList" id="2068944020170241655">
+          <link role="relationDeclaration" targetNodeId="1.8465538089690331491" />
+          <link role="styleClass" targetNodeId="7344646339284548673" resolveInfo="Comment" />
+          <node role="cellLayout" type="jetbrains.mps.lang.editor.structure.CellLayout_Indent" id="2068944020170241656" />
+          <node role="styleItem" type="jetbrains.mps.lang.editor.structure.IndentLayoutIndentStyleClassItem" id="2068944020170241657">
+            <property name="flag" value="true" />
+          </node>
+          <node role="styleItem" type="jetbrains.mps.lang.editor.structure.IndentLayoutNewLineChildrenStyleClassItem" id="2068944020170241658">
+            <property name="flag" value="true" />
+          </node>
+          <node role="renderingCondition" type="jetbrains.mps.lang.editor.structure.QueryFunction_NodeCondition" id="2068944020170241659">
+            <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="2068944020170241660">
+              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="2068944020170241661">
+                <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="2068944020170241662">
+                  <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="2068944020170241663">
+                    <node role="operand" type="jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_node" id="2068944020170241664" />
+                    <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkListAccess" id="2068944020170241665">
+                      <link role="link" targetNodeId="1.8465538089690331491" />
+                    </node>
+                  </node>
+                  <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.IsNotEmptyOperation" id="2068944020170241666" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNodeList" id="2068944020170522819">
+          <link role="styleClass" targetNodeId="7344646339284548673" resolveInfo="Comment" />
+          <link role="relationDeclaration" targetNodeId="1.2068944020170241614" />
+          <node role="cellLayout" type="jetbrains.mps.lang.editor.structure.CellLayout_Indent" id="2068944020170522820" />
+          <node role="styleItem" type="jetbrains.mps.lang.editor.structure.IndentLayoutIndentStyleClassItem" id="2068944020170522821">
+            <property name="flag" value="true" />
+          </node>
+          <node role="styleItem" type="jetbrains.mps.lang.editor.structure.IndentLayoutNewLineChildrenStyleClassItem" id="2068944020170522822">
+            <property name="flag" value="true" />
+          </node>
+          <node role="renderingCondition" type="jetbrains.mps.lang.editor.structure.QueryFunction_NodeCondition" id="2068944020170522823">
+            <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="2068944020170522824">
+              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="2068944020170522825">
+                <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="2068944020170522826">
+                  <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="2068944020170522827">
+                    <node role="operand" type="jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_node" id="2068944020170522828" />
+                    <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkListAccess" id="2068944020170522831">
+                      <link role="link" targetNodeId="1.2068944020170241614" />
+                    </node>
+                  </node>
+                  <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.IsNotEmptyOperation" id="2068944020170522830" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="cellLayout" type="jetbrains.mps.lang.editor.structure.CellLayout_Indent" id="2068944020170241702" />
+        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem" id="2068944020170241703">
+          <property name="flag" value="false" />
+        </node>
+        <node role="renderingCondition" type="jetbrains.mps.lang.editor.structure.QueryFunction_NodeCondition" id="2068944020170241704">
+          <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="2068944020170241705">
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="2068944020170241706">
+              <node role="expression" type="jetbrains.mps.baseLanguage.structure.NotExpression" id="2068944020170241707">
+                <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="2068944020170241708">
+                  <node role="operand" type="jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_node" id="2068944020170241709" />
+                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="2068944020170241710">
+                    <link role="baseMethodDeclaration" targetNodeId="2v.8465538089690623795" resolveInfo="isTagSectionEmpty" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="2068944020170241711">
+        <property name="text" value=" */" />
+        <link role="styleClass" targetNodeId="7344646339284548673" resolveInfo="Comment" />
+        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.IndentLayoutNewLineStyleClassItem" id="2068944020170241712">
+          <property name="flag" value="true" />
+        </node>
+        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.IndentLayoutOnNewLineStyleClassItem" id="2068944020170241713">
+          <property name="flag" value="true" />
+        </node>
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_AttributedNodeCell" id="2068944020170241714" />
+      <node role="cellLayout" type="jetbrains.mps.lang.editor.structure.CellLayout_Indent" id="2068944020170241715" />
     </node>
   </node>
 </model>

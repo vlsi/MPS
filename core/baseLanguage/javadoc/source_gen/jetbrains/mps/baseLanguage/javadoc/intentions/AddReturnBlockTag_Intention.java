@@ -5,16 +5,16 @@ package jetbrains.mps.baseLanguage.javadoc.intentions;
 import jetbrains.mps.intentions.BaseIntention;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorContext;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 
-public class AddAuthorBlockDocTag_Intention extends BaseIntention {
-  public AddAuthorBlockDocTag_Intention() {
+public class AddReturnBlockTag_Intention extends BaseIntention {
+  public AddReturnBlockTag_Intention() {
   }
 
   public String getConcept() {
-    return "jetbrains.mps.baseLanguage.javadoc.structure.BaseDocComment";
+    return "jetbrains.mps.baseLanguage.javadoc.structure.MethodDocComment";
   }
 
   public boolean isParameterized() {
@@ -30,7 +30,7 @@ public class AddAuthorBlockDocTag_Intention extends BaseIntention {
   }
 
   public String getDescription(final SNode node, final EditorContext editorContext) {
-    return "Add @author Tag";
+    return "Add @return tag";
   }
 
   public boolean isApplicable(final SNode node, final EditorContext editorContext) {
@@ -41,15 +41,12 @@ public class AddAuthorBlockDocTag_Intention extends BaseIntention {
   }
 
   public boolean isApplicableToNode(final SNode node, final EditorContext editorContext) {
-    return ListSequence.fromList(SLinkOperations.getTargets(node, "author", true)).isEmpty();
+    SNode returnType = SLinkOperations.getTarget(SNodeOperations.getAncestor(node, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration", false, false), "returnType", true);
+    return (SLinkOperations.getTarget(node, "return", true) == null) && (returnType != null) && !(SNodeOperations.isInstanceOf(returnType, "jetbrains.mps.baseLanguage.structure.VoidType"));
   }
 
   public void execute(final SNode node, final EditorContext editorContext) {
-    SNode authorTag = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.javadoc.structure.AuthorBlockDocTag", null);
-    SLinkOperations.addChild(node, "author", authorTag);
-    //  TODO
-    editorContext.getNodeEditorComponent().setSelectionDontClearStack(editorContext.getNodeEditorComponent().findNodeCellWithRole(authorTag, "text"), true, true);
-    editorContext.select(authorTag);
+    SLinkOperations.setTarget(node, "return", SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.javadoc.structure.ReturnBlockDocTag", null), true);
   }
 
   public String getLocationString() {
