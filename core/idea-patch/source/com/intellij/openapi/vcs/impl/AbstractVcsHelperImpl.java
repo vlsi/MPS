@@ -84,8 +84,11 @@ import java.nio.ByteBuffer;
 
 import jetbrains.mps.util.annotation.Patch;
 import jetbrains.mps.util.FileUtil;
+import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.fileTypes.MPSFileTypeFactory;
 import jetbrains.mps.vcs.diff.MPSDiffRequestFactory.ModelMergeRequest;
+import jetbrains.mps.vcs.ApplicationLevelVcsManager;
+import jetbrains.mps.vfs.VFileSystem;
 
 /**
  * This class was patched by MPS in order to add backup of conflicted filas before conflict resolving.
@@ -572,11 +575,25 @@ public class AbstractVcsHelperImpl extends AbstractVcsHelper {
         return provider.isBinary(file);
       }
     };
+
+    // recheck files status
+    List<VirtualFile> toMerge = new ArrayList<VirtualFile>();
+    List<VirtualFile> alreadyResolved = new ArrayList<VirtualFile>();
+    for (VirtualFile f : files) {
+      if (ApplicationLevelVcsManager.instance().isInConflict(VFileSystem.toIFile(f), true)) {
+        toMerge.add(f);
+      } else {
+        alreadyResolved.add(f);
+      }
+    }
+    if (toMerge.isEmpty()) {
+      return alreadyResolved;
+    }
     // on the next line originally provider were passed instead of provider decorator
-    final MultipleFileMergeDialog fileMergeDialog = new MultipleFileMergeDialog(myProject, files, providerDecorator);
+    final MultipleFileMergeDialog fileMergeDialog = new MultipleFileMergeDialog(myProject, toMerge, providerDecorator);
     // MPS Patch End
     fileMergeDialog.show();
-    return fileMergeDialog.getProcessedFiles();
+    return CollectionUtil.union(fileMergeDialog.getProcessedFiles(), alreadyResolved);
   }
 
   // MPS Patch Start: several new helper methods for our new showMergeDialog

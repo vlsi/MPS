@@ -153,6 +153,7 @@ public class ModelChangesWatcher implements ApplicationComponent {
     myConnection = myBus.connect();
     myConnection.subscribe(VirtualFileManager.VFS_CHANGES, myBusListener);
     myVirtualFileManager.addVirtualFileManagerListener(myVirtualFileManagerListener);
+    myProjectManager.addProjectManagerListener(myProjectManagerListener);
   }
 
   public void disposeComponent() {
@@ -160,6 +161,7 @@ public class ModelChangesWatcher implements ApplicationComponent {
 
     myConnection.disconnect();
     myVirtualFileManager.removeVirtualFileManagerListener(myVirtualFileManagerListener);
+    myProjectManager.removeProjectManagerListener(myProjectManagerListener);
   }
 
   private void doReload() {
