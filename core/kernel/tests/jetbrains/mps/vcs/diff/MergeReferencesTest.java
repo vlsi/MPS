@@ -53,4 +53,12 @@ public class MergeReferencesTest extends MergeTestCase {
   public void testNonConflictExternalReferencesChange3() throws IOException, ReadException {
     testZip("resources/nonConflictExternalRef2.mps.zip", false);
   }
+
+  public void testConflictedAndNotConflictedReferencesWright() throws IOException, ReadException {
+    testZip("resources/conflictedAndNotConflictedReferencesWright.mps.zip", false);
+  }
+
+  public void testConflictedAndNotConflictedReferences() throws IOException, ReadException {
+    testZip("resources/conflictedAndNotConflictedReferences.mps.zip", false);
+  }
 }
