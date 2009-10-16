@@ -64,7 +64,7 @@ public class subtypesOfClassifierTypeWWildcards_InequationReplacementRule extend
                             }
                           }
                         }
-                      }, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1220523357880", false, false);
+                      }, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1220523357880", false, true);
                     }
                   }
                 }
@@ -78,7 +78,6 @@ public class subtypesOfClassifierTypeWWildcards_InequationReplacementRule extend
                 methodCall = SNodeOperations.cast(nodeWithError, "jetbrains.mps.baseLanguage.structure.IMethodCall");
               }
               if (methodCall != null) {
-                SNode classifier = SNodeOperations.getAncestor(SLinkOperations.getTarget(methodCall, "baseMethodDeclaration", false), "jetbrains.mps.baseLanguage.structure.Classifier", false, false);
                 {
                   BaseIntentionProvider intentionProvider = null;
                   IErrorTarget errorTarget = new NodeErrorTarget();
@@ -141,7 +140,6 @@ public class subtypesOfClassifierTypeWWildcards_InequationReplacementRule extend
             methodCall = SNodeOperations.cast(nodeWithError, "jetbrains.mps.baseLanguage.structure.IMethodCall");
           }
           if (methodCall != null) {
-            SNode classifier = SNodeOperations.getAncestor(SLinkOperations.getTarget(methodCall, "baseMethodDeclaration", false), "jetbrains.mps.baseLanguage.structure.Classifier", false, false);
             result_14532009 = false;
           } else {
             result_14532009 = false;
