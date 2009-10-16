@@ -55,6 +55,7 @@ import com.intellij.openapi.vcs.versionBrowser.ChangesBrowserSettingsEditor;
 import com.intellij.openapi.vcs.versionBrowser.CommittedChangeList;
 import com.intellij.openapi.vfs.LocalFileSystem;
 import com.intellij.openapi.vfs.VirtualFile;
+import com.intellij.openapi.vfs.VirtualFileSystem;
 import com.intellij.openapi.wm.ToolWindow;
 import com.intellij.openapi.wm.ToolWindowId;
 import com.intellij.openapi.wm.ToolWindowManager;
@@ -65,6 +66,7 @@ import com.intellij.ui.content.ContentManager;
 import com.intellij.ui.content.MessageView;
 import com.intellij.util.Consumer;
 import com.intellij.util.ContentsUtil;
+import com.intellij.util.io.ZipUtil;
 import com.intellij.util.ui.ConfirmationDialog;
 import com.intellij.util.ui.ErrorTreeView;
 import com.intellij.util.ui.MessageCategory;
@@ -77,6 +79,7 @@ import java.io.*;
 import java.text.MessageFormat;
 import java.util.*;
 import java.util.List;
+import java.util.zip.ZipOutputStream;
 import java.nio.ByteBuffer;
 
 import jetbrains.mps.util.annotation.Patch;
@@ -92,6 +95,7 @@ public class AbstractVcsHelperImpl extends AbstractVcsHelper {
   private static final Logger LOG = Logger.getInstance("#com.intellij.openapi.vcs.impl.AbstractVcsHelperImpl");
 
   private final Project myProject;
+  private File myBackup;
 
   public AbstractVcsHelperImpl(Project project) {
     myProject = project;
@@ -541,7 +545,7 @@ public class AbstractVcsHelperImpl extends AbstractVcsHelper {
           DiffRequestFactory diffRequestFactory = DiffRequestFactory.getInstance();
           MergeRequest request = diffRequestFactory.createMergeRequest(leftText, rightText, originalText, file, myProject, ActionButtonPresentation.createApplyButton());
           try {
-            zipModel(mergeData, request.getContents(), file);
+            myBackup = zipModel(mergeData, request.getContents(), file);
           } catch (IOException e) {
             LOG.error(e);
           }
@@ -551,6 +555,17 @@ public class AbstractVcsHelperImpl extends AbstractVcsHelper {
 
       public void conflictResolvedForFile(VirtualFile file) {
         provider.conflictResolvedForFile(file);
+        if (myBackup.exists()) {
+          try {
+            File tmp = FileUtil.createTmpDir();
+            ZipUtil.extract(myBackup, tmp, null);
+            FileUtil.copyFile(new File(file.getPath()), new File(tmp + File.separator + file.getName() + ".result"));
+            FileUtil.zip(tmp, myBackup);
+            FileUtil.delete(tmp);
+          } catch (IOException e) {
+            LOG.error(e);
+          }
+        }
       }
 
       public boolean isBinary(VirtualFile file) {
@@ -566,15 +581,18 @@ public class AbstractVcsHelperImpl extends AbstractVcsHelper {
 
   // MPS Patch Start: several new helper methods for our new showMergeDialog
   @Patch
-  public static void zipModel(MergeData request, DiffContent[] contents, VirtualFile file) throws IOException {
+  public static File zipModel(MergeData request, DiffContent[] contents, VirtualFile file) throws IOException {
     File tmp = FileUtil.createTmpDir();
     writeContentsToFile(contents[ModelMergeRequest.ORIGINAL], file, tmp, "base");
     writeContentsToFile(contents[ModelMergeRequest.CURRENT], file, tmp, "mine");
     writeContentsToFile(contents[ModelMergeRequest.LAST_REVISION], file, tmp, "repository");
     writeMetaInformation(request, file, tmp);
-    FileUtil.zip(tmp, getZipFile(file));
+    File zipfile = getZipFile(file);
+    FileUtil.zip(tmp, zipfile);
 
     FileUtil.delete(tmp);
+
+    return zipfile;
   }
 
   @Patch
@@ -591,7 +609,7 @@ public class AbstractVcsHelperImpl extends AbstractVcsHelper {
   private static void writeMetaInformation(MergeData mergeData, VirtualFile file, File tmpDir) throws IOException {
     File baseFile = new File(tmpDir.getAbsolutePath() + File.separator + "info.txt");
     baseFile.createNewFile();
-    PrintWriter stream =  new PrintWriter(new FileOutputStream(baseFile));
+    PrintWriter stream = new PrintWriter(new FileOutputStream(baseFile));
     stream.print("File: ");
     stream.println(file.getPath());
     stream.print("Date: ");
