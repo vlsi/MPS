@@ -17,6 +17,7 @@ package jetbrains.mps.vcs.diff;
 
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.SModel.ImportElement;
+import jetbrains.mps.util.CollectionUtil;
 
 import java.util.*;
 
@@ -130,16 +131,26 @@ public class ModelAssert {
     roles.addAll(actualNode.getChildRoles());
 
     for (String role : roles) {
-      SNode expectedChild = expectedNode.getChild(role);
-      SNode actualChild = actualNode.getChild(role);
+      List<SNode> expectedChildren = expectedNode.getChildren(role);
+      List<SNode> actualChildren = actualNode.getChildren(role);
 
-      if (expectedChild == null) {
-        assertNull(getErrorString("child", expectedNode, actualNode), actualChild);
-        continue;
+      assertEquals(getErrorString("child count", expectedNode, actualNode), expectedChildren.size(), actualChildren.size());
+
+      for (SNode expectedChild : expectedChildren) {
+        boolean wasFound = false;
+        for (SNode actualChild : actualChildren) {
+          if (actualChild.getSNodeId().equals(expectedChild.getSNodeId())) {
+            wasFound = true;
+            assertDeepNodeEquals(expectedChild, actualChild);
+            break;
+          }
+        }
+        if (!wasFound) {
+          fail(getErrorString("children", expectedNode, actualNode) + " Expected  child " + expectedChild  + " was not found." +
+            "Expected children are " + expectedChildren + "\n" +
+            "Actual children are " + actualChildren + "\n");
+        }
       }
-      assertNotNull(getErrorString("child", expectedNode, actualNode), actualChild);
-
-      assertDeepNodeEquals(expectedChild, actualChild);
     }
   }
 
@@ -180,7 +191,7 @@ public class ModelAssert {
 
   private static Map<String, Set<SReference>> createRoleToReferenceMap(SNode expectedNode) {
     Map<String, Set<SReference>> expRoleToReferenceMap = new HashMap<String, Set<SReference>>();
-    for (SReference ref : expectedNode.getReferences()){
+    for (SReference ref : expectedNode.getReferences()) {
       if (expRoleToReferenceMap.get(ref.getRole()) == null) {
         expRoleToReferenceMap.put(ref.getRole(), new HashSet<SReference>());
       }
