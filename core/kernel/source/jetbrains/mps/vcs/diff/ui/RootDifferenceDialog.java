@@ -37,12 +37,12 @@ import javax.swing.border.EmptyBorder;
 import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
 import java.awt.*;
-import java.awt.event.MouseAdapter;
-import java.awt.event.MouseEvent;
-import java.awt.event.WindowAdapter;
-import java.awt.event.WindowEvent;
+import java.awt.event.*;
 import java.util.ArrayList;
 import java.util.List;
+
+import com.intellij.ui.FocusTrackback;
+import com.intellij.openapi.wm.FocusWatcher;
 
 public class RootDifferenceDialog extends BaseDialog implements EditorMessageOwner {
   private JSplitPane myContainer;
@@ -52,6 +52,9 @@ public class RootDifferenceDialog extends BaseDialog implements EditorMessageOwn
   private DiffEditorComponent myOldEditorComponent;
   private JPanel myTopPanel;
   private JPanel myBottomPanel;
+  private FocusTrackback myFocusTrackback;
+  private FocusWatcher myFocusWatcher;
+
   private CellSelectionListener myCellSelectionListener = new CellSelectionListener() {
     public void selectionChanged(EditorComponent editor, EditorCell oldSelection, final EditorCell newSelection) {
       ModelAccess.instance().runReadAction(new Runnable() {
@@ -86,6 +89,22 @@ public class RootDifferenceDialog extends BaseDialog implements EditorMessageOwn
         myOldEditorComponent.dispose();
       }
     });
+    myFocusTrackback = new FocusTrackback(this, parent, false);
+    WindowAdapter focusListener = new WindowAdapter() {
+      public void windowOpened(WindowEvent e) {
+        if (myContainer != null) {
+          myContainer.requestFocusInWindow();
+          myFocusTrackback.registerFocusComponent(myContainer);
+        }
+      }
+    };
+    addWindowListener(focusListener);
+    myFocusWatcher = new FocusWatcher() {
+      protected void focusLostImpl(final FocusEvent e) {
+        myFocusTrackback.consume();
+      }
+    };
+    myFocusWatcher.install(myContainer);
   }
 
   public Dimension getPreferredSize() {
@@ -234,5 +253,12 @@ public class RootDifferenceDialog extends BaseDialog implements EditorMessageOwn
 
     }
 
+  }
+
+  @Override
+  public void dispose() {
+    myFocusTrackback.restoreFocus();
+    myFocusWatcher.deinstall(myContainer);
+    super.dispose();
   }
 }
