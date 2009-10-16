@@ -6,25 +6,41 @@ import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
+import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 
-public class CommentLine_Editor extends DefaultNodeEditor {
+public class ReturnBlockDocTag_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createProperty_0937_0(editorContext, node);
+    return this.createCollection_8877_0(editorContext, node);
   }
 
-  private EditorCell createProperty_0937_0(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_8877_0(EditorContext editorContext, SNode node) {
+    EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
+    editorCell.setCellId("Collection_8877_0");
+    editorCell.addEditorCell(this.createConstant_8877_0(editorContext, node));
+    editorCell.addEditorCell(this.createProperty_8877_0(editorContext, node));
+    return editorCell;
+  }
+
+  private EditorCell createConstant_8877_0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "@return");
+    editorCell.setCellId("Constant_8877_0");
+    DocumentationCommentStyleSheet_StyleSheet.getCommentTag(editorCell).apply(editorCell);
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+
+  private EditorCell createProperty_8877_0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
-    provider.setRole("line");
-    provider.setNoTargetText("");
-    provider.setAllowsEmptyTarget(true);
+    provider.setRole("text");
+    provider.setNoTargetText("<no text>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setCellId("property_line");
-    editorCell.addKeyMap(new CommentLine_KeyMap());
+    editorCell.setCellId("property_text");
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();

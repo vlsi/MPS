@@ -7,6 +7,7 @@ public class ABC {
   public ABC() {
   }
 
-  public void foo(int a, boolean b) {
+  public int foo(int a) {
+    return a = 5;
   }
 }

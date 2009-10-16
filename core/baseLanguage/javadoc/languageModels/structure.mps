@@ -42,6 +42,16 @@
         </entry>
       </conceptFeatureMap>
     </refactoringContext>
+    <refactoringContext modelVersion="4">
+      <refactoring refactoringClass="jetbrains.mps.lang.structure.refactorings.RenameLink" />
+      <moveMap />
+      <conceptFeatureMap>
+        <entry>
+          <key featureName="exceptionClass" conceptFQName="jetbrains.mps.baseLanguage.javadoc.structure.ThrowsBlockDocTag" featureKind="REFERENCE" />
+          <value featureName="exceptionType" conceptFQName="jetbrains.mps.baseLanguage.javadoc.structure.ThrowsBlockDocTag" featureKind="REFERENCE" />
+        </entry>
+      </conceptFeatureMap>
+    </refactoringContext>
   </refactoringHistory>
   <language namespace="c72da2b9-7cce-4447-8389-f407dc1158b7(jetbrains.mps.lang.structure)" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" />
@@ -65,10 +75,10 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)" version="83" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590585(jetbrains.mps.xml.constraints)" version="6" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590588(jetbrains.mps.xml.structure)" version="0" />
-  <languageAspect modelUID="r:4095af4f-a097-4799-aaa9-03df087ddfa6(jetbrains.mps.baseLanguage.javadoc.structure)" version="3" />
+  <languageAspect modelUID="r:4095af4f-a097-4799-aaa9-03df087ddfa6(jetbrains.mps.baseLanguage.javadoc.structure)" version="4" />
   <devkit namespace="2677cb18-f558-4e33-bc38-a5139cee06dc(jetbrains.mps.devkit.language-design)" />
   <maxImportIndex value="1" />
-  <import index="1" modelUID="r:4095af4f-a097-4799-aaa9-03df087ddfa6(jetbrains.mps.baseLanguage.javadoc.structure)" version="3" />
+  <import index="1" modelUID="r:4095af4f-a097-4799-aaa9-03df087ddfa6(jetbrains.mps.baseLanguage.javadoc.structure)" version="4" />
   <visible index="2" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="5349172909345501395">
     <property name="name" value="BaseDocComment" />
@@ -76,7 +86,7 @@
     <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="8465538089690331502">
       <property name="metaClass" value="aggregation" />
       <property name="role" value="body" />
-      <property name="sourceCardinality" value="0..n" />
+      <property name="sourceCardinality" value="1..n" />
       <link role="target" targetNodeId="8465538089690331500" resolveInfo="CommentLine" />
     </node>
     <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="5349172909345532722">
@@ -142,6 +152,17 @@
       <property name="sourceCardinality" value="0..n" />
       <link role="target" targetNodeId="8465538089690881930" resolveInfo="ParameterBlockDocTag" />
     </node>
+    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="5858074156537516428">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="throwsTag" />
+      <property name="sourceCardinality" value="0..n" />
+      <link role="target" targetNodeId="5858074156537397872" resolveInfo="ThrowsBlockDocTag" />
+    </node>
+    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="5858074156537516440">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="return" />
+      <link role="target" targetNodeId="5858074156537516430" resolveInfo="ReturnBlockDocTag" />
+    </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="8465538089690324384">
     <property name="name" value="VersionBlockDocTag" />
@@ -183,6 +204,28 @@
       <property name="role" value="parameter" />
       <property name="sourceCardinality" value="1" />
       <link role="target" targetNodeId="3v.1068498886292" resolveInfo="ParameterDeclaration" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="5858074156537397872">
+    <property name="name" value="ThrowsBlockDocTag" />
+    <link role="extends" targetNodeId="5349172909345530173" resolveInfo="BaseBlockDocTag" />
+    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="5858074156538158151">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="exceptionType" />
+      <property name="sourceCardinality" value="1" />
+      <link role="target" targetNodeId="3v.1068431790189" resolveInfo="Type" />
+    </node>
+    <node role="propertyDeclaration" type="jetbrains.mps.lang.structure.structure.PropertyDeclaration" id="5858074156537397874">
+      <property name="name" value="text" />
+      <link role="dataType" targetNodeId="2v.1082983041843" resolveInfo="string" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="5858074156537516430">
+    <property name="name" value="ReturnBlockDocTag" />
+    <link role="extends" targetNodeId="5349172909345530173" resolveInfo="BaseBlockDocTag" />
+    <node role="propertyDeclaration" type="jetbrains.mps.lang.structure.structure.PropertyDeclaration" id="5858074156537516431">
+      <property name="name" value="text" />
+      <link role="dataType" targetNodeId="2v.1082983041843" resolveInfo="string" />
     </node>
   </node>
 </model>

@@ -11,10 +11,20 @@ import jetbrains.mps.project.GlobalScope;
 
 public class MethodDocComment extends BaseDocComment {
   public static final String concept = "jetbrains.mps.baseLanguage.javadoc.structure.MethodDocComment";
+  public static final String RETURN = "return";
   public static final String PARAM = "param";
+  public static final String THROWS_TAG = "throwsTag";
 
   public MethodDocComment(SNode node) {
     super(node);
+  }
+
+  public ReturnBlockDocTag getReturn() {
+    return (ReturnBlockDocTag)this.getChild(ReturnBlockDocTag.class, MethodDocComment.RETURN);
+  }
+
+  public void setReturn(ReturnBlockDocTag node) {
+    super.setChild(MethodDocComment.RETURN, node);
   }
 
   public int getParamsCount() {
@@ -35,6 +45,26 @@ public class MethodDocComment extends BaseDocComment {
 
   public void insertParam(ParameterBlockDocTag prev, ParameterBlockDocTag node) {
     this.insertChild(prev, MethodDocComment.PARAM, node);
+  }
+
+  public int getThrowsTagsCount() {
+    return this.getChildCount(MethodDocComment.THROWS_TAG);
+  }
+
+  public Iterator<ThrowsBlockDocTag> throwsTags() {
+    return this.children(ThrowsBlockDocTag.class, MethodDocComment.THROWS_TAG);
+  }
+
+  public List<ThrowsBlockDocTag> getThrowsTags() {
+    return this.getChildren(ThrowsBlockDocTag.class, MethodDocComment.THROWS_TAG);
+  }
+
+  public void addThrowsTag(ThrowsBlockDocTag node) {
+    this.addChild(MethodDocComment.THROWS_TAG, node);
+  }
+
+  public void insertThrowsTag(ThrowsBlockDocTag prev, ThrowsBlockDocTag node) {
+    this.insertChild(prev, MethodDocComment.THROWS_TAG, node);
   }
 
   public static MethodDocComment newInstance(SModel sm, boolean init) {

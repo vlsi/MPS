@@ -9,6 +9,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.AttributesRolesUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class AddMethodDocComment_Intention extends BaseIntention {
   public AddMethodDocComment_Intention() {
@@ -47,10 +48,25 @@ public class AddMethodDocComment_Intention extends BaseIntention {
 
   public void execute(final SNode node, final EditorContext editorContext) {
     SLinkOperations.setTarget(node, AttributesRolesUtil.childRoleFromAttributeRole("methodDocComment"), SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.javadoc.structure.MethodDocComment", null), true);
+    //  Method parameters
     for (SNode parameterDeclaration : ListSequence.fromList(SLinkOperations.getTargets(node, "parameter", true))) {
       SNode paramTag = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.javadoc.structure.ParameterBlockDocTag", null);
       SLinkOperations.setTarget(paramTag, "parameter", parameterDeclaration, false);
       SLinkOperations.addChild(SLinkOperations.getTarget(node, AttributesRolesUtil.childRoleFromAttributeRole("methodDocComment"), true), "param", paramTag);
+    }
+
+    //  Type variables - TODO
+
+    //  Thrown exceptions
+    for (SNode throwsItem : ListSequence.fromList(SLinkOperations.getTargets(node, "throwsItem", true))) {
+      SNode throwsTag = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.javadoc.structure.ThrowsBlockDocTag", null);
+      SLinkOperations.setTarget(throwsTag, "exceptionType", throwsItem, true);
+      SLinkOperations.addChild(SLinkOperations.getTarget(node, AttributesRolesUtil.childRoleFromAttributeRole("methodDocComment"), true), "throwsTag", throwsTag);
+    }
+
+    //  Return value
+    if (!(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(node, "returnType", true), "jetbrains.mps.baseLanguage.structure.VoidType"))) {
+      SLinkOperations.setTarget(SLinkOperations.getTarget(node, AttributesRolesUtil.childRoleFromAttributeRole("methodDocComment"), true), "return", SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.javadoc.structure.ReturnBlockDocTag", null), true);
     }
   }
 
