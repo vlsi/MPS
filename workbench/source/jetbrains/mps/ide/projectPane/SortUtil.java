@@ -64,4 +64,15 @@ public class SortUtil {
     Collections.sort(sortedNodes, new ToStringComparator());
     return sortedNodes;
   }
+
+  public static List<SNode> sortNodesByPresentation(List<SNode> nodes) {
+    List<SNode> sortedNodes = new ArrayList<SNode>(nodes);
+    Collections.sort(sortedNodes, new Comparator<SNode>() {
+      public int compare(SNode o1, SNode o2) {
+        if (o1 == null || o2 == null) return 0;
+        return o1.getPresentation().compareTo(o2.getPresentation());
+      }
+    });
+    return sortedNodes;
+  }
 }

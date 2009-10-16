@@ -434,7 +434,7 @@ public class SModelTreeNode extends MPSTreeNodeEx {
         }
       };
       List<SNode> filteredRoots = CollectionUtil.filter(model.getRoots(), new AndCondition<SNode>(condition, myNodesCondition));
-      List<SNode> sortedRoots = SortUtil.sortNodes(filteredRoots);
+      List<SNode> sortedRoots = SortUtil.sortNodesByPresentation(filteredRoots);
       for (SNode sortedRoot : sortedRoots) {
         MPSTreeNodeEx treeNode = createSNodeTreeNode(sortedRoot, getOperationContext(), myNodesCondition);
         MPSTreeNode group = getNodeGroupFor(sortedRoot);
