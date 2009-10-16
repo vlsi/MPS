@@ -92,8 +92,7 @@ public abstract class DefaultScope extends BaseScope {
   protected abstract Set<IModule> getInitialModules();
 
   protected Set<Language> getInitialUsedLanguages() {
-    Set<Language> result = CollectionUtil.filter(Language.class, getInitialModules());
-    return result;
+    return CollectionUtil.filter(Language.class, getInitialModules());
   }
 
   public void invalidateCaches() {
@@ -108,7 +107,7 @@ public abstract class DefaultScope extends BaseScope {
   }
 
   private void initialize() {
-    if (myInitialized) return;
+    if (myInitialized) return;                        
     if (myInitializationInProgress) return;
 
     myInitializationInProgress = true;

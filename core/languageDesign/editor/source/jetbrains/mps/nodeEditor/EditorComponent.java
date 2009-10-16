@@ -2740,15 +2740,19 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     private ReferenceUnderliner() {
       addKeyListener(new KeyAdapter() {
         public void keyPressed(KeyEvent e) {
-          if (e.getKeyCode() == KeyEvent.VK_CONTROL) {
+          if (e.getKeyCode() == getKeyCode()) {
             setControlOver();
           }
         }
 
         public void keyReleased(KeyEvent e) {
-          if (e.getKeyCode() == KeyEvent.VK_CONTROL) {
+          if (e.getKeyCode() == getKeyCode()) {
             clearControlOver();
           }
+        }
+
+        private int getKeyCode() {
+          return SystemInfo.isMac ? KeyEvent.VK_META : KeyEvent.VK_CONTROL;
         }
       });
       addMouseMotionListener(new MouseMotionListener() {
@@ -2759,7 +2763,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
           if (!myEditorContext.getNodeEditorComponent().isFocusOwner()) return;
 
           clearControlOver();
-          if (!e.isControlDown()) {
+          if (!(SystemInfo.isMac ? e.isMetaDown() : e.isControlDown())) {
             myLastReferenceCell = null;
             return;
           }
