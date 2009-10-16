@@ -4,9 +4,7 @@ package jetbrains.mps.build.custommps.behavior;
 
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.build.packaging.behavior.AbstractProjectComponent_Behavior;
-
 import java.util.List;
-
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.backports.LinkedList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
@@ -16,19 +14,13 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.project.ModuleId;
-
 import java.util.ArrayList;
 import java.io.File;
-
 import jetbrains.mps.util.PathManager;
 import jetbrains.mps.project.IModule;
-
 import java.util.Set;
-
 import jetbrains.mps.internal.collections.runtime.SetSequence;
-
 import java.util.HashSet;
-
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.build.packaging.behavior.Module_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
@@ -79,7 +71,7 @@ public class MPSBuild_Behavior {
     Set<IModule> modulesInClasspath = SetSequence.fromSet(new HashSet<IModule>());
     for (IModule module : ListSequence.fromList(modulesList)) {
       if (module instanceof Language) {
-        Language language = (Language) module;
+        Language language = (Language)module;
         SetSequence.fromSet(modulesInClasspath).addElement(language);
         SetSequence.fromSet(modulesInClasspath).addSequence(ListSequence.fromList(language.getRuntimeDependOnModules()));
       }
@@ -90,7 +82,7 @@ public class MPSBuild_Behavior {
       SPropertyOperations.set(path, "path", prefix + "/" + moduleProperName + "." + AbstractModule.PACKAGE_SUFFIX);
       ListSequence.fromList(paths).addElement(path);
       if (module instanceof Language) {
-        Language language = (Language) module;
+        Language language = (Language)module;
         List<String> runtimeCP = language.getLanguageRuntimeClassPathItems();
         ListSequence.fromList(runtimeCP).removeSequence(ListSequence.fromList(language.getClassPath()));
         if (!(ListSequence.fromList(runtimeCP).isEmpty())) {
