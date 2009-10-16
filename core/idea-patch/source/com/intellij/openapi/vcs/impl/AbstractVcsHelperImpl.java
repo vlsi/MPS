@@ -73,10 +73,7 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 import java.awt.*;
-import java.io.File;
-import java.io.IOException;
-import java.io.OutputStream;
-import java.io.FileOutputStream;
+import java.io.*;
 import java.text.MessageFormat;
 import java.util.*;
 import java.util.List;
@@ -544,7 +541,7 @@ public class AbstractVcsHelperImpl extends AbstractVcsHelper {
           DiffRequestFactory diffRequestFactory = DiffRequestFactory.getInstance();
           MergeRequest request = diffRequestFactory.createMergeRequest(leftText, rightText, originalText, file, myProject, ActionButtonPresentation.createApplyButton());
           try {
-            zipModel(request.getContents(), file);
+            zipModel(mergeData, request.getContents(), file);
           } catch (IOException e) {
             LOG.error(e);
           }
@@ -569,11 +566,12 @@ public class AbstractVcsHelperImpl extends AbstractVcsHelper {
 
   // MPS Patch Start: several new helper methods for our new showMergeDialog
   @Patch
-  public static void zipModel(DiffContent[] contents, VirtualFile file) throws IOException {
+  public static void zipModel(MergeData request, DiffContent[] contents, VirtualFile file) throws IOException {
     File tmp = FileUtil.createTmpDir();
     writeContentsToFile(contents[ModelMergeRequest.ORIGINAL], file, tmp, "base");
     writeContentsToFile(contents[ModelMergeRequest.CURRENT], file, tmp, "mine");
     writeContentsToFile(contents[ModelMergeRequest.LAST_REVISION], file, tmp, "repository");
+    writeMetaInformation(request, file, tmp);
     FileUtil.zip(tmp, getZipFile(file));
 
     FileUtil.delete(tmp);
@@ -590,12 +588,26 @@ public class AbstractVcsHelperImpl extends AbstractVcsHelper {
     return zipfile;
   }
 
+  private static void writeMetaInformation(MergeData mergeData, VirtualFile file, File tmpDir) throws IOException {
+    File baseFile = new File(tmpDir.getAbsolutePath() + File.separator + "info.txt");
+    baseFile.createNewFile();
+    PrintWriter stream =  new PrintWriter(new FileOutputStream(baseFile));
+    stream.print("File: ");
+    stream.println(file.getPath());
+    stream.print("Date: ");
+    stream.println(Calendar.getInstance().getTime());
+    stream.print("Last Revision: ");
+    stream.println(mergeData.LAST_REVISION_NUMBER);
+    stream.close();
+  }
+
   @Patch
   private static void writeContentsToFile(DiffContent contents, VirtualFile file, File tmpDir, String suffix) throws IOException {
     File baseFile = new File(tmpDir.getAbsolutePath() + File.separator + file.getName() + "." + suffix);
     baseFile.createNewFile();
     OutputStream stream = new FileOutputStream(baseFile);
     stream.write(contents.getBytes());
+    stream.close();
   }
 
   @Patch
