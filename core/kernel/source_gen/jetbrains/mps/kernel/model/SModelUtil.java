@@ -207,32 +207,4 @@ public class SModelUtil {
   public static SNode getGenuineLinkSourceCardinality(SNode linkDecl) {
     return SEnumOperations.enumMemberForValue(SEnumOperations.getEnum("r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)", "Cardinality"), SPropertyOperations.getString_def(getGenuineLinkDeclaration(linkDecl), "sourceCardinality", "0..1"));
   }
-
-  public static List<SModelDescriptor> getSubfolderModels(SModelDescriptor model) {
-    List<SModelDescriptor> result = new ArrayList<SModelDescriptor>();
-    List<SModelDescriptor> candidates = model.getModule().getOwnModelDescriptors();
-    String modelName = model.getLongName();
-    if (modelName == null) return result;
-    for (SModelDescriptor candidate : candidates) {
-      String candidateName = candidate.getLongName();
-      if (candidateName == null || !candidateName.startsWith(modelName) || modelName.equals(candidateName)) continue;
-      if (candidateName.charAt(modelName.length()) == '.') {
-        boolean modelIsStub = model.getStereotype().equals(SModelStereotype.JAVA_STUB);
-        boolean candidateIsStub = candidate.getStereotype().equals(SModelStereotype.JAVA_STUB);
-        if (modelIsStub != candidateIsStub) continue;
-        String shortName = candidateName.replace(modelName + ".", "");
-        if (shortName.contains(".")) {
-          String maxPackage = candidateName.substring(0, candidateName.lastIndexOf('.'));
-          SModelDescriptor md = SModelRepository.getInstance().getModelDescriptor(SModelReference.fromString(maxPackage));
-          if (md != null) {
-            if (md.getModule().getOwnModelDescriptors().contains(model)) {
-              continue;
-            }
-          }
-        }
-        result.add(candidate);
-      }
-    }
-    return result;
-  }
 }

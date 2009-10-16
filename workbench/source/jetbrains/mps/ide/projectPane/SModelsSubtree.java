@@ -52,17 +52,17 @@ public class SModelsSubtree {
 
 
     SModelNamespaceTreeBuilder builder = new SModelNamespaceTreeBuilder();
-    List<SModelDescriptor> regularModelsToInsert = removeSubModels(SortUtil.sortModels(regularModels));
-    for (SModelDescriptor md : regularModelsToInsert) {
-      builder.addNode(new SModelTreeNode(md, null, operationContext, false));
+    List<SModelTreeNode> regularModelNodes = getModelTreeNodes(regularModels, operationContext);
+    for (SModelTreeNode treeNode : regularModelNodes) {
+      builder.addNode(treeNode);
     }
     builder.fillNode(rootTreeNode);
 
     if (!javaStubs.isEmpty()) {
       builder = new SModelNamespaceTreeBuilder();
-      List<SModelDescriptor> javaStubsToInsert = removeSubModels(SortUtil.sortModels(javaStubs));
-      for (SModelDescriptor md : javaStubsToInsert) {
-        builder.addNode(new SModelTreeNode(md, null, operationContext, false));
+      List<SModelTreeNode> javaStubNodes = getModelTreeNodes(javaStubs, operationContext);
+      for (SModelTreeNode treeNode : javaStubNodes) {
+        builder.addNode(treeNode);
       }
 
       JavaStubsTreeNode javaStubsNode = new JavaStubsTreeNode(operationContext);
@@ -72,12 +72,19 @@ public class SModelsSubtree {
     }
   }
 
-  private static List<SModelDescriptor> removeSubModels(List<SModelDescriptor> models) {
-    List<SModelDescriptor> result = new ArrayList<SModelDescriptor>();
-    result.addAll(models);
-    for (SModelDescriptor currentDescriptor : models) {
-      List<SModelDescriptor> subfolderModels = SModelUtil.getSubfolderModels(currentDescriptor);
-      result.removeAll(subfolderModels);
+  private static List<SModelTreeNode> getModelTreeNodes(List<SModelDescriptor> models, IOperationContext context) {
+    List<SModelTreeNode> result = new ArrayList<SModelTreeNode>();
+    Map<SModelDescriptor, SModelTreeNode> map = new LinkedHashMap<SModelDescriptor, SModelTreeNode>();
+    for (SModelDescriptor md : SortUtil.sortModels(models)) {
+      SModelTreeNode treeNode = new SModelTreeNode(md, null, context, false);
+      map.put(md, treeNode);
+      result.add(treeNode);
+    }
+    for (SModelTreeNode treeNode : map.values()) {
+      List<SModelDescriptor> subfolderModels = treeNode.getSubfolderModels();
+      for (SModelDescriptor subfolderModel : subfolderModels) {
+        result.remove(map.get(subfolderModel));
+      }
     }
     return result;
   }

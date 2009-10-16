@@ -377,6 +377,34 @@ public class SModelTreeNode extends MPSTreeNodeEx {
     return myInitialized;
   }
 
+  public List<SModelDescriptor> getSubfolderModels() {
+    List<SModelDescriptor> result = new ArrayList<SModelDescriptor>();
+    List<SModelDescriptor> candidates = myModelDescriptor.getModule().getOwnModelDescriptors();
+    String modelName = myModelDescriptor.getLongName();
+    if (modelName == null) return result;
+    for (SModelDescriptor candidate : candidates) {
+      String candidateName = candidate.getLongName();
+      if (candidateName == null || !candidateName.startsWith(modelName) || modelName.equals(candidateName)) continue;
+      if (candidateName.charAt(modelName.length()) == '.') {
+        boolean modelIsStub = myModelDescriptor.getStereotype().equals(SModelStereotype.JAVA_STUB);
+        boolean candidateIsStub = candidate.getStereotype().equals(SModelStereotype.JAVA_STUB);
+        if (modelIsStub != candidateIsStub) continue;
+        String shortName = candidateName.replace(modelName + ".", "");
+        if (shortName.contains(".")) {
+          String maxPackage = candidateName.substring(0, candidateName.lastIndexOf('.'));
+          SModelDescriptor md = SModelRepository.getInstance().getModelDescriptor(SModelReference.fromString(maxPackage));
+          if (md != null) {
+            if (md.getModule().getOwnModelDescriptors().contains(myModelDescriptor)) {
+              continue;
+            }
+          }
+        }
+        result.add(candidate);
+      }
+    }
+    return result;
+  }
+
   protected void doUpdate() {
     myInitialized = false;
     this.removeAllChildren();
@@ -390,7 +418,7 @@ public class SModelTreeNode extends MPSTreeNodeEx {
       myPackageNodes.clear();
       myRootGroups.clear();
 
-      List<SModelDescriptor> subfolderModels = SModelUtil.getSubfolderModels(myModelDescriptor);
+      List<SModelDescriptor> subfolderModels = getSubfolderModels();
       for (SModelDescriptor subfolderModel : subfolderModels) {
         add(new SModelTreeNode(subfolderModel, null, getOperationContext(), false));
       }
