@@ -32,10 +32,6 @@ import java.util.List;
 public interface IEditor {
   JComponent getComponent();
 
-  void rebuildEditorContent();
-
-  void relayout();
-
   void addCellSelectionListener(CellSelectionListener listener);
 
   void removeCellSelectionListener(CellSelectionListener listener);

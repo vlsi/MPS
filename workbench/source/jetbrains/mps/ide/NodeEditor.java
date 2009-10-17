@@ -62,14 +62,6 @@ public class NodeEditor implements IEditor {
     return myComponent;
   }
 
-  public void rebuildEditorContent() {
-    myEditorComponent.rebuildEditorContent();
-  }
-
-  public void relayout() {
-    myEditorComponent.relayout();
-  }
-
   public boolean removeFromRecentEditorsOnClose() {
     return false;
   }

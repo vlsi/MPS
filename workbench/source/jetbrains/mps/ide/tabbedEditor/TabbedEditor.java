@@ -136,17 +136,6 @@ public class TabbedEditor implements IEditor {
     return myTabbedPane;
   }
 
-  public void rebuildEditorContent() {
-    for (EditorComponent c : getEditors()) {
-      c.rebuildEditorContent();
-    }
-  }
-
-  public void relayout() {
-    for (EditorComponent c : getEditors()) {
-      c.relayout();
-    }
-  }
 
   public void addCellSelectionListener(@NotNull CellSelectionListener listener) {
     for (EditorComponent c : getEditors()) {
