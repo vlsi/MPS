@@ -30,8 +30,7 @@ import jetbrains.mps.workbench.MPSDataKeys;
 import javax.swing.JComponent;
 import javax.swing.JPanel;
 import java.awt.BorderLayout;
-import java.awt.event.FocusAdapter;
-import java.awt.event.FocusEvent;
+import java.awt.event.*;
 import java.util.List;
 
 public class NodeEditorComponent extends EditorComponent {
@@ -62,34 +61,42 @@ public class NodeEditorComponent extends EditorComponent {
       }
     });
 
-    addFocusListener(new FocusAdapter() {
-      public void focusGained(FocusEvent e) {
-        if (getSelectedNode() != null) {
-          ModelAccess.instance().runReadAction(new Runnable() {
-            public void run() {
-              SNode selectedNode = getSelectedNode();
-              if (selectedNode != null && selectedNode.getModel().isDisposed()) {
-                return;
-              }
-              inspect(selectedNode);
+    addHierarchyListener(new HierarchyListener() {
+      public void hierarchyChanged(HierarchyEvent hierarchyEvent) {
+        if (HierarchyEvent.SHOWING_CHANGED != (hierarchyEvent.getChangeFlags() & HierarchyEvent.SHOWING_CHANGED))
+          return;
+
+        if (!isShowing()) return;
+
+        ModelAccess.instance().runReadAction(new Runnable() {
+          public void run() {
+            SNode selectedNode = getSelectedNode();
+
+            if (selectedNode == null) {
+              inspect(null);
+              return;
             }
-          });
-        }
+
+            if (selectedNode.getModel().isDisposed()) return;
+
+            inspect(selectedNode);
+          }
+        });
       }
     });
   }
+
 
   public SNode getLastInspectedNode() {
     return myLastInspectedNode;
   }
 
-
   private void inspect(final SNode toSelect) {
     myLastInspectedNode = toSelect;
-    if (toSelect != null && getInspector() != null) {
-      FileEditor fileEditor = (FileEditor) DataManager.getInstance().getDataContext(this).getData(MPSDataKeys.FILE_EDITOR.getName());
-      getInspectorTool().inspect(toSelect, getOperationContext(), fileEditor);
-    }
+    if (getInspector() == null) return;
+
+    FileEditor fileEditor = (FileEditor) DataManager.getInstance().getDataContext(this).getData(MPSDataKeys.FILE_EDITOR.getName());
+    getInspectorTool().inspect(toSelect, getOperationContext(), fileEditor);
   }
 
   protected boolean isValidEditor() {
