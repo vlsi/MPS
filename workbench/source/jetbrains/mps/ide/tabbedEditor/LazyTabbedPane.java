@@ -18,10 +18,13 @@ package jetbrains.mps.ide.tabbedEditor;
 import com.intellij.ide.DataManager;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.wm.ToolWindowManager;
+import com.intellij.openapi.fileEditor.FileEditor;
 import jetbrains.mps.nodeEditor.CellSelectionListener;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.nodeEditor.NodeEditorComponent;
+import jetbrains.mps.nodeEditor.InspectorTool;
 import jetbrains.mps.workbench.MPSDataKeys;
+import jetbrains.mps.smodel.SNode;
 
 import javax.swing.JComponent;
 import javax.swing.JLabel;
@@ -33,6 +36,8 @@ import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.awt.event.HierarchyListener;
+import java.awt.event.HierarchyEvent;
 import java.util.*;
 
 public class LazyTabbedPane extends JPanel {
@@ -106,6 +111,16 @@ public class LazyTabbedPane extends JPanel {
         }
       });
 
+      label.addHierarchyListener(new HierarchyListener() {
+        public void hierarchyChanged(HierarchyEvent hierarchyEvent) {
+          if (HierarchyEvent.SHOWING_CHANGED != (hierarchyEvent.getChangeFlags() & HierarchyEvent.SHOWING_CHANGED)) {
+            return;
+          }
+          if (!isShowing()) return;
+          inspect(null);
+        }
+      });
+
       panel.setBackground(Color.WHITE);
       label.setOpaque(false);
 
@@ -128,5 +143,15 @@ public class LazyTabbedPane extends JPanel {
         }
       }
     }
+  }
+
+  private void inspect(final SNode toSelect) {
+    FileEditor fileEditor = (FileEditor) DataManager.getInstance().getDataContext(this).getData(MPSDataKeys.FILE_EDITOR.getName());
+    getInspectorTool().inspect(toSelect, myTabbedEditor.getOperationContext(), fileEditor);
+  }
+
+  public InspectorTool getInspectorTool() {
+    if (myTabbedEditor.getOperationContext().getProject().isDisposed()) return null;
+    return myTabbedEditor.getOperationContext().getComponent(InspectorTool.class);
   }
 }
