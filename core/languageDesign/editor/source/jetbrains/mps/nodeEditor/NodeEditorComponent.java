@@ -17,6 +17,7 @@ package jetbrains.mps.nodeEditor;
 
 import com.intellij.ide.DataManager;
 import com.intellij.openapi.fileEditor.FileEditor;
+import com.intellij.openapi.wm.ToolWindowManager;
 import jetbrains.mps.ide.IdeMain;
 import jetbrains.mps.ide.IdeMain.TestMode;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
@@ -37,7 +38,7 @@ public class NodeEditorComponent extends EditorComponent {
   private JPanel myExternalComponent;
   private SNode myLastInspectedNode = null;
 
-  public NodeEditorComponent(IOperationContext operationContext) {
+  public NodeEditorComponent(final IOperationContext operationContext) {
     super(operationContext, false);
 
 
@@ -63,25 +64,32 @@ public class NodeEditorComponent extends EditorComponent {
 
     addHierarchyListener(new HierarchyListener() {
       public void hierarchyChanged(HierarchyEvent hierarchyEvent) {
-        if (HierarchyEvent.SHOWING_CHANGED != (hierarchyEvent.getChangeFlags() & HierarchyEvent.SHOWING_CHANGED))
+        if (HierarchyEvent.SHOWING_CHANGED != (hierarchyEvent.getChangeFlags() & HierarchyEvent.SHOWING_CHANGED)){
           return;
-
+        }
         if (!isShowing()) return;
 
-        ModelAccess.instance().runReadAction(new Runnable() {
-          public void run() {
-            SNode selectedNode = getSelectedNode();
+        ToolWindowManager toolWindowManager = ToolWindowManager.getInstance(operationContext.getProject());
+        toolWindowManager.getFocusManager().requestFocus(NodeEditorComponent.this,false);
+        
+        adjustInspector();
+      }
+    });
+  }
 
-            if (selectedNode == null) {
-              inspect(null);
-              return;
-            }
+  private void adjustInspector() {
+    ModelAccess.instance().runReadAction(new Runnable() {
+      public void run() {
+        SNode selectedNode = getSelectedNode();
 
-            if (selectedNode.getModel().isDisposed()) return;
+        if (selectedNode == null) {
+          inspect(null);
+          return;
+        }
 
-            inspect(selectedNode);
-          }
-        });
+        if (selectedNode.getModel().isDisposed()) return;
+
+        inspect(selectedNode);
       }
     });
   }
