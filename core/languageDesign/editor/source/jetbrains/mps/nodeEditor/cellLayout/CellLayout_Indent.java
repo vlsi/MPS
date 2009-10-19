@@ -22,9 +22,8 @@ import jetbrains.mps.nodeEditor.text.TextBuilder;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.EditorSettings;
 
+import java.util.*;
 import java.util.List;
-import java.util.ArrayList;
-import java.util.Iterator;
 import java.awt.*;
 
 public class CellLayout_Indent extends AbstractCellLayout {
@@ -91,12 +90,23 @@ public class CellLayout_Indent extends AbstractCellLayout {
   }
 
   public TextBuilder doLayoutText(Iterable<EditorCell> editorCells) {
+    Set<EditorCell> editorCellsSet = new HashSet<EditorCell>();
+    for (EditorCell editorCell: editorCells) {
+      editorCellsSet.add(editorCell);
+    }
     TextBuilder result = TextBuilder.getEmptyTextBuilder();
     Iterator<EditorCell> iterator = editorCells.iterator();
     if (iterator.hasNext()) {
       boolean newLineAfter = false;
       EditorCell_Collection rootCell = iterator.next().getParent();
       for (EditorCell current : getIndentLeafs(rootCell)) {
+        EditorCell childCell = current;
+        while (childCell.getParent() != rootCell) {
+          childCell = childCell.getParent();
+        }
+        if (!editorCellsSet.contains(childCell)) {
+          continue;
+        }
         if (isOnNewLine(rootCell, current) || newLineAfter) {
           newLineAfter = false;
           result = result.appendToTheRight(TextBuilder.fromString("\n"));
