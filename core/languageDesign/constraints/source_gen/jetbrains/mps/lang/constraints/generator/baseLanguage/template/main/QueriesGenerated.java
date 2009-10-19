@@ -46,7 +46,7 @@ public class QueriesGenerated {
   }
 
   public static boolean baseMappingRule_Condition_1187043358729(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
-    return SLinkOperations.getTarget(_context.getNode(), "searchScopeFactory", true) != null;
+    return (SLinkOperations.getTarget(_context.getNode(), "searchScopeFactory", true) != null) || (SLinkOperations.getTarget(_context.getNode(), "presentation", true) != null);
   }
 
   public static boolean baseMappingRule_Condition_1212104879930(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
@@ -243,6 +243,10 @@ public class QueriesGenerated {
 
   public static boolean ifMacro_Condition_3906442776579908117(final IOperationContext operationContext, final IfMacroContext _context) {
     return (SLinkOperations.getTarget(_context.getNode(), "presentation", true) != null);
+  }
+
+  public static boolean ifMacro_Condition_8196338484606509724(final IOperationContext operationContext, final IfMacroContext _context) {
+    return (SLinkOperations.getTarget(_context.getNode(), "searchScopeFactory", true) != null);
   }
 
   public static SNode sourceNodeQuery_1184609310103(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {

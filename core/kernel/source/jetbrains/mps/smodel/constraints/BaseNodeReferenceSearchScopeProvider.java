@@ -21,12 +21,15 @@ import jetbrains.mps.smodel.presentation.NodePresentationUtil;
 import jetbrains.mps.smodel.search.EmptySearchScope;
 import jetbrains.mps.smodel.search.ISearchScope;
 import jetbrains.mps.smodel.search.SimpleSearchScope;
+import jetbrains.mps.smodel.search.UndefinedSearchScope;
 import jetbrains.mps.util.CollectionUtil;
 
 import java.util.List;
 
 public abstract class BaseNodeReferenceSearchScopeProvider implements INodeReferentSearchScopeProvider {
-  public abstract Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferentConstraintContext _context);
+  public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferentConstraintContext _context) {
+    return new UndefinedSearchScope();
+  }
 
   public ISearchScope createNodeReferentSearchScope(IOperationContext operationContext, ReferentConstraintContext _context) {
     Object searchScopeOrListOfNodes = this.createSearchScopeOrListOfNodes(operationContext, _context);

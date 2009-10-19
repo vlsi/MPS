@@ -23,6 +23,7 @@ import jetbrains.mps.smodel.constraints.SearchScopeStatus.OK;
 import jetbrains.mps.smodel.search.EmptySearchScope;
 import jetbrains.mps.smodel.search.ISearchScope;
 import jetbrains.mps.smodel.search.SModelSearchUtil;
+import jetbrains.mps.smodel.search.UndefinedSearchScope;
 import jetbrains.mps.typesystem.inference.NodeTypesComponentsRepository;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 
@@ -95,21 +96,25 @@ public class ModelConstraintsUtil {
 
     INodeReferentSearchScopeProvider scopeProvider = ModelConstraintsManager.getInstance().getNodeReferentSearchScopeProvider(referenceNodeConcept, linkRole);
     ReferentConstraintContext referentConstraintContext = new ReferentConstraintContext(model, enclosingNode, referenceNode, BaseAdapter.fromAdapter(linkTarget));
+    DefaultReferencPresentation referencePresentation = null;
     if (scopeProvider != null) {
+      referencePresentation = scopeProvider.hasPresentation() ? new DefaultReferencPresentation(context, referentConstraintContext, scopeProvider) : null;
       ISearchScope searchScope = scopeProvider.createNodeReferentSearchScope(context, referentConstraintContext);
-      return newOK(searchScope,
-        scopeProvider.hasPresentation() ? new DefaultReferencPresentation(context, referentConstraintContext, scopeProvider) : null,
-        false);
+      if (!(searchScope instanceof UndefinedSearchScope)) {
+        return newOK(searchScope,
+          referencePresentation,
+          false);
+      }
     }
 
     // global search scope
     ISearchScope searchScope = SModelSearchUtil.createModelAndImportedModelsScope(model, false, context.getScope());
-    return newOK(searchScope, null, true);
+    return newOK(searchScope, referencePresentation, true);
   }
 
   public static IReferencePresentation getPresentation(SNode enclosingNode, SNode referenceNode, AbstractConceptDeclaration referenceNodeConcept, LinkDeclaration referenceLinkDeclaration, IOperationContext context) {
     String linkRole = SModelUtil_new.getGenuineLinkRole(referenceLinkDeclaration);
-    AbstractConceptDeclaration linkTarget = referenceLinkDeclaration.getTarget();    
+    AbstractConceptDeclaration linkTarget = referenceLinkDeclaration.getTarget();
     final SModel model;
     if (enclosingNode != null) {
       model = enclosingNode.getModel();
