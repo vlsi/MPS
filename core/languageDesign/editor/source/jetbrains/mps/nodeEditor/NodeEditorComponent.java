@@ -54,7 +54,7 @@ public class NodeEditorComponent extends EditorComponent {
         }
         ModelAccess.instance().runReadAction(new Runnable() {
           public void run() {
-            if (isDisplayable() || IdeMain.getTestMode() != TestMode.NO_TEST) {
+            if (isShowing() || IdeMain.getTestMode() != TestMode.NO_TEST) {
               inspect(toSelect[0]);
             }
           }
