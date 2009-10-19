@@ -21,12 +21,18 @@ import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.intentions.IntentionProvider;
 
-public class EquationInfo {
+import java.util.List;
+import java.util.Set;
+import java.util.HashSet;
+
+public class EquationInfo implements Comparable<EquationInfo> {
   private String myErrorString;
   private SNode myNodeWithError;
 
   private String myRuleModel;
   private String myRuleId;
+  private Set<String> myInequationIdsBefore = null;
+  private Set<String> myInequationIdsAfter = null;
 
   private IntentionProvider myIntentionProvider;
 
@@ -97,5 +103,46 @@ public class EquationInfo {
     SModelDescriptor modelDescriptor = SModelRepository.getInstance().getModelDescriptor(SModelReference.fromString(myRuleModel));
     if (modelDescriptor == null) return null;
     return modelDescriptor.getSModel().getNodeById(myRuleId);
+  }
+
+  public void addInequationIdBefore(String equationId) {
+    if (myInequationIdsBefore == null) {
+      myInequationIdsBefore = new HashSet<String>(2);
+    }
+    myInequationIdsBefore.add(equationId);
+  }
+
+  public void addInequationIdAfter(String equationId) {
+    if (myInequationIdsAfter == null) {
+      myInequationIdsAfter = new HashSet<String>(2);
+    }
+    myInequationIdsAfter.add(equationId);
+  }
+
+  public int compareTo(EquationInfo o) {
+    boolean iAmBefore = false;
+    boolean iAmAfter = false;
+    if (myInequationIdsAfter != null && myInequationIdsAfter.contains(o.getRuleId())) {
+      iAmBefore = true;
+    }
+    if (o.myInequationIdsBefore != null && o.myInequationIdsBefore.contains(myRuleId)) {
+      iAmBefore = true;
+    }
+    if (myInequationIdsBefore != null && myInequationIdsBefore.contains(o.getRuleId())) {
+      iAmAfter = true;
+    }
+    if (o.myInequationIdsAfter != null && o.myInequationIdsAfter.contains(myRuleId)) {
+      iAmAfter = true;
+    }
+    if (iAmBefore && iAmAfter) {
+      throw new RuntimeException("inequations' priorities form a contradictional cycle: " + myRuleId + " and " + o.getRuleId());
+    }
+    if (iAmBefore) {
+      return -1;
+    }
+    if (iAmAfter) {
+      return 1;
+    }
+    return myInequationPriority - o.myInequationPriority;
   }
 }
