@@ -401,7 +401,11 @@
           </node>
         </node>
       </node>
+      <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1184419808215374637">
+        <property name="value" value="priority should be less than priority of typeof_ClosureLiteral type-creating inequations" />
+      </node>
       <node role="statement" type="jetbrains.mps.lang.typesystem.structure.CreateLessThanInequationStatement" id="4160512568111333309">
+        <property name="inequationPriority" value="1" />
         <node role="rightExpression" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause" id="4160512568111333313">
           <node role="normalType" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="4160512568111333315">
             <node role="operand" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference" id="4160512568111333314">
