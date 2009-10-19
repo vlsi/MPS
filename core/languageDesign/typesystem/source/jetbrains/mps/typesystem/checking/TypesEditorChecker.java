@@ -130,7 +130,7 @@ public class TypesEditorChecker extends EditorCheckerAdapter {
   @Nullable
   private NodeTypesComponent getNodeTypesComponent(SNode node) {
     if (node == null) {
-      return null;
+      return null;                                                   
     }
     TypeCheckingContext context = NodeTypesComponentsRepository.getInstance().createTypeCheckingContext(node.getContainingRoot());
     if (context == null) {

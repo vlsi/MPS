@@ -41,6 +41,8 @@ import java.util.HashMap;
 import java.util.Set;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
+import jetbrains.mps.internal.collections.runtime.Sequence;
+import java.util.Collections;
 import jetbrains.mps.generator.template.MappingScriptContext;
 
 public class QueriesGenerated {
@@ -2534,6 +2536,22 @@ public class QueriesGenerated {
 
   public static Iterable sourceNodesQuery_5031556731835765842(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     return SLinkOperations.getTargets(_context.getNode(), "operationConcept", true);
+  }
+
+  public static Iterable sourceNodesQuery_7138124054060431140(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
+    if (SNodeOperations.isInstanceOf(_context.getNode(), "jetbrains.mps.lang.typesystem.structure.AbstractInequationStatement")) {
+      return SLinkOperations.getTargets(SNodeOperations.cast(_context.getNode(), "jetbrains.mps.lang.typesystem.structure.AbstractInequationStatement"), "afterEquations", true);
+    } else {
+      return Sequence.fromIterable(Collections.<SNode>emptyList());
+    }
+  }
+
+  public static Iterable sourceNodesQuery_7138124054060431171(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
+    if (SNodeOperations.isInstanceOf(_context.getNode(), "jetbrains.mps.lang.typesystem.structure.AbstractInequationStatement")) {
+      return SLinkOperations.getTargets(SNodeOperations.cast(_context.getNode(), "jetbrains.mps.lang.typesystem.structure.AbstractInequationStatement"), "beforeEquations", true);
+    } else {
+      return Sequence.fromIterable(Collections.<SNode>emptyList());
+    }
   }
 
   public static Iterable sourceNodesQuery_8124453027370845519(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {

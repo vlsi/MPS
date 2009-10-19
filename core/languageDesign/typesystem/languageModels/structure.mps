@@ -1362,9 +1362,25 @@
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1212056081426">
     <property name="name" value="AbstractInequationStatement" />
     <link role="extends" targetNodeId="1174660718586" resolveInfo="AbstractEquationStatement" />
+    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="4778346850551695629">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="afterEquations" />
+      <property name="sourceCardinality" value="0..n" />
+      <link role="target" targetNodeId="4778346850551666963" resolveInfo="InequationReference" />
+    </node>
+    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="4778346850551695630">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="beforeEquations" />
+      <property name="sourceCardinality" value="0..n" />
+      <link role="target" targetNodeId="4778346850551666963" resolveInfo="InequationReference" />
+    </node>
     <node role="propertyDeclaration" type="jetbrains.mps.lang.structure.structure.PropertyDeclaration" id="1212056105818">
       <property name="name" value="inequationPriority" />
       <link role="dataType" targetNodeId="1212056179025" resolveInfo="InequationPriority" />
+    </node>
+    <node role="propertyDeclaration" type="jetbrains.mps.lang.structure.structure.PropertyDeclaration" id="4778346850551686273">
+      <property name="name" value="label" />
+      <link role="dataType" targetNodeId="1.1082983041843" resolveInfo="string" />
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.EnumerationDataTypeDeclaration" id="1212056179025">
@@ -1496,6 +1512,18 @@
       <property name="metaClass" value="aggregation" />
       <property name="role" value="helginsIntention" />
       <link role="target" targetNodeId="1210784285454" resolveInfo="HelginsIntention" />
+    </node>
+    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="792701744776129732">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="afterEquations" />
+      <property name="sourceCardinality" value="0..n" />
+      <link role="target" targetNodeId="4778346850551666963" resolveInfo="InequationReference" />
+    </node>
+    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="792701744776129733">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="beforeEquations" />
+      <property name="sourceCardinality" value="0..n" />
+      <link role="target" targetNodeId="4778346850551666963" resolveInfo="InequationReference" />
     </node>
     <node role="propertyDeclaration" type="jetbrains.mps.lang.structure.structure.PropertyDeclaration" id="1215689656618">
       <property name="name" value="checkOnly" />
@@ -2590,6 +2618,16 @@
     <node role="conceptLink" type="jetbrains.mps.lang.structure.structure.AggregationConceptLink" id="3592071576955708906">
       <link role="conceptLinkDeclaration" targetNodeId="2.1137545148427" resolveInfo="conceptFunctionReturnType" />
       <node role="target" type="jetbrains.mps.baseLanguage.structure.BooleanType" id="3592071576955708908" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="4778346850551666963">
+    <property name="name" value="InequationReference" />
+    <link role="extends" targetNodeId="1.1133920641626" resolveInfo="BaseConcept" />
+    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="4778346850551666964">
+      <property name="metaClass" value="reference" />
+      <property name="sourceCardinality" value="1" />
+      <property name="role" value="inequation" />
+      <link role="target" targetNodeId="1212056081426" resolveInfo="AbstractInequationStatement" />
     </node>
   </node>
 </model>
