@@ -418,13 +418,6 @@ public class SModelTreeNode extends MPSTreeNodeEx {
       myPackageNodes.clear();
       myRootGroups.clear();
 
-      if (myModelDescriptor != null) {
-        List<SModelDescriptor> subfolderModels = getSubfolderModels(myModelDescriptor.getModule().getOwnModelDescriptors());
-        for (SModelDescriptor subfolderModel : subfolderModels) {
-          add(new SModelTreeNode(subfolderModel, null, getOperationContext(), false));
-        }
-      }
-
       for (SNodeGroupTreeNode group : myRootGroups) {
         add(group);
       }
@@ -445,6 +438,18 @@ public class SModelTreeNode extends MPSTreeNodeEx {
           add(treeNode);
         }
       }
+
+      if (myModelDescriptor != null) {
+        DefaultTreeModel treeModel = (DefaultTreeModel) getTree().getModel();
+        List<SModelDescriptor> sortedModels = SortUtil.sortModels(myModelDescriptor.getModule().getOwnModelDescriptors());
+        List<SModelDescriptor> subfolderModels = getSubfolderModels(sortedModels);
+        for (SModelDescriptor subfolderModel : subfolderModels) {
+          SModelTreeNode newChildModel = new SModelTreeNode(subfolderModel, null, getOperationContext(), false);
+          int index = subfolderModels.indexOf(subfolderModel);
+          treeModel.insertNodeInto(newChildModel, this, index);
+        }
+      }
+      
       DefaultTreeModel treeModel = (DefaultTreeModel) getTree().getModel();
       treeModel.nodeStructureChanged(this);
     } finally {
