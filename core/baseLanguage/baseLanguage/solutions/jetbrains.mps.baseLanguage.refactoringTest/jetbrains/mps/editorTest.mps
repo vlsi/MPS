@@ -5284,5 +5284,71 @@
       </node>
     </node>
   </node>
+  <node type="jetbrains.mps.lang.test.structure.EditorTestCase" id="1574561129028766962">
+    <property name="package" value="intelligentInputUtil" />
+    <property name="name" value="SubstituteSmallPatternInLeft" />
+    <node role="nodeToEdit" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1574561129028803924">
+      <property name="name" value="method" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1574561129028803925" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1574561129028803926" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1574561129028803927">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1574561129028805648">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1574561129028805649">
+            <property name="name" value="t" />
+            <node role="type" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="1574561129028805650" />
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.Statement" id="1574561129028805651">
+          <node role="testNode$attribute" type="jetbrains.mps.lang.test.structure.AnonymousCellAnnotation" id="1574561129028805652">
+            <property name="isLastPosition" value="true" />
+            <property name="useLabelSelection" value="true" />
+            <property name="selectionStart" value="0" />
+            <property name="selectionEnd" value="0" />
+            <property name="cellId" value="Constant_3869_0" />
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="result" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1574561129028803928">
+      <property name="name" value="method" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1574561129028803929" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1574561129028803930" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1574561129028803931">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1574561129028805653">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1574561129028805654">
+            <property name="name" value="t" />
+            <node role="type" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="1574561129028805655" />
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1574561129028805657">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.PrefixDecrementExpression" id="1574561129028805659">
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1574561129028805660">
+              <link role="variableDeclaration" targetNodeId="1574561129028805654" resolveInfo="t" />
+            </node>
+            <node role="testNode$attribute" type="jetbrains.mps.lang.test.structure.AnonymousCellAnnotation" id="1574561129028805661">
+              <property name="caretPosition" value="1" />
+              <property name="useLabelSelection" value="true" />
+              <property name="selectionStart" value="1" />
+              <property name="selectionEnd" value="1" />
+              <property name="cellId" value="Constant_9277_0" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="code" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1574561129028805662">
+      <node role="statement" type="jetbrains.mps.lang.test.structure.TypeKeyStatement" id="1574561129028805663">
+        <property name="keys" value="t" />
+      </node>
+      <node role="statement" type="jetbrains.mps.lang.test.structure.PressKeyStatement" id="1574561129028805665">
+        <node role="keyStrokes" type="jetbrains.mps.lang.plugin.structure.KeyMapKeystroke" id="1574561129028805666">
+          <property name="keycode" value="VK_LEFT" />
+        </node>
+      </node>
+      <node role="statement" type="jetbrains.mps.lang.test.structure.TypeKeyStatement" id="1574561129028805668">
+        <property name="keys" value="--" />
+      </node>
+    </node>
+  </node>
 </model>
 
