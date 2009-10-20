@@ -50,7 +50,8 @@ public class subtypesOfClassifierTypeWWildcards_InequationReplacementRule extend
                     {
                       SNode _nodeToCheck_1029348928467 = equationInfo.getNodeWithError();
                       BaseIntentionProvider intentionProvider = null;
-                      typeCheckingContext.createLessThanInequation((SNode)finalTypeParam, (SNode)myParam, _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1220535076789", false, 0, intentionProvider);
+                      EquationInfo info = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1220535076789", 0, intentionProvider);
+                      typeCheckingContext.createLessThanInequation((SNode)finalTypeParam, (SNode)myParam, false, info);
                     }
                     {
                       final SNode concreteParam = myParam;
@@ -60,7 +61,8 @@ public class subtypesOfClassifierTypeWWildcards_InequationReplacementRule extend
                             {
                               SNode _nodeToCheck_1029348928467 = equationInfo.getNodeWithError();
                               BaseIntentionProvider intentionProvider = null;
-                              typeCheckingContext.createEquation((SNode)finalTypeParam, (SNode)typeCheckingContext.getEquationManager().getRepresentator(concreteParam), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1220523357903", intentionProvider);
+                              EquationInfo info = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1220523357903", 0, intentionProvider);
+                              typeCheckingContext.createEquation((SNode)finalTypeParam, (SNode)typeCheckingContext.getEquationManager().getRepresentator(concreteParam), info);
                             }
                           }
                         }

@@ -603,14 +603,6 @@ public class QueriesGenerated {
     return "child_" + SPropertyOperations.getString(_context.getNode(), "name");
   }
 
-  public static Object propertyMacro_GetPropertyValue_1214926257511(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return SPropertyOperations.getString(_context.getNode(), "modelId");
-  }
-
-  public static Object propertyMacro_GetPropertyValue_1214926257520(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return SPropertyOperations.getString(_context.getNode(), "nodeId");
-  }
-
   public static Object propertyMacro_GetPropertyValue_1214927051992(final IOperationContext operationContext, final PropertyMacroContext _context) {
     String alias = SPropertyOperations.getString(_context.getNode(), "symbol");
     if (":==:".equals(alias)) {
@@ -636,10 +628,6 @@ public class QueriesGenerated {
 
   public static Object propertyMacro_GetPropertyValue_1214927791815(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return SPropertyOperations.getBoolean(_context.getNode(), "checkOnly");
-  }
-
-  public static Object propertyMacro_GetPropertyValue_1214927791823(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return SPropertyOperations.getInteger_def(_context.getNode(), "inequationPriority", "0");
   }
 
   public static Object propertyMacro_GetPropertyValue_1215079048829(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -955,8 +943,30 @@ public class QueriesGenerated {
     return LinkDeclaration_Behavior.call_getGenuineRole_1213877254542(SLinkOperations.getTarget(_context.getNode(), "linkDeclaration", false));
   }
 
+  public static Object propertyMacro_GetPropertyValue_1149547447656252123(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    SNode ineq = SLinkOperations.getTarget(_context.getNode(), "inequation", false);
+    return SModelOperations.getModelName(SNodeOperations.getModel(ineq)) + "#" + ineq.getId();
+  }
+
+  public static Object propertyMacro_GetPropertyValue_1149547447656253830(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    SNode ineq = SLinkOperations.getTarget(_context.getNode(), "inequation", false);
+    return SModelOperations.getModelName(SNodeOperations.getModel(ineq)) + "#" + ineq.getId();
+  }
+
   public static Object propertyMacro_GetPropertyValue_3790659035762526678(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return SPropertyOperations.getBoolean(SNodeOperations.cast(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.lang.typesystem.structure.OverloadedOpTypeRule_OneTypeSpecified"), "isStrong");
+  }
+
+  public static Object propertyMacro_GetPropertyValue_6663831120772322960(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return SPropertyOperations.getString(_context.getNode(), "modelId");
+  }
+
+  public static Object propertyMacro_GetPropertyValue_6663831120772322969(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return SPropertyOperations.getString(_context.getNode(), "nodeId");
+  }
+
+  public static Object propertyMacro_GetPropertyValue_6663831120772323012(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return SPropertyOperations.getInteger_def(_context.getNode(), "inequationPriority", "0");
   }
 
   public static Object propertyMacro_GetPropertyValue_7488229814397846045(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -1568,20 +1578,7 @@ public class QueriesGenerated {
     return (SLinkOperations.getTarget(_context.getNode(), "helginsIntention", true) != null);
   }
 
-  public static boolean ifMacro_Condition_1214926257484(final IOperationContext operationContext, final IfMacroContext _context) {
-    return (SLinkOperations.getTarget(_context.getNode(), "errorString", true) == null);
-  }
-
-  public static boolean ifMacro_Condition_1214926257494(final IOperationContext operationContext, final IfMacroContext _context) {
-    return (SLinkOperations.getTarget(_context.getNode(), "errorString", true) != null);
-  }
-
   public static boolean ifMacro_Condition_1214927805253(final IOperationContext operationContext, final IfMacroContext _context) {
-    String alias = SPropertyOperations.getString(_context.getNode(), "symbol");
-    return ":<=:".equals(alias) || ":>=:".equals(alias) || ":<<=:".equals(alias);
-  }
-
-  public static boolean ifMacro_Condition_1214927817210(final IOperationContext operationContext, final IfMacroContext _context) {
     String alias = SPropertyOperations.getString(_context.getNode(), "symbol");
     return ":<=:".equals(alias) || ":>=:".equals(alias) || ":<<=:".equals(alias);
   }
@@ -1832,6 +1829,10 @@ public class QueriesGenerated {
     return SNodeOperations.isInstanceOf(_context.getNode(), "jetbrains.mps.lang.typesystem.structure.SubtypingRule") && SubtypingRule_Behavior.call_surelyKeepsConcept_4214710807058415622(SNodeOperations.cast(_context.getNode(), "jetbrains.mps.lang.typesystem.structure.SubtypingRule"));
   }
 
+  public static boolean ifMacro_Condition_6663831120772322929(final IOperationContext operationContext, final IfMacroContext _context) {
+    return (SLinkOperations.getTarget(_context.getNode(), "errorString", true) == null);
+  }
+
   public static boolean ifMacro_Condition_8224738963706830970(final IOperationContext operationContext, final IfMacroContext _context) {
     return (SLinkOperations.getTarget(_context.getNode(), "isApplicableClause", true) != null);
   }
@@ -2028,10 +2029,6 @@ public class QueriesGenerated {
 
   public static SNode sourceNodeQuery_1214926257474(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "rightExpression", true);
-  }
-
-  public static SNode sourceNodeQuery_1214926257503(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return SLinkOperations.getTarget(_context.getNode(), "errorString", true);
   }
 
   public static SNode sourceNodeQuery_1215078905470(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
@@ -2356,6 +2353,10 @@ public class QueriesGenerated {
     }
   }
 
+  public static SNode sourceNodeQuery_6663831120772346355(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return SLinkOperations.getTarget(_context.getNode(), "errorString", true);
+  }
+
   public static SNode sourceNodeQuery_8124453027370845432(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.lang.typesystem.structure.OverloadedOpTypeRule_OneTypeSpecified"), "function", true), "body", true);
   }
@@ -2530,6 +2531,10 @@ public class QueriesGenerated {
     return SLinkOperations.getTargets(_context.getNode(), "linkInfo", true);
   }
 
+  public static Iterable sourceNodesQuery_1149547447656252096(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
+    return SLinkOperations.getTargets(_context.getNode(), "beforeEquations", true);
+  }
+
   public static Iterable sourceNodesQuery_5031556731835765742(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     return SLinkOperations.getTargets(_context.getNode(), "operationConcept", true);
   }
@@ -2552,6 +2557,10 @@ public class QueriesGenerated {
     } else {
       return Sequence.fromIterable(Collections.<SNode>emptyList());
     }
+  }
+
+  public static Iterable sourceNodesQuery_8056429548978994645(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
+    return SLinkOperations.getTargets(_context.getNode(), "afterEquations", true);
   }
 
   public static Iterable sourceNodesQuery_8124453027370845519(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {

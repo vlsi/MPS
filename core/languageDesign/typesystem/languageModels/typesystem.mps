@@ -3170,7 +3170,7 @@
       </node>
     </node>
     <node role="applicableNode" type="jetbrains.mps.lang.typesystem.structure.ConceptReference" id="1240325088695">
-      <property name="name" value="info" />
+      <property name="name" value="ccInfo" />
       <link role="concept" targetNodeId="1.1240322303006" resolveInfo="ConceptClauseLinkInfo" />
     </node>
   </node>

@@ -221,6 +221,8 @@ public class TypeCheckingContext {
     return representator;
   }
 
+  //deprecated eqs
+  @Deprecated
   public void createEquation(SNode node1,
                              SNode node2,
                              SNode nodeToCheck,
@@ -236,6 +238,7 @@ public class TypeCheckingContext {
       equationInfo);
   }
 
+  @Deprecated
   public void createEquation(SNode node1,
                              IWrapper wrapper2,
                              SNode nodeToCheck,
@@ -252,6 +255,7 @@ public class TypeCheckingContext {
       equationInfo);
   }
 
+  @Deprecated
   public void createEquation(IWrapper wrapper1,
                              SNode node2,
                              SNode nodeToCheck,
@@ -268,6 +272,7 @@ public class TypeCheckingContext {
       equationInfo);
   }
 
+  @Deprecated
   public void createEquation(IWrapper wrapper1,
                              IWrapper wrapper2,
                              SNode nodeToCheck,
@@ -283,6 +288,7 @@ public class TypeCheckingContext {
       equationInfo);
   }
 
+  @Deprecated
   public void createLessThanInequation(SNode node1,
                                        SNode node2,
                                        SNode nodeToCheck,
@@ -300,6 +306,7 @@ public class TypeCheckingContext {
       checkOnly);
   }
 
+  @Deprecated
   public void createLessThanInequationStrong(SNode node1,
                                              SNode node2,
                                              SNode nodeToCheck,
@@ -317,6 +324,7 @@ public class TypeCheckingContext {
       checkOnly);
   }
 
+  @Deprecated
   public void createGreaterThanInequation(SNode node1,
                                           SNode node2,
                                           SNode nodeToCheck,
@@ -334,6 +342,7 @@ public class TypeCheckingContext {
       checkOnly);
   }
 
+  @Deprecated
   public void createComparableEquation(SNode node1,
                                        SNode node2,
                                        SNode nodeToCheck,
@@ -347,6 +356,7 @@ public class TypeCheckingContext {
       new EquationInfo(nodeToCheck, errorString, ruleModel, ruleId, 0, intentionProvider));
   }
 
+  @Deprecated
   public void createComparableEquationStrong(SNode node1,
                                              SNode node2,
                                              SNode nodeToCheck,
@@ -360,6 +370,106 @@ public class TypeCheckingContext {
       new EquationInfo(nodeToCheck, errorString, ruleModel, ruleId, 0, intentionProvider),
       false);
   }
+
+  //new eqs
+   public void createEquation(SNode node1,
+                             SNode node2,
+                             EquationInfo equationInfo) {
+    getCurrentSlicer().beforeUserEquationAdded(node1, node2, equationInfo);
+    getNodeTypesComponent().getEquationManager().addEquation(
+      node1,
+      node2,
+      equationInfo);
+  }
+
+  public void createEquation(SNode node1,
+                             IWrapper wrapper2,
+                             EquationInfo equationInfo) {
+    getCurrentSlicer().beforeUserEquationAdded(node1, wrapper2.getNode(), equationInfo);
+    EquationManager equationManager = getNodeTypesComponent().getEquationManager();
+    equationManager.addEquation(
+      NodeWrapper.fromNode(node1, equationManager),
+      wrapper2,
+      equationInfo);
+  }
+
+  public void createEquation(IWrapper wrapper1,
+                             SNode node2,
+                             EquationInfo equationInfo) {
+    getCurrentSlicer().beforeUserEquationAdded(wrapper1.getNode(), node2, equationInfo);
+    EquationManager equationManager = getNodeTypesComponent().getEquationManager();
+    equationManager.addEquation(
+      wrapper1,
+      NodeWrapper.fromNode(node2, equationManager),
+      equationInfo);
+  }
+
+  public void createEquation(IWrapper wrapper1,
+                             IWrapper wrapper2,
+                             EquationInfo equationInfo
+                             ) {
+    getCurrentSlicer().beforeUserEquationAdded(wrapper1.getNode(), wrapper2.getNode(), equationInfo);
+    getNodeTypesComponent().getEquationManager().addEquation(
+      wrapper1,
+      wrapper2,
+      equationInfo);
+  }
+
+  public void createLessThanInequation(SNode node1,
+                                       SNode node2,
+                                       boolean checkOnly,
+                                       EquationInfo equationInfo) {
+    getNodeTypesComponent().getEquationManager().addInequation(
+      node1,
+      node2,
+      equationInfo,
+      true,
+      checkOnly);
+  }
+
+  public void createLessThanInequationStrong(SNode node1,
+                                             SNode node2,
+                                             boolean checkOnly,
+                                             EquationInfo equationInfo) {
+    getNodeTypesComponent().getEquationManager().addInequation(
+      node1,
+      node2,
+      equationInfo,
+      false,
+      checkOnly);
+  }
+
+  public void createGreaterThanInequation(SNode node1,
+                                          SNode node2,
+                                          boolean checkOnly,
+                                          EquationInfo equationInfo) {
+    getNodeTypesComponent().getEquationManager().addInequation(
+      node2,
+      node1,
+      equationInfo,
+      true,
+      checkOnly);
+  }
+
+  public void createComparableEquation(SNode node1,
+                                       SNode node2,
+                                       EquationInfo equationInfo) {
+    getNodeTypesComponent().getEquationManager().addInequationComparable(
+      node1,
+      node2,
+      equationInfo);
+  }
+
+  public void createComparableEquationStrong(SNode node1,
+                                             SNode node2,
+                                             EquationInfo equationInfo) {
+    getNodeTypesComponent().getEquationManager().addInequationComparable(
+      node1,
+      node2,
+      equationInfo,
+      false);
+  }
+
 
   public SNode getOverloadedOperationType(SNode operation, SNode leftOperandType, SNode rightOperandType) {
     EquationManager equationManager = getEquationManager();
