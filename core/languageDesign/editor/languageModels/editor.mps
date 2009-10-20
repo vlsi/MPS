@@ -7657,6 +7657,28 @@
           </node>
         </node>
         <node role="menuDescriptor" type="jetbrains.mps.lang.editor.structure.CellMenuDescriptor" id="1221221742636">
+          <node role="cellMenuPart" type="jetbrains.mps.lang.editor.structure.CellMenuPart_PropertyValues" id="1676468925319120275">
+            <node role="valuesFunction" type="jetbrains.mps.lang.editor.structure.CellMenuPart_PropertyValues_GetValues" id="1676468925319120276">
+              <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1676468925319120277">
+                <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1676468925319121998">
+                  <node role="expression" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1676468925319121999">
+                    <node role="creator" type="jetbrains.mps.baseLanguage.collections.structure.ListCreatorWithInit" id="1676468925319156683">
+                      <node role="elementType" type="jetbrains.mps.baseLanguage.structure.StringType" id="1676468925319156685" />
+                      <node role="initValue" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1676468925319156687">
+                        <property name="value" value="0" />
+                      </node>
+                      <node role="initValue" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1676468925319156689">
+                        <property name="value" value="1" />
+                      </node>
+                      <node role="initValue" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1676468925319156691">
+                        <property name="value" value="2" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
           <node role="cellMenuPart" type="jetbrains.mps.lang.editor.structure.CellMenuPart_Generic_Item" id="1221222513519">
             <property name="matchingText" value="query" />
             <node role="handlerFunction" type="jetbrains.mps.lang.editor.structure.CellMenuPart_Generic_Item_Handler" id="1221222528494">

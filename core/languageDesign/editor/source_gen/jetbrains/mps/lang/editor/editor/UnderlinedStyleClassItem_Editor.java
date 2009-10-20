@@ -19,6 +19,10 @@ import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.nodeEditor.FocusPolicy;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_PropertyValues;
+import java.util.List;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import java.util.ArrayList;
 import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_ReplaceNode_CustomNodeConcept;
 import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_Generic_Item;
 import jetbrains.mps.smodel.SModel;
@@ -77,7 +81,7 @@ public class UnderlinedStyleClassItem_Editor extends DefaultNodeEditor {
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setCellId("property_underlined");
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPart[]{new UnderlinedStyleClassItem_Editor.UnderlinedStyleClassItem_generic_cellMenu0()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPart[]{new UnderlinedStyleClassItem_Editor.UnderlinedStyleClassItem_underlined_cellMenu0(),new UnderlinedStyleClassItem_Editor.UnderlinedStyleClassItem_generic_cellMenu0()}));
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {
@@ -114,6 +118,15 @@ public class UnderlinedStyleClassItem_Editor extends DefaultNodeEditor {
 
   private static boolean renderingCondition2890_1(SNode node, EditorContext editorContext, IScope scope) {
     return (SLinkOperations.getTarget(node, "query", true) != null);
+  }
+
+  public static class UnderlinedStyleClassItem_underlined_cellMenu0 extends AbstractCellMenuPart_PropertyValues {
+    public UnderlinedStyleClassItem_underlined_cellMenu0() {
+    }
+
+    public List<String> getPropertyValues(SNode node, IScope scope, IOperationContext operationContext) {
+      return ListSequence.fromListAndArray(new ArrayList<String>(), "0", "1", "2");
+    }
   }
 
   public static class UnderlinedStyleClassItem_Editor_replaceWith_StyleClassItem_cellMenu0 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
