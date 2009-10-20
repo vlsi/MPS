@@ -17,6 +17,7 @@ public class BaseDocComment extends BaseConcept {
   public static final String AUTHOR = "author";
   public static final String SINCE = "since";
   public static final String VERSION = "version";
+  public static final String SEE = "see";
 
   public BaseDocComment(SNode node) {
     super(node);
@@ -108,6 +109,26 @@ public class BaseDocComment extends BaseConcept {
 
   public void insertVersion(VersionBlockDocTag prev, VersionBlockDocTag node) {
     this.insertChild(prev, BaseDocComment.VERSION, node);
+  }
+
+  public int getSeesCount() {
+    return this.getChildCount(BaseDocComment.SEE);
+  }
+
+  public Iterator<SeeBlockDocTag> sees() {
+    return this.children(SeeBlockDocTag.class, BaseDocComment.SEE);
+  }
+
+  public List<SeeBlockDocTag> getSees() {
+    return this.getChildren(SeeBlockDocTag.class, BaseDocComment.SEE);
+  }
+
+  public void addSee(SeeBlockDocTag node) {
+    this.addChild(BaseDocComment.SEE, node);
+  }
+
+  public void insertSee(SeeBlockDocTag prev, SeeBlockDocTag node) {
+    this.insertChild(prev, BaseDocComment.SEE, node);
   }
 
   public static BaseDocComment newInstance(SModel sm, boolean init) {

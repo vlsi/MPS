@@ -4,24 +4,38 @@ package jetbrains.mps.baseLanguage.javadoc.structure;
 
 import jetbrains.mps.lang.core.structure.BaseConcept;
 import jetbrains.mps.smodel.SNode;
+import java.util.Iterator;
+import java.util.List;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class CommentLine extends BaseConcept {
   public static final String concept = "jetbrains.mps.baseLanguage.javadoc.structure.CommentLine";
-  public static final String LINE = "line";
+  public static final String PART = "part";
 
   public CommentLine(SNode node) {
     super(node);
   }
 
-  public String getLine() {
-    return this.getProperty(CommentLine.LINE);
+  public int getPartsCount() {
+    return this.getChildCount(CommentLine.PART);
   }
 
-  public void setLine(String value) {
-    this.setProperty(CommentLine.LINE, value);
+  public Iterator<CommentLinePart> parts() {
+    return this.children(CommentLinePart.class, CommentLine.PART);
+  }
+
+  public List<CommentLinePart> getParts() {
+    return this.getChildren(CommentLinePart.class, CommentLine.PART);
+  }
+
+  public void addPart(CommentLinePart node) {
+    this.addChild(CommentLine.PART, node);
+  }
+
+  public void insertPart(CommentLinePart prev, CommentLinePart node) {
+    this.insertChild(prev, CommentLine.PART, node);
   }
 
   public static CommentLine newInstance(SModel sm, boolean init) {

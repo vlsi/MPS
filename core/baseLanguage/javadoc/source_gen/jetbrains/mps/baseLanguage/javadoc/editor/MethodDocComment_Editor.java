@@ -36,8 +36,8 @@ public class MethodDocComment_Editor extends DefaultNodeEditor {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_2364_0");
     editorCell.addEditorCell(this.createConstant_2364_0(editorContext, node));
-    editorCell.addEditorCell(this.createRefNodeList_2364_5(editorContext, node));
-    if (renderingCondition2364_6(node, editorContext, editorContext.getOperationContext().getScope())) {
+    editorCell.addEditorCell(this.createRefNodeList_2364_6(editorContext, node));
+    if (renderingCondition2364_7(node, editorContext, editorContext.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.createCollection_2364_1(editorContext, node));
     }
     editorCell.addEditorCell(this.createConstant_2364_1(editorContext, node));
@@ -53,9 +53,6 @@ public class MethodDocComment_Editor extends DefaultNodeEditor {
       style.set(StyleAttributes.SELECTABLE, false);
     }
     editorCell.addEditorCell(this.createConstant_2364_2(editorContext, node));
-    if (renderingCondition2364_0(node, editorContext, editorContext.getOperationContext().getScope())) {
-      editorCell.addEditorCell(this.createRefNodeList_2364_1(editorContext, node));
-    }
     if (renderingCondition2364_1(node, editorContext, editorContext.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.createRefNodeList_2364_2(editorContext, node));
     }
@@ -65,10 +62,16 @@ public class MethodDocComment_Editor extends DefaultNodeEditor {
     if (renderingCondition2364_3(node, editorContext, editorContext.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.createRefNodeList_2364_4(editorContext, node));
     }
-    if (renderingCondition2364_4(node, editorContext, editorContext.getOperationContext().getScope())) {
+    if (renderingCondition2364_0(node, editorContext, editorContext.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.createRefNodeList_2364_0(editorContext, node));
     }
+    if (renderingCondition2364_4(node, editorContext, editorContext.getOperationContext().getScope())) {
+      editorCell.addEditorCell(this.createRefNodeList_2364_5(editorContext, node));
+    }
     if (renderingCondition2364_5(node, editorContext, editorContext.getOperationContext().getScope())) {
+      editorCell.addEditorCell(this.createRefNodeList_2364_1(editorContext, node));
+    }
+    if (renderingCondition2364_6(node, editorContext, editorContext.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.createRefNode_2364_0(editorContext, node));
     }
     return editorCell;
@@ -119,6 +122,20 @@ public class MethodDocComment_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createRefNodeList_2364_0(EditorContext editorContext, SNode node) {
+    AbstractCellListHandler handler = new MethodDocComment_Editor.seeListHandler_2364_0(node, "see", editorContext);
+    EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Indent(), false);
+    editorCell.setCellId("refNodeList_see");
+    DocumentationCommentStyleSheet_StyleSheet.getComment(editorCell).apply(editorCell);
+    {
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.INDENT_LAYOUT_INDENT, true);
+      style.set(StyleAttributes.INDENT_LAYOUT_CHILDREN_NEWLINE, true);
+    }
+    editorCell.setRole(handler.getElementRole());
+    return editorCell;
+  }
+
+  private EditorCell createRefNodeList_2364_1(EditorContext editorContext, SNode node) {
     AbstractCellListHandler handler = new MethodDocComment_Editor.throwsTagListHandler_2364_0(node, "throwsTag", editorContext);
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Indent(), false);
     editorCell.setCellId("refNodeList_throwsTag");
@@ -132,7 +149,7 @@ public class MethodDocComment_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefNodeList_2364_1(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNodeList_2364_2(EditorContext editorContext, SNode node) {
     AbstractCellListHandler handler = new MethodDocComment_Editor.authorListHandler_2364_0(node, "author", editorContext);
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Indent(), false);
     editorCell.setCellId("refNodeList_author");
@@ -146,7 +163,7 @@ public class MethodDocComment_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefNodeList_2364_2(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNodeList_2364_3(EditorContext editorContext, SNode node) {
     AbstractCellListHandler handler = new MethodDocComment_Editor.sinceListHandler_2364_0(node, "since", editorContext);
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Indent(), false);
     editorCell.setCellId("refNodeList_since");
@@ -160,7 +177,7 @@ public class MethodDocComment_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefNodeList_2364_3(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNodeList_2364_4(EditorContext editorContext, SNode node) {
     AbstractCellListHandler handler = new MethodDocComment_Editor.versionListHandler_2364_0(node, "version", editorContext);
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Indent(), false);
     editorCell.setCellId("refNodeList_version");
@@ -174,7 +191,7 @@ public class MethodDocComment_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefNodeList_2364_4(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNodeList_2364_5(EditorContext editorContext, SNode node) {
     AbstractCellListHandler handler = new MethodDocComment_Editor.paramListHandler_2364_0(node, "param", editorContext);
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Indent(), false);
     editorCell.setCellId("refNodeList_param");
@@ -188,7 +205,7 @@ public class MethodDocComment_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefNodeList_2364_5(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNodeList_2364_6(EditorContext editorContext, SNode node) {
     AbstractCellListHandler handler = new MethodDocComment_Editor.bodyListHandler_2364_0(node, "body", editorContext);
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Indent(), false);
     editorCell.setCellId("refNodeList_body");
@@ -226,31 +243,77 @@ public class MethodDocComment_Editor extends DefaultNodeEditor {
   }
 
   private static boolean renderingCondition2364_0(SNode node, EditorContext editorContext, IScope scope) {
-    return ListSequence.fromList(SLinkOperations.getTargets(node, "author", true)).isNotEmpty();
+    return ListSequence.fromList(SLinkOperations.getTargets(node, "see", true)).isNotEmpty();
   }
 
   private static boolean renderingCondition2364_1(SNode node, EditorContext editorContext, IScope scope) {
-    return ListSequence.fromList(SLinkOperations.getTargets(node, "since", true)).isNotEmpty();
+    return ListSequence.fromList(SLinkOperations.getTargets(node, "author", true)).isNotEmpty();
   }
 
   private static boolean renderingCondition2364_2(SNode node, EditorContext editorContext, IScope scope) {
-    return ListSequence.fromList(SLinkOperations.getTargets(node, "version", true)).isNotEmpty();
+    return ListSequence.fromList(SLinkOperations.getTargets(node, "since", true)).isNotEmpty();
   }
 
   private static boolean renderingCondition2364_3(SNode node, EditorContext editorContext, IScope scope) {
-    return ListSequence.fromList(SLinkOperations.getTargets(node, "param", true)).isNotEmpty();
+    return ListSequence.fromList(SLinkOperations.getTargets(node, "version", true)).isNotEmpty();
   }
 
   private static boolean renderingCondition2364_4(SNode node, EditorContext editorContext, IScope scope) {
-    return ListSequence.fromList(SLinkOperations.getTargets(node, "throwsTag", true)).isNotEmpty();
+    return ListSequence.fromList(SLinkOperations.getTargets(node, "param", true)).isNotEmpty();
   }
 
   private static boolean renderingCondition2364_5(SNode node, EditorContext editorContext, IScope scope) {
-    return (SLinkOperations.getTarget(node, "return", true) != null);
+    return ListSequence.fromList(SLinkOperations.getTargets(node, "throwsTag", true)).isNotEmpty();
   }
 
   private static boolean renderingCondition2364_6(SNode node, EditorContext editorContext, IScope scope) {
+    return (SLinkOperations.getTarget(node, "return", true) != null);
+  }
+
+  private static boolean renderingCondition2364_7(SNode node, EditorContext editorContext, IScope scope) {
     return !(BaseDocComment_Behavior.call_isTagSectionEmpty_8465538089690623795(node));
+  }
+
+  private static class seeListHandler_2364_0 extends RefNodeListHandler {
+    public seeListHandler_2364_0(SNode ownerNode, String childRole, EditorContext context) {
+      super(ownerNode, childRole, context, false);
+    }
+
+    public SNode createNodeToInsert(EditorContext editorContext) {
+      SNode listOwner = super.getOwner();
+      return NodeFactoryManager.createNode(listOwner, editorContext, super.getElementRole());
+    }
+
+    public EditorCell createNodeCell(EditorContext editorContext, SNode elementNode) {
+      EditorCell elementCell = super.createNodeCell(editorContext, elementNode);
+      this.installElementCellActions(this.getOwner(), elementNode, elementCell, editorContext);
+      return elementCell;
+    }
+
+    public EditorCell createEmptyCell(EditorContext editorContext) {
+      EditorCell emptyCell = null;
+      emptyCell = super.createEmptyCell(editorContext);
+      this.installElementCellActions(super.getOwner(), null, emptyCell, editorContext);
+      return emptyCell;
+    }
+
+    public void installElementCellActions(SNode listOwner, SNode elementNode, EditorCell elementCell, EditorContext editorContext) {
+      if (elementCell.getUserObject(AbstractCellListHandler.ELEMENT_CELL_ACTIONS_SET) == null) {
+        elementCell.putUserObject(AbstractCellListHandler.ELEMENT_CELL_ACTIONS_SET, AbstractCellListHandler.ELEMENT_CELL_ACTIONS_SET);
+        SNode substituteInfoNode = listOwner;
+        if (elementNode != null) {
+          substituteInfoNode = elementNode;
+          elementCell.setAction(CellActionType.DELETE, new CellAction_DeleteNode(elementNode));
+        }
+        if (elementCell.getSubstituteInfo() == null || elementCell.getSubstituteInfo() instanceof DefaultReferenceSubstituteInfo) {
+          elementCell.setSubstituteInfo(new DefaultChildSubstituteInfo(listOwner, elementNode, super.getLinkDeclaration(), editorContext));
+        }
+      }
+    }
+
+    public EditorCell createSeparatorCell(EditorContext editorContext) {
+      return super.createSeparatorCell(editorContext);
+    }
   }
 
   private static class throwsTagListHandler_2364_0 extends RefNodeListHandler {

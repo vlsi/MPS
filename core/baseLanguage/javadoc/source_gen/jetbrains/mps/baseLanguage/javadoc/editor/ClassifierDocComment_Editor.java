@@ -60,6 +60,9 @@ public class ClassifierDocComment_Editor extends DefaultNodeEditor {
     if (renderingCondition3356_2(node, editorContext, editorContext.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.createRefNodeList_3356_3(editorContext, node));
     }
+    if (renderingCondition3356_5(node, editorContext, editorContext.getOperationContext().getScope())) {
+      editorCell.addEditorCell(this.createRefNodeList_3356_5(editorContext, node));
+    }
     if (renderingCondition3356_4(node, editorContext, editorContext.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.createRefNodeList_3356_4(editorContext, node));
     }
@@ -181,6 +184,20 @@ public class ClassifierDocComment_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
+  private EditorCell createRefNodeList_3356_5(EditorContext editorContext, SNode node) {
+    AbstractCellListHandler handler = new ClassifierDocComment_Editor.seeListHandler_3356_0(node, "see", editorContext);
+    EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Indent(), false);
+    editorCell.setCellId("refNodeList_see");
+    DocumentationCommentStyleSheet_StyleSheet.getComment(editorCell).apply(editorCell);
+    {
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.INDENT_LAYOUT_INDENT, true);
+      style.set(StyleAttributes.INDENT_LAYOUT_CHILDREN_NEWLINE, true);
+    }
+    editorCell.setRole(handler.getElementRole());
+    return editorCell;
+  }
+
   private static boolean renderingCondition3356_0(SNode node, EditorContext editorContext, IScope scope) {
     return ListSequence.fromList(SLinkOperations.getTargets(node, "author", true)).isNotEmpty();
   }
@@ -199,6 +216,10 @@ public class ClassifierDocComment_Editor extends DefaultNodeEditor {
 
   private static boolean renderingCondition3356_4(SNode node, EditorContext editorContext, IScope scope) {
     return ListSequence.fromList(SLinkOperations.getTargets(node, "param", true)).isNotEmpty();
+  }
+
+  private static boolean renderingCondition3356_5(SNode node, EditorContext editorContext, IScope scope) {
+    return ListSequence.fromList(SLinkOperations.getTargets(node, "see", true)).isNotEmpty();
   }
 
   private static class bodyListHandler_3356_0 extends RefNodeListHandler {
@@ -386,6 +407,48 @@ public class ClassifierDocComment_Editor extends DefaultNodeEditor {
 
   private static class paramListHandler_3356_0 extends RefNodeListHandler {
     public paramListHandler_3356_0(SNode ownerNode, String childRole, EditorContext context) {
+      super(ownerNode, childRole, context, false);
+    }
+
+    public SNode createNodeToInsert(EditorContext editorContext) {
+      SNode listOwner = super.getOwner();
+      return NodeFactoryManager.createNode(listOwner, editorContext, super.getElementRole());
+    }
+
+    public EditorCell createNodeCell(EditorContext editorContext, SNode elementNode) {
+      EditorCell elementCell = super.createNodeCell(editorContext, elementNode);
+      this.installElementCellActions(this.getOwner(), elementNode, elementCell, editorContext);
+      return elementCell;
+    }
+
+    public EditorCell createEmptyCell(EditorContext editorContext) {
+      EditorCell emptyCell = null;
+      emptyCell = super.createEmptyCell(editorContext);
+      this.installElementCellActions(super.getOwner(), null, emptyCell, editorContext);
+      return emptyCell;
+    }
+
+    public void installElementCellActions(SNode listOwner, SNode elementNode, EditorCell elementCell, EditorContext editorContext) {
+      if (elementCell.getUserObject(AbstractCellListHandler.ELEMENT_CELL_ACTIONS_SET) == null) {
+        elementCell.putUserObject(AbstractCellListHandler.ELEMENT_CELL_ACTIONS_SET, AbstractCellListHandler.ELEMENT_CELL_ACTIONS_SET);
+        SNode substituteInfoNode = listOwner;
+        if (elementNode != null) {
+          substituteInfoNode = elementNode;
+          elementCell.setAction(CellActionType.DELETE, new CellAction_DeleteNode(elementNode));
+        }
+        if (elementCell.getSubstituteInfo() == null || elementCell.getSubstituteInfo() instanceof DefaultReferenceSubstituteInfo) {
+          elementCell.setSubstituteInfo(new DefaultChildSubstituteInfo(listOwner, elementNode, super.getLinkDeclaration(), editorContext));
+        }
+      }
+    }
+
+    public EditorCell createSeparatorCell(EditorContext editorContext) {
+      return super.createSeparatorCell(editorContext);
+    }
+  }
+
+  private static class seeListHandler_3356_0 extends RefNodeListHandler {
+    public seeListHandler_3356_0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 

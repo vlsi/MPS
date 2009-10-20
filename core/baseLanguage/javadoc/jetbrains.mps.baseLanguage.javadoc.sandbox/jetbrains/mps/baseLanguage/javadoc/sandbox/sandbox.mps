@@ -20,20 +20,25 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590588(jetbrains.mps.xml.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959058f(jetbrains.mps.xmlInternal.constraints)" version="0" />
   <languageAspect modelUID="r:4095af4f-a097-4799-aaa9-03df087ddfa6(jetbrains.mps.baseLanguage.javadoc.structure)" version="4" />
-  <maxImportIndex value="1" />
+  <maxImportIndex value="2" />
   <import index="1" modelUID="f:java_stub#java.lang(java.lang@java_stub)" version="-1" />
+  <import index="2" modelUID="f:java_stub#java.io(java.io@java_stub)" version="-1" />
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="3196018662491356444">
     <property name="name" value="ABC" />
-    <node role="constructor" type="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" id="8970989240998608362">
-      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="8970989240998608363" />
-      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="8970989240998608364" />
-      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="8970989240998608365" />
-    </node>
     <node role="field" type="jetbrains.mps.baseLanguage.structure.FieldDeclaration" id="6832197706140999820">
       <property name="name" value="x" />
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PrivateVisibility" id="6832197706140999821" />
       <node role="type" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="6832197706140999823" />
-      <node role="fieldDocComment$attribute" type="jetbrains.mps.baseLanguage.javadoc.structure.FieldDocComment" id="8970989240998970973" />
+      <node role="fieldDocComment$attribute" type="jetbrains.mps.baseLanguage.javadoc.structure.FieldDocComment" id="2965954289221704935">
+        <node role="body" type="jetbrains.mps.baseLanguage.javadoc.structure.CommentLine" id="4941637334112307872">
+          <node role="part" type="jetbrains.mps.baseLanguage.javadoc.structure.TextCommentLinePart" id="4941637334112307873">
+            <property name="text" value="asdf" />
+          </node>
+        </node>
+        <node role="body" type="jetbrains.mps.baseLanguage.javadoc.structure.CommentLine" id="4941637334112307874">
+          <node role="part" type="jetbrains.mps.baseLanguage.javadoc.structure.TextCommentLinePart" id="4941637334112307875" />
+        </node>
+      </node>
     </node>
     <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="7344646339283099538">
       <property name="name" value="foo" />
@@ -51,6 +56,20 @@
               </node>
               <node role="lValue" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="7344646339284604305">
                 <link role="variableDeclaration" targetNodeId="7344646339283099547" resolveInfo="a" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="8970989240999294857">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="8970989240999295534">
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference" id="8970989240999294858">
+              <link role="classifier" targetNodeId="1.~System" resolveInfo="System" />
+              <link role="variableDeclaration" targetNodeId="1.~System.out" resolveInfo="out" />
+            </node>
+            <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="8970989240999295538">
+              <link role="baseMethodDeclaration" targetNodeId="2.~PrintStream.println(int):void" resolveInfo="println" />
+              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="8970989240999295539">
+                <property name="value" value="3" />
               </node>
             </node>
           </node>

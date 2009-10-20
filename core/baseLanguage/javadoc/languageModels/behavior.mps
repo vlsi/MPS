@@ -190,5 +190,25 @@
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="2068944020170643574" />
     </node>
   </node>
+  <node type="jetbrains.mps.lang.behavior.structure.ConceptBehavior" id="6962838954693316943">
+    <link role="concept" targetNodeId="1.8465538089690331500" resolveInfo="CommentLine" />
+    <node role="constructor" type="jetbrains.mps.lang.behavior.structure.ConceptConstructorDeclaration" id="6962838954693316944">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="6962838954693316945">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="6962838954693316946">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="6962838954693316959">
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="6962838954693316948">
+              <node role="operand" type="jetbrains.mps.lang.behavior.structure.ThisNodeExpression" id="6962838954693316947" />
+              <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkListAccess" id="6962838954693316952">
+                <link role="link" targetNodeId="1.8970989240999019149" />
+              </node>
+            </node>
+            <node role="operation" type="jetbrains.mps.lang.smodel.structure.LinkList_AddNewChildOperation" id="6962838954693316963">
+              <link role="concept" targetNodeId="1.8970989240999019143" resolveInfo="TextCommentLinePart" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
 </model>
 
