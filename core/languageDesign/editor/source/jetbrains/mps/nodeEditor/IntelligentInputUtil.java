@@ -29,6 +29,7 @@ import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import java.util.List;
 
 import com.intellij.openapi.util.Computable;
+import org.jetbrains.annotations.NotNull;
 
 public class IntelligentInputUtil {
   private static EditorManager ourServiceEditorManager = new EditorManager() {
@@ -304,8 +305,8 @@ public class IntelligentInputUtil {
       newNode = cell.getSNode();
       cellForNewNode = cell;
       return applyLeftTransform(editorContext, head, smallPattern, cellForNewNode, newNode, true);
-    } else if (canCompleteSmallPatternImmediately(info, smallPattern, "") &&
-      info.getMatchingActions(head, false).isEmpty()) {
+    } else if (canCompleteSmallPatternImmediatelyLeft(info, head, smallPattern) &&
+      !canCompleteTheWholeStringImmediately(info, head + smallPattern)) {
       newNode = info.getMatchingActions(smallPattern, true).get(0).substitute(editorContext, smallPattern);
       if (newNode == null) return true;
 
@@ -356,6 +357,10 @@ public class IntelligentInputUtil {
       }
     }
     return "";
+  }
+
+  private static boolean canCompleteSmallPatternImmediatelyLeft(NodeSubstituteInfo info, String head, String smallPattern) {
+    return info.hasExactlyNActions(smallPattern, true, 1) && info.hasExactlyNActions(head + smallPattern, false, 0);
   }
 
   private static boolean canCompleteSmallPatternImmediately(NodeSubstituteInfo info, String smallPattern, String tail) {
