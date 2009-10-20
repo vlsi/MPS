@@ -10,8 +10,9 @@ import java.util.List;
 import jetbrains.mps.smodel.SNode;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
-import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.workbench.MPSDataKeys;
 import java.util.ArrayList;
 import jetbrains.mps.datatransfer.CopyPasteUtil;
 
@@ -32,9 +33,21 @@ public class CopyNode_Action extends GeneratedAction {
     return "ctrl C";
   }
 
+  public boolean isApplicable(AnActionEvent event) {
+    for (SNode node : ListSequence.fromList(CopyNode_Action.this.nodes)) {
+      if (SNodeOperations.getParent(node) != SNodeOperations.getParent(ListSequence.fromList(CopyNode_Action.this.nodes).first())) {
+        return false;
+      }
+    }
+    return true;
+  }
+
   public void doUpdate(@NotNull AnActionEvent event) {
     try {
-      this.enable(event.getPresentation());
+      {
+        boolean enabled = this.isApplicable(event);
+        this.setEnabledState(event.getPresentation(), enabled);
+      }
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
         log.error("User's action doUpdate method failed. Action:" + "CopyNode", t);

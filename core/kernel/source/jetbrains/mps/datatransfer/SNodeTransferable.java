@@ -102,6 +102,9 @@ public class SNodeTransferable implements Transferable {
   }
 
   private void saveNodes(@NotNull List<SNode> nodes, @Nullable Map<SNode, Set<SNode>> nodesAndAttributes) {
+    for (SNode node: nodes) {
+      assert node.getParent() == nodes.get(0).getParent();
+    }
     mySNodes.clear();
     PasteNodeData pasteNodeData = CopyPasteUtil.createNodeDataIn(nodes, nodesAndAttributes);
     mySNodes.addAll(pasteNodeData.getNodes());
