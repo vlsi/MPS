@@ -106,14 +106,6 @@ public class EquationInfo implements Comparable<EquationInfo> {
     return modelDescriptor.getSModel().getNodeById(myRuleId);
   }
 
-  public void addInequationIdBefore(String equationId) {
-
-  }
-
-  public void addInequationIdAfter(String equationId) {
-
-  }
-
   public void addInequationIdBefore(String modelId, String equationId) {
     if (myInequationIdsBefore == null) {
       myInequationIdsBefore = new HashSet<Pair<String,String>>(2);
