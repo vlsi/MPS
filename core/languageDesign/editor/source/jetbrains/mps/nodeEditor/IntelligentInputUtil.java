@@ -234,9 +234,7 @@ public class IntelligentInputUtil {
 
     if (rtHintCell != null) {
       NodeSubstituteInfo rtSubstituteInfo = rtHintCell.getSubstituteInfo();
-      if (rtSubstituteInfo == null) {
-        rtSubstituteInfo = new NullSubstituteInfo();
-      }
+      assert rtSubstituteInfo != null;
       //TypeCheckingContext typeCheckingContext = NodeTypesComponentsRepository.getInstance().getTypeCheckingContext();
       typeCheckingContext.setInEditorQueriesMode();
       List<INodeSubstituteAction> rtMatchingActions = rtSubstituteInfo.getMatchingActions(tail, true);
