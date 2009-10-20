@@ -1169,7 +1169,7 @@ public abstract class ChooseByNameBase {
             if (name != null) {
               String shortName = jetbrains.mps.util.NameUtil.shortNameFromLongName(name);
               if (myModel instanceof GotoActionModel) {
-                if (((GotoActionModel) myModel).matches(shortName, pattern)) {
+                if (((GotoActionModel) myModel).matches(name, pattern)) {
                   list.add(name);
                 }
               } else if (matcher.matches(shortName, compiledPattern)) {
