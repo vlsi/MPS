@@ -21,6 +21,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.typesystem.dependencies.InferenceMethod;
+import jetbrains.mps.typesystem.inference.EquationInfo;
 import java.util.ArrayList;
 import java.util.Map;
 import java.util.Set;
@@ -183,7 +184,8 @@ public class RulesUtil {
     {
       SNode _nodeToCheck_1029348928467 = leftExpression;
       BaseIntentionProvider intentionProvider = null;
-      typeCheckingContext.createLessThanInequation((SNode)typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1227545671650", false), (SNode)new _Quotations.QuotationClass_109().createNode(TypeToEquate, TypeToEquate, typeCheckingContext), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1227545687775", false, 0, intentionProvider);
+      EquationInfo info = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1227545687775", 0, intentionProvider);
+      typeCheckingContext.createLessThanInequation((SNode)typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1227545671650", false), (SNode)new _Quotations.QuotationClass_109().createNode(TypeToEquate, TypeToEquate, typeCheckingContext), false, info);
     }
   }
 
@@ -220,7 +222,8 @@ public class RulesUtil {
     {
       SNode _nodeToCheck_1029348928467 = null;
       BaseIntentionProvider intentionProvider = null;
-      typeCheckingContext.createEquation((SNode)TypeToEquate, (SNode)new _Quotations.QuotationClass_66().createNode(typeCheckingContext.getEquationManager().getRepresentator(Concept_typevar_1206099042246), typeCheckingContext), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1206099071408", intentionProvider);
+      EquationInfo info = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1206099071408", 0, intentionProvider);
+      typeCheckingContext.createEquation((SNode)TypeToEquate, (SNode)new _Quotations.QuotationClass_66().createNode(typeCheckingContext.getEquationManager().getRepresentator(Concept_typevar_1206099042246), typeCheckingContext), info);
     }
   }
 
@@ -233,7 +236,8 @@ public class RulesUtil {
         {
           SNode _nodeToCheck_1029348928467 = null;
           BaseIntentionProvider intentionProvider = null;
-          typeCheckingContext.createEquation((SNode)TypeToEquate, (SNode)SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.core.structure.BaseConcept"), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1207352395113", intentionProvider);
+          EquationInfo info = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1207352395113", 0, intentionProvider);
+          typeCheckingContext.createEquation((SNode)TypeToEquate, (SNode)SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.core.structure.BaseConcept"), info);
         }
       } else {
         List<SNode> concepts = new ArrayList<SNode>();
@@ -243,7 +247,8 @@ public class RulesUtil {
         {
           SNode _nodeToCheck_1029348928467 = null;
           BaseIntentionProvider intentionProvider = null;
-          typeCheckingContext.createEquation((SNode)TypeToEquate, (SNode)leastCommonSuperconcept(concepts), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1222429361005", intentionProvider);
+          EquationInfo info = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1222429361005", 0, intentionProvider);
+          typeCheckingContext.createEquation((SNode)TypeToEquate, (SNode)leastCommonSuperconcept(concepts), info);
         }
       }
     } else
@@ -251,7 +256,8 @@ public class RulesUtil {
       {
         SNode _nodeToCheck_1029348928467 = null;
         BaseIntentionProvider intentionProvider = null;
-        typeCheckingContext.createEquation((SNode)TypeToEquate, (SNode)SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(opParm, "conceptArgument", true), "jetbrains.mps.lang.smodel.structure.RefConcept_Reference"), "conceptDeclaration", false), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1219348168406", intentionProvider);
+        EquationInfo info = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1219348168406", 0, intentionProvider);
+        typeCheckingContext.createEquation((SNode)TypeToEquate, (SNode)SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(opParm, "conceptArgument", true), "jetbrains.mps.lang.smodel.structure.RefConcept_Reference"), "conceptDeclaration", false), info);
       }
     } else
     if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(opParm, "conceptArgument", true), "jetbrains.mps.lang.smodel.structure.PoundExpression")) {
@@ -259,12 +265,14 @@ public class RulesUtil {
       {
         SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(opParm, "conceptArgument", true);
         BaseIntentionProvider intentionProvider = null;
-        typeCheckingContext.createLessThanInequation((SNode)typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1226669149487", false), (SNode)new _Quotations.QuotationClass_101().createNode(typeCheckingContext.getEquationManager().getRepresentator(Concept_typevar_1226669497837), typeCheckingContext), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1226669167291", false, 0, intentionProvider);
+        EquationInfo info = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1226669167291", 0, intentionProvider);
+        typeCheckingContext.createLessThanInequation((SNode)typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1226669149487", false), (SNode)new _Quotations.QuotationClass_101().createNode(typeCheckingContext.getEquationManager().getRepresentator(Concept_typevar_1226669497837), typeCheckingContext), false, info);
       }
       {
         SNode _nodeToCheck_1029348928467 = null;
         BaseIntentionProvider intentionProvider = null;
-        typeCheckingContext.createEquation((SNode)TypeToEquate, (SNode)typeCheckingContext.getEquationManager().getRepresentator(Concept_typevar_1226669497837), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1226669541468", intentionProvider);
+        EquationInfo info = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1226669541468", 0, intentionProvider);
+        typeCheckingContext.createEquation((SNode)TypeToEquate, (SNode)typeCheckingContext.getEquationManager().getRepresentator(Concept_typevar_1226669497837), info);
       }
     }
   }

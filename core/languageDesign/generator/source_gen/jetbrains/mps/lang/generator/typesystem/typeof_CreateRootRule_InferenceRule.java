@@ -8,6 +8,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.intentions.BaseIntentionProvider;
+import jetbrains.mps.typesystem.inference.EquationInfo;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.SModelUtil_new;
 
@@ -20,7 +21,8 @@ public class typeof_CreateRootRule_InferenceRule extends AbstractInferenceRule_R
       {
         SNode _nodeToCheck_1029348928467 = nodeToCheck;
         BaseIntentionProvider intentionProvider = null;
-        typeCheckingContext.createLessThanInequationStrong((SNode)new _Quotations.QuotationClass_3().createNode(SNodeOperations.getConceptDeclaration(SLinkOperations.getTarget(nodeToCheck, "templateNode", false)), typeCheckingContext), (SNode)new _Quotations.QuotationClass_4().createNode(SLinkOperations.getTarget(SLinkOperations.getTarget(nodeToCheck, "label", false), "targetConcept", false), typeCheckingContext), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902e4(jetbrains.mps.lang.generator.typesystem)", "1200923779365", false, 0, intentionProvider);
+        EquationInfo info = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902e4(jetbrains.mps.lang.generator.typesystem)", "1200923779365", 0, intentionProvider);
+        typeCheckingContext.createLessThanInequationStrong((SNode)new _Quotations.QuotationClass_3().createNode(SNodeOperations.getConceptDeclaration(SLinkOperations.getTarget(nodeToCheck, "templateNode", false)), typeCheckingContext), (SNode)new _Quotations.QuotationClass_4().createNode(SLinkOperations.getTarget(SLinkOperations.getTarget(nodeToCheck, "label", false), "targetConcept", false), typeCheckingContext), false, info);
       }
     }
   }
