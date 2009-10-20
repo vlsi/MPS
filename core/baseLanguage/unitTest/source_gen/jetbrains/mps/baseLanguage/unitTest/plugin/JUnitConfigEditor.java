@@ -463,13 +463,20 @@ public class JUnitConfigEditor extends JPanel {
       myThis.setNodeValue(config.getStateObject().node);
       ModelAccess.instance().runReadAction(new Runnable() {
         public void run() {
-          myThis.myNodeName0.setText(INamedConcept_Behavior.call_getFqName_1213877404258(myThis.getNode()));
-          myThis.myNodeNameWithMethod0.setText(INamedConcept_Behavior.call_getFqName_1213877404258(myThis.getNode()));
-          myThis.myMethodName0.setTestCase(INamedConcept_Behavior.call_getFqName_1213877404258(myThis.getNode()));
-          myThis.setModelValue(SModelOperations.getModelName(SNodeOperations.getModel(myThis.getNode())));
-          myThis.myModelName0.setText(SModelOperations.getModelName(SNodeOperations.getModel(myThis.getNode())));
-          myThis.setModuleValue(SNodeOperations.getModel(myThis.getNode()).getModelDescriptor().getModule().getModuleFqName());
-          myThis.myModuleName0.setText(SNodeOperations.getModel(myThis.getNode()).getModelDescriptor().getModule().getModuleFqName());
+          String nodeFqName = config.getStateObject().node;
+          myThis.myNodeName0.setText(nodeFqName);
+          myThis.myNodeNameWithMethod0.setText(nodeFqName);
+          myThis.myMethodName0.setTestCase(nodeFqName);
+          if (myThis.getNode() != null && SNodeOperations.getModel(myThis.getNode()) != null) {
+            String modelName = SModelOperations.getModelName(SNodeOperations.getModel(myThis.getNode()));
+            myThis.setModelValue(modelName);
+            myThis.myModelName0.setText(modelName);
+            if (SNodeOperations.getModel(myThis.getNode()).getModelDescriptor() != null && SNodeOperations.getModel(myThis.getNode()).getModelDescriptor().getModule() != null) {
+              String moduleName = SNodeOperations.getModel(myThis.getNode()).getModelDescriptor().getModule().getModuleFqName();
+              myThis.setModuleValue(moduleName);
+              myThis.myModuleName0.setText(moduleName);
+            }
+          }
         }
       });
       if (config.getStateObject().method != null) {
@@ -477,13 +484,14 @@ public class JUnitConfigEditor extends JPanel {
         myThis.myMethodName0.setText(config.getStateObject().method);
       }
     }
-    if (config.getStateObject().model != null) {
+    if (config.getStateObject().model != null && myThis.getModel().getModelDescriptor() != null && myThis.getModel().getModelDescriptor().getModule() != null) {
       myThis.setModelValue(config.getStateObject().model);
       ModelAccess.instance().runReadAction(new Runnable() {
         public void run() {
           myThis.myModelName0.setText(config.getStateObject().model);
-          myThis.setModuleValue(myThis.getModel().getModelDescriptor().getModule().getModuleFqName());
-          myThis.myModuleName0.setText(myThis.getModel().getModelDescriptor().getModule().getModuleFqName());
+          String moduleName = myThis.getModel().getModelDescriptor().getModule().getModuleFqName();
+          myThis.setModuleValue(moduleName);
+          myThis.myModuleName0.setText(moduleName);
         }
       });
     }
