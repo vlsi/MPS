@@ -377,10 +377,9 @@ public class SModelTreeNode extends MPSTreeNodeEx {
     return myInitialized;
   }
 
-  public List<SModelDescriptor> getSubfolderModels() {
+  public List<SModelDescriptor> getSubfolderModels(Collection<SModelDescriptor> candidates) {
     if (myModelDescriptor == null) return Collections.EMPTY_LIST;
     List<SModelDescriptor> result = new ArrayList<SModelDescriptor>();
-    List<SModelDescriptor> candidates = myModelDescriptor.getModule().getOwnModelDescriptors();
     String modelName = myModelDescriptor.getLongName();
     if (modelName == null) return result;
     for (SModelDescriptor candidate : candidates) {
@@ -419,9 +418,11 @@ public class SModelTreeNode extends MPSTreeNodeEx {
       myPackageNodes.clear();
       myRootGroups.clear();
 
-      List<SModelDescriptor> subfolderModels = getSubfolderModels();
-      for (SModelDescriptor subfolderModel : subfolderModels) {
-        add(new SModelTreeNode(subfolderModel, null, getOperationContext(), false));
+      if (myModelDescriptor != null) {
+        List<SModelDescriptor> subfolderModels = getSubfolderModels(myModelDescriptor.getModule().getOwnModelDescriptors());
+        for (SModelDescriptor subfolderModel : subfolderModels) {
+          add(new SModelTreeNode(subfolderModel, null, getOperationContext(), false));
+        }
       }
 
       for (SNodeGroupTreeNode group : myRootGroups) {
