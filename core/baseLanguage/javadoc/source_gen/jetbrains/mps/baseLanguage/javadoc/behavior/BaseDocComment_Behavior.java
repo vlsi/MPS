@@ -15,7 +15,7 @@ public class BaseDocComment_Behavior {
   }
 
   public static boolean virtual_isTagSectionEmpty_8465538089690623795(SNode thisNode) {
-    return ListSequence.fromList(SLinkOperations.getTargets(thisNode, "author", true)).count() == 0 && (SLinkOperations.getTarget(thisNode, "deprecated", true) == null) && ListSequence.fromList(SLinkOperations.getTargets(thisNode, "since", true)).count() == 0 && ListSequence.fromList(SLinkOperations.getTargets(thisNode, "version", true)).count() == 0;
+    return ListSequence.fromList(SLinkOperations.getTargets(thisNode, "author", true)).isEmpty() && (SLinkOperations.getTarget(thisNode, "deprecated", true) == null) && ListSequence.fromList(SLinkOperations.getTargets(thisNode, "since", true)).isEmpty() && ListSequence.fromList(SLinkOperations.getTargets(thisNode, "version", true)).isEmpty() && ListSequence.fromList(SLinkOperations.getTargets(thisNode, "see", true)).isEmpty();
   }
 
   public static boolean call_isTagSectionEmpty_8465538089690623795(SNode thisNode) {

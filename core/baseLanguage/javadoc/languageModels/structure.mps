@@ -408,5 +408,27 @@
       <link role="target" targetNodeId="3v.1107461130800" resolveInfo="Classifier" />
     </node>
   </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="2546654756694997551">
+    <property name="name" value="LinkInlineDocTag" />
+    <link role="extends" targetNodeId="6962838954693748792" resolveInfo="BaseInlineDocTag" />
+    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="2546654756694997556">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="reference" />
+      <property name="sourceCardinality" value="1" />
+      <link role="target" targetNodeId="2217234381367188006" resolveInfo="BaseDocReference" />
+    </node>
+    <node role="propertyDeclaration" type="jetbrains.mps.lang.structure.structure.PropertyDeclaration" id="2546654756694997552">
+      <property name="name" value="text" />
+      <link role="dataType" targetNodeId="2v.1082983041843" resolveInfo="string" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="2546654756694997553">
+      <property name="value" value="link" />
+      <link role="conceptPropertyDeclaration" targetNodeId="2v.1137473891462" resolveInfo="alias" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="2546654756694997555">
+      <property name="value" value="link to type or member" />
+      <link role="conceptPropertyDeclaration" targetNodeId="2v.1137473914776" resolveInfo="shortDescription" />
+    </node>
+  </node>
 </model>
 

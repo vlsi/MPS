@@ -29,14 +29,56 @@
       <property name="name" value="x" />
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PrivateVisibility" id="6832197706140999821" />
       <node role="type" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="6832197706140999823" />
-      <node role="fieldDocComment$attribute" type="jetbrains.mps.baseLanguage.javadoc.structure.FieldDocComment" id="2965954289221704935">
-        <node role="body" type="jetbrains.mps.baseLanguage.javadoc.structure.CommentLine" id="4941637334112307872">
-          <node role="part" type="jetbrains.mps.baseLanguage.javadoc.structure.TextCommentLinePart" id="4941637334112307873">
+      <node role="fieldDocComment$attribute" type="jetbrains.mps.baseLanguage.javadoc.structure.FieldDocComment" id="7051378335467893388">
+        <node role="body" type="jetbrains.mps.baseLanguage.javadoc.structure.CommentLine" id="7051378335467893389">
+          <node role="part" type="jetbrains.mps.baseLanguage.javadoc.structure.TextCommentLinePart" id="7051378335467893390">
+            <property name="text" value="fasdfasdf" />
+          </node>
+        </node>
+        <node role="body" type="jetbrains.mps.baseLanguage.javadoc.structure.CommentLine" id="7051378335468076940">
+          <node role="part" type="jetbrains.mps.baseLanguage.javadoc.structure.TextCommentLinePart" id="7051378335468076941">
+            <property name="text" value="asdf " />
+          </node>
+          <node role="part" type="jetbrains.mps.baseLanguage.javadoc.structure.InlineTagCommentLinePart" id="2546654756695088984">
+            <node role="tag" type="jetbrains.mps.baseLanguage.javadoc.structure.LinkInlineDocTag" id="2546654756695088986">
+              <node role="reference" type="jetbrains.mps.baseLanguage.javadoc.structure.ClassifierDocReference" id="2546654756695122667">
+                <link role="classifier" targetNodeId="1.~AbstractMethodError" resolveInfo="AbstractMethodError" />
+              </node>
+            </node>
+          </node>
+          <node role="part" type="jetbrains.mps.baseLanguage.javadoc.structure.TextCommentLinePart" id="2546654756695088983">
+            <property name="text" value="asdf asd f" />
+          </node>
+        </node>
+        <node role="body" type="jetbrains.mps.baseLanguage.javadoc.structure.CommentLine" id="2546654756694295928">
+          <node role="part" type="jetbrains.mps.baseLanguage.javadoc.structure.TextCommentLinePart" id="2546654756694295929">
+            <property name="text" value="asdfa{sdf" />
+          </node>
+        </node>
+        <node role="body" type="jetbrains.mps.baseLanguage.javadoc.structure.CommentLine" id="2546654756694295930">
+          <node role="part" type="jetbrains.mps.baseLanguage.javadoc.structure.TextCommentLinePart" id="2546654756694295931">
+            <property name="text" value="asd" />
+          </node>
+        </node>
+        <node role="body" type="jetbrains.mps.baseLanguage.javadoc.structure.CommentLine" id="2546654756694295932">
+          <node role="part" type="jetbrains.mps.baseLanguage.javadoc.structure.TextCommentLinePart" id="2546654756694295933">
+            <property name="text" value="fasdf" />
+          </node>
+        </node>
+        <node role="body" type="jetbrains.mps.baseLanguage.javadoc.structure.CommentLine" id="2546654756694295924">
+          <node role="part" type="jetbrains.mps.baseLanguage.javadoc.structure.TextCommentLinePart" id="2546654756694295925">
             <property name="text" value="asdf" />
           </node>
         </node>
-        <node role="body" type="jetbrains.mps.baseLanguage.javadoc.structure.CommentLine" id="4941637334112307874">
-          <node role="part" type="jetbrains.mps.baseLanguage.javadoc.structure.TextCommentLinePart" id="4941637334112307875" />
+        <node role="see" type="jetbrains.mps.baseLanguage.javadoc.structure.SeeBlockDocTag" id="7051378335468076952">
+          <property name="text" value="fasdfasasdf" />
+          <node role="reference" type="jetbrains.mps.baseLanguage.javadoc.structure.MethodDocReference" id="2546654756694505398">
+            <link role="methodDeclaration" targetNodeId="1.~AbstractMethodError.&lt;init&gt;()" resolveInfo="AbstractMethodError" />
+          </node>
+        </node>
+        <node role="see" type="jetbrains.mps.baseLanguage.javadoc.structure.SeeBlockDocTag" id="2546654756694606827">
+          <property name="text" value="dasdfasdfa" />
+          <node role="reference" type="jetbrains.mps.baseLanguage.javadoc.structure.BaseDocReference" id="2546654756694606828" />
         </node>
       </node>
     </node>
