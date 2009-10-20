@@ -1427,7 +1427,6 @@
         </node>
       </node>
     </node>
-    <node role="annotation" type="jetbrains.mps.baseLanguage.structure.AnnotationInstance" id="7691748101595371861" />
   </node>
   <visible index="2" modelUID="f:java_stub#jetbrains.mps.plugin(jetbrains.mps.plugin@java_stub)" />
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="7196776143116381095">

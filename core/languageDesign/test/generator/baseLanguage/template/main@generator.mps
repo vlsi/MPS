@@ -1470,6 +1470,22 @@
         <node role="throwsItem" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1225976238044">
           <link role="classifier" targetNodeId="2.~Exception" resolveInfo="Exception" />
         </node>
+        <node role="annotation" type="jetbrains.mps.baseLanguage.structure.AnnotationInstance" id="9110034126561069132">
+          <node role="nodeMacro$attribute" type="jetbrains.mps.lang.generator.structure.CopySrcListMacro" id="9110034126561069134">
+            <node role="sourceNodesQuery" type="jetbrains.mps.lang.generator.structure.SourceSubstituteMacro_SourceNodesQuery" id="9110034126561069135">
+              <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="9110034126561069136">
+                <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="9110034126561074259">
+                  <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="9110034126561074261">
+                    <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="9110034126561074260" />
+                    <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkListAccess" id="9110034126561076469">
+                      <link role="link" targetNodeId="8.1188208488637" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
       </node>
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1225976019625" />
       <node role="superclass" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1225976172113">
