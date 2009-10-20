@@ -1614,7 +1614,7 @@
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1185805125474">
         <property name="text" value="(" />
-        <link role="styleClass" targetNodeId="27.1234958090348" resolveInfo="LeftParenAfterName" />
+        <link role="styleClass" targetNodeId="27.1215087929380" resolveInfo="LeftParen" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode" id="1185805131335">
         <link role="relationDeclaration" targetNodeId="1.1185805056450" />
