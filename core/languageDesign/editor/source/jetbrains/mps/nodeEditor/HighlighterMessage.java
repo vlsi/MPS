@@ -96,7 +96,10 @@ public class HighlighterMessage extends DefaultEditorMessage {
     if (myErrorTarget.getTarget() == ErrorTargetEnum.PROPERTY) {
       if (!(cell instanceof EditorCell_Property)) return false;
       EditorCell_Property propertyCell = (EditorCell_Property) cell;
-      return myErrorTarget.getRole().equals(((PropertyAccessor) propertyCell.getModelAccessor()).getPropertyName());
+      ModelAccessor modelAccessor = propertyCell.getModelAccessor();
+      if (modelAccessor instanceof PropertyAccessor) {
+        return myErrorTarget.getRole().equals(((PropertyAccessor) modelAccessor).getPropertyName());
+      }
     }
 
     return false;
