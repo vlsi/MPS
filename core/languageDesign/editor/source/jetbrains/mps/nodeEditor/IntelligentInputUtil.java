@@ -298,20 +298,19 @@ public class IntelligentInputUtil {
     }
     EditorCell cellForNewNode;
     SNode newNode;
-    boolean sourceCellRemains = false;
-
 
     if (cell.isValidText(smallPattern) && !"".equals(smallPattern)
         && info.hasExactlyNActions(head + smallPattern, false, 0)) {
       newNode = cell.getSNode();
       cellForNewNode = cell;
-      sourceCellRemains = true;
+      return applyLeftTransform(editorContext, head, smallPattern, cellForNewNode, newNode, true);
     } else if (canCompleteSmallPatternImmediately(info, smallPattern, "") &&
       info.getMatchingActions(head, false).isEmpty()) {
       newNode = info.getMatchingActions(smallPattern, true).get(0).substitute(editorContext, smallPattern);
       if (newNode == null) return true;
 
       cellForNewNode = editorContext.getNodeEditorComponent().findNodeCell(newNode);
+      return applyLeftTransform(editorContext, head, smallPattern, cellForNewNode, newNode, false);
     } else if (canCompleteTheWholeStringImmediately(info, head + smallPattern)) {
 
       List<INodeSubstituteAction> matchingActions = info.getMatchingActions(head + smallPattern, true);
@@ -322,7 +321,9 @@ public class IntelligentInputUtil {
       return true;
     }
 
+  }
 
+  private static boolean applyLeftTransform(EditorContext editorContext, String head, String smallPattern, EditorCell cellForNewNode, SNode newNode, boolean sourceCellRemains) {
     EditorCellAction ltAction = cellForNewNode.findChild(CellFinders.LAST_SELECTABLE_LEAF, true).getApplicableCellAction(CellActionType.LEFT_TRANSFORM);
     TypeCheckingContext typeCheckingContext = NodeTypesComponentsRepository.getInstance().createTypeCheckingContext(cellForNewNode.getSNode());
     typeCheckingContext.setInEditorQueriesMode();
@@ -337,7 +338,7 @@ public class IntelligentInputUtil {
     }
 
     if (sourceCellRemains) {
-      cell.changeText(smallPattern);
+      ((EditorCell_Label) cellForNewNode).changeText(smallPattern);
       editorContext.getNodeEditorComponent().requestRelayout();
     }
 
