@@ -945,16 +945,24 @@ public class QueriesGenerated {
 
   public static Object propertyMacro_GetPropertyValue_1149547447656252123(final IOperationContext operationContext, final PropertyMacroContext _context) {
     SNode ineq = SLinkOperations.getTarget(_context.getNode(), "inequation", false);
-    return SModelOperations.getModelName(SNodeOperations.getModel(ineq)) + "#" + ineq.getId();
+    return SModelOperations.getModelName(SNodeOperations.getModel(ineq));
   }
 
   public static Object propertyMacro_GetPropertyValue_1149547447656253830(final IOperationContext operationContext, final PropertyMacroContext _context) {
     SNode ineq = SLinkOperations.getTarget(_context.getNode(), "inequation", false);
-    return SModelOperations.getModelName(SNodeOperations.getModel(ineq)) + "#" + ineq.getId();
+    return SModelOperations.getModelName(SNodeOperations.getModel(ineq));
   }
 
   public static Object propertyMacro_GetPropertyValue_3790659035762526678(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return SPropertyOperations.getBoolean(SNodeOperations.cast(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.lang.typesystem.structure.OverloadedOpTypeRule_OneTypeSpecified"), "isStrong");
+  }
+
+  public static Object propertyMacro_GetPropertyValue_4031518422727234198(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return SLinkOperations.getTarget(_context.getNode(), "inequation", false).getId();
+  }
+
+  public static Object propertyMacro_GetPropertyValue_4031518422727234220(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return SLinkOperations.getTarget(_context.getNode(), "inequation", false).getId();
   }
 
   public static Object propertyMacro_GetPropertyValue_6663831120772322960(final IOperationContext operationContext, final PropertyMacroContext _context) {

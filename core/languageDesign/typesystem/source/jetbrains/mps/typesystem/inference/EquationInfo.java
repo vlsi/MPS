@@ -20,6 +20,7 @@ import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.intentions.IntentionProvider;
+import jetbrains.mps.util.Pair;
 
 import java.util.List;
 import java.util.Set;
@@ -31,8 +32,8 @@ public class EquationInfo implements Comparable<EquationInfo> {
 
   private String myRuleModel;
   private String myRuleId;
-  private Set<String> myInequationIdsBefore = null;
-  private Set<String> myInequationIdsAfter = null;
+  private Set<Pair<String, String>> myInequationIdsBefore = null;
+  private Set<Pair<String, String>> myInequationIdsAfter = null;
 
   private IntentionProvider myIntentionProvider;
 
@@ -106,32 +107,40 @@ public class EquationInfo implements Comparable<EquationInfo> {
   }
 
   public void addInequationIdBefore(String equationId) {
-    if (myInequationIdsBefore == null) {
-      myInequationIdsBefore = new HashSet<String>(2);
-    }
-    myInequationIdsBefore.add(equationId);
+
   }
 
   public void addInequationIdAfter(String equationId) {
-    if (myInequationIdsAfter == null) {
-      myInequationIdsAfter = new HashSet<String>(2);
+
+  }
+
+  public void addInequationIdBefore(String modelId, String equationId) {
+    if (myInequationIdsBefore == null) {
+      myInequationIdsBefore = new HashSet<Pair<String,String>>(2);
     }
-    myInequationIdsAfter.add(equationId);
+    myInequationIdsBefore.add(new Pair<String, String>(modelId, equationId));
+  }
+
+  public void addInequationIdAfter(String modelId, String equationId) {
+    if (myInequationIdsAfter == null) {
+      myInequationIdsAfter = new HashSet<Pair<String, String>>(2);
+    }
+    myInequationIdsAfter.add(new Pair<String, String>(modelId, equationId));
   }
 
   public int compareTo(EquationInfo o) {
     boolean iAmBefore = false;
     boolean iAmAfter = false;
-    if (myInequationIdsAfter != null && myInequationIdsAfter.contains(o.getRuleId())) {
+    if (myInequationIdsAfter != null && myInequationIdsAfter.contains(new Pair<String, String>(o.getRuleModel(), o.getRuleId()))) {
       iAmBefore = true;
     }
-    if (o.myInequationIdsBefore != null && o.myInequationIdsBefore.contains(myRuleId)) {
+    if (o.myInequationIdsBefore != null && o.myInequationIdsBefore.contains(new Pair<String, String>(myRuleModel, myRuleId))) {
       iAmBefore = true;
     }
-    if (myInequationIdsBefore != null && myInequationIdsBefore.contains(o.getRuleId())) {
+    if (myInequationIdsBefore != null && myInequationIdsBefore.contains(new Pair<String, String>(o.getRuleModel(), o.getRuleId()))) {
       iAmAfter = true;
     }
-    if (o.myInequationIdsAfter != null && o.myInequationIdsAfter.contains(myRuleId)) {
+    if (o.myInequationIdsAfter != null && o.myInequationIdsAfter.contains(new Pair<String, String>(myRuleModel, myRuleId))) {
       iAmAfter = true;
     }
     if (iAmBefore && iAmAfter) {
