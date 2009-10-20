@@ -11,6 +11,7 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.intentions.BaseIntentionProvider;
+import jetbrains.mps.typesystem.inference.EquationInfo;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class typeof_IndexedTupleLiteral_InferenceRule extends AbstractInferenceRule_Runtime implements InferenceRule_Runtime {
@@ -25,7 +26,8 @@ public class typeof_IndexedTupleLiteral_InferenceRule extends AbstractInferenceR
     {
       SNode _nodeToCheck_1029348928467 = tuple;
       BaseIntentionProvider intentionProvider = null;
-      typeCheckingContext.createEquation((SNode)typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:e119dbbd-3529-4067-8bad-6b9edd79d0b6(jetbrains.mps.baseLanguage.tuples.typesystem)", "1238854050913", true), (SNode)new _Quotations.QuotationClass_0().createNode(memberTypes, typeCheckingContext), _nodeToCheck_1029348928467, null, "r:e119dbbd-3529-4067-8bad-6b9edd79d0b6(jetbrains.mps.baseLanguage.tuples.typesystem)", "1238854056178", intentionProvider);
+      EquationInfo info = new EquationInfo(_nodeToCheck_1029348928467, null, "r:e119dbbd-3529-4067-8bad-6b9edd79d0b6(jetbrains.mps.baseLanguage.tuples.typesystem)", "1238854056178", 0, intentionProvider);
+      typeCheckingContext.createEquation((SNode)typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:e119dbbd-3529-4067-8bad-6b9edd79d0b6(jetbrains.mps.baseLanguage.tuples.typesystem)", "1238854050913", true), (SNode)new _Quotations.QuotationClass_0().createNode(memberTypes, typeCheckingContext), info);
     }
   }
 

@@ -8,6 +8,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.baseLanguage.classifiers.behavior.SuperClassifierExpresson_Behavior;
 import jetbrains.mps.intentions.BaseIntentionProvider;
+import jetbrains.mps.typesystem.inference.EquationInfo;
 import jetbrains.mps.baseLanguage.classifiers.behavior.IClassifier_Behavior;
 import jetbrains.mps.typesystem.inference.IErrorTarget;
 import jetbrains.mps.typesystem.inference.NodeErrorTarget;
@@ -23,7 +24,8 @@ public class typeof_SuperClassifierExpresson_InferenceRule extends AbstractInfer
       {
         SNode _nodeToCheck_1029348928467 = expresson;
         BaseIntentionProvider intentionProvider = null;
-        typeCheckingContext.createEquation((SNode)typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c89590371(jetbrains.mps.baseLanguage.classifiers.typesystem)", "1217434001451", true), (SNode)IClassifier_Behavior.call_createSuperType_1217433657148(classifier), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c89590371(jetbrains.mps.baseLanguage.classifiers.typesystem)", "1217434001449", intentionProvider);
+        EquationInfo info = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c89590371(jetbrains.mps.baseLanguage.classifiers.typesystem)", "1217434001449", 0, intentionProvider);
+        typeCheckingContext.createEquation((SNode)typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c89590371(jetbrains.mps.baseLanguage.classifiers.typesystem)", "1217434001451", true), (SNode)IClassifier_Behavior.call_createSuperType_1217433657148(classifier), info);
       }
     } else {
       {

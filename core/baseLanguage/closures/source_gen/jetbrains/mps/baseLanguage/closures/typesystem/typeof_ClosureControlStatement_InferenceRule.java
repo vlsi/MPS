@@ -13,6 +13,7 @@ import jetbrains.mps.typesystem.inference.IErrorTarget;
 import jetbrains.mps.typesystem.inference.NodeErrorTarget;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.typesystem.inference.EquationInfo;
 import java.util.Iterator;
 import jetbrains.mps.smodel.SModelUtil_new;
 
@@ -21,14 +22,14 @@ public class typeof_ClosureControlStatement_InferenceRule extends AbstractInfere
   }
 
   public void applyRule(final SNode ccs, final TypeCheckingContext typeCheckingContext) {
-    ControlMethodUtil.Info info = ControlMethodUtil.analyze(SLinkOperations.getTarget(ccs, "controlMethod", false));
-    if (!(info != null)) {
+    ControlMethodUtil.Info cmuInfo = ControlMethodUtil.analyze(SLinkOperations.getTarget(ccs, "controlMethod", false));
+    if (!(cmuInfo != null)) {
       BaseIntentionProvider intentionProvider = null;
       IErrorTarget errorTarget = new NodeErrorTarget();
       typeCheckingContext.reportTypeError(ccs, "Not referring to a control method", "r:00000000-0000-4000-0000-011c89590337(jetbrains.mps.baseLanguage.closures.typesystem)", "1232453890820", intentionProvider, errorTarget);
     }
-    if (info != null) {
-      List<SNode> ccts = info.getControlClosureTypes();
+    if (cmuInfo != null) {
+      List<SNode> ccts = cmuInfo.getControlClosureTypes();
       if (!(ListSequence.fromList(ccts).count() > 0)) {
         BaseIntentionProvider intentionProvider = null;
         IErrorTarget errorTarget = new NodeErrorTarget();
@@ -43,11 +44,12 @@ public class typeof_ClosureControlStatement_InferenceRule extends AbstractInfere
         {
           SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(ccs, "controlClosure", true);
           BaseIntentionProvider intentionProvider = null;
-          typeCheckingContext.createLessThanInequationStrong((SNode)typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c89590337(jetbrains.mps.baseLanguage.closures.typesystem)", "1236533965287", true), (SNode)ListSequence.fromList(ccts).getElement(ListSequence.fromList(ccts).count() - 1), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c89590337(jetbrains.mps.baseLanguage.closures.typesystem)", "1236533962056", false, 0, intentionProvider);
+          EquationInfo info = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c89590337(jetbrains.mps.baseLanguage.closures.typesystem)", "1236533962056", 0, intentionProvider);
+          typeCheckingContext.createLessThanInequationStrong((SNode)typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c89590337(jetbrains.mps.baseLanguage.closures.typesystem)", "1236533965287", true), (SNode)ListSequence.fromList(ccts).getElement(ListSequence.fromList(ccts).count() - 1), false, info);
         }
       }
       List<SNode> params = SLinkOperations.getTargets(ccs, "actualParameter", true);
-      List<SNode> fpts = info.getFunctionParamTypes();
+      List<SNode> fpts = cmuInfo.getFunctionParamTypes();
       if (!(ListSequence.fromList(params).count() == ListSequence.fromList(fpts).count())) {
         BaseIntentionProvider intentionProvider = null;
         IErrorTarget errorTarget = new NodeErrorTarget();
@@ -70,7 +72,8 @@ public class typeof_ClosureControlStatement_InferenceRule extends AbstractInfere
           {
             SNode _nodeToCheck_1029348928467 = param;
             BaseIntentionProvider intentionProvider = null;
-            typeCheckingContext.createLessThanInequation((SNode)typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c89590337(jetbrains.mps.baseLanguage.closures.typesystem)", "1236534227246", true), (SNode)pt, _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c89590337(jetbrains.mps.baseLanguage.closures.typesystem)", "1236534225483", false, 0, intentionProvider);
+            EquationInfo info = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c89590337(jetbrains.mps.baseLanguage.closures.typesystem)", "1236534225483", 0, intentionProvider);
+            typeCheckingContext.createLessThanInequation((SNode)typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c89590337(jetbrains.mps.baseLanguage.closures.typesystem)", "1236534227246", true), (SNode)pt, false, info);
           }
         }
       }

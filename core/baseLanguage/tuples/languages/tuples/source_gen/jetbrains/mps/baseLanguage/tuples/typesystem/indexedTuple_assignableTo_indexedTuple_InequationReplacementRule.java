@@ -42,7 +42,8 @@ public class indexedTuple_assignableTo_indexedTuple_InequationReplacementRule ex
         {
           SNode _nodeToCheck_1029348928467 = equationInfo.getNodeWithError();
           BaseIntentionProvider intentionProvider = null;
-          typeCheckingContext.createLessThanInequation((SNode)lmt, (SNode)rmt, _nodeToCheck_1029348928467, null, "r:e119dbbd-3529-4067-8bad-6b9edd79d0b6(jetbrains.mps.baseLanguage.tuples.typesystem)", "1238854598691", false, 0, intentionProvider);
+          EquationInfo info = new EquationInfo(_nodeToCheck_1029348928467, null, "r:e119dbbd-3529-4067-8bad-6b9edd79d0b6(jetbrains.mps.baseLanguage.tuples.typesystem)", "1238854598691", 0, intentionProvider);
+          typeCheckingContext.createLessThanInequation((SNode)lmt, (SNode)rmt, false, info);
         }
       }
     }

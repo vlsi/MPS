@@ -3327,7 +3327,7 @@
     <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1232453816875">
       <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1232453885508">
         <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1232453885509">
-          <property name="name" value="info" />
+          <property name="name" value="cmuInfo" />
           <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1232453885510">
             <link role="classifier" targetNodeId="26.1229639120687" resolveInfo="Info" />
           </node>

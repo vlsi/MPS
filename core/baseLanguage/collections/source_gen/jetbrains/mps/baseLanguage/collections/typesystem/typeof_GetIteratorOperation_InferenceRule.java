@@ -8,6 +8,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.baseLanguage.behavior.IOperation_Behavior;
 import jetbrains.mps.intentions.BaseIntentionProvider;
+import jetbrains.mps.typesystem.inference.EquationInfo;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class typeof_GetIteratorOperation_InferenceRule extends AbstractInferenceRule_Runtime implements InferenceRule_Runtime {
@@ -19,7 +20,8 @@ public class typeof_GetIteratorOperation_InferenceRule extends AbstractInference
     {
       SNode _nodeToCheck_1029348928467 = IOperation_Behavior.call_getOperand_1213877410070(iterator);
       BaseIntentionProvider intentionProvider = null;
-      typeCheckingContext.createLessThanInequationStrong((SNode)typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)", "1237470398548", true), (SNode)new _Quotations.QuotationClass_101().createNode(typeCheckingContext.getEquationManager().getRepresentator(elementType_typevar_1237470428123), typeCheckingContext), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)", "1237470396562", false, 0, intentionProvider);
+      EquationInfo info = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)", "1237470396562", 0, intentionProvider);
+      typeCheckingContext.createLessThanInequationStrong((SNode)typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)", "1237470398548", true), (SNode)new _Quotations.QuotationClass_101().createNode(typeCheckingContext.getEquationManager().getRepresentator(elementType_typevar_1237470428123), typeCheckingContext), false, info);
     }
     do {
       SNode matchedNode_2 = typeCheckingContext.typeOf(IOperation_Behavior.call_getOperand_1213877410070(iterator), "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)", "1240152232529", true);
@@ -35,7 +37,8 @@ public class typeof_GetIteratorOperation_InferenceRule extends AbstractInference
           {
             SNode _nodeToCheck_1029348928467 = iterator;
             BaseIntentionProvider intentionProvider = null;
-            typeCheckingContext.createEquation((SNode)typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)", "1240152280231", true), (SNode)new _Quotations.QuotationClass_122().createNode(typeCheckingContext.getEquationManager().getRepresentator(elementType_typevar_1237470428123), typeCheckingContext), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)", "1240152280223", intentionProvider);
+            EquationInfo info = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)", "1240152280223", 0, intentionProvider);
+            typeCheckingContext.createEquation((SNode)typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)", "1240152280231", true), (SNode)new _Quotations.QuotationClass_122().createNode(typeCheckingContext.getEquationManager().getRepresentator(elementType_typevar_1237470428123), typeCheckingContext), info);
           }
           break;
         }
@@ -52,7 +55,8 @@ public class typeof_GetIteratorOperation_InferenceRule extends AbstractInference
           {
             SNode _nodeToCheck_1029348928467 = iterator;
             BaseIntentionProvider intentionProvider = null;
-            typeCheckingContext.createEquation((SNode)typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)", "1240152294414", true), (SNode)new _Quotations.QuotationClass_123().createNode(typeCheckingContext.getEquationManager().getRepresentator(elementType_typevar_1237470428123), typeCheckingContext), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)", "1240152294406", intentionProvider);
+            EquationInfo info = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)", "1240152294406", 0, intentionProvider);
+            typeCheckingContext.createEquation((SNode)typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)", "1240152294414", true), (SNode)new _Quotations.QuotationClass_123().createNode(typeCheckingContext.getEquationManager().getRepresentator(elementType_typevar_1237470428123), typeCheckingContext), info);
           }
           break;
         }
@@ -60,7 +64,8 @@ public class typeof_GetIteratorOperation_InferenceRule extends AbstractInference
       {
         SNode _nodeToCheck_1029348928467 = iterator;
         BaseIntentionProvider intentionProvider = null;
-        typeCheckingContext.createEquation((SNode)typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)", "1240152278181", true), (SNode)new _Quotations.QuotationClass_121().createNode(typeCheckingContext.getEquationManager().getRepresentator(elementType_typevar_1237470428123), typeCheckingContext), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)", "1240152278173", intentionProvider);
+        EquationInfo info = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)", "1240152278173", 0, intentionProvider);
+        typeCheckingContext.createEquation((SNode)typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)", "1240152278181", true), (SNode)new _Quotations.QuotationClass_121().createNode(typeCheckingContext.getEquationManager().getRepresentator(elementType_typevar_1237470428123), typeCheckingContext), info);
       }
     } while(false);
   }
