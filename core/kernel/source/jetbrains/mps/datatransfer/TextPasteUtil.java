@@ -22,14 +22,22 @@ import java.awt.datatransfer.Transferable;
 
 public class TextPasteUtil {
   public static boolean hasStringInClipboard() {
-    Clipboard cb = Toolkit.getDefaultToolkit().getSystemClipboard();
-    return cb.isDataFlavorAvailable(DataFlavor.stringFlavor);
+    try {
+      Clipboard cb = Toolkit.getDefaultToolkit().getSystemClipboard();
+      return cb.isDataFlavorAvailable(DataFlavor.stringFlavor);
+    } catch (IllegalStateException e) {
+      return false;
+    }
   }  
 
   public static String getStringFromClipboard() {
     Clipboard cb = Toolkit.getDefaultToolkit().getSystemClipboard();
     Transferable content = null;
-    if (!cb.isDataFlavorAvailable(DataFlavor.stringFlavor)) {
+    try {
+      if (!cb.isDataFlavorAvailable(DataFlavor.stringFlavor)) {
+        return null;
+      }
+    } catch (IllegalStateException e) {
       return null;
     }
     try {

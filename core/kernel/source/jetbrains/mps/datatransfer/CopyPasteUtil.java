@@ -269,9 +269,12 @@ public class CopyPasteUtil {
     if (cb == null) {
       return PasteNodeData.emptyPasteNodeData(module, model);
     }
-
-    if (!cb.isDataFlavorAvailable(SModelDataFlavor.sNode)) {
-      return PasteNodeData.emptyPasteNodeData(module, model);
+    try {
+      if (!cb.isDataFlavorAvailable(SModelDataFlavor.sNode)) {
+        return PasteNodeData.emptyPasteNodeData(module, model);
+      }
+    } catch (IllegalStateException e) {
+      return PasteNodeData.emptyPasteNodeData(module, model); 
     }
 
     Transferable content = null;
@@ -353,6 +356,10 @@ public class CopyPasteUtil {
 
   public static boolean doesClipboardContainNode() {
     Clipboard cb = Toolkit.getDefaultToolkit().getSystemClipboard();
-    return cb.isDataFlavorAvailable(SModelDataFlavor.sNode);
+    try {
+      return cb.isDataFlavorAvailable(SModelDataFlavor.sNode);
+    } catch (IllegalStateException e) {
+      return false;
+    }
   }
 }
