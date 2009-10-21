@@ -5350,5 +5350,56 @@
       </node>
     </node>
   </node>
+  <node type="jetbrains.mps.lang.test.structure.EditorTestCase" id="8976921645732250110">
+    <property name="package" value="intelligentInputUtil" />
+    <property name="name" value="PerformLeftTransformWithNoLeftTransformActions" />
+    <node role="nodeToEdit" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="8976921645732305714">
+      <property name="name" value="method" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="8976921645732305715" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="8976921645732305716" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="8976921645732305717">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="6212382567349237208">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="6212382567349237209">
+            <property name="name" value="a" />
+            <node role="type" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="6212382567349237210">
+              <node role="testNode$attribute" type="jetbrains.mps.lang.test.structure.AnonymousCellAnnotation" id="6212382567349237211">
+                <property name="caretPosition" value="0" />
+                <property name="useLabelSelection" value="true" />
+                <property name="selectionStart" value="0" />
+                <property name="selectionEnd" value="0" />
+                <property name="cellId" value="conceptProperty_alias" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="result" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="6212382567349237212">
+      <property name="name" value="method" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="6212382567349237213" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="6212382567349237214" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="6212382567349237215">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="6212382567349237216">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="6212382567349237217">
+            <property name="name" value="a" />
+            <node role="type" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="6212382567349237218">
+              <node role="testNode$attribute" type="jetbrains.mps.lang.test.structure.AnonymousCellAnnotation" id="6212382567349237220">
+                <property name="caretPosition" value="1" />
+                <property name="useLabelSelection" value="true" />
+                <property name="selectionStart" value="1" />
+                <property name="selectionEnd" value="1" />
+                <property name="cellId" value="conceptProperty_alias" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="code" type="jetbrains.mps.baseLanguage.structure.StatementList" id="6212382567349237221">
+      <node role="statement" type="jetbrains.mps.lang.test.structure.TypeKeyStatement" id="6212382567349237222">
+        <property name="keys" value="+" />
+      </node>
+    </node>
+  </node>
 </model>
 
