@@ -325,7 +325,7 @@ public class IntelligentInputUtil {
   }
 
   private static boolean applyLeftTransform(EditorContext editorContext, String head, String smallPattern, EditorCell cellForNewNode, SNode newNode, boolean sourceCellRemains) {
-    EditorCellAction ltAction = cellForNewNode.findChild(CellFinders.LAST_SELECTABLE_LEAF, true).getApplicableCellAction(CellActionType.LEFT_TRANSFORM);
+    EditorCellAction ltAction = cellForNewNode.findChild(CellFinders.FIRST_SELECTABLE_LEAF, true).getApplicableCellAction(CellActionType.LEFT_TRANSFORM);
     TypeCheckingContext typeCheckingContext = NodeTypesComponentsRepository.getInstance().createTypeCheckingContext(cellForNewNode.getSNode());
     typeCheckingContext.setInEditorQueriesMode();
     boolean hasSideActions = hasSideActions(cellForNewNode, CellSide.LEFT, head);
