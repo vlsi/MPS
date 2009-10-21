@@ -1,6 +1,7 @@
 package jetbrains.mps.typesystem.inference;
 
 import jetbrains.mps.util.Pair;
+import jetbrains.mps.logging.Logger;
 
 import java.util.*;
 
@@ -12,10 +13,12 @@ import java.util.*;
  * To change this template use File | Settings | File Templates.
  */
 public class InequationsSolver {
+  private static Logger LOG = Logger.getLogger(InequationsSolver.class);
+
   private Map<EquationInfo, Pair<IWrapper, IWrapper>> myAllInequations = new HashMap<EquationInfo, Pair<IWrapper, IWrapper>>();
   private EquationManager myEquationManager;
   private List<Set<EquationInfo>> myInequationsLayers
-    = new ArrayList<Set<EquationInfo>>(4);
+    = new ArrayList<Set<EquationInfo>>(6);
 
   public InequationsSolver(EquationManager equationManager) {
     myEquationManager = equationManager;
@@ -76,19 +79,11 @@ public class InequationsSolver {
   public void splitByLayers() {
     List<EquationInfo> allEqInfos = new ArrayList<EquationInfo>(myAllInequations.keySet());
 
-    //creating maps
-    Map<Integer, Set<EquationInfo>> prioritiesToIneqs = new HashMap<Integer, Set<EquationInfo>>();
+    //creating map by id
     Map<Pair<String, String>, Set<EquationInfo>> ineqIdsToIneqs = new HashMap<Pair<String, String>, Set<EquationInfo>>();
     for (EquationInfo equationInfo : allEqInfos) {
-      Integer priority = equationInfo.getInequationPriority();
-      Set<EquationInfo> equationInfos = prioritiesToIneqs.get(priority);
-      if (equationInfos == null) {
-        equationInfos = new HashSet<EquationInfo>();
-        prioritiesToIneqs.put(priority, equationInfos);
-      }
-      equationInfos.add(equationInfo);
       Pair<String, String> id = new Pair<String, String>(equationInfo.getRuleModel(), equationInfo.getRuleId());
-      equationInfos = ineqIdsToIneqs.get(id);
+      Set<EquationInfo> equationInfos = ineqIdsToIneqs.get(id);
       if (equationInfos == null) {
         equationInfos = new HashSet<EquationInfo>();
         ineqIdsToIneqs.put(id, equationInfos);
@@ -96,7 +91,7 @@ public class InequationsSolver {
       equationInfos.add(equationInfo);
     }
 
-    //creating a graph; step needed to set all back references
+    //creating a graph; needed to set all back references
     Map<EquationInfo, Set<EquationInfo>> references = new HashMap<EquationInfo, Set<EquationInfo>>();
     Map<EquationInfo, Set<EquationInfo>> backReferences = new HashMap<EquationInfo, Set<EquationInfo>>();
     for (EquationInfo equationInfo : allEqInfos) {
@@ -144,16 +139,59 @@ public class InequationsSolver {
       }
     }
 
-    //graph created, lets split it by layers
-    Set<EquationInfo> firstLayer = new HashSet<EquationInfo>();
-    for (EquationInfo equationInfo : allEqInfos) {
-      Set<EquationInfo> prevEquationInfos = backReferences.get(equationInfo);
-      Set<EquationInfo> earlierEquationInfos = prioritiesToIneqs.get(equationInfo.getInequationPriority() - 1);
-      if ((prevEquationInfos == null || prevEquationInfos.isEmpty()) &&
-        (earlierEquationInfos == null || earlierEquationInfos.isEmpty())) {
-        firstLayer.add(equationInfo);
+    List<Set<EquationInfo>> byRanks = new ArrayList<Set<EquationInfo>>(4);
+
+    //graph created, lets split it by ranks
+    while (!allEqInfos.isEmpty()) {
+      Set<EquationInfo> nextLayer = new HashSet<EquationInfo>();
+      for (EquationInfo equationInfo : new HashSet<EquationInfo>(allEqInfos)) {
+        Set<EquationInfo> prevEquationInfos = backReferences.get(equationInfo);
+        if (prevEquationInfos == null || prevEquationInfos.isEmpty()) {
+          nextLayer.add(equationInfo);
+        }
+      }
+      if (nextLayer.isEmpty()) {
+        LOG.error("cyclic priorities found, single priority group will be returned");
+        myInequationsLayers = new ArrayList<Set<EquationInfo>>(1);
+        myInequationsLayers.set(0, new HashSet<EquationInfo>(myAllInequations.keySet()));
+        return;
+      }
+      byRanks.add(nextLayer);
+      for (EquationInfo equationInfo : nextLayer) {
+        Set<EquationInfo> nextEquationInfos = references.get(equationInfo);
+        if (nextEquationInfos != null) {
+          for (EquationInfo nextEquationInfo : nextEquationInfos) {
+            Set<EquationInfo> backRefs = backReferences.get(nextEquationInfo);
+            if (backRefs != null) {
+              backRefs.remove(equationInfo);
+            }
+          }
+        }
+        allEqInfos.remove(equationInfo);
       }
     }
 
+    //then group by priorities
+    for (Set<EquationInfo> equationInfosSameRank : byRanks) {
+      //priorities are: 0, 1, 2, 3, 500
+      Set<EquationInfo>[] byPriorities = new Set[5];
+      for (EquationInfo equationInfo : equationInfosSameRank) {
+        int priority = equationInfo.getInequationPriority();
+        if (priority == 500) {
+          priority = 4;
+        }
+        Set<EquationInfo> equationInfos = byPriorities[priority];
+        if (equationInfos == null) {
+          equationInfos = new HashSet<EquationInfo>();
+          byPriorities[priority] = equationInfos;
+        }
+        equationInfos.add(equationInfo);
+      }
+      for (Set<EquationInfo> equationInfos : byPriorities) {
+        if (equationInfos != null && !equationInfos.isEmpty()) {
+          myInequationsLayers.add(equationInfos);
+        }
+      }
+    }
   }
 }

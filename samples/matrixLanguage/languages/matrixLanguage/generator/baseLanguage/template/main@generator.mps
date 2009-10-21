@@ -647,7 +647,7 @@
               </node>
             </node>
             <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1210007636822">
-              <link role="baseMethodDeclaration" targetNodeId="3.1210002194351" resolveInfo="mult" />
+              <link role="baseMethodDeclaration" targetNodeId="3.1209984254660" resolveInfo="mult" />
               <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.FloatingPointConstant" id="1210007638444">
                 <property name="value" value="10.0" />
                 <node role="nodeMacro$attribute" type="jetbrains.mps.lang.generator.structure.CopySrcNodeMacro" id="1210007784026">

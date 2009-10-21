@@ -77,7 +77,7 @@
               </node>
             </node>
             <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1222765914152">
-              <link role="baseMethodDeclaration" targetNodeId="6.~ISequence.translate(jetbrains.mps.internal.collections.runtime.ITranslator):jetbrains.mps.internal.collections.runtime.ISequence" resolveInfo="translate" />
+              <link role="baseMethodDeclaration" targetNodeId="6.~ISequence.translate(jetbrains.mps.internal.collections.runtime.ITranslator2):jetbrains.mps.internal.collections.runtime.ISequence" resolveInfo="translate" />
               <node role="actualArgument" type="jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral" id="1222765975373">
                 <node role="parameter" type="jetbrains.mps.baseLanguage.collections.structure.SmartClosureParameterDeclaration" id="1222765975374">
                   <property name="name" value="it" />
@@ -87,7 +87,7 @@
                   <node role="statement" type="jetbrains.mps.baseLanguage.closures.structure.YieldStatement" id="1222765975377">
                     <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1222765975378">
                       <link role="classConcept" targetNodeId="1.~String" resolveInfo="String" />
-                      <link role="baseMethodDeclaration" targetNodeId="1.~String.valueOf(java.lang.Object):java.lang.String" resolveInfo="valueOf" />
+                      <link role="baseMethodDeclaration" targetNodeId="1.~String.valueOf(int):java.lang.String" resolveInfo="valueOf" />
                       <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1222765975379">
                         <link role="variableDeclaration" targetNodeId="1222765975374" resolveInfo="it" />
                       </node>
