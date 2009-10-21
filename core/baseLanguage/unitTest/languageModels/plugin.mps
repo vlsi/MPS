@@ -20668,6 +20668,18 @@
                             </node>
                           </node>
                         </node>
+                        <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="5750216318590054274">
+                          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="5750216318590054275">
+                            <property name="name" value="textTrimmed" />
+                            <node role="type" type="jetbrains.mps.baseLanguage.structure.StringType" id="5750216318590054276" />
+                            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="5750216318590054277">
+                              <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="5750216318590054278">
+                                <link role="variableDeclaration" targetNodeId="6568670621605378068" resolveInfo="text" />
+                              </node>
+                              <node role="operation" type="jetbrains.mps.baseLanguage.structure.TrimOperation" id="5750216318590054279" />
+                            </node>
+                          </node>
+                        </node>
                         <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="40577050485377701">
                           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="40577050485377702">
                             <property name="name" value="token" />
@@ -20675,11 +20687,8 @@
                             <node role="initializer" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="40577050485377704">
                               <link role="baseMethodDeclaration" targetNodeId="21.1208865442548" resolveInfo="isTestEvent" />
                               <link role="classConcept" targetNodeId="21.1208860584607" resolveInfo="TestEvent" />
-                              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1266467061069854315">
-                                <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1266467061069854316">
-                                  <link role="variableDeclaration" targetNodeId="6568670621605378068" resolveInfo="text" />
-                                </node>
-                                <node role="operation" type="jetbrains.mps.baseLanguage.structure.TrimOperation" id="1266467061069854317" />
+                              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="5750216318590054280">
+                                <link role="variableDeclaration" targetNodeId="5750216318590054275" resolveInfo="textTrimmed" />
                               </node>
                             </node>
                           </node>
@@ -20729,8 +20738,8 @@
                                   <node role="initializer" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="40577050485377837">
                                     <link role="baseMethodDeclaration" targetNodeId="21.1208864564893" resolveInfo="parse" />
                                     <link role="classConcept" targetNodeId="21.1208860584607" resolveInfo="TestEvent" />
-                                    <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="6568670621605407775">
-                                      <link role="variableDeclaration" targetNodeId="6568670621605378068" resolveInfo="text" />
+                                    <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="5750216318590054282">
+                                      <link role="variableDeclaration" targetNodeId="5750216318590054275" resolveInfo="textTrimmed" />
                                     </node>
                                   </node>
                                 </node>
@@ -20744,13 +20753,8 @@
                                       </node>
                                       <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1346095584968774078">
                                         <link role="baseMethodDeclaration" targetNodeId="40577050485377742" resolveInfo="append" />
-                                        <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1346095584968774079">
-                                          <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1346095584968774080">
-                                            <link role="variableDeclaration" targetNodeId="40577050485366641" resolveInfo="event" />
-                                          </node>
-                                          <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1346095584968774081">
-                                            <link role="baseMethodDeclaration" targetNodeId="75.~ProcessEvent.getText():java.lang.String" resolveInfo="getText" />
-                                          </node>
+                                        <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="5750216318590054273">
+                                          <link role="variableDeclaration" targetNodeId="6568670621605378068" resolveInfo="text" />
                                         </node>
                                         <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1346095584968774082">
                                           <node role="operand" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference" id="1346095584968774083">
