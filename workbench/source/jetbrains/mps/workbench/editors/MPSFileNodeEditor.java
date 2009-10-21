@@ -65,6 +65,7 @@ public class MPSFileNodeEditor extends UserDataHolderBase implements FileEditor,
     myProject = project;
     myFile = file;
     myContext = context;
+    assert context == null || context.getModule() != null;
 
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
