@@ -36,7 +36,7 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895903fe(jetbrains.mps.baseLanguage.strings.constraints)" version="1" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590402(jetbrains.mps.baseLanguage.strings.structure)" version="9" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590373(jetbrains.mps.baseLanguage.classifiers.structure)" version="0" />
-  <maxImportIndex value="36" />
+  <maxImportIndex value="38" />
   <import index="4" modelUID="r:00000000-0000-4000-0000-011c89590368(jetbrains.mps.lang.plugin.structure)" version="21" />
   <import index="6" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="3" />
   <import index="18" modelUID="f:java_stub#javax.swing(javax.swing@java_stub)" version="-1" />
@@ -53,6 +53,8 @@
   <import index="34" modelUID="f:java_stub#jetbrains.mps.smodel(jetbrains.mps.smodel@java_stub)" version="-1" />
   <import index="35" modelUID="f:java_stub#jetbrains.mps.plugins.pluginparts.tabbedEditor(jetbrains.mps.plugins.pluginparts.tabbedEditor@java_stub)" version="-1" />
   <import index="36" modelUID="f:java_stub#com.intellij.execution.configurations(com.intellij.execution.configurations@java_stub)" version="-1" />
+  <import index="37" modelUID="f:java_stub#java.lang(java.lang@java_stub)" version="-1" />
+  <import index="38" modelUID="f:java_stub#com.intellij.execution.ui(com.intellij.execution.ui@java_stub)" version="-1" />
   <node type="jetbrains.mps.lang.typesystem.structure.InferenceRule" id="1204039255253">
     <property name="name" value="typeof_ConceptFunctionParameter_node" />
     <property name="package" value="Shared" />
@@ -1857,6 +1859,87 @@
     <node role="applicableNode" type="jetbrains.mps.lang.typesystem.structure.ConceptReference" id="8415911927033050437">
       <property name="name" value="statement" />
       <link role="concept" targetNodeId="4.8415911927033048376" resolveInfo="RunConfigMainNodeStatement" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.typesystem.structure.InferenceRule" id="9061443648117359123">
+    <property name="name" value="typeof_ProcessStatement" />
+    <property name="package" value="RunConfigs.Configuration.Execute.Statements" />
+    <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="9061443648117359124">
+      <node role="statement" type="jetbrains.mps.lang.typesystem.structure.CreateStrongLessThanInequationStatement" id="9061443648117359126">
+        <property name="checkOnly" value="true" />
+        <node role="rightExpression" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause" id="9061443648117359127">
+          <node role="normalType" type="jetbrains.mps.lang.quotation.structure.Quotation" id="9061443648117359128">
+            <node role="quotedNode" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="9061443648117359325">
+              <link role="classifier" targetNodeId="37.~Process" resolveInfo="Process" />
+            </node>
+          </node>
+        </node>
+        <node role="leftExpression" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause" id="9061443648117359130">
+          <node role="normalType" type="jetbrains.mps.lang.typesystem.structure.TypeOfExpression" id="9061443648117359131">
+            <node role="term" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="9061443648117359132">
+              <node role="operand" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference" id="9061443648117359133">
+                <link role="applicableNode" targetNodeId="9061443648117359125" resolveInfo="statement" />
+              </node>
+              <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="9061443648117359324">
+                <link role="link" targetNodeId="4.9061443648117357798" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="nodeToCheck" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="9061443648117359135">
+          <node role="operand" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference" id="9061443648117359136">
+            <link role="applicableNode" targetNodeId="9061443648117359125" resolveInfo="statement" />
+          </node>
+          <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="9061443648117359326">
+            <link role="link" targetNodeId="4.9061443648117357798" />
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="applicableNode" type="jetbrains.mps.lang.typesystem.structure.ConceptReference" id="9061443648117359125">
+      <property name="name" value="statement" />
+      <link role="concept" targetNodeId="4.9061443648117357794" resolveInfo="ProcessStatement" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.typesystem.structure.SubtypingRule" id="9061443648117368098">
+    <property name="package" value="RunConfigs.Configuration.Execute.Statements" />
+    <property name="name" value="typeof_Console_IsSubtype_JComponent" />
+    <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="9061443648117368099">
+      <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="9061443648117368102">
+        <node role="expression" type="jetbrains.mps.lang.quotation.structure.Quotation" id="9061443648117368104">
+          <node role="quotedNode" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="9061443648117368107">
+            <link role="classifier" targetNodeId="18.~JComponent" resolveInfo="JComponent" />
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="applicableNode" type="jetbrains.mps.lang.typesystem.structure.ConceptReference" id="9061443648117368101">
+      <property name="name" value="consoleType" />
+      <link role="concept" targetNodeId="4.9061443648117368091" resolveInfo="ConsoleType" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.typesystem.structure.InferenceRule" id="9061443648117368146">
+    <property name="name" value="typeof_ConsoleExpression" />
+    <property name="package" value="RunConfigs.Configuration.Execute.Statements" />
+    <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="9061443648117368147">
+      <node role="statement" type="jetbrains.mps.lang.typesystem.structure.CreateEquationStatement" id="9061443648117368153">
+        <node role="rightExpression" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause" id="9061443648117368157">
+          <node role="normalType" type="jetbrains.mps.lang.quotation.structure.Quotation" id="9061443648117368158">
+            <node role="quotedNode" type="jetbrains.mps.lang.plugin.structure.ConsoleType" id="9061443648117368160" />
+          </node>
+        </node>
+        <node role="leftExpression" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause" id="9061443648117368156">
+          <node role="normalType" type="jetbrains.mps.lang.typesystem.structure.TypeOfExpression" id="9061443648117368150">
+            <node role="term" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference" id="9061443648117368152">
+              <link role="applicableNode" targetNodeId="9061443648117368148" resolveInfo="expression" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="applicableNode" type="jetbrains.mps.lang.typesystem.structure.ConceptReference" id="9061443648117368148">
+      <property name="name" value="expression" />
+      <link role="concept" targetNodeId="4.9061443648117368090" resolveInfo="ConsoleExpression" />
     </node>
   </node>
 </model>

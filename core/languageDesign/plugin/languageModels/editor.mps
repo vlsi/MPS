@@ -4647,5 +4647,38 @@
       </node>
     </node>
   </node>
+  <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" id="9061443648117357809">
+    <property name="package" value="RunConfigs.Configuration.Execute.Statements" />
+    <link role="conceptDeclaration" targetNodeId="1.9061443648117357794" resolveInfo="ProcessStatement" />
+    <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="9061443648117357811">
+      <node role="cellLayout" type="jetbrains.mps.lang.editor.structure.CellLayout_Horizontal" id="9061443648117357812" />
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="9061443648117357813">
+        <property name="text" value="process" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode" id="9061443648117357814">
+        <link role="relationDeclaration" targetNodeId="1.678887849223564268" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="9061443648117357815">
+        <property name="text" value=";" />
+        <link role="styleClass" targetNodeId="17.1215094139260" resolveInfo="Semicolon" />
+      </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" id="9061443648117368094">
+    <property name="package" value="RunConfigs.Configuration.Execute.Statements" />
+    <link role="conceptDeclaration" targetNodeId="1.9061443648117368091" resolveInfo="ConsoleType" />
+    <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="9061443648117368096">
+      <property name="text" value="console" />
+      <link role="styleClass" targetNodeId="17.1186415544875" resolveInfo="KeyWord" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" id="9061443648117368143">
+    <property name="package" value="RunConfigs.Configuration.Execute.Statements" />
+    <link role="conceptDeclaration" targetNodeId="1.9061443648117368090" resolveInfo="ConsoleExpression" />
+    <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="9061443648117368145">
+      <property name="text" value="console" />
+      <link role="styleClass" targetNodeId="17.1186415544875" resolveInfo="KeyWord" />
+    </node>
+  </node>
 </model>
 

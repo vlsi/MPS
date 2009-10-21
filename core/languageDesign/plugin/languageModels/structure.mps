@@ -2776,6 +2776,9 @@
       <property name="value" value="process handler" />
       <link role="conceptPropertyDeclaration" targetNodeId="6.1137473891462" resolveInfo="alias" />
     </node>
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.BooleanConceptProperty" id="9061443648117357793">
+      <link role="conceptPropertyDeclaration" targetNodeId="6.1137473994950" resolveInfo="dontSubstituteByDefault" />
+    </node>
     <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="678887849223536803">
       <link role="intfc" targetNodeId="678887849223527750" resolveInfo="ExecuteSpecific" />
     </node>
@@ -2784,6 +2787,9 @@
       <property name="role" value="processHandler" />
       <property name="sourceCardinality" value="1" />
       <link role="target" targetNodeId="2.1068431790191" resolveInfo="Expression" />
+    </node>
+    <node role="deprecatedNode$attribute" type="jetbrains.mps.lang.structure.structure.DeprecatedNodeAnnotation" id="9061443648117357791">
+      <property name="comment" value="deprecated before being added to any release version - remove" />
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="678887849223472894">
@@ -3285,6 +3291,42 @@
       <property name="role" value="createModelRunConfigBlock" />
       <property name="sourceCardinality" value="1" />
       <link role="target" targetNodeId="5854436268949437222" resolveInfo="CreateModelRunConfigBlock" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="9061443648117357794">
+    <property name="package" value="RunConfigs.Configuration.Execute.Statements" />
+    <property name="name" value="ProcessStatement" />
+    <link role="extends" targetNodeId="2.1068580123157" resolveInfo="Statement" />
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="9061443648117357795">
+      <property name="value" value="process" />
+      <link role="conceptPropertyDeclaration" targetNodeId="6.1137473891462" resolveInfo="alias" />
+    </node>
+    <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="9061443648117357797">
+      <link role="intfc" targetNodeId="678887849223527750" resolveInfo="ExecuteSpecific" />
+    </node>
+    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="9061443648117357798">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="process" />
+      <property name="sourceCardinality" value="1" />
+      <link role="target" targetNodeId="2.1068431790191" resolveInfo="Expression" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="9061443648117368090">
+    <property name="package" value="RunConfigs.Configuration.Execute.Statements" />
+    <property name="name" value="ConsoleExpression" />
+    <link role="extends" targetNodeId="2.1068431790191" resolveInfo="Expression" />
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="9061443648117634896">
+      <property name="value" value="console" />
+      <link role="conceptPropertyDeclaration" targetNodeId="6.1137473891462" resolveInfo="alias" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="9061443648117368091">
+    <property name="package" value="RunConfigs.Configuration.Execute.Statements" />
+    <property name="name" value="ConsoleType" />
+    <link role="extends" targetNodeId="2.1068431790189" resolveInfo="Type" />
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="9061443648117368097">
+      <property name="value" value="console" />
+      <link role="conceptPropertyDeclaration" targetNodeId="6.1137473891462" resolveInfo="alias" />
     </node>
   </node>
 </model>
