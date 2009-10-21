@@ -39,6 +39,7 @@ public abstract class DiffEditorComponent extends EditorComponent {
   public DiffEditorComponent(IOperationContext context, SNode node) {
     super(context);
     myInspector = new InspectorEditorComponent();
+    myInspector.setEditable(false);
     editNode(node, context);
 
   }
