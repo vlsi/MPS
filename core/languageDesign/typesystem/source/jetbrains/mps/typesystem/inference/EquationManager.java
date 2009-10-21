@@ -983,12 +983,12 @@ public class EquationManager {
   public void solveInequations() {
 
     //for debug
-    InequationsSolver ineqSolver = new InequationsSolver(this);
+  /*  InequationsSolver ineqSolver = new InequationsSolver(this);
     ineqSolver.fillAllInequations(mySubtypesToSupertypesMap,
       mySubtypesToSupertypesMapStrong,
       mySupertypesToSubtypesMap,
       mySupertypesToSubtypesMapStrong);
-    ineqSolver.splitByLayers();
+    ineqSolver.splitByLayers();*/
 
     eliminateConcretePartsOfInequations(false);
     Set<IWrapper> types = eliminateConcretePartsOfInequations(true);
