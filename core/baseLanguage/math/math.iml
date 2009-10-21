@@ -11,6 +11,7 @@
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module" module-name="MPS" />
+    <orderEntry type="module" module-name="math-runtime" />
   </component>
 </module>
 

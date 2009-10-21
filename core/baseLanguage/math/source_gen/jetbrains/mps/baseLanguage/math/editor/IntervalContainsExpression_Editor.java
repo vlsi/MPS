@@ -34,7 +34,7 @@ public class IntervalContainsExpression_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_3936_0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "\u220d");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "?");
     editorCell.setCellId("Constant_3936_0");
     editorCell.setDefaultText("");
     editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPart[]{new IntervalContainsExpression_Editor.IntervalContainsExpression_Editor_replaceWith_BinaryOperation_cellMenu0()}));

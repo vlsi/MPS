@@ -4,18 +4,16 @@ package jetbrains.mps.baseLanguage.math.typesystem;
 
 import jetbrains.mps.lang.typesystem.runtime.BaseHelginsDescriptor;
 import jetbrains.mps.lang.typesystem.runtime.InferenceRule_Runtime;
+import jetbrains.mps.lang.typesystem.runtime.NonTypesystemRule_Runtime;
 import jetbrains.mps.lang.typesystem.runtime.SubtypingRule_Runtime;
+import jetbrains.mps.lang.typesystem.runtime.InequationReplacementRule_Runtime;
+import jetbrains.mps.lang.typesystem.runtime.OverloadedOperationsTypesProvider;
+import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.typesystem.inference.TypeChecker;
+import jetbrains.mps.baseLanguage.math.behavior.MathUtil;
 
 public class TypesystemDescriptor extends BaseHelginsDescriptor {
   public TypesystemDescriptor() {
-    {
-      InferenceRule_Runtime inferenceRule = new typeof_SumExpression_InferenceRule();
-      this.myInferenceRules.add(inferenceRule);
-    }
-    {
-      InferenceRule_Runtime inferenceRule = new typeof_SumVariableReference_InferenceRule();
-      this.myInferenceRules.add(inferenceRule);
-    }
     {
       InferenceRule_Runtime inferenceRule = new typeof_InIntervalExpression_InferenceRule();
       this.myInferenceRules.add(inferenceRule);
@@ -33,8 +31,556 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
       this.myInferenceRules.add(inferenceRule);
     }
     {
+      InferenceRule_Runtime inferenceRule = new typeof_MathSymbolFromToIndex_InferenceRule();
+      this.myInferenceRules.add(inferenceRule);
+    }
+    {
+      InferenceRule_Runtime inferenceRule = new typeof_ComplexLiteral_InferenceRule();
+      this.myInferenceRules.add(inferenceRule);
+    }
+    {
+      InferenceRule_Runtime inferenceRule = new typeof_MathTypeCast_InferenceRule();
+      this.myInferenceRules.add(inferenceRule);
+    }
+    {
+      InferenceRule_Runtime inferenceRule = new typeof_TrigonometricExpression_InferenceRule();
+      this.myInferenceRules.add(inferenceRule);
+    }
+    {
+      InferenceRule_Runtime inferenceRule = new typeof_AbsExpression_InferenceRule();
+      this.myInferenceRules.add(inferenceRule);
+    }
+    {
+      InferenceRule_Runtime inferenceRule = new typeof_PowExpression_InferenceRule();
+      this.myInferenceRules.add(inferenceRule);
+    }
+    {
+      InferenceRule_Runtime inferenceRule = new typeof_ArithmSymbol_InferenceRule();
+      this.myInferenceRules.add(inferenceRule);
+    }
+    {
+      InferenceRule_Runtime inferenceRule = new typeof_VectorInitializer_InferenceRule();
+      this.myInferenceRules.add(inferenceRule);
+    }
+    {
+      InferenceRule_Runtime inferenceRule = new typeof_ILiteral_InferenceRule();
+      this.myInferenceRules.add(inferenceRule);
+    }
+    {
+      InferenceRule_Runtime inferenceRule = new typeof_LinearSolveOperation_InferenceRule();
+      this.myInferenceRules.add(inferenceRule);
+    }
+    {
+      InferenceRule_Runtime inferenceRule = new typeof_MatrixInitializerIndexReference_InferenceRule();
+      this.myInferenceRules.add(inferenceRule);
+    }
+    {
+      InferenceRule_Runtime inferenceRule = new typeof_MatrixNorm_InferenceRule();
+      this.myInferenceRules.add(inferenceRule);
+    }
+    {
+      InferenceRule_Runtime inferenceRule = new typeof_MatrixElementAccessExpression_InferenceRule();
+      this.myInferenceRules.add(inferenceRule);
+    }
+    {
+      InferenceRule_Runtime inferenceRule = new typeof_BinaryOperationMathContext_InferenceRule();
+      this.myInferenceRules.add(inferenceRule);
+    }
+    {
+      InferenceRule_Runtime inferenceRule = new typeof_ExtrSymbol_InferenceRule();
+      this.myInferenceRules.add(inferenceRule);
+    }
+    {
+      InferenceRule_Runtime inferenceRule = new typeof_MatrixConstructor_InferenceRule();
+      this.myInferenceRules.add(inferenceRule);
+    }
+    {
+      InferenceRule_Runtime inferenceRule = new typeof_MathSymbolIndex_InferenceRule();
+      this.myInferenceRules.add(inferenceRule);
+    }
+    {
+      InferenceRule_Runtime inferenceRule = new typeof_MatrixInitializer_InferenceRule();
+      this.myInferenceRules.add(inferenceRule);
+    }
+    {
+      InferenceRule_Runtime inferenceRule = new typeof_MathSymbolReference_InferenceRule();
+      this.myInferenceRules.add(inferenceRule);
+    }
+    {
+      InferenceRule_Runtime inferenceRule = new typeof_Determinant_InferenceRule();
+      this.myInferenceRules.add(inferenceRule);
+    }
+    {
+      InferenceRule_Runtime inferenceRule = new typeof_MathSymbol_InferenceRule();
+      this.myInferenceRules.add(inferenceRule);
+    }
+    {
+      InferenceRule_Runtime inferenceRule = new typeof_MatrixUnit_InferenceRule();
+      this.myInferenceRules.add(inferenceRule);
+    }
+    {
+      InferenceRule_Runtime inferenceRule = new typeof_DivOperationFraction_InferenceRule();
+      this.myInferenceRules.add(inferenceRule);
+    }
+    {
+      InferenceRule_Runtime inferenceRule = new typeof_MatrixInverseOperation_InferenceRule();
+      this.myInferenceRules.add(inferenceRule);
+    }
+    {
+      InferenceRule_Runtime inferenceRule = new typeof_MatrixZero_InferenceRule();
+      this.myInferenceRules.add(inferenceRule);
+    }
+    {
+      NonTypesystemRule_Runtime nonTypesystemRule = new highlight_complex_to_real_casts_NonTypesystemRule();
+      this.myNonTypesystemRules.add(nonTypesystemRule);
+    }
+    {
+      NonTypesystemRule_Runtime nonTypesystemRule = new vector_element_must_be_number_NonTypesystemRule();
+      this.myNonTypesystemRules.add(nonTypesystemRule);
+    }
+    {
+      NonTypesystemRule_Runtime nonTypesystemRule = new matrix_element_must_be_number_NonTypesystemRule();
+      this.myNonTypesystemRules.add(nonTypesystemRule);
+    }
+    {
+      NonTypesystemRule_Runtime nonTypesystemRule = new matrix_index_lvalue_NonTypesystemRule();
+      this.myNonTypesystemRules.add(nonTypesystemRule);
+    }
+    {
+      NonTypesystemRule_Runtime nonTypesystemRule = new check_dimensions_NonTypesystemRule();
+      this.myNonTypesystemRules.add(nonTypesystemRule);
+    }
+    {
       SubtypingRule_Runtime subtypingRule = new IntervalSupertypes_SubtypingRule();
       this.mySubtypingRules.add(subtypingRule);
+    }
+    {
+      SubtypingRule_Runtime subtypingRule = new complex_extends_bigcomplex_SubtypingRule();
+      this.mySubtypingRules.add(subtypingRule);
+    }
+    {
+      SubtypingRule_Runtime subtypingRule = new double_extends_bigdecimal_SubtypingRule();
+      this.mySubtypingRules.add(subtypingRule);
+    }
+    {
+      SubtypingRule_Runtime subtypingRule = new long_extends_biginteger_SubtypingRule();
+      this.mySubtypingRules.add(subtypingRule);
+    }
+    {
+      SubtypingRule_Runtime subtypingRule = new bigdecimal_extends_bigcomplex_SubtypingRule();
+      this.mySubtypingRules.add(subtypingRule);
+    }
+    {
+      SubtypingRule_Runtime subtypingRule = new biginteger_extends_bigdecimal_SubtypingRule();
+      this.mySubtypingRules.add(subtypingRule);
+    }
+    {
+      SubtypingRule_Runtime subtypingRule = new complex_extends_Complex_SubtypingRule();
+      this.mySubtypingRules.add(subtypingRule);
+    }
+    {
+      SubtypingRule_Runtime subtypingRule = new bigdecimal_extends_BigDecimal_SubtypingRule();
+      this.mySubtypingRules.add(subtypingRule);
+    }
+    {
+      SubtypingRule_Runtime subtypingRule = new biginteger_extends_BigInteger_SubtypingRule();
+      this.mySubtypingRules.add(subtypingRule);
+    }
+    {
+      SubtypingRule_Runtime subtypingRule = new bigcomplex_extends_BigComplex_SubtypingRule();
+      this.mySubtypingRules.add(subtypingRule);
+    }
+    {
+      SubtypingRule_Runtime subtypingRule = new double_extends_complex_SubtypingRule();
+      this.mySubtypingRules.add(subtypingRule);
+    }
+    {
+      SubtypingRule_Runtime subtypingRule = new matrix_subtype_of_object_SubtypingRule();
+      this.mySubtypingRules.add(subtypingRule);
+    }
+    {
+      SubtypingRule_Runtime subtypingRule = new vector_subtype_of_matrix_SubtypingRule();
+      this.mySubtypingRules.add(subtypingRule);
+    }
+    {
+      InequationReplacementRule_Runtime eliminationRule = new matrix_vector_replacement_rule_InequationReplacementRule();
+      this.myInequationReplacementRules.add(eliminationRule);
+    }
+    {
+      InequationReplacementRule_Runtime eliminationRule = new matrix_replacement_rule_InequationReplacementRule();
+      this.myInequationReplacementRules.add(eliminationRule);
+    }
+    {
+      InequationReplacementRule_Runtime eliminationRule = new vector_vector_replacement_rule_InequationReplacementRule();
+      this.myInequationReplacementRules.add(eliminationRule);
+    }
+    {
+      OverloadedOperationsTypesProvider provider = new OverloadedOperationsTypesProvider() {
+        {
+          this.myLeftOperandType = MathTypeUtil.qBigInteger;
+          this.myRightOperandType = MathTypeUtil.qInt;
+          this.myOperationConceptFQName = "jetbrains.mps.baseLanguage.structure.ShiftLeftExpression";
+          this.myLeftTypeIsExact = true;
+          this.myRightTypeIsExact = false;
+          this.myRightIsStrong = false;
+          this.myLeftIsStrong = false;
+        }
+
+        public SNode getOperationType(SNode operation, SNode leftOperandType, SNode rightOperandType) {
+          return MathTypeUtil.qBigInteger;
+        }
+      };
+      this.myOverloadedOperationsTypesProviders.add(provider);
+    }
+    {
+      OverloadedOperationsTypesProvider provider = new OverloadedOperationsTypesProvider() {
+        {
+          this.myLeftOperandType = MathTypeUtil.qBigInteger;
+          this.myRightOperandType = MathTypeUtil.qBigInteger;
+          this.myOperationConceptFQName = "jetbrains.mps.baseLanguage.structure.BitwiseAndExpression";
+          this.myLeftTypeIsExact = false;
+          this.myRightTypeIsExact = false;
+          this.myRightIsStrong = false;
+          this.myLeftIsStrong = false;
+        }
+
+        public SNode getOperationType(SNode operation, SNode leftOperandType, SNode rightOperandType) {
+          return MathTypeUtil.ML_bitwiseOp(leftOperandType, rightOperandType);
+        }
+      };
+      this.myOverloadedOperationsTypesProviders.add(provider);
+    }
+    {
+      OverloadedOperationsTypesProvider provider = new OverloadedOperationsTypesProvider() {
+        {
+          this.myLeftOperandType = MathTypeUtil.qBigInteger;
+          this.myRightOperandType = MathTypeUtil.qBigInteger;
+          this.myOperationConceptFQName = "jetbrains.mps.baseLanguage.structure.BitwiseOrExpression";
+          this.myLeftTypeIsExact = false;
+          this.myRightTypeIsExact = false;
+          this.myRightIsStrong = false;
+          this.myLeftIsStrong = false;
+        }
+
+        public SNode getOperationType(SNode operation, SNode leftOperandType, SNode rightOperandType) {
+          return MathTypeUtil.ML_bitwiseOp(leftOperandType, rightOperandType);
+        }
+      };
+      this.myOverloadedOperationsTypesProviders.add(provider);
+    }
+    {
+      OverloadedOperationsTypesProvider provider = new OverloadedOperationsTypesProvider() {
+        {
+          this.myLeftOperandType = MathTypeUtil.qBigInteger;
+          this.myRightOperandType = MathTypeUtil.qBigInteger;
+          this.myOperationConceptFQName = "jetbrains.mps.baseLanguage.structure.BitwiseXorExpression";
+          this.myLeftTypeIsExact = false;
+          this.myRightTypeIsExact = false;
+          this.myRightIsStrong = false;
+          this.myLeftIsStrong = false;
+        }
+
+        public SNode getOperationType(SNode operation, SNode leftOperandType, SNode rightOperandType) {
+          return MathTypeUtil.ML_bitwiseOp(leftOperandType, rightOperandType);
+        }
+      };
+      this.myOverloadedOperationsTypesProviders.add(provider);
+    }
+    {
+      OverloadedOperationsTypesProvider provider = new OverloadedOperationsTypesProvider() {
+        {
+          this.myLeftOperandType = MathTypeUtil.qBigInteger;
+          this.myRightOperandType = MathTypeUtil.qInt;
+          this.myOperationConceptFQName = "jetbrains.mps.baseLanguage.structure.ShiftRightExpression";
+          this.myLeftTypeIsExact = true;
+          this.myRightTypeIsExact = false;
+          this.myRightIsStrong = false;
+          this.myLeftIsStrong = false;
+        }
+
+        public SNode getOperationType(SNode operation, SNode leftOperandType, SNode rightOperandType) {
+          return MathTypeUtil.qBigInteger;
+        }
+      };
+      this.myOverloadedOperationsTypesProviders.add(provider);
+    }
+    {
+      OverloadedOperationsTypesProvider provider = new OverloadedOperationsTypesProvider() {
+        {
+          this.myLeftOperandType = MathTypeUtil.qBigInteger;
+          this.myRightOperandType = MathTypeUtil.qBigInteger;
+          this.myOperationConceptFQName = "jetbrains.mps.baseLanguage.structure.RemExpression";
+          this.myLeftTypeIsExact = false;
+          this.myRightTypeIsExact = false;
+          this.myRightIsStrong = false;
+          this.myLeftIsStrong = false;
+        }
+
+        public SNode getOperationType(SNode operation, SNode leftOperandType, SNode rightOperandType) {
+          return MathTypeUtil.ML_bitwiseOp(leftOperandType, rightOperandType);
+        }
+      };
+      this.myOverloadedOperationsTypesProviders.add(provider);
+    }
+    {
+      OverloadedOperationsTypesProvider provider = new OverloadedOperationsTypesProvider() {
+        {
+          this.myLeftOperandType = MathTypeUtil.qBigDecimal;
+          this.myRightOperandType = MathTypeUtil.qBigDecimal;
+          this.myOperationConceptFQName = "jetbrains.mps.baseLanguage.structure.LessThanExpression";
+          this.myLeftTypeIsExact = false;
+          this.myRightTypeIsExact = false;
+          this.myRightIsStrong = false;
+          this.myLeftIsStrong = false;
+        }
+
+        public SNode getOperationType(SNode operation, SNode leftOperandType, SNode rightOperandType) {
+          return MathTypeUtil.ML_compareOp(leftOperandType, rightOperandType);
+        }
+      };
+      this.myOverloadedOperationsTypesProviders.add(provider);
+    }
+    {
+      OverloadedOperationsTypesProvider provider = new OverloadedOperationsTypesProvider() {
+        {
+          this.myLeftOperandType = MathTypeUtil.qBigDecimal;
+          this.myRightOperandType = MathTypeUtil.qBigDecimal;
+          this.myOperationConceptFQName = "jetbrains.mps.baseLanguage.structure.GreaterThanExpression";
+          this.myLeftTypeIsExact = false;
+          this.myRightTypeIsExact = false;
+          this.myRightIsStrong = false;
+          this.myLeftIsStrong = false;
+        }
+
+        public SNode getOperationType(SNode operation, SNode leftOperandType, SNode rightOperandType) {
+          return MathTypeUtil.ML_compareOp(leftOperandType, rightOperandType);
+        }
+      };
+      this.myOverloadedOperationsTypesProviders.add(provider);
+    }
+    {
+      OverloadedOperationsTypesProvider provider = new OverloadedOperationsTypesProvider() {
+        {
+          this.myLeftOperandType = MathTypeUtil.qBigDecimal;
+          this.myRightOperandType = MathTypeUtil.qBigDecimal;
+          this.myOperationConceptFQName = "jetbrains.mps.baseLanguage.structure.LessThanOrEqualsExpression";
+          this.myLeftTypeIsExact = false;
+          this.myRightTypeIsExact = false;
+          this.myRightIsStrong = false;
+          this.myLeftIsStrong = false;
+        }
+
+        public SNode getOperationType(SNode operation, SNode leftOperandType, SNode rightOperandType) {
+          return MathTypeUtil.ML_compareOp(leftOperandType, rightOperandType);
+        }
+      };
+      this.myOverloadedOperationsTypesProviders.add(provider);
+    }
+    {
+      OverloadedOperationsTypesProvider provider = new OverloadedOperationsTypesProvider() {
+        {
+          this.myLeftOperandType = MathTypeUtil.qBigDecimal;
+          this.myRightOperandType = MathTypeUtil.qBigDecimal;
+          this.myOperationConceptFQName = "jetbrains.mps.baseLanguage.structure.GreaterThanOrEqualsExpression";
+          this.myLeftTypeIsExact = false;
+          this.myRightTypeIsExact = false;
+          this.myRightIsStrong = false;
+          this.myLeftIsStrong = false;
+        }
+
+        public SNode getOperationType(SNode operation, SNode leftOperandType, SNode rightOperandType) {
+          return MathTypeUtil.ML_compareOp(leftOperandType, rightOperandType);
+        }
+      };
+      this.myOverloadedOperationsTypesProviders.add(provider);
+    }
+    {
+      OverloadedOperationsTypesProvider provider = new OverloadedOperationsTypesProvider() {
+        {
+          this.myLeftOperandType = MathTypeUtil.qBigComplex;
+          this.myRightOperandType = MathTypeUtil.qBigComplex;
+          this.myOperationConceptFQName = "jetbrains.mps.baseLanguage.structure.PlusExpression";
+          this.myLeftTypeIsExact = false;
+          this.myRightTypeIsExact = false;
+          this.myRightIsStrong = false;
+          this.myLeftIsStrong = false;
+        }
+
+        public SNode getOperationType(SNode operation, SNode leftOperandType, SNode rightOperandType) {
+          return MathTypeUtil.ML_arithmeticOp(leftOperandType, rightOperandType);
+        }
+      };
+      this.myOverloadedOperationsTypesProviders.add(provider);
+    }
+    {
+      OverloadedOperationsTypesProvider provider = new OverloadedOperationsTypesProvider() {
+        {
+          this.myLeftOperandType = MathTypeUtil.qBigComplex;
+          this.myRightOperandType = MathTypeUtil.qBigComplex;
+          this.myOperationConceptFQName = "jetbrains.mps.baseLanguage.structure.MinusExpression";
+          this.myLeftTypeIsExact = false;
+          this.myRightTypeIsExact = false;
+          this.myRightIsStrong = false;
+          this.myLeftIsStrong = false;
+        }
+
+        public SNode getOperationType(SNode operation, SNode leftOperandType, SNode rightOperandType) {
+          return MathTypeUtil.ML_arithmeticOp(leftOperandType, rightOperandType);
+        }
+      };
+      this.myOverloadedOperationsTypesProviders.add(provider);
+    }
+    {
+      OverloadedOperationsTypesProvider provider = new OverloadedOperationsTypesProvider() {
+        {
+          this.myLeftOperandType = MathTypeUtil.qBigComplex;
+          this.myRightOperandType = MathTypeUtil.qBigComplex;
+          this.myOperationConceptFQName = "jetbrains.mps.baseLanguage.structure.MulExpression";
+          this.myLeftTypeIsExact = false;
+          this.myRightTypeIsExact = false;
+          this.myRightIsStrong = false;
+          this.myLeftIsStrong = false;
+        }
+
+        public SNode getOperationType(SNode operation, SNode leftOperandType, SNode rightOperandType) {
+          return MathTypeUtil.ML_arithmeticOp(leftOperandType, rightOperandType);
+        }
+      };
+      this.myOverloadedOperationsTypesProviders.add(provider);
+    }
+    {
+      OverloadedOperationsTypesProvider provider = new OverloadedOperationsTypesProvider() {
+        {
+          this.myLeftOperandType = MathTypeUtil.qBigComplex;
+          this.myRightOperandType = MathTypeUtil.qBigComplex;
+          this.myOperationConceptFQName = "jetbrains.mps.baseLanguage.structure.DivExpression";
+          this.myLeftTypeIsExact = false;
+          this.myRightTypeIsExact = false;
+          this.myRightIsStrong = false;
+          this.myLeftIsStrong = false;
+        }
+
+        public SNode getOperationType(SNode operation, SNode leftOperandType, SNode rightOperandType) {
+          return MathTypeUtil.ML_arithmeticOp(leftOperandType, rightOperandType);
+        }
+      };
+      this.myOverloadedOperationsTypesProviders.add(provider);
+    }
+    {
+      OverloadedOperationsTypesProvider provider = new OverloadedOperationsTypesProvider() {
+        {
+          this.myLeftOperandType = MathTypeUtil.qBCMatrix;
+          this.myRightOperandType = MathTypeUtil.qBCMatrix;
+          this.myOperationConceptFQName = "jetbrains.mps.baseLanguage.structure.PlusExpression";
+          this.myLeftTypeIsExact = false;
+          this.myRightTypeIsExact = false;
+          this.myRightIsStrong = false;
+          this.myLeftIsStrong = false;
+        }
+
+        public SNode getOperationType(SNode operation, SNode leftOperandType, SNode rightOperandType) {
+          return MathTypeUtil.ML_matrixOp(leftOperandType, rightOperandType, false);
+        }
+      };
+      this.myOverloadedOperationsTypesProviders.add(provider);
+    }
+    {
+      OverloadedOperationsTypesProvider provider = new OverloadedOperationsTypesProvider() {
+        {
+          this.myLeftOperandType = MathTypeUtil.qBCMatrix;
+          this.myRightOperandType = MathTypeUtil.qBCMatrix;
+          this.myOperationConceptFQName = "jetbrains.mps.baseLanguage.structure.MinusExpression";
+          this.myLeftTypeIsExact = false;
+          this.myRightTypeIsExact = false;
+          this.myRightIsStrong = false;
+          this.myLeftIsStrong = false;
+        }
+
+        public SNode getOperationType(SNode operation, SNode leftOperandType, SNode rightOperandType) {
+          return MathTypeUtil.ML_matrixOp(leftOperandType, rightOperandType, false);
+        }
+      };
+      this.myOverloadedOperationsTypesProviders.add(provider);
+    }
+    {
+      OverloadedOperationsTypesProvider provider = new OverloadedOperationsTypesProvider() {
+        {
+          this.myLeftOperandType = MathTypeUtil.qBigComplex;
+          this.myRightOperandType = MathTypeUtil.qBCMatrix;
+          this.myOperationConceptFQName = "jetbrains.mps.baseLanguage.structure.MulExpression";
+          this.myLeftTypeIsExact = false;
+          this.myRightTypeIsExact = false;
+          this.myRightIsStrong = false;
+          this.myLeftIsStrong = false;
+        }
+
+        public SNode getOperationType(SNode operation, SNode leftOperandType, SNode rightOperandType) {
+          return MathTypeUtil.typeOfMatrixScalarMultiplication(leftOperandType, rightOperandType);
+        }
+      };
+      this.myOverloadedOperationsTypesProviders.add(provider);
+    }
+    {
+      OverloadedOperationsTypesProvider provider = new OverloadedOperationsTypesProvider() {
+        {
+          this.myLeftOperandType = MathTypeUtil.qBCMatrix;
+          this.myRightOperandType = MathTypeUtil.qBigComplex;
+          this.myOperationConceptFQName = "jetbrains.mps.baseLanguage.structure.MulExpression";
+          this.myLeftTypeIsExact = false;
+          this.myRightTypeIsExact = false;
+          this.myRightIsStrong = false;
+          this.myLeftIsStrong = false;
+        }
+
+        public SNode getOperationType(SNode operation, SNode leftOperandType, SNode rightOperandType) {
+          if (TypeChecker.getInstance().getSubtypingManager().isSubtype(MathUtil.getUnboxedElementType(leftOperandType), rightOperandType)) {
+            return MathTypeUtil.qMatrix(rightOperandType);
+          } else {
+            return leftOperandType;
+          }
+        }
+      };
+      this.myOverloadedOperationsTypesProviders.add(provider);
+    }
+    {
+      OverloadedOperationsTypesProvider provider = new OverloadedOperationsTypesProvider() {
+        {
+          this.myLeftOperandType = MathTypeUtil.qBCMatrix;
+          this.myRightOperandType = MathTypeUtil.qBigComplex;
+          this.myOperationConceptFQName = "jetbrains.mps.baseLanguage.structure.DivExpression";
+          this.myLeftTypeIsExact = false;
+          this.myRightTypeIsExact = false;
+          this.myRightIsStrong = false;
+          this.myLeftIsStrong = false;
+        }
+
+        public SNode getOperationType(SNode operation, SNode leftOperandType, SNode rightOperandType) {
+          if (TypeChecker.getInstance().getSubtypingManager().isSubtype(MathUtil.getUnboxedElementType(leftOperandType), rightOperandType)) {
+            return MathTypeUtil.qMatrix(rightOperandType);
+          } else {
+            return leftOperandType;
+          }
+        }
+      };
+      this.myOverloadedOperationsTypesProviders.add(provider);
+    }
+    {
+      OverloadedOperationsTypesProvider provider = new OverloadedOperationsTypesProvider() {
+        {
+          this.myLeftOperandType = MathTypeUtil.qBCMatrix;
+          this.myRightOperandType = MathTypeUtil.qBCMatrix;
+          this.myOperationConceptFQName = "jetbrains.mps.baseLanguage.structure.MulExpression";
+          this.myLeftTypeIsExact = false;
+          this.myRightTypeIsExact = false;
+          this.myRightIsStrong = false;
+          this.myLeftIsStrong = false;
+        }
+
+        public SNode getOperationType(SNode operation, SNode leftOperandType, SNode rightOperandType) {
+          return MathTypeUtil.ML_matrixOp(leftOperandType, rightOperandType, true);
+        }
+      };
+      this.myOverloadedOperationsTypesProviders.add(provider);
     }
   }
 }

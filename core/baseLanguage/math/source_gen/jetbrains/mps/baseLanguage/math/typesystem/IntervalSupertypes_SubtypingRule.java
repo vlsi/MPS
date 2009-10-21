@@ -14,7 +14,7 @@ public class IntervalSupertypes_SubtypingRule extends SubtypingRule_Runtime impl
   }
 
   public SNode getSubOrSuperType(SNode intervalType, TypeCheckingContext typeCheckingContext) {
-    return new _Quotations.QuotationClass_2().createNode(SLinkOperations.getTarget(intervalType, "elementType", true), typeCheckingContext);
+    return new _Quotations.QuotationClass_0().createNode(SLinkOperations.getTarget(intervalType, "elementType", true), typeCheckingContext);
   }
 
   public String getApplicableConceptFQName() {

@@ -9,8 +9,8 @@
       <solutionPath path="${project}/solutions/jetbrains.mps.baseLanguage.math.sandbox/jetbrains.mps.baseLanguage.math.sandbox.msd" />
     </projectSolutions>
     <projectLanguages>
-      <languagePath path="${project}/math.mpl" />
       <languagePath path="${mps_home}/core/baseLanguage/baseLanguage/baseLanguage.mpl" />
+      <languagePath path="${project}/math.mpl" />
     </projectLanguages>
     <projectDevkits />
     <genConfs />
@@ -23,6 +23,422 @@
   </component>
   <component name="ProjectRootManager" version="2" />
   <component name="SvnBranchConfigurationManager">
+    <option name="myConfigurationMap">
+      <map>
+        <entry key="$APPLICATION_HOME_DIR$">
+          <value>
+            <SvnBranchConfiguration>
+              <option name="branchUrls">
+                <list>
+                  <option value="http://svn.jetbrains.org/mps/branches" />
+                  <option value="http://svn.jetbrains.org/mps/tags" />
+                </list>
+              </option>
+              <option name="trunkUrl" value="http://svn.jetbrains.org/mps/trunk" />
+            </SvnBranchConfiguration>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$">
+          <value>
+            <SvnBranchConfiguration>
+              <option name="branchMap">
+                <map>
+                  <entry key="http://svn.jetbrains.org/mps/branches">
+                    <value>
+                      <list>
+                        <SvnBranchItem>
+                          <option name="creationDateMillis" value="1256049491032" />
+                          <option name="revision" value="47979" />
+                          <option name="url" value="http://svn.jetbrains.org/mps/branches/1.1" />
+                        </SvnBranchItem>
+                        <SvnBranchItem>
+                          <option name="creationDateMillis" value="1248443447918" />
+                          <option name="revision" value="46281" />
+                          <option name="url" value="http://svn.jetbrains.org/mps/branches/1.0" />
+                        </SvnBranchItem>
+                        <SvnBranchItem>
+                          <option name="creationDateMillis" value="1244492536910" />
+                          <option name="revision" value="45490" />
+                          <option name="url" value="http://svn.jetbrains.org/mps/branches/beta3" />
+                        </SvnBranchItem>
+                        <SvnBranchItem>
+                          <option name="creationDateMillis" value="1239891144085" />
+                          <option name="revision" value="44615" />
+                          <option name="url" value="http://svn.jetbrains.org/mps/branches/beta2" />
+                        </SvnBranchItem>
+                        <SvnBranchItem>
+                          <option name="creationDateMillis" value="1233661871421" />
+                          <option name="revision" value="43217" />
+                          <option name="url" value="http://svn.jetbrains.org/mps/branches/hacking_closures" />
+                        </SvnBranchItem>
+                        <SvnBranchItem>
+                          <option name="creationDateMillis" value="1232936205919" />
+                          <option name="revision" value="43107" />
+                          <option name="url" value="http://svn.jetbrains.org/mps/branches/projectLanguage" />
+                        </SvnBranchItem>
+                        <SvnBranchItem>
+                          <option name="creationDateMillis" value="1230051485784" />
+                          <option name="revision" value="42739" />
+                          <option name="url" value="http://svn.jetbrains.org/mps/branches/beta1.0" />
+                        </SvnBranchItem>
+                        <SvnBranchItem>
+                          <option name="creationDateMillis" value="1224609042985" />
+                          <option name="revision" value="41021" />
+                          <option name="url" value="http://svn.jetbrains.org/mps/branches/xmlDeprecatedToXML" />
+                        </SvnBranchItem>
+                        <SvnBranchItem>
+                          <option name="creationDateMillis" value="1128685466811" />
+                          <option name="revision" value="4818" />
+                          <option name="url" value="http://svn.jetbrains.org/mps/branches/JetBrains" />
+                        </SvnBranchItem>
+                      </list>
+                    </value>
+                  </entry>
+                  <entry key="http://svn.jetbrains.org/mps/tags">
+                    <value>
+                      <list>
+                        <SvnBranchItem>
+                          <option name="creationDateMillis" value="1150905897673" />
+                          <option name="revision" value="7301" />
+                          <option name="url" value="http://svn.jetbrains.org/mps/tags/build292" />
+                        </SvnBranchItem>
+                        <SvnBranchItem>
+                          <option name="creationDateMillis" value="1150904995289" />
+                          <option name="revision" value="7300" />
+                          <option name="url" value="http://svn.jetbrains.org/mps/tags/build291" />
+                        </SvnBranchItem>
+                        <SvnBranchItem>
+                          <option name="creationDateMillis" value="1150791257152" />
+                          <option name="revision" value="7276" />
+                          <option name="url" value="http://svn.jetbrains.org/mps/tags/build290" />
+                        </SvnBranchItem>
+                        <SvnBranchItem>
+                          <option name="creationDateMillis" value="1150789998909" />
+                          <option name="revision" value="7273" />
+                          <option name="url" value="http://svn.jetbrains.org/mps/tags/build289" />
+                        </SvnBranchItem>
+                        <SvnBranchItem>
+                          <option name="creationDateMillis" value="1150788886834" />
+                          <option name="revision" value="7270" />
+                          <option name="url" value="http://svn.jetbrains.org/mps/tags/build288" />
+                        </SvnBranchItem>
+                        <SvnBranchItem>
+                          <option name="creationDateMillis" value="1150788226028" />
+                          <option name="revision" value="7269" />
+                          <option name="url" value="http://svn.jetbrains.org/mps/tags/build287" />
+                        </SvnBranchItem>
+                        <SvnBranchItem>
+                          <option name="creationDateMillis" value="1150787211640" />
+                          <option name="revision" value="7266" />
+                          <option name="url" value="http://svn.jetbrains.org/mps/tags/build286" />
+                        </SvnBranchItem>
+                        <SvnBranchItem>
+                          <option name="creationDateMillis" value="1150711634173" />
+                          <option name="revision" value="7250" />
+                          <option name="url" value="http://svn.jetbrains.org/mps/tags/build285" />
+                        </SvnBranchItem>
+                        <SvnBranchItem>
+                          <option name="creationDateMillis" value="1150710647647" />
+                          <option name="revision" value="7249" />
+                          <option name="url" value="http://svn.jetbrains.org/mps/tags/build284" />
+                        </SvnBranchItem>
+                        <SvnBranchItem>
+                          <option name="creationDateMillis" value="1150707100785" />
+                          <option name="revision" value="7247" />
+                          <option name="url" value="http://svn.jetbrains.org/mps/tags/build283" />
+                        </SvnBranchItem>
+                        <SvnBranchItem>
+                          <option name="creationDateMillis" value="1150705984355" />
+                          <option name="revision" value="7245" />
+                          <option name="url" value="http://svn.jetbrains.org/mps/tags/build282" />
+                        </SvnBranchItem>
+                        <SvnBranchItem>
+                          <option name="creationDateMillis" value="1149329732927" />
+                          <option name="revision" value="7129" />
+                          <option name="url" value="http://svn.jetbrains.org/mps/tags/build281" />
+                        </SvnBranchItem>
+                        <SvnBranchItem>
+                          <option name="creationDateMillis" value="1142414189411" />
+                          <option name="revision" value="6453" />
+                          <option name="url" value="http://svn.jetbrains.org/mps/tags/build262" />
+                        </SvnBranchItem>
+                        <SvnBranchItem>
+                          <option name="creationDateMillis" value="1142413047494" />
+                          <option name="revision" value="6452" />
+                          <option name="url" value="http://svn.jetbrains.org/mps/tags/build261" />
+                        </SvnBranchItem>
+                        <SvnBranchItem>
+                          <option name="creationDateMillis" value="1142345169843" />
+                          <option name="revision" value="6447" />
+                          <option name="url" value="http://svn.jetbrains.org/mps/tags/build260" />
+                        </SvnBranchItem>
+                        <SvnBranchItem>
+                          <option name="creationDateMillis" value="1142341417200" />
+                          <option name="revision" value="6439" />
+                          <option name="url" value="http://svn.jetbrains.org/mps/tags/build259" />
+                        </SvnBranchItem>
+                        <SvnBranchItem>
+                          <option name="creationDateMillis" value="1142339410507" />
+                          <option name="revision" value="6436" />
+                          <option name="url" value="http://svn.jetbrains.org/mps/tags/build258" />
+                        </SvnBranchItem>
+                        <SvnBranchItem>
+                          <option name="creationDateMillis" value="1142262326373" />
+                          <option name="revision" value="6426" />
+                          <option name="url" value="http://svn.jetbrains.org/mps/tags/build257" />
+                        </SvnBranchItem>
+                        <SvnBranchItem>
+                          <option name="creationDateMillis" value="1142261357892" />
+                          <option name="revision" value="6423" />
+                          <option name="url" value="http://svn.jetbrains.org/mps/tags/build256" />
+                        </SvnBranchItem>
+                        <SvnBranchItem>
+                          <option name="creationDateMillis" value="1142255987500" />
+                          <option name="revision" value="6421" />
+                          <option name="url" value="http://svn.jetbrains.org/mps/tags/build255" />
+                        </SvnBranchItem>
+                        <SvnBranchItem>
+                          <option name="creationDateMillis" value="1142249179075" />
+                          <option name="revision" value="6418" />
+                          <option name="url" value="http://svn.jetbrains.org/mps/tags/build254" />
+                        </SvnBranchItem>
+                        <SvnBranchItem>
+                          <option name="creationDateMillis" value="1142244116273" />
+                          <option name="revision" value="6416" />
+                          <option name="url" value="http://svn.jetbrains.org/mps/tags/build252" />
+                        </SvnBranchItem>
+                        <SvnBranchItem>
+                          <option name="creationDateMillis" value="1142004636637" />
+                          <option name="revision" value="6405" />
+                          <option name="url" value="http://svn.jetbrains.org/mps/tags/build251" />
+                        </SvnBranchItem>
+                        <SvnBranchItem>
+                          <option name="creationDateMillis" value="1141896044467" />
+                          <option name="revision" value="6366" />
+                          <option name="url" value="http://svn.jetbrains.org/mps/tags/build250" />
+                        </SvnBranchItem>
+                        <SvnBranchItem>
+                          <option name="creationDateMillis" value="1135429281447" />
+                          <option name="revision" value="5641" />
+                          <option name="url" value="http://svn.jetbrains.org/mps/tags/build239" />
+                        </SvnBranchItem>
+                        <SvnBranchItem>
+                          <option name="creationDateMillis" value="1135428021768" />
+                          <option name="revision" value="5640" />
+                          <option name="url" value="http://svn.jetbrains.org/mps/tags/build237" />
+                        </SvnBranchItem>
+                        <SvnBranchItem>
+                          <option name="creationDateMillis" value="1135275802145" />
+                          <option name="revision" value="5633" />
+                          <option name="url" value="http://svn.jetbrains.org/mps/tags/build235" />
+                        </SvnBranchItem>
+                        <SvnBranchItem>
+                          <option name="creationDateMillis" value="1135274708271" />
+                          <option name="revision" value="5631" />
+                          <option name="url" value="http://svn.jetbrains.org/mps/tags/build233" />
+                        </SvnBranchItem>
+                        <SvnBranchItem>
+                          <option name="creationDateMillis" value="1135267542324" />
+                          <option name="revision" value="5628" />
+                          <option name="url" value="http://svn.jetbrains.org/mps/tags/build232" />
+                        </SvnBranchItem>
+                        <SvnBranchItem>
+                          <option name="creationDateMillis" value="1135263457343" />
+                          <option name="revision" value="5627" />
+                          <option name="url" value="http://svn.jetbrains.org/mps/tags/build231" />
+                        </SvnBranchItem>
+                        <SvnBranchItem>
+                          <option name="creationDateMillis" value="1135262747719" />
+                          <option name="revision" value="5626" />
+                          <option name="url" value="http://svn.jetbrains.org/mps/tags/build230" />
+                        </SvnBranchItem>
+                        <SvnBranchItem>
+                          <option name="creationDateMillis" value="1133297578946" />
+                          <option name="revision" value="5419" />
+                          <option name="url" value="http://svn.jetbrains.org/mps/tags/build234" />
+                        </SvnBranchItem>
+                        <SvnBranchItem>
+                          <option name="creationDateMillis" value="1133182337655" />
+                          <option name="revision" value="5405" />
+                          <option name="url" value="http://svn.jetbrains.org/mps/tags/build229" />
+                        </SvnBranchItem>
+                        <SvnBranchItem>
+                          <option name="creationDateMillis" value="1133182092053" />
+                          <option name="revision" value="5404" />
+                          <option name="url" value="http://svn.jetbrains.org/mps/tags/build228" />
+                        </SvnBranchItem>
+                        <SvnBranchItem>
+                          <option name="creationDateMillis" value="1132219533457" />
+                          <option name="revision" value="5295" />
+                          <option name="url" value="http://svn.jetbrains.org/mps/tags/build224" />
+                        </SvnBranchItem>
+                        <SvnBranchItem>
+                          <option name="creationDateMillis" value="1132149651817" />
+                          <option name="revision" value="5277" />
+                          <option name="url" value="http://svn.jetbrains.org/mps/tags/build223" />
+                        </SvnBranchItem>
+                        <SvnBranchItem>
+                          <option name="creationDateMillis" value="1127983997553" />
+                          <option name="revision" value="4665" />
+                          <option name="url" value="http://svn.jetbrains.org/mps/tags/build222" />
+                        </SvnBranchItem>
+                        <SvnBranchItem>
+                          <option name="creationDateMillis" value="1127382680002" />
+                          <option name="revision" value="4546" />
+                          <option name="url" value="http://svn.jetbrains.org/mps/tags/build220" />
+                        </SvnBranchItem>
+                        <SvnBranchItem>
+                          <option name="creationDateMillis" value="1127242337211" />
+                          <option name="revision" value="4505" />
+                          <option name="url" value="http://svn.jetbrains.org/mps/tags/build219" />
+                        </SvnBranchItem>
+                        <SvnBranchItem>
+                          <option name="creationDateMillis" value="1127235758139" />
+                          <option name="revision" value="4501" />
+                          <option name="url" value="http://svn.jetbrains.org/mps/tags/build218" />
+                        </SvnBranchItem>
+                        <SvnBranchItem>
+                          <option name="creationDateMillis" value="1127223297752" />
+                          <option name="revision" value="4497" />
+                          <option name="url" value="http://svn.jetbrains.org/mps/tags/build217" />
+                        </SvnBranchItem>
+                        <SvnBranchItem>
+                          <option name="creationDateMillis" value="1127219581039" />
+                          <option name="revision" value="4494" />
+                          <option name="url" value="http://svn.jetbrains.org/mps/tags/build216" />
+                        </SvnBranchItem>
+                        <SvnBranchItem>
+                          <option name="creationDateMillis" value="1127209643841" />
+                          <option name="revision" value="4487" />
+                          <option name="url" value="http://svn.jetbrains.org/mps/tags/build215" />
+                        </SvnBranchItem>
+                        <SvnBranchItem>
+                          <option name="creationDateMillis" value="1127145309649" />
+                          <option name="revision" value="4473" />
+                          <option name="url" value="http://svn.jetbrains.org/mps/tags/build214" />
+                        </SvnBranchItem>
+                        <SvnBranchItem>
+                          <option name="creationDateMillis" value="1127144532412" />
+                          <option name="revision" value="4471" />
+                          <option name="url" value="http://svn.jetbrains.org/mps/tags/build213" />
+                        </SvnBranchItem>
+                        <SvnBranchItem>
+                          <option name="creationDateMillis" value="1126879592099" />
+                          <option name="revision" value="4444" />
+                          <option name="url" value="http://svn.jetbrains.org/mps/tags/build207" />
+                        </SvnBranchItem>
+                        <SvnBranchItem>
+                          <option name="creationDateMillis" value="1126868078166" />
+                          <option name="revision" value="4440" />
+                          <option name="url" value="http://svn.jetbrains.org/mps/tags/build206" />
+                        </SvnBranchItem>
+                        <SvnBranchItem>
+                          <option name="creationDateMillis" value="1126861930386" />
+                          <option name="revision" value="4436" />
+                          <option name="url" value="http://svn.jetbrains.org/mps/tags/build204" />
+                        </SvnBranchItem>
+                        <SvnBranchItem>
+                          <option name="creationDateMillis" value="1126794013172" />
+                          <option name="revision" value="4425" />
+                          <option name="url" value="http://svn.jetbrains.org/mps/tags/build202" />
+                        </SvnBranchItem>
+                        <SvnBranchItem>
+                          <option name="creationDateMillis" value="1126793157074" />
+                          <option name="revision" value="4424" />
+                          <option name="url" value="http://svn.jetbrains.org/mps/tags/build201" />
+                        </SvnBranchItem>
+                        <SvnBranchItem>
+                          <option name="creationDateMillis" value="1126791127295" />
+                          <option name="revision" value="4420" />
+                          <option name="url" value="http://svn.jetbrains.org/mps/tags/build200" />
+                        </SvnBranchItem>
+                        <SvnBranchItem>
+                          <option name="creationDateMillis" value="1126790329257" />
+                          <option name="revision" value="4419" />
+                          <option name="url" value="http://svn.jetbrains.org/mps/tags/build197" />
+                        </SvnBranchItem>
+                        <SvnBranchItem>
+                          <option name="creationDateMillis" value="1126789927307" />
+                          <option name="revision" value="4418" />
+                          <option name="url" value="http://svn.jetbrains.org/mps/tags/build196" />
+                        </SvnBranchItem>
+                        <SvnBranchItem>
+                          <option name="creationDateMillis" value="1126789503745" />
+                          <option name="revision" value="4417" />
+                          <option name="url" value="http://svn.jetbrains.org/mps/tags/build195" />
+                        </SvnBranchItem>
+                        <SvnBranchItem>
+                          <option name="creationDateMillis" value="1126788892182" />
+                          <option name="revision" value="4416" />
+                          <option name="url" value="http://svn.jetbrains.org/mps/tags/build193" />
+                        </SvnBranchItem>
+                        <SvnBranchItem>
+                          <option name="creationDateMillis" value="1126788363541" />
+                          <option name="revision" value="4415" />
+                          <option name="url" value="http://svn.jetbrains.org/mps/tags/build192" />
+                        </SvnBranchItem>
+                        <SvnBranchItem>
+                          <option name="creationDateMillis" value="1126787902363" />
+                          <option name="revision" value="4414" />
+                          <option name="url" value="http://svn.jetbrains.org/mps/tags/build191" />
+                        </SvnBranchItem>
+                        <SvnBranchItem>
+                          <option name="creationDateMillis" value="1126787373964" />
+                          <option name="revision" value="4413" />
+                          <option name="url" value="http://svn.jetbrains.org/mps/tags/build190" />
+                        </SvnBranchItem>
+                        <SvnBranchItem>
+                          <option name="creationDateMillis" value="1126786182285" />
+                          <option name="revision" value="4412" />
+                          <option name="url" value="http://svn.jetbrains.org/mps/tags/build189" />
+                        </SvnBranchItem>
+                        <SvnBranchItem>
+                          <option name="creationDateMillis" value="1126782375896" />
+                          <option name="revision" value="4408" />
+                          <option name="url" value="http://svn.jetbrains.org/mps/tags/build186" />
+                        </SvnBranchItem>
+                        <SvnBranchItem>
+                          <option name="creationDateMillis" value="1126709417584" />
+                          <option name="revision" value="4390" />
+                          <option name="url" value="http://svn.jetbrains.org/mps/tags/build185" />
+                        </SvnBranchItem>
+                        <SvnBranchItem>
+                          <option name="creationDateMillis" value="1126700392852" />
+                          <option name="revision" value="4387" />
+                          <option name="url" value="http://svn.jetbrains.org/mps/tags/build184" />
+                        </SvnBranchItem>
+                        <SvnBranchItem>
+                          <option name="creationDateMillis" value="1126699632461" />
+                          <option name="revision" value="4386" />
+                          <option name="url" value="http://svn.jetbrains.org/mps/tags/183" />
+                        </SvnBranchItem>
+                        <SvnBranchItem>
+                          <option name="creationDateMillis" value="1126693225610" />
+                          <option name="revision" value="4383" />
+                          <option name="url" value="http://svn.jetbrains.org/mps/tags/build180" />
+                        </SvnBranchItem>
+                        <SvnBranchItem>
+                          <option name="creationDateMillis" value="1065183064000" />
+                          <option name="revision" value="6" />
+                          <option name="url" value="http://svn.jetbrains.org/mps/tags/first" />
+                        </SvnBranchItem>
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+              <option name="branchUrls">
+                <list>
+                  <option value="http://svn.jetbrains.org/mps/branches" />
+                  <option value="http://svn.jetbrains.org/mps/tags" />
+                </list>
+              </option>
+              <option name="trunkUrl" value="http://svn.jetbrains.org/mps/trunk" />
+            </SvnBranchConfiguration>
+          </value>
+        </entry>
+      </map>
+    </option>
     <option name="myVersion" value="124" />
     <option name="mySupportsUserInfoFilter" value="true" />
   </component>
