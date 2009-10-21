@@ -31,7 +31,6 @@
   <devkit namespace="2677cb18-f558-4e33-bc38-a5139cee06dc(jetbrains.mps.devkit.language-design)" />
   <maxImportIndex value="2" />
   <import index="1" modelUID="r:1a7fc406-f263-498c-a126-51036fe6a9da(jetbrains.mps.lang.editor.editorTest.structure)" version="5" />
-  <import index="2" modelUID="r:de0d3c0c-d049-41cf-bbf9-a920ba513cd3(jetbrains.mps.lang.textGen.structure)" version="11" />
   <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" id="3702466984434609596">
     <link role="conceptDeclaration" targetNodeId="1.3702466984434609595" resolveInfo="TestStatenetList" />
     <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="3702466984434609598">
