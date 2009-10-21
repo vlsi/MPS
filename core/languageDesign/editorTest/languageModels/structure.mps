@@ -277,5 +277,20 @@
       <link role="intfc" targetNodeId="3702466984434723497" resolveInfo="IBaseTestBlock" />
     </node>
   </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="5633355289409839142">
+    <property name="name" value="NonEmptyProperty" />
+    <link role="extends" targetNodeId="2v.1133920641626" resolveInfo="BaseConcept" />
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="5633355289410032964">
+      <property name="value" value="non-empty-property" />
+      <link role="conceptPropertyDeclaration" targetNodeId="2v.1137473891462" resolveInfo="alias" />
+    </node>
+    <node role="propertyDeclaration" type="jetbrains.mps.lang.structure.structure.PropertyDeclaration" id="5633355289409839143">
+      <property name="name" value="value" />
+      <link role="dataType" targetNodeId="2v.1082983041843" resolveInfo="string" />
+    </node>
+    <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="5633355289409887750">
+      <link role="intfc" targetNodeId="3702466984434723497" resolveInfo="IBaseTestBlock" />
+    </node>
+  </node>
 </model>
 
