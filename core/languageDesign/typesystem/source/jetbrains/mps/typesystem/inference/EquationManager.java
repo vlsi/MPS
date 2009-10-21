@@ -33,7 +33,6 @@ import java.util.HashSet;
 import java.util.HashMap;
 
 import org.jetbrains.annotations.NotNull;
-import com.intellij.util.containers.*;
 
 public class EquationManager {
 
@@ -214,7 +213,7 @@ public class EquationManager {
     if (NodeWrapper.fromWrapper(subtypeRepresentator) == NodeWrapper.fromWrapper(supertypeRepresentator)) return;
 
     // RuntimeTypeVariable varSubtype = subtypeRepresentator == null ? null : subtypeRepresentator.getVariable();
-    boolean supertypeConcrete = supertypeRepresentator == null ? true : supertypeRepresentator.isConcrete();
+    boolean supertypeConcrete = supertypeRepresentator == null || supertypeRepresentator.isConcrete();
     isConcrete(subtypeRepresentator);
     boolean subtypeHasNonConcreteVars = !isConcrete(subtypeRepresentator);
     boolean supertypeHasNonConcreteVars = !isConcrete(supertypeRepresentator);
@@ -982,6 +981,14 @@ public class EquationManager {
   }
 
   public void solveInequations() {
+
+    //for debug
+    InequationsSolver ineqSolver = new InequationsSolver(this);
+    ineqSolver.fillAllInequations(mySubtypesToSupertypesMap,
+      mySubtypesToSupertypesMapStrong,
+      mySupertypesToSubtypesMap,
+      mySupertypesToSubtypesMapStrong);
+    ineqSolver.splitByLayers();
 
     eliminateConcretePartsOfInequations(false);
     Set<IWrapper> types = eliminateConcretePartsOfInequations(true);

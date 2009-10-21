@@ -25,8 +25,12 @@ import jetbrains.mps.util.Pair;
 import java.util.List;
 import java.util.Set;
 import java.util.HashSet;
+import java.util.Map;
 
-public class EquationInfo implements Comparable<EquationInfo> {
+import com.intellij.util.containers.HashMap;
+
+public class EquationInfo {
+
   private String myErrorString;
   private SNode myNodeWithError;
 
@@ -38,6 +42,7 @@ public class EquationInfo implements Comparable<EquationInfo> {
   private IntentionProvider myIntentionProvider;
 
   private int myInequationPriority;
+  private boolean myIsStrong = false;
 
 
   public EquationInfo(SNode nodeWithError, String errorString) {
@@ -120,6 +125,14 @@ public class EquationInfo implements Comparable<EquationInfo> {
     myInequationIdsAfter.add(new Pair<String, String>(modelId, equationId));
   }
 
+  boolean isStrong() {
+    return myIsStrong;
+  }
+
+  void setStrong() {
+    myIsStrong = true;
+  }
+
   public int compareTo(EquationInfo o) {
     boolean iAmBefore = false;
     boolean iAmAfter = false;
@@ -145,5 +158,13 @@ public class EquationInfo implements Comparable<EquationInfo> {
       return 1;
     }
     return myInequationPriority - o.myInequationPriority;
+  }
+
+  public Set<Pair<String, String>> getInequationIdsAfter() {
+    return myInequationIdsAfter == null ? new HashSet<Pair<String, String>>() : myInequationIdsAfter;
+  }
+
+  public Set<Pair<String, String>> getInequationIdsBefore() {
+    return myInequationIdsBefore == null ? new HashSet<Pair<String, String>>() : myInequationIdsBefore;
   }
 }
