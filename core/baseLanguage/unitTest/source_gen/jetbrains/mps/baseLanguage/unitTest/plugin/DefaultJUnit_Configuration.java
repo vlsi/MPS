@@ -172,7 +172,7 @@ public class DefaultJUnit_Configuration extends BaseRunConfig {
           });
 
           if (process.value != null) {
-            BLProcessHandler processHandler = new BLProcessHandler(runComponent.getConsole(), process.value, "Test", Charset.defaultCharset());
+            BLProcessHandler processHandler = new BLProcessHandler(runComponent.getConsole(), process.value, "", Charset.defaultCharset());
             runComponent.onStart(processHandler);
             handler = new JUnitProcessHandler(runComponent, runComponent.getConsole(), process.value);
           }

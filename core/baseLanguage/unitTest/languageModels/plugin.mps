@@ -12658,9 +12658,7 @@
                     <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="4383915419229629959">
                       <link role="variableDeclaration" targetNodeId="4958672126368877178" resolveInfo="process" />
                     </node>
-                    <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="4383915419229629960">
-                      <property name="value" value="Test" />
-                    </node>
+                    <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="4383915419229629960" />
                     <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="4383915419229629961">
                       <link role="classConcept" targetNodeId="61.~Charset" resolveInfo="Charset" />
                       <link role="baseMethodDeclaration" targetNodeId="61.~Charset.defaultCharset():java.nio.charset.Charset" resolveInfo="defaultCharset" />
