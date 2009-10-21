@@ -52,6 +52,7 @@ public class NonEmptyProperty_Editor extends DefaultNodeEditor {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("value");
     provider.setNoTargetText("<no value>");
+    provider.setAllowsEmptyTarget(true);
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setCellId("property_value");
@@ -69,7 +70,8 @@ public class NonEmptyProperty_Editor extends DefaultNodeEditor {
   private EditorCell createProperty_0569_0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("value");
-    provider.setNoTargetText("<no value>");
+    provider.setNoTargetText("no value");
+    provider.setAllowsEmptyTarget(true);
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setCellId("property_value_1");

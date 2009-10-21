@@ -291,6 +291,7 @@
         <link role="relationDeclaration" targetNodeId="2v.1137473891462" resolveInfo="alias" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_NonEmptyProperty" id="5633355289409887749">
+        <property name="allowEmptyText" value="true" />
         <link role="relationDeclaration" targetNodeId="1.5633355289409839143" resolveInfo="value" />
       </node>
       <node role="cellLayout" type="jetbrains.mps.lang.editor.structure.CellLayout_Indent" id="5633355289409839148" />
@@ -300,6 +301,9 @@
         <property name="text" value="property" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Property" id="5633355289409964574">
+        <property name="allowEmptyText" value="true" />
+        <property name="emptyNoTargetText" value="false" />
+        <property name="noTargetText" value="no value" />
         <link role="relationDeclaration" targetNodeId="1.5633355289409839143" resolveInfo="value" />
       </node>
       <node role="cellLayout" type="jetbrains.mps.lang.editor.structure.CellLayout_Indent" id="5633355289409964571" />

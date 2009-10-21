@@ -5401,5 +5401,30 @@
       </node>
     </node>
   </node>
+  <node type="jetbrains.mps.lang.test.structure.EditorTestCase" id="5633355289409916129">
+    <property name="name" value="TestForNonEmptyProperty" />
+    <node role="nodeToEdit" type="jetbrains.mps.lang.editor.editorTest.structure.TestBlockList" id="5633355289409998034">
+      <node role="statement" type="jetbrains.mps.lang.editor.editorTest.structure.NonEmptyProperty" id="5633355289410070947">
+        <property name="value" value="p" />
+        <node role="testNode$attribute" type="jetbrains.mps.lang.test.structure.AnonymousCellAnnotation" id="1074527630453750805">
+          <property name="isLastPosition" value="true" />
+          <property name="useLabelSelection" value="true" />
+          <property name="selectionStart" value="1" />
+          <property name="selectionEnd" value="1" />
+          <property name="cellId" value="property_value" />
+        </node>
+      </node>
+    </node>
+    <node role="result" type="jetbrains.mps.lang.editor.editorTest.structure.TestBlockList" id="5633355289409998035">
+      <node role="statement" type="jetbrains.mps.lang.editor.editorTest.structure.NonEmptyProperty" id="5633355289410070948" />
+    </node>
+    <node role="code" type="jetbrains.mps.baseLanguage.structure.StatementList" id="5633355289410125213">
+      <node role="statement" type="jetbrains.mps.lang.test.structure.PressKeyStatement" id="5633355289410125214">
+        <node role="keyStrokes" type="jetbrains.mps.lang.plugin.structure.KeyMapKeystroke" id="5633355289410125215">
+          <property name="keycode" value="VK_BACK_SPACE" />
+        </node>
+      </node>
+    </node>
+  </node>
 </model>
 
