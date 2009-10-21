@@ -7645,6 +7645,22 @@
         </node>
       </node>
     </node>
+    <node role="isApplicableFunction" type="jetbrains.mps.lang.intentions.structure.IsApplicableBlock" id="6088627910558218895">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="6088627910558218896">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="6088627910558222844">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.NotExpression" id="6088627910558222877">
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="6088627910558222878">
+              <node role="operand" type="jetbrains.mps.lang.intentions.structure.ConceptFunctionParameter_node" id="6088627910558222879" />
+              <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation" id="6088627910558222880">
+                <node role="conceptArgument" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" id="6088627910558222881">
+                  <link role="conceptDeclaration" targetNodeId="1.1170345865475" resolveInfo="AnonymousClass" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
   </node>
   <node type="jetbrains.mps.lang.intentions.structure.IntentionDeclaration" id="1230290102486">
     <property name="package" value="method.static" />
@@ -7890,6 +7906,22 @@
               <link role="baseMethodDeclaration" targetNodeId="6.~EditorContext.select(jetbrains.mps.smodel.SNode):void" resolveInfo="select" />
               <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="4745461552198996167">
                 <link role="variableDeclaration" targetNodeId="4745461552198991276" resolveInfo="methodNode" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="isApplicableFunction" type="jetbrains.mps.lang.intentions.structure.IsApplicableBlock" id="6088627910558222861">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="6088627910558222862">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="6088627910558222863">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.NotExpression" id="6088627910558222872">
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="6088627910558222873">
+              <node role="operand" type="jetbrains.mps.lang.intentions.structure.ConceptFunctionParameter_node" id="6088627910558222874" />
+              <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation" id="6088627910558222875">
+                <node role="conceptArgument" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" id="6088627910558222876">
+                  <link role="conceptDeclaration" targetNodeId="1.1170345865475" resolveInfo="AnonymousClass" />
+                </node>
               </node>
             </node>
           </node>
@@ -8786,6 +8818,20 @@
             <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_IsRoleOperation" id="1705375422254837465">
               <link role="conceptOfParent" targetNodeId="1.1068390468198" resolveInfo="ClassConcept" />
               <link role="linkInParent" targetNodeId="1.1178549979242" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="isApplicableFunction" type="jetbrains.mps.lang.intentions.structure.IsApplicableBlock" id="6088627910558222884">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="6088627910558222885">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="6088627910558222886">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="6088627910558222888">
+            <node role="operand" type="jetbrains.mps.lang.intentions.structure.ConceptFunctionParameter_node" id="6088627910558222887" />
+            <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation" id="6088627910558222892">
+              <node role="conceptArgument" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" id="6088627910558222894">
+                <link role="conceptDeclaration" targetNodeId="1.1170345865475" resolveInfo="AnonymousClass" />
+              </node>
             </node>
           </node>
         </node>

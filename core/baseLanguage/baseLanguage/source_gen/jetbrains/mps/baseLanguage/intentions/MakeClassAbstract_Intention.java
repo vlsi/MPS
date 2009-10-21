@@ -36,10 +36,17 @@ public class MakeClassAbstract_Intention extends BaseIntention {
   }
 
   public boolean isApplicable(final SNode node, final EditorContext editorContext) {
+    if (!(this.isApplicableToNode(node, editorContext))) {
+      return false;
+    }
     if (editorContext.getSelectedNode() != node && !(this.isVisibleInChild(node, editorContext.getSelectedNode(), editorContext))) {
       return false;
     }
     return true;
+  }
+
+  public boolean isApplicableToNode(final SNode node, final EditorContext editorContext) {
+    return !(SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.AnonymousClass"));
   }
 
   public boolean isVisibleInChild(final SNode node, final SNode childNode, final EditorContext editorContext) {
