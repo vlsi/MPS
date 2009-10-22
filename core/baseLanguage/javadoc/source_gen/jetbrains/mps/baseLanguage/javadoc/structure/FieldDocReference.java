@@ -8,20 +8,19 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
-public class FieldDocReference extends BaseDocReference {
+public class FieldDocReference extends BaseVariableDocReference {
   public static final String concept = "jetbrains.mps.baseLanguage.javadoc.structure.FieldDocReference";
-  public static final String FIELD_DECLARATION = "fieldDeclaration";
 
   public FieldDocReference(SNode node) {
     super(node);
   }
 
   public FieldDeclaration getFieldDeclaration() {
-    return (FieldDeclaration)this.getReferent(FieldDeclaration.class, FieldDocReference.FIELD_DECLARATION);
+    return this.ensureAdapter(FieldDeclaration.class, "declaration", this.getDeclaration());
   }
 
   public void setFieldDeclaration(FieldDeclaration node) {
-    super.setReferent(FieldDocReference.FIELD_DECLARATION, node);
+    this.setDeclaration(node);
   }
 
   public static FieldDocReference newInstance(SModel sm, boolean init) {

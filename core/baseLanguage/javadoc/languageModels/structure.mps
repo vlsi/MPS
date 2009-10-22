@@ -52,6 +52,16 @@
         </entry>
       </conceptFeatureMap>
     </refactoringContext>
+    <refactoringContext modelVersion="5">
+      <refactoring refactoringClass="jetbrains.mps.lang.structure.refactorings.RenameConcept" />
+      <moveMap />
+      <conceptFeatureMap>
+        <entry>
+          <key featureName="CodeSnippet" conceptFQName="jetbrains.mps.baseLanguage.javadoc.structure.CodeSnippet" featureKind="CONCEPT" />
+          <value featureName="CommentLine" conceptFQName="jetbrains.mps.baseLanguage.javadoc.structure.CommentLine" featureKind="CONCEPT" />
+        </entry>
+      </conceptFeatureMap>
+    </refactoringContext>
   </refactoringHistory>
   <language namespace="c72da2b9-7cce-4447-8389-f407dc1158b7(jetbrains.mps.lang.structure)" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" />
@@ -75,10 +85,10 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)" version="83" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590585(jetbrains.mps.xml.constraints)" version="6" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590588(jetbrains.mps.xml.structure)" version="0" />
-  <languageAspect modelUID="r:4095af4f-a097-4799-aaa9-03df087ddfa6(jetbrains.mps.baseLanguage.javadoc.structure)" version="4" />
+  <languageAspect modelUID="r:4095af4f-a097-4799-aaa9-03df087ddfa6(jetbrains.mps.baseLanguage.javadoc.structure)" version="5" />
   <devkit namespace="2677cb18-f558-4e33-bc38-a5139cee06dc(jetbrains.mps.devkit.language-design)" />
   <maxImportIndex value="1" />
-  <import index="1" modelUID="r:4095af4f-a097-4799-aaa9-03df087ddfa6(jetbrains.mps.baseLanguage.javadoc.structure)" version="4" />
+  <import index="1" modelUID="r:4095af4f-a097-4799-aaa9-03df087ddfa6(jetbrains.mps.baseLanguage.javadoc.structure)" version="5" />
   <visible index="2" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="5349172909345501395">
     <property name="name" value="BaseDocComment" />
@@ -328,6 +338,11 @@
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="6962838954693748795">
     <property name="name" value="ValueInlineDocTag" />
     <link role="extends" targetNodeId="6962838954693748792" resolveInfo="BaseInlineDocTag" />
+    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="2565027568480644422">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="variableReference" />
+      <link role="target" targetNodeId="5562345046718956738" resolveInfo="BaseVariableDocReference" />
+    </node>
     <node role="propertyDeclaration" type="jetbrains.mps.lang.structure.structure.PropertyDeclaration" id="6962838954693748798">
       <property name="name" value="text" />
       <link role="dataType" targetNodeId="2v.1082983041843" resolveInfo="string" />
@@ -344,7 +359,7 @@
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="2217234381367049075">
     <property name="name" value="CodeInlineDocTag" />
     <link role="extends" targetNodeId="6962838954693748792" resolveInfo="BaseInlineDocTag" />
-    <node role="propertyDeclaration" type="jetbrains.mps.lang.structure.structure.PropertyDeclaration" id="2217234381367049076">
+    <node role="propertyDeclaration" type="jetbrains.mps.lang.structure.structure.PropertyDeclaration" id="2565027568480353900">
       <property name="name" value="text" />
       <link role="dataType" targetNodeId="2v.1082983041843" resolveInfo="string" />
     </node>
@@ -366,12 +381,13 @@
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="2217234381367188008">
     <property name="name" value="FieldDocReference" />
-    <link role="extends" targetNodeId="2217234381367188006" resolveInfo="BaseDocReference" />
+    <link role="extends" targetNodeId="5562345046718956738" resolveInfo="BaseVariableDocReference" />
     <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="2217234381367188009">
       <property name="metaClass" value="reference" />
       <property name="role" value="fieldDeclaration" />
       <property name="sourceCardinality" value="1" />
       <link role="target" targetNodeId="3v.1068390468200" resolveInfo="FieldDeclaration" />
+      <link role="specializedLink" targetNodeId="5562345046718956740" />
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="2217234381367190443">
@@ -428,6 +444,51 @@
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="2546654756694997555">
       <property name="value" value="link to type or member" />
       <link role="conceptPropertyDeclaration" targetNodeId="2v.1137473914776" resolveInfo="shortDescription" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="2565027568480805887">
+    <property name="name" value="CodeSnippet" />
+    <link role="extends" targetNodeId="8465538089690331500" resolveInfo="CommentLine" />
+    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="2565027568480905697">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="statement" />
+      <property name="sourceCardinality" value="0..n" />
+      <link role="target" targetNodeId="3v.1068580123157" resolveInfo="Statement" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="4730661099054379103">
+    <property name="name" value="InheritDocInlineDocTag" />
+    <link role="extends" targetNodeId="6962838954693748792" resolveInfo="BaseInlineDocTag" />
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="4730661099054379104">
+      <property name="value" value="inheritDoc" />
+      <link role="conceptPropertyDeclaration" targetNodeId="2v.1137473891462" resolveInfo="alias" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="4730661099054379106">
+      <property name="value" value="inherit doc from parent" />
+      <link role="conceptPropertyDeclaration" targetNodeId="2v.1137473914776" resolveInfo="shortDescription" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="5562345046718956738">
+    <property name="name" value="BaseVariableDocReference" />
+    <link role="extends" targetNodeId="2217234381367188006" resolveInfo="BaseDocReference" />
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.BooleanConceptProperty" id="5562345046718956739">
+      <link role="conceptPropertyDeclaration" targetNodeId="2v.1137473854053" resolveInfo="abstract" />
+    </node>
+    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="5562345046718956740">
+      <property name="metaClass" value="reference" />
+      <property name="role" value="declaration" />
+      <property name="sourceCardinality" value="1" />
+      <link role="target" targetNodeId="3v.4972933694980447171" resolveInfo="BaseVariableDeclaration" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="6501140109493894267">
+    <property name="name" value="StaticFieldDocReference" />
+    <link role="extends" targetNodeId="5562345046718956738" resolveInfo="BaseVariableDocReference" />
+    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="6501140109493894278">
+      <property name="metaClass" value="reference" />
+      <property name="role" value="staticFieldDeclaration" />
+      <link role="specializedLink" targetNodeId="5562345046718956740" />
+      <link role="target" targetNodeId="3v.1070462154015" resolveInfo="StaticFieldDeclaration" />
     </node>
   </node>
 </model>

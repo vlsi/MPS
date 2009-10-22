@@ -13,22 +13,22 @@ import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
-public class FieldDocReference_fieldDeclaration_ReferentConstraint extends BaseNodeReferenceSearchScopeProvider implements IModelConstraints {
-  public FieldDocReference_fieldDeclaration_ReferentConstraint() {
+public class StaticFieldDocReference_staticFieldDeclaration_ReferentConstraint extends BaseNodeReferenceSearchScopeProvider implements IModelConstraints {
+  public StaticFieldDocReference_staticFieldDeclaration_ReferentConstraint() {
   }
 
   public void registerSelf(ModelConstraintsManager manager) {
-    manager.registerNodeReferentSearchScopeProvider("jetbrains.mps.baseLanguage.javadoc.structure.FieldDocReference", "declaration", this);
+    manager.registerNodeReferentSearchScopeProvider("jetbrains.mps.baseLanguage.javadoc.structure.StaticFieldDocReference", "declaration", this);
   }
 
   public void unRegisterSelf(ModelConstraintsManager manager) {
-    manager.unRegisterNodeReferentSearchScopeProvider("jetbrains.mps.baseLanguage.javadoc.structure.FieldDocReference", "declaration");
+    manager.unRegisterNodeReferentSearchScopeProvider("jetbrains.mps.baseLanguage.javadoc.structure.StaticFieldDocReference", "declaration");
   }
 
   public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferentConstraintContext _context) {
-    return ListSequence.fromList(SModelOperations.getNodesIncludingImported(_context.getModel(), operationContext.getScope(), "jetbrains.mps.baseLanguage.structure.FieldDeclaration")).removeWhere(new IWhereFilter<SNode>() {
+    return ListSequence.fromList(SModelOperations.getNodesIncludingImported(_context.getModel(), operationContext.getScope(), "jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration")).removeWhere(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return SLinkOperations.getTarget(it, "visibility", true) == new _Quotations.QuotationClass_0().createNode();
+        return SLinkOperations.getTarget(it, "visibility", true) == new _Quotations.QuotationClass_3().createNode();
       }
     });
   }

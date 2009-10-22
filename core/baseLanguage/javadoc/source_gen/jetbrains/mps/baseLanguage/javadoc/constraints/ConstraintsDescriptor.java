@@ -14,6 +14,7 @@ public class ConstraintsDescriptor implements IModelConstraints {
   public ConstraintsDescriptor() {
     ListSequence.fromList(this.myConstraints).addElement(new ClassifierDocReference_classifier_ReferentConstraint());
     ListSequence.fromList(this.myConstraints).addElement(new MethodDocReference_methodDeclaration_ReferentConstraint());
+    ListSequence.fromList(this.myConstraints).addElement(new StaticFieldDocReference_staticFieldDeclaration_ReferentConstraint());
     ListSequence.fromList(this.myConstraints).addElement(new DocMethodParameterReference_parameterDeclaration_ReferentConstraint());
     ListSequence.fromList(this.myConstraints).addElement(new DocTypeParameterReference_typeVariableDeclaration_ReferentConstraint());
     ListSequence.fromList(this.myConstraints).addElement(new FieldDocReference_fieldDeclaration_ReferentConstraint());

@@ -23,6 +23,7 @@ public class InlineTagCommentLinePart_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_2585_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_2585_0");
+    IntlineTagCommentLinePart_Actions.setCellActions(editorCell, node, editorContext);
     editorCell.addEditorCell(this.createConstant_2585_1(editorContext, node));
     editorCell.addEditorCell(this.createConstant_2585_0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_2585_0(editorContext, node));
@@ -38,6 +39,7 @@ public class InlineTagCommentLinePart_Editor extends DefaultNodeEditor {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.PUNCTUATION_LEFT, true);
       style.set(StyleAttributes.PUNCTUATION_RIGHT, true);
+      style.set(StyleAttributes.SELECTABLE, true);
     }
     IntlineTagCommentLinePart_Actions.setCellActions(editorCell, node, editorContext);
     editorCell.setDefaultText("");
@@ -52,8 +54,10 @@ public class InlineTagCommentLinePart_Editor extends DefaultNodeEditor {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.PUNCTUATION_RIGHT, true);
       style.set(StyleAttributes.PUNCTUATION_LEFT, true);
-      style.set(StyleAttributes.SELECTABLE, false);
+      style.set(StyleAttributes.MATCHING_LABEL, "brace");
+      style.set(StyleAttributes.SELECTABLE, true);
     }
+    IntlineTagCommentLinePart_Actions.setCellActions(editorCell, node, editorContext);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -66,8 +70,9 @@ public class InlineTagCommentLinePart_Editor extends DefaultNodeEditor {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.PUNCTUATION_LEFT, true);
       style.set(StyleAttributes.PUNCTUATION_RIGHT, true);
-      style.set(StyleAttributes.SELECTABLE, false);
+      style.set(StyleAttributes.MATCHING_LABEL, "brace");
     }
+    IntlineTagCommentLinePart_Actions.setCellActions(editorCell, node, editorContext);
     editorCell.setDefaultText("");
     return editorCell;
   }

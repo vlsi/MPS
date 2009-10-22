@@ -4,9 +4,11 @@ package jetbrains.mps.baseLanguage.javadoc.sandbox.sandbox;
 
 
 public class ABC<TT> {
+  public static final int SOME_CONSTANT = 4;
+
   private int x;
 
-  public <F>void foo(int a) throws ArrayStoreException {
+  public void foo(int a) throws ArrayStoreException {
     /*
       a = 5;
     */

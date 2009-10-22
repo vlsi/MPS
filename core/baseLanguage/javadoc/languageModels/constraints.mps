@@ -9,6 +9,7 @@
   <language namespace="83888646-71ce-4f1c-9c53-c54016f6ad4f(jetbrains.mps.baseLanguage.collections)" />
   <language namespace="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" />
   <language namespace="ceab5195-25ea-4f22-9b92-103b95ca8c0c(jetbrains.mps.lang.core)" />
+  <language namespace="d4615e3b-d671-4ba9-af01-2b78369b0ba7(jetbrains.mps.lang.pattern)" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590307(jetbrains.mps.lang.constraints.constraints)" version="9" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="3" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902ba(jetbrains.mps.lang.sharedConcepts.constraints)" version="0" />
@@ -34,10 +35,11 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" version="3" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590585(jetbrains.mps.xml.constraints)" version="6" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590588(jetbrains.mps.xml.structure)" version="0" />
-  <languageAspect modelUID="r:4095af4f-a097-4799-aaa9-03df087ddfa6(jetbrains.mps.baseLanguage.javadoc.structure)" version="4" />
+  <languageAspect modelUID="r:4095af4f-a097-4799-aaa9-03df087ddfa6(jetbrains.mps.baseLanguage.javadoc.structure)" version="5" />
   <devkit namespace="2677cb18-f558-4e33-bc38-a5139cee06dc(jetbrains.mps.devkit.language-design)" />
-  <maxImportIndex value="1" />
-  <import index="1" modelUID="r:4095af4f-a097-4799-aaa9-03df087ddfa6(jetbrains.mps.baseLanguage.javadoc.structure)" version="4" />
+  <maxImportIndex value="2" />
+  <import index="1" modelUID="r:4095af4f-a097-4799-aaa9-03df087ddfa6(jetbrains.mps.baseLanguage.javadoc.structure)" version="5" />
+  <import index="2" modelUID="f:java_stub#java.lang(java.lang@java_stub)" version="-1" />
   <node type="jetbrains.mps.lang.constraints.structure.ConceptConstraints" id="6832197706140571512">
     <link role="concept" targetNodeId="1.8465538089690881930" resolveInfo="ParameterBlockDocTag" />
   </node>
@@ -298,6 +300,67 @@
                   <node role="parameter" type="jetbrains.mps.baseLanguage.collections.structure.SmartClosureParameterDeclaration" id="2546654756694393912">
                     <property name="name" value="it" />
                     <node role="type" type="jetbrains.mps.baseLanguage.structure.WildCardType" id="2546654756694393913" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.constraints.structure.ConceptConstraints" id="2565027568479357636">
+    <link role="concept" targetNodeId="1.6962838954693748795" resolveInfo="ValueInlineDocTag" />
+    <node role="canBeParent" type="jetbrains.mps.lang.constraints.structure.ConstraintFunction_CanBeAParent" id="3941416111380671266">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="3941416111380671267">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="3941416111380672939">
+          <property name="value" value=" TODO check for constant" />
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="3941416111380672941">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="3941416111380672942">
+            <property name="value" value="true" />
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.constraints.structure.ConceptConstraints" id="6501140109493894282">
+    <link role="concept" targetNodeId="1.6501140109493894267" resolveInfo="StaticFieldDocReference" />
+    <node role="referent" type="jetbrains.mps.lang.constraints.structure.NodeReferentConstraint" id="6501140109493894293">
+      <link role="applicableLink" targetNodeId="1.6501140109493894278" />
+      <node role="searchScopeFactory" type="jetbrains.mps.lang.constraints.structure.ConstraintFunction_ReferentSearchScope_Factory" id="6501140109493894294">
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="6501140109493894295">
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="6501140109493894296">
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="6501140109493894305">
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="6501140109493894298">
+                <node role="operand" type="jetbrains.mps.lang.sharedConcepts.structure.ConceptFunctionParameter_model" id="6501140109493894297" />
+                <node role="operation" type="jetbrains.mps.lang.smodel.structure.Model_NodesIncludingImportedOperation" id="6501140109493894302">
+                  <link role="concept" targetNodeId="2v.1070462154015" resolveInfo="StaticFieldDeclaration" />
+                  <node role="scope" type="jetbrains.mps.lang.sharedConcepts.structure.ConceptFunctionParameter_scope" id="6501140109493894304" />
+                </node>
+              </node>
+              <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.RemoveWhereOperation" id="6501140109493894309">
+                <node role="closure" type="jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral" id="6501140109493894310">
+                  <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="6501140109493894311">
+                    <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="6501140109493894321">
+                      <node role="expression" type="jetbrains.mps.baseLanguage.structure.EqualsExpression" id="6501140109493894350">
+                        <node role="rightExpression" type="jetbrains.mps.lang.quotation.structure.Quotation" id="6501140109493894362">
+                          <node role="quotedNode" type="jetbrains.mps.baseLanguage.structure.PrivateVisibility" id="6501140109493894373" />
+                        </node>
+                        <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="6501140109493894325">
+                          <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="6501140109493894322">
+                            <link role="variableDeclaration" targetNodeId="6501140109493894312" resolveInfo="it" />
+                          </node>
+                          <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="6501140109493894339">
+                            <link role="link" targetNodeId="2v.1178549979242" />
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                  <node role="parameter" type="jetbrains.mps.baseLanguage.collections.structure.SmartClosureParameterDeclaration" id="6501140109493894312">
+                    <property name="name" value="it" />
+                    <node role="type" type="jetbrains.mps.baseLanguage.structure.WildCardType" id="6501140109493894313" />
                   </node>
                 </node>
               </node>

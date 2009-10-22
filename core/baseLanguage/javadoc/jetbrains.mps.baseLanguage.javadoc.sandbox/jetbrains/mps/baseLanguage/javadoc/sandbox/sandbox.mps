@@ -19,68 +19,27 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590598(jetbrains.mps.xmlSchema.structure)" version="1" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590588(jetbrains.mps.xml.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959058f(jetbrains.mps.xmlInternal.constraints)" version="0" />
-  <languageAspect modelUID="r:4095af4f-a097-4799-aaa9-03df087ddfa6(jetbrains.mps.baseLanguage.javadoc.structure)" version="4" />
-  <maxImportIndex value="2" />
+  <languageAspect modelUID="r:4095af4f-a097-4799-aaa9-03df087ddfa6(jetbrains.mps.baseLanguage.javadoc.structure)" version="5" />
+  <maxImportIndex value="4" />
   <import index="1" modelUID="f:java_stub#java.lang(java.lang@java_stub)" version="-1" />
   <import index="2" modelUID="f:java_stub#java.io(java.io@java_stub)" version="-1" />
+  <import index="3" modelUID="f:java_stub#javax.swing(javax.swing@java_stub)" version="-1" />
+  <import index="4" modelUID="f:java_stub#java.awt(java.awt@java_stub)" version="-1" />
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="3196018662491356444">
     <property name="name" value="ABC" />
+    <node role="staticField" type="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" id="5562345046718955349">
+      <property name="isFinal" value="true" />
+      <property name="name" value="SOME_CONSTANT" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="5562345046718955355" />
+      <node role="type" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="5562345046718955366" />
+      <node role="initializer" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="5562345046718955368">
+        <property name="value" value="4" />
+      </node>
+    </node>
     <node role="field" type="jetbrains.mps.baseLanguage.structure.FieldDeclaration" id="6832197706140999820">
       <property name="name" value="x" />
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PrivateVisibility" id="6832197706140999821" />
       <node role="type" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="6832197706140999823" />
-      <node role="fieldDocComment$attribute" type="jetbrains.mps.baseLanguage.javadoc.structure.FieldDocComment" id="7051378335467893388">
-        <node role="body" type="jetbrains.mps.baseLanguage.javadoc.structure.CommentLine" id="7051378335467893389">
-          <node role="part" type="jetbrains.mps.baseLanguage.javadoc.structure.TextCommentLinePart" id="7051378335467893390">
-            <property name="text" value="fasdfasdf" />
-          </node>
-        </node>
-        <node role="body" type="jetbrains.mps.baseLanguage.javadoc.structure.CommentLine" id="7051378335468076940">
-          <node role="part" type="jetbrains.mps.baseLanguage.javadoc.structure.TextCommentLinePart" id="7051378335468076941">
-            <property name="text" value="asdf " />
-          </node>
-          <node role="part" type="jetbrains.mps.baseLanguage.javadoc.structure.InlineTagCommentLinePart" id="2546654756695088984">
-            <node role="tag" type="jetbrains.mps.baseLanguage.javadoc.structure.LinkInlineDocTag" id="2546654756695088986">
-              <node role="reference" type="jetbrains.mps.baseLanguage.javadoc.structure.ClassifierDocReference" id="2546654756695122667">
-                <link role="classifier" targetNodeId="1.~AbstractMethodError" resolveInfo="AbstractMethodError" />
-              </node>
-            </node>
-          </node>
-          <node role="part" type="jetbrains.mps.baseLanguage.javadoc.structure.TextCommentLinePart" id="2546654756695088983">
-            <property name="text" value="asdf asd f" />
-          </node>
-        </node>
-        <node role="body" type="jetbrains.mps.baseLanguage.javadoc.structure.CommentLine" id="2546654756694295928">
-          <node role="part" type="jetbrains.mps.baseLanguage.javadoc.structure.TextCommentLinePart" id="2546654756694295929">
-            <property name="text" value="asdfa{sdf" />
-          </node>
-        </node>
-        <node role="body" type="jetbrains.mps.baseLanguage.javadoc.structure.CommentLine" id="2546654756694295930">
-          <node role="part" type="jetbrains.mps.baseLanguage.javadoc.structure.TextCommentLinePart" id="2546654756694295931">
-            <property name="text" value="asd" />
-          </node>
-        </node>
-        <node role="body" type="jetbrains.mps.baseLanguage.javadoc.structure.CommentLine" id="2546654756694295932">
-          <node role="part" type="jetbrains.mps.baseLanguage.javadoc.structure.TextCommentLinePart" id="2546654756694295933">
-            <property name="text" value="fasdf" />
-          </node>
-        </node>
-        <node role="body" type="jetbrains.mps.baseLanguage.javadoc.structure.CommentLine" id="2546654756694295924">
-          <node role="part" type="jetbrains.mps.baseLanguage.javadoc.structure.TextCommentLinePart" id="2546654756694295925">
-            <property name="text" value="asdf" />
-          </node>
-        </node>
-        <node role="see" type="jetbrains.mps.baseLanguage.javadoc.structure.SeeBlockDocTag" id="7051378335468076952">
-          <property name="text" value="fasdfasasdf" />
-          <node role="reference" type="jetbrains.mps.baseLanguage.javadoc.structure.MethodDocReference" id="2546654756694505398">
-            <link role="methodDeclaration" targetNodeId="1.~AbstractMethodError.&lt;init&gt;()" resolveInfo="AbstractMethodError" />
-          </node>
-        </node>
-        <node role="see" type="jetbrains.mps.baseLanguage.javadoc.structure.SeeBlockDocTag" id="2546654756694606827">
-          <property name="text" value="dasdfasdfa" />
-          <node role="reference" type="jetbrains.mps.baseLanguage.javadoc.structure.BaseDocReference" id="2546654756694606828" />
-        </node>
-      </node>
     </node>
     <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="7344646339283099538">
       <property name="name" value="foo" />
@@ -120,10 +79,50 @@
       <node role="throwsItem" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="6832197706140414139">
         <link role="classifier" targetNodeId="1.~ArrayStoreException" resolveInfo="ArrayStoreException" />
       </node>
-      <node role="typeVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.TypeVariableDeclaration" id="6832197706140691338">
-        <property name="name" value="F" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="4730661099054328587" />
+      <node role="methodDocComment$attribute" type="jetbrains.mps.baseLanguage.javadoc.structure.MethodDocComment" id="3941416111380676007">
+        <node role="body" type="jetbrains.mps.baseLanguage.javadoc.structure.CommentLine" id="3941416111380676008">
+          <node role="part" type="jetbrains.mps.baseLanguage.javadoc.structure.TextCommentLinePart" id="3941416111380676009">
+            <property name="text" value="fasdfa" />
+          </node>
+          <node role="part" type="jetbrains.mps.baseLanguage.javadoc.structure.TextCommentLinePart" id="4021391592913980139">
+            <property name="text" value="s" />
+          </node>
+          <node role="part" type="jetbrains.mps.baseLanguage.javadoc.structure.InlineTagCommentLinePart" id="4021391592913980144">
+            <node role="tag" type="jetbrains.mps.baseLanguage.javadoc.structure.LinkInlineDocTag" id="4021391592913980146">
+              <node role="reference" type="jetbrains.mps.baseLanguage.javadoc.structure.BaseDocReference" id="4021391592913980147" />
+            </node>
+          </node>
+          <node role="part" type="jetbrains.mps.baseLanguage.javadoc.structure.TextCommentLinePart" id="4021391592913980143">
+            <property name="text" value="d fasd fasd " />
+          </node>
+          <node role="part" type="jetbrains.mps.baseLanguage.javadoc.structure.InlineTagCommentLinePart" id="4021391592913895064">
+            <node role="tag" type="jetbrains.mps.baseLanguage.javadoc.structure.ValueInlineDocTag" id="4021391592913895068">
+              <node role="variableReference" type="jetbrains.mps.baseLanguage.javadoc.structure.StaticFieldDocReference" id="4021391592914058427">
+                <link role="declaration" targetNodeId="1.~CharacterData00.A" resolveInfo="A" />
+              </node>
+            </node>
+          </node>
+          <node role="part" type="jetbrains.mps.baseLanguage.javadoc.structure.TextCommentLinePart" id="4021391592913895063">
+            <property name="text" value="" />
+          </node>
+          <node role="part" type="jetbrains.mps.baseLanguage.javadoc.structure.TextCommentLinePart" id="6501140109493894249">
+            <property name="text" value="" />
+          </node>
+        </node>
+        <node role="param" type="jetbrains.mps.baseLanguage.javadoc.structure.ParameterBlockDocTag" id="3941416111380676020">
+          <property name="text" value="fasdfasdf" />
+          <node role="parameter" type="jetbrains.mps.baseLanguage.javadoc.structure.DocMethodParameterReference" id="6501140109493757054">
+            <link role="param" targetNodeId="7344646339283099547" resolveInfo="a" />
+          </node>
+        </node>
+        <node role="throwsTag" type="jetbrains.mps.baseLanguage.javadoc.structure.ThrowsBlockDocTag" id="3941416111380676012">
+          <property name="text" value="asdfasdf" />
+          <node role="exceptionType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="3941416111380676013">
+            <link role="classifier" targetNodeId="1.~ArrayStoreException" resolveInfo="ArrayStoreException" />
+          </node>
+        </node>
       </node>
-      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="8970989240998608361" />
     </node>
     <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="3196018662491356445" />
     <node role="typeVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.TypeVariableDeclaration" id="6832197706140691340">

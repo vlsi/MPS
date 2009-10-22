@@ -29,7 +29,7 @@ public class IntlineTagCommentLinePart_Actions {
     }
 
     public void execute_internal(EditorContext editorContext, SNode node) {
-      System.out.println(SNodeOperations.getConceptDeclaration(node));
+      System.out.println(System.currentTimeMillis() + ": " + SNodeOperations.getConceptDeclaration(node));
       SNode commentLine = SNodeOperations.cast(SNodeOperations.getParent(node), "jetbrains.mps.baseLanguage.javadoc.structure.CommentLine");
       SNodeOperations.deleteNode(node);
       for (int i = 0; i < ListSequence.fromList(SLinkOperations.getTargets(commentLine, "part", true)).count() - 1; i++) {
@@ -41,9 +41,7 @@ public class IntlineTagCommentLinePart_Actions {
           i--;
         }
       }
-      /*
-        editorContext.flushEvents();
-      */
+      editorContext.flushEvents();
     }
   }
 }
