@@ -8,6 +8,7 @@ import jetbrains.mps.workbench.action.BaseGroup;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.workbench.action.ActionFactory;
+import jetbrains.mps.plugins.pluginparts.custom.BaseCustomApplicationPlugin;
 
 public class BaseLanguage_ApplicationPlugin extends BaseApplicationPlugin {
   public List<BaseGroup> initGroups() {
@@ -27,5 +28,16 @@ public class BaseLanguage_ApplicationPlugin extends BaseApplicationPlugin {
     if (group != null) {
       ListSequence.fromList(groups).addElement(group);
     }
+  }
+
+  public List<BaseCustomApplicationPlugin> initCustomParts() {
+    List<BaseCustomApplicationPlugin> res = ListSequence.fromList(new ArrayList<BaseCustomApplicationPlugin>());
+    this.addCustomPart(res, new DebugInfoInitializer_CustomApplicationPlugin());
+    return res;
+  }
+
+  private void addCustomPart(List<BaseCustomApplicationPlugin> plugins, BaseCustomApplicationPlugin plugin) {
+    ListSequence.fromList(plugins).addElement(plugin);
+    plugin.init();
   }
 }

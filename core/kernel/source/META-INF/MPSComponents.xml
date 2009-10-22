@@ -344,6 +344,10 @@
         <component>
             <implementation-class>jetbrains.mps.debug.baseLanguage.BLDebugInfoCache</implementation-class>
         </component>
+
+        <component>
+            <implementation-class>jetbrains.mps.debug.DebugInfoManager</implementation-class>
+        </component>
     </application-components>
 
     <project-components>
