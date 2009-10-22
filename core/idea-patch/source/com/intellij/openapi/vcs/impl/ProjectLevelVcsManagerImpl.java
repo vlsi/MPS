@@ -201,6 +201,7 @@ public class ProjectLevelVcsManagerImpl extends ProjectLevelVcsManagerEx impleme
   }
 
   @Nullable
+  @Patch
   public AbstractVcs getVcsFor(final FilePath file) {
     return ApplicationManager.getApplication().runReadAction(new Computable<AbstractVcs>() {
       @Nullable
@@ -209,7 +210,17 @@ public class ProjectLevelVcsManagerImpl extends ProjectLevelVcsManagerEx impleme
         if (myProject.isDisposed()) throw new ProcessCanceledException();
         VirtualFile vFile = ChangesUtil.findValidParent(file);
         if (vFile != null) {
-          return getVcsFor(vFile);
+          // the original code was return getVcsFor(vFile);
+          // I changed it in order to fix MPS-6333 Exception after integrating change into branch
+          // File can be ouside of any mappings but we still want to commit it so we have to find vcs anyway 
+          // MPS Patch begin:
+          AbstractVcs vcsFor = getVcsFor(vFile);
+          if (vcsFor != null) {
+            return vcsFor;
+          } else {
+            return findVersioningVcs(vFile);
+          }
+          // MPS Patch end
         }
         return null;
       }
