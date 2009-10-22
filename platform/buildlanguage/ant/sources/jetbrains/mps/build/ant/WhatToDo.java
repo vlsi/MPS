@@ -258,10 +258,10 @@ public class WhatToDo {
           whatToDo.addModuleDirectory(new File(propertyValuePair[1]));
         } else if (propertyValuePair[0].equals(MPS_LIBRARY)) {
           String[] nameValuePair = propertyValuePair[1].split("\\[|\\]");
-          whatToDo.addLibrary(nameValuePair[0], new File(nameValuePair[1]));
+          whatToDo.addLibrary(nameValuePair[1], new File(nameValuePair[2]));
         } else if (propertyValuePair[0].equals(MPS_MACRO)) {
           String[] nameValuePair = propertyValuePair[1].split("\\[|\\]");
-          whatToDo.addMacro(nameValuePair[0], nameValuePair[1]);
+          whatToDo.addMacro(nameValuePair[1], nameValuePair[2]);
         } else if (propertyValuePair[0].equals(MPS_PROJECT)) {
           whatToDo.addProjectFile(new File(propertyValuePair[1]));
         } else if (propertyValuePair[0].equals(FAIL_ON_ERROR)) {
