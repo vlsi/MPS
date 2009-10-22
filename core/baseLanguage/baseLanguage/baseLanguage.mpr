@@ -15,7 +15,6 @@
       <solutionPath path="${project}/solutions/testLogger2/testLogger2.msd" />
       <solutionPath path="${mps_home}/core/javaParser/solutions/jetbrains.mps.javaParser.testMaterial.msd" folder="jetbrains.mps" />
       <solutionPath path="${mps_home}/core/javaParser/solutions/testMaterial2/jetbrains.mps.javaParser.testMaterial2.msd" folder="javaParser" />
-      <solutionPath path="${project}/solutions/jetbrains.mps.debug.baseLanguage/jetbrains.mps.debug.baseLanguage.msd" folder="" />
     </projectSolutions>
     <projectLanguages>
       <languagePath path="${project}/baseLanguage.mpl" />
