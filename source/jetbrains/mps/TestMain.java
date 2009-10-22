@@ -17,6 +17,7 @@ package jetbrains.mps;
 
 import com.intellij.ide.IdeEventQueue;
 import com.intellij.idea.IdeaTestApplication;
+import com.intellij.idea.LoggerFactory;
 import com.intellij.openapi.application.ex.ApplicationManagerEx;
 import com.intellij.openapi.progress.EmptyProgressIndicator;
 import com.intellij.openapi.project.Project;
@@ -352,6 +353,7 @@ public class TestMain {
    * @return
    */
   public static TestResult testProject(File projectFile, boolean isRunnable, String[] configurations) {
+    com.intellij.openapi.diagnostic.Logger.setFactory(LoggerFactory.getInstance());
     IdeMain.setTestMode(TestMode.CORE_TEST) ;
     long start = System.currentTimeMillis();
     configureMPS();
