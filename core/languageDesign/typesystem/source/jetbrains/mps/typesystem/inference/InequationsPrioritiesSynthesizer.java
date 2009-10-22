@@ -12,15 +12,15 @@ import java.util.*;
  * Time: 18:47:48
  * To change this template use File | Settings | File Templates.
  */
-public class InequationsSolver {
-  private static Logger LOG = Logger.getLogger(InequationsSolver.class);
+public class InequationsPrioritiesSynthesizer {
+  private static Logger LOG = Logger.getLogger(InequationsPrioritiesSynthesizer.class);
 
   private Map<EquationInfo, Pair<IWrapper, IWrapper>> myAllInequations = new HashMap<EquationInfo, Pair<IWrapper, IWrapper>>();
   private EquationManager myEquationManager;
-  private List<Set<EquationInfo>> myInequationsLayers
-    = new ArrayList<Set<EquationInfo>>(6);
+  // private List<Set<EquationInfo>> myInequationsLayers = new ArrayList<Set<EquationInfo>>(6);
+  Map<EquationInfo, Integer> mySyntheticRanks = new HashMap<EquationInfo, Integer>();
 
-  public InequationsSolver(EquationManager equationManager) {
+  public InequationsPrioritiesSynthesizer(EquationManager equationManager) {
     myEquationManager = equationManager;
   }
 
@@ -151,9 +151,12 @@ public class InequationsSolver {
         }
       }
       if (nextLayer.isEmpty()) {
-        LOG.error("cyclic priorities found, single priority group will be returned");
-        myInequationsLayers = new ArrayList<Set<EquationInfo>>(1);
-        myInequationsLayers.set(0, new HashSet<EquationInfo>(myAllInequations.keySet()));
+        LOG.error("cyclic priorities found, single priority group will be created");
+        // myInequationsLayers = new ArrayList<Set<EquationInfo>>(1);
+        // myInequationsLayers.set(0, new HashSet<EquationInfo>(myAllInequations.keySet()));
+        for (EquationInfo equationInfo : myAllInequations.keySet()) {
+          mySyntheticRanks.put(equationInfo, 0);
+        }
         return;
       }
       byRanks.add(nextLayer);
@@ -172,6 +175,7 @@ public class InequationsSolver {
     }
 
     //then group by priorities
+    int syntheticRank = 0;
     for (Set<EquationInfo> equationInfosSameRank : byRanks) {
       //priorities are: 0, 1, 2, 3, 500
       Set<EquationInfo>[] byPriorities = new Set[5];
@@ -189,9 +193,22 @@ public class InequationsSolver {
       }
       for (Set<EquationInfo> equationInfos : byPriorities) {
         if (equationInfos != null && !equationInfos.isEmpty()) {
-          myInequationsLayers.add(equationInfos);
+          for (EquationInfo equationInfo : equationInfos) {
+            mySyntheticRanks.put(equationInfo, syntheticRank);
+          }
+          // myInequationsLayers.add(equationInfos);
+          syntheticRank++;
         }
       }
     }
   }
+
+  public int getInequationSyntheticRank(EquationInfo equationInfo) {
+    Integer syntheticRank = mySyntheticRanks.get(equationInfo);
+    if (syntheticRank == null) {
+      return 0;
+    }
+    return syntheticRank;
+  }
+
 }
