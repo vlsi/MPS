@@ -15,7 +15,7 @@
  */
 package jetbrains.mps.ide.findusages.view.treeholder.treeview;
 
-import jetbrains.mps.ide.MPSToolBar;
+import com.intellij.openapi.actionSystem.*;
 import jetbrains.mps.ide.findusages.CantLoadSomethingException;
 import jetbrains.mps.ide.findusages.CantSaveSomethingException;
 import jetbrains.mps.ide.findusages.model.SearchResults;
@@ -23,8 +23,6 @@ import jetbrains.mps.ide.findusages.view.icons.Icons;
 import jetbrains.mps.ide.findusages.view.treeholder.tree.DataTree;
 import jetbrains.mps.ide.findusages.view.treeholder.tree.IChangeListener;
 import jetbrains.mps.ide.findusages.view.treeholder.treeview.path.PathItemRole;
-import jetbrains.mps.ide.findusages.view.util.AnonymButton;
-import jetbrains.mps.ide.findusages.view.util.AnonymToggleButton;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.SModelDescriptor;
@@ -208,19 +206,17 @@ public abstract class UsagesTreeComponent extends JPanel implements IChangeListe
     myTree.navigateToPreviousResult();
   }
 
-  public JToolBar getActionsToolbar(int orientation) {
-    myActionsToolbar.setOrientation(orientation);
-    return myActionsToolbar;
+  public ActionGroup getActionsToolbar() {
+    return myActionsToolbar.getActions();
   }
 
-  public JToolBar getViewToolbar(int orientation) {
-    myViewToolbar.setOrientation(orientation);
+  public JComponent getViewToolbar() {
     return myViewToolbar;
   }
 
   public abstract MPSProject getProject();
 
-  class ViewToolbar extends MPSToolBar {
+  class ViewToolbar extends JPanel {
     private PathOptionsToolbar myPathOptionsToolbar;
     private ViewOptionsToolbar myViewOptionsToolbar;
 
@@ -230,21 +226,13 @@ public abstract class UsagesTreeComponent extends JPanel implements IChangeListe
       myPathOptionsToolbar = new PathOptionsToolbar();
       myViewOptionsToolbar = new ViewOptionsToolbar();
 
-      setBorderPainted(false);
-      setFloatable(false);
-      add(myPathOptionsToolbar);
-      add(new JSeparator());
-      add(myViewOptionsToolbar);
+      DefaultActionGroup actionGroup = new DefaultActionGroup();
+      actionGroup.addAll(myPathOptionsToolbar.getActions());
+      actionGroup.addSeparator();
+      actionGroup.addAll(myViewOptionsToolbar.getActions());
+      add(ActionManager.getInstance().createActionToolbar(ActionPlaces.UNKNOWN, actionGroup, false).getComponent());
 
       myIsConstructed = true;
-    }
-
-    public void setOrientation(int o) {
-      super.setOrientation(o);
-      if (myIsConstructed) {
-        myPathOptionsToolbar.setOrientation(o);
-        myViewOptionsToolbar.setOrientation(o);
-      }
     }
 
     public void setViewOptions(ViewOptions options) {
@@ -257,70 +245,79 @@ public abstract class UsagesTreeComponent extends JPanel implements IChangeListe
       myViewOptionsToolbar.getViewOptions(options);
     }
 
-    class ViewOptionsToolbar extends MPSToolBar {
-      private AnonymToggleButton myAdditionalInfoNeededButton;
-      private AnonymToggleButton myShowSearchedNodesButton;
-      private AnonymToggleButton myGroupSearchedNodesButton;
+    class ViewOptionsToolbar {
+      private ToggleAction myAdditionalInfoNeededButton;
+      private ToggleAction myShowSearchedNodesButton;
+      private ToggleAction myGroupSearchedNodesButton;
+      private DefaultActionGroup myActions;
+      boolean myIsAdditionalInfoNeeded = false;
+      boolean myIsShowSearchedNodes = false;
+      boolean myIsGroupSearchedNodes = false;
 
       public ViewOptionsToolbar() {
-        setBorderPainted(false);
+        myAdditionalInfoNeededButton = new ToggleAction("Additional node info", "", Icons.INFO_ICON) {
+          private boolean myIsSelected = false;
 
-        myAdditionalInfoNeededButton = new MyAnonymToggleButton(Icons.INFO_ICON, "Additional node info") {
-          public void actionSelected() {
-            myTree.setAdditionalInfoNeeded(true);
+          public boolean isSelected(AnActionEvent e) {
+            return myIsSelected;
           }
 
-          public void actionDeselected() {
-            myTree.setAdditionalInfoNeeded(false);
+          public void setSelected(AnActionEvent e, boolean state) {
+            myTree.setAdditionalInfoNeeded(state);
           }
         };
-        add(myAdditionalInfoNeededButton);
+        myShowSearchedNodesButton = new ToggleAction("Show searched nodes", "", Icons.SHOW_SEARCHED_ICON) {
+          public boolean isSelected(AnActionEvent e) {
+            return myIsShowSearchedNodes;
+          }
 
-        myShowSearchedNodesButton = new MyAnonymToggleButton(Icons.SHOW_SEARCHED_ICON, "Show searched nodes") {
-          public void actionSelected() {
+          public void setSelected(AnActionEvent e, boolean state) {
+            myIsShowSearchedNodes = state;
             myTree.setShowSearchedNodes(true);
-            myGroupSearchedNodesButton.setState(true);
-          }
-
-          public void actionDeselected() {
-            if (myGroupSearchedNodesButton.getState()) {
-              myGroupSearchedNodesButton.setState(false);
+            if (myIsShowSearchedNodes || myIsShowSearchedNodes != myGroupSearchedNodesButton.isSelected(null)) {
+              myIsGroupSearchedNodes = myIsShowSearchedNodes;
             }
-            myTree.setShowSearchedNodes(false);
           }
         };
-        add(myShowSearchedNodesButton);
-
-        myGroupSearchedNodesButton = new MyAnonymToggleButton(Icons.GROUP_SEARCHED_ICON, "Group searched nodes") {
-          public void actionSelected() {
-            myTree.startAdjusting();
-            myTree.setGroupSearchedNodes(true);
-            myShowSearchedNodesButton.setState(true);
-            myTree.finishAdjusting();
+        myGroupSearchedNodesButton = new ToggleAction("Group searched nodes", "", Icons.GROUP_SEARCHED_ICON) {
+          public boolean isSelected(AnActionEvent e) {
+            return myIsGroupSearchedNodes;
           }
 
-          public void actionDeselected() {
-            myTree.setGroupSearchedNodes(false);
+          public void setSelected(AnActionEvent e, boolean state) {
+            myIsGroupSearchedNodes = state;
+            if (myIsGroupSearchedNodes) {
+              myTree.startAdjusting();
+              myTree.setGroupSearchedNodes(true);
+              myIsShowSearchedNodes = true;
+              myTree.finishAdjusting();
+            } else {
+              myTree.setGroupSearchedNodes(false);
+            }
           }
         };
-        add(myGroupSearchedNodesButton);
+
+        myActions = new DefaultActionGroup();
+        myActions.addAction(myAdditionalInfoNeededButton);
+        myActions.addAction(myShowSearchedNodesButton);
+        myActions.addAction(myGroupSearchedNodesButton);
       }
 
-      protected EmptyBorder createBorder() {
-        return new EmptyBorder(2, 1, 2, 1);
+      public ActionGroup getActions() {
+        return myActions;
       }
 
       public void setViewOptions(ViewOptions options) {
         myTree.startAdjusting();
 
-        myAdditionalInfoNeededButton.setState(options.myInfo);
-        myShowSearchedNodesButton.setState(options.myShowSearchedNodes);
-        myGroupSearchedNodesButton.setState(options.myGroupSearchedNodes);
+        myIsAdditionalInfoNeeded = options.myInfo;
+        myIsShowSearchedNodes = options.myShowSearchedNodes;
+        myIsGroupSearchedNodes = options.myGroupSearchedNodes;
 
         mySearchedNodesButtonsVisible = options.mySearchedNodesButtonsVisible;
         if (!mySearchedNodesButtonsVisible) {
-          remove(myShowSearchedNodesButton);
-          remove(myGroupSearchedNodesButton);
+          myActions.remove(myShowSearchedNodesButton);
+          myActions.remove(myGroupSearchedNodesButton);
         }
 
         myTree.finishAdjusting();
@@ -328,174 +325,194 @@ public abstract class UsagesTreeComponent extends JPanel implements IChangeListe
 
       public void getViewOptions(ViewOptions options) {
         options.myCount = true/*myCountNeededButton.getState()*/;
-        options.myInfo = myAdditionalInfoNeededButton.getState();
-        options.myShowSearchedNodes = myShowSearchedNodesButton.getState();
-        options.myGroupSearchedNodes = myGroupSearchedNodesButton.getState();
+        options.myInfo = myAdditionalInfoNeededButton.isSelected(null);
+        options.myShowSearchedNodes = myShowSearchedNodesButton.isSelected(null);
+        options.myGroupSearchedNodes = myGroupSearchedNodesButton.isSelected(null);
 
         options.mySearchedNodesButtonsVisible = mySearchedNodesButtonsVisible;
       }
     }
 
-    class PathOptionsToolbar extends MPSToolBar {
-      private AnonymToggleButton myCategoryPathButton;
-      private AnonymToggleButton myModulePathButton;
-      private AnonymToggleButton myModelPathButton;
-      private AnonymToggleButton myRootPathButton;
-      private AnonymToggleButton myNamedConceptPathButton;
+    class MyBaseToggleAction extends ToggleAction {
+      private boolean myIsSelected = false;
+      private PathItemRole myPathItemRole = null;
+
+      public MyBaseToggleAction(PathItemRole itemRole, String name, Icon icon) {
+        super(name, "", icon);
+        myPathItemRole = itemRole;
+      }
+
+      public boolean isSelected(AnActionEvent e) {
+        return myIsSelected;
+      }
+
+      public void setSelected(AnActionEvent e, boolean state) {
+        myIsSelected = state;
+        if (myPathItemRole == null) return;
+        if (myIsSelected) {
+          addPathComponent(myPathItemRole);
+        } else {
+          removePathComponent(myPathItemRole);
+        }
+      }
+    }
+
+    class PathOptionsToolbar {
+      private ToggleAction myCategoryPathButton;
+      private ToggleAction myModulePathButton;
+      private ToggleAction myModelPathButton;
+      private ToggleAction myRootPathButton;
+      private ToggleAction myNamedConceptPathButton;
+      private DefaultActionGroup myActions;
+      private boolean myIsCategoryPath;
+      private boolean myIsModulePath;
+      private boolean myIsModelPath;
+      private boolean myIsRootPath;
+      private boolean myIsNamedConceptPath;
 
       public PathOptionsToolbar() {
-        setBorderPainted(false);
-        myCategoryPathButton = new MyAnonymToggleButton(Icons.CATEGORY_ICON, "Group by category") {
-          public void actionSelected() {
-            addPathComponent(PathItemRole.ROLE_CATEGORY);
+        myCategoryPathButton = new MyBaseToggleAction(PathItemRole.ROLE_CATEGORY, "Group by category", Icons.CATEGORY_ICON);
+        myModulePathButton = new MyBaseToggleAction(PathItemRole.ROLE_MODULE, "Group by module", Icons.MODULE_ICON);
+        myModelPathButton = new MyBaseToggleAction(PathItemRole.ROLE_MODEL, "Group by model", Icons.MODEL_ICON);
+
+        myRootPathButton = new ToggleAction("Group by root node", "", Icons.ROOT_ICON) {
+          private boolean myIsSelected = false;
+
+          public boolean isSelected(AnActionEvent e) {
+            return myIsSelected;
           }
 
-          public void actionDeselected() {
-            removePathComponent(PathItemRole.ROLE_CATEGORY);
-          }
-        };
-        add(myCategoryPathButton);
-
-        myModulePathButton = new MyAnonymToggleButton(Icons.MODULE_ICON, "Group by module") {
-          public void actionSelected() {
-            addPathComponent(PathItemRole.ROLE_MODULE);
-          }
-
-          public void actionDeselected() {
-            removePathComponent(PathItemRole.ROLE_MODULE);
-          }
-        };
-        add(myModulePathButton);
-
-        myModelPathButton = new MyAnonymToggleButton(Icons.MODEL_ICON, "Group by model") {
-          public void actionSelected() {
-            addPathComponent(PathItemRole.ROLE_MODEL);
-          }
-
-          public void actionDeselected() {
-            removePathComponent(PathItemRole.ROLE_MODEL);
-          }
-        };
-        add(myModelPathButton);
-
-        myRootPathButton = new MyAnonymToggleButton(Icons.ROOT_ICON, "Group by root node") {
-          public void actionSelected() {
-            addPathComponent(PathItemRole.ROLE_ROOT);
-          }
-
-          public void actionDeselected() {
-            if (myNamedConceptPathButton.getModel().isSelected()) {
-              getModel().setSelected(true);
+          public void setSelected(AnActionEvent e, boolean state) {
+            myIsSelected = state;
+            if (myIsSelected) {
+              addPathComponent(PathItemRole.ROLE_ROOT);
             } else {
-              removePathComponent(PathItemRole.ROLE_ROOT);
+              if (myNamedConceptPathButton.isSelected(null)) {
+                setSelected(null, true);
+              } else {
+                removePathComponent(PathItemRole.ROLE_ROOT);
+              }
             }
           }
         };
-        add(myRootPathButton);
 
-        myNamedConceptPathButton = new MyAnonymToggleButton(Icons.PATH_ICON, "Group by path") {
-          public void actionSelected() {
+        myNamedConceptPathButton = new ToggleAction("Group by path", "", Icons.PATH_ICON) {
+          boolean myIsSelected = false;
+
+          public boolean isSelected(AnActionEvent e) {
+            return myIsSelected;
+          }
+
+          public void setSelected(AnActionEvent e, boolean state) {
+            myIsSelected = state;
+            if (myIsSelected) {
+              actionSelected();
+            } else {
+              actionDeselected();
+            }
+          }
+
+          private void actionSelected() {
             myTree.startAdjusting();
             addPathComponent(PathItemRole.ROLE_ROOT_TO_TARGET_NODE);
-            myRootPathButton.setState(true);
+            myIsRootPath = true;
             myTree.finishAdjusting();
           }
 
-          public void actionDeselected() {
+          private void actionDeselected() {
             removePathComponent(PathItemRole.ROLE_ROOT_TO_TARGET_NODE);
           }
         };
-        add(myNamedConceptPathButton);
-      }
 
-      protected EmptyBorder createBorder() {
-        return new EmptyBorder(2, 1, 2, 1);
+        myActions = new DefaultActionGroup();
+        myActions.addAction(myCategoryPathButton);
+        myActions.addAction(myModulePathButton);
+        myActions.addAction(myModelPathButton);
+        myActions.addAction(myRootPathButton);
+        myActions.addAction(myNamedConceptPathButton);
       }
 
       public void setViewOptions(ViewOptions options) {
         myTree.startAdjusting();
 
-        myCategoryPathButton.setState(options.myCategory);
-        myModulePathButton.setState(options.myModule);
-        myModelPathButton.setState(options.myModel);
-        myRootPathButton.setState(options.myRoot);
-        myNamedConceptPathButton.setState(options.myNamedPath);
+        myIsCategoryPath = options.myCategory;
+        myIsModulePath = options.myModule;
+        myIsModelPath = options.myModel;
+        myIsRootPath = options.myRoot;
+        myIsNamedConceptPath = options.myNamedPath;
 
         myTree.finishAdjusting();
       }
 
       public void getViewOptions(ViewOptions options) {
-        options.myCategory = myCategoryPathButton.getState();
-        options.myModule = myModulePathButton.getState();
-        options.myModel = myModelPathButton.getState();
-        options.myRoot = myRootPathButton.getState();
-        options.myNamedPath = myNamedConceptPathButton.getState();
+        options.myCategory = myCategoryPathButton.isSelected(null);
+        options.myModule = myModulePathButton.isSelected(null);
+        options.myModel = myModelPathButton.isSelected(null);
+        options.myRoot = myRootPathButton.isSelected(null);
+        options.myNamedPath = myNamedConceptPathButton.isSelected(null);
+      }
+
+      public ActionGroup getActions() {
+        return myActions;
       }
     }
   }
 
-  class ActionsToolbar extends MPSToolBar {
-    private AnonymToggleButton myAutoscrollButton;
+  class ActionsToolbar {
+    private DefaultActionGroup myActions;
+    private ToggleAction myAutoscrollButton;
+    private boolean myIsAutoscroll = false;
 
     public ActionsToolbar() {
-      setBorderPainted(false);
-      add(new AnonymButton(Icons.COLLAPSE_ICON, "Collapse") {
-        public void action() {
+      myActions = new DefaultActionGroup();
+
+      myActions.addAction(new AnAction("Collapse", "", Icons.COLLAPSE_ICON) {
+        public void actionPerformed(AnActionEvent e) {
           myTree.collapseResults();
         }
       });
-      add(new AnonymButton(Icons.EXPAND_ICON, "Expand") {
-        public void action() {
+      myActions.addAction(new AnAction("Expand", "", Icons.EXPAND_ICON) {
+        public void actionPerformed(AnActionEvent e) {
           myTree.expandResults();
         }
       });
-      add(new AnonymButton(Icons.PREVIOUS_ICON, "Previous occurence") {
-        public void action() {
+      myActions.addAction(new AnAction("Previous occurence", "", Icons.PREVIOUS_ICON) {
+        public void actionPerformed(AnActionEvent e) {
           myTree.navigateToPreviousResult();
         }
       });
-      add(new AnonymButton(Icons.NEXT_ICON, "Next occurence") {
-        public void action() {
+      myActions.addAction(new AnAction("Next occurence", "", Icons.NEXT_ICON) {
+        public void actionPerformed(AnActionEvent e) {
           myTree.navigateToNextResult();
         }
       });
-      myAutoscrollButton = new MyAnonymToggleButton(Icons.AUTOSCROLL_ICON, "Autoscroll to source") {
-        public void actionSelected() {
-          myTree.setAutoscroll(true);
+      myAutoscrollButton = new ToggleAction("Autoscroll to source", "", Icons.AUTOSCROLL_ICON) {
+        private boolean myIsSelected = false;
+
+        public boolean isSelected(AnActionEvent e) {
+          return myIsSelected;
         }
 
-        public void actionDeselected() {
-          myTree.setAutoscroll(false);
+        public void setSelected(AnActionEvent e, boolean state) {
+          myIsSelected = state;
+          myTree.setAutoscroll(myIsSelected);
         }
       };
-      add(myAutoscrollButton);
-    }
-
-    protected EmptyBorder createBorder() {
-      return new EmptyBorder(2, 1, 2, 1);
+      myActions.addAction(myAutoscrollButton);
     }
 
     public void setViewOptions(ViewOptions options) {
       myTree.startAdjusting();
-      myAutoscrollButton.setState(options.myAutoscrolls);
+      myIsAutoscroll = options.myAutoscrolls;
       myTree.finishAdjusting();
     }
 
     public void getViewOptions(ViewOptions options) {
-      options.myAutoscrolls = myAutoscrollButton.getState();
-    }
-  }
-
-  abstract class MyAnonymToggleButton extends AnonymToggleButton {
-    public MyAnonymToggleButton(Icon icon, String tooltip) {
-      super(icon, tooltip);
+      options.myAutoscrolls = myAutoscrollButton.isSelected(null);
     }
 
-    public void change() {
-      if (!myIsAdjusting) {
-        getComponentsViewOptions(myViewOptions);
-        myDefaultOptions.setValues(myViewOptions);
-      }
+    public ActionGroup getActions() {
+      return myActions;
     }
   }
 }

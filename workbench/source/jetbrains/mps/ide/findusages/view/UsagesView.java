@@ -19,6 +19,7 @@ import com.intellij.openapi.progress.ProgressIndicator;
 import com.intellij.openapi.progress.ProgressManager;
 import com.intellij.openapi.progress.Task.Modal;
 import com.intellij.openapi.project.Project;
+import com.intellij.openapi.actionSystem.*;
 import jetbrains.mps.generator.GeneratorManager;
 import jetbrains.mps.generator.IGenerationType;
 import jetbrains.mps.ide.MPSToolBar;
@@ -43,13 +44,9 @@ import jetbrains.mps.smodel.SNodePointer;
 import org.jdom.Element;
 import org.jetbrains.annotations.NotNull;
 
-import javax.swing.Icon;
-import javax.swing.JComponent;
-import javax.swing.JPanel;
-import javax.swing.JToolBar;
+import javax.swing.*;
 import javax.swing.border.EmptyBorder;
-import java.awt.BorderLayout;
-import java.awt.Dimension;
+import java.awt.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -88,7 +85,7 @@ public abstract class UsagesView implements IExternalizeable, INavigator {
 
     JPanel treeWrapperPanel = new JPanel(new BorderLayout());
     JPanel treeToolbarPanel = new JPanel(new BorderLayout());
-    treeToolbarPanel.add(myTreeComponent.getViewToolbar(JToolBar.VERTICAL), BorderLayout.NORTH);
+    treeToolbarPanel.add(myTreeComponent.getViewToolbar(), BorderLayout.NORTH);
     treeWrapperPanel.add(treeToolbarPanel, BorderLayout.WEST);
     treeWrapperPanel.add(myTreeComponent, BorderLayout.CENTER);
     myPanel.add(treeWrapperPanel, BorderLayout.CENTER);
@@ -281,16 +278,17 @@ public abstract class UsagesView implements IExternalizeable, INavigator {
     }
   }
 
-  private class ActionsToolbar extends MPSToolBar {
+  private class ActionsToolbar extends JPanel {
     private ActionsToolbar(ButtonConfiguration buttonConfiguration) {
-      super(JToolBar.VERTICAL);
+      super();
       createButtons(buttonConfiguration);
     }
 
     private void createButtons(ButtonConfiguration buttonConfiguration) {
+      DefaultActionGroup actionGroup = new DefaultActionGroup();
       if (buttonConfiguration.isShowRerunButton()) {
-        add(new AnonymButton(Icons.RERUN_ICON, "Rerun search") {
-          public void action() {
+        actionGroup.addAction(new AnAction("Rerun search", "", Icons.RERUN_ICON) {
+          public void actionPerformed(AnActionEvent e) {
             assert mySearchQuery != null;
             if (mySearchQuery.getScope() == null) return;
             IHolder holder = mySearchQuery.getObjectHolder();
@@ -307,24 +305,27 @@ public abstract class UsagesView implements IExternalizeable, INavigator {
         });
       }
       if (buttonConfiguration.isShowRegenerateButton()) {
-        add(new AnonymButton(Icons.REGENERATE_ICON, "Regenerate models") {
-          public void action() {
+        actionGroup.addAction(new AnAction("Regenerate models", "", Icons.REGENERATE_ICON) {
+          public void actionPerformed(AnActionEvent e) {
             regenerate();
           }
         });
       }
 
-      add(myTreeComponent.getActionsToolbar(JToolBar.VERTICAL));
+      actionGroup.addAll(myTreeComponent.getActionsToolbar());
 
       if (buttonConfiguration.isShowCloseButton()) {
-        add(new AnonymButton(Icons.CLOSE_ICON, "Close") {
-          public void action() {
+        AnAction action = new AnAction("Close", "", Icons.CLOSE_ICON) {
+          public void actionPerformed(AnActionEvent e) {
             close();
           }
-        });
+        };
+        actionGroup.addAction(action);
       }
 
-      setFloatable(false);
+      ActionToolbar actionToolbar = ActionManager.getInstance().createActionToolbar(ActionPlaces.UNKNOWN, actionGroup, false);
+      actionToolbar.setOrientation(SwingConstants.VERTICAL);
+      add(actionToolbar.getComponent());
     }
 
     protected EmptyBorder createBorder() {
