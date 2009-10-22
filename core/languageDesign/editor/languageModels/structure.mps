@@ -1161,6 +1161,11 @@
       <property name="externalValue" value="white" />
       <property name="internalValue" value="WHITE" />
     </node>
+    <node role="member" type="jetbrains.mps.lang.structure.structure.EnumerationMemberDeclaration" id="7151630269404055096">
+      <property name="name" value="blue" />
+      <property name="externalValue" value="black" />
+      <property name="internalValue" value="black" />
+    </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1088013125922">
     <property name="name" value="CellModel_RefCell" />
