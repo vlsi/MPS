@@ -22,7 +22,8 @@ public class matrix_replacement_rule_InequationReplacementRule extends AbstractI
     {
       SNode _nodeToCheck_1029348928467 = equationInfo.getNodeWithError();
       BaseIntentionProvider intentionProvider = null;
-      typeCheckingContext.createLessThanInequation((SNode)SLinkOperations.getTarget(subtype, "elementType", true), (SNode)SLinkOperations.getTarget(supertype, "elementType", true), _nodeToCheck_1029348928467, null, "r:47d0f24b-df34-4ea0-aa7e-7c2eb0f88f31(jetbrains.mps.baseLanguage.math.typesystem)", "3498370411873359101", false, 0, intentionProvider);
+      EquationInfo info = new EquationInfo(_nodeToCheck_1029348928467, null, "r:47d0f24b-df34-4ea0-aa7e-7c2eb0f88f31(jetbrains.mps.baseLanguage.math.typesystem)", "3498370411873359101", 0, intentionProvider);
+      typeCheckingContext.createLessThanInequation((SNode)SLinkOperations.getTarget(subtype, "elementType", true), (SNode)SLinkOperations.getTarget(supertype, "elementType", true), false, info);
     }
     if (SPropertyOperations.getInteger(subtype, "columns") != 0 && SPropertyOperations.getInteger(supertype, "columns") != 0) {
       if (!(SPropertyOperations.getInteger(subtype, "columns") == SPropertyOperations.getInteger(supertype, "columns"))) {

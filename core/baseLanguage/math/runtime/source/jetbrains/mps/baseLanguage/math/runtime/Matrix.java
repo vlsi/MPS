@@ -14,7 +14,6 @@
  * limitations under the License.
  */
 package jetbrains.mps.baseLanguage.math.runtime;
-
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes._return_P1_E0;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes._return_P2_E0;
 

@@ -8,6 +8,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.intentions.BaseIntentionProvider;
+import jetbrains.mps.typesystem.inference.EquationInfo;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.baseLanguage.math.behavior.MathUtil;
 import jetbrains.mps.typesystem.inference.IErrorTarget;
@@ -31,13 +32,15 @@ public class typeof_LinearSolveOperation_InferenceRule extends AbstractInference
                 {
                   SNode _nodeToCheck_1029348928467 = op;
                   BaseIntentionProvider intentionProvider = null;
-                  typeCheckingContext.createLessThanInequation((SNode)SNodeOperations.copyNode(MathTypeUtil.qFloat), (SNode)typeCheckingContext.getEquationManager().getRepresentator(T_typevar_5359814223490060193), _nodeToCheck_1029348928467, null, "r:47d0f24b-df34-4ea0-aa7e-7c2eb0f88f31(jetbrains.mps.baseLanguage.math.typesystem)", "5359814223490060213", false, 0, intentionProvider);
+                  EquationInfo info = new EquationInfo(_nodeToCheck_1029348928467, null, "r:47d0f24b-df34-4ea0-aa7e-7c2eb0f88f31(jetbrains.mps.baseLanguage.math.typesystem)", "5359814223490060213", 0, intentionProvider);
+                  typeCheckingContext.createLessThanInequation((SNode)SNodeOperations.copyNode(MathTypeUtil.qFloat), (SNode)typeCheckingContext.getEquationManager().getRepresentator(T_typevar_5359814223490060193), false, info);
                 }
                 if (SNodeOperations.isInstanceOf(typeCheckingContext.getEquationManager().getRepresentator(matrixType), "jetbrains.mps.baseLanguage.math.structure.MatrixOrVectorType")) {
                   {
                     SNode _nodeToCheck_1029348928467 = op;
                     BaseIntentionProvider intentionProvider = null;
-                    typeCheckingContext.createLessThanInequation((SNode)MathUtil.getUnboxedElementType(typeCheckingContext.getEquationManager().getRepresentator(matrixType)), (SNode)typeCheckingContext.getEquationManager().getRepresentator(T_typevar_5359814223490060193), _nodeToCheck_1029348928467, null, "r:47d0f24b-df34-4ea0-aa7e-7c2eb0f88f31(jetbrains.mps.baseLanguage.math.typesystem)", "5359814223490060186", false, 0, intentionProvider);
+                    EquationInfo info = new EquationInfo(_nodeToCheck_1029348928467, null, "r:47d0f24b-df34-4ea0-aa7e-7c2eb0f88f31(jetbrains.mps.baseLanguage.math.typesystem)", "5359814223490060186", 0, intentionProvider);
+                    typeCheckingContext.createLessThanInequation((SNode)MathUtil.getUnboxedElementType(typeCheckingContext.getEquationManager().getRepresentator(matrixType)), (SNode)typeCheckingContext.getEquationManager().getRepresentator(T_typevar_5359814223490060193), false, info);
                   }
                 } else {
                   {
@@ -50,7 +53,8 @@ public class typeof_LinearSolveOperation_InferenceRule extends AbstractInference
                   {
                     SNode _nodeToCheck_1029348928467 = op;
                     BaseIntentionProvider intentionProvider = null;
-                    typeCheckingContext.createLessThanInequation((SNode)MathUtil.getUnboxedElementType(typeCheckingContext.getEquationManager().getRepresentator(matrixType)), (SNode)typeCheckingContext.getEquationManager().getRepresentator(T_typevar_5359814223490060193), _nodeToCheck_1029348928467, null, "r:47d0f24b-df34-4ea0-aa7e-7c2eb0f88f31(jetbrains.mps.baseLanguage.math.typesystem)", "5359814223490060227", false, 0, intentionProvider);
+                    EquationInfo info = new EquationInfo(_nodeToCheck_1029348928467, null, "r:47d0f24b-df34-4ea0-aa7e-7c2eb0f88f31(jetbrains.mps.baseLanguage.math.typesystem)", "5359814223490060227", 0, intentionProvider);
+                    typeCheckingContext.createLessThanInequation((SNode)MathUtil.getUnboxedElementType(typeCheckingContext.getEquationManager().getRepresentator(matrixType)), (SNode)typeCheckingContext.getEquationManager().getRepresentator(T_typevar_5359814223490060193), false, info);
                   }
                 } else {
                   {
@@ -62,7 +66,8 @@ public class typeof_LinearSolveOperation_InferenceRule extends AbstractInference
                 {
                   SNode _nodeToCheck_1029348928467 = op;
                   BaseIntentionProvider intentionProvider = null;
-                  typeCheckingContext.createEquation((SNode)typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:47d0f24b-df34-4ea0-aa7e-7c2eb0f88f31(jetbrains.mps.baseLanguage.math.typesystem)", "5359814223490060197", true), (SNode)MathTypeUtil.qVector(typeCheckingContext.getEquationManager().getRepresentator(T_typevar_5359814223490060193)), _nodeToCheck_1029348928467, null, "r:47d0f24b-df34-4ea0-aa7e-7c2eb0f88f31(jetbrains.mps.baseLanguage.math.typesystem)", "5359814223490060200", intentionProvider);
+                  EquationInfo info = new EquationInfo(_nodeToCheck_1029348928467, null, "r:47d0f24b-df34-4ea0-aa7e-7c2eb0f88f31(jetbrains.mps.baseLanguage.math.typesystem)", "5359814223490060200", 0, intentionProvider);
+                  typeCheckingContext.createEquation((SNode)typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:47d0f24b-df34-4ea0-aa7e-7c2eb0f88f31(jetbrains.mps.baseLanguage.math.typesystem)", "5359814223490060197", true), (SNode)MathTypeUtil.qVector(typeCheckingContext.getEquationManager().getRepresentator(T_typevar_5359814223490060193)), info);
                 }
               }
             }, "r:47d0f24b-df34-4ea0-aa7e-7c2eb0f88f31(jetbrains.mps.baseLanguage.math.typesystem)", "5359814223490060125", false, false);

@@ -22,7 +22,8 @@ public class vector_vector_replacement_rule_InequationReplacementRule extends Ab
     {
       SNode _nodeToCheck_1029348928467 = equationInfo.getNodeWithError();
       BaseIntentionProvider intentionProvider = null;
-      typeCheckingContext.createLessThanInequation((SNode)SLinkOperations.getTarget(subtype, "elementType", true), (SNode)SLinkOperations.getTarget(supertype, "elementType", true), _nodeToCheck_1029348928467, null, "r:47d0f24b-df34-4ea0-aa7e-7c2eb0f88f31(jetbrains.mps.baseLanguage.math.typesystem)", "6389121991275106407", false, 0, intentionProvider);
+      EquationInfo info = new EquationInfo(_nodeToCheck_1029348928467, null, "r:47d0f24b-df34-4ea0-aa7e-7c2eb0f88f31(jetbrains.mps.baseLanguage.math.typesystem)", "6389121991275106407", 0, intentionProvider);
+      typeCheckingContext.createLessThanInequation((SNode)SLinkOperations.getTarget(subtype, "elementType", true), (SNode)SLinkOperations.getTarget(supertype, "elementType", true), false, info);
     }
     if (SPropertyOperations.getInteger(subtype, "height") != 0 && SPropertyOperations.getInteger(supertype, "height") != 0) {
       if (!(SPropertyOperations.getInteger(subtype, "height") == SPropertyOperations.getInteger(supertype, "height"))) {
