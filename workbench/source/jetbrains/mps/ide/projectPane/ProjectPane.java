@@ -299,6 +299,7 @@ public class ProjectPane extends AbstractProjectViewPane {
       }
 
       public void selectIn(final SelectInContext context, boolean requestFocus) {
+        if (myNode == null) return;
         ModelAccess.instance().runReadAction(new Runnable() {
           public void run() {
             selectNode(myNode);
@@ -523,7 +524,7 @@ public class ProjectPane extends AbstractProjectViewPane {
     MPSModuleRepository.getInstance().addModuleRepositoryListener(myRepositoryListener);
     getMPSProject().getComponent(GeneratorManager.class).addGenerationListener(myGenerationListener);
     getProject().getComponent(FileEditorManager.class).addFileEditorManagerListener(myEditorListener);
-    ClassLoaderManager.getInstance().addReloadHandler(myReloadListener);    
+    ClassLoaderManager.getInstance().addReloadHandler(myReloadListener);
   }
 
   private AnActionEvent createEvent(DataContext context) {
@@ -575,7 +576,7 @@ public class ProjectPane extends AbstractProjectViewPane {
   }
 
 
-  public void selectNode(final SNode node) {
+  public void selectNode(@NotNull final SNode node) {
     LOG.checkEDT();
 
     ModelAccess.instance().runReadAction(new Runnable() {
@@ -583,6 +584,12 @@ public class ProjectPane extends AbstractProjectViewPane {
         getTree().runWithoutExpansion(new Runnable() {
           public void run() {
             MPSTreeNodeEx sNodeNode = findMostSuitableSNodeTreeNode(node);
+
+            if (sNodeNode == null) {
+              LOG.warning("Couldn't select node \"" + node.getName() + "\" : tree node not found.");
+              return;
+            }
+
             getTree().selectNode(sNodeNode);
           }
         });
@@ -767,7 +774,7 @@ public class ProjectPane extends AbstractProjectViewPane {
 
   //----node finding----
 
-  protected ProjectModuleTreeNode findMostSuitableModuleTreeNode(final IModule module) {
+  protected ProjectModuleTreeNode findMostSuitableModuleTreeNode(final @NotNull IModule module) {
     ProjectModuleTreeNode result = findModuleTreeNodeInProject(module);
     if (result != null) return result;
 
@@ -778,19 +785,19 @@ public class ProjectPane extends AbstractProjectViewPane {
     return findModuleTreeNodeAnywhere(module);
   }
 
-  protected ProjectModuleTreeNode findModuleTreeNodeInProject(final IModule module) {
+  protected ProjectModuleTreeNode findModuleTreeNodeInProject(final @NotNull IModule module) {
     return (ProjectModuleTreeNode) findTreeNode(getTree().getRootNode(),
       new ModuleInProjectCondition(),
       new NodeForModuleCondition(module));
   }
 
-  protected ProjectModuleTreeNode findModuleTreeNodeAnywhere(IModule module) {
+  protected ProjectModuleTreeNode findModuleTreeNodeAnywhere(@NotNull IModule module) {
     return (ProjectModuleTreeNode) findTreeNode(getTree().getRootNode(),
       new ModuleEverywhereCondition(),
       new NodeForModuleCondition(module));
   }
 
-  protected SModelTreeNode findMostSuitableModelTreeNode(SModelDescriptor model) {
+  protected SModelTreeNode findMostSuitableModelTreeNode(@NotNull SModelDescriptor model) {
     IModule module = FindUtil.getModuleForModel(getMPSProject(), model);
     if (module == null) return findModelTreeNodeAnywhere(model, getTree().getRootNode());
 
@@ -800,22 +807,24 @@ public class ProjectPane extends AbstractProjectViewPane {
     return findModelTreeNodeInModule(model, moduleTreeNode);
   }
 
-  protected SModelTreeNode findModelTreeNodeInModule(final SModelDescriptor model, ProjectModuleTreeNode moduleNode) {
+  protected SModelTreeNode findModelTreeNodeInModule(final @NotNull SModelDescriptor model, @NotNull ProjectModuleTreeNode moduleNode) {
     return (SModelTreeNode) findTreeNode(moduleNode, new ModelInModuleCondition(), new NodeForModelCondition(model));
   }
 
-  protected SModelTreeNode findModelTreeNodeAnywhere(SModelDescriptor model, MPSTreeNode parentNode) {
+  protected SModelTreeNode findModelTreeNodeAnywhere(@NotNull SModelDescriptor model, @NotNull MPSTreeNode parentNode) {
     return (SModelTreeNode) findTreeNode(parentNode, new ModelEverywhereCondition(), new NodeForModelCondition(model));
   }
 
-  protected MPSTreeNodeEx findMostSuitableSNodeTreeNode(SNode node) {
-    SModelTreeNode modelNode = findMostSuitableModelTreeNode(node.getModel().getModelDescriptor());
+  protected MPSTreeNodeEx findMostSuitableSNodeTreeNode(@NotNull SNode node) {
+    SModel model = node.getModel();
+    if (model == null) return null;
+    SModelTreeNode modelNode = findMostSuitableModelTreeNode(model.getModelDescriptor());
     if (modelNode == null) return null;
 
     return findSNodeTreeNodeInParent(node, modelNode);
   }
 
-  protected MPSTreeNodeEx findSNodeTreeNodeInParent(SNode node, MPSTreeNode parent) {
+  protected MPSTreeNodeEx findSNodeTreeNodeInParent(@NotNull SNode node, @NotNull MPSTreeNode parent) {
     //todo rewrite using findTreeNode
     if (!(parent.isInitialized() || parent.hasInfiniteSubtree())) parent.init();
     if (parent instanceof SNodeTreeNode) {
