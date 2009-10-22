@@ -29,8 +29,8 @@ public class MakeClassAbstract_Intention extends BaseIntention {
   }
 
   public String getDescription(final SNode node, final EditorContext editorContext) {
-    return "Make " + ((SPropertyOperations.getBoolean(node, "abstractClass") ?
-      "Non" :
+    return "Make" + ((SPropertyOperations.getBoolean(node, "abstractClass") ?
+      " Non" :
       ""
     )) + " Abstract";
   }

@@ -7582,12 +7582,12 @@
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1705375422254837419">
             <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1705375422254837420">
               <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1705375422254837421">
-                <property name="value" value="Make " />
+                <property name="value" value="Make" />
               </node>
               <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.ParenthesizedExpression" id="1705375422254837422">
                 <node role="expression" type="jetbrains.mps.baseLanguage.structure.TernaryOperatorExpression" id="1705375422254837423">
                   <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1705375422254837424">
-                    <property name="value" value="Non" />
+                    <property name="value" value=" Non" />
                   </node>
                   <node role="ifFalse" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1705375422254837425">
                     <property name="value" value="" />
