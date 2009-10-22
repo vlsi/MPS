@@ -549,7 +549,12 @@ public class NodeSubstituteChooser implements KeyboardHandler {
     private final Color FOREGROUND_COLOR = Color.black;
     private final Color SELECTED_BACKGROUND_COLOR = new Color(0, 82, 164);
     private final Color SELECTED_FOREGROUND_COLOR = Color.white;
-    private JList myList = new JList(new DefaultListModel());
+    private JList myList = new JList(new DefaultListModel()) {
+      @Override
+      public Dimension getPreferredScrollableViewportSize() {
+        return getPreferredSize();
+      }
+    };
     private PopupWindowPosition myPosition = PopupWindowPosition.BOTTOM;
     private JScrollPane myScroller = new JScrollPane(myList, JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED, JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);
     private EditorCell myRelativeCell;
@@ -684,8 +689,8 @@ public class NodeSubstituteChooser implements KeyboardHandler {
       scrollToSelection();
 
       setSize(
-        Math.max(PREFERRED_WIDTH, myList.getPreferredSize().width + 21),
-        Math.min(PREFERRED_HEIGHT, myList.getPreferredSize().height + getVerticalScrollerHeight()));
+        Math.max(PREFERRED_WIDTH, myScroller.getPreferredSize().width),
+        Math.min(PREFERRED_HEIGHT, myScroller.getPreferredSize().height));
 
       if (getPosition() == PopupWindowPosition.TOP) {
         newLocation = new Point(newLocation.x, newLocation.y - getHeight() - myRelativeCell.getHeight());
@@ -712,16 +717,6 @@ public class NodeSubstituteChooser implements KeyboardHandler {
     public void scrollToSelection() {
       myList.ensureIndexIsVisible(getSelectionIndex());
     }
-
-    private int getVerticalScrollerHeight() {
-      JScrollBar scrollbar = myScroller.getHorizontalScrollBar();
-      if (scrollbar != null && scrollbar.isVisible()) {
-        return scrollbar.getHeight();
-      }
-      Insets insets = myScroller.getBorder().getBorderInsets(myScroller);
-      return insets.top + insets.bottom + 1;
-    }
-
 
     public PopupWindowPosition getPosition() {
       return myPosition;
