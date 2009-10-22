@@ -41,12 +41,11 @@ import java.util.List;
 public abstract class BaseDialog extends JDialog {
   private static final Logger LOG = Logger.getLogger(BaseDialog.class);
 
-  private JTextField myErrorLabel = new JTextField("") {
+  private JLabel myErrorLabel = new JLabel("") {
     {
       setForeground(Color.RED);
       setFont(getFont().deriveFont(Font.BOLD));
       setBorder(null);
-      setEditable(false);
     }
   };
 
@@ -69,6 +68,7 @@ public abstract class BaseDialog extends JDialog {
 
   protected BaseDialog(Frame owner) throws HeadlessException {
     this(owner, null);
+    doInit(owner);
   }
 
   private void doInit(Component mainFrame) {
