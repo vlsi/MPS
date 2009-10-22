@@ -182,6 +182,9 @@
     <copy todir="${deploy.dir}/MPS/lib/mps.jar.tmp">
       <fileset dir="${mps_home}/core/kernel/classes" excludes="idea/MPSApplicationInfo.xml, " />
     </copy>
+    <copy todir="${deploy.dir}/MPS/lib/mps.jar.tmp">
+      <fileset dir="${mps_home}/core/javaParser/classes" />
+    </copy>
     <antcall target="replace0" />
     <mkdir dir="${deploy.dir}/MPS/lib/mps.jar.tmp/idea" />
     <copy todir="${deploy.dir}/MPS/lib/mps.jar.tmp">

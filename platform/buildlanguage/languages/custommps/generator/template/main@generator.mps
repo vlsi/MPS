@@ -1164,6 +1164,26 @@
                     </node>
                   </node>
                 </node>
+                <node role="entry" type="jetbrains.mps.build.packaging.structure.Copy" id="3521035459333408274">
+                  <property name="name" value="" />
+                  <property name="excludes" value="" />
+                  <node role="sourcePath" type="jetbrains.mps.build.packaging.structure.Path" id="3521035459333408275">
+                    <node role="macro" type="jetbrains.mps.build.packaging.structure.MacroReference" id="3521035459333408278">
+                      <property name="name" value="mps_home" />
+                    </node>
+                    <node role="compositePathComponent" type="jetbrains.mps.build.packaging.structure.CompositePathComponent" id="3521035459333408277">
+                      <node role="pathComponent" type="jetbrains.mps.build.packaging.structure.PathComponent" id="3521035459333408281">
+                        <property name="path" value="core" />
+                      </node>
+                      <node role="pathComponent" type="jetbrains.mps.build.packaging.structure.PathComponent" id="3521035459333408282">
+                        <property name="path" value="javaParser" />
+                      </node>
+                      <node role="pathComponent" type="jetbrains.mps.build.packaging.structure.PathComponent" id="3521035459333408284">
+                        <property name="path" value="classes" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
                 <node role="entry" type="jetbrains.mps.build.packaging.structure.Copy" id="1234971270246">
                   <property name="file" value="false" />
                   <property name="excludes" value="idea/MPSApplicationInfo.xml" />
@@ -1414,6 +1434,26 @@
                             <property name="path" value="kernel" />
                           </node>
                           <node role="pathComponent" type="jetbrains.mps.build.packaging.structure.PathComponent" id="1234971270349">
+                            <property name="path" value="classes" />
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                    <node role="entry" type="jetbrains.mps.build.packaging.structure.Copy" id="3521035459333707096">
+                      <property name="name" value="" />
+                      <property name="excludes" value="" />
+                      <node role="sourcePath" type="jetbrains.mps.build.packaging.structure.Path" id="3521035459333707097">
+                        <node role="macro" type="jetbrains.mps.build.packaging.structure.MacroReference" id="3521035459333707098">
+                          <property name="name" value="mps_home" />
+                        </node>
+                        <node role="compositePathComponent" type="jetbrains.mps.build.packaging.structure.CompositePathComponent" id="3521035459333707099">
+                          <node role="pathComponent" type="jetbrains.mps.build.packaging.structure.PathComponent" id="3521035459333707100">
+                            <property name="path" value="core" />
+                          </node>
+                          <node role="pathComponent" type="jetbrains.mps.build.packaging.structure.PathComponent" id="3521035459333707101">
+                            <property name="path" value="javaParser" />
+                          </node>
+                          <node role="pathComponent" type="jetbrains.mps.build.packaging.structure.PathComponent" id="3521035459333707102">
                             <property name="path" value="classes" />
                           </node>
                         </node>
