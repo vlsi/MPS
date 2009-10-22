@@ -6,7 +6,7 @@
   <classPath />
   <sourcePath />
   <usedLanguages>
-    <usedLanguages>3304fc6e-7c6b-401e-a016-b944934bb21f(jetbrains.mps.baseLanguage.math)</usedLanguages>
+    <usedLanguage>3304fc6e-7c6b-401e-a016-b944934bb21f(jetbrains.mps.baseLanguage.math)</usedLanguage>
   </usedLanguages>
 </solution>
 
