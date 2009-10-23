@@ -1956,6 +1956,10 @@
               <property name="id" value="2ebbb458-8ebb-481e-a5d7-9e27903323d4" />
               <property name="name" value="jetbrains.mps.baseLanguage.dates.runtime" />
             </node>
+            <node role="entry" type="jetbrains.mps.build.custommpsInternal.structure.MPSModule" id="4062752601745324311">
+              <property name="id" value="f2801650-65d5-424e-bb1b-463a8781b786" />
+              <property name="name" value="jetbrains.mps.baseLanguage.javadoc" />
+            </node>
             <node role="entry" type="jetbrains.mps.build.custommpsInternal.structure.MPSModule" id="1237557083346">
               <property name="id" value="760a0a8c-eabb-4521-8bfd-65db761a9ba3" />
               <property name="name" value="jetbrains.mps.baseLanguage.logging" />

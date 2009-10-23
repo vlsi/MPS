@@ -261,6 +261,7 @@
     <antcall target="MPS-languages.pack.jetbrains.mps.baseLanguage.dates0" />
     <antcall target="MPS-languages.pack.jetbrains.mps.baseLanguage.datesInternal0" />
     <antcall target="MPS-languages.pack.jetbrains.mps.baseLanguage.dates.runtime0" />
+    <antcall target="MPS-languages.pack.jetbrains.mps.baseLanguage.javadoc0" />
     <antcall target="MPS-languages.pack.jetbrains.mps.baseLanguage.logging0" />
     <antcall target="MPS-languages.pack.jetbrains.mps.baseLanguage.math0" />
     <antcall target="MPS-languages.pack.jetbrains.mps.baseLanguage.money0" />
@@ -272,7 +273,7 @@
     <antcall target="MPS-languages.pack.jetbrains.mps.baseLanguage.tuples.runtime0" />
     <antcall target="MPS-languages.pack.JDK0" />
     <antcall target="MPS-languages.pack.MPS.Classpath0" />
-    <antcall target="MPS-languages.pack.jetbrains.mps.debug.baseLanguage0" />
+    <antcall target="MPS-languages.pack.jetbrains.mps.debug0" />
     <mkdir dir="${deploy.dir}/MPS/core/baseLanguage" />
     <antcall target="MPS-languages.pack.jetbrains.mps.lang.actions0" />
     <antcall target="MPS-languages.pack.jetbrains.mps.lang.annotations0" />
