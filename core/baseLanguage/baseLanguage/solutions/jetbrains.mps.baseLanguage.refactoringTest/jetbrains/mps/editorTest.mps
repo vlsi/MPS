@@ -5195,11 +5195,11 @@
         <property name="name" value="stubs" />
       </node>
       <node role="statement" type="jetbrains.mps.lang.editor.editorTest.structure.StubBlock" id="8664476900639842691">
-        <node role="testNode$attribute" type="jetbrains.mps.lang.test.structure.AnonymousCellAnnotation" id="8664476900639842692">
+        <node role="testNode$attribute" type="jetbrains.mps.lang.test.structure.AnonymousCellAnnotation" id="6421514894544915568">
           <property name="isLastPosition" value="true" />
           <property name="useLabelSelection" value="true" />
-          <property name="selectionStart" value="5" />
-          <property name="selectionEnd" value="5" />
+          <property name="selectionStart" value="4" />
+          <property name="selectionEnd" value="4" />
           <property name="cellId" value="Constant_9987_0" />
         </node>
       </node>
@@ -5423,6 +5423,74 @@
         <node role="keyStrokes" type="jetbrains.mps.lang.plugin.structure.KeyMapKeystroke" id="5633355289410125215">
           <property name="keycode" value="VK_BACK_SPACE" />
         </node>
+      </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.test.structure.EditorTestCase" id="4360574204777335616">
+    <property name="package" value="intelligentInputUtil" />
+    <property name="name" value="SettingTextToNodeAfterApplingAction" />
+    <node role="nodeToEdit" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="4360574204777372534">
+      <property name="name" value="method" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="4360574204777372535" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="4360574204777372536" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="4360574204777372537">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="4360574204777372539">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="4360574204777372540">
+            <property name="name" value="o" />
+            <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="4360574204777372541">
+              <link role="classifier" targetNodeId="1.~Object" resolveInfo="Object" />
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="4360574204777372542">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="4360574204777372544">
+            <link role="variableDeclaration" targetNodeId="4360574204777372540" resolveInfo="o" />
+            <node role="testNode$attribute" type="jetbrains.mps.lang.test.structure.AnonymousCellAnnotation" id="4360574204777374262">
+              <property name="isLastPosition" value="true" />
+              <property name="useLabelSelection" value="true" />
+              <property name="selectionStart" value="1" />
+              <property name="selectionEnd" value="1" />
+              <property name="cellId" value="property_name" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="result" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="4360574204777374264">
+      <property name="name" value="method" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="4360574204777374265" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="4360574204777374266" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="4360574204777374267">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="4360574204777374268">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="4360574204777374269">
+            <property name="name" value="o" />
+            <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="4360574204777374270">
+              <link role="classifier" targetNodeId="1.~Object" resolveInfo="Object" />
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="4360574204777374275">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="4360574204777374284">
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="4360574204777374277">
+              <link role="variableDeclaration" targetNodeId="4360574204777374269" resolveInfo="o" />
+            </node>
+            <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="4360574204777374288">
+              <link role="baseMethodDeclaration" targetNodeId="1.~Object.notify():void" resolveInfo="notify" />
+              <node role="testNode$attribute" type="jetbrains.mps.lang.test.structure.AnonymousCellAnnotation" id="4360574204777374289">
+                <property name="isLastPosition" value="true" />
+                <property name="useLabelSelection" value="true" />
+                <property name="selectionStart" value="1" />
+                <property name="selectionEnd" value="1" />
+                <property name="cellId" value="Constant_4497_2" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="code" type="jetbrains.mps.baseLanguage.structure.StatementList" id="4360574204777374290">
+      <node role="statement" type="jetbrains.mps.lang.test.structure.TypeKeyStatement" id="4360574204777374291">
+        <property name="keys" value=".notify(" />
       </node>
     </node>
   </node>
