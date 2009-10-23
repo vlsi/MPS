@@ -33,16 +33,6 @@
   <component name="ProjectDetails">
     <option name="projectName" value="MoneyLang.mpr" />
   </component>
-  <component name="Shalom">
-    <subPane>
-      <PATH>
-        <PATH_ELEMENT USER_OBJECT="JTree">
-          <option name="myItemId" value="" />
-          <option name="myItemType" value="" />
-        </PATH_ELEMENT>
-      </PATH>
-    </subPane>
-  </component>
   <component name="SvnBranchConfigurationManager">
     <option name="myVersion" value="124" />
   </component>
