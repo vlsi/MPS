@@ -253,7 +253,7 @@
       <property name="metaClass" value="reference" />
       <property name="role" value="param" />
       <property name="sourceCardinality" value="1" />
-      <link role="target" targetNodeId="2v.1133920641626" resolveInfo="BaseConcept" />
+      <link role="target" targetNodeId="3v.1212170275853" resolveInfo="IValidIdentifier" />
     </node>
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.BooleanConceptProperty" id="6832197706140518105">
       <link role="conceptPropertyDeclaration" targetNodeId="2v.1137473854053" resolveInfo="abstract" />
@@ -490,6 +490,11 @@
       <link role="specializedLink" targetNodeId="5562345046718956740" />
       <link role="target" targetNodeId="3v.1070462154015" resolveInfo="StaticFieldDeclaration" />
     </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.AnnotationLinkDeclaration" id="4021391592916212750">
+    <property name="role" value="staticFieldDocComment" />
+    <link role="source" targetNodeId="3v.1070462154015" resolveInfo="StaticFieldDeclaration" />
+    <link role="target" targetNodeId="6832197706140896242" resolveInfo="FieldDocComment" />
   </node>
 </model>
 

@@ -1009,34 +1009,50 @@
                 </node>
               </node>
             </node>
-            <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.AndExpression" id="8970989240998714866">
-              <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="8970989240998714860">
-                <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="8970989240998714838">
-                  <node role="operand" type="jetbrains.mps.lang.intentions.structure.ConceptFunctionParameter_childNode" id="8970989240998714837" />
-                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_GetAncestorOperation" id="8970989240998714847">
-                    <node role="parameter" type="jetbrains.mps.lang.smodel.structure.OperationParm_Concept" id="8970989240998714848">
-                      <node role="conceptArgument" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" id="8970989240998714853">
-                        <link role="conceptDeclaration" targetNodeId="2v.1068580123132" resolveInfo="BaseMethodDeclaration" />
+            <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.AndExpression" id="4021391592916341741">
+              <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.AndExpression" id="8970989240998714866">
+                <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="8970989240998714860">
+                  <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="8970989240998714838">
+                    <node role="operand" type="jetbrains.mps.lang.intentions.structure.ConceptFunctionParameter_childNode" id="8970989240998714837" />
+                    <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_GetAncestorOperation" id="8970989240998714847">
+                      <node role="parameter" type="jetbrains.mps.lang.smodel.structure.OperationParm_Concept" id="8970989240998714848">
+                        <node role="conceptArgument" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" id="8970989240998714853">
+                          <link role="conceptDeclaration" targetNodeId="2v.1068580123132" resolveInfo="BaseMethodDeclaration" />
+                        </node>
                       </node>
+                      <node role="parameter" type="jetbrains.mps.lang.smodel.structure.OperationParm_Inclusion" id="8970989240998768174" />
                     </node>
-                    <node role="parameter" type="jetbrains.mps.lang.smodel.structure.OperationParm_Inclusion" id="8970989240998768174" />
                   </node>
+                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_IsNullOperation" id="8970989240998714864" />
                 </node>
-                <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_IsNullOperation" id="8970989240998714864" />
+                <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="8970989240998714869">
+                  <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="8970989240998714870">
+                    <node role="operand" type="jetbrains.mps.lang.intentions.structure.ConceptFunctionParameter_childNode" id="8970989240998714871" />
+                    <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_GetAncestorOperation" id="8970989240998714872">
+                      <node role="parameter" type="jetbrains.mps.lang.smodel.structure.OperationParm_Concept" id="8970989240998714873">
+                        <node role="conceptArgument" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" id="8970989240998714876">
+                          <link role="conceptDeclaration" targetNodeId="2v.1068390468200" resolveInfo="FieldDeclaration" />
+                        </node>
+                      </node>
+                      <node role="parameter" type="jetbrains.mps.lang.smodel.structure.OperationParm_Inclusion" id="8970989240998768176" />
+                    </node>
+                  </node>
+                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_IsNullOperation" id="8970989240998714875" />
+                </node>
               </node>
-              <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="8970989240998714869">
-                <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="8970989240998714870">
-                  <node role="operand" type="jetbrains.mps.lang.intentions.structure.ConceptFunctionParameter_childNode" id="8970989240998714871" />
-                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_GetAncestorOperation" id="8970989240998714872">
-                    <node role="parameter" type="jetbrains.mps.lang.smodel.structure.OperationParm_Concept" id="8970989240998714873">
-                      <node role="conceptArgument" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" id="8970989240998714876">
-                        <link role="conceptDeclaration" targetNodeId="2v.1068390468200" resolveInfo="FieldDeclaration" />
+              <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="4021391592916341744">
+                <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="4021391592916341745">
+                  <node role="operand" type="jetbrains.mps.lang.intentions.structure.ConceptFunctionParameter_childNode" id="4021391592916341746" />
+                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_GetAncestorOperation" id="4021391592916341747">
+                    <node role="parameter" type="jetbrains.mps.lang.smodel.structure.OperationParm_Concept" id="4021391592916341748">
+                      <node role="conceptArgument" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" id="4021391592916341752">
+                        <link role="conceptDeclaration" targetNodeId="2v.1070462154015" resolveInfo="StaticFieldDeclaration" />
                       </node>
                     </node>
-                    <node role="parameter" type="jetbrains.mps.lang.smodel.structure.OperationParm_Inclusion" id="8970989240998768176" />
+                    <node role="parameter" type="jetbrains.mps.lang.smodel.structure.OperationParm_Inclusion" id="4021391592916341750" />
                   </node>
                 </node>
-                <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_IsNullOperation" id="8970989240998714875" />
+                <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_IsNullOperation" id="4021391592916341751" />
               </node>
             </node>
           </node>
@@ -1191,6 +1207,54 @@
               </node>
             </node>
             <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.IsEmptyOperation" id="2217234381367409847" />
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.intentions.structure.IntentionDeclaration" id="4021391592916341753">
+    <property name="name" value="AddStaticFieldDocComment" />
+    <property name="isAvailableInChildNodes" value="true" />
+    <link role="forConcept" targetNodeId="2v.1070462154015" resolveInfo="StaticFieldDeclaration" />
+    <node role="descriptionFunction" type="jetbrains.mps.lang.intentions.structure.DescriptionBlock" id="4021391592916341754">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="4021391592916341755">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="4021391592916341758">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="4021391592916341759">
+            <property name="value" value="Add Documentation Comment" />
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="executeFunction" type="jetbrains.mps.lang.intentions.structure.ExecuteBlock" id="4021391592916341756">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="4021391592916341757">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="4021391592916341776">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="4021391592916341789">
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="4021391592916341778">
+              <node role="operand" type="jetbrains.mps.lang.intentions.structure.ConceptFunctionParameter_node" id="4021391592916341777" />
+              <node role="operation" type="jetbrains.mps.lang.smodel.structure.AttributeAccessOperation" id="4021391592916341782">
+                <node role="attributeQualifier" type="jetbrains.mps.lang.smodel.structure.NodeAttributeAccessQualifier" id="4021391592916448709">
+                  <link role="annotationLink" targetNodeId="1.4021391592916212750" resolveInfo="staticFieldDocComment" />
+                </node>
+              </node>
+            </node>
+            <node role="operation" type="jetbrains.mps.lang.smodel.structure.Link_SetNewChildOperation" id="4021391592916341793" />
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="isApplicableFunction" type="jetbrains.mps.lang.intentions.structure.IsApplicableBlock" id="4021391592916341760">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="4021391592916341761">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="4021391592916341762">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="4021391592916341771">
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="4021391592916341764">
+              <node role="operand" type="jetbrains.mps.lang.intentions.structure.ConceptFunctionParameter_node" id="4021391592916341763" />
+              <node role="operation" type="jetbrains.mps.lang.smodel.structure.AttributeAccessOperation" id="4021391592916341768">
+                <node role="attributeQualifier" type="jetbrains.mps.lang.smodel.structure.NodeAttributeAccessQualifier" id="4021391592916448708">
+                  <link role="annotationLink" targetNodeId="1.4021391592916212750" resolveInfo="staticFieldDocComment" />
+                </node>
+              </node>
+            </node>
+            <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_IsNullOperation" id="4021391592916511334" />
           </node>
         </node>
       </node>

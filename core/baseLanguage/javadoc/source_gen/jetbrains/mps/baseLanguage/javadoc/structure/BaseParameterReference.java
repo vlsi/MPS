@@ -4,6 +4,7 @@ package jetbrains.mps.baseLanguage.javadoc.structure;
 
 import jetbrains.mps.lang.core.structure.BaseConcept;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.baseLanguage.structure.IValidIdentifier;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
@@ -16,11 +17,11 @@ public class BaseParameterReference extends BaseConcept {
     super(node);
   }
 
-  public BaseConcept getParam() {
-    return (BaseConcept)this.getReferent(BaseConcept.class, BaseParameterReference.PARAM);
+  public IValidIdentifier getParam() {
+    return (IValidIdentifier)this.getReferent(IValidIdentifier.class, BaseParameterReference.PARAM);
   }
 
-  public void setParam(BaseConcept node) {
+  public void setParam(IValidIdentifier node) {
     super.setReferent(BaseParameterReference.PARAM, node);
   }
 

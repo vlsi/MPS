@@ -51,7 +51,7 @@ public class AddClassifierDocComment_Intention extends BaseIntention {
   }
 
   public boolean isVisibleInChild(final SNode node, final SNode childNode, final EditorContext editorContext) {
-    return (SNodeOperations.getAncestor(childNode, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration", true, false) == null) && (SNodeOperations.getAncestor(childNode, "jetbrains.mps.baseLanguage.structure.FieldDeclaration", true, false) == null) && SNodeOperations.getAncestor(childNode, "jetbrains.mps.baseLanguage.structure.Classifier", true, false) == node;
+    return (SNodeOperations.getAncestor(childNode, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration", true, false) == null) && (SNodeOperations.getAncestor(childNode, "jetbrains.mps.baseLanguage.structure.FieldDeclaration", true, false) == null) && (SNodeOperations.getAncestor(childNode, "jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration", true, false) == null) && SNodeOperations.getAncestor(childNode, "jetbrains.mps.baseLanguage.structure.Classifier", true, false) == node;
   }
 
   public void execute(final SNode node, final EditorContext editorContext) {

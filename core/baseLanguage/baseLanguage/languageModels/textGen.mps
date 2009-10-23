@@ -30,7 +30,7 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590345(jetbrains.mps.lang.pattern.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959057f(jetbrains.mps.baseLanguage.logging.structure)" version="0" />
   <devkit namespace="2677cb18-f558-4e33-bc38-a5139cee06dc(jetbrains.mps.devkit.language-design)" />
-  <maxImportIndex value="20" />
+  <maxImportIndex value="21" />
   <import index="1" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="3" />
   <import index="2" modelUID="f:java_stub#java.lang(java.lang@java_stub)" version="-1" />
   <import index="5" modelUID="f:java_stub#jetbrains.mps.generator(jetbrains.mps.generator@java_stub)" version="-1" />
@@ -48,6 +48,7 @@
   <import index="18" modelUID="f:java_stub#java.io(java.io@java_stub)" version="-1" />
   <import index="19" modelUID="f:java_stub#jetbrains.mps.kernel.model(jetbrains.mps.kernel.model@java_stub)" version="-1" />
   <import index="20" modelUID="f:java_stub#jetbrains.mps.generator.fileGenerator(jetbrains.mps.generator.fileGenerator@java_stub)" version="-1" />
+  <import index="21" modelUID="r:4095af4f-a097-4799-aaa9-03df087ddfa6(jetbrains.mps.baseLanguage.javadoc.structure)" version="5" />
   <visible index="2" modelUID="f:java_stub#jetbrains.mps.smodel(jetbrains.mps.smodel@java_stub)" />
   <visible index="3" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
   <node type="jetbrains.mps.lang.textGen.structure.LanguageTextGenDeclaration" id="1234796104060">
@@ -1706,6 +1707,33 @@
     <link role="conceptDeclaration" targetNodeId="1.1188206574119" resolveInfo="AnnotationMethodDeclaration" />
     <node role="textGenBlock" type="jetbrains.mps.lang.textGen.structure.GenerateTextDeclaration" id="1234887488964">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1234887488965">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="4021391592916153939">
+          <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="4021391592916153940">
+            <node role="statement" type="jetbrains.mps.lang.textGen.structure.AppendOperation" id="4021391592916153941">
+              <node role="part" type="jetbrains.mps.lang.textGen.structure.NodeAppendPart" id="4021391592916153942">
+                <node role="value" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="4021391592916153943">
+                  <node role="operand" type="jetbrains.mps.lang.textGen.structure.NodeParameter" id="4021391592916153944" />
+                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.AttributeAccessOperation" id="4021391592916153945">
+                    <node role="attributeQualifier" type="jetbrains.mps.lang.smodel.structure.NodeAttributeAccessQualifier" id="4021391592916153946">
+                      <link role="annotationLink" targetNodeId="21.5349172909345532723" resolveInfo="methodDocComment" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+          <node role="condition" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="4021391592916153947">
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="4021391592916153948">
+              <node role="operand" type="jetbrains.mps.lang.textGen.structure.NodeParameter" id="4021391592916153949" />
+              <node role="operation" type="jetbrains.mps.lang.smodel.structure.AttributeAccessOperation" id="4021391592916153950">
+                <node role="attributeQualifier" type="jetbrains.mps.lang.smodel.structure.NodeAttributeAccessQualifier" id="4021391592916153951">
+                  <link role="annotationLink" targetNodeId="21.5349172909345532723" resolveInfo="methodDocComment" />
+                </node>
+              </node>
+            </node>
+            <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_IsNotNullOperation" id="4021391592916153952" />
+          </node>
+        </node>
         <node role="statement" type="jetbrains.mps.lang.textGen.structure.AppendOperation" id="1237556329188">
           <node role="part" type="jetbrains.mps.lang.textGen.structure.NewLineAppendPart" id="1237556330987" />
         </node>
@@ -3459,6 +3487,33 @@
     <link role="conceptDeclaration" targetNodeId="1.1068580123165" resolveInfo="InstanceMethodDeclaration" />
     <node role="textGenBlock" type="jetbrains.mps.lang.textGen.structure.GenerateTextDeclaration" id="1235068110029">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1235068110030">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="4021391592914074321">
+          <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="4021391592914074322">
+            <node role="statement" type="jetbrains.mps.lang.textGen.structure.AppendOperation" id="4021391592914126901">
+              <node role="part" type="jetbrains.mps.lang.textGen.structure.NodeAppendPart" id="4021391592914126903">
+                <node role="value" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="4021391592914126906">
+                  <node role="operand" type="jetbrains.mps.lang.textGen.structure.NodeParameter" id="4021391592914126905" />
+                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.AttributeAccessOperation" id="4021391592914129114">
+                    <node role="attributeQualifier" type="jetbrains.mps.lang.smodel.structure.NodeAttributeAccessQualifier" id="4021391592914129116">
+                      <link role="annotationLink" targetNodeId="21.5349172909345532723" resolveInfo="methodDocComment" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+          <node role="condition" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="4021391592914124189">
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="4021391592914074326">
+              <node role="operand" type="jetbrains.mps.lang.textGen.structure.NodeParameter" id="4021391592914074325" />
+              <node role="operation" type="jetbrains.mps.lang.smodel.structure.AttributeAccessOperation" id="4021391592914075539">
+                <node role="attributeQualifier" type="jetbrains.mps.lang.smodel.structure.NodeAttributeAccessQualifier" id="4021391592914124188">
+                  <link role="annotationLink" targetNodeId="21.5349172909345532723" resolveInfo="methodDocComment" />
+                </node>
+              </node>
+            </node>
+            <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_IsNotNullOperation" id="4021391592914124193" />
+          </node>
+        </node>
         <node role="statement" type="jetbrains.mps.lang.textGen.structure.AppendOperation" id="1237560364567">
           <node role="part" type="jetbrains.mps.lang.textGen.structure.NewLineAppendPart" id="1237560365757" />
           <node role="part" type="jetbrains.mps.lang.textGen.structure.OperationCall" id="1237981989749">
@@ -4882,6 +4937,33 @@
     <link role="conceptDeclaration" targetNodeId="1.1070462154015" resolveInfo="StaticFieldDeclaration" />
     <node role="textGenBlock" type="jetbrains.mps.lang.textGen.structure.GenerateTextDeclaration" id="1235131598666">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1235131598667">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="4021391592916578525">
+          <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="4021391592916578526">
+            <node role="statement" type="jetbrains.mps.lang.textGen.structure.AppendOperation" id="4021391592916578527">
+              <node role="part" type="jetbrains.mps.lang.textGen.structure.NodeAppendPart" id="4021391592916578528">
+                <node role="value" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="4021391592916578529">
+                  <node role="operand" type="jetbrains.mps.lang.textGen.structure.NodeParameter" id="4021391592916578530" />
+                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.AttributeAccessOperation" id="4021391592916578531">
+                    <node role="attributeQualifier" type="jetbrains.mps.lang.smodel.structure.NodeAttributeAccessQualifier" id="4021391592916578540">
+                      <link role="annotationLink" targetNodeId="21.4021391592916212750" resolveInfo="staticFieldDocComment" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+          <node role="condition" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="4021391592916578533">
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="4021391592916578534">
+              <node role="operand" type="jetbrains.mps.lang.textGen.structure.NodeParameter" id="4021391592916578535" />
+              <node role="operation" type="jetbrains.mps.lang.smodel.structure.AttributeAccessOperation" id="4021391592916578536">
+                <node role="attributeQualifier" type="jetbrains.mps.lang.smodel.structure.NodeAttributeAccessQualifier" id="4021391592916578539">
+                  <link role="annotationLink" targetNodeId="21.4021391592916212750" resolveInfo="staticFieldDocComment" />
+                </node>
+              </node>
+            </node>
+            <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_IsNotNullOperation" id="4021391592916578538" />
+          </node>
+        </node>
         <node role="statement" type="jetbrains.mps.lang.textGen.structure.AppendOperation" id="1237560684186">
           <node role="part" type="jetbrains.mps.lang.textGen.structure.NewLineAppendPart" id="1237560686016" />
           <node role="part" type="jetbrains.mps.lang.textGen.structure.OperationCall" id="1237982160521">
@@ -5032,6 +5114,33 @@
     <link role="conceptDeclaration" targetNodeId="1.1081236700938" resolveInfo="StaticMethodDeclaration" />
     <node role="textGenBlock" type="jetbrains.mps.lang.textGen.structure.GenerateTextDeclaration" id="1235131802113">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1235131802114">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="4021391592916153924">
+          <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="4021391592916153925">
+            <node role="statement" type="jetbrains.mps.lang.textGen.structure.AppendOperation" id="4021391592916153926">
+              <node role="part" type="jetbrains.mps.lang.textGen.structure.NodeAppendPart" id="4021391592916153927">
+                <node role="value" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="4021391592916153928">
+                  <node role="operand" type="jetbrains.mps.lang.textGen.structure.NodeParameter" id="4021391592916153929" />
+                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.AttributeAccessOperation" id="4021391592916153930">
+                    <node role="attributeQualifier" type="jetbrains.mps.lang.smodel.structure.NodeAttributeAccessQualifier" id="4021391592916153931">
+                      <link role="annotationLink" targetNodeId="21.5349172909345532723" resolveInfo="methodDocComment" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+          <node role="condition" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="4021391592916153932">
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="4021391592916153933">
+              <node role="operand" type="jetbrains.mps.lang.textGen.structure.NodeParameter" id="4021391592916153934" />
+              <node role="operation" type="jetbrains.mps.lang.smodel.structure.AttributeAccessOperation" id="4021391592916153935">
+                <node role="attributeQualifier" type="jetbrains.mps.lang.smodel.structure.NodeAttributeAccessQualifier" id="4021391592916153936">
+                  <link role="annotationLink" targetNodeId="21.5349172909345532723" resolveInfo="methodDocComment" />
+                </node>
+              </node>
+            </node>
+            <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_IsNotNullOperation" id="4021391592916153937" />
+          </node>
+        </node>
         <node role="statement" type="jetbrains.mps.lang.textGen.structure.AppendOperation" id="1237561497661">
           <node role="part" type="jetbrains.mps.lang.textGen.structure.NewLineAppendPart" id="1237561498725" />
           <node role="part" type="jetbrains.mps.lang.textGen.structure.OperationCall" id="1237982221904">
@@ -6413,6 +6522,33 @@
     <link role="conceptDeclaration" targetNodeId="1.1068580123140" resolveInfo="ConstructorDeclaration" />
     <node role="textGenBlock" type="jetbrains.mps.lang.textGen.structure.GenerateTextDeclaration" id="1235739414983">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1235739414984">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="4021391592916153954">
+          <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="4021391592916153955">
+            <node role="statement" type="jetbrains.mps.lang.textGen.structure.AppendOperation" id="4021391592916153956">
+              <node role="part" type="jetbrains.mps.lang.textGen.structure.NodeAppendPart" id="4021391592916153957">
+                <node role="value" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="4021391592916153958">
+                  <node role="operand" type="jetbrains.mps.lang.textGen.structure.NodeParameter" id="4021391592916153959" />
+                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.AttributeAccessOperation" id="4021391592916153960">
+                    <node role="attributeQualifier" type="jetbrains.mps.lang.smodel.structure.NodeAttributeAccessQualifier" id="4021391592916153961">
+                      <link role="annotationLink" targetNodeId="21.5349172909345532723" resolveInfo="methodDocComment" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+          <node role="condition" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="4021391592916153962">
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="4021391592916153963">
+              <node role="operand" type="jetbrains.mps.lang.textGen.structure.NodeParameter" id="4021391592916153964" />
+              <node role="operation" type="jetbrains.mps.lang.smodel.structure.AttributeAccessOperation" id="4021391592916153965">
+                <node role="attributeQualifier" type="jetbrains.mps.lang.smodel.structure.NodeAttributeAccessQualifier" id="4021391592916153966">
+                  <link role="annotationLink" targetNodeId="21.5349172909345532723" resolveInfo="methodDocComment" />
+                </node>
+              </node>
+            </node>
+            <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_IsNotNullOperation" id="4021391592916153967" />
+          </node>
+        </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1235739460494">
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1235739460495">
             <property name="name" value="declaringClass" />
@@ -7099,6 +7235,33 @@
     <link role="conceptDeclaration" targetNodeId="1.1068390468200" resolveInfo="FieldDeclaration" />
     <node role="textGenBlock" type="jetbrains.mps.lang.textGen.structure.GenerateTextDeclaration" id="1235741237981">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1235741237982">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="4021391592916578508">
+          <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="4021391592916578509">
+            <node role="statement" type="jetbrains.mps.lang.textGen.structure.AppendOperation" id="4021391592916578510">
+              <node role="part" type="jetbrains.mps.lang.textGen.structure.NodeAppendPart" id="4021391592916578511">
+                <node role="value" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="4021391592916578512">
+                  <node role="operand" type="jetbrains.mps.lang.textGen.structure.NodeParameter" id="4021391592916578513" />
+                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.AttributeAccessOperation" id="4021391592916578514">
+                    <node role="attributeQualifier" type="jetbrains.mps.lang.smodel.structure.NodeAttributeAccessQualifier" id="4021391592916578523">
+                      <link role="annotationLink" targetNodeId="21.6832197706140958194" resolveInfo="fieldDocComment" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+          <node role="condition" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="4021391592916578516">
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="4021391592916578517">
+              <node role="operand" type="jetbrains.mps.lang.textGen.structure.NodeParameter" id="4021391592916578518" />
+              <node role="operation" type="jetbrains.mps.lang.smodel.structure.AttributeAccessOperation" id="4021391592916578519">
+                <node role="attributeQualifier" type="jetbrains.mps.lang.smodel.structure.NodeAttributeAccessQualifier" id="4021391592916578522">
+                  <link role="annotationLink" targetNodeId="21.6832197706140958194" resolveInfo="fieldDocComment" />
+                </node>
+              </node>
+            </node>
+            <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_IsNotNullOperation" id="4021391592916578521" />
+          </node>
+        </node>
         <node role="statement" type="jetbrains.mps.lang.textGen.structure.AppendOperation" id="1237559735743">
           <node role="part" type="jetbrains.mps.lang.textGen.structure.NewLineAppendPart" id="1237559737308" />
           <node role="part" type="jetbrains.mps.lang.textGen.structure.OperationCall" id="1237981943134">
