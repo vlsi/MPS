@@ -1374,6 +1374,24 @@
       <property name="sourceCardinality" value="0..n" />
       <link role="target" targetNodeId="4778346850551666963" resolveInfo="InequationReference" />
     </node>
+    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1320713984677672382">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="afterGroups" />
+      <property name="sourceCardinality" value="0..n" />
+      <link role="target" targetNodeId="1320713984677695202" resolveInfo="DefaultGroupReference" />
+    </node>
+    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1320713984677672383">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="beforeGroups" />
+      <property name="sourceCardinality" value="0..n" />
+      <link role="target" targetNodeId="1320713984677695202" resolveInfo="DefaultGroupReference" />
+    </node>
+    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1320713984677695199">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="inequationGroup" />
+      <property name="sourceCardinality" value="1" />
+      <link role="target" targetNodeId="1320713984677695202" resolveInfo="DefaultGroupReference" />
+    </node>
     <node role="propertyDeclaration" type="jetbrains.mps.lang.structure.structure.PropertyDeclaration" id="1212056105818">
       <property name="name" value="inequationPriority" />
       <link role="dataType" targetNodeId="1212056179025" resolveInfo="InequationPriority" />
@@ -2628,6 +2646,42 @@
       <property name="sourceCardinality" value="1" />
       <property name="role" value="inequation" />
       <link role="target" targetNodeId="1212056081426" resolveInfo="AbstractInequationStatement" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1320713984677547791">
+    <property name="name" value="InequationsGroupsRegistry" />
+    <property name="rootable" value="true" />
+    <link role="extends" targetNodeId="1.1133920641626" resolveInfo="BaseConcept" />
+    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1320713984677547797">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="group" />
+      <property name="sourceCardinality" value="0..n" />
+      <link role="target" targetNodeId="1320713984677547792" resolveInfo="InequationsGroup" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1320713984677547792">
+    <property name="name" value="InequationsGroup" />
+    <link role="extends" targetNodeId="1.1133920641626" resolveInfo="BaseConcept" />
+    <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="1320713984677547793">
+      <link role="intfc" targetNodeId="1.1169194658468" resolveInfo="INamedConcept" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1320713984677670354">
+    <property name="name" value="InequationsGroupReference" />
+    <link role="extends" targetNodeId="1320713984677695202" resolveInfo="DefaultGroupReference" />
+    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1320713984677670355">
+      <property name="metaClass" value="reference" />
+      <property name="role" value="group" />
+      <property name="sourceCardinality" value="1" />
+      <link role="target" targetNodeId="1320713984677547792" resolveInfo="InequationsGroup" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1320713984677695202">
+    <property name="name" value="DefaultGroupReference" />
+    <link role="extends" targetNodeId="1.1133920641626" resolveInfo="BaseConcept" />
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1320713984677695204">
+      <property name="value" value="default" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" resolveInfo="alias" />
     </node>
   </node>
 </model>

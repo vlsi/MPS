@@ -13,8 +13,11 @@ public class AbstractInequationStatement extends AbstractEquationStatement {
   public static final String concept = "jetbrains.mps.lang.typesystem.structure.AbstractInequationStatement";
   public static final String LABEL = "label";
   public static final String INEQUATION_PRIORITY = "inequationPriority";
+  public static final String INEQUATION_GROUP = "inequationGroup";
   public static final String AFTER_EQUATIONS = "afterEquations";
   public static final String BEFORE_EQUATIONS = "beforeEquations";
+  public static final String AFTER_GROUPS = "afterGroups";
+  public static final String BEFORE_GROUPS = "beforeGroups";
 
   public AbstractInequationStatement(SNode node) {
     super(node);
@@ -35,6 +38,14 @@ public class AbstractInequationStatement extends AbstractEquationStatement {
 
   public void setInequationPriority(InequationPriority value) {
     super.setProperty(AbstractInequationStatement.INEQUATION_PRIORITY, value.getValueAsString());
+  }
+
+  public DefaultGroupReference getInequationGroup() {
+    return (DefaultGroupReference)this.getChild(DefaultGroupReference.class, AbstractInequationStatement.INEQUATION_GROUP);
+  }
+
+  public void setInequationGroup(DefaultGroupReference node) {
+    super.setChild(AbstractInequationStatement.INEQUATION_GROUP, node);
   }
 
   public int getAfterEquationsesCount() {
@@ -75,6 +86,46 @@ public class AbstractInequationStatement extends AbstractEquationStatement {
 
   public void insertBeforeEquations(InequationReference prev, InequationReference node) {
     this.insertChild(prev, AbstractInequationStatement.BEFORE_EQUATIONS, node);
+  }
+
+  public int getAfterGroupsesCount() {
+    return this.getChildCount(AbstractInequationStatement.AFTER_GROUPS);
+  }
+
+  public Iterator<DefaultGroupReference> afterGroupses() {
+    return this.children(DefaultGroupReference.class, AbstractInequationStatement.AFTER_GROUPS);
+  }
+
+  public List<DefaultGroupReference> getAfterGroupses() {
+    return this.getChildren(DefaultGroupReference.class, AbstractInequationStatement.AFTER_GROUPS);
+  }
+
+  public void addAfterGroups(DefaultGroupReference node) {
+    this.addChild(AbstractInequationStatement.AFTER_GROUPS, node);
+  }
+
+  public void insertAfterGroups(DefaultGroupReference prev, DefaultGroupReference node) {
+    this.insertChild(prev, AbstractInequationStatement.AFTER_GROUPS, node);
+  }
+
+  public int getBeforeGroupsesCount() {
+    return this.getChildCount(AbstractInequationStatement.BEFORE_GROUPS);
+  }
+
+  public Iterator<DefaultGroupReference> beforeGroupses() {
+    return this.children(DefaultGroupReference.class, AbstractInequationStatement.BEFORE_GROUPS);
+  }
+
+  public List<DefaultGroupReference> getBeforeGroupses() {
+    return this.getChildren(DefaultGroupReference.class, AbstractInequationStatement.BEFORE_GROUPS);
+  }
+
+  public void addBeforeGroups(DefaultGroupReference node) {
+    this.addChild(AbstractInequationStatement.BEFORE_GROUPS, node);
+  }
+
+  public void insertBeforeGroups(DefaultGroupReference prev, DefaultGroupReference node) {
+    this.insertChild(prev, AbstractInequationStatement.BEFORE_GROUPS, node);
   }
 
   public static AbstractInequationStatement newInstance(SModel sm, boolean init) {

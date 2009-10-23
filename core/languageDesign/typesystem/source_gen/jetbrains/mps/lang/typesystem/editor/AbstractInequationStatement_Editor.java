@@ -24,6 +24,10 @@ import java.awt.Color;
 import jetbrains.mps.nodeEditor.cellMenu.CompositeSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPart;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
+import jetbrains.mps.smodel.IScope;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandler;
 import jetbrains.mps.smodel.action.NodeFactoryManager;
@@ -56,17 +60,26 @@ public class AbstractInequationStatement_Editor extends DefaultNodeEditor {
     if (node.hasProperty("label")) {
       editorCell.addEditorCell(this.createNonEmptyProperty_9248_1(editorContext, node));
     }
+    if (renderingCondition9248_0(node, editorContext, editorContext.getOperationContext().getScope())) {
+      editorCell.addEditorCell(this.createRefNode_9248_3(editorContext, node));
+    }
     return editorCell;
   }
 
   private EditorCell createCollection_9248_1(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_9248_1");
-    editorCell.addEditorCell(this.createConstant_9248_2(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_9248_5(editorContext, node));
     editorCell.addEditorCell(this.createProperty_9248_1(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_9248_2(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_9248_2(editorContext, node));
     editorCell.addEditorCell(this.createComponent_9248_0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_9248_1(editorContext, node));
     editorCell.addEditorCell(this.createProperty_9248_0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_9248_6(editorContext, node));
+    editorCell.addEditorCell(this.createRefNodeList_9248_2(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_9248_7(editorContext, node));
+    editorCell.addEditorCell(this.createRefNodeList_9248_3(editorContext, node));
     editorCell.addEditorCell(this.createConstant_9248_3(editorContext, node));
     editorCell.addEditorCell(this.createRefNodeList_9248_0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_9248_4(editorContext, node));
@@ -100,27 +113,72 @@ public class AbstractInequationStatement_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_9248_2(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "label:");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "inequation group:");
     editorCell.setCellId("Constant_9248_2");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   private EditorCell createConstant_9248_3(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "before equations:");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "before groups:");
     editorCell.setCellId("Constant_9248_3");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   private EditorCell createConstant_9248_4(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "after equations:");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "after groups:");
     editorCell.setCellId("Constant_9248_4");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
+  private EditorCell createConstant_9248_5(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "label:");
+    editorCell.setCellId("Constant_9248_5");
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+
+  private EditorCell createConstant_9248_6(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "before equations:");
+    editorCell.setCellId("Constant_9248_6");
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+
+  private EditorCell createConstant_9248_7(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "after equations:");
+    editorCell.setCellId("Constant_9248_7");
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+
   private EditorCell createRefNodeList_9248_0(EditorContext editorContext, SNode node) {
+    AbstractCellListHandler handler = new AbstractInequationStatement_Editor.beforeGroupsListHandler_9248_0(node, "beforeGroups", editorContext);
+    EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Indent(), false);
+    editorCell.setCellId("refNodeList_beforeGroups");
+    {
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
+    }
+    editorCell.setRole(handler.getElementRole());
+    return editorCell;
+  }
+
+  private EditorCell createRefNodeList_9248_1(EditorContext editorContext, SNode node) {
+    AbstractCellListHandler handler = new AbstractInequationStatement_Editor.afterGroupsListHandler_9248_0(node, "afterGroups", editorContext);
+    EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Indent(), false);
+    editorCell.setCellId("refNodeList_afterGroups");
+    {
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
+    }
+    editorCell.setRole(handler.getElementRole());
+    return editorCell;
+  }
+
+  private EditorCell createRefNodeList_9248_2(EditorContext editorContext, SNode node) {
     AbstractCellListHandler handler = new AbstractInequationStatement_Editor.beforeEquationsListHandler_9248_0(node, "beforeEquations", editorContext);
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Indent(), false);
     editorCell.setCellId("refNodeList_beforeEquations");
@@ -132,7 +190,7 @@ public class AbstractInequationStatement_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefNodeList_9248_1(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNodeList_9248_3(EditorContext editorContext, SNode node) {
     AbstractCellListHandler handler = new AbstractInequationStatement_Editor.afterEquationsListHandler_9248_0(node, "afterEquations", editorContext);
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Indent(), false);
     editorCell.setCellId("refNodeList_afterEquations");
@@ -255,6 +313,44 @@ public class AbstractInequationStatement_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
+  private EditorCell createRefNode_9248_2(EditorContext editorContext, SNode node) {
+    CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
+    provider.setRole("inequationGroup");
+    provider.setNoTargetText("<no inequationGroup>");
+    EditorCell editorCell;
+    editorCell = provider.createEditorCell(editorContext);
+    {
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
+    }
+    editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
+    SNode attributeConcept = provider.getRoleAttribute();
+    Class attributeKind = provider.getRoleAttributeClass();
+    if (attributeConcept != null) {
+      IOperationContext opContext = editorContext.getOperationContext();
+      EditorManager manager = EditorManager.getInstanceFromContext(opContext);
+      return manager.createRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
+    } else
+    return editorCell;
+  }
+
+  private EditorCell createRefNode_9248_3(EditorContext editorContext, SNode node) {
+    CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
+    provider.setRole("inequationGroup");
+    provider.setNoTargetText("<no inequationGroup>");
+    EditorCell editorCell;
+    editorCell = provider.createEditorCell(editorContext);
+    editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
+    SNode attributeConcept = provider.getRoleAttribute();
+    Class attributeKind = provider.getRoleAttributeClass();
+    if (attributeConcept != null) {
+      IOperationContext opContext = editorContext.getOperationContext();
+      EditorManager manager = EditorManager.getInstanceFromContext(opContext);
+      return manager.createRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
+    } else
+    return editorCell;
+  }
+
   private EditorCell createNonEmptyProperty_9248_1(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("label");
@@ -298,11 +394,113 @@ public class AbstractInequationStatement_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
+  private static boolean renderingCondition9248_0(SNode node, EditorContext editorContext, IScope scope) {
+    return (SLinkOperations.getTarget(node, "inequationGroup", true) != null) && !(SConceptOperations.isExactly(SNodeOperations.getConceptDeclaration(SLinkOperations.getTarget(node, "inequationGroup", true)), "jetbrains.mps.lang.typesystem.structure.DefaultGroupReference"));
+  }
+
   private static Color _StyleParameter_QueryFunction_9248_0(SNode node, EditorContext editorContext) {
     if (SPropertyOperations.getBoolean(node, "checkOnly")) {
       return Color.GRAY;
     } else {
       return Color.BLACK;
+    }
+  }
+
+  private static class beforeGroupsListHandler_9248_0 extends RefNodeListHandler {
+    public beforeGroupsListHandler_9248_0(SNode ownerNode, String childRole, EditorContext context) {
+      super(ownerNode, childRole, context, false);
+    }
+
+    public SNode createNodeToInsert(EditorContext editorContext) {
+      SNode listOwner = super.getOwner();
+      return NodeFactoryManager.createNode(listOwner, editorContext, super.getElementRole());
+    }
+
+    public EditorCell createNodeCell(EditorContext editorContext, SNode elementNode) {
+      EditorCell elementCell = super.createNodeCell(editorContext, elementNode);
+      this.installElementCellActions(this.getOwner(), elementNode, elementCell, editorContext);
+      return elementCell;
+    }
+
+    public EditorCell createEmptyCell(EditorContext editorContext) {
+      EditorCell emptyCell = null;
+      emptyCell = super.createEmptyCell(editorContext);
+      this.installElementCellActions(super.getOwner(), null, emptyCell, editorContext);
+      return emptyCell;
+    }
+
+    public void installElementCellActions(SNode listOwner, SNode elementNode, EditorCell elementCell, EditorContext editorContext) {
+      if (elementCell.getUserObject(AbstractCellListHandler.ELEMENT_CELL_ACTIONS_SET) == null) {
+        elementCell.putUserObject(AbstractCellListHandler.ELEMENT_CELL_ACTIONS_SET, AbstractCellListHandler.ELEMENT_CELL_ACTIONS_SET);
+        SNode substituteInfoNode = listOwner;
+        if (elementNode != null) {
+          substituteInfoNode = elementNode;
+          elementCell.setAction(CellActionType.DELETE, new CellAction_DeleteNode(elementNode));
+          elementCell.addKeyMap(new RefNodeListHandlerElementKeyMap(this, ","));
+        }
+        if (elementCell.getSubstituteInfo() == null || elementCell.getSubstituteInfo() instanceof DefaultReferenceSubstituteInfo) {
+          elementCell.setSubstituteInfo(new DefaultChildSubstituteInfo(listOwner, elementNode, super.getLinkDeclaration(), editorContext));
+        }
+      }
+    }
+
+    public EditorCell createSeparatorCell(EditorContext editorContext) {
+      {
+        EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, this.getOwner(), ",");
+        editorCell.setSelectable(false);
+        editorCell.getStyle().set(StyleAttributes.LAYOUT_CONSTRAINT, "");
+        editorCell.getStyle().set(StyleAttributes.PUNCTUATION_LEFT, true);
+        return editorCell;
+      }
+    }
+  }
+
+  private static class afterGroupsListHandler_9248_0 extends RefNodeListHandler {
+    public afterGroupsListHandler_9248_0(SNode ownerNode, String childRole, EditorContext context) {
+      super(ownerNode, childRole, context, false);
+    }
+
+    public SNode createNodeToInsert(EditorContext editorContext) {
+      SNode listOwner = super.getOwner();
+      return NodeFactoryManager.createNode(listOwner, editorContext, super.getElementRole());
+    }
+
+    public EditorCell createNodeCell(EditorContext editorContext, SNode elementNode) {
+      EditorCell elementCell = super.createNodeCell(editorContext, elementNode);
+      this.installElementCellActions(this.getOwner(), elementNode, elementCell, editorContext);
+      return elementCell;
+    }
+
+    public EditorCell createEmptyCell(EditorContext editorContext) {
+      EditorCell emptyCell = null;
+      emptyCell = super.createEmptyCell(editorContext);
+      this.installElementCellActions(super.getOwner(), null, emptyCell, editorContext);
+      return emptyCell;
+    }
+
+    public void installElementCellActions(SNode listOwner, SNode elementNode, EditorCell elementCell, EditorContext editorContext) {
+      if (elementCell.getUserObject(AbstractCellListHandler.ELEMENT_CELL_ACTIONS_SET) == null) {
+        elementCell.putUserObject(AbstractCellListHandler.ELEMENT_CELL_ACTIONS_SET, AbstractCellListHandler.ELEMENT_CELL_ACTIONS_SET);
+        SNode substituteInfoNode = listOwner;
+        if (elementNode != null) {
+          substituteInfoNode = elementNode;
+          elementCell.setAction(CellActionType.DELETE, new CellAction_DeleteNode(elementNode));
+          elementCell.addKeyMap(new RefNodeListHandlerElementKeyMap(this, ","));
+        }
+        if (elementCell.getSubstituteInfo() == null || elementCell.getSubstituteInfo() instanceof DefaultReferenceSubstituteInfo) {
+          elementCell.setSubstituteInfo(new DefaultChildSubstituteInfo(listOwner, elementNode, super.getLinkDeclaration(), editorContext));
+        }
+      }
+    }
+
+    public EditorCell createSeparatorCell(EditorContext editorContext) {
+      {
+        EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, this.getOwner(), ",");
+        editorCell.setSelectable(false);
+        editorCell.getStyle().set(StyleAttributes.LAYOUT_CONSTRAINT, "");
+        editorCell.getStyle().set(StyleAttributes.PUNCTUATION_LEFT, true);
+        return editorCell;
+      }
     }
   }
 

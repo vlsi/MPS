@@ -15,4 +15,12 @@ public class TypesystemStyles_StyleSheet {
     style.set(StyleAttributes.NULL_TEXT_COLOR, MPSColors.lightGray);
     return style;
   }
+
+  public static Style getInequationsGroupsLabel(final EditorCell cell) {
+    Style style = new Style(cell);
+    style.set(StyleAttributes.BACKGROUND_COLOR, MPSColors.DARK_MAGENTA);
+    style.set(StyleAttributes.TEXT_COLOR, MPSColors.WHITE);
+    style.set(StyleAttributes.NULL_TEXT_COLOR, MPSColors.lightGray);
+    return style;
+  }
 }
