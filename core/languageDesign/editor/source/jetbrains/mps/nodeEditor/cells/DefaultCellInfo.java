@@ -73,6 +73,7 @@ public class DefaultCellInfo implements CellInfo {
       }
       if (myCellNumber < parent.getChildCount()) {
         EditorCell editorCell = parent.getChildAt(myCellNumber);
+        // Cell should have same cellId, and myCellId is null.
         if (editorCell.getCellId() != null) {
           return null;
         }
