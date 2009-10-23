@@ -24,10 +24,12 @@ import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import org.jdom.Element;
+import org.jetbrains.annotations.NotNull;
 
 
 public class DefaultCellInfo implements CellInfo {
 
+  @NotNull
   private SNodePointer myNodePointer;
   private String myCellId;
   private int myCellNumber;
@@ -56,34 +58,12 @@ public class DefaultCellInfo implements CellInfo {
     }
   }
 
-  public DefaultCellInfo(Element cellElement, IScope scope) {
-    Element nodeElement = cellElement.getChild(ComponentsUtil.NODE);
-    Element parentInfoElement = cellElement.getChild(ComponentsUtil.CELL_INFO);
-    String cellId = cellElement.getAttributeValue(ComponentsUtil.ID);
-    String cellNumber = cellElement.getAttributeValue(ComponentsUtil.NUMBER);
-    String isInList = cellElement.getAttributeValue(ComponentsUtil.IS_IN_LIST);
-    myNodePointer =  new SNodePointer(ComponentsUtil.nodeFromElement(nodeElement, scope));
-    myCellId = cellId;
-    if (parentInfoElement != null) {
-      if (cellNumber != null) {
-        myCellNumber = Integer.parseInt(cellNumber);
-      }
-      if (isInList != null) {
-        myIsInList = "true".equals(isInList);
-      }
-      myParentInfo = new DefaultCellInfo(parentInfoElement, scope);
-    }
-  }
-
   public int hashCode() {
     return (myParentInfo == null ? 0 : myParentInfo.hashCode()) +
-        (myNodePointer == null?0: myNodePointer.hashCode()) + (myCellId == null?0:myCellId.hashCode()) + myCellNumber;
+         myNodePointer.hashCode() + (myCellId == null?0:myCellId.hashCode()) + myCellNumber;
   }
 
   public EditorCell findCell(EditorComponent editorComponent) {
-    if (myNodePointer == null) {
-      return null;
-    }
     if (myCellId != null) {
       return editorComponent.findCellWithId(myNodePointer.getNode(), myCellId);
     } else if (myParentInfo != null) {
