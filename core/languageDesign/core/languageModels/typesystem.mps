@@ -592,5 +592,19 @@
       <link role="concept" targetNodeId="1.1133920641626" resolveInfo="BaseConcept" />
     </node>
   </node>
+  <node type="jetbrains.mps.lang.typesystem.structure.InequationsGroupsRegistry" id="1759628044690732296">
+    <node role="group" type="jetbrains.mps.lang.typesystem.structure.InequationsGroup" id="1759628044690732298">
+      <property name="name" value="priority_1" />
+    </node>
+    <node role="group" type="jetbrains.mps.lang.typesystem.structure.InequationsGroup" id="1759628044690732299">
+      <property name="name" value="priority_2" />
+    </node>
+    <node role="group" type="jetbrains.mps.lang.typesystem.structure.InequationsGroup" id="1759628044690732300">
+      <property name="name" value="priority_3" />
+    </node>
+    <node role="group" type="jetbrains.mps.lang.typesystem.structure.InequationsGroup" id="1759628044690732301">
+      <property name="name" value="priority_4" />
+    </node>
+  </node>
 </model>
 
