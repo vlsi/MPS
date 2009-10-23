@@ -81,12 +81,20 @@ public class InequationsPrioritiesSynthesizer {
 
     //creating map by id
     Map<Pair<String, String>, Set<EquationInfo>> ineqIdsToIneqs = new HashMap<Pair<String, String>, Set<EquationInfo>>();
+    Map<String, Set<EquationInfo>> ineqGroupsToIneqs = new HashMap<String, Set<EquationInfo>>();
     for (EquationInfo equationInfo : allEqInfos) {
       Pair<String, String> id = new Pair<String, String>(equationInfo.getRuleModel(), equationInfo.getRuleId());
       Set<EquationInfo> equationInfos = ineqIdsToIneqs.get(id);
       if (equationInfos == null) {
         equationInfos = new HashSet<EquationInfo>();
         ineqIdsToIneqs.put(id, equationInfos);
+      }
+      equationInfos.add(equationInfo);
+      String groupId = equationInfo.getInequationGroup();
+      equationInfos = ineqGroupsToIneqs.get(groupId);
+      if (equationInfos == null) {
+        equationInfos = new HashSet<EquationInfo>();
+        ineqGroupsToIneqs.put(groupId, equationInfos);
       }
       equationInfos.add(equationInfo);
     }
@@ -102,9 +110,21 @@ public class InequationsPrioritiesSynthesizer {
           nextEquationsInfos.addAll(equationInfos);
         }
       }
+      for (String groupId : equationInfo.getInequationGroupsAfter()) {
+        Set<EquationInfo> equationInfos = ineqGroupsToIneqs.get(groupId);
+        if (equationInfos != null) {
+          nextEquationsInfos.addAll(equationInfos);
+        }
+      }
       Set<EquationInfo> prevEquationsInfos = new HashSet<EquationInfo>();
       for (Pair<String, String> ineqsBefore : equationInfo.getInequationIdsBefore()) {
         Set<EquationInfo> equationInfos = ineqIdsToIneqs.get(ineqsBefore);
+        if (equationInfos != null) {
+          prevEquationsInfos.addAll(equationInfos);
+        }
+      }
+      for (String groupId : equationInfo.getInequationGroupsBefore()) {
+        Set<EquationInfo> equationInfos = ineqGroupsToIneqs.get(groupId);
         if (equationInfos != null) {
           prevEquationsInfos.addAll(equationInfos);
         }

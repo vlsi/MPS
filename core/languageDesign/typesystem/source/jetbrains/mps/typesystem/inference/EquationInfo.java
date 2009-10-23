@@ -22,12 +22,8 @@ import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.intentions.IntentionProvider;
 import jetbrains.mps.util.Pair;
 
-import java.util.List;
 import java.util.Set;
 import java.util.HashSet;
-import java.util.Map;
-
-import com.intellij.util.containers.HashMap;
 
 public class EquationInfo {
 
@@ -36,8 +32,11 @@ public class EquationInfo {
 
   private String myRuleModel;
   private String myRuleId;
+  private String myInequationGroup = "default";
   private Set<Pair<String, String>> myInequationIdsBefore = null;
   private Set<Pair<String, String>> myInequationIdsAfter = null;
+  private Set<String> myInequationGroupsBefore = null;
+  private Set<String> myInequationGroupsAfter = null;
 
   private IntentionProvider myIntentionProvider;
 
@@ -97,6 +96,10 @@ public class EquationInfo {
     return myRuleId;
   }
 
+  public String getInequationGroup() {
+    return myInequationGroup;
+  }
+
   public int getInequationPriority() {
     return myInequationPriority;
   }
@@ -125,6 +128,24 @@ public class EquationInfo {
     myInequationIdsAfter.add(new Pair<String, String>(modelId, equationId));
   }
 
+  public void addInequationGroupBefore(String groupId) {
+    if (myInequationGroupsBefore == null) {
+      myInequationGroupsBefore = new HashSet<String>(2);
+    }
+    myInequationGroupsBefore.add(groupId);
+  }
+
+  public void addInequationGroupAfter(String groupId) {
+    if (myInequationGroupsAfter == null) {
+      myInequationGroupsAfter = new HashSet<String>(2);
+    }
+    myInequationGroupsAfter.add(groupId);
+  }
+
+  public void setInequationGroup(String inequationGroup) {
+    myInequationGroup = inequationGroup;
+  }
+
   boolean isStrong() {
     return myIsStrong;
   }
@@ -133,38 +154,19 @@ public class EquationInfo {
     myIsStrong = true;
   }
 
-  public int compareTo(EquationInfo o) {
-    boolean iAmBefore = false;
-    boolean iAmAfter = false;
-    if (myInequationIdsAfter != null && myInequationIdsAfter.contains(new Pair<String, String>(o.getRuleModel(), o.getRuleId()))) {
-      iAmBefore = true;
-    }
-    if (o.myInequationIdsBefore != null && o.myInequationIdsBefore.contains(new Pair<String, String>(myRuleModel, myRuleId))) {
-      iAmBefore = true;
-    }
-    if (myInequationIdsBefore != null && myInequationIdsBefore.contains(new Pair<String, String>(o.getRuleModel(), o.getRuleId()))) {
-      iAmAfter = true;
-    }
-    if (o.myInequationIdsAfter != null && o.myInequationIdsAfter.contains(new Pair<String, String>(myRuleModel, myRuleId))) {
-      iAmAfter = true;
-    }
-    if (iAmBefore && iAmAfter) {
-      throw new RuntimeException("inequations' priorities form a contradictional cycle: " + myRuleId + " and " + o.getRuleId());
-    }
-    if (iAmBefore) {
-      return -1;
-    }
-    if (iAmAfter) {
-      return 1;
-    }
-    return myInequationPriority - o.myInequationPriority;
-  }
-
   public Set<Pair<String, String>> getInequationIdsAfter() {
     return myInequationIdsAfter == null ? new HashSet<Pair<String, String>>() : myInequationIdsAfter;
   }
 
   public Set<Pair<String, String>> getInequationIdsBefore() {
     return myInequationIdsBefore == null ? new HashSet<Pair<String, String>>() : myInequationIdsBefore;
+  }
+
+  public Set<String> getInequationGroupsAfter() {
+    return myInequationGroupsAfter == null ? new HashSet<String>() : myInequationGroupsAfter;
+  }
+
+  public Set<String> getInequationGroupsBefore() {
+    return myInequationGroupsBefore == null ? new HashSet<String>() : myInequationGroupsBefore;
   }
 }
