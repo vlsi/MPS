@@ -21,6 +21,7 @@ import jetbrains.mps.generator.template.PropertyMacroContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptPropertyOperations;
 import jetbrains.mps.lang.core.behavior.INamedConcept_Behavior;
 import jetbrains.mps.lang.structure.behavior.LinkDeclaration_Behavior;
+import jetbrains.mps.lang.typesystem.behavior.DefaultGroupReference_Behavior;
 import jetbrains.mps.generator.template.ReferenceMacroContext;
 import jetbrains.mps.smodel.search.ISearchScope;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
@@ -29,6 +30,7 @@ import jetbrains.mps.generator.template.IfMacroContext;
 import jetbrains.mps.lang.typesystem.behavior.FindSourceBlock_Behavior;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.lang.typesystem.behavior.SubtypingRule_Behavior;
+import org.apache.commons.lang.StringUtils;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
 import jetbrains.mps.lang.smodel.behavior.SNodeOperation_Behavior;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
@@ -977,6 +979,27 @@ public class QueriesGenerated {
     return SPropertyOperations.getInteger_def(_context.getNode(), "inequationPriority", "0");
   }
 
+  public static Object propertyMacro_GetPropertyValue_7342618720440051693(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    if (SNodeOperations.isInstanceOf(_context.getNode(), "jetbrains.mps.lang.typesystem.structure.AbstractInequationStatement")) {
+      SNode groupReference = SLinkOperations.getTarget(SNodeOperations.cast(_context.getNode(), "jetbrains.mps.lang.typesystem.structure.AbstractInequationStatement"), "inequationGroup", true);
+      return DefaultGroupReference_Behavior.call_createGeneratedNodeId_7342618720440051599(groupReference);
+    } else {
+      return "";
+    }
+  }
+
+  public static Object propertyMacro_GetPropertyValue_7342618720440051764(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return DefaultGroupReference_Behavior.call_createGeneratedNodeId_7342618720440051599(_context.getNode());
+  }
+
+  public static Object propertyMacro_GetPropertyValue_7342618720440051779(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return DefaultGroupReference_Behavior.call_createGeneratedNodeId_7342618720440051599(_context.getNode());
+  }
+
+  public static Object propertyMacro_GetPropertyValue_7342618720440051818(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return SPropertyOperations.getString(_context.getNode(), "inequationGroup");
+  }
+
   public static Object propertyMacro_GetPropertyValue_7488229814397846045(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return SPropertyOperations.getBoolean(SLinkOperations.getTarget(_context.getNode(), "helginsIntention", true), "applyImmediately");
   }
@@ -1841,6 +1864,10 @@ public class QueriesGenerated {
     return (SLinkOperations.getTarget(_context.getNode(), "errorString", true) == null);
   }
 
+  public static boolean ifMacro_Condition_7342618720440051803(final IOperationContext operationContext, final IfMacroContext _context) {
+    return StringUtils.isNotEmpty(SPropertyOperations.getString(_context.getNode(), "inequationGroup"));
+  }
+
   public static boolean ifMacro_Condition_8224738963706830970(final IOperationContext operationContext, final IfMacroContext _context) {
     return (SLinkOperations.getTarget(_context.getNode(), "isApplicableClause", true) != null);
   }
@@ -2565,6 +2592,30 @@ public class QueriesGenerated {
     } else {
       return Sequence.fromIterable(Collections.<SNode>emptyList());
     }
+  }
+
+  public static Iterable sourceNodesQuery_7342618720440049252(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
+    if (SNodeOperations.isInstanceOf(_context.getNode(), "jetbrains.mps.lang.typesystem.structure.AbstractInequationStatement")) {
+      return SLinkOperations.getTargets(SNodeOperations.cast(_context.getNode(), "jetbrains.mps.lang.typesystem.structure.AbstractInequationStatement"), "beforeGroups", true);
+    } else {
+      return Sequence.fromIterable(Collections.<SNode>emptyList());
+    }
+  }
+
+  public static Iterable sourceNodesQuery_7342618720440049256(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
+    if (SNodeOperations.isInstanceOf(_context.getNode(), "jetbrains.mps.lang.typesystem.structure.AbstractInequationStatement")) {
+      return SLinkOperations.getTargets(SNodeOperations.cast(_context.getNode(), "jetbrains.mps.lang.typesystem.structure.AbstractInequationStatement"), "afterGroups", true);
+    } else {
+      return Sequence.fromIterable(Collections.<SNode>emptyList());
+    }
+  }
+
+  public static Iterable sourceNodesQuery_7342618720440051743(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
+    return SLinkOperations.getTargets(_context.getNode(), "afterGroups", true);
+  }
+
+  public static Iterable sourceNodesQuery_7342618720440051747(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
+    return SLinkOperations.getTargets(_context.getNode(), "beforeGroups", true);
   }
 
   public static Iterable sourceNodesQuery_8056429548978994645(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {

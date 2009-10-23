@@ -1543,6 +1543,18 @@
       <property name="sourceCardinality" value="0..n" />
       <link role="target" targetNodeId="4778346850551666963" resolveInfo="InequationReference" />
     </node>
+    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="7342618720439823027">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="afterGroups" />
+      <property name="sourceCardinality" value="0..n" />
+      <link role="target" targetNodeId="1320713984677695202" resolveInfo="DefaultGroupReference" />
+    </node>
+    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="7342618720439823028">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="beforeGroups" />
+      <property name="sourceCardinality" value="0..n" />
+      <link role="target" targetNodeId="1320713984677695202" resolveInfo="DefaultGroupReference" />
+    </node>
     <node role="propertyDeclaration" type="jetbrains.mps.lang.structure.structure.PropertyDeclaration" id="1215689656618">
       <property name="name" value="checkOnly" />
       <link role="dataType" targetNodeId="1.1082983657063" resolveInfo="boolean" />
@@ -1557,6 +1569,10 @@
     </node>
     <node role="propertyDeclaration" type="jetbrains.mps.lang.structure.structure.PropertyDeclaration" id="1215689731418">
       <property name="name" value="symbol" />
+      <link role="dataType" targetNodeId="1.1082983041843" resolveInfo="string" />
+    </node>
+    <node role="propertyDeclaration" type="jetbrains.mps.lang.structure.structure.PropertyDeclaration" id="7342618720439823029">
+      <property name="name" value="inequationGroup" />
       <link role="dataType" targetNodeId="1.1082983041843" resolveInfo="string" />
     </node>
     <node role="propertyDeclaration" type="jetbrains.mps.lang.structure.structure.PropertyDeclaration" id="1215689874440">

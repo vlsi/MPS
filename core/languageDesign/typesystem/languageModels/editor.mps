@@ -2968,6 +2968,15 @@
           <property name="flag" value="true" />
         </node>
       </node>
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="7342618720439823041">
+        <property name="text" value="inequation group:" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Property" id="7342618720439823042">
+        <link role="relationDeclaration" targetNodeId="1.7342618720439823029" resolveInfo="inequationGroup" />
+        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.IndentLayoutNewLineStyleClassItem" id="7342618720439823043">
+          <property name="flag" value="true" />
+        </node>
+      </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="792701744776129735">
         <property name="text" value="before equations:" />
       </node>
@@ -2987,6 +2996,28 @@
         <link role="relationDeclaration" targetNodeId="1.792701744776129732" />
         <node role="cellLayout" type="jetbrains.mps.lang.editor.structure.CellLayout_Indent" id="792701744776129746" />
         <node role="styleItem" type="jetbrains.mps.lang.editor.structure.IndentLayoutNewLineStyleClassItem" id="792701744776129747">
+          <property name="flag" value="true" />
+        </node>
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="7342618720439823031">
+        <property name="text" value="before groups:" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNodeList" id="7342618720439823032">
+        <property name="separatorText" value="," />
+        <link role="relationDeclaration" targetNodeId="1.7342618720439823028" />
+        <node role="cellLayout" type="jetbrains.mps.lang.editor.structure.CellLayout_Indent" id="7342618720439823033" />
+        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.IndentLayoutNewLineStyleClassItem" id="7342618720439823034">
+          <property name="flag" value="true" />
+        </node>
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="7342618720439823035">
+        <property name="text" value="after groups:" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNodeList" id="7342618720439823036">
+        <property name="separatorText" value="," />
+        <link role="relationDeclaration" targetNodeId="1.7342618720439823027" />
+        <node role="cellLayout" type="jetbrains.mps.lang.editor.structure.CellLayout_Indent" id="7342618720439823037" />
+        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.IndentLayoutNewLineStyleClassItem" id="7342618720439823038">
           <property name="flag" value="true" />
         </node>
       </node>
