@@ -18,11 +18,8 @@ package jetbrains.mps.watching;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.openapi.vfs.newvfs.events.VFileEvent;
-import jetbrains.mps.smodel.SModelDescriptor;
-import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.vcs.ApplicationLevelVcsManager;
 import jetbrains.mps.vcs.MPSVCSManager;
-import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.fileTypes.MPSFileTypesManager;
 import jetbrains.mps.project.IModule;
 
@@ -48,7 +45,7 @@ class BeforeModuleEventProcessor extends EventProcessor {
       if (MPSFileTypesManager.instance().isModuleFile(vfile)) {
         Project project = ApplicationLevelVcsManager.instance().getProjectForFile(vfile);
         if (project != null) {
-          MPSVCSManager.getInstance(project).deleteVirtualFilesAndRemoveFromVcs(Collections.singleton(vfile), true);
+          MPSVCSManager.getInstance(project).deleteFromDiskAndRemoveFromVcs(Collections.singleton(vfile), true);
         }
       }
     }

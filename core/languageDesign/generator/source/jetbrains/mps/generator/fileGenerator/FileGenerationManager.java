@@ -22,29 +22,23 @@ import com.intellij.openapi.vfs.VirtualFile;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.generator.GenerationStatus;
-import jetbrains.mps.generator.ModelGenerationStatusManager;
-import jetbrains.mps.generator.ModelDigestIndex;
 import jetbrains.mps.generator.template.TemplateQueryContext;
 import jetbrains.mps.generator.generationTypes.TextGenerationUtil.TextGenerationResult;
 import jetbrains.mps.generator.generationTypes.TextGenerationUtil;
 import jetbrains.mps.vcs.MPSVCSManager;
 import jetbrains.mps.ide.IdeMain;
 import jetbrains.mps.vfs.VFileSystem;
-import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.baseLanguage.textGen.ModelDependencies;
 import jetbrains.mps.baseLanguage.textGen.RootDependencies;
 import jetbrains.mps.textGen.TextGenManager;
 import jetbrains.mps.util.NameUtil;
-import jetbrains.mps.util.ReadUtil;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.debug.DebugInfo;
 import jetbrains.mps.debug.PositionInfo;
 
 import java.io.File;
 import java.io.IOException;
-import java.io.InputStream;
 import java.util.*;
 
 public class FileGenerationManager implements ApplicationComponent {
@@ -154,7 +148,7 @@ public class FileGenerationManager implements ApplicationComponent {
       }
     }
     MPSVCSManager manager = context.getComponent(MPSVCSManager.class);
-    manager.deleteFilesAndRemoveFromVcs(filesToDelete, false);
+    manager.deleteFromDiskAndRemoveFromVcs(filesToDelete, false);
   }
 
   private void refreshGeneratedFiles(final Set<File> generatedFiles) {

@@ -29,7 +29,6 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.Pair;
-import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.VFileSystem;
 import jetbrains.mps.watching.ModelChangesWatcher;
@@ -95,28 +94,27 @@ public class MPSVCSManager implements ProjectComponent {
     return myManager.getAllVersionedRoots().length > 0;
   }
 
-  public void deleteFilesAndRemoveFromVcs(final List<File> files, final boolean silently) {
+  public void deleteFromDiskAndRemoveFromVcs(final List<File> files, final boolean silently) {
     if (files.size() == 0) return;
-      for (File f : files) {
-        f.delete();
-      }
+    for (File f : files) {
+      f.delete();
+    }
     if (!isProjectUnderVcs()) {
       return;
     }
-    myRemoveOperationScheduler.invokeLater(new RemoveOperation(files, myManager, myProject,
-      myRemoveOption, silently));
+    removeFromVcs(files, silently);
     return;
   }
 
-  public void deleteVirtualFilesAndRemoveFromVcs(final Set<VirtualFile> virtualFiles, final boolean silently) {
+  public void deleteFromDiskAndRemoveFromVcs(final Set<VirtualFile> virtualFiles, final boolean silently) {
     if (virtualFiles.size() == 0) return;
-      for (VirtualFile f : virtualFiles) {
-        try {
-          f.delete(this);
-        } catch (IOException e) {
-          LOG.error("Error while deleting file " + f + "\n", e);
-        }
+    for (VirtualFile f : virtualFiles) {
+      try {
+        f.delete(this);
+      } catch (IOException e) {
+        LOG.error("Error while deleting file " + f + "\n", e);
       }
+    }
     if (!isProjectUnderVcs()) {
       return;
     }
@@ -124,6 +122,10 @@ public class MPSVCSManager implements ProjectComponent {
     for (VirtualFile f : virtualFiles) {
       files.add(VFileSystem.toFile(f));
     }
+    removeFromVcs(files, silently);
+  }
+
+  public void removeFromVcs(List<File> files, boolean silently) {
     myRemoveOperationScheduler.invokeLater(new RemoveOperation(files, myManager, myProject,
       myRemoveOption, silently));
   }
@@ -256,7 +258,7 @@ public class MPSVCSManager implements ProjectComponent {
     public void modelFileChanged(SModelDescriptor modelDescriptor, IFile ifrom) {
       if (ifrom != null) {
         VirtualFile from = VFileSystem.getFile(ifrom);
-        deleteVirtualFilesAndRemoveFromVcs(Collections.singleton(from), true);
+        deleteFromDiskAndRemoveFromVcs(Collections.singleton(from), true);
         modelDescriptor.addModelListener(myModelInitializationListener);
       }
     }

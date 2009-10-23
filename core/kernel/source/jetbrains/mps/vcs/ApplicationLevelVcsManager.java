@@ -261,7 +261,7 @@ public class ApplicationLevelVcsManager implements ApplicationComponent, Persist
 
     // remove
     for (MPSVCSManager manager : vcsManagerToFile.keySet()) {
-      manager.deleteFilesAndRemoveFromVcs(vcsManagerToFile.get(manager), true);
+      manager.deleteFromDiskAndRemoveFromVcs(vcsManagerToFile.get(manager), true);
     }
   }
 

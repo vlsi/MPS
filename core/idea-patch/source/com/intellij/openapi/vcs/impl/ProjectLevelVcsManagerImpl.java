@@ -218,7 +218,7 @@ public class ProjectLevelVcsManagerImpl extends ProjectLevelVcsManagerEx impleme
           if (vcsFor != null) {
             return vcsFor;
           } else {
-            return findVersioningVcs(vFile);
+            return findVersioningVcs(vFile.getParent());
           }
           // MPS Patch end
         }

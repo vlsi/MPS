@@ -15,7 +15,6 @@
  */
 package jetbrains.mps.refactoring.renameLanguage;
 
-import com.intellij.openapi.progress.EmptyProgressIndicator;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.generator.fileGenerator.FileGenerationUtil;
 import jetbrains.mps.ide.genconf.GeneratorConfigUtil;
@@ -26,7 +25,6 @@ import jetbrains.mps.project.structure.modules.LanguageDescriptor;
 import jetbrains.mps.refactoring.framework.AbstractLoggableRefactoring;
 import jetbrains.mps.refactoring.framework.RefactoringContext;
 import jetbrains.mps.refactoring.framework.OldRefactoringAdapter;
-import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.vcs.MPSVCSManager;
@@ -70,7 +68,7 @@ public class LanguageRenamer {
 
   private void deleteOldFiles(List<File> oldModelRoots) {
     List<File> newModelRoots = getModelOutputRoots();
-    MPSVCSManager.getInstance(myProject).deleteFilesAndRemoveFromVcs(getFilesToDelete(oldModelRoots, newModelRoots), true);
+    MPSVCSManager.getInstance(myProject).deleteFromDiskAndRemoveFromVcs(getFilesToDelete(oldModelRoots, newModelRoots), true);
   }
 
   private void renameLanguage(String oldFqName) {

@@ -71,14 +71,14 @@ class RemoveOperation extends VcsOperation {
             "Do you want to delete the following file from Vcs?\n{0}\n\nIf you say NO, you can still delete it later manually.", myConfirmationOption);
           if (filePathCollection != null) {
             performWithoutAsking(filePathCollection);
-            justDelete(CollectionUtil.subtract(myFilePathsToDelete, filePathCollection));
+//            justDelete(CollectionUtil.subtract(myFilePathsToDelete, filePathCollection));
           } else {
-            justDelete(myFilePathsToDelete);
+//            justDelete(myFilePathsToDelete);
           }
         }
       });
     } else {
-      justDelete(myFilePathsToDelete);
+//      justDelete(myFilePathsToDelete);
     }
   }
 
@@ -103,23 +103,6 @@ class RemoveOperation extends VcsOperation {
         if (ci != null) {
           ci.scheduleMissingFileForDeletion(Collections.singletonList(filePath));
           VcsDirtyScopeManager.getInstance(myProject).fileDirty(filePath);
-        }
-      } else {
-        final VirtualFile file = filePath.getVirtualFile();
-        if (file != null) {
-          ApplicationManager.getApplication().invokeLater(new Runnable() {
-            public void run() {
-              ApplicationManager.getApplication().runWriteAction(new Runnable() {
-                public void run() {
-                  try {
-                    file.delete(this);
-                  } catch (IOException e) {
-                    LOG.error(e);
-                  }
-                }
-              });
-            }
-          });
         }
       }
     }
