@@ -19,8 +19,8 @@
         <dependency reexport="true">0b608d44-1308-418d-8715-22d040c3b3cc(jetbrains.mps.buildlanguage)</dependency>
       </dependencies>
       <usedLanguages>
-        <usedLanguages>500e32a4-ab9e-46a4-ae29-127ae883d208(jetbrains.mps.build.dependency)</usedLanguages>
-        <usedLanguages>fba399db-f591-45dc-a279-e2a2a986e262(jetbrains.mps.build.generictasks)</usedLanguages>
+        <usedLanguage>500e32a4-ab9e-46a4-ae29-127ae883d208(jetbrains.mps.build.dependency)</usedLanguage>
+        <usedLanguage>fba399db-f591-45dc-a279-e2a2a986e262(jetbrains.mps.build.generictasks)</usedLanguage>
       </usedLanguages>
       <mapping-priorities>
         <mapping-priority-rule kind="strictly_before">
@@ -69,11 +69,11 @@
     <dependency reexport="true">dd61a7d7-8e1b-45a1-9aa3-8585ec2b60fc(jetbrains.mps.build.property)</dependency>
     <dependency reexport="true">0b608d44-1308-418d-8715-22d040c3b3cc(jetbrains.mps.buildlanguage)</dependency>
     <dependency reexport="false">b401a680-8325-4110-8fd3-84331ff25bef(jetbrains.mps.lang.generator)</dependency>
-    <dependency reexport="false">88f8bc48-a7a1-4edf-93ec-38cb00d0c9d5(jetbrains.mps.debug.baseLanguage)</dependency>
+    <dependency reexport="false">88f8bc48-a7a1-4edf-93ec-38cb00d0c9d5(jetbrains.mps.debug)</dependency>
   </dependencies>
   <usedLanguages>
-    <usedLanguages>83888646-71ce-4f1c-9c53-c54016f6ad4f(jetbrains.mps.baseLanguage.collections)</usedLanguages>
-    <usedLanguages>0b608d44-1308-418d-8715-22d040c3b3cc(jetbrains.mps.buildlanguage)</usedLanguages>
+    <usedLanguage>83888646-71ce-4f1c-9c53-c54016f6ad4f(jetbrains.mps.baseLanguage.collections)</usedLanguage>
+    <usedLanguage>0b608d44-1308-418d-8715-22d040c3b3cc(jetbrains.mps.buildlanguage)</usedLanguage>
   </usedLanguages>
   <extendedLanguages>
     <extendedLanguage>dd61a7d7-8e1b-45a1-9aa3-8585ec2b60fc(jetbrains.mps.build.property)</extendedLanguage>

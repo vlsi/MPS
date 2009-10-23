@@ -11,9 +11,9 @@ import jetbrains.mps.project.IModule;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import jetbrains.mps.workbench.MPSDataKeys;
-import jetbrains.mps.debug.baseLanguage.DebugInfo;
-import jetbrains.mps.debug.baseLanguage.BLDebugInfoCache;
-import jetbrains.mps.debug.baseLanguage.PositionInfo;
+import jetbrains.mps.debug.DebugInfo;
+import jetbrains.mps.debug.BLDebugInfoCache;
+import jetbrains.mps.debug.PositionInfo;
 
 public class PrintNodePosition_Action extends GeneratedAction {
   private static final Icon ICON = null;

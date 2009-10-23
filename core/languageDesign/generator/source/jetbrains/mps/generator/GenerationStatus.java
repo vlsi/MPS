@@ -19,7 +19,7 @@ import jetbrains.mps.ide.Status;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.baseLanguage.textGen.ModelDependencies;
-import jetbrains.mps.debug.baseLanguage.DebugInfo;
+import jetbrains.mps.debug.DebugInfo;
 
 /**
  * Igor Alshannikov

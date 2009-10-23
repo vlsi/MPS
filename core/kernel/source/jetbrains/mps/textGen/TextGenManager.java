@@ -26,8 +26,8 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.misc.hash.HashMap;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
-import jetbrains.mps.debug.baseLanguage.PositionInfo;
-import jetbrains.mps.debug.baseLanguage.DebugInfo;
+import jetbrains.mps.debug.PositionInfo;
+import jetbrains.mps.debug.DebugInfo;
 
 import java.util.Map;
 import java.util.List;

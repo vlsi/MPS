@@ -39,8 +39,8 @@ import jetbrains.mps.textGen.TextGenManager;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.ReadUtil;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.debug.baseLanguage.DebugInfo;
-import jetbrains.mps.debug.baseLanguage.PositionInfo;
+import jetbrains.mps.debug.DebugInfo;
+import jetbrains.mps.debug.PositionInfo;
 
 import java.io.File;
 import java.io.IOException;

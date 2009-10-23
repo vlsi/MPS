@@ -133,7 +133,7 @@
   <import index="90" modelUID="r:00000000-0000-4000-0000-011c89590368(jetbrains.mps.lang.plugin.structure)" version="21" />
   <import index="91" modelUID="f:java_stub#com.intellij.openapi.keymap(com.intellij.openapi.keymap@java_stub)" version="-1" />
   <import index="92" modelUID="f:java_stub#jetbrains.mps.project.structure.modules(jetbrains.mps.project.structure.modules@java_stub)" version="-1" />
-  <import index="93" modelUID="r:af5efca5-3385-45cc-9441-f2124214c2e2(jetbrains.mps.debug.baseLanguage)" version="-1" />
+  <import index="93" modelUID="r:af5efca5-3385-45cc-9441-f2124214c2e2(jetbrains.mps.debug)" version="-1" />
   <import index="94" modelUID="f:java_stub#jetbrains.mps.ide.projectPane(jetbrains.mps.ide.projectPane@java_stub)" version="-1" />
   <import index="95" modelUID="f:java_stub#jetbrains.mps.plugins.pluginparts.runconfigs(jetbrains.mps.plugins.pluginparts.runconfigs@java_stub)" version="-1" />
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="1208270545572">

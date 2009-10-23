@@ -50,7 +50,7 @@
   <import index="14" modelUID="f:java_stub#jetbrains.mps.project.structure.modules(jetbrains.mps.project.structure.modules@java_stub)" version="-1" />
   <import index="15" modelUID="f:java_stub#jetbrains.mps.generator.fileGenerator(jetbrains.mps.generator.fileGenerator@java_stub)" version="-1" />
   <import index="16" modelUID="f:java_stub#jetbrains.mps.baseLanguage.textGen(jetbrains.mps.baseLanguage.textGen@java_stub)" version="-1" />
-  <import index="17" modelUID="r:af5efca5-3385-45cc-9441-f2124214c2e2(jetbrains.mps.debug.baseLanguage)" version="-1" />
+  <import index="17" modelUID="r:af5efca5-3385-45cc-9441-f2124214c2e2(jetbrains.mps.debug)" version="-1" />
   <import index="18" modelUID="f:java_stub#java.util(java.util@java_stub)" version="-1" />
   <import index="19" modelUID="f:java_stub#com.intellij.openapi.components(com.intellij.openapi.components@java_stub)" version="-1" />
   <node type="jetbrains.mps.lang.behavior.structure.ConceptBehavior" id="1213877173053">

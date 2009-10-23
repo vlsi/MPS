@@ -15,7 +15,7 @@ import jetbrains.mps.workbench.tools.CloseAction;
 import com.intellij.openapi.actionSystem.ActionManager;
 import com.intellij.openapi.actionSystem.ActionPlaces;
 import com.intellij.openapi.util.Disposer;
-import jetbrains.mps.debug.baseLanguage.StacktraceUtil;
+import jetbrains.mps.debug.StacktraceUtil;
 import com.intellij.execution.ui.ConsoleViewContentType;
 
 public class AnalyzeStacktrace_Tool extends GeneratedTool {

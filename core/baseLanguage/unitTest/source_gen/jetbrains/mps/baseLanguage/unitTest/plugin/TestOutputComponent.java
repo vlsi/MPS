@@ -9,7 +9,7 @@ import com.intellij.openapi.project.Project;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import org.apache.commons.lang.ObjectUtils;
-import jetbrains.mps.debug.baseLanguage.StacktraceUtil;
+import jetbrains.mps.debug.StacktraceUtil;
 import com.intellij.execution.ui.ConsoleViewContentType;
 import com.intellij.openapi.util.Disposer;
 
