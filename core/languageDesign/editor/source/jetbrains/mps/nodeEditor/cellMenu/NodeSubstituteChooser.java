@@ -731,9 +731,10 @@ public class NodeSubstituteChooser implements KeyboardHandler {
 
     private JLabel myLeft = new JLabel("", JLabel.LEFT);
     private JLabel myRight = new JLabel("", JLabel.RIGHT);
+    private static final int HORIZONTAL_GAP = 10;
 
     private NodeItemCellRenderer() {
-      setLayout(new BorderLayout());
+      setLayout(new BorderLayout(HORIZONTAL_GAP / 2, 0));
       myLeft.setFont(EditorSettings.getInstance().getDefaultEditorFont());
       myRight.setFont(EditorSettings.getInstance().getDefaultEditorFont());
       add(myLeft, BorderLayout.WEST);
