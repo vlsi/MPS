@@ -28,6 +28,7 @@ import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SNodePointer;
+import jetbrains.mps.lang.core.behavior.BaseConcept_Behavior;
 import org.jdom.Element;
 
 import javax.swing.Icon;
@@ -96,7 +97,8 @@ public class NodeNodeData extends BaseNodeData {
     return ModelAccess.instance().runReadAction(new Computable<String>() {
       public String compute() {
         try {
-          String result = (node.getName() != null) ? node.getName() : node.toString();
+          String presentation = BaseConcept_Behavior.call_getPresentation_1213877396640(node);
+          String result = (presentation != null) ? presentation : node.toString();
           result = textStringToHtml(result);
           return result;
         } catch (Throwable t) {
