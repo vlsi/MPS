@@ -276,5 +276,44 @@
       </node>
     </node>
   </node>
+  <node type="jetbrains.mps.lang.script.structure.MigrationScript" id="1320713984677838150">
+    <property name="migrationFromBuild" value="1193" />
+    <property name="name" value="SetDefaultInequationGroup" />
+    <property name="title" value="set default inequation group" />
+    <node role="part" type="jetbrains.mps.lang.script.structure.MigrationScriptPart_Instance" id="1320713984677838156">
+      <property name="description" value="set default inequation group" />
+      <link role="affectedInstanceConcept" targetNodeId="1.1212056081426" resolveInfo="AbstractInequationStatement" />
+      <node role="affectedInstanceUpdater" type="jetbrains.mps.lang.script.structure.MigrationScriptPart_Instance_Updater" id="1320713984677838157">
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1320713984677838158">
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1320713984677838159">
+            <node role="condition" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1320713984677838168">
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1320713984677838163">
+                <node role="operand" type="jetbrains.mps.lang.script.structure.MigrationScriptPart_node" id="1320713984677838162" />
+                <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1320713984677838167">
+                  <link role="link" targetNodeId="1.1320713984677695199" />
+                </node>
+              </node>
+              <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_IsNullOperation" id="1320713984677838172" />
+            </node>
+            <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1320713984677838161">
+              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1320713984677838173">
+                <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1320713984677838180">
+                  <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1320713984677838175">
+                    <node role="operand" type="jetbrains.mps.lang.script.structure.MigrationScriptPart_node" id="1320713984677838174" />
+                    <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1320713984677838179">
+                      <link role="link" targetNodeId="1.1320713984677695199" />
+                    </node>
+                  </node>
+                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.Link_SetNewChildOperation" id="1320713984677838184">
+                    <link role="concept" targetNodeId="1.1320713984677695202" resolveInfo="DefaultGroupReference" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
 </model>
 
