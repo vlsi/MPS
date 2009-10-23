@@ -339,6 +339,14 @@
             </node>
           </node>
         </node>
+        <node role="statement" type="jetbrains.mps.lang.dataFlow.structure.EmitCodeForStatement" id="6483235410534828646">
+          <node role="codeFor" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="6483235410534828649">
+            <node role="operand" type="jetbrains.mps.lang.dataFlow.structure.NodeParameter" id="6483235410534828648" />
+            <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="6483235410534828653">
+              <link role="link" targetNodeId="1.6483235410534827157" />
+            </node>
+          </node>
+        </node>
       </node>
     </node>
   </node>

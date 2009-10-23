@@ -15,6 +15,7 @@ public class ProcessStatement extends Statement implements ExecuteSpecific {
   public static final String ALIAS = "alias";
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
   public static final String PROCESS = "process";
+  public static final String COMMAND = "command";
 
   public ProcessStatement(SNode node) {
     super(node);
@@ -50,6 +51,14 @@ public class ProcessStatement extends Statement implements ExecuteSpecific {
 
   public void setProcess(Expression node) {
     super.setChild(ProcessStatement.PROCESS, node);
+  }
+
+  public Expression getCommand() {
+    return (Expression)this.getChild(Expression.class, ProcessStatement.COMMAND);
+  }
+
+  public void setCommand(Expression node) {
+    super.setChild(ProcessStatement.COMMAND, node);
   }
 
   public static ProcessStatement newInstance(SModel sm, boolean init) {

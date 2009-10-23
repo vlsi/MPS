@@ -3310,6 +3310,12 @@
       <property name="sourceCardinality" value="1" />
       <link role="target" targetNodeId="2.1068431790191" resolveInfo="Expression" />
     </node>
+    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="6483235410534827157">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="command" />
+      <property name="sourceCardinality" value="1" />
+      <link role="target" targetNodeId="2.1068431790191" resolveInfo="Expression" />
+    </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="9061443648117368090">
     <property name="package" value="RunConfigs.Configuration.Execute.Statements" />
@@ -3318,6 +3324,9 @@
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="9061443648117634896">
       <property name="value" value="console" />
       <link role="conceptPropertyDeclaration" targetNodeId="6.1137473891462" resolveInfo="alias" />
+    </node>
+    <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="6483235410534834528">
+      <link role="intfc" targetNodeId="678887849223527750" resolveInfo="ExecuteSpecific" />
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="9061443648117368091">

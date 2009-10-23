@@ -36,7 +36,7 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895903fe(jetbrains.mps.baseLanguage.strings.constraints)" version="1" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590402(jetbrains.mps.baseLanguage.strings.structure)" version="9" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590373(jetbrains.mps.baseLanguage.classifiers.structure)" version="0" />
-  <maxImportIndex value="38" />
+  <maxImportIndex value="39" />
   <import index="4" modelUID="r:00000000-0000-4000-0000-011c89590368(jetbrains.mps.lang.plugin.structure)" version="21" />
   <import index="6" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="3" />
   <import index="18" modelUID="f:java_stub#javax.swing(javax.swing@java_stub)" version="-1" />
@@ -55,6 +55,7 @@
   <import index="36" modelUID="f:java_stub#com.intellij.execution.configurations(com.intellij.execution.configurations@java_stub)" version="-1" />
   <import index="37" modelUID="f:java_stub#java.lang(java.lang@java_stub)" version="-1" />
   <import index="38" modelUID="f:java_stub#com.intellij.execution.ui(com.intellij.execution.ui@java_stub)" version="-1" />
+  <import index="39" modelUID="f:java_stub#com.intellij.execution.impl(com.intellij.execution.impl@java_stub)" version="-1" />
   <node type="jetbrains.mps.lang.typesystem.structure.InferenceRule" id="1204039255253">
     <property name="name" value="typeof_ConceptFunctionParameter_node" />
     <property name="package" value="Shared" />
@@ -1895,6 +1896,36 @@
           </node>
         </node>
       </node>
+      <node role="statement" type="jetbrains.mps.lang.typesystem.structure.CreateStrongLessThanInequationStatement" id="6483235410534828462">
+        <property name="checkOnly" value="true" />
+        <node role="rightExpression" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause" id="6483235410534828463">
+          <node role="normalType" type="jetbrains.mps.lang.quotation.structure.Quotation" id="6483235410534828464">
+            <node role="quotedNode" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="6483235410534828644">
+              <link role="classifier" targetNodeId="37.~String" resolveInfo="String" />
+            </node>
+          </node>
+        </node>
+        <node role="leftExpression" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause" id="6483235410534828466">
+          <node role="normalType" type="jetbrains.mps.lang.typesystem.structure.TypeOfExpression" id="6483235410534828467">
+            <node role="term" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="6483235410534828468">
+              <node role="operand" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference" id="6483235410534828469">
+                <link role="applicableNode" targetNodeId="9061443648117359125" resolveInfo="statement" />
+              </node>
+              <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="6483235410534828474">
+                <link role="link" targetNodeId="4.6483235410534827157" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="nodeToCheck" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="6483235410534828471">
+          <node role="operand" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference" id="6483235410534828472">
+            <link role="applicableNode" targetNodeId="9061443648117359125" resolveInfo="statement" />
+          </node>
+          <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="6483235410534828473">
+            <link role="link" targetNodeId="4.9061443648117357798" />
+          </node>
+        </node>
+      </node>
     </node>
     <node role="applicableNode" type="jetbrains.mps.lang.typesystem.structure.ConceptReference" id="9061443648117359125">
       <property name="name" value="statement" />
@@ -1907,8 +1938,8 @@
     <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="9061443648117368099">
       <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="9061443648117368102">
         <node role="expression" type="jetbrains.mps.lang.quotation.structure.Quotation" id="9061443648117368104">
-          <node role="quotedNode" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="9061443648117368107">
-            <link role="classifier" targetNodeId="18.~JComponent" resolveInfo="JComponent" />
+          <node role="quotedNode" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="3039585368923163071">
+            <link role="classifier" targetNodeId="39.~ConsoleViewImpl" resolveInfo="ConsoleViewImpl" />
           </node>
         </node>
       </node>

@@ -4656,7 +4656,13 @@
         <property name="text" value="process" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode" id="9061443648117357814">
-        <link role="relationDeclaration" targetNodeId="1.678887849223564268" />
+        <link role="relationDeclaration" targetNodeId="1.9061443648117357798" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="6483235410534828461">
+        <property name="text" value="command" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode" id="6483235410534828459">
+        <link role="relationDeclaration" targetNodeId="1.6483235410534827157" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="9061443648117357815">
         <property name="text" value=";" />

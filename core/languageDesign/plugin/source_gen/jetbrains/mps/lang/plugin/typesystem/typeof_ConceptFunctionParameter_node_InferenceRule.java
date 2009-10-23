@@ -33,7 +33,7 @@ public class typeof_ConceptFunctionParameter_node_InferenceRule extends Abstract
           SNode _nodeToCheck_1029348928467 = conceptFunctionParameter_node;
           BaseIntentionProvider intentionProvider = null;
           EquationInfo info = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c89590364(jetbrains.mps.lang.plugin.typesystem)", "8415911927033347161", 0, intentionProvider);
-          typeCheckingContext.createEquation((SNode)typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c89590364(jetbrains.mps.lang.plugin.typesystem)", "8415911927033347163", true), (SNode)new _Quotations.QuotationClass_22().createNode(typeCheckingContext), info);
+          typeCheckingContext.createEquation((SNode)typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c89590364(jetbrains.mps.lang.plugin.typesystem)", "8415911927033347163", true), (SNode)new _Quotations.QuotationClass_23().createNode(typeCheckingContext), info);
         }
       }
     } else {
