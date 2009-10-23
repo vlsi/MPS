@@ -559,7 +559,7 @@
                 <link role="variableDeclaration" targetNodeId="1759628044690734775" resolveInfo="priority" />
               </node>
               <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1759628044690734797">
-                <property name="value" value="priorityLevel_" />
+                <property name="value" value="priority_" />
               </node>
             </node>
           </node>

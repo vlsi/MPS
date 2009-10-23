@@ -18,7 +18,7 @@ public class TypesLanguageScriptsUtil {
     if (priority == 500) {
       priority = 4;
     }
-    String name = "priorityLevel_" + priority;
+    String name = "priority_" + priority;
     SModel coreTypes = SModelRepository.getInstance().getModelDescriptorsByModelName("jetbrains.mps.lang.core.typesystem").get(0).getSModel();
     SNode registry = ListSequence.fromList(SModelOperations.getRoots(coreTypes, "jetbrains.mps.lang.typesystem.structure.InequationsGroupsRegistry")).first();
     for (SNode inequationsGroup : SLinkOperations.getTargets(registry, "group", true)) {
