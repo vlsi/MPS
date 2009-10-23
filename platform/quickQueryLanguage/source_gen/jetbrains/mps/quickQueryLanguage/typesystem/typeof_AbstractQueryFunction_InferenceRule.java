@@ -13,6 +13,7 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.intentions.BaseIntentionProvider;
 import jetbrains.mps.typesystem.inference.IErrorTarget;
 import jetbrains.mps.typesystem.inference.NodeErrorTarget;
+import jetbrains.mps.typesystem.inference.EquationInfo;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.SModelUtil_new;
 
@@ -46,7 +47,8 @@ public class typeof_AbstractQueryFunction_InferenceRule extends AbstractInferenc
           {
             SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(returnStatement, "expression", true);
             BaseIntentionProvider intentionProvider = null;
-            typeCheckingContext.createLessThanInequation((SNode)returnType, (SNode)expectedRetType, _nodeToCheck_1029348928467, "" + expectedRetType + " is expected", "r:00000000-0000-4000-0000-011c8959050e(jetbrains.mps.quickQueryLanguage.typesystem)", "5046156961652249764", false, 0, intentionProvider);
+            EquationInfo info = new EquationInfo(_nodeToCheck_1029348928467, "" + expectedRetType + " is expected", "r:00000000-0000-4000-0000-011c8959050e(jetbrains.mps.quickQueryLanguage.typesystem)", "5046156961652249764", 0, intentionProvider);
+            typeCheckingContext.createLessThanInequation((SNode)returnType, (SNode)expectedRetType, false, info);
           }
         }
       }
@@ -58,7 +60,8 @@ public class typeof_AbstractQueryFunction_InferenceRule extends AbstractInferenc
         {
           SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(SNodeOperations.cast(lastStatement, "jetbrains.mps.baseLanguage.structure.ExpressionStatement"), "expression", true);
           BaseIntentionProvider intentionProvider = null;
-          typeCheckingContext.createLessThanInequation((SNode)returnType, (SNode)expectedRetType, _nodeToCheck_1029348928467, expectedRetType + " is expected", "r:00000000-0000-4000-0000-011c8959050e(jetbrains.mps.quickQueryLanguage.typesystem)", "5046156961652249799", false, 0, intentionProvider);
+          EquationInfo info = new EquationInfo(_nodeToCheck_1029348928467, expectedRetType + " is expected", "r:00000000-0000-4000-0000-011c8959050e(jetbrains.mps.quickQueryLanguage.typesystem)", "5046156961652249799", 0, intentionProvider);
+          typeCheckingContext.createLessThanInequation((SNode)returnType, (SNode)expectedRetType, false, info);
         }
       }
     }

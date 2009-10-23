@@ -645,6 +645,7 @@
             <node role="quotedNode" type="jetbrains.mps.baseLanguage.structure.DoubleType" id="1210152315164" />
           </node>
         </node>
+        <node role="inequationGroup" type="jetbrains.mps.lang.typesystem.structure.DefaultGroupReference" id="5970100369440882456" />
       </node>
     </node>
     <node role="applicableNode" type="jetbrains.mps.lang.typesystem.structure.ConceptReference" id="1210152017322">
@@ -742,6 +743,7 @@
             </node>
           </node>
         </node>
+        <node role="inequationGroup" type="jetbrains.mps.lang.typesystem.structure.DefaultGroupReference" id="5970100369440882519" />
       </node>
     </node>
     <node role="applicableNode" type="jetbrains.mps.lang.typesystem.structure.ConceptReference" id="1210159709687">
@@ -968,6 +970,7 @@
                 <link role="variableDeclaration" targetNodeId="1215189530696" resolveInfo="type" />
               </node>
             </node>
+            <node role="inequationGroup" type="jetbrains.mps.lang.typesystem.structure.DefaultGroupReference" id="5970100369440882716" />
           </node>
         </node>
       </node>

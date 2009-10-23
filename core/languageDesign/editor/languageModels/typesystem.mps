@@ -910,6 +910,7 @@
             </node>
           </node>
         </node>
+        <node role="inequationGroup" type="jetbrains.mps.lang.typesystem.structure.DefaultGroupReference" id="5970100369440882733" />
       </node>
     </node>
     <node role="applicableNode" type="jetbrains.mps.lang.typesystem.structure.ConceptReference" id="1201270044266">
@@ -1250,6 +1251,7 @@
                       </node>
                     </node>
                   </node>
+                  <node role="inequationGroup" type="jetbrains.mps.lang.typesystem.structure.DefaultGroupReference" id="5970100369440882568" />
                 </node>
               </node>
             </node>

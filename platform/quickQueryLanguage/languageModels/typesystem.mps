@@ -247,6 +247,7 @@
                             <link role="link" targetNodeId="2v.1068581517676" />
                           </node>
                         </node>
+                        <node role="inequationGroup" type="jetbrains.mps.lang.typesystem.structure.DefaultGroupReference" id="5970100369440882640" />
                       </node>
                     </node>
                   </node>
@@ -335,6 +336,7 @@
                     <link role="link" targetNodeId="2v.1068580123156" />
                   </node>
                 </node>
+                <node role="inequationGroup" type="jetbrains.mps.lang.typesystem.structure.DefaultGroupReference" id="5970100369440882474" />
               </node>
             </node>
           </node>

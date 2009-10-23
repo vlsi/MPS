@@ -391,6 +391,7 @@
                     </node>
                   </node>
                 </node>
+                <node role="inequationGroup" type="jetbrains.mps.lang.typesystem.structure.DefaultGroupReference" id="5970100369440882777" />
               </node>
             </node>
             <node role="condition" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1220269277860">
@@ -416,6 +417,7 @@
                       </node>
                     </node>
                   </node>
+                  <node role="inequationGroup" type="jetbrains.mps.lang.typesystem.structure.DefaultGroupReference" id="5970100369440882602" />
                 </node>
               </node>
               <node role="condition" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1220269272948">
@@ -441,6 +443,7 @@
                         </node>
                       </node>
                     </node>
+                    <node role="inequationGroup" type="jetbrains.mps.lang.typesystem.structure.DefaultGroupReference" id="5970100369440882407" />
                   </node>
                 </node>
                 <node role="condition" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1220269267427">
@@ -482,6 +485,7 @@
                                   </node>
                                 </node>
                               </node>
+                              <node role="inequationGroup" type="jetbrains.mps.lang.typesystem.structure.DefaultGroupReference" id="5970100369440882680" />
                             </node>
                           </node>
                           <node role="condition" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1220269285070">
@@ -507,6 +511,7 @@
                                     </node>
                                   </node>
                                 </node>
+                                <node role="inequationGroup" type="jetbrains.mps.lang.typesystem.structure.DefaultGroupReference" id="5970100369440882413" />
                               </node>
                             </node>
                             <node role="condition" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1220269291622">
@@ -532,6 +537,7 @@
                                       </node>
                                     </node>
                                   </node>
+                                  <node role="inequationGroup" type="jetbrains.mps.lang.typesystem.structure.DefaultGroupReference" id="5970100369440882436" />
                                 </node>
                               </node>
                             </node>
@@ -688,6 +694,7 @@
                     </node>
                   </node>
                 </node>
+                <node role="inequationGroup" type="jetbrains.mps.lang.typesystem.structure.DefaultGroupReference" id="5970100369440882787" />
               </node>
             </node>
             <node role="condition" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1220269236980">
@@ -713,6 +720,7 @@
                       </node>
                     </node>
                   </node>
+                  <node role="inequationGroup" type="jetbrains.mps.lang.typesystem.structure.DefaultGroupReference" id="5970100369440882722" />
                 </node>
               </node>
               <node role="condition" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1220269242455">
@@ -738,6 +746,7 @@
                         </node>
                       </node>
                     </node>
+                    <node role="inequationGroup" type="jetbrains.mps.lang.typesystem.structure.DefaultGroupReference" id="5970100369440882832" />
                   </node>
                 </node>
                 <node role="condition" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1220269248179">
@@ -1165,6 +1174,7 @@
             <node role="errorString" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1186057239254">
               <property name="value" value="incompatible type: snode expected" />
             </node>
+            <node role="inequationGroup" type="jetbrains.mps.lang.typesystem.structure.DefaultGroupReference" id="5970100369440882839" />
           </node>
         </node>
       </node>
@@ -1247,6 +1257,7 @@
             <node role="errorString" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1186057110421">
               <property name="value" value="incompatible type: snode expected" />
             </node>
+            <node role="inequationGroup" type="jetbrains.mps.lang.typesystem.structure.DefaultGroupReference" id="5970100369440882655" />
           </node>
         </node>
       </node>
@@ -1337,6 +1348,7 @@
             </node>
           </node>
         </node>
+        <node role="inequationGroup" type="jetbrains.mps.lang.typesystem.structure.DefaultGroupReference" id="5970100369440882563" />
       </node>
       <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1225408872681">
         <property name="value" value="op returns node passed in parameter" />
@@ -3281,6 +3293,7 @@
               </node>
             </node>
           </node>
+          <node role="inequationGroup" type="jetbrains.mps.lang.typesystem.structure.DefaultGroupReference" id="5970100369440882528" />
         </node>
       </node>
       <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1208202100436" />
@@ -3794,6 +3807,7 @@
                       </node>
                     </node>
                   </node>
+                  <node role="inequationGroup" type="jetbrains.mps.lang.typesystem.structure.DefaultGroupReference" id="5970100369440882785" />
                 </node>
                 <node role="statement" type="jetbrains.mps.lang.typesystem.structure.CreateEquationStatement" id="1226669541468">
                   <node role="rightExpression" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause" id="1226669543284">
@@ -4948,6 +4962,7 @@
                 <link role="variableDeclaration" targetNodeId="1205272443652" resolveInfo="parmType" />
               </node>
             </node>
+            <node role="inequationGroup" type="jetbrains.mps.lang.typesystem.structure.DefaultGroupReference" id="5970100369440882400" />
           </node>
         </node>
       </node>
@@ -5085,6 +5100,7 @@
                   </node>
                 </node>
               </node>
+              <node role="inequationGroup" type="jetbrains.mps.lang.typesystem.structure.DefaultGroupReference" id="5970100369440882806" />
             </node>
           </node>
         </node>
@@ -5163,6 +5179,7 @@
                 <link role="variableDeclaration" targetNodeId="1205272570104" resolveInfo="parmType" />
               </node>
             </node>
+            <node role="inequationGroup" type="jetbrains.mps.lang.typesystem.structure.DefaultGroupReference" id="5970100369440882403" />
           </node>
         </node>
       </node>
@@ -5345,6 +5362,7 @@
                   </node>
                 </node>
               </node>
+              <node role="inequationGroup" type="jetbrains.mps.lang.typesystem.structure.DefaultGroupReference" id="5970100369440882509" />
             </node>
           </node>
         </node>
@@ -5423,6 +5441,7 @@
                 <link role="variableDeclaration" targetNodeId="1186063288301" resolveInfo="parmType" />
               </node>
             </node>
+            <node role="inequationGroup" type="jetbrains.mps.lang.typesystem.structure.DefaultGroupReference" id="5970100369440882567" />
           </node>
         </node>
       </node>
@@ -5575,6 +5594,7 @@
             </node>
           </node>
         </node>
+        <node role="inequationGroup" type="jetbrains.mps.lang.typesystem.structure.DefaultGroupReference" id="5970100369440882448" />
       </node>
     </node>
     <node role="applicableNode" type="jetbrains.mps.lang.typesystem.structure.ConceptReference" id="1178287490351">
@@ -5741,6 +5761,7 @@
             </node>
           </node>
         </node>
+        <node role="inequationGroup" type="jetbrains.mps.lang.typesystem.structure.DefaultGroupReference" id="5970100369440882750" />
       </node>
     </node>
     <node role="applicableNode" type="jetbrains.mps.lang.typesystem.structure.ConceptReference" id="1178287490356">
@@ -5996,6 +6017,7 @@
                 </node>
               </node>
             </node>
+            <node role="inequationGroup" type="jetbrains.mps.lang.typesystem.structure.DefaultGroupReference" id="5970100369440882488" />
           </node>
         </node>
       </node>
@@ -6223,6 +6245,7 @@
                     <node role="quotedNode" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1196933487679" />
                   </node>
                 </node>
+                <node role="inequationGroup" type="jetbrains.mps.lang.typesystem.structure.DefaultGroupReference" id="5970100369440882743" />
               </node>
             </node>
             <node role="condition" type="jetbrains.mps.baseLanguage.structure.NotEqualsExpression" id="1181944977053">
@@ -6288,6 +6311,7 @@
                 <node role="quotedNode" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1196933487681" />
               </node>
             </node>
+            <node role="inequationGroup" type="jetbrains.mps.lang.typesystem.structure.DefaultGroupReference" id="5970100369440882768" />
           </node>
         </node>
         <node role="condition" type="jetbrains.mps.baseLanguage.structure.NotEqualsExpression" id="1181950196613">
@@ -6341,6 +6365,7 @@
             </node>
           </node>
         </node>
+        <node role="inequationGroup" type="jetbrains.mps.lang.typesystem.structure.DefaultGroupReference" id="5970100369440882569" />
       </node>
       <node role="statement" type="jetbrains.mps.lang.typesystem.structure.CreateEquationStatement" id="1225543947064">
         <node role="leftExpression" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause" id="1225543947065">
@@ -6404,6 +6429,7 @@
                 </node>
               </node>
             </node>
+            <node role="inequationGroup" type="jetbrains.mps.lang.typesystem.structure.DefaultGroupReference" id="5970100369440882466" />
           </node>
         </node>
       </node>
@@ -6438,6 +6464,7 @@
                 <node role="quotedNode" type="jetbrains.mps.lang.smodel.structure.SModelType" id="1207683999812" />
               </node>
             </node>
+            <node role="inequationGroup" type="jetbrains.mps.lang.typesystem.structure.DefaultGroupReference" id="5970100369440882419" />
           </node>
         </node>
       </node>
@@ -6480,6 +6507,7 @@
             </node>
           </node>
         </node>
+        <node role="inequationGroup" type="jetbrains.mps.lang.typesystem.structure.DefaultGroupReference" id="5970100369440882508" />
       </node>
       <node role="statement" type="jetbrains.mps.lang.typesystem.structure.CreateEquationStatement" id="1225542362833">
         <node role="leftExpression" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause" id="1225542362834">
@@ -6545,6 +6573,7 @@
                 </node>
               </node>
             </node>
+            <node role="inequationGroup" type="jetbrains.mps.lang.typesystem.structure.DefaultGroupReference" id="5970100369440882401" />
           </node>
         </node>
       </node>
@@ -6587,6 +6616,7 @@
             </node>
           </node>
         </node>
+        <node role="inequationGroup" type="jetbrains.mps.lang.typesystem.structure.DefaultGroupReference" id="5970100369440882813" />
       </node>
       <node role="statement" type="jetbrains.mps.lang.typesystem.structure.CreateEquationStatement" id="1225542244007">
         <node role="rightExpression" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause" id="1225542254212">
@@ -6664,6 +6694,7 @@
             </node>
           </node>
         </node>
+        <node role="inequationGroup" type="jetbrains.mps.lang.typesystem.structure.DefaultGroupReference" id="5970100369440882771" />
       </node>
     </node>
     <node role="applicableNode" type="jetbrains.mps.lang.typesystem.structure.ConceptReference" id="1182512146617">
@@ -7103,6 +7134,7 @@
                 <node role="quotedNode" type="jetbrains.mps.baseLanguage.structure.StringType" id="1225193158017" />
               </node>
             </node>
+            <node role="inequationGroup" type="jetbrains.mps.lang.typesystem.structure.DefaultGroupReference" id="5970100369440882821" />
           </node>
         </node>
         <node role="condition" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204835833385">
@@ -7298,6 +7330,7 @@
                 <node role="quotedNode" type="jetbrains.mps.baseLanguage.structure.StringType" id="1225193158425" />
               </node>
             </node>
+            <node role="inequationGroup" type="jetbrains.mps.lang.typesystem.structure.DefaultGroupReference" id="5970100369440882811" />
           </node>
         </node>
         <node role="condition" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204849792171">
@@ -7477,6 +7510,7 @@
             </node>
           </node>
         </node>
+        <node role="inequationGroup" type="jetbrains.mps.lang.typesystem.structure.DefaultGroupReference" id="5970100369440882804" />
       </node>
       <node role="statement" type="jetbrains.mps.lang.typesystem.structure.CreateEquationStatement" id="1206484350009">
         <node role="rightExpression" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause" id="1206484354107">
@@ -7552,6 +7586,7 @@
                 <node role="quotedNode" type="jetbrains.mps.lang.smodel.structure.SConceptType" id="1206660016834" />
               </node>
             </node>
+            <node role="inequationGroup" type="jetbrains.mps.lang.typesystem.structure.DefaultGroupReference" id="5970100369440882719" />
           </node>
         </node>
         <node role="condition" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1206659963972">
@@ -7618,6 +7653,7 @@
                 <node role="quotedNode" type="jetbrains.mps.lang.smodel.structure.SConceptType" id="1206661693393" />
               </node>
             </node>
+            <node role="inequationGroup" type="jetbrains.mps.lang.typesystem.structure.DefaultGroupReference" id="5970100369440882503" />
           </node>
         </node>
         <node role="condition" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1206661693394">
@@ -7684,6 +7720,7 @@
                 <node role="quotedNode" type="jetbrains.mps.lang.smodel.structure.SConceptType" id="1206662734169" />
               </node>
             </node>
+            <node role="inequationGroup" type="jetbrains.mps.lang.typesystem.structure.DefaultGroupReference" id="5970100369440882518" />
           </node>
         </node>
         <node role="condition" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1206662734170">
@@ -7750,6 +7787,7 @@
                 <node role="quotedNode" type="jetbrains.mps.lang.smodel.structure.SConceptType" id="1206735630140" />
               </node>
             </node>
+            <node role="inequationGroup" type="jetbrains.mps.lang.typesystem.structure.DefaultGroupReference" id="5970100369440882620" />
           </node>
         </node>
         <node role="condition" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1206735630141">
@@ -7816,6 +7854,7 @@
                 <node role="quotedNode" type="jetbrains.mps.lang.smodel.structure.SConceptType" id="1207344198922" />
               </node>
             </node>
+            <node role="inequationGroup" type="jetbrains.mps.lang.typesystem.structure.DefaultGroupReference" id="5970100369440882411" />
           </node>
         </node>
         <node role="condition" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1207344198923">
@@ -7917,6 +7956,7 @@
             </node>
           </node>
         </node>
+        <node role="inequationGroup" type="jetbrains.mps.lang.typesystem.structure.DefaultGroupReference" id="5970100369440882825" />
       </node>
       <node role="statement" type="jetbrains.mps.lang.typesystem.structure.CreateEquationStatement" id="1225294453514">
         <node role="rightExpression" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause" id="1225294458153">
@@ -8143,6 +8183,7 @@
             </node>
           </node>
         </node>
+        <node role="inequationGroup" type="jetbrains.mps.lang.typesystem.structure.DefaultGroupReference" id="5970100369440882742" />
       </node>
     </node>
     <node role="applicableNode" type="jetbrains.mps.lang.typesystem.structure.ConceptReference" id="1221167369899">
@@ -8186,6 +8227,7 @@
             </node>
           </node>
         </node>
+        <node role="inequationGroup" type="jetbrains.mps.lang.typesystem.structure.DefaultGroupReference" id="5970100369440882462" />
       </node>
     </node>
     <node role="applicableNode" type="jetbrains.mps.lang.typesystem.structure.ConceptReference" id="1221172482920">
@@ -9372,6 +9414,7 @@
             </node>
           </node>
         </node>
+        <node role="inequationGroup" type="jetbrains.mps.lang.typesystem.structure.DefaultGroupReference" id="5970100369440882801" />
       </node>
       <node role="statement" type="jetbrains.mps.lang.typesystem.structure.CreateLessThanInequationStatement" id="1227265545383">
         <node role="rightExpression" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause" id="1227265547449">
@@ -9391,6 +9434,7 @@
             </node>
           </node>
         </node>
+        <node role="inequationGroup" type="jetbrains.mps.lang.typesystem.structure.DefaultGroupReference" id="5970100369440882428" />
       </node>
     </node>
     <node role="applicableNode" type="jetbrains.mps.lang.typesystem.structure.ConceptReference" id="1227265506203">
@@ -9930,6 +9974,7 @@
             <link role="link" targetNodeId="1.1240930444879" />
           </node>
         </node>
+        <node role="inequationGroup" type="jetbrains.mps.lang.typesystem.structure.DefaultGroupReference" id="5970100369440882709" />
       </node>
     </node>
     <node role="applicableNode" type="jetbrains.mps.lang.typesystem.structure.ConceptReference" id="1240321215116">
@@ -10014,6 +10059,7 @@
             </node>
           </node>
         </node>
+        <node role="inequationGroup" type="jetbrains.mps.lang.typesystem.structure.DefaultGroupReference" id="5970100369440882500" />
       </node>
     </node>
     <node role="applicableNode" type="jetbrains.mps.lang.typesystem.structure.ConceptReference" id="1240321429321">
@@ -10123,6 +10169,7 @@
                     </node>
                   </node>
                 </node>
+                <node role="inequationGroup" type="jetbrains.mps.lang.typesystem.structure.DefaultGroupReference" id="5970100369440882504" />
               </node>
             </node>
             <node role="condition" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="2648652578096473362">
@@ -10150,6 +10197,7 @@
                       </node>
                     </node>
                   </node>
+                  <node role="inequationGroup" type="jetbrains.mps.lang.typesystem.structure.DefaultGroupReference" id="5970100369440882592" />
                 </node>
               </node>
               <node role="condition" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="2648652578096473374">
@@ -10177,6 +10225,7 @@
                         </node>
                       </node>
                     </node>
+                    <node role="inequationGroup" type="jetbrains.mps.lang.typesystem.structure.DefaultGroupReference" id="5970100369440882764" />
                   </node>
                 </node>
                 <node role="condition" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="2648652578096473386">

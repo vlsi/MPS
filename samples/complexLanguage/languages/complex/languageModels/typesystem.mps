@@ -64,6 +64,7 @@
             <node role="quotedNode" type="jetbrains.mps.samples.complex.structure.ComplexType" id="1196268989258" />
           </node>
         </node>
+        <node role="inequationGroup" type="jetbrains.mps.lang.typesystem.structure.DefaultGroupReference" id="5970100369440882775" />
       </node>
       <node role="statement" type="jetbrains.mps.lang.typesystem.structure.CreateEquationStatement" id="1196267675385">
         <node role="rightExpression" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause" id="1196267679060">

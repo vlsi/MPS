@@ -196,6 +196,7 @@
                 <link role="variableDeclaration" targetNodeId="1238854555217" resolveInfo="rmt" />
               </node>
             </node>
+            <node role="inequationGroup" type="jetbrains.mps.lang.typesystem.structure.DefaultGroupReference" id="5970100369440882628" />
           </node>
         </node>
       </node>
@@ -253,6 +254,7 @@
             </node>
           </node>
         </node>
+        <node role="inequationGroup" type="jetbrains.mps.lang.typesystem.structure.DefaultGroupReference" id="5970100369440882641" />
       </node>
       <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1238863666749">
         <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1238863666750">
@@ -609,6 +611,7 @@
                 <link role="variableDeclaration" targetNodeId="1239900488864" resolveInfo="matchedType" />
               </node>
             </node>
+            <node role="inequationGroup" type="jetbrains.mps.lang.typesystem.structure.DefaultGroupReference" id="5970100369440882481" />
           </node>
         </node>
       </node>
@@ -856,6 +859,7 @@
                 <link role="variableDeclaration" targetNodeId="1239968650552" resolveInfo="foo" />
               </node>
             </node>
+            <node role="inequationGroup" type="jetbrains.mps.lang.typesystem.structure.DefaultGroupReference" id="5970100369440882766" />
           </node>
         </node>
       </node>
@@ -962,6 +966,7 @@
             </node>
           </node>
         </node>
+        <node role="inequationGroup" type="jetbrains.mps.lang.typesystem.structure.DefaultGroupReference" id="5970100369440882830" />
       </node>
       <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="3504058432724727903">
         <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="3504058432724727904">
