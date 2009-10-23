@@ -22,6 +22,7 @@ import jetbrains.mps.vcs.ApplicationLevelVcsManager;
 import jetbrains.mps.vcs.MPSVCSManager;
 import jetbrains.mps.fileTypes.MPSFileTypesManager;
 import jetbrains.mps.project.IModule;
+import jetbrains.mps.vfs.VFileSystem;
 
 import java.util.Collections;
 
@@ -45,7 +46,7 @@ class BeforeModuleEventProcessor extends EventProcessor {
       if (MPSFileTypesManager.instance().isModuleFile(vfile)) {
         Project project = ApplicationLevelVcsManager.instance().getProjectForFile(vfile);
         if (project != null) {
-          MPSVCSManager.getInstance(project).deleteFromDiskAndRemoveFromVcs(Collections.singleton(vfile), true);
+          MPSVCSManager.getInstance(project).removeFromVcs(Collections.singletonList(VFileSystem.toFile(vfile)), true);
         }
       }
     }
