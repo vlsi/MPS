@@ -23,7 +23,6 @@ public final class TBuffer {
   private final StringBuilder myStringBuilder = new StringBuilder();
 
   private int myIndent;
-  private boolean myCanAppend = true;
 
   public TBuffer() {
   }
@@ -56,29 +55,15 @@ public final class TBuffer {
   }
 
   public void append(final String text) {
-    if (myCanAppend) {
-      if (text != null && text.length() == 1) {
-        myStringBuilder.append(text.charAt(0));
-      } else {
-        myStringBuilder.append(text);
-      }
+    if (text != null && text.length() == 1) {
+      myStringBuilder.append(text.charAt(0));
+    } else {
+      myStringBuilder.append(text);
     }
   }
 
   void append(final char c) {
-    if (myCanAppend) {
-      myStringBuilder.append(c);
-    }
-  }
-
-  void suspendRenderingUnless(boolean condition) {
-    if (!condition) {
-      myCanAppend = false;
-    }
-  }
-
-  void resumeRendering() {
-    myCanAppend = true;
+    myStringBuilder.append(c);
   }
 
   public void appendNewLine() {
