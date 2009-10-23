@@ -263,6 +263,7 @@ public abstract class UsagesTreeComponent extends JPanel implements IChangeListe
           }
 
           public void setSelected(AnActionEvent e, boolean state) {
+            myIsSelected = state;
             myTree.setAdditionalInfoNeeded(state);
           }
         };
