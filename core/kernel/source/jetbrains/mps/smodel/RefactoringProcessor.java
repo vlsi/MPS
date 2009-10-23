@@ -67,10 +67,8 @@ public class RefactoringProcessor {
 
     SearchResults usages = null;
 
-    if (refactoring instanceof ILoggableRefactoring) {
-      if (!findUsages(refactoringContext)) return;
-      usages = refactoringContext.getUsages();
-    }
+    if (!findUsages(refactoringContext)) return;
+    usages = refactoringContext.getUsages();
 
     if (usages != null && (!usages.getSearchResults().isEmpty())) {
       showRefactoring(refactoringContext);
@@ -137,10 +135,7 @@ public class RefactoringProcessor {
                 try {
                   refactoringContext.setCurrentOperationContext(new ProjectOperationContext(refactoringContext.getSelectedMPSProject()));
                   IRefactoring refactoring = refactoringContext.getRefactoring();
-                  if (!(refactoring instanceof ILoggableRefactoring))
-                    throw new IllegalStateException("Trying to get affected nodes from non-loggable refactoring");
-                  ILoggableRefactoring loggableRefactoring = (ILoggableRefactoring) refactoring;
-                  SearchResults usages = loggableRefactoring.getAffectedNodes(refactoringContext);
+                  SearchResults usages = refactoring.getAffectedNodes(refactoringContext);
                   refactoringContext.setUsages(usages);
                 } catch (Throwable t) {
                   LOG.error(t);
