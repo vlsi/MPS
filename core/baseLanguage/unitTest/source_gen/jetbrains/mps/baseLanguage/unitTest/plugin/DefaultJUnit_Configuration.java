@@ -18,6 +18,8 @@ import com.intellij.execution.ExecutionException;
 import org.jetbrains.annotations.Nullable;
 import com.intellij.execution.ExecutionResult;
 import com.intellij.execution.runners.ProgramRunner;
+import jetbrains.mps.workbench.MPSDataKeys;
+import com.intellij.execution.impl.ConsoleViewImpl;
 import javax.swing.JComponent;
 import java.util.List;
 import com.intellij.openapi.actionSystem.AnAction;
@@ -25,14 +27,11 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import com.intellij.execution.process.ProcessHandler;
 import jetbrains.mps.project.MPSProject;
-import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.MPSProjectHolder;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.baseLanguage.plugin.RunUtil;
-import jetbrains.mps.baseLanguage.plugin.BLProcessHandler;
-import java.nio.charset.Charset;
 import com.intellij.execution.ui.ExecutionConsole;
 import com.intellij.execution.configurations.RunnerSettings;
 import com.intellij.execution.configurations.ConfigurationPerRunnerSettings;
@@ -109,21 +108,23 @@ public class DefaultJUnit_Configuration extends BaseRunConfig {
     return new RunProfileState() {
       @Nullable
       public ExecutionResult execute(Executor executor, @NotNull ProgramRunner runner) throws ExecutionException {
-        JComponent consoleComponent;
+        Project project = MPSDataKeys.PROJECT.getData(environment.getDataContext());
+        final ConsoleViewImpl consoleView = new ConsoleViewImpl(project, false);
+        JComponent consoleComponent = null;
         Runnable consoleDispose = null;
         final List<AnAction> actions = ListSequence.fromList(new ArrayList<AnAction>());
         ProcessHandler handler = null;
         {
-          MPSProject project = MPSDataKeys.MPS_PROJECT.getData(environment.getDataContext());
-          final JUnitTestViewComponent runComponent = new JUnitTestViewComponent(project);
+          MPSProject mpsproject = MPSDataKeys.MPS_PROJECT.getData(environment.getDataContext());
+          final JUnitTestViewComponent runComponent = new JUnitTestViewComponent(mpsproject, consoleView);
           final Wrappers._T<UnitTestRunner> testRunner = new Wrappers._T<UnitTestRunner>(null);
           try {
-            testRunner.value = new UnitTestRunner(project.getComponent(MPSProjectHolder.class).getMPSProject().getPluginManager().getPrefsComponent(UnitTest_PreferencesComponent.class), runComponent);
+            testRunner.value = new UnitTestRunner(mpsproject.getComponent(MPSProjectHolder.class).getMPSProject().getPluginManager().getPrefsComponent(UnitTest_PreferencesComponent.class), runComponent);
           } catch (NullPointerException npe) {
             npe.printStackTrace();
           }
 
-          ListSequence.fromList(actions).addSequence(ListSequence.fromList(ListSequence.fromListAndArray(new ArrayList<AnAction>(), runComponent.getConsole().createConsoleActions())));
+          ListSequence.fromList(actions).addSequence(ListSequence.fromList(ListSequence.fromListAndArray(new ArrayList<AnAction>(), consoleView.createConsoleActions())));
           consoleComponent = runComponent;
           consoleDispose = new Runnable() {
             public void run() {
@@ -157,7 +158,7 @@ public class DefaultJUnit_Configuration extends BaseRunConfig {
             DefaultJUnit_Configuration.this.getStateObject().myParams = new ConfigRunParameters();
           }
           if (DefaultJUnit_Configuration.this.getStateObject().myParams.getMake()) {
-            RunUtil.makeBeforeRun(project, all);
+            RunUtil.makeBeforeRun(mpsproject, all);
           }
           testRunner.value.setConfigParameters(DefaultJUnit_Configuration.this.getStateObject().myParams);
           if (DefaultJUnit_Configuration.this.getStateObject().myParams != null && DefaultJUnit_Configuration.this.getStateObject().myParams.getUseAlternativeJRE()) {
@@ -172,9 +173,9 @@ public class DefaultJUnit_Configuration extends BaseRunConfig {
           });
 
           if (process.value != null) {
-            BLProcessHandler processHandler = new BLProcessHandler(runComponent.getConsole(), process.value, "", Charset.defaultCharset());
+            JUnitProcessHandler processHandler = new JUnitProcessHandler(runComponent, runComponent.getConsole(), process.value);
             runComponent.onStart(processHandler);
-            handler = new JUnitProcessHandler(runComponent, runComponent.getConsole(), process.value);
+            handler = processHandler;
           }
         }
         final JComponent finalConsoleComponent = consoleComponent;

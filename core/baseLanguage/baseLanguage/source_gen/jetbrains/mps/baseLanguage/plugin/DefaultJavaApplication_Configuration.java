@@ -20,17 +20,19 @@ import com.intellij.execution.ExecutionException;
 import org.jetbrains.annotations.Nullable;
 import com.intellij.execution.ExecutionResult;
 import com.intellij.execution.runners.ProgramRunner;
+import jetbrains.mps.workbench.MPSDataKeys;
+import com.intellij.execution.impl.ConsoleViewImpl;
 import javax.swing.JComponent;
 import java.util.List;
 import com.intellij.openapi.actionSystem.AnAction;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import com.intellij.execution.process.ProcessHandler;
-import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.MPSProjectHolder;
 import java.util.Collections;
-import java.nio.charset.Charset;
+import com.intellij.openapi.util.Disposer;
+import jetbrains.mps.ide.actions.DefaultProcessHandler;
 import com.intellij.execution.ui.ExecutionConsole;
 import com.intellij.execution.configurations.RunnerSettings;
 import com.intellij.execution.configurations.ConfigurationPerRunnerSettings;
@@ -95,7 +97,9 @@ public class DefaultJavaApplication_Configuration extends BaseRunConfig {
     return new RunProfileState() {
       @Nullable
       public ExecutionResult execute(Executor executor, @NotNull ProgramRunner runner) throws ExecutionException {
-        JComponent consoleComponent;
+        Project project = MPSDataKeys.PROJECT.getData(environment.getDataContext());
+        final ConsoleViewImpl consoleView = new ConsoleViewImpl(project, false);
+        JComponent consoleComponent = null;
         Runnable consoleDispose = null;
         final List<AnAction> actions = ListSequence.fromList(new ArrayList<AnAction>());
         ProcessHandler handler = null;
@@ -113,8 +117,8 @@ public class DefaultJavaApplication_Configuration extends BaseRunConfig {
             throw new ExecutionException("Class node does not exist");
           }
 
-          Project project = MPSDataKeys.PROJECT.getData(environment.getDataContext());
-          MPSProject mpsProject = project.getComponent(MPSProjectHolder.class).getMPSProject();
+          Project ideaProject = MPSDataKeys.PROJECT.getData(environment.getDataContext());
+          MPSProject mpsProject = ideaProject.getComponent(MPSProjectHolder.class).getMPSProject();
 
           if (DefaultJavaApplication_Configuration.this.getStateObject().parameters == null) {
             DefaultJavaApplication_Configuration.this.getStateObject().parameters = new ConfigRunParameters();
@@ -124,14 +128,13 @@ public class DefaultJavaApplication_Configuration extends BaseRunConfig {
             RunUtil.makeBeforeRun(mpsProject, Collections.singletonList(node.value));
           }
 
-          final RunComponent runComponent = new RunComponent(project);
-          final ClassRunner classRunner = new ClassRunner(runComponent);
+          final ClassRunner classRunner = new ClassRunner();
 
-          ListSequence.fromList(actions).addSequence(ListSequence.fromList(ListSequence.fromListAndArray(new ArrayList<AnAction>(), runComponent.getConsoleView().createConsoleActions())));
-          consoleComponent = runComponent;
+          ListSequence.fromList(actions).addSequence(ListSequence.fromList(ListSequence.fromListAndArray(new ArrayList<AnAction>(), consoleView.createConsoleActions())));
+          consoleComponent = consoleView.getComponent();
           consoleDispose = new Runnable() {
             public void run() {
-              runComponent.dispose();
+              Disposer.dispose(consoleView);
             }
           };
 
@@ -145,7 +148,7 @@ public class DefaultJavaApplication_Configuration extends BaseRunConfig {
             }
           });
 
-          handler = new BLProcessHandler(runComponent.getConsoleView(), process.value, "", Charset.defaultCharset());
+          handler = new DefaultProcessHandler(consoleView, process.value, classRunner.getCommandString());
         }
         final JComponent finalConsoleComponent = consoleComponent;
         final Runnable finalConsoleDispose = consoleDispose;

@@ -22,9 +22,9 @@ public class TestOutputComponent {
   private String filterClass;
   private String filterMethod;
 
-  public TestOutputComponent(Project project, JComponent parentComponent) {
+  public TestOutputComponent(Project project, JComponent parentComponent, ConsoleViewImpl console) {
     this.messages = ListSequence.fromList(new ArrayList<TestOutputComponent.Message>());
-    this.consoleView = new ConsoleViewImpl(project, false);
+    this.consoleView = console;
     this.component = this.consoleView.getComponent();
   }
 
