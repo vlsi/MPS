@@ -20,6 +20,7 @@ public class typeof_AbstractMoveNodeExpression_InferenceRule extends AbstractInf
       SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(nodeToCheck, "whatToMove", true);
       BaseIntentionProvider intentionProvider = null;
       EquationInfo info = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c89590316(jetbrains.mps.lang.refactoring.typesystem)", "1199620247213", 0, intentionProvider);
+      info.setInequationGroup("default");
       typeCheckingContext.createLessThanInequation((SNode)typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c89590316(jetbrains.mps.lang.refactoring.typesystem)", "1199620247218", true), (SNode)new _Quotations.QuotationClass_4().createNode(typeCheckingContext), false, info);
     }
     {

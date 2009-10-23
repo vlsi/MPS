@@ -27,6 +27,7 @@ public class typeof_JoinOperation_InferenceRule extends AbstractInferenceRule_Ru
         SNode _nodeToCheck_1029348928467 = argument;
         BaseIntentionProvider intentionProvider = null;
         EquationInfo info = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902b1(jetbrains.mps.lang.typesystem.typesystem)", "1239038069343", 0, intentionProvider);
+        info.setInequationGroup("default");
         typeCheckingContext.createLessThanInequation((SNode)typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902b1(jetbrains.mps.lang.typesystem.typesystem)", "1239038069348", true), (SNode)new _Quotations.QuotationClass_44().createNode(typeCheckingContext), false, info);
       }
     }

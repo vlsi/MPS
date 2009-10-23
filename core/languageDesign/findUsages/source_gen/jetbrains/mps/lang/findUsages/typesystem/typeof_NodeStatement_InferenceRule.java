@@ -20,6 +20,7 @@ public class typeof_NodeStatement_InferenceRule extends AbstractInferenceRule_Ru
       SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(nodeToCheck, "foundNode", true);
       BaseIntentionProvider intentionProvider = null;
       EquationInfo info = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c8959035a(jetbrains.mps.lang.findUsages.typesystem)", "1200308678111", 0, intentionProvider);
+      info.setInequationGroup("default");
       typeCheckingContext.createLessThanInequation((SNode)typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c8959035a(jetbrains.mps.lang.findUsages.typesystem)", "1200308678116", true), (SNode)new _Quotations.QuotationClass_1().createNode(typeCheckingContext), false, info);
     }
   }

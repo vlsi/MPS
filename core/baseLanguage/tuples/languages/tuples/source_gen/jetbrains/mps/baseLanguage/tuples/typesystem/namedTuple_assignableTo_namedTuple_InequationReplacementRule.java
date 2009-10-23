@@ -48,6 +48,7 @@ public class namedTuple_assignableTo_namedTuple_InequationReplacementRule extend
           SNode _nodeToCheck_1029348928467 = equationInfo.getNodeWithError();
           BaseIntentionProvider intentionProvider = null;
           EquationInfo info = new EquationInfo(_nodeToCheck_1029348928467, null, "r:e119dbbd-3529-4067-8bad-6b9edd79d0b6(jetbrains.mps.baseLanguage.tuples.typesystem)", "1239968769054", 0, intentionProvider);
+          info.setInequationGroup("default");
           typeCheckingContext.createLessThanInequation((SNode)lp, (SNode)rp, false, info);
         }
       }

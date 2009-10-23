@@ -21,6 +21,7 @@ public class typeof_GetNextOperation_InferenceRule extends AbstractInferenceRule
       SNode _nodeToCheck_1029348928467 = IOperation_Behavior.call_getOperand_1213877410070(next);
       BaseIntentionProvider intentionProvider = null;
       EquationInfo info = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)", "1237471059663", 0, intentionProvider);
+      info.setInequationGroup("default");
       typeCheckingContext.createLessThanInequationStrong((SNode)typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)", "1237471059671", true), (SNode)new _Quotations.QuotationClass_104().createNode(typeCheckingContext.getEquationManager().getRepresentator(elementType_typevar_1237471059662), typeCheckingContext), false, info);
     }
     {

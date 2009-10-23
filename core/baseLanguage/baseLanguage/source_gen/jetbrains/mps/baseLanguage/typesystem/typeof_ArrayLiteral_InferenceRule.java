@@ -22,6 +22,7 @@ public class typeof_ArrayLiteral_InferenceRule extends AbstractInferenceRule_Run
         SNode _nodeToCheck_1029348928467 = item;
         BaseIntentionProvider intentionProvider = null;
         EquationInfo info = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1188221461712", 0, intentionProvider);
+        info.setInequationGroup("default");
         typeCheckingContext.createGreaterThanInequation((SNode)typeCheckingContext.getEquationManager().getRepresentator(elementType_typevar_1188221443596), (SNode)typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1188221461717", true), false, info);
       }
     }

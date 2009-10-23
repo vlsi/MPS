@@ -44,6 +44,7 @@ public class typeof_DefaultMethodCallOperation_InferenceRule extends AbstractInf
           SNode _nodeToCheck_1029348928467 = argument;
           BaseIntentionProvider intentionProvider = null;
           EquationInfo info = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c89590371(jetbrains.mps.baseLanguage.classifiers.typesystem)", "1205854571586", 0, intentionProvider);
+          info.setInequationGroup("default");
           typeCheckingContext.createLessThanInequation((SNode)typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c89590371(jetbrains.mps.baseLanguage.classifiers.typesystem)", "1205854575356", true), (SNode)SLinkOperations.getTarget(parameter, "type", true), false, info);
         }
       }

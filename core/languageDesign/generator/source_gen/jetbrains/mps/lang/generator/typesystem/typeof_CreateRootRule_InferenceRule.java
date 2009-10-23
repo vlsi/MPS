@@ -22,6 +22,7 @@ public class typeof_CreateRootRule_InferenceRule extends AbstractInferenceRule_R
         SNode _nodeToCheck_1029348928467 = nodeToCheck;
         BaseIntentionProvider intentionProvider = null;
         EquationInfo info = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902e4(jetbrains.mps.lang.generator.typesystem)", "1200923779365", 0, intentionProvider);
+        info.setInequationGroup("default");
         typeCheckingContext.createLessThanInequationStrong((SNode)new _Quotations.QuotationClass_3().createNode(SNodeOperations.getConceptDeclaration(SLinkOperations.getTarget(nodeToCheck, "templateNode", false)), typeCheckingContext), (SNode)new _Quotations.QuotationClass_4().createNode(SLinkOperations.getTarget(SLinkOperations.getTarget(nodeToCheck, "label", false), "targetConcept", false), typeCheckingContext), false, info);
       }
     }

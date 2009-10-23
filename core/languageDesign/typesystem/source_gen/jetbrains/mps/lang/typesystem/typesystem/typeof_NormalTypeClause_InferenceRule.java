@@ -20,6 +20,7 @@ public class typeof_NormalTypeClause_InferenceRule extends AbstractInferenceRule
       SNode _nodeToCheck_1029348928467 = clause;
       BaseIntentionProvider intentionProvider = null;
       EquationInfo info = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902b1(jetbrains.mps.lang.typesystem.typesystem)", "1240580138294", 0, intentionProvider);
+      info.setInequationGroup("default");
       typeCheckingContext.createLessThanInequation((SNode)typeCheckingContext.typeOf(SLinkOperations.getTarget(clause, "normalType", true), "r:00000000-0000-4000-0000-011c895902b1(jetbrains.mps.lang.typesystem.typesystem)", "1240580124502", true), (SNode)new _Quotations.QuotationClass_46().createNode(typeCheckingContext), false, info);
     }
   }

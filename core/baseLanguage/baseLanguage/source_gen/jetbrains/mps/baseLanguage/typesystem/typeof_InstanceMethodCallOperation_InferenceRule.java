@@ -38,6 +38,7 @@ public class typeof_InstanceMethodCallOperation_InferenceRule extends AbstractIn
       SNode _nodeToCheck_1029348928467 = imco;
       BaseIntentionProvider intentionProvider = null;
       EquationInfo info = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1204065906120", 0, intentionProvider);
+      info.setInequationGroup("default");
       typeCheckingContext.createLessThanInequationStrong((SNode)typeCheckingContext.getEquationManager().getRepresentator(instanceType_typevar_1204064731338), (SNode)new _Quotations.QuotationClass_62().createNode(methodClassifier, typeCheckingContext), true, info);
     }
     // --- following piece of cake is identical for any method call ---

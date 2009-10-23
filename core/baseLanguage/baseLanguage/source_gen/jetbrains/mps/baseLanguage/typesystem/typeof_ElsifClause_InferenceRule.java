@@ -20,6 +20,7 @@ public class typeof_ElsifClause_InferenceRule extends AbstractInferenceRule_Runt
       SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(elsifClause, "condition", true);
       BaseIntentionProvider intentionProvider = null;
       EquationInfo info = new EquationInfo(_nodeToCheck_1029348928467, "condition should be boolean", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1206069320261", 0, intentionProvider);
+      info.setInequationGroup("default");
       typeCheckingContext.createLessThanInequation((SNode)typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1206069320266", true), (SNode)new _Quotations.QuotationClass_64().createNode(typeCheckingContext), false, info);
     }
   }

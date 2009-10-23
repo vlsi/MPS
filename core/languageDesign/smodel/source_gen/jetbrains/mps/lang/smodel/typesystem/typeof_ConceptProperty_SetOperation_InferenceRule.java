@@ -34,6 +34,7 @@ public class typeof_ConceptProperty_SetOperation_InferenceRule extends AbstractI
           SNode _nodeToCheck_1029348928467 = value;
           BaseIntentionProvider intentionProvider = null;
           EquationInfo info = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "2648652578096473355", 0, intentionProvider);
+          info.setInequationGroup("default");
           typeCheckingContext.createLessThanInequation((SNode)typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "2648652578096473360", true), (SNode)new _Quotations.QuotationClass_119().createNode(typeCheckingContext), false, info);
         }
       } else
@@ -42,6 +43,7 @@ public class typeof_ConceptProperty_SetOperation_InferenceRule extends AbstractI
           SNode _nodeToCheck_1029348928467 = value;
           BaseIntentionProvider intentionProvider = null;
           EquationInfo info = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "2648652578096473367", 0, intentionProvider);
+          info.setInequationGroup("default");
           typeCheckingContext.createLessThanInequation((SNode)typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "2648652578096473372", true), (SNode)new _Quotations.QuotationClass_120().createNode(typeCheckingContext), false, info);
         }
       } else
@@ -50,6 +52,7 @@ public class typeof_ConceptProperty_SetOperation_InferenceRule extends AbstractI
           SNode _nodeToCheck_1029348928467 = value;
           BaseIntentionProvider intentionProvider = null;
           EquationInfo info = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "2648652578096473379", 0, intentionProvider);
+          info.setInequationGroup("default");
           typeCheckingContext.createLessThanInequation((SNode)typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "2648652578096473384", true), (SNode)new _Quotations.QuotationClass_121().createNode(typeCheckingContext), false, info);
         }
       }

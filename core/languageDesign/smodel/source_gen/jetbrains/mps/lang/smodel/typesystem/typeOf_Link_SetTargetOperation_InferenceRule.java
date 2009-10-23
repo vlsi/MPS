@@ -26,6 +26,7 @@ public class typeOf_Link_SetTargetOperation_InferenceRule extends AbstractInfere
         SNode _nodeToCheck_1029348928467 = op;
         BaseIntentionProvider intentionProvider = null;
         EquationInfo info = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1186060404653", 0, intentionProvider);
+        info.setInequationGroup("default");
         typeCheckingContext.createLessThanInequation((SNode)parmType, (SNode)typeCheckingContext.getEquationManager().getRepresentator(ExpectedType_typevar_1206101371703), false, info);
       }
     }

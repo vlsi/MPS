@@ -20,6 +20,7 @@ public class typeof_SEnum_MemberForNameOperation_checkArg_InferenceRule extends 
       SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(operation, "nameExpression", true);
       BaseIntentionProvider intentionProvider = null;
       EquationInfo info = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1240321449347", 0, intentionProvider);
+      info.setInequationGroup("default");
       typeCheckingContext.createLessThanInequationStrong((SNode)typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1240321440339", true), (SNode)new _Quotations.QuotationClass_113().createNode(typeCheckingContext), true, info);
     }
   }

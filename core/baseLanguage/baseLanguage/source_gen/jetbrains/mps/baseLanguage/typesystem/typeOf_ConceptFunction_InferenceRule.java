@@ -67,6 +67,7 @@ public class typeOf_ConceptFunction_InferenceRule extends AbstractInferenceRule_
             SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(returnStatement, "expression", true);
             BaseIntentionProvider intentionProvider = null;
             EquationInfo info = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1186053304511", 0, intentionProvider);
+            info.setInequationGroup("default");
             typeCheckingContext.createGreaterThanInequation((SNode)typeCheckingContext.getEquationManager().getRepresentator(LCS_typevar_1186052624152), (SNode)typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1186053304515", true), false, info);
           }
           if ((expectedRetType != null)) {
@@ -74,6 +75,7 @@ public class typeOf_ConceptFunction_InferenceRule extends AbstractInferenceRule_
               SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(returnStatement, "expression", true);
               BaseIntentionProvider intentionProvider = null;
               EquationInfo info = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "7630810368327770735", 0, intentionProvider);
+              info.setInequationGroup("default");
               typeCheckingContext.createLessThanInequation((SNode)typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "7630810368327770718", true), (SNode)expectedRetType, true, info);
             }
           }
@@ -87,6 +89,7 @@ public class typeOf_ConceptFunction_InferenceRule extends AbstractInferenceRule_
           SNode _nodeToCheck_1029348928467 = expression;
           BaseIntentionProvider intentionProvider = null;
           EquationInfo info = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1186053063874", 0, intentionProvider);
+          info.setInequationGroup("default");
           typeCheckingContext.createGreaterThanInequation((SNode)typeCheckingContext.getEquationManager().getRepresentator(LCS_typevar_1186052624152), (SNode)typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1186053084979", true), false, info);
         }
         if ((expectedRetType != null)) {
@@ -94,6 +97,7 @@ public class typeOf_ConceptFunction_InferenceRule extends AbstractInferenceRule_
             SNode _nodeToCheck_1029348928467 = expression;
             BaseIntentionProvider intentionProvider = null;
             EquationInfo info = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "7630810368327770756", 0, intentionProvider);
+            info.setInequationGroup("default");
             typeCheckingContext.createLessThanInequation((SNode)typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "7630810368327770753", true), (SNode)expectedRetType, true, info);
           }
         }
@@ -121,6 +125,7 @@ public class typeOf_ConceptFunction_InferenceRule extends AbstractInferenceRule_
           SNode _nodeToCheck_1029348928467 = func;
           BaseIntentionProvider intentionProvider = null;
           EquationInfo info = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1186053540847", 0, intentionProvider);
+          info.setInequationGroup("default");
           typeCheckingContext.createLessThanInequation((SNode)typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1186053540851", true), (SNode)expectedRetType, false, info);
         }
       }

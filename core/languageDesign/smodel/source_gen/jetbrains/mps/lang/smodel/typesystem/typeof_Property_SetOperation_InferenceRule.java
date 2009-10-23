@@ -39,6 +39,7 @@ public class typeof_Property_SetOperation_InferenceRule extends AbstractInferenc
           SNode _nodeToCheck_1029348928467 = value;
           BaseIntentionProvider intentionProvider = null;
           EquationInfo info = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1186059295979", 0, intentionProvider);
+          info.setInequationGroup("default");
           typeCheckingContext.createLessThanInequation((SNode)typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1186059295984", true), (SNode)new _Quotations.QuotationClass_3().createNode(typeCheckingContext), false, info);
         }
       } else
@@ -47,6 +48,7 @@ public class typeof_Property_SetOperation_InferenceRule extends AbstractInferenc
           SNode _nodeToCheck_1029348928467 = value;
           BaseIntentionProvider intentionProvider = null;
           EquationInfo info = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1186059295992", 0, intentionProvider);
+          info.setInequationGroup("default");
           typeCheckingContext.createLessThanInequation((SNode)typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1186059295997", true), (SNode)new _Quotations.QuotationClass_4().createNode(typeCheckingContext), false, info);
         }
       } else
@@ -55,6 +57,7 @@ public class typeof_Property_SetOperation_InferenceRule extends AbstractInferenc
           SNode _nodeToCheck_1029348928467 = value;
           BaseIntentionProvider intentionProvider = null;
           EquationInfo info = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1186059296005", 0, intentionProvider);
+          info.setInequationGroup("default");
           typeCheckingContext.createLessThanInequation((SNode)typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1186059296010", true), (SNode)new _Quotations.QuotationClass_5().createNode(typeCheckingContext), false, info);
         }
       } else
@@ -65,6 +68,7 @@ public class typeof_Property_SetOperation_InferenceRule extends AbstractInferenc
               SNode _nodeToCheck_1029348928467 = value;
               BaseIntentionProvider intentionProvider = null;
               EquationInfo info = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1214430014537", 0, intentionProvider);
+              info.setInequationGroup("default");
               typeCheckingContext.createLessThanInequation((SNode)typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1214430014542", true), (SNode)new _Quotations.QuotationClass_82().createNode(typeCheckingContext), false, info);
             }
           } else
@@ -73,6 +77,7 @@ public class typeof_Property_SetOperation_InferenceRule extends AbstractInferenc
               SNode _nodeToCheck_1029348928467 = value;
               BaseIntentionProvider intentionProvider = null;
               EquationInfo info = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1214430042913", 0, intentionProvider);
+              info.setInequationGroup("default");
               typeCheckingContext.createLessThanInequation((SNode)typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1214430042918", true), (SNode)new _Quotations.QuotationClass_83().createNode(typeCheckingContext), false, info);
             }
           } else {
@@ -80,6 +85,7 @@ public class typeof_Property_SetOperation_InferenceRule extends AbstractInferenc
               SNode _nodeToCheck_1029348928467 = value;
               BaseIntentionProvider intentionProvider = null;
               EquationInfo info = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1186059478770", 0, intentionProvider);
+              info.setInequationGroup("default");
               typeCheckingContext.createLessThanInequation((SNode)typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1186059478775", true), (SNode)new _Quotations.QuotationClass_6().createNode(typeCheckingContext), false, info);
             }
           }

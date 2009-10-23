@@ -51,6 +51,7 @@ public class subtypesOfClassifierTypeWWildcards_InequationReplacementRule extend
                       SNode _nodeToCheck_1029348928467 = equationInfo.getNodeWithError();
                       BaseIntentionProvider intentionProvider = null;
                       EquationInfo info = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1220535076789", 0, intentionProvider);
+                      info.setInequationGroup("default");
                       typeCheckingContext.createLessThanInequation((SNode)finalTypeParam, (SNode)myParam, false, info);
                     }
                     {
