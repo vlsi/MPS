@@ -2658,6 +2658,32 @@
         </node>
       </node>
     </node>
+    <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="2749027262099690841">
+      <property name="isVirtual" value="true" />
+      <property name="name" value="getPresentation" />
+      <property name="isPrivate" value="false" />
+      <link role="overriddenMethod" targetNodeId="11.1213877396640" resolveInfo="getPresentation" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="2749027262099690842" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="2749027262099690843">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="2749027262099690848">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.TernaryOperatorExpression" id="2749027262099690860">
+            <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="2749027262099690864">
+              <property name="value" value="as" />
+            </node>
+            <node role="ifFalse" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="2749027262099690865">
+              <property name="value" value=":" />
+            </node>
+            <node role="condition" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="2749027262099690855">
+              <node role="operand" type="jetbrains.mps.lang.behavior.structure.ThisNodeExpression" id="2749027262099690854" />
+              <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="2749027262099690859">
+                <link role="property" targetNodeId="1.1238684351431" resolveInfo="asCast" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.StringType" id="2749027262099690844" />
+    </node>
   </node>
   <node type="jetbrains.mps.lang.behavior.structure.ConceptBehavior" id="1240334100559">
     <property name="package" value="type" />
