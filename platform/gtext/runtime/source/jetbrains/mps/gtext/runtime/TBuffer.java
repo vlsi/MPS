@@ -18,7 +18,7 @@ package jetbrains.mps.gtext.runtime;
 import java.util.List;
 import java.util.ArrayList;
 
-public final class TBuffer {
+public class TBuffer {
 
   private final StringBuilder myStringBuilder = new StringBuilder();
 
