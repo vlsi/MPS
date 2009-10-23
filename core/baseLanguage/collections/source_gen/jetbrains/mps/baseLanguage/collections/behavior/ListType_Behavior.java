@@ -13,6 +13,7 @@ import jetbrains.mps.baseLanguage.behavior.Type_Behavior;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.internal.collections.runtime.Sequence;
 
 public class ListType_Behavior {
   public static void init(SNode thisNode) {
@@ -46,6 +47,7 @@ public class ListType_Behavior {
     SNode llc = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.collections.structure.LinkedListCreator", null);
     SLinkOperations.setTarget(llc, "elementType", SNodeOperations.copyNode(SLinkOperations.getTarget(thisNode, "elementType", true)), true);
     ListSequence.fromList(res).addElement(llc);
+    ListSequence.fromList(res).addSequence(Sequence.fromIterable(CustomContainersUtil.creators(thisNode)));
     return res;
   }
 

@@ -18,6 +18,8 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.generator.template.ReferenceMacroContext;
 import java.util.List;
 import jetbrains.mps.lang.pattern.IMatchingPattern;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.generator.template.IfMacroContext;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
 import jetbrains.mps.baseLanguage.closures.constraints.ClassifierTypeUtil;
@@ -781,6 +783,19 @@ public class QueriesGenerated {
       }
     }
     return SLinkOperations.getTarget(new _Quotations.QuotationClass_0().createNode(), "classifier", false);
+  }
+
+  public static Object referenceMacro_GetReferent_8536718853244882881(final IOperationContext operationContext, final ReferenceMacroContext _context) {
+    SNode clsf = SLinkOperations.getTarget(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "containerDeclaration", false), "runtimeType", true), "classifier", false);
+    return (SNode)ListSequence.fromList(SNodeOperations.getChildren(clsf)).where(new IWhereFilter<SNode>() {
+      public boolean accept(SNode chld) {
+        return SNodeOperations.isInstanceOf(chld, "jetbrains.mps.baseLanguage.structure.ConstructorDeclaration");
+      }
+    }).findFirst(new IWhereFilter<SNode>() {
+      public boolean accept(SNode cd) {
+        return ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.as(cd, "jetbrains.mps.baseLanguage.structure.ConstructorDeclaration"), "parameter", true)).isEmpty();
+      }
+    });
   }
 
   public static boolean ifMacro_Condition_1240689714705(final IOperationContext operationContext, final IfMacroContext _context) {
@@ -2008,6 +2023,10 @@ public class QueriesGenerated {
 
   public static SNode sourceNodeQuery_8420919522916183358(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "operand", true);
+  }
+
+  public static SNode sourceNodeQuery_8536718853244884608(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return ClassifierTypeUtil.getTypeCoercedToClassifierType(SLinkOperations.getTarget(SNodeOperations.as(_context.getNode(), "jetbrains.mps.baseLanguage.collections.structure.AbstractContainerCreator"), "elementType", true));
   }
 
   public static Iterable sourceNodesQuery_1206971567103(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {

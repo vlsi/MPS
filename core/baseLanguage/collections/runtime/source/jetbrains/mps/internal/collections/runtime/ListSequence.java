@@ -236,7 +236,7 @@ public class ListSequence<T> extends CollectionSequence<T> implements IListSeque
     
     @Override
     public boolean isNotEmpty() {
-    	return getList().size() > 0;
+        return !(getList().isEmpty());
     }
     
     // IListSequence

@@ -18,8 +18,10 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590334(jetbrains.mps.baseLanguage.closures.constraints)" version="2" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" version="16" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902fb(jetbrains.mps.lang.smodel.constraints)" version="21" />
-  <maxImportIndex value="3" />
+  <maxImportIndex value="5" />
   <import index="1" modelUID="f:java_stub#java.lang(java.lang@java_stub)" version="-1" />
+  <import index="4" modelUID="r:dfdf3542-dbcf-43df-870a-3c3504b3c840(jetbrains.mps.baseLanguage.collections.custom)" version="-1" />
+  <import index="5" modelUID="f:java_stub#java.util(java.util@java_stub)" version="-1" />
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="1228171888558">
     <property name="name" value="Foo" />
     <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="5451047975133046774">
@@ -501,6 +503,53 @@
           </node>
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.Statement" id="3358009230509153859" />
+      </node>
+    </node>
+    <node role="staticMethod" type="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" id="4329015903091784416">
+      <property name="name" value="asf" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="4329015903091784417" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="4329015903091784418" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="4329015903091784419">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="4329015903091784422">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="4329015903091784423">
+            <property name="name" value="li" />
+            <node role="type" type="jetbrains.mps.baseLanguage.collections.structure.ListType" id="4329015903091784424">
+              <node role="elementType" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="5642502183096982177" />
+            </node>
+            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="5192033827214658976">
+              <node role="creator" type="jetbrains.mps.baseLanguage.collections.structure.CustomContainerCreator" id="5192033827214658977">
+                <link role="containerDeclaration" targetNodeId="4.6099516049394747450" resolveInfo="myArrayList" />
+                <node role="elementType" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="5192033827214658979" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="8536718853246106448">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression" id="8536718853246106450">
+            <node role="rValue" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="8536718853246106453">
+              <node role="creator" type="jetbrains.mps.baseLanguage.collections.structure.CustomContainerCreator" id="8536718853246106454">
+                <link role="containerDeclaration" targetNodeId="4.6099516049394747450" resolveInfo="myArrayList" />
+                <node role="elementType" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="8536718853246106456" />
+              </node>
+            </node>
+            <node role="lValue" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="8536718853246106449">
+              <link role="variableDeclaration" targetNodeId="4329015903091784423" resolveInfo="li" />
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="5308719025594821586">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression" id="5308719025594821588">
+            <node role="rValue" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="5308719025594821591">
+              <node role="creator" type="jetbrains.mps.baseLanguage.collections.structure.CustomContainerCreator" id="5308719025594821592">
+                <link role="containerDeclaration" targetNodeId="4.6099516049394747450" resolveInfo="myArrayList" />
+                <node role="elementType" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="5308719025594821594" />
+              </node>
+            </node>
+            <node role="lValue" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="5308719025594821587">
+              <link role="variableDeclaration" targetNodeId="4329015903091784423" resolveInfo="li" />
+            </node>
+          </node>
+        </node>
       </node>
     </node>
     <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1228171888559" />

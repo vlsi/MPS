@@ -12,6 +12,8 @@ public class ConstraintsDescriptor implements IModelConstraints {
   private List<IModelConstraints> myConstraints = ListSequence.fromList(new ArrayList<IModelConstraints>());
 
   public ConstraintsDescriptor() {
+    ListSequence.fromList(this.myConstraints).addElement(new CustomContainerCreator_alias_PropertyConstraint());
+    ListSequence.fromList(this.myConstraints).addElement(new CustomContainerDeclaration_name_PropertyConstraint());
     ListSequence.fromList(this.myConstraints).addElement(new ForEachVariableReference_variable_ReferentConstraint());
   }
 

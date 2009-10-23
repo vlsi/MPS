@@ -32,7 +32,7 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895903fe(jetbrains.mps.baseLanguage.strings.constraints)" version="1" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590402(jetbrains.mps.baseLanguage.strings.structure)" version="9" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590345(jetbrains.mps.lang.pattern.structure)" version="0" />
-  <maxImportIndex value="25" />
+  <maxImportIndex value="29" />
   <import index="1" modelUID="f:java_stub#java.lang(java.lang@java_stub)" version="-1" />
   <import index="2" modelUID="r:00000000-0000-4000-0000-011c89590334(jetbrains.mps.baseLanguage.closures.constraints)" version="2" />
   <import index="3" modelUID="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" version="7" />
@@ -49,6 +49,10 @@
   <import index="21" modelUID="r:2c4d9270-b6d6-44af-aecd-e01a223680db(jetbrains.mps.kernel.model)" version="-1" />
   <import index="24" modelUID="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" version="3" />
   <import index="25" modelUID="f:java_stub#jetbrains.mps.internal.collections.runtime.backports(jetbrains.mps.internal.collections.runtime.backports@java_stub)" version="-1" />
+  <import index="26" modelUID="r:00000000-0000-4000-0000-011c89590373(jetbrains.mps.baseLanguage.classifiers.structure)" version="0" />
+  <import index="27" modelUID="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" version="0" />
+  <import index="28" modelUID="f:java_stub#jetbrains.mps.lang.smodel.generator.smodelAdapter(jetbrains.mps.lang.smodel.generator.smodelAdapter@java_stub)" version="-1" />
+  <import index="29" modelUID="f:java_stub#java.io(java.io@java_stub)" version="-1" />
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="1178725704623">
     <property name="name" value="RulesFunctions_Collections" />
     <node role="staticMethod" type="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" id="1184783863841">
@@ -9920,6 +9924,95 @@
     <node role="applicableNode" type="jetbrains.mps.lang.typesystem.structure.ConceptReference" id="5232196642625575078">
       <property name="name" value="op" />
       <link role="concept" targetNodeId="3.5232196642625575054" resolveInfo="TailListOperation" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.typesystem.structure.NonTypesystemRule" id="5192033827214196961">
+    <property name="package" value="customContainers" />
+    <property name="name" value="check_CustomContainerCreator_elementType" />
+    <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="5192033827214196962">
+      <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="5192033827214196968">
+        <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="5192033827214196970">
+          <node role="operand" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference" id="5192033827214196969">
+            <link role="applicableNode" targetNodeId="5192033827214196964" resolveInfo="ccc" />
+          </node>
+          <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="5192033827214196974">
+            <link role="link" targetNodeId="3.1237721435807" />
+          </node>
+        </node>
+      </node>
+      <node role="statement" type="jetbrains.mps.lang.typesystem.structure.AssertStatement" id="5192033827214196979">
+        <node role="errorString" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="5192033827214197049">
+          <property name="value" value="Invalid type parameter" />
+        </node>
+        <node role="nodeToReport" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference" id="5192033827214197051">
+          <link role="applicableNode" targetNodeId="5192033827214196964" resolveInfo="ccc" />
+        </node>
+        <node role="condition" type="jetbrains.mps.baseLanguage.structure.AndExpression" id="5192033827214461972">
+          <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.ParenthesizedExpression" id="5192033827214461953">
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.EqualsExpression" id="5192033827214461954">
+              <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="5192033827214461955">
+                <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="5192033827214461956">
+                  <node role="operand" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference" id="5192033827214461957">
+                    <link role="applicableNode" targetNodeId="5192033827214196964" resolveInfo="ccc" />
+                  </node>
+                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="5192033827214461958">
+                    <link role="link" targetNodeId="3.1237721435807" />
+                  </node>
+                </node>
+                <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_IsNotNullOperation" id="5192033827214461959" />
+              </node>
+              <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.ParenthesizedExpression" id="5192033827214461960">
+                <node role="expression" type="jetbrains.mps.baseLanguage.structure.EqualsExpression" id="5192033827214461961">
+                  <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="5192033827214461962">
+                    <property name="value" value="1" />
+                  </node>
+                  <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="5192033827214461963">
+                    <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="5192033827214461964">
+                      <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="5192033827214461965">
+                        <node role="operand" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference" id="5192033827214461966">
+                          <link role="applicableNode" targetNodeId="5192033827214196964" resolveInfo="ccc" />
+                        </node>
+                        <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="5192033827214461967">
+                          <link role="link" targetNodeId="3.1331913329176106420" />
+                        </node>
+                      </node>
+                      <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkListAccess" id="5192033827214461968">
+                        <link role="link" targetNodeId="7.1109279881614" />
+                      </node>
+                    </node>
+                    <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.GetSizeOperation" id="5192033827214461969" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+          <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.LessThanOrEqualsExpression" id="5192033827214461987">
+            <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="5192033827214461990">
+              <property name="value" value="1" />
+            </node>
+            <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="5192033827214461976">
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="5192033827214461977">
+                <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="5192033827214461978">
+                  <node role="operand" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference" id="5192033827214461979">
+                    <link role="applicableNode" targetNodeId="5192033827214196964" resolveInfo="ccc" />
+                  </node>
+                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="5192033827214461980">
+                    <link role="link" targetNodeId="3.1331913329176106420" />
+                  </node>
+                </node>
+                <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkListAccess" id="5192033827214461981">
+                  <link role="link" targetNodeId="7.1109279881614" />
+                </node>
+              </node>
+              <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.GetSizeOperation" id="5192033827214461982" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="applicableNode" type="jetbrains.mps.lang.typesystem.structure.ConceptReference" id="5192033827214196964">
+      <property name="name" value="ccc" />
+      <link role="concept" targetNodeId="3.1331913329176106419" resolveInfo="CustomContainerCreator" />
     </node>
   </node>
 </model>

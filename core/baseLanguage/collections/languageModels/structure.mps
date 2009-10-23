@@ -2996,5 +2996,54 @@
       <link role="intfc" targetNodeId="2141797557973018607" resolveInfo="IListOperation" />
     </node>
   </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="6099516049394485216">
+    <property name="name" value="CustomContainerDeclaration" />
+    <property name="package" value="customContainers" />
+    <link role="extends" targetNodeId="2.1109279851642" resolveInfo="GenericDeclaration" />
+    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="6099516049394485311">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="containerType" />
+      <property name="sourceCardinality" value="1" />
+      <link role="target" targetNodeId="2.1068431790189" resolveInfo="Type" />
+    </node>
+    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="6099516049394485312">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="runtimeType" />
+      <property name="sourceCardinality" value="1" />
+      <link role="target" targetNodeId="2.1107535904670" resolveInfo="ClassifierType" />
+    </node>
+    <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="6099516049394747453">
+      <link role="intfc" targetNodeId="1.1169194658468" resolveInfo="INamedConcept" />
+    </node>
+    <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="6099516049394772604">
+      <link role="intfc" targetNodeId="2.1178549954367" resolveInfo="IVisible" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="6099516049394485324">
+    <property name="name" value="CustomContainers" />
+    <property name="rootable" value="true" />
+    <property name="package" value="customContainers" />
+    <link role="extends" targetNodeId="1.1133920641626" resolveInfo="BaseConcept" />
+    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="6099516049394485326">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="containerDeclaration" />
+      <property name="sourceCardinality" value="0..n" />
+      <link role="target" targetNodeId="6099516049394485216" resolveInfo="CustomContainerDefinition" />
+    </node>
+    <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="6099516049394485325">
+      <link role="intfc" targetNodeId="1.1169194658468" resolveInfo="INamedConcept" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1331913329176106419">
+    <property name="package" value="customContainers" />
+    <property name="name" value="CustomContainerCreator" />
+    <link role="extends" targetNodeId="1237721394592" resolveInfo="AbstractContainerCreator" />
+    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1331913329176106420">
+      <property name="metaClass" value="reference" />
+      <property name="role" value="containerDeclaration" />
+      <property name="sourceCardinality" value="1" />
+      <link role="target" targetNodeId="6099516049394485216" resolveInfo="CustomContainerDeclaration" />
+    </node>
+  </node>
 </model>
 

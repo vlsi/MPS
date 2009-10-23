@@ -13,31 +13,32 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.internal.collections.runtime.ISelector;
+import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.util.NameUtil;
 
 public class AbstractContainerCreator_Constraints {
   public static boolean canBeAChild(final IOperationContext operationContext, final CanBeAChildContext _context) {
-    SNode dtype = TypeDerivable_Behavior.call_deriveType_1213877435747(SNodeOperations.as(SNodeOperations.getParent(_context.getParentNode()), "jetbrains.mps.baseLanguage.structure.TypeDerivable"), SNodeOperations.as(_context.getParentNode(), "jetbrains.mps.baseLanguage.structure.Expression"));
+    final SNode dtype = TypeDerivable_Behavior.call_deriveType_1213877435747(SNodeOperations.as(SNodeOperations.getParent(_context.getParentNode()), "jetbrains.mps.baseLanguage.structure.TypeDerivable"), SNodeOperations.as(_context.getParentNode(), "jetbrains.mps.baseLanguage.structure.Expression"));
+    final SNode avlbForCLdecl = ListSequence.fromList(SLinkOperations.getTargets(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.AbstractContainerCreator"), "conceptLinkDeclaration", true)).findFirst(new IWhereFilter<SNode>() {
+      public boolean accept(SNode it) {
+        return "availableFor".equals(SPropertyOperations.getString(it, "name"));
+      }
+    });
     if ((dtype != null)) {
-      final SNode cld = ListSequence.fromList(SLinkOperations.getTargets(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.AbstractContainerCreator"), "conceptLinkDeclaration", true)).findFirst(new IWhereFilter<SNode>() {
-        public boolean accept(SNode it) {
-          return "availableFor".equals(SPropertyOperations.getString(it, "name"));
-        }
-      });
-      for (SNode avlbForConcept : ListSequence.fromList(SLinkOperations.getTargets(_context.getChildConcept(), "conceptLink", true)).where(new IWhereFilter<SNode>() {
-        public boolean accept(SNode it) {
-          return cld == SLinkOperations.getTarget(it, "conceptLinkDeclaration", false);
+      Iterable<SNode> avlbFor = ListSequence.fromList(SLinkOperations.getTargets(_context.getChildConcept(), "conceptLink", true)).where(new IWhereFilter<SNode>() {
+        public boolean accept(SNode cl) {
+          return SLinkOperations.getTarget(cl, "conceptLinkDeclaration", false) == avlbForCLdecl;
         }
       }).select(new ISelector<SNode, SNode>() {
-        public SNode select(SNode it) {
-          return SLinkOperations.getTarget(SNodeOperations.cast(it, "jetbrains.mps.lang.structure.structure.ReferenceConceptLink"), "target", false);
+        public SNode select(SNode cl) {
+          return (SNode)SLinkOperations.getTarget(SNodeOperations.cast(cl, "jetbrains.mps.lang.structure.structure.ReferenceConceptLink"), "target", false);
         }
-      })) {
-        if (SConceptOperations.isSuperConceptOf(SNodeOperations.getConceptDeclaration(dtype), NameUtil.nodeFQName(avlbForConcept))) {
-          return true;
+      });
+      return Sequence.fromIterable(avlbFor).isEmpty() || Sequence.fromIterable(avlbFor).any(new IWhereFilter<SNode>() {
+        public boolean accept(SNode trg) {
+          return SConceptOperations.isSuperConceptOf(SNodeOperations.getConceptDeclaration(dtype), NameUtil.nodeFQName(trg));
         }
-      }
-      return false;
+      });
     }
     return true;
   }
