@@ -31,6 +31,9 @@ public class ReplacePrioritiesWithReferences_MigrationScript extends BaseMigrati
 
       public void doUpdateInstanceNode(SNode node) {
         int priority = SPropertyOperations.getInteger_def(node, "inequationPriority", "0");
+        if (priority == 500) {
+          priority = 4;
+        }
         SNode group = TypesLanguageScriptsUtil.getPriorityGroupByPriority(priority);
         SNode groupReference = SLinkOperations.setNewChild(node, "inequationGroup", "jetbrains.mps.lang.typesystem.structure.InequationsGroupReference");
         SLinkOperations.setTarget(groupReference, "group", group, false);

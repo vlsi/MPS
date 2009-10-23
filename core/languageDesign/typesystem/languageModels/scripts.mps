@@ -342,6 +342,28 @@
               </node>
             </node>
           </node>
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="3620403016169735245">
+            <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="3620403016169735246">
+              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="3620403016169735247">
+                <node role="expression" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression" id="3620403016169735248">
+                  <node role="rValue" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="3620403016169735249">
+                    <property name="value" value="4" />
+                  </node>
+                  <node role="lValue" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="3620403016169735255">
+                    <link role="variableDeclaration" targetNodeId="1759628044690732180" resolveInfo="priority" />
+                  </node>
+                </node>
+              </node>
+            </node>
+            <node role="condition" type="jetbrains.mps.baseLanguage.structure.EqualsExpression" id="3620403016169735251">
+              <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="3620403016169735252">
+                <property name="value" value="500" />
+              </node>
+              <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="3620403016169735254">
+                <link role="variableDeclaration" targetNodeId="1759628044690732180" resolveInfo="priority" />
+              </node>
+            </node>
+          </node>
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1759628044690734928">
             <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1759628044690734929">
               <property name="name" value="group" />
