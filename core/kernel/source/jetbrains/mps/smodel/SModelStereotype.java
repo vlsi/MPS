@@ -25,11 +25,12 @@ public class SModelStereotype {
   public static final String TEMPLATES = "templates";
   public static final String GENERATOR = "generator";
   public static final String JAVA_STUB = "java_stub";
+  public static final String TESTS = "tests";
   public static final String GENERATED_MODEL = "generatedModel";
   public static final String INTERNAL_COPY = "internal_copy";
   public static final String INTERNAL = "$internal$";
 
-  public static final String[] values = new String[]{NONE, GENERATOR};
+  public static final String[] values = new String[]{NONE, GENERATOR, TESTS};
 
   public static boolean isUserModel(SModel model) {
     return isUserModelStereotype(model.getStereotype());
@@ -40,7 +41,8 @@ public class SModelStereotype {
   }
 
   private static boolean isUserModelStereotype(String stereotype) {
-    return NONE.equals(stereotype) || GENERATOR.equals(stereotype) || TEMPLATES.equals(stereotype);
+    return NONE.equals(stereotype) || GENERATOR.equals(stereotype) || TEMPLATES.equals(stereotype)
+      || TESTS.equals(stereotype);
   }
 
   public static boolean isGeneratorModel(SModel model) {
@@ -49,6 +51,18 @@ public class SModelStereotype {
 
   public static boolean isGeneratorModel(SModelDescriptor model) {
     return isGeneratorModelStereotype(model.getStereotype());
+  }
+
+  public static boolean isTestModelStereotype(String stereotype) {
+    return TESTS.equals(stereotype);
+  }
+
+  public static boolean isTestModel(SModelDescriptor model) {
+    return isTestModelStereotype(model.getStereotype());
+  }
+
+  public static boolean isTestModel(SModel model) {
+    return isTestModelStereotype(model.getStereotype());
   }
 
   private static boolean isGeneratorModelStereotype(String stereotype) {

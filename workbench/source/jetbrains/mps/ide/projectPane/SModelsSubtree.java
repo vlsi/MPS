@@ -30,7 +30,9 @@ import java.util.*;
 public class SModelsSubtree {
   public static void create(MPSTreeNode rootTreeNode, IOperationContext operationContext) {
     List<SModelDescriptor> regularModels = new ArrayList<SModelDescriptor>();
+    List<SModelDescriptor> tests = new ArrayList<SModelDescriptor>();
     List<SModelDescriptor> javaStubs = new ArrayList<SModelDescriptor>();
+
 
     IModule module = operationContext.getModule();
     assert module != null;
@@ -45,7 +47,9 @@ public class SModelsSubtree {
 
       if (SModelStereotype.JAVA_STUB.equals(stereotype)) {
         javaStubs.add(modelDescriptor);
-      } else {
+      } else if (SModelStereotype.TESTS.equals(stereotype)) {
+        tests.add(modelDescriptor);
+      } else{
         regularModels.add(modelDescriptor);
       }
     }
@@ -57,6 +61,20 @@ public class SModelsSubtree {
       builder.addNode(treeNode);
     }
     builder.fillNode(rootTreeNode);
+
+    if (!tests.isEmpty()) {
+      builder = new SModelNamespaceTreeBuilder();
+
+      List<SModelTreeNode> testNodes = getModelTreeNodes(tests, operationContext);
+      for (SModelTreeNode testNode : testNodes) {
+        builder.addNode(testNode);
+      }
+
+      TestsTreeNode testsNode = new TestsTreeNode(operationContext);
+      builder.fillNode(testsNode);
+      
+      rootTreeNode.add(testsNode);
+    }
 
     if (!javaStubs.isEmpty()) {
       builder = new SModelNamespaceTreeBuilder();
@@ -92,6 +110,15 @@ public class SModelsSubtree {
   public static class JavaStubsTreeNode extends TextTreeNode {
     public JavaStubsTreeNode(IOperationContext context) {
       super("java stubs", context);
+
+      setIcon(Icons.PROJECT_MODELS_ICON, false);
+      setIcon(Icons.PROJECT_MODELS_EXPANDED_ICON, true);
+    }
+  }
+
+  public static class TestsTreeNode extends TextTreeNode {
+    public TestsTreeNode(IOperationContext context) {
+      super("tests", context);
 
       setIcon(Icons.PROJECT_MODELS_ICON, false);
       setIcon(Icons.PROJECT_MODELS_EXPANDED_ICON, true);

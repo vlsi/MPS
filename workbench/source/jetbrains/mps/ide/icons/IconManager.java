@@ -158,6 +158,8 @@ public class IconManager {
       return Icons.TEMPLATES_MODEL_ICON;
     } else if (Language.isLanguageOwnedAccessoryModel(modelDescriptor)) {
       return Icons.ACCESSORY_MODEL_ICON;
+    } else if (SModelStereotype.isTestModel(modelDescriptor)) {
+      return Icons.TEST_MODEL_ICON;
     }
     return Icons.MODEL_ICON;
   }
