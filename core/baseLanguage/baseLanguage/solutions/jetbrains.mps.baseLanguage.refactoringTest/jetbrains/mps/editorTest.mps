@@ -5489,5 +5489,89 @@
       </node>
     </node>
   </node>
+  <node type="jetbrains.mps.lang.test.structure.EditorTestCase" id="2907839077756756657">
+    <property name="package" value="intelligentInputUtil" />
+    <property name="name" value="TryingToLeftTransformNewExpression" />
+    <node role="nodeToEdit" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="2907839077756812217">
+      <property name="name" value="method" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="2907839077756812218" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="2907839077756812219" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="2907839077756812220">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="2907839077756818809">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="2907839077756818810">
+            <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="2907839077756865186">
+              <link role="baseMethodDeclaration" targetNodeId="1.~Object.&lt;init&gt;()" resolveInfo="Object" />
+            </node>
+            <node role="testNode$attribute" type="jetbrains.mps.lang.test.structure.AnonymousCellAnnotation" id="2907839077756865190">
+              <property name="caretPosition" value="0" />
+              <property name="useLabelSelection" value="true" />
+              <property name="selectionStart" value="0" />
+              <property name="selectionEnd" value="0" />
+              <property name="cellId" value="Constant_0475_0" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="result" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="2907839077756812221">
+      <property name="name" value="method" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="2907839077756812222" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="2907839077756812223" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="2907839077756812224">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="2907839077756865187">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="2907839077756865188">
+            <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="2907839077756865189">
+              <link role="baseMethodDeclaration" targetNodeId="1.~Object.&lt;init&gt;()" resolveInfo="Object" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="code" type="jetbrains.mps.baseLanguage.structure.StatementList" id="2907839077756865191">
+      <node role="statement" type="jetbrains.mps.lang.test.structure.TypeKeyStatement" id="2907839077757040116">
+        <property name="keys" value=" " />
+      </node>
+      <node role="statement" type="jetbrains.mps.lang.test.structure.PressKeyStatement" id="2907839077757049951">
+        <node role="keyStrokes" type="jetbrains.mps.lang.plugin.structure.KeyMapKeystroke" id="2907839077757049952">
+          <property name="modifiers" value="ctrl" />
+          <property name="keycode" value="VK_SPACE" />
+        </node>
+      </node>
+      <node role="statement" type="jetbrains.mps.baseLanguage.unitTest.structure.AssertTrue" id="2907839077757057119">
+        <node role="condition" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="2907839077757057121">
+          <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="2907839077757057122">
+            <node role="operand" type="jetbrains.mps.lang.test.structure.EditorComponentExpression" id="2907839077757057123" />
+            <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="2907839077757057124">
+              <link role="baseMethodDeclaration" targetNodeId="6.~EditorComponent.getNodeSubstituteChooser():jetbrains.mps.nodeEditor.cellMenu.NodeSubstituteChooser" resolveInfo="getNodeSubstituteChooser" />
+            </node>
+          </node>
+          <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="2907839077757057125">
+            <link role="baseMethodDeclaration" targetNodeId="3.~NodeSubstituteChooser.isVisible():boolean" resolveInfo="isVisible" />
+          </node>
+        </node>
+      </node>
+      <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="2907839077757066996">
+        <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="2907839077757067002">
+          <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="2907839077757066998">
+            <node role="operand" type="jetbrains.mps.lang.test.structure.EditorComponentExpression" id="2907839077757066999" />
+            <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="2907839077757067000">
+              <link role="baseMethodDeclaration" targetNodeId="6.~EditorComponent.getNodeSubstituteChooser():jetbrains.mps.nodeEditor.cellMenu.NodeSubstituteChooser" resolveInfo="getNodeSubstituteChooser" />
+            </node>
+          </node>
+          <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="2907839077757067006">
+            <link role="baseMethodDeclaration" targetNodeId="3.~NodeSubstituteChooser.setVisible(boolean):void" resolveInfo="setVisible" />
+            <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="2907839077757067007">
+              <property name="value" value="false" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="statement" type="jetbrains.mps.lang.test.structure.PressKeyStatement" id="2907839077757067009">
+        <node role="keyStrokes" type="jetbrains.mps.lang.plugin.structure.KeyMapKeystroke" id="2907839077757067010">
+          <property name="keycode" value="VK_UP" />
+        </node>
+      </node>
+    </node>
+  </node>
 </model>
 

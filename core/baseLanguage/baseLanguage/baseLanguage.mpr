@@ -58,8 +58,6 @@
   </component>
   <component name="VcsDirectoryMappings">
     <mapping directory="" vcs="" />
-    <mapping directory="C:/MPS.beta" vcs="svn" />
-    <mapping directory="$PROJECT_DIR$" vcs="svn" />
     <mapping directory="$APPLICATION_HOME_DIR$" vcs="svn" />
   </component>
 </project>
