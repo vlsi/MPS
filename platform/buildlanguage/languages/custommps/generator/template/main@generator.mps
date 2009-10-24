@@ -3439,6 +3439,18 @@
             </node>
           </node>
         </node>
+        <node role="entry" type="jetbrains.mps.build.packaging.structure.File" id="7078394703002565841">
+          <node role="sourcePath" type="jetbrains.mps.build.packaging.structure.Path" id="7078394703002565842">
+            <node role="macro" type="jetbrains.mps.build.packaging.structure.MacroReference" id="7078394703002565845">
+              <property name="name" value="mps_home" />
+            </node>
+            <node role="compositePathComponent" type="jetbrains.mps.build.packaging.structure.CompositePathComponent" id="7078394703002565844">
+              <node role="pathComponent" type="jetbrains.mps.build.packaging.structure.PathComponent" id="7078394703002565846">
+                <property name="path" value="releaseNotes.txt" />
+              </node>
+            </node>
+          </node>
+        </node>
         <node role="entry" type="jetbrains.mps.build.packaging.structure.File" id="1234971270728">
           <property name="file" value="true" />
           <node role="sourcePath" type="jetbrains.mps.build.packaging.structure.Path" id="1234971270729">
