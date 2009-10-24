@@ -484,16 +484,18 @@ public class JUnitConfigEditor extends JPanel {
         myThis.myMethodName0.setText(config.getStateObject().method);
       }
     }
-    if (config.getStateObject().model != null && myThis.getModel().getModelDescriptor() != null && myThis.getModel().getModelDescriptor().getModule() != null) {
+    if (config.getStateObject().model != null) {
       myThis.setModelValue(config.getStateObject().model);
-      ModelAccess.instance().runReadAction(new Runnable() {
-        public void run() {
-          myThis.myModelName0.setText(config.getStateObject().model);
-          String moduleName = myThis.getModel().getModelDescriptor().getModule().getModuleFqName();
-          myThis.setModuleValue(moduleName);
-          myThis.myModuleName0.setText(moduleName);
-        }
-      });
+      if (myThis.getModel() != null && myThis.getModel().getModelDescriptor() != null && myThis.getModel().getModelDescriptor().getModule() != null) {
+        ModelAccess.instance().runReadAction(new Runnable() {
+          public void run() {
+            myThis.myModelName0.setText(config.getStateObject().model);
+            String moduleName = myThis.getModel().getModelDescriptor().getModule().getModuleFqName();
+            myThis.setModuleValue(moduleName);
+            myThis.myModuleName0.setText(moduleName);
+          }
+        });
+      }
     }
     if (config.getStateObject().module != null) {
       myThis.setModuleValue(config.getStateObject().module);
