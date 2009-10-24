@@ -42,8 +42,9 @@ public class FunctionType_subtypeOf_FunctionType_InequationReplacementRule exten
     {
       SNode _nodeToCheck_1029348928467 = equationInfo.getNodeWithError();
       BaseIntentionProvider intentionProvider = null;
-      EquationInfo info = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c89590337(jetbrains.mps.baseLanguage.closures.typesystem)", "4160512568111333309", 1, intentionProvider);
-      info.setInequationGroup("default");
+      EquationInfo info = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c89590337(jetbrains.mps.baseLanguage.closures.typesystem)", "4160512568111333309", 0, intentionProvider);
+      info.setInequationGroup("priority_1_1759628044690732298");
+      info.addInequationGroupBefore("default");
       typeCheckingContext.createLessThanInequation((SNode)new _Quotations.QuotationClass_15().createNode(SLinkOperations.getTarget(subtype, "resultType", true), typeCheckingContext), (SNode)SLinkOperations.getTarget(supertype, "resultType", true), false, info);
     }
     if (SNodeOperations.isInstanceOf(subtype, "jetbrains.mps.baseLanguage.closures.structure.UnrestrictedFunctionType") && SNodeOperations.isInstanceOf(supertype, "jetbrains.mps.baseLanguage.closures.structure.UnrestrictedFunctionType")) {

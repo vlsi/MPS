@@ -52,8 +52,9 @@ public class typeof_FieldReferenceOperation_InferenceRule extends AbstractInfere
     {
       SNode _nodeToCheck_1029348928467 = null;
       BaseIntentionProvider intentionProvider = null;
-      EquationInfo info = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "3254522536313044098", 500, intentionProvider);
-      info.setInequationGroup("default");
+      EquationInfo info = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "3254522536313044098", 0, intentionProvider);
+      info.setInequationGroup("priority_4_1759628044690732301");
+      info.addInequationGroupBefore("default");
       typeCheckingContext.createLessThanInequation((SNode)typeCheckingContext.typeOf(fieldReference, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "3254522536313044095", true), (SNode)new _Quotations.QuotationClass_112().createNode(typeCheckingContext), false, info);
     }
     RulesFunctions_BaseLanguage.inference_matchConcreteTypesWithTypeVariables(typeCheckingContext, fieldClassifier, typeCheckingContext.getEquationManager().getRepresentator(InstanceType_typevar_1206554174334), mmap);

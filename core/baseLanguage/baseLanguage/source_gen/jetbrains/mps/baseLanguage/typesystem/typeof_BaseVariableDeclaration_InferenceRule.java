@@ -23,8 +23,9 @@ public class typeof_BaseVariableDeclaration_InferenceRule extends AbstractInfere
       {
         SNode _nodeToCheck_1029348928467 = vd;
         BaseIntentionProvider intentionProvider = null;
-        EquationInfo info = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1203026955244", 500, intentionProvider);
-        info.setInequationGroup("default");
+        EquationInfo info = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1203026955244", 0, intentionProvider);
+        info.setInequationGroup("priority_4_1759628044690732301");
+        info.addInequationGroupBefore("default");
         typeCheckingContext.createLessThanInequation((SNode)typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1203026960432", true), (SNode)SLinkOperations.getTarget(vd, "type", true), false, info);
       }
     } else {

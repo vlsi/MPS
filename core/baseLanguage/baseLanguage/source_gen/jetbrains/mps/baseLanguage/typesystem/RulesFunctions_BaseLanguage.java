@@ -255,8 +255,9 @@ __switch__:
         {
           SNode _nodeToCheck_1029348928467 = actualParam;
           BaseIntentionProvider intentionProvider = null;
-          EquationInfo info = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1219947530376", 2, intentionProvider);
-          info.setInequationGroup("default");
+          EquationInfo info = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1219947530376", 0, intentionProvider);
+          info.setInequationGroup("priority_2_1759628044690732299");
+          info.addInequationGroupBefore("default");
           typeCheckingContext.createLessThanInequation((SNode)typeCheckingContext.typeOf(actualParam, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1219947530380", true), (SNode)matchedType, false, info);
         }
       }
@@ -285,15 +286,17 @@ __switch__:
                         {
                           SNode _nodeToCheck_1029348928467 = actual;
                           BaseIntentionProvider intentionProvider = null;
-                          EquationInfo info = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1220347279318", 2, intentionProvider);
-                          info.setInequationGroup("default");
+                          EquationInfo info = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1220347279318", 0, intentionProvider);
+                          info.setInequationGroup("priority_2_1759628044690732299");
+                          info.addInequationGroupBefore("default");
                           typeCheckingContext.createLessThanInequation((SNode)SLinkOperations.getTarget(SNodeOperations.cast(typeCheckingContext.getEquationManager().getRepresentator(actualType), "jetbrains.mps.baseLanguage.structure.ArrayType"), "componentType", true), (SNode)matchedType, false, info);
                         }
                       } else {
                         SNode _nodeToCheck_1029348928467 = actual;
                         BaseIntentionProvider intentionProvider = null;
-                        EquationInfo info = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1220347200873", 2, intentionProvider);
-                        info.setInequationGroup("default");
+                        EquationInfo info = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1220347200873", 0, intentionProvider);
+                        info.setInequationGroup("priority_2_1759628044690732299");
+                        info.addInequationGroupBefore("default");
                         typeCheckingContext.createLessThanInequation((SNode)typeCheckingContext.getEquationManager().getRepresentator(actualType), (SNode)matchedType, false, info);
                       }
                     }
@@ -306,8 +309,9 @@ __switch__:
                   {
                     SNode _nodeToCheck_1029348928467 = actual;
                     BaseIntentionProvider intentionProvider = null;
-                    EquationInfo info = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1219947702422", 2, intentionProvider);
-                    info.setInequationGroup("default");
+                    EquationInfo info = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1219947702422", 0, intentionProvider);
+                    info.setInequationGroup("priority_2_1759628044690732299");
+                    info.addInequationGroupBefore("default");
                     typeCheckingContext.createLessThanInequation((SNode)typeCheckingContext.typeOf(actual, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1219947702426", true), (SNode)matchedType, false, info);
                   }
                 }
@@ -337,8 +341,9 @@ __switch__:
             {
               SNode _nodeToCheck_1029348928467 = arg;
               BaseIntentionProvider intentionProvider = null;
-              EquationInfo info = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1203441371327", 2, intentionProvider);
-              info.setInequationGroup("default");
+              EquationInfo info = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1203441371327", 0, intentionProvider);
+              info.setInequationGroup("priority_2_1759628044690732299");
+              info.addInequationGroupBefore("default");
               typeCheckingContext.createLessThanInequation((SNode)typeCheckingContext.typeOf(arg, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1203441371331", true), (SNode)matchedType, false, info);
             }
           }
@@ -356,8 +361,9 @@ __switch__:
       {
         SNode _nodeToCheck_1029348928467 = null;
         BaseIntentionProvider intentionProvider = null;
-        EquationInfo info = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "3254522536313044080", 500, intentionProvider);
-        info.setInequationGroup("default");
+        EquationInfo info = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "3254522536313044080", 0, intentionProvider);
+        info.setInequationGroup("priority_4_1759628044690732301");
+        info.addInequationGroupBefore("default");
         typeCheckingContext.createLessThanInequation((SNode)typeCheckingContext.typeOf(mc, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "3254522536313044077", true), (SNode)new _Quotations.QuotationClass_111().createNode(typeCheckingContext), false, info);
       }
     }
@@ -372,8 +378,9 @@ __switch__:
           {
             SNode _nodeToCheck_1029348928467 = null;
             BaseIntentionProvider intentionProvider = null;
-            EquationInfo info = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "8531167801199654648", 500, intentionProvider);
-            info.setInequationGroup("default");
+            EquationInfo info = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "8531167801199654648", 0, intentionProvider);
+            info.setInequationGroup("priority_4_1759628044690732301");
+            info.addInequationGroupBefore("default");
             typeCheckingContext.createLessThanInequation((SNode)ListSequence.fromList(nodes).first(), (SNode)TypeVariableDeclaration_Behavior.call_getConcreteUpperBound_4346214032091509920(tvd), false, info);
           }
         }

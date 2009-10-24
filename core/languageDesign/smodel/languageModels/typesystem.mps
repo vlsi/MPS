@@ -5682,6 +5682,7 @@
       <link role="concept" targetNodeId="1.1144146199828" />
     </node>
   </node>
+  <visible index="2" modelUID="r:cec599e3-51d2-48a7-af31-989e3cbd593c(jetbrains.mps.lang.core.typesystem)" />
   <node type="jetbrains.mps.lang.typesystem.structure.InferenceRule" id="1178287492235">
     <property name="overrides" value="true" />
     <property name="name" value="typeOf_Node_GetAdapterOperation" />
@@ -5746,7 +5747,7 @@
         </node>
       </node>
       <node role="statement" type="jetbrains.mps.lang.typesystem.structure.CreateLessThanInequationStatement" id="1186057690603">
-        <property name="inequationPriority" value="500" />
+        <property name="inequationPriority" value="0" />
         <node role="rightExpression" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause" id="1186057722590">
           <node role="normalType" type="jetbrains.mps.lang.quotation.structure.Quotation" id="1196933487618">
             <node role="quotedNode" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1227546219251">
@@ -5761,7 +5762,12 @@
             </node>
           </node>
         </node>
-        <node role="inequationGroup" type="jetbrains.mps.lang.typesystem.structure.DefaultGroupReference" id="5970100369440882750" />
+        <node role="inequationGroup" type="jetbrains.mps.lang.typesystem.structure.InequationsGroupReference" id="6703419758834350505">
+          <link role="group" targetNodeId="2v.1759628044690732301" resolveInfo="priority_4" />
+        </node>
+        <node role="beforeGroups" type="jetbrains.mps.lang.typesystem.structure.InequationsGroupReference" id="6703419758834350506">
+          <link role="group" targetNodeId="2v.1759628044690732300" resolveInfo="priority_3" />
+        </node>
       </node>
     </node>
     <node role="applicableNode" type="jetbrains.mps.lang.typesystem.structure.ConceptReference" id="1178287490356">
