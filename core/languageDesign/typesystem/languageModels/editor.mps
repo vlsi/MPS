@@ -2617,13 +2617,6 @@
           </node>
         </node>
       </node>
-      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_NonEmptyProperty" id="1212056656052">
-        <link role="relationDeclaration" targetNodeId="1.1212056105818" resolveInfo="inequationPriority" />
-        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.FontSizeStyleClassItem" id="1214317283303">
-          <property name="size" value="8" />
-          <property name="value" value="6" />
-        </node>
-      </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode" id="1212056631986">
         <link role="relationDeclaration" targetNodeId="1.1174660783414" />
       </node>

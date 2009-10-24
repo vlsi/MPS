@@ -52,13 +52,10 @@ public class AbstractInequationStatement_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Collection_9248_0");
     editorCell.addEditorCell(this.createRefNode_9248_0(editorContext, node));
     editorCell.addEditorCell(this.createConceptProperty_9248_0(editorContext, node));
-    if (node.hasProperty("inequationPriority")) {
-      editorCell.addEditorCell(this.createNonEmptyProperty_9248_0(editorContext, node));
-    }
     editorCell.addEditorCell(this.createRefNode_9248_1(editorContext, node));
     editorCell.addEditorCell(this.createConstant_9248_0(editorContext, node));
     if (node.hasProperty("label")) {
-      editorCell.addEditorCell(this.createNonEmptyProperty_9248_1(editorContext, node));
+      editorCell.addEditorCell(this.createNonEmptyProperty_9248_0(editorContext, node));
     }
     if (renderingCondition9248_0(node, editorContext, editorContext.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.createRefNode_9248_3(editorContext, node));
@@ -269,7 +266,7 @@ public class AbstractInequationStatement_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createNonEmptyProperty_9248_0(EditorContext editorContext, SNode node) {
+  private EditorCell createProperty_9248_0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("inequationPriority");
     provider.setNoTargetText("<no inequationPriority>");
@@ -277,28 +274,6 @@ public class AbstractInequationStatement_Editor extends DefaultNodeEditor {
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setCellId("property_inequationPriority");
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.FONT_SIZE, 6);
-    }
-    editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
-    SNode attributeConcept = provider.getRoleAttribute();
-    Class attributeKind = provider.getRoleAttributeClass();
-    if (attributeConcept != null) {
-      IOperationContext opContext = editorContext.getOperationContext();
-      EditorManager manager = EditorManager.getInstanceFromContext(opContext);
-      return manager.createRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
-    } else
-    return editorCell;
-  }
-
-  private EditorCell createProperty_9248_0(EditorContext editorContext, SNode node) {
-    CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
-    provider.setRole("inequationPriority");
-    provider.setNoTargetText("<no inequationPriority>");
-    EditorCell editorCell;
-    editorCell = provider.createEditorCell(editorContext);
-    editorCell.setCellId("property_inequationPriority_1");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
@@ -352,7 +327,7 @@ public class AbstractInequationStatement_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createNonEmptyProperty_9248_1(EditorContext editorContext, SNode node) {
+  private EditorCell createNonEmptyProperty_9248_0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("label");
     provider.setNoTargetText("<no label>");
