@@ -271,6 +271,10 @@ public class Generator extends AbstractModule {
     return mySourceLanguage.getGeneratorOutputPath();
   }
 
+  public String getTestsOutputPath() {
+    return mySourceLanguage.getTestsOutputPath();
+  }
+
   public IFile getClassesGen() {
     return mySourceLanguage.getClassesGen();
   }

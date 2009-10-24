@@ -482,6 +482,10 @@ public class Language extends AbstractModule {
     return generatorOutputPath;
   }
 
+  public String getTestsOutputPath() {
+    return null;
+  }
+
   public List<ConceptDeclaration> getConceptDeclarations() {
     return getStructureModelDescriptor().getSModel().allAdapters(ConceptDeclaration.class);
   }

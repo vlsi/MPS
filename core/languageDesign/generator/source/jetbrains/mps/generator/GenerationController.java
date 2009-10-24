@@ -34,6 +34,7 @@ import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SModelDescriptor;
+import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.Pair;
@@ -206,17 +207,10 @@ public class GenerationController {
     setText2("module " + module, totalJob, startJobTime);
 
     String outputFolder = module != null ? module.getGeneratorOutputPath() : null;
-    if (outputFolder != null && !new File(outputFolder).exists()) {
-      new File(outputFolder).mkdirs();
-      try {
-        IProjectHandler projectHandler = getProjectHandler();
-        if (projectHandler != null) {
-          projectHandler.addSourceRoot(outputFolder);
-        }
-      } catch (Exception e) {
-        myMesssages.handle(new Message(MessageKind.WARNING,GenerationController.class, "Can't add output folder to IDEA as sources"));
-      }
-    }
+    prepareOutputFolder(outputFolder);
+
+    String testsOutputFolder = module != null ? module.getTestsOutputPath() : null;
+    prepareOutputFolder(testsOutputFolder);
 
     myMesssages.handle(new Message(MessageKind.INFORMATION,GenerationController.class, "    target root folder: \"" + outputFolder + "\""));
 
@@ -252,15 +246,18 @@ public class GenerationController {
 
           info("handling output...");
           checkMonitorCanceled();
+
+          String targetDir = SModelStereotype.isTestModel(inputModel) ? testsOutputFolder : outputFolder ;
+
           if (status.getOutputModel() != null) {
-            boolean result = myGenerationType.handleOutput(status, outputFolder, invocationContext, myProgress, myMesssages);
+            boolean result = myGenerationType.handleOutput(status, targetDir, invocationContext, myProgress, myMesssages);
 
             if (!result) {
               info("there were errors.");
               currentGenerationOK = false;
             }
           } else if (!(status.isCanceled() || status.isError())) {
-            myGenerationType.handleEmptyOutput(status, outputFolder, invocationContext, myProgress, myMesssages);
+            myGenerationType.handleEmptyOutput(status, targetDir, invocationContext, myProgress, myMesssages);
           }
         } finally {
           generationSession.discardTransients();
@@ -291,6 +288,20 @@ public class GenerationController {
     setText2("", totalJob, startJobTime);
 
     return currentGenerationOK;
+  }
+
+  private void prepareOutputFolder(String outputFolder) {
+    if (outputFolder != null && !new File(outputFolder).exists()) {
+      new File(outputFolder).mkdirs();
+      try {
+        IProjectHandler projectHandler = getProjectHandler();
+        if (projectHandler != null) {
+          projectHandler.addSourceRoot(outputFolder);
+        }
+      } catch (Exception e) {
+        myMesssages.handle(new Message(MessageKind.WARNING, GenerationController.class, "Can't add output folder to IDEA as sources"));
+      }
+    }
   }
 
   private boolean compileModule(IModule module, long totalJob, long startJobTime) throws RemoteException, GenerationCanceledException {

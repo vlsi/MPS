@@ -111,6 +111,10 @@ public class TransientModelsModule extends AbstractModule implements ProjectComp
     return null;
   }
 
+  public String getTestsOutputPath() {
+    return null;
+  }
+
   public void save() {
     // nothing
   }

@@ -95,6 +95,9 @@ public class DevKit extends AbstractModule {
     return null;
   }
 
+  public String getTestsOutputPath() {
+    return null;
+  }
 
   public void setDevKitDescriptor(DevkitDescriptor descriptor) {
     setDevKitDescriptor(descriptor, true);
