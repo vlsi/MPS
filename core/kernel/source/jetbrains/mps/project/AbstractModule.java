@@ -529,8 +529,12 @@ public abstract class AbstractModule implements IModule {
         result.add(p);
       }
     }
-    result.add(getGeneratorOutputPath());
-    result.add(getTestsGeneratorOutputPath());
+    if (getGeneratorOutputPath() != null) {
+      result.add(getGeneratorOutputPath());
+    }
+    if (getTestsGeneratorOutputPath() != null) {
+      result.add(getTestsGeneratorOutputPath());
+    }
     return result;
   }
 
