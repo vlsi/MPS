@@ -20,6 +20,8 @@ import com.intellij.openapi.components.ApplicationComponent;
 import java.io.*;
 import java.util.Set;
 import java.util.HashSet;
+import java.util.List;
+import java.util.ArrayList;
 
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.Generator;
@@ -107,16 +109,35 @@ public abstract class BaseModelCache<T> implements ApplicationComponent {
   }
 
   private IFile getCacheFile(SModelDescriptor sm) {
-    IFile cachesModuleDir = getCachesDir(sm.getModule());
+    IModule m = sm.getModule();
+    IFile cachesModuleDir = getCachesDir(m, m.getOutputFor(sm));
     if (cachesModuleDir == null) return null;
     IFile cachesDir = FileGenerationUtil.getDefaultOutputDir(sm, cachesModuleDir);
 
     return cachesDir.child(getCacheFileName());
   }
 
-  public IFile getCachesDir(IModule module) {
-    String outputPath = module.getGeneratorOutputPath();
+  public List<IFile> getCachesDirs(IModule m) {
+    List<IFile> result = new ArrayList<IFile>();
 
+    if (m.getGeneratorOutputPath() != null) {
+      IFile file = getCachesDir(m, m.getGeneratorOutputPath());
+      if (file != null) {
+        result.add(file);
+      }
+    }
+
+    if (m.getTestsGeneratorOutputPath() != null) {
+      IFile file = getCachesDir(m, m.getTestsGeneratorOutputPath());
+      if (file != null) {
+        result.add(file);
+      }
+    }
+
+    return result;
+  }
+
+  public IFile getCachesDir(IModule module, String outputPath) {
     if (outputPath == null) return null;
 
     if (module.isPackaged()) {
