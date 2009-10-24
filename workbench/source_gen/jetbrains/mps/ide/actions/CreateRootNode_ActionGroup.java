@@ -23,5 +23,6 @@ public class CreateRootNode_ActionGroup extends GeneratedActionGroup {
 
   public void adjust() {
     this.insertGroupIntoAnother(ModelNewActions_ActionGroup.ID, ModelNewActions_ActionGroup.LABEL_ID_newRoot);
+    this.insertGroupIntoAnother(PackageNewActions_ActionGroup.ID, null);
   }
 }

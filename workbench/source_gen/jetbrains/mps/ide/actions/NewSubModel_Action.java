@@ -27,7 +27,6 @@ public class NewSubModel_Action extends GeneratedAction {
   private Project ideaProject;
   private IOperationContext context;
   private SModelDescriptor model;
-  private String virtPackage;
 
   public NewSubModel_Action() {
     super("Model", "", ICON);
@@ -75,10 +74,6 @@ public class NewSubModel_Action extends GeneratedAction {
     if (this.model == null) {
       return false;
     }
-    this.virtPackage = event.getData(MPSDataKeys.VIRTUAL_PACKAGE);
-    if (this.virtPackage == null) {
-      return false;
-    }
     return true;
   }
 
@@ -89,10 +84,7 @@ public class NewSubModel_Action extends GeneratedAction {
         NewSubModel_Action.this.context.getModule() :
         NewSubModel_Action.this.model.getModule()
       );
-      final String namespace = NewSubModel_Action.this.model.getLongName() + (NewSubModel_Action.this.virtPackage != null ?
-        "." + NewSubModel_Action.this.virtPackage :
-        ""
-      );
+      final String namespace = NewSubModel_Action.this.model.getLongName();
       ModelAccess.instance().runReadAction(new Runnable() {
         public void run() {
           dialog.value = new NewModelDialog(localModule, namespace, NewSubModel_Action.this.context);
