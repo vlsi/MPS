@@ -152,7 +152,11 @@ public class GeneratorWorker extends MpsWorker {
       switch (msg.getKind()) {
         case ERROR:
           GeneratorWorker.this.error(msg.getText());
-          myGenerationErrors.add(msg.getText());
+          if (msg.getException() != null) {
+            myGenerationErrors.add(MpsWorker.extractStackTrace(msg.getException()).toString());
+          } else {
+            myGenerationErrors.add(msg.getText());
+          }
           break;
 
         case WARNING:

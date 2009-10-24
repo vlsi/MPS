@@ -328,7 +328,12 @@ public abstract class MpsWorker {
     myErrors.add(text);
   }
 
-  public void log(Exception e) {
+  public void log(Throwable e) {
+    StringBuffer sb = extractStackTrace(e);
+    error(sb.toString());
+  }
+
+  public static StringBuffer extractStackTrace(Throwable e) {
     StringBuffer sb = new StringBuffer("");
     sb.append(e.getMessage());
     sb.append("\n");
@@ -337,7 +342,7 @@ public abstract class MpsWorker {
       sb.append(el.toString());
       sb.append("\n");
     }
-    error(sb.toString());
+    return sb;
   }
 
   public class MyMessageHandlerAppender implements ILoggingHandler {
@@ -355,11 +360,19 @@ public abstract class MpsWorker {
     }
 
     public void error(LogEntry e) {
-      MpsWorker.this.error(e.getMessage());
+      if (e.getThrowable() != null) {
+        MpsWorker.this.log(e.getThrowable());
+      } else {
+        MpsWorker.this.error(e.getMessage());
+      }
     }
 
     public void fatal(LogEntry e) {
-      MpsWorker.this.error(e.getMessage());
+      if (e.getThrowable() != null) {
+        MpsWorker.this.log(e.getThrowable());
+      } else {
+        MpsWorker.this.error(e.getMessage());
+      }
     }
   }
 
