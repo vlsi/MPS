@@ -1199,9 +1199,6 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
           return CellActionType.RIGHT_TRANSFORM;
         }
         EditorCell_Label labelCell = (EditorCell_Label) selectedCell;
-        if (!labelCell.isEditable()) {
-          return CellActionType.RIGHT_TRANSFORM;
-        }
 
         // caret at the end of text ?
         String text = labelCell.getText();

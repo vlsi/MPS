@@ -332,8 +332,10 @@ public class IntelligentInputUtil {
       CellInfo cellInfo = cellForNewNode.getCellInfo();
       if (!sourceCellRemains) {
         putTextInErrorChild(cellInfo, head + smallPattern, editorContext);
+        return true;
+      } else {
+        return false;
       }
-      return true;
     }
 
     if (sourceCellRemains) {
