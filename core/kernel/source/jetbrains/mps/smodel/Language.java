@@ -482,7 +482,7 @@ public class Language extends AbstractModule {
     return generatorOutputPath;
   }
 
-  public String getTestsOutputPath() {
+  public String getTestsGeneratorOutputPath() {
     return null;
   }
 

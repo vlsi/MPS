@@ -93,7 +93,9 @@ public interface IModule extends ModelOwner, MPSModuleOwner {
 
   String getGeneratorOutputPath();
 
-  String getTestsOutputPath();
+  String getTestsGeneratorOutputPath();
+
+  String getOutputFor(SModelDescriptor model);
 
   IFile getClassesGen();
 

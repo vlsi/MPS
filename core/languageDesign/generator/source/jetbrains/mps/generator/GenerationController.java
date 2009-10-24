@@ -43,8 +43,6 @@ import jetbrains.mps.cleanup.CleanupManager;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.awt.Graphics2D;
-import java.awt.Graphics;
 import java.io.File;
 import java.rmi.RemoteException;
 import java.util.*;
@@ -209,8 +207,10 @@ public class GenerationController {
     String outputFolder = module != null ? module.getGeneratorOutputPath() : null;
     prepareOutputFolder(outputFolder);
 
-    String testsOutputFolder = module != null ? module.getTestsOutputPath() : null;
-    prepareOutputFolder(testsOutputFolder);
+    if (containsTestModels(inputModels)) {
+      String testsOutputFolder = module != null ? module.getTestsGeneratorOutputPath() : null;
+      prepareOutputFolder(testsOutputFolder);
+    }
 
     myMesssages.handle(new Message(MessageKind.INFORMATION,GenerationController.class, "    target root folder: \"" + outputFolder + "\""));
 
@@ -247,7 +247,7 @@ public class GenerationController {
           info("handling output...");
           checkMonitorCanceled();
 
-          String targetDir = SModelStereotype.isTestModel(inputModel) ? testsOutputFolder : outputFolder ;
+          String targetDir = module.getOutputFor(inputModel);
 
           if (status.getOutputModel() != null) {
             boolean result = myGenerationType.handleOutput(status, targetDir, invocationContext, myProgress, myMesssages);
@@ -302,6 +302,13 @@ public class GenerationController {
         myMesssages.handle(new Message(MessageKind.WARNING, GenerationController.class, "Can't add output folder to IDEA as sources"));
       }
     }
+  }
+
+  private boolean containsTestModels(List<SModelDescriptor> sms) {
+    for (SModelDescriptor sm : sms) {
+      if (SModelStereotype.isTestModel(sm)) return true;
+    }
+    return false;
   }
 
   private boolean compileModule(IModule module, long totalJob, long startJobTime) throws RemoteException, GenerationCanceledException {

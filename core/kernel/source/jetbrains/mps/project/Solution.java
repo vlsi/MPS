@@ -153,7 +153,7 @@ public class Solution extends AbstractModule {
     return generatorOutputPath;
   }
 
-  public String getTestsOutputPath() {
+  public String getTestsGeneratorOutputPath() {
     return myDescriptorFile.getParent().getCanonicalPath() + File.separatorChar + "tests_gen";
   }
 

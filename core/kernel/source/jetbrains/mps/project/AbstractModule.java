@@ -782,6 +782,14 @@ public abstract class AbstractModule implements IModule {
     setModuleDescriptor(descriptor, true);
   }
 
+  public String getOutputFor(SModelDescriptor model) {
+    if (SModelStereotype.isTestModel(model)) {
+      return getTestsGeneratorOutputPath();
+    } else {
+      return getGeneratorOutputPath();
+    }
+  }
+
   public final void reloadFromDisk(boolean reloadClasses) {
     ModelAccess.instance().checkWriteAccess();
     try {

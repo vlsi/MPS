@@ -95,7 +95,7 @@ public class DevKit extends AbstractModule {
     return null;
   }
 
-  public String getTestsOutputPath() {
+  public String getTestsGeneratorOutputPath() {
     return null;
   }
 

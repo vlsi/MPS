@@ -77,7 +77,8 @@ class Dependencies {
 
   private void collectDependencies(IModule m) {
     String outputPath = m.getGeneratorOutputPath();
-    if (outputPath == null) return;
+    String testOutputPath = m.getTestsGeneratorOutputPath();
+    if (outputPath == null && testOutputPath == null) return;
 
     List<SModelDescriptor> models = m.getOwnModelDescriptors();
     for (SModelDescriptor md : models) {

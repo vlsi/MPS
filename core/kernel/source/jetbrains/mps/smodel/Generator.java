@@ -28,7 +28,6 @@ import jetbrains.mps.project.SModelRoot;
 import jetbrains.mps.project.structure.modules.*;
 import jetbrains.mps.project.structure.modules.mappingpriorities.*;
 import jetbrains.mps.runtime.BytecodeLocator;
-import jetbrains.mps.util.PathManager;
 import jetbrains.mps.vfs.IFile;
 
 import java.io.File;
@@ -271,8 +270,8 @@ public class Generator extends AbstractModule {
     return mySourceLanguage.getGeneratorOutputPath();
   }
 
-  public String getTestsOutputPath() {
-    return mySourceLanguage.getTestsOutputPath();
+  public String getTestsGeneratorOutputPath() {
+    return mySourceLanguage.getTestsGeneratorOutputPath();
   }
 
   public IFile getClassesGen() {

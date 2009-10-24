@@ -267,7 +267,7 @@ public class MPSVCSManager implements ProjectComponent {
     public void beforeModelFileChanged(SModelDescriptor modelDescriptor) {
       Set<IModule> modules = modelDescriptor.getModules();
       for (IModule m : modules) {
-        VirtualFile file = VFileSystem.getFile(m.getGeneratorOutputPath());
+        VirtualFile file = VFileSystem.getFile(m.getOutputFor(modelDescriptor));
         if (file != null) {
 //            deleteInternal(Collections.singletonList(file));
         }
