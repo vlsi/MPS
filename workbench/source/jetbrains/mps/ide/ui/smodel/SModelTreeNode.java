@@ -386,9 +386,9 @@ public class SModelTreeNode extends MPSTreeNodeEx {
       String candidateName = candidate.getLongName();
       if (candidateName == null || !candidateName.startsWith(modelName) || modelName.equals(candidateName)) continue;
       if (candidateName.charAt(modelName.length()) == '.') {
-        boolean modelIsStub = myModelDescriptor.getStereotype().equals(SModelStereotype.JAVA_STUB);
-        boolean candidateIsStub = candidate.getStereotype().equals(SModelStereotype.JAVA_STUB);
-        if (modelIsStub != candidateIsStub) continue;
+        String modelStereotype = myModelDescriptor.getStereotype();
+        String candidateStereotype = candidate.getStereotype();
+        if (!modelStereotype.equals(candidateStereotype)) continue;
         String shortName = candidateName.replace(modelName + ".", "");
         if (shortName.contains(".")) {
           String maxPackage = candidateName.substring(0, candidateName.lastIndexOf('.'));
