@@ -7,9 +7,13 @@ import jetbrains.mps.smodel.constraints.IModelConstraints;
 import jetbrains.mps.smodel.constraints.ModelConstraintsManager;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.constraints.ReferentConstraintContext;
+
 import java.util.List;
+
 import jetbrains.mps.smodel.SNode;
+
 import java.util.ArrayList;
+
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -31,24 +35,34 @@ public class ApplicableNodeReference_applicableNode_ReferentConstraint extends B
     SNode rule = SNodeOperations.getAncestor(_context.getEnclosingNode(), "jetbrains.mps.lang.typesystem.structure.AbstractRule", false, false);
     if (rule != null) {
       SNode appNode = SLinkOperations.getTarget(rule, "applicableNode", true);
-      ListSequence.fromList(result).addElement(appNode);
+      if (appNode != null) {
+        ListSequence.fromList(result).addElement(appNode);
+      }
       if (SNodeOperations.isInstanceOf(rule, "jetbrains.mps.lang.typesystem.structure.ComparisonRule")) {
         SNode appNode2 = SLinkOperations.getTarget(SNodeOperations.cast(rule, "jetbrains.mps.lang.typesystem.structure.ComparisonRule"), "anotherNode", true);
-        ListSequence.fromList(result).addElement(appNode2);
+        if (appNode2 != null) {
+          ListSequence.fromList(result).addElement(appNode2);
+        }
       }
       if (SNodeOperations.isInstanceOf(rule, "jetbrains.mps.lang.typesystem.structure.InequationReplacementRule")) {
         SNode appNode2 = SLinkOperations.getTarget(SNodeOperations.cast(rule, "jetbrains.mps.lang.typesystem.structure.InequationReplacementRule"), "supertypeNode", true);
-        ListSequence.fromList(result).addElement(appNode2);
+        if (appNode2 != null) {
+          ListSequence.fromList(result).addElement(appNode2);
+        }
       }
     }
     SNode coerceStatement = SNodeOperations.getAncestor(_context.getEnclosingNode(), "jetbrains.mps.lang.typesystem.structure.CoerceStatement", false, false);
     while (coerceStatement != null) {
-      ListSequence.fromList(result).addElement(SLinkOperations.getTarget(coerceStatement, "pattern", true));
+      if (SLinkOperations.getTarget(coerceStatement, "pattern", true) != null) {
+        ListSequence.fromList(result).addElement(SLinkOperations.getTarget(coerceStatement, "pattern", true));
+      }
       coerceStatement = SNodeOperations.getAncestor(coerceStatement, "jetbrains.mps.lang.typesystem.structure.CoerceStatement", false, false);
     }
     SNode matchStatementItem = SNodeOperations.getAncestor(_context.getEnclosingNode(), "jetbrains.mps.lang.typesystem.structure.MatchStatementItem", false, false);
     while (matchStatementItem != null) {
-      ListSequence.fromList(result).addElement(SLinkOperations.getTarget(matchStatementItem, "condition", true));
+      if (SLinkOperations.getTarget(matchStatementItem, "condition", true) != null) {
+        ListSequence.fromList(result).addElement(SLinkOperations.getTarget(matchStatementItem, "condition", true));
+      }
       matchStatementItem = SNodeOperations.getAncestor(matchStatementItem, "jetbrains.mps.lang.typesystem.structure.MatchStatementItem", false, false);
     }
     return result;

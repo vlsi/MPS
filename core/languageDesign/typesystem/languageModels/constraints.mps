@@ -1462,15 +1462,25 @@
                   </node>
                 </node>
               </node>
-              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1213104858891">
-                <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1217625333903">
-                  <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1213104858895">
-                    <link role="variableDeclaration" targetNodeId="1213104858868" resolveInfo="result" />
-                  </node>
-                  <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.AddElementOperation" id="1213104858893">
-                    <node role="argument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1213104858894">
-                      <link role="variableDeclaration" targetNodeId="1213104858886" resolveInfo="appNode" />
+              <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="130768708364810657">
+                <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="130768708364810658">
+                  <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="130768708364810666">
+                    <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="130768708364810667">
+                      <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="130768708364810668">
+                        <link role="variableDeclaration" targetNodeId="1213104858868" resolveInfo="result" />
+                      </node>
+                      <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.AddElementOperation" id="130768708364810669">
+                        <node role="argument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="130768708364810670">
+                          <link role="variableDeclaration" targetNodeId="1213104858886" resolveInfo="appNode" />
+                        </node>
+                      </node>
                     </node>
+                  </node>
+                </node>
+                <node role="condition" type="jetbrains.mps.baseLanguage.structure.NotEqualsExpression" id="130768708364810662">
+                  <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="130768708364810665" />
+                  <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="130768708364810661">
+                    <link role="variableDeclaration" targetNodeId="1213104858886" resolveInfo="appNode" />
                   </node>
                 </node>
               </node>
@@ -1495,15 +1505,25 @@
                       </node>
                     </node>
                   </node>
-                  <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1213104858905">
-                    <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1217625327224">
-                      <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1213104858909">
-                        <link role="variableDeclaration" targetNodeId="1213104858868" resolveInfo="result" />
-                      </node>
-                      <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.AddElementOperation" id="1213104858907">
-                        <node role="argument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1213104858908">
-                          <link role="variableDeclaration" targetNodeId="1213104858899" resolveInfo="appNode2" />
+                  <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="130768708364810640">
+                    <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="130768708364810641">
+                      <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="130768708364810649">
+                        <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="130768708364810650">
+                          <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="130768708364810651">
+                            <link role="variableDeclaration" targetNodeId="1213104858868" resolveInfo="result" />
+                          </node>
+                          <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.AddElementOperation" id="130768708364810652">
+                            <node role="argument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="130768708364810653">
+                              <link role="variableDeclaration" targetNodeId="1213104858899" resolveInfo="appNode2" />
+                            </node>
+                          </node>
                         </node>
+                      </node>
+                    </node>
+                    <node role="condition" type="jetbrains.mps.baseLanguage.structure.NotEqualsExpression" id="130768708364810645">
+                      <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="130768708364810648" />
+                      <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="130768708364810644">
+                        <link role="variableDeclaration" targetNodeId="1213104858899" resolveInfo="appNode2" />
                       </node>
                     </node>
                   </node>
@@ -1540,16 +1560,26 @@
                       </node>
                     </node>
                   </node>
-                  <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1213104858923">
-                    <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1217625351565">
-                      <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1213104858927">
-                        <link role="variableDeclaration" targetNodeId="1213104858868" resolveInfo="result" />
-                      </node>
-                      <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.AddElementOperation" id="1213104858925">
-                        <node role="argument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1213104858926">
-                          <link role="variableDeclaration" targetNodeId="1213104858917" resolveInfo="appNode2" />
+                  <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="130768708364810623">
+                    <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="130768708364810624">
+                      <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="130768708364810632">
+                        <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="130768708364810633">
+                          <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="130768708364810634">
+                            <link role="variableDeclaration" targetNodeId="1213104858868" resolveInfo="result" />
+                          </node>
+                          <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.AddElementOperation" id="130768708364810635">
+                            <node role="argument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="130768708364810636">
+                              <link role="variableDeclaration" targetNodeId="1213104858917" resolveInfo="appNode2" />
+                            </node>
+                          </node>
                         </node>
                       </node>
+                    </node>
+                    <node role="condition" type="jetbrains.mps.baseLanguage.structure.NotEqualsExpression" id="130768708364810628">
+                      <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="130768708364810627">
+                        <link role="variableDeclaration" targetNodeId="1213104858917" resolveInfo="appNode2" />
+                      </node>
+                      <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="130768708364810631" />
                     </node>
                   </node>
                 </node>
@@ -1592,19 +1622,34 @@
               </node>
             </node>
             <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1213104858943">
-              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1213104858944">
-                <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1217625347735">
-                  <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1213104858950">
-                    <link role="variableDeclaration" targetNodeId="1213104858868" resolveInfo="result" />
+              <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="130768708364810575">
+                <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="130768708364810576">
+                  <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="130768708364810589">
+                    <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="130768708364810590">
+                      <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="130768708364810591">
+                        <link role="variableDeclaration" targetNodeId="1213104858868" resolveInfo="result" />
+                      </node>
+                      <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.AddElementOperation" id="130768708364810592">
+                        <node role="argument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="130768708364810593">
+                          <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="130768708364810594">
+                            <link role="variableDeclaration" targetNodeId="1213104858933" resolveInfo="coerceStatement" />
+                          </node>
+                          <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="130768708364810595">
+                            <link role="link" targetNodeId="1.1176558876970" />
+                          </node>
+                        </node>
+                      </node>
+                    </node>
                   </node>
-                  <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.AddElementOperation" id="1213104858946">
-                    <node role="argument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1213104858947">
-                      <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1213104858948">
-                        <link role="variableDeclaration" targetNodeId="1213104858933" resolveInfo="coerceStatement" />
-                      </node>
-                      <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1213104858949">
-                        <link role="link" targetNodeId="1.1176558876970" />
-                      </node>
+                </node>
+                <node role="condition" type="jetbrains.mps.baseLanguage.structure.NotEqualsExpression" id="130768708364810585">
+                  <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="130768708364810588" />
+                  <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="130768708364810580">
+                    <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="130768708364810579">
+                      <link role="variableDeclaration" targetNodeId="1213104858933" resolveInfo="coerceStatement" />
+                    </node>
+                    <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="130768708364810584">
+                      <link role="link" targetNodeId="1.1176558876970" />
                     </node>
                   </node>
                 </node>
@@ -1656,19 +1701,34 @@
               </node>
             </node>
             <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1213104858969">
-              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1213104858970">
-                <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1217625314332">
-                  <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1213104858976">
-                    <link role="variableDeclaration" targetNodeId="1213104858868" resolveInfo="result" />
+              <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="130768708364810599">
+                <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="130768708364810600">
+                  <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="130768708364810613">
+                    <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="130768708364810614">
+                      <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="130768708364810615">
+                        <link role="variableDeclaration" targetNodeId="1213104858868" resolveInfo="result" />
+                      </node>
+                      <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.AddElementOperation" id="130768708364810616">
+                        <node role="argument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="130768708364810617">
+                          <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="130768708364810618">
+                            <link role="variableDeclaration" targetNodeId="1213104858959" resolveInfo="matchStatementItem" />
+                          </node>
+                          <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="130768708364810619">
+                            <link role="link" targetNodeId="1.1177514849858" />
+                          </node>
+                        </node>
+                      </node>
+                    </node>
                   </node>
-                  <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.AddElementOperation" id="1213104858972">
-                    <node role="argument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1213104858973">
-                      <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1213104858974">
-                        <link role="variableDeclaration" targetNodeId="1213104858959" resolveInfo="matchStatementItem" />
-                      </node>
-                      <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1213104858975">
-                        <link role="link" targetNodeId="1.1177514849858" />
-                      </node>
+                </node>
+                <node role="condition" type="jetbrains.mps.baseLanguage.structure.NotEqualsExpression" id="130768708364810609">
+                  <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="130768708364810612" />
+                  <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="130768708364810604">
+                    <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="130768708364810603">
+                      <link role="variableDeclaration" targetNodeId="1213104858959" resolveInfo="matchStatementItem" />
+                    </node>
+                    <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="130768708364810608">
+                      <link role="link" targetNodeId="1.1177514849858" />
                     </node>
                   </node>
                 </node>

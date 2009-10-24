@@ -4,24 +4,28 @@
     <option name="SKIP_IMPORT_STATEMENTS" value="false" />
   </component>
   <component name="Encoding" useUTFGuessing="true" native2AsciiForPropertiesFiles="false" />
-  <component name="MPSProject" auto-import-from-idea="false" testAllLanguages="false">
+  <component name="MPSProject">
     <projectSolutions>
-      <solutionPath path="${project}\solutions\jetbrains.mps.bootstrap.helgins.sandbox\jetbrains.mps.bootstrap.helgins.sandbox.msd" />
+      <solutionPath path="${project}/solutions/jetbrains.mps.bootstrap.helgins.sandbox/jetbrains.mps.bootstrap.helgins.sandbox.msd" />
     </projectSolutions>
     <projectLanguages>
-      <languagePath path="${project}\typesystem.mpl" />
+      <languagePath path="${project}/typesystem.mpl" />
     </projectLanguages>
     <projectDevkits />
-    <libraries />
     <genConfs>
-      <genConfLanguage name="helgins" language="jetbrains.mps.lang.typesystem" />
+      <genConfModule name="helgins" moduleRef="jetbrains.mps.lang.typesystem" />
     </genConfs>
   </component>
   <component name="ProjectDetails">
     <option name="projectName" value="jetbrains.mps.bootstrap.helgins.mpr" />
   </component>
+  <component name="ProjectModuleManager">
+    <modules />
+  </component>
+  <component name="ProjectRootManager" version="2" />
   <component name="SvnBranchConfigurationManager">
     <option name="myVersion" value="124" />
+    <option name="mySupportsUserInfoFilter" value="true" />
   </component>
   <component name="VcsDirectoryMappings">
     <mapping directory="" vcs="" />
