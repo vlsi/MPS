@@ -12,11 +12,9 @@ import jetbrains.mps.lang.generator.editor.QueriesUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import java.util.List;
+import jetbrains.mps.intentions.Intention;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
-import jetbrains.mps.lang.structure.behavior.AbstractConceptDeclaration_Behavior;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.intentions.Intention;
 
 public class AddNodeMacroParam_copySrclMacro_Intention extends BaseIntention {
   private SNode myParameter;
@@ -73,7 +71,7 @@ public class AddNodeMacroParam_copySrclMacro_Intention extends BaseIntention {
     SLinkOperations.addChild(SLinkOperations.getTarget(referentValue, "body", true), "statement", expressionStatement);
     SLinkOperations.setTarget(copySrcListMacro, "sourceNodesQuery", referentValue, true);
     // set caret
-    editorContext.selectAndSetCaret(copySrcListMacro, 2);
+    editorContext.selectAndSetCaret(copySrcListMacro, 1);
   }
 
   public String getLocationString() {
@@ -82,16 +80,7 @@ public class AddNodeMacroParam_copySrclMacro_Intention extends BaseIntention {
 
   private static List<SNode> parameter(final SNode node, final EditorContext editorContext) {
     SNode sourceNode = MacroIntentionsUtil.getContextNodeConcept(node);
-    if (sourceNode == null) {
-      return null;
-    }
-    List<SNode> result = ListSequence.fromList(new ArrayList<SNode>());
-    for (SNode child : AbstractConceptDeclaration_Behavior.call_getLinkDeclarations_1213877394480(sourceNode)) {
-      if (SPropertyOperations.hasValue(child, "sourceCardinality", "0..n", "0..1") || SPropertyOperations.hasValue(child, "sourceCardinality", "1..n", "0..1")) {
-        ListSequence.fromList(result).addElement(child);
-      }
-    }
-    return result;
+    return MacroIntentionsUtil.getLinks(sourceNode, true);
   }
 
   public static List<Intention> instances(final SNode node, final EditorContext editorContext) {

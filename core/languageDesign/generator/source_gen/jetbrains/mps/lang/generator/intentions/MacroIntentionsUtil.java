@@ -9,6 +9,10 @@ import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.AttributesRolesUtil;
+import java.util.List;
+import java.util.ArrayList;
+import jetbrains.mps.lang.structure.behavior.AbstractConceptDeclaration_Behavior;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 public class MacroIntentionsUtil {
   public static SNode getContextNodeConcept(SNode contextNode) {
@@ -60,5 +64,24 @@ public class MacroIntentionsUtil {
       return ListSequence.fromList(SLinkOperations.getTargets(contextNode, AttributesRolesUtil.childRoleFromAttributeRole("nodeMacro"), true)).last();
     }
     return findOuterMacro(SNodeOperations.getParent(contextNode));
+  }
+
+  public static List<SNode> getLinks(SNode sourceNode, boolean inCollection) {
+    if (sourceNode == null) {
+      return null;
+    }
+    List<SNode> result = ListSequence.fromList(new ArrayList<SNode>());
+    for (SNode child : AbstractConceptDeclaration_Behavior.call_getLinkDeclarations_1213877394480(sourceNode)) {
+      if (inCollection) {
+        if (SPropertyOperations.hasValue(child, "sourceCardinality", "0..n", "0..1") || SPropertyOperations.hasValue(child, "sourceCardinality", "1..n", "0..1")) {
+          ListSequence.fromList(result).addElement(child);
+        }
+      } else {
+        if (SPropertyOperations.hasValue(child, "sourceCardinality", "0..1", "0..1") || SPropertyOperations.hasValue(child, "sourceCardinality", "1", "0..1")) {
+          ListSequence.fromList(result).addElement(child);
+        }
+      }
+    }
+    return result;
   }
 }

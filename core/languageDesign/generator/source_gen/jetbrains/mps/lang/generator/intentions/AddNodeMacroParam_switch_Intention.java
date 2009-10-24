@@ -12,14 +12,15 @@ import jetbrains.mps.lang.generator.editor.QueriesUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import java.util.List;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.intentions.Intention;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 
-public class AddNodeMacroParam_loopMacro_Intention extends BaseIntention {
+public class AddNodeMacroParam_switch_Intention extends BaseIntention {
   private SNode myParameter;
 
-  public AddNodeMacroParam_loopMacro_Intention() {
+  public AddNodeMacroParam_switch_Intention() {
   }
 
   public String getConcept() {
@@ -39,7 +40,7 @@ public class AddNodeMacroParam_loopMacro_Intention extends BaseIntention {
   }
 
   public String getDescription(final SNode node, final EditorContext editorContext) {
-    return "Add Node Macro Loop: node." + BaseConcept_Behavior.call_getPresentation_1213877396640(this.myParameter);
+    return "Add Node Macro Switch: " + BaseConcept_Behavior.call_getPresentation_1213877396640(this.myParameter);
   }
 
   public boolean isApplicable(final SNode node, final EditorContext editorContext) {
@@ -58,20 +59,11 @@ public class AddNodeMacroParam_loopMacro_Intention extends BaseIntention {
 
   public void execute(final SNode node, final EditorContext editorContext) {
     SNode nodeMacro = QueriesUtil.addNodeMacro(node);
-    SNode loopMacro = SConceptOperations.createNewNode("jetbrains.mps.lang.generator.structure.LoopMacro", null);
-    SNodeOperations.replaceWithAnother(nodeMacro, loopMacro);
-    SNode referentValue = SConceptOperations.createNewNode("jetbrains.mps.lang.generator.structure.SourceSubstituteMacro_SourceNodesQuery", null);
-    SNode dotExpression = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.DotExpression", null);
-    SNode linkAccess = SConceptOperations.createNewNode("jetbrains.mps.lang.smodel.structure.SLinkListAccess", null);
-    SLinkOperations.setTarget(linkAccess, "link", this.myParameter, false);
-    SLinkOperations.setTarget(dotExpression, "operation", linkAccess, true);
-    SLinkOperations.setTarget(dotExpression, "operand", SConceptOperations.createNewNode("jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode", null), true);
-    SNode expressionStatement = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ExpressionStatement", null);
-    SLinkOperations.setTarget(expressionStatement, "expression", dotExpression, true);
-    SLinkOperations.addChild(SLinkOperations.getTarget(referentValue, "body", true), "statement", expressionStatement);
-    SLinkOperations.setTarget(loopMacro, "sourceNodesQuery", referentValue, true);
+    SNode switchMacro = SConceptOperations.createNewNode("jetbrains.mps.lang.generator.structure.SwitchMacro", null);
+    SNodeOperations.replaceWithAnother(nodeMacro, switchMacro);
+    SLinkOperations.setTarget(switchMacro, "templateSwitch", this.myParameter, false);
     // set caret
-    editorContext.selectAndSetCaret(loopMacro, 1);
+    editorContext.selectAndSetCaret(switchMacro, 1);
   }
 
   public String getLocationString() {
@@ -79,8 +71,7 @@ public class AddNodeMacroParam_loopMacro_Intention extends BaseIntention {
   }
 
   private static List<SNode> parameter(final SNode node, final EditorContext editorContext) {
-    SNode sourceNode = MacroIntentionsUtil.getContextNodeConcept(node);
-    return MacroIntentionsUtil.getLinks(sourceNode, true);
+    return SModelOperations.getRoots(SNodeOperations.getModel(node), "jetbrains.mps.lang.generator.structure.TemplateSwitch");
   }
 
   public static List<Intention> instances(final SNode node, final EditorContext editorContext) {
@@ -88,7 +79,7 @@ public class AddNodeMacroParam_loopMacro_Intention extends BaseIntention {
     List<SNode> paramList = parameter(node, editorContext);
     if (paramList != null) {
       for (SNode param : paramList) {
-        AddNodeMacroParam_loopMacro_Intention intention = new AddNodeMacroParam_loopMacro_Intention();
+        AddNodeMacroParam_switch_Intention intention = new AddNodeMacroParam_switch_Intention();
         intention.myParameter = param;
         ListSequence.fromList(list).addElement(intention);
       }
