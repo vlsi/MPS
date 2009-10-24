@@ -28,6 +28,8 @@ import com.intellij.openapi.project.Project;
 import com.intellij.openapi.util.InvalidDataException;
 import com.intellij.openapi.util.WriteExternalException;
 import jetbrains.mps.MPSProjectHolder;
+import jetbrains.mps.ide.IdeMain;
+import jetbrains.mps.ide.IdeMain.TestMode;
 import jetbrains.mps.lang.plugin.structure.RunConfigCreator;
 import jetbrains.mps.lang.plugin.structure.RunConfigurationTypeDeclaration;
 import jetbrains.mps.library.LibraryManager;
@@ -81,6 +83,7 @@ public class RunConfigManager implements ProjectComponent {
     //assert ThreadUtils.isEventDispatchThread() : "should be called from EDT only";
     if (myProject.isDisposed()) return;
     if (myLoaded) return;
+    if (IdeMain.getTestMode() == TestMode.CORE_TEST) return;
 
     addConfigTypes();
 
