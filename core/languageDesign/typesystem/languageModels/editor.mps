@@ -2715,7 +2715,7 @@
         </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="4778346850551695632">
-        <property name="text" value="before equations:" />
+        <property name="text" value="equations before this:" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNodeList" id="4778346850551695634">
         <property name="separatorText" value="," />
@@ -2726,7 +2726,7 @@
         </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="4778346850551695638">
-        <property name="text" value="after equations:" />
+        <property name="text" value="equations after this:" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNodeList" id="4778346850551695640">
         <property name="separatorText" value="," />
@@ -2737,7 +2737,7 @@
         </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1320713984677695219">
-        <property name="text" value="before groups:" />
+        <property name="text" value="groups before this:" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNodeList" id="1320713984677695220">
         <property name="separatorText" value="," />
@@ -2748,7 +2748,7 @@
         </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1320713984677695223">
-        <property name="text" value="after groups:" />
+        <property name="text" value="groups after this:" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNodeList" id="1320713984677695224">
         <property name="separatorText" value="," />

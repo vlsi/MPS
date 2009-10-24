@@ -120,14 +120,14 @@ public class AbstractInequationStatement_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_9248_3(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "before groups:");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "groups before this:");
     editorCell.setCellId("Constant_9248_3");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   private EditorCell createConstant_9248_4(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "after groups:");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "groups after this:");
     editorCell.setCellId("Constant_9248_4");
     editorCell.setDefaultText("");
     return editorCell;
@@ -141,14 +141,14 @@ public class AbstractInequationStatement_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_9248_6(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "before equations:");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "equations before this:");
     editorCell.setCellId("Constant_9248_6");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   private EditorCell createConstant_9248_7(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "after equations:");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "equations after this:");
     editorCell.setCellId("Constant_9248_7");
     editorCell.setDefaultText("");
     return editorCell;
