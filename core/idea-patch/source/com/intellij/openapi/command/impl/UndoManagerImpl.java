@@ -81,7 +81,7 @@ public class UndoManagerImpl extends UndoManager implements ProjectComponent, Ap
   private int myCommandTimestamp = 1;
   private final CommandProcessor myCommandProcessor;
   private final StartupManager myStartupManager;
-  private UndoProvider[] myUndoProviders;
+  private UndoProvider[] myUndoProviders = new UndoProvider[0];
 
   public UndoManagerImpl(Application application, CommandProcessor commandProcessor) {
     this(application, null, commandProcessor, null);
