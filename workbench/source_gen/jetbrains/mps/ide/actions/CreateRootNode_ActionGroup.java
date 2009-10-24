@@ -11,7 +11,7 @@ public class CreateRootNode_ActionGroup extends GeneratedActionGroup {
   public static final String ID = "jetbrains.mps.ide.actions.CreateRootNode";
 
   public CreateRootNode_ActionGroup() {
-    super("Create Root Node", ID);
+    super("Root Node", ID);
     this.setIsInternal(false);
     this.setPopup(true);
     try {
@@ -22,7 +22,6 @@ public class CreateRootNode_ActionGroup extends GeneratedActionGroup {
   }
 
   public void adjust() {
-    this.insertGroupIntoAnother(PackageActions_ActionGroup.ID, PackageActions_ActionGroup.LABEL_ID_createRootNode);
-    this.insertGroupIntoAnother(ModelActions_ActionGroup.ID, ModelActions_ActionGroup.LABEL_ID_createRootNode);
+    this.insertGroupIntoAnother(ModelNewActions_ActionGroup.ID, ModelNewActions_ActionGroup.LABEL_ID_newRoot);
   }
 }
