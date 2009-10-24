@@ -311,9 +311,9 @@ public abstract class UsagesTreeComponent extends JPanel implements IChangeListe
       public void setViewOptions(ViewOptions options) {
         myTree.startAdjusting();
 
-        myIsAdditionalInfoNeeded = options.myInfo;
-        myIsShowSearchedNodes = options.myShowSearchedNodes;
-        myIsGroupSearchedNodes = options.myGroupSearchedNodes;
+        myAdditionalInfoNeededButton.setSelected(null, options.myInfo);
+        myShowSearchedNodesButton.setSelected(null, options.myShowSearchedNodes);
+        myGroupSearchedNodesButton.setSelected(null, options.myGroupSearchedNodes);
 
         mySearchedNodesButtonsVisible = options.mySearchedNodesButtonsVisible;
         if (!mySearchedNodesButtonsVisible) {
@@ -436,11 +436,11 @@ public abstract class UsagesTreeComponent extends JPanel implements IChangeListe
       public void setViewOptions(ViewOptions options) {
         myTree.startAdjusting();
 
-        myIsCategoryPath = options.myCategory;
-        myIsModulePath = options.myModule;
-        myIsModelPath = options.myModel;
-        myIsRootPath = options.myRoot;
-        myIsNamedConceptPath = options.myNamedPath;
+        myCategoryPathButton.setSelected(null, options.myCategory);
+        myModulePathButton.setSelected(null, options.myModule);
+        myModelPathButton.setSelected(null, options.myModel);
+        myRootPathButton.setSelected(null, options.myRoot);
+        myNamedConceptPathButton.setSelected(null, options.myNamedPath);
 
         myTree.finishAdjusting();
       }
@@ -504,7 +504,7 @@ public abstract class UsagesTreeComponent extends JPanel implements IChangeListe
 
     public void setViewOptions(ViewOptions options) {
       myTree.startAdjusting();
-      myIsAutoscroll = options.myAutoscrolls;
+      myAutoscrollButton.setSelected(null, options.myAutoscrolls);
       myTree.finishAdjusting();
     }
 
