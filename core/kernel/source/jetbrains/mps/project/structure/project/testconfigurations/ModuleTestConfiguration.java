@@ -27,6 +27,7 @@ import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.SModelDescriptor;
+import jetbrains.mps.smodel.SModelStereotype;
 
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -68,7 +69,7 @@ public class ModuleTestConfiguration extends BaseTestConfiguration {
         }
 
 
-        if ("".equals(sm.getStereotype())) {
+        if (SModelStereotype.isUserModel(sm)) {
           models.add(sm);
         }
       }
