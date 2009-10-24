@@ -188,6 +188,7 @@ public class AnonymousCellAnnotation_Editor extends DefaultNodeEditor {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("caretPosition");
     provider.setNoTargetText("<no caretPosition>");
+    provider.setAllowsEmptyTarget(true);
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setCellId("property_caretPosition");

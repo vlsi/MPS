@@ -273,6 +273,7 @@ public class AbstractInequationStatement_Editor extends DefaultNodeEditor {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("inequationPriority");
     provider.setNoTargetText("<no inequationPriority>");
+    provider.setAllowsEmptyTarget(true);
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setCellId("property_inequationPriority");
@@ -355,6 +356,7 @@ public class AbstractInequationStatement_Editor extends DefaultNodeEditor {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("label");
     provider.setNoTargetText("<no label>");
+    provider.setAllowsEmptyTarget(true);
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setCellId("property_label");

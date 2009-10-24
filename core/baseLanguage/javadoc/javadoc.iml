@@ -16,5 +16,7 @@
     <orderEntry type="module" module-name="xmlInternal" />
     <orderEntry type="module" module-name="xmlSchema" />
   </component>
+  <component name="ProjectRunConfigurationManager" />
+  <component name="SvnBranchConfigurationManager" />
 </module>
 

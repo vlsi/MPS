@@ -81,26 +81,7 @@
     <node role="constructor" type="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" id="6922796699472226645">
       <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="6922796699472226646" />
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="6922796699472226647" />
-      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="6922796699472226648">
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="2646089376284411230">
-          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="2646089376284411231">
-            <property name="name" value="o" />
-            <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="2646089376284411232">
-              <link role="classifier" targetNodeId="10.~Object" resolveInfo="Object" />
-            </node>
-          </node>
-        </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="2646089376284411235">
-          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="6421514894544784582">
-            <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="2646089376284411236">
-              <link role="variableDeclaration" targetNodeId="2646089376284411231" resolveInfo="o" />
-            </node>
-            <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="6421514894544915567">
-              <link role="baseMethodDeclaration" targetNodeId="10.~Object.notify():void" resolveInfo="notify" />
-            </node>
-          </node>
-        </node>
-      </node>
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="6922796699472226648" />
       <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="6922796699472233558">
         <property name="name" value="a" />
         <node role="type" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="6922796699472233559" />

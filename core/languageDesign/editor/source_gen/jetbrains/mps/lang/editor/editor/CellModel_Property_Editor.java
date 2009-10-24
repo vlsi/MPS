@@ -22,6 +22,7 @@ import jetbrains.mps.nodeEditor.style.AttributeCalculator;
 import java.awt.Color;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.editor.behavior.EditorCellModel_Behavior;
 import jetbrains.mps.nodeEditor.InlineCellProvider;
 
@@ -100,7 +101,9 @@ public class CellModel_Property_Editor extends DefaultNodeEditor {
       editorCell.addEditorCell(this.createCollection_3263_7(editorContext, node));
     }
     editorCell.addEditorCell(this.createCollection_3263_5(editorContext, node));
-    editorCell.addEditorCell(this.createCollection_3263_6(editorContext, node));
+    if (renderingCondition3263_2(node, editorContext, editorContext.getOperationContext().getScope())) {
+      editorCell.addEditorCell(this.createCollection_3263_6(editorContext, node));
+    }
     return editorCell;
   }
 
@@ -439,6 +442,10 @@ public class CellModel_Property_Editor extends DefaultNodeEditor {
 
   private static boolean renderingCondition3263_1(SNode node, EditorContext editorContext, IScope scope) {
     return !(SPropertyOperations.getBoolean(node, "emptyNoTargetText"));
+  }
+
+  private static boolean renderingCondition3263_2(SNode node, EditorContext editorContext, IScope scope) {
+    return !(SNodeOperations.isInstanceOf(node, "jetbrains.mps.lang.editor.structure.CellModel_NonEmptyProperty"));
   }
 
   private static Color _StyleParameter_QueryFunction_3263_0(SNode node, EditorContext editorContext) {

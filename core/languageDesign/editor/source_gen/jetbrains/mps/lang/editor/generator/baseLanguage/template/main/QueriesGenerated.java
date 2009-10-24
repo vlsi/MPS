@@ -1338,7 +1338,7 @@ public class QueriesGenerated {
   }
 
   public static boolean ifMacro_Condition_7533883740977278584(final IOperationContext operationContext, final IfMacroContext _context) {
-    return SPropertyOperations.getBoolean(_context.getNode(), "allowEmptyText");
+    return SPropertyOperations.getBoolean(_context.getNode(), "allowEmptyText") || SNodeOperations.isInstanceOf(_context.getNode(), "jetbrains.mps.lang.editor.structure.CellModel_NonEmptyProperty");
   }
 
   public static boolean ifMacro_Condition_7533883740978111754(final IOperationContext operationContext, final IfMacroContext _context) {

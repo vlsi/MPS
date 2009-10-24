@@ -147,6 +147,7 @@ public class TypesCheckOperation_Editor extends DefaultNodeEditor {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("operationName");
     provider.setNoTargetText("<no operationName>");
+    provider.setAllowsEmptyTarget(true);
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setCellId("property_operationName_1");

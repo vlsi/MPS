@@ -1555,6 +1555,22 @@
             <property name="flag" value="true" />
           </node>
           <node role="cellLayout" type="jetbrains.mps.lang.editor.structure.CellLayout_Horizontal" id="1239878593952" />
+          <node role="renderingCondition" type="jetbrains.mps.lang.editor.structure.QueryFunction_NodeCondition" id="5944020735921544421">
+            <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="5944020735921544422">
+              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="5944020735921550875">
+                <node role="expression" type="jetbrains.mps.baseLanguage.structure.NotExpression" id="5944020735921550885">
+                  <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="5944020735921550886">
+                    <node role="operand" type="jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_node" id="5944020735921550887" />
+                    <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation" id="5944020735921550888">
+                      <node role="conceptArgument" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" id="5944020735921550889">
+                        <link role="conceptDeclaration" targetNodeId="2.1184319644772" resolveInfo="CellModel_NonEmptyProperty" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
         </node>
         <node role="styleItem" type="jetbrains.mps.lang.editor.structure.DrawBorderStyleClassItem" id="1214480839753">
           <property name="flag" value="true" />
