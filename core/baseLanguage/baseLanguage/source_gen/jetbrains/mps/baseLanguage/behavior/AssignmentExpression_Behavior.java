@@ -34,7 +34,7 @@ public class AssignmentExpression_Behavior {
     SNode exprStatement = SNodeOperations.cast(SNodeOperations.getParent(thisNode), "jetbrains.mps.baseLanguage.structure.ExpressionStatement");
     SNode varType = SNodeOperations.cast(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(thisNode, "rValue", true)), "jetbrains.mps.baseLanguage.structure.Type");
     SNode varDeclStmnt = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement", null);
-    SPropertyOperations.set(SLinkOperations.getTarget(varDeclStmnt, "localVariableDeclaration", true), "name", "var");
+    SPropertyOperations.set(SLinkOperations.getTarget(varDeclStmnt, "localVariableDeclaration", true), "name", SPropertyOperations.getString(SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(thisNode, "lValue", true), "jetbrains.mps.baseLanguage.structure.LocalVariableReference"), "variableDeclaration", false), "name"));
     SLinkOperations.setTarget(SLinkOperations.getTarget(varDeclStmnt, "localVariableDeclaration", true), "type", SNodeOperations.copyNode(varType), true);
     SLinkOperations.setTarget(SLinkOperations.getTarget(varDeclStmnt, "localVariableDeclaration", true), "initializer", SNodeOperations.copyNode(SLinkOperations.getTarget(thisNode, "rValue", true)), true);
     SNodeOperations.replaceWithAnother(exprStatement, varDeclStmnt);
