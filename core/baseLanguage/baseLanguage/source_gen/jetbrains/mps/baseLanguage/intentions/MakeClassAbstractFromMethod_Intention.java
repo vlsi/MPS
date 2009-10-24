@@ -5,18 +5,15 @@ package jetbrains.mps.baseLanguage.intentions;
 import jetbrains.mps.intentions.BaseIntention;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorContext;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 public class MakeClassAbstractFromMethod_Intention extends BaseIntention {
   public MakeClassAbstractFromMethod_Intention() {
   }
 
   public String getConcept() {
-    return "jetbrains.mps.baseLanguage.structure.ClassConcept";
+    return "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration";
   }
 
   public boolean isParameterized() {
@@ -39,26 +36,18 @@ public class MakeClassAbstractFromMethod_Intention extends BaseIntention {
     if (!(this.isApplicableToNode(node, editorContext))) {
       return false;
     }
-    if (editorContext.getSelectedNode() != node && !(this.isVisibleInChild(node, editorContext.getSelectedNode(), editorContext))) {
-      return false;
-    }
     return true;
   }
 
   public boolean isApplicableToNode(final SNode node, final EditorContext editorContext) {
-    return !(SPropertyOperations.getBoolean(node, "abstractClass")) && ListSequence.fromList(SLinkOperations.getTargets(node, "method", true)).where(new IWhereFilter<SNode>() {
-      public boolean accept(SNode it) {
-        return SPropertyOperations.getBoolean(it, "isAbstract");
-      }
-    }).isNotEmpty();
-  }
-
-  public boolean isVisibleInChild(final SNode node, final SNode childNode, final EditorContext editorContext) {
-    return SNodeOperations.isInstanceOf(childNode, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration") && SPropertyOperations.getBoolean(SNodeOperations.cast(childNode, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration"), "isAbstract");
+    if ((SNodeOperations.getAncestor(node, "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false) == null)) {
+      return false;
+    }
+    return SPropertyOperations.getBoolean(node, "isAbstract") && !(SPropertyOperations.getBoolean(SNodeOperations.getAncestor(node, "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false), "abstractClass"));
   }
 
   public void execute(final SNode node, final EditorContext editorContext) {
-    SPropertyOperations.set(node, "abstractClass", "" + (true));
+    SPropertyOperations.set(SNodeOperations.getAncestor(node, "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false), "abstractClass", "" + (true));
   }
 
   public String getLocationString() {
