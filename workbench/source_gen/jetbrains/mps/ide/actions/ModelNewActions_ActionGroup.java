@@ -24,6 +24,5 @@ public class ModelNewActions_ActionGroup extends GeneratedActionGroup {
 
   public void adjust() {
     this.insertGroupIntoAnother(ModelActions_ActionGroup.ID, ModelActions_ActionGroup.LABEL_ID_newActions);
-    this.insertGroupIntoAnother(PackageActions_ActionGroup.ID, PackageActions_ActionGroup.LABEL_ID_newActions);
   }
 }

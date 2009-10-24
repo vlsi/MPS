@@ -28689,10 +28689,6 @@
       <link role="modifiedGroup" targetNodeId="1204991218714" resolveInfo="ModelActions" />
       <link role="point" targetNodeId="1420252515663987819" resolveInfo="newModel" />
     </node>
-    <node role="modifier" type="jetbrains.mps.lang.plugin.structure.ModificationStatement" id="2490685849537330650">
-      <link role="modifiedGroup" targetNodeId="1226495932324" resolveInfo="PackageActions" />
-      <link role="point" targetNodeId="2841218117793440829" resolveInfo="newActions" />
-    </node>
     <node role="contents" type="jetbrains.mps.lang.plugin.structure.ElementListContents" id="1420252515663985889">
       <node role="reference" type="jetbrains.mps.lang.plugin.structure.GroupAnchor" id="2490685849537330645">
         <property name="name" value="newRoot" />
