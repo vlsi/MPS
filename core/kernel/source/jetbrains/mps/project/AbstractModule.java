@@ -595,7 +595,7 @@ public abstract class AbstractModule implements IModule {
       try {
         IFile file = FileSystem.getFile(s);
         if (!file.exists()) {
-          LOG.error("Can't load class path item " + s + " in " + this);
+          LOG.error("Can't load class path item " + s + " in " + this + (file.isDirectory() ? ". Execute make in IDEA." : ""));
         } else {
           IClassPathItem currentItem;
           if (file.isDirectory()) {
