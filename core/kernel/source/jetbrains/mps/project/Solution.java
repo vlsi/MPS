@@ -154,7 +154,7 @@ public class Solution extends AbstractModule {
   }
 
   public String getTestsGeneratorOutputPath() {
-    return myDescriptorFile.getParent().getCanonicalPath() + File.separatorChar + "tests_gen";
+    return myDescriptorFile.getParent().getCanonicalPath() + File.separatorChar + "test_gen";
   }
 
   protected void collectRuntimePackages(Set<String> result, String current) {
