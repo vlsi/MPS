@@ -20745,7 +20745,7 @@
   </node>
   <node type="jetbrains.mps.lang.plugin.structure.UniversalRunConfigCreator" id="8857400326959529689">
     <property name="package" value="run.creator" />
-    <property name="name" value="JUnitFromModule" />
+    <property name="name" value="JUnitConfigFromModule" />
     <link role="rcType" targetNodeId="1104580685292496804" resolveInfo="JUnit" />
     <node role="target" type="jetbrains.mps.lang.plugin.structure.ModuleCreatorTarget" id="8857400326959529693" />
     <node role="createBlock" type="jetbrains.mps.lang.plugin.structure.CreateRunConfigBlock" id="8857400326959529691">
