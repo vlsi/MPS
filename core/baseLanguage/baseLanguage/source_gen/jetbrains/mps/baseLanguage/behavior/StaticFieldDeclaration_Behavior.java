@@ -11,6 +11,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class StaticFieldDeclaration_Behavior {
   private static Class[] PARAMETERS_4025276038182459921 = {SNode.class};
+  private static Class[] PARAMETERS_8986964027630472415 = {SNode.class};
 
   public static void init(SNode thisNode) {
   }
@@ -25,11 +26,23 @@ public class StaticFieldDeclaration_Behavior {
     return result;
   }
 
+  public static boolean virtual_isStatic_8986964027630462944(SNode thisNode) {
+    return true;
+  }
+
   public static List<SNode> call_getChildrenToDisplayIntention_4025276038182459921(SNode thisNode) {
     return (List<SNode>)BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration"), "virtual_getChildrenToDisplayIntention_4025276038182325660", PARAMETERS_4025276038182459921);
   }
 
+  public static boolean call_isStatic_8986964027630472415(SNode thisNode) {
+    return (Boolean)BehaviorManager.getInstance().invoke(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration"), "virtual_isStatic_8986964027630462944", PARAMETERS_8986964027630472415);
+  }
+
   public static List<SNode> callSuper_getChildrenToDisplayIntention_4025276038182459921(SNode thisNode, String callerConceptFqName) {
     return (List<SNode>)BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration"), callerConceptFqName, "virtual_getChildrenToDisplayIntention_4025276038182325660", PARAMETERS_4025276038182459921);
+  }
+
+  public static boolean callSuper_isStatic_8986964027630472415(SNode thisNode, String callerConceptFqName) {
+    return (Boolean)BehaviorManager.getInstance().invokeSuper(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration"), callerConceptFqName, "virtual_isStatic_8986964027630462944", PARAMETERS_8986964027630472415);
   }
 }

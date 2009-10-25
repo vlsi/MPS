@@ -1672,6 +1672,19 @@
     <node role="constructor" type="jetbrains.mps.lang.behavior.structure.ConceptConstructorDeclaration" id="1213877305151">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1213877305152" />
     </node>
+    <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="8986964027630462944">
+      <property name="name" value="isStatic" />
+      <property name="isVirtual" value="true" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="8986964027630462945" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.BooleanType" id="8986964027630472398" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="8986964027630462947">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="8986964027630472399">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="8986964027630472401">
+            <property name="value" value="false" />
+          </node>
+        </node>
+      </node>
+    </node>
   </node>
   <node type="jetbrains.mps.lang.behavior.structure.ConceptBehavior" id="1213877306256">
     <property name="package" value="classifier" />
@@ -6054,6 +6067,20 @@
         </node>
       </node>
       <node role="returnType" type="jetbrains.mps.lang.smodel.structure.SNodeListType" id="4025276038182459939" />
+    </node>
+    <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="8986964027630472415">
+      <property name="name" value="isStatic" />
+      <property name="isVirtual" value="true" />
+      <link role="overriddenMethod" targetNodeId="8986964027630462944" resolveInfo="isStatic" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="8986964027630472416" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="8986964027630472417">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="8986964027630472421">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="8986964027630472422">
+            <property name="value" value="true" />
+          </node>
+        </node>
+      </node>
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.BooleanType" id="8986964027630472418" />
     </node>
   </node>
   <node type="jetbrains.mps.lang.behavior.structure.ConceptBehavior" id="1213877352267">
@@ -11100,6 +11127,20 @@
       </node>
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="853842957590007384" />
     </node>
+    <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="8986964027630472402">
+      <property name="name" value="isStatic" />
+      <property name="isVirtual" value="true" />
+      <link role="overriddenMethod" targetNodeId="8986964027630462944" resolveInfo="isStatic" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="8986964027630472403" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="8986964027630472404">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="8986964027630472411">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="8986964027630472412">
+            <property name="value" value="true" />
+          </node>
+        </node>
+      </node>
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.BooleanType" id="8986964027630472405" />
+    </node>
     <node role="constructor" type="jetbrains.mps.lang.behavior.structure.ConceptConstructorDeclaration" id="1213877492561">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1213877492562" />
     </node>
@@ -13921,6 +13962,20 @@
         </node>
       </node>
       <node role="returnType" type="jetbrains.mps.lang.smodel.structure.SNodeListType" id="3618415754250980246" />
+    </node>
+    <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="8986964027630472427">
+      <property name="name" value="isStatic" />
+      <property name="isVirtual" value="true" />
+      <link role="overriddenMethod" targetNodeId="8986964027630462944" resolveInfo="isStatic" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="8986964027630472428" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="8986964027630472429">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="8986964027630472433">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="8986964027630472434">
+            <property name="value" value="true" />
+          </node>
+        </node>
+      </node>
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.BooleanType" id="8986964027630472430" />
     </node>
   </node>
   <node type="jetbrains.mps.lang.behavior.structure.ConceptBehavior" id="1213877539511">
