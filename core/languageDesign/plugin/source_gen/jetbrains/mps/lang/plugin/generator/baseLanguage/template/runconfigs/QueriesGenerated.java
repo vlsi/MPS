@@ -151,7 +151,10 @@ public class QueriesGenerated {
   }
 
   public static Object referenceMacro_GetReferent_446387597135550933(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return SLinkOperations.getTarget(_context.getNode(), "concept", false);
+    return (SLinkOperations.getTarget(_context.getNode(), "concept", false) == null ?
+      new _Quotations.QuotationClass_0().createNode() :
+      SLinkOperations.getTarget(_context.getNode(), "concept", false)
+    );
   }
 
   public static Object referenceMacro_GetReferent_2751171488135057072(final IOperationContext operationContext, final ReferenceMacroContext _context) {
