@@ -23,19 +23,17 @@ public class JUnitConfigFromModel extends BaseConfigCreator<SModel> implements C
     return this.myConfig;
   }
 
-  private void createConfig(SModel model) {
-    if (ListSequence.fromList(TestRunUtil.getModelTests(model)).isEmpty()) {
+  private void createConfig(final SModel parameter) {
+    if (ListSequence.fromList(TestRunUtil.getModelTests(parameter)).isEmpty()) {
       return;
     }
-
-    JUnitConfigFromModel.this.setSourceElement(new MPSPsiElement<SModel>(model) {    });
-
+    JUnitConfigFromModel.this.setSourceElement(new MPSPsiElement<SModel>(parameter) {    });
     {
       JUnit_ConfigurationType configType = ContainerUtil.findInstance(Extensions.getExtensions(JUnit_ConfigurationType.CONFIGURATION_TYPE_EP), JUnit_ConfigurationType.class);
       DefaultJUnit_Configuration _config = new DefaultJUnit_Configuration(JUnitConfigFromModel.this.getContext().getProject(), configType.getConfigurationFactories()[0], "NewConfig");
-      _config.setName(SModelOperations.getModelName(model));
+      _config.setName(SModelOperations.getModelName(parameter));
       _config.getStateObject().type = JUnitRunTypes.MODEL;
-      _config.getStateObject().model = model.getLongName();
+      _config.getStateObject().model = parameter.getLongName();
       JUnitConfigFromModel.this.myConfig = _config;
     }
   }
@@ -45,7 +43,7 @@ public class JUnitConfigFromModel extends BaseConfigCreator<SModel> implements C
     return ((JUnitConfigFromModel)super.clone());
   }
 
-  protected boolean isApplicable(Object element) {
+  protected boolean isApplicable(final Object element) {
     return element instanceof SModel;
   }
 }

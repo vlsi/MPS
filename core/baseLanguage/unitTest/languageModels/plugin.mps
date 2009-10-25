@@ -20328,252 +20328,6 @@
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="2148145109766353209" />
     </node>
   </node>
-  <node type="jetbrains.mps.lang.plugin.structure.RunNodeConfigCreator" id="5991337651479492390">
-    <property name="package" value="run.creator" />
-    <property name="name" value="JUnitConfigFromClass" />
-    <link role="rcType" targetNodeId="1104580685292496804" resolveInfo="JUnit" />
-    <node role="createNodeRunConfigBlock" type="jetbrains.mps.lang.plugin.structure.CreateNodeRunConfigBlock" id="5991337651479492391">
-      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="5991337651479492392">
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="5991337651479534410">
-          <node role="condition" type="jetbrains.mps.baseLanguage.structure.NotExpression" id="5991337651479536928">
-            <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="5991337651479536929">
-              <node role="operand" type="jetbrains.mps.lang.plugin.structure.ConceptFunctionParameter_node" id="5991337651479536930" />
-              <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation" id="5991337651479536931">
-                <node role="conceptArgument" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" id="5991337651479536932">
-                  <link role="conceptDeclaration" targetNodeId="1.1216130694486" resolveInfo="ITestCase" />
-                </node>
-              </node>
-            </node>
-          </node>
-          <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="5991337651479534412">
-            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="5991337651479536933" />
-          </node>
-        </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.Statement" id="5991337651479536934" />
-        <node role="statement" type="jetbrains.mps.lang.plugin.structure.RunConfigMainNodeStatement" id="5991337651479536936">
-          <node role="contextItem" type="jetbrains.mps.lang.plugin.structure.ConceptFunctionParameter_node" id="5991337651479536938" />
-        </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.Statement" id="5991337651479664090" />
-        <node role="statement" type="jetbrains.mps.lang.plugin.structure.CreateRunConfigStatement" id="5991337651479664080">
-          <link role="runConfig" targetNodeId="1104580685292496599" resolveInfo="DefaultJUnit" />
-          <node role="configName" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="5991337651479664084">
-            <node role="operand" type="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" id="5991337651479664082">
-              <link role="concept" targetNodeId="43.1169194658468" resolveInfo="INamedConcept" />
-              <node role="leftExpression" type="jetbrains.mps.lang.plugin.structure.ConceptFunctionParameter_node" id="5991337651479664081" />
-            </node>
-            <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="5991337651479664088">
-              <link role="property" targetNodeId="43.1169194664001" resolveInfo="name" />
-            </node>
-          </node>
-          <node role="property" type="jetbrains.mps.lang.plugin.structure.RunConfigPropertyInstance" id="5991337651479664092">
-            <link role="property" targetNodeId="5068927335440151299" resolveInfo="type" />
-            <node role="propertyValue" type="jetbrains.mps.baseLanguage.structure.EnumConstantReference" id="5991337651479664095">
-              <link role="enumConstantDeclaration" targetNodeId="5068927335440176133" resolveInfo="NODE" />
-              <link role="enumClass" targetNodeId="5068927335440176122" resolveInfo="JUnitRunTypes" />
-            </node>
-          </node>
-          <node role="property" type="jetbrains.mps.lang.plugin.structure.RunConfigPropertyInstance" id="5991337651479664096">
-            <link role="property" targetNodeId="1104580685292496600" resolveInfo="node" />
-            <node role="propertyValue" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="5991337651479668238">
-              <node role="operand" type="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" id="5991337651479668236">
-                <link role="concept" targetNodeId="43.1169194658468" resolveInfo="INamedConcept" />
-                <node role="leftExpression" type="jetbrains.mps.lang.plugin.structure.ConceptFunctionParameter_node" id="5991337651479666806" />
-              </node>
-              <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="5991337651479668242">
-                <link role="baseMethodDeclaration" targetNodeId="39.1213877404258" resolveInfo="getFqName" />
-              </node>
-            </node>
-          </node>
-        </node>
-      </node>
-    </node>
-  </node>
-  <node type="jetbrains.mps.lang.plugin.structure.RunModelConfigCreator" id="6135182812223193080">
-    <property name="package" value="run.creator" />
-    <property name="name" value="JUnitConfigFromModel" />
-    <link role="rcType" targetNodeId="1104580685292496804" resolveInfo="JUnit" />
-    <node role="createModelRunConfigBlock" type="jetbrains.mps.lang.plugin.structure.CreateModelRunConfigBlock" id="6135182812223193081">
-      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="6135182812223193082">
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="6135182812223218863">
-          <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="6135182812223218865">
-            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="6135182812223218873" />
-          </node>
-          <node role="condition" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="6135182812223218868">
-            <node role="operand" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="6135182812223218866">
-              <link role="classConcept" targetNodeId="2148145109766353204" resolveInfo="TestRunUtil" />
-              <link role="baseMethodDeclaration" targetNodeId="8761302831112799889" resolveInfo="getModelTests" />
-              <node role="actualArgument" type="jetbrains.mps.lang.plugin.structure.ConceptFunctionParameter_Model" id="6135182812223218867" />
-            </node>
-            <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.IsEmptyOperation" id="6135182812223218872" />
-          </node>
-        </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.Statement" id="6135182812223218874" />
-        <node role="statement" type="jetbrains.mps.lang.plugin.structure.RunConfigMainNodeStatement" id="6135182812223218876">
-          <node role="contextItem" type="jetbrains.mps.lang.plugin.structure.ConceptFunctionParameter_Model" id="6135182812223218878" />
-        </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.Statement" id="6135182812223218879" />
-        <node role="statement" type="jetbrains.mps.lang.plugin.structure.CreateRunConfigStatement" id="6135182812223218881">
-          <link role="runConfig" targetNodeId="1104580685292496599" resolveInfo="DefaultJUnit" />
-          <node role="property" type="jetbrains.mps.lang.plugin.structure.RunConfigPropertyInstance" id="6135182812223218886">
-            <link role="property" targetNodeId="5068927335440151299" resolveInfo="type" />
-            <node role="propertyValue" type="jetbrains.mps.baseLanguage.structure.EnumConstantReference" id="6135182812223218893">
-              <link role="enumConstantDeclaration" targetNodeId="5068927335440176135" resolveInfo="MODEL" />
-              <link role="enumClass" targetNodeId="5068927335440176122" resolveInfo="JUnitRunTypes" />
-            </node>
-          </node>
-          <node role="property" type="jetbrains.mps.lang.plugin.structure.RunConfigPropertyInstance" id="6135182812223218888">
-            <link role="property" targetNodeId="1104580685292496602" resolveInfo="model" />
-            <node role="propertyValue" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="6135182812223221966">
-              <node role="operand" type="jetbrains.mps.lang.smodel.structure.SemanticDowncastExpression" id="6135182812223218899">
-                <node role="leftExpression" type="jetbrains.mps.lang.plugin.structure.ConceptFunctionParameter_Model" id="6135182812223222001" />
-              </node>
-              <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="6135182812223222000">
-                <link role="baseMethodDeclaration" targetNodeId="9.~SModel.getLongName():java.lang.String" resolveInfo="getLongName" />
-              </node>
-            </node>
-          </node>
-          <node role="configName" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="6135182812223221861">
-            <node role="operand" type="jetbrains.mps.lang.plugin.structure.ConceptFunctionParameter_Model" id="6135182812223221860" />
-            <node role="operation" type="jetbrains.mps.lang.smodel.structure.Model_GetLongNameOperation" id="6135182812223221865" />
-          </node>
-        </node>
-      </node>
-    </node>
-  </node>
-  <node type="jetbrains.mps.lang.plugin.structure.RunModuleConfigCreator" id="6135182812223222002">
-    <property name="package" value="run.creator" />
-    <property name="name" value="JUnitConfigFromModule" />
-    <link role="rcType" targetNodeId="1104580685292496804" resolveInfo="JUnit" />
-    <node role="createModuleRunConfigBlock" type="jetbrains.mps.lang.plugin.structure.CreateModuleRunConfigBlock" id="6135182812223222003">
-      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="6135182812223222004">
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="6135182812223222017">
-          <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="6135182812223222018">
-            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="6135182812223222019" />
-          </node>
-          <node role="condition" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="6135182812223222020">
-            <node role="operand" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="6135182812223222039">
-              <link role="baseMethodDeclaration" targetNodeId="8761302831112878341" resolveInfo="getModuleTests" />
-              <link role="classConcept" targetNodeId="2148145109766353204" resolveInfo="TestRunUtil" />
-              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="6135182812223222042">
-                <node role="operand" type="jetbrains.mps.lang.plugin.structure.ConceptFunctionParameter_IModule" id="6135182812223222041" />
-                <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="6135182812223222339">
-                  <link role="baseMethodDeclaration" targetNodeId="8.~IModule.getModuleFqName():java.lang.String" resolveInfo="getModuleFqName" />
-                </node>
-              </node>
-            </node>
-            <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.IsEmptyOperation" id="6135182812223222023" />
-          </node>
-        </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.Statement" id="6135182812223222024" />
-        <node role="statement" type="jetbrains.mps.lang.plugin.structure.RunConfigMainNodeStatement" id="6135182812223222025">
-          <node role="contextItem" type="jetbrains.mps.lang.plugin.structure.ConceptFunctionParameter_IModule" id="6135182812223222340" />
-        </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.Statement" id="6135182812223222027" />
-        <node role="statement" type="jetbrains.mps.lang.plugin.structure.CreateRunConfigStatement" id="6135182812223222028">
-          <link role="runConfig" targetNodeId="1104580685292496599" resolveInfo="DefaultJUnit" />
-          <node role="property" type="jetbrains.mps.lang.plugin.structure.RunConfigPropertyInstance" id="6135182812223222029">
-            <link role="property" targetNodeId="5068927335440151299" resolveInfo="type" />
-            <node role="propertyValue" type="jetbrains.mps.baseLanguage.structure.EnumConstantReference" id="6135182812223222341">
-              <link role="enumConstantDeclaration" targetNodeId="5068927335440176137" resolveInfo="MODULE" />
-              <link role="enumClass" targetNodeId="5068927335440176122" resolveInfo="JUnitRunTypes" />
-            </node>
-          </node>
-          <node role="property" type="jetbrains.mps.lang.plugin.structure.RunConfigPropertyInstance" id="6135182812223222031">
-            <link role="property" targetNodeId="145554711892086639" resolveInfo="module" />
-            <node role="propertyValue" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="6135182812223222343">
-              <node role="operand" type="jetbrains.mps.lang.plugin.structure.ConceptFunctionParameter_IModule" id="6135182812223222342" />
-              <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="6135182812223222347">
-                <link role="baseMethodDeclaration" targetNodeId="8.~IModule.getModuleFqName():java.lang.String" resolveInfo="getModuleFqName" />
-              </node>
-            </node>
-          </node>
-          <node role="configName" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="6135182812223222036">
-            <node role="operand" type="jetbrains.mps.lang.plugin.structure.ConceptFunctionParameter_IModule" id="6135182812223222348" />
-            <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="6135182812223222349">
-              <link role="baseMethodDeclaration" targetNodeId="8.~IModule.getModuleFqName():java.lang.String" resolveInfo="getModuleFqName" />
-            </node>
-          </node>
-        </node>
-      </node>
-    </node>
-  </node>
-  <node type="jetbrains.mps.lang.plugin.structure.RunNodeConfigCreator" id="3290430647053494479">
-    <property name="package" value="run.creator" />
-    <property name="name" value="JUnitConfigFromMethod" />
-    <link role="rcType" targetNodeId="1104580685292496804" resolveInfo="JUnit" />
-    <node role="createNodeRunConfigBlock" type="jetbrains.mps.lang.plugin.structure.CreateNodeRunConfigBlock" id="3290430647053494480">
-      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="3290430647053494481">
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="3290430647053494482">
-          <node role="condition" type="jetbrains.mps.baseLanguage.structure.NotExpression" id="3290430647053494483">
-            <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="3290430647053494484">
-              <node role="operand" type="jetbrains.mps.lang.plugin.structure.ConceptFunctionParameter_node" id="3290430647053494485" />
-              <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation" id="3290430647053494486">
-                <node role="conceptArgument" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" id="3290430647053512191">
-                  <link role="conceptDeclaration" targetNodeId="1.1216134482493" resolveInfo="ITestMethod" />
-                </node>
-              </node>
-            </node>
-          </node>
-          <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="3290430647053494488">
-            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="3290430647053494489" />
-          </node>
-        </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.Statement" id="3290430647053494490" />
-        <node role="statement" type="jetbrains.mps.lang.plugin.structure.RunConfigMainNodeStatement" id="3290430647053494491">
-          <node role="contextItem" type="jetbrains.mps.lang.plugin.structure.ConceptFunctionParameter_node" id="3290430647053494492" />
-        </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.Statement" id="3290430647053494493" />
-        <node role="statement" type="jetbrains.mps.lang.plugin.structure.CreateRunConfigStatement" id="3290430647053494494">
-          <link role="runConfig" targetNodeId="1104580685292496599" resolveInfo="DefaultJUnit" />
-          <node role="configName" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="3290430647053494495">
-            <node role="operand" type="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" id="3290430647053494496">
-              <link role="concept" targetNodeId="1.1216134482493" resolveInfo="ITestMethod" />
-              <node role="leftExpression" type="jetbrains.mps.lang.plugin.structure.ConceptFunctionParameter_node" id="3290430647053494497" />
-            </node>
-            <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="3290430647053512193">
-              <link role="baseMethodDeclaration" targetNodeId="41.1216136419751" resolveInfo="getTestName" />
-            </node>
-          </node>
-          <node role="property" type="jetbrains.mps.lang.plugin.structure.RunConfigPropertyInstance" id="3290430647053494499">
-            <link role="property" targetNodeId="5068927335440151299" resolveInfo="type" />
-            <node role="propertyValue" type="jetbrains.mps.baseLanguage.structure.EnumConstantReference" id="3290430647053512192">
-              <link role="enumConstantDeclaration" targetNodeId="5068927335440176128" resolveInfo="METHOD" />
-              <link role="enumClass" targetNodeId="5068927335440176122" resolveInfo="JUnitRunTypes" />
-            </node>
-          </node>
-          <node role="property" type="jetbrains.mps.lang.plugin.structure.RunConfigPropertyInstance" id="3290430647053494501">
-            <link role="property" targetNodeId="145554711892086642" resolveInfo="method" />
-            <node role="propertyValue" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="3290430647053512194">
-              <node role="operand" type="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" id="3290430647053512195">
-                <link role="concept" targetNodeId="1.1216134482493" resolveInfo="ITestMethod" />
-                <node role="leftExpression" type="jetbrains.mps.lang.plugin.structure.ConceptFunctionParameter_node" id="3290430647053512196" />
-              </node>
-              <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="3290430647053512197">
-                <link role="baseMethodDeclaration" targetNodeId="41.1216136419751" resolveInfo="getTestName" />
-              </node>
-            </node>
-          </node>
-          <node role="property" type="jetbrains.mps.lang.plugin.structure.RunConfigPropertyInstance" id="3290430647053512198">
-            <link role="property" targetNodeId="1104580685292496600" resolveInfo="node" />
-            <node role="propertyValue" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="3290430647053512210">
-              <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="3290430647053512205">
-                <node role="operand" type="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" id="3290430647053512206">
-                  <link role="concept" targetNodeId="1.1216134482493" resolveInfo="ITestMethod" />
-                  <node role="leftExpression" type="jetbrains.mps.lang.plugin.structure.ConceptFunctionParameter_node" id="3290430647053512207" />
-                </node>
-                <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="3290430647053512209">
-                  <link role="baseMethodDeclaration" targetNodeId="41.1216134500045" resolveInfo="getTestCase" />
-                </node>
-              </node>
-              <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="3290430647053512214">
-                <link role="baseMethodDeclaration" targetNodeId="39.1213877404258" resolveInfo="getFqName" />
-              </node>
-            </node>
-          </node>
-        </node>
-      </node>
-    </node>
-  </node>
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="40577050485366448">
     <property name="package" value="tool.runner" />
     <property name="name" value="JUnitProcessHandler" />
@@ -20839,6 +20593,209 @@
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PrivateVisibility" id="40577050485377807" />
       <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="40577050485377808">
         <link role="classifier" targetNodeId="1208270545572" resolveInfo="JUnitTestViewComponent" />
+      </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.plugin.structure.UniversalRunConfigCreator" id="8857400326959395379">
+    <property name="package" value="run.creator" />
+    <property name="name" value="JUnitConfigFromClass" />
+    <link role="rcType" targetNodeId="1104580685292496804" resolveInfo="JUnit" />
+    <node role="target" type="jetbrains.mps.lang.plugin.structure.NodeCreatorTarget" id="8857400326959529619">
+      <link role="concept" targetNodeId="1.1216130694486" resolveInfo="ITestCase" />
+    </node>
+    <node role="createBlock" type="jetbrains.mps.lang.plugin.structure.CreateRunConfigBlock" id="8857400326959395381">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="8857400326959395382">
+        <node role="statement" type="jetbrains.mps.lang.plugin.structure.RunConfigMainNodeStatement" id="8857400326959457743">
+          <node role="contextItem" type="jetbrains.mps.lang.plugin.structure.CreateRunConfigBlockParameter" id="8857400326959529620" />
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.Statement" id="8857400326959457745" />
+        <node role="statement" type="jetbrains.mps.lang.plugin.structure.CreateRunConfigStatement" id="8857400326959457746">
+          <link role="runConfig" targetNodeId="1104580685292496599" resolveInfo="DefaultJUnit" />
+          <node role="configName" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="8857400326959457747">
+            <node role="operand" type="jetbrains.mps.lang.plugin.structure.CreateRunConfigBlockParameter" id="8857400326959529622" />
+            <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="8857400326959457750">
+              <link role="property" targetNodeId="43.1169194664001" resolveInfo="name" />
+            </node>
+          </node>
+          <node role="property" type="jetbrains.mps.lang.plugin.structure.RunConfigPropertyInstance" id="8857400326959457751">
+            <link role="property" targetNodeId="5068927335440151299" resolveInfo="type" />
+            <node role="propertyValue" type="jetbrains.mps.baseLanguage.structure.EnumConstantReference" id="8857400326959457752">
+              <link role="enumClass" targetNodeId="5068927335440176122" resolveInfo="JUnitRunTypes" />
+              <link role="enumConstantDeclaration" targetNodeId="5068927335440176133" resolveInfo="NODE" />
+            </node>
+          </node>
+          <node role="property" type="jetbrains.mps.lang.plugin.structure.RunConfigPropertyInstance" id="8857400326959457753">
+            <link role="property" targetNodeId="1104580685292496600" resolveInfo="node" />
+            <node role="propertyValue" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="8857400326959457754">
+              <node role="operand" type="jetbrains.mps.lang.plugin.structure.CreateRunConfigBlockParameter" id="8857400326959529621" />
+              <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="8857400326959457757">
+                <link role="baseMethodDeclaration" targetNodeId="39.1213877404258" resolveInfo="getFqName" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.plugin.structure.UniversalRunConfigCreator" id="8857400326959529623">
+    <property name="package" value="run.creator" />
+    <property name="name" value="JUnitConfigFromMethod" />
+    <link role="rcType" targetNodeId="1104580685292496804" resolveInfo="JUnit" />
+    <node role="target" type="jetbrains.mps.lang.plugin.structure.NodeCreatorTarget" id="8857400326959529649">
+      <link role="concept" targetNodeId="1.1216134482493" resolveInfo="ITestMethod" />
+    </node>
+    <node role="createBlock" type="jetbrains.mps.lang.plugin.structure.CreateRunConfigBlock" id="8857400326959529625">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="8857400326959529626">
+        <node role="statement" type="jetbrains.mps.lang.plugin.structure.RunConfigMainNodeStatement" id="8857400326959529627">
+          <node role="contextItem" type="jetbrains.mps.lang.plugin.structure.CreateRunConfigBlockParameter" id="8857400326959529650" />
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.Statement" id="8857400326959529629" />
+        <node role="statement" type="jetbrains.mps.lang.plugin.structure.CreateRunConfigStatement" id="8857400326959529630">
+          <link role="runConfig" targetNodeId="1104580685292496599" resolveInfo="DefaultJUnit" />
+          <node role="configName" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="8857400326959529631">
+            <node role="operand" type="jetbrains.mps.lang.plugin.structure.CreateRunConfigBlockParameter" id="8857400326959529656" />
+            <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="8857400326959529634">
+              <link role="baseMethodDeclaration" targetNodeId="41.1216136419751" resolveInfo="getTestName" />
+            </node>
+          </node>
+          <node role="property" type="jetbrains.mps.lang.plugin.structure.RunConfigPropertyInstance" id="8857400326959529635">
+            <link role="property" targetNodeId="5068927335440151299" resolveInfo="type" />
+            <node role="propertyValue" type="jetbrains.mps.baseLanguage.structure.EnumConstantReference" id="8857400326959529636">
+              <link role="enumClass" targetNodeId="5068927335440176122" resolveInfo="JUnitRunTypes" />
+              <link role="enumConstantDeclaration" targetNodeId="5068927335440176128" resolveInfo="METHOD" />
+            </node>
+          </node>
+          <node role="property" type="jetbrains.mps.lang.plugin.structure.RunConfigPropertyInstance" id="8857400326959529637">
+            <link role="property" targetNodeId="145554711892086642" resolveInfo="method" />
+            <node role="propertyValue" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="8857400326959529638">
+              <node role="operand" type="jetbrains.mps.lang.plugin.structure.CreateRunConfigBlockParameter" id="8857400326959529652" />
+              <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="8857400326959529641">
+                <link role="baseMethodDeclaration" targetNodeId="41.1216136419751" resolveInfo="getTestName" />
+              </node>
+            </node>
+          </node>
+          <node role="property" type="jetbrains.mps.lang.plugin.structure.RunConfigPropertyInstance" id="8857400326959529642">
+            <link role="property" targetNodeId="1104580685292496600" resolveInfo="node" />
+            <node role="propertyValue" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="8857400326959529643">
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="8857400326959529644">
+                <node role="operand" type="jetbrains.mps.lang.plugin.structure.CreateRunConfigBlockParameter" id="8857400326959529654" />
+                <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="8857400326959529647">
+                  <link role="baseMethodDeclaration" targetNodeId="41.1216134500045" resolveInfo="getTestCase" />
+                </node>
+              </node>
+              <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="8857400326959529648">
+                <link role="baseMethodDeclaration" targetNodeId="39.1213877404258" resolveInfo="getFqName" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.plugin.structure.UniversalRunConfigCreator" id="8857400326959529657">
+    <property name="package" value="run.creator" />
+    <property name="name" value="JUnitConfigFromModel" />
+    <link role="rcType" targetNodeId="1104580685292496804" resolveInfo="JUnit" />
+    <node role="target" type="jetbrains.mps.lang.plugin.structure.ModelCreatorTarget" id="8857400326959529684" />
+    <node role="createBlock" type="jetbrains.mps.lang.plugin.structure.CreateRunConfigBlock" id="8857400326959529659">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="8857400326959529660">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="8857400326959529676">
+          <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="8857400326959529677">
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="8857400326959529678" />
+          </node>
+          <node role="condition" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="8857400326959529679">
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="8857400326959529680">
+              <link role="baseMethodDeclaration" targetNodeId="8761302831112799889" resolveInfo="getModelTests" />
+              <link role="classConcept" targetNodeId="2148145109766353204" resolveInfo="TestRunUtil" />
+              <node role="actualArgument" type="jetbrains.mps.lang.plugin.structure.CreateRunConfigBlockParameter" id="8857400326959529685" />
+            </node>
+            <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.IsEmptyOperation" id="8857400326959529682" />
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.lang.plugin.structure.RunConfigMainNodeStatement" id="8857400326959529661">
+          <node role="contextItem" type="jetbrains.mps.lang.plugin.structure.CreateRunConfigBlockParameter" id="8857400326959529686" />
+        </node>
+        <node role="statement" type="jetbrains.mps.lang.plugin.structure.CreateRunConfigStatement" id="8857400326959529664">
+          <link role="runConfig" targetNodeId="1104580685292496599" resolveInfo="DefaultJUnit" />
+          <node role="property" type="jetbrains.mps.lang.plugin.structure.RunConfigPropertyInstance" id="8857400326959529665">
+            <link role="property" targetNodeId="5068927335440151299" resolveInfo="type" />
+            <node role="propertyValue" type="jetbrains.mps.baseLanguage.structure.EnumConstantReference" id="8857400326959529666">
+              <link role="enumClass" targetNodeId="5068927335440176122" resolveInfo="JUnitRunTypes" />
+              <link role="enumConstantDeclaration" targetNodeId="5068927335440176135" resolveInfo="MODEL" />
+            </node>
+          </node>
+          <node role="property" type="jetbrains.mps.lang.plugin.structure.RunConfigPropertyInstance" id="8857400326959529667">
+            <link role="property" targetNodeId="1104580685292496602" resolveInfo="model" />
+            <node role="propertyValue" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="8857400326959529668">
+              <node role="operand" type="jetbrains.mps.lang.smodel.structure.SemanticDowncastExpression" id="8857400326959529669">
+                <node role="leftExpression" type="jetbrains.mps.lang.plugin.structure.CreateRunConfigBlockParameter" id="8857400326959529687" />
+              </node>
+              <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="8857400326959529671">
+                <link role="baseMethodDeclaration" targetNodeId="9.~SModel.getLongName():java.lang.String" resolveInfo="getLongName" />
+              </node>
+            </node>
+          </node>
+          <node role="configName" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="8857400326959529672">
+            <node role="operand" type="jetbrains.mps.lang.plugin.structure.CreateRunConfigBlockParameter" id="8857400326959529688" />
+            <node role="operation" type="jetbrains.mps.lang.smodel.structure.Model_GetLongNameOperation" id="8857400326959529674" />
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.plugin.structure.UniversalRunConfigCreator" id="8857400326959529689">
+    <property name="package" value="run.creator" />
+    <property name="name" value="JUnitFromModule" />
+    <link role="rcType" targetNodeId="1104580685292496804" resolveInfo="JUnit" />
+    <node role="target" type="jetbrains.mps.lang.plugin.structure.ModuleCreatorTarget" id="8857400326959529693" />
+    <node role="createBlock" type="jetbrains.mps.lang.plugin.structure.CreateRunConfigBlock" id="8857400326959529691">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="8857400326959529692">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="8857400326959529694">
+          <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="8857400326959529695">
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="8857400326959529696" />
+          </node>
+          <node role="condition" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="8857400326959529697">
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="8857400326959529698">
+              <link role="baseMethodDeclaration" targetNodeId="8761302831112878341" resolveInfo="getModuleTests" />
+              <link role="classConcept" targetNodeId="2148145109766353204" resolveInfo="TestRunUtil" />
+              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="8857400326959529699">
+                <node role="operand" type="jetbrains.mps.lang.plugin.structure.CreateRunConfigBlockParameter" id="8857400326959529718" />
+                <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="8857400326959529701">
+                  <link role="baseMethodDeclaration" targetNodeId="8.~IModule.getModuleFqName():java.lang.String" resolveInfo="getModuleFqName" />
+                </node>
+              </node>
+            </node>
+            <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.IsEmptyOperation" id="8857400326959529702" />
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.lang.plugin.structure.RunConfigMainNodeStatement" id="8857400326959529704">
+          <node role="contextItem" type="jetbrains.mps.lang.plugin.structure.CreateRunConfigBlockParameter" id="8857400326959529717" />
+        </node>
+        <node role="statement" type="jetbrains.mps.lang.plugin.structure.CreateRunConfigStatement" id="8857400326959529707">
+          <link role="runConfig" targetNodeId="1104580685292496599" resolveInfo="DefaultJUnit" />
+          <node role="property" type="jetbrains.mps.lang.plugin.structure.RunConfigPropertyInstance" id="8857400326959529708">
+            <link role="property" targetNodeId="5068927335440151299" resolveInfo="type" />
+            <node role="propertyValue" type="jetbrains.mps.baseLanguage.structure.EnumConstantReference" id="8857400326959529709">
+              <link role="enumClass" targetNodeId="5068927335440176122" resolveInfo="JUnitRunTypes" />
+              <link role="enumConstantDeclaration" targetNodeId="5068927335440176137" resolveInfo="MODULE" />
+            </node>
+          </node>
+          <node role="property" type="jetbrains.mps.lang.plugin.structure.RunConfigPropertyInstance" id="8857400326959529710">
+            <link role="property" targetNodeId="145554711892086639" resolveInfo="module" />
+            <node role="propertyValue" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="8857400326959529711">
+              <node role="operand" type="jetbrains.mps.lang.plugin.structure.CreateRunConfigBlockParameter" id="8857400326959529719" />
+              <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="8857400326959529713">
+                <link role="baseMethodDeclaration" targetNodeId="8.~IModule.getModuleFqName():java.lang.String" resolveInfo="getModuleFqName" />
+              </node>
+            </node>
+          </node>
+          <node role="configName" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="8857400326959529714">
+            <node role="operand" type="jetbrains.mps.lang.plugin.structure.CreateRunConfigBlockParameter" id="8857400326959529720" />
+            <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="8857400326959529716">
+              <link role="baseMethodDeclaration" targetNodeId="8.~IModule.getModuleFqName():java.lang.String" resolveInfo="getModuleFqName" />
+            </node>
+          </node>
+        </node>
       </node>
     </node>
   </node>
