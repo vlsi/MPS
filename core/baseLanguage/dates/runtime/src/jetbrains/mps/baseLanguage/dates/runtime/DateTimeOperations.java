@@ -367,29 +367,15 @@ public class DateTimeOperations {
 
   public static boolean compare(Period op1, CompareType cmp, Period op2) {
     DateTime now = new DateTime(currentZone.get());
-    warn(now);
     int compareValue;
 
     if(op1 == null) {
       compareValue = op2 != null ? -1 : 0;
     } else {
-      if (op2 == null) {
-        compareValue = 1;
-      } else {
-        Duration d1 = op1.toDurationFrom(now);
-        warn(d1);
-        Duration d2 = op2.toDurationFrom(now);
-        warn(d2);
-        compareValue = d1.compareTo(d2);
-        warn(compareValue);
-      }
+      compareValue = op2 != null ? op1.toDurationFrom(now).compareTo(op2.toDurationFrom(now)) : 1;
     }
 
     return compareResult(compareValue, cmp);
-  }
-
-  public static void warn(Object o){
-    System.out.println("\n\nINFO:" + o.toString()+"\n\n");
   }
 
   public static boolean compare(Duration op1, CompareType cmp, Duration op2) {
