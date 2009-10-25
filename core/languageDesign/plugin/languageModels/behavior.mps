@@ -2856,7 +2856,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.behavior.structure.ConceptBehavior" id="5528847031674330311">
-    <property name="package" value="RunConfigs.Create.Creator" />
+    <property name="package" value="RunConfigs.Create.Creator.Deprecated" />
     <link role="concept" targetNodeId="1.8415911927033048374" resolveInfo="RunConfigCreator" />
     <node role="constructor" type="jetbrains.mps.lang.behavior.structure.ConceptConstructorDeclaration" id="5528847031674330312">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="5528847031674330313" />
@@ -2889,7 +2889,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.behavior.structure.ConceptBehavior" id="5528847031674334461">
-    <property name="package" value="RunConfigs.Create.Creator" />
+    <property name="package" value="RunConfigs.Create.Creator.Deprecated" />
     <link role="concept" targetNodeId="1.5528847031674321868" resolveInfo="RunModelConfigCreator" />
     <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="5528847031674334464">
       <property name="name" value="getCreatorTypeParameter" />
@@ -2929,7 +2929,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.behavior.structure.ConceptBehavior" id="5528847031674340330">
-    <property name="package" value="RunConfigs.Create.Creator" />
+    <property name="package" value="RunConfigs.Create.Creator.Deprecated" />
     <link role="concept" targetNodeId="1.5528847031674321867" resolveInfo="RunModuleConfigCreator" />
     <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="5528847031674340333">
       <property name="name" value="getCreatorTypeParameter" />
@@ -2969,7 +2969,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.behavior.structure.ConceptBehavior" id="5528847031674340355">
-    <property name="package" value="RunConfigs.Create.Creator" />
+    <property name="package" value="RunConfigs.Create.Creator.Deprecated" />
     <link role="concept" targetNodeId="1.5528847031674321866" resolveInfo="RunNodeConfigCreator" />
     <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="5528847031674340358">
       <property name="name" value="getCreatorTypeParameter" />

@@ -32,6 +32,7 @@ import jetbrains.mps.ide.IdeMain;
 import jetbrains.mps.ide.IdeMain.TestMode;
 import jetbrains.mps.lang.plugin.structure.RunConfigCreator;
 import jetbrains.mps.lang.plugin.structure.RunConfigurationTypeDeclaration;
+import jetbrains.mps.lang.plugin.structure.UniversalRunConfigCreator;
 import jetbrains.mps.library.LibraryManager;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.plugins.pluginparts.runconfigs.BaseConfigCreator;
@@ -237,6 +238,16 @@ public class RunConfigManager implements ProjectComponent {
 
         final ExtensionPoint<RuntimeConfigurationProducer> epCreator = Extensions.getArea(null).getExtensionPoint(RuntimeConfigurationProducer.RUNTIME_CONFIGURATION_PRODUCER);
         for (RunConfigCreator creator : model.getRootsAdapters(RunConfigCreator.class)) {
+          String creatorClassName = language.getPluginModelDescriptor().getLongName() + "." + creator.getName();
+          BaseConfigCreator configCreator = createCreator(language, creatorClassName);
+          if (configCreator == null) continue;
+
+          epCreator.registerExtension(configCreator);
+          //todo
+          //conTypes.add(configurationType);
+        }
+
+        for (UniversalRunConfigCreator creator : model.getRootsAdapters(UniversalRunConfigCreator.class)) {
           String creatorClassName = language.getPluginModelDescriptor().getLongName() + "." + creator.getName();
           BaseConfigCreator configCreator = createCreator(language, creatorClassName);
           if (configCreator == null) continue;
