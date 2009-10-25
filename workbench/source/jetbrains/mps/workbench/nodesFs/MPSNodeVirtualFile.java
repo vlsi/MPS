@@ -47,10 +47,11 @@ public class MPSNodeVirtualFile extends DeprecatedVirtualFile {
 
   void updateFields() {
     final SNode node = ModelAccess.instance().runReadAction(new Computable<SNode>() {
-      public SNode compute(){
+      public SNode compute() {
         return myNode.getNode();
       }
     });
+    if (node == null) return;
     updateFields(node);
   }
 
