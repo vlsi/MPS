@@ -4,11 +4,17 @@ package jetbrains.mps.baseLanguage.javadoc.textGen;
 
 import jetbrains.mps.textGen.SNodeTextGen;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.textGen.TextGenManager;
 
 public class CodeInlineDocTag_TextGen extends SNodeTextGen {
   public void doGenerateText(SNode node) {
     this.append("code ");
-    this.append(SPropertyOperations.getString(node, "text"));
+    if (ListSequence.fromList(SLinkOperations.getTargets(node, "line", true)).isNotEmpty()) {
+      for (SNode item : SLinkOperations.getTargets(node, "line", true)) {
+        TextGenManager.instance().appendNodeText(this.getContext(), this.getBuffer(), item, this.getSNode());
+      }
+    }
   }
 }

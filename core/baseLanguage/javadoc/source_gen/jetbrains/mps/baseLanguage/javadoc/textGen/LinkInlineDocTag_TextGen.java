@@ -6,16 +6,19 @@ import jetbrains.mps.textGen.SNodeTextGen;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.textGen.TextGenManager;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import org.apache.commons.lang.StringUtils;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 
 public class LinkInlineDocTag_TextGen extends SNodeTextGen {
   public void doGenerateText(SNode node) {
     this.append("link ");
     TextGenManager.instance().appendNodeText(this.getContext(), this.getBuffer(), SLinkOperations.getTarget(node, "reference", true), this.getSNode());
-    if (StringUtils.isNotEmpty(SPropertyOperations.getString(node, "text"))) {
+    if (ListSequence.fromList(SLinkOperations.getTargets(node, "line", true)).isNotEmpty()) {
       this.append(" ");
-      this.append(SPropertyOperations.getString(node, "text"));
+      if (ListSequence.fromList(SLinkOperations.getTargets(node, "line", true)).isNotEmpty()) {
+        for (SNode item : SLinkOperations.getTargets(node, "line", true)) {
+          TextGenManager.instance().appendNodeText(this.getContext(), this.getBuffer(), item, this.getSNode());
+        }
+      }
     }
   }
 }

@@ -911,11 +911,11 @@
           <node role="part" type="jetbrains.mps.lang.textGen.structure.ConstantStringAppendPart" id="4021391592916799020">
             <property name="value" value="code " />
           </node>
-          <node role="part" type="jetbrains.mps.lang.textGen.structure.NodeAppendPart" id="4021391592916799022">
-            <node role="value" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="4021391592916799025">
-              <node role="operand" type="jetbrains.mps.lang.textGen.structure.NodeParameter" id="4021391592916799024" />
-              <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="4021391592916799029">
-                <link role="property" targetNodeId="1.2565027568480353900" resolveInfo="text" />
+          <node role="part" type="jetbrains.mps.lang.textGen.structure.CollectionAppendPart" id="6612597108005328636">
+            <node role="list" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="6612597108005328639">
+              <node role="operand" type="jetbrains.mps.lang.textGen.structure.NodeParameter" id="6612597108005328638" />
+              <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkListAccess" id="6612597108005328643">
+                <link role="link" targetNodeId="1.3106559687488741665" />
               </node>
             </node>
           </node>
@@ -960,24 +960,24 @@
               <node role="part" type="jetbrains.mps.lang.textGen.structure.ConstantStringAppendPart" id="4021391592916960582">
                 <property name="value" value=" " />
               </node>
-              <node role="part" type="jetbrains.mps.lang.textGen.structure.NodeAppendPart" id="4021391592916960584">
-                <node role="value" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="4021391592916960587">
-                  <node role="operand" type="jetbrains.mps.lang.textGen.structure.NodeParameter" id="4021391592916960586" />
-                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="4021391592916960591">
-                    <link role="property" targetNodeId="1.2546654756694997552" resolveInfo="text" />
+              <node role="part" type="jetbrains.mps.lang.textGen.structure.CollectionAppendPart" id="6612597108005328651">
+                <node role="list" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="6612597108005328654">
+                  <node role="operand" type="jetbrains.mps.lang.textGen.structure.NodeParameter" id="6612597108005328653" />
+                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkListAccess" id="6612597108005328658">
+                    <link role="link" targetNodeId="1.3106559687488913694" />
                   </node>
                 </node>
               </node>
             </node>
           </node>
-          <node role="condition" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="4021391592916960573">
+          <node role="condition" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="6612597108005328645">
             <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="4021391592916960568">
               <node role="operand" type="jetbrains.mps.lang.textGen.structure.NodeParameter" id="4021391592916960567" />
-              <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="4021391592916960572">
-                <link role="property" targetNodeId="1.2546654756694997552" resolveInfo="text" />
+              <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkListAccess" id="6612597108005328644">
+                <link role="link" targetNodeId="1.3106559687488913694" />
               </node>
             </node>
-            <node role="operation" type="jetbrains.mps.baseLanguage.structure.IsNotEmptyOperation" id="4021391592916960577" />
+            <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.IsNotEmptyOperation" id="6612597108005328649" />
           </node>
         </node>
       </node>
