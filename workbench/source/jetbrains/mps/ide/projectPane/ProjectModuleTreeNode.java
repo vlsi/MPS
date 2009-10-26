@@ -19,12 +19,14 @@ import jetbrains.mps.ide.projectPane.ProjectLanguageTreeNode.AccessoriesModelTre
 import jetbrains.mps.ide.ui.ErrorState;
 import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.ide.ui.smodel.SModelTreeNode;
+import jetbrains.mps.ide.ui.smodel.SNodeTreeNode;
 import jetbrains.mps.project.DevKit;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.Language;
+import jetbrains.mps.smodel.SModelStereotype;
 
 public abstract class ProjectModuleTreeNode extends MPSTreeNode {
   public static ProjectModuleTreeNode createFor(MPSProject project, IModule module) {
@@ -52,6 +54,8 @@ public abstract class ProjectModuleTreeNode extends MPSTreeNode {
   }
 
   protected void updatePresentation() {
+    if (getTree() == null) return;
+
     if (generationRequired()) {
       setAdditionalText("generation required");
     } else if (getModule().isPackaged()) {
@@ -73,6 +77,12 @@ public abstract class ProjectModuleTreeNode extends MPSTreeNode {
     }
   }
 
+  @Override
+  protected void onAdd() {
+    super.onAdd();
+    updatePresentation();
+  }
+
   public void updateNodePresentationInTree() {
     updatePresentation();
     super.updateNodePresentationInTree();
@@ -88,13 +98,28 @@ public abstract class ProjectModuleTreeNode extends MPSTreeNode {
   }
 
   private boolean generationRequired(MPSTreeNode node) {
-    if (node instanceof AccessoriesModelTreeNode) {
-      return false;
-    }
+    if (node instanceof SNodeTreeNode) return false;
+    if (node instanceof AccessoriesModelTreeNode) return false;
 
     if (node instanceof SModelTreeNode) {
       SModelTreeNode smodelTreeNode = (SModelTreeNode) node;
-      return smodelTreeNode.generationRequired();
+      if (smodelTreeNode.generationRequired()) {
+        return true;
+      }
+
+      if (SModelStereotype.isUserModel(smodelTreeNode.getSModelDescriptor())) {
+        smodelTreeNode.init();
+      }
+
+      for (MPSTreeNode child : smodelTreeNode) {
+        if (child instanceof SModelTreeNode) {
+          SModelTreeNode smt = (SModelTreeNode) child;
+
+          if (generationRequired(smt)) return true;
+        }
+      }
+
+      return false;
     }
 
     if (!node.isInitialized()) {
@@ -104,14 +129,6 @@ public abstract class ProjectModuleTreeNode extends MPSTreeNode {
       MPSTreeNode child = (MPSTreeNode) node.getChildAt(i);
       if (generationRequired(child)) {
         return true;
-      }
-      if (child instanceof SModelTreeNode) {
-        SModelTreeNode smodelTreeNode = (SModelTreeNode) child;
-        for (SModelTreeNode submodel : smodelTreeNode.getSubfolderSModelTreeNodes()) {
-          if (generationRequired(submodel)) {
-            return true;
-          }
-        }
       }
     }
 

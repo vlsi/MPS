@@ -33,7 +33,6 @@ public class SModelsSubtree {
     List<SModelDescriptor> tests = new ArrayList<SModelDescriptor>();
     List<SModelDescriptor> javaStubs = new ArrayList<SModelDescriptor>();
 
-
     IModule module = operationContext.getModule();
     assert module != null;
     for (SModelDescriptor modelDescriptor : module.getOwnModelDescriptors()) {

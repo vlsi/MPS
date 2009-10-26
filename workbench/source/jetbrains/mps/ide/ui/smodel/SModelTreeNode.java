@@ -47,6 +47,8 @@ public class SModelTreeNode extends MPSTreeNodeEx {
   public static final String PACK = "package";
 
   private SModelDescriptor myModelDescriptor;
+  private List<SModelDescriptor> myChildModelDescriptors = new ArrayList<SModelDescriptor>();
+
   private String myLabel;
   private boolean myInitialized = false;
   private boolean myInitializing = false;
@@ -403,6 +405,10 @@ public class SModelTreeNode extends MPSTreeNodeEx {
       }
     }
     return result;
+  }
+
+  public void addChildModel(SModelDescriptor sm) {
+    myChildModelDescriptors.add(sm);
   }
 
   protected void doUpdate() {

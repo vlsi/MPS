@@ -46,6 +46,7 @@ public abstract class MPSTreeNode extends DefaultMutableTreeNode implements Iter
 
   private IOperationContext myOperationContext;
   private MPSTree myTree;
+  private boolean myAdded;
 
   private Icon myCollapsedIcon = Icons.CLOSED_FOLDER;
   private Icon myExpandedIcon = Icons.OPENED_FOLDER;
@@ -190,7 +191,7 @@ public abstract class MPSTreeNode extends DefaultMutableTreeNode implements Iter
   }
 
   public void remove(int childIndex) {
-    if (getTree() != null && !getTree().isDisposed()) {
+    if (myAdded && getTree() != null && !getTree().isDisposed()) {
       ((MPSTreeNode) getChildAt(childIndex)).removeThisAndChildren();
     }
     super.remove(childIndex);
@@ -200,7 +201,7 @@ public abstract class MPSTreeNode extends DefaultMutableTreeNode implements Iter
 
   public void insert(MutableTreeNode newChild, int childIndex) {
     super.insert(newChild, childIndex);
-    if (getTree() != null && !getTree().isDisposed()) {
+    if (myAdded && getTree() != null && !getTree().isDisposed()) {
       ((MPSTreeNode) getChildAt(childIndex)).addThisAndChildren();
     }
     updateErrorState();
@@ -214,11 +215,13 @@ public abstract class MPSTreeNode extends DefaultMutableTreeNode implements Iter
   }
 
   final void removeThisAndChildren() {
+    assert myAdded;
     try {
       onRemove();
     } catch (Throwable t) {
       LOG.error(t);
     }
+    myAdded = false;
     if (!isInitialized()) {
       return;
     }
@@ -228,11 +231,13 @@ public abstract class MPSTreeNode extends DefaultMutableTreeNode implements Iter
   }
 
   final void addThisAndChildren() {
+    assert !myAdded;
     try {
       onAdd();
     } catch (Throwable t) {
       LOG.error(t);
     }
+    myAdded = true;
     if (!isInitialized()) {
       return;
     }
