@@ -101,6 +101,7 @@ public class SModelsSubtree {
       List<SModelDescriptor> subfolderModels = treeNode.getSubfolderModels(map.keySet());
       for (SModelDescriptor subfolderModel : subfolderModels) {
         result.remove(map.get(subfolderModel));
+        treeNode.addChildModel(subfolderModel);
       }
     }
     return result;

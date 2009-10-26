@@ -445,17 +445,15 @@ public class SModelTreeNode extends MPSTreeNodeEx {
         }
       }
 
-      if (myModelDescriptor != null) {
+      if (!myChildModelDescriptors.isEmpty()) {
         DefaultTreeModel treeModel = (DefaultTreeModel) getTree().getModel();
-        List<SModelDescriptor> sortedModels = SortUtil.sortModels(myModelDescriptor.getModule().getOwnModelDescriptors());
-        List<SModelDescriptor> subfolderModels = getSubfolderModels(sortedModels);
-        for (SModelDescriptor subfolderModel : subfolderModels) {
+        for (SModelDescriptor subfolderModel : myChildModelDescriptors) {
           SModelTreeNode newChildModel = new SModelTreeNode(subfolderModel, null, getOperationContext(), false);
-          int index = subfolderModels.indexOf(subfolderModel);
+          int index = myChildModelDescriptors.indexOf(subfolderModel);
           treeModel.insertNodeInto(newChildModel, this, index);
         }
       }
-      
+
       DefaultTreeModel treeModel = (DefaultTreeModel) getTree().getModel();
       treeModel.nodeStructureChanged(this);
     } finally {
