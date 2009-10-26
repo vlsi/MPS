@@ -41,10 +41,12 @@
   <import index="1" modelUID="r:4095af4f-a097-4799-aaa9-03df087ddfa6(jetbrains.mps.baseLanguage.javadoc.structure)" version="5" />
   <import index="2" modelUID="f:java_stub#java.lang(java.lang@java_stub)" version="-1" />
   <node type="jetbrains.mps.lang.constraints.structure.ConceptConstraints" id="6832197706140571512">
+    <property name="package" value="tag" />
     <link role="concept" targetNodeId="1.8465538089690881930" resolveInfo="ParameterBlockDocTag" />
   </node>
   <visible index="2" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
   <node type="jetbrains.mps.lang.constraints.structure.ConceptConstraints" id="6832197706140571514">
+    <property name="package" value="reference" />
     <link role="concept" targetNodeId="1.6832197706140518104" resolveInfo="DocMethodParameterReference" />
     <node role="referent" type="jetbrains.mps.lang.constraints.structure.NodeReferentConstraint" id="6832197706140571515">
       <link role="applicableLink" targetNodeId="1.6832197706140518109" />
@@ -72,6 +74,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.constraints.structure.ConceptConstraints" id="6832197706140671702">
+    <property name="package" value="reference" />
     <link role="concept" targetNodeId="1.6832197706140518107" resolveInfo="DocTypeParameterReference" />
     <node role="referent" type="jetbrains.mps.lang.constraints.structure.NodeReferentConstraint" id="6832197706140671703">
       <link role="applicableLink" targetNodeId="1.6832197706140518110" />
@@ -99,9 +102,11 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.constraints.structure.ConceptConstraints" id="6832197706140745178">
+    <property name="package" value="tag" />
     <link role="concept" targetNodeId="1.5858074156537397872" resolveInfo="ThrowsBlockDocTag" />
   </node>
   <node type="jetbrains.mps.lang.constraints.structure.ConceptConstraints" id="8970989240998521776">
+    <property name="package" value="tag" />
     <link role="concept" targetNodeId="1.5858074156537516430" resolveInfo="ReturnBlockDocTag" />
     <node role="canBeChild" type="jetbrains.mps.lang.constraints.structure.ConstraintFunction_CanBeAChild" id="8970989240998521777">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="8970989240998521778">
@@ -154,6 +159,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.constraints.structure.ConceptConstraints" id="2217234381367188403">
+    <property name="package" value="reference" />
     <link role="concept" targetNodeId="1.2217234381367188008" resolveInfo="FieldDocReference" />
     <node role="referent" type="jetbrains.mps.lang.constraints.structure.NodeReferentConstraint" id="7051378335467735963">
       <link role="applicableLink" targetNodeId="1.2217234381367188009" />
@@ -203,6 +209,7 @@
     <link role="concept" targetNodeId="1.8465538089690331500" resolveInfo="CommentLine" />
   </node>
   <node type="jetbrains.mps.lang.constraints.structure.ConceptConstraints" id="2546654756694393839">
+    <property name="package" value="reference" />
     <link role="concept" targetNodeId="1.2217234381367530212" resolveInfo="ClassifierDocReference" />
     <node role="referent" type="jetbrains.mps.lang.constraints.structure.NodeReferentConstraint" id="2546654756694393840">
       <link role="applicableLink" targetNodeId="1.2217234381367530213" />
@@ -249,6 +256,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.constraints.structure.ConceptConstraints" id="2546654756694393891">
+    <property name="package" value="reference" />
     <link role="concept" targetNodeId="1.2217234381367530195" resolveInfo="MethodDocReference" />
     <node role="referent" type="jetbrains.mps.lang.constraints.structure.NodeReferentConstraint" id="2546654756694393893">
       <link role="applicableLink" targetNodeId="1.2217234381367530196" />
@@ -310,6 +318,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.constraints.structure.ConceptConstraints" id="2565027568479357636">
+    <property name="package" value="tag" />
     <link role="concept" targetNodeId="1.6962838954693748795" resolveInfo="ValueInlineDocTag" />
     <node role="canBeParent" type="jetbrains.mps.lang.constraints.structure.ConstraintFunction_CanBeAParent" id="3941416111380671266">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="3941416111380671267">
@@ -325,6 +334,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.constraints.structure.ConceptConstraints" id="6501140109493894282">
+    <property name="package" value="reference" />
     <link role="concept" targetNodeId="1.6501140109493894267" resolveInfo="StaticFieldDocReference" />
     <node role="referent" type="jetbrains.mps.lang.constraints.structure.NodeReferentConstraint" id="6501140109493894293">
       <link role="applicableLink" targetNodeId="1.6501140109493894278" />

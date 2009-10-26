@@ -132,12 +132,9 @@
       <link role="conceptPropertyDeclaration" targetNodeId="2v.1137473854053" resolveInfo="abstract" />
     </node>
   </node>
-  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="5349172909345501397">
-    <property name="name" value="DocCommentBody" />
-    <link role="extends" targetNodeId="2v.1133920641626" resolveInfo="BaseConcept" />
-  </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="5349172909345530173">
     <property name="name" value="BaseBlockDocTag" />
+    <property name="package" value="tag" />
     <link role="extends" targetNodeId="2v.1133920641626" resolveInfo="BaseConcept" />
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.BooleanConceptProperty" id="5349172909345532720">
       <link role="conceptPropertyDeclaration" targetNodeId="2v.1137473854053" resolveInfo="abstract" />
@@ -145,6 +142,7 @@
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="5349172909345530174">
     <property name="name" value="AuthorBlockDocTag" />
+    <property name="package" value="tag" />
     <link role="extends" targetNodeId="5349172909345530173" resolveInfo="BaseBlockDocTag" />
     <node role="propertyDeclaration" type="jetbrains.mps.lang.structure.structure.PropertyDeclaration" id="5349172909345532826">
       <property name="name" value="text" />
@@ -155,6 +153,7 @@
   <node type="jetbrains.mps.lang.structure.structure.AnnotationLinkDeclaration" id="5349172909345532723">
     <property name="role" value="methodDocComment" />
     <property name="stereotype" value="node" />
+    <property name="package" value="annot" />
     <link role="source" targetNodeId="3v.1068580123132" resolveInfo="BaseMethodDeclaration" />
     <link role="target" targetNodeId="5349172909345532724" resolveInfo="MethodDocComment" />
   </node>
@@ -182,6 +181,7 @@
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="8465538089690324384">
     <property name="name" value="VersionBlockDocTag" />
+    <property name="package" value="tag" />
     <link role="extends" targetNodeId="5349172909345530173" resolveInfo="BaseBlockDocTag" />
     <node role="propertyDeclaration" type="jetbrains.mps.lang.structure.structure.PropertyDeclaration" id="8465538089690324385">
       <property name="name" value="text" />
@@ -190,6 +190,7 @@
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="8465538089690324397">
     <property name="name" value="SinceBlockDocTag" />
+    <property name="package" value="tag" />
     <link role="extends" targetNodeId="5349172909345530173" resolveInfo="BaseBlockDocTag" />
     <node role="propertyDeclaration" type="jetbrains.mps.lang.structure.structure.PropertyDeclaration" id="8465538089690324399">
       <property name="name" value="text" />
@@ -198,6 +199,7 @@
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="8465538089690331492">
     <property name="name" value="DeprecatedBlockDocTag" />
+    <property name="package" value="tag" />
     <link role="extends" targetNodeId="5349172909345530173" resolveInfo="BaseBlockDocTag" />
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="8465538089690331500">
@@ -212,6 +214,7 @@
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="8465538089690881930">
     <property name="name" value="ParameterBlockDocTag" />
+    <property name="package" value="tag" />
     <link role="extends" targetNodeId="5349172909345530173" resolveInfo="BaseBlockDocTag" />
     <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="6832197706140518123">
       <property name="metaClass" value="aggregation" />
@@ -226,6 +229,7 @@
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="5858074156537397872">
     <property name="name" value="ThrowsBlockDocTag" />
+    <property name="package" value="tag" />
     <link role="extends" targetNodeId="5349172909345530173" resolveInfo="BaseBlockDocTag" />
     <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="6832197706140448505">
       <property name="metaClass" value="aggregation" />
@@ -240,6 +244,7 @@
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="5858074156537516430">
     <property name="name" value="ReturnBlockDocTag" />
+    <property name="package" value="tag" />
     <link role="extends" targetNodeId="5349172909345530173" resolveInfo="BaseBlockDocTag" />
     <node role="propertyDeclaration" type="jetbrains.mps.lang.structure.structure.PropertyDeclaration" id="5858074156537516431">
       <property name="name" value="text" />
@@ -248,6 +253,7 @@
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="6832197706140518103">
     <property name="name" value="BaseParameterReference" />
+    <property name="package" value="reference" />
     <link role="extends" targetNodeId="2v.1133920641626" resolveInfo="BaseConcept" />
     <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="6832197706140518108">
       <property name="metaClass" value="reference" />
@@ -261,6 +267,7 @@
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="6832197706140518104">
     <property name="name" value="DocMethodParameterReference" />
+    <property name="package" value="reference" />
     <link role="extends" targetNodeId="6832197706140518103" resolveInfo="BaseParameterReference" />
     <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="6832197706140518109">
       <property name="metaClass" value="reference" />
@@ -271,6 +278,7 @@
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="6832197706140518107">
     <property name="name" value="DocTypeParameterReference" />
+    <property name="package" value="reference" />
     <link role="extends" targetNodeId="6832197706140518103" resolveInfo="BaseParameterReference" />
     <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="6832197706140518110">
       <property name="metaClass" value="reference" />
@@ -285,6 +293,7 @@
   </node>
   <node type="jetbrains.mps.lang.structure.structure.AnnotationLinkDeclaration" id="6832197706140958194">
     <property name="role" value="fieldDocComment" />
+    <property name="package" value="annot" />
     <link role="source" targetNodeId="3v.1068390468200" resolveInfo="FieldDeclaration" />
     <link role="target" targetNodeId="6832197706140896242" resolveInfo="FieldDocComment" />
   </node>
@@ -300,6 +309,7 @@
   </node>
   <node type="jetbrains.mps.lang.structure.structure.AnnotationLinkDeclaration" id="2068944020170372969">
     <property name="role" value="classifierDocComment" />
+    <property name="package" value="annot" />
     <link role="source" targetNodeId="3v.1107461130800" resolveInfo="Classifier" />
     <link role="target" targetNodeId="2068944020170241612" resolveInfo="ClassifierDocComment" />
   </node>
@@ -330,6 +340,7 @@
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="6962838954693748792">
     <property name="name" value="BaseInlineDocTag" />
+    <property name="package" value="tag" />
     <link role="extends" targetNodeId="2v.1133920641626" resolveInfo="BaseConcept" />
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.BooleanConceptProperty" id="6962838954693748794">
       <link role="conceptPropertyDeclaration" targetNodeId="2v.1137473854053" resolveInfo="abstract" />
@@ -337,15 +348,12 @@
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="6962838954693748795">
     <property name="name" value="ValueInlineDocTag" />
+    <property name="package" value="tag" />
     <link role="extends" targetNodeId="6962838954693748792" resolveInfo="BaseInlineDocTag" />
     <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="2565027568480644422">
       <property name="metaClass" value="aggregation" />
       <property name="role" value="variableReference" />
       <link role="target" targetNodeId="5562345046718956738" resolveInfo="BaseVariableDocReference" />
-    </node>
-    <node role="propertyDeclaration" type="jetbrains.mps.lang.structure.structure.PropertyDeclaration" id="6962838954693748798">
-      <property name="name" value="text" />
-      <link role="dataType" targetNodeId="2v.1082983041843" resolveInfo="string" />
     </node>
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="6962838954693748797">
       <property name="value" value="value" />
@@ -358,10 +366,13 @@
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="2217234381367049075">
     <property name="name" value="CodeInlineDocTag" />
+    <property name="package" value="tag" />
     <link role="extends" targetNodeId="6962838954693748792" resolveInfo="BaseInlineDocTag" />
-    <node role="propertyDeclaration" type="jetbrains.mps.lang.structure.structure.PropertyDeclaration" id="2565027568480353900">
-      <property name="name" value="text" />
-      <link role="dataType" targetNodeId="2v.1082983041843" resolveInfo="string" />
+    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="3106559687488741665">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="line" />
+      <property name="sourceCardinality" value="1..n" />
+      <link role="target" targetNodeId="8465538089690331500" resolveInfo="CommentLine" />
     </node>
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="2217234381367049079">
       <property name="value" value="code" />
@@ -374,6 +385,7 @@
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="2217234381367188006">
     <property name="name" value="BaseDocReference" />
+    <property name="package" value="reference" />
     <link role="extends" targetNodeId="2v.1133920641626" resolveInfo="BaseConcept" />
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.BooleanConceptProperty" id="2217234381367188007">
       <link role="conceptPropertyDeclaration" targetNodeId="2v.1137473854053" resolveInfo="abstract" />
@@ -381,6 +393,7 @@
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="2217234381367188008">
     <property name="name" value="FieldDocReference" />
+    <property name="package" value="reference" />
     <link role="extends" targetNodeId="5562345046718956738" resolveInfo="BaseVariableDocReference" />
     <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="2217234381367188009">
       <property name="metaClass" value="reference" />
@@ -392,6 +405,7 @@
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="2217234381367190443">
     <property name="name" value="SeeBlockDocTag" />
+    <property name="package" value="tag" />
     <link role="extends" targetNodeId="5349172909345530173" resolveInfo="BaseBlockDocTag" />
     <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="2217234381367190458">
       <property name="metaClass" value="aggregation" />
@@ -406,6 +420,7 @@
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="2217234381367530195">
     <property name="name" value="MethodDocReference" />
+    <property name="package" value="reference" />
     <link role="extends" targetNodeId="2217234381367188006" resolveInfo="BaseDocReference" />
     <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="2217234381367530196">
       <property name="metaClass" value="reference" />
@@ -416,6 +431,7 @@
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="2217234381367530212">
     <property name="name" value="ClassifierDocReference" />
+    <property name="package" value="reference" />
     <link role="extends" targetNodeId="2217234381367188006" resolveInfo="BaseDocReference" />
     <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="2217234381367530213">
       <property name="metaClass" value="reference" />
@@ -426,16 +442,19 @@
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="2546654756694997551">
     <property name="name" value="LinkInlineDocTag" />
+    <property name="package" value="tag" />
     <link role="extends" targetNodeId="6962838954693748792" resolveInfo="BaseInlineDocTag" />
+    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="3106559687488913694">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="line" />
+      <property name="sourceCardinality" value="1..n" />
+      <link role="target" targetNodeId="8465538089690331500" resolveInfo="CommentLine" />
+    </node>
     <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="2546654756694997556">
       <property name="metaClass" value="aggregation" />
       <property name="role" value="reference" />
       <property name="sourceCardinality" value="1" />
       <link role="target" targetNodeId="2217234381367188006" resolveInfo="BaseDocReference" />
-    </node>
-    <node role="propertyDeclaration" type="jetbrains.mps.lang.structure.structure.PropertyDeclaration" id="2546654756694997552">
-      <property name="name" value="text" />
-      <link role="dataType" targetNodeId="2v.1082983041843" resolveInfo="string" />
     </node>
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="2546654756694997553">
       <property name="value" value="link" />
@@ -448,6 +467,7 @@
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="2565027568480805887">
     <property name="name" value="CodeSnippet" />
+    <property name="package" value="tag" />
     <link role="extends" targetNodeId="8465538089690331500" resolveInfo="CommentLine" />
     <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="2565027568480905697">
       <property name="metaClass" value="aggregation" />
@@ -458,6 +478,7 @@
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="4730661099054379103">
     <property name="name" value="InheritDocInlineDocTag" />
+    <property name="package" value="tag" />
     <link role="extends" targetNodeId="6962838954693748792" resolveInfo="BaseInlineDocTag" />
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="4730661099054379104">
       <property name="value" value="inheritDoc" />
@@ -470,6 +491,7 @@
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="5562345046718956738">
     <property name="name" value="BaseVariableDocReference" />
+    <property name="package" value="reference" />
     <link role="extends" targetNodeId="2217234381367188006" resolveInfo="BaseDocReference" />
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.BooleanConceptProperty" id="5562345046718956739">
       <link role="conceptPropertyDeclaration" targetNodeId="2v.1137473854053" resolveInfo="abstract" />
@@ -483,6 +505,7 @@
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="6501140109493894267">
     <property name="name" value="StaticFieldDocReference" />
+    <property name="package" value="reference" />
     <link role="extends" targetNodeId="5562345046718956738" resolveInfo="BaseVariableDocReference" />
     <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="6501140109493894278">
       <property name="metaClass" value="reference" />
@@ -493,8 +516,19 @@
   </node>
   <node type="jetbrains.mps.lang.structure.structure.AnnotationLinkDeclaration" id="4021391592916212750">
     <property name="role" value="staticFieldDocComment" />
+    <property name="package" value="annot" />
     <link role="source" targetNodeId="3v.1070462154015" resolveInfo="StaticFieldDeclaration" />
     <link role="target" targetNodeId="6832197706140896242" resolveInfo="FieldDocComment" />
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="3106559687487900076">
+    <property name="name" value="CommentLines" />
+    <link role="extends" targetNodeId="2v.1133920641626" resolveInfo="BaseConcept" />
+    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="3106559687487900077">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="line" />
+      <property name="sourceCardinality" value="1..n" />
+      <link role="target" targetNodeId="8465538089690331500" resolveInfo="CommentLine" />
+    </node>
   </node>
 </model>
 

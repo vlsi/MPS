@@ -7,7 +7,6 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.AttributesRolesUtil;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 
 public class AddFieldDocComment_Intention extends BaseIntention {
   public AddFieldDocComment_Intention() {
@@ -30,22 +29,18 @@ public class AddFieldDocComment_Intention extends BaseIntention {
   }
 
   public String getDescription(final SNode node, final EditorContext editorContext) {
-    return "Add Documentation Comment";
-  }
-
-  public boolean isApplicable(final SNode node, final EditorContext editorContext) {
-    if (!(this.isApplicableToNode(node, editorContext))) {
-      return false;
-    }
-    return true;
-  }
-
-  public boolean isApplicableToNode(final SNode node, final EditorContext editorContext) {
-    return (SLinkOperations.getTarget(node, AttributesRolesUtil.childRoleFromAttributeRole("fieldDocComment"), true) == null);
+    return ((SLinkOperations.getTarget(node, AttributesRolesUtil.childRoleFromAttributeRole("fieldDocComment"), true) == null) ?
+      "Add Documentation Comment" :
+      "Remove Documentation Comment"
+    );
   }
 
   public void execute(final SNode node, final EditorContext editorContext) {
-    SLinkOperations.setTarget(node, AttributesRolesUtil.childRoleFromAttributeRole("fieldDocComment"), SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.javadoc.structure.FieldDocComment", null), true);
+    if ((SLinkOperations.getTarget(node, AttributesRolesUtil.childRoleFromAttributeRole("fieldDocComment"), true) == null)) {
+      SLinkOperations.setNewChild(node, AttributesRolesUtil.childRoleFromAttributeRole("fieldDocComment"), "jetbrains.mps.baseLanguage.javadoc.structure.FieldDocComment");
+    } else {
+      SLinkOperations.setTarget(node, AttributesRolesUtil.childRoleFromAttributeRole("fieldDocComment"), null, true);
+    }
   }
 
   public String getLocationString() {

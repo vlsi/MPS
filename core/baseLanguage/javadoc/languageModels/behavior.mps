@@ -207,6 +207,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.behavior.structure.ConceptBehavior" id="4021391592914343326">
+    <property name="package" value="tag" />
     <link role="concept" targetNodeId="1.5349172909345530174" resolveInfo="AuthorBlockDocTag" />
     <node role="constructor" type="jetbrains.mps.lang.behavior.structure.ConceptConstructorDeclaration" id="4021391592914343327">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="4021391592914343328" />

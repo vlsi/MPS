@@ -5,12 +5,11 @@ package jetbrains.mps.baseLanguage.javadoc.intentions;
 import jetbrains.mps.intentions.BaseIntention;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorContext;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.AttributesRolesUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 
 public class AddClassifierDocComment_Intention extends BaseIntention {
   public AddClassifierDocComment_Intention() {
@@ -33,21 +32,17 @@ public class AddClassifierDocComment_Intention extends BaseIntention {
   }
 
   public String getDescription(final SNode node, final EditorContext editorContext) {
-    return "Add Documentation Comment for " + SPropertyOperations.getString(node, "name");
+    return ((SLinkOperations.getTarget(node, AttributesRolesUtil.childRoleFromAttributeRole("classifierDocComment"), true) == null) ?
+      "Add Documentation Comment" :
+      "Remove Documentation Comment"
+    );
   }
 
   public boolean isApplicable(final SNode node, final EditorContext editorContext) {
-    if (!(this.isApplicableToNode(node, editorContext))) {
-      return false;
-    }
     if (editorContext.getSelectedNode() != node && !(this.isVisibleInChild(node, editorContext.getSelectedNode(), editorContext))) {
       return false;
     }
     return true;
-  }
-
-  public boolean isApplicableToNode(final SNode node, final EditorContext editorContext) {
-    return (SLinkOperations.getTarget(node, AttributesRolesUtil.childRoleFromAttributeRole("classifierDocComment"), true) == null);
   }
 
   public boolean isVisibleInChild(final SNode node, final SNode childNode, final EditorContext editorContext) {
@@ -55,7 +50,12 @@ public class AddClassifierDocComment_Intention extends BaseIntention {
   }
 
   public void execute(final SNode node, final EditorContext editorContext) {
-    SLinkOperations.setTarget(node, AttributesRolesUtil.childRoleFromAttributeRole("classifierDocComment"), SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.javadoc.structure.ClassifierDocComment", null), true);
+    if ((SLinkOperations.getTarget(node, AttributesRolesUtil.childRoleFromAttributeRole("classifierDocComment"), true) != null)) {
+      SLinkOperations.setTarget(node, AttributesRolesUtil.childRoleFromAttributeRole("classifierDocComment"), null, true);
+      return;
+    }
+
+    SLinkOperations.setNewChild(node, AttributesRolesUtil.childRoleFromAttributeRole("classifierDocComment"), "jetbrains.mps.baseLanguage.javadoc.structure.ClassifierDocComment");
 
     //  Type variables
     for (SNode typeVariableDeclaration : ListSequence.fromList(SLinkOperations.getTargets(node, "typeVariableDeclaration", true))) {

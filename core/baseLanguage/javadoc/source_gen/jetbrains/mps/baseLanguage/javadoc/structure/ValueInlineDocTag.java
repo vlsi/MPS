@@ -9,19 +9,10 @@ import jetbrains.mps.project.GlobalScope;
 
 public class ValueInlineDocTag extends BaseInlineDocTag {
   public static final String concept = "jetbrains.mps.baseLanguage.javadoc.structure.ValueInlineDocTag";
-  public static final String TEXT = "text";
   public static final String VARIABLE_REFERENCE = "variableReference";
 
   public ValueInlineDocTag(SNode node) {
     super(node);
-  }
-
-  public String getText() {
-    return this.getProperty(ValueInlineDocTag.TEXT);
-  }
-
-  public void setText(String value) {
-    this.setProperty(ValueInlineDocTag.TEXT, value);
   }
 
   public BaseVariableDocReference getVariableReference() {

@@ -7,8 +7,13 @@ import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
+import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
+import jetbrains.mps.nodeEditor.style.Style;
+import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.cellProviders.AbstractCellListHandler;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Indent;
+import jetbrains.mps.smodel.IScope;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandler;
 import jetbrains.mps.smodel.action.NodeFactoryManager;
 import jetbrains.mps.nodeEditor.CellActionType;
@@ -24,7 +29,23 @@ public class CommentLine_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_0937_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_0937_0");
+    if (renderingCondition0937_0(node, editorContext, editorContext.getOperationContext().getScope())) {
+      editorCell.addEditorCell(this.createConstant_0937_0(editorContext, node));
+    }
     editorCell.addEditorCell(this.createRefNodeList_0937_0(editorContext, node));
+    return editorCell;
+  }
+
+  private EditorCell createConstant_0937_0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
+    editorCell.setCellId("Constant_0937_0");
+    {
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
+      style.set(StyleAttributes.SELECTABLE, false);
+      style.set(StyleAttributes.PUNCTUATION_LEFT, true);
+    }
+    editorCell.setDefaultText("");
     return editorCell;
   }
 
@@ -34,6 +55,10 @@ public class CommentLine_Editor extends DefaultNodeEditor {
     editorCell.setCellId("refNodeList_part");
     editorCell.setRole(handler.getElementRole());
     return editorCell;
+  }
+
+  private static boolean renderingCondition0937_0(SNode node, EditorContext editorContext, IScope scope) {
+    return SNodeOperations.getIndexInParent(node) != 0;
   }
 
   private static class partListHandler_0937_0 extends RefNodeListHandler {

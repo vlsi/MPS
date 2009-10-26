@@ -26,7 +26,7 @@ public class ABC<TT> {
   }
 
   /**
-    The quick {@inheritDoc}brown fox {@code jumps} over the lazy dog.
+    The quick {@inheritDoc}brown fox {@code jumps} over t{he lazy dog.
     And then... {@link jetbrains.mps.baseLanguage.javadoc.sandbox.sandbox.ABC#SOME_CONSTANT some constant} {@value}
     Blah {@value java.awt.BorderLayout#NORTH} blah
     {{
@@ -52,7 +52,10 @@ public class ABC<TT> {
   }
 
   /**
-    
+    asdffasd{@code }fasdf asdf{@code }asdf
+    asd{@code }f
+    asdf
+    asdf
 
     @param s 
    */

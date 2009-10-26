@@ -29,22 +29,18 @@ public class AddStaticFieldDocComment_Intention extends BaseIntention {
   }
 
   public String getDescription(final SNode node, final EditorContext editorContext) {
-    return "Add Documentation Comment";
-  }
-
-  public boolean isApplicable(final SNode node, final EditorContext editorContext) {
-    if (!(this.isApplicableToNode(node, editorContext))) {
-      return false;
-    }
-    return true;
-  }
-
-  public boolean isApplicableToNode(final SNode node, final EditorContext editorContext) {
-    return (SLinkOperations.getTarget(node, AttributesRolesUtil.childRoleFromAttributeRole("staticFieldDocComment"), true) == null);
+    return ((SLinkOperations.getTarget(node, AttributesRolesUtil.childRoleFromAttributeRole("staticFieldDocComment"), true) == null) ?
+      "Add Documentation Comment" :
+      "Remove Documentation Comment"
+    );
   }
 
   public void execute(final SNode node, final EditorContext editorContext) {
-    SLinkOperations.setNewChild(node, AttributesRolesUtil.childRoleFromAttributeRole("staticFieldDocComment"), "jetbrains.mps.baseLanguage.javadoc.structure.FieldDocComment");
+    if ((SLinkOperations.getTarget(node, AttributesRolesUtil.childRoleFromAttributeRole("staticFieldDocComment"), true) == null)) {
+      SLinkOperations.setNewChild(node, AttributesRolesUtil.childRoleFromAttributeRole("staticFieldDocComment"), "jetbrains.mps.baseLanguage.javadoc.structure.FieldDocComment");
+    } else {
+      SLinkOperations.setTarget(node, AttributesRolesUtil.childRoleFromAttributeRole("staticFieldDocComment"), null, true);
+    }
   }
 
   public String getLocationString() {

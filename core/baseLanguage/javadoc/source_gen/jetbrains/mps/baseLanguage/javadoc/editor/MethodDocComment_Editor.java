@@ -212,7 +212,6 @@ public class MethodDocComment_Editor extends DefaultNodeEditor {
     DocumentationCommentStyleSheet_StyleSheet.getComment(editorCell).apply(editorCell);
     {
       Style style = editorCell.getStyle();
-      style.set(StyleAttributes.INDENT_LAYOUT_CHILDREN_NEWLINE, true);
       style.set(StyleAttributes.INDENT_LAYOUT_INDENT, true);
       style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
     }

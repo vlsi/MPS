@@ -150,6 +150,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.textGen.structure.ConceptTextGenDeclaration" id="4021391592914689930">
+    <property name="package" value="tag" />
     <link role="conceptDeclaration" targetNodeId="1.8465538089690324384" resolveInfo="VersionBlockDocTag" />
     <node role="textGenBlock" type="jetbrains.mps.lang.textGen.structure.GenerateTextDeclaration" id="4021391592914689931">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="4021391592914689932">
@@ -174,6 +175,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.textGen.structure.ConceptTextGenDeclaration" id="4021391592914931237">
+    <property name="package" value="tag" />
     <link role="conceptDeclaration" targetNodeId="1.5349172909345530174" resolveInfo="AuthorBlockDocTag" />
     <node role="textGenBlock" type="jetbrains.mps.lang.textGen.structure.GenerateTextDeclaration" id="4021391592914931238">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="4021391592914931239">
@@ -198,6 +200,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.textGen.structure.ConceptTextGenDeclaration" id="4021391592914931248">
+    <property name="package" value="tag" />
     <link role="conceptDeclaration" targetNodeId="1.8465538089690324397" resolveInfo="SinceBlockDocTag" />
     <node role="textGenBlock" type="jetbrains.mps.lang.textGen.structure.GenerateTextDeclaration" id="4021391592914931249">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="4021391592914931250">
@@ -222,6 +225,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.textGen.structure.ConceptTextGenDeclaration" id="4021391592914931259">
+    <property name="package" value="tag" />
     <link role="conceptDeclaration" targetNodeId="1.2217234381367190443" resolveInfo="SeeBlockDocTag" />
     <node role="textGenBlock" type="jetbrains.mps.lang.textGen.structure.GenerateTextDeclaration" id="4021391592914931260">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="4021391592914931261">
@@ -257,6 +261,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.textGen.structure.ConceptTextGenDeclaration" id="4021391592914931272">
+    <property name="package" value="tag" />
     <link role="conceptDeclaration" targetNodeId="1.8465538089690881930" resolveInfo="ParameterBlockDocTag" />
     <node role="textGenBlock" type="jetbrains.mps.lang.textGen.structure.GenerateTextDeclaration" id="4021391592914931273">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="4021391592914931274">
@@ -292,6 +297,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.textGen.structure.ConceptTextGenDeclaration" id="4021391592915003850">
+    <property name="package" value="tag" />
     <link role="conceptDeclaration" targetNodeId="1.5858074156537397872" resolveInfo="ThrowsBlockDocTag" />
     <node role="textGenBlock" type="jetbrains.mps.lang.textGen.structure.GenerateTextDeclaration" id="4021391592915003851">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="4021391592915003852">
@@ -329,6 +335,7 @@
   <visible index="3" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
   <visible index="4" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
   <node type="jetbrains.mps.lang.textGen.structure.ConceptTextGenDeclaration" id="4021391592915417821">
+    <property name="package" value="reference" />
     <link role="conceptDeclaration" targetNodeId="1.2217234381367530195" resolveInfo="MethodDocReference" />
     <node role="textGenBlock" type="jetbrains.mps.lang.textGen.structure.GenerateTextDeclaration" id="4021391592915417822">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="4021391592915417823">
@@ -463,6 +470,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.textGen.structure.ConceptTextGenDeclaration" id="4021391592915737408">
+    <property name="package" value="reference" />
     <link role="conceptDeclaration" targetNodeId="1.2217234381367530212" resolveInfo="ClassifierDocReference" />
     <node role="textGenBlock" type="jetbrains.mps.lang.textGen.structure.GenerateTextDeclaration" id="4021391592915737409">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="4021391592915737410">
@@ -485,6 +493,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.textGen.structure.ConceptTextGenDeclaration" id="4021391592915878293">
+    <property name="package" value="reference" />
     <link role="conceptDeclaration" targetNodeId="1.2217234381367188008" resolveInfo="FieldDocReference" />
     <node role="textGenBlock" type="jetbrains.mps.lang.textGen.structure.GenerateTextDeclaration" id="4021391592915878294">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="4021391592915878295">
@@ -532,6 +541,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.textGen.structure.ConceptTextGenDeclaration" id="4021391592915878383">
+    <property name="package" value="reference" />
     <link role="conceptDeclaration" targetNodeId="1.6501140109493894267" resolveInfo="StaticFieldDocReference" />
     <node role="textGenBlock" type="jetbrains.mps.lang.textGen.structure.GenerateTextDeclaration" id="4021391592915878384">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="4021391592915878385">
@@ -781,6 +791,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.textGen.structure.ConceptTextGenDeclaration" id="4021391592916005381">
+    <property name="package" value="reference" />
     <link role="conceptDeclaration" targetNodeId="1.6832197706140518103" resolveInfo="BaseParameterReference" />
     <node role="textGenBlock" type="jetbrains.mps.lang.textGen.structure.GenerateTextDeclaration" id="4021391592916005382">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="4021391592916005383">
@@ -827,6 +838,7 @@
     <property name="name" value="DocCommentTextGen" />
   </node>
   <node type="jetbrains.mps.lang.textGen.structure.ConceptTextGenDeclaration" id="4021391592916758726">
+    <property name="package" value="tag" />
     <link role="conceptDeclaration" targetNodeId="1.5858074156537516430" resolveInfo="ReturnBlockDocTag" />
     <node role="textGenBlock" type="jetbrains.mps.lang.textGen.structure.GenerateTextDeclaration" id="4021391592916758727">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="4021391592916758728">
@@ -891,6 +903,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.textGen.structure.ConceptTextGenDeclaration" id="4021391592916799006">
+    <property name="package" value="tag" />
     <link role="conceptDeclaration" targetNodeId="1.2217234381367049075" resolveInfo="CodeInlineDocTag" />
     <node role="textGenBlock" type="jetbrains.mps.lang.textGen.structure.GenerateTextDeclaration" id="4021391592916799007">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="4021391592916799008">
@@ -911,6 +924,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.textGen.structure.ConceptTextGenDeclaration" id="4021391592916879658">
+    <property name="package" value="tag" />
     <link role="conceptDeclaration" targetNodeId="1.4730661099054379103" resolveInfo="InheritDocInlineDocTag" />
     <node role="textGenBlock" type="jetbrains.mps.lang.textGen.structure.GenerateTextDeclaration" id="4021391592916879659">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="4021391592916879660">
@@ -923,6 +937,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.textGen.structure.ConceptTextGenDeclaration" id="4021391592916879718">
+    <property name="package" value="tag" />
     <link role="conceptDeclaration" targetNodeId="1.2546654756694997551" resolveInfo="LinkInlineDocTag" />
     <node role="textGenBlock" type="jetbrains.mps.lang.textGen.structure.GenerateTextDeclaration" id="4021391592916879719">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="4021391592916879720">
@@ -969,6 +984,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.textGen.structure.ConceptTextGenDeclaration" id="4021391592916960592">
+    <property name="package" value="tag" />
     <link role="conceptDeclaration" targetNodeId="1.6962838954693748795" resolveInfo="ValueInlineDocTag" />
     <node role="textGenBlock" type="jetbrains.mps.lang.textGen.structure.GenerateTextDeclaration" id="4021391592916960593">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="4021391592916960594">
@@ -1007,6 +1023,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.textGen.structure.ConceptTextGenDeclaration" id="4021391592917060962">
+    <property name="package" value="tag" />
     <link role="conceptDeclaration" targetNodeId="1.2565027568480805887" resolveInfo="CodeSnippet" />
     <node role="textGenBlock" type="jetbrains.mps.lang.textGen.structure.GenerateTextDeclaration" id="4021391592917060963">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="4021391592917060964">

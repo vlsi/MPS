@@ -32,21 +32,18 @@ public class AddMethodDocComment_Intention extends BaseIntention {
   }
 
   public String getDescription(final SNode node, final EditorContext editorContext) {
-    return "Add Documentation Comment";
-  }
-
-  public boolean isApplicable(final SNode node, final EditorContext editorContext) {
-    if (!(this.isApplicableToNode(node, editorContext))) {
-      return false;
-    }
-    return true;
-  }
-
-  public boolean isApplicableToNode(final SNode node, final EditorContext editorContext) {
-    return (SLinkOperations.getTarget(node, AttributesRolesUtil.childRoleFromAttributeRole("methodDocComment"), true) == null);
+    return ((SLinkOperations.getTarget(node, AttributesRolesUtil.childRoleFromAttributeRole("methodDocComment"), true) == null) ?
+      "Add Documentation Comment" :
+      "Remove Documentation Comment"
+    );
   }
 
   public void execute(final SNode node, final EditorContext editorContext) {
+    if ((SLinkOperations.getTarget(node, AttributesRolesUtil.childRoleFromAttributeRole("methodDocComment"), true) != null)) {
+      SLinkOperations.setTarget(node, AttributesRolesUtil.childRoleFromAttributeRole("methodDocComment"), null, true);
+      return;
+    }
+
     SLinkOperations.setTarget(node, AttributesRolesUtil.childRoleFromAttributeRole("methodDocComment"), SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.javadoc.structure.MethodDocComment", null), true);
     //  Method parameters
     for (SNode parameterDeclaration : ListSequence.fromList(SLinkOperations.getTargets(node, "parameter", true))) {

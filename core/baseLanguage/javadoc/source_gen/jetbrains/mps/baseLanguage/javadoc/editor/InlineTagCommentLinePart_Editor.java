@@ -52,7 +52,6 @@ public class InlineTagCommentLinePart_Editor extends DefaultNodeEditor {
     DocumentationCommentStyleSheet_StyleSheet.getComment(editorCell).apply(editorCell);
     {
       Style style = editorCell.getStyle();
-      style.set(StyleAttributes.PUNCTUATION_RIGHT, true);
       style.set(StyleAttributes.PUNCTUATION_LEFT, true);
       style.set(StyleAttributes.MATCHING_LABEL, "brace");
       style.set(StyleAttributes.SELECTABLE, true);
