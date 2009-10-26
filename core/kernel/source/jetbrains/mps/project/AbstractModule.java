@@ -605,10 +605,10 @@ public abstract class AbstractModule implements IModule {
           } else {
             currentItem = new JarFileClassPathItem(s);
           }
-
-          if (!EqualUtil.equals(s, getClassesGen())) {
-            javaStubsResult.add(currentItem);            
-          }
+  
+          if (!EqualUtil.equals(s, getClassesGen().getPath()) || areJavaStubsEnabled()) {
+            javaStubsResult.add(currentItem);
+          }  
 
           result.add(currentItem);
         }
@@ -646,10 +646,6 @@ public abstract class AbstractModule implements IModule {
     loadJavaStubModelRoots();
 
     myManager.dispose();
-
-    if (!areJavaStubsEnabled()) {
-      return;
-    }
 
     myManager = new MyClassPathModelRootManager();
 

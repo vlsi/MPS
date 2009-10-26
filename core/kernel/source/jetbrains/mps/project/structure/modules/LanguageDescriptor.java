@@ -22,7 +22,6 @@ import java.util.List;
 
 public class LanguageDescriptor extends ModuleDescriptor {
   private String myGenPath;
-  private boolean myEnableJavaStubs;
 
   private List<SModelReference> myAccessoryModels;
   private List<GeneratorDescriptor> myGenerators;
@@ -45,14 +44,6 @@ public class LanguageDescriptor extends ModuleDescriptor {
 
   public void setGenPath(String genPath) {
     myGenPath = genPath;
-  }
-
-  public boolean isEnableJavaStubs() {
-    return myEnableJavaStubs;
-  }
-
-  public void setEnableJavaStubs(boolean enableJavaStubs) {
-    myEnableJavaStubs = enableJavaStubs;
   }
 
   public List<SModelReference> getAccessoryModels() {

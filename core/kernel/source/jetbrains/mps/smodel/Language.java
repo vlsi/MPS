@@ -434,7 +434,7 @@ public class Language extends AbstractModule {
   }
 
   protected boolean areJavaStubsEnabled() {
-    return getLanguageDescriptor().isEnableJavaStubs();
+    return getLanguageDescriptor().getEnableJavaStubs();
   }
 
   public String getGeneratedPluginClassLongName() {
