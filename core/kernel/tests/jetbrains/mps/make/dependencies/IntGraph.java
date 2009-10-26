@@ -13,7 +13,10 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.build.buildgeneration.graph;
+package jetbrains.mps.make.dependencies;
+
+import jetbrains.mps.make.dependencies.graph.Graph;
+import jetbrains.mps.make.dependencies.graph.IVertex;
 
 import java.util.*;
 

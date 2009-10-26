@@ -47,7 +47,7 @@ import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.LinkedHashMap;
 import java.util.ArrayList;
 import java.util.Set;
-import jetbrains.mps.build.buildgeneration.StronglyConnectedModules;
+import jetbrains.mps.make.dependencies.StronglyConnectedModules;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;

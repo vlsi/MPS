@@ -28,6 +28,7 @@ import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.MPSExtentions;
+import jetbrains.mps.make.dependencies.StronglyConnectedModules;
 import org.eclipse.jdt.core.compiler.CategorizedProblem;
 import org.eclipse.jdt.internal.compiler.ClassFile;
 import org.eclipse.jdt.internal.compiler.CompilationResult;
@@ -91,11 +92,7 @@ public class ModuleMaker {
       }
 
       int errorCount = 0;
-      List<Set<IModule>> schedule = new MakeScheduleBuilder<IModule>() {
-        protected List<IModule> getDependOnModules(IModule m) {
-          return m.getExplicitlyDependOnModules();
-        }
-      }.buildSchedule(toCompile);
+      List<Set<IModule>> schedule = StronglyConnectedModules.getInstance().getStronglyConnectedComponents(modules, false);
 
       for (Set<IModule> cycle : schedule) {
         if (indicator.isCanceled()) {

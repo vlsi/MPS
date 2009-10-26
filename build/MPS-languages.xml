@@ -633,6 +633,7 @@
     </jar>
   </target>
   <target name="pack.jetbrains.mps.kernel0">
+    <mkdir dir="core/kernel/kernelSolution/classes_gen" />
     <mkdir dir="core/kernel/source_gen.caches" />
     <mkdir dir="core/kernel/kernelSolution/test_gen.caches" />
     <jar destfile="${deploy.dir}/MPS/core/jetbrains.mps.kernel.mpsarch.jar" compress="true" duplicate="preserve" filesonly="true">
@@ -640,6 +641,7 @@
       <zipfileset dir="core/kernel/source_gen.caches" prefix="source_gen.caches" />
       <zipfileset dir="core/kernel/kernelSolution/test_gen.caches" prefix="test_gen.caches" />
       <zipfileset dir="core/kernel/kernelSolution" excludes="**/*.iml, **/*.java, **/*.class, **/*.mpr, **/*.mws, **/*.mpl, **/*.msd, **/*.devkit, **/*.ipr" prefix="module" />
+      <zipfileset dir="core/kernel/kernelSolution/classes_gen" />
     </jar>
   </target>
   <target name="pack.ypath.main0">
@@ -749,18 +751,15 @@
   </target>
   <target name="pack.jetbrains.mps.build.packaging0">
     <mkdir dir="platform/buildlanguage/languages/packaging/classes" />
-    <mkdir dir="platform/buildlanguage/packaging.runtime/classes" />
     <mkdir dir="platform/buildlanguage/languages/packaging/source_gen.caches" />
     <jar destfile="${deploy.dir}/MPS/platform/jetbrains.mps.build.packaging.mpsarch.jar" compress="true" duplicate="preserve" filesonly="true">
       <zipfileset file="platform/buildlanguage/languages/packaging/packaging.mpl" prefix="module" />
       <zipfileset dir="platform/buildlanguage/languages/packaging/source_gen.caches" prefix="source_gen.caches" />
       <zipfileset dir="platform/buildlanguage/languages/packaging" excludes="**/*.iml, **/*.java, **/*.class, **/*.mpr, **/*.mws, **/*.mpl, **/*.msd, **/*.devkit, **/*.ipr" prefix="module" />
       <zipfileset dir="platform/buildlanguage/languages/packaging/classes" />
-      <zipfileset dir="platform/buildlanguage/packaging.runtime/classes" />
     </jar>
     <jar destfile="${deploy.dir}/MPS/platform/jetbrains.mps.build.packaging.runtime.jar" duplicate="preserve" filesonly="true">
       <fileset dir="platform/buildlanguage/languages/packaging/classes" />
-      <fileset dir="platform/buildlanguage/packaging.runtime/classes" />
     </jar>
   </target>
   <target name="pack.jetbrains.mps.build.dependency0">

@@ -15,7 +15,6 @@
     <orderEntry type="library" name="ant-1.7.0" level="project" />
     <orderEntry type="module" module-name="MPS" />
     <orderEntry type="module" module-name="packaging" />
-    <orderEntry type="module" module-name="packaging.runtime" />
   </component>
 </module>
 

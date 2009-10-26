@@ -58,7 +58,7 @@
   <languageAspect modelUID="r:1e7ada09-c25e-41ea-a9b5-398e142ef533(jetbrains.mps.build.generictasks.structure)" version="22" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959036e(jetbrains.mps.baseLanguage.classifiers.constraints)" version="7" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590373(jetbrains.mps.baseLanguage.classifiers.structure)" version="0" />
-  <maxImportIndex value="30" />
+  <maxImportIndex value="31" />
   <import index="1" modelUID="r:00000000-0000-4000-0000-011c895904d8(jetbrains.mps.build.packaging.structure)" version="7" />
   <import index="2" modelUID="f:java_stub#java.lang(java.lang@java_stub)" version="-1" />
   <import index="4" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" />
@@ -71,9 +71,9 @@
   <import index="20" modelUID="r:00000000-0000-4000-0000-011c895904d3(jetbrains.mps.build.packaging.behavior)" version="-1" />
   <import index="23" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="3" />
   <import index="24" modelUID="r:00000000-0000-4000-0000-011c895904cf(jetbrains.mps.build.dependency.structure)" version="0" />
-  <import index="25" modelUID="f:java_stub#jetbrains.mps.build.buildgeneration(jetbrains.mps.build.buildgeneration@java_stub)" version="-1" />
   <import index="29" modelUID="r:00000000-0000-4000-0000-011c895904c0(jetbrains.mps.buildlanguage.behavior)" version="-1" />
   <import index="30" modelUID="r:7a6a35c6-e369-4565-b91b-c7c8dfa2c8d7(jetbrains.mps.build.generictasks.generated)" version="-1" />
+  <import index="31" modelUID="f:java_stub#jetbrains.mps.make.dependencies(jetbrains.mps.make.dependencies@java_stub)" version="-1" />
   <visible index="2" modelUID="r:00000000-0000-4000-0000-011c895904e2(jetbrains.mps.build.property.structure)" />
   <node type="jetbrains.mps.lang.generator.structure.MappingConfiguration" id="1202918622135">
     <property name="name" value="main" />
@@ -4790,11 +4790,11 @@
                 <property name="name" value="sm" />
                 <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1217435158156">
                   <node role="operand" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1217435158157">
-                    <link role="classConcept" targetNodeId="25.~StronglyConnectedModules" resolveInfo="StronglyConnectedModules" />
-                    <link role="baseMethodDeclaration" targetNodeId="25.~StronglyConnectedModules.getInstance():jetbrains.mps.build.buildgeneration.StronglyConnectedModules" resolveInfo="getInstance" />
+                    <link role="classConcept" targetNodeId="31.~StronglyConnectedModules" resolveInfo="StronglyConnectedModules" />
+                    <link role="baseMethodDeclaration" targetNodeId="31.~StronglyConnectedModules.getInstance():jetbrains.mps.make.dependencies.StronglyConnectedModules" resolveInfo="getInstance" />
                   </node>
                   <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1217435158158">
-                    <link role="baseMethodDeclaration" targetNodeId="25.~StronglyConnectedModules.getStronglyConnectedComponents(java.util.Set):java.util.List" resolveInfo="getStronglyConnectedComponents" />
+                    <link role="baseMethodDeclaration" targetNodeId="31.~StronglyConnectedModules.getStronglyConnectedComponents(java.util.Set):java.util.List" resolveInfo="getStronglyConnectedComponents" />
                     <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1217435971367">
                       <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1231678710103">
                         <link role="variableDeclaration" targetNodeId="1217435252227" resolveInfo="map" />

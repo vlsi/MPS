@@ -15,7 +15,6 @@
     <orderEntry type="module" module-name="buildLanguage" />
     <orderEntry type="module" module-name="dependency" />
     <orderEntry type="module" module-name="property" />
-    <orderEntry type="module" module-name="packaging.runtime" />
   </component>
 </module>
 

@@ -13,10 +13,12 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.build.buildgeneration.graph;
+package jetbrains.mps.make.dependencies;
 
-import jetbrains.mps.build.buildgeneration.graph.IntGraph.IntVertex;
-import jetbrains.mps.build.buildgeneration.graph.Graph.IDFSWalker;
+import jetbrains.mps.make.dependencies.IntGraph.IntVertex;
+import jetbrains.mps.make.dependencies.graph.Graph.IDFSWalker;
+import jetbrains.mps.make.dependencies.graph.Graph;
+import jetbrains.mps.make.dependencies.graph.Graphs;
 import junit.framework.TestCase;
 
 import java.util.Comparator;
