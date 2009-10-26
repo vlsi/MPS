@@ -68,6 +68,7 @@ public abstract class AbstractModule implements IModule {
   private ModuleScope myScope = new ModuleScope();
 
   private IClassPathItem myClassPath;
+  private IClassPathItem myJavaStubsClassPath;
   private MyClassPathModelRootManager myManager = new MyClassPathModelRootManager();
   private List<SModelRoot> mySModelRoots = new ArrayList<SModelRoot>();
   private Set<String> myIncludedClassPath;
@@ -591,6 +592,7 @@ public abstract class AbstractModule implements IModule {
 
   private void updateClassPathItem() {
     CompositeClassPathItem result = new CompositeClassPathItem();
+    CompositeClassPathItem javaStubsResult = new CompositeClassPathItem();
     for (String s : getClassPath()) {
       try {
         IFile file = FileSystem.getFile(s);
@@ -604,6 +606,10 @@ public abstract class AbstractModule implements IModule {
             currentItem = new JarFileClassPathItem(s);
           }
 
+          if (!EqualUtil.equals(s, getClassesGen())) {
+            javaStubsResult.add(currentItem);            
+          }
+
           result.add(currentItem);
         }
       } catch (IOException e) {
@@ -613,6 +619,7 @@ public abstract class AbstractModule implements IModule {
 
     updateExcludes();
     myClassPath = result;
+    myJavaStubsClassPath = javaStubsResult;
   }
 
   public void updateExcludes() {
@@ -865,7 +872,7 @@ public abstract class AbstractModule implements IModule {
 
   private class MyClassPathModelRootManager extends ClassPathModelRootManager {
     public IClassPathItem getClassPathItem() {
-      return myClassPath;
+      return myJavaStubsClassPath;
     }
   }
 }
