@@ -24,7 +24,7 @@ import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.workbench.dialogs.project.BaseStretchingBindedDialog;
-import jetbrains.mps.workbench.dialogs.project.listsupport.StandartComponents;
+import jetbrains.mps.workbench.dialogs.project.listsupport.StandardComponents;
 
 import javax.swing.BorderFactory;
 import javax.swing.JComponent;
@@ -54,8 +54,8 @@ public class AddRequiredModelImportsDialog extends BaseStretchingBindedDialog {
 
   private void initUI() {
     addComponent(createMessage(), createFieldConstraints(0, 0));
-    addComponent(StandartComponents.createModelsImportsPanel(this, "Models", myProps), createListConstraints(0, 1));
-    addComponent(StandartComponents.createLanguagesImportsPanel(this, "Languages", myProps), createListConstraints(0, 2));
+    addComponent(StandardComponents.createModelsImportsPanel(this, "Models", myProps), createListConstraints(0, 1));
+    addComponent(StandardComponents.createLanguagesImportsPanel(this, "Languages", myProps), createListConstraints(0, 2));
   }
 
   private JComponent createMessage() {
