@@ -101,8 +101,17 @@ public abstract class ProjectModuleTreeNode extends MPSTreeNode {
       node.init();
     }
     for (int i = 0; i < node.getChildCount(); i++) {
-      if (generationRequired((MPSTreeNode) node.getChildAt(i))) {
+      MPSTreeNode child = (MPSTreeNode) node.getChildAt(i);
+      if (generationRequired(child)) {
         return true;
+      }
+      if (child instanceof SModelTreeNode) {
+        SModelTreeNode smodelTreeNode = (SModelTreeNode) child;
+        for (SModelTreeNode submodel : smodelTreeNode.getSubfolderSModelTreeNodes()) {
+          if (generationRequired(submodel)) {
+            return true;
+          }
+        }
       }
     }
 
