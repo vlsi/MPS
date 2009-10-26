@@ -143,6 +143,12 @@ public class FileSystemFile implements IFile {
   }
 
   public OutputStream openOutputStream() throws IOException {
+    if (myFile.isHidden()) {
+      if (!myFile.delete()) {
+        throw new RuntimeException();
+      }
+    }
+
     return new FileOutputStream(myFile);
   }
 
