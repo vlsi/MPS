@@ -78,8 +78,12 @@ public abstract class MpsLoadTask extends org.apache.tools.ant.Task {
     }
   }
 
-  public void addConfiguredProject(ProjectDataType projectInner) {
-    myWhatToDo.addProjectFile(projectInner.getFile());
+  public void addConfiguredProject(FileSet projectInner) {
+    Iterator it = projectInner.iterator();
+    while (it.hasNext()) {
+      FileResource next = (FileResource) it.next();
+      myWhatToDo.addProjectFile(next.getFile());
+    }
   }
 
   public void addConfiguredLibrary(LibraryDataType libraryInner) {

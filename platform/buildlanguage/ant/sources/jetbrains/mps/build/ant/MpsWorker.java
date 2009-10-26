@@ -192,11 +192,12 @@ public abstract class MpsWorker {
 
   private void collectFromProjects(Set<SModelDescriptor> modelDescriptors) {
     for (File projectFile : myWhatToDo.getMPSProjectFiles()) {
-      final MPSProject project = TestMain.loadProject(projectFile);
-      info("Loaded project " + project);
-      myLoadedProjects.add(project);
-
-      extractModels(modelDescriptors, project);
+      if (projectFile.getAbsolutePath().endsWith(MPSExtentions.DOT_MPS_PROJECT)) {
+        final MPSProject project = TestMain.loadProject(projectFile);
+        info("Loaded project " + project);
+        myLoadedProjects.add(project);
+        extractModels(modelDescriptors, project);
+      }
     }
   }
 
@@ -294,7 +295,9 @@ public abstract class MpsWorker {
 
   private void collectFromModelFiles(Set<SModelDescriptor> modelDescriptor) {
     for (File f : myWhatToDo.getModels()) {
-      processModelFile(modelDescriptor, f);
+      if (f.getPath().endsWith(MPSExtentions.DOT_MODEL)) {
+        processModelFile(modelDescriptor, f);
+      }
     }
   }
 

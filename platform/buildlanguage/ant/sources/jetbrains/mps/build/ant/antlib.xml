@@ -21,7 +21,7 @@
     <typedef name="modules" classname="org.apache.tools.ant.types.DirSet"/>
     <typedef name="model" classname="org.apache.tools.ant.types.FileSet"/>
     <typedef name="module" classname="org.apache.tools.ant.types.FileSet"/>
-    <typedef name="project" classname="jetbrains.mps.build.ant.ProjectDataType"/>
+    <typedef name="project" classname="org.apache.tools.ant.types.FileSet"/>
     <typedef name="library" classname="jetbrains.mps.build.ant.LibraryDataType"/>
     <typedef name="jvmarg" classname="jetbrains.mps.build.ant.JvmArg"/>
     <typedef name="macro" classname="jetbrains.mps.build.ant.Macro"/>
