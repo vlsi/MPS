@@ -372,7 +372,7 @@ public class SubtypingManager {
   public Set<IWrapper> leastCommonSupertypesWrappers(Set<IWrapper> types, boolean isWeak) {
     if (types.size() == 1) return new HashSet<IWrapper>(types);
 
-    if (types.size() == 2) {
+    /*if (types.size() == 2) {
       Iterator<IWrapper> iterator = types.iterator();
       IWrapper type1 = iterator.next();
       IWrapper type2 = iterator.next();
@@ -386,16 +386,39 @@ public class SubtypingManager {
         result.add(type1);
         return result;
       }
+    }*/
+
+
+    //hack: for types which are subtypes only according to replacement rules, such as nulltype
+    //such as above but for any quantity of types
+    Set<IWrapper> initialTypes = new HashSet<IWrapper>(types);
+    Set<IWrapper> typesToCheck = new HashSet<IWrapper>(types);
+    Set<IWrapper> removed = new HashSet<IWrapper>();
+    for (IWrapper mayBeSupertype : typesToCheck) {
+      if (removed.contains(mayBeSupertype)) continue;
+      for (IWrapper mayBeSubtype : typesToCheck) {
+        if (mayBeSubtype.equals(mayBeSupertype)) continue;
+        if (isSubtype(mayBeSubtype.getNode(), mayBeSupertype.getNode())) {
+          initialTypes.remove(mayBeSubtype);
+          removed.add(mayBeSubtype);
+        }
+      }
+    }
+    if (initialTypes.size() == 0) {
+      return new HashSet<IWrapper>();
+    }
+    if (initialTypes.size() == 1) {
+      return new HashSet<IWrapper>(initialTypes);
     }
 
     StructuralWrapperSet<?> allTypes = new StructuralWrapperSet();
-    StructuralWrapperSet<?> result = new StructuralWrapperSet(types);
+    StructuralWrapperSet<?> result = new StructuralWrapperSet(initialTypes);
 
-    allTypes.addCollectionStructurally((Set<IWrapper>) types);
+    allTypes.addCollectionStructurally((Set<IWrapper>) initialTypes);
 
     StructuralWrapperMap<StructuralWrapperSet<Integer>> subTypesToSupertypes = new StructuralWrapperMap<StructuralWrapperSet<Integer>>();
 
-    Set<IWrapper> frontier = new HashSet<IWrapper>(types);
+    Set<IWrapper> frontier = new HashSet<IWrapper>(initialTypes);
     Set<IWrapper> newFrontier = new HashSet<IWrapper>();
 
     StructuralWrapperSet subTypesToSupertypesKeySet = new StructuralWrapperSet(subTypesToSupertypes.keySet());
