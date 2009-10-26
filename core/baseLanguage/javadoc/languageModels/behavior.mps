@@ -213,5 +213,24 @@
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="4021391592914343328" />
     </node>
   </node>
+  <node type="jetbrains.mps.lang.behavior.structure.ConceptBehavior" id="6612597108004626828">
+    <property name="package" value="tag" />
+    <link role="concept" targetNodeId="1.6612597108003615641" resolveInfo="HTMLElement" />
+    <node role="constructor" type="jetbrains.mps.lang.behavior.structure.ConceptConstructorDeclaration" id="6612597108004626829">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="6612597108004626830">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="6612597108004626831">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="6612597108004626838">
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="6612597108004626833">
+              <node role="operand" type="jetbrains.mps.lang.behavior.structure.ThisNodeExpression" id="6612597108004626832" />
+              <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkListAccess" id="6612597108004626837">
+                <link role="link" targetNodeId="1.6612597108003615643" />
+              </node>
+            </node>
+            <node role="operation" type="jetbrains.mps.lang.smodel.structure.LinkList_AddNewChildOperation" id="6612597108004626842" />
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
 </model>
 

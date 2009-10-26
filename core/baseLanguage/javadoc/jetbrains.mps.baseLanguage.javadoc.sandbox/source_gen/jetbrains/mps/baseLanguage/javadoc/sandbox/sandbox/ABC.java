@@ -54,7 +54,7 @@ public class ABC<TT> {
   /**
     asdffasd{@code }fasdf asdf{@code }asdf
     asd{@code }f
-    asdf
+    <!TextGen not found for 'jetbrains.mps.baseLanguage.javadoc.structure.HTMLElement'!>as<!TextGen not found for 'jetbrains.mps.baseLanguage.javadoc.structure.HTMLElement'!>df
     asdf
 
     @param s 

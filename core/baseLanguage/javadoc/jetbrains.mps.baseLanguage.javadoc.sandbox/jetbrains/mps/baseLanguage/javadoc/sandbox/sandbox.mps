@@ -372,8 +372,48 @@
           </node>
         </node>
         <node role="body" type="jetbrains.mps.baseLanguage.javadoc.structure.CommentLine" id="3106559687488650848">
+          <node role="part" type="jetbrains.mps.baseLanguage.javadoc.structure.HTMLElement" id="6612597108003807641">
+            <property name="name" value="pre" />
+            <node role="line" type="jetbrains.mps.baseLanguage.javadoc.structure.CommentLine" id="6612597108003807642">
+              <node role="part" type="jetbrains.mps.baseLanguage.javadoc.structure.TextCommentLinePart" id="6612597108003807643">
+                <property name="text" value="f" />
+              </node>
+            </node>
+          </node>
           <node role="part" type="jetbrains.mps.baseLanguage.javadoc.structure.TextCommentLinePart" id="3106559687488650849">
-            <property name="text" value="asdf" />
+            <property name="text" value="as" />
+          </node>
+          <node role="part" type="jetbrains.mps.baseLanguage.javadoc.structure.HTMLElement" id="6612597108004626817">
+            <property name="name" value="strong" />
+            <node role="line" type="jetbrains.mps.baseLanguage.javadoc.structure.CommentLine" id="6612597108004626818">
+              <node role="part" type="jetbrains.mps.baseLanguage.javadoc.structure.TextCommentLinePart" id="6612597108004626819">
+                <property name="text" value="fasdfa" />
+              </node>
+              <node role="part" type="jetbrains.mps.baseLanguage.javadoc.structure.HTMLElement" id="6612597108004626825">
+                <property name="name" value="f" />
+                <node role="line" type="jetbrains.mps.baseLanguage.javadoc.structure.CommentLine" id="6612597108004626826">
+                  <node role="part" type="jetbrains.mps.baseLanguage.javadoc.structure.TextCommentLinePart" id="6612597108004626827" />
+                </node>
+              </node>
+              <node role="part" type="jetbrains.mps.baseLanguage.javadoc.structure.TextCommentLinePart" id="6612597108004626824">
+                <property name="text" value="sdfasdffa" />
+              </node>
+              <node role="part" type="jetbrains.mps.baseLanguage.javadoc.structure.HTMLElement" id="6612597108004936467">
+                <property name="name" value="code" />
+                <node role="line" type="jetbrains.mps.baseLanguage.javadoc.structure.CommentLine" id="6612597108004936468">
+                  <node role="part" type="jetbrains.mps.baseLanguage.javadoc.structure.TextCommentLinePart" id="6612597108004936469" />
+                </node>
+              </node>
+              <node role="part" type="jetbrains.mps.baseLanguage.javadoc.structure.TextCommentLinePart" id="6612597108004936466">
+                <property name="text" value="" />
+              </node>
+              <node role="part" type="jetbrains.mps.baseLanguage.javadoc.structure.TextCommentLinePart" id="6612597108004674030">
+                <property name="text" value="sdfasdf" />
+              </node>
+            </node>
+          </node>
+          <node role="part" type="jetbrains.mps.baseLanguage.javadoc.structure.TextCommentLinePart" id="6612597108004626816">
+            <property name="text" value="df" />
           </node>
         </node>
         <node role="body" type="jetbrains.mps.baseLanguage.javadoc.structure.CommentLine" id="3106559687488650850">

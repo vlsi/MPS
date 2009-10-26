@@ -520,14 +520,19 @@
     <link role="source" targetNodeId="3v.1070462154015" resolveInfo="StaticFieldDeclaration" />
     <link role="target" targetNodeId="6832197706140896242" resolveInfo="FieldDocComment" />
   </node>
-  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="3106559687487900076">
-    <property name="name" value="CommentLines" />
-    <link role="extends" targetNodeId="2v.1133920641626" resolveInfo="BaseConcept" />
-    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="3106559687487900077">
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="6612597108003615641">
+    <property name="package" value="tag" />
+    <property name="name" value="HTMLElement" />
+    <link role="extends" targetNodeId="8970989240999019142" resolveInfo="CommentLinePart" />
+    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="6612597108003615643">
       <property name="metaClass" value="aggregation" />
       <property name="role" value="line" />
-      <property name="sourceCardinality" value="1..n" />
+      <property name="sourceCardinality" value="0..n" />
       <link role="target" targetNodeId="8465538089690331500" resolveInfo="CommentLine" />
+    </node>
+    <node role="propertyDeclaration" type="jetbrains.mps.lang.structure.structure.PropertyDeclaration" id="6612597108003615642">
+      <property name="name" value="name" />
+      <link role="dataType" targetNodeId="2v.1082983041843" resolveInfo="string" />
     </node>
   </node>
 </model>
