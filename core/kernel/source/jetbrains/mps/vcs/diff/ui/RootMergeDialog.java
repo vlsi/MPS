@@ -145,15 +145,9 @@ public class RootMergeDialog extends BaseDialog implements EditorMessageOwner {
     ModelAccess.instance().runWriteActionInCommand(new Runnable() {
 
       public void run() {
-        if (node.getName() != null) {
-          change1Node[0] = myChange1Model.getRootByName(node.getName());
-          resultNode[0] = resultModel.getRootByName(node.getName());
-          change2Node[0] = myChange2Model.getRootByName(node.getName());
-        } else {
-          change1Node[0] = myChange1Model.getNodeById(node.getSNodeId());
-          resultNode[0] = resultModel.getNodeById(node.getSNodeId());
-          change2Node[0] = myChange2Model.getNodeById(node.getSNodeId());          
-        }
+        change1Node[0] = myChange1Model.getNodeById(node.getSNodeId());
+        resultNode[0] = resultModel.getNodeById(node.getSNodeId());
+        change2Node[0] = myChange2Model.getNodeById(node.getSNodeId());
       }
     });
 
