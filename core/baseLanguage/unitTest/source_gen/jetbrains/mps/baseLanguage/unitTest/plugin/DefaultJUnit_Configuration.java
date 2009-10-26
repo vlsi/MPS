@@ -28,7 +28,6 @@ import java.util.ArrayList;
 import com.intellij.execution.process.ProcessHandler;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
-import jetbrains.mps.MPSProjectHolder;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.baseLanguage.plugin.RunUtil;
@@ -119,7 +118,7 @@ public class DefaultJUnit_Configuration extends BaseRunConfig {
           final JUnitTestViewComponent runComponent = new JUnitTestViewComponent(mpsproject, consoleView);
           final Wrappers._T<UnitTestRunner> testRunner = new Wrappers._T<UnitTestRunner>(null);
           try {
-            testRunner.value = new UnitTestRunner(mpsproject.getComponent(MPSProjectHolder.class).getMPSProject().getPluginManager().getPrefsComponent(UnitTest_PreferencesComponent.class), runComponent);
+            testRunner.value = new UnitTestRunner(runComponent);
           } catch (NullPointerException npe) {
             npe.printStackTrace();
           }
