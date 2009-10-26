@@ -36,7 +36,6 @@ public class FileClassPathItem extends AbstractClassPathItem {
 
   private Map<String, Set<String>> mySubpackagesCache = new HashMap<String, Set<String>>();
   private Map<String, Set<String>> myAvailableClassesCache = new HashMap<String, Set<String>>();
-  private Map<String, Set<String>> myResources = new HashMap<String, Set<String>>();
 
   public FileClassPathItem(String classPath) {
     myClassPath = classPath;
@@ -119,39 +118,20 @@ public class FileClassPathItem extends AbstractClassPathItem {
     return Collections.unmodifiableSet(result);
   }
 
-  @NotNull
-  public Set<String> getResources(String namespace) {
-    if (!myResources.containsKey(namespace)) {
-      buildCacheFor(namespace);
-    }
-
-    Set<String> result = myResources.get(namespace);
-    if (result == null) {
-      return Collections.emptySet();
-    }
-
-    return Collections.unmodifiableSet(result);
-  }
-
   private void buildCacheFor(String namespace) {
     Set<String> subpacks = new HashSet<String>(0);
     Set<String> classes = new HashSet<String>(0);
-    Set<String> resources = new HashSet<String>(0);
     IFile dir = getModelDir(namespace);
 
     List<IFile> files = dir.list();
     if (files != null) {
       for (IFile file : files) {
         String name = file.getName();
-        if (!name.endsWith(".class")) {
-          if (file.isDirectory()) {
-            if (namespace.length() > 0) {
-              subpacks.add(namespace + "." + name);
-            } else {
-              subpacks.add(namespace + name);
-            }
+        if (!name.endsWith(".class") && file.isDirectory()) { //isDirectory is quite expensive operation
+          if (namespace.length() > 0) {
+            subpacks.add(namespace + "." + name);
           } else {
-            resources.add(name);
+            subpacks.add(namespace + name);
           }
         }
 
@@ -163,7 +143,6 @@ public class FileClassPathItem extends AbstractClassPathItem {
 
     mySubpackagesCache.put(namespace, subpacks.isEmpty() ? null : subpacks);
     myAvailableClassesCache.put(namespace, classes.isEmpty() ? null : classes);
-    myResources.put(namespace, resources.isEmpty() ? null : resources);
   }
 
   public long getClassesTimestamp(String namespace) {

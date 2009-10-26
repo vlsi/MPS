@@ -38,9 +38,6 @@ public interface IClassPathItem {
   @NotNull
   Set<String> getSubpackages(String namespace);
 
-  @NotNull
-  Set<String> getResources(String namespace);
-
   long getClassesTimestamp(String namespace);
 
   long getTimestamp();
