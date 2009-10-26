@@ -6891,6 +6891,24 @@
                 </node>
               </node>
             </node>
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="145881032580105700">
+              <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="145881032580105701">
+                <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="145881032580105702">
+                  <node role="expression" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="145881032580105703">
+                    <property name="value" value="true" />
+                  </node>
+                </node>
+              </node>
+              <node role="condition" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="145881032580105704">
+                <node role="operand" type="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" id="145881032580105705">
+                  <link role="concept" targetNodeId="2.1073389214265" resolveInfo="EditorCellModel" />
+                  <node role="leftExpression" type="jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_node" id="145881032580105706" />
+                </node>
+                <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="145881032580105708">
+                  <link role="baseMethodDeclaration" targetNodeId="30.1237383562600" resolveInfo="isNewLineChildren" />
+                </node>
+              </node>
+            </node>
             <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1237480916248">
               <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1237480916249">
                 <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1237480937457">

@@ -142,6 +142,9 @@ public class Styles_StyleSheet {
     if (EditorCellModel_Behavior.call_isNewLine_1237383076236(SNodeOperations.cast(node, "jetbrains.mps.lang.editor.structure.EditorCellModel"))) {
       return true;
     }
+    if (EditorCellModel_Behavior.call_isNewLineChildren_1237383562600(SNodeOperations.cast(node, "jetbrains.mps.lang.editor.structure.EditorCellModel"))) {
+      return true;
+    }
     if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(node), "jetbrains.mps.lang.editor.structure.EditorCellModel")) {
       return EditorCellModel_Behavior.call_isNewLineChildren_1237383562600(SNodeOperations.cast(SNodeOperations.getParent(node), "jetbrains.mps.lang.editor.structure.EditorCellModel"));
     }
