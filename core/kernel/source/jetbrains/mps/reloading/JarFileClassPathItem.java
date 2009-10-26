@@ -69,6 +69,7 @@ public class JarFileClassPathItem extends AbstractClassPathItem {
 
   private Map<String, Set<String>> myClasses = new HashMap<String, Set<String>>();
   private Map<String, Set<String>> mySubpackages = new HashMap<String, Set<String>>();
+  private Map<String, Set<String>> myResources = new HashMap<String, Set<String>>();
   private Map<String, ZipEntry> myEntries = new HashMap<String, ZipEntry>();
 
   public JarFileClassPathItem(String path) throws IOException {
@@ -132,6 +133,11 @@ public class JarFileClassPathItem extends AbstractClassPathItem {
     return Collections.unmodifiableSet(getSubpackagesSetFor(namespace));
   }
 
+  @NotNull
+  public Set<String> getResources(String namespace) {
+    return Collections.unmodifiableSet(getResourcesSetFor(namespace));
+  }
+
   public long getClassesTimestamp(String namespace) {
     long timestamp = 0;
     for (String cls : getAvailableClasses(namespace)) {
@@ -154,6 +160,13 @@ public class JarFileClassPathItem extends AbstractClassPathItem {
     return mySubpackages.get(pack);
   }
 
+  private Set<String> getResourcesSetFor(String pack) {
+    if (!myResources.containsKey(pack)) {
+      myResources.put(pack, new HashSet<String>(0));
+    }
+    return myResources.get(pack);
+  }
+
   private void buildCaches() {
     Iterable<? extends ZipEntry> entries = CollectionUtil.asIterable(myZipFile.entries());
 
@@ -169,26 +182,40 @@ public class JarFileClassPathItem extends AbstractClassPathItem {
       } else {
         String name = entry.getName();
 
-        if (!name.endsWith(".class")) continue;
-
         int packEnd = name.lastIndexOf('/');
         String pack;
-        String className;
+
         if (packEnd == -1) {
           pack = "";
-          className = name.substring(0, name.length() - ".class".length());
         } else {
           pack = packEnd > 0 ? name.substring(0, packEnd).replace('/', '.') : name;
-          className = name.substring(packEnd + 1, name.length() - ".class".length());
         }
 
         buildPackageCaches(pack);
-        getClassesSetFor(pack).add(className);
+        if (name.endsWith(".class")) {
+          String className;
+          if (packEnd == -1) {
+            className = name.substring(0, name.length() - ".class".length());
+          } else {
+            className = name.substring(packEnd + 1, name.length() - ".class".length());
+          }
 
-        if (pack.length() > 0) {
-          myEntries.put(pack + "." + className, entry);
+          getClassesSetFor(pack).add(className);
+
+          if (pack.length() > 0) {
+            myEntries.put(pack + "." + className, entry);
+          } else {
+            myEntries.put(className, entry);
+          }
         } else {
-          myEntries.put(className, entry);
+          String resourceName;
+          if (packEnd == -1) {
+            resourceName = name.substring(0, name.length());
+          } else {
+            resourceName = name.substring(packEnd + 1, name.length());
+          }
+
+          getResourcesSetFor(pack).add(resourceName);
         }
       }
     }

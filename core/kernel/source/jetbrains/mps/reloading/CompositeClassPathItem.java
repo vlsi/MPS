@@ -70,6 +70,17 @@ public class CompositeClassPathItem implements IClassPathItem {
     return result;
   }
 
+  @NotNull
+  public Set<String> getResources(String namespace) {
+    Set<String> result = new HashSet<String>(0);
+
+    for (IClassPathItem item : myChildren) {
+      result.addAll(item.getResources(namespace));
+    }
+
+    return result;
+  }
+
   public long getClassesTimestamp(String namespace) {
     long result = 0;
     for (IClassPathItem item : myChildren) {
