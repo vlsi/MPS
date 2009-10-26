@@ -26,14 +26,18 @@ import jetbrains.mps.util.FileUtil;
 
 public class WhatToDo {
   private final Set<File> myModelDirectories = new LinkedHashSet<File>();
+  private final Set<File> myModels = new LinkedHashSet<File>();
   private final Set<File> myModuleDirectories = new LinkedHashSet<File>();
+  private final Set<File> myModules = new LinkedHashSet<File>();
   private final Set<File> myMPSProjects = new LinkedHashSet<File>();
   private boolean myFailOnError = false;
   private final Map<String, File> myLibraries = new LinkedHashMap<String, File>();
   private final Map<String, String> myMacro = new LinkedHashMap<String, String>();
   private int myLogLevel = org.apache.tools.ant.Project.MSG_INFO;
   private static final String MODEL_DIR = "MODEL_DIR";
+  private static final String MODEL_FILE = "MODEL_FILE";
   private static final String MODULE_DIR = "MODULE_DIR";
+  private static final String MODULE_FILE = "MODULE_FILE";
   private static final String MPS_PROJECT = "MPS_PROJECT";
   private static final String MPS_LIBRARY = "MPS_LIBRARY";
   private static final String MPS_MACRO = "MPS_MACRO";
@@ -49,6 +53,16 @@ public class WhatToDo {
   public void addModelDirectory(File dir) {
     assert dir.exists() && dir.isDirectory();
     myModelDirectories.add(dir);
+  }
+
+  public void addModuleFile(File file) {
+    assert file.exists() && !file.isDirectory();
+    myModules.add(file);
+  }
+
+  public void addModelFile(File file) {
+    assert file.exists() && !file.isDirectory();
+    myModels.add(file);
   }
 
   public void addProjectFile(File projectFile) {
@@ -70,6 +84,22 @@ public class WhatToDo {
 
   public void updateModuleDirectories(Set<File> moduleDirectories) {
     myModuleDirectories.addAll(moduleDirectories);
+  }
+
+  public Set<File> getModels() {
+    return Collections.unmodifiableSet(myModels);
+  }
+
+  public void updateModels(Set<File> models) {
+    myModels.addAll(models);
+  }
+
+  public Set<File> getModules() {
+    return Collections.unmodifiableSet(myModules);
+  }
+
+  public void updateModules(Set<File> modules) {
+    myModules.addAll(modules);
   }
 
   public Set<File> getMPSProjectFiles() {
@@ -166,6 +196,18 @@ public class WhatToDo {
       sb.append(f.getAbsolutePath());
       sb.append(" ");
     }
+    for (File f : myModels) {
+      sb.append(MODEL_FILE);
+      sb.append("=");
+      sb.append(f.getAbsolutePath());
+      sb.append(" ");
+    }
+    for (File f : myModules) {
+      sb.append(MODULE_FILE);
+      sb.append("=");
+      sb.append(f.getAbsolutePath());
+      sb.append(" ");
+    }
     for (File f : myMPSProjects) {
       sb.append(MPS_PROJECT);
       sb.append("=");
@@ -256,6 +298,10 @@ public class WhatToDo {
           whatToDo.addModelDirectory(new File(propertyValuePair[1]));
         } else if (propertyValuePair[0].equals(MODULE_DIR)) {
           whatToDo.addModuleDirectory(new File(propertyValuePair[1]));
+        } else if (propertyValuePair[0].equals(MODEL_FILE)) {
+          whatToDo.addModelFile(new File(propertyValuePair[1]));
+        } else if (propertyValuePair[0].equals(MODULE_FILE)) {
+          whatToDo.addModuleFile(new File(propertyValuePair[1]));
         } else if (propertyValuePair[0].equals(MPS_LIBRARY)) {
           String[] nameValuePair = propertyValuePair[1].split("\\[|\\]");
           whatToDo.addLibrary(nameValuePair[1], new File(nameValuePair[2]));

@@ -2,6 +2,7 @@ package jetbrains.mps.build.ant;
 
 import org.apache.tools.ant.types.DirSet;
 import org.apache.tools.ant.types.EnumeratedAttribute;
+import org.apache.tools.ant.types.FileSet;
 import org.apache.tools.ant.types.resources.FileResource;
 import org.apache.tools.ant.BuildException;
 import org.apache.tools.ant.Project;
@@ -58,6 +59,22 @@ public abstract class MpsLoadTask extends org.apache.tools.ant.Task {
     while (it.hasNext()) {
       FileResource next = (FileResource) it.next();
       myWhatToDo.addModuleDirectory(next.getFile());
+    }
+  }
+
+  public void addConfiguredModel(FileSet modelsInner) {
+    Iterator it = modelsInner.iterator();
+    while (it.hasNext()) {
+      FileResource next = (FileResource) it.next();
+      myWhatToDo.addModelFile(next.getFile());
+    }
+  }
+
+  public void addConfiguredModules(FileSet modulesInner) {
+    Iterator it = modulesInner.iterator();
+    while (it.hasNext()) {
+      FileResource next = (FileResource) it.next();
+      myWhatToDo.addModuleFile(next.getFile());
     }
   }
 
@@ -161,7 +178,7 @@ public abstract class MpsLoadTask extends org.apache.tools.ant.Task {
         Constructor<?> constructor = generatorClass.getConstructor(whatToGenerateClass, ProjectComponent.class);
         Object generator = constructor.newInstance(whatToGenerate, this);
 
-        Method method = generatorClass.getMethod("generate");
+        Method method = generatorClass.getMethod("work");
         method.invoke(generator);
 
       } catch (ClassNotFoundException e) {

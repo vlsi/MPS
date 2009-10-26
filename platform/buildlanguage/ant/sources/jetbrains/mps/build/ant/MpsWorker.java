@@ -178,6 +178,8 @@ public abstract class MpsWorker {
     collectFromProjects(modelDescriptors);
     collectFromModelDirs(modelDescriptors);
     collectFromModuleDirs(modelDescriptors);
+    collectFromModelFiles(modelDescriptors);
+    collectFromModuleFiles(modelDescriptors);
 
     ArrayList<SModelDescriptor> modelDescriptorsList = new ArrayList<SModelDescriptor>();
     for (SModelDescriptor smodelDescriptor : modelDescriptors) {
@@ -217,45 +219,55 @@ public abstract class MpsWorker {
       File[] files = dir.listFiles();
       if (files != null) {
         for (final File moduleFile : files) {
-          String path = moduleFile.getAbsolutePath();
-          if (!path.endsWith(MPSExtentions.DOT_LANGUAGE) && !path.endsWith(MPSExtentions.DOT_SOLUTION) && !path.endsWith(MPSExtentions.DOT_DEVKIT))
-            continue;
-          List<IModule> modules;
-          IModule moduleByFile = ModelAccess.instance().runReadAction(new Computable<IModule>() {
-            public IModule compute() {
-              return MPSModuleRepository.getInstance().getModuleByFile(moduleFile);
-            }
+          processModuleFile(modelDescriptors, moduleFile);
+        }
+      }
+    }
+  }
+
+  private void collectFromModuleFiles(Set<SModelDescriptor> modelDescriptors) {
+    for (File moduleFile : myWhatToDo.getModules()) {
+      processModuleFile(modelDescriptors, moduleFile);
+    }
+  }
+
+  private void processModuleFile(Set<SModelDescriptor> modelDescriptors, final File moduleFile) {
+    String path = moduleFile.getAbsolutePath();
+    if (!path.endsWith(MPSExtentions.DOT_LANGUAGE) && !path.endsWith(MPSExtentions.DOT_SOLUTION) && !path.endsWith(MPSExtentions.DOT_DEVKIT))
+      return;
+    List<IModule> modules;
+    IModule moduleByFile = ModelAccess.instance().runReadAction(new Computable<IModule>() {
+      public IModule compute() {
+        return MPSModuleRepository.getInstance().getModuleByFile(moduleFile);
+      }
+    });
+    if (moduleByFile != null) {
+      modules = Collections.singletonList(moduleByFile);
+    } else {
+      modules = ModelAccess.instance().runWriteAction(new Computable<List<IModule>>() {
+        public List<IModule> compute() {
+          return MPSModuleRepository.getInstance().readModuleDescriptors(FileSystem.getFile(moduleFile.getPath()), new MPSModuleOwner() {
           });
-          if (moduleByFile != null) {
-            modules = Collections.singletonList(moduleByFile);
-          } else {
-            modules = ModelAccess.instance().runWriteAction(new Computable<List<IModule>>() {
-              public List<IModule> compute() {
-                return MPSModuleRepository.getInstance().readModuleDescriptors(FileSystem.getFile(moduleFile.getPath()), new MPSModuleOwner() {
-                });
-              }
-            });
-          }
+        }
+      });
+    }
 
-          for (IModule module : modules) {
-            info("Loaded module " + module);
+    for (IModule module : modules) {
+      info("Loaded module " + module);
 
-            if (module.isPackaged()) continue;
+      if (module.isPackaged()) continue;
 
-            List<SModelDescriptor> modelDescriptorList = module.getOwnModelDescriptors();
-            for (SModelDescriptor sm : modelDescriptorList) {
-              if (SModelStereotype.isUserModel(sm)) {
-                modelDescriptors.add(sm);
-              }
-            }
+      List<SModelDescriptor> modelDescriptorList = module.getOwnModelDescriptors();
+      for (SModelDescriptor sm : modelDescriptorList) {
+        if (SModelStereotype.isUserModel(sm)) {
+          modelDescriptors.add(sm);
+        }
+      }
 
-            if (module instanceof Language) {
-              Language language = (Language) module;
-              for (jetbrains.mps.smodel.Generator gen : language.getGenerators()) {
-                modelDescriptors.addAll(gen.getOwnModelDescriptors());
-              }
-            }
-          }
+      if (module instanceof Language) {
+        Language language = (Language) module;
+        for (Generator gen : language.getGenerators()) {
+          modelDescriptors.addAll(gen.getOwnModelDescriptors());
         }
       }
     }
@@ -276,29 +288,39 @@ public abstract class MpsWorker {
     }
 
     for (File f : probablyModelFiles) {
-      final IFile ifile = FileSystem.getFile(f);
+      processModelFile(modelDescriptors, f);
+    }
+  }
 
-      // try to find if model is loaded
-      SModelDescriptor model = SModelRepository.getInstance().findModel(ifile);
-      if (model != null) {
-        modelDescriptors.add(model);
-        info("Found model " + model);
-        continue;
-      }
+  private void collectFromModelFiles(Set<SModelDescriptor> modelDescriptor) {
+    for (File f : myWhatToDo.getModels()) {
+      processModelFile(modelDescriptor, f);
+    }
+  }
 
-      // if model is not loaded, read it
-      try {
-        SModel smodel = ModelAccess.instance().runReadAction(new Computable<SModel>() {
-          public SModel compute() {
-            return ModelPersistence.readModel(ifile);
-          }
-        });
-        info("Read model " + smodel);
-        SModelDescriptor smodelDescriptor = new DefaultSModelDescriptor(new DefaultModelRootManager(), ifile, smodel.getSModelReference());
-        modelDescriptors.add(smodelDescriptor);
-      } catch (ModelFileReadException e) {
-        log(e);
-      }
+  private void processModelFile(Set<SModelDescriptor> modelDescriptors, File f) {
+    final IFile ifile = FileSystem.getFile(f);
+
+    // try to find if model is loaded
+    SModelDescriptor model = SModelRepository.getInstance().findModel(ifile);
+    if (model != null) {
+      modelDescriptors.add(model);
+      info("Found model " + model);
+      return;
+    }
+
+    // if model is not loaded, read it
+    try {
+      SModel smodel = ModelAccess.instance().runReadAction(new Computable<SModel>() {
+        public SModel compute() {
+          return ModelPersistence.readModel(ifile);
+        }
+      });
+      info("Read model " + smodel);
+      SModelDescriptor smodelDescriptor = new DefaultSModelDescriptor(new DefaultModelRootManager(), ifile, smodel.getSModelReference());
+      modelDescriptors.add(smodelDescriptor);
+    } catch (ModelFileReadException e) {
+      log(e);
     }
   }
 

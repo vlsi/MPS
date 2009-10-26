@@ -47,6 +47,12 @@
         </mps.generate>
     </target>
 
+    <target name="testComplexLanguageModel">
+        <mps.generate mpshome="${module.home}/../../..">
+            <model file="${module.home}/../../../samples/complexLanguage/solutions/jetbrains.mps.complex.runtime/jetbrains/mps/samples/complex/runtime.mps"/>
+        </mps.generate>
+    </target>
+
     <target name="testComplexLanguageModules">
         <mps.generate mpshome="${module.home}/../../..">
             <modules dir="${module.home}/../../../samples/complexLanguage"/>
