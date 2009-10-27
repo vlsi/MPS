@@ -57,6 +57,14 @@ public class EquationErrorReporter implements IErrorReporter {
     myIntentionProvider = intentionProvider;
   }
 
+  public void addAdditionalRuleId(String ruleModel, String ruleId) {
+    Pair<String, String> pair = new Pair<String, String>(ruleModel, ruleId);
+    if (myAdditionalRuleIds == null) {
+      myAdditionalRuleIds = new ArrayList<Pair<String, String>>(2);
+    }
+    myAdditionalRuleIds.add(pair);
+  }
+
   public List<Pair<String, String>> getAdditionalRulesIds() {
     if (myAdditionalRuleIds == null) return new ArrayList<Pair<String, String>>(0);
     return new ArrayList<Pair<String, String>>(myAdditionalRuleIds);

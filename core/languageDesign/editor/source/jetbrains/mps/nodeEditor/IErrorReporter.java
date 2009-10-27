@@ -30,6 +30,8 @@ public interface IErrorReporter {
 
   public String getRuleModel();
 
+  public void addAdditionalRuleId(String ruleModel, String ruleId);
+
   public List<Pair<String, String>> getAdditionalRulesIds();
 
   public void setAdditionalRulesIds(List<Pair<String, String>> ids);
