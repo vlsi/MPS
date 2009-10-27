@@ -50,7 +50,7 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590345(jetbrains.mps.lang.pattern.structure)" version="0" />
   <languageAspect modelUID="r:1a7fc406-f263-498c-a126-51036fe6a9da(jetbrains.mps.lang.editor.editorTest.structure)" version="5" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902d5(jetbrains.mps.baseLanguage.unitTest.plugin)" version="0" />
-  <maxImportIndex value="33" />
+  <maxImportIndex value="34" />
   <import index="1" modelUID="f:java_stub#java.lang(java.lang@java_stub)" version="-1" />
   <import index="3" modelUID="f:java_stub#jetbrains.mps.nodeEditor.cellMenu(jetbrains.mps.nodeEditor.cellMenu@java_stub)" version="-1" />
   <import index="5" modelUID="r:00000000-0000-4000-0000-011c895902c6(jetbrains.mps.baseLanguage.intentions)" version="-1" />
@@ -75,6 +75,7 @@
   <import index="31" modelUID="f:java_stub#jetbrains.mps.workbench.nodesFs(jetbrains.mps.workbench.nodesFs@java_stub)" version="-1" />
   <import index="32" modelUID="f:java_stub#com.intellij.openapi.command.undo(com.intellij.openapi.command.undo@java_stub)" version="-1" />
   <import index="33" modelUID="f:java_stub#com.intellij.openapi.project(com.intellij.openapi.project@java_stub)" version="-1" />
+  <import index="34" modelUID="r:00000000-0000-4000-0000-011c895902c8(jetbrains.mps.baseLanguage.plugin)" version="-1" />
   <node type="jetbrains.mps.lang.test.structure.EditorTestCase" id="1230058635633">
     <property name="name" value="AnonymousClassTest" />
     <property name="package" value="bugTest" />
@@ -5569,6 +5570,233 @@
       <node role="statement" type="jetbrains.mps.lang.test.structure.PressKeyStatement" id="2907839077757067009">
         <node role="keyStrokes" type="jetbrains.mps.lang.plugin.structure.KeyMapKeystroke" id="2907839077757067010">
           <property name="keycode" value="VK_UP" />
+        </node>
+      </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.test.structure.NodesTestCase" id="3852894662483077199">
+    <property name="name" value="SurrondWithParenthesisTest" />
+    <node role="nodesToCheck" type="jetbrains.mps.lang.test.structure.TestNode" id="3852894662483077200">
+      <node role="nodeToCheck" type="jetbrains.mps.baseLanguage.structure.BlockStatement" id="3852894662483077201">
+        <node role="statements" type="jetbrains.mps.baseLanguage.structure.StatementList" id="3852894662483077202">
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="3852894662483077203">
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="3852894662483077204">
+              <property name="value" value="3" />
+              <node role="testNode$attribute" type="jetbrains.mps.lang.test.structure.TestNodeAnnotation" id="3852894662483077205">
+                <property name="name" value="before1" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="nodesToCheck" type="jetbrains.mps.lang.test.structure.TestNode" id="3852894662483077206">
+      <node role="nodeToCheck" type="jetbrains.mps.baseLanguage.structure.BlockStatement" id="3852894662483077207">
+        <node role="statements" type="jetbrains.mps.baseLanguage.structure.StatementList" id="3852894662483077208">
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="3852894662483077209">
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.ParenthesizedExpression" id="3852894662483077210">
+              <node role="expression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="3852894662483077211">
+                <property name="value" value="3" />
+              </node>
+              <node role="testNode$attribute" type="jetbrains.mps.lang.test.structure.TestNodeAnnotation" id="3852894662483077212">
+                <property name="name" value="after1" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="nodesToCheck" type="jetbrains.mps.lang.test.structure.TestNode" id="3852894662483228699">
+      <node role="nodeToCheck" type="jetbrains.mps.baseLanguage.structure.BlockStatement" id="3852894662483228700">
+        <node role="statements" type="jetbrains.mps.baseLanguage.structure.StatementList" id="3852894662483228701">
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="3852894662483230126">
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="3852894662483230139">
+              <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="3852894662483230142">
+                <property name="value" value="1" />
+              </node>
+              <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.ParenthesizedExpression" id="3852894662483230147">
+                <node role="expression" type="jetbrains.mps.baseLanguage.structure.MulExpression" id="3852894662483230128">
+                  <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="3852894662483230127">
+                    <property name="value" value="2" />
+                    <node role="testNode$attribute" type="jetbrains.mps.lang.test.structure.TestNodeAnnotation" id="3852894662483230155">
+                      <property name="name" value="exprToTransform2" />
+                    </node>
+                  </node>
+                  <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="3852894662483230131">
+                    <property name="value" value="14" />
+                  </node>
+                </node>
+              </node>
+            </node>
+            <node role="testNode$attribute" type="jetbrains.mps.lang.test.structure.TestNodeAnnotation" id="3852894662483230153">
+              <property name="name" value="before2" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="nodesToCheck" type="jetbrains.mps.lang.test.structure.TestNode" id="3852894662483230132">
+      <node role="nodeToCheck" type="jetbrains.mps.baseLanguage.structure.BlockStatement" id="3852894662483230133">
+        <node role="statements" type="jetbrains.mps.baseLanguage.structure.StatementList" id="3852894662483230134">
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="3852894662483230135">
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="3852894662483230143">
+              <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="3852894662483230146">
+                <property name="value" value="1" />
+              </node>
+              <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.ParenthesizedExpression" id="3852894662483230149">
+                <node role="expression" type="jetbrains.mps.baseLanguage.structure.MulExpression" id="3852894662483230136">
+                  <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.ParenthesizedExpression" id="3852894662483230151">
+                    <node role="expression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="3852894662483230138">
+                      <property name="value" value="2" />
+                    </node>
+                  </node>
+                  <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="3852894662483230137">
+                    <property name="value" value="14" />
+                  </node>
+                </node>
+              </node>
+            </node>
+            <node role="testNode$attribute" type="jetbrains.mps.lang.test.structure.TestNodeAnnotation" id="3852894662483230154">
+              <property name="name" value="after2" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="nodesToCheck" type="jetbrains.mps.lang.test.structure.TestNode" id="3852894662483240397">
+      <node role="nodeToCheck" type="jetbrains.mps.baseLanguage.structure.BlockStatement" id="3852894662483240398">
+        <node role="statements" type="jetbrains.mps.baseLanguage.structure.StatementList" id="3852894662483240399">
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="3852894662483240400">
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="3852894662483240402">
+              <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.MulExpression" id="3852894662483240406">
+                <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="3852894662483240409">
+                  <property name="value" value="3" />
+                </node>
+                <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="3852894662483240405">
+                  <property name="value" value="2" />
+                  <node role="testNode$attribute" type="jetbrains.mps.lang.test.structure.TestNodeAnnotation" id="3852894662483240434">
+                    <property name="name" value="exprToTransform3" />
+                  </node>
+                </node>
+              </node>
+              <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="3852894662483240401">
+                <property name="value" value="1" />
+              </node>
+            </node>
+            <node role="testNode$attribute" type="jetbrains.mps.lang.test.structure.TestNodeAnnotation" id="3852894662483240410">
+              <property name="name" value="before3" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="nodesToCheck" type="jetbrains.mps.lang.test.structure.TestNode" id="3852894662483240422">
+      <node role="nodeToCheck" type="jetbrains.mps.baseLanguage.structure.BlockStatement" id="3852894662483240423">
+        <node role="statements" type="jetbrains.mps.baseLanguage.structure.StatementList" id="3852894662483240424">
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="3852894662483240425">
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.MulExpression" id="3852894662483240427">
+              <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="3852894662483240428">
+                <property name="value" value="3" />
+              </node>
+              <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.ParenthesizedExpression" id="3852894662483240432">
+                <node role="expression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="3852894662483240426">
+                  <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="3852894662483240429">
+                    <property name="value" value="2" />
+                  </node>
+                  <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="3852894662483240430">
+                    <property name="value" value="1" />
+                  </node>
+                </node>
+              </node>
+            </node>
+            <node role="testNode$attribute" type="jetbrains.mps.lang.test.structure.TestNodeAnnotation" id="3852894662483240431">
+              <property name="name" value="after3" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="testMethods" type="jetbrains.mps.lang.test.structure.SimpleNodeTest" id="3852894662483077213">
+      <property name="name" value="noBinaryOperation" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="3852894662483077214" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="3852894662483077215">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="3852894662483077216">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="3852894662483077217">
+            <property name="name" value="result" />
+            <node role="type" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="3852894662483077218">
+              <link role="concept" targetNodeId="15.1079359253375" resolveInfo="ParenthesizedExpression" />
+            </node>
+            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="3852894662483077219">
+              <link role="classConcept" targetNodeId="34.155142699038773182" resolveInfo="ParenthesisUtil" />
+              <link role="baseMethodDeclaration" targetNodeId="34.155142699038773206" resolveInfo="createParenthesis" />
+              <node role="actualArgument" type="jetbrains.mps.lang.test.structure.TestNodeReference" id="3852894662483077220">
+                <link role="declaration" targetNodeId="3852894662483077205" resolveInfo="before1" />
+              </node>
+              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="3852894662483077221">
+                <property name="value" value="true" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.lang.test.structure.AssertMatch" id="3852894662483077222">
+          <node role="before" type="jetbrains.mps.lang.test.structure.TestNodeReference" id="3852894662483077223">
+            <link role="declaration" targetNodeId="3852894662483077212" resolveInfo="after1" />
+          </node>
+          <node role="after" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="3852894662483077224">
+            <link role="variableDeclaration" targetNodeId="3852894662483077217" resolveInfo="result" />
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="testMethods" type="jetbrains.mps.lang.test.structure.SimpleNodeTest" id="3852894662483230160">
+      <property name="name" value="thereIsAlreadyParenthesis" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="3852894662483230161" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="3852894662483230162">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="3852894662483230176">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="3852894662483230177">
+            <link role="baseMethodDeclaration" targetNodeId="34.155142699038773206" resolveInfo="createParenthesis" />
+            <link role="classConcept" targetNodeId="34.155142699038773182" resolveInfo="ParenthesisUtil" />
+            <node role="actualArgument" type="jetbrains.mps.lang.test.structure.TestNodeReference" id="3852894662483230178">
+              <link role="declaration" targetNodeId="3852894662483230155" resolveInfo="exprToPronsform2" />
+            </node>
+            <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="3852894662483230179">
+              <property name="value" value="true" />
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.lang.test.structure.AssertMatch" id="3852894662483230169">
+          <node role="before" type="jetbrains.mps.lang.test.structure.TestNodeReference" id="3852894662483230173">
+            <link role="declaration" targetNodeId="3852894662483230154" resolveInfo="after2" />
+          </node>
+          <node role="after" type="jetbrains.mps.lang.test.structure.TestNodeReference" id="3852894662483230174">
+            <link role="declaration" targetNodeId="3852894662483230153" resolveInfo="before2" />
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="testMethods" type="jetbrains.mps.lang.test.structure.SimpleNodeTest" id="3852894662483240393">
+      <property name="name" value="treeRotation" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="3852894662483240394" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="3852894662483240395">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="3852894662483240435">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="3852894662483240436">
+            <link role="baseMethodDeclaration" targetNodeId="34.155142699038773206" resolveInfo="createParenthesis" />
+            <link role="classConcept" targetNodeId="34.155142699038773182" resolveInfo="ParenthesisUtil" />
+            <node role="actualArgument" type="jetbrains.mps.lang.test.structure.TestNodeReference" id="3852894662483240442">
+              <link role="declaration" targetNodeId="3852894662483240434" resolveInfo="exprToTransform3" />
+            </node>
+            <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="3852894662483240438">
+              <property name="value" value="false" />
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.lang.test.structure.AssertMatch" id="3852894662483240439">
+          <node role="before" type="jetbrains.mps.lang.test.structure.TestNodeReference" id="3852894662483240443">
+            <link role="declaration" targetNodeId="3852894662483240431" resolveInfo="after" />
+          </node>
+          <node role="after" type="jetbrains.mps.lang.test.structure.TestNodeReference" id="3852894662483240444">
+            <link role="declaration" targetNodeId="3852894662483240410" resolveInfo="before3" />
+          </node>
         </node>
       </node>
     </node>
