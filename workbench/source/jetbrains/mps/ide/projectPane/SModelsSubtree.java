@@ -102,14 +102,32 @@ public class SModelsSubtree {
       map.put(md, treeNode);
       result.add(treeNode);
     }
-    for (SModelTreeNode treeNode : map.values()) {
-      List<SModelDescriptor> subfolderModels = treeNode.getSubfolderModels(map.keySet());
-      for (SModelDescriptor subfolderModel : subfolderModels) {
-        result.remove(map.get(subfolderModel));
-      }
-      treeNode.addChildModels(sortedModels);
+    if (!map.values().isEmpty()) {
+      int rootIndex = 0;
+      while (rootIndex < sortedModels.size() - 1) {
+        SModelTreeNode treeNode = map.get(sortedModels.get(rootIndex));
+        rootIndex = buildChildModels(treeNode, result, map, rootIndex);
+      }      
     }
     return result;
+  }
+
+  private static int buildChildModels(SModelTreeNode treeNode, List<SModelTreeNode> rootModels, Map<SModelDescriptor, SModelTreeNode> map,
+                                       int rootIndex) {
+    Object[] candidates = map.keySet().toArray();
+    int index = rootIndex + 1;
+    while (index < candidates.length) {
+      SModelDescriptor candidate = (SModelDescriptor) candidates[index];
+      if (treeNode.isSubfolderModel(candidate)) {
+        SModelTreeNode newChildModel = map.get(candidate);
+        rootModels.remove(newChildModel);
+        treeNode.addChildModels(newChildModel);
+        index = buildChildModels(newChildModel, rootModels, map, index);
+      } else {
+        return index;
+      }
+    }
+    return index;
   }
 
   public static class JavaStubsTreeNode extends TextTreeNode {

@@ -47,7 +47,7 @@ public class SModelTreeNode extends MPSTreeNodeEx {
   public static final String PACK = "package";
 
   private SModelDescriptor myModelDescriptor;
-  private List<SModelDescriptor> myChildModelDescriptors = new ArrayList<SModelDescriptor>();
+  private List<SModelTreeNode> myChildModelDescriptors = new ArrayList<SModelTreeNode>();
 
   private String myLabel;
   private boolean myInitialized = false;
@@ -389,30 +389,39 @@ public class SModelTreeNode extends MPSTreeNodeEx {
     String modelName = myModelDescriptor.getLongName();
     if (modelName == null) return result;
     for (SModelDescriptor candidate : candidates) {
-      String candidateName = candidate.getLongName();
-      if (candidateName == null || !candidateName.startsWith(modelName) || modelName.equals(candidateName)) continue;
-      if (candidateName.charAt(modelName.length()) == '.') {
-        String modelStereotype = myModelDescriptor.getStereotype();
-        String candidateStereotype = candidate.getStereotype();
-        if (!modelStereotype.equals(candidateStereotype)) continue;
-        String shortName = candidateName.replace(modelName + ".", "");
-        if (shortName.contains(".")) {
-          String maxPackage = candidateName.substring(0, candidateName.lastIndexOf('.'));
-          SModelDescriptor md = SModelRepository.getInstance().getModelDescriptor(SModelReference.fromString(maxPackage));
-          if (md != null) {
-            if (md.getModule().getOwnModelDescriptors().contains(myModelDescriptor)) {
-              continue;
-            }
-          }
-        }
+      if (isSubfolderModel(candidate)) {
         result.add(candidate);
       }
     }
     return result;
   }
 
-  public void addChildModels(Collection<SModelDescriptor> models) {
-    myChildModelDescriptors.addAll(models);
+  public boolean isSubfolderModel(SModelDescriptor candidate) {
+    if (myModelDescriptor == null) return false;
+    String modelName = myModelDescriptor.getLongName();
+    String candidateName = candidate.getLongName();
+    if (candidateName == null || !candidateName.startsWith(modelName) || modelName.equals(candidateName)) return false;
+    if (candidateName.charAt(modelName.length()) == '.') {
+      String modelStereotype = myModelDescriptor.getStereotype();
+      String candidateStereotype = candidate.getStereotype();
+      if (!modelStereotype.equals(candidateStereotype)) return false;
+      String shortName = candidateName.replace(modelName + ".", "");
+      if (shortName.contains(".")) {
+        String maxPackage = candidateName.substring(0, candidateName.lastIndexOf('.'));
+        SModelDescriptor md = SModelRepository.getInstance().getModelDescriptor(SModelReference.fromString(maxPackage));
+        if (md != null) {
+          if (md.getModule().getOwnModelDescriptors().contains(myModelDescriptor)) {
+            return false;
+          }
+        }
+      }
+      return true;
+    }
+    return false;
+  }
+
+  public void addChildModels(SModelTreeNode model) {
+    myChildModelDescriptors.add(model);
   }
 
   protected void doUpdate() {
@@ -449,16 +458,10 @@ public class SModelTreeNode extends MPSTreeNodeEx {
         }
       }
 
-      if (!myChildModelDescriptors.isEmpty()) {
+      for (SModelTreeNode childTreeModel : myChildModelDescriptors) {
         DefaultTreeModel treeModel = (DefaultTreeModel) getTree().getModel();
-        List<SModelDescriptor> subfolderModels = getSubfolderModels(myChildModelDescriptors);
-        myChildModelDescriptors.removeAll(subfolderModels);
-        for (SModelDescriptor subfolderModel : subfolderModels) {
-          SModelTreeNode newChildModel = new SModelTreeNode(subfolderModel, null, getOperationContext(), false);
-          newChildModel.addChildModels(myChildModelDescriptors);
-          int index = subfolderModels.indexOf(subfolderModel);
-          treeModel.insertNodeInto(newChildModel, this, index);
-        }
+        int index = myChildModelDescriptors.indexOf(childTreeModel);
+        treeModel.insertNodeInto(childTreeModel, this, index);
       }
 
       DefaultTreeModel treeModel = (DefaultTreeModel) getTree().getModel();
