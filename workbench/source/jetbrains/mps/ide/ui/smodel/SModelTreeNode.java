@@ -171,6 +171,10 @@ public class SModelTreeNode extends MPSTreeNodeEx {
     return myDependencyRecorder;
   }
 
+  public boolean isPackageLikeView() {
+    return false;
+  }
+
   protected SNodeGroupTreeNode getNodeGroupFor(SNode node) {
     if (!myPackagesEnabled) {
       return null;
@@ -407,8 +411,8 @@ public class SModelTreeNode extends MPSTreeNodeEx {
     return result;
   }
 
-  public void addChildModel(SModelDescriptor sm) {
-    myChildModelDescriptors.add(sm);
+  public void addChildModels(Collection<SModelDescriptor> models) {
+    myChildModelDescriptors.addAll(models);
   }
 
   protected void doUpdate() {
@@ -445,17 +449,18 @@ public class SModelTreeNode extends MPSTreeNodeEx {
         }
       }
 
-      if (myModelDescriptor != null) {
+      if (!myChildModelDescriptors.isEmpty()) {
         DefaultTreeModel treeModel = (DefaultTreeModel) getTree().getModel();
-        List<SModelDescriptor> sortedModels = SortUtil.sortModels(myModelDescriptor.getModule().getOwnModelDescriptors());
-        List<SModelDescriptor> subfolderModels = getSubfolderModels(sortedModels);
+        List<SModelDescriptor> subfolderModels = getSubfolderModels(myChildModelDescriptors);
+        myChildModelDescriptors.removeAll(subfolderModels);
         for (SModelDescriptor subfolderModel : subfolderModels) {
           SModelTreeNode newChildModel = new SModelTreeNode(subfolderModel, null, getOperationContext(), false);
+          newChildModel.addChildModels(myChildModelDescriptors);
           int index = subfolderModels.indexOf(subfolderModel);
           treeModel.insertNodeInto(newChildModel, this, index);
         }
       }
-      
+
       DefaultTreeModel treeModel = (DefaultTreeModel) getTree().getModel();
       treeModel.nodeStructureChanged(this);
     } finally {

@@ -23,7 +23,6 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.ProjectModels;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SModelStereotype;
-import jetbrains.mps.kernel.model.SModelUtil;
 
 import java.util.*;
 
@@ -91,9 +90,15 @@ public class SModelsSubtree {
 
   private static List<SModelTreeNode> getModelTreeNodes(List<SModelDescriptor> models, IOperationContext context) {
     List<SModelTreeNode> result = new ArrayList<SModelTreeNode>();
+    List<SModelDescriptor> sortedModels = SortUtil.sortModels(models);
     Map<SModelDescriptor, SModelTreeNode> map = new LinkedHashMap<SModelDescriptor, SModelTreeNode>();
-    for (SModelDescriptor md : SortUtil.sortModels(models)) {
-      SModelTreeNode treeNode = new SModelTreeNode(md, null, context, false);
+    for (SModelDescriptor md : sortedModels) {
+      SModelTreeNode treeNode = new SModelTreeNode(md, null, context, false) {
+        @Override
+        public boolean isPackageLikeView() {
+          return true;
+        }
+      };
       map.put(md, treeNode);
       result.add(treeNode);
     }
@@ -102,6 +107,7 @@ public class SModelsSubtree {
       for (SModelDescriptor subfolderModel : subfolderModels) {
         result.remove(map.get(subfolderModel));
       }
+      treeNode.addChildModels(sortedModels);
     }
     return result;
   }
