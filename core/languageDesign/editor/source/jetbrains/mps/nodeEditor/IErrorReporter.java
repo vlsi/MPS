@@ -19,6 +19,9 @@ import jetbrains.mps.intentions.IntentionProvider;
 import jetbrains.mps.nodeEditor.MessageStatus;
 import jetbrains.mps.typesystem.inference.IErrorTarget;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.util.Pair;
+
+import java.util.List;
 
 public interface IErrorReporter {
   public String reportError();
@@ -26,6 +29,10 @@ public interface IErrorReporter {
   public String getRuleId();
 
   public String getRuleModel();
+
+  public List<Pair<String, String>> getAdditionalRulesIds();
+
+  public void setAdditionalRulesIds(List<Pair<String, String>> ids);
 
   public MessageStatus getMessageStatus();
 

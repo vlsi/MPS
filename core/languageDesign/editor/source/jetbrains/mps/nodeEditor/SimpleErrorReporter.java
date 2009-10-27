@@ -21,11 +21,16 @@ import jetbrains.mps.nodeEditor.IErrorReporter;
 import jetbrains.mps.typesystem.inference.IErrorTarget;
 import jetbrains.mps.typesystem.inference.NodeErrorTarget;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.util.Pair;
+
+import java.util.List;
+import java.util.ArrayList;
 
 public class SimpleErrorReporter implements IErrorReporter {
   private String myErrorString;
   private String myRuleModel;
   private String myRuleId;
+  private List<Pair<String, String>> myAdditionalRuleIds = null;
   private IntentionProvider myIntentionProvider;
   private MessageStatus myMessageStatus = MessageStatus.ERROR;
   private IErrorTarget myErrorTarget = new NodeErrorTarget();
@@ -59,6 +64,19 @@ public class SimpleErrorReporter implements IErrorReporter {
 
   public String getRuleModel() {
     return myRuleModel;
+  }
+
+  public List<Pair<String, String>> getAdditionalRulesIds() {
+    if (myAdditionalRuleIds == null) return new ArrayList<Pair<String, String>>(0);
+    return new ArrayList<Pair<String, String>>(myAdditionalRuleIds);
+  }
+
+  public void setAdditionalRulesIds(List<Pair<String, String>> ids) {
+    if (ids != null && !ids.isEmpty()) {
+      myAdditionalRuleIds = new ArrayList<Pair<String, String>>(ids);
+    } else {
+      myAdditionalRuleIds = null;
+    }
   }
 
   public void setIntentionProvider(IntentionProvider intentionProvider) {

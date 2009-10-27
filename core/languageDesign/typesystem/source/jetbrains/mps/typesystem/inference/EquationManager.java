@@ -295,6 +295,7 @@ public class EquationManager {
       errorReporter = new SimpleErrorReporter(nodeWithError, errorString, ruleModel, ruleId);
     }
     errorReporter.setIntentionProvider(equationInfo.getIntentionProvider());
+    errorReporter.setAdditionalRulesIds(equationInfo.getAdditionalRulesIds());
     myTypeCheckingContext.reportMessage(nodeWithError, errorReporter);
 
     //4debug
@@ -396,6 +397,7 @@ public class EquationManager {
       errorReporter = new SimpleErrorReporter(nodeWithError, errorString, ruleModel, ruleId);
     }
     errorReporter.setIntentionProvider(errorInfo.getIntentionProvider());
+    errorReporter.setAdditionalRulesIds(errorInfo.getAdditionalRulesIds());
     myTypeCheckingContext.reportMessage(nodeWithError, errorReporter);
   }
 
@@ -620,6 +622,7 @@ public class EquationManager {
     String errorString = errorInfo == null ? null : errorInfo.getErrorString();
     String ruleModel = errorInfo == null ? null : errorInfo.getRuleModel();
     String ruleId = errorInfo == null ? null : errorInfo.getRuleId();
+    List<Pair<String, String>> ids = errorInfo == null ? null : errorInfo.getAdditionalRulesIds();
 
     if (errorString != null) {
       errorReporter = new SimpleErrorReporter(nodeWithError, errorString, ruleModel, ruleId);
@@ -629,6 +632,7 @@ public class EquationManager {
           rhsRepresentator, " and ", lhsRepresentator, "", ruleModel, ruleId);
     }
     errorReporter.setIntentionProvider(intentionProvider);
+    errorReporter.setAdditionalRulesIds(ids);
     processErrorEquation(lhsRepresentator, rhsRepresentator, errorReporter, nodeWithError);
   }
 
@@ -654,6 +658,7 @@ public class EquationManager {
       SNode nodeWithError = errorInfo.getNodeWithError();
       SimpleErrorReporter reporter = new SimpleErrorReporter(nodeWithError, ((RuntimeErrorType) typeVar).getErrorText(), errorInfo.getRuleModel(), errorInfo.getRuleId());
       reporter.setIntentionProvider(errorInfo.getIntentionProvider());
+      reporter.setAdditionalRulesIds(errorInfo.getAdditionalRulesIds());
       myTypeCheckingContext.reportMessage(
         nodeWithError, reporter);
     }

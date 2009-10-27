@@ -329,6 +329,7 @@ public class NodeTypesComponent implements EditorMessageOwner {
           SimpleErrorReporter reporter = new SimpleErrorReporter(node, errorString, iErrorReporter.getRuleModel(), iErrorReporter.getRuleId(),
             iErrorReporter.getMessageStatus(), iErrorReporter.getErrorTarget());
           reporter.setIntentionProvider(iErrorReporter.getIntentionProvider());
+          reporter.setAdditionalRulesIds(iErrorReporter.getAdditionalRulesIds());
           List<IErrorReporter> errorReporterList = toAdd.get(node);
           if (errorReporterList == null) {
             errorReporterList = new ArrayList<IErrorReporter>();

@@ -5,6 +5,11 @@ package jetbrains.mps.lang.typesystem.plugin;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.IErrorReporter;
+import jetbrains.mps.util.Pair;
+import java.util.List;
+import javax.swing.JPopupMenu;
+import javax.swing.AbstractAction;
+import java.awt.event.ActionEvent;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SModelRepository;
@@ -16,9 +21,32 @@ import jetbrains.mps.workbench.editors.MPSEditorOpener;
 public class GoToTypeErrorRuleUtil {
   private static Logger LOG = Logger.getLogger(GoToTypeErrorRuleUtil.class);
 
-  public static void goToTypeErrorRule(IOperationContext context, IErrorReporter error) {
-    final String ruleID = error.getRuleId();
-    String ruleModel = error.getRuleModel();
+  public static void goToTypeErrorRule(final IOperationContext context, IErrorReporter error) {
+    final Pair<String, String> ruleModelAndId = new Pair<String, String>(error.getRuleModel(), error.getRuleId());
+    List<Pair<String, String>> additionalRulesIds = error.getAdditionalRulesIds();
+    if (additionalRulesIds.isEmpty()) {
+      goToRuleById(context, ruleModelAndId);
+    } else {
+      JPopupMenu menu = new JPopupMenu();
+      menu.add(new AbstractAction("Go To Immediate Rule ") {
+        public void actionPerformed(ActionEvent p0) {
+          goToRuleById(context, ruleModelAndId);
+        }
+      });
+      for (final Pair<String, String> pair : additionalRulesIds) {
+        menu.add(new AbstractAction("Go To Rule Which Led To Immediate Rule: " + pair.o2) {
+          public void actionPerformed(ActionEvent p0) {
+            goToRuleById(context, pair);
+          }
+        });
+      }
+      menu.setVisible(true);
+    }
+  }
+
+  public static void goToRuleById(IOperationContext context, Pair<String, String> ruleModelAndId) {
+    String ruleModel = ruleModelAndId.o1;
+    final String ruleID = ruleModelAndId.o2;
     SModelReference modelUID = SModelReference.fromString(ruleModel);
     modelUID = SModelReference.fromString(modelUID.getLongName());
     final SModelDescriptor modelDescriptor = SModelRepository.getInstance().getModelDescriptor(modelUID);

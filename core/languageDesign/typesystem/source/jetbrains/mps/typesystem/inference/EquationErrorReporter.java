@@ -21,6 +21,10 @@ import jetbrains.mps.intentions.IntentionProvider;
 import jetbrains.mps.nodeEditor.MessageStatus;
 import jetbrains.mps.nodeEditor.IErrorReporter;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.util.Pair;
+
+import java.util.List;
+import java.util.ArrayList;
 
 public class EquationErrorReporter implements IErrorReporter {
   private EquationManager myEquationManager;
@@ -29,6 +33,7 @@ public class EquationErrorReporter implements IErrorReporter {
   private String myAfter;
   private IWrapper myWrapper1;
   private IWrapper myWrapper2;
+  private List<Pair<String, String>> myAdditionalRuleIds = null;
   private String myRuleId;
   private String myRuleModel;
   private IntentionProvider myIntentionProvider;
@@ -50,6 +55,19 @@ public class EquationErrorReporter implements IErrorReporter {
 
   public void setIntentionProvider(IntentionProvider intentionProvider) {
     myIntentionProvider = intentionProvider;
+  }
+
+  public List<Pair<String, String>> getAdditionalRulesIds() {
+    if (myAdditionalRuleIds == null) return new ArrayList<Pair<String, String>>(0);
+    return new ArrayList<Pair<String, String>>(myAdditionalRuleIds);
+  }
+
+  public void setAdditionalRulesIds(List<Pair<String, String>> ids) {
+    if (ids != null && !ids.isEmpty()) {
+      myAdditionalRuleIds = new ArrayList<Pair<String, String>>(ids);
+    } else {
+      myAdditionalRuleIds = null;
+    }
   }
 
   public String reportError() {
