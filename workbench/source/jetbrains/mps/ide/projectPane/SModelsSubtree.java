@@ -91,33 +91,29 @@ public class SModelsSubtree {
   private static List<SModelTreeNode> getRootModelTreeNodes(List<SModelDescriptor> models, IOperationContext context) {
     List<SModelTreeNode> result = new ArrayList<SModelTreeNode>();
     List<SModelDescriptor> sortedModels = SortUtil.sortModels(models);
-    Map<SModelDescriptor, SModelTreeNode> map = new LinkedHashMap<SModelDescriptor, SModelTreeNode>();
-    for (SModelDescriptor md : sortedModels) {
-      SModelTreeNode treeNode = new SModelTreeNode(md, null, context, false);
-      map.put(md, treeNode);
-      result.add(treeNode);
-    }
-    if (!map.values().isEmpty()) {
+    if (!sortedModels.isEmpty()) {
       int rootIndex = 0;
       while (rootIndex < sortedModels.size() - 1) {
-        SModelTreeNode treeNode = map.get(sortedModels.get(rootIndex));
-        rootIndex = buildChildModels(treeNode, result, map, rootIndex);
+        SModelTreeNode treeNode = new SModelTreeNode(sortedModels.get(rootIndex), null, context, false);
+        result.add(treeNode);
+        rootIndex = buildChildModels(treeNode, sortedModels, rootIndex);
       }      
     }
     return result;
   }
 
-  private static int buildChildModels(SModelTreeNode treeNode, List<SModelTreeNode> rootModels, Map<SModelDescriptor, SModelTreeNode> map,
-                                       int rootIndex) {
-    Object[] candidates = map.keySet().toArray();
+  private static int buildChildModels(SModelTreeNode treeNode, List<SModelDescriptor> candidates, int rootIndex) {
     int index = rootIndex + 1;
-    while (index < candidates.length) {
-      SModelDescriptor candidate = (SModelDescriptor) candidates[index];
+    while (index < candidates.size()) {
+      SModelDescriptor candidate = (SModelDescriptor) candidates.get(index);
       if (treeNode.isSubfolderModel(candidate)) {
-        SModelTreeNode newChildModel = map.get(candidate);
-        rootModels.remove(newChildModel);
+        IOperationContext context = treeNode.getOperationContext();
+        String childLongName = candidate.getLongName();
+        String shortName = childLongName.replace(treeNode.getSModelDescriptor().getLongName() + '.', "");
+        int countNamePart = shortName.split("\\.").length - 1;
+        SModelTreeNode newChildModel = new SModelTreeNode(candidate, null, context, countNamePart);
         treeNode.addChildModel(newChildModel);
-        index = buildChildModels(newChildModel, rootModels, map, index);
+        index = buildChildModels(newChildModel, candidates, index);
       } else {
         return index;
       }

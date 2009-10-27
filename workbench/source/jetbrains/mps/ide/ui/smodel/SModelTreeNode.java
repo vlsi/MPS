@@ -36,7 +36,6 @@ import jetbrains.mps.util.Condition;
 import jetbrains.mps.util.ToStringComparator;
 import jetbrains.mps.workbench.action.ActionUtils;
 import jetbrains.mps.workbench.actions.model.CreateRootNodeGroup;
-import jetbrains.mps.kernel.model.SModelUtil;
 import org.jetbrains.annotations.NotNull;
 
 import javax.swing.tree.DefaultTreeModel;
@@ -47,7 +46,7 @@ public class SModelTreeNode extends MPSTreeNodeEx {
   public static final String PACK = "package";
 
   private SModelDescriptor myModelDescriptor;
-  private List<SModelTreeNode> myChildModelDescriptors = new ArrayList<SModelTreeNode>();
+  private List<SModelTreeNode> myChildModelTreeNodes = new ArrayList<SModelTreeNode>();
 
   private String myLabel;
   private boolean myInitialized = false;
@@ -56,6 +55,7 @@ public class SModelTreeNode extends MPSTreeNodeEx {
   private MySimpleModelListener mySimpleModelListener = new MySimpleModelListener();
   private MyGenerationStatusListener myStatusListener = new MyGenerationStatusListener();
   private boolean myShowLongName;
+  private int myCountAdditionalNamePart = 0;
   private List<SNodeGroupTreeNode> myRootGroups = new ArrayList<SNodeGroupTreeNode>();
 
   private Condition<SNode> myNodesCondition = Condition.TRUE_CONDITION;
@@ -76,26 +76,35 @@ public class SModelTreeNode extends MPSTreeNodeEx {
                         String label,
                         @NotNull IOperationContext operationContext,
                         Condition<SNode> condition) {
-    this(modelDescriptor, label, operationContext, true, condition);
+    this(modelDescriptor, label, operationContext, true, condition, 0);
   }
 
   public SModelTreeNode(SModelDescriptor modelDescriptor,
                         String label,
                         IOperationContext operationContext,
                         boolean showLongName) {
-    this(modelDescriptor, label, operationContext, showLongName, Condition.TRUE_CONDITION);
+    this(modelDescriptor, label, operationContext, showLongName, Condition.TRUE_CONDITION, 0);
+  }
+
+  public SModelTreeNode(SModelDescriptor modelDescriptor,
+                        String label,
+                        IOperationContext operationContext,
+                        int countNamePart) {
+    this(modelDescriptor, label, operationContext, false, Condition.TRUE_CONDITION, countNamePart);
   }
 
   public SModelTreeNode(SModelDescriptor modelDescriptor,
                         String label,
                         IOperationContext operationContext,
                         boolean showLongName,
-                        Condition<SNode> condition) {
+                        Condition<SNode> condition,
+                        int countNamePart) {
     super(operationContext);
     myShowLongName = showLongName;
     myModelDescriptor = modelDescriptor;
     myLabel = label;
     myNodesCondition = condition;
+    myCountAdditionalNamePart = countNamePart;
 
     setUserObject(modelDescriptor);
 
@@ -328,7 +337,7 @@ public class SModelTreeNode extends MPSTreeNodeEx {
       reference = getSModel().getSModelReference();
     }
 
-    String name = myShowLongName ? reference.getLongName() : reference.getShortName();
+    String name = calculatePresentationText(reference);
 
     if (reference.getStereotype().length() > 0) {
       name += "@" + reference.getStereotype();
@@ -404,7 +413,7 @@ public class SModelTreeNode extends MPSTreeNodeEx {
   }
 
   public void addChildModel(SModelTreeNode model) {
-    myChildModelDescriptors.add(model);
+    myChildModelTreeNodes.add(model);
   }
 
   protected void doUpdate() {
@@ -441,10 +450,10 @@ public class SModelTreeNode extends MPSTreeNodeEx {
         }
       }
 
-      for (SModelTreeNode childTreeModel : myChildModelDescriptors) {
+      for (SModelTreeNode newChildModel : myChildModelTreeNodes) {
         DefaultTreeModel treeModel = (DefaultTreeModel) getTree().getModel();
-        int index = myChildModelDescriptors.indexOf(childTreeModel);
-        treeModel.insertNodeInto(childTreeModel, this, index);
+        int index = myChildModelTreeNodes.indexOf(newChildModel);
+        treeModel.insertNodeInto(newChildModel, this, index);
       }
 
       DefaultTreeModel treeModel = (DefaultTreeModel) getTree().getModel();
@@ -453,6 +462,22 @@ public class SModelTreeNode extends MPSTreeNodeEx {
       myInitialized = true;
       myInitializing = false;
     }
+  }
+
+  private String calculatePresentationText(SModelReference reference) {
+    if (myShowLongName) {
+      return reference.getLongName();
+    } else if (myCountAdditionalNamePart == 0) {
+      return reference.getShortName();
+    }
+    StringBuilder stringBuilder = new StringBuilder();
+    String[] namePart = reference.getLongName().split("\\.");
+    int firstPart = namePart.length - myCountAdditionalNamePart - 1;
+    for (int i = firstPart; i < namePart.length - 1; i++) {
+      stringBuilder.append(namePart[i]).append('.');
+    }
+    stringBuilder.append(reference.getShortName());
+    return stringBuilder.toString();
   }
 
   private boolean showPropertiesAndReferences() {
