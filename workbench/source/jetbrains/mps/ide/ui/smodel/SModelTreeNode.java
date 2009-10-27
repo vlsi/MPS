@@ -403,7 +403,7 @@ public class SModelTreeNode extends MPSTreeNodeEx {
     return false;
   }
 
-  public void addChildModels(SModelTreeNode model) {
+  public void addChildModel(SModelTreeNode model) {
     myChildModelDescriptors.add(model);
   }
 

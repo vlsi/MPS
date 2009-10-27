@@ -116,7 +116,7 @@ public class SModelsSubtree {
       if (treeNode.isSubfolderModel(candidate)) {
         SModelTreeNode newChildModel = map.get(candidate);
         rootModels.remove(newChildModel);
-        treeNode.addChildModels(newChildModel);
+        treeNode.addChildModel(newChildModel);
         index = buildChildModels(newChildModel, rootModels, map, index);
       } else {
         return index;
