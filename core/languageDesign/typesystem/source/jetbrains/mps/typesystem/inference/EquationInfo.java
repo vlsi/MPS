@@ -22,8 +22,7 @@ import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.intentions.IntentionProvider;
 import jetbrains.mps.util.Pair;
 
-import java.util.Set;
-import java.util.HashSet;
+import java.util.*;
 
 public class EquationInfo {
 
@@ -32,6 +31,7 @@ public class EquationInfo {
 
   private String myRuleModel;
   private String myRuleId;
+  private Stack<Pair<String, String>> myOuterRulesIds = null;
   private String myInequationGroup = "default";
   private Set<Pair<String, String>> myInequationIdsBefore = null;
   private Set<Pair<String, String>> myInequationIdsAfter = null;
@@ -106,6 +106,18 @@ public class EquationInfo {
 
   public IntentionProvider getIntentionProvider() {
     return myIntentionProvider;
+  }
+
+  public void pushOuterRuleId(String modelId, String ruleId) {
+    if (myOuterRulesIds == null) {
+      myOuterRulesIds = new Stack<Pair<String, String>>();
+    }
+    myOuterRulesIds.push(new Pair<String, String>(modelId, ruleId));
+  }
+
+  public List<Pair<String, String>> getAdditionalRulesIds() {
+    if (myOuterRulesIds == null) return new ArrayList<Pair<String, String>>();
+    return new ArrayList<Pair<String, String>>(myOuterRulesIds);
   }
 
   public SNode findRuleNode() {
