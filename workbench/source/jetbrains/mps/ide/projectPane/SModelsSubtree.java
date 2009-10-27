@@ -93,12 +93,7 @@ public class SModelsSubtree {
     List<SModelDescriptor> sortedModels = SortUtil.sortModels(models);
     Map<SModelDescriptor, SModelTreeNode> map = new LinkedHashMap<SModelDescriptor, SModelTreeNode>();
     for (SModelDescriptor md : sortedModels) {
-      SModelTreeNode treeNode = new SModelTreeNode(md, null, context, false) {
-        @Override
-        public boolean isPackageLikeView() {
-          return true;
-        }
-      };
+      SModelTreeNode treeNode = new SModelTreeNode(md, null, context, false);
       map.put(md, treeNode);
       result.add(treeNode);
     }

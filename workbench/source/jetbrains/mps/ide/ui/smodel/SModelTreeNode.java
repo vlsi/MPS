@@ -171,10 +171,6 @@ public class SModelTreeNode extends MPSTreeNodeEx {
     return myDependencyRecorder;
   }
 
-  public boolean isPackageLikeView() {
-    return false;
-  }
-
   protected SNodeGroupTreeNode getNodeGroupFor(SNode node) {
     if (!myPackagesEnabled) {
       return null;
