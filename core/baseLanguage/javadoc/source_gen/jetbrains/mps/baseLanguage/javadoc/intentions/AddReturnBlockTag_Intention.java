@@ -30,7 +30,7 @@ public class AddReturnBlockTag_Intention extends BaseIntention {
   }
 
   public String getDescription(final SNode node, final EditorContext editorContext) {
-    return "Add @return tag";
+    return "Add @return Tag";
   }
 
   public boolean isApplicable(final SNode node, final EditorContext editorContext) {

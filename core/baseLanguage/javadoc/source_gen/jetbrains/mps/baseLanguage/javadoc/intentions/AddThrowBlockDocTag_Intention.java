@@ -8,8 +8,8 @@ import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
-public class AddParameterBlockDocTag_Intention extends BaseIntention {
-  public AddParameterBlockDocTag_Intention() {
+public class AddThrowBlockDocTag_Intention extends BaseIntention {
+  public AddThrowBlockDocTag_Intention() {
   }
 
   public String getConcept() {
@@ -25,11 +25,11 @@ public class AddParameterBlockDocTag_Intention extends BaseIntention {
   }
 
   public boolean isAvailableInChildNodes() {
-    return true;
+    return false;
   }
 
   public String getDescription(final SNode node, final EditorContext editorContext) {
-    return "Add @param Tag";
+    return "Add @throw Tag";
   }
 
   public boolean isApplicable(final SNode node, final EditorContext editorContext) {
@@ -40,11 +40,11 @@ public class AddParameterBlockDocTag_Intention extends BaseIntention {
   }
 
   public boolean isApplicableToNode(final SNode node, final EditorContext editorContext) {
-    return ListSequence.fromList(SLinkOperations.getTargets(node, "param", true)).isEmpty();
+    return ListSequence.fromList(SLinkOperations.getTargets(node, "throwsTag", true)).isEmpty();
   }
 
   public void execute(final SNode node, final EditorContext editorContext) {
-    SLinkOperations.addNewChild(node, "param", "jetbrains.mps.baseLanguage.javadoc.structure.ParameterBlockDocTag");
+    SLinkOperations.addNewChild(node, "throwsTag", "jetbrains.mps.baseLanguage.javadoc.structure.ThrowsBlockDocTag");
   }
 
   public String getLocationString() {

@@ -26,8 +26,10 @@ public class ABC<TT> {
   }
 
   /**
-    The quick {@inheritDoc}brown fox {@code jumps} over t{he lazy dog.
-    And then... {@link jetbrains.mps.baseLanguage.javadoc.sandbox.sandbox.ABC#SOME_CONSTANT some constant} {@value}
+    The quick {@inheritDoc}brown fox {@code 
+    } over t{he lazy dog.
+    And then... {@link jetbrains.mps.baseLanguage.javadoc.sandbox.sandbox.ABC#SOME_CONSTANT 
+    } {@value}
     Blah {@value java.awt.BorderLayout#NORTH} blah
     {{
       int a = 5;
@@ -52,9 +54,13 @@ public class ABC<TT> {
   }
 
   /**
-    asdffasd{@code }fasdf asdf{@code }asdf
-    asd{@code }f
-    <!TextGen not found for 'jetbrains.mps.baseLanguage.javadoc.structure.HTMLElement'!>as<!TextGen not found for 'jetbrains.mps.baseLanguage.javadoc.structure.HTMLElement'!>df
+    asd
+    teij jkbhjbjhb jhbb jhb
+    s
+    tsdfasdfasfoo<!TextGen not found for 'jetbrains.mps.baseLanguage.javadoc.structure.HTMLElement'!>dfasffasline2{@code 
+    fasdfasdf}
+    line3
+    line4bar
     asdf
 
     @param s 

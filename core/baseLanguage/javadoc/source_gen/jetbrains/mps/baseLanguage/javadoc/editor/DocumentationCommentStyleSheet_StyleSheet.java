@@ -24,4 +24,11 @@ public class DocumentationCommentStyleSheet_StyleSheet {
     style.set(StyleAttributes.TEXT_COLOR, MPSColors.gray);
     return style;
   }
+
+  public static Style getCommentHTMLTag(final EditorCell cell) {
+    Style style = new Style(cell);
+    style.putAll(DocumentationCommentStyleSheet_StyleSheet.getComment(null));
+    style.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD_ITALIC);
+    return style;
+  }
 }

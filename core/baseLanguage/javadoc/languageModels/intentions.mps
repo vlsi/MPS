@@ -606,7 +606,7 @@
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="5858074156537083241">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="5858074156537083262">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="5858074156537083263">
-            <property name="value" value="Add @param tag" />
+            <property name="value" value="Add @param Tag" />
           </node>
         </node>
       </node>
@@ -650,7 +650,7 @@
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="6832197706140861453">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="6832197706140861457">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="6832197706140861458">
-            <property name="value" value="Add @return tag" />
+            <property name="value" value="Add @return Tag" />
           </node>
         </node>
       </node>
@@ -1282,6 +1282,49 @@
                 </node>
               </node>
             </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.intentions.structure.IntentionDeclaration" id="6612597108006318457">
+    <property name="name" value="AddThrowBlockDocTag" />
+    <link role="forConcept" targetNodeId="1.5349172909345532724" resolveInfo="MethodDocComment" />
+    <node role="descriptionFunction" type="jetbrains.mps.lang.intentions.structure.DescriptionBlock" id="6612597108006318458">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="6612597108006318459">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="6612597108006325993">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="6612597108006325994">
+            <property name="value" value="Add @throw Tag" />
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="executeFunction" type="jetbrains.mps.lang.intentions.structure.ExecuteBlock" id="6612597108006318460">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="6612597108006318461">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="6612597108006326010">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="6612597108006326017">
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="6612597108006326012">
+              <node role="operand" type="jetbrains.mps.lang.intentions.structure.ConceptFunctionParameter_node" id="6612597108006326011" />
+              <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkListAccess" id="6612597108006326016">
+                <link role="link" targetNodeId="1.5858074156537516428" />
+              </node>
+            </node>
+            <node role="operation" type="jetbrains.mps.lang.smodel.structure.LinkList_AddNewChildOperation" id="6612597108006326021" />
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="isApplicableFunction" type="jetbrains.mps.lang.intentions.structure.IsApplicableBlock" id="6612597108006325996">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="6612597108006325997">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="6612597108006325998">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="6612597108006326005">
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="6612597108006326000">
+              <node role="operand" type="jetbrains.mps.lang.intentions.structure.ConceptFunctionParameter_node" id="6612597108006325999" />
+              <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkListAccess" id="6612597108006326004">
+                <link role="link" targetNodeId="1.5858074156537516428" />
+              </node>
+            </node>
+            <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.IsEmptyOperation" id="6612597108006326009" />
           </node>
         </node>
       </node>
