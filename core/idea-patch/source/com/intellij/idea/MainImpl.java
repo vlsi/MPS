@@ -65,10 +65,8 @@ public class MainImpl {
       }
       catch (Exception e) {
         // ignore
-      }
-      if (System.getProperty("idea.platform.prefix") == null) {
-        ConfigImportHelper.importConfigsTo(PathManager.getConfigPath());
-      }
+      }      
+      ConfigImportHelper.importConfigsTo(PathManager.getConfigPath());
     }
 
     if (!checkStartupPossible()) {   // It uses config folder!
