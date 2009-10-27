@@ -54,7 +54,7 @@ public class SModelsSubtree {
 
 
     SModelNamespaceTreeBuilder builder = new SModelNamespaceTreeBuilder();
-    List<SModelTreeNode> regularModelNodes = getModelTreeNodes(regularModels, operationContext);
+    List<SModelTreeNode> regularModelNodes = getRootModelTreeNodes(regularModels, operationContext);
     for (SModelTreeNode treeNode : regularModelNodes) {
       builder.addNode(treeNode);
     }
@@ -63,7 +63,7 @@ public class SModelsSubtree {
     if (!tests.isEmpty()) {
       builder = new SModelNamespaceTreeBuilder();
 
-      List<SModelTreeNode> testNodes = getModelTreeNodes(tests, operationContext);
+      List<SModelTreeNode> testNodes = getRootModelTreeNodes(tests, operationContext);
       for (SModelTreeNode testNode : testNodes) {
         builder.addNode(testNode);
       }
@@ -76,7 +76,7 @@ public class SModelsSubtree {
 
     if (!javaStubs.isEmpty()) {
       builder = new SModelNamespaceTreeBuilder();
-      List<SModelTreeNode> javaStubNodes = getModelTreeNodes(javaStubs, operationContext);
+      List<SModelTreeNode> javaStubNodes = getRootModelTreeNodes(javaStubs, operationContext);
       for (SModelTreeNode treeNode : javaStubNodes) {
         builder.addNode(treeNode);
       }
@@ -88,7 +88,7 @@ public class SModelsSubtree {
     }
   }
 
-  private static List<SModelTreeNode> getModelTreeNodes(List<SModelDescriptor> models, IOperationContext context) {
+  private static List<SModelTreeNode> getRootModelTreeNodes(List<SModelDescriptor> models, IOperationContext context) {
     List<SModelTreeNode> result = new ArrayList<SModelTreeNode>();
     List<SModelDescriptor> sortedModels = SortUtil.sortModels(models);
     Map<SModelDescriptor, SModelTreeNode> map = new LinkedHashMap<SModelDescriptor, SModelTreeNode>();
