@@ -6,8 +6,8 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import org.apache.commons.lang.StringUtils;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 public class CommentLine_Behavior {
   public static void init(SNode thisNode) {
@@ -18,12 +18,7 @@ public class CommentLine_Behavior {
     if (index >= 0 && index + 1 < ListSequence.fromList(SLinkOperations.getTargets(thisNode, "part", true)).count() && SNodeOperations.isInstanceOf(ListSequence.fromList(SLinkOperations.getTargets(thisNode, "part", true)).getElement(index), "jetbrains.mps.baseLanguage.javadoc.structure.TextCommentLinePart") && SNodeOperations.isInstanceOf(ListSequence.fromList(SLinkOperations.getTargets(thisNode, "part", true)).getElement(index + 1), "jetbrains.mps.baseLanguage.javadoc.structure.TextCommentLinePart")) {
       SNode leftPart = SNodeOperations.cast(ListSequence.fromList(SLinkOperations.getTargets(thisNode, "part", true)).getElement(index), "jetbrains.mps.baseLanguage.javadoc.structure.TextCommentLinePart");
       SNode rightPart = SNodeOperations.cast(ListSequence.fromList(SLinkOperations.getTargets(thisNode, "part", true)).getElement(index + 1), "jetbrains.mps.baseLanguage.javadoc.structure.TextCommentLinePart");
-      /*
-        System.out.println("leftPart=" + SPropertyOperations.getString(leftPart, "text"));
-      */
-      /*
-        System.out.println("rightPart=" + SPropertyOperations.getString(rightPart, "text"));
-      */
+
       String text = ((StringUtils.isEmpty(SPropertyOperations.getString(leftPart, "text")) ?
         "" :
         SPropertyOperations.getString(leftPart, "text")

@@ -55,9 +55,17 @@ public class ABC<TT> {
 
   /**
     asd
-    teij jkbhjbjhb jhbb jhb
+    teij jk
+    asdfasdf
+    asdf
+    asdfbhj
+    asdf
+    asdf
+    asdfbjhb jhbb jhb
     s
-    tsdfasdfasfoo<!TextGen not found for 'jetbrains.mps.baseLanguage.javadoc.structure.HTMLElement'!>dfasffasline2{@code 
+    tsdfasdfasfoo
+    as dfndfasffasline2
+    {@code 
     fasdfasdf}
     line3
     line4bar

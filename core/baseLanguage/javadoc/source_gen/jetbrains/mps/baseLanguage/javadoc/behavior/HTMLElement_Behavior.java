@@ -4,8 +4,11 @@ package jetbrains.mps.baseLanguage.javadoc.behavior;
 
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.baseLanguage.javadoc.editor.NodeCaretPair;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.Sequence;
+import org.apache.commons.lang.StringUtils;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 
 public class HTMLElement_Behavior {
@@ -13,19 +16,32 @@ public class HTMLElement_Behavior {
     SLinkOperations.addNewChild(thisNode, "line", "jetbrains.mps.baseLanguage.javadoc.structure.CommentLine");
   }
 
-  public static void virtual_smartDelete_9042833497008205283(SNode thisNode) {
+  public static NodeCaretPair virtual_smartDelete_9042833497008205283(SNode thisNode, boolean isBeginning) {
     SNode line = SNodeOperations.cast(SNodeOperations.getParent(thisNode), "jetbrains.mps.baseLanguage.javadoc.structure.CommentLine");
     int index = SNodeOperations.getIndexInParent(thisNode);
     Iterable<SNode> lines = SLinkOperations.getTargets(thisNode, "line", true);
+
+    SNode nodeToSelect = null;
+    int caret = -1;
+
     if (Sequence.fromIterable(lines).count() == 0) {
+      SNode prev = SNodeOperations.getPrevSibling(thisNode);
+      if (StringUtils.isNotEmpty(SPropertyOperations.getString(SNodeOperations.cast(prev, "jetbrains.mps.baseLanguage.javadoc.structure.TextCommentLinePart"), "text"))) {
+        caret = SPropertyOperations.getString(SNodeOperations.cast(prev, "jetbrains.mps.baseLanguage.javadoc.structure.TextCommentLinePart"), "text").length();
+      }
       SNodeOperations.deleteNode(thisNode);
       CommentLine_Behavior.call_tryMergeToRight_439148907936414403(line, index - 1);
+      return new NodeCaretPair(prev, caret);
     } else {
       //  Merging first line
       for (SNode part : ListSequence.fromList(SLinkOperations.getTargets(ListSequence.fromList(SLinkOperations.getTargets(thisNode, "line", true)).first(), "part", true))) {
         SNodeOperations.insertPrevSiblingChild(thisNode, part);
       }
       SNodeOperations.deleteNode(ListSequence.fromList(SLinkOperations.getTargets(thisNode, "line", true)).first());
+      if (isBeginning) {
+        nodeToSelect = ListSequence.fromList(SLinkOperations.getTargets(line, "part", true)).getElement(index - 1);
+        caret = SPropertyOperations.getString(SNodeOperations.cast(ListSequence.fromList(SLinkOperations.getTargets(line, "part", true)).getElement(index - 1), "jetbrains.mps.baseLanguage.javadoc.structure.TextCommentLinePart"), "text").length();
+      }
       CommentLine_Behavior.call_tryMergeToRight_439148907936414403(line, index - 1);
 
       //  Merging other lines
@@ -37,6 +53,10 @@ public class HTMLElement_Behavior {
       if ((lastElementLine == null)) {
         index = SNodeOperations.getIndexInParent(thisNode);
         SNodeOperations.deleteNode(thisNode);
+        if (!(isBeginning)) {
+          nodeToSelect = ListSequence.fromList(SLinkOperations.getTargets(line, "part", true)).getElement(index - 1);
+          caret = SPropertyOperations.getString(SNodeOperations.cast(ListSequence.fromList(SLinkOperations.getTargets(line, "part", true)).getElement(index - 1), "jetbrains.mps.baseLanguage.javadoc.structure.TextCommentLinePart"), "text").length();
+        }
         CommentLine_Behavior.call_tryMergeToRight_439148907936414403(line, index - 1);
       } else {
         //  Merging last line parts
@@ -45,8 +65,13 @@ public class HTMLElement_Behavior {
           SLinkOperations.addChild(lastElementLine, "part", SNodeOperations.cast(linePart, "jetbrains.mps.baseLanguage.javadoc.structure.CommentLinePart"));
         }
         SNodeOperations.deleteNode(thisNode);
+        if (!(isBeginning)) {
+          nodeToSelect = ListSequence.fromList(SLinkOperations.getTargets(lastElementLine, "part", true)).getElement(index);
+          caret = SPropertyOperations.getString(SNodeOperations.cast(ListSequence.fromList(SLinkOperations.getTargets(lastElementLine, "part", true)).getElement(index), "jetbrains.mps.baseLanguage.javadoc.structure.TextCommentLinePart"), "text").length();
+        }
         CommentLine_Behavior.call_tryMergeToRight_439148907936414403(lastElementLine, index);
       }
     }
+    return new NodeCaretPair(nodeToSelect, caret);
   }
 }
