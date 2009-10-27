@@ -955,6 +955,26 @@ public class QueriesGenerated {
     return SModelOperations.getModelName(SNodeOperations.getModel(ineq));
   }
 
+  public static Object propertyMacro_GetPropertyValue_1396379878994257028(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    SNode method = SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration", false, false);
+    for (SNode parameterDecl : SLinkOperations.getTargets(method, "parameter", true)) {
+      if (SLinkOperations.getTarget(SNodeOperations.as(SLinkOperations.getTarget(parameterDecl, "type", true), "jetbrains.mps.baseLanguage.structure.ClassifierType"), "classifier", false) == SNodeOperations.getNode("f:java_stub#jetbrains.mps.typesystem.inference(jetbrains.mps.typesystem.inference@java_stub)", "~EquationInfo")) {
+        return SPropertyOperations.getString(parameterDecl, "name");
+      }
+    }
+    return null;
+  }
+
+  public static Object propertyMacro_GetPropertyValue_1396379878994257079(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    SNode method = SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration", false, false);
+    for (SNode parameterDecl : SLinkOperations.getTargets(method, "parameter", true)) {
+      if (SLinkOperations.getTarget(SNodeOperations.as(SLinkOperations.getTarget(parameterDecl, "type", true), "jetbrains.mps.baseLanguage.structure.ClassifierType"), "classifier", false) == SNodeOperations.getNode("f:java_stub#jetbrains.mps.typesystem.inference(jetbrains.mps.typesystem.inference@java_stub)", "~EquationInfo")) {
+        return SPropertyOperations.getString(parameterDecl, "name");
+      }
+    }
+    return null;
+  }
+
   public static Object propertyMacro_GetPropertyValue_3790659035762526678(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return SPropertyOperations.getBoolean(SNodeOperations.cast(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.lang.typesystem.structure.OverloadedOpTypeRule_OneTypeSpecified"), "isStrong");
   }
@@ -1850,6 +1870,19 @@ public class QueriesGenerated {
 
   public static boolean ifMacro_Condition_1238605633330(final IOperationContext operationContext, final IfMacroContext _context) {
     return true;
+  }
+
+  public static boolean ifMacro_Condition_1396379878994255935(final IOperationContext operationContext, final IfMacroContext _context) {
+    SNode method = SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration", false, false);
+    if (method == null) {
+      return false;
+    }
+    for (SNode parameterDecl : SLinkOperations.getTargets(method, "parameter", true)) {
+      if (SLinkOperations.getTarget(SNodeOperations.as(SLinkOperations.getTarget(parameterDecl, "type", true), "jetbrains.mps.baseLanguage.structure.ClassifierType"), "classifier", false) == SNodeOperations.getNode("f:java_stub#jetbrains.mps.typesystem.inference(jetbrains.mps.typesystem.inference@java_stub)", "~EquationInfo")) {
+        return true;
+      }
+    }
+    return false;
   }
 
   public static boolean ifMacro_Condition_3302086321378840160(final IOperationContext operationContext, final IfMacroContext _context) {
