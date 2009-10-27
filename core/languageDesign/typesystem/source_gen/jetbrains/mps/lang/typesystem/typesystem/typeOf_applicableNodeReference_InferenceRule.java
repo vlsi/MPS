@@ -20,8 +20,8 @@ public class typeOf_applicableNodeReference_InferenceRule extends AbstractInfere
     {
       SNode _nodeToCheck_1029348928467 = applicableNodeRef;
       BaseIntentionProvider intentionProvider = null;
-      EquationInfo info = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902b1(jetbrains.mps.lang.typesystem.typesystem)", "1223981205079", 0, intentionProvider);
-      typeCheckingContext.createEquation((SNode)typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902b1(jetbrains.mps.lang.typesystem.typesystem)", "1223981205084", true), (SNode)typeCheckingContext.typeOf(SLinkOperations.getTarget(applicableNodeRef, "applicableNode", false), "r:00000000-0000-4000-0000-011c895902b1(jetbrains.mps.lang.typesystem.typesystem)", "1175522385423", true), info);
+      EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902b1(jetbrains.mps.lang.typesystem.typesystem)", "1223981205079", 0, intentionProvider);
+      typeCheckingContext.createEquation((SNode)typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902b1(jetbrains.mps.lang.typesystem.typesystem)", "1223981205084", true), (SNode)typeCheckingContext.typeOf(SLinkOperations.getTarget(applicableNodeRef, "applicableNode", false), "r:00000000-0000-4000-0000-011c895902b1(jetbrains.mps.lang.typesystem.typesystem)", "1175522385423", true), _info_12389875345);
     }
   }
 

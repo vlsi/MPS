@@ -23,8 +23,8 @@ public class typeof_DefaultMethodCallOperation_InferenceRule extends AbstractInf
     {
       SNode _nodeToCheck_1029348928467 = nodeToCheck;
       BaseIntentionProvider intentionProvider = null;
-      EquationInfo info = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c89590371(jetbrains.mps.baseLanguage.classifiers.typesystem)", "1205769679712", 0, intentionProvider);
-      typeCheckingContext.createEquation((SNode)typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c89590371(jetbrains.mps.baseLanguage.classifiers.typesystem)", "1205769685435", true), (SNode)SLinkOperations.getTarget(SLinkOperations.getTarget(nodeToCheck, "member", false), "returnType", true), info);
+      EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c89590371(jetbrains.mps.baseLanguage.classifiers.typesystem)", "1205769679712", 0, intentionProvider);
+      typeCheckingContext.createEquation((SNode)typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c89590371(jetbrains.mps.baseLanguage.classifiers.typesystem)", "1205769685435", true), (SNode)SLinkOperations.getTarget(SLinkOperations.getTarget(nodeToCheck, "member", false), "returnType", true), _info_12389875345);
     }
     {
       SNode parameter;
@@ -43,9 +43,9 @@ public class typeof_DefaultMethodCallOperation_InferenceRule extends AbstractInf
         {
           SNode _nodeToCheck_1029348928467 = argument;
           BaseIntentionProvider intentionProvider = null;
-          EquationInfo info = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c89590371(jetbrains.mps.baseLanguage.classifiers.typesystem)", "1205854571586", 0, intentionProvider);
-          info.setInequationGroup("default");
-          typeCheckingContext.createLessThanInequation((SNode)typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c89590371(jetbrains.mps.baseLanguage.classifiers.typesystem)", "1205854575356", true), (SNode)SLinkOperations.getTarget(parameter, "type", true), false, info);
+          EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c89590371(jetbrains.mps.baseLanguage.classifiers.typesystem)", "1205854571586", 0, intentionProvider);
+          _info_12389875345.setInequationGroup("default");
+          typeCheckingContext.createLessThanInequation((SNode)typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c89590371(jetbrains.mps.baseLanguage.classifiers.typesystem)", "1205854575356", true), (SNode)SLinkOperations.getTarget(parameter, "type", true), false, _info_12389875345);
         }
       }
     }

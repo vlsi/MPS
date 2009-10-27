@@ -18,8 +18,8 @@ public class typeof_XmlLiteral_InferenceRule extends AbstractInferenceRule_Runti
     {
       SNode _nodeToCheck_1029348928467 = literal;
       BaseIntentionProvider intentionProvider = null;
-      EquationInfo info = new EquationInfo(_nodeToCheck_1029348928467, null, "r:0264c2b0-f115-4504-b39f-f4dbddf68df1(jetbrains.mps.samples.xmlLiterals.typesystem)", "9152904044274382249", 0, intentionProvider);
-      typeCheckingContext.createEquation((SNode)typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:0264c2b0-f115-4504-b39f-f4dbddf68df1(jetbrains.mps.samples.xmlLiterals.typesystem)", "9152904044274367393", true), (SNode)new _Quotations.QuotationClass_0().createNode(typeCheckingContext), info);
+      EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:0264c2b0-f115-4504-b39f-f4dbddf68df1(jetbrains.mps.samples.xmlLiterals.typesystem)", "9152904044274382249", 0, intentionProvider);
+      typeCheckingContext.createEquation((SNode)typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:0264c2b0-f115-4504-b39f-f4dbddf68df1(jetbrains.mps.samples.xmlLiterals.typesystem)", "9152904044274367393", true), (SNode)new _Quotations.QuotationClass_0().createNode(typeCheckingContext), _info_12389875345);
     }
   }
 

@@ -24,8 +24,8 @@ public class typeof_ThisClassifierExpresson_InferenceRule extends AbstractInfere
       {
         SNode _nodeToCheck_1029348928467 = nodeToCheck;
         BaseIntentionProvider intentionProvider = null;
-        EquationInfo info = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c89590371(jetbrains.mps.baseLanguage.classifiers.typesystem)", "1205753196184", 0, intentionProvider);
-        typeCheckingContext.createEquation((SNode)typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c89590371(jetbrains.mps.baseLanguage.classifiers.typesystem)", "1205753197519", true), (SNode)IClassifier_Behavior.call_createType_1213877527970(classifier), info);
+        EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c89590371(jetbrains.mps.baseLanguage.classifiers.typesystem)", "1205753196184", 0, intentionProvider);
+        typeCheckingContext.createEquation((SNode)typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c89590371(jetbrains.mps.baseLanguage.classifiers.typesystem)", "1205753197519", true), (SNode)IClassifier_Behavior.call_createType_1213877527970(classifier), _info_12389875345);
       }
     } else {
       {

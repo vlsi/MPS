@@ -19,8 +19,8 @@ public class typeof_SEnum_MembersOperation_InferenceRule extends AbstractInferen
     {
       SNode _nodeToCheck_1029348928467 = operation;
       BaseIntentionProvider intentionProvider = null;
-      EquationInfo info = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1240333222958", 0, intentionProvider);
-      typeCheckingContext.createEquation((SNode)typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1240333222960", true), (SNode)new _Quotations.QuotationClass_118().createNode(SEnumOperation_Behavior.call_getEnum_1240931322043(operation), typeCheckingContext), info);
+      EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1240333222958", 0, intentionProvider);
+      typeCheckingContext.createEquation((SNode)typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1240333222960", true), (SNode)new _Quotations.QuotationClass_118().createNode(SEnumOperation_Behavior.call_getEnum_1240931322043(operation), typeCheckingContext), _info_12389875345);
     }
   }
 

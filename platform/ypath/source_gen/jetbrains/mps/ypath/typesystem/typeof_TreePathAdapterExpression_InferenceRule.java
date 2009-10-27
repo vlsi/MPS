@@ -20,24 +20,24 @@ public class typeof_TreePathAdapterExpression_InferenceRule extends AbstractInfe
     {
       SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(exp, "expression", true);
       BaseIntentionProvider intentionProvider = null;
-      EquationInfo info = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895905aa(jetbrains.mps.ypath.typesystem)", "1190288669877", 0, intentionProvider);
-      typeCheckingContext.createEquation((SNode)typeCheckingContext.getEquationManager().getRepresentator(ExpType_typevar_1190288659521), (SNode)typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895905aa(jetbrains.mps.ypath.typesystem)", "1190288685890", true), info);
+      EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895905aa(jetbrains.mps.ypath.typesystem)", "1190288669877", 0, intentionProvider);
+      typeCheckingContext.createEquation((SNode)typeCheckingContext.getEquationManager().getRepresentator(ExpType_typevar_1190288659521), (SNode)typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895905aa(jetbrains.mps.ypath.typesystem)", "1190288685890", true), _info_12389875345);
     }
     final SNode treePathType = SLinkOperations.getTarget(SLinkOperations.getTarget(exp, "treepathAspect", false), "treePathType", true);
     if ((SLinkOperations.getTarget(treePathType, "nodeType", true) != null)) {
       {
         SNode _nodeToCheck_1029348928467 = exp;
         BaseIntentionProvider intentionProvider = null;
-        EquationInfo info = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895905aa(jetbrains.mps.ypath.typesystem)", "1223982595290", 0, intentionProvider);
-        typeCheckingContext.createEquation((SNode)typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895905aa(jetbrains.mps.ypath.typesystem)", "1223982595295", true), (SNode)new _Quotations.QuotationClass_0().createNode(SLinkOperations.getTarget(treePathType, "nodeType", true), typeCheckingContext), info);
+        EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895905aa(jetbrains.mps.ypath.typesystem)", "1223982595290", 0, intentionProvider);
+        typeCheckingContext.createEquation((SNode)typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895905aa(jetbrains.mps.ypath.typesystem)", "1223982595295", true), (SNode)new _Quotations.QuotationClass_0().createNode(SLinkOperations.getTarget(treePathType, "nodeType", true), typeCheckingContext), _info_12389875345);
       }
     }
     {
       SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(exp, "expression", true);
       BaseIntentionProvider intentionProvider = null;
-      EquationInfo info = new EquationInfo(_nodeToCheck_1029348928467, "Incompatible type", "r:00000000-0000-4000-0000-011c895905aa(jetbrains.mps.ypath.typesystem)", "1225552004404", 0, intentionProvider);
-      info.setInequationGroup("default");
-      typeCheckingContext.createLessThanInequation((SNode)typeCheckingContext.getEquationManager().getRepresentator(ExpType_typevar_1190288659521), (SNode)SLinkOperations.getTarget(treePathType, "nodeType", true), true, info);
+      EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, "Incompatible type", "r:00000000-0000-4000-0000-011c895905aa(jetbrains.mps.ypath.typesystem)", "1225552004404", 0, intentionProvider);
+      _info_12389875345.setInequationGroup("default");
+      typeCheckingContext.createLessThanInequation((SNode)typeCheckingContext.getEquationManager().getRepresentator(ExpType_typevar_1190288659521), (SNode)SLinkOperations.getTarget(treePathType, "nodeType", true), true, _info_12389875345);
     }
   }
 

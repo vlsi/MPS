@@ -22,15 +22,15 @@ public class typeof_ConceptFunctionParameter_SNode_InferenceRule extends Abstrac
       {
         SNode _nodeToCheck_1029348928467 = node;
         BaseIntentionProvider intentionProvider = null;
-        EquationInfo info = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c89590316(jetbrains.mps.lang.refactoring.typesystem)", "6895093993902310948", 0, intentionProvider);
-        typeCheckingContext.createEquation((SNode)typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c89590316(jetbrains.mps.lang.refactoring.typesystem)", "6895093993902310953", true), (SNode)new _Quotations.QuotationClass_43().createNode(nodeConcept, typeCheckingContext), info);
+        EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c89590316(jetbrains.mps.lang.refactoring.typesystem)", "6895093993902310948", 0, intentionProvider);
+        typeCheckingContext.createEquation((SNode)typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c89590316(jetbrains.mps.lang.refactoring.typesystem)", "6895093993902310953", true), (SNode)new _Quotations.QuotationClass_43().createNode(nodeConcept, typeCheckingContext), _info_12389875345);
       }
     } else {
       {
         SNode _nodeToCheck_1029348928467 = node;
         BaseIntentionProvider intentionProvider = null;
-        EquationInfo info = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c89590316(jetbrains.mps.lang.refactoring.typesystem)", "6895093993902310967", 0, intentionProvider);
-        typeCheckingContext.createEquation((SNode)typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c89590316(jetbrains.mps.lang.refactoring.typesystem)", "6895093993902310974", true), (SNode)new _Quotations.QuotationClass_44().createNode(typeCheckingContext), info);
+        EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c89590316(jetbrains.mps.lang.refactoring.typesystem)", "6895093993902310967", 0, intentionProvider);
+        typeCheckingContext.createEquation((SNode)typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c89590316(jetbrains.mps.lang.refactoring.typesystem)", "6895093993902310974", true), (SNode)new _Quotations.QuotationClass_44().createNode(typeCheckingContext), _info_12389875345);
       }
     }
   }

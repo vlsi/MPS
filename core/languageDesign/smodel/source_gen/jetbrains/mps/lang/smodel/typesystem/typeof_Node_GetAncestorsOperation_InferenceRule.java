@@ -20,8 +20,8 @@ public class typeof_Node_GetAncestorsOperation_InferenceRule extends AbstractInf
     {
       SNode _nodeToCheck_1029348928467 = op;
       BaseIntentionProvider intentionProvider = null;
-      EquationInfo info = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1207354069917", 0, intentionProvider);
-      typeCheckingContext.createEquation((SNode)typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1207354069919", true), (SNode)new _Quotations.QuotationClass_77().createNode(typeCheckingContext.getEquationManager().getRepresentator(ConceptFromOpParm_typevar_1207354069912), typeCheckingContext), info);
+      EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1207354069917", 0, intentionProvider);
+      typeCheckingContext.createEquation((SNode)typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1207354069919", true), (SNode)new _Quotations.QuotationClass_77().createNode(typeCheckingContext.getEquationManager().getRepresentator(ConceptFromOpParm_typevar_1207354069912), typeCheckingContext), _info_12389875345);
     }
   }
 

@@ -19,8 +19,8 @@ public class typeof_AsPattern_InferenceRule extends AbstractInferenceRule_Runtim
     {
       SNode _nodeToCheck_1029348928467 = nodeToCheck;
       BaseIntentionProvider intentionProvider = null;
-      EquationInfo info = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c89590343(jetbrains.mps.lang.pattern.typesystem)", "1202491123370", 0, intentionProvider);
-      typeCheckingContext.createEquation((SNode)typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c89590343(jetbrains.mps.lang.pattern.typesystem)", "1202491120336", true), (SNode)new _Quotations.QuotationClass_5().createNode(SNodeOperations.getConceptDeclaration(SNodeOperations.getParent(nodeToCheck)), typeCheckingContext), info);
+      EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c89590343(jetbrains.mps.lang.pattern.typesystem)", "1202491123370", 0, intentionProvider);
+      typeCheckingContext.createEquation((SNode)typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c89590343(jetbrains.mps.lang.pattern.typesystem)", "1202491120336", true), (SNode)new _Quotations.QuotationClass_5().createNode(SNodeOperations.getConceptDeclaration(SNodeOperations.getParent(nodeToCheck)), typeCheckingContext), _info_12389875345);
     }
   }
 

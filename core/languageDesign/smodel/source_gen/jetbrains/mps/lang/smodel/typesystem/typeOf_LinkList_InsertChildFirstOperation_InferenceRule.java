@@ -25,17 +25,17 @@ public class typeOf_LinkList_InsertChildFirstOperation_InferenceRule extends Abs
       {
         SNode _nodeToCheck_1029348928467 = op;
         BaseIntentionProvider intentionProvider = null;
-        EquationInfo info = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1205272570108", 0, intentionProvider);
-        info.setInequationGroup("default");
-        typeCheckingContext.createLessThanInequation((SNode)parmType, (SNode)typeCheckingContext.getEquationManager().getRepresentator(ExpectedType_typevar_1206101286415), false, info);
+        EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1205272570108", 0, intentionProvider);
+        _info_12389875345.setInequationGroup("default");
+        typeCheckingContext.createLessThanInequation((SNode)parmType, (SNode)typeCheckingContext.getEquationManager().getRepresentator(ExpectedType_typevar_1206101286415), false, _info_12389875345);
       }
     }
     // op returns node passed in parameter
     {
       SNode _nodeToCheck_1029348928467 = op;
       BaseIntentionProvider intentionProvider = null;
-      EquationInfo info = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1225407664153", 0, intentionProvider);
-      typeCheckingContext.createEquation((SNode)typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1225407664160", true), (SNode)typeCheckingContext.typeOf(SLinkOperations.getTarget(op, "childNode", true), "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1225407664155", true), info);
+      EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1225407664153", 0, intentionProvider);
+      typeCheckingContext.createEquation((SNode)typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1225407664160", true), (SNode)typeCheckingContext.typeOf(SLinkOperations.getTarget(op, "childNode", true), "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1225407664155", true), _info_12389875345);
     }
   }
 

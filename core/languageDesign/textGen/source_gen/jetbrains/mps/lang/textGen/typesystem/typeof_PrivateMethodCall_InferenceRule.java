@@ -19,8 +19,8 @@ public class typeof_PrivateMethodCall_InferenceRule extends AbstractInferenceRul
     {
       SNode _nodeToCheck_1029348928467 = privateMethodCall;
       BaseIntentionProvider intentionProvider = null;
-      EquationInfo info = new EquationInfo(_nodeToCheck_1029348928467, null, "r:f568ac81-f20d-491c-8e81-330fbdff24e6(jetbrains.mps.lang.textGen.typesystem)", "1236690987866", 0, intentionProvider);
-      typeCheckingContext.createEquation((SNode)typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:f568ac81-f20d-491c-8e81-330fbdff24e6(jetbrains.mps.lang.textGen.typesystem)", "1236690972003", true), (SNode)SLinkOperations.getTarget(SLinkOperations.getTarget(privateMethodCall, "function", false), "returnType", true), info);
+      EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:f568ac81-f20d-491c-8e81-330fbdff24e6(jetbrains.mps.lang.textGen.typesystem)", "1236690987866", 0, intentionProvider);
+      typeCheckingContext.createEquation((SNode)typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:f568ac81-f20d-491c-8e81-330fbdff24e6(jetbrains.mps.lang.textGen.typesystem)", "1236690972003", true), (SNode)SLinkOperations.getTarget(SLinkOperations.getTarget(privateMethodCall, "function", false), "returnType", true), _info_12389875345);
     }
   }
 

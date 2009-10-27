@@ -22,8 +22,8 @@ public class typeof_ConceptFunctionParameter_childNode_InferenceRule extends Abs
       {
         SNode _nodeToCheck_1029348928467 = node;
         BaseIntentionProvider intentionProvider = null;
-        EquationInfo info = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c8959029a(jetbrains.mps.lang.editor.typesystem)", "1223982086270", 0, intentionProvider);
-        typeCheckingContext.createEquation((SNode)typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c8959029a(jetbrains.mps.lang.editor.typesystem)", "1223982086275", true), (SNode)new _Quotations.QuotationClass_6().createNode(SLinkOperations.getTarget(SLinkOperations.getTarget(refNodeList, "relationDeclaration", false), "target", false), typeCheckingContext), info);
+        EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c8959029a(jetbrains.mps.lang.editor.typesystem)", "1223982086270", 0, intentionProvider);
+        typeCheckingContext.createEquation((SNode)typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c8959029a(jetbrains.mps.lang.editor.typesystem)", "1223982086275", true), (SNode)new _Quotations.QuotationClass_6().createNode(SLinkOperations.getTarget(SLinkOperations.getTarget(refNodeList, "relationDeclaration", false), "target", false), typeCheckingContext), _info_12389875345);
       }
     }
   }

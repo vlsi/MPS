@@ -21,8 +21,8 @@ public class typeof_Quotation_InferenceRule extends AbstractInferenceRule_Runtim
     {
       SNode _nodeToCheck_1029348928467 = quotationNode;
       BaseIntentionProvider intentionProvider = null;
-      EquationInfo info = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c8959034a(jetbrains.mps.lang.quotation.typesystem)", "1196858483110", 0, intentionProvider);
-      typeCheckingContext.createEquation((SNode)typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c8959034a(jetbrains.mps.lang.quotation.typesystem)", "1196858483112", true), (SNode)new _Quotations.QuotationClass_0().createNode(SNodeOperations.getConceptDeclaration(SLinkOperations.getTarget(quotationNode, "quotedNode", true)), typeCheckingContext), info);
+      EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c8959034a(jetbrains.mps.lang.quotation.typesystem)", "1196858483110", 0, intentionProvider);
+      typeCheckingContext.createEquation((SNode)typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c8959034a(jetbrains.mps.lang.quotation.typesystem)", "1196858483112", true), (SNode)new _Quotations.QuotationClass_0().createNode(SNodeOperations.getConceptDeclaration(SLinkOperations.getTarget(quotationNode, "quotedNode", true)), typeCheckingContext), _info_12389875345);
     }
   }
 

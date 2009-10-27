@@ -19,8 +19,8 @@ public class typeof_ActionParameterReferenceOperation_InferenceRule extends Abst
     {
       SNode _nodeToCheck_1029348928467 = parameterReferenceOperation;
       BaseIntentionProvider intentionProvider = null;
-      EquationInfo info = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c89590364(jetbrains.mps.lang.plugin.typesystem)", "1206093159061", 0, intentionProvider);
-      typeCheckingContext.createEquation((SNode)typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c89590364(jetbrains.mps.lang.plugin.typesystem)", "1206093151683", true), (SNode)SLinkOperations.getTarget(SLinkOperations.getTarget(parameterReferenceOperation, "member", false), "type", true), info);
+      EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c89590364(jetbrains.mps.lang.plugin.typesystem)", "1206093159061", 0, intentionProvider);
+      typeCheckingContext.createEquation((SNode)typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c89590364(jetbrains.mps.lang.plugin.typesystem)", "1206093151683", true), (SNode)SLinkOperations.getTarget(SLinkOperations.getTarget(parameterReferenceOperation, "member", false), "type", true), _info_12389875345);
     }
   }
 

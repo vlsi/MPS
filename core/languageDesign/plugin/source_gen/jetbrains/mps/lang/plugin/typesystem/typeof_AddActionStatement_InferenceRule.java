@@ -19,9 +19,9 @@ public class typeof_AddActionStatement_InferenceRule extends AbstractInferenceRu
     {
       SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(addActionStatement, "expression", true);
       BaseIntentionProvider intentionProvider = null;
-      EquationInfo info = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c89590364(jetbrains.mps.lang.plugin.typesystem)", "1207145552839", 0, intentionProvider);
-      info.setInequationGroup("default");
-      typeCheckingContext.createLessThanInequationStrong((SNode)typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c89590364(jetbrains.mps.lang.plugin.typesystem)", "1207145538621", true), (SNode)new _Quotations.QuotationClass_5().createNode(typeCheckingContext), true, info);
+      EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c89590364(jetbrains.mps.lang.plugin.typesystem)", "1207145552839", 0, intentionProvider);
+      _info_12389875345.setInequationGroup("default");
+      typeCheckingContext.createLessThanInequationStrong((SNode)typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c89590364(jetbrains.mps.lang.plugin.typesystem)", "1207145538621", true), (SNode)new _Quotations.QuotationClass_5().createNode(typeCheckingContext), true, _info_12389875345);
     }
   }
 

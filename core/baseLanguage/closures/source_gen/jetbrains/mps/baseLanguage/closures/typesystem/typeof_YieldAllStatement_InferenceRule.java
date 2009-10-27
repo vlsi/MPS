@@ -20,9 +20,9 @@ public class typeof_YieldAllStatement_InferenceRule extends AbstractInferenceRul
     {
       SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(statement, "expression", true);
       BaseIntentionProvider intentionProvider = null;
-      EquationInfo info = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c89590337(jetbrains.mps.baseLanguage.closures.typesystem)", "1228998112076", 0, intentionProvider);
-      info.setInequationGroup("default");
-      typeCheckingContext.createLessThanInequation((SNode)typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c89590337(jetbrains.mps.baseLanguage.closures.typesystem)", "1228998118192", true), (SNode)new _Quotations.QuotationClass_3().createNode(typeCheckingContext.getEquationManager().getRepresentator(elementType_typevar_1228998160752), typeCheckingContext.getEquationManager().getRepresentator(elementType_typevar_1228998160752), typeCheckingContext), false, info);
+      EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c89590337(jetbrains.mps.baseLanguage.closures.typesystem)", "1228998112076", 0, intentionProvider);
+      _info_12389875345.setInequationGroup("default");
+      typeCheckingContext.createLessThanInequation((SNode)typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c89590337(jetbrains.mps.baseLanguage.closures.typesystem)", "1228998118192", true), (SNode)new _Quotations.QuotationClass_3().createNode(typeCheckingContext.getEquationManager().getRepresentator(elementType_typevar_1228998160752), typeCheckingContext.getEquationManager().getRepresentator(elementType_typevar_1228998160752), typeCheckingContext), false, _info_12389875345);
     }
   }
 

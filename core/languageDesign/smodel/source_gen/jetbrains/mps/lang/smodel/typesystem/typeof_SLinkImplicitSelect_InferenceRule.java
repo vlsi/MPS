@@ -19,8 +19,8 @@ public class typeof_SLinkImplicitSelect_InferenceRule extends AbstractInferenceR
     {
       SNode _nodeToCheck_1029348928467 = implicitSelect;
       BaseIntentionProvider intentionProvider = null;
-      EquationInfo info = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "8405512791876070126", 0, intentionProvider);
-      typeCheckingContext.createEquation((SNode)typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "8405512791876070123", true), (SNode)new _Quotations.QuotationClass_128().createNode(SLinkOperations.getTarget(SLinkOperations.getTarget(implicitSelect, "link", false), "target", false), typeCheckingContext), info);
+      EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "8405512791876070126", 0, intentionProvider);
+      typeCheckingContext.createEquation((SNode)typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "8405512791876070123", true), (SNode)new _Quotations.QuotationClass_128().createNode(SLinkOperations.getTarget(SLinkOperations.getTarget(implicitSelect, "link", false), "target", false), typeCheckingContext), _info_12389875345);
     }
   }
 

@@ -21,17 +21,17 @@ public class typeof_Node_InsertPrevSiblingOperation_InferenceRule extends Abstra
       {
         SNode _nodeToCheck_1029348928467 = parameter;
         BaseIntentionProvider intentionProvider = null;
-        EquationInfo info = new EquationInfo(_nodeToCheck_1029348928467, "incompatible type: snode expected", "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1186057110413", 0, intentionProvider);
-        info.setInequationGroup("default");
-        typeCheckingContext.createLessThanInequationStrong((SNode)typeCheckingContext.typeOf(parameter, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1186057110415", true), (SNode)new _Quotations.QuotationClass_14().createNode(typeCheckingContext), false, info);
+        EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, "incompatible type: snode expected", "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1186057110413", 0, intentionProvider);
+        _info_12389875345.setInequationGroup("default");
+        typeCheckingContext.createLessThanInequationStrong((SNode)typeCheckingContext.typeOf(parameter, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1186057110415", true), (SNode)new _Quotations.QuotationClass_14().createNode(typeCheckingContext), false, _info_12389875345);
       }
     }
     // op returns node passed in parameter
     {
       SNode _nodeToCheck_1029348928467 = op;
       BaseIntentionProvider intentionProvider = null;
-      EquationInfo info = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1225408525102", 0, intentionProvider);
-      typeCheckingContext.createEquation((SNode)typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1225408525109", true), (SNode)typeCheckingContext.typeOf(SLinkOperations.getTarget(op, "insertedNode", true), "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1225408525104", true), info);
+      EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1225408525102", 0, intentionProvider);
+      typeCheckingContext.createEquation((SNode)typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1225408525109", true), (SNode)typeCheckingContext.typeOf(SLinkOperations.getTarget(op, "insertedNode", true), "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1225408525104", true), _info_12389875345);
     }
   }
 

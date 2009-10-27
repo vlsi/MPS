@@ -47,9 +47,10 @@ public class namedTuple_assignableTo_namedTuple_InequationReplacementRule extend
         {
           SNode _nodeToCheck_1029348928467 = equationInfo.getNodeWithError();
           BaseIntentionProvider intentionProvider = null;
-          EquationInfo info = new EquationInfo(_nodeToCheck_1029348928467, null, "r:e119dbbd-3529-4067-8bad-6b9edd79d0b6(jetbrains.mps.baseLanguage.tuples.typesystem)", "1239968769054", 0, intentionProvider);
-          info.setInequationGroup("default");
-          typeCheckingContext.createLessThanInequation((SNode)lp, (SNode)rp, false, info);
+          EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:e119dbbd-3529-4067-8bad-6b9edd79d0b6(jetbrains.mps.baseLanguage.tuples.typesystem)", "1239968769054", 0, intentionProvider);
+          _info_12389875345.pushOuterRuleId((equationInfo).getRuleModel(), (equationInfo).getRuleId());
+          _info_12389875345.setInequationGroup("default");
+          typeCheckingContext.createLessThanInequation((SNode)lp, (SNode)rp, false, _info_12389875345);
         }
       }
     }

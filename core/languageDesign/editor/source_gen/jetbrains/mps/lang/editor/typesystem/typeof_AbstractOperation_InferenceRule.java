@@ -19,8 +19,8 @@ public class typeof_AbstractOperation_InferenceRule extends AbstractInferenceRul
     {
       SNode _nodeToCheck_1029348928467 = operation;
       BaseIntentionProvider intentionProvider = null;
-      EquationInfo info = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c8959029a(jetbrains.mps.lang.editor.typesystem)", "4531786690999950596", 0, intentionProvider);
-      typeCheckingContext.createEquation((SNode)typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c8959029a(jetbrains.mps.lang.editor.typesystem)", "4531786690999950590", true), (SNode)SConceptOperations.createNewNode("jetbrains.mps.lang.editor.structure.StyledTextType", null), info);
+      EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c8959029a(jetbrains.mps.lang.editor.typesystem)", "4531786690999950596", 0, intentionProvider);
+      typeCheckingContext.createEquation((SNode)typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c8959029a(jetbrains.mps.lang.editor.typesystem)", "4531786690999950590", true), (SNode)SConceptOperations.createNewNode("jetbrains.mps.lang.editor.structure.StyledTextType", null), _info_12389875345);
     }
   }
 

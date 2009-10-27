@@ -19,8 +19,8 @@ public class typeof_RequiredAdditionalArgumentReference_InferenceRule extends Ab
     {
       SNode _nodeToCheck_1029348928467 = requiredAdditionalArgumentReference;
       BaseIntentionProvider intentionProvider = null;
-      EquationInfo info = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c89590316(jetbrains.mps.lang.refactoring.typesystem)", "1190728604337", 0, intentionProvider);
-      typeCheckingContext.createEquation((SNode)typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c89590316(jetbrains.mps.lang.refactoring.typesystem)", "1190728598662", true), (SNode)typeCheckingContext.typeOf(SLinkOperations.getTarget(requiredAdditionalArgumentReference, "argument", false), "r:00000000-0000-4000-0000-011c89590316(jetbrains.mps.lang.refactoring.typesystem)", "1190728606544", true), info);
+      EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c89590316(jetbrains.mps.lang.refactoring.typesystem)", "1190728604337", 0, intentionProvider);
+      typeCheckingContext.createEquation((SNode)typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c89590316(jetbrains.mps.lang.refactoring.typesystem)", "1190728598662", true), (SNode)typeCheckingContext.typeOf(SLinkOperations.getTarget(requiredAdditionalArgumentReference, "argument", false), "r:00000000-0000-4000-0000-011c89590316(jetbrains.mps.lang.refactoring.typesystem)", "1190728606544", true), _info_12389875345);
     }
   }
 

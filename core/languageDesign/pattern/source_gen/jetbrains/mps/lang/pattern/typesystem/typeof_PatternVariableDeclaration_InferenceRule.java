@@ -24,8 +24,8 @@ public class typeof_PatternVariableDeclaration_InferenceRule extends AbstractInf
       {
         SNode _nodeToCheck_1029348928467 = nodeToCheck;
         BaseIntentionProvider intentionProvider = null;
-        EquationInfo info = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c89590343(jetbrains.mps.lang.pattern.typesystem)", "1202488480088", 0, intentionProvider);
-        typeCheckingContext.createEquation((SNode)typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c89590343(jetbrains.mps.lang.pattern.typesystem)", "1202488469553", true), (SNode)new _Quotations.QuotationClass_3().createNode(typeCheckingContext), info);
+        EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c89590343(jetbrains.mps.lang.pattern.typesystem)", "1202488480088", 0, intentionProvider);
+        typeCheckingContext.createEquation((SNode)typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c89590343(jetbrains.mps.lang.pattern.typesystem)", "1202488469553", true), (SNode)new _Quotations.QuotationClass_3().createNode(typeCheckingContext), _info_12389875345);
       }
     } else {
       String role = attributedNode.getRole_();
@@ -33,8 +33,8 @@ public class typeof_PatternVariableDeclaration_InferenceRule extends AbstractInf
       {
         SNode _nodeToCheck_1029348928467 = nodeToCheck;
         BaseIntentionProvider intentionProvider = null;
-        EquationInfo info = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c89590343(jetbrains.mps.lang.pattern.typesystem)", "1202488496543", 0, intentionProvider);
-        typeCheckingContext.createEquation((SNode)typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c89590343(jetbrains.mps.lang.pattern.typesystem)", "1202488496552", true), (SNode)new _Quotations.QuotationClass_4().createNode(SLinkOperations.getTarget(linkDeclaration, "target", false), typeCheckingContext), info);
+        EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c89590343(jetbrains.mps.lang.pattern.typesystem)", "1202488496543", 0, intentionProvider);
+        typeCheckingContext.createEquation((SNode)typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c89590343(jetbrains.mps.lang.pattern.typesystem)", "1202488496552", true), (SNode)new _Quotations.QuotationClass_4().createNode(SLinkOperations.getTarget(linkDeclaration, "target", false), typeCheckingContext), _info_12389875345);
       }
     }
   }

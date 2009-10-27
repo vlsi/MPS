@@ -42,10 +42,11 @@ public class FunctionType_subtypeOf_FunctionType_InequationReplacementRule exten
     {
       SNode _nodeToCheck_1029348928467 = equationInfo.getNodeWithError();
       BaseIntentionProvider intentionProvider = null;
-      EquationInfo info = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c89590337(jetbrains.mps.baseLanguage.closures.typesystem)", "4160512568111333309", 0, intentionProvider);
-      info.setInequationGroup("priority_1_1759628044690732298");
-      info.addInequationGroupBefore("default");
-      typeCheckingContext.createLessThanInequation((SNode)new _Quotations.QuotationClass_15().createNode(SLinkOperations.getTarget(subtype, "resultType", true), typeCheckingContext), (SNode)SLinkOperations.getTarget(supertype, "resultType", true), false, info);
+      EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c89590337(jetbrains.mps.baseLanguage.closures.typesystem)", "4160512568111333309", 0, intentionProvider);
+      _info_12389875345.pushOuterRuleId((equationInfo).getRuleModel(), (equationInfo).getRuleId());
+      _info_12389875345.setInequationGroup("priority_1_1759628044690732298");
+      _info_12389875345.addInequationGroupBefore("default");
+      typeCheckingContext.createLessThanInequation((SNode)new _Quotations.QuotationClass_15().createNode(SLinkOperations.getTarget(subtype, "resultType", true), typeCheckingContext), (SNode)SLinkOperations.getTarget(supertype, "resultType", true), false, _info_12389875345);
     }
     if (SNodeOperations.isInstanceOf(subtype, "jetbrains.mps.baseLanguage.closures.structure.UnrestrictedFunctionType") && SNodeOperations.isInstanceOf(supertype, "jetbrains.mps.baseLanguage.closures.structure.UnrestrictedFunctionType")) {
       {
@@ -56,9 +57,10 @@ public class FunctionType_subtypeOf_FunctionType_InequationReplacementRule exten
               {
                 SNode _nodeToCheck_1029348928467 = equationInfo.getNodeWithError();
                 BaseIntentionProvider intentionProvider = null;
-                EquationInfo info = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c89590337(jetbrains.mps.baseLanguage.closures.typesystem)", "1237814209725", 0, intentionProvider);
-                info.setInequationGroup("default");
-                typeCheckingContext.createLessThanInequation((SNode)SLinkOperations.getTarget(SNodeOperations.cast(subtype, "jetbrains.mps.baseLanguage.closures.structure.UnrestrictedFunctionType"), "terminateType", true), (SNode)typeCheckingContext.getEquationManager().getRepresentator(superTerminate), false, info);
+                EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c89590337(jetbrains.mps.baseLanguage.closures.typesystem)", "1237814209725", 0, intentionProvider);
+                _info_12389875345.pushOuterRuleId((equationInfo).getRuleModel(), (equationInfo).getRuleId());
+                _info_12389875345.setInequationGroup("default");
+                typeCheckingContext.createLessThanInequation((SNode)SLinkOperations.getTarget(SNodeOperations.cast(subtype, "jetbrains.mps.baseLanguage.closures.structure.UnrestrictedFunctionType"), "terminateType", true), (SNode)typeCheckingContext.getEquationManager().getRepresentator(superTerminate), false, _info_12389875345);
               }
             }
           }
@@ -82,9 +84,10 @@ public class FunctionType_subtypeOf_FunctionType_InequationReplacementRule exten
         {
           SNode _nodeToCheck_1029348928467 = equationInfo.getNodeWithError();
           BaseIntentionProvider intentionProvider = null;
-          EquationInfo info = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c89590337(jetbrains.mps.baseLanguage.closures.typesystem)", "1201614990748", 0, intentionProvider);
-          info.setInequationGroup("default");
-          typeCheckingContext.createLessThanInequation((SNode)paramType2, (SNode)paramType1, false, info);
+          EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c89590337(jetbrains.mps.baseLanguage.closures.typesystem)", "1201614990748", 0, intentionProvider);
+          _info_12389875345.pushOuterRuleId((equationInfo).getRuleModel(), (equationInfo).getRuleId());
+          _info_12389875345.setInequationGroup("default");
+          typeCheckingContext.createLessThanInequation((SNode)paramType2, (SNode)paramType1, false, _info_12389875345);
         }
       }
     }
@@ -96,9 +99,10 @@ public class FunctionType_subtypeOf_FunctionType_InequationReplacementRule exten
       {
         SNode _nodeToCheck_1029348928467 = equationInfo.getNodeWithError();
         BaseIntentionProvider intentionProvider = null;
-        EquationInfo info = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c89590337(jetbrains.mps.baseLanguage.closures.typesystem)", "1214834519072", 0, intentionProvider);
-        info.setInequationGroup("default");
-        typeCheckingContext.createLessThanInequation((SNode)subThrows, (SNode)join, false, info);
+        EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c89590337(jetbrains.mps.baseLanguage.closures.typesystem)", "1214834519072", 0, intentionProvider);
+        _info_12389875345.pushOuterRuleId((equationInfo).getRuleModel(), (equationInfo).getRuleId());
+        _info_12389875345.setInequationGroup("default");
+        typeCheckingContext.createLessThanInequation((SNode)subThrows, (SNode)join, false, _info_12389875345);
       }
     }
   }

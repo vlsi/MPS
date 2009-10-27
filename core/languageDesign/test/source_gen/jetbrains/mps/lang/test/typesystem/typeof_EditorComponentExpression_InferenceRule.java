@@ -18,8 +18,8 @@ public class typeof_EditorComponentExpression_InferenceRule extends AbstractInfe
     {
       SNode _nodeToCheck_1029348928467 = expression;
       BaseIntentionProvider intentionProvider = null;
-      EquationInfo info = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c89590385(jetbrains.mps.lang.test.typesystem)", "5773579205430190112", 0, intentionProvider);
-      typeCheckingContext.createEquation((SNode)typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c89590385(jetbrains.mps.lang.test.typesystem)", "5773579205430190117", true), (SNode)new _Quotations.QuotationClass_6().createNode(typeCheckingContext), info);
+      EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c89590385(jetbrains.mps.lang.test.typesystem)", "5773579205430190112", 0, intentionProvider);
+      typeCheckingContext.createEquation((SNode)typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c89590385(jetbrains.mps.lang.test.typesystem)", "5773579205430190117", true), (SNode)new _Quotations.QuotationClass_6().createNode(typeCheckingContext), _info_12389875345);
     }
   }
 

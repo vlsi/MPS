@@ -19,8 +19,8 @@ public class typeof_TreeMapCreator_InferenceRule extends AbstractInferenceRule_R
     {
       SNode _nodeToCheck_1029348928467 = creator;
       BaseIntentionProvider intentionProvider = null;
-      EquationInfo info = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)", "1240239601988", 0, intentionProvider);
-      typeCheckingContext.createEquation((SNode)typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)", "1240239597471", true), (SNode)new _Quotations.QuotationClass_124().createNode(SLinkOperations.getTarget(creator, "keyType", true), SLinkOperations.getTarget(creator, "valueType", true), typeCheckingContext), info);
+      EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)", "1240239601988", 0, intentionProvider);
+      typeCheckingContext.createEquation((SNode)typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)", "1240239597471", true), (SNode)new _Quotations.QuotationClass_124().createNode(SLinkOperations.getTarget(creator, "keyType", true), SLinkOperations.getTarget(creator, "valueType", true), typeCheckingContext), _info_12389875345);
     }
   }
 

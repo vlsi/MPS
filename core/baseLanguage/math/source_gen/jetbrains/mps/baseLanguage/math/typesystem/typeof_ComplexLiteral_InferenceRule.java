@@ -25,14 +25,14 @@ public class typeof_ComplexLiteral_InferenceRule extends AbstractInferenceRule_R
     {
       SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(literal, "real", true);
       BaseIntentionProvider intentionProvider = null;
-      EquationInfo info = new EquationInfo(_nodeToCheck_1029348928467, null, "r:47d0f24b-df34-4ea0-aa7e-7c2eb0f88f31(jetbrains.mps.baseLanguage.math.typesystem)", "1238420360405", 0, intentionProvider);
-      typeCheckingContext.createEquation((SNode)typeCheckingContext.getEquationManager().getRepresentator(tR_typevar_1238420360404), (SNode)typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:47d0f24b-df34-4ea0-aa7e-7c2eb0f88f31(jetbrains.mps.baseLanguage.math.typesystem)", "1238420360409", true), info);
+      EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:47d0f24b-df34-4ea0-aa7e-7c2eb0f88f31(jetbrains.mps.baseLanguage.math.typesystem)", "1238420360405", 0, intentionProvider);
+      typeCheckingContext.createEquation((SNode)typeCheckingContext.getEquationManager().getRepresentator(tR_typevar_1238420360404), (SNode)typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:47d0f24b-df34-4ea0-aa7e-7c2eb0f88f31(jetbrains.mps.baseLanguage.math.typesystem)", "1238420360409", true), _info_12389875345);
     }
     {
       SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(literal, "imag", true);
       BaseIntentionProvider intentionProvider = null;
-      EquationInfo info = new EquationInfo(_nodeToCheck_1029348928467, null, "r:47d0f24b-df34-4ea0-aa7e-7c2eb0f88f31(jetbrains.mps.baseLanguage.math.typesystem)", "1238420383147", 0, intentionProvider);
-      typeCheckingContext.createEquation((SNode)typeCheckingContext.getEquationManager().getRepresentator(tI_typevar_1238420378223), (SNode)typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:47d0f24b-df34-4ea0-aa7e-7c2eb0f88f31(jetbrains.mps.baseLanguage.math.typesystem)", "1238420383151", true), info);
+      EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:47d0f24b-df34-4ea0-aa7e-7c2eb0f88f31(jetbrains.mps.baseLanguage.math.typesystem)", "1238420383147", 0, intentionProvider);
+      typeCheckingContext.createEquation((SNode)typeCheckingContext.getEquationManager().getRepresentator(tI_typevar_1238420378223), (SNode)typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:47d0f24b-df34-4ea0-aa7e-7c2eb0f88f31(jetbrains.mps.baseLanguage.math.typesystem)", "1238420383151", true), _info_12389875345);
     }
     {
       final SNode t1v = typeCheckingContext.getEquationManager().getRepresentator(tI_typevar_1238420378223);
@@ -47,15 +47,15 @@ public class typeof_ComplexLiteral_InferenceRule extends AbstractInferenceRule_R
                     {
                       SNode _nodeToCheck_1029348928467 = literal;
                       BaseIntentionProvider intentionProvider = null;
-                      EquationInfo info = new EquationInfo(_nodeToCheck_1029348928467, null, "r:47d0f24b-df34-4ea0-aa7e-7c2eb0f88f31(jetbrains.mps.baseLanguage.math.typesystem)", "1238426927645", 0, intentionProvider);
-                      typeCheckingContext.createEquation((SNode)typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:47d0f24b-df34-4ea0-aa7e-7c2eb0f88f31(jetbrains.mps.baseLanguage.math.typesystem)", "1238426927650", true), (SNode)SNodeOperations.copyNode(MathTypeUtil.qComplex), info);
+                      EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:47d0f24b-df34-4ea0-aa7e-7c2eb0f88f31(jetbrains.mps.baseLanguage.math.typesystem)", "1238426927645", 0, intentionProvider);
+                      typeCheckingContext.createEquation((SNode)typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:47d0f24b-df34-4ea0-aa7e-7c2eb0f88f31(jetbrains.mps.baseLanguage.math.typesystem)", "1238426927650", true), (SNode)SNodeOperations.copyNode(MathTypeUtil.qComplex), _info_12389875345);
                     }
                   } else if (TypeChecker.getInstance().getSubtypingManager().isSubtype(typeCheckingContext.getEquationManager().getRepresentator(tR_typevar_1238420360404), MathTypeUtil.qBigDecimal) && TypeChecker.getInstance().getSubtypingManager().isSubtype(typeCheckingContext.getEquationManager().getRepresentator(tI_typevar_1238420378223), MathTypeUtil.qBigDecimal)) {
                     {
                       SNode _nodeToCheck_1029348928467 = literal;
                       BaseIntentionProvider intentionProvider = null;
-                      EquationInfo info = new EquationInfo(_nodeToCheck_1029348928467, null, "r:47d0f24b-df34-4ea0-aa7e-7c2eb0f88f31(jetbrains.mps.baseLanguage.math.typesystem)", "1238426927669", 0, intentionProvider);
-                      typeCheckingContext.createEquation((SNode)typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:47d0f24b-df34-4ea0-aa7e-7c2eb0f88f31(jetbrains.mps.baseLanguage.math.typesystem)", "1238426927674", true), (SNode)SNodeOperations.copyNode(MathTypeUtil.qBigComplex), info);
+                      EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:47d0f24b-df34-4ea0-aa7e-7c2eb0f88f31(jetbrains.mps.baseLanguage.math.typesystem)", "1238426927669", 0, intentionProvider);
+                      typeCheckingContext.createEquation((SNode)typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:47d0f24b-df34-4ea0-aa7e-7c2eb0f88f31(jetbrains.mps.baseLanguage.math.typesystem)", "1238426927674", true), (SNode)SNodeOperations.copyNode(MathTypeUtil.qBigComplex), _info_12389875345);
                     }
                   } else {
                     {
@@ -72,15 +72,15 @@ public class typeof_ComplexLiteral_InferenceRule extends AbstractInferenceRule_R
               {
                 SNode _nodeToCheck_1029348928467 = literal;
                 BaseIntentionProvider intentionProvider = null;
-                EquationInfo info = new EquationInfo(_nodeToCheck_1029348928467, null, "r:47d0f24b-df34-4ea0-aa7e-7c2eb0f88f31(jetbrains.mps.baseLanguage.math.typesystem)", "1238426926358", 0, intentionProvider);
-                typeCheckingContext.createEquation((SNode)typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:47d0f24b-df34-4ea0-aa7e-7c2eb0f88f31(jetbrains.mps.baseLanguage.math.typesystem)", "1238426926363", true), (SNode)SNodeOperations.copyNode(MathTypeUtil.qComplex), info);
+                EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:47d0f24b-df34-4ea0-aa7e-7c2eb0f88f31(jetbrains.mps.baseLanguage.math.typesystem)", "1238426926358", 0, intentionProvider);
+                typeCheckingContext.createEquation((SNode)typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:47d0f24b-df34-4ea0-aa7e-7c2eb0f88f31(jetbrains.mps.baseLanguage.math.typesystem)", "1238426926363", true), (SNode)SNodeOperations.copyNode(MathTypeUtil.qComplex), _info_12389875345);
               }
             } else if (TypeChecker.getInstance().getSubtypingManager().isSubtype(typeCheckingContext.getEquationManager().getRepresentator(tI_typevar_1238420378223), MathTypeUtil.qBigDecimal)) {
               {
                 SNode _nodeToCheck_1029348928467 = literal;
                 BaseIntentionProvider intentionProvider = null;
-                EquationInfo info = new EquationInfo(_nodeToCheck_1029348928467, null, "r:47d0f24b-df34-4ea0-aa7e-7c2eb0f88f31(jetbrains.mps.baseLanguage.math.typesystem)", "1238426926382", 0, intentionProvider);
-                typeCheckingContext.createEquation((SNode)typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:47d0f24b-df34-4ea0-aa7e-7c2eb0f88f31(jetbrains.mps.baseLanguage.math.typesystem)", "1238426926387", true), (SNode)SNodeOperations.copyNode(MathTypeUtil.qBigComplex), info);
+                EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:47d0f24b-df34-4ea0-aa7e-7c2eb0f88f31(jetbrains.mps.baseLanguage.math.typesystem)", "1238426926382", 0, intentionProvider);
+                typeCheckingContext.createEquation((SNode)typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:47d0f24b-df34-4ea0-aa7e-7c2eb0f88f31(jetbrains.mps.baseLanguage.math.typesystem)", "1238426926387", true), (SNode)SNodeOperations.copyNode(MathTypeUtil.qBigComplex), _info_12389875345);
               }
             } else {
               {

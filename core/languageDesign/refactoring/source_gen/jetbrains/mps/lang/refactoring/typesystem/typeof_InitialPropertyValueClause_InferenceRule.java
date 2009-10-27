@@ -20,8 +20,8 @@ public class typeof_InitialPropertyValueClause_InferenceRule extends AbstractInf
     {
       SNode _nodeToCheck_1029348928467 = clause;
       BaseIntentionProvider intentionProvider = null;
-      EquationInfo info = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c89590316(jetbrains.mps.lang.refactoring.typesystem)", "6635062342941196770", 0, intentionProvider);
-      typeCheckingContext.createEquation((SNode)typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c89590316(jetbrains.mps.lang.refactoring.typesystem)", "6635062342941196767", true), (SNode)typeCheckingContext.typeOf(SLinkOperations.getTarget(SNodeOperations.getAncestor(clause, "jetbrains.mps.lang.refactoring.structure.MPSParameterChooser", false, false), "paramType", true), "r:00000000-0000-4000-0000-011c89590316(jetbrains.mps.lang.refactoring.typesystem)", "6635062342941196775", true), info);
+      EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c89590316(jetbrains.mps.lang.refactoring.typesystem)", "6635062342941196770", 0, intentionProvider);
+      typeCheckingContext.createEquation((SNode)typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c89590316(jetbrains.mps.lang.refactoring.typesystem)", "6635062342941196767", true), (SNode)typeCheckingContext.typeOf(SLinkOperations.getTarget(SNodeOperations.getAncestor(clause, "jetbrains.mps.lang.refactoring.structure.MPSParameterChooser", false, false), "paramType", true), "r:00000000-0000-4000-0000-011c89590316(jetbrains.mps.lang.refactoring.typesystem)", "6635062342941196775", true), _info_12389875345);
     }
   }
 

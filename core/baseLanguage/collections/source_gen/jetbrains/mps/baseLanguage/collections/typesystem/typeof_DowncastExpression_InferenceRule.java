@@ -31,8 +31,8 @@ public class typeof_DowncastExpression_InferenceRule extends AbstractInferenceRu
               {
                 SNode _nodeToCheck_1029348928467 = expression;
                 BaseIntentionProvider intentionProvider = null;
-                EquationInfo info = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)", "1228231787457", 0, intentionProvider);
-                typeCheckingContext.createEquation((SNode)typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)", "1228231710394", true), (SNode)ClassifierTypeUtil.getTypeCoercedToClassifierType(coercedNode_0), info);
+                EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)", "1228231787457", 0, intentionProvider);
+                typeCheckingContext.createEquation((SNode)typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)", "1228231710394", true), (SNode)ClassifierTypeUtil.getTypeCoercedToClassifierType(coercedNode_0), _info_12389875345);
               }
             } else {
             }

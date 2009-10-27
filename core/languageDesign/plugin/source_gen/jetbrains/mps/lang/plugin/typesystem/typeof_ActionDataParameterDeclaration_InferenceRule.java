@@ -19,8 +19,8 @@ public class typeof_ActionDataParameterDeclaration_InferenceRule extends Abstrac
     {
       SNode _nodeToCheck_1029348928467 = declaration;
       BaseIntentionProvider intentionProvider = null;
-      EquationInfo info = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c89590364(jetbrains.mps.lang.plugin.typesystem)", "1217412036054", 0, intentionProvider);
-      typeCheckingContext.createEquation((SNode)typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c89590364(jetbrains.mps.lang.plugin.typesystem)", "1217412020643", true), (SNode)ActionParameter_Behavior.call_getType_1171743928471337193(declaration), info);
+      EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c89590364(jetbrains.mps.lang.plugin.typesystem)", "1217412036054", 0, intentionProvider);
+      typeCheckingContext.createEquation((SNode)typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c89590364(jetbrains.mps.lang.plugin.typesystem)", "1217412020643", true), (SNode)ActionParameter_Behavior.call_getType_1171743928471337193(declaration), _info_12389875345);
     }
   }
 

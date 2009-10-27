@@ -21,9 +21,9 @@ public class typeof_BaseCreatorTarget_InferenceRule extends AbstractInferenceRul
       {
         SNode _nodeToCheck_1029348928467 = target;
         BaseIntentionProvider intentionProvider = null;
-        EquationInfo info = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c89590364(jetbrains.mps.lang.plugin.typesystem)", "3856910426407530546", 0, intentionProvider);
-        info.setInequationGroup("default");
-        typeCheckingContext.createLessThanInequationStrong((SNode)typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c89590364(jetbrains.mps.lang.plugin.typesystem)", "3856910426407530548", true), (SNode)ListSequence.fromList(SLinkOperations.getConceptLinkTargets(target, "type")).first(), false, info);
+        EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c89590364(jetbrains.mps.lang.plugin.typesystem)", "3856910426407530546", 0, intentionProvider);
+        _info_12389875345.setInequationGroup("default");
+        typeCheckingContext.createLessThanInequationStrong((SNode)typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c89590364(jetbrains.mps.lang.plugin.typesystem)", "3856910426407530548", true), (SNode)ListSequence.fromList(SLinkOperations.getConceptLinkTargets(target, "type")).first(), false, _info_12389875345);
       }
     }
   }

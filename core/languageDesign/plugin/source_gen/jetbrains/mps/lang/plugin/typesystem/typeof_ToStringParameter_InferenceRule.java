@@ -19,8 +19,8 @@ public class typeof_ToStringParameter_InferenceRule extends AbstractInferenceRul
     {
       SNode _nodeToCheck_1029348928467 = parameter;
       BaseIntentionProvider intentionProvider = null;
-      EquationInfo info = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c89590364(jetbrains.mps.lang.plugin.typesystem)", "1227019453351", 0, intentionProvider);
-      typeCheckingContext.createEquation((SNode)typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c89590364(jetbrains.mps.lang.plugin.typesystem)", "1227019448910", true), (SNode)typeCheckingContext.typeOf(SNodeOperations.getAncestor(parameter, "jetbrains.mps.lang.plugin.structure.ActionConstructionParameterDeclaration", false, false), "r:00000000-0000-4000-0000-011c89590364(jetbrains.mps.lang.plugin.typesystem)", "1227019460887", true), info);
+      EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c89590364(jetbrains.mps.lang.plugin.typesystem)", "1227019453351", 0, intentionProvider);
+      typeCheckingContext.createEquation((SNode)typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c89590364(jetbrains.mps.lang.plugin.typesystem)", "1227019448910", true), (SNode)typeCheckingContext.typeOf(SNodeOperations.getAncestor(parameter, "jetbrains.mps.lang.plugin.structure.ActionConstructionParameterDeclaration", false, false), "r:00000000-0000-4000-0000-011c89590364(jetbrains.mps.lang.plugin.typesystem)", "1227019460887", true), _info_12389875345);
     }
   }
 

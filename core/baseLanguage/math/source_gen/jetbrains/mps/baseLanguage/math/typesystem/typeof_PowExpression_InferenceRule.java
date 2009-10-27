@@ -24,8 +24,8 @@ public class typeof_PowExpression_InferenceRule extends AbstractInferenceRule_Ru
     {
       SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(expression, "base", true);
       BaseIntentionProvider intentionProvider = null;
-      EquationInfo info = new EquationInfo(_nodeToCheck_1029348928467, null, "r:47d0f24b-df34-4ea0-aa7e-7c2eb0f88f31(jetbrains.mps.baseLanguage.math.typesystem)", "1238338983314", 0, intentionProvider);
-      typeCheckingContext.createEquation((SNode)typeCheckingContext.getEquationManager().getRepresentator(t1_typevar_1238338983313), (SNode)typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:47d0f24b-df34-4ea0-aa7e-7c2eb0f88f31(jetbrains.mps.baseLanguage.math.typesystem)", "1238338983318", true), info);
+      EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:47d0f24b-df34-4ea0-aa7e-7c2eb0f88f31(jetbrains.mps.baseLanguage.math.typesystem)", "1238338983314", 0, intentionProvider);
+      typeCheckingContext.createEquation((SNode)typeCheckingContext.getEquationManager().getRepresentator(t1_typevar_1238338983313), (SNode)typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:47d0f24b-df34-4ea0-aa7e-7c2eb0f88f31(jetbrains.mps.baseLanguage.math.typesystem)", "1238338983318", true), _info_12389875345);
     }
     {
       final SNode t1v = typeCheckingContext.getEquationManager().getRepresentator(t1_typevar_1238338983313);
@@ -35,29 +35,29 @@ public class typeof_PowExpression_InferenceRule extends AbstractInferenceRule_Ru
             {
               SNode _nodeToCheck_1029348928467 = expression;
               BaseIntentionProvider intentionProvider = null;
-              EquationInfo info = new EquationInfo(_nodeToCheck_1029348928467, null, "r:47d0f24b-df34-4ea0-aa7e-7c2eb0f88f31(jetbrains.mps.baseLanguage.math.typesystem)", "1238338983326", 0, intentionProvider);
-              typeCheckingContext.createEquation((SNode)typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:47d0f24b-df34-4ea0-aa7e-7c2eb0f88f31(jetbrains.mps.baseLanguage.math.typesystem)", "1238338983331", true), (SNode)SNodeOperations.copyNode(MathTypeUtil.qDouble), info);
+              EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:47d0f24b-df34-4ea0-aa7e-7c2eb0f88f31(jetbrains.mps.baseLanguage.math.typesystem)", "1238338983326", 0, intentionProvider);
+              typeCheckingContext.createEquation((SNode)typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:47d0f24b-df34-4ea0-aa7e-7c2eb0f88f31(jetbrains.mps.baseLanguage.math.typesystem)", "1238338983331", true), (SNode)SNodeOperations.copyNode(MathTypeUtil.qDouble), _info_12389875345);
             }
             {
               SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(expression, "exponent", true);
               BaseIntentionProvider intentionProvider = null;
-              EquationInfo info = new EquationInfo(_nodeToCheck_1029348928467, null, "r:47d0f24b-df34-4ea0-aa7e-7c2eb0f88f31(jetbrains.mps.baseLanguage.math.typesystem)", "1238339050393", 0, intentionProvider);
-              info.setInequationGroup("default");
-              typeCheckingContext.createLessThanInequation((SNode)typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:47d0f24b-df34-4ea0-aa7e-7c2eb0f88f31(jetbrains.mps.baseLanguage.math.typesystem)", "1238339041697", true), (SNode)SNodeOperations.copyNode(MathTypeUtil.qDouble), false, info);
+              EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:47d0f24b-df34-4ea0-aa7e-7c2eb0f88f31(jetbrains.mps.baseLanguage.math.typesystem)", "1238339050393", 0, intentionProvider);
+              _info_12389875345.setInequationGroup("default");
+              typeCheckingContext.createLessThanInequation((SNode)typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:47d0f24b-df34-4ea0-aa7e-7c2eb0f88f31(jetbrains.mps.baseLanguage.math.typesystem)", "1238339041697", true), (SNode)SNodeOperations.copyNode(MathTypeUtil.qDouble), false, _info_12389875345);
             }
           } else if (SNodeOperations.isInstanceOf(typeCheckingContext.getEquationManager().getRepresentator(t1_typevar_1238338983313), "jetbrains.mps.baseLanguage.math.structure.BigIntegerType") || SNodeOperations.isInstanceOf(typeCheckingContext.getEquationManager().getRepresentator(t1_typevar_1238338983313), "jetbrains.mps.baseLanguage.math.structure.BigDecimalType") || SNodeOperations.isInstanceOf(typeCheckingContext.getEquationManager().getRepresentator(t1_typevar_1238338983313), "jetbrains.mps.baseLanguage.math.structure.ComplexType")) {
             {
               SNode _nodeToCheck_1029348928467 = expression;
               BaseIntentionProvider intentionProvider = null;
-              EquationInfo info = new EquationInfo(_nodeToCheck_1029348928467, null, "r:47d0f24b-df34-4ea0-aa7e-7c2eb0f88f31(jetbrains.mps.baseLanguage.math.typesystem)", "1238339101308", 0, intentionProvider);
-              typeCheckingContext.createEquation((SNode)typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:47d0f24b-df34-4ea0-aa7e-7c2eb0f88f31(jetbrains.mps.baseLanguage.math.typesystem)", "1238339101315", true), (SNode)typeCheckingContext.typeOf(SLinkOperations.getTarget(expression, "base", true), "r:47d0f24b-df34-4ea0-aa7e-7c2eb0f88f31(jetbrains.mps.baseLanguage.math.typesystem)", "1238340594596", true), info);
+              EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:47d0f24b-df34-4ea0-aa7e-7c2eb0f88f31(jetbrains.mps.baseLanguage.math.typesystem)", "1238339101308", 0, intentionProvider);
+              typeCheckingContext.createEquation((SNode)typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:47d0f24b-df34-4ea0-aa7e-7c2eb0f88f31(jetbrains.mps.baseLanguage.math.typesystem)", "1238339101315", true), (SNode)typeCheckingContext.typeOf(SLinkOperations.getTarget(expression, "base", true), "r:47d0f24b-df34-4ea0-aa7e-7c2eb0f88f31(jetbrains.mps.baseLanguage.math.typesystem)", "1238340594596", true), _info_12389875345);
             }
             {
               SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(expression, "exponent", true);
               BaseIntentionProvider intentionProvider = null;
-              EquationInfo info = new EquationInfo(_nodeToCheck_1029348928467, "When power base has complex or big decimal type power exponent must have integer type", "r:47d0f24b-df34-4ea0-aa7e-7c2eb0f88f31(jetbrains.mps.baseLanguage.math.typesystem)", "1238339123613", 0, intentionProvider);
-              info.setInequationGroup("default");
-              typeCheckingContext.createLessThanInequation((SNode)typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:47d0f24b-df34-4ea0-aa7e-7c2eb0f88f31(jetbrains.mps.baseLanguage.math.typesystem)", "1238339118558", true), (SNode)SNodeOperations.copyNode(MathTypeUtil.qInt), false, info);
+              EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, "When power base has complex or big decimal type power exponent must have integer type", "r:47d0f24b-df34-4ea0-aa7e-7c2eb0f88f31(jetbrains.mps.baseLanguage.math.typesystem)", "1238339123613", 0, intentionProvider);
+              _info_12389875345.setInequationGroup("default");
+              typeCheckingContext.createLessThanInequation((SNode)typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:47d0f24b-df34-4ea0-aa7e-7c2eb0f88f31(jetbrains.mps.baseLanguage.math.typesystem)", "1238339118558", true), (SNode)SNodeOperations.copyNode(MathTypeUtil.qInt), false, _info_12389875345);
             }
           } else {
             {

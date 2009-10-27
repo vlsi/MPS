@@ -20,8 +20,8 @@ public class typeof_GetPreferenceComponentOperation_InferenceRule extends Abstra
     {
       SNode _nodeToCheck_1029348928467 = componentOperation;
       BaseIntentionProvider intentionProvider = null;
-      EquationInfo info = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c89590364(jetbrains.mps.lang.plugin.typesystem)", "1210184959921", 0, intentionProvider);
-      typeCheckingContext.createEquation((SNode)typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c89590364(jetbrains.mps.lang.plugin.typesystem)", "1210184954850", true), (SNode)IClassifier_Behavior.call_createType_1213877527970(SLinkOperations.getTarget(componentOperation, "componentDeclaration", false)), info);
+      EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c89590364(jetbrains.mps.lang.plugin.typesystem)", "1210184959921", 0, intentionProvider);
+      typeCheckingContext.createEquation((SNode)typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c89590364(jetbrains.mps.lang.plugin.typesystem)", "1210184954850", true), (SNode)IClassifier_Behavior.call_createType_1213877527970(SLinkOperations.getTarget(componentOperation, "componentDeclaration", false)), _info_12389875345);
     }
   }
 

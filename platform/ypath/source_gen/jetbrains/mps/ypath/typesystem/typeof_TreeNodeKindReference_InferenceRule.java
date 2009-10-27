@@ -20,8 +20,8 @@ public class typeof_TreeNodeKindReference_InferenceRule extends AbstractInferenc
     {
       SNode _nodeToCheck_1029348928467 = treeNodeKindReference;
       BaseIntentionProvider intentionProvider = null;
-      EquationInfo info = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895905aa(jetbrains.mps.ypath.typesystem)", "1179740556071", 0, intentionProvider);
-      typeCheckingContext.createEquation((SNode)typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895905aa(jetbrains.mps.ypath.typesystem)", "1179740518224", true), (SNode)new _Quotations.QuotationClass_4().createNode(TreePath_Behavior.call_getNodeType_1213877481303(SLinkOperations.getTarget(treeNodeKindReference, "treePathAspect", false)), typeCheckingContext), info);
+      EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895905aa(jetbrains.mps.ypath.typesystem)", "1179740556071", 0, intentionProvider);
+      typeCheckingContext.createEquation((SNode)typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895905aa(jetbrains.mps.ypath.typesystem)", "1179740518224", true), (SNode)new _Quotations.QuotationClass_4().createNode(TreePath_Behavior.call_getNodeType_1213877481303(SLinkOperations.getTarget(treeNodeKindReference, "treePathAspect", false)), typeCheckingContext), _info_12389875345);
     }
   }
 
