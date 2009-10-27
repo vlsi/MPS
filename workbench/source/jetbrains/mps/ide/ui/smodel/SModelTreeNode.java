@@ -383,19 +383,6 @@ public class SModelTreeNode extends MPSTreeNodeEx {
     return myInitialized;
   }
 
-  public List<SModelDescriptor> getSubfolderModels(Collection<SModelDescriptor> candidates) {
-    if (myModelDescriptor == null) return Collections.EMPTY_LIST;
-    List<SModelDescriptor> result = new ArrayList<SModelDescriptor>();
-    String modelName = myModelDescriptor.getLongName();
-    if (modelName == null) return result;
-    for (SModelDescriptor candidate : candidates) {
-      if (isSubfolderModel(candidate)) {
-        result.add(candidate);
-      }
-    }
-    return result;
-  }
-
   public boolean isSubfolderModel(SModelDescriptor candidate) {
     if (myModelDescriptor == null) return false;
     String modelName = myModelDescriptor.getLongName();
