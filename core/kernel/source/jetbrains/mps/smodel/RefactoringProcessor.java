@@ -171,32 +171,14 @@ public class RefactoringProcessor {
           public void run() {
             try {
               refactoring.refactor(refactoringContext);
+              if (refactoring instanceof ILoggableRefactoring) {
+                updateModels(modelDescriptor, refactoringContext, ((ILoggableRefactoring) refactoring), initialModelReference);
+              }
             } catch (Throwable t) {
               LOG.error("An exception occured while trying to execute refactoring " + refactoring.getUserFriendlyName() + ". Models could have been corrupted.", t);
             }
           }
         });
-
-        MPSProject mpsProject = refactoringContext.getSelectedMPSProject();
-
-        if (refactoring instanceof ILoggableRefactoring) {
-          ProgressManager.getInstance().run(new Modal(mpsProject.getComponent(Project.class), "Updating models...", false) {
-            public void run(@NotNull ProgressIndicator indicator) {
-              indicator.pushState();
-              try {
-                indicator.setIndeterminate(true);
-
-                ModelAccess.instance().runWriteAction(new Runnable() {
-                  public void run() {
-                    updateModels(modelDescriptor, refactoringContext, ((ILoggableRefactoring) refactoring), initialModelReference);
-                  }
-                });
-              } finally {
-                indicator.popState();
-              }
-            }
-          });
-        }
 
         if (refactoringContext.getDoesGenerateModels() && !modelsToGenerate.isEmpty()) {
           generateModels(modelsToGenerate, refactoringContext);
