@@ -178,6 +178,7 @@ public class TextLine {
       Integer style = myStyle.get(StyleAttributes.FONT_STYLE);
       int fontSize = styleFontSize != null ? styleFontSize : settings.getFontSize();
       myFont = getFont(family, style, fontSize);
+      myFontMetrics = null;
     }
 
     myPaddingLeft = getHorizontalInternalInset(myStyle.get(StyleAttributes.PADDING_LEFT));
