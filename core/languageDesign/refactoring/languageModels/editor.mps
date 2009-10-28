@@ -871,6 +871,15 @@
         <property name="noTargetText" value="&lt;no init block&gt;" />
         <link role="relationDeclaration" targetNodeId="1.5497648299878741976" />
       </node>
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="2869783065404837675">
+        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem" id="2869783065404837676">
+          <property name="flag" value="false" />
+        </node>
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode" id="2869783065404837672">
+        <property name="noTargetText" value="&lt;affected nodes&gt;" />
+        <link role="relationDeclaration" targetNodeId="1.1347577327951503399" />
+      </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="5497648299878742187">
         <node role="styleItem" type="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem" id="5497648299878742188">
           <property name="flag" value="false" />
@@ -897,15 +906,6 @@
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1347577327951503439">
         <node role="styleItem" type="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem" id="1347577327951503440">
-          <property name="flag" value="false" />
-        </node>
-      </node>
-      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode" id="1347577327951503441">
-        <property name="noTargetText" value="&lt;affected nodes&gt;" />
-        <link role="relationDeclaration" targetNodeId="1.1347577327951503399" />
-      </node>
-      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1347577327951503442">
-        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem" id="1347577327951503443">
           <property name="flag" value="false" />
         </node>
       </node>

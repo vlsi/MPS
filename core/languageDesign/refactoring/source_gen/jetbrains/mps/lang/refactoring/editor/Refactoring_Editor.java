@@ -51,16 +51,16 @@ public class Refactoring_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createRefNodeList_6756_1(editorContext, node));
     editorCell.addEditorCell(this.createConstant_6756_14(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_6756_6(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_6756_3(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_6756_3(editorContext, node));
     editorCell.addEditorCell(this.createConstant_6756_15(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_6756_7(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_6756_3(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_6756_2(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_6756_0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_6756_0(editorContext, node));
-    editorCell.addEditorCell(this.createRefNode_6756_3(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_6756_2(editorContext, node));
     editorCell.addEditorCell(this.createConstant_6756_1(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_6756_1(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_6756_2(editorContext, node));
-    editorCell.addEditorCell(this.createRefNode_6756_2(editorContext, node));
     return editorCell;
   }
 
@@ -292,23 +292,6 @@ public class Refactoring_Editor extends DefaultNodeEditor {
 
   private EditorCell createRefNode_6756_1(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
-    provider.setRole("affectedNodesBlock");
-    provider.setNoTargetText("<affected nodes>");
-    EditorCell editorCell;
-    editorCell = provider.createEditorCell(editorContext);
-    editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
-    SNode attributeConcept = provider.getRoleAttribute();
-    Class attributeKind = provider.getRoleAttributeClass();
-    if (attributeConcept != null) {
-      IOperationContext opContext = editorContext.getOperationContext();
-      EditorManager manager = EditorManager.getInstanceFromContext(opContext);
-      return manager.createRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
-    } else
-    return editorCell;
-  }
-
-  private EditorCell createRefNode_6756_2(EditorContext editorContext, SNode node) {
-    CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("updateModelBlock");
     provider.setNoTargetText("<non-loggable>");
     EditorCell editorCell;
@@ -324,10 +307,27 @@ public class Refactoring_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefNode_6756_3(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_6756_2(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("doWhenDoneBlock");
     provider.setNoTargetText("<no doWhenDoneBlock>");
+    EditorCell editorCell;
+    editorCell = provider.createEditorCell(editorContext);
+    editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
+    SNode attributeConcept = provider.getRoleAttribute();
+    Class attributeKind = provider.getRoleAttributeClass();
+    if (attributeConcept != null) {
+      IOperationContext opContext = editorContext.getOperationContext();
+      EditorManager manager = EditorManager.getInstanceFromContext(opContext);
+      return manager.createRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
+    } else
+    return editorCell;
+  }
+
+  private EditorCell createRefNode_6756_3(EditorContext editorContext, SNode node) {
+    CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
+    provider.setRole("affectedNodesBlock");
+    provider.setNoTargetText("<affected nodes>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
