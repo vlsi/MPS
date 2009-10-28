@@ -141,6 +141,8 @@ public class MoveConcepts extends BaseGeneratedRefactoring {
     }
     refactoringContext.moveNodesToModel(nodes, ((SModelDescriptor)refactoringContext.getParameter("targetModel")).getSModel());
     if (ListSequence.fromList(editors).isNotEmpty()) {
+      refactoringContext.computeCaches();
+      refactoringContext.updateModelWithMaps(editorModelDescriptor.getSModel());
       SModelDescriptor targetEditorModelDescriptor = targetLanguage.getEditorModelDescriptor();
       if (targetEditorModelDescriptor == null) {
         targetEditorModelDescriptor = LanguageAspect.EDITOR.createNew(targetLanguage);
@@ -151,6 +153,8 @@ public class MoveConcepts extends BaseGeneratedRefactoring {
       refactoringContext.updateModelWithMaps(editorModel);
     }
     if (ListSequence.fromList(behaviors).isNotEmpty()) {
+      refactoringContext.computeCaches();
+      refactoringContext.updateModelWithMaps(behaviorModelDescriptor.getSModel());
       SModelDescriptor targetBehaviorModelDescriptor = targetLanguage.getBehaviorModelDescriptor();
       if (targetBehaviorModelDescriptor == null) {
         targetBehaviorModelDescriptor = LanguageAspect.BEHAVIOR.createNew(targetLanguage);
@@ -161,6 +165,8 @@ public class MoveConcepts extends BaseGeneratedRefactoring {
       refactoringContext.updateModelWithMaps(behaviorModel);
     }
     if (ListSequence.fromList(constraints).isNotEmpty()) {
+      refactoringContext.computeCaches();
+      refactoringContext.updateModelWithMaps(constraintsModelDescriptor.getSModel());
       SModelDescriptor targetConstraintsModelDescriptor = targetLanguage.getConstraintsModelDescriptor();
       if (targetConstraintsModelDescriptor == null) {
         targetConstraintsModelDescriptor = LanguageAspect.CONSTRAINTS.createNew(targetLanguage);
@@ -171,6 +177,8 @@ public class MoveConcepts extends BaseGeneratedRefactoring {
       refactoringContext.updateModelWithMaps(constraintsModel);
     }
     if (ListSequence.fromList(dataFlows).isNotEmpty()) {
+      refactoringContext.computeCaches();
+      refactoringContext.updateModelWithMaps(dataflowModelDescriptor.getSModel());
       SModelDescriptor targetDataFlowModelDescriptor = targetLanguage.getDataFlowModelDescriptor();
       if (targetDataFlowModelDescriptor == null) {
         targetDataFlowModelDescriptor = LanguageAspect.DATA_FLOW.createNew(targetLanguage);

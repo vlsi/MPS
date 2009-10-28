@@ -867,6 +867,16 @@
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1198523148210">
           <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1198523148211">
+            <node role="statement" type="jetbrains.mps.lang.refactoring.structure.UpdateModelProcedure" id="1470666820232676970">
+              <node role="argument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1470666820232676973">
+                <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1470666820232676972">
+                  <link role="variableDeclaration" targetNodeId="1198521700206" resolveInfo="editorModelDescriptor" />
+                </node>
+                <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1470666820232677353">
+                  <link role="baseMethodDeclaration" targetNodeId="5.~SModelDescriptor.getSModel():jetbrains.mps.smodel.SModel" resolveInfo="getSModel" />
+                </node>
+              </node>
+            </node>
             <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1198523148212">
               <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1198523148213">
                 <property name="name" value="targetEditorModelDescriptor" />
@@ -951,6 +961,16 @@
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1198523135247">
           <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1198523135248">
+            <node role="statement" type="jetbrains.mps.lang.refactoring.structure.UpdateModelProcedure" id="1470666820232677354">
+              <node role="argument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1470666820232677355">
+                <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1470666820232677358">
+                  <link role="variableDeclaration" targetNodeId="1198521635841" resolveInfo="behaviorModelDescriptor" />
+                </node>
+                <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1470666820232677357">
+                  <link role="baseMethodDeclaration" targetNodeId="5.~SModelDescriptor.getSModel():jetbrains.mps.smodel.SModel" resolveInfo="getSModel" />
+                </node>
+              </node>
+            </node>
             <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1198523135249">
               <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1198523135250">
                 <property name="name" value="targetBehaviorModelDescriptor" />
@@ -1035,6 +1055,16 @@
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1224506544492">
           <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1224506544493">
+            <node role="statement" type="jetbrains.mps.lang.refactoring.structure.UpdateModelProcedure" id="1470666820232677359">
+              <node role="argument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1470666820232677360">
+                <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1470666820232677363">
+                  <link role="variableDeclaration" targetNodeId="1224506339401" resolveInfo="constraintsModelDescriptor" />
+                </node>
+                <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1470666820232677362">
+                  <link role="baseMethodDeclaration" targetNodeId="5.~SModelDescriptor.getSModel():jetbrains.mps.smodel.SModel" resolveInfo="getSModel" />
+                </node>
+              </node>
+            </node>
             <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1224506544494">
               <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1224506544495">
                 <property name="name" value="targetConstraintsModelDescriptor" />
@@ -1119,6 +1149,16 @@
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1225273090116">
           <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1225273090117">
+            <node role="statement" type="jetbrains.mps.lang.refactoring.structure.UpdateModelProcedure" id="1470666820232677364">
+              <node role="argument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1470666820232677365">
+                <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1470666820232677368">
+                  <link role="variableDeclaration" targetNodeId="1225272186219" resolveInfo="dataflowModelDescriptor" />
+                </node>
+                <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1470666820232677367">
+                  <link role="baseMethodDeclaration" targetNodeId="5.~SModelDescriptor.getSModel():jetbrains.mps.smodel.SModel" resolveInfo="getSModel" />
+                </node>
+              </node>
+            </node>
             <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1225273090118">
               <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1225273090119">
                 <property name="name" value="targetDataFlowModelDescriptor" />
