@@ -3878,6 +3878,7 @@
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1188210606983">
         <property name="text" value="final" />
         <link role="styleClass" targetNodeId="1186415544875" resolveInfo="KeyWord" />
+        <link role="actionMap" targetNodeId="7743745654901224334" resolveInfo="DeleteFinalFromField" />
         <node role="renderingCondition" type="jetbrains.mps.lang.editor.structure.QueryFunction_NodeCondition" id="1188210606984">
           <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1188210606985">
             <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1188210606986">
@@ -15873,6 +15874,30 @@
     </node>
     <node role="type" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="7806530711847275845">
       <link role="concept" targetNodeId="17.1068580123132" resolveInfo="BaseMethodDeclaration" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.editor.structure.CellActionMapDeclaration" id="7743745654901224334">
+    <property name="name" value="DeleteFinalInField" />
+    <link role="applicableConcept" targetNodeId="17.1070462154015" resolveInfo="StaticFieldDeclaration" />
+    <node role="item" type="jetbrains.mps.lang.editor.structure.CellActionMapItem" id="7743745654901224335">
+      <property name="actionId" value="delete_action_id" />
+      <node role="executeFunction" type="jetbrains.mps.lang.editor.structure.CellActionMap_ExecuteFunction" id="7743745654901224336">
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="7743745654901224337">
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="7743745654901235039">
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression" id="7743745654901235046">
+              <node role="rValue" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="7743745654901235049">
+                <property name="value" value="false" />
+              </node>
+              <node role="lValue" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="7743745654901235041">
+                <node role="operand" type="jetbrains.mps.lang.editor.structure.CellActionMap_FunctionParm_selectedNode" id="7743745654901235040" />
+                <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="7743745654901235045">
+                  <link role="property" targetNodeId="17.1176718929932" resolveInfo="isFinal" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
     </node>
   </node>
 </model>

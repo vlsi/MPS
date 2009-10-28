@@ -68,6 +68,12 @@
   </node>
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="5626639541500581272">
     <property name="name" value="Test" />
+    <node role="staticField" type="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" id="6219540340002719898">
+      <property name="name" value="f" />
+      <property name="isFinal" value="true" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PrivateVisibility" id="6219540340002719899" />
+      <node role="type" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="6219540340002759352" />
+    </node>
     <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="5626639541500581273" />
     <node role="constructor" type="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" id="5626639541500581274">
       <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="5626639541500581275" />

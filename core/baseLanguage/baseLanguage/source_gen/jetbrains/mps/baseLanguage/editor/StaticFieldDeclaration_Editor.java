@@ -134,6 +134,7 @@ public class StaticFieldDeclaration_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "final");
     editorCell.setCellId("Constant_6130_2");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
+    DeleteFinalInField.setCellActions(editorCell, node, editorContext);
     editorCell.setDefaultText("");
     return editorCell;
   }
