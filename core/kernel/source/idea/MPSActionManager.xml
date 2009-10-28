@@ -76,7 +76,7 @@
             <action id="SelectIn" class="com.intellij.ide.actions.SelectInAction"/>
         </group>
 
-        <group>
+        <group id="MPSProjectActions" text="MPSProjectActions">
             <action id="NewProject" class="jetbrains.mps.workbench.actions.NewMPSProjectAction" text="New MPS Project"/>
             <action id="OpenProject" class="jetbrains.mps.workbench.actions.OpenMPSProjectAction"
                     text="Open MPS Project"/>
