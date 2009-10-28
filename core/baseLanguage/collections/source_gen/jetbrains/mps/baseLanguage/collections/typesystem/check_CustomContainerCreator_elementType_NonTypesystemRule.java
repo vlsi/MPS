@@ -11,6 +11,7 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.intentions.BaseIntentionProvider;
 import jetbrains.mps.typesystem.inference.IErrorTarget;
 import jetbrains.mps.typesystem.inference.NodeErrorTarget;
+import jetbrains.mps.nodeEditor.IErrorReporter;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class check_CustomContainerCreator_elementType_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
@@ -22,7 +23,7 @@ public class check_CustomContainerCreator_elementType_NonTypesystemRule extends 
     if (!(ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(ccc, "containerDeclaration", false), "typeVariableDeclaration", true)).count() <= 1 && ((ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(ccc, "containerDeclaration", false), "typeVariableDeclaration", true)).count() == 1) == (SLinkOperations.getTarget(ccc, "elementType", true) != null)))) {
       BaseIntentionProvider intentionProvider = null;
       IErrorTarget errorTarget = new NodeErrorTarget();
-      typeCheckingContext.reportTypeError(ccc, "Invalid type parameter", "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)", "5192033827214196979", intentionProvider, errorTarget);
+      IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(ccc, "Invalid type parameter", "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)", "5192033827214196979", intentionProvider, errorTarget);
     }
   }
 

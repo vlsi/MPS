@@ -13,6 +13,7 @@ import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.typesystem.inference.IErrorTarget;
 import jetbrains.mps.typesystem.inference.NodeErrorTarget;
+import jetbrains.mps.nodeEditor.IErrorReporter;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class typeof_ComplexLiteral_InferenceRule extends AbstractInferenceRule_Runtime implements InferenceRule_Runtime {
@@ -61,7 +62,7 @@ public class typeof_ComplexLiteral_InferenceRule extends AbstractInferenceRule_R
                     {
                       BaseIntentionProvider intentionProvider = null;
                       IErrorTarget errorTarget = new NodeErrorTarget();
-                      typeCheckingContext.reportTypeError(literal, "Arguments's type should be subtype of BigDecimal", "r:47d0f24b-df34-4ea0-aa7e-7c2eb0f88f31(jetbrains.mps.baseLanguage.math.typesystem)", "1238426927693", intentionProvider, errorTarget);
+                      IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(literal, "Arguments's type should be subtype of BigDecimal", "r:47d0f24b-df34-4ea0-aa7e-7c2eb0f88f31(jetbrains.mps.baseLanguage.math.typesystem)", "1238426927693", intentionProvider, errorTarget);
                     }
                   }
                 }
@@ -86,7 +87,7 @@ public class typeof_ComplexLiteral_InferenceRule extends AbstractInferenceRule_R
               {
                 BaseIntentionProvider intentionProvider = null;
                 IErrorTarget errorTarget = new NodeErrorTarget();
-                typeCheckingContext.reportTypeError(literal, "Arguments's type should be subtype of BigDecimal", "r:47d0f24b-df34-4ea0-aa7e-7c2eb0f88f31(jetbrains.mps.baseLanguage.math.typesystem)", "1238426926406", intentionProvider, errorTarget);
+                IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(literal, "Arguments's type should be subtype of BigDecimal", "r:47d0f24b-df34-4ea0-aa7e-7c2eb0f88f31(jetbrains.mps.baseLanguage.math.typesystem)", "1238426926406", intentionProvider, errorTarget);
               }
             }
           }

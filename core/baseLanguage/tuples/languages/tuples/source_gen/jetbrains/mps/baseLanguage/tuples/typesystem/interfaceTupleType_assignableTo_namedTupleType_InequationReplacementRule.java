@@ -11,6 +11,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.intentions.BaseIntentionProvider;
 import jetbrains.mps.typesystem.inference.IErrorTarget;
 import jetbrains.mps.typesystem.inference.NodeErrorTarget;
+import jetbrains.mps.nodeEditor.IErrorReporter;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class interfaceTupleType_assignableTo_namedTupleType_InequationReplacementRule extends AbstractInequationReplacementRule_Runtime {
@@ -21,7 +22,8 @@ public class interfaceTupleType_assignableTo_namedTupleType_InequationReplacemen
     if (!(ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(supertype, "classifier", false), "extends", true)).contains(SLinkOperations.getTarget(subtype, "iface", false)))) {
       BaseIntentionProvider intentionProvider = null;
       IErrorTarget errorTarget = new NodeErrorTarget();
-      typeCheckingContext.reportTypeError(equationInfo.getNodeWithError(), "incompatible types", "r:e119dbbd-3529-4067-8bad-6b9edd79d0b6(jetbrains.mps.baseLanguage.tuples.typesystem)", "1240707042401", intentionProvider, errorTarget);
+      IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(equationInfo.getNodeWithError(), "incompatible types", "r:e119dbbd-3529-4067-8bad-6b9edd79d0b6(jetbrains.mps.baseLanguage.tuples.typesystem)", "1240707042401", intentionProvider, errorTarget);
+      _reporter_2309309498.addAdditionalRuleId((equationInfo).getRuleModel(), (equationInfo).getRuleId());
     }
   }
 

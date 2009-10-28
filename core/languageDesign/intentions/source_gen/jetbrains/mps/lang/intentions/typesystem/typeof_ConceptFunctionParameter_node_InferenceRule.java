@@ -21,8 +21,8 @@ public class typeof_ConceptFunctionParameter_node_InferenceRule extends Abstract
     {
       SNode _nodeToCheck_1029348928467 = conceptFunctionParameter_node;
       BaseIntentionProvider intentionProvider = null;
-      EquationInfo info = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c89590351(jetbrains.mps.lang.intentions.typesystem)", "1223982145698", 0, intentionProvider);
-      typeCheckingContext.createEquation((SNode)typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c89590351(jetbrains.mps.lang.intentions.typesystem)", "1223982145703", true), (SNode)new _Quotations.QuotationClass_0().createNode(applicableConcept, typeCheckingContext), info);
+      EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c89590351(jetbrains.mps.lang.intentions.typesystem)", "1223982145698", 0, intentionProvider);
+      typeCheckingContext.createEquation((SNode)typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c89590351(jetbrains.mps.lang.intentions.typesystem)", "1223982145703", true), (SNode)new _Quotations.QuotationClass_0().createNode(applicableConcept, typeCheckingContext), _info_12389875345);
     }
   }
 

@@ -13,6 +13,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.baseLanguage.math.behavior.MathUtil;
 import jetbrains.mps.typesystem.inference.IErrorTarget;
 import jetbrains.mps.typesystem.inference.NodeErrorTarget;
+import jetbrains.mps.nodeEditor.IErrorReporter;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class typeof_LinearSolveOperation_InferenceRule extends AbstractInferenceRule_Runtime implements InferenceRule_Runtime {
@@ -48,7 +49,7 @@ public class typeof_LinearSolveOperation_InferenceRule extends AbstractInference
                   {
                     BaseIntentionProvider intentionProvider = null;
                     IErrorTarget errorTarget = new NodeErrorTarget();
-                    typeCheckingContext.reportTypeError(SLinkOperations.getTarget(op, "matrix", true), "Left side of the equation must have matrix type", "r:47d0f24b-df34-4ea0-aa7e-7c2eb0f88f31(jetbrains.mps.baseLanguage.math.typesystem)", "5359814223490060240", intentionProvider, errorTarget);
+                    IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(SLinkOperations.getTarget(op, "matrix", true), "Left side of the equation must have matrix type", "r:47d0f24b-df34-4ea0-aa7e-7c2eb0f88f31(jetbrains.mps.baseLanguage.math.typesystem)", "5359814223490060240", intentionProvider, errorTarget);
                   }
                 }
                 if (SNodeOperations.isInstanceOf(typeCheckingContext.getEquationManager().getRepresentator(vectorType), "jetbrains.mps.baseLanguage.math.structure.MatrixOrVectorType")) {
@@ -63,7 +64,7 @@ public class typeof_LinearSolveOperation_InferenceRule extends AbstractInference
                   {
                     BaseIntentionProvider intentionProvider = null;
                     IErrorTarget errorTarget = new NodeErrorTarget();
-                    typeCheckingContext.reportTypeError(SLinkOperations.getTarget(op, "vector", true), "Right side of the equation must have matrix type", "r:47d0f24b-df34-4ea0-aa7e-7c2eb0f88f31(jetbrains.mps.baseLanguage.math.typesystem)", "5359814223490060245", intentionProvider, errorTarget);
+                    IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(SLinkOperations.getTarget(op, "vector", true), "Right side of the equation must have matrix type", "r:47d0f24b-df34-4ea0-aa7e-7c2eb0f88f31(jetbrains.mps.baseLanguage.math.typesystem)", "5359814223490060245", intentionProvider, errorTarget);
                   }
                 }
                 {

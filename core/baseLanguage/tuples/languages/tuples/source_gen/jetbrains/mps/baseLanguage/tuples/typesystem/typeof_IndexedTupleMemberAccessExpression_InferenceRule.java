@@ -11,6 +11,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.intentions.BaseIntentionProvider;
 import jetbrains.mps.typesystem.inference.IErrorTarget;
 import jetbrains.mps.typesystem.inference.NodeErrorTarget;
+import jetbrains.mps.nodeEditor.IErrorReporter;
 import jetbrains.mps.typesystem.inference.EquationInfo;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import java.util.List;
@@ -25,7 +26,7 @@ public class typeof_IndexedTupleMemberAccessExpression_InferenceRule extends Abs
     if (!(Expression_Behavior.call_isCompileTimeConstant_1238860258777(SLinkOperations.getTarget(mae, "index", true)))) {
       BaseIntentionProvider intentionProvider = null;
       IErrorTarget errorTarget = new NodeErrorTarget();
-      typeCheckingContext.reportTypeError(SLinkOperations.getTarget(mae, "index", true), "Tuple index must be a constant expression", "r:e119dbbd-3529-4067-8bad-6b9edd79d0b6(jetbrains.mps.baseLanguage.tuples.typesystem)", "1238859427576", intentionProvider, errorTarget);
+      IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(SLinkOperations.getTarget(mae, "index", true), "Tuple index must be a constant expression", "r:e119dbbd-3529-4067-8bad-6b9edd79d0b6(jetbrains.mps.baseLanguage.tuples.typesystem)", "1238859427576", intentionProvider, errorTarget);
     }
     {
       SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(mae, "index", true);
@@ -47,7 +48,7 @@ public class typeof_IndexedTupleMemberAccessExpression_InferenceRule extends Abs
             if (!(index >= 0 && index < SLinkOperations.getCount(SNodeOperations.as(typeCheckingContext.getEquationManager().getRepresentator(tupleType), "jetbrains.mps.baseLanguage.tuples.structure.IndexedTupleType"), "componentType"))) {
               BaseIntentionProvider intentionProvider = null;
               IErrorTarget errorTarget = new NodeErrorTarget();
-              typeCheckingContext.reportTypeError(SLinkOperations.getTarget(mae, "index", true), "Index value out of range", "r:e119dbbd-3529-4067-8bad-6b9edd79d0b6(jetbrains.mps.baseLanguage.tuples.typesystem)", "1238864218062", intentionProvider, errorTarget);
+              IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(SLinkOperations.getTarget(mae, "index", true), "Index value out of range", "r:e119dbbd-3529-4067-8bad-6b9edd79d0b6(jetbrains.mps.baseLanguage.tuples.typesystem)", "1238864218062", intentionProvider, errorTarget);
             }
             if (index >= 0 && index < SLinkOperations.getCount(SNodeOperations.as(typeCheckingContext.getEquationManager().getRepresentator(tupleType), "jetbrains.mps.baseLanguage.tuples.structure.IndexedTupleType"), "componentType")) {
               List<SNode> mtypes = SLinkOperations.getTargets(SNodeOperations.as(typeCheckingContext.getEquationManager().getRepresentator(tupleType), "jetbrains.mps.baseLanguage.tuples.structure.IndexedTupleType"), "componentType", true);

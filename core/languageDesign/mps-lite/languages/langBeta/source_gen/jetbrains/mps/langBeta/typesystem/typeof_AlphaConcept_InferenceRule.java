@@ -7,8 +7,10 @@ import jetbrains.mps.lang.typesystem.runtime.InferenceRule_Runtime;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.intentions.BaseIntentionProvider;
+import jetbrains.mps.typesystem.inference.EquationInfo;
 import jetbrains.mps.typesystem.inference.IErrorTarget;
 import jetbrains.mps.typesystem.inference.NodeErrorTarget;
+import jetbrains.mps.nodeEditor.IErrorReporter;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class typeof_AlphaConcept_InferenceRule extends AbstractInferenceRule_Runtime implements InferenceRule_Runtime {
@@ -19,12 +21,13 @@ public class typeof_AlphaConcept_InferenceRule extends AbstractInferenceRule_Run
     {
       SNode _nodeToCheck_1029348928467 = concept;
       BaseIntentionProvider intentionProvider = null;
-      typeCheckingContext.createEquation((SNode)typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:f238a35e-6ea5-4d00-9126-cad2ba0ec3c4(jetbrains.mps.langBeta.typesystem)", "1241091815260", true), (SNode)new _Quotations.QuotationClass_0().createNode(typeCheckingContext), _nodeToCheck_1029348928467, null, "r:f238a35e-6ea5-4d00-9126-cad2ba0ec3c4(jetbrains.mps.langBeta.typesystem)", "1241091824523", intentionProvider);
+      EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:f238a35e-6ea5-4d00-9126-cad2ba0ec3c4(jetbrains.mps.langBeta.typesystem)", "1241091824523", 0, intentionProvider);
+      typeCheckingContext.createEquation((SNode)typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:f238a35e-6ea5-4d00-9126-cad2ba0ec3c4(jetbrains.mps.langBeta.typesystem)", "1241091815260", true), (SNode)new _Quotations.QuotationClass_0().createNode(typeCheckingContext), _info_12389875345);
     }
     {
       BaseIntentionProvider intentionProvider = null;
       IErrorTarget errorTarget = new NodeErrorTarget();
-      typeCheckingContext.reportTypeError(concept, "alpha concept!", "r:f238a35e-6ea5-4d00-9126-cad2ba0ec3c4(jetbrains.mps.langBeta.typesystem)", "1241088431255", intentionProvider, errorTarget);
+      IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(concept, "alpha concept!", "r:f238a35e-6ea5-4d00-9126-cad2ba0ec3c4(jetbrains.mps.langBeta.typesystem)", "1241088431255", intentionProvider, errorTarget);
     }
   }
 
