@@ -105,7 +105,6 @@
                     text="Open Complex Numbers Support Language's Project"
                     description="Take a look at the simplest possible language with typical aspects of most languages."/>
 
-
             <action
                     id="OpenTheSimplestLanguageProject"
                     class="jetbrains.mps.workbench.actions.welcomeScreen.OpenTheSimplestLanguageProjectAction"
