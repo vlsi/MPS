@@ -429,6 +429,10 @@ public class MPSModuleRepository implements ApplicationComponent {
 
 
   public List<IModule> readModuleDescriptors(IFile dir, MPSModuleOwner owner) {
+    return readModuleDescriptors(dir, owner, new HashSet<IFile>());
+  }
+
+  private List<IModule> readModuleDescriptors(IFile dir, MPSModuleOwner owner, Set<IFile> excludes) {
     assertCanWrite();
 
     List<IModule> result = new ArrayList<IModule>();
@@ -437,31 +441,28 @@ public class MPSModuleRepository implements ApplicationComponent {
     if (isExcluded(dirName)) return result;
 
     List<IFile> files = dir.list();
-    if (files == null) { //i.e it isn't a directory
-      if (hasModuleExtension(dirName)) {
-        IModule module = readModuleDescriptor_internal(dir, owner, getModuleExtension(dirName));
-        if (module != null) {
-          result.add(module);
-        }
-      }
-      return result;
-    }
+    if (files == null) { return result; }
 
     for (IFile file : files) {
       if (hasModuleExtension(file.getName())) {
-        IModule module = readModuleDescriptor_internal(file, owner, getModuleExtension(file.getName()));
+        IModule module = readModuleDescriptor_internal(file, owner, getModuleExtension(file.getName()), excludes);
         if (module != null) {
           result.add(module);
         }
-      } else if (file.getName().endsWith(AbstractModule.PACKAGE_SUFFIX)) {
-        IFile dirInJar = FileSystem.getFile(file.getAbsolutePath() + "!/" + AbstractModule.MODULE_DIR);
-        result.addAll(readModuleDescriptors(dirInJar, owner));
       }
     }
-    List<IFile> dirs = files;
-    for (IFile childDir : dirs) {
+
+    for (IFile childDir : files) {
       if (childDir.getName().endsWith(".svn")) continue;
-      result.addAll(readModuleDescriptors(childDir, owner));
+      if (hasModuleExtension(childDir.getName())) continue;
+      if (excludes.contains(childDir)) continue; 
+
+      if (childDir.getName().endsWith(AbstractModule.PACKAGE_SUFFIX)) {
+        IFile dirInJar = FileSystem.getFile(childDir.getAbsolutePath() + "!/" + AbstractModule.MODULE_DIR);
+        result.addAll(readModuleDescriptors(dirInJar, owner, excludes));
+      }
+
+      result.addAll(readModuleDescriptors(childDir, owner, excludes));
     }
     return result;
   }
@@ -477,14 +478,23 @@ public class MPSModuleRepository implements ApplicationComponent {
     return null;
   }
 
-  private IModule readModuleDescriptor_internal(IFile dir, MPSModuleOwner owner, String extension) {
+  private IModule readModuleDescriptor_internal(IFile dir, MPSModuleOwner owner, String extension, Set<IFile> excludes) {
     IModule module = null;
     try {
       Class<? extends IModule> cls = myExtensionsToModuleTypes.get(extension);
       module = registerModule(dir, owner, cls);
+
+      if (module.getClassesGen() != null) {
+        excludes.add(module.getClassesGen());
+      }
+
+      for (String sourceDir : module.getSourcePaths()) {
+        excludes.add(FileSystem.getFile(sourceDir));
+      }
     } catch (Throwable t) {
       LOG.error("Fail to load module from descriptor " + dir.getAbsolutePath(), t);
     }
+
     return module;
   }
 
