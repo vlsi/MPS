@@ -23,6 +23,7 @@ import com.intellij.ui.awt.RelativePoint;
 import jetbrains.mps.MPSProjectHolder;
 import jetbrains.mps.baseLanguage.icons.Icons;
 import jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration;
+import jetbrains.mps.baseLanguage.structure.ClassConcept;
 import jetbrains.mps.lang.core.structure.INamedConcept;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.ProjectOperationContext;
@@ -38,10 +39,19 @@ import java.util.List;
 
 public class GoToHelper {
   public static void showOverridingMethodsMenu(List<SNode> nodes, RelativePoint point, Project project) {
-    if (nodes.isEmpty()) return;
-
     String title = "Choose overriding method to navigate to";
     MethodCellRenderer renderer = new MethodCellRenderer();
+    showMenu(point, project, title, nodes, renderer);
+  }
+
+  public static void showInheritedClassesMenu(List<SNode> nodes, RelativePoint point, Project project) {
+    String title = "Choose inherited class to navigate to";
+    ClassCellRenderer renderer = new ClassCellRenderer();
+    showMenu(point, project, title, nodes, renderer);
+  }
+
+  private static void showMenu(RelativePoint point, Project project, String title, List<SNode> nodes, NodeListCellRenderer renderer) {
+    if (nodes.isEmpty()) return;
 
     List<NodeNavigationItem> navigatables = new ArrayList<NodeNavigationItem>();
     MPSProject mpsProject = project.getComponent(MPSProjectHolder.class).getMPSProject();
@@ -53,7 +63,6 @@ public class GoToHelper {
     Collections.sort(navigatables, renderer.getComparator());
     openTargets(point, navigatables, title, renderer);
   }
-
 
   public static void openTargets(RelativePoint p, List<NodeNavigationItem> targets, String title, ListCellRenderer listRenderer) {
     if (targets.isEmpty()) return;
@@ -95,6 +104,30 @@ public class GoToHelper {
         public String compute() {
           BaseMethodDeclaration methodAdapter = (BaseMethodDeclaration) element.getNode().getAdapter();
           return methodAdapter.getParent(INamedConcept.class, false).getName();
+        }
+      });
+    }
+
+    protected Icon getIcon(NodeNavigationItem element) {
+      return Icons.METHOD_ICON;
+    }
+  }
+
+  public static class ClassCellRenderer extends NodeListCellRenderer<NodeNavigationItem> {
+    public String getElementText(final NodeNavigationItem element) {
+      return ModelAccess.instance().runReadAction(new Computable<String>() {
+        public String compute() {
+          ClassConcept classAdapter = (ClassConcept) element.getNode().getAdapter();
+          return classAdapter.getName();
+        }
+      });
+    }
+
+    protected String getContainerText(final NodeNavigationItem element, String name) {
+      return ModelAccess.instance().runReadAction(new Computable<String>() {
+        public String compute() {
+          ClassConcept classAdapter = (ClassConcept) element.getNode().getAdapter();
+          return classAdapter.getModel().getLongName();
         }
       });
     }

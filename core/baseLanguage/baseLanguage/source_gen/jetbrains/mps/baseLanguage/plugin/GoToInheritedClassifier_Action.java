@@ -11,40 +11,38 @@ import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.smodel.IOperationContext;
 import java.awt.Frame;
 import com.intellij.openapi.project.Project;
-import java.util.List;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
-import jetbrains.mps.ide.findusages.view.FindUtils;
-import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
-import java.util.ArrayList;
+import jetbrains.mps.workbench.MPSDataKeys;
+import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.ide.findusages.findalgorithm.finders.GeneratedFinder;
+import java.util.List;
+import java.util.ArrayList;
 import com.intellij.openapi.progress.ProgressManager;
 import com.intellij.openapi.progress.Task;
 import com.intellij.openapi.progress.ProgressIndicator;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.ide.findusages.view.FindUtils;
 import jetbrains.mps.project.GlobalScope;
 import javax.swing.SwingUtilities;
 import java.awt.Rectangle;
 import java.awt.Point;
 import com.intellij.ui.awt.RelativePoint;
 
-public class GoToOverridingMethod_Action extends GeneratedAction {
+public class GoToInheritedClassifier_Action extends GeneratedAction {
   private static final Icon ICON = null;
-  private static Logger LOG = Logger.getLogger(GoToOverridingMethod_Action.class);
+  private static Logger LOG = Logger.getLogger(GoToInheritedClassifier_Action.class);
 
-  private SNode methodNode;
+  private SNode classifierNode;
   private EditorComponent editorComponent;
   private EditorContext editorContext;
   private IOperationContext context;
   private Frame frame;
   private Project project;
-  private List<String> finderClasses;
 
-  public GoToOverridingMethod_Action(List<String> finderClasses_par) {
-    super("Go to Overriding Methods", "", ICON);
-    this.finderClasses = finderClasses_par;
+  public GoToInheritedClassifier_Action() {
+    super("Go to Inherited Classifiers", "", ICON);
     this.setIsAlwaysVisible(false);
     this.setExecuteOutsideCommand(true);
   }
@@ -55,12 +53,7 @@ public class GoToOverridingMethod_Action extends GeneratedAction {
   }
 
   public boolean isApplicable(AnActionEvent event) {
-    for (String finderClass : GoToOverridingMethod_Action.this.finderClasses) {
-      if (FindUtils.getFinderByClassName(finderClass).isApplicable(GoToOverridingMethod_Action.this.methodNode)) {
-        return true;
-      }
-    }
-    return false;
+    return SNodeOperations.isInstanceOf(GoToInheritedClassifier_Action.this.classifierNode, "jetbrains.mps.baseLanguage.structure.ClassConcept") || SNodeOperations.isInstanceOf(GoToInheritedClassifier_Action.this.classifierNode, "jetbrains.mps.baseLanguage.structure.Interface");
   }
 
   public void doUpdate(@NotNull AnActionEvent event) {
@@ -70,7 +63,7 @@ public class GoToOverridingMethod_Action extends GeneratedAction {
         this.setEnabledState(event.getPresentation(), enabled);
       }
     } catch (Throwable t) {
-      LOG.error("User's action doUpdate method failed. Action:" + "GoToOverridingMethod", t);
+      LOG.error("User's action doUpdate method failed. Action:" + "GoToInheritedClassifier", t);
       this.disable(event.getPresentation());
     }
   }
@@ -83,13 +76,13 @@ public class GoToOverridingMethod_Action extends GeneratedAction {
     {
       SNode node = event.getData(MPSDataKeys.NODE);
       if (node != null) {
-        if (!(SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration"))) {
+        if (!(SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.Classifier"))) {
           node = null;
         }
       }
-      this.methodNode = node;
+      this.classifierNode = node;
     }
-    if (this.methodNode == null) {
+    if (this.classifierNode == null) {
       return false;
     }
     this.editorComponent = event.getData(MPSDataKeys.EDITOR_COMPONENT);
@@ -117,26 +110,23 @@ public class GoToOverridingMethod_Action extends GeneratedAction {
 
   public void doExecute(@NotNull final AnActionEvent event) {
     try {
-      final List<String> finders = ListSequence.fromList(new ArrayList<String>());
+      final Wrappers._T<String> finderClass = new Wrappers._T<String>();
       ModelAccess.instance().runReadAction(new Runnable() {
         public void run() {
-          for (String finderClass : GoToOverridingMethod_Action.this.finderClasses) {
-            GeneratedFinder finder = FindUtils.getFinderByClassName(finderClass);
-            if (finder.isApplicable(GoToOverridingMethod_Action.this.methodNode)) {
-              ListSequence.fromList(finders).addElement(finderClass);
-            }
+          if (SNodeOperations.isInstanceOf(GoToInheritedClassifier_Action.this.classifierNode, "jetbrains.mps.baseLanguage.structure.ClassConcept")) {
+            finderClass.value = "jetbrains.mps.baseLanguage.findUsages.DerivedClasses_Finder";
+          } else {
+            finderClass.value = "jetbrains.mps.baseLanguage.findUsages.ImplementingClasses_Finder";
           }
         }
       });
 
       final List<SNode> nodes = new ArrayList<SNode>();
-      ProgressManager.getInstance().run(new Task.Modal(GoToOverridingMethod_Action.this.project, "Searching...", true) {
+      ProgressManager.getInstance().run(new Task.Modal(GoToInheritedClassifier_Action.this.project, "Searching...", true) {
         public void run(@NotNull final ProgressIndicator p) {
           ModelAccess.instance().runReadAction(new Runnable() {
             public void run() {
-              for (String finder : ListSequence.fromList(finders)) {
-                ListSequence.fromList(nodes).addSequence(ListSequence.fromList(FindUtils.executeFinder(finder, GoToOverridingMethod_Action.this.methodNode, GlobalScope.getInstance(), p)));
-              }
+              ListSequence.fromList(nodes).addSequence(ListSequence.fromList(FindUtils.executeFinder(finderClass.value, GoToInheritedClassifier_Action.this.classifierNode, GlobalScope.getInstance(), p)));
             }
           });
         }
@@ -144,33 +134,14 @@ public class GoToOverridingMethod_Action extends GeneratedAction {
 
       SwingUtilities.invokeLater(new Runnable() {
         public void run() {
-          Rectangle cellBounds = GoToOverridingMethod_Action.this.editorContext.getSelectedCell().getBounds();
+          Rectangle cellBounds = GoToInheritedClassifier_Action.this.editorContext.getSelectedCell().getBounds();
           Point point = new Point(((int)cellBounds.getMinX()), ((int)cellBounds.getMaxY()));
-          RelativePoint relPpoint = new RelativePoint(GoToOverridingMethod_Action.this.editorComponent, point);
-          GoToHelper.showOverridingMethodsMenu(nodes, relPpoint, GoToOverridingMethod_Action.this.project);
+          RelativePoint relPpoint = new RelativePoint(GoToInheritedClassifier_Action.this.editorComponent, point);
+          GoToHelper.showInheritedClassesMenu(nodes, relPpoint, GoToInheritedClassifier_Action.this.project);
         }
       });
     } catch (Throwable t) {
-      LOG.error("User's action execute method failed. Action:" + "GoToOverridingMethod", t);
+      LOG.error("User's action execute method failed. Action:" + "GoToInheritedClassifier", t);
     }
-  }
-
-  @NotNull
-  public String getActionId() {
-    StringBuilder res = new StringBuilder(500);
-    res.append(GoToOverridingMethod_Action.class.getName());
-    res.append("#");
-    res.append(finderClasses_State((List<String>)this.finderClasses));
-    res.append("!");
-    return res.toString();
-  }
-
-  public static String finderClasses_State(List<String> object) {
-    StringBuilder result = new StringBuilder();
-    for (String str : object) {
-      result.append(str).append('+');
-    }
-    result.deleteCharAt(result.length() - 1);
-    return result.toString();
   }
 }
