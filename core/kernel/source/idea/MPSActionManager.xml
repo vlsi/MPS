@@ -99,7 +99,7 @@
                     class="jetbrains.mps.workbench.actions.help.ShowTheSimplestLanguageScreenCastAction"
                     text="Show The Simplest Language Screencast"
                     description="You can watch how a simple language is created. (Thanks to Sebastien Arbogast)"/>
-
+                                            
             <action id="OpenTheComplexNumberLanguageProject"
                     class="jetbrains.mps.workbench.actions.welcomeScreen.OpenComplexLanguageProjectAction"
                     text="Open Complex Numbers Support Language's Project"
