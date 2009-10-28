@@ -631,10 +631,9 @@ public class NodeSubstituteChooser implements KeyboardHandler {
 
     public void setSelectionIndex(int index) {
       if (index < 0) {
+        index = myList.getModel().getSize() - 1;
+      } else if (index >= myList.getModel().getSize()) {
         index = 0;
-      }
-      if (index >= myList.getModel().getSize()) {
-        myList.setSelectedIndex(myList.getModel().getSize() - 1);
       }
       myList.setSelectedIndex(index);
     }
