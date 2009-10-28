@@ -41,7 +41,7 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959034b(jetbrains.mps.lang.quotation.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959036e(jetbrains.mps.baseLanguage.classifiers.constraints)" version="7" />
   <devkit namespace="2677cb18-f558-4e33-bc38-a5139cee06dc(jetbrains.mps.devkit.language-design)" />
-  <maxImportIndex value="7" />
+  <maxImportIndex value="9" />
   <import index="1" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="3" />
   <import index="2" modelUID="r:00000000-0000-4000-0000-011c895902c8(jetbrains.mps.baseLanguage.plugin)" version="-1" />
   <import index="3" modelUID="r:00000000-0000-4000-0000-011c89590287(jetbrains.mps.lang.core.scripts)" version="-1" />
@@ -49,6 +49,8 @@
   <import index="5" modelUID="f:java_stub#java.awt(java.awt@java_stub)" version="-1" />
   <import index="6" modelUID="f:java_stub#javax.swing(javax.swing@java_stub)" version="-1" />
   <import index="7" modelUID="f:java_stub#com.intellij.openapi.progress(com.intellij.openapi.progress@java_stub)" version="-1" />
+  <import index="8" modelUID="r:00000000-0000-4000-0000-011c895902c4(jetbrains.mps.baseLanguage.findUsages)" version="-1" />
+  <import index="9" modelUID="f:java_stub#jetbrains.mps.ide.findusages.model(jetbrains.mps.ide.findusages.model@java_stub)" version="-1" />
   <visible index="2" modelUID="r:d9efd362-28b8-4f70-9bcd-fb582528d11c(jetbrains.mps.lang.core.refactorings)" />
   <visible index="3" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
   <node type="jetbrains.mps.lang.refactoring.structure.Refactoring" id="7874812549549771289">
@@ -392,6 +394,44 @@
       </node>
     </node>
     <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="4413749148913391073" />
+  </node>
+  <node type="jetbrains.mps.lang.refactoring.structure.Refactoring" id="2869783065404758436">
+    <property name="name" value="MakeFieldFinal" />
+    <property name="userFriendlyName" value="Make Field Final" />
+    <node role="target" type="jetbrains.mps.lang.refactoring.structure.NodeTarget" id="2869783065404822208">
+      <link role="concept" targetNodeId="1.1068390468200" resolveInfo="FieldDeclaration" />
+    </node>
+    <node role="doRefactorBlock" type="jetbrains.mps.lang.refactoring.structure.DoRefactorClause" id="2869783065404758438">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="2869783065404758439">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="2869783065404832785">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression" id="2869783065404837665">
+            <node role="rValue" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="2869783065404837668">
+              <property name="value" value="true" />
+            </node>
+            <node role="lValue" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="2869783065404832792">
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="2869783065404832787">
+                <node role="operand" type="jetbrains.mps.lang.refactoring.structure.RefactoringContext_ConceptFunctionParameter" id="2869783065404832786" />
+                <node role="operation" type="jetbrains.mps.lang.refactoring.structure.NodeOperation" id="2869783065404832791" />
+              </node>
+              <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="2869783065404832796">
+                <link role="property" targetNodeId="1.1176718929932" resolveInfo="isFinal" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="affectedNodesBlock" type="jetbrains.mps.lang.refactoring.structure.AffectedNodesClause" id="2869783065404823031">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="2869783065404823032">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="2869783065404832781">
+          <node role="expression" type="jetbrains.mps.lang.refactoring.structure.ExecuteFindersExpression" id="2869783065404832782">
+            <node role="finders" type="jetbrains.mps.lang.refactoring.structure.FinderReference" id="2869783065404832784">
+              <link role="finderDeclaration" targetNodeId="8.1200405628545" resolveInfo="FieldUsages" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
   </node>
 </model>
 
