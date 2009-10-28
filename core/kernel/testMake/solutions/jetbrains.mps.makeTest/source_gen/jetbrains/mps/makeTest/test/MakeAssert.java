@@ -4,7 +4,7 @@ package jetbrains.mps.makeTest.test;
 
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.generator.IGenerationType;
-import jetbrains.mps.project.tester.EditorGenerateType;
+import jetbrains.mps.project.tester.TesterGenerationType;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SNode;
@@ -43,7 +43,7 @@ public class MakeAssert {
     final ChangeModelProcessor changeModelProcessor = new ChangeModelProcessor(project, modelName, changer);
     final IGenerationType filesGenType = getFilesGenType();
     changeModelProcessor.changeStep(filesGenType);
-    final EditorGenerateType genType = new EditorGenerateType(true);
+    final TesterGenerationType genType = new TesterGenerationType(true);
     changeModelProcessor.generateTestModel(genType);
     changeModelProcessor.generateModelToChange(genType);
     final Boolean[] returnValue = new Boolean[]{null};

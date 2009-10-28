@@ -36,11 +36,11 @@ import java.io.File;
 import com.intellij.openapi.progress.ProgressIndicator;
 import org.eclipse.jdt.internal.compiler.CompilationResult;
 
-public class EditorGenerateType extends GenerateFilesAndClassesGenerationType {
+public class TesterGenerationType extends GenerateFilesAndClassesGenerationType {
   private Map<String, String> myNodeExtensionMap = new HashMap<String, String>();
   private Map<SModel, String> myOutputModelToPath = new HashMap<SModel, String>();
 
-  public EditorGenerateType(boolean reloadClasses) {
+  public TesterGenerationType(boolean reloadClasses) {
     super(reloadClasses);
   }
 

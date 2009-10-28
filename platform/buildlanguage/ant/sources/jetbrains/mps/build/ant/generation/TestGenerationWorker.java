@@ -9,7 +9,7 @@ import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.ProjectTester;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.structure.project.testconfigurations.BaseTestConfiguration;
-import jetbrains.mps.project.tester.EditorGenerateType;
+import jetbrains.mps.project.tester.TesterGenerationType;
 import jetbrains.mps.project.tester.DiffReporter;
 import jetbrains.mps.generator.GeneratorManager;
 import jetbrains.mps.smodel.ModelAccess;
@@ -59,7 +59,7 @@ public class TestGenerationWorker extends GeneratorWorker {
     String currentTestName = myBuildServerMessageFormat.escapeBuildMessage("generate " + modulesSet);
     System.out.println(myBuildServerMessageFormat.formatTestStart(currentTestName));
 
-    final EditorGenerateType generationType = new EditorGenerateType(true);
+    final TesterGenerationType generationType = new TesterGenerationType(true);
     gm.generateModels(modelsToContext,
       generationType,
       emptyProgressIndicator,

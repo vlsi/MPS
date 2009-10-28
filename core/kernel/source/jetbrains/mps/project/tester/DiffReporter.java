@@ -19,7 +19,7 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.util.NameUtil;
-import jetbrains.mps.project.tester.EditorGenerateType;
+import jetbrains.mps.project.tester.TesterGenerationType;
 
 import java.util.List;
 import java.util.ArrayList;
@@ -46,7 +46,7 @@ public class DiffReporter {
     }
   }
 
-  public static List<String> createDiffReports(EditorGenerateType genType) {
+  public static List<String> createDiffReports(TesterGenerationType genType) {
     List<String> result = new ArrayList<String>();
     for (SModel outputModel : genType.getOutputModels()) {
       List<String> files = new ArrayList<String>();

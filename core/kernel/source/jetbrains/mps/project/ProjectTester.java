@@ -18,7 +18,6 @@ package jetbrains.mps.project;
 import com.intellij.openapi.progress.EmptyProgressIndicator;
 import jetbrains.mps.generator.GeneratorManager;
 import jetbrains.mps.generator.IllegalGeneratorConfigurationException;
-import jetbrains.mps.generator.JavaNameUtil;
 import jetbrains.mps.generator.generationTypes.GenerateFilesAndClassesGenerationType;
 import jetbrains.mps.ide.genconf.GenParameters;
 import jetbrains.mps.ide.messages.IMessageHandler;
@@ -28,21 +27,15 @@ import jetbrains.mps.logging.ILoggingHandler;
 import jetbrains.mps.logging.LogEntry;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.structure.project.testconfigurations.BaseTestConfiguration;
-import jetbrains.mps.project.tester.DiffReport;
-import jetbrains.mps.project.tester.TestComparator;
-import jetbrains.mps.project.tester.EditorGenerateType;
+import jetbrains.mps.project.tester.TesterGenerationType;
 import jetbrains.mps.project.tester.DiffReporter;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.util.NameUtil;
-import junit.framework.TestCase;
 import junit.framework.TestFailure;
 import org.eclipse.jdt.core.compiler.CategorizedProblem;
 import org.eclipse.jdt.internal.compiler.CompilationResult;
 
-import java.lang.reflect.Method;
 import java.util.*;
 
 public class ProjectTester {
@@ -131,7 +124,7 @@ public class ProjectTester {
     try {
       Logger.addLoggingHandler(loggingHandler);
 
-      final EditorGenerateType generationType = new EditorGenerateType(true);
+      final TesterGenerationType generationType = new TesterGenerationType(true);
 
       ModelAccess.instance().runWriteAction(new Runnable() {
         public void run() {
@@ -178,8 +171,13 @@ public class ProjectTester {
               diffReports.addAll(DiffReporter.createDiffReports(generationType));
             }
 
+            long start = System.currentTimeMillis();
             List<CompilationResult> compilationResultList = generationType.compile(IAdaptiveProgressMonitor.NULL_PROGRESS_MONITOR);
+            System.out.println("Compiled " + compilationResultList.size() + " compilation units in " + (System.currentTimeMillis() - start));            
             compilationResults.addAll(createCompilationProblemsList(compilationResultList));
+            if (compilationResults.isEmpty()) {
+              System.out.println("Compilation ok");
+            }
 
             failedTests.addAll(createTestFailures(generationType, parms));
 
