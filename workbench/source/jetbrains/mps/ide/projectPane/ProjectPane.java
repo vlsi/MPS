@@ -852,14 +852,6 @@ public class ProjectPane extends AbstractProjectViewPane {
         root.init();
       }
       for (MPSTreeNode node : root) {
-        if (node instanceof SModelTreeNode) {
-          for (SModelTreeNode subnode : ((SModelTreeNode) node).getSubfolderSModelTreeNodes()) {
-            MPSTreeNode result = findTreeNode(subnode, descendCondition, resultCondition);
-            if (result != null) {
-              return result;
-            }
-          }
-        }
         MPSTreeNode result = findTreeNode(node, descendCondition, resultCondition);
         if (result != null) {
           return result;
@@ -931,6 +923,13 @@ public class ProjectPane extends AbstractProjectViewPane {
     public boolean met(MPSTreeNode node) {
       if (!super.met(node)) return false;
 
+      if (node instanceof SModelTreeNode) {
+        SModelTreeNode modelNode = (SModelTreeNode) node;
+        if (!modelNode.getSubfolderSModelTreeNodes().isEmpty()) {
+          return true;
+        }
+      }
+
       boolean descent = false;
 
       if (node instanceof ProjectModuleTreeNode) descent = true;
@@ -952,7 +951,8 @@ public class ProjectPane extends AbstractProjectViewPane {
 
   private static class ModelEverywhereCondition implements Condition<MPSTreeNode> {
     public boolean met(MPSTreeNode node) {
-      if (node instanceof SModelTreeNode) return false;
+      if (node instanceof SNodeTreeNode) return false;
+      if (node instanceof SModelTreeNode) return true;
       if (!node.isInitialized() && !node.hasInfiniteSubtree()) {
         node.init();
         return true;
