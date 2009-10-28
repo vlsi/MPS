@@ -480,10 +480,10 @@ public class MPSModuleRepository implements ApplicationComponent {
   }
 
   private IModule readModuleDescriptor_internal(IFile dir, MPSModuleOwner owner, String extension, Set<IFile> excludes) {
-    IModule module = null;
+    AbstractModule module = null;
     try {
       Class<? extends IModule> cls = myExtensionsToModuleTypes.get(extension);
-      module = registerModule(dir, owner, cls);
+      module = (AbstractModule) registerModule(dir, owner, cls);
 
       if (module.getClassesGen() != null) {
         excludes.add(module.getClassesGen());
@@ -497,6 +497,10 @@ public class MPSModuleRepository implements ApplicationComponent {
       }
       if (module.getTestsGeneratorOutputPath() != null) {
         excludes.add(BaseModelCache.getCachesDir(module, module.getTestsGeneratorOutputPath()));
+      }
+
+      for (String cp : module.getClassPath()) {
+        excludes.add(FileSystem.getFile(cp));
       }
     } catch (Throwable t) {
       LOG.error("Fail to load module from descriptor " + dir.getAbsolutePath(), t);
@@ -550,7 +554,7 @@ public class MPSModuleRepository implements ApplicationComponent {
     Set<IModule> modules = myModuleToOwners.getBySecond(moduleOwner);
     if (modules != null) {
       for (IModule m : modules) {
-        if (cls==null || cls.isInstance(m)) {
+        if (cls == null || cls.isInstance(m)) {
           list.add((MT) m);
         }
       }
