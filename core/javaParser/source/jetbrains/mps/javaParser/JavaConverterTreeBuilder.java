@@ -22,6 +22,7 @@ import jetbrains.mps.baseLanguage.structure.Statement;
 import jetbrains.mps.baseLanguage.structure.FieldDeclaration;
 import jetbrains.mps.baseLanguage.structure.CastExpression;
 import jetbrains.mps.smodel.*;
+import jetbrains.mps.logging.Logger;
 import org.eclipse.jdt.internal.compiler.impl.*;
 import org.eclipse.jdt.internal.compiler.impl.BooleanConstant;
 import org.eclipse.jdt.internal.compiler.impl.CharConstant;
@@ -62,6 +63,8 @@ public class JavaConverterTreeBuilder {
   private Classifier myCurrentClass;
   private BaseMethodDeclaration myCurrentMethod;
   private TypesProvider myTypesProvider;
+
+  private static Logger LOG = Logger.getLogger(JavaConverterTreeBuilder.class);
 
 
   public jetbrains.mps.baseLanguage.structure.Expression processExpressionRefl(Expression expression) {
@@ -1348,16 +1351,23 @@ public class JavaConverterTreeBuilder {
     myCurrentModel = null;
     for (TypeDeclaration type : referentsCreator.getClassifierTypeDecls()) {
       myCurrentModel = getModelByTypeDecalration(type);
-      Classifier classifier = processType(type);
-      if (referentsCreator.isTopLevelClassifier(type)) {
-        myCurrentModel.addRoot(classifier);
+      if (myCurrentModel != null) {
+        Classifier classifier = processType(type);
+        if (referentsCreator.isTopLevelClassifier(type)) {
+          myCurrentModel.addRoot(classifier);
+        }
       }
       myCurrentModel = null;
     }
   }
 
   public SModel getModelByTypeDecalration(TypeDeclaration typeDeclaration) {
-    return myModelMap.get(JavaCompiler.packageNameFromCompoundName(typeDeclaration.binding.compoundName));
+    String packageName = JavaCompiler.packageNameFromCompoundName(typeDeclaration.binding.compoundName);
+    SModel sModel = myModelMap.get(packageName);
+    if (sModel == null) {
+      LOG.error("can't find a model for Type Declaration " + new String(typeDeclaration.name) + " : package name is " + packageName);
+    }
+    return sModel;
   }
 
 
