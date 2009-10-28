@@ -110,7 +110,9 @@ public class SModelsSubtree {
     if (!sortedModels.isEmpty()) {
       int rootIndex = 0;
       while (rootIndex < sortedModels.size()) {
-        SModelTreeNode treeNode = new SModelTreeNode(sortedModels.get(rootIndex), null, context, false);
+        SModelDescriptor rootModelDescriptor = sortedModels.get(rootIndex);
+        int countNamePart = getCountNamePart(rootModelDescriptor, rootModelDescriptor.getModule().getModuleNamespace());
+        SModelTreeNode treeNode = new SModelTreeNode(sortedModels.get(rootIndex), null, context, countNamePart);
         result.add(treeNode);
         rootIndex = buildChildModels(treeNode, sortedModels, rootIndex);
       }      
@@ -124,9 +126,7 @@ public class SModelsSubtree {
       SModelDescriptor candidate = (SModelDescriptor) candidates.get(index);
       if (treeNode.isSubfolderModel(candidate)) {
         IOperationContext context = treeNode.getOperationContext();
-        String childLongName = candidate.getLongName();
-        String shortName = childLongName.replace(treeNode.getSModelDescriptor().getLongName() + '.', "");
-        int countNamePart = shortName.split("\\.").length - 1;
+        int countNamePart = getCountNamePart(candidate, treeNode.getSModelDescriptor().getLongName());
         SModelTreeNode newChildModel = new SModelTreeNode(candidate, null, context, countNamePart);
         treeNode.addChildModel(newChildModel);
         index = buildChildModels(newChildModel, candidates, index);
@@ -135,6 +135,12 @@ public class SModelsSubtree {
       }
     }
     return index;
+  }
+
+  private static int getCountNamePart(SModelDescriptor md, String baseName) {
+    String modelLongName = md.getLongName();
+    String shortName = modelLongName.replace(baseName + '.', "");
+    return shortName.split("\\.").length - 1;
   }
 
   public static class JavaStubsTreeNode extends TextTreeNode {
