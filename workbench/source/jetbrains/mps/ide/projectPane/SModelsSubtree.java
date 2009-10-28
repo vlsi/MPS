@@ -24,7 +24,8 @@ import jetbrains.mps.smodel.ProjectModels;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SModelStereotype;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
 
 public class SModelsSubtree {
   public static void create(MPSTreeNode rootTreeNode, IOperationContext operationContext) {
@@ -52,14 +53,29 @@ public class SModelsSubtree {
       }
     }
 
-
-    SModelNamespaceTreeBuilder builder = new SModelNamespaceTreeBuilder();
     List<SModelTreeNode> regularModelNodes = getRootModelTreeNodes(regularModels, operationContext);
-    for (SModelTreeNode treeNode : regularModelNodes) {
-      builder.addNode(treeNode);
-    }
-    builder.fillNode(rootTreeNode);
+    if (!regularModelNodes.isEmpty()) {
+      MPSTreeNode currentRootNode;
+      if (rootTreeNode instanceof ProjectLanguageTreeNode) {
+        currentRootNode = rootTreeNode;
+      } else {
+        IModule contextModule = operationContext.getModule();
+        String namespace = contextModule.getSModelRoots().get(0).getPrefix();
+        if (namespace == null || namespace.isEmpty()) {
+          namespace = contextModule.getModuleFqName();
+        }
 
+        currentRootNode = new TextTreeNode((namespace == null)? "" : namespace, operationContext);
+      }
+      for (SModelTreeNode treeNode : regularModelNodes) {
+        currentRootNode.add(treeNode);
+      }
+      if (!currentRootNode.equals(rootTreeNode)) {
+        rootTreeNode.add(currentRootNode);
+      }
+    }
+
+    SModelNamespaceTreeBuilder builder;
     if (!tests.isEmpty()) {
       builder = new SModelNamespaceTreeBuilder();
 
