@@ -450,12 +450,12 @@
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="6016914837743474509">
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="6016914837743474510">
             <property name="name" value="genType" />
-            <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="6016914837743493717">
-              <link role="classifier" targetNodeId="9.~EditorGenerateType" resolveInfo="EditorGenerateType" />
+            <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="727524775504984673">
+              <link role="classifier" targetNodeId="9.~TesterGenerationType" resolveInfo="TesterGenerationType" />
             </node>
             <node role="initializer" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="6016914837743474516">
               <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="6016914837743493709">
-                <link role="baseMethodDeclaration" targetNodeId="9.~EditorGenerateType.&lt;init&gt;(boolean)" resolveInfo="EditorGenerateType" />
+                <link role="baseMethodDeclaration" targetNodeId="9.~TesterGenerationType.&lt;init&gt;(boolean)" resolveInfo="TesterGenerationType" />
                 <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="6016914837743493713">
                   <property name="value" value="true" />
                 </node>
@@ -562,7 +562,7 @@
                         <link role="variableDeclaration" targetNodeId="6016914837743474510" resolveInfo="genType" />
                       </node>
                       <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="2381103581468453848">
-                        <link role="baseMethodDeclaration" targetNodeId="9.~EditorGenerateType.compile(jetbrains.mps.ide.progress.IAdaptiveProgressMonitor):java.util.List" resolveInfo="compile" />
+                        <link role="baseMethodDeclaration" targetNodeId="9.~TesterGenerationType.compile(jetbrains.mps.ide.progress.IAdaptiveProgressMonitor):java.util.List" resolveInfo="compile" />
                         <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference" id="2381103581468453849">
                           <link role="classifier" targetNodeId="19.~IAdaptiveProgressMonitor" resolveInfo="IAdaptiveProgressMonitor" />
                           <link role="variableDeclaration" targetNodeId="19.~IAdaptiveProgressMonitor.NULL_PROGRESS_MONITOR" resolveInfo="NULL_PROGRESS_MONITOR" />
