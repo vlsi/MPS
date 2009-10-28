@@ -83,15 +83,17 @@ public class OldRefactoringAdapter implements IRefactoring {
   }
 
   public void doWhenDone(final RefactoringContext refactoringContext) {
-    ApplicationManager.getApplication().invokeLater(new Runnable() {
-      public void run() {
-        for (SNode nodeToOpen : myNodesToOpen) {
-          // we can't open node outside of EDT
-          IOperationContext context = refactoringContext.getCurrentOperationContext();
-          context.getComponent(MPSEditorOpener.class).editNode(nodeToOpen, context);
+    if (myNodesToOpen!=null && !myNodesToOpen.isEmpty()) {
+      ApplicationManager.getApplication().invokeLater(new Runnable() {
+        public void run() {
+          for (SNode nodeToOpen : myNodesToOpen) {
+            // we can't open node outside of EDT
+            IOperationContext context = refactoringContext.getCurrentOperationContext();
+            context.getComponent(MPSEditorOpener.class).editNode(nodeToOpen, context);
+          }
         }
-      }
-    });
+      });
+    }
   }
 
   public SearchResults getAffectedNodes(RefactoringContext refactoringContext) {
