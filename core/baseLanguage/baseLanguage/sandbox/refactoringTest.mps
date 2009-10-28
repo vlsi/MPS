@@ -72,11 +72,7 @@
     <node role="constructor" type="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" id="5626639541500581274">
       <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="5626639541500581275" />
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="5626639541500581276" />
-      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="5626639541500581277">
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ThisConstructorInvocation" id="6922796699472233560">
-          <link role="baseMethodDeclaration" targetNodeId="5626639541500581274" resolveInfo="Test" />
-        </node>
-      </node>
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="5626639541500581277" />
     </node>
     <node role="constructor" type="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" id="6922796699472226645">
       <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="6922796699472226646" />
