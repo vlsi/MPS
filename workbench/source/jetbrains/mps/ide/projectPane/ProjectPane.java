@@ -51,6 +51,7 @@ import jetbrains.mps.ide.projectPane.ProjectLanguageTreeNode.AccessoriesModelTre
 import jetbrains.mps.ide.projectPane.ProjectLanguageTreeNode.RuntimeModulesTreeNode;
 import jetbrains.mps.ide.projectPane.ProjectLanguageTreeNode.AllModelsTreeNode;
 import jetbrains.mps.ide.projectPane.SModelsSubtree.JavaStubsTreeNode;
+import jetbrains.mps.ide.projectPane.SModelsSubtree.TestsTreeNode;
 import jetbrains.mps.ide.ui.MPSTree;
 import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.ide.ui.MPSTreeNodeEx;
@@ -937,6 +938,7 @@ public class ProjectPane extends AbstractProjectViewPane {
       if (node instanceof AccessoriesModelTreeNode) descent = true;
       if (node instanceof JavaStubsTreeNode) descent = true;
       if (node instanceof AllModelsTreeNode) descent = true;
+      if (node instanceof TestsTreeNode) descent = true;
 
       if (!descent) return false;
 
