@@ -149,7 +149,12 @@ public class JavaCompiler {
       if (file.isDirectory()) {
         //create model if necessary
         String dirName = file.getName();
-        String nestedPackageName = packageNameWithoutPrefix + '.' + dirName;
+        String nestedPackageName;
+        if ("".equals(packageNameWithoutPrefix)) {
+           nestedPackageName = dirName;
+        } else {
+           nestedPackageName = packageNameWithoutPrefix + '.' + dirName;
+        }
         addSourceFromDirectory(file, nestedPackageName);
       } else {
         String extension;

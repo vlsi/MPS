@@ -24,6 +24,7 @@ import jetbrains.mps.util.NodeNameUtil;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.javastub.classpath.ClassPathModelProvider;
 import jetbrains.mps.lang.core.structure.INamedConcept;
+import jetbrains.mps.logging.Logger;
 
 import java.util.List;
 import java.util.ArrayList;
@@ -37,6 +38,8 @@ import java.util.Iterator;
  * To change this template use File | Settings | File Templates.
  */
 public class TypesProvider {
+  private static Logger LOG = Logger.getLogger(TypesProvider.class);
+
   ReferentsCreator myReferentsCreator;
 
   public TypesProvider(ReferentsCreator referentsCreator) {
@@ -187,6 +190,7 @@ public class TypesProvider {
         return getRegularMPSNodeReferenceFromForeignId(sourceNode, role, modelReference, nodeId, TargetKind.METHOD);
       }
     }
+    LOG.error("can't create a reference to a method in a class of type " + binding.declaringClass.getClass());
     return null;
   }
 

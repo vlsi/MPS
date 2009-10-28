@@ -26,6 +26,7 @@ import jetbrains.mps.smodel.INodeAdapter;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.CopyUtil;
 import jetbrains.mps.baseLanguage.structure.*;
+import jetbrains.mps.logging.Logger;
 
 import java.util.*;
 
@@ -37,6 +38,8 @@ import java.util.*;
  * To change this template use File | Settings | File Templates.
  */
 public class ReferentsCreator {
+  private static Logger LOG = Logger.getLogger(ReferentsCreator.class);
+
   Map<Binding, INodeAdapter> myBindingMap = new HashMap<Binding, INodeAdapter>();
   SModel myCurrentModel;
   Map<String, SModel> myPackageNamesToModels;
@@ -218,6 +221,10 @@ public class ReferentsCreator {
         boolean isTopLevel = true;
         if (binding instanceof LocalTypeBinding) {
           isTopLevel = false;
+          if (classifier instanceof EnumClass) {
+            LOG.error("Enum constants with methods not implemented");
+            return false;
+          }
           AnonymousClass anonymousClass = (AnonymousClass) classifier;
           anonymousClass.setName("");
           ReferenceBinding superClassBinding = binding.superclass();
