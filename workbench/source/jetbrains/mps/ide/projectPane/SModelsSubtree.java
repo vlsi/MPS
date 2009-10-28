@@ -62,7 +62,7 @@ public class SModelsSubtree {
         IModule contextModule = operationContext.getModule();
         String namespace = contextModule.getSModelRoots().get(0).getPrefix();
         if (namespace == null || namespace.isEmpty()) {
-          namespace = contextModule.getModuleFqName();
+          namespace = contextModule.getModuleNamespace();
         }
 
         currentRootNode = new TextTreeNode((namespace == null)? "" : namespace, operationContext);
