@@ -12,6 +12,7 @@ import jetbrains.mps.smodel.AttributesRolesUtil;
 import jetbrains.mps.intentions.BaseIntentionProvider;
 import jetbrains.mps.typesystem.inference.IErrorTarget;
 import jetbrains.mps.typesystem.inference.NodeErrorTarget;
+import jetbrains.mps.nodeEditor.IErrorReporter;
 import jetbrains.mps.lang.core.behavior.BaseConcept_Behavior;
 import jetbrains.mps.smodel.SModelUtil_new;
 
@@ -26,7 +27,7 @@ public class check_InstanceOfDeprecated_NonTypesystemRule extends AbstractNonTyp
       {
         BaseIntentionProvider intentionProvider = null;
         IErrorTarget errorTarget = new NodeErrorTarget();
-        typeCheckingContext.reportWarning(nodeToCheck, "'" + BaseConcept_Behavior.call_getPresentation_1213877396640(nodeToCheck) + "' is instance of deprecated concept", "r:cec599e3-51d2-48a7-af31-989e3cbd593c(jetbrains.mps.lang.core.typesystem)", "8524227390952646895", intentionProvider, errorTarget);
+        IErrorReporter _reporter_2309309498 = typeCheckingContext.reportWarning(nodeToCheck, "'" + BaseConcept_Behavior.call_getPresentation_1213877396640(nodeToCheck) + "' is instance of deprecated concept", "r:cec599e3-51d2-48a7-af31-989e3cbd593c(jetbrains.mps.lang.core.typesystem)", "8524227390952646895", intentionProvider, errorTarget);
       }
     }
   }
