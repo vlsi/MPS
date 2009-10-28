@@ -228,7 +228,6 @@
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1189693812263">
     <property name="name" value="OldRefactoring" />
     <property name="rootable" value="true" />
-    <property name="iconPath" value="${language_descriptor}\icons\refactoring.png" />
     <property name="package" value="Deprecated" />
     <link role="extends" targetNodeId="1.1133920641626" />
     <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1199455371376">
@@ -1294,6 +1293,7 @@
     <property name="package" value="RefDecl" />
     <property name="name" value="Refactoring" />
     <property name="rootable" value="true" />
+    <property name="iconPath" value="${language_descriptor}/icons/refactoring.png" />
     <link role="extends" targetNodeId="1.1133920641626" resolveInfo="BaseConcept" />
     <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="6895093993902236387">
       <property name="role" value="overrides" />
