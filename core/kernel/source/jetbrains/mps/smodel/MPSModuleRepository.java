@@ -498,6 +498,9 @@ public class MPSModuleRepository implements ApplicationComponent {
       if (module.getTestsGeneratorOutputPath() != null) {
         excludes.add(BaseModelCache.getCachesDir(module, module.getTestsGeneratorOutputPath()));
       }
+      for (SModelRoot root : module.getSModelRoots()) {
+        excludes.add(FileSystem.getFile(root.getPath()));
+      }
 
       for (String cp : module.getClassPath()) {
         excludes.add(FileSystem.getFile(cp));
