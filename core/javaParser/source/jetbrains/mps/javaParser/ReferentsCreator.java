@@ -522,6 +522,9 @@ public class ReferentsCreator {
     // Traverse once to create our peers for each type
     ClassesCreator classesCreator = new ClassesCreator(this);
     for (CompilationUnitDeclaration unitDecl : unitDecls) {
+      if (unitDecl.hasErrors()) {
+        LOG.warning("source file " + new String(unitDecl.getFileName()) + " has compilation errors");
+      }
       unitDecl.traverse(classesCreator, unitDecl.scope);
     }
     // Traverse again to create our peers for each method, field,
