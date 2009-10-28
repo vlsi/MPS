@@ -4,14 +4,17 @@ package jetbrains.mps.baseLanguage.javadoc.textGen;
 
 import jetbrains.mps.textGen.SNodeTextGen;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.textGen.TextGenManager;
 
 public class CommentLine_TextGen extends SNodeTextGen {
   public void doGenerateText(SNode node) {
-    this.appendNewLine();
-    this.indentBuffer();
+    if (SNodeOperations.getIndexInParent(node) != 0) {
+      this.appendNewLine();
+      this.indentBuffer();
+    }
     if (ListSequence.fromList(SLinkOperations.getTargets(node, "part", true)).isNotEmpty()) {
       for (SNode item : SLinkOperations.getTargets(node, "part", true)) {
         TextGenManager.instance().appendNodeText(this.getContext(), this.getBuffer(), item, this.getSNode());

@@ -15,6 +15,8 @@ public class FieldDocComment_TextGen extends SNodeTextGen {
     this.indentBuffer();
     this.append("/**");
     this.increaseDepth();
+    this.appendNewLine();
+    this.indentBuffer();
     if (ListSequence.fromList(SLinkOperations.getTargets(node, "body", true)).isNotEmpty()) {
       for (SNode item : SLinkOperations.getTargets(node, "body", true)) {
         TextGenManager.instance().appendNodeText(this.getContext(), this.getBuffer(), item, this.getSNode());
