@@ -209,6 +209,14 @@ public class JavaCompiler {
 
   public void buildAST() {
     ReferentsCreator referentsCreator = new ReferentsCreator(new HashMap<String, SModel>(myPackageFQNamesToModels));
+    for (CompilationUnitDeclaration decl : myCompilationUnitDeclarations) {
+      if (decl.hasErrors()) {
+        for (CategorizedProblem problem : decl.compilationResult().getErrors()) {
+          String message = problem.getMessage();
+          LOG.error(message + " (line: " + problem.getSourceLineNumber() + ")");//, new FileWithPosition(javaFile.getFile(), cp.getSourceStart()));
+        }
+      }
+    }
     referentsCreator.exec(myCompilationUnitDeclarations.toArray(new CompilationUnitDeclaration[myCompilationUnitDeclarations.size()]));
     new JavaConverterTreeBuilder().exec(referentsCreator, myPackageFQNamesToModels);
   }
@@ -262,7 +270,7 @@ public class JavaCompiler {
   private class MyProblemFactory extends DefaultProblemFactory {
     public CategorizedProblem createProblem(char[] originatingFileName, int problemId, String[] problemArguments, String[] messageArguments, int severity, int startPosition, int endPosition, int lineNumber, int columnNumber) {
       CategorizedProblem problem = super.createProblem(originatingFileName, problemId, problemArguments, messageArguments, severity, startPosition, endPosition, lineNumber, columnNumber);
-      String message = problem.getMessage();
+
       return problem;
     }
 
