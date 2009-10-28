@@ -93,7 +93,7 @@ public class SModelsSubtree {
     List<SModelDescriptor> sortedModels = SortUtil.sortModels(models);
     if (!sortedModels.isEmpty()) {
       int rootIndex = 0;
-      while (rootIndex < sortedModels.size() - 1) {
+      while (rootIndex < sortedModels.size()) {
         SModelTreeNode treeNode = new SModelTreeNode(sortedModels.get(rootIndex), null, context, false);
         result.add(treeNode);
         rootIndex = buildChildModels(treeNode, sortedModels, rootIndex);
