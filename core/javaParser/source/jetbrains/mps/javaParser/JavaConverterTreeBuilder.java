@@ -963,7 +963,9 @@ public class JavaConverterTreeBuilder {
     forStatement.setCondition(expr);
     forStatement.setBody(body);
     if (!incr.isEmpty()) {
-      forStatement.setIteration(incr.get(0).getExpression()); //todo add to BL multiple iterations
+      jetbrains.mps.baseLanguage.structure.Expression expression = incr.get(0).getExpression();
+      expression.getParent().removeChild(expression);
+      forStatement.setIteration(expression); //todo add to BL multiple iterations
     }
     if (!init.isEmpty()) { //todo add to BL multiple for-loop variables
       if (init.get(0) instanceof LocalVariableDeclarationStatement) {
