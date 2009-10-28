@@ -51,21 +51,46 @@
     <option name="scrTextFileName" value="" />
     <option name="historyRevisionsNumber" value="4" />
   </component>
-  <component name="ChangeListManager">
+  <component name="ChangeListManager" verified="true">
     <list default="true" readonly="true" id="1d336031-6925-4498-bf5b-b75f3fdf1c56" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$APPLICATION_HOME_DIR$/core/baseLanguage/classifiers/source_gen/jetbrains/mps/baseLanguage/classifiers/typesystem/check_IMemberOperation_NonTypesystemRule.java" afterPath="$APPLICATION_HOME_DIR$/core/baseLanguage/classifiers/source_gen/jetbrains/mps/baseLanguage/classifiers/typesystem/check_IMemberOperation_NonTypesystemRule.java" />
+      <change type="MODIFICATION" beforePath="$APPLICATION_HOME_DIR$/platform/buildlanguage/languages/packaging/source_gen/jetbrains/mps/build/packaging/typesystem/NonEmptyArchiveName_NonTypesystemRule.java" afterPath="$APPLICATION_HOME_DIR$/platform/buildlanguage/languages/packaging/source_gen/jetbrains/mps/build/packaging/typesystem/NonEmptyArchiveName_NonTypesystemRule.java" />
+      <change type="MODIFICATION" beforePath="$APPLICATION_HOME_DIR$/core/languageDesign/plugin/source_gen/jetbrains/mps/lang/plugin/typesystem/check_ParametersCount_NonTypesystemRule.java" afterPath="$APPLICATION_HOME_DIR$/core/languageDesign/plugin/source_gen/jetbrains/mps/lang/plugin/typesystem/check_ParametersCount_NonTypesystemRule.java" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/solutions/jetbrains.mps.makeTest/source_gen.caches/jetbrains/mps/makeTest/test/.hash.9dd8bw6tiqkdxawqbckcg3f8j5k6weo" afterPath="" />
+      <change type="MODIFICATION" beforePath="$APPLICATION_HOME_DIR$/platform/buildlanguage/languages/packaging/source_gen.caches/jetbrains/mps/build/packaging/typesystem/.debug" afterPath="$APPLICATION_HOME_DIR$/platform/buildlanguage/languages/packaging/source_gen.caches/jetbrains/mps/build/packaging/typesystem/.debug" />
+      <change type="MODIFICATION" beforePath="$APPLICATION_HOME_DIR$/platform/buildlanguage/languages/custommps/source_gen/jetbrains/mps/build/custommps/typesystem/MPSBuildShouldHaveToolsZipDefined_NonTypesystemRule.java" afterPath="$APPLICATION_HOME_DIR$/platform/buildlanguage/languages/custommps/source_gen/jetbrains/mps/build/custommps/typesystem/MPSBuildShouldHaveToolsZipDefined_NonTypesystemRule.java" />
+      <change type="MODIFICATION" beforePath="$APPLICATION_HOME_DIR$/core/languageDesign/plugin/source_gen/jetbrains/mps/lang/plugin/typesystem/HighlightObjectConstructorParamsWithoutToString_NonTypesystemRule.java" afterPath="$APPLICATION_HOME_DIR$/core/languageDesign/plugin/source_gen/jetbrains/mps/lang/plugin/typesystem/HighlightObjectConstructorParamsWithoutToString_NonTypesystemRule.java" />
+      <change type="MODIFICATION" beforePath="$APPLICATION_HOME_DIR$/platform/buildlanguage/languages/custommps/source_gen/jetbrains/mps/build/custommps/typesystem/NonEmptyLibraryName_NonTypesystemRule.java" afterPath="$APPLICATION_HOME_DIR$/platform/buildlanguage/languages/custommps/source_gen/jetbrains/mps/build/custommps/typesystem/NonEmptyLibraryName_NonTypesystemRule.java" />
+      <change type="MODIFICATION" beforePath="$APPLICATION_HOME_DIR$/platform/buildlanguage/languages/packaging/source_gen.caches/jetbrains/mps/build/packaging/typesystem/.dependencies" afterPath="$APPLICATION_HOME_DIR$/platform/buildlanguage/languages/packaging/source_gen.caches/jetbrains/mps/build/packaging/typesystem/.dependencies" />
+      <change type="MODIFICATION" beforePath="$APPLICATION_HOME_DIR$/core/baseLanguage/classifiers/source_gen/jetbrains/mps/baseLanguage/classifiers/typesystem/typeof_DefaultMethodCallOperation_InferenceRule.java" afterPath="$APPLICATION_HOME_DIR$/core/baseLanguage/classifiers/source_gen/jetbrains/mps/baseLanguage/classifiers/typesystem/typeof_DefaultMethodCallOperation_InferenceRule.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/solutions/jetbrains.mps.makeTest/test.mps" afterPath="$PROJECT_DIR$/solutions/jetbrains.mps.makeTest/test.mps" />
+      <change type="MODIFICATION" beforePath="$APPLICATION_HOME_DIR$/platform/buildlanguage/languages/packaging/source_gen/jetbrains/mps/build/packaging/typesystem/NonEmptyFolderName_NonTypesystemRule.java" afterPath="$APPLICATION_HOME_DIR$/platform/buildlanguage/languages/packaging/source_gen/jetbrains/mps/build/packaging/typesystem/NonEmptyFolderName_NonTypesystemRule.java" />
+      <change type="MODIFICATION" beforePath="$APPLICATION_HOME_DIR$/core/languageDesign/plugin/source_gen.caches/jetbrains/mps/lang/plugin/typesystem/.debug" afterPath="$APPLICATION_HOME_DIR$/core/languageDesign/plugin/source_gen.caches/jetbrains/mps/lang/plugin/typesystem/.debug" />
+      <change type="MODIFICATION" beforePath="$APPLICATION_HOME_DIR$/core/baseLanguage/classifiers/source_gen/jetbrains/mps/baseLanguage/classifiers/typesystem/typeof_ThisClassifierExpresson_InferenceRule.java" afterPath="$APPLICATION_HOME_DIR$/core/baseLanguage/classifiers/source_gen/jetbrains/mps/baseLanguage/classifiers/typesystem/typeof_ThisClassifierExpresson_InferenceRule.java" />
+      <change type="MODIFICATION" beforePath="$APPLICATION_HOME_DIR$/core/baseLanguage/unitTest/source_gen/jetbrains/mps/baseLanguage/unitTest/typesystem/typeof_Message_InferenceRule.java" afterPath="$APPLICATION_HOME_DIR$/core/baseLanguage/unitTest/source_gen/jetbrains/mps/baseLanguage/unitTest/typesystem/typeof_Message_InferenceRule.java" />
+      <change type="MODIFICATION" beforePath="$APPLICATION_HOME_DIR$/platform/buildlanguage/languages/custommps/source_gen.caches/jetbrains/mps/build/custommps/typesystem/.dependencies" afterPath="$APPLICATION_HOME_DIR$/platform/buildlanguage/languages/custommps/source_gen.caches/jetbrains/mps/build/custommps/typesystem/.dependencies" />
+      <change type="MODIFICATION" beforePath="$APPLICATION_HOME_DIR$/platform/buildlanguage/languages/packaging/source_gen/jetbrains/mps/build/packaging/typesystem/NonEmptyFileName_NonTypesystemRule.java" afterPath="$APPLICATION_HOME_DIR$/platform/buildlanguage/languages/packaging/source_gen/jetbrains/mps/build/packaging/typesystem/NonEmptyFileName_NonTypesystemRule.java" />
+      <change type="MODIFICATION" beforePath="$APPLICATION_HOME_DIR$/core/languageDesign/plugin/source_gen/jetbrains/mps/lang/plugin/typesystem/ActionParameterTypeIsNotClassifier_NonTypesystemRule.java" afterPath="$APPLICATION_HOME_DIR$/core/languageDesign/plugin/source_gen/jetbrains/mps/lang/plugin/typesystem/ActionParameterTypeIsNotClassifier_NonTypesystemRule.java" />
+      <change type="MODIFICATION" beforePath="$APPLICATION_HOME_DIR$/platform/buildlanguage/languages/packaging/source_gen/jetbrains/mps/build/packaging/typesystem/NotExisingModule_NonTypesystemRule.java" afterPath="$APPLICATION_HOME_DIR$/platform/buildlanguage/languages/packaging/source_gen/jetbrains/mps/build/packaging/typesystem/NotExisingModule_NonTypesystemRule.java" />
+      <change type="MODIFICATION" beforePath="$APPLICATION_HOME_DIR$/core/languageDesign/plugin/source_gen/jetbrains/mps/lang/plugin/typesystem/check_executeBlock_returns_NonTypesystemRule.java" afterPath="$APPLICATION_HOME_DIR$/core/languageDesign/plugin/source_gen/jetbrains/mps/lang/plugin/typesystem/check_executeBlock_returns_NonTypesystemRule.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/testMake.iws" afterPath="$PROJECT_DIR$/testMake.iws" />
-      <change type="MODIFICATION" beforePath="$APPLICATION_HOME_DIR$/core/baseLanguage/baseLanguage/source_gen/jetbrains/mps/baseLanguage/plugin/PrintNodePosition_Action.java" afterPath="$APPLICATION_HOME_DIR$/core/baseLanguage/baseLanguage/source_gen/jetbrains/mps/baseLanguage/plugin/PrintNodePosition_Action.java" />
-      <change type="DELETED" beforePath="$APPLICATION_HOME_DIR$/core/baseLanguage/baseLanguage/source_gen.caches/jetbrains/mps/baseLanguage/plugin/.debug" afterPath="" />
-      <change type="MODIFICATION" beforePath="$APPLICATION_HOME_DIR$/core/baseLanguage/baseLanguage/languageModels/plugin.mps" afterPath="$APPLICATION_HOME_DIR$/core/baseLanguage/baseLanguage/languageModels/plugin.mps" />
-      <change type="MODIFICATION" beforePath="$APPLICATION_HOME_DIR$/core/kernel/source/componentSets/MPSComponents.xml" afterPath="$APPLICATION_HOME_DIR$/core/kernel/source/componentSets/MPSComponents.xml" />
-      <change type="MODIFICATION" beforePath="$APPLICATION_HOME_DIR$/core/baseLanguage/baseLanguage/source_gen.caches/jetbrains/mps/baseLanguage/plugin/.dependencies" afterPath="$APPLICATION_HOME_DIR$/core/baseLanguage/baseLanguage/source_gen.caches/jetbrains/mps/baseLanguage/plugin/.dependencies" />
-      <change type="MODIFICATION" beforePath="$APPLICATION_HOME_DIR$/core/baseLanguage/baseLanguage/source_gen/jetbrains/mps/baseLanguage/plugin/StacktraceUtil.java" afterPath="$APPLICATION_HOME_DIR$/core/baseLanguage/baseLanguage/source_gen/jetbrains/mps/baseLanguage/plugin/StacktraceUtil.java" />
-      <change type="MODIFICATION" beforePath="$APPLICATION_HOME_DIR$/core/baseLanguage/baseLanguage/source/jetbrains/mps/baseLanguage/plugin/BLDebugInfoCache.java" afterPath="$APPLICATION_HOME_DIR$/core/baseLanguage/baseLanguage/source/jetbrains/mps/baseLanguage/plugin/BLDebugInfoCache.java" />
-      <change type="MODIFICATION" beforePath="$APPLICATION_HOME_DIR$/core/languageDesign/generator/source/jetbrains/mps/generator/fileGenerator/FileGenerationManager.java" afterPath="$APPLICATION_HOME_DIR$/core/languageDesign/generator/source/jetbrains/mps/generator/fileGenerator/FileGenerationManager.java" />
-      <change type="MODIFICATION" beforePath="$APPLICATION_HOME_DIR$/core/baseLanguage/baseLanguage/source_gen/jetbrains/mps/baseLanguage/plugin/DebugInfo.java" afterPath="$APPLICATION_HOME_DIR$/core/baseLanguage/baseLanguage/source_gen/jetbrains/mps/baseLanguage/plugin/DebugInfo.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/solutions/jetbrains.mps.makeTest/source_gen.caches/jetbrains/mps/makeTest/test/.hash.4iw9julu4vfmn02s0kvqwk7idngo1oi" />
+      <change type="MODIFICATION" beforePath="$APPLICATION_HOME_DIR$/core/baseLanguage/classifiers/source_gen.caches/jetbrains/mps/baseLanguage/classifiers/typesystem/.dependencies" afterPath="$APPLICATION_HOME_DIR$/core/baseLanguage/classifiers/source_gen.caches/jetbrains/mps/baseLanguage/classifiers/typesystem/.dependencies" />
+      <change type="MODIFICATION" beforePath="$APPLICATION_HOME_DIR$/core/languageDesign/plugin/source_gen/jetbrains/mps/lang/plugin/typesystem/check_NamingPolicy_NonTypesystemRule.java" afterPath="$APPLICATION_HOME_DIR$/core/languageDesign/plugin/source_gen/jetbrains/mps/lang/plugin/typesystem/check_NamingPolicy_NonTypesystemRule.java" />
+      <change type="MODIFICATION" beforePath="$APPLICATION_HOME_DIR$/core/baseLanguage/classifiers/source_gen.caches/jetbrains/mps/baseLanguage/classifiers/typesystem/.debug" afterPath="$APPLICATION_HOME_DIR$/core/baseLanguage/classifiers/source_gen.caches/jetbrains/mps/baseLanguage/classifiers/typesystem/.debug" />
+      <change type="MODIFICATION" beforePath="$APPLICATION_HOME_DIR$/platform/buildlanguage/languages/custommps/source_gen.caches/jetbrains/mps/build/custommps/typesystem/.debug" afterPath="$APPLICATION_HOME_DIR$/platform/buildlanguage/languages/custommps/source_gen.caches/jetbrains/mps/build/custommps/typesystem/.debug" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/solutions/jetbrains.mps.makeTest/source_gen.caches/jetbrains/mps/makeTest/test/.debug" afterPath="$PROJECT_DIR$/solutions/jetbrains.mps.makeTest/source_gen.caches/jetbrains/mps/makeTest/test/.debug" />
+      <change type="MODIFICATION" beforePath="$APPLICATION_HOME_DIR$/platform/buildlanguage/languages/packaging/source_gen/jetbrains/mps/build/packaging/typesystem/DuplicateModule_NonTypesystemRule.java" afterPath="$APPLICATION_HOME_DIR$/platform/buildlanguage/languages/packaging/source_gen/jetbrains/mps/build/packaging/typesystem/DuplicateModule_NonTypesystemRule.java" />
+      <change type="MODIFICATION" beforePath="$APPLICATION_HOME_DIR$/core/languageDesign/plugin/source_gen.caches/jetbrains/mps/lang/plugin/typesystem/.dependencies" afterPath="$APPLICATION_HOME_DIR$/core/languageDesign/plugin/source_gen.caches/jetbrains/mps/lang/plugin/typesystem/.dependencies" />
+      <change type="MODIFICATION" beforePath="$APPLICATION_HOME_DIR$/core/baseLanguage/classifiers/source_gen/jetbrains/mps/baseLanguage/classifiers/typesystem/typeof_SuperClassifierExpresson_InferenceRule.java" afterPath="$APPLICATION_HOME_DIR$/core/baseLanguage/classifiers/source_gen/jetbrains/mps/baseLanguage/classifiers/typesystem/typeof_SuperClassifierExpresson_InferenceRule.java" />
     </list>
     <ignored path=".idea/workspace.xml" />
     <ignored path="testMake.iws" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="true" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="SHELVE" />
   </component>
   <component name="ChangesViewManager" flattened_view="true" show_ignored="false" />
   <component name="CreatePatchCommitExecutor">
@@ -87,29 +112,22 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="DebugInfo" pinned="false" current="false" current-in-tab="false">
-        <entry file="mps://jetbrains.mps.baseLanguage.plugin/DebugInfo">
+      <file leaf-file-name="MyClass" pinned="false" current="false" current-in-tab="false">
+        <entry file="mps://jetbrains.mps.testModels.finalClass1/MyClass">
           <provider selected="true" editor-type-id="MPSFileEditor">
             <state class="jetbrains.mps.ide.NodeEditor$MyFileEditorState" />
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="StacktraceUtil" pinned="false" current="true" current-in-tab="true">
-        <entry file="mps://jetbrains.mps.baseLanguage.plugin/StacktraceUtil">
+      <file leaf-file-name="MakeAssert" pinned="false" current="true" current-in-tab="true">
+        <entry file="mps://jetbrains.mps.makeTest.test/MakeAssert">
           <provider selected="true" editor-type-id="MPSFileEditor">
             <state class="jetbrains.mps.ide.NodeEditor$MyFileEditorState" />
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="PrintNodePosition" pinned="false" current="false" current-in-tab="false">
-        <entry file="mps://jetbrains.mps.baseLanguage.plugin/PrintNodePosition">
-          <provider selected="true" editor-type-id="MPSFileEditor">
-            <state class="jetbrains.mps.ide.NodeEditor$MyFileEditorState" />
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="PositionInfo" pinned="false" current="false" current-in-tab="false">
-        <entry file="mps://jetbrains.mps.baseLanguage.plugin/PositionInfo">
+      <file leaf-file-name="NotMake_Test" pinned="false" current="false" current-in-tab="false">
+        <entry file="mps://jetbrains.mps.makeTest.test/NotMake_Test">
           <provider selected="true" editor-type-id="MPSFileEditor">
             <state class="jetbrains.mps.ide.NodeEditor$MyFileEditorState" />
           </provider>
@@ -137,11 +155,16 @@
     <OptionsSetting value="true" id="Edit" />
     <OptionsSetting value="true" id="Undo Check Out" />
     <OptionsSetting value="true" id="Get Latest Version" />
-    <ConfirmationsSetting value="0" id="Add" />
-    <ConfirmationsSetting value="0" id="Remove" />
+    <ConfirmationsSetting value="2" id="Add" />
+    <ConfirmationsSetting value="2" id="Remove" />
   </component>
   <component name="ProjectPluginManager">
     <option name="pluginsState">
+      <option name="jetbrains.mps.baseLanguage.collections.plugin.Collections_ProjectPlugin">
+        <value>
+          <PluginState />
+        </value>
+      </option>
       <option name="jetbrains.mps.baseLanguage.dates.plugin.Dates_ProjectPlugin">
         <value>
           <PluginState />
@@ -154,19 +177,7 @@
       </option>
       <option name="jetbrains.mps.baseLanguage.unitTest.plugin.UnitTest_ProjectPlugin">
         <value>
-          <PluginState>
-            <option name="myComponentsState">
-              <list>
-                <ComponentState>
-                  <option name="first" value="jetbrains.mps.baseLanguage.unitTest.plugin.UnitTest_PreferencesComponent" />
-                  <params>
-                    <option name="useDebug" value="false" />
-                    <option name="debugPort" value="5025" />
-                  </params>
-                </ComponentState>
-              </list>
-            </option>
-          </PluginState>
+          <PluginState />
         </value>
       </option>
       <option name="jetbrains.mps.build.custommps.plugin.Custommps_ProjectPlugin">
@@ -209,7 +220,18 @@
       </option>
       <option name="jetbrains.mps.ide.actions.Ide_ProjectPlugin">
         <value>
-          <PluginState />
+          <PluginState>
+            <option name="myComponentsState">
+              <list>
+                <ComponentState>
+                  <option name="first" value="jetbrains.mps.ide.actions.PersistentOptions_PreferencesComponent" />
+                  <params>
+                    <option name="addReturnsOnImplement" value="false" />
+                  </params>
+                </ComponentState>
+              </list>
+            </option>
+          </PluginState>
         </value>
       </option>
       <option name="jetbrains.mps.lang.behavior.plugin.Behavior_ProjectPlugin">
@@ -309,30 +331,174 @@
         <subPane>
           <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="" />
+              <option name="myItemId" value="testMake.mpr" />
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
           </PATH>
-        </subPane>
-      </pane>
-      <pane id="ProjectPane">
-        <subPane>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
+          <selection />
         </subPane>
       </pane>
       <pane id="VCSRoots">
         <subPane>
           <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="" />
+              <option name="myItemId" value="VCS Roots" />
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
           </PATH>
+          <selection />
+        </subPane>
+      </pane>
+      <pane id="ProjectPane">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Project" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Modules Pool" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Project" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Modules Pool" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Languages" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="jetbrains" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Project" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Modules Pool" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Languages" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="jetbrains" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mps" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Project" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Modules Pool" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Languages" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="jetbrains" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mps" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="baseLanguage" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Project" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Modules Pool" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Languages" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="jetbrains" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mps" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="baseLanguage" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="classifiers" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Project" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <selection>
+            <PATH>
+              <PATH_ELEMENT>
+                <option name="myItemId" value="Project" />
+                <option name="myItemType" value="" />
+              </PATH_ELEMENT>
+              <PATH_ELEMENT>
+                <option name="myItemId" value="Modules Pool" />
+                <option name="myItemType" value="" />
+              </PATH_ELEMENT>
+              <PATH_ELEMENT>
+                <option name="myItemId" value="Languages" />
+                <option name="myItemType" value="" />
+              </PATH_ELEMENT>
+              <PATH_ELEMENT>
+                <option name="myItemId" value="jetbrains" />
+                <option name="myItemType" value="" />
+              </PATH_ELEMENT>
+              <PATH_ELEMENT>
+                <option name="myItemId" value="mps" />
+                <option name="myItemType" value="" />
+              </PATH_ELEMENT>
+              <PATH_ELEMENT>
+                <option name="myItemId" value="baseLanguage" />
+                <option name="myItemType" value="" />
+              </PATH_ELEMENT>
+              <PATH_ELEMENT>
+                <option name="myItemId" value="classifiers" />
+                <option name="myItemType" value="" />
+              </PATH_ELEMENT>
+              <PATH_ELEMENT>
+                <option name="myItemId" value="typesystem" />
+                <option name="myItemType" value="" />
+              </PATH_ELEMENT>
+            </PATH>
+          </selection>
         </subPane>
       </pane>
     </panes>
@@ -401,20 +567,20 @@
     <option name="myMappingRoots">
       <list>
         <SvnCopyRootSimple>
-          <option name="myVcsRoot" value="C:\MPS" />
-          <option name="myCopyRoot" value="C:\MPS" />
+          <option name="myVcsRoot" value="C:\mps" />
+          <option name="myCopyRoot" value="C:\mps" />
         </SvnCopyRootSimple>
         <SvnCopyRootSimple>
-          <option name="myVcsRoot" value="C:\MPS\core\kernel\testMake" />
-          <option name="myCopyRoot" value="C:\MPS\core\kernel\testMake" />
+          <option name="myVcsRoot" value="C:\mps\core\kernel\testMake" />
+          <option name="myCopyRoot" value="C:\mps\core\kernel\testMake" />
         </SvnCopyRootSimple>
       </list>
     </option>
     <option name="myMoreRealMappingRoots">
       <list>
         <SvnCopyRootSimple>
-          <option name="myVcsRoot" value="C:\MPS" />
-          <option name="myCopyRoot" value="C:\MPS" />
+          <option name="myVcsRoot" value="C:\mps" />
+          <option name="myCopyRoot" value="C:\mps" />
         </SvnCopyRootSimple>
       </list>
     </option>
@@ -434,15 +600,15 @@
       <window_info id="Run Packaging Language Build Script" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39981008" sideWeight="0.49003217" order="3" side_tool="false" />
       <window_info id="Node Explorer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" />
-      <window_info id="Usages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32440192" sideWeight="0.45414013" order="7" side_tool="false" />
+      <window_info id="Usages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3242358" sideWeight="0.45151034" order="7" side_tool="false" />
       <window_info id="RefactoringView" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" />
       <window_info id="Typechecker State" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" />
       <window_info id="Class Hierarchy" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" />
       <window_info id="Build Custom MPS" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" />
-      <window_info id="Inspector" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.34906697" sideWeight="0.2853736" order="7" side_tool="true" />
-      <window_info id="MPS Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.34906697" sideWeight="0.709062" order="7" side_tool="false" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.27662957" sideWeight="0.64324915" order="1" side_tool="false" />
+      <window_info id="Inspector" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.34825328" sideWeight="0.30127186" order="7" side_tool="true" />
+      <window_info id="MPS Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.34825328" sideWeight="0.69316375" order="7" side_tool="false" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.23131956" sideWeight="0.6441048" order="1" side_tool="false" />
       <window_info id="Output" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" />
       <window_info id="Replacement" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" />
       <window_info id="Dependency Viewer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" />
@@ -466,7 +632,131 @@
   </component>
   <component name="UsagesViewTool">
     <version id="0.9997" />
-    <tabs />
+    <tabs>
+      <tab>
+        <usage_view>
+          <buttons rerun="false" regenerate="true" close="true" />
+          <result_provider class_name="jetbrains.mps.ide.findusages.findalgorithm.resultproviders.treenodes.UnionNode">
+            <children>
+              <jetbrains.mps.ide.findusages.findalgorithm.resultproviders.treenodes.FinderNode>
+                <children />
+                <finder class_name="jetbrains.mps.workbench.actions.model.MissingReferencesFinder" />
+              </jetbrains.mps.ide.findusages.findalgorithm.resultproviders.treenodes.FinderNode>
+            </children>
+          </result_provider>
+          <query>
+            <scope scope_type="global_scope" />
+            <holder holder_class="jetbrains.mps.ide.findusages.model.holders.ModelHolder">
+              <model uid="r:7aeccf7b-2a92-4693-88a5-f2859521757a(jetbrains.mps.makeTest.test)" />
+            </holder>
+          </query>
+          <tree_wrapper>
+            <plain_path_provider />
+            <view_options>
+              <options category_option="false" module_option="true" model_option="true" root_option="true" path_option="false" count_option="true" info_option="true" view_searched_nodes_option="true" group_searched_nodes_option="true" autoscroll_option="false" />
+            </view_options>
+            <contents>
+              <data data_class="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.MainNodeData" caption="" info="" excluded="false" expanded="true" isresult="false" results_section="false">
+                <role name="main root" />
+              </data>
+              <children>
+                <child>
+                  <data data_class="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.SearchedNodesNodeData" caption="Searched nodes" info="" excluded="false" expanded="true" isresult="false" results_section="false">
+                    <role name="searched nodes" />
+                  </data>
+                  <children />
+                </child>
+                <child>
+                  <data data_class="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.ResultsNodeData" caption="results" info="" excluded="false" expanded="true" isresult="false" results_section="false">
+                    <role name="results" />
+                  </data>
+                  <children>
+                    <child>
+                      <data data_class="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.CategoryNodeData" caption="&lt;b&gt;broken reference&lt;/b&gt;" info="" excluded="false" expanded="true" isresult="false" results_section="true" category="broken reference">
+                        <role name="category" />
+                      </data>
+                      <children>
+                        <child>
+                          <data data_class="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.ModuleNodeData" caption="jetbrains.mps.makeTest" info="" excluded="false" expanded="true" isresult="false" results_section="true" module_ref="8e87e036-7d3f-4e47-809f-c244e2a938e8(jetbrains.mps.makeTest)">
+                            <role name="module" />
+                          </data>
+                          <children>
+                            <child>
+                              <data data_class="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.ModelNodeData" caption="jetbrains.mps.makeTest.test" info="" excluded="false" expanded="true" isresult="false" results_section="true">
+                                <role name="model" />
+                                <model uid="r:7aeccf7b-2a92-4693-88a5-f2859521757a(jetbrains.mps.makeTest.test)" />
+                              </data>
+                              <children>
+                                <child>
+                                  <data data_class="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.NodeNodeData" caption="MakeAssert" info="" excluded="false" expanded="true" isresult="false" results_section="true">
+                                    <role name="root" />
+                                    <node>
+                                      <node model="r:7aeccf7b-2a92-4693-88a5-f2859521757a(jetbrains.mps.makeTest.test)" id="1957199320903967759" />
+                                    </node>
+                                  </data>
+                                  <children>
+                                    <child>
+                                      <data data_class="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.NodeNodeData" caption="assertDependenciesChecked(string,ChangeModel):void" info="role: &lt;i&gt;staticMethod&lt;/i&gt;; in: &lt;i&gt;MakeAssert&lt;/i&gt;" excluded="false" expanded="false" isresult="false" results_section="true">
+                                        <role name="root to target" />
+                                        <node>
+                                          <node model="r:7aeccf7b-2a92-4693-88a5-f2859521757a(jetbrains.mps.makeTest.test)" id="1957199320903967876" />
+                                        </node>
+                                      </data>
+                                      <children>
+                                        <child>
+                                          <data data_class="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.NodeNodeData" caption="genType" info="role: &lt;i&gt;localVariableDeclaration&lt;/i&gt;; in: &lt;i&gt;&amp;lt;type&amp;gt; &amp;lt;var&amp;gt;;&lt;/i&gt;" excluded="false" expanded="false" isresult="false" results_section="true">
+                                            <role name="root to target" />
+                                            <node>
+                                              <node model="r:7aeccf7b-2a92-4693-88a5-f2859521757a(jetbrains.mps.makeTest.test)" id="6016914837743474510" />
+                                            </node>
+                                          </data>
+                                          <children>
+                                            <child>
+                                              <data data_class="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.NodeNodeData" caption="?no classifier?" info="role: &lt;i&gt;type&lt;/i&gt;; in: &lt;i&gt;genType&lt;/i&gt;" excluded="false" expanded="false" isresult="true" results_section="true">
+                                                <role name="target" />
+                                                <node />
+                                              </data>
+                                              <children />
+                                            </child>
+                                            <child>
+                                              <data data_class="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.NodeNodeData" caption="&amp;lt;no constructorDeclaration&amp;gt;" info="role: &lt;i&gt;creator&lt;/i&gt;; in: &lt;i&gt;new&lt;/i&gt;" excluded="false" expanded="false" isresult="true" results_section="true">
+                                                <role name="target" />
+                                                <node>
+                                                  <node model="r:7aeccf7b-2a92-4693-88a5-f2859521757a(jetbrains.mps.makeTest.test)" id="6016914837743493709" />
+                                                </node>
+                                              </data>
+                                              <children />
+                                            </child>
+                                          </children>
+                                        </child>
+                                        <child>
+                                          <data data_class="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.NodeNodeData" caption="&amp;lt;no instanceMethodDeclaration&amp;gt;" info="role: &lt;i&gt;operation&lt;/i&gt;; in: &lt;i&gt;DotExpression&lt;/i&gt;" excluded="false" expanded="false" isresult="true" results_section="true">
+                                            <role name="target" />
+                                            <node>
+                                              <node model="r:7aeccf7b-2a92-4693-88a5-f2859521757a(jetbrains.mps.makeTest.test)" id="2381103581468453848" />
+                                            </node>
+                                          </data>
+                                          <children />
+                                        </child>
+                                      </children>
+                                    </child>
+                                  </children>
+                                </child>
+                              </children>
+                            </child>
+                          </children>
+                        </child>
+                      </children>
+                    </child>
+                  </children>
+                </child>
+              </children>
+            </contents>
+          </tree_wrapper>
+        </usage_view>
+        <usage_view_options />
+      </tab>
+    </tabs>
     <default_view_options>
       <options category_option="false" module_option="true" model_option="true" root_option="true" path_option="false" count_option="true" info_option="true" view_searched_nodes_option="true" group_searched_nodes_option="true" autoscroll_option="false" />
     </default_view_options>
@@ -550,16 +840,6 @@
         <state class="jetbrains.mps.ide.NodeEditor$MyFileEditorState" />
       </provider>
     </entry>
-    <entry file="mps://jetbrains.mps.makeTest.test/NotMake_Test">
-      <provider selected="true" editor-type-id="MPSFileEditor">
-        <state class="jetbrains.mps.ide.NodeEditor$MyFileEditorState" />
-      </provider>
-    </entry>
-    <entry file="mps://jetbrains.mps.makeTest.test/MakeAssert">
-      <provider selected="true" editor-type-id="MPSFileEditor">
-        <state class="jetbrains.mps.ide.NodeEditor$MyFileEditorState" />
-      </provider>
-    </entry>
     <entry file="mps://jetbrains.mps.baseLanguage.textGen/ModelDependencies">
       <provider selected="true" editor-type-id="MPSFileEditor">
         <state class="jetbrains.mps.ide.NodeEditor$MyFileEditorState" />
@@ -580,11 +860,6 @@
         <state class="jetbrains.mps.ide.NodeEditor$MyFileEditorState" />
       </provider>
     </entry>
-    <entry file="mps://jetbrains.mps.testModels.finalClass1/MyClass">
-      <provider selected="true" editor-type-id="MPSFileEditor">
-        <state class="jetbrains.mps.ide.NodeEditor$MyFileEditorState" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/solutions/jetbrains.mps.makeTest/source_gen/jetbrains/mps/makeTest/test/MakeAssert.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="10" column="22" selection-start="356" selection-end="356" vertical-scroll-proportion="0.0" />
@@ -600,22 +875,22 @@
         <state class="jetbrains.mps.ide.NodeEditor$MyFileEditorState" />
       </provider>
     </entry>
-    <entry file="mps://jetbrains.mps.baseLanguage.plugin/PositionInfo">
-      <provider selected="true" editor-type-id="MPSFileEditor">
-        <state class="jetbrains.mps.ide.NodeEditor$MyFileEditorState" />
-      </provider>
-    </entry>
-    <entry file="mps://jetbrains.mps.baseLanguage.plugin/DebugInfo">
-      <provider selected="true" editor-type-id="MPSFileEditor">
-        <state class="jetbrains.mps.ide.NodeEditor$MyFileEditorState" />
-      </provider>
-    </entry>
     <entry file="mps://jetbrains.mps.baseLanguage.plugin/PrintNodePosition">
       <provider selected="true" editor-type-id="MPSFileEditor">
         <state class="jetbrains.mps.ide.NodeEditor$MyFileEditorState" />
       </provider>
     </entry>
-    <entry file="mps://jetbrains.mps.baseLanguage.plugin/StacktraceUtil">
+    <entry file="mps://jetbrains.mps.testModels.finalClass1/MyClass">
+      <provider selected="true" editor-type-id="MPSFileEditor">
+        <state class="jetbrains.mps.ide.NodeEditor$MyFileEditorState" />
+      </provider>
+    </entry>
+    <entry file="mps://jetbrains.mps.makeTest.test/NotMake_Test">
+      <provider selected="true" editor-type-id="MPSFileEditor">
+        <state class="jetbrains.mps.ide.NodeEditor$MyFileEditorState" />
+      </provider>
+    </entry>
+    <entry file="mps://jetbrains.mps.makeTest.test/MakeAssert">
       <provider selected="true" editor-type-id="MPSFileEditor">
         <state class="jetbrains.mps.ide.NodeEditor$MyFileEditorState" />
       </provider>

@@ -12,6 +12,7 @@ import jetbrains.mps.build.packaging.behavior.AbstractProjectComponent_Behavior;
 import jetbrains.mps.intentions.BaseIntentionProvider;
 import jetbrains.mps.typesystem.inference.IErrorTarget;
 import jetbrains.mps.typesystem.inference.NodeErrorTarget;
+import jetbrains.mps.nodeEditor.IErrorReporter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.SModelUtil_new;
 
@@ -27,12 +28,12 @@ public class DuplicateModule_NonTypesystemRule extends AbstractNonTypesystemRule
             {
               BaseIntentionProvider intentionProvider = null;
               IErrorTarget errorTarget = new NodeErrorTarget();
-              typeCheckingContext.reportTypeError(e, "duplicated entry " + SPropertyOperations.getString(e, "name"), "r:00000000-0000-4000-0000-011c895904d6(jetbrains.mps.build.packaging.typesystem)", "1209459089369", intentionProvider, errorTarget);
+              IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(e, "duplicated entry " + SPropertyOperations.getString(e, "name"), "r:00000000-0000-4000-0000-011c895904d6(jetbrains.mps.build.packaging.typesystem)", "1209459089369", intentionProvider, errorTarget);
             }
             {
               BaseIntentionProvider intentionProvider = null;
               IErrorTarget errorTarget = new NodeErrorTarget();
-              typeCheckingContext.reportTypeError(e2, "duplicated entry " + SPropertyOperations.getString(e2, "name"), "r:00000000-0000-4000-0000-011c895904d6(jetbrains.mps.build.packaging.typesystem)", "1209459118583", intentionProvider, errorTarget);
+              IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(e2, "duplicated entry " + SPropertyOperations.getString(e2, "name"), "r:00000000-0000-4000-0000-011c895904d6(jetbrains.mps.build.packaging.typesystem)", "1209459118583", intentionProvider, errorTarget);
             }
           }
         }

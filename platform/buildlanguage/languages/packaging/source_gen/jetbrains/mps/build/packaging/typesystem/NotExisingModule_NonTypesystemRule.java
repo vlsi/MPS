@@ -10,6 +10,7 @@ import jetbrains.mps.build.packaging.behavior.Module_Behavior;
 import jetbrains.mps.intentions.BaseIntentionProvider;
 import jetbrains.mps.typesystem.inference.IErrorTarget;
 import jetbrains.mps.typesystem.inference.NodeErrorTarget;
+import jetbrains.mps.nodeEditor.IErrorReporter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.SModelUtil_new;
 
@@ -22,7 +23,7 @@ public class NotExisingModule_NonTypesystemRule extends AbstractNonTypesystemRul
       {
         BaseIntentionProvider intentionProvider = null;
         IErrorTarget errorTarget = new NodeErrorTarget();
-        typeCheckingContext.reportTypeError(module, "Can not find module " + SPropertyOperations.getString(module, "name"), "r:00000000-0000-4000-0000-011c895904d6(jetbrains.mps.build.packaging.typesystem)", "1209470451391", intentionProvider, errorTarget);
+        IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(module, "Can not find module " + SPropertyOperations.getString(module, "name"), "r:00000000-0000-4000-0000-011c895904d6(jetbrains.mps.build.packaging.typesystem)", "1209470451391", intentionProvider, errorTarget);
       }
     }
   }

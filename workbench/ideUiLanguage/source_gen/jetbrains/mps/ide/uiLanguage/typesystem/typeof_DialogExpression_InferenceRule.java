@@ -18,8 +18,8 @@ public class typeof_DialogExpression_InferenceRule extends AbstractInferenceRule
     {
       SNode _nodeToCheck_1029348928467 = nodeToCheck;
       BaseIntentionProvider intentionProvider = null;
-      EquationInfo info = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895904b0(jetbrains.mps.ide.uiLanguage.typesystem)", "1203610794130", 0, intentionProvider);
-      typeCheckingContext.createEquation((SNode)typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895904b0(jetbrains.mps.ide.uiLanguage.typesystem)", "1203610791158", true), (SNode)new _Quotations.QuotationClass_0().createNode(typeCheckingContext), info);
+      EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895904b0(jetbrains.mps.ide.uiLanguage.typesystem)", "1203610794130", 0, intentionProvider);
+      typeCheckingContext.createEquation((SNode)typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895904b0(jetbrains.mps.ide.uiLanguage.typesystem)", "1203610791158", true), (SNode)new _Quotations.QuotationClass_0().createNode(typeCheckingContext), _info_12389875345);
     }
   }
 

@@ -10,6 +10,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.intentions.BaseIntentionProvider;
 import jetbrains.mps.typesystem.inference.IErrorTarget;
 import jetbrains.mps.typesystem.inference.NodeErrorTarget;
+import jetbrains.mps.nodeEditor.IErrorReporter;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class NonEmptyArchiveName_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
@@ -21,7 +22,7 @@ public class NonEmptyArchiveName_NonTypesystemRule extends AbstractNonTypesystem
       {
         BaseIntentionProvider intentionProvider = null;
         IErrorTarget errorTarget = new NodeErrorTarget();
-        typeCheckingContext.reportTypeError(zip, "Archive name should be non-empty", "r:00000000-0000-4000-0000-011c895904d6(jetbrains.mps.build.packaging.typesystem)", "1205349830527", intentionProvider, errorTarget);
+        IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(zip, "Archive name should be non-empty", "r:00000000-0000-4000-0000-011c895904d6(jetbrains.mps.build.packaging.typesystem)", "1205349830527", intentionProvider, errorTarget);
       }
     }
   }

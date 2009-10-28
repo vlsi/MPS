@@ -14,6 +14,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.intentions.BaseIntentionProvider;
 import jetbrains.mps.typesystem.inference.IErrorTarget;
 import jetbrains.mps.typesystem.inference.NodeErrorTarget;
+import jetbrains.mps.nodeEditor.IErrorReporter;
 import jetbrains.mps.build.custommps.behavior.MPSBuild_Behavior;
 import jetbrains.mps.smodel.SModelUtil_new;
 
@@ -28,7 +29,7 @@ public class MPSBuildShouldHaveToolsZipDefined_NonTypesystemRule extends Abstrac
       {
         BaseIntentionProvider intentionProvider = null;
         IErrorTarget errorTarget = new NodeErrorTarget();
-        typeCheckingContext.reportTypeError(mPSBuild, "Path to " + MPSBuild_Behavior.getMPSBuildToolsZipName_1234294616845() + " is not set.", "r:60aa75c8-3091-4b06-9278-1b723842355e(jetbrains.mps.build.custommps.typesystem)", "1238771106116", intentionProvider, errorTarget);
+        IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(mPSBuild, "Path to " + MPSBuild_Behavior.getMPSBuildToolsZipName_1234294616845() + " is not set.", "r:60aa75c8-3091-4b06-9278-1b723842355e(jetbrains.mps.build.custommps.typesystem)", "1238771106116", intentionProvider, errorTarget);
       }
     }
   }

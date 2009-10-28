@@ -10,6 +10,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.intentions.BaseIntentionProvider;
 import jetbrains.mps.typesystem.inference.IErrorTarget;
 import jetbrains.mps.typesystem.inference.NodeErrorTarget;
+import jetbrains.mps.nodeEditor.IErrorReporter;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class NonEmptyLibraryName_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
@@ -21,7 +22,7 @@ public class NonEmptyLibraryName_NonTypesystemRule extends AbstractNonTypesystem
       {
         BaseIntentionProvider intentionProvider = null;
         IErrorTarget errorTarget = new NodeErrorTarget();
-        typeCheckingContext.reportTypeError(libraryFolder, "Library should have name.", "r:60aa75c8-3091-4b06-9278-1b723842355e(jetbrains.mps.build.custommps.typesystem)", "1238590610891", intentionProvider, errorTarget);
+        IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(libraryFolder, "Library should have name.", "r:60aa75c8-3091-4b06-9278-1b723842355e(jetbrains.mps.build.custommps.typesystem)", "1238590610891", intentionProvider, errorTarget);
       }
     }
   }

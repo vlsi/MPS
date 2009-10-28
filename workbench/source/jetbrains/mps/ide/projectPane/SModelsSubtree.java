@@ -65,7 +65,7 @@ public class SModelsSubtree {
 
       List<SModelTreeNode> testNodes = getRootModelTreeNodes(tests, operationContext);
       for (SModelTreeNode testNode : testNodes) {
-        builder.addNode(testNode);
+        builder.addNode(testNode);                        
       }
 
       TestsTreeNode testsNode = new TestsTreeNode(operationContext);
