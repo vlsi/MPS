@@ -170,6 +170,9 @@ public class TypesProvider {
   }
 
   public SReference createMethodReference(MethodBinding binding, String role, SNode sourceNode) {
+    if (binding instanceof ParameterizedMethodBinding) {
+      binding = ((ParameterizedMethodBinding) binding).original(); 
+    }
     INodeAdapter adapter = myReferentsCreator.myBindingMap.get(binding);
     if (adapter != null) {
       return SReference.create(role, sourceNode, adapter.getNode());

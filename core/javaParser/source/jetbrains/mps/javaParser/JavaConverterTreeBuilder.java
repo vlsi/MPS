@@ -437,7 +437,9 @@ public class JavaConverterTreeBuilder {
     addCallArgs(x.arguments, result);
     SReference methodReference = myTypesProvider.createMethodReference(x.binding,
       ConstructorInvocationStatement.BASE_METHOD_DECLARATION, result.getNode());
-    result.getNode().addReference(methodReference);
+    if (methodReference != null) {
+      result.getNode().addReference(methodReference);
+    }
     return result;
   }
 
@@ -638,7 +640,9 @@ public class JavaConverterTreeBuilder {
     }
 
     SReference methodReference = myTypesProvider.createMethodReference(x.binding, BaseMethodCall.BASE_METHOD_DECLARATION, methodCall.getNode());
-    methodCall.getNode().addReference(methodReference);
+    if (methodReference != null) {
+      methodCall.getNode().addReference(methodReference);
+    }
 
     // The arguments come first...
     addCallArgs(x.arguments, methodCall);
@@ -654,7 +658,9 @@ public class JavaConverterTreeBuilder {
     MethodBinding b = x.binding;
     ClassCreator classCreator = ClassCreator.newInstance(myCurrentModel);
     SReference methodReference = myTypesProvider.createMethodReference(b, ClassCreator.BASE_METHOD_DECLARATION, classCreator.getNode());
-    classCreator.getNode().addReference(methodReference);
+    if (methodReference != null) {
+      classCreator.getNode().addReference(methodReference);
+    }
 
     if (x.enumConstant != null) {
       throw new JavaConverterException("unexpected enum constant creation");
