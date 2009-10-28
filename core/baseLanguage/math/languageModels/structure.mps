@@ -762,7 +762,7 @@
     <property name="name" value="BigProdExpression" />
     <link role="extends" targetNodeId="1236428893250" resolveInfo="ArithmSymbol" />
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1236428583262">
-      <property name="value" value="?" />
+      <property name="value" value="Π" />
       <link role="conceptPropertyDeclaration" targetNodeId="1236427043810" resolveInfo="opName" />
     </node>
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1236428657617">
@@ -783,7 +783,7 @@
       <link role="conceptPropertyDeclaration" targetNodeId="3v.1137473891462" resolveInfo="alias" />
     </node>
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1236439487934">
-      <property name="value" value="?" />
+      <property name="value" value="Σ" />
       <link role="conceptPropertyDeclaration" targetNodeId="1236427043810" resolveInfo="opName" />
     </node>
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1236439490295">

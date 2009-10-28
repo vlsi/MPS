@@ -10,7 +10,10 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.style.CellAlign;
-import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
+import jetbrains.mps.nodeEditor.AbstractCellProvider;
+import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
+import jetbrains.mps.baseLanguage.math.plugin.EmptyCellProvider;
+import jetbrains.mps.baseLanguage.math.plugin.HLine;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
@@ -30,7 +33,7 @@ public class DivExpressionFraction_Editor extends DefaultNodeEditor {
       style.set(StyleAttributes.HORIZONTAL_ALIGN, CellAlign.CENTER);
     }
     editorCell.addEditorCell(this.createRefNode_9055_0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_9055_0(editorContext, node));
+    editorCell.addEditorCell(this.createCustom_9055_1(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_9055_1(editorContext, node));
     return editorCell;
   }
@@ -38,49 +41,55 @@ public class DivExpressionFraction_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_9055_1(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_9055_1");
-    editorCell.addEditorCell(this.createConstant_9055_1(editorContext, node));
+    editorCell.addEditorCell(this.createCustom_9055_2(editorContext, node));
     editorCell.addEditorCell(this.createCollection_9055_0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_9055_2(editorContext, node));
+    editorCell.addEditorCell(this.createCustom_9055_0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_9055_0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "-");
-    editorCell.setCellId("Constant_9055_0");
+  private EditorCell createCustom_9055_0(final EditorContext editorContext, final SNode node) {
+    AbstractCellProvider provider = new _FunctionTypes._return_P0_E0<EmptyCellProvider>() {
+      public EmptyCellProvider invoke() {
+        return new EmptyCellProvider(node);
+      }
+    }.invoke();
+    EditorCell editorCell = provider.createEditorCell(editorContext);
+    editorCell.setCellId("Custom_9055_0");
+    {
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.PUNCTUATION_LEFT, true);
+    }
+    return editorCell;
+  }
+
+  private EditorCell createCustom_9055_1(final EditorContext editorContext, final SNode node) {
+    AbstractCellProvider provider = new _FunctionTypes._return_P0_E0<HLine>() {
+      public HLine invoke() {
+        return new HLine();
+      }
+    }.invoke();
+    EditorCell editorCell = provider.createEditorCell(editorContext);
+    editorCell.setCellId("Custom_9055_1");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.BASE_LINE_CELL, true);
-      style.set(StyleAttributes.SELECTABLE, true);
-      style.set(StyleAttributes.EDITABLE, false);
-      style.set(StyleAttributes.FONT_SIZE, 5);
+      style.set(StyleAttributes.SELECTABLE, false);
     }
-    editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_9055_1(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "(");
-    editorCell.setCellId("Constant_9055_1");
+  private EditorCell createCustom_9055_2(final EditorContext editorContext, final SNode node) {
+    AbstractCellProvider provider = new _FunctionTypes._return_P0_E0<EmptyCellProvider>() {
+      public EmptyCellProvider invoke() {
+        return new EmptyCellProvider(node);
+      }
+    }.invoke();
+    EditorCell editorCell = provider.createEditorCell(editorContext);
+    editorCell.setCellId("Custom_9055_2");
     {
       Style style = editorCell.getStyle();
-      style.set(StyleAttributes.EDITABLE, false);
-      style.set(StyleAttributes.FIRST_POSITION_ALLOWED, true);
-      style.set(StyleAttributes.LAST_POSITION_ALLOWED, false);
+      style.set(StyleAttributes.PUNCTUATION_RIGHT, true);
     }
-    editorCell.setDefaultText("");
-    return editorCell;
-  }
-
-  private EditorCell createConstant_9055_2(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ")");
-    editorCell.setCellId("Constant_9055_2");
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.EDITABLE, false);
-      style.set(StyleAttributes.FIRST_POSITION_ALLOWED, false);
-      style.set(StyleAttributes.LAST_POSITION_ALLOWED, true);
-    }
-    editorCell.setDefaultText("");
     return editorCell;
   }
 
