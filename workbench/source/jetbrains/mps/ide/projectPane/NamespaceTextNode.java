@@ -106,6 +106,9 @@ public final class NamespaceTextNode extends TextTreeNode {
     for (MPSTreeNode child : this) {
       if (child instanceof SModelTreeNode) {
         models.add(((SModelTreeNode) child).getSModelDescriptor());
+        for (SModelTreeNode childTreeNode : ((SModelTreeNode)child).getSubfolderSModelTreeNodes()) {
+          models.add(childTreeNode.getSModelDescriptor());
+        }
       } else if (child instanceof NamespaceTextNode) {
         models.addAll(((NamespaceTextNode) child).getModelsUnder());
       }
