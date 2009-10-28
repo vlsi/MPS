@@ -10390,7 +10390,7 @@
         <node role="styleItem" type="jetbrains.mps.lang.editor.structure.IndentLayoutIndentStyleClassItem" id="1237647129749">
           <property name="flag" value="true" />
         </node>
-        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.IndentLayoutNewLineStyleClassItem" id="1237647129750">
+        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.IndentLayoutNewLineChildrenStyleClassItem" id="7743745654900605616">
           <property name="flag" value="true" />
         </node>
         <node role="cellLayout" type="jetbrains.mps.lang.editor.structure.CellLayout_Indent" id="1237818796545" />
@@ -10445,7 +10445,11 @@
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1188206672106">
         <property name="text" value=";" />
         <link role="styleClass" targetNodeId="1215094139260" resolveInfo="Semicolon" />
+        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.IndentLayoutNewLineStyleClassItem" id="7743745654900948112">
+          <property name="flag" value="true" />
+        </node>
       </node>
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="7743745654900996526" />
       <node role="cellLayout" type="jetbrains.mps.lang.editor.structure.CellLayout_Indent" id="1237472715940" />
     </node>
   </node>

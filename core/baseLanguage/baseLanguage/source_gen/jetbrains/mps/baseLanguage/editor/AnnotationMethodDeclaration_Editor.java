@@ -8,6 +8,8 @@ import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
+import jetbrains.mps.nodeEditor.style.Style;
+import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
@@ -27,6 +29,7 @@ public class AnnotationMethodDeclaration_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstant_6638_0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_6638_1(editorContext, node));
     editorCell.addEditorCell(this.createConstant_6638_2(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_6638_3(editorContext, node));
     return editorCell;
   }
 
@@ -50,6 +53,17 @@ public class AnnotationMethodDeclaration_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ";");
     editorCell.setCellId("Constant_6638_2");
     BaseLanguageStyle_StyleSheet.getSemicolon(editorCell).apply(editorCell);
+    {
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
+    }
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+
+  private EditorCell createConstant_6638_3(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
+    editorCell.setCellId("Constant_6638_3");
     editorCell.setDefaultText("");
     return editorCell;
   }
