@@ -61,7 +61,7 @@ public class SModelsSubtree {
       } else {
         IModule contextModule = operationContext.getModule();
         String namespace = contextModule.getSModelRoots().get(0).getPrefix();
-        if (namespace == null || namespace.isEmpty()) {
+        if (namespace == null || namespace.length() == 0) {
           namespace = contextModule.getModuleNamespace();
         }
 
