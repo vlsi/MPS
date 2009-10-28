@@ -137,7 +137,7 @@ public abstract class BaseModelCache<T> implements ApplicationComponent {
     return result;
   }
 
-  public IFile getCachesDir(IModule module, String outputPath) {
+  public static IFile getCachesDir(IModule module, String outputPath) {
     if (outputPath == null) return null;
 
     if (module.isPackaged()) {

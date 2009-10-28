@@ -26,6 +26,7 @@ import jetbrains.mps.util.ManyToManyMap;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.MPSExtentions;
+import jetbrains.mps.generator.fileGenerator.BaseModelCache;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 
@@ -490,6 +491,12 @@ public class MPSModuleRepository implements ApplicationComponent {
 
       for (String sourceDir : module.getSourcePaths()) {
         excludes.add(FileSystem.getFile(sourceDir));
+      }
+      if (module.getGeneratorOutputPath() != null) {
+        excludes.add(BaseModelCache.getCachesDir(module, module.getGeneratorOutputPath()));
+      }
+      if (module.getTestsGeneratorOutputPath() != null) {
+        excludes.add(BaseModelCache.getCachesDir(module, module.getTestsGeneratorOutputPath()));
       }
     } catch (Throwable t) {
       LOG.error("Fail to load module from descriptor " + dir.getAbsolutePath(), t);
