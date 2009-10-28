@@ -18,10 +18,10 @@ public class OverrideConceptMethodStrategy extends BaseMethodUpdateStrategy {
     super.updateMethod(sourceMethod, method);
     Iterable<SNode> paramList = ListSequence.fromList(SLinkOperations.getTargets(method, "parameter", true)).select(new ISelector<SNode, SNode>() {
       public SNode select(SNode it) {
-        return new _Quotations.QuotationClass_6().createNode(it);
+        return new _Quotations.QuotationClass_7().createNode(it);
       }
     });
-    SNode superCallExpr = new _Quotations.QuotationClass_7().createNode(sourceMethod, Sequence.fromIterable(paramList).toListSequence());
+    SNode superCallExpr = new _Quotations.QuotationClass_6().createNode(Sequence.fromIterable(paramList).toListSequence(), sourceMethod);
     if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(method, "returnType", true), "jetbrains.mps.baseLanguage.structure.VoidType")) {
       SLinkOperations.addChild(SLinkOperations.getTarget(method, "body", true), "statement", new _Quotations.QuotationClass_8().createNode(superCallExpr));
     } else {
