@@ -65,7 +65,7 @@ public class SModelsSubtree {
           namespace = contextModule.getModuleNamespace();
         }
 
-        currentRootNode = new TextTreeNode((namespace == null)? "" : namespace, operationContext);
+        currentRootNode = new NamespaceTextNode((namespace == null)? "" : namespace, operationContext);
       }
       for (SModelTreeNode treeNode : regularModelNodes) {
         currentRootNode.add(treeNode);
