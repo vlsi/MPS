@@ -186,6 +186,25 @@
         </node>
       </node>
     </node>
+    <node role="field" type="jetbrains.mps.baseLanguage.structure.FieldDeclaration" id="4326291070220016228">
+      <property name="name" value="field" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PrivateVisibility" id="4326291070220016229" />
+      <node role="type" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="4326291070220018646" />
+      <node role="nodeMacro$attribute" type="jetbrains.mps.lang.generator.structure.CopySrcListMacro" id="4326291070220018648">
+        <node role="sourceNodesQuery" type="jetbrains.mps.lang.generator.structure.SourceSubstituteMacro_SourceNodesQuery" id="4326291070220018649">
+          <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="4326291070220018650">
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="4326291070220018651">
+              <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="4326291070220018653">
+                <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="4326291070220018652" />
+                <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkListAccess" id="4326291070220018657">
+                  <link role="link" targetNodeId="3.1068390468199" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
   </node>
   <node type="jetbrains.mps.lang.generator.structure.MappingConfiguration" id="1171932074437">
     <property name="name" value="main_unitTest" />
