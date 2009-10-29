@@ -1720,6 +1720,11 @@
       <property name="role" value="body" />
       <link role="target" targetNodeId="1068580123136" resolveInfo="StatementList" />
     </node>
+    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="363746191845183793">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="loopLabel" />
+      <link role="target" targetNodeId="363746191845175146" resolveInfo="LoopLabel" />
+    </node>
     <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="1233160450472">
       <link role="intfc" targetNodeId="4.1233160296597" resolveInfo="IContainer" />
     </node>
@@ -3460,6 +3465,23 @@
     </node>
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.BooleanConceptProperty" id="8315304769832337838">
       <link role="conceptPropertyDeclaration" targetNodeId="4.1137473854053" resolveInfo="abstract" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="363746191845175146">
+    <property name="name" value="LoopLabel" />
+    <link role="extends" targetNodeId="4.1133920641626" resolveInfo="BaseConcept" />
+    <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="363746191845175147">
+      <link role="intfc" targetNodeId="4.1169194658468" resolveInfo="INamedConcept" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="363746191845183785">
+    <property name="name" value="LoopLabelReference" />
+    <link role="extends" targetNodeId="4.1133920641626" resolveInfo="BaseConcept" />
+    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="363746191845183786">
+      <property name="metaClass" value="reference" />
+      <property name="sourceCardinality" value="1" />
+      <property name="role" value="loopLabel" />
+      <link role="target" targetNodeId="363746191845175146" resolveInfo="LoopLabel" />
     </node>
   </node>
 </model>

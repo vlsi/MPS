@@ -15,6 +15,7 @@ public class AbstractLoopStatement extends Statement implements IContainer, ICon
   public static final String ALIAS = "alias";
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
   public static final String BODY = "body";
+  public static final String LOOP_LABEL = "loopLabel";
 
   public AbstractLoopStatement(SNode node) {
     super(node);
@@ -58,6 +59,14 @@ public class AbstractLoopStatement extends Statement implements IContainer, ICon
 
   public void setBody(StatementList node) {
     super.setChild(AbstractLoopStatement.BODY, node);
+  }
+
+  public LoopLabel getLoopLabel() {
+    return (LoopLabel)this.getChild(LoopLabel.class, AbstractLoopStatement.LOOP_LABEL);
+  }
+
+  public void setLoopLabel(LoopLabel node) {
+    super.setChild(AbstractLoopStatement.LOOP_LABEL, node);
   }
 
   public static AbstractLoopStatement newInstance(SModel sm, boolean init) {
