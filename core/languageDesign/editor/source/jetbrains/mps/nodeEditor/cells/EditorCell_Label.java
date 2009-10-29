@@ -685,12 +685,7 @@ public abstract class EditorCell_Label extends EditorCell_Basic {
     if ("".equals(getText()) && isTopCell()) {
       if (getStyle().get(StyleAttributes.AUTO_DELETABLE)) {
         getSNode().delete();
-      } else {
-        LinkDeclaration link = getSNode().getRoleLink();
-        String concreteConceptFqName = ModelConstraintsManager.getInstance().getDefaultConcreteConceptFqName(NameUtil.nodeFQName(link.getTarget()), getOperationContext().getScope());
-        SNode newNode = new SNode(getSNode().getModel(), concreteConceptFqName);
-        getSNode().getParent().replaceChild(getSNode(), newNode);
-      }
+      } 
     }
   }
 
