@@ -5,6 +5,7 @@ package jetbrains.mps.baseLanguage.unitTest.plugin;
 import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.IOperationContext;
+import javax.swing.Icon;
 import jetbrains.mps.baseLanguage.unitTest.behavior.ITestMethod_Behavior;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
@@ -24,7 +25,10 @@ public class TestMethodTreeNode extends MPSTreeNode {
   }
 
   public void updatePresentation() {
-    this.setIcon(this.state.getIcon());
+    Icon icon = this.state.getIcon();
+    if (icon != null) {
+      this.setIcon(icon);
+    }
     this.setNodeIdentifier(this.testMethod.getId());
     this.setText(ITestMethod_Behavior.call_getTestName_1216136419751(this.testMethod));
   }

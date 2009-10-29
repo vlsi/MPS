@@ -5,6 +5,7 @@ package jetbrains.mps.baseLanguage.unitTest.plugin;
 import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.IOperationContext;
+import javax.swing.Icon;
 import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
@@ -26,7 +27,10 @@ public class TestCaseTreeNode extends MPSTreeNode {
   }
 
   public void updatePresentation() {
-    this.setIcon(IconManager.getIconFor(this.testCase));
+    Icon icon = IconManager.getIconFor(this.testCase);
+    if (icon != null) {
+      this.setIcon(icon);
+    }
     this.setNodeIdentifier(this.testCase.getId());
     this.setText(SPropertyOperations.getString(this.testCase, "name"));
     this.setAdditionalText(SNodeOperations.getModel(this.testCase).getLongName());
