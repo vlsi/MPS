@@ -13,6 +13,7 @@ import com.intellij.openapi.actionSystem.AnActionEvent;
 import jetbrains.mps.nodeEditor.IErrorReporter;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.workbench.MPSDataKeys;
+import jetbrains.mps.util.Pair;
 
 public class GoToTypeErrorRule_Action extends GeneratedAction {
   private static final Icon ICON = null;
@@ -23,8 +24,8 @@ public class GoToTypeErrorRule_Action extends GeneratedAction {
   private SNode node;
 
   public GoToTypeErrorRule_Action() {
-    super("Go To Rule Which Caused Error", "", ICON);
-    this.setIsAlwaysVisible(true);
+    super("Go to Rule Which Caused Error", "", ICON);
+    this.setIsAlwaysVisible(false);
     this.setExecuteOutsideCommand(false);
   }
 
@@ -35,7 +36,7 @@ public class GoToTypeErrorRule_Action extends GeneratedAction {
 
   public boolean isApplicable(AnActionEvent event) {
     IErrorReporter error = TypeChecker.getInstance().getTypeMessageDontCheck(GoToTypeErrorRule_Action.this.node);
-    return !(error == null || error.getRuleId() == null || error.getRuleModel() == null);
+    return !(error == null || error.getRuleId() == null || error.getRuleModel() == null || !(error.getAdditionalRulesIds().isEmpty()));
   }
 
   public void doUpdate(@NotNull AnActionEvent event) {
@@ -73,7 +74,7 @@ public class GoToTypeErrorRule_Action extends GeneratedAction {
   public void doExecute(@NotNull final AnActionEvent event) {
     try {
       IErrorReporter error = TypeChecker.getInstance().getTypeMessageDontCheck(GoToTypeErrorRule_Action.this.node);
-      GoToTypeErrorRuleUtil.goToTypeErrorRule(GoToTypeErrorRule_Action.this.operationContext, error);
+      GoToTypeErrorRuleUtil.goToRuleById(GoToTypeErrorRule_Action.this.operationContext, new Pair<String, String>(error.getRuleModel(), error.getRuleId()));
     } catch (Throwable t) {
       LOG.error("User's action execute method failed. Action:" + "GoToTypeErrorRule", t);
     }

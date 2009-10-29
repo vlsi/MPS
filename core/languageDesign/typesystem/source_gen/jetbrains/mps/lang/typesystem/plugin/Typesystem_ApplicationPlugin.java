@@ -18,6 +18,7 @@ public class Typesystem_ApplicationPlugin extends BaseApplicationPlugin {
     this.addGroup(groups, moduleName, "jetbrains.mps.lang.typesystem.plugin.TypesystemEditorPopupInternal_ActionGroup");
     this.addGroup(groups, moduleName, "jetbrains.mps.lang.typesystem.plugin.TypesystemModelActions_ActionGroup");
     this.addGroup(groups, moduleName, "jetbrains.mps.lang.typesystem.plugin.TypesystemToolsAddition_ActionGroup");
+    this.addGroup(groups, moduleName, "jetbrains.mps.lang.typesystem.plugin.GoToTypeErrorGroup_ActionGroup");
     return groups;
   }
 
