@@ -23,7 +23,7 @@ public class interfaceTupleType_assignableTo_namedTupleType_InequationReplacemen
       BaseIntentionProvider intentionProvider = null;
       IErrorTarget errorTarget = new NodeErrorTarget();
       IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(equationInfo.getNodeWithError(), "incompatible types", "r:e119dbbd-3529-4067-8bad-6b9edd79d0b6(jetbrains.mps.baseLanguage.tuples.typesystem)", "1240707042401", intentionProvider, errorTarget);
-      _reporter_2309309498.addAdditionalRuleId((equationInfo).getRuleModel(), (equationInfo).getRuleId());
+      _reporter_2309309498.addAdditionalRuleIdsFromInfo(equationInfo);
     }
   }
 

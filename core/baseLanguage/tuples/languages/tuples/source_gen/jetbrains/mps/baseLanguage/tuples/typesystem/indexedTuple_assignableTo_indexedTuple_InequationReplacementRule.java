@@ -25,7 +25,7 @@ public class indexedTuple_assignableTo_indexedTuple_InequationReplacementRule ex
       BaseIntentionProvider intentionProvider = null;
       IErrorTarget errorTarget = new NodeErrorTarget();
       IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(equationInfo.getNodeWithError(), "Member types count don't match", "r:e119dbbd-3529-4067-8bad-6b9edd79d0b6(jetbrains.mps.baseLanguage.tuples.typesystem)", "1238854492399", intentionProvider, errorTarget);
-      _reporter_2309309498.addAdditionalRuleId((equationInfo).getRuleModel(), (equationInfo).getRuleId());
+      _reporter_2309309498.addAdditionalRuleIdsFromInfo(equationInfo);
     }
     {
       SNode lmt;
@@ -45,7 +45,7 @@ public class indexedTuple_assignableTo_indexedTuple_InequationReplacementRule ex
           SNode _nodeToCheck_1029348928467 = equationInfo.getNodeWithError();
           BaseIntentionProvider intentionProvider = null;
           EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:e119dbbd-3529-4067-8bad-6b9edd79d0b6(jetbrains.mps.baseLanguage.tuples.typesystem)", "1238854598691", 0, intentionProvider);
-          _info_12389875345.pushOuterRuleId((equationInfo).getRuleModel(), (equationInfo).getRuleId());
+          _info_12389875345.getOuterRulesIdFromInfo(equationInfo);
           _info_12389875345.setInequationGroup("default");
           typeCheckingContext.createLessThanInequation((SNode)lmt, (SNode)rmt, false, _info_12389875345);
         }
