@@ -36,6 +36,13 @@ public class GoToTypeErrorRule_InGroup_Action extends GeneratedAction {
 
   public void doUpdate(@NotNull AnActionEvent event) {
     try {
+      {
+        String text = (GoToTypeErrorRule_InGroup_Action.this.immediate ?
+          "Go To Immediate Rule" :
+          "Go To Rule " + GoToTypeErrorRule_InGroup_Action.this.errorId.o2
+        );
+        event.getPresentation().setText(text);
+      }
     } catch (Throwable t) {
       LOG.error("User's action doUpdate method failed. Action:" + "GoToTypeErrorRule_InGroup", t);
       this.disable(event.getPresentation());
