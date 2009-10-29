@@ -115,6 +115,16 @@ public class EquationInfo {
     myOuterRulesIds.push(new Pair<String, String>(modelId, ruleId));
   }
 
+  public void getOuterRulesIdFromInfo(EquationInfo outerInfo) {
+    if (myOuterRulesIds == null) {
+      myOuterRulesIds = new Stack<Pair<String, String>>();
+    }
+    for (Pair<String, String> id : outerInfo.getAdditionalRulesIds()) {
+      myOuterRulesIds.push(id);
+    }
+    myOuterRulesIds.push(new Pair<String, String>(outerInfo.getRuleModel(), outerInfo.getRuleId()));
+  }
+
   public List<Pair<String, String>> getAdditionalRulesIds() {
     if (myOuterRulesIds == null) return new ArrayList<Pair<String, String>>();
     return new ArrayList<Pair<String, String>>(myOuterRulesIds);

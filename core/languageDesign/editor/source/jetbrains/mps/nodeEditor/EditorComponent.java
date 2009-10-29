@@ -1602,7 +1602,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
                           });
                         }
                       });
-                      for (final Pair<String, String> id : herror.getAdditionalRulesIds()) {
+                      for (final Pair<String, String> id : herror.getAdditionalRulesIdsInReverseOrder()) {
                         popupMenu.add(new AbstractAction("Go To Rule " + id.o2) {
                           public void actionPerformed(ActionEvent e) {
                             ModelAccess.instance().runReadAction(new Runnable() {

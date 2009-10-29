@@ -25,6 +25,7 @@ import jetbrains.mps.util.Pair;
 
 import java.util.List;
 import java.util.ArrayList;
+import java.util.Collections;
 
 public class EquationErrorReporter implements IErrorReporter {
   private EquationManager myEquationManager;
@@ -57,6 +58,14 @@ public class EquationErrorReporter implements IErrorReporter {
     myIntentionProvider = intentionProvider;
   }
 
+  public void addAdditionalRuleIdsFromInfo(EquationInfo equationInfo) {
+    if (myAdditionalRuleIds == null) {
+      myAdditionalRuleIds = new ArrayList<Pair<String, String>>(2);
+    }
+    myAdditionalRuleIds.addAll(equationInfo.getAdditionalRulesIds());
+    myAdditionalRuleIds.add(new Pair<String, String>(equationInfo.getRuleModel(), equationInfo.getRuleId()));
+  }
+
   public void addAdditionalRuleId(String ruleModel, String ruleId) {
     Pair<String, String> pair = new Pair<String, String>(ruleModel, ruleId);
     if (myAdditionalRuleIds == null) {
@@ -68,6 +77,12 @@ public class EquationErrorReporter implements IErrorReporter {
   public List<Pair<String, String>> getAdditionalRulesIds() {
     if (myAdditionalRuleIds == null) return new ArrayList<Pair<String, String>>(0);
     return new ArrayList<Pair<String, String>>(myAdditionalRuleIds);
+  }
+
+   public List<Pair<String, String>> getAdditionalRulesIdsInReverseOrder() {
+    ArrayList<Pair<String, String>> result = new ArrayList<Pair<String, String>>(myAdditionalRuleIds);
+    Collections.reverse(result);
+    return result;
   }
 
   public void setAdditionalRulesIds(List<Pair<String, String>> ids) {
