@@ -19,6 +19,7 @@ import jetbrains.mps.project.IModule;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.MPSExtentions;
+import jetbrains.mps.generator.fileGenerator.AllCaches;
 
 import java.util.*;
 import java.io.File;
@@ -169,6 +170,7 @@ public class ModuleSources {
     if (extPos == -1) return false;
     return file.isFile() &&
       !file.getName().endsWith(MPSExtentions.DOT_JAVAFILE) &&
-      !file.getName().endsWith(MPSExtentions.DOT_CLASSFILE);
+      !file.getName().endsWith(MPSExtentions.DOT_CLASSFILE) &&
+      !AllCaches.getInstance().isCacheFile(file);
   }
 }

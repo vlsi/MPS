@@ -23,6 +23,8 @@ import java.util.Set;
 import java.util.HashSet;
 import java.util.Collections;
 
+import jetbrains.mps.vfs.IFile;
+
 public class AllCaches implements ApplicationComponent {
   private final Set<BaseModelCache> myCaches = new HashSet<BaseModelCache>();
 
@@ -47,5 +49,14 @@ public class AllCaches implements ApplicationComponent {
 
   public Set<BaseModelCache> getCaches() {
     return Collections.unmodifiableSet(myCaches);
+  }
+
+  public boolean isCacheFile(IFile file) {
+    for (BaseModelCache cache : myCaches) {
+      if (cache.isCacheFile(file)) {
+        return true;
+      }
+    }
+    return false;
   }
 }

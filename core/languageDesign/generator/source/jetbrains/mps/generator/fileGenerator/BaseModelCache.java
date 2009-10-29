@@ -157,4 +157,8 @@ public abstract class BaseModelCache<T> implements ApplicationComponent {
       return FileSystem.getFile(FileGenerationUtil.getCachesOutputDir(new File(outputPath)));
     }
   }
+
+  public boolean isCacheFile(IFile file) {
+    return (file.getName().endsWith(getCacheFileName()));  
+  }
 }
