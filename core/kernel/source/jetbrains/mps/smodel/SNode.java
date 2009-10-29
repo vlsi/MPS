@@ -822,6 +822,10 @@ public final class SNode {
   }
 
   public int getIndexOfChild(SNode child_) {
+    ModelAccess.assertLegalRead(this);
+    fireNodeReadAccess();
+    fireNodeUnclassifiedReadAccess();
+
     String role_ = child_.getRole_();
     if (role_ == null) return -1;
     int count = 0;
