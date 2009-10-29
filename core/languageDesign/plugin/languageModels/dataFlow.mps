@@ -350,5 +350,50 @@
       </node>
     </node>
   </node>
+  <node type="jetbrains.mps.lang.dataFlow.structure.DataFlowBuilderDeclaration" id="4290387479601704088">
+    <property name="package" value="Actions.Groups.GroupMembers" />
+    <link role="conceptDeclaration" targetNodeId="1.1203088046679" resolveInfo="ActionInstance" />
+    <node role="builderBlock" type="jetbrains.mps.lang.dataFlow.structure.BuilderBlock" id="4290387479601704089">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="4290387479601704090">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ForeachStatement" id="4290387479601704096">
+          <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="4290387479601704097">
+            <node role="statement" type="jetbrains.mps.lang.dataFlow.structure.EmitCodeForStatement" id="4290387479601704093">
+              <node role="codeFor" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="4290387479601704120">
+                <link role="variableDeclaration" targetNodeId="4290387479601704100" resolveInfo="expression" />
+              </node>
+            </node>
+          </node>
+          <node role="iterable" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="4290387479601704110">
+            <node role="operand" type="jetbrains.mps.lang.dataFlow.structure.NodeParameter" id="4290387479601704109" />
+            <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkListAccess" id="4290387479601704116">
+              <link role="link" targetNodeId="1.1227011543811" />
+            </node>
+          </node>
+          <node role="variable" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="4290387479601704100">
+            <property name="name" value="expression" />
+            <node role="type" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="4290387479601704104">
+              <link role="concept" targetNodeId="3.1068431790191" resolveInfo="Expression" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.dataFlow.structure.DataFlowBuilderDeclaration" id="4290387479601704121">
+    <property name="package" value="Actions.Groups.GroupContents.Statements" />
+    <link role="conceptDeclaration" targetNodeId="1.1227013049127" resolveInfo="AddStatement" />
+    <node role="builderBlock" type="jetbrains.mps.lang.dataFlow.structure.BuilderBlock" id="4290387479601704122">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="4290387479601704123">
+        <node role="statement" type="jetbrains.mps.lang.dataFlow.structure.EmitCodeForStatement" id="4290387479601704124">
+          <node role="codeFor" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="4290387479601704127">
+            <node role="operand" type="jetbrains.mps.lang.dataFlow.structure.NodeParameter" id="4290387479601704126" />
+            <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="4290387479601704131">
+              <link role="link" targetNodeId="1.1227013166210" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
 </model>
 
