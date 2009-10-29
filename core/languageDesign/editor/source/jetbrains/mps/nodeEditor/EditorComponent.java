@@ -1585,16 +1585,48 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
               String s = message.getMessage();
               final MPSErrorDialog dialog = new MPSErrorDialog(myOperationContext.getMainFrame(), s, message.getStatus().getPresentation(), false);
               if (herror.getRuleModel() != null && herror.getRuleId() != null) {
-                JButton button = new JButton(new AbstractAction("Go To Rule") {
+                final boolean hasAdditionalRuleIds = !herror.getAdditionalRulesIds().isEmpty();
+                final JButton button = new JButton();
+                AbstractAction action = new AbstractAction("Go To Rule") {
                   public void actionPerformed(ActionEvent e) {
-                    ModelAccess.instance().runReadAction(new Runnable() {
-                      public void run() {
-                        GoToTypeErrorRuleUtil.goToTypeErrorRule(myOperationContext, herror);
-                        dialog.dispose();
+                    if (hasAdditionalRuleIds) {
+                      JPopupMenu popupMenu = new JPopupMenu();
+                      popupMenu.add(new AbstractAction("Go To Immediate Rule") {
+                        public void actionPerformed(ActionEvent e) {
+                          ModelAccess.instance().runReadAction(new Runnable() {
+                            public void run() {
+                              GoToTypeErrorRuleUtil.goToRuleById(myOperationContext, new Pair<String, String>(herror.getRuleModel(),
+                                herror.getRuleId()));
+                              dialog.dispose();
+                            }
+                          });
+                        }
+                      });
+                      for (final Pair<String, String> id : herror.getAdditionalRulesIds()) {
+                        popupMenu.add(new AbstractAction("Go To Rule " + id.o2) {
+                          public void actionPerformed(ActionEvent e) {
+                            ModelAccess.instance().runReadAction(new Runnable() {
+                              public void run() {
+                                GoToTypeErrorRuleUtil.goToRuleById(myOperationContext, id);
+                                dialog.dispose();
+                              }
+                            });
+                          }
+                        });
                       }
-                    });
+                      popupMenu.show(dialog, button.getX(), button.getY() + button.getHeight());
+                    } else {
+                      ModelAccess.instance().runReadAction(new Runnable() {
+                        public void run() {
+                          GoToTypeErrorRuleUtil.goToRuleById(myOperationContext, new Pair<String, String>(herror.getRuleModel(),
+                            herror.getRuleId()));
+                          dialog.dispose();
+                        }
+                      });
+                    }
                   }
-                });
+                };
+                button.setAction(action);
                 dialog.addButton(button);
               }
               dialog.initializeUI();
