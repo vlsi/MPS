@@ -52,7 +52,7 @@ public class GoToTypeErrorGroup_ActionGroup extends GeneratedActionGroup {
       GoToTypeErrorGroup_ActionGroup.this.removeAll();
       jetbrains.mps.util.Pair<String, String> firstId = new jetbrains.mps.util.Pair<String, String>(error.getRuleModel(), error.getRuleId());
       GoToTypeErrorGroup_ActionGroup.this.addAction("jetbrains.mps.lang.typesystem.plugin.GoToTypeErrorRule_InGroup_Action", "jetbrains.mps.lang.typesystem", firstId, true);
-      for (jetbrains.mps.util.Pair<String, String> id : error.getAdditionalRulesIds()) {
+      for (jetbrains.mps.util.Pair<String, String> id : error.getAdditionalRulesIdsInReverseOrder()) {
         GoToTypeErrorGroup_ActionGroup.this.addAction("jetbrains.mps.lang.typesystem.plugin.GoToTypeErrorRule_InGroup_Action", "jetbrains.mps.lang.typesystem", id, false);
       }
     } catch (Throwable t) {

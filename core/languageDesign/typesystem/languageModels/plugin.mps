@@ -2453,8 +2453,8 @@
               <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="4290387479601583700">
                 <link role="variableDeclaration" targetNodeId="4290387479601539605" resolveInfo="error" />
               </node>
-              <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="4290387479601583726">
-                <link role="baseMethodDeclaration" targetNodeId="10.~IErrorReporter.getAdditionalRulesIds():java.util.List" resolveInfo="getAdditionalRulesIds" />
+              <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="6802576564117900536">
+                <link role="baseMethodDeclaration" targetNodeId="10.~IErrorReporter.getAdditionalRulesIdsInReverseOrder():java.util.List" resolveInfo="getAdditionalRulesIdsInReverseOrder" />
               </node>
             </node>
             <node role="variable" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="4290387479601583683">
