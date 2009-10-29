@@ -31,7 +31,6 @@ public class PredefinedSymbolClasses_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Collection_0524_0");
     editorCell.addEditorCell(this.createConstant_0524_0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_0524_1(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_0524_3(editorContext, node));
     editorCell.addEditorCell(this.createRefNodeList_0524_0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_0524_2(editorContext, node));
     return editorCell;
@@ -72,24 +71,13 @@ public class PredefinedSymbolClasses_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_0524_3(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "  ");
-    editorCell.setCellId("Constant_0524_3");
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.SELECTABLE, false);
-    }
-    editorCell.setDefaultText("");
-    return editorCell;
-  }
-
   private EditorCell createRefNodeList_0524_0(EditorContext editorContext, SNode node) {
     AbstractCellListHandler handler = new PredefinedSymbolClasses_Editor.symbolClassListHandler_0524_0(node, "symbolClass", editorContext);
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Indent(), false);
     editorCell.setCellId("refNodeList_symbolClass");
     {
       Style style = editorCell.getStyle();
-      style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
+      style.set(StyleAttributes.INDENT_LAYOUT_INDENT, true);
     }
     editorCell.setRole(handler.getElementRole());
     return editorCell;

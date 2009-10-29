@@ -27,11 +27,10 @@ public class PredefinedSymbolClassDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Collection_9156_0");
     editorCell.addEditorCell(this.createConstant_9156_0(editorContext, node));
     editorCell.addEditorCell(this.createProperty_9156_0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_9156_2(editorContext, node));
     editorCell.addEditorCell(this.createConstant_9156_1(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_9156_4(editorContext, node));
-    editorCell.addEditorCell(this.createProperty_9156_1(editorContext, node));
     editorCell.addEditorCell(this.createConstant_9156_3(editorContext, node));
+    editorCell.addEditorCell(this.createProperty_9156_1(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_9156_2(editorContext, node));
     return editorCell;
   }
 
@@ -47,14 +46,19 @@ public class PredefinedSymbolClassDeclaration_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_9156_1(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "  ");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "{");
     editorCell.setCellId("Constant_9156_1");
+    BaseLanguageStyle_StyleSheet.getMatching(editorCell).apply(editorCell);
+    {
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
+    }
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   private EditorCell createConstant_9156_2(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "{");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "}");
     editorCell.setCellId("Constant_9156_2");
     BaseLanguageStyle_StyleSheet.getMatching(editorCell).apply(editorCell);
     {
@@ -66,20 +70,12 @@ public class PredefinedSymbolClassDeclaration_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_9156_3(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "}");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "description:");
     editorCell.setCellId("Constant_9156_3");
-    BaseLanguageStyle_StyleSheet.getMatching(editorCell).apply(editorCell);
     {
       Style style = editorCell.getStyle();
-      style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
+      style.set(StyleAttributes.INDENT_LAYOUT_INDENT, true);
     }
-    editorCell.setDefaultText("");
-    return editorCell;
-  }
-
-  private EditorCell createConstant_9156_4(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "description:");
-    editorCell.setCellId("Constant_9156_4");
     editorCell.setDefaultText("");
     return editorCell;
   }
