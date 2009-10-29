@@ -1380,5 +1380,134 @@
       </node>
     </node>
   </node>
+  <node type="jetbrains.mps.lang.typesystem.structure.InferenceRule" id="2735767332089496671">
+    <property name="name" value="typeof_TransactionPropertyHandler_oldValue" />
+    <property name="package" value="QueryFunction" />
+    <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="2735767332089496672">
+      <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1747303154073920795">
+        <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1747303154073920796">
+          <property name="name" value="transactionalProperty" />
+          <node role="type" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1747303154073920797">
+            <link role="concept" targetNodeId="3.1216380990741" resolveInfo="CellModel_TransactionalProperty" />
+          </node>
+          <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1747303154073920798">
+            <node role="operand" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference" id="1747303154073920799">
+              <link role="applicableNode" targetNodeId="2735767332089496673" resolveInfo="value" />
+            </node>
+            <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_GetAncestorOperation" id="1747303154073920800">
+              <node role="parameter" type="jetbrains.mps.lang.smodel.structure.OperationParm_Concept" id="1747303154073920801">
+                <node role="conceptArgument" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" id="1747303154073920802">
+                  <link role="conceptDeclaration" targetNodeId="3.1216380990741" resolveInfo="CellModel_TransactionalProperty" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="statement" type="jetbrains.mps.lang.typesystem.structure.CreateEquationStatement" id="2735767332089496685">
+        <node role="rightExpression" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause" id="2735767332089496689">
+          <node role="normalType" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1747303154073920804">
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="2735767332089496718">
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="2735767332089496713">
+                <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1747303154073920803">
+                  <link role="variableDeclaration" targetNodeId="1747303154073920796" resolveInfo="transactionalProperty" />
+                </node>
+                <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="2735767332089496717">
+                  <link role="link" targetNodeId="3.1216381219207" />
+                </node>
+              </node>
+              <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="2735767332089497930">
+                <link role="link" targetNodeId="1.1082985295845" />
+              </node>
+            </node>
+            <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1747303154073920808">
+              <link role="baseMethodDeclaration" targetNodeId="11.1213877229718" resolveInfo="toBaseLanguageType" />
+            </node>
+          </node>
+        </node>
+        <node role="leftExpression" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause" id="2735767332089496688">
+          <node role="normalType" type="jetbrains.mps.lang.typesystem.structure.TypeOfExpression" id="2735767332089496682">
+            <node role="term" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference" id="2735767332089496684">
+              <link role="applicableNode" targetNodeId="2735767332089496673" resolveInfo="value" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="applicableNode" type="jetbrains.mps.lang.typesystem.structure.ConceptReference" id="2735767332089496673">
+      <property name="name" value="value" />
+      <link role="concept" targetNodeId="3.1216381117100" resolveInfo="TransactionPropertyHandler_oldValue" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.typesystem.structure.InferenceRule" id="2735767332089497931">
+    <property name="name" value="typeof_TransactionPropertyHandler_newValue" />
+    <property name="package" value="QueryFunction" />
+    <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="2735767332089497932">
+      <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1294271446804914612">
+        <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1294271446804914613">
+          <property name="name" value="transactionalProperty" />
+          <node role="type" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1294271446804914614">
+            <link role="concept" targetNodeId="3.1216380990741" resolveInfo="CellModel_TransactionalProperty" />
+          </node>
+          <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1294271446804914615">
+            <node role="operand" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference" id="1294271446804914616">
+              <link role="applicableNode" targetNodeId="2735767332089497933" resolveInfo="value" />
+            </node>
+            <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_GetAncestorOperation" id="1294271446804914617">
+              <node role="parameter" type="jetbrains.mps.lang.smodel.structure.OperationParm_Concept" id="1294271446804914618">
+                <node role="conceptArgument" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" id="1294271446804914619">
+                  <link role="conceptDeclaration" targetNodeId="3.1216380990741" resolveInfo="CellModel_TransactionalProperty" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1294271446804914621">
+        <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1294271446804914622">
+          <property name="name" value="property" />
+          <node role="type" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1294271446804914623">
+            <link role="concept" targetNodeId="1.1071489288299" resolveInfo="PropertyDeclaration" />
+          </node>
+          <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1294271446804914624">
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1294271446804914625">
+              <link role="variableDeclaration" targetNodeId="1294271446804914613" resolveInfo="transactionalProperty" />
+            </node>
+            <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1294271446804914626">
+              <link role="link" targetNodeId="3.1216381219207" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="statement" type="jetbrains.mps.lang.typesystem.structure.CreateEquationStatement" id="2735767332089497934">
+        <node role="rightExpression" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause" id="2735767332089497935">
+          <node role="normalType" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1747303154073846729">
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="2735767332089497936">
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1294271446804914627">
+                <link role="variableDeclaration" targetNodeId="1294271446804914622" resolveInfo="property" />
+              </node>
+              <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="2735767332089497944">
+                <link role="link" targetNodeId="1.1082985295845" />
+              </node>
+            </node>
+            <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1747303154073846733">
+              <link role="baseMethodDeclaration" targetNodeId="11.1213877229718" resolveInfo="toBaseLanguageType" />
+            </node>
+          </node>
+        </node>
+        <node role="leftExpression" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause" id="2735767332089497945">
+          <node role="normalType" type="jetbrains.mps.lang.typesystem.structure.TypeOfExpression" id="2735767332089497946">
+            <node role="term" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference" id="2735767332089497947">
+              <link role="applicableNode" targetNodeId="2735767332089497933" resolveInfo="value" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="applicableNode" type="jetbrains.mps.lang.typesystem.structure.ConceptReference" id="2735767332089497933">
+      <property name="name" value="value" />
+      <link role="concept" targetNodeId="3.1216381148013" resolveInfo="TransactionPropertyHandler_newValue" />
+    </node>
+  </node>
 </model>
 
