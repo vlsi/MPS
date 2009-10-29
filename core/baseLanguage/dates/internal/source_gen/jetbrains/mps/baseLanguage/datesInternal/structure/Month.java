@@ -17,6 +17,7 @@ public class Month extends BaseConcept implements INamedConcept {
   public static final String ALIAS = "alias";
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
   public static final String DAYS = "days";
+  public static final String NUMBER = "number";
 
   public Month(SNode node) {
     super(node);
@@ -68,6 +69,14 @@ public class Month extends BaseConcept implements INamedConcept {
 
   public void setDays(int value) {
     this.setIntegerProperty(Month.DAYS, value);
+  }
+
+  public int getNumber() {
+    return this.getIntegerProperty(Month.NUMBER);
+  }
+
+  public void setNumber(int value) {
+    this.setIntegerProperty(Month.NUMBER, value);
   }
 
   public static Month newInstance(SModel sm, boolean init) {
