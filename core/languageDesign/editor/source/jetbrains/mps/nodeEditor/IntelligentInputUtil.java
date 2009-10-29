@@ -32,12 +32,6 @@ import com.intellij.openapi.util.Computable;
 import org.jetbrains.annotations.NotNull;
 
 public class IntelligentInputUtil {
-  private static EditorManager ourServiceEditorManager = new EditorManager() {
-    @Override
-    protected boolean areAttributesShown() {
-      return false;
-    }
-  };
 
   public static boolean processCell(final EditorCell_Label cell, final EditorContext editorContext, final String pattern, final CellSide side) {
     if (pattern == null || pattern.equals("")) {
