@@ -933,27 +933,7 @@ public class QueriesGenerated {
     return null;
   }
 
-  public static Object propertyMacro_GetPropertyValue_1396379878994257079(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    SNode method = SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration", false, false);
-    for (SNode parameterDecl : SLinkOperations.getTargets(method, "parameter", true)) {
-      if (SLinkOperations.getTarget(SNodeOperations.as(SLinkOperations.getTarget(parameterDecl, "type", true), "jetbrains.mps.baseLanguage.structure.ClassifierType"), "classifier", false) == SNodeOperations.getNode("f:java_stub#jetbrains.mps.typesystem.inference(jetbrains.mps.typesystem.inference@java_stub)", "~EquationInfo")) {
-        return SPropertyOperations.getString(parameterDecl, "name");
-      }
-    }
-    return null;
-  }
-
   public static Object propertyMacro_GetPropertyValue_3018762098980872068(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    SNode method = SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration", false, false);
-    for (SNode parameterDecl : SLinkOperations.getTargets(method, "parameter", true)) {
-      if (SLinkOperations.getTarget(SNodeOperations.as(SLinkOperations.getTarget(parameterDecl, "type", true), "jetbrains.mps.baseLanguage.structure.ClassifierType"), "classifier", false) == SNodeOperations.getNode("f:java_stub#jetbrains.mps.typesystem.inference(jetbrains.mps.typesystem.inference@java_stub)", "~EquationInfo")) {
-        return SPropertyOperations.getString(parameterDecl, "name");
-      }
-    }
-    return null;
-  }
-
-  public static Object propertyMacro_GetPropertyValue_3018762098980872107(final IOperationContext operationContext, final PropertyMacroContext _context) {
     SNode method = SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration", false, false);
     for (SNode parameterDecl : SLinkOperations.getTargets(method, "parameter", true)) {
       if (SLinkOperations.getTarget(SNodeOperations.as(SLinkOperations.getTarget(parameterDecl, "type", true), "jetbrains.mps.baseLanguage.structure.ClassifierType"), "classifier", false) == SNodeOperations.getNode("f:java_stub#jetbrains.mps.typesystem.inference(jetbrains.mps.typesystem.inference@java_stub)", "~EquationInfo")) {
@@ -973,16 +953,6 @@ public class QueriesGenerated {
     return null;
   }
 
-  public static Object propertyMacro_GetPropertyValue_3018762098980872202(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    SNode method = SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration", false, false);
-    for (SNode parameterDecl : SLinkOperations.getTargets(method, "parameter", true)) {
-      if (SLinkOperations.getTarget(SNodeOperations.as(SLinkOperations.getTarget(parameterDecl, "type", true), "jetbrains.mps.baseLanguage.structure.ClassifierType"), "classifier", false) == SNodeOperations.getNode("f:java_stub#jetbrains.mps.typesystem.inference(jetbrains.mps.typesystem.inference@java_stub)", "~EquationInfo")) {
-        return SPropertyOperations.getString(parameterDecl, "name");
-      }
-    }
-    return null;
-  }
-
   public static Object propertyMacro_GetPropertyValue_3018762098980872296(final IOperationContext operationContext, final PropertyMacroContext _context) {
     SNode method = SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration", false, false);
     for (SNode parameterDecl : SLinkOperations.getTargets(method, "parameter", true)) {
@@ -993,27 +963,7 @@ public class QueriesGenerated {
     return null;
   }
 
-  public static Object propertyMacro_GetPropertyValue_3018762098980872335(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    SNode method = SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration", false, false);
-    for (SNode parameterDecl : SLinkOperations.getTargets(method, "parameter", true)) {
-      if (SLinkOperations.getTarget(SNodeOperations.as(SLinkOperations.getTarget(parameterDecl, "type", true), "jetbrains.mps.baseLanguage.structure.ClassifierType"), "classifier", false) == SNodeOperations.getNode("f:java_stub#jetbrains.mps.typesystem.inference(jetbrains.mps.typesystem.inference@java_stub)", "~EquationInfo")) {
-        return SPropertyOperations.getString(parameterDecl, "name");
-      }
-    }
-    return null;
-  }
-
   public static Object propertyMacro_GetPropertyValue_3018762098980872429(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    SNode method = SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration", false, false);
-    for (SNode parameterDecl : SLinkOperations.getTargets(method, "parameter", true)) {
-      if (SLinkOperations.getTarget(SNodeOperations.as(SLinkOperations.getTarget(parameterDecl, "type", true), "jetbrains.mps.baseLanguage.structure.ClassifierType"), "classifier", false) == SNodeOperations.getNode("f:java_stub#jetbrains.mps.typesystem.inference(jetbrains.mps.typesystem.inference@java_stub)", "~EquationInfo")) {
-        return SPropertyOperations.getString(parameterDecl, "name");
-      }
-    }
-    return null;
-  }
-
-  public static Object propertyMacro_GetPropertyValue_3018762098980872468(final IOperationContext operationContext, final PropertyMacroContext _context) {
     SNode method = SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration", false, false);
     for (SNode parameterDecl : SLinkOperations.getTargets(method, "parameter", true)) {
       if (SLinkOperations.getTarget(SNodeOperations.as(SLinkOperations.getTarget(parameterDecl, "type", true), "jetbrains.mps.baseLanguage.structure.ClassifierType"), "classifier", false) == SNodeOperations.getNode("f:java_stub#jetbrains.mps.typesystem.inference(jetbrains.mps.typesystem.inference@java_stub)", "~EquationInfo")) {

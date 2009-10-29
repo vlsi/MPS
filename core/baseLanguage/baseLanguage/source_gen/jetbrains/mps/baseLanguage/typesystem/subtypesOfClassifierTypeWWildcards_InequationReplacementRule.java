@@ -52,7 +52,7 @@ public class subtypesOfClassifierTypeWWildcards_InequationReplacementRule extend
                       SNode _nodeToCheck_1029348928467 = equationInfo.getNodeWithError();
                       BaseIntentionProvider intentionProvider = null;
                       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1220535076789", 0, intentionProvider);
-                      _info_12389875345.pushOuterRuleId((equationInfo).getRuleModel(), (equationInfo).getRuleId());
+                      _info_12389875345.getOuterRulesIdFromInfo(equationInfo);
                       _info_12389875345.setInequationGroup("default");
                       typeCheckingContext.createLessThanInequation((SNode)finalTypeParam, (SNode)myParam, false, _info_12389875345);
                     }
@@ -65,7 +65,7 @@ public class subtypesOfClassifierTypeWWildcards_InequationReplacementRule extend
                               SNode _nodeToCheck_1029348928467 = equationInfo.getNodeWithError();
                               BaseIntentionProvider intentionProvider = null;
                               EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1220523357903", 0, intentionProvider);
-                              _info_12389875345.pushOuterRuleId((equationInfo).getRuleModel(), (equationInfo).getRuleId());
+                              _info_12389875345.getOuterRulesIdFromInfo(equationInfo);
                               typeCheckingContext.createEquation((SNode)finalTypeParam, (SNode)typeCheckingContext.getEquationManager().getRepresentator(concreteParam), _info_12389875345);
                             }
                           }
@@ -88,14 +88,14 @@ public class subtypesOfClassifierTypeWWildcards_InequationReplacementRule extend
                   BaseIntentionProvider intentionProvider = null;
                   IErrorTarget errorTarget = new NodeErrorTarget();
                   IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(nodeWithError, BaseConcept_Behavior.call_getPresentation_1213877396640(subtype) + " is not a subtype of " + BaseConcept_Behavior.call_getPresentation_1213877396640(supertype), "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1227259028675", intentionProvider, errorTarget);
-                  _reporter_2309309498.addAdditionalRuleId((equationInfo).getRuleModel(), (equationInfo).getRuleId());
+                  _reporter_2309309498.addAdditionalRuleIdsFromInfo(equationInfo);
                 }
               } else {
                 {
                   BaseIntentionProvider intentionProvider = null;
                   IErrorTarget errorTarget = new NodeErrorTarget();
                   IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(nodeWithError, BaseConcept_Behavior.call_getPresentation_1213877396640(subtype) + " is not a subtype of " + BaseConcept_Behavior.call_getPresentation_1213877396640(supertype), "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1220523357915", intentionProvider, errorTarget);
-                  _reporter_2309309498.addAdditionalRuleId((equationInfo).getRuleModel(), (equationInfo).getRuleId());
+                  _reporter_2309309498.addAdditionalRuleIdsFromInfo(equationInfo);
                 }
               }
             }

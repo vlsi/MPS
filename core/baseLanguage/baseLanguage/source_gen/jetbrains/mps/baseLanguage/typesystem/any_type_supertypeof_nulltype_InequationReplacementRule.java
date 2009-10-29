@@ -27,7 +27,7 @@ public class any_type_supertypeof_nulltype_InequationReplacementRule extends Abs
         BaseIntentionProvider intentionProvider = null;
         IErrorTarget errorTarget = new NodeErrorTarget();
         IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(equationInfo.getNodeWithError(), "null type is not a subtype of primitive type", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1215774901982", intentionProvider, errorTarget);
-        _reporter_2309309498.addAdditionalRuleId((equationInfo).getRuleModel(), (equationInfo).getRuleId());
+        _reporter_2309309498.addAdditionalRuleIdsFromInfo(equationInfo);
       }
     }
   }
