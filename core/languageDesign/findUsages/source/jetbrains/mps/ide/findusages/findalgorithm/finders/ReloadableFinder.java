@@ -15,10 +15,8 @@
  */
 package jetbrains.mps.ide.findusages.findalgorithm.finders;
 
-import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.ide.findusages.CantLoadSomethingException;
 import jetbrains.mps.ide.findusages.model.SearchResults;
 import jetbrains.mps.ide.findusages.model.SearchQuery;
 import jetbrains.mps.project.structure.modules.ModuleReference;
@@ -32,28 +30,22 @@ import com.intellij.openapi.progress.ProgressIndicator;
 public class ReloadableFinder implements IInterfacedFinder {
   private static Logger LOG = Logger.getLogger(ReloadableFinder.class);
 
-  private ModuleReference myModuleRef;
-  private String myFinderClass;
+  private ModuleClassReference<GeneratedFinder> myModuleClassRef;
   private WeakReference<GeneratedFinder> myFinder = new WeakReference<GeneratedFinder>(null);
 
   public ReloadableFinder(ModuleReference moduleRef, String finderClass) {
-    myModuleRef = moduleRef;
-    myFinderClass = finderClass;
+    myModuleClassRef = new ModuleClassReference(moduleRef, finderClass);
   }
 
   public ReloadableFinder(ModuleReference moduleReference, GeneratedFinder finder) {
-    myModuleRef = moduleReference;
-    myFinderClass = finder.getClass().getName();
+    this(moduleReference, finder.getClass().getName());
     myFinder = new WeakReference<GeneratedFinder>(finder);
   }
 
   public GeneratedFinder getFinder() {
     if (myFinder.get() == null) {
-      IModule module = MPSModuleRepository.getInstance().getModule(myModuleRef);
-      if (module == null) return null;
-      Class finderClass = module.getClass(myFinderClass);
-      if (finderClass == null) return null;
-      Object finder = null;
+      Class<GeneratedFinder> finderClass = myModuleClassRef.loadClass();
+      GeneratedFinder finder = null;
       try {
         finder = finderClass.newInstance();
       } catch (InstantiationException e) {
@@ -63,7 +55,7 @@ public class ReloadableFinder implements IInterfacedFinder {
         LOG.error(e);
         return null;
       }
-      myFinder = new WeakReference(finder);
+      myFinder = new WeakReference<GeneratedFinder>(finder);
     }
     return myFinder.get();
   }
