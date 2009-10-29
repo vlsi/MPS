@@ -4075,7 +4075,7 @@
       <property name="internalValue" value="LEFT" />
     </node>
     <node role="member" type="jetbrains.mps.lang.structure.structure.EnumerationMemberDeclaration" id="1235999738057">
-      <property name="externalValue" value="rigth" />
+      <property name="externalValue" value="right" />
       <property name="internalValue" value="RIGHT" />
     </node>
     <node role="member" type="jetbrains.mps.lang.structure.structure.EnumerationMemberDeclaration" id="1235999744266">
@@ -4453,6 +4453,42 @@
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="6552123473823027984">
       <property name="value" value="styled text" />
       <link role="conceptPropertyDeclaration" targetNodeId="3.1137473891462" resolveInfo="alias" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="7620205565664569937">
+    <property name="package" value="Stylesheet" />
+    <property name="name" value="DefaultBaseLine" />
+    <link role="extends" targetNodeId="1186402475462" resolveInfo="StyleClassItem" />
+    <node role="propertyDeclaration" type="jetbrains.mps.lang.structure.structure.PropertyDeclaration" id="7620205565664606477">
+      <property name="name" value="baseline" />
+      <link role="dataType" targetNodeId="7620205565664606377" resolveInfo="DefaultBaseLineEnum" />
+    </node>
+    <node role="conceptLink" type="jetbrains.mps.lang.structure.structure.AggregationConceptLink" id="7620205565664606478">
+      <link role="conceptLinkDeclaration" targetNodeId="1215701938122" resolveInfo="attributeConstant" />
+      <node role="target" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference" id="4098449021143562584">
+        <link role="classifier" targetNodeId="41.~StyleAttributes" resolveInfo="StyleAttributes" />
+        <link role="variableDeclaration" targetNodeId="41.~StyleAttributes.DEFAULT_BASE_LINE" resolveInfo="DEFAULT_BASE_LINE" />
+      </node>
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="7620205565664606480">
+      <property name="value" value="default-baseline" />
+      <link role="conceptPropertyDeclaration" targetNodeId="3.1137473891462" resolveInfo="alias" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.EnumerationDataTypeDeclaration" id="7620205565664606377">
+    <property name="name" value="DefaultBaseLineEnum" />
+    <link role="memberDataType" targetNodeId="3.1082983041843" resolveInfo="string" />
+    <node role="member" type="jetbrains.mps.lang.structure.structure.EnumerationMemberDeclaration" id="7620205565664606378">
+      <property name="internalValue" value="FIRST" />
+      <property name="externalValue" value="first cell baseline" />
+    </node>
+    <node role="member" type="jetbrains.mps.lang.structure.structure.EnumerationMemberDeclaration" id="7620205565664606380">
+      <property name="internalValue" value="CENTER" />
+      <property name="externalValue" value="collection center" />
+    </node>
+    <node role="member" type="jetbrains.mps.lang.structure.structure.EnumerationMemberDeclaration" id="7620205565664606448">
+      <property name="internalValue" value="LAST" />
+      <property name="externalValue" value="last cell baseline" />
     </node>
   </node>
 </model>

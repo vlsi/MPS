@@ -9242,5 +9242,28 @@
       <node role="cellLayout" type="jetbrains.mps.lang.editor.structure.CellLayout_Indent" id="4531786690998643497" />
     </node>
   </node>
+  <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" id="7620205565664606481">
+    <property name="package" value="Stylesheet" />
+    <link role="conceptDeclaration" targetNodeId="2.7620205565664569937" resolveInfo="DefaultBaseLine" />
+    <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="7620205565664606483">
+      <property name="vertical" value="false" />
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="7620205565664606484">
+        <property name="text" value="default-baseline" />
+        <link role="styleClass" targetNodeId="1194569818117" resolveInfo="item" />
+        <node role="menuDescriptor" type="jetbrains.mps.lang.editor.structure.CellMenuDescriptor" id="7620205565664606485">
+          <node role="cellMenuPart" type="jetbrains.mps.lang.editor.structure.CellMenuPart_ReplaceNode_CustomNodeConcept" id="7620205565664606486">
+            <link role="replacementConcept" targetNodeId="2.1186402475462" resolveInfo="StyleClassItem" />
+          </node>
+        </node>
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="7620205565664606487">
+        <property name="text" value=":" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Property" id="7620205565664614811">
+        <link role="relationDeclaration" targetNodeId="2.7620205565664606477" resolveInfo="baseline" />
+      </node>
+      <node role="cellLayout" type="jetbrains.mps.lang.editor.structure.CellLayout_Horizontal" id="7620205565664606489" />
+    </node>
+  </node>
 </model>
 

@@ -21,6 +21,7 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.EditorSettings;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.style.CellAlign;
+import jetbrains.mps.nodeEditor.style.DefaultBaseLine;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 
 import java.awt.Font;
@@ -232,12 +233,26 @@ public class CellLayout_Vertical extends AbstractCellLayout {
       }
     }
 
-    for (EditorCell cell : editorCells.getCells()) {
-      int result = cell.getAscent();
-      if (result > 0) {
-        return result;
-      }
+    DefaultBaseLine bL = editorCells.getStyle().get(StyleAttributes.DEFAULT_BASE_LINE);
+
+    switch (bL) {
+      case FIRST: // default behavior
+        for (EditorCell cell : editorCells.getCells()) {
+          int result = cell.getAscent();
+          if (result > 0) {
+            return result;
+          }
+        }
+
+      case CENTER:
+        return editorCells.getHeight() / 2;
+      case LAST:
+        EditorCell lastCell = editorCells.getCellAt(editorCells.getCellsCount()-1);
+        if (lastCell != null) {
+          return lastCell.getY() - editorCells.getY() + lastCell.getAscent();
+        }
     }
+
     return 0;
   }
 

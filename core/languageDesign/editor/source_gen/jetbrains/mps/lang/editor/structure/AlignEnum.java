@@ -8,7 +8,7 @@ import jetbrains.mps.internal.collections.runtime.backports.LinkedList;
 
 public enum AlignEnum {
   left("left", "LEFT"),
-  rigth("rigth", "RIGHT"),
+  right("right", "RIGHT"),
   center("center", "CENTER");
 
   private String myName;
@@ -34,7 +34,7 @@ public enum AlignEnum {
   public static List<AlignEnum> getConstants() {
     List<AlignEnum> list = ListSequence.fromList(new LinkedList<AlignEnum>());
     ListSequence.fromList(list).addElement(AlignEnum.left);
-    ListSequence.fromList(list).addElement(AlignEnum.rigth);
+    ListSequence.fromList(list).addElement(AlignEnum.right);
     ListSequence.fromList(list).addElement(AlignEnum.center);
     return list;
   }
@@ -50,8 +50,8 @@ public enum AlignEnum {
     if (value.equals(AlignEnum.left.getValueAsString())) {
       return AlignEnum.left;
     }
-    if (value.equals(AlignEnum.rigth.getValueAsString())) {
-      return AlignEnum.rigth;
+    if (value.equals(AlignEnum.right.getValueAsString())) {
+      return AlignEnum.right;
     }
     if (value.equals(AlignEnum.center.getValueAsString())) {
       return AlignEnum.center;

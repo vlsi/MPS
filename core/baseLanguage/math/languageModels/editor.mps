@@ -382,7 +382,10 @@
           <node role="styleItem" type="jetbrains.mps.lang.editor.structure.DrawBracketsStyleClassItem" id="9151122427738542261">
             <property name="flag" value="true" />
           </node>
-          <node role="cellLayout" type="jetbrains.mps.lang.editor.structure.CellLayout_VerticalGrid" id="6510001722513669693" />
+          <node role="styleItem" type="jetbrains.mps.lang.editor.structure.DefaultBaseLine" id="8598098202018229574">
+            <property name="baseline" value="CENTER" />
+          </node>
+          <node role="cellLayout" type="jetbrains.mps.lang.editor.structure.CellLayout_VerticalGrid" id="8598098202018229573" />
         </node>
         <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Custom" id="9132212888144678091">
           <node role="cellProvider" type="jetbrains.mps.lang.editor.structure.QueryFunction_CellProvider" id="9132212888144678092">

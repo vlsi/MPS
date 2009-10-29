@@ -973,6 +973,10 @@ public class QueriesGenerated {
     return ListSequence.fromList(SLinkOperations.getTargets(generatedClass, "constructor", true)).first();
   }
 
+  public static Object referenceMacro_GetReferent_4098449021143546479(final IOperationContext operationContext, final ReferenceMacroContext _context) {
+    return SPropertyOperations.getString_def(_context.getNode(), "baseline", "FIRST");
+  }
+
   public static Object referenceMacro_GetReferent_4531786690998911335(final IOperationContext operationContext, final ReferenceMacroContext _context) {
     final String methodName = SConceptPropertyOperations.getString(_context.getNode(), "methodToGenerate");
     return ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.getNode("r:2af017c2-293f-4ebb-99f3-81e353b3d6e6(jetbrains.mps.editor.runtime)", "8394433674396727873"), "method", true)).findFirst(new IWhereFilter<SNode>() {

@@ -72,6 +72,7 @@ public class StyleAttributes {
   public static final StyleAttribute<Boolean> STRIKE_OUT = new SimpleStyleAttribute<Boolean>("deprecated", false);
 
   public static final StyleAttribute<Boolean> BASE_LINE_CELL = new SimpleStyleAttribute<Boolean>("baseLineCell", false);
+  public static final StyleAttribute<DefaultBaseLine> DEFAULT_BASE_LINE = new SimpleStyleAttribute<DefaultBaseLine>("default-baseline",DefaultBaseLine.FIRST); 
 
   public static final StyleAttribute<Boolean> CONTROL_OVERED_REFERENCE = new SimpleStyleAttribute<Boolean>("control-overed-reference", false);
 

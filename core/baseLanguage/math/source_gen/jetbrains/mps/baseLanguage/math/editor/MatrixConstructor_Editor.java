@@ -17,6 +17,7 @@ import jetbrains.mps.nodeEditor.cellProviders.AbstractCellListHandler;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Horizontal;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Vertical;
 import jetbrains.mps.nodeEditor.style.CellAlign;
+import jetbrains.mps.nodeEditor.style.DefaultBaseLine;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
@@ -121,6 +122,7 @@ public class MatrixConstructor_Editor extends DefaultNodeEditor {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.HORIZONTAL_ALIGN, CellAlign.CENTER);
       style.set(StyleAttributes.DRAW_BRACKETS, true);
+      style.set(StyleAttributes.DEFAULT_BASE_LINE, DefaultBaseLine.CENTER);
     }
     editorCell.setGridLayout(true);
     editorCell.setRole(handler.getElementRole());
