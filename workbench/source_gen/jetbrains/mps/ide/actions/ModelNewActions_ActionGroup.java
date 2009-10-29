@@ -16,6 +16,7 @@ public class ModelNewActions_ActionGroup extends GeneratedActionGroup {
     this.setPopup(true);
     try {
       ModelNewActions_ActionGroup.this.addAnchor(ModelNewActions_ActionGroup.LABEL_ID_newRoot);
+      ModelNewActions_ActionGroup.this.addSeparator();
       ModelNewActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.NewSubModel_Action", "jetbrains.mps.ide");
     } catch (Throwable t) {
       LOG.error("User group error", t);

@@ -21405,7 +21405,7 @@
   <node type="jetbrains.mps.lang.plugin.structure.ActionGroupDeclaration" id="2841218117793383532">
     <property name="package" value="Menu.ProjectPane.Packages" />
     <property name="name" value="CreateRootNode" />
-    <property name="isPopup" value="true" />
+    <property name="isPopup" value="false" />
     <property name="caption" value="Root Node" />
     <node role="contents" type="jetbrains.mps.lang.plugin.structure.BuildGroupBlock" id="2841218117793383535">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="2841218117793383536">
@@ -28676,6 +28676,7 @@
       <node role="reference" type="jetbrains.mps.lang.plugin.structure.GroupAnchor" id="2490685849537330645">
         <property name="name" value="newRoot" />
       </node>
+      <node role="reference" type="jetbrains.mps.lang.plugin.structure.Separator" id="4862992449561255420" />
       <node role="reference" type="jetbrains.mps.lang.plugin.structure.ActionInstance" id="1420252515663987815">
         <link role="action" targetNodeId="1420252515663895912" resolveInfo="NewSubModel" />
       </node>

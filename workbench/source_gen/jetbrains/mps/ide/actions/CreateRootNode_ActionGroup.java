@@ -13,7 +13,7 @@ public class CreateRootNode_ActionGroup extends GeneratedActionGroup {
   public CreateRootNode_ActionGroup() {
     super("Root Node", ID);
     this.setIsInternal(false);
-    this.setPopup(true);
+    this.setPopup(false);
     try {
       CreateRootNode_ActionGroup.this.add(new CreateRootNodeGroup());
     } catch (Throwable t) {
