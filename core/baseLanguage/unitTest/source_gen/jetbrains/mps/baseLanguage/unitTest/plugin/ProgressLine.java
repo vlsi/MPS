@@ -5,10 +5,6 @@ package jetbrains.mps.baseLanguage.unitTest.plugin;
 import javax.swing.JPanel;
 import com.intellij.openapi.progress.util.ColorProgressBar;
 import javax.swing.JLabel;
-import java.util.Set;
-import jetbrains.mps.baseLanguage.unitTest.runtime.TestEvent;
-import jetbrains.mps.internal.collections.runtime.SetSequence;
-import java.util.HashSet;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
@@ -16,6 +12,7 @@ import java.awt.GridLayout;
 import java.awt.GridBagLayout;
 import java.awt.GridBagConstraints;
 import java.awt.Insets;
+import jetbrains.mps.baseLanguage.unitTest.runtime.TestEvent;
 import com.intellij.execution.process.ProcessHandler;
 import com.intellij.execution.process.ProcessAdapter;
 import com.intellij.execution.process.ProcessEvent;
@@ -26,7 +23,6 @@ public class ProgressLine extends JPanel {
   private final JLabel state = new JLabel("Starting...");
   private final ProgressLine.StateInfo stateInfo = new ProgressLine.StateInfo();
   private boolean testsBuilt = false;
-  private Set<TestEvent> events = SetSequence.fromSet(new HashSet<TestEvent>());
   private List<String> methodName = ListSequence.fromList(new ArrayList<String>());
 
   public ProgressLine() {
@@ -45,18 +41,17 @@ public class ProgressLine extends JPanel {
   }
 
   public void onEvent(TestEvent event) {
-    if (SetSequence.fromSet(this.events).contains(event) || !(ListSequence.fromList(this.methodName).contains(event.getTestMethodName()))) {
+    if (!(ListSequence.fromList(this.methodName).contains(event.getTestMethodName()))) {
       return;
-    } else {
-      SetSequence.fromSet(this.events).addElement(event);
     }
     String token = event.getToken();
-    if (token.equals(TestEvent.END_TEST_PREFIX)) {
+    if (token.equals(TestEvent.END_TEST_PREFIX) || token.equals(TestEvent.ERROR_TEST_SUFFIX) || token.equals(TestEvent.FAILURE_TEST_SUFFIX)) {
       this.stateInfo.onComplete();
+      if (token.equals(TestEvent.ERROR_TEST_SUFFIX) || token.equals(TestEvent.FAILURE_TEST_SUFFIX)) {
+        this.stateInfo.onDefect();
+        this.progressBar.setColor(ColorProgressBar.RED);
+      }
       ListSequence.fromList(this.methodName).removeElement(event.getTestMethodName());
-    } else if (token.equals(TestEvent.ERROR_TEST_PREFIX)) {
-      this.stateInfo.onDefect();
-      this.progressBar.setColor(ColorProgressBar.RED);
     }
     this.stateInfo.setTestName(event.getTestMethodName(), event.getTestCaseName());
     this.progressBar.setFraction(this.stateInfo.getCompletedPercent());
