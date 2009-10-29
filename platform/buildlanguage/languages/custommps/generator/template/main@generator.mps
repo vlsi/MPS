@@ -2006,7 +2006,7 @@
             </node>
             <node role="entry" type="jetbrains.mps.build.custommpsInternal.structure.MPSModule" id="4929640625457836996">
               <property name="id" value="88f8bc48-a7a1-4edf-93ec-38cb00d0c9d5" />
-              <property name="name" value="jetbrains.mps.debug.baseLanguage" />
+              <property name="name" value="jetbrains.mps.debug" />
             </node>
             <node role="title" type="jetbrains.mps.build.packaging.structure.SimpleString" id="1234971270490">
               <property name="name" value="baseLanguage" />

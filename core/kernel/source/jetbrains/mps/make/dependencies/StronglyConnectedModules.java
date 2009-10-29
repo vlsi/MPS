@@ -38,7 +38,7 @@ public class StronglyConnectedModules {
   }
 
   public <M extends IModule> List<Set<M>> getStronglyConnectedComponents(Set<M> modules) {
-    return getStronglyConnectedComponents(modules, new DefaultModuleDecoratorBuilder<M>(true));
+    return getStronglyConnectedComponents(modules, new DefaultModuleDecoratorBuilder<M>(false));
   }
 
   public <M extends IModule, D extends IModuleDecorator<M>> List<Set<M>> getStronglyConnectedComponents(Set<M> modules, IModuleDecoratorBuilder<M, D> decoratorBuilder) {
