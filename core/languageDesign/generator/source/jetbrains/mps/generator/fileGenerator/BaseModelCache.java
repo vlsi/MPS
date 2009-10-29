@@ -18,16 +18,14 @@ package jetbrains.mps.generator.fileGenerator;
 import com.intellij.openapi.components.ApplicationComponent;
 
 import java.io.*;
-import java.util.Set;
-import java.util.HashSet;
-import java.util.List;
-import java.util.ArrayList;
+import java.util.*;
 
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.vfs.*;
+import org.jetbrains.annotations.Nullable;
 
 public abstract class BaseModelCache<T> implements ApplicationComponent {
   private static Logger LOG = Logger.getLogger(BaseModelCache.class);
@@ -57,6 +55,7 @@ public abstract class BaseModelCache<T> implements ApplicationComponent {
         T cache = generateCache(context);
 
         IFile cacheFile = getCacheFile(context.getStatus().getOriginalInputModel());
+        if (cacheFile == null) return Collections.EMPTY_SET;
 
         OutputStream os = null;
         try {
@@ -87,7 +86,7 @@ public abstract class BaseModelCache<T> implements ApplicationComponent {
   public T get(SModelDescriptor sm) {
     IFile cacheFile = getCacheFile(sm);
 
-    if (!cacheFile.exists()) return null;
+    if (cacheFile == null || !cacheFile.exists()) return null;
 
     InputStream is = null;
     try {
@@ -108,6 +107,7 @@ public abstract class BaseModelCache<T> implements ApplicationComponent {
     return null;
   }
 
+  @Nullable
   private IFile getCacheFile(SModelDescriptor sm) {
     IModule m = sm.getModule();
     IFile cachesModuleDir = getCachesDir(m, m.getOutputFor(sm));
@@ -137,6 +137,7 @@ public abstract class BaseModelCache<T> implements ApplicationComponent {
     return result;
   }
 
+  @Nullable
   public static IFile getCachesDir(IModule module, String outputPath) {
     if (outputPath == null) return null;
 
