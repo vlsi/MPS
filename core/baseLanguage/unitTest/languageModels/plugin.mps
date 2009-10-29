@@ -16321,6 +16321,26 @@
                 </node>
               </node>
             </node>
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="2431074556949644394">
+              <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="2431074556949644398">
+                <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="2431074556949644395">
+                  <node role="operation" type="jetbrains.mps.baseLanguage.structure.FieldReferenceOperation" id="2431074556949644396">
+                    <link role="fieldDeclaration" targetNodeId="8392350987251235057" resolveInfo="methodName" />
+                  </node>
+                  <node role="operand" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="2431074556949644397" />
+                </node>
+                <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.RemoveElementOperation" id="2431074556949644402">
+                  <node role="argument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="2431074556949644413">
+                    <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="2431074556949644408">
+                      <link role="variableDeclaration" targetNodeId="8745027459331780712" resolveInfo="event" />
+                    </node>
+                    <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="2431074556949644421">
+                      <link role="baseMethodDeclaration" targetNodeId="21.1208865025038" resolveInfo="getTestMethodName" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
           </node>
           <node role="condition" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="8745027459331780740">
             <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="8745027459331780739">

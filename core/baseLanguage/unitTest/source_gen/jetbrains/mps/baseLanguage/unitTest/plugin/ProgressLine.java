@@ -53,6 +53,7 @@ public class ProgressLine extends JPanel {
     String token = event.getToken();
     if (token.equals(TestEvent.END_TEST_PREFIX)) {
       this.stateInfo.onComplete();
+      ListSequence.fromList(this.methodName).removeElement(event.getTestMethodName());
     } else if (token.equals(TestEvent.ERROR_TEST_PREFIX)) {
       this.stateInfo.onDefect();
       this.progressBar.setColor(ColorProgressBar.RED);
