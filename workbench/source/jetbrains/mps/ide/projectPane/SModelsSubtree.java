@@ -19,6 +19,7 @@ import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.ide.ui.TextTreeNode;
 import jetbrains.mps.ide.ui.smodel.SModelTreeNode;
 import jetbrains.mps.project.IModule;
+import jetbrains.mps.project.SModelRoot;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.ProjectModels;
 import jetbrains.mps.smodel.SModelDescriptor;
@@ -60,7 +61,8 @@ public class SModelsSubtree {
         currentRootNode = rootTreeNode;
       } else {
         IModule contextModule = operationContext.getModule();
-        String namespace = contextModule.getSModelRoots().get(0).getPrefix();
+        List<SModelRoot> modelRoots = contextModule.getSModelRoots();
+        String namespace = (modelRoots.isEmpty())? "" : contextModule.getSModelRoots().get(0).getPrefix();
         if (namespace == null || namespace.length() == 0) {
           namespace = contextModule.getModuleNamespace();
         }
