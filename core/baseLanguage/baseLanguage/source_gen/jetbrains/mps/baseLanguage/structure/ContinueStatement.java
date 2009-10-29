@@ -10,6 +10,7 @@ import jetbrains.mps.project.GlobalScope;
 public class ContinueStatement extends Statement {
   public static final String concept = "jetbrains.mps.baseLanguage.structure.ContinueStatement";
   public static final String LABEL = "label";
+  public static final String LOOP_LABEL_REFERENCE = "loopLabelReference";
 
   public ContinueStatement(SNode node) {
     super(node);
@@ -21,6 +22,14 @@ public class ContinueStatement extends Statement {
 
   public void setLabel(String value) {
     this.setProperty(ContinueStatement.LABEL, value);
+  }
+
+  public LoopLabelReference getLoopLabelReference() {
+    return (LoopLabelReference)this.getChild(LoopLabelReference.class, ContinueStatement.LOOP_LABEL_REFERENCE);
+  }
+
+  public void setLoopLabelReference(LoopLabelReference node) {
+    super.setChild(ContinueStatement.LOOP_LABEL_REFERENCE, node);
   }
 
   public static ContinueStatement newInstance(SModel sm, boolean init) {

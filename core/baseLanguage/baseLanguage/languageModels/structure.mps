@@ -1048,6 +1048,11 @@
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1081855346303">
     <property name="name" value="BreakStatement" />
     <link role="extends" targetNodeId="1068580123157" resolveInfo="Statement" />
+    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="9056323058805176516">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="loopLabelReference" />
+      <link role="target" targetNodeId="363746191845183785" resolveInfo="LoopLabelReference" />
+    </node>
     <node role="propertyDeclaration" type="jetbrains.mps.lang.structure.structure.PropertyDeclaration" id="1199466066648">
       <property name="name" value="label" />
       <link role="dataType" targetNodeId="4.1082983041843" resolveInfo="string" />
@@ -1093,6 +1098,11 @@
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1082113931046">
     <property name="name" value="ContinueStatement" />
     <link role="extends" targetNodeId="1068580123157" resolveInfo="Statement" />
+    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="9056323058805226429">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="loopLabelReference" />
+      <link role="target" targetNodeId="363746191845183785" resolveInfo="LoopLabelReference" />
+    </node>
     <node role="propertyDeclaration" type="jetbrains.mps.lang.structure.structure.PropertyDeclaration" id="1199470060942">
       <property name="name" value="label" />
       <link role="dataType" targetNodeId="4.1082983041843" resolveInfo="string" />

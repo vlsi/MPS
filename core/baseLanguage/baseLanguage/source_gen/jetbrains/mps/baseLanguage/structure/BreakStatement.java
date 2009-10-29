@@ -10,6 +10,7 @@ import jetbrains.mps.project.GlobalScope;
 public class BreakStatement extends Statement {
   public static final String concept = "jetbrains.mps.baseLanguage.structure.BreakStatement";
   public static final String LABEL = "label";
+  public static final String LOOP_LABEL_REFERENCE = "loopLabelReference";
 
   public BreakStatement(SNode node) {
     super(node);
@@ -21,6 +22,14 @@ public class BreakStatement extends Statement {
 
   public void setLabel(String value) {
     this.setProperty(BreakStatement.LABEL, value);
+  }
+
+  public LoopLabelReference getLoopLabelReference() {
+    return (LoopLabelReference)this.getChild(LoopLabelReference.class, BreakStatement.LOOP_LABEL_REFERENCE);
+  }
+
+  public void setLoopLabelReference(LoopLabelReference node) {
+    super.setChild(BreakStatement.LOOP_LABEL_REFERENCE, node);
   }
 
   public static BreakStatement newInstance(SModel sm, boolean init) {
