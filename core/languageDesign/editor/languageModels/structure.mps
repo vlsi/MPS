@@ -4491,5 +4491,43 @@
       <property name="externalValue" value="last cell baseline" />
     </node>
   </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1886960078078641793">
+    <property name="package" value="CellLayout" />
+    <property name="name" value="CellLayout_Superscript" />
+    <link role="extends" targetNodeId="1106270491082" resolveInfo="CellLayout" />
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1886960078078641794">
+      <property name="value" value="superscript" />
+      <link role="conceptPropertyDeclaration" targetNodeId="3.1137473891462" resolveInfo="alias" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.EnumerationDataTypeDeclaration" id="8255250703325730686">
+    <property name="name" value="ScriptSwitchEnum" />
+    <link role="memberDataType" targetNodeId="3.1082983041843" resolveInfo="string" />
+    <node role="member" type="jetbrains.mps.lang.structure.structure.EnumerationMemberDeclaration" id="8255250703325730687">
+      <property name="internalValue" value="NORMAL" />
+      <property name="externalValue" value="plain text" />
+    </node>
+    <node role="member" type="jetbrains.mps.lang.structure.structure.EnumerationMemberDeclaration" id="8255250703325731012">
+      <property name="internalValue" value="SUPERSCRIPT" />
+      <property name="externalValue" value="superscript" />
+    </node>
+    <node role="member" type="jetbrains.mps.lang.structure.structure.EnumerationMemberDeclaration" id="8255250703325731013">
+      <property name="internalValue" value="SUBSCRIPT" />
+      <property name="externalValue" value="subscript" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="8255250703325731016">
+    <property name="package" value="Stylesheet" />
+    <property name="name" value="ScriptKindClassItem" />
+    <link role="extends" targetNodeId="1186402475462" resolveInfo="StyleClassItem" />
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="8255250703325731017">
+      <property name="value" value="script-kind" />
+      <link role="conceptPropertyDeclaration" targetNodeId="3.1137473891462" resolveInfo="alias" />
+    </node>
+    <node role="propertyDeclaration" type="jetbrains.mps.lang.structure.structure.PropertyDeclaration" id="8255250703325731018">
+      <property name="name" value="script" />
+      <link role="dataType" targetNodeId="8255250703325730686" resolveInfo="SuperscriptSwitchEnum" />
+    </node>
+  </node>
 </model>
 

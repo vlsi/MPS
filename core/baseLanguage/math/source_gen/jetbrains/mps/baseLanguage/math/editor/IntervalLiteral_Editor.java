@@ -45,7 +45,6 @@ public class IntervalLiteral_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createRefNode_6862_0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_6862_0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_6862_1(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_6862_3(editorContext, node));
     editorCell.addEditorCell(this.createReadOnlyModelAccessor_6862_1(editorContext, node));
     return editorCell;
   }
@@ -81,18 +80,6 @@ public class IntervalLiteral_Editor extends DefaultNodeEditor {
   private EditorCell createConstant_6862_2(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "end included:");
     editorCell.setCellId("Constant_6862_2");
-    editorCell.setDefaultText("");
-    return editorCell;
-  }
-
-  private EditorCell createConstant_6862_3(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
-    editorCell.setCellId("Constant_6862_3");
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.PUNCTUATION_RIGHT, true);
-      style.set(StyleAttributes.PUNCTUATION_LEFT, true);
-    }
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -150,7 +137,7 @@ public class IntervalLiteral_Editor extends DefaultNodeEditor {
   private EditorCell createRefNode_6862_0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("start");
-    provider.setNoTargetText("-?");
+    provider.setNoTargetText("-\u221e");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
     {
@@ -171,7 +158,7 @@ public class IntervalLiteral_Editor extends DefaultNodeEditor {
   private EditorCell createRefNode_6862_1(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("end");
-    provider.setNoTargetText("+?");
+    provider.setNoTargetText("+\u221e");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
     {

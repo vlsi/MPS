@@ -243,7 +243,7 @@ public class CellLayout_Vertical extends AbstractCellLayout {
             return result;
           }
         }
-
+        break;
       case CENTER:
         return editorCells.getHeight() / 2;
       case LAST:

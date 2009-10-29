@@ -335,6 +335,57 @@
         </node>
       </node>
     </node>
+    <node role="actionsBuilder" type="jetbrains.mps.lang.actions.structure.SideTransformHintSubstituteActionsBuilder" id="963844843316088781">
+      <link role="applicableConcept" targetNodeId="2v.1068431790191" resolveInfo="Expression" />
+      <node role="part" type="jetbrains.mps.lang.actions.structure.AddMenuPart" id="963844843316088782">
+        <link role="concept" targetNodeId="2v.1068431790191" resolveInfo="Expression" />
+        <node role="part" type="jetbrains.mps.lang.actions.structure.SimpleSideTransformMenuPart" id="963844843316088784">
+          <node role="handler" type="jetbrains.mps.lang.actions.structure.QueryFunction_SideTransform_Handler" id="963844843316088785">
+            <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="963844843316088786">
+              <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="963844843316090087">
+                <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="963844843316090088">
+                  <property name="name" value="result" />
+                  <node role="type" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="963844843316090089">
+                    <link role="concept" targetNodeId="1.1238338031059" resolveInfo="PowExpression" />
+                  </node>
+                  <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="963844843316090092">
+                    <node role="operand" type="jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_sourceNode" id="963844843316090091" />
+                    <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ReplaceWithAnotherOperation" id="963844843316090096">
+                      <node role="replacementNode" type="jetbrains.mps.lang.quotation.structure.Quotation" id="963844843316090106">
+                        <node role="quotedNode" type="jetbrains.mps.baseLanguage.math.structure.PowExpression" id="963844843316090108">
+                          <node role="base" type="jetbrains.mps.baseLanguage.structure.Expression" id="963844843316090109">
+                            <node role="_attr_$attribute" type="jetbrains.mps.lang.quotation.structure.Antiquotation" id="963844843316090111">
+                              <node role="expression" type="jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_sourceNode" id="963844843316090113" />
+                            </node>
+                          </node>
+                          <node role="exponent" type="jetbrains.mps.baseLanguage.structure.Expression" id="963844843316090110" />
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="963844843316090099">
+                <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="963844843316090101">
+                  <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="963844843316090100">
+                    <link role="variableDeclaration" targetNodeId="963844843316090088" resolveInfo="result" />
+                  </node>
+                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="963844843316090105">
+                    <link role="link" targetNodeId="1.1238338314983" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+          <node role="matchingText" type="jetbrains.mps.lang.actions.structure.SideTransform_SimpleString" id="963844843316088787">
+            <property name="text" value="^" />
+          </node>
+          <node role="descriptionText" type="jetbrains.mps.lang.actions.structure.SideTransform_SimpleString" id="963844843316199981">
+            <property name="text" value="Raise to power" />
+          </node>
+        </node>
+      </node>
+    </node>
   </node>
   <node type="jetbrains.mps.lang.actions.structure.NodeFactories" id="4334427517307386358">
     <property name="name" value="ML_NodeFactories" />

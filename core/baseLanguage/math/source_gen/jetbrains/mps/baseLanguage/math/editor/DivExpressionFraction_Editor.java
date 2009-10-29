@@ -13,7 +13,7 @@ import jetbrains.mps.nodeEditor.style.CellAlign;
 import jetbrains.mps.nodeEditor.AbstractCellProvider;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.baseLanguage.math.plugin.EmptyCellProvider;
-import jetbrains.mps.baseLanguage.math.plugin.HLine;
+import jetbrains.mps.baseLanguage.math.plugin.HLineCellProvider;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
@@ -63,9 +63,9 @@ public class DivExpressionFraction_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createCustom_9055_1(final EditorContext editorContext, final SNode node) {
-    AbstractCellProvider provider = new _FunctionTypes._return_P0_E0<HLine>() {
-      public HLine invoke() {
-        return new HLine();
+    AbstractCellProvider provider = new _FunctionTypes._return_P0_E0<HLineCellProvider>() {
+      public HLineCellProvider invoke() {
+        return new HLineCellProvider();
       }
     }.invoke();
     EditorCell editorCell = provider.createEditorCell(editorContext);

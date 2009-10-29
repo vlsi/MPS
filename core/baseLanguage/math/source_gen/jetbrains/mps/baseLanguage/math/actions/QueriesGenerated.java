@@ -29,7 +29,7 @@ public class QueriesGenerated {
   }
 
   public static boolean sideTransformHintSubstituteActionsBuilder_Precondition_Expression_6389121991274660120(final IOperationContext operationContext, final SideTransformPreconditionContext _context) {
-    return TypeChecker.getInstance().getSubtypingManager().isSubtype(TypeChecker.getInstance().getTypeOf(_context.getSourceNode()), new _Quotations.QuotationClass_0().createNode());
+    return TypeChecker.getInstance().getSubtypingManager().isSubtype(TypeChecker.getInstance().getTypeOf(_context.getSourceNode()), new _Quotations.QuotationClass_1().createNode());
   }
 
   public static void nodeFactory_NodeSetup_MatrixInverseOperation_1418611629042594678(final IOperationContext operationContext, final NodeSetupContext _context) {
@@ -70,6 +70,32 @@ public class QueriesGenerated {
           }
         });
       }
+    }
+    return result;
+  }
+
+  public static List<INodeSubstituteAction> sideTransform_ActionsFactory_Expression_963844843316088781(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
+    List<INodeSubstituteAction> result = ListSequence.fromList(new ArrayList<INodeSubstituteAction>());
+    {
+      SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.Expression");
+      ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(concept, _context.getSourceNode()) {
+        public SNode doSubstitute(String pattern) {
+          SNode result = SNodeOperations.replaceWithAnother(_context.getSourceNode(), new _Quotations.QuotationClass_0().createNode(_context.getSourceNode()));
+          return SLinkOperations.getTarget(result, "exponent", true);
+        }
+
+        public String getMatchingText(String pattern) {
+          return "^";
+        }
+
+        public String getVisibleMatchingText(String pattern) {
+          return this.getMatchingText(pattern);
+        }
+
+        public String getDescriptionText(String pattern) {
+          return "Raise to power";
+        }
+      });
     }
     return result;
   }

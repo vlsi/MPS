@@ -5564,5 +5564,89 @@
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="8598098202018087056" />
     </node>
   </node>
+  <node type="jetbrains.mps.lang.behavior.structure.ConceptBehavior" id="8255250703325737458">
+    <property name="package" value="Stylesheet" />
+    <link role="concept" targetNodeId="1.8255250703325731016" resolveInfo="ScriptSwitchClassItem" />
+    <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="8255250703325737461">
+      <property name="name" value="isApplicableTo" />
+      <link role="overriddenMethod" targetNodeId="1214304723440" resolveInfo="isApplicableTo" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="8255250703325737464">
+        <node role="statement" type="jetbrains.mps.lang.typesystem.structure.MatchStatement" id="8255250703325740974">
+          <node role="item" type="jetbrains.mps.lang.typesystem.structure.MatchStatementItem" id="8255250703325740976">
+            <node role="condition" type="jetbrains.mps.lang.typesystem.structure.ConceptReference" id="8255250703325740989">
+              <property name="name" value="c" />
+              <link role="concept" targetNodeId="1.1073389446423" resolveInfo="CellModel_Collection" />
+            </node>
+            <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="8255250703325740978">
+              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="8255250703325741014">
+                <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="8255250703325741015">
+                  <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="8255250703325741016">
+                    <node role="operand" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference" id="8255250703325741021">
+                      <link role="applicableNode" targetNodeId="8255250703325740989" resolveInfo="c" />
+                    </node>
+                    <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="8255250703325741022">
+                      <link role="link" targetNodeId="1.1106270802874" />
+                    </node>
+                  </node>
+                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation" id="8255250703325741019">
+                    <node role="conceptArgument" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" id="8255250703325741020">
+                      <link role="conceptDeclaration" targetNodeId="1.1886960078078641793" resolveInfo="CellLayout_Superscript" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+          <node role="item" type="jetbrains.mps.lang.typesystem.structure.MatchStatementItem" id="8255250703325740985">
+            <node role="condition" type="jetbrains.mps.lang.typesystem.structure.ConceptReference" id="8255250703325740988">
+              <property name="name" value="lwr" />
+              <link role="concept" targetNodeId="1.1140524381322" resolveInfo="CellModel_ListWithRole" />
+            </node>
+            <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="8255250703325740987">
+              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="8255250703325740998">
+                <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="8255250703325741007">
+                  <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="8255250703325741004">
+                    <node role="operand" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference" id="8255250703325741005">
+                      <link role="applicableNode" targetNodeId="8255250703325740988" resolveInfo="lwr" />
+                    </node>
+                    <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="8255250703325741006">
+                      <link role="link" targetNodeId="1.1140524464360" />
+                    </node>
+                  </node>
+                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation" id="8255250703325741011">
+                    <node role="conceptArgument" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" id="8255250703325741013">
+                      <link role="conceptDeclaration" targetNodeId="1.1886960078078641793" resolveInfo="CellLayout_Superscript" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+          <node role="ifFalseStatement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="8255250703325740979">
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="8255250703325740981">
+              <property name="value" value="false" />
+            </node>
+          </node>
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="8255250703325740982">
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="8255250703325740983">
+              <link role="variableDeclaration" targetNodeId="8255250703325737465" resolveInfo="cellModel" />
+            </node>
+            <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_GetParentOperation" id="8255250703325740984" />
+          </node>
+        </node>
+      </node>
+      <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="8255250703325737465">
+        <property name="name" value="cellModel" />
+        <node role="type" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="8255250703325737466">
+          <link role="concept" targetNodeId="1.1073389214265" resolveInfo="EditorCellModel" />
+        </node>
+      </node>
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.BooleanType" id="8255250703325737467" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="8255250703325737468" />
+    </node>
+    <node role="constructor" type="jetbrains.mps.lang.behavior.structure.ConceptConstructorDeclaration" id="8255250703325737459">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="8255250703325737460" />
+    </node>
+  </node>
 </model>
 

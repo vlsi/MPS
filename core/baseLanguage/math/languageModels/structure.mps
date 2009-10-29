@@ -129,8 +129,12 @@
       <link role="target" targetNodeId="2v.1068431790191" resolveInfo="Expression" />
     </node>
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1238338590427">
-      <property name="value" value="pow" />
+      <property name="value" value="^" />
       <link role="conceptPropertyDeclaration" targetNodeId="3v.1137473891462" resolveInfo="alias" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="963844843316001185">
+      <property name="value" value="Power expression" />
+      <link role="conceptPropertyDeclaration" targetNodeId="3v.1137473914776" resolveInfo="shortDescription" />
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="4815887568697232005">
@@ -762,7 +766,7 @@
     <property name="name" value="BigProdExpression" />
     <link role="extends" targetNodeId="1236428893250" resolveInfo="ArithmSymbol" />
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1236428583262">
-      <property name="value" value="Π" />
+      <property name="value" value="∏" />
       <link role="conceptPropertyDeclaration" targetNodeId="1236427043810" resolveInfo="opName" />
     </node>
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1236428657617">
@@ -783,7 +787,7 @@
       <link role="conceptPropertyDeclaration" targetNodeId="3v.1137473891462" resolveInfo="alias" />
     </node>
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1236439487934">
-      <property name="value" value="Σ" />
+      <property name="value" value="∑" />
       <link role="conceptPropertyDeclaration" targetNodeId="1236427043810" resolveInfo="opName" />
     </node>
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1236439490295">
@@ -855,7 +859,7 @@
     <property name="name" value="BigMinExpression" />
     <link role="extends" targetNodeId="1236428507726" resolveInfo="ExtrSymbol" />
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1236428561167">
-      <property name="value" value="min" />
+      <property name="value" value="MIN" />
       <link role="conceptPropertyDeclaration" targetNodeId="1236427043810" resolveInfo="opName" />
     </node>
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1236428639986">
@@ -1050,7 +1054,7 @@
     </node>
     <node role="member" type="jetbrains.mps.lang.structure.structure.EnumerationMemberDeclaration" id="758819215871666040">
       <property name="internalValue" value="1" />
-      <property name="externalValue" value="?" />
+      <property name="externalValue" value="∞" />
       <property name="javaIdentifier" value="normInfty" />
     </node>
     <node role="member" type="jetbrains.mps.lang.structure.structure.EnumerationMemberDeclaration" id="758819215871666041">
@@ -1069,7 +1073,7 @@
     <property name="name" value="BigMaxExpression" />
     <link role="extends" targetNodeId="1236428507726" resolveInfo="ExtrSymbol" />
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1236428553619">
-      <property name="value" value="max" />
+      <property name="value" value="MAX" />
       <link role="conceptPropertyDeclaration" targetNodeId="1236427043810" resolveInfo="opName" />
     </node>
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1236428629297">
