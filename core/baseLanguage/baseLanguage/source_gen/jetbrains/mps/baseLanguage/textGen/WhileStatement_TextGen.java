@@ -4,13 +4,17 @@ package jetbrains.mps.baseLanguage.textGen;
 
 import jetbrains.mps.textGen.SNodeTextGen;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.textGen.TextGenManager;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class WhileStatement_TextGen extends SNodeTextGen {
   public void doGenerateText(SNode node) {
-    if (SPropertyOperations.getString(node, "label") != null) {
+    if (SLinkOperations.getTarget(node, "loopLabel", true) != null) {
+      this.appendNewLine();
+      this.append(SPropertyOperations.getString(SLinkOperations.getTarget(node, "loopLabel", true), "name"));
+      this.append(":");
+    } else if (SPropertyOperations.getString(node, "label") != null) {
       this.appendNewLine();
       this.append(SPropertyOperations.getString(node, "label"));
       this.append(":");
