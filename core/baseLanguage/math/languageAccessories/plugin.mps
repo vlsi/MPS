@@ -1489,6 +1489,21 @@
             </node>
           </node>
         </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1886960078078541335">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1886960078078541336">
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1886960078078541337">
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1886960078078541338">
+                <link role="variableDeclaration" targetNodeId="3990242306180969942" resolveInfo="cellForNewNode" />
+              </node>
+              <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1886960078078541339">
+                <link role="baseMethodDeclaration" targetNodeId="2.~EditorCell.getSTHintCell():jetbrains.mps.nodeEditor.cells.EditorCell_Label" resolveInfo="getSTHintCell" />
+              </node>
+            </node>
+            <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1886960078078541340">
+              <link role="baseMethodDeclaration" targetNodeId="2.~EditorCell_Label.end():void" resolveInfo="end" />
+            </node>
+          </node>
+        </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="5010599633111330563">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="5010599633111330570">
             <property name="value" value="true" />
@@ -1565,6 +1580,21 @@
               <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="5010599633111451578">
                 <link role="variableDeclaration" targetNodeId="5010599633111448713" resolveInfo="text" />
               </node>
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1886960078078541343">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1886960078078541344">
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1886960078078541345">
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1886960078078541346">
+                <link role="variableDeclaration" targetNodeId="3990242306180970031" resolveInfo="cellForNewNode" />
+              </node>
+              <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1886960078078541347">
+                <link role="baseMethodDeclaration" targetNodeId="2.~EditorCell.getSTHintCell():jetbrains.mps.nodeEditor.cells.EditorCell_Label" resolveInfo="getSTHintCell" />
+              </node>
+            </node>
+            <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1886960078078542631">
+              <link role="baseMethodDeclaration" targetNodeId="2.~EditorCell_Label.end():void" resolveInfo="end" />
             </node>
           </node>
         </node>
