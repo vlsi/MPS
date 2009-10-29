@@ -64,16 +64,21 @@ public class MPSProjectIDEHandler extends UnicastRemoteObject implements IMPSIDE
   public void projectOpened() {
     if (IdeMain.getTestMode() == TestMode.CORE_TEST) return;
 
-    myMPSProject = myProject.getComponent(MPSProjectHolder.class).getMPSProject();
-    try {
-      IProjectHandler handler = myMPSProject.getProjectHandler();
-      if (handler == null) {
-        return;
+    new Thread() {
+      @Override
+      public void run() {
+        myMPSProject = myProject.getComponent(MPSProjectHolder.class).getMPSProject();
+        try {
+          IProjectHandler handler = myMPSProject.getProjectHandler();
+          if (handler == null) {
+            return;
+          }
+          handler.addIdeHandler(MPSProjectIDEHandler.this);
+        } catch (RemoteException e) {
+          e.printStackTrace();
+        }
       }
-      handler.addIdeHandler(this);
-    } catch (RemoteException e) {
-      e.printStackTrace();
-    }
+    }.start();
   }
 
   public void projectClosed() {
