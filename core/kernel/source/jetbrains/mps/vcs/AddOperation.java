@@ -50,6 +50,7 @@ class AddOperation extends VcsOperation {
   private final VcsShowConfirmationOption myConfirmationOption;
   private boolean mySilently;
   private final VcsDirtyScopeManager myVcsDirtyScopeManager;
+  private final MPSVCSManager myMpsVcsManager;
 
   public AddOperation(Set<VirtualFile> filesToAdd, ProjectLevelVcsManager manager, Project project,
                       VcsShowConfirmationOption option, boolean recursive, boolean silently) {
@@ -63,6 +64,7 @@ class AddOperation extends VcsOperation {
     myConfirmationOption = option;
     mySilently = silently;
     myVcsDirtyScopeManager = VcsDirtyScopeManager.getInstance(myProject);
+    myMpsVcsManager = MPSVCSManager.getInstance(myProject);
   }
 
   public AddOperation(List<File> filesToAdd, ProjectLevelVcsManager manager, Project project,
@@ -73,6 +75,7 @@ class AddOperation extends VcsOperation {
     myConfirmationOption = option;
     mySilently = silently;
     myVcsDirtyScopeManager = VcsDirtyScopeManager.getInstance(myProject);
+    myMpsVcsManager = MPSVCSManager.getInstance(myProject);
   }
 
   /**
@@ -194,7 +197,7 @@ class AddOperation extends VcsOperation {
    * @param deleted
    */
   private void reliablyGetUnversionedFiles(final Set<VirtualFile> files, final List<VirtualFile> unversioned, List<VirtualFile> deleted) {
-    MPSVCSManager.getInstance(myProject).ensureVcssInitialized();
+    myMpsVcsManager.ensureVcssInitialized();
 
     Map<AbstractVcs, List<VirtualFile>> vcsToFiles = new HashMap<AbstractVcs, List<VirtualFile>>();
     for (VirtualFile f : files) {
