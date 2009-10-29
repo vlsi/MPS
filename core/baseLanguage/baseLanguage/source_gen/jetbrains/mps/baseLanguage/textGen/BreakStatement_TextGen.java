@@ -4,13 +4,18 @@ package jetbrains.mps.baseLanguage.textGen;
 
 import jetbrains.mps.textGen.SNodeTextGen;
 import jetbrains.mps.smodel.SNode;
-import org.apache.commons.lang.StringUtils;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import org.apache.commons.lang.StringUtils;
 
 public class BreakStatement_TextGen extends SNodeTextGen {
   public void doGenerateText(SNode node) {
     this.appendNewLine();
-    if (StringUtils.isNotEmpty(SPropertyOperations.getString(node, "label"))) {
+    if ((SLinkOperations.getTarget(node, "loopLabelReference", true) != null)) {
+      this.appendWithIndent("break ");
+      this.append(SPropertyOperations.getString(SLinkOperations.getTarget(SLinkOperations.getTarget(node, "loopLabelReference", true), "loopLabel", false), "name"));
+      this.append(";");
+    } else if (StringUtils.isNotEmpty(SPropertyOperations.getString(node, "label"))) {
       this.appendWithIndent("break ");
       this.append(SPropertyOperations.getString(node, "label"));
       this.append(";");
