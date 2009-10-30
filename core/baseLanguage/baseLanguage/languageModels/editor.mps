@@ -3651,6 +3651,7 @@
         <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Property" id="1199470083776">
           <link role="relationDeclaration" targetNodeId="17.1199470060942" resolveInfo="label" />
           <link role="actionMap" targetNodeId="1199470218836" resolveInfo="ContinueStatement_Actions" />
+          <link role="styleClass" targetNodeId="96.1224158483340" resolveInfo="InternalName" />
           <node role="menuDescriptor" type="jetbrains.mps.lang.editor.structure.CellMenuDescriptor" id="1199470083777">
             <node role="cellMenuPart" type="jetbrains.mps.lang.editor.structure.CellMenuPart_Generic_Group" id="1199470083778">
               <node role="parametersFunction" type="jetbrains.mps.lang.editor.structure.CellMenuPart_AbstractGroup_Query" id="1199470083779">
