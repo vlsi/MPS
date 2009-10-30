@@ -116,7 +116,7 @@ public abstract class BaseRunConfigurationAction extends AnAction {
     } else {
       presentation.setEnabled(true);
       presentation.setVisible(true);
-      final String name = configuration.getConfiguration().getName();
+      final String name = suggestRunActionName((LocatableConfiguration)configuration.getConfiguration());
       updatePresentation(presentation, " " + name, context);
     }
   }

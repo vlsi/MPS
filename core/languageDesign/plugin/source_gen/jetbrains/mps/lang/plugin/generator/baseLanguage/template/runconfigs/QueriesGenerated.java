@@ -262,10 +262,6 @@ public class QueriesGenerated {
     return (SLinkOperations.getTarget(_context.getNode(), "suggestedName", true) != null);
   }
 
-  public static boolean ifMacro_Condition_5235140547387554343(final IOperationContext operationContext, final IfMacroContext _context) {
-    return (SLinkOperations.getTarget(_context.getNode(), "suggestedName", true) != null);
-  }
-
   public static boolean ifMacro_Condition_6707043251019108517(final IOperationContext operationContext, final IfMacroContext _context) {
     return (SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "editor", true), "resetBlock", true) != null);
   }

@@ -26,11 +26,17 @@ public class JUnitConfigFromModule extends BaseConfigCreator<IModule> implements
     if (ListSequence.fromList(TestRunUtil.getModuleTests(parameter.getModuleFqName())).isEmpty()) {
       return;
     }
+    final String name = parameter.getModuleFqName();
     JUnitConfigFromModule.this.setSourceElement(new MPSPsiElement<IModule>(parameter) {    });
     {
       JUnit_ConfigurationType configType = ContainerUtil.findInstance(Extensions.getExtensions(JUnit_ConfigurationType.CONFIGURATION_TYPE_EP), JUnit_ConfigurationType.class);
-      DefaultJUnit_Configuration _config = new DefaultJUnit_Configuration(JUnitConfigFromModule.this.getContext().getProject(), configType.getConfigurationFactories()[0], "NewConfig");
-      _config.setName(parameter.getModuleFqName());
+      DefaultJUnit_Configuration _config = new DefaultJUnit_Configuration(JUnitConfigFromModule.this.getContext().getProject(), configType.getConfigurationFactories()[0], "NewConfig") {
+        @Override
+        public String suggestedName() {
+          return "Tests in '" + name + "'";
+        }
+      };
+      _config.setName(name);
       _config.getStateObject().type = JUnitRunTypes.MODULE;
       _config.getStateObject().module = parameter.getModuleFqName();
       JUnitConfigFromModule.this.myConfig = _config;

@@ -29,7 +29,7 @@ public class JUnitConfigFromClass extends BaseConfigCreator<SNode> implements Cl
 
     {
       JUnit_ConfigurationType configType = ContainerUtil.findInstance(Extensions.getExtensions(JUnit_ConfigurationType.CONFIGURATION_TYPE_EP), JUnit_ConfigurationType.class);
-      DefaultJUnit_Configuration _config = new DefaultJUnit_Configuration(JUnitConfigFromClass.this.getContext().getProject(), configType.getConfigurationFactories()[0], "NewConfig");
+      DefaultJUnit_Configuration _config = new DefaultJUnit_Configuration(JUnitConfigFromClass.this.getContext().getProject(), configType.getConfigurationFactories()[0], "NewConfig") {      };
       _config.setName(SPropertyOperations.getString(parameter, "name"));
       _config.getStateObject().type = JUnitRunTypes.NODE;
       _config.getStateObject().node = INamedConcept_Behavior.call_getFqName_1213877404258(parameter);

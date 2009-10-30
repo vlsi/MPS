@@ -20178,6 +20178,17 @@
             <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.IsEmptyOperation" id="8857400326959529682" />
           </node>
         </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="7228435333870069703">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="7228435333870069704">
+            <property name="name" value="name" />
+            <property name="isFinal" value="true" />
+            <node role="type" type="jetbrains.mps.baseLanguage.structure.StringType" id="7228435333870069705" />
+            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="7228435333870069708">
+              <node role="operand" type="jetbrains.mps.lang.plugin.structure.CreateRunConfigBlockParameter" id="7228435333870069707" />
+              <node role="operation" type="jetbrains.mps.lang.smodel.structure.Model_GetLongNameOperation" id="7228435333870069712" />
+            </node>
+          </node>
+        </node>
         <node role="statement" type="jetbrains.mps.lang.plugin.structure.RunConfigMainNodeStatement" id="8857400326959529661">
           <node role="contextItem" type="jetbrains.mps.lang.plugin.structure.CreateRunConfigBlockParameter" id="8857400326959529686" />
         </node>
@@ -20201,9 +20212,21 @@
               </node>
             </node>
           </node>
-          <node role="configName" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="8857400326959529672">
-            <node role="operand" type="jetbrains.mps.lang.plugin.structure.CreateRunConfigBlockParameter" id="8857400326959529688" />
-            <node role="operation" type="jetbrains.mps.lang.smodel.structure.Model_GetLongNameOperation" id="8857400326959529674" />
+          <node role="suggestedName" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="7228435333870068982">
+            <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="7228435333870068985">
+              <property name="value" value="'" />
+            </node>
+            <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="7228435333870069716">
+              <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="7228435333870069719">
+                <link role="variableDeclaration" targetNodeId="7228435333870069704" resolveInfo="name" />
+              </node>
+              <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="7228435333869998633">
+                <property name="value" value="Tests in '" />
+              </node>
+            </node>
+          </node>
+          <node role="configName" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="7228435333870069714">
+            <link role="variableDeclaration" targetNodeId="7228435333870069704" resolveInfo="name" />
           </node>
         </node>
       </node>
@@ -20234,6 +20257,19 @@
             <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.IsEmptyOperation" id="8857400326959529702" />
           </node>
         </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="7228435333870069721">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="7228435333870069722">
+            <property name="name" value="name" />
+            <property name="isFinal" value="true" />
+            <node role="type" type="jetbrains.mps.baseLanguage.structure.StringType" id="7228435333870069723" />
+            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="7228435333870069725">
+              <node role="operand" type="jetbrains.mps.lang.plugin.structure.CreateRunConfigBlockParameter" id="7228435333870069726" />
+              <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="7228435333870069727">
+                <link role="baseMethodDeclaration" targetNodeId="8.~IModule.getModuleFqName():java.lang.String" resolveInfo="getModuleFqName" />
+              </node>
+            </node>
+          </node>
+        </node>
         <node role="statement" type="jetbrains.mps.lang.plugin.structure.RunConfigMainNodeStatement" id="8857400326959529704">
           <node role="contextItem" type="jetbrains.mps.lang.plugin.structure.CreateRunConfigBlockParameter" id="8857400326959529717" />
         </node>
@@ -20255,11 +20291,21 @@
               </node>
             </node>
           </node>
-          <node role="configName" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="8857400326959529714">
-            <node role="operand" type="jetbrains.mps.lang.plugin.structure.CreateRunConfigBlockParameter" id="8857400326959529720" />
-            <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="8857400326959529716">
-              <link role="baseMethodDeclaration" targetNodeId="8.~IModule.getModuleFqName():java.lang.String" resolveInfo="getModuleFqName" />
+          <node role="suggestedName" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="7228435333870068986">
+            <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="7228435333870068987">
+              <property name="value" value="'" />
             </node>
+            <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="7228435333870069730">
+              <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="7228435333870069733">
+                <link role="variableDeclaration" targetNodeId="7228435333870069722" resolveInfo="name" />
+              </node>
+              <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="7228435333870068989">
+                <property name="value" value="Tests in '" />
+              </node>
+            </node>
+          </node>
+          <node role="configName" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="7228435333870069729">
+            <link role="variableDeclaration" targetNodeId="7228435333870069722" resolveInfo="name" />
           </node>
         </node>
       </node>
