@@ -15,6 +15,7 @@ public class CreateRunConfigStatement extends Statement {
   public static final String concept = "jetbrains.mps.lang.plugin.structure.CreateRunConfigStatement";
   public static final String RUN_CONFIG = "runConfig";
   public static final String CONFIG_NAME = "configName";
+  public static final String SUGGESTED_NAME = "suggestedName";
   public static final String PROPERTY = "property";
 
   public CreateRunConfigStatement(SNode node) {
@@ -35,6 +36,14 @@ public class CreateRunConfigStatement extends Statement {
 
   public void setConfigName(Expression node) {
     super.setChild(CreateRunConfigStatement.CONFIG_NAME, node);
+  }
+
+  public Expression getSuggestedName() {
+    return (Expression)this.getChild(Expression.class, CreateRunConfigStatement.SUGGESTED_NAME);
+  }
+
+  public void setSuggestedName(Expression node) {
+    super.setChild(CreateRunConfigStatement.SUGGESTED_NAME, node);
   }
 
   public int getPropertiesCount() {

@@ -3115,6 +3115,11 @@
       <property name="sourceCardinality" value="0..1" />
       <link role="target" targetNodeId="2.1068431790191" resolveInfo="Expression" />
     </node>
+    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="7162284997071987551">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="suggestedName" />
+      <link role="target" targetNodeId="2.1068431790191" resolveInfo="Expression" />
+    </node>
     <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="7066926174333292874">
       <property name="metaClass" value="aggregation" />
       <property name="sourceCardinality" value="0..n" />

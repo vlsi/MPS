@@ -1815,6 +1815,26 @@
         </node>
         <node role="inequationGroup" type="jetbrains.mps.lang.typesystem.structure.DefaultGroupReference" id="5970100369440882715" />
       </node>
+      <node role="statement" type="jetbrains.mps.lang.typesystem.structure.CreateStrongLessThanInequationStatement" id="7162284997071996041">
+        <node role="rightExpression" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause" id="7162284997071996042">
+          <node role="normalType" type="jetbrains.mps.lang.quotation.structure.Quotation" id="7162284997071996043">
+            <node role="quotedNode" type="jetbrains.mps.baseLanguage.structure.StringType" id="7162284997071996044" />
+          </node>
+        </node>
+        <node role="leftExpression" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause" id="7162284997071996045">
+          <node role="normalType" type="jetbrains.mps.lang.typesystem.structure.TypeOfExpression" id="7162284997071996046">
+            <node role="term" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="7162284997071996047">
+              <node role="operand" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference" id="7162284997071996048">
+                <link role="applicableNode" targetNodeId="7066926174333306001" resolveInfo="statement" />
+              </node>
+              <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="7162284997071996051">
+                <link role="link" targetNodeId="4.7162284997071987551" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="inequationGroup" type="jetbrains.mps.lang.typesystem.structure.DefaultGroupReference" id="7162284997071996050" />
+      </node>
       <node role="statement" type="jetbrains.mps.baseLanguage.collections.structure.ForEachStatement" id="7066926174333307522">
         <node role="variable" type="jetbrains.mps.baseLanguage.collections.structure.ForEachVariable" id="7066926174333307523">
           <property name="name" value="property" />

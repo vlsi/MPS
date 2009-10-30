@@ -181,10 +181,6 @@ public class QueriesGenerated {
     return _context.getOutputNodeByInputNodeAndMappingLabel(SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.lang.plugin.structure.UniversalRunConfigCreator", false, false), "map_ConfigCreatorClass");
   }
 
-  public static Object referenceMacro_GetReferent_5447563960349298700(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return _context.getOutputNodeByInputNodeAndMappingLabel(SLinkOperations.getTarget(_context.getNode(), "runConfig", false), "map_ConfigConstructor");
-  }
-
   public static Object referenceMacro_GetReferent_5447563960349298714(final IOperationContext operationContext, final ReferenceMacroContext _context) {
     SNode oldCreatorClass = _context.getOutputNodeByInputNodeAndMappingLabel(SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.lang.plugin.structure.RunConfigCreator", false, false), "map_OldConfigCreatorClass");
     if ((oldCreatorClass != null)) {
@@ -262,6 +258,14 @@ public class QueriesGenerated {
     return (SLinkOperations.getTarget(_context.getNode(), "configName", true) != null);
   }
 
+  public static boolean ifMacro_Condition_5235140547387554339(final IOperationContext operationContext, final IfMacroContext _context) {
+    return (SLinkOperations.getTarget(_context.getNode(), "suggestedName", true) != null);
+  }
+
+  public static boolean ifMacro_Condition_5235140547387554343(final IOperationContext operationContext, final IfMacroContext _context) {
+    return (SLinkOperations.getTarget(_context.getNode(), "suggestedName", true) != null);
+  }
+
   public static boolean ifMacro_Condition_6707043251019108517(final IOperationContext operationContext, final IfMacroContext _context) {
     return (SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "editor", true), "resetBlock", true) != null);
   }
@@ -313,6 +317,10 @@ public class QueriesGenerated {
 
   public static SNode sourceNodeQuery_4418372807722341496(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "configName", true);
+  }
+
+  public static SNode sourceNodeQuery_5235140547387557608(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return SLinkOperations.getTarget(_context.getNode(), "suggestedName", true);
   }
 
   public static SNode sourceNodeQuery_5447563960349298753(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {

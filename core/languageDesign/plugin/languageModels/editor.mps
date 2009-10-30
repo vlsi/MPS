@@ -4492,6 +4492,14 @@
         <property name="noTargetText" value="&lt;no name&gt;" />
         <link role="relationDeclaration" targetNodeId="1.4418372807722332007" />
       </node>
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="7162284997071992781">
+        <property name="text" value="," />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode" id="7162284997071992782">
+        <property name="emptyNoTargetText" value="false" />
+        <property name="noTargetText" value="&lt;no name&gt;" />
+        <link role="relationDeclaration" targetNodeId="1.7162284997071987551" />
+      </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="7066926174333292882">
         <property name="text" value=")" />
       </node>
