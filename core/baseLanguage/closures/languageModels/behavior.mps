@@ -1248,7 +1248,6 @@
           </node>
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.WhileStatement" id="1237318813486">
-          <property name="label" value="with_meet" />
           <node role="condition" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1237318813487">
             <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1237318813488">
               <link role="variableDeclaration" targetNodeId="1237318813482" resolveInfo="tmp" />
@@ -1302,7 +1301,9 @@
                       </node>
                     </node>
                     <node role="statement" type="jetbrains.mps.baseLanguage.structure.ContinueStatement" id="1237318813511">
-                      <property name="label" value="with_meet" />
+                      <node role="loopLabelReference" type="jetbrains.mps.baseLanguage.structure.LoopLabelReference" id="4100552184032605915">
+                        <link role="loopLabel" targetNodeId="4100552184032605914" resolveInfo="with_meet" />
+                      </node>
                     </node>
                   </node>
                 </node>
@@ -1313,6 +1314,9 @@
                 <node role="quotedNode" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1237318813514" />
               </node>
             </node>
+          </node>
+          <node role="loopLabel" type="jetbrains.mps.baseLanguage.structure.LoopLabel" id="4100552184032605914">
+            <property name="name" value="with_meet" />
           </node>
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1237318813515">

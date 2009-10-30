@@ -1053,7 +1053,6 @@
                 </node>
                 <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1227876792937">
                   <node role="statement" type="jetbrains.mps.baseLanguage.collections.structure.ForEachStatement" id="1227876792938">
-                    <property name="label" value="with_parents" />
                     <node role="variable" type="jetbrains.mps.baseLanguage.collections.structure.ForEachVariable" id="1227876792939">
                       <property name="name" value="p" />
                     </node>
@@ -1072,7 +1071,9 @@
                           <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1227876792947">
                             <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1227876792948">
                               <node role="statement" type="jetbrains.mps.baseLanguage.structure.BreakStatement" id="1227876792949">
-                                <property name="label" value="with_parents" />
+                                <node role="loopLabelReference" type="jetbrains.mps.baseLanguage.structure.LoopLabelReference" id="4100552184032605918">
+                                  <link role="loopLabel" targetNodeId="4100552184032605917" resolveInfo="with_parents" />
+                                </node>
                               </node>
                             </node>
                             <node role="condition" type="jetbrains.mps.baseLanguage.structure.EqualsExpression" id="1227876792950">
@@ -1102,6 +1103,9 @@
                         </node>
                         <node role="elementType" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1227876792960" />
                       </node>
+                    </node>
+                    <node role="loopLabel" type="jetbrains.mps.baseLanguage.structure.LoopLabel" id="4100552184032605917">
+                      <property name="name" value="with_parents" />
                     </node>
                   </node>
                 </node>

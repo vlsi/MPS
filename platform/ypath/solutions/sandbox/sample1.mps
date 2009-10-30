@@ -28,7 +28,6 @@
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1199467217251" />
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1199467217252">
         <node role="statement" type="jetbrains.mps.baseLanguage.collections.structure.ForEachStatement" id="1199469405203">
-          <property name="label" value="outer" />
           <node role="variable" type="jetbrains.mps.baseLanguage.collections.structure.ForEachVariable" id="1199469405204">
             <property name="name" value="foo" />
           </node>
@@ -50,13 +49,11 @@
           </node>
           <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1199469405206">
             <node role="statement" type="jetbrains.mps.baseLanguage.structure.DoWhileStatement" id="1199469569303">
-              <property name="label" value="label" />
               <node role="condition" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1199469587482">
                 <property name="value" value="true" />
               </node>
               <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1199469569305">
                 <node role="statement" type="jetbrains.mps.baseLanguage.structure.ForStatement" id="1199467259811">
-                  <property name="label" value="none" />
                   <node role="variable" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1199467259812">
                     <property name="name" value="i" />
                     <node role="type" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="1199467261105" />
@@ -87,7 +84,9 @@
                     <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1199467319328">
                       <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1199467319329">
                         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ContinueStatement" id="1199470845196">
-                          <property name="label" value="outer" />
+                          <node role="loopLabelReference" type="jetbrains.mps.baseLanguage.structure.LoopLabelReference" id="4100552184032605920">
+                            <link role="loopLabel" targetNodeId="4100552184032605919" resolveInfo="outer" />
+                          </node>
                         </node>
                       </node>
                       <node role="condition" type="jetbrains.mps.baseLanguage.structure.EqualsExpression" id="1199467320988">
@@ -113,9 +112,18 @@
                       <link role="variableDeclaration" targetNodeId="1199467259812" resolveInfo="i" />
                     </node>
                   </node>
+                  <node role="loopLabel" type="jetbrains.mps.baseLanguage.structure.LoopLabel" id="4100552184032605927">
+                    <property name="name" value="none" />
+                  </node>
                 </node>
               </node>
+              <node role="loopLabel" type="jetbrains.mps.baseLanguage.structure.LoopLabel" id="4100552184032605916">
+                <property name="name" value="label" />
+              </node>
             </node>
+          </node>
+          <node role="loopLabel" type="jetbrains.mps.baseLanguage.structure.LoopLabel" id="4100552184032605919">
+            <property name="name" value="outer" />
           </node>
         </node>
       </node>

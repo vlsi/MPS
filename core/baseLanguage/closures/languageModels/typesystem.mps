@@ -2853,14 +2853,15 @@
         </node>
       </node>
       <node role="statement" type="jetbrains.mps.baseLanguage.structure.ForeachStatement" id="1221579075814">
-        <property name="label" value="with_allThrows" />
         <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1221579075815">
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.ForeachStatement" id="1221579075816">
             <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1221579075817">
               <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1221579075818">
                 <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1221579075819">
                   <node role="statement" type="jetbrains.mps.baseLanguage.structure.ContinueStatement" id="1221579075820">
-                    <property name="label" value="with_allThrows" />
+                    <node role="loopLabelReference" type="jetbrains.mps.baseLanguage.structure.LoopLabelReference" id="4100552184032605931">
+                      <link role="loopLabel" targetNodeId="4100552184032605930" resolveInfo="with_allThrows" />
+                    </node>
                   </node>
                 </node>
                 <node role="condition" type="jetbrains.mps.baseLanguage.structure.AndExpression" id="1221579075822">
@@ -2915,7 +2916,9 @@
               <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1221579075840">
                 <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1221579075841">
                   <node role="statement" type="jetbrains.mps.baseLanguage.structure.ContinueStatement" id="1221579075842">
-                    <property name="label" value="with_allThrows" />
+                    <node role="loopLabelReference" type="jetbrains.mps.baseLanguage.structure.LoopLabelReference" id="4100552184032605932">
+                      <link role="loopLabel" targetNodeId="4100552184032605930" resolveInfo="with_allThrows" />
+                    </node>
                   </node>
                 </node>
                 <node role="condition" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1221579075843">
@@ -2957,6 +2960,9 @@
         <node role="variable" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1221579075855">
           <property name="name" value="another" />
           <node role="type" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1221579075856" />
+        </node>
+        <node role="loopLabel" type="jetbrains.mps.baseLanguage.structure.LoopLabel" id="4100552184032605930">
+          <property name="name" value="with_allThrows" />
         </node>
       </node>
       <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1221579075857">

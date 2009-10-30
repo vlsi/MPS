@@ -4740,7 +4740,6 @@
           </node>
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.WhileStatement" id="1237317379541">
-          <property name="label" value="with_meet" />
           <node role="condition" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1237317382996">
             <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1237317381651">
               <link role="variableDeclaration" targetNodeId="1237317366576" resolveInfo="tmp" />
@@ -4794,7 +4793,9 @@
                       </node>
                     </node>
                     <node role="statement" type="jetbrains.mps.baseLanguage.structure.ContinueStatement" id="1237317975251">
-                      <property name="label" value="with_meet" />
+                      <node role="loopLabelReference" type="jetbrains.mps.baseLanguage.structure.LoopLabelReference" id="4100552184032605929">
+                        <link role="loopLabel" targetNodeId="4100552184032605928" resolveInfo="with_meet" />
+                      </node>
                     </node>
                   </node>
                 </node>
@@ -4805,6 +4806,9 @@
                 <node role="quotedNode" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1237318112418" />
               </node>
             </node>
+          </node>
+          <node role="loopLabel" type="jetbrains.mps.baseLanguage.structure.LoopLabel" id="4100552184032605928">
+            <property name="name" value="with_meet" />
           </node>
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1226347779815">
@@ -8900,7 +8904,6 @@
           </node>
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ForStatement" id="1207143418304">
-          <property name="label" value="with_decls" />
           <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1207143418305">
             <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1207143472897">
               <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1207143472898">
@@ -8944,7 +8947,9 @@
                     <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1207144762933">
                       <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1207144762934">
                         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ContinueStatement" id="1207144694028">
-                          <property name="label" value="with_decls" />
+                          <node role="loopLabelReference" type="jetbrains.mps.baseLanguage.structure.LoopLabelReference" id="4100552184032605922">
+                            <link role="loopLabel" targetNodeId="4100552184032605921" resolveInfo="with_decls" />
+                          </node>
                         </node>
                       </node>
                       <node role="condition" type="jetbrains.mps.baseLanguage.structure.AndExpression" id="1207144792002">
@@ -8984,7 +8989,9 @@
                       <node role="elsifClauses" type="jetbrains.mps.baseLanguage.structure.ElsifClause" id="1226350804600">
                         <node role="statementList" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1226350804602">
                           <node role="statement" type="jetbrains.mps.baseLanguage.structure.ContinueStatement" id="1226351069701">
-                            <property name="label" value="with_decls" />
+                            <node role="loopLabelReference" type="jetbrains.mps.baseLanguage.structure.LoopLabelReference" id="4100552184032605923">
+                              <link role="loopLabel" targetNodeId="4100552184032605921" resolveInfo="with_decls" />
+                            </node>
                           </node>
                         </node>
                         <node role="condition" type="jetbrains.mps.baseLanguage.structure.AndExpression" id="1226350809233">
@@ -9025,7 +9032,9 @@
                       <node role="elsifClauses" type="jetbrains.mps.baseLanguage.structure.ElsifClause" id="5415035327164076867">
                         <node role="statementList" type="jetbrains.mps.baseLanguage.structure.StatementList" id="5415035327164076868">
                           <node role="statement" type="jetbrains.mps.baseLanguage.structure.ContinueStatement" id="5415035327164076869">
-                            <property name="label" value="with_decls" />
+                            <node role="loopLabelReference" type="jetbrains.mps.baseLanguage.structure.LoopLabelReference" id="4100552184032605924">
+                              <link role="loopLabel" targetNodeId="4100552184032605921" resolveInfo="with_decls" />
+                            </node>
                           </node>
                         </node>
                         <node role="condition" type="jetbrains.mps.baseLanguage.structure.AndExpression" id="5415035327164076870">
@@ -9066,7 +9075,9 @@
                       <node role="elsifClauses" type="jetbrains.mps.baseLanguage.structure.ElsifClause" id="1237140443214">
                         <node role="statementList" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1237140443215">
                           <node role="statement" type="jetbrains.mps.baseLanguage.structure.ContinueStatement" id="1237140443216">
-                            <property name="label" value="with_decls" />
+                            <node role="loopLabelReference" type="jetbrains.mps.baseLanguage.structure.LoopLabelReference" id="4100552184032605925">
+                              <link role="loopLabel" targetNodeId="4100552184032605921" resolveInfo="with_decls" />
+                            </node>
                           </node>
                         </node>
                         <node role="condition" type="jetbrains.mps.baseLanguage.structure.AndExpression" id="1237140443217">
@@ -9107,7 +9118,9 @@
                       <node role="elsifClauses" type="jetbrains.mps.baseLanguage.structure.ElsifClause" id="5415035327164076886">
                         <node role="statementList" type="jetbrains.mps.baseLanguage.structure.StatementList" id="5415035327164076887">
                           <node role="statement" type="jetbrains.mps.baseLanguage.structure.ContinueStatement" id="5415035327164076888">
-                            <property name="label" value="with_decls" />
+                            <node role="loopLabelReference" type="jetbrains.mps.baseLanguage.structure.LoopLabelReference" id="4100552184032605926">
+                              <link role="loopLabel" targetNodeId="4100552184032605921" resolveInfo="with_decls" />
+                            </node>
                           </node>
                         </node>
                         <node role="condition" type="jetbrains.mps.baseLanguage.structure.AndExpression" id="5415035327164076889">
@@ -9233,6 +9246,9 @@
               <link role="variableDeclaration" targetNodeId="1207143418307" resolveInfo="it" />
             </node>
             <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.HasNextOperation" id="1238773654177" />
+          </node>
+          <node role="loopLabel" type="jetbrains.mps.baseLanguage.structure.LoopLabel" id="4100552184032605921">
+            <property name="name" value="with_decls" />
           </node>
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1207130155369">

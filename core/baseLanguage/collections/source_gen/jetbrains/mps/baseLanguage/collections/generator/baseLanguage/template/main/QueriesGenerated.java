@@ -15,6 +15,7 @@ import jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.ut
 import jetbrains.mps.baseLanguage.behavior.IOperation_Behavior;
 import jetbrains.mps.generator.template.PropertyMacroContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import org.apache.commons.lang.StringUtils;
 import jetbrains.mps.generator.template.ReferenceMacroContext;
 import java.util.List;
 import jetbrains.mps.lang.pattern.IMatchingPattern;
@@ -640,6 +641,14 @@ public class QueriesGenerated {
     return Values.CREATOR_COPY_SEQUENCE.isSet(_context.getNode());
   }
 
+  public static boolean baseMappingRule_Condition_4100552184032705886(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
+    return (SLinkOperations.getTarget(_context.getNode(), "loopLabelReference", true) != null);
+  }
+
+  public static boolean baseMappingRule_Condition_4100552184032705908(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
+    return (SLinkOperations.getTarget(_context.getNode(), "loopLabelReference", true) != null);
+  }
+
   public static boolean baseMappingRule_Condition_5478544378670483554(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
     if (!(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(_context.getNode(), "operation", true), "jetbrains.mps.baseLanguage.collections.structure.IQueueOperation"))) {
       return false;
@@ -708,7 +717,13 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_1226410564262(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return SPropertyOperations.getString(_context.getNode(), "label");
+    if ((SLinkOperations.getTarget(_context.getNode(), "loopLabel", true) != null)) {
+      return SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "loopLabel", true), "name");
+    } else if (StringUtils.isNotEmpty(SPropertyOperations.getString(_context.getNode(), "label"))) {
+      return SPropertyOperations.getString(_context.getNode(), "label");
+    } else {
+      return null;
+    }
   }
 
   public static Object propertyMacro_GetPropertyValue_1226410635762(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -716,7 +731,13 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_1226410635779(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return SPropertyOperations.getString(_context.getNode(), "label");
+    if ((SLinkOperations.getTarget(_context.getNode(), "loopLabel", true) != null)) {
+      return SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "loopLabel", true), "name");
+    } else if (StringUtils.isNotEmpty(SPropertyOperations.getString(_context.getNode(), "label"))) {
+      return SPropertyOperations.getString(_context.getNode(), "label");
+    } else {
+      return null;
+    }
   }
 
   public static Object propertyMacro_GetPropertyValue_1228851216391(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -757,6 +778,34 @@ public class QueriesGenerated {
 
   public static Object propertyMacro_GetPropertyValue_1562299158921962694(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return SPropertyOperations.getBoolean_def(SNodeOperations.cast(SLinkOperations.getTarget(_context.getNode(), "creator", true), "jetbrains.mps.baseLanguage.collections.structure.LinkedHashMapCreator"), "order", "false");
+  }
+
+  public static Object propertyMacro_GetPropertyValue_4100552184032705876(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return SPropertyOperations.getString(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "loopLabelReference", true), "loopLabel", false), "name");
+  }
+
+  public static Object propertyMacro_GetPropertyValue_4100552184032705898(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return SPropertyOperations.getString(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "loopLabelReference", true), "loopLabel", false), "name");
+  }
+
+  public static Object propertyMacro_GetPropertyValue_9163255059340207792(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    if ((SLinkOperations.getTarget(_context.getNode(), "loopLabel", true) != null)) {
+      return SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "loopLabel", true), "name");
+    } else if (StringUtils.isNotEmpty(SPropertyOperations.getString(_context.getNode(), "label"))) {
+      return SPropertyOperations.getString(_context.getNode(), "label");
+    } else {
+      return null;
+    }
+  }
+
+  public static Object propertyMacro_GetPropertyValue_9163255059340207803(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    if ((SLinkOperations.getTarget(_context.getNode(), "loopLabel", true) != null)) {
+      return SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "loopLabel", true), "name");
+    } else if (StringUtils.isNotEmpty(SPropertyOperations.getString(_context.getNode(), "label"))) {
+      return SPropertyOperations.getString(_context.getNode(), "label");
+    } else {
+      return null;
+    }
   }
 
   public static Object referenceMacro_GetReferent_1205849583842(final IOperationContext operationContext, final ReferenceMacroContext _context) {

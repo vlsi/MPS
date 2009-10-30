@@ -15285,7 +15285,6 @@
           </node>
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.WhileStatement" id="1228402739255">
-          <property name="label" value="outer" />
           <node role="condition" type="jetbrains.mps.baseLanguage.structure.NotExpression" id="1228402739256">
             <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1228402739257">
               <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1228402739353">
@@ -15343,7 +15342,9 @@
                       </node>
                     </node>
                     <node role="statement" type="jetbrains.mps.baseLanguage.structure.BreakStatement" id="1228402739281">
-                      <property name="label" value="outer" />
+                      <node role="loopLabelReference" type="jetbrains.mps.baseLanguage.structure.LoopLabelReference" id="4100552184032605913">
+                        <link role="loopLabel" targetNodeId="4100552184032605912" resolveInfo="outer" />
+                      </node>
                     </node>
                   </node>
                 </node>
@@ -15545,6 +15546,9 @@
                 </node>
               </node>
             </node>
+          </node>
+          <node role="loopLabel" type="jetbrains.mps.baseLanguage.structure.LoopLabel" id="4100552184032605912">
+            <property name="name" value="outer" />
           </node>
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1228402739351">
