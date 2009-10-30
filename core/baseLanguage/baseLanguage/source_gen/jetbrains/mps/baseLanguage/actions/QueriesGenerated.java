@@ -154,28 +154,24 @@ public class QueriesGenerated {
   }
 
   public static boolean sideTransformHintSubstituteActionsBuilder_Precondition_BreakStatement_1199466283835(final IOperationContext operationContext, final SideTransformPreconditionContext _context) {
-    if (SPropertyOperations.hasValue(_context.getSourceNode(), "label", null)) {
+    if ((SLinkOperations.getTarget(_context.getSourceNode(), "loopLabelReference", true) == null)) {
       boolean loopsWithLabels = ListSequence.fromList(SNodeOperations.getAncestors(_context.getSourceNode(), "jetbrains.mps.baseLanguage.structure.AbstractLoopStatement", false)).where(new IWhereFilter<SNode>() {
         public boolean accept(SNode it) {
-          return !(SPropertyOperations.hasValue(it, "label", null));
+          return (SLinkOperations.getTarget(it, "loopLabel", true) != null);
         }
       }).isNotEmpty();
-      boolean sstmtsWithLabels = ListSequence.fromList(SNodeOperations.getAncestors(_context.getSourceNode(), "jetbrains.mps.baseLanguage.structure.SwitchStatement", false)).where(new IWhereFilter<SNode>() {
-        public boolean accept(SNode it) {
-          return !(SPropertyOperations.hasValue(it, "label", null));
-        }
-      }).isNotEmpty();
-      return loopsWithLabels || sstmtsWithLabels;
+      // todo: switch statements also
+      return loopsWithLabels;
     }
     return false;
   }
 
   public static boolean sideTransformHintSubstituteActionsBuilder_Precondition_ContinueStatement_1199470413669(final IOperationContext operationContext, final SideTransformPreconditionContext _context) {
-    return SPropertyOperations.hasValue(_context.getSourceNode(), "label", null) && ListSequence.fromList(SNodeOperations.getAncestors(_context.getSourceNode(), "jetbrains.mps.baseLanguage.structure.AbstractLoopStatement", false)).translate(new ITranslator2<SNode, String>() {
-      public Iterable<String> translate(final SNode it) {
-        return new Iterable<String>() {
-          public Iterator<String> iterator() {
-            return new YieldingIterator<String>() {
+    return (SLinkOperations.getTarget(_context.getSourceNode(), "loopLabelReference", true) == null) && ListSequence.fromList(SNodeOperations.getAncestors(_context.getSourceNode(), "jetbrains.mps.baseLanguage.structure.AbstractLoopStatement", false)).translate(new ITranslator2<SNode, SNode>() {
+      public Iterable<SNode> translate(final SNode it) {
+        return new Iterable<SNode>() {
+          public Iterator<SNode> iterator() {
+            return new YieldingIterator<SNode>() {
               private int __CP__ = 0;
 
               protected boolean moveToNext() {
@@ -187,7 +183,7 @@ __switch__:
                       assert false : "Internal error";
                       return false;
                     case 2:
-                      if (!(SPropertyOperations.hasValue(it, "label", null))) {
+                      if (!((SLinkOperations.getTarget(it, "loopLabel", true) == null))) {
                         this.__CP__ = 3;
                         break;
                       }
@@ -195,7 +191,7 @@ __switch__:
                       break;
                     case 4:
                       this.__CP__ = 1;
-                      this.yield(SPropertyOperations.getString(it, "label"));
+                      this.yield(SLinkOperations.getTarget(it, "loopLabel", true));
                       return true;
                     case 0:
                       this.__CP__ = 2;
@@ -2109,15 +2105,15 @@ __switch__:
   public static List<INodeSubstituteAction> sideTransform_ActionsFactory_BreakStatement_1199465912028(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
     List<INodeSubstituteAction> result = ListSequence.fromList(new ArrayList<INodeSubstituteAction>());
     {
-      final SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.BreakStatement");
+      final SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.LoopLabel");
       Calculable calculable = new Calculable() {
         public Object calculate() {
-          List<String> labels = ListSequence.fromList(new ArrayList<String>());
-          ListSequence.fromList(labels).addSequence(ListSequence.fromList(SNodeOperations.getAncestors(_context.getSourceNode(), "jetbrains.mps.baseLanguage.structure.AbstractLoopStatement", false)).translate(new ITranslator2<SNode, String>() {
-            public Iterable<String> translate(final SNode it) {
-              return new Iterable<String>() {
-                public Iterator<String> iterator() {
-                  return new YieldingIterator<String>() {
+          List<SNode> labels = new ArrayList<SNode>();
+          ListSequence.fromList(labels).addSequence(ListSequence.fromList(SNodeOperations.getAncestors(_context.getSourceNode(), "jetbrains.mps.baseLanguage.structure.AbstractLoopStatement", false)).translate(new ITranslator2<SNode, SNode>() {
+            public Iterable<SNode> translate(final SNode it) {
+              return new Iterable<SNode>() {
+                public Iterator<SNode> iterator() {
+                  return new YieldingIterator<SNode>() {
                     private int __CP__ = 0;
 
                     protected boolean moveToNext() {
@@ -2129,7 +2125,7 @@ __switch__:
                             assert false : "Internal error";
                             return false;
                           case 2:
-                            if (!(SPropertyOperations.hasValue(it, "label", null))) {
+                            if ((SLinkOperations.getTarget(it, "loopLabel", true) != null)) {
                               this.__CP__ = 3;
                               break;
                             }
@@ -2137,7 +2133,7 @@ __switch__:
                             break;
                           case 4:
                             this.__CP__ = 1;
-                            this.yield(SPropertyOperations.getString(it, "label"));
+                            this.yield(SLinkOperations.getTarget(it, "loopLabel", true));
                             return true;
                           case 0:
                             this.__CP__ = 2;
@@ -2156,59 +2152,18 @@ __switch__:
               };
             }
           }));
-          ListSequence.fromList(labels).addSequence(ListSequence.fromList(SNodeOperations.getAncestors(_context.getSourceNode(), "jetbrains.mps.baseLanguage.structure.SwitchStatement", false)).translate(new ITranslator2<SNode, String>() {
-            public Iterable<String> translate(final SNode it) {
-              return new Iterable<String>() {
-                public Iterator<String> iterator() {
-                  return new YieldingIterator<String>() {
-                    private int __CP__ = 0;
-
-                    protected boolean moveToNext() {
-__loop__:
-                      do {
-__switch__:
-                        switch (this.__CP__) {
-                          case -1:
-                            assert false : "Internal error";
-                            return false;
-                          case 2:
-                            if (!(SPropertyOperations.hasValue(it, "label", null))) {
-                              this.__CP__ = 3;
-                              break;
-                            }
-                            this.__CP__ = 1;
-                            break;
-                          case 4:
-                            this.__CP__ = 1;
-                            this.yield(SPropertyOperations.getString(it, "label"));
-                            return true;
-                          case 0:
-                            this.__CP__ = 2;
-                            break;
-                          case 3:
-                            this.__CP__ = 4;
-                            break;
-                          default:
-                            break __loop__;
-                        }
-                      } while(true);
-                      return false;
-                    }
-                  };
-                }
-              };
-            }
-          }));
+          // todo: switch statements also
           return labels;
         }
       };
-      Iterable<String> parameterObjects = (Iterable<String>)calculable.calculate();
+      Iterable<SNode> parameterObjects = (Iterable<SNode>)calculable.calculate();
       assert parameterObjects != null;
-      for (final String item : parameterObjects) {
+      for (final SNode item : parameterObjects) {
         ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(item, _context.getSourceNode()) {
           public SNode doSubstitute(String pattern) {
-            SPropertyOperations.set(_context.getSourceNode(), "label", "" + ((item)));
-            return _context.getSourceNode();
+            SNode labelReference = SLinkOperations.setNewChild(_context.getSourceNode(), "loopLabelReference", "jetbrains.mps.baseLanguage.structure.LoopLabelReference");
+            SLinkOperations.setTarget(labelReference, "loopLabel", (item), false);
+            return labelReference;
           }
 
           public SNode getOutputConcept() {
@@ -2216,7 +2171,7 @@ __switch__:
           }
 
           public String getMatchingText(String text) {
-            return (item);
+            return SPropertyOperations.getString((item), "name");
           }
 
           public String getVisibleMatchingText(String text) {
@@ -2235,14 +2190,14 @@ __switch__:
   public static List<INodeSubstituteAction> sideTransform_ActionsFactory_ContinueStatement_1199470401054(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
     List<INodeSubstituteAction> result = ListSequence.fromList(new ArrayList<INodeSubstituteAction>());
     {
-      final SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.ContinueStatement");
+      final SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.LoopLabel");
       Calculable calculable = new Calculable() {
         public Object calculate() {
-          return ListSequence.fromList(SNodeOperations.getAncestors(_context.getSourceNode(), "jetbrains.mps.baseLanguage.structure.AbstractLoopStatement", false)).translate(new ITranslator2<SNode, String>() {
-            public Iterable<String> translate(final SNode it) {
-              return new Iterable<String>() {
-                public Iterator<String> iterator() {
-                  return new YieldingIterator<String>() {
+          return ListSequence.fromList(SNodeOperations.getAncestors(_context.getSourceNode(), "jetbrains.mps.baseLanguage.structure.AbstractLoopStatement", false)).translate(new ITranslator2<SNode, SNode>() {
+            public Iterable<SNode> translate(final SNode it) {
+              return new Iterable<SNode>() {
+                public Iterator<SNode> iterator() {
+                  return new YieldingIterator<SNode>() {
                     private int __CP__ = 0;
 
                     protected boolean moveToNext() {
@@ -2254,7 +2209,7 @@ __switch__:
                             assert false : "Internal error";
                             return false;
                           case 2:
-                            if (!(SPropertyOperations.hasValue(it, "label", null))) {
+                            if ((SLinkOperations.getTarget(it, "loopLabel", true) != null)) {
                               this.__CP__ = 3;
                               break;
                             }
@@ -2262,7 +2217,7 @@ __switch__:
                             break;
                           case 4:
                             this.__CP__ = 1;
-                            this.yield(SPropertyOperations.getString(it, "label"));
+                            this.yield(SLinkOperations.getTarget(it, "loopLabel", true));
                             return true;
                           case 0:
                             this.__CP__ = 2;
@@ -2283,13 +2238,14 @@ __switch__:
           }).toListSequence();
         }
       };
-      Iterable<String> parameterObjects = (Iterable<String>)calculable.calculate();
+      Iterable<SNode> parameterObjects = (Iterable<SNode>)calculable.calculate();
       assert parameterObjects != null;
-      for (final String item : parameterObjects) {
+      for (final SNode item : parameterObjects) {
         ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(item, _context.getSourceNode()) {
           public SNode doSubstitute(String pattern) {
-            SPropertyOperations.set(_context.getSourceNode(), "label", "" + ((item)));
-            return _context.getSourceNode();
+            SNode labelReference = SLinkOperations.setNewChild(_context.getSourceNode(), "loopLabelReference", "jetbrains.mps.baseLanguage.structure.LoopLabelReference");
+            SLinkOperations.setTarget(labelReference, "loopLabel", (item), false);
+            return labelReference;
           }
 
           public SNode getOutputConcept() {
@@ -2297,7 +2253,7 @@ __switch__:
           }
 
           public String getMatchingText(String text) {
-            return (item);
+            return SPropertyOperations.getString((item), "name");
           }
 
           public String getVisibleMatchingText(String text) {

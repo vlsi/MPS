@@ -1272,5 +1272,44 @@
       </node>
     </node>
   </node>
+  <node type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="4652593672361555844">
+    <property name="name" value="LoopLabels" />
+    <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="4652593672361555845" />
+    <node role="constructor" type="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" id="4652593672361555846">
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="4652593672361555847" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="4652593672361555848" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="4652593672361555849">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ForeachStatement" id="4652593672361588595">
+          <node role="iterable" type="jetbrains.mps.baseLanguage.structure.Expression" id="4652593672361588596" />
+          <node role="variable" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="4652593672361588597">
+            <node role="type" type="jetbrains.mps.baseLanguage.structure.Type" id="4652593672361588598" />
+          </node>
+          <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="4652593672361588599">
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.WhileStatement" id="4652593672361588611">
+              <node role="condition" type="jetbrains.mps.baseLanguage.structure.Expression" id="4652593672361588612" />
+              <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="4652593672361588613">
+                <node role="statement" type="jetbrains.mps.baseLanguage.structure.ContinueStatement" id="4652593672361588638">
+                  <node role="loopLabelReference" type="jetbrains.mps.baseLanguage.structure.LoopLabelReference" id="4652593672361588639">
+                    <link role="loopLabel" targetNodeId="4652593672361588614" resolveInfo="ddfdf" />
+                  </node>
+                </node>
+                <node role="statement" type="jetbrains.mps.baseLanguage.structure.BreakStatement" id="4652593672361588615">
+                  <node role="loopLabelReference" type="jetbrains.mps.baseLanguage.structure.LoopLabelReference" id="4652593672361673066">
+                    <link role="loopLabel" targetNodeId="4652593672361588607" resolveInfo="sdsd" />
+                  </node>
+                </node>
+              </node>
+              <node role="loopLabel" type="jetbrains.mps.baseLanguage.structure.LoopLabel" id="4652593672361588614">
+                <property name="name" value="ddfdf" />
+              </node>
+            </node>
+          </node>
+          <node role="loopLabel" type="jetbrains.mps.baseLanguage.structure.LoopLabel" id="4652593672361588607">
+            <property name="name" value="sdsd" />
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
 </model>
 
