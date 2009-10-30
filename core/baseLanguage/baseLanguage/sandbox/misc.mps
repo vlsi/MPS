@@ -1337,6 +1337,36 @@
             <property name="name" value="s1" />
           </node>
         </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ForeachStatement" id="4652593672362892659">
+          <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="4652593672362892660">
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.Statement" id="4652593672362892661" />
+          </node>
+          <node role="iterable" type="jetbrains.mps.baseLanguage.structure.Expression" id="4652593672362892662" />
+          <node role="variable" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="4652593672362892663">
+            <node role="type" type="jetbrains.mps.baseLanguage.structure.Type" id="4652593672362892664" />
+          </node>
+          <node role="loopLabel" type="jetbrains.mps.baseLanguage.structure.LoopLabel" id="4652593672362892667">
+            <property name="name" value="sdsdsd" />
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ForStatement" id="4652593672362892671">
+          <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="4652593672362892672">
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.Statement" id="4652593672362892673" />
+          </node>
+          <node role="variable" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="4652593672362892674">
+            <node role="type" type="jetbrains.mps.baseLanguage.structure.Type" id="4652593672362892675" />
+          </node>
+          <node role="loopLabel" type="jetbrains.mps.baseLanguage.structure.LoopLabel" id="4652593672362892676">
+            <property name="name" value="sdsdsd" />
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.SwitchStatement" id="4652593672363186190">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.Expression" id="4652593672363186191" />
+          <node role="defaultBlock" type="jetbrains.mps.baseLanguage.structure.StatementList" id="4652593672363186192" />
+          <node role="switchLabel" type="jetbrains.mps.baseLanguage.structure.LoopLabel" id="4652593672363186193">
+            <property name="name" value="sdsdsd" />
+          </node>
+        </node>
       </node>
     </node>
   </node>

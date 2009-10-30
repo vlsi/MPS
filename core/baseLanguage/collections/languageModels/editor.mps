@@ -246,6 +246,9 @@
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1153944570242">
         <property name="text" value="foreach" />
         <link role="styleClass" targetNodeId="15.1186415544875" resolveInfo="KeyWord" />
+        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.SideTransformAnchorTagStyleClassItem" id="4652593672362629712">
+          <property name="tag" value="ext_1_RTransform" />
+        </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode" id="1153944570243">
         <link role="relationDeclaration" targetNodeId="1.1153944400369" />
