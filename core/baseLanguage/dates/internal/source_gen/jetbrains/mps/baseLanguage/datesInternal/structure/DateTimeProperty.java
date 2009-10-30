@@ -6,12 +6,14 @@ import jetbrains.mps.lang.core.structure.BaseConcept;
 import jetbrains.mps.lang.core.structure.INamedConcept;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration;
+import jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class DateTimeProperty extends BaseConcept implements INamedConcept {
   public static final String concept = "jetbrains.mps.baseLanguage.datesInternal.structure.DateTimeProperty";
+  public static final String SINGLE_FORM = "singleForm";
   public static final String PLURAL_FORM = "pluralForm";
   public static final String NAME = "name";
   public static final String SHORT_DESCRIPTION = "shortDescription";
@@ -20,9 +22,18 @@ public class DateTimeProperty extends BaseConcept implements INamedConcept {
   public static final String JODA_DATE_TIME_FIELD_TYPE = "jodaDateTimeFieldType";
   public static final String JODA_PERIOD_TYPE = "jodaPeriodType";
   public static final String JODA_DURATION_TYPE = "jodaDurationType";
+  public static final String PERIOD_FORMAT_METHOD = "periodFormatMethod";
 
   public DateTimeProperty(SNode node) {
     super(node);
+  }
+
+  public String getSingleForm() {
+    return this.getProperty(DateTimeProperty.SINGLE_FORM);
+  }
+
+  public void setSingleForm(String value) {
+    this.setProperty(DateTimeProperty.SINGLE_FORM, value);
   }
 
   public String getPluralForm() {
@@ -87,6 +98,14 @@ public class DateTimeProperty extends BaseConcept implements INamedConcept {
 
   public void setJodaDurationType(StaticMethodDeclaration node) {
     super.setReferent(DateTimeProperty.JODA_DURATION_TYPE, node);
+  }
+
+  public InstanceMethodDeclaration getPeriodFormatMethod() {
+    return (InstanceMethodDeclaration)this.getReferent(InstanceMethodDeclaration.class, DateTimeProperty.PERIOD_FORMAT_METHOD);
+  }
+
+  public void setPeriodFormatMethod(InstanceMethodDeclaration node) {
+    super.setReferent(DateTimeProperty.PERIOD_FORMAT_METHOD, node);
   }
 
   public static DateTimeProperty newInstance(SModel sm, boolean init) {

@@ -13,6 +13,7 @@ public class ConstraintsDescriptor implements IModelConstraints {
 
   public ConstraintsDescriptor() {
     ListSequence.fromList(this.myConstraints).addElement(new DateFormat_isPublic_PropertyConstraint());
+    ListSequence.fromList(this.myConstraints).addElement(new PeriodFormat_isPublic_PropertyConstraint());
     ListSequence.fromList(this.myConstraints).addElement(new TimeZoneIDExpression_timezone_id_PropertyConstraint());
     ListSequence.fromList(this.myConstraints).addElement(new TokenConditionalPair_format_ReferentConstraint());
     ListSequence.fromList(this.myConstraints).addElement(new FormatExpression_dateFormat_ReferentConstraint());
