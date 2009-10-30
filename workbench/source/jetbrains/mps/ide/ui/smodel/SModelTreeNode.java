@@ -817,7 +817,7 @@ public class SModelTreeNode extends MPSTreeNodeEx {
 
       int index = -1;
       for (int i = 0; i < targetNode.getChildCount(); i++) {
-        if (targetNode.getChildAt(i) instanceof SNodeGroupTreeNode) {
+        if (!(targetNode.getChildAt(i) instanceof SNodeTreeNode)) {
           continue;
         }
         SNodeTreeNode child = (SNodeTreeNode) targetNode.getChildAt(i);
