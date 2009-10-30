@@ -2183,7 +2183,7 @@
     <property name="title" value="convert loop labels" />
     <node role="part" type="jetbrains.mps.lang.script.structure.MigrationScriptPart_Instance" id="4652593672363186201">
       <property name="description" value="converting loops" />
-      <link role="affectedInstanceConcept" targetNodeId="1.1144230876926" resolveInfo="AbstractForStatement" />
+      <link role="affectedInstanceConcept" targetNodeId="1.1154032098014" resolveInfo="AbstractLoopStatement" />
       <node role="affectedInstanceUpdater" type="jetbrains.mps.lang.script.structure.MigrationScriptPart_Instance_Updater" id="4652593672363186202">
         <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="4652593672363186203">
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="4652593672363191824">

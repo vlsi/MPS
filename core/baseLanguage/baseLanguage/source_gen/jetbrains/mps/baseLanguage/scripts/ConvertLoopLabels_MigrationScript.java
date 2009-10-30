@@ -25,7 +25,7 @@ public class ConvertLoopLabels_MigrationScript extends BaseMigrationScript {
       }
 
       public String getFqNameOfConceptToSearchInstances() {
-        return "jetbrains.mps.baseLanguage.structure.AbstractForStatement";
+        return "jetbrains.mps.baseLanguage.structure.AbstractLoopStatement";
       }
 
       public boolean isApplicableInstanceNode(SNode node) {
