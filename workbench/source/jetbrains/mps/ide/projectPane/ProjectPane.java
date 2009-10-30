@@ -1078,10 +1078,6 @@ public class ProjectPane extends AbstractProjectViewPane {
       myProject = project;
     }
 
-    protected boolean isSorted() {
-      return false;
-    }
-
     protected String getNamespace(MPSTreeNode node) {
       String folder = null;
 

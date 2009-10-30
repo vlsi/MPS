@@ -19,6 +19,7 @@ import com.intellij.openapi.project.Project;
 import com.intellij.openapi.vfs.VirtualFile;
 import jetbrains.mps.MPSProjectHolder;
 import jetbrains.mps.ide.projectPane.DefaultNamespaceTreeBuilder;
+import jetbrains.mps.ide.projectPane.ModuleTreeNodeComparator;
 import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.MPSProject;
@@ -52,24 +53,7 @@ public class ProjectTreeNode extends AbstractFileTreeNode {
       }
     }
 
-    Collections.sort(moduleNodes, new Comparator<ModuleTreeNode>() {
-      public int compare(ModuleTreeNode node1, ModuleTreeNode node2) {
-        IModule module1 = node1.getModule();
-        IModule module2 = node2.getModule();
-        if (module1.getClass().getName().equals(module2.getClass().getName())) {
-          return node1.getText().compareTo(node2.getText());
-        } else if (module1 instanceof Solution) {
-          return -1;
-        } else if (module2 instanceof Solution) {
-          return 1;
-        } else if (module1 instanceof Language) {
-          return -1;
-        } else {
-          return 1;
-        }
-      }
-    });
-
+    Collections.sort(moduleNodes, new ModuleTreeNodeComparator());
 
     MyNamespaceTreeBuilder builder = new MyNamespaceTreeBuilder();
     for (ModuleTreeNode mtn : moduleNodes) {
@@ -106,11 +90,6 @@ public class ProjectTreeNode extends AbstractFileTreeNode {
         return "";
       }
       return folder;
-    }
-
-    @Override
-    protected boolean isSorted() {
-      return false;
     }
   }
 

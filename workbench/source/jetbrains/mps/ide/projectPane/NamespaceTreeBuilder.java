@@ -26,10 +26,7 @@ import jetbrains.mps.util.ToStringComparator;
 import org.jetbrains.annotations.NotNull;
 
 import java.awt.Frame;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.List;
+import java.util.*;
 
 public abstract class NamespaceTreeBuilder<N extends MPSTreeNode, T extends MPSTreeNode> {
   private T myRootNamespace;
@@ -63,10 +60,6 @@ public abstract class NamespaceTreeBuilder<N extends MPSTreeNode, T extends MPST
     }
   }
 
-  protected boolean isSorted() {
-    return true;
-  }
-
   private void sortTree(T node) {
     List<MPSTreeNode> nodes = new ArrayList<MPSTreeNode>();
     List<T> namespaces = new ArrayList<T>();
@@ -81,9 +74,7 @@ public abstract class NamespaceTreeBuilder<N extends MPSTreeNode, T extends MPST
     }
 
     Collections.sort(namespaces, new ToStringComparator());
-    if (isSorted()) {
-      Collections.sort(nodes, new ToStringComparator());
-    }
+    Collections.sort(nodes, new ModuleTreeNodeComparator());
 
     node.removeAllChildren();
 
