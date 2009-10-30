@@ -5440,29 +5440,61 @@
     <link role="conceptDeclaration" targetNodeId="1.1163670490218" resolveInfo="SwitchStatement" />
     <node role="textGenBlock" type="jetbrains.mps.lang.textGen.structure.GenerateTextDeclaration" id="1235133163325">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1235133163326">
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1235133174000">
-          <node role="condition" type="jetbrains.mps.baseLanguage.structure.NotEqualsExpression" id="1235133190241">
-            <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1235133191682" />
-            <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1235133178004">
-              <node role="operand" type="jetbrains.mps.lang.textGen.structure.NodeParameter" id="1235133177441" />
-              <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="1235133179649">
-                <link role="property" targetNodeId="1.1201381395355" resolveInfo="label" />
-              </node>
-            </node>
-          </node>
-          <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1235133174002">
-            <node role="statement" type="jetbrains.mps.lang.textGen.structure.AppendOperation" id="1237463992366">
-              <node role="part" type="jetbrains.mps.lang.textGen.structure.NewLineAppendPart" id="1237463992368" />
-              <node role="part" type="jetbrains.mps.lang.textGen.structure.NodeAppendPart" id="1237463992385">
-                <node role="value" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1235133203517">
-                  <node role="operand" type="jetbrains.mps.lang.textGen.structure.NodeParameter" id="1235133203109" />
-                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="1235133204911">
-                    <link role="property" targetNodeId="1.1201381395355" resolveInfo="label" />
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="4652593672362426966">
+          <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="4652593672362426967">
+            <node role="statement" type="jetbrains.mps.lang.textGen.structure.AppendOperation" id="4652593672362426981">
+              <node role="part" type="jetbrains.mps.lang.textGen.structure.NewLineAppendPart" id="4652593672362426982" />
+              <node role="part" type="jetbrains.mps.lang.textGen.structure.NodeAppendPart" id="4652593672362426983">
+                <node role="value" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="4652593672362426989">
+                  <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="4652593672362426984">
+                    <node role="operand" type="jetbrains.mps.lang.textGen.structure.NodeParameter" id="4652593672362426985" />
+                    <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="4652593672362426988">
+                      <link role="link" targetNodeId="1.4652593672361747214" />
+                    </node>
+                  </node>
+                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="4652593672362426993">
+                    <link role="property" targetNodeId="3v.1169194664001" resolveInfo="name" />
                   </node>
                 </node>
               </node>
-              <node role="part" type="jetbrains.mps.lang.textGen.structure.ConstantStringAppendPart" id="1237463992386">
+              <node role="part" type="jetbrains.mps.lang.textGen.structure.ConstantStringAppendPart" id="4652593672362426987">
                 <property name="value" value=":" />
+              </node>
+            </node>
+          </node>
+          <node role="condition" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="4652593672362426976">
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="4652593672362426971">
+              <node role="operand" type="jetbrains.mps.lang.textGen.structure.NodeParameter" id="4652593672362426970" />
+              <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="4652593672362426975">
+                <link role="link" targetNodeId="1.4652593672361747214" />
+              </node>
+            </node>
+            <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_IsNotNullOperation" id="4652593672362426980" />
+          </node>
+          <node role="elsifClauses" type="jetbrains.mps.baseLanguage.structure.ElsifClause" id="4652593672362426994">
+            <node role="statementList" type="jetbrains.mps.baseLanguage.structure.StatementList" id="4652593672362426996">
+              <node role="statement" type="jetbrains.mps.lang.textGen.structure.AppendOperation" id="4652593672362426997">
+                <node role="part" type="jetbrains.mps.lang.textGen.structure.NewLineAppendPart" id="4652593672362426998" />
+                <node role="part" type="jetbrains.mps.lang.textGen.structure.NodeAppendPart" id="4652593672362426999">
+                  <node role="value" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="4652593672362427000">
+                    <node role="operand" type="jetbrains.mps.lang.textGen.structure.NodeParameter" id="4652593672362427001" />
+                    <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="4652593672362427002">
+                      <link role="property" targetNodeId="1.1201381395355" resolveInfo="label" />
+                    </node>
+                  </node>
+                </node>
+                <node role="part" type="jetbrains.mps.lang.textGen.structure.ConstantStringAppendPart" id="4652593672362427003">
+                  <property name="value" value=":" />
+                </node>
+              </node>
+            </node>
+            <node role="condition" type="jetbrains.mps.baseLanguage.structure.NotEqualsExpression" id="4652593672362427004">
+              <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="4652593672362427005" />
+              <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="4652593672362427006">
+                <node role="operand" type="jetbrains.mps.lang.textGen.structure.NodeParameter" id="4652593672362427007" />
+                <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="4652593672362427008">
+                  <link role="property" targetNodeId="1.1201381395355" resolveInfo="label" />
+                </node>
               </node>
             </node>
           </node>
