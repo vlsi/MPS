@@ -133,7 +133,12 @@ public class EditorManager {
   }
 
   public EditorCell createNodeAttributeCell(EditorContext context, SNode attribute, EditorCell nodeCell) {
-    return createRoleAttributeCell(context, attribute, AttributeConcept.class, nodeCell);
+    // TODO: Make processing of style attributes more generic.
+    EditorCell attributeCell = createRoleAttributeCell(context, attribute, AttributeConcept.class, nodeCell);
+    if (nodeCell.getStyle().get(StyleAttributes.INDENT_LAYOUT_NEW_LINE)) {
+      attributeCell.getStyle().set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
+    }
+    return attributeCell;
   }
 
   public EditorCell getCurrentAttributedCellWithRole(Class attributeClass) {
