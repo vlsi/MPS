@@ -5,6 +5,7 @@ package jetbrains.mps.baseLanguage.behavior;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class BreakStatement_Behavior {
   public static void init(SNode thisNode) {
@@ -29,17 +30,25 @@ public class BreakStatement_Behavior {
   public static SNode call_getLoopOrSwitch_1213877377041(SNode thisNode) {
     for (SNode item : SNodeOperations.getAncestorsWhereConceptInList(thisNode, new String[]{"jetbrains.mps.baseLanguage.structure.AbstractLoopStatement","jetbrains.mps.baseLanguage.structure.SwitchStatement"}, false)) {
       if (SNodeOperations.isInstanceOf(item, "jetbrains.mps.baseLanguage.structure.SwitchStatement") && SPropertyOperations.getString(thisNode, "label") == null) {
+        // todo: labels of switch
         return item;
       }
       if (SNodeOperations.isInstanceOf(item, "jetbrains.mps.baseLanguage.structure.AbstractLoopStatement")) {
         SNode loop = SNodeOperations.cast(item, "jetbrains.mps.baseLanguage.structure.AbstractLoopStatement");
-        if (SPropertyOperations.getString(thisNode, "label") == null) {
-          if (SPropertyOperations.getString(loop, "label") == null) {
-            return loop;
+        if ((SLinkOperations.getTarget(thisNode, "loopLabelReference", true) != null)) {
+          SNode loopLabel = SLinkOperations.getTarget(SLinkOperations.getTarget(thisNode, "loopLabelReference", true), "loopLabel", false);
+          if ((loopLabel != null)) {
+            if (loopLabel == SLinkOperations.getTarget(loop, "loopLabel", true)) {
+              return loop;
+            }
           }
         } else {
-          if (SPropertyOperations.getString(thisNode, "label").equals(SPropertyOperations.getString(loop, "label"))) {
+          if (SPropertyOperations.getString(thisNode, "label") == null) {
             return loop;
+          } else {
+            if (SPropertyOperations.getString(thisNode, "label").equals(SPropertyOperations.getString(loop, "label"))) {
+              return loop;
+            }
           }
         }
       }
