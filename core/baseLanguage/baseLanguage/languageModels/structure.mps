@@ -1857,6 +1857,11 @@
       <property name="role" value="defaultBlock" />
       <link role="target" targetNodeId="1068580123136" resolveInfo="StatementList" />
     </node>
+    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="4652593672361747214">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="switchLabel" />
+      <link role="target" targetNodeId="363746191845175146" resolveInfo="LoopLabel" />
+    </node>
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1163670501655">
       <property name="value" value="switch" />
       <link role="conceptPropertyDeclaration" targetNodeId="4.1137473891462" />

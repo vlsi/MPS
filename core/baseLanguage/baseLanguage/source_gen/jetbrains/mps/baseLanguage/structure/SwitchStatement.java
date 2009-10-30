@@ -14,6 +14,7 @@ public class SwitchStatement extends Statement {
   public static final String LABEL = "label";
   public static final String EXPRESSION = "expression";
   public static final String DEFAULT_BLOCK = "defaultBlock";
+  public static final String SWITCH_LABEL = "switchLabel";
   public static final String CASE = "case";
 
   public SwitchStatement(SNode node) {
@@ -42,6 +43,14 @@ public class SwitchStatement extends Statement {
 
   public void setDefaultBlock(StatementList node) {
     super.setChild(SwitchStatement.DEFAULT_BLOCK, node);
+  }
+
+  public LoopLabel getSwitchLabel() {
+    return (LoopLabel)this.getChild(LoopLabel.class, SwitchStatement.SWITCH_LABEL);
+  }
+
+  public void setSwitchLabel(LoopLabel node) {
+    super.setChild(SwitchStatement.SWITCH_LABEL, node);
   }
 
   public int getCasesCount() {

@@ -160,8 +160,15 @@ public class QueriesGenerated {
           return (SLinkOperations.getTarget(it, "loopLabel", true) != null);
         }
       }).isNotEmpty();
-      // todo: switch statements also
-      return loopsWithLabels;
+      if (loopsWithLabels) {
+        return true;
+      }
+      boolean switchStatementsWithLabels = ListSequence.fromList(SNodeOperations.getAncestors(_context.getSourceNode(), "jetbrains.mps.baseLanguage.structure.SwitchStatement", false)).where(new IWhereFilter<SNode>() {
+        public boolean accept(SNode it) {
+          return (SLinkOperations.getTarget(it, "switchLabel", true) != null);
+        }
+      }).isNotEmpty();
+      return switchStatementsWithLabels;
     }
     return false;
   }
@@ -2152,7 +2159,49 @@ __switch__:
               };
             }
           }));
-          // todo: switch statements also
+          ListSequence.fromList(labels).addSequence(ListSequence.fromList(SNodeOperations.getAncestors(_context.getSourceNode(), "jetbrains.mps.baseLanguage.structure.SwitchStatement", false)).translate(new ITranslator2<SNode, SNode>() {
+            public Iterable<SNode> translate(final SNode it) {
+              return new Iterable<SNode>() {
+                public Iterator<SNode> iterator() {
+                  return new YieldingIterator<SNode>() {
+                    private int __CP__ = 0;
+
+                    protected boolean moveToNext() {
+__loop__:
+                      do {
+__switch__:
+                        switch (this.__CP__) {
+                          case -1:
+                            assert false : "Internal error";
+                            return false;
+                          case 2:
+                            if ((SLinkOperations.getTarget(it, "switchLabel", true) != null)) {
+                              this.__CP__ = 3;
+                              break;
+                            }
+                            this.__CP__ = 1;
+                            break;
+                          case 4:
+                            this.__CP__ = 1;
+                            this.yield(SLinkOperations.getTarget(it, "switchLabel", true));
+                            return true;
+                          case 0:
+                            this.__CP__ = 2;
+                            break;
+                          case 3:
+                            this.__CP__ = 4;
+                            break;
+                          default:
+                            break __loop__;
+                        }
+                      } while(true);
+                      return false;
+                    }
+                  };
+                }
+              };
+            }
+          }));
           return labels;
         }
       };
