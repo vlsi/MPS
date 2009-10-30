@@ -116,5 +116,6 @@ public class StyleAttributes {
 
   public static final StyleAttribute<ParametersInformation> PARAMETERS_INFORMATION = new SimpleStyleAttribute<ParametersInformation>("parameters-information");
 
-  public static final StyleAttribute<ScriptKind> SCRIPT_KIND = new SimpleStyleAttribute<ScriptKind>("script-kind", ScriptKind.NORMAL);  
+  public static final StyleAttribute<ScriptKind> SCRIPT_KIND = new SimpleStyleAttribute<ScriptKind>("script-kind", ScriptKind.NORMAL);
+  public static final StyleAttribute<Integer> ORIGINAL_FONT_SIZE = new SimpleStyleAttribute<Integer>("original-font-size");
 }

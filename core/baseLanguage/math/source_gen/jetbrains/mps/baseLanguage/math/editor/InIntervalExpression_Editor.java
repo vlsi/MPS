@@ -34,7 +34,7 @@ public class InIntervalExpression_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_0650_0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "?");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "in");
     editorCell.setCellId("Constant_0650_0");
     editorCell.setDefaultText("");
     editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPart[]{new InIntervalExpression_Editor.InIntervalExpression_Editor_replaceWith_BinaryOperation_cellMenu0()}));

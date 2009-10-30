@@ -17,10 +17,11 @@ import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
+import jetbrains.mps.nodeEditor.style.ScriptKind;
 import jetbrains.mps.lang.editor.cellProviders.ConceptPropertyCellProvider;
 import jetbrains.mps.smodel.IScope;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class MathSymbol_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
@@ -49,13 +50,13 @@ public class MathSymbol_Editor extends DefaultNodeEditor {
       style.set(StyleAttributes.SELECTABLE, false);
       style.set(StyleAttributes.HORIZONTAL_ALIGN, CellAlign.CENTER);
     }
-    if (renderingCondition5452_1(node, editorContext, editorContext.getOperationContext().getScope())) {
-      editorCell.addEditorCell(this.createRefNode_5452_4(editorContext, node));
+    if (renderingCondition5452_0(node, editorContext, editorContext.getOperationContext().getScope())) {
+      editorCell.addEditorCell(this.createCollection_5452_5(editorContext, node));
     }
     editorCell.addEditorCell(this.createConceptProperty_5452_2(editorContext, node));
-    editorCell.addEditorCell(this.createRefNode_5452_1(editorContext, node));
-    if (renderingCondition5452_0(node, editorContext, editorContext.getOperationContext().getScope())) {
-      editorCell.addEditorCell(this.createRefNode_5452_3(editorContext, node));
+    editorCell.addEditorCell(this.createCollection_5452_3(editorContext, node));
+    if (renderingCondition5452_1(node, editorContext, editorContext.getOperationContext().getScope())) {
+      editorCell.addEditorCell(this.createCollection_5452_4(editorContext, node));
     }
     return editorCell;
   }
@@ -66,6 +67,27 @@ public class MathSymbol_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConceptProperty_5452_1(editorContext, node));
     editorCell.addEditorCell(this.createConceptProperty_5452_0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_5452_2(editorContext, node));
+    return editorCell;
+  }
+
+  private EditorCell createCollection_5452_3(EditorContext editorContext, SNode node) {
+    EditorCell_Collection editorCell = EditorCell_Collection.createSuperscript(editorContext, node);
+    editorCell.setCellId("Collection_5452_3");
+    editorCell.addEditorCell(this.createRefNode_5452_1(editorContext, node));
+    return editorCell;
+  }
+
+  private EditorCell createCollection_5452_4(EditorContext editorContext, SNode node) {
+    EditorCell_Collection editorCell = EditorCell_Collection.createSuperscript(editorContext, node);
+    editorCell.setCellId("Collection_5452_4");
+    editorCell.addEditorCell(this.createRefNode_5452_3(editorContext, node));
+    return editorCell;
+  }
+
+  private EditorCell createCollection_5452_5(EditorContext editorContext, SNode node) {
+    EditorCell_Collection editorCell = EditorCell_Collection.createSuperscript(editorContext, node);
+    editorCell.setCellId("Collection_5452_5");
+    editorCell.addEditorCell(this.createRefNode_5452_4(editorContext, node));
     return editorCell;
   }
 
@@ -128,6 +150,10 @@ public class MathSymbol_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no var>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
+    {
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.SCRIPT_KIND, ScriptKind.SUBSCRIPT);
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -162,6 +188,10 @@ public class MathSymbol_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no precondition>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
+    {
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.SCRIPT_KIND, ScriptKind.SUBSCRIPT);
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -215,6 +245,10 @@ public class MathSymbol_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no upperBound>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
+    {
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.SCRIPT_KIND, ScriptKind.SUBSCRIPT);
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -236,7 +270,7 @@ public class MathSymbol_Editor extends DefaultNodeEditor {
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.BASE_LINE_CELL, true);
-      style.set(StyleAttributes.FONT_SIZE, 30);
+      style.set(StyleAttributes.FONT_SIZE, 25);
       style.set(StyleAttributes.EDITABLE, false);
       style.set(StyleAttributes.SELECTABLE, true);
     }
@@ -252,10 +286,10 @@ public class MathSymbol_Editor extends DefaultNodeEditor {
   }
 
   private static boolean renderingCondition5452_0(SNode node, EditorContext editorContext, IScope scope) {
-    return SLinkOperations.getTarget(node, "precondition", true) != null;
+    return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(node, "var", true), "jetbrains.mps.baseLanguage.math.structure.MathSymbolFromToIndex");
   }
 
   private static boolean renderingCondition5452_1(SNode node, EditorContext editorContext, IScope scope) {
-    return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(node, "var", true), "jetbrains.mps.baseLanguage.math.structure.MathSymbolFromToIndex");
+    return SLinkOperations.getTarget(node, "precondition", true) != null;
   }
 }
