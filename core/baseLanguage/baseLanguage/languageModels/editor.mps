@@ -7680,41 +7680,72 @@
           <property name="flag" value="true" />
         </node>
       </node>
-      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Alternation" id="1197651363305">
-        <property name="vertical" value="true" />
-        <link role="keyMap" targetNodeId="1232110805175" resolveInfo="RemarkStatement_KeyMap" />
-        <node role="ifTrueCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Property" id="1197651363306">
-          <property name="allowEmptyText" value="true" />
-          <property name="emptyNoTargetText" value="true" />
-          <link role="relationDeclaration" targetNodeId="17.1168623065899" resolveInfo="value" />
-          <node role="styleItem" type="jetbrains.mps.lang.editor.structure.FontStyleStyleClassItem" id="1214314934146">
-            <property name="style" value="ITALIC" />
-          </node>
-          <node role="styleItem" type="jetbrains.mps.lang.editor.structure.ForegroundColorStyleClassItem" id="1214399678946">
-            <property name="color" value="gray" />
-          </node>
-        </node>
-        <node role="alternationCondition" type="jetbrains.mps.lang.editor.structure.QueryFunction_NodeCondition" id="1197651363307">
-          <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1197651363308">
-            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1197651923338">
-              <node role="expression" type="jetbrains.mps.baseLanguage.structure.NotExpression" id="1197651941331">
-                <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1208784498281">
-                  <node role="operand" type="jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_node" id="1208784498045" />
-                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1208784501471">
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Property" id="4652593672362090094">
+        <link role="relationDeclaration" targetNodeId="17.1168623065899" resolveInfo="value" />
+        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.FontStyleStyleClassItem" id="4652593672362090095">
+          <property name="style" value="QUERY" />
+          <node role="query" type="jetbrains.mps.lang.editor.structure.QueryFunction_FontStyle" id="4652593672362090096">
+            <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="4652593672362090097">
+              <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="4652593672362090098">
+                <node role="condition" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="4652593672362090099">
+                  <node role="operand" type="jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_node" id="4652593672362090100" />
+                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="4652593672362090101">
                     <link role="baseMethodDeclaration" targetNodeId="75.1213877427548" resolveInfo="isTodo" />
+                  </node>
+                </node>
+                <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="4652593672362090102">
+                  <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="4652593672362090103">
+                    <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference" id="4652593672362090104">
+                      <link role="classifier" targetNodeId="21.~MPSFonts" resolveInfo="MPSFonts" />
+                      <link role="variableDeclaration" targetNodeId="21.~MPSFonts.BOLD_ITALIC" resolveInfo="BOLD_ITALIC" />
+                    </node>
+                  </node>
+                </node>
+                <node role="ifFalseStatement" type="jetbrains.mps.baseLanguage.structure.BlockStatement" id="4652593672362090105">
+                  <node role="statements" type="jetbrains.mps.baseLanguage.structure.StatementList" id="4652593672362090106">
+                    <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="4652593672362090107">
+                      <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference" id="4652593672362090108">
+                        <link role="classifier" targetNodeId="21.~MPSFonts" resolveInfo="MPSFonts" />
+                        <link role="variableDeclaration" targetNodeId="21.~MPSFonts.ITALIC" resolveInfo="ITALIC" />
+                      </node>
+                    </node>
                   </node>
                 </node>
               </node>
             </node>
           </node>
         </node>
-        <node role="ifFalseCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Property" id="1197651366849">
-          <link role="relationDeclaration" targetNodeId="17.1168623065899" resolveInfo="value" />
-          <node role="styleItem" type="jetbrains.mps.lang.editor.structure.FontStyleStyleClassItem" id="1214314934042">
-            <property name="style" value="BOLD_ITALIC" />
-          </node>
-          <node role="styleItem" type="jetbrains.mps.lang.editor.structure.ForegroundColorStyleClassItem" id="1214399679045">
-            <property name="color" value="blue" />
+        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.ForegroundColorStyleClassItem" id="4652593672362090109">
+          <property name="color" value="blue" />
+          <node role="query" type="jetbrains.mps.lang.editor.structure.QueryFunction_Color" id="4652593672362090110">
+            <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="4652593672362090111">
+              <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="4652593672362090112">
+                <node role="condition" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="4652593672362090113">
+                  <node role="operand" type="jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_node" id="4652593672362090114" />
+                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="4652593672362090115">
+                    <link role="baseMethodDeclaration" targetNodeId="75.1213877427548" resolveInfo="isTodo" />
+                  </node>
+                </node>
+                <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="4652593672362090116">
+                  <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="4652593672362090117">
+                    <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference" id="4652593672362090118">
+                      <link role="classifier" targetNodeId="56.~Color" resolveInfo="Color" />
+                      <link role="variableDeclaration" targetNodeId="56.~Color.BLUE" resolveInfo="BLUE" />
+                    </node>
+                  </node>
+                </node>
+                <node role="ifFalseStatement" type="jetbrains.mps.baseLanguage.structure.BlockStatement" id="4652593672362090119">
+                  <node role="statements" type="jetbrains.mps.baseLanguage.structure.StatementList" id="4652593672362090120">
+                    <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="4652593672362090121">
+                      <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference" id="4652593672362090122">
+                        <link role="classifier" targetNodeId="56.~Color" resolveInfo="Color" />
+                        <link role="variableDeclaration" targetNodeId="56.~Color.GRAY" resolveInfo="GRAY" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
           </node>
         </node>
       </node>

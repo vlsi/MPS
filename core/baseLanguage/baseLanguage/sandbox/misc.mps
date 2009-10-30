@@ -1308,6 +1308,35 @@
             <property name="name" value="sdsd" />
           </node>
         </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.SwitchStatement" id="4652593672362054014">
+          <node role="case" type="jetbrains.mps.baseLanguage.structure.SwitchCase" id="4652593672362054017">
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.Expression" id="4652593672362054018" />
+            <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="4652593672362054019">
+              <node role="statement" type="jetbrains.mps.baseLanguage.structure.SwitchStatement" id="4652593672362054020">
+                <node role="expression" type="jetbrains.mps.baseLanguage.structure.Expression" id="4652593672362054021" />
+                <node role="defaultBlock" type="jetbrains.mps.baseLanguage.structure.StatementList" id="4652593672362054022" />
+                <node role="switchLabel" type="jetbrains.mps.baseLanguage.structure.LoopLabel" id="4652593672362054023">
+                  <property name="name" value="s2" />
+                </node>
+                <node role="case" type="jetbrains.mps.baseLanguage.structure.SwitchCase" id="4652593672362054025">
+                  <node role="expression" type="jetbrains.mps.baseLanguage.structure.Expression" id="4652593672362054026" />
+                  <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="4652593672362054027">
+                    <node role="statement" type="jetbrains.mps.baseLanguage.structure.BreakStatement" id="4652593672362054028">
+                      <node role="loopLabelReference" type="jetbrains.mps.baseLanguage.structure.LoopLabelReference" id="4652593672362054029">
+                        <link role="loopLabel" targetNodeId="4652593672362054024" resolveInfo="s1" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.Expression" id="4652593672362054015" />
+          <node role="defaultBlock" type="jetbrains.mps.baseLanguage.structure.StatementList" id="4652593672362054016" />
+          <node role="switchLabel" type="jetbrains.mps.baseLanguage.structure.LoopLabel" id="4652593672362054024">
+            <property name="name" value="s1" />
+          </node>
+        </node>
       </node>
     </node>
   </node>
