@@ -67,7 +67,7 @@ public abstract class BaseSNodeDescriptorIndex extends ScalarIndexExtension<SNod
   }
 
   public int getVersion() {
-    return 2;
+    return 3;
   }
 
   public int getCacheSize() {

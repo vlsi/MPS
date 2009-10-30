@@ -22,87 +22,12 @@ import java.io.DataOutput;
 import java.io.IOException;
 
 class EnumeratorSNodeDescriptor implements KeyDescriptor<SNodeDescriptor> {
-  private final byte mySizeOfUUID = 16;
-
-  private void putLong(byte[] b, int off, long val) {
-    b[off + 7] = (byte) (val);
-    b[off + 6] = (byte) (val >>> 8);
-    b[off + 5] = (byte) (val >>> 16);
-    b[off + 4] = (byte) (val >>> 24);
-    b[off + 3] = (byte) (val >>> 32);
-    b[off + 2] = (byte) (val >>> 40);
-    b[off + 1] = (byte) (val >>> 48);
-    b[off + 0] = (byte) (val >>> 56);
-  }
-
-  private long getLong(byte[] b, int off) {
-    return ((b[off + 7] & 0xFFL)) +
-      ((b[off + 6] & 0xFFL) << 8) +
-      ((b[off + 5] & 0xFFL) << 16) +
-      ((b[off + 4] & 0xFFL) << 24) +
-      ((b[off + 3] & 0xFFL) << 32) +
-      ((b[off + 2] & 0xFFL) << 40) +
-      ((b[off + 1] & 0xFFL) << 48) +
-      (((long) b[off + 0]) << 56);
-  }
-
-  private void putString(byte[] b, int off, String str) {
-    byte[] val = str.getBytes();
-    int i = 0;
-    while (i < val.length) {
-      b[off + i] = val[i];
-      ++i;
-    }
-  }
+  private byte[] myBytes = new byte[1024];
 
   private String getString(byte[] b, int off, int len) {
     byte[] bytes = new byte[len];
     System.arraycopy(b, off, bytes, 0, len);
     return new String(bytes);
-  }
-
-  private byte[] nodeDescriptorToBytes(SNodeDescriptor node) {
-    int conceptNameLength = node.getConceptFqName().getBytes().length;
-    int nodeNameLength = node.getNodeName().getBytes().length;
-    int len = mySizeOfUUID + conceptNameLength + nodeNameLength + 5;
-    byte[] result = new byte[len + 1];
-    int off = 0;
-    result[off] = (byte) len;
-    off++;
-    putLong(result, off, node.getMostSignificantBits());
-    off += mySizeOfUUID / 2;
-    putLong(result, off, node.getLeastSignificantBits());
-    off += mySizeOfUUID / 2;
-    result[off] = (byte) node.getNumberInModel();
-    off++;
-    result[off] = (byte) conceptNameLength;
-    off++;
-    putString(result, mySizeOfUUID + 3, node.getConceptFqName());
-    off += conceptNameLength;
-    result[off] = (byte) nodeNameLength;
-    off++;
-    putString(result, off, node.getNodeName());
-    off += nodeNameLength;
-    return result;
-  }
-
-  private SNodeDescriptor bytesToNodeDescriptor(byte[] bytes) {
-    int off = 0;
-    long mostSignificantBits = getLong(bytes, off);
-    off += mySizeOfUUID / 2;
-    long leastSignificantBits = getLong(bytes, off);
-    off += mySizeOfUUID / 2;
-    int numberInModel = 0xFF & (int) bytes[off];
-    off++;
-    int conceptNameLength = 0xFF & (int) bytes[off];
-    off++;
-    String conceptFqName = getString(bytes, off, conceptNameLength);
-    off += conceptNameLength;
-    int nodeNameLength = 0xFF & (int) bytes[off];
-    off++;
-    String nodeName = getString(bytes, off, nodeNameLength);
-    off += nodeNameLength;
-    return new SNodeDescriptor(nodeName, conceptFqName, mostSignificantBits, leastSignificantBits, numberInModel);
   }
 
   public int getHashCode(SNodeDescriptor value) {
@@ -117,13 +42,36 @@ class EnumeratorSNodeDescriptor implements KeyDescriptor<SNodeDescriptor> {
   }
 
   public void save(DataOutput out, SNodeDescriptor value) throws IOException {
-    out.write(nodeDescriptorToBytes(value));
+    out.writeLong(value.getMostSignificantBits());
+    out.writeLong(value.getLeastSignificantBits());
+    out.writeInt(value.getNumberInModel());
+
+    String conceptName = value.getConceptFqName();
+    short conceptNameLength = (short) conceptName.length();
+
+    out.writeShort(conceptNameLength);
+    out.write(conceptName.getBytes(), 0, conceptNameLength);
+
+    String nodeName = value.getNodeName();
+    short nodeNameLength = (short) nodeName.length();
+
+    out.writeShort(nodeNameLength);
+    out.write(nodeName.getBytes(), 0, nodeNameLength);
   }
 
   public SNodeDescriptor read(DataInput in) throws IOException {
-    int len = 0xFF & (int) in.readByte();
-    byte[] bytes = new byte[len];
-    in.readFully(bytes, 0, len);
-    return bytesToNodeDescriptor(bytes);
+    long mostSignificantBits = in.readLong();
+    long leastSignificantBits = in.readLong();
+    int numberInModel = in.readInt();
+
+    short conceptNameLength = in.readShort();
+    in.readFully(myBytes, 0, conceptNameLength);
+    String conceptFqName = getString(myBytes, 0, conceptNameLength);
+
+    short nodeNameLength = in.readShort();
+    in.readFully(myBytes, 0, nodeNameLength);
+    String nodeName = getString(myBytes, 0, nodeNameLength);
+
+    return new SNodeDescriptor(nodeName, conceptFqName, mostSignificantBits, leastSignificantBits, numberInModel);
   }
 }
