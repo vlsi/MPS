@@ -247,7 +247,8 @@ public abstract class MpsWorker {
     } else {
       modules = ModelAccess.instance().runWriteAction(new Computable<List<IModule>>() {
         public List<IModule> compute() {
-          return MPSModuleRepository.getInstance().readModuleDescriptors(FileSystem.getFile(moduleFile.getPath()), new MPSModuleOwner() {
+          IFile file = FileSystem.getFile(moduleFile.getPath());
+          return MPSModuleRepository.getInstance().readModuleDescriptors(file.isDirectory() ? file : file.getParent(), new MPSModuleOwner() {
           });
         }
       });

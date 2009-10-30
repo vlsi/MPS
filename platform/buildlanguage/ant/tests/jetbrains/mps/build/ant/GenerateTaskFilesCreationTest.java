@@ -82,7 +82,7 @@ public class GenerateTaskFilesCreationTest extends BaseMPSTest {
     File destdir = extractProject(projectName);
 
     WhatToDo whatToDo = new WhatToDo();
-    whatToDo.addModuleDirectory(new File(getLanguagePath(destdir, projectName, languageName)));
+    whatToDo.addModuleFile(new File(getLanguagePath(destdir, projectName, languageName) + File.separator + languageName + ".mpl"));
     doGenerate(whatToDo);
 
     assertStructureGenerated(projectName, languageName, destdir, CONCEPT_NAME);
