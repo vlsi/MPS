@@ -19,6 +19,7 @@ import org.apache.log4j.Logger;
 import org.joda.time.*;
 import org.joda.time.field.FieldUtils;
 import org.joda.time.format.DateTimeFormatter;
+import org.joda.time.format.PeriodFormatter;
 
 import java.util.Calendar;
 import java.util.Date;
@@ -63,6 +64,12 @@ public class DateTimeOperations {
     DateTime dateTime = (value != null) ? value : Constants.NULL_DATE_TIME;
     DateTimeFormatter dateTimeFormatter = (locale == null)? formatter : formatter.withLocale(locale);
     return dateTimeFormatter.print(dateTime);
+  }
+
+  public static String print(Period value, PeriodFormatter formatter, Locale locale) {
+    Period period = value != null ? value : new Period();
+    PeriodFormatter dateTimeFormatter = locale == null ? formatter : formatter.withLocale(locale);
+    return dateTimeFormatter.print(period);
   }
 
   @Deprecated

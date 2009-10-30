@@ -20,6 +20,7 @@ public class ConstraintsDescriptor implements IModelConstraints {
     ListSequence.fromList(this.myConstraints).addElement(new DateTimePropertyFormatToken_dateTimePropertyFormatType_ReferentConstraint());
     ListSequence.fromList(this.myConstraints).addElement(new FixedLocaleFormatToken_dateFormat_ReferentConstraint());
     ListSequence.fromList(this.myConstraints).addElement(new ReferenceFormatToken_dateFormat_ReferentConstraint());
+    ListSequence.fromList(this.myConstraints).addElement(new FormatPeriodExpression_format_ReferentConstraint());
     ListSequence.fromList(this.myConstraints).addElement(new FormatDateTimeExpression_dateFormat_ReferentConstraint());
   }
 

@@ -13,6 +13,7 @@ import jetbrains.mps.project.GlobalScope;
 public class FormatTokenSettings extends BaseConcept {
   public static final String concept = "jetbrains.mps.baseLanguage.datesInternal.structure.FormatTokenSettings";
   public static final String PREDEFINED_DATE_FORMAT = "predefinedDateFormat";
+  public static final String PREDEFINED_PERIOD_FORMAT = "predefinedPeriodFormat";
   public static final String DATE_TIME_PROPERTY_CARDINALITY = "dateTimePropertyCardinality";
   public static final String DATE_TIME_PROPERTY_FORMAT_CONFIGURATION = "dateTimePropertyFormatConfiguration";
 
@@ -38,6 +39,26 @@ public class FormatTokenSettings extends BaseConcept {
 
   public void insertPredefinedDateFormat(PredefinedDateFormat prev, PredefinedDateFormat node) {
     this.insertChild(prev, FormatTokenSettings.PREDEFINED_DATE_FORMAT, node);
+  }
+
+  public int getPredefinedPeriodFormatsCount() {
+    return this.getChildCount(FormatTokenSettings.PREDEFINED_PERIOD_FORMAT);
+  }
+
+  public Iterator<PredefinedPeriodFormat> predefinedPeriodFormats() {
+    return this.children(PredefinedPeriodFormat.class, FormatTokenSettings.PREDEFINED_PERIOD_FORMAT);
+  }
+
+  public List<PredefinedPeriodFormat> getPredefinedPeriodFormats() {
+    return this.getChildren(PredefinedPeriodFormat.class, FormatTokenSettings.PREDEFINED_PERIOD_FORMAT);
+  }
+
+  public void addPredefinedPeriodFormat(PredefinedPeriodFormat node) {
+    this.addChild(FormatTokenSettings.PREDEFINED_PERIOD_FORMAT, node);
+  }
+
+  public void insertPredefinedPeriodFormat(PredefinedPeriodFormat prev, PredefinedPeriodFormat node) {
+    this.insertChild(prev, FormatTokenSettings.PREDEFINED_PERIOD_FORMAT, node);
   }
 
   public int getDateTimePropertyCardinalitiesCount() {
