@@ -28,6 +28,7 @@ import com.intellij.ui.content.ContentFactoryImpl;
 import com.intellij.ui.content.ContentManager;
 import com.intellij.ui.content.ContentManagerListener;
 import jetbrains.mps.MPSProjectHolder;
+import jetbrains.mps.util.annotation.Hack;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.workbench.action.BaseAction;
@@ -297,7 +298,9 @@ public abstract class BaseTool {
     return null;
   }
 
-  protected Content addContent(JComponent component, String name, Icon icon, boolean isLockable) {
+  // TODO made this method public because of MPS-6520 issue, should be protected 
+  @Hack
+  public Content addContent(JComponent component, String name, Icon icon, boolean isLockable) {
     Content content = new ContentFactoryImpl().createContent(component, name, isLockable);
     if (icon != null) {
       content.putUserData(ToolWindow.SHOW_CONTENT_ICON, Boolean.TRUE);
@@ -310,7 +313,15 @@ public abstract class BaseTool {
     return content;
   }
 
-  protected ContentManager getContentManager() {
+  public void setSelectedComponent(JComponent component) {
+    ContentManager manager = getContentManager();
+    Content content = manager.getContent(component);
+    manager.setSelectedContent(content);
+  }
+
+  // TODO made this method public because of MPS-6520 issue, should be protected
+  @Hack
+  public ContentManager getContentManager() {
     if (!isRegistered()) register();
     return getToolWindow().getContentManager();
   }
