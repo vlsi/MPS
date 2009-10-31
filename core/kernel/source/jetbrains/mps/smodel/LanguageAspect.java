@@ -301,29 +301,6 @@ public enum LanguageAspect {
       modelRoot = structureModel.getSModelRoot();
     }
     final SModelDescriptor model = l.createModel(getModuleUID(l), modelRoot);
-
-    model.getSModel().runLoadingAction(new Runnable() {
-      public void run() {
-        model.getSModel().addDevKit(LanguageDesign_DevKit.get());
-
-        for (ModuleReference impLang : getAllLanguagesToImport(l)) {
-          model.getSModel().addLanguage(impLang);
-        }
-
-        for (String modelUID : getModelsToImport(l)) {
-          model.getSModel().addImportedModel(SModelReference.fromString(modelUID));
-        }
-
-        model.getSModel().addImportedModel(l.getStructureModelDescriptor().getSModelReference());
-
-        if (saveModel) {
-          model.save();
-          l.setLanguageDescriptor(l.getLanguageDescriptor(), false);
-          l.save();
-        }
-      }
-    });
-
     return model;
   }
 

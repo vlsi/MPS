@@ -13,6 +13,7 @@ public class ModelCreateAdjuster implements ApplicationComponent {
   public void initComponent() {
     AbstractModule.registerModelCreateListener(new GeneratorModelCreateListener());
     AbstractModule.registerModelCreateListener(new TestsModelCreateListener());
+    AbstractModule.registerModelCreateListener(new LanguageAspectCreateListener());
   }
 
   public void disposeComponent() {
