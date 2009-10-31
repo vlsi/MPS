@@ -22,7 +22,6 @@ import jetbrains.mps.vfs.MPSExtentions;
 import jetbrains.mps.generator.fileGenerator.AllCaches;
 
 import java.util.*;
-import java.io.File;
 
 public class ModuleSources {
   private Dependencies myDependencies;
@@ -88,7 +87,9 @@ public class ModuleSources {
         myResourceFiles.put(childPath, new ResourceFile(child, childPath));
       }
 
-      collectInput(child, addSubPath(path, child.getName()));
+      if (child.isDirectory()) {
+        collectInput(child, addSubPath(path, child.getName()));
+      }
     }
   }
 
@@ -105,28 +106,32 @@ public class ModuleSources {
     for (IFile file : files) {
       if (isIgnored(file)) continue;
 
-      if (file.getName().endsWith(MPSExtentions.DOT_CLASSFILE)) {
-        String containerName = file.getName().substring(0, file.getName().length() - MPSExtentions.DOT_CLASSFILE.length());
-        if (containerName.contains("$")) {
-          containerName = containerName.substring(0, containerName.indexOf("$"));
-        }
-        String fqName = toPack(addSubPath(path, containerName));
-        JavaFile javaFile = myJavaFiles.get(fqName);
-        if (javaFile == null) {
-          myFilesToDelete.add(file);
-        } else if (isFileUpToDate(javaFile, file)) {
-          myFilesToCompile.remove(javaFile);
-        }
-      } else if (isResourceFile(file)) {
-        String childPath = addSubPath(path, file.getName());
-        ResourceFile resourceFile = myResourceFiles.get(childPath);
-        if (resourceFile == null) {
-          myFilesToDelete.add(file);
-        } else if (resourceFile.getFile().lastModified() < file.lastModified()) {
-          myResourcesToCopy.remove(resourceFile);
-        }
-      } else {
+      if (file.isDirectory()) {
         collectOutput(file, addSubPath(path, file.getName()));
+      } else {
+        if (file.getName().endsWith(MPSExtentions.DOT_CLASSFILE)) {
+          String containerName = file.getName().substring(0, file.getName().length() - MPSExtentions.DOT_CLASSFILE.length());
+          if (containerName.contains("$")) {
+            containerName = containerName.substring(0, containerName.indexOf("$"));
+          }
+          String fqName = toPack(addSubPath(path, containerName));
+          JavaFile javaFile = myJavaFiles.get(fqName);
+          if (javaFile == null) {
+            myFilesToDelete.add(file);
+          } else if (isFileUpToDate(javaFile, file)) {
+            myFilesToCompile.remove(javaFile);
+          }
+        }
+
+        if (isResourceFile(file)) {
+          String childPath = addSubPath(path, file.getName());
+          ResourceFile resourceFile = myResourceFiles.get(childPath);
+          if (resourceFile == null) {
+            myFilesToDelete.add(file);
+          } else if (resourceFile.getFile().lastModified() < file.lastModified()) {
+            myResourcesToCopy.remove(resourceFile);
+          }
+        }
       }
     }
   }
@@ -166,8 +171,6 @@ public class ModuleSources {
   }
 
   private boolean isResourceFile(IFile file) {
-    int extPos = file.getName().lastIndexOf('.');
-    if (extPos == -1) return false;
     return file.isFile() &&
       !file.getName().endsWith(MPSExtentions.DOT_JAVAFILE) &&
       !file.getName().endsWith(MPSExtentions.DOT_CLASSFILE) &&
