@@ -60,8 +60,6 @@ public abstract class UsagesTreeComponent extends JPanel implements IChangeListe
 
   private boolean mySearchedNodesButtonsVisible = true;
 
-  private boolean myIsAdjusting = false;
-
   public UsagesTreeComponent(ViewOptions defaultOptions) {
     super(new BorderLayout());
 
@@ -131,10 +129,8 @@ public abstract class UsagesTreeComponent extends JPanel implements IChangeListe
   }
 
   public void setComponentsViewOptions(ViewOptions options) {
-    myIsAdjusting = true;
     myViewToolbar.setViewOptions(options);
     myActionsToolbar.setViewOptions(options);
-    myIsAdjusting = false;
   }
 
   public void getComponentsViewOptions(ViewOptions options) {
@@ -220,8 +216,6 @@ public abstract class UsagesTreeComponent extends JPanel implements IChangeListe
     private PathOptionsToolbar myPathOptionsToolbar;
     private ViewOptionsToolbar myViewOptionsToolbar;
 
-    private boolean myIsConstructed = false;
-
     public ViewToolbar() {
       myPathOptionsToolbar = new PathOptionsToolbar();
       myViewOptionsToolbar = new ViewOptionsToolbar();
@@ -231,8 +225,6 @@ public abstract class UsagesTreeComponent extends JPanel implements IChangeListe
       actionGroup.addSeparator();
       actionGroup.addAll(myViewOptionsToolbar.getActions());
       add(ActionManager.getInstance().createActionToolbar(ActionPlaces.UNKNOWN, actionGroup, false).getComponent());
-
-      myIsConstructed = true;
     }
 
     public void setViewOptions(ViewOptions options) {
@@ -325,7 +317,7 @@ public abstract class UsagesTreeComponent extends JPanel implements IChangeListe
       }
 
       public void getViewOptions(ViewOptions options) {
-        options.myCount = true/*myCountNeededButton.getState()*/;
+        options.myCount = true;
         options.myInfo = myAdditionalInfoNeededButton.isSelected(null);
         options.myShowSearchedNodes = myShowSearchedNodesButton.isSelected(null);
         options.myGroupSearchedNodes = myGroupSearchedNodesButton.isSelected(null);
@@ -365,11 +357,6 @@ public abstract class UsagesTreeComponent extends JPanel implements IChangeListe
       private ToggleAction myRootPathButton;
       private ToggleAction myNamedConceptPathButton;
       private DefaultActionGroup myActions;
-      private boolean myIsCategoryPath;
-      private boolean myIsModulePath;
-      private boolean myIsModelPath;
-      private boolean myIsRootPath;
-      private boolean myIsNamedConceptPath;
 
       public PathOptionsToolbar() {
         myCategoryPathButton = new MyBaseToggleAction(PathItemRole.ROLE_CATEGORY, "Group by category", Icons.CATEGORY_ICON);
@@ -416,7 +403,6 @@ public abstract class UsagesTreeComponent extends JPanel implements IChangeListe
           private void actionSelected() {
             myTree.startAdjusting();
             addPathComponent(PathItemRole.ROLE_ROOT_TO_TARGET_NODE);
-            myIsRootPath = true;
             myTree.finishAdjusting();
           }
 
@@ -462,7 +448,6 @@ public abstract class UsagesTreeComponent extends JPanel implements IChangeListe
   class ActionsToolbar {
     private DefaultActionGroup myActions;
     private ToggleAction myAutoscrollButton;
-    private boolean myIsAutoscroll = false;
 
     public ActionsToolbar() {
       myActions = new DefaultActionGroup();
