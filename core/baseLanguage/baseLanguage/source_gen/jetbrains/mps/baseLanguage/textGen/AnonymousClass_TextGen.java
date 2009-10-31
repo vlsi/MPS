@@ -7,6 +7,8 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.textGen.TextGenManager;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 public class AnonymousClass_TextGen extends SNodeTextGen {
   public void doGenerateText(SNode node) {
@@ -46,19 +48,12 @@ public class AnonymousClass_TextGen extends SNodeTextGen {
       }
       this.append(")");
     }
-    if ((SLinkOperations.getTarget(node, "superclass", true) != null)) {
-      this.append(" extends ");
-      TextGenManager.instance().appendNodeText(this.getContext(), this.getBuffer(), SLinkOperations.getTarget(node, "superclass", true), this.getSNode());
-    }
-    if (ListSequence.fromList(SLinkOperations.getTargets(node, "implementedInterface", true)).isNotEmpty()) {
-      this.append(" implements ");
-      if (ListSequence.fromList(SLinkOperations.getTargets(node, "implementedInterface", true)).isNotEmpty()) {
-        for (SNode item : SLinkOperations.getTargets(node, "implementedInterface", true)) {
-          TextGenManager.instance().appendNodeText(this.getContext(), this.getBuffer(), item, this.getSNode());
-          if (item != ListSequence.fromList(SLinkOperations.getTargets(node, "implementedInterface", true)).last()) {
-            this.append(", ");
-          }
-        }
+    if ((SLinkOperations.getTarget(node, "instanceInitializer", true) == null) && ListSequence.fromList(SLinkOperations.getTargets(node, "field", true)).isEmpty() && ListSequence.fromList(SLinkOperations.getTargets(node, "method", true)).isEmpty()) {
+      if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(node, "classifier", false), "jetbrains.mps.baseLanguage.structure.ClassConcept") && !(SPropertyOperations.getBoolean(SNodeOperations.cast(SLinkOperations.getTarget(node, "classifier", false), "jetbrains.mps.baseLanguage.structure.ClassConcept"), "abstractClass"))) {
+        return;
+      } else {
+        this.append(" {}");
+        return;
       }
     }
     this.append(" {");

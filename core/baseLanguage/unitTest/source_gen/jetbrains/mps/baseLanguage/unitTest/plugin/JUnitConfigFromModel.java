@@ -28,7 +28,7 @@ public class JUnitConfigFromModel extends BaseConfigCreator<SModel> implements C
       return;
     }
     final String name = SModelOperations.getModelName(parameter);
-    JUnitConfigFromModel.this.setSourceElement(new MPSPsiElement<SModel>(parameter) {    });
+    JUnitConfigFromModel.this.setSourceElement(new MPSPsiElement<SModel>(parameter));
     {
       JUnit_ConfigurationType configType = ContainerUtil.findInstance(Extensions.getExtensions(JUnit_ConfigurationType.CONFIGURATION_TYPE_EP), JUnit_ConfigurationType.class);
       DefaultJUnit_Configuration _config = new DefaultJUnit_Configuration(JUnitConfigFromModel.this.getContext().getProject(), configType.getConfigurationFactories()[0], "NewConfig") {

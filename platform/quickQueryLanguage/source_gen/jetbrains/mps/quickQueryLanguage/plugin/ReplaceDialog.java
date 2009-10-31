@@ -41,7 +41,7 @@ public class ReplaceDialog extends BaseDialog {
     ModelAccess.instance().runWriteActionInCommand(new Runnable() {
       public void run() {
         ReplaceDialog.this.myNode = SConceptOperations.createNewNode("jetbrains.mps.quickQueryLanguage.structure.ReplaceModelQuery", null);
-        ReplaceDialog.this.myEditor = new EmbeddableEditor(context, new ModelOwner() {        }, ReplaceDialog.this.myNode);
+        ReplaceDialog.this.myEditor = new EmbeddableEditor(context, new ModelOwner() {}, ReplaceDialog.this.myNode);
         ReplaceDialog.this.myScope = new ScopeEditor(new ScopeOptions());
         ReplaceDialog.this.myPanel.add(ReplaceDialog.this.myScope.getComponent(), BorderLayout.SOUTH);
       }

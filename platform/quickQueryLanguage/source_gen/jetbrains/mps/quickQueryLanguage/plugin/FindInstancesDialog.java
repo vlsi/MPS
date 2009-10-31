@@ -53,7 +53,7 @@ public class FindInstancesDialog extends BaseDialog {
         SLinkOperations.setTarget(expressionStatement, "expression", defaultCondition, true);
         SLinkOperations.addChild(statementList, "statement", expressionStatement);
         SLinkOperations.setTarget(SLinkOperations.getTarget(FindInstancesDialog.this.myNode, "condition", true), "body", statementList, true);
-        FindInstancesDialog.this.myEditor = new EmbeddableEditor(context, new ModelOwner() {        }, FindInstancesDialog.this.myNode);
+        FindInstancesDialog.this.myEditor = new EmbeddableEditor(context, new ModelOwner() {}, FindInstancesDialog.this.myNode);
       }
     });
     final Wrappers._T<List<Language>> languageList = new Wrappers._T<List<Language>>();

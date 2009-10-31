@@ -27,7 +27,7 @@ public class JUnitConfigFromModule extends BaseConfigCreator<IModule> implements
       return;
     }
     final String name = parameter.getModuleFqName();
-    JUnitConfigFromModule.this.setSourceElement(new MPSPsiElement<IModule>(parameter) {    });
+    JUnitConfigFromModule.this.setSourceElement(new MPSPsiElement<IModule>(parameter));
     {
       JUnit_ConfigurationType configType = ContainerUtil.findInstance(Extensions.getExtensions(JUnit_ConfigurationType.CONFIGURATION_TYPE_EP), JUnit_ConfigurationType.class);
       DefaultJUnit_Configuration _config = new DefaultJUnit_Configuration(JUnitConfigFromModule.this.getContext().getProject(), configType.getConfigurationFactories()[0], "NewConfig") {

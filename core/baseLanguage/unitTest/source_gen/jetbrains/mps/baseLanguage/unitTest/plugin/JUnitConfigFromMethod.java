@@ -25,11 +25,11 @@ public class JUnitConfigFromMethod extends BaseConfigCreator<SNode> implements C
   }
 
   private void createConfig(final SNode parameter) {
-    JUnitConfigFromMethod.this.setSourceElement(new MPSPsiElement<SNode>(parameter) {    });
+    JUnitConfigFromMethod.this.setSourceElement(new MPSPsiElement<SNode>(parameter));
 
     {
       JUnit_ConfigurationType configType = ContainerUtil.findInstance(Extensions.getExtensions(JUnit_ConfigurationType.CONFIGURATION_TYPE_EP), JUnit_ConfigurationType.class);
-      DefaultJUnit_Configuration _config = new DefaultJUnit_Configuration(JUnitConfigFromMethod.this.getContext().getProject(), configType.getConfigurationFactories()[0], "NewConfig") {      };
+      DefaultJUnit_Configuration _config = new DefaultJUnit_Configuration(JUnitConfigFromMethod.this.getContext().getProject(), configType.getConfigurationFactories()[0], "NewConfig");
       _config.setName(ITestMethod_Behavior.call_getTestName_1216136419751(parameter));
       _config.getStateObject().type = JUnitRunTypes.METHOD;
       _config.getStateObject().method = ITestMethod_Behavior.call_getTestName_1216136419751(parameter);
