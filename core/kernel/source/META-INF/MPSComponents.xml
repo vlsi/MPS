@@ -348,6 +348,10 @@
         <component>
             <implementation-class>jetbrains.mps.debug.DebugInfoManager</implementation-class>
         </component>
+
+        <component>
+            <implementation-class>jetbrains.mps.project.listener.ModelCreateAdjuster</implementation-class>
+        </component>
     </application-components>
 
     <project-components>

@@ -133,17 +133,6 @@ public class Generator extends AbstractModule {
     return getSourceLanguage().getLanguageRuntimeClassPathItems();
   }
 
-  public SModelDescriptor createModel(SModelFqName name, SModelRoot root) {
-    SModelDescriptor result = super.createModel(name, root);
-    if (SModelStereotype.isGeneratorModel(result)) {
-      result.getSModel().addLanguage(Generator_Language.get());
-    } else {
-      result.getSModel().addDevKit(LanguageDesign_DevKit.get());
-    }
-    result.getSModel().addLanguage(GenerationContext_Language.get());
-    return result;
-  }
-
   public void dispose() {
     super.dispose();
     SModelRepository.getInstance().unRegisterModelDescriptors(this);
