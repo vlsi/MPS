@@ -883,5 +883,10 @@
       </node>
     </node>
   </node>
+  <node type="jetbrains.mps.lang.constraints.structure.ConceptConstraints" id="7641798150165719784">
+    <property name="package" value="Actions.Action.Methods" />
+    <link role="concept" targetNodeId="7.1205681149025" resolveInfo="UpdateBlock" />
+    <link role="defaultConcreteConcept" targetNodeId="7.1205681243813" resolveInfo="IsApplicableBlock" />
+  </node>
 </model>
 
