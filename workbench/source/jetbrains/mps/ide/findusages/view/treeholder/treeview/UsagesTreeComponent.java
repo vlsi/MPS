@@ -42,11 +42,11 @@ public abstract class UsagesTreeComponent extends JPanel implements IChangeListe
 
   private static final String CONTENTS = "contents";
   private static final String VIEW_OPTIONS = "view_options";
-  private static final String PLAIN_PATH_PROVIDER = "plain_path_provider";
+  private static final String NODE_REPRESENTATOR = "node_representator";
   private static final String CLASS_NAME = "class_name";
 
   @Nullable
-  private Class myNodeRepresentatorClass = null;
+  private INodeRepresentator myNodeRepresentator = null;
 
   private UsagesTree myTree;
   private final DataTree myContents = new DataTree();
@@ -94,17 +94,7 @@ public abstract class UsagesTreeComponent extends JPanel implements IChangeListe
   }
 
   public void setContents(SearchResults contents) {
-    INodeRepresentator nodeRepresentator = null;
-    if (myNodeRepresentatorClass != null) {
-      try {
-        nodeRepresentator = (INodeRepresentator) myNodeRepresentatorClass.newInstance();
-      } catch (InstantiationException e) {
-        LOG.error(e);
-      } catch (IllegalAccessException e) {
-        LOG.error(e);
-      }
-    }
-    myContents.setContents(contents, nodeRepresentator);
+    myContents.setContents(contents, myNodeRepresentator);
   }
 
   public void changed() {
@@ -124,8 +114,8 @@ public abstract class UsagesTreeComponent extends JPanel implements IChangeListe
   }
 
   //MUST be called in construction time, introduced for "to do" functionality
-  public void setCustomRepresentator(Class nodeRepresentatorClass) {
-    myNodeRepresentatorClass = nodeRepresentatorClass;
+  public void setCustomRepresentator(INodeRepresentator nodeRepresentator) {
+    myNodeRepresentator = nodeRepresentator;
   }
 
   public void setComponentsViewOptions(ViewOptions options) {
@@ -139,18 +129,22 @@ public abstract class UsagesTreeComponent extends JPanel implements IChangeListe
   }
 
   public void read(Element element, MPSProject project) throws CantLoadSomethingException {
-    Element nodeRepresentatorClass = element.getChild(PLAIN_PATH_PROVIDER);
-    String className = nodeRepresentatorClass.getAttributeValue(CLASS_NAME);
-    if (className != null) {
+    myNodeRepresentator = null;
+    Element nodeRepresentatorXML = element.getChild(NODE_REPRESENTATOR);
+    if (nodeRepresentatorXML != null) {
+      String className = nodeRepresentatorXML.getAttributeValue(CLASS_NAME);
+      assert className != null;
       try {
-        myNodeRepresentatorClass = (Class) Class.forName(className);
+        Class nodeRepresentatorClass = Class.forName(className);
+        myNodeRepresentator = (INodeRepresentator) nodeRepresentatorClass.newInstance();
+        assert myNodeRepresentator != null;
+        myNodeRepresentator.read(nodeRepresentatorXML, project);
       } catch (Exception e) {
         LOG.error("Can't instantiate node representator " + className, e);
         throw new CantLoadSomethingException("Can't instantiate node representator " + className, e);
       }
-    } else {
-      myNodeRepresentatorClass = null;
     }
+
     Element viewOptionsXML = element.getChild(VIEW_OPTIONS);
     myViewOptions.read(viewOptionsXML, project);
     setComponentsViewOptions(myViewOptions);
@@ -162,11 +156,13 @@ public abstract class UsagesTreeComponent extends JPanel implements IChangeListe
   }
 
   public void write(Element element, MPSProject project) throws CantSaveSomethingException {
-    Element plainPathProviderClass = new Element(PLAIN_PATH_PROVIDER);
-    if (myNodeRepresentatorClass != null) {
-      plainPathProviderClass.setAttribute(CLASS_NAME, myNodeRepresentatorClass.getName());
+    Element nodeRepresentatorXML = new Element(NODE_REPRESENTATOR);
+    if (myNodeRepresentator != null) {
+      nodeRepresentatorXML.setAttribute(CLASS_NAME, myNodeRepresentator.getClass().getName());
+      assert myNodeRepresentator != null;
+      myNodeRepresentator.write(nodeRepresentatorXML, project);
     }
-    element.addContent(plainPathProviderClass);
+    element.addContent(nodeRepresentatorXML);
 
     Element viewOptionsXML = new Element(VIEW_OPTIONS);
     getComponentsViewOptions(myViewOptions);

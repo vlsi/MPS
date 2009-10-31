@@ -16,7 +16,8 @@
 package jetbrains.mps.ide.findusages.view.treeholder.treeview;
 
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.ide.findusages.IExternalizeable;
 
-public interface INodeRepresentator {
+public interface INodeRepresentator extends IExternalizeable {
   public String getPresentation(SNode node);
 }

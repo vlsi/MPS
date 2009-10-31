@@ -27,10 +27,13 @@ import jetbrains.mps.ide.findusages.view.UsagesView;
 import jetbrains.mps.ide.findusages.view.UsagesView.ButtonConfiguration;
 import jetbrains.mps.ide.findusages.view.treeholder.treeview.INodeRepresentator;
 import jetbrains.mps.ide.findusages.view.treeholder.treeview.ViewOptions;
+import jetbrains.mps.ide.findusages.CantSaveSomethingException;
+import jetbrains.mps.ide.findusages.CantLoadSomethingException;
 import jetbrains.mps.plugins.pluginparts.tool.GeneratedTool;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.SNode;
 import org.jetbrains.annotations.NotNull;
+import org.jdom.Element;
 
 import javax.swing.JLabel;
 import javax.swing.JPanel;
@@ -87,7 +90,7 @@ public class TodoViewer extends JPanel {
       new SearchResults()
     );
 
-    myUsagesView.setCustomNodeRepresentator(MyNodeRepresentator.class);
+    myUsagesView.setCustomNodeRepresentator(new MyNodeRepresentator());
 
     ProgressManager.getInstance().run(new Modal(getProject(), "Searching", true) {
       public void run(@NotNull final ProgressIndicator indicator) {
@@ -103,5 +106,9 @@ public class TodoViewer extends JPanel {
     public String getPresentation(SNode node) {
       return "<font color=blue>" + node.getProperty("value") + "</font>";
     }
+
+    // Nothing to read or write: this class is stateless
+    public void read(Element element, MPSProject project) throws CantLoadSomethingException { }
+    public void write(Element element, MPSProject project) throws CantSaveSomethingException { }
   }
 }

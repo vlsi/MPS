@@ -35,6 +35,7 @@ import jetbrains.mps.ide.findusages.model.holders.VoidHolder;
 import jetbrains.mps.ide.findusages.view.icons.Icons;
 import jetbrains.mps.ide.findusages.view.treeholder.treeview.UsagesTreeComponent;
 import jetbrains.mps.ide.findusages.view.treeholder.treeview.ViewOptions;
+import jetbrains.mps.ide.findusages.view.treeholder.treeview.INodeRepresentator;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.DefaultSModelDescriptor;
 import jetbrains.mps.smodel.SModelDescriptor;
@@ -116,8 +117,8 @@ public abstract class UsagesView implements IExternalizeable, INavigator {
     myTreeComponent.setContents(results);
   }
 
-  public void setCustomNodeRepresentator(Class nodeRepresentatorClass) {
-    myTreeComponent.setCustomRepresentator(nodeRepresentatorClass);
+  public void setCustomNodeRepresentator(INodeRepresentator nodeRepresentator) {
+    myTreeComponent.setCustomRepresentator(nodeRepresentator);
   }
 
   public void run(ProgressIndicator indicator) {
