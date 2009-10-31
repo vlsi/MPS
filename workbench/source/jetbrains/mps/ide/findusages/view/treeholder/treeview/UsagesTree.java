@@ -72,7 +72,7 @@ public abstract class UsagesTree extends MPSTree {
   private boolean myAdditionalInfoNeeded;
   private boolean myShowSearchedNodes;
   private boolean myGroupSearchedNodes;
-  private boolean myIsAdjusting = false;
+  private int myIsAdjusting = 0;
   private boolean myAutoscroll = false;
 
   public UsagesTree() {
@@ -151,11 +151,11 @@ public abstract class UsagesTree extends MPSTree {
   }
 
   public void startAdjusting() {
-    myIsAdjusting = true;
+    myIsAdjusting++;
   }
 
   public void finishAdjusting() {
-    myIsAdjusting = false;
+    myIsAdjusting--;
     rebuildLater();
   }
 
@@ -175,14 +175,14 @@ public abstract class UsagesTree extends MPSTree {
     myContents = contents;
     myResultPathProvider.clear();
     myResultPathProvider.addAll(pathProvider);
-    if (!myIsAdjusting) {
+    if (myIsAdjusting == 0) {
       rebuildLater();
     }
   }
 
   public void setContents(DataTree contents) {
     myContents = contents;
-    if (!myIsAdjusting) {
+    if (myIsAdjusting == 0) {
       rebuildLater();
     }
   }
@@ -190,36 +190,48 @@ public abstract class UsagesTree extends MPSTree {
   public void setResultPathProvider(Set<PathItemRole> resultPathProvider) {
     myResultPathProvider.clear();
     myResultPathProvider.addAll(resultPathProvider);
-    if (!myIsAdjusting) {
+    if (myIsAdjusting == 0) {
       rebuildLater();
     }
   }
 
   public void setAdditionalInfoNeeded(boolean additionalInfoNeeded) {
     myAdditionalInfoNeeded = additionalInfoNeeded;
-    if (!myIsAdjusting) {
+    if (myIsAdjusting == 0) {
       rebuildLater();
     }
+  }
+
+  public boolean isAdditionalInfoNeeded() {
+    return myAdditionalInfoNeeded;
   }
 
   public void setShowSearchedNodes(boolean showSearchedNodes) {
     myShowSearchedNodes = showSearchedNodes;
-    if (!myIsAdjusting) {
+    if (myIsAdjusting == 0) {
       rebuildLater();
     }
   }
 
+  public boolean isShowSearchedNodes() {
+    return myShowSearchedNodes;
+  }
+
   public void setGroupSearchedNodes(boolean groupSearchedNodes) {
     myGroupSearchedNodes = groupSearchedNodes;
-    if (!myIsAdjusting) {
+    if (myIsAdjusting == 0) {
       rebuildLater();
     }
+  }
+
+  public boolean isGroupSearchedNodes() {
+    return myGroupSearchedNodes;
   }
 
   public void setAll(DataTree contents, HashSet<PathItemRole> pathProvider) {
     myContents = contents;
     myResultPathProvider = pathProvider;
-    if (!myIsAdjusting) {
+    if (myIsAdjusting == 0) {
       rebuildLater();
     }
   }
@@ -645,6 +657,10 @@ public abstract class UsagesTree extends MPSTree {
     if (getCurrentNode() != null) {
       goByNodeLink(getCurrentNode(), false, false);
     }
+  }
+
+  public boolean isAutoscroll() {
+    return myAutoscroll;
   }
 
   public class UsagesTreeNode extends TextMPSTreeNode {

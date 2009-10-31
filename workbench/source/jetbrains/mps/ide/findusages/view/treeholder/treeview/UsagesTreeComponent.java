@@ -242,51 +242,43 @@ public abstract class UsagesTreeComponent extends JPanel implements IChangeListe
       private ToggleAction myShowSearchedNodesButton;
       private ToggleAction myGroupSearchedNodesButton;
       private DefaultActionGroup myActions;
-      boolean myIsAdditionalInfoNeeded = false;
-      boolean myIsShowSearchedNodes = false;
-      boolean myIsGroupSearchedNodes = false;
 
       public ViewOptionsToolbar() {
         myAdditionalInfoNeededButton = new ToggleAction("Additional node info", "", Icons.INFO_ICON) {
-          private boolean myIsSelected = false;
-
           public boolean isSelected(AnActionEvent e) {
-            return myIsSelected;
+            return myTree.isAdditionalInfoNeeded();
           }
 
           public void setSelected(AnActionEvent e, boolean state) {
-            myIsSelected = state;
             myTree.setAdditionalInfoNeeded(state);
           }
         };
+
         myShowSearchedNodesButton = new ToggleAction("Show searched nodes", "", Icons.SHOW_SEARCHED_ICON) {
           public boolean isSelected(AnActionEvent e) {
-            return myIsShowSearchedNodes;
+            return myTree.isShowSearchedNodes();
           }
 
           public void setSelected(AnActionEvent e, boolean state) {
-            myIsShowSearchedNodes = state;
-            myTree.setShowSearchedNodes(true);
-            if (myIsShowSearchedNodes || myIsShowSearchedNodes != myGroupSearchedNodesButton.isSelected(null)) {
-              myIsGroupSearchedNodes = myIsShowSearchedNodes;
+            myTree.setShowSearchedNodes(state);
+            if (!myTree.isShowSearchedNodes() && myGroupSearchedNodesButton.isSelected(null)) {
+              myGroupSearchedNodesButton.setSelected(null, false);
             }
           }
         };
+
         myGroupSearchedNodesButton = new ToggleAction("Group searched nodes", "", Icons.GROUP_SEARCHED_ICON) {
           public boolean isSelected(AnActionEvent e) {
-            return myIsGroupSearchedNodes;
+            return myTree.isGroupSearchedNodes();
           }
 
           public void setSelected(AnActionEvent e, boolean state) {
-            myIsGroupSearchedNodes = state;
-            if (myIsGroupSearchedNodes) {
-              myTree.startAdjusting();
-              myTree.setGroupSearchedNodes(true);
-              myIsShowSearchedNodes = true;
-              myTree.finishAdjusting();
-            } else {
-              myTree.setGroupSearchedNodes(false);
+            myTree.startAdjusting();
+            myTree.setGroupSearchedNodes(state);
+            if (state) {
+              myTree.setShowSearchedNodes(true);
             }
+            myTree.finishAdjusting();
           }
         };
 
@@ -364,50 +356,40 @@ public abstract class UsagesTreeComponent extends JPanel implements IChangeListe
         myModelPathButton = new MyBaseToggleAction(PathItemRole.ROLE_MODEL, "Group by model", Icons.MODEL_ICON);
 
         myRootPathButton = new ToggleAction("Group by root node", "", Icons.ROOT_ICON) {
-          private boolean myIsSelected = false;
-
           public boolean isSelected(AnActionEvent e) {
-            return myIsSelected;
+            return myPathProvider.contains(PathItemRole.ROLE_ROOT);
           }
 
           public void setSelected(AnActionEvent e, boolean state) {
-            myIsSelected = state;
-            if (myIsSelected) {
+            if (state) {
               addPathComponent(PathItemRole.ROLE_ROOT);
             } else {
+              myTree.startAdjusting();
               if (myNamedConceptPathButton.isSelected(null)) {
-                setSelected(null, true);
-              } else {
-                removePathComponent(PathItemRole.ROLE_ROOT);
+                myNamedConceptPathButton.setSelected(null, false);
               }
+              removePathComponent(PathItemRole.ROLE_ROOT);
+              myTree.finishAdjusting();
             }
           }
         };
 
         myNamedConceptPathButton = new ToggleAction("Group by path", "", Icons.PATH_ICON) {
-          boolean myIsSelected = false;
-
           public boolean isSelected(AnActionEvent e) {
-            return myIsSelected;
+            return myPathProvider.contains(PathItemRole.ROLE_ROOT_TO_TARGET_NODE);
           }
 
           public void setSelected(AnActionEvent e, boolean state) {
-            myIsSelected = state;
-            if (myIsSelected) {
-              actionSelected();
+            if (state) {
+              myTree.startAdjusting();
+              if(!myRootPathButton.isSelected(null)){
+                myRootPathButton.setSelected(null,true);
+              }
+              addPathComponent(PathItemRole.ROLE_ROOT_TO_TARGET_NODE);
+              myTree.finishAdjusting();
             } else {
-              actionDeselected();
+              removePathComponent(PathItemRole.ROLE_ROOT_TO_TARGET_NODE);
             }
-          }
-
-          private void actionSelected() {
-            myTree.startAdjusting();
-            addPathComponent(PathItemRole.ROLE_ROOT_TO_TARGET_NODE);
-            myTree.finishAdjusting();
-          }
-
-          private void actionDeselected() {
-            removePathComponent(PathItemRole.ROLE_ROOT_TO_TARGET_NODE);
           }
         };
 
@@ -473,15 +455,12 @@ public abstract class UsagesTreeComponent extends JPanel implements IChangeListe
         }
       });
       myAutoscrollButton = new ToggleAction("Autoscroll to source", "", Icons.AUTOSCROLL_ICON) {
-        private boolean myIsSelected = false;
-
         public boolean isSelected(AnActionEvent e) {
-          return myIsSelected;
+          return myTree.isAutoscroll();
         }
 
         public void setSelected(AnActionEvent e, boolean state) {
-          myIsSelected = state;
-          myTree.setAutoscroll(myIsSelected);
+          myTree.setAutoscroll(state);
         }
       };
       myActions.addAction(myAutoscrollButton);
