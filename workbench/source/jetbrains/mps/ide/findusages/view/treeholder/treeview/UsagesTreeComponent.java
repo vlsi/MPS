@@ -215,21 +215,33 @@ public abstract class UsagesTreeComponent extends JPanel implements IChangeListe
   class ViewToolbar extends JPanel {
     private PathOptionsToolbar myPathOptionsToolbar;
     private ViewOptionsToolbar myViewOptionsToolbar;
+    private JComponent myToolbar = null;
 
     public ViewToolbar() {
       myPathOptionsToolbar = new PathOptionsToolbar();
       myViewOptionsToolbar = new ViewOptionsToolbar();
 
+      recreateToolbar();
+    }
+
+    private void recreateToolbar() {
+      if (myToolbar != null) {
+        remove(myToolbar);
+      }
+
       DefaultActionGroup actionGroup = new DefaultActionGroup();
       actionGroup.addAll(myPathOptionsToolbar.getActions());
       actionGroup.addSeparator();
       actionGroup.addAll(myViewOptionsToolbar.getActions());
-      add(ActionManager.getInstance().createActionToolbar(ActionPlaces.UNKNOWN, actionGroup, false).getComponent());
+      myToolbar = ActionManager.getInstance().createActionToolbar(ActionPlaces.UNKNOWN, actionGroup, false).getComponent();
+      add(myToolbar);
     }
 
     public void setViewOptions(ViewOptions options) {
       myPathOptionsToolbar.setViewOptions(options);
       myViewOptionsToolbar.setViewOptions(options);
+
+      recreateToolbar();
     }
 
     public void getViewOptions(ViewOptions options) {
@@ -318,30 +330,6 @@ public abstract class UsagesTreeComponent extends JPanel implements IChangeListe
       }
     }
 
-    class MyBaseToggleAction extends ToggleAction {
-      private boolean myIsSelected = false;
-      private PathItemRole myPathItemRole = null;
-
-      public MyBaseToggleAction(PathItemRole itemRole, String name, Icon icon) {
-        super(name, "", icon);
-        myPathItemRole = itemRole;
-      }
-
-      public boolean isSelected(AnActionEvent e) {
-        return myIsSelected;
-      }
-
-      public void setSelected(AnActionEvent e, boolean state) {
-        myIsSelected = state;
-        if (myPathItemRole == null) return;
-        if (myIsSelected) {
-          addPathComponent(myPathItemRole);
-        } else {
-          removePathComponent(myPathItemRole);
-        }
-      }
-    }
-
     class PathOptionsToolbar {
       private ToggleAction myCategoryPathButton;
       private ToggleAction myModulePathButton;
@@ -382,8 +370,8 @@ public abstract class UsagesTreeComponent extends JPanel implements IChangeListe
           public void setSelected(AnActionEvent e, boolean state) {
             if (state) {
               myTree.startAdjusting();
-              if(!myRootPathButton.isSelected(null)){
-                myRootPathButton.setSelected(null,true);
+              if (!myRootPathButton.isSelected(null)) {
+                myRootPathButton.setSelected(null, true);
               }
               addPathComponent(PathItemRole.ROLE_ROOT_TO_TARGET_NODE);
               myTree.finishAdjusting();
@@ -423,6 +411,30 @@ public abstract class UsagesTreeComponent extends JPanel implements IChangeListe
 
       public ActionGroup getActions() {
         return myActions;
+      }
+    }
+
+    class MyBaseToggleAction extends ToggleAction {
+      private boolean myIsSelected = false;
+      private PathItemRole myPathItemRole = null;
+
+      public MyBaseToggleAction(PathItemRole itemRole, String name, Icon icon) {
+        super(name, "", icon);
+        myPathItemRole = itemRole;
+      }
+
+      public boolean isSelected(AnActionEvent e) {
+        return myIsSelected;
+      }
+
+      public void setSelected(AnActionEvent e, boolean state) {
+        myIsSelected = state;
+        if (myPathItemRole == null) return;
+        if (myIsSelected) {
+          addPathComponent(myPathItemRole);
+        } else {
+          removePathComponent(myPathItemRole);
+        }
       }
     }
   }
