@@ -4,16 +4,16 @@ import com.intellij.openapi.components.ApplicationComponent;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.project.AbstractModule;
 
-public class ModelCreateAdjuster implements ApplicationComponent {
+public class AbstractModuleAdjuster implements ApplicationComponent {
   @NotNull
   public String getComponentName() {
     return "Abstract Module Adjuster";
   }
 
   public void initComponent() {
-    AbstractModule.registerModelCreateListener(new GeneratorModelCreateListener());
-    AbstractModule.registerModelCreateListener(new TestsModelCreateListener());
-    AbstractModule.registerModelCreateListener(new LanguageAspectCreateListener());
+    AbstractModule.registerModelCreationListener(new GeneratorModelCreationListener());
+    AbstractModule.registerModelCreationListener(new TestsModelCreationListener());
+    AbstractModule.registerModelCreationListener(new LanguageAspectCreationListener());
   }
 
   public void disposeComponent() {

@@ -10,7 +10,7 @@ import jetbrains.mps.util.CollectionUtil;
 
 import java.util.List;
 
-public class LanguageAspectCreateListener extends ModelCreateListener {
+public class LanguageAspectCreationListener extends ModelCreationListener {
   private List<String> getModelsToImport(Language language) {
     return CollectionUtil.list(
       language.getStructureModelDescriptor().getSModelReference().toString()

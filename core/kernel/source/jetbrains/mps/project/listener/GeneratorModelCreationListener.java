@@ -7,7 +7,7 @@ import jetbrains.mps.lang.generator.structure.Generator_Language;
 import jetbrains.mps.lang.generator.generationContext.structure.GenerationContext_Language;
 import jetbrains.mps.library.LanguageDesign_DevKit;
 
-public class GeneratorModelCreateListener extends ModelCreateListener {
+public class GeneratorModelCreationListener extends ModelCreationListener {
   public boolean isApplicable(SModelDescriptor model) {
     return model.getModule() instanceof Generator;
   }

@@ -28,7 +28,7 @@ import jetbrains.mps.project.structure.modules.ClassPathEntry;
 import jetbrains.mps.project.structure.modules.Dependency;
 import jetbrains.mps.project.structure.modules.ModuleDescriptor;
 import jetbrains.mps.project.structure.modules.ModuleReference;
-import jetbrains.mps.project.listener.ModelCreateListener;
+import jetbrains.mps.project.listener.ModelCreationListener;
 import jetbrains.mps.reloading.*;
 import jetbrains.mps.runtime.BytecodeLocator;
 import jetbrains.mps.smodel.*;
@@ -49,7 +49,7 @@ import java.util.*;
 
 public abstract class AbstractModule implements IModule {
   private static final Logger LOG = Logger.getLogger(AbstractModule.class);
-  private static Set<ModelCreateListener> myModelCreateListeners = new HashSet<ModelCreateListener>();
+  private static Set<ModelCreationListener> myModelCreationListeners = new HashSet<ModelCreationListener>();
   public static final String RUNTIME_JAR_SUFFIX = "runtime.jar";
   public static final String MODULE_DIR = "module";
   public static final String CACHES_DIR = "caches";
@@ -63,8 +63,8 @@ public abstract class AbstractModule implements IModule {
     return new ClasspathCollector(modules).collect(includeJDK, includeMPS);
   }
 
-  public static void registerModelCreateListener(ModelCreateListener listener) {
-    myModelCreateListeners.add(listener);
+  public static void registerModelCreationListener(ModelCreationListener listener) {
+    myModelCreationListeners.add(listener);
   }
 
   private boolean myModelsRead = false;
@@ -434,7 +434,7 @@ public abstract class AbstractModule implements IModule {
     SModelDescriptor model = manager.createNewModel(root, name, this);
     SModelRepository.getInstance().markChanged(model, true);
 
-    for (ModelCreateListener listener : myModelCreateListeners) {
+    for (ModelCreationListener listener : myModelCreationListeners) {
       if (listener.isApplicable(model)) {
         listener.onCreate(model);
       }
