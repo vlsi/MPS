@@ -18,7 +18,14 @@ package jetbrains.mps.typesystem.inference;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.core.behavior.BaseConcept_Behavior;
 
-public class MetaLevelUtil {
+public class ErrorReportUtil {
+  public static boolean shouldReportError(SNode node) {
+    if (getMetaLevel(node) != 0) {
+      return false;
+    }
+    return true;
+  }
+
   public static int getMetaLevel(SNode node) {
     return BaseConcept_Behavior.call_getMetaLevel_3981318653438234726(node);
   }

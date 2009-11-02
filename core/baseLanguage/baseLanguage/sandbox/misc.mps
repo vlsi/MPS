@@ -1404,6 +1404,26 @@
             </node>
           </node>
         </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="6329021646629708419">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="6329021646629708420">
+            <property name="name" value="classExpression" />
+            <node role="type" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="6329021646629708421">
+              <link role="concept" targetNodeId="138.1068580123155" resolveInfo="ExpressionStatement" />
+            </node>
+            <node role="initializer" type="jetbrains.mps.lang.quotation.structure.Quotation" id="6329021646629708422">
+              <node role="quotedNode" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="6329021646629708424">
+                <node role="expression" type="jetbrains.mps.baseLanguage.structure.ClassifierClassExpression" id="6329021646629708426">
+                  <link role="classifier" targetNodeId="3325977160883785002" resolveInfo="BinaryOperations" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="6329021646629708428">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.ClassifierClassExpression" id="6329021646629708429">
+            <link role="classifier" targetNodeId="3325977160883785002" resolveInfo="BinaryOperations" />
+          </node>
+        </node>
       </node>
     </node>
   </node>

@@ -16539,5 +16539,25 @@
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1244292059682911445" />
     </node>
   </node>
+  <node type="jetbrains.mps.lang.behavior.structure.ConceptBehavior" id="4581730695772276352">
+    <link role="concept" targetNodeId="1.6329021646629104955" resolveInfo="CommentPart" />
+    <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="4581730695772276355">
+      <property name="name" value="getChildMetaLevel" />
+      <link role="overriddenMethod" targetNodeId="20.3981318653438239103" resolveInfo="getChildMetaLevel" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="4581730695772276358">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="4581730695772287608">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference" id="4581730695772287610">
+            <link role="classifier" targetNodeId="2.~Integer" resolveInfo="Integer" />
+            <link role="variableDeclaration" targetNodeId="2.~Integer.MAX_VALUE" resolveInfo="MAX_VALUE" />
+          </node>
+        </node>
+      </node>
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="4581730695772276359" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="4581730695772276360" />
+    </node>
+    <node role="constructor" type="jetbrains.mps.lang.behavior.structure.ConceptConstructorDeclaration" id="4581730695772276353">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="4581730695772276354" />
+    </node>
+  </node>
 </model>
 

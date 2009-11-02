@@ -226,7 +226,7 @@ public class NodeTypesComponent implements EditorMessageOwner {
   }
 
   private void putError(SNode node, IErrorReporter errorReporter) {
-    if (MetaLevelUtil.getMetaLevel(node) != 0) {
+    if (ErrorReportUtil.getMetaLevel(node) != 0) {
       return;
     }
 
