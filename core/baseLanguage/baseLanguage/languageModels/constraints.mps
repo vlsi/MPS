@@ -378,8 +378,10 @@
       <link role="applicableLink" targetNodeId="1.1109283546497" />
       <node role="searchScopeFactory" type="jetbrains.mps.lang.constraints.structure.ConstraintFunction_ReferentSearchScope_Factory" id="1213104844543">
         <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1213104844544">
-          <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1215738903587">
-            <property name="value" value="type-variables declared in enclosing classifier" />
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636453839">
+            <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636453840">
+              <property name="text" value="type-variables declared in enclosing classifier" />
+            </node>
           </node>
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1213104844545">
             <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1213104844546">
@@ -606,8 +608,10 @@
       <link role="applicableLink" targetNodeId="1.1241540960362" />
       <node role="searchScopeFactory" type="jetbrains.mps.lang.constraints.structure.ConstraintFunction_ReferentSearchScope_Factory" id="1213104847241">
         <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1213104847242">
-          <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1213104847243">
-            <property name="value" value=" just insure that dynamic reference resolve won't scan all models" />
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636454363">
+            <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636454364">
+              <property name="text" value=" just insure that dynamic reference resolve won't scan all models" />
+            </node>
           </node>
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1213104847244">
             <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1213104847245">
@@ -702,8 +706,10 @@
       <link role="applicableLink" targetNodeId="1.1070568178160" />
       <node role="searchScopeFactory" type="jetbrains.mps.lang.constraints.structure.ConstraintFunction_ReferentSearchScope_Factory" id="1213104847361">
         <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1213104847362">
-          <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1215738903621">
-            <property name="value" value="static fields from hierarchy of specified class" />
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636454175">
+            <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636454176">
+              <property name="text" value="static fields from hierarchy of specified class" />
+            </node>
           </node>
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1213104847363">
             <node role="expression" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1213104847364">
@@ -889,8 +895,10 @@
       <link role="applicableLink" targetNodeId="1.1241540960362" />
       <node role="searchScopeFactory" type="jetbrains.mps.lang.constraints.structure.ConstraintFunction_ReferentSearchScope_Factory" id="1213104855789">
         <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1213104855790">
-          <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1213104855791">
-            <property name="value" value=" just insure that dynamic reference resolve won't scan all models" />
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636454033">
+            <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636454034">
+              <property name="text" value=" just insure that dynamic reference resolve won't scan all models" />
+            </node>
           </node>
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1213104855792">
             <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1213104855793">
@@ -1121,8 +1129,10 @@
       <link role="applicableLink" targetNodeId="1.1083260308426" />
       <node role="searchScopeFactory" type="jetbrains.mps.lang.constraints.structure.ConstraintFunction_ReferentSearchScope_Factory" id="1213104856630">
         <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1213104856631">
-          <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1215738903624">
-            <property name="value" value="constants declared in the specified class" />
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636453335">
+            <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636453336">
+              <property name="text" value="constants declared in the specified class" />
+            </node>
           </node>
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1213104856632">
             <node role="expression" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1213104856633">
@@ -1155,8 +1165,10 @@
       <link role="applicableLink" targetNodeId="1.1070567982819" />
       <node role="searchScopeFactory" type="jetbrains.mps.lang.constraints.structure.ConstraintFunction_ReferentSearchScope_Factory" id="1213104856700">
         <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1213104856701">
-          <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1215738903627">
-            <property name="value" value="parameters declared in enclosing method" />
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636453953">
+            <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636453954">
+              <property name="text" value="parameters declared in enclosing method" />
+            </node>
           </node>
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1213104856702">
             <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1213104856703">
@@ -1696,8 +1708,10 @@
       <link role="applicableLink" targetNodeId="1.1197029500499" />
       <node role="searchScopeFactory" type="jetbrains.mps.lang.constraints.structure.ConstraintFunction_ReferentSearchScope_Factory" id="1213104860476">
         <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1213104860477">
-          <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1215738903618">
-            <property name="value" value="fields declared in hierarhy of class specified by left expression. only applicable to expressions of classifier-type" />
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636454083">
+            <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636454084">
+              <property name="text" value="fields declared in hierarhy of class specified by left expression. only applicable to expressions of classifier-type" />
+            </node>
           </node>
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1213104860478">
             <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1213104860479">
@@ -2017,8 +2031,10 @@
     <link role="concept" targetNodeId="1.1197027803184" resolveInfo="IOperation" />
     <node role="canBeChild" type="jetbrains.mps.lang.constraints.structure.ConstraintFunction_CanBeAChild" id="1225995041051">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1225995041052">
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1225997204974">
-          <property name="value" value=" an operation can only be 'operation' child in DotExpression" />
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636453659">
+          <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636453660">
+            <property name="text" value=" an operation can only be 'operation' child in DotExpression" />
+          </node>
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1225995061669">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.AndExpression" id="1225996746136">

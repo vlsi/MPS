@@ -12295,14 +12295,20 @@
                   </node>
                 </node>
               </node>
-              <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1226062526442">
-                <property name="value" value="by default 'alias' is not shown." />
+              <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636453469">
+                <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636453470">
+                  <property name="text" value="by default 'alias' is not shown." />
+                </node>
               </node>
-              <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1226062526443">
-                <property name="value" value="if you need presentation like alias(...)-&gt;.." />
+              <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636454431">
+                <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636454432">
+                  <property name="text" value="if you need presentation like alias(...)-&gt;.." />
+                </node>
               </node>
-              <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1226062526444">
-                <property name="value" value="then use the ConceptFunctionAliased_Component" />
+              <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636453937">
+                <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636453938">
+                  <property name="text" value="then use the ConceptFunctionAliased_Component" />
+                </node>
               </node>
               <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1226062526445">
                 <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1226062526446">
@@ -13470,14 +13476,20 @@
           <node role="cellMenuPart" type="jetbrains.mps.lang.editor.structure.CellMenuPart_Generic_Group" id="1217846547788">
             <node role="parametersFunction" type="jetbrains.mps.lang.editor.structure.CellMenuPart_AbstractGroup_Query" id="1217846547789">
               <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1217846547790">
-                <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1217846631079">
-                  <property name="value" value="todo: this is quite a hackish stuff but we need it" />
+                <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636453355">
+                  <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636453356">
+                    <property name="text" value="todo: this is quite a hackish stuff but we need it" />
+                  </node>
                 </node>
-                <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1217847952836">
-                  <property name="value" value="todo: but we need it since we can't enable/disable" />
+                <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636453227">
+                  <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636453228">
+                    <property name="text" value="todo: but we need it since we can't enable/disable" />
+                  </node>
                 </node>
-                <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1217847965370">
-                  <property name="value" value="todo: menu items by condition" />
+                <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636454357">
+                  <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636454358">
+                    <property name="text" value="todo: menu items by condition" />
+                  </node>
                 </node>
                 <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1217846570497">
                   <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1217846570498">
