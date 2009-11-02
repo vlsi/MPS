@@ -32,16 +32,18 @@ public class ModelCheckerTool_Tool extends GeneratedTool {
 
   public void checkModel(SModelDescriptor modelDescriptior, IScope scope) {
     ModelCheckerViewer newViewer = new ModelCheckerViewer(ModelCheckerTool_Tool.this.myProject, ModelCheckerTool_Tool.this);
-    newViewer.checkModel(modelDescriptior.getSModel(), scope);
-    ModelCheckerTool_Tool.this.addContent(newViewer, modelDescriptior.getName(), IconManager.getIconFor(modelDescriptior), true);
-    ModelCheckerTool_Tool.this.setSelectedComponent(newViewer);
+    if (newViewer.checkModel(modelDescriptior.getSModel(), scope)) {
+      ModelCheckerTool_Tool.this.addContent(newViewer, modelDescriptior.getName(), IconManager.getIconFor(modelDescriptior), true);
+      ModelCheckerTool_Tool.this.setSelectedComponent(newViewer);
+    }
   }
 
   public void checkModule(IModule module, IScope scope) {
     ModelCheckerViewer newViewer = new ModelCheckerViewer(ModelCheckerTool_Tool.this.myProject, ModelCheckerTool_Tool.this);
-    newViewer.checkModule(module, scope);
-    ModelCheckerTool_Tool.this.addContent(newViewer, module.getModuleFqName(), IconManager.getIconFor(module), true);
-    ModelCheckerTool_Tool.this.setSelectedComponent(newViewer);
+    if (newViewer.checkModule(module, scope)) {
+      ModelCheckerTool_Tool.this.addContent(newViewer, module.getModuleFqName(), IconManager.getIconFor(module), true);
+      ModelCheckerTool_Tool.this.setSelectedComponent(newViewer);
+    }
   }
 
   public void removeTab(JComponent component) {

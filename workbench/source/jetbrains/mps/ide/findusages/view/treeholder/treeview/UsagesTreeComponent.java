@@ -137,7 +137,7 @@ public abstract class UsagesTreeComponent extends JPanel implements IChangeListe
         try {
           Class nodeRepresentatorClass = Class.forName(className);
           myNodeRepresentator = (INodeRepresentator) nodeRepresentatorClass.newInstance();
-          assert myNodeRepresentator != null;
+          //noinspection ConstantConditions
           myNodeRepresentator.read(nodeRepresentatorXML, project);
         } catch (Exception e) {
           LOG.error("Can't instantiate node representator " + className, e);
@@ -160,7 +160,7 @@ public abstract class UsagesTreeComponent extends JPanel implements IChangeListe
     Element nodeRepresentatorXML = new Element(NODE_REPRESENTATOR);
     if (myNodeRepresentator != null) {
       nodeRepresentatorXML.setAttribute(CLASS_NAME, myNodeRepresentator.getClass().getName());
-      assert myNodeRepresentator != null;
+      //noinspection ConstantConditions
       myNodeRepresentator.write(nodeRepresentatorXML, project);
     }
     element.addContent(nodeRepresentatorXML);

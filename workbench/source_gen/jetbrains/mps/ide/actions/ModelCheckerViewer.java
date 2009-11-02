@@ -70,12 +70,16 @@ public class ModelCheckerViewer extends JPanel {
     this.add(this.myUsagesView.getComponent());
   }
 
-  public void checkModel(final SModel model, final IScope scope) {
+  public boolean checkModel(final SModel model, final IScope scope) {
     ProgressManager.getInstance().run(new Task.Modal(this.myProject.getComponent(Project.class), "Checking " + SModelOperations.getModelName(model), true) {
       public void run(@NotNull ProgressIndicator indicator) {
         ModelCheckerViewer.this.myLastResults = ModelCheckerResultsFinder.getResults(model, scope, indicator);
       }
     });
+    if (this.myLastResults == null) {
+      //  Checking was cancelled
+      return false;
+    }
     this.myNodeRepresentator.saveCheckerResults(this.myLastResults);
 
     IFinder finder = new IFinder() {
@@ -91,19 +95,15 @@ public class ModelCheckerViewer extends JPanel {
     IResultProvider resultProvider = FindUtils.makeProvider(Arrays.asList(finder));
     SearchQuery searchQuery = new SearchQuery(this.myProject.getScope());
     this.myUsagesView.setRunOptions(resultProvider, searchQuery, new UsagesView.ButtonConfiguration(false, false, false), new SearchResults());
-    ProgressManager.getInstance().run(new Task.Modal(this.myProject.getComponent(Project.class), "Searching", true) {
-      public void run(@NotNull ProgressIndicator indicator) {
-        indicator.setIndeterminate(true);
-        ModelCheckerViewer.this.myUsagesView.run(indicator);
-
-        ModelCheckerViewer.this.myTool.openToolLater(true);
-      }
-    });
+    this.myUsagesView.run(null);
+    this.myTool.openToolLater(true);
+    return true;
   }
 
-  public void checkModule(final IModule module, final IScope scope) {
+  public boolean checkModule(final IModule module, final IScope scope) {
     //  TODO
     ModelCheckerViewer.this.myTool.openToolLater(true);
+    return true;
   }
 
   public static class MyNodeRepresentator implements INodeRepresentator {
