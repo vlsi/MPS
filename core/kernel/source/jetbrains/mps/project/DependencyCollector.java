@@ -36,12 +36,11 @@ class DependencyCollector<T extends IModule> {
   }
 
   private void doCollect(IModule current) {
-    if (myVisited.contains(current)) {
-      return;
-    }
     myVisited.add(current);
 
     for (IModule module : current.getExplicitlyDependOnModules()) {
+      if (myVisited.contains(module)) continue;
+
       if (myResultElementType.isInstance(module) && !myResult.contains((T) module)) {
         myResult.add((T) module);
         doCollect(module);
