@@ -1419,9 +1419,20 @@
             </node>
           </node>
         </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="6329021646629708428">
-          <node role="expression" type="jetbrains.mps.baseLanguage.structure.ClassifierClassExpression" id="6329021646629708429">
-            <link role="classifier" targetNodeId="3325977160883785002" resolveInfo="BinaryOperations" />
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.CommentedStatement" id="4581730695772347027">
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="6329021646629708428">
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.ClassifierClassExpression" id="6329021646629708429">
+              <link role="classifier" targetNodeId="3325977160883785002" resolveInfo="BinaryOperations" />
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="4581730695772505308">
+          <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.StatementCommentPart" id="4581730695772505309">
+            <node role="commentedStatement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="4581730695772472561">
+              <node role="expression" type="jetbrains.mps.baseLanguage.structure.ClassifierClassExpression" id="4581730695772472562">
+                <link role="classifier" targetNodeId="3325977160883785002" resolveInfo="BinaryOperations" />
+              </node>
+            </node>
           </node>
         </node>
       </node>

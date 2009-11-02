@@ -3246,9 +3246,10 @@ __switch__:
       ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(concept, _context.getSourceNode()) {
         public SNode doSubstitute(String pattern) {
           SNode statement = SNodeOperations.cast(SNodeOperations.getParent(_context.getSourceNode()), "jetbrains.mps.baseLanguage.structure.Statement");
-          SNode result = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.CommentedStatement", null);
+          SNode result = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.SingleLineComment", null);
           SNodeOperations.replaceWithAnother(statement, result);
-          SLinkOperations.setTarget(result, "statement", statement, true);
+          SNode part = SLinkOperations.addNewChild(result, "commentPart", "jetbrains.mps.baseLanguage.structure.StatementCommentPart");
+          SLinkOperations.setTarget(part, "commentedStatement", statement, true);
           return result;
         }
 
@@ -3271,9 +3272,10 @@ __switch__:
       ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(concept, _context.getSourceNode()) {
         public SNode doSubstitute(String pattern) {
           SNode statement = SNodeOperations.cast(SNodeOperations.getParent(SNodeOperations.getParent(_context.getSourceNode())), "jetbrains.mps.baseLanguage.structure.Statement");
-          SNode result = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.CommentedStatement", null);
+          SNode result = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.SingleLineComment", null);
           SNodeOperations.replaceWithAnother(statement, result);
-          SLinkOperations.setTarget(result, "statement", statement, true);
+          SNode part = SLinkOperations.addNewChild(result, "commentPart", "jetbrains.mps.baseLanguage.structure.StatementCommentPart");
+          SLinkOperations.setTarget(part, "commentedStatement", statement, true);
           return result;
         }
 
