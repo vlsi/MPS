@@ -23,8 +23,10 @@
     <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1165449450252">
       <property name="name" value="test_shortSequence1" />
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1165449450253">
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1207788714662">
-          <property name="value" value="sequence with no memory" />
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636454325">
+          <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636454326">
+            <property name="text" value="sequence with no memory" />
+          </node>
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1165449466317">
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1165449466318">
@@ -179,8 +181,10 @@
     <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1165451039404">
       <property name="name" value="test_shortSequence2" />
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1165451039405">
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1207788734601">
-          <property name="value" value="sequence with memory" />
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636453175">
+          <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636453176">
+            <property name="text" value="sequence with memory" />
+          </node>
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1165453934275">
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1165453934276">
@@ -375,8 +379,10 @@
     <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1165597014892">
       <property name="name" value="test_longSequence1" />
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1165597014893">
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1207788746945">
-          <property name="value" value="sequence with no memory" />
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636454209">
+          <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636454210">
+            <property name="text" value="sequence with no memory" />
+          </node>
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1165597202156">
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1165597202157">
@@ -552,8 +558,10 @@
     <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1165597014964">
       <property name="name" value="test_longSequence2" />
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1165597014965">
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1207788763181">
-          <property name="value" value="sequence with memory" />
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636453479">
+          <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636453480">
+            <property name="text" value="sequence with memory" />
+          </node>
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1165597357929">
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1165597357930">
@@ -774,8 +782,10 @@
     <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1165600539956">
       <property name="name" value="test_1" />
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1165600539957">
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1207788783279">
-          <property name="value" value="inner iteration" />
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636453769">
+          <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636453770">
+            <property name="text" value="inner iteration" />
+          </node>
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1165600539962">
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1165600539963">

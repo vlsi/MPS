@@ -659,8 +659,10 @@
                     </node>
                   </node>
                 </node>
-                <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="8536718853245030623">
-                  <property name="value" value="Find the model(s) with custom container declarations" />
+                <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636453323">
+                  <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636453324">
+                    <property name="text" value="Find the model(s) with custom container declarations" />
+                  </node>
                 </node>
                 <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="8536718853245030624">
                   <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="8536718853245030625">

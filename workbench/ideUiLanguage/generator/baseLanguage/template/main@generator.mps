@@ -69,8 +69,10 @@
       </node>
       <node role="conditionFunction" type="jetbrains.mps.lang.generator.structure.BaseMappingRule_Condition" id="1203599879180">
         <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1203599879181">
-          <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1205755104355">
-            <property name="value" value="todo find a better way to express this" />
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636454107">
+            <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636454108">
+              <property name="text" value="todo find a better way to express this" />
+            </node>
           </node>
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1203600388180">
             <node role="expression" type="jetbrains.mps.baseLanguage.structure.EqualsExpression" id="1203600454001">

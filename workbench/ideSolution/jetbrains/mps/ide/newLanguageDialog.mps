@@ -850,8 +850,10 @@
             </node>
           </node>
         </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1226078170239">
-          <property name="value" value="add to vcs" />
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636453747">
+          <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636453748">
+            <property name="text" value="add to vcs" />
+          </node>
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1226077996282">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1226078002448">

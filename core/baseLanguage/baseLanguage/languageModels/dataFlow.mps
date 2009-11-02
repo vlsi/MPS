@@ -711,8 +711,10 @@
     <link role="conceptDeclaration" targetNodeId="1.1144231330558" resolveInfo="ForStatement" />
     <node role="builderBlock" type="jetbrains.mps.lang.dataFlow.structure.BuilderBlock" id="1206463694663">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1206463694664">
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1206987770209">
-          <property name="value" value="todo hack" />
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636453143">
+          <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636453144">
+            <property name="text" value="todo hack" />
+          </node>
         </node>
         <node role="statement" type="jetbrains.mps.lang.dataFlow.structure.EmitCodeForStatement" id="1206987765749">
           <node role="codeFor" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1206987767799">

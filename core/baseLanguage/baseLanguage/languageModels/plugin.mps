@@ -2497,8 +2497,10 @@
             </node>
           </node>
         </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1220551848987">
-          <property name="value" value=" Method panel" />
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636454411">
+          <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636454412">
+            <property name="text" value=" Method panel" />
+          </node>
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1220546971543">
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1220546971544">
@@ -2641,8 +2643,10 @@
             </node>
           </node>
         </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1220551867707">
-          <property name="value" value=" Parameters panel" />
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636453053">
+          <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636453054">
+            <property name="text" value=" Parameters panel" />
+          </node>
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1220551878070">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression" id="1220551880057">
@@ -2784,8 +2788,10 @@
             </node>
           </node>
         </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1220551991562">
-          <property name="value" value=" Visibility panel" />
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636453315">
+          <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636453316">
+            <property name="text" value=" Visibility panel" />
+          </node>
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1220551991563">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression" id="1220551991564">
@@ -2927,8 +2933,10 @@
             </node>
           </node>
         </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1220552100216">
-          <property name="value" value=" Preview panel" />
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636453389">
+          <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636453390">
+            <property name="text" value=" Preview panel" />
+          </node>
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1220552120079">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression" id="1220552120080">
@@ -3070,8 +3078,10 @@
             </node>
           </node>
         </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1220552243421">
-          <property name="value" value=" Messages panel" />
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636453129">
+          <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636453130">
+            <property name="text" value=" Messages panel" />
+          </node>
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1223658438036">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression" id="1223658438037">
@@ -24810,8 +24820,10 @@
             <node role="operand" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="1224263878158" />
           </node>
         </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1224263886726">
-          <property name="value" value="Add buttons" />
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636453699">
+          <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636453700">
+            <property name="text" value="Add buttons" />
+          </node>
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1224326646674">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1224326646675">
@@ -31272,8 +31284,10 @@
             </node>
           </node>
         </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1225374468137">
-          <property name="value" value=" Add throw intems" />
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636453477">
+          <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636453478">
+            <property name="text" value=" Add throw intems" />
+          </node>
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1225374468138">
           <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1225374468139">
@@ -35414,8 +35428,10 @@
             </node>
           </node>
         </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="155142699038773253">
-          <property name="value" value="searching for binary operation" />
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636454299">
+          <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636454300">
+            <property name="text" value="searching for binary operation" />
+          </node>
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="155142699038773254">
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="155142699038773255">
@@ -35434,8 +35450,10 @@
             </node>
           </node>
         </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="155142699038773260">
-          <property name="value" value="special cases" />
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636453627">
+          <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636453628">
+            <property name="text" value="special cases" />
+          </node>
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="155142699038773261">
           <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="155142699038773262">
@@ -35657,8 +35675,10 @@
             </node>
           </node>
         </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="155142699038773354">
-          <property name="value" value="rotate" />
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636454389">
+          <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636454390">
+            <property name="text" value="rotate" />
+          </node>
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="155142699038773355">
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="155142699038773356">

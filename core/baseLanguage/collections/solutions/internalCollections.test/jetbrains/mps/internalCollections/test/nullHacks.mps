@@ -514,8 +514,10 @@
                 </node>
                 <node role="inputSequence" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1225731172461" />
                 <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1225731168636">
-                  <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1225731177909">
-                    <property name="value" value=" must not throw exception" />
+                  <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636453655">
+                    <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636453656">
+                      <property name="text" value=" must not throw exception" />
+                    </node>
                   </node>
                   <node role="statement" type="jetbrains.mps.baseLanguage.structure.ThrowStatement" id="1225731194464">
                     <node role="throwable" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1225731195471">

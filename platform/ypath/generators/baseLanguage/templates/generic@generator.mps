@@ -487,8 +487,10 @@
         <node role="case" type="jetbrains.mps.lang.generator.structure.InlineSwitch_Case" id="1199729133009">
           <node role="conditionFunction" type="jetbrains.mps.lang.generator.structure.BaseMappingRule_Condition" id="1199729133010">
             <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1199729133011">
-              <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1199729138693">
-                <property name="value" value="children" />
+              <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636454163">
+                <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636454164">
+                  <property name="text" value="children" />
+                </node>
               </node>
               <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1199880817283">
                 <node role="expression" type="jetbrains.mps.baseLanguage.structure.EqualsExpression" id="1199880817284">
@@ -517,8 +519,10 @@
         <node role="case" type="jetbrains.mps.lang.generator.structure.InlineSwitch_Case" id="1199798796255">
           <node role="conditionFunction" type="jetbrains.mps.lang.generator.structure.BaseMappingRule_Condition" id="1199798796256">
             <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1199798796257">
-              <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1199798816950">
-                <property name="value" value="descendants" />
+              <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636454129">
+                <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636454130">
+                  <property name="text" value="descendants" />
+                </node>
               </node>
               <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1199880738548">
                 <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1199880738549">
@@ -593,8 +597,10 @@
         <node role="case" type="jetbrains.mps.lang.generator.structure.InlineSwitch_Case" id="1199813378574">
           <node role="conditionFunction" type="jetbrains.mps.lang.generator.structure.BaseMappingRule_Condition" id="1199813378575">
             <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1199813378576">
-              <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1199813386970">
-                <property name="value" value="siblings" />
+              <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636453841">
+                <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636453842">
+                  <property name="text" value="siblings" />
+                </node>
               </node>
               <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1199880850013">
                 <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1199880850014">
@@ -2670,8 +2676,10 @@
         <node role="case" type="jetbrains.mps.lang.generator.structure.InlineSwitch_Case" id="1199997838697">
           <node role="conditionFunction" type="jetbrains.mps.lang.generator.structure.BaseMappingRule_Condition" id="1199997838698">
             <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1199997838699">
-              <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1199997838700">
-                <property name="value" value="children" />
+              <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636453463">
+                <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636453464">
+                  <property name="text" value="children" />
+                </node>
               </node>
               <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1200052155442">
                 <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1200052155443">
@@ -2873,8 +2881,10 @@
         <node role="case" type="jetbrains.mps.lang.generator.structure.InlineSwitch_Case" id="1200052661741">
           <node role="conditionFunction" type="jetbrains.mps.lang.generator.structure.BaseMappingRule_Condition" id="1200052661742">
             <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1200052661743">
-              <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1200052661744">
-                <property name="value" value="children" />
+              <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636454013">
+                <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636454014">
+                  <property name="text" value="children" />
+                </node>
               </node>
               <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1200052661745">
                 <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1200052661746">
@@ -2958,8 +2968,10 @@
         <node role="case" type="jetbrains.mps.lang.generator.structure.InlineSwitch_Case" id="1199997838709">
           <node role="conditionFunction" type="jetbrains.mps.lang.generator.structure.BaseMappingRule_Condition" id="1199997838710">
             <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1199997838711">
-              <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1199997838712">
-                <property name="value" value="descendants" />
+              <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636453753">
+                <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636453754">
+                  <property name="text" value="descendants" />
+                </node>
               </node>
               <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1199997838713">
                 <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1199997838714">
@@ -3034,8 +3046,10 @@
         <node role="case" type="jetbrains.mps.lang.generator.structure.InlineSwitch_Case" id="1199997838742">
           <node role="conditionFunction" type="jetbrains.mps.lang.generator.structure.BaseMappingRule_Condition" id="1199997838743">
             <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1199997838744">
-              <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1199997838745">
-                <property name="value" value="siblings" />
+              <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636453993">
+                <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636453994">
+                  <property name="text" value="siblings" />
+                </node>
               </node>
               <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1199997838746">
                 <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1199997838747">

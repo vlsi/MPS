@@ -437,8 +437,10 @@
           <node role="cellMenuPart" type="jetbrains.mps.lang.editor.structure.CellMenuPart_PropertyPostfixHints" id="1239463555269">
             <node role="postfixesFunction" type="jetbrains.mps.lang.editor.structure.CellMenuPart_PropertyPostfixHints_GetPostfixes" id="1239463555270">
               <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1239463555271">
-                <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1239463562442">
-                  <property name="value" value=" copied from VariableDeclaration's editor" />
+                <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636453427">
+                  <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636453428">
+                    <property name="text" value=" copied from VariableDeclaration's editor" />
+                  </node>
                 </node>
                 <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1239463555272">
                   <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1239463555273">
@@ -503,11 +505,15 @@
                     </node>
                   </node>
                 </node>
-                <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1239463555301">
-                  <property name="value" value="we need this because of smart input" />
+                <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636454387">
+                  <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636454388">
+                    <property name="text" value="we need this because of smart input" />
+                  </node>
                 </node>
-                <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1239463555302">
-                  <property name="value" value="DO NOT REMOVE IT" />
+                <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636454287">
+                  <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636454288">
+                    <property name="text" value="DO NOT REMOVE IT" />
+                  </node>
                 </node>
                 <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1239463555303">
                   <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1239463555304">

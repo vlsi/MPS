@@ -386,8 +386,10 @@
           <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1178907996317">
             <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1184800063360">
               <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1184800063361">
-                <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1203116019273">
-                  <property name="value" value="inside mapper func or post-mapper function?" />
+                <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636454235">
+                  <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636454236">
+                    <property name="text" value="inside mapper func or post-mapper function?" />
+                  </node>
                 </node>
                 <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1203116192572">
                   <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1203116192573">
@@ -468,8 +470,10 @@
             </node>
             <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1184800575856">
               <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1184800575857">
-                <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1203116379495">
-                  <property name="value" value="inside mapper func or post-mapper function?" />
+                <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636453601">
+                  <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636453602">
+                    <property name="text" value="inside mapper func or post-mapper function?" />
+                  </node>
                 </node>
                 <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1203116393387">
                   <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1203116393388">
@@ -646,8 +650,10 @@
             </node>
           </node>
         </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1178907996352">
-          <property name="value" value="===============" />
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636453411">
+          <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636453412">
+            <property name="text" value="===============" />
+          </node>
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1178907996353">
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1178907996354">
@@ -764,8 +770,10 @@
                   <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1178667390815">
                     <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1178667428180">
                       <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1178667428181">
-                        <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1178667477624">
-                          <property name="value" value="the query is optional - continue 'enclosing macro' look-up" />
+                        <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636454051">
+                          <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636454052">
+                            <property name="text" value="the query is optional - continue 'enclosing macro' look-up" />
+                          </node>
                         </node>
                         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ContinueStatement" id="1178667500375" />
                       </node>
@@ -800,8 +808,10 @@
                   <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1178667527166">
                     <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1178667527167">
                       <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1178667527168">
-                        <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1178667527169">
-                          <property name="value" value="the query is optional - continue 'enclosing macro' look-up" />
+                        <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636453861">
+                          <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636453862">
+                            <property name="text" value="the query is optional - continue 'enclosing macro' look-up" />
+                          </node>
                         </node>
                         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ContinueStatement" id="1178667527170" />
                       </node>
@@ -832,8 +842,10 @@
                     </node>
                   </node>
                 </node>
-                <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1178667578205">
-                  <property name="value" value="========" />
+                <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636453917">
+                  <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636453918">
+                    <property name="text" value="========" />
+                  </node>
                 </node>
                 <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1178667585446">
                   <node role="expression" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression" id="1178667587754">
@@ -862,8 +874,10 @@
             </node>
           </node>
         </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1178667632123">
-          <property name="value" value="========" />
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636453541">
+          <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636453542">
+            <property name="text" value="========" />
+          </node>
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1178667637097">
           <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1178667637098">
@@ -909,8 +923,10 @@
       </node>
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1225934547832" />
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1225934547833">
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1225935645927">
-          <property name="value" value=" find first ancestor (inclusive) which has a template fragment attribute" />
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636453011">
+          <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636453012">
+            <property name="text" value=" find first ancestor (inclusive) which has a template fragment attribute" />
+          </node>
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1225935546078">
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1225935546079">
@@ -1560,8 +1576,10 @@
             </node>
           </node>
         </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1178670368555">
-          <property name="value" value="============" />
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636453069">
+          <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636453070">
+            <property name="text" value="============" />
+          </node>
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1178670506571">
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1178670506572">
@@ -1649,8 +1667,10 @@
           </node>
         </node>
       </node>
-      <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1195601339922">
-        <property name="value" value="--" />
+      <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636453739">
+        <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636453740">
+          <property name="text" value="--" />
+        </node>
       </node>
       <node role="statement" type="jetbrains.mps.baseLanguage.collections.structure.ForEachStatement" id="1195601346470">
         <node role="variable" type="jetbrains.mps.baseLanguage.collections.structure.ForEachVariable" id="1195601346471">
@@ -1999,8 +2019,10 @@
           </node>
         </node>
       </node>
-      <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1225234879798">
-        <property name="value" value=" ----" />
+      <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636454257">
+        <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636454258">
+          <property name="text" value=" ----" />
+        </node>
       </node>
       <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1225234883738">
         <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1225234883739">
@@ -2030,8 +2052,10 @@
         </node>
         <node role="ifFalseStatement" type="jetbrains.mps.baseLanguage.structure.BlockStatement" id="1225234940728">
           <node role="statements" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1225234940729">
-            <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1225235297924">
-              <property name="value" value=" concept of the wrapped template code" />
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636453945">
+              <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636453946">
+                <property name="text" value=" concept of the wrapped template code" />
+              </node>
             </node>
             <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1225234961699">
               <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1225234961700">

@@ -558,8 +558,10 @@
       <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1211368737873" />
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1211368737874" />
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1211368737875">
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1216147146312">
-          <property name="value" value="lingengen" />
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636453341">
+          <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636453342">
+            <property name="text" value="lingengen" />
+          </node>
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1216147151673">
           <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1216147151674">
@@ -569,8 +571,10 @@
             <property name="value" value="true" />
           </node>
         </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1216147159524">
-          <property name="value" value="-----" />
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636453419">
+          <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636453420">
+            <property name="text" value="-----" />
+          </node>
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1218574550027">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1218574552607">

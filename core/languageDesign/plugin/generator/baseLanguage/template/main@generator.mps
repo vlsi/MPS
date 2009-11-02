@@ -2561,8 +2561,10 @@
             <node role="propertyMacro$property_attribute$value" type="jetbrains.mps.lang.generator.structure.PropertyMacro" id="1215793639655">
               <node role="propertyValueFunction" type="jetbrains.mps.lang.generator.structure.PropertyMacro_GetPropertyValue" id="1215793639656">
                 <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1215793639657">
-                  <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1238246643009">
-                    <property name="value" value="todo this is a workaround for IDEA bug with using names in schemes instead of IDs" />
+                  <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636454309">
+                    <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636454310">
+                      <property name="text" value="todo this is a workaround for IDEA bug with using names in schemes instead of IDs" />
+                    </node>
                   </node>
                   <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1238246242655">
                     <node role="expression" type="jetbrains.mps.baseLanguage.structure.TernaryOperatorExpression" id="1238246245833">

@@ -340,8 +340,10 @@
       <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1205441808427" />
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1205441808428" />
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1205441808429">
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1205530276944">
-          <property name="value" value="single attribute access" />
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636453347">
+          <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636453348">
+            <property name="text" value="single attribute access" />
+          </node>
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1205441884706">
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1205441884707">
@@ -481,8 +483,10 @@
       <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1205530345134" />
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1205530345135" />
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1205530345136">
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1205530372389">
-          <property name="value" value="attribute list access" />
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636453547">
+          <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636453548">
+            <property name="text" value="attribute list access" />
+          </node>
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1205532208532">
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1205532208533">
@@ -737,8 +741,10 @@
             </node>
           </node>
         </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1205536339862">
-          <property name="value" value="not a link" />
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636454475">
+          <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636454476">
+            <property name="text" value="not a link" />
+          </node>
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1205536380189">
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1205536380190">

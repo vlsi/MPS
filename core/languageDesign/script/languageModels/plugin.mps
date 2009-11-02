@@ -164,7 +164,9 @@
               </node>
             </node>
           </node>
-          <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1215714778673" />
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636453073">
+            <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636453074" />
+          </node>
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1215714794128">
             <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1215714794129">
               <property name="name" value="menuBuilder" />
@@ -211,7 +213,9 @@
               </node>
             </node>
           </node>
-          <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1207493411063" />
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636453733">
+            <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636453734" />
+          </node>
           <node role="statement" type="jetbrains.mps.lang.plugin.structure.AddStatement" id="765469998256375243">
             <node role="item" type="jetbrains.mps.lang.plugin.structure.ActionInstance" id="765469998256375245">
               <link role="action" targetNodeId="8476129223775221515" resolveInfo="RunMigrationScripts" />
@@ -696,7 +700,9 @@
               </node>
             </node>
           </node>
-          <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1215715702681" />
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636453047">
+            <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636453048" />
+          </node>
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1215715702682">
             <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1215715702683">
               <property name="name" value="menuBuilder" />
@@ -743,7 +749,9 @@
               </node>
             </node>
           </node>
-          <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1215715702700" />
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636453461">
+            <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636453462" />
+          </node>
           <node role="statement" type="jetbrains.mps.lang.plugin.structure.AddStatement" id="765469998256375574">
             <node role="item" type="jetbrains.mps.lang.plugin.structure.ActionInstance" id="765469998256375575">
               <link role="action" targetNodeId="8476129223775221515" resolveInfo="RunMigrationScripts" />

@@ -8091,8 +8091,10 @@
       <link role="applicableConcept" targetNodeId="6.1068580123136" resolveInfo="StatementList" />
       <node role="conditionFunction" type="jetbrains.mps.lang.generator.structure.BaseMappingRule_Condition" id="1224448596468">
         <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1224448596469">
-          <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1224448597013">
-            <property name="value" value="Reduce skip statement to break statement" />
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636454063">
+            <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636454064">
+              <property name="text" value="Reduce skip statement to break statement" />
+            </node>
           </node>
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1224448597014">
             <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1224448597015">
@@ -8210,8 +8212,10 @@
       <link role="applicableConcept" targetNodeId="6.1068580123136" resolveInfo="StatementList" />
       <node role="conditionFunction" type="jetbrains.mps.lang.generator.structure.BaseMappingRule_Condition" id="1224452463389">
         <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1224452463390">
-          <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1224452464198">
-            <property name="value" value="Reduce stop statement to break statement" />
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636453309">
+            <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636453310">
+              <property name="text" value="Reduce stop statement to break statement" />
+            </node>
           </node>
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1224452464199">
             <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1224452464200">

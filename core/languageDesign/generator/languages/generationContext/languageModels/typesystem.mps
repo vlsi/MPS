@@ -41,8 +41,10 @@
   <node type="jetbrains.mps.lang.typesystem.structure.NonTypesystemRule" id="1216860931280">
     <property name="name" value="check_GenerationContextOp_Base" />
     <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1216860931281">
-      <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1216860931282">
-        <property name="value" value=" only applicable to 'genctx'" />
+      <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636454073">
+        <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636454074">
+          <property name="text" value=" only applicable to 'genctx'" />
+        </node>
       </node>
       <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1225121875077">
         <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1225121875078">
@@ -319,8 +321,10 @@
   <node type="jetbrains.mps.lang.typesystem.structure.InferenceRule" id="1217884943203">
     <property name="name" value="typeof_GenerationContextOp_GetCopiedOutputByInput" />
     <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1217884943204">
-      <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1217884955831">
-        <property name="value" value="type the same as input ?" />
+      <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636453639">
+        <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636453640">
+          <property name="text" value="type the same as input ?" />
+        </node>
       </node>
       <node role="statement" type="jetbrains.mps.lang.typesystem.structure.CreateEquationStatement" id="1217884997103">
         <node role="rightExpression" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause" id="1217885029447">
@@ -558,8 +562,10 @@
   <node type="jetbrains.mps.lang.typesystem.structure.InferenceRule" id="1892993302480476553">
     <property name="name" value="typeof_GenerationContextOp_ShowMessageBase" />
     <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1892993302480476554">
-      <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1892993302480476556">
-        <property name="value" value=" parameters: string, node" />
+      <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636453757">
+        <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636453758">
+          <property name="text" value=" parameters: string, node" />
+        </node>
       </node>
       <node role="statement" type="jetbrains.mps.lang.typesystem.structure.CreateLessThanInequationStatement" id="1892993302480476557">
         <node role="rightExpression" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause" id="1892993302480476558">

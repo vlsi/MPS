@@ -287,8 +287,10 @@
     <property name="modifiesModel" value="true" />
     <node role="codeBlock" type="jetbrains.mps.lang.generator.structure.MappingScript_CodeBlock" id="1195509228078">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1195509228079">
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1202245776394">
-          <property name="value" value="test1 only" />
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636453951">
+          <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636453952">
+            <property name="text" value="test1 only" />
+          </node>
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1202245790005">
           <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1202245790006">
@@ -398,8 +400,10 @@
     <property name="name" value="test_postMappingScript" />
     <node role="codeBlock" type="jetbrains.mps.lang.generator.structure.MappingScript_CodeBlock" id="1195510384869">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1195510384870">
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1202247012542">
-          <property name="value" value="test1 only" />
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636454223">
+          <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636454224">
+            <property name="text" value="test1 only" />
+          </node>
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1206478452703">
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1206478452704">

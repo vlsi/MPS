@@ -1073,8 +1073,10 @@
       <property name="isPrivate" value="false" />
       <link role="overriddenMethod" targetNodeId="1214840444586" resolveInfo="hasStaticMemebers" />
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1214840544946">
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1224581658285">
-          <property name="value" value="enums always have static operations: valueOf and values" />
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636453035">
+          <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636453036">
+            <property name="text" value="enums always have static operations: valueOf and values" />
+          </node>
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1214840549442">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1224581653817">
@@ -2580,11 +2582,15 @@
                   </node>
                   <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="6775591514230482866">
                     <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="6775591514230482867">
-                      <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="6935810692634799462">
-                        <property name="value" value="according to Java rules static inner classifiers can be only on the second level so we can" />
+                      <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636453915">
+                        <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636453916">
+                          <property name="text" value="according to Java rules static inner classifiers can be only on the second level so we can" />
+                        </node>
                       </node>
-                      <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="6935810692634799478">
-                        <property name="value" value="safely break here" />
+                      <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636453559">
+                        <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636453560">
+                          <property name="text" value="safely break here" />
+                        </node>
                       </node>
                       <node role="statement" type="jetbrains.mps.baseLanguage.structure.BreakStatement" id="6935810692634799446" />
                     </node>
@@ -5066,8 +5072,10 @@
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1239354014684">
           <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1239354014685">
-            <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1239354014686">
-              <property name="value" value="actually - no return type" />
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636454215">
+              <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636454216">
+                <property name="text" value="actually - no return type" />
+              </node>
             </node>
             <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1239354014687">
               <node role="expression" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression" id="1239354014688">
@@ -6847,8 +6855,10 @@
             </node>
           </node>
         </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="3359611512358101214">
-          <property name="value" value="todo do not show already implemented methods" />
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636454329">
+          <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636454330">
+            <property name="text" value="todo do not show already implemented methods" />
+          </node>
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ForeachStatement" id="1221637921582">
           <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1221637921583">
@@ -9240,8 +9250,10 @@
       <property name="isPrivate" value="false" />
       <link role="overriddenMethod" targetNodeId="1213877435747" resolveInfo="deriveType" />
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1213877433051">
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1213877433052">
-          <property name="value" value="is 'experssion' an actual argument in this method call?" />
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636453391">
+          <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636453392">
+            <property name="text" value="is 'experssion' an actual argument in this method call?" />
+          </node>
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1213877433053">
           <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1213877433054">

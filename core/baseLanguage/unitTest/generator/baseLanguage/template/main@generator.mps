@@ -854,8 +854,10 @@
           </node>
         </node>
         <node role="catchBody" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1172078364016">
-          <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1172078364017">
-            <property name="value" value="expected exception" />
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636454099">
+            <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636454100">
+              <property name="text" value="expected exception" />
+            </node>
           </node>
         </node>
       </node>

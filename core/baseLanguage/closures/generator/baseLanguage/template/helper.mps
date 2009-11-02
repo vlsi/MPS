@@ -5086,11 +5086,15 @@
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1225980035078">
           <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1225980035079">
-            <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1225979428162">
-              <property name="value" value=" TEMP HACK: proceed only if the &quot;right&quot; expression is a ClosureLiteral, balk otherwise" />
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636453595">
+              <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636453596">
+                <property name="text" value=" TEMP HACK: proceed only if the &quot;right&quot; expression is a ClosureLiteral, balk otherwise" />
+              </node>
             </node>
-            <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1225979488912">
-              <property name="value" value=" This may cause unexpected results, so please disable in case of difficulties generating some code" />
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636453767">
+              <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636453768">
+                <property name="text" value=" This may cause unexpected results, so please disable in case of difficulties generating some code" />
+              </node>
             </node>
             <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1225979408764">
               <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1225979408765">
@@ -9215,8 +9219,10 @@
                 <node role="type" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1207144547853" />
               </node>
             </node>
-            <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1207144734393">
-              <property name="value" value="didn't find any assignment with the var reference in the lvalue" />
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636453483">
+              <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636453484">
+                <property name="text" value="didn't find any assignment with the var reference in the lvalue" />
+              </node>
             </node>
             <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1207144725057">
               <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1240236962878">

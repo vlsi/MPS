@@ -92,8 +92,10 @@
       </node>
       <node role="propertySetter" type="jetbrains.mps.lang.constraints.structure.ConstraintFunction_PropertySetter" id="1213104856833">
         <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1213104856834">
-          <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1213104856835">
-            <property name="value" value="nothing - resolveInfo is read-only" />
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636454277">
+            <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636454278">
+              <property name="text" value="nothing - resolveInfo is read-only" />
+            </node>
           </node>
         </node>
       </node>

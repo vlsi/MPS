@@ -6031,8 +6031,10 @@
                 </node>
               </node>
             </node>
-            <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1169582607434">
-              <property name="value" value="all string-type-properties from implemented interfaces" />
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636453235">
+              <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636453236">
+                <property name="text" value="all string-type-properties from implemented interfaces" />
+              </node>
             </node>
             <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1196210468440">
               <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1196210468441">
@@ -6223,8 +6225,10 @@
                 </node>
               </node>
             </node>
-            <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1169582607491">
-              <property name="value" value="all boolean-type-properties from implemented interfaces" />
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636453745">
+              <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636453746">
+                <property name="text" value="all boolean-type-properties from implemented interfaces" />
+              </node>
             </node>
             <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1196210521042">
               <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1196210521043">
@@ -6415,8 +6419,10 @@
                 </node>
               </node>
             </node>
-            <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1169582607563">
-              <property name="value" value="all integer-type-properties from implemented interfaces" />
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636453975">
+              <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636453976">
+                <property name="text" value="all integer-type-properties from implemented interfaces" />
+              </node>
             </node>
             <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1196210544613">
               <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1196210544614">
@@ -6607,8 +6613,10 @@
                 </node>
               </node>
             </node>
-            <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1169582607620">
-              <property name="value" value="all enum-type-properties from implemented interfaces" />
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636453599">
+              <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636453600">
+                <property name="text" value="all enum-type-properties from implemented interfaces" />
+              </node>
             </node>
             <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1196210586372">
               <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1196210586373">
@@ -6802,8 +6810,10 @@
                 </node>
               </node>
             </node>
-            <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1169582939008">
-              <property name="value" value="all reference links with cardinality=1 and no specialization" />
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636453183">
+              <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636453184">
+                <property name="text" value="all reference links with cardinality=1 and no specialization" />
+              </node>
             </node>
             <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1169582939009">
               <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1206577010046">
@@ -6943,8 +6953,10 @@
                 </node>
               </node>
             </node>
-            <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1169583297007">
-              <property name="value" value="all reference links with cardinality=1 and specialization" />
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636453553">
+              <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636453554">
+                <property name="text" value="all reference links with cardinality=1 and specialization" />
+              </node>
             </node>
             <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1169583297008">
               <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1206577009991">
@@ -7087,8 +7099,10 @@
                 </node>
               </node>
             </node>
-            <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1169591070423">
-              <property name="value" value="all aggregation links with cardinality:1 and no specialization" />
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636453349">
+              <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636453350">
+                <property name="text" value="all aggregation links with cardinality:1 and no specialization" />
+              </node>
             </node>
             <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1169591070424">
               <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1206577010077">
@@ -7228,8 +7242,10 @@
                 </node>
               </node>
             </node>
-            <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1169592290009">
-              <property name="value" value="all aggregation links with cardinality:1 and specialization" />
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636453439">
+              <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636453440">
+                <property name="text" value="all aggregation links with cardinality:1 and specialization" />
+              </node>
             </node>
             <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1169592290010">
               <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1205253228884">
@@ -7411,8 +7427,10 @@
                 </node>
               </node>
             </node>
-            <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1169592375028">
-              <property name="value" value="all aggregation links with cardinality:n and no specialization" />
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636453021">
+              <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636453022">
+                <property name="text" value="all aggregation links with cardinality:n and no specialization" />
+              </node>
             </node>
             <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1169592375029">
               <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1206577010011">

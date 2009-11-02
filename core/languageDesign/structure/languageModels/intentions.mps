@@ -210,8 +210,10 @@
     </node>
     <node role="executeFunction" type="jetbrains.mps.lang.intentions.structure.ExecuteBlock" id="6895093993902311024">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="6895093993902311025">
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="6895093993902318294">
-          <property name="value" value="structure" />
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636453325">
+          <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636453326">
+            <property name="text" value="structure" />
+          </node>
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="6895093993902311040">
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="6895093993902311041">
@@ -314,8 +316,10 @@
           </node>
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.Statement" id="6895093993902318324" />
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="6895093993902318296">
-          <property name="value" value="find editor model" />
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636453059">
+          <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636453060">
+            <property name="text" value="find editor model" />
+          </node>
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="6895093993902312304">
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="6895093993902312305">
@@ -360,8 +364,10 @@
           </node>
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.Statement" id="6895093993902312768" />
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="6895093993902318298">
-          <property name="value" value="editor" />
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636453831">
+          <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636453832">
+            <property name="text" value="editor" />
+          </node>
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="6895093993902312782">
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="6895093993902312783">

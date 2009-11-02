@@ -73,8 +73,10 @@
             </node>
           </node>
           <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1170730182556">
-            <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1170730182557">
-              <property name="value" value="closure is not in class" />
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636453061">
+              <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636453062">
+                <property name="text" value="closure is not in class" />
+              </node>
             </node>
             <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1170730182566">
               <node role="expression" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression" id="1170730182567">
@@ -254,8 +256,10 @@
             </node>
           </node>
           <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1170874244163">
-            <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1170874244164">
-              <property name="value" value="closure is not in class" />
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636453425">
+              <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636453426">
+                <property name="text" value="closure is not in class" />
+              </node>
             </node>
             <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1170874244175">
               <node role="expression" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression" id="1170874244176">
@@ -287,11 +291,17 @@
       <node role="returnType" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1196274951335" />
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1196274932497" />
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1196274932498">
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1196276128617" />
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1196276144276">
-          <property name="value" value="must be invoked in $COPY-SRC$ because use ref on class in 'input model'" />
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636453997">
+          <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636453998" />
         </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1196276167496" />
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636454367">
+          <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636454368">
+            <property name="text" value="must be invoked in $COPY-SRC$ because use ref on class in 'input model'" />
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636453191">
+          <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636453192" />
+        </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1196275097909">
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1196275097910">
             <property name="name" value="enclosingClass" />
@@ -352,8 +362,10 @@
             </node>
           </node>
         </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1196276110239">
-          <property name="value" value="--- in closure" />
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636454313">
+          <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636454314">
+            <property name="text" value="--- in closure" />
+          </node>
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1196275284506">
           <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1196275284507">
@@ -438,8 +450,10 @@
             </node>
           </node>
         </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1196276277904">
-          <property name="value" value="--- in instance method" />
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636453201">
+          <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636453202">
+            <property name="text" value="--- in instance method" />
+          </node>
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1196276308421">
           <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1196276308422">
@@ -504,8 +518,10 @@
             </node>
           </node>
         </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1196276545825">
-          <property name="value" value="--- none of above" />
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636454293">
+          <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636454294">
+            <property name="text" value="--- none of above" />
+          </node>
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1196276566545">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1196276566546">
@@ -1322,8 +1338,10 @@
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1238941813057">
           <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1238941813058">
-            <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1238941840554">
-              <property name="value" value="init ClosureContextData" />
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636454239">
+              <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636454240">
+                <property name="text" value="init ClosureContextData" />
+              </node>
             </node>
             <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1238941855243">
               <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1238941855244">
@@ -1964,8 +1982,10 @@
             <property name="name" value="child" />
           </node>
           <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1238943810512">
-            <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1238943857876">
-              <property name="value" value="skip inner closure" />
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636453135">
+              <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636453136">
+                <property name="text" value="skip inner closure" />
+              </node>
             </node>
             <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1238943833030">
               <node role="condition" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1238943836507">

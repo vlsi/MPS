@@ -55,8 +55,10 @@
       <link role="applicableLink" targetNodeId="1.1153944258490" />
       <node role="searchScopeFactory" type="jetbrains.mps.lang.constraints.structure.ConstraintFunction_ReferentSearchScope_Factory" id="1213104847100">
         <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1213104847101">
-          <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1215738903626">
-            <property name="value" value="cycle-variable of enclosing 'foreach' cycle" />
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636453259">
+            <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636453260">
+              <property name="text" value="cycle-variable of enclosing 'foreach' cycle" />
+            </node>
           </node>
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1213104847102">
             <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1213104847103">

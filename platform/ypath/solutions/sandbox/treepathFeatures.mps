@@ -986,8 +986,10 @@
             </node>
           </node>
         </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1193330876060">
-          <property name="value" value="The following ypath construct should result in the same expression as above" />
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636453591">
+          <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636453592">
+            <property name="text" value="The following ypath construct should result in the same expression as above" />
+          </node>
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1192886672526">
           <node role="expression" type="jetbrains.mps.ypath.structure.TreePathOperationExpression" id="1192887318829">
@@ -1027,8 +1029,10 @@
             </node>
           </node>
         </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1199446483432">
-          <property name="value" value="Another pair of tests" />
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636454007">
+          <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636454008">
+            <property name="text" value="Another pair of tests" />
+          </node>
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1199446450087">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1217625321544">
@@ -1137,12 +1141,16 @@
             </node>
           </node>
         </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1199714392203">
-          <property name="value" value="And another one" />
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636453697">
+          <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636453698">
+            <property name="text" value="And another one" />
+          </node>
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.CommentedStatementsBlock" id="1223661021121">
-          <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1223661025566">
-            <property name="value" value=" way too complicated" />
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636453531">
+            <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636453532">
+              <property name="text" value=" way too complicated" />
+            </node>
           </node>
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1199714415105">
             <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1217625326795">
@@ -1223,8 +1231,10 @@
             </node>
           </node>
         </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1197466816825">
-          <property name="value" value="Following is just a test" />
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636454001">
+          <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636454002">
+            <property name="text" value="Following is just a test" />
+          </node>
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1197466841683">
           <node role="expression" type="jetbrains.mps.ypath.structure.TreePathOperationExpression" id="1197466849567">
@@ -1352,8 +1362,10 @@
             </node>
           </node>
         </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="7098165822328155743">
-          <property name="value" value="!@#$&amp;" />
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636453039">
+          <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636453040">
+            <property name="text" value="!@#$&amp;" />
+          </node>
         </node>
       </node>
       <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1184773021187">

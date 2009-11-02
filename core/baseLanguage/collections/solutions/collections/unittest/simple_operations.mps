@@ -1358,8 +1358,10 @@
               </node>
             </node>
           </node>
-          <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1205787969632">
-            <property name="value" value="null test" />
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636453905">
+            <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636453906">
+              <property name="text" value="null test" />
+            </node>
           </node>
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1205787985087">
             <node role="expression" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression" id="1205787987183">
@@ -1525,8 +1527,10 @@
               <property name="value" value="4" />
             </node>
           </node>
-          <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1176940636576">
-            <property name="value" value="order in s3 is undefined" />
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636453941">
+            <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636453942">
+              <property name="text" value="order in s3 is undefined" />
+            </node>
           </node>
           <node role="statement" type="jetbrains.mps.baseLanguage.unitTest.structure.AssertTrue" id="1176942485915">
             <node role="condition" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1205784684211">
@@ -1576,8 +1580,10 @@
               </node>
             </node>
           </node>
-          <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1205788908004">
-            <property name="value" value="null test" />
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636453125">
+            <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636453126">
+              <property name="text" value="null test" />
+            </node>
           </node>
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1205788920584">
             <node role="expression" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression" id="1205788922633">
@@ -3638,8 +3644,10 @@
               </node>
             </node>
           </node>
-          <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1205787686490">
-            <property name="value" value="null test" />
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636454469">
+            <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636454470">
+              <property name="text" value="null test" />
+            </node>
           </node>
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1205787723039">
             <node role="expression" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression" id="1205787724931">

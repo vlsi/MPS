@@ -230,14 +230,20 @@
       <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1184785136941" />
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1184784519776" />
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1184784519777">
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1184785302311">
-          <property name="value" value="1. Take input expression" />
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636453865">
+          <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636453866">
+            <property name="text" value="1. Take input expression" />
+          </node>
         </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1184785326324">
-          <property name="value" value="2. Assert that it is coerceable to sequence" />
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636454439">
+          <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636454440">
+            <property name="text" value="2. Assert that it is coerceable to sequence" />
+          </node>
         </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1184785340253">
-          <property name="value" value="3. Assign the sequence type to the target" />
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636454447">
+          <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636454448">
+            <property name="text" value="3. Assign the sequence type to the target" />
+          </node>
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1184784590140">
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1184784590141">
@@ -331,14 +337,20 @@
       <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1184844804649" />
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1184844804650" />
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1184844804651">
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1184844804652">
-          <property name="value" value="1. Take input expression" />
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636453167">
+          <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636453168">
+            <property name="text" value="1. Take input expression" />
+          </node>
         </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1184844804653">
-          <property name="value" value="2. Assert that it is coerceable to sequence" />
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636453043">
+          <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636453044">
+            <property name="text" value="2. Assert that it is coerceable to sequence" />
+          </node>
         </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1184844804654">
-          <property name="value" value="3. Assign the sequence element type to the target" />
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636453817">
+          <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636453818">
+            <property name="text" value="3. Assign the sequence element type to the target" />
+          </node>
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1184844804655">
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1184844804656">
@@ -422,14 +434,20 @@
       <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1184850380051" />
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1184850380052" />
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1184850380053">
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1184850451252">
-          <property name="value" value="1. Take input expression" />
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636454193">
+          <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636454194">
+            <property name="text" value="1. Take input expression" />
+          </node>
         </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1184850451255">
-          <property name="value" value="2. Assert that it is coerceable to sequence" />
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636453667">
+          <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636453668">
+            <property name="text" value="2. Assert that it is coerceable to sequence" />
+          </node>
         </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1184850451256">
-          <property name="value" value="3. Assert that target has sequence element type" />
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636453447">
+          <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636453448">
+            <property name="text" value="3. Assert that target has sequence element type" />
+          </node>
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1184850451257">
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1184850451258">
@@ -2105,8 +2123,10 @@
             </node>
           </node>
         </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1179955128736">
-          <property name="value" value="the following code is not reachable " />
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636453089">
+          <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636453090">
+            <property name="text" value="the following code is not reachable " />
+          </node>
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1179160694849">
           <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1179160694850">
@@ -2121,11 +2141,15 @@
             </node>
           </node>
         </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1179160662402">
-          <property name="value" value="==========" />
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636453509">
+          <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636453510">
+            <property name="text" value="==========" />
+          </node>
         </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1179160662403">
-          <property name="value" value="TEMP FIX FOR DNQ 1" />
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636454465">
+          <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636454466">
+            <property name="text" value="TEMP FIX FOR DNQ 1" />
+          </node>
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1179160721395">
           <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1179160721396">
@@ -2189,20 +2213,30 @@
             </node>
           </node>
         </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1179160671612">
-          <property name="value" value="END TEMP FIX" />
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636453031">
+          <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636453032">
+            <property name="text" value="END TEMP FIX" />
+          </node>
         </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1179160671611">
-          <property name="value" value="==========" />
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636453693">
+          <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636453694">
+            <property name="text" value="==========" />
+          </node>
         </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1179161049677">
-          <property name="value" value="==========" />
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636454341">
+          <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636454342">
+            <property name="text" value="==========" />
+          </node>
         </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1179161049678">
-          <property name="value" value="TEMP FIX FOR DNQ" />
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636453301">
+          <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636453302">
+            <property name="text" value="TEMP FIX FOR DNQ" />
+          </node>
         </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1179161049679">
-          <property name="value" value="TODO: extract generics information" />
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636453987">
+          <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636453988">
+            <property name="text" value="TODO: extract generics information" />
+          </node>
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1179161049680">
           <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1179161049681">
@@ -2405,8 +2439,10 @@
                 </node>
               </node>
             </node>
-            <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1179161049747">
-              <property name="value" value="==========" />
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636453357">
+              <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636453358">
+                <property name="text" value="==========" />
+              </node>
             </node>
             <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1179161049748">
               <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1179161049749">
@@ -2501,11 +2537,15 @@
             </node>
           </node>
         </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1179161049782">
-          <property name="value" value="END FIX" />
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636453623">
+          <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636453624">
+            <property name="text" value="END FIX" />
+          </node>
         </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1179161049783">
-          <property name="value" value="==========" />
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636453889">
+          <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636453890">
+            <property name="text" value="==========" />
+          </node>
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1179161450845">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1179161452885" />
@@ -3760,8 +3800,10 @@
         </node>
         <node role="inequationGroup" type="jetbrains.mps.lang.typesystem.structure.DefaultGroupReference" id="5970100369440882808" />
       </node>
-      <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1237302831457">
-        <property name="value" value="todo: unmeet closure" />
+      <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636453359">
+        <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636453360">
+          <property name="text" value="todo: unmeet closure" />
+        </node>
       </node>
       <node role="statement" type="jetbrains.mps.lang.typesystem.structure.CreateLessThanInequationStatement" id="1205680788992">
         <node role="leftExpression" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause" id="1205680791172">

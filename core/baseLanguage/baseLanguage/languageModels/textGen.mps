@@ -4937,8 +4937,10 @@
                     </node>
                   </node>
                 </node>
-                <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1235584004124">
-                  <property name="value" value="rollback changes" />
+                <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636454205">
+                  <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636454206">
+                    <property name="text" value="rollback changes" />
+                  </node>
                 </node>
                 <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1235584018907">
                   <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1237805275909">
@@ -7205,8 +7207,10 @@
             </node>
           </node>
         </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1235740635517">
-          <property name="value" value="new" />
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636453709">
+          <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636453710">
+            <property name="text" value="new" />
+          </node>
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1237557836434">
           <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1237557836435">

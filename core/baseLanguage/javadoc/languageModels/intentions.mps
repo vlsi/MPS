@@ -126,8 +126,10 @@
             </node>
           </node>
         </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="4195442653257222450">
-          <property name="value" value=" Method parameters" />
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636454039">
+          <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636454040">
+            <property name="text" value=" Method parameters" />
+          </node>
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.collections.structure.ForEachStatement" id="8465538089690919857">
           <node role="variable" type="jetbrains.mps.baseLanguage.collections.structure.ForEachVariable" id="8465538089690919858">
@@ -201,8 +203,10 @@
           </node>
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.Statement" id="4195442653257222497" />
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="4195442653257222499">
-          <property name="value" value=" Type variables" />
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636453751">
+          <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636453752">
+            <property name="text" value=" Type variables" />
+          </node>
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.collections.structure.ForEachStatement" id="2068944020170311118">
           <node role="variable" type="jetbrains.mps.baseLanguage.collections.structure.ForEachVariable" id="2068944020170311119">
@@ -276,8 +280,10 @@
           </node>
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.Statement" id="4195442653257222466" />
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="4195442653257222452">
-          <property name="value" value=" Thrown exceptions" />
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636453725">
+          <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636453726">
+            <property name="text" value=" Thrown exceptions" />
+          </node>
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.collections.structure.ForEachStatement" id="5858074156537576506">
           <node role="variable" type="jetbrains.mps.baseLanguage.collections.structure.ForEachVariable" id="5858074156537576507">
@@ -348,8 +354,10 @@
           </node>
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.Statement" id="4195442653257222500" />
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="4195442653257222454">
-          <property name="value" value=" Return value" />
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636453057">
+          <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636453058">
+            <property name="text" value=" Return value" />
+          </node>
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="5858074156537614466">
           <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="5858074156537614467">
@@ -442,8 +450,10 @@
             </node>
           </node>
         </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="8970989240998908103">
-          <property name="value" value=" TODO" />
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636453967">
+          <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636453968">
+            <property name="text" value=" TODO" />
+          </node>
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="8970989240998908075">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="8970989240998908082">
@@ -895,8 +905,10 @@
           </node>
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.Statement" id="2068944020170434470" />
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="2068944020170434436">
-          <property name="value" value=" Type variables" />
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636453099">
+          <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636453100">
+            <property name="text" value=" Type variables" />
+          </node>
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.collections.structure.ForEachStatement" id="2068944020170434437">
           <node role="variable" type="jetbrains.mps.baseLanguage.collections.structure.ForEachVariable" id="2068944020170434438">

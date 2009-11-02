@@ -1343,14 +1343,20 @@
                   </node>
                 </node>
               </node>
-              <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="6635062342941213670">
-                <property name="value" value="by default 'alias' is not shown." />
+              <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636454011">
+                <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636454012">
+                  <property name="text" value="by default 'alias' is not shown." />
+                </node>
               </node>
-              <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="6635062342941213671">
-                <property name="value" value="if you need presentation like alias(...)-&gt;.." />
+              <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636453491">
+                <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636453492">
+                  <property name="text" value="if you need presentation like alias(...)-&gt;.." />
+                </node>
               </node>
-              <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="6635062342941213672">
-                <property name="value" value="then use the ConceptFunctionAliased_Component" />
+              <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636454237">
+                <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636454238">
+                  <property name="text" value="then use the ConceptFunctionAliased_Component" />
+                </node>
               </node>
               <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="6635062342941213673">
                 <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="6635062342941213674">

@@ -283,11 +283,15 @@
   <node type="jetbrains.mps.lang.typesystem.structure.InferenceRule" id="1200829815877">
     <property name="name" value="typeof_ReturnStatement" />
     <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1200829815878">
-      <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1201523969267">
-        <property name="value" value="returns must be allowed until we find a way to implement early returns" />
+      <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636453907">
+        <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636453908">
+          <property name="text" value="returns must be allowed until we find a way to implement early returns" />
+        </node>
       </node>
-      <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1201524005817">
-        <property name="value" value="http://www.javac.info" />
+      <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636453875">
+        <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636453876">
+          <property name="text" value="http://www.javac.info" />
+        </node>
       </node>
       <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1200829846975">
         <node role="condition" type="jetbrains.mps.baseLanguage.structure.AndExpression" id="1201523961913">
@@ -404,8 +408,10 @@
           </node>
         </node>
       </node>
-      <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1184419808215374637">
-        <property name="value" value="priority should be less than priority of typeof_ClosureLiteral type-creating inequations" />
+      <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636454419">
+        <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636454420">
+          <property name="text" value="priority should be less than priority of typeof_ClosureLiteral type-creating inequations" />
+        </node>
       </node>
       <node role="statement" type="jetbrains.mps.lang.typesystem.structure.CreateLessThanInequationStatement" id="4160512568111333309">
         <property name="inequationPriority" value="0" />
@@ -941,8 +947,10 @@
             <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1202742329277">
               <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1225908134581">
                 <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1225908134582">
-                  <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1225908196345">
-                    <property name="value" value=" dirty hack" />
+                  <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636453765">
+                    <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636453766">
+                      <property name="text" value=" dirty hack" />
+                    </node>
                   </node>
                   <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1225908155519">
                     <node role="expression" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression" id="1225908155520">
@@ -2696,8 +2704,10 @@
                 </node>
               </node>
             </node>
-            <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1229010833383">
-              <property name="value" value=" fall through" />
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636453611">
+              <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636453612">
+                <property name="text" value=" fall through" />
+              </node>
             </node>
           </node>
         </node>

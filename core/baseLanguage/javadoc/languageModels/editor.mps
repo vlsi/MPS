@@ -2356,8 +2356,10 @@
           </node>
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.Statement" id="6612597108005951502" />
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="2099616960328878768">
-          <property name="value" value=" Processing &lt;Backspace&gt;" />
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636454059">
+          <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636454060">
+            <property name="text" value=" Processing &lt;Backspace&gt;" />
+          </node>
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="6612597108005244514">
           <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="6612597108005244515">
@@ -2497,8 +2499,10 @@
               </node>
               <node role="elsifClauses" type="jetbrains.mps.baseLanguage.structure.ElsifClause" id="6612597108005492457">
                 <node role="statementList" type="jetbrains.mps.baseLanguage.structure.StatementList" id="6612597108005492459">
-                  <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="2099616960327675267">
-                    <property name="value" value=" Caret is at the beginning of part" />
+                  <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636453087">
+                    <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636453088">
+                      <property name="text" value=" Caret is at the beginning of part" />
+                    </node>
                   </node>
                   <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="2099616960328962714">
                     <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="2099616960328962715">
@@ -2566,16 +2570,20 @@
                     <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="6612597108006582453">
                       <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="6612597108006583750">
                         <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="6612597108006583751">
-                          <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="2099616960327675269">
-                            <property name="value" value=" This is beginning of comment lines container" />
+                          <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636454351">
+                            <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636454352">
+                              <property name="text" value=" This is beginning of comment lines container" />
+                            </node>
                           </node>
                           <node role="statement" type="jetbrains.mps.lang.plugin.structure.ExecuteCommandStatement" id="9042833497007541249">
                             <node role="commandClosureLiteral" type="jetbrains.mps.lang.plugin.structure.CommandClosureLiteral" id="9042833497007541250">
                               <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="9042833497007541251">
                                 <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="9042833497007541252">
                                   <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="9042833497007541253">
-                                    <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="9042833497007541254">
-                                      <property name="value" value=" Shouldn't delete documentation comment" />
+                                    <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636453207">
+                                      <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636453208">
+                                        <property name="text" value=" Shouldn't delete documentation comment" />
+                                      </node>
                                     </node>
                                   </node>
                                   <node role="condition" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="9042833497007541255">
@@ -2661,8 +2669,10 @@
                         </node>
                         <node role="ifFalseStatement" type="jetbrains.mps.baseLanguage.structure.BlockStatement" id="6612597108006583774">
                           <node role="statements" type="jetbrains.mps.baseLanguage.structure.StatementList" id="6612597108006583775">
-                            <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="6612597108006866141">
-                              <property name="value" value=" This is the beginning of line" />
+                            <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636453487">
+                              <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636453488">
+                                <property name="text" value=" This is the beginning of line" />
+                              </node>
                             </node>
                             <node role="statement" type="jetbrains.mps.lang.plugin.structure.ExecuteCommandStatement" id="5521685164202233232">
                               <node role="commandClosureLiteral" type="jetbrains.mps.lang.plugin.structure.CommandClosureLiteral" id="5521685164202233233">
@@ -2886,8 +2896,10 @@
                     </node>
                     <node role="ifFalseStatement" type="jetbrains.mps.baseLanguage.structure.BlockStatement" id="6612597108006583726">
                       <node role="statements" type="jetbrains.mps.baseLanguage.structure.StatementList" id="6612597108006583727">
-                        <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="2099616960327675271">
-                          <property name="value" value=" Caret is at the beginning of text part inside comment line" />
+                        <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636454015">
+                          <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636454016">
+                            <property name="text" value=" Caret is at the beginning of text part inside comment line" />
+                          </node>
                         </node>
                         <node role="statement" type="jetbrains.mps.lang.plugin.structure.ExecuteCommandStatement" id="1901211815201709350">
                           <node role="commandClosureLiteral" type="jetbrains.mps.lang.plugin.structure.CommandClosureLiteral" id="1901211815201709351">
@@ -3302,8 +3314,10 @@
           </node>
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.Statement" id="2099616960328878776" />
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="2099616960328878779">
-          <property name="value" value=" Processing &lt;Delete&gt;" />
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636453467">
+          <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636453468">
+            <property name="text" value=" Processing &lt;Delete&gt;" />
+          </node>
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="2099616960328878780">
           <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="2099616960328878781">
@@ -3449,8 +3463,10 @@
               </node>
               <node role="elsifClauses" type="jetbrains.mps.baseLanguage.structure.ElsifClause" id="2099616960328878849">
                 <node role="statementList" type="jetbrains.mps.baseLanguage.structure.StatementList" id="2099616960328878850">
-                  <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="2099616960328878851">
-                    <property name="value" value=" Caret is at the end of part" />
+                  <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636453399">
+                    <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636453400">
+                      <property name="text" value=" Caret is at the end of part" />
+                    </node>
                   </node>
                   <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="2099616960329053880">
                     <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="2099616960329053881">
@@ -3518,16 +3534,20 @@
                     <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="2099616960328878860">
                       <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="2099616960328878861">
                         <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="2099616960328878862">
-                          <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="2099616960328878863">
-                            <property name="value" value=" This is end of comment lines container" />
+                          <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636454081">
+                            <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636454082">
+                              <property name="text" value=" This is end of comment lines container" />
+                            </node>
                           </node>
                           <node role="statement" type="jetbrains.mps.lang.plugin.structure.ExecuteCommandStatement" id="2099616960328878864">
                             <node role="commandClosureLiteral" type="jetbrains.mps.lang.plugin.structure.CommandClosureLiteral" id="2099616960328878865">
                               <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="2099616960328878866">
                                 <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="2099616960328878867">
                                   <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="2099616960328878868">
-                                    <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="2099616960328878869">
-                                      <property name="value" value=" Shouldn't delete documentation comment" />
+                                    <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636453981">
+                                      <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636453982">
+                                        <property name="text" value=" Shouldn't delete documentation comment" />
+                                      </node>
                                     </node>
                                   </node>
                                   <node role="condition" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="2099616960328878870">
@@ -3613,8 +3633,10 @@
                         </node>
                         <node role="ifFalseStatement" type="jetbrains.mps.baseLanguage.structure.BlockStatement" id="2099616960328878913">
                           <node role="statements" type="jetbrains.mps.baseLanguage.structure.StatementList" id="2099616960328878914">
-                            <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="2099616960328878915">
-                              <property name="value" value=" This is the end of line" />
+                            <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636454487">
+                              <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636454488">
+                                <property name="text" value=" This is the end of line" />
+                              </node>
                             </node>
                             <node role="statement" type="jetbrains.mps.lang.plugin.structure.ExecuteCommandStatement" id="2099616960328878916">
                               <node role="commandClosureLiteral" type="jetbrains.mps.lang.plugin.structure.CommandClosureLiteral" id="2099616960328878917">
@@ -3831,8 +3853,10 @@
                     </node>
                     <node role="ifFalseStatement" type="jetbrains.mps.baseLanguage.structure.BlockStatement" id="2099616960328879009">
                       <node role="statements" type="jetbrains.mps.baseLanguage.structure.StatementList" id="2099616960328879010">
-                        <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="2099616960328879011">
-                          <property name="value" value=" Caret is at the end of text part inside comment line" />
+                        <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636454463">
+                          <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636454464">
+                            <property name="text" value=" Caret is at the end of text part inside comment line" />
+                          </node>
                         </node>
                         <node role="statement" type="jetbrains.mps.lang.plugin.structure.ExecuteCommandStatement" id="2099616960328879012">
                           <node role="commandClosureLiteral" type="jetbrains.mps.lang.plugin.structure.CommandClosureLiteral" id="2099616960328879013">

@@ -1425,8 +1425,10 @@
         <property name="methodName" value="selectMany" />
         <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1226309858980" />
         <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1226309858981">
-          <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1226320027446">
-            <property name="value" value=" only testing compileability of the generated code" />
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636453213">
+            <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636453214">
+              <property name="text" value=" only testing compileability of the generated code" />
+            </node>
           </node>
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1226309880745">
             <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1226309880746">

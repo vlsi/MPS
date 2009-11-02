@@ -845,8 +845,10 @@
       <link role="applicableConcept" targetNodeId="1.1145552977093" />
       <node role="setupFunction" type="jetbrains.mps.lang.actions.structure.NodeSetupFunction" id="1187945171250">
         <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1187945171251">
-          <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1227002277209">
-            <property name="value" value=" moved to substitute/expression/new" />
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636453775">
+            <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636453776">
+              <property name="text" value=" moved to substitute/expression/new" />
+            </node>
           </node>
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.CommentedStatementsBlock" id="1227010509482">
             <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1187945256404">
@@ -859,8 +861,10 @@
                 </node>
               </node>
               <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1187945256409">
-                <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1187945256410">
-                  <property name="value" value="Looking for the original node is required because sampleNode is just a copy" />
+                <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636453957">
+                  <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636453958">
+                    <property name="text" value="Looking for the original node is required because sampleNode is just a copy" />
+                  </node>
                 </node>
                 <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1187945256411">
                   <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1187945256412">
@@ -2924,8 +2928,10 @@
                   </node>
                 </node>
               </node>
-              <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1201906227839">
-                <property name="value" value="skip Closure" />
+              <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636454143">
+                <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636454144">
+                  <property name="text" value="skip Closure" />
+                </node>
               </node>
               <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1177399123274">
                 <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1177399123275">
@@ -5375,8 +5381,10 @@
           </node>
           <node role="query" type="jetbrains.mps.lang.actions.structure.QueryFunction_ParameterizedSubstitute_Query" id="1218491527254">
             <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1218491527255">
-              <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1218494507034">
-                <property name="value" value=" 'qualified this' - only in inner classes" />
+              <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636453009">
+                <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636453010">
+                  <property name="text" value=" 'qualified this' - only in inner classes" />
+                </node>
               </node>
               <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1218491730977">
                 <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1218491800661">
@@ -6469,8 +6477,10 @@
                   </node>
                 </node>
               </node>
-              <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1212777136221">
-                <property name="value" value="replace all type vars with Object" />
+              <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636454311">
+                <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636454312">
+                  <property name="text" value="replace all type vars with Object" />
+                </node>
               </node>
               <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1212777231541">
                 <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1212777231542">
@@ -8948,8 +8958,10 @@
                   <node role="initializer" type="jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_currentTargetNode" id="1227007548675" />
                 </node>
               </node>
-              <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1227004927473">
-                <property name="value" value=" copied from BL_nodeFactories" />
+              <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636453063">
+                <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636453064">
+                  <property name="text" value=" copied from BL_nodeFactories" />
+                </node>
               </node>
               <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1227004927474">
                 <node role="condition" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1227004927475">
@@ -8963,8 +8975,10 @@
                   </node>
                 </node>
                 <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1227004927479">
-                  <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1227004927480">
-                    <property name="value" value="Looking for the original node is required because sampleNode is just a copy" />
+                  <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636453279">
+                    <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636453280">
+                      <property name="text" value="Looking for the original node is required because sampleNode is just a copy" />
+                    </node>
                   </node>
                   <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1227004927481">
                     <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1227004927482">

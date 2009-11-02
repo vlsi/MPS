@@ -458,11 +458,15 @@
             </node>
           </node>
         </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1203973473054">
-          <property name="value" value="replacement FieldReference -&gt; InstanceMethodCall works fine in all cases" />
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636453711">
+          <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636453712">
+            <property name="text" value="replacement FieldReference -&gt; InstanceMethodCall works fine in all cases" />
+          </node>
         </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1203973598181">
-          <property name="value" value="operand: InstanceMethodCall" />
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636453261">
+          <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636453262">
+            <property name="text" value="operand: InstanceMethodCall" />
+          </node>
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1203973429013">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204585141480">
@@ -477,8 +481,10 @@
             <node role="operation" type="jetbrains.mps.baseLanguage.structure.FieldReferenceOperation" id="1204585141481" />
           </node>
         </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1203973745792">
-          <property name="value" value="operand: DotExpression with InstanceMethodCallOperation" />
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636454375">
+          <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636454376">
+            <property name="text" value="operand: DotExpression with InstanceMethodCallOperation" />
+          </node>
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1203973384288">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1203973384289">
@@ -493,11 +499,15 @@
             </node>
           </node>
         </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1203973884227">
-          <property name="value" value="------" />
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636454207">
+          <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636454208">
+            <property name="text" value="------" />
+          </node>
         </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1203973785137">
-          <property name="value" value="choosing of IOperation never work" />
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636453689">
+          <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636453690">
+            <property name="text" value="choosing of IOperation never work" />
+          </node>
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1203973856499">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1203973914276">

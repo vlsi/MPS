@@ -85,8 +85,10 @@
       <link role="applicableLink" targetNodeId="1.1204832665473" />
       <node role="searchScopeFactory" type="jetbrains.mps.lang.constraints.structure.ConstraintFunction_ReferentSearchScope_Factory" id="1213104840287">
         <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1213104840288">
-          <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1215738903616">
-            <property name="value" value="all 'property' annotation links" />
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636453805">
+            <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636453806">
+              <property name="text" value="all 'property' annotation links" />
+            </node>
           </node>
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1213104840289">
             <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1213104840290">
@@ -393,8 +395,10 @@
       <link role="applicableLink" targetNodeId="1.1175618223511" />
       <node role="searchScopeFactory" type="jetbrains.mps.lang.constraints.structure.ConstraintFunction_ReferentSearchScope_Factory" id="1213104847319">
         <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1213104847320">
-          <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1215738903592">
-            <property name="value" value="concept links from hierarchy" />
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636454349">
+            <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636454350">
+              <property name="text" value="concept links from hierarchy" />
+            </node>
           </node>
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1213104847321">
             <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1213104847322">
@@ -514,8 +518,10 @@
       <link role="applicableLink" targetNodeId="1.1138056516764" />
       <node role="searchScopeFactory" type="jetbrains.mps.lang.constraints.structure.ConstraintFunction_ReferentSearchScope_Factory" id="1213104847490">
         <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1213104847491">
-          <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1215738903590">
-            <property name="value" value="links with cardinality 1 or 0..1" />
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636454449">
+            <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636454450">
+              <property name="text" value="links with cardinality 1 or 0..1" />
+            </node>
           </node>
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1213104847492">
             <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1213104847493">
@@ -713,8 +719,10 @@
       <link role="applicableLink" targetNodeId="1.1138056546658" />
       <node role="searchScopeFactory" type="jetbrains.mps.lang.constraints.structure.ConstraintFunction_ReferentSearchScope_Factory" id="1213104855758">
         <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1213104855759">
-          <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1215738903589">
-            <property name="value" value="links with cardinality 0..n or 1..n" />
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636453497">
+            <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636453498">
+              <property name="text" value="links with cardinality 0..n or 1..n" />
+            </node>
           </node>
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1213104855760">
             <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1213104855761">
@@ -790,8 +798,10 @@
       <link role="applicableLink" targetNodeId="1.1204848911285" />
       <node role="searchScopeFactory" type="jetbrains.mps.lang.constraints.structure.ConstraintFunction_ReferentSearchScope_Factory" id="1213104856013">
         <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1213104856014">
-          <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1215738903620">
-            <property name="value" value="all 'link' annotation links" />
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636453671">
+            <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636453672">
+              <property name="text" value="all 'link' annotation links" />
+            </node>
           </node>
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1213104856015">
             <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1213104856016">
@@ -1068,8 +1078,10 @@
               </node>
             </node>
           </node>
-          <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1213104859170">
-            <property name="value" value="reference only?" />
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636453305">
+            <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636453306">
+              <property name="text" value="reference only?" />
+            </node>
           </node>
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1213104859171">
             <node role="expression" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression" id="1213104859172">
@@ -1128,8 +1140,10 @@
       <link role="applicableLink" targetNodeId="1.1145994841055" />
       <node role="searchScopeFactory" type="jetbrains.mps.lang.constraints.structure.ConstraintFunction_ReferentSearchScope_Factory" id="1213104860200">
         <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1213104860201">
-          <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1215738903615">
-            <property name="value" value="concept properties from hierarchy" />
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636454219">
+            <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636454220">
+              <property name="text" value="concept properties from hierarchy" />
+            </node>
           </node>
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1213104860202">
             <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1213104860203">
@@ -1359,8 +1373,10 @@
     <link role="concept" targetNodeId="1.1204919674986" resolveInfo="_LinkAccessT" />
     <node role="canBeChild" type="jetbrains.mps.lang.constraints.structure.ConstraintFunction_CanBeAChild" id="1213107436092">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1213107436093">
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1213107436094">
-          <property name="value" value="transient node" />
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636453963">
+          <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636453964">
+            <property name="text" value="transient node" />
+          </node>
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1213107436095">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1213107436096">
@@ -1376,8 +1392,10 @@
       <link role="applicableLink" targetNodeId="1.1219352800908" />
       <node role="searchScopeFactory" type="jetbrains.mps.lang.constraints.structure.ConstraintFunction_ReferentSearchScope_Factory" id="1219363783269">
         <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1219363783270">
-          <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1219363972369">
-            <property name="value" value="roots only" />
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636454183">
+            <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636454184">
+              <property name="text" value="roots only" />
+            </node>
           </node>
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1219363792809">
             <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1219363802295">
@@ -1404,8 +1422,10 @@
       <link role="applicableLink" targetNodeId="1.1221164078452" />
       <node role="searchScopeFactory" type="jetbrains.mps.lang.constraints.structure.ConstraintFunction_ReferentSearchScope_Factory" id="1221169557310">
         <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1221169557311">
-          <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1221169569284">
-            <property name="value" value="reference links " />
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636453169">
+            <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636453170">
+              <property name="text" value="reference links " />
+            </node>
           </node>
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1221169569285">
             <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1221169569286">
@@ -1589,8 +1609,10 @@
       <link role="applicableLink" targetNodeId="1.1240930118028" />
       <node role="searchScopeFactory" type="jetbrains.mps.lang.constraints.structure.ConstraintFunction_ReferentSearchScope_Factory" id="1240930366885">
         <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1240930366886">
-          <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1240930366887">
-            <property name="value" value="roots only" />
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636454025">
+            <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636454026">
+              <property name="text" value="roots only" />
+            </node>
           </node>
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1240930366888">
             <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1240930366889">

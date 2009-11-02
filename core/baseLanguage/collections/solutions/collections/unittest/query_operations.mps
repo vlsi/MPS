@@ -558,20 +558,30 @@
               </node>
             </node>
           </node>
-          <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1571838961922998435">
-            <property name="value" value="from infinite sequence take first 10 numbers," />
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636453585">
+            <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636453586">
+              <property name="text" value="from infinite sequence take first 10 numbers," />
+            </node>
           </node>
-          <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1571838961922998436">
-            <property name="value" value="ignore odd numbers," />
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636453185">
+            <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636453186">
+              <property name="text" value="ignore odd numbers," />
+            </node>
           </node>
-          <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1571838961922998437">
-            <property name="value" value="map each even number to two strings:" />
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636453845">
+            <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636453846">
+              <property name="text" value="map each even number to two strings:" />
+            </node>
           </node>
-          <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1571838961922998438">
-            <property name="value" value="&quot;num:&lt;n&gt;&quot;" />
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636453615">
+            <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636453616">
+              <property name="text" value="&quot;num:&lt;n&gt;&quot;" />
+            </node>
           </node>
-          <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1571838961922998439">
-            <property name="value" value="&quot;num:&lt;n*100&gt;&quot;" />
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636454067">
+            <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636454068">
+              <property name="text" value="&quot;num:&lt;n*100&gt;&quot;" />
+            </node>
           </node>
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1571838961922998440">
             <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1571838961922998441">
@@ -1089,11 +1099,15 @@
               </node>
             </node>
           </node>
-          <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1571838961923334358">
-            <property name="value" value="from sequence of 10 numbers" />
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636453107">
+            <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636453108">
+              <property name="text" value="from sequence of 10 numbers" />
+            </node>
           </node>
-          <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1571838961923334359">
-            <property name="value" value="take each even number and produce string: &quot;num:&lt;n&gt;&quot;" />
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636454071">
+            <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636454072">
+              <property name="text" value="take each even number and produce string: &quot;num:&lt;n&gt;&quot;" />
+            </node>
           </node>
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1571838961923334360">
             <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1571838961923334361">
@@ -1261,8 +1275,10 @@
         <property name="methodName" value="_2" />
         <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1571838961923334427" />
         <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1571838961923334428">
-          <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1571838961923334429">
-            <property name="value" value="'where' and 'select' tolerate 'null' operand " />
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636454041">
+            <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636454042">
+              <property name="text" value="'where' and 'select' tolerate 'null' operand " />
+            </node>
           </node>
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1571838961923334430">
             <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1571838961923334431">
@@ -1371,8 +1387,10 @@
         <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1571838961923334475">
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1571838961923364296">
             <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1571838961923364297">
-              <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1571838961923334476">
-                <property name="value" value="'select' skips all 'null'-s" />
+              <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636453565">
+                <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636453566">
+                  <property name="text" value="'select' skips all 'null'-s" />
+                </node>
               </node>
               <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1571838961923334477">
                 <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1571838961923334478">

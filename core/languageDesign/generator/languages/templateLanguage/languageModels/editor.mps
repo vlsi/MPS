@@ -2281,8 +2281,10 @@
       </node>
       <node role="executeFunction" type="jetbrains.mps.lang.editor.structure.CellKeyMap_ExecuteFunction" id="1149868396512">
         <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1149868396513">
-          <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1205864837321">
-            <property name="value" value="do not hang &lt;TF&gt; on other attributes" />
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636453727">
+            <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636453728">
+              <property name="text" value="do not hang &lt;TF&gt; on other attributes" />
+            </node>
           </node>
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1205863761395">
             <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1205863761396">
@@ -2355,8 +2357,10 @@
               </node>
             </node>
           </node>
-          <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1205880516683">
-            <property name="value" value="set caret" />
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636453205">
+            <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636453206">
+              <property name="text" value="set caret" />
+            </node>
           </node>
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1193051096328">
             <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204753471425">
@@ -2467,8 +2471,10 @@
               </node>
             </node>
           </node>
-          <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1205880501025">
-            <property name="value" value="set caret" />
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636453383">
+            <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636453384">
+              <property name="text" value="set caret" />
+            </node>
           </node>
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1193052614472">
             <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204753471260">
@@ -2593,8 +2599,10 @@
               </node>
             </node>
           </node>
-          <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1205880992249">
-            <property name="value" value="set caret" />
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636453499">
+            <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636453500">
+              <property name="text" value="set caret" />
+            </node>
           </node>
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1193052865273">
             <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204753471445">
@@ -4586,11 +4594,15 @@
             </node>
           </node>
         </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1216153772015">
-          <property name="value" value="-----" />
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636454005">
+          <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636454006">
+            <property name="text" value="-----" />
+          </node>
         </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1216153800534">
-          <property name="value" value="it can be 'ref.cell-&gt;{name}'. in this case both are 'applicable'. but link has priority" />
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636453823">
+          <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636453824">
+            <property name="text" value="it can be 'ref.cell-&gt;{name}'. in this case both are 'applicable'. but link has priority" />
+          </node>
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1216153800535">
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1216153800536">
@@ -4779,8 +4791,10 @@
       <property name="name" value="isAnyMacroApplicable" />
       <node role="returnType" type="jetbrains.mps.baseLanguage.structure.BooleanType" id="1216145929484" />
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1216145916090">
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1216666083523">
-          <property name="value" value="not inside 'root template annotation'" />
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636453579">
+          <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636453580">
+            <property name="text" value="not inside 'root template annotation'" />
+          </node>
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1216666103697">
           <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1216666103698">
@@ -4807,8 +4821,10 @@
             </node>
           </node>
         </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1216146082148">
-          <property name="value" value=" not inside any kind of macro (code shown in inspector) but OK on a macro node itself" />
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636454151">
+          <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636454152">
+            <property name="text" value=" not inside any kind of macro (code shown in inspector) but OK on a macro node itself" />
+          </node>
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1225741743296">
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1225741743297">
@@ -4840,8 +4856,10 @@
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1216146405923">
           <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1216146405924">
-            <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1225741844284">
-              <property name="value" value=" exception: can be inside 'alternativeConsequence' in IF-macro" />
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636453247">
+              <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636453248">
+                <property name="text" value=" exception: can be inside 'alternativeConsequence' in IF-macro" />
+              </node>
             </node>
             <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1225741908896">
               <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1225741908897">
@@ -4875,8 +4893,10 @@
             </node>
           </node>
         </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1216146498155">
-          <property name="value" value="inside 'root template'" />
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636453899">
+          <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636453900">
+            <property name="text" value="inside 'root template'" />
+          </node>
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1216146484376">
           <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1216146484377">
@@ -4903,8 +4923,10 @@
             </node>
           </node>
         </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1216145997955">
-          <property name="value" value=" inside template declaration " />
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636453613">
+          <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636453614">
+            <property name="text" value=" inside template declaration " />
+          </node>
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1216146457206">
           <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1216146457207">
@@ -4952,8 +4974,10 @@
       </node>
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1216154163931" />
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1216154163932">
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1216154257830">
-          <property name="value" value="do not hang $$ on other attributes" />
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636453363">
+          <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636453364">
+            <property name="text" value="do not hang $$ on other attributes" />
+          </node>
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1216154257831">
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1216154257832">
@@ -4994,8 +5018,10 @@
             </node>
           </node>
         </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1216154257850">
-          <property name="value" value="surround with &lt;TF&gt; if necessary" />
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636453867">
+          <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636453868">
+            <property name="text" value="surround with &lt;TF&gt; if necessary" />
+          </node>
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1216154257851">
           <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1216154257852">
@@ -5153,8 +5179,10 @@
       </node>
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1216154358070" />
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1216154358071">
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1216154409455">
-          <property name="value" value="surround with &lt;TF&gt; if necessary" />
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636454037">
+          <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636454038">
+            <property name="text" value="surround with &lt;TF&gt; if necessary" />
+          </node>
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1216154409456">
           <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1216154409457">
@@ -5286,8 +5314,10 @@
             </node>
           </node>
         </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1216154550423">
-          <property name="value" value="surround with &lt;TF&gt; if necessary" />
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636454185">
+          <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636454186">
+            <property name="text" value="surround with &lt;TF&gt; if necessary" />
+          </node>
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1216154550424">
           <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1216154550425">
@@ -5459,8 +5489,10 @@
             <node role="operation" type="jetbrains.mps.lang.smodel.structure.Link_SetNewChildOperation" id="1205869156677" />
           </node>
         </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1205869156678">
-          <property name="value" value="remove subordinate template fragments" />
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636453999">
+          <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636454000">
+            <property name="text" value="remove subordinate template fragments" />
+          </node>
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1205869156679">
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1205869156680">
@@ -5542,8 +5574,10 @@
             </node>
           </node>
         </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1205870841001">
-          <property name="value" value="re append all macros to make them go 'after' the &lt;TF&gt;" />
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636453569">
+          <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636453570">
+            <property name="text" value="re append all macros to make them go 'after' the &lt;TF&gt;" />
+          </node>
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1205871010867">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1205871020498">

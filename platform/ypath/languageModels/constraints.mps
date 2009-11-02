@@ -767,8 +767,10 @@
       <link role="applicableProperty" targetNodeId="1.1184066216986" resolveInfo="writable" />
       <node role="propertySetter" type="jetbrains.mps.lang.constraints.structure.ConstraintFunction_PropertySetter" id="4581582910844587513">
         <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="4581582910844587514">
-          <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="4581582910844587515">
-            <property name="value" value="nothing to do, it's a read-only property" />
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636453307">
+            <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636453308">
+              <property name="text" value="nothing to do, it's a read-only property" />
+            </node>
           </node>
         </node>
       </node>
@@ -781,8 +783,10 @@
       <link role="applicableProperty" targetNodeId="1.1184066216986" resolveInfo="writable" />
       <node role="propertySetter" type="jetbrains.mps.lang.constraints.structure.ConstraintFunction_PropertySetter" id="4581582910845094947">
         <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="4581582910845094948">
-          <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="4581582910845096076">
-            <property name="value" value=" nothing to do, read-only property" />
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636454065">
+            <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636454066">
+              <property name="text" value=" nothing to do, read-only property" />
+            </node>
           </node>
         </node>
       </node>
@@ -795,8 +799,10 @@
       <link role="applicableProperty" targetNodeId="1.1184066216986" resolveInfo="writable" />
       <node role="propertySetter" type="jetbrains.mps.lang.constraints.structure.ConstraintFunction_PropertySetter" id="791534949580478510">
         <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="791534949580478513">
-          <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="791534949580478514">
-            <property name="value" value=" this is a read-only property" />
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636454029">
+            <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636454030">
+              <property name="text" value=" this is a read-only property" />
+            </node>
           </node>
         </node>
       </node>
@@ -809,8 +815,10 @@
       <link role="applicableProperty" targetNodeId="1.1184066216986" resolveInfo="writable" />
       <node role="propertySetter" type="jetbrains.mps.lang.constraints.structure.ConstraintFunction_PropertySetter" id="791534949580478625">
         <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="791534949580478626">
-          <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="791534949580478627">
-            <property name="value" value=" this is a read only property" />
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636454243">
+            <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636454244">
+              <property name="text" value=" this is a read only property" />
+            </node>
           </node>
         </node>
       </node>

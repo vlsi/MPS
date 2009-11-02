@@ -41,8 +41,10 @@
   <node type="jetbrains.mps.lang.typesystem.structure.NonTypesystemRule" id="1212181746947">
     <property name="name" value="check_LinkDeclaration" />
     <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1212181746948">
-      <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1212181840023">
-        <property name="value" value="link role shouldn't hide roles in super-concepts" />
+      <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636453473">
+        <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636453474">
+          <property name="text" value="link role shouldn't hide roles in super-concepts" />
+        </node>
       </node>
       <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1212181840024">
         <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1212181840025">
@@ -249,8 +251,10 @@
   <node type="jetbrains.mps.lang.typesystem.structure.NonTypesystemRule" id="1212181908803">
     <property name="name" value="check_PropertyDeclaration" />
     <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1212181908804">
-      <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1212181959979">
-        <property name="value" value="property overriding is banned" />
+      <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636454437">
+        <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636454438">
+          <property name="text" value="property overriding is banned" />
+        </node>
       </node>
       <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1212181978950">
         <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1212181978951">

@@ -913,8 +913,10 @@
               <link role="includeTemplate" targetNodeId="1228678752590" resolveInfo="include_ComponentProperties" />
             </node>
           </node>
-          <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1228681290346">
-            <property name="value" value=" add children" />
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636454213">
+            <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636454214">
+              <property name="text" value=" add children" />
+            </node>
           </node>
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1228681296801">
             <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1228681296802">

@@ -276,11 +276,15 @@
       <link role="overriddenMethod" targetNodeId="9.1239354342632" resolveInfo="getExpectedRetType" />
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1239707822364" />
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1239707822366">
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1239708059225">
-          <property name="value" value="everything which is not void and null is good," />
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636453369">
+          <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636453370">
+            <property name="text" value="everything which is not void and null is good," />
+          </node>
         </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1239708102930">
-          <property name="value" value="look at ExpressionStatement.canServeAsReturn" />
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636453345">
+          <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636453346">
+            <property name="text" value="look at ExpressionStatement.canServeAsReturn" />
+          </node>
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1239707831830">
           <node role="expression" type="jetbrains.mps.lang.quotation.structure.Quotation" id="1239708048982">
@@ -1045,8 +1049,10 @@
             <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_IsNotNullOperation" id="1213877405202" />
           </node>
         </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1213877405203">
-          <property name="value" value="TODO: sort children by role" />
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636453331">
+          <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636453332">
+            <property name="text" value="TODO: sort children by role" />
+          </node>
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1213877405204">
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1213877405205">
@@ -2888,8 +2894,10 @@
                 </node>
               </node>
             </node>
-            <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1229704266241">
-              <property name="value" value=" 0..k-1 : control function parameters, k..l-1 : control closure parameter declarations (closures), l..m-1 : control closures" />
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636454153">
+              <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636454154">
+                <property name="text" value=" 0..k-1 : control function parameters, k..l-1 : control closure parameter declarations (closures), l..m-1 : control closures" />
+              </node>
             </node>
             <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1229704266242">
               <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1229704266243">

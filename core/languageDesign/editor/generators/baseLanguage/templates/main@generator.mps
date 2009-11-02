@@ -724,8 +724,10 @@
                       </node>
                       <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1229561240567">
                         <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1229561240568">
-                          <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1229561240569">
-                            <property name="value" value="no cell layout" />
+                          <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636454467">
+                            <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636454468">
+                              <property name="text" value="no cell layout" />
+                            </node>
                           </node>
                           <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1229561240570">
                             <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1229561240571">
@@ -775,8 +777,10 @@
                           </node>
                         </node>
                       </node>
-                      <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1229561240592">
-                        <property name="value" value="cell layout is defined" />
+                      <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636454047">
+                        <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636454048">
+                          <property name="text" value="cell layout is defined" />
+                        </node>
                       </node>
                       <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1229561240593">
                         <node role="condition" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1229561240594">
@@ -938,8 +942,10 @@
                           </node>
                         </node>
                       </node>
-                      <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1229561240638">
-                        <property name="value" value="default" />
+                      <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636454355">
+                        <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636454356">
+                          <property name="text" value="default" />
+                        </node>
                       </node>
                       <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1229561240639">
                         <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1229561240640">
@@ -2856,8 +2862,10 @@
                                 </node>
                               </node>
                             </node>
-                            <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1197580198060">
-                              <property name="value" value="no cell layout defined (obsolete)" />
+                            <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636454401">
+                              <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636454402">
+                                <property name="text" value="no cell layout defined (obsolete)" />
+                              </node>
                             </node>
                             <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1197580220328">
                               <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1197580220329">
@@ -2923,8 +2931,10 @@
                                 </node>
                               </node>
                             </node>
-                            <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1197580395644">
-                              <property name="value" value="choose cell layout" />
+                            <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636453571">
+                              <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636453572">
+                                <property name="text" value="choose cell layout" />
+                              </node>
                             </node>
                             <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1197580432818">
                               <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1197580432819">
@@ -3106,8 +3116,10 @@
                                 </node>
                               </node>
                             </node>
-                            <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1197580527203">
-                              <property name="value" value="error" />
+                            <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636453879">
+                              <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636453880">
+                                <property name="text" value="error" />
+                              </node>
                             </node>
                             <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1197580537018">
                               <node role="expression" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1197580539973" />
@@ -4241,8 +4253,10 @@
             <node role="nodeMacro$attribute" type="jetbrains.mps.lang.generator.structure.IfMacro" id="1184071662778">
               <node role="conditionFunction" type="jetbrains.mps.lang.generator.structure.IfMacro_Condition" id="1187029422537">
                 <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1187029422538">
-                  <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1187029424226">
-                    <property name="value" value="no 'is applicable' func, no 'applicable concept'" />
+                  <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636453891">
+                    <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636453892">
+                      <property name="text" value="no 'is applicable' func, no 'applicable concept'" />
+                    </node>
                   </node>
                   <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1187029460353">
                     <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1187029460354">
@@ -4311,8 +4325,10 @@
             <node role="nodeMacro$attribute" type="jetbrains.mps.lang.generator.structure.IfMacro" id="1184071662785">
               <node role="conditionFunction" type="jetbrains.mps.lang.generator.structure.IfMacro_Condition" id="1187029607011">
                 <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1187029607012">
-                  <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1187029607013">
-                    <property name="value" value="has 'is applicable' func, but no 'applicable concept'" />
+                  <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636453489">
+                    <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636453490">
+                      <property name="text" value="has 'is applicable' func, but no 'applicable concept'" />
+                    </node>
                   </node>
                   <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1187029607014">
                     <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1187029607015">

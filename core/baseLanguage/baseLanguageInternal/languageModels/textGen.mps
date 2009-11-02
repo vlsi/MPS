@@ -714,8 +714,10 @@
     <link role="conceptDeclaration" targetNodeId="1.1202838164916" resolveInfo="InternalThisExpression" />
     <node role="textGenBlock" type="jetbrains.mps.lang.textGen.structure.GenerateTextDeclaration" id="1236703160773">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1236703160774">
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1236703185088">
-          <property name="value" value="this method is intentionally empty" />
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636453067">
+          <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636453068">
+            <property name="text" value="this method is intentionally empty" />
+          </node>
         </node>
       </node>
     </node>

@@ -630,8 +630,10 @@
           </node>
           <node role="ifFalseStatement" type="jetbrains.mps.baseLanguage.structure.BlockStatement" id="439148907936531663">
             <node role="statements" type="jetbrains.mps.baseLanguage.structure.StatementList" id="439148907936531664">
-              <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="3633133276124307872">
-                <property name="value" value=" Merging first line" />
+              <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636453687">
+                <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636453688">
+                  <property name="text" value=" Merging first line" />
+                </node>
               </node>
               <node role="statement" type="jetbrains.mps.baseLanguage.collections.structure.ForEachStatement" id="3633133276124307749">
                 <node role="variable" type="jetbrains.mps.baseLanguage.collections.structure.ForEachVariable" id="3633133276124307750">
@@ -767,8 +769,10 @@
                 </node>
               </node>
               <node role="statement" type="jetbrains.mps.baseLanguage.structure.Statement" id="3633133276124307736" />
-              <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="3633133276124308009">
-                <property name="value" value=" Merging other lines" />
+              <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636453121">
+                <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636453122">
+                  <property name="text" value=" Merging other lines" />
+                </node>
               </node>
               <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="3633133276124061662">
                 <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="3633133276124061663">
@@ -934,8 +938,10 @@
                 </node>
                 <node role="ifFalseStatement" type="jetbrains.mps.baseLanguage.structure.BlockStatement" id="3633133276124409264">
                   <node role="statements" type="jetbrains.mps.baseLanguage.structure.StatementList" id="3633133276124409265">
-                    <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="3633133276124409266">
-                      <property name="value" value=" Merging last line parts" />
+                    <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636453897">
+                      <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636453898">
+                        <property name="text" value=" Merging last line parts" />
+                      </node>
                     </node>
                     <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="3633133276124409267">
                       <node role="expression" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression" id="3633133276124409268">

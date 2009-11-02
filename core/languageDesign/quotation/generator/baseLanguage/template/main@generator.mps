@@ -3214,8 +3214,10 @@
           <node role="propertyMacro$property_attribute$name" type="jetbrains.mps.lang.generator.structure.PropertyMacro" id="1224163399564">
             <node role="propertyValueFunction" type="jetbrains.mps.lang.generator.structure.PropertyMacro_GetPropertyValue" id="1224163399565">
               <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1224163399566">
-                <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="3753540355106048499">
-                  <property name="value" value=" the 'node' expression may have been already mapped and unique name created for it" />
+                <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636454179">
+                  <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636454180">
+                    <property name="text" value=" the 'node' expression may have been already mapped and unique name created for it" />
+                  </node>
                 </node>
                 <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="3753540355106048446">
                   <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="3753540355106048447">

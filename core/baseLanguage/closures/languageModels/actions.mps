@@ -109,11 +109,15 @@
       <link role="applicableConcept" targetNodeId="4.1068580123157" resolveInfo="Statement" />
       <node role="precondition" type="jetbrains.mps.lang.actions.structure.NodeSubstitutePreconditionFunction" id="1200829970134">
         <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1200829970135">
-          <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1201774635065">
-            <property name="value" value="return statements must be allowed until we find a way to implement early returns" />
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636453679">
+            <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636453680">
+              <property name="text" value="return statements must be allowed until we find a way to implement early returns" />
+            </node>
           </node>
-          <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1201774635066">
-            <property name="value" value="http://www.javac.info" />
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636454345">
+            <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636454346">
+              <property name="text" value="http://www.javac.info" />
+            </node>
           </node>
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1200829976098">
             <node role="expression" type="jetbrains.mps.baseLanguage.structure.AndExpression" id="1201774638418">
@@ -921,8 +925,10 @@
                                   </node>
                                 </node>
                               </node>
-                              <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="876385242039344557">
-                                <property name="value" value="TODO: generic parameters" />
+                              <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636454461">
+                                <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636454462">
+                                  <property name="text" value="TODO: generic parameters" />
+                                </node>
                               </node>
                               <node role="statement" type="jetbrains.mps.baseLanguage.structure.ForeachStatement" id="876385242039344559">
                                 <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="876385242039344560">

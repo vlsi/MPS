@@ -19444,8 +19444,10 @@
                 </node>
               </node>
             </node>
-            <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1224249128350">
-              <property name="value" value="anonymous inner classes" />
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636453835">
+              <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636453836">
+                <property name="text" value="anonymous inner classes" />
+              </node>
             </node>
             <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1224249207785">
               <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1224249207786">
@@ -20040,8 +20042,10 @@
                 </node>
               </node>
             </node>
-            <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1224249277264">
-              <property name="value" value="anonymous inner classes" />
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636454307">
+              <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636454308">
+                <property name="text" value="anonymous inner classes" />
+              </node>
             </node>
             <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1224249277265">
               <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1224249277266">
@@ -21390,9 +21394,10 @@
   <node type="jetbrains.mps.lang.generator.structure.TemplateDeclaration" id="1225969463548">
     <property name="name" value="WarningToStatement_special" />
     <link role="applicableConcept" targetNodeId="1.1225968571991" resolveInfo="WarningStatement_internal" />
-    <node role="contentNode" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1225969493221">
-      <property name="value" value="generated from warning statement" />
-      <node role="templateFragment$attribute" type="jetbrains.mps.lang.generator.structure.TemplateFragment" id="1225969612453" />
+    <node role="contentNode" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636453641">
+      <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636453642">
+        <property name="text" value="generated from warning statement" />
+      </node>
     </node>
   </node>
   <node type="jetbrains.mps.lang.generator.structure.TemplateDeclaration" id="1225972165061">
@@ -21505,9 +21510,10 @@
   <node type="jetbrains.mps.lang.generator.structure.TemplateDeclaration" id="1225972396394">
     <property name="name" value="Info_to_statement_special" />
     <link role="applicableConcept" targetNodeId="1.1225971039738" resolveInfo="InfoStatement_internal" />
-    <node role="contentNode" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1225972415928">
-      <property name="value" value="generated from info statement" />
-      <node role="templateFragment$attribute" type="jetbrains.mps.lang.generator.structure.TemplateFragment" id="1225972425867" />
+    <node role="contentNode" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636453857">
+      <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636453858">
+        <property name="text" value="generated from info statement" />
+      </node>
     </node>
   </node>
   <node type="jetbrains.mps.lang.generator.structure.TemplateDeclaration" id="1236163450375">

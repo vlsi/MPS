@@ -60,8 +60,10 @@
       </node>
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1201536134314" />
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1201536134315">
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="2386296566107169942">
-          <property name="value" value="cast is such to avoid exception if MeetType" />
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636454079">
+          <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636454080">
+            <property name="text" value="cast is such to avoid exception if MeetType" />
+          </node>
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="2386296566107169374">
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="2386296566107169375">

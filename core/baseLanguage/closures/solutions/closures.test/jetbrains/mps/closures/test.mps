@@ -361,8 +361,10 @@
                         </node>
                       </node>
                     </node>
-                    <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1201519004545">
-                      <property name="value" value="must not return anything" />
+                    <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636453381">
+                      <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636453382">
+                        <property name="text" value="must not return anything" />
+                      </node>
                     </node>
                   </node>
                 </node>
@@ -454,8 +456,10 @@
                         <link role="variableDeclaration" targetNodeId="1201439888760" resolveInfo="i" />
                       </node>
                     </node>
-                    <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1201528958379">
-                      <property name="value" value="placeholder" />
+                    <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636453093">
+                      <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636453094">
+                        <property name="text" value="placeholder" />
+                      </node>
                     </node>
                   </node>
                 </node>
@@ -631,8 +635,10 @@
                         </node>
                       </node>
                     </node>
-                    <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1201528409180">
-                      <property name="value" value="must not return value" />
+                    <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636453013">
+                      <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636453014">
+                        <property name="text" value="must not return value" />
+                      </node>
                     </node>
                   </node>
                 </node>
@@ -744,8 +750,10 @@
                         <link role="variableDeclaration" targetNodeId="1201528336755" resolveInfo="i" />
                       </node>
                     </node>
-                    <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1201528458559">
-                      <property name="value" value="placeholder" />
+                    <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636454145">
+                      <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636454146">
+                        <property name="text" value="placeholder" />
+                      </node>
                     </node>
                   </node>
                 </node>
@@ -1463,8 +1471,10 @@
                                   </node>
                                 </node>
                               </node>
-                              <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1201785682633">
-                                <property name="value" value="fall through" />
+                              <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636454369">
+                                <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636454370">
+                                  <property name="text" value="fall through" />
+                                </node>
                               </node>
                             </node>
                           </node>
@@ -1562,8 +1572,10 @@
                                   <property name="value" value="2" />
                                 </node>
                               </node>
-                              <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1201785745590">
-                                <property name="value" value="fall through" />
+                              <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636454147">
+                                <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636454148">
+                                  <property name="text" value="fall through" />
+                                </node>
                               </node>
                             </node>
                           </node>
@@ -2182,8 +2194,10 @@
                 </node>
                 <node role="actualArgument" type="jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral" id="1229019456122">
                   <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1229019456123">
-                    <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1229019891078">
-                      <property name="value" value=" some statements" />
+                    <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636453573">
+                      <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636453574">
+                        <property name="text" value=" some statements" />
+                      </node>
                     </node>
                     <node role="statement" type="jetbrains.mps.baseLanguage.closures.structure.YieldAllStatement" id="1229019459021">
                       <node role="expression" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1229019461254">
@@ -2255,8 +2269,10 @@
                         </node>
                       </node>
                     </node>
-                    <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1229019612865">
-                      <property name="value" value=" last statement" />
+                    <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636454019">
+                      <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636454020">
+                        <property name="text" value=" last statement" />
+                      </node>
                     </node>
                   </node>
                 </node>
@@ -2467,8 +2483,10 @@
         <property name="methodName" value="timur1" />
         <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1229085987700" />
         <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1229085987701">
-          <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1229086664305">
-            <property name="value" value=" {1, 2, 3}.select{ it =&gt; yield 4; yield 5; }" />
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636453423">
+            <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636453424">
+              <property name="text" value=" {1, 2, 3}.select{ it =&gt; yield 4; yield 5; }" />
+            </node>
           </node>
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1229086006442">
             <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1229086006443">
@@ -2622,8 +2640,10 @@
         <property name="methodName" value="timur2" />
         <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1229087101148" />
         <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1229087101149">
-          <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1229087115696">
-            <property name="value" value=" {1, 2, 3}.select{ it =&gt; if (it == 2) {yield 4;}; }" />
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636454281">
+            <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636454282">
+              <property name="text" value=" {1, 2, 3}.select{ it =&gt; if (it == 2) {yield 4;}; }" />
+            </node>
           </node>
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1229087132384">
             <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1229087132385">
@@ -3095,8 +3115,10 @@
               <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.GetNextOperation" id="1239017610501" />
             </node>
           </node>
-          <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1229429135507">
-            <property name="value" value=" don't call hasNext, must still yield result" />
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636454197">
+            <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636454198">
+              <property name="text" value=" don't call hasNext, must still yield result" />
+            </node>
           </node>
           <node role="statement" type="jetbrains.mps.baseLanguage.unitTest.structure.AssertSame" id="1229429109402">
             <node role="actual" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1229429112606">
@@ -3133,8 +3155,10 @@
                 </node>
               </node>
               <node role="catchBody" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1229428928164">
-                <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1229428964300">
-                  <property name="value" value=" ok" />
+                <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636453111">
+                  <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636453112">
+                    <property name="text" value=" ok" />
+                  </node>
                 </node>
               </node>
             </node>
@@ -3249,8 +3273,10 @@
                 </node>
               </node>
               <node role="catchBody" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1229443681866">
-                <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1229443874180">
-                  <property name="value" value=" ok" />
+                <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636454481">
+                  <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636454482">
+                    <property name="text" value=" ok" />
+                  </node>
                 </node>
               </node>
             </node>
@@ -3279,8 +3305,10 @@
                 </node>
               </node>
               <node role="catchBody" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1229445328509">
-                <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1229445347018">
-                  <property name="value" value=" ok" />
+                <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636454249">
+                  <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636454250">
+                    <property name="text" value=" ok" />
+                  </node>
                 </node>
               </node>
             </node>
@@ -3337,8 +3365,10 @@
                 </node>
               </node>
               <node role="catchBody" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1229445364500">
-                <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1229445364501">
-                  <property name="value" value=" ok" />
+                <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636453417">
+                  <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636453418">
+                    <property name="text" value=" ok" />
+                  </node>
                 </node>
               </node>
             </node>
@@ -3367,8 +3397,10 @@
                 </node>
               </node>
               <node role="catchBody" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1229445373098">
-                <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1229445373099">
-                  <property name="value" value=" ok" />
+                <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636453179">
+                  <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636453180">
+                    <property name="text" value=" ok" />
+                  </node>
                 </node>
               </node>
             </node>
@@ -3734,8 +3766,10 @@
         <property name="methodName" value="stub" />
         <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1202152060839" />
         <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1202152060840">
-          <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1202152065976">
-            <property name="value" value="this method exists only to calm down the JUnit complaining about lacking tests" />
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636454399">
+            <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636454400">
+              <property name="text" value="this method exists only to calm down the JUnit complaining about lacking tests" />
+            </node>
           </node>
         </node>
       </node>
@@ -6197,26 +6231,40 @@
               </node>
             </node>
           </node>
-          <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1202822776252">
-            <property name="value" value="===================================================================" />
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636454255">
+            <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636454256">
+              <property name="text" value="===================================================================" />
+            </node>
           </node>
-          <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1202822630624">
-            <property name="value" value="The following is a hack!" />
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636454421">
+            <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636454422">
+              <property name="text" value="The following is a hack!" />
+            </node>
           </node>
-          <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1202822637628">
-            <property name="value" value="In reality we could only substitute an interface that has a single method." />
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636453445">
+            <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636453446">
+              <property name="text" value="In reality we could only substitute an interface that has a single method." />
+            </node>
           </node>
-          <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1202822675277">
-            <property name="value" value="This example works only because java.util.Comparator defines compare() before equals()" />
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636453451">
+            <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636453452">
+              <property name="text" value="This example works only because java.util.Comparator defines compare() before equals()" />
+            </node>
           </node>
-          <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1202822704115">
-            <property name="value" value="Why declare equals() in an interface escapes me: it's already there and declaring it in an interface doesn't change anything" />
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636454017">
+            <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636454018">
+              <property name="text" value="Why declare equals() in an interface escapes me: it's already there and declaring it in an interface doesn't change anything" />
+            </node>
           </node>
-          <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1204636801877">
-            <property name="value" value="Besides, overriding only equals() without overriding also hashCode() is simply plain wrong." />
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636454435">
+            <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636454436">
+              <property name="text" value="Besides, overriding only equals() without overriding also hashCode() is simply plain wrong." />
+            </node>
           </node>
-          <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1202822785733">
-            <property name="value" value="===================================================================" />
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636453193">
+            <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636453194">
+              <property name="text" value="===================================================================" />
+            </node>
           </node>
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1202780592476">
             <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1202780595738">
@@ -6920,8 +6968,10 @@
                       </node>
                     </node>
                   </node>
-                  <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1215601769693">
-                    <property name="value" value=" no return value" />
+                  <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636453515">
+                    <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636453516">
+                      <property name="text" value=" no return value" />
+                    </node>
                   </node>
                 </node>
               </node>
@@ -7275,8 +7325,10 @@
       <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1202996617181" />
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1202996617182" />
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1202996617183">
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1202996624568">
-          <property name="value" value="do nothing" />
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636453797">
+          <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636453798">
+            <property name="text" value="do nothing" />
+          </node>
         </node>
       </node>
     </node>

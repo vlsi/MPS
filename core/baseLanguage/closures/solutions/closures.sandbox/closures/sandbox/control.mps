@@ -319,8 +319,10 @@
                                 </node>
                               </node>
                               <node role="catchBody" type="jetbrains.mps.baseLanguage.structure.StatementList" id="613856071337214434">
-                                <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="613856071337214435">
-                                  <property name="value" value=" ignore" />
+                                <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636454137">
+                                  <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636454138">
+                                    <property name="text" value=" ignore" />
+                                  </node>
                                 </node>
                               </node>
                             </node>

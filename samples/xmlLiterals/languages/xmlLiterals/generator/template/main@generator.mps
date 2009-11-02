@@ -643,8 +643,10 @@
       <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="7417816926334627125" />
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="7417816926334627126" />
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="7417816926334627127">
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="7417816926334629278">
-          <property name="value" value="todo" />
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636453833">
+          <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636453834">
+            <property name="text" value="todo" />
+          </node>
         </node>
       </node>
     </node>

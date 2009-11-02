@@ -130,8 +130,10 @@
       <link role="applicableLink" targetNodeId="1.1147467295099" />
       <node role="searchScopeFactory" type="jetbrains.mps.lang.constraints.structure.ConstraintFunction_ReferentSearchScope_Factory" id="1213104781821">
         <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1213104781822">
-          <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1215738903609">
-            <property name="value" value="properties declared in specified concept" />
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636453721">
+            <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636453722">
+              <property name="text" value="properties declared in specified concept" />
+            </node>
           </node>
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1213104781823">
             <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1213104781824">
@@ -241,8 +243,10 @@
       <link role="applicableLink" targetNodeId="1.1148687202698" />
       <node role="searchScopeFactory" type="jetbrains.mps.lang.constraints.structure.ConstraintFunction_ReferentSearchScope_Factory" id="1213104781933">
         <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1213104781934">
-          <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1215738903630">
-            <property name="value" value="links declared in specified concept" />
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636453535">
+            <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636453536">
+              <property name="text" value="links declared in specified concept" />
+            </node>
           </node>
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1213104781935">
             <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1213104781936">

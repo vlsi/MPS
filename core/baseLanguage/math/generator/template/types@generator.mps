@@ -156,8 +156,10 @@
         <node role="case" type="jetbrains.mps.lang.generator.structure.InlineSwitch_Case" id="1238317999929">
           <node role="conditionFunction" type="jetbrains.mps.lang.generator.structure.BaseMappingRule_Condition" id="1238317999930">
             <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1238317999931">
-              <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1238332005039">
-                <property name="value" value="unknown expression" />
+              <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636453519">
+                <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636453520">
+                  <property name="text" value="unknown expression" />
+                </node>
               </node>
               <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1238318004895">
                 <node role="expression" type="jetbrains.mps.baseLanguage.structure.EqualsExpression" id="1238318006839">
@@ -207,8 +209,10 @@
         <node role="case" type="jetbrains.mps.lang.generator.structure.InlineSwitch_Case" id="1237546877858">
           <node role="conditionFunction" type="jetbrains.mps.lang.generator.structure.BaseMappingRule_Condition" id="1237546877859">
             <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1237546877860">
-              <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="6217769856310096253">
-                <property name="value" value="long to biginteger" />
+              <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636453855">
+                <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636453856">
+                  <property name="text" value="long to biginteger" />
+                </node>
               </node>
               <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1237546877861">
                 <node role="expression" type="jetbrains.mps.baseLanguage.structure.EqualsExpression" id="1237546877862">
@@ -251,8 +255,10 @@
         <node role="case" type="jetbrains.mps.lang.generator.structure.InlineSwitch_Case" id="1238314128297">
           <node role="conditionFunction" type="jetbrains.mps.lang.generator.structure.BaseMappingRule_Condition" id="1238314128298">
             <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1238314128299">
-              <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="6217769856310096243">
-                <property name="value" value="double to complex" />
+              <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636453723">
+                <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636453724">
+                  <property name="text" value="double to complex" />
+                </node>
               </node>
               <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1238314130661">
                 <node role="expression" type="jetbrains.mps.baseLanguage.structure.EqualsExpression" id="1238314132855">
@@ -299,8 +305,10 @@
         <node role="case" type="jetbrains.mps.lang.generator.structure.InlineSwitch_Case" id="1238400574311">
           <node role="conditionFunction" type="jetbrains.mps.lang.generator.structure.BaseMappingRule_Condition" id="1238400574312">
             <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1238400574313">
-              <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="6217769856310096231">
-                <property name="value" value="double to bigdecimal" />
+              <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636453501">
+                <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636453502">
+                  <property name="text" value="double to bigdecimal" />
+                </node>
               </node>
               <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1238401165599">
                 <node role="expression" type="jetbrains.mps.baseLanguage.structure.EqualsExpression" id="1238401168200">
@@ -385,8 +393,10 @@
         <node role="case" type="jetbrains.mps.lang.generator.structure.InlineSwitch_Case" id="1238420065214">
           <node role="conditionFunction" type="jetbrains.mps.lang.generator.structure.BaseMappingRule_Condition" id="1238420065215">
             <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1238420065216">
-              <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="6217769856310096221">
-                <property name="value" value="double to bigcomplex" />
+              <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636453435">
+                <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636453436">
+                  <property name="text" value="double to bigcomplex" />
+                </node>
               </node>
               <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1238420071449">
                 <node role="expression" type="jetbrains.mps.baseLanguage.structure.EqualsExpression" id="1238420071450">
@@ -484,8 +494,10 @@
         <node role="case" type="jetbrains.mps.lang.generator.structure.InlineSwitch_Case" id="1238420067019">
           <node role="conditionFunction" type="jetbrains.mps.lang.generator.structure.BaseMappingRule_Condition" id="1238420067020">
             <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1238420067021">
-              <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="6217769856310096209">
-                <property name="value" value="bigdecimal -&gt; bigcomplex" />
+              <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636453239">
+                <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636453240">
+                  <property name="text" value="bigdecimal -&gt; bigcomplex" />
+                </node>
               </node>
               <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1238420073086">
                 <node role="expression" type="jetbrains.mps.baseLanguage.structure.EqualsExpression" id="1238420073087">
@@ -533,8 +545,10 @@
         <node role="case" type="jetbrains.mps.lang.generator.structure.InlineSwitch_Case" id="1238420067663">
           <node role="conditionFunction" type="jetbrains.mps.lang.generator.structure.BaseMappingRule_Condition" id="1238420067664">
             <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1238420067665">
-              <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="6217769856310096207">
-                <property name="value" value="complex to bigcomplex" />
+              <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636454133">
+                <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636454134">
+                  <property name="text" value="complex to bigcomplex" />
+                </node>
               </node>
               <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1238420073810">
                 <node role="expression" type="jetbrains.mps.baseLanguage.structure.EqualsExpression" id="1238420073811">

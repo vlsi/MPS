@@ -151,8 +151,10 @@
       <link role="applicableLink" targetNodeId="1.1166042131869" />
       <node role="searchScopeFactory" type="jetbrains.mps.lang.constraints.structure.ConstraintFunction_ReferentSearchScope_Factory" id="1213104846220">
         <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1213104846221">
-          <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1215738903617">
-            <property name="value" value="links declared in edited concept' hierarchy and not overridden" />
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636453969">
+            <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636453970">
+              <property name="text" value="links declared in edited concept' hierarchy and not overridden" />
+            </node>
           </node>
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1213104846222">
             <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1213104846223">
@@ -209,8 +211,10 @@
       <link role="applicableLink" targetNodeId="1.1088013239202" />
       <node role="searchScopeFactory" type="jetbrains.mps.lang.constraints.structure.ConstraintFunction_ReferentSearchScope_Factory" id="1213104846436">
         <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1213104846437">
-          <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1215738903588">
-            <property name="value" value="singular links declared in concept hierarchy and not overridden" />
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636454259">
+            <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636454260">
+              <property name="text" value="singular links declared in concept hierarchy and not overridden" />
+            </node>
           </node>
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1213104846438">
             <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1213104846439">
@@ -402,8 +406,10 @@
       <link role="applicableLink" targetNodeId="1.1166041884271" />
       <node role="searchScopeFactory" type="jetbrains.mps.lang.constraints.structure.ConstraintFunction_ReferentSearchScope_Factory" id="1213104855918">
         <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1213104855919">
-          <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1215738903629">
-            <property name="value" value="properties declared in edited concept' hierarchy and not overridden" />
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636453909">
+            <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636453910">
+              <property name="text" value="properties declared in edited concept' hierarchy and not overridden" />
+            </node>
           </node>
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1213104855920">
             <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1213104855921">
@@ -460,8 +466,10 @@
       <link role="applicableLink" targetNodeId="1.1140103550593" />
       <node role="searchScopeFactory" type="jetbrains.mps.lang.constraints.structure.ConstraintFunction_ReferentSearchScope_Factory" id="1213104856675">
         <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1213104856676">
-          <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1215738903628">
-            <property name="value" value="relations (links,properties etc.) declared in hierarchy of edited concept" />
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636453267">
+            <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636453268">
+              <property name="text" value="relations (links,properties etc.) declared in hierarchy of edited concept" />
+            </node>
           </node>
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1213104856677">
             <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1213104856678">
@@ -521,8 +529,10 @@
       <link role="applicableLink" targetNodeId="1.1164914727930" />
       <node role="searchScopeFactory" type="jetbrains.mps.lang.constraints.structure.ConstraintFunction_ReferentSearchScope_Factory" id="1213104860162">
         <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1213104860163">
-          <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1215738903614">
-            <property name="value" value="super- and sub-concepts of the edited node's concept" />
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636453103">
+            <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636453104">
+              <property name="text" value="super- and sub-concepts of the edited node's concept" />
+            </node>
           </node>
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1213104860164">
             <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1213104860165">
@@ -682,8 +692,10 @@
       <link role="applicableLink" targetNodeId="1.1073389882824" />
       <node role="searchScopeFactory" type="jetbrains.mps.lang.constraints.structure.ConstraintFunction_ReferentSearchScope_Factory" id="1213104860581">
         <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1213104860582">
-          <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1215738903611">
-            <property name="value" value="aggregation links declared in concept hierarchy and not overridden" />
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636453919">
+            <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636453920">
+              <property name="text" value="aggregation links declared in concept hierarchy and not overridden" />
+            </node>
           </node>
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1213104860583">
             <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1213104860584">

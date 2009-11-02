@@ -1193,8 +1193,10 @@
               <link role="enumConstantDeclaration" targetNodeId="46.~TraversalAxis.DESCENDANTS" resolveInfo="DESCENDANTS" />
             </node>
             <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="7098165822328196776">
-              <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="7098165822328196773">
-                <property name="value" value="fall through" />
+              <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636453631">
+                <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636453632">
+                  <property name="text" value="fall through" />
+                </node>
               </node>
             </node>
           </node>
@@ -1204,8 +1206,10 @@
               <link role="enumConstantDeclaration" targetNodeId="46.~TraversalAxis.ANCESTORS" resolveInfo="ANCESTORS" />
             </node>
             <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="7098165822328196780">
-              <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="7098165822328196781">
-                <property name="value" value="fall through" />
+              <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636453939">
+                <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636453940">
+                  <property name="text" value="fall through" />
+                </node>
               </node>
             </node>
           </node>
@@ -1215,8 +1219,10 @@
               <link role="enumConstantDeclaration" targetNodeId="46.~TraversalAxis.PRECEDING_SIBLINGS" resolveInfo="PRECEDING_SIBLINGS" />
             </node>
             <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="7098165822328196784">
-              <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="7098165822328196785">
-                <property name="value" value="fall through" />
+              <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636453215">
+                <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636453216">
+                  <property name="text" value="fall through" />
+                </node>
               </node>
             </node>
           </node>
@@ -1226,8 +1232,10 @@
               <link role="enumConstantDeclaration" targetNodeId="46.~TraversalAxis.FOLLOWING_SIBLINGS" resolveInfo="FOLLOWING_SIBLINGS" />
             </node>
             <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="7098165822328196788">
-              <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="7098165822328196876">
-                <property name="value" value="fall through" />
+              <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636453263">
+                <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636453264">
+                  <property name="text" value="fall through" />
+                </node>
               </node>
             </node>
           </node>
@@ -1237,8 +1245,10 @@
               <link role="enumConstantDeclaration" targetNodeId="46.~TraversalAxis.SELF_DESCENDANTS" resolveInfo="SELF_DESCENDANTS" />
             </node>
             <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="7098165822328196793">
-              <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="7098165822328196794">
-                <property name="value" value="fall through" />
+              <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636454283">
+                <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636454284">
+                  <property name="text" value="fall through" />
+                </node>
               </node>
             </node>
           </node>
@@ -1248,8 +1258,10 @@
               <link role="enumConstantDeclaration" targetNodeId="46.~TraversalAxis.SELF_ANCESTORS" resolveInfo="SELF_ANCESTORS" />
             </node>
             <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="7098165822328196797">
-              <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="7098165822328196798">
-                <property name="value" value="fall through" />
+              <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636453773">
+                <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636453774">
+                  <property name="text" value="fall through" />
+                </node>
               </node>
             </node>
           </node>
@@ -1259,8 +1271,10 @@
               <link role="enumConstantDeclaration" targetNodeId="46.~TraversalAxis.PRECEDING_SIBLINGS_SELF" resolveInfo="PRECEDING_SIBLINGS_SELF" />
             </node>
             <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="7098165822328196801">
-              <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="7098165822328196802">
-                <property name="value" value="fall through" />
+              <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636453025">
+                <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636453026">
+                  <property name="text" value="fall through" />
+                </node>
               </node>
             </node>
           </node>
@@ -1328,8 +1342,10 @@
               <link role="enumClass" targetNodeId="46.~TraversalAxis" resolveInfo="TraversalAxis" />
             </node>
             <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1199384728859">
-              <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1199384755401">
-                <property name="value" value="fall through" />
+              <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636454405">
+                <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636454406">
+                  <property name="text" value="fall through" />
+                </node>
               </node>
             </node>
           </node>
@@ -1373,8 +1389,10 @@
               <link role="enumClass" targetNodeId="46.~TraversalAxis" resolveInfo="TraversalAxis" />
             </node>
             <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1199384858640">
-              <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1199384873946">
-                <property name="value" value="fall through" />
+              <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636453777">
+                <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636453778">
+                  <property name="text" value="fall through" />
+                </node>
               </node>
             </node>
           </node>
@@ -1431,8 +1449,10 @@
               <link role="enumClass" targetNodeId="46.~TraversalAxis" resolveInfo="TraversalAxis" />
             </node>
             <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1199385042451">
-              <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1199385056600">
-                <property name="value" value="fall through" />
+              <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636454191">
+                <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636454192">
+                  <property name="text" value="fall through" />
+                </node>
               </node>
             </node>
           </node>
@@ -1442,8 +1462,10 @@
               <link role="enumClass" targetNodeId="46.~TraversalAxis" resolveInfo="TraversalAxis" />
             </node>
             <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1199385061229">
-              <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1199385068310">
-                <property name="value" value="fall through" />
+              <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636453813">
+                <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636453814">
+                  <property name="text" value="fall through" />
+                </node>
               </node>
             </node>
           </node>
@@ -1453,8 +1475,10 @@
               <link role="enumClass" targetNodeId="46.~TraversalAxis" resolveInfo="TraversalAxis" />
             </node>
             <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1199385085402">
-              <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1199385094016">
-                <property name="value" value="fall through" />
+              <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636453505">
+                <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636453506">
+                  <property name="text" value="fall through" />
+                </node>
               </node>
             </node>
           </node>
@@ -1542,8 +1566,10 @@
               <link role="enumConstantDeclaration" targetNodeId="46.~TraversalAxis.CHILDREN" resolveInfo="CHILDREN" />
             </node>
             <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1199895409197">
-              <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1199895409198">
-                <property name="value" value="fall through" />
+              <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636453231">
+                <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636453232">
+                  <property name="text" value="fall through" />
+                </node>
               </node>
             </node>
           </node>
@@ -1553,8 +1579,10 @@
               <link role="enumConstantDeclaration" targetNodeId="46.~TraversalAxis.DESCENDANTS" resolveInfo="DESCENDANTS" />
             </node>
             <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1199895409201">
-              <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1199895409202">
-                <property name="value" value="fall through" />
+              <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636454361">
+                <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636454362">
+                  <property name="text" value="fall through" />
+                </node>
               </node>
             </node>
           </node>
@@ -1577,8 +1605,10 @@
               <link role="enumConstantDeclaration" targetNodeId="46.~TraversalAxis.ANCESTORS" resolveInfo="ANCESTORS" />
             </node>
             <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1199895409205">
-              <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1199895409206">
-                <property name="value" value="fall through" />
+              <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636453977">
+                <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636453978">
+                  <property name="text" value="fall through" />
+                </node>
               </node>
             </node>
           </node>
@@ -1601,8 +1631,10 @@
               <link role="enumConstantDeclaration" targetNodeId="46.~TraversalAxis.PRECEDING_SIBLINGS" resolveInfo="PRECEDING_SIBLINGS" />
             </node>
             <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1199895409209">
-              <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1199895409210">
-                <property name="value" value="fall through" />
+              <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636453801">
+                <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636453802">
+                  <property name="text" value="fall through" />
+                </node>
               </node>
             </node>
           </node>
@@ -1612,8 +1644,10 @@
               <link role="enumConstantDeclaration" targetNodeId="46.~TraversalAxis.FOLLOWING_SIBLINGS" resolveInfo="FOLLOWING_SIBLINGS" />
             </node>
             <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1199895409213">
-              <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1199895529960">
-                <property name="value" value="fall through" />
+              <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636454331">
+                <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636454332">
+                  <property name="text" value="fall through" />
+                </node>
               </node>
             </node>
           </node>
@@ -1623,8 +1657,10 @@
               <link role="enumConstantDeclaration" targetNodeId="46.~TraversalAxis.PRECEDING_SIBLINGS_SELF" resolveInfo="PRECEDING_SIBLINGS_SELF" />
             </node>
             <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1199895409226">
-              <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1199895409227">
-                <property name="value" value="fall through" />
+              <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636453221">
+                <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636453222">
+                  <property name="text" value="fall through" />
+                </node>
               </node>
             </node>
           </node>
@@ -1744,8 +1780,10 @@
               <link role="enumConstantDeclaration" targetNodeId="46.~TraversalAxis.PRECEDING_SIBLINGS" resolveInfo="PRECEDING_SIBLINGS" />
             </node>
             <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1199896301725">
-              <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1199896301726">
-                <property name="value" value="fall through" />
+              <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636454479">
+                <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636454480">
+                  <property name="text" value="fall through" />
+                </node>
               </node>
             </node>
           </node>
@@ -1755,8 +1793,10 @@
               <link role="enumConstantDeclaration" targetNodeId="46.~TraversalAxis.FOLLOWING_SIBLINGS" resolveInfo="FOLLOWING_SIBLINGS" />
             </node>
             <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1199896301729">
-              <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1199896301730">
-                <property name="value" value="fall through" />
+              <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636454303">
+                <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636454304">
+                  <property name="text" value="fall through" />
+                </node>
               </node>
             </node>
           </node>
@@ -1766,8 +1806,10 @@
               <link role="enumConstantDeclaration" targetNodeId="46.~TraversalAxis.PRECEDING_SIBLINGS_SELF" resolveInfo="PRECEDING_SIBLINGS_SELF" />
             </node>
             <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1199896301733">
-              <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1199896301734">
-                <property name="value" value="fall through" />
+              <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636453161">
+                <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636453162">
+                  <property name="text" value="fall through" />
+                </node>
               </node>
             </node>
           </node>
@@ -1777,8 +1819,10 @@
               <link role="enumConstantDeclaration" targetNodeId="46.~TraversalAxis.SELF_FOLLOWING_SIBLINGS" resolveInfo="SELF_FOLLOWING_SIBLINGS" />
             </node>
             <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1199896301737">
-              <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1199896556923">
-                <property name="value" value="fall through" />
+              <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636453251">
+                <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636453252">
+                  <property name="text" value="fall through" />
+                </node>
               </node>
             </node>
           </node>
@@ -1811,8 +1855,10 @@
               <link role="enumConstantDeclaration" targetNodeId="46.~TraversalAxis.CHILDREN" resolveInfo="CHILDREN" />
             </node>
             <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1199801718472">
-              <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1199801929319">
-                <property name="value" value="fall through" />
+              <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636453299">
+                <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636453300">
+                  <property name="text" value="fall through" />
+                </node>
               </node>
             </node>
           </node>
@@ -1822,8 +1868,10 @@
               <link role="enumConstantDeclaration" targetNodeId="46.~TraversalAxis.DESCENDANTS" resolveInfo="DESCENDANTS" />
             </node>
             <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1199801718480">
-              <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1199801936952">
-                <property name="value" value="fall through" />
+              <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636453187">
+                <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636453188">
+                  <property name="text" value="fall through" />
+                </node>
               </node>
             </node>
           </node>
@@ -1833,8 +1881,10 @@
               <link role="enumConstantDeclaration" targetNodeId="46.~TraversalAxis.ANCESTORS" resolveInfo="ANCESTORS" />
             </node>
             <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1199801718498">
-              <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1199801939651">
-                <property name="value" value="fall through" />
+              <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636453023">
+                <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636453024">
+                  <property name="text" value="fall through" />
+                </node>
               </node>
             </node>
           </node>
@@ -1844,8 +1894,10 @@
               <link role="enumConstantDeclaration" targetNodeId="46.~TraversalAxis.PRECEDING_SIBLINGS" resolveInfo="PRECEDING_SIBLINGS" />
             </node>
             <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1199801718522">
-              <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1199801942052">
-                <property name="value" value="fall through" />
+              <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636453233">
+                <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636453234">
+                  <property name="text" value="fall through" />
+                </node>
               </node>
             </node>
           </node>
@@ -1868,8 +1920,10 @@
               <link role="enumConstantDeclaration" targetNodeId="46.~TraversalAxis.SELF_DESCENDANTS" resolveInfo="SELF_DESCENDANTS" />
             </node>
             <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1199801718484">
-              <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1199801945353">
-                <property name="value" value="fall through" />
+              <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636454267">
+                <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636454268">
+                  <property name="text" value="fall through" />
+                </node>
               </node>
             </node>
           </node>
@@ -1879,8 +1933,10 @@
               <link role="enumConstantDeclaration" targetNodeId="46.~TraversalAxis.SELF_ANCESTORS" resolveInfo="SELF_ANCESTORS" />
             </node>
             <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1199801718502">
-              <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1199801947340">
-                <property name="value" value="fall through" />
+              <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636453935">
+                <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636453936">
+                  <property name="text" value="fall through" />
+                </node>
               </node>
             </node>
           </node>
@@ -1890,8 +1946,10 @@
               <link role="enumConstantDeclaration" targetNodeId="46.~TraversalAxis.PRECEDING_SIBLINGS_SELF" resolveInfo="PRECEDING_SIBLINGS_SELF" />
             </node>
             <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1199801718526">
-              <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1199801949290">
-                <property name="value" value="fall through" />
+              <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636453503">
+                <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636453504">
+                  <property name="text" value="fall through" />
+                </node>
               </node>
             </node>
           </node>
@@ -1939,8 +1997,10 @@
               <link role="enumConstantDeclaration" targetNodeId="46.~TraversalAxis.CHILDREN" resolveInfo="CHILDREN" />
             </node>
             <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1199808660170">
-              <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1199808660171">
-                <property name="value" value="fall through" />
+              <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636453249">
+                <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636453250">
+                  <property name="text" value="fall through" />
+                </node>
               </node>
             </node>
           </node>
@@ -1950,8 +2010,10 @@
               <link role="enumConstantDeclaration" targetNodeId="46.~TraversalAxis.DESCENDANTS" resolveInfo="DESCENDANTS" />
             </node>
             <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1199808660174">
-              <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1199808660175">
-                <property name="value" value="fall through" />
+              <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636454397">
+                <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636454398">
+                  <property name="text" value="fall through" />
+                </node>
               </node>
             </node>
           </node>
@@ -1961,8 +2023,10 @@
               <link role="enumConstantDeclaration" targetNodeId="46.~TraversalAxis.ANCESTORS" resolveInfo="ANCESTORS" />
             </node>
             <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1199808660178">
-              <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1199808660179">
-                <property name="value" value="fall through" />
+              <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636453973">
+                <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636453974">
+                  <property name="text" value="fall through" />
+                </node>
               </node>
             </node>
           </node>
@@ -1972,8 +2036,10 @@
               <link role="enumConstantDeclaration" targetNodeId="46.~TraversalAxis.FOLLOWING_SIBLINGS" resolveInfo="FOLLOWING_SIBLINGS" />
             </node>
             <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1199808660186">
-              <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1199808695262">
-                <property name="value" value="fall through" />
+              <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636454265">
+                <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636454266">
+                  <property name="text" value="fall through" />
+                </node>
               </node>
             </node>
           </node>
@@ -1983,8 +2049,10 @@
               <link role="enumConstantDeclaration" targetNodeId="46.~TraversalAxis.SELF_DESCENDANTS" resolveInfo="SELF_DESCENDANTS" />
             </node>
             <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1199808477928">
-              <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1199808477929">
-                <property name="value" value="fall through" />
+              <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636454085">
+                <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636454086">
+                  <property name="text" value="fall through" />
+                </node>
               </node>
             </node>
           </node>
@@ -1994,8 +2062,10 @@
               <link role="enumConstantDeclaration" targetNodeId="46.~TraversalAxis.SELF_ANCESTORS" resolveInfo="SELF_ANCESTORS" />
             </node>
             <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1199808477932">
-              <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1199808477933">
-                <property name="value" value="fall through" />
+              <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636453771">
+                <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636453772">
+                  <property name="text" value="fall through" />
+                </node>
               </node>
             </node>
           </node>
@@ -2018,8 +2088,10 @@
               <link role="enumConstantDeclaration" targetNodeId="46.~TraversalAxis.PRECEDING_SIBLINGS" resolveInfo="PRECEDING_SIBLINGS" />
             </node>
             <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1199808660182">
-              <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1199808660183">
-                <property name="value" value="fall through" />
+              <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636454451">
+                <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636454452">
+                  <property name="text" value="fall through" />
+                </node>
               </node>
             </node>
           </node>

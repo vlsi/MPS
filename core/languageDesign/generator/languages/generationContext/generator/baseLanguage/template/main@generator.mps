@@ -50,8 +50,10 @@
           <node role="referenceMacro$link_attribute$variableDeclaration" type="jetbrains.mps.lang.generator.structure.ReferenceMacro" id="1216862267881">
             <node role="referentFunction" type="jetbrains.mps.lang.generator.structure.ReferenceMacro_GetReferent" id="1216862267882">
               <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1216862267883">
-                <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1216862267884">
-                  <property name="value" value="method parameter" />
+                <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636453141">
+                  <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636453142">
+                    <property name="text" value="method parameter" />
+                  </node>
                 </node>
                 <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1216862267885">
                   <node role="expression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1216862267886">
@@ -71,8 +73,10 @@
           <node role="nodeMacro$attribute" type="jetbrains.mps.lang.generator.structure.CopySrcNodeMacro" id="1216862267890">
             <node role="sourceNodeQuery" type="jetbrains.mps.lang.generator.structure.SourceSubstituteMacro_SourceNodeQuery" id="1216862267891">
               <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1216862267892">
-                <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1216862267893">
-                  <property name="value" value="delegate reduction to operation" />
+                <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636453529">
+                  <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636453530">
+                    <property name="text" value="delegate reduction to operation" />
+                  </node>
                 </node>
                 <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1216862267894">
                   <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1216862267895">
@@ -148,8 +152,10 @@
                   <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1216862267928">
                     <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1217272148391">
                       <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1217272148392">
-                        <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1217272174616">
-                          <property name="value" value="operation has been preprocessed by mapping script in TLBase" />
+                        <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636453493">
+                          <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636453494">
+                            <property name="text" value="operation has been preprocessed by mapping script in TLBase" />
+                          </node>
                         </node>
                         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1217272164342">
                           <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1217272167486">
@@ -248,8 +254,10 @@
                   <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1216862267964">
                     <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1217272232655">
                       <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1217272232656">
-                        <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1217272232657">
-                          <property name="value" value="operation has been preprocessed by mapping script in TLBase" />
+                        <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636453517">
+                          <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636453518">
+                            <property name="text" value="operation has been preprocessed by mapping script in TLBase" />
+                          </node>
                         </node>
                         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1217272232658">
                           <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1217272232659">
@@ -348,8 +356,10 @@
                   <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1221157951100">
                     <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1221157951101">
                       <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1221157951102">
-                        <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1221157951103">
-                          <property name="value" value="operation has been preprocessed by mapping script in TLBase" />
+                        <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636453657">
+                          <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636453658">
+                            <property name="text" value="operation has been preprocessed by mapping script in TLBase" />
+                          </node>
                         </node>
                         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1221157951104">
                           <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1221157951105">
@@ -448,8 +458,10 @@
                   <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1221219976865">
                     <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1221219976866">
                       <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1221219976867">
-                        <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1221219976868">
-                          <property name="value" value="operation has been preprocessed by mapping script in TLBase" />
+                        <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636453761">
+                          <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636453762">
+                            <property name="text" value="operation has been preprocessed by mapping script in TLBase" />
+                          </node>
                         </node>
                         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1221219976869">
                           <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1221219976870">
@@ -538,8 +550,10 @@
                   <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1217882311151">
                     <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1217882311152">
                       <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1217882311153">
-                        <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1217882311154">
-                          <property name="value" value="operation has been preprocessed by mapping script in TLBase" />
+                        <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636453441">
+                          <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636453442">
+                            <property name="text" value="operation has been preprocessed by mapping script in TLBase" />
+                          </node>
                         </node>
                         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1217882311155">
                           <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1217882311156">
@@ -1284,8 +1298,10 @@
           <node role="nodeMacro$attribute" type="jetbrains.mps.lang.generator.structure.CopySrcNodeMacro" id="1217891713239">
             <node role="sourceNodeQuery" type="jetbrains.mps.lang.generator.structure.SourceSubstituteMacro_SourceNodeQuery" id="1217891713240">
               <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1217891713241">
-                <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1217892079684">
-                  <property name="value" value="delegate reduction to operation" />
+                <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636453649">
+                  <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636453650">
+                    <property name="text" value="delegate reduction to operation" />
+                  </node>
                 </node>
                 <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1217891883775">
                   <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1217891913646">

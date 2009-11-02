@@ -191,8 +191,12 @@
             </node>
           </node>
         </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1235556941136" />
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1235556941982" />
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636453567">
+          <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636453568" />
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636453437">
+          <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636453438" />
+        </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1235556943766">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1235556943767">
             <link role="variableDeclaration" targetNodeId="1235556929577" resolveInfo="t2" />

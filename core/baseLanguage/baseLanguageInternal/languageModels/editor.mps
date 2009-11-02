@@ -453,11 +453,15 @@
                     </node>
                   </node>
                 </node>
-                <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1224155888054">
-                  <property name="value" value="we need this because of smart input" />
+                <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636453255">
+                  <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636453256">
+                    <property name="text" value="we need this because of smart input" />
+                  </node>
                 </node>
-                <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1224155888055">
-                  <property name="value" value="DO NOT REMOVE IT" />
+                <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636454359">
+                  <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636454360">
+                    <property name="text" value="DO NOT REMOVE IT" />
+                  </node>
                 </node>
                 <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1224155888056">
                   <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1224155888057">

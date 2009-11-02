@@ -749,8 +749,10 @@
             </node>
           </node>
         </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1213877415692">
-          <property name="value" value="==========" />
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636454135">
+          <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636454136">
+            <property name="text" value="==========" />
+          </node>
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1213877415693">
           <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1213877415694">

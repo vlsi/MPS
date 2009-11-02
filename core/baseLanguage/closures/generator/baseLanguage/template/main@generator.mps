@@ -18167,8 +18167,10 @@
                         </node>
                       </node>
                     </node>
-                    <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1229017609589">
-                      <property name="value" value=" now fes.body.statement contains a copy of yas." />
+                    <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636453045">
+                      <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636453046">
+                        <property name="text" value=" now fes.body.statement contains a copy of yas." />
+                      </node>
                     </node>
                     <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1229017653380">
                       <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1229017662247">
@@ -18451,8 +18453,10 @@
                       <node role="statement" type="jetbrains.mps.baseLanguage.structure.BreakStatement" id="1229013804802" />
                     </node>
                   </node>
-                  <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1229013806502">
-                    <property name="value" value=" fall through" />
+                  <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636453115">
+                    <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636453116">
+                      <property name="text" value=" fall through" />
+                    </node>
                   </node>
                 </node>
               </node>
@@ -36139,8 +36143,10 @@
               <link role="enumConstantDeclaration" targetNodeId="21.~Outcome.RETURN_VALUE" resolveInfo="RETURN_VALUE" />
             </node>
             <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="7246115176735005289">
-              <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="7246115176735005290">
-                <property name="value" value=" fall through" />
+              <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636454305">
+                <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636454306">
+                  <property name="text" value=" fall through" />
+                </node>
               </node>
             </node>
           </node>
@@ -36828,8 +36834,10 @@
               <link role="enumConstantDeclaration" targetNodeId="21.~Outcome.RETURN_VALUE" resolveInfo="RETURN_VALUE" />
             </node>
             <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="7246115176735007630">
-              <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="7246115176735007631">
-                <property name="value" value=" fall through" />
+              <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636454093">
+                <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636454094">
+                  <property name="text" value=" fall through" />
+                </node>
               </node>
             </node>
           </node>

@@ -198,8 +198,10 @@
             </node>
           </node>
         </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1213877219597">
-          <property name="value" value="reference may be resolved dynamically?" />
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636453131">
+          <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636453132">
+            <property name="text" value="reference may be resolved dynamically?" />
+          </node>
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1213877219598">
           <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1213877219599">

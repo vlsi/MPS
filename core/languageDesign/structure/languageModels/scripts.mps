@@ -441,8 +441,10 @@
             </node>
           </node>
         </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1198521375392">
-          <property name="value" value="collecting editors:" />
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636453793">
+          <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636453794">
+            <property name="text" value="collecting editors:" />
+          </node>
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1198521700205">
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1198521700206">
@@ -529,8 +531,10 @@
             </node>
           </node>
         </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1198521390847">
-          <property name="value" value="collecting behaviors:" />
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636453549">
+          <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636453550">
+            <property name="text" value="collecting behaviors:" />
+          </node>
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1198521635840">
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1198521635841">
@@ -617,8 +621,10 @@
             </node>
           </node>
         </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1224506339398">
-          <property name="value" value="collecting constraints:" />
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636453637">
+          <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636453638">
+            <property name="text" value="collecting constraints:" />
+          </node>
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1224506339400">
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1224506339401">
@@ -705,8 +711,10 @@
             </node>
           </node>
         </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1225272186217">
-          <property name="value" value="collecting data flow:" />
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636454173">
+          <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636454174">
+            <property name="text" value="collecting data flow:" />
+          </node>
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1225272186218">
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1225272186219">
@@ -793,8 +801,10 @@
             </node>
           </node>
         </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1198523172001">
-          <property name="value" value="refactoring itself" />
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636453311">
+          <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636453312">
+            <property name="text" value="refactoring itself" />
+          </node>
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ForeachStatement" id="1198173949294">
           <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1198173949295">
@@ -1241,8 +1251,10 @@
             <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.IsNotEmptyOperation" id="1225273090150" />
           </node>
         </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1198174441520">
-          <property name="value" value="todo: move other concept-related aspect stuff" />
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636453653">
+          <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636453654">
+            <property name="text" value="todo: move other concept-related aspect stuff" />
+          </node>
         </node>
       </node>
     </node>
@@ -2528,8 +2540,10 @@
     </node>
     <node role="affectedNodesClause" type="jetbrains.mps.lang.refactoring.structure.AffectedNodesClause" id="1201019642858">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1201019642859">
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="7754459869734024658">
-          <property name="value" value="all usages excluding concept's aspects" />
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636453715">
+          <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636453716">
+            <property name="text" value="all usages excluding concept's aspects" />
+          </node>
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="7754459869734029552">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression" id="7754459869734029554">

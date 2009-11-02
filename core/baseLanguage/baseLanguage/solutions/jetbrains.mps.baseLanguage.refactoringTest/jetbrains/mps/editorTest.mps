@@ -963,11 +963,8 @@
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1231671312978">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.BlockStatement" id="1231671331507">
           <node role="statements" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1231671331508">
-            <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="4197435882578380777">
-              <node role="testNode$attribute" type="jetbrains.mps.lang.test.structure.AnonymousCellAnnotation" id="4197435882578380778">
-                <property name="isLastPosition" value="true" />
-                <property name="cellId" value="property_value" />
-              </node>
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636454109">
+              <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636454110" />
             </node>
           </node>
         </node>

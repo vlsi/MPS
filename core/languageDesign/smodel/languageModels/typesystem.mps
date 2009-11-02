@@ -71,8 +71,10 @@
           </node>
         </node>
       </node>
-      <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1225544505745">
-        <property name="value" value=" this when concrete has a sense of overloading" />
+      <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636453409">
+        <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636453410">
+          <property name="text" value=" this when concrete has a sense of overloading" />
+        </node>
       </node>
       <node role="statement" type="jetbrains.mps.lang.typesystem.structure.WhenConcreteStatement" id="1186061660362">
         <property name="isShallow" value="true" />
@@ -823,8 +825,10 @@
           </node>
         </node>
       </node>
-      <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1205962193079">
-        <property name="value" value="assign type" />
+      <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636453893">
+        <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636453894">
+          <property name="text" value="assign type" />
+        </node>
       </node>
       <node role="statement" type="jetbrains.mps.lang.typesystem.structure.CreateEquationStatement" id="1206103335045">
         <node role="rightExpression" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause" id="1206103337299">
@@ -1178,8 +1182,10 @@
           </node>
         </node>
       </node>
-      <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1225408236976">
-        <property name="value" value="op returns node passed in parameter" />
+      <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636453367">
+        <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636453368">
+          <property name="text" value="op returns node passed in parameter" />
+        </node>
       </node>
       <node role="statement" type="jetbrains.mps.lang.typesystem.structure.CreateEquationStatement" id="1225408236977">
         <node role="rightExpression" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause" id="1225408236978">
@@ -1261,8 +1267,10 @@
           </node>
         </node>
       </node>
-      <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1225408525101">
-        <property name="value" value="op returns node passed in parameter" />
+      <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636453429">
+        <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636453430">
+          <property name="text" value="op returns node passed in parameter" />
+        </node>
       </node>
       <node role="statement" type="jetbrains.mps.lang.typesystem.structure.CreateEquationStatement" id="1225408525102">
         <node role="rightExpression" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause" id="1225408525103">
@@ -1350,8 +1358,10 @@
         </node>
         <node role="inequationGroup" type="jetbrains.mps.lang.typesystem.structure.DefaultGroupReference" id="5970100369440882563" />
       </node>
-      <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1225408872681">
-        <property name="value" value="op returns node passed in parameter" />
+      <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636453863">
+        <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636453864">
+          <property name="text" value="op returns node passed in parameter" />
+        </node>
       </node>
       <node role="statement" type="jetbrains.mps.lang.typesystem.structure.CreateEquationStatement" id="1225408872682">
         <node role="rightExpression" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause" id="1225408872683">
@@ -1412,8 +1422,10 @@
           </node>
         </node>
       </node>
-      <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1186059822674">
-        <property name="value" value="==========" />
+      <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636453821">
+        <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636453822">
+          <property name="text" value="==========" />
+        </node>
       </node>
       <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1186059822675">
         <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1186059822676">
@@ -1549,8 +1561,10 @@
               </node>
             </node>
           </node>
-          <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1225544578369">
-            <property name="value" value=" this when concrete has a sense of overloading" />
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636453371">
+            <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636453372">
+              <property name="text" value=" this when concrete has a sense of overloading" />
+            </node>
           </node>
           <node role="statement" type="jetbrains.mps.lang.typesystem.structure.WhenConcreteStatement" id="1186061035207">
             <property name="isShallow" value="true" />
@@ -1809,8 +1823,10 @@
           </node>
         </node>
       </node>
-      <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1208191126341">
-        <property name="value" value="==========" />
+      <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636454409">
+        <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636454410">
+          <property name="text" value="==========" />
+        </node>
       </node>
       <node role="statement" type="jetbrains.mps.lang.typesystem.structure.CreateEquationStatement" id="1203712042824">
         <node role="leftExpression" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause" id="1203712042825">
@@ -1941,8 +1957,10 @@
               </node>
             </node>
           </node>
-          <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1179365844919">
-            <property name="value" value="==========" />
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636453677">
+            <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636453678">
+              <property name="text" value="==========" />
+            </node>
           </node>
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1179365852930">
             <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1206573100886">
@@ -2022,8 +2040,10 @@
           </node>
         </node>
       </node>
-      <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1193832971874">
-        <property name="value" value="DO NOT TOUCH THIS. CONCEPT MIGHT BE A TYPE VARIABLE" />
+      <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636454335">
+        <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636454336">
+          <property name="text" value="DO NOT TOUCH THIS. CONCEPT MIGHT BE A TYPE VARIABLE" />
+        </node>
       </node>
       <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1179363923748">
         <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1179363923749">
@@ -2155,17 +2175,25 @@
               </node>
             </node>
           </node>
-          <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="6942782700106044190">
-            <property name="value" value="commented out because:" />
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636453681">
+            <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636453682">
+              <property name="text" value="commented out because:" />
+            </node>
           </node>
-          <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="6942782700106044184">
-            <property name="value" value="in a node of type concept&lt;SomeInterfaceConcept&gt; could be stored a value node&lt;SomeConcreteConcept&gt;" />
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636454245">
+            <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636454246">
+              <property name="text" value="in a node of type concept&lt;SomeInterfaceConcept&gt; could be stored a value node&lt;SomeConcreteConcept&gt;" />
+            </node>
           </node>
-          <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="6942782700106044186">
-            <property name="value" value="if SomeConcreteConcept is a subconcept of SomeInterfaceConcept." />
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636453735">
+            <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636453736">
+              <property name="text" value="if SomeConcreteConcept is a subconcept of SomeInterfaceConcept." />
+            </node>
           </node>
-          <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="6942782700106044192">
-            <property name="value" value="(see rule supertypesOf_SConceptTypeType_SConceptTypeType)" />
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636454061">
+            <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636454062">
+              <property name="text" value="(see rule supertypesOf_SConceptTypeType_SConceptTypeType)" />
+            </node>
           </node>
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.CommentedStatementsBlock" id="6942782700106044182">
             <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1227611647413">
@@ -2253,8 +2281,10 @@
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1178292729091">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1186695060900">
           <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1186695060901">
-            <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1186695086540">
-              <property name="value" value="don't check - it is red anyway" />
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636453273">
+              <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636453274">
+                <property name="text" value="don't check - it is red anyway" />
+              </node>
             </node>
             <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1186695082038" />
           </node>
@@ -2412,8 +2442,10 @@
             </node>
           </node>
         </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1205265592172">
-          <property name="value" value="===========" />
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636453117">
+          <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636453118">
+            <property name="text" value="===========" />
+          </node>
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1205265613065">
           <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1205265613066">
@@ -2456,8 +2488,10 @@
                 </node>
                 <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1207679519810">
                   <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1207679519811">
-                    <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1207679447775">
-                      <property name="value" value="some of ops applicable to 'link' require left-expr to be a concept" />
+                    <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636453217">
+                      <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636453218">
+                        <property name="text" value="some of ops applicable to 'link' require left-expr to be a concept" />
+                      </node>
                     </node>
                     <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1207679453387">
                       <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1207679453388">
@@ -2580,8 +2614,10 @@
             </node>
           </node>
         </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1186065663905">
-          <property name="value" value="===========" />
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636453113">
+          <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636453114">
+            <property name="text" value="===========" />
+          </node>
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1203710773383">
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1203710773384">
@@ -2821,8 +2857,10 @@
       <property name="name" value="checkAppliedTo_LinkAccess_aggregation" />
       <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1205272718065" />
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1178287491650">
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1205266927654">
-          <property name="value" value="expect access to an aggregation link with singular cardinality" />
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636453663">
+          <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636453664">
+            <property name="text" value="expect access to an aggregation link with singular cardinality" />
+          </node>
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1205267007204">
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1205267007205">
@@ -2889,8 +2927,10 @@
             </node>
           </node>
         </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1205272067892">
-          <property name="value" value="----" />
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636453991">
+          <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636453992">
+            <property name="text" value="----" />
+          </node>
         </node>
         <node role="statement" type="jetbrains.mps.lang.typesystem.structure.AssertStatement" id="1205272067893">
           <node role="condition" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1205272067894">
@@ -2920,11 +2960,15 @@
       <property name="name" value="checkAppliedNotTo_LinkAccess_reference" />
       <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1230333667566" />
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1230333667567">
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1230333667568">
-          <property name="value" value="expect access to an aggregation link with singular cardinality" />
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636453395">
+          <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636453396">
+            <property name="text" value="expect access to an aggregation link with singular cardinality" />
+          </node>
         </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1230333859209">
-          <property name="value" value="left expression could also be something else (like just 'node') but not access to a reference link" />
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636453293">
+          <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636453294">
+            <property name="text" value="left expression could also be something else (like just 'node') but not access to a reference link" />
+          </node>
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1230333667569">
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1230333667570">
@@ -2993,8 +3037,10 @@
             </node>
           </node>
         </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1230333667605">
-          <property name="value" value="----" />
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636453313">
+          <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636453314">
+            <property name="text" value="----" />
+          </node>
         </node>
         <node role="statement" type="jetbrains.mps.lang.typesystem.structure.AssertStatement" id="1230333667606">
           <node role="condition" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1230333667607">
@@ -4173,8 +4219,10 @@
             </node>
           </node>
         </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1222433364124">
-          <property name="value" value="transitive closure" />
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636453901">
+          <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636453902">
+            <property name="text" value="transitive closure" />
+          </node>
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ForeachStatement" id="1222432932499">
           <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1222432932500">
@@ -4898,8 +4946,10 @@
     <property name="overrides" value="true" />
     <property name="name" value="typeOf_LinkList_AddChildOperation" />
     <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1178287491902">
-      <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1225406866991">
-        <property name="value" value="checking" />
+      <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636454161">
+        <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636454162">
+          <property name="text" value="checking" />
+        </node>
       </node>
       <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1205272443635">
         <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1205272443636">
@@ -4966,8 +5016,10 @@
           </node>
         </node>
       </node>
-      <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1225406879414">
-        <property name="value" value="op returns node passed in parameter" />
+      <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636454301">
+        <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636454302">
+          <property name="text" value="op returns node passed in parameter" />
+        </node>
       </node>
       <node role="statement" type="jetbrains.mps.lang.typesystem.structure.CreateEquationStatement" id="1225406879415">
         <node role="rightExpression" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause" id="1225406879416">
@@ -5115,8 +5167,10 @@
     <property name="overrides" value="true" />
     <property name="name" value="typeOf_LinkList_InsertChildFirstOperation" />
     <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1178287492016">
-      <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1225407650822">
-        <property name="value" value="checking" />
+      <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636454119">
+        <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636454120">
+          <property name="text" value="checking" />
+        </node>
       </node>
       <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1205272570087">
         <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1205272570088">
@@ -5183,8 +5237,10 @@
           </node>
         </node>
       </node>
-      <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1225407664152">
-        <property name="value" value="op returns node passed in parameter" />
+      <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636454003">
+        <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636454004">
+          <property name="text" value="op returns node passed in parameter" />
+        </node>
       </node>
       <node role="statement" type="jetbrains.mps.lang.typesystem.structure.CreateEquationStatement" id="1225407664153">
         <node role="rightExpression" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause" id="1225407664154">
@@ -5377,8 +5433,10 @@
     <property name="overrides" value="false" />
     <property name="name" value="typeOf_Link_SetTargetOperation" />
     <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1178287492113">
-      <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1225406328399">
-        <property name="value" value="checking" />
+      <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636453971">
+        <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636453972">
+          <property name="text" value="checking" />
+        </node>
       </node>
       <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1186060259344">
         <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1186060259345">
@@ -5445,8 +5503,10 @@
           </node>
         </node>
       </node>
-      <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1225406410057">
-        <property name="value" value="op returns node passed in parameter" />
+      <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636453095">
+        <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636453096">
+          <property name="text" value="op returns node passed in parameter" />
+        </node>
       </node>
       <node role="statement" type="jetbrains.mps.lang.typesystem.structure.CreateEquationStatement" id="1225406438063">
         <node role="rightExpression" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause" id="1225406448708">
@@ -6855,8 +6915,10 @@
           </node>
         </node>
       </node>
-      <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1205266078173">
-        <property name="value" value="assign type" />
+      <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636454101">
+        <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636454102">
+          <property name="text" value="assign type" />
+        </node>
       </node>
       <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="5458013232459741149">
         <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="5458013232459741150">
@@ -6931,8 +6993,10 @@
           </node>
         </node>
       </node>
-      <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1205266107702">
-        <property name="value" value="---" />
+      <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636454053">
+        <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636454054">
+          <property name="text" value="---" />
+        </node>
       </node>
       <node role="statement" type="jetbrains.mps.lang.typesystem.structure.AssertStatement" id="1204764593904">
         <node role="condition" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204764622424">
@@ -6994,8 +7058,10 @@
           </node>
         </node>
       </node>
-      <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1205276553411">
-        <property name="value" value="assign type" />
+      <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636454443">
+        <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636454444">
+          <property name="text" value="assign type" />
+        </node>
       </node>
       <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="5458013232459741182">
         <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="5458013232459741183">
@@ -7070,8 +7136,10 @@
           </node>
         </node>
       </node>
-      <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1205276553452">
-        <property name="value" value="---" />
+      <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636453837">
+        <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636453838">
+          <property name="text" value="---" />
+        </node>
       </node>
       <node role="statement" type="jetbrains.mps.lang.typesystem.structure.AssertStatement" id="1204832870610">
         <node role="condition" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204832870611">
@@ -7115,8 +7183,10 @@
       </node>
       <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1204835829177">
         <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1204835829178">
-          <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1204835909374">
-            <property name="value" value="# property name" />
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636453319">
+            <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636453320">
+              <property name="text" value="# property name" />
+            </node>
           </node>
           <node role="statement" type="jetbrains.mps.lang.typesystem.structure.CreateLessThanInequationStatement" id="1204835998060">
             <node role="leftExpression" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause" id="1204835998061">
@@ -7191,8 +7261,10 @@
           </node>
         </node>
       </node>
-      <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1204926902511">
-        <property name="value" value="assign type" />
+      <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636453155">
+        <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636453156">
+          <property name="text" value="assign type" />
+        </node>
       </node>
       <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="5458013232459741099">
         <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="5458013232459741100">
@@ -7267,8 +7339,10 @@
           </node>
         </node>
       </node>
-      <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1204926906190">
-        <property name="value" value="---" />
+      <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636453147">
+        <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636453148">
+          <property name="text" value="---" />
+        </node>
       </node>
       <node role="statement" type="jetbrains.mps.lang.typesystem.structure.AssertStatement" id="1204849792143">
         <node role="condition" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204849792144">
@@ -7311,8 +7385,10 @@
       </node>
       <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1204849792158">
         <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1204849792159">
-          <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1204849792160">
-            <property name="value" value="link role expected" />
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636453455">
+            <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636453456">
+              <property name="text" value="link role expected" />
+            </node>
           </node>
           <node role="statement" type="jetbrains.mps.lang.typesystem.structure.CreateLessThanInequationStatement" id="1204849792161">
             <node role="leftExpression" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause" id="1204849792162">
@@ -7469,8 +7545,10 @@
     <property name="name" value="typeof_AllAttributesQualifier" />
     <property name="package" value="attribute" />
     <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1205357642778">
-      <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1205357746656">
-        <property name="value" value="assign type" />
+      <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636453459">
+        <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636453460">
+          <property name="text" value="assign type" />
+        </node>
       </node>
       <node role="statement" type="jetbrains.mps.lang.typesystem.structure.CreateEquationStatement" id="1205357746691">
         <node role="leftExpression" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause" id="1205357746692">
@@ -7567,8 +7645,10 @@
       </node>
       <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1206659963959">
         <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1206659963960">
-          <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1206659963961">
-            <property name="value" value="concept expected" />
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636454159">
+            <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636454160">
+              <property name="text" value="concept expected" />
+            </node>
           </node>
           <node role="statement" type="jetbrains.mps.lang.typesystem.structure.CreateLessThanInequationStatement" id="1206659963962">
             <node role="leftExpression" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause" id="1206659963963">
@@ -7634,8 +7714,10 @@
       </node>
       <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1206661693381">
         <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1206661693382">
-          <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1206661693383">
-            <property name="value" value="concept expected" />
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636454177">
+            <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636454178">
+              <property name="text" value="concept expected" />
+            </node>
           </node>
           <node role="statement" type="jetbrains.mps.lang.typesystem.structure.CreateLessThanInequationStatement" id="1206661693384">
             <node role="leftExpression" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause" id="1206661693385">
@@ -7701,8 +7783,10 @@
       </node>
       <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1206662734157">
         <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1206662734158">
-          <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1206662734159">
-            <property name="value" value="concept expected" />
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636454413">
+            <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636454414">
+              <property name="text" value="concept expected" />
+            </node>
           </node>
           <node role="statement" type="jetbrains.mps.lang.typesystem.structure.CreateLessThanInequationStatement" id="1206662734160">
             <node role="leftExpression" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause" id="1206662734161">
@@ -7768,8 +7852,10 @@
       </node>
       <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1206735630128">
         <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1206735630129">
-          <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1206735630130">
-            <property name="value" value="concept expected" />
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636454457">
+            <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636454458">
+              <property name="text" value="concept expected" />
+            </node>
           </node>
           <node role="statement" type="jetbrains.mps.lang.typesystem.structure.CreateLessThanInequationStatement" id="1206735630131">
             <node role="leftExpression" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause" id="1206735630132">
@@ -7835,8 +7921,10 @@
       </node>
       <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1207344198910">
         <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1207344198911">
-          <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1207344198912">
-            <property name="value" value="concept expected" />
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636454043">
+            <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636454044">
+              <property name="text" value="concept expected" />
+            </node>
           </node>
           <node role="statement" type="jetbrains.mps.lang.typesystem.structure.CreateLessThanInequationStatement" id="1207344198913">
             <node role="leftExpression" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause" id="1207344198914">
@@ -8531,8 +8619,10 @@
     <property name="package" value="operation.node" />
     <property name="name" value="check_Node_GetReferentSearchScopeOperation" />
     <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1226068607117">
-      <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1226068687977">
-        <property name="value" value="check link role argument" />
+      <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636454115">
+        <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636454116">
+          <property name="text" value="check link role argument" />
+        </node>
       </node>
       <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1226068687978">
         <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1226068687979">

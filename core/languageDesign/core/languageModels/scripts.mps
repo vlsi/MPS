@@ -848,11 +848,15 @@
       <node role="returnType" type="jetbrains.mps.baseLanguage.structure.BooleanType" id="4706738529699924066" />
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="4706738529699924064" />
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="4706738529699924065">
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="4706738529699924212">
-          <property name="value" value="we won't rename nodes, for which there are registered name constrints" />
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636453019">
+          <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636453020">
+            <property name="text" value="we won't rename nodes, for which there are registered name constrints" />
+          </node>
         </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="4706738529699924213">
-          <property name="value" value="if there are constrints, but they are not compiled, we can rename it" />
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636453643">
+          <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636453644">
+            <property name="text" value="if there are constrints, but they are not compiled, we can rename it" />
+          </node>
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="4706738529699924214">
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="4706738529699924215">

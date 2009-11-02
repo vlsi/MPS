@@ -358,8 +358,10 @@
     <link role="concept" targetNodeId="1.6962838954693748795" resolveInfo="ValueInlineDocTag" />
     <node role="canBeParent" type="jetbrains.mps.lang.constraints.structure.ConstraintFunction_CanBeAParent" id="3941416111380671266">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="3941416111380671267">
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="3941416111380672939">
-          <property name="value" value=" TODO check for constant" />
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636453843">
+          <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636453844">
+            <property name="text" value=" TODO check for constant" />
+          </node>
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="3941416111380672941">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="3941416111380672942">

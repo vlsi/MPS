@@ -70,8 +70,10 @@
                         <property name="value" value="4" />
                       </node>
                     </node>
-                    <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1227191987903">
-                      <property name="value" value="todo:" />
+                    <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636453729">
+                      <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636453730">
+                        <property name="text" value="todo:" />
+                      </node>
                     </node>
                   </node>
                 </node>

@@ -3958,8 +3958,10 @@
             </node>
           </node>
         </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1218642626196">
-          <property name="value" value="search for project if needed" />
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636454113">
+          <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636454114">
+            <property name="text" value="search for project if needed" />
+          </node>
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1218642589001">
           <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1218642589002">
@@ -4019,8 +4021,10 @@
             <link role="variableDeclaration" targetNodeId="1218642494882" resolveInfo="onlyUnderProjectBasedir" />
           </node>
         </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1218642637304">
-          <property name="value" value="process classpath" />
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636454371">
+          <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636454372">
+            <property name="text" value="process classpath" />
+          </node>
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.collections.structure.ForEachStatement" id="1213877515036">
           <node role="variable" type="jetbrains.mps.baseLanguage.collections.structure.ForEachVariable" id="1213877515037">
@@ -4666,8 +4670,10 @@
         <link role="elementConcept" targetNodeId="1.1204737220833" resolveInfo="PathHolder" />
       </node>
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1218646038567">
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1218648531191">
-          <property name="value" value="collecting modules" />
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636454075">
+          <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636454076">
+            <property name="text" value="collecting modules" />
+          </node>
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1218646142128">
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1218646142129">
@@ -4732,8 +4738,10 @@
             </node>
           </node>
         </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1218648538533">
-          <property name="value" value="getting classpath" />
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636453825">
+          <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636453826">
+            <property name="text" value="getting classpath" />
+          </node>
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1218646236579">
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1218646236580">
@@ -4771,8 +4779,10 @@
             </node>
           </node>
         </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1218648551716">
-          <property name="value" value="creating path holders to use in generator" />
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636453819">
+          <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636453820">
+            <property name="text" value="creating path holders to use in generator" />
+          </node>
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1218716742985">
           <node role="expression" type="jetbrains.mps.lang.smodel.structure.StaticConceptMethodCall" id="1218716954369">
@@ -5153,8 +5163,10 @@
           </node>
           <node role="ifFalseStatement" type="jetbrains.mps.baseLanguage.structure.BlockStatement" id="1218648416999">
             <node role="statements" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1218648417000">
-              <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1218648417001">
-                <property name="value" value="TODO how not to use instanceof here?" />
+              <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636453173">
+                <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636453174">
+                  <property name="text" value="TODO how not to use instanceof here?" />
+                </node>
               </node>
               <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1218648417002">
                 <node role="condition" type="jetbrains.mps.baseLanguage.structure.InstanceOfExpression" id="1218648417003">

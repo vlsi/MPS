@@ -139,8 +139,10 @@
           <node role="referenceMacro$link_attribute$variableDeclaration" type="jetbrains.mps.lang.generator.structure.ReferenceMacro" id="1217272831784">
             <node role="referentFunction" type="jetbrains.mps.lang.generator.structure.ReferenceMacro_GetReferent" id="1217272831785">
               <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1217272831786">
-                <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1217272831787">
-                  <property name="value" value="method parameter" />
+                <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636453507">
+                  <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636453508">
+                    <property name="text" value="method parameter" />
+                  </node>
                 </node>
                 <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1217272831788">
                   <node role="expression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1217272831789">
@@ -1134,8 +1136,10 @@
       <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1216944127911" />
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1216944127912" />
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1216944127913">
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1216944800984">
-          <property name="value" value="'scope' has been removed from function parameters but we still have to support its generation" />
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636454445">
+          <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636454446">
+            <property name="text" value="'scope' has been removed from function parameters but we still have to support its generation" />
+          </node>
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1216944166416">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1216944167699">
@@ -1163,20 +1167,30 @@
     <property name="modifiesModel" value="true" />
     <node role="codeBlock" type="jetbrains.mps.lang.generator.structure.MappingScript_CodeBlock" id="1217270660171">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1217270660172">
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1217270762463">
-          <property name="value" value="references on mapping label will be lost because" />
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636453575">
+          <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636453576">
+            <property name="text" value="references on mapping label will be lost because" />
+          </node>
         </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1217270789715">
-          <property name="value" value="TLBase generator executes first and doesn't copy" />
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636453285">
+          <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636453286">
+            <property name="text" value="TLBase generator executes first and doesn't copy" />
+          </node>
         </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1217270822498">
-          <property name="value" value="mapping configs (where labels are declared) to output model" />
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636454327">
+          <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636454328">
+            <property name="text" value="mapping configs (where labels are declared) to output model" />
+          </node>
         </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1217270914960" />
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636453421">
+          <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636453422" />
+        </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.BlockStatement" id="1217272368341">
           <node role="statements" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1217272368342">
-            <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1217270918259">
-              <property name="value" value="references in 'get by label'" />
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636454395">
+              <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636454396">
+                <property name="text" value="references in 'get by label'" />
+              </node>
             </node>
             <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1217270954479">
               <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1217270954480">
@@ -1282,8 +1296,10 @@
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.BlockStatement" id="1217272380611">
           <node role="statements" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1217272380612">
-            <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1217271687149">
-              <property name="value" value="references in 'get by label and node'" />
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636453695">
+              <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636453696">
+                <property name="text" value="references in 'get by label and node'" />
+              </node>
             </node>
             <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1217271687150">
               <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1217271687151">
@@ -1389,8 +1405,10 @@
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.BlockStatement" id="1221219837885">
           <node role="statements" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1221219837886">
-            <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1221219837887">
-              <property name="value" value="references in 'get by label and node and ref.scope'" />
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636453685">
+              <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636453686">
+                <property name="text" value="references in 'get by label and node and ref.scope'" />
+              </node>
             </node>
             <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1221219837888">
               <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1221219837889">
@@ -1496,8 +1514,10 @@
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.BlockStatement" id="1221158464677">
           <node role="statements" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1221158464678">
-            <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1221158464679">
-              <property name="value" value="references in 'get all by label and node'" />
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636453763">
+              <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636453764">
+                <property name="text" value="references in 'get all by label and node'" />
+              </node>
             </node>
             <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1221158464680">
               <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1221158464681">
@@ -1603,8 +1623,10 @@
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.BlockStatement" id="1217882410834">
           <node role="statements" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1217882410835">
-            <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1217882410836">
-              <property name="value" value="references in 'get prev input by label'" />
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636453707">
+              <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636453708">
+                <property name="text" value="references in 'get prev input by label'" />
+              </node>
             </node>
             <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1217882410837">
               <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1217882410838">

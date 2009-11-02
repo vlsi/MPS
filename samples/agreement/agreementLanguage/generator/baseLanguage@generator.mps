@@ -58,8 +58,10 @@
       <link role="templateNode" targetNodeId="1112304135028" resolveInfo="_registryBuilder_" />
       <node role="conditionFunction" type="jetbrains.mps.lang.generator.structure.CreateRootRule_Condition" id="1197658386740">
         <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1197658386741">
-          <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1197658401279">
-            <property name="value" value="apply rule if at least one Plan exists in input model" />
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636453159">
+            <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636453160">
+              <property name="text" value="apply rule if at least one Plan exists in input model" />
+            </node>
           </node>
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1197658704926">
             <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1197658704927">
@@ -654,8 +656,10 @@
                               </node>
                             </node>
                           </node>
-                          <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1197661270732">
-                            <property name="value" value="error" />
+                          <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636453607">
+                            <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636453608">
+                              <property name="text" value="error" />
+                            </node>
                           </node>
                           <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1197661270733">
                             <node role="expression" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1197661270734" />

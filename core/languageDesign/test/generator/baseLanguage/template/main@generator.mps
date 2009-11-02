@@ -2146,8 +2146,10 @@
   <node type="jetbrains.mps.lang.generator.structure.TemplateDeclaration" id="2685915532175064259">
     <property name="name" value="reduce_ExpressionContainer" />
     <link role="applicableConcept" targetNodeId="1.2685915532175039858" resolveInfo="ExpressionContainer" />
-    <node role="contentNode" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="2685915532175065953">
-      <property name="value" value="an expression container was here" />
+    <node role="contentNode" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636454171">
+      <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636454172">
+        <property name="text" value="an expression container was here" />
+      </node>
     </node>
   </node>
   <node type="jetbrains.mps.lang.generator.structure.TemplateDeclaration" id="5773579205429918934">
