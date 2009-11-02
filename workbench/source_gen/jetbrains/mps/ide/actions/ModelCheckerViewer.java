@@ -28,20 +28,19 @@ import com.intellij.openapi.project.Project;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.ide.findusages.view.treeholder.treeview.INodeRepresentator;
-import java.util.EnumMap;
-import jetbrains.mps.nodeEditor.MessageStatus;
 import java.util.Map;
 import jetbrains.mps.smodel.SNodeId;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
 import jetbrains.mps.ide.findusages.view.treeholder.tree.TextOptions;
 import javax.swing.Icon;
-import jetbrains.mps.ide.messages.Icons;
+import jetbrains.mps.ide.projectPane.Icons;
 import org.jdom.Element;
 import jetbrains.mps.ide.findusages.CantSaveSomethingException;
 import jetbrains.mps.internal.collections.runtime.IMapping;
 import jetbrains.mps.ide.findusages.CantLoadSomethingException;
 import java.util.Iterator;
+import jetbrains.mps.nodeEditor.MessageStatus;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.smodel.ModelAccess;
 
@@ -107,7 +106,6 @@ public class ModelCheckerViewer extends JPanel {
     private static final String NODE_REFERENCE = "reference";
     private static final String STATUS = "status";
     private static final String MESSAGE = "message";
-    private static EnumMap<MessageStatus, String> COLOR_FOR_ERROR;
 
     private Map<SNodeId, ModelCheckerResults.Result> myCheckerResultForNode = MapSequence.fromMap(new HashMap<SNodeId, ModelCheckerResults.Result>());
 
@@ -124,7 +122,7 @@ public class ModelCheckerViewer extends JPanel {
     }
 
     public Icon getResultsIcon() {
-      return Icons.ERROR_ICON;
+      return Icons.CLOSED_FOLDER;
     }
 
     public String getCategoryText(TextOptions options, String category, boolean isResultsSection) {
@@ -136,16 +134,31 @@ public class ModelCheckerViewer extends JPanel {
           "s"
         )) + ")";
       }
-      return "<strong>" + category + counter + "</strong>";
+      String categoryRepr = "";
+      if (category.equals("ERROR")) {
+        categoryRepr = "Errors";
+      } else if (category.equals("WARNING")) {
+        categoryRepr = "Warnings";
+      } else if (category.equals("OK")) {
+        categoryRepr = "Infos";
+      }
+      return "<strong>" + categoryRepr + counter + "</strong>";
     }
 
     public Icon getCategoryIcon(String category) {
-      return Icons.WARNING_ICON;
+      if (category.equals("ERROR")) {
+        return jetbrains.mps.ide.messages.Icons.ERROR_ICON;
+      } else if (category.equals("WARNING")) {
+        return jetbrains.mps.ide.messages.Icons.WARNING_ICON;
+      } else if (category.equals("OK")) {
+        return jetbrains.mps.ide.messages.Icons.INFORMATION_ICON;
+      }
+      return jetbrains.mps.ide.messages.Icons.ERROR_ICON;
     }
 
     public String getPresentation(SNode node) {
       ModelCheckerResults.Result result = MapSequence.fromMap(this.myCheckerResultForNode).get(getNodeId(node));
-      String color = COLOR_FOR_ERROR.get(result.getStatus());
+      String color = getColorForMessageStatus(result.getStatus());
       String message = result.getMessage();
       message = message.replaceAll("&", "&amp;");
       message = message.replaceAll("<", "&lt;");
@@ -200,12 +213,17 @@ public class ModelCheckerViewer extends JPanel {
       return nodeId.value;
     }
 
-    static {
-      COLOR_FOR_ERROR = new EnumMap(MessageStatus.class);
-      //  TODO green?
-      COLOR_FOR_ERROR.put(MessageStatus.OK, "#267F00");
-      COLOR_FOR_ERROR.put(MessageStatus.WARNING, "#CEC548");
-      COLOR_FOR_ERROR.put(MessageStatus.ERROR, "#AF0000");
+    private static String getColorForMessageStatus(MessageStatus status) {
+      switch (status) {
+        case OK:
+          return "#267F00";
+        case WARNING:
+          return "#CEC548";
+        case ERROR:
+          return "#AF0000";
+        default:
+          return "#000000";
+      }
     }
   }
 }
