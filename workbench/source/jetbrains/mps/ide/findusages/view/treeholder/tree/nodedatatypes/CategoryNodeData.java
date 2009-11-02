@@ -19,17 +19,29 @@ import jetbrains.mps.ide.findusages.CantLoadSomethingException;
 import jetbrains.mps.ide.findusages.CantSaveSomethingException;
 import jetbrains.mps.ide.findusages.view.treeholder.tree.TextOptions;
 import jetbrains.mps.ide.findusages.view.treeholder.treeview.path.PathItemRole;
+import jetbrains.mps.ide.findusages.view.treeholder.treeview.INodeRepresentator;
 import jetbrains.mps.ide.projectPane.Icons;
 import jetbrains.mps.project.MPSProject;
 import org.jdom.Element;
 
+import javax.swing.Icon;
+
 public class CategoryNodeData extends BaseStaticNodeData {
   private static final String CATEGORY = "category";
   private String myCategory = "";
+  private INodeRepresentator myNodeRepresentator;
 
   public CategoryNodeData(PathItemRole role, String category, boolean resultsSection) {
     super(role, Icons.CLOSED_FOLDER, "<b>" + category + "</b>", "", true, false, resultsSection);
     myCategory = category;
+  }
+
+  public CategoryNodeData(PathItemRole role, String category, boolean resultsSection,
+                          INodeRepresentator nodeRepresentator) {
+    super(role, getIconFromRepresentator(nodeRepresentator, category), "<b>" + category + "</b>",
+          "", true, false, resultsSection);
+    myCategory = category;
+    myNodeRepresentator = nodeRepresentator;
   }
 
   public CategoryNodeData(Element element, MPSProject project) throws CantLoadSomethingException {
@@ -51,11 +63,23 @@ public class CategoryNodeData extends BaseStaticNodeData {
   }
 
   public String getText(TextOptions options) {
-    String counter = options.myCounters && isResultsSection() ? " " + sizeRepresentation(options.mySubresultsCount) : "";
-    return super.getText(options) + counter;
+    if (myNodeRepresentator == null) {
+      String counter = options.myCounters && isResultsSection() ? " " + sizeRepresentation(options.mySubresultsCount) : "";
+      return super.getText(options) + counter;
+    } else {
+      return myNodeRepresentator.getCategoryText(options, myCategory, isResultsSection());
+    }
   }
 
   private static String sizeRepresentation(int size) {
     return "<b>(" + Integer.toString(size) + " usage" + (size == 1 ? "" : "s") + ")</b>";
+  }
+
+  private static Icon getIconFromRepresentator(INodeRepresentator nodeRepresentator, String category) {
+    if (nodeRepresentator == null) {
+      return Icons.CLOSED_FOLDER;
+    } else {
+      return nodeRepresentator.getCategoryIcon(category);
+    }
   }
 }

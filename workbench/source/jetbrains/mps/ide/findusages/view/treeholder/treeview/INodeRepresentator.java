@@ -27,4 +27,8 @@ public interface INodeRepresentator extends IExternalizeable {
   public String getResultsText(TextOptions options);
 
   public Icon getResultsIcon();
+
+  public String getCategoryText(TextOptions options, String category, boolean isResultsSection);
+
+  public Icon getCategoryIcon(String category);
 }

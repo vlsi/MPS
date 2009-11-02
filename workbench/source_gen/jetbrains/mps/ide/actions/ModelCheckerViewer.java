@@ -127,6 +127,22 @@ public class ModelCheckerViewer extends JPanel {
       return Icons.ERROR_ICON;
     }
 
+    public String getCategoryText(TextOptions options, String category, boolean isResultsSection) {
+      String counter = "";
+      if (options.myCounters && isResultsSection) {
+        int size = options.mySubresultsCount;
+        counter = " (" + size + " issue" + ((size == 0 ?
+          "" :
+          "s"
+        )) + ")";
+      }
+      return "<strong>" + category + counter + "</strong>";
+    }
+
+    public Icon getCategoryIcon(String category) {
+      return Icons.WARNING_ICON;
+    }
+
     public String getPresentation(SNode node) {
       ModelCheckerResults.Result result = MapSequence.fromMap(this.myCheckerResultForNode).get(getNodeId(node));
       String color = COLOR_FOR_ERROR.get(result.getStatus());

@@ -124,6 +124,19 @@ public class TodoViewer extends JPanel {
       return TodoViewer.TODO_ICON;
     }
 
+    public String getCategoryText(TextOptions options, String category, boolean isResultsSection) {
+      String counter = "";
+      if (options.myCounters && isResultsSection) {
+        int size = options.mySubresultsCount;
+        counter = " (" + size + ")";
+      }
+      return "<strong>TODO items" + counter + "</strong>";
+    }
+
+    public Icon getCategoryIcon(String category) {
+      return Icons.CLOSED_FOLDER;
+    }
+
     // Nothing to read or write: this class is stateless
     public void read(Element element, MPSProject project) throws CantLoadSomethingException { }
     public void write(Element element, MPSProject project) throws CantSaveSomethingException { }

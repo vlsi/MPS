@@ -180,7 +180,7 @@ public class DataTree implements IExternalizeable, IChangeListener {
         data = new NodeNodeData(creator, (SNode) o, isResult, nodeRepresentator, results);
       } else {
         String caption = (String) currentIdObject;
-        data = new CategoryNodeData(creator, caption, results);
+        data = new CategoryNodeData(creator, caption, results, nodeRepresentator);
       }
       next = new DataNode(data);
       root.add(next);

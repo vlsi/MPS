@@ -29490,6 +29490,155 @@
           </node>
         </node>
       </node>
+      <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="3697182687041367529">
+        <property name="name" value="getCategoryText" />
+        <node role="returnType" type="jetbrains.mps.baseLanguage.structure.StringType" id="3697182687041367711" />
+        <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="3697182687041367531" />
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="3697182687041367532">
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="3697182687041367753">
+            <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="3697182687041367754">
+              <property name="name" value="counter" />
+              <node role="type" type="jetbrains.mps.baseLanguage.structure.StringType" id="3697182687041367755" />
+              <node role="initializer" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="3697182687041367757">
+                <property name="value" value="" />
+              </node>
+            </node>
+          </node>
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="3697182687041367759">
+            <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="3697182687041367760">
+              <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="3697182687041367773">
+                <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="3697182687041367774">
+                  <property name="name" value="size" />
+                  <node role="type" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="3697182687041367775" />
+                  <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="3697182687041367778">
+                    <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="3697182687041367777">
+                      <link role="variableDeclaration" targetNodeId="3697182687041367712" resolveInfo="options" />
+                    </node>
+                    <node role="operation" type="jetbrains.mps.baseLanguage.structure.FieldReferenceOperation" id="3697182687041367782">
+                      <link role="fieldDeclaration" targetNodeId="237.~TextOptions.mySubresultsCount" resolveInfo="mySubresultsCount" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="3697182687041367784">
+                <node role="expression" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression" id="3697182687041367786">
+                  <node role="rValue" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="3697182687041367794">
+                    <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="3697182687041367797">
+                      <property name="value" value=")" />
+                    </node>
+                    <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="3697182687041367820">
+                      <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.ParenthesizedExpression" id="3697182687041367829">
+                        <node role="expression" type="jetbrains.mps.baseLanguage.structure.TernaryOperatorExpression" id="3697182687041367838">
+                          <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="3697182687041367842">
+                            <property name="value" value="" />
+                          </node>
+                          <node role="ifFalse" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="3697182687041367843">
+                            <property name="value" value="s" />
+                          </node>
+                          <node role="condition" type="jetbrains.mps.baseLanguage.structure.EqualsExpression" id="3697182687041367834">
+                            <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="3697182687041367837">
+                              <property name="value" value="0" />
+                            </node>
+                            <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="3697182687041367833">
+                              <link role="variableDeclaration" targetNodeId="3697182687041367774" resolveInfo="size" />
+                            </node>
+                          </node>
+                        </node>
+                      </node>
+                      <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="3697182687041367816">
+                        <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="3697182687041367790">
+                          <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="3697182687041367789">
+                            <property name="value" value=" (" />
+                          </node>
+                          <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="3697182687041367793">
+                            <link role="variableDeclaration" targetNodeId="3697182687041367774" resolveInfo="size" />
+                          </node>
+                        </node>
+                        <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="3697182687041367819">
+                          <property name="value" value=" issue" />
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                  <node role="lValue" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="3697182687041367785">
+                    <link role="variableDeclaration" targetNodeId="3697182687041367754" resolveInfo="counter" />
+                  </node>
+                </node>
+              </node>
+            </node>
+            <node role="condition" type="jetbrains.mps.baseLanguage.structure.AndExpression" id="3697182687041367769">
+              <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="3697182687041367772">
+                <link role="variableDeclaration" targetNodeId="3697182687041367718" resolveInfo="isResultsSection" />
+              </node>
+              <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="3697182687041367764">
+                <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="3697182687041367763">
+                  <link role="variableDeclaration" targetNodeId="3697182687041367712" resolveInfo="options" />
+                </node>
+                <node role="operation" type="jetbrains.mps.baseLanguage.structure.FieldReferenceOperation" id="3697182687041367768">
+                  <link role="fieldDeclaration" targetNodeId="237.~TextOptions.myCounters" resolveInfo="myCounters" />
+                </node>
+              </node>
+            </node>
+          </node>
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="3697182687041367799">
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="3697182687041367848">
+              <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="3697182687041367851">
+                <property name="value" value="&lt;/strong&gt;" />
+              </node>
+              <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="3697182687041367844">
+                <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="3697182687041367802">
+                  <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="3697182687041367801">
+                    <property name="value" value="&lt;strong&gt;" />
+                  </node>
+                  <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="3697182687041367805">
+                    <link role="variableDeclaration" targetNodeId="3697182687041367714" resolveInfo="category" />
+                  </node>
+                </node>
+                <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="3697182687041367847">
+                  <link role="variableDeclaration" targetNodeId="3697182687041367754" resolveInfo="counter" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="3697182687041367712">
+          <property name="name" value="options" />
+          <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="3697182687041367713">
+            <link role="classifier" targetNodeId="237.~TextOptions" resolveInfo="TextOptions" />
+          </node>
+        </node>
+        <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="3697182687041367714">
+          <property name="name" value="category" />
+          <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="8194781965497980911">
+            <link role="classifier" targetNodeId="73.~String" resolveInfo="String" />
+          </node>
+        </node>
+        <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="3697182687041367718">
+          <property name="name" value="isResultsSection" />
+          <node role="type" type="jetbrains.mps.baseLanguage.structure.BooleanType" id="3697182687041367720" />
+        </node>
+      </node>
+      <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="3697182687041367722">
+        <property name="name" value="getCategoryIcon" />
+        <node role="returnType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="3697182687041367746">
+          <link role="classifier" targetNodeId="72.~Icon" resolveInfo="Icon" />
+        </node>
+        <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="3697182687041367724" />
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="3697182687041367725">
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="3697182687041367750">
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference" id="3697182687041367752">
+              <link role="classifier" targetNodeId="85.~Icons" resolveInfo="Icons" />
+              <link role="variableDeclaration" targetNodeId="85.~Icons.WARNING_ICON" resolveInfo="WARNING_ICON" />
+            </node>
+          </node>
+        </node>
+        <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="3697182687041367747">
+          <property name="name" value="category" />
+          <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="8194781965497980912">
+            <link role="classifier" targetNodeId="73.~String" resolveInfo="String" />
+          </node>
+        </node>
+      </node>
       <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="2875264536910513805">
         <property name="name" value="getPresentation" />
         <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="2875264536910513806" />
