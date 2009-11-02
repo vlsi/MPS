@@ -22,6 +22,8 @@ import org.jetbrains.annotations.NotNull;
 import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
+import java.net.URL;
+import java.net.MalformedURLException;
 
 public class FileSystemFile implements IFile {
   private File myFile;
@@ -143,7 +145,7 @@ public class FileSystemFile implements IFile {
   }
 
   public OutputStream openOutputStream() throws IOException {
-    if (myFile.isHidden()) {
+    if (myFile.exists() && myFile.isHidden()) {
       if (!myFile.delete()) {
         throw new RuntimeException();
       }
@@ -162,6 +164,10 @@ public class FileSystemFile implements IFile {
 
   public VirtualFile toVirtualFile() {
     return VFileSystem.getFile(this);
+  }
+
+  public URL toURL() throws MalformedURLException {
+    return myFile.toURL();
   }
 
   public long length() {
