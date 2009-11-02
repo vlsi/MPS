@@ -55,6 +55,7 @@ public class TabbedEditor implements IEditor {
   List<CellSelectionListener> mySelectionListeners = new ArrayList<CellSelectionListener>();
 
   public TabbedEditor(IOperationContext context, SNode node) {
+    assert context == null || context.getModule() != null;
     myOperationContext = context;
     myNodePointer = new SNodePointer(node);
 
