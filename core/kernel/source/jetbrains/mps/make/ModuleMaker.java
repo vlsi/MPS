@@ -275,13 +275,15 @@ public class ModuleMaker {
     final Wrappers._T<SNode> nodeToShow = new Wrappers._T<SNode>(null);
     if (descriptor.value != null) {
       final DebugInfo result = BLDebugInfoCache.getInstance().get(descriptor.value);
-
-      ModelAccess.instance().runReadAction(new Runnable() {
-        public void run() {
-          nodeToShow.value = result.getNodeForLine(fqName.substring(lastDot + 1) + ".java", cp.getSourceLineNumber(), descriptor.value.getSModel());
-        }
-      });
+      if (result != null) {
+        ModelAccess.instance().runReadAction(new Runnable() {
+          public void run() {
+            nodeToShow.value = result.getNodeForLine(fqName.substring(lastDot + 1) + ".java", cp.getSourceLineNumber(), descriptor.value.getSModel());
+          }
+        });
+      }
     }
+
     return nodeToShow.value;
   }
 
