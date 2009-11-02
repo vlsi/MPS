@@ -238,7 +238,7 @@
       <fileset dir="${mps_home}/license" excludes="**/*.iml, **/*.iws" />
     </copy>
     <copy todir="${deploy.dir}/MPS/plugins">
-      <fileset dir="${mps_home}/plugins" excludes="**/*.iml, **/*.iws" />
+      <fileset dir="${mps_home}/plugins" excludes="**/*.zip, **/*.iml, **/*.iws" />
     </copy>
     <copy todir="${deploy.dir}/MPS/samples.zip.tmp/MPSSamples">
       <fileset dir="${mps_home}/samples" excludes="**/*.iml, **/*.iws" />

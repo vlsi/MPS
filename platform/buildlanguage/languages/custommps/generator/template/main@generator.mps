@@ -1794,6 +1794,7 @@
         </node>
         <node role="entry" type="jetbrains.mps.build.packaging.structure.Folder" id="1234971270457">
           <property name="file" value="false" />
+          <property name="excludes" value="**/*.zip" />
           <node role="sourcePath" type="jetbrains.mps.build.packaging.structure.Path" id="1234971270458">
             <node role="macro" type="jetbrains.mps.build.packaging.structure.MacroReference" id="1234971270459">
               <property name="name" value="mps_home" />
