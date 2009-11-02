@@ -24,6 +24,8 @@ public class ConstraintsDescriptor implements IModelConstraints {
     ListSequence.fromList(this.myConstraints).addElement(new ConstructorDeclaration_resolveInfo_PropertyConstraint());
     ListSequence.fromList(this.myConstraints).addElement(new ClassifierMember_shortDescription_PropertyConstraint());
     ListSequence.fromList(this.myConstraints).addElement(new IValidIdentifier_name_PropertyConstraint());
+    ListSequence.fromList(this.myConstraints).addElement(new EnumValueOfExpression_shortDescription_PropertyConstraint());
+    ListSequence.fromList(this.myConstraints).addElement(new EnumValuesExpression_shortDescription_PropertyConstraint());
     ListSequence.fromList(this.myConstraints).addElement(new ClosureParameterReference_closureParameter_ReferentConstraint());
     ListSequence.fromList(this.myConstraints).addElement(new StaticMethodCall_staticMethodDeclaration_ReferentConstraint());
     ListSequence.fromList(this.myConstraints).addElement(new ClassCreator_constructorDeclaration_ReferentConstraint());

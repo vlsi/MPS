@@ -2585,5 +2585,37 @@
       </node>
     </node>
   </node>
+  <node type="jetbrains.mps.lang.constraints.structure.ConceptConstraints" id="9048361382548188116">
+    <property name="package" value="enumOperations" />
+    <link role="concept" targetNodeId="1.1224575136086" resolveInfo="EnumValueOfExpression" />
+    <node role="property" type="jetbrains.mps.lang.constraints.structure.NodePropertyConstraint" id="9048361382548188117">
+      <link role="applicableProperty" targetNodeId="2.1156234966388" resolveInfo="shortDescription" />
+      <node role="propertyGetter" type="jetbrains.mps.lang.constraints.structure.ConstraintFunction_PropertyGetter" id="9048361382548188118">
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="9048361382548188119">
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="9048361382548188137">
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="9048361382548188138">
+              <property name="value" value="value by name" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.constraints.structure.ConceptConstraints" id="9048361382548212239">
+    <property name="package" value="enumOperations" />
+    <link role="concept" targetNodeId="1.1224573963862" resolveInfo="EnumValuesExpression" />
+    <node role="property" type="jetbrains.mps.lang.constraints.structure.NodePropertyConstraint" id="9048361382548212240">
+      <link role="applicableProperty" targetNodeId="2.1156234966388" resolveInfo="shortDescription" />
+      <node role="propertyGetter" type="jetbrains.mps.lang.constraints.structure.ConstraintFunction_PropertyGetter" id="9048361382548212241">
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="9048361382548212242">
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="9048361382548212243">
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="9048361382548212244">
+              <property name="value" value="values of enum" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
 </model>
 
