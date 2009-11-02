@@ -23,6 +23,8 @@ public class ConstraintsDescriptor implements IModelConstraints {
     ListSequence.fromList(this.myConstraints).addElement(new ReferenceFormatToken_dateFormat_ReferentConstraint());
     ListSequence.fromList(this.myConstraints).addElement(new FormatPeriodExpression_format_ReferentConstraint());
     ListSequence.fromList(this.myConstraints).addElement(new FormatDateTimeExpression_dateFormat_ReferentConstraint());
+    ListSequence.fromList(this.myConstraints).addElement(new PeriodReferenceFormatToken_format_ReferentConstraint());
+    ListSequence.fromList(this.myConstraints).addElement(new PeriodPropertyFormatToken_property_ReferentConstraint());
   }
 
   public void unRegisterSelf(ModelConstraintsManager p0) {
