@@ -86,7 +86,7 @@ public class ApplicationPluginManager implements ApplicationComponent {
 
     List<BaseApplicationPlugin> plugins = PluginUtil.createPlugins(modules, new ApplicationPluginCreator());
     for (BaseApplicationPlugin p : plugins) {
-      if (p instanceof Ide_ApplicationPlugin) {
+      if (p.getClass().getName().equals(Ide_ApplicationPlugin.class.getName())) {
         myIDEPlugin = p;
         break;
       }
