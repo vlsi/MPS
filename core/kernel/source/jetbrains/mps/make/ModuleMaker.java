@@ -23,16 +23,21 @@ import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.reloading.IClassPathItem;
-import jetbrains.mps.smodel.Language;
+import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.MPSExtentions;
 import jetbrains.mps.make.dependencies.StronglyConnectedModules;
+import jetbrains.mps.debug.BLDebugInfoCache;
+import jetbrains.mps.debug.DebugInfo;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import org.eclipse.jdt.core.compiler.CategorizedProblem;
 import org.eclipse.jdt.internal.compiler.ClassFile;
 import org.eclipse.jdt.internal.compiler.CompilationResult;
 import org.jetbrains.annotations.NotNull;
+import org.apache.commons.lang.ObjectUtils;
 
 import java.io.File;
 import java.io.FileOutputStream;
@@ -156,9 +161,9 @@ public class ModuleMaker {
     for (CompilationResult cr : compiler.getCompilationResults()) {
       Set<String> classesWithErrors = new HashSet<String>();
       if (cr.getErrors() != null) {
-        for (CategorizedProblem cp : cr.getErrors()) {
+        for (final CategorizedProblem cp : cr.getErrors()) {
           String fileName = new String(cp.getOriginatingFileName());
-          String fqName = fileName.substring(0, fileName.length() - MPSExtentions.DOT_JAVAFILE.length()).replace(File.separatorChar, '.');
+          final String fqName = fileName.substring(0, fileName.length() - MPSExtentions.DOT_JAVAFILE.length()).replace(File.separatorChar, '.');
           classesWithErrors.add(fqName);
 
           IModule containingModule = myContainingModules.get(fqName);
@@ -166,12 +171,23 @@ public class ModuleMaker {
           JavaFile javaFile = myModuleSources.get(containingModule).getJavaFile(fqName);
 
           String messageStirng = new String(cp.getOriginatingFileName()) + " : " + cp.getMessage();
+
+          final SNode nodeToShow = getNodeByLine(cp, fqName);
+
           if (cp.isWarning()) {
-            LOG.warning(messageStirng + " (line: " + cp.getSourceLineNumber() + ")", new FileWithPosition(javaFile.getFile(), cp.getSourceStart()));
+            Object hintObject = nodeToShow;
+            if (hintObject == null) {
+              hintObject = new FileWithPosition(javaFile.getFile(), cp.getSourceStart());
+            }
+            LOG.warning(messageStirng + " (line: " + cp.getSourceLineNumber() + ")", hintObject);
           } else {
             if (outputtedErrors < MAX_ERRORS) {
               outputtedErrors++;
-              LOG.error(messageStirng + " (line: " + cp.getSourceLineNumber() + ")", new FileWithPosition(javaFile.getFile(), cp.getSourceStart()));
+              Object hintObject = nodeToShow;
+              if (hintObject == null) {
+                hintObject = new FileWithPosition(javaFile.getFile(), cp.getSourceStart());
+              }
+              LOG.warning(messageStirng + " (line: " + cp.getSourceLineNumber() + ")", hintObject);
             }
           }
         }
@@ -237,6 +253,36 @@ public class ModuleMaker {
     }
 
     return new jetbrains.mps.plugin.CompilationResult(errorCount, 0, false);
+  }
+
+  private SNode getNodeByLine(final CategorizedProblem cp, final String fqName) {
+    final int lastDot = fqName.lastIndexOf(".");
+    String pkg = (lastDot == -1 ?
+      "" :
+      fqName.substring(0, lastDot)
+    );
+
+    List<SModelDescriptor> list = SModelRepository.getInstance().getModelDescriptorsByModelName(pkg);
+    final Wrappers._T<SModelDescriptor> descriptor = new Wrappers._T<SModelDescriptor>(null);
+
+
+    for (SModelDescriptor modelDescriptor : ListSequence.fromList(list)) {
+      if (!(ObjectUtils.equals(modelDescriptor.getStereotype(), SModelStereotype.JAVA_STUB)) && !(modelDescriptor.isTransient())) {
+        descriptor.value = modelDescriptor;
+      }
+    }
+
+    final Wrappers._T<SNode> nodeToShow = new Wrappers._T<SNode>(null);
+    if (descriptor.value != null) {
+      final DebugInfo result = BLDebugInfoCache.getInstance().get(descriptor.value);
+
+      ModelAccess.instance().runReadAction(new Runnable() {
+        public void run() {
+          nodeToShow.value = result.getNodeForLine(fqName.substring(lastDot + 1) + ".java", cp.getSourceLineNumber(), descriptor.value.getSModel());
+        }
+      });
+    }
+    return nodeToShow.value;
   }
 
   private String getName(char[][] compoundName) {
