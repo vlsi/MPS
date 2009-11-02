@@ -56,16 +56,16 @@ public class ExpandBoolean_Intention extends BaseIntention {
 
   public void execute(final SNode node, final EditorContext editorContext) {
     SNode statementNode = SNodeOperations.cast(SNodeOperations.getAncestor(node, "jetbrains.mps.baseLanguage.structure.Statement", false, false), "jetbrains.mps.baseLanguage.structure.Statement");
-    // 
+    /*<!TextGen not found for 'jetbrains.mps.baseLanguage.structure.TextCommentPart'!>     */
     SNode ifNode = SNodeOperations.insertNewPrevSiblingChild(statementNode, "jetbrains.mps.baseLanguage.structure.IfStatement");
     SNode ifTrue = SLinkOperations.setNewChild(ifNode, "ifTrue", "jetbrains.mps.baseLanguage.structure.StatementList");
     SNode ifFalse = SLinkOperations.setNewChild(SLinkOperations.setNewChild(ifNode, "ifFalseStatement", "jetbrains.mps.baseLanguage.structure.BlockStatement"), "statements", "jetbrains.mps.baseLanguage.structure.StatementList");
-    // 
+    /*<!TextGen not found for 'jetbrains.mps.baseLanguage.structure.TextCommentPart'!>     */
     SLinkOperations.setTarget(ifNode, "condition", SNodeOperations.copyNode(node), true);
-    // 
+    /*<!TextGen not found for 'jetbrains.mps.baseLanguage.structure.TextCommentPart'!>     */
     SLinkOperations.insertChildFirst(ifTrue, "statement", SNodeOperations.copyNode(statementNode));
     SLinkOperations.insertChildFirst(ifFalse, "statement", SNodeOperations.copyNode(statementNode));
-    // 
+    /*<!TextGen not found for 'jetbrains.mps.baseLanguage.structure.TextCommentPart'!>     */
     final SNode fake_node = node;
     Iterable<SNode> refs;
     refs = ListSequence.fromList(SNodeOperations.getDescendants(ListSequence.fromList(SLinkOperations.getTargets(ifTrue, "statement", true)).first(), null, false, new String[]{})).where(new IWhereFilter<SNode>() {
@@ -90,7 +90,7 @@ public class ExpandBoolean_Intention extends BaseIntention {
         SPropertyOperations.set(booleanConstant, "value", "" + (false));
       }
     });
-    // 
+    /*<!TextGen not found for 'jetbrains.mps.baseLanguage.structure.TextCommentPart'!>     */
     SNodeOperations.deleteNode(statementNode);
   }
 

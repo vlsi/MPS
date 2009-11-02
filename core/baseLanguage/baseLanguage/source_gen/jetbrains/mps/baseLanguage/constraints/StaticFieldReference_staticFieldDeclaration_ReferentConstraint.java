@@ -26,7 +26,7 @@ public class StaticFieldReference_staticFieldDeclaration_ReferentConstraint exte
   }
 
   public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferentConstraintContext _context) {
-    // static fields from hierarchy of specified class
+    /*<!TextGen not found for 'jetbrains.mps.baseLanguage.structure.TextCommentPart'!>     */
     return new ClassifierVisibleStaticMembersScope(((Classifier)SNodeOperations.getAdapter(SLinkOperations.getTarget(_context.getReferenceNode(), "classifier", false))), _context.getReferenceNode(), IClassifiersSearchScope.STATIC_FIELD);
   }
 }

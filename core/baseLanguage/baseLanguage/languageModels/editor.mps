@@ -16153,6 +16153,41 @@
     <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Property" id="6329021646629175142">
       <link role="relationDeclaration" targetNodeId="17.6329021646629104958" resolveInfo="text" />
       <link role="styleClass" targetNodeId="1198594875276" resolveInfo="Comment" />
+      <node role="styleItem" type="jetbrains.mps.lang.editor.structure.FontStyleStyleClassItem" id="7236590470026154854">
+        <property name="style" value="ITALIC" />
+      </node>
+      <node role="styleItem" type="jetbrains.mps.lang.editor.structure.ForegroundColorStyleClassItem" id="7236590470026154856">
+        <node role="query" type="jetbrains.mps.lang.editor.structure.QueryFunction_Color" id="7236590470026154857">
+          <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="7236590470026154858">
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="7236590470026213806">
+              <node role="condition" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="7236590470026213810">
+                <node role="operand" type="jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_node" id="7236590470026213809" />
+                <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="7236590470026213814">
+                  <link role="baseMethodDeclaration" targetNodeId="75.7236590470026152831" resolveInfo="isToDo" />
+                </node>
+              </node>
+              <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="7236590470026213808">
+                <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="7236590470026213815">
+                  <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference" id="7236590470026213817">
+                    <link role="classifier" targetNodeId="56.~Color" resolveInfo="Color" />
+                    <link role="variableDeclaration" targetNodeId="56.~Color.BLUE" resolveInfo="BLUE" />
+                  </node>
+                </node>
+              </node>
+              <node role="ifFalseStatement" type="jetbrains.mps.baseLanguage.structure.BlockStatement" id="7236590470026213818">
+                <node role="statements" type="jetbrains.mps.baseLanguage.structure.StatementList" id="7236590470026213819">
+                  <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="7236590470026213820">
+                    <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference" id="7236590470026213822">
+                      <link role="classifier" targetNodeId="56.~Color" resolveInfo="Color" />
+                      <link role="variableDeclaration" targetNodeId="56.~Color.GRAY" resolveInfo="GRAY" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
     </node>
   </node>
   <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" id="6329021646629175145">

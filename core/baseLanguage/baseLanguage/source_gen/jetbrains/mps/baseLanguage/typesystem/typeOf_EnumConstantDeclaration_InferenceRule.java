@@ -22,7 +22,7 @@ public class typeOf_EnumConstantDeclaration_InferenceRule extends AbstractInfere
   public void applyRule(final SNode enumConstantDeclaration, final TypeCheckingContext typeCheckingContext) {
     final SNode methodClassifier = SNodeOperations.getAncestor(enumConstantDeclaration, "jetbrains.mps.baseLanguage.structure.EnumClass", false, false);
     SNode constructedType = new _Quotations.QuotationClass_108().createNode(methodClassifier, typeCheckingContext);
-    // ---
+    /*<!TextGen not found for 'jetbrains.mps.baseLanguage.structure.TextCommentPart'!>     */
     {
       SNode _nodeToCheck_1029348928467 = enumConstantDeclaration;
       BaseIntentionProvider intentionProvider = null;
@@ -36,7 +36,7 @@ public class typeOf_EnumConstantDeclaration_InferenceRule extends AbstractInfere
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1241009438612", 0, intentionProvider);
       typeCheckingContext.createEquation((SNode)typeCheckingContext.getEquationManager().getRepresentator(instanceType_typevar_1241009438611), (SNode)constructedType, _info_12389875345);
     }
-    // --- following piece of cake is identical for any method call ---
+    /*<!TextGen not found for 'jetbrains.mps.baseLanguage.structure.TextCommentPart'!>     */
     Map<SNode, List<SNode>> mmap = MapSequence.fromMap(new HashMap<SNode, List<SNode>>());
     RulesFunctions_BaseLanguage.inference_equateParametersAndReturnType(typeCheckingContext, enumConstantDeclaration, null, mmap);
     RulesFunctions_BaseLanguage.inference_matchConcreteTypesWithTypeVariables(typeCheckingContext, methodClassifier, typeCheckingContext.getEquationManager().getRepresentator(instanceType_typevar_1241009438611), mmap);

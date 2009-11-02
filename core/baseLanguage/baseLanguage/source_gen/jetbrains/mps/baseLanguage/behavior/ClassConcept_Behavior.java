@@ -59,7 +59,7 @@ public class ClassConcept_Behavior {
   public static List<SNode> call_getMethodsToImplement_1221637841398(SNode thisNode) {
     List<SNode> methods = new ArrayList<SNode>();
     ClassifierAndSuperClassifiersScope scope = new ClassifierAndSuperClassifiersScope(((ClassConcept)SNodeOperations.getAdapter(thisNode)), IClassifiersSearchScope.INSTANCE_METHOD);
-    // todo do not show already implemented methods
+    /*<!TextGen not found for 'jetbrains.mps.baseLanguage.structure.TextCommentPart'!>     */
     for (SNode method : scope.getNodes()) {
       if (!(scope.getOverriddenMethods(((InstanceMethodDeclaration)SNodeOperations.getAdapter(method))).isEmpty())) {
         continue;

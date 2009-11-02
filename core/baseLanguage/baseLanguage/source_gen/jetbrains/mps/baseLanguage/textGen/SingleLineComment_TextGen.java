@@ -10,13 +10,10 @@ import jetbrains.mps.textGen.TextGenManager;
 public class SingleLineComment_TextGen extends SNodeTextGen {
   public void doGenerateText(SNode node) {
     this.appendNewLine();
-    this.appendWithIndent("/*");
-    this.increaseDepth();
+    this.append("// ");
     for (SNode commentPart : SLinkOperations.getTargets(node, "commentPart", true)) {
       TextGenManager.instance().appendNodeText(this.getContext(), this.getBuffer(), commentPart, this.getSNode());
       this.append(" ");
     }
-    this.decreaseDepth();
-    this.appendWithIndent("*/");
   }
 }

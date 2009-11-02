@@ -45,12 +45,12 @@ public class AddRuntimeExceptionToMethodSignature_Intention extends BaseIntentio
   }
 
   public boolean isApplicableToNode(final SNode node, final EditorContext editorContext) {
-    // check that this is done in a method
+    /*<!TextGen not found for 'jetbrains.mps.baseLanguage.structure.TextCommentPart'!>     */
     SNode methodDecl = SNodeOperations.getAncestor(node, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration", false, false);
     if (methodDecl == null) {
       return false;
     }
-    // get exception type
+    /*<!TextGen not found for 'jetbrains.mps.baseLanguage.structure.TextCommentPart'!>     */
     final SNode exceptionType = (TypeChecker.getInstance().getRuntimeSupport().coerce_(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(node, "throwable", true)), HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.structure.ClassifierType"), true));
     if (exceptionType == null) {
       return false;
@@ -59,11 +59,11 @@ public class AddRuntimeExceptionToMethodSignature_Intention extends BaseIntentio
     if (exceptionJavaType == null) {
       return false;
     }
-    // check it's instance of RuntimeException
+    /*<!TextGen not found for 'jetbrains.mps.baseLanguage.structure.TextCommentPart'!>     */
     if (!(ClassConcept_Behavior.call_isDescendant_1213877355812(exceptionJavaType, (SNode)SLinkOperations.getTarget(new _Quotations.QuotationClass_1().createNode(), "classifier", false)))) {
       return false;
     }
-    // check if it's not thrown by a method yet
+    /*<!TextGen not found for 'jetbrains.mps.baseLanguage.structure.TextCommentPart'!>     */
     if (ListSequence.fromList(SLinkOperations.getTargets(methodDecl, "throwsItem", true)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return SNodeOperations.isInstanceOf(it, "jetbrains.mps.baseLanguage.structure.ClassifierType") && SLinkOperations.getTarget(SNodeOperations.cast(it, "jetbrains.mps.baseLanguage.structure.ClassifierType"), "classifier", false) == SLinkOperations.getTarget(exceptionType, "classifier", false);

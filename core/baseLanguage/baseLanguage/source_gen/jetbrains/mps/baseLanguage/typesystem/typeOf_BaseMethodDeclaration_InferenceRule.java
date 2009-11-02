@@ -33,7 +33,7 @@ public class typeOf_BaseMethodDeclaration_InferenceRule extends AbstractInferenc
         typeCheckingContext.createLessThanInequation((SNode)throwsItem, (SNode)new _Quotations.QuotationClass_76().createNode(typeCheckingContext), false, _info_12389875345);
       }
     }
-    // ==========
+    /*<!TextGen not found for 'jetbrains.mps.baseLanguage.structure.TextCommentPart'!>     */
     if (SLinkOperations.getTarget(bmd, "body", true) == null) {
       return;
     }
@@ -43,12 +43,12 @@ public class typeOf_BaseMethodDeclaration_InferenceRule extends AbstractInferenc
     if (SNodeOperations.isInstanceOf(bmd, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration") && SPropertyOperations.getBoolean(SNodeOperations.cast(bmd, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration"), "isAbstract")) {
       return;
     }
-    // =============
+    /*<!TextGen not found for 'jetbrains.mps.baseLanguage.structure.TextCommentPart'!>     */
     SNode expectedRetType = IMethodLike_Behavior.call_getExpectedRetType_1239354342632(bmd);
-    // =============
+    /*<!TextGen not found for 'jetbrains.mps.baseLanguage.structure.TextCommentPart'!>     */
     Iterable<SNode> returnStatements = RulesFunctions_BaseLanguage.collectReturnStatements(SLinkOperations.getTarget(bmd, "body", true));
     if (expectedRetType == null) {
-      // shouldn't return any values
+      /*<!TextGen not found for 'jetbrains.mps.baseLanguage.structure.TextCommentPart'!>       */
       for (SNode returnStatement : Sequence.fromIterable(returnStatements)) {
         if ((SLinkOperations.getTarget(returnStatement, "expression", true) != null)) {
           {
@@ -59,7 +59,7 @@ public class typeOf_BaseMethodDeclaration_InferenceRule extends AbstractInferenc
         }
       }
     } else {
-      // should return subtypes of the 'expected type'
+      /*<!TextGen not found for 'jetbrains.mps.baseLanguage.structure.TextCommentPart'!>       */
       for (SNode returnStatement : Sequence.fromIterable(returnStatements)) {
         if ((SLinkOperations.getTarget(returnStatement, "expression", true) == null)) {
           {
@@ -79,9 +79,9 @@ public class typeOf_BaseMethodDeclaration_InferenceRule extends AbstractInferenc
         }
       }
     }
-    // =============
+    /*<!TextGen not found for 'jetbrains.mps.baseLanguage.structure.TextCommentPart'!>     */
     if (expectedRetType != null) {
-      // last expression statement can serve as return statement
+      /*<!TextGen not found for 'jetbrains.mps.baseLanguage.structure.TextCommentPart'!>       */
       SNode lastStatement = IMethodLike_Behavior.call_getLastStatement_1239354409446(bmd);
       if (SNodeOperations.isInstanceOf(lastStatement, "jetbrains.mps.baseLanguage.structure.ExpressionStatement")) {
         SNode returnType = typeCheckingContext.typeOf(SLinkOperations.getTarget(SNodeOperations.cast(lastStatement, "jetbrains.mps.baseLanguage.structure.ExpressionStatement"), "expression", true), "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1178765601477", true);

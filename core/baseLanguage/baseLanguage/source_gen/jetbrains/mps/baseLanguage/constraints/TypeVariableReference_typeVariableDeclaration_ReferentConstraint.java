@@ -27,7 +27,7 @@ public class TypeVariableReference_typeVariableDeclaration_ReferentConstraint ex
   }
 
   public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferentConstraintContext _context) {
-    // type-variables declared in enclosing classifier
+    /*<!TextGen not found for 'jetbrains.mps.baseLanguage.structure.TextCommentPart'!>     */
     List<SNode> declarations = new ArrayList<SNode>();
     for (SNode genericDeclaration : ListSequence.fromList(SNodeOperations.getAncestors(_context.getEnclosingNode(), "jetbrains.mps.baseLanguage.structure.GenericDeclaration", true))) {
       ListSequence.fromList(declarations).addSequence(ListSequence.fromList(SLinkOperations.getTargets(genericDeclaration, "typeVariableDeclaration", true)));

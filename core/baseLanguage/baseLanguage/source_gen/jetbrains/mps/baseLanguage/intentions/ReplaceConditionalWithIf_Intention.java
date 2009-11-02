@@ -51,7 +51,7 @@ public class ReplaceConditionalWithIf_Intention extends BaseIntention {
   }
 
   public void execute(final SNode node, final EditorContext editorContext) {
-    // variable initialization case - split or you'll loose this var from scope
+    /*<!TextGen not found for 'jetbrains.mps.baseLanguage.structure.TextCommentPart'!>     */
     SNode stmtNode = SNodeOperations.cast(SNodeOperations.getAncestor(node, "jetbrains.mps.baseLanguage.structure.Statement", false, false), "jetbrains.mps.baseLanguage.structure.Statement");
     if (SNodeOperations.isInstanceOf(stmtNode, "jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement")) {
       SNode variableDeclaration = SLinkOperations.getTarget(SNodeOperations.cast(stmtNode, "jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement"), "localVariableDeclaration", true);
@@ -63,20 +63,20 @@ public class ReplaceConditionalWithIf_Intention extends BaseIntention {
       SNodeOperations.insertNextSiblingChild(stmtNode, eStatement);
       stmtNode = SNodeOperations.cast(SNodeOperations.getNextSibling(stmtNode), "jetbrains.mps.baseLanguage.structure.Statement");
     }
-    // Get used nodes
+    /*<!TextGen not found for 'jetbrains.mps.baseLanguage.structure.TextCommentPart'!>     */
     SNode nodeParent = SNodeOperations.getParent(node);
     int nodeIndex = ListSequence.fromList(SNodeOperations.getChildren(nodeParent)).indexOf(node);
     SNode nodeCopy = SNodeOperations.copyNode(node);
-    // make + node
+    /*<!TextGen not found for 'jetbrains.mps.baseLanguage.structure.TextCommentPart'!>     */
     SNodeOperations.replaceWithAnother(ListSequence.fromList(SNodeOperations.getChildren(nodeParent)).getElement(nodeIndex), SLinkOperations.getTarget(nodeCopy, "ifTrue", true));
     SNode trueStmt = SNodeOperations.copyNode(stmtNode);
-    // make - node
+    /*<!TextGen not found for 'jetbrains.mps.baseLanguage.structure.TextCommentPart'!>     */
     SNodeOperations.replaceWithAnother(ListSequence.fromList(SNodeOperations.getChildren(nodeParent)).getElement(nodeIndex), SLinkOperations.getTarget(nodeCopy, "ifFalse", true));
-    // make the best - block ever
+    /*<!TextGen not found for 'jetbrains.mps.baseLanguage.structure.TextCommentPart'!>     */
     SNode falseBlockStmt = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.BlockStatement", null);
     SLinkOperations.setNewChild(falseBlockStmt, "statements", "jetbrains.mps.baseLanguage.structure.StatementList");
     SLinkOperations.insertChildFirst(SLinkOperations.getTarget(falseBlockStmt, "statements", true), "statement", SNodeOperations.copyNode(stmtNode));
-    // make if-statement and replace
+    /*<!TextGen not found for 'jetbrains.mps.baseLanguage.structure.TextCommentPart'!>     */
     SNode ifNode = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.IfStatement", null);
     SLinkOperations.setTarget(ifNode, "condition", SLinkOperations.getTarget(node, "condition", true), true);
     SLinkOperations.setNewChild(ifNode, "ifTrue", "jetbrains.mps.baseLanguage.structure.StatementList");

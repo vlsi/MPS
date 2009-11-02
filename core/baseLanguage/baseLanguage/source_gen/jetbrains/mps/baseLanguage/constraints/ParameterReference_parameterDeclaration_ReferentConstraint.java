@@ -26,7 +26,7 @@ public class ParameterReference_parameterDeclaration_ReferentConstraint extends 
   }
 
   public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferentConstraintContext _context) {
-    // parameters declared in enclosing method
+    /*<!TextGen not found for 'jetbrains.mps.baseLanguage.structure.TextCommentPart'!>     */
     List<SNode> methods = SNodeOperations.getAncestors(_context.getEnclosingNode(), "jetbrains.mps.baseLanguage.structure.IStatementListContainer", true);
     List<SNode> params = ListSequence.fromList(new ArrayList<SNode>());
     for (SNode bmd : methods) {

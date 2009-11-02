@@ -148,8 +148,8 @@ public class Classifier_Behavior {
       } else {
         ListSequence.fromList(result).addElement(current);
         if (Classifier_Behavior.call_isStatic_521412098689998668(current)) {
-          // according to Java rules static inner classifiers can be only on the second level so we can
-          // safely break here
+          /*<!TextGen not found for 'jetbrains.mps.baseLanguage.structure.TextCommentPart'!>           */
+          /*<!TextGen not found for 'jetbrains.mps.baseLanguage.structure.TextCommentPart'!>           */
           break;
         }
       }

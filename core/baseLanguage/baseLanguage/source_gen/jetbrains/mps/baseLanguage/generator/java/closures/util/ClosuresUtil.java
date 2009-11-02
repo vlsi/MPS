@@ -65,7 +65,7 @@ public class ClosuresUtil {
       throw new RuntimeException("node can't be owner of a closure context " + node.getDebugText());
     }
     if (getClosureContextData(node, generator) == null) {
-      // init ClosureContextData
+      /*<!TextGen not found for 'jetbrains.mps.baseLanguage.structure.TextCommentPart'!>       */
       GenerationSessionContext sessionContext = generator.getGeneratorSessionContext();
       Map<SNode, ClosuresUtil.ClosureContextData> closureContexts = ((Map<SNode, ClosuresUtil.ClosureContextData>)sessionContext.getTransientObject(CLOSURE_CONTEXT_DATA));
       if (closureContexts == null) {
@@ -129,7 +129,7 @@ public class ClosuresUtil {
   private static boolean processClosureNode(SNode contextOwner, SNode node, Set<SNode> localVars, ITemplateGenerator generator) {
     boolean outerVarsFound = false;
     for (SNode child : ListSequence.fromList(SNodeOperations.getChildren(node))) {
-      // skip inner closure
+      /*<!TextGen not found for 'jetbrains.mps.baseLanguage.structure.TextCommentPart'!>       */
       if (SNodeOperations.isInstanceOf(child, "jetbrains.mps.baseLanguage.structure.Closure")) {
         continue;
       }

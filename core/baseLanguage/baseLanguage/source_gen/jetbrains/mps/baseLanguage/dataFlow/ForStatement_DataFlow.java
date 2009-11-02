@@ -13,7 +13,7 @@ public class ForStatement_DataFlow extends DataFlowBuilder {
   }
 
   public void build(final IOperationContext operationContext, final DataFlowBuilderContext _context) {
-    // todo hack
+    /*<!TextGen not found for 'jetbrains.mps.baseLanguage.structure.TextCommentPart'!>     */
     _context.getBuilder().build((SNode)SLinkOperations.getTarget(_context.getNode(), "variable", true));
     _context.getBuilder().emitLabel("start");
     _context.getBuilder().build((SNode)SLinkOperations.getTarget(_context.getNode(), "condition", true));

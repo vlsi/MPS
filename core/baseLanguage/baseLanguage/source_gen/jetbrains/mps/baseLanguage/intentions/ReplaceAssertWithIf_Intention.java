@@ -45,17 +45,17 @@ public class ReplaceAssertWithIf_Intention extends BaseIntention {
   }
 
   public void execute(final SNode node, final EditorContext editorContext) {
-    // produce throw statement
+    /*<!TextGen not found for 'jetbrains.mps.baseLanguage.structure.TextCommentPart'!>     */
     SNode throwStatement = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ThrowStatement", null);
     SNode newExpr = new _Quotations.QuotationClass_3().createNode();
     SLinkOperations.setTarget(throwStatement, "throwable", newExpr, true);
-    // produce if statement
+    /*<!TextGen not found for 'jetbrains.mps.baseLanguage.structure.TextCommentPart'!>     */
     SNode ifStatement = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.IfStatement", null);
     SNode notExpr = SLinkOperations.setNewChild(ifStatement, "condition", "jetbrains.mps.baseLanguage.structure.NotExpression");
     SLinkOperations.setTarget(notExpr, "expression", SLinkOperations.getTarget(node, "condition", true), true);
     SLinkOperations.setNewChild(ifStatement, "ifTrue", "jetbrains.mps.baseLanguage.structure.StatementList");
     SLinkOperations.insertChildFirst(SLinkOperations.getTarget(ifStatement, "ifTrue", true), "statement", throwStatement);
-    // replace assert with if
+    /*<!TextGen not found for 'jetbrains.mps.baseLanguage.structure.TextCommentPart'!>     */
     SNodeOperations.replaceWithAnother(node, ifStatement);
   }
 

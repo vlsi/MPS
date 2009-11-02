@@ -24,7 +24,7 @@ public class ThisConstructorInvocation_constructorDeclaration_ReferentConstraint
   }
 
   public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferentConstraintContext _context) {
-    //  just insure that dynamic reference resolve won't scan all models
+    /*<!TextGen not found for 'jetbrains.mps.baseLanguage.structure.TextCommentPart'!>     */
     SNode thisConcept = SNodeOperations.getAncestor(_context.getEnclosingNode(), "jetbrains.mps.baseLanguage.structure.ClassConcept", true, false);
     return SLinkOperations.getTargets(thisConcept, "constructor", true);
   }

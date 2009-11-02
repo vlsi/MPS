@@ -43,7 +43,7 @@ public class typeof_ClassCreator_InferenceRule extends AbstractInferenceRule_Run
         IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(parameter, "primitive type not allowed", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1212781606006", intentionProvider, errorTarget);
       }
     }
-    // ---
+    /*<!TextGen not found for 'jetbrains.mps.baseLanguage.structure.TextCommentPart'!>     */
     SNode constructedType = new _Quotations.QuotationClass_73().createNode(SLinkOperations.getTargets(creator, "typeParameter", true), methodClassifier, typeCheckingContext);
     {
       SNode _nodeToCheck_1029348928467 = creator;
@@ -58,7 +58,7 @@ public class typeof_ClassCreator_InferenceRule extends AbstractInferenceRule_Run
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1212781606046", 0, intentionProvider);
       typeCheckingContext.createEquation((SNode)typeCheckingContext.getEquationManager().getRepresentator(instanceType_typevar_1212781606045), (SNode)constructedType, _info_12389875345);
     }
-    // --- following piece of cake is identical for any method call ---
+    /*<!TextGen not found for 'jetbrains.mps.baseLanguage.structure.TextCommentPart'!>     */
     Map<SNode, List<SNode>> mmap = MapSequence.fromMap(new HashMap<SNode, List<SNode>>());
     RulesFunctions_BaseLanguage.inference_equateParametersAndReturnType(typeCheckingContext, creator, null, mmap);
     RulesFunctions_BaseLanguage.inference_matchConcreteTypesWithTypeVariables(typeCheckingContext, methodClassifier, typeCheckingContext.getEquationManager().getRepresentator(instanceType_typevar_1212781606045), mmap);

@@ -28,16 +28,16 @@ public class typeOf_ConceptFunction_InferenceRule extends AbstractInferenceRule_
     SNode expectedRetType = ConceptFunction_Behavior.call_getExpectedReturnType_1213877374441(func);
     boolean noReturnExpected = ((expectedRetType == null) || TypeChecker.getInstance().getSubtypingManager().isSubtype(expectedRetType, new _Quotations.QuotationClass_56().createNode(typeCheckingContext)));
     if (SConceptOperations.isExactly(SNodeOperations.getConceptDeclaration(expectedRetType), "jetbrains.mps.baseLanguage.structure.WildCardType")) {
-      // function is expected to return value of any type
+      /*<!TextGen not found for 'jetbrains.mps.baseLanguage.structure.TextCommentPart'!>       */
       expectedRetType = null;
     }
-    // =============
+    /*<!TextGen not found for 'jetbrains.mps.baseLanguage.structure.TextCommentPart'!>     */
     Iterable<SNode> returnStatements = RulesFunctions_BaseLanguage.collectReturnStatements(SLinkOperations.getTarget(func, "body", true));
     boolean somethingReturned = Sequence.fromIterable(returnStatements).isNotEmpty();
-    // =============
+    /*<!TextGen not found for 'jetbrains.mps.baseLanguage.structure.TextCommentPart'!>     */
     final SNode LCS_typevar_1186052624152 = typeCheckingContext.createNewRuntimeTypesVariable();
     if (noReturnExpected) {
-      // shouldn't return any values
+      /*<!TextGen not found for 'jetbrains.mps.baseLanguage.structure.TextCommentPart'!>       */
       for (SNode returnStatement : Sequence.fromIterable(returnStatements)) {
         if ((SLinkOperations.getTarget(returnStatement, "expression", true) != null)) {
           {
@@ -54,8 +54,8 @@ public class typeOf_ConceptFunction_InferenceRule extends AbstractInferenceRule_
         typeCheckingContext.createEquation((SNode)typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1223981485210", true), (SNode)null, _info_12389875345);
       }
     } else {
-      // should return subtypes of the 'expected type'
-      // if 'expected type' is null - should still return some value (of any type)
+      /*<!TextGen not found for 'jetbrains.mps.baseLanguage.structure.TextCommentPart'!>       */
+      /*<!TextGen not found for 'jetbrains.mps.baseLanguage.structure.TextCommentPart'!>       */
       for (SNode returnStatement : Sequence.fromIterable(returnStatements)) {
         if ((SLinkOperations.getTarget(returnStatement, "expression", true) == null)) {
           {
@@ -82,7 +82,7 @@ public class typeOf_ConceptFunction_InferenceRule extends AbstractInferenceRule_
           }
         }
       }
-      // last expression statement can serve as return statement
+      /*<!TextGen not found for 'jetbrains.mps.baseLanguage.structure.TextCommentPart'!>       */
       SNode lastStatement = IMethodLike_Behavior.call_getLastStatement_1239354409446(func);
       if (SNodeOperations.isInstanceOf(lastStatement, "jetbrains.mps.baseLanguage.structure.ExpressionStatement")) {
         SNode expression = SLinkOperations.getTarget(SNodeOperations.cast(lastStatement, "jetbrains.mps.baseLanguage.structure.ExpressionStatement"), "expression", true);

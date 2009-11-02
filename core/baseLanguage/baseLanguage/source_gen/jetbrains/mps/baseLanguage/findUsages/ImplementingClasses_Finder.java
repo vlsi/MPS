@@ -32,15 +32,15 @@ public class ImplementingClasses_Finder extends GeneratedFinder {
   protected void doFind(SNode node, IScope scope, List<SNode> _results, ProgressIndicator indicator) {
     List<SNode> derivedInterfaces = FindUtils.executeFinder("jetbrains.mps.baseLanguage.findUsages.DerivedInterfaces_Finder", node, scope, indicator);
     ListSequence.fromList(derivedInterfaces).addElement(node);
-    // 
+    /*<!TextGen not found for 'jetbrains.mps.baseLanguage.structure.TextCommentPart'!>     */
     List<SNode> derivedInterfacesUsages = new ArrayList<SNode>();
     for (SNode derivedInterface : derivedInterfaces) {
       ListSequence.fromList(derivedInterfacesUsages).addSequence(ListSequence.fromList(FindUtils.executeFinder("jetbrains.mps.lang.structure.findUsages.NodeUsages_Finder", derivedInterface, scope, indicator)));
     }
-    // 
+    /*<!TextGen not found for 'jetbrains.mps.baseLanguage.structure.TextCommentPart'!>     */
     for (SNode interfaceNode : derivedInterfacesUsages) {
       if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(interfaceNode), "jetbrains.mps.baseLanguage.structure.ClassConcept")) {
-        // class implements interface case
+        /*<!TextGen not found for 'jetbrains.mps.baseLanguage.structure.TextCommentPart'!>         */
         if (SNodeOperations.hasRole(interfaceNode, "jetbrains.mps.baseLanguage.structure.ClassConcept", "implementedInterface")) {
           ListSequence.fromList(_results).addElement(SNodeOperations.getParent(interfaceNode));
           for (SNode classNode : ListSequence.fromList(FindUtils.executeFinder("jetbrains.mps.baseLanguage.findUsages.DerivedClasses_Finder", SNodeOperations.getParent(interfaceNode), scope, indicator))) {
@@ -48,7 +48,7 @@ public class ImplementingClasses_Finder extends GeneratedFinder {
           }
         }
       } else if (SNodeOperations.isInstanceOf(interfaceNode, "jetbrains.mps.baseLanguage.structure.AnonymousClass")) {
-        // anonymous class case
+        /*<!TextGen not found for 'jetbrains.mps.baseLanguage.structure.TextCommentPart'!>         */
         ListSequence.fromList(_results).addElement(interfaceNode);
       }
     }

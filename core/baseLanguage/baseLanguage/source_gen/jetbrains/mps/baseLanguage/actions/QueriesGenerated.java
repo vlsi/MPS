@@ -435,11 +435,9 @@ __switch__:
     }
   }
 
-  public static void nodeFactory_NodeSetup_GenericNewExpression_1187945171250(final IOperationContext operationContext, final NodeSetupContext _context) {
-    //  moved to substitute/expression/new
+  public static void nodeFactory_NodeSetup_GenericNewExpression_1187945171250(final IOperationContext operationContext, final NodeSetupContext _context) {//  moved to substitute/expression/new 
     /*
-      if (SNodeOperations.isInstanceOf(_context.getSampleNode(), "jetbrains.mps.baseLanguage.structure.Expression")) {
-        // Looking for the original node is required because sampleNode is just a copy
+      if (SNodeOperations.isInstanceOf(_context.getSampleNode(), "jetbrains.mps.baseLanguage.structure.Expression")) {// Looking for the original node is required because sampleNode is just a copy 
         SNode originalExpression = ExpectedType_FactoryUtil.getOriginalExpression(_context.getEnclosingNode(), SNodeOperations.cast(_context.getSampleNode(), "jetbrains.mps.baseLanguage.structure.Expression"));
         if ((originalExpression != null)) {
           SNode expectedType = ExpectedType_FactoryUtil.createExpectedType(SNodeOperations.cast(originalExpression, "jetbrains.mps.baseLanguage.structure.Expression"));
@@ -790,8 +788,7 @@ __switch__:
     {
       Calculable calc = new Calculable() {
         public Object calculate() {
-          List<SNode> functions = SNodeOperations.getAncestors(_context.getParentNode(), "jetbrains.mps.baseLanguage.structure.ConceptFunction", false);
-          // skip Closure
+          List<SNode> functions = SNodeOperations.getAncestors(_context.getParentNode(), "jetbrains.mps.baseLanguage.structure.ConceptFunction", false);// skip Closure 
           SNode parentFunction = ListSequence.fromList(functions).where(new IWhereFilter<SNode>() {
             public boolean accept(SNode it) {
               return !(SNodeOperations.isInstanceOf(it, "jetbrains.mps.baseLanguage.structure.Closure"));
@@ -1090,8 +1087,7 @@ __switch__:
       SNode childConcept = (SNode)_context.getChildConcept();
       if (SConceptOperations.isSuperConceptOf(childConcept, NameUtil.nodeFQName(outputConcept))) {
         Calculable calc = new Calculable() {
-          public Object calculate() {
-            //  'qualified this' - only in inner classes
+          public Object calculate() {//  'qualified this' - only in inner classes 
             return ListSequence.fromList(SNodeOperations.getAncestors(SNodeOperations.getAncestor(_context.getParentNode(), "jetbrains.mps.baseLanguage.structure.Classifier", false, false), "jetbrains.mps.baseLanguage.structure.Classifier", false)).where(new IWhereFilter<SNode>() {
               public boolean accept(SNode it) {
                 return !(SNodeOperations.isInstanceOf(it, "jetbrains.mps.baseLanguage.structure.AnonymousClass"));
@@ -1245,8 +1241,7 @@ __switch__:
                   SPropertyOperations.set(method_copy, "isAbstract", "" + false);
                   SLinkOperations.setNewChild(method_copy, "body", "jetbrains.mps.baseLanguage.structure.StatementList");
                   SLinkOperations.addChild(SLinkOperations.getTarget(creator, "cls", true), "method", method_copy);
-                }
-                // replace all type vars with Object
+                }// replace all type vars with Object 
                 List<SNode> typeVarRefs = SNodeOperations.getDescendants(SLinkOperations.getTarget(creator, "cls", true), "jetbrains.mps.baseLanguage.structure.TypeVariableReference", false, new String[]{});
                 for (SNode typeVar : ListSequence.fromList(typeVarRefs)) {
                   SNodeOperations.replaceWithAnother(typeVar, new _Quotations.QuotationClass_3().createNode());
@@ -1557,10 +1552,8 @@ __switch__:
       if (SConceptOperations.isSuperConceptOf(childConcept, NameUtil.nodeFQName(outputConcept))) {
         Calculable calc = new Calculable() {
           public Object calculate() {
-            SNode sampleNode = _context.getCurrentTargetNode();
-            //  copied from BL_nodeFactories
-            if (SNodeOperations.isInstanceOf(sampleNode, "jetbrains.mps.baseLanguage.structure.Expression")) {
-              // Looking for the original node is required because sampleNode is just a copy
+            SNode sampleNode = _context.getCurrentTargetNode();//  copied from BL_nodeFactories 
+            if (SNodeOperations.isInstanceOf(sampleNode, "jetbrains.mps.baseLanguage.structure.Expression")) {// Looking for the original node is required because sampleNode is just a copy 
               SNode originalExpression = ExpectedType_FactoryUtil.getOriginalExpression(_context.getParentNode(), SNodeOperations.cast(sampleNode, "jetbrains.mps.baseLanguage.structure.Expression"));
               if ((originalExpression != null)) {
                 SNode expectedType = ExpectedType_FactoryUtil.createExpectedType(SNodeOperations.cast(originalExpression, "jetbrains.mps.baseLanguage.structure.Expression"));

@@ -44,9 +44,7 @@ public class DataFlowUtil {
       if (checkReturns) {
         checkReturns(typeCheckingContext, program);
       }
-      /*
-        checkNullable(typeCheckingContext, statementList);
-      */
+      /*<!TextGen not found for 'jetbrains.mps.baseLanguage.structure.StatementCommentPart'!>       */
     } catch (DataflowBuilderException e) {
       throw new RuntimeException("Building dataflow for node: " + statementList.getId() + " model: " + statementList.getModel(), e);
     }

@@ -9122,8 +9122,10 @@
             </node>
           </node>
         </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1234364056345">
-          <property name="value" value="we need it since tree is updated later" />
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7236590470026152796">
+          <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7236590470026152797">
+            <property name="text" value="we need it since tree is updated later" />
+          </node>
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1234364076483">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1234364081904">
@@ -13963,8 +13965,10 @@
     </node>
     <node role="executeFunction" type="jetbrains.mps.lang.plugin.structure.ExecuteBlock" id="5033107305426766813">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="5033107305426766814">
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="5033107305426769270">
-          <property name="value" value="get node" />
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7236590470026152760">
+          <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7236590470026152761">
+            <property name="text" value="get node" />
+          </node>
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="5033107305426767004">
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="5033107305426767005">
@@ -14013,8 +14017,10 @@
             </node>
           </node>
         </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="5033107305426769268">
-          <property name="value" value="show dialog" />
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7236590470026152788">
+          <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7236590470026152789">
+            <property name="text" value="show dialog" />
+          </node>
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="5033107305426767026">
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="5033107305426767027">
@@ -14120,8 +14126,10 @@
             </node>
           </node>
         </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="5033107305426769266">
-          <property name="value" value="start" />
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7236590470026152768">
+          <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7236590470026152769">
+            <property name="text" value="start" />
+          </node>
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="5033107305426769272">
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="5033107305426769273">
@@ -16883,8 +16891,10 @@
             </node>
           </node>
         </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="6105093990493768780">
-          <property name="value" value="----" />
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7236590470026152818">
+          <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7236590470026152819">
+            <property name="text" value="----" />
+          </node>
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="6105093990493768558">
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="6105093990493768559">
@@ -16926,8 +16936,10 @@
             </node>
           </node>
         </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="6105093990493765763">
-          <property name="value" value="----" />
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7236590470026152810">
+          <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7236590470026152811">
+            <property name="text" value="----" />
+          </node>
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.TryCatchStatement" id="6105093990493768972">
           <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="6105093990493768973">
@@ -19756,8 +19768,10 @@
                   </node>
                 </node>
               </node>
-              <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="5533671870987190843">
-                <property name="value" value="make sure editor will be open" />
+              <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7236590470026152816">
+                <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7236590470026152817">
+                  <property name="text" value="make sure editor will be open" />
+                </node>
               </node>
               <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="5533671870987190881">
                 <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="5533671870987190882">
@@ -23312,8 +23326,10 @@
             </node>
           </node>
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.Statement" id="4436041099111123250" />
-          <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="4436041099111123251">
-            <property name="value" value="when added, must be already initialized for tabbed editor to work" />
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7236590470026152786">
+            <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7236590470026152787">
+              <property name="text" value="when added, must be already initialized for tabbed editor to work" />
+            </node>
           </node>
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="4436041099111123252">
             <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="4436041099111123253">
@@ -23553,8 +23569,10 @@
             </node>
           </node>
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.Statement" id="4436041099111123149" />
-          <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="4436041099111123151">
-            <property name="value" value="when added, must be already initialized for tabbed editor to work" />
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7236590470026152794">
+            <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7236590470026152795">
+              <property name="text" value="when added, must be already initialized for tabbed editor to work" />
+            </node>
           </node>
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="4436041099111123140">
             <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="4436041099111123142">
@@ -23794,8 +23812,10 @@
             </node>
           </node>
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.Statement" id="3322169133325977586" />
-          <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="4436041099111123153">
-            <property name="value" value="when added, must be already initialized for tabbed editor to work" />
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7236590470026152798">
+            <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7236590470026152799">
+              <property name="text" value="when added, must be already initialized for tabbed editor to work" />
+            </node>
           </node>
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="4436041099111123154">
             <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="4436041099111123155">
@@ -23910,8 +23930,10 @@
                         </node>
                       </node>
                       <node role="statement" type="jetbrains.mps.baseLanguage.structure.Statement" id="4919790234734545236" />
-                      <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="4919790234734545256">
-                        <property name="value" value="rules with concept references go first" />
+                      <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7236590470026152804">
+                        <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7236590470026152805">
+                          <property name="text" value="rules with concept references go first" />
+                        </node>
                       </node>
                       <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="4919790234734544928">
                         <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="4919790234734544929">
@@ -23952,8 +23974,10 @@
                         </node>
                       </node>
                       <node role="statement" type="jetbrains.mps.baseLanguage.structure.Statement" id="4919790234734545266" />
-                      <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="4919790234734545372">
-                        <property name="value" value="rules with concept references - more specific goes first" />
+                      <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7236590470026152766">
+                        <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7236590470026152767">
+                          <property name="text" value="rules with concept references - more specific goes first" />
+                        </node>
                       </node>
                       <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="4919790234734545318">
                         <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="4919790234734545319">
@@ -24380,8 +24404,10 @@
             </node>
           </node>
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.Statement" id="4436041099111123161" />
-          <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="4436041099111123163">
-            <property name="value" value="when added, must be already initialized for tabbed editor to work" />
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7236590470026152780">
+            <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7236590470026152781">
+              <property name="text" value="when added, must be already initialized for tabbed editor to work" />
+            </node>
           </node>
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="4436041099111123164">
             <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="4436041099111123165">
@@ -24632,8 +24658,10 @@
             </node>
           </node>
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.Statement" id="6855614059849807296" />
-          <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="6855614059849807297">
-            <property name="value" value="when added, must be already initialized for tabbed editor to work" />
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7236590470026152812">
+            <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7236590470026152813">
+              <property name="text" value="when added, must be already initialized for tabbed editor to work" />
+            </node>
           </node>
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="6855614059849807298">
             <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="6855614059849807299">
@@ -24863,8 +24891,10 @@
             </node>
           </node>
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.Statement" id="7669625834619276504" />
-          <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="4436041099111123176">
-            <property name="value" value="when added, must be already initialized for tabbed editor to work" />
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7236590470026152778">
+            <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7236590470026152779">
+              <property name="text" value="when added, must be already initialized for tabbed editor to work" />
+            </node>
           </node>
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="4436041099111123177">
             <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="4436041099111123178">
@@ -25109,8 +25139,10 @@
             </node>
           </node>
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.Statement" id="7669625834619423959" />
-          <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="4436041099111123186">
-            <property name="value" value="when added, must be already initialized for tabbed editor to work" />
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7236590470026152808">
+            <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7236590470026152809">
+              <property name="text" value="when added, must be already initialized for tabbed editor to work" />
+            </node>
           </node>
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="4436041099111123187">
             <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="4436041099111123188">
@@ -25350,8 +25382,10 @@
             </node>
           </node>
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.Statement" id="7669625834619424124" />
-          <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="4436041099111123197">
-            <property name="value" value="when added, must be already initialized for tabbed editor to work" />
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7236590470026152790">
+            <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7236590470026152791">
+              <property name="text" value="when added, must be already initialized for tabbed editor to work" />
+            </node>
           </node>
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="4436041099111123198">
             <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="4436041099111123199">
@@ -25490,8 +25524,10 @@
           </node>
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="8418256647045321189">
             <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="8418256647045321190">
-              <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="8418256647045321213">
-                <property name="value" value="dialog" />
+              <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7236590470026152800">
+                <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7236590470026152801">
+                  <property name="text" value="dialog" />
+                </node>
               </node>
               <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="8418256647045321215">
                 <node role="expression" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="8418256647045321217" />
@@ -25541,8 +25577,10 @@
           </node>
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="8418256647045321237">
             <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="8418256647045321238">
-              <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="8418256647045321239">
-                <property name="value" value="dialog" />
+              <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7236590470026152764">
+                <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7236590470026152765">
+                  <property name="text" value="dialog" />
+                </node>
               </node>
               <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="8418256647045321240">
                 <node role="expression" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="8418256647045321241" />
@@ -25714,8 +25752,10 @@
             </node>
           </node>
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.Statement" id="4436041099111123205" />
-          <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="4436041099111123207">
-            <property name="value" value="when added, must be already initialized for tabbed editor to work" />
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7236590470026152792">
+            <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7236590470026152793">
+              <property name="text" value="when added, must be already initialized for tabbed editor to work" />
+            </node>
           </node>
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="4436041099111123208">
             <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="4436041099111123209">
@@ -25939,8 +25979,10 @@
             </node>
           </node>
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.Statement" id="7669625834619524968" />
-          <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="4436041099111123220">
-            <property name="value" value="when added, must be already initialized for tabbed editor to work" />
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7236590470026152802">
+            <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7236590470026152803">
+              <property name="text" value="when added, must be already initialized for tabbed editor to work" />
+            </node>
           </node>
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="4436041099111123221">
             <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="4436041099111123222">
@@ -26055,14 +26097,20 @@
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.Statement" id="1699921845557700176" />
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.Statement" id="1699921845557700178" />
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="8026065915992134744">
-          <property name="value" value="We should be sure that node and base node are inside the same module. " />
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7236590470026152784">
+          <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7236590470026152785">
+            <property name="text" value="We should be sure that node and base node are inside the same module. " />
+          </node>
         </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="8026065915992134745">
-          <property name="value" value="Otherwise, tabbed editor for base node will be opened, but there will be no tab for &quot;node&quot;" />
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7236590470026152814">
+          <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7236590470026152815">
+            <property name="text" value="Otherwise, tabbed editor for base node will be opened, but there will be no tab for &quot;node&quot;" />
+          </node>
         </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="8026065915992134746">
-          <property name="value" value="So, the user will not be able to open node by a double-click" />
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7236590470026152806">
+          <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7236590470026152807">
+            <property name="text" value="So, the user will not be able to open node by a double-click" />
+          </node>
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1699921845557700179">
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1699921845557700180">
@@ -26469,8 +26517,10 @@
               </node>
               <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="965654005418475355">
                 <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="965654005418475356">
-                  <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="965654005418475357">
-                    <property name="value" value="we should not go by bad reference. We'll try to resolve it instead" />
+                  <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7236590470026152774">
+                    <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7236590470026152775">
+                      <property name="text" value="we should not go by bad reference. We'll try to resolve it instead" />
+                    </node>
                   </node>
                   <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="965654005418475358">
                     <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="965654005418475359">
@@ -30359,8 +30409,10 @@
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="2115869675185051461">
           <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="2115869675185051462">
-            <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="2115869675185051472">
-              <property name="value" value=" Checking was cancelled" />
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7236590470026152782">
+              <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7236590470026152783">
+                <property name="text" value=" Checking was cancelled" />
+              </node>
             </node>
             <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="2115869675185053048">
               <node role="expression" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="2115869675185053050">
@@ -30680,8 +30732,10 @@
       <node role="returnType" type="jetbrains.mps.baseLanguage.structure.BooleanType" id="2115869675185053083" />
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="4832665745476437137" />
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="4832665745476437138">
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="4832665745476437162">
-          <property name="value" value=" TODO" />
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7236590470026152776">
+          <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7236590470026152777">
+            <property name="text" value=" TODO" />
+          </node>
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="4832665745476437154">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="4832665745476437155">
@@ -31334,8 +31388,10 @@
         <node role="statement" type="jetbrains.mps.lang.plugin.structure.ExecuteLightweightCommandStatement" id="1184058066016385075">
           <node role="commandClosureLiteral" type="jetbrains.mps.lang.plugin.structure.CommandClosureLiteral" id="1184058066016385076">
             <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1184058066016385077">
-              <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1184058066016385078">
-                <property name="value" value=" Check for broken references" />
+              <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7236590470026152758">
+                <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7236590470026152759">
+                  <property name="text" value=" Check for broken references" />
+                </node>
               </node>
               <node role="statement" type="jetbrains.mps.baseLanguage.collections.structure.ForEachStatement" id="1184058066016385079">
                 <node role="variable" type="jetbrains.mps.baseLanguage.collections.structure.ForEachVariable" id="1184058066016385080">
@@ -31453,8 +31509,10 @@
                   </node>
                 </node>
               </node>
-              <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1184058066016385105">
-                <property name="value" value=" Check for typesystem rules" />
+              <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7236590470026152772">
+                <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7236590470026152773">
+                  <property name="text" value=" Check for typesystem rules" />
+                </node>
               </node>
               <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1184058066016385106">
                 <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1184058066016385107">
@@ -31695,11 +31753,15 @@
             </node>
           </node>
         </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="6362292991913818230">
-          <property name="value" value=" Pessimistic estimation algorithm: maximum of last estimation and current elapsed time has" />
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7236590470026152770">
+          <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7236590470026152771">
+            <property name="text" value=" Pessimistic estimation algorithm: maximum of last estimation and current elapsed time has" />
+          </node>
         </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="6362292991913818232">
-          <property name="value" value=" bigger weight than their minimum" />
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7236590470026152762">
+          <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7236590470026152763">
+            <property name="text" value=" bigger weight than their minimum" />
+          </node>
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="5874304357017206277">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression" id="5874304357017206279">

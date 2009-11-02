@@ -30,7 +30,7 @@ public class check_ForeachWithErasure_NonTypesystemRule extends AbstractNonTypes
       SNode coercedNode_0 = TypeChecker.getInstance().getRuntimeSupport().coerce_(iterableType, pattern_0, typeCheckingContext);
       if (coercedNode_0 != null) {
       } else {
-        // not an iterable or an erasure
+        /*<!TextGen not found for 'jetbrains.mps.baseLanguage.structure.TextCommentPart'!>         */
         if (!(MatchingUtil.matchNodes(SLinkOperations.getTarget(SLinkOperations.getTarget(foreachStatement, "variable", true), "type", true), new _Quotations.QuotationClass_117().createNode(typeCheckingContext)))) {
           {
             BaseIntentionProvider intentionProvider = null;

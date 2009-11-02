@@ -26,7 +26,7 @@ public class typeof_InstanceMethodCallOperation_InferenceRule extends AbstractIn
       return;
     }
     final SNode methodClassifier = SNodeOperations.getAncestor(SLinkOperations.getTarget(imco, "baseMethodDeclaration", false), "jetbrains.mps.baseLanguage.structure.Classifier", false, false);
-    // ---
+    /*<!TextGen not found for 'jetbrains.mps.baseLanguage.structure.TextCommentPart'!>     */
     final SNode instanceType_typevar_1204064731338 = typeCheckingContext.createNewRuntimeTypesVariable();
     {
       SNode _nodeToCheck_1029348928467 = IOperation_Behavior.call_getOperand_1213877410070(imco);
@@ -41,8 +41,8 @@ public class typeof_InstanceMethodCallOperation_InferenceRule extends AbstractIn
       _info_12389875345.setInequationGroup("default");
       typeCheckingContext.createLessThanInequationStrong((SNode)typeCheckingContext.getEquationManager().getRepresentator(instanceType_typevar_1204064731338), (SNode)new _Quotations.QuotationClass_62().createNode(methodClassifier, typeCheckingContext), true, _info_12389875345);
     }
-    // --- following piece of cake is identical for any method call ---
-    //  no more when_concrete
+    /*<!TextGen not found for 'jetbrains.mps.baseLanguage.structure.TextCommentPart'!>     */
+    /*<!TextGen not found for 'jetbrains.mps.baseLanguage.structure.TextCommentPart'!>     */
     Map<SNode, List<SNode>> mmap = MapSequence.fromMap(new HashMap<SNode, List<SNode>>());
     RulesFunctions_BaseLanguage.inference_equateParametersAndReturnType(typeCheckingContext, imco, SLinkOperations.getTarget(SLinkOperations.getTarget(imco, "baseMethodDeclaration", false), "returnType", true), mmap);
     RulesFunctions_BaseLanguage.inference_matchConcreteTypesWithTypeVariables(typeCheckingContext, methodClassifier, typeCheckingContext.getEquationManager().getRepresentator(instanceType_typevar_1204064731338), mmap);
