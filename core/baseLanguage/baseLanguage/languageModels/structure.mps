@@ -1956,10 +1956,14 @@
       <property name="value" value="remark" />
       <link role="conceptPropertyDeclaration" targetNodeId="4.1137473914776" />
     </node>
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.BooleanConceptProperty" id="4581730695772505313">
+      <link role="conceptPropertyDeclaration" targetNodeId="4.1137473994950" resolveInfo="dontSubstituteByDefault" />
+    </node>
     <node role="propertyDeclaration" type="jetbrains.mps.lang.structure.structure.PropertyDeclaration" id="1168623065899">
       <property name="name" value="value" />
       <link role="dataType" targetNodeId="4.1082983041843" />
     </node>
+    <node role="deprecatedNode$attribute" type="jetbrains.mps.lang.structure.structure.DeprecatedNodeAnnotation" id="4581730695772514121" />
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1170075670744">
     <property name="name" value="SynchronizedStatement" />
@@ -3200,6 +3204,10 @@
       <property name="role" value="statement" />
       <link role="target" targetNodeId="1068580123157" resolveInfo="Statement" />
     </node>
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.BooleanConceptProperty" id="4581730695772505311">
+      <link role="conceptPropertyDeclaration" targetNodeId="4.1137473994950" resolveInfo="dontSubstituteByDefault" />
+    </node>
+    <node role="deprecatedNode$attribute" type="jetbrains.mps.lang.structure.structure.DeprecatedNodeAnnotation" id="4581730695772514122" />
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1233824724035">
     <property name="package" value="tuples" />

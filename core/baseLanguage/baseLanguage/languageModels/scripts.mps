@@ -2994,5 +2994,159 @@
       </node>
     </node>
   </node>
+  <node type="jetbrains.mps.lang.script.structure.MigrationScript" id="4581730695772514123">
+    <property name="migrationFromBuild" value="1193" />
+    <property name="name" value="ConvertComments" />
+    <property name="title" value="convert comments" />
+    <node role="part" type="jetbrains.mps.lang.script.structure.MigrationScriptPart_Instance" id="4581730695772514124">
+      <property name="description" value="convert commented statements" />
+      <property name="showAsIntention" value="true" />
+      <link role="affectedInstanceConcept" targetNodeId="1.1232461062092" resolveInfo="CommentedStatement" />
+      <node role="affectedInstanceUpdater" type="jetbrains.mps.lang.script.structure.MigrationScriptPart_Instance_Updater" id="4581730695772514125">
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="4581730695772514126">
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="4581730695772516758">
+            <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="4581730695772516759">
+              <property name="name" value="comment" />
+              <node role="type" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="4581730695772516760">
+                <link role="concept" targetNodeId="1.6329021646629104954" resolveInfo="SingleLineComment" />
+              </node>
+              <node role="initializer" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="4581730695772516770">
+                <node role="creator" type="jetbrains.mps.lang.smodel.structure.SNodeCreator" id="4581730695772516771">
+                  <node role="createdType" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="4581730695772516772">
+                    <link role="concept" targetNodeId="1.6329021646629104954" resolveInfo="SingleLineComment" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="4581730695772516788">
+            <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="4581730695772516789">
+              <property name="name" value="statementCommentPart" />
+              <node role="type" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="4581730695772516790">
+                <link role="concept" targetNodeId="1.6329021646629175143" resolveInfo="StatementCommentPart" />
+              </node>
+              <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="4581730695772516791">
+                <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="4581730695772516792">
+                  <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="4581730695772516793">
+                    <link role="variableDeclaration" targetNodeId="4581730695772516759" resolveInfo="comment" />
+                  </node>
+                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkListAccess" id="4581730695772516794">
+                    <link role="link" targetNodeId="1.6329021646629175155" />
+                  </node>
+                </node>
+                <node role="operation" type="jetbrains.mps.lang.smodel.structure.LinkList_AddNewChildOperation" id="4581730695772516795">
+                  <link role="concept" targetNodeId="1.6329021646629175143" resolveInfo="StatementCommentPart" />
+                </node>
+              </node>
+            </node>
+          </node>
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="4581730695772516798">
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="4581730695772516800">
+              <node role="operand" type="jetbrains.mps.lang.script.structure.MigrationScriptPart_node" id="4581730695772516799" />
+              <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ReplaceWithAnotherOperation" id="4581730695772516804">
+                <node role="replacementNode" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="4581730695772516806">
+                  <link role="variableDeclaration" targetNodeId="4581730695772516759" resolveInfo="comment" />
+                </node>
+              </node>
+            </node>
+          </node>
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="4581730695772516811">
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="4581730695772516823">
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="4581730695772516815">
+                <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="4581730695772516812">
+                  <link role="variableDeclaration" targetNodeId="4581730695772516789" resolveInfo="statementCommentPart" />
+                </node>
+                <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="4581730695772516821">
+                  <link role="link" targetNodeId="1.6329021646629175144" />
+                </node>
+              </node>
+              <node role="operation" type="jetbrains.mps.lang.smodel.structure.Link_SetTargetOperation" id="4581730695772516827">
+                <node role="linkTarget" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="4581730695772516892">
+                  <node role="operand" type="jetbrains.mps.lang.script.structure.MigrationScriptPart_node" id="4581730695772516830" />
+                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="4581730695772516897">
+                    <link role="link" targetNodeId="1.1232461075566" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="part" type="jetbrains.mps.lang.script.structure.MigrationScriptPart_Instance" id="4581730695772514246">
+      <property name="description" value="convert remark statements" />
+      <link role="affectedInstanceConcept" targetNodeId="1.1168622733562" resolveInfo="RemarkStatement" />
+      <node role="affectedInstanceUpdater" type="jetbrains.mps.lang.script.structure.MigrationScriptPart_Instance_Updater" id="4581730695772514247">
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="4581730695772514248">
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="4581730695772516761">
+            <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="4581730695772516762">
+              <property name="name" value="comment" />
+              <node role="type" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="4581730695772516763">
+                <link role="concept" targetNodeId="1.6329021646629104954" resolveInfo="SingleLineComment" />
+              </node>
+              <node role="initializer" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="4581730695772516766">
+                <node role="creator" type="jetbrains.mps.lang.smodel.structure.SNodeCreator" id="4581730695772516767">
+                  <node role="createdType" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="4581730695772516768">
+                    <link role="concept" targetNodeId="1.6329021646629104954" resolveInfo="SingleLineComment" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="4581730695772516847">
+            <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="4581730695772516848">
+              <property name="name" value="textCommentPart" />
+              <node role="type" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="4581730695772516849">
+                <link role="concept" targetNodeId="1.6329021646629104957" resolveInfo="TextCommentPart" />
+              </node>
+              <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="4581730695772516850">
+                <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="4581730695772516851">
+                  <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="4581730695772516852">
+                    <link role="variableDeclaration" targetNodeId="4581730695772516762" resolveInfo="comment" />
+                  </node>
+                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkListAccess" id="4581730695772516853">
+                    <link role="link" targetNodeId="1.6329021646629175155" />
+                  </node>
+                </node>
+                <node role="operation" type="jetbrains.mps.lang.smodel.structure.LinkList_AddNewChildOperation" id="4581730695772516854">
+                  <link role="concept" targetNodeId="1.6329021646629104957" resolveInfo="TextCommentPart" />
+                </node>
+              </node>
+            </node>
+          </node>
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="4581730695772516857">
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="4581730695772516859">
+              <node role="operand" type="jetbrains.mps.lang.script.structure.MigrationScriptPart_node" id="4581730695772516858" />
+              <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ReplaceWithAnotherOperation" id="4581730695772516863">
+                <node role="replacementNode" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="4581730695772516865">
+                  <link role="variableDeclaration" targetNodeId="4581730695772516762" resolveInfo="comment" />
+                </node>
+              </node>
+            </node>
+          </node>
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="4581730695772516867">
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="4581730695772516880">
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="4581730695772516871">
+                <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="4581730695772516868">
+                  <link role="variableDeclaration" targetNodeId="4581730695772516848" resolveInfo="textCommentPart" />
+                </node>
+                <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="4581730695772516878">
+                  <link role="property" targetNodeId="1.6329021646629104958" resolveInfo="text" />
+                </node>
+              </node>
+              <node role="operation" type="jetbrains.mps.lang.smodel.structure.Property_SetOperation" id="4581730695772516884">
+                <node role="value" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="4581730695772516887">
+                  <node role="operand" type="jetbrains.mps.lang.script.structure.MigrationScriptPart_node" id="4581730695772516886" />
+                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="4581730695772516891">
+                    <link role="property" targetNodeId="1.1168623065899" resolveInfo="value" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
 </model>
 
