@@ -251,6 +251,8 @@ public class ModelGenerationStatusManager implements ApplicationComponent {
       try {
         if (!result.createNewFile()) {
           LOG.error("Can't create hash file");
+        } else {
+          FileUtil.write(result, hash);
         }
       } catch (IOException e) {
         LOG.error(e);
