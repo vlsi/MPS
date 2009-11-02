@@ -4265,7 +4265,7 @@
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="7667276221847612622">
     <property name="package" value="MethodParameters" />
     <property name="name" value="ParametersInformationQuery" />
-    <property name="rootable" value="true" />
+    <property name="rootable" value="false" />
     <link role="extends" targetNodeId="3.1133920641626" resolveInfo="BaseConcept" />
     <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="8178273524755058633">
       <property name="metaClass" value="aggregation" />
