@@ -12644,6 +12644,26 @@
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1239211900845" />
       <node role="returnType" type="jetbrains.mps.baseLanguage.structure.BooleanType" id="1239211943662" />
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1239211900847">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="6329021646629620921">
+          <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="6329021646629620922">
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="6329021646629620938">
+              <node role="expression" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="6329021646629620940">
+                <property name="value" value="true" />
+              </node>
+            </node>
+          </node>
+          <node role="condition" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="6329021646629620931">
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="6329021646629620926">
+              <node role="operand" type="jetbrains.mps.lang.behavior.structure.ThisNodeExpression" id="6329021646629620925" />
+              <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_GetParentOperation" id="6329021646629620930" />
+            </node>
+            <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation" id="6329021646629620935">
+              <node role="conceptArgument" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" id="6329021646629620937">
+                <link role="conceptDeclaration" targetNodeId="1.6329021646629104955" resolveInfo="CommentPart" />
+              </node>
+            </node>
+          </node>
+        </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1241531203715">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1241531204639">
             <node role="operand" type="jetbrains.mps.lang.behavior.structure.ThisNodeExpression" id="1241531203716" />

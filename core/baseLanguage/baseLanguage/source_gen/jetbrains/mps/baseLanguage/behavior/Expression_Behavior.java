@@ -6,8 +6,8 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptPropertyOperations;
 import jetbrains.mps.dataFlow.runtime.NullableVariableState;
-import jetbrains.mps.smodel.behaviour.BehaviorManager;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.behaviour.BehaviorManager;
 
 public class Expression_Behavior {
   private static Class[] PARAMETERS_1213877519769 = {SNode.class ,IModule.class};
@@ -46,6 +46,9 @@ public class Expression_Behavior {
   }
 
   public static boolean virtual_isLegalAsStatement_1239211900844(SNode thisNode) {
+    if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(thisNode), "jetbrains.mps.baseLanguage.structure.CommentPart")) {
+      return true;
+    }
     return SConceptPropertyOperations.getBoolean(thisNode, "legalAsStatement");
   }
 

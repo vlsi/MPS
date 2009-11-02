@@ -16159,5 +16159,39 @@
       </node>
     </node>
   </node>
+  <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" id="6329021646629104959">
+    <link role="conceptDeclaration" targetNodeId="17.6329021646629104957" resolveInfo="TextCommentPart" />
+    <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Property" id="6329021646629175142">
+      <link role="relationDeclaration" targetNodeId="17.6329021646629104958" resolveInfo="text" />
+      <link role="styleClass" targetNodeId="1198594875276" resolveInfo="Comment" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" id="6329021646629175145">
+    <link role="conceptDeclaration" targetNodeId="17.6329021646629175143" resolveInfo="StatementCommentPart" />
+    <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="6329021646629175148">
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode" id="6329021646629175149">
+        <link role="relationDeclaration" targetNodeId="17.6329021646629175144" />
+        <link role="styleClass" targetNodeId="1198594875276" resolveInfo="Comment" />
+      </node>
+      <node role="cellLayout" type="jetbrains.mps.lang.editor.structure.CellLayout_Horizontal" id="6329021646629175150" />
+      <node role="styleItem" type="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem" id="6329021646629175151">
+        <property name="flag" value="false" />
+      </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" id="6329021646629175156">
+    <link role="conceptDeclaration" targetNodeId="17.6329021646629104954" resolveInfo="SingleLineComment" />
+    <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="6329021646629175158">
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_ConceptProperty" id="6329021646629175161">
+        <link role="relationDeclaration" targetNodeId="18.1137473891462" resolveInfo="alias" />
+        <link role="styleClass" targetNodeId="1198594875276" resolveInfo="Comment" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNodeList" id="6329021646629175163">
+        <link role="relationDeclaration" targetNodeId="17.6329021646629175155" />
+        <node role="cellLayout" type="jetbrains.mps.lang.editor.structure.CellLayout_Indent" id="6329021646629175164" />
+      </node>
+      <node role="cellLayout" type="jetbrains.mps.lang.editor.structure.CellLayout_Indent" id="6329021646629175160" />
+    </node>
+  </node>
 </model>
 

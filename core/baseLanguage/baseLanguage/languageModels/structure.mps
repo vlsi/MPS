@@ -3499,5 +3499,48 @@
       <link role="target" targetNodeId="363746191845175146" resolveInfo="LoopLabel" />
     </node>
   </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="6329021646629104954">
+    <property name="name" value="SingleLineComment" />
+    <link role="extends" targetNodeId="1068580123157" resolveInfo="Statement" />
+    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="6329021646629175155">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="commentPart" />
+      <property name="sourceCardinality" value="0..n" />
+      <link role="target" targetNodeId="6329021646629104955" resolveInfo="CommentPart" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="6329021646629175152">
+      <property name="value" value="//" />
+      <link role="conceptPropertyDeclaration" targetNodeId="4.1137473891462" resolveInfo="alias" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="6329021646629175154">
+      <property name="value" value="single-line comment" />
+      <link role="conceptPropertyDeclaration" targetNodeId="4.1137473914776" resolveInfo="shortDescription" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="6329021646629104955">
+    <property name="name" value="CommentPart" />
+    <link role="extends" targetNodeId="4.1133920641626" resolveInfo="BaseConcept" />
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.BooleanConceptProperty" id="6329021646629104956">
+      <link role="conceptPropertyDeclaration" targetNodeId="4.1137473854053" resolveInfo="abstract" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="6329021646629104957">
+    <property name="name" value="TextCommentPart" />
+    <link role="extends" targetNodeId="6329021646629104955" resolveInfo="CommentPart" />
+    <node role="propertyDeclaration" type="jetbrains.mps.lang.structure.structure.PropertyDeclaration" id="6329021646629104958">
+      <property name="name" value="text" />
+      <link role="dataType" targetNodeId="4.1082983041843" resolveInfo="string" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="6329021646629175143">
+    <property name="name" value="StatementCommentPart" />
+    <link role="extends" targetNodeId="6329021646629104955" resolveInfo="CommentPart" />
+    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="6329021646629175144">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="commentedStatement" />
+      <property name="sourceCardinality" value="1" />
+      <link role="target" targetNodeId="1068580123157" resolveInfo="Statement" />
+    </node>
+  </node>
 </model>
 

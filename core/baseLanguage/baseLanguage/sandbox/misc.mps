@@ -1370,5 +1370,42 @@
       </node>
     </node>
   </node>
+  <node type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="6329021646629450657">
+    <property name="name" value="Comments" />
+    <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="6329021646629450658" />
+    <node role="constructor" type="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" id="6329021646629450659">
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="6329021646629450660" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="6329021646629450661" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="6329021646629450662">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="6329021646629614782">
+          <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="6329021646629614783">
+            <property name="text" value="testd" />
+          </node>
+          <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="6329021646629614786">
+            <property name="text" value="sdsd" />
+          </node>
+          <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="6329021646629614788">
+            <property name="text" value="sdsd" />
+          </node>
+          <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="6329021646629614790">
+            <property name="text" value="ds" />
+          </node>
+          <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="6329021646629614792">
+            <property name="text" value="sssd" />
+          </node>
+          <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="6329021646629614794">
+            <property name="text" value="sasasdsa" />
+          </node>
+          <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.StatementCommentPart" id="6329021646629614796">
+            <node role="commentedStatement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="6329021646629614798">
+              <node role="expression" type="jetbrains.mps.baseLanguage.structure.ClassifierClassExpression" id="6329021646629614799">
+                <link role="classifier" targetNodeId="3325977160883785002" resolveInfo="BinaryOperations" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
 </model>
 
