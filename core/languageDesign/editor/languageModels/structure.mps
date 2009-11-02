@@ -4267,6 +4267,11 @@
     <property name="name" value="ParametersInformationQuery" />
     <property name="rootable" value="false" />
     <link role="extends" targetNodeId="3.1133920641626" resolveInfo="BaseConcept" />
+    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="4203201205843994215">
+      <property name="metaClass" value="reference" />
+      <property name="role" value="applicableConcept" />
+      <link role="target" targetNodeId="1.1169125787135" resolveInfo="AbstractConceptDeclaration" />
+    </node>
     <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="8178273524755058633">
       <property name="metaClass" value="aggregation" />
       <property name="role" value="type" />
@@ -4301,7 +4306,7 @@
     <link role="extends" targetNodeId="4.1137021947720" resolveInfo="ConceptFunction" />
     <node role="conceptLink" type="jetbrains.mps.lang.structure.structure.ReferenceConceptLink" id="671290755173763930">
       <link role="conceptLinkDeclaration" targetNodeId="4.1161119487665" resolveInfo="applicableConceptFunctionParameter" />
-      <link role="target" targetNodeId="1142886811589" resolveInfo="ConceptFunctionParameter_node" />
+      <link role="target" targetNodeId="4203201205844553978" resolveInfo="ConceptFunctionParameter_selectedNode" />
     </node>
     <node role="conceptLink" type="jetbrains.mps.lang.structure.structure.ReferenceConceptLink" id="671290755173777668">
       <link role="conceptLinkDeclaration" targetNodeId="4.1161119487665" resolveInfo="applicableConceptFunctionParameter" />
@@ -4314,7 +4319,7 @@
     <link role="extends" targetNodeId="4.1137021947720" resolveInfo="ConceptFunction" />
     <node role="conceptLink" type="jetbrains.mps.lang.structure.structure.ReferenceConceptLink" id="671290755174094687">
       <link role="conceptLinkDeclaration" targetNodeId="4.1161119487665" resolveInfo="applicableConceptFunctionParameter" />
-      <link role="target" targetNodeId="1142886811589" resolveInfo="ConceptFunctionParameter_node" />
+      <link role="target" targetNodeId="4203201205844553978" resolveInfo="ConceptFunctionParameter_selectedNode" />
     </node>
     <node role="conceptLink" type="jetbrains.mps.lang.structure.structure.ReferenceConceptLink" id="671290755174094688">
       <link role="conceptLinkDeclaration" targetNodeId="4.1161119487665" resolveInfo="applicableConceptFunctionParameter" />
@@ -4354,7 +4359,7 @@
     <link role="extends" targetNodeId="4.1137021947720" resolveInfo="ConceptFunction" />
     <node role="conceptLink" type="jetbrains.mps.lang.structure.structure.ReferenceConceptLink" id="6419604448124516210">
       <link role="conceptLinkDeclaration" targetNodeId="4.1161119487665" resolveInfo="applicableConceptFunctionParameter" />
-      <link role="target" targetNodeId="1142886811589" resolveInfo="ConceptFunctionParameter_node" />
+      <link role="target" targetNodeId="4203201205844553978" resolveInfo="ConceptFunctionParameter_selectedNode" />
     </node>
     <node role="conceptLink" type="jetbrains.mps.lang.structure.structure.ReferenceConceptLink" id="6419604448124516211">
       <link role="conceptLinkDeclaration" targetNodeId="4.1161119487665" resolveInfo="applicableConceptFunctionParameter" />
@@ -4527,6 +4532,22 @@
     <node role="propertyDeclaration" type="jetbrains.mps.lang.structure.structure.PropertyDeclaration" id="8255250703325731018">
       <property name="name" value="script" />
       <link role="dataType" targetNodeId="8255250703325730686" resolveInfo="SuperscriptSwitchEnum" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="4203201205844553978">
+    <property name="package" value="MethodParameters" />
+    <property name="name" value="ConceptFunctionParameter_selectedNode" />
+    <link role="extends" targetNodeId="4.1107135704075" resolveInfo="ConceptFunctionParameter" />
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="4203201205844628834">
+      <property name="value" value="node" />
+      <link role="conceptPropertyDeclaration" targetNodeId="3.1137473891462" resolveInfo="alias" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="4203201205844628835">
+      <property name="value" value="selected node" />
+      <link role="conceptPropertyDeclaration" targetNodeId="3.1137473914776" resolveInfo="shortDescription" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.BooleanConceptProperty" id="4203201205844628836">
+      <link role="conceptPropertyDeclaration" targetNodeId="3.1137473994950" resolveInfo="dontSubstituteByDefault" />
     </node>
   </node>
 </model>

@@ -21,7 +21,7 @@ public class BaseMethodParameterInformationQuery extends ParametersInformation<S
   }
 
   public Iterable<SNode> getMethods(SNode node, EditorContext editorContext) {
-    SNode method = SLinkOperations.getTarget(SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.IMethodCall"), "baseMethodDeclaration", false);
+    SNode method = SLinkOperations.getTarget(node, "baseMethodDeclaration", false);
     SNode classifier = SNodeOperations.cast(SNodeOperations.getParent(method), "jetbrains.mps.baseLanguage.structure.IMemberContainer");
     List<SNode> members = IMemberContainer_Behavior.call_getMembers_1213877531970(classifier);
     List<SNode> methodsToShow = new ArrayList<SNode>();
@@ -35,14 +35,13 @@ public class BaseMethodParameterInformationQuery extends ParametersInformation<S
 
   public void getStyledMethodPresentation(SNode node, EditorContext editorContext, SNode parameterObject, StyledTextPrinter styledText) {
     SNode argument = editorContext.getSelectedNode();
-    SNode methodCall = SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.IMethodCall");
-    while (argument != null && !(SNodeOperations.isInstanceOf(argument, "jetbrains.mps.baseLanguage.structure.Expression") && ListSequence.fromList(SLinkOperations.getTargets(methodCall, "actualArgument", true)).contains(SNodeOperations.cast(argument, "jetbrains.mps.baseLanguage.structure.Expression")))) {
+    while (argument != null && !(SNodeOperations.isInstanceOf(argument, "jetbrains.mps.baseLanguage.structure.Expression") && ListSequence.fromList(SLinkOperations.getTargets(node, "actualArgument", true)).contains(SNodeOperations.cast(argument, "jetbrains.mps.baseLanguage.structure.Expression")))) {
       argument = SNodeOperations.getParent(argument);
     }
     int argumentIndex = -1;
     if (argument != null) {
-      for (int i = 0; i < ListSequence.fromList(SLinkOperations.getTargets(methodCall, "actualArgument", true)).count(); i++) {
-        if (ListSequence.fromList(ListSequence.fromList(SLinkOperations.getTargets(methodCall, "actualArgument", true)).toListSequence()).getElement(i) == argument) {
+      for (int i = 0; i < ListSequence.fromList(SLinkOperations.getTargets(node, "actualArgument", true)).count(); i++) {
+        if (ListSequence.fromList(ListSequence.fromList(SLinkOperations.getTargets(node, "actualArgument", true)).toListSequence()).getElement(i) == argument) {
           argumentIndex = i;
         }
       }
@@ -82,6 +81,6 @@ public class BaseMethodParameterInformationQuery extends ParametersInformation<S
   }
 
   public boolean isMethodCurrent(SNode node, EditorContext editorContext, SNode parameterObject) {
-    return SLinkOperations.getTarget(SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.IMethodCall"), "baseMethodDeclaration", false) == parameterObject;
+    return SLinkOperations.getTarget(node, "baseMethodDeclaration", false) == parameterObject;
   }
 }

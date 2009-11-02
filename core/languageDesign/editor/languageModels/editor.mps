@@ -9118,7 +9118,7 @@
           <property name="flag" value="false" />
         </node>
         <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="8178273524755078812">
-          <property name="text" value="type =" />
+          <property name="text" value="parameters type =" />
           <node role="styleItem" type="jetbrains.mps.lang.editor.structure.ForegroundColorStyleClassItem" id="8178273524755078820">
             <property name="color" value="DARK_BLUE" />
           </node>
@@ -9131,6 +9131,31 @@
         </node>
         <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="8178273524755078818">
           <node role="styleItem" type="jetbrains.mps.lang.editor.structure.IndentLayoutNewLineStyleClassItem" id="8178273524755078819">
+            <property name="flag" value="true" />
+          </node>
+        </node>
+        <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="4203201205843994218">
+          <property name="text" value="applicable concept =" />
+          <node role="styleItem" type="jetbrains.mps.lang.editor.structure.ForegroundColorStyleClassItem" id="4203201205843994219">
+            <property name="color" value="DARK_BLUE" />
+          </node>
+        </node>
+        <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefCell" id="4203201205844002716">
+          <property name="emptyNoTargetText" value="true" />
+          <property name="noTargetText" value="&lt;any&gt;" />
+          <link role="relationDeclaration" targetNodeId="2.4203201205843994215" />
+          <node role="editorComponent" type="jetbrains.mps.lang.editor.structure.InlineEditorComponent" id="4203201205844002717">
+            <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Property" id="4203201205844002719">
+              <property name="readOnly" value="true" />
+              <link role="relationDeclaration" targetNodeId="3.1169194664001" resolveInfo="name" />
+            </node>
+          </node>
+          <node role="styleItem" type="jetbrains.mps.lang.editor.structure.IndentLayoutNewLineStyleClassItem" id="4203201205844002720">
+            <property name="flag" value="true" />
+          </node>
+        </node>
+        <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="4203201205843994222">
+          <node role="styleItem" type="jetbrains.mps.lang.editor.structure.IndentLayoutNewLineStyleClassItem" id="4203201205843994223">
             <property name="flag" value="true" />
           </node>
         </node>

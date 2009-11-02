@@ -5,6 +5,7 @@ package jetbrains.mps.lang.editor.structure;
 import jetbrains.mps.lang.core.structure.BaseConcept;
 import jetbrains.mps.lang.core.structure.INamedConcept;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
 import jetbrains.mps.baseLanguage.structure.Type;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
@@ -16,6 +17,7 @@ public class ParametersInformationQuery extends BaseConcept implements INamedCon
   public static final String SHORT_DESCRIPTION = "shortDescription";
   public static final String ALIAS = "alias";
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
+  public static final String APPLICABLE_CONCEPT = "applicableConcept";
   public static final String TYPE = "type";
   public static final String METHODS = "methods";
   public static final String PRESENTATION = "presentation";
@@ -55,6 +57,14 @@ public class ParametersInformationQuery extends BaseConcept implements INamedCon
 
   public void setVirtualPackage(String value) {
     this.setProperty(ParametersInformationQuery.VIRTUAL_PACKAGE, value);
+  }
+
+  public AbstractConceptDeclaration getApplicableConcept() {
+    return (AbstractConceptDeclaration)this.getReferent(AbstractConceptDeclaration.class, ParametersInformationQuery.APPLICABLE_CONCEPT);
+  }
+
+  public void setApplicableConcept(AbstractConceptDeclaration node) {
+    super.setReferent(ParametersInformationQuery.APPLICABLE_CONCEPT, node);
   }
 
   public Type getType() {
