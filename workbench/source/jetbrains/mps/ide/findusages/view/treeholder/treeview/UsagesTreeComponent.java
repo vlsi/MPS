@@ -247,41 +247,41 @@ public abstract class UsagesTreeComponent extends JPanel implements IChangeListe
     }
 
     class ViewOptionsToolbar {
-      private ToggleAction myAdditionalInfoNeededButton;
-      private ToggleAction myShowSearchedNodesButton;
-      private ToggleAction myGroupSearchedNodesButton;
+      private MyBaseToggleAction myAdditionalInfoNeededButton;
+      private MyBaseToggleAction myShowSearchedNodesButton;
+      private MyBaseToggleAction myGroupSearchedNodesButton;
       private DefaultActionGroup myActions;
 
       public ViewOptionsToolbar() {
-        myAdditionalInfoNeededButton = new ToggleAction("Additional node info", "", Icons.INFO_ICON) {
+        myAdditionalInfoNeededButton = new MyBaseToggleAction("Additional node info", "", Icons.INFO_ICON) {
           public boolean isSelected(AnActionEvent e) {
             return myTree.isAdditionalInfoNeeded();
           }
 
-          public void setSelected(AnActionEvent e, boolean state) {
+          public void doSetSelected(AnActionEvent e, boolean state) {
             myTree.setAdditionalInfoNeeded(state);
           }
         };
 
-        myShowSearchedNodesButton = new ToggleAction("Show searched nodes", "", Icons.SHOW_SEARCHED_ICON) {
+        myShowSearchedNodesButton = new MyBaseToggleAction("Show searched nodes", "", Icons.SHOW_SEARCHED_ICON) {
           public boolean isSelected(AnActionEvent e) {
             return myTree.isShowSearchedNodes();
           }
 
-          public void setSelected(AnActionEvent e, boolean state) {
+          public void doSetSelected(AnActionEvent e, boolean state) {
             myTree.setShowSearchedNodes(state);
             if (!myTree.isShowSearchedNodes() && myGroupSearchedNodesButton.isSelected(null)) {
-              myGroupSearchedNodesButton.setSelected(null, false);
+              myGroupSearchedNodesButton.doSetSelected(null, false);
             }
           }
         };
 
-        myGroupSearchedNodesButton = new ToggleAction("Group searched nodes", "", Icons.GROUP_SEARCHED_ICON) {
+        myGroupSearchedNodesButton = new MyBaseToggleAction("Group searched nodes", "", Icons.GROUP_SEARCHED_ICON) {
           public boolean isSelected(AnActionEvent e) {
             return myTree.isGroupSearchedNodes();
           }
 
-          public void setSelected(AnActionEvent e, boolean state) {
+          public void doSetSelected(AnActionEvent e, boolean state) {
             myTree.startAdjusting();
             myTree.setGroupSearchedNodes(state);
             if (state) {
@@ -304,9 +304,9 @@ public abstract class UsagesTreeComponent extends JPanel implements IChangeListe
       public void setViewOptions(ViewOptions options) {
         myTree.startAdjusting();
 
-        myAdditionalInfoNeededButton.setSelected(null, options.myInfo);
-        myShowSearchedNodesButton.setSelected(null, options.myShowSearchedNodes);
-        myGroupSearchedNodesButton.setSelected(null, options.myGroupSearchedNodes);
+        myAdditionalInfoNeededButton.doSetSelected(null, options.myInfo);
+        myShowSearchedNodesButton.doSetSelected(null, options.myShowSearchedNodes);
+        myGroupSearchedNodesButton.doSetSelected(null, options.myGroupSearchedNodes);
 
         mySearchedNodesButtonsVisible = options.mySearchedNodesButtonsVisible;
         if (!mySearchedNodesButtonsVisible) {
@@ -328,30 +328,30 @@ public abstract class UsagesTreeComponent extends JPanel implements IChangeListe
     }
 
     class PathOptionsToolbar {
-      private ToggleAction myCategoryPathButton;
-      private ToggleAction myModulePathButton;
-      private ToggleAction myModelPathButton;
-      private ToggleAction myRootPathButton;
-      private ToggleAction myNamedConceptPathButton;
+      private MyBaseToggleAction myCategoryPathButton;
+      private MyBaseToggleAction myModulePathButton;
+      private MyBaseToggleAction myModelPathButton;
+      private MyBaseToggleAction myRootPathButton;
+      private MyBaseToggleAction myNamedConceptPathButton;
       private DefaultActionGroup myActions;
 
       public PathOptionsToolbar() {
-        myCategoryPathButton = new MyBaseToggleAction(PathItemRole.ROLE_CATEGORY, "Group by category", Icons.CATEGORY_ICON);
-        myModulePathButton = new MyBaseToggleAction(PathItemRole.ROLE_MODULE, "Group by module", Icons.MODULE_ICON);
-        myModelPathButton = new MyBaseToggleAction(PathItemRole.ROLE_MODEL, "Group by model", Icons.MODEL_ICON);
+        myCategoryPathButton = new MyBasePathToggleAction(PathItemRole.ROLE_CATEGORY, "Group by category", Icons.CATEGORY_ICON);
+        myModulePathButton = new MyBasePathToggleAction(PathItemRole.ROLE_MODULE, "Group by module", Icons.MODULE_ICON);
+        myModelPathButton = new MyBasePathToggleAction(PathItemRole.ROLE_MODEL, "Group by model", Icons.MODEL_ICON);
 
-        myRootPathButton = new ToggleAction("Group by root node", "", Icons.ROOT_ICON) {
+        myRootPathButton = new MyBaseToggleAction("Group by root node", "", Icons.ROOT_ICON) {
           public boolean isSelected(AnActionEvent e) {
             return myPathProvider.contains(PathItemRole.ROLE_ROOT);
           }
 
-          public void setSelected(AnActionEvent e, boolean state) {
+          public void doSetSelected(AnActionEvent e, boolean state) {
             if (state) {
               addPathComponent(PathItemRole.ROLE_ROOT);
             } else {
               myTree.startAdjusting();
               if (myNamedConceptPathButton.isSelected(null)) {
-                myNamedConceptPathButton.setSelected(null, false);
+                myNamedConceptPathButton.doSetSelected(null, false);
               }
               removePathComponent(PathItemRole.ROLE_ROOT);
               myTree.finishAdjusting();
@@ -359,16 +359,16 @@ public abstract class UsagesTreeComponent extends JPanel implements IChangeListe
           }
         };
 
-        myNamedConceptPathButton = new ToggleAction("Group by path", "", Icons.PATH_ICON) {
+        myNamedConceptPathButton = new MyBaseToggleAction("Group by path", "", Icons.PATH_ICON) {
           public boolean isSelected(AnActionEvent e) {
             return myPathProvider.contains(PathItemRole.ROLE_ROOT_TO_TARGET_NODE);
           }
 
-          public void setSelected(AnActionEvent e, boolean state) {
+          public void doSetSelected(AnActionEvent e, boolean state) {
             if (state) {
               myTree.startAdjusting();
               if (!myRootPathButton.isSelected(null)) {
-                myRootPathButton.setSelected(null, true);
+                myRootPathButton.doSetSelected(null, true);
               }
               addPathComponent(PathItemRole.ROLE_ROOT_TO_TARGET_NODE);
               myTree.finishAdjusting();
@@ -389,11 +389,11 @@ public abstract class UsagesTreeComponent extends JPanel implements IChangeListe
       public void setViewOptions(ViewOptions options) {
         myTree.startAdjusting();
 
-        myCategoryPathButton.setSelected(null, options.myCategory);
-        myModulePathButton.setSelected(null, options.myModule);
-        myModelPathButton.setSelected(null, options.myModel);
-        myRootPathButton.setSelected(null, options.myRoot);
-        myNamedConceptPathButton.setSelected(null, options.myNamedPath);
+        myCategoryPathButton.doSetSelected(null, options.myCategory);
+        myModulePathButton.doSetSelected(null, options.myModule);
+        myModelPathButton.doSetSelected(null, options.myModel);
+        myRootPathButton.doSetSelected(null, options.myRoot);
+        myNamedConceptPathButton.doSetSelected(null, options.myNamedPath);
 
         myTree.finishAdjusting();
       }
@@ -411,11 +411,11 @@ public abstract class UsagesTreeComponent extends JPanel implements IChangeListe
       }
     }
 
-    class MyBaseToggleAction extends ToggleAction {
+    class MyBasePathToggleAction extends MyBaseToggleAction {
       private boolean myIsSelected = false;
       private PathItemRole myPathItemRole = null;
 
-      public MyBaseToggleAction(PathItemRole itemRole, String name, Icon icon) {
+      public MyBasePathToggleAction(PathItemRole itemRole, String name, Icon icon) {
         super(name, "", icon);
         myPathItemRole = itemRole;
       }
@@ -424,7 +424,7 @@ public abstract class UsagesTreeComponent extends JPanel implements IChangeListe
         return myIsSelected;
       }
 
-      public void setSelected(AnActionEvent e, boolean state) {
+      public void doSetSelected(AnActionEvent e, boolean state) {
         myIsSelected = state;
         if (myPathItemRole == null) return;
         if (myIsSelected) {
@@ -438,7 +438,7 @@ public abstract class UsagesTreeComponent extends JPanel implements IChangeListe
 
   class ActionsToolbar {
     private DefaultActionGroup myActions;
-    private ToggleAction myAutoscrollButton;
+    private MyBaseToggleAction myAutoscrollButton;
 
     public ActionsToolbar() {
       myActions = new DefaultActionGroup();
@@ -463,12 +463,12 @@ public abstract class UsagesTreeComponent extends JPanel implements IChangeListe
           myTree.navigateToNextResult();
         }
       });
-      myAutoscrollButton = new ToggleAction("Autoscroll to source", "", Icons.AUTOSCROLL_ICON) {
+      myAutoscrollButton = new MyBaseToggleAction("Autoscroll to source", "", Icons.AUTOSCROLL_ICON) {
         public boolean isSelected(AnActionEvent e) {
           return myTree.isAutoscroll();
         }
 
-        public void setSelected(AnActionEvent e, boolean state) {
+        public void doSetSelected(AnActionEvent e, boolean state) {
           myTree.setAutoscroll(state);
         }
       };
@@ -476,9 +476,7 @@ public abstract class UsagesTreeComponent extends JPanel implements IChangeListe
     }
 
     public void setViewOptions(ViewOptions options) {
-      myTree.startAdjusting();
-      myAutoscrollButton.setSelected(null, options.myAutoscrolls);
-      myTree.finishAdjusting();
+      myAutoscrollButton.doSetSelected(null, options.myAutoscrolls);
     }
 
     public void getViewOptions(ViewOptions options) {
@@ -488,5 +486,19 @@ public abstract class UsagesTreeComponent extends JPanel implements IChangeListe
     public ActionGroup getActions() {
       return myActions;
     }
+  }
+
+  private abstract class MyBaseToggleAction extends ToggleAction {
+    protected MyBaseToggleAction(String text, String description, Icon icon) {
+      super(text, description, icon);
+    }
+
+    public final void setSelected(AnActionEvent e, boolean state) {
+      doSetSelected(e, state);
+      getComponentsViewOptions(myViewOptions);
+      myDefaultOptions.setValues(myViewOptions);
+    }
+
+    public abstract void doSetSelected(AnActionEvent e, boolean state);
   }
 }
