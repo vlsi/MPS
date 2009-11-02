@@ -18,8 +18,6 @@ package jetbrains.mps.internal.collections.runtime;
 import java.lang.reflect.Array;
 import java.util.Iterator;
 
-import javax.help.UnsupportedOperationException;
-
 public class ArrayUtils {
 
 	public static boolean [] toBooleanArray (ISequence<? extends Boolean> seq) {
