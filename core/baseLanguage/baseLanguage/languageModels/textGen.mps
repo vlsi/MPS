@@ -10181,7 +10181,10 @@
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="6329021646629175167">
         <node role="statement" type="jetbrains.mps.lang.textGen.structure.AppendOperation" id="8803274112754161792">
           <node role="part" type="jetbrains.mps.lang.textGen.structure.NewLineAppendPart" id="8323635677764229060" />
-          <node role="part" type="jetbrains.mps.lang.textGen.structure.ConstantStringAppendPart" id="8803274112754161794">
+        </node>
+        <node role="statement" type="jetbrains.mps.lang.textGen.structure.IndentBufferOperation" id="8323635677764397049" />
+        <node role="statement" type="jetbrains.mps.lang.textGen.structure.AppendOperation" id="8323635677764397045">
+          <node role="part" type="jetbrains.mps.lang.textGen.structure.ConstantStringAppendPart" id="8323635677764397047">
             <property name="value" value="// " />
           </node>
         </node>
