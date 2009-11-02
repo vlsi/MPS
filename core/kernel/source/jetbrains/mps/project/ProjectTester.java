@@ -173,7 +173,7 @@ public class ProjectTester {
 
             long start = System.currentTimeMillis();
             List<CompilationResult> compilationResultList = generationType.compile(IAdaptiveProgressMonitor.NULL_PROGRESS_MONITOR);
-            System.out.println("Compiled " + compilationResultList.size() + " compilation units in " + (System.currentTimeMillis() - start));            
+            System.out.println("Compiled " + compilationResultList.size() + " compilation units in " + (System.currentTimeMillis() - start));
             compilationResults.addAll(createCompilationProblemsList(compilationResultList));
             if (compilationResults.isEmpty()) {
               System.out.println("Compilation ok");
@@ -208,6 +208,9 @@ public class ProjectTester {
         case ERROR:
           System.out.println("error: " + msg.getText());
           myErrors.add(msg.getText());
+          if (msg.getException() != null) {
+            myErrors.add(extractStackTrace(msg.getException()).toString());
+          }
           break;
 
         case WARNING:
@@ -245,10 +248,25 @@ public class ProjectTester {
 
     public void error(LogEntry e) {
       myErrors.add(e.getMessage());
+      if (e.getThrowable() != null) {
+        myErrors.add(extractStackTrace(e.getThrowable()).toString());
+      }
     }
 
     public void fatal(LogEntry e) {
       myErrors.add(e.getMessage());
     }
+  }
+
+  public static StringBuffer extractStackTrace(Throwable e) {
+    StringBuffer sb = new StringBuffer("");
+    sb.append(e.getMessage());
+    sb.append("\n");
+    for (StackTraceElement el : e.getStackTrace()) {
+      sb.append("    ");
+      sb.append(el.toString());
+      sb.append("\n");
+    }
+    return sb;
   }
 }
