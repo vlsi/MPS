@@ -79,6 +79,8 @@ public abstract class AbstractModule implements IModule {
   private List<SModelRoot> mySModelRoots = new ArrayList<SModelRoot>();
   private Set<String> myIncludedClassPath;
 
+  private List<IModule> myExplicitlyDependentModules;
+
   private ModuleReference myModuleReference;
 
   protected void setModulePointer(@NotNull ModuleReference reference) {
@@ -308,20 +310,25 @@ public abstract class AbstractModule implements IModule {
   }
 
   public List<IModule> getExplicitlyDependOnModules(boolean includeBootstrap) {
-    Set<IModule> result = new LinkedHashSet<IModule>();
-    result.addAll(getDependOnModules());
-    for (Language usedLanguage : getUsedLanguages()) {
-      result.add(usedLanguage);
+    if (myExplicitlyDependentModules == null) {
+      Set<IModule> res = new LinkedHashSet<IModule>();
+      res.addAll(getDependOnModules());
+      for (Language usedLanguage : getUsedLanguages()) {
+        res.add(usedLanguage);
+      }
+
+      for (DevKit dk : getUsedDevkits()) {
+        res.add(dk);
+      }
+
+      myExplicitlyDependentModules = new ArrayList<IModule>(res);
     }
 
-    for (DevKit dk : getUsedDevkits()) {
-      result.add(dk);
-    }
-
+    List<IModule> result = new ArrayList<IModule>(myExplicitlyDependentModules);
     if (includeBootstrap) {
       result.addAll(LibraryManager.getInstance().getBootstrapModules(Language.class));
     }
-    return new ArrayList<IModule>(result);
+    return result;
   }
 
   public List<IModule> getDesignTimeDependOnModules() {
@@ -763,6 +770,7 @@ public abstract class AbstractModule implements IModule {
 
   public void invalidateCaches() {
     myScope.invalidateCaches();
+    myExplicitlyDependentModules = null;
   }
 
   public boolean needReloading() {
