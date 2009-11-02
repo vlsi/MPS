@@ -21,6 +21,7 @@ import java.util.ArrayList;
 import java.util.HashSet;
 import jetbrains.mps.ide.findusages.model.IResultProvider;
 import jetbrains.mps.ide.findusages.view.FindUtils;
+import java.util.Arrays;
 import com.intellij.openapi.progress.ProgressManager;
 import com.intellij.openapi.progress.Task;
 import com.intellij.openapi.project.Project;
@@ -54,6 +55,7 @@ public class ModelCheckerViewer extends JPanel {
 
     this.setLayout(new BorderLayout());
     ViewOptions viewOptions = new ViewOptions(true, false, false, false, false);
+    viewOptions.myCategory = true;
 
     this.myUsagesView = new UsagesView(this.myProject, viewOptions) {
       public void close() {
@@ -79,7 +81,7 @@ public class ModelCheckerViewer extends JPanel {
       }
     };
 
-    IResultProvider resultProvider = FindUtils.makeProvider(finder);
+    IResultProvider resultProvider = FindUtils.makeProvider(Arrays.asList(finder));
     SearchQuery searchQuery = new SearchQuery(this.myProject.getScope());
     this.myUsagesView.setRunOptions(resultProvider, searchQuery, new UsagesView.ButtonConfiguration(false, false, false), new SearchResults());
     ProgressManager.getInstance().run(new Task.Modal(this.myProject.getComponent(Project.class), "Searching", true) {
@@ -113,9 +115,9 @@ public class ModelCheckerViewer extends JPanel {
       ModelCheckerResults.Result result = MapSequence.fromMap(this.myCheckerResultForNode).get(getNodeId(node));
       String color = COLOR_FOR_ERROR.get(result.getStatus());
       String message = result.getMessage();
+      message = message.replaceAll("&", "&amp;");
       message = message.replaceAll("<", "&lt;");
       message = message.replaceAll(">", "&gt;");
-      message = message.replaceAll("&", "&amp;");
       return "<span style=\"color: " + color + "\">" + message + "</span>";
     }
 
@@ -169,9 +171,9 @@ public class ModelCheckerViewer extends JPanel {
     static {
       COLOR_FOR_ERROR = new EnumMap(MessageStatus.class);
       //  TODO green?
-      COLOR_FOR_ERROR.put(MessageStatus.OK, "green");
-      COLOR_FOR_ERROR.put(MessageStatus.WARNING, "yellow");
-      COLOR_FOR_ERROR.put(MessageStatus.ERROR, "red");
+      COLOR_FOR_ERROR.put(MessageStatus.OK, "#267F00");
+      COLOR_FOR_ERROR.put(MessageStatus.WARNING, "#CEC548");
+      COLOR_FOR_ERROR.put(MessageStatus.ERROR, "#AF0000");
     }
   }
 }

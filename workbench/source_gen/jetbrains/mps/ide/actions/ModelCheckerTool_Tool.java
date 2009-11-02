@@ -6,7 +6,6 @@ import jetbrains.mps.plugins.pluginparts.tool.GeneratedTool;
 import jetbrains.mps.project.MPSProject;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.ide.icons.IconManager;
-import jetbrains.mps.plugins.MacrosUtil;
 import com.intellij.openapi.wm.ToolWindowAnchor;
 import javax.swing.JComponent;
 import jetbrains.mps.MPSProjectHolder;
@@ -20,7 +19,7 @@ public class ModelCheckerTool_Tool extends GeneratedTool {
   private MPSProject myProject;
 
   public ModelCheckerTool_Tool(Project project) {
-    super(project, "Model Checker", -1, IconManager.loadIcon(MacrosUtil.expandPath("${solution_descriptor}/icons/checkModel.png", "jetbrains.mps.ide"), true), ToolWindowAnchor.BOTTOM, false);
+    super(project, "Model Checker", -1, IconManager.EMPTY_ICON, ToolWindowAnchor.BOTTOM, false);
   }
 
   public JComponent getComponent() {
