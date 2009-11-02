@@ -34,6 +34,9 @@ import java.util.Map;
 import jetbrains.mps.smodel.SNodeId;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
+import jetbrains.mps.ide.findusages.view.treeholder.tree.TextOptions;
+import javax.swing.Icon;
+import jetbrains.mps.ide.messages.Icons;
 import org.jdom.Element;
 import jetbrains.mps.ide.findusages.CantSaveSomethingException;
 import jetbrains.mps.internal.collections.runtime.IMapping;
@@ -109,6 +112,19 @@ public class ModelCheckerViewer extends JPanel {
     private Map<SNodeId, ModelCheckerResults.Result> myCheckerResultForNode = MapSequence.fromMap(new HashMap<SNodeId, ModelCheckerResults.Result>());
 
     public MyNodeRepresentator() {
+    }
+
+    public String getResultsText(TextOptions options) {
+      int size = options.mySubresultsCount;
+      String sizeRepr = size + " issue" + ((size == 1 ?
+        "" :
+        "s"
+      ));
+      return "<strong>" + sizeRepr + " found</strong>";
+    }
+
+    public Icon getResultsIcon() {
+      return Icons.ERROR_ICON;
     }
 
     public String getPresentation(SNode node) {

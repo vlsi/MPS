@@ -20,6 +20,8 @@ import com.intellij.openapi.progress.ProgressManager;
 import com.intellij.openapi.progress.Task.Modal;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.ide.ThreadUtils;
+import jetbrains.mps.ide.messages.MessagesViewTool;
+import jetbrains.mps.ide.projectPane.Icons;
 import jetbrains.mps.ide.findusages.model.SearchQuery;
 import jetbrains.mps.ide.findusages.model.SearchResults;
 import jetbrains.mps.ide.findusages.view.FindUtils;
@@ -27,6 +29,7 @@ import jetbrains.mps.ide.findusages.view.UsagesView;
 import jetbrains.mps.ide.findusages.view.UsagesView.ButtonConfiguration;
 import jetbrains.mps.ide.findusages.view.treeholder.treeview.INodeRepresentator;
 import jetbrains.mps.ide.findusages.view.treeholder.treeview.ViewOptions;
+import jetbrains.mps.ide.findusages.view.treeholder.tree.TextOptions;
 import jetbrains.mps.ide.findusages.CantSaveSomethingException;
 import jetbrains.mps.ide.findusages.CantLoadSomethingException;
 import jetbrains.mps.plugins.pluginparts.tool.GeneratedTool;
@@ -37,6 +40,8 @@ import org.jdom.Element;
 
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.Icon;
+import javax.swing.ImageIcon;
 import java.awt.BorderLayout;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
@@ -44,6 +49,8 @@ import java.awt.event.MouseEvent;
 public class TodoViewer extends JPanel {
   private UsagesView myUsagesView;
   private MPSProject myProject;
+
+  public final static Icon TODO_ICON = new ImageIcon(TodoViewer.class.getResource("todo.png"));
 
   public TodoViewer(final MPSProject project) {
     myProject = project;
@@ -105,6 +112,16 @@ public class TodoViewer extends JPanel {
   public static class MyNodeRepresentator implements INodeRepresentator {
     public String getPresentation(SNode node) {
       return "<font color=blue>" + node.getProperty("value") + "</font>";
+    }
+
+    public String getResultsText(TextOptions options) {
+      int size = options.mySubresultsCount;
+      String sizeRepr = size + " TODO item" + (size == 1 ? "" : "s");
+      return "<strong>" + sizeRepr + " found</strong>";
+    }
+
+    public Icon getResultsIcon() {
+      return TodoViewer.TODO_ICON;
     }
 
     // Nothing to read or write: this class is stateless
