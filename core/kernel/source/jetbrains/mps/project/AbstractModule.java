@@ -308,24 +308,20 @@ public abstract class AbstractModule implements IModule {
   }
 
   public List<IModule> getExplicitlyDependOnModules(boolean includeBootstrap) {
-    LinkedList<IModule> result = new LinkedList<IModule>();
+    Set<IModule> result = new LinkedHashSet<IModule>();
     result.addAll(getDependOnModules());
     for (Language usedLanguage : getUsedLanguages()) {
-      if (!result.contains(usedLanguage)) {
-        result.add(usedLanguage);
-      }
+      result.add(usedLanguage);
     }
 
     for (DevKit dk : getUsedDevkits()) {
-      if (!result.contains(dk)) {
-        result.add(dk);
-      }
+      result.add(dk);
     }
 
     if (includeBootstrap) {
-      return appendBootstrapLanguages(result);
+      result.addAll(LibraryManager.getInstance().getBootstrapModules(Language.class));
     }
-    return result;
+    return new ArrayList<IModule>(result);
   }
 
   public List<IModule> getDesignTimeDependOnModules() {
@@ -411,16 +407,6 @@ public abstract class AbstractModule implements IModule {
     }
 
     return result;
-  }
-
-  protected static List<IModule> appendBootstrapLanguages(List<IModule> list) {
-    Set<Language> languages = LibraryManager.getInstance().getBootstrapModules(Language.class);
-    for (Language language : languages) {
-      if (!list.contains(language)) {
-        list.add(language);
-      }
-    }
-    return list;
   }
 
   public final SModelDescriptor createModel(SModelFqName name, SModelRoot root) {
