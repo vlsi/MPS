@@ -9,10 +9,15 @@ import java.awt.BorderLayout;
 import jetbrains.mps.ide.findusages.view.treeholder.treeview.ViewOptions;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.IScope;
+import com.intellij.openapi.progress.ProgressManager;
+import com.intellij.openapi.progress.Task;
+import com.intellij.openapi.project.Project;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
+import org.jetbrains.annotations.NotNull;
+import com.intellij.openapi.progress.ProgressIndicator;
 import jetbrains.mps.ide.findusages.findalgorithm.finders.IFinder;
 import jetbrains.mps.ide.findusages.model.SearchResults;
 import jetbrains.mps.ide.findusages.model.SearchQuery;
-import com.intellij.openapi.progress.ProgressIndicator;
 import java.util.List;
 import jetbrains.mps.ide.findusages.model.SearchResult;
 import jetbrains.mps.smodel.SNode;
@@ -22,10 +27,6 @@ import java.util.HashSet;
 import jetbrains.mps.ide.findusages.model.IResultProvider;
 import jetbrains.mps.ide.findusages.view.FindUtils;
 import java.util.Arrays;
-import com.intellij.openapi.progress.ProgressManager;
-import com.intellij.openapi.progress.Task;
-import com.intellij.openapi.project.Project;
-import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.ide.findusages.view.treeholder.treeview.INodeRepresentator;
 import java.util.Map;
@@ -70,7 +71,11 @@ public class ModelCheckerViewer extends JPanel {
   }
 
   public void checkModel(final SModel model, final IScope scope) {
-    ModelCheckerViewer.this.myLastResults = ModelCheckerResultsFinder.getResults(model, scope);
+    ProgressManager.getInstance().run(new Task.Modal(this.myProject.getComponent(Project.class), "Checking " + SModelOperations.getModelName(model), true) {
+      public void run(@NotNull ProgressIndicator indicator) {
+        ModelCheckerViewer.this.myLastResults = ModelCheckerResultsFinder.getResults(model, scope, indicator);
+      }
+    });
     this.myNodeRepresentator.saveCheckerResults(this.myLastResults);
 
     IFinder finder = new IFinder() {
@@ -158,12 +163,11 @@ public class ModelCheckerViewer extends JPanel {
 
     public String getPresentation(SNode node) {
       ModelCheckerResults.Result result = MapSequence.fromMap(this.myCheckerResultForNode).get(getNodeId(node));
-      String color = getColorForMessageStatus(result.getStatus());
       String message = result.getMessage();
       message = message.replaceAll("&", "&amp;");
       message = message.replaceAll("<", "&lt;");
       message = message.replaceAll(">", "&gt;");
-      return "<span style=\"color: " + color + "\">" + message + "</span>";
+      return message;
     }
 
     public void write(Element element, MPSProject project) throws CantSaveSomethingException {
@@ -211,19 +215,6 @@ public class ModelCheckerViewer extends JPanel {
         }
       });
       return nodeId.value;
-    }
-
-    private static String getColorForMessageStatus(MessageStatus status) {
-      switch (status) {
-        case OK:
-          return "#267F00";
-        case WARNING:
-          return "#CEC548";
-        case ERROR:
-          return "#AF0000";
-        default:
-          return "#000000";
-      }
     }
   }
 }
