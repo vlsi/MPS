@@ -765,9 +765,9 @@ public class RefactoringContext {
     }
 
     public int compareTo(FullNodeId o) {
-      int i1 = myNodeId.toString().compareTo(o.myNodeId.toString());
       int i2 = myModelReference.getLongName().compareTo(o.myModelReference.getLongName());
-      return Math.round(Math.signum(i1) + Math.signum(i2) * 10);
+      if (i2 != 0) return i2;
+      return myNodeId.toString().compareTo(o.myNodeId.toString());
     }
 
     public SNodeId getNodeId() {
