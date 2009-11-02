@@ -9108,6 +9108,7 @@
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="7667276221847632124">
         <property name="text" value="{" />
+        <link role="styleClass" targetNodeId="26.1215091279307" resolveInfo="LeftBrace" />
         <node role="styleItem" type="jetbrains.mps.lang.editor.structure.IndentLayoutNewLineStyleClassItem" id="7667276221847632127">
           <property name="flag" value="true" />
         </node>
@@ -9186,6 +9187,7 @@
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="7667276221847632126">
         <property name="text" value="}" />
+        <link role="styleClass" targetNodeId="26.1215091331565" resolveInfo="RightBrace" />
       </node>
       <node role="cellLayout" type="jetbrains.mps.lang.editor.structure.CellLayout_Indent" id="7667276221847632121" />
     </node>
