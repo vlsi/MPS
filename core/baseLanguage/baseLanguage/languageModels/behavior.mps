@@ -8132,7 +8132,7 @@
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1213877377110" />
         </node>
       </node>
-      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PrivateVisibility" id="1219155723772" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="5090797586239216717" />
     </node>
     <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="1237548075886">
       <property name="name" value="isGuardClauseStatement" />
