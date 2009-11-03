@@ -10,10 +10,12 @@ import com.intellij.openapi.wm.ToolWindowAnchor;
 import javax.swing.JComponent;
 import jetbrains.mps.MPSProjectHolder;
 import jetbrains.mps.smodel.SModelDescriptor;
-import jetbrains.mps.project.IModule;
+import java.util.List;
 import jetbrains.mps.ide.projectPane.Icons;
+import jetbrains.mps.project.IModule;
 import com.intellij.ui.content.ContentManager;
 import com.intellij.ui.content.Content;
+import javax.swing.Icon;
 
 public class ModelCheckerTool_Tool extends GeneratedTool {
   private MPSProject myProject;
@@ -30,30 +32,31 @@ public class ModelCheckerTool_Tool extends GeneratedTool {
     ModelCheckerTool_Tool.this.myProject = project.getComponent(MPSProjectHolder.class).getMPSProject();
   }
 
-  public void checkModel(SModelDescriptor modelDescriptior) {
+  public void checkModel(SModelDescriptor modelDescriptor) {
     ModelCheckerViewer newViewer = new ModelCheckerViewer(ModelCheckerTool_Tool.this.myProject, ModelCheckerTool_Tool.this);
-    if (newViewer.checkModel(modelDescriptior.getSModel())) {
-      ModelCheckerTool_Tool.this.closeCurrentTabIsUnpinned();
-      ModelCheckerTool_Tool.this.addContent(newViewer, modelDescriptior.getName(), IconManager.getIconFor(modelDescriptior), true);
-      ModelCheckerTool_Tool.this.setSelectedComponent(newViewer);
+    if (newViewer.checkModel(modelDescriptor.getSModel())) {
+      ModelCheckerTool_Tool.this.processCheckResults(newViewer, modelDescriptor.getName(), IconManager.getIconFor(modelDescriptor));
+    }
+  }
+
+  public void checkModels(List<SModelDescriptor> modelDescriptors) {
+    ModelCheckerViewer newViewer = new ModelCheckerViewer(ModelCheckerTool_Tool.this.myProject, ModelCheckerTool_Tool.this);
+    if (newViewer.checkModels(modelDescriptors)) {
+      ModelCheckerTool_Tool.this.processCheckResults(newViewer, modelDescriptors.size() + " models", Icons.MODEL_ICON);
     }
   }
 
   public void checkModule(IModule module) {
     ModelCheckerViewer newViewer = new ModelCheckerViewer(ModelCheckerTool_Tool.this.myProject, ModelCheckerTool_Tool.this);
     if (newViewer.checkModule(module)) {
-      ModelCheckerTool_Tool.this.closeCurrentTabIsUnpinned();
-      ModelCheckerTool_Tool.this.addContent(newViewer, module.getModuleFqName(), IconManager.getIconFor(module), true);
-      ModelCheckerTool_Tool.this.setSelectedComponent(newViewer);
+      ModelCheckerTool_Tool.this.processCheckResults(newViewer, module.getModuleFqName(), IconManager.getIconFor(module));
     }
   }
 
   public void checkProject(MPSProject mpsProject) {
     ModelCheckerViewer newViewer = new ModelCheckerViewer(ModelCheckerTool_Tool.this.myProject, ModelCheckerTool_Tool.this);
     if (newViewer.checkProject(mpsProject)) {
-      ModelCheckerTool_Tool.this.closeCurrentTabIsUnpinned();
-      ModelCheckerTool_Tool.this.addContent(newViewer, mpsProject.getProjectDescriptor().getName(), Icons.PROJECT_ICON, true);
-      ModelCheckerTool_Tool.this.setSelectedComponent(newViewer);
+      ModelCheckerTool_Tool.this.processCheckResults(newViewer, mpsProject.getProjectDescriptor().getName(), Icons.PROJECT_ICON);
     }
   }
 
@@ -72,5 +75,11 @@ public class ModelCheckerTool_Tool extends GeneratedTool {
     if (!(selectedContent.isPinned())) {
       contentManager.removeContent(selectedContent, true);
     }
+  }
+
+  private void processCheckResults(ModelCheckerViewer newViewer, String tabName, Icon tabIcon) {
+    ModelCheckerTool_Tool.this.closeCurrentTabIsUnpinned();
+    ModelCheckerTool_Tool.this.addContent(newViewer, tabName, tabIcon, true);
+    ModelCheckerTool_Tool.this.setSelectedComponent(newViewer);
   }
 }
