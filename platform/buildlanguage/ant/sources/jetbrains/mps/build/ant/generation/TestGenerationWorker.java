@@ -76,6 +76,8 @@ public class TestGenerationWorker extends GeneratorWorker {
     } else {
       diffReports = new ArrayList<String>();
     }
+    final List<SModel> outputModels = new ArrayList<SModel>();
+    outputModels.addAll(generationType.getOutputModels());
 
     List<CompilationResult> compilationResult;
     if (Boolean.parseBoolean(myWhatToDo.getProperty(GenerateTask.COMPILE))) {
@@ -90,13 +92,9 @@ public class TestGenerationWorker extends GeneratorWorker {
 
     List<TestFailure> testResults;
     if ( Boolean.parseBoolean(myWhatToDo.getProperty(TestGenerationOnTeamcity.INVOKE_TESTS)) && Boolean.parseBoolean(myWhatToDo.getProperty(GenerateTask.COMPILE))) {
-      final List<SModel> models = new ArrayList<SModel>();
-      for (Pair<SModelDescriptor, IOperationContext> pair : modelsToContext) {
-        models.add(pair.o1.getSModel());
-      }
       testResults = ModelAccess.instance().runReadAction(new Computable<List<TestFailure>>() {
         public List<TestFailure> compute() {
-          return ProjectTester.invokeTests(generationType, models);
+          return ProjectTester.invokeTests(generationType, outputModels);
         }
       });
     } else {
