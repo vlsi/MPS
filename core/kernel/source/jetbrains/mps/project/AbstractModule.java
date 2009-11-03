@@ -768,7 +768,6 @@ public abstract class AbstractModule implements IModule {
 
   public void invalidateCaches() {
     myScope.invalidateCaches();
-    myExplicitlyDependentModules = null;
   }
 
   public boolean needReloading() {
@@ -792,6 +791,7 @@ public abstract class AbstractModule implements IModule {
 
   public void setModuleDescriptor(ModuleDescriptor descriptor) {
     setModuleDescriptor(descriptor, true);
+    myExplicitlyDependentModules = null;
   }
 
   public String getOutputFor(SModelDescriptor model) {
