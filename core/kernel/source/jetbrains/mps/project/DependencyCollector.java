@@ -19,21 +19,31 @@ import jetbrains.mps.util.CollectionUtil;
 
 import java.util.HashSet;
 import java.util.Set;
+import java.util.Collections;
 
-class DependencyCollector<T extends IModule> {
-  private IModule myStart;
+public class DependencyCollector<T extends IModule> {
+  private Set<IModule> myStart;
   private Class<T> myResultElementType;
 
-  private Set<IModule> myResult = new HashSet<IModule>();
+  private Set<IModule> myResult;
 
-  DependencyCollector(IModule start, Class<T> elementType) {
-    myStart = start;
+  public DependencyCollector(IModule start, Class<T> elementType) {
+    this(Collections.singleton(start), elementType);
+  }
+
+  public DependencyCollector(Set<IModule> start, Class<T> elementType) {
+    myStart = new HashSet<IModule>(start);
     myResultElementType = elementType;
   }
 
-  Set<T> collect() {
-    myResult.add(myStart);
-    doCollect(myStart);
+  public Set<T> collect() {
+    myResult =  new HashSet<IModule>();
+
+    for (IModule s : myStart) {
+      if (myResult.add(s)) {
+        doCollect(s);
+      }
+    }
 
     if (myResultElementType == IModule.class) {
       return (Set<T>) myResult;

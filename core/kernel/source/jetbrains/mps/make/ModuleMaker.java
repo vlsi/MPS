@@ -22,6 +22,7 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.Solution;
+import jetbrains.mps.project.DependencyCollector;
 import jetbrains.mps.reloading.IClassPathItem;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.FileUtil;
@@ -81,12 +82,7 @@ public class ModuleMaker {
       indicator.setIndeterminate(true);
 
       Set<IModule> toCompile = new LinkedHashSet<IModule>();
-      Set<IModule> candidates = new LinkedHashSet<IModule>();
-      candidates.addAll(modules);
-
-      for (IModule m : modules) {
-        candidates.addAll(m.getAllDependOnModules(IModule.class));
-      }
+      Set<IModule> candidates = new DependencyCollector(modules, IModule.class).collect();
 
       myDependencies = new Dependencies(candidates);
 
