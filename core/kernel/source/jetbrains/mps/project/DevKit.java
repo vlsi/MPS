@@ -29,10 +29,7 @@ import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.util.ToStringComparator;
 import jetbrains.mps.vfs.IFile;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
-import java.util.UUID;
+import java.util.*;
 
 public class DevKit extends AbstractModule {
   private static Logger LOG = Logger.getLogger(DevKit.class);
@@ -223,28 +220,11 @@ public class DevKit extends AbstractModule {
   }
 
   @Override
-  public List<IModule> getExplicitlyDependOnModules(boolean includeBootstrap) {
-    List<IModule> result = super.getExplicitlyDependOnModules(includeBootstrap);
-
-    for (DevKit dk : getExtendedDevKits()) {
-      if (!result.contains(dk)) {
-        result.add(dk);
-      }
-    }
-
-    for (Language l : getExportedLanguages()) {
-      if (!result.contains(l)) {
-        result.add(l);
-      }
-    }
-
-    for (Solution s : getExportedSolutions()) {
-      if (!result.contains(s)) {
-        result.add(s);
-      }
-    }
-
-    return result;
+  protected void addExplicitlyDependendOnModules(Set<IModule> result) {
+    super.addExplicitlyDependendOnModules(result);
+    result.addAll(getExtendedDevKits());
+    result.addAll(getExportedLanguages());
+    result.addAll(getExportedSolutions());
   }
 
   public void save() {

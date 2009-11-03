@@ -150,22 +150,11 @@ public class Language extends AbstractModule {
     myLanguageRuntimeClasspath = result;
   }
 
-  public List<IModule> getExplicitlyDependOnModules(boolean includeBootstrap) {
-    List<IModule> result = super.getExplicitlyDependOnModules(includeBootstrap);
-
-    for (Language extendedLanguage : getExtendedLanguages()) {
-      if (!result.contains(extendedLanguage)) {
-        result.add(extendedLanguage);
-      }
-    }
-
-    for (IModule m : getRuntimeDependOnModules()) {
-      if (!result.contains(m)) {
-        result.add(m);
-      }
-    }
-
-    return result;
+  @Override
+  protected void addExplicitlyDependendOnModules(Set<IModule> result) {
+    super.addExplicitlyDependendOnModules(result);
+    result.addAll(getExtendedLanguages());
+    result.addAll(getRuntimeDependOnModules());
   }
 
   public List<ModuleReference> getUsedLanguagesReferences() {

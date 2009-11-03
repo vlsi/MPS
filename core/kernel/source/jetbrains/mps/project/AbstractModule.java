@@ -312,15 +312,7 @@ public abstract class AbstractModule implements IModule {
   public List<IModule> getExplicitlyDependOnModules(boolean includeBootstrap) {
     if (myExplicitlyDependentModules == null) {
       Set<IModule> res = new LinkedHashSet<IModule>();
-      res.addAll(getDependOnModules());
-      for (Language usedLanguage : getUsedLanguages()) {
-        res.add(usedLanguage);
-      }
-
-      for (DevKit dk : getUsedDevkits()) {
-        res.add(dk);
-      }
-
+      addExplicitlyDependendOnModules(res);
       myExplicitlyDependentModules = new ArrayList<IModule>(res);
     }
 
@@ -329,6 +321,12 @@ public abstract class AbstractModule implements IModule {
       result.addAll(LibraryManager.getInstance().getBootstrapModules(Language.class));
     }
     return result;
+  }
+
+  protected void addExplicitlyDependendOnModules(Set<IModule> result) {
+    result.addAll(getDependOnModules());
+    result.addAll(getUsedLanguages());
+    result.addAll(getUsedDevkits());
   }
 
   public List<IModule> getDesignTimeDependOnModules() {
