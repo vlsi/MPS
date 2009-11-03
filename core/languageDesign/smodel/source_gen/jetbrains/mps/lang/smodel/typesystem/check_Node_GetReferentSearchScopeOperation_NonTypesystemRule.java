@@ -22,7 +22,7 @@ public class check_Node_GetReferentSearchScopeOperation_NonTypesystemRule extend
   }
 
   public void applyRule(final SNode op, final TypeCheckingContext typeCheckingContext) {
-    // check link role argument
+    // check link role argument 
     final SNode linkDecl = SLinkOperations.getTarget(op, "referenceLink", false);
     if (linkDecl != null) {
       if (!(SPropertyOperations.hasValue(linkDecl, "metaClass", "reference", "reference"))) {

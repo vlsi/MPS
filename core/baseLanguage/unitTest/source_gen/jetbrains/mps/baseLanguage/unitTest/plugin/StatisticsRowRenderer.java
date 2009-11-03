@@ -71,7 +71,7 @@ public class StatisticsRowRenderer implements TableCellRenderer {
     boolean container = rowValue instanceof TestContainerRow;
     switch (column) {
       case 0:
-        // Test
+        // Test 
         this.text.setText(rowValue.getText());
         String additionalText = rowValue.getAdditionalText();
         if (additionalText != null) {
@@ -83,27 +83,27 @@ public class StatisticsRowRenderer implements TableCellRenderer {
         adjustFont = this.text;
         break;
       case 1:
-        // Time elapsed
+        // Time elapsed 
         result = this.setTime(rowValue.getElapsedTime());
         adjustFont = result;
         break;
       case 2:
-        // Usage Delta
+        // Usage Delta 
         result = this.setMemoryUsage(rowValue.getUsageDelta());
         adjustFont = result;
         break;
       case 3:
-        // Usage Before
+        // Usage Before 
         result = this.setMemoryUsage(rowValue.getUsageBefore());
         adjustFont = result;
         break;
       case 4:
-        // Usage After
+        // Usage After 
         result = this.setMemoryUsage(rowValue.getUsageAfter());
         adjustFont = result;
         break;
       case 5:
-        // Results
+        // Results 
         int s = rowValue.getSuccessful();
         int f = rowValue.getFailed();
         int e = rowValue.getErrored();

@@ -50,7 +50,7 @@ public class AddPropertyMacro_Intention extends BaseIntention {
 
   public void execute(final SNode node, final EditorContext editorContext) {
     SNode propertyMacro = QueriesUtil.addPropertyMacro(node, editorContext.getSelectedCell());
-    // set caret
+    // set caret 
     editorContext.selectAndSetCaret(propertyMacro, 0);
     InspectorTool inspector = editorContext.getOperationContext().getComponent(InspectorTool.class);
     assert inspector != null;

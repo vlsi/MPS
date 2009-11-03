@@ -38,8 +38,8 @@ public class NewRootMappingRule_Intention extends BaseIntention {
   }
 
   public String getDescription(final SNode node, final EditorContext editorContext) {
-    //  Creates new 'root mapping rule' for a root tamplate
-    //  (if such rule is not exist yet)
+    //  Creates new 'root mapping rule' for a root tamplate 
+    //  (if such rule is not exist yet) 
     return "Create Root Mapping Rule";
   }
 
@@ -71,7 +71,7 @@ public class NewRootMappingRule_Intention extends BaseIntention {
         }) != null;
       }
     });
-    //  not used in rule yet?
+    //  not used in rule yet? 
     return usage == null;
   }
 
@@ -88,13 +88,13 @@ public class NewRootMappingRule_Intention extends BaseIntention {
       }
     }
     if (ListSequence.fromList(configs).count() > 1) {
-      // TODO: let user to choose mapping config?
+      // TODO: let user to choose mapping config? 
     }
-    //  add new rule
+    //  add new rule 
     SNode rule = SLinkOperations.addNewChild(ListSequence.fromList(configs).first(), "rootMappingRule", "jetbrains.mps.lang.generator.structure.Root_MappingRule");
     SLinkOperations.setTarget(rule, "applicableConcept", SLinkOperations.getTarget(SLinkOperations.getTarget(node, AttributesRolesUtil.childRoleFromAttributeRole("rootTemplateAnnotation"), true), "applicableConcept", false), false);
     SLinkOperations.setTarget(rule, "template", node, false);
-    //  open in editor
+    //  open in editor 
     MPSEditorOpener opener = editorContext.getOperationContext().getComponent(MPSEditorOpener.class);
     opener.editNode(rule, editorContext.getOperationContext());
   }

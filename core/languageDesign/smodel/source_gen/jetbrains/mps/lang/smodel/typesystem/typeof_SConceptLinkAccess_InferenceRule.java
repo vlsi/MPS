@@ -20,7 +20,7 @@ public class typeof_SConceptLinkAccess_InferenceRule extends AbstractInferenceRu
     if (conceptLinkDecl == null) {
       return;
     }
-    // ==========
+    // ========== 
     {
       SNode _nodeToCheck_1029348928467 = op;
       BaseIntentionProvider intentionProvider = null;

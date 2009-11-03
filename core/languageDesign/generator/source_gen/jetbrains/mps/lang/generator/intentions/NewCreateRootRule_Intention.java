@@ -38,8 +38,8 @@ public class NewCreateRootRule_Intention extends BaseIntention {
   }
 
   public String getDescription(final SNode node, final EditorContext editorContext) {
-    //  Creates new 'conditional root rule' for a root tamplate
-    //  (if such rule is not exist yet)
+    //  Creates new 'conditional root rule' for a root tamplate 
+    //  (if such rule is not exist yet) 
     return "Create Conditional Root Rule";
   }
 
@@ -71,7 +71,7 @@ public class NewCreateRootRule_Intention extends BaseIntention {
         }) != null;
       }
     });
-    //  not used in rule yet?
+    //  not used in rule yet? 
     return usage == null;
   }
 
@@ -88,12 +88,12 @@ public class NewCreateRootRule_Intention extends BaseIntention {
       }
     }
     if (ListSequence.fromList(configs).count() > 1) {
-      // TODO: let user to choose mapping config?
+      // TODO: let user to choose mapping config? 
     }
-    //  add new rule
+    //  add new rule 
     SNode rule = SLinkOperations.addNewChild(ListSequence.fromList(configs).first(), "createRootRule", "jetbrains.mps.lang.generator.structure.CreateRootRule");
     SLinkOperations.setTarget(rule, "templateNode", node, false);
-    //  open in editor
+    //  open in editor 
     MPSEditorOpener opener = editorContext.getOperationContext().getComponent(MPSEditorOpener.class);
     opener.editNode(rule, editorContext.getOperationContext());
   }

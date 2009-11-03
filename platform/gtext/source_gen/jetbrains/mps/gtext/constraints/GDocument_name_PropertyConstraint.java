@@ -29,6 +29,6 @@ public class GDocument_name_PropertyConstraint implements IModelConstraints, INo
   }
 
   public void execPropertySet(final SNode node, final String propertyName, final String propertyValue, final IScope scope) {
-    // R/O
+    // R/O 
   }
 }

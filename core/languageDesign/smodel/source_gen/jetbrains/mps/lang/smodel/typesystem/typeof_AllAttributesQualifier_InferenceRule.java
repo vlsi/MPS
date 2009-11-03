@@ -15,7 +15,7 @@ public class typeof_AllAttributesQualifier_InferenceRule extends AbstractInferen
   }
 
   public void applyRule(final SNode nodeToCheck, final TypeCheckingContext typeCheckingContext) {
-    // assign type
+    // assign type 
     {
       SNode _nodeToCheck_1029348928467 = nodeToCheck;
       BaseIntentionProvider intentionProvider = null;

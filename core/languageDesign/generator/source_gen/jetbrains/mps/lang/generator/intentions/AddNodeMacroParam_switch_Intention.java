@@ -62,7 +62,7 @@ public class AddNodeMacroParam_switch_Intention extends BaseIntention {
     SNode switchMacro = SConceptOperations.createNewNode("jetbrains.mps.lang.generator.structure.SwitchMacro", null);
     SNodeOperations.replaceWithAnother(nodeMacro, switchMacro);
     SLinkOperations.setTarget(switchMacro, "templateSwitch", this.myParameter, false);
-    // set caret
+    // set caret 
     editorContext.selectAndSetCaret(switchMacro, 1);
   }
 

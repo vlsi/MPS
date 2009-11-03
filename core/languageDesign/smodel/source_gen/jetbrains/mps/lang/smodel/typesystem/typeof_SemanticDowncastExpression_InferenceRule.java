@@ -25,7 +25,7 @@ public class typeof_SemanticDowncastExpression_InferenceRule extends AbstractInf
         EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1186060923030", 0, intentionProvider);
         typeCheckingContext.createEquation((SNode)typeCheckingContext.getEquationManager().getRepresentator(LeftType_typevar_1186060911559), (SNode)typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1186060928458", true), _info_12389875345);
       }
-      //  this when concrete has a sense of overloading
+      //  this when concrete has a sense of overloading 
       {
         final SNode v = typeCheckingContext.getEquationManager().getRepresentator(LeftType_typevar_1186060911559);
         typeCheckingContext.whenConcrete(v, new Runnable() {

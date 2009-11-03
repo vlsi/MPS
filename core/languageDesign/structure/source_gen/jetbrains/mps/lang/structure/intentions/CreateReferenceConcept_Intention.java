@@ -52,17 +52,17 @@ public class CreateReferenceConcept_Intention extends BaseIntention {
   }
 
   public void execute(final SNode node, final EditorContext editorContext) {
-    // structure
+    // structure 
     SNode concept = new _Quotations.QuotationClass_0().createNode(NameUtil.decapitalize(SPropertyOperations.getString(node, "name")), node, SPropertyOperations.getString(node, "name") + "Reference");
     SModelOperations.addRootNode(SNodeOperations.getModel(node), concept);
     SPropertyOperations.set(concept, "virtualPackage", SPropertyOperations.getString(node, "virtualPackage"));
     SNode link = ListSequence.fromList(SLinkOperations.getTargets(concept, "linkDeclaration", true)).first();
 
-    // find editor model
+    // find editor model 
     Language language = Language.getLanguageFor(SNodeOperations.getModel(node).getModelDescriptor());
     SModel editorModel = language.getEditorModelDescriptor().getSModel();
 
-    // editor
+    // editor 
     SNode editor = new _Quotations.QuotationClass_1().createNode(concept, link);
     SModelOperations.addRootNode(editorModel, editor);
     SPropertyOperations.set(editor, "virtualPackage", SPropertyOperations.getString(node, "virtualPackage"));

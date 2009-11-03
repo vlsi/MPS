@@ -24,7 +24,7 @@ public class MappingLabelUtil {
         }
       }
     }
-    // ----
+    // ---- 
     if (mappingLabel == null) {
       SNode mc;
       List<SNode> localMCs = SModelOperations.getRoots(SNodeOperations.getModel(templateNode), "jetbrains.mps.lang.generator.structure.MappingConfiguration");
@@ -41,7 +41,7 @@ public class MappingLabelUtil {
         mc = SModelOperations.createNewRootNode(SNodeOperations.getModel(templateNode), "jetbrains.mps.lang.generator.structure.MappingConfiguration", null);
         SPropertyOperations.set(mc, "name", "MappingLabels");
       }
-      // new mapping label
+      // new mapping label 
       SNode newLabel = SLinkOperations.addNewChild(mc, "mappingLabel", "jetbrains.mps.lang.generator.structure.MappingLabelDeclaration");
       SPropertyOperations.set(newLabel, "name", labelName);
       mappingLabel = newLabel;

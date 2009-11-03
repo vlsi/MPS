@@ -21,7 +21,7 @@ public class ConceptDeclaration_extends_ReferentConstraint extends BaseNodeRefer
   }
 
   public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferentConstraintContext _context) {
-    // don't allow cycling
+    // don't allow cycling 
     return new ConceptDeclarationExtendedConceptSearchScope(_context.getReferenceNode(), operationContext.getScope());
   }
 }

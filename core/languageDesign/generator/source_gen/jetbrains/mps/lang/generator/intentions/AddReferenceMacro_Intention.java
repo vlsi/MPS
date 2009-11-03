@@ -50,7 +50,7 @@ public class AddReferenceMacro_Intention extends BaseIntention {
 
   public void execute(final SNode node, final EditorContext editorContext) {
     SNode referenceMacro = QueriesUtil.addReferenceMacro(node, editorContext.getSelectedCell());
-    // set caret
+    // set caret 
     editorContext.selectAndSetCaret(referenceMacro, 2);
     InspectorTool inspector = editorContext.getOperationContext().getComponent(InspectorTool.class);
     assert inspector != null;

@@ -191,7 +191,7 @@ public class NamedTupleComponentDeclaration_Editor extends DefaultNodeEditor {
     }
 
     public List<String> getPostfixes(SNode node, IScope scope, IOperationContext operationContext) {
-      //  copied from VariableDeclaration's editor
+      //  copied from VariableDeclaration's editor 
       List<String> result;
       SNode nodeType = SLinkOperations.getTarget(node, "type", true);
       if (nodeType != null) {
@@ -199,8 +199,8 @@ public class NamedTupleComponentDeclaration_Editor extends DefaultNodeEditor {
       } else {
         result = ListSequence.fromList(new ArrayList<String>());
       }
-      // we need this because of smart input
-      // DO NOT REMOVE IT
+      // we need this because of smart input 
+      // DO NOT REMOVE IT 
       if (SPropertyOperations.getString(node, "name") != null) {
         ListSequence.fromList(result).addElement(SPropertyOperations.getString(node, "name"));
       }

@@ -69,7 +69,7 @@ public class AddReferenceMacroParam_link_Intention extends BaseIntention {
     SLinkOperations.setTarget(expressionStatement, "expression", dotExpression, true);
     SLinkOperations.addChild(SLinkOperations.getTarget(referentValue, "body", true), "statement", expressionStatement);
     SLinkOperations.setTarget(referenceMacro, "referentFunction", referentValue, true);
-    // set caret
+    // set caret 
     editorContext.selectAndSetCaret(referenceMacro, 2);
   }
 

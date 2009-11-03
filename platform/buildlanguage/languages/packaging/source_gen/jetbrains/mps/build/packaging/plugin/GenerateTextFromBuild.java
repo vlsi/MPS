@@ -34,7 +34,7 @@ public class GenerateTextFromBuild {
         return MPSLayout_Behavior.call_getFolderToGenerate_1229522949966(Configuration_Behavior.call_getLayout_1213877261819(configuration));
       }
     });
-    // generate files
+    // generate files 
     final GeneratorManager generatorManager = project.getComponentSafe(GeneratorManager.class);
     GenerateTextFromBuildGenerationType generationType = new GenerateTextFromBuildGenerationType(generatorManager, basedir, configuration);
     if (showWindow) {

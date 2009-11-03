@@ -21,6 +21,6 @@ public class ListFeature_writable_PropertyConstraint implements IModelConstraint
   }
 
   public void execPropertySet(final SNode node, final String propertyName, final String propertyValue, final IScope scope) {
-    //  this is a read-only property
+    //  this is a read-only property 
   }
 }

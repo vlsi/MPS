@@ -74,7 +74,7 @@ public class GenerateMPSBuildAction_Action extends GeneratedAction {
 
   public void doExecute(@NotNull final AnActionEvent event) {
     try {
-      // calculate output path
+      // calculate output path 
       final SNode layout = GenerateTextFromBuild.getLayout(GenerateMPSBuildAction_Action.this.modelDescriptor);
       final Wrappers._T<SNode> configuration = new Wrappers._T<SNode>();
       ModelAccess.instance().runReadAction(new Runnable() {

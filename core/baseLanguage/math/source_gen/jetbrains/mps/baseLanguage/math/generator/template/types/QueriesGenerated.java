@@ -25,7 +25,7 @@ public class QueriesGenerated {
   }
 
   public static boolean baseMappingRule_Condition_1237546877859(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
-    // long to biginteger
+    // long to biginteger 
     return SPropertyOperations.getInteger_def(_context.getNode(), "target", "1") == 1;
   }
 
@@ -91,7 +91,7 @@ public class QueriesGenerated {
   }
 
   public static boolean baseMappingRule_Condition_1238314128298(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
-    // double to complex
+    // double to complex 
     return SPropertyOperations.getInteger_def(_context.getNode(), "target", "1") == 2;
   }
 
@@ -148,7 +148,7 @@ public class QueriesGenerated {
   }
 
   public static boolean baseMappingRule_Condition_1238317999930(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
-    // unknown expression
+    // unknown expression 
     return SPropertyOperations.getInteger_def(_context.getNode(), "target", "1") == 0;
   }
 
@@ -213,7 +213,7 @@ public class QueriesGenerated {
   }
 
   public static boolean baseMappingRule_Condition_1238400574312(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
-    // double to bigdecimal
+    // double to bigdecimal 
     return SPropertyOperations.getInteger_def(_context.getNode(), "target", "1") == 3;
   }
 
@@ -242,7 +242,7 @@ public class QueriesGenerated {
   }
 
   public static boolean baseMappingRule_Condition_1238420065215(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
-    // double to bigcomplex
+    // double to bigcomplex 
     return SPropertyOperations.getInteger_def(_context.getNode(), "target", "1") == 5;
   }
 
@@ -251,12 +251,12 @@ public class QueriesGenerated {
   }
 
   public static boolean baseMappingRule_Condition_1238420067020(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
-    // bigdecimal -> bigcomplex
+    // bigdecimal -> bigcomplex 
     return SPropertyOperations.getInteger_def(_context.getNode(), "target", "1") == 7;
   }
 
   public static boolean baseMappingRule_Condition_1238420067664(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
-    // complex to bigcomplex
+    // complex to bigcomplex 
     return SPropertyOperations.getInteger_def(_context.getNode(), "target", "1") == 8;
   }
 

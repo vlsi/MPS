@@ -23,7 +23,7 @@ public class SEnumOperationInvocation_enumDeclaration_ReferentConstraint extends
   }
 
   public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferentConstraintContext _context) {
-    // roots only
+    // roots only 
     return SModelSearchUtil.createModelAndImportedModelsScope(SNodeOperations.getModel(_context.getReferenceNode()), true, operationContext.getScope());
   }
 }

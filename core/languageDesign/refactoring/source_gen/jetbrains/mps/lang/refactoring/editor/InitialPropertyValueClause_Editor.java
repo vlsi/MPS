@@ -73,9 +73,9 @@ public class InitialPropertyValueClause_Editor extends DefaultNodeEditor {
     EditorCell_Property editorCell = EditorCell_Property.create(editorContext, new ModelAccessor() {
       public String getText() {
         StringBuilder result = new StringBuilder();
-        // by default 'alias' is not shown.
-        // if you need presentation like alias(...)->..
-        // then use the ConceptFunctionAliased_Component
+        // by default 'alias' is not shown. 
+        // if you need presentation like alias(...)->.. 
+        // then use the ConceptFunctionAliased_Component 
         if (SConceptPropertyOperations.getBoolean(node, "showName")) {
           result.append(ConceptFunction_Behavior.call_getName_1216468837268(node));
         }

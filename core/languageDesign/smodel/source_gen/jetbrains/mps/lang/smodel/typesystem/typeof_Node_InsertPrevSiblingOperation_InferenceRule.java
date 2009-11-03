@@ -26,7 +26,7 @@ public class typeof_Node_InsertPrevSiblingOperation_InferenceRule extends Abstra
         typeCheckingContext.createLessThanInequationStrong((SNode)typeCheckingContext.typeOf(parameter, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1186057110415", true), (SNode)new _Quotations.QuotationClass_14().createNode(typeCheckingContext), false, _info_12389875345);
       }
     }
-    // op returns node passed in parameter
+    // op returns node passed in parameter 
     {
       SNode _nodeToCheck_1029348928467 = op;
       BaseIntentionProvider intentionProvider = null;

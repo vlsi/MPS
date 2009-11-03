@@ -57,7 +57,7 @@ public class AddClassifierDocComment_Intention extends BaseIntention {
 
     SLinkOperations.setNewChild(node, AttributesRolesUtil.childRoleFromAttributeRole("classifierDocComment"), "jetbrains.mps.baseLanguage.javadoc.structure.ClassifierDocComment");
 
-    //  Type variables
+    //  Type variables 
     for (SNode typeVariableDeclaration : ListSequence.fromList(SLinkOperations.getTargets(node, "typeVariableDeclaration", true))) {
       SNode paramTag = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.javadoc.structure.ParameterBlockDocTag", null);
       SLinkOperations.setTarget(paramTag, "parameter", new _Quotations.QuotationClass_1().createNode(typeVariableDeclaration), true);

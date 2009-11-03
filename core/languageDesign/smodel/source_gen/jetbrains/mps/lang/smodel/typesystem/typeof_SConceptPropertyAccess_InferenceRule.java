@@ -24,7 +24,7 @@ public class typeof_SConceptPropertyAccess_InferenceRule extends AbstractInferen
     if (conceptPropertyDecl == null) {
       return;
     }
-    // ==========
+    // ========== 
     if (SNodeOperations.isInstanceOf(conceptPropertyDecl, "jetbrains.mps.lang.structure.structure.StringConceptPropertyDeclaration")) {
       {
         SNode _nodeToCheck_1029348928467 = op;

@@ -39,19 +39,19 @@ public class TraversalAxisUtil {
       case CHILDREN:
         return true;
       case DESCENDANTS:
-        // fall through
+        // fall through 
       case ANCESTORS:
-        // fall through
+        // fall through 
       case PRECEDING_SIBLINGS:
-        // fall through
+        // fall through 
       case FOLLOWING_SIBLINGS:
-        // fall through
+        // fall through 
       case SELF_DESCENDANTS:
-        // fall through
+        // fall through 
       case SELF_ANCESTORS:
-        // fall through
+        // fall through 
       case PRECEDING_SIBLINGS_SELF:
-        // fall through
+        // fall through 
       case SELF_FOLLOWING_SIBLINGS:
         return false;
       default:
@@ -64,19 +64,19 @@ public class TraversalAxisUtil {
       case CHILDREN:
         return !(SPropertyOperations.getBoolean(feature, "ascending"));
       case DESCENDANTS:
-        // fall through
+        // fall through 
       case SELF_DESCENDANTS:
         return !(SNodeOperations.isInstanceOf(feature, "jetbrains.mps.ypath.structure.IParamFeature")) && !(SPropertyOperations.getBoolean(feature, "ascending"));
       case ANCESTORS:
-        // fall through
+        // fall through 
       case SELF_ANCESTORS:
         return !(SNodeOperations.isInstanceOf(feature, "jetbrains.mps.ypath.structure.IParamFeature")) && !(SPropertyOperations.getBoolean(feature, "ascending")) && (SLinkOperations.getTarget(feature, "opposite", false) != null);
       case PRECEDING_SIBLINGS:
-        // fall through
+        // fall through 
       case PRECEDING_SIBLINGS_SELF:
-        // fall through
+        // fall through 
       case FOLLOWING_SIBLINGS:
-        // fall through
+        // fall through 
       case SELF_FOLLOWING_SIBLINGS:
         return !(SNodeOperations.isInstanceOf(feature, "jetbrains.mps.ypath.structure.IParamFeature")) && !(SPropertyOperations.getBoolean(feature, "ascending")) && (SLinkOperations.getTarget(feature, "opposite", false) != null);
       default:
@@ -87,21 +87,21 @@ public class TraversalAxisUtil {
   public static boolean isUsingOpposite(TraversalAxis axis) {
     switch (axis) {
       case CHILDREN:
-        // fall through
+        // fall through 
       case DESCENDANTS:
-        // fall through
+        // fall through 
       case SELF_DESCENDANTS:
         return false;
       case ANCESTORS:
-        // fall through
+        // fall through 
       case SELF_ANCESTORS:
         return true;
       case PRECEDING_SIBLINGS:
-        // fall through
+        // fall through 
       case FOLLOWING_SIBLINGS:
-        // fall through
+        // fall through 
       case PRECEDING_SIBLINGS_SELF:
-        // fall through
+        // fall through 
       case SELF_FOLLOWING_SIBLINGS:
         return false;
       default:
@@ -122,13 +122,13 @@ public class TraversalAxisUtil {
       case SELF_ANCESTORS:
         return TraversalAxis.SELF_DESCENDANTS;
       case PRECEDING_SIBLINGS:
-        // fall through
+        // fall through 
       case FOLLOWING_SIBLINGS:
-        // fall through
+        // fall through 
       case PRECEDING_SIBLINGS_SELF:
-        // fall through
+        // fall through 
       case SELF_FOLLOWING_SIBLINGS:
-        // fall through
+        // fall through 
       default:
         return null;
     }
@@ -137,21 +137,21 @@ public class TraversalAxisUtil {
   public static boolean isIncludingSelf(TraversalAxis axis) {
     switch (axis) {
       case CHILDREN:
-        // fall through
+        // fall through 
       case DESCENDANTS:
-        // fall through
+        // fall through 
       case ANCESTORS:
-        // fall through
+        // fall through 
       case PRECEDING_SIBLINGS:
-        // fall through
+        // fall through 
       case FOLLOWING_SIBLINGS:
         return false;
       case SELF_DESCENDANTS:
-        // fall through
+        // fall through 
       case SELF_ANCESTORS:
-        // fall through
+        // fall through 
       case PRECEDING_SIBLINGS_SELF:
-        // fall through
+        // fall through 
       case SELF_FOLLOWING_SIBLINGS:
         return true;
       default:
@@ -162,21 +162,21 @@ public class TraversalAxisUtil {
   public static boolean isSelfFirst(TraversalAxis axis) {
     switch (axis) {
       case CHILDREN:
-        // fall through
+        // fall through 
       case DESCENDANTS:
-        // fall through
+        // fall through 
       case ANCESTORS:
-        // fall through
+        // fall through 
       case FOLLOWING_SIBLINGS:
-        // fall through
+        // fall through 
       case SELF_DESCENDANTS:
-        // fall through
+        // fall through 
       case SELF_ANCESTORS:
-        // fall through
+        // fall through 
       case SELF_FOLLOWING_SIBLINGS:
         return true;
       case PRECEDING_SIBLINGS:
-        // fall through
+        // fall through 
       case PRECEDING_SIBLINGS_SELF:
         return false;
       default:

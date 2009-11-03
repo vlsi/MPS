@@ -109,7 +109,7 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
       Solution solution;
       if (this.getCreateSolution()) {
         VirtualFile projectBaseDir = this.myProject.getBaseDir();
-        //  get solution
+        //  get solution 
         String solutionName = this.getNewSolutionName();
         String solutionBaseDir = projectBaseDir.getPath() + File.separator + "solutions" + File.separator + solutionName;
         MPSProject mpsProject = this.myProject.getComponent(MPSProjectHolder.class).getMPSProject();
@@ -146,14 +146,14 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
   }
 
   protected SNode createMPSLayout(SModelDescriptor targetModelDescriptor, String name, String basedir, List<NodeData> selectedData) {
-    // create mps layout
+    // create mps layout 
     SNode mpsLayout = SConceptOperations.createNewNode("jetbrains.mps.build.packaging.structure.MPSLayout", null);
-    // add mps layout to the target model
+    // add mps layout to the target model 
     SModel targetSModel = targetModelDescriptor.getSModel();
     targetSModel.addRoot(mpsLayout);
-    // set properties
+    // set properties 
     SPropertyOperations.set(mpsLayout, "name", name);
-    // create basedir path
+    // create basedir path 
     SNode basedirPath;
     String result = Macros.mpsHomeMacros().shrinkPath(basedir, new File("")).replace("\\", File.separator);
     int index = result.lastIndexOf("}");
@@ -164,17 +164,17 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
       basedirPath = PackagingLanguageGenerator.createBasedirPath("", basedir);
     }
     SLinkOperations.setTarget(mpsLayout, "baseDirectory", basedirPath, true);
-    // 
+    //  
     SPropertyOperations.set(mpsLayout, "compile", "" + (true));
     SPropertyOperations.set(ListSequence.fromList(SLinkOperations.getTargets(mpsLayout, "configuration", true)).first(), "name", "default");
-    // create zip
+    // create zip 
     SNode zip = SConceptOperations.createNewNode("jetbrains.mps.build.packaging.structure.Zip", null);
     SLinkOperations.setTarget(zip, "title", PackagingLanguageGenerator.createSimpleString(name + ".zip"), true);
     SLinkOperations.addChild(mpsLayout, "component", zip);
-    // create folder inside zip
+    // create folder inside zip 
     SNode folder = PackagingLanguageGenerator.createFolder(name);
     SLinkOperations.addChild(zip, "entry", folder);
-    // add modules to folder
+    // add modules to folder 
     BuildGeneratorImpl.createContent(selectedData, folder, targetSModel);
     return mpsLayout;
   }
@@ -204,14 +204,14 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
     Map<NodeData, SNode> createdComponent = MapSequence.fromMap(new HashMap<NodeData, SNode>());
     Set<SNode> topLevel = SetSequence.fromSet(new LinkedHashSet<SNode>());
     for (NodeData data : ListSequence.fromList(selectedData)) {
-      // creating component
+      // creating component 
       SNode component = createComponent(data, targetSModel);
       if (component == null) {
         continue;
       }
       MapSequence.fromMap(createdComponent).put(data, component);
       SetSequence.fromSet(topLevel).addElement(component);
-      // dealing with children
+      // dealing with children 
       if (SNodeOperations.isInstanceOf(component, "jetbrains.mps.build.packaging.structure.ICompositeComponent")) {
         List<NodeData> children = data.getChildren();
         for (NodeData child : ListSequence.fromList(children)) {
@@ -224,7 +224,7 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
           }
         }
       }
-      // dealing with parent
+      // dealing with parent 
       NodeData parent = data.getParent();
       if (parent == null) {
         break;
@@ -234,7 +234,7 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
         SetSequence.fromSet(topLevel).removeElement(component);
       }
     }
-    // 
+    //  
     for (SNode topLevelComponent : SetSequence.fromSet(topLevel)) {
       SLinkOperations.addChild(folder, "entry", topLevelComponent);
     }

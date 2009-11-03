@@ -65,8 +65,8 @@ public class ActionParameter_NameCellComponent extends AbstractCellProvider {
       } else {
         result = ListSequence.fromList(new ArrayList<String>());
       }
-      // we need this because of smart input
-      // DO NOT REMOVE IT
+      // we need this because of smart input 
+      // DO NOT REMOVE IT 
       if (SPropertyOperations.getString(node, "name") != null) {
         ListSequence.fromList(result).addElement(SPropertyOperations.getString(node, "name"));
       }

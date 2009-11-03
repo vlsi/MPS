@@ -63,7 +63,7 @@ public class NewTemplateInWeaveEach_Intention extends BaseIntention {
     SPropertyOperations.set(t, "name", name);
     SLinkOperations.setTarget(t, "applicableConcept", applicableConcept, false);
     t.setProperty(SModelTreeNode.PACK, SPropertyOperations.getString(SNodeOperations.cast(SNodeOperations.getContainingRoot(node), "jetbrains.mps.lang.core.structure.BaseConcept"), "virtualPackage"));
-    //  initialize 'content node'
+    //  initialize 'content node' 
     SNode ownerRule = SNodeOperations.getAncestor(node, "jetbrains.mps.lang.generator.structure.Weaving_MappingRule", false, false);
     SNode contextNodeType = TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(SNodeOperations.cast(ownerRule, "jetbrains.mps.lang.generator.structure.Weaving_MappingRule"), "contextNodeQuery", true));
     if (SNodeOperations.isInstanceOf(contextNodeType, "jetbrains.mps.lang.smodel.structure.SNodeType")) {
@@ -74,7 +74,7 @@ public class NewTemplateInWeaveEach_Intention extends BaseIntention {
         }
       }
     }
-    //  make reference
+    //  make reference 
     SLinkOperations.setTarget(node, "template", t, false);
   }
 

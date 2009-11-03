@@ -70,7 +70,7 @@ public class AddNodeMacroParam_loopMacro_Intention extends BaseIntention {
     SLinkOperations.setTarget(expressionStatement, "expression", dotExpression, true);
     SLinkOperations.addChild(SLinkOperations.getTarget(referentValue, "body", true), "statement", expressionStatement);
     SLinkOperations.setTarget(loopMacro, "sourceNodesQuery", referentValue, true);
-    // set caret
+    // set caret 
     editorContext.selectAndSetCaret(loopMacro, 1);
   }
 

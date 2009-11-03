@@ -7,7 +7,7 @@ import jetbrains.mps.smodel.constraints.CanBeAParentContext;
 
 public class ValueInlineDocTag_Constraints {
   public static boolean canBeAParent(final IOperationContext operationContext, final CanBeAParentContext _context) {
-    //  TODO check for constant
+    //  TODO check for constant 
     return true;
   }
 }

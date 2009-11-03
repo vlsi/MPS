@@ -45,28 +45,28 @@ public class AddMethodDocComment_Intention extends BaseIntention {
     }
 
     SLinkOperations.setTarget(node, AttributesRolesUtil.childRoleFromAttributeRole("methodDocComment"), SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.javadoc.structure.MethodDocComment", null), true);
-    //  Method parameters
+    //  Method parameters 
     for (SNode parameterDeclaration : ListSequence.fromList(SLinkOperations.getTargets(node, "parameter", true))) {
       SNode paramTag = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.javadoc.structure.ParameterBlockDocTag", null);
       SLinkOperations.setTarget(paramTag, "parameter", new _Quotations.QuotationClass_2().createNode(parameterDeclaration), true);
       SLinkOperations.addChild(SLinkOperations.getTarget(node, AttributesRolesUtil.childRoleFromAttributeRole("methodDocComment"), true), "param", paramTag);
     }
 
-    //  Type variables
+    //  Type variables 
     for (SNode typeVariableDeclaration : ListSequence.fromList(SLinkOperations.getTargets(node, "typeVariableDeclaration", true))) {
       SNode paramTag = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.javadoc.structure.ParameterBlockDocTag", null);
       SLinkOperations.setTarget(paramTag, "parameter", new _Quotations.QuotationClass_0().createNode(typeVariableDeclaration), true);
       SLinkOperations.addChild(SLinkOperations.getTarget(node, AttributesRolesUtil.childRoleFromAttributeRole("methodDocComment"), true), "param", paramTag);
     }
 
-    //  Thrown exceptions
+    //  Thrown exceptions 
     for (SNode throwsItem : ListSequence.fromList(SLinkOperations.getTargets(node, "throwsItem", true))) {
       SNode throwsTag = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.javadoc.structure.ThrowsBlockDocTag", null);
       SLinkOperations.setTarget(throwsTag, "exceptionType", SNodeOperations.copyNode(throwsItem), true);
       SLinkOperations.addChild(SLinkOperations.getTarget(node, AttributesRolesUtil.childRoleFromAttributeRole("methodDocComment"), true), "throwsTag", throwsTag);
     }
 
-    //  Return value
+    //  Return value 
     if (!(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(node, "returnType", true), "jetbrains.mps.baseLanguage.structure.VoidType"))) {
       SLinkOperations.setTarget(SLinkOperations.getTarget(node, AttributesRolesUtil.childRoleFromAttributeRole("methodDocComment"), true), "return", SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.javadoc.structure.ReturnBlockDocTag", null), true);
     }

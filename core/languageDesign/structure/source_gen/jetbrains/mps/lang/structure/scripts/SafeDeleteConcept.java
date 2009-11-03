@@ -63,7 +63,7 @@ public class SafeDeleteConcept extends BaseGeneratedRefactoring {
   }
 
   public SearchResults getAffectedNodes(final RefactoringContext refactoringContext) {
-    // all usages excluding concept's aspects
+    // all usages excluding concept's aspects 
     refactoringContext.setParameter("nodeAspects", AbstractConceptDeclaration_Behavior.call_findAllAspects_7754459869734028917(refactoringContext.getSelectedNode(), GlobalScope.getInstance()));
 
     SearchResults searchResults = new SearchResults();

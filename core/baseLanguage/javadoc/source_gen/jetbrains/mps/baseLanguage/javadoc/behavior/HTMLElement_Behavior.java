@@ -33,7 +33,7 @@ public class HTMLElement_Behavior {
       CommentLine_Behavior.call_tryMergeToRight_439148907936414403(line, index - 1);
       return new NodeCaretPair(prev, caret);
     } else {
-      //  Merging first line
+      //  Merging first line 
       for (SNode part : ListSequence.fromList(SLinkOperations.getTargets(ListSequence.fromList(SLinkOperations.getTargets(thisNode, "line", true)).first(), "part", true))) {
         SNodeOperations.insertPrevSiblingChild(thisNode, part);
       }
@@ -44,7 +44,7 @@ public class HTMLElement_Behavior {
       }
       CommentLine_Behavior.call_tryMergeToRight_439148907936414403(line, index - 1);
 
-      //  Merging other lines
+      //  Merging other lines 
       SNode lastElementLine = ListSequence.fromList(SLinkOperations.getTargets(thisNode, "line", true)).last();
       for (SNode elementLine : ListSequence.fromList(SLinkOperations.getTargets(thisNode, "line", true)).reversedList()) {
         SNodeOperations.insertNextSiblingChild(line, elementLine);
@@ -59,7 +59,7 @@ public class HTMLElement_Behavior {
         }
         CommentLine_Behavior.call_tryMergeToRight_439148907936414403(line, index - 1);
       } else {
-        //  Merging last line parts
+        //  Merging last line parts 
         index = ListSequence.fromList(SLinkOperations.getTargets(lastElementLine, "part", true)).count() - 1;
         for (SNode linePart : ListSequence.fromList(SNodeOperations.getNextSiblings(thisNode, false))) {
           SLinkOperations.addChild(lastElementLine, "part", SNodeOperations.cast(linePart, "jetbrains.mps.baseLanguage.javadoc.structure.CommentLinePart"));

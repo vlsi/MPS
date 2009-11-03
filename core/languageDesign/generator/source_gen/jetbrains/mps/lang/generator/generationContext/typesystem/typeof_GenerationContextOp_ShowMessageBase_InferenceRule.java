@@ -16,7 +16,7 @@ public class typeof_GenerationContextOp_ShowMessageBase_InferenceRule extends Ab
   }
 
   public void applyRule(final SNode op, final TypeCheckingContext typeCheckingContext) {
-    //  parameters: string, node
+    //  parameters: string, node 
     {
       SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(op, "messageText", true);
       BaseIntentionProvider intentionProvider = null;

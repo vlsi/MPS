@@ -95,7 +95,7 @@ public class MoveConcepts extends BaseGeneratedRefactoring {
     List<SNode> behaviors = new ArrayList<SNode>();
     List<SNode> constraints = new ArrayList<SNode>();
     List<SNode> dataFlows = new ArrayList<SNode>();
-    // collecting editors:
+    // collecting editors: 
     SModelDescriptor editorModelDescriptor = sourceLanguage.getEditorModelDescriptor();
     if (editorModelDescriptor != null) {
       for (SNode node : nodes) {
@@ -105,7 +105,7 @@ public class MoveConcepts extends BaseGeneratedRefactoring {
         }
       }
     }
-    // collecting behaviors:
+    // collecting behaviors: 
     SModelDescriptor behaviorModelDescriptor = sourceLanguage.getBehaviorModelDescriptor();
     if (behaviorModelDescriptor != null) {
       for (SNode node : nodes) {
@@ -115,7 +115,7 @@ public class MoveConcepts extends BaseGeneratedRefactoring {
         }
       }
     }
-    // collecting constraints:
+    // collecting constraints: 
     SModelDescriptor constraintsModelDescriptor = sourceLanguage.getConstraintsModelDescriptor();
     if (constraintsModelDescriptor != null) {
       for (SNode node : nodes) {
@@ -125,7 +125,7 @@ public class MoveConcepts extends BaseGeneratedRefactoring {
         }
       }
     }
-    // collecting data flow:
+    // collecting data flow: 
     SModelDescriptor dataflowModelDescriptor = sourceLanguage.getDataFlowModelDescriptor();
     if (dataflowModelDescriptor != null) {
       for (SNode node : nodes) {
@@ -135,7 +135,7 @@ public class MoveConcepts extends BaseGeneratedRefactoring {
         }
       }
     }
-    // refactoring itself
+    // refactoring itself 
     for (SNode node : nodes) {
       refactoringContext.changeFeatureName(node, ((SModelDescriptor)refactoringContext.getParameter("targetModel")).getSModelFqName().toString() + "." + SPropertyOperations.getString(node, "name"), SPropertyOperations.getString(node, "name"));
     }
@@ -188,7 +188,7 @@ public class MoveConcepts extends BaseGeneratedRefactoring {
       refactoringContext.computeCaches();
       refactoringContext.updateModelWithMaps(dataFlowModel);
     }
-    // todo: move other concept-related aspect stuff
+    // todo: move other concept-related aspect stuff 
   }
 
   public Map<IModule, List<SModel>> getModelsToGenerate(final RefactoringContext refactoringContext) {

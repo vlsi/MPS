@@ -20,7 +20,7 @@ public class check_GenerationContextOp_Base_NonTypesystemRule extends AbstractNo
   }
 
   public void applyRule(final SNode op, final TypeCheckingContext typeCheckingContext) {
-    //  only applicable to 'genctx'
+    //  only applicable to 'genctx' 
     SNode contextType = TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(op), "jetbrains.mps.baseLanguage.structure.DotExpression"), "operand", true));
     if (!(SNodeOperations.isInstanceOf(contextType, "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextType"))) {
       BaseIntentionProvider intentionProvider = null;

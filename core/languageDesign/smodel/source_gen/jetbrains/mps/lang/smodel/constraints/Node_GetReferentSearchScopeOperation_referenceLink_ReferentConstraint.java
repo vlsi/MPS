@@ -29,7 +29,7 @@ public class Node_GetReferentSearchScopeOperation_referenceLink_ReferentConstrai
   }
 
   public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferentConstraintContext _context) {
-    // reference links 
+    // reference links  
     SNode dotOperandConcept = SNodeOperation_Behavior.getLeftNodeConcept_1213877508847(SNodeOperations.cast(_context.getEnclosingNode(), "jetbrains.mps.baseLanguage.structure.DotExpression"));
     List<SNode> links = AbstractConceptDeclaration_Behavior.call_getLinkDeclarations_1213877394480(dotOperandConcept);
     return ListSequence.fromList(links).where(new IWhereFilter<SNode>() {

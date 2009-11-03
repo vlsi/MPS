@@ -20,7 +20,7 @@ public class check_PropertyDeclaration_NonTypesystemRule extends AbstractNonType
   }
 
   public void applyRule(final SNode prop, final TypeCheckingContext typeCheckingContext) {
-    // property overriding is banned
+    // property overriding is banned 
     if (SPropertyOperations.getString(prop, "name") == null) {
       return;
     }

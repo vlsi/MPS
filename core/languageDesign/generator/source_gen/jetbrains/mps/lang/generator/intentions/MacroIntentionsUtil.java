@@ -29,7 +29,7 @@ public class MacroIntentionsUtil {
   private static SNode getConceptFrom(SNode macro) {
     SNode query = QueriesUtil.getQueryFunction_fromSourceSubstituteMacro(macro);
     SNode returnType = TypeChecker.getInstance().getTypeOf(query);
-    // ======
+    // ====== 
     if (SNodeOperations.isInstanceOf(query, "jetbrains.mps.lang.generator.structure.SourceSubstituteMacro_SourceNodeQuery")) {
       {
         _Patterns.Pattern_1 pattern_0 = new _Patterns.Pattern_1();

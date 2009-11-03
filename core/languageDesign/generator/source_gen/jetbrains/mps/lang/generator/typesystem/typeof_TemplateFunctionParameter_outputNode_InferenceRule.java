@@ -33,7 +33,7 @@ public class typeof_TemplateFunctionParameter_outputNode_InferenceRule extends A
     } else {
       mapperFunc = SLinkOperations.getTarget(SNodeOperations.cast(parentMacro, "jetbrains.mps.lang.generator.structure.MapSrcListMacro"), "mapperFunction", true);
     }
-    //  ----
+    //  ---- 
     if (mapperFunc != null) {
       {
         SNode _nodeToCheck_1029348928467 = node;
@@ -42,7 +42,7 @@ public class typeof_TemplateFunctionParameter_outputNode_InferenceRule extends A
         typeCheckingContext.createEquation((SNode)typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902e4(jetbrains.mps.lang.generator.typesystem)", "1225234901779", true), (SNode)typeCheckingContext.typeOf(mapperFunc, "r:00000000-0000-4000-0000-011c895902e4(jetbrains.mps.lang.generator.typesystem)", "1225234918647", false), _info_12389875345);
       }
     } else {
-      //  concept of the wrapped template code
+      //  concept of the wrapped template code 
       SNode concept = SNodeOperations.getConceptDeclaration(SNodeOperations.getParent(parentMacro));
       {
         SNode _nodeToCheck_1029348928467 = node;

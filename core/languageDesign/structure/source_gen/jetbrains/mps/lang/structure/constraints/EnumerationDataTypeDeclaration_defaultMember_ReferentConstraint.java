@@ -22,7 +22,7 @@ public class EnumerationDataTypeDeclaration_defaultMember_ReferentConstraint ext
   }
 
   public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferentConstraintContext _context) {
-    // members declared here
+    // members declared here 
     return new SubnodesSearchScope(_context.getReferenceNode());
   }
 }

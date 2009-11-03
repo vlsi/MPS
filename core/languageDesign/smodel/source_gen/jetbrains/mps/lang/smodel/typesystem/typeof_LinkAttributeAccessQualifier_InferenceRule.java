@@ -25,7 +25,7 @@ public class typeof_LinkAttributeAccessQualifier_InferenceRule extends AbstractI
     if (annotationLink == null) {
       return;
     }
-    // assign type
+    // assign type 
     if (SPropertyOperations.hasValue(annotationLink, "sourceCardinality", "0..1", "0..1")) {
       {
         SNode _nodeToCheck_1029348928467 = nodeToCheck;
@@ -41,7 +41,7 @@ public class typeof_LinkAttributeAccessQualifier_InferenceRule extends AbstractI
         typeCheckingContext.createEquation((SNode)typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "5458013232459741118", true), (SNode)new _Quotations.QuotationClass_123().createNode(SLinkOperations.getTarget(annotationLink, "target", false), typeCheckingContext), _info_12389875345);
       }
     }
-    // ---
+    // --- 
     if (!(SPropertyOperations.hasValue(annotationLink, "stereotype", "link", "node"))) {
       BaseIntentionProvider intentionProvider = null;
       IErrorTarget errorTarget = new NodeErrorTarget();
@@ -49,7 +49,7 @@ public class typeof_LinkAttributeAccessQualifier_InferenceRule extends AbstractI
     }
     SNode linkQualifier = SLinkOperations.getTarget(nodeToCheck, "linkQualifier", true);
     if (SNodeOperations.isInstanceOf(linkQualifier, "jetbrains.mps.lang.smodel.structure.PoundExpression")) {
-      // link role expected
+      // link role expected 
       {
         SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(SNodeOperations.cast(linkQualifier, "jetbrains.mps.lang.smodel.structure.PoundExpression"), "expression", true);
         BaseIntentionProvider intentionProvider = null;

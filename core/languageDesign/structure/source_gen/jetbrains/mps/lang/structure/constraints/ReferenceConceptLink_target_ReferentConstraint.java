@@ -22,7 +22,7 @@ public class ReferenceConceptLink_target_ReferentConstraint extends BaseNodeRefe
   }
 
   public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferentConstraintContext _context) {
-    // only nodes assignable to target type specified in concept link declaration
+    // only nodes assignable to target type specified in concept link declaration 
     if (SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getReferenceNode(), "conceptLinkDeclaration", false), "targetType", false) == null) {
       return null;
     }

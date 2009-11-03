@@ -82,7 +82,7 @@ public class MacrosSwitch_KeyMap extends EditorCellKeyMap {
     }
 
     private void execute_internal(final KeyEvent keyEvent, final EditorContext editorContext, final SNode node, final List<SNode> selectedNodes) {
-      // do not hang <TF> on other attributes
+      // do not hang <TF> on other attributes 
       SNode applyToNode = ListSequence.fromList(SNodeOperations.getAncestors(node, null, true)).where(new IWhereFilter<SNode>() {
         public boolean accept(SNode it) {
           return !(SNodeOperations.isAttribute(it));
@@ -135,7 +135,7 @@ public class MacrosSwitch_KeyMap extends EditorCellKeyMap {
 
     private void execute_internal(final KeyEvent keyEvent, final EditorContext editorContext, final SNode node, final List<SNode> selectedNodes) {
       SNode nodeMacro = QueriesUtil.addNodeMacro(node);
-      // set caret
+      // set caret 
       editorContext.selectAndSetCaret(nodeMacro, 1);
     }
 
@@ -183,7 +183,7 @@ public class MacrosSwitch_KeyMap extends EditorCellKeyMap {
 
     private void execute_internal(final KeyEvent keyEvent, final EditorContext editorContext, final SNode node, final List<SNode> selectedNodes) {
       SNode propertyMacro = QueriesUtil.addPropertyMacro(node, editorContext.getSelectedCell());
-      // set caret
+      // set caret 
       editorContext.selectAndSetCaret(propertyMacro, 0);
       InspectorTool inspector = editorContext.getOperationContext().getComponent(InspectorTool.class);
       assert inspector != null;
@@ -234,7 +234,7 @@ public class MacrosSwitch_KeyMap extends EditorCellKeyMap {
 
     private void execute_internal(final KeyEvent keyEvent, final EditorContext editorContext, final SNode node, final List<SNode> selectedNodes) {
       SNode referenceMacro = QueriesUtil.addReferenceMacro(node, editorContext.getSelectedCell());
-      // set caret
+      // set caret 
       editorContext.selectAndSetCaret(referenceMacro, 2);
       InspectorTool inspector = editorContext.getOperationContext().getComponent(InspectorTool.class);
       assert inspector != null;

@@ -21,6 +21,6 @@ public class SequenceFeature_writable_PropertyConstraint implements IModelConstr
   }
 
   public void execPropertySet(final SNode node, final String propertyName, final String propertyValue, final IScope scope) {
-    //  this is a read only property
+    //  this is a read only property 
   }
 }

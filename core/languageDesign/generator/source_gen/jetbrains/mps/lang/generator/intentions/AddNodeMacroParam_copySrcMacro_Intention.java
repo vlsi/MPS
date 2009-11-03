@@ -70,7 +70,7 @@ public class AddNodeMacroParam_copySrcMacro_Intention extends BaseIntention {
     SLinkOperations.setTarget(expressionStatement, "expression", dotExpression, true);
     SLinkOperations.addChild(SLinkOperations.getTarget(referentValue, "body", true), "statement", expressionStatement);
     SLinkOperations.setTarget(copySrcMacro, "sourceNodeQuery", referentValue, true);
-    // set caret
+    // set caret 
     editorContext.selectAndSetCaret(copySrcMacro, 1);
   }
 

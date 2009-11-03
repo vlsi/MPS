@@ -73,7 +73,7 @@ public class AddNodeMacroParam_ifMacro_Intention extends BaseIntention {
     SLinkOperations.setTarget(expressionStatement, "expression", dotExpression, true);
     SLinkOperations.addChild(SLinkOperations.getTarget(ifMacro_Condition, "body", true), "statement", expressionStatement);
     SLinkOperations.setTarget(ifMacro, "conditionFunction", ifMacro_Condition, true);
-    // set caret
+    // set caret 
     editorContext.selectAndSetCaret(ifMacro, 1);
   }
 

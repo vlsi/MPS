@@ -37,7 +37,7 @@ public class QueriesGenerated {
 
   public static Object propertyMacro_GetPropertyValue_1216862267927(final IOperationContext operationContext, final PropertyMacroContext _context) {
     if (SPropertyOperations.getString(_context.getNode(), "labelName_intern") != null) {
-      // operation has been preprocessed by mapping script in TLBase
+      // operation has been preprocessed by mapping script in TLBase 
       return SPropertyOperations.getString(_context.getNode(), "labelName_intern");
     }
     return SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "label", false), "name");
@@ -45,7 +45,7 @@ public class QueriesGenerated {
 
   public static Object propertyMacro_GetPropertyValue_1216862267963(final IOperationContext operationContext, final PropertyMacroContext _context) {
     if (SPropertyOperations.getString(_context.getNode(), "labelName_intern") != null) {
-      // operation has been preprocessed by mapping script in TLBase
+      // operation has been preprocessed by mapping script in TLBase 
       return SPropertyOperations.getString(_context.getNode(), "labelName_intern");
     }
     return SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "label", false), "name");
@@ -53,7 +53,7 @@ public class QueriesGenerated {
 
   public static Object propertyMacro_GetPropertyValue_1217882311150(final IOperationContext operationContext, final PropertyMacroContext _context) {
     if (SPropertyOperations.getString(_context.getNode(), "labelName_intern") != null) {
-      // operation has been preprocessed by mapping script in TLBase
+      // operation has been preprocessed by mapping script in TLBase 
       return SPropertyOperations.getString(_context.getNode(), "labelName_intern");
     }
     return SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "label", false), "name");
@@ -61,7 +61,7 @@ public class QueriesGenerated {
 
   public static Object propertyMacro_GetPropertyValue_1221157951099(final IOperationContext operationContext, final PropertyMacroContext _context) {
     if (SPropertyOperations.getString(_context.getNode(), "labelName_intern") != null) {
-      // operation has been preprocessed by mapping script in TLBase
+      // operation has been preprocessed by mapping script in TLBase 
       return SPropertyOperations.getString(_context.getNode(), "labelName_intern");
     }
     return SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "label", false), "name");
@@ -69,14 +69,14 @@ public class QueriesGenerated {
 
   public static Object propertyMacro_GetPropertyValue_1221219976864(final IOperationContext operationContext, final PropertyMacroContext _context) {
     if (SPropertyOperations.getString(_context.getNode(), "labelName_intern") != null) {
-      // operation has been preprocessed by mapping script in TLBase
+      // operation has been preprocessed by mapping script in TLBase 
       return SPropertyOperations.getString(_context.getNode(), "labelName_intern");
     }
     return SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "label", false), "name");
   }
 
   public static Object referenceMacro_GetReferent_1216862267882(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    // method parameter
+    // method parameter 
     return "_context";
   }
 
@@ -97,7 +97,7 @@ public class QueriesGenerated {
   }
 
   public static SNode sourceNodeQuery_1216862267891(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    // delegate reduction to operation
+    // delegate reduction to operation 
     return SLinkOperations.getTarget(_context.getNode(), "operation", true);
   }
 
@@ -146,7 +146,7 @@ public class QueriesGenerated {
   }
 
   public static SNode sourceNodeQuery_1217891713240(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    // delegate reduction to operation
+    // delegate reduction to operation 
     return SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(_context.getNode(), "lValue", true), "jetbrains.mps.baseLanguage.structure.DotExpression"), "operation", true);
   }
 

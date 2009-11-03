@@ -818,7 +818,7 @@ public class QueriesGenerated {
       }
       List<SNode> modules = SNodeOperations.getDescendants(layout, "jetbrains.mps.build.packaging.structure.Module", false, new String[]{});
       Map<IModule, List<SNode>> map = MapSequence.fromMap(new LinkedHashMap<IModule, List<SNode>>(16, (float)0.75, false));
-      // fill map
+      // fill map 
       for (SNode module : ListSequence.fromList(modules)) {
         IModule imodule = Module_Behavior.call_getModule_1213877515148(module);
         if ((imodule instanceof DevKit) || (!(imodule.isCompileInMPS()))) {
@@ -831,9 +831,9 @@ public class QueriesGenerated {
         }
         ListSequence.fromList(modulesForIModule).addElement(module);
       }
-      // calculate module cycles
+      // calculate module cycles 
       List<Set<IModule>> sm = StronglyConnectedModules.getInstance().getStronglyConnectedComponents(MapSequence.fromMap(map).keySet());
-      // say to all modules it's cycle
+      // say to all modules it's cycle 
       for (Set<IModule> moduleSet : ListSequence.fromList(sm)) {
         SNode cycle = SConceptOperations.createNewNode("jetbrains.mps.build.packaging.structure.ModuleCycle", null);
         SLinkOperations.addChild(layout, "cycle", cycle);

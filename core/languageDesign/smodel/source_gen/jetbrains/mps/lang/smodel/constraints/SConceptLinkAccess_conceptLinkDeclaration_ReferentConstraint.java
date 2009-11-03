@@ -28,7 +28,7 @@ public class SConceptLinkAccess_conceptLinkDeclaration_ReferentConstraint extend
   }
 
   public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferentConstraintContext _context) {
-    // concept links from hierarchy
+    // concept links from hierarchy 
     SNode operandConcept = SModelLanguageUtil.getConcept(SLinkOperations.getTarget(SNodeOperations.cast(_context.getEnclosingNode(), "jetbrains.mps.baseLanguage.structure.DotExpression"), "operand", true));
     if ((operandConcept == null)) {
       SNode leftType = TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(SNodeOperations.cast(_context.getEnclosingNode(), "jetbrains.mps.baseLanguage.structure.DotExpression"), "operand", true));

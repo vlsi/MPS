@@ -20,7 +20,7 @@ public class typeof_SLinkAccess_InferenceRule extends AbstractInferenceRule_Runt
     if (linkDecl == null) {
       return;
     }
-    // assign type
+    // assign type 
     {
       SNode _nodeToCheck_1029348928467 = op;
       BaseIntentionProvider intentionProvider = null;

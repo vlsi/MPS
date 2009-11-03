@@ -27,16 +27,16 @@ public class ModuleCycle_Behavior {
   }
 
   public static List<SNode> call_getClassPath_1218646038565(SNode thisNode) {
-    // collecting modules
+    // collecting modules 
     Set<IModule> modules = SetSequence.fromSet(new HashSet<IModule>());
     for (SNode moduleRef : ListSequence.fromList(SLinkOperations.getTargets(thisNode, "moduleReference", true))) {
       IModule module = Module_Behavior.call_getModule_1213877515148(SLinkOperations.getTarget(moduleRef, "module", false));
       SetSequence.fromSet(modules).addElement(module);
     }
-    // getting classpath
+    // getting classpath 
     IClassPathItem classpath = AbstractModule.getDependenciesClasspath(modules, false, false);
     List<String> stringClasspath = ModuleUtil.retrieveClassPath(classpath);
-    // creating path holders to use in generator
+    // creating path holders to use in generator 
     return ModuleCycle_Behavior.createPathHolders_1218716903754(stringClasspath, ModuleCycle_Behavior.call_getBasedir_1218647622991(thisNode), SLinkOperations.getTargets(SNodeOperations.getAncestor(thisNode, "jetbrains.mps.build.packaging.structure.MPSLayout", true, true), "macro", true));
   }
 

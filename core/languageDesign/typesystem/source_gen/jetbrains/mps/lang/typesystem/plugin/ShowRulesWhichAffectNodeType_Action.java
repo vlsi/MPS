@@ -112,12 +112,12 @@ public class ShowRulesWhichAffectNodeType_Action extends GeneratedAction {
           ListSequence.fromList(rules).addElement(rule);
         }
       }
-      // single rule
+      // single rule 
       if (ListSequence.fromList(rules).count() == 1) {
         ShowRulesWhichAffectNodeType_Action.this.operationContext.getComponent(MPSEditorOpener.class).openNode(ListSequence.fromList(rules).getElement(0));
         return;
       }
-      // multiple rules
+      // multiple rules 
       MyMenu m = new MyMenu(rules, ShowRulesWhichAffectNodeType_Action.this.operationContext);
       int x = 0;
       int y = 0;

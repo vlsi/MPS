@@ -327,7 +327,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_1215793639656(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    // todo this is a workaround for IDEA bug with using names in schemes instead of IDs
+    // todo this is a workaround for IDEA bug with using names in schemes instead of IDs 
     return (SPropertyOperations.getString(_context.getNode(), "caption") != null ?
       SPropertyOperations.getString(_context.getNode(), "caption") :
       SPropertyOperations.getString(_context.getNode(), "name")

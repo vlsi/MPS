@@ -71,7 +71,7 @@ public class AddPropertyMacroParam_property_Intention extends BaseIntention {
     SLinkOperations.setTarget(expressionStatement, "expression", dotExpression, true);
     SLinkOperations.addChild(SLinkOperations.getTarget(propertyValue, "body", true), "statement", expressionStatement);
     SLinkOperations.setTarget(propertyMacro, "propertyValueFunction", propertyValue, true);
-    // set caret
+    // set caret 
     editorContext.selectAndSetCaret(propertyMacro, 0);
   }
 

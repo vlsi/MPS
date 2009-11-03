@@ -47,7 +47,7 @@ public class AddAuthorBlockDocTag_Intention extends BaseIntention {
   public void execute(final SNode node, final EditorContext editorContext) {
     SNode authorTag = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.javadoc.structure.AuthorBlockDocTag", null);
     SLinkOperations.addChild(node, "author", authorTag);
-    //  TODO
+    //  TODO 
     editorContext.getNodeEditorComponent().setSelectionDontClearStack(editorContext.getNodeEditorComponent().findNodeCellWithRole(authorTag, "text"), true, true);
     editorContext.select(authorTag);
   }

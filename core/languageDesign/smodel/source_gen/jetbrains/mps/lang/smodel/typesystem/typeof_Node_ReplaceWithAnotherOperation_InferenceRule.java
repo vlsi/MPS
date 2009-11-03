@@ -23,7 +23,7 @@ public class typeof_Node_ReplaceWithAnotherOperation_InferenceRule extends Abstr
       _info_12389875345.setInequationGroup("default");
       typeCheckingContext.createLessThanInequation((SNode)typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1206488003353", true), (SNode)new _Quotations.QuotationClass_70().createNode(typeCheckingContext), false, _info_12389875345);
     }
-    // op returns node passed in parameter
+    // op returns node passed in parameter 
     {
       SNode _nodeToCheck_1029348928467 = op;
       BaseIntentionProvider intentionProvider = null;
