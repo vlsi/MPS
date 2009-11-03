@@ -22,11 +22,16 @@ import jetbrains.mps.ide.ThreadUtils;
  * Jul 18, 2007
  */
 /*package*/ class ModelChange {
+  private static final boolean FREEZE_CHECKS_ENABLED = true;
+
   private static boolean isInsideUndoableCommand() {
     return ThreadUtils.isEventDispatchThread() && com.intellij.openapi.command.CommandProcessor.getInstance().getCurrentCommand() != null;
   }
 
   static void assertLegalNodeChange(SNode node) {
+    if (FREEZE_CHECKS_ENABLED && node.isFrozen()) {
+      throw new IllegalModelChangeError("can't modify a frozen node" + node.getDebugText());
+    }
     if (!(node.getModel().isLoading())) {
       boolean condition = !node.isRegistered() || isInsideUndoableCommand();
       if (!condition) {

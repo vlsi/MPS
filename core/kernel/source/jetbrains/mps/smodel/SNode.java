@@ -82,6 +82,8 @@ public final class SNode {
 
   private BaseAdapter myAdapter;
 
+  private boolean myIsFrozen = false;
+
   static {
     resetIdCounter();
   }
@@ -138,6 +140,34 @@ public final class SNode {
     fireNodeReadAccess();
     return myModel;
   }
+
+  public boolean isFrozen() {
+    return myIsFrozen;
+  }
+
+  /*package*/ void freeze() {
+    myIsFrozen = true;
+    for (SNode child : myChildren) {
+      child.freeze();
+    }
+  }
+
+  /*package*/ void unfreeze() {
+    if (myParent != null && myParent.myIsFrozen) {
+      LOG.error("can not unfreeze a node under a frozen one");
+      return;
+    }
+    unfreezeRec();
+  }
+
+  private void unfreezeRec() {
+    myIsFrozen = false;
+    for (SNode child : myChildren) {
+      child.unfreezeRec();
+    }
+  }
+
+
 
   public boolean isModelLoading() {
     return myModel.isLoading();

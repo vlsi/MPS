@@ -30,6 +30,7 @@ import jetbrains.mps.lang.core.structure.BaseConcept;
 import java.util.*;
 
 import org.jetbrains.annotations.Nullable;
+import com.intellij.openapi.util.Computable;
 
 public class SubtypingManager {
   private static final Logger LOG = Logger.getLogger(SubtypingManager.class);
@@ -288,7 +289,7 @@ public class SubtypingManager {
     return result;
   }
 
-  private void collectImmediateSupertypes_internal(SNode term, boolean isWeak, StructuralNodeSet result, EquationManager equationManager, String supertypeConceptFQName) {
+  private void collectImmediateSupertypes_internal(final SNode term, boolean isWeak, StructuralNodeSet result, EquationManager equationManager, String supertypeConceptFQName) {
     if (term == null) {
       return;
     }
@@ -298,12 +299,17 @@ public class SubtypingManager {
       possiblyBlindAlley = myTypeChecker.getRulesManager().subtypingRulesByNodeAreAllByConcept(term, isWeak);
     }
     if (subtypingRule_runtimes != null) {
-      for (SubtypingRule_Runtime subtypingRule : subtypingRule_runtimes) {
+      for (final SubtypingRule_Runtime subtypingRule : subtypingRule_runtimes) {
         if (possiblyBlindAlley && subtypingRule.surelyKeepsConcept()) {
           //skip a rule, it will give us nothing
           continue;
         }
-        List<SNode> supertypes = subtypingRule.getSubOrSuperTypes(term, equationManager == null ? null : equationManager.getTypeCheckingContext());
+        final TypeCheckingContext tcContext = equationManager == null ? null : equationManager.getTypeCheckingContext();
+        List<SNode> supertypes = FreezeUtil.freezeAndCompute(term, new Computable<List<SNode>>() {
+          public List<SNode> compute() {
+            return subtypingRule.getSubOrSuperTypes(term, tcContext);
+          }
+        });
         result.addAll(supertypes);
       }
     }
