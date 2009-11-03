@@ -795,6 +795,7 @@
       <module fileurl="file://$PROJECT_DIR$/platform/buildlanguage/languages/distrib/distrib.iml" filepath="$PROJECT_DIR$/platform/buildlanguage/languages/distrib/distrib.iml" group="platform/build" />
       <module fileurl="file://$PROJECT_DIR$/samples/dslbook_example/dslbook_example.iml" filepath="$PROJECT_DIR$/samples/dslbook_example/dslbook_example.iml" group="samples" />
       <module fileurl="file://$PROJECT_DIR$/core/languageDesign/editor/editor.iml" filepath="$PROJECT_DIR$/core/languageDesign/editor/editor.iml" group="core/languageDesign" />
+      <module fileurl="file://$PROJECT_DIR$/platform/extensionMethod/extensionMethod.iml" filepath="$PROJECT_DIR$/platform/extensionMethod/extensionMethod.iml" group="platform" />
       <module fileurl="file://$PROJECT_DIR$/core/languageDesign/findUsages/findUsages.iml" filepath="$PROJECT_DIR$/core/languageDesign/findUsages/findUsages.iml" group="core/languageDesign" />
       <module fileurl="file://$PROJECT_DIR$/samples/fixedLengthReader/fixedLengthReader.iml" filepath="$PROJECT_DIR$/samples/fixedLengthReader/fixedLengthReader.iml" group="samples" />
       <module fileurl="file://$PROJECT_DIR$/samples/formulaLanguage/formulaLanguage.iml" filepath="$PROJECT_DIR$/samples/formulaLanguage/formulaLanguage.iml" group="samples" />
