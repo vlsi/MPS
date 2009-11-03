@@ -15,6 +15,8 @@
  */
 package jetbrains.mps.project;
 
+import jetbrains.mps.util.CollectionUtil;
+
 import java.util.HashSet;
 import java.util.Set;
 
@@ -22,8 +24,7 @@ class DependencyCollector<T extends IModule> {
   private IModule myStart;
   private Class<T> myResultElementType;
 
-  private Set<IModule> myVisited = new HashSet<IModule>();
-  private Set<T> myResult = new HashSet<T>();
+  private Set<IModule> myResult = new HashSet<IModule>();
 
   DependencyCollector(IModule start, Class<T> elementType) {
     myStart = start;
@@ -31,20 +32,22 @@ class DependencyCollector<T extends IModule> {
   }
 
   Set<T> collect() {
+    myResult.add(myStart);
     doCollect(myStart);
-    return myResult;
+
+    if (myResultElementType == IModule.class) {
+      return (Set<T>) myResult;
+    } else {
+      return CollectionUtil.filter(myResultElementType, myResult);
+    }
   }
 
   private void doCollect(IModule current) {
-    myVisited.add(current);
-
     for (IModule module : current.getExplicitlyDependOnModules()) {
-      if (myVisited.contains(module)) continue;
-      
-      if ((myResultElementType == IModule.class || myResultElementType.isInstance(module))) {
-        myResult.add((T) module);
+      if (myResult.add(module)) {
         doCollect(module);
       }
     }
   }
+
 }

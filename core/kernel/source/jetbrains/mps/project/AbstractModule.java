@@ -246,9 +246,7 @@ public abstract class AbstractModule implements IModule {
    * @return all depend on
    */
   public <T extends IModule> Set<T> getAllDependOnModules(Class<T> cls) {
-    Set<T> modules = new HashSet<T>();
-
-    modules.addAll(new DependencyCollector(this, cls).collect());
+    Set<T> modules = new DependencyCollector(this, cls).collect();
 
     // add bootstrap languages
     if (Language.class.isAssignableFrom(cls)) {
