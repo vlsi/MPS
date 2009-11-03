@@ -15,6 +15,7 @@ public class PeriodPropertyFormatToken extends PeriodFormatToken {
   public static final String SUFFIX = "suffix";
   public static final String SUFFIX_PLURAL = "suffixPlural";
   public static final String MIN_DIGITS = "minDigits";
+  public static final String ZERO_HANDLING = "zeroHandling";
   public static final String PROPERTY = "property";
 
   public PeriodPropertyFormatToken(SNode node) {
@@ -59,6 +60,15 @@ public class PeriodPropertyFormatToken extends PeriodFormatToken {
 
   public void setMinDigits(int value) {
     this.setIntegerProperty(PeriodPropertyFormatToken.MIN_DIGITS, value);
+  }
+
+  public PeriodZeroHandlingKind getZeroHandling() {
+    String value = super.getProperty(PeriodPropertyFormatToken.ZERO_HANDLING);
+    return PeriodZeroHandlingKind.parseValue(value);
+  }
+
+  public void setZeroHandling(PeriodZeroHandlingKind value) {
+    super.setProperty(PeriodPropertyFormatToken.ZERO_HANDLING, value.getValueAsString());
   }
 
   public DateTimeProperty getProperty() {
