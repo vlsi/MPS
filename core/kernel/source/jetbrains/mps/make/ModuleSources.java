@@ -132,11 +132,10 @@ public class ModuleSources {
   }
 
   private boolean isFileUpToDate(JavaFile javaFile, IFile classFile) {
-    long classFileLastModified = classFile.lastModified();
-    if (javaFile.getFile().lastModified() < classFileLastModified) {
+    if (javaFile.getFile().lastModified() < classFile.lastModified()) {
       for (String fqName : myDependencies.getAllDependencies(javaFile.getClassName())) {
         IFile depJavaFile = myDependencies.getJavaFile(fqName);
-        if (depJavaFile != null && depJavaFile.lastModified() > classFileLastModified) {
+        if (depJavaFile != null && depJavaFile.lastModified() > classFile.lastModified()) {
           return false;
         }
       }
