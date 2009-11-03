@@ -24,6 +24,6 @@ public class LanguageNewCustomPartActions_ActionGroup extends GeneratedActionGro
   }
 
   public void adjust() {
-    this.insertGroupIntoAnother(LanguageNewActions_ActionGroup.ID, null);
+    this.insertGroupIntoAnother(LanguageNewActions_ActionGroup.ID, LanguageNewActions_ActionGroup.LABEL_ID_newAspect);
   }
 }

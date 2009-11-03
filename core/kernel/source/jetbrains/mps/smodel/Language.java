@@ -483,6 +483,18 @@ public class Language extends AbstractModule {
     return LanguageAspect.STRUCTURE.get(this);
   }
 
+  public List<SModelDescriptor> getUtilModels() {
+    List<SModelDescriptor> result = new ArrayList<SModelDescriptor>();
+    for (SModelDescriptor md : getOwnModelDescriptors()) {
+      if (md.getStereotype().equals(SModelStereotype.NONE)
+        && getAspectForModel(md) == null
+        && !isAccessoryModel(md.getSModelReference())) {
+        result.add(md);
+      }
+    }
+    return result;
+  }
+
   public Set<SModelDescriptor> getImplicitlyImportedModelsFor(SModelDescriptor sm) {
     Set<SModelDescriptor> result = new LinkedHashSet<SModelDescriptor>(super.getImplicitlyImportedModelsFor(sm));
 

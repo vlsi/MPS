@@ -522,6 +522,13 @@
         <link role="action" targetNodeId="6894430479832260683" resolveInfo="NewAccessoryModel" />
       </node>
       <node role="reference" type="jetbrains.mps.lang.plugin.structure.Separator" id="1204911225380" />
+      <node role="reference" type="jetbrains.mps.lang.plugin.structure.GroupAnchor" id="8031518517959137824">
+        <property name="name" value="newAspect" />
+      </node>
+      <node role="reference" type="jetbrains.mps.lang.plugin.structure.Separator" id="8031518517959137822" />
+      <node role="reference" type="jetbrains.mps.lang.plugin.structure.ActionInstance" id="8031518517959155812">
+        <link role="action" targetNodeId="1215903504454" resolveInfo="NewModel" />
+      </node>
     </node>
   </node>
   <node type="jetbrains.mps.lang.plugin.structure.ActionGroupDeclaration" id="1204991226689">
@@ -1077,6 +1084,7 @@
     </node>
     <node role="modifier" type="jetbrains.mps.lang.plugin.structure.ModificationStatement" id="1209134675047">
       <link role="modifiedGroup" targetNodeId="1204991225922" resolveInfo="LanguageNewActions" />
+      <link role="point" targetNodeId="8031518517959137824" resolveInfo="newAspect" />
     </node>
   </node>
   <node type="jetbrains.mps.lang.plugin.structure.InterfaceGroup" id="1215004007755">

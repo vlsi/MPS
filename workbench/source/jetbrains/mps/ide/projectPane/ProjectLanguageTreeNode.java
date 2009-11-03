@@ -128,6 +128,15 @@ class ProjectLanguageTreeNode extends ProjectModuleTreeNode {
     }
     add(languageRuntime);
 
+    if (myLanguage.getUtilModels().size() > 0) {
+      TextTreeNode utilModels = new UtilModelsTreeNode();
+      List<SModelDescriptor> sortedModels = SortUtil.sortModels(myLanguage.getUtilModels());
+      for (SModelDescriptor model : sortedModels) {
+        utilModels.add(new SModelTreeNode(model, null, operationContext, false));
+      }
+      this.add(utilModels);
+    }
+
     TextTreeNode allModels = new AllModelsTreeNode();
     allModels.setIcon(Icons.PROJECT_MODELS_ICON, false);
     allModels.setIcon(Icons.PROJECT_MODELS_EXPANDED_ICON, true);
@@ -151,6 +160,12 @@ class ProjectLanguageTreeNode extends ProjectModuleTreeNode {
     public AccessoriesModelTreeNode() {
       super("accessories");
       setIcon(Icons.LIB_ICON);
+    }
+  }
+
+  public class UtilModelsTreeNode extends TextTreeNode {
+    public UtilModelsTreeNode() {
+      super("util models");
     }
   }
 }

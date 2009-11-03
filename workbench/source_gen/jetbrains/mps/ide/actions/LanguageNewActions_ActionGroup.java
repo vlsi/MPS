@@ -8,6 +8,7 @@ import jetbrains.mps.logging.Logger;
 public class LanguageNewActions_ActionGroup extends GeneratedActionGroup {
   private static Logger LOG = Logger.getLogger(LanguageNewActions_ActionGroup.class);
   public static final String ID = "jetbrains.mps.ide.actions.LanguageNewActions";
+  public static final String LABEL_ID_newAspect = ID + "newAspect";
 
   public LanguageNewActions_ActionGroup() {
     super("New", ID);
@@ -18,6 +19,9 @@ public class LanguageNewActions_ActionGroup extends GeneratedActionGroup {
       LanguageNewActions_ActionGroup.this.addSeparator();
       LanguageNewActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.NewAccessoryModel_Action", "jetbrains.mps.ide");
       LanguageNewActions_ActionGroup.this.addSeparator();
+      LanguageNewActions_ActionGroup.this.addAnchor(LanguageNewActions_ActionGroup.LABEL_ID_newAspect);
+      LanguageNewActions_ActionGroup.this.addSeparator();
+      LanguageNewActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.NewModel_Action", "jetbrains.mps.ide");
     } catch (Throwable t) {
       LOG.error("User group error", t);
     }

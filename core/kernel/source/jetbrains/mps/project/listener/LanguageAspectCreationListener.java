@@ -18,7 +18,7 @@ public class LanguageAspectCreationListener extends ModelCreationListener {
   }
 
   public boolean isApplicable(SModelDescriptor m) {
-    return m.getModule() instanceof Language;
+    return m.getModule() instanceof Language && ((Language) m.getModule()).getAspectForModel(m) != null;
   }
 
   public void onCreate(SModelDescriptor model) {
