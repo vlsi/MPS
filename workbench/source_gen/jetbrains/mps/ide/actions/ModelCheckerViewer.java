@@ -7,27 +7,26 @@ import jetbrains.mps.ide.findusages.view.UsagesView;
 import jetbrains.mps.project.MPSProject;
 import java.awt.BorderLayout;
 import jetbrains.mps.ide.findusages.view.treeholder.treeview.ViewOptions;
+import jetbrains.mps.ide.findusages.model.IResultProvider;
+import jetbrains.mps.ide.findusages.view.FindUtils;
+import java.util.Arrays;
+import jetbrains.mps.ide.findusages.model.SearchQuery;
+import jetbrains.mps.ide.findusages.model.SearchResults;
 import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.smodel.IScope;
 import com.intellij.openapi.progress.ProgressManager;
 import com.intellij.openapi.progress.Task;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.progress.ProgressIndicator;
+import jetbrains.mps.project.IModule;
 import jetbrains.mps.ide.findusages.findalgorithm.finders.IFinder;
-import jetbrains.mps.ide.findusages.model.SearchResults;
-import jetbrains.mps.ide.findusages.model.SearchQuery;
 import java.util.List;
 import jetbrains.mps.ide.findusages.model.SearchResult;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import java.util.HashSet;
-import jetbrains.mps.ide.findusages.model.IResultProvider;
-import jetbrains.mps.ide.findusages.view.FindUtils;
-import java.util.Arrays;
-import jetbrains.mps.project.IModule;
 import jetbrains.mps.ide.findusages.view.treeholder.treeview.INodeRepresentator;
 import java.util.Map;
 import jetbrains.mps.smodel.SNodeId;
@@ -70,29 +69,14 @@ public class ModelCheckerViewer extends JPanel {
     this.add(this.myUsagesView.getComponent());
   }
 
-  public boolean checkModel(final SModel model, final IScope scope) {
-    ProgressManager.getInstance().run(new Task.Modal(this.myProject.getComponent(Project.class), "Checking " + SModelOperations.getModelName(model), true) {
-      public void run(@NotNull ProgressIndicator indicator) {
-        ModelCheckerViewer.this.myLastResults = ModelCheckerResultsFinder.getResults(model, scope, indicator);
-      }
-    });
+  public boolean saveCheckerResults() {
     if (this.myLastResults == null) {
-      //  Checking was cancelled 
+      // Checking was cancelled 
       return false;
     }
+
     this.myNodeRepresentator.saveCheckerResults(this.myLastResults);
-
-    IFinder finder = new IFinder() {
-      public SearchResults find(SearchQuery searchQuery, ProgressIndicator indicator) {
-        List<SearchResult<SNode>> searchResults = ListSequence.fromList(new ArrayList<SearchResult<SNode>>());
-        for (ModelCheckerResults.Result result : ListSequence.fromList(ModelCheckerViewer.this.myLastResults.getResultsList())) {
-          ListSequence.fromList(searchResults).addElement(new SearchResult<SNode>(result.getNode(), result.getStatus().toString()));
-        }
-        return new SearchResults<SNode>(new HashSet<SNode>(), searchResults);
-      }
-    };
-
-    IResultProvider resultProvider = FindUtils.makeProvider(Arrays.asList(finder));
+    IResultProvider resultProvider = FindUtils.makeProvider(Arrays.asList(getFinderFromModelCheckerResults(this.myLastResults)));
     SearchQuery searchQuery = new SearchQuery(this.myProject.getScope());
     this.myUsagesView.setRunOptions(resultProvider, searchQuery, new UsagesView.ButtonConfiguration(false, false, false), new SearchResults());
     this.myUsagesView.run(null);
@@ -100,10 +84,49 @@ public class ModelCheckerViewer extends JPanel {
     return true;
   }
 
-  public boolean checkModule(final IModule module, final IScope scope) {
-    //  TODO 
-    ModelCheckerViewer.this.myTool.openToolLater(true);
-    return true;
+  public boolean checkModel(final SModel model) {
+    ProgressManager.getInstance().run(new Task.Modal(this.myProject.getComponent(Project.class), "Checking " + SModelOperations.getModelName(model), true) {
+      public void run(@NotNull ProgressIndicator indicator) {
+        ModelCheckerViewer.this.myLastResults = ModelCheckerResultsFinder.checkModelAndGetResults(model, indicator);
+      }
+    });
+
+    return this.saveCheckerResults();
+  }
+
+  public boolean checkModule(final IModule module) {
+    ProgressManager.getInstance().run(new Task.Modal(this.myProject.getComponent(Project.class), "Checking " + module.getModuleFqName(), true) {
+      public void run(@NotNull ProgressIndicator indicator) {
+        ModelCheckerViewer.this.myLastResults = ModelCheckerResultsFinder.checkModuleAndGetResults(module, indicator);
+      }
+    });
+
+    return this.saveCheckerResults();
+  }
+
+  public boolean checkProject(final MPSProject mpsProject) {
+    ProgressManager.getInstance().run(new Task.Modal(this.myProject.getComponent(Project.class), "Checking " + mpsProject.getProjectDescriptor().getName(), true) {
+      public void run(@NotNull ProgressIndicator indicator) {
+        ModelCheckerViewer.this.myLastResults = ModelCheckerResultsFinder.checkProjectAndGetResults(mpsProject, indicator);
+      }
+    });
+
+    return this.saveCheckerResults();
+  }
+
+  private static IFinder getFinderFromModelCheckerResults(final ModelCheckerResults results) {
+    if (results == null) {
+      return null;
+    }
+    return new IFinder() {
+      public SearchResults find(SearchQuery searchQuery, ProgressIndicator indicator) {
+        List<SearchResult<SNode>> searchResults = ListSequence.fromList(new ArrayList<SearchResult<SNode>>());
+        for (ModelCheckerResults.Result result : ListSequence.fromList(results.getResultsList())) {
+          ListSequence.fromList(searchResults).addElement(new SearchResult<SNode>(result.getNode(), result.getStatus().toString()));
+        }
+        return new SearchResults<SNode>(new HashSet<SNode>(), searchResults);
+      }
+    };
   }
 
   public static class MyNodeRepresentator implements INodeRepresentator {
