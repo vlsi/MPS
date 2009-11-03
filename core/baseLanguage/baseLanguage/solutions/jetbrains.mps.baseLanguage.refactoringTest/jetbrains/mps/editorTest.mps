@@ -963,9 +963,7 @@
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1231671312978">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.BlockStatement" id="1231671331507">
           <node role="statements" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1231671331508">
-            <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636454109">
-              <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636454110" />
-            </node>
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="5090797586239056353" />
           </node>
         </node>
       </node>
