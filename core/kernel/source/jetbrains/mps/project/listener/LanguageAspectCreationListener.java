@@ -23,6 +23,7 @@ public class LanguageAspectCreationListener extends ModelCreationListener {
 
   public void onCreate(SModelDescriptor model) {
     Language language = (Language) model.getModule();
+    model.getSModel().addLanguage(language);
     LanguageAspect aspect = language.getAspectForModel(model);
     model.getSModel().addDevKit(LanguageDesign_DevKit.get());
 
