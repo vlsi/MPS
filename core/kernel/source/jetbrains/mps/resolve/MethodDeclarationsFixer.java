@@ -189,13 +189,16 @@ public class MethodDeclarationsFixer extends EditorCheckerAdapter {
 
     List<? extends BaseMethodDeclaration> methodDeclarationsGoodParams = MethodResolveUtil.selectByParmCount(candidates, actualArgs);
     BaseMethodDeclaration newTarget = null;
+    boolean good = true;
     if (methodDeclarationsGoodParams.size() == 1) {
       newTarget = methodDeclarationsGoodParams.get(0);
     } else {
-      newTarget = MethodResolveUtil.chooseByParameterType(methodDeclarationsGoodParams, actualArgs, typeByTypeVar);
+      jetbrains.mps.util.Pair<BaseMethodDeclaration,Boolean> pair = MethodResolveUtil.chooseByParameterTypeReportNoGoodMethod(methodDeclarationsGoodParams, actualArgs, typeByTypeVar);
+      newTarget = pair.o1;
+      good = pair.o2;
     }
     if (newTarget != null) {
-      if (baseMethodDeclaration == null || newTarget.getNode() != baseMethodDeclaration.getNode()) {
+      if (baseMethodDeclaration == null || (good && newTarget.getNode() != baseMethodDeclaration.getNode())) {
         reResolvedTargets.put(methodCall.getNode(), newTarget.getNode());
       }
       myMethodCallsToSetDecls.put(methodCall.getNode(), newTarget.getNode());
