@@ -13,12 +13,12 @@ public class any_type_subtypeof_wildcard_type_InequationReplacementRule extends 
   }
 
   public void processInequation(final SNode subtype, final SNode supertype, final EquationInfo equationInfo, final TypeCheckingContext typeCheckingContext) {
-    /*<!TextGen not found for 'jetbrains.mps.baseLanguage.structure.TextCommentPart'!>     */
+    // do I have to say more?  
   }
 
   public boolean checkInequation(final SNode subtype, final SNode supertype, final EquationInfo equationInfo) {
     boolean result_14532009 = true;
-    /*<!TextGen not found for 'jetbrains.mps.baseLanguage.structure.TextCommentPart'!>     */
+    // do I have to say more?  
     return result_14532009;
   }
 

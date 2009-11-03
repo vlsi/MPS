@@ -172,10 +172,10 @@ __switch__:
                       this.__CP__ = 6;
                       break;
                     case 8:
-                      /*<!TextGen not found for 'jetbrains.mps.baseLanguage.structure.TextCommentPart'!>                       */
-                      /*<!TextGen not found for 'jetbrains.mps.baseLanguage.structure.TextCommentPart'!>                       */
-                      /*<!TextGen not found for 'jetbrains.mps.baseLanguage.structure.TextCommentPart'!>                       */
-                      /*<!TextGen not found for 'jetbrains.mps.baseLanguage.structure.TextCommentPart'!>                       */
+                      // don't look inside closures and other code-blocks 
+                      // don't look inside commented statements 
+                      // don't look inside anything that implements IStatementListContainer (for extensibility) 
+                      // don't look inside anonymous classes 
                       this.__CP__ = 1;
                       break;
                     case 10:
@@ -277,7 +277,7 @@ __switch__:
               SNode componentType = SLinkOperations.getTarget(matchedNode_4, "componentType", true);
               final SNode matchedType = inference_matchTypeWithTypeVariables(typeCheckingContext, componentType, mmap);
               if (SLinkOperations.getCount(mc, "actualArgument") == ListSequence.fromList(parameterDeclarations).count()) {
-                /*<!TextGen not found for 'jetbrains.mps.baseLanguage.structure.TextCommentPart'!>                 */
+                // the actual parameter may appear to be an array instead of vararg 
                 final SNode actual = actualIterator.next();
                 {
                   final SNode actualType = typeCheckingContext.typeOf(actual, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1220347108709", true);
@@ -304,7 +304,7 @@ __switch__:
                   }, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1220347102532", false, false);
                 }
               } else {
-                /*<!TextGen not found for 'jetbrains.mps.baseLanguage.structure.TextCommentPart'!>                 */
+                // in this case the actual parameter is definitely a vararg 
                 while (actualIterator.hasNext()) {
                   SNode actual = actualIterator.next();
                   {
@@ -514,7 +514,7 @@ __switch__:
         continue;
       }
       if (SNodeOperations.getParent(namesake) != classifier) {
-        /*<!TextGen not found for 'jetbrains.mps.baseLanguage.structure.TextCommentPart'!>         */
+        // can't be duplicated, is overriden 
         continue;
       }
       if (ListSequence.fromList(SLinkOperations.getTargets(namesake, "parameter", true)).count() != ListSequence.fromList(SLinkOperations.getTargets(ownMethod, "parameter", true)).count()) {

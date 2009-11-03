@@ -40,8 +40,8 @@ public class QueriesGenerated {
   }
 
   public static boolean nodeSubstituteActionsBuilder_Precondition_Statement_1200829970134(final IOperationContext operationContext, final NodeSubstitutePreconditionContext _context) {
-    // return statements must be allowed until we find a way to implement early returns
-    // http://www.javac.info
+    // return statements must be allowed until we find a way to implement early returns 
+    // http://www.javac.info 
     return false && (SNodeOperations.getAncestor(_context.getParentNode(), "jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral", true, false) != null);
   }
 
@@ -102,7 +102,7 @@ public class QueriesGenerated {
             List<SNode> methods = SLinkOperations.getTargets(SLinkOperations.getTarget(SNodeOperations.cast(pdtype, "jetbrains.mps.baseLanguage.structure.ClassifierType"), "classifier", false), "method", true);
             if (ListSequence.fromList(methods).count() == 1) {
               SNode adaptTo = ListSequence.fromList(methods).getElement(0);
-              // TODO: generic parameters
+              // TODO: generic parameters 
               for (SNode adaptToPD : SLinkOperations.getTargets(adaptTo, "parameter", true)) {
                 SNode pd = SLinkOperations.addChild(_context.getNewNode(), "parameter", SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ParameterDeclaration", null));
                 SPropertyOperations.set(pd, "name", SPropertyOperations.getString(adaptToPD, "name"));

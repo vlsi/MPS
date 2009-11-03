@@ -19,7 +19,7 @@ public class ControlMethodUtil {
   public static ControlMethodUtil.Info analyze(SNode smd) {
     if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(smd, "returnType", true), "jetbrains.mps.baseLanguage.structure.VoidType")) {
       List<SNode> params = SLinkOperations.getTargets(smd, "parameter", true);
-      //  0..k-1 : control function parameters, k..l-1 : control closure parameter declarations (closures), l..m-1 : control closures
+      //  0..k-1 : control function parameters, k..l-1 : control closure parameter declarations (closures), l..m-1 : control closures 
       ControlMethodUtil.Info inf = new ControlMethodUtil.Info();
       int functionParams = 0;
       int initClosures = 0;

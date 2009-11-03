@@ -98,7 +98,7 @@ with_decls:
           }
         }
       }
-      // didn't find any assignment with the var reference in the lvalue
+      // didn't find any assignment with the var reference in the lvalue 
       it.remove();
     }
     return vdecls;

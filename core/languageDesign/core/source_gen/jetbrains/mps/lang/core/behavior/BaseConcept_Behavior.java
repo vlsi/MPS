@@ -30,17 +30,17 @@ public class BaseConcept_Behavior {
       }
       return "<no name>[" + SPropertyOperations.getString(SNodeOperations.getConceptDeclaration(thisNode), "name") + "]";
     }
-    // --
+    // -- 
     String smartRefPresentation = ReferenceConceptUtil.getPresentation(thisNode);
     if (smartRefPresentation != null) {
       return smartRefPresentation;
     }
-    // --
+    // -- 
     String conceptAlias = SConceptPropertyOperations.getString(thisNode, "alias");
     if (conceptAlias != null) {
       return conceptAlias;
     }
-    // --
+    // -- 
     return SPropertyOperations.getString(SNodeOperations.getConceptDeclaration(thisNode), "name");
   }
 

@@ -17,7 +17,7 @@ public class QueriesUtil {
   public static SNode createClassType_forClosure_enclosingClass(SNode inputClosure, ITemplateGenerator generator) {
     SNode enclosingClass = SNodeOperations.getAncestor(inputClosure, "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false);
     if (enclosingClass == null) {
-      /*<!TextGen not found for 'jetbrains.mps.baseLanguage.structure.TextCommentPart'!>       */
+      // closure is not in class 
       enclosingClass = getJavaLangObject();
     }
     SModel outputModel = generator.getOutputModel();
@@ -33,22 +33,22 @@ public class QueriesUtil {
   public static List<SNode> getTypeVars_from_Closure_enclosingClass(SNode inputClosure, IScope scope) {
     SNode enclosingClass = SNodeOperations.getAncestor(inputClosure, "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false);
     if (enclosingClass == null) {
-      /*<!TextGen not found for 'jetbrains.mps.baseLanguage.structure.TextCommentPart'!>       */
+      // closure is not in class 
       enclosingClass = getJavaLangObject();
     }
     return SLinkOperations.getTargets(enclosingClass, "typeVariableDeclaration", true);
   }
 
   public static SNode create_enclosingClassObject(SNode nodeInsideClosure) {
-    /*<!TextGen not found for 'jetbrains.mps.baseLanguage.structure.TextCommentPart'!>     */
-    /*<!TextGen not found for 'jetbrains.mps.baseLanguage.structure.TextCommentPart'!>     */
-    /*<!TextGen not found for 'jetbrains.mps.baseLanguage.structure.TextCommentPart'!>     */
+    //  
+    // must be invoked in $COPY-SRC$ because use ref on class in 'input model' 
+    //  
     SNode enclosingClass = SNodeOperations.getAncestor(nodeInsideClosure, "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false);
     if (enclosingClass == null) {
       return SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.NullLiteral", null);
     }
     SNode enclosingMethodOrClosure = SNodeOperations.getAncestorWhereConceptInList(nodeInsideClosure, new String[]{"jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration","jetbrains.mps.baseLanguage.structure.Closure"}, false, false);
-    /*<!TextGen not found for 'jetbrains.mps.baseLanguage.structure.TextCommentPart'!>     */
+    // --- in closure 
     if (SNodeOperations.isInstanceOf(enclosingMethodOrClosure, "jetbrains.mps.baseLanguage.structure.Closure")) {
       SNode fieldRef = new _Quotations.QuotationClass_0().createNode();
       SNode typeOfField = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ClassifierType", null);
@@ -56,13 +56,13 @@ public class QueriesUtil {
       SLinkOperations.setTarget(fieldRef, "fieldType", typeOfField, true);
       return fieldRef;
     }
-    /*<!TextGen not found for 'jetbrains.mps.baseLanguage.structure.TextCommentPart'!>     */
+    // --- in instance method 
     if (SNodeOperations.isInstanceOf(enclosingMethodOrClosure, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration") || SNodeOperations.isInstanceOf(enclosingMethodOrClosure, "jetbrains.mps.baseLanguage.structure.ConstructorDeclaration")) {
       SNode thisExpr = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ThisExpression", null);
       SLinkOperations.setTarget(thisExpr, "classConcept", enclosingClass, false);
       return thisExpr;
     }
-    /*<!TextGen not found for 'jetbrains.mps.baseLanguage.structure.TextCommentPart'!>     */
+    // --- none of above 
     return SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.NullLiteral", null);
   }
 

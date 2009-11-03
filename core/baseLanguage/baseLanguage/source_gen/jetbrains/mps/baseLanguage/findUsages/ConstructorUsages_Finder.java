@@ -35,12 +35,12 @@ public class ConstructorUsages_Finder extends GeneratedFinder {
   }
 
   protected void doFind(SNode node, IScope scope, List<SNode> _results, ProgressIndicator indicator) {
-    /*<!TextGen not found for 'jetbrains.mps.baseLanguage.structure.TextCommentPart'!>     */
-    /*<!TextGen not found for 'jetbrains.mps.baseLanguage.structure.TextCommentPart'!>     */
+    // search for straight usages & search for SUPER calls 
+    // BUG IN BASE LANGUAGE -- AT THE TIME THIS THING DOES NOT FIND SUPER() CALLS 
     for (SNode nodeUsage : ListSequence.fromList(FindUtils.executeFinder("jetbrains.mps.lang.structure.findUsages.NodeUsages_Finder", node, scope, indicator))) {
       ListSequence.fromList(_results).addElement(nodeUsage);
     }
-    /*<!TextGen not found for 'jetbrains.mps.baseLanguage.structure.TextCommentPart'!>     */
+    // WORKAROUND - FIND SUPER() CALLS 
     for (SNode subclassResult : ListSequence.fromList(FindUtils.executeFinder("jetbrains.mps.baseLanguage.findUsages.StraightDerivedClasses_Finder", SNodeOperations.getAncestor(node, "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false), scope, indicator))) {
       for (SNode constructorNode : ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(subclassResult, "jetbrains.mps.baseLanguage.structure.ClassConcept"), "constructor", true))) {
         for (SNode invocation : ListSequence.fromList(SNodeOperations.getDescendants(constructorNode, null, false, new String[]{})).where(new IWhereFilter<SNode>() {
@@ -65,7 +65,7 @@ public class ConstructorUsages_Finder extends GeneratedFinder {
         }
       }
     }
-    /*<!TextGen not found for 'jetbrains.mps.baseLanguage.structure.TextCommentPart'!>     */
+    // search for enum constants creation 
     SNode enumNode = SNodeOperations.cast(SNodeOperations.getAncestor(node, "jetbrains.mps.baseLanguage.structure.EnumClass", false, false), "jetbrains.mps.baseLanguage.structure.EnumClass");
     if (enumNode != null) {
       for (SNode enumConstant : ListSequence.fromList(SLinkOperations.getTargets(enumNode, "enumConstant", true))) {

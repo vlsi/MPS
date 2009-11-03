@@ -42,8 +42,8 @@ public class ClosureLiteral_Behavior {
   }
 
   public static SNode virtual_getExpectedRetType_1239354342632(SNode thisNode) {
-    // everything which is not void and null is good,
-    // look at ExpressionStatement.canServeAsReturn
+    // everything which is not void and null is good, 
+    // look at ExpressionStatement.canServeAsReturn 
     return new _Quotations.QuotationClass_10().createNode();
   }
 

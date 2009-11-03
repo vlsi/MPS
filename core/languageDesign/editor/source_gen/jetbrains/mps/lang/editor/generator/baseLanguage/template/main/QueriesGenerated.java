@@ -800,14 +800,14 @@ public class QueriesGenerated {
 
   public static Object referenceMacro_GetReferent_1197580078127(final IOperationContext operationContext, final ReferenceMacroContext _context) {
     SNode cellLayout = SLinkOperations.getTarget(_context.getNode(), "cellLayout", true);
-    // no cell layout defined (obsolete)
+    // no cell layout defined (obsolete) 
     if (cellLayout == null) {
       if (CellModel_ListWithRole_Behavior.call_isVertical_1239873472748(_context.getNode())) {
         return SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(new _Quotations.QuotationClass_4().createNode(), "creator", true), "jetbrains.mps.baseLanguage.structure.ClassCreator"), "baseMethodDeclaration", false);
       }
       return SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(new _Quotations.QuotationClass_5().createNode(), "creator", true), "jetbrains.mps.baseLanguage.structure.ClassCreator"), "baseMethodDeclaration", false);
     }
-    // choose cell layout
+    // choose cell layout 
     if (SNodeOperations.isInstanceOf(cellLayout, "jetbrains.mps.lang.editor.structure.CellLayout_Vertical")) {
       return SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(new _Quotations.QuotationClass_6().createNode(), "creator", true), "jetbrains.mps.baseLanguage.structure.ClassCreator"), "baseMethodDeclaration", false);
     }
@@ -823,7 +823,7 @@ public class QueriesGenerated {
     if (SNodeOperations.isInstanceOf(cellLayout, "jetbrains.mps.lang.editor.structure.CellLayout_Superscript")) {
       return SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(new _Quotations.QuotationClass_10().createNode(), "creator", true), "jetbrains.mps.baseLanguage.structure.ClassCreator"), "baseMethodDeclaration", false);
     }
-    // error
+    // error 
     return null;
   }
 
@@ -905,13 +905,13 @@ public class QueriesGenerated {
   public static Object referenceMacro_GetReferent_1229561240559(final IOperationContext operationContext, final ReferenceMacroContext _context) {
     SNode cellLayout = SLinkOperations.getTarget(_context.getNode(), "cellLayout", true);
     if (cellLayout == null) {
-      // no cell layout
+      // no cell layout 
       if (CellModel_Collection_Behavior.call_isVertical_1237380214915(_context.getNode())) {
         return SLinkOperations.getTarget(new _Quotations.QuotationClass_11().createNode(), "baseMethodDeclaration", false);
       }
       return SLinkOperations.getTarget(new _Quotations.QuotationClass_12().createNode(), "baseMethodDeclaration", false);
     }
-    // cell layout is defined
+    // cell layout is defined 
     if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(_context.getNode(), "cellLayout", true), "jetbrains.mps.lang.editor.structure.CellLayout_Vertical")) {
       return SLinkOperations.getTarget(new _Quotations.QuotationClass_13().createNode(), "baseMethodDeclaration", false);
     }
@@ -927,7 +927,7 @@ public class QueriesGenerated {
     if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(_context.getNode(), "cellLayout", true), "jetbrains.mps.lang.editor.structure.CellLayout_Superscript")) {
       return SLinkOperations.getTarget(new _Quotations.QuotationClass_17().createNode(), "baseMethodDeclaration", false);
     }
-    // default
+    // default 
     return SLinkOperations.getTarget(new _Quotations.QuotationClass_18().createNode(), "baseMethodDeclaration", false);
   }
 
@@ -1184,7 +1184,7 @@ public class QueriesGenerated {
   }
 
   public static boolean ifMacro_Condition_1187029422537(final IOperationContext operationContext, final IfMacroContext _context) {
-    // no 'is applicable' func, no 'applicable concept'
+    // no 'is applicable' func, no 'applicable concept' 
     if (SLinkOperations.getTarget(_context.getNode(), "isApplicableFunction", true) == null) {
       return SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.lang.editor.structure.CellKeyMapDeclaration"), "applicableConcept", false) == null;
     }
@@ -1192,7 +1192,7 @@ public class QueriesGenerated {
   }
 
   public static boolean ifMacro_Condition_1187029607011(final IOperationContext operationContext, final IfMacroContext _context) {
-    // has 'is applicable' func, but no 'applicable concept'
+    // has 'is applicable' func, but no 'applicable concept' 
     if (SLinkOperations.getTarget(_context.getNode(), "isApplicableFunction", true) != null) {
       return SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.lang.editor.structure.CellKeyMapDeclaration"), "applicableConcept", false) == null;
     }

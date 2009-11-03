@@ -26,7 +26,7 @@ public class NodeReferentConstraint_applicableLink_ReferentConstraint extends Ba
   }
 
   public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferentConstraintContext _context) {
-    // links declared in specified concept
+    // links declared in specified concept 
     SNode applicableConcept = NodeReferentConstraint_Behavior.call_getApplicableConcept_1213877399322(_context.getReferenceNode());
     if (applicableConcept == null) {
       SNode root = SNodeOperations.getContainingRoot(_context.getEnclosingNode());

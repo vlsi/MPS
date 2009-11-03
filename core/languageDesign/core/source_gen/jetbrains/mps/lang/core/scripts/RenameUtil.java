@@ -18,8 +18,8 @@ import javax.swing.JLabel;
 
 public class RenameUtil {
   public static boolean canBeRenamed(SNode node) {
-    // we won't rename nodes, for which there are registered name constrints
-    // if there are constrints, but they are not compiled, we can rename it
+    // we won't rename nodes, for which there are registered name constrints 
+    // if there are constrints, but they are not compiled, we can rename it 
     ModelConstraintsManager manager = ModelConstraintsManager.getInstance();
     String nameProperty = SPropertyOperations.getString(ListSequence.fromList(SLinkOperations.getTargets(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.core.structure.INamedConcept"), "propertyDeclaration", true)).first(), "name");
     return manager.getNodePropertyGetter(node, nameProperty) == null;

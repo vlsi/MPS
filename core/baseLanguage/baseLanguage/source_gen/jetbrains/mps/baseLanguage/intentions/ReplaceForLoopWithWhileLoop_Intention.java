@@ -45,19 +45,19 @@ public class ReplaceForLoopWithWhileLoop_Intention extends BaseIntention {
   }
 
   public void execute(final SNode node, final EditorContext editorContext) {
-    /*<!TextGen not found for 'jetbrains.mps.baseLanguage.structure.TextCommentPart'!>     */
+    // replace for loop with while 
     SNode whileStatement = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.WhileStatement", null);
     SNodeOperations.replaceWithAnother(node, whileStatement);
-    /*<!TextGen not found for 'jetbrains.mps.baseLanguage.structure.TextCommentPart'!>     */
+    // adjust while body 
     SLinkOperations.setTarget(whileStatement, "body", SLinkOperations.getTarget(node, "body", true), true);
-    /*<!TextGen not found for 'jetbrains.mps.baseLanguage.structure.TextCommentPart'!>     */
+    // adjust precondition 
     SNode preStatement = SNodeOperations.insertNewPrevSiblingChild(whileStatement, "jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement");
     SLinkOperations.setTarget(preStatement, "localVariableDeclaration", SLinkOperations.getTarget(node, "variable", true), true);
-    /*<!TextGen not found for 'jetbrains.mps.baseLanguage.structure.TextCommentPart'!>     */
+    // adjust iteration 
     SNode iterStatement = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ExpressionStatement", null);
     SLinkOperations.setTarget(iterStatement, "expression", SLinkOperations.getTarget(node, "iteration", true), true);
     SLinkOperations.addChild(SLinkOperations.getTarget(whileStatement, "body", true), "statement", iterStatement);
-    /*<!TextGen not found for 'jetbrains.mps.baseLanguage.structure.TextCommentPart'!>     */
+    // adjust exit condition 
     SLinkOperations.setTarget(whileStatement, "condition", SLinkOperations.getTarget(node, "condition", true), true);
   }
 

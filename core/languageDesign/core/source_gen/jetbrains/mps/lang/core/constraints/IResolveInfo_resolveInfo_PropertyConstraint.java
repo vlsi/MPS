@@ -28,6 +28,6 @@ public class IResolveInfo_resolveInfo_PropertyConstraint implements IModelConstr
   }
 
   public void execPropertySet(final SNode node, final String propertyName, final String propertyValue, final IScope scope) {
-    // nothing - resolveInfo is read-only
+    // nothing - resolveInfo is read-only 
   }
 }

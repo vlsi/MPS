@@ -99,7 +99,7 @@ public class FunctionType_Behavior {
     } else {
       buf.append(SPropertyOperations.getString(SNodeOperations.getConceptDeclaration(t), "name"));
     }
-    // TODO: sort children by role
+    // TODO: sort children by role 
     List<SNode> paramTypes = ListSequence.fromList(new ArrayList<SNode>());
     for (SNode c : SNodeOperations.getChildren(t)) {
       if (SNodeOperations.isInstanceOf(c, "jetbrains.mps.baseLanguage.structure.Type")) {

@@ -131,7 +131,7 @@ public class QueriesGenerated {
   }
 
   public static boolean baseMappingRule_Condition_1224448596468(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
-    // Reduce skip statement to break statement
+    // Reduce skip statement to break statement 
     SNode cl = SNodeOperations.as(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral");
     if (cl == null) {
       return false;
@@ -147,7 +147,7 @@ public class QueriesGenerated {
   }
 
   public static boolean baseMappingRule_Condition_1224452463389(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
-    // Reduce stop statement to break statement
+    // Reduce stop statement to break statement 
     SNode cl = SNodeOperations.as(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral");
     if (cl == null) {
       return false;

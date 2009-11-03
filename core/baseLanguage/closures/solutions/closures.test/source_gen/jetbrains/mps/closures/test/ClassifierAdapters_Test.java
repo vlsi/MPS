@@ -184,20 +184,20 @@ __switch__:
       }, "-1");
       Assert.fail();
     } catch (ProcessingException e) {
-      // expected exception
+      // expected exception 
     }
   }
 
   public void test_closureLiteralAsComparator() throws Exception {
     List<Integer> list = ListSequence.fromList(new ArrayList<Integer>());
     ListSequence.fromList(list).addSequence(ListSequence.fromList(Arrays.asList(new Integer[]{4,3,5,1,2})));
-    // ===================================================================
-    // The following is a hack!
-    // In reality we could only substitute an interface that has a single method.
-    // This example works only because java.util.Comparator defines compare() before equals()
-    // Why declare equals() in an interface escapes me: it's already there and declaring it in an interface doesn't change anything
-    // Besides, overriding only equals() without overriding also hashCode() is simply plain wrong.
-    // ===================================================================
+    // =================================================================== 
+    // The following is a hack! 
+    // In reality we could only substitute an interface that has a single method. 
+    // This example works only because java.util.Comparator defines compare() before equals() 
+    // Why declare equals() in an interface escapes me: it's already there and declaring it in an interface doesn't change anything 
+    // Besides, overriding only equals() without overriding also hashCode() is simply plain wrong. 
+    // =================================================================== 
     Collections.sort(list, new Comparator<Object>() {
       public int compare(Object a, Object b) {
         return a.hashCode() - b.hashCode();
@@ -239,7 +239,7 @@ __switch__:
       prc.process("foobar");
       Assert.fail();
     } catch (ProcessingException e) {
-      // expected exception
+      // expected exception 
     }
   }
 
@@ -284,7 +284,7 @@ __switch__:
       Result<? extends Integer, ?> __result__ = ucl.invokeUnrestricted();
       switch (__result__.getOutcome()) {
         case RETURN_VALUE:
-          //  fall through
+          //  fall through 
         case RETURN_VOID:
           return;
         case BREAK:
@@ -305,7 +305,7 @@ __switch__:
       }.invokeUnrestricted();
       switch (__result__.getOutcome()) {
         case RETURN_VALUE:
-          //  fall through
+          //  fall through 
         case RETURN_VOID:
           return;
         case BREAK:

@@ -20,7 +20,7 @@ import jetbrains.mps.lang.typesystem.runtime.HUtil;
 
 public class ClassifierTypeUtil {
   public static SNode getTypeCoercedToClassifierType(SNode type) {
-    // cast is such to avoid exception if MeetType
+    // cast is such to avoid exception if MeetType 
     SNode purified = (SNode)removeCopiedProviders(type);
     if (SNodeOperations.isInstanceOf(purified, "jetbrains.mps.baseLanguage.structure.TypeVariableReference") || SNodeOperations.isInstanceOf(purified, "jetbrains.mps.baseLanguage.structure.WildCardType")) {
       return purified;

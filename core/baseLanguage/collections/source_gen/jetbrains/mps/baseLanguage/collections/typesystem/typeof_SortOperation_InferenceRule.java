@@ -32,7 +32,7 @@ public class typeof_SortOperation_InferenceRule extends AbstractInferenceRule_Ru
       _info_12389875345.setInequationGroup("default");
       typeCheckingContext.createLessThanInequation((SNode)typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)", "1205680514461", true), (SNode)new _Quotations.QuotationClass_45().createNode(typeCheckingContext.getEquationManager().getRepresentator(paramType_typevar_1205680579640), typeCheckingContext), false, _info_12389875345);
     }
-    // todo: unmeet closure
+    // todo: unmeet closure 
     {
       SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(so, "ascending", true);
       BaseIntentionProvider intentionProvider = null;

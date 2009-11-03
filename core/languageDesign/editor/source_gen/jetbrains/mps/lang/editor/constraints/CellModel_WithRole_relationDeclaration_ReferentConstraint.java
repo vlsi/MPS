@@ -26,7 +26,7 @@ public class CellModel_WithRole_relationDeclaration_ReferentConstraint extends B
   }
 
   public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferentConstraintContext _context) {
-    // relations (links,properties etc.) declared in hierarchy of edited concept
+    // relations (links,properties etc.) declared in hierarchy of edited concept 
     SNode editorComponent = SNodeOperations.getAncestor(_context.getEnclosingNode(), "jetbrains.mps.lang.editor.structure.BaseEditorComponent", true, false);
     SNode editedConcept = AbstractComponent_Behavior.call_getConceptDeclaration_7055725856388417603(editorComponent);
     return new ConceptAndSuperConceptsScope(((AbstractConceptDeclaration)SNodeOperations.getAdapter(editedConcept)));

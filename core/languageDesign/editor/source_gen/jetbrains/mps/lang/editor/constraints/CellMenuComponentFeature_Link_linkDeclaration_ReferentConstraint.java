@@ -25,7 +25,7 @@ public class CellMenuComponentFeature_Link_linkDeclaration_ReferentConstraint ex
   }
 
   public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferentConstraintContext _context) {
-    // links declared in edited concept' hierarchy and not overridden
+    // links declared in edited concept' hierarchy and not overridden 
     SNode editorComponent = SNodeOperations.getAncestor(_context.getEnclosingNode(), "jetbrains.mps.lang.editor.structure.CellMenuComponent", true, false);
     SNode editedConcept = AbstractComponent_Behavior.call_getConceptDeclaration_7055725856388417603(editorComponent);
     return AbstractConceptDeclaration_Behavior.call_getLinkDeclarations_1213877394480(editedConcept);

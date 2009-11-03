@@ -12,7 +12,7 @@ import java.util.Iterator;
 
 public class ClosuresBase_Test extends TestCase {
   public void test_stub() throws Exception {
-    // this method exists only to calm down the JUnit complaining about lacking tests
+    // this method exists only to calm down the JUnit complaining about lacking tests 
   }
 
   public void assertResultsEqual(_FunctionTypes._void_P1_E0<? super List<Integer>> expected, _FunctionTypes._return_P0_E0<? extends Iterable<Integer>> test) {

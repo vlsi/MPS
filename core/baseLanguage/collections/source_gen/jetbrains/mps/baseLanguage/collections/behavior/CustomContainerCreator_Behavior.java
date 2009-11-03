@@ -18,7 +18,7 @@ public class CustomContainerCreator_Behavior {
 
   public static SNode virtual_createType_1237722437229(final SNode thisNode) {
     SNode res = SNodeOperations.copyNode(SLinkOperations.getTarget(SLinkOperations.getTarget(thisNode, "containerDeclaration", false), "containerType", true));
-    //  workaround an SModel's dumbness
+    //  workaround an SModel's dumbness 
     if (res != null) {
       res.changeModel(AuxilaryRuntimeModel.getDescriptor().getSModel());
     }

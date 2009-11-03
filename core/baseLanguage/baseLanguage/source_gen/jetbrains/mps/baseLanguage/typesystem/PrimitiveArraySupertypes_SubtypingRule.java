@@ -19,7 +19,7 @@ public class PrimitiveArraySupertypes_SubtypingRule extends SubtypingRule_Runtim
   }
 
   public List<SNode> getSubOrSuperTypes(SNode arrayType, TypeCheckingContext typeCheckingContext) {
-    /*<!TextGen not found for 'jetbrains.mps.baseLanguage.structure.TextCommentPart'!>     */
+    // see JLS 3.0 
     if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(arrayType, "componentType", true), "jetbrains.mps.baseLanguage.structure.PrimitiveType")) {
       return CollectionUtil.list(new _Quotations.QuotationClass_97().createNode(typeCheckingContext), new _Quotations.QuotationClass_98().createNode(typeCheckingContext), new _Quotations.QuotationClass_99().createNode(typeCheckingContext));
     }

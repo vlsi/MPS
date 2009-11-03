@@ -25,7 +25,7 @@ public class SampleCustomContainers_CustomApplicationPlugin extends BaseCustomAp
     final _FunctionTypes._return_P0_E0<? extends List<SNode>> provider = new _FunctionTypes._return_P0_E0<List<SNode>>() {
       public List<SNode> invoke() {
         List<SNode> res = new ArrayList<SNode>();
-        // Find the model(s) with custom container declarations
+        // Find the model(s) with custom container declarations 
         SModelDescriptor desc = GlobalScope.getInstance().getModelDescriptor(SModelFqName.fromString("jetbrains.mps.baseLanguage.collections.custom"));
         SModel mdl = desc.getSModel();
         if (mdl != null) {

@@ -28,7 +28,7 @@ public class EnumClass_Behavior {
   }
 
   public static boolean virtual_hasStaticMemebers_1214840444586(SNode thisNode) {
-    /*<!TextGen not found for 'jetbrains.mps.baseLanguage.structure.TextCommentPart'!>     */
+    // enums always have static operations: valueOf and values 
     return true;
   }
 }

@@ -16,7 +16,7 @@ public class ObjectArraySupertypes_SubtypingRule extends SubtypingRule_Runtime i
   }
 
   public List<SNode> getSubOrSuperTypes(SNode objectArrayType, TypeCheckingContext typeCheckingContext) {
-    /*<!TextGen not found for 'jetbrains.mps.baseLanguage.structure.TextCommentPart'!>     */
+    // see JLS 3.0 
     return CollectionUtil.list(new _Quotations.QuotationClass_94().createNode(typeCheckingContext), new _Quotations.QuotationClass_95().createNode(typeCheckingContext), new _Quotations.QuotationClass_96().createNode(typeCheckingContext));
   }
 

@@ -129,7 +129,7 @@ outer:
     List<SNode> params = SLinkOperations.getTargets(concreteSuperClassifierType, "parameter", true);
     for (SNode typeToModify : types) {
       for (SNode varRef : SNodeOperations.getDescendants(typeToModify, "jetbrains.mps.baseLanguage.structure.TypeVariableReference", true, new String[]{})) {
-        /*<!TextGen not found for 'jetbrains.mps.baseLanguage.structure.TextCommentPart'!>         */
+        // maybe a var from method 
         SNode typeVariableDeclaration = SLinkOperations.getTarget(varRef, "typeVariableDeclaration", false);
         if (SNodeOperations.getParent(typeVariableDeclaration) != result) {
           int index = SNodeOperations.getIndexInParent(typeVariableDeclaration);
@@ -163,15 +163,15 @@ outer:
         );
 
         if (parameterType == varArgType) {
-          /*<!TextGen not found for 'jetbrains.mps.baseLanguage.structure.TextCommentPart'!>           */
+          // vararg reached 
           if (argument == null) {
-            /*<!TextGen not found for 'jetbrains.mps.baseLanguage.structure.TextCommentPart'!>             */
+            // zero varargs 
             return true;
           }
           SNode mayBeLastArgumentType = TypeChecker.getInstance().getTypeOf(argument);
           SNode varArgComponentType = SLinkOperations.getTarget(varArgType, "componentType", true);
           if ((lastArgument == argument) && SNodeOperations.isInstanceOf(mayBeLastArgumentType, "jetbrains.mps.baseLanguage.structure.ArrayType") && TypeChecker.getInstance().getSubtypingManager().isSubtype(SLinkOperations.getTarget(SNodeOperations.cast(mayBeLastArgumentType, "jetbrains.mps.baseLanguage.structure.ArrayType"), "componentType", true), varArgComponentType)) {
-            /*<!TextGen not found for 'jetbrains.mps.baseLanguage.structure.TextCommentPart'!>             */
+            // array type as vararg 
             return true;
           } else {
             while (argument != null) {

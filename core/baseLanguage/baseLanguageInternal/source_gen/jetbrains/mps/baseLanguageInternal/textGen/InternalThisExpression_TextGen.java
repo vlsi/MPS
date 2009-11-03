@@ -7,6 +7,6 @@ import jetbrains.mps.smodel.SNode;
 
 public class InternalThisExpression_TextGen extends SNodeTextGen {
   public void doGenerateText(SNode node) {
-    // this method is intentionally empty
+    // this method is intentionally empty 
   }
 }

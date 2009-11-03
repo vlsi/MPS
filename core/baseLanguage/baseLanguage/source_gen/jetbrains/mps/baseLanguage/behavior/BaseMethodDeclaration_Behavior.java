@@ -38,7 +38,7 @@ public class BaseMethodDeclaration_Behavior {
   public static SNode virtual_getExpectedRetType_1239354342632(SNode thisNode) {
     SNode expectedRetType = SLinkOperations.getTarget(thisNode, "returnType", true);
     if (SConceptOperations.isExactly(SNodeOperations.getConceptDeclaration(expectedRetType), "jetbrains.mps.baseLanguage.structure.Type") || SNodeOperations.isInstanceOf(expectedRetType, "jetbrains.mps.baseLanguage.structure.VoidType") || BaseMethodDeclaration_Behavior.call_isReturnsVoid_1234359555698(thisNode)) {
-      /*<!TextGen not found for 'jetbrains.mps.baseLanguage.structure.TextCommentPart'!>       */
+      // actually - no return type 
       expectedRetType = null;
     }
     return expectedRetType;

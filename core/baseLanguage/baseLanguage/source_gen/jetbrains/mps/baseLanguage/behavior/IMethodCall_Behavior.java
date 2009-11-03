@@ -35,7 +35,7 @@ public class IMethodCall_Behavior {
   }
 
   public static SNode virtual_deriveType_1213877435747(SNode thisNode, SNode expression) {
-    /*<!TextGen not found for 'jetbrains.mps.baseLanguage.structure.TextCommentPart'!>     */
+    // is 'experssion' an actual argument in this method call? 
     if (SNodeOperations.getParent(expression) == thisNode && SNodeOperations.hasRole(expression, "jetbrains.mps.baseLanguage.structure.IMethodCall", "actualArgument")) {
       SNode method = SLinkOperations.getTarget(thisNode, "baseMethodDeclaration", false);
       int i = SNodeOperations.getIndexInParent(expression);
