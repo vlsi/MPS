@@ -29,15 +29,18 @@ public class SortUtil {
   public static List<SModelDescriptor> sortModels(List<SModelDescriptor> modelDescriptors) {
     List<SModelDescriptor> sortedModels = new ArrayList<SModelDescriptor>(modelDescriptors);
     Collections.sort(sortedModels, new Comparator<SModelDescriptor>() {
+      private int compareValues(String s, String s1) {
+        if (s == null) s = "";
+        if (s1 == null) s1 = "";
+        return s.compareTo(s1);
+      }
+
       public int compare(SModelDescriptor o, SModelDescriptor o1) {
         if (o == o1) {
           return 0;
         }
-        String name1 = o.getLongName();
-        String name2 = o1.getLongName();
-        if (name1 == null) name1 = "";
-        if (name2 == null) name2 = "";
-        return name1.compareTo(name2);
+        int result = compareValues(o.getLongName(), o1.getLongName());
+        return (result == 0)? compareValues(o.getStereotype(), o1.getStereotype()) : result;
       }
     });
     return sortedModels;
