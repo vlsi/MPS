@@ -56,6 +56,10 @@ public class CompilationResult implements Serializable {
     return (getErrors() == 0) && !isAborted();
   }
 
+  public boolean isReloadingNeeded() {
+    return isOk() && isCompiledAnything();
+  }
+
   public String toString() {
     if (!isAborted()) {
       return "compilation finished : errors: " + getErrors() + " warnings: " + getWarnings();

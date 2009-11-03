@@ -63,7 +63,7 @@ public class GoByReference_ActionGroup extends GeneratedActionGroup {
       for (final SReference ref : refs) {
         final SNode targetNode = ref.getTargetNode();
         if (targetNode == null) {
-          // we should not go by bad reference. We'll try to resolve it instead
+          // we should not go by bad reference. We'll try to resolve it instead 
           String actionText = "Bad reference: [" + ref.getRole() + "]" + ref.getResolveInfo();
           GoByReference_ActionGroup.this.add(new BaseAction(actionText) {
             protected void doExecute(AnActionEvent e) {

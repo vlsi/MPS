@@ -133,7 +133,7 @@ public class GoByCurrentReference_Action extends GeneratedAction {
     if (!(isClassifier || isConstructor || isMethod || isField)) {
       return false;
     }
-    // ----
+    // ---- 
     IProjectHandler handler = GoByCurrentReference_Action.this.project.getProjectHandler();
     if (handler == null) {
       if (log.isErrorEnabled()) {
@@ -141,7 +141,7 @@ public class GoByCurrentReference_Action extends GeneratedAction {
       }
       return false;
     }
-    // ----
+    // ---- 
     try {
       if (isClassifier) {
         String fqName = ref.getLongName() + "." + SPropertyOperations.getString(SNodeOperations.cast(targetNode, "jetbrains.mps.baseLanguage.structure.Classifier"), "name");

@@ -18,6 +18,7 @@ package jetbrains.mps.make;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.util.misc.hash.HashMap;
 import jetbrains.mps.util.CollectionUtil;
+import jetbrains.mps.util.CompositeIterator;
 import jetbrains.mps.baseLanguage.textGen.ModelDependencies;
 import jetbrains.mps.baseLanguage.textGen.RootDependencies;
 import jetbrains.mps.baseLanguage.textGen.BLDependenciesCache;
@@ -44,11 +45,10 @@ class Dependencies {
     }
   }
 
-  public Set<String> getAllDependencies(String fqName) {
-    Set<String> result = new HashSet<String>();
-    result.addAll(getDependencies(fqName));
-    result.addAll(getExtendsDependencies(fqName));
-    return result;
+  public Iterable<String> getAllDependencies(String fqName) {
+    return new CompositeIterator<String>(
+      getDependencies(fqName).iterator(),
+      getExtendsDependencies(fqName).iterator());
   }
 
   public Set<String> getDependencies(String fqName) {

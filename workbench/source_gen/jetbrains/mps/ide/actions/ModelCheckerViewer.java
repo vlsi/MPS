@@ -77,7 +77,7 @@ public class ModelCheckerViewer extends JPanel {
       }
     });
     if (this.myLastResults == null) {
-      //  Checking was cancelled
+      //  Checking was cancelled 
       return false;
     }
     this.myNodeRepresentator.saveCheckerResults(this.myLastResults);
@@ -101,7 +101,7 @@ public class ModelCheckerViewer extends JPanel {
   }
 
   public boolean checkModule(final IModule module, final IScope scope) {
-    //  TODO
+    //  TODO 
     ModelCheckerViewer.this.myTool.openToolLater(true);
     return true;
   }

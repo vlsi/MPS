@@ -116,7 +116,7 @@ public class PasteNode_Action extends GeneratedAction {
             paster.paste(PasteNode_Action.this.node, PasteEnv.PROJECT_TREE);
           }
           Resolver.resolveReferences(refsToResolve, PasteNode_Action.this.context);
-          // make sure editor will be open
+          // make sure editor will be open 
           SNode root = pasteNodes.get(0).getContainingRoot();
           assert root != null;
           PasteNode_Action.this.context.getComponent(MPSEditorOpener.class).editNode(root, PasteNode_Action.this.context);

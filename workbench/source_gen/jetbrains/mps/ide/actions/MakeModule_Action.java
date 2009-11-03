@@ -16,6 +16,7 @@ import com.intellij.openapi.progress.Task;
 import com.intellij.openapi.progress.ProgressIndicator;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.make.ModuleMaker;
+import jetbrains.mps.plugin.CompilationResult;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.reloading.ClassLoaderManager;
 
@@ -78,8 +79,10 @@ public class MakeModule_Action extends GeneratedAction {
           ModelAccess.instance().runReadAction(new Runnable() {
             public void run() {
               ModuleMaker maker = new ModuleMaker();
-              maker.make(CollectionUtil.set(MakeModule_Action.this.module), indicator);
-              ClassLoaderManager.getInstance().reloadAll(indicator);
+              CompilationResult r = maker.make(CollectionUtil.set(MakeModule_Action.this.module), indicator);
+              if (r.isReloadingNeeded()) {
+                ClassLoaderManager.getInstance().reloadAll(indicator);
+              }
             }
           });
         }

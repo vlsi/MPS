@@ -52,7 +52,7 @@ public class StartupModuleMaker extends AbstractProjectComponent {
           }
         });
         indicator[0].popState();
-        if (res[0].isCompiledAnything() && res[0].getErrors() == 0) {
+        if (res[0].isReloadingNeeded()) {
           ClassLoaderManager.getInstance().reloadAll(indicator[0]);
         }
       }

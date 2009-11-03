@@ -105,7 +105,7 @@ public class FindSpecificNodeUsages_Action extends GeneratedAction {
 
   public void doExecute(@NotNull final AnActionEvent event) {
     try {
-      // get node
+      // get node 
       final Wrappers._T<SNode> operationNode = new Wrappers._T<SNode>();
       ModelAccess.instance().runReadAction(new Runnable() {
         public void run() {
@@ -115,7 +115,7 @@ public class FindSpecificNodeUsages_Action extends GeneratedAction {
           );
         }
       });
-      // show dialog
+      // show dialog 
       final Wrappers._T<FindUsagesOptions> options = new Wrappers._T<FindUsagesOptions>(FindSpecificNodeUsages_Action.this.getOptionsComponent().getDefaultSearchOptions());
       FindUsagesDialog dialog = new FindUsagesDialog(options.value, operationNode.value, FindSpecificNodeUsages_Action.this.project, FindSpecificNodeUsages_Action.this.frame);
       dialog.showDialog();
@@ -124,7 +124,7 @@ public class FindSpecificNodeUsages_Action extends GeneratedAction {
       }
       options.value = dialog.getResult();
       FindSpecificNodeUsages_Action.this.getOptionsComponent().setDefaultSearchOptions(options.value);
-      // start
+      // start 
       final Wrappers._T<IResultProvider> provider = new Wrappers._T<IResultProvider>();
       final Wrappers._T<SearchQuery> query = new Wrappers._T<SearchQuery>();
       final Wrappers._T<ViewOptions> viewOptions = new Wrappers._T<ViewOptions>();

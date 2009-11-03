@@ -80,7 +80,7 @@ public class NewAspectModel_Action extends GeneratedAction {
   public void doExecute(@NotNull final AnActionEvent event) {
     try {
       final SModelDescriptor modelDescriptor = NewAspectModel_Action.this.aspect.createNew(((Language)NewAspectModel_Action.this.module));
-      // we need it since tree is updated later
+      // we need it since tree is updated later 
       SwingUtilities.invokeLater(new Runnable() {
         public void run() {
           ProjectPane.getInstance(NewAspectModel_Action.this.ideaProject).selectModel(modelDescriptor);
