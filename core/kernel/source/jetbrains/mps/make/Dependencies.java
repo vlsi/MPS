@@ -38,6 +38,7 @@ class Dependencies {
   private Map<String, Set<String>> myDependencies = new HashMap<String, Set<String>>();
   private Map<String, Set<String>> myExtendsDependencies = new HashMap<String, Set<String>>();
   private Map<String, IModule> myModules = new HashMap<String, IModule>();
+  private Map<String, IFile> myJavaFiles = new HashMap<String, IFile>();
 
   public Dependencies(Collection<IModule> ms) {
     for (IModule m : ms) {
@@ -71,8 +72,15 @@ class Dependencies {
     IModule m = myModules.get(fqName);
     if (m == null) return null;
 
-    String outputPath = m.getGeneratorOutputPath() + File.separator + fqName.replace('.', File.separatorChar) + MPSExtentions.DOT_JAVAFILE;
-    return FileSystem.getFile(outputPath);
+    IFile result = myJavaFiles.get(fqName);
+    if (result == null) {
+      String outputPath = m.getGeneratorOutputPath() + File.separator +
+        fqName.replace('.', File.separatorChar) + MPSExtentions.DOT_JAVAFILE;
+      FileSystem.getFile(outputPath);
+      myJavaFiles.put(fqName, result);
+    }
+
+    return result;
   }
 
   private void collectDependencies(IModule m) {
