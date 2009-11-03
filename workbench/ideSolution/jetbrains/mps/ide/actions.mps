@@ -30686,7 +30686,7 @@
                     <property name="value" value="false" />
                   </node>
                   <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="8198670275467465298">
-                    <property name="value" value="false" />
+                    <property name="value" value="true" />
                   </node>
                 </node>
               </node>
@@ -31201,6 +31201,16 @@
           </node>
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.Statement" id="1184058066016382566" />
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1105792184203646249">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1105792184203646250">
+            <property name="isFinal" value="true" />
+            <property name="name" value="theViewer" />
+            <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1105792184203646252">
+              <link role="classifier" targetNodeId="1184058066016382375" resolveInfo="ModelCheckerViewer" />
+            </node>
+            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="1105792184203646254" />
+          </node>
+        </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1184058066016382567">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression" id="1184058066016382568">
             <node role="rValue" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1184058066016382569">
@@ -31228,27 +31238,9 @@
                           </node>
                           <node role="operation" type="jetbrains.mps.baseLanguage.classifiers.structure.DefaultClassifierMethodCallOperation" id="215270581595020970">
                             <link role="member" targetNodeId="3309606515286946728" resolveInfo="removeTab" />
-                            <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="215270581595020972">
-                              <node role="operand" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="215270581595020971" />
-                              <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="215270581595020977">
-                                <link role="baseMethodDeclaration" targetNodeId="171.~UsagesView.getComponent():javax.swing.JComponent" resolveInfo="getComponent" />
-                              </node>
+                            <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1105792184203646255">
+                              <link role="variableDeclaration" targetNodeId="1105792184203646250" resolveInfo="theViewer" />
                             </node>
-                          </node>
-                        </node>
-                      </node>
-                      <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1184058066016382577">
-                        <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1184058066016382578">
-                          <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1184058066016382579">
-                            <node role="operation" type="jetbrains.mps.baseLanguage.structure.FieldReferenceOperation" id="1184058066016382580">
-                              <link role="fieldDeclaration" targetNodeId="1184058066016382526" resolveInfo="myTool" />
-                            </node>
-                            <node role="operand" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="1184058066016382581">
-                              <link role="classConcept" targetNodeId="1184058066016382375" resolveInfo="ModelCheckerViewer" />
-                            </node>
-                          </node>
-                          <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1184058066016382582">
-                            <link role="baseMethodDeclaration" targetNodeId="64.~BaseTool.makeUnavailableLater():void" resolveInfo="makeUnavailableLater" />
                           </node>
                         </node>
                       </node>

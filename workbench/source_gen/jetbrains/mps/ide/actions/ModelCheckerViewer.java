@@ -59,10 +59,10 @@ public class ModelCheckerViewer extends JPanel {
     ViewOptions viewOptions = new ViewOptions(true, false, false, false, false);
     viewOptions.myCategory = true;
 
+    final ModelCheckerViewer theViewer = this;
     this.myUsagesView = new UsagesView(this.myProject, viewOptions) {
       public void close() {
-        ModelCheckerViewer.this.myTool.removeTab(this.getComponent());
-        ModelCheckerViewer.this.myTool.makeUnavailableLater();
+        ModelCheckerViewer.this.myTool.removeTab(theViewer);
       }
     };
     this.myUsagesView.setCustomNodeRepresentator(this.myNodeRepresentator);
@@ -78,7 +78,7 @@ public class ModelCheckerViewer extends JPanel {
     this.myNodeRepresentator.saveCheckerResults(this.myLastResults);
     IResultProvider resultProvider = FindUtils.makeProvider(Arrays.asList(getFinderFromModelCheckerResults(this.myLastResults)));
     SearchQuery searchQuery = new SearchQuery(this.myProject.getScope());
-    this.myUsagesView.setRunOptions(resultProvider, searchQuery, new UsagesView.ButtonConfiguration(false, false, false), new SearchResults());
+    this.myUsagesView.setRunOptions(resultProvider, searchQuery, new UsagesView.ButtonConfiguration(false, false, true), new SearchResults());
     this.myUsagesView.run(null);
     this.myTool.openToolLater(true);
     return true;
