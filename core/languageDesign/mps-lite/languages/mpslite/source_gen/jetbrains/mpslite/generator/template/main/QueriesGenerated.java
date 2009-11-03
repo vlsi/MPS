@@ -53,22 +53,22 @@ public class QueriesGenerated {
       }
       MapSequence.fromMap(conceptsToTargets).put(conceptDeclaration, concept);
     }
-    // additional concepts
+    // additional concepts 
     for (SNode conceptDeclaration : allConcepts) {
       SNode concept = IMPSLiteConcept_Behavior.call_createAdditionalConcept_1239817368042(conceptDeclaration, conceptsToTargets, partsToLinkDeclarations);
       if (concept != null) {
         MapSequence.fromMap(additionalConceptsToTargets).put(conceptDeclaration, concept);
       }
     }
-    // extends
+    // extends 
     for (SNode conceptDeclaration : allConcepts) {
       SLinkOperations.setTarget(((SNode)MapSequence.fromMap(conceptsToTargets).get(conceptDeclaration)), "extends", ((SNode)AbstractConceptReference_Behavior.call_getConcept_1238594571574(SLinkOperations.getTarget(conceptDeclaration, "extends", true), conceptsToTargets)), false);
     }
-    // inner concept structure
+    // inner concept structure 
     for (SNode conceptDeclaration : allConcepts) {
       IMPSLiteConcept_Behavior.call_fillConcept_1239891562930(conceptDeclaration, ((SNode)MapSequence.fromMap(conceptsToTargets).get(conceptDeclaration)), conceptsToTargets, partsToLinkDeclarations);
     }
-    // editor
+    // editor 
     SModel editorModel = language.getEditorModelDescriptor().getSModel();
     SModel actionsModel = language.getActionsModelDescriptor().getSModel();
     Map<SNode, SNode> conceptsToEditors = MapSequence.fromMap(new HashMap<SNode, SNode>());
@@ -95,7 +95,7 @@ public class QueriesGenerated {
     for (SNode binaryOperationConcept : ConceptContainer_Behavior.call_getBinaryOperationConcepts_1239806149720(conceptContainer)) {
       GenerationUtils.fillBinarySideTransformActions(binaryOperationConcept, actions, conceptsToTargets, partsToLinkDeclarations);
     }
-    // constraints(scopes)
+    // constraints(scopes) 
     Map<SNode, SNode> conceptsToConstraints = MapSequence.fromMap(new HashMap<SNode, SNode>());
     for (SNode variableConcept : ConceptContainer_Behavior.call_getVariableConcepts_1239806150736(conceptContainer)) {
       SNode conceptConstraint = SConceptOperations.createNewNode("jetbrains.mps.lang.constraints.structure.ConceptConstraints", null);
@@ -105,8 +105,8 @@ public class QueriesGenerated {
       MapSequence.fromMap(conceptsToConstraints).put(variableConcept, conceptConstraint);
     }
     SModel constraintsModel = language.getConstraintsModelDescriptor().getSModel();
-    // 
-    // setting roots and deleting input roots
+    //  
+    // setting roots and deleting input roots 
     structureModel.setLoading(true);
     for (SNode root : ListSequence.fromListWithValues(new ArrayList<SNode>(), SModelOperations.getRoots(structureModel, null))) {
       structureModel.removeRoot(root);
