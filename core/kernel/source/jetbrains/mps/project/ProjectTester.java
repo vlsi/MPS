@@ -37,6 +37,8 @@ import org.eclipse.jdt.core.compiler.CategorizedProblem;
 import org.eclipse.jdt.internal.compiler.CompilationResult;
 
 import java.util.*;
+import java.io.StringWriter;
+import java.io.PrintWriter;
 
 public class ProjectTester {
   private MPSProject myProject;
@@ -259,14 +261,8 @@ public class ProjectTester {
   }
 
   public static StringBuffer extractStackTrace(Throwable e) {
-    StringBuffer sb = new StringBuffer("");
-    sb.append(e.getMessage());
-    sb.append("\n");
-    for (StackTraceElement el : e.getStackTrace()) {
-      sb.append("    ");
-      sb.append(el.toString());
-      sb.append("\n");
-    }
-    return sb;
+    StringWriter writer = new StringWriter();
+    e.printStackTrace(new PrintWriter(writer));
+    return writer.getBuffer();
   }
 }
