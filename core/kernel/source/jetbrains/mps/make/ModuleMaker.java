@@ -81,16 +81,11 @@ public class ModuleMaker {
       indicator.setText("Compiling...");
       indicator.setIndeterminate(true);
 
-      Set<IModule> toCompile = new LinkedHashSet<IModule>();
       Set<IModule> candidates = new DependencyCollector(modules, IModule.class).collect();
-
       myDependencies = new Dependencies(candidates);
+      
+      Set<IModule> toCompile = getModulesToCompile(candidates);
 
-      for (IModule c : candidates) {
-        if (!isUpToDate(c)) {
-          toCompile.add(c);
-        }
-      }
 
       int errorCount = 0;
       List<Set<IModule>> schedule = StronglyConnectedModules.getInstance().getStronglyConnectedComponents(toCompile, false);
@@ -300,21 +295,46 @@ public class ModuleMaker {
     return AbstractModule.getDependenciesClasspath(modules);
   }
 
-  private boolean isUpToDate(IModule m) {
-    if (isExcluded(m)) {
-      return true;
-    }
-
-    if (!areClassesUpToDate(m)) {
-      return false;
-    }
-
-    for (IModule dep : m.getAllDependOnModules(IModule.class)) {
-      if (!areClassesUpToDate(dep)) {
-        return false;
+  private Set<IModule> getModulesToCompile(Set<IModule> modules) {
+    Set<IModule> dirtyModules = new HashSet<IModule>();
+    for (IModule m : modules) {
+      if (isDirty(m)) {
+        dirtyModules.add(m);
       }
     }
 
+    Map<IModule, Set<IModule>> backDependencies = new HashMap<IModule, Set<IModule>>();
+
+    for (IModule m : modules) {
+      for (IModule dep : m.getExplicitlyDependOnModules(true)) {
+        if (!backDependencies.containsKey(dep)) {
+          backDependencies.put(dep, new HashSet<IModule>());
+        }
+        backDependencies.get(dep).add(m);
+      }
+    }
+
+    Set<IModule> toCompile = new LinkedHashSet<IModule>();
+
+    for (IModule dirty : dirtyModules) {
+      collectToCompile(dirty, toCompile, backDependencies);
+    }
+
+    return toCompile;
+  }
+
+  private void collectToCompile(IModule current, Set<IModule> result, Map<IModule, Set<IModule>> deps) {
+    if (!result.add(current)) return;
+    if (!deps.containsKey(current)) return;
+
+    for (IModule dep : deps.get(current)) {
+      collectToCompile(dep, result, deps);
+    }
+  }
+
+  private boolean isDirty(IModule m) {
+    if (isExcluded(m)) return false;
+    if (areClassesUpToDate(m)) return false;
     return true;
   }
 
