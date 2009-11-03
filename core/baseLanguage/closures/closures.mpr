@@ -15,13 +15,13 @@
     </projectLanguages>
     <projectDevkits />
     <genConfs>
-      <genConfModels runnable="false" name="runtime">
+      <genConfModels name="runtime">
         <models>
           <model modelRef="r:35e808a0-0758-4b03-9053-4675a7ced44c(jetbrains.mps.baseLanguage.closures.runtime)" />
         </models>
       </genConfModels>
-      <genConfModule runnable="false" name="closures" moduleRef="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" />
-      <genConfModule runnable="true" name="closures.test" moduleRef="closures.test" />
+      <genConfModule name="closures" moduleRef="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" />
+      <genConfModule name="closures.test" moduleRef="closures.test" />
     </genConfs>
   </component>
   <component name="ProjectDetails">

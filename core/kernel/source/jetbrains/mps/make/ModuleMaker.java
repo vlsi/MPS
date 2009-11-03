@@ -88,6 +88,8 @@ public class ModuleMaker {
 
 
       int errorCount = 0;
+      int warnCount = 0;
+      boolean compiled = false;
       List<Set<IModule>> schedule = StronglyConnectedModules.getInstance().getStronglyConnectedComponents(toCompile, false);
 
       for (Set<IModule> cycle : schedule) {
@@ -96,11 +98,13 @@ public class ModuleMaker {
         }
 
         indicator.setText2("Compiling modules " + cycle + "...");
-        int currentErrorsCount = compile(cycle).getErrors();
-        errorCount += currentErrorsCount;
+        jetbrains.mps.plugin.CompilationResult result = compile(cycle);
+        errorCount += result.getErrors();
+        warnCount += result.getWarnings();
+        compiled = compiled || result.isCompiledAnything();
       }
 
-      return new jetbrains.mps.plugin.CompilationResult(errorCount, 0, false);
+      return new jetbrains.mps.plugin.CompilationResult(errorCount, warnCount, false, compiled);
     } finally {
       indicator.popState();
     }
@@ -116,11 +120,12 @@ public class ModuleMaker {
     }
 
     if (!hasAnythingToCompile) {
-      return new jetbrains.mps.plugin.CompilationResult(0, 0, false);
+      return new jetbrains.mps.plugin.CompilationResult(0, 0, false, false);
     }
 
     IClassPathItem classPathItems = computeDependenciesClassPath(modules);
     JavaCompiler compiler = new JavaCompiler(classPathItems);
+
 
     for (IModule m : modules) {
       if (areClassesUpToDate(m)) {

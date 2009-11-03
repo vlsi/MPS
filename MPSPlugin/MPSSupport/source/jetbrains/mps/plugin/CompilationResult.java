@@ -23,11 +23,17 @@ public class CompilationResult implements Serializable {
   private int myErrors;
   private int myWarnings;
   private boolean myAborted;
+  private boolean myCompiledAnything;
 
   public CompilationResult(int errors, int warnings, boolean aborted) {
+    this(errors, warnings, aborted, true);
+  }
+
+  public CompilationResult(int errors, int warnings, boolean aborted, boolean compiled) {
     myErrors = errors;
     myWarnings = warnings;
     myAborted = aborted;
+    myCompiledAnything = compiled;
   }
 
   public int getErrors() {
@@ -40,6 +46,10 @@ public class CompilationResult implements Serializable {
 
   public boolean isAborted() {
     return myAborted;
+  }
+
+  public boolean isCompiledAnything() {
+    return myCompiledAnything;
   }
 
   public boolean isOk() {

@@ -27,6 +27,7 @@ import jetbrains.mps.project.IModule;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.plugin.CompilationResult;
 
 import java.util.LinkedHashSet;
 
@@ -43,14 +44,17 @@ public class StartupModuleMaker extends AbstractProjectComponent {
           indicator[0] = new EmptyProgressIndicator();
         }
         indicator[0].pushState();
+        final CompilationResult[] res = new CompilationResult[1];
         ModelAccess.instance().runReadAction(new Runnable() {
           public void run() {
             ModuleMaker maker = new ModuleMaker();
-            maker.make(new LinkedHashSet<IModule>(MPSModuleRepository.getInstance().getAllModules()), indicator[0]);
+            res[0] = maker.make(new LinkedHashSet<IModule>(MPSModuleRepository.getInstance().getAllModules()), indicator[0]);
           }
         });
         indicator[0].popState();
-        ClassLoaderManager.getInstance().reloadAll(indicator[0]);
+        if (res[0].isCompiledAnything() && res[0].getErrors() == 0) {
+          ClassLoaderManager.getInstance().reloadAll(indicator[0]);
+        }
       }
     });
   }
