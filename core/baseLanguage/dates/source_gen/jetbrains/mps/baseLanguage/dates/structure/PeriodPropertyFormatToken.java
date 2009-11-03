@@ -10,10 +10,55 @@ import jetbrains.mps.project.GlobalScope;
 
 public class PeriodPropertyFormatToken extends PeriodFormatToken {
   public static final String concept = "jetbrains.mps.baseLanguage.dates.structure.PeriodPropertyFormatToken";
+  public static final String PREFIX = "prefix";
+  public static final String PREFIX_PLURAL = "prefixPlural";
+  public static final String SUFFIX = "suffix";
+  public static final String SUFFIX_PLURAL = "suffixPlural";
+  public static final String MIN_DIGITS = "minDigits";
   public static final String PROPERTY = "property";
 
   public PeriodPropertyFormatToken(SNode node) {
     super(node);
+  }
+
+  public String getPrefix() {
+    return this.getProperty(PeriodPropertyFormatToken.PREFIX);
+  }
+
+  public void setPrefix(String value) {
+    this.setProperty(PeriodPropertyFormatToken.PREFIX, value);
+  }
+
+  public String getPrefixPlural() {
+    return this.getProperty(PeriodPropertyFormatToken.PREFIX_PLURAL);
+  }
+
+  public void setPrefixPlural(String value) {
+    this.setProperty(PeriodPropertyFormatToken.PREFIX_PLURAL, value);
+  }
+
+  public String getSuffix() {
+    return this.getProperty(PeriodPropertyFormatToken.SUFFIX);
+  }
+
+  public void setSuffix(String value) {
+    this.setProperty(PeriodPropertyFormatToken.SUFFIX, value);
+  }
+
+  public String getSuffixPlural() {
+    return this.getProperty(PeriodPropertyFormatToken.SUFFIX_PLURAL);
+  }
+
+  public void setSuffixPlural(String value) {
+    this.setProperty(PeriodPropertyFormatToken.SUFFIX_PLURAL, value);
+  }
+
+  public int getMinDigits() {
+    return this.getIntegerProperty(PeriodPropertyFormatToken.MIN_DIGITS);
+  }
+
+  public void setMinDigits(int value) {
+    this.setIntegerProperty(PeriodPropertyFormatToken.MIN_DIGITS, value);
   }
 
   public DateTimeProperty getProperty() {
