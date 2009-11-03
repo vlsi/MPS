@@ -19,7 +19,7 @@ public class QueryFunction_ParameterizedSubstitute_Query_Behavior {
     if (SNodeOperations.isInstanceOf(ancestor, "jetbrains.mps.lang.actions.structure.ParameterizedSubstituteMenuPart")) {
       expectedType = SLinkOperations.getTarget(SNodeOperations.cast(ancestor, "jetbrains.mps.lang.actions.structure.ParameterizedSubstituteMenuPart"), "type", true);
     }
-    // ==========
+    // ========== 
     if (expectedType == null) {
       return new _Quotations.QuotationClass_4().createNode();
     }
