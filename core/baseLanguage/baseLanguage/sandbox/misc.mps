@@ -1269,6 +1269,11 @@
             </node>
           </node>
         </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="6239829737863852780">
+          <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="6239829737863852781">
+            <property name="text" value="todo: Osdsfsd sdsd  sdsdsdsdds tod" />
+          </node>
+        </node>
       </node>
     </node>
   </node>

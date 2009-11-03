@@ -30,9 +30,9 @@ public class ParenthesisUtil {
       current = SNodeOperations.cast(SNodeOperations.getParent(current), "jetbrains.mps.baseLanguage.structure.Expression");
     }
     current = prev;
-    /*<!TextGen not found for 'jetbrains.mps.baseLanguage.structure.TextCommentPart'!>     */
+    // searching for binary operation 
     SNode binOp = getBinOp(current, opening);
-    /*<!TextGen not found for 'jetbrains.mps.baseLanguage.structure.TextCommentPart'!>     */
+    // special cases 
     if (binOp == null) {
       SNode parExpr = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ParenthesizedExpression", null);
       SNodeOperations.replaceWithAnother(current, parExpr);
@@ -52,7 +52,7 @@ public class ParenthesisUtil {
       }
       return parExpr;
     }
-    /*<!TextGen not found for 'jetbrains.mps.baseLanguage.structure.TextCommentPart'!>     */
+    // rotate 
     SNode subtree = (opening ?
       SLinkOperations.getTarget(binOp, "leftExpression", true) :
       SLinkOperations.getTarget(binOp, "rightExpression", true)

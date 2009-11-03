@@ -14,6 +14,7 @@ import java.util.LinkedHashSet;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.baseLanguage.behavior.RemarkStatement_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.baseLanguage.behavior.CommentPart_Behavior;
 import jetbrains.mps.smodel.event.SModelPropertyEvent;
 
 public class ToDoHighlighter extends EditorCheckerAdapter {
@@ -28,6 +29,11 @@ public class ToDoHighlighter extends EditorCheckerAdapter {
         SetSequence.fromSet(messages).addElement(new ToDoMessage(remark, SPropertyOperations.getString(remark, "value"), this.getOwner(rootNode)));
       }
     }
+    for (SNode textCommentPart : SNodeOperations.getDescendants(node, "jetbrains.mps.baseLanguage.structure.TextCommentPart", false, new String[]{})) {
+      if (CommentPart_Behavior.call_isToDo_7236590470026152831(textCommentPart)) {
+        SetSequence.fromSet(messages).addElement(new ToDoMessage(textCommentPart, SPropertyOperations.getString(textCommentPart, "text"), this.getOwner(rootNode)));
+      }
+    }
     return messages;
   }
 
@@ -35,6 +41,11 @@ public class ToDoHighlighter extends EditorCheckerAdapter {
     SNode node = propertyEvent.getNode();
     if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.RemarkStatement")) {
       if (propertyEvent.getPropertyName().equals("value")) {
+        return true;
+      }
+    }
+    if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.TextCommentPart")) {
+      if (propertyEvent.getPropertyName().equals("text")) {
         return true;
       }
     }
