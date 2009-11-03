@@ -33,6 +33,8 @@ public abstract class BaseModelCache<T> implements ApplicationComponent {
   private final FileGenerationManager myFileGeneratorManager;
   private final AllCaches myAllCaches;
 
+  private Map<SModelDescriptor, T> myCache = new WeakHashMap<SModelDescriptor, T>();
+
   protected abstract void save(T t, OutputStream os) throws IOException;
 
   protected abstract T load(InputStream is) throws IOException;
@@ -54,7 +56,11 @@ public abstract class BaseModelCache<T> implements ApplicationComponent {
 
         T cache = generateCache(context);
 
-        IFile cacheFile = getCacheFile(context.getStatus().getOriginalInputModel());
+        SModelDescriptor model = context.getStatus().getOriginalInputModel();
+
+        myCache.put(model, cache);
+        
+        IFile cacheFile = getCacheFile(model);
         if (cacheFile == null) return Collections.EMPTY_SET;
 
         OutputStream os = null;
@@ -84,6 +90,10 @@ public abstract class BaseModelCache<T> implements ApplicationComponent {
   }
 
   public T get(SModelDescriptor sm) {
+    if (myCache.containsKey(sm)) {
+      return myCache.get(sm);
+    }
+
     IFile cacheFile = getCacheFile(sm);
 
     if (cacheFile == null || !cacheFile.exists()) return null;
@@ -91,7 +101,9 @@ public abstract class BaseModelCache<T> implements ApplicationComponent {
     InputStream is = null;
     try {
       is = cacheFile.openInputStream();
-      return load(is);
+      T result = load(is);
+      myCache.put(sm, result);
+      return result;
     } catch (IOException e) {
       LOG.error(e);
     } finally {
@@ -104,6 +116,7 @@ public abstract class BaseModelCache<T> implements ApplicationComponent {
       }
     }
 
+    myCache.put(sm, null);
     return null;
   }
 
