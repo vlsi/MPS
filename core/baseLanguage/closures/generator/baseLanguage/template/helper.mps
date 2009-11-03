@@ -905,22 +905,6 @@
             </node>
           </node>
         </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1201266041145">
-          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1209071996580">
-            <node role="operand" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="1201266041146" />
-            <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1209071996581">
-              <link role="baseMethodDeclaration" targetNodeId="1201265588977" resolveInfo="prepStatementList" />
-              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204227899691">
-                <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1201266048571">
-                  <link role="variableDeclaration" targetNodeId="1200861782223" resolveInfo="wstmt" />
-                </node>
-                <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1201266048570">
-                  <link role="link" targetNodeId="14.1154032183016" />
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1201015420939">
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1201015420940">
             <property name="name" value="nextLabel" />
@@ -976,6 +960,22 @@
               </node>
               <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1240926434585">
                 <link role="variableDeclaration" targetNodeId="1240926434574" resolveInfo="data" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1201266041145">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1209071996580">
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="1201266041146" />
+            <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1209071996581">
+              <link role="baseMethodDeclaration" targetNodeId="1201265588977" resolveInfo="prepStatementList" />
+              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204227899691">
+                <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1201266048571">
+                  <link role="variableDeclaration" targetNodeId="1200861782223" resolveInfo="wstmt" />
+                </node>
+                <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1201266048570">
+                  <link role="link" targetNodeId="14.1154032183016" />
+                </node>
               </node>
             </node>
           </node>

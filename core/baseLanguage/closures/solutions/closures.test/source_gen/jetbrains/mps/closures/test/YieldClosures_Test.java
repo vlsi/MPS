@@ -148,7 +148,7 @@ __switch__:
             return new YieldingIterator<Integer>() {
               private int __CP__ = 0;
               private int _3_i;
-              private int _8_j;
+              private int _9_j;
 
               protected boolean moveToNext() {
 __loop__:
@@ -163,32 +163,32 @@ __switch__:
                         this.__CP__ = 6;
                         break;
                       }
-                      this.__CP__ = 16;
+                      this.__CP__ = 7;
                       break;
-                    case 10:
-                      if (_8_j <= 3) {
-                        this.__CP__ = 11;
+                    case 11:
+                      if (_9_j <= 3) {
+                        this.__CP__ = 12;
                         break;
                       }
-                      this.__CP__ = 14;
+                      this.__CP__ = 13;
                       break;
                     case 4:
                       this.__CP__ = 5;
                       this.yield(_3_i);
                       return true;
-                    case 9:
-                      this.__CP__ = 10;
-                      this.yield(_8_j);
-                      return true;
-                    case 12:
-                      this.__CP__ = 13;
-                      this.yield(_3_i * _8_j);
+                    case 10:
+                      this.__CP__ = 11;
+                      this.yield(_9_j);
                       return true;
                     case 14:
                       this.__CP__ = 15;
-                      this.yield(_8_j);
+                      this.yield(_3_i * _9_j);
                       return true;
-                    case 16:
+                    case 13:
+                      this.__CP__ = 16;
+                      this.yield(_9_j);
+                      return true;
+                    case 7:
                       this.__CP__ = 17;
                       this.yield(_3_i);
                       return true;
@@ -201,19 +201,19 @@ __switch__:
                       this.__CP__ = 1;
                       break;
                     case 6:
-                      this._8_j = 1;
-                      this.__CP__ = 9;
+                      this._9_j = 1;
+                      this.__CP__ = 10;
                       break;
-                    case 15:
+                    case 16:
                       _3_i--;
                       this.__CP__ = 5;
                       break;
-                    case 11:
-                      this.__CP__ = 12;
+                    case 12:
+                      this.__CP__ = 14;
                       break;
-                    case 13:
-                      _8_j++;
-                      this.__CP__ = 10;
+                    case 15:
+                      _9_j++;
+                      this.__CP__ = 11;
                       break;
                     default:
                       break __loop__;

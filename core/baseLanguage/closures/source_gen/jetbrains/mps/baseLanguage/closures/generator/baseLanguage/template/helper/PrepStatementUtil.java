@@ -83,10 +83,10 @@ public class PrepStatementUtil {
     SNode sn = SLinkOperations.getTarget(wstmt, "body", true);
     Object data1 = new Integer[]{blockLabel,beginLabel};
     Values.CLOSURE_DATA.set(sn, data1);
-    this.prepStatementList(SLinkOperations.getTarget(wstmt, "body", true));
     int nextLabel = this.calcNextLabel(wstmt);
     Object data = new Integer[]{beginLabel,beginLabel,blockLabel,nextLabel};
     Values.CLOSURE_DATA.set(wstmt, data);
+    this.prepStatementList(SLinkOperations.getTarget(wstmt, "body", true));
     return nextLabel;
   }
 
