@@ -62,7 +62,7 @@ public class ModelCheckerViewer extends JPanel {
     final ModelCheckerViewer theViewer = this;
     this.myUsagesView = new UsagesView(this.myProject, viewOptions) {
       public void close() {
-        ModelCheckerViewer.this.myTool.removeTab(theViewer);
+        ModelCheckerViewer.this.myTool.closeTab(theViewer);
       }
     };
     this.myUsagesView.setCustomNodeRepresentator(this.myNodeRepresentator);

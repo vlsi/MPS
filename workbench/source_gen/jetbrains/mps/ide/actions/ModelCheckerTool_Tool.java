@@ -33,6 +33,7 @@ public class ModelCheckerTool_Tool extends GeneratedTool {
   public void checkModel(SModelDescriptor modelDescriptior) {
     ModelCheckerViewer newViewer = new ModelCheckerViewer(ModelCheckerTool_Tool.this.myProject, ModelCheckerTool_Tool.this);
     if (newViewer.checkModel(modelDescriptior.getSModel())) {
+      ModelCheckerTool_Tool.this.closeCurrentTabIsUnpinned();
       ModelCheckerTool_Tool.this.addContent(newViewer, modelDescriptior.getName(), IconManager.getIconFor(modelDescriptior), true);
       ModelCheckerTool_Tool.this.setSelectedComponent(newViewer);
     }
@@ -41,6 +42,7 @@ public class ModelCheckerTool_Tool extends GeneratedTool {
   public void checkModule(IModule module) {
     ModelCheckerViewer newViewer = new ModelCheckerViewer(ModelCheckerTool_Tool.this.myProject, ModelCheckerTool_Tool.this);
     if (newViewer.checkModule(module)) {
+      ModelCheckerTool_Tool.this.closeCurrentTabIsUnpinned();
       ModelCheckerTool_Tool.this.addContent(newViewer, module.getModuleFqName(), IconManager.getIconFor(module), true);
       ModelCheckerTool_Tool.this.setSelectedComponent(newViewer);
     }
@@ -49,14 +51,26 @@ public class ModelCheckerTool_Tool extends GeneratedTool {
   public void checkProject(MPSProject mpsProject) {
     ModelCheckerViewer newViewer = new ModelCheckerViewer(ModelCheckerTool_Tool.this.myProject, ModelCheckerTool_Tool.this);
     if (newViewer.checkProject(mpsProject)) {
+      ModelCheckerTool_Tool.this.closeCurrentTabIsUnpinned();
       ModelCheckerTool_Tool.this.addContent(newViewer, mpsProject.getProjectDescriptor().getName(), Icons.PROJECT_ICON, true);
       ModelCheckerTool_Tool.this.setSelectedComponent(newViewer);
     }
   }
 
-  public void removeTab(JComponent component) {
+  public void closeTab(JComponent component) {
     ContentManager contentManager = ModelCheckerTool_Tool.this.getContentManager();
     Content content = contentManager.getContent(component);
     contentManager.removeContent(content, true);
+  }
+
+  private void closeCurrentTabIsUnpinned() {
+    ContentManager contentManager = ModelCheckerTool_Tool.this.getContentManager();
+    Content selectedContent = contentManager.getSelectedContent();
+    if (selectedContent == null) {
+      return;
+    }
+    if (!(selectedContent.isPinned())) {
+      contentManager.removeContent(selectedContent, true);
+    }
   }
 }

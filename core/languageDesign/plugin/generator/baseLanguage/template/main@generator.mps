@@ -4680,6 +4680,7 @@
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1204475679597">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" id="1208543581044">
           <link role="constructorDeclaration" targetNodeId="59.~BaseTool.&lt;init&gt;(com.intellij.openapi.project.Project,java.lang.String,int,javax.swing.Icon,com.intellij.openapi.wm.ToolWindowAnchor,boolean)" resolveInfo="BaseTool" />
+          <link role="baseMethodDeclaration" targetNodeId="22.~GeneratedTool.&lt;init&gt;(com.intellij.openapi.project.Project,java.lang.String,int,javax.swing.Icon,com.intellij.openapi.wm.ToolWindowAnchor,boolean)" resolveInfo="GeneratedTool" />
           <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1208532920930">
             <link role="variableDeclaration" targetNodeId="1208532909256" resolveInfo="project" />
           </node>
