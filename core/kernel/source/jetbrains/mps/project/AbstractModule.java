@@ -316,11 +316,14 @@ public abstract class AbstractModule implements IModule {
       myExplicitlyDependentModules = new ArrayList<IModule>(res);
     }
 
-    List<IModule> result = new ArrayList<IModule>(myExplicitlyDependentModules);
+
     if (includeBootstrap) {
+      List<IModule> result = new ArrayList<IModule>(myExplicitlyDependentModules);
       result.addAll(LibraryManager.getInstance().getBootstrapModules(Language.class));
+      return result;
     }
-    return result;
+
+    return Collections.unmodifiableList(myExplicitlyDependentModules);    
   }
 
   protected void addExplicitlyDependendOnModules(Set<IModule> result) {

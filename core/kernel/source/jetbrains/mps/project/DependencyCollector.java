@@ -40,8 +40,8 @@ class DependencyCollector<T extends IModule> {
 
     for (IModule module : current.getExplicitlyDependOnModules()) {
       if (myVisited.contains(module)) continue;
-
-      if (myResultElementType.isInstance(module) && !myResult.contains((T) module)) {
+      
+      if ((myResultElementType == IModule.class || myResultElementType.isInstance(module))) {
         myResult.add((T) module);
         doCollect(module);
       }
