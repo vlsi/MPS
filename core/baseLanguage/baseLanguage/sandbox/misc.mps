@@ -1452,12 +1452,20 @@
       <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="6857488637699627022" />
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="6857488637699627023" />
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="6857488637699627024">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1628427176330222153">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1628427176330222154">
+            <property name="name" value="l" />
+            <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1628427176330222155">
+              <link role="classifier" targetNodeId="149.~Locale" resolveInfo="Locale" />
+            </node>
+          </node>
+        </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="6857488637699642352">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="6857488637699642354">
             <link role="classConcept" targetNodeId="150.~String" resolveInfo="String" />
             <link role="baseMethodDeclaration" targetNodeId="150.~String.format(java.util.Locale,java.lang.String,java.lang.Object...):java.lang.String" resolveInfo="format" />
-            <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="6857488637699642355">
-              <property name="value" value="" />
+            <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1628427176330222156">
+              <link role="variableDeclaration" targetNodeId="1628427176330222154" resolveInfo="l" />
             </node>
             <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="6857488637699642357">
               <property name="value" value="" />
