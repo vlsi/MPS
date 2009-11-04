@@ -192,7 +192,12 @@ public class BlameDialog extends BaseDialog {
     myResult = poster.send(query);
 
     if (!myResult.isSuccess()) {
-      JOptionPane.showMessageDialog(BlameDialog.this, myResult.getMessage() + ":" + myResult.getResponseString(), "Error", JOptionPane.ERROR_MESSAGE);
+      String message = "Was unable to post the issue: \n" + myResult.getMessage();
+      String response = myResult.getResponseString();
+      if (response != null && !response.equals("")) {
+        message += "\n" + response;
+      }
+      JOptionPane.showMessageDialog(BlameDialog.this, message, "Error", JOptionPane.ERROR_MESSAGE);
       return;
     }
 
