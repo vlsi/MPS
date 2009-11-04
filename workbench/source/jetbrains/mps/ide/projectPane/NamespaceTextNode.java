@@ -33,7 +33,7 @@ import jetbrains.mps.workbench.action.ActionUtils;
 import java.util.ArrayList;
 import java.util.List;
 
-public final class NamespaceTextNode extends TextTreeNode {
+public class NamespaceTextNode extends TextTreeNode {
   private static final NamespaceNodeBuilder<NamespaceTextNode> BUILDER = new NamespaceNodeBuilder<NamespaceTextNode>() {
     public NamespaceTextNode createNamespaceNode(String text, IOperationContext context) {
       return new NamespaceTextNode(text, context);
@@ -146,5 +146,9 @@ public final class NamespaceTextNode extends TextTreeNode {
 
   public String getName() {
     return myName;
+  }
+
+  public boolean isFinalName() {
+    return false;
   }
 }

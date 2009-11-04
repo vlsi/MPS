@@ -40,7 +40,7 @@ public class RenameNamespace_Action extends GeneratedAction {
   }
 
   public boolean isApplicable(AnActionEvent event) {
-    return RenameNamespace_Action.this.treeNode instanceof NamespaceTextNode && RenameNamespace_Action.this.getProjectPane() != null;
+    return RenameNamespace_Action.this.treeNode instanceof NamespaceTextNode && RenameNamespace_Action.this.getProjectPane() != null && !(((NamespaceTextNode)RenameNamespace_Action.this.treeNode).isFinalName());
   }
 
   public void doUpdate(@NotNull AnActionEvent event) {

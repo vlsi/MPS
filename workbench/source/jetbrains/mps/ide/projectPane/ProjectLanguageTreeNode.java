@@ -129,7 +129,7 @@ class ProjectLanguageTreeNode extends ProjectModuleTreeNode {
     add(languageRuntime);
 
     if (myLanguage.getUtilModels().size() > 0) {
-      TextTreeNode utilModels = new UtilModelsTreeNode();
+      TextTreeNode utilModels = new SModelGroupTreeNode(operationContext);
       List<SModelDescriptor> sortedModels = SortUtil.sortModels(myLanguage.getUtilModels());
       for (SModelDescriptor model : sortedModels) {
         utilModels.add(new SModelTreeNode(model, null, operationContext, false));
@@ -163,9 +163,21 @@ class ProjectLanguageTreeNode extends ProjectModuleTreeNode {
     }
   }
 
-  public class UtilModelsTreeNode extends TextTreeNode {
-    public UtilModelsTreeNode() {
-      super("util models");
+  public class SModelGroupTreeNode extends NamespaceTextNode {
+    public SModelGroupTreeNode(IOperationContext context) {
+      super("util models", context);
+    }
+
+    @Override
+    public String getNamespace() {
+      if (getParent() == null || !(getParent() instanceof ProjectLanguageTreeNode)) return "";
+      ProjectLanguageTreeNode parent = (ProjectLanguageTreeNode) getParent();
+      return parent.getModule().getModuleNamespace();
+    }
+
+    @Override
+    public boolean isFinalName() {
+      return true;
     }
   }
 }
