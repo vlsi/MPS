@@ -103,20 +103,10 @@ public abstract class ProjectModuleTreeNode extends MPSTreeNode {
 
     if (node instanceof SModelTreeNode) {
       SModelTreeNode smodelTreeNode = (SModelTreeNode) node;
-      if (smodelTreeNode.generationRequired()) {
-        return true;
-      }
+      if (smodelTreeNode.generationRequired()) return true;
 
-      if (SModelStereotype.isUserModel(smodelTreeNode.getSModelDescriptor())) {
-        smodelTreeNode.init();
-      }
-
-      for (MPSTreeNode child : smodelTreeNode) {
-        if (child instanceof SModelTreeNode) {
-          SModelTreeNode smt = (SModelTreeNode) child;
-
-          if (generationRequired(smt)) return true;
-        }
+      for (SModelTreeNode child : smodelTreeNode.getChildModelTreeNodes()) {
+        if (generationRequired(child)) return true;
       }
 
       return false;

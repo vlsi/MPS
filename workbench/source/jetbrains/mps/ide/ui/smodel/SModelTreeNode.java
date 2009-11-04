@@ -416,6 +416,10 @@ public class SModelTreeNode extends MPSTreeNodeEx {
     myChildModelTreeNodes.add(model);
   }
 
+  public List<SModelTreeNode> getChildModelTreeNodes() {
+    return myChildModelTreeNodes;
+  }
+
   protected void doUpdate() {
     myInitialized = false;
     this.removeAllChildren();
