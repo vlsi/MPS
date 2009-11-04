@@ -30,6 +30,7 @@ import jetbrains.mps.lang.test.structure.Test_Language;
 import jetbrains.mps.lang.textGen.structure.TextGen_Language;
 import jetbrains.mps.lang.typesystem.structure.Typesystem_Language;
 import jetbrains.mps.lang.refactoring.structure.Refactoring_Language;
+import jetbrains.mps.lang.stubs.structure.Stubs_Language;
 import jetbrains.mps.library.LanguageDesign_DevKit;
 import jetbrains.mps.project.SModelRoot;
 import jetbrains.mps.project.structure.modules.ModuleReference;
@@ -241,6 +242,16 @@ public enum LanguageAspect {
     @Override
     public Icon getIcon() {
       return Icons.TEXT_GEN_MODEL_ICON;
+    }
+
+    public String getHelpURL() {
+      return "";
+    }
+  },
+
+  STUBS("stubs") {
+    public ModuleReference getMainLanguage() {
+      return Stubs_Language.MODULE_REFERENCE;
     }
 
     public String getHelpURL() {

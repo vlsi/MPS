@@ -24,6 +24,7 @@
   </component>
   <component name="VcsDirectoryMappings">
     <mapping directory="" vcs="" />
+    <mapping directory="$PROJECT_DIR$" vcs="svn" />
   </component>
 </project>
 

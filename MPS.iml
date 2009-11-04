@@ -6,6 +6,7 @@
     <content url="file://$MODULE_DIR$">
       <sourceFolder url="file://$MODULE_DIR$/core/baseLanguage/math/languages/math/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/core/languageDesign/editorTest/source_gen" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/core/languageDesign/stubs/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/source" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/tests" isTestSource="true" />
@@ -38,6 +39,8 @@
     <orderEntry type="module" module-name="workbench" exported="" />
     <orderEntry type="module" module-name="kernel" exported="" />
     <orderEntry type="module" module-name="plugin" exported="" />
+    <orderEntry type="module" module-name="textgen" exported="" />
+    <orderEntry type="module" module-name="stubs" exported="" />
     <orderEntry type="module" module-name="classifiers" exported="" />
     <orderEntry type="module" module-name="dataFlow" exported="" />
     <orderEntry type="library" exported="" name="commons-lang" level="project" />
@@ -69,7 +72,6 @@
     <orderEntry type="library" exported="" name="XmlRpc" level="project" />
     <orderEntry type="library" exported="" name="XStream" level="project" />
     <orderEntry type="library" exported="" name="YJP" level="project" />
-    <orderEntry type="module" module-name="textgen" exported="" />
     <orderEntry type="library" exported="" name="jfcUnit" level="project" />
     <orderEntry type="library" name="jakarta regexp" level="project" />
   </component>
