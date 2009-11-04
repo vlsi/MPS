@@ -30,6 +30,7 @@ import com.intellij.openapi.ui.Messages;
 import com.intellij.openapi.startup.StartupManager;
 import jetbrains.mps.MPSProjectHolder;
 import jetbrains.mps.ide.projectPane.ProjectPane;
+import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.library.LanguageDesign_DevKit;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.Solution;
@@ -177,7 +178,7 @@ public class NewProjectWizard extends AbstractWizard<BaseStep> {
     //noinspection ConstantConditions
     final MPSProject mpsProject = myCreatedProject.getComponent(MPSProjectHolder.class).getMPSProject();
 
-    ModelAccess.instance().runWriteAction(new Runnable() {
+    ModelAccess.instance().runCommandInEDT(new Runnable() {
       public void run() {
         if (myOptions.getCreateNewLanguage()) {
           myCreatedLanguage = createNewLanguage(mpsProject);
