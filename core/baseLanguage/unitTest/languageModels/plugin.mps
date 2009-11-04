@@ -3054,6 +3054,14 @@
             </node>
           </node>
         </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="8337757094861284550">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="8337757094861284551">
+            <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="8337757094861284552">
+              <link role="baseMethodDeclaration" targetNodeId="1239644052867" resolveInfo="close" />
+            </node>
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="8337757094861284553" />
+          </node>
+        </node>
       </node>
     </node>
     <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1239644060349">
@@ -3085,7 +3093,7 @@
       </node>
     </node>
     <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1239644052867">
-      <property name="name" value="close" />
+      <property name="name" value="invokeCloseListeners" />
       <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1239644052868" />
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1239644052869" />
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1239644052870">
