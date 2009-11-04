@@ -16,6 +16,7 @@
 package jetbrains.mps.project;
 
 import com.intellij.openapi.progress.EmptyProgressIndicator;
+import jetbrains.mps.baseLanguage.structure.ClassConcept;
 import jetbrains.mps.generator.GeneratorManager;
 import jetbrains.mps.generator.IllegalGeneratorConfigurationException;
 import jetbrains.mps.generator.generationTypes.GenerateFilesAndClassesGenerationType;
@@ -27,16 +28,23 @@ import jetbrains.mps.logging.ILoggingHandler;
 import jetbrains.mps.logging.LogEntry;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.structure.project.testconfigurations.BaseTestConfiguration;
-import jetbrains.mps.project.tester.TesterGenerationType;
 import jetbrains.mps.project.tester.DiffReporter;
+import jetbrains.mps.project.tester.TesterGenerationType;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.smodel.SNode;
+import junit.framework.TestCase;
 import junit.framework.TestFailure;
 import org.eclipse.jdt.core.compiler.CategorizedProblem;
 import org.eclipse.jdt.internal.compiler.CompilationResult;
 
-import java.util.*;
+import java.io.PrintWriter;
+import java.io.StringWriter;
+import java.lang.reflect.Method;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 
 public class ProjectTester {
   private MPSProject myProject;
@@ -68,40 +76,47 @@ public class ProjectTester {
     return res;
   }
 
-  private static List<TestFailure> createTestFailures(GenerateFilesAndClassesGenerationType genType, GenParameters genParams) {
-    return invokeTests(genType, genParams.getSModels());
+  private static List<TestFailure> createTestFailures(GenerateFilesAndClassesGenerationType genType, List<SModel> models) {
+    return invokeTests(genType, models);
   }
 
-  public static List<TestFailure> invokeTests(GenerateFilesAndClassesGenerationType genType, List<SModel> models) {
+  public static List<TestFailure> invokeTests(GenerateFilesAndClassesGenerationType genType, List<SModel> outputModels) {
     List<TestFailure> result = new ArrayList<TestFailure>();
-//    for (SModel model : models) {
-//      for (SNode root : model.getRoots()) {
-//        try {
-//          ClassLoader classLoader = genType.getCompiler().getClassLoader(model.getClass().getClassLoader());
-//          String className = JavaNameUtil.packageNameForModelUID(model.getSModelReference()) + "." + root.getName();
-//          Class instanceClass = Class.forName(className, true, classLoader);
-//          Object instance = instanceClass.newInstance();
-//          Method setName = TestCase.class.getMethod("setName", String.class);
-//          for (Method method : instanceClass.getMethods()) {
-//            if (method.getAnnotation(org.junit.Test.class) == null) {
-//              continue;
-//            }
-//            setName.invoke(instance, method.getName());
-//            if (instance instanceof TestCase) {
-//              junit.framework.TestResult testResult = new junit.framework.TestResult();
-//              ((TestCase) instance).run(testResult);
-//              for (TestFailure testError : Collections.list(testResult.errors())) {
-//                result.add(testError);
-//              }
-//              for (TestFailure testFailure : Collections.list(testResult.failures())) {
-//                result.add(testFailure);
-//              }
-//            }
-//          }
-//        } catch (Throwable ignored) {
-//        }
-//      }
-//    }
+    for (SModel model : outputModels) {
+      ClassLoader classLoader = genType.getCompiler().getClassLoader(model.getClass().getClassLoader());
+      for (SNode outputRoot : model.getRoots()) {
+        if (!outputRoot.isInstanceOfConcept(ClassConcept.concept)) continue;
+        try {
+          String className = model.getLongName() + "." + outputRoot.getName();
+          Class testClass = Class.forName(className, true, classLoader);
+          List<Method> testMethods = new ArrayList<Method>();
+
+          boolean isTestCase = TestCase.class.isAssignableFrom(testClass);
+
+          for (Method method : testClass.getMethods()) {
+            if (method.getAnnotation(org.junit.Test.class) != null
+              || (method.getName().startsWith("test") && isTestCase)) {
+              testMethods.add(method);
+            }
+          }
+
+          for (Method testMethod : testMethods) {
+            final Object instance = testClass.newInstance();
+            Method setName = TestCase.class.getMethod("setName", String.class);
+            setName.invoke(instance, testMethod.getName());
+            final junit.framework.TestResult testResult = new junit.framework.TestResult();
+            ((TestCase) instance).run(testResult);
+            for (TestFailure testError : Collections.list(testResult.errors())) {
+              result.add(testError);
+            }
+            for (TestFailure testFailure : Collections.list(testResult.failures())) {
+              result.add(testFailure);
+            }
+          }
+        } catch (Throwable ignored) {
+        }
+      }
+    }
     return result;
   }
 
@@ -159,7 +174,7 @@ public class ProjectTester {
             }
 
             int numErrorsBeforeGeneration = errors.size();
-            
+
             GeneratorManager gm = myProject.getComponentSafe(GeneratorManager.class);
             gm.generateModels(
               parms.getModelDescriptors(),
@@ -168,25 +183,26 @@ public class ProjectTester {
               new EmptyProgressIndicator(),
               handler
             );
-            
+
             if (myIsRunnable) {
                 diffReports.addAll(DiffReporter.createDiffReports(generationType));
             }
-            
+            List<SModel> outputModels = new ArrayList<SModel>();
+            outputModels.addAll(generationType.getOutputModels());
             if (errors.size() > numErrorsBeforeGeneration) {
                 System.out.println("There were generation errors, cancelling compilation");
             }
             else {
                 long start = System.currentTimeMillis();
                 List<CompilationResult> compilationResultList = generationType.compile(IAdaptiveProgressMonitor.NULL_PROGRESS_MONITOR);
-                System.out.println("Compiled " + compilationResultList.size() + " compilation units in " + (System.currentTimeMillis() - start));            
+                System.out.println("Compiled " + compilationResultList.size() + " compilation units in " + (System.currentTimeMillis() - start));
                 compilationResults.addAll(createCompilationProblemsList(compilationResultList));
                 if (compilationResults.isEmpty()) {
                     System.out.println("Compilation ok");
-                }                
+                }
             }
 
-            failedTests.addAll(createTestFailures(generationType, parms));
+            failedTests.addAll(createTestFailures(generationType, outputModels));
 
             System.out.println("");
             System.out.println("");
