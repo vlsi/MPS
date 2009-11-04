@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <language namespace="jetbrains.mps.baseLanguage.methodExtension" uuid="5dc5fc0d-37ef-4782-8192-8b5ce1f69f80" java-stubs-enabled="false" compileInMPS="false">
   <models>
-    <modelRoot path="${mps_home}/platform/extensionMethod/languageModels" namespacePrefix="" />
+    <modelRoot path="${language_descriptor}/languageModels" namespacePrefix="" />
   </models>
   <accessoryModels />
   <generators>
@@ -17,10 +17,10 @@
     </generator>
   </generators>
   <classPath>
-    <entry path="${mps_home}/platform/extensionMethod/classes" include="false" />
+    <entry path="${language_descriptor}/classes_gen" include="false" />
   </classPath>
   <languageRuntimeClassPath>
-    <entry path="${mps_home}/platform/extensionMethod/classes" />
+    <entry path="${language_descriptor}/classes_gen" />
   </languageRuntimeClassPath>
   <sourcePath />
   <dependencies>
