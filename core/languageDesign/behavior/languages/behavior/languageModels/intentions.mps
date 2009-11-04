@@ -49,6 +49,7 @@
   <import index="13" modelUID="r:00000000-0000-4000-0000-011c8959028b(jetbrains.mps.lang.structure.behavior)" version="-1" />
   <node type="jetbrains.mps.lang.intentions.structure.IntentionDeclaration" id="1225201879279">
     <property name="name" value="MakeAbstract" />
+    <property name="isAvailableInChildNodes" value="true" />
     <link role="forConcept" targetNodeId="1.1225194472830" resolveInfo="ConceptMethodDeclaration" />
     <node role="descriptionFunction" type="jetbrains.mps.lang.intentions.structure.DescriptionBlock" id="1225201879280">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1225201879281">
@@ -141,6 +142,7 @@
   </node>
   <node type="jetbrains.mps.lang.intentions.structure.IntentionDeclaration" id="1225201879322">
     <property name="name" value="MakeVirtual" />
+    <property name="isAvailableInChildNodes" value="true" />
     <link role="forConcept" targetNodeId="1.1225194472830" resolveInfo="ConceptMethodDeclaration" />
     <node role="descriptionFunction" type="jetbrains.mps.lang.intentions.structure.DescriptionBlock" id="1225201879323">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1225201879324">
@@ -208,6 +210,7 @@
   <node type="jetbrains.mps.lang.intentions.structure.IntentionDeclaration" id="1227263136948">
     <property name="name" value="FixMethodSignature" />
     <property name="isErrorIntention" value="true" />
+    <property name="isAvailableInChildNodes" value="true" />
     <link role="forConcept" targetNodeId="1.1225194472830" resolveInfo="ConceptMethodDeclaration" />
     <node role="descriptionFunction" type="jetbrains.mps.lang.intentions.structure.DescriptionBlock" id="1227263136949">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1227263136950">

@@ -17,10 +17,10 @@
     </generator>
   </generators>
   <classPath>
-    <entry path="${language_descriptor}/classes_gen" include="false" />
+    <entry path="${language_descriptor}/classes" include="false" />
   </classPath>
   <languageRuntimeClassPath>
-    <entry path="${language_descriptor}/classes_gen" />
+    <entry path="${language_descriptor}/classes" />
   </languageRuntimeClassPath>
   <sourcePath />
   <dependencies>
