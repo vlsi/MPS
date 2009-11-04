@@ -164,7 +164,7 @@ public class typeof_ClosureLiteral_InferenceRule extends AbstractInferenceRule_R
           }
           break;
         }
-        //  fall through
+        //  fall through 
       default:
         yieldsValue = true;
         {

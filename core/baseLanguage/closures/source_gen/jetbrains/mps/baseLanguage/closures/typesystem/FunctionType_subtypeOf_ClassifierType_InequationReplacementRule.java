@@ -31,7 +31,7 @@ public class FunctionType_subtypeOf_ClassifierType_InequationReplacementRule ext
       List<SNode> methods = SLinkOperations.getTargets(classifier, "method", true);
       if (methods != null) {
         if (ListSequence.fromList(methods).count() > 1) {
-          //  dirty hack
+          //  dirty hack 
           errorMsg = ": interface must have only one method";
           {
             BaseIntentionProvider intentionProvider = null;
@@ -106,9 +106,9 @@ public class FunctionType_subtypeOf_ClassifierType_InequationReplacementRule ext
         List<SNode> methods = SLinkOperations.getTargets(classifier, "method", true);
         if (methods != null) {
           if (ListSequence.fromList(methods).count() > 1) {
-            //  dirty hack
+            //  dirty hack 
             errorMsg = ": interface must have only one method";
-            // generated from warning statement
+            // generated from warning statement 
           }
           SNode md = ListSequence.fromList(methods).getElement(0);
           if (SLinkOperations.getCount(subtype, "parameterType") == SLinkOperations.getCount(md, "parameter")) {
