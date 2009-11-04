@@ -30,11 +30,19 @@ public class Command {
   public static final String ISSUE_URL = TEAMSYS + "/issue/";
 
   private static final String PROJECT = "MPS";
+  private static final String EXCEPTION = "Exception";
+
+  private static final String LOGIN_PARAM_NAME = "login";
+  private static final String PASSWORD_PARAM_NAME = "password";
+  private static final String PROJECT_PARAM_NAME = "project";
+  private static final String SUMMARY_PARAM_NAME = "summary";
+  private static final String DESCRIPTION_PARAM_NAME = "description";
+  private static final String TYPE_PARAM_NAME = "type";
 
   public static Response login(final HttpClient c, Query query) throws IOException {
     PostMethod p = new PostMethod(TEAMSYS + LOGIN);
-    p.addParameter("login", query.getUser());
-    p.addParameter("password", query.getPassword());
+    p.addParameter(LOGIN_PARAM_NAME, query.getUser());
+    p.addParameter(PASSWORD_PARAM_NAME, query.getPassword());
     c.executeMethod(p);
 
     int statusCode = p.getStatusCode();
@@ -49,9 +57,10 @@ public class Command {
   @NotNull
   public static Response postIssue(HttpClient c, String summary, String description) throws IOException {
     PostMethod p = new PostMethod(TEAMSYS + POST_ISSUE);
-    p.addParameter("project", PROJECT);
-    p.addParameter("summary", summary);
-    p.addParameter("description", description);
+    p.addParameter(PROJECT_PARAM_NAME, PROJECT);
+    p.addParameter(SUMMARY_PARAM_NAME, summary);
+    p.addParameter(DESCRIPTION_PARAM_NAME, description);
+    p.addParameter(TYPE_PARAM_NAME, EXCEPTION);
     c.executeMethod(p);
 
     int statusCode = p.getStatusCode();
