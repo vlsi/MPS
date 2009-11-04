@@ -77,7 +77,7 @@ public abstract class ClassPathModelRootManager extends AbstractModelRootManager
     try {
       SModelReference reference = modelDescriptor.getSModelReference();
       String pack = reference.getLongName();
-      myConverter.updateModel(pack, true);
+      myConverter.updateModel(pack);
     } finally {
       model.setLoading(wasLoading);
     }
