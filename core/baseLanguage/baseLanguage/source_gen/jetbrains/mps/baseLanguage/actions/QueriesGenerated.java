@@ -1565,7 +1565,7 @@ __switch__:
               if ((originalExpression != null)) {
                 SNode expectedType = ExpectedType_FactoryUtil.createExpectedType(SNodeOperations.cast(originalExpression, "jetbrains.mps.baseLanguage.structure.Expression"));
                 if ((expectedType != null)) {
-                  return Type_Behavior.call_getAbstractCreators_1226945293888(expectedType);
+                  return Type_Behavior.call_getAbstractCreators_7602110602933317830(expectedType, _context.getModel());
                 }
               }
             }

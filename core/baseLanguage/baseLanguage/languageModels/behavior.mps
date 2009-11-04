@@ -4285,6 +4285,28 @@
         <link role="elementConcept" targetNodeId="1.1145552809883" resolveInfo="AbstractCreator" />
       </node>
     </node>
+    <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="7602110602933317830">
+      <property name="name" value="getAbstractCreators" />
+      <property name="isVirtual" value="true" />
+      <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="7602110602933327003">
+        <property name="name" value="targetModel" />
+        <node role="type" type="jetbrains.mps.lang.smodel.structure.SModelType" id="7602110602933327005" />
+      </node>
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="7602110602933317831" />
+      <node role="returnType" type="jetbrains.mps.lang.smodel.structure.SNodeListType" id="7602110602933327002">
+        <link role="elementConcept" targetNodeId="1.1145552809883" resolveInfo="AbstractCreator" />
+      </node>
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="7602110602933317833">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="7602110602933327006">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="7602110602933327008">
+            <node role="operand" type="jetbrains.mps.lang.behavior.structure.ThisNodeExpression" id="7602110602933327009" />
+            <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="7602110602933327010">
+              <link role="baseMethodDeclaration" targetNodeId="1226945293888" resolveInfo="getAbstractCreators" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
     <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="1213877337345">
       <property name="isVirtual" value="true" />
       <property name="name" value="getJavaType" />

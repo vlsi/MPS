@@ -9026,8 +9026,9 @@
                               <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1227004927500">
                                 <link role="variableDeclaration" targetNodeId="1227004927491" resolveInfo="expectedType" />
                               </node>
-                              <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1227004927501">
-                                <link role="baseMethodDeclaration" targetNodeId="51.1226945293888" resolveInfo="getAbstractCreators" />
+                              <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="7602110602933506243">
+                                <link role="baseMethodDeclaration" targetNodeId="51.7602110602933317830" resolveInfo="getAbstractCreators" />
+                                <node role="actualArgument" type="jetbrains.mps.lang.sharedConcepts.structure.ConceptFunctionParameter_model" id="7602110602933507257" />
                               </node>
                             </node>
                           </node>
