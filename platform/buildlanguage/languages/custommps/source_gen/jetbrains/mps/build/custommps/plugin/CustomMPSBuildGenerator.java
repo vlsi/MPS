@@ -48,13 +48,13 @@ public class CustomMPSBuildGenerator extends BuildGeneratorImpl {
 
   public Runnable generate(final SModelDescriptor targetModelDescriptor, String name, String basedir, List<NodeData> selectedData) {
     final SNode mpsLayout = this.createMPSLayout(targetModelDescriptor, name, basedir, selectedData);
-    // 
+    //  
     SNode zipNode = SNodeOperations.cast(ListSequence.fromList(SLinkOperations.getTargets(mpsLayout, "component", true)).first(), "jetbrains.mps.build.packaging.structure.Zip");
     SNode rootFolder = SNodeOperations.cast(ListSequence.fromList(SLinkOperations.getTargets(zipNode, "entry", true)).first(), "jetbrains.mps.build.packaging.structure.Folder");
     List<SNode> entries = SLinkOperations.getTargets(rootFolder, "entry", true);
     SNode mpsBuild = SConceptOperations.createNewNode("jetbrains.mps.build.custommps.structure.MPSBuild", null);
     SLinkOperations.addChild(mpsLayout, "component", mpsBuild);
-    // 
+    //  
     SNode libraryFolder = createLibraryFolder(rootFolder);
     for (SNode entry : ListSequence.fromList(entries)) {
       if (SNodeOperations.isInstanceOf(entry, "jetbrains.mps.build.packaging.structure.Module")) {
@@ -70,7 +70,7 @@ public class CustomMPSBuildGenerator extends BuildGeneratorImpl {
       SLinkOperations.addChild(mpsBuild, "entry", libraryFolder);
     }
     SNodeOperations.deleteNode(zipNode);
-    //  setting buildtools.zip path
+    //  setting buildtools.zip path 
     SNode buildToolsPath = SConceptOperations.createNewNode("jetbrains.mps.build.packaging.structure.Path", null);
     String result = Macros.mpsHomeMacros().shrinkPath(this.myPathToBuildTools, new File("")).replace("\\", File.separator);
     int index = result.lastIndexOf("}");

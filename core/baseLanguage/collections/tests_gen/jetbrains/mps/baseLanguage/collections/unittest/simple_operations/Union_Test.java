@@ -95,12 +95,12 @@ __switch__:
     });
     Iterable<Integer> s3 = Sequence.fromIterable(s1).union(Sequence.fromIterable(s2));
     Assert.assertSame(Sequence.fromIterable(s3).count(), 4);
-    // order in s3 is undefined
+    // order in s3 is undefined 
     Assert.assertTrue(Sequence.fromIterable(s3).contains(1));
     Assert.assertTrue(Sequence.fromIterable(s3).contains(2));
     Assert.assertTrue(Sequence.fromIterable(s3).contains(3));
     Assert.assertTrue(Sequence.fromIterable(s3).contains(4));
-    // null test
+    // null test 
     s1 = null;
     Iterable<Integer> s2_ = Sequence.fromIterable(s1).union(Sequence.fromIterable(s2));
     Assert.assertEquals(3, Sequence.fromIterable(s2_).count());

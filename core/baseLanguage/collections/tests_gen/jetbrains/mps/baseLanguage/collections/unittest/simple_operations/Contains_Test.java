@@ -63,7 +63,7 @@ __switch__:
     List<Integer> intL = ListSequence.fromListAndArray(new ArrayList<Integer>(), 10, 20, 30);
     Assert.assertTrue(ListSequence.fromList(intL).contains(10));
     Assert.assertFalse(ListSequence.fromList(intL).contains(15));
-    // null test
+    // null test 
     intL = null;
     Assert.assertFalse(ListSequence.fromList(intL).contains(15));
   }

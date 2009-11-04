@@ -109,7 +109,7 @@ public class Util_Test extends TestCase {
       it.next();
       Assert.fail();
     } catch (NoSuchElementException e) {
-      // expected exception
+      // expected exception 
     }
   }
 }

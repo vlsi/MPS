@@ -38,7 +38,7 @@ public class QueriesGenerated {
   }
 
   public static boolean baseMappingRule_Condition_1203599879180(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
-    // todo find a better way to express this
+    // todo find a better way to express this 
     return ThisClassifierExpression_Behavior.call_getClassifier_1213877512819(_context.getNode()) == null;
   }
 

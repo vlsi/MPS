@@ -102,7 +102,7 @@ __switch__:
     Assert.assertTrue(ListSequence.fromList(s3).getElement(3) == 3);
     Assert.assertTrue(ListSequence.fromList(s3).getElement(4) == 4);
     Assert.assertTrue(ListSequence.fromList(s3).getElement(5) == 5);
-    // null test
+    // null test 
     s1 = null;
     Iterable<Integer> s2_ = Sequence.fromIterable(s1).concat(Sequence.fromIterable(s2));
     Assert.assertEquals(3, Sequence.fromIterable(s2_).count());
