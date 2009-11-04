@@ -14,8 +14,8 @@ import com.intellij.openapi.actionSystem.AnActionEvent;
 import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.project.Solution;
 import jetbrains.mps.workbench.actions.model.OptimizeImportsHelper;
+import jetbrains.mps.project.Solution;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import com.intellij.openapi.progress.EmptyProgressIndicator;
@@ -76,10 +76,11 @@ public class OptimizeModuleImports_Action extends GeneratedAction {
       final Wrappers._T<String> report = new Wrappers._T<String>("");
       ModelAccess.instance().runWriteActionInCommand(new Runnable() {
         public void run() {
+          OptimizeImportsHelper helper = new OptimizeImportsHelper(OptimizeModuleImports_Action.this.context);
           if (OptimizeModuleImports_Action.this.module instanceof Solution) {
-            report.value = OptimizeImportsHelper.optimizeSolutionImports(OptimizeModuleImports_Action.this.context, ((Solution)OptimizeModuleImports_Action.this.module));
+            report.value = helper.optimizeSolutionImports(((Solution)OptimizeModuleImports_Action.this.module));
           } else if (OptimizeModuleImports_Action.this.module instanceof Language) {
-            report.value = OptimizeImportsHelper.optimizeLanguageImports(OptimizeModuleImports_Action.this.context, ((Language)OptimizeModuleImports_Action.this.module));
+            report.value = helper.optimizeLanguageImports(((Language)OptimizeModuleImports_Action.this.module));
           }
         }
       });

@@ -72,7 +72,7 @@ public class OptimizeProjectImports_Action extends GeneratedAction {
       final Wrappers._T<String> report = new Wrappers._T<String>();
       ModelAccess.instance().runWriteActionInCommand(new Runnable() {
         public void run() {
-          report.value = OptimizeImportsHelper.optimizeProjectImports(OptimizeProjectImports_Action.this.context, OptimizeProjectImports_Action.this.project);
+          report.value = new OptimizeImportsHelper(OptimizeProjectImports_Action.this.context).optimizeProjectImports(OptimizeProjectImports_Action.this.project);
         }
       });
       new ScrollingMessageDialog(OptimizeProjectImports_Action.this.frame, report.value).showDialog();

@@ -15,8 +15,8 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.project.Solution;
 import jetbrains.mps.workbench.actions.model.OptimizeImportsHelper;
+import jetbrains.mps.project.Solution;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.reloading.ClassLoaderManager;
@@ -68,10 +68,11 @@ public class OptimizeImportsInGlobalScope_Action extends GeneratedAction {
         final Wrappers._T<String> report = new Wrappers._T<String>("");
         ModelAccess.instance().runWriteActionInCommand(new Runnable() {
           public void run() {
+            OptimizeImportsHelper helper = new OptimizeImportsHelper(OptimizeImportsInGlobalScope_Action.this.context);
             if (module instanceof Solution) {
-              report.value = OptimizeImportsHelper.optimizeSolutionImports(OptimizeImportsInGlobalScope_Action.this.context, ((Solution)module));
+              report.value = helper.optimizeSolutionImports(((Solution)module));
             } else if (module instanceof Language) {
-              report.value = OptimizeImportsHelper.optimizeLanguageImports(OptimizeImportsInGlobalScope_Action.this.context, ((Language)module));
+              report.value = helper.optimizeLanguageImports(((Language)module));
             }
             module.save();
             SModelRepository.getInstance().saveAll();
