@@ -66,11 +66,11 @@ __switch__:
         };
       }
     });
-    // from infinite sequence take first 10 numbers,
-    // ignore odd numbers,
-    // map each even number to two strings:
-    // "num:<n>"
-    // "num:<n*100>"
+    // from infinite sequence take first 10 numbers, 
+    // ignore odd numbers, 
+    // map each even number to two strings: 
+    // "num:<n>" 
+    // "num:<n*100>" 
     final Wrappers._int count = new Wrappers._int(0);
     Iterable<String> strings = Sequence.fromIterable(nums).translate(new ITranslator2<Integer, String>() {
       public Iterable<String> translate(final Integer n) {
