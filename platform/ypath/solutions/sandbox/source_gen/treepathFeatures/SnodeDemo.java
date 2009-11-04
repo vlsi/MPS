@@ -99,7 +99,7 @@ __switch__:
         };
       }
     });
-    // The following ypath construct should result in the same expression as above
+    // The following ypath construct should result in the same expression as above 
     Sequence.fromIterable(Sequence.fromClosure(new ISequenceClosure<SNode>() {
       public Iterable<SNode> iterable() {
         SNode _zzz_ = foo;
@@ -185,7 +185,7 @@ __switch__:
         };
       }
     });
-    // Another pair of tests
+    // Another pair of tests 
     ListSequence.fromList(ListSequence.fromListAndArray(new ArrayList<SNode>(), SLinkOperations.getTarget(foo, "extends", false))).translate(new ITranslator2<SNode, SNode>() {
       public Iterable<SNode> translate(final SNode it) {
         return new Iterable<SNode>() {
@@ -332,9 +332,9 @@ __switch__:
         };
       }
     });
-    // And another one
+    // And another one 
     /*
-      //  way too complicated
+      //  way too complicated 
       ListSequence.fromList(ListSequence.fromListAndArray(new ArrayList<SNode>(), foo)).translate(new ITranslator2<SNode, SNode>() {
         public Iterable<SNode> translate(SNode it) {
           return new _FunctionTypes._return_P1_E0<Iterable<SNode>, SNode>() {
@@ -450,7 +450,7 @@ __switch__:
         };
       }
     });
-    // Following is just a test
+    // Following is just a test 
     Sequence.fromIterable(Sequence.fromClosure(new ISequenceClosure<SNode>() {
       public Iterable<SNode> iterable() {
         SNode _zzz_ = foo;
@@ -562,6 +562,6 @@ __switch__:
         return SNodeOperations.getChildren(_zzz_);
       }
     });
-    // !@#$&
+    // !@#$& 
   }
 }
