@@ -38,14 +38,7 @@ public class BaseMethodParameterInformationQuery extends ParametersInformation<S
     while (argument != null && !(SNodeOperations.isInstanceOf(argument, "jetbrains.mps.baseLanguage.structure.Expression") && ListSequence.fromList(SLinkOperations.getTargets(node, "actualArgument", true)).contains(SNodeOperations.cast(argument, "jetbrains.mps.baseLanguage.structure.Expression")))) {
       argument = SNodeOperations.getParent(argument);
     }
-    int argumentIndex = -1;
-    if (argument != null) {
-      for (int i = 0; i < ListSequence.fromList(SLinkOperations.getTargets(node, "actualArgument", true)).count(); i++) {
-        if (ListSequence.fromList(ListSequence.fromList(SLinkOperations.getTargets(node, "actualArgument", true)).toListSequence()).getElement(i) == argument) {
-          argumentIndex = i;
-        }
-      }
-    }
+
     SNode methodDeclaration = parameterObject;
     if (!(SNodeOperations.isInstanceOf(methodDeclaration, "jetbrains.mps.baseLanguage.structure.ConstructorDeclaration"))) {
       if (SLinkOperations.getTarget(methodDeclaration, "returnType", true) != null) {
@@ -59,13 +52,14 @@ public class BaseMethodParameterInformationQuery extends ParametersInformation<S
     } else {
       styledText.append("<no name>");
     }
+    int argumentIndex = SNodeOperations.getIndexInParent(argument);
     styledText.append("(");
-    int i = 0;
     for (SNode param : SLinkOperations.getTargets(methodDeclaration, "parameter", true)) {
-      if (i > 0) {
+      if (SNodeOperations.getIndexInParent(param) > 0) {
         styledText.append(", ");
       }
-      if (i == argumentIndex) {
+      if (SNodeOperations.getIndexInParent(param) == argumentIndex) {
+        styledText.setBold(true);
       }
       if (SLinkOperations.getTarget(param, "type", true) != null) {
         styledText.append(BaseConcept_Behavior.call_getPresentation_1213877396640(SLinkOperations.getTarget(param, "type", true)));
@@ -75,7 +69,7 @@ public class BaseMethodParameterInformationQuery extends ParametersInformation<S
       if (SPropertyOperations.getString(param, "name") != null) {
         styledText.append(" " + SPropertyOperations.getString(param, "name"));
       }
-      i++;
+      styledText.setBold(false);
     }
     styledText.append(")");
   }

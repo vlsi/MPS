@@ -55,12 +55,9 @@
       <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="6208804448825809380" />
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="6208804448825809381" />
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="6208804448825809382">
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="5102468593876989322">
-          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="5102468593876989323">
-            <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="5102468593876989324">
-              <link role="classifier" targetNodeId="31.~List" resolveInfo="List" />
-              <node role="parameter" type="jetbrains.mps.baseLanguage.structure.WildCardType" id="5102468593876989326" />
-            </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="4837728922725361456">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="4837728922725361472">
+            <property name="value" value="true" />
           </node>
         </node>
       </node>
