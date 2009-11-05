@@ -120,20 +120,27 @@ public class NewModelDialog extends BaseDialog {
     }
     myResult = ModelAccess.instance().runWriteActionInCommand(new Computable<SModelDescriptor>() {
       public SModelDescriptor compute() {
-        if (myModelName.getText().length() == 0) {
+        String modelName = myModelName.getText();
+        if (modelName.length() == 0) {
           setErrorText("Empty model name isn't allowed");
           return null;
         }
 
-        SModelFqName modelUID = new SModelFqName(myModelName.getText(), myModelStereotype.getSelectedItem().toString());
+        SModelFqName modelUID = new SModelFqName(modelName, myModelStereotype.getSelectedItem().toString());
         if (SModelRepository.getInstance().getModelDescriptor(modelUID) != null) {
-          setErrorText("Model with an uid " + myModelName.getText() + " already exists");
+          setErrorText("Model with an uid " + modelName + " already exists");
           return null;
         }
 
         ModelRootWrapper wrapper = (ModelRootWrapper) myModelRoots.getSelectedItem();
-        if (!myModelName.getText().startsWith(wrapper.getNamespace())) {
+        String modelPrefix = wrapper.getNamespace() + '.';
+        if (!(modelName.startsWith(modelPrefix))) {
           setErrorText("Model name should have a prefix " + wrapper.getNamespace());
+          return null;
+        }
+
+        if (modelName.length() - modelPrefix.length() == 0) {
+          setErrorText("Empty model short name isn't allowed");
           return null;
         }
 
