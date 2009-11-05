@@ -170,20 +170,16 @@ public class ModuleMaker {
 
           final SNode nodeToShow = getNodeByLine(cp, fqName);
 
-          if (cp.isWarning()) {
-            Object hintObject = nodeToShow;
+          Object hintObject = nodeToShow;
             if (hintObject == null) {
               hintObject = new FileWithPosition(javaFile.getFile(), cp.getSourceStart());
             }
+          if (cp.isWarning()) {
             LOG.warning(messageStirng + " (line: " + cp.getSourceLineNumber() + ")", hintObject);
           } else {
             if (outputtedErrors < MAX_ERRORS) {
-              outputtedErrors++;
-              Object hintObject = nodeToShow;
-              if (hintObject == null) {
-                hintObject = new FileWithPosition(javaFile.getFile(), cp.getSourceStart());
-              }
-              LOG.warning(messageStirng + " (line: " + cp.getSourceLineNumber() + ")", hintObject);
+              outputtedErrors++;              
+              LOG.error(messageStirng + " (line: " + cp.getSourceLineNumber() + ")", hintObject);
             }
           }
         }
