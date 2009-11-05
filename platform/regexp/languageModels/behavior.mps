@@ -808,6 +808,26 @@
       <node role="returnType" type="jetbrains.mps.baseLanguage.structure.StringType" id="4887793210801261879" />
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1222873437854" />
     </node>
+    <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="3050481019131546479">
+      <property name="name" value="needsParentheses" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PrivateVisibility" id="3050481019131546483" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.BooleanType" id="3050481019131547955" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="3050481019131546482">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="3050481019131547956">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="3050481019131551642">
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="3050481019131551637">
+              <node role="operand" type="jetbrains.mps.lang.behavior.structure.ThisNodeExpression" id="3050481019131551636" />
+              <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_GetParentOperation" id="3050481019131551641" />
+            </node>
+            <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation" id="3050481019131551646">
+              <node role="conceptArgument" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" id="3050481019131551648">
+                <link role="conceptDeclaration" targetNodeId="1.1174484562151" resolveInfo="SeqRegexp" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
     <node role="constructor" type="jetbrains.mps.lang.behavior.structure.ConceptConstructorDeclaration" id="1222436753892">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1222436753893" />
     </node>

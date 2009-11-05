@@ -144,6 +144,17 @@
         </node>
       </node>
     </node>
+    <node role="regexp" type="jetbrains.mps.baseLanguage.regexp.structure.RegexpDeclaration" id="3050481019131437876">
+      <property name="name" value="aa" />
+      <node role="regexp" type="jetbrains.mps.baseLanguage.regexp.structure.SeqRegexp" id="3050481019132224637">
+        <node role="left" type="jetbrains.mps.baseLanguage.regexp.structure.PredefinedSymbolClassRegexp" id="3050481019132321436">
+          <link role="symbolClass" targetNodeId="2v.1174554738336" resolveInfo="\w" />
+        </node>
+        <node role="right" type="jetbrains.mps.baseLanguage.regexp.structure.PredefinedSymbolClassRegexp" id="3050481019132224640">
+          <link role="symbolClass" targetNodeId="2v.1174554738336" resolveInfo="\w" />
+        </node>
+      </node>
+    </node>
   </node>
 </model>
 
