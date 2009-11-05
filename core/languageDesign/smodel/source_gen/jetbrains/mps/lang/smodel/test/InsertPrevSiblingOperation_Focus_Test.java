@@ -4,6 +4,7 @@ package jetbrains.mps.lang.smodel.test;
 
 import jetbrains.mps.lang.test.runtime.BaseTransformationTest;
 import org.junit.Test;
+import jetbrains.mps.baseLanguage.plugin.MPSLaunch;
 import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
 import jetbrains.mps.ide.IEditor;
 import javax.swing.SwingUtilities;
@@ -11,6 +12,7 @@ import jetbrains.mps.nodeEditor.EditorComponent;
 
 public class InsertPrevSiblingOperation_Focus_Test extends BaseTransformationTest {
   @Test
+  @MPSLaunch
   public void test_InsertPrevSiblingOperation_Focus() throws Throwable {
     this.initTest("${mps_home}/core/languageDesign/smodel/smodel.mpr", "r:3deabf90-227b-4dd7-a1b3-e4735e4a0270(jetbrains.mps.lang.smodel.test)");
     this.runTest(this.getClass().getCanonicalName() + "$TestBody", "testMethod", false);
