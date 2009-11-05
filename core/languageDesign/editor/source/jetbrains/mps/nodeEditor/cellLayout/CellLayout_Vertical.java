@@ -235,17 +235,19 @@ public class CellLayout_Vertical extends AbstractCellLayout {
 
     DefaultBaseLine bL = editorCells.getStyle().get(StyleAttributes.DEFAULT_BASE_LINE);
 
+    int result = 0;
+    for (EditorCell cell : editorCells.getCells()) {
+      result = cell.getAscent();
+      if (result > 0) {
+        break;
+      }
+    }    
+
     switch (bL) {
       case FIRST: // default behavior
-        for (EditorCell cell : editorCells.getCells()) {
-          int result = cell.getAscent();
-          if (result > 0) {
-            return result;
-          }
-        }
-        break;
+        return result;
       case CENTER:
-        return editorCells.getHeight() / 2;
+        return Math.max(result,editorCells.getHeight() / 2);
       case LAST:
         EditorCell lastCell = editorCells.getCellAt(editorCells.getCellsCount()-1);
         if (lastCell != null) {

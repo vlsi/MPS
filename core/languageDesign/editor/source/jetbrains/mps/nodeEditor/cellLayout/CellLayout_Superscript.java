@@ -20,8 +20,8 @@ import java.awt.FontMetrics;
  */
 public class CellLayout_Superscript extends AbstractCellLayout {
 
-  private int baseScale = 0;
-  private double scaleCoo = 0.8;
+  private int myBaseScale = 0;
+  private static final double scaleCoo = 0.8;
 
   public boolean canBeFolded() {
     return true;
@@ -31,7 +31,7 @@ public class CellLayout_Superscript extends AbstractCellLayout {
     if (cell instanceof EditorCell_Collection) {
       EditorCell_Collection collection = (EditorCell_Collection) cell;
       CellLayout layout = collection.getCellLayout();
-      if (layout instanceof CellLayout_Superscript) ((CellLayout_Superscript) layout).baseScale = scale;
+      if (layout instanceof CellLayout_Superscript) ((CellLayout_Superscript) layout).myBaseScale = scale;
       else for (EditorCell c : collection) applyScalingInt(c, scale);
     }
     if (cell instanceof EditorCell_Label) {
@@ -48,10 +48,10 @@ public class CellLayout_Superscript extends AbstractCellLayout {
     }
   }
 
-  public void applyScaling(EditorCell_Collection editorCells, int ofs) {
+  public void applyScaling(EditorCell_Collection editorCells) {
     for (EditorCell cell : editorCells) {
       int i = cell.getStyle().get(StyleAttributes.SCRIPT_KIND) != ScriptKind.NORMAL ? 1 : 0;
-      applyScalingInt(cell, baseScale + i);
+      applyScalingInt(cell, myBaseScale + i);
     }
   }
 
@@ -91,8 +91,8 @@ public class CellLayout_Superscript extends AbstractCellLayout {
     final int x = usesBraces ? editorCells.getX() + openingBrace.getWidth() : editorCells.getX();
     final int y = editorCells.getY();
     int braceIndent = 0;
-    int width = 0;
-    int height = 0;
+    int width;
+    int height;
 
     int floor1 = 0;
     int floor2 = 0;
@@ -102,7 +102,7 @@ public class CellLayout_Superscript extends AbstractCellLayout {
     int floor2x = x;
     int floor3x = x;
 
-    applyScaling(editorCells, 0);
+    applyScaling(editorCells);
 
     for (EditorCell cell : cells) {
       cell.relayout();
