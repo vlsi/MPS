@@ -121,7 +121,12 @@ public class MyBaseNodeDialog extends BaseNodeDialog {
 
   public void showDialog() {
     if (myError != null) {
-      setErrorText("Type error! Message: " + myError.reportError());
+      String s = ModelAccess.instance().runReadAction(new Computable<String>() {
+        public String compute() {
+          return myError.reportError();
+        }
+      });
+      setErrorText("Type error! Message: " + s);
     }
     super.showDialog();
   }
