@@ -144,6 +144,16 @@ public class NewModelDialog extends BaseDialog {
           return null;
         }
 
+        if (myModule instanceof Language) {
+          for (LanguageAspect aspect : LanguageAspect.values()) {
+            String shortName = modelName.substring(modelPrefix.length());
+            if (shortName.equals(aspect.getName())) {
+              setErrorText("This name isn't allowed because '" + shortName + "' is language aspect name");
+              return null;
+            }
+          }
+        }
+
         return myModule.createModel(modelUID, wrapper.getModelRoot());
       }
     });
