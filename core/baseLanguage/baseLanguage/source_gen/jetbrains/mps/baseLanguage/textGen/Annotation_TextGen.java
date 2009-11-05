@@ -13,6 +13,7 @@ import jetbrains.mps.textGen.TextGenManager;
 public class Annotation_TextGen extends SNodeTextGen {
   public void doGenerateText(SNode node) {
     BaseLanguageTextGen.fileHeader(node, this);
+    BaseLanguageTextGen.annotations(node, this);
     BaseLanguageTextGen.visibility(SLinkOperations.getTarget(node, "visibility", true), this);
     if (!(node.isRoot())) {
       this.append("static ");

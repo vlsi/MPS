@@ -1421,6 +1421,10 @@
             <link role="function" targetNodeId="1234799968946" resolveInfo="fileHeader" />
             <node role="parameter" type="jetbrains.mps.lang.textGen.structure.NodeParameter" id="1237981630366" />
           </node>
+          <node role="part" type="jetbrains.mps.lang.textGen.structure.OperationCall" id="5736451485568600117">
+            <link role="function" targetNodeId="1234800115760" resolveInfo="annotations" />
+            <node role="parameter" type="jetbrains.mps.lang.textGen.structure.NodeParameter" id="5736451485568600118" />
+          </node>
           <node role="part" type="jetbrains.mps.lang.textGen.structure.OperationCall" id="1237981635055">
             <link role="function" targetNodeId="1234800177954" resolveInfo="visibility" />
             <node role="parameter" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1237981635056">

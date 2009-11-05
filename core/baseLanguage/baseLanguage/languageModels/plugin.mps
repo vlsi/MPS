@@ -50,7 +50,7 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590373(jetbrains.mps.baseLanguage.classifiers.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590553(jetbrains.mps.uiLanguage.structure)" version="1" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959054e(jetbrains.mps.uiLanguage.constraints)" version="26" />
-  <maxImportIndex value="133" />
+  <maxImportIndex value="134" />
   <import index="1" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="3" />
   <import index="3" modelUID="r:00000000-0000-4000-0000-011c895904a4(jetbrains.mps.ide.actions)" version="-1" />
   <import index="4" modelUID="f:java_stub#java.util(java.util@java_stub)" version="-1" />
@@ -141,6 +141,7 @@
   <import index="131" modelUID="f:java_stub#com.intellij.execution.configurations(com.intellij.execution.configurations@java_stub)" version="-1" />
   <import index="132" modelUID="r:af5efca5-3385-45cc-9441-f2124214c2e2(jetbrains.mps.debug)" version="-1" />
   <import index="133" modelUID="f:java_stub#jetbrains.mps.debug(jetbrains.mps.debug@java_stub)" version="-1" />
+  <import index="134" modelUID="f:java_stub#java.lang.annotation(java.lang.annotation@java_stub)" version="-1" />
   <node type="jetbrains.mps.lang.plugin.structure.ActionGroupDeclaration" id="1205247737002">
     <property name="name" value="BaseLanguageModelActionsInternal" />
     <node role="modifier" type="jetbrains.mps.lang.plugin.structure.ModificationStatement" id="1205247768364">
@@ -43874,6 +43875,28 @@
     <property name="name" value="MPSLaunch" />
     <property name="package" value="run" />
     <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1278034865699377469" />
+    <node role="annotation" type="jetbrains.mps.baseLanguage.structure.AnnotationInstance" id="5736451485568436379">
+      <link role="annotation" targetNodeId="134.~Retention" resolveInfo="Retention" />
+      <node role="value" type="jetbrains.mps.baseLanguage.structure.AnnotationInstanceValue" id="5736451485568542378">
+        <link role="key" targetNodeId="134.~Retention.value()" resolveInfo="value" />
+        <node role="value" type="jetbrains.mps.baseLanguage.structure.EnumConstantReference" id="5736451485568542381">
+          <link role="enumConstantDeclaration" targetNodeId="134.~RetentionPolicy.RUNTIME" resolveInfo="RUNTIME" />
+          <link role="enumClass" targetNodeId="134.~RetentionPolicy" resolveInfo="RetentionPolicy" />
+        </node>
+      </node>
+    </node>
+    <node role="annotation" type="jetbrains.mps.baseLanguage.structure.AnnotationInstance" id="5736451485568542382">
+      <link role="annotation" targetNodeId="134.~Target" resolveInfo="Target" />
+      <node role="value" type="jetbrains.mps.baseLanguage.structure.AnnotationInstanceValue" id="5736451485568542383">
+        <link role="key" targetNodeId="134.~Target.value()" resolveInfo="value" />
+        <node role="value" type="jetbrains.mps.baseLanguage.structure.ArrayLiteral" id="5736451485568636366">
+          <node role="item" type="jetbrains.mps.baseLanguage.structure.EnumConstantReference" id="5736451485568636368">
+            <link role="enumClass" targetNodeId="134.~ElementType" resolveInfo="ElementType" />
+            <link role="enumConstantDeclaration" targetNodeId="134.~ElementType.METHOD" resolveInfo="METHOD" />
+          </node>
+        </node>
+      </node>
+    </node>
   </node>
 </model>
 
