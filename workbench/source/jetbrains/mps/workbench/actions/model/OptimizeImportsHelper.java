@@ -34,6 +34,8 @@ public class OptimizeImportsHelper {
     this.myContext = context;
   }
 
+  //----public optimizeX methods--------
+
   public String optimizeProjectImports(MPSProject p) {
     return optimizeProjectImports_internal(p).myReport;
   }
@@ -53,6 +55,8 @@ public class OptimizeImportsHelper {
   public String optimizeModelImports(SModelDescriptor modelDescriptor) {
     return optimizeModelImports_internal(modelDescriptor).myReport;
   }
+
+  //----internal optimizeX methods--------
 
   private Result optimizeProjectImports_internal(MPSProject p) {
     Result result = new Result();
@@ -91,45 +95,6 @@ public class OptimizeImportsHelper {
     language.setLanguageDescriptor(descriptor, false);
 
     return result;
-  }
-
-  private String optimizeModuleImports(ModuleDescriptor descriptor, Result result) {
-    List<ModuleReference> unusedLanguages = new ArrayList<ModuleReference>();
-    for (ModuleReference langRef : descriptor.getUsedLanguages()) {
-      ModuleReference ref = getUnusedLanguageRef(result, langRef);
-      if (ref != null) unusedLanguages.add(langRef);
-    }
-
-    List<ModuleReference> unusedDevkits = new ArrayList<ModuleReference>();
-    for (ModuleReference devkitRef : descriptor.getUsedDevkits()) {
-      ModuleReference ref = getUnusedDevkitRef(result, devkitRef);
-      if (ref != null) unusedDevkits.add(devkitRef);
-    }
-
-    return removeFromImports(descriptor, unusedLanguages, unusedDevkits, getUnusedDeps(descriptor, result));
-  }
-
-  private List<Dependency> getUnusedDeps(ModuleDescriptor descriptor, Result result) {
-    List<Dependency> unusedDeps = new ArrayList<Dependency>();
-
-    for (Dependency m : descriptor.getDependencies()) {
-      IModule module = MPSModuleRepository.getInstance().getModule(m.getModuleRef());
-      if (module == null) continue;
-
-      boolean used = false;
-
-      for (SModelReference mr : result.myUsedModels) {
-        SModelDescriptor md = SModelRepository.getInstance().getModelDescriptor(mr);
-        if (md == null) continue;
-        if (md.getModules().contains(module)) {
-          used = true;
-          break;
-        }
-      }
-      Dependency ref = used ? null : m;
-      if (ref != null) unusedDeps.add(ref);
-    }
-    return unusedDeps;
   }
 
   private Result optimizeModelsImports_internal(List<SModelDescriptor> modelsToOptimize) {
@@ -176,6 +141,47 @@ public class OptimizeImportsHelper {
 
     result.myReport = removeFromImports(modelDescriptor, unusedModels, unusedLanguages, unusedDevkits);
     return result;
+  }
+
+  //----additional methods--------
+
+  private String optimizeModuleImports(ModuleDescriptor descriptor, Result result) {
+    List<ModuleReference> unusedLanguages = new ArrayList<ModuleReference>();
+    for (ModuleReference langRef : descriptor.getUsedLanguages()) {
+      ModuleReference ref = getUnusedLanguageRef(result, langRef);
+      if (ref != null) unusedLanguages.add(langRef);
+    }
+
+    List<ModuleReference> unusedDevkits = new ArrayList<ModuleReference>();
+    for (ModuleReference devkitRef : descriptor.getUsedDevkits()) {
+      ModuleReference ref = getUnusedDevkitRef(result, devkitRef);
+      if (ref != null) unusedDevkits.add(devkitRef);
+    }
+
+    return removeFromImports(descriptor, unusedLanguages, unusedDevkits, getUnusedDeps(descriptor, result));
+  }
+
+  private List<Dependency> getUnusedDeps(ModuleDescriptor descriptor, Result result) {
+    List<Dependency> unusedDeps = new ArrayList<Dependency>();
+
+    for (Dependency m : descriptor.getDependencies()) {
+      IModule module = MPSModuleRepository.getInstance().getModule(m.getModuleRef());
+      if (module == null) continue;
+
+      boolean used = false;
+
+      for (SModelReference mr : result.myUsedModels) {
+        SModelDescriptor md = SModelRepository.getInstance().getModelDescriptor(mr);
+        if (md == null) continue;
+        if (md.getModules().contains(module)) {
+          used = true;
+          break;
+        }
+      }
+      Dependency ref = used ? null : m;
+      if (ref != null) unusedDeps.add(ref);
+    }
+    return unusedDeps;
   }
 
   private ModuleReference getUnusedDevkitRef(Result result, ModuleReference devkitRef) {
