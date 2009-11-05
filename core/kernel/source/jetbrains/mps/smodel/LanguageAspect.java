@@ -328,12 +328,6 @@ public enum LanguageAspect {
 
   public abstract ModuleReference getMainLanguage();
 
-  protected List<String> getModelsToImport(Language l) {
-    return CollectionUtil.list(
-      l.getStructureModelDescriptor().getSModelReference().toString()
-    );
-  }
-
   private SModelFqName getModuleUID(Language l) {
     return new SModelFqName(l.getNamespace() + "." + getName(), "");
   }
