@@ -465,5 +465,56 @@
       </node>
     </node>
   </node>
+  <visible index="3" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
+  <node type="jetbrains.mps.lang.constraints.structure.ConceptConstraints" id="5533535376639427526">
+    <link role="concept" targetNodeId="1.1174554386384" resolveInfo="PredefinedSymbolClassDeclaration" />
+    <node role="property" type="jetbrains.mps.lang.constraints.structure.NodePropertyConstraint" id="5533535376639427527">
+      <link role="applicableProperty" targetNodeId="3v.1156234966388" resolveInfo="shortDescription" />
+      <node role="propertyGetter" type="jetbrains.mps.lang.constraints.structure.ConstraintFunction_PropertyGetter" id="5533535376639427528">
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="5533535376639427529">
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="5533535376639427530">
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="5533535376639427532">
+              <node role="operand" type="jetbrains.mps.lang.constraints.structure.ConstraintsFunctionParameter_node" id="5533535376639427531" />
+              <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="5533535376639427536">
+                <link role="property" targetNodeId="1.1174554540628" resolveInfo="description" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.constraints.structure.ConceptConstraints" id="5533535376639522935">
+    <link role="concept" targetNodeId="1.1174483125581" resolveInfo="RegexpDeclaration" />
+    <node role="property" type="jetbrains.mps.lang.constraints.structure.NodePropertyConstraint" id="5533535376639522936">
+      <link role="applicableProperty" targetNodeId="3v.1156234966388" resolveInfo="shortDescription" />
+      <node role="propertyGetter" type="jetbrains.mps.lang.constraints.structure.ConstraintFunction_PropertyGetter" id="5533535376639522937">
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="5533535376639522938">
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="5533535376639522940">
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.TernaryOperatorExpression" id="5533535376639522952">
+              <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="5533535376639522957">
+                <node role="operand" type="jetbrains.mps.lang.constraints.structure.ConstraintsFunctionParameter_node" id="5533535376639522956" />
+                <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="5533535376639522961">
+                  <link role="property" targetNodeId="1.1174662978120" resolveInfo="description" />
+                </node>
+              </node>
+              <node role="condition" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="5533535376639522947">
+                <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="5533535376639522942">
+                  <node role="operand" type="jetbrains.mps.lang.constraints.structure.ConstraintsFunctionParameter_node" id="5533535376639522941" />
+                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="5533535376639522946">
+                    <link role="property" targetNodeId="1.1174662978120" resolveInfo="description" />
+                  </node>
+                </node>
+                <node role="operation" type="jetbrains.mps.baseLanguage.structure.IsNotEmptyOperation" id="5533535376639522951" />
+              </node>
+              <node role="ifFalse" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="5533535376639522962">
+                <property name="value" value="regular expression" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
 </model>
 

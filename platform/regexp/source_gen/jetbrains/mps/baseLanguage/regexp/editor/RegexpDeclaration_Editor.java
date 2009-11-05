@@ -151,7 +151,8 @@ public class RegexpDeclaration_Editor extends DefaultNodeEditor {
   private EditorCell createProperty_4843_1(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("description");
-    provider.setNoTargetText("<no description>");
+    provider.setNoTargetText("no description");
+    provider.setAllowsEmptyTarget(true);
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setCellId("property_description");
