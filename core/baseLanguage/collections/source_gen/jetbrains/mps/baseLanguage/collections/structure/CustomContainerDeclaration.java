@@ -8,6 +8,7 @@ import jetbrains.mps.baseLanguage.structure.IVisible;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.baseLanguage.structure.Type;
 import jetbrains.mps.baseLanguage.structure.ClassifierType;
+import jetbrains.mps.baseLanguage.structure.Expression;
 import jetbrains.mps.baseLanguage.structure.Visibility;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
@@ -21,6 +22,7 @@ public class CustomContainerDeclaration extends GenericDeclaration implements IN
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
   public static final String CONTAINER_TYPE = "containerType";
   public static final String RUNTIME_TYPE = "runtimeType";
+  public static final String FACTORY = "factory";
   public static final String VISIBILITY = "visibility";
 
   public CustomContainerDeclaration(SNode node) {
@@ -73,6 +75,14 @@ public class CustomContainerDeclaration extends GenericDeclaration implements IN
 
   public void setRuntimeType(ClassifierType node) {
     super.setChild(CustomContainerDeclaration.RUNTIME_TYPE, node);
+  }
+
+  public Expression getFactory() {
+    return (Expression)this.getChild(Expression.class, CustomContainerDeclaration.FACTORY);
+  }
+
+  public void setFactory(Expression node) {
+    super.setChild(CustomContainerDeclaration.FACTORY, node);
   }
 
   public Visibility getVisibility() {

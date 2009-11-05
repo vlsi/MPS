@@ -76,6 +76,14 @@ public class QueriesGenerated {
     return (SLinkOperations.getTarget(_context.getSourceNode(), "delimiter", true) == null);
   }
 
+  public static boolean sideTransformHintSubstituteActionsBuilder_Precondition_AbstractContainerCreator_1279588871814823471(final IOperationContext operationContext, final SideTransformPreconditionContext _context) {
+    return (SLinkOperations.getTarget(_context.getSourceNode(), "elementType", true) == null);
+  }
+
+  public static boolean sideTransformHintSubstituteActionsBuilder_Precondition_HashMapCreator_1279588871815383102(final IOperationContext operationContext, final SideTransformPreconditionContext _context) {
+    return SLinkOperations.getTarget(_context.getSourceNode(), "keyType", true) == null && SLinkOperations.getTarget(_context.getSourceNode(), "valueType", true) == null;
+  }
+
   public static boolean sideTransformHintSubstituteActionsBuilder_Precondition_AbstractContainerCreator_1562299158921287173(final IOperationContext operationContext, final SideTransformPreconditionContext _context) {
     return (SLinkOperations.getTarget(_context.getSourceNode(), "initSize", true) == null) && SConceptPropertyOperations.getBoolean(_context.getSourceNode(), "hasInitSize") && SLinkOperations.getCount(_context.getSourceNode(), "initValue") == 0 && (SLinkOperations.getTarget(_context.getSourceNode(), "copyFrom", true) == null);
   }
@@ -258,6 +266,10 @@ public class QueriesGenerated {
       SLinkOperations.setTarget(_context.getNewNode(), "valueType", SNodeOperations.detachNode(SLinkOperations.getTarget(SNodeOperations.cast(_context.getSampleNode(), "jetbrains.mps.baseLanguage.collections.structure.HashMapCreator"), "valueType", true)), true);
       SLinkOperations.setTarget(_context.getNewNode(), "initializer", SNodeOperations.detachNode(SLinkOperations.getTarget(SNodeOperations.cast(_context.getSampleNode(), "jetbrains.mps.baseLanguage.collections.structure.HashMapCreator"), "initializer", true)), true);
     }
+  }
+
+  public static void nodeFactory_NodeSetup_CustomContainerDeclaration_1279588871815312988(final IOperationContext operationContext, final NodeSetupContext _context) {
+    SLinkOperations.setTarget(_context.getNewNode(), "visibility", SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.PublicVisibility", null), true);
   }
 
   public static void nodeFactory_NodeSetup_RemoveWhereOperation_3055999550620994086(final IOperationContext operationContext, final NodeSetupContext _context) {
@@ -559,6 +571,59 @@ public class QueriesGenerated {
 
         public String getVisibleMatchingText(String pattern) {
           return this.getMatchingText(pattern);
+        }
+      });
+    }
+    return result;
+  }
+
+  public static List<INodeSubstituteAction> sideTransform_ActionsFactory_AbstractContainerCreator_1279588871814823468(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
+    List<INodeSubstituteAction> result = ListSequence.fromList(new ArrayList<INodeSubstituteAction>());
+    {
+      SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.AbstractContainerCreator");
+      ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(concept, _context.getSourceNode()) {
+        public SNode doSubstitute(String pattern) {
+          SLinkOperations.setNewChild(_context.getSourceNode(), "elementType", "jetbrains.mps.baseLanguage.structure.Type");
+          return _context.getSourceNode();
+        }
+
+        public String getMatchingText(String pattern) {
+          return "<";
+        }
+
+        public String getVisibleMatchingText(String pattern) {
+          return this.getMatchingText(pattern);
+        }
+
+        public String getDescriptionText(String pattern) {
+          return "add element type";
+        }
+      });
+    }
+    return result;
+  }
+
+  public static List<INodeSubstituteAction> sideTransform_ActionsFactory_HashMapCreator_1279588871815383101(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
+    List<INodeSubstituteAction> result = ListSequence.fromList(new ArrayList<INodeSubstituteAction>());
+    {
+      SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.HashMapCreator");
+      ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(concept, _context.getSourceNode()) {
+        public SNode doSubstitute(String pattern) {
+          SLinkOperations.setNewChild(_context.getSourceNode(), "keyType", "jetbrains.mps.baseLanguage.structure.Type");
+          SLinkOperations.setNewChild(_context.getSourceNode(), "valueType", "jetbrains.mps.baseLanguage.structure.Type");
+          return _context.getSourceNode();
+        }
+
+        public String getMatchingText(String pattern) {
+          return "<";
+        }
+
+        public String getVisibleMatchingText(String pattern) {
+          return this.getMatchingText(pattern);
+        }
+
+        public String getDescriptionText(String pattern) {
+          return "add key and value types";
         }
       });
     }

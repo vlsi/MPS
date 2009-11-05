@@ -35,6 +35,33 @@
       </node>
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="6099516049395283775" />
     </node>
+    <node role="containerDeclaration" type="jetbrains.mps.baseLanguage.collections.structure.CustomContainerDeclaration" id="1576845966387098114">
+      <property name="name" value="myHashMap" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1576845966387098117" />
+      <node role="typeVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.TypeVariableDeclaration" id="1576845966387098121">
+        <property name="name" value="K" />
+      </node>
+      <node role="typeVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.TypeVariableDeclaration" id="1576845966387098122">
+        <property name="name" value="V" />
+      </node>
+      <node role="containerType" type="jetbrains.mps.baseLanguage.collections.structure.MapType" id="1576845966387098123">
+        <node role="keyType" type="jetbrains.mps.baseLanguage.structure.TypeVariableReference" id="1576845966387098126">
+          <link role="typeVariableDeclaration" targetNodeId="1576845966387098121" resolveInfo="K" />
+        </node>
+        <node role="valueType" type="jetbrains.mps.baseLanguage.structure.TypeVariableReference" id="1576845966387098127">
+          <link role="typeVariableDeclaration" targetNodeId="1576845966387098122" resolveInfo="V" />
+        </node>
+      </node>
+      <node role="runtimeType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="9034802358628632226">
+        <link role="classifier" targetNodeId="1.~TreeMap" resolveInfo="TreeMap" />
+        <node role="parameter" type="jetbrains.mps.baseLanguage.structure.TypeVariableReference" id="9034802358628632228">
+          <link role="typeVariableDeclaration" targetNodeId="1576845966387098121" resolveInfo="K" />
+        </node>
+        <node role="parameter" type="jetbrains.mps.baseLanguage.structure.TypeVariableReference" id="9034802358628632230">
+          <link role="typeVariableDeclaration" targetNodeId="1576845966387098122" resolveInfo="V" />
+        </node>
+      </node>
+    </node>
   </node>
 </model>
 

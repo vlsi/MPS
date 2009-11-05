@@ -13,8 +13,11 @@ public class ConstraintsDescriptor implements IModelConstraints {
 
   public ConstraintsDescriptor() {
     ListSequence.fromList(this.myConstraints).addElement(new CustomContainerCreator_alias_PropertyConstraint());
+    ListSequence.fromList(this.myConstraints).addElement(new CustomMapCreator_alias_PropertyConstraint());
     ListSequence.fromList(this.myConstraints).addElement(new CustomContainerDeclaration_name_PropertyConstraint());
     ListSequence.fromList(this.myConstraints).addElement(new ForEachVariableReference_variable_ReferentConstraint());
+    ListSequence.fromList(this.myConstraints).addElement(new CustomMapCreator_containerDeclaration_ReferentConstraint());
+    ListSequence.fromList(this.myConstraints).addElement(new CustomContainerCreator_containerDeclaration_ReferentConstraint());
   }
 
   public void unRegisterSelf(ModelConstraintsManager p0) {

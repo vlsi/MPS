@@ -344,7 +344,7 @@ __switch__:
     long startAgain = System.currentTimeMillis();
     Assert.assertTrue(ListSequence.fromList(bigList).containsSequence(ListSequence.fromList(anotherBigList)));
     long listDuration = System.currentTimeMillis() - startAgain;
-    Assert.assertTrue(seqDuration * 2.5 < listDuration);
+    Assert.assertTrue(seqDuration * 2 < listDuration);
   }
 
   public void test_mps6232() throws Exception {

@@ -1027,14 +1027,14 @@
     </node>
     <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1197687026896">
       <property name="metaClass" value="aggregation" />
-      <property name="sourceCardinality" value="1" />
+      <property name="sourceCardinality" value="0..1" />
       <property name="role" value="keyType" />
       <link role="target" targetNodeId="2.1068431790189" resolveInfo="Type" />
     </node>
     <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1197687035757">
       <property name="metaClass" value="aggregation" />
       <property name="role" value="valueType" />
-      <property name="sourceCardinality" value="1" />
+      <property name="sourceCardinality" value="0..1" />
       <link role="target" targetNodeId="2.1068431790189" resolveInfo="Type" />
     </node>
     <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1206655950512">
@@ -2187,7 +2187,7 @@
     </node>
     <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1237721435807">
       <property name="metaClass" value="aggregation" />
-      <property name="sourceCardinality" value="1" />
+      <property name="sourceCardinality" value="0..1" />
       <property name="role" value="elementType" />
       <link role="target" targetNodeId="2.1068431790189" resolveInfo="Type" />
     </node>
@@ -3012,6 +3012,11 @@
       <property name="sourceCardinality" value="1" />
       <link role="target" targetNodeId="2.1107535904670" resolveInfo="ClassifierType" />
     </node>
+    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1279588871814993944">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="factory" />
+      <link role="target" targetNodeId="2.1068431790191" resolveInfo="Expression" />
+    </node>
     <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="6099516049394747453">
       <link role="intfc" targetNodeId="1.1169194658468" resolveInfo="INamedConcept" />
     </node>
@@ -3039,6 +3044,17 @@
     <property name="name" value="CustomContainerCreator" />
     <link role="extends" targetNodeId="1237721394592" resolveInfo="AbstractContainerCreator" />
     <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1331913329176106420">
+      <property name="metaClass" value="reference" />
+      <property name="role" value="containerDeclaration" />
+      <property name="sourceCardinality" value="1" />
+      <link role="target" targetNodeId="6099516049394485216" resolveInfo="CustomContainerDeclaration" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1576845966386891367">
+    <property name="package" value="mapType" />
+    <property name="name" value="CustomMapCreator" />
+    <link role="extends" targetNodeId="1197686869805" resolveInfo="HashMapCreator" />
+    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1576845966386891370">
       <property name="metaClass" value="reference" />
       <property name="role" value="containerDeclaration" />
       <property name="sourceCardinality" value="1" />

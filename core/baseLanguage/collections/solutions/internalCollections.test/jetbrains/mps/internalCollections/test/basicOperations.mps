@@ -6070,8 +6070,8 @@
                 <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="6312172641078901715">
                   <link role="variableDeclaration" targetNodeId="6312172641078801244" resolveInfo="seqDur" />
                 </node>
-                <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.FloatingPointConstant" id="9049087841018917390">
-                  <property name="value" value="2.5" />
+                <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="6651873253984084303">
+                  <property name="value" value="2" />
                 </node>
               </node>
             </node>

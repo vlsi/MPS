@@ -33,6 +33,7 @@
     <projectLanguages>
       <languagePath path="${mps_home}/core/baseLanguage/closures/closures.mpl" />
       <languagePath path="${project}/collections.mpl" />
+      <languagePath path="${project}/languages/trove/trove.mpl" />
     </projectLanguages>
     <projectDevkits />
     <genConfs>
