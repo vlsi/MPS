@@ -4,6 +4,7 @@ package jetbrains.mps.refactoringTest;
 
 import jetbrains.mps.lang.test.runtime.BaseTransformationTest;
 import org.junit.Test;
+import jetbrains.mps.baseLanguage.plugin.MPSLaunch;
 import jetbrains.mps.lang.test.runtime.BaseTestBody;
 import jetbrains.mps.baseLanguage.plugin.ChangeMethodSignatureParameters;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
@@ -17,12 +18,14 @@ import jetbrains.mps.smodel.SNode;
 
 public class ChangeSigantureOfInterface_Test extends BaseTransformationTest {
   @Test
+  @MPSLaunch
   public void test_ChangeSigantureOfInterface() throws Throwable {
     this.initTest("${mps_home}/core/baseLanguage/baseLanguage/baseLanguage.mpr", "r:4dc6ffb5-4bbb-4773-b0b7-e52989ceb56f(jetbrains.mps.refactoringTest)");
     this.runTest(this.getClass().getCanonicalName() + "$TestBody", "test_ChangeSigantureOfInterface", true);
   }
 
   public static class TestBody extends BaseTestBody {
+    @MPSLaunch
     public void test_ChangeSigantureOfInterface() throws Exception {
       this.addNodeById("418758558327012739");
       this.addNodeById("418758558327019466");

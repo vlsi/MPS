@@ -4,6 +4,7 @@ package jetbrains.mps.editorTest;
 
 import jetbrains.mps.lang.test.runtime.BaseTransformationTest;
 import org.junit.Test;
+import jetbrains.mps.baseLanguage.plugin.MPSLaunch;
 import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
 import jetbrains.mps.ide.IEditor;
 import javax.swing.SwingUtilities;
@@ -15,6 +16,7 @@ import javax.swing.KeyStroke;
 
 public class MoveNodeRange_Test extends BaseTransformationTest {
   @Test
+  @MPSLaunch
   public void test_MoveNodeRange() throws Throwable {
     this.initTest("${mps_home}/core/baseLanguage/baseLanguage/baseLanguage.mpr", "r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest)");
     this.runTest(this.getClass().getCanonicalName() + "$TestBody", "testMethod", false);

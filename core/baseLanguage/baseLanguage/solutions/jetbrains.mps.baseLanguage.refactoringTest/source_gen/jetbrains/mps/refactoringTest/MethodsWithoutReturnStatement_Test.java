@@ -4,6 +4,7 @@ package jetbrains.mps.refactoringTest;
 
 import jetbrains.mps.lang.test.runtime.BaseTransformationTest;
 import org.junit.Test;
+import jetbrains.mps.baseLanguage.plugin.MPSLaunch;
 import jetbrains.mps.lang.test.runtime.BaseTestBody;
 import jetbrains.mps.baseLanguage.plugin.ExtractMethodRefactoringParameters;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -17,12 +18,14 @@ import jetbrains.mps.lang.test.matcher.NodesMatcher;
 
 public class MethodsWithoutReturnStatement_Test extends BaseTransformationTest {
   @Test
+  @MPSLaunch
   public void test_checkReturnWithoutReturn() throws Throwable {
     this.initTest("${mps_home}/core/baseLanguage/baseLanguage/baseLanguage.mpr", "r:4dc6ffb5-4bbb-4773-b0b7-e52989ceb56f(jetbrains.mps.refactoringTest)");
     this.runTest(this.getClass().getCanonicalName() + "$TestBody", "test_checkReturnWithoutReturn", true);
   }
 
   public static class TestBody extends BaseTestBody {
+    @MPSLaunch
     public void test_checkReturnWithoutReturn() throws Exception {
       this.addNodeById("1230052642101");
       this.addNodeById("1230052642118");

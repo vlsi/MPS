@@ -43870,5 +43870,10 @@
       </node>
     </node>
   </node>
+  <node type="jetbrains.mps.baseLanguage.structure.Annotation" id="1278034865699377468">
+    <property name="name" value="MPSLaunch" />
+    <property name="package" value="run" />
+    <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1278034865699377469" />
+  </node>
 </model>
 

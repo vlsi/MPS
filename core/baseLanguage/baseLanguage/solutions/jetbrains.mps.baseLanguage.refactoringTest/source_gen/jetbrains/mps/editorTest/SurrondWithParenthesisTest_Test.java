@@ -4,6 +4,7 @@ package jetbrains.mps.editorTest;
 
 import jetbrains.mps.lang.test.runtime.BaseTransformationTest;
 import org.junit.Test;
+import jetbrains.mps.baseLanguage.plugin.MPSLaunch;
 import jetbrains.mps.lang.test.runtime.BaseTestBody;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.baseLanguage.plugin.ParenthesisUtil;
@@ -15,24 +16,28 @@ import java.util.ArrayList;
 
 public class SurrondWithParenthesisTest_Test extends BaseTransformationTest {
   @Test
+  @MPSLaunch
   public void test_noBinaryOperation() throws Throwable {
     this.initTest("${mps_home}/core/baseLanguage/baseLanguage/baseLanguage.mpr", "r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest)");
     this.runTest(this.getClass().getCanonicalName() + "$TestBody", "test_noBinaryOperation", true);
   }
 
   @Test
+  @MPSLaunch
   public void test_thereIsAlreadyParenthesis() throws Throwable {
     this.initTest("${mps_home}/core/baseLanguage/baseLanguage/baseLanguage.mpr", "r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest)");
     this.runTest(this.getClass().getCanonicalName() + "$TestBody", "test_thereIsAlreadyParenthesis", true);
   }
 
   @Test
+  @MPSLaunch
   public void test_treeRotation() throws Throwable {
     this.initTest("${mps_home}/core/baseLanguage/baseLanguage/baseLanguage.mpr", "r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest)");
     this.runTest(this.getClass().getCanonicalName() + "$TestBody", "test_treeRotation", true);
   }
 
   public static class TestBody extends BaseTestBody {
+    @MPSLaunch
     public void test_noBinaryOperation() throws Exception {
       this.addNodeById("3852894662483077200");
       this.addNodeById("3852894662483077206");
@@ -44,6 +49,7 @@ public class SurrondWithParenthesisTest_Test extends BaseTransformationTest {
       Assert.assertEquals(null, NodesMatcher.matchNodes(ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("3852894662483077210"), "jetbrains.mps.baseLanguage.structure.ParenthesizedExpression")), ListSequence.fromListAndArray(new ArrayList<SNode>(), result)));
     }
 
+    @MPSLaunch
     public void test_thereIsAlreadyParenthesis() throws Exception {
       this.addNodeById("3852894662483077200");
       this.addNodeById("3852894662483077206");
@@ -55,6 +61,7 @@ public class SurrondWithParenthesisTest_Test extends BaseTransformationTest {
       Assert.assertEquals(null, NodesMatcher.matchNodes(ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("3852894662483230135"), "jetbrains.mps.baseLanguage.structure.ExpressionStatement")), ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("3852894662483230126"), "jetbrains.mps.baseLanguage.structure.ExpressionStatement"))));
     }
 
+    @MPSLaunch
     public void test_treeRotation() throws Exception {
       this.addNodeById("3852894662483077200");
       this.addNodeById("3852894662483077206");

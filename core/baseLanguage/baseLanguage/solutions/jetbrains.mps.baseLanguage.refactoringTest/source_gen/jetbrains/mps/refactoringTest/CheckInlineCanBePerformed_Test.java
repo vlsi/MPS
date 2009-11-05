@@ -4,6 +4,7 @@ package jetbrains.mps.refactoringTest;
 
 import jetbrains.mps.lang.test.runtime.BaseTransformationTest;
 import org.junit.Test;
+import jetbrains.mps.baseLanguage.plugin.MPSLaunch;
 import jetbrains.mps.lang.test.runtime.BaseTestBody;
 import junit.framework.Assert;
 import jetbrains.mps.baseLanguage.plugin.InlineMethodRefactoringAnalyzer;
@@ -12,12 +13,14 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class CheckInlineCanBePerformed_Test extends BaseTransformationTest {
   @Test
+  @MPSLaunch
   public void test_CheckInlineCanBePerformed() throws Throwable {
     this.initTest("${mps_home}/core/baseLanguage/baseLanguage/baseLanguage.mpr", "r:4dc6ffb5-4bbb-4773-b0b7-e52989ceb56f(jetbrains.mps.refactoringTest)");
     this.runTest(this.getClass().getCanonicalName() + "$TestBody", "test_CheckInlineCanBePerformed", true);
   }
 
   public static class TestBody extends BaseTestBody {
+    @MPSLaunch
     public void test_CheckInlineCanBePerformed() throws Exception {
       this.addNodeById("1230053187318");
       Assert.assertNull(InlineMethodRefactoringAnalyzer.getErrors(new InlineMethodDialogModel(SNodeOperations.cast(this.getNodeById("1230053187326"), "jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation"), null)));

@@ -25,7 +25,7 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" version="7" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590328(jetbrains.mps.baseLanguage.collections.constraints)" version="6" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902d5(jetbrains.mps.baseLanguage.unitTest.plugin)" version="0" />
-  <maxImportIndex value="26" />
+  <maxImportIndex value="27" />
   <import index="1" modelUID="f:java_stub#jetbrains.mps.smodel.persistence.def(jetbrains.mps.smodel.persistence.def@java_stub)" version="-1" />
   <import index="2" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" />
   <import index="3" modelUID="f:java_stub#jetbrains.mps.util(jetbrains.mps.util@java_stub)" version="-1" />
@@ -50,6 +50,7 @@
   <import index="24" modelUID="f:java_stub#jetbrains.mps.make(jetbrains.mps.make@java_stub)" version="-1" />
   <import index="25" modelUID="f:java_stub#jetbrains.mps.project.structure.modules(jetbrains.mps.project.structure.modules@java_stub)" version="-1" />
   <import index="26" modelUID="r:00000000-0000-4000-0000-011c895902d5(jetbrains.mps.baseLanguage.unitTest.plugin)" version="0" />
+  <import index="27" modelUID="r:00000000-0000-4000-0000-011c895902c8(jetbrains.mps.baseLanguage.plugin)" version="-1" />
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="1957199320903967681">
     <property name="name" value="ChangeModel" />
     <property name="abstractClass" value="true" />
@@ -223,7 +224,7 @@
           </node>
         </node>
         <node role="annotation" type="jetbrains.mps.baseLanguage.structure.AnnotationInstance" id="527831955572528839">
-          <link role="annotation" targetNodeId="26.7691748101595371862" resolveInfo="MPSLaunch" />
+          <link role="annotation" targetNodeId="27.1278034865699377468" resolveInfo="MPSLaunch" />
         </node>
       </node>
     </node>
@@ -1124,7 +1125,7 @@
           </node>
         </node>
         <node role="annotation" type="jetbrains.mps.baseLanguage.structure.AnnotationInstance" id="7691748101595371860">
-          <link role="annotation" targetNodeId="26.7691748101595371862" resolveInfo="MPSLaunch" />
+          <link role="annotation" targetNodeId="27.1278034865699377468" resolveInfo="MPSLaunch" />
         </node>
       </node>
       <node role="testMethod" type="jetbrains.mps.baseLanguage.unitTest.structure.TestMethod" id="1957199320903968452">
@@ -1197,7 +1198,7 @@
           </node>
         </node>
         <node role="annotation" type="jetbrains.mps.baseLanguage.structure.AnnotationInstance" id="527831955572528833">
-          <link role="annotation" targetNodeId="26.7691748101595371862" resolveInfo="MPSLaunch" />
+          <link role="annotation" targetNodeId="27.1278034865699377468" resolveInfo="MPSLaunch" />
         </node>
       </node>
       <node role="testMethod" type="jetbrains.mps.baseLanguage.unitTest.structure.TestMethod" id="1957199320903968482">
@@ -1342,7 +1343,7 @@
           </node>
         </node>
         <node role="annotation" type="jetbrains.mps.baseLanguage.structure.AnnotationInstance" id="527831955572528834">
-          <link role="annotation" targetNodeId="26.7691748101595371862" resolveInfo="MPSLaunch" />
+          <link role="annotation" targetNodeId="27.1278034865699377468" resolveInfo="MPSLaunch" />
         </node>
       </node>
       <node role="testMethod" type="jetbrains.mps.baseLanguage.unitTest.structure.TestMethod" id="1957199320903968540">
@@ -1423,7 +1424,7 @@
           </node>
         </node>
         <node role="annotation" type="jetbrains.mps.baseLanguage.structure.AnnotationInstance" id="527831955572528835">
-          <link role="annotation" targetNodeId="26.7691748101595371862" resolveInfo="MPSLaunch" />
+          <link role="annotation" targetNodeId="27.1278034865699377468" resolveInfo="MPSLaunch" />
         </node>
       </node>
     </node>

@@ -4,6 +4,7 @@ package jetbrains.mps.refactoringTest;
 
 import jetbrains.mps.lang.test.runtime.BaseTransformationTest;
 import org.junit.Test;
+import jetbrains.mps.baseLanguage.plugin.MPSLaunch;
 import jetbrains.mps.lang.test.runtime.BaseTestBody;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
@@ -20,12 +21,14 @@ import jetbrains.mps.lang.test.matcher.NodesMatcher;
 
 public class ChangeMethodParametersForStatement_Test extends BaseTransformationTest {
   @Test
+  @MPSLaunch
   public void test_changeMethodParametersForStatement() throws Throwable {
     this.initTest("${mps_home}/core/baseLanguage/baseLanguage/baseLanguage.mpr", "r:4dc6ffb5-4bbb-4773-b0b7-e52989ceb56f(jetbrains.mps.refactoringTest)");
     this.runTest(this.getClass().getCanonicalName() + "$TestBody", "test_changeMethodParametersForStatement", true);
   }
 
   public static class TestBody extends BaseTestBody {
+    @MPSLaunch
     public void test_changeMethodParametersForStatement() throws Exception {
       this.addNodeById("1230052406554");
       this.addNodeById("1230052406581");

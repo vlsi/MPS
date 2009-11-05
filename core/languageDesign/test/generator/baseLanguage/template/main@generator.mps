@@ -50,7 +50,7 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)" version="32" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590373(jetbrains.mps.baseLanguage.classifiers.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902d5(jetbrains.mps.baseLanguage.unitTest.plugin)" version="0" />
-  <maxImportIndex value="40" />
+  <maxImportIndex value="42" />
   <import index="1" modelUID="r:00000000-0000-4000-0000-011c89590388(jetbrains.mps.lang.test.structure)" version="4" />
   <import index="2" modelUID="f:java_stub#java.lang(java.lang@java_stub)" version="-1" />
   <import index="7" modelUID="f:java_stub#jetbrains.mps.smodel(jetbrains.mps.smodel@java_stub)" version="-1" />
@@ -73,6 +73,8 @@
   <import index="38" modelUID="r:00000000-0000-4000-0000-011c89590368(jetbrains.mps.lang.plugin.structure)" version="21" />
   <import index="39" modelUID="f:java_stub#jetbrains.mps.nodeEditor(jetbrains.mps.nodeEditor@java_stub)" version="-1" />
   <import index="40" modelUID="f:java_stub#javax.swing(javax.swing@java_stub)" version="-1" />
+  <import index="41" modelUID="r:00000000-0000-4000-0000-011c895902d5(jetbrains.mps.baseLanguage.unitTest.plugin)" version="0" />
+  <import index="42" modelUID="r:00000000-0000-4000-0000-011c895902c8(jetbrains.mps.baseLanguage.plugin)" version="-1" />
   <node type="jetbrains.mps.lang.generator.structure.MappingConfiguration" id="1210261200088">
     <property name="name" value="main" />
     <property name="topPriorityGroup" value="true" />
@@ -641,6 +643,9 @@
       <node role="annotation" type="jetbrains.mps.baseLanguage.structure.AnnotationInstance" id="1216995920384">
         <link role="annotation" targetNodeId="28.~Test" resolveInfo="Test" />
       </node>
+      <node role="annotation" type="jetbrains.mps.baseLanguage.structure.AnnotationInstance" id="1278034865699622305">
+        <link role="annotation" targetNodeId="42.1278034865699377468" resolveInfo="MPSLaunch" />
+      </node>
       <node role="propertyMacro$property_attribute$name" type="jetbrains.mps.lang.generator.structure.PropertyMacro" id="1216996538618">
         <node role="propertyValueFunction" type="jetbrains.mps.lang.generator.structure.PropertyMacro_GetPropertyValue" id="1216996538619">
           <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1216996538620">
@@ -1021,6 +1026,9 @@
               </node>
             </node>
           </node>
+        </node>
+        <node role="annotation" type="jetbrains.mps.baseLanguage.structure.AnnotationInstance" id="1278034865699622306">
+          <link role="annotation" targetNodeId="42.1278034865699377468" resolveInfo="MPSLaunch" />
         </node>
       </node>
       <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1221567898641">
@@ -1486,6 +1494,9 @@
             </node>
           </node>
         </node>
+        <node role="annotation" type="jetbrains.mps.baseLanguage.structure.AnnotationInstance" id="1278034865699300833">
+          <link role="annotation" targetNodeId="42.1278034865699377468" resolveInfo="MPSLaunch" />
+        </node>
       </node>
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1225976019625" />
       <node role="superclass" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1225976172113">
@@ -1888,6 +1899,9 @@
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1229198973178" />
       <node role="annotation" type="jetbrains.mps.baseLanguage.structure.AnnotationInstance" id="1229198973210">
         <link role="annotation" targetNodeId="28.~Test" resolveInfo="Test" />
+      </node>
+      <node role="annotation" type="jetbrains.mps.baseLanguage.structure.AnnotationInstance" id="1278034865699581085">
+        <link role="annotation" targetNodeId="42.1278034865699377468" resolveInfo="MPSLaunch" />
       </node>
       <node role="propertyMacro$property_attribute$name" type="jetbrains.mps.lang.generator.structure.PropertyMacro" id="1229198973211">
         <node role="propertyValueFunction" type="jetbrains.mps.lang.generator.structure.PropertyMacro_GetPropertyValue" id="1229198973212">
