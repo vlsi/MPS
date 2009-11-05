@@ -5,9 +5,8 @@ package jetbrains.mps.regex.samples;
 import java.util.regex.Pattern;
 import java.util.regex.Matcher;
 
-/* package */class FindMatch {
-
-  /* package */void main() {
+/*package*/ class FindMatch {
+  /*package*/ void main() {
     String s = "abcdef2323";
     {
       Pattern _pattern_0 = _PrecompiledPatterns.REGEXP9;
@@ -17,5 +16,4 @@ import java.util.regex.Matcher;
       }
     }
   }
-
 }

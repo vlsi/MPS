@@ -6,9 +6,8 @@ import java.util.regex.Pattern;
 import java.util.regex.Matcher;
 import jetbrains.mps.baseLanguage.regexp.runtime.RegexpOperations;
 
-/* package */class PredefinedRegexps {
-
-  /* package */void matchWithPredefined() {
+/*package*/ class PredefinedRegexps {
+  /*package*/ void matchWithPredefined() {
     String s;
     {
       Pattern _pattern_0 = _PrecompiledPatterns.REGEXP5;
@@ -20,9 +19,8 @@ import jetbrains.mps.baseLanguage.regexp.runtime.RegexpOperations;
     }
   }
 
-  /* package */void replaceWithPredefined() {
+  /*package*/ void replaceWithPredefined() {
     String s;
     s = RegexpOperations.replace(s, _PrecompiledPatterns.REGEXP6, new _Replacer2(PredefinedRegexps.this, null));
   }
-
 }

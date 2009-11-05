@@ -4,13 +4,11 @@ package jetbrains.mps.regexp.sandbox;
 
 import jetbrains.mps.baseLanguage.regexp.runtime.RegexpOperations;
 
-/* package */class YYY {
-
-  /* package */void m() {
+/*package*/ class YYY {
+  /*package*/ void m() {
     final zClosureContext0 _zClosureContext0 = new zClosureContext0();
     int i;
     <!TextGen not found for 'jetbrains.mps.baseLanguage.regexp.structure.RegexpExpression'!>.matcher(3).matches();
     RegexpOperations.replace("", _PrecompiledPatterns.REGEXP0, new _Replacer0(YYY.this, _zClosureContext0));
   }
-
 }

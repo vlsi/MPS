@@ -5,9 +5,8 @@ package jetbrains.mps.regex.samples;
 import java.util.regex.Pattern;
 import java.util.regex.Matcher;
 
-/* package */class SimpleMatch {
-
-  /* package */void simplestRegexp() {
+/*package*/ class SimpleMatch {
+  /*package*/ void simplestRegexp() {
     String s = "";
     {
       Pattern _pattern_0 = _PrecompiledPatterns.REGEXP0;
@@ -17,7 +16,7 @@ import java.util.regex.Matcher;
     }
   }
 
-  /* package */void matchingGroup() {
+  /*package*/ void matchingGroup() {
     String email = "";
     {
       Pattern _pattern_0 = _PrecompiledPatterns.REGEXP1;
@@ -29,7 +28,7 @@ import java.util.regex.Matcher;
     }
   }
 
-  /* package */void memory() {
+  /*package*/ void memory() {
     String rep = "quaqua";
     {
       Pattern _pattern_0 = _PrecompiledPatterns.REGEXP2;
@@ -38,5 +37,4 @@ import java.util.regex.Matcher;
       }
     }
   }
-
 }

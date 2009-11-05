@@ -5,9 +5,8 @@ package jetbrains.mps.regex.samples;
 import java.util.regex.Pattern;
 import java.util.regex.Matcher;
 
-/* package */class MatchIteration {
-
-  /* package */void forEachMatch() {
+/*package*/ class MatchIteration {
+  /*package*/ void forEachMatch() {
     String test = "239 239 239";
     {
       Pattern _pattern_0 = _PrecompiledPatterns.REGEXP7;
@@ -17,5 +16,4 @@ import java.util.regex.Matcher;
       }
     }
   }
-
 }

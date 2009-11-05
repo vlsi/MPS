@@ -5,9 +5,8 @@ package jetbrains.mps.regex.samples;
 import java.util.regex.Pattern;
 import java.util.regex.Matcher;
 
-/* package */class Options {
-
-  /* package */void test() {
+/*package*/ class Options {
+  /*package*/ void test() {
     {
       Pattern _pattern_0 = _PrecompiledPatterns.REGEXP10;
       Matcher _matcher_0 = _pattern_0.matcher("abc");
@@ -15,5 +14,4 @@ import java.util.regex.Matcher;
       }
     }
   }
-
 }
