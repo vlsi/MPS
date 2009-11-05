@@ -51,7 +51,7 @@ public class MPSToolTipManager implements ApplicationComponent {
       point = event.getPoint();
     }
     String text = component.getToolTipText(event);
-    if (text != null) {
+    if (text != null && text.length() > 0) {
       this.showToolTip(text, component, point);
     } else {
       this.hideToolTip();
@@ -84,6 +84,9 @@ public class MPSToolTipManager implements ApplicationComponent {
         return;
       }
       this.hideToolTip();
+    }
+    if (text == null) {
+      return;
     }
     this.myToolTip = new ToolTip();
     Frame frame = this.getContainingFrame(component);
