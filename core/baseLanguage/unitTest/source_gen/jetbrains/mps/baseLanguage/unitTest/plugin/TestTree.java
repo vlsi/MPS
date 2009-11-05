@@ -35,6 +35,9 @@ public class TestTree extends MPSTree {
     MPSTreeNode root = new TextTreeNode("Tests");
     TestNameMap<TestCaseTreeNode, TestMethodTreeNode> temp = new TestNameMap<TestCaseTreeNode, TestMethodTreeNode>();
     for (SNode testCase : SetSequence.fromSet(MapSequence.fromMap(this.tests).keySet())) {
+      if ((testCase == null)) {
+        continue;
+      }
       TestCaseTreeNode testCaseTreeNode = new TestCaseTreeNode(this.operationContext, testCase);
       root.add(testCaseTreeNode);
       temp.put(testCase, testCaseTreeNode);

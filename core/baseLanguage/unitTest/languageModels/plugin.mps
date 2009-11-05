@@ -3983,6 +3983,17 @@
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.collections.structure.ForEachStatement" id="604223941107444560">
           <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="604223941107444561">
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="8707384861278435299">
+              <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="8707384861278435300">
+                <node role="statement" type="jetbrains.mps.baseLanguage.structure.ContinueStatement" id="8707384861278439670" />
+              </node>
+              <node role="condition" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="8707384861278439631">
+                <node role="operand" type="jetbrains.mps.baseLanguage.collections.structure.ForEachVariableReference" id="8707384861278439622">
+                  <link role="variable" targetNodeId="604223941107444620" resolveInfo="testCase" />
+                </node>
+                <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_IsNullOperation" id="8707384861278439656" />
+              </node>
+            </node>
             <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="604223941107444562">
               <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="604223941107444563">
                 <property name="name" value="testCaseTreeNode" />
