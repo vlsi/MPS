@@ -37,7 +37,7 @@ public class SymbolClassRegexp_Behavior {
           result.append(Regexp_Behavior.call_quote_1222857178958(thisNode, SPropertyOperations.getString(cscp, "character").charAt(0)));
         }
       } else if (SNodeOperations.isInstanceOf(part, "jetbrains.mps.baseLanguage.regexp.structure.PredefinedSymbolClassSymbolClassPart")) {
-        result.append("\\").append(SPropertyOperations.getString(SLinkOperations.getTarget(SNodeOperations.cast(part, "jetbrains.mps.baseLanguage.regexp.structure.PredefinedSymbolClassSymbolClassPart"), "declaration", false), "name"));
+        result.append(SPropertyOperations.getString(SLinkOperations.getTarget(SNodeOperations.cast(part, "jetbrains.mps.baseLanguage.regexp.structure.PredefinedSymbolClassSymbolClassPart"), "declaration", false), "name").replaceAll("\\\\", "\\\\\\\\"));
       } else if (SNodeOperations.isInstanceOf(part, "jetbrains.mps.baseLanguage.regexp.structure.IntervalSymbolClassPart")) {
         SNode iscp = SNodeOperations.cast(part, "jetbrains.mps.baseLanguage.regexp.structure.IntervalSymbolClassPart");
         String start;

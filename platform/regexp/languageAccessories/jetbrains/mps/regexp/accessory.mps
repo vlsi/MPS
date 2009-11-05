@@ -142,6 +142,10 @@
       <property name="name" value="\t" />
       <property name="description" value="tabulation symbol" />
     </node>
+    <node role="symbolClass" type="jetbrains.mps.baseLanguage.regexp.structure.PredefinedSymbolClassDeclaration" id="3050481019132403217">
+      <property name="name" value="\\" />
+      <property name="description" value="backward slash" />
+    </node>
   </node>
   <node type="jetbrains.mps.baseLanguage.regexp.structure.Regexps" id="1174662820983">
     <property name="name" value="Common" />

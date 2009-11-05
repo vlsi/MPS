@@ -16,7 +16,7 @@ public class PredefinedSymbolClassRegexp_Behavior {
   }
 
   public static String virtual_getString_1222432436326(SNode thisNode, List<SNode> vars) {
-    return "\\" + SPropertyOperations.getString(SLinkOperations.getTarget(thisNode, "symbolClass", false), "name");
+    return SPropertyOperations.getString(SLinkOperations.getTarget(thisNode, "symbolClass", false), "name").replaceAll("\\\\", "\\\\\\\\");
   }
 
   public static String call_getString_1222433142247(SNode thisNode, List<SNode> vars) {

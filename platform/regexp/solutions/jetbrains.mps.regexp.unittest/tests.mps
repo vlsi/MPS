@@ -64,7 +64,7 @@
               <link role="variableDeclaration" targetNodeId="6799940379546332981" resolveInfo="input" />
             </node>
             <node role="regexp" type="jetbrains.mps.baseLanguage.regexp.structure.InlineRegexpExpression" id="6799940379546332976">
-              <node role="regexp" type="jetbrains.mps.baseLanguage.regexp.structure.RegexpDeclarationReferenceRegexp" id="6799940379546332978">
+              <node role="regexp" type="jetbrains.mps.baseLanguage.regexp.structure.RegexpDeclarationReferenceRegexp" id="233706782641329819">
                 <link role="regexp" targetNodeId="6799940379546332969" resolveInfo="EMail" />
               </node>
             </node>
@@ -130,28 +130,22 @@
             </node>
           </node>
         </node>
-        <node role="right" type="jetbrains.mps.baseLanguage.regexp.structure.PlusRegexp" id="5533535376639706616">
-          <node role="regexp" type="jetbrains.mps.baseLanguage.regexp.structure.SeqRegexp" id="5533535376639706622">
-            <node role="left" type="jetbrains.mps.baseLanguage.regexp.structure.PlusRegexp" id="5533535376639706632">
-              <node role="regexp" type="jetbrains.mps.baseLanguage.regexp.structure.PredefinedSymbolClassRegexp" id="5533535376639706613">
+        <node role="right" type="jetbrains.mps.baseLanguage.regexp.structure.SeqRegexp" id="233706782641316237">
+          <node role="left" type="jetbrains.mps.baseLanguage.regexp.structure.PlusRegexp" id="5533535376639706616">
+            <node role="regexp" type="jetbrains.mps.baseLanguage.regexp.structure.SeqRegexp" id="5533535376639706622">
+              <node role="left" type="jetbrains.mps.baseLanguage.regexp.structure.PlusRegexp" id="5533535376639706632">
+                <node role="regexp" type="jetbrains.mps.baseLanguage.regexp.structure.PredefinedSymbolClassRegexp" id="5533535376639706613">
+                  <link role="symbolClass" targetNodeId="2v.1174554738336" resolveInfo="\w" />
+                </node>
+              </node>
+              <node role="right" type="jetbrains.mps.baseLanguage.regexp.structure.PredefinedSymbolClassRegexp" id="5533535376639706625">
                 <link role="symbolClass" targetNodeId="2v.1174554738336" resolveInfo="\w" />
               </node>
             </node>
-            <node role="right" type="jetbrains.mps.baseLanguage.regexp.structure.PredefinedSymbolClassRegexp" id="5533535376639706625">
-              <link role="symbolClass" targetNodeId="2v.1174554738336" resolveInfo="\w" />
-            </node>
           </node>
-        </node>
-      </node>
-    </node>
-    <node role="regexp" type="jetbrains.mps.baseLanguage.regexp.structure.RegexpDeclaration" id="3050481019131437876">
-      <property name="name" value="aa" />
-      <node role="regexp" type="jetbrains.mps.baseLanguage.regexp.structure.SeqRegexp" id="3050481019132224637">
-        <node role="left" type="jetbrains.mps.baseLanguage.regexp.structure.PredefinedSymbolClassRegexp" id="3050481019132321436">
-          <link role="symbolClass" targetNodeId="2v.1174554738336" resolveInfo="\w" />
-        </node>
-        <node role="right" type="jetbrains.mps.baseLanguage.regexp.structure.PredefinedSymbolClassRegexp" id="3050481019132224640">
-          <link role="symbolClass" targetNodeId="2v.1174554738336" resolveInfo="\w" />
+          <node role="right" type="jetbrains.mps.baseLanguage.regexp.structure.PredefinedSymbolClassRegexp" id="233706782641329822">
+            <link role="symbolClass" targetNodeId="2v.1174554738336" resolveInfo="\w" />
+          </node>
         </node>
       </node>
     </node>
