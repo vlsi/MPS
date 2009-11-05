@@ -4550,5 +4550,39 @@
       <link role="conceptPropertyDeclaration" targetNodeId="3.1137473994950" resolveInfo="dontSubstituteByDefault" />
     </node>
   </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="5949640294884234625">
+    <property name="package" value="CellLayout" />
+    <property name="name" value="CellLayout_Table" />
+    <link role="extends" targetNodeId="1106270491082" resolveInfo="CellLayout" />
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="5949640294884269781">
+      <property name="value" value="table" />
+      <link role="conceptPropertyDeclaration" targetNodeId="3.1137473891462" resolveInfo="alias" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.EnumerationDataTypeDeclaration" id="6820251943131810951">
+    <property name="name" value="TableComponentEnum" />
+    <link role="memberDataType" targetNodeId="3.1082983041843" resolveInfo="string" />
+    <node role="member" type="jetbrains.mps.lang.structure.structure.EnumerationMemberDeclaration" id="6820251943131810953">
+      <property name="internalValue" value="HORIZONTAL_COLLECTION" />
+      <property name="externalValue" value="horizontal collection" />
+    </node>
+    <node role="member" type="jetbrains.mps.lang.structure.structure.EnumerationMemberDeclaration" id="6820251943131810954">
+      <property name="internalValue" value="VERTICAL_COLLECTION" />
+      <property name="externalValue" value="vertical collection" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="6820251943131810950">
+    <property name="package" value="Stylesheet" />
+    <property name="name" value="TableComponentStyleClassItem" />
+    <link role="extends" targetNodeId="1186402475462" resolveInfo="StyleClassItem" />
+    <node role="propertyDeclaration" type="jetbrains.mps.lang.structure.structure.PropertyDeclaration" id="6820251943131810955">
+      <property name="name" value="tableComponent" />
+      <link role="dataType" targetNodeId="6820251943131810951" resolveInfo="TableComponentEnum" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1326688792171902653">
+      <property name="value" value="table-component" />
+      <link role="conceptPropertyDeclaration" targetNodeId="3.1137473891462" resolveInfo="alias" />
+    </node>
+  </node>
 </model>
 

@@ -60,8 +60,6 @@ public class CellLayout_Superscript extends AbstractCellLayout {
       CellLayout_Indent_Old._doLayout(editorCells);
       return;
     }
-
-
     if (editorCells.isFolded()) {
       Font font = EditorSettings.getInstance().getDefaultEditorFont();
       FontMetrics metrics = editorCells.getEditor().getFontMetrics(font);
@@ -77,20 +75,9 @@ public class CellLayout_Superscript extends AbstractCellLayout {
     }
 
     EditorCell[] cells = editorCells.getContentCells();
-    EditorCell closingBrace = editorCells.getClosingBrace();
-    EditorCell openingBrace = editorCells.getOpeningBrace();
 
-    boolean usesBraces = editorCells.usesBraces();
-    if (usesBraces) {
-      closingBrace.relayout();
-      openingBrace.relayout();
-      openingBrace.setX(editorCells.getX());
-      openingBrace.setY(editorCells.getY());
-    }
-
-    final int x = usesBraces ? editorCells.getX() + openingBrace.getWidth() : editorCells.getX();
+    final int x = editorCells.getX();
     final int y = editorCells.getY();
-    int braceIndent = 0;
     int width;
     int height;
 
@@ -148,25 +135,6 @@ public class CellLayout_Superscript extends AbstractCellLayout {
     width = Math.max(floor2x, Math.max(floor1x, floor3x)) - x;
     height = floor1 + floor2 + floor3;
 
-    editorCells.setArtificialBracesIndent(braceIndent);
-    for (EditorCell editorCell : cells) {
-      int cellX = editorCell.getX();
-      int cellY = editorCell.getY();
-      int indent = getBracesIndent(editorCell);
-      int newCellX = cellX - indent + braceIndent;
-      if (newCellX != cellX) editorCell.moveTo(newCellX, cellY);
-    }
-
-    if (usesBraces) {
-      closingBrace.setY(y + height - closingBrace.getHeight());
-      EditorCell lastCell = editorCells.lastContentCell();
-      while (lastCell.isUnfoldedCollection()) {
-        lastCell = ((EditorCell_Collection) lastCell).lastCell();
-      }
-      closingBrace.setX(lastCell.getX() + lastCell.getWidth());
-      width = Math.max(width, (closingBrace.getX() - x) + closingBrace.getWidth());
-      width += openingBrace.getWidth();
-    }
     editorCells.setWidth(width);
     editorCells.setHeight(height);
   }
@@ -177,11 +145,6 @@ public class CellLayout_Superscript extends AbstractCellLayout {
       result = result.appendToTheBottom(editorCell.renderText());
     }
     return result;
-  }
-
-  private int getBracesIndent(EditorCell cell) {
-    if (cell instanceof EditorCell_Collection) return ((EditorCell_Collection) cell).getBracesIndent();
-    return 0;
   }
 
   public int getAscent(EditorCell_Collection editorCells) {

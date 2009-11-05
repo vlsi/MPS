@@ -23,7 +23,7 @@ public class DefaultBaseLine_Behavior {
           }
         }
         if (matches_0) {
-          return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(matchedNode_0, "cellLayout", true), "jetbrains.mps.lang.editor.structure.CellLayout_Vertical");
+          return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(matchedNode_0, "cellLayout", true), "jetbrains.mps.lang.editor.structure.CellLayout_Vertical") || (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(matchedNode_0, "cellLayout", true), "jetbrains.mps.lang.editor.structure.CellLayout_Table"));
         }
       }
       {
@@ -35,7 +35,7 @@ public class DefaultBaseLine_Behavior {
           }
         }
         if (matches_1) {
-          return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(matchedNode_0, "cellLayout", true), "jetbrains.mps.lang.editor.structure.CellLayout_Vertical");
+          return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(matchedNode_0, "cellLayout", true), "jetbrains.mps.lang.editor.structure.CellLayout_Vertical") || (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(matchedNode_0, "cellLayout", true), "jetbrains.mps.lang.editor.structure.CellLayout_Table"));
         }
       }
       return false;

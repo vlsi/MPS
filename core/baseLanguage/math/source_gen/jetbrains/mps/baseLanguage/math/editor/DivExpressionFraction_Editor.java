@@ -99,6 +99,7 @@ public class DivExpressionFraction_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no numerator>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
+    delete_numerator.setCellActions(editorCell, node, editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -116,6 +117,7 @@ public class DivExpressionFraction_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no denominator>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
+    delete_denominator.setCellActions(editorCell, node, editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();

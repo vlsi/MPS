@@ -104,6 +104,10 @@ public class EditorCell_Collection extends EditorCell_Basic implements Iterable<
     return new EditorCell_Collection(editorContext, node, new CellLayout_Superscript(), null);
   }
 
+  public static EditorCell_Collection createTable(EditorContext editorContext, SNode node) {
+    return new EditorCell_Collection(editorContext, node, new CellLayout_Table(), null);
+  }
+
   @SuppressWarnings({"UnusedDeclaration"})
   public static EditorCell_Collection createFlow(EditorContext editorContext, SNode node, EditorCellListHandler handler) {
     return new EditorCell_Collection(editorContext, node, new CellLayout_Flow(), handler);

@@ -14,9 +14,8 @@ import jetbrains.mps.baseLanguage.math.plugin.EmptyCellProvider;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.cellProviders.AbstractCellListHandler;
-import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Horizontal;
-import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Vertical;
-import jetbrains.mps.nodeEditor.style.CellAlign;
+import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Table;
+import jetbrains.mps.nodeEditor.style.TableComponent;
 import jetbrains.mps.nodeEditor.style.DefaultBaseLine;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
@@ -28,6 +27,7 @@ import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandler;
 import jetbrains.mps.smodel.action.NodeFactoryManager;
 import jetbrains.mps.nodeEditor.CellActionType;
 import jetbrains.mps.nodeEditor.cellActions.CellAction_DeleteNode;
+import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandlerElementKeyMap;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultReferenceSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
 
@@ -45,9 +45,9 @@ public class MatrixConstructor_Editor extends DefaultNodeEditor {
     alternationCondition = MatrixConstructor_Editor.renderingCondition4845_0(node, editorContext, editorContext.getOperationContext().getScope());
     EditorCell editorCell = null;
     if (alternationCondition) {
-      editorCell = this.createCollection_4845_1(editorContext, node);
+      editorCell = this.createCollection_4845_2(editorContext, node);
     } else {
-      editorCell = this.createRefNodeList_4845_0(editorContext, node);
+      editorCell = this.createCollection_4845_1(editorContext, node);
     }
     return editorCell;
   }
@@ -61,11 +61,20 @@ public class MatrixConstructor_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createCollection_4845_1(EditorContext editorContext, SNode node) {
-    EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
+    EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_4845_1");
     editorCell.addEditorCell(this.createCustom_4845_0(editorContext, node));
-    editorCell.addEditorCell(this.createRefNodeList_4845_1(editorContext, node));
+    editorCell.addEditorCell(this.createRefNodeList_4845_0(editorContext, node));
     editorCell.addEditorCell(this.createCustom_4845_1(editorContext, node));
+    return editorCell;
+  }
+
+  private EditorCell createCollection_4845_2(EditorContext editorContext, SNode node) {
+    EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
+    editorCell.setCellId("Collection_4845_2");
+    editorCell.addEditorCell(this.createCustom_4845_2(editorContext, node));
+    editorCell.addEditorCell(this.createRefNodeList_4845_1(editorContext, node));
+    editorCell.addEditorCell(this.createCustom_4845_3(editorContext, node));
     return editorCell;
   }
 
@@ -106,25 +115,60 @@ public class MatrixConstructor_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
+  private EditorCell createCustom_4845_2(final EditorContext editorContext, final SNode node) {
+    AbstractCellProvider provider = new _FunctionTypes._return_P0_E0<EmptyCellProvider>() {
+      public EmptyCellProvider invoke() {
+        return new EmptyCellProvider(node);
+      }
+    }.invoke();
+    EditorCell editorCell = provider.createEditorCell(editorContext);
+    editorCell.setCellId("Custom_4845_2");
+    {
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.PUNCTUATION_RIGHT, true);
+    }
+    return editorCell;
+  }
+
+  private EditorCell createCustom_4845_3(final EditorContext editorContext, final SNode node) {
+    AbstractCellProvider provider = new _FunctionTypes._return_P0_E0<EmptyCellProvider>() {
+      public EmptyCellProvider invoke() {
+        return new EmptyCellProvider(node);
+      }
+    }.invoke();
+    EditorCell editorCell = provider.createEditorCell(editorContext);
+    editorCell.setCellId("Custom_4845_3");
+    {
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.PUNCTUATION_LEFT, true);
+    }
+    return editorCell;
+  }
+
   private EditorCell createRefNodeList_4845_0(EditorContext editorContext, SNode node) {
     AbstractCellListHandler handler = new MatrixConstructor_Editor.componentsListHandler_4845_0(node, "components", editorContext);
-    EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Horizontal(), false);
+    EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Table(), false);
     editorCell.setCellId("refNodeList_components");
+    {
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.DRAW_BRACKETS, true);
+      style.set(StyleAttributes.TABLE_COMPONENT, TableComponent.HORIZONTAL_COLLECTION);
+      style.set(StyleAttributes.DEFAULT_BASE_LINE, DefaultBaseLine.CENTER);
+    }
     editorCell.setRole(handler.getElementRole());
     return editorCell;
   }
 
   private EditorCell createRefNodeList_4845_1(EditorContext editorContext, SNode node) {
     AbstractCellListHandler handler = new MatrixConstructor_Editor.componentsListHandler_4845_1(node, "components", editorContext);
-    EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Vertical(), false);
+    EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Table(), false);
     editorCell.setCellId("refNodeList_components_1");
     {
       Style style = editorCell.getStyle();
-      style.set(StyleAttributes.HORIZONTAL_ALIGN, CellAlign.CENTER);
       style.set(StyleAttributes.DRAW_BRACKETS, true);
       style.set(StyleAttributes.DEFAULT_BASE_LINE, DefaultBaseLine.CENTER);
+      style.set(StyleAttributes.TABLE_COMPONENT, TableComponent.VERTICAL_COLLECTION);
     }
-    editorCell.setGridLayout(true);
     editorCell.setRole(handler.getElementRole());
     return editorCell;
   }
@@ -181,6 +225,7 @@ public class MatrixConstructor_Editor extends DefaultNodeEditor {
         if (elementNode != null) {
           substituteInfoNode = elementNode;
           elementCell.setAction(CellActionType.DELETE, new CellAction_DeleteNode(elementNode));
+          elementCell.addKeyMap(new RefNodeListHandlerElementKeyMap(this, " "));
         }
         if (elementCell.getSubstituteInfo() == null || elementCell.getSubstituteInfo() instanceof DefaultReferenceSubstituteInfo) {
           elementCell.setSubstituteInfo(new DefaultChildSubstituteInfo(listOwner, elementNode, super.getLinkDeclaration(), editorContext));
@@ -189,7 +234,13 @@ public class MatrixConstructor_Editor extends DefaultNodeEditor {
     }
 
     public EditorCell createSeparatorCell(EditorContext editorContext) {
-      return super.createSeparatorCell(editorContext);
+      {
+        EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, this.getOwner(), " ");
+        editorCell.setSelectable(false);
+        editorCell.getStyle().set(StyleAttributes.LAYOUT_CONSTRAINT, "");
+        editorCell.getStyle().set(StyleAttributes.PUNCTUATION_LEFT, true);
+        return editorCell;
+      }
     }
   }
 
