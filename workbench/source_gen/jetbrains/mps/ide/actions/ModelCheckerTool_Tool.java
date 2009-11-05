@@ -11,6 +11,7 @@ import javax.swing.JComponent;
 import jetbrains.mps.MPSProjectHolder;
 import jetbrains.mps.smodel.SModelDescriptor;
 import java.util.List;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.ide.projectPane.Icons;
 import jetbrains.mps.project.IModule;
 import com.intellij.ui.content.ContentManager;
@@ -34,7 +35,7 @@ public class ModelCheckerTool_Tool extends GeneratedTool {
 
   public void checkModel(SModelDescriptor modelDescriptor) {
     ModelCheckerViewer newViewer = new ModelCheckerViewer(ModelCheckerTool_Tool.this.myProject, ModelCheckerTool_Tool.this);
-    if (newViewer.checkModel(modelDescriptor.getSModel())) {
+    if (newViewer.checkModel(modelDescriptor)) {
       ModelCheckerTool_Tool.this.processCheckResults(newViewer, modelDescriptor.getName(), IconManager.getIconFor(modelDescriptor));
     }
   }
@@ -42,7 +43,7 @@ public class ModelCheckerTool_Tool extends GeneratedTool {
   public void checkModels(List<SModelDescriptor> modelDescriptors) {
     ModelCheckerViewer newViewer = new ModelCheckerViewer(ModelCheckerTool_Tool.this.myProject, ModelCheckerTool_Tool.this);
     if (newViewer.checkModels(modelDescriptors)) {
-      ModelCheckerTool_Tool.this.processCheckResults(newViewer, modelDescriptors.size() + " models", Icons.MODEL_ICON);
+      ModelCheckerTool_Tool.this.processCheckResults(newViewer, ListSequence.fromList(modelDescriptors).count() + " models", Icons.MODEL_ICON);
     }
   }
 
@@ -50,6 +51,14 @@ public class ModelCheckerTool_Tool extends GeneratedTool {
     ModelCheckerViewer newViewer = new ModelCheckerViewer(ModelCheckerTool_Tool.this.myProject, ModelCheckerTool_Tool.this);
     if (newViewer.checkModule(module)) {
       ModelCheckerTool_Tool.this.processCheckResults(newViewer, module.getModuleFqName(), IconManager.getIconFor(module));
+    }
+  }
+
+  public void checkModules(List<IModule> modules) {
+    ModelCheckerViewer newViewer = new ModelCheckerViewer(ModelCheckerTool_Tool.this.myProject, ModelCheckerTool_Tool.this);
+    if (newViewer.checkModules(modules)) {
+      // TODO icon 
+      ModelCheckerTool_Tool.this.processCheckResults(newViewer, ListSequence.fromList(modules).count() + " modules", Icons.MODULE_DEPENDENCIES_ICON);
     }
   }
 

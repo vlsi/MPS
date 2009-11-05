@@ -12,20 +12,18 @@ import jetbrains.mps.ide.findusages.view.FindUtils;
 import java.util.Arrays;
 import jetbrains.mps.ide.findusages.model.SearchQuery;
 import jetbrains.mps.ide.findusages.model.SearchResults;
-import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.smodel.SModelDescriptor;
 import com.intellij.openapi.progress.ProgressManager;
 import com.intellij.openapi.progress.Task;
 import com.intellij.openapi.project.Project;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.progress.ProgressIndicator;
 import java.util.List;
-import jetbrains.mps.smodel.SModelDescriptor;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.ide.findusages.findalgorithm.finders.IFinder;
 import jetbrains.mps.ide.findusages.model.SearchResult;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import java.util.HashSet;
 import jetbrains.mps.ide.findusages.view.treeholder.treeview.INodeRepresentator;
@@ -85,10 +83,10 @@ public class ModelCheckerViewer extends JPanel {
     return true;
   }
 
-  public boolean checkModel(final SModel model) {
-    ProgressManager.getInstance().run(new Task.Modal(this.myProject.getComponent(Project.class), "Checking " + SModelOperations.getModelName(model), true) {
+  public boolean checkModel(final SModelDescriptor modelDescriptor) {
+    ProgressManager.getInstance().run(new Task.Modal(this.myProject.getComponent(Project.class), "Checking " + modelDescriptor.getLongName(), true) {
       public void run(@NotNull ProgressIndicator indicator) {
-        ModelCheckerViewer.this.myLastResults = ModelCheckerResultsFinder.checkModelAndGetResults(model, indicator);
+        ModelCheckerViewer.this.myLastResults = ModelCheckerResultsFinder.checkModelAndGetResults(modelDescriptor, indicator);
       }
     });
 
@@ -96,8 +94,7 @@ public class ModelCheckerViewer extends JPanel {
   }
 
   public boolean checkModels(final List<SModelDescriptor> modelDescriptors) {
-    // TODO 
-    ProgressManager.getInstance().run(new Task.Modal(this.myProject.getComponent(Project.class), "Checking " + modelDescriptors.size() + " models", true) {
+    ProgressManager.getInstance().run(new Task.Modal(this.myProject.getComponent(Project.class), "Checking " + ListSequence.fromList(modelDescriptors).count() + " models", true) {
       public void run(@NotNull ProgressIndicator indicator) {
         ModelCheckerViewer.this.myLastResults = ModelCheckerResultsFinder.checkModelsAndGetResults(modelDescriptors, indicator);
       }
@@ -110,6 +107,16 @@ public class ModelCheckerViewer extends JPanel {
     ProgressManager.getInstance().run(new Task.Modal(this.myProject.getComponent(Project.class), "Checking " + module.getModuleFqName(), true) {
       public void run(@NotNull ProgressIndicator indicator) {
         ModelCheckerViewer.this.myLastResults = ModelCheckerResultsFinder.checkModuleAndGetResults(module, indicator);
+      }
+    });
+
+    return this.saveCheckerResults();
+  }
+
+  public boolean checkModules(final List<IModule> modules) {
+    ProgressManager.getInstance().run(new Task.Modal(this.myProject.getComponent(Project.class), "Checking " + ListSequence.fromList(modules).count() + " modules", true) {
+      public void run(@NotNull ProgressIndicator indicator) {
+        ModelCheckerViewer.this.myLastResults = ModelCheckerResultsFinder.checkModulesAndGetResults(modules, indicator);
       }
     });
 
