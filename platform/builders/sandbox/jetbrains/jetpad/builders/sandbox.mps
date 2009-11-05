@@ -10,8 +10,7 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)" version="83" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902db(jetbrains.mps.baseLanguage.blTypes.constraints)" version="0" />
   <languageAspect modelUID="r:77052501-5144-48a7-be50-7535fc6d1073(jetbrains.mps.baseLanguage.builders.structure)" version="0" />
-  <maxImportIndex value="1" />
-  <import index="1" modelUID="r:39443738-6b04-456b-81ea-74b309f56322(jetbrains.jetpad.samples.richText)" version="-1" />
+  <maxImportIndex value="2" />
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="7057666463730252450">
     <property name="name" value="Abc" />
     <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="7057666463730252451" />
@@ -38,61 +37,6 @@
                 <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="6666322667909840093">
                   <property name="value" value="abc" />
                 </node>
-              </node>
-            </node>
-          </node>
-        </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="7288041816793125170">
-          <node role="expression" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="7288041816793125171">
-            <node role="creator" type="jetbrains.mps.baseLanguage.builders.structure.BuilderCreator" id="7288041816793407199">
-              <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="7288041816793407200" />
-              <node role="builder" type="jetbrains.mps.baseLanguage.builders.structure.SimpleBuilder" id="7288041816793407201">
-                <link role="declaration" targetNodeId="7288041816792802787" resolveInfo="doc" />
-              </node>
-            </node>
-          </node>
-        </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="7288041816793257767">
-          <node role="expression" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="7288041816793257768">
-            <node role="creator" type="jetbrains.mps.baseLanguage.builders.structure.BuilderCreator" id="7288041816793257770">
-              <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="7288041816793257771">
-                <node role="statement" type="jetbrains.mps.baseLanguage.builders.structure.BuilderStatement" id="7288041816793373212">
-                  <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="7288041816793373213">
-                    <node role="statement" type="jetbrains.mps.baseLanguage.builders.structure.BuilderStatement" id="5389689214216447742">
-                      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="5389689214216447743" />
-                      <node role="builder" type="jetbrains.mps.baseLanguage.builders.structure.SimpleBuilder" id="5389689214216447744">
-                        <link role="declaration" targetNodeId="7288041816792802791" resolveInfo="c" />
-                        <node role="argument" type="jetbrains.mps.baseLanguage.structure.CharConstant" id="5389689214216447745">
-                          <property name="charConstant" value="a" />
-                        </node>
-                      </node>
-                    </node>
-                    <node role="statement" type="jetbrains.mps.baseLanguage.builders.structure.BuilderStatement" id="7288041816793407202">
-                      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="7288041816793407203" />
-                      <node role="builder" type="jetbrains.mps.baseLanguage.builders.structure.SimpleBuilder" id="7288041816793407204">
-                        <link role="declaration" targetNodeId="7288041816792802791" resolveInfo="c" />
-                        <node role="argument" type="jetbrains.mps.baseLanguage.structure.CharConstant" id="4315270135340668978">
-                          <property name="charConstant" value="f" />
-                        </node>
-                      </node>
-                    </node>
-                    <node role="statement" type="jetbrains.mps.baseLanguage.builders.structure.BuilderStatement" id="7288041816793525001">
-                      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="7288041816793525002" />
-                      <node role="builder" type="jetbrains.mps.baseLanguage.builders.structure.SimpleBuilder" id="7288041816793525003">
-                        <link role="declaration" targetNodeId="7288041816792802791" resolveInfo="c" />
-                        <node role="argument" type="jetbrains.mps.baseLanguage.structure.CharConstant" id="4315270135340668976">
-                          <property name="charConstant" value="e" />
-                        </node>
-                      </node>
-                    </node>
-                  </node>
-                  <node role="builder" type="jetbrains.mps.baseLanguage.builders.structure.SimpleBuilder" id="7288041816793373214">
-                    <link role="declaration" targetNodeId="7288041816792802790" resolveInfo="p" />
-                  </node>
-                </node>
-              </node>
-              <node role="builder" type="jetbrains.mps.baseLanguage.builders.structure.SimpleBuilder" id="7288041816793257772">
-                <link role="declaration" targetNodeId="7288041816792802787" resolveInfo="doc" />
               </node>
             </node>
           </node>
@@ -153,78 +97,6 @@
             </node>
           </node>
         </node>
-      </node>
-    </node>
-  </node>
-  <node type="jetbrains.mps.baseLanguage.builders.structure.SimpleBuilders" id="7288041816792390030">
-    <property name="name" value="simpleBuilders" />
-    <node role="builder" type="jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderDeclaration" id="7288041816792802787">
-      <property name="name" value="doc" />
-      <property name="root" value="true" />
-      <link role="cls" targetNodeId="1.17023235254637548" resolveInfo="Document" />
-      <node role="child" type="jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderChild" id="7288041816792802788">
-        <link role="child" targetNodeId="7288041816792802790" resolveInfo="p" />
-        <node role="attachStatement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="7288041816792802792">
-          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="7288041816792813194">
-            <node role="operand" type="jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderParentExpression" id="7288041816792802794" />
-            <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="7288041816792813198">
-              <link role="baseMethodDeclaration" targetNodeId="1.17023235254667839" resolveInfo="add" />
-              <node role="actualArgument" type="jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderChildExpression" id="7288041816792813199" />
-            </node>
-          </node>
-        </node>
-      </node>
-      <node role="creator" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="7288041816793544452">
-        <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="7288041816793544454">
-          <link role="baseMethodDeclaration" targetNodeId="1.17023235254637550" resolveInfo="Document" />
-        </node>
-      </node>
-      <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="3816167865390572969">
-        <link role="classifier" targetNodeId="1.17023235254637548" resolveInfo="Document" />
-      </node>
-    </node>
-    <node role="builder" type="jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderDeclaration" id="7288041816792802790">
-      <property name="name" value="p" />
-      <link role="cls" targetNodeId="1.17023235254637554" resolveInfo="Paragraph" />
-      <node role="child" type="jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderChild" id="7288041816792813201">
-        <link role="child" targetNodeId="7288041816792802791" resolveInfo="c" />
-        <node role="attachStatement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="7288041816792813203">
-          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="7288041816792813205">
-            <node role="operand" type="jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderParentExpression" id="7288041816792813204" />
-            <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="7288041816792813209">
-              <link role="baseMethodDeclaration" targetNodeId="1.17023235254668326" resolveInfo="add" />
-              <node role="actualArgument" type="jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderChildExpression" id="7288041816792813210" />
-            </node>
-          </node>
-        </node>
-      </node>
-      <node role="creator" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="7288041816793544456">
-        <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="7288041816793544458">
-          <link role="baseMethodDeclaration" targetNodeId="1.17023235254637556" resolveInfo="Paragraph" />
-        </node>
-      </node>
-      <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="3816167865390572970">
-        <link role="classifier" targetNodeId="1.17023235254637554" resolveInfo="Paragraph" />
-      </node>
-    </node>
-    <node role="builder" type="jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderDeclaration" id="7288041816792802791">
-      <property name="name" value="c" />
-      <property name="leaf" value="true" />
-      <link role="cls" targetNodeId="1.17023235254668837" resolveInfo="CharElement" />
-      <node role="creator" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="7288041816793544459">
-        <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="7288041816793544461">
-          <link role="baseMethodDeclaration" targetNodeId="1.17023235254668839" resolveInfo="CharElement" />
-          <node role="actualArgument" type="jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderParameterReference" id="4315270135340543554">
-            <link role="parameter" targetNodeId="5425713840853785825" resolveInfo="c" />
-          </node>
-        </node>
-      </node>
-      <node role="parameter" type="jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderParameter" id="5425713840853785825">
-        <property name="name" value="c" />
-        <node role="type" type="jetbrains.mps.baseLanguage.structure.CharType" id="5425713840853785827" />
-      </node>
-      <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="3816167865390572971">
-        <link role="classifier" targetNodeId="1.17023235254668837" resolveInfo="CharElement" />
       </node>
     </node>
   </node>

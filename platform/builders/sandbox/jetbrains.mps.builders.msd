@@ -5,9 +5,6 @@
   </models>
   <classPath />
   <sourcePath />
-  <dependencies>
-    <dependency reexport="false">be5c8945-57f2-4243-9569-16590ba6be89(jetbrains.jetpad.samples)</dependency>
-  </dependencies>
   <usedLanguages>
     <usedLanguage>132aa4d8-a3f7-441c-a7eb-3fce23492c6a(jetbrains.mps.baseLanguage.builders)</usedLanguage>
   </usedLanguages>
