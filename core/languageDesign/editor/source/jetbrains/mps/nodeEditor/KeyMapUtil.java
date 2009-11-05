@@ -57,12 +57,14 @@ public class KeyMapUtil {
           return Collections.emptyList();
         }
 
+        /*
         if ((keyEvent.getModifiers() & (KeyEvent.CTRL_MASK | KeyEvent.ALT_MASK | KeyEvent.SHIFT_MASK)) == 0) {
           char keyChar = keyEvent.getKeyChar();
           if (Character.isLetterOrDigit(keyChar) || keyChar == '\n') {
             return Collections.emptyList(); //TODO why?!
           }
         }
+        */
 
         // collect all keymaps available
         List<Pair<EditorCellKeyMap, EditorCell>> keymapsAndCells = getRegisteredKeymaps(selectedCell, editorContext);
