@@ -317,6 +317,7 @@
     <antcall target="MPS-languages.pack.jetbrains.mps.build.packaging0" />
     <antcall target="MPS-languages.pack.jetbrains.mps.build.dependency0" />
     <antcall target="MPS-languages.pack.jetbrains.mps.build.property0" />
+    <antcall target="MPS-languages.pack.jetbrains.mps.baseLanguage.builders0" />
     <antcall target="MPS-languages.pack.jetbrains.mps.bash0" />
     <antcall target="MPS-languages.pack.jetbrains.mps.baseLanguage.regexp0" />
     <antcall target="MPS-languages.pack.jetbrains.mps.baseLanguage.regexp.examples0" />
