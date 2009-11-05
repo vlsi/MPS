@@ -2187,6 +2187,10 @@
             <property name="id" value="dd61a7d7-8e1b-45a1-9aa3-8585ec2b60fc" />
             <property name="name" value="jetbrains.mps.build.property" />
           </node>
+          <node role="entry" type="jetbrains.mps.build.custommpsInternal.structure.MPSModule" id="4288844306041723046">
+            <property name="id" value="132aa4d8-a3f7-441c-a7eb-3fce23492c6a" />
+            <property name="name" value="jetbrains.mps.baseLanguage.builders" />
+          </node>
           <node role="entry" type="jetbrains.mps.build.custommpsInternal.structure.MPSModule" id="3037831562616563873">
             <property name="id" value="4a1e4a24-105b-44ed-959c-6586fc957db3" />
             <property name="name" value="jetbrains.mps.bash" />
