@@ -184,6 +184,9 @@ public class NewModelDialog extends BaseDialog {
     private ModelRootWrapper(SModelRoot modelRoot) {
       myModelRoot = modelRoot;
       myNamespace = myModelRoot.getPrefix();
+      if (myNamespace == null) {
+        myNamespace = "";
+      }
 
       boolean needsNamespace = !myNamespace.equals("");
       myText = myModelRoot.getPath() + (needsNamespace ? " (" + myNamespace + ")" : "");
