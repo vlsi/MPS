@@ -30,7 +30,7 @@
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1894531970723270160">
     <property name="name" value="TypeExtension" />
     <property name="rootable" value="true" />
-    <link role="extends" targetNodeId="2v.1133920641626" resolveInfo="BaseConcept" />
+    <link role="extends" targetNodeId="6.1109279851642" resolveInfo="GenericDeclaration" />
     <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1894531970723323134">
       <property name="metaClass" value="aggregation" />
       <property name="role" value="type" />
@@ -43,8 +43,8 @@
       <property name="sourceCardinality" value="0..n" />
       <link role="target" targetNodeId="1550313277222152185" resolveInfo="ExtensionMethodDeclaration" />
     </node>
-    <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="1894531970723270239">
-      <link role="intfc" targetNodeId="2v.1169194658468" resolveInfo="INamedConcept" />
+    <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="2101641000591952532">
+      <link role="intfc" targetNodeId="6.1212170275853" resolveInfo="IValidIdentifier" />
     </node>
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1894531970723270240">
       <property name="value" value="type extension" />
