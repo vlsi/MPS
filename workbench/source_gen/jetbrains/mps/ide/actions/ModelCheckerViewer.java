@@ -34,6 +34,7 @@ import java.util.HashMap;
 import jetbrains.mps.ide.findusages.view.treeholder.tree.TextOptions;
 import javax.swing.Icon;
 import jetbrains.mps.ide.projectPane.Icons;
+import org.apache.commons.lang.StringEscapeUtils;
 import org.jdom.Element;
 import jetbrains.mps.ide.findusages.CantSaveSomethingException;
 import jetbrains.mps.internal.collections.runtime.IMapping;
@@ -185,22 +186,22 @@ public class ModelCheckerViewer extends JPanel {
         )) + ")";
       }
       String categoryRepr = "";
-      if (category.equals(CATEGORY_ERROR)) {
+      if (CATEGORY_ERROR.equals(category)) {
         categoryRepr = "Errors";
-      } else if (category.equals(CATEGORY_WARNING)) {
+      } else if (CATEGORY_WARNING.equals(category)) {
         categoryRepr = "Warnings";
-      } else if (category.equals(CATEGORY_OK)) {
+      } else if (CATEGORY_OK.equals(category)) {
         categoryRepr = "Infos";
       }
       return "<strong>" + categoryRepr + counter + "</strong>";
     }
 
     public Icon getCategoryIcon(String category) {
-      if (category.equals(CATEGORY_ERROR)) {
+      if (CATEGORY_ERROR.equals(category)) {
         return jetbrains.mps.ide.messages.Icons.ERROR_ICON;
-      } else if (category.equals(CATEGORY_WARNING)) {
+      } else if (CATEGORY_WARNING.equals(category)) {
         return jetbrains.mps.ide.messages.Icons.WARNING_ICON;
-      } else if (category.equals(CATEGORY_OK)) {
+      } else if (CATEGORY_OK.equals(category)) {
         return jetbrains.mps.ide.messages.Icons.INFORMATION_ICON;
       }
       return jetbrains.mps.ide.messages.Icons.ERROR_ICON;
@@ -208,11 +209,7 @@ public class ModelCheckerViewer extends JPanel {
 
     public String getPresentation(SNode node) {
       ModelCheckerResults.Result result = MapSequence.fromMap(this.myCheckerResultForNode).get(getNodeId(node));
-      String message = result.getMessage();
-      message = message.replaceAll("&", "&amp;");
-      message = message.replaceAll("<", "&lt;");
-      message = message.replaceAll(">", "&gt;");
-      return message;
+      return StringEscapeUtils.escapeHtml(result.getMessage());
     }
 
     public void write(Element element, MPSProject project) throws CantSaveSomethingException {
