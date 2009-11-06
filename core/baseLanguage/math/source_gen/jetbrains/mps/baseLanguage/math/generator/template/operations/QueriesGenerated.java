@@ -137,7 +137,6 @@ public class QueriesGenerated {
   }
 
   public static SNode sourceNodeQuery_1237191873553(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    System.err.println("UPCHK: " + TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(_context.getNode(), "expression", true)));
     return Type_Behavior.call_getUnboxedType_1213877337320(SNodeOperations.cast(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(_context.getNode(), "expression", true)), "jetbrains.mps.baseLanguage.structure.Type"));
   }
 

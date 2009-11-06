@@ -14,6 +14,7 @@
  * limitations under the License.
  */
 package jetbrains.mps.baseLanguage.math.runtime;
+
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes._return_P1_E0;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes._return_P2_E0;
 
@@ -512,9 +513,10 @@ public class Matrix<T> {
     myColumns = m.myColumns;
     this.myOperations = oper;
     this.myCarrier = new Object[myRows][myColumns];
-    for (int i = 0; i < myRows; i++) for (int j = 0; j < myColumns; j++) {
-      myCarrier[i][j] = oper.cast(m.get(i, j));
-    }
+    for (int i = 0; i < myRows; i++)
+      for (int j = 0; j < myColumns; j++) {
+        myCarrier[i][j] = oper.cast(m.get(i, j));
+      }
   }
 
   public Matrix(int r, int c, _return_P2_E0<T, Integer, Integer> f, MatrixScalarOperations oper) {
@@ -594,18 +596,20 @@ public class Matrix<T> {
     myCarrier[i][j] = v;
   }
 
-  public synchronized Matrix<T> transpose(final boolean conjugate) {
-    if (conjugate) return new Matrix(myColumns, myRows, new _return_P2_E0() {
+  public synchronized Matrix<T> transpose() {
+    return new Matrix(myColumns, myRows, new _return_P2_E0() {
+      public Object invoke(Object o, Object o1) {
+        return myCarrier[(Integer) o1][(Integer) o];
+      }
+    }, myOperations);
+  }
+
+  public synchronized Matrix<T> conjugate() {
+    return new Matrix(myColumns, myRows, new _return_P2_E0() {
       public Object invoke(Object o, Object o1) {
         return myOperations.conj(myCarrier[(Integer) o1][(Integer) o]);
       }
     }, myOperations);
-    else
-      return new Matrix(myColumns, myRows, new _return_P2_E0() {
-        public Object invoke(Object o, Object o1) {
-          return myCarrier[(Integer) o1][(Integer) o];
-        }
-      }, myOperations);
   }
 
   public synchronized void addRow(int source, int dest, Object scalar) {
@@ -758,7 +762,7 @@ public class Matrix<T> {
             Object o = myCarrier[i][j];
             o1 = oper.add(o1, oper.mul(myOperations.abs(o), myOperations.abs(o)));
           }
-        if (o1 instanceof BigDecimal) return MathRuntime.sqrt((BigDecimal) o1 , MathContext.DECIMAL128);
+        if (o1 instanceof BigDecimal) return MathRuntime.sqrt((BigDecimal) o1, MathContext.DECIMAL128);
         if (o1 instanceof Double) return Math.sqrt((Double) o1);
         if (o1 instanceof Float) return (float) Math.sqrt((Float) o1);
         return null;
@@ -766,8 +770,8 @@ public class Matrix<T> {
         leader = null;
         for (int i = 0; i < myRows; i++)
           for (int j = 0; j < myColumns; j++) {
-             Object o2 = myOperations.abs(myCarrier[i][j]);
-             if (leader == null || ((Comparable) leader).compareTo(((Comparable) o2)) < 0) leader = o2;
+            Object o2 = myOperations.abs(myCarrier[i][j]);
+            if (leader == null || ((Comparable) leader).compareTo(((Comparable) o2)) < 0) leader = o2;
           }
         return leader;
     }

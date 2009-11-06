@@ -131,6 +131,14 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
       this.myInferenceRules.add(inferenceRule);
     }
     {
+      InferenceRule_Runtime inferenceRule = new typeof_TransposeOperation_InferenceRule();
+      this.myInferenceRules.add(inferenceRule);
+    }
+    {
+      InferenceRule_Runtime inferenceRule = new typeof_ConjugateOperation_InferenceRule();
+      this.myInferenceRules.add(inferenceRule);
+    }
+    {
       NonTypesystemRule_Runtime nonTypesystemRule = new highlight_complex_to_real_casts_NonTypesystemRule();
       this.myNonTypesystemRules.add(nonTypesystemRule);
     }

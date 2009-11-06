@@ -52,7 +52,7 @@ public class MathTypeUtil {
   }
 
   public static boolean floatType(SNode t) {
-    return SNodeOperations.isInstanceOf(t, "jetbrains.mps.baseLanguage.structure.FloatType") || SNodeOperations.isInstanceOf(t, "jetbrains.mps.baseLanguage.structure.DoubleType") || SNodeOperations.isInstanceOf(t, "jetbrains.mps.baseLanguage.math.structure.ComplexType") || SNodeOperations.isInstanceOf(t, "jetbrains.mps.baseLanguage.math.structure.BigDecimalType") || SNodeOperations.isInstanceOf(t, "jetbrains.mps.baseLanguage.math.structure.BigComplexType") || MatchingUtil.matchNodes(t, new _Quotations.QuotationClass_45().createNode()) || MatchingUtil.matchNodes(t, new _Quotations.QuotationClass_46().createNode());
+    return SNodeOperations.isInstanceOf(t, "jetbrains.mps.baseLanguage.structure.FloatType") || SNodeOperations.isInstanceOf(t, "jetbrains.mps.baseLanguage.structure.DoubleType") || SNodeOperations.isInstanceOf(t, "jetbrains.mps.baseLanguage.math.structure.ComplexType") || SNodeOperations.isInstanceOf(t, "jetbrains.mps.baseLanguage.math.structure.BigDecimalType") || SNodeOperations.isInstanceOf(t, "jetbrains.mps.baseLanguage.math.structure.BigComplexType") || MatchingUtil.matchNodes(t, new _Quotations.QuotationClass_49().createNode()) || MatchingUtil.matchNodes(t, new _Quotations.QuotationClass_50().createNode());
   }
 
   public static SNode join(SNode t1, SNode t2) {

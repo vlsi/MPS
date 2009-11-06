@@ -4,6 +4,8 @@
   <refactoringHistory />
   <language namespace="c72da2b9-7cce-4447-8389-f407dc1158b7(jetbrains.mps.lang.structure)" />
   <language namespace="a247e09e-2435-45ba-b8d2-07e93feba96a(jetbrains.mps.baseLanguage.tuples)" />
+  <language namespace="ceab5195-25ea-4f22-9b92-103b95ca8c0c(jetbrains.mps.lang.core)" />
+  <language namespace="f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959028c(jetbrains.mps.lang.structure.constraints)" version="11" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" />
@@ -14,18 +16,20 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590334(jetbrains.mps.baseLanguage.closures.constraints)" version="2" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" version="16" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)" version="83" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" version="4" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" version="7" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959033d(jetbrains.mps.lang.annotations.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902fb(jetbrains.mps.lang.smodel.constraints)" version="21" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959034b(jetbrains.mps.lang.quotation.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="3" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902ae(jetbrains.mps.lang.typesystem.constraints)" version="17" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" version="0" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" version="3" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902db(jetbrains.mps.baseLanguage.blTypes.constraints)" version="0" />
   <languageAspect modelUID="r:cb1a36c8-1ffb-415a-aba8-afb9dc042d1b(jetbrains.mps.baseLanguage.math.structure)" version="14" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590345(jetbrains.mps.lang.pattern.structure)" version="0" />
   <languageAspect modelUID="r:309aeee7-bee8-445c-b31d-35928d1da75f(jetbrains.mps.baseLanguage.tuples.structure)" version="2" />
-  <maxImportIndex value="1" />
+  <devkit namespace="2677cb18-f558-4e33-bc38-a5139cee06dc(jetbrains.mps.devkit.language-design)" />
+  <maxImportIndex value="2" />
+  <import index="2" modelUID="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" version="0" />
   <visible index="2" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
   <visible index="3" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1235747354980">
@@ -421,19 +425,14 @@
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="8365454432008500948">
     <property name="package" value="matrix" />
     <property name="name" value="TransposeOperation" />
-    <link role="extends" targetNodeId="2v.1068431790191" resolveInfo="Expression" />
-    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="8365454432008514433">
-      <property name="metaClass" value="aggregation" />
-      <property name="role" value="expression" />
-      <link role="target" targetNodeId="2v.1068431790191" resolveInfo="Expression" />
+    <link role="extends" targetNodeId="7255837154369580413" resolveInfo="MatrixExponentialOperation" />
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="7255837154369797717">
+      <property name="value" value="T" />
+      <link role="conceptPropertyDeclaration" targetNodeId="7255837154369354276" resolveInfo="operationSymbol" />
     </node>
-    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="8365454432008514442">
-      <property name="value" value="^T" />
-      <link role="conceptPropertyDeclaration" targetNodeId="3v.1137473891462" resolveInfo="alias" />
-    </node>
-    <node role="propertyDeclaration" type="jetbrains.mps.lang.structure.structure.PropertyDeclaration" id="4334427517307366078">
-      <property name="name" value="conj" />
-      <link role="dataType" targetNodeId="3v.1082983657063" resolveInfo="boolean" />
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="7388416617631668700">
+      <property name="value" value="Transpose operation" />
+      <link role="conceptPropertyDeclaration" targetNodeId="3v.1137473914776" resolveInfo="shortDescription" />
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="6219660258344738888">
@@ -792,21 +791,19 @@
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1418611629042457276">
     <property name="package" value="matrix" />
     <property name="name" value="MatrixInverseOperation" />
-    <link role="extends" targetNodeId="2v.1068431790191" resolveInfo="Expression" />
-    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1418611629042593534">
-      <property name="metaClass" value="aggregation" />
-      <property name="role" value="expression" />
-      <property name="sourceCardinality" value="1" />
-      <link role="target" targetNodeId="2v.1068431790191" resolveInfo="Expression" />
-    </node>
+    <link role="extends" targetNodeId="7255837154369580413" resolveInfo="MatrixExponentialOperation" />
     <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1904947163751464663">
       <property name="metaClass" value="aggregation" />
       <property name="role" value="context" />
       <link role="target" targetNodeId="1904947163751448715" resolveInfo="MathContext" />
     </node>
-    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1418611629042457282">
-      <property name="value" value="^-1" />
-      <link role="conceptPropertyDeclaration" targetNodeId="3v.1137473891462" resolveInfo="alias" />
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="7388416617631668677">
+      <property name="value" value="-1" />
+      <link role="conceptPropertyDeclaration" targetNodeId="7255837154369354276" resolveInfo="operationSymbol" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="7388416617631668697">
+      <property name="value" value="Matrix inverse operation" />
+      <link role="conceptPropertyDeclaration" targetNodeId="3v.1137473914776" resolveInfo="shortDescription" />
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1238344223606">
@@ -1167,6 +1164,62 @@
     <link role="extends" targetNodeId="2v.1068431790189" resolveInfo="Type" />
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.BooleanConceptProperty" id="1237218060184">
       <link role="conceptPropertyDeclaration" targetNodeId="3v.1137473854053" resolveInfo="abstract" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="7255837154369354272">
+    <property name="name" value="ExponentialOperation" />
+    <link role="extends" targetNodeId="2v.1068431790191" resolveInfo="Expression" />
+    <node role="conceptPropertyDeclaration" type="jetbrains.mps.lang.structure.structure.StringConceptPropertyDeclaration" id="7255837154369354276">
+      <property name="name" value="operationSymbol" />
+    </node>
+    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="7255837154369354274">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="expr" />
+      <property name="sourceCardinality" value="1" />
+      <link role="target" targetNodeId="2v.1068431790191" resolveInfo="Expression" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="7255837154369354836">
+      <property name="value" value="?" />
+      <link role="conceptPropertyDeclaration" targetNodeId="7255837154369354276" resolveInfo="operationSymbol" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.BooleanConceptProperty" id="7388416617632033578">
+      <link role="conceptPropertyDeclaration" targetNodeId="3v.1137473994950" resolveInfo="dontSubstituteByDefault" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.BooleanConceptProperty" id="7255837154369628615">
+      <link role="conceptPropertyDeclaration" targetNodeId="3v.1137473854053" resolveInfo="abstract" />
+    </node>
+    <node role="conceptLinkDeclaration" type="jetbrains.mps.lang.structure.structure.ReferenceConceptLinkDeclaration" id="7255837154369627529">
+      <property name="name" value="allowedSubstituends" />
+      <link role="targetType" targetNodeId="2.1071489090640" resolveInfo="ConceptDeclaration" />
+    </node>
+    <node role="conceptLink" type="jetbrains.mps.lang.structure.structure.ReferenceConceptLink" id="7255837154369627533">
+      <link role="conceptLinkDeclaration" targetNodeId="7255837154369627529" resolveInfo="substituendConcepts" />
+      <link role="target" targetNodeId="7255837154369354272" resolveInfo="ExponentialOperation" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="7255837154369580413">
+    <property name="name" value="MatrixExponentialOperation" />
+    <property name="package" value="matrix" />
+    <link role="extends" targetNodeId="7255837154369354272" resolveInfo="ExponentialOperation" />
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.BooleanConceptProperty" id="7255837154369628620">
+      <link role="conceptPropertyDeclaration" targetNodeId="3v.1137473854053" resolveInfo="abstract" />
+    </node>
+    <node role="conceptLink" type="jetbrains.mps.lang.structure.structure.ReferenceConceptLink" id="7255837154369627531">
+      <link role="conceptLinkDeclaration" targetNodeId="7255837154369627529" resolveInfo="aaaa" />
+      <link role="target" targetNodeId="7255837154369580413" resolveInfo="MatrixExponentialOperation" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="7255837154369797715">
+    <property name="package" value="matrix" />
+    <property name="name" value="ConjugateOperation" />
+    <link role="extends" targetNodeId="7255837154369580413" resolveInfo="MatrixExponentialOperation" />
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="7255837154369797716">
+      <property name="value" value="*" />
+      <link role="conceptPropertyDeclaration" targetNodeId="7255837154369354276" resolveInfo="operationSymbol" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="7388416617631668702">
+      <property name="value" value="Matrix conjugate" />
+      <link role="conceptPropertyDeclaration" targetNodeId="3v.1137473914776" resolveInfo="shortDescription" />
     </node>
   </node>
 </model>

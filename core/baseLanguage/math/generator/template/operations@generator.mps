@@ -95,31 +95,6 @@
                     <node role="nodeMacro$attribute" type="jetbrains.mps.lang.generator.structure.CopySrcNodeMacro" id="1237191873552">
                       <node role="sourceNodeQuery" type="jetbrains.mps.lang.generator.structure.SourceSubstituteMacro_SourceNodeQuery" id="1237191873553">
                         <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1237191873554">
-                          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1418611629041703779">
-                            <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1418611629041704468">
-                              <node role="operand" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference" id="1418611629041703780">
-                                <link role="classifier" targetNodeId="2.~System" resolveInfo="System" />
-                                <link role="variableDeclaration" targetNodeId="2.~System.err" resolveInfo="err" />
-                              </node>
-                              <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1418611629041704478">
-                                <link role="baseMethodDeclaration" targetNodeId="4.~PrintStream.println(java.lang.Object):void" resolveInfo="println" />
-                                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1418611629041705673">
-                                  <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1418611629041705682">
-                                    <property name="value" value="UPCHK: " />
-                                  </node>
-                                  <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1418611629041705641">
-                                    <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1418611629041704494">
-                                      <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1418611629041704491" />
-                                      <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1418611629041705627">
-                                        <link role="link" targetNodeId="2v.1236427008116" />
-                                      </node>
-                                    </node>
-                                    <node role="operation" type="jetbrains.mps.lang.typesystem.structure.Node_TypeOperation" id="1418611629041705651" />
-                                  </node>
-                                </node>
-                              </node>
-                            </node>
-                          </node>
                           <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1237191873555">
                             <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1237191873556">
                               <node role="operand" type="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" id="1237191873557">

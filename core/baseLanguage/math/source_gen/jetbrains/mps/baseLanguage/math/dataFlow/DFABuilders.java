@@ -13,7 +13,6 @@ public class DFABuilders extends DataFlowBuilders {
     manager.register("jetbrains.mps.baseLanguage.math.structure.MathSymbolFromToIndex", new MathSymbolFromToIndex_DataFlow());
     manager.register("jetbrains.mps.baseLanguage.math.structure.DivExpressionFraction", new DivExpressionFraction_DataFlow());
     manager.register("jetbrains.mps.baseLanguage.math.structure.MatrixElementAccessExpression", new MatrixElementAccessExpression_DataFlow());
-    manager.register("jetbrains.mps.baseLanguage.math.structure.MatrixInverseOperation", new MatrixInverseOperation_DataFlow());
     manager.register("jetbrains.mps.baseLanguage.math.structure.MatrixZero", new MatrixZero_DataFlow());
     manager.register("jetbrains.mps.baseLanguage.math.structure.LinearSolveOperation", new LinearSolveOperation_DataFlow());
     manager.register("jetbrains.mps.baseLanguage.math.structure.VectorInitializer", new VectorInitializer_DataFlow());
@@ -23,5 +22,6 @@ public class DFABuilders extends DataFlowBuilders {
     manager.register("jetbrains.mps.baseLanguage.math.structure.MatrixNorm", new MatrixNorm_DataFlow());
     manager.register("jetbrains.mps.baseLanguage.math.structure.MatrixConstructor", new MatrixConstructor_DataFlow());
     manager.register("jetbrains.mps.baseLanguage.math.structure.MathFuncExpression", new MathFuncExpression_DataFlow());
+    manager.register("jetbrains.mps.baseLanguage.math.structure.ExponentialOperation", new ExponentialOperation_DataFlow());
   }
 }

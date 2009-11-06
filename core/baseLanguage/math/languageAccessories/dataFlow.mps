@@ -187,22 +187,6 @@
       </node>
     </node>
   </node>
-  <node type="jetbrains.mps.lang.dataFlow.structure.DataFlowBuilderDeclaration" id="1418611629042596865">
-    <property name="package" value="matrix" />
-    <link role="conceptDeclaration" targetNodeId="1.1418611629042457276" resolveInfo="MatrixInverseOperation" />
-    <node role="builderBlock" type="jetbrains.mps.lang.dataFlow.structure.BuilderBlock" id="1418611629042596866">
-      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1418611629042596867">
-        <node role="statement" type="jetbrains.mps.lang.dataFlow.structure.EmitCodeForStatement" id="1418611629042596868">
-          <node role="codeFor" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1418611629042596871">
-            <node role="operand" type="jetbrains.mps.lang.dataFlow.structure.NodeParameter" id="1418611629042596870" />
-            <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1418611629042596875">
-              <link role="link" targetNodeId="1.1418611629042593534" />
-            </node>
-          </node>
-        </node>
-      </node>
-    </node>
-  </node>
   <node type="jetbrains.mps.lang.dataFlow.structure.DataFlowBuilderDeclaration" id="1418611629042596876">
     <property name="package" value="matrix" />
     <link role="conceptDeclaration" targetNodeId="1.3922637823318870907" resolveInfo="MatrixZero" />
@@ -429,6 +413,21 @@
             <node role="operand" type="jetbrains.mps.lang.dataFlow.structure.NodeParameter" id="4253775830167790691" />
             <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="4253775830167791934">
               <link role="link" targetNodeId="1.1238343896784" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.dataFlow.structure.DataFlowBuilderDeclaration" id="7255837154369354655">
+    <link role="conceptDeclaration" targetNodeId="1.7255837154369354272" resolveInfo="ExponentialOperation" />
+    <node role="builderBlock" type="jetbrains.mps.lang.dataFlow.structure.BuilderBlock" id="7255837154369354656">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="7255837154369354657">
+        <node role="statement" type="jetbrains.mps.lang.dataFlow.structure.EmitCodeForStatement" id="7255837154369354658">
+          <node role="codeFor" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="7255837154369354661">
+            <node role="operand" type="jetbrains.mps.lang.dataFlow.structure.NodeParameter" id="7255837154369354660" />
+            <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="7255837154369354665">
+              <link role="link" targetNodeId="1.7255837154369354274" />
             </node>
           </node>
         </node>

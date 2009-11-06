@@ -22,6 +22,8 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.action.SideTransformActionsBuilderContext;
 import jetbrains.mps.smodel.action.AbstractSideTransformHintSubstituteAction;
 import jetbrains.mps.smodel.SModelUtil_new;
+import jetbrains.mps.util.Calculable;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptPropertyOperations;
 
 public class QueriesGenerated {
   public static boolean sideTransformHintSubstituteActionsBuilder_Precondition_LocalVariableDeclaration_5853558151363158391(final IOperationContext operationContext, final SideTransformPreconditionContext _context) {
@@ -32,15 +34,13 @@ public class QueriesGenerated {
     return TypeChecker.getInstance().getSubtypingManager().isSubtype(TypeChecker.getInstance().getTypeOf(_context.getSourceNode()), new _Quotations.QuotationClass_1().createNode());
   }
 
-  public static void nodeFactory_NodeSetup_MatrixInverseOperation_1418611629042594678(final IOperationContext operationContext, final NodeSetupContext _context) {
-    if (SNodeOperations.isInstanceOf(_context.getSampleNode(), "jetbrains.mps.baseLanguage.structure.Expression")) {
-      SLinkOperations.setTarget(_context.getNewNode(), "expression", SNodeOperations.cast(_context.getSampleNode(), "jetbrains.mps.baseLanguage.structure.Expression"), true);
-    }
+  public static boolean sideTransformHintSubstituteActionsBuilder_Precondition_Expression_7388416617632092630(final IOperationContext operationContext, final SideTransformPreconditionContext _context) {
+    return SNodeOperations.isInstanceOf(TypeChecker.getInstance().getTypeOf(_context.getSourceNode()), "jetbrains.mps.baseLanguage.math.structure.MatrixType") || SNodeOperations.isInstanceOf(TypeChecker.getInstance().getTypeOf(_context.getSourceNode()), "jetbrains.mps.baseLanguage.math.structure.VectorType");
   }
 
-  public static void nodeFactory_NodeSetup_TransposeOperation_4334427517307386393(final IOperationContext operationContext, final NodeSetupContext _context) {
+  public static void nodeFactory_NodeSetup_ExponentialOperation_4334427517307386393(final IOperationContext operationContext, final NodeSetupContext _context) {
     if (SNodeOperations.isInstanceOf(_context.getSampleNode(), "jetbrains.mps.baseLanguage.structure.Expression")) {
-      SLinkOperations.setTarget(_context.getNewNode(), "expression", SNodeOperations.cast(_context.getSampleNode(), "jetbrains.mps.baseLanguage.structure.Expression"), true);
+      SLinkOperations.setTarget(_context.getNewNode(), "expr", SNodeOperations.cast(_context.getSampleNode(), "jetbrains.mps.baseLanguage.structure.Expression"), true);
     }
   }
 
@@ -181,6 +181,50 @@ public class QueriesGenerated {
           return "Matrix element access";
         }
       });
+    }
+    return result;
+  }
+
+  public static List<INodeSubstituteAction> sideTransform_ActionsFactory_Expression_7255837154369265165(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
+    List<INodeSubstituteAction> result = ListSequence.fromList(new ArrayList<INodeSubstituteAction>());
+    {
+      final SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.Expression");
+      Calculable calculable = new Calculable() {
+        public Object calculate() {
+          List<SNode> result = ListSequence.fromList(new ArrayList<SNode>());
+          for (SNode a : ListSequence.fromList(SConceptOperations.getAllSubConcepts(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.math.structure.MatrixExponentialOperation"), _context.getModel(), operationContext.getScope()))) {
+            if (!(SConceptPropertyOperations.getBoolean(a, "abstract"))) {
+              ListSequence.fromList(result).addElement(a);
+            }
+          }
+          return result;
+        }
+      };
+      Iterable<SNode> parameterObjects = (Iterable<SNode>)calculable.calculate();
+      assert parameterObjects != null;
+      for (final SNode item : parameterObjects) {
+        ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(item, _context.getSourceNode()) {
+          public SNode doSubstitute(String pattern) {
+            return SNodeOperations.replaceWithAnother(_context.getSourceNode(), SConceptOperations.createNewNode(NameUtil.nodeFQName((item)), new _Quotations.QuotationClass_2().createNode(_context.getSourceNode())));
+          }
+
+          public SNode getOutputConcept() {
+            return concept;
+          }
+
+          public String getMatchingText(String text) {
+            return "^" + SConceptPropertyOperations.getString((item), "operationSymbol");
+          }
+
+          public String getVisibleMatchingText(String text) {
+            return this.getMatchingText(text);
+          }
+
+          public String getDescriptionText(String text) {
+            return SPropertyOperations.getString((item), "shortDescription");
+          }
+        });
+      }
     }
     return result;
   }

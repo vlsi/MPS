@@ -7,76 +7,41 @@ import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
+import jetbrains.mps.nodeEditor.AbstractCellProvider;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
-import jetbrains.mps.nodeEditor.style.Style;
-import jetbrains.mps.nodeEditor.style.StyleAttributes;
-import jetbrains.mps.nodeEditor.style.ScriptKind;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
-import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
+import jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
-import jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider;
 import jetbrains.mps.nodeEditor.InlineCellProvider;
-import jetbrains.mps.nodeEditor.AbstractCellProvider;
 
 public class MatrixInverseOperation_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_6700_0(editorContext, node);
+    return this.createComponent_6700_1(editorContext, node);
   }
 
   public EditorCell createInspectedCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_6700_1(editorContext, node);
+    return this.createCollection_6700_0(editorContext, node);
   }
 
   private EditorCell createCollection_6700_0(EditorContext editorContext, SNode node) {
-    EditorCell_Collection editorCell = EditorCell_Collection.createSuperscript(editorContext, node);
-    editorCell.setCellId("Collection_6700_0");
-    editorCell.addEditorCell(this.createRefNode_6700_0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_6700_0(editorContext, node));
-    return editorCell;
-  }
-
-  private EditorCell createCollection_6700_1(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
-    editorCell.setCellId("Collection_6700_1");
-    editorCell.addEditorCell(this.createConstant_6700_1(editorContext, node));
+    editorCell.setCellId("Collection_6700_0");
+    editorCell.addEditorCell(this.createConstant_6700_0(editorContext, node));
     editorCell.addEditorCell(this.createRefCell_6700_0(editorContext, node));
     return editorCell;
   }
 
+  private EditorCell createComponent_6700_1(EditorContext editorContext, SNode node) {
+    AbstractCellProvider provider = new ExponentOperation_Component(node);
+    EditorCell editorCell = provider.createEditorCell(editorContext);
+    return editorCell;
+  }
+
   private EditorCell createConstant_6700_0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "-1");
-    editorCell.setCellId("Constant_6700_0");
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.FONT_SIZE, 10);
-      style.set(StyleAttributes.SCRIPT_KIND, ScriptKind.SUPERSCRIPT);
-    }
-    editorCell.setDefaultText("");
-    return editorCell;
-  }
-
-  private EditorCell createConstant_6700_1(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "precision setting:");
-    editorCell.setCellId("Constant_6700_1");
+    editorCell.setCellId("Constant_6700_0");
     editorCell.setDefaultText("");
-    return editorCell;
-  }
-
-  private EditorCell createRefNode_6700_0(EditorContext editorContext, SNode node) {
-    CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
-    provider.setRole("expression");
-    provider.setNoTargetText("<no expression>");
-    EditorCell editorCell;
-    editorCell = provider.createEditorCell(editorContext);
-    editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
-    SNode attributeConcept = provider.getRoleAttribute();
-    Class attributeKind = provider.getRoleAttributeClass();
-    if (attributeConcept != null) {
-      IOperationContext opContext = editorContext.getOperationContext();
-      EditorManager manager = EditorManager.getInstanceFromContext(opContext);
-      return manager.createRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
-    } else
     return editorCell;
   }
 
