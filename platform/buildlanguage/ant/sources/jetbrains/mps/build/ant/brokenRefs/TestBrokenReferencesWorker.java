@@ -2,6 +2,7 @@ package jetbrains.mps.build.ant.brokenRefs;
 
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.GlobalScope;
+import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.lang.generator.structure.ReferenceMacro_AnnotationLink;
 import jetbrains.mps.lang.core.structure.BaseConcept;
@@ -11,6 +12,7 @@ import jetbrains.mps.build.ant.WhatToDo;
 import jetbrains.mps.build.ant.TeamCityMessageFormat;
 
 import java.util.List;
+import java.util.Set;
 import java.io.File;
 
 public class TestBrokenReferencesWorker extends MpsWorker {
@@ -29,7 +31,13 @@ public class TestBrokenReferencesWorker extends MpsWorker {
     return new TeamCityMessageFormat();
   }
 
-  protected void executeTask(MPSProject project, final List<SModelDescriptor> models) {
+  protected void executeTask(MPSProject project, final Set<MPSProject> projects, Set<IModule> modules, final Set<SModelDescriptor> models) {
+    for (MPSProject p : projects) {
+      extractModels(models, p);
+    }
+    for (IModule m : modules) {
+      extractModels(models, m);
+    }
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
         for (SModelDescriptor sm : models) {

@@ -59,8 +59,6 @@ public abstract class MpsWorker {
   protected final WhatToDo myWhatToDo;
   private final AntLogger myLogger;
 
-  private final Set<MPSProject> myLoadedProjects = new HashSet<MPSProject>();
-
   public MpsWorker(WhatToDo whatToDo, ProjectComponent component) {
     this(whatToDo, new ProjectComponentLogger(component));
   }
@@ -88,11 +86,14 @@ public abstract class MpsWorker {
     File projectFile = FileUtil.createTmpFile();
     final MPSProject project = new MPSProject(projectFile, new ProjectDescriptor(), ideaProject);
 
-    final List<SModelDescriptor> models = collectModelsToGenerate();
+    LinkedHashSet<MPSProject> projects = new LinkedHashSet<MPSProject>();
+    LinkedHashSet<IModule> modules = new LinkedHashSet<IModule>();
+    LinkedHashSet<SModelDescriptor> models = new LinkedHashSet<SModelDescriptor>();
+    collectModelsToGenerate(projects, modules, models);
 
-    executeTask(project, models);
+    executeTask(project, projects, modules, models);
 
-    unloadLoadedStuff();
+    unloadLoadedStuff(projects);
     showStatistic();
   }
 
@@ -108,12 +109,12 @@ public abstract class MpsWorker {
     loadLibraries();
   }
 
-  protected abstract void executeTask(MPSProject project, List<SModelDescriptor> models);
+  protected abstract void executeTask(MPSProject project, Set<MPSProject> projects, Set<IModule> modules,  Set<SModelDescriptor> models);
 
   protected abstract void showStatistic();
 
-  protected void unloadLoadedStuff() {
-    for (final MPSProject project : myLoadedProjects) {
+  protected void unloadLoadedStuff(LinkedHashSet<MPSProject> projects) {
+    for (final MPSProject project : projects) {
       ThreadUtils.runInUIThreadAndWait(new Runnable() {
         public void run() {
           project.dispose();
@@ -172,31 +173,20 @@ public abstract class MpsWorker {
     });
   }
 
-  public List<SModelDescriptor> collectModelsToGenerate() {
-    Set<SModelDescriptor> modelDescriptors = new LinkedHashSet<SModelDescriptor>();
-
-    collectFromProjects(modelDescriptors);
-    collectFromModelDirs(modelDescriptors);
-    collectFromModuleDirs(modelDescriptors);
-    collectFromModelFiles(modelDescriptors);
-    collectFromModuleFiles(modelDescriptors);
-
-    ArrayList<SModelDescriptor> modelDescriptorsList = new ArrayList<SModelDescriptor>();
-    for (SModelDescriptor smodelDescriptor : modelDescriptors) {
-      if (!ModelGenerationStatusManager.isDoNotGenerate(smodelDescriptor)) {
-        modelDescriptorsList.add(smodelDescriptor);
-      }
-    }
-    return modelDescriptorsList;
+  public void collectModelsToGenerate(LinkedHashSet<MPSProject> projects, LinkedHashSet<IModule> modules, LinkedHashSet<SModelDescriptor> models) {
+    collectFromProjects(projects);
+    collectFromModuleDirs(modules);
+    collectFromModuleFiles(modules);
+    collectFromModelDirs(models);
+    collectFromModelFiles(models);
   }
 
-  private void collectFromProjects(Set<SModelDescriptor> modelDescriptors) {
+  private void collectFromProjects(LinkedHashSet<MPSProject> projects) {
     for (File projectFile : myWhatToDo.getMPSProjectFiles()) {
       if (projectFile.getAbsolutePath().endsWith(MPSExtentions.DOT_MPS_PROJECT)) {
         final MPSProject project = TestMain.loadProject(projectFile);
         info("Loaded project " + project);
-        myLoadedProjects.add(project);
-        extractModels(modelDescriptors, project);
+        projects.add(project);
       }
     }
   }
@@ -215,37 +205,46 @@ public abstract class MpsWorker {
     }
   }
 
-  private void collectFromModuleDirs(Set<SModelDescriptor> modelDescriptors) {
+  protected void extractModels(Collection<SModelDescriptor> modelsList, IModule m) {
+    List<SModelDescriptor> ownedModels = m.getOwnModelDescriptors();
+    for (SModelDescriptor d : ownedModels){
+      if (SModelStereotype.isUserModel(d)){
+        modelsList.add(d);
+      }
+    }
+  }
+
+  private void collectFromModuleDirs(LinkedHashSet<IModule> modules) {
     for (File dir : myWhatToDo.getModuleDirectories()) {
       File[] files = dir.listFiles();
       if (files != null) {
         for (final File moduleFile : files) {
-          processModuleFile(modelDescriptors, moduleFile);
+          processModuleFile(moduleFile, modules);
         }
       }
     }
   }
 
-  private void collectFromModuleFiles(Set<SModelDescriptor> modelDescriptors) {
+  private void collectFromModuleFiles(Set<IModule> modules) {
     for (File moduleFile : myWhatToDo.getModules()) {
-      processModuleFile(modelDescriptors, moduleFile);
+      processModuleFile(moduleFile, modules);
     }
   }
 
-  private void processModuleFile(Set<SModelDescriptor> modelDescriptors, final File moduleFile) {
+  private void processModuleFile(final File moduleFile, final Set<IModule> modules) {
     String path = moduleFile.getAbsolutePath();
     if (!path.endsWith(MPSExtentions.DOT_LANGUAGE) && !path.endsWith(MPSExtentions.DOT_SOLUTION) && !path.endsWith(MPSExtentions.DOT_DEVKIT))
       return;
-    List<IModule> modules;
+    List<IModule> tmpmodules;
     IModule moduleByFile = ModelAccess.instance().runReadAction(new Computable<IModule>() {
       public IModule compute() {
         return MPSModuleRepository.getInstance().getModuleByFile(moduleFile);
       }
     });
     if (moduleByFile != null) {
-      modules = Collections.singletonList(moduleByFile);
+      tmpmodules = Collections.singletonList(moduleByFile);
     } else {
-      modules = ModelAccess.instance().runWriteAction(new Computable<List<IModule>>() {
+      tmpmodules = ModelAccess.instance().runWriteAction(new Computable<List<IModule>>() {
         public List<IModule> compute() {
           IFile file = FileSystem.getFile(moduleFile.getPath());
           return MPSModuleRepository.getInstance().readModuleDescriptors(file.isDirectory() ? file : file.getParent(), new MPSModuleOwner() {
@@ -254,22 +253,16 @@ public abstract class MpsWorker {
       });
     }
 
-    for (IModule module : modules) {
+    modules.addAll(tmpmodules);
+    for (IModule module : tmpmodules) {
       info("Loaded module " + module);
 
       if (module.isPackaged()) continue;
 
-      List<SModelDescriptor> modelDescriptorList = module.getOwnModelDescriptors();
-      for (SModelDescriptor sm : modelDescriptorList) {
-        if (SModelStereotype.isUserModel(sm)) {
-          modelDescriptors.add(sm);
-        }
-      }
-
       if (module instanceof Language) {
         Language language = (Language) module;
         for (Generator gen : language.getGenerators()) {
-          modelDescriptors.addAll(gen.getOwnModelDescriptors());
+          modules.add(gen);
         }
       }
     }

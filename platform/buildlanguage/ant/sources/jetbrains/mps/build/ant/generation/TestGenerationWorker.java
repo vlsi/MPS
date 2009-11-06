@@ -17,16 +17,14 @@ import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.util.Pair;
+import jetbrains.mps.util.misc.hash.HashSet;
 import jetbrains.mps.ide.progress.IAdaptiveProgressMonitor;
 import jetbrains.mps.ide.genconf.GenParameters;
 import jetbrains.mps.build.ant.IBuildServerMessageFormat;
 import jetbrains.mps.build.ant.WhatToDo;
 import jetbrains.mps.build.ant.TeamCityMessageFormat;
 
-import java.util.Set;
-import java.util.List;
-import java.util.ArrayList;
-import java.util.Collections;
+import java.util.*;
 import java.io.*;
 
 import com.intellij.openapi.util.Computable;
@@ -36,6 +34,7 @@ import junit.framework.TestFailure;
 public class TestGenerationWorker extends GeneratorWorker {
   private boolean myTestFailed = false;
   private final IBuildServerMessageFormat myBuildServerMessageFormat = getBuildServerMessageFormat();
+  private final Map<BaseTestConfiguration, GenParameters> myTestConfigurations = new LinkedHashMap<BaseTestConfiguration, GenParameters>();
 
   public static void main(String[] args) {
     TestGenerationWorker generator = new TestGenerationWorker(WhatToDo.fromDumpInFile(new File(args[0])), new SystemOutLogger());
@@ -55,16 +54,12 @@ public class TestGenerationWorker extends GeneratorWorker {
   }
 
   @Override
-  protected void generateModulesCircle(GeneratorManager gm, EmptyProgressIndicator emptyProgressIndicator, Set<IModule> modulesSet, List<Pair<SModelDescriptor, IOperationContext>> modelsToContext) {
-    String currentTestName = myBuildServerMessageFormat.escapeBuildMessage("generate " + modulesSet);
+  protected void generateModulesCircle(GeneratorManager gm, EmptyProgressIndicator emptyProgressIndicator, Circle circle) {
+    String currentTestName = myBuildServerMessageFormat.escapeBuildMessage("generate " + circle);
     System.out.println(myBuildServerMessageFormat.formatTestStart(currentTestName));
 
     final TesterGenerationType generationType = new TesterGenerationType(true);
-    gm.generateModels(modelsToContext,
-      generationType,
-      emptyProgressIndicator,
-      myMessageHandler,
-      false);
+    circle.generate(gm, generationType, emptyProgressIndicator, myMessageHandler);
 
     List<String> diffReports;
     if (Boolean.parseBoolean(myWhatToDo.getProperty(TestGenerationOnTeamcity.SHOW_DIFF))) {
@@ -120,6 +115,7 @@ public class TestGenerationWorker extends GeneratorWorker {
         } else {
           for (BaseTestConfiguration config : testConfigurationList) {
             GenParameters genParams = config.getGenParams(project, true);
+            myTestConfigurations.put(config, genParams);
             modelDescriptors.addAll(genParams.getModelDescriptors());
           }
         }

@@ -12,6 +12,7 @@ import jetbrains.mps.project.ModuleContext;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.generator.GeneratorManager;
+import jetbrains.mps.generator.IGenerationType;
 import jetbrains.mps.generator.generationTypes.GenerateFilesGenerationType;
 import jetbrains.mps.util.Pair;
 import jetbrains.mps.make.dependencies.StronglyConnectedModules;
@@ -23,6 +24,7 @@ import jetbrains.mps.build.ant.WhatToDo;
 import jetbrains.mps.ide.messages.IMessageHandler;
 import jetbrains.mps.ide.messages.Message;
 import com.intellij.openapi.progress.EmptyProgressIndicator;
+import com.intellij.openapi.progress.ProgressIndicator;
 import com.intellij.openapi.util.Computable;
 
 public class GeneratorWorker extends MpsWorker {
@@ -41,11 +43,11 @@ public class GeneratorWorker extends MpsWorker {
     super(whatToDo, logger);
   }
 
-  protected void executeTask(final MPSProject project, final List<SModelDescriptor> models) {
+  protected void executeTask(final MPSProject project, final Set<MPSProject> projects, final Set<IModule> modules, final Set<SModelDescriptor> models) {
     ClassLoaderManager.getInstance().reloadAll(new EmptyProgressIndicator());
     ModelAccess.instance().runWriteAction(new Runnable() {
       public void run() {
-        generateModels(project, models);
+        generate(project, projects, modules, models);
       }
     });
   }
@@ -63,7 +65,7 @@ public class GeneratorWorker extends MpsWorker {
     }
   }
 
-  private void generateModels(MPSProject project, List<SModelDescriptor> models) {
+  private void generate(MPSProject project, Set<MPSProject> projects, Set<IModule> modules, Set<SModelDescriptor> models) {
     StringBuffer s = new StringBuffer("Generating models:");
     for (SModelDescriptor m : models) {
       s.append("\n    ");
@@ -72,40 +74,43 @@ public class GeneratorWorker extends MpsWorker {
     info(s.toString());
     GeneratorManager gm = project.getComponentSafe(GeneratorManager.class);
 
-    final Map<IModule, List<SModelDescriptor>> moduleToModels = new HashMap<IModule, List<SModelDescriptor>>();
-    List<Set<IModule>> modulesOrder = computeModulesOrder(models, moduleToModels);
+    List<Circle> order = computeGenerationOrder(project, projects, modules, models);
 
     EmptyProgressIndicator emptyProgressIndicator = new EmptyProgressIndicator();
-    for (Set<IModule> modulesSet : modulesOrder) {
-      List<Pair<SModelDescriptor, IOperationContext>> modelsToContext = new ArrayList<Pair<SModelDescriptor, IOperationContext>>();
-      for (IModule module : modulesSet) {
-        ModuleContext moduleContext = new ModuleContext(module, project);
-        List<SModelDescriptor> modelsToGenerateNow = moduleToModels.get(module);
-        for (SModelDescriptor model : modelsToGenerateNow) {
-          modelsToContext.add(new Pair<SModelDescriptor, IOperationContext>(model, moduleContext));
-        }
-
-      }
-      generateModulesCircle(gm, emptyProgressIndicator, modulesSet, modelsToContext);
+    for (Circle circle : order) {
+      generateModulesCircle(gm, emptyProgressIndicator, circle);
     }
   }
 
-  protected void generateModulesCircle(GeneratorManager gm, EmptyProgressIndicator emptyProgressIndicator, Set<IModule> modulesSet, List<Pair<SModelDescriptor, IOperationContext>> modelsToContext) {
-    info("Start generating " + modulesSet);
-    gm.generateModels(modelsToContext,
-      new GenerateFilesGenerationType() {
-        @Override
-        public boolean requiresCompilationAfterGeneration() {
-          return Boolean.parseBoolean(myWhatToDo.getProperty(GenerateTask.COMPILE));
-        }
-      },
+  protected void generateModulesCircle(GeneratorManager gm, EmptyProgressIndicator emptyProgressIndicator, Circle circle) {
+    info("Start generating " + circle);
+    circle.generate(gm, new GenerateFilesGenerationType() {
+      @Override
+      public boolean requiresCompilationAfterGeneration() {
+        return Boolean.parseBoolean(myWhatToDo.getProperty(GenerateTask.COMPILE));
+      }
+    },
       emptyProgressIndicator,
-      myMessageHandler,
-      false);
-    info("Finished generating " + modulesSet);
+      myMessageHandler);
+    info("Finished generating " + circle);
   }
 
-  private List<Set<IModule>> computeModulesOrder(List<SModelDescriptor> models, final Map<IModule, List<SModelDescriptor>> moduleToModels) {
+  protected List<Circle> computeGenerationOrder(MPSProject project, Set<MPSProject> projects, Set<IModule> modules, Set<SModelDescriptor> models) {
+
+    final Map<IModule, List<SModelDescriptor>> moduleToModels = new LinkedHashMap<IModule, List<SModelDescriptor>>();
+
+    for (MPSProject mpsProject : projects) {
+      extractModels(models, mpsProject);
+    }
+
+    for (IModule m : modules) {
+      List<SModelDescriptor> modelsList = new ArrayList<SModelDescriptor>();
+      moduleToModels.put(m, modelsList);
+
+      extractModels(modelsList, m);
+    }
+
+    // get owners of loaded models
     for (final SModelDescriptor model : models) {
       assert model != null;
 
@@ -121,7 +126,7 @@ public class GeneratorWorker extends MpsWorker {
       }
 
       if (module == null) {
-        warning("Model " + model.getLongName() + " won't be generated");
+        warning("Model " + model.getLongName() + " won't be generated because module for it can not be found.");
       } else {
         List<SModelDescriptor> modelsList = moduleToModels.get(module);
         if (modelsList == null) {
@@ -132,6 +137,7 @@ public class GeneratorWorker extends MpsWorker {
       }
     }
 
+    // calculate order
     List<Set<IModule>> modulesOrder = ModelAccess.instance().runReadAction(new Computable<List<Set<IModule>>>() {
       public List<Set<IModule>> compute() {
         return StronglyConnectedModules.getInstance().getStronglyConnectedComponents(moduleToModels.keySet(), new IModuleDecoratorBuilder<IModule, IModuleDecorator<IModule>>() {
@@ -141,7 +147,48 @@ public class GeneratorWorker extends MpsWorker {
         });
       }
     });
-    return modulesOrder;
+
+    // create circles
+    List<Circle> circles = new ArrayList<Circle>();
+    for (Set<IModule> modulesSet : modulesOrder) {
+      SimpleModuleCircle circle = new SimpleModuleCircle(project, modulesSet, moduleToModels);
+      circles.add(circle);
+    }
+
+    return circles;
+  }
+
+  protected static interface Circle {
+    void generate(GeneratorManager gm, IGenerationType generateFilesGenerationType, ProgressIndicator emptyProgressIndicator, IMessageHandler messageHandler);
+  }
+
+  protected static class SimpleModuleCircle implements Circle {
+    private final Set<IModule> myModules;
+    private final MPSProject myProject;
+    private final Map<IModule, List<SModelDescriptor>> myModuleToModels;
+
+    public SimpleModuleCircle(MPSProject project, Set<IModule> modules, Map<IModule, List<SModelDescriptor>> moduleToModels) {
+      myModules = modules;
+      myProject = project;
+      myModuleToModels = moduleToModels;
+    }
+
+    public void generate(GeneratorManager gm, IGenerationType generationType, ProgressIndicator indicator, IMessageHandler messageHandler) {
+      List<Pair<SModelDescriptor, IOperationContext>> modelsToContext = new ArrayList<Pair<SModelDescriptor, IOperationContext>>();
+      for (IModule module : myModules) {
+        ModuleContext moduleContext = new ModuleContext(module, myProject);
+        List<SModelDescriptor> modelsToGenerateNow = myModuleToModels.get(module);
+        for (SModelDescriptor model : modelsToGenerateNow) {
+          modelsToContext.add(new Pair<SModelDescriptor, IOperationContext>(model, moduleContext));
+        }
+      }
+      gm.generateModels(modelsToContext, generationType, indicator, messageHandler, false);
+    }
+
+    @Override
+    public String toString() {
+      return myModules.toString();
+    }
   }
 
   /*package private*/ class MyMessageHandler implements IMessageHandler {
