@@ -1239,6 +1239,7 @@ __switch__:
                       return SPropertyOperations.getBoolean(it, "isAbstract");
                     }
                   }).toListSequence();
+                  ListSequence.fromList(methodsToImplement).addSequence(ListSequence.fromList(ClassConcept_Behavior.call_getMethodsToImplement_1221637841398(SNodeOperations.cast((item), "jetbrains.mps.baseLanguage.structure.ClassConcept"))));
                 }
                 for (SNode method : ListSequence.fromList(methodsToImplement)) {
                   SNode method_copy = SNodeOperations.copyNode(method);
