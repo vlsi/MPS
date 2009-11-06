@@ -54,30 +54,38 @@ public class SModelsSubtree {
       }
     }
 
+    SModelNamespaceTreeBuilder builder;
     List<SModelTreeNode> regularModelNodes = getRootModelTreeNodes(regularModels, operationContext);
     if (!regularModelNodes.isEmpty()) {
-      MPSTreeNode currentRootNode;
-      if (rootTreeNode instanceof ProjectLanguageTreeNode) {
-        currentRootNode = rootTreeNode;
-      } else {
-        IModule contextModule = operationContext.getModule();
-        List<SModelRoot> modelRoots = contextModule.getSModelRoots();
-        String namespace = (modelRoots.isEmpty())? "" : contextModule.getSModelRoots().get(0).getPrefix();
-        if (namespace == null || namespace.length() == 0) {
-          namespace = contextModule.getModuleNamespace();
+      if (rootTreeNode instanceof ProjectSolutionTreeNode) {
+        builder = new SModelNamespaceTreeBuilder();
+        for (SModelTreeNode testNode : regularModelNodes) {
+          builder.addNode(testNode);                        
         }
+        builder.fillNode(rootTreeNode);
+      } else {
+        MPSTreeNode currentRootNode;
+        if (rootTreeNode instanceof ProjectLanguageTreeNode) {
+          currentRootNode = rootTreeNode;
+        } else {
+          IModule contextModule = operationContext.getModule();
+          List<SModelRoot> modelRoots = contextModule.getSModelRoots();
+          String namespace = (modelRoots.isEmpty())? "" : contextModule.getSModelRoots().get(0).getPrefix();
+          if (namespace == null || namespace.length() == 0) {
+            namespace = contextModule.getModuleNamespace();
+          }
 
-        currentRootNode = new NamespaceTextNode((namespace == null)? "" : namespace, operationContext);
-      }
-      for (SModelTreeNode treeNode : regularModelNodes) {
-        currentRootNode.add(treeNode);
-      }
-      if (!currentRootNode.equals(rootTreeNode)) {
-        rootTreeNode.add(currentRootNode);
+          currentRootNode = new NamespaceTextNode((namespace == null)? "" : namespace, operationContext);
+        }
+        for (SModelTreeNode treeNode : regularModelNodes) {
+          currentRootNode.add(treeNode);
+        }
+        if (!currentRootNode.equals(rootTreeNode)) {
+          rootTreeNode.add(currentRootNode);
+        }
       }
     }
 
-    SModelNamespaceTreeBuilder builder;
     if (!tests.isEmpty()) {
       builder = new SModelNamespaceTreeBuilder();
 
@@ -139,7 +147,7 @@ public class SModelsSubtree {
     return index;
   }
 
-  private static int getCountNamePart(SModelDescriptor md, String baseName) {
+  public static int getCountNamePart(SModelDescriptor md, String baseName) {
     String modelLongName = md.getLongName();
     String shortName = modelLongName.replace(baseName + '.', "");
     return shortName.split("\\.").length - 1;

@@ -132,7 +132,8 @@ class ProjectLanguageTreeNode extends ProjectModuleTreeNode {
       TextTreeNode utilModels = new SModelGroupTreeNode(operationContext);
       List<SModelDescriptor> sortedModels = SortUtil.sortModels(myLanguage.getUtilModels());
       for (SModelDescriptor model : sortedModels) {
-        utilModels.add(new SModelTreeNode(model, null, operationContext, false));
+        int countNamePart = SModelsSubtree.getCountNamePart(model, model.getModule().getModuleNamespace());
+        utilModels.add(new SModelTreeNode(model, null, operationContext, countNamePart));
       }
       this.add(utilModels);
     }
