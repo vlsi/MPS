@@ -27,7 +27,6 @@ import javax.swing.border.TitledBorder;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.baseLanguage.unitTest.behavior.ITestMethod_Behavior;
 import jetbrains.mps.lang.core.behavior.INamedConcept_Behavior;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.baseLanguage.plugin.ConfigRunParameters;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
@@ -422,10 +421,15 @@ public class JUnitConfigEditor extends JPanel {
       public void run() {
         config.getStateObject().method = ITestMethod_Behavior.call_getTestName_1216136419751(myThis.getMethod());
         config.getStateObject().node = INamedConcept_Behavior.call_getFqName_1213877404258(myThis.getNode());
-        config.getStateObject().model = SModelOperations.getModelName(myThis.getModel());
+        config.getStateObject().model = (myThis.getModel() != null ?
+          config.getStateObject().model = myThis.getModel().getSModelFqName().toString() :
+          null
+        );
         if (myThis.getModule() != null) {
           config.getStateObject().module = myThis.getModule().getModuleFqName();
           config.getStateObject().compileInMPS = myThis.getModule().isCompileInMPS();
+        } else {
+          config.getStateObject().module = null;
         }
         JUnitRunTypes type = JUnitRunTypes.getType(myThis.myIsModule0.isSelected(), myThis.myIsModel0.isSelected(), myThis.myIsClass0.isSelected(), myThis.myIsMethod0.isSelected());
         if (type != null) {
@@ -468,7 +472,7 @@ public class JUnitConfigEditor extends JPanel {
           myThis.myNodeNameWithMethod0.setText(nodeFqName);
           myThis.myMethodName0.setTestCase(nodeFqName);
           if (myThis.getNode() != null && SNodeOperations.getModel(myThis.getNode()) != null) {
-            String modelName = SModelOperations.getModelName(SNodeOperations.getModel(myThis.getNode()));
+            String modelName = SNodeOperations.getModel(myThis.getNode()).getSModelFqName().toString();
             myThis.setModelValue(modelName);
             myThis.myModelName0.setText(modelName);
             if (SNodeOperations.getModel(myThis.getNode()).getModelDescriptor() != null && SNodeOperations.getModel(myThis.getNode()).getModelDescriptor().getModule() != null) {

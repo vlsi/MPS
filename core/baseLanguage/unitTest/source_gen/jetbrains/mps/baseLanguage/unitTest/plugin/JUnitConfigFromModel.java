@@ -39,7 +39,7 @@ public class JUnitConfigFromModel extends BaseConfigCreator<SModel> implements C
       };
       _config.setName(name);
       _config.getStateObject().type = JUnitRunTypes.MODEL;
-      _config.getStateObject().model = parameter.getLongName();
+      _config.getStateObject().model = parameter.getSModelFqName().toString();
       JUnitConfigFromModel.this.myConfig = _config;
     }
   }
