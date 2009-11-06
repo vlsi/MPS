@@ -21,8 +21,8 @@ import jetbrains.mps.ide.findusages.view.treeholder.tree.TextOptions;
 
 import javax.swing.Icon;
 
-public interface INodeRepresentator extends IExternalizeable {
-  public String getPresentation(SNode node);
+public interface INodeRepresentator<N> extends IExternalizeable {
+  public String getPresentation(N node);
 
   public String getResultsText(TextOptions options);
 

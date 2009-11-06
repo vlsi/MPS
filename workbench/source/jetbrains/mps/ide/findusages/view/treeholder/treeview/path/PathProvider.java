@@ -30,7 +30,7 @@ public class PathProvider {
 
   public static List<PathItem> getPathForSearchResult(SearchResult result) {
     List<PathItem> res = new ArrayList<PathItem>();
-    Object o = result.getObject();
+    Object o = result.getPathObject();
 
     if (o instanceof SNode) {
       SNode node = (SNode) o;

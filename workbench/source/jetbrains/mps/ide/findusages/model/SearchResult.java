@@ -17,6 +17,7 @@ package jetbrains.mps.ide.findusages.model;
 
 public class SearchResult<T> {
   protected T myObject;
+  protected Object myPathObject;
   protected String myCategory;
 
   public SearchResult() {
@@ -24,16 +25,25 @@ public class SearchResult<T> {
   }
 
   public SearchResult(SearchResult<T> src) {
-    this(src.getObject(), src.getCategory());
+    this(src.getObject(), src.getPathObject(), src.getCategory());
   }
 
   public SearchResult(T object, String category) {
+    this(object, object, category);
+  }
+
+  public SearchResult(T object, Object pathObject, String category) {
     myObject = object;
+    myPathObject = pathObject;
     myCategory = category;
   }
 
   public T getObject() {
     return myObject;
+  }
+
+  public Object getPathObject() {
+    return myPathObject;
   }
 
   public String getCategory() {

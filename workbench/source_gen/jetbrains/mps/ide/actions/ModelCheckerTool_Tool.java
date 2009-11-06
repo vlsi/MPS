@@ -16,6 +16,7 @@ import jetbrains.mps.ide.projectPane.Icons;
 import jetbrains.mps.project.IModule;
 import com.intellij.ui.content.ContentManager;
 import com.intellij.ui.content.Content;
+import javax.swing.JPanel;
 import javax.swing.Icon;
 
 public class ModelCheckerTool_Tool extends GeneratedTool {
@@ -35,27 +36,26 @@ public class ModelCheckerTool_Tool extends GeneratedTool {
 
   public void checkModel(SModelDescriptor modelDescriptor) {
     ModelCheckerViewer newViewer = new ModelCheckerViewer(ModelCheckerTool_Tool.this.myProject, ModelCheckerTool_Tool.this);
-    if (newViewer.checkModel(modelDescriptor)) {
-      ModelCheckerTool_Tool.this.processCheckResults(newViewer, modelDescriptor.getName(), IconManager.getIconFor(modelDescriptor));
-    }
+    newViewer.checkModel(modelDescriptor);
+    ModelCheckerTool_Tool.this.processCheckResults(newViewer, modelDescriptor.getName(), IconManager.getIconFor(modelDescriptor));
   }
 
   public void checkModels(List<SModelDescriptor> modelDescriptors) {
-    ModelCheckerViewer newViewer = new ModelCheckerViewer(ModelCheckerTool_Tool.this.myProject, ModelCheckerTool_Tool.this);
+    OldModelCheckerViewer newViewer = new OldModelCheckerViewer(ModelCheckerTool_Tool.this.myProject, ModelCheckerTool_Tool.this);
     if (newViewer.checkModels(modelDescriptors)) {
       ModelCheckerTool_Tool.this.processCheckResults(newViewer, ListSequence.fromList(modelDescriptors).count() + " models", Icons.MODEL_ICON);
     }
   }
 
   public void checkModule(IModule module) {
-    ModelCheckerViewer newViewer = new ModelCheckerViewer(ModelCheckerTool_Tool.this.myProject, ModelCheckerTool_Tool.this);
+    OldModelCheckerViewer newViewer = new OldModelCheckerViewer(ModelCheckerTool_Tool.this.myProject, ModelCheckerTool_Tool.this);
     if (newViewer.checkModule(module)) {
       ModelCheckerTool_Tool.this.processCheckResults(newViewer, module.getModuleFqName(), IconManager.getIconFor(module));
     }
   }
 
   public void checkModules(List<IModule> modules) {
-    ModelCheckerViewer newViewer = new ModelCheckerViewer(ModelCheckerTool_Tool.this.myProject, ModelCheckerTool_Tool.this);
+    OldModelCheckerViewer newViewer = new OldModelCheckerViewer(ModelCheckerTool_Tool.this.myProject, ModelCheckerTool_Tool.this);
     if (newViewer.checkModules(modules)) {
       // TODO icon 
       ModelCheckerTool_Tool.this.processCheckResults(newViewer, ListSequence.fromList(modules).count() + " modules", Icons.MODULE_DEPENDENCIES_ICON);
@@ -63,7 +63,7 @@ public class ModelCheckerTool_Tool extends GeneratedTool {
   }
 
   public void checkProject(MPSProject mpsProject) {
-    ModelCheckerViewer newViewer = new ModelCheckerViewer(ModelCheckerTool_Tool.this.myProject, ModelCheckerTool_Tool.this);
+    OldModelCheckerViewer newViewer = new OldModelCheckerViewer(ModelCheckerTool_Tool.this.myProject, ModelCheckerTool_Tool.this);
     if (newViewer.checkProject(mpsProject)) {
       ModelCheckerTool_Tool.this.processCheckResults(newViewer, mpsProject.getProjectDescriptor().getName(), Icons.PROJECT_ICON);
     }
@@ -75,7 +75,7 @@ public class ModelCheckerTool_Tool extends GeneratedTool {
     contentManager.removeContent(content, true);
   }
 
-  private void closeCurrentTabIsUnpinned() {
+  private void closeCurrentTabIfUnpinned() {
     ContentManager contentManager = ModelCheckerTool_Tool.this.getContentManager();
     Content selectedContent = contentManager.getSelectedContent();
     if (selectedContent == null) {
@@ -86,8 +86,8 @@ public class ModelCheckerTool_Tool extends GeneratedTool {
     }
   }
 
-  private void processCheckResults(ModelCheckerViewer newViewer, String tabName, Icon tabIcon) {
-    ModelCheckerTool_Tool.this.closeCurrentTabIsUnpinned();
+  private void processCheckResults(JPanel newViewer, String tabName, Icon tabIcon) {
+    ModelCheckerTool_Tool.this.closeCurrentTabIfUnpinned();
     ModelCheckerTool_Tool.this.addContent(newViewer, tabName, tabIcon, true);
     ModelCheckerTool_Tool.this.setSelectedComponent(newViewer);
   }
