@@ -28,6 +28,7 @@ import jetbrains.mps.util.misc.hash.HashMap;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.debug.PositionInfo;
 import jetbrains.mps.debug.DebugInfo;
+import jetbrains.mps.debug.DebugInfoManager;
 
 import java.util.Map;
 import java.util.List;
@@ -112,7 +113,7 @@ public class TextGenManager {
       info.setEndLine(buffer.getLineNumber());
       info.setEndPosition(buffer.getPosition());
 
-      if (DebugInfo.isNodeSutable(node)) {
+      if (DebugInfoManager.getInstance().isDebuggableNode(node)) {
         positions.put(node, info);
       }
     } catch (Exception e) {
