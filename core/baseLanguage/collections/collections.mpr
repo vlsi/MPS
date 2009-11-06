@@ -27,6 +27,7 @@
       <solutionPath path="${project}/solutions/collections/samples/collections_samples.msd" />
       <solutionPath path="${project}/solutions/collections/sandbox/collections_sandbox.msd" />
       <solutionPath path="${project}/solutions/collections/unittest/collections_unittest.msd" />
+      <solutionPath path="${project}/solutions/collections_trove.test/collections_trove.test.msd" folder="" />
       <solutionPath path="${project}/solutions/internalCollections.sandbox/internalCollections.sandbox.msd" />
       <solutionPath path="${project}/solutions/internalCollections.test/internalCollections.test.msd" />
     </projectSolutions>
@@ -40,6 +41,7 @@
       <genConfModule name="UnitTests" moduleRef="collections_unittest" />
       <genConfModule name="collections lang test" moduleRef="83888646-71ce-4f1c-9c53-c54016f6ad4f(jetbrains.mps.baseLanguage.collections)" />
       <genConfModule name="internalCollections" moduleRef="internalCollections.test" />
+      <genConfModule name="test" moduleRef="collections_trove.test" />
     </genConfs>
   </component>
   <component name="ProjectDetails">
