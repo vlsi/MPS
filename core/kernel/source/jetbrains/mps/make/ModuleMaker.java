@@ -168,12 +168,10 @@ public class ModuleMaker {
 
           String messageStirng = new String(cp.getOriginatingFileName()) + " : " + cp.getMessage();
 
-          final SNode nodeToShow = getNodeByLine(cp, fqName);
+          //final SNode nodeToShow = getNodeByLine(cp, fqName);
 
-          Object hintObject = nodeToShow;
-            if (hintObject == null) {
-              hintObject = new FileWithPosition(javaFile.getFile(), cp.getSourceStart());
-            }
+          Object hintObject = new FileWithPosition(javaFile.getFile(), cp.getSourceStart());
+
           if (cp.isWarning()) {
             LOG.warning(messageStirng + " (line: " + cp.getSourceLineNumber() + ")", hintObject);
           } else {
