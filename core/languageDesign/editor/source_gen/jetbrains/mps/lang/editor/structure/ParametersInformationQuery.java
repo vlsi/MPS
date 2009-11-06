@@ -4,14 +4,18 @@ package jetbrains.mps.lang.editor.structure;
 
 import jetbrains.mps.lang.core.structure.BaseConcept;
 import jetbrains.mps.lang.core.structure.INamedConcept;
+import jetbrains.mps.baseLanguage.classifiers.structure.IClassifier;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
 import jetbrains.mps.baseLanguage.structure.Type;
+import java.util.Iterator;
+import jetbrains.mps.baseLanguage.classifiers.structure.DefaultClassifierMethodDeclaration;
+import java.util.List;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
-public class ParametersInformationQuery extends BaseConcept implements INamedConcept {
+public class ParametersInformationQuery extends BaseConcept implements INamedConcept, IClassifier {
   public static final String concept = "jetbrains.mps.lang.editor.structure.ParametersInformationQuery";
   public static final String NAME = "name";
   public static final String SHORT_DESCRIPTION = "shortDescription";
@@ -22,6 +26,7 @@ public class ParametersInformationQuery extends BaseConcept implements INamedCon
   public static final String METHODS = "methods";
   public static final String PRESENTATION = "presentation";
   public static final String IS_METHOD_CURRENT = "isMethodCurrent";
+  public static final String METHOD_DECLARATION = "methodDeclaration";
 
   public ParametersInformationQuery(SNode node) {
     super(node);
@@ -97,6 +102,26 @@ public class ParametersInformationQuery extends BaseConcept implements INamedCon
 
   public void setIsMethodCurrent(QueryFunction_IsMethodCurrent node) {
     super.setChild(ParametersInformationQuery.IS_METHOD_CURRENT, node);
+  }
+
+  public int getMethodDeclarationsCount() {
+    return this.getChildCount(ParametersInformationQuery.METHOD_DECLARATION);
+  }
+
+  public Iterator<DefaultClassifierMethodDeclaration> methodDeclarations() {
+    return this.children(DefaultClassifierMethodDeclaration.class, ParametersInformationQuery.METHOD_DECLARATION);
+  }
+
+  public List<DefaultClassifierMethodDeclaration> getMethodDeclarations() {
+    return this.getChildren(DefaultClassifierMethodDeclaration.class, ParametersInformationQuery.METHOD_DECLARATION);
+  }
+
+  public void addMethodDeclaration(DefaultClassifierMethodDeclaration node) {
+    this.addChild(ParametersInformationQuery.METHOD_DECLARATION, node);
+  }
+
+  public void insertMethodDeclaration(DefaultClassifierMethodDeclaration prev, DefaultClassifierMethodDeclaration node) {
+    this.insertChild(prev, ParametersInformationQuery.METHOD_DECLARATION, node);
   }
 
   public static ParametersInformationQuery newInstance(SModel sm, boolean init) {
