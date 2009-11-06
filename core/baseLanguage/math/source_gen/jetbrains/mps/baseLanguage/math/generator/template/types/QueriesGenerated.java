@@ -15,6 +15,7 @@ import jetbrains.mps.baseLanguage.math.behavior.MathUtil;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.generator.template.PropertyMacroContext;
 import jetbrains.mps.generator.template.ReferenceMacroContext;
+import jetbrains.mps.generator.template.IfMacroContext;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
 import jetbrains.mps.baseLanguage.behavior.Type_Behavior;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
@@ -610,6 +611,24 @@ public class QueriesGenerated {
     return _context.getOutputNodeByInputNodeAndMappingLabel(SLinkOperations.getTarget(_context.getNode(), "index", false), "MatrixIndex");
   }
 
+  public static boolean ifMacro_Condition_1331994661796617584(final IOperationContext operationContext, final IfMacroContext _context) {
+    SNode myType = TypeChecker.getInstance().getTypeOf(_context.getNode());
+    SNode parentType = MathUtil.getUnboxedElementType(TypeChecker.getInstance().getTypeOf(SNodeOperations.getParent(_context.getNode())));
+    if (SNodeOperations.isInstanceOf(myType, "jetbrains.mps.baseLanguage.structure.Type") && SNodeOperations.isInstanceOf(parentType, "jetbrains.mps.baseLanguage.structure.Type")) {
+      return MathTypeUtil.typeCast(SNodeOperations.cast(myType, "jetbrains.mps.baseLanguage.structure.Type"), SNodeOperations.cast(parentType, "jetbrains.mps.baseLanguage.structure.Type")) == null;
+    }
+    return true;
+  }
+
+  public static boolean ifMacro_Condition_4253775830168107357(final IOperationContext operationContext, final IfMacroContext _context) {
+    SNode myType = TypeChecker.getInstance().getTypeOf(_context.getNode());
+    SNode parentType = MathUtil.getUnboxedElementType(TypeChecker.getInstance().getTypeOf(SNodeOperations.getParent(_context.getNode())));
+    if (SNodeOperations.isInstanceOf(myType, "jetbrains.mps.baseLanguage.structure.Type") && SNodeOperations.isInstanceOf(parentType, "jetbrains.mps.baseLanguage.structure.Type")) {
+      return MathTypeUtil.typeCast(SNodeOperations.cast(myType, "jetbrains.mps.baseLanguage.structure.Type"), SNodeOperations.cast(parentType, "jetbrains.mps.baseLanguage.structure.Type")) == null;
+    }
+    return true;
+  }
+
   public static SNode sourceNodeQuery_1237807570287(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "leftExpression", true);
   }
@@ -941,6 +960,18 @@ public class QueriesGenerated {
     return MathUtil.getUnboxedElementType(TypeChecker.getInstance().getTypeOf(_context.getNode()));
   }
 
+  public static SNode sourceNodeQuery_1331994661796617578(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return _context.getNode();
+  }
+
+  public static SNode sourceNodeQuery_1331994661796617596(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    SNode myType = TypeChecker.getInstance().getTypeOf(_context.getNode());
+    SNode parentType = MathUtil.getUnboxedElementType(TypeChecker.getInstance().getTypeOf(SNodeOperations.getParent(_context.getNode())));
+    SNode ce = MathTypeUtil.typeCast(SNodeOperations.cast(myType, "jetbrains.mps.baseLanguage.structure.Type"), SNodeOperations.cast(parentType, "jetbrains.mps.baseLanguage.structure.Type"));
+    SLinkOperations.setTarget(ce, "expression", SNodeOperations.copyNode(_context.getNode()), true);
+    return ce;
+  }
+
   public static SNode sourceNodeQuery_1418611629042732058(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return MathUtil.operConstant(_context.getNode());
   }
@@ -999,6 +1030,18 @@ public class QueriesGenerated {
 
   public static SNode sourceNodeQuery_4107669262321384620(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "columns", true);
+  }
+
+  public static SNode sourceNodeQuery_4253775830168107351(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return _context.getNode();
+  }
+
+  public static SNode sourceNodeQuery_4253775830168296030(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    SNode myType = TypeChecker.getInstance().getTypeOf(_context.getNode());
+    SNode parentType = MathUtil.getUnboxedElementType(TypeChecker.getInstance().getTypeOf(SNodeOperations.getParent(_context.getNode())));
+    SNode ce = MathTypeUtil.typeCast(SNodeOperations.cast(myType, "jetbrains.mps.baseLanguage.structure.Type"), SNodeOperations.cast(parentType, "jetbrains.mps.baseLanguage.structure.Type"));
+    SLinkOperations.setTarget(ce, "expression", SNodeOperations.copyNode(_context.getNode()), true);
+    return ce;
   }
 
   public static SNode sourceNodeQuery_4411518219012594581(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
@@ -1157,12 +1200,8 @@ public class QueriesGenerated {
     return SLinkOperations.getTarget(_context.getNode(), "param", true);
   }
 
-  public static SNode sourceNodeQuery_6217769856310494656(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return _context.getNode();
-  }
-
   public static SNode sourceNodeQuery_6217769856310494670(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return Type_Behavior.call_getUnboxedType_1213877337320(MathUtil.getUnboxedElementType(TypeChecker.getInstance().getTypeOf(_context.getNode())));
+    return MathUtil.getUnboxedElementType(TypeChecker.getInstance().getTypeOf(_context.getNode()));
   }
 
   public static SNode sourceNodeQuery_6217769856310494681(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
@@ -1229,7 +1268,7 @@ public class QueriesGenerated {
   }
 
   public static SNode sourceNodeQuery_6217769856310651591(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return SLinkOperations.getTarget(_context.getNode(), "matrix", true);
+    return SLinkOperations.getTarget(_context.getNode(), "param", true);
   }
 
   public static SNode sourceNodeQuery_6217769856310651610(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
@@ -1638,11 +1677,11 @@ public class QueriesGenerated {
     return MathUtil.getUnboxedElementType(TypeChecker.getInstance().getTypeOf(_context.getNode()));
   }
 
-  public static Iterable sourceNodesQuery_6217769856310494661(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
+  public static Iterable sourceNodesQuery_1331994661796617564(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     return SLinkOperations.getTargets(_context.getNode(), "components", true);
   }
 
-  public static Iterable sourceNodesQuery_6217769856310494715(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
+  public static Iterable sourceNodesQuery_6217769856310494661(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     return SLinkOperations.getTargets(_context.getNode(), "components", true);
   }
 

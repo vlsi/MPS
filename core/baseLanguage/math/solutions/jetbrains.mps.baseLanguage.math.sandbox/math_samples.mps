@@ -13,6 +13,7 @@
   <import index="1" modelUID="f:java_stub#javax.swing(javax.swing@java_stub)" version="-1" />
   <import index="2" modelUID="f:java_stub#java.lang(java.lang@java_stub)" version="-1" />
   <import index="3" modelUID="f:java_stub#java.io(java.io@java_stub)" version="-1" />
+  <visible index="2" modelUID="f:java_stub#jetbrains.mps.baseLanguage.math.runtime(jetbrains.mps.baseLanguage.math.runtime@java_stub)" />
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="2367141965016610273">
     <property name="name" value="ABC" />
     <node role="staticMethod" type="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" id="9189982721260565844">
@@ -26,22 +27,140 @@
       <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="9189982721260565845" />
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="9189982721260565846" />
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="9189982721260565847">
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="9189982721260569246">
-          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="9189982721260569247">
-            <property name="name" value="dv" />
-            <node role="type" type="jetbrains.mps.baseLanguage.math.structure.MatrixType" id="9189982721260569248">
-              <node role="elementType" type="jetbrains.mps.baseLanguage.structure.DoubleType" id="9189982721260569250" />
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="4253775830167451833">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="4253775830167451834">
+            <property name="name" value="a" />
+            <node role="type" type="jetbrains.mps.baseLanguage.structure.DoubleType" id="4253775830167451835" />
+            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="4535873288411505464">
+              <link role="baseMethodDeclaration" targetNodeId="2.~Math.random():double" resolveInfo="random" />
+              <link role="classConcept" targetNodeId="2.~Math" resolveInfo="Math" />
             </node>
-            <node role="initializer" type="jetbrains.mps.baseLanguage.math.structure.MatrixConstructor" id="9189982721260569252">
-              <property name="column" value="true" />
-              <node role="components" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="9189982721260569254">
-                <property name="value" value="1" />
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="4253775830167451837">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="4253775830167451838">
+            <property name="name" value="b" />
+            <node role="type" type="jetbrains.mps.baseLanguage.structure.DoubleType" id="4253775830167451839" />
+            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="4535873288411505466">
+              <link role="baseMethodDeclaration" targetNodeId="2.~Math.random():double" resolveInfo="random" />
+              <link role="classConcept" targetNodeId="2.~Math" resolveInfo="Math" />
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="4253775830167680416">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="4253775830167681093">
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference" id="4253775830167680417">
+              <link role="classifier" targetNodeId="2.~System" resolveInfo="System" />
+              <link role="variableDeclaration" targetNodeId="2.~System.out" resolveInfo="out" />
+            </node>
+            <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="4253775830167681102">
+              <link role="baseMethodDeclaration" targetNodeId="3.~PrintStream.println(java.lang.String):void" resolveInfo="println" />
+              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="4253775830167790497">
+                <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParenthesizedExpression" id="4253775830167790370">
+                  <node role="expression" type="jetbrains.mps.baseLanguage.math.structure.BigSumExpression" id="4253775830167790371">
+                    <node role="var" type="jetbrains.mps.baseLanguage.math.structure.MathSymbolFromToIndex" id="4253775830167790372">
+                      <property name="name" value="k" />
+                      <node role="from" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="4253775830167790373">
+                        <property name="value" value="0" />
+                      </node>
+                    </node>
+                    <node role="upperBound" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="4253775830167790374">
+                      <property name="value" value="99" />
+                    </node>
+                    <node role="expression" type="jetbrains.mps.baseLanguage.math.structure.MatrixConstructor" id="4253775830167790538">
+                      <property name="column" value="true" />
+                      <node role="components" type="jetbrains.mps.baseLanguage.math.structure.MatrixConstructor" id="4253775830167790539">
+                        <property name="column" value="false" />
+                        <node role="components" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="4253775830167790540">
+                          <property name="value" value="1" />
+                        </node>
+                        <node role="components" type="jetbrains.mps.baseLanguage.math.structure.MathSymbolIndexReference" id="4253775830167790541">
+                          <link role="indexRef" targetNodeId="4253775830167790372" resolveInfo="k" />
+                        </node>
+                        <node role="components" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="4253775830167790542">
+                          <property name="value" value="0" />
+                        </node>
+                      </node>
+                      <node role="components" type="jetbrains.mps.baseLanguage.math.structure.MatrixConstructor" id="4253775830167790543">
+                        <property name="column" value="false" />
+                        <node role="components" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="4253775830167790544">
+                          <property name="value" value="0" />
+                        </node>
+                        <node role="components" type="jetbrains.mps.baseLanguage.structure.FloatingPointConstant" id="1331994661796611817">
+                          <property name="value" value="1.0" />
+                        </node>
+                        <node role="components" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="4253775830167790546">
+                          <property name="value" value="0" />
+                        </node>
+                      </node>
+                      <node role="components" type="jetbrains.mps.baseLanguage.math.structure.MatrixConstructor" id="4253775830167790547">
+                        <property name="column" value="false" />
+                        <node role="components" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="4253775830167790548">
+                          <property name="value" value="0" />
+                        </node>
+                        <node role="components" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="4253775830167790549">
+                          <property name="value" value="0" />
+                        </node>
+                        <node role="components" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="4253775830167790550">
+                          <property name="value" value="1" />
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                </node>
+                <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="4253775830167790533">
+                  <link role="baseMethodDeclaration" targetNodeId="2v.~Matrix.toString():java.lang.String" resolveInfo="toString" />
+                </node>
               </node>
-              <node role="components" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="9189982721260569256">
-                <property name="value" value="2" />
-              </node>
-              <node role="components" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="9189982721260569258">
-                <property name="value" value="3" />
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="4253775830167451892">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="4253775830167452569">
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference" id="4253775830167451893">
+              <link role="classifier" targetNodeId="2.~System" resolveInfo="System" />
+              <link role="variableDeclaration" targetNodeId="2.~System.out" resolveInfo="out" />
+            </node>
+            <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="4253775830167452573">
+              <link role="baseMethodDeclaration" targetNodeId="3.~PrintStream.println(java.lang.Object):void" resolveInfo="println" />
+              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.MinusExpression" id="4253775830167452592">
+                <node role="leftExpression" type="jetbrains.mps.baseLanguage.math.structure.ExponentExpression" id="4253775830167452593">
+                  <node role="param" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="4253775830167452594">
+                    <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.MulExpression" id="4253775830167452595">
+                      <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="4253775830167452596">
+                        <link role="variableDeclaration" targetNodeId="4253775830167451838" resolveInfo="b" />
+                      </node>
+                      <node role="leftExpression" type="jetbrains.mps.baseLanguage.math.structure.LiteralI" id="4253775830167452597" />
+                    </node>
+                    <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="4253775830167452598">
+                      <link role="variableDeclaration" targetNodeId="4253775830167451834" resolveInfo="a" />
+                    </node>
+                  </node>
+                </node>
+                <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.MulExpression" id="4253775830167452599">
+                  <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.ParenthesizedExpression" id="4253775830167452600">
+                    <node role="expression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="4253775830167452601">
+                      <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.MulExpression" id="4253775830167452602">
+                        <node role="rightExpression" type="jetbrains.mps.baseLanguage.math.structure.SineExpression" id="4253775830167452603">
+                          <node role="param" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="4253775830167452604">
+                            <link role="variableDeclaration" targetNodeId="4253775830167451838" resolveInfo="b" />
+                          </node>
+                        </node>
+                        <node role="leftExpression" type="jetbrains.mps.baseLanguage.math.structure.LiteralI" id="4253775830167452605" />
+                      </node>
+                      <node role="leftExpression" type="jetbrains.mps.baseLanguage.math.structure.CosineExpression" id="4253775830167452606">
+                        <node role="param" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="4253775830167452607">
+                          <link role="variableDeclaration" targetNodeId="4253775830167451838" resolveInfo="b" />
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                  <node role="leftExpression" type="jetbrains.mps.baseLanguage.math.structure.ExponentExpression" id="4253775830167452608">
+                    <node role="param" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="4253775830167452609">
+                      <link role="variableDeclaration" targetNodeId="4253775830167451834" resolveInfo="a" />
+                    </node>
+                  </node>
+                </node>
               </node>
             </node>
           </node>
@@ -50,7 +169,9 @@
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="9189982721260565854">
             <property name="name" value="s" />
             <node role="type" type="jetbrains.mps.baseLanguage.math.structure.MatrixType" id="9189982721260565855">
-              <node role="elementType" type="jetbrains.mps.baseLanguage.structure.DoubleType" id="9189982721260565858" />
+              <node role="elementType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="4253775830168107282">
+                <link role="classifier" targetNodeId="2.~Double" resolveInfo="Double" />
+              </node>
             </node>
             <node role="initializer" type="jetbrains.mps.baseLanguage.math.structure.MatrixConstructor" id="9189982721260565860">
               <property name="column" value="false" />
@@ -67,47 +188,48 @@
                     <property name="value" value="2" />
                   </node>
                 </node>
-                <node role="components" type="jetbrains.mps.baseLanguage.structure.FloatingPointConstant" id="9189982721260567631">
-                  <property name="value" value="4.0" />
+                <node role="components" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="4253775830168102221">
+                  <property name="value" value="0" />
+                </node>
+                <node role="components" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="4253775830168319255">
+                  <property name="value" value="4" />
                 </node>
               </node>
-              <node role="components" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="9189982721260569260">
-                <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="9189982721260569265">
-                  <link role="variableDeclaration" targetNodeId="9189982721260569247" resolveInfo="dv" />
+              <node role="components" type="jetbrains.mps.baseLanguage.math.structure.MatrixConstructor" id="9189982721260565866">
+                <property name="column" value="true" />
+                <node role="components" type="jetbrains.mps.baseLanguage.math.structure.SineExpression" id="9189982721260569344">
+                  <node role="param" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="4253775830168319225">
+                    <property name="value" value="1" />
+                  </node>
                 </node>
-                <node role="leftExpression" type="jetbrains.mps.baseLanguage.math.structure.MatrixConstructor" id="9189982721260565866">
-                  <property name="column" value="true" />
-                  <node role="components" type="jetbrains.mps.baseLanguage.math.structure.SineExpression" id="9189982721260569344">
-                    <node role="param" type="jetbrains.mps.baseLanguage.structure.FloatingPointConstant" id="9189982721260569351">
+                <node role="components" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="4253775830168319219">
+                  <property name="value" value="1" />
+                </node>
+                <node role="components" type="jetbrains.mps.baseLanguage.math.structure.PowExpression" id="9189982721260566959">
+                  <node role="base" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="4253775830168319249">
+                    <property name="value" value="2" />
+                  </node>
+                  <node role="exponent" type="jetbrains.mps.baseLanguage.math.structure.DivExpressionFraction" id="9189982721260566976">
+                    <node role="numerator" type="jetbrains.mps.baseLanguage.structure.FloatingPointConstant" id="1331994661796606715">
                       <property name="value" value="1.0" />
                     </node>
-                  </node>
-                  <node role="components" type="jetbrains.mps.baseLanguage.structure.FloatingPointConstant" id="9189982721260567654">
-                    <property name="value" value="1.0" />
-                  </node>
-                  <node role="components" type="jetbrains.mps.baseLanguage.math.structure.PowExpression" id="9189982721260566959">
-                    <node role="base" type="jetbrains.mps.baseLanguage.structure.FloatingPointConstant" id="9189982721260568429">
-                      <property name="value" value="2.0" />
-                    </node>
-                    <node role="exponent" type="jetbrains.mps.baseLanguage.math.structure.DivExpressionFraction" id="9189982721260566976">
-                      <node role="numerator" type="jetbrains.mps.baseLanguage.structure.FloatingPointConstant" id="9189982721260568687">
-                        <property name="value" value="1.0" />
-                      </node>
-                      <node role="denominator" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="9189982721260566978">
-                        <property name="value" value="2" />
-                      </node>
+                    <node role="denominator" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="9189982721260566978">
+                      <property name="value" value="2" />
                     </node>
                   </node>
+                </node>
+                <node role="components" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="4253775830168319213">
+                  <property name="value" value="0" />
                 </node>
               </node>
               <node role="components" type="jetbrains.mps.baseLanguage.math.structure.MatrixConstructor" id="9189982721260565905">
                 <property name="column" value="true" />
-                <node role="components" type="jetbrains.mps.baseLanguage.structure.FloatingPointConstant" id="9189982721260567646">
-                  <property name="value" value="1.0" />
+                <node role="components" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="4253775830168319231">
+                  <property name="value" value="1" />
                 </node>
                 <node role="components" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="9189982721260566904">
                   <node role="rightExpression" type="jetbrains.mps.baseLanguage.math.structure.DivExpressionFraction" id="9189982721260566919">
-                    <node role="numerator" type="jetbrains.mps.baseLanguage.structure.FloatingPointConstant" id="9189982721260568171">
+                    <node role="numerator" type="jetbrains.mps.baseLanguage.structure.FloatingPointConstant" id="1331994661796606709">
                       <property name="value" value="1.0" />
                     </node>
                     <node role="denominator" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="9189982721260566921">
@@ -119,21 +241,27 @@
                   </node>
                 </node>
                 <node role="components" type="jetbrains.mps.baseLanguage.math.structure.ExponentExpression" id="9189982721260569377">
-                  <node role="param" type="jetbrains.mps.baseLanguage.structure.FloatingPointConstant" id="9189982721260569381">
-                    <property name="value" value="1.0" />
+                  <node role="param" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="4253775830168319243">
+                    <property name="value" value="1" />
                   </node>
+                </node>
+                <node role="components" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="4253775830168319237">
+                  <property name="value" value="0" />
                 </node>
               </node>
               <node role="components" type="jetbrains.mps.baseLanguage.math.structure.MatrixConstructor" id="9189982721260569300">
                 <property name="column" value="true" />
-                <node role="components" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="9189982721260569303">
+                <node role="components" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="4253775830168114161">
                   <property name="value" value="1" />
                 </node>
-                <node role="components" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="9189982721260569305">
+                <node role="components" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="4253775830168114167">
                   <property name="value" value="2" />
                 </node>
-                <node role="components" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="9189982721260569311">
+                <node role="components" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="4253775830168114173">
                   <property name="value" value="3" />
+                </node>
+                <node role="components" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="4253775830168114179">
+                  <property name="value" value="0" />
                 </node>
               </node>
             </node>

@@ -22,5 +22,6 @@ public class DFABuilders extends DataFlowBuilders {
     manager.register("jetbrains.mps.baseLanguage.math.structure.Determinant", new Determinant_DataFlow());
     manager.register("jetbrains.mps.baseLanguage.math.structure.MatrixNorm", new MatrixNorm_DataFlow());
     manager.register("jetbrains.mps.baseLanguage.math.structure.MatrixConstructor", new MatrixConstructor_DataFlow());
+    manager.register("jetbrains.mps.baseLanguage.math.structure.MathFuncExpression", new MathFuncExpression_DataFlow());
   }
 }

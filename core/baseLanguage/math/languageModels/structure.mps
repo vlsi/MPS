@@ -269,7 +269,7 @@
       <link role="target" targetNodeId="2v.1068431790191" resolveInfo="Expression" />
     </node>
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="3922637823318870908">
-      <property name="value" value="0[" />
+      <property name="value" value="zero" />
       <link role="conceptPropertyDeclaration" targetNodeId="3v.1137473891462" resolveInfo="alias" />
     </node>
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="3922637823318870910">
@@ -734,30 +734,24 @@
       <link role="target" targetNodeId="2v.1068431790191" resolveInfo="Expression" />
     </node>
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1418611629041152154">
-      <property name="value" value="E" />
+      <property name="value" value="identity" />
       <link role="conceptPropertyDeclaration" targetNodeId="3v.1137473891462" resolveInfo="alias" />
     </node>
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1418611629041152156">
-      <property name="value" value="Matrix unit" />
+      <property name="value" value="Identity matrix" />
       <link role="conceptPropertyDeclaration" targetNodeId="3v.1137473914776" resolveInfo="shortDescription" />
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="263012178968580053">
     <property name="package" value="matrix" />
     <property name="name" value="Determinant" />
-    <link role="extends" targetNodeId="2v.1068431790191" resolveInfo="Expression" />
-    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="263012178968580065">
-      <property name="metaClass" value="aggregation" />
-      <property name="role" value="matrix" />
-      <property name="sourceCardinality" value="1" />
-      <link role="target" targetNodeId="2v.1068431790191" resolveInfo="Expression" />
-    </node>
+    <link role="extends" targetNodeId="1238343594087" resolveInfo="MathFuncExpression" />
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="263012178968580054">
       <property name="value" value="det" />
       <link role="conceptPropertyDeclaration" targetNodeId="3v.1137473891462" resolveInfo="alias" />
     </node>
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="263012178968580056">
-      <property name="value" value="Calculate determinant" />
+      <property name="value" value="Matrix determinant" />
       <link role="conceptPropertyDeclaration" targetNodeId="3v.1137473914776" resolveInfo="shortDescription" />
     </node>
   </node>

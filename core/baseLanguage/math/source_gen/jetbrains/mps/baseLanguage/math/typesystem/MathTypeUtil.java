@@ -17,26 +17,30 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 public class MathTypeUtil {
-  public static final SNode qBigComplex = new _Quotations.QuotationClass_17().createNode();
-  public static final SNode qBCMatrix = new _Quotations.QuotationClass_20().createNode();
-  public static final SNode qBigInteger = new _Quotations.QuotationClass_18().createNode();
-  public static final SNode qBigDecimal = new _Quotations.QuotationClass_19().createNode();
-  public static final SNode qLong = new _Quotations.QuotationClass_21().createNode();
-  public static final SNode qBoolean = new _Quotations.QuotationClass_28().createNode();
-  public static final SNode qComplex = new _Quotations.QuotationClass_24().createNode();
-  public static final SNode qInt = new _Quotations.QuotationClass_22().createNode();
-  public static final SNode qFloat = new _Quotations.QuotationClass_26().createNode();
-  public static final SNode qDouble = new _Quotations.QuotationClass_23().createNode();
+  public static final SNode qBigComplex = new _Quotations.QuotationClass_21().createNode();
+  public static final SNode qBCMatrix = new _Quotations.QuotationClass_24().createNode();
+  public static final SNode qBigInteger = new _Quotations.QuotationClass_22().createNode();
+  public static final SNode qBigDecimal = new _Quotations.QuotationClass_23().createNode();
+  public static final SNode qLong = new _Quotations.QuotationClass_25().createNode();
+  public static final SNode bLong = new _Quotations.QuotationClass_15().createNode();
+  public static final SNode qBoolean = new _Quotations.QuotationClass_32().createNode();
+  public static final SNode qComplex = new _Quotations.QuotationClass_28().createNode();
+  public static final SNode qInt = new _Quotations.QuotationClass_26().createNode();
+  public static final SNode bInt = new _Quotations.QuotationClass_14().createNode();
+  public static final SNode qFloat = new _Quotations.QuotationClass_30().createNode();
+  public static final SNode bFloat = new _Quotations.QuotationClass_13().createNode();
+  public static final SNode qDouble = new _Quotations.QuotationClass_27().createNode();
+  public static final SNode bDouble = new _Quotations.QuotationClass_12().createNode();
 
   public MathTypeUtil() {
   }
 
   public static SNode qMatrix(SNode elementType) {
-    return new _Quotations.QuotationClass_25().createNode(SNodeOperations.copyNode(elementType));
+    return new _Quotations.QuotationClass_29().createNode(elementType);
   }
 
   public static SNode qVector(SNode elementType) {
-    return new _Quotations.QuotationClass_27().createNode(SNodeOperations.copyNode(elementType));
+    return new _Quotations.QuotationClass_31().createNode(elementType);
   }
 
   public static boolean bigType(SNode t) {
@@ -48,7 +52,7 @@ public class MathTypeUtil {
   }
 
   public static boolean floatType(SNode t) {
-    return SNodeOperations.isInstanceOf(t, "jetbrains.mps.baseLanguage.structure.FloatType") || SNodeOperations.isInstanceOf(t, "jetbrains.mps.baseLanguage.structure.DoubleType") || SNodeOperations.isInstanceOf(t, "jetbrains.mps.baseLanguage.math.structure.ComplexType") || SNodeOperations.isInstanceOf(t, "jetbrains.mps.baseLanguage.math.structure.BigDecimalType") || SNodeOperations.isInstanceOf(t, "jetbrains.mps.baseLanguage.math.structure.BigComplexType") || MatchingUtil.matchNodes(t, new _Quotations.QuotationClass_41().createNode()) || MatchingUtil.matchNodes(t, new _Quotations.QuotationClass_42().createNode());
+    return SNodeOperations.isInstanceOf(t, "jetbrains.mps.baseLanguage.structure.FloatType") || SNodeOperations.isInstanceOf(t, "jetbrains.mps.baseLanguage.structure.DoubleType") || SNodeOperations.isInstanceOf(t, "jetbrains.mps.baseLanguage.math.structure.ComplexType") || SNodeOperations.isInstanceOf(t, "jetbrains.mps.baseLanguage.math.structure.BigDecimalType") || SNodeOperations.isInstanceOf(t, "jetbrains.mps.baseLanguage.math.structure.BigComplexType") || MatchingUtil.matchNodes(t, new _Quotations.QuotationClass_45().createNode()) || MatchingUtil.matchNodes(t, new _Quotations.QuotationClass_46().createNode());
   }
 
   public static SNode join(SNode t1, SNode t2) {
@@ -186,16 +190,16 @@ public class MathTypeUtil {
       return 0;
     }
     if (TypeChecker.getInstance().getSubtypingManager().isSubtype(wider, qBCMatrix) && TypeChecker.getInstance().getSubtypingManager().isSubtype(narrower, qBCMatrix) && !(MatchingUtil.matchNodes(Type_Behavior.call_getUnboxedType_1213877337320(getElementType(wider)), Type_Behavior.call_getUnboxedType_1213877337320(getElementType(narrower))))) {
-      if (MatchingUtil.matchNodes(Type_Behavior.call_getUnboxedType_1213877337320(getElementType(wider)), new _Quotations.QuotationClass_11().createNode())) {
+      if (MatchingUtil.matchNodes(Type_Behavior.call_getUnboxedType_1213877337320(getElementType(wider)), bInt)) {
         return 9;
       }
-      if (MatchingUtil.matchNodes(Type_Behavior.call_getUnboxedType_1213877337320(getElementType(wider)), new _Quotations.QuotationClass_12().createNode())) {
+      if (MatchingUtil.matchNodes(Type_Behavior.call_getUnboxedType_1213877337320(getElementType(wider)), bLong)) {
         return 10;
       }
-      if (MatchingUtil.matchNodes(Type_Behavior.call_getUnboxedType_1213877337320(getElementType(wider)), new _Quotations.QuotationClass_13().createNode())) {
+      if (MatchingUtil.matchNodes(Type_Behavior.call_getUnboxedType_1213877337320(getElementType(wider)), bFloat)) {
         return 11;
       }
-      if (MatchingUtil.matchNodes(Type_Behavior.call_getUnboxedType_1213877337320(getElementType(wider)), new _Quotations.QuotationClass_14().createNode())) {
+      if (MatchingUtil.matchNodes(Type_Behavior.call_getUnboxedType_1213877337320(getElementType(wider)), bDouble)) {
         return 12;
       }
       if (SNodeOperations.isInstanceOf(getElementType(wider), "jetbrains.mps.baseLanguage.math.structure.BigIntegerType")) {
@@ -326,5 +330,21 @@ public class MathTypeUtil {
       }
     }
     return true;
+  }
+
+  public static SNode typeCast(SNode type, SNode parentType) {
+    if (MatchingUtil.matchNodes(parentType, bDouble) && !(MatchingUtil.matchNodes(Type_Behavior.call_getUnboxedType_1213877337320(type), bDouble))) {
+      return new _Quotations.QuotationClass_16().createNode();
+    }
+    if (MatchingUtil.matchNodes(parentType, bFloat) && !(MatchingUtil.matchNodes(Type_Behavior.call_getUnboxedType_1213877337320(type), bFloat))) {
+      return new _Quotations.QuotationClass_17().createNode();
+    }
+    if (MatchingUtil.matchNodes(parentType, bInt) && !(MatchingUtil.matchNodes(Type_Behavior.call_getUnboxedType_1213877337320(type), bInt))) {
+      return new _Quotations.QuotationClass_18().createNode();
+    }
+    if (MatchingUtil.matchNodes(parentType, bLong) && !(MatchingUtil.matchNodes(Type_Behavior.call_getUnboxedType_1213877337320(type), bLong))) {
+      return new _Quotations.QuotationClass_19().createNode();
+    }
+    return null;
   }
 }

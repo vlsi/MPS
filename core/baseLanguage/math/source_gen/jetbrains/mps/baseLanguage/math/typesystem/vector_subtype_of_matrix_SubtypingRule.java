@@ -15,7 +15,7 @@ public class vector_subtype_of_matrix_SubtypingRule extends SubtypingRule_Runtim
   }
 
   public SNode getSubOrSuperType(SNode vectorType, TypeCheckingContext typeCheckingContext) {
-    return new _Quotations.QuotationClass_16().createNode(SLinkOperations.getTarget(vectorType, "elementType", true), "" + SPropertyOperations.getInteger(vectorType, "height"), typeCheckingContext);
+    return new _Quotations.QuotationClass_20().createNode(SLinkOperations.getTarget(vectorType, "elementType", true), "" + SPropertyOperations.getInteger(vectorType, "height"), typeCheckingContext);
   }
 
   public String getApplicableConceptFQName() {

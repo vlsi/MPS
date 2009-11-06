@@ -40,12 +40,12 @@ public class typeof_MatrixNorm_InferenceRule extends AbstractInferenceRule_Runti
             if (TypeChecker.getInstance().getSubtypingManager().isSubtype(t, MathTypeUtil.qBigInteger)) {
               SNode f = null;
               SNode i = null;
-              if (MatchingUtil.matchNodes(t, new _Quotations.QuotationClass_32().createNode(typeCheckingContext)) || MatchingUtil.matchNodes(t, new _Quotations.QuotationClass_33().createNode(typeCheckingContext)) || MatchingUtil.matchNodes(t, new _Quotations.QuotationClass_34().createNode(typeCheckingContext))) {
-                i = new _Quotations.QuotationClass_36().createNode(typeCheckingContext);
-                f = new _Quotations.QuotationClass_37().createNode(typeCheckingContext);
-              } else if (MatchingUtil.matchNodes(t, new _Quotations.QuotationClass_35().createNode(typeCheckingContext))) {
-                i = new _Quotations.QuotationClass_39().createNode(typeCheckingContext);
-                f = new _Quotations.QuotationClass_38().createNode(typeCheckingContext);
+              if (MatchingUtil.matchNodes(t, new _Quotations.QuotationClass_36().createNode(typeCheckingContext)) || MatchingUtil.matchNodes(t, new _Quotations.QuotationClass_37().createNode(typeCheckingContext)) || MatchingUtil.matchNodes(t, new _Quotations.QuotationClass_38().createNode(typeCheckingContext))) {
+                i = new _Quotations.QuotationClass_40().createNode(typeCheckingContext);
+                f = new _Quotations.QuotationClass_41().createNode(typeCheckingContext);
+              } else if (MatchingUtil.matchNodes(t, new _Quotations.QuotationClass_39().createNode(typeCheckingContext))) {
+                i = new _Quotations.QuotationClass_43().createNode(typeCheckingContext);
+                f = new _Quotations.QuotationClass_42().createNode(typeCheckingContext);
               } else if (SNodeOperations.isInstanceOf(t, "jetbrains.mps.baseLanguage.math.structure.BigIntegerType")) {
                 i = SNodeOperations.copyNode(MathTypeUtil.qBigInteger);
                 f = SNodeOperations.copyNode(MathTypeUtil.qBigDecimal);
@@ -64,7 +64,7 @@ public class typeof_MatrixNorm_InferenceRule extends AbstractInferenceRule_Runti
                 SNode _nodeToCheck_1029348928467 = norm;
                 BaseIntentionProvider intentionProvider = null;
                 EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:47d0f24b-df34-4ea0-aa7e-7c2eb0f88f31(jetbrains.mps.baseLanguage.math.typesystem)", "3361677252835033410", 0, intentionProvider);
-                typeCheckingContext.createEquation((SNode)typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:47d0f24b-df34-4ea0-aa7e-7c2eb0f88f31(jetbrains.mps.baseLanguage.math.typesystem)", "3361677252835033415", true), (SNode)new _Quotations.QuotationClass_40().createNode(typeCheckingContext), _info_12389875345);
+                typeCheckingContext.createEquation((SNode)typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:47d0f24b-df34-4ea0-aa7e-7c2eb0f88f31(jetbrains.mps.baseLanguage.math.typesystem)", "3361677252835033415", true), (SNode)new _Quotations.QuotationClass_44().createNode(typeCheckingContext), _info_12389875345);
               }
             } else if (SNodeOperations.isInstanceOf(t, "jetbrains.mps.baseLanguage.math.structure.BigComplexType")) {
               {

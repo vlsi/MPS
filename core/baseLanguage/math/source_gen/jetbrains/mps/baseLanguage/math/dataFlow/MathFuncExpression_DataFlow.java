@@ -8,8 +8,8 @@ import jetbrains.mps.lang.dataFlow.DataFlowBuilderContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
-public class Determinant_DataFlow extends DataFlowBuilder {
-  public Determinant_DataFlow() {
+public class MathFuncExpression_DataFlow extends DataFlowBuilder {
+  public MathFuncExpression_DataFlow() {
   }
 
   public void build(final IOperationContext operationContext, final DataFlowBuilderContext _context) {

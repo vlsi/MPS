@@ -41,7 +41,7 @@ public class typeof_DivOperationFraction_InferenceRule extends AbstractInference
             final SNode rightType = typeCheckingContext.getEquationManager().getRepresentator(rightExpressionType_typevar_1418611629041884929);
             typeCheckingContext.whenConcrete(rightType, new Runnable() {
               public void run() {
-                SNode opType = typeCheckingContext.getOverloadedOperationType(new _Quotations.QuotationClass_15().createNode(typeCheckingContext), typeCheckingContext.getEquationManager().getRepresentator(leftType), typeCheckingContext.getEquationManager().getRepresentator(rightType));
+                SNode opType = typeCheckingContext.getOverloadedOperationType(new _Quotations.QuotationClass_11().createNode(typeCheckingContext), typeCheckingContext.getEquationManager().getRepresentator(leftType), typeCheckingContext.getEquationManager().getRepresentator(rightType));
                 if ((opType != null)) {
                   {
                     SNode _nodeToCheck_1029348928467 = fraction;

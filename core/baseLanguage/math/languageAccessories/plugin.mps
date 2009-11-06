@@ -42,11 +42,36 @@
   <import index="11" modelUID="f:java_stub#com.intellij.util.ui(com.intellij.util.ui@java_stub)" version="-1" />
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="5990338083470604753">
     <property name="name" value="HLineCellProvider" />
+    <node role="field" type="jetbrains.mps.baseLanguage.structure.FieldDeclaration" id="4253775830168016013">
+      <property name="name" value="myNode" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PrivateVisibility" id="4253775830168016014" />
+      <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="4253775830168016016">
+        <link role="classifier" targetNodeId="6.~SNode" resolveInfo="SNode" />
+      </node>
+    </node>
     <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="5990338083470604754" />
     <node role="constructor" type="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" id="5990338083470604755">
+      <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="4253775830168016020">
+        <property name="name" value="node" />
+        <node role="type" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="4253775830168016022" />
+      </node>
       <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="5990338083470604756" />
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="5990338083470604757" />
-      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="5990338083470604758" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="5990338083470604758">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="4253775830168016023">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression" id="4253775830168017265">
+            <node role="rValue" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="4253775830168017268">
+              <link role="variableDeclaration" targetNodeId="4253775830168016020" resolveInfo="node" />
+            </node>
+            <node role="lValue" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="4253775830168016024">
+              <node role="operation" type="jetbrains.mps.baseLanguage.structure.FieldReferenceOperation" id="4253775830168016025">
+                <link role="fieldDeclaration" targetNodeId="4253775830168016013" resolveInfo="myNode" />
+              </node>
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="4253775830168016026" />
+            </node>
+          </node>
+        </node>
+      </node>
     </node>
     <node role="superclass" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="5990338083470604759">
       <link role="classifier" targetNodeId="3.~AbstractCellProvider" resolveInfo="AbstractCellProvider" />
@@ -279,7 +304,12 @@
                   <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="5990338083470604772">
                     <link role="variableDeclaration" targetNodeId="5990338083470604763" resolveInfo="p0" />
                   </node>
-                  <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="5990338083470604773" />
+                  <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="4253775830168016017">
+                    <node role="operation" type="jetbrains.mps.baseLanguage.structure.FieldReferenceOperation" id="4253775830168016018">
+                      <link role="fieldDeclaration" targetNodeId="4253775830168016013" resolveInfo="node" />
+                    </node>
+                    <node role="operand" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="4253775830168016019" />
+                  </node>
                 </node>
               </node>
             </node>

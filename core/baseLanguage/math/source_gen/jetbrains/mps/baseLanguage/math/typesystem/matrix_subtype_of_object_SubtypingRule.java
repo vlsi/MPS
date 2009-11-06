@@ -13,7 +13,7 @@ public class matrix_subtype_of_object_SubtypingRule extends SubtypingRule_Runtim
   }
 
   public SNode getSubOrSuperType(SNode matrixType, TypeCheckingContext typeCheckingContext) {
-    return new _Quotations.QuotationClass_30().createNode(typeCheckingContext);
+    return new _Quotations.QuotationClass_34().createNode(typeCheckingContext);
   }
 
   public String getApplicableConceptFQName() {

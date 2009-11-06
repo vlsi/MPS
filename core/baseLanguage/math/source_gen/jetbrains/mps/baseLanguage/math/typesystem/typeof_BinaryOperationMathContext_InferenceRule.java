@@ -56,7 +56,7 @@ public class typeof_BinaryOperationMathContext_InferenceRule extends AbstractInf
                       }
                     }
                     if (matches_0) {
-                      op = new _Quotations.QuotationClass_43().createNode(typeCheckingContext);
+                      op = new _Quotations.QuotationClass_47().createNode(typeCheckingContext);
                       break;
                     }
                   }
@@ -69,7 +69,7 @@ public class typeof_BinaryOperationMathContext_InferenceRule extends AbstractInf
                       }
                     }
                     if (matches_1) {
-                      op = new _Quotations.QuotationClass_44().createNode(typeCheckingContext);
+                      op = new _Quotations.QuotationClass_48().createNode(typeCheckingContext);
                       break;
                     }
                   }
@@ -82,7 +82,7 @@ public class typeof_BinaryOperationMathContext_InferenceRule extends AbstractInf
                       }
                     }
                     if (matches_2) {
-                      op = new _Quotations.QuotationClass_45().createNode(typeCheckingContext);
+                      op = new _Quotations.QuotationClass_49().createNode(typeCheckingContext);
                       break;
                     }
                   }
@@ -95,7 +95,7 @@ public class typeof_BinaryOperationMathContext_InferenceRule extends AbstractInf
                       }
                     }
                     if (matches_3) {
-                      op = new _Quotations.QuotationClass_46().createNode(typeCheckingContext);
+                      op = new _Quotations.QuotationClass_50().createNode(typeCheckingContext);
                       break;
                     }
                   }

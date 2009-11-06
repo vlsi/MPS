@@ -65,7 +65,7 @@ public class DivExpressionFraction_Editor extends DefaultNodeEditor {
   private EditorCell createCustom_9055_1(final EditorContext editorContext, final SNode node) {
     AbstractCellProvider provider = new _FunctionTypes._return_P0_E0<HLineCellProvider>() {
       public HLineCellProvider invoke() {
-        return new HLineCellProvider();
+        return new HLineCellProvider(node);
       }
     }.invoke();
     EditorCell editorCell = provider.createEditorCell(editorContext);
@@ -73,7 +73,6 @@ public class DivExpressionFraction_Editor extends DefaultNodeEditor {
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.BASE_LINE_CELL, true);
-      style.set(StyleAttributes.SELECTABLE, false);
     }
     return editorCell;
   }

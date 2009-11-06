@@ -21,7 +21,7 @@ public class typeof_Determinant_InferenceRule extends AbstractInferenceRule_Runt
 
   public void applyRule(final SNode determinant, final TypeCheckingContext typeCheckingContext) {
     {
-      final SNode detmat = typeCheckingContext.typeOf(SLinkOperations.getTarget(determinant, "matrix", true), "r:47d0f24b-df34-4ea0-aa7e-7c2eb0f88f31(jetbrains.mps.baseLanguage.math.typesystem)", "6955172009299969866", true);
+      final SNode detmat = typeCheckingContext.typeOf(SLinkOperations.getTarget(determinant, "param", true), "r:47d0f24b-df34-4ea0-aa7e-7c2eb0f88f31(jetbrains.mps.baseLanguage.math.typesystem)", "6955172009299969866", true);
       typeCheckingContext.whenConcrete(detmat, new Runnable() {
         public void run() {
           if (SNodeOperations.isInstanceOf(typeCheckingContext.getEquationManager().getRepresentator(detmat), "jetbrains.mps.baseLanguage.math.structure.MatrixOrVectorType")) {
@@ -35,7 +35,7 @@ public class typeof_Determinant_InferenceRule extends AbstractInferenceRule_Runt
             {
               BaseIntentionProvider intentionProvider = null;
               IErrorTarget errorTarget = new NodeErrorTarget();
-              IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(SLinkOperations.getTarget(determinant, "matrix", true), "Expression should be subtype of matrix", "r:47d0f24b-df34-4ea0-aa7e-7c2eb0f88f31(jetbrains.mps.baseLanguage.math.typesystem)", "6955172009299969905", intentionProvider, errorTarget);
+              IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(SLinkOperations.getTarget(determinant, "param", true), "Expression should be subtype of matrix", "r:47d0f24b-df34-4ea0-aa7e-7c2eb0f88f31(jetbrains.mps.baseLanguage.math.typesystem)", "6955172009299969905", intentionProvider, errorTarget);
             }
           }
         }
