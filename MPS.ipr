@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project version="4">
+<project relativePaths="false" version="4">
   <component name="AntConfiguration">
     <defaultAnt bundledAnt="true" />
     <buildFile url="file://$PROJECT_DIR$/build/get-idea.xml">
@@ -153,7 +153,6 @@
       <entry name="?*.ico" />
       <entry name="?*.zip" />
     </wildcardResourcePatterns>
-    <annotationProcessing enabled="false" useClasspath="true" />
   </component>
   <component name="CopyrightManager" default="">
     <module2copyright />
@@ -189,6 +188,9 @@
   </component>
   <component name="IdProvider" IDEtalkID="13400C80EA822F0B5CAF10171834B2C5" />
   <component name="InspectionProjectProfileManager">
+    <option name="PROJECT_PROFILE" value="Default" />
+    <option name="USE_PROJECT_LEVEL_SETTINGS" value="true" />
+    <scopes />
     <profiles>
       <profile version="1.0" is_locked="false">
         <option name="myName" value="Code Called Through Reflection" />
@@ -197,34 +199,34 @@
       <profile version="1.0" is_locked="false">
         <option name="myName" value="Default" />
         <option name="myLocal" value="false" />
-        <inspection_tool class="CanBeFinal" enabled="false" level="WARNING" enabled_by_default="false">
+        <inspection_tool class="CanBeFinal" level="WARNING" enabled="false">
           <option name="REPORT_CLASSES" value="false" />
           <option name="REPORT_METHODS" value="false" />
           <option name="REPORT_FIELDS" value="true" />
         </inspection_tool>
-        <inspection_tool class="CheckEmptyScriptTag" enabled="false" level="WARNING" enabled_by_default="false" />
+        <inspection_tool class="CheckEmptyScriptTag" level="WARNING" enabled="false" />
         <inspection_tool class="CheckImageSize" level="WARNING" enabled="false" />
-        <inspection_tool class="CheckValidXmlInScriptTagBody" enabled="false" level="ERROR" enabled_by_default="false" />
-        <inspection_tool class="ClassEscapesItsScope" enabled="true" level="WARNING" enabled_by_default="true" />
-        <inspection_tool class="CloneCallsSuperClone" enabled="false" level="WARNING" enabled_by_default="false" />
-        <inspection_tool class="CloneDeclaresCloneNotSupported" enabled="false" level="WARNING" enabled_by_default="false" />
-        <inspection_tool class="ConstantConditions" enabled="true" level="ERROR" enabled_by_default="true">
+        <inspection_tool class="CheckValidXmlInScriptTagBody" level="ERROR" enabled="false" />
+        <inspection_tool class="ClassEscapesItsScope" level="WARNING" enabled="true" />
+        <inspection_tool class="CloneCallsSuperClone" level="WARNING" enabled="false" />
+        <inspection_tool class="CloneDeclaresCloneNotSupported" level="WARNING" enabled="false" />
+        <inspection_tool class="ConstantConditions" level="ERROR" enabled="true">
           <option name="SUGGEST_NULLABLE_ANNOTATIONS" value="false" />
           <option name="DONT_REPORT_TRUE_ASSERT_STATEMENTS" value="false" />
         </inspection_tool>
-        <inspection_tool class="DefaultFileTemplate" enabled="false" level="WARNING" enabled_by_default="false">
+        <inspection_tool class="DefaultFileTemplate" level="WARNING" enabled="false">
           <option name="CHECK_FILE_HEADER" value="true" />
           <option name="CHECK_TRY_CATCH_SECTION" value="true" />
           <option name="CHECK_METHOD_BODY" value="true" />
         </inspection_tool>
-        <inspection_tool class="EmptyMethod" enabled="false" level="WARNING" enabled_by_default="false" />
-        <inspection_tool class="FieldCanBeLocal" enabled="false" level="WARNING" enabled_by_default="false" />
-        <inspection_tool class="InstanceVariableNamingConvention" enabled="true" level="WARNING" enabled_by_default="true">
+        <inspection_tool class="EmptyMethod" level="WARNING" enabled="false" />
+        <inspection_tool class="FieldCanBeLocal" level="WARNING" enabled="false" />
+        <inspection_tool class="InstanceVariableNamingConvention" level="WARNING" enabled="true">
           <option name="m_regex" value="my[A-Z][A-Za-z_\d]*" />
           <option name="m_minLength" value="3" />
           <option name="m_maxLength" value="99" />
         </inspection_tool>
-        <inspection_tool class="JavaDoc" enabled="false" level="WARNING" enabled_by_default="false">
+        <inspection_tool class="JavaDoc" level="WARNING" enabled="false">
           <option name="TOP_LEVEL_CLASS_OPTIONS">
             <value>
               <option name="ACCESS_JAVADOC_REQUIRED_FOR" value="none" />
@@ -253,7 +255,7 @@
           <option name="IGNORE_JAVADOC_PERIOD" value="true" />
           <option name="myAdditionalJavadocTags" value="" />
         </inspection_tool>
-        <inspection_tool class="NullableProblems" enabled="true" level="ERROR" enabled_by_default="true">
+        <inspection_tool class="NullableProblems" level="ERROR" enabled="true">
           <option name="REPORT_NULLABLE_METHOD_OVERRIDES_NOTNULL" value="true" />
           <option name="REPORT_NOT_ANNOTATED_METHOD_OVERRIDES_NOTNULL" value="true" />
           <option name="REPORT_NOTNULL_PARAMETER_OVERRIDES_NULLABLE" value="true" />
@@ -262,36 +264,35 @@
           <option name="REPORT_NOT_ANNOTATED_SETTER_PARAMETER" value="true" />
           <option name="REPORT_ANNOTATION_NOT_PROPAGATED_TO_OVERRIDERS" value="true" />
         </inspection_tool>
-        <inspection_tool class="PointlessArithmeticExpression" enabled="false" level="WARNING" enabled_by_default="false">
+        <inspection_tool class="PointlessArithmeticExpression" level="WARNING" enabled="false">
           <option name="m_ignoreExpressionsContainingConstants" value="false" />
         </inspection_tool>
-        <inspection_tool class="RedundantCast" enabled="false" level="WARNING" enabled_by_default="false" />
-        <inspection_tool class="RedundantThrows" enabled="false" level="WARNING" enabled_by_default="false" />
-        <inspection_tool class="RequiredAttributes" enabled="false" level="WARNING" enabled_by_default="false">
+        <inspection_tool class="RedundantCast" level="WARNING" enabled="false" />
+        <inspection_tool class="RedundantThrows" level="WARNING" enabled="false" />
+        <inspection_tool class="RequiredAttributes" level="WARNING" enabled="false">
           <option name="myAdditionalRequiredHtmlAttributes" value="" />
         </inspection_tool>
-        <inspection_tool class="SameParameterValue" enabled="false" level="WARNING" enabled_by_default="false" />
-        <inspection_tool class="SameReturnValue" enabled="false" level="WARNING" enabled_by_default="false" />
-        <inspection_tool class="SimplifiableIfStatement" enabled="false" level="WARNING" enabled_by_default="false" />
-        <inspection_tool class="StaticVariableNamingConvention" enabled="true" level="WARNING" enabled_by_default="true">
-          <option name="checkMutableFinals" value="false" />
+        <inspection_tool class="SameParameterValue" level="WARNING" enabled="false" />
+        <inspection_tool class="SameReturnValue" level="WARNING" enabled="false" />
+        <inspection_tool class="SimplifiableIfStatement" level="WARNING" enabled="false" />
+        <inspection_tool class="StaticVariableNamingConvention" level="WARNING" enabled="true">
           <option name="m_regex" value="our[A-Z][A-Za-z\d]*" />
           <option name="m_minLength" value="2" />
           <option name="m_maxLength" value="99" />
         </inspection_tool>
-        <inspection_tool class="SuspiciousNameCombination" enabled="false" level="WARNING" enabled_by_default="false">
+        <inspection_tool class="SuspiciousNameCombination" level="WARNING" enabled="false">
           <group names="x,width,left,right" />
           <group names="y,height,top,bottom" />
         </inspection_tool>
-        <inspection_tool class="TrivialIf" enabled="false" level="WARNING" enabled_by_default="false" />
-        <inspection_tool class="UNCHECKED_WARNING" enabled="false" level="WARNING" enabled_by_default="false" />
-        <inspection_tool class="UNUSED_IMPORT" enabled="false" level="WARNING" enabled_by_default="false" />
-        <inspection_tool class="UnnecessaryLocalVariable" enabled="false" level="WARNING" enabled_by_default="false">
+        <inspection_tool class="TrivialIf" level="WARNING" enabled="false" />
+        <inspection_tool class="UNCHECKED_WARNING" level="WARNING" enabled="false" />
+        <inspection_tool class="UNUSED_IMPORT" level="WARNING" enabled="false" />
+        <inspection_tool class="UnnecessaryLocalVariable" level="WARNING" enabled="false">
           <option name="m_ignoreImmediatelyReturnedVariables" value="false" />
           <option name="m_ignoreAnnotatedVariables" value="false" />
         </inspection_tool>
-        <inspection_tool class="UnnecessaryReturn" enabled="false" level="WARNING" enabled_by_default="false" />
-        <inspection_tool class="UnusedDeclaration" enabled="false" level="WARNING" enabled_by_default="false">
+        <inspection_tool class="UnnecessaryReturn" level="WARNING" enabled="false" />
+        <inspection_tool class="UnusedDeclaration" level="WARNING" enabled="false">
           <option name="ADD_MAINS_TO_ENTRIES" value="true" />
           <option name="ADD_APPLET_TO_ENTRIES" value="true" />
           <option name="ADD_SERVLET_TO_ENTRIES" value="true" />
@@ -301,12 +302,13 @@
               <list size="0" />
             </value>
           </option>
-          <option name="ADD_TESTNG_TO_ENTRIES" value="true" />
+          <option name="ADD_EJB_TO_ENTRIES" value="true" />
           <option name="ADD_JUNIT_TO_ENTRIES" value="true" />
+          <option name="ADD_TESTNG_TO_ENTRIES" value="true" />
         </inspection_tool>
-        <inspection_tool class="UnusedParameters" enabled="false" level="WARNING" enabled_by_default="false" />
-        <inspection_tool class="UnusedReturnValue" enabled="false" level="WARNING" enabled_by_default="false" />
-        <inspection_tool class="WeakerAccess" enabled="false" level="WARNING" enabled_by_default="false">
+        <inspection_tool class="UnusedParameters" level="WARNING" enabled="false" />
+        <inspection_tool class="UnusedReturnValue" level="WARNING" enabled="false" />
+        <inspection_tool class="WeakerAccess" level="WARNING" enabled="false">
           <option name="SUGGEST_PACKAGE_LOCAL_FOR_MEMBERS" value="true" />
           <option name="SUGGEST_PACKAGE_LOCAL_FOR_TOP_CLASSES" value="true" />
           <option name="SUGGEST_PRIVATE_FOR_INNERS" value="false" />
@@ -315,29 +317,29 @@
       <profile version="1.0" is_locked="false">
         <option name="myName" value="For Generated Code" />
         <option name="myLocal" value="false" />
-        <inspection_tool class="CanBeFinal" enabled="false" level="WARNING" enabled_by_default="false">
+        <inspection_tool class="CanBeFinal" level="WARNING" enabled="false">
           <option name="REPORT_CLASSES" value="false" />
           <option name="REPORT_METHODS" value="false" />
           <option name="REPORT_FIELDS" value="true" />
         </inspection_tool>
-        <inspection_tool class="CheckEmptyScriptTag" enabled="false" level="WARNING" enabled_by_default="false" />
+        <inspection_tool class="CheckEmptyScriptTag" level="WARNING" enabled="false" />
         <inspection_tool class="CheckImageSize" level="WARNING" enabled="false" />
-        <inspection_tool class="CheckValidXmlInScriptTagBody" enabled="false" level="ERROR" enabled_by_default="false" />
-        <inspection_tool class="ConstantConditions" enabled="true" level="INFO" enabled_by_default="true">
+        <inspection_tool class="CheckValidXmlInScriptTagBody" level="ERROR" enabled="false" />
+        <inspection_tool class="ConstantConditions" level="INFO" enabled="true">
           <option name="SUGGEST_NULLABLE_ANNOTATIONS" value="false" />
           <option name="DONT_REPORT_TRUE_ASSERT_STATEMENTS" value="false" />
         </inspection_tool>
-        <inspection_tool class="DefaultFileTemplate" enabled="false" level="WARNING" enabled_by_default="false">
+        <inspection_tool class="DefaultFileTemplate" level="WARNING" enabled="false">
           <option name="CHECK_FILE_HEADER" value="true" />
           <option name="CHECK_TRY_CATCH_SECTION" value="true" />
           <option name="CHECK_METHOD_BODY" value="true" />
         </inspection_tool>
-        <inspection_tool class="EmptyMethod" enabled="false" level="WARNING" enabled_by_default="false" />
-        <inspection_tool class="FieldCanBeLocal" enabled="false" level="WARNING" enabled_by_default="false" />
-        <inspection_tool class="ForCanBeForeach" enabled="false" level="WARNING" enabled_by_default="false">
+        <inspection_tool class="EmptyMethod" level="WARNING" enabled="false" />
+        <inspection_tool class="FieldCanBeLocal" level="WARNING" enabled="false" />
+        <inspection_tool class="ForCanBeForeach" level="WARNING" enabled="false">
           <option name="REPORT_INDEXED_LOOP" value="true" />
         </inspection_tool>
-        <inspection_tool class="JavaDoc" enabled="false" level="WARNING" enabled_by_default="false">
+        <inspection_tool class="JavaDoc" level="WARNING" enabled="false">
           <option name="TOP_LEVEL_CLASS_OPTIONS">
             <value>
               <option name="ACCESS_JAVADOC_REQUIRED_FOR" value="none" />
@@ -366,7 +368,7 @@
           <option name="IGNORE_JAVADOC_PERIOD" value="true" />
           <option name="myAdditionalJavadocTags" value="" />
         </inspection_tool>
-        <inspection_tool class="NullableProblems" enabled="true" level="ERROR" enabled_by_default="true">
+        <inspection_tool class="NullableProblems" level="ERROR" enabled="true">
           <option name="REPORT_NULLABLE_METHOD_OVERRIDES_NOTNULL" value="true" />
           <option name="REPORT_NOT_ANNOTATED_METHOD_OVERRIDES_NOTNULL" value="true" />
           <option name="REPORT_NOTNULL_PARAMETER_OVERRIDES_NULLABLE" value="true" />
@@ -375,24 +377,24 @@
           <option name="REPORT_NOT_ANNOTATED_SETTER_PARAMETER" value="true" />
           <option name="REPORT_ANNOTATION_NOT_PROPAGATED_TO_OVERRIDERS" value="true" />
         </inspection_tool>
-        <inspection_tool class="PointlessArithmeticExpression" enabled="false" level="WARNING" enabled_by_default="false">
+        <inspection_tool class="PointlessArithmeticExpression" level="WARNING" enabled="false">
           <option name="m_ignoreExpressionsContainingConstants" value="false" />
         </inspection_tool>
-        <inspection_tool class="RedundantCast" enabled="false" level="WARNING" enabled_by_default="false" />
-        <inspection_tool class="RedundantThrows" enabled="false" level="WARNING" enabled_by_default="false" />
-        <inspection_tool class="RequiredAttributes" enabled="false" level="WARNING" enabled_by_default="false">
+        <inspection_tool class="RedundantCast" level="WARNING" enabled="false" />
+        <inspection_tool class="RedundantThrows" level="WARNING" enabled="false" />
+        <inspection_tool class="RequiredAttributes" level="WARNING" enabled="false">
           <option name="myAdditionalRequiredHtmlAttributes" value="" />
         </inspection_tool>
-        <inspection_tool class="SameParameterValue" enabled="false" level="WARNING" enabled_by_default="false" />
-        <inspection_tool class="SameReturnValue" enabled="false" level="WARNING" enabled_by_default="false" />
-        <inspection_tool class="SimplifiableIfStatement" enabled="false" level="WARNING" enabled_by_default="false" />
-        <inspection_tool class="SuspiciousNameCombination" enabled="false" level="WARNING" enabled_by_default="false">
+        <inspection_tool class="SameParameterValue" level="WARNING" enabled="false" />
+        <inspection_tool class="SameReturnValue" level="WARNING" enabled="false" />
+        <inspection_tool class="SimplifiableIfStatement" level="WARNING" enabled="false" />
+        <inspection_tool class="SuspiciousNameCombination" level="WARNING" enabled="false">
           <group names="x,width,left,right" />
           <group names="y,height,top,bottom" />
         </inspection_tool>
-        <inspection_tool class="TrivialIf" enabled="false" level="WARNING" enabled_by_default="false" />
-        <inspection_tool class="UNCHECKED_WARNING" enabled="false" level="WARNING" enabled_by_default="false" />
-        <inspection_tool class="UNUSED_SYMBOL" enabled="false" level="WARNING" enabled_by_default="false">
+        <inspection_tool class="TrivialIf" level="WARNING" enabled="false" />
+        <inspection_tool class="UNCHECKED_WARNING" level="WARNING" enabled="false" />
+        <inspection_tool class="UNUSED_SYMBOL" level="WARNING" enabled="false">
           <option name="LOCAL_VARIABLE" value="true" />
           <option name="FIELD" value="true" />
           <option name="METHOD" value="true" />
@@ -405,20 +407,20 @@
             </value>
           </option>
         </inspection_tool>
-        <inspection_tool class="UnnecessaryBoxing" enabled="false" level="WARNING" enabled_by_default="false" />
-        <inspection_tool class="UnnecessaryConditionalExpression" enabled="false" level="WARNING" enabled_by_default="false" />
-        <inspection_tool class="UnnecessaryLocalVariable" enabled="false" level="WARNING" enabled_by_default="false">
+        <inspection_tool class="UnnecessaryBoxing" level="WARNING" enabled="false" />
+        <inspection_tool class="UnnecessaryConditionalExpression" level="WARNING" enabled="false" />
+        <inspection_tool class="UnnecessaryLocalVariable" level="WARNING" enabled="false">
           <option name="m_ignoreImmediatelyReturnedVariables" value="false" />
           <option name="m_ignoreAnnotatedVariables" value="false" />
         </inspection_tool>
-        <inspection_tool class="UnnecessaryReturn" enabled="false" level="WARNING" enabled_by_default="false" />
-        <inspection_tool class="UnnecessaryUnboxing" enabled="false" level="WARNING" enabled_by_default="false" />
-        <inspection_tool class="UnusedAssignment" enabled="false" level="WARNING" enabled_by_default="false">
+        <inspection_tool class="UnnecessaryReturn" level="WARNING" enabled="false" />
+        <inspection_tool class="UnnecessaryUnboxing" level="WARNING" enabled="false" />
+        <inspection_tool class="UnusedAssignment" level="WARNING" enabled="false">
           <option name="REPORT_PREFIX_EXPRESSIONS" value="false" />
           <option name="REPORT_POSTFIX_EXPRESSIONS" value="true" />
           <option name="REPORT_REDUNDANT_INITIALIZER" value="true" />
         </inspection_tool>
-        <inspection_tool class="UnusedDeclaration" enabled="false" level="WARNING" enabled_by_default="false">
+        <inspection_tool class="UnusedDeclaration" level="WARNING" enabled="false">
           <option name="ADD_MAINS_TO_ENTRIES" value="true" />
           <option name="ADD_APPLET_TO_ENTRIES" value="true" />
           <option name="ADD_SERVLET_TO_ENTRIES" value="true" />
@@ -428,49 +430,50 @@
               <list size="0" />
             </value>
           </option>
-          <option name="ADD_TESTNG_TO_ENTRIES" value="true" />
+          <option name="ADD_EJB_TO_ENTRIES" value="true" />
           <option name="ADD_JUNIT_TO_ENTRIES" value="true" />
+          <option name="ADD_TESTNG_TO_ENTRIES" value="true" />
         </inspection_tool>
-        <inspection_tool class="UnusedParameters" enabled="false" level="WARNING" enabled_by_default="false" />
-        <inspection_tool class="UnusedReturnValue" enabled="false" level="WARNING" enabled_by_default="false" />
-        <inspection_tool class="WeakerAccess" enabled="false" level="WARNING" enabled_by_default="false">
+        <inspection_tool class="UnusedParameters" level="WARNING" enabled="false" />
+        <inspection_tool class="UnusedReturnValue" level="WARNING" enabled="false" />
+        <inspection_tool class="WeakerAccess" level="WARNING" enabled="false">
           <option name="SUGGEST_PACKAGE_LOCAL_FOR_MEMBERS" value="true" />
           <option name="SUGGEST_PACKAGE_LOCAL_FOR_TOP_CLASSES" value="true" />
           <option name="SUGGEST_PRIVATE_FOR_INNERS" value="false" />
         </inspection_tool>
-        <inspection_tool class="WhileCanBeForeach" enabled="false" level="WARNING" enabled_by_default="false" />
+        <inspection_tool class="WhileCanBeForeach" level="WARNING" enabled="false" />
       </profile>
       <profile version="1.0" is_locked="false">
         <option name="myName" value="Query methods" />
         <option name="myLocal" value="false" />
-        <inspection_tool class="CanBeFinal" enabled="false" level="WARNING" enabled_by_default="false">
+        <inspection_tool class="CanBeFinal" level="WARNING" enabled="false">
           <option name="REPORT_CLASSES" value="false" />
           <option name="REPORT_METHODS" value="false" />
           <option name="REPORT_FIELDS" value="true" />
         </inspection_tool>
-        <inspection_tool class="CheckEmptyScriptTag" enabled="false" level="WARNING" enabled_by_default="false" />
+        <inspection_tool class="CheckEmptyScriptTag" level="WARNING" enabled="false" />
         <inspection_tool class="CheckImageSize" level="WARNING" enabled="false" />
-        <inspection_tool class="CheckValidXmlInScriptTagBody" enabled="false" level="ERROR" enabled_by_default="false" />
-        <inspection_tool class="ClassEscapesItsScope" enabled="true" level="WARNING" enabled_by_default="true" />
-        <inspection_tool class="CloneCallsSuperClone" enabled="false" level="WARNING" enabled_by_default="false" />
-        <inspection_tool class="CloneDeclaresCloneNotSupported" enabled="false" level="WARNING" enabled_by_default="false" />
-        <inspection_tool class="ConstantConditions" enabled="true" level="ERROR" enabled_by_default="true">
+        <inspection_tool class="CheckValidXmlInScriptTagBody" level="ERROR" enabled="false" />
+        <inspection_tool class="ClassEscapesItsScope" level="WARNING" enabled="true" />
+        <inspection_tool class="CloneCallsSuperClone" level="WARNING" enabled="false" />
+        <inspection_tool class="CloneDeclaresCloneNotSupported" level="WARNING" enabled="false" />
+        <inspection_tool class="ConstantConditions" level="ERROR" enabled="true">
           <option name="SUGGEST_NULLABLE_ANNOTATIONS" value="false" />
           <option name="DONT_REPORT_TRUE_ASSERT_STATEMENTS" value="false" />
         </inspection_tool>
-        <inspection_tool class="DefaultFileTemplate" enabled="false" level="WARNING" enabled_by_default="false">
+        <inspection_tool class="DefaultFileTemplate" level="WARNING" enabled="false">
           <option name="CHECK_FILE_HEADER" value="true" />
           <option name="CHECK_TRY_CATCH_SECTION" value="true" />
           <option name="CHECK_METHOD_BODY" value="true" />
         </inspection_tool>
-        <inspection_tool class="EmptyMethod" enabled="false" level="WARNING" enabled_by_default="false" />
-        <inspection_tool class="FieldCanBeLocal" enabled="false" level="WARNING" enabled_by_default="false" />
-        <inspection_tool class="InstanceVariableNamingConvention" enabled="true" level="WARNING" enabled_by_default="true">
+        <inspection_tool class="EmptyMethod" level="WARNING" enabled="false" />
+        <inspection_tool class="FieldCanBeLocal" level="WARNING" enabled="false" />
+        <inspection_tool class="InstanceVariableNamingConvention" level="WARNING" enabled="true">
           <option name="m_regex" value="my[A-Z][A-Za-z_\d]*" />
           <option name="m_minLength" value="3" />
           <option name="m_maxLength" value="99" />
         </inspection_tool>
-        <inspection_tool class="JavaDoc" enabled="false" level="WARNING" enabled_by_default="false">
+        <inspection_tool class="JavaDoc" level="WARNING" enabled="false">
           <option name="TOP_LEVEL_CLASS_OPTIONS">
             <value>
               <option name="ACCESS_JAVADOC_REQUIRED_FOR" value="none" />
@@ -499,7 +502,7 @@
           <option name="IGNORE_JAVADOC_PERIOD" value="true" />
           <option name="myAdditionalJavadocTags" value="" />
         </inspection_tool>
-        <inspection_tool class="NullableProblems" enabled="true" level="ERROR" enabled_by_default="true">
+        <inspection_tool class="NullableProblems" level="ERROR" enabled="true">
           <option name="REPORT_NULLABLE_METHOD_OVERRIDES_NOTNULL" value="true" />
           <option name="REPORT_NOT_ANNOTATED_METHOD_OVERRIDES_NOTNULL" value="true" />
           <option name="REPORT_NOTNULL_PARAMETER_OVERRIDES_NULLABLE" value="true" />
@@ -508,27 +511,26 @@
           <option name="REPORT_NOT_ANNOTATED_SETTER_PARAMETER" value="true" />
           <option name="REPORT_ANNOTATION_NOT_PROPAGATED_TO_OVERRIDERS" value="true" />
         </inspection_tool>
-        <inspection_tool class="RedundantCast" enabled="false" level="WARNING" enabled_by_default="false" />
-        <inspection_tool class="RedundantThrows" enabled="false" level="WARNING" enabled_by_default="false" />
-        <inspection_tool class="RequiredAttributes" enabled="false" level="WARNING" enabled_by_default="false">
+        <inspection_tool class="RedundantCast" level="WARNING" enabled="false" />
+        <inspection_tool class="RedundantThrows" level="WARNING" enabled="false" />
+        <inspection_tool class="RequiredAttributes" level="WARNING" enabled="false">
           <option name="myAdditionalRequiredHtmlAttributes" value="" />
         </inspection_tool>
-        <inspection_tool class="SameParameterValue" enabled="false" level="WARNING" enabled_by_default="false" />
-        <inspection_tool class="SameReturnValue" enabled="false" level="WARNING" enabled_by_default="false" />
-        <inspection_tool class="SimplifiableIfStatement" enabled="false" level="WARNING" enabled_by_default="false" />
-        <inspection_tool class="StaticVariableNamingConvention" enabled="true" level="WARNING" enabled_by_default="true">
-          <option name="checkMutableFinals" value="false" />
+        <inspection_tool class="SameParameterValue" level="WARNING" enabled="false" />
+        <inspection_tool class="SameReturnValue" level="WARNING" enabled="false" />
+        <inspection_tool class="SimplifiableIfStatement" level="WARNING" enabled="false" />
+        <inspection_tool class="StaticVariableNamingConvention" level="WARNING" enabled="true">
           <option name="m_regex" value="our[A-Z][A-Za-z\d]*" />
           <option name="m_minLength" value="2" />
           <option name="m_maxLength" value="99" />
         </inspection_tool>
-        <inspection_tool class="SuspiciousNameCombination" enabled="false" level="WARNING" enabled_by_default="false">
+        <inspection_tool class="SuspiciousNameCombination" level="WARNING" enabled="false">
           <group names="x,width,left,right" />
           <group names="y,height,top,bottom" />
         </inspection_tool>
-        <inspection_tool class="TrivialIf" enabled="false" level="WARNING" enabled_by_default="false" />
-        <inspection_tool class="UNCHECKED_WARNING" enabled="false" level="WARNING" enabled_by_default="false" />
-        <inspection_tool class="UNUSED_SYMBOL" enabled="true" level="WARNING" enabled_by_default="true">
+        <inspection_tool class="TrivialIf" level="WARNING" enabled="false" />
+        <inspection_tool class="UNCHECKED_WARNING" level="WARNING" enabled="false" />
+        <inspection_tool class="UNUSED_SYMBOL" level="WARNING" enabled="true">
           <option name="LOCAL_VARIABLE" value="true" />
           <option name="FIELD" value="true" />
           <option name="METHOD" value="true" />
@@ -541,12 +543,12 @@
             </value>
           </option>
         </inspection_tool>
-        <inspection_tool class="UnnecessaryLocalVariable" enabled="false" level="WARNING" enabled_by_default="false">
+        <inspection_tool class="UnnecessaryLocalVariable" level="WARNING" enabled="false">
           <option name="m_ignoreImmediatelyReturnedVariables" value="false" />
           <option name="m_ignoreAnnotatedVariables" value="false" />
         </inspection_tool>
-        <inspection_tool class="UnnecessaryReturn" enabled="false" level="WARNING" enabled_by_default="false" />
-        <inspection_tool class="UnusedDeclaration" enabled="false" level="WARNING" enabled_by_default="false">
+        <inspection_tool class="UnnecessaryReturn" level="WARNING" enabled="false" />
+        <inspection_tool class="UnusedDeclaration" level="WARNING" enabled="false">
           <option name="ADD_MAINS_TO_ENTRIES" value="true" />
           <option name="ADD_APPLET_TO_ENTRIES" value="true" />
           <option name="ADD_SERVLET_TO_ENTRIES" value="true" />
@@ -556,21 +558,19 @@
               <list size="0" />
             </value>
           </option>
-          <option name="ADD_TESTNG_TO_ENTRIES" value="true" />
+          <option name="ADD_EJB_TO_ENTRIES" value="true" />
           <option name="ADD_JUNIT_TO_ENTRIES" value="true" />
+          <option name="ADD_TESTNG_TO_ENTRIES" value="true" />
         </inspection_tool>
-        <inspection_tool class="UnusedParameters" enabled="false" level="WARNING" enabled_by_default="false" />
-        <inspection_tool class="UnusedReturnValue" enabled="false" level="WARNING" enabled_by_default="false" />
-        <inspection_tool class="WeakerAccess" enabled="false" level="WARNING" enabled_by_default="false">
+        <inspection_tool class="UnusedParameters" level="WARNING" enabled="false" />
+        <inspection_tool class="UnusedReturnValue" level="WARNING" enabled="false" />
+        <inspection_tool class="WeakerAccess" level="WARNING" enabled="false">
           <option name="SUGGEST_PACKAGE_LOCAL_FOR_MEMBERS" value="true" />
           <option name="SUGGEST_PACKAGE_LOCAL_FOR_TOP_CLASSES" value="true" />
           <option name="SUGGEST_PRIVATE_FOR_INNERS" value="false" />
         </inspection_tool>
       </profile>
     </profiles>
-    <option name="PROJECT_PROFILE" value="Default" />
-    <option name="USE_PROJECT_PROFILE" value="true" />
-    <version value="1.0" />
     <list size="5">
       <item index="0" class="java.lang.String" itemvalue="SERVER PROBLEM" />
       <item index="1" class="java.lang.String" itemvalue="INFO" />
@@ -741,6 +741,7 @@
   <component name="ProjectDetails">
     <option name="projectName" value="MPS" />
   </component>
+  <component name="ProjectFileVersion" converted="true" />
   <component name="ProjectKey">
     <option name="state" value="http://svn.jetbrains.org/mps/trunk/MPS/MPS.ipr" />
   </component>
@@ -774,7 +775,6 @@
       <module fileurl="file://$PROJECT_DIR$/core/baseLanguage/classifiers/classifiers.iml" filepath="$PROJECT_DIR$/core/baseLanguage/classifiers/classifiers.iml" group="core/baseLanguage" />
       <module fileurl="file://$PROJECT_DIR$/core/baseLanguage/collections/collections.iml" filepath="$PROJECT_DIR$/core/baseLanguage/collections/collections.iml" group="core/baseLanguage/collections" />
       <module fileurl="file://$PROJECT_DIR$/core/baseLanguage/collections/runtime/collections-runtime.iml" filepath="$PROJECT_DIR$/core/baseLanguage/collections/runtime/collections-runtime.iml" group="core/baseLanguage/collections" />
-<!--      <module fileurl="file://$PROJECT_DIR$/core/baseLanguage/collections/languages/trove/collections-trove.iml" filepath="$PROJECT_DIR$/core/baseLanguage/collections/languages/trove/collections-trove.iml" group="core/baseLanguage/collections" />-->
       <module fileurl="file://$PROJECT_DIR$/core/languageDesign/constraints/constraints.iml" filepath="$PROJECT_DIR$/core/languageDesign/constraints/constraints.iml" group="core/languageDesign" />
       <module fileurl="file://$PROJECT_DIR$/core/languageDesign/core/core.iml" filepath="$PROJECT_DIR$/core/languageDesign/core/core.iml" group="core/languageDesign" />
       <module fileurl="file://$PROJECT_DIR$/core/devkits/core-devkits.iml" filepath="$PROJECT_DIR$/core/devkits/core-devkits.iml" group="core" />
@@ -847,8 +847,7 @@
     <output url="file://$PROJECT_DIR$/classes" />
   </component>
   <component name="ProjectRunConfigurationManager">
-    <configuration default="false" name="Profiling" type="Application" factoryName="Application">
-      <extension name="snapshooter" />
+    <configuration default="false" name="Profiling" type="Application" factoryName="Application" enabled="false" merge="false" runner="emma">
       <option name="MAIN_CLASS_NAME" value="jetbrains.mps.Launcher" />
       <option name="VM_PARAMETERS" value="-ea -Xmx1024m -Xss1024k -XX:MaxPermSize=92m -XX:+UseConcMarkSweepGC  -XX:+CMSClassUnloadingEnabled -Dmps.internal=true -agentlib:yjpagent " />
       <option name="PROGRAM_PARAMETERS" value="" />
@@ -873,8 +872,7 @@
       <ConfigurationWrapper RunnerId="Run" />
       <method />
     </configuration>
-    <configuration default="false" name="TraverseUI" type="Application" factoryName="Application">
-      <extension name="snapshooter" />
+    <configuration default="false" name="TraverseUI" type="Application" factoryName="Application" enabled="false" merge="false" runner="emma">
       <option name="MAIN_CLASS_NAME" value="jetbrains.mps.Launcher" />
       <option name="VM_PARAMETERS" value="-ea -Xmx1024m -XX:MaxPermSize=92m -Xss1024k -Dmps.internal=true " />
       <option name="PROGRAM_PARAMETERS" value="traverseUI $PROJECT_DIR$/core/kernel/source/search/searchableOptions.xml" />
@@ -899,8 +897,7 @@
       <ConfigurationWrapper RunnerId="Run" />
       <method />
     </configuration>
-    <configuration default="false" name="MPSLauncher" type="Application" factoryName="Application">
-      <extension name="snapshooter" />
+    <configuration default="false" name="MPSLauncher" type="Application" factoryName="Application" enabled="false" merge="false" runner="emma">
       <option name="MAIN_CLASS_NAME" value="jetbrains.mps.Launcher" />
       <option name="VM_PARAMETERS" value="-client -ea -Xmx1024m -Xss1024k -XX:PermSize=92m -Dmps.internal=true -XX:+HeapDumpOnOutOfMemoryError " />
       <option name="PROGRAM_PARAMETERS" value="" />

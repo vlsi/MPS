@@ -29069,7 +29069,7 @@
   </node>
   <node type="jetbrains.mps.lang.plugin.structure.ActionDeclaration" id="1184058066016372945">
     <property name="name" value="NewCheckModel" />
-    <property name="caption" value="[new] Check Model" />
+    <property name="caption" value="Check Model [new]" />
     <property name="description" value="Check model for unresolved references and typesystem rules" />
     <property name="package" value="Menu.ProjectPane.Model.Actions" />
     <property name="outsideCommandExecution" value="true" />
@@ -29225,12 +29225,17 @@
             </node>
             <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="8809659620622782905">
               <link role="baseMethodDeclaration" targetNodeId="100.~Presentation.setText(java.lang.String):void" resolveInfo="setText" />
-              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="8809659620622782907">
-                <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="8809659620622782906">
-                  <property name="value" value="[new] Check " />
+              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="4293835613809266125">
+                <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="4293835613809266128">
+                  <property name="value" value=" [new]" />
                 </node>
-                <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1620774175927021444">
-                  <link role="variableDeclaration" targetNodeId="1620774175927021350" resolveInfo="whatToCheck" />
+                <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="8809659620622782907">
+                  <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="8809659620622782906">
+                    <property name="value" value="Check " />
+                  </node>
+                  <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1620774175927021444">
+                    <link role="variableDeclaration" targetNodeId="1620774175927021350" resolveInfo="whatToCheck" />
+                  </node>
                 </node>
               </node>
             </node>
@@ -33806,7 +33811,7 @@
     <property name="package" value="Menu.ProjectPane.Module.Solution.Actions" />
     <property name="name" value="NewCheckSolution" />
     <property name="outsideCommandExecution" value="true" />
-    <property name="caption" value="[new] Check Solution" />
+    <property name="caption" value="Check Solution [new]" />
     <property name="description" value="Check solution for unresolved references and typesystem rules" />
     <node role="executeFunction" type="jetbrains.mps.lang.plugin.structure.ExecuteBlock" id="15694154535889462">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="15694154535889463">
@@ -33960,12 +33965,17 @@
             </node>
             <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="7904041127993687294">
               <link role="baseMethodDeclaration" targetNodeId="100.~Presentation.setText(java.lang.String):void" resolveInfo="setText" />
-              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="7904041127993687295">
-                <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="7904041127993687296">
-                  <property name="value" value="[new] Check " />
+              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="4293835613809266133">
+                <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="4293835613809266136">
+                  <property name="value" value=" [new]" />
                 </node>
-                <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="7904041127993687297">
-                  <link role="variableDeclaration" targetNodeId="7904041127993687267" resolveInfo="whatToCheck" />
+                <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="7904041127993687295">
+                  <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="7904041127993687296">
+                    <property name="value" value="Check " />
+                  </node>
+                  <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="7904041127993687297">
+                    <link role="variableDeclaration" targetNodeId="7904041127993687267" resolveInfo="whatToCheck" />
+                  </node>
                 </node>
               </node>
             </node>
@@ -33978,7 +33988,7 @@
     <property name="package" value="Menu.ProjectPane.Module.Language.Actions" />
     <property name="name" value="NewCheckLanguage" />
     <property name="outsideCommandExecution" value="true" />
-    <property name="caption" value="[new] Check Language" />
+    <property name="caption" value="Check Language [new]" />
     <property name="description" value="Check language for unresolved references and typesystem rules" />
     <node role="parameter" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterDeclaration" id="15694154535889650">
       <property name="name" value="module" />
@@ -34132,12 +34142,17 @@
             </node>
             <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="7904041127993687423">
               <link role="baseMethodDeclaration" targetNodeId="100.~Presentation.setText(java.lang.String):void" resolveInfo="setText" />
-              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="7904041127993687424">
-                <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="7904041127993687425">
-                  <property name="value" value="[new] Check " />
+              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="4293835613809266129">
+                <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="4293835613809266132">
+                  <property name="value" value=" [new]" />
                 </node>
-                <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="7904041127993687426">
-                  <link role="variableDeclaration" targetNodeId="7904041127993687396" resolveInfo="whatToCheck" />
+                <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="7904041127993687424">
+                  <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="7904041127993687425">
+                    <property name="value" value="Check " />
+                  </node>
+                  <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="7904041127993687426">
+                    <link role="variableDeclaration" targetNodeId="7904041127993687396" resolveInfo="whatToCheck" />
+                  </node>
                 </node>
               </node>
             </node>
@@ -34150,7 +34165,7 @@
     <property name="package" value="Menu.ProjectPane.Project.Actions" />
     <property name="name" value="NewCheckProject" />
     <property name="outsideCommandExecution" value="true" />
-    <property name="caption" value="[new] Check Project" />
+    <property name="caption" value="Check Project [new]" />
     <property name="description" value="Check project for unresolved references and typesystem rules" />
     <node role="parameter" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterDeclaration" id="4138166813471636726">
       <property name="name" value="mpsProject" />
