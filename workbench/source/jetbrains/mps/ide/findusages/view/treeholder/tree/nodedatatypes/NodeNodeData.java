@@ -30,6 +30,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.lang.core.behavior.BaseConcept_Behavior;
 import org.jdom.Element;
+import org.apache.commons.lang.StringEscapeUtils;
 
 import javax.swing.Icon;
 import java.util.List;
@@ -99,7 +100,7 @@ public class NodeNodeData extends BaseNodeData {
         try {
           String presentation = BaseConcept_Behavior.call_getPresentation_1213877396640(node);
           String result = (presentation != null) ? presentation : node.toString();
-          result = textStringToHtml(result);
+          result = StringEscapeUtils.escapeHtml(result);
           return result;
         } catch (Throwable t) {
           LOG.error(t);
@@ -109,26 +110,13 @@ public class NodeNodeData extends BaseNodeData {
     });
   }
 
-  private static String textStringToHtml(String text) {
-    StringBuffer buffer = new StringBuffer();
-    if (text == null) return "";
-    for (char c : text.toCharArray()) {
-      if (c == '<') buffer.append("&lt;");
-      else if (c == '>') buffer.append("&gt;");
-      else if (c == '"') buffer.append("&quot;");
-      else if (c == '&') buffer.append("&amp;");
-      else buffer.append(c);
-    }
-    return buffer.toString();
-  }
-
   public static String nodeAdditionalInfo(final SNode node) {
     return ModelAccess.instance().runReadAction(new Computable<String>() {
       public String compute() {
         if (node.getParent() == null) return "";
         return "role: " +
           "<i>" +
-          textStringToHtml(node.getRole_()) +
+          StringEscapeUtils.escapeHtml(node.getRole_()) +
           "</i>" +
           "; " +
           "in: " +
