@@ -19,5 +19,7 @@ public class DebugInfoInitializer_CustomApplicationPlugin extends BaseCustomAppl
     manager.addDebuggableConcept(INamedConcept_Behavior.call_getFqName_1213877404258(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.Statement")));
     manager.addDebuggableConcept(INamedConcept_Behavior.call_getFqName_1213877404258(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.FieldDeclaration")));
     manager.addDebuggableConcept(INamedConcept_Behavior.call_getFqName_1213877404258(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration")));
+    manager.addDebuggableConcept(INamedConcept_Behavior.call_getFqName_1213877404258(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration")));
+    manager.addDebuggableConcept(INamedConcept_Behavior.call_getFqName_1213877404258(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.ConceptFunction")));
   }
 }

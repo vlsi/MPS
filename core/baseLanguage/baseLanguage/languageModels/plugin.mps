@@ -42940,6 +42940,42 @@
             </node>
           </node>
         </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="3532954745747750102">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="3532954745747750103">
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="3532954745747750104">
+              <link role="variableDeclaration" targetNodeId="285579880473330391" resolveInfo="manager" />
+            </node>
+            <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="3532954745747750105">
+              <link role="baseMethodDeclaration" targetNodeId="133.~DebugInfoManager.addDebuggableConcept(java.lang.String):void" resolveInfo="addDebuggableConcept" />
+              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="3532954745747750106">
+                <node role="operand" type="jetbrains.mps.lang.smodel.structure.ConceptRefExpression" id="3532954745747750107">
+                  <link role="conceptDeclaration" targetNodeId="1.1068580123132" resolveInfo="BaseMethodDeclaration" />
+                </node>
+                <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="3532954745747750108">
+                  <link role="baseMethodDeclaration" targetNodeId="48.1213877404258" resolveInfo="getFqName" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="2453909292239467553">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="2453909292239467554">
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="2453909292239467555">
+              <link role="variableDeclaration" targetNodeId="285579880473330391" resolveInfo="manager" />
+            </node>
+            <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="2453909292239467556">
+              <link role="baseMethodDeclaration" targetNodeId="133.~DebugInfoManager.addDebuggableConcept(java.lang.String):void" resolveInfo="addDebuggableConcept" />
+              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="2453909292239467557">
+                <node role="operand" type="jetbrains.mps.lang.smodel.structure.ConceptRefExpression" id="2453909292239467558">
+                  <link role="conceptDeclaration" targetNodeId="1.1137021947720" resolveInfo="ConceptFunction" />
+                </node>
+                <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="2453909292239467559">
+                  <link role="baseMethodDeclaration" targetNodeId="48.1213877404258" resolveInfo="getFqName" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
       </node>
     </node>
   </node>

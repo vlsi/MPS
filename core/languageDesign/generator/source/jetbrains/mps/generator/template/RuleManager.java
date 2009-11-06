@@ -160,6 +160,7 @@ public class RuleManager {
           // keep track of 'original input node'
           if (inputNode.getModel() == myGenerator.getGeneratorSessionContext().getOriginalInputModel()) {
             outputNodes.get(0).putUserObject(TemplateQueryContext.ORIGINAL_INPUT_NODE, inputNode);
+            outputNodes.get(0).putUserObject(TemplateQueryContext.ORIGINAL_DEBUG_NODE, inputNode);
           }
         }
         return outputNodes;

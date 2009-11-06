@@ -194,7 +194,7 @@ public class FileGenerationManager implements ApplicationComponent {
     for (SNode out : positions.keySet()) {
       SNode input = out;
       while (input != null && (input.getModel().getModelDescriptor() == null || input.getModel().getModelDescriptor().isTransient())) {
-        input = (SNode) input.getUserObject(TemplateQueryContext.ORIGINAL_INPUT_NODE);
+        input = (SNode) input.getUserObject(TemplateQueryContext.ORIGINAL_DEBUG_NODE);
       }
 
       if (input != null) {

@@ -47,6 +47,7 @@ public class CloneUtil {
     // keep track of 'original input node'
     if (originalInput) {
       outputNode.putUserObject(TemplateQueryContext.ORIGINAL_INPUT_NODE, inputNode);
+      outputNode.putUserObject(TemplateQueryContext.ORIGINAL_DEBUG_NODE, inputNode);
     }
     for (SReference reference : inputNode.getReferencesArray()) {
       SModelReference targetModelReference = reference.isExternal() ? reference.getTargetSModelReference() : outputModel.getSModelReference();
