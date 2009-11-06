@@ -7,17 +7,17 @@ import jetbrains.mps.ide.findusages.view.UsagesView;
 import jetbrains.mps.project.MPSProject;
 import java.awt.BorderLayout;
 import jetbrains.mps.ide.findusages.view.treeholder.treeview.ViewOptions;
+import com.intellij.openapi.progress.ProgressManager;
+import com.intellij.openapi.progress.Task;
+import com.intellij.openapi.project.Project;
+import org.jetbrains.annotations.NotNull;
+import com.intellij.openapi.progress.ProgressIndicator;
 import jetbrains.mps.ide.findusages.model.IResultProvider;
 import jetbrains.mps.ide.findusages.view.FindUtils;
 import java.util.Arrays;
 import jetbrains.mps.ide.findusages.model.SearchQuery;
 import jetbrains.mps.ide.findusages.model.SearchResults;
 import jetbrains.mps.smodel.SModelDescriptor;
-import com.intellij.openapi.progress.ProgressManager;
-import com.intellij.openapi.progress.Task;
-import com.intellij.openapi.project.Project;
-import org.jetbrains.annotations.NotNull;
-import com.intellij.openapi.progress.ProgressIndicator;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.project.IModule;
@@ -68,7 +68,13 @@ public class ModelCheckerViewer extends JPanel {
     this.add(this.myUsagesView.getComponent());
   }
 
-  public boolean saveCheckerResults() {
+  private boolean checkSomething(String title, final ModelCheckerViewer.CheckingTask checker) {
+    ProgressManager.getInstance().run(new Task.Modal(this.myProject.getComponent(Project.class), title, true) {
+      public void run(@NotNull ProgressIndicator indicator) {
+        ModelCheckerViewer.this.myLastResults = checker.check(indicator);
+      }
+    });
+
     if (this.myLastResults == null) {
       // Checking was cancelled 
       return false;
@@ -84,53 +90,43 @@ public class ModelCheckerViewer extends JPanel {
   }
 
   public boolean checkModel(final SModelDescriptor modelDescriptor) {
-    ProgressManager.getInstance().run(new Task.Modal(this.myProject.getComponent(Project.class), "Checking " + modelDescriptor.getLongName(), true) {
-      public void run(@NotNull ProgressIndicator indicator) {
-        ModelCheckerViewer.this.myLastResults = ModelCheckerResultsFinder.checkModelAndGetResults(modelDescriptor, indicator);
+    return this.checkSomething("Checking " + modelDescriptor.getLongName(), new ModelCheckerViewer.CheckingTask() {
+      public ModelCheckerResults check(@NotNull ProgressIndicator indicator) {
+        return ModelCheckerResultsFinder.checkModelAndGetResults(modelDescriptor, indicator);
       }
     });
-
-    return this.saveCheckerResults();
   }
 
   public boolean checkModels(final List<SModelDescriptor> modelDescriptors) {
-    ProgressManager.getInstance().run(new Task.Modal(this.myProject.getComponent(Project.class), "Checking " + ListSequence.fromList(modelDescriptors).count() + " models", true) {
-      public void run(@NotNull ProgressIndicator indicator) {
-        ModelCheckerViewer.this.myLastResults = ModelCheckerResultsFinder.checkModelsAndGetResults(modelDescriptors, indicator);
+    return this.checkSomething("Checking " + ListSequence.fromList(modelDescriptors).count() + " models", new ModelCheckerViewer.CheckingTask() {
+      public ModelCheckerResults check(@NotNull ProgressIndicator indicator) {
+        return ModelCheckerResultsFinder.checkModelsAndGetResults(modelDescriptors, indicator);
       }
     });
-
-    return this.saveCheckerResults();
   }
 
   public boolean checkModule(final IModule module) {
-    ProgressManager.getInstance().run(new Task.Modal(this.myProject.getComponent(Project.class), "Checking " + module.getModuleFqName(), true) {
-      public void run(@NotNull ProgressIndicator indicator) {
-        ModelCheckerViewer.this.myLastResults = ModelCheckerResultsFinder.checkModuleAndGetResults(module, indicator);
+    return this.checkSomething("Checking " + module.getModuleFqName(), new ModelCheckerViewer.CheckingTask() {
+      public ModelCheckerResults check(@NotNull ProgressIndicator indicator) {
+        return ModelCheckerResultsFinder.checkModuleAndGetResults(module, indicator);
       }
     });
-
-    return this.saveCheckerResults();
   }
 
   public boolean checkModules(final List<IModule> modules) {
-    ProgressManager.getInstance().run(new Task.Modal(this.myProject.getComponent(Project.class), "Checking " + ListSequence.fromList(modules).count() + " modules", true) {
-      public void run(@NotNull ProgressIndicator indicator) {
-        ModelCheckerViewer.this.myLastResults = ModelCheckerResultsFinder.checkModulesAndGetResults(modules, indicator);
+    return this.checkSomething("Checking " + ListSequence.fromList(modules).count() + " modules", new ModelCheckerViewer.CheckingTask() {
+      public ModelCheckerResults check(@NotNull ProgressIndicator indicator) {
+        return ModelCheckerResultsFinder.checkModulesAndGetResults(modules, indicator);
       }
     });
-
-    return this.saveCheckerResults();
   }
 
   public boolean checkProject(final MPSProject mpsProject) {
-    ProgressManager.getInstance().run(new Task.Modal(this.myProject.getComponent(Project.class), "Checking " + mpsProject.getProjectDescriptor().getName(), true) {
-      public void run(@NotNull ProgressIndicator indicator) {
-        ModelCheckerViewer.this.myLastResults = ModelCheckerResultsFinder.checkProjectAndGetResults(mpsProject, indicator);
+    return this.checkSomething("Checking " + mpsProject.getProjectDescriptor().getName(), new ModelCheckerViewer.CheckingTask() {
+      public ModelCheckerResults check(@NotNull ProgressIndicator indicator) {
+        return ModelCheckerResultsFinder.checkProjectAndGetResults(mpsProject, indicator);
       }
     });
-
-    return this.saveCheckerResults();
   }
 
   private static IFinder getFinderFromModelCheckerResults(final ModelCheckerResults results) {
@@ -148,11 +144,18 @@ public class ModelCheckerViewer extends JPanel {
     };
   }
 
+  public static interface CheckingTask {
+    public ModelCheckerResults check(@NotNull ProgressIndicator indicator);
+  }
+
   public static class MyNodeRepresentator implements INodeRepresentator {
     private static final String NODE = "node";
     private static final String NODE_REFERENCE = "reference";
     private static final String STATUS = "status";
     private static final String MESSAGE = "message";
+    private static final String CATEGORY_ERROR = "ERROR";
+    private static final String CATEGORY_WARNING = "WARNING";
+    private static final String CATEGORY_OK = "OK";
 
     private Map<SNodeId, ModelCheckerResults.Result> myCheckerResultForNode = MapSequence.fromMap(new HashMap<SNodeId, ModelCheckerResults.Result>());
 
@@ -182,22 +185,22 @@ public class ModelCheckerViewer extends JPanel {
         )) + ")";
       }
       String categoryRepr = "";
-      if (category.equals("ERROR")) {
+      if (category.equals(CATEGORY_ERROR)) {
         categoryRepr = "Errors";
-      } else if (category.equals("WARNING")) {
+      } else if (category.equals(CATEGORY_WARNING)) {
         categoryRepr = "Warnings";
-      } else if (category.equals("OK")) {
+      } else if (category.equals(CATEGORY_OK)) {
         categoryRepr = "Infos";
       }
       return "<strong>" + categoryRepr + counter + "</strong>";
     }
 
     public Icon getCategoryIcon(String category) {
-      if (category.equals("ERROR")) {
+      if (category.equals(CATEGORY_ERROR)) {
         return jetbrains.mps.ide.messages.Icons.ERROR_ICON;
-      } else if (category.equals("WARNING")) {
+      } else if (category.equals(CATEGORY_WARNING)) {
         return jetbrains.mps.ide.messages.Icons.WARNING_ICON;
-      } else if (category.equals("OK")) {
+      } else if (category.equals(CATEGORY_OK)) {
         return jetbrains.mps.ide.messages.Icons.INFORMATION_ICON;
       }
       return jetbrains.mps.ide.messages.Icons.ERROR_ICON;
