@@ -1619,6 +1619,25 @@
       <node role="returnType" type="jetbrains.mps.baseLanguage.structure.BooleanType" id="1232982698926" />
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1232982704193" />
     </node>
+    <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="5014346297260520836">
+      <property name="name" value="getNearestOverriddenMethod" />
+      <property name="isVirtual" value="true" />
+      <link role="overriddenMethod" targetNodeId="4.5358895268254685434" resolveInfo="getNearestOverriddenMethod" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="5014346297260520837" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="5014346297260520838">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="5014346297260520849">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="5014346297260520845">
+            <node role="operand" type="jetbrains.mps.lang.behavior.structure.ThisNodeExpression" id="5014346297260520853" />
+            <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="5014346297260520848">
+              <link role="link" targetNodeId="1.1225194472831" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="returnType" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="5014346297260520839">
+        <link role="concept" targetNodeId="5.1068580123132" resolveInfo="BaseMethodDeclaration" />
+      </node>
+    </node>
     <node role="constructor" type="jetbrains.mps.lang.behavior.structure.ConceptConstructorDeclaration" id="1225196404066">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1225196404067" />
     </node>
