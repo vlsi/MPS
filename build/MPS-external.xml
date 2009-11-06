@@ -321,6 +321,7 @@
     <antcall target="MPS-languages.pack.jetbrains.mps.bash0" />
     <antcall target="MPS-languages.pack.jetbrains.mps.baseLanguage.regexp0" />
     <antcall target="MPS-languages.pack.jetbrains.mps.baseLanguage.regexp.examples0" />
+    <antcall target="MPS-languages.pack.jetbrains.mps.baseLanguage.methodExtension0" />
     <antcall target="MPS-languages.pack.jetbrains.mps.uiLanguage0" />
     <antcall target="MPS-languages.pack.jetbrains.mps.xml0" />
     <antcall target="MPS-languages.pack.jetbrains.mps.xml.deprecated0" />

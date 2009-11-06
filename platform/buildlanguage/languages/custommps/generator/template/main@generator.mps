@@ -2203,6 +2203,10 @@
             <property name="id" value="c23bca8e-629a-4cd7-84b4-411b6024469f" />
             <property name="name" value="jetbrains.mps.baseLanguage.regexp.examples" />
           </node>
+          <node role="entry" type="jetbrains.mps.build.custommpsInternal.structure.MPSModule" id="6652901388830910514">
+            <property name="id" value="5dc5fc0d-37ef-4782-8192-8b5ce1f69f80" />
+            <property name="name" value="jetbrains.mps.baseLanguage.methodExtension" />
+          </node>
           <node role="entry" type="jetbrains.mps.build.custommpsInternal.structure.MPSModule" id="1237557075815">
             <property name="id" value="5d6bee4c-f891-4a93-a0c9-e2268726ae47" />
             <property name="name" value="jetbrains.mps.uiLanguage" />

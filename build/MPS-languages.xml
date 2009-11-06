@@ -831,6 +831,19 @@
       <zipfileset dir="platform/regexp/solutions/jetbrains.mps.regexp.examples/classes_gen" />
     </jar>
   </target>
+  <target name="pack.jetbrains.mps.baseLanguage.methodExtension0">
+    <mkdir dir="platform/extensionMethod/classes" />
+    <mkdir dir="platform/extensionMethod/source_gen.caches" />
+    <jar destfile="${deploy.dir}/MPS/platform/jetbrains.mps.baseLanguage.methodExtension.mpsarch.jar" compress="true" duplicate="preserve" filesonly="true">
+      <zipfileset file="platform/extensionMethod/methodExtension.mpl" prefix="module" />
+      <zipfileset dir="platform/extensionMethod/source_gen.caches" prefix="source_gen.caches" />
+      <zipfileset dir="platform/extensionMethod" excludes="**/*.iml, **/*.java, **/*.class, **/*.mpr, **/*.mws, **/*.mpl, **/*.msd, **/*.devkit, **/*.ipr" prefix="module" />
+      <zipfileset dir="platform/extensionMethod/classes" />
+    </jar>
+    <jar destfile="${deploy.dir}/MPS/platform/jetbrains.mps.baseLanguage.methodExtension.runtime.jar" duplicate="preserve" filesonly="true">
+      <fileset dir="platform/extensionMethod/classes" />
+    </jar>
+  </target>
   <target name="pack.jetbrains.mps.uiLanguage0">
     <mkdir dir="platform/uiLanguage/classes" />
     <mkdir dir="platform/uiLanguage/runtime/classes" />
