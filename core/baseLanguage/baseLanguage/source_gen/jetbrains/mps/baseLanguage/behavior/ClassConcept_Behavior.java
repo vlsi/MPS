@@ -14,9 +14,10 @@ import jetbrains.mps.baseLanguage.search.ClassifierAndSuperClassifiersScope;
 import jetbrains.mps.baseLanguage.structure.ClassConcept;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.baseLanguage.search.IClassifiersSearchScope;
-import jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.BaseAdapter;
+import jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptPropertyOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
 
 public class ClassConcept_Behavior {
@@ -61,7 +62,11 @@ public class ClassConcept_Behavior {
     ClassifierAndSuperClassifiersScope scope = new ClassifierAndSuperClassifiersScope(((ClassConcept)SNodeOperations.getAdapter(thisNode)), IClassifiersSearchScope.INSTANCE_METHOD);
     // todo do not show already implemented methods 
     for (SNode method : scope.getNodes()) {
-      if (!(scope.getOverriddenMethods(((InstanceMethodDeclaration)SNodeOperations.getAdapter(method))).isEmpty())) {
+      boolean isOverridden = false;
+      for (SNode overridingMethod : BaseAdapter.toNodes(scope.getOverriddenMethods(((InstanceMethodDeclaration)SNodeOperations.getAdapter(method))))) {
+        isOverridden = isOverridden || (SNodeOperations.isInstanceOf(overridingMethod, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration") && SConceptPropertyOperations.getBoolean(SNodeOperations.cast(overridingMethod, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration"), "abstract"));
+      }
+      if (isOverridden) {
         continue;
       }
 

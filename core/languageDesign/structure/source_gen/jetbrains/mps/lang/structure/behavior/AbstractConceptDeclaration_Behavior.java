@@ -270,7 +270,7 @@ public class AbstractConceptDeclaration_Behavior {
         if (SPropertyOperations.getBoolean(method, "isAbstract")) {
           ListSequence.fromList(abstractMethods).addElement(method);
         }
-        if (SLinkOperations.getTarget(method, "overriddenMethod", false) != null) {
+        if (SLinkOperations.getTarget(method, "overriddenMethod", false) != null && !(SPropertyOperations.getBoolean(method, "isAbstract"))) {
           ListSequence.fromList(implementedMethods).addElement(SLinkOperations.getTarget(method, "overriddenMethod", false));
         }
       }

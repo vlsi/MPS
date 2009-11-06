@@ -6990,30 +6990,86 @@
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ForeachStatement" id="1221637921582">
           <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1221637921583">
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="3757565579206937279">
+              <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="3757565579206937280">
+                <property name="name" value="isOverridden" />
+                <node role="type" type="jetbrains.mps.baseLanguage.structure.BooleanType" id="3757565579206937281" />
+                <node role="initializer" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="3757565579206937283">
+                  <property name="value" value="false" />
+                </node>
+              </node>
+            </node>
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ForeachStatement" id="3757565579207015518">
+              <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="3757565579206937264">
+                <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="3757565579206937293">
+                  <node role="expression" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression" id="3757565579206937298">
+                    <node role="rValue" type="jetbrains.mps.baseLanguage.structure.OrExpression" id="3757565579206937302">
+                      <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.ParenthesizedExpression" id="3757565579206937305">
+                        <node role="expression" type="jetbrains.mps.baseLanguage.structure.AndExpression" id="3757565579206937315">
+                          <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="3757565579206937321">
+                            <node role="operand" type="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" id="3757565579206937319">
+                              <link role="concept" targetNodeId="1.1068580123165" resolveInfo="InstanceMethodDeclaration" />
+                              <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="3757565579207015593">
+                                <link role="variableDeclaration" targetNodeId="3757565579207015546" resolveInfo="overridingMethod" />
+                              </node>
+                            </node>
+                            <node role="operation" type="jetbrains.mps.lang.smodel.structure.SConceptPropertyAccess" id="3757565579206937325">
+                              <link role="conceptProperty" targetNodeId="19.1137473854053" resolveInfo="abstract" />
+                            </node>
+                          </node>
+                          <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="3757565579206937308">
+                            <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="3757565579207015549">
+                              <link role="variableDeclaration" targetNodeId="3757565579207015546" resolveInfo="overridingMethod" />
+                            </node>
+                            <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation" id="3757565579206937312">
+                              <node role="conceptArgument" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" id="3757565579206937314">
+                                <link role="conceptDeclaration" targetNodeId="1.1068580123165" resolveInfo="InstanceMethodDeclaration" />
+                              </node>
+                            </node>
+                          </node>
+                        </node>
+                      </node>
+                      <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="3757565579206937301">
+                        <link role="variableDeclaration" targetNodeId="3757565579206937280" resolveInfo="isOverridden" />
+                      </node>
+                    </node>
+                    <node role="lValue" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="3757565579206937294">
+                      <link role="variableDeclaration" targetNodeId="3757565579206937280" resolveInfo="isOverridden" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+              <node role="variable" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="3757565579207015546">
+                <property name="name" value="overridingMethod" />
+                <node role="type" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="3757565579207015563">
+                  <link role="concept" targetNodeId="1.1068580123132" resolveInfo="BaseMethodDeclaration" />
+                </node>
+              </node>
+              <node role="iterable" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="3757565579207015577">
+                <link role="baseMethodDeclaration" targetNodeId="9.~BaseAdapter.toNodes(java.util.List):java.util.List" resolveInfo="toNodes" />
+                <link role="classConcept" targetNodeId="9.~BaseAdapter" resolveInfo="BaseAdapter" />
+                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="3757565579207015581">
+                  <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="3757565579207015582">
+                    <link role="variableDeclaration" targetNodeId="1221637887269" resolveInfo="scope" />
+                  </node>
+                  <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="3757565579207015583">
+                    <link role="baseMethodDeclaration" targetNodeId="7.~ClassifierAndSuperClassifiersScope.getOverriddenMethods(jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration):java.util.List" resolveInfo="getOverriddenMethods" />
+                    <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="3757565579207015584">
+                      <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="3757565579207015585">
+                        <link role="variableDeclaration" targetNodeId="1221637921586" resolveInfo="method" />
+                      </node>
+                      <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_GetAdapterOperation" id="3757565579207015586" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
             <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="2595466108082377250">
               <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="2595466108082377251">
                 <node role="statement" type="jetbrains.mps.baseLanguage.structure.ContinueStatement" id="2595466108082377295" />
               </node>
-              <node role="condition" type="jetbrains.mps.baseLanguage.structure.NotExpression" id="2595466108082377285">
-                <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="2595466108082377286">
-                  <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="2595466108082377287">
-                    <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="2595466108082377288">
-                      <link role="variableDeclaration" targetNodeId="1221637887269" resolveInfo="scope" />
-                    </node>
-                    <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="2595466108082377289">
-                      <link role="baseMethodDeclaration" targetNodeId="7.~ClassifierAndSuperClassifiersScope.getOverriddenMethods(jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration):java.util.List" resolveInfo="getOverriddenMethods" />
-                      <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="2595466108082377290">
-                        <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="2595466108082377291">
-                          <link role="variableDeclaration" targetNodeId="1221637921586" resolveInfo="method" />
-                        </node>
-                        <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_GetAdapterOperation" id="2595466108082377292" />
-                      </node>
-                    </node>
-                  </node>
-                  <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="2595466108082377293">
-                    <link role="baseMethodDeclaration" targetNodeId="8.~List.isEmpty():boolean" resolveInfo="isEmpty" />
-                  </node>
-                </node>
+              <node role="condition" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="3757565579206937291">
+                <link role="variableDeclaration" targetNodeId="3757565579206937280" resolveInfo="isOverridden" />
               </node>
             </node>
             <node role="statement" type="jetbrains.mps.baseLanguage.structure.Statement" id="2595466108082377296" />
