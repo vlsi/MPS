@@ -254,11 +254,13 @@ public abstract class MpsLoadTask extends org.apache.tools.ant.Task {
   private void gatherAllClassesAndJarsUnder(File dir, Set<File> result) {
     File[] children = dir.listFiles();
 
+    // we do not want trove different from ours in $mps.home$/lib
+    String troveJar = "trove" + File.separator + "lib" + File.separator + "trove";
     // to provide right order of class loading,
     // files go first
     for (File f : children) {
       if (!f.isDirectory()) {
-        if (f.getName().endsWith(".jar") && !f.getName().contains("ant.jar")) {
+        if (f.getName().endsWith(".jar") && !f.getName().contains("ant.jar") && !f.getPath().contains(troveJar)) {
           result.add(f);
         }
       }
