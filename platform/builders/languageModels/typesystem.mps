@@ -85,16 +85,21 @@
           <node role="type" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="7288041816792804815">
             <link role="concept" targetNodeId="1.7288041816792374840" resolveInfo="SimpleBuilderDeclaration" />
           </node>
-          <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="7288041816792804819">
-            <node role="operand" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference" id="7288041816792804818">
-              <link role="applicableNode" targetNodeId="7288041816792802797" resolveInfo="expression" />
-            </node>
-            <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_GetAncestorOperation" id="7288041816792806048">
-              <node role="parameter" type="jetbrains.mps.lang.smodel.structure.OperationParm_Concept" id="7288041816792806049">
-                <node role="conceptArgument" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" id="7288041816792806052">
-                  <link role="conceptDeclaration" targetNodeId="1.7288041816792374840" resolveInfo="SimpleBuilderDeclaration" />
+          <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="6254726786820574456">
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="7288041816792804819">
+              <node role="operand" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference" id="7288041816792804818">
+                <link role="applicableNode" targetNodeId="7288041816792802797" resolveInfo="expression" />
+              </node>
+              <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_GetAncestorOperation" id="7288041816792806048">
+                <node role="parameter" type="jetbrains.mps.lang.smodel.structure.OperationParm_Concept" id="7288041816792806049">
+                  <node role="conceptArgument" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" id="6254726786820574455">
+                    <link role="conceptDeclaration" targetNodeId="1.6254726786820421041" resolveInfo="BaseSimpleBuilderDeclaration" />
+                  </node>
                 </node>
               </node>
+            </node>
+            <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="6254726786820574460">
+              <link role="baseMethodDeclaration" targetNodeId="2v.6254726786820551255" resolveInfo="getContextDeclaration" />
             </node>
           </node>
         </node>
@@ -521,16 +526,21 @@
           <node role="type" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="5389689214217248380">
             <link role="concept" targetNodeId="1.7288041816792374840" resolveInfo="SimpleBuilderDeclaration" />
           </node>
-          <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="5389689214217248381">
-            <node role="operand" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference" id="5389689214217248382">
-              <link role="applicableNode" targetNodeId="5389689214217248376" resolveInfo="expression" />
-            </node>
-            <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_GetAncestorOperation" id="5389689214217248383">
-              <node role="parameter" type="jetbrains.mps.lang.smodel.structure.OperationParm_Concept" id="5389689214217248384">
-                <node role="conceptArgument" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" id="5389689214217248385">
-                  <link role="conceptDeclaration" targetNodeId="1.7288041816792374840" resolveInfo="SimpleBuilderDeclaration" />
+          <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="6254726786820574462">
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="5389689214217248381">
+              <node role="operand" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference" id="5389689214217248382">
+                <link role="applicableNode" targetNodeId="5389689214217248376" resolveInfo="expression" />
+              </node>
+              <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_GetAncestorOperation" id="5389689214217248383">
+                <node role="parameter" type="jetbrains.mps.lang.smodel.structure.OperationParm_Concept" id="5389689214217248384">
+                  <node role="conceptArgument" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" id="6254726786820574461">
+                    <link role="conceptDeclaration" targetNodeId="1.6254726786820421041" resolveInfo="BaseSimpleBuilderDeclaration" />
+                  </node>
                 </node>
               </node>
+            </node>
+            <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="6254726786820574467">
+              <link role="baseMethodDeclaration" targetNodeId="2v.6254726786820551255" resolveInfo="getContextDeclaration" />
             </node>
           </node>
         </node>

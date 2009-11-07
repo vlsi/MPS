@@ -68,19 +68,19 @@ public class SimpleBuilders extends BaseConcept implements INamedConcept {
     return this.getChildCount(SimpleBuilders.BUILDER);
   }
 
-  public Iterator<SimpleBuilderDeclaration> builders() {
-    return this.children(SimpleBuilderDeclaration.class, SimpleBuilders.BUILDER);
+  public Iterator<BaseSimpleBuilderDeclaration> builders() {
+    return this.children(BaseSimpleBuilderDeclaration.class, SimpleBuilders.BUILDER);
   }
 
-  public List<SimpleBuilderDeclaration> getBuilders() {
-    return this.getChildren(SimpleBuilderDeclaration.class, SimpleBuilders.BUILDER);
+  public List<BaseSimpleBuilderDeclaration> getBuilders() {
+    return this.getChildren(BaseSimpleBuilderDeclaration.class, SimpleBuilders.BUILDER);
   }
 
-  public void addBuilder(SimpleBuilderDeclaration node) {
+  public void addBuilder(BaseSimpleBuilderDeclaration node) {
     this.addChild(SimpleBuilders.BUILDER, node);
   }
 
-  public void insertBuilder(SimpleBuilderDeclaration prev, SimpleBuilderDeclaration node) {
+  public void insertBuilder(BaseSimpleBuilderDeclaration prev, BaseSimpleBuilderDeclaration node) {
     this.insertChild(prev, SimpleBuilders.BUILDER, node);
   }
 

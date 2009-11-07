@@ -6,6 +6,7 @@ import jetbrains.mps.lang.typesystem.runtime.AbstractInferenceRule_Runtime;
 import jetbrains.mps.lang.typesystem.runtime.InferenceRule_Runtime;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
+import jetbrains.mps.baseLanguage.builders.behavior.BaseSimpleBuilderDeclaration_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.intentions.BaseIntentionProvider;
 import jetbrains.mps.typesystem.inference.EquationInfo;
@@ -17,7 +18,7 @@ public class typeof_SimpleBuilderPropertyParent_InferenceRule extends AbstractIn
   }
 
   public void applyRule(final SNode simpleBuilderPropertyParent, final TypeCheckingContext typeCheckingContext) {
-    SNode builder = SNodeOperations.getAncestor(simpleBuilderPropertyParent, "jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderDeclaration", false, false);
+    SNode builder = BaseSimpleBuilderDeclaration_Behavior.call_getContextDeclaration_6254726786820551255(SNodeOperations.getAncestor(simpleBuilderPropertyParent, "jetbrains.mps.baseLanguage.builders.structure.BaseSimpleBuilderDeclaration", false, false));
     {
       SNode _nodeToCheck_1029348928467 = simpleBuilderPropertyParent;
       BaseIntentionProvider intentionProvider = null;

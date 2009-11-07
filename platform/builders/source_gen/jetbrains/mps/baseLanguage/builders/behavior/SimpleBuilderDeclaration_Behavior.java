@@ -67,4 +67,8 @@ public class SimpleBuilderDeclaration_Behavior {
     }
     return result;
   }
+
+  public static SNode virtual_getContextDeclaration_6254726786820551255(SNode thisNode) {
+    return thisNode;
+  }
 }

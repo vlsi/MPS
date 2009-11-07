@@ -228,19 +228,24 @@
       <node role="searchScopeFactory" type="jetbrains.mps.lang.constraints.structure.ConstraintFunction_ReferentSearchScope_Factory" id="5425713840853785838">
         <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="5425713840853785839">
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="5425713840853797290">
-            <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="5425713840853806323">
-              <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="5425713840853841432">
-                <node role="operand" type="jetbrains.mps.lang.constraints.structure.ConceptParameter_ReferentSearchScope_enclosingNode" id="5425713840853841433" />
-                <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_GetAncestorOperation" id="5425713840853841434">
-                  <node role="parameter" type="jetbrains.mps.lang.smodel.structure.OperationParm_Concept" id="5425713840853841435">
-                    <node role="conceptArgument" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" id="5425713840853841436">
-                      <link role="conceptDeclaration" targetNodeId="1.7288041816792374840" resolveInfo="SimpleBuilderDeclaration" />
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="7782956297805828764">
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="7782956297805828759">
+                <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="5425713840853841432">
+                  <node role="operand" type="jetbrains.mps.lang.constraints.structure.ConceptParameter_ReferentSearchScope_enclosingNode" id="5425713840853841433" />
+                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_GetAncestorOperation" id="5425713840853841434">
+                    <node role="parameter" type="jetbrains.mps.lang.smodel.structure.OperationParm_Concept" id="5425713840853841435">
+                      <node role="conceptArgument" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" id="7782956297805828758">
+                        <link role="conceptDeclaration" targetNodeId="1.6254726786820421041" resolveInfo="BaseSimpleBuilderDeclaration" />
+                      </node>
                     </node>
+                    <node role="parameter" type="jetbrains.mps.lang.smodel.structure.OperationParm_Inclusion" id="5425713840853841437" />
                   </node>
-                  <node role="parameter" type="jetbrains.mps.lang.smodel.structure.OperationParm_Inclusion" id="5425713840853841437" />
+                </node>
+                <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="7782956297805828763">
+                  <link role="baseMethodDeclaration" targetNodeId="7.6254726786820551255" resolveInfo="getContextDeclaration" />
                 </node>
               </node>
-              <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkListAccess" id="5425713840853806327">
+              <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkListAccess" id="7782956297805828768">
                 <link role="link" targetNodeId="1.5425713840853683089" />
               </node>
             </node>
@@ -646,6 +651,11 @@
         </node>
       </node>
     </node>
+  </node>
+  <node type="jetbrains.mps.lang.constraints.structure.ConceptConstraints" id="6254726786820421046">
+    <property name="package" value="simple" />
+    <link role="concept" targetNodeId="1.6254726786820421041" resolveInfo="BaseSimpleBuilderDeclaration" />
+    <link role="defaultConcreteConcept" targetNodeId="1.7288041816792374840" resolveInfo="SimpleBuilderDeclaration" />
   </node>
 </model>
 

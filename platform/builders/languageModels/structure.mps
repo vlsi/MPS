@@ -171,7 +171,12 @@
       <property name="metaClass" value="aggregation" />
       <property name="role" value="builder" />
       <property name="sourceCardinality" value="0..n" />
-      <link role="target" targetNodeId="7288041816792374840" resolveInfo="SimpleBuilderDeclaration" />
+      <link role="target" targetNodeId="6254726786820421041" resolveInfo="BaseSimpleBuilderDeclaration" />
+    </node>
+    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="5199967550912384274">
+      <property name="metaClass" value="reference" />
+      <property name="role" value="extendsBuilder" />
+      <link role="target" targetNodeId="7288041816792374843" resolveInfo="SimpleBuilders" />
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="7288041816792577338">
@@ -220,7 +225,7 @@
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="7288041816792374840">
     <property name="name" value="SimpleBuilderDeclaration" />
     <property name="package" value="simple" />
-    <link role="extends" targetNodeId="2v.1133920641626" resolveInfo="BaseConcept" />
+    <link role="extends" targetNodeId="6254726786820421041" resolveInfo="BaseSimpleBuilderDeclaration" />
     <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="7288041816792374841">
       <link role="intfc" targetNodeId="2v.1169194658468" resolveInfo="INamedConcept" />
     </node>
@@ -462,6 +467,36 @@
       <property name="role" value="declaration" />
       <property name="sourceCardinality" value="1" />
       <link role="target" targetNodeId="5389689214216990954" resolveInfo="SimpleBuilderProperty" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="6254726786820421041">
+    <property name="package" value="simple" />
+    <property name="name" value="BaseSimpleBuilderDeclaration" />
+    <link role="extends" targetNodeId="2v.1133920641626" resolveInfo="BaseConcept" />
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.BooleanConceptProperty" id="6254726786820421042">
+      <link role="conceptPropertyDeclaration" targetNodeId="2v.1137473854053" resolveInfo="abstract" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="6254726786820459251">
+    <property name="package" value="simple" />
+    <property name="name" value="SimpleBuilderExtensionDeclaration" />
+    <link role="extends" targetNodeId="6254726786820421041" resolveInfo="BaseSimpleBuilderDeclaration" />
+    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="6254726786820459252">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="child" />
+      <property name="sourceCardinality" value="0..n" />
+      <link role="target" targetNodeId="7288041816792577338" resolveInfo="SimpleBuilderChild" />
+    </node>
+    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="6254726786820459253">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="property" />
+      <property name="sourceCardinality" value="0..n" />
+      <link role="target" targetNodeId="5389689214216990954" resolveInfo="SimpleBuilderProperty" />
+    </node>
+    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="6254726786820459254">
+      <property name="metaClass" value="reference" />
+      <property name="role" value="extended" />
+      <link role="target" targetNodeId="7288041816792374840" resolveInfo="SimpleBuilderDeclaration" />
     </node>
   </node>
 </model>

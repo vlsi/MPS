@@ -251,6 +251,16 @@
         <node role="type" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="2679357232283934856" />
       </node>
     </node>
+    <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="7782956297805736454">
+      <property name="name" value="setAAAA" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="7782956297805736455" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="7782956297805736456" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="7782956297805736457" />
+      <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="7782956297805736458">
+        <property name="name" value="s" />
+        <node role="type" type="jetbrains.mps.baseLanguage.structure.StringType" id="7782956297805736459" />
+      </node>
+    </node>
     <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="2679357232284126655">
       <property name="name" value="setText" />
       <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="2679357232284126656" />
@@ -375,6 +385,48 @@
             <property name="value" value="c3" />
           </node>
         </node>
+      </node>
+    </node>
+    <node role="builder" type="jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderDeclaration" id="6254726786820606530">
+      <property name="name" value="ccc" />
+      <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="6254726786820606533">
+        <link role="classifier" targetNodeId="3816167865390946785" resolveInfo="Node" />
+      </node>
+      <node role="creator" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="6254726786820606534">
+        <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="6254726786820606536">
+          <link role="baseMethodDeclaration" targetNodeId="3816167865390946787" resolveInfo="Node" />
+          <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="6254726786820606537">
+            <property name="value" value="ccc" />
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="builder" type="jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderExtensionDeclaration" id="6254726786820499705">
+      <link role="extended" targetNodeId="5199967550912605230" resolveInfo="c3" />
+      <node role="child" type="jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderChild" id="6254726786820606538">
+        <link role="child" targetNodeId="6254726786820606530" resolveInfo="ccc" />
+        <node role="attachStatement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="6254726786820606540">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="6254726786820606542">
+            <node role="operand" type="jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderParentExpression" id="6254726786820606541" />
+            <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="6254726786820606546">
+              <link role="baseMethodDeclaration" targetNodeId="3816167865390946793" resolveInfo="add" />
+              <node role="actualArgument" type="jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderChildExpression" id="6254726786820606547" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="property" type="jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderProperty" id="6254726786820606548">
+        <property name="name" value="xyz" />
+        <node role="set" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="6254726786820606552">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="6254726786820606554">
+            <node role="operand" type="jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderPropertyParent" id="6254726786820606553" />
+            <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="6254726786820606558">
+              <link role="baseMethodDeclaration" targetNodeId="7782956297805736454" resolveInfo="setAAAA" />
+              <node role="actualArgument" type="jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderPropertyValue" id="7782956297805736453" />
+            </node>
+          </node>
+        </node>
+        <node role="type" type="jetbrains.mps.baseLanguage.structure.StringType" id="6254726786820606551" />
       </node>
     </node>
   </node>
