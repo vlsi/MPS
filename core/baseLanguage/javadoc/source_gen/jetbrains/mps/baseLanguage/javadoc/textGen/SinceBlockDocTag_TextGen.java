@@ -9,7 +9,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 public class SinceBlockDocTag_TextGen extends SNodeTextGen {
   public void doGenerateText(SNode node) {
     this.appendNewLine();
-    this.indentBuffer();
+    DocCommentTextGen.javadocIndent(this);
     this.append("@since ");
     this.append(SPropertyOperations.getString(node, "text"));
   }

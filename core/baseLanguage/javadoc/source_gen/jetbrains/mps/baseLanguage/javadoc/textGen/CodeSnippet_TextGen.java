@@ -11,8 +11,9 @@ import jetbrains.mps.textGen.TextGenManager;
 public class CodeSnippet_TextGen extends SNodeTextGen {
   public void doGenerateText(SNode node) {
     this.appendNewLine();
-    this.indentBuffer();
+    DocCommentTextGen.javadocIndent(this);
     this.append("{{");
+    this.increaseDepth();
     this.increaseDepth();
     if (ListSequence.fromList(SLinkOperations.getTargets(node, "statement", true)).isNotEmpty()) {
       for (SNode item : SLinkOperations.getTargets(node, "statement", true)) {
@@ -20,8 +21,9 @@ public class CodeSnippet_TextGen extends SNodeTextGen {
       }
     }
     this.decreaseDepth();
+    this.decreaseDepth();
     this.appendNewLine();
-    this.indentBuffer();
+    DocCommentTextGen.javadocIndent(this);
     this.append("}}");
   }
 }

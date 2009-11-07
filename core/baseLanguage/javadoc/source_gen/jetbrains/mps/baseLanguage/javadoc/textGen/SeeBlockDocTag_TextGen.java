@@ -11,7 +11,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 public class SeeBlockDocTag_TextGen extends SNodeTextGen {
   public void doGenerateText(SNode node) {
     this.appendNewLine();
-    this.indentBuffer();
+    DocCommentTextGen.javadocIndent(this);
     this.append("@see ");
     TextGenManager.instance().appendNodeText(this.getContext(), this.getBuffer(), SLinkOperations.getTarget(node, "reference", true), this.getSNode());
     this.append(" ");

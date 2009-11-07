@@ -13,7 +13,7 @@ public class CommentLine_TextGen extends SNodeTextGen {
   public void doGenerateText(SNode node) {
     if (SNodeOperations.getIndexInParent(node) != 0) {
       this.appendNewLine();
-      this.indentBuffer();
+      DocCommentTextGen.javadocIndent(this);
     }
     if (ListSequence.fromList(SLinkOperations.getTargets(node, "part", true)).isNotEmpty()) {
       for (SNode item : SLinkOperations.getTargets(node, "part", true)) {

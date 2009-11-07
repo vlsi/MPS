@@ -24,7 +24,7 @@
   <component name="SvnBranchConfigurationManager">
     <option name="myConfigurationMap">
       <map>
-        <entry key="C:/work/mps">
+        <entry key="$PROJECT_DIR$">
           <value>
             <SvnBranchConfiguration>
               <option name="branchUrls">
@@ -37,7 +37,7 @@
             </SvnBranchConfiguration>
           </value>
         </entry>
-        <entry key="$PROJECT_DIR$">
+        <entry key="C:/work/mps">
           <value>
             <SvnBranchConfiguration>
               <option name="branchUrls">
@@ -56,8 +56,8 @@
   </component>
   <component name="VcsDirectoryMappings">
     <mapping directory="" vcs="" />
-    <mapping directory="C:/work/mps" vcs="svn" />
     <mapping directory="$PROJECT_DIR$" vcs="svn" />
+    <mapping directory="C:/work/mps" vcs="svn" />
   </component>
 </project>
 
