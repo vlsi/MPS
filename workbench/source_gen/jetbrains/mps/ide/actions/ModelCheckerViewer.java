@@ -18,6 +18,7 @@ import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.progress.ProgressIndicator;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.ide.findusages.view.treeholder.treeview.INodeRepresentator;
+import jetbrains.mps.nodeEditor.MessageStatus;
 import jetbrains.mps.ide.findusages.view.treeholder.tree.TextOptions;
 import javax.swing.Icon;
 import jetbrains.mps.ide.projectPane.Icons;
@@ -25,14 +26,11 @@ import org.apache.commons.lang.StringEscapeUtils;
 import org.jdom.Element;
 import jetbrains.mps.ide.findusages.CantSaveSomethingException;
 import jetbrains.mps.ide.findusages.CantLoadSomethingException;
-import jetbrains.mps.smodel.SNodeId;
-import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
-import jetbrains.mps.smodel.ModelAccess;
 
 public class ModelCheckerViewer extends JPanel {
   private MPSProject myProject;
   private UsagesView myUsagesView;
+  private ModelCheckerTool_Tool myTool;
 
   public ModelCheckerViewer(MPSProject mpsProject, final ModelCheckerTool_Tool tool) {
     this.myProject = mpsProject;
@@ -59,6 +57,7 @@ public class ModelCheckerViewer extends JPanel {
     ProgressManager.getInstance().run(new Task.Modal(this.myProject.getComponent(Project.class), "Checking some model", true) {
       public void run(@NotNull ProgressIndicator indicator) {
         ModelCheckerViewer.this.myUsagesView.run(indicator);
+        ModelCheckerViewer.this.myTool.openToolLater(true);
       }
     });
   }
@@ -68,9 +67,9 @@ public class ModelCheckerViewer extends JPanel {
   }
 
   public static class MyNodeRepresentator implements INodeRepresentator<ModelCheckerIssue> {
-    private static final String CATEGORY_ERROR = "ERROR";
-    private static final String CATEGORY_WARNING = "WARNING";
-    private static final String CATEGORY_OK = "OK";
+    private static final String CATEGORY_ERROR = MessageStatus.ERROR.toString();
+    private static final String CATEGORY_WARNING = MessageStatus.WARNING.toString();
+    private static final String CATEGORY_OK = MessageStatus.OK.toString();
 
     public MyNodeRepresentator() {
     }
@@ -127,16 +126,6 @@ public class ModelCheckerViewer extends JPanel {
     }
 
     public void read(Element element, MPSProject project) throws CantLoadSomethingException {
-    }
-
-    private static SNodeId getNodeId(final SNode node) {
-      final Wrappers._T<SNodeId> nodeId = new Wrappers._T<SNodeId>();
-      ModelAccess.instance().runReadAction(new Runnable() {
-        public void run() {
-          nodeId.value = node.getSNodeId();
-        }
-      });
-      return nodeId.value;
     }
   }
 }

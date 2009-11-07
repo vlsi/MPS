@@ -140,17 +140,18 @@ public class DataTree implements IExternalizeable, IChangeListener {
   private void addSearchedNode(DataNode root, Object node) {
     List<PathItem> path = PathProvider.getPathForSearchResult(new SearchResult(node, SearchedNodesNodeData.CATEGORY_NAME));
     ArrayList<PathItem> pathCopy = new ArrayList<PathItem>(path);
-    createPath(pathCopy, 0, root, null, false);
+    createPath(pathCopy, 0, root, null, false, null);
   }
 
   private void addResultWithPresentation(DataNode root, SearchResult result, INodeRepresentator nodeRepresentator) {
     List<PathItem> path = PathProvider.getPathForSearchResult(result);
     ArrayList<PathItem> pathCopy = new ArrayList<PathItem>(path);
-    createPath(pathCopy, 0, root, nodeRepresentator, true);
+    createPath(pathCopy, 0, root, nodeRepresentator, true, result);
   }
 
   //the first argument's type is exact for performance reasons
-  private DataNode createPath(ArrayList<PathItem> path, int index, DataNode root, INodeRepresentator nodeRepresentator, boolean results) {
+  private DataNode createPath(ArrayList<PathItem> path, int index, DataNode root, INodeRepresentator nodeRepresentator,
+                              boolean results, SearchResult result) {
     DataNode next = null;
     PathItem currentPathItem = path.get(index);
     Object currentIdObject = currentPathItem.getIdObject();
@@ -177,7 +178,11 @@ public class DataTree implements IExternalizeable, IChangeListener {
       } else if (o instanceof SModel) {
         data = new ModelNodeData(creator, (SModel) o, isResult, results);
       } else if (o instanceof SNode) {
-        data = new NodeNodeData(creator, (SNode) o, isResult, nodeRepresentator, results);
+        if (result != null && isResult) {
+          data = new NodeNodeData(creator, result, isResult, nodeRepresentator, results);
+        } else {
+          data = new NodeNodeData(creator, (SNode) o, isResult, nodeRepresentator, results);
+        }
       } else {
         String caption = (String) currentIdObject;
         data = new CategoryNodeData(creator, caption, results, nodeRepresentator);
@@ -190,7 +195,7 @@ public class DataTree implements IExternalizeable, IChangeListener {
     if (index == path.size() - 1) {
       return next;
     } else {
-      return createPath(path, index + 1, next, nodeRepresentator, results);
+      return createPath(path, index + 1, next, nodeRepresentator, results, result);
     }
   }
 

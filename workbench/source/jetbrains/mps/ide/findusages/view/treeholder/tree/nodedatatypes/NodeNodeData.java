@@ -19,18 +19,19 @@ import com.intellij.openapi.util.Computable;
 import jetbrains.mps.ide.components.ComponentsUtil;
 import jetbrains.mps.ide.findusages.CantLoadSomethingException;
 import jetbrains.mps.ide.findusages.CantSaveSomethingException;
+import jetbrains.mps.ide.findusages.model.SearchResult;
 import jetbrains.mps.ide.findusages.view.treeholder.tree.TextOptions;
 import jetbrains.mps.ide.findusages.view.treeholder.treeview.INodeRepresentator;
 import jetbrains.mps.ide.findusages.view.treeholder.treeview.path.PathItemRole;
 import jetbrains.mps.ide.icons.IconManager;
+import jetbrains.mps.lang.core.behavior.BaseConcept_Behavior;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SNodePointer;
-import jetbrains.mps.lang.core.behavior.BaseConcept_Behavior;
-import org.jdom.Element;
 import org.apache.commons.lang.StringEscapeUtils;
+import org.jdom.Element;
 
 import javax.swing.Icon;
 import java.util.List;
@@ -54,7 +55,19 @@ public class NodeNodeData extends BaseNodeData {
     myNodePointer = new SNodePointer(node);
   }
 
-  public NodeNodeData(Element element, MPSProject project) throws CantLoadSomethingException {
+  public NodeNodeData(PathItemRole role, SearchResult result, boolean isResultNode, INodeRepresentator nodeRepresentator, boolean resultsSection) {
+      super(
+        role,
+        (isResultNode && nodeRepresentator != null) ? nodeRepresentator.getPresentation(result.getObject()) : snodeRepresentation((SNode) result.getPathObject()),
+        nodeAdditionalInfo((SNode) result.getPathObject()),
+        false,
+        isResultNode,
+        resultsSection
+      );
+      myNodePointer = new SNodePointer((SNode) result.getPathObject());
+    }
+
+    public NodeNodeData(Element element, MPSProject project) throws CantLoadSomethingException {
     read(element, project);
   }
 
