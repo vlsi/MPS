@@ -58,7 +58,7 @@ public abstract class BaseModelCache<T> implements ApplicationComponent {
 
         SModelDescriptor model = context.getStatus().getOriginalInputModel();
 
-        myCache.put(model, cache);
+        myCache.put(model, null);
         
         IFile cacheFile = getCacheFile(model);
         if (cacheFile == null) return Collections.EMPTY_SET;
