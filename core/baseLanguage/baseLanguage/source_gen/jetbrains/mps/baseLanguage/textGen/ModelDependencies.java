@@ -6,7 +6,6 @@ import jetbrains.mps.logging.Logger;
 import java.util.Set;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.TreeSet;
-import jetbrains.mps.smodel.SModel;
 import java.util.Collections;
 import org.jdom.Element;
 import java.util.List;
@@ -17,7 +16,6 @@ public class ModelDependencies {
   private static final Logger LOG = Logger.getLogger(ModelDependencies.class);
 
   private Set<RootDependencies> myDependencies = SetSequence.fromSet(new TreeSet<RootDependencies>());
-  private SModel myModel;
 
   public ModelDependencies() {
   }
@@ -28,14 +26,6 @@ public class ModelDependencies {
 
   public Set<RootDependencies> getDependencies() {
     return Collections.unmodifiableSet(this.myDependencies);
-  }
-
-  public void setModel(SModel model) {
-    this.myModel = model;
-  }
-
-  public SModel getModel() {
-    return this.myModel;
   }
 
   public Element toXml() {

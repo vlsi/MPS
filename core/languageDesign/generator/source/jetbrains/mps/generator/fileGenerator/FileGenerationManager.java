@@ -212,9 +212,6 @@ public class FileGenerationManager implements ApplicationComponent {
       root.addDependencies(new RootDependencies(NameUtil.nodeFQName(outputNode), getValues(result, TextGenManager.DEPENDENCY),
         getValues(result, TextGenManager.EXTENDS)));
     }
-    if (outputNode != null) {
-      root.setModel(outputNode.getModel());
-    }
   }
 
   private List<String> getValues(TextGenerationResult textGenResult, String value) {

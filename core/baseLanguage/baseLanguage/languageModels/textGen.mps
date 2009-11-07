@@ -9378,49 +9378,6 @@
         </node>
       </node>
     </node>
-    <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="6109230429795481807">
-      <property name="name" value="setModel" />
-      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="6109230429795481808" />
-      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="6109230429795481809" />
-      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="6109230429795481810">
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="6109230429795481836">
-          <node role="expression" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression" id="6109230429795481840">
-            <node role="rValue" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="6109230429795481843">
-              <link role="variableDeclaration" targetNodeId="6109230429795481834" resolveInfo="model" />
-            </node>
-            <node role="lValue" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="6109230429795481837">
-              <node role="operation" type="jetbrains.mps.baseLanguage.structure.FieldReferenceOperation" id="6109230429795481838">
-                <link role="fieldDeclaration" targetNodeId="6109230429795481222" resolveInfo="myModel" />
-              </node>
-              <node role="operand" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="6109230429795481839" />
-            </node>
-          </node>
-        </node>
-      </node>
-      <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="6109230429795481834">
-        <property name="name" value="model" />
-        <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="6109230429795481835">
-          <link role="classifier" targetNodeId="2v.~SModel" resolveInfo="SModel" />
-        </node>
-      </node>
-    </node>
-    <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="6109230429795481844">
-      <property name="name" value="getModel" />
-      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="6109230429795481871">
-        <link role="classifier" targetNodeId="2v.~SModel" resolveInfo="SModel" />
-      </node>
-      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="6109230429795481846" />
-      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="6109230429795481847">
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="6109230429795481872">
-          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="6109230429795481874">
-            <node role="operation" type="jetbrains.mps.baseLanguage.structure.FieldReferenceOperation" id="6109230429795481875">
-              <link role="fieldDeclaration" targetNodeId="6109230429795481222" resolveInfo="myModel" />
-            </node>
-            <node role="operand" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="6109230429795481876" />
-          </node>
-        </node>
-      </node>
-    </node>
     <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1389752306498356514">
       <property name="name" value="toXml" />
       <node role="returnType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1389752306498360469">
@@ -9557,13 +9514,6 @@
             <link role="classifier" targetNodeId="7159280687324563142" resolveInfo="Dependency" />
           </node>
         </node>
-      </node>
-    </node>
-    <node role="field" type="jetbrains.mps.baseLanguage.structure.FieldDeclaration" id="6109230429795481222">
-      <property name="name" value="myModel" />
-      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PrivateVisibility" id="6109230429795481223" />
-      <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="6109230429795481804">
-        <link role="classifier" targetNodeId="2v.~SModel" resolveInfo="SModel" />
       </node>
     </node>
   </node>
