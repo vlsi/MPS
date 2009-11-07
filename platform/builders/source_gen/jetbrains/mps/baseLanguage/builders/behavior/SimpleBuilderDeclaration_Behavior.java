@@ -87,7 +87,7 @@ public class SimpleBuilderDeclaration_Behavior {
   public static List<SNode> call_getProperties_5389689214217081373(SNode thisNode, SModel model, IScope scope) {
     List<SNode> result = new ArrayList<SNode>();
     for (SNode a : SimpleBuilderDeclaration_Behavior.call_getAncestors_7782956297805865272(thisNode)) {
-      ListSequence.fromList(result).addSequence(ListSequence.fromList(SLinkOperations.getTargets(thisNode, "property", true)));
+      ListSequence.fromList(result).addSequence(ListSequence.fromList(SLinkOperations.getTargets(a, "property", true)));
     }
     for (SNode ext : SimpleBuilderDeclaration_Behavior.call_getExtensions_7782956297805903915(thisNode, model, scope)) {
       ListSequence.fromList(result).addSequence(ListSequence.fromList(SLinkOperations.getTargets(ext, "property", true)));

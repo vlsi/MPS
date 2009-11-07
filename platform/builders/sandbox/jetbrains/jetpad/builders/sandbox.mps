@@ -185,6 +185,11 @@
           </node>
         </node>
       </node>
+      <node role="property" type="jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderProperty" id="3444577917576928484">
+        <property name="name" value="baseeProp" />
+        <node role="type" type="jetbrains.mps.baseLanguage.structure.BooleanType" id="3444577917576928487" />
+        <node role="set" type="jetbrains.mps.baseLanguage.structure.Statement" id="3444577917576928486" />
+      </node>
     </node>
     <node role="builder" type="jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderDeclaration" id="3816167865390667296">
       <property name="name" value="c1" />

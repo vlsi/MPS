@@ -1414,7 +1414,9 @@
                 </node>
                 <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.AddAllElementsOperation" id="7782956297805865447">
                   <node role="argument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="7782956297805865460">
-                    <node role="operand" type="jetbrains.mps.lang.behavior.structure.ThisNodeExpression" id="7782956297805865459" />
+                    <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="3444577917576999113">
+                      <link role="variableDeclaration" targetNodeId="7782956297805865386" resolveInfo="a" />
+                    </node>
                     <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkListAccess" id="7782956297805865474">
                       <link role="link" targetNodeId="1.5389689214217081351" />
                     </node>
