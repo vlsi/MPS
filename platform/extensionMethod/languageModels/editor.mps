@@ -40,7 +40,7 @@
     <link role="conceptDeclaration" targetNodeId="1.1894531970723270160" resolveInfo="TypeExtension" />
     <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="1894531970723350202">
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="3736855801751247916">
-        <property name="text" value="extension" />
+        <property name="text" value="extension methods" />
         <link role="styleClass" targetNodeId="2v.1186415544875" resolveInfo="KeyWord" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Property" id="1894531970724196837">

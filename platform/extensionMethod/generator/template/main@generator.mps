@@ -88,6 +88,7 @@
       <property name="name" value="name" />
       <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="328127298621287896">
         <property name="name" value="_this" />
+        <property name="isFinal" value="true" />
         <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="328127298621287898">
           <link role="classifier" targetNodeId="2.~Object" resolveInfo="Object" />
           <node role="nodeMacro$attribute" type="jetbrains.mps.lang.generator.structure.CopySrcNodeMacro" id="328127298621390038">
