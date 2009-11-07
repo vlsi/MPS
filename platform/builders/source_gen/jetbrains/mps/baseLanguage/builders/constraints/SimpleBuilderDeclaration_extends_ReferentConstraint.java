@@ -12,8 +12,8 @@ import jetbrains.mps.smodel.SNode;
 import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.baseLanguage.builders.behavior.SimpleBuilders_Behavior;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 
 public class SimpleBuilderDeclaration_extends_ReferentConstraint extends BaseNodeReferenceSearchScopeProvider implements IModelConstraints {
   public SimpleBuilderDeclaration_extends_ReferentConstraint() {
@@ -31,7 +31,11 @@ public class SimpleBuilderDeclaration_extends_ReferentConstraint extends BaseNod
     List<SNode> result = new ArrayList<SNode>();
     SNode container = SNodeOperations.getAncestor(_context.getEnclosingNode(), "jetbrains.mps.baseLanguage.builders.structure.SimpleBuilders", true, false);
     for (SNode builders : SimpleBuilders_Behavior.call_getAncestors_6211769134875410554(container)) {
-      ListSequence.fromList(result).addSequence(ListSequence.fromList(SLinkOperations.getTargets(builders, "builder", true)));
+      for (SNode dcl : SLinkOperations.getTargets(builders, "builder", true)) {
+        if (SNodeOperations.isInstanceOf(dcl, "jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderDeclaration")) {
+          ListSequence.fromList(result).addElement(SNodeOperations.cast(dcl, "jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderDeclaration"));
+        }
+      }
     }
     return result;
   }

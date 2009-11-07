@@ -11,13 +11,13 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.baseLanguage.builders.behavior.Builder_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.baseLanguage.builders.behavior.SimpleBuilder_Behavior;
+import java.util.List;
+import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.baseLanguage.builders.behavior.SimpleBuilderDeclaration_Behavior;
-import java.util.ArrayList;
 
 public class SimpleBuilder_declaration_ReferentConstraint extends BaseNodeReferenceSearchScopeProvider implements IModelConstraints {
   public SimpleBuilder_declaration_ReferentConstraint() {
@@ -36,15 +36,20 @@ public class SimpleBuilder_declaration_ReferentConstraint extends BaseNodeRefere
     if (SNodeOperations.isInstanceOf(contextBuilder, "jetbrains.mps.baseLanguage.builders.structure.SimpleBuilder")) {
       return SimpleBuilder_Behavior.call_getPossibleChildren_8969040284892300232(SNodeOperations.cast(contextBuilder, "jetbrains.mps.baseLanguage.builders.structure.SimpleBuilder"), _context.getModel(), operationContext.getScope());
     } else if (contextBuilder == null && (SNodeOperations.isInstanceOf(_context.getEnclosingNode(), "jetbrains.mps.baseLanguage.structure.GenericNewExpression") || SNodeOperations.isInstanceOf(_context.getEnclosingNode(), "jetbrains.mps.baseLanguage.builders.structure.AsBuilderStatement"))) {
-      return ListSequence.fromList(SModelOperations.getRootsIncludingImported(_context.getModel(), operationContext.getScope(), "jetbrains.mps.baseLanguage.builders.structure.SimpleBuilders")).translate(new ITranslator2<SNode, SNode>() {
+
+      List<SNode> result = new ArrayList<SNode>();
+
+      for (SNode dcl : ListSequence.fromList(SModelOperations.getRootsIncludingImported(_context.getModel(), operationContext.getScope(), "jetbrains.mps.baseLanguage.builders.structure.SimpleBuilders")).translate(new ITranslator2<SNode, SNode>() {
         public Iterable<SNode> translate(SNode it) {
           return SLinkOperations.getTargets(it, "builder", true);
         }
-      }).where(new IWhereFilter<SNode>() {
-        public boolean accept(SNode it) {
-          return SimpleBuilderDeclaration_Behavior.call_isRoot_8969040284892403078(it);
+      })) {
+        if (SNodeOperations.isInstanceOf(dcl, "jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderDeclaration") && SimpleBuilderDeclaration_Behavior.call_isRoot_8969040284892403078(SNodeOperations.cast(dcl, "jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderDeclaration"))) {
+          ListSequence.fromList(result).addElement(SNodeOperations.cast(dcl, "jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderDeclaration"));
         }
-      }).toListSequence();
+      }
+
+      return result;
     } else {
       return new ArrayList<SNode>();
     }

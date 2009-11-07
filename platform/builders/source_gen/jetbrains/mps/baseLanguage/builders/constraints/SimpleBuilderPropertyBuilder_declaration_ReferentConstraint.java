@@ -29,7 +29,7 @@ public class SimpleBuilderPropertyBuilder_declaration_ReferentConstraint extends
   public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferentConstraintContext _context) {
     SNode contextBuilder = Builder_Behavior.getContextBuilder_7057666463730366732(_context.getEnclosingNode());
     if (SNodeOperations.isInstanceOf(contextBuilder, "jetbrains.mps.baseLanguage.builders.structure.SimpleBuilder")) {
-      return SimpleBuilderDeclaration_Behavior.call_getProperties_5389689214217081373(SLinkOperations.getTarget(SNodeOperations.cast(contextBuilder, "jetbrains.mps.baseLanguage.builders.structure.SimpleBuilder"), "declaration", false));
+      return SimpleBuilderDeclaration_Behavior.call_getProperties_5389689214217081373(SLinkOperations.getTarget(SNodeOperations.cast(contextBuilder, "jetbrains.mps.baseLanguage.builders.structure.SimpleBuilder"), "declaration", false), _context.getModel(), operationContext.getScope());
     } else {
       return new ArrayList<SNode>();
     }
