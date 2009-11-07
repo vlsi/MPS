@@ -42,6 +42,7 @@ public class ModelCheckerViewer extends JPanel {
     this.setLayout(new BorderLayout());
     ViewOptions viewOptions = new ViewOptions(true, false, false, false, false);
     viewOptions.myCategory = true;
+    viewOptions.myShowPopupMenu = false;
 
     final ModelCheckerViewer theViewer = this;
     this.myUsagesView = new UsagesView(mpsProject, viewOptions) {

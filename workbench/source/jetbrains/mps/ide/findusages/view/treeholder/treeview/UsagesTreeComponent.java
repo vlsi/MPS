@@ -121,11 +121,13 @@ public abstract class UsagesTreeComponent extends JPanel implements IChangeListe
   public void setComponentsViewOptions(ViewOptions options) {
     myViewToolbar.setViewOptions(options);
     myActionsToolbar.setViewOptions(options);
+    myTree.setShowPopupMenu(options.myShowPopupMenu);
   }
 
   public void getComponentsViewOptions(ViewOptions options) {
     myViewToolbar.getViewOptions(options);
     myActionsToolbar.getViewOptions(options);
+    options.myShowPopupMenu = myTree.isShowPopupMenu();
   }
 
   public void read(Element element, MPSProject project) throws CantLoadSomethingException {

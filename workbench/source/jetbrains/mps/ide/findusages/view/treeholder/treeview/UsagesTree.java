@@ -72,6 +72,7 @@ public abstract class UsagesTree extends MPSTree {
   private boolean myAdditionalInfoNeeded;
   private boolean myShowSearchedNodes;
   private boolean myGroupSearchedNodes;
+  private boolean myShowPopupMenu;
   private int myIsAdjusting = 0;
   private boolean myAutoscroll = false;
 
@@ -226,6 +227,14 @@ public abstract class UsagesTree extends MPSTree {
 
   public boolean isGroupSearchedNodes() {
     return myGroupSearchedNodes;
+  }
+
+  public boolean isShowPopupMenu() {
+    return myShowPopupMenu;
+  }
+
+  public void setShowPopupMenu(boolean showPopupMenu) {
+    myShowPopupMenu = showPopupMenu;
   }
 
   public void setAll(DataTree contents, HashSet<PathItemRole> pathProvider) {
@@ -421,6 +430,9 @@ public abstract class UsagesTree extends MPSTree {
   }
 
   protected JPopupMenu createPopupMenu(MPSTreeNode node) {
+    if (!myShowPopupMenu) {
+      return null;
+    }
     BaseAction inculdeAction = new BaseAction("Include") {
       public void doExecute(AnActionEvent e) {
         setCurrentNodesExclusion(false);

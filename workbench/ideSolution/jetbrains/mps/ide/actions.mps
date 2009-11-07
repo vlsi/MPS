@@ -32530,6 +32530,21 @@
             </node>
           </node>
         </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="5629194013979259877">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression" id="5629194013979259884">
+            <node role="rValue" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="5629194013979259887">
+              <property name="value" value="false" />
+            </node>
+            <node role="lValue" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="5629194013979259879">
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="5629194013979259878">
+                <link role="variableDeclaration" targetNodeId="5792297515476886393" resolveInfo="viewOptions" />
+              </node>
+              <node role="operation" type="jetbrains.mps.baseLanguage.structure.FieldReferenceOperation" id="5629194013979259883">
+                <link role="fieldDeclaration" targetNodeId="231.~ViewOptions.myShowPopupMenu" resolveInfo="myShowPopupMenu" />
+              </node>
+            </node>
+          </node>
+        </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.Statement" id="5792297515476886408" />
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="5792297515476886409">
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="5792297515476886410">
