@@ -6,10 +6,12 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import java.util.List;
+import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.smodel.IScope;
+import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import java.util.ArrayList;
 
 public class SimpleBuilderDeclaration_Behavior {
   public static void init(SNode thisNode) {
@@ -35,13 +37,17 @@ public class SimpleBuilderDeclaration_Behavior {
     return SimpleBuilderDeclaration_Behavior.call_isDescendant_3816167865390595157(SLinkOperations.getTarget(thisNode, "extends", false), b);
   }
 
-  public static List<SNode> call_getDescendants_3816167865390609214(final SNode thisNode) {
-    SNode builders = SNodeOperations.getAncestor(thisNode, "jetbrains.mps.baseLanguage.builders.structure.SimpleBuilders", false, false);
-    return ListSequence.fromList(SLinkOperations.getTargets(builders, "builder", true)).where(new IWhereFilter<SNode>() {
-      public boolean accept(SNode it) {
-        return SimpleBuilderDeclaration_Behavior.call_isDescendant_3816167865390595157(it, thisNode);
-      }
-    }).toListSequence();
+  public static List<SNode> call_getDescendants_3816167865390609214(final SNode thisNode, SModel model, IScope scope) {
+    List<SNode> result = new ArrayList<SNode>();
+    SNode container = SNodeOperations.getAncestor(thisNode, "jetbrains.mps.baseLanguage.builders.structure.SimpleBuilders", false, false);
+    for (SNode builder : SimpleBuilders_Behavior.call_getDescendands_5199967550912479741(container, model, scope)) {
+      ListSequence.fromList(result).addSequence(ListSequence.fromList(SLinkOperations.getTargets(builder, "builder", true)).where(new IWhereFilter<SNode>() {
+        public boolean accept(SNode it) {
+          return SimpleBuilderDeclaration_Behavior.call_isDescendant_3816167865390595157(it, thisNode);
+        }
+      }));
+    }
+    return result;
   }
 
   public static List<SNode> call_getChildren_3816167865390856298(SNode thisNode) {

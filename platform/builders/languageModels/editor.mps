@@ -191,6 +191,19 @@
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Property" id="7288041816792374854">
         <link role="relationDeclaration" targetNodeId="3v.1169194664001" resolveInfo="name" />
       </node>
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="5199967550912384276">
+        <property name="text" value="extends" />
+        <link role="styleClass" targetNodeId="2v.1186415544875" resolveInfo="KeyWord" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefCell" id="5199967550912384278">
+        <link role="relationDeclaration" targetNodeId="1.5199967550912384274" />
+        <node role="editorComponent" type="jetbrains.mps.lang.editor.structure.InlineEditorComponent" id="5199967550912384279">
+          <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Property" id="5199967550912384281">
+            <property name="readOnly" value="true" />
+            <link role="relationDeclaration" targetNodeId="3v.1169194664001" resolveInfo="name" />
+          </node>
+        </node>
+      </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="7288041816792374856">
         <property name="text" value="{" />
         <link role="styleClass" targetNodeId="2v.1215091279307" resolveInfo="LeftBrace" />

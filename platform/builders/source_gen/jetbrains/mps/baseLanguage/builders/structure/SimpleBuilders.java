@@ -17,6 +17,7 @@ public class SimpleBuilders extends BaseConcept implements INamedConcept {
   public static final String SHORT_DESCRIPTION = "shortDescription";
   public static final String ALIAS = "alias";
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
+  public static final String EXTENDS_BUILDER = "extendsBuilder";
   public static final String BUILDER = "builder";
 
   public SimpleBuilders(SNode node) {
@@ -53,6 +54,14 @@ public class SimpleBuilders extends BaseConcept implements INamedConcept {
 
   public void setVirtualPackage(String value) {
     this.setProperty(SimpleBuilders.VIRTUAL_PACKAGE, value);
+  }
+
+  public SimpleBuilders getExtendsBuilder() {
+    return (SimpleBuilders)this.getReferent(SimpleBuilders.class, SimpleBuilders.EXTENDS_BUILDER);
+  }
+
+  public void setExtendsBuilder(SimpleBuilders node) {
+    super.setReferent(SimpleBuilders.EXTENDS_BUILDER, node);
   }
 
   public int getBuildersCount() {

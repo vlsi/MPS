@@ -6,6 +6,8 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import java.util.List;
+import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.smodel.IScope;
 import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
@@ -29,10 +31,10 @@ public class SimpleBuilder_Behavior {
     return SPropertyOperations.getBoolean(SLinkOperations.getTarget(thisNode, "declaration", false), "leaf");
   }
 
-  public static List<SNode> call_getPossibleChildren_8969040284892300232(SNode thisNode) {
+  public static List<SNode> call_getPossibleChildren_8969040284892300232(SNode thisNode, SModel model, IScope scope) {
     List<SNode> builders = new ArrayList<SNode>();
     for (SNode child : SimpleBuilderDeclaration_Behavior.call_getChildren_3816167865390856298(SLinkOperations.getTarget(thisNode, "declaration", false))) {
-      ListSequence.fromList(builders).addSequence(ListSequence.fromList(SimpleBuilderDeclaration_Behavior.call_getDescendants_3816167865390609214(SLinkOperations.getTarget(child, "child", false))).where(new IWhereFilter<SNode>() {
+      ListSequence.fromList(builders).addSequence(ListSequence.fromList(SimpleBuilderDeclaration_Behavior.call_getDescendants_3816167865390609214(SLinkOperations.getTarget(child, "child", false), model, scope)).where(new IWhereFilter<SNode>() {
         public boolean accept(SNode it) {
           return !(SPropertyOperations.getBoolean(it, "isAbstract"));
         }

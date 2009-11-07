@@ -15,6 +15,7 @@ public class ConstraintsDescriptor implements IModelConstraints {
     ListSequence.fromList(this.myConstraints).addElement(new BeanPropertyBuilder_setter_ReferentConstraint());
     ListSequence.fromList(this.myConstraints).addElement(new SimpleBuilderPropertyBuilder_declaration_ReferentConstraint());
     ListSequence.fromList(this.myConstraints).addElement(new SimpleBuilderParameterReference_parameter_ReferentConstraint());
+    ListSequence.fromList(this.myConstraints).addElement(new SimpleBuilderDeclaration_extends_ReferentConstraint());
     ListSequence.fromList(this.myConstraints).addElement(new BeanBuilder_constructor_ReferentConstraint());
     ListSequence.fromList(this.myConstraints).addElement(new SimpleBuilder_declaration_ReferentConstraint());
   }

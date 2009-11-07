@@ -79,6 +79,30 @@
                         <link role="declaration" targetNodeId="3816167865390667302" resolveInfo="c2" />
                       </node>
                     </node>
+                    <node role="statement" type="jetbrains.mps.baseLanguage.builders.structure.BuilderStatement" id="5199967550912605222">
+                      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="5199967550912605223" />
+                      <node role="builder" type="jetbrains.mps.baseLanguage.builders.structure.SimpleBuilder" id="5199967550912605224">
+                        <link role="declaration" targetNodeId="3816167865390667302" resolveInfo="c2" />
+                      </node>
+                    </node>
+                    <node role="statement" type="jetbrains.mps.baseLanguage.builders.structure.BuilderStatement" id="6211769134875336887">
+                      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="6211769134875336888" />
+                      <node role="builder" type="jetbrains.mps.baseLanguage.builders.structure.SimpleBuilder" id="6211769134875336889">
+                        <link role="declaration" targetNodeId="5199967550912605230" resolveInfo="c3" />
+                      </node>
+                    </node>
+                    <node role="statement" type="jetbrains.mps.baseLanguage.builders.structure.BuilderStatement" id="6211769134875336878">
+                      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="6211769134875336879" />
+                      <node role="builder" type="jetbrains.mps.baseLanguage.builders.structure.SimpleBuilder" id="6211769134875336880">
+                        <link role="declaration" targetNodeId="3816167865390667302" resolveInfo="c2" />
+                      </node>
+                    </node>
+                    <node role="statement" type="jetbrains.mps.baseLanguage.builders.structure.BuilderStatement" id="5199967550912605226">
+                      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="5199967550912605227" />
+                      <node role="builder" type="jetbrains.mps.baseLanguage.builders.structure.SimpleBuilder" id="5199967550912605228">
+                        <link role="declaration" targetNodeId="3816167865390667296" resolveInfo="c1" />
+                      </node>
+                    </node>
                     <node role="statement" type="jetbrains.mps.baseLanguage.builders.structure.BuilderStatement" id="8009360033695538781">
                       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="8009360033695538782" />
                       <node role="builder" type="jetbrains.mps.baseLanguage.builders.structure.SimpleBuilder" id="8009360033695538783">
@@ -282,9 +306,21 @@
               <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="8009360033695056275">
                 <node role="statement" type="jetbrains.mps.baseLanguage.structure.ForStatement" id="6185317612116086049">
                   <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="6185317612116086050">
+                    <node role="statement" type="jetbrains.mps.baseLanguage.builders.structure.BuilderStatement" id="6211769134875336875">
+                      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="6211769134875336876" />
+                      <node role="builder" type="jetbrains.mps.baseLanguage.builders.structure.SimpleBuilder" id="6211769134875336877">
+                        <link role="declaration" targetNodeId="5199967550912605230" resolveInfo="c3" />
+                      </node>
+                    </node>
                     <node role="statement" type="jetbrains.mps.baseLanguage.builders.structure.BuilderStatement" id="6185317612116086066">
                       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="6185317612116086067" />
                       <node role="builder" type="jetbrains.mps.baseLanguage.builders.structure.SimpleBuilder" id="6185317612116086068">
+                        <link role="declaration" targetNodeId="3816167865390667302" resolveInfo="c2" />
+                      </node>
+                    </node>
+                    <node role="statement" type="jetbrains.mps.baseLanguage.builders.structure.BuilderStatement" id="5199967550912605244">
+                      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="5199967550912605245" />
+                      <node role="builder" type="jetbrains.mps.baseLanguage.builders.structure.SimpleBuilder" id="5199967550912605246">
                         <link role="declaration" targetNodeId="3816167865390667302" resolveInfo="c2" />
                       </node>
                     </node>
@@ -318,6 +354,25 @@
           </node>
           <node role="builder" type="jetbrains.mps.baseLanguage.builders.structure.SimpleBuilder" id="8009360033695056273">
             <link role="declaration" targetNodeId="3816167865390945389" resolveInfo="root" />
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.baseLanguage.builders.structure.SimpleBuilders" id="5199967550912605229">
+    <property name="name" value="extends" />
+    <link role="extendsBuilder" targetNodeId="3816167865390667291" resolveInfo="treeTest" />
+    <node role="builder" type="jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderDeclaration" id="5199967550912605230">
+      <property name="name" value="c3" />
+      <link role="extends" targetNodeId="3816167865390667292" resolveInfo="base" />
+      <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="5199967550912605238">
+        <link role="classifier" targetNodeId="3816167865390946785" resolveInfo="Node" />
+      </node>
+      <node role="creator" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="5199967550912605239">
+        <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="5199967550912605241">
+          <link role="baseMethodDeclaration" targetNodeId="3816167865390946787" resolveInfo="Node" />
+          <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="5199967550912605242">
+            <property name="value" value="c3" />
           </node>
         </node>
       </node>
