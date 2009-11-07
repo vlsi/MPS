@@ -17,6 +17,9 @@ import com.intellij.openapi.project.Project;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.progress.ProgressIndicator;
 import jetbrains.mps.smodel.SModelDescriptor;
+import java.util.List;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.project.IModule;
 import jetbrains.mps.ide.findusages.view.treeholder.treeview.INodeRepresentator;
 import jetbrains.mps.nodeEditor.MessageStatus;
 import jetbrains.mps.ide.findusages.view.treeholder.tree.TextOptions;
@@ -34,6 +37,7 @@ public class ModelCheckerViewer extends JPanel {
 
   public ModelCheckerViewer(MPSProject mpsProject, final ModelCheckerTool_Tool tool) {
     this.myProject = mpsProject;
+    this.myTool = tool;
 
     this.setLayout(new BorderLayout());
     ViewOptions viewOptions = new ViewOptions(true, false, false, false, false);
@@ -49,12 +53,12 @@ public class ModelCheckerViewer extends JPanel {
     this.add(this.myUsagesView.getComponent());
   }
 
-  private void checkSomething(final IFinder finder) {
+  private void checkSomething(final IFinder finder, String taskTitle) {
     IResultProvider resultProvider = FindUtils.makeProvider(finder);
     SearchQuery searchQuery = new SearchQuery(ModelCheckerViewer.this.myProject.getScope());
     ModelCheckerViewer.this.myUsagesView.setRunOptions(resultProvider, searchQuery, new UsagesView.ButtonConfiguration(false, false, true));
 
-    ProgressManager.getInstance().run(new Task.Modal(this.myProject.getComponent(Project.class), "Checking some model", true) {
+    ProgressManager.getInstance().run(new Task.Modal(this.myProject.getComponent(Project.class), taskTitle, true) {
       public void run(@NotNull ProgressIndicator indicator) {
         ModelCheckerViewer.this.myUsagesView.run(indicator);
         ModelCheckerViewer.this.myTool.openToolLater(true);
@@ -63,7 +67,23 @@ public class ModelCheckerViewer extends JPanel {
   }
 
   public void checkModel(SModelDescriptor modelDescriptor) {
-    this.checkSomething(new ModelIssueFinder(modelDescriptor));
+    this.checkSomething(new ModelIssueFinder(modelDescriptor), "Checking " + modelDescriptor.getLongName());
+  }
+
+  public void checkModels(List<SModelDescriptor> modelDescriptors) {
+    this.checkSomething(new ModelsIssueFinder(modelDescriptors), "Checking " + ListSequence.fromList(modelDescriptors).count() + " models");
+  }
+
+  public void checkModule(IModule module) {
+    this.checkSomething(new ModuleIssueFinder(module), "Checking " + module.getModuleFqName());
+  }
+
+  public void checkModules(List<IModule> modules) {
+    this.checkSomething(new ModulesIssueFinder(modules), "Checking " + ListSequence.fromList(modules).count() + " modules");
+  }
+
+  public void checkProject(MPSProject project) {
+    this.checkSomething(new ProjectIssueFinder(project), "Checking " + project.getProjectDescriptor().getName());
   }
 
   public static class MyNodeRepresentator implements INodeRepresentator<ModelCheckerIssue> {

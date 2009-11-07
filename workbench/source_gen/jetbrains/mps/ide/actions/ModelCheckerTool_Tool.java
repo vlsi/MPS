@@ -41,32 +41,27 @@ public class ModelCheckerTool_Tool extends GeneratedTool {
   }
 
   public void checkModels(List<SModelDescriptor> modelDescriptors) {
-    OldModelCheckerViewer newViewer = new OldModelCheckerViewer(ModelCheckerTool_Tool.this.myProject, ModelCheckerTool_Tool.this);
-    if (newViewer.checkModels(modelDescriptors)) {
-      ModelCheckerTool_Tool.this.processCheckResults(newViewer, ListSequence.fromList(modelDescriptors).count() + " models", Icons.MODEL_ICON);
-    }
+    ModelCheckerViewer newViewer = new ModelCheckerViewer(ModelCheckerTool_Tool.this.myProject, ModelCheckerTool_Tool.this);
+    newViewer.checkModels(modelDescriptors);
+    ModelCheckerTool_Tool.this.processCheckResults(newViewer, ListSequence.fromList(modelDescriptors).count() + " models", Icons.MODEL_ICON);
   }
 
   public void checkModule(IModule module) {
-    OldModelCheckerViewer newViewer = new OldModelCheckerViewer(ModelCheckerTool_Tool.this.myProject, ModelCheckerTool_Tool.this);
-    if (newViewer.checkModule(module)) {
-      ModelCheckerTool_Tool.this.processCheckResults(newViewer, module.getModuleFqName(), IconManager.getIconFor(module));
-    }
+    ModelCheckerViewer newViewer = new ModelCheckerViewer(ModelCheckerTool_Tool.this.myProject, ModelCheckerTool_Tool.this);
+    newViewer.checkModule(module);
+    ModelCheckerTool_Tool.this.processCheckResults(newViewer, module.getModuleFqName(), IconManager.getIconFor(module));
   }
 
   public void checkModules(List<IModule> modules) {
-    OldModelCheckerViewer newViewer = new OldModelCheckerViewer(ModelCheckerTool_Tool.this.myProject, ModelCheckerTool_Tool.this);
-    if (newViewer.checkModules(modules)) {
-      // TODO icon 
-      ModelCheckerTool_Tool.this.processCheckResults(newViewer, ListSequence.fromList(modules).count() + " modules", Icons.MODULE_DEPENDENCIES_ICON);
-    }
+    ModelCheckerViewer newViewer = new ModelCheckerViewer(ModelCheckerTool_Tool.this.myProject, ModelCheckerTool_Tool.this);
+    newViewer.checkModules(modules);
+    ModelCheckerTool_Tool.this.processCheckResults(newViewer, ListSequence.fromList(modules).count() + " modules", Icons.MODULE_GROUP_CLOSED);
   }
 
   public void checkProject(MPSProject mpsProject) {
-    OldModelCheckerViewer newViewer = new OldModelCheckerViewer(ModelCheckerTool_Tool.this.myProject, ModelCheckerTool_Tool.this);
-    if (newViewer.checkProject(mpsProject)) {
-      ModelCheckerTool_Tool.this.processCheckResults(newViewer, mpsProject.getProjectDescriptor().getName(), Icons.PROJECT_ICON);
-    }
+    ModelCheckerViewer newViewer = new ModelCheckerViewer(ModelCheckerTool_Tool.this.myProject, ModelCheckerTool_Tool.this);
+    newViewer.checkProject(mpsProject);
+    ModelCheckerTool_Tool.this.processCheckResults(newViewer, mpsProject.getProjectDescriptor().getName(), Icons.PROJECT_ICON);
   }
 
   public void closeTab(JComponent component) {
