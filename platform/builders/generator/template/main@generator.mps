@@ -43,6 +43,7 @@
   <visible index="2" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
   <node type="jetbrains.mps.lang.generator.structure.MappingConfiguration" id="7057666463730688472">
     <property name="name" value="main" />
+    <property name="topPriorityGroup" value="true" />
     <node role="reductionMappingRule" type="jetbrains.mps.lang.generator.structure.Reduction_MappingRule" id="7057666463730688473">
       <link role="applicableConcept" targetNodeId="2v.1145552977093" resolveInfo="GenericNewExpression" />
       <node role="conditionFunction" type="jetbrains.mps.lang.generator.structure.BaseMappingRule_Condition" id="7057666463730697096">
