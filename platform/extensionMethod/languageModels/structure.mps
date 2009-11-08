@@ -1,7 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<model modelUID="r:4f6f8ed5-c3d7-49f4-b0dd-d70029feffdf(jetbrains.mps.baseLanguage.methodExtension.structure)">
+<model modelUID="r:4f6f8ed5-c3d7-49f4-b0dd-d70029feffdf(jetbrains.mps.baseLanguage.extensionMethods.structure)">
   <persistence version="3" />
-  <refactoringHistory />
+  <refactoringHistory>
+    <refactoringContext modelVersion="0">
+      <refactoring refactoringClass="jetbrains.mps.refactoring.renameLanguage.LanguageRenamer$MyRefactoring" />
+      <moveMap />
+      <conceptFeatureMap>
+        <entry>
+          <key featureName="ExtensionMethodCall" conceptFQName="jetbrains.mps.baseLanguage.methodExtension.structure.ExtensionMethodCall" featureKind="CONCEPT" />
+          <value featureName="ExtensionMethodCall" conceptFQName="jetbrains.mps.baseLanguage.extensionMethods.structure.ExtensionMethodCall" featureKind="CONCEPT" />
+        </entry>
+        <entry>
+          <key featureName="ExtensionMethodDeclaration" conceptFQName="jetbrains.mps.baseLanguage.methodExtension.structure.ExtensionMethodDeclaration" featureKind="CONCEPT" />
+          <value featureName="ExtensionMethodDeclaration" conceptFQName="jetbrains.mps.baseLanguage.extensionMethods.structure.ExtensionMethodDeclaration" featureKind="CONCEPT" />
+        </entry>
+        <entry>
+          <key featureName="ThisExtensionExpression" conceptFQName="jetbrains.mps.baseLanguage.methodExtension.structure.ThisExtensionExpression" featureKind="CONCEPT" />
+          <value featureName="ThisExtensionExpression" conceptFQName="jetbrains.mps.baseLanguage.extensionMethods.structure.ThisExtensionExpression" featureKind="CONCEPT" />
+        </entry>
+        <entry>
+          <key featureName="TypeExtension" conceptFQName="jetbrains.mps.baseLanguage.methodExtension.structure.TypeExtension" featureKind="CONCEPT" />
+          <value featureName="TypeExtension" conceptFQName="jetbrains.mps.baseLanguage.extensionMethods.structure.TypeExtension" featureKind="CONCEPT" />
+        </entry>
+      </conceptFeatureMap>
+    </refactoringContext>
+  </refactoringHistory>
   <language namespace="c72da2b9-7cce-4447-8389-f407dc1158b7(jetbrains.mps.lang.structure)" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590283(jetbrains.mps.lang.core.constraints)" version="2" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959028c(jetbrains.mps.lang.structure.constraints)" version="11" />
@@ -24,6 +47,7 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959034b(jetbrains.mps.lang.quotation.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590328(jetbrains.mps.baseLanguage.collections.constraints)" version="6" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" version="7" />
+  <languageAspect modelUID="r:4f6f8ed5-c3d7-49f4-b0dd-d70029feffdf(jetbrains.mps.baseLanguage.extensionMethods.structure)" version="0" />
   <maxImportIndex value="6" />
   <import index="6" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="3" />
   <visible index="2" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
@@ -71,6 +95,15 @@
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1550313277222152185">
     <property name="name" value="ExtensionMethodDeclaration" />
     <link role="extends" targetNodeId="6.1068580123132" resolveInfo="BaseMethodDeclaration" />
+    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="720975379598106009">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="visibility" />
+      <property name="sourceCardinality" value="1" />
+      <link role="target" targetNodeId="6.1146644584814" resolveInfo="Visibility" />
+    </node>
+    <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="5978048404738652281">
+      <link role="intfc" targetNodeId="2v.1196978630214" resolveInfo="IResolveInfo" />
+    </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="3316739663067157299">
     <property name="name" value="ThisExtensionExpression" />

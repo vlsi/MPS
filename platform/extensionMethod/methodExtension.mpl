@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<language namespace="jetbrains.mps.baseLanguage.methodExtension" uuid="5dc5fc0d-37ef-4782-8192-8b5ce1f69f80" java-stubs-enabled="false" compileInMPS="false">
+<language namespace="jetbrains.mps.baseLanguage.extensionMethods" uuid="5dc5fc0d-37ef-4782-8192-8b5ce1f69f80" java-stubs-enabled="false" compileInMPS="false">
   <models>
-    <modelRoot path="${language_descriptor}/languageModels" namespacePrefix="" />
+    <modelRoot path="${language_descriptor}/languageModels" namespacePrefix="jetbrains.mps.baseLanguage.extensionMethods" />
   </models>
   <accessoryModels />
   <generators>
-    <generator name="" generatorUID="jetbrains.mps.baseLanguage.methodExtension#6225815798156427146" uuid="6a08004c-a528-4d33-89a4-9cd55361f38d">
+    <generator name="" generatorUID="jetbrains.mps.baseLanguage.extensionMethods#6225815798156427146" uuid="6a08004c-a528-4d33-89a4-9cd55361f38d">
       <models>
-        <modelRoot path="${language_descriptor}/generator/template" namespacePrefix="jetbrains.mps.baseLanguage.methodExtension.generator.template" />
+        <modelRoot path="${language_descriptor}/generator/template" namespacePrefix="jetbrains.mps.baseLanguage.extensionMethods.generator.template" />
       </models>
       <external-templates />
       <usedDevKits>
