@@ -1598,6 +1598,7 @@
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="7802271442981792286" />
     </node>
   </node>
+  <visible index="3" modelUID="r:00000000-0000-4000-0000-011c895902c0(jetbrains.mps.baseLanguage.behavior)" />
   <node type="jetbrains.mps.lang.behavior.structure.ConceptBehavior" id="2679357232284040708">
     <property name="package" value="bean" />
     <link role="concept" targetNodeId="1.2679357232283750087" resolveInfo="BeanPropertyBuilder" />
@@ -1741,16 +1742,28 @@
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="2679357232284060726" />
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="2679357232284060727">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="2679357232284060733">
-          <node role="expression" type="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" id="5157691191963301551">
-            <link role="concept" targetNodeId="2v.1068431790189" resolveInfo="Type" />
-            <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="5157691191963301546">
-              <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="5157691191963301541">
-                <node role="operand" type="jetbrains.mps.lang.behavior.structure.ThisNodeExpression" id="5157691191963301540" />
-                <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="5157691191963301545">
-                  <link role="link" targetNodeId="1.2679357232283750106" />
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="7900150680153074498">
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="7900150680153074469">
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="7900150680153074461">
+                <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="7900150680153073461">
+                  <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="7900150680153073456">
+                    <node role="operand" type="jetbrains.mps.lang.behavior.structure.ThisNodeExpression" id="7900150680153073455" />
+                    <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="7900150680153073460">
+                      <link role="link" targetNodeId="1.2679357232283750088" />
+                    </node>
+                  </node>
+                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkListAccess" id="7900150680153074460">
+                    <link role="link" targetNodeId="2v.1068580123134" />
+                  </node>
                 </node>
+                <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.GetFirstOperation" id="7900150680153074465" />
               </node>
-              <node role="operation" type="jetbrains.mps.lang.typesystem.structure.Node_TypeOperation" id="5157691191963301550" />
+              <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="7900150680153074476">
+                <link role="link" targetNodeId="2v.5680397130376446158" />
+              </node>
+            </node>
+            <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="7900150680153074503">
+              <link role="baseMethodDeclaration" targetNodeId="3v.1213877337345" resolveInfo="getJavaType" />
             </node>
           </node>
         </node>
@@ -1988,16 +2001,20 @@
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="5389689214217665422" />
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="5389689214217665423">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="5389689214217665429">
-          <node role="expression" type="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" id="5157691191963339809">
-            <link role="concept" targetNodeId="2v.1068431790189" resolveInfo="Type" />
-            <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="5157691191963339804">
-              <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="5157691191963339799">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="7900150680153074505">
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="7900150680153074492">
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="7900150680153074487">
                 <node role="operand" type="jetbrains.mps.lang.behavior.structure.ThisNodeExpression" id="5157691191963339798" />
-                <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="5157691191963339803">
-                  <link role="link" targetNodeId="1.5389689214217404512" />
+                <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="7900150680153074491">
+                  <link role="link" targetNodeId="1.5389689214217404513" />
                 </node>
               </node>
-              <node role="operation" type="jetbrains.mps.lang.typesystem.structure.Node_TypeOperation" id="5157691191963339808" />
+              <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="7900150680153074496">
+                <link role="link" targetNodeId="1.5389689214216997399" />
+              </node>
+            </node>
+            <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="7900150680153074509">
+              <link role="baseMethodDeclaration" targetNodeId="3v.1213877337345" resolveInfo="getJavaType" />
             </node>
           </node>
         </node>
