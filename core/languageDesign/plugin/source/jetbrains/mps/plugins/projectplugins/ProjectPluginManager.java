@@ -90,9 +90,10 @@ public class ProjectPluginManager implements ProjectComponent, PersistentStateCo
   public <T extends BaseProjectPrefsComponent> T getPrefsComponent(Class<T> componentClass) {
     synchronized (myPluginsLock) {
       for (BaseProjectPlugin plugin : mySortedPlugins) {
-        BaseProjectPlugin basePlugin = (BaseProjectPlugin) plugin;
-        BaseProjectPrefsComponent component = basePlugin.getPrefsComponent(componentClass);
-        if (component != null) return (T) component;
+        List<BaseProjectPrefsComponent> components = ((BaseProjectPlugin) plugin).getPrefsComponents();
+        for (BaseProjectPrefsComponent component : components) {
+          if (component.getClass().getName().equals(componentClass.getName())) return (T) component;
+        }
       }
       return null;
     }

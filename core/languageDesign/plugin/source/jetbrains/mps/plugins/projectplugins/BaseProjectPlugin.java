@@ -161,11 +161,8 @@ public abstract class BaseProjectPlugin implements MPSEditorOpenHandlerOwner, Pe
   }
   //------------------tools stuff-----------------------
 
-  public BaseProjectPrefsComponent getPrefsComponent(Class cls) {
-    for (BaseProjectPrefsComponent component : myPrefsComponents) {
-      if (component.getClass() == cls) return component;
-    }
-    return null;
+  public List<BaseProjectPrefsComponent> getPrefsComponents() {
+    return Collections.unmodifiableList(myPrefsComponents);
   }
 
   public List<GeneratedTool> getTools() {
