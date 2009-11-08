@@ -4,6 +4,7 @@ package jetbrains.mps.baseLanguage.builders.behavior;
 
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
 
@@ -21,11 +22,11 @@ public class SimpleBuilderPropertyBuilder_Behavior {
   }
 
   public static SNode virtual_getResultType_7057666463730718251(SNode thisNode) {
-    return new _Quotations.QuotationClass_2().createNode();
+    return SNodeOperations.cast(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(thisNode, "value", true)), "jetbrains.mps.baseLanguage.structure.Type");
   }
 
   public static SNode virtual_getCreatorExpression_7057666463730727863(SNode thisNode) {
-    return SNodeOperations.copyNode(SLinkOperations.getTarget(thisNode, "value", true));
+    return SLinkOperations.getTarget(thisNode, "value", true);
   }
 
   public static SNode virtual_getAttachStatementChild_4797501453850305563(SNode thisNode, SNode parentBuilder, SNode parentRef, SNode childRef) {

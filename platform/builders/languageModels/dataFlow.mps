@@ -122,5 +122,21 @@
       </node>
     </node>
   </node>
+  <node type="jetbrains.mps.lang.dataFlow.structure.DataFlowBuilderDeclaration" id="932644095877920802">
+    <property name="package" value="simple" />
+    <link role="conceptDeclaration" targetNodeId="1.5389689214217404511" resolveInfo="SimpleBuilderPropertyBuilder" />
+    <node role="builderBlock" type="jetbrains.mps.lang.dataFlow.structure.BuilderBlock" id="932644095877920803">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="932644095877920804">
+        <node role="statement" type="jetbrains.mps.lang.dataFlow.structure.EmitCodeForStatement" id="932644095877920805">
+          <node role="codeFor" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="932644095877920808">
+            <node role="operand" type="jetbrains.mps.lang.dataFlow.structure.NodeParameter" id="932644095877920807" />
+            <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="932644095877920812">
+              <link role="link" targetNodeId="1.5389689214217404512" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
 </model>
 

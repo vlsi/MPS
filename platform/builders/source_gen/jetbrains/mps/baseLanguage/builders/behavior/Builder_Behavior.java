@@ -6,7 +6,11 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptPropertyOperations;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
+import java.util.List;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.internal.collections.runtime.Sequence;
 
 public class Builder_Behavior {
   private static Class[] PARAMETERS_7057666463730595159 = {SNode.class};
@@ -75,6 +79,12 @@ public class Builder_Behavior {
   }
 
   public static SNode getContextBuilder_7057666463730366732(SNode context) {
-    return SLinkOperations.getTarget(SNodeOperations.getAncestor(context, "jetbrains.mps.baseLanguage.builders.structure.BuilderContainer", false, false), "builder", true);
+    List<SNode> ancestors = SNodeOperations.getAncestors(context, "jetbrains.mps.baseLanguage.builders.structure.BuilderContainer", false);
+    Iterable<SNode> nonLeaves = ListSequence.fromList(ancestors).where(new IWhereFilter<SNode>() {
+      public boolean accept(SNode it) {
+        return !(BuilderContainer_Behavior.call_isLeaf_932644095877881871(it));
+      }
+    });
+    return SLinkOperations.getTarget(Sequence.fromIterable(nonLeaves).first(), "builder", true);
   }
 }

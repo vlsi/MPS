@@ -11,5 +11,6 @@ public class DFABuilders extends DataFlowBuilders {
     manager.register("jetbrains.mps.baseLanguage.builders.structure.BuilderStatement", new BuilderStatement_DataFlow());
     manager.register("jetbrains.mps.baseLanguage.builders.structure.AsBuilderStatement", new AsBuilderStatement_DataFlow());
     manager.register("jetbrains.mps.baseLanguage.builders.structure.BeanPropertyBuilder", new BeanPropertyBuilder_DataFlow());
+    manager.register("jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderPropertyBuilder", new SimpleBuilderPropertyBuilder_DataFlow());
   }
 }
