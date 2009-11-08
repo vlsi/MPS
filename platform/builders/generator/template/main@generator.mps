@@ -260,11 +260,51 @@
                 <node role="nodeMacro$attribute" type="jetbrains.mps.lang.generator.structure.CopySrcNodeMacro" id="7057666463730728116">
                   <node role="sourceNodeQuery" type="jetbrains.mps.lang.generator.structure.SourceSubstituteMacro_SourceNodeQuery" id="7057666463730728117">
                     <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="7057666463730728118">
+                      <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="84035966146090961">
+                        <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="84035966146090962">
+                          <property name="name" value="context" />
+                          <node role="type" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="84035966146090963">
+                            <link role="concept" targetNodeId="1.7057666463730155275" resolveInfo="Builder" />
+                          </node>
+                          <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="84035966146090967">
+                            <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="84035966146090966" />
+                            <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="84035966146090971">
+                              <link role="baseMethodDeclaration" targetNodeId="3.7057666463730306577" resolveInfo="getContextBuilder" />
+                            </node>
+                          </node>
+                        </node>
+                      </node>
+                      <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="84035966146090978">
+                        <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="84035966146090979">
+                          <property name="name" value="ref" />
+                          <node role="type" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="84035966146090980">
+                            <link role="concept" targetNodeId="2v.1068498886296" resolveInfo="VariableReference" />
+                          </node>
+                          <node role="initializer" type="jetbrains.mps.lang.quotation.structure.Quotation" id="84035966146090982">
+                            <node role="quotedNode" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="84035966146090984">
+                              <node role="referenceAntiquotation$link_attribute$variableDeclaration" type="jetbrains.mps.lang.quotation.structure.ReferenceAntiquotation" id="84035966146090985">
+                                <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="84035966146090988">
+                                  <node role="operand" type="jetbrains.mps.lang.generator.generationContext.structure.TemplateFunctionParameter_generationContext" id="84035966146090987" />
+                                  <node role="operation" type="jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GetOutputByLabelAndInput" id="84035966146090992">
+                                    <link role="label" targetNodeId="7057666463730728197" resolveInfo="builderVar" />
+                                    <node role="inputNode" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="84035966146090994">
+                                      <link role="variableDeclaration" targetNodeId="84035966146090962" resolveInfo="context" />
+                                    </node>
+                                  </node>
+                                </node>
+                              </node>
+                            </node>
+                          </node>
+                        </node>
+                      </node>
                       <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="7057666463730728119">
                         <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="7057666463730728121">
                           <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="7057666463730728120" />
                           <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="7057666463730728125">
                             <link role="baseMethodDeclaration" targetNodeId="3.7057666463730727863" resolveInfo="getCreatorExpression" />
+                            <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="84035966146090995">
+                              <link role="variableDeclaration" targetNodeId="84035966146090979" resolveInfo="ref" />
+                            </node>
                           </node>
                         </node>
                       </node>

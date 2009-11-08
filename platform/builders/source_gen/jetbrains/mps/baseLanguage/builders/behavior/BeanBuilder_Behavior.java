@@ -8,13 +8,13 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
 
 public class BeanBuilder_Behavior {
-  private static Class[] PARAMETERS_6666322667909649860 = {SNode.class};
+  private static Class[] PARAMETERS_6666322667909649860 = {SNode.class ,SNode.class};
   private static Class[] PARAMETERS_6666322667909649864 = {SNode.class};
 
   public static void init(SNode thisNode) {
   }
 
-  public static SNode virtual_getCreatorExpression_7057666463730727863(SNode thisNode) {
+  public static SNode virtual_getCreatorExpression_7057666463730727863(SNode thisNode, SNode parentRef) {
     return new _Quotations.QuotationClass_1().createNode(SLinkOperations.getTargets(thisNode, "actualArgument", true), SLinkOperations.getTarget(thisNode, "baseMethodDeclaration", false));
   }
 
@@ -22,16 +22,16 @@ public class BeanBuilder_Behavior {
     return new _Quotations.QuotationClass_2().createNode(SNodeOperations.cast(SNodeOperations.getParent(SLinkOperations.getTarget(thisNode, "baseMethodDeclaration", false)), "jetbrains.mps.baseLanguage.structure.ClassConcept"));
   }
 
-  public static SNode call_getCreatorExpression_6666322667909649860(SNode thisNode) {
-    return (SNode)BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.builders.structure.BeanBuilder"), "virtual_getCreatorExpression_7057666463730727863", PARAMETERS_6666322667909649860);
+  public static SNode call_getCreatorExpression_6666322667909649860(SNode thisNode, SNode parentRef) {
+    return (SNode)BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.builders.structure.BeanBuilder"), "virtual_getCreatorExpression_7057666463730727863", PARAMETERS_6666322667909649860, parentRef);
   }
 
   public static SNode call_getResultType_6666322667909649864(SNode thisNode) {
     return (SNode)BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.builders.structure.BeanBuilder"), "virtual_getResultType_7057666463730718251", PARAMETERS_6666322667909649864);
   }
 
-  public static SNode callSuper_getCreatorExpression_6666322667909649860(SNode thisNode, String callerConceptFqName) {
-    return (SNode)BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.builders.structure.BeanBuilder"), callerConceptFqName, "virtual_getCreatorExpression_7057666463730727863", PARAMETERS_6666322667909649860);
+  public static SNode callSuper_getCreatorExpression_6666322667909649860(SNode thisNode, String callerConceptFqName, SNode parentRef) {
+    return (SNode)BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.builders.structure.BeanBuilder"), callerConceptFqName, "virtual_getCreatorExpression_7057666463730727863", PARAMETERS_6666322667909649860, parentRef);
   }
 
   public static SNode callSuper_getResultType_6666322667909649864(SNode thisNode, String callerConceptFqName) {

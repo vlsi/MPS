@@ -40,7 +40,9 @@ public class QueriesGenerated {
   }
 
   public static SNode sourceNodeQuery_7057666463730728117(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return Builder_Behavior.call_getCreatorExpression_7057666463730727863(_context.getNode());
+    SNode context = Builder_Behavior.call_getContextBuilder_7057666463730306577(_context.getNode());
+    SNode ref = new _Quotations.QuotationClass_0().createNode(_context.getOutputNodeByInputNodeAndMappingLabel(context, "builderVar"));
+    return Builder_Behavior.call_getCreatorExpression_7057666463730727863(_context.getNode(), ref);
   }
 
   public static SNode sourceNodeQuery_7057666463730783295(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
@@ -52,9 +54,9 @@ public class QueriesGenerated {
   }
 
   public static SNode sourceNodeQuery_7288041816792216361(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    SNode childRef = new _Quotations.QuotationClass_0().createNode(_context.getOutputNodeByInputNodeAndMappingLabel(SLinkOperations.getTarget(_context.getNode(), "builder", true), "builderVar"));
+    SNode childRef = new _Quotations.QuotationClass_1().createNode(_context.getOutputNodeByInputNodeAndMappingLabel(SLinkOperations.getTarget(_context.getNode(), "builder", true), "builderVar"));
     SNode parentBuilder = Builder_Behavior.call_getContextBuilder_7057666463730306577(SLinkOperations.getTarget(_context.getNode(), "builder", true));
-    SNode parentRef = new _Quotations.QuotationClass_1().createNode(_context.getOutputNodeByInputNodeAndMappingLabel(parentBuilder, "builderVar"));
+    SNode parentRef = new _Quotations.QuotationClass_2().createNode(_context.getOutputNodeByInputNodeAndMappingLabel(parentBuilder, "builderVar"));
     return Builder_Behavior.call_getAttachStatement_7288041816792215495(parentBuilder, SLinkOperations.getTarget(_context.getNode(), "builder", true), parentRef, childRef);
   }
 

@@ -95,6 +95,12 @@
         <link role="concept" targetNodeId="2v.1068431790191" resolveInfo="Expression" />
       </node>
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="7057666463730727866" />
+      <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="84035966146090996">
+        <property name="name" value="parentRef" />
+        <node role="type" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="84035966146090997">
+          <link role="concept" targetNodeId="2v.1068431790191" resolveInfo="Expression" />
+        </node>
+      </node>
     </node>
     <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="7288041816792215495">
       <property name="name" value="getAttachStatement" />
@@ -435,6 +441,12 @@
       <property name="name" value="getCreatorExpression" />
       <property name="isVirtual" value="true" />
       <link role="overriddenMethod" targetNodeId="7057666463730727863" resolveInfo="getCreatorExpression" />
+      <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="84035966146092855">
+        <property name="name" value="parentRef" />
+        <node role="type" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="84035966146092856">
+          <link role="concept" targetNodeId="2v.1068431790191" resolveInfo="Expression" />
+        </node>
+      </node>
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="7288041816793071814" />
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="7288041816793071815">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="4315270135340702019">
@@ -1776,6 +1788,12 @@
       <property name="name" value="getCreatorExpression" />
       <property name="isVirtual" value="true" />
       <link role="overriddenMethod" targetNodeId="7057666463730727863" resolveInfo="getCreatorExpression" />
+      <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="84035966146092559">
+        <property name="name" value="parentRef" />
+        <node role="type" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="84035966146092560">
+          <link role="concept" targetNodeId="2v.1068431790191" resolveInfo="Expression" />
+        </node>
+      </node>
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="2679357232284060738" />
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="2679357232284060739">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="4797501453850445971">
@@ -1864,6 +1882,12 @@
       <property name="name" value="getCreatorExpression" />
       <property name="isVirtual" value="true" />
       <link role="overriddenMethod" targetNodeId="7057666463730727863" resolveInfo="getCreatorExpression" />
+      <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="84035966146092012">
+        <property name="name" value="parentRef" />
+        <node role="type" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="84035966146092013">
+          <link role="concept" targetNodeId="2v.1068431790191" resolveInfo="Expression" />
+        </node>
+      </node>
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="6666322667909649861" />
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="6666322667909649862">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="6666322667909649872">
@@ -1940,6 +1964,12 @@
       <property name="name" value="getCreatorExpression" />
       <property name="isVirtual" value="true" />
       <link role="overriddenMethod" targetNodeId="7057666463730727863" resolveInfo="getCreatorExpression" />
+      <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="84035966146090998">
+        <property name="name" value="parentRef" />
+        <node role="type" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="84035966146090999">
+          <link role="concept" targetNodeId="2v.1068431790191" resolveInfo="Expression" />
+        </node>
+      </node>
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="5389689214216563781" />
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="5389689214216563782">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ThrowStatement" id="5389689214216563795">
@@ -2027,6 +2057,12 @@
       <property name="name" value="getCreatorExpression" />
       <property name="isVirtual" value="true" />
       <link role="overriddenMethod" targetNodeId="7057666463730727863" resolveInfo="getCreatorExpression" />
+      <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="84035966146092570">
+        <property name="name" value="parentRef" />
+        <node role="type" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="84035966146092571">
+          <link role="concept" targetNodeId="2v.1068431790191" resolveInfo="Expression" />
+        </node>
+      </node>
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="5389689214217665418" />
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="5389689214217665419">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="5389689214217665963">

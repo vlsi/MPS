@@ -11,7 +11,7 @@ import jetbrains.mps.smodel.behaviour.BehaviorManager;
 public class SimpleBuilderPropertyBuilder_Behavior {
   private static Class[] PARAMETERS_5389689214217569806 = {SNode.class};
   private static Class[] PARAMETERS_5389689214217665421 = {SNode.class};
-  private static Class[] PARAMETERS_5389689214217665417 = {SNode.class};
+  private static Class[] PARAMETERS_5389689214217665417 = {SNode.class ,SNode.class};
   private static Class[] PARAMETERS_5389689214217667234 = {SNode.class ,SNode.class ,SNode.class ,SNode.class};
 
   public static void init(SNode thisNode) {
@@ -25,7 +25,7 @@ public class SimpleBuilderPropertyBuilder_Behavior {
     return Type_Behavior.call_getJavaType_1213877337345(SLinkOperations.getTarget(SLinkOperations.getTarget(thisNode, "declaration", false), "type", true));
   }
 
-  public static SNode virtual_getCreatorExpression_7057666463730727863(SNode thisNode) {
+  public static SNode virtual_getCreatorExpression_7057666463730727863(SNode thisNode, SNode parentRef) {
     return SLinkOperations.getTarget(thisNode, "value", true);
   }
 
@@ -49,8 +49,8 @@ public class SimpleBuilderPropertyBuilder_Behavior {
     return (SNode)BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderPropertyBuilder"), "virtual_getResultType_7057666463730718251", PARAMETERS_5389689214217665421);
   }
 
-  public static SNode call_getCreatorExpression_5389689214217665417(SNode thisNode) {
-    return (SNode)BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderPropertyBuilder"), "virtual_getCreatorExpression_7057666463730727863", PARAMETERS_5389689214217665417);
+  public static SNode call_getCreatorExpression_5389689214217665417(SNode thisNode, SNode parentRef) {
+    return (SNode)BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderPropertyBuilder"), "virtual_getCreatorExpression_7057666463730727863", PARAMETERS_5389689214217665417, parentRef);
   }
 
   public static SNode call_getAttachStatementChild_5389689214217667234(SNode thisNode, SNode parentBuilder, SNode parentRef, SNode childRef) {
@@ -65,8 +65,8 @@ public class SimpleBuilderPropertyBuilder_Behavior {
     return (SNode)BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderPropertyBuilder"), callerConceptFqName, "virtual_getResultType_7057666463730718251", PARAMETERS_5389689214217665421);
   }
 
-  public static SNode callSuper_getCreatorExpression_5389689214217665417(SNode thisNode, String callerConceptFqName) {
-    return (SNode)BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderPropertyBuilder"), callerConceptFqName, "virtual_getCreatorExpression_7057666463730727863", PARAMETERS_5389689214217665417);
+  public static SNode callSuper_getCreatorExpression_5389689214217665417(SNode thisNode, String callerConceptFqName, SNode parentRef) {
+    return (SNode)BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderPropertyBuilder"), callerConceptFqName, "virtual_getCreatorExpression_7057666463730727863", PARAMETERS_5389689214217665417, parentRef);
   }
 
   public static SNode callSuper_getAttachStatementChild_5389689214217667234(SNode thisNode, String callerConceptFqName, SNode parentBuilder, SNode parentRef, SNode childRef) {

@@ -18,7 +18,7 @@ import jetbrains.mps.smodel.behaviour.BehaviorManager;
 public class SimpleBuilder_Behavior {
   private static Class[] PARAMETERS_7288041816793071817 = {SNode.class};
   private static Class[] PARAMETERS_7288041816793416227 = {SNode.class};
-  private static Class[] PARAMETERS_7288041816793071813 = {SNode.class};
+  private static Class[] PARAMETERS_7288041816793071813 = {SNode.class ,SNode.class};
   private static Class[] PARAMETERS_7288041816793075493 = {SNode.class ,SNode.class ,SNode.class ,SNode.class};
 
   public static void init(SNode thisNode) {
@@ -44,7 +44,7 @@ public class SimpleBuilder_Behavior {
     return builders;
   }
 
-  public static SNode virtual_getCreatorExpression_7057666463730727863(SNode thisNode) {
+  public static SNode virtual_getCreatorExpression_7057666463730727863(SNode thisNode, SNode parentRef) {
     SNode result = SNodeOperations.copyNode(SLinkOperations.getTarget(SLinkOperations.getTarget(thisNode, "declaration", false), "creator", true));
 
     List<SNode> params = SLinkOperations.getTargets(SLinkOperations.getTarget(thisNode, "declaration", false), "parameter", true);
@@ -90,8 +90,8 @@ public class SimpleBuilder_Behavior {
     return (Boolean)BehaviorManager.getInstance().invoke(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.builders.structure.SimpleBuilder"), "virtual_isLeaf_7057666463730595159", PARAMETERS_7288041816793416227);
   }
 
-  public static SNode call_getCreatorExpression_7288041816793071813(SNode thisNode) {
-    return (SNode)BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.builders.structure.SimpleBuilder"), "virtual_getCreatorExpression_7057666463730727863", PARAMETERS_7288041816793071813);
+  public static SNode call_getCreatorExpression_7288041816793071813(SNode thisNode, SNode parentRef) {
+    return (SNode)BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.builders.structure.SimpleBuilder"), "virtual_getCreatorExpression_7057666463730727863", PARAMETERS_7288041816793071813, parentRef);
   }
 
   public static SNode call_getAttachStatement_7288041816793075493(SNode thisNode, SNode childBuilder, SNode parentRef, SNode childRef) {
@@ -106,8 +106,8 @@ public class SimpleBuilder_Behavior {
     return (Boolean)BehaviorManager.getInstance().invokeSuper(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.builders.structure.SimpleBuilder"), callerConceptFqName, "virtual_isLeaf_7057666463730595159", PARAMETERS_7288041816793416227);
   }
 
-  public static SNode callSuper_getCreatorExpression_7288041816793071813(SNode thisNode, String callerConceptFqName) {
-    return (SNode)BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.builders.structure.SimpleBuilder"), callerConceptFqName, "virtual_getCreatorExpression_7057666463730727863", PARAMETERS_7288041816793071813);
+  public static SNode callSuper_getCreatorExpression_7288041816793071813(SNode thisNode, String callerConceptFqName, SNode parentRef) {
+    return (SNode)BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.builders.structure.SimpleBuilder"), callerConceptFqName, "virtual_getCreatorExpression_7057666463730727863", PARAMETERS_7288041816793071813, parentRef);
   }
 
   public static SNode callSuper_getAttachStatement_7288041816793075493(SNode thisNode, String callerConceptFqName, SNode childBuilder, SNode parentRef, SNode childRef) {
