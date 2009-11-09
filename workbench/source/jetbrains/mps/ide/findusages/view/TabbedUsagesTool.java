@@ -22,6 +22,7 @@ public abstract class TabbedUsagesTool extends BaseProjectTool implements INavig
   private static Logger LOG = Logger.getLogger(UsagesViewTool.class);
   private ContentManagerAdapter myContentListener;
   private ReloadAdapter myReloadHandler;
+  private ContentManager myContentManager;
 
   public TabbedUsagesTool(Project project, String id, int number, Icon icon, ToolWindowAnchor anchor, boolean canCloseContent) {
     super(project, id, number, icon, anchor, canCloseContent);
@@ -49,12 +50,14 @@ public abstract class TabbedUsagesTool extends BaseProjectTool implements INavig
       }
     };
 
-    getContentManager().addContentManagerListener(myContentListener);
+    myContentManager = getContentManager();
+
+    myContentManager.addContentManagerListener(myContentListener);
 
     if (forceCloseOnReload()) {
       myReloadHandler = new ReloadAdapter() {
         public void onReload() {
-          getContentManager().removeAllContents(true);
+          myContentManager.removeAllContents(true);
         }
       };
       ClassLoaderManager.getInstance().addReloadHandler(myReloadHandler);
