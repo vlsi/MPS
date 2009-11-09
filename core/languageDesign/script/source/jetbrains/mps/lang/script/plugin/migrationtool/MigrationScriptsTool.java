@@ -64,6 +64,10 @@ public class MigrationScriptsTool extends TabbedUsagesTool {
     myViews.remove(index);
   }
 
+  protected boolean forceCloseOnReload() {
+    return true;
+  }
+
   public void startMigration(List<MigrationScript> scriptNodes, final IScope scope, final IOperationContext context) {
     LOG.checkEDT();
 

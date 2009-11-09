@@ -5,6 +5,8 @@ import jetbrains.mps.ide.findusages.INavigateableTool;
 import jetbrains.mps.ide.findusages.INavigator;
 import jetbrains.mps.ide.findusages.UsagesViewTracker;
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.reloading.ClassLoaderManager;
+import jetbrains.mps.reloading.ReloadAdapter;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.wm.ToolWindowAnchor;
 import com.intellij.ui.content.ContentManagerAdapter;
@@ -19,6 +21,7 @@ import org.jetbrains.annotations.Nullable;
 public abstract class TabbedUsagesTool extends BaseProjectTool implements INavigateableTool {
   private static Logger LOG = Logger.getLogger(UsagesViewTool.class);
   private ContentManagerAdapter myContentListener;
+  private ReloadAdapter myReloadHandler;
 
   public TabbedUsagesTool(Project project, String id, int number, Icon icon, ToolWindowAnchor anchor, boolean canCloseContent) {
     super(project, id, number, icon, anchor, canCloseContent);
@@ -47,11 +50,24 @@ public abstract class TabbedUsagesTool extends BaseProjectTool implements INavig
     };
 
     getContentManager().addContentManagerListener(myContentListener);
+
+    if (forceCloseOnReload()) {
+      myReloadHandler = new ReloadAdapter() {
+        public void onReload() {
+          getContentManager().removeAllContents(true);
+        }
+      };
+      ClassLoaderManager.getInstance().addReloadHandler(myReloadHandler);
+    }
   }
 
   public void doUnregister() {
     //this is done automatically on content manager dispose, otherwise a dependency UVT->CM must be added
     //getContentManager().removeContentManagerListener(myContentListener);
+
+    if (myReloadHandler != null) {
+      ClassLoaderManager.getInstance().removeReloadHandler(myReloadHandler);
+    }
 
     UsagesViewTracker.unregister(this);
   }
@@ -75,5 +91,10 @@ public abstract class TabbedUsagesTool extends BaseProjectTool implements INavig
   }
 
   protected abstract UsagesView getUsagesView(int index);
+
   protected abstract void onRemove(int index);
+
+  protected boolean forceCloseOnReload() {
+    return false;
+  }
 }

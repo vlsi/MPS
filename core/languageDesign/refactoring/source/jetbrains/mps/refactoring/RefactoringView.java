@@ -45,6 +45,10 @@ public class RefactoringView extends TabbedUsagesTool {
     myRefactoringViews.remove(index);
   }
 
+  protected boolean forceCloseOnReload() {
+    return true;
+  }
+      
   //first parameter is null - no checkboxes will be shown
   public void showRefactoringView(@Nullable RefactoringContext refactoringContext, @NotNull RefactoringViewAction refactoringViewAction,
                                   SearchResults searchResults, boolean hasModelsToGenerate) {
