@@ -134,20 +134,30 @@
             <node role="elsifClauses" type="jetbrains.mps.baseLanguage.structure.ElsifClause" id="8969040284892333324">
               <node role="condition" type="jetbrains.mps.baseLanguage.structure.AndExpression" id="8969040284892333373">
                 <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.ParenthesizedExpression" id="8009360033695027487">
-                  <node role="expression" type="jetbrains.mps.baseLanguage.structure.OrExpression" id="8009360033695027501">
-                    <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="8009360033695027514">
-                      <node role="operand" type="jetbrains.mps.lang.constraints.structure.ConceptParameter_ReferentSearchScope_enclosingNode" id="8009360033695027513" />
-                      <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation" id="8009360033695027527">
-                        <node role="conceptArgument" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" id="8009360033695027538">
-                          <link role="conceptDeclaration" targetNodeId="1.7802271442981707292" resolveInfo="AsBuilderStatement" />
+                  <node role="expression" type="jetbrains.mps.baseLanguage.structure.OrExpression" id="1075546111103399417">
+                    <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1075546111103400977">
+                      <node role="operand" type="jetbrains.mps.lang.constraints.structure.ConceptParameter_ReferentSearchScope_enclosingNode" id="1075546111103400976" />
+                      <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation" id="1075546111103400981">
+                        <node role="conceptArgument" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" id="1075546111103400983">
+                          <link role="conceptDeclaration" targetNodeId="1.7057666463730155278" resolveInfo="BuilderCreator" />
                         </node>
                       </node>
                     </node>
-                    <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="8009360033695027488">
-                      <node role="operand" type="jetbrains.mps.lang.constraints.structure.ConceptParameter_ReferentSearchScope_enclosingNode" id="8009360033695027489" />
-                      <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation" id="8009360033695027490">
-                        <node role="conceptArgument" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" id="8009360033695027491">
-                          <link role="conceptDeclaration" targetNodeId="2v.1145552977093" resolveInfo="GenericNewExpression" />
+                    <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.OrExpression" id="8009360033695027501">
+                      <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="8009360033695027488">
+                        <node role="operand" type="jetbrains.mps.lang.constraints.structure.ConceptParameter_ReferentSearchScope_enclosingNode" id="8009360033695027489" />
+                        <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation" id="8009360033695027490">
+                          <node role="conceptArgument" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" id="8009360033695027491">
+                            <link role="conceptDeclaration" targetNodeId="2v.1145552977093" resolveInfo="GenericNewExpression" />
+                          </node>
+                        </node>
+                      </node>
+                      <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="8009360033695027514">
+                        <node role="operand" type="jetbrains.mps.lang.constraints.structure.ConceptParameter_ReferentSearchScope_enclosingNode" id="8009360033695027513" />
+                        <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation" id="8009360033695027527">
+                          <node role="conceptArgument" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" id="8009360033695027538">
+                            <link role="conceptDeclaration" targetNodeId="1.7802271442981707292" resolveInfo="AsBuilderStatement" />
+                          </node>
                         </node>
                       </node>
                     </node>
