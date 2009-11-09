@@ -321,7 +321,7 @@ public abstract class AbstractModule implements IModule {
       return result;
     }
 
-    return Collections.unmodifiableList(myExplicitlyDependentModules);    
+    return Collections.unmodifiableList(myExplicitlyDependentModules);
   }
 
   protected void addExplicitlyDependendOnModules(Set<IModule> result) {
@@ -609,10 +609,10 @@ public abstract class AbstractModule implements IModule {
           } else {
             currentItem = new JarFileClassPathItem(s);
           }
-  
+
           if (!EqualUtil.equals(s, getClassesGen().getPath()) || areJavaStubsEnabled()) {
             javaStubsResult.add(currentItem);
-          }  
+          }
 
           result.add(currentItem);
         }
@@ -679,6 +679,8 @@ public abstract class AbstractModule implements IModule {
   public BytecodeLocator getBytecodeLocator() {
     return new BytecodeLocator() {
       public byte[] find(String fqName) {
+        Solution solution = AbstractModule.this instanceof Solution ? (Solution) AbstractModule.this : null;
+        if (solution != null && solution.getSolutionDescriptor().isDontLoadClasses()) return null;
         return getClassPathItem().getClass(fqName);
       }
 
@@ -842,7 +844,7 @@ public abstract class AbstractModule implements IModule {
   }
 
   public class ModuleScope extends DefaultScope {
-    public AbstractModule getModule(){
+    public AbstractModule getModule() {
       return AbstractModule.this;
     }
 

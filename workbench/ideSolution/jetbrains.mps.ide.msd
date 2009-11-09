@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<solution name="jetbrains.mps.ide" uuid="019b622b-0aef-4dd3-86d0-4eef01f3f6bb" extenallyVisible="true" compileInMPS="false" java-stubs-enabled="true" generatorOutputPath="${mps_home}/workbench/source_gen">
+<solution name="jetbrains.mps.ide" uuid="019b622b-0aef-4dd3-86d0-4eef01f3f6bb" extenallyVisible="true" dontLoadClasses="true" compileInMPS="false" java-stubs-enabled="true" generatorOutputPath="${mps_home}/workbench/source_gen">
   <models>
     <modelRoot path="${solution_descriptor}/" namespacePrefix="" />
   </models>
