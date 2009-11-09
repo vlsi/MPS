@@ -43,7 +43,7 @@ import javax.swing.JComponent;
 )
 public class GenerationSettings implements PersistentStateComponent<MyState>, ApplicationComponent, SearchableConfigurable {
 
-  public static  GenerationSettings getInstance() {
+  public static GenerationSettings getInstance() {
     return ApplicationManager.getApplication().getComponent(GenerationSettings.class);
   }
 
@@ -131,14 +131,6 @@ public class GenerationSettings implements PersistentStateComponent<MyState>, Ap
     myState.mySaveTransientModels = saveTransientModels;
   }
 
-  public boolean isGenerateRequirements() {
-    return myState.myGenerateRequirements;
-  }
-
-  public void setGenerateRequirements(boolean generateRequirements) {
-    myState.myGenerateRequirements = generateRequirements;
-  }
-
   public boolean isShowErrorsOnly() {
     return myState.myShowErrorsOnly;
   }
@@ -147,10 +139,27 @@ public class GenerationSettings implements PersistentStateComponent<MyState>, Ap
     myState.myShowErrorsOnly = showErrorsOnly;
   }
 
+  public boolean isGenerateRequirements() {
+    return myState.myGenerateRequirements;
+  }
+
+  public void setGenerateRequirements(boolean generateRequirements) {
+    myState.myGenerateRequirements = generateRequirements;
+  }
+
+  public boolean isCheckModelsBeforeGeneration() {
+    return myState.myCheckModelsBeforeGeneration;
+  }
+
+  public void setCheckModelsBeforeGeneration(boolean checkModelsBeforeGeneration) {
+    myState.myCheckModelsBeforeGeneration = checkModelsBeforeGeneration;
+  }
+
   public static class MyState {
     private boolean mySaveTransientModels;
     private boolean myShowErrorsOnly;
     private boolean myGenerateRequirements = true;
+    private boolean myCheckModelsBeforeGeneration = true;
 
     public boolean isSaveTransientModels() {
       return mySaveTransientModels;
@@ -174,6 +183,14 @@ public class GenerationSettings implements PersistentStateComponent<MyState>, Ap
 
     public void setGenerateRequirements(boolean generateRequirements) {
       myGenerateRequirements = generateRequirements;
+    }
+
+    public boolean isCheckModelsBeforeGeneration() {
+      return myCheckModelsBeforeGeneration;
+    }
+
+    public void setCheckModelsBeforeGeneration(boolean checkModelsBeforeGeneration) {
+      myCheckModelsBeforeGeneration = checkModelsBeforeGeneration;
     }
   }
 }

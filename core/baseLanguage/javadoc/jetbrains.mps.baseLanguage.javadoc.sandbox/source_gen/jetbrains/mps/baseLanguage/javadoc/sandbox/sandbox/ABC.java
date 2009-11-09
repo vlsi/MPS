@@ -5,43 +5,43 @@ package jetbrains.mps.baseLanguage.javadoc.sandbox.sandbox;
 
 public class ABC<TT> {
   /**
-    
+   * 
    */
   public static final int SOME_CONSTANT = 4;
 
   /**
-    
-
-    @see java.lang.CharacterDataUndefined#CharacterDataUndefined() see, yes
+   * 
+   * 
+   * @see java.lang.CharacterDataUndefined#CharacterDataUndefined() see, yes
    */
   private int x;
   private int y;
 
   /**
-    
-
-    @author Ludwig Zoo
+   * 
+   * 
+   * @author Ludwig Zoo
    */
   public ABC() {
   }
 
   /**
-    The quick {@inheritDoc}brown fox {@code } over t{he lazy dog.
-    And then... {@link jetbrains.mps.baseLanguage.javadoc.sandbox.sandbox.ABC#SOME_CONSTANT } {@value}
-    Blah {@value java.awt.BorderLayout#NORTH} blah
-    {{
+   * The quick {@inheritDoc}brown fox {@code } over t{he lazy dog.
+   * And then... {@link jetbrains.mps.baseLanguage.javadoc.sandbox.sandbox.ABC#SOME_CONSTANT } {@value}
+   * Blah {@value java.awt.BorderLayout#NORTH} blah
+   * {{
       int a = 5;
-    }}
-    
-
-    @author Ludwig Zoo
-    @since 2004.
-    @version 1.1.1.1.1
-    @see jetbrains.mps.baseLanguage.javadoc.sandbox.sandbox.ABC#SOME_CONSTANT 
-    @see java.lang.Integer#toString(int, int) 
-    @see java.awt.JobAttributes.DialogType 
-    @param a param :)
-    @throws ArrayStoreException ase :)
+   * }}
+   * 
+   * 
+   * @author Ludwig Zoo
+   * @since 2004.
+   * @version 1.1.1.1.1
+   * @see jetbrains.mps.baseLanguage.javadoc.sandbox.sandbox.ABC#SOME_CONSTANT 
+   * @see java.lang.Integer#toString(int, int) 
+   * @see java.awt.JobAttributes.DialogType 
+   * @param a param :)
+   * @throws ArrayStoreException ase :)
    */
   public int foo(int a) throws ArrayStoreException {
     /*
@@ -52,32 +52,32 @@ public class ABC<TT> {
   }
 
   /**
-    asd
-    teij jk
-    asdfasdf
-    asfadsfasdfasdf
-    asfasdfasdasdfasdf<code>asdf<strong />asdf</code>
-    asdfbhj
-    asdf
-    asdf
-    asdfbjhb jhbb jhb
-    s
-    tsdfasdfasfoo
-    as dfndfasffasline2
-    {@code fasdfasdf}
-    line3
-    line4bar
-    asdf
-
-    @param s 
+   * asd
+   * teij jk
+   * asdfasdf
+   * asfadsfasdfasdf
+   * asfasdfasdasdfasdf<code>asdf<strong />asdf</code>
+   * asdfbhj
+   * asdf
+   * asdf
+   * asdfbjhb jhbb jhb
+   * s
+   * tsdfasdfasfoo
+   * as dfndfasffasline2
+   * {@code fasdfasdf}
+   * line3
+   * line4bar
+   * asdf
+   * 
+   * @param s 
    */
   public void foo(String... s) {
   }
 
   /**
-    fasdfasdfasdfasdfasdf
-
-    @version asdfasdf
+   * fasdfasdfasdfasdfasdf
+   * 
+   * @version asdfasdf
    */
   public static void foo() {
   }

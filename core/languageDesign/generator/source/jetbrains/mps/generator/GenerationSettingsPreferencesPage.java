@@ -28,20 +28,23 @@ import java.awt.GridLayout;
 class GenerationSettingsPreferencesPage {
   private JPanel myPage;
   private JCheckBox mySaveTransientModelsCheckBox = new JCheckBox("Save transient models on generation");  
-  private JCheckBox myGenerateRequirements = new JCheckBox("Checking if regeneration of other models is required");
+  private JCheckBox myGenerateRequirementsCheckBox = new JCheckBox("Checking if regeneration of other models is required");
   private JCheckBox myShowErrorsOnlyCheckBox = new JCheckBox("Log errors only (no info and warnings)");
+  private JCheckBox myCheckModelsBeforeGenerationCheckBox = new JCheckBox("Check models for errors before generation");
   private GenerationSettings myGenerationSettings;
 
   public GenerationSettingsPreferencesPage(GenerationSettings settings) {
     myGenerationSettings = settings;
     mySaveTransientModelsCheckBox.setSelected(myGenerationSettings.isSaveTransientModels());
-    myGenerateRequirements.setSelected(myGenerationSettings.isGenerateRequirements());
+    myGenerateRequirementsCheckBox.setSelected(myGenerationSettings.isGenerateRequirements());
     myShowErrorsOnlyCheckBox.setSelected(myGenerationSettings.isShowErrorsOnly());
+    myCheckModelsBeforeGenerationCheckBox.setSelected(myGenerationSettings.isCheckModelsBeforeGeneration());
 
     JPanel optionsPanel = new JPanel(new GridLayout(0, 1));
     optionsPanel.add(mySaveTransientModelsCheckBox);
-    optionsPanel.add(myGenerateRequirements);
+    optionsPanel.add(myGenerateRequirementsCheckBox);
     optionsPanel.add(myShowErrorsOnlyCheckBox);
+    optionsPanel.add(myCheckModelsBeforeGenerationCheckBox);
 
     myPage = new JPanel(new BorderLayout());
     myPage.setBorder(new EmptyBorder(10, 10, 10, 10));
@@ -67,12 +70,14 @@ class GenerationSettingsPreferencesPage {
   public void commit() {
     myGenerationSettings.setSaveTransientModels(mySaveTransientModelsCheckBox.isSelected());
     myGenerationSettings.setShowErrorsOnly(myShowErrorsOnlyCheckBox.isSelected());
-    myGenerationSettings.setGenerateRequirements(myGenerateRequirements.isSelected());
+    myGenerationSettings.setGenerateRequirements(myGenerateRequirementsCheckBox.isSelected());
+    myGenerationSettings.setCheckModelsBeforeGeneration(myCheckModelsBeforeGenerationCheckBox.isSelected());
   }
 
   public boolean isModified() {
     return !(myGenerationSettings.isSaveTransientModels() == mySaveTransientModelsCheckBox.isSelected() &&
            myGenerationSettings.isShowErrorsOnly() == myShowErrorsOnlyCheckBox.isSelected() &&
-           myGenerationSettings.isGenerateRequirements() == myGenerateRequirements.isSelected());
+           myGenerationSettings.isGenerateRequirements() == myGenerateRequirementsCheckBox.isSelected() &&
+           myGenerationSettings.isCheckModelsBeforeGeneration() == myCheckModelsBeforeGenerationCheckBox.isSelected());
   }
 }
