@@ -35,6 +35,8 @@ import com.intellij.openapi.progress.ProgressIndicator;
 import junit.framework.TestFailure;
 
 public class TestGenerationWorker extends GeneratorWorker {
+  private static final int MAX_EXCEPTION_SIZE = 1024 * 1024 * 1024; 
+
   private boolean myTestFailed = false;
   private final IBuildServerMessageFormat myBuildServerMessageFormat = getBuildServerMessageFormat();
   private final Map<BaseTestConfiguration, GenParameters> myTestConfigurations = new LinkedHashMap<BaseTestConfiguration, GenParameters>();
@@ -208,7 +210,8 @@ public class TestGenerationWorker extends GeneratorWorker {
         sb.append("  ");
         StringWriter writer = new StringWriter();
         failure.thrownException().printStackTrace(new PrintWriter(writer));
-        sb.append(myBuildServerMessageFormat.escapeBuildMessage(writer.toString()));
+        StringBuffer buffer = writer.getBuffer();
+        sb.append(myBuildServerMessageFormat.escapeBuildMessage(buffer.substring(0, Math.min(buffer.length(), MAX_EXCEPTION_SIZE))));
         sb.append(myBuildServerMessageFormat.getLinesSeparator());
       }
       sb.append(myBuildServerMessageFormat.getLinesSeparator());
