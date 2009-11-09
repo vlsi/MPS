@@ -72,6 +72,9 @@ public abstract class UsagesView implements IExternalizeable, INavigator {
   private SearchQuery mySearchQuery;
   private ButtonConfiguration myButtonConfiguration;
 
+  // note: this field is not restored from XML
+  private SearchResults myLastResults;
+
   //for assertions - check invariant - constructor -> read|setRunOpts
   private boolean myIsInitialized = false;
 
@@ -123,7 +126,7 @@ public abstract class UsagesView implements IExternalizeable, INavigator {
 
   public void run(ProgressIndicator indicator) {
     assert myIsInitialized;
-    final SearchResults myLastResults = FindUtils.getSearchResults(indicator, mySearchQuery, myResultProvider);
+    myLastResults = FindUtils.getSearchResults(indicator, mySearchQuery, myResultProvider);
     myLastResults.removeDuplicates();
     myTreeComponent.setContents(myLastResults);
   }
@@ -184,6 +187,10 @@ public abstract class UsagesView implements IExternalizeable, INavigator {
 
   public List<SNodePointer> getAllResultNodes() {
     return myTreeComponent.getAllResultNodes();
+  }
+
+  public SearchResults getSearchResults() {
+    return myLastResults;
   }
 
   //----SAVE/LOAD STUFF----

@@ -5,6 +5,7 @@ package jetbrains.mps.ide.actions;
 import javax.swing.JPanel;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.ide.findusages.view.UsagesView;
+import javax.swing.Icon;
 import java.awt.BorderLayout;
 import jetbrains.mps.ide.findusages.view.treeholder.treeview.ViewOptions;
 import jetbrains.mps.ide.findusages.findalgorithm.finders.IFinder;
@@ -17,14 +18,15 @@ import com.intellij.openapi.project.Project;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.progress.ProgressIndicator;
 import jetbrains.mps.smodel.SModelDescriptor;
+import jetbrains.mps.ide.icons.IconManager;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.ide.projectPane.Icons;
 import jetbrains.mps.project.IModule;
+import jetbrains.mps.ide.findusages.model.SearchResults;
 import jetbrains.mps.ide.findusages.view.treeholder.treeview.INodeRepresentator;
 import jetbrains.mps.nodeEditor.MessageStatus;
 import jetbrains.mps.ide.findusages.view.treeholder.tree.TextOptions;
-import javax.swing.Icon;
-import jetbrains.mps.ide.projectPane.Icons;
 import org.apache.commons.lang.StringEscapeUtils;
 import org.jdom.Element;
 import jetbrains.mps.ide.findusages.CantSaveSomethingException;
@@ -34,6 +36,8 @@ public class ModelCheckerViewer extends JPanel {
   private MPSProject myProject;
   private UsagesView myUsagesView;
   private ModelCheckerTool_Tool myTool;
+  private String myTabTitle;
+  private Icon myTabIcon;
 
   public ModelCheckerViewer(MPSProject mpsProject, final ModelCheckerTool_Tool tool) {
     this.myProject = mpsProject;
@@ -62,35 +66,60 @@ public class ModelCheckerViewer extends JPanel {
     ProgressManager.getInstance().run(new Task.Modal(this.myProject.getComponent(Project.class), taskTitle, true) {
       public void run(@NotNull ProgressIndicator indicator) {
         ModelCheckerViewer.this.myUsagesView.run(indicator);
-        ModelCheckerViewer.this.myTool.openToolLater(true);
       }
     });
   }
 
+  private void setTabProperties(String title, Icon icon) {
+    this.myTabTitle = title;
+    this.myTabIcon = icon;
+  }
+
   public void checkModel(SModelDescriptor modelDescriptor) {
     this.checkSomething(new ModelIssueFinder(modelDescriptor), "Checking " + modelDescriptor.getLongName());
+    this.setTabProperties(modelDescriptor.getName(), IconManager.getIconFor(modelDescriptor));
   }
 
   public void checkModels(List<SModelDescriptor> modelDescriptors) {
     this.checkSomething(new ModelsIssueFinder(modelDescriptors), "Checking " + ListSequence.fromList(modelDescriptors).count() + " models");
+    this.setTabProperties(ListSequence.fromList(modelDescriptors).count() + " models", Icons.MODEL_ICON);
   }
 
   public void checkModule(IModule module) {
     this.checkSomething(new ModuleIssueFinder(module), "Checking " + module.getModuleFqName());
+    this.setTabProperties(module.getModuleFqName(), IconManager.getIconFor(module));
   }
 
   public void checkModules(List<IModule> modules) {
     this.checkSomething(new ModulesIssueFinder(modules), "Checking " + ListSequence.fromList(modules).count() + " modules");
+    this.setTabProperties(ListSequence.fromList(modules).count() + " modules", Icons.MODULE_GROUP_CLOSED);
   }
 
   public void checkProject(MPSProject project) {
     this.checkSomething(new ProjectIssueFinder(project), "Checking " + project.getProjectDescriptor().getName());
+    this.setTabProperties(project.getProjectDescriptor().getName(), Icons.PROJECT_ICON);
+  }
+
+  public String getTabTitle() {
+    return this.myTabTitle;
+  }
+
+  public Icon getTabIcon() {
+    return this.myTabIcon;
+  }
+
+  public SearchResults getSearchResults() {
+    return this.myUsagesView.getSearchResults();
+  }
+
+  public void showTabWithResults() {
+    this.myTool.showTabWithResults(this);
   }
 
   public static class MyNodeRepresentator implements INodeRepresentator<ModelCheckerIssue> {
-    private static final String CATEGORY_ERROR = MessageStatus.ERROR.toString();
-    private static final String CATEGORY_WARNING = MessageStatus.WARNING.toString();
-    private static final String CATEGORY_OK = MessageStatus.OK.toString();
+    public static final String CATEGORY_ERROR = MessageStatus.ERROR.toString();
+    public static final String CATEGORY_WARNING = MessageStatus.WARNING.toString();
+    public static final String CATEGORY_OK = MessageStatus.OK.toString();
 
     public MyNodeRepresentator() {
     }

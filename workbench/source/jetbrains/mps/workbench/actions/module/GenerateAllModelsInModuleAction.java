@@ -20,10 +20,18 @@ import com.intellij.openapi.actionSystem.PlatformDataKeys;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.util.Computable;
 import com.intellij.openapi.wm.WindowManager;
+import com.intellij.openapi.application.ApplicationManager;
+import com.intellij.openapi.ui.Messages;
 import jetbrains.mps.generator.GeneratorManager;
 import jetbrains.mps.generator.IGenerationType;
 import jetbrains.mps.generator.IllegalGeneratorConfigurationException;
+import jetbrains.mps.generator.GenerationSettings;
 import jetbrains.mps.ide.genconf.GenParameters;
+import jetbrains.mps.ide.actions.ModelCheckerTool_Tool;
+import jetbrains.mps.ide.actions.ModelCheckerViewer;
+import jetbrains.mps.ide.actions.ModelCheckerIssue;
+import jetbrains.mps.ide.findusages.model.SearchResults;
+import jetbrains.mps.ide.findusages.model.SearchResult;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.Solution;
@@ -110,6 +118,12 @@ public class GenerateAllModelsInModuleAction extends BaseAction {
     if (modelsToGenerate.isEmpty()) {
       Project project = e.getData(PlatformDataKeys.PROJECT);
       WindowManager.getInstance().getIdeFrame(project).getStatusBar().setInfo("Nothing to generate");
+      return;
+    }
+
+    //noinspection ConstantConditions
+    if (! (myProject.getPluginManager().getTool(ModelCheckerTool_Tool.class)
+        .checkModelsBeforeGenerationIfNeeded(myOperationContext.getProject(), modelsToGenerate))) {
       return;
     }
 
