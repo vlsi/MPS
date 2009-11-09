@@ -215,7 +215,8 @@ public class GenerationSession implements IGenerationSession {
       if (needToCloneInputMode) {
         SModel currentInputModel_clone = createTransientModel(modelsLongName);
         addMessage(MessageKind.INFORMATION, "clone model '" + currentInputModel.getSModelFqName() + "' --> '" + currentInputModel_clone.getSModelFqName() + "'");
-        CloneUtil.cloneModel(currentInputModel, currentInputModel_clone, true);
+
+        CloneUtil.cloneModel(currentInputModel, currentInputModel_clone, inputModel == mySessionContext.getOriginalInputModel());
 
         if (!myDiscardTransients) { // tracing
           mySessionContext.getGenerationTracer().registerPreMappingScripts(currentInputModel, currentInputModel_clone, preMappingScripts);
