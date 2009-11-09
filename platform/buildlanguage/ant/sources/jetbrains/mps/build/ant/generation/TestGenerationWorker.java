@@ -330,7 +330,7 @@ public class TestGenerationWorker extends GeneratorWorker {
 
     @Override
     public String toString() {
-      return "generating " + mySModel;
+      return "generating " + mySModel.getLongName();
     }
   }
 }
