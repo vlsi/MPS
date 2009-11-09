@@ -35,7 +35,7 @@ public class ModuleSources {
   private Set<JavaFile> myFilesToCompile = new HashSet<JavaFile>();
 
   private Set<ResourceFile> myResourcesToCopy = new HashSet<ResourceFile>();
-  private static final boolean CHECK_NEW_COMPILATION = false;
+  private static final boolean CHECK_NEW_COMPILATION = true;
 
   ModuleSources(IModule module, Dependencies deps) {
     myModule = module;
@@ -107,30 +107,30 @@ public class ModuleSources {
       collectOutputCached(myModule, toCompile, toDelete, resourcesToCopy);
       if (!toCompile.equals(myFilesToCompile)) {
         System.out.println("To compile problem");
-        System.out.println("New - " + myFilesToCompile);
-        System.out.println("Old - " + toCompile);
+        System.out.println("Old - " + myFilesToCompile);
+        System.out.println("New - " + toCompile);
       }
       if (!toDelete.equals(myFilesToDelete)) {
         System.out.println("To delete problem");
-        System.out.println("New - " + myFilesToDelete);
-        System.out.println("Old - " + toDelete);
+        System.out.println("Old - " + myFilesToDelete);
+        System.out.println("New - " + toDelete);
       }
       if (!resourcesToCopy.equals(myResourcesToCopy)) {
         System.out.println("Resource problem");
-        System.out.println("New - " + myResourcesToCopy);
-        System.out.println("Old - " + resourcesToCopy);
+        System.out.println("Old - " + myResourcesToCopy);
+        System.out.println("New - " + resourcesToCopy);
       }
     }
   }
 
   private void collectOutputCached(IModule module, Set<JavaFile> toCompile, Set<IFile> toDelete, Set<ResourceFile> resourcesToCopy) {
-    IClassPathItem pathItem = module.getClassesGenItem();
+    FileClassPathItem pathItem = module.getClassesGenItem();
     if (pathItem == null) return;
 
-    collectOutputForNamespace((FileClassPathItem) pathItem, "", toCompile, toDelete, resourcesToCopy);
+    collectOutputForNamespace(pathItem, "", toCompile, toDelete, resourcesToCopy);
 
     // do smth with resources
-    Map<String, IFile> resourcesInClasses = ((FileClassPathItem) pathItem).getResources();
+    Map<String, IFile> resourcesInClasses = pathItem.getResources();
     for (String resource : resourcesInClasses.keySet()) {
       IFile resourceInClasses = resourcesInClasses.get(resource);
       ResourceFile resourceInSources = myResourceFiles.get(resource);

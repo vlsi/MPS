@@ -75,7 +75,7 @@ public abstract class AbstractModule implements IModule {
 
   private IClassPathItem myClassPath;
   private IClassPathItem myJavaStubsClassPath;
-  private IClassPathItem myClassesGen;
+  private FileClassPathItem myClassesGen;
   private MyClassPathModelRootManager myManager = new MyClassPathModelRootManager();
   private List<SModelRoot> mySModelRoots = new ArrayList<SModelRoot>();
   private Set<String> myIncludedClassPath;
@@ -110,7 +110,7 @@ public abstract class AbstractModule implements IModule {
     return myModuleReference.getModuleFqName();
   }
 
-  public IClassPathItem getClassesGenItem() {
+  public FileClassPathItem getClassesGenItem() {
     return myClassesGen;
   }
 
@@ -614,7 +614,7 @@ public abstract class AbstractModule implements IModule {
             currentItem = new FileClassPathItem(s, isClassesGen);
             // remember classes gen
             if (isClassesGen) {
-              myClassesGen = currentItem;
+              myClassesGen = (FileClassPathItem) currentItem;
             }
           } else {
             currentItem = new JarFileClassPathItem(s);
