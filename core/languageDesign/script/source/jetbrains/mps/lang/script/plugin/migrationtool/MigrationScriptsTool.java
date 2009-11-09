@@ -21,24 +21,19 @@ import com.intellij.openapi.progress.Task.Modal;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.wm.ToolWindowAnchor;
 import com.intellij.ui.content.Content;
-import com.intellij.ui.content.ContentManager;
 import com.intellij.ui.content.ContentManagerAdapter;
-import com.intellij.ui.content.ContentManagerEvent;
-import jetbrains.mps.ide.findusages.INavigateableTool;
-import jetbrains.mps.ide.findusages.UsagesViewTracker;
-import jetbrains.mps.ide.findusages.INavigator;
 import jetbrains.mps.ide.findusages.model.IResultProvider;
 import jetbrains.mps.ide.findusages.model.SearchQuery;
 import jetbrains.mps.ide.findusages.model.SearchResults;
 import jetbrains.mps.ide.findusages.view.FindUtils;
 import jetbrains.mps.ide.findusages.view.UsagesView;
+import jetbrains.mps.ide.findusages.view.TabbedUsagesTool;
 import jetbrains.mps.lang.script.structure.MigrationScript;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SNodePointer;
-import jetbrains.mps.workbench.tools.BaseProjectTool;
 import org.jetbrains.annotations.NotNull;
 
 import javax.swing.JOptionPane;
@@ -50,7 +45,7 @@ import java.util.List;
  * Igor Alshannikov
  * Jun 19, 2008
  */
-public class MigrationScriptsTool extends BaseProjectTool implements INavigateableTool {
+public class MigrationScriptsTool extends TabbedUsagesTool {
   private static Logger LOG = Logger.getLogger(MigrationScriptsTool.class);
 
   private List<SNodePointer> myScripts;
@@ -61,37 +56,13 @@ public class MigrationScriptsTool extends BaseProjectTool implements INavigateab
     super(project, "Migration", -1, null, ToolWindowAnchor.BOTTOM, true);
   }
 
-  protected void doRegister() {
-    super.doRegister();
-
-    UsagesViewTracker.register(this);
-
-    myContentListener = new ContentManagerAdapter(){
-      public void contentRemoved(ContentManagerEvent event) {
-        myViews.remove(event.getIndex());
-      }
-    };
-    getContentManager().addContentManagerListener(myContentListener);
+  protected UsagesView getUsagesView(int index) {
+    return myViews.get(index).getUsagesView();
   }
 
-  @Override
-  protected void doUnregister() {
-    UsagesViewTracker.unregister(this);
+  protected void onRemove(int index) {
+    myViews.remove(index);
   }
-
-  void closeTab(int index) {
-    LOG.checkEDT();
-    ContentManager contentManager = getContentManager();
-    Content content = contentManager.getContent(index);
-    assert content != null;
-    contentManager.removeContent(content, true);
-  }
-
-  void closeTab(MigrationScriptsView migrationScriptsView) {
-    int index = myViews.indexOf(migrationScriptsView);
-    closeTab(index);
-  }
-
 
   public void startMigration(List<MigrationScript> scriptNodes, final IScope scope, final IOperationContext context) {
     LOG.checkEDT();
@@ -140,7 +111,12 @@ public class MigrationScriptsTool extends BaseProjectTool implements INavigateab
 
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
-        MigrationScriptsView view = new MigrationScriptsView(finder, provider, query, MigrationScriptsTool.this, getMPSProject());
+        MigrationScriptsView view = new MigrationScriptsView(finder, provider, query, MigrationScriptsTool.this, getMPSProject()){
+          public void close() {
+            int index = myViews.indexOf(this);
+            closeTab(index);
+          }
+        };
         myViews.add(view);
         String tabName = "";
         if (myViews.size() > 1) {
@@ -152,19 +128,11 @@ public class MigrationScriptsTool extends BaseProjectTool implements INavigateab
     });
   }
 
-  public Project getProject() {
-    return super.getProject();
-  }
-
   public int getPriority() {
     return -1;
   }
 
-  public INavigator getCurrentNavigateableView() {
-    int currentTabIndex = getCurrentTabIndex();
-    if (currentTabIndex >= 0 && currentTabIndex < myViews.size()) {
-      return myViews.get(currentTabIndex).getUsagesView();
-    }
-    return null;
+  public Project getProject() {
+    return super.getProject();  
   }
 }

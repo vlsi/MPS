@@ -16,11 +16,11 @@ import javax.swing.Icon;
 
 import org.jetbrains.annotations.Nullable;
 
-public abstract class UsagesTabbedTool extends BaseProjectTool implements INavigateableTool {
+public abstract class TabbedUsagesTool extends BaseProjectTool implements INavigateableTool {
   private static Logger LOG = Logger.getLogger(UsagesViewTool.class);
   private ContentManagerAdapter myContentListener;
 
-  public UsagesTabbedTool(Project project, String id, int number, Icon icon, ToolWindowAnchor anchor, boolean canCloseContent) {
+  public TabbedUsagesTool(Project project, String id, int number, Icon icon, ToolWindowAnchor anchor, boolean canCloseContent) {
     super(project, id, number, icon, anchor, canCloseContent);
   }
 
@@ -31,7 +31,7 @@ public abstract class UsagesTabbedTool extends BaseProjectTool implements INavig
     int index = getCurrentTabIndex();
     if (index == -1) return null;
 
-    return getNavigator(index);
+    return getUsagesView(index);
   }
 
   public void doRegister() {
@@ -39,10 +39,10 @@ public abstract class UsagesTabbedTool extends BaseProjectTool implements INavig
 
     myContentListener = new ContentManagerAdapter() {
       public void contentRemoved(ContentManagerEvent event) {
-        UsagesView usagesView = onRemove(event.getIndex());
-        if (usagesView!=null){
-          usagesView.dispose();
-        }
+        int index = event.getIndex();
+
+        getUsagesView(index).dispose();
+        onRemove(index);
       }
     };
 
@@ -74,6 +74,6 @@ public abstract class UsagesTabbedTool extends BaseProjectTool implements INavig
     }
   }
 
-  protected abstract INavigator getNavigator(int index);
-  protected abstract UsagesView onRemove(int index);
+  protected abstract UsagesView getUsagesView(int index);
+  protected abstract void onRemove(int index);
 }

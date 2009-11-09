@@ -26,9 +26,6 @@ import com.intellij.openapi.startup.StartupManager;
 import com.intellij.openapi.util.Computable;
 import com.intellij.openapi.wm.ToolWindowAnchor;
 import com.intellij.ui.content.Content;
-import com.intellij.ui.content.ContentManager;
-import com.intellij.ui.content.ContentManagerAdapter;
-import com.intellij.ui.content.ContentManagerEvent;
 import jetbrains.mps.MPSProjectHolder;
 import jetbrains.mps.ide.findusages.*;
 import jetbrains.mps.ide.findusages.model.IResultProvider;
@@ -37,15 +34,12 @@ import jetbrains.mps.ide.findusages.model.SearchResult;
 import jetbrains.mps.ide.findusages.model.SearchResults;
 import jetbrains.mps.ide.findusages.view.UsagesView.ButtonConfiguration;
 import jetbrains.mps.ide.findusages.view.optionseditor.FindUsagesOptions;
-import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.workbench.editors.MPSEditorOpener;
-import jetbrains.mps.workbench.tools.BaseProjectTool;
 import org.jdom.Element;
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.annotations.Nullable;
 
 import javax.swing.Icon;
 import javax.swing.JComponent;
@@ -63,7 +57,7 @@ import java.util.List;
     )
   }
 )
-public class UsagesViewTool extends UsagesTabbedTool implements PersistentStateComponent<Element> {
+public class UsagesViewTool extends TabbedUsagesTool implements PersistentStateComponent<Element> {
 
   private static final String VERSION_NUMBER = "0.9997";
   private static final String VERSION = "version";
@@ -83,13 +77,12 @@ public class UsagesViewTool extends UsagesTabbedTool implements PersistentStateC
     super(project, "Usages", 3, jetbrains.mps.ide.projectPane.Icons.USAGES_ICON, ToolWindowAnchor.BOTTOM, true);
   }
 
-  protected INavigator getNavigator(int index) {
+  protected UsagesView getUsagesView(int index) {
     return myUsageViewsData.get(index).myUsagesView;
   }
 
-  protected UsagesView onRemove(int index) {
-    UsagesViewTool.UsageViewData data = myUsageViewsData.remove(index);
-    return data.myUsagesView;
+  protected void onRemove(int index) {
+    myUsageViewsData.remove(index);
   }
   
   //----TOOL STUFF----

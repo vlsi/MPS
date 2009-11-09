@@ -51,7 +51,7 @@ import java.util.Set;
  * Igor Alshannikov
  * Jun 19, 2008
  */
-public class MigrationScriptsView {
+public abstract class MigrationScriptsView {
   private static Logger LOG = Logger.getLogger(MigrationScriptsView.class);
 
   private MigrationScriptFinder myFinder;
@@ -62,7 +62,6 @@ public class MigrationScriptsView {
   private JPanel myControlsPanel;
   private JPanel myStatusPanel;
   private JButton myApplyButton;
-
 
   public MigrationScriptsView(MigrationScriptFinder finder, IResultProvider provider, SearchQuery query, MigrationScriptsTool tool, MPSProject project) {
     LOG.checkEDT();
@@ -79,8 +78,7 @@ public class MigrationScriptsView {
 
     myUsagesView = new UsagesView(project, viewOptions) {
       public void close() {
-        myUsagesView.dispose();
-        myTool.closeTab(MigrationScriptsView.this);
+        MigrationScriptsView.this.close();
       }
     };
 
@@ -91,7 +89,7 @@ public class MigrationScriptsView {
     myControlsPanel = new JPanel(new FlowLayout(FlowLayout.LEFT));
     myApplyButton = new JButton(new AbstractAction("Apply Migrations") {
       public void actionPerformed(ActionEvent e) {
-        applyMigrations();
+        applyMigrations();                       
       }
     });
     myControlsPanel.add(myApplyButton);
@@ -99,6 +97,8 @@ public class MigrationScriptsView {
     myControlsPanel.add(myStatusPanel);
     myMainPanel.add(myControlsPanel, BorderLayout.SOUTH);
   }
+
+  public abstract void close();
 
   private void applyMigrations() {
     LOG.checkEDT();

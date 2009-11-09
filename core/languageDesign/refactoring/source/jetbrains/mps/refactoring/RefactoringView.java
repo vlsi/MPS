@@ -16,16 +16,13 @@
 package jetbrains.mps.refactoring;
 
 import com.intellij.openapi.project.Project;
-import com.intellij.openapi.startup.StartupManager;
 import com.intellij.openapi.wm.ToolWindowAnchor;
 import com.intellij.ui.content.ContentManager;
-import jetbrains.mps.ide.findusages.INavigateableTool;
-import jetbrains.mps.ide.findusages.INavigator;
-import jetbrains.mps.ide.findusages.UsagesViewTracker;
+import jetbrains.mps.ide.findusages.view.TabbedUsagesTool;
+import jetbrains.mps.ide.findusages.view.UsagesView;
 import jetbrains.mps.ide.findusages.model.SearchResults;
 import jetbrains.mps.ide.projectPane.Icons;
 import jetbrains.mps.refactoring.framework.RefactoringContext;
-import jetbrains.mps.workbench.tools.BaseProjectTool;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -33,32 +30,19 @@ import javax.swing.SwingUtilities;
 import java.util.ArrayList;
 import java.util.List;
 
-public class RefactoringView extends BaseProjectTool implements INavigateableTool {
-  private List<RefactoringViewItem> myRefactoringViewItems = new ArrayList<RefactoringViewItem>();
+public class RefactoringView extends TabbedUsagesTool {
+  private List<RefactoringViewItem> myRefactoringViews = new ArrayList<RefactoringViewItem>();
 
   protected RefactoringView(Project project) {
     super(project, "RefactoringView", -1, Icons.DEFAULT_ICON, ToolWindowAnchor.BOTTOM, true);
   }
 
-  protected void doRegister() {
-    UsagesViewTracker.register(this);
+  protected UsagesView getUsagesView(int index) {
+    return myRefactoringViews.get(index).getUsagesView();
   }
 
-  protected void doUnregister() {
-    UsagesViewTracker.unregister(this);
-  }
-
-  public void initComponent() {
-    super.initComponent();
-    StartupManager.getInstance(getProject()).registerPostStartupActivity(new Runnable() {
-      public void run() {
-        SwingUtilities.invokeLater(new Runnable() {
-          public void run() {
-            getToolWindow().installWatcher(getContentManager());
-          }
-        });
-      }
-    });
+  protected void onRemove(int index) {
+    myRefactoringViews.remove(index);
   }
 
   //first parameter is null - no checkboxes will be shown
@@ -66,39 +50,19 @@ public class RefactoringView extends BaseProjectTool implements INavigateableToo
                                   SearchResults searchResults, boolean hasModelsToGenerate) {
     final RefactoringViewItem refactoringViewItem = new RefactoringViewItem(refactoringContext, refactoringViewAction, searchResults, hasModelsToGenerate){
       public void close() {
-        closeRefactoringView(this);
+        int index = myRefactoringViews.indexOf(this);
+        RefactoringView.this.closeTab(index);
       }
     };
-    myRefactoringViewItems.add(refactoringViewItem);
+
+    myRefactoringViews.add(refactoringViewItem);
     String tabCaption = refactoringContext == null ? "refactoring" : refactoringContext.getRefactoring().getUserFriendlyName();
     addContent(refactoringViewItem.getComponent(), tabCaption, null, false);
     refactoringViewItem.initUsagesView();
     openTool(true);
   }
 
-  private void closeRefactoringView(final RefactoringViewItem refactoringViewItem) {
-    refactoringViewItem.dispose();
-    SwingUtilities.invokeLater(new Runnable() {
-      public void run() {
-        ContentManager manager = getContentManager();
-        manager.removeContent(manager.getContent(refactoringViewItem.getComponent()), true);
-        myRefactoringViewItems.remove(refactoringViewItem);
-        if (myRefactoringViewItems.isEmpty()) {
-          close();
-        }
-      }
-    });
-  }
-
   public int getPriority() {
     return -1;
-  }
-
-  public INavigator getCurrentNavigateableView() {
-    int currentTabIndex = getCurrentTabIndex();
-    if (currentTabIndex >= 0 && currentTabIndex < myRefactoringViewItems.size()) {
-      return myRefactoringViewItems.get(currentTabIndex).getUsagesView();
-    }
-    return null;
   }
 }
