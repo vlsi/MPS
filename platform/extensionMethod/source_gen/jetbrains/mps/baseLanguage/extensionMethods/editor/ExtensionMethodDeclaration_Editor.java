@@ -126,7 +126,7 @@ public class ExtensionMethodDeclaration_Editor extends DefaultNodeEditor {
   private EditorCell createRefNode_3522_0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("visibility");
-    provider.setNoTargetText("<no visibility>");
+    provider.setNoTargetText("/*package*/");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);

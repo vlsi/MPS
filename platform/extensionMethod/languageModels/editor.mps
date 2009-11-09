@@ -149,8 +149,9 @@
     <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="7353029842738040547">
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode" id="720975379598106011">
         <property name="emptyNoTargetText" value="false" />
-        <link role="relationDeclaration" targetNodeId="1.720975379598106009" />
+        <property name="noTargetText" value="/*package*/" />
         <link role="styleClass" targetNodeId="2v.1186415544875" resolveInfo="KeyWord" />
+        <link role="relationDeclaration" targetNodeId="4v.1178549979242" />
         <node role="styleItem" type="jetbrains.mps.lang.editor.structure.EditableStyleClassItem" id="720975379598106012">
           <property name="flag" value="true" />
         </node>
