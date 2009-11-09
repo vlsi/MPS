@@ -73,9 +73,6 @@ public class GenerationSession implements IGenerationSession {
     if (myLoggingHandler == null) {
       myLoggingHandler = new LoggingHandlerAdapter() {
         public void addLogEntry(LogEntry e) {
-          if (IdeMain.getTestMode() != TestMode.NO_TEST) {
-            return; // test mode?
-          }
           Object o = e.getHintObject();
           if (o instanceof SNode) {
             mySessionContext.addTransientModelToKeep(((SNode) o).getModel());
