@@ -24,6 +24,8 @@ import jetbrains.mps.ide.messages.IMessageHandler;
 import jetbrains.mps.ide.messages.Message;
 import jetbrains.mps.ide.messages.MessageKind;
 import jetbrains.mps.ide.messages.NodeWithContext;
+import jetbrains.mps.ide.IdeMain;
+import jetbrains.mps.ide.IdeMain.TestMode;
 import jetbrains.mps.lang.generator.structure.MappingScript;
 import jetbrains.mps.lang.generator.structure.MappingScriptKind;
 import jetbrains.mps.logging.ILoggingHandler;
@@ -71,7 +73,9 @@ public class GenerationSession implements IGenerationSession {
     if (myLoggingHandler == null) {
       myLoggingHandler = new LoggingHandlerAdapter() {
         public void addLogEntry(LogEntry e) {
-          if (mySessionContext == null) return; // test mode?
+          if (IdeMain.getTestMode() != TestMode.NO_TEST) {
+            return; // test mode?
+          }
           Object o = e.getHintObject();
           if (o instanceof SNode) {
             mySessionContext.addTransientModelToKeep(((SNode) o).getModel());
