@@ -40,7 +40,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 
-public class RefactoringViewItem {
+public abstract class RefactoringViewItem {
   private RefactoringViewAction myRefactoringViewAction;
   private SearchResults mySearchResults;
   private UsagesView myUsagesView;
@@ -50,14 +50,12 @@ public class RefactoringViewItem {
   private JButton myCancelButton;
   @Nullable
   private RefactoringContext myRefactoringContext;
-  private RefactoringView myRefactoringView;
   private JCheckBox myGenerateModelsCheckbox;
   private JCheckBox myIsLocalCheckbox;
 
   //first parameter is null - no checkboxes will be shown
-  public RefactoringViewItem(@Nullable RefactoringContext refactoringContext, @NotNull RefactoringViewAction refactoringViewAction, SearchResults searchResults, RefactoringView refactoringView, boolean hasModelsToGenerate) {
+  public RefactoringViewItem(@Nullable RefactoringContext refactoringContext, @NotNull RefactoringViewAction refactoringViewAction, SearchResults searchResults, boolean hasModelsToGenerate) {
     myRefactoringContext = refactoringContext;
-    myRefactoringView = refactoringView;
     myRefactoringViewAction = refactoringViewAction;
     mySearchResults = searchResults;
     if (mySearchResults == null) {
@@ -190,13 +188,10 @@ public class RefactoringViewItem {
     myRefactoringViewAction.performAction(this);
   }
 
-  public RefactoringView getRefactoringView() {
-    return myRefactoringView;
-  }
+  public abstract void close();
 
-  public void close() {
+  public void dispose(){
     myUsagesView.dispose();
-    myRefactoringView.closeRefactoringView(this);
   }
 
   public void requestFocus() {
