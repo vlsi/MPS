@@ -68,8 +68,8 @@ public class TodoViewer extends JPanel {
     });
   }
 
-  public void dispose(){
-    if (myUsagesView!=null){
+  public void dispose() {
+    if (myUsagesView != null) {
       myUsagesView.dispose();
     }
   }
@@ -144,7 +144,10 @@ public class TodoViewer extends JPanel {
     }
 
     // Nothing to read or write: this class is stateless
-    public void read(Element element, MPSProject project) throws CantLoadSomethingException { }
-    public void write(Element element, MPSProject project) throws CantSaveSomethingException { }
+    public void read(Element element, MPSProject project) throws CantLoadSomethingException {
+    }
+
+    public void write(Element element, MPSProject project) throws CantSaveSomethingException {
+    }
   }
 }
