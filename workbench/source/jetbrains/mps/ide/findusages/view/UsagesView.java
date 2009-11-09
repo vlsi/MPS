@@ -99,7 +99,7 @@ public abstract class UsagesView implements IExternalizeable, INavigator {
     myPanel.setMinimumSize(new Dimension());
   }
 
-  /*package*/ void dispose() {
+  public void dispose() {
     myTreeComponent.dispose();
   }
 
