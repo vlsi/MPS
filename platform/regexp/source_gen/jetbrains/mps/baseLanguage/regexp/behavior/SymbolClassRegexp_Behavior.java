@@ -37,7 +37,7 @@ public class SymbolClassRegexp_Behavior {
           result.append(Regexp_Behavior.call_quote_1222857178958(thisNode, SPropertyOperations.getString(cscp, "character").charAt(0)));
         }
       } else if (SNodeOperations.isInstanceOf(part, "jetbrains.mps.baseLanguage.regexp.structure.PredefinedSymbolClassSymbolClassPart")) {
-        result.append(SPropertyOperations.getString(SLinkOperations.getTarget(SNodeOperations.cast(part, "jetbrains.mps.baseLanguage.regexp.structure.PredefinedSymbolClassSymbolClassPart"), "declaration", false), "name").replaceAll("\\\\", "\\\\\\\\"));
+        result.append(Regexp_Behavior.call_escape_1353467374624660231(thisNode, SPropertyOperations.getString(SLinkOperations.getTarget(SNodeOperations.cast(part, "jetbrains.mps.baseLanguage.regexp.structure.PredefinedSymbolClassSymbolClassPart"), "declaration", false), "name")));
       } else if (SNodeOperations.isInstanceOf(part, "jetbrains.mps.baseLanguage.regexp.structure.IntervalSymbolClassPart")) {
         SNode iscp = SNodeOperations.cast(part, "jetbrains.mps.baseLanguage.regexp.structure.IntervalSymbolClassPart");
         String start;
@@ -48,8 +48,8 @@ public class SymbolClassRegexp_Behavior {
             end = SPropertyOperations.getString(iscp, "end");
           }
         } else {
-          start = Regexp_Behavior.call_quote_1222857178958(thisNode, SPropertyOperations.getString(iscp, "start").charAt(0));
-          end = Regexp_Behavior.call_quote_1222857178958(thisNode, SPropertyOperations.getString(iscp, "end").charAt(0));
+          start = Regexp_Behavior.call_escape_1353467374624660231(thisNode, SPropertyOperations.getString(iscp, "start"));
+          end = Regexp_Behavior.call_escape_1353467374624660231(thisNode, SPropertyOperations.getString(iscp, "end"));
         }
         result.append(start).append("-").append(end);
       } else if (SNodeOperations.isInstanceOf(part, "jetbrains.mps.baseLanguage.regexp.structure.IntersectionSymbolClassPart")) {

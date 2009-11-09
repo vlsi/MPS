@@ -26,6 +26,7 @@ public class RegexpDeclarationReferenceRegexp_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_1993_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_1993_0");
+    editorCell.addKeyMap(new RegexpSequenceByEnter());
     editorCell.addEditorCell(this.createRefCell_1993_0(editorContext, node));
     return editorCell;
   }

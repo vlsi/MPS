@@ -21,6 +21,7 @@ public class ParensRegexp_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_9798_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_9798_0");
+    editorCell.addKeyMap(new RegexpSequenceByEnter());
     editorCell.addEditorCell(this.createConstant_9798_0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_9798_0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_9798_1(editorContext, node));

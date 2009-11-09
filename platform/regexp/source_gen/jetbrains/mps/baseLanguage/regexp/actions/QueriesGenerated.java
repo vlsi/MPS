@@ -44,6 +44,16 @@ public class QueriesGenerated {
     return false;
   }
 
+  public static boolean sideTransformHintSubstituteActionsBuilder_Precondition_Regexp_1353467374625925691(final IOperationContext operationContext, final SideTransformPreconditionContext _context) {
+    return !(SNodeOperations.isInstanceOf(_context.getSourceNode(), "jetbrains.mps.baseLanguage.regexp.structure.UnaryRegexp"));
+  }
+
+  public static void nodeFactory_NodeSetup_OrRegexp_1353467374625228628(final IOperationContext operationContext, final NodeSetupContext _context) {
+    if (SNodeOperations.isInstanceOf(_context.getSampleNode(), "jetbrains.mps.baseLanguage.regexp.structure.Regexp")) {
+      SLinkOperations.setTarget(_context.getNewNode(), "left", SNodeOperations.cast(_context.getSampleNode(), "jetbrains.mps.baseLanguage.regexp.structure.Regexp"), true);
+    }
+  }
+
   public static void nodeFactory_NodeSetup_MatchParensRegexp_3050481019131578338(final IOperationContext operationContext, final NodeSetupContext _context) {
     if (SNodeOperations.isInstanceOf(_context.getSampleNode(), "jetbrains.mps.baseLanguage.regexp.structure.Regexp")) {
       SLinkOperations.setTarget(_context.getNewNode(), "regexp", SNodeOperations.cast(_context.getSampleNode(), "jetbrains.mps.baseLanguage.regexp.structure.Regexp"), true);
@@ -65,6 +75,27 @@ public class QueriesGenerated {
   public static List<INodeSubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_Regexp_3050481019132371337(final IOperationContext operationContext, final NodeSubstituteActionsFactoryContext _context) {
     List<INodeSubstituteAction> result = ListSequence.fromList(new ArrayList<INodeSubstituteAction>());
     {
+      SNode outputConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.regexp.structure.UnicodeCharacterRegexp");
+      SNode childConcept = (SNode)_context.getChildConcept();
+      if (outputConcept == null || SConceptOperations.isSuperConceptOf(childConcept, NameUtil.nodeFQName(outputConcept))) {
+        ListSequence.fromList(result).addElement(new DefaultSimpleSubstituteAction(outputConcept, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope()) {
+          public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
+            SNode literal = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.regexp.structure.UnicodeCharacterRegexp", null);
+            SPropertyOperations.set(literal, "code", pattern.substring(2));
+            return literal;
+          }
+
+          public boolean hasSubstitute() {
+            return true;
+          }
+
+          public boolean canSubstitute_internal(String pattern, boolean strictly) {
+            return _PrecompiledPatterns.REGEXP0.matcher(pattern).matches();
+          }
+        });
+      }
+    }
+    {
       SNode outputConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.regexp.structure.StringLiteralRegexp");
       SNode childConcept = (SNode)_context.getChildConcept();
       if (outputConcept == null || SConceptOperations.isSuperConceptOf(childConcept, NameUtil.nodeFQName(outputConcept))) {
@@ -80,7 +111,11 @@ public class QueriesGenerated {
           }
 
           public boolean canSubstitute_internal(String pattern, boolean strictly) {
-            return _PrecompiledPatterns.REGEXP0.matcher(pattern).matches();
+            return _PrecompiledPatterns.REGEXP1.matcher(pattern).matches();
+          }
+
+          public String getDescriptionText(String pattern) {
+            return "string literal";
           }
 
           public String getMatchingText(String pattern) {
@@ -89,6 +124,31 @@ public class QueriesGenerated {
 
           public String getVisibleMatchingText(String pattern) {
             return this.getMatchingText(pattern);
+          }
+        });
+      }
+    }
+    {
+      SNode outputConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.regexp.structure.StringLiteralRegexp");
+      SNode childConcept = (SNode)_context.getChildConcept();
+      if (outputConcept == null || SConceptOperations.isSuperConceptOf(childConcept, NameUtil.nodeFQName(outputConcept))) {
+        ListSequence.fromList(result).addElement(new DefaultSimpleSubstituteAction(outputConcept, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope()) {
+          public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
+            SNode literal = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.regexp.structure.StringLiteralRegexp", null);
+            SPropertyOperations.set(literal, "text", pattern.substring(1));
+            return literal;
+          }
+
+          public boolean hasSubstitute() {
+            return true;
+          }
+
+          public boolean canSubstitute_internal(String pattern, boolean strictly) {
+            return _PrecompiledPatterns.REGEXP2.matcher(pattern).matches();
+          }
+
+          public String getDescriptionText(String pattern) {
+            return "string literal";
           }
         });
       }
@@ -199,7 +259,7 @@ public class QueriesGenerated {
     return result;
   }
 
-  public static List<INodeSubstituteAction> sideTransform_ActionsFactory_Regexp_3050481019131578362(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
+  public static List<INodeSubstituteAction> sideTransform_ActionsFactory_Regexp_1353467374625925690(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
     List<INodeSubstituteAction> result = ListSequence.fromList(new ArrayList<INodeSubstituteAction>());
     {
       SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.regexp.structure.UnaryRegexp");
@@ -222,6 +282,11 @@ public class QueriesGenerated {
         });
       }
     }
+    return result;
+  }
+
+  public static List<INodeSubstituteAction> sideTransform_ActionsFactory_Regexp_3050481019131578362(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
+    List<INodeSubstituteAction> result = ListSequence.fromList(new ArrayList<INodeSubstituteAction>());
     {
       SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.regexp.structure.BinaryRegexp");
       Iterable<SNode> concepts;

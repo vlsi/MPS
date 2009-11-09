@@ -20,6 +20,7 @@ public class DotRegexp_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_9914_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_9914_0");
+    editorCell.addKeyMap(new RegexpSequenceByEnter());
     editorCell.addEditorCell(this.createConstant_9914_0(editorContext, node));
     return editorCell;
   }

@@ -40,6 +40,7 @@ public class StringLiteralRegexp_Editor extends DefaultNodeEditor {
       style.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);
       style.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_GREEN);
     }
+    editorCell.addKeyMap(new RegexpSequenceByEnter());
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();

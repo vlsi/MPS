@@ -27,6 +27,7 @@ public class MatchVariableReferenceRegexp_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_1753_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_1753_0");
+    editorCell.addKeyMap(new RegexpSequenceByEnter());
     editorCell.addEditorCell(this.createConstant_1753_0(editorContext, node));
     editorCell.addEditorCell(this.createRefCell_1753_0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_1753_1(editorContext, node));

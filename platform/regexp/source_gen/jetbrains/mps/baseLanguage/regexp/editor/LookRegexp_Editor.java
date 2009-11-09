@@ -25,6 +25,7 @@ public class LookRegexp_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_1020_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_1020_0");
+    editorCell.addKeyMap(new RegexpSequenceByEnter());
     editorCell.addEditorCell(this.createConceptProperty_1020_0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_1020_0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_1020_0(editorContext, node));

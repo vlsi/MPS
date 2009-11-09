@@ -26,6 +26,7 @@ public class MatchParensRegexp_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_4405_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_4405_0");
+    editorCell.addKeyMap(new RegexpSequenceByEnter());
     editorCell.addEditorCell(this.createConstant_4405_0(editorContext, node));
     editorCell.addEditorCell(this.createProperty_4405_0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_4405_0(editorContext, node));

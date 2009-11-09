@@ -17,6 +17,8 @@ import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
+import jetbrains.mps.smodel.IScope;
+import jetbrains.mps.baseLanguage.regexp.behavior.UnaryRegexp_Behavior;
 
 public class AtLeastNTimesRegexp_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
@@ -26,7 +28,14 @@ public class AtLeastNTimesRegexp_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_1013_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_1013_0");
+    editorCell.addKeyMap(new RegexpSequenceByEnter());
+    if (renderingCondition1013_0(node, editorContext, editorContext.getOperationContext().getScope())) {
+      editorCell.addEditorCell(this.createConstant_1013_3(editorContext, node));
+    }
     editorCell.addEditorCell(this.createRefNode_1013_0(editorContext, node));
+    if (renderingCondition1013_1(node, editorContext, editorContext.getOperationContext().getScope())) {
+      editorCell.addEditorCell(this.createConstant_1013_4(editorContext, node));
+    }
     editorCell.addEditorCell(this.createConstant_1013_0(editorContext, node));
     editorCell.addEditorCell(this.createProperty_1013_0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_1013_2(editorContext, node));
@@ -75,6 +84,28 @@ public class AtLeastNTimesRegexp_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
+  private EditorCell createConstant_1013_3(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "(");
+    editorCell.setCellId("Constant_1013_3");
+    {
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.PUNCTUATION_RIGHT, true);
+    }
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+
+  private EditorCell createConstant_1013_4(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ")");
+    editorCell.setCellId("Constant_1013_4");
+    {
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.PUNCTUATION_LEFT, true);
+    }
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+
   private EditorCell createRefNode_1013_0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("regexp");
@@ -108,5 +139,13 @@ public class AtLeastNTimesRegexp_Editor extends DefaultNodeEditor {
       return manager.createRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
     } else
     return editorCell;
+  }
+
+  private static boolean renderingCondition1013_0(SNode node, EditorContext editorContext, IScope scope) {
+    return UnaryRegexp_Behavior.call_inParentheses_1353467374623956744(node);
+  }
+
+  private static boolean renderingCondition1013_1(SNode node, EditorContext editorContext, IScope scope) {
+    return UnaryRegexp_Behavior.call_inParentheses_1353467374623956744(node);
   }
 }

@@ -8,10 +8,10 @@ import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
-import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
-import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
+import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
+import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 
@@ -23,6 +23,7 @@ public class UnicodeCharacterRegexp_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_5321_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_5321_0");
+    editorCell.addKeyMap(new RegexpSequenceByEnter());
     editorCell.addEditorCell(this.createConstant_5321_0(editorContext, node));
     editorCell.addEditorCell(this.createProperty_5321_0(editorContext, node));
     return editorCell;
@@ -31,6 +32,10 @@ public class UnicodeCharacterRegexp_Editor extends DefaultNodeEditor {
   private EditorCell createConstant_5321_0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "\\u");
     editorCell.setCellId("Constant_5321_0");
+    {
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.PUNCTUATION_RIGHT, true);
+    }
     editorCell.setDefaultText("");
     return editorCell;
   }

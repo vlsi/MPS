@@ -6,12 +6,24 @@ import jetbrains.mps.smodel.SNode;
 import java.util.List;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.smodel.behaviour.BehaviorManager;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class FromNToMTimesRegexp_Behavior {
+  private static Class[] PARAMETERS_1353467374626527597 = {SNode.class ,List.class};
+
   public static void init(SNode thisNode) {
   }
 
-  public static String virtual_getString_1222867684394(SNode thisNode, List<SNode> vars) {
+  public static String virtual_getString_1222432436326(SNode thisNode, List<SNode> vars) {
     return Regexp_Behavior.call_par_1222433790846(thisNode, Regexp_Behavior.call_getString_1222432436326(SLinkOperations.getTarget(thisNode, "regexp", true), vars)) + "{" + SPropertyOperations.getInteger(thisNode, "n") + "," + SPropertyOperations.getInteger(thisNode, "m") + "}";
+  }
+
+  public static String call_getString_1353467374626527597(SNode thisNode, List<SNode> vars) {
+    return (String)BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.regexp.structure.FromNToMTimesRegexp"), "virtual_getString_1222432436326", PARAMETERS_1353467374626527597, vars);
+  }
+
+  public static String callSuper_getString_1353467374626527597(SNode thisNode, String callerConceptFqName, List<SNode> vars) {
+    return (String)BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.regexp.structure.FromNToMTimesRegexp"), callerConceptFqName, "virtual_getString_1222432436326", PARAMETERS_1353467374626527597, vars);
   }
 }

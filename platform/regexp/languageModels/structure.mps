@@ -274,7 +274,7 @@
     </node>
     <node role="propertyDeclaration" type="jetbrains.mps.lang.structure.structure.PropertyDeclaration" id="1174482761807">
       <property name="name" value="text" />
-      <link role="dataType" targetNodeId="7473568212391781030" resolveInfo="_StringRegexp" />
+      <link role="dataType" targetNodeId="1.1082983041843" resolveInfo="string" />
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1174482769792">

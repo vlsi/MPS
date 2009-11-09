@@ -19,6 +19,13 @@ public class UnaryRegexp_Behavior {
     return Regexp_Behavior.call_par_1222433790846(thisNode, Regexp_Behavior.call_getString_1222432436326(SLinkOperations.getTarget(thisNode, "regexp", true), vars)) + SConceptPropertyOperations.getString(thisNode, "alias");
   }
 
+  public static boolean call_inParentheses_1353467374623956744(SNode thisNode) {
+    return (SLinkOperations.getTarget(thisNode, "regexp", true) != null ?
+      Regexp_Behavior.call_needParentheses_1353467374623880338(SLinkOperations.getTarget(thisNode, "regexp", true)) :
+      true
+    );
+  }
+
   public static String call_getString_1222867684394(SNode thisNode, List<SNode> vars) {
     return (String)BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.regexp.structure.UnaryRegexp"), "virtual_getString_1222432436326", PARAMETERS_1222867684394, vars);
   }

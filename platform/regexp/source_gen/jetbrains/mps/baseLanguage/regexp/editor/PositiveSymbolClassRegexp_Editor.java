@@ -25,6 +25,7 @@ public class PositiveSymbolClassRegexp_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_1580_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_1580_0");
+    editorCell.addKeyMap(new RegexpSequenceByEnter());
     editorCell.addEditorCell(this.createConstant_1580_0(editorContext, node));
     editorCell.addEditorCell(this.createRefNodeList_1580_0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_1580_1(editorContext, node));

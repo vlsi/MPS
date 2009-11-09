@@ -12,7 +12,7 @@ public class Statements_Test extends TestCase {
     String input = "reader@gmail.com";
     boolean matches = false;
     {
-      Pattern _pattern_0 = _PrecompiledPatterns.REGEXP0;
+      Pattern _pattern_0 = _PrecompiledPatterns.REGEXP4;
       Matcher _matcher_0 = _pattern_0.matcher(input);
       if (_matcher_0.matches()) {
         matches = true;
