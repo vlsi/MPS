@@ -13,6 +13,10 @@ import jetbrains.mps.refactoring.framework.RefactoringContext;
 import jetbrains.mps.ide.findusages.view.FindUtils;
 import com.intellij.openapi.progress.EmptyProgressIndicator;
 import jetbrains.mps.project.GlobalScope;
+import java.util.List;
+import jetbrains.mps.ide.findusages.model.SearchResult;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import java.util.ArrayList;
 
 public class SafeDelete extends BaseGeneratedRefactoring {
   public SafeDelete() {
@@ -43,7 +47,19 @@ public class SafeDelete extends BaseGeneratedRefactoring {
   }
 
   public SearchResults getAffectedNodes(final RefactoringContext refactoringContext) {
-    return FindUtils.getSearchResults(new EmptyProgressIndicator(), refactoringContext.getSelectedNode(), GlobalScope.getInstance(), "jetbrains.mps.lang.structure.findUsages.NodeAndDescendantsUsages_Finder");
+    SearchResults<SNode> searchResults = FindUtils.getSearchResults(new EmptyProgressIndicator(), refactoringContext.getSelectedNode(), GlobalScope.getInstance(), "jetbrains.mps.lang.structure.findUsages.NodeAndDescendantsUsages_Finder");
+
+    List<SearchResult<SNode>> searchResultsList = searchResults.getSearchResults();
+    List<SearchResult<SNode>> searchResultsCopy = ListSequence.fromListWithValues(new ArrayList<SearchResult<SNode>>(), searchResultsList);
+
+    for (SearchResult<SNode> searchResult : searchResultsCopy) {
+      SNode resultNode = searchResult.getObject();
+      if (ListSequence.fromList(SNodeOperations.getAncestors(resultNode, null, true)).contains(refactoringContext.getSelectedNode())) {
+        searchResults.remove(searchResult);
+      }
+    }
+
+    return searchResults;
   }
 
   public void doRefactor(final RefactoringContext refactoringContext) {
