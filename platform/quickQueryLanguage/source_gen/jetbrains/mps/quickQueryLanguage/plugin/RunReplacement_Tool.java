@@ -34,6 +34,7 @@ public class RunReplacement_Tool extends GeneratedTool {
   }
 
   public void closeTab(ReplacementView view) {
+    view.dispose();
     int index = ListSequence.fromList(RunReplacement_Tool.this.myViews).indexOf(view);
     RunReplacement_Tool.this.closeTab(index);
   }

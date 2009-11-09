@@ -80,6 +80,10 @@ public class ReplacementView {
     return this.myMainPanel;
   }
 
+  public void dispose() {
+    this.myUsagesView.dispose();
+  }
+
   public List<SNode> getExecuteResult(List<SNodePointer> nodes) {
     List<SNode> results = ListSequence.fromList(new ArrayList<SNode>());
     for (SNodePointer nodePointer : nodes) {
