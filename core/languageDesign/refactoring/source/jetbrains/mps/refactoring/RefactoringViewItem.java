@@ -66,7 +66,7 @@ public class RefactoringViewItem {
     myPanel = new JPanel(new BorderLayout());
     myUsagesView = new UsagesView(MPSDataKeys.MPS_PROJECT.getData(DataManager.getInstance().getDataContext()), new ViewOptions()) {
       public void close() {
-        cancel();
+        RefactoringViewItem.this.close();
       }
 
       public String getCaption() {
@@ -102,7 +102,7 @@ public class RefactoringViewItem {
 
     myCancelButton = new JButton(new AbstractAction("Cancel") {
       public void actionPerformed(ActionEvent e) {
-        cancel();
+        close();
       }
     });
     myButtonsPanel.add(myCancelButton);
@@ -172,10 +172,6 @@ public class RefactoringViewItem {
     });
   }
 
-  private void cancel() {
-    close();
-  }
-
   private void doRefactor() {
     if (myRefactoringContext != null) {
       if (myRefactoringContext.getRefactoring() instanceof ILoggableRefactoring) {
@@ -199,6 +195,7 @@ public class RefactoringViewItem {
   }
 
   public void close() {
+    myUsagesView.dispose();
     myRefactoringView.closeRefactoringView(this);
   }
 
