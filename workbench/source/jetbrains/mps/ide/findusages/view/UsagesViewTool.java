@@ -108,32 +108,6 @@ public class UsagesViewTool extends BaseProjectTool implements PersistentStateCo
     return true;
   }
 
-  private void disposeTabs() {
-    for (UsageViewData data : myUsageViewsData) {
-      data.myUsagesView.dispose();
-    }
-  }
-
-  public void closeTab(int index) {
-    LOG.checkEDT();
-
-    ContentManager contentManager = getContentManager();
-    Content content = contentManager.getContent(index);
-    assert content != null;
-    contentManager.removeContent(content, true);
-  }
-
-  private void closeLastUnpinnedTab(int index) {
-    if (index != -1) {
-      ContentManager contentManager = getContentManager();
-      Content content = contentManager.getContent(index);
-      assert content != null;
-      if (!content.isPinned()) {
-        contentManager.removeContent(content, true);
-      }
-    }
-  }
-
   public void doRegister() {
     UsagesViewTracker.register(this);
 
@@ -151,9 +125,25 @@ public class UsagesViewTool extends BaseProjectTool implements PersistentStateCo
     //this is done automatically on content manager dispose, otherwise a dependency UVT->CM must be added
     //getContentManager().removeContentManagerListener(myContentListener);
 
-    disposeTabs();
-
     UsagesViewTracker.unregister(this);
+  }
+
+  private void closeTab(int index) {
+    ContentManager contentManager = getContentManager();
+    Content content = contentManager.getContent(index);
+    assert content != null;
+    contentManager.removeContent(content, true);
+  }
+
+  private void closeLastUnpinnedTab(int index) {
+    if (index != -1) {
+      ContentManager contentManager = getContentManager();
+      Content content = contentManager.getContent(index);
+      assert content != null;
+      if (!content.isPinned()) {
+        contentManager.removeContent(content, true);
+      }
+    }
   }
 
   //---FIND USAGES STUFF----
@@ -326,7 +316,6 @@ public class UsagesViewTool extends BaseProjectTool implements PersistentStateCo
     public void createUsageView() {
       myUsagesView = new UsagesView(getMPSProject(), myDefaultViewOptions) {
         public void close() {
-          myUsagesView.dispose();
           int index = myUsageViewsData.indexOf(UsageViewData.this);
           UsagesViewTool.this.closeTab(index);
         }
