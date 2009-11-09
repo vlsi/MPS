@@ -115,7 +115,7 @@ public class TodoViewer extends JPanel {
 
   public static class MyNodeRepresentator implements INodeRepresentator<SNode> {
     public String getPresentation(SNode node) {
-      return "<font color=blue>" + node.getProperty("value") + "</font>";
+      return "<font color=blue>" + node.getProperty("text") + "</font>";
     }
 
     public String getResultsText(TextOptions options) {
