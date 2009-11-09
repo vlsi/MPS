@@ -69,7 +69,9 @@ public class TodoViewer extends JPanel {
   }
 
   public void dispose(){
-    myUsagesView.dispose();
+    if (myUsagesView!=null){
+      myUsagesView.dispose();
+    }
   }
 
   private GeneratedTool getTool() {
