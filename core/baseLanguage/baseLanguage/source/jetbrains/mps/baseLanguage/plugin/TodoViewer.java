@@ -68,6 +68,10 @@ public class TodoViewer extends JPanel {
     });
   }
 
+  public void dispose(){
+    myUsagesView.dispose();
+  }
+
   private GeneratedTool getTool() {
     return myProject.getPluginManager().getTool(TodoViewer_Tool.class);
   }
