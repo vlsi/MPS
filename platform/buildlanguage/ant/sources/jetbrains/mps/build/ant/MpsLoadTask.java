@@ -1,6 +1,5 @@
 package jetbrains.mps.build.ant;
 
-import org.apache.tools.ant.types.DirSet;
 import org.apache.tools.ant.types.EnumeratedAttribute;
 import org.apache.tools.ant.types.FileSet;
 import org.apache.tools.ant.types.resources.FileResource;
@@ -44,22 +43,6 @@ public abstract class MpsLoadTask extends org.apache.tools.ant.Task {
 
   public void setFork(boolean fork) {
     myFork = fork;
-  }
-
-  public void addConfiguredModels(DirSet modelsInner) {
-    Iterator it = modelsInner.iterator();
-    while (it.hasNext()) {
-      FileResource next = (FileResource) it.next();
-      myWhatToDo.addModelDirectory(next.getFile());
-    }
-  }
-
-  public void addConfiguredModules(DirSet modulesInner) {
-    Iterator it = modulesInner.iterator();
-    while (it.hasNext()) {
-      FileResource next = (FileResource) it.next();
-      myWhatToDo.addModuleDirectory(next.getFile());
-    }
   }
 
   public void addConfiguredModel(FileSet modelsInner) {

@@ -25,18 +25,14 @@ import java.lang.reflect.InvocationTargetException;
 import jetbrains.mps.util.FileUtil;
 
 public class WhatToDo {
-  private final Set<File> myModelDirectories = new LinkedHashSet<File>();
   private final Set<File> myModels = new LinkedHashSet<File>();
-  private final Set<File> myModuleDirectories = new LinkedHashSet<File>();
   private final Set<File> myModules = new LinkedHashSet<File>();
   private final Set<File> myMPSProjects = new LinkedHashSet<File>();
   private boolean myFailOnError = false;
   private final Map<String, File> myLibraries = new LinkedHashMap<String, File>();
   private final Map<String, String> myMacro = new LinkedHashMap<String, String>();
   private int myLogLevel = org.apache.tools.ant.Project.MSG_INFO;
-  private static final String MODEL_DIR = "MODEL_DIR";
   private static final String MODEL_FILE = "MODEL_FILE";
-  private static final String MODULE_DIR = "MODULE_DIR";
   private static final String MODULE_FILE = "MODULE_FILE";
   private static final String MPS_PROJECT = "MPS_PROJECT";
   private static final String MPS_LIBRARY = "MPS_LIBRARY";
@@ -44,16 +40,6 @@ public class WhatToDo {
   private static final String FAIL_ON_ERROR = "FAIL_ON_ERROR";
   private static final String LOG_LEVEL = "LOG_LEVEL";
   private final Map<String, String> myProperties = new LinkedHashMap<String, String>();
-
-  public void addModuleDirectory(File dir) {
-    assert dir.exists() && dir.isDirectory();
-    myModuleDirectories.add(dir);
-  }
-
-  public void addModelDirectory(File dir) {
-    assert dir.exists() && dir.isDirectory();
-    myModelDirectories.add(dir);
-  }
 
   public void addModuleFile(File file) {
     assert file.exists() && !file.isDirectory();
@@ -68,22 +54,6 @@ public class WhatToDo {
   public void addProjectFile(File projectFile) {
     assert projectFile.exists() && projectFile.isFile();
     myMPSProjects.add(projectFile);
-  }
-
-  public Set<File> getModelDirectories() {
-    return Collections.unmodifiableSet(myModelDirectories);
-  }
-
-  public void updateModelDirectories(Set<File> modelDirectories) {
-    myModelDirectories.addAll(modelDirectories);
-  }
-
-  public Set<File> getModuleDirectories() {
-    return Collections.unmodifiableSet(myModuleDirectories);
-  }
-
-  public void updateModuleDirectories(Set<File> moduleDirectories) {
-    myModuleDirectories.addAll(moduleDirectories);
   }
 
   public Set<File> getModels() {
@@ -184,18 +154,6 @@ public class WhatToDo {
   @Override
   public String toString() {
     final StringBuffer sb = new StringBuffer();
-    for (File f : myModelDirectories) {
-      sb.append(MODEL_DIR);
-      sb.append("=");
-      sb.append(f.getAbsolutePath());
-      sb.append(" ");
-    }
-    for (File f : myModuleDirectories) {
-      sb.append(MODULE_DIR);
-      sb.append("=");
-      sb.append(f.getAbsolutePath());
-      sb.append(" ");
-    }
     for (File f : myModels) {
       sb.append(MODEL_FILE);
       sb.append("=");
@@ -294,11 +252,7 @@ public class WhatToDo {
       String[] argsplit = arg.split("\\s+");
       for (String s : argsplit) {
         String[] propertyValuePair = s.split("=");
-        if (propertyValuePair[0].equals(MODEL_DIR)) {
-          whatToDo.addModelDirectory(new File(propertyValuePair[1]));
-        } else if (propertyValuePair[0].equals(MODULE_DIR)) {
-          whatToDo.addModuleDirectory(new File(propertyValuePair[1]));
-        } else if (propertyValuePair[0].equals(MODEL_FILE)) {
+        if (propertyValuePair[0].equals(MODEL_FILE)) {
           whatToDo.addModelFile(new File(propertyValuePair[1]));
         } else if (propertyValuePair[0].equals(MODULE_FILE)) {
           whatToDo.addModuleFile(new File(propertyValuePair[1]));

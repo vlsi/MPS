@@ -74,17 +74,17 @@ public class GeneratorWorker extends MpsWorker {
     info(s.toString());
     GeneratorManager gm = project.getComponentSafe(GeneratorManager.class);
 
-    List<Circle> order = computeGenerationOrder(project, projects, modules, models);
+    List<Cycle> order = computeGenerationOrder(project, projects, modules, models);
 
     EmptyProgressIndicator emptyProgressIndicator = new EmptyProgressIndicator();
-    for (Circle circle : order) {
-      generateModulesCircle(gm, emptyProgressIndicator, circle);
+    for (Cycle cycle : order) {
+      generateModulesCycle(gm, emptyProgressIndicator, cycle);
     }
   }
 
-  protected void generateModulesCircle(GeneratorManager gm, EmptyProgressIndicator emptyProgressIndicator, Circle circle) {
-    info("Start generating " + circle);
-    circle.generate(gm, new GenerateFilesGenerationType() {
+  protected void generateModulesCycle(GeneratorManager gm, EmptyProgressIndicator emptyProgressIndicator, Cycle cycle) {
+    info("Start generating " + cycle);
+    cycle.generate(gm, new GenerateFilesGenerationType() {
       @Override
       public boolean requiresCompilationAfterGeneration() {
         return Boolean.parseBoolean(myWhatToDo.getProperty(GenerateTask.COMPILE));
@@ -92,13 +92,36 @@ public class GeneratorWorker extends MpsWorker {
     },
       emptyProgressIndicator,
       myMessageHandler);
-    info("Finished generating " + circle);
+    info("Finished generating " + cycle);
   }
 
-  protected List<Circle> computeGenerationOrder(MPSProject project, Set<MPSProject> projects, Set<IModule> modules, Set<SModelDescriptor> models) {
+  protected List<Cycle> computeGenerationOrder(MPSProject project, Set<MPSProject> projects, Set<IModule> modules, Set<SModelDescriptor> models) {
 
     final Map<IModule, List<SModelDescriptor>> moduleToModels = new LinkedHashMap<IModule, List<SModelDescriptor>>();
+    extractModels(projects, modules, models, moduleToModels);
 
+    // calculate order
+    List<Set<IModule>> modulesOrder = ModelAccess.instance().runReadAction(new Computable<List<Set<IModule>>>() {
+      public List<Set<IModule>> compute() {
+        return StronglyConnectedModules.getInstance().getStronglyConnectedComponents(moduleToModels.keySet(), new IModuleDecoratorBuilder<IModule, IModuleDecorator<IModule>>() {
+          public IModuleDecorator<IModule> decorate(IModule module) {
+            return new ModuleDecorator(module);
+          }
+        });
+      }
+    });
+
+    // create cycles
+    List<Cycle> cycles = new ArrayList<Cycle>();
+    for (Set<IModule> modulesSet : modulesOrder) {
+      SimpleModuleCycle circle = new SimpleModuleCycle(project, modulesSet, moduleToModels);
+      cycles.add(circle);
+    }
+
+    return cycles;
+  }
+
+  protected void extractModels(Set<MPSProject> projects, Set<IModule> modules, Set<SModelDescriptor> models, Map<IModule, List<SModelDescriptor>> moduleToModels) {
     for (MPSProject mpsProject : projects) {
       extractModels(models, mpsProject);
     }
@@ -136,38 +159,18 @@ public class GeneratorWorker extends MpsWorker {
         modelsList.add(model);
       }
     }
-
-    // calculate order
-    List<Set<IModule>> modulesOrder = ModelAccess.instance().runReadAction(new Computable<List<Set<IModule>>>() {
-      public List<Set<IModule>> compute() {
-        return StronglyConnectedModules.getInstance().getStronglyConnectedComponents(moduleToModels.keySet(), new IModuleDecoratorBuilder<IModule, IModuleDecorator<IModule>>() {
-          public IModuleDecorator<IModule> decorate(IModule module) {
-            return new ModuleDecorator(module);
-          }
-        });
-      }
-    });
-
-    // create circles
-    List<Circle> circles = new ArrayList<Circle>();
-    for (Set<IModule> modulesSet : modulesOrder) {
-      SimpleModuleCircle circle = new SimpleModuleCircle(project, modulesSet, moduleToModels);
-      circles.add(circle);
-    }
-
-    return circles;
   }
 
-  protected static interface Circle {
+  protected static interface Cycle {
     void generate(GeneratorManager gm, IGenerationType generateFilesGenerationType, ProgressIndicator emptyProgressIndicator, IMessageHandler messageHandler);
   }
 
-  protected static class SimpleModuleCircle implements Circle {
+  protected static class SimpleModuleCycle implements Cycle {
     private final Set<IModule> myModules;
     private final MPSProject myProject;
     private final Map<IModule, List<SModelDescriptor>> myModuleToModels;
 
-    public SimpleModuleCircle(MPSProject project, Set<IModule> modules, Map<IModule, List<SModelDescriptor>> moduleToModels) {
+    public SimpleModuleCycle(MPSProject project, Set<IModule> modules, Map<IModule, List<SModelDescriptor>> moduleToModels) {
       myModules = modules;
       myProject = project;
       myModuleToModels = moduleToModels;
@@ -187,7 +190,7 @@ public class GeneratorWorker extends MpsWorker {
 
     @Override
     public String toString() {
-      return myModules.toString();
+      return "generate " + myModules.toString();
     }
   }
 

@@ -14,7 +14,9 @@ public class TestGenerationOnTeamcity extends GenerateTask {
   public static enum TestModes {
     ALL("all"),
     BY_CYCLES("cycles"),
-    BY_CONFIGURATIONS("test.configurations");
+    BY_CONFIGURATIONS("test.configurations"),
+    BY_MODELS("models"),
+    BY_MODULES("modules");
 
     private final String myVisibleName;
 
@@ -39,7 +41,7 @@ public class TestGenerationOnTeamcity extends GenerateTask {
   {
     myWhatToDo.putProperty(INVOKE_TESTS, Boolean.toString(false));
     myWhatToDo.putProperty(SHOW_DIFF, Boolean.toString(false));
-    myWhatToDo.putProperty(TEST_GROUPING_MODE, TestModes.BY_CYCLES.getVisibleName());
+    myWhatToDo.putProperty(TEST_GROUPING_MODE, TestModes.BY_CONFIGURATIONS.getVisibleName());
   }
 
   public boolean getShowDiff() {
@@ -58,11 +60,11 @@ public class TestGenerationOnTeamcity extends GenerateTask {
     myWhatToDo.putProperty(INVOKE_TESTS, Boolean.toString(invokeTests));
   }
 
-  public String getTestGroupingMode() {
+  public String getGroupingMode() {
     return myWhatToDo.getProperty(TEST_GROUPING_MODE);
   }
 
-  public void setTestGroupingMode(String testGroupingMode) {
+  public void setGroupingMode(String testGroupingMode) {
     myWhatToDo.putProperty(TEST_GROUPING_MODE, testGroupingMode);    
   }
 

@@ -8,27 +8,30 @@ import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.ProjectTester;
 import jetbrains.mps.project.MPSProject;
+import jetbrains.mps.project.ModuleContext;
 import jetbrains.mps.project.structure.project.testconfigurations.BaseTestConfiguration;
 import jetbrains.mps.project.tester.TesterGenerationType;
 import jetbrains.mps.project.tester.DiffReporter;
 import jetbrains.mps.generator.GeneratorManager;
+import jetbrains.mps.generator.IGenerationType;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModelDescriptor;
-import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.util.Pair;
 import jetbrains.mps.util.misc.hash.HashSet;
 import jetbrains.mps.ide.progress.IAdaptiveProgressMonitor;
 import jetbrains.mps.ide.genconf.GenParameters;
+import jetbrains.mps.ide.messages.IMessageHandler;
 import jetbrains.mps.build.ant.IBuildServerMessageFormat;
 import jetbrains.mps.build.ant.WhatToDo;
 import jetbrains.mps.build.ant.TeamCityMessageFormat;
+import jetbrains.mps.build.ant.generation.TestGenerationOnTeamcity.TestModes;
 
 import java.util.*;
 import java.io.*;
 
 import com.intellij.openapi.util.Computable;
 import com.intellij.openapi.progress.EmptyProgressIndicator;
+import com.intellij.openapi.progress.ProgressIndicator;
 import junit.framework.TestFailure;
 
 public class TestGenerationWorker extends GeneratorWorker {
@@ -54,12 +57,12 @@ public class TestGenerationWorker extends GeneratorWorker {
   }
 
   @Override
-  protected void generateModulesCircle(GeneratorManager gm, EmptyProgressIndicator emptyProgressIndicator, Circle circle) {
-    String currentTestName = myBuildServerMessageFormat.escapeBuildMessage("generate " + circle);
+  protected void generateModulesCycle(GeneratorManager gm, EmptyProgressIndicator emptyProgressIndicator, Cycle cycle) {
+    String currentTestName = myBuildServerMessageFormat.escapeBuildMessage(cycle.toString());
     System.out.println(myBuildServerMessageFormat.formatTestStart(currentTestName));
 
     final TesterGenerationType generationType = new TesterGenerationType(true);
-    circle.generate(gm, generationType, emptyProgressIndicator, myMessageHandler);
+    cycle.generate(gm, generationType, emptyProgressIndicator, myMessageHandler);
 
     List<String> diffReports;
     if (Boolean.parseBoolean(myWhatToDo.getProperty(TestGenerationOnTeamcity.SHOW_DIFF))) {
@@ -86,7 +89,7 @@ public class TestGenerationWorker extends GeneratorWorker {
     }
 
     List<TestFailure> testResults;
-    if ( Boolean.parseBoolean(myWhatToDo.getProperty(TestGenerationOnTeamcity.INVOKE_TESTS)) && Boolean.parseBoolean(myWhatToDo.getProperty(GenerateTask.COMPILE))) {
+    if (Boolean.parseBoolean(myWhatToDo.getProperty(TestGenerationOnTeamcity.INVOKE_TESTS)) && Boolean.parseBoolean(myWhatToDo.getProperty(GenerateTask.COMPILE))) {
       testResults = ModelAccess.instance().runReadAction(new Computable<List<TestFailure>>() {
         public List<TestFailure> compute() {
           return ProjectTester.invokeTests(generationType, outputModels);
@@ -103,6 +106,44 @@ public class TestGenerationWorker extends GeneratorWorker {
       System.out.println(myBuildServerMessageFormat.formatTestFailure(currentTestName, "Generation Errors", sb.toString()));
     }
     System.out.println(myBuildServerMessageFormat.formatTestFinish(currentTestName));
+  }
+
+  @Override
+  protected List<Cycle> computeGenerationOrder(MPSProject project, Set<MPSProject> projects, Set<IModule> modules, final Set<SModelDescriptor> models) {
+    String modeString = myWhatToDo.getProperty(TestGenerationOnTeamcity.TEST_GROUPING_MODE);
+    TestModes mode = TestModes.byVisibleName(modeString);
+
+    switch (mode) {
+      case ALL:
+        final Map<IModule, List<SModelDescriptor>> moduleToModels = new LinkedHashMap<IModule, List<SModelDescriptor>>();
+        extractModels(projects, modules, models, moduleToModels);
+        return Collections.singletonList((Cycle) new SimpleModuleCycle(project, modules, moduleToModels));
+      case BY_CYCLES:
+        return super.computeGenerationOrder(project, projects, modules, models);
+      case BY_CONFIGURATIONS:
+        final List<Cycle> cycles = new ArrayList<Cycle>();
+        final Set<MPSProject> outsiderProjects = new HashSet<MPSProject>();
+        for (final MPSProject mpsProject : projects) {
+          ModelAccess.instance().runReadAction(new Runnable() {
+            public void run() {
+              List<BaseTestConfiguration> testConfigurationList = mpsProject.getProjectDescriptor().getTestConfigurations();
+              if (testConfigurationList.isEmpty()) {
+                outsiderProjects.add(mpsProject);
+              } else {
+                for (BaseTestConfiguration config : testConfigurationList) {
+                  GenParameters genParams = config.getGenParams(mpsProject, true);
+                  Cycle c = new TestConfigurationCycle(mpsProject, config, genParams);
+                  cycles.add(c);
+                }
+              }
+            }
+          });
+        }
+        cycles.addAll(super.computeGenerationOrder(project, outsiderProjects, modules, models));
+        return cycles;
+      default:
+        throw new BuildException("Unsupported grouping mode " + mode);
+    }
   }
 
   @Override
@@ -196,4 +237,28 @@ public class TestGenerationWorker extends GeneratorWorker {
     }
   }
 
+  private class TestConfigurationCycle implements Cycle {
+    private final BaseTestConfiguration myConfiguration;
+    private final GenParameters myGenParameters;
+    private final MPSProject myProject;
+
+    public TestConfigurationCycle(MPSProject project, BaseTestConfiguration configuration, GenParameters genParams) {
+      myConfiguration = configuration;
+      myGenParameters = genParams;
+      myProject = project;
+    }
+
+    public void generate(GeneratorManager gm, IGenerationType generationType, ProgressIndicator progressIndicator, IMessageHandler messageHandler) {
+      gm.generateModels(myGenParameters.getModelDescriptors(),
+        new ModuleContext(myGenParameters.getModule(), myProject),
+        generationType,
+        progressIndicator,
+        messageHandler);
+    }
+
+    @Override
+    public String toString() {
+      return "configuration " + myConfiguration.getName() + "@" + myProject.getProjectDescriptor().getName();
+    }
+  }
 }

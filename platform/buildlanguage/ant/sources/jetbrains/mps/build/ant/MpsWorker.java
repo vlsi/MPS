@@ -51,6 +51,8 @@ import org.apache.tools.ant.Project;
 import org.apache.tools.ant.ProjectComponent;
 
 import java.io.File;
+import java.io.PrintWriter;
+import java.io.StringWriter;
 import java.util.*;
 
 public abstract class MpsWorker {
@@ -353,15 +355,9 @@ public abstract class MpsWorker {
   }
 
   public static StringBuffer extractStackTrace(Throwable e) {
-    StringBuffer sb = new StringBuffer("");
-    sb.append(e.getMessage());
-    sb.append("\n");
-    for (StackTraceElement el : e.getStackTrace()) {
-      sb.append("    ");
-      sb.append(el.toString());
-      sb.append("\n");
-    }
-    return sb;
+    StringWriter writer = new StringWriter();
+    e.printStackTrace(new PrintWriter(writer));
+    return writer.getBuffer();
   }
 
   public class MyMessageHandlerAppender implements ILoggingHandler {
