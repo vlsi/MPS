@@ -141,4 +141,6 @@ public interface IModule extends ModelOwner, MPSModuleOwner {
   boolean isClassPathExcluded(String path);
 
   boolean excludeClassPath(String path, boolean b);
+
+  IClassPathItem getClassesGenItem();
 }

@@ -89,6 +89,7 @@ public abstract class BaseModelCache<T> implements ApplicationComponent {
 
   }
 
+  @Nullable
   public T get(SModelDescriptor sm) {
     if (myCache.containsKey(sm)) {
       return myCache.get(sm);
