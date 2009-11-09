@@ -326,6 +326,7 @@ public class UsagesViewTool extends BaseProjectTool implements PersistentStateCo
     public void createUsageView() {
       myUsagesView = new UsagesView(getMPSProject(), myDefaultViewOptions) {
         public void close() {
+          myUsagesView.dispose();
           int index = myUsageViewsData.indexOf(UsageViewData.this);
           UsagesViewTool.this.closeTab(index);
         }
