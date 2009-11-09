@@ -33,7 +33,7 @@ import java.lang.reflect.InvocationTargetException;
 public abstract class PropertySupport {
   private static final Logger LOG = Logger.getLogger(PropertySupport.class);
 
-  protected static final Object PROPERTY_SUPPORT = new Object();
+  protected static final String PROPERTY_SUPPORT = "propertySupport";
 
   /**
    * new validation method
