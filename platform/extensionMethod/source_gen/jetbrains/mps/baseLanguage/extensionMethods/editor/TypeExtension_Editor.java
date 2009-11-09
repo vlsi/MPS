@@ -11,6 +11,7 @@ import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.AbstractCellProvider;
 import jetbrains.mps.baseLanguage.editor._GenericDeclaration_TypeVariables_Component;
+import jetbrains.mps.baseLanguage.editor._Component_Visibility;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
 import jetbrains.mps.nodeEditor.cellProviders.AbstractCellListHandler;
@@ -37,6 +38,7 @@ public class TypeExtension_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_7209_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_7209_0");
+    editorCell.addEditorCell(this.createComponent_7209_1(editorContext, node));
     editorCell.addEditorCell(this.createConstant_7209_2(editorContext, node));
     editorCell.addEditorCell(this.createProperty_7209_0(editorContext, node));
     if (renderingCondition7209_0(node, editorContext, editorContext.getOperationContext().getScope())) {
@@ -63,6 +65,12 @@ public class TypeExtension_Editor extends DefaultNodeEditor {
 
   private EditorCell createComponent_7209_0(EditorContext editorContext, SNode node) {
     AbstractCellProvider provider = new _GenericDeclaration_TypeVariables_Component(node);
+    EditorCell editorCell = provider.createEditorCell(editorContext);
+    return editorCell;
+  }
+
+  private EditorCell createComponent_7209_1(EditorContext editorContext, SNode node) {
+    AbstractCellProvider provider = new _Component_Visibility(node);
     EditorCell editorCell = provider.createEditorCell(editorContext);
     return editorCell;
   }

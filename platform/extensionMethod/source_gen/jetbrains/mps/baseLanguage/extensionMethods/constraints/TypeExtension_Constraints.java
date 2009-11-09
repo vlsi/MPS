@@ -5,9 +5,19 @@ package jetbrains.mps.baseLanguage.extensionMethods.constraints;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.constraints.CanBeAChildContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.constraints.CanBeAParentContext;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class TypeExtension_Constraints {
   public static boolean canBeAChild(final IOperationContext operationContext, final CanBeAChildContext _context) {
     return SNodeOperations.isInstanceOf(_context.getParentNode(), "jetbrains.mps.baseLanguage.structure.Expression");
+  }
+
+  public static boolean canBeAParent(final IOperationContext operationContext, final CanBeAParentContext _context) {
+    if (!(SConceptOperations.isExactly(_context.getChildConcept(), "jetbrains.mps.baseLanguage.structure.PublicVisibility")) && _context.getLink() == SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.extensionMethods.structure.TypeExtension", "visibility")) {
+      return false;
+    }
+    return true;
   }
 }

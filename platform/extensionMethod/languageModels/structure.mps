@@ -67,8 +67,8 @@
       <property name="sourceCardinality" value="0..n" />
       <link role="target" targetNodeId="1550313277222152185" resolveInfo="ExtensionMethodDeclaration" />
     </node>
-    <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="2101641000591952532">
-      <link role="intfc" targetNodeId="6.1212170275853" resolveInfo="IValidIdentifier" />
+    <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="5617464356390463487">
+      <link role="intfc" targetNodeId="6.1178285077437" resolveInfo="ClassifierMember" />
     </node>
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1894531970723270240">
       <property name="value" value="type extension" />
