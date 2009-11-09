@@ -63,8 +63,7 @@ import java.util.List;
     )
   }
 )
-public class UsagesViewTool extends BaseProjectTool implements PersistentStateComponent<Element>, INavigateableTool {
-  private static Logger LOG = Logger.getLogger(UsagesViewTool.class);
+public class UsagesViewTool extends UsagesTabbedTool implements PersistentStateComponent<Element> {
 
   private static final String VERSION_NUMBER = "0.9997";
   private static final String VERSION = "version";
@@ -77,7 +76,6 @@ public class UsagesViewTool extends BaseProjectTool implements PersistentStateCo
 
   private List<UsageViewData> myUsageViewsData = new ArrayList<UsageViewData>();
   private jetbrains.mps.ide.findusages.view.treeholder.treeview.ViewOptions myDefaultViewOptions = new jetbrains.mps.ide.findusages.view.treeholder.treeview.ViewOptions();
-  private ContentManagerAdapter myContentListener;
 
   //----CONSTRUCT STUFF----
 
@@ -85,65 +83,23 @@ public class UsagesViewTool extends BaseProjectTool implements PersistentStateCo
     super(project, "Usages", 3, jetbrains.mps.ide.projectPane.Icons.USAGES_ICON, ToolWindowAnchor.BOTTOM, true);
   }
 
+  protected INavigator getNavigator(int index) {
+    return myUsageViewsData.get(index).myUsagesView;
+  }
+
+  protected UsagesView onRemove(int index) {
+    UsagesViewTool.UsageViewData data = myUsageViewsData.remove(index);
+    return data.myUsagesView;
+  }
+  
   //----TOOL STUFF----
 
   public int getPriority() {
     return 0;
   }
 
-  @Nullable
-  public INavigator getCurrentNavigateableView() {
-    LOG.checkEDT();
-
-    int index = getCurrentTabIndex();
-    if (index == -1) return null;
-
-    UsagesViewTool.UsageViewData data = myUsageViewsData.get(index);
-    assert data != null;
-
-    return data.myUsagesView;
-  }
-
   protected boolean isInitiallyAvailable() {
     return true;
-  }
-
-  public void doRegister() {
-    UsagesViewTracker.register(this);
-
-    myContentListener = new ContentManagerAdapter() {
-      public void contentRemoved(ContentManagerEvent event) {
-        UsagesViewTool.UsageViewData data = myUsageViewsData.remove(event.getIndex());
-        data.myUsagesView.dispose();
-      }
-    };
-
-    getContentManager().addContentManagerListener(myContentListener);
-  }
-
-  public void doUnregister() {
-    //this is done automatically on content manager dispose, otherwise a dependency UVT->CM must be added
-    //getContentManager().removeContentManagerListener(myContentListener);
-
-    UsagesViewTracker.unregister(this);
-  }
-
-  private void closeTab(int index) {
-    ContentManager contentManager = getContentManager();
-    Content content = contentManager.getContent(index);
-    assert content != null;
-    contentManager.removeContent(content, true);
-  }
-
-  private void closeLastUnpinnedTab(int index) {
-    if (index != -1) {
-      ContentManager contentManager = getContentManager();
-      Content content = contentManager.getContent(index);
-      assert content != null;
-      if (!content.isPinned()) {
-        contentManager.removeContent(content, true);
-      }
-    }
   }
 
   //---FIND USAGES STUFF----
