@@ -4,6 +4,7 @@ package jetbrains.mps.ide.actions;
 
 import javax.swing.JPanel;
 import jetbrains.mps.project.MPSProject;
+import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.ide.findusages.view.UsagesView;
 import javax.swing.Icon;
 import java.awt.BorderLayout;
@@ -34,13 +35,15 @@ import jetbrains.mps.ide.findusages.CantLoadSomethingException;
 
 public class ModelCheckerViewer extends JPanel {
   private MPSProject myProject;
+  private IOperationContext myOperationContext;
   private UsagesView myUsagesView;
   private ModelCheckerTool_Tool myTool;
   private String myTabTitle;
   private Icon myTabIcon;
 
-  public ModelCheckerViewer(MPSProject mpsProject, final ModelCheckerTool_Tool tool) {
+  public ModelCheckerViewer(MPSProject mpsProject, IOperationContext operationContext, final ModelCheckerTool_Tool tool) {
     this.myProject = mpsProject;
+    this.myOperationContext = operationContext;
     this.myTool = tool;
 
     this.setLayout(new BorderLayout());
@@ -52,6 +55,7 @@ public class ModelCheckerViewer extends JPanel {
     this.myUsagesView = new UsagesView(mpsProject, viewOptions) {
       public void close() {
         tool.closeTab(theViewer);
+        this.dispose();
       }
     };
     this.myUsagesView.setCustomNodeRepresentator(new ModelCheckerViewer.MyNodeRepresentator());
@@ -76,27 +80,27 @@ public class ModelCheckerViewer extends JPanel {
   }
 
   public void checkModel(SModelDescriptor modelDescriptor) {
-    this.checkSomething(new ModelIssueFinder(modelDescriptor), "Checking " + modelDescriptor.getLongName());
+    this.checkSomething(new ModelIssueFinder(this.myOperationContext, modelDescriptor), "Checking " + modelDescriptor.getLongName());
     this.setTabProperties(modelDescriptor.getName(), IconManager.getIconFor(modelDescriptor));
   }
 
   public void checkModels(List<SModelDescriptor> modelDescriptors) {
-    this.checkSomething(new ModelsIssueFinder(modelDescriptors), "Checking " + ListSequence.fromList(modelDescriptors).count() + " models");
+    this.checkSomething(new ModelsIssueFinder(this.myOperationContext, modelDescriptors), "Checking " + ListSequence.fromList(modelDescriptors).count() + " models");
     this.setTabProperties(ListSequence.fromList(modelDescriptors).count() + " models", Icons.MODEL_ICON);
   }
 
   public void checkModule(IModule module) {
-    this.checkSomething(new ModuleIssueFinder(module), "Checking " + module.getModuleFqName());
+    this.checkSomething(new ModuleIssueFinder(this.myOperationContext, module), "Checking " + module.getModuleFqName());
     this.setTabProperties(module.getModuleFqName(), IconManager.getIconFor(module));
   }
 
   public void checkModules(List<IModule> modules) {
-    this.checkSomething(new ModulesIssueFinder(modules), "Checking " + ListSequence.fromList(modules).count() + " modules");
+    this.checkSomething(new ModulesIssueFinder(this.myOperationContext, modules), "Checking " + ListSequence.fromList(modules).count() + " modules");
     this.setTabProperties(ListSequence.fromList(modules).count() + " modules", Icons.MODULE_GROUP_CLOSED);
   }
 
   public void checkProject(MPSProject project) {
-    this.checkSomething(new ProjectIssueFinder(project), "Checking " + project.getProjectDescriptor().getName());
+    this.checkSomething(new ProjectIssueFinder(this.myOperationContext, project), "Checking " + project.getProjectDescriptor().getName());
     this.setTabProperties(project.getProjectDescriptor().getName(), Icons.PROJECT_ICON);
   }
 

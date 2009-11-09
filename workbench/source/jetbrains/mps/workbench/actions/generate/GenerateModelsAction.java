@@ -47,7 +47,7 @@ public abstract class GenerateModelsAction extends BaseAction {
     MPSProject project = myContext.getMPSProject();
     //noinspection ConstantConditions
     if (! (project.getPluginManager().getTool(ModelCheckerTool_Tool.class)
-        .checkModelsBeforeGenerationIfNeeded(myContext.getProject(), myModels))) {
+        .checkModelsBeforeGenerationIfNeeded(myContext.getProject(), myContext, myModels))) {
       return;
     }
 

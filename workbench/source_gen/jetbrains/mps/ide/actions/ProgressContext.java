@@ -18,7 +18,7 @@ public class ProgressContext {
     this.myTaskNames = taskNames;
     this.myProgressIndicator = progressIndicator;
     this.myStartTime = System.currentTimeMillis();
-    this.myEstimatedTime = ModelCheckerTools.getEstimatedTimeMillis(taskNames);
+    this.myEstimatedTime = ModelCheckerUtils.getEstimatedTimeMillis(taskNames);
   }
 
   public ProgressContext(ProgressIndicator progressIndicator, Iterable<String> taskNames) {
@@ -30,7 +30,7 @@ public class ProgressContext {
   }
 
   public void saveEstimatedTime(long subtaskStartTime) {
-    ModelCheckerTools.addEstimatedTimeMillis(ListSequence.fromList(this.myTaskNames).getElement(this.myCurrentTaskIndex), subtaskStartTime);
+    ModelCheckerUtils.addEstimatedTimeMillis(ListSequence.fromList(this.myTaskNames).getElement(this.myCurrentTaskIndex), subtaskStartTime);
     this.myCurrentTaskIndex++;
   }
 

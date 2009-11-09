@@ -17,7 +17,7 @@ public class ProjectActions_ActionGroup extends GeneratedActionGroup {
     try {
       ProjectActions_ActionGroup.this.addAnchor(ProjectActions_ActionGroup.LABEL_ID_projectNew);
       ProjectActions_ActionGroup.this.addSeparator();
-      ProjectActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.NewCheckProject_Action", "jetbrains.mps.ide");
+      ProjectActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.CheckProject_Action", "jetbrains.mps.ide");
       ProjectActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.MakeProject_Action", "jetbrains.mps.ide");
       ProjectActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.RebuildProject_Action", "jetbrains.mps.ide");
       ProjectActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.CleanProject_Action", "jetbrains.mps.ide");

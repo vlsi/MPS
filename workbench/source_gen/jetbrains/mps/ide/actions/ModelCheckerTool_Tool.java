@@ -9,7 +9,10 @@ import jetbrains.mps.ide.icons.IconManager;
 import com.intellij.openapi.wm.ToolWindowAnchor;
 import javax.swing.JComponent;
 import jetbrains.mps.MPSProjectHolder;
+import com.intellij.ui.content.ContentManager;
+import com.intellij.ui.content.Content;
 import jetbrains.mps.smodel.SModelDescriptor;
+import jetbrains.mps.smodel.IOperationContext;
 import java.util.List;
 import jetbrains.mps.project.IModule;
 import com.intellij.openapi.application.ApplicationManager;
@@ -18,8 +21,6 @@ import jetbrains.mps.ide.findusages.model.SearchResults;
 import jetbrains.mps.ide.findusages.model.SearchResult;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import com.intellij.openapi.ui.Messages;
-import com.intellij.ui.content.ContentManager;
-import com.intellij.ui.content.Content;
 
 public class ModelCheckerTool_Tool extends GeneratedTool {
   private MPSProject myProject;
@@ -36,8 +37,16 @@ public class ModelCheckerTool_Tool extends GeneratedTool {
     ModelCheckerTool_Tool.this.myProject = project.getComponent(MPSProjectHolder.class).getMPSProject();
   }
 
-  public ModelCheckerViewer checkModel(SModelDescriptor modelDescriptor, boolean showTab) {
-    ModelCheckerViewer newViewer = new ModelCheckerViewer(ModelCheckerTool_Tool.this.myProject, ModelCheckerTool_Tool.this);
+  public void dispose() {
+    ContentManager contentManager = ModelCheckerTool_Tool.this.getContentManager();
+    for (Content content : contentManager.getContents()) {
+      // TODO can be more memory leaks 
+      contentManager.removeContent(content, true);
+    }
+  }
+
+  public ModelCheckerViewer checkModel(SModelDescriptor modelDescriptor, IOperationContext operationContext, boolean showTab) {
+    ModelCheckerViewer newViewer = new ModelCheckerViewer(ModelCheckerTool_Tool.this.myProject, operationContext, ModelCheckerTool_Tool.this);
     newViewer.checkModel(modelDescriptor);
     if (showTab) {
       ModelCheckerTool_Tool.this.showTabWithResults(newViewer);
@@ -45,8 +54,8 @@ public class ModelCheckerTool_Tool extends GeneratedTool {
     return newViewer;
   }
 
-  public ModelCheckerViewer checkModels(List<SModelDescriptor> modelDescriptors, boolean showTab) {
-    ModelCheckerViewer newViewer = new ModelCheckerViewer(ModelCheckerTool_Tool.this.myProject, ModelCheckerTool_Tool.this);
+  public ModelCheckerViewer checkModels(List<SModelDescriptor> modelDescriptors, IOperationContext operationContext, boolean showTab) {
+    ModelCheckerViewer newViewer = new ModelCheckerViewer(ModelCheckerTool_Tool.this.myProject, operationContext, ModelCheckerTool_Tool.this);
     newViewer.checkModels(modelDescriptors);
     if (showTab) {
       ModelCheckerTool_Tool.this.showTabWithResults(newViewer);
@@ -54,15 +63,15 @@ public class ModelCheckerTool_Tool extends GeneratedTool {
     return newViewer;
   }
 
-  public ModelCheckerViewer checkModule(IModule module, boolean showTab) {
-    ModelCheckerViewer newViewer = new ModelCheckerViewer(ModelCheckerTool_Tool.this.myProject, ModelCheckerTool_Tool.this);
+  public ModelCheckerViewer checkModule(IModule module, IOperationContext operationContext, boolean showTab) {
+    ModelCheckerViewer newViewer = new ModelCheckerViewer(ModelCheckerTool_Tool.this.myProject, operationContext, ModelCheckerTool_Tool.this);
     newViewer.checkModule(module);
     ModelCheckerTool_Tool.this.showTabWithResults(newViewer);
     return newViewer;
   }
 
-  public ModelCheckerViewer checkModules(List<IModule> modules, boolean showTab) {
-    ModelCheckerViewer newViewer = new ModelCheckerViewer(ModelCheckerTool_Tool.this.myProject, ModelCheckerTool_Tool.this);
+  public ModelCheckerViewer checkModules(List<IModule> modules, IOperationContext operationContext, boolean showTab) {
+    ModelCheckerViewer newViewer = new ModelCheckerViewer(ModelCheckerTool_Tool.this.myProject, operationContext, ModelCheckerTool_Tool.this);
     newViewer.checkModules(modules);
     if (showTab) {
       ModelCheckerTool_Tool.this.showTabWithResults(newViewer);
@@ -70,8 +79,8 @@ public class ModelCheckerTool_Tool extends GeneratedTool {
     return newViewer;
   }
 
-  public ModelCheckerViewer checkProject(MPSProject mpsProject, boolean showTab) {
-    ModelCheckerViewer newViewer = new ModelCheckerViewer(ModelCheckerTool_Tool.this.myProject, ModelCheckerTool_Tool.this);
+  public ModelCheckerViewer checkProject(MPSProject mpsProject, IOperationContext operationContext, boolean showTab) {
+    ModelCheckerViewer newViewer = new ModelCheckerViewer(ModelCheckerTool_Tool.this.myProject, operationContext, ModelCheckerTool_Tool.this);
     newViewer.checkProject(mpsProject);
     if (showTab) {
       ModelCheckerTool_Tool.this.showTabWithResults(newViewer);
@@ -79,12 +88,12 @@ public class ModelCheckerTool_Tool extends GeneratedTool {
     return newViewer;
   }
 
-  public boolean checkModelsBeforeGenerationIfNeeded(Project project, List<SModelDescriptor> modelDescriptors) {
+  public boolean checkModelsBeforeGenerationIfNeeded(Project project, IOperationContext operationContext, List<SModelDescriptor> modelDescriptors) {
     boolean checkModels = ApplicationManager.getApplication().getComponent(GenerationSettings.class).isCheckModelsBeforeGeneration();
     if (!(checkModels)) {
       return true;
     }
-    ModelCheckerViewer viewer = ModelCheckerTool_Tool.this.checkModels(modelDescriptors, false);
+    ModelCheckerViewer viewer = ModelCheckerTool_Tool.this.checkModels(modelDescriptors, operationContext, false);
     SearchResults<ModelCheckerIssue> issues = viewer.getSearchResults();
     int warnings = 0;
     int errors = 0;

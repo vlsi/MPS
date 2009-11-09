@@ -123,7 +123,7 @@ public class GenerateAllModelsInModuleAction extends BaseAction {
 
     //noinspection ConstantConditions
     if (! (myProject.getPluginManager().getTool(ModelCheckerTool_Tool.class)
-        .checkModelsBeforeGenerationIfNeeded(myOperationContext.getProject(), modelsToGenerate))) {
+        .checkModelsBeforeGenerationIfNeeded(myOperationContext.getProject(), myOperationContext, modelsToGenerate))) {
       return;
     }
 
