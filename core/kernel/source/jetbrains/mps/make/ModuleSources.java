@@ -35,7 +35,7 @@ public class ModuleSources {
   private Set<JavaFile> myFilesToCompile = new HashSet<JavaFile>();
 
   private Set<ResourceFile> myResourcesToCopy = new HashSet<ResourceFile>();
-  private static final boolean CHECK_NEW_COMPILATION = true;
+  private static final boolean CHECK_NEW_COMPILATION = false;
 
   ModuleSources(IModule module, Dependencies deps) {
     myModule = module;
