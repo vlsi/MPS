@@ -115,9 +115,10 @@ public class TestGenerationWorker extends GeneratorWorker {
     String modeString = myWhatToDo.getProperty(TestGenerationOnTeamcity.TEST_GROUPING_MODE);
     TestModes mode = TestModes.byVisibleName(modeString);
 
+    final Map<IModule, List<SModelDescriptor>> moduleToModels = new LinkedHashMap<IModule, List<SModelDescriptor>>();
+
     switch (mode) {
       case ALL:
-        final Map<IModule, List<SModelDescriptor>> moduleToModels = new LinkedHashMap<IModule, List<SModelDescriptor>>();
         extractModels(projects, modules, models, moduleToModels);
         return Collections.singletonList((Cycle) new SimpleModuleCycle(project, modules, moduleToModels));
       case BY_CYCLES:
@@ -143,6 +144,24 @@ public class TestGenerationWorker extends GeneratorWorker {
         }
         cycles.addAll(super.computeGenerationOrder(project, outsiderProjects, modules, models));
         return cycles;
+      case BY_MODELS:
+        final List<Cycle> modelcycles = new ArrayList<Cycle>();
+        extractModels(projects, modules, models, moduleToModels);
+        for (IModule module : moduleToModels.keySet()) {
+          List<SModelDescriptor> modelsForModule = moduleToModels.get(module);
+          for (SModelDescriptor smodel : modelsForModule) {
+            modelcycles.add(new ModelCycle(smodel, module, project));
+          }
+        }
+        return modelcycles;
+      case BY_MODULES:
+        final List<Cycle> modulecycles = new ArrayList<Cycle>();
+        extractModels(projects, modules, models, moduleToModels);
+        for (IModule module : moduleToModels.keySet()) {
+          List<SModelDescriptor> modelsForModule = moduleToModels.get(module);
+          modulecycles.add(new ModuleCycle(module, modelsForModule, project));
+        }
+        return modulecycles;
       default:
         throw new BuildException("Unsupported grouping mode " + mode);
     }
@@ -262,6 +281,56 @@ public class TestGenerationWorker extends GeneratorWorker {
     @Override
     public String toString() {
       return "configuration " + myConfiguration.getName() + "@" + myProject.getProjectDescriptor().getName();
+    }
+  }
+
+  private class ModuleCycle implements Cycle {
+    private final IModule myModule;
+    private final List<SModelDescriptor> myModels;
+    private final MPSProject myProject;
+
+    public ModuleCycle(IModule module, List<SModelDescriptor> models, MPSProject project) {
+      myModule = module;
+      myProject = project;
+      myModels = models;
+    }
+
+    public void generate(GeneratorManager gm, IGenerationType generationType, ProgressIndicator progressIndicator, IMessageHandler messageHandler) {
+      gm.generateModels(myModels,
+        new ModuleContext(myModule, myProject),
+        generationType,
+        progressIndicator,
+        messageHandler);
+    }
+
+    @Override
+    public String toString() {
+      return "generating " + myModule;
+    }
+  }
+
+  private class ModelCycle implements Cycle {
+    private final IModule myModule;
+    private final MPSProject myProject;
+    private final SModelDescriptor mySModel;
+
+    public ModelCycle(SModelDescriptor sModel, IModule module, MPSProject project) {
+      mySModel = sModel;
+      myProject = project;
+      myModule = module;
+    }
+
+    public void generate(GeneratorManager gm, IGenerationType generationType, ProgressIndicator progressIndicator, IMessageHandler messageHandler) {
+      gm.generateModels(Collections.singletonList(mySModel),
+        new ModuleContext(myModule, myProject),
+        generationType,
+        progressIndicator,
+        messageHandler);
+    }
+
+    @Override
+    public String toString() {
+      return "generating " + mySModel;
     }
   }
 }

@@ -162,7 +162,7 @@ public class GeneratorWorker extends MpsWorker {
   }
 
   protected static interface Cycle {
-    void generate(GeneratorManager gm, IGenerationType generateFilesGenerationType, ProgressIndicator emptyProgressIndicator, IMessageHandler messageHandler);
+    void generate(GeneratorManager gm, IGenerationType generationType, ProgressIndicator progressIndicator, IMessageHandler messageHandler);
   }
 
   protected static class SimpleModuleCycle implements Cycle {

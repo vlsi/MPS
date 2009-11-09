@@ -39,7 +39,7 @@ public class BrokenReferencesTestTest extends TestCase {
     });
 
     WhatToDo whatToDo = new WhatToDo();
-    whatToDo.addModelDirectory(destdir);
+    whatToDo.addModelFile(new File(destdir.getAbsolutePath()  + File.separator + "Broken.sandbox" + File.separator + "broken" + File.separator + "model.mps"));
     whatToDo.addLibrary(solutionName, destdir);
     whatToDo.updateLogLevel(4); // debug log level
     final boolean[] brokenReferenceFound = new boolean[1];

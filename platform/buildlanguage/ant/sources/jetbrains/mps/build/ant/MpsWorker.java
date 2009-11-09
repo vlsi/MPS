@@ -177,9 +177,7 @@ public abstract class MpsWorker {
 
   public void collectModelsToGenerate(LinkedHashSet<MPSProject> projects, LinkedHashSet<IModule> modules, LinkedHashSet<SModelDescriptor> models) {
     collectFromProjects(projects);
-    collectFromModuleDirs(modules);
     collectFromModuleFiles(modules);
-    collectFromModelDirs(models);
     collectFromModelFiles(models);
   }
 
@@ -212,17 +210,6 @@ public abstract class MpsWorker {
     for (SModelDescriptor d : ownedModels){
       if (SModelStereotype.isUserModel(d)){
         modelsList.add(d);
-      }
-    }
-  }
-
-  private void collectFromModuleDirs(LinkedHashSet<IModule> modules) {
-    for (File dir : myWhatToDo.getModuleDirectories()) {
-      File[] files = dir.listFiles();
-      if (files != null) {
-        for (final File moduleFile : files) {
-          processModuleFile(moduleFile, modules);
-        }
       }
     }
   }
@@ -267,25 +254,6 @@ public abstract class MpsWorker {
           modules.add(gen);
         }
       }
-    }
-  }
-
-  private void collectFromModelDirs(Set<SModelDescriptor> modelDescriptors) {
-    final Set<File> probablyModelFiles = new LinkedHashSet<File>();
-
-    for (File f : myWhatToDo.getModelDirectories()) {
-      com.intellij.openapi.util.io.FileUtil.processFilesRecursively(f, new Processor<File>() {
-        public boolean process(File file) {
-          if (file.getPath().endsWith(MPSExtentions.DOT_MODEL)) {
-            probablyModelFiles.add(file);
-          }
-          return true;
-        }
-      });
-    }
-
-    for (File f : probablyModelFiles) {
-      processModelFile(modelDescriptors, f);
     }
   }
 
