@@ -79,6 +79,7 @@ public class MigrationScriptsView {
 
     myUsagesView = new UsagesView(project, viewOptions) {
       public void close() {
+        myUsagesView.dispose();
         myTool.closeTab(MigrationScriptsView.this);
       }
     };
