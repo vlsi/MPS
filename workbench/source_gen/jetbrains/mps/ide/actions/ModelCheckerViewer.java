@@ -33,34 +33,32 @@ import org.jdom.Element;
 import jetbrains.mps.ide.findusages.CantSaveSomethingException;
 import jetbrains.mps.ide.findusages.CantLoadSomethingException;
 
-public class ModelCheckerViewer extends JPanel {
+public abstract class ModelCheckerViewer extends JPanel {
   private MPSProject myProject;
   private IOperationContext myOperationContext;
   private UsagesView myUsagesView;
-  private ModelCheckerTool_Tool myTool;
   private String myTabTitle;
   private Icon myTabIcon;
 
-  public ModelCheckerViewer(MPSProject mpsProject, IOperationContext operationContext, final ModelCheckerTool_Tool tool) {
+  public ModelCheckerViewer(MPSProject mpsProject, IOperationContext operationContext) {
     this.myProject = mpsProject;
     this.myOperationContext = operationContext;
-    this.myTool = tool;
 
     this.setLayout(new BorderLayout());
     ViewOptions viewOptions = new ViewOptions(true, false, false, false, false);
     viewOptions.myCategory = true;
     viewOptions.myShowPopupMenu = false;
 
-    final ModelCheckerViewer theViewer = this;
     this.myUsagesView = new UsagesView(mpsProject, viewOptions) {
       public void close() {
-        tool.closeTab(theViewer);
-        this.dispose();
+        ModelCheckerViewer.this.close();
       }
     };
     this.myUsagesView.setCustomNodeRepresentator(new ModelCheckerViewer.MyNodeRepresentator());
     this.add(this.myUsagesView.getComponent());
   }
+
+  protected abstract void close();
 
   private void checkSomething(final IFinder finder, String taskTitle) {
     IResultProvider resultProvider = FindUtils.makeProvider(finder);
@@ -104,6 +102,10 @@ public class ModelCheckerViewer extends JPanel {
     this.setTabProperties(project.getProjectDescriptor().getName(), Icons.PROJECT_ICON);
   }
 
+  public UsagesView getUsagesView() {
+    return this.myUsagesView;
+  }
+
   public String getTabTitle() {
     return this.myTabTitle;
   }
@@ -114,10 +116,6 @@ public class ModelCheckerViewer extends JPanel {
 
   public SearchResults getSearchResults() {
     return this.myUsagesView.getSearchResults();
-  }
-
-  public void showTabWithResults() {
-    this.myTool.showTabWithResults(this);
   }
 
   public static class MyNodeRepresentator implements INodeRepresentator<ModelCheckerIssue> {
