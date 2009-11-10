@@ -13363,13 +13363,8 @@
                       <node role="rValue" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="4098745120222971291">
                         <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="4098745120222971292">
                           <link role="baseMethodDeclaration" targetNodeId="44.2464189430250152814" resolveInfo="ConfigRunParameters" />
-                          <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="647895982704043960">
-                            <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="647895982704043959">
-                              <link role="variableDeclaration" targetNodeId="1930019848839359706" resolveInfo="config" />
-                            </node>
-                            <node role="operation" type="jetbrains.mps.lang.plugin.structure.PersistentPropertyReference" id="647895982704043969">
-                              <link role="member" targetNodeId="3281460501247092872" resolveInfo="compileInMPS" />
-                            </node>
+                          <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="8081404301770347018">
+                            <property name="value" value="true" />
                           </node>
                         </node>
                       </node>
