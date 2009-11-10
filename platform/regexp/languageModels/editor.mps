@@ -485,10 +485,10 @@
   <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" id="1174557641733">
     <link role="conceptDeclaration" targetNodeId="1.1174554211468" />
     <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="1174557643563">
-      <link role="keyMap" targetNodeId="3050481019131644558" resolveInfo="RegexpSequenceByEnter" />
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1174557644675">
         <property name="text" value="[" />
         <link role="styleClass" targetNodeId="5169131996393625121" resolveInfo="LeftRegexpBrace" />
+        <link role="keyMap" targetNodeId="3050481019131644558" resolveInfo="RegexpSequenceByEnter" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNodeList" id="1174557647349">
         <link role="relationDeclaration" targetNodeId="1.1174557628217" />
@@ -497,6 +497,7 @@
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1174557649257">
         <property name="text" value="]" />
         <link role="styleClass" targetNodeId="5169131996393625128" resolveInfo="RightRegexpBrace" />
+        <link role="keyMap" targetNodeId="3050481019131644558" resolveInfo="RegexpSequenceByEnter" />
       </node>
       <node role="cellLayout" type="jetbrains.mps.lang.editor.structure.CellLayout_Indent" id="1237800050987" />
     </node>
@@ -504,10 +505,10 @@
   <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" id="1174557669695">
     <link role="conceptDeclaration" targetNodeId="1.1174554238051" />
     <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="1174557673745">
-      <link role="keyMap" targetNodeId="3050481019131644558" resolveInfo="RegexpSequenceByEnter" />
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1174557673746">
         <property name="text" value="[^" />
         <link role="styleClass" targetNodeId="5169131996393625121" resolveInfo="LeftRegexpBrace" />
+        <link role="keyMap" targetNodeId="3050481019131644558" resolveInfo="RegexpSequenceByEnter" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNodeList" id="1174557673747">
         <link role="relationDeclaration" targetNodeId="1.1174557628217" />
@@ -516,6 +517,7 @@
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1174557673748">
         <property name="text" value="]" />
         <link role="styleClass" targetNodeId="5169131996393625128" resolveInfo="RightRegexpBrace" />
+        <link role="keyMap" targetNodeId="3050481019131644558" resolveInfo="RegexpSequenceByEnter" />
       </node>
       <node role="cellLayout" type="jetbrains.mps.lang.editor.structure.CellLayout_Indent" id="1237800051087" />
     </node>
