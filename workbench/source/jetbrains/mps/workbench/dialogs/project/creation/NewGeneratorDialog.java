@@ -22,6 +22,7 @@ import com.intellij.openapi.progress.ProgressManager;
 import com.intellij.openapi.progress.Task.Modal;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.ui.TextFieldWithBrowseButton;
+import com.intellij.openapi.util.Disposer;
 import jetbrains.mps.ide.dialogs.BaseDialog;
 import jetbrains.mps.ide.dialogs.DialogDimensionsSettings.DialogDimensions;
 import jetbrains.mps.ide.ui.filechoosers.treefilechooser.TreeFileChooser;
@@ -190,6 +191,11 @@ public class NewGeneratorDialog extends BaseDialog {
   @Button(position = 1, name = "Cancel", mnemonic = 'C')
   public void buttonCancel() {
     dispose();
+  }
+
+  public void dispose() {
+    super.dispose();
+    Disposer.dispose(myTemplateModelsDir);
   }
 
   protected Generator createNewGenerator(Language sourceLanguage, File templateModelsDir, String name) {
