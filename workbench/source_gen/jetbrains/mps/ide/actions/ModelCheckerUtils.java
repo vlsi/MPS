@@ -102,13 +102,13 @@ public class ModelCheckerUtils {
 
           for (String role : SetSequence.fromSet(node.getChildRoles())) {
             if (!(isDeclaredLink(concept, role, true))) {
-              addIssue(results, node, "Usage of undeclared child role \"" + role + "\"");
+              addIssue(results, node, "Usage of undeclared child role \"" + role + "\"", MessageStatus.WARNING);
             }
           }
 
           for (String role : SetSequence.fromSet(node.getReferenceRoles())) {
             if (!(isDeclaredLink(concept, role, false))) {
-              addIssue(results, node, "Usage of undeclared child role \"" + role + "\"");
+              addIssue(results, node, "Usage of undeclared child role \"" + role + "\"", MessageStatus.WARNING);
             }
           }
 
@@ -119,7 +119,7 @@ public class ModelCheckerUtils {
             PropertySupport ps = PropertySupport.getPropertySupport(p);
             String value = ps.fromInternalValue(node.getProperty(p.getName()));
             if (!(ps.canSetValue(node, p.getName(), value, operationContext.getScope()))) {
-              addIssue(results, node, "Property constraint violation for property \"" + p.getName() + "\"");
+              addIssue(results, node, "Property constraint violation for property \"" + p.getName() + "\"", MessageStatus.WARNING);
             }
           }
 
@@ -128,7 +128,7 @@ public class ModelCheckerUtils {
               continue;
             }
             if (!(isDeclaredProperty(concept, name))) {
-              addIssue(results, node, "Usage of undeclared property \"" + name + "\"");
+              addIssue(results, node, "Usage of undeclared property \"" + name + "\"", MessageStatus.WARNING);
             }
           }
 
@@ -146,7 +146,7 @@ public class ModelCheckerUtils {
               if (status.isOk() && !(status.isDefault())) {
                 List<SNode> nodes = status.getSearchScope().getNodes();
                 if (!(ListSequence.fromList(nodes).contains(targetNode))) {
-                  addIssue(results, node, "Reference in role \"" + ref.getRole() + "\" is out of scope");
+                  addIssue(results, node, "Reference in role \"" + ref.getRole() + "\" is out of scope", MessageStatus.WARNING);
                 }
               }
             } catch (Exception e) {

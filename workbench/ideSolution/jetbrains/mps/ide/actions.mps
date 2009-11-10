@@ -14959,7 +14959,7 @@
             </node>
             <node role="initializer" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="7796696880649580072">
               <link role="classConcept" targetNodeId="171.~FindUtils" resolveInfo="FindUtils" />
-              <link role="baseMethodDeclaration" targetNodeId="171.~FindUtils.makeProvider(java.util.Collection):jetbrains.mps.ide.findusages.model.IResultProvider" resolveInfo="makeProvider" />
+              <link role="baseMethodDeclaration" targetNodeId="171.~FindUtils.makeProvider(jetbrains.mps.ide.findusages.findalgorithm.finders.IFinder...):jetbrains.mps.ide.findusages.model.IResultProvider" resolveInfo="makeProvider" />
               <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="7796696880649580073">
                 <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="7796696880649580074">
                   <link role="baseMethodDeclaration" targetNodeId="3.~MissingReferencesFinder.&lt;init&gt;(jetbrains.mps.smodel.IScope,jetbrains.mps.smodel.SModelDescriptor)" resolveInfo="MissingReferencesFinder" />
@@ -31898,7 +31898,7 @@
                         <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="6099148182869361931">
                           <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="6099148182869361932">
                             <node role="expression" type="jetbrains.mps.baseLanguage.structure.LocalStaticMethodCall" id="6099148182869361933">
-                              <link role="baseMethodDeclaration" targetNodeId="6099148182869360680" resolveInfo="addIssue" />
+                              <link role="baseMethodDeclaration" targetNodeId="6099148182869303116" resolveInfo="addIssue" />
                               <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="6099148182869361934">
                                 <link role="variableDeclaration" targetNodeId="5792297515476827736" resolveInfo="results" />
                               </node>
@@ -31917,6 +31917,10 @@
                                 <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="6099148182869361940">
                                   <property name="value" value="\&quot;" />
                                 </node>
+                              </node>
+                              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.EnumConstantReference" id="6452857007207496593">
+                                <link role="enumConstantDeclaration" targetNodeId="65.~MessageStatus.WARNING" resolveInfo="WARNING" />
+                                <link role="enumClass" targetNodeId="65.~MessageStatus" resolveInfo="MessageStatus" />
                               </node>
                             </node>
                           </node>
@@ -31958,7 +31962,7 @@
                         <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="6099148182869361955">
                           <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="6099148182869361956">
                             <node role="expression" type="jetbrains.mps.baseLanguage.structure.LocalStaticMethodCall" id="6099148182869361957">
-                              <link role="baseMethodDeclaration" targetNodeId="6099148182869360680" resolveInfo="addIssue" />
+                              <link role="baseMethodDeclaration" targetNodeId="6099148182869303116" resolveInfo="addIssue" />
                               <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="6099148182869361958">
                                 <link role="variableDeclaration" targetNodeId="5792297515476827736" resolveInfo="results" />
                               </node>
@@ -31977,6 +31981,10 @@
                                 <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="6099148182869361964">
                                   <property name="value" value="\&quot;" />
                                 </node>
+                              </node>
+                              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.EnumConstantReference" id="6452857007207496654">
+                                <link role="enumConstantDeclaration" targetNodeId="65.~MessageStatus.WARNING" resolveInfo="WARNING" />
+                                <link role="enumClass" targetNodeId="65.~MessageStatus" resolveInfo="MessageStatus" />
                               </node>
                             </node>
                           </node>
@@ -32100,7 +32108,7 @@
                         <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="2178225823781187325">
                           <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="2178225823781187524">
                             <node role="expression" type="jetbrains.mps.baseLanguage.structure.LocalStaticMethodCall" id="2178225823781187525">
-                              <link role="baseMethodDeclaration" targetNodeId="6099148182869360680" resolveInfo="addIssue" />
+                              <link role="baseMethodDeclaration" targetNodeId="6099148182869303116" resolveInfo="addIssue" />
                               <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="2178225823781187527">
                                 <link role="variableDeclaration" targetNodeId="5792297515476827736" resolveInfo="results" />
                               </node>
@@ -32124,6 +32132,10 @@
                                     </node>
                                   </node>
                                 </node>
+                              </node>
+                              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.EnumConstantReference" id="6452857007207496720">
+                                <link role="enumConstantDeclaration" targetNodeId="65.~MessageStatus.WARNING" resolveInfo="WARNING" />
+                                <link role="enumClass" targetNodeId="65.~MessageStatus" resolveInfo="MessageStatus" />
                               </node>
                             </node>
                           </node>
@@ -32212,7 +32224,7 @@
                         <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="6099148182869362676">
                           <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="6099148182869362719">
                             <node role="expression" type="jetbrains.mps.baseLanguage.structure.LocalStaticMethodCall" id="6099148182869362720">
-                              <link role="baseMethodDeclaration" targetNodeId="6099148182869360680" resolveInfo="addIssue" />
+                              <link role="baseMethodDeclaration" targetNodeId="6099148182869303116" resolveInfo="addIssue" />
                               <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="6099148182869362723">
                                 <link role="variableDeclaration" targetNodeId="5792297515476827736" resolveInfo="results" />
                               </node>
@@ -32231,6 +32243,10 @@
                                 <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="6099148182869362738">
                                   <property name="value" value="\&quot;" />
                                 </node>
+                              </node>
+                              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.EnumConstantReference" id="6452857007207496776">
+                                <link role="enumConstantDeclaration" targetNodeId="65.~MessageStatus.WARNING" resolveInfo="WARNING" />
+                                <link role="enumClass" targetNodeId="65.~MessageStatus" resolveInfo="MessageStatus" />
                               </node>
                             </node>
                           </node>
@@ -32383,7 +32399,7 @@
                                 <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="2178225823781191227">
                                   <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="2178225823781191256">
                                     <node role="expression" type="jetbrains.mps.baseLanguage.structure.LocalStaticMethodCall" id="2178225823781191257">
-                                      <link role="baseMethodDeclaration" targetNodeId="6099148182869360680" resolveInfo="addIssue" />
+                                      <link role="baseMethodDeclaration" targetNodeId="6099148182869303116" resolveInfo="addIssue" />
                                       <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="2178225823781191259">
                                         <link role="variableDeclaration" targetNodeId="5792297515476827736" resolveInfo="results" />
                                       </node>
@@ -32407,6 +32423,10 @@
                                             </node>
                                           </node>
                                         </node>
+                                      </node>
+                                      <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.EnumConstantReference" id="6452857007207496847">
+                                        <link role="enumConstantDeclaration" targetNodeId="65.~MessageStatus.WARNING" resolveInfo="WARNING" />
+                                        <link role="enumClass" targetNodeId="65.~MessageStatus" resolveInfo="MessageStatus" />
                                       </node>
                                     </node>
                                   </node>
