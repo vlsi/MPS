@@ -36,7 +36,7 @@ import junit.framework.TestFailure;
 
 public class TestGenerationWorker extends GeneratorWorker {
   private static final int MAX_EXCEPTION_SIZE = 1024 * 1024; 
-
+  
   private boolean myTestFailed = false;
   private final IBuildServerMessageFormat myBuildServerMessageFormat = getBuildServerMessageFormat();
   private final Map<BaseTestConfiguration, GenParameters> myTestConfigurations = new LinkedHashMap<BaseTestConfiguration, GenParameters>();
@@ -105,7 +105,8 @@ public class TestGenerationWorker extends GeneratorWorker {
     myMessageHandler.clean();
     if (sb.length() > 0) {
       myTestFailed = true;
-      System.out.println(myBuildServerMessageFormat.formatTestFailure(currentTestName, "Generation Errors", sb.toString()));
+      System.out.append(myBuildServerMessageFormat.formatTestFailure(currentTestName, "Generation Errors", sb));
+      System.out.println("");
     }
     System.out.println(myBuildServerMessageFormat.formatTestFinish(currentTestName));
   }
@@ -230,7 +231,7 @@ public class TestGenerationWorker extends GeneratorWorker {
         StringWriter writer = new StringWriter();
         failure.thrownException().printStackTrace(new PrintWriter(writer));
         StringBuffer buffer = writer.getBuffer();
-        sb.append(myBuildServerMessageFormat.escapeBuildMessage(buffer.substring(0, Math.min(buffer.length(), MAX_EXCEPTION_SIZE))));
+        sb.append(myBuildServerMessageFormat.escapeBuildMessage(writer.getBuffer()));
         sb.append(myBuildServerMessageFormat.getLinesSeparator());
       }
       sb.append(myBuildServerMessageFormat.getLinesSeparator());
