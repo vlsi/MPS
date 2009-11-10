@@ -18,9 +18,9 @@ public class Collections_CustomApplicationPlugin extends BaseCustomApplicationPl
   }
 
   public void doDispose() {
-      if (Collections_CustomApplicationPlugin.this.language != null) {
-          Collections_CustomApplicationPlugin.this.language.dispose();
-          Collections_CustomApplicationPlugin.this.language = null;          
-      }
+    if (Collections_CustomApplicationPlugin.this.language != null) {
+      Collections_CustomApplicationPlugin.this.language.dispose();
+      Collections_CustomApplicationPlugin.this.language = null;
+    }
   }
 }

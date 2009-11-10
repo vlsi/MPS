@@ -888,25 +888,38 @@
     </node>
     <node role="disposeBlock" type="jetbrains.mps.lang.plugin.structure.ApplicationPluginDisposeBlock" id="8536718853245029889">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="8536718853245029890">
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="8536718853245029891">
-          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="8536718853245029895">
-            <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="8536718853245029892">
-              <node role="operand" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpression" id="8536718853245029893" />
-              <node role="operation" type="jetbrains.mps.baseLanguage.classifiers.structure.DefaultClassifierFieldAccessOperation" id="8536718853245029894">
-                <link role="member" targetNodeId="8536718853245025855" resolveInfo="language" />
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="6877924468658338433">
+          <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="6877924468658338434">
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="8536718853245029891">
+              <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="8536718853245029895">
+                <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="8536718853245029892">
+                  <node role="operand" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpression" id="8536718853245029893" />
+                  <node role="operation" type="jetbrains.mps.baseLanguage.classifiers.structure.DefaultClassifierFieldAccessOperation" id="8536718853245029894">
+                    <link role="member" targetNodeId="8536718853245025855" resolveInfo="language" />
+                  </node>
+                </node>
+                <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="8536718853245029899">
+                  <link role="baseMethodDeclaration" targetNodeId="8536718853245025647" resolveInfo="dispose" />
+                </node>
               </node>
             </node>
-            <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="8536718853245029899">
-              <link role="baseMethodDeclaration" targetNodeId="8536718853245025647" resolveInfo="dispose" />
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="8536718853245029901">
+              <node role="expression" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression" id="8536718853245029908">
+                <node role="rValue" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="8536718853245029911" />
+                <node role="lValue" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="8536718853245029903">
+                  <node role="operand" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpression" id="8536718853245029902" />
+                  <node role="operation" type="jetbrains.mps.baseLanguage.classifiers.structure.DefaultClassifierFieldAccessOperation" id="8536718853245029907">
+                    <link role="member" targetNodeId="8536718853245025855" resolveInfo="language" />
+                  </node>
+                </node>
+              </node>
             </node>
           </node>
-        </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="8536718853245029901">
-          <node role="expression" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression" id="8536718853245029908">
-            <node role="rValue" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="8536718853245029911" />
-            <node role="lValue" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="8536718853245029903">
-              <node role="operand" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpression" id="8536718853245029902" />
-              <node role="operation" type="jetbrains.mps.baseLanguage.classifiers.structure.DefaultClassifierFieldAccessOperation" id="8536718853245029907">
+          <node role="condition" type="jetbrains.mps.baseLanguage.structure.NotEqualsExpression" id="6877924468658338471">
+            <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="6877924468658338474" />
+            <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="6877924468658338466">
+              <node role="operand" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpression" id="6877924468658338437" />
+              <node role="operation" type="jetbrains.mps.baseLanguage.classifiers.structure.DefaultClassifierFieldAccessOperation" id="6877924468658338470">
                 <link role="member" targetNodeId="8536718853245025855" resolveInfo="language" />
               </node>
             </node>
