@@ -23,4 +23,11 @@ public class SModelNamespaceTreeBuilder extends DefaultNamespaceTreeBuilder<SMod
     SModelDescriptor d = node.getSModelDescriptor();
     return d.getSModelReference().getNamespace();
   }
+
+  @Override
+  protected void addNode(SModelTreeNode node, NamespaceTextNode namespace) {
+    int count = SModelsSubtree.getCountNamePart(node.getSModelDescriptor(), namespace.getNamespace());
+    node.setCountAdditionalNamePart(count);
+    super.addNode(node, namespace);
+  }
 }

@@ -139,7 +139,10 @@ public class NamespaceTextNode extends TextTreeNode {
 
   public String getNamespace() {
     if (getParent() instanceof NamespaceTextNode) {
-      return ((NamespaceTextNode) getParent()).getNamespace() + "." + myName;
+      String parentNamespace = ((NamespaceTextNode) getParent()).getNamespace();
+      if (parentNamespace != null && parentNamespace.length() > 0) {
+        return parentNamespace + "." + myName;
+      }
     }
     return myName;
   }

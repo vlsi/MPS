@@ -26,7 +26,10 @@ import jetbrains.mps.util.ToStringComparator;
 import org.jetbrains.annotations.NotNull;
 
 import java.awt.Frame;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
 
 public abstract class NamespaceTreeBuilder<N extends MPSTreeNode, T extends MPSTreeNode> {
   private T myRootNamespace;
@@ -47,7 +50,11 @@ public abstract class NamespaceTreeBuilder<N extends MPSTreeNode, T extends MPST
       pathElements.remove(0);
     }
 
-    getSubnamespace(myRootNamespace, pathElements, node.getOperationContext()).add(node);
+    addNode(node, getSubnamespace(myRootNamespace, pathElements, node.getOperationContext()));
+  }
+
+  protected void addNode(N node, T namespace) {
+    namespace.add(node);
   }
 
   public void fillNode(MPSTreeNode root) {

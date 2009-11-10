@@ -384,6 +384,11 @@ public class SModelTreeNode extends MPSTreeNodeEx {
     super.updateNodePresentationInTree();
   }
 
+  public void setCountAdditionalNamePart(int count) {
+    myCountAdditionalNamePart = count;
+    updatePresentation();
+  }
+
   public boolean isInitialized() {
     return myInitialized;
   }

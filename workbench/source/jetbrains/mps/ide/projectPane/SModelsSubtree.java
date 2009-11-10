@@ -59,8 +59,8 @@ public class SModelsSubtree {
     if (!regularModelNodes.isEmpty()) {
       if (rootTreeNode instanceof ProjectSolutionTreeNode) {
         builder = new SModelNamespaceTreeBuilder();
-        for (SModelTreeNode testNode : regularModelNodes) {
-          builder.addNode(testNode);                        
+        for (SModelTreeNode treeNode : regularModelNodes) {
+          builder.addNode(treeNode);
         }
         builder.fillNode(rootTreeNode);
       } else {
