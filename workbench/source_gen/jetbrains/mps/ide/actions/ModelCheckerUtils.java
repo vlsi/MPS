@@ -10,12 +10,15 @@ import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
 import jetbrains.mps.lang.structure.structure.LinkDeclaration;
 import jetbrains.mps.smodel.search.SModelSearchUtil;
 import jetbrains.mps.lang.structure.structure.LinkMetaclass;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.structure.structure.PropertyDeclaration;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.smodel.SModelUtil_new;
@@ -58,6 +61,21 @@ public class ModelCheckerUtils {
     return link.getMetaClass() == LinkMetaclass.aggregation || !(child);
   }
 
+  private static String getRealSpecializedLinkRole(SNode conceptDeclaration, String role) {
+    for (SNode linkDeclaration : ListSequence.fromList(SLinkOperations.getTargets(conceptDeclaration, "linkDeclaration", true))) {
+      if (SPropertyOperations.getString(linkDeclaration, "role").equals(role)) {
+        return role;
+      }
+      if (SLinkOperations.getTarget(linkDeclaration, "specializedLink", false) != null) {
+        SNode parentConceptDeclaration = SNodeOperations.getAncestor(SLinkOperations.getTarget(linkDeclaration, "specializedLink", false), "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration", true, false);
+        if (getRealSpecializedLinkRole(parentConceptDeclaration, role) != null) {
+          return SPropertyOperations.getString(linkDeclaration, "role");
+        }
+      }
+    }
+    return null;
+  }
+
   private static boolean isDeclaredProperty(AbstractConceptDeclaration concept, String name) {
     PropertyDeclaration propertyDeclaration = SModelSearchUtil.findPropertyDeclaration(concept, name);
     return propertyDeclaration != null;
@@ -71,8 +89,8 @@ public class ModelCheckerUtils {
           if (!(checkAndUpdateIndicator(progressContext, "Checking " + SModelOperations.getModelName(model) + " for structure..."))) {
             return;
           }
-          AbstractConceptDeclaration concept = node.getConceptDeclarationAdapter();
-          if (concept == null) {
+          AbstractConceptDeclaration lowLevelConcept = node.getConceptDeclarationAdapter();
+          if (lowLevelConcept == null) {
             addIssue(results, node, "Cannot find concept \"" + node.getConceptFqName() + "\"");
             continue;
           }
@@ -85,7 +103,7 @@ public class ModelCheckerUtils {
           }
 
           // Check links 
-          for (LinkDeclaration linkDeclaration : ListSequence.fromList(SModelSearchUtil.getLinkDeclarations(concept))) {
+          for (LinkDeclaration linkDeclaration : ListSequence.fromList(SModelSearchUtil.getLinkDeclarations(lowLevelConcept))) {
             LinkDeclaration link = SModelUtil_new.getGenuineLinkDeclaration(linkDeclaration);
             if (link.getSourceCardinality() == Cardinality._1 || link.getSourceCardinality() == Cardinality._1__n) {
               if (link.getMetaClass() == LinkMetaclass.aggregation) {
@@ -101,24 +119,28 @@ public class ModelCheckerUtils {
           }
 
           for (String role : SetSequence.fromSet(node.getChildRoles())) {
-            if (!(isDeclaredLink(concept, role, true))) {
+            if (!(isDeclaredLink(lowLevelConcept, role, true))) {
               addIssue(results, node, "Usage of undeclared child role \"" + role + "\"", MessageStatus.WARNING);
             }
           }
 
           for (String role : SetSequence.fromSet(node.getReferenceRoles())) {
-            if (!(isDeclaredLink(concept, role, false))) {
+            if (!(isDeclaredLink(lowLevelConcept, role, false))) {
               addIssue(results, node, "Usage of undeclared child role \"" + role + "\"", MessageStatus.WARNING);
             }
           }
 
           // Check properties 
-          ConceptAndSuperConceptsScope chs = new ConceptAndSuperConceptsScope(concept);
+          ConceptAndSuperConceptsScope chs = new ConceptAndSuperConceptsScope(lowLevelConcept);
           List<PropertyDeclaration> props = chs.getAdapters(PropertyDeclaration.class);
           for (PropertyDeclaration p : ListSequence.fromList(props)) {
             PropertySupport ps = PropertySupport.getPropertySupport(p);
             String value = ps.fromInternalValue(node.getProperty(p.getName()));
             if (!(ps.canSetValue(node, p.getName(), value, operationContext.getScope()))) {
+              // Temporary hack for anonymous classes, see MPS-6685 
+              if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.IValidIdentifier")) {
+                continue;
+              }
               addIssue(results, node, "Property constraint violation for property \"" + p.getName() + "\"", MessageStatus.WARNING);
             }
           }
@@ -127,14 +149,14 @@ public class ModelCheckerUtils {
             if (node.isRoot() && SModelTreeNode.PACK.equals(name)) {
               continue;
             }
-            if (!(isDeclaredProperty(concept, name))) {
+            if (!(isDeclaredProperty(lowLevelConcept, name))) {
               addIssue(results, node, "Usage of undeclared property \"" + name + "\"", MessageStatus.WARNING);
             }
           }
 
           // Check scopes 
           for (SReference ref : ListSequence.fromList(node.getReferences())) {
-            if (!(isDeclaredLink(concept, ref.getRole(), false))) {
+            if (!(isDeclaredLink(lowLevelConcept, ref.getRole(), false))) {
               continue;
             }
             SNode targetNode = ref.getTargetNode();
@@ -142,11 +164,14 @@ public class ModelCheckerUtils {
               continue;
             }
             try {
-              SearchScopeStatus status = ModelConstraintsUtil.getSearchScope(null, node, node.getConceptDeclarationAdapter(), ref.getRole(), operationContext);
-              if (status.isOk() && !(status.isDefault())) {
-                List<SNode> nodes = status.getSearchScope().getNodes();
+              String specializedLinkRole = getRealSpecializedLinkRole(SNodeOperations.getConceptDeclaration(node), ref.getRole());
+
+              // <node> 
+              SearchScopeStatus status2 = ModelConstraintsUtil.getSearchScope(null, node, lowLevelConcept, specializedLinkRole, operationContext);
+              if (status2.isOk() && !(status2.isDefault())) {
+                List<SNode> nodes = status2.getSearchScope().getNodes();
                 if (!(ListSequence.fromList(nodes).contains(targetNode))) {
-                  addIssue(results, node, "Reference in role \"" + ref.getRole() + "\" is out of scope", MessageStatus.WARNING);
+                  addIssue(results, node, "Reference in role \"" + specializedLinkRole + "\" is out of scope", MessageStatus.WARNING);
                 }
               }
             } catch (Exception e) {
