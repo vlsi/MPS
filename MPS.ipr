@@ -63,24 +63,6 @@
           <option name="LABEL_INDENT_SIZE" value="0" />
           <option name="LABEL_INDENT_ABSOLUTE" value="false" />
         </ADDITIONAL_INDENT_OPTIONS>
-        <ADDITIONAL_INDENT_OPTIONS fileType="groovy">
-          <option name="INDENT_SIZE" value="2" />
-          <option name="CONTINUATION_INDENT_SIZE" value="8" />
-          <option name="TAB_SIZE" value="4" />
-          <option name="USE_TAB_CHARACTER" value="false" />
-          <option name="SMART_TABS" value="false" />
-          <option name="LABEL_INDENT_SIZE" value="0" />
-          <option name="LABEL_INDENT_ABSOLUTE" value="false" />
-        </ADDITIONAL_INDENT_OPTIONS>
-        <ADDITIONAL_INDENT_OPTIONS fileType="gsp">
-          <option name="INDENT_SIZE" value="2" />
-          <option name="CONTINUATION_INDENT_SIZE" value="8" />
-          <option name="TAB_SIZE" value="4" />
-          <option name="USE_TAB_CHARACTER" value="false" />
-          <option name="SMART_TABS" value="false" />
-          <option name="LABEL_INDENT_SIZE" value="0" />
-          <option name="LABEL_INDENT_ABSOLUTE" value="false" />
-        </ADDITIONAL_INDENT_OPTIONS>
         <ADDITIONAL_INDENT_OPTIONS fileType="java">
           <option name="INDENT_SIZE" value="2" />
           <option name="CONTINUATION_INDENT_SIZE" value="2" />
@@ -92,24 +74,6 @@
         </ADDITIONAL_INDENT_OPTIONS>
         <ADDITIONAL_INDENT_OPTIONS fileType="js">
           <option name="INDENT_SIZE" value="4" />
-          <option name="CONTINUATION_INDENT_SIZE" value="8" />
-          <option name="TAB_SIZE" value="4" />
-          <option name="USE_TAB_CHARACTER" value="false" />
-          <option name="SMART_TABS" value="false" />
-          <option name="LABEL_INDENT_SIZE" value="0" />
-          <option name="LABEL_INDENT_ABSOLUTE" value="false" />
-        </ADDITIONAL_INDENT_OPTIONS>
-        <ADDITIONAL_INDENT_OPTIONS fileType="jsp">
-          <option name="INDENT_SIZE" value="4" />
-          <option name="CONTINUATION_INDENT_SIZE" value="8" />
-          <option name="TAB_SIZE" value="4" />
-          <option name="USE_TAB_CHARACTER" value="false" />
-          <option name="SMART_TABS" value="false" />
-          <option name="LABEL_INDENT_SIZE" value="0" />
-          <option name="LABEL_INDENT_ABSOLUTE" value="false" />
-        </ADDITIONAL_INDENT_OPTIONS>
-        <ADDITIONAL_INDENT_OPTIONS fileType="sql">
-          <option name="INDENT_SIZE" value="2" />
           <option name="CONTINUATION_INDENT_SIZE" value="8" />
           <option name="TAB_SIZE" value="4" />
           <option name="USE_TAB_CHARACTER" value="false" />
@@ -313,9 +277,7 @@
               <list size="0" />
             </value>
           </option>
-          <option name="ADD_EJB_TO_ENTRIES" value="true" />
           <option name="ADD_JUNIT_TO_ENTRIES" value="true" />
-          <option name="ADD_TESTNG_TO_ENTRIES" value="true" />
         </inspection_tool>
         <inspection_tool class="ConstantConditions" level="ERROR" enabled="true">
           <option name="SUGGEST_NULLABLE_ANNOTATIONS" value="false" />
@@ -409,9 +371,7 @@
               <list size="0" />
             </value>
           </option>
-          <option name="ADD_EJB_TO_ENTRIES" value="true" />
           <option name="ADD_JUNIT_TO_ENTRIES" value="true" />
-          <option name="ADD_TESTNG_TO_ENTRIES" value="true" />
         </inspection_tool>
         <inspection_tool class="UnusedParameters" level="WARNING" enabled="false" />
         <inspection_tool class="SameReturnValue" level="WARNING" enabled="false" />
@@ -560,9 +520,7 @@
               <list size="0" />
             </value>
           </option>
-          <option name="ADD_EJB_TO_ENTRIES" value="true" />
           <option name="ADD_JUNIT_TO_ENTRIES" value="true" />
-          <option name="ADD_TESTNG_TO_ENTRIES" value="true" />
         </inspection_tool>
         <inspection_tool class="UnnecessaryLocalVariable" level="WARNING" enabled="false">
           <option name="m_ignoreImmediatelyReturnedVariables" value="false" />
@@ -1249,9 +1207,7 @@
         <root url="jar://$PROJECT_DIR$/lib/jdom/jdom.jar!/" />
       </CLASSES>
       <JAVADOC />
-      <SOURCES>
-        <root url="jar://$PROJECT_DIR$/lib/jdom/jdom-src.zip!/" />
-      </SOURCES>
+      <SOURCES />
     </library>
     <library name="Eclipse-compiler">
       <CLASSES>
@@ -1310,20 +1266,17 @@
         <root url="file://$PROJECT_DIR$/lib/ant-1.7.0/lib" />
       </CLASSES>
       <JAVADOC />
-      <SOURCES>
-        <root url="jar://$PROJECT_DIR$/lib/ant-1.7.0/ant-src.zip!/" />
-      </SOURCES>
+      <SOURCES />
       <jarDirectory url="file://$PROJECT_DIR$/lib/ant-1.7.0/lib" recursive="false" />
     </library>
     <library name="Beansbinding">
       <CLASSES>
-        <root url="file://$PROJECT_DIR$/lib/beansbinding" />
+        <root url="jar://$PROJECT_DIR$/lib/beansbinding/beansbinding-1.2.1.jar!/" />
       </CLASSES>
       <JAVADOC />
       <SOURCES>
         <root url="jar://$PROJECT_DIR$/lib/beansbinding/beansbinding-1.2.1-src.zip!/src" />
       </SOURCES>
-      <jarDirectory url="file://$PROJECT_DIR$/lib/beansbinding" recursive="false" />
     </library>
     <library name="IDEA-plaform">
       <CLASSES>
