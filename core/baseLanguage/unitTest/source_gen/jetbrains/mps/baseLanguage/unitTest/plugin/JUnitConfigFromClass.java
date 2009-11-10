@@ -8,9 +8,9 @@ import com.intellij.execution.configurations.RunConfiguration;
 import com.intellij.util.containers.ContainerUtil;
 import com.intellij.openapi.extensions.Extensions;
 import jetbrains.mps.plugins.pluginparts.runconfigs.MPSPsiElement;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.core.behavior.INamedConcept_Behavior;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class JUnitConfigFromClass extends BaseConfigCreator<SNode> implements Cloneable {
   private RunConfiguration myConfig;
@@ -27,12 +27,14 @@ public class JUnitConfigFromClass extends BaseConfigCreator<SNode> implements Cl
   private void createConfig(final SNode parameter) {
     JUnitConfigFromClass.this.setSourceElement(new MPSPsiElement<SNode>(parameter));
 
+    boolean isCompileInMPS = SNodeOperations.getModel(parameter).getModelDescriptor().getModule().isCompileInMPS();
     {
       JUnit_ConfigurationType configType = ContainerUtil.findInstance(Extensions.getExtensions(JUnit_ConfigurationType.CONFIGURATION_TYPE_EP), JUnit_ConfigurationType.class);
       DefaultJUnit_Configuration _config = new DefaultJUnit_Configuration(JUnitConfigFromClass.this.getContext().getProject(), configType.getConfigurationFactories()[0], "NewConfig");
       _config.setName(SPropertyOperations.getString(parameter, "name"));
       _config.getStateObject().type = JUnitRunTypes.NODE;
       _config.getStateObject().node = INamedConcept_Behavior.call_getFqName_1213877404258(parameter);
+      _config.getStateObject().compileInMPS = isCompileInMPS;
       JUnitConfigFromClass.this.myConfig = _config;
     }
   }

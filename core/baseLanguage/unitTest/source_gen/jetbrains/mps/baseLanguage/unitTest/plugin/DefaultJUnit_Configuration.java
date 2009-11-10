@@ -91,7 +91,7 @@ public class DefaultJUnit_Configuration extends BaseRunConfig {
       }
 
       if (DefaultJUnit_Configuration.this.getStateObject().myParams == null) {
-        DefaultJUnit_Configuration.this.getStateObject().myParams = new ConfigRunParameters();
+        DefaultJUnit_Configuration.this.getStateObject().myParams = new ConfigRunParameters(DefaultJUnit_Configuration.this.getStateObject().compileInMPS);
       }
       String paramsReport = DefaultJUnit_Configuration.this.getStateObject().myParams.getErrorReport();
       if (paramsReport != null) {
@@ -154,9 +154,9 @@ public class DefaultJUnit_Configuration extends BaseRunConfig {
             }
           });
           if (DefaultJUnit_Configuration.this.getStateObject().myParams == null) {
-            DefaultJUnit_Configuration.this.getStateObject().myParams = new ConfigRunParameters();
+            DefaultJUnit_Configuration.this.getStateObject().myParams = new ConfigRunParameters(DefaultJUnit_Configuration.this.getStateObject().compileInMPS);
           }
-          if (DefaultJUnit_Configuration.this.getStateObject().myParams.getMake() || !(DefaultJUnit_Configuration.this.getStateObject().withNotNullEditor)) {
+          if (DefaultJUnit_Configuration.this.getStateObject().myParams.getMake()) {
             RunUtil.makeBeforeRun(mpsproject, all);
           }
           testRunner.value.setConfigParameters(DefaultJUnit_Configuration.this.getStateObject().myParams);
@@ -252,7 +252,6 @@ public class DefaultJUnit_Configuration extends BaseRunConfig {
     }
 
     protected void resetEditorFrom(DefaultJUnit_Configuration c) {
-      c.getStateObject().withNotNullEditor = true;
       MySettingsEditor.this.myComponent.reset(c);
     }
 
@@ -278,7 +277,6 @@ public class DefaultJUnit_Configuration extends BaseRunConfig {
     public boolean compileInMPS;
     public JUnitRunTypes type;
     public ConfigRunParameters myParams;
-    public boolean withNotNullEditor;
 
     public MyState() {
     }

@@ -28,6 +28,7 @@ public class JUnitConfigFromModule extends BaseConfigCreator<IModule> implements
     }
     final String name = parameter.getModuleFqName();
     JUnitConfigFromModule.this.setSourceElement(new MPSPsiElement<IModule>(parameter));
+    boolean isCompileInMPS = parameter.isCompileInMPS();
     {
       JUnit_ConfigurationType configType = ContainerUtil.findInstance(Extensions.getExtensions(JUnit_ConfigurationType.CONFIGURATION_TYPE_EP), JUnit_ConfigurationType.class);
       DefaultJUnit_Configuration _config = new DefaultJUnit_Configuration(JUnitConfigFromModule.this.getContext().getProject(), configType.getConfigurationFactories()[0], "NewConfig") {
@@ -39,6 +40,7 @@ public class JUnitConfigFromModule extends BaseConfigCreator<IModule> implements
       _config.setName(name);
       _config.getStateObject().type = JUnitRunTypes.MODULE;
       _config.getStateObject().module = parameter.getModuleFqName();
+      _config.getStateObject().compileInMPS = isCompileInMPS;
       JUnitConfigFromModule.this.myConfig = _config;
     }
   }
