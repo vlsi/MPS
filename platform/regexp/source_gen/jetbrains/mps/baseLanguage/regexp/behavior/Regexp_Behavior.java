@@ -26,7 +26,7 @@ public class Regexp_Behavior {
   }
 
   public static String virtual_toString_1213877429451(SNode thisNode) {
-    return Regexp_Behavior.call_getString_1222432436326(thisNode, new ArrayList<SNode>());
+    return Regexp_Behavior.call_escape_1353467374624660231(thisNode, Regexp_Behavior.call_getString_1222432436326(thisNode, new ArrayList<SNode>()));
   }
 
   public static String virtual_getString_1222432436326(SNode thisNode, List<SNode> vars) {
@@ -42,7 +42,7 @@ public class Regexp_Behavior {
   }
 
   public static String call_quote_1222857178958(SNode thisNode, char ch) {
-    return Regexp_Behavior.call_escape_1353467374624660231(thisNode, Pattern.quote("" + ch));
+    return Pattern.quote("" + ch);
   }
 
   public static String call_escape_1353467374624660231(SNode thisNode, String s) {
@@ -52,8 +52,8 @@ public class Regexp_Behavior {
     StringBuilder sb = new StringBuilder();
     for (int i = 0; i < s.length(); i++) {
       char c = s.charAt(i);
-      if (c == '\\') {
-        sb.append('\\');
+      if (c == '\\' || c == '"') {
+        sb.append("\\");
       }
       sb.append(c);
     }

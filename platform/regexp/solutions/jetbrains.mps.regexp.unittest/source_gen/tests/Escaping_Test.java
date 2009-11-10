@@ -4,6 +4,7 @@ package tests;
 
 import junit.framework.TestCase;
 import junit.framework.Assert;
+import java.util.regex.Pattern;
 
 public class Escaping_Test extends TestCase {
   public void test_escapeInLiteral() throws Exception {
@@ -11,5 +12,56 @@ public class Escaping_Test extends TestCase {
     Assert.assertTrue(_PrecompiledPatterns.REGEXP1.matcher("(asdsa)").matches());
     Assert.assertTrue(_PrecompiledPatterns.REGEXP2.matcher("{qq}").matches());
     Assert.assertFalse(_PrecompiledPatterns.REGEXP3.matcher("s{qq}").matches());
+  }
+
+  public void test_testPredefined() throws Exception {
+    Pattern p = _PrecompiledPatterns.REGEXP5;
+    Assert.assertEquals("\\s\\\\\\W[\\w\\D]\\b", p.pattern());
+  }
+
+  public void test_testRange1() throws Exception {
+    Pattern p = _PrecompiledPatterns.REGEXP12;
+    Assert.assertEquals("[\\Qa\\Ec-f]", p.pattern());
+  }
+
+  public void test_testStringLiteral() throws Exception {
+    Pattern p = _PrecompiledPatterns.REGEXP6;
+    Assert.assertEquals("'\\'\"\\\"", p.pattern());
+    Assert.assertTrue(p.matcher("''\"\"").matches());
+  }
+
+  public void test_testBackref() throws Exception {
+    Pattern p = _PrecompiledPatterns.REGEXP7;
+    Assert.assertEquals("^(\\w+)\\1$", p.pattern());
+    Assert.assertTrue(p.matcher("kbbbwkbbbw").matches());
+    Assert.assertFalse(p.matcher("kbbbwkbbw").matches());
+  }
+
+  public void test_testAutoBrackets() throws Exception {
+    Pattern p = _PrecompiledPatterns.REGEXP8;
+    Assert.assertEquals("^(?:\\w\\w)+$", p.pattern());
+    Assert.assertTrue(p.matcher("bwbb").matches());
+    Assert.assertFalse(p.matcher("bbb").matches());
+  }
+
+  public void test_testAutoBrackets24() throws Exception {
+    Pattern p = _PrecompiledPatterns.REGEXP9;
+    Assert.assertEquals("^(?:\\w\\w){2,4}$", p.pattern());
+    Assert.assertTrue(p.matcher("bwbbbb").matches());
+    Assert.assertFalse(p.matcher("bbaabbaacc").matches());
+  }
+
+  public void test_testAutoBrackets2ormore() throws Exception {
+    Pattern p = _PrecompiledPatterns.REGEXP10;
+    Assert.assertEquals("^(?:\\w\\w){2,}$", p.pattern());
+    Assert.assertTrue(p.matcher("bwbb").matches());
+    Assert.assertFalse(p.matcher("bb").matches());
+  }
+
+  public void test_testAutoBrackets2exactly() throws Exception {
+    Pattern p = _PrecompiledPatterns.REGEXP11;
+    Assert.assertEquals("^(?:\\w\\w){2}$", p.pattern());
+    Assert.assertTrue(p.matcher("bwbb").matches());
+    Assert.assertFalse(p.matcher("bb").matches());
   }
 }

@@ -16,7 +16,11 @@ public class OrRegexp_Behavior {
   }
 
   public static String virtual_getString_1222432436326(SNode thisNode, List<SNode> vars) {
-    return Regexp_Behavior.call_par_1222433790846(thisNode, Regexp_Behavior.call_getString_1222432436326(SLinkOperations.getTarget(thisNode, "left", true), vars)) + "|" + Regexp_Behavior.call_par_1222433790846(thisNode, Regexp_Behavior.call_getString_1222432436326(SLinkOperations.getTarget(thisNode, "right", true), vars));
+    String s = Regexp_Behavior.call_getString_1222432436326(SLinkOperations.getTarget(thisNode, "left", true), vars) + "|" + Regexp_Behavior.call_getString_1222432436326(SLinkOperations.getTarget(thisNode, "right", true), vars);
+    return (OrRegexp_Behavior.call_inParentheses_1353467374623956858(thisNode) ?
+      Regexp_Behavior.call_par_1222433790846(thisNode, s) :
+      s
+    );
   }
 
   public static boolean virtual_needParentheses_1353467374623880338(SNode thisNode) {

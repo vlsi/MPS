@@ -16,7 +16,11 @@ public class AtLeastNTimesRegexp_Behavior {
   }
 
   public static String virtual_getString_1222432436326(SNode thisNode, List<SNode> vars) {
-    return Regexp_Behavior.call_par_1222433790846(thisNode, Regexp_Behavior.call_getString_1222432436326(SLinkOperations.getTarget(thisNode, "regexp", true), vars)) + "{" + SPropertyOperations.getInteger(thisNode, "n") + ",}";
+    String s = Regexp_Behavior.call_getString_1222432436326(SLinkOperations.getTarget(thisNode, "regexp", true), vars);
+    return ((UnaryRegexp_Behavior.call_inParentheses_1353467374623956744(thisNode) ?
+      Regexp_Behavior.call_par_1222433790846(thisNode, s) :
+      s
+    )) + "{" + SPropertyOperations.getInteger(thisNode, "n") + ",}";
   }
 
   public static String call_getString_1222609601608(SNode thisNode, List<SNode> vars) {

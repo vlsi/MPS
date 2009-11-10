@@ -15,12 +15,70 @@ public class StringLiteralRegexp_Behavior {
   }
 
   public static String virtual_getString_1222432436326(SNode thisNode, List<SNode> vars) {
-    char[] chars = new char[]{'\\','(',')','}','{','[',']','+','*','?','|','^','.','$'};
-    String text = SPropertyOperations.getString(thisNode, "text");
-    for (int i = 0; i < chars.length; i++) {
-      text = text.replaceAll("\\" + chars[i], "\\\\\\\\" + chars[i]);
+    return StringLiteralRegexp_Behavior.call_toRegexp_8330008649152995372(thisNode, SPropertyOperations.getString(thisNode, "text"));
+  }
+
+  public static boolean call_isCorrect_8330008649152998005(SNode thisNode) {
+    return StringLiteralRegexp_Behavior.call_toRegexp_8330008649152995372(thisNode, SPropertyOperations.getString(thisNode, "text")) != null;
+  }
+
+  public static String call_toRegexp_8330008649152995372(SNode thisNode, String s) {
+    StringBuilder sb = new StringBuilder();
+    for (int i = 0; i < s.length(); i++) {
+      char c = s.charAt(i);
+      if (c == '\\') {
+        sb.append(c);
+        if (++i >= s.length()) {
+          return null;
+        }
+        c = s.charAt(i);
+        if (c == 'u') {
+          sb.append(c);
+          for (int e = 0; e < 4; e++) {
+            if (++i >= s.length()) {
+              return null;
+            }
+            c = s.charAt(i);
+            if (!(StringLiteralRegexp_Behavior.call_isHexChar_8330008649152995338(thisNode, c))) {
+              return null;
+            }
+            sb.append(c);
+          }
+        } else if (Character.isDigit(c)) {
+          sb.append(c);
+          for (int e = 0; e < 2; e++) {
+            if (++i >= s.length()) {
+              return null;
+            }
+            c = s.charAt(i);
+            if (!(Character.isDigit(c))) {
+              return null;
+            }
+            sb.append(c);
+          }
+        } else if (c == 'n' || c == 't' || c == 'b' || c == 'f' || c == 'r' || c == '"' || c == '\'' || c == '\\') {
+          sb.append(c);
+        } else {
+          return null;
+        }
+      } else if (c < 32) {
+        return null;
+      } else if (c < 128) {
+        if (c == '(' || c == ')' || c == '[' || c == ']' || c == '{' || c == '}' || c == '+' || c == '*' || c == '?' || c == '|' || c == '^' || c == '.' || c == '$') {
+          sb.append('\\');
+        }
+        sb.append(c);
+      } else {
+        sb.append("\\u");
+        String val = Integer.toString(c, 16);
+        sb.append("0000".substring(val.length()) + val);
+      }
     }
-    return text;
+    return sb.toString();
+  }
+
+  public static boolean call_isHexChar_8330008649152995338(SNode thisNode, char c) {
+    return Character.isDigit(c) || (c >= 'a' && c <= 'f') || (c >= 'A' && c <= 'F');
   }
 
   public static String call_getString_1222431822198(SNode thisNode, List<SNode> vars) {

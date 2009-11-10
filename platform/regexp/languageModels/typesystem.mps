@@ -293,5 +293,37 @@
       <link role="concept" targetNodeId="1.1222260469397" resolveInfo="MatchRegexpOperation" />
     </node>
   </node>
+  <visible index="2" modelUID="r:00000000-0000-4000-0000-011c89590514(jetbrains.mps.baseLanguage.regexp.behavior)" />
+  <node type="jetbrains.mps.lang.typesystem.structure.NonTypesystemRule" id="8330008649152995908">
+    <property name="name" value="check_StringLiteralRegexp" />
+    <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="8330008649152995909">
+      <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="8330008649152998024">
+        <node role="condition" type="jetbrains.mps.baseLanguage.structure.NotExpression" id="8330008649152998027">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="8330008649152998030">
+            <node role="operand" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference" id="8330008649152998029">
+              <link role="applicableNode" targetNodeId="8330008649152998004" resolveInfo="literal" />
+            </node>
+            <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="8330008649152998034">
+              <link role="baseMethodDeclaration" targetNodeId="2v.8330008649152998005" resolveInfo="isCorrect" />
+            </node>
+          </node>
+        </node>
+        <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="8330008649152998026">
+          <node role="statement" type="jetbrains.mps.lang.typesystem.structure.ReportErrorStatement" id="8330008649152998035">
+            <node role="errorString" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="8330008649152998038">
+              <property name="value" value="Incorrect regexp string literal" />
+            </node>
+            <node role="nodeToReport" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference" id="8330008649152998039">
+              <link role="applicableNode" targetNodeId="8330008649152998004" resolveInfo="literal" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="applicableNode" type="jetbrains.mps.lang.typesystem.structure.ConceptReference" id="8330008649152998004">
+      <property name="name" value="literal" />
+      <link role="concept" targetNodeId="1.1174482753837" resolveInfo="StringLiteralRegexp" />
+    </node>
+  </node>
 </model>
 

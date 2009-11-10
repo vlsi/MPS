@@ -16,7 +16,11 @@ public class UnaryRegexp_Behavior {
   }
 
   public static String virtual_getString_1222432436326(SNode thisNode, List<SNode> vars) {
-    return Regexp_Behavior.call_par_1222433790846(thisNode, Regexp_Behavior.call_getString_1222432436326(SLinkOperations.getTarget(thisNode, "regexp", true), vars)) + SConceptPropertyOperations.getString(thisNode, "alias");
+    String s = Regexp_Behavior.call_getString_1222432436326(SLinkOperations.getTarget(thisNode, "regexp", true), vars);
+    return ((UnaryRegexp_Behavior.call_inParentheses_1353467374623956744(thisNode) ?
+      Regexp_Behavior.call_par_1222433790846(thisNode, s) :
+      s
+    )) + SConceptPropertyOperations.getString(thisNode, "alias");
   }
 
   public static boolean call_inParentheses_1353467374623956744(SNode thisNode) {

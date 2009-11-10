@@ -16,7 +16,7 @@ public class LookRegexp_Behavior {
   }
 
   public static String virtual_getString_1222432436326(SNode thisNode, List<SNode> vars) {
-    return SConceptPropertyOperations.getString(thisNode, "alias") + Regexp_Behavior.call_par_1222433790846(thisNode, Regexp_Behavior.call_getString_1222432436326(SLinkOperations.getTarget(thisNode, "regexp", true), vars)) + ")";
+    return SConceptPropertyOperations.getString(thisNode, "alias") + Regexp_Behavior.call_getString_1222432436326(SLinkOperations.getTarget(thisNode, "regexp", true), vars) + ")";
   }
 
   public static String call_getString_1222861536253(SNode thisNode, List<SNode> vars) {

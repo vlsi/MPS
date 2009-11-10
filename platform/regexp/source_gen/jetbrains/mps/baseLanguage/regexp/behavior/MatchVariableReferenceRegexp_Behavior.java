@@ -16,7 +16,7 @@ public class MatchVariableReferenceRegexp_Behavior {
   }
 
   public static String virtual_getString_1222432436326(SNode thisNode, List<SNode> vars) {
-    return Regexp_Behavior.call_par_1222433790846(thisNode, "\\\\" + (ListSequence.fromList(vars).indexOf(SLinkOperations.getTarget(thisNode, "match", false)) + 1));
+    return "\\" + (ListSequence.fromList(vars).indexOf(SLinkOperations.getTarget(thisNode, "match", false)) + 1);
   }
 
   public static String call_getString_1222610343965(SNode thisNode, List<SNode> vars) {
