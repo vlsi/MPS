@@ -41413,14 +41413,7 @@
     <node role="constructor" type="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" id="5001211796553540578">
       <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="5001211796553540579" />
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="5001211796553540580" />
-      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="5001211796553540581">
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ThisConstructorInvocation" id="2464189430250152820">
-          <link role="baseMethodDeclaration" targetNodeId="2464189430250152814" resolveInfo="ConfigRunParameters" />
-          <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="2464189430250152821">
-            <property name="value" value="false" />
-          </node>
-        </node>
-      </node>
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="5001211796553540581" />
     </node>
     <node role="constructor" type="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" id="2464189430250152814">
       <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="2464189430250152815" />
