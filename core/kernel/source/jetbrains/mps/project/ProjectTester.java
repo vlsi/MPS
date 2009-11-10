@@ -83,42 +83,42 @@ public class ProjectTester {
 
   public static List<TestFailure> invokeTests(GenerateFilesAndClassesGenerationType genType, List<SModel> outputModels) {
     final List<TestFailure> result = new ArrayList<TestFailure>();
-//    for (SModel model : outputModels) {
-//      ClassLoader classLoader = genType.getCompiler().getClassLoader(model.getClass().getClassLoader());
-//      for (SNode outputRoot : model.getRoots()) {
-//        if (!outputRoot.isInstanceOfConcept(ClassConcept.concept)) continue;
-//        try {
-//          String className = model.getLongName() + "." + outputRoot.getName();
-//          final Class testClass = Class.forName(className, true, classLoader);
-//          List<Method> testMethods = new ArrayList<Method>();
-//
-//          boolean isTestCase = TestCase.class.isAssignableFrom(testClass);
-//
-//          for (Method method : testClass.getMethods()) {
-//            if (method.getAnnotation(MPSLaunch.class) != null) continue;
-//            if (method.getAnnotation(org.junit.Test.class) != null
-//              || (method.getName().startsWith("test") && isTestCase)) {
-//              testMethods.add(method);
-//            }
-//          }
-//
-//          for (Method testMethod : testMethods) {
-//            final Object instance = testClass.newInstance();
-//            Method setName = TestCase.class.getMethod("setName", String.class);
-//            setName.invoke(instance, testMethod.getName());
-//            final junit.framework.TestResult testResult = new junit.framework.TestResult();
-//            ((TestCase) instance).run(testResult);
-//            for (TestFailure testError : Collections.list(testResult.errors())) {
-//              result.add(testError);
-//            }
-//            for (TestFailure testFailure : Collections.list(testResult.failures())) {
-//              result.add(testFailure);
-//            }
-//          }
-//        } catch (Throwable ignored) {
-//        }
-//      }
-//    }
+    for (SModel model : outputModels) {
+      ClassLoader classLoader = genType.getCompiler().getClassLoader(model.getClass().getClassLoader());
+      for (SNode outputRoot : model.getRoots()) {
+        if (!outputRoot.isInstanceOfConcept(ClassConcept.concept)) continue;
+        try {
+          String className = model.getLongName() + "." + outputRoot.getName();
+          final Class testClass = Class.forName(className, true, classLoader);
+          if (testClass.getAnnotation(classLoader.loadClass(MPSLaunch.class.getName())) != null) continue;
+
+          List<Method> testMethods = new ArrayList<Method>();
+          boolean isTestCase = TestCase.class.isAssignableFrom(testClass);
+
+          for (Method method : testClass.getMethods()) {
+            if (method.getAnnotation(org.junit.Test.class) != null
+              || (method.getName().startsWith("test") && isTestCase)) {
+              testMethods.add(method);
+            }
+          }
+
+          for (Method testMethod : testMethods) {
+            final Object instance = testClass.newInstance();
+            Method setName = TestCase.class.getMethod("setName", String.class);
+            setName.invoke(instance, testMethod.getName());
+            final junit.framework.TestResult testResult = new junit.framework.TestResult();
+            ((TestCase) instance).run(testResult);
+            for (TestFailure testError : Collections.list(testResult.errors())) {
+              result.add(testError);
+            }
+            for (TestFailure testFailure : Collections.list(testResult.failures())) {
+              result.add(testFailure);
+            }
+          }
+        } catch (Throwable ignored) {
+        }
+      }
+    }
     return result;
   }
 

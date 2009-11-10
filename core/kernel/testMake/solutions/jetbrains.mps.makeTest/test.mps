@@ -228,6 +228,9 @@
         </node>
       </node>
     </node>
+    <node role="annotation" type="jetbrains.mps.baseLanguage.structure.AnnotationInstance" id="7523560072226992468">
+      <link role="annotation" targetNodeId="27.1278034865699377468" resolveInfo="MPSLaunch" />
+    </node>
   </node>
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="1957199320903967759">
     <property name="name" value="MakeAssert" />
@@ -1427,6 +1430,9 @@
           <link role="annotation" targetNodeId="27.1278034865699377468" resolveInfo="MPSLaunch" />
         </node>
       </node>
+    </node>
+    <node role="annotation" type="jetbrains.mps.baseLanguage.structure.AnnotationInstance" id="7523560072226992467">
+      <link role="annotation" targetNodeId="27.1278034865699377468" resolveInfo="MPSLaunch" />
     </node>
   </node>
   <visible index="2" modelUID="f:java_stub#jetbrains.mps.plugin(jetbrains.mps.plugin@java_stub)" />

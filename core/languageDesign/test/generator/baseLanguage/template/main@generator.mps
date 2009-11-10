@@ -643,9 +643,6 @@
       <node role="annotation" type="jetbrains.mps.baseLanguage.structure.AnnotationInstance" id="1216995920384">
         <link role="annotation" targetNodeId="28.~Test" resolveInfo="Test" />
       </node>
-      <node role="annotation" type="jetbrains.mps.baseLanguage.structure.AnnotationInstance" id="1278034865699622305">
-        <link role="annotation" targetNodeId="42.1278034865699377468" resolveInfo="MPSLaunch" />
-      </node>
       <node role="propertyMacro$property_attribute$name" type="jetbrains.mps.lang.generator.structure.PropertyMacro" id="1216996538618">
         <node role="propertyValueFunction" type="jetbrains.mps.lang.generator.structure.PropertyMacro_GetPropertyValue" id="1216996538619">
           <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1216996538620">
@@ -1027,9 +1024,6 @@
             </node>
           </node>
         </node>
-        <node role="annotation" type="jetbrains.mps.baseLanguage.structure.AnnotationInstance" id="1278034865699622306">
-          <link role="annotation" targetNodeId="42.1278034865699377468" resolveInfo="MPSLaunch" />
-        </node>
       </node>
       <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1221567898641">
         <property name="name" value="method" />
@@ -1284,6 +1278,12 @@
           </node>
         </node>
       </node>
+      <node role="annotation" type="jetbrains.mps.baseLanguage.structure.AnnotationInstance" id="7523560072226766730">
+        <link role="annotation" targetNodeId="42.1278034865699377468" resolveInfo="MPSLaunch" />
+      </node>
+    </node>
+    <node role="annotation" type="jetbrains.mps.baseLanguage.structure.AnnotationInstance" id="7523560072226766716">
+      <link role="annotation" targetNodeId="42.1278034865699377468" resolveInfo="MPSLaunch" />
     </node>
   </node>
   <node type="jetbrains.mps.lang.generator.structure.TemplateDeclaration" id="1225467537279">
@@ -1493,9 +1493,6 @@
               </node>
             </node>
           </node>
-        </node>
-        <node role="annotation" type="jetbrains.mps.baseLanguage.structure.AnnotationInstance" id="1278034865699300833">
-          <link role="annotation" targetNodeId="42.1278034865699377468" resolveInfo="MPSLaunch" />
         </node>
       </node>
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1225976019625" />
@@ -1892,6 +1889,9 @@
           </node>
         </node>
       </node>
+      <node role="annotation" type="jetbrains.mps.baseLanguage.structure.AnnotationInstance" id="7523560072226764505">
+        <link role="annotation" targetNodeId="42.1278034865699377468" resolveInfo="MPSLaunch" />
+      </node>
     </node>
     <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1229198973176">
       <property name="name" value="testMethod" />
@@ -1899,9 +1899,6 @@
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1229198973178" />
       <node role="annotation" type="jetbrains.mps.baseLanguage.structure.AnnotationInstance" id="1229198973210">
         <link role="annotation" targetNodeId="28.~Test" resolveInfo="Test" />
-      </node>
-      <node role="annotation" type="jetbrains.mps.baseLanguage.structure.AnnotationInstance" id="1278034865699581085">
-        <link role="annotation" targetNodeId="42.1278034865699377468" resolveInfo="MPSLaunch" />
       </node>
       <node role="propertyMacro$property_attribute$name" type="jetbrains.mps.lang.generator.structure.PropertyMacro" id="1229198973211">
         <node role="propertyValueFunction" type="jetbrains.mps.lang.generator.structure.PropertyMacro_GetPropertyValue" id="1229198973212">
@@ -2130,6 +2127,9 @@
     </node>
     <node role="superclass" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1229199070809">
       <link role="classifier" targetNodeId="26.1215696484420" resolveInfo="BaseTransformationTest" />
+    </node>
+    <node role="annotation" type="jetbrains.mps.baseLanguage.structure.AnnotationInstance" id="7523560072226763174">
+      <link role="annotation" targetNodeId="42.1278034865699377468" resolveInfo="MPSLaunch" />
     </node>
   </node>
   <node type="jetbrains.mps.lang.generator.structure.TemplateDeclaration" id="1230133923247">
