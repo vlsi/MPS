@@ -3290,9 +3290,7 @@
             </node>
           </node>
         </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636453275">
-          <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636453276" />
-        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636453275" />
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1201094296853">
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1201094296854">
             <property name="name" value="forStatement" />
@@ -3308,9 +3306,7 @@
             </node>
           </node>
         </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636453101">
-          <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636453102" />
-        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636453101" />
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1201096446195">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1203977956540">
             <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1203977963048">
@@ -3331,9 +3327,7 @@
             </node>
           </node>
         </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636453683">
-          <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636453684" />
-        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636453683" />
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1201094485329">
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1201094485330">
             <property name="name" value="forVariableDeclaration" />
@@ -3427,9 +3421,7 @@
             </node>
           </node>
         </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636453181">
-          <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636453182" />
-        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636453181" />
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1201094881857">
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1201094881858">
             <property name="name" value="forCondition" />
@@ -3544,9 +3536,7 @@
             </node>
           </node>
         </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636453617">
-          <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636453618" />
-        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636453617" />
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1201095604382">
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1201095604383">
             <property name="name" value="iterationExpr" />
@@ -3712,9 +3702,7 @@
             </node>
           </node>
         </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636453449">
-          <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636453450" />
-        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636453449" />
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1201096368900">
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1201096368901">
             <property name="name" value="fake_node" />
@@ -3900,9 +3888,7 @@
             </node>
           </node>
         </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636453475">
-          <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636453476" />
-        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636453475" />
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1201094363742">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1203977967277">
             <node role="operand" type="jetbrains.mps.lang.intentions.structure.ConceptFunctionParameter_node" id="1201094363743" />
@@ -4011,9 +3997,7 @@
             </node>
           </node>
         </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636454347">
-          <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636454348" />
-        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636454347" />
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1201105273759">
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1201105273760">
             <property name="name" value="ifNode" />
@@ -4078,9 +4062,7 @@
             </node>
           </node>
         </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636454477">
-          <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636454478" />
-        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636454477" />
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1201105313535">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1203977966065">
             <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1203977955322">
@@ -4099,9 +4081,7 @@
             </node>
           </node>
         </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636454035">
-          <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636454036" />
-        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636454035" />
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1201106188747">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1203977968080">
             <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1203977966761">
@@ -4142,9 +4122,7 @@
             </node>
           </node>
         </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636453743">
-          <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636453744" />
-        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636453743" />
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1201106619380">
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1201106619381">
             <property name="name" value="fake_node" />
@@ -4398,9 +4376,7 @@
             </node>
           </node>
         </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636454433">
-          <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636454434" />
-        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636454433" />
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1201107598664">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1203977963957">
             <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1201107598667">
@@ -5099,9 +5075,7 @@
             </node>
           </node>
         </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636453691">
-          <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636453692" />
-        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636453691" />
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1201103377119">
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1201103377120">
             <property name="name" value="assignmentStmt" />
@@ -5161,9 +5135,7 @@
             </node>
           </node>
         </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636454009">
-          <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636454010" />
-        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636454009" />
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1227571690255">
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1227571690256">
             <property name="name" value="lValue" />
@@ -5223,9 +5195,7 @@
             </node>
           </node>
         </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636454199">
-          <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636454200" />
-        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636454199" />
         <node role="statement" type="jetbrains.mps.baseLanguage.collections.structure.ForEachStatement" id="1201102901101">
           <node role="variable" type="jetbrains.mps.baseLanguage.collections.structure.ForEachVariable" id="1201102901102">
             <property name="name" value="constr" />
@@ -5266,9 +5236,7 @@
             </node>
           </node>
         </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636453629">
-          <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636453630" />
-        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636453629" />
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1201103442451">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1203977956932">
             <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1203977956881">

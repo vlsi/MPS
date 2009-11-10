@@ -53,19 +53,19 @@ public class MoveInitializerToConstructor_Intention extends BaseIntention {
 
   public void execute(final SNode node, final EditorContext editorContext) {
     SNode classNode = SNodeOperations.getAncestor(node, "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false);
-    //  
+    // 
     SNode assignmentStmt = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ExpressionStatement", null);
     SNode assignmentExpr = SLinkOperations.setNewChild(assignmentStmt, "expression", "jetbrains.mps.baseLanguage.structure.AssignmentExpression");
     SLinkOperations.setTarget(assignmentExpr, "rValue", SNodeOperations.copyNode(SLinkOperations.getTarget(node, "initializer", true)), true);
-    //  
+    // 
     SNode lValue = SLinkOperations.setNewChild(assignmentExpr, "lValue", "jetbrains.mps.baseLanguage.structure.DotExpression");
     SLinkOperations.setNewChild(lValue, "operand", "jetbrains.mps.baseLanguage.structure.ThisExpression");
     SLinkOperations.setTarget(SLinkOperations.setNewChild(lValue, "operation", "jetbrains.mps.baseLanguage.structure.FieldReferenceOperation"), "fieldDeclaration", node, false);
-    //  
+    // 
     for (SNode constr : ListSequence.fromList(SLinkOperations.getTargets(classNode, "constructor", true))) {
       SLinkOperations.insertChildFirst(SLinkOperations.getTarget(constr, "body", true), "statement", SNodeOperations.copyNode(assignmentStmt));
     }
-    //  
+    // 
     SNodeOperations.detachNode(SLinkOperations.getTarget(node, "initializer", true));
   }
 

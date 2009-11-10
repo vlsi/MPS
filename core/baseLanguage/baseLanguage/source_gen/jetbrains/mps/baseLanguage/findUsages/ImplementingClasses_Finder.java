@@ -32,12 +32,12 @@ public class ImplementingClasses_Finder extends GeneratedFinder {
   protected void doFind(SNode node, IScope scope, List<SNode> _results, ProgressIndicator indicator) {
     List<SNode> derivedInterfaces = FindUtils.executeFinder("jetbrains.mps.baseLanguage.findUsages.DerivedInterfaces_Finder", node, scope, indicator);
     ListSequence.fromList(derivedInterfaces).addElement(node);
-    //  
+    // 
     List<SNode> derivedInterfacesUsages = new ArrayList<SNode>();
     for (SNode derivedInterface : derivedInterfaces) {
       ListSequence.fromList(derivedInterfacesUsages).addSequence(ListSequence.fromList(FindUtils.executeFinder("jetbrains.mps.lang.structure.findUsages.NodeUsages_Finder", derivedInterface, scope, indicator)));
     }
-    //  
+    // 
     for (SNode interfaceNode : derivedInterfacesUsages) {
       if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(interfaceNode), "jetbrains.mps.baseLanguage.structure.ClassConcept")) {
         // class implements interface case 

@@ -194,7 +194,7 @@ public class QueriesGenerated {
     // references on mapping label will be lost because 
     // TLBase generator executes first and doesn't copy 
     // mapping configs (where labels are declared) to output model 
-    //  
+    // 
     {
       // references in 'get by label' 
       List<SNode> ops = SModelOperations.getNodes(_context.getModel(), "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GetOutputByLabel");

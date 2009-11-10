@@ -66,11 +66,11 @@ public abstract class TwoOptionsStep<M> extends AbstractStep {
 
   public JComponent createMainComponent() {
     JPanel panel = new JPanel(new GridBagLayout());
-    //  
+    // 
     this.myOptionsCheckBox = this.createOptionsCheckBox();
     this.mySelectComboBox = this.createSelectComboBox();
     this.myTextField = this.createTextField();
-    //  
+    // 
     panel.add(this.myOptionsCheckBox, this.createConstraint(0, 0));
     panel.add(new JLabel(this.getTextFieldName()), this.createConstraint(1, 0));
     panel.add(this.myTextField, this.createConstraint(2, 0));

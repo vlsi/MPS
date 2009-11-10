@@ -105,7 +105,7 @@ public class QueriesGenerated {
       MapSequence.fromMap(conceptsToConstraints).put(variableConcept, conceptConstraint);
     }
     SModel constraintsModel = language.getConstraintsModelDescriptor().getSModel();
-    //  
+    // 
     // setting roots and deleting input roots 
     structureModel.setLoading(true);
     for (SNode root : ListSequence.fromListWithValues(new ArrayList<SNode>(), SModelOperations.getRoots(structureModel, null))) {

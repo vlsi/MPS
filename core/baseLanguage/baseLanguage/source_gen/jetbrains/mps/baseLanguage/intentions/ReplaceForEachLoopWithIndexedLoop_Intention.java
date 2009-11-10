@@ -56,23 +56,23 @@ public class ReplaceForEachLoopWithIndexedLoop_Intention extends BaseIntention {
   public void execute(final SNode node, final EditorContext editorContext) {
     // TODO: expression as iterable - make a variable 
     final SNode iterable = SLinkOperations.getTarget(node, "iterable", true);
-    //  
+    // 
     SNode forStatement = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ForStatement", null);
-    //  
+    // 
     SPropertyOperations.set(forStatement, "label", SPropertyOperations.getString(node, "label"));
-    //  
+    // 
     final SNode forVariableDeclaration = SLinkOperations.setNewChild(forStatement, "variable", "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration");
     SPropertyOperations.set(forVariableDeclaration, "name", "i");
     SLinkOperations.setTarget(forVariableDeclaration, "type", new _Quotations.QuotationClass_2().createNode(), true);
     SLinkOperations.setNewChild(forVariableDeclaration, "initializer", "jetbrains.mps.baseLanguage.structure.IntegerConstant");
     SPropertyOperations.set(SNodeOperations.cast(SLinkOperations.getTarget(forVariableDeclaration, "initializer", true), "jetbrains.mps.baseLanguage.structure.IntegerConstant"), "value", "" + (0));
-    //  
+    // 
     SNode forCondition = SLinkOperations.setNewChild(forStatement, "condition", "jetbrains.mps.baseLanguage.structure.LessThanExpression");
     SLinkOperations.setNewChild(forCondition, "leftExpression", "jetbrains.mps.baseLanguage.structure.LocalVariableReference");
     SLinkOperations.setTarget(SNodeOperations.cast(SLinkOperations.getTarget(forCondition, "leftExpression", true), "jetbrains.mps.baseLanguage.structure.LocalVariableReference"), "variableDeclaration", forVariableDeclaration, false);
     SLinkOperations.setNewChild(SLinkOperations.setNewChild(forCondition, "rightExpression", "jetbrains.mps.baseLanguage.structure.DotExpression"), "operation", "jetbrains.mps.baseLanguage.structure.ArrayLengthOperation");
     SLinkOperations.setTarget(SNodeOperations.cast(SLinkOperations.getTarget(forCondition, "rightExpression", true), "jetbrains.mps.baseLanguage.structure.DotExpression"), "operand", SNodeOperations.copyNode(iterable), true);
-    //  
+    // 
     SNode iterationExpr = SLinkOperations.setNewChild(forStatement, "iteration", "jetbrains.mps.baseLanguage.structure.AssignmentExpression");
     SLinkOperations.setNewChild(iterationExpr, "lValue", "jetbrains.mps.baseLanguage.structure.LocalVariableReference");
     SLinkOperations.setTarget(SNodeOperations.cast(SLinkOperations.getTarget(iterationExpr, "lValue", true), "jetbrains.mps.baseLanguage.structure.LocalVariableReference"), "variableDeclaration", forVariableDeclaration, false);
@@ -80,7 +80,7 @@ public class ReplaceForEachLoopWithIndexedLoop_Intention extends BaseIntention {
     SLinkOperations.setTarget(SNodeOperations.cast(SLinkOperations.getTarget(iterationExpr, "rValue", true), "jetbrains.mps.baseLanguage.structure.PlusExpression"), "leftExpression", SNodeOperations.copyNode(SLinkOperations.getTarget(iterationExpr, "lValue", true)), true);
     SLinkOperations.setNewChild(SNodeOperations.cast(SLinkOperations.getTarget(iterationExpr, "rValue", true), "jetbrains.mps.baseLanguage.structure.PlusExpression"), "rightExpression", "jetbrains.mps.baseLanguage.structure.IntegerConstant");
     SPropertyOperations.set(SNodeOperations.cast(SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(iterationExpr, "rValue", true), "jetbrains.mps.baseLanguage.structure.PlusExpression"), "rightExpression", true), "jetbrains.mps.baseLanguage.structure.IntegerConstant"), "value", "" + (1));
-    //  
+    // 
     final SNode fake_node = node;
     ListSequence.fromList(SNodeOperations.getDescendants(SLinkOperations.getTarget(node, "body", true), null, false, new String[]{})).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
@@ -98,7 +98,7 @@ public class ReplaceForEachLoopWithIndexedLoop_Intention extends BaseIntention {
       }
     });
     SLinkOperations.setTarget(forStatement, "body", SLinkOperations.getTarget(node, "body", true), true);
-    //  
+    // 
     SNodeOperations.replaceWithAnother(node, forStatement);
   }
 

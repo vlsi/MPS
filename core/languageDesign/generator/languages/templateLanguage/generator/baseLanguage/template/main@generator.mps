@@ -1182,9 +1182,7 @@
             <property name="text" value="mapping configs (where labels are declared) to output model" />
           </node>
         </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636453421">
-          <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636453422" />
-        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636453421" />
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.BlockStatement" id="1217272368341">
           <node role="statements" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1217272368342">
             <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636454395">

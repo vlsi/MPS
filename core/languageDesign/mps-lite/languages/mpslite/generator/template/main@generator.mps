@@ -1049,9 +1049,7 @@
             </node>
           </node>
         </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636453393">
-          <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636453394" />
-        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636453393" />
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636453471">
           <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636453472">
             <property name="text" value="setting roots and deleting input roots" />

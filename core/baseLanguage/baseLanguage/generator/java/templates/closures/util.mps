@@ -291,17 +291,13 @@
       <node role="returnType" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1196274951335" />
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1196274932497" />
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1196274932498">
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636453997">
-          <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636453998" />
-        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636453997" />
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636454367">
           <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636454368">
             <property name="text" value="must be invoked in $COPY-SRC$ because use ref on class in 'input model'" />
           </node>
         </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636453191">
-          <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636453192" />
-        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636453191" />
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1196275097909">
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1196275097910">
             <property name="name" value="enclosingClass" />

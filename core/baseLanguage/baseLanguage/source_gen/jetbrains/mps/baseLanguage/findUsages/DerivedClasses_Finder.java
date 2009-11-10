@@ -31,7 +31,7 @@ public class DerivedClasses_Finder extends GeneratedFinder {
   protected void doFind(SNode node, IScope scope, List<SNode> _results, ProgressIndicator indicator) {
     List<SNode> derived = new ArrayList<SNode>();
     ListSequence.fromList(derived).addElement(SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.ClassConcept"));
-    //  
+    // 
     int passed = 0;
     while (ListSequence.fromList(derived).count() != passed) {
       SNode passingNode = ListSequence.fromList(derived).getElement(passed);

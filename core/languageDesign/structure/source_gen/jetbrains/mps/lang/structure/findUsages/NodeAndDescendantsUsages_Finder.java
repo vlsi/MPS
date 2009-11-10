@@ -37,7 +37,7 @@ public class NodeAndDescendantsUsages_Finder extends GeneratedFinder {
     for (SNode child : ListSequence.fromList(SNodeOperations.getDescendants(node, null, false, new String[]{}))) {
       SetSequence.fromSet(nodes).addElement(child);
     }
-    //  
+    // 
     Set<SReference> resRefs = FindUsagesManager.getInstance().findUsages(nodes, scope, new FindUsagesManager.ProgressAdapter(indicator), false);
     for (SReference reference : resRefs) {
       if (!(SetSequence.fromSet(nodes).contains(reference.getSourceNode()))) {

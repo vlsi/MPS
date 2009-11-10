@@ -164,7 +164,7 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
       basedirPath = PackagingLanguageGenerator.createBasedirPath("", basedir);
     }
     SLinkOperations.setTarget(mpsLayout, "baseDirectory", basedirPath, true);
-    //  
+    // 
     SPropertyOperations.set(mpsLayout, "compile", "" + (true));
     SPropertyOperations.set(ListSequence.fromList(SLinkOperations.getTargets(mpsLayout, "configuration", true)).first(), "name", "default");
     // create zip 
@@ -234,7 +234,7 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
         SetSequence.fromSet(topLevel).removeElement(component);
       }
     }
-    //  
+    // 
     for (SNode topLevelComponent : SetSequence.fromSet(topLevel)) {
       SLinkOperations.addChild(folder, "entry", topLevelComponent);
     }
