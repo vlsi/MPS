@@ -11,6 +11,7 @@
             <jvmarg value="-Xss1024k"/>
             <jvmarg value="-Xmx1000m"/>
             <jvmarg value="-XX:MaxPermSize=92m"/>
+            <jvmarg value="-XX:+HeapDumpOnOutOfMemoryError"/>
             <!--<jvmarg value="-Xdebug"/>-->
             <!--<jvmarg value="-Xrunjdwp:transport=dt_socket,server=y,suspend=n,address=5005"/>-->
             <project dir="${mps.home}/core/languageDesign/"/>
@@ -19,6 +20,7 @@
             <jvmarg value="-Xss1024k"/>
             <jvmarg value="-Xmx1000m"/>
             <jvmarg value="-XX:MaxPermSize=92m"/>
+            <jvmarg value="-XX:+HeapDumpOnOutOfMemoryError"/>
             <!--<jvmarg value="-Xdebug"/>-->
             <!--<jvmarg value="-Xrunjdwp:transport=dt_socket,server=y,suspend=n,address=5005"/>-->
             <project dir="${mps.home}/core/baseLanguage/"/>
@@ -27,18 +29,21 @@
             <jvmarg value="-Xss1024k"/>
             <jvmarg value="-Xmx1000m"/>
             <jvmarg value="-XX:MaxPermSize=92m"/>
+            <jvmarg value="-XX:+HeapDumpOnOutOfMemoryError"/>
             <project file="${mps.home}/platform/xmlDeprecated/xmlDeprecated.mpr"/>
         </mps.test.generation>
         <mps.test.generation fork="true" compile="true" showdiff="true" invoketests="true" loglevel="info">
             <jvmarg value="-Xss1024k"/>
             <jvmarg value="-Xmx1000m"/>
             <jvmarg value="-XX:MaxPermSize=92m"/>
+            <jvmarg value="-XX:+HeapDumpOnOutOfMemoryError"/>
             <project file="${mps.home}/platform/regexp/regexp.mpr"/>
         </mps.test.generation>
         <mps.test.generation fork="true" compile="true" showdiff="true" invoketests="true" loglevel="info">
             <jvmarg value="-Xss1024k"/>
             <jvmarg value="-Xmx1000m"/>
             <jvmarg value="-XX:MaxPermSize=92m"/>
+            <jvmarg value="-XX:+HeapDumpOnOutOfMemoryError"/>
             <project file="${mps.home}/platform/xml/xml/xml.mpr"/>
         </mps.test.generation>
     </target>
@@ -48,6 +53,7 @@
             <jvmarg value="-Xss1024k"/>
             <jvmarg value="-Xmx1000m"/>
             <jvmarg value="-XX:MaxPermSize=92m"/>
+            <jvmarg value="-XX:+HeapDumpOnOutOfMemoryError"/>
             <!--<jvmarg value="-Xdebug"/>-->
             <!--<jvmarg value="-Xrunjdwp:transport=dt_socket,server=y,suspend=y,address=5005"/>-->
             <project file="${mps.home}/platform/buildlanguage/BuildLanguage.mpr"/>
@@ -56,6 +62,7 @@
             <jvmarg value="-Xss1024k"/>
             <jvmarg value="-Xmx1000m"/>
             <jvmarg value="-XX:MaxPermSize=92m"/>
+            <jvmarg value="-XX:+HeapDumpOnOutOfMemoryError"/>
             <!--<jvmarg value="-Xdebug"/>-->
             <!--<jvmarg value="-Xrunjdwp:transport=dt_socket,server=y,suspend=n,address=5005"/>-->
             <project file="${mps.home}/platform/uiLanguage/uiLanguage.mpr"/>
@@ -64,12 +71,14 @@
             <jvmarg value="-Xss1024k"/>
             <jvmarg value="-Xmx1000m"/>
             <jvmarg value="-XX:MaxPermSize=92m"/>
+            <jvmarg value="-XX:+HeapDumpOnOutOfMemoryError"/>
             <project file="${mps.home}/workbench/ideSolution/ide.mpr"/>
         </mps.test.generation>
         <mps.test.generation fork="true" compile="true" showdiff="true" invoketests="true" loglevel="info">
             <jvmarg value="-Xss1024k"/>
             <jvmarg value="-Xmx1000m"/>
             <jvmarg value="-XX:MaxPermSize=92m"/>
+            <jvmarg value="-XX:+HeapDumpOnOutOfMemoryError"/>
             <!--<jvmarg value="-Xdebug"/>-->
             <!--<jvmarg value="-Xrunjdwp:transport=dt_socket,server=y,suspend=n,address=5005"/>-->
             <project file="${mps.home}/core/languageDesign/mps-lite/mps-lite.mpr"/>
@@ -78,24 +87,28 @@
             <jvmarg value="-Xss1024k"/>
             <jvmarg value="-Xmx1000m"/>
             <jvmarg value="-XX:MaxPermSize=92m"/>
+            <jvmarg value="-XX:+HeapDumpOnOutOfMemoryError"/>
             <project file="${mps.home}/samples/complexLanguage/Complex.mpr"/>
         </mps.test.generation>
         <mps.test.generation fork="true" compile="true" showdiff="true" invoketests="true" loglevel="info">
             <jvmarg value="-Xss1024k"/>
             <jvmarg value="-Xmx1000m"/>
             <jvmarg value="-XX:MaxPermSize=92m"/>
+            <jvmarg value="-XX:+HeapDumpOnOutOfMemoryError"/>
             <project file="${mps.home}/samples/matrixLanguage/jetbrains.mps.matrixLanguage.mpr"/>
         </mps.test.generation>
         <mps.test.generation fork="true" compile="true" showdiff="true" invoketests="true" loglevel="info">
             <jvmarg value="-Xss1024k"/>
             <jvmarg value="-Xmx1000m"/>
             <jvmarg value="-XX:MaxPermSize=92m"/>
+            <jvmarg value="-XX:+HeapDumpOnOutOfMemoryError"/>
             <project file="${mps.home}/platform/ypath/YPath.mpr"/>
         </mps.test.generation>
         <mps.test.generation fork="true" compile="true" showdiff="true" invoketests="true" loglevel="info">
             <jvmarg value="-Xss1024k"/>
             <jvmarg value="-Xmx1000m"/>
             <jvmarg value="-XX:MaxPermSize=92m"/>
+            <jvmarg value="-XX:+HeapDumpOnOutOfMemoryError"/>
             <project file="${mps.home}/samples/xmlLiterals/jetbrains.mps.samples.xmlLiterals.mpr"/>
         </mps.test.generation>
     </target>
@@ -105,6 +118,7 @@
             <jvmarg value="-Xss1024k"/>
             <jvmarg value="-Xmx1000m"/>
             <jvmarg value="-XX:MaxPermSize=92m"/>
+            <jvmarg value="-XX:+HeapDumpOnOutOfMemoryError"/>
             <!--<jvmarg value="-Xdebug"/>-->
             <!--<jvmarg value="-Xrunjdwp:transport=dt_socket,server=y,suspend=y,address=5005"/>-->
             <modules dir="${mps.home}">
