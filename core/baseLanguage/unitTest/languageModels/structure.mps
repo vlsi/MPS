@@ -62,25 +62,10 @@
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1171978097730">
     <property name="name" value="AssertEquals" />
-    <link role="extends" targetNodeId="2.1068580123157" />
-    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1171978312978">
-      <property name="metaClass" value="aggregation" />
-      <property name="role" value="expected" />
-      <property name="sourceCardinality" value="1" />
-      <link role="target" targetNodeId="2.1068431790191" />
-    </node>
-    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1171978322433">
-      <property name="metaClass" value="aggregation" />
-      <property name="role" value="actual" />
-      <property name="sourceCardinality" value="1" />
-      <link role="target" targetNodeId="2.1068431790191" />
-    </node>
+    <link role="extends" targetNodeId="8427750732757990717" resolveInfo="BinaryAssert" />
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1171978426881">
       <property name="value" value="assert equals" />
       <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" />
-    </node>
-    <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="7080278351417151317">
-      <link role="intfc" targetNodeId="1172075514136" resolveInfo="MessageHolder" />
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1171981022339">
@@ -119,25 +104,10 @@
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1171985735491">
     <property name="name" value="AssertSame" />
-    <link role="extends" targetNodeId="2.1068580123157" />
-    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1171985757430">
-      <property name="metaClass" value="aggregation" />
-      <property name="role" value="expected" />
-      <property name="sourceCardinality" value="1" />
-      <link role="target" targetNodeId="2.1068431790191" />
-    </node>
-    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1171985765010">
-      <property name="metaClass" value="aggregation" />
-      <property name="role" value="actual" />
-      <property name="sourceCardinality" value="1" />
-      <link role="target" targetNodeId="2.1068431790191" />
-    </node>
+    <link role="extends" targetNodeId="8427750732757990717" resolveInfo="BinaryAssert" />
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1171985744679">
       <property name="value" value="assert same (&quot;==&quot;)" />
       <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" />
-    </node>
-    <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="7080278351417154761">
-      <link role="intfc" targetNodeId="1172075514136" resolveInfo="MessageHolder" />
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1172017222794">
@@ -247,6 +217,28 @@
     </node>
     <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="7080278351417153308">
       <link role="intfc" targetNodeId="1172075514136" resolveInfo="MessageHolder" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="8427750732757990717">
+    <property name="name" value="BinaryAssert" />
+    <link role="extends" targetNodeId="2.1068580123157" resolveInfo="Statement" />
+    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="8427750732757990724">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="expected" />
+      <property name="sourceCardinality" value="1" />
+      <link role="target" targetNodeId="2.1068431790191" resolveInfo="Expression" />
+    </node>
+    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="8427750732757990725">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="actual" />
+      <property name="sourceCardinality" value="1" />
+      <link role="target" targetNodeId="2.1068431790191" resolveInfo="Expression" />
+    </node>
+    <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="8427750732757990718">
+      <link role="intfc" targetNodeId="1172075514136" resolveInfo="MessageHolder" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.BooleanConceptProperty" id="8427750732757990723">
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473854053" resolveInfo="abstract" />
     </node>
   </node>
 </model>

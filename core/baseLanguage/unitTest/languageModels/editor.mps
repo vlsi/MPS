@@ -360,7 +360,7 @@
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode" id="1171978341091">
         <property name="noTargetText" value="expected" />
-        <link role="relationDeclaration" targetNodeId="1.1171978312978" />
+        <link role="relationDeclaration" targetNodeId="1.8427750732757990724" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1171978153884">
         <property name="text" value="equals" />
@@ -370,7 +370,7 @@
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode" id="1171978348249">
         <property name="noTargetText" value="actual" />
-        <link role="relationDeclaration" targetNodeId="1.1171978322433" />
+        <link role="relationDeclaration" targetNodeId="1.8427750732757990725" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Component" id="5168467225194540185">
         <link role="editorComponent" targetNodeId="5168467225194540178" resolveInfo="MessageComponent" />
@@ -442,7 +442,7 @@
         </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode" id="1171985795802">
-        <link role="relationDeclaration" targetNodeId="1.1171985757430" />
+        <link role="relationDeclaration" targetNodeId="1.8427750732757990724" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1171985788519">
         <property name="text" value="==" />
@@ -452,7 +452,7 @@
         </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode" id="1171985802727">
-        <link role="relationDeclaration" targetNodeId="1.1171985765010" />
+        <link role="relationDeclaration" targetNodeId="1.8427750732757990725" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Component" id="5168467225194540196">
         <link role="editorComponent" targetNodeId="5168467225194540178" resolveInfo="MessageComponent" />
