@@ -41,7 +41,7 @@ public class TestGenerationOnTeamcity extends GenerateTask {
   {
     myWhatToDo.putProperty(INVOKE_TESTS, Boolean.toString(false));
     myWhatToDo.putProperty(SHOW_DIFF, Boolean.toString(false));
-    myWhatToDo.putProperty(TEST_GROUPING_MODE, TestModes.BY_CYCLES.getVisibleName());
+    myWhatToDo.putProperty(TEST_GROUPING_MODE, TestModes.BY_MODELS.getVisibleName());
   }
 
   public boolean getShowDiff() {
