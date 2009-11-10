@@ -19,8 +19,6 @@ import com.intellij.openapi.vfs.VirtualFile;
 
 import java.io.*;
 import java.util.List;
-import java.net.URL;
-import java.net.MalformedURLException;
 
 public interface IFile {
   String getName();
@@ -68,6 +66,4 @@ public interface IFile {
   VirtualFile toVirtualFile();
 
   long length();
-
-  URL toURL() throws MalformedURLException;
 }

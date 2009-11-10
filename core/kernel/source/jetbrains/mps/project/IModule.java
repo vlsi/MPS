@@ -19,7 +19,6 @@ import jetbrains.mps.project.structure.modules.Dependency;
 import jetbrains.mps.project.structure.modules.ModuleDescriptor;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.reloading.IClassPathItem;
-import jetbrains.mps.reloading.FileClassPathItem;
 import jetbrains.mps.runtime.BytecodeLocator;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.vfs.IFile;
@@ -142,6 +141,4 @@ public interface IModule extends ModelOwner, MPSModuleOwner {
   boolean isClassPathExcluded(String path);
 
   boolean excludeClassPath(String path, boolean b);
-
-  FileClassPathItem getClassesGenItem();
 }

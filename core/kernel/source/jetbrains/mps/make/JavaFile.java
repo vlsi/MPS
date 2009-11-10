@@ -48,24 +48,4 @@ public class JavaFile {
   public String toString() {
     return "JavaFile " + myClassName + " at " + myFile;
   }
-
-  @Override
-  public boolean equals(Object o) {
-    if (this == o) return true;
-    if (o == null || getClass() != o.getClass()) return false;
-
-    JavaFile javaFile = (JavaFile) o;
-
-    if (!myClassName.equals(javaFile.myClassName)) return false;
-    if (!myFile.equals(javaFile.myFile)) return false;
-
-    return true;
-  }
-
-  @Override
-  public int hashCode() {
-    int result = myFile.hashCode();
-    result = 31 * result + myClassName.hashCode();
-    return result;
-  }
 }

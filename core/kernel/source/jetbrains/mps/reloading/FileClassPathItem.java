@@ -19,10 +19,7 @@ import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.ReadUtil;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
-import jetbrains.mps.vfs.MPSExtentions;
-import jetbrains.mps.generator.fileGenerator.AllCaches;
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.annotations.Nullable;
 
 import java.io.File;
 import java.io.IOException;
@@ -39,16 +36,9 @@ public class FileClassPathItem extends AbstractClassPathItem {
 
   private Map<String, Set<String>> mySubpackagesCache = new HashMap<String, Set<String>>();
   private Map<String, Set<String>> myAvailableClassesCache = new HashMap<String, Set<String>>();
-  private Map<String, IFile> myResources = new HashMap<String, IFile>();
-  private final boolean myCacheResources;
 
   public FileClassPathItem(String classPath) {
-    this(classPath, false);
-  }
-
-  public FileClassPathItem(String classPath, boolean cacheResources) {
     myClassPath = classPath;
-    myCacheResources = cacheResources;
   }
 
   public String getClassPath() {
@@ -89,40 +79,15 @@ public class FileClassPathItem extends AbstractClassPathItem {
     }
   }
 
-  @Nullable
-  public IFile getResourceFile(String name) {
-    IFile resourceFile = myResources.get(name);
-    if (resourceFile == null) {
-      resourceFile = FileSystem.getFile(myClassPath + File.separator + name.replace('/', File.separatorChar));
-      addResourceToCache(name, resourceFile);
-    }
-    if (!resourceFile.exists()) {
-      if (myCacheResources) {
-        myResources.remove(name);
-      }
-      return null;
-    }
-    return resourceFile;
-  }
-
-  private void addResourceToCache(String name, IFile resourceFile) {
-    if (myCacheResources) {
-      myResources.put(name, resourceFile);
-    }
-  }
-
   public URL getResource(String name) {
     try {
-      IFile resourceFile = getResourceFile(name);
-      if (resourceFile == null) return null;
-      return resourceFile.toURL();
+      //todo convert to IFiles
+      File file = new File(myClassPath + File.separator + name.replace('/', File.separatorChar));
+      if (!file.exists()) return null;
+      return file.toURL();
     } catch (MalformedURLException e) {
       return null;
     }
-  }
-
-  public Map<String, IFile> getResources() {
-    return Collections.unmodifiableMap(myResources);
   }
 
   @NotNull
@@ -158,21 +123,15 @@ public class FileClassPathItem extends AbstractClassPathItem {
     Set<String> classes = new HashSet<String>(0);
     IFile dir = getModelDir(namespace);
 
-    long lastModified = dir.lastModified();
     List<IFile> files = dir.list();
     if (files != null) {
       for (IFile file : files) {
         String name = file.getName();
-        lastModified = Math.max(lastModified, file.lastModified());
-        if (!name.endsWith(MPSExtentions.DOT_CLASSFILE)) { //isDirectory is quite expensive operation
-          if (file.isDirectory()) {
-            if (namespace.length() > 0) {
-              subpacks.add(namespace + "." + name);
-            } else {
-              subpacks.add(namespace + name);
-            }
+        if (!name.endsWith(".class") && file.isDirectory()) { //isDirectory is quite expensive operation
+          if (namespace.length() > 0) {
+            subpacks.add(namespace + "." + name);
           } else {
-            processResource(namespace, file, name);
+            subpacks.add(namespace + name);
           }
         }
 
@@ -184,13 +143,6 @@ public class FileClassPathItem extends AbstractClassPathItem {
 
     mySubpackagesCache.put(namespace, subpacks.isEmpty() ? null : subpacks);
     myAvailableClassesCache.put(namespace, classes.isEmpty() ? null : classes);
-  }
-
-  private void processResource(String namespace, IFile file, String name) {
-    if (!AllCaches.getInstance().isCacheFile(file)) {
-      String resourceName = namespace.replace(".", "/") + (namespace.length() > 0 ? "/" : "") + name;
-      addResourceToCache(resourceName, file);
-    }
   }
 
   public long getClassesTimestamp(String namespace) {
@@ -212,7 +164,7 @@ public class FileClassPathItem extends AbstractClassPathItem {
     return result;
   }
 
-  public IFile getModelDir(String namespace) {
+  private IFile getModelDir(String namespace) {
     if (namespace == null) namespace = "";
     return FileSystem.getFile(myClassPath + File.separatorChar + namespace.replace('.', File.separatorChar));
   }

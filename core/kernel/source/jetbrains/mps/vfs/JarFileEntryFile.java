@@ -22,8 +22,6 @@ import java.io.*;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
-import java.net.URL;
-import java.net.MalformedURLException;
 
 public class JarFileEntryFile implements IFile {
   private JarFileData myJarFileData;
@@ -173,10 +171,6 @@ public class JarFileEntryFile implements IFile {
 
   public VirtualFile toVirtualFile() {
     return VFileSystem.getFile(this);
-  }
-
-  public URL toURL() throws MalformedURLException {
-    throw new UnsupportedOperationException("Jar File Entry File currently does not support getting url.");
   }
 
   public long length() {
