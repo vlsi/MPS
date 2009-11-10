@@ -49,7 +49,7 @@ public class NodeHighlightManager implements EditorMessageOwner {
   private List<ChangesBlock> myChangeBlocks = new ArrayList<ChangesBlock>();
   public ReloadAdapter myHandler;
 
-  public NodeHighlightManager(EditorComponent edtitor) {
+  public NodeHighlightManager(@NotNull EditorComponent edtitor) {
     myEditor = edtitor;
     myHandler = new ReloadAdapter() {
       public void onReload() {

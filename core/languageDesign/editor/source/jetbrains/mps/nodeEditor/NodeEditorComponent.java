@@ -34,7 +34,10 @@ import java.awt.BorderLayout;
 import java.awt.event.*;
 import java.util.List;
 
+import org.jetbrains.annotations.NotNull;
+
 public class NodeEditorComponent extends EditorComponent {
+  @NotNull
   private JPanel myExternalComponent;
   private SNode myLastInspectedNode = null;
 
@@ -132,6 +135,7 @@ public class NodeEditorComponent extends EditorComponent {
     return getEditorContext().createRootCell(getEditedNode(), events);
   }
 
+  @NotNull
   public JComponent getExternalComponent() {
     return myExternalComponent;
   }

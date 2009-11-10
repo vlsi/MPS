@@ -28,6 +28,8 @@ import jetbrains.mps.smodel.event.SModelEvent;
 import javax.swing.JComponent;
 import java.util.List;
 
+import org.jetbrains.annotations.NotNull;
+
 public class InspectorEditorComponent extends EditorComponent {
 
   public InspectorEditorComponent() {
@@ -69,6 +71,7 @@ public class InspectorEditorComponent extends EditorComponent {
     });    
   }
 
+  @NotNull
   public JComponent getExternalComponent() {
     return super.getExternalComponent();
   }

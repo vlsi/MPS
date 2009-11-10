@@ -902,6 +902,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     changeSelection(cell);
   }
 
+  @NotNull
   public JComponent getExternalComponent() {
     return myContainer;
   }
