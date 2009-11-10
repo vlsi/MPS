@@ -26,6 +26,7 @@
   <maxImportIndex value="3" />
   <import index="2" modelUID="f:java_stub#java.util(java.util@java_stub)" version="-1" />
   <import index="3" modelUID="f:java_stub#java.util.regex(java.util.regex@java_stub)" version="-1" />
+  <visible index="2" modelUID="r:00000000-0000-4000-0000-011c89590519(jetbrains.mps.baseLanguage.regexp.jetbrains.mps.regexp.accessory)" />
   <node type="jetbrains.mps.baseLanguage.unitTest.structure.BTestCase" id="6799940379546332953">
     <property name="testCaseName" value="Statements" />
     <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="6799940379546332954" />
@@ -75,6 +76,8 @@
               <link role="variableDeclaration" targetNodeId="6799940379546332981" resolveInfo="input" />
             </node>
             <node role="regexp" type="jetbrains.mps.baseLanguage.regexp.structure.InlineRegexpExpression" id="6799940379546332976">
+              <property name="caseInsensitive" value="false" />
+              <property name="dotAll" value="false" />
               <node role="regexp" type="jetbrains.mps.baseLanguage.regexp.structure.RegexpDeclarationReferenceRegexp" id="233706782641329819">
                 <link role="regexp" targetNodeId="6799940379546332969" resolveInfo="EMail" />
               </node>
@@ -87,9 +90,67 @@
           </node>
         </node>
       </node>
+      <node role="testMethod" type="jetbrains.mps.baseLanguage.unitTest.structure.TestMethod" id="633895403833555338">
+        <property name="methodName" value="findall" />
+        <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="633895403833555339" />
+        <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="633895403833555340" />
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="633895403833555341">
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="633895403833555344">
+            <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="633895403833555345">
+              <property name="name" value="i" />
+              <node role="type" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="633895403833555346" />
+              <node role="initializer" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="633895403833555347">
+                <property name="value" value="0" />
+              </node>
+            </node>
+          </node>
+          <node role="statement" type="jetbrains.mps.baseLanguage.regexp.structure.ForEachMatchStatement" id="633895403833555348">
+            <node role="expr" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="633895403833555349">
+              <property name="value" value="abababab" />
+            </node>
+            <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="633895403833555350">
+              <node role="statement" type="jetbrains.mps.baseLanguage.unitTest.structure.AssertEquals" id="633895403833555351">
+                <node role="expected" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="633895403833555352">
+                  <property name="value" value="ab" />
+                </node>
+                <node role="actual" type="jetbrains.mps.baseLanguage.regexp.structure.MatchVariableReference" id="633895403833555353">
+                  <link role="match" targetNodeId="633895403833555358" resolveInfo="aa" />
+                </node>
+              </node>
+              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="633895403833555354">
+                <node role="expression" type="jetbrains.mps.baseLanguage.structure.PostfixIncrementExpression" id="633895403833555355">
+                  <node role="expression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="633895403833555356">
+                    <link role="variableDeclaration" targetNodeId="633895403833555345" resolveInfo="i" />
+                  </node>
+                </node>
+              </node>
+            </node>
+            <node role="regexp" type="jetbrains.mps.baseLanguage.regexp.structure.InlineRegexpExpression" id="633895403833555357">
+              <node role="regexp" type="jetbrains.mps.baseLanguage.regexp.structure.MatchParensRegexp" id="633895403833555358">
+                <property name="name" value="aa" />
+                <node role="regexp" type="jetbrains.mps.baseLanguage.regexp.structure.SeqRegexp" id="633895403833555359">
+                  <node role="left" type="jetbrains.mps.baseLanguage.regexp.structure.PredefinedSymbolClassRegexp" id="633895403833555360">
+                    <link role="symbolClass" targetNodeId="2v.1174554738336" resolveInfo="\w" />
+                  </node>
+                  <node role="right" type="jetbrains.mps.baseLanguage.regexp.structure.PredefinedSymbolClassRegexp" id="633895403833555361">
+                    <link role="symbolClass" targetNodeId="2v.1174554738336" resolveInfo="\w" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+          <node role="statement" type="jetbrains.mps.baseLanguage.unitTest.structure.AssertEquals" id="633895403833555363">
+            <node role="expected" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="633895403833555364">
+              <property name="value" value="4" />
+            </node>
+            <node role="actual" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="633895403833555365">
+              <link role="variableDeclaration" targetNodeId="633895403833555345" resolveInfo="i" />
+            </node>
+          </node>
+        </node>
+      </node>
     </node>
   </node>
-  <visible index="2" modelUID="r:00000000-0000-4000-0000-011c89590519(jetbrains.mps.baseLanguage.regexp.jetbrains.mps.regexp.accessory)" />
   <node type="jetbrains.mps.baseLanguage.regexp.structure.Regexps" id="6799940379546332968">
     <property name="name" value="Regexps" />
     <node role="regexp" type="jetbrains.mps.baseLanguage.regexp.structure.RegexpDeclaration" id="6799940379546332969">

@@ -146,7 +146,7 @@
     <link role="conceptDeclaration" targetNodeId="1.1174510540317" />
     <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="1174510565684">
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="2522342100559744681">
-        <property name="text" value="[" />
+        <property name="text" value="/" />
         <node role="styleItem" type="jetbrains.mps.lang.editor.structure.ForegroundColorStyleClassItem" id="2522342100559744685">
           <property name="color" value="DARK_MAGENTA" />
         </node>
@@ -158,7 +158,7 @@
         <link role="relationDeclaration" targetNodeId="1.1174510571016" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="2522342100559744690">
-        <property name="text" value="]" />
+        <property name="text" value="/" />
         <node role="styleItem" type="jetbrains.mps.lang.editor.structure.ForegroundColorStyleClassItem" id="2522342100559744691">
           <property name="color" value="DARK_MAGENTA" />
         </node>
@@ -333,9 +333,6 @@
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1174512611584">
         <property name="text" value="matches" />
         <link role="styleClass" targetNodeId="4.1186415544875" resolveInfo="KeyWord" />
-        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PaddingLeftStyleClassItem" id="1216635752983">
-          <property name="value" value="1.0" />
-        </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode" id="1174512614570">
         <link role="relationDeclaration" targetNodeId="1.1174653387388" />
@@ -1248,7 +1245,7 @@
       <link role="keyMap" targetNodeId="3050481019131644558" resolveInfo="RegexpSequenceByEnter" />
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1174909553541">
         <property name="text" value="(ref" />
-        <link role="styleClass" targetNodeId="5169131996393625121" resolveInfo="LeftRegexpBrace" />
+        <link role="styleClass" targetNodeId="5169131996393625117" resolveInfo="RegexpBrace" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefCell" id="1174909139725">
         <link role="relationDeclaration" targetNodeId="1.1174909113141" />
@@ -1277,31 +1274,22 @@
     <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="1175154901464">
       <property name="vertical" value="true" />
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1175154907032">
-        <property name="text" value="for" />
+        <property name="text" value="while" />
         <link role="styleClass" targetNodeId="4.1186415544875" resolveInfo="KeyWord" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1175154909706">
         <property name="text" value="(" />
         <link role="styleClass" targetNodeId="4.1215087929380" resolveInfo="LeftParen" />
       </node>
-      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1175154917551">
-        <property name="text" value="each match of" />
-        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.ForegroundColorStyleClassItem" id="1214399678977">
-          <property name="color" value="DARK_BLUE" />
-        </node>
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode" id="1175154934559">
+        <link role="relationDeclaration" targetNodeId="1.1175154880428" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1175154932011">
+        <property name="text" value="=~" />
+        <link role="styleClass" targetNodeId="4.1186415544875" resolveInfo="KeyWord" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode" id="1175154929415">
         <link role="relationDeclaration" targetNodeId="1.1174653387388" />
-      </node>
-      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1175154932011">
-        <property name="text" value="in" />
-        <link role="styleClass" targetNodeId="4.1186415544875" resolveInfo="KeyWord" />
-        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PaddingLeftStyleClassItem" id="1216635975834">
-          <property name="value" value="1.0" />
-        </node>
-      </node>
-      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode" id="1175154934559">
-        <link role="relationDeclaration" targetNodeId="1.1175154880428" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1175154936686">
         <property name="text" value=")" />
@@ -1394,11 +1382,8 @@
         <link role="relationDeclaration" targetNodeId="1.1175169023932" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1175169135805">
-        <property name="text" value="contains match for" />
+        <property name="text" value="=~" />
         <link role="styleClass" targetNodeId="4.1186415544875" resolveInfo="KeyWord" />
-        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PaddingLeftStyleClassItem" id="1216635769471">
-          <property name="value" value="1.0" />
-        </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode" id="1175169141494">
         <link role="relationDeclaration" targetNodeId="1.1174653387388" />

@@ -414,7 +414,7 @@
       <link role="target" targetNodeId="1174482743037" resolveInfo="Regexp" />
     </node>
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1174510550789">
-      <property name="value" value="regexp" />
+      <property name="value" value="/regexp/" />
       <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" />
     </node>
   </node>
@@ -871,7 +871,7 @@
     <property name="package" value="Statements" />
     <link role="extends" targetNodeId="2.1068580123157" />
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1175154888102">
-      <property name="value" value="for each match" />
+      <property name="value" value="while (expr =~ regex) {" />
       <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" />
     </node>
     <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1175154880428">
@@ -943,7 +943,7 @@
     <property name="package" value="Statements" />
     <link role="extends" targetNodeId="2.1068580123157" />
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1175169377208">
-      <property name="value" value="if (expr find match for regex) {" />
+      <property name="value" value="if (expr =~ regex) {" />
       <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" />
     </node>
     <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1175169023932">

@@ -225,7 +225,7 @@ public class InlineRegexpExpression_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_6834_15(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "[");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "/");
     editorCell.setCellId("Constant_6834_15");
     {
       Style style = editorCell.getStyle();
@@ -237,7 +237,7 @@ public class InlineRegexpExpression_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_6834_16(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "]");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "/");
     editorCell.setCellId("Constant_6834_16");
     {
       Style style = editorCell.getStyle();

@@ -37,7 +37,7 @@ public class MatchVariableReferenceRegexp_Editor extends DefaultNodeEditor {
   private EditorCell createConstant_1753_0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "(ref");
     editorCell.setCellId("Constant_1753_0");
-    RegexpStylesheet_StyleSheet.getLeftRegexpBrace(editorCell).apply(editorCell);
+    RegexpStylesheet_StyleSheet.getRegexpBrace(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }

@@ -6,6 +6,7 @@
   <language namespace="7a5dda62-9140-4668-ab76-d5ed1746f2b2(jetbrains.mps.lang.typesystem)" />
   <language namespace="3a13115c-633c-4c5c-bbcc-75c4219e9555(jetbrains.mps.lang.quotation)" />
   <language namespace="7866978e-a0f0-4cc7-81bc-4d213d9375e1(jetbrains.mps.lang.smodel)" />
+  <language namespace="ceab5195-25ea-4f22-9b92-103b95ca8c0c(jetbrains.mps.lang.core)" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)" version="83" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="3" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902ae(jetbrains.mps.lang.typesystem.constraints)" version="17" />
@@ -31,9 +32,10 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" version="3" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895903fe(jetbrains.mps.baseLanguage.strings.constraints)" version="1" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590402(jetbrains.mps.baseLanguage.strings.structure)" version="9" />
-  <maxImportIndex value="6" />
+  <maxImportIndex value="7" />
   <import index="1" modelUID="r:00000000-0000-4000-0000-011c89590518(jetbrains.mps.baseLanguage.regexp.structure)" version="0" />
   <import index="4" modelUID="f:java_stub#java.util(java.util@java_stub)" version="-1" />
+  <import index="7" modelUID="f:java_stub#java.util.regex(java.util.regex@java_stub)" version="-1" />
   <node type="jetbrains.mps.lang.typesystem.structure.InferenceRule" id="1178179183607">
     <property name="name" value="MatchVariableReference" />
     <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1178179183608">
@@ -323,6 +325,31 @@
     <node role="applicableNode" type="jetbrains.mps.lang.typesystem.structure.ConceptReference" id="8330008649152998004">
       <property name="name" value="literal" />
       <link role="concept" targetNodeId="1.1174482753837" resolveInfo="StringLiteralRegexp" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.typesystem.structure.InferenceRule" id="633895403832945218">
+    <property name="name" value="typeof_InlineRegexpExpression" />
+    <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="633895403832945219">
+      <node role="statement" type="jetbrains.mps.lang.typesystem.structure.CreateEquationStatement" id="633895403832947240">
+        <node role="rightExpression" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause" id="633895403832947244">
+          <node role="normalType" type="jetbrains.mps.lang.quotation.structure.Quotation" id="633895403832947245">
+            <node role="quotedNode" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="633895403832947248">
+              <link role="classifier" targetNodeId="7.~Pattern" resolveInfo="Pattern" />
+            </node>
+          </node>
+        </node>
+        <node role="leftExpression" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause" id="633895403832947243">
+          <node role="normalType" type="jetbrains.mps.lang.typesystem.structure.TypeOfExpression" id="633895403832947237">
+            <node role="term" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference" id="633895403832947239">
+              <link role="applicableNode" targetNodeId="633895403832945220" resolveInfo="expression" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="applicableNode" type="jetbrains.mps.lang.typesystem.structure.ConceptReference" id="633895403832945220">
+      <property name="name" value="expression" />
+      <link role="concept" targetNodeId="1.1174510540317" resolveInfo="InlineRegexpExpression" />
     </node>
   </node>
 </model>

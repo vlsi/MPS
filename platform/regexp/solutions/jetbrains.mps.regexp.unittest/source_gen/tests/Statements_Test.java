@@ -12,12 +12,25 @@ public class Statements_Test extends TestCase {
     String input = "reader@gmail.com";
     boolean matches = false;
     {
-      Pattern _pattern_0 = _PrecompiledPatterns.REGEXP4;
+      Pattern _pattern_0 = _PrecompiledPatterns.REGEXP5;
       Matcher _matcher_0 = _pattern_0.matcher(input);
       if (_matcher_0.matches()) {
         matches = true;
       }
     }
     Assert.assertTrue(matches);
+  }
+
+  public void test_findall() throws Exception {
+    int i = 0;
+    {
+      Pattern _pattern_0 = _PrecompiledPatterns.REGEXP0;
+      Matcher _matcher_0 = _pattern_0.matcher("abababab");
+      while (_matcher_0.find()) {
+        Assert.assertEquals("ab", _matcher_0.group(1));
+        i++;
+      }
+    }
+    Assert.assertEquals(4, i);
   }
 }

@@ -11,9 +11,6 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
-import jetbrains.mps.nodeEditor.MPSColors;
-import jetbrains.mps.nodeEditor.style.Padding;
-import jetbrains.mps.nodeEditor.style.Measure;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
@@ -29,19 +26,18 @@ public class ForEachMatchStatement_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Collection_2168_0");
     editorCell.addEditorCell(this.createConstant_2168_0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_2168_1(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_2168_1(editorContext, node));
     editorCell.addEditorCell(this.createConstant_2168_2(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_2168_0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_2168_3(editorContext, node));
-    editorCell.addEditorCell(this.createRefNode_2168_1(editorContext, node));
     editorCell.addEditorCell(this.createConstant_2168_4(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_2168_5(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_2168_2(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_2168_6(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_2168_5(editorContext, node));
     return editorCell;
   }
 
   private EditorCell createConstant_2168_0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "for");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "while");
     editorCell.setCellId("Constant_2168_0");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
@@ -57,39 +53,24 @@ public class ForEachMatchStatement_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_2168_2(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "each match of");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "=~");
     editorCell.setCellId("Constant_2168_2");
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_BLUE);
-    }
+    BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   private EditorCell createConstant_2168_3(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "in");
-    editorCell.setCellId("Constant_2168_3");
-    BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.PADDING_LEFT, new Padding(1.0, Measure.SPACES));
-    }
-    editorCell.setDefaultText("");
-    return editorCell;
-  }
-
-  private EditorCell createConstant_2168_4(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ")");
-    editorCell.setCellId("Constant_2168_4");
+    editorCell.setCellId("Constant_2168_3");
     BaseLanguageStyle_StyleSheet.getRightParen(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_2168_5(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_2168_4(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "{");
-    editorCell.setCellId("Constant_2168_5");
+    editorCell.setCellId("Constant_2168_4");
     BaseLanguageStyle_StyleSheet.getLeftBrace(editorCell).apply(editorCell);
     {
       Style style = editorCell.getStyle();
@@ -99,9 +80,9 @@ public class ForEachMatchStatement_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_2168_6(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_2168_5(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "}");
-    editorCell.setCellId("Constant_2168_6");
+    editorCell.setCellId("Constant_2168_5");
     BaseLanguageStyle_StyleSheet.getRightBrace(editorCell).apply(editorCell);
     {
       Style style = editorCell.getStyle();

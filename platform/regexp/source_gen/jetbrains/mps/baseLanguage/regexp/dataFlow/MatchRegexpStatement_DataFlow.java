@@ -15,8 +15,8 @@ public class MatchRegexpStatement_DataFlow extends DataFlowBuilder {
   public void build(final IOperationContext operationContext, final DataFlowBuilderContext _context) {
     _context.getBuilder().build((SNode)SLinkOperations.getTarget(_context.getNode(), "expr", true));
     _context.getBuilder().build((SNode)SLinkOperations.getTarget(_context.getNode(), "regexp", true));
-    _context.getBuilder().emitLabel("begin");
-    _context.getBuilder().build((SNode)SLinkOperations.getTarget(_context.getNode(), "body", true));
     _context.getBuilder().emitIfJump(_context.getBuilder().label(_context.getNode(), "begin"));
+    _context.getBuilder().build((SNode)SLinkOperations.getTarget(_context.getNode(), "body", true));
+    _context.getBuilder().emitLabel("begin");
   }
 }

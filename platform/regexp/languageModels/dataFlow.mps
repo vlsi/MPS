@@ -113,21 +113,21 @@
             </node>
           </node>
         </node>
-        <node role="statement" type="jetbrains.mps.lang.dataFlow.structure.EmitLabelStatement" id="1222881643896">
-          <property name="name" value="begin" />
+        <node role="statement" type="jetbrains.mps.lang.dataFlow.structure.EmitIfJumpStatement" id="633895403833151076">
+          <node role="jumpTo" type="jetbrains.mps.lang.dataFlow.structure.LabelPosition" id="633895403833151077">
+            <link role="label" targetNodeId="1222881643896" resolveInfo="begin" />
+          </node>
         </node>
-        <node role="statement" type="jetbrains.mps.lang.dataFlow.structure.EmitCodeForStatement" id="1222881658867">
-          <node role="codeFor" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1222881661666">
-            <node role="operand" type="jetbrains.mps.lang.dataFlow.structure.NodeParameter" id="1222881660697" />
-            <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1222881662998">
+        <node role="statement" type="jetbrains.mps.lang.dataFlow.structure.EmitCodeForStatement" id="633895403833151079">
+          <node role="codeFor" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="633895403833151080">
+            <node role="operand" type="jetbrains.mps.lang.dataFlow.structure.NodeParameter" id="633895403833151081" />
+            <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="633895403833151082">
               <link role="link" targetNodeId="1.1174512427594" />
             </node>
           </node>
         </node>
-        <node role="statement" type="jetbrains.mps.lang.dataFlow.structure.EmitIfJumpStatement" id="1222881667640">
-          <node role="jumpTo" type="jetbrains.mps.lang.dataFlow.structure.LabelPosition" id="1222881694377">
-            <link role="label" targetNodeId="1222881643896" resolveInfo="begin" />
-          </node>
+        <node role="statement" type="jetbrains.mps.lang.dataFlow.structure.EmitLabelStatement" id="1222881643896">
+          <property name="name" value="begin" />
         </node>
       </node>
     </node>
