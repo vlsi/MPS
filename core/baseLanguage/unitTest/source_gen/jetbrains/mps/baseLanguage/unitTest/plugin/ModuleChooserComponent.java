@@ -27,6 +27,7 @@ public class ModuleChooserComponent extends BaseChooserComponent {
               for (SModelDescriptor descriptor : module.getOwnModelDescriptors()) {
                 if (ListSequence.fromList(TestRunUtil.getModelTests(descriptor.getSModel())).isNotEmpty()) {
                   ListSequence.fromList(result).addElement(module);
+                  break;
                 }
               }
             }

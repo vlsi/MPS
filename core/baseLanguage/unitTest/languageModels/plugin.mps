@@ -15467,6 +15467,7 @@
                                               </node>
                                             </node>
                                           </node>
+                                          <node role="statement" type="jetbrains.mps.baseLanguage.structure.BreakStatement" id="8427750732757335397" />
                                         </node>
                                       </node>
                                     </node>
