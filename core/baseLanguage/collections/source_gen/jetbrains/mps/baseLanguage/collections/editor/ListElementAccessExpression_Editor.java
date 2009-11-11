@@ -34,6 +34,7 @@ public class ListElementAccessExpression_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "[");
     editorCell.setCellId("Constant_3794_0");
     BaseLanguageStyle_StyleSheet.getLeftParenAfterName(editorCell).apply(editorCell);
+    ListElementAccessExpression_delete_brackets.setCellActions(editorCell, node, editorContext);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -42,6 +43,7 @@ public class ListElementAccessExpression_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "]");
     editorCell.setCellId("Constant_3794_1");
     BaseLanguageStyle_StyleSheet.getRightParen(editorCell).apply(editorCell);
+    ListElementAccessExpression_delete_brackets.setCellActions(editorCell, node, editorContext);
     editorCell.setDefaultText("");
     return editorCell;
   }
