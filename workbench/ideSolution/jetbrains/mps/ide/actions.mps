@@ -56,7 +56,7 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959035b(jetbrains.mps.lang.findUsages.structure)" version="2" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590353(jetbrains.mps.lang.intentions.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959034f(jetbrains.mps.lang.intentions.constraints)" version="1" />
-  <maxImportIndex value="242" />
+  <maxImportIndex value="243" />
   <import index="1" modelUID="f:java_stub#jetbrains.mps.workbench.actions.nodes(jetbrains.mps.workbench.actions.nodes@java_stub)" version="-1" />
   <import index="2" modelUID="f:java_stub#jetbrains.mps.ide.modelchecker(jetbrains.mps.ide.modelchecker@java_stub)" version="-1" />
   <import index="3" modelUID="f:java_stub#jetbrains.mps.workbench.actions.model(jetbrains.mps.workbench.actions.model@java_stub)" version="-1" />
@@ -203,6 +203,7 @@
   <import index="240" modelUID="f:java_stub#org.apache.commons.lang(org.apache.commons.lang@java_stub)" version="-1" />
   <import index="241" modelUID="f:java_stub#jetbrains.mps.smodel.search(jetbrains.mps.smodel.search@java_stub)" version="-1" />
   <import index="242" modelUID="f:java_stub#jetbrains.mps.smodel.constraints(jetbrains.mps.smodel.constraints@java_stub)" version="-1" />
+  <import index="243" modelUID="f:java_stub#com.intellij.openapi.options(com.intellij.openapi.options@java_stub)" version="-1" />
   <node type="jetbrains.mps.lang.plugin.structure.ActionGroupDeclaration" id="1204991215587">
     <property name="name" value="NodeActions" />
     <property name="id" value="ProjectPaneNodeActions" />
@@ -36155,6 +36156,577 @@
     </node>
     <node role="implementedInterface" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="6516913638480946079">
       <link role="classifier" targetNodeId="232.~IFinder" resolveInfo="IFinder" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="1422776177683086271">
+    <property name="package" value="NewModelChecker" />
+    <property name="name" value="ModelCheckerSettings" />
+    <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1422776177683160462">
+      <property name="name" value="getPreferences" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1422776177683160463" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PrivateVisibility" id="1422776177683160467" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1422776177683160465" />
+    </node>
+    <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1422776177683160327">
+      <property name="name" value="isCheckUnresolvedReferences" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.BooleanType" id="1422776177683160328" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1422776177683160329" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1422776177683160330">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1422776177683160331">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1422776177683160332">
+            <node role="operation" type="jetbrains.mps.baseLanguage.structure.FieldReferenceOperation" id="1422776177683160333">
+              <link role="fieldDeclaration" targetNodeId="1422776177683116642" resolveInfo="myCheckUnresolvedReferences" />
+            </node>
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1422776177683160408">
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="1422776177683160334" />
+              <node role="operation" type="jetbrains.mps.baseLanguage.structure.FieldReferenceOperation" id="1422776177683160413">
+                <link role="fieldDeclaration" targetNodeId="1422776177683116840" resolveInfo="myState" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1422776177683160335">
+      <property name="name" value="setCheckUnresolvedReferences" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1422776177683160336" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1422776177683160337" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1422776177683160338">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1422776177683160339">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression" id="1422776177683160340">
+            <node role="rValue" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1422776177683160341">
+              <link role="variableDeclaration" targetNodeId="1422776177683160345" resolveInfo="checkUnresolvedReferences" />
+            </node>
+            <node role="lValue" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1422776177683160342">
+              <node role="operation" type="jetbrains.mps.baseLanguage.structure.FieldReferenceOperation" id="1422776177683160343">
+                <link role="fieldDeclaration" targetNodeId="1422776177683116642" resolveInfo="myCheckUnresolvedReferences" />
+              </node>
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1422776177683160416">
+                <node role="operand" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="1422776177683160344" />
+                <node role="operation" type="jetbrains.mps.baseLanguage.structure.FieldReferenceOperation" id="1422776177683160421">
+                  <link role="fieldDeclaration" targetNodeId="1422776177683116840" resolveInfo="myState" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1422776177683160345">
+        <property name="name" value="checkUnresolvedReferences" />
+        <node role="type" type="jetbrains.mps.baseLanguage.structure.BooleanType" id="1422776177683160346" />
+      </node>
+    </node>
+    <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1422776177683160347">
+      <property name="name" value="isCheckConstraints" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.BooleanType" id="1422776177683160348" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1422776177683160349" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1422776177683160350">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1422776177683160351">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1422776177683160352">
+            <node role="operation" type="jetbrains.mps.baseLanguage.structure.FieldReferenceOperation" id="1422776177683160353">
+              <link role="fieldDeclaration" targetNodeId="1422776177683116670" resolveInfo="myCheckConstraints" />
+            </node>
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1422776177683160422">
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="1422776177683160354" />
+              <node role="operation" type="jetbrains.mps.baseLanguage.structure.FieldReferenceOperation" id="1422776177683160427">
+                <link role="fieldDeclaration" targetNodeId="1422776177683116840" resolveInfo="myState" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1422776177683160355">
+      <property name="name" value="setCheckConstraints" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1422776177683160356" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1422776177683160357" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1422776177683160358">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1422776177683160359">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression" id="1422776177683160360">
+            <node role="rValue" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1422776177683160361">
+              <link role="variableDeclaration" targetNodeId="1422776177683160365" resolveInfo="checkConstraints" />
+            </node>
+            <node role="lValue" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1422776177683160362">
+              <node role="operation" type="jetbrains.mps.baseLanguage.structure.FieldReferenceOperation" id="1422776177683160363">
+                <link role="fieldDeclaration" targetNodeId="1422776177683116670" resolveInfo="myCheckConstraints" />
+              </node>
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1422776177683160429">
+                <node role="operand" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="1422776177683160364" />
+                <node role="operation" type="jetbrains.mps.baseLanguage.structure.FieldReferenceOperation" id="1422776177683160434">
+                  <link role="fieldDeclaration" targetNodeId="1422776177683116840" resolveInfo="myState" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1422776177683160365">
+        <property name="name" value="checkConstraints" />
+        <node role="type" type="jetbrains.mps.baseLanguage.structure.BooleanType" id="1422776177683160366" />
+      </node>
+    </node>
+    <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1422776177683160367">
+      <property name="name" value="isCheckScopes" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.BooleanType" id="1422776177683160368" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1422776177683160369" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1422776177683160370">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1422776177683160371">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1422776177683160372">
+            <node role="operation" type="jetbrains.mps.baseLanguage.structure.FieldReferenceOperation" id="1422776177683160373">
+              <link role="fieldDeclaration" targetNodeId="1422776177683116678" resolveInfo="myCheckScopes" />
+            </node>
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1422776177683160444">
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="1422776177683160374" />
+              <node role="operation" type="jetbrains.mps.baseLanguage.structure.FieldReferenceOperation" id="1422776177683160449">
+                <link role="fieldDeclaration" targetNodeId="1422776177683116840" resolveInfo="myState" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1422776177683160375">
+      <property name="name" value="setCheckScopes" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1422776177683160376" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1422776177683160377" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1422776177683160378">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1422776177683160379">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression" id="1422776177683160380">
+            <node role="rValue" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1422776177683160381">
+              <link role="variableDeclaration" targetNodeId="1422776177683160385" resolveInfo="checkScopes" />
+            </node>
+            <node role="lValue" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1422776177683160382">
+              <node role="operation" type="jetbrains.mps.baseLanguage.structure.FieldReferenceOperation" id="1422776177683160383">
+                <link role="fieldDeclaration" targetNodeId="1422776177683116678" resolveInfo="myCheckScopes" />
+              </node>
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1422776177683160438">
+                <node role="operand" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="1422776177683160384" />
+                <node role="operation" type="jetbrains.mps.baseLanguage.structure.FieldReferenceOperation" id="1422776177683160443">
+                  <link role="fieldDeclaration" targetNodeId="1422776177683116840" resolveInfo="myState" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1422776177683160385">
+        <property name="name" value="checkScopes" />
+        <node role="type" type="jetbrains.mps.baseLanguage.structure.BooleanType" id="1422776177683160386" />
+      </node>
+    </node>
+    <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1422776177683160387">
+      <property name="name" value="isCheckTypesystem" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.BooleanType" id="1422776177683160388" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1422776177683160389" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1422776177683160390">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1422776177683160391">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1422776177683160392">
+            <node role="operation" type="jetbrains.mps.baseLanguage.structure.FieldReferenceOperation" id="1422776177683160393">
+              <link role="fieldDeclaration" targetNodeId="1422776177683116684" resolveInfo="myCheckTypesystem" />
+            </node>
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1422776177683160450">
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="1422776177683160394" />
+              <node role="operation" type="jetbrains.mps.baseLanguage.structure.FieldReferenceOperation" id="1422776177683160455">
+                <link role="fieldDeclaration" targetNodeId="1422776177683116840" resolveInfo="myState" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1422776177683160395">
+      <property name="name" value="setCheckTypesystem" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1422776177683160396" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1422776177683160397" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1422776177683160398">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1422776177683160399">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression" id="1422776177683160400">
+            <node role="rValue" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1422776177683160401">
+              <link role="variableDeclaration" targetNodeId="1422776177683160405" resolveInfo="checkTypesystem" />
+            </node>
+            <node role="lValue" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1422776177683160402">
+              <node role="operation" type="jetbrains.mps.baseLanguage.structure.FieldReferenceOperation" id="1422776177683160403">
+                <link role="fieldDeclaration" targetNodeId="1422776177683116684" resolveInfo="myCheckTypesystem" />
+              </node>
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1422776177683160456">
+                <node role="operand" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="1422776177683160404" />
+                <node role="operation" type="jetbrains.mps.baseLanguage.structure.FieldReferenceOperation" id="1422776177683160461">
+                  <link role="fieldDeclaration" targetNodeId="1422776177683116840" resolveInfo="myState" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1422776177683160405">
+        <property name="name" value="checkTypesystem" />
+        <node role="type" type="jetbrains.mps.baseLanguage.structure.BooleanType" id="1422776177683160406" />
+      </node>
+    </node>
+    <node role="field" type="jetbrains.mps.baseLanguage.structure.FieldDeclaration" id="1422776177683116840">
+      <property name="name" value="myState" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PrivateVisibility" id="1422776177683116841" />
+      <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1422776177683116844">
+        <link role="classifier" targetNodeId="1422776177683116635" resolveInfo="ModelCheckerSettings.MyState" />
+      </node>
+      <node role="initializer" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1422776177683116846">
+        <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1422776177683160311">
+          <link role="baseMethodDeclaration" targetNodeId="1422776177683160307" resolveInfo="ModelCheckerSettings.MyState" />
+        </node>
+      </node>
+    </node>
+    <node role="staticInnerClassifiers" type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="1422776177683116635">
+      <property name="name" value="MyState" />
+      <node role="constructor" type="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" id="1422776177683160307">
+        <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1422776177683160308" />
+        <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1422776177683160309" />
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1422776177683160310" />
+      </node>
+      <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1422776177683116690">
+        <property name="name" value="isCheckUnresolvedReferences" />
+        <node role="returnType" type="jetbrains.mps.baseLanguage.structure.BooleanType" id="1422776177683116694" />
+        <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1422776177683116692" />
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1422776177683116693">
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1422776177683116695">
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1422776177683116697">
+              <node role="operation" type="jetbrains.mps.baseLanguage.structure.FieldReferenceOperation" id="1422776177683116700">
+                <link role="fieldDeclaration" targetNodeId="1422776177683116642" resolveInfo="myCheckUnresolvedReferences" />
+              </node>
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="1422776177683116699" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1422776177683116701">
+        <property name="name" value="setCheckUnresolvedReferences" />
+        <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1422776177683116706" />
+        <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1422776177683116703" />
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1422776177683116704">
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1422776177683116712">
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression" id="1422776177683116716">
+              <node role="rValue" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1422776177683116719">
+                <link role="variableDeclaration" targetNodeId="1422776177683116707" resolveInfo="checkUnresolvedReferences" />
+              </node>
+              <node role="lValue" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1422776177683116713">
+                <node role="operation" type="jetbrains.mps.baseLanguage.structure.FieldReferenceOperation" id="1422776177683116714">
+                  <link role="fieldDeclaration" targetNodeId="1422776177683116642" resolveInfo="myCheckUnresolvedReferences" />
+                </node>
+                <node role="operand" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="1422776177683116715" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1422776177683116707">
+          <property name="name" value="checkUnresolvedReferences" />
+          <node role="type" type="jetbrains.mps.baseLanguage.structure.BooleanType" id="1422776177683116708" />
+        </node>
+      </node>
+      <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1422776177683116813">
+        <property name="name" value="isCheckConstraints" />
+        <node role="returnType" type="jetbrains.mps.baseLanguage.structure.BooleanType" id="1422776177683116814" />
+        <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1422776177683116815" />
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1422776177683116816">
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1422776177683116817">
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1422776177683116818">
+              <node role="operation" type="jetbrains.mps.baseLanguage.structure.FieldReferenceOperation" id="1422776177683116821">
+                <link role="fieldDeclaration" targetNodeId="1422776177683116670" resolveInfo="myCheckConstraints" />
+              </node>
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="1422776177683116820" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1422776177683116801">
+        <property name="name" value="setCheckConstraints" />
+        <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1422776177683116802" />
+        <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1422776177683116803" />
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1422776177683116804">
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1422776177683116805">
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression" id="1422776177683116806">
+              <node role="rValue" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1422776177683116807">
+                <link role="variableDeclaration" targetNodeId="1422776177683116811" resolveInfo="checkUnresolvedReferences" />
+              </node>
+              <node role="lValue" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1422776177683116808">
+                <node role="operation" type="jetbrains.mps.baseLanguage.structure.FieldReferenceOperation" id="1422776177683116822">
+                  <link role="fieldDeclaration" targetNodeId="1422776177683116670" resolveInfo="myCheckConstraints" />
+                </node>
+                <node role="operand" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="1422776177683116810" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1422776177683116811">
+          <property name="name" value="checkConstraints" />
+          <node role="type" type="jetbrains.mps.baseLanguage.structure.BooleanType" id="1422776177683116812" />
+        </node>
+      </node>
+      <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1422776177683116793">
+        <property name="name" value="isCheckScopes" />
+        <node role="returnType" type="jetbrains.mps.baseLanguage.structure.BooleanType" id="1422776177683116794" />
+        <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1422776177683116795" />
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1422776177683116796">
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1422776177683116797">
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1422776177683116798">
+              <node role="operation" type="jetbrains.mps.baseLanguage.structure.FieldReferenceOperation" id="1422776177683116823">
+                <link role="fieldDeclaration" targetNodeId="1422776177683116678" resolveInfo="myCheckScopes" />
+              </node>
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="1422776177683116800" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1422776177683116781">
+        <property name="name" value="setCheckScopes" />
+        <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1422776177683116782" />
+        <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1422776177683116783" />
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1422776177683116784">
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1422776177683116785">
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression" id="1422776177683116786">
+              <node role="rValue" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1422776177683116787">
+                <link role="variableDeclaration" targetNodeId="1422776177683116791" resolveInfo="checkUnresolvedReferences" />
+              </node>
+              <node role="lValue" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1422776177683116788">
+                <node role="operation" type="jetbrains.mps.baseLanguage.structure.FieldReferenceOperation" id="1422776177683116824">
+                  <link role="fieldDeclaration" targetNodeId="1422776177683116678" resolveInfo="myCheckScopes" />
+                </node>
+                <node role="operand" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="1422776177683116790" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1422776177683116791">
+          <property name="name" value="checkScopes" />
+          <node role="type" type="jetbrains.mps.baseLanguage.structure.BooleanType" id="1422776177683116792" />
+        </node>
+      </node>
+      <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1422776177683116773">
+        <property name="name" value="isCheckTypesystem" />
+        <node role="returnType" type="jetbrains.mps.baseLanguage.structure.BooleanType" id="1422776177683116774" />
+        <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1422776177683116775" />
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1422776177683116776">
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1422776177683116777">
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1422776177683116778">
+              <node role="operation" type="jetbrains.mps.baseLanguage.structure.FieldReferenceOperation" id="1422776177683116825">
+                <link role="fieldDeclaration" targetNodeId="1422776177683116684" resolveInfo="myCheckTypesystem" />
+              </node>
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="1422776177683116780" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1422776177683116761">
+        <property name="name" value="setCheckTypesystem" />
+        <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1422776177683116762" />
+        <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1422776177683116763" />
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1422776177683116764">
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1422776177683116765">
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression" id="1422776177683116766">
+              <node role="rValue" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1422776177683116767">
+                <link role="variableDeclaration" targetNodeId="1422776177683116771" resolveInfo="checkUnresolvedReferences" />
+              </node>
+              <node role="lValue" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1422776177683116768">
+                <node role="operation" type="jetbrains.mps.baseLanguage.structure.FieldReferenceOperation" id="1422776177683116826">
+                  <link role="fieldDeclaration" targetNodeId="1422776177683116684" resolveInfo="myCheckTypesystem" />
+                </node>
+                <node role="operand" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="1422776177683116770" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1422776177683116771">
+          <property name="name" value="checkTypesystem" />
+          <node role="type" type="jetbrains.mps.baseLanguage.structure.BooleanType" id="1422776177683116772" />
+        </node>
+      </node>
+      <node role="field" type="jetbrains.mps.baseLanguage.structure.FieldDeclaration" id="1422776177683116642">
+        <property name="name" value="myCheckUnresolvedReferences" />
+        <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PrivateVisibility" id="1422776177683116643" />
+        <node role="type" type="jetbrains.mps.baseLanguage.structure.BooleanType" id="1422776177683116645" />
+        <node role="initializer" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1422776177683116675">
+          <property name="value" value="true" />
+        </node>
+      </node>
+      <node role="field" type="jetbrains.mps.baseLanguage.structure.FieldDeclaration" id="1422776177683116670">
+        <property name="name" value="myCheckConstraints" />
+        <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PrivateVisibility" id="1422776177683116671" />
+        <node role="type" type="jetbrains.mps.baseLanguage.structure.BooleanType" id="1422776177683116673" />
+        <node role="initializer" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1422776177683116677">
+          <property name="value" value="true" />
+        </node>
+      </node>
+      <node role="field" type="jetbrains.mps.baseLanguage.structure.FieldDeclaration" id="1422776177683116678">
+        <property name="name" value="myCheckScopes" />
+        <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PrivateVisibility" id="1422776177683116679" />
+        <node role="type" type="jetbrains.mps.baseLanguage.structure.BooleanType" id="1422776177683116681" />
+        <node role="initializer" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1422776177683116683">
+          <property name="value" value="true" />
+        </node>
+      </node>
+      <node role="field" type="jetbrains.mps.baseLanguage.structure.FieldDeclaration" id="1422776177683116684">
+        <property name="name" value="myCheckTypesystem" />
+        <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PrivateVisibility" id="1422776177683116685" />
+        <node role="type" type="jetbrains.mps.baseLanguage.structure.BooleanType" id="1422776177683116687" />
+        <node role="initializer" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1422776177683116689">
+          <property name="value" value="true" />
+        </node>
+      </node>
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1422776177683116636" />
+    </node>
+    <node role="staticMethod" type="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" id="1422776177683115511">
+      <property name="name" value="getInstance" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1422776177683115513" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1422776177683115514">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1422776177683115516">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1422776177683115520">
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1422776177683115519">
+              <link role="baseMethodDeclaration" targetNodeId="149.~ApplicationManager.getApplication():com.intellij.openapi.application.Application" resolveInfo="getApplication" />
+              <link role="classConcept" targetNodeId="149.~ApplicationManager" resolveInfo="ApplicationManager" />
+            </node>
+            <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1422776177683115524">
+              <link role="baseMethodDeclaration" targetNodeId="127.~ComponentManager.getComponent(java.lang.Class):java.lang.Object" resolveInfo="getComponent" />
+              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.ClassifierClassExpression" id="1422776177683116630">
+                <link role="classifier" targetNodeId="1422776177683086271" resolveInfo="ModelCheckerSettings" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1422776177683115515">
+        <link role="classifier" targetNodeId="1422776177683086271" resolveInfo="ModelCheckerSettings" />
+      </node>
+    </node>
+    <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1422776177683086272" />
+    <node role="constructor" type="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" id="1422776177683086273">
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1422776177683086274" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1422776177683086275" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1422776177683086276" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="1422776177683160471">
+    <property name="package" value="NewModelChecker" />
+    <property name="name" value="ModelCheckerSettingsPreferencesPage" />
+    <node role="field" type="jetbrains.mps.baseLanguage.structure.FieldDeclaration" id="1422776177683160480">
+      <property name="name" value="myPage" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PrivateVisibility" id="1422776177683160481" />
+      <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1422776177683160483">
+        <link role="classifier" targetNodeId="72.~JPanel" resolveInfo="JPanel" />
+      </node>
+    </node>
+    <node role="field" type="jetbrains.mps.baseLanguage.structure.FieldDeclaration" id="1422776177683160484">
+      <property name="name" value="myCheckUnresolvedReferencesCheckBox" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PrivateVisibility" id="1422776177683160485" />
+      <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1422776177683160487">
+        <link role="classifier" targetNodeId="72.~JCheckBox" resolveInfo="JCheckBox" />
+      </node>
+      <node role="initializer" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1422776177683160505">
+        <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1422776177683160506">
+          <link role="baseMethodDeclaration" targetNodeId="72.~JCheckBox.&lt;init&gt;(java.lang.String)" resolveInfo="JCheckBox" />
+          <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1422776177683160516">
+            <property name="value" value="Check for unresolved references" />
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="field" type="jetbrains.mps.baseLanguage.structure.FieldDeclaration" id="1422776177683160492">
+      <property name="name" value="myCheckConstraintsCheckBox" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PrivateVisibility" id="1422776177683160493" />
+      <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1422776177683160494">
+        <link role="classifier" targetNodeId="72.~JCheckBox" resolveInfo="JCheckBox" />
+      </node>
+      <node role="initializer" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1422776177683160508">
+        <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1422776177683160509">
+          <link role="baseMethodDeclaration" targetNodeId="72.~JCheckBox.&lt;init&gt;(java.lang.String)" resolveInfo="JCheckBox" />
+          <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1422776177683160517">
+            <property name="value" value="Check for cardinalities and properties constraints" />
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="field" type="jetbrains.mps.baseLanguage.structure.FieldDeclaration" id="1422776177683160495">
+      <property name="name" value="myCheckScopesCheckBox" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PrivateVisibility" id="1422776177683160496" />
+      <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1422776177683160497">
+        <link role="classifier" targetNodeId="72.~JCheckBox" resolveInfo="JCheckBox" />
+      </node>
+      <node role="initializer" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1422776177683160511">
+        <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1422776177683160512">
+          <link role="baseMethodDeclaration" targetNodeId="72.~JCheckBox.&lt;init&gt;(java.lang.String)" resolveInfo="JCheckBox" />
+          <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1422776177683160518">
+            <property name="value" value="Check references for valid scopes" />
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="field" type="jetbrains.mps.baseLanguage.structure.FieldDeclaration" id="1422776177683160498">
+      <property name="name" value="myCheckTypesystemCheckBox" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PrivateVisibility" id="1422776177683160499" />
+      <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1422776177683160500">
+        <link role="classifier" targetNodeId="72.~JCheckBox" resolveInfo="JCheckBox" />
+      </node>
+      <node role="initializer" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1422776177683160514">
+        <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1422776177683160515">
+          <link role="baseMethodDeclaration" targetNodeId="72.~JCheckBox.&lt;init&gt;(java.lang.String)" resolveInfo="JCheckBox" />
+          <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1422776177683160519">
+            <property name="value" value="Perform typesystem checks" />
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1422776177683160472" />
+    <node role="constructor" type="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" id="1422776177683160473">
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1422776177683160474" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1422776177683160475" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1422776177683160476" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.plugin.structure.PreferencesComponentDeclaration" id="1422776177683168300">
+    <property name="package" value="NewModelChecker" />
+    <property name="name" value="ModelCheckerPreferences" />
+    <node role="persistenPropertyDeclaration" type="jetbrains.mps.lang.plugin.structure.PersistentPropertyDeclaration" id="1422776177683168306">
+      <property name="name" value="checkUnresolvedReferences" />
+      <node role="type" type="jetbrains.mps.baseLanguage.structure.BooleanType" id="1422776177683168308" />
+      <node role="initializer" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1422776177683168319">
+        <property name="value" value="true" />
+      </node>
+    </node>
+    <node role="persistenPropertyDeclaration" type="jetbrains.mps.lang.plugin.structure.PersistentPropertyDeclaration" id="1422776177683168320">
+      <property name="name" value="checkConstraints" />
+      <node role="type" type="jetbrains.mps.baseLanguage.structure.BooleanType" id="1422776177683168322" />
+      <node role="initializer" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1422776177683168324">
+        <property name="value" value="true" />
+      </node>
+    </node>
+    <node role="persistenPropertyDeclaration" type="jetbrains.mps.lang.plugin.structure.PersistentPropertyDeclaration" id="1422776177683168325">
+      <property name="name" value="checkScopes" />
+      <node role="type" type="jetbrains.mps.baseLanguage.structure.BooleanType" id="1422776177683168327" />
+      <node role="initializer" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1422776177683168329">
+        <property name="value" value="true" />
+      </node>
+    </node>
+    <node role="persistenPropertyDeclaration" type="jetbrains.mps.lang.plugin.structure.PersistentPropertyDeclaration" id="1422776177683168330">
+      <property name="name" value="checkTypesystem" />
+      <node role="type" type="jetbrains.mps.baseLanguage.structure.BooleanType" id="1422776177683168332" />
+      <node role="initializer" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1422776177683168334">
+        <property name="value" value="true" />
+      </node>
+    </node>
+    <node role="afterReadBlock" type="jetbrains.mps.lang.plugin.structure.OnAfterReadBlock" id="1422776177683168335">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1422776177683168336">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1422776177683168339">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1422776177683168340">
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference" id="1422776177683168341">
+              <link role="classifier" targetNodeId="73.~System" />
+              <link role="variableDeclaration" targetNodeId="73.~System.out" />
+            </node>
+            <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1422776177683168342">
+              <link role="baseMethodDeclaration" targetNodeId="88.~PrintStream.println(java.lang.String):void" />
+              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1422776177683168343">
+                <property name="value" value="" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
     </node>
   </node>
 </model>

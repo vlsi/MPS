@@ -91,6 +91,7 @@ public class Ide_ProjectPlugin extends BaseProjectPlugin {
   public List<BaseProjectPrefsComponent> createPreferencesComponents(Project project) {
     List<BaseProjectPrefsComponent> components = ListSequence.fromList(new ArrayList<BaseProjectPrefsComponent>());
     ListSequence.fromList(components).addElement(new PersistentOptions_PreferencesComponent(project));
+    ListSequence.fromList(components).addElement(new ModelCheckerPreferences_PreferencesComponent(project));
     return components;
   }
 }
