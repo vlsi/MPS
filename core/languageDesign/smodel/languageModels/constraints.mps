@@ -1714,8 +1714,8 @@
                   <link role="link" targetNodeId="1.1145383142433" />
                 </node>
               </node>
-              <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkListAccess" id="8405512791876074511">
-                <link role="link" targetNodeId="2.1071489727083" />
+              <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="3246402855336222716">
+                <link role="baseMethodDeclaration" targetNodeId="21.1213877394480" resolveInfo="getLinkDeclarations" />
               </node>
             </node>
           </node>

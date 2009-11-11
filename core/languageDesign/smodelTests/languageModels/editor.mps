@@ -82,6 +82,26 @@
           <node role="cellLayout" type="jetbrains.mps.lang.editor.structure.CellLayout_Horizontal" id="278471160714603777" />
         </node>
         <node role="cellLayout" type="jetbrains.mps.lang.editor.structure.CellLayout_Vertical" id="278471160714227731" />
+        <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="34342663958604656">
+          <property name="text" value="childSubConcept_0_n:" />
+          <node role="styleItem" type="jetbrains.mps.lang.editor.structure.FontStyleStyleClassItem" id="34342663958604657">
+            <property name="style" value="ITALIC" />
+          </node>
+        </node>
+        <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="34342663958604668">
+          <node role="styleItem" type="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem" id="34342663958604669">
+            <property name="flag" value="false" />
+          </node>
+          <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Indent" id="34342663958604673" />
+          <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNodeList" id="34342663958604682">
+            <link role="relationDeclaration" targetNodeId="1.34342663958604624" />
+            <node role="cellLayout" type="jetbrains.mps.lang.editor.structure.CellLayout_Vertical" id="34342663958604683" />
+            <node role="styleItem" type="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem" id="34342663958604684">
+              <property name="flag" value="false" />
+            </node>
+          </node>
+          <node role="cellLayout" type="jetbrains.mps.lang.editor.structure.CellLayout_Horizontal" id="34342663958604671" />
+        </node>
       </node>
       <node role="header" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="278471160714665739">
         <property name="text" value="root" />
@@ -180,6 +200,52 @@
     <link role="conceptDeclaration" targetNodeId="1.278471160714141636" resolveInfo="GrandChild" />
     <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="278471160714227778">
       <property name="text" value="grandChild" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" id="34342663958607543">
+    <link role="conceptDeclaration" targetNodeId="1.34342663958604621" resolveInfo="ChildSubConcept" />
+    <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Block" id="34342663958607550">
+      <node role="header" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="34342663958607553">
+        <property name="text" value="childSubConcept" />
+      </node>
+      <node role="body" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="34342663959106235">
+        <node role="cellLayout" type="jetbrains.mps.lang.editor.structure.CellLayout_Vertical" id="34342663959106236" />
+        <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="34342663958838763">
+          <node role="cellLayout" type="jetbrains.mps.lang.editor.structure.CellLayout_Horizontal" id="34342663958838764" />
+          <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="34342663958838765">
+            <property name="text" value="specializedGrandChild_0_1:" />
+            <node role="styleItem" type="jetbrains.mps.lang.editor.structure.FontStyleStyleClassItem" id="34342663958838768">
+              <property name="style" value="ITALIC" />
+            </node>
+          </node>
+          <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode" id="34342663958838767">
+            <link role="relationDeclaration" targetNodeId="1.34342663958604622" />
+          </node>
+        </node>
+        <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="34342663959106238">
+          <property name="text" value="grandChild_0_n:" />
+          <node role="styleItem" type="jetbrains.mps.lang.editor.structure.FontStyleStyleClassItem" id="34342663959106239">
+            <property name="style" value="ITALIC" />
+          </node>
+        </node>
+        <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="34342663959106240">
+          <node role="styleItem" type="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem" id="34342663959106241">
+            <property name="flag" value="false" />
+          </node>
+          <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Indent" id="34342663959106242" />
+          <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNodeList" id="34342663959106243">
+            <link role="relationDeclaration" targetNodeId="1.278471160714141634" />
+            <node role="cellLayout" type="jetbrains.mps.lang.editor.structure.CellLayout_Vertical" id="34342663959106244" />
+            <node role="emptyCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="34342663959106245">
+              <property name="text" value="&lt;empty&gt;" />
+              <node role="styleItem" type="jetbrains.mps.lang.editor.structure.ForegroundColorStyleClassItem" id="34342663959106246">
+                <property name="color" value="gray" />
+              </node>
+            </node>
+          </node>
+          <node role="cellLayout" type="jetbrains.mps.lang.editor.structure.CellLayout_Horizontal" id="34342663959106247" />
+        </node>
+      </node>
     </node>
   </node>
 </model>

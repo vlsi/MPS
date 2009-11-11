@@ -14,6 +14,7 @@ public class Root extends BaseConcept {
   public static final String concept = "jetbrains.mps.lang.smodelTests.structure.Root";
   public static final String CHILD_0_N = "child_0_n";
   public static final String CHILD_1_N = "child_1_n";
+  public static final String CHILD_SUB_CONCEPT_0_N = "childSubConcept_0_n";
 
   public Root(SNode node) {
     super(node);
@@ -57,6 +58,26 @@ public class Root extends BaseConcept {
 
   public void insertChild_1_n(Child prev, Child node) {
     this.insertChild(prev, Root.CHILD_1_N, node);
+  }
+
+  public int getChildSubConcept_0_nsCount() {
+    return this.getChildCount(Root.CHILD_SUB_CONCEPT_0_N);
+  }
+
+  public Iterator<ChildSubConcept> childSubConcept_0_ns() {
+    return this.children(ChildSubConcept.class, Root.CHILD_SUB_CONCEPT_0_N);
+  }
+
+  public List<ChildSubConcept> getChildSubConcept_0_ns() {
+    return this.getChildren(ChildSubConcept.class, Root.CHILD_SUB_CONCEPT_0_N);
+  }
+
+  public void addChildSubConcept_0_n(ChildSubConcept node) {
+    this.addChild(Root.CHILD_SUB_CONCEPT_0_N, node);
+  }
+
+  public void insertChildSubConcept_0_n(ChildSubConcept prev, ChildSubConcept node) {
+    this.insertChild(prev, Root.CHILD_SUB_CONCEPT_0_N, node);
   }
 
   public static Root newInstance(SModel sm, boolean init) {

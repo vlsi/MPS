@@ -72,6 +72,23 @@
       <property name="sourceCardinality" value="1..n" />
       <link role="target" targetNodeId="278471160714141631" resolveInfo="Child" />
     </node>
+    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="34342663958604624">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="childSubConcept_0_n" />
+      <property name="sourceCardinality" value="1..n" />
+      <link role="target" targetNodeId="34342663958604621" resolveInfo="ChildSubclass" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="34342663958604621">
+    <property name="name" value="ChildSubConcept" />
+    <link role="extends" targetNodeId="278471160714141631" resolveInfo="Child" />
+    <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="34342663958604626" />
+    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="34342663958604622">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="specializedGranChild_0_1" />
+      <link role="target" targetNodeId="278471160714141636" resolveInfo="GrandChild" />
+      <link role="specializedLink" targetNodeId="278471160714141632" />
+    </node>
   </node>
 </model>
 
