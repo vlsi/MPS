@@ -24,12 +24,16 @@ public class Escaping_Test extends TestCase {
     Assert.assertEquals("[ac-f\\d\\-]", p.pattern());
   }
 
-  public void test_range2() throws Exception {
+  public void test_rangeIntersection() throws Exception {
     Pattern p = _PrecompiledPatterns.REGEXP6;
     Assert.assertEquals("[1-9\\w&&[^d-f]]", p.pattern());
+    Assert.assertTrue(p.matcher("1").matches());
+    Assert.assertTrue(p.matcher("a").matches());
+    Assert.assertTrue(p.matcher("g").matches());
+    Assert.assertFalse(p.matcher("f").matches());
   }
 
-  public void test_range3() throws Exception {
+  public void test_rangeIntersectionSimple() throws Exception {
     Pattern p = _PrecompiledPatterns.REGEXP7;
     Assert.assertEquals("[\\w&&[^d-f]]", p.pattern());
   }

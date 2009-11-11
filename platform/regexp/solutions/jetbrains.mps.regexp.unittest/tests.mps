@@ -458,7 +458,7 @@
         </node>
       </node>
       <node role="testMethod" type="jetbrains.mps.baseLanguage.unitTest.structure.TestMethod" id="8173814113625132292">
-        <property name="methodName" value="range2" />
+        <property name="methodName" value="rangeIntersection" />
         <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="8173814113625132293" />
         <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="8173814113625132294" />
         <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="8173814113625132295">
@@ -502,10 +502,82 @@
               </node>
             </node>
           </node>
+          <node role="statement" type="jetbrains.mps.baseLanguage.unitTest.structure.AssertTrue" id="8173814113625245868">
+            <node role="condition" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="8173814113625245877">
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="8173814113625245871">
+                <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="8173814113625245870">
+                  <link role="variableDeclaration" targetNodeId="8173814113625132298" resolveInfo="p" />
+                </node>
+                <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="8173814113625245875">
+                  <link role="baseMethodDeclaration" targetNodeId="3.~Pattern.matcher(java.lang.CharSequence):java.util.regex.Matcher" resolveInfo="matcher" />
+                  <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="8173814113625245876">
+                    <property name="value" value="1" />
+                  </node>
+                </node>
+              </node>
+              <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="8173814113625245881">
+                <link role="baseMethodDeclaration" targetNodeId="3.~Matcher.matches():boolean" resolveInfo="matches" />
+              </node>
+            </node>
+          </node>
+          <node role="statement" type="jetbrains.mps.baseLanguage.unitTest.structure.AssertTrue" id="8173814113625245883">
+            <node role="condition" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="8173814113625245884">
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="8173814113625245885">
+                <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="8173814113625245886">
+                  <link role="variableDeclaration" targetNodeId="8173814113625132298" resolveInfo="p" />
+                </node>
+                <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="8173814113625245887">
+                  <link role="baseMethodDeclaration" targetNodeId="3.~Pattern.matcher(java.lang.CharSequence):java.util.regex.Matcher" resolveInfo="matcher" />
+                  <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="8173814113625245888">
+                    <property name="value" value="a" />
+                  </node>
+                </node>
+              </node>
+              <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="8173814113625245889">
+                <link role="baseMethodDeclaration" targetNodeId="3.~Matcher.matches():boolean" resolveInfo="matches" />
+              </node>
+            </node>
+          </node>
+          <node role="statement" type="jetbrains.mps.baseLanguage.unitTest.structure.AssertTrue" id="8173814113625245891">
+            <node role="condition" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="8173814113625245892">
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="8173814113625245893">
+                <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="8173814113625245894">
+                  <link role="variableDeclaration" targetNodeId="8173814113625132298" resolveInfo="p" />
+                </node>
+                <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="8173814113625245895">
+                  <link role="baseMethodDeclaration" targetNodeId="3.~Pattern.matcher(java.lang.CharSequence):java.util.regex.Matcher" resolveInfo="matcher" />
+                  <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="8173814113625245896">
+                    <property name="value" value="g" />
+                  </node>
+                </node>
+              </node>
+              <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="8173814113625245897">
+                <link role="baseMethodDeclaration" targetNodeId="3.~Matcher.matches():boolean" resolveInfo="matches" />
+              </node>
+            </node>
+          </node>
+          <node role="statement" type="jetbrains.mps.baseLanguage.unitTest.structure.AssertFalse" id="8173814113625245899">
+            <node role="condition" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="8173814113625245908">
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="8173814113625245909">
+                <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="8173814113625245910">
+                  <link role="variableDeclaration" targetNodeId="8173814113625132298" resolveInfo="p" />
+                </node>
+                <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="8173814113625245911">
+                  <link role="baseMethodDeclaration" targetNodeId="3.~Pattern.matcher(java.lang.CharSequence):java.util.regex.Matcher" resolveInfo="matcher" />
+                  <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="8173814113625245912">
+                    <property name="value" value="f" />
+                  </node>
+                </node>
+              </node>
+              <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="8173814113625245913">
+                <link role="baseMethodDeclaration" targetNodeId="3.~Matcher.matches():boolean" resolveInfo="matches" />
+              </node>
+            </node>
+          </node>
         </node>
       </node>
       <node role="testMethod" type="jetbrains.mps.baseLanguage.unitTest.structure.TestMethod" id="8173814113625141357">
-        <property name="methodName" value="range3" />
+        <property name="methodName" value="rangeIntersectionSimple" />
         <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="8173814113625141358" />
         <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="8173814113625141359" />
         <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="8173814113625141360">
