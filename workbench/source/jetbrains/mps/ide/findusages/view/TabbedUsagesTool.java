@@ -57,7 +57,7 @@ public abstract class TabbedUsagesTool extends BaseProjectTool implements INavig
     if (forceCloseOnReload()) {
       myReloadHandler = new ReloadAdapter() {
         public void onReload() {
-          myContentManager.removeAllContents(true);
+//          getContentManager().removeAllContents(true);
         }
       };
       ClassLoaderManager.getInstance().addReloadHandler(myReloadHandler);

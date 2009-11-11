@@ -1084,6 +1084,11 @@ public class SModel implements Iterable<SNode> {
       myListeners.clear();
       myWeakListeners.clear();
     }
+    for (SNode sn: myIdToNodeMap.values()) {
+      sn.dispose();
+    }
+    myIdToNodeMap.clear();
+    myRoots.clear();
   }
 
   public boolean isDisposed() {

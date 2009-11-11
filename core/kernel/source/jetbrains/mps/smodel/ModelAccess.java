@@ -283,6 +283,9 @@ public class ModelAccess {
   }
 
   static void assertLegalRead(SNode node) {
+    if (node.isDisposed()) {
+      throw new IllegalModelAccessError("Accessing disposed node");
+    }
     ModelAccess modelAccess = ModelAccess.instance();
     if (!modelAccess.canRead() && !modelAccess.myIndexingThreads.contains(Thread.currentThread())) {      
       throw new IllegalModelAccessError("You can read model only inside read actions");

@@ -15,9 +15,6 @@
  */
 package jetbrains.mps.smodel;
 
-import jetbrains.mps.cleanup.CleanupListener;
-import jetbrains.mps.cleanup.CleanupManager;
-import jetbrains.mps.util.WeakSet;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -59,7 +56,8 @@ import org.jetbrains.annotations.Nullable;
 
   protected final boolean mature() {
     if (!myMature) {
-      if (getSourceNode().isRegistered() && getImmatureTargetNode().isRegistered()) {
+      if (getSourceNode().isRegistered() && getImmatureTargetNode().isRegistered() &&
+          !(getSourceNode().isDisposed()||getImmatureTargetNode().isDisposed())) {
         // convert 'young' reference to 'mature'
         makeMature();
       }

@@ -121,7 +121,7 @@ public class TemplateQueryContext {
   }
 
   public SNode getOriginalCopiedInputNode(SNode outputNode) {
-    if (outputNode == null) return null;
+    if (outputNode == null || outputNode.isDisposed()) return null;
     return (SNode) outputNode.getUserObject(ORIGINAL_INPUT_NODE);
   }
 

@@ -193,7 +193,7 @@ public class TypeChecker implements ApplicationComponent {
   }
 
   private SNode getTypeOf_generationMode(final SNode node) {
-    if (node == null) return null;
+    if (node == null || node.isDisposed()) return null;
     SNode containingRoot = node.getContainingRoot();
     if (containingRoot == null) return null;
     NodeTypesComponent component = NodeTypesComponentsRepository.getInstance().

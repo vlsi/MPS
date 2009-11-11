@@ -268,8 +268,10 @@ public class WhatToDo {
           whatToDo.myFailOnError = Boolean.parseBoolean(propertyValuePair[1]);
         } else if (propertyValuePair[0].equals(LOG_LEVEL)) {
           whatToDo.myLogLevel = Integer.parseInt(propertyValuePair[1]);
-        } else {
+        } else if (propertyValuePair.length == 2) {
           whatToDo.putProperty(propertyValuePair[0], propertyValuePair[1]);
+        } else {
+          System.err.println("ERROR: Don't know what to do: ["+s+"]");  
         }
       }
     }

@@ -19,13 +19,16 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.lang.pattern.util.MatchingUtil;
 
+import java.lang.ref.WeakReference;
 import java.util.Map;
 
 public class CacheNodeHandler {
-  private SNode myNode;
+  private WeakReference<SNode> myNodeRef;
+  private int myHash;
 
   public CacheNodeHandler(SNode node) {
-    myNode = node;
+    myNodeRef = new WeakReference<SNode> (node);
+    myHash = hash (node, false);
   }
 
   private int hash(SNode node, boolean useAttributes) {
@@ -52,19 +55,27 @@ public class CacheNodeHandler {
   }
 
   public int hashCode() {
-    return hash(myNode, false);
+    return myHash;
   }
 
   public boolean equals(Object obj) {
     if (obj instanceof CacheNodeHandler) {
       CacheNodeHandler anotherHandler = (CacheNodeHandler) obj;
-      return MatchingUtil.matchNodes(this.myNode, anotherHandler.myNode);
+      if (getNode() == null || anotherHandler.getNode() == null) {
+        return false;
+      }
+      return MatchingUtil.matchNodes(this.getNode(), anotherHandler.getNode());
     } else {
       return false;
     }
   }
 
   public String toString() {
-    return "handler " + myNode.toString();
+    return "handler " + String.valueOf (getNode());
+  }
+
+  protected SNode getNode() {
+    SNode sn = myNodeRef.get();
+    return sn != null && !(sn.shouldHaveBeenDisposed()) ? sn : null;
   }
 }

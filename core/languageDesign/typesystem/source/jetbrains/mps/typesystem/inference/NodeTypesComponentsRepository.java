@@ -112,7 +112,7 @@ public class NodeTypesComponentsRepository implements ApplicationComponent {
   public TypeCheckingContext createTypeCheckingContext(final SNode node) {
     return ModelAccess.instance().runReadAction(new Computable<TypeCheckingContext>() {
       public TypeCheckingContext compute() {
-        if (node == null) return null;
+        if (node == null || node.isDisposed()) return null;
         SNode root = node.getContainingRoot();
         if (root == null) return null;
 

@@ -81,6 +81,7 @@ public final class SNode {
   private String myLanguageNamespace;
 
   private BaseAdapter myAdapter;
+  private boolean myDisposed;
 
   private boolean myIsFrozen = false;
 
@@ -914,11 +915,6 @@ public final class SNode {
     NodeReadEventsCaster.fireNodeUnclassifiedReadAccess(this);
   }
 
-  private void fireNodeReadAccess() {
-    if (myModel.isLoading()) return;
-    NodeReadAccessCasterInEditor.fireNodeReadAccessed(this);
-  }
-
   public int getChildCount() {
     ModelAccess.assertLegalRead(this);
 
@@ -926,6 +922,11 @@ public final class SNode {
     fireNodeUnclassifiedReadAccess();
     if (myChildren == null) return 0;
     return myChildren.length;
+  }
+
+  private void fireNodeReadAccess() {
+    if (myModel.isLoading()) return;
+    NodeReadAccessCasterInEditor.fireNodeReadAccessed(this);
   }
 
   public List<SNode> getChildren(String role) {
@@ -1090,6 +1091,24 @@ public final class SNode {
         myModel.addLanguage_internal(lang.getModuleReference());
       }
     }
+  }
+
+  /* package */ void dispose() {
+    myModel = null;
+    myRegisteredInModelFlag = false;
+    myChildren = null;
+    myReferences = null;
+    myProperties = null;
+    myUserObjects = null;
+    myDisposed = true;
+  }
+
+  public boolean isDisposed() {
+    return myDisposed;
+  }
+
+  public boolean shouldHaveBeenDisposed() {
+    return myDisposed || myModel.isDisposed();
   }
 
   public boolean isDetached() {

@@ -35,7 +35,6 @@ import com.intellij.openapi.progress.ProgressIndicator;
 import junit.framework.TestFailure;
 
 public class TestGenerationWorker extends GeneratorWorker {
-  private static final int MAX_EXCEPTION_SIZE = 1024 * 1024; 
   
   private boolean myTestFailed = false;
   private final IBuildServerMessageFormat myBuildServerMessageFormat = getBuildServerMessageFormat();
