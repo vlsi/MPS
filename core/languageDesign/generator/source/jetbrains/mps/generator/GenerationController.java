@@ -107,7 +107,7 @@ public class GenerationController {
     myProgress.setFraction(0);
     long totalJob = estimateGenerationTime();
     long startJobTime = System.currentTimeMillis();
-    myMesssages.handle(new Message(MessageKind.INFORMATION,GenerationController.class, myGenerationType.getStartText()));
+    myMesssages.handle(new Message(MessageKind.INFORMATION, GenerationController.class, myGenerationType.getStartText()));
     try {
       boolean generationOK = true;
       for (Pair<IModule, List<SModelDescriptor>> moduleAndDescriptors : myModuleSequence) {
@@ -130,7 +130,7 @@ public class GenerationController {
         for (SModelDescriptor sm : myModelsToContexts.keySet()) {
           ModelGenerationStatusManager.getInstance().invalidateData(sm);
         }
-        if (compiledSuccessfully && needToReload) {
+        if (compiledSuccessfully && needToReload && IdeMain.getTestMode() == TestMode.NO_TEST) {
           reloadClasses(totalJob, startJobTime);
         }
 
@@ -161,7 +161,7 @@ public class GenerationController {
       LOG.error(t);
       final String text = t.toString();
       // myProgress.setText(text);
-      myMesssages.handle(new Message(MessageKind.ERROR,GenerationController.class, text));
+      myMesssages.handle(new Message(MessageKind.ERROR, GenerationController.class, text));
     }
     return true;
   }
@@ -212,7 +212,7 @@ public class GenerationController {
       prepareOutputFolder(testsOutputFolder);
     }
 
-    myMesssages.handle(new Message(MessageKind.INFORMATION,GenerationController.class, "    target root folder: \"" + outputFolder + "\""));
+    myMesssages.handle(new Message(MessageKind.INFORMATION, GenerationController.class, "    target root folder: \"" + outputFolder + "\""));
 
     //++ generation
     String wasLoggingThreshold = null;
@@ -407,15 +407,15 @@ public class GenerationController {
   }
 
   private void info(String text) {
-    myMesssages.handle(new Message(MessageKind.INFORMATION,GenerationController.class, text));
+    myMesssages.handle(new Message(MessageKind.INFORMATION, GenerationController.class, text));
   }
 
   private void warning(String text) {
-    myMesssages.handle(new Message(MessageKind.WARNING,GenerationController.class, text));
+    myMesssages.handle(new Message(MessageKind.WARNING, GenerationController.class, text));
   }
 
   private void error(String text) {
-    myMesssages.handle(new Message(MessageKind.ERROR,GenerationController.class, text));
+    myMesssages.handle(new Message(MessageKind.ERROR, GenerationController.class, text));
   }
 
   private void setText2(String text, long estimatedTime, long startJobTime) {
