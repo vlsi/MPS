@@ -23,11 +23,16 @@ import jetbrains.mps.build.ant.MpsWorker;
 import jetbrains.mps.build.ant.WhatToDo;
 import jetbrains.mps.ide.messages.IMessageHandler;
 import jetbrains.mps.ide.messages.Message;
+import jetbrains.mps.logging.Logger;
 import com.intellij.openapi.progress.EmptyProgressIndicator;
 import com.intellij.openapi.progress.ProgressIndicator;
 import com.intellij.openapi.util.Computable;
 
+import javax.swing.SwingUtilities;
+
 public class GeneratorWorker extends MpsWorker {
+  private static final Logger LOG = Logger.getLogger(GeneratorWorker.class);
+
   protected final MyMessageHandler myMessageHandler = new MyMessageHandler();
 
   public static void main(String[] args) {
@@ -79,6 +84,19 @@ public class GeneratorWorker extends MpsWorker {
     EmptyProgressIndicator emptyProgressIndicator = new EmptyProgressIndicator();
     for (Cycle cycle : order) {
       generateModulesCycle(gm, emptyProgressIndicator, cycle);
+
+      try {
+        //wait for EDT to flush its queue
+        for (int i = 0; i < 3; i++) {
+          SwingUtilities.invokeAndWait(new Runnable() {
+            public void run() {
+            }
+          });
+        }
+      } catch (Throwable t) {
+        LOG.error(t);
+      }
+
     }
   }
 
