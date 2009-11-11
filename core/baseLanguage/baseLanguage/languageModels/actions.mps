@@ -2277,7 +2277,7 @@
                         <node role="regexp" type="jetbrains.mps.baseLanguage.regexp.structure.StarRegexp" id="1180108140733">
                           <node role="regexp" type="jetbrains.mps.baseLanguage.regexp.structure.NegativeSymbolClassRegexp" id="1180108132843">
                             <node role="part" type="jetbrains.mps.baseLanguage.regexp.structure.CharacterSymbolClassPart" id="1180108135780">
-                              <property name="character" value="\" />
+                              <property name="character" value="\\" />
                             </node>
                             <node role="part" type="jetbrains.mps.baseLanguage.regexp.structure.CharacterSymbolClassPart" id="1182508128138">
                               <property name="character" value="&quot;" />
@@ -2316,7 +2316,7 @@
                           <node role="left" type="jetbrains.mps.baseLanguage.regexp.structure.StarRegexp" id="1180107932534">
                             <node role="regexp" type="jetbrains.mps.baseLanguage.regexp.structure.NegativeSymbolClassRegexp" id="1180107995873">
                               <node role="part" type="jetbrains.mps.baseLanguage.regexp.structure.CharacterSymbolClassPart" id="1180108005450">
-                                <property name="character" value="\" />
+                                <property name="character" value="\\" />
                               </node>
                               <node role="part" type="jetbrains.mps.baseLanguage.regexp.structure.CharacterSymbolClassPart" id="1182508117828">
                                 <property name="character" value="&quot;" />
