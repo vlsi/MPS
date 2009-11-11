@@ -8,12 +8,8 @@
     <model modelUID="r:9e8bdb89-2777-4a48-887c-0edd1d0b1863(jetbrains.mps.baseLanguage.collections.trove.containers)" />
   </accessoryModels>
   <generators />
-  <classPath>
-    <entry path="${language_descriptor}/lib/trove-2.1.0.jar" include="false" />
-  </classPath>
-  <languageRuntimeClassPath>
-    <entry path="${language_descriptor}/lib/trove-2.1.0.jar" />
-  </languageRuntimeClassPath>
+  <classPath />
+  <languageRuntimeClassPath />
   <sourcePath />
   <dependencies>
     <dependency reexport="false">83888646-71ce-4f1c-9c53-c54016f6ad4f(jetbrains.mps.baseLanguage.collections)</dependency>
