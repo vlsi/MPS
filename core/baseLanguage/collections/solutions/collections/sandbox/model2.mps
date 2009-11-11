@@ -33,7 +33,7 @@
               </node>
             </node>
             <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1217628996947">
-              <link role="baseMethodDeclaration" targetNodeId="2.~Object.toString():java.lang.String" resolveInfo="toString" />
+              <link role="baseMethodDeclaration" targetNodeId="1164652281666" resolveInfo="toString" />
             </node>
           </node>
         </node>

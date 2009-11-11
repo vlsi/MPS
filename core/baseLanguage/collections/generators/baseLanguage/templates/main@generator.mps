@@ -15129,28 +15129,29 @@
                                     <link role="variableDeclaration" targetNodeId="7602110602932572774" resolveInfo="tvr" />
                                   </node>
                                   <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ReplaceWithAnotherOperation" id="7602110602932572816">
-                                    <node role="replacementNode" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="7602110602932573095">
-                                      <node role="operand" type="jetbrains.mps.baseLanguage.collections.structure.ListElementAccessExpression" id="7602110602932573002">
-                                        <node role="index" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="7602110602932573026">
-                                          <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="7602110602932573013">
+                                    <node role="replacementNode" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="6227590151851085135">
+                                      <link role="baseMethodDeclaration" targetNodeId="2v.1201536134312" resolveInfo="getTypeCoercedToClassifierType" />
+                                      <link role="classConcept" targetNodeId="2v.1201536121399" resolveInfo="ClassifierTypeUtil" />
+                                      <node role="actualArgument" type="jetbrains.mps.baseLanguage.collections.structure.ListElementAccessExpression" id="6227590151851085152">
+                                        <node role="index" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="6227590151851085153">
+                                          <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="6227590151851085154">
                                             <link role="variableDeclaration" targetNodeId="7602110602932572845" resolveInfo="tvDecls" />
                                           </node>
-                                          <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.GetIndexOfOperation" id="7602110602932573040">
-                                            <node role="argument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="7602110602932573058">
-                                              <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="7602110602932573051">
+                                          <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.GetIndexOfOperation" id="6227590151851085155">
+                                            <node role="argument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="6227590151851085156">
+                                              <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="6227590151851085157">
                                                 <link role="variableDeclaration" targetNodeId="7602110602932572774" resolveInfo="tvr" />
                                               </node>
-                                              <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="7602110602932573077">
+                                              <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="6227590151851085158">
                                                 <link role="link" targetNodeId="6.1109283546497" />
                                               </node>
                                             </node>
                                           </node>
                                         </node>
-                                        <node role="list" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="7602110602932572983">
+                                        <node role="list" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="6227590151851085159">
                                           <link role="variableDeclaration" targetNodeId="7602110602932572869" resolveInfo="types" />
                                         </node>
                                       </node>
-                                      <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_CopyOperation" id="7602110602932573112" />
                                     </node>
                                   </node>
                                 </node>
