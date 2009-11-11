@@ -6,20 +6,21 @@ import jetbrains.mps.ide.findusages.model.SearchResults;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.MessageStatus;
 import jetbrains.mps.ide.findusages.model.SearchResult;
-import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
 import jetbrains.mps.lang.structure.structure.LinkDeclaration;
 import jetbrains.mps.smodel.search.SModelSearchUtil;
+import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.structure.structure.LinkMetaclass;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.structure.structure.PropertyDeclaration;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
+import jetbrains.mps.lang.core.behavior.INamedConcept_Behavior;
 import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.lang.structure.structure.Cardinality;
@@ -53,22 +54,22 @@ public class ModelCheckerUtils {
     addIssue(results, node, message, MessageStatus.ERROR);
   }
 
-  private static boolean isDeclaredLink(AbstractConceptDeclaration concept, String role, boolean child) {
-    LinkDeclaration link = SModelSearchUtil.findLinkDeclaration(concept, role);
+  private static boolean isDeclaredLink(SNode concept, String role, boolean child) {
+    LinkDeclaration link = SModelSearchUtil.findLinkDeclaration(((AbstractConceptDeclaration)SNodeOperations.getAdapter(concept)), role);
     if (link == null) {
       return false;
     }
     return link.getMetaClass() == LinkMetaclass.aggregation || !(child);
   }
 
-  private static String getRealSpecializedLinkRoleInt(SNode conceptDeclaration, String role) {
+  private static String getMostSpecializedLinkRoleInt(SNode conceptDeclaration, String role) {
     for (SNode linkDeclaration : ListSequence.fromList(SLinkOperations.getTargets(conceptDeclaration, "linkDeclaration", true))) {
       if (SPropertyOperations.getString(linkDeclaration, "role").equals(role)) {
         return role;
       }
       if (SLinkOperations.getTarget(linkDeclaration, "specializedLink", false) != null) {
-        SNode parentConceptDeclaration = SNodeOperations.getAncestor(SLinkOperations.getTarget(linkDeclaration, "specializedLink", false), "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration", true, false);
-        if (getRealSpecializedLinkRoleInt(parentConceptDeclaration, role) != null) {
+        SNode superConcept = SNodeOperations.getAncestor(SLinkOperations.getTarget(linkDeclaration, "specializedLink", false), "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration", true, false);
+        if (getMostSpecializedLinkRoleInt(superConcept, role) != null) {
           return SPropertyOperations.getString(linkDeclaration, "role");
         }
       }
@@ -76,16 +77,16 @@ public class ModelCheckerUtils {
     return null;
   }
 
-  private static String getRealSpecializedLinkRole(SNode concept, String role) {
-    String result = getRealSpecializedLinkRoleInt(concept, role);
+  private static String getMostSpecializedLinkRole(SNode concept, String role) {
+    String result = getMostSpecializedLinkRoleInt(concept, role);
     return ((result == null) ?
       role :
       result
     );
   }
 
-  private static boolean isDeclaredProperty(AbstractConceptDeclaration concept, String name) {
-    PropertyDeclaration propertyDeclaration = SModelSearchUtil.findPropertyDeclaration(concept, name);
+  private static boolean isDeclaredProperty(SNode concept, String name) {
+    PropertyDeclaration propertyDeclaration = SModelSearchUtil.findPropertyDeclaration(((AbstractConceptDeclaration)SNodeOperations.getAdapter(concept)), name);
     return propertyDeclaration != null;
   }
 
@@ -97,9 +98,9 @@ public class ModelCheckerUtils {
           if (!(checkAndUpdateIndicator(progressContext, "Checking " + SModelOperations.getModelName(model) + " for structure..."))) {
             return;
           }
-          AbstractConceptDeclaration lowLevelConcept = node.getConceptDeclarationAdapter();
-          if (lowLevelConcept == null) {
-            addIssue(results, node, "Cannot find concept \"" + node.getConceptFqName() + "\"");
+          SNode concept = SNodeOperations.getConceptDeclaration(node);
+          if (concept == null) {
+            addIssue(results, node, "Cannot find concept \"" + INamedConcept_Behavior.call_getFqName_1213877404258(concept) + "\"");
             continue;
           }
 
@@ -111,7 +112,7 @@ public class ModelCheckerUtils {
           }
 
           // Check links 
-          for (LinkDeclaration linkDeclaration : ListSequence.fromList(SModelSearchUtil.getLinkDeclarations(lowLevelConcept))) {
+          for (LinkDeclaration linkDeclaration : ListSequence.fromList(SModelSearchUtil.getLinkDeclarations(((AbstractConceptDeclaration)SNodeOperations.getAdapter(concept))))) {
             LinkDeclaration link = SModelUtil_new.getGenuineLinkDeclaration(linkDeclaration);
             if (link.getSourceCardinality() == Cardinality._1 || link.getSourceCardinality() == Cardinality._1__n) {
               if (link.getMetaClass() == LinkMetaclass.aggregation) {
@@ -127,19 +128,19 @@ public class ModelCheckerUtils {
           }
 
           for (String role : SetSequence.fromSet(node.getChildRoles())) {
-            if (!(isDeclaredLink(lowLevelConcept, role, true))) {
+            if (!(isDeclaredLink(concept, role, true))) {
               addIssue(results, node, "Usage of undeclared child role \"" + role + "\"", MessageStatus.WARNING);
             }
           }
 
           for (String role : SetSequence.fromSet(node.getReferenceRoles())) {
-            if (!(isDeclaredLink(lowLevelConcept, role, false))) {
-              addIssue(results, node, "Usage of undeclared child role \"" + role + "\"", MessageStatus.WARNING);
+            if (!(isDeclaredLink(concept, role, false))) {
+              addIssue(results, node, "Usage of undeclared reference role \"" + role + "\"", MessageStatus.WARNING);
             }
           }
 
           // Check properties 
-          ConceptAndSuperConceptsScope chs = new ConceptAndSuperConceptsScope(lowLevelConcept);
+          ConceptAndSuperConceptsScope chs = new ConceptAndSuperConceptsScope(((AbstractConceptDeclaration)SNodeOperations.getAdapter(concept)));
           List<PropertyDeclaration> props = chs.getAdapters(PropertyDeclaration.class);
           for (PropertyDeclaration p : ListSequence.fromList(props)) {
             PropertySupport ps = PropertySupport.getPropertySupport(p);
@@ -153,14 +154,14 @@ public class ModelCheckerUtils {
             if (node.isRoot() && SModelTreeNode.PACK.equals(name)) {
               continue;
             }
-            if (!(isDeclaredProperty(lowLevelConcept, name))) {
+            if (!(isDeclaredProperty(concept, name))) {
               addIssue(results, node, "Usage of undeclared property \"" + name + "\"", MessageStatus.WARNING);
             }
           }
 
           // Check scopes 
           for (SReference ref : ListSequence.fromList(node.getReferences())) {
-            if (!(isDeclaredLink(lowLevelConcept, ref.getRole(), false))) {
+            if (!(isDeclaredLink(concept, ref.getRole(), false))) {
               continue;
             }
             SNode targetNode = ref.getTargetNode();
@@ -168,11 +169,9 @@ public class ModelCheckerUtils {
               continue;
             }
             try {
-              String specializedLinkRole = getRealSpecializedLinkRole(SNodeOperations.getConceptDeclaration(node), ref.getRole());
+              String specializedLinkRole = getMostSpecializedLinkRole(SNodeOperations.getConceptDeclaration(node), ref.getRole());
 
-              // <node> 
-              // <node> 
-              SearchScopeStatus status = ModelConstraintsUtil.getSearchScope(null, node, lowLevelConcept, specializedLinkRole, operationContext);
+              SearchScopeStatus status = ModelConstraintsUtil.getSearchScope(null, node, ((AbstractConceptDeclaration)SNodeOperations.getAdapter(concept)), specializedLinkRole, operationContext);
               if (status.isOk() && !(status.isDefault())) {
                 List<SNode> nodes = status.getSearchScope().getNodes();
                 if (!(ListSequence.fromList(nodes).contains(targetNode))) {
