@@ -413,7 +413,7 @@
         </node>
       </node>
       <node role="testMethod" type="jetbrains.mps.baseLanguage.unitTest.structure.TestMethod" id="8330008649153753492">
-        <property name="methodName" value="testRange1" />
+        <property name="methodName" value="range1" />
         <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="8330008649153753493" />
         <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="8330008649153753494" />
         <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="8330008649153753495">
@@ -432,19 +432,115 @@
                     <property name="start" value="c" />
                     <property name="end" value="f" />
                   </node>
+                  <node role="part" type="jetbrains.mps.baseLanguage.regexp.structure.PredefinedSymbolClassSymbolClassPart" id="8173814113624937010">
+                    <link role="declaration" targetNodeId="2v.1174554674770" resolveInfo="\d" />
+                  </node>
+                  <node role="part" type="jetbrains.mps.baseLanguage.regexp.structure.CharacterSymbolClassPart" id="8173814113624942577">
+                    <property name="character" value="-" />
+                  </node>
                 </node>
               </node>
             </node>
           </node>
           <node role="statement" type="jetbrains.mps.baseLanguage.unitTest.structure.AssertEquals" id="8330008649153753512">
             <node role="expected" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="8330008649153753513">
-              <property name="value" value="[\\Qa\\Ec-f]" />
+              <property name="value" value="[ac-f\\d\\-]" />
             </node>
             <node role="actual" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="8330008649153753514">
               <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="8330008649153753515">
                 <link role="variableDeclaration" targetNodeId="8330008649153753498" resolveInfo="p" />
               </node>
               <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="8330008649153753516">
+                <link role="baseMethodDeclaration" targetNodeId="3.~Pattern.pattern():java.lang.String" resolveInfo="pattern" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="testMethod" type="jetbrains.mps.baseLanguage.unitTest.structure.TestMethod" id="8173814113625132292">
+        <property name="methodName" value="range2" />
+        <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="8173814113625132293" />
+        <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="8173814113625132294" />
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="8173814113625132295">
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="8173814113625132297">
+            <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="8173814113625132298">
+              <property name="name" value="p" />
+              <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="8173814113625132299">
+                <link role="classifier" targetNodeId="3.~Pattern" resolveInfo="Pattern" />
+              </node>
+              <node role="initializer" type="jetbrains.mps.baseLanguage.regexp.structure.InlineRegexpExpression" id="8173814113625132300">
+                <node role="regexp" type="jetbrains.mps.baseLanguage.regexp.structure.PositiveSymbolClassRegexp" id="8173814113625132301">
+                  <node role="part" type="jetbrains.mps.baseLanguage.regexp.structure.IntervalSymbolClassPart" id="8173814113625141355">
+                    <property name="start" value="1" />
+                    <property name="end" value="9" />
+                  </node>
+                  <node role="part" type="jetbrains.mps.baseLanguage.regexp.structure.IntersectionSymbolClassPart" id="8173814113625141348">
+                    <node role="left" type="jetbrains.mps.baseLanguage.regexp.structure.PredefinedSymbolClassSymbolClassPart" id="8173814113625141349">
+                      <link role="declaration" targetNodeId="2v.1174554738336" resolveInfo="\w" />
+                    </node>
+                    <node role="right" type="jetbrains.mps.baseLanguage.regexp.structure.NegativeSymbolClassRegexp" id="8173814113625141350">
+                      <node role="part" type="jetbrains.mps.baseLanguage.regexp.structure.IntervalSymbolClassPart" id="8173814113625141353">
+                        <property name="start" value="d" />
+                        <property name="end" value="f" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+          <node role="statement" type="jetbrains.mps.baseLanguage.unitTest.structure.AssertEquals" id="8173814113625132306">
+            <node role="expected" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="8173814113625132307">
+              <property name="value" value="[1-9\\w&amp;&amp;[^d-f]]" />
+            </node>
+            <node role="actual" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="8173814113625132308">
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="8173814113625132309">
+                <link role="variableDeclaration" targetNodeId="8173814113625132298" resolveInfo="p" />
+              </node>
+              <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="8173814113625132310">
+                <link role="baseMethodDeclaration" targetNodeId="3.~Pattern.pattern():java.lang.String" resolveInfo="pattern" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="testMethod" type="jetbrains.mps.baseLanguage.unitTest.structure.TestMethod" id="8173814113625141357">
+        <property name="methodName" value="range3" />
+        <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="8173814113625141358" />
+        <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="8173814113625141359" />
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="8173814113625141360">
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="8173814113625141361">
+            <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="8173814113625141362">
+              <property name="name" value="p" />
+              <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="8173814113625141363">
+                <link role="classifier" targetNodeId="3.~Pattern" resolveInfo="Pattern" />
+              </node>
+              <node role="initializer" type="jetbrains.mps.baseLanguage.regexp.structure.InlineRegexpExpression" id="8173814113625141364">
+                <node role="regexp" type="jetbrains.mps.baseLanguage.regexp.structure.PositiveSymbolClassRegexp" id="8173814113625141365">
+                  <node role="part" type="jetbrains.mps.baseLanguage.regexp.structure.IntersectionSymbolClassPart" id="8173814113625141367">
+                    <node role="left" type="jetbrains.mps.baseLanguage.regexp.structure.PredefinedSymbolClassSymbolClassPart" id="8173814113625141368">
+                      <link role="declaration" targetNodeId="2v.1174554738336" resolveInfo="\w" />
+                    </node>
+                    <node role="right" type="jetbrains.mps.baseLanguage.regexp.structure.NegativeSymbolClassRegexp" id="8173814113625141369">
+                      <node role="part" type="jetbrains.mps.baseLanguage.regexp.structure.IntervalSymbolClassPart" id="8173814113625141370">
+                        <property name="start" value="d" />
+                        <property name="end" value="f" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+          <node role="statement" type="jetbrains.mps.baseLanguage.unitTest.structure.AssertEquals" id="8173814113625141371">
+            <node role="expected" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="8173814113625141372">
+              <property name="value" value="[\\w&amp;&amp;[^d-f]]" />
+            </node>
+            <node role="actual" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="8173814113625141373">
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="8173814113625141374">
+                <link role="variableDeclaration" targetNodeId="8173814113625141362" resolveInfo="p" />
+              </node>
+              <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="8173814113625141375">
                 <link role="baseMethodDeclaration" targetNodeId="3.~Pattern.pattern():java.lang.String" resolveInfo="pattern" />
               </node>
             </node>
