@@ -7,8 +7,12 @@ import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.ide.findusages.view.UsagesView;
 import javax.swing.Icon;
+import javax.swing.JButton;
 import java.awt.BorderLayout;
 import jetbrains.mps.ide.findusages.view.treeholder.treeview.ViewOptions;
+import java.awt.FlowLayout;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 import jetbrains.mps.ide.findusages.findalgorithm.finders.IFinder;
 import jetbrains.mps.ide.findusages.model.IResultProvider;
 import jetbrains.mps.ide.findusages.view.FindUtils;
@@ -39,6 +43,11 @@ public abstract class ModelCheckerViewer extends JPanel {
   private UsagesView myUsagesView;
   private String myTabTitle;
   private Icon myTabIcon;
+  private Runnable myGenerateRunnable;
+  private Runnable myRecheckRunnable;
+  private JButton myGenerateButton;
+  private JButton myRecheckButton;
+  private boolean myAlreadyCheckedSomething;
 
   public ModelCheckerViewer(MPSProject mpsProject, IOperationContext operationContext) {
     this.myProject = mpsProject;
@@ -55,15 +64,43 @@ public abstract class ModelCheckerViewer extends JPanel {
       }
     };
     this.myUsagesView.setCustomNodeRepresentator(new ModelCheckerViewer.MyNodeRepresentator());
-    this.add(this.myUsagesView.getComponent());
+    this.add(this.myUsagesView.getComponent(), BorderLayout.CENTER);
+
+    JPanel buttonPanel = new JPanel(new FlowLayout(FlowLayout.LEFT));
+
+    this.myGenerateButton = new JButton("Generate");
+    this.myGenerateButton.addActionListener(new ActionListener() {
+      public void actionPerformed(ActionEvent event) {
+        assert ModelCheckerViewer.this.myGenerateRunnable != null;
+        ModelCheckerViewer.this.myGenerateRunnable.run();
+      }
+    });
+    this.myGenerateButton.setVisible(false);
+
+    this.myRecheckButton = new JButton("Recheck");
+    this.myRecheckButton.addActionListener(new ActionListener() {
+      public void actionPerformed(ActionEvent event) {
+        assert ModelCheckerViewer.this.myRecheckRunnable != null;
+        ModelCheckerViewer.this.myRecheckRunnable.run();
+      }
+    });
+    this.myRecheckButton.setVisible(false);
+
+    buttonPanel.add(this.myGenerateButton);
+    buttonPanel.add(this.myRecheckButton);
+    this.add(buttonPanel, BorderLayout.SOUTH);
   }
 
   protected abstract void close();
 
   private void checkSomething(final IFinder finder, String taskTitle) {
-    IResultProvider resultProvider = FindUtils.makeProvider(finder);
-    SearchQuery searchQuery = new SearchQuery(ModelCheckerViewer.this.myProject.getScope());
-    ModelCheckerViewer.this.myUsagesView.setRunOptions(resultProvider, searchQuery, new UsagesView.ButtonConfiguration(false, false, true));
+    if (!(this.myAlreadyCheckedSomething)) {
+      IResultProvider resultProvider = FindUtils.makeProvider(finder);
+      SearchQuery searchQuery = new SearchQuery(ModelCheckerViewer.this.myProject.getScope());
+      ModelCheckerViewer.this.myUsagesView.setRunOptions(resultProvider, searchQuery, new UsagesView.ButtonConfiguration(false, false, true));
+    }
+
+    this.myAlreadyCheckedSomething = true;
 
     ProgressManager.getInstance().run(new Task.Modal(this.myProject.getComponent(Project.class), taskTitle, true) {
       public void run(@NotNull ProgressIndicator indicator) {
@@ -77,27 +114,62 @@ public abstract class ModelCheckerViewer extends JPanel {
     this.myTabIcon = icon;
   }
 
-  public void checkModel(SModelDescriptor modelDescriptor) {
+  public void saveGenerationRunnable(Runnable runnable) {
+    this.myGenerateRunnable = runnable;
+    this.myGenerateButton.setVisible(runnable != null);
+  }
+
+  private void saveRecheckRunnable(Runnable runnable) {
+    this.myRecheckRunnable = runnable;
+    this.myRecheckButton.setVisible(runnable != null);
+  }
+
+  public void checkModel(final SModelDescriptor modelDescriptor) {
+    this.saveRecheckRunnable(new Runnable() {
+      public void run() {
+        ModelCheckerViewer.this.checkModel(modelDescriptor);
+      }
+    });
     this.checkSomething(new ModelIssueFinder(this.myOperationContext, modelDescriptor), "Checking " + modelDescriptor.getLongName());
     this.setTabProperties(modelDescriptor.getName(), IconManager.getIconFor(modelDescriptor));
   }
 
-  public void checkModels(List<SModelDescriptor> modelDescriptors) {
+  public void checkModels(final List<SModelDescriptor> modelDescriptors) {
+    this.saveRecheckRunnable(new Runnable() {
+      public void run() {
+        ModelCheckerViewer.this.checkModels(modelDescriptors);
+      }
+    });
     this.checkSomething(new ModelsIssueFinder(this.myOperationContext, modelDescriptors), "Checking " + ListSequence.fromList(modelDescriptors).count() + " models");
     this.setTabProperties(ListSequence.fromList(modelDescriptors).count() + " models", Icons.MODEL_ICON);
   }
 
-  public void checkModule(IModule module) {
+  public void checkModule(final IModule module) {
+    this.saveRecheckRunnable(new Runnable() {
+      public void run() {
+        ModelCheckerViewer.this.checkModule(module);
+      }
+    });
     this.checkSomething(new ModuleIssueFinder(this.myOperationContext, module), "Checking " + module.getModuleFqName());
     this.setTabProperties(module.getModuleFqName(), IconManager.getIconFor(module));
   }
 
-  public void checkModules(List<IModule> modules) {
+  public void checkModules(final List<IModule> modules) {
+    this.saveRecheckRunnable(new Runnable() {
+      public void run() {
+        ModelCheckerViewer.this.checkModules(modules);
+      }
+    });
     this.checkSomething(new ModulesIssueFinder(this.myOperationContext, modules), "Checking " + ListSequence.fromList(modules).count() + " modules");
     this.setTabProperties(ListSequence.fromList(modules).count() + " modules", Icons.MODULE_GROUP_CLOSED);
   }
 
-  public void checkProject(MPSProject project) {
+  public void checkProject(final MPSProject project) {
+    this.saveRecheckRunnable(new Runnable() {
+      public void run() {
+        ModelCheckerViewer.this.checkProject(project);
+      }
+    });
     this.checkSomething(new ProjectIssueFinder(this.myOperationContext, project), "Checking " + project.getProjectDescriptor().getName());
     this.setTabProperties(project.getProjectDescriptor().getName(), Icons.PROJECT_ICON);
   }

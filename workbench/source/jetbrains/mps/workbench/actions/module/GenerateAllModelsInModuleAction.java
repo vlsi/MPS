@@ -98,7 +98,7 @@ public class GenerateAllModelsInModuleAction extends BaseAction {
   }
 
   protected void doExecute(AnActionEvent e) {
-    List<SModelDescriptor> modelsToGenerate = new ArrayList<SModelDescriptor>();
+    final List<SModelDescriptor> modelsToGenerate = new ArrayList<SModelDescriptor>();
 
     IOperationContext invocationContext = myOperationContext;
     for (IModule module : myModules) {
@@ -121,9 +121,20 @@ public class GenerateAllModelsInModuleAction extends BaseAction {
       return;
     }
 
+    final IOperationContext invocationContext1 = invocationContext;
     //noinspection ConstantConditions
-    if (! (myProject.getPluginManager().getTool(ModelCheckerTool_Tool.class)
-        .checkModelsBeforeGenerationIfNeeded(myOperationContext.getProject(), myOperationContext, modelsToGenerate))) {
+    boolean checkSuccessful = myProject.getPluginManager().getTool(ModelCheckerTool_Tool.class)
+        .checkModelsBeforeGenerationIfNeeded(invocationContext, modelsToGenerate, new Runnable() {
+          public void run() {
+            GeneratorManager generatorManager = myOperationContext.getComponent(GeneratorManager.class);
+            IGenerationType generationType = generatorManager.getDefaultModuleGenerationType();
+            generatorManager.generateModelsFromDifferentModules(
+              invocationContext1,
+              modelsToGenerate,
+              generationType);
+          }
+        });
+    if (!checkSuccessful) {
       return;
     }
 

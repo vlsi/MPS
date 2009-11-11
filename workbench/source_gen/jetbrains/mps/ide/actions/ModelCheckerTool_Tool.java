@@ -92,7 +92,7 @@ public class ModelCheckerTool_Tool extends GeneratedTool {
     return newViewer;
   }
 
-  public boolean checkModelsBeforeGenerationIfNeeded(Project project, IOperationContext operationContext, List<SModelDescriptor> modelDescriptors) {
+  public boolean checkModelsBeforeGenerationIfNeeded(IOperationContext operationContext, List<SModelDescriptor> modelDescriptors, Runnable regenerationRunnable) {
     boolean checkModels = ApplicationManager.getApplication().getComponent(GenerationSettings.class).isCheckModelsBeforeGeneration();
     if (!(checkModels)) {
       return true;
@@ -112,10 +112,11 @@ public class ModelCheckerTool_Tool extends GeneratedTool {
 
     if (errors != 0) {
       String dialogMessage = "Model checker found " + errors + " errors and " + warnings + " warnings. Review them and don't generate models or ignore them?";
-      int dialogAnswer = Messages.showDialog(project, dialogMessage, "Check Before Generation", new String[]{"Review Errors","Ignore Errors"}, 0, null);
+      int dialogAnswer = Messages.showDialog(operationContext.getProject(), dialogMessage, "Check Before Generation", new String[]{"Review Errors","Ignore Errors"}, 0, null);
       if (dialogAnswer == 0) {
         // review errors and warnings, don't generate 
         ModelCheckerTool_Tool.this.showTabWithResults(viewer);
+        viewer.saveGenerationRunnable(regenerationRunnable);
         return false;
       } else if (dialogAnswer == 1) {
         // ignore errors and warnings 
