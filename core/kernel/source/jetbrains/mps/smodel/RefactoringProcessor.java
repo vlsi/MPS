@@ -37,6 +37,7 @@ import jetbrains.mps.workbench.MPSDataKeys;
 import org.jetbrains.annotations.NotNull;
 
 import javax.swing.JOptionPane;
+import javax.swing.SwingUtilities;
 import java.awt.Frame;
 import java.util.ArrayList;
 import java.util.LinkedHashSet;
@@ -107,8 +108,12 @@ public class RefactoringProcessor {
               public void performAction(final RefactoringViewItem refactoringViewItem) {
                 new Thread() {
                   public void run() {
-                    refactoringViewItem.close();
                     doExecute(refactoringContext);
+                    SwingUtilities.invokeLater(new Runnable() {
+                      public void run() {
+                        refactoringViewItem.close();
+                      }
+                    });
                   }
                 }.start();
               }
