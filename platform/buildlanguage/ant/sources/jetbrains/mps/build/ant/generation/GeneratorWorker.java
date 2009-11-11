@@ -49,7 +49,6 @@ public class GeneratorWorker extends MpsWorker {
   }
 
   protected void executeTask(final MPSProject project, final Set<MPSProject> projects, final Set<IModule> modules, final Set<SModelDescriptor> models) {
-    ClassLoaderManager.getInstance().reloadAll(new EmptyProgressIndicator());
     generate(project, projects, modules, models);
   }
 
