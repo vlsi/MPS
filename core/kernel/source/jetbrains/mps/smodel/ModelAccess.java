@@ -284,7 +284,9 @@ public class ModelAccess {
 
   static void assertLegalRead(SNode node) {
     if (node.isDisposed()) {
-      throw new IllegalModelAccessError("Accessing disposed node");
+//      throw new IllegalModelAccessError("Accessing disposed node");
+        System.err.println ("CRITICAL: INVALID OPERATION DETECTED");
+        new IllegalModelAccessError("Accessing disposed node").printStackTrace(System.err);
     }
     ModelAccess modelAccess = ModelAccess.instance();
     if (!modelAccess.canRead() && !modelAccess.myIndexingThreads.contains(Thread.currentThread())) {      
