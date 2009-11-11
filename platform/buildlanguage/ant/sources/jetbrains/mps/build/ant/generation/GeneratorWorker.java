@@ -50,11 +50,7 @@ public class GeneratorWorker extends MpsWorker {
 
   protected void executeTask(final MPSProject project, final Set<MPSProject> projects, final Set<IModule> modules, final Set<SModelDescriptor> models) {
     ClassLoaderManager.getInstance().reloadAll(new EmptyProgressIndicator());
-    ModelAccess.instance().runWriteAction(new Runnable() {
-      public void run() {
-        generate(project, projects, modules, models);
-      }
-    });
+    generate(project, projects, modules, models);
   }
 
   protected void showStatistic() {
@@ -77,13 +73,18 @@ public class GeneratorWorker extends MpsWorker {
       s.append(m);
     }
     info(s.toString());
-    GeneratorManager gm = project.getComponentSafe(GeneratorManager.class);
+    final GeneratorManager gm = project.getComponentSafe(GeneratorManager.class);
 
     List<Cycle> order = computeGenerationOrder(project, projects, modules, models);
 
-    EmptyProgressIndicator emptyProgressIndicator = new EmptyProgressIndicator();
-    for (Cycle cycle : order) {
-      generateModulesCycle(gm, emptyProgressIndicator, cycle);
+    final EmptyProgressIndicator emptyProgressIndicator = new EmptyProgressIndicator();
+    for (final Cycle cycle : order) {
+
+      ModelAccess.instance().runWriteAction(new Runnable() {
+        public void run() {
+          generateModulesCycle(gm, emptyProgressIndicator, cycle);
+        }
+      });
 
       try {
         //wait for EDT to flush its queue
