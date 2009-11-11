@@ -582,6 +582,14 @@
       <property name="name" value="end" />
       <link role="dataType" targetNodeId="2.1200397549879" resolveInfo="_CharConstant_String" />
     </node>
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="6129327962764786265">
+      <property name="value" value="-" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" resolveInfo="alias" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="6129327962764786267">
+      <property name="value" value="character range" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473914776" resolveInfo="shortDescription" />
+    </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1174558792178">
     <property name="name" value="PredefinedSymbolClassSymbolClassPart" />

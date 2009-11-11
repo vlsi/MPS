@@ -35,14 +35,14 @@ public class InlineRegexpExpression_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstant_6834_15(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_6834_0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_6834_16(editorContext, node));
-    if (renderingCondition6834_1(node, editorContext, editorContext.getOperationContext().getScope())) {
-      editorCell.addEditorCell(this.createConstant_6834_13(editorContext, node));
+    if (renderingCondition6834_2(node, editorContext, editorContext.getOperationContext().getScope())) {
+      editorCell.addEditorCell(this.createConstant_6834_14(editorContext, node));
     }
     if (renderingCondition6834_0(node, editorContext, editorContext.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.createConstant_6834_12(editorContext, node));
     }
-    if (renderingCondition6834_2(node, editorContext, editorContext.getOperationContext().getScope())) {
-      editorCell.addEditorCell(this.createConstant_6834_14(editorContext, node));
+    if (renderingCondition6834_1(node, editorContext, editorContext.getOperationContext().getScope())) {
+      editorCell.addEditorCell(this.createConstant_6834_13(editorContext, node));
     }
     return editorCell;
   }
@@ -80,7 +80,7 @@ public class InlineRegexpExpression_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_6834_1(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "Dot all : ");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "Dot all (/s) : ");
     editorCell.setCellId("Constant_6834_1");
     editorCell.setDefaultText("");
     return editorCell;
@@ -121,7 +121,7 @@ public class InlineRegexpExpression_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_6834_5(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "Multiline mode : ");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "Multiline mode (/m) : ");
     editorCell.setCellId("Constant_6834_5");
     editorCell.setDefaultText("");
     return editorCell;
@@ -185,41 +185,47 @@ public class InlineRegexpExpression_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_6834_11(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "Case insensitive :");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "Case insensitive (/i) :");
     editorCell.setCellId("Constant_6834_11");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   private EditorCell createConstant_6834_12(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "DOTALL");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "s");
     editorCell.setCellId("Constant_6834_12");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_MAGENTA);
+      style.set(StyleAttributes.PUNCTUATION_LEFT, true);
     }
+    InlineRegexpExpression_removeS.setCellActions(editorCell, node, editorContext);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   private EditorCell createConstant_6834_13(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "CASE_INSENSITIVE");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "i");
     editorCell.setCellId("Constant_6834_13");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_MAGENTA);
+      style.set(StyleAttributes.PUNCTUATION_LEFT, true);
     }
+    InlineRegexpExpression_removeI.setCellActions(editorCell, node, editorContext);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   private EditorCell createConstant_6834_14(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "MULTILINE");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "m");
     editorCell.setCellId("Constant_6834_14");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_MAGENTA);
+      style.set(StyleAttributes.PUNCTUATION_LEFT, true);
     }
+    InlineRegexpExpression_removeM.setCellActions(editorCell, node, editorContext);
     editorCell.setDefaultText("");
     return editorCell;
   }

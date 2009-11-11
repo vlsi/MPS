@@ -324,6 +324,15 @@
         </node>
       </node>
     </node>
+    <node role="regexp" type="jetbrains.mps.baseLanguage.regexp.structure.RegexpDeclaration" id="6129327962764786122">
+      <property name="name" value="saddassad" />
+      <node role="regexp" type="jetbrains.mps.baseLanguage.regexp.structure.PositiveSymbolClassRegexp" id="6129327962764786132">
+        <node role="part" type="jetbrains.mps.baseLanguage.regexp.structure.IntervalSymbolClassPart" id="6129327962765226218">
+          <property name="start" value="z" />
+          <property name="end" value="s" />
+        </node>
+      </node>
+    </node>
   </node>
   <node type="jetbrains.mps.baseLanguage.unitTest.structure.BTestCase" id="1353467374625228509">
     <property name="testCaseName" value="Escaping" />
