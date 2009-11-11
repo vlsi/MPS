@@ -4,25 +4,32 @@ package jetbrains.mps.baseLanguage.constraints;
 
 import jetbrains.mps.smodel.constraints.IModelConstraints;
 import jetbrains.mps.smodel.constraints.INodePropertyGetter;
+import jetbrains.mps.smodel.constraints.INodePropertyValidator;
 import jetbrains.mps.smodel.constraints.ModelConstraintsManager;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
-public class AnonymousClass_name_PropertyConstraint implements IModelConstraints, INodePropertyGetter {
+public class AnonymousClass_name_PropertyConstraint implements IModelConstraints, INodePropertyGetter, INodePropertyValidator {
   public AnonymousClass_name_PropertyConstraint() {
   }
 
   public void registerSelf(ModelConstraintsManager manager) {
     manager.registerNodePropertyGetter("jetbrains.mps.baseLanguage.structure.AnonymousClass", "name", this);
+    manager.registerNodePropertyValidator("jetbrains.mps.baseLanguage.structure.AnonymousClass", "name", this);
   }
 
   public void unRegisterSelf(ModelConstraintsManager manager) {
     manager.unRegisterNodePropertyGetter("jetbrains.mps.baseLanguage.structure.AnonymousClass", "name");
+    manager.unRegisterNodePropertyValidator("jetbrains.mps.baseLanguage.structure.AnonymousClass", "name");
   }
 
   public Object execPropertyGet(SNode node, String propertyName, IScope scope) {
     return SPropertyOperations.getString(SLinkOperations.getTarget(node, "classifier", false), "name") + "$anonymous";
+  }
+
+  public boolean checkPropertyValue(final SNode node, final String propertyName, final String propertyValue, final IScope scope) {
+    return (SPropertyOperations.getString(propertyValue)).matches("[a-zA-Z[_]][a-zA-Z0-9$.[_]]*");
   }
 }

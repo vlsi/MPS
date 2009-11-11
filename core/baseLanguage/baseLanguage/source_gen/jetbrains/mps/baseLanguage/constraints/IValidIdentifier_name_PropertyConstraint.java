@@ -22,6 +22,6 @@ public class IValidIdentifier_name_PropertyConstraint implements IModelConstrain
   }
 
   public boolean checkPropertyValue(final SNode node, final String propertyName, final String propertyValue, final IScope scope) {
-    return (SPropertyOperations.getString(propertyValue)).matches("[a-zA-Z[_]][a-zA-Z0-9[_]]*");
+    return (SPropertyOperations.getString(propertyValue)).matches("[a-zA-Z[_]][a-zA-Z0-9$[_]]*");
   }
 }

@@ -61,19 +61,27 @@ public class ModelCheckerUtils {
     return link.getMetaClass() == LinkMetaclass.aggregation || !(child);
   }
 
-  private static String getRealSpecializedLinkRole(SNode conceptDeclaration, String role) {
+  private static String getRealSpecializedLinkRoleInt(SNode conceptDeclaration, String role) {
     for (SNode linkDeclaration : ListSequence.fromList(SLinkOperations.getTargets(conceptDeclaration, "linkDeclaration", true))) {
       if (SPropertyOperations.getString(linkDeclaration, "role").equals(role)) {
         return role;
       }
       if (SLinkOperations.getTarget(linkDeclaration, "specializedLink", false) != null) {
         SNode parentConceptDeclaration = SNodeOperations.getAncestor(SLinkOperations.getTarget(linkDeclaration, "specializedLink", false), "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration", true, false);
-        if (getRealSpecializedLinkRole(parentConceptDeclaration, role) != null) {
+        if (getRealSpecializedLinkRoleInt(parentConceptDeclaration, role) != null) {
           return SPropertyOperations.getString(linkDeclaration, "role");
         }
       }
     }
     return null;
+  }
+
+  private static String getRealSpecializedLinkRole(SNode concept, String role) {
+    String result = getRealSpecializedLinkRoleInt(concept, role);
+    return ((result == null) ?
+      role :
+      result
+    );
   }
 
   private static boolean isDeclaredProperty(AbstractConceptDeclaration concept, String name) {
@@ -137,10 +145,6 @@ public class ModelCheckerUtils {
             PropertySupport ps = PropertySupport.getPropertySupport(p);
             String value = ps.fromInternalValue(node.getProperty(p.getName()));
             if (!(ps.canSetValue(node, p.getName(), value, operationContext.getScope()))) {
-              // Temporary hack for anonymous classes, see MPS-6685 
-              if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.IValidIdentifier")) {
-                continue;
-              }
               addIssue(results, node, "Property constraint violation for property \"" + p.getName() + "\"", MessageStatus.WARNING);
             }
           }
@@ -167,9 +171,10 @@ public class ModelCheckerUtils {
               String specializedLinkRole = getRealSpecializedLinkRole(SNodeOperations.getConceptDeclaration(node), ref.getRole());
 
               // <node> 
-              SearchScopeStatus status2 = ModelConstraintsUtil.getSearchScope(null, node, lowLevelConcept, specializedLinkRole, operationContext);
-              if (status2.isOk() && !(status2.isDefault())) {
-                List<SNode> nodes = status2.getSearchScope().getNodes();
+              // <node> 
+              SearchScopeStatus status = ModelConstraintsUtil.getSearchScope(null, node, lowLevelConcept, specializedLinkRole, operationContext);
+              if (status.isOk() && !(status.isDefault())) {
+                List<SNode> nodes = status.getSearchScope().getNodes();
                 if (!(ListSequence.fromList(nodes).contains(targetNode))) {
                   addIssue(results, node, "Reference in role \"" + specializedLinkRole + "\" is out of scope", MessageStatus.WARNING);
                 }

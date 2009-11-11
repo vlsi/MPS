@@ -3690,7 +3690,7 @@
                           </node>
                         </node>
                         <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1240833723223">
-                          <link role="baseMethodDeclaration" targetNodeId="22.~Object.toString():java.lang.String" resolveInfo="toString" />
+                          <link role="baseMethodDeclaration" targetNodeId="36.~SModelReference.toString():java.lang.String" resolveInfo="toString" />
                         </node>
                       </node>
                       <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1240833723211">

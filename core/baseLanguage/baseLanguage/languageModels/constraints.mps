@@ -295,6 +295,21 @@
           </node>
         </node>
       </node>
+      <node role="propertyValidator" type="jetbrains.mps.lang.constraints.structure.ConstraintFunction_PropertyValidator" id="6998584464754772854">
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="6998584464754772855">
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="6998584464754772862">
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="6998584464754772863">
+              <node role="operand" type="jetbrains.mps.lang.constraints.structure.ConstraintsFunctionParameter_propertyValue" id="6998584464754772864" />
+              <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="6998584464754772865">
+                <link role="baseMethodDeclaration" targetNodeId="13.~String.matches(java.lang.String):boolean" resolveInfo="matches" />
+                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="6998584464754772866">
+                  <property name="value" value="[a-zA-Z[_]][a-zA-Z0-9$.[_]]*" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
     </node>
   </node>
   <node type="jetbrains.mps.lang.constraints.structure.ConceptConstraints" id="1213104840484">
@@ -1114,7 +1129,7 @@
               <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1213104856612">
                 <link role="baseMethodDeclaration" targetNodeId="13.~String.matches(java.lang.String):boolean" resolveInfo="matches" />
                 <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1213104856613">
-                  <property name="value" value="[a-zA-Z[_]][a-zA-Z0-9[_]]*" />
+                  <property name="value" value="[a-zA-Z[_]][a-zA-Z0-9$[_]]*" />
                 </node>
               </node>
             </node>
