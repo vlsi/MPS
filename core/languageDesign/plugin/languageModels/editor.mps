@@ -2353,7 +2353,7 @@
                 <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1210687257464">
                   <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1210687257465">
                     <link role="classConcept" targetNodeId="28.~EditorUtil" resolveInfo="EditorUtil" />
-                    <link role="baseMethodDeclaration" targetNodeId="28.~EditorUtil.createSelectIconButton(jetbrains.mps.smodel.SNode,jetbrains.mps.nodeEditor.EditorContext):javax.swing.JComponent" resolveInfo="createSelectIconButton" />
+                    <link role="baseMethodDeclaration" targetNodeId="28.~EditorUtil.createSelectIconButton(jetbrains.mps.smodel.SNode,java.lang.String,jetbrains.mps.nodeEditor.EditorContext):javax.swing.JComponent" resolveInfo="createSelectIconButton" />
                     <node role="actualArgument" type="jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_node" id="1210687257466" />
                     <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1210687257467">
                       <property name="value" value="icon" />
@@ -4795,6 +4795,14 @@
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode" id="3856910426407529585">
         <link role="relationDeclaration" targetNodeId="1.3856910426407529582" />
       </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" id="1969840607717541127">
+    <property name="package" value="RunConfigs.Create.Creator.Target" />
+    <link role="conceptDeclaration" targetNodeId="1.1969840607717540885" resolveInfo="ProjectCreatorTarget" />
+    <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1969840607717542429">
+      <property name="text" value="project" />
+      <link role="styleClass" targetNodeId="17.1186415544875" resolveInfo="KeyWord" />
     </node>
   </node>
 </model>

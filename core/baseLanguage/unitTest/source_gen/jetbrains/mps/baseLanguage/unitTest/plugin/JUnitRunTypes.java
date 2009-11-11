@@ -23,6 +23,6 @@ public enum JUnitRunTypes {
     } else if (isMethod) {
       return JUnitRunTypes.METHOD;
     }
-    return null;
+    return JUnitRunTypes.PROJECT;
   }
 }

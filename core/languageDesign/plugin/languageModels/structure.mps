@@ -3485,5 +3485,20 @@
       <link role="conceptPropertyDeclaration" targetNodeId="6.1137473994950" resolveInfo="dontSubstituteByDefault" />
     </node>
   </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1969840607717540885">
+    <property name="package" value="RunConfigs.Create.Creator.Target" />
+    <property name="name" value="ProjectCreatorTarget" />
+    <link role="extends" targetNodeId="3856910426407529502" resolveInfo="BaseCreatorTarget" />
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1969840607717540886">
+      <property name="value" value="project" />
+      <link role="conceptPropertyDeclaration" targetNodeId="6.1137473891462" resolveInfo="alias" />
+    </node>
+    <node role="conceptLink" type="jetbrains.mps.lang.structure.structure.AggregationConceptLink" id="1969840607717542430">
+      <link role="conceptLinkDeclaration" targetNodeId="3856910426407529594" resolveInfo="type" />
+      <node role="target" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1969840607717542432">
+        <link role="classifier" targetNodeId="15.~MPSProject" resolveInfo="MPSProject" />
+      </node>
+    </node>
+  </node>
 </model>
 
