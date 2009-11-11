@@ -13,12 +13,12 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.javastub.classpath;
+package jetbrains.mps.stubs.javastub.classpath;
 
 import jetbrains.mps.baseLanguage.structure.BaseLanguage_Language;
-import jetbrains.mps.javastub.ClassPathItemProvider;
-import jetbrains.mps.javastub.ConverterFactory;
-import jetbrains.mps.javastub.IConverter;
+import jetbrains.mps.stubs.javastub.ClassPathItemProvider;
+import jetbrains.mps.stubs.javastub.ConverterFactory;
+import jetbrains.mps.stubs.javastub.IConverter;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.SModelRoot;

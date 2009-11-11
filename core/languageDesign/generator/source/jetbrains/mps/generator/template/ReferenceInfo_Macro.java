@@ -24,7 +24,7 @@ import jetbrains.mps.lang.generator.structure.ReferenceMacro;
 import jetbrains.mps.lang.generator.structure.ReferenceMacro_GetReferent;
 import jetbrains.mps.util.QueryMethodGenerated;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.javastub.classpath.ClassPathModelProvider;
+import jetbrains.mps.stubs.javastub.classpath.ClassPathModelProvider;
 
 import java.util.Map;
 

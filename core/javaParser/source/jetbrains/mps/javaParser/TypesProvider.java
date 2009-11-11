@@ -22,7 +22,7 @@ import jetbrains.mps.smodel.SNodeId.Foreign;
 import jetbrains.mps.baseLanguage.structure.*;
 import jetbrains.mps.util.NodeNameUtil;
 import jetbrains.mps.util.NameUtil;
-import jetbrains.mps.javastub.classpath.ClassPathModelProvider;
+import jetbrains.mps.stubs.javastub.classpath.ClassPathModelProvider;
 import jetbrains.mps.lang.core.structure.INamedConcept;
 import jetbrains.mps.logging.Logger;
 

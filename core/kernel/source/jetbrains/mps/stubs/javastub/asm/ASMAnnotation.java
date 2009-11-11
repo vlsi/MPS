@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.javastub.asm;
+package jetbrains.mps.stubs.javastub.asm;
 
 import org.objectweb.asm.Type;
 import org.objectweb.asm.tree.AnnotationNode;

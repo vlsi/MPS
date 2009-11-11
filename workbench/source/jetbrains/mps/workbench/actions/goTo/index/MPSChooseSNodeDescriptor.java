@@ -16,7 +16,6 @@
 package jetbrains.mps.workbench.actions.goTo.index;
 
 import com.intellij.navigation.NavigationItem;
-import com.intellij.openapi.vfs.VirtualFileFilter;
 import com.intellij.openapi.project.Project;
 import com.intellij.util.Processor;
 import com.intellij.util.indexing.FileBasedIndex;
@@ -33,8 +32,8 @@ import jetbrains.mps.smodel.constraints.ModelConstraintsManager;
 import jetbrains.mps.workbench.choose.base.BaseMPSChooseModel;
 import jetbrains.mps.workbench.editors.MPSEditorOpener;
 import jetbrains.mps.reloading.IClassPathItem;
-import jetbrains.mps.javastub.classpath.ClassPathModelRootManager;
-import jetbrains.mps.javastub.classpath.ClassPathModelProvider;
+import jetbrains.mps.stubs.javastub.classpath.ClassPathModelRootManager;
+import jetbrains.mps.stubs.javastub.classpath.ClassPathModelProvider;
 import jetbrains.mps.baseLanguage.structure.ClassConcept;
 import jetbrains.mps.baseLanguage.structure.Annotation;
 import jetbrains.mps.baseLanguage.structure.Interface;
