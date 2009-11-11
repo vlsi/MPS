@@ -27,5 +27,7 @@ public class DFABuilders extends DataFlowBuilders {
     manager.register("jetbrains.mps.baseLanguage.regexp.structure.LookRegexp", new LookRegexp_DataFlow());
     manager.register("jetbrains.mps.baseLanguage.regexp.structure.ParensRegexp", new ParensRegexp_DataFlow());
     manager.register("jetbrains.mps.baseLanguage.regexp.structure.BinaryRegexp", new BinaryRegexp_DataFlow());
+    manager.register("jetbrains.mps.baseLanguage.regexp.structure.MatchRegexpExpression", new MatchRegexpExpression_DataFlow());
+    manager.register("jetbrains.mps.baseLanguage.regexp.structure.FindMatchExpression", new FindMatchExpression_DataFlow());
   }
 }

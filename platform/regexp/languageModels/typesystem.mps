@@ -352,5 +352,29 @@
       <link role="concept" targetNodeId="1.1174510540317" resolveInfo="InlineRegexpExpression" />
     </node>
   </node>
+  <node type="jetbrains.mps.lang.typesystem.structure.InferenceRule" id="6129327962763255301">
+    <property name="name" value="typeof_FindMatchExpression" />
+    <property name="package" value="Expressions" />
+    <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="6129327962763255302">
+      <node role="statement" type="jetbrains.mps.lang.typesystem.structure.CreateEquationStatement" id="6129327962763257323">
+        <node role="rightExpression" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause" id="6129327962763257327">
+          <node role="normalType" type="jetbrains.mps.lang.quotation.structure.Quotation" id="6129327962763257328">
+            <node role="quotedNode" type="jetbrains.mps.baseLanguage.structure.BooleanType" id="6129327962763257330" />
+          </node>
+        </node>
+        <node role="leftExpression" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause" id="6129327962763257326">
+          <node role="normalType" type="jetbrains.mps.lang.typesystem.structure.TypeOfExpression" id="6129327962763257320">
+            <node role="term" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference" id="6129327962763257322">
+              <link role="applicableNode" targetNodeId="6129327962763255303" resolveInfo="expression" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="applicableNode" type="jetbrains.mps.lang.typesystem.structure.ConceptReference" id="6129327962763255303">
+      <property name="name" value="expression" />
+      <link role="concept" targetNodeId="1.6129327962763158517" resolveInfo="FindMatchExpression" />
+    </node>
+  </node>
 </model>
 

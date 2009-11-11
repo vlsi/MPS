@@ -234,6 +234,14 @@ public class QueriesGenerated {
     return SLinkOperations.getTarget(_context.getNode(), "operand", true);
   }
 
+  public static SNode sourceNodeQuery_6129327962763257360(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return SLinkOperations.getTarget(_context.getNode(), "regexp", true);
+  }
+
+  public static SNode sourceNodeQuery_6129327962763258610(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return SLinkOperations.getTarget(_context.getNode(), "inputExpression", true);
+  }
+
   public static Iterable sourceNodesQuery_1194610249636(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     return SModelOperations.getNodes(_context.getInputModel(), "jetbrains.mps.baseLanguage.regexp.structure.InlineRegexpExpression");
   }

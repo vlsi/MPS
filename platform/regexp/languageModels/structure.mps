@@ -645,6 +645,9 @@
       <property name="value" value="replace with regexp" />
       <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" />
     </node>
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.BooleanConceptProperty" id="6129327962764473901">
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473994950" resolveInfo="dontSubstituteByDefault" />
+    </node>
     <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1174656103019">
       <property name="metaClass" value="aggregation" />
       <property name="sourceCardinality" value="1" />
@@ -928,6 +931,9 @@
       <property name="value" value="split with regexp" />
       <link role="conceptPropertyDeclaration" targetNodeId="1.1137473914776" />
     </node>
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.BooleanConceptProperty" id="6129327962764473903">
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473994950" resolveInfo="dontSubstituteByDefault" />
+    </node>
     <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1175164443297">
       <property name="metaClass" value="aggregation" />
       <property name="sourceCardinality" value="1" />
@@ -966,6 +972,10 @@
     <property name="name" value="MatchRegexpExpression" />
     <property name="package" value="Expressions" />
     <link role="extends" targetNodeId="2.1068431790191" />
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="6129327962764464866">
+      <property name="value" value="matches" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" resolveInfo="alias" />
+    </node>
     <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1179357286898">
       <property name="metaClass" value="aggregation" />
       <property name="sourceCardinality" value="1" />
@@ -1051,7 +1061,7 @@
       <link role="intfc" targetNodeId="1174653354106" resolveInfo="RegexpUsingConstruction" />
     </node>
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1222261532126">
-      <property name="value" value="mathes" />
+      <property name="value" value="matches" />
       <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" resolveInfo="alias" />
     </node>
   </node>
@@ -1082,6 +1092,27 @@
   <node type="jetbrains.mps.lang.structure.structure.ConstrainedDataTypeDeclaration" id="7473568212391781030">
     <property name="name" value="_StringRegexp" />
     <property name="constraint" value="[^\\+?.\\[\\]]+" />
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="6129327962763158517">
+    <property name="package" value="Expressions" />
+    <property name="name" value="FindMatchExpression" />
+    <link role="extends" targetNodeId="2.1068431790191" resolveInfo="Expression" />
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="6129327962763909203">
+      <property name="value" value="=~" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" resolveInfo="alias" />
+    </node>
+    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="6129327962763255289">
+      <property name="metaClass" value="aggregation" />
+      <property name="sourceCardinality" value="1" />
+      <property name="role" value="inputExpression" />
+      <link role="target" targetNodeId="2.1068431790191" resolveInfo="Expression" />
+    </node>
+    <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="6129327962763255288">
+      <link role="intfc" targetNodeId="1174653354106" resolveInfo="RegexpUsingConstruction" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.BooleanConceptProperty" id="6129327962763255290">
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473994950" resolveInfo="dontSubstituteByDefault" />
+    </node>
   </node>
 </model>
 
