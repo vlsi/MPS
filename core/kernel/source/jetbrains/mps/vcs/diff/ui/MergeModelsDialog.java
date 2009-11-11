@@ -27,7 +27,7 @@ import javax.swing.JComponent;
 import javax.swing.JOptionPane;
 import java.awt.HeadlessException;
 
-class MergeModelsDialog extends BaseDialog {
+public class MergeModelsDialog extends BaseDialog {
   private NewMergeView myMergeView;
   private boolean myCanceled;
 

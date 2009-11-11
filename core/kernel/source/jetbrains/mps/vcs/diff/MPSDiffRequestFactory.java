@@ -23,6 +23,7 @@ import com.intellij.openapi.diff.impl.mergeTool.MergeRequestImpl;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.ui.DialogWrapper;
 import com.intellij.openapi.vfs.VirtualFile;
+import com.intellij.openapi.application.ApplicationManager;
 import jetbrains.mps.fileTypes.MPSFileTypeFactory;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.SModel;
@@ -31,6 +32,7 @@ import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.vcs.diff.ui.ModelDiffTool;
 import jetbrains.mps.vcs.diff.ui.ModelDiffTool.ReadException;
+import jetbrains.mps.vcs.VcsHelper;
 import jetbrains.mps.vfs.VFileSystem;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -57,6 +59,8 @@ public class MPSDiffRequestFactory extends DiffRequestFactoryImpl {
 
     protected ModelMergeRequest(String leftText, String rightText, String originalContent, @NotNull VirtualFile file, Project project, ActionButtonPresentation actionButtonPresentation) {
       super(leftText, originalContent, rightText, project, actionButtonPresentation);
+
+      ApplicationManager.getApplication().saveAll();
       myFile = file;
     }
 
@@ -68,32 +72,7 @@ public class MPSDiffRequestFactory extends DiffRequestFactoryImpl {
     public void resolved(final byte[] result) {
       ((SimpleContent) getContents()[ORIGINAL]).setBOM(result);
       setResult(DialogWrapper.OK_EXIT_CODE);
-      try {
-        OutputStream outputStream = myFile.getOutputStream(this);
-        outputStream.write(result);
-        outputStream.close();
-      } catch (IOException e) {
-        LOG.error(e);
-      }
-      ModelAccess.instance().runWriteAction(new Runnable() {
-        public void run() {
-          reloadModel(result);
-        }
-      });
-    }
-
-    private void reloadModel(byte[] result) {
-      final SModelDescriptor modelDescriptor = SModelRepository.getInstance().findModel(VFileSystem.toIFile(myFile));
-      if (modelDescriptor == null) return;
-
-      try {
-        SModel model = ModelDiffTool.readModel(result, myFile.getPath());
-        modelDescriptor.replaceModel(model);
-      } catch (IOException e) {
-        LOG.error(e);
-      } catch (ReadException e) {
-        LOG.error(e);
-      }
+      VcsHelper.replaceWithNewModel(result, myFile);
     }
   }
 }

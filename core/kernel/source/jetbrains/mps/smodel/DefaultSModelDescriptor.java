@@ -16,6 +16,7 @@
 package jetbrains.mps.smodel;
 
 import com.intellij.openapi.application.ApplicationManager;
+import com.intellij.openapi.application.ModalityState;
 import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
 import jetbrains.mps.lang.structure.structure.ConceptDeclaration;
 import jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration;
@@ -36,6 +37,7 @@ import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.WeakSet;
 import jetbrains.mps.vfs.IFile;
+import jetbrains.mps.vcs.VcsHelper;
 
 import java.util.*;
 
@@ -218,13 +220,13 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor {
 
 
         IRefactoring refactoring = refactoringContext.getRefactoring();
-        if (!(refactoring instanceof ILoggableRefactoring)){
-          LOG.error("Non-loggable refactoring was logged: "+refactoring.getClass().getName());
-        }else{
-          try{
-            ((ILoggableRefactoring)refactoring).updateModel(mySModel, refactoringContext);
-          } catch (Throwable t){
-            LOG.error("An exception was thrown by refactoring "+refactoring.getUserFriendlyName()+" while updating model "+mySModel.getLongName()+". Models could have been corrupted.");
+        if (!(refactoring instanceof ILoggableRefactoring)) {
+          LOG.error("Non-loggable refactoring was logged: " + refactoring.getClass().getName());
+        } else {
+          try {
+            ((ILoggableRefactoring) refactoring).updateModel(mySModel, refactoringContext);
+          } catch (Throwable t) {
+            LOG.error("An exception was thrown by refactoring " + refactoring.getUserFriendlyName() + " while updating model " + mySModel.getLongName() + ". Models could have been corrupted.");
           }
         }
       }
@@ -397,7 +399,28 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor {
     if (!mySModel.isLoading()) LOG.assertInCommand();
 
     if (needsReloading()) {
-      LOG.warning("Model " + mySModel.getSModelFqName() + " was modified externally and not reloaded!");
+      LOG.warning("Model file " + mySModel.getSModelFqName() + " was modified externally!\n" +
+        "You might want to turn \"Synchronize files on frame activation/deactivation\" option on to avoid conflicts.");
+      ApplicationManager.getApplication().invokeLater(new Runnable() {
+        public void run() {
+          final boolean needSave = VcsHelper.showDiskMemoryMerge(myModelFile, mySModel);
+          if (needSave) {
+            ModelAccess.instance().runWriteActionInCommand(new Runnable() {
+              public void run() {
+                myDiskTimestamp = fileTimestamp();
+                save();
+              }
+            });
+          } else {
+            ModelAccess.instance().runWriteAction(new Runnable() {
+              public void run() {
+                reloadFromDisk();
+              }
+            });
+          }
+        }
+      }, ModalityState.NON_MODAL);
+      return;
     }
 
     SModelRepository.getInstance().markUnchanged(mySModel);

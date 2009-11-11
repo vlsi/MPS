@@ -534,6 +534,13 @@ public class AbstractVcsHelperImpl extends AbstractVcsHelper {
   @Patch
   @NotNull
   public List<VirtualFile> showMergeDialog(List<VirtualFile> files, final MergeProvider provider) {
+    return showMergeDialog(files, provider, true);
+  }
+
+  /**
+   * Severely patched by MPS
+   */
+  public List<VirtualFile> showMergeDialog(List<VirtualFile> files, final MergeProvider provider, boolean doStatusRecheck) {
     if (files.isEmpty()) return Collections.emptyList();
     // MPS Patch Start
     // we create providerDecorator which does actual backup
@@ -580,7 +587,7 @@ public class AbstractVcsHelperImpl extends AbstractVcsHelper {
     List<VirtualFile> toMerge = new ArrayList<VirtualFile>();
     List<VirtualFile> alreadyResolved = new ArrayList<VirtualFile>();
     for (VirtualFile f : files) {
-      if (ApplicationLevelVcsManager.instance().isInConflict(VFileSystem.toIFile(f), true)) {
+      if (!doStatusRecheck || ApplicationLevelVcsManager.instance().isInConflict(VFileSystem.toIFile(f), true)) {
         toMerge.add(f);
       } else {
         alreadyResolved.add(f);

@@ -29,6 +29,7 @@ import jetbrains.mps.smodel.persistence.def.ModelPersistence;
 import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.util.JDOMUtil;
 import jetbrains.mps.vcs.ApplicationLevelVcsManager;
+import jetbrains.mps.vcs.VcsHelper;
 import jetbrains.mps.vcs.diff.MPSDiffRequestFactory.ModelMergeRequest;
 import jetbrains.mps.vcs.diff.ui.ModelDiffTool.ReadException;
 import jetbrains.mps.project.MPSProject;
@@ -69,15 +70,8 @@ public class ModelMergeTool implements DiffTool {
       dialog.showDialog();
 
       if (dialog.getResultModel() != null) {
-        final SModel result = dialog.getResultModel();
-        Document document = ModelAccess.instance().runReadAction(new Computable<Document>() {
-          public Document compute() {
-            return ModelPersistence.saveModel(result, false);
-          }
-        });
-        ByteArrayOutputStream baos = new ByteArrayOutputStream();
-        JDOMUtil.writeDocument(document, baos);
-        mrequest.resolved(baos.toByteArray());
+        byte[] bytes = VcsHelper.modelToBytes(dialog.getResultModel());
+        mrequest.resolved(bytes);
       }
     } catch (IOException e) {
       LOG.error(e);
