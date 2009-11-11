@@ -24,7 +24,6 @@ import jetbrains.mps.ide.messages.IMessageHandler;
 import jetbrains.mps.build.ant.IBuildServerMessageFormat;
 import jetbrains.mps.build.ant.WhatToDo;
 import jetbrains.mps.build.ant.TeamCityMessageFormat;
-import jetbrains.mps.build.ant.generation.TestGenerationOnTeamcity.TestModes;
 
 import java.util.*;
 import java.io.*;
@@ -35,7 +34,7 @@ import com.intellij.openapi.progress.ProgressIndicator;
 import junit.framework.TestFailure;
 
 public class TestGenerationWorker extends GeneratorWorker {
-  
+
   private boolean myTestFailed = false;
   private final IBuildServerMessageFormat myBuildServerMessageFormat = getBuildServerMessageFormat();
   private final Map<BaseTestConfiguration, GenParameters> myTestConfigurations = new LinkedHashMap<BaseTestConfiguration, GenParameters>();
@@ -112,59 +111,21 @@ public class TestGenerationWorker extends GeneratorWorker {
 
   @Override
   protected List<Cycle> computeGenerationOrder(MPSProject project, Set<MPSProject> projects, Set<IModule> modules, final Set<SModelDescriptor> models) {
-    String modeString = myWhatToDo.getProperty(TestGenerationOnTeamcity.TEST_GROUPING_MODE);
-    TestModes mode = TestModes.byVisibleName(modeString);
-
-    final Map<IModule, List<SModelDescriptor>> moduleToModels = new LinkedHashMap<IModule, List<SModelDescriptor>>();
-
-    switch (mode) {
-      case ALL:
-        extractModels(projects, modules, models, moduleToModels);
-        return Collections.singletonList((Cycle) new SimpleModuleCycle(project, modules, moduleToModels));
-      case BY_CYCLES:
-        return super.computeGenerationOrder(project, projects, modules, models);
-      case BY_CONFIGURATIONS:
-        final List<Cycle> cycles = new ArrayList<Cycle>();
-        final Set<MPSProject> outsiderProjects = new HashSet<MPSProject>();
-        for (final MPSProject mpsProject : projects) {
-          ModelAccess.instance().runReadAction(new Runnable() {
-            public void run() {
-              List<BaseTestConfiguration> testConfigurationList = mpsProject.getProjectDescriptor().getTestConfigurations();
-              if (testConfigurationList.isEmpty()) {
-                outsiderProjects.add(mpsProject);
-              } else {
-                for (BaseTestConfiguration config : testConfigurationList) {
-                  GenParameters genParams = config.getGenParams(mpsProject, true);
-                  Cycle c = new TestConfigurationCycle(mpsProject, config, genParams);
-                  cycles.add(c);
-                }
-              }
+    final List<Cycle> cycles = new ArrayList<Cycle>();
+    for (final MPSProject mpsProject : projects) {
+      ModelAccess.instance().runReadAction(new Runnable() {
+        public void run() {
+          List<BaseTestConfiguration> testConfigurationList = mpsProject.getProjectDescriptor().getTestConfigurations();
+          for (BaseTestConfiguration config : testConfigurationList) {
+            GenParameters genParams = config.getGenParams(mpsProject, true);
+            for (SModelDescriptor sm : genParams.getModelDescriptors()) {
+              cycles.add(new ModelCycle(sm, sm.getModule(), mpsProject));
             }
-          });
-        }
-        cycles.addAll(super.computeGenerationOrder(project, outsiderProjects, modules, models));
-        return cycles;
-      case BY_MODELS:
-        final List<Cycle> modelcycles = new ArrayList<Cycle>();
-        extractModels(projects, modules, models, moduleToModels);
-        for (IModule module : moduleToModels.keySet()) {
-          List<SModelDescriptor> modelsForModule = moduleToModels.get(module);
-          for (SModelDescriptor smodel : modelsForModule) {
-            modelcycles.add(new ModelCycle(smodel, module, project));
           }
         }
-        return modelcycles;
-      case BY_MODULES:
-        final List<Cycle> modulecycles = new ArrayList<Cycle>();
-        extractModels(projects, modules, models, moduleToModels);
-        for (IModule module : moduleToModels.keySet()) {
-          List<SModelDescriptor> modelsForModule = moduleToModels.get(module);
-          modulecycles.add(new ModuleCycle(module, modelsForModule, project));
-        }
-        return modulecycles;
-      default:
-        throw new BuildException("Unsupported grouping mode " + mode);
+      });
     }
+    return cycles;
   }
 
   @Override
