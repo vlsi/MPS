@@ -19,7 +19,6 @@ import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.ide.hierarchy.HierarchyViewTool;
 import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.project.ProjectOperationContext;
 import jetbrains.mps.ide.tabbedEditor.TabbedEditor;
 
 public class ShowConceptInHierarchy_Action extends GeneratedAction {
@@ -97,7 +96,7 @@ public class ShowConceptInHierarchy_Action extends GeneratedAction {
   public void doExecute(@NotNull final AnActionEvent event) {
     try {
       HierarchyViewTool tool = ShowConceptInHierarchy_Action.this.context.getComponent(HierarchyViewTool.class);
-      tool.showConceptInHierarchy(((AbstractConceptDeclaration)SNodeOperations.getAdapter(ShowConceptInHierarchy_Action.this.getConceptNode())), new ProjectOperationContext(ShowConceptInHierarchy_Action.this.project));
+      tool.showConceptInHierarchy(((AbstractConceptDeclaration)SNodeOperations.getAdapter(ShowConceptInHierarchy_Action.this.getConceptNode())), ShowConceptInHierarchy_Action.this.context);
       tool.openToolLater(true);
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {

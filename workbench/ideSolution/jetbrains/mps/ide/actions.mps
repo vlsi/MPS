@@ -5219,15 +5219,10 @@
                 </node>
                 <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_GetAdapterOperation" id="2925366645633919020" />
               </node>
-              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1216120279412">
-                <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1216120280742">
-                  <link role="baseMethodDeclaration" targetNodeId="63.~ProjectOperationContext.&lt;init&gt;(jetbrains.mps.project.MPSProject)" resolveInfo="ProjectOperationContext" />
-                  <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1216120282946">
-                    <node role="operand" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpression" id="1216120282947" />
-                    <node role="operation" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterReferenceOperation" id="1217420646746">
-                      <link role="member" targetNodeId="1217420646745" resolveInfo="project" />
-                    </node>
-                  </node>
+              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="3502458452511557199">
+                <node role="operand" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpression" id="3502458452511557200" />
+                <node role="operation" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterReferenceOperation" id="3502458452511557201">
+                  <link role="member" targetNodeId="1217420647380" resolveInfo="context" />
                 </node>
               </node>
             </node>
