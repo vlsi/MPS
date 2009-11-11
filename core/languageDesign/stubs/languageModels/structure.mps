@@ -4,6 +4,8 @@
   <refactoringHistory />
   <language namespace="ef703a71-a5a3-42af-b53c-ddced816ad5c(jetbrains.mps.lang.stubs)" />
   <language namespace="c72da2b9-7cce-4447-8389-f407dc1158b7(jetbrains.mps.lang.structure)" />
+  <language namespace="ceab5195-25ea-4f22-9b92-103b95ca8c0c(jetbrains.mps.lang.core)" />
+  <language namespace="f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590283(jetbrains.mps.lang.core.constraints)" version="2" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" />
@@ -27,9 +29,48 @@
   <maxImportIndex value="1" />
   <import index="1" modelUID="r:4b48a44f-6ba9-48c3-ad27-273fa72f5664(jetbrains.mps.lang.stubs.structure)" version="-1" />
   <visible index="2" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
+  <visible index="3" modelUID="r:00000000-0000-4000-0000-011c89590373(jetbrains.mps.baseLanguage.classifiers.structure)" />
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="3671542447677113727">
-    <property name="name" value="A" />
+    <property name="name" value="StubsCreatorDeclaration" />
+    <property name="rootable" value="true" />
     <link role="extends" targetNodeId="2v.1133920641626" resolveInfo="BaseConcept" />
+    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="444366895203632243">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="loadModelBlock" />
+      <property name="sourceCardinality" value="1" />
+      <link role="target" targetNodeId="444366895203603703" resolveInfo="LoadModelBlock" />
+    </node>
+    <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="444366895203545214">
+      <link role="intfc" targetNodeId="3v.1205751982837" resolveInfo="IClassifier" />
+    </node>
+  </node>
+  <visible index="4" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="444366895203603703">
+    <property name="name" value="LoadModelBlock" />
+    <link role="extends" targetNodeId="4v.1137021947720" resolveInfo="ConceptFunction" />
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="444366895203632232">
+      <property name="value" value="loadModel" />
+      <link role="conceptPropertyDeclaration" targetNodeId="2v.1137473891462" resolveInfo="alias" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.BooleanConceptProperty" id="444366895203632234">
+      <link role="conceptPropertyDeclaration" targetNodeId="4v.1216468774225" resolveInfo="showName" />
+    </node>
+    <node role="conceptLink" type="jetbrains.mps.lang.structure.structure.ReferenceConceptLink" id="444366895203632237">
+      <link role="conceptLinkDeclaration" targetNodeId="4v.1161119487665" resolveInfo="applicableConceptFunctionParameter" />
+      <link role="target" targetNodeId="444366895203632238" resolveInfo="Package_ConceptFunctionParameter" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="444366895203632238">
+    <property name="name" value="Package_ConceptFunctionParameter" />
+    <link role="extends" targetNodeId="4v.1107135704075" resolveInfo="ConceptFunctionParameter" />
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="444366895203632239">
+      <property name="value" value="packageName" />
+      <link role="conceptPropertyDeclaration" targetNodeId="2v.1137473891462" resolveInfo="alias" />
+    </node>
+    <node role="conceptLink" type="jetbrains.mps.lang.structure.structure.AggregationConceptLink" id="444366895203632240">
+      <link role="conceptLinkDeclaration" targetNodeId="4v.1137545963098" resolveInfo="conceptFunctionParameterType" />
+      <node role="target" type="jetbrains.mps.baseLanguage.structure.StringType" id="444366895203632242" />
+    </node>
   </node>
 </model>
 

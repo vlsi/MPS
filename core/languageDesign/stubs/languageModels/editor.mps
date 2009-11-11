@@ -32,5 +32,26 @@
   <devkit namespace="2677cb18-f558-4e33-bc38-a5139cee06dc(jetbrains.mps.devkit.language-design)" />
   <maxImportIndex value="1" />
   <import index="1" modelUID="r:4b48a44f-6ba9-48c3-ad27-273fa72f5664(jetbrains.mps.lang.stubs.structure)" version="-1" />
+  <visible index="2" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
+  <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" id="444366895203545215">
+    <link role="conceptDeclaration" targetNodeId="1.3671542447677113727" resolveInfo="StubsCreatorDeclaration" />
+    <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="444366895203545217">
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Block" id="444366895203545235">
+        <node role="body" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode" id="444366895203632244">
+          <link role="relationDeclaration" targetNodeId="1.444366895203632243" />
+        </node>
+        <node role="header" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="444366895203545243">
+          <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="444366895203565717">
+            <property name="text" value="stubs creator" />
+          </node>
+          <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Property" id="444366895203565718">
+            <link role="relationDeclaration" targetNodeId="2v.1169194664001" resolveInfo="name" />
+          </node>
+          <node role="cellLayout" type="jetbrains.mps.lang.editor.structure.CellLayout_Horizontal" id="444366895203545244" />
+        </node>
+      </node>
+      <node role="cellLayout" type="jetbrains.mps.lang.editor.structure.CellLayout_Vertical" id="444366895203545219" />
+    </node>
+  </node>
 </model>
 
