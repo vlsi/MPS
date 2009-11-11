@@ -38,6 +38,7 @@ import jetbrains.mps.typesystem.inference.NodeTypesComponent;
 import jetbrains.mps.util.Pair;
 import jetbrains.mps.nodeEditor.IErrorReporter;
 import jetbrains.mps.project.IModule;
+import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.project.MPSProject;
 import com.intellij.openapi.progress.ProgressIndicator;
 import jetbrains.mps.util.TimePresentationUtil;
@@ -212,6 +213,9 @@ public class ModelCheckerUtils {
 
   public static boolean checkModule(SearchResults<ModelCheckerIssue> results, IModule module, IOperationContext operationContext, ProgressContext progressContext) {
     for (SModelDescriptor modelDescriptor : ListSequence.fromList(module.getOwnModelDescriptors())) {
+      if (!(SModelStereotype.isUserModel(modelDescriptor))) {
+        continue;
+      }
       if (!(checkModel(results, modelDescriptor, operationContext, progressContext))) {
         return false;
       }

@@ -33002,6 +33002,20 @@
             </node>
           </node>
           <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="8959719647282613358">
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="6188549773188648511">
+              <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="6188549773188648512">
+                <node role="statement" type="jetbrains.mps.baseLanguage.structure.ContinueStatement" id="6188549773188648529" />
+              </node>
+              <node role="condition" type="jetbrains.mps.baseLanguage.structure.NotExpression" id="6188549773188648516">
+                <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="6188549773188648522">
+                  <link role="classConcept" targetNodeId="40.~SModelStereotype" resolveInfo="SModelStereotype" />
+                  <link role="baseMethodDeclaration" targetNodeId="40.~SModelStereotype.isUserModel(jetbrains.mps.smodel.SModelDescriptor):boolean" resolveInfo="isUserModel" />
+                  <node role="actualArgument" type="jetbrains.mps.baseLanguage.collections.structure.ForEachVariableReference" id="6188549773188648524">
+                    <link role="variable" targetNodeId="8959719647282613356" resolveInfo="modelDescriptor" />
+                  </node>
+                </node>
+              </node>
+            </node>
             <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="8959719647282613370">
               <node role="condition" type="jetbrains.mps.baseLanguage.structure.NotExpression" id="8959719647282613373">
                 <node role="expression" type="jetbrains.mps.baseLanguage.structure.LocalStaticMethodCall" id="8959719647282613375">
