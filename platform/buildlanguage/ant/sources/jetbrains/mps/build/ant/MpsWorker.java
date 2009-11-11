@@ -83,19 +83,30 @@ public abstract class MpsWorker {
   public void work() {
     setupEnvironment();
 
-    com.intellij.openapi.project.Project ideaProject = ProjectManager.getInstance().getDefaultProject();
+    for (File file : myWhatToDo.getMPSProjectFiles()) {
+      if (!file.getName().endsWith(MPSExtentions.DOT_MPS_PROJECT)) continue;
 
-    File projectFile = FileUtil.createTmpFile();
-    final MPSProject project = new MPSProject(projectFile, new ProjectDescriptor(), ideaProject);
+      final MPSProject p = TestMain.loadProject(file);
+      info("Loaded project " + p);
 
-    LinkedHashSet<MPSProject> projects = new LinkedHashSet<MPSProject>();
-    LinkedHashSet<IModule> modules = new LinkedHashSet<IModule>();
-    LinkedHashSet<SModelDescriptor> models = new LinkedHashSet<SModelDescriptor>();
-    collectModelsToGenerate(projects, modules, models);
+      LinkedHashSet<MPSProject> projects = new LinkedHashSet<MPSProject>();
+      projects.add(p);
+      LinkedHashSet<IModule> modules = new LinkedHashSet<IModule>();
+      LinkedHashSet<SModelDescriptor> models = new LinkedHashSet<SModelDescriptor>();
+      collectModelsToGenerate(modules, models);
 
-    executeTask(project, projects, modules, models);
+      executeTask(p, projects, modules, models);
 
-    unloadLoadedStuff(projects);
+      ThreadUtils.runInUIThreadAndWait(new Runnable() {
+        public void run() {
+          p.dispose();
+
+          IdeEventQueue.getInstance().flushQueue();
+          System.gc();
+        }
+      });
+    }
+
     showStatistic();
   }
 
@@ -111,22 +122,10 @@ public abstract class MpsWorker {
     loadLibraries();
   }
 
-  protected abstract void executeTask(MPSProject project, Set<MPSProject> projects, Set<IModule> modules,  Set<SModelDescriptor> models);
+  protected abstract void executeTask(MPSProject project, Set<MPSProject> projects, Set<IModule> modules, Set<SModelDescriptor> models);
 
   protected abstract void showStatistic();
 
-  protected void unloadLoadedStuff(LinkedHashSet<MPSProject> projects) {
-    for (final MPSProject project : projects) {
-      ThreadUtils.runInUIThreadAndWait(new Runnable() {
-        public void run() {
-          project.dispose();
-
-          IdeEventQueue.getInstance().flushQueue();
-          System.gc();
-        }
-      });
-    }
-  }
 
   private Level getLog4jLevel() {
     switch (myWhatToDo.getLogLevel()) {
@@ -175,20 +174,9 @@ public abstract class MpsWorker {
     });
   }
 
-  public void collectModelsToGenerate(LinkedHashSet<MPSProject> projects, LinkedHashSet<IModule> modules, LinkedHashSet<SModelDescriptor> models) {
-    collectFromProjects(projects);
+  public void collectModelsToGenerate(LinkedHashSet<IModule> modules, LinkedHashSet<SModelDescriptor> models) {
     collectFromModuleFiles(modules);
     collectFromModelFiles(models);
-  }
-
-  private void collectFromProjects(LinkedHashSet<MPSProject> projects) {
-    for (File projectFile : myWhatToDo.getMPSProjectFiles()) {
-      if (projectFile.getAbsolutePath().endsWith(MPSExtentions.DOT_MPS_PROJECT)) {
-        final MPSProject project = TestMain.loadProject(projectFile);
-        info("Loaded project " + project);
-        projects.add(project);
-      }
-    }
   }
 
   protected void extractModels(Set<SModelDescriptor> modelDescriptors, MPSProject project) {
@@ -207,8 +195,8 @@ public abstract class MpsWorker {
 
   protected void extractModels(Collection<SModelDescriptor> modelsList, IModule m) {
     List<SModelDescriptor> ownedModels = m.getOwnModelDescriptors();
-    for (SModelDescriptor d : ownedModels){
-      if (SModelStereotype.isUserModel(d)){
+    for (SModelDescriptor d : ownedModels) {
+      if (SModelStereotype.isUserModel(d)) {
         modelsList.add(d);
       }
     }

@@ -23,6 +23,8 @@ import java.lang.reflect.Method;
 import java.lang.reflect.InvocationTargetException;
 
 import jetbrains.mps.util.FileUtil;
+import jetbrains.mps.fileTypes.MPSFileType;
+import jetbrains.mps.vfs.MPSExtentions;
 
 public class WhatToDo {
   private final Set<File> myModels = new LinkedHashSet<File>();
@@ -271,7 +273,7 @@ public class WhatToDo {
         } else if (propertyValuePair.length == 2) {
           whatToDo.putProperty(propertyValuePair[0], propertyValuePair[1]);
         } else {
-          System.err.println("ERROR: Don't know what to do: ["+s+"]");  
+          System.err.println("ERROR: Don't know what to do: [" + s + "]");
         }
       }
     }

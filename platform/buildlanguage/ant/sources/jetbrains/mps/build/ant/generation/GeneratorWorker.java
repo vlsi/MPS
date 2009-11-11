@@ -85,19 +85,6 @@ public class GeneratorWorker extends MpsWorker {
           generateModulesCycle(gm, emptyProgressIndicator, cycle);
         }
       });
-
-      try {
-        //wait for EDT to flush its queue
-        for (int i = 0; i < 3; i++) {
-          SwingUtilities.invokeAndWait(new Runnable() {
-            public void run() {
-            }
-          });
-        }
-      } catch (Throwable t) {
-        LOG.error(t);
-      }
-
     }
   }
 
