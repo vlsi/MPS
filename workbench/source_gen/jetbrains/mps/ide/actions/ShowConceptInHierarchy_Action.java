@@ -96,7 +96,7 @@ public class ShowConceptInHierarchy_Action extends GeneratedAction {
   public void doExecute(@NotNull final AnActionEvent event) {
     try {
       HierarchyViewTool tool = ShowConceptInHierarchy_Action.this.context.getComponent(HierarchyViewTool.class);
-      tool.showConceptInHierarchy(((AbstractConceptDeclaration)SNodeOperations.getAdapter(ShowConceptInHierarchy_Action.this.getConceptNode())), ShowConceptInHierarchy_Action.this.context);
+      tool.showItemInHierarchy(((AbstractConceptDeclaration)SNodeOperations.getAdapter(ShowConceptInHierarchy_Action.this.getConceptNode())), ShowConceptInHierarchy_Action.this.context);
       tool.openToolLater(true);
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {

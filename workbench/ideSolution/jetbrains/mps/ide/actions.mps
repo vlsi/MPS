@@ -4759,7 +4759,7 @@
               <link role="variableDeclaration" targetNodeId="1216119756068" resolveInfo="tool" />
             </node>
             <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1216119840936">
-              <link role="baseMethodDeclaration" targetNodeId="9.~AbstractHierarchyView.showConceptInHierarchy(jetbrains.mps.smodel.INodeAdapter,jetbrains.mps.smodel.IOperationContext):void" resolveInfo="showConceptInHierarchy" />
+              <link role="baseMethodDeclaration" targetNodeId="9.~AbstractHierarchyView.showItemInHierarchy(jetbrains.mps.smodel.INodeAdapter,jetbrains.mps.smodel.IOperationContext):void" resolveInfo="showItemInHierarchy" />
               <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1216119877325">
                 <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1216119875793">
                   <link role="variableDeclaration" targetNodeId="1216119707537" resolveInfo="classNode" />
@@ -5209,7 +5209,7 @@
               <link role="variableDeclaration" targetNodeId="1216120033400" resolveInfo="tool" />
             </node>
             <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1216120033411">
-              <link role="baseMethodDeclaration" targetNodeId="9.~AbstractHierarchyView.showConceptInHierarchy(jetbrains.mps.smodel.INodeAdapter,jetbrains.mps.smodel.IOperationContext):void" resolveInfo="showConceptInHierarchy" />
+              <link role="baseMethodDeclaration" targetNodeId="9.~AbstractHierarchyView.showItemInHierarchy(jetbrains.mps.smodel.INodeAdapter,jetbrains.mps.smodel.IOperationContext):void" resolveInfo="showItemInHierarchy" />
               <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="2925366645633919015">
                 <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="2925366645633919011">
                   <node role="operand" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpression" id="2925366645633919012" />

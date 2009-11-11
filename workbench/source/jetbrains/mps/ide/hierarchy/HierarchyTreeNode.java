@@ -99,7 +99,7 @@ public class HierarchyTreeNode<T extends INodeAdapter> extends MPSTreeNode {
     BaseAction hierarchyAction = new BaseAction("Show Hierarchy For This Node") {
       protected void doExecute(AnActionEvent e) {
         final SNode node = myNodePointer.getNode();
-        hierarchyView.showConceptInHierarchy((T) node.getAdapter(), getOperationContext());
+        hierarchyView.showItemInHierarchy((T) node.getAdapter(), getOperationContext());
       }
     };
     return ActionUtils.groupFromActions(hierarchyAction);

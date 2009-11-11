@@ -57,7 +57,7 @@ public abstract class AbstractHierarchyView<T extends INodeAdapter> extends Base
     myComponent.add(panel, BorderLayout.NORTH);
     myScrollPane = new JScrollPane(myHierarchyTree);
     myComponent.add(myScrollPane, BorderLayout.CENTER);
-    showConceptInHierarchy(null, null);
+    showItemInHierarchy(null, null);
 
     SwingUtilities.invokeLater(new Runnable() {
       public void run() {
@@ -165,7 +165,7 @@ public abstract class AbstractHierarchyView<T extends INodeAdapter> extends Base
             MPSProject project = getMPSProject();
             if (project != null) {
               final IOperationContext operationContext = project.createOperationContext();
-              showConceptInHierarchy((T) node.getAdapter(), operationContext);
+              showItemInHierarchy((T) node.getAdapter(), operationContext);
             }
           }
         });
@@ -174,7 +174,7 @@ public abstract class AbstractHierarchyView<T extends INodeAdapter> extends Base
     return ActionUtils.groupFromActions(action);
   }
 
-  public void showConceptInHierarchy(T node, IOperationContext _context) {
+  public void showItemInHierarchy(T node, IOperationContext _context) {
     myHierarchyTree.setOperationContext(_context);
     myContext = _context;
     myHierarchyTree.myHierarchyNode = node;

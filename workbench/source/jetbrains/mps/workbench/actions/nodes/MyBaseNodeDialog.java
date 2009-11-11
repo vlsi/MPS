@@ -71,7 +71,7 @@ public class MyBaseNodeDialog extends BaseNodeDialog {
       }
     });
     myError = error;
-    supertypesView.showConceptInHierarchy(adapter[0], operationContext);
+    supertypesView.showItemInHierarchy(adapter[0], operationContext);
   }
 
   private static String getTitle(final SNode node) {

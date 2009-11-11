@@ -82,7 +82,7 @@ public class ShowClassInHierarchy_Action extends GeneratedAction {
     try {
       SNode classNode = ShowClassInHierarchy_Action.this.getContextClassifier();
       BaseLanguageHierarchyViewTool tool = ShowClassInHierarchy_Action.this.context.getComponent(BaseLanguageHierarchyViewTool.class);
-      tool.showConceptInHierarchy(((Classifier)SNodeOperations.getAdapter(classNode)), ShowClassInHierarchy_Action.this.context);
+      tool.showItemInHierarchy(((Classifier)SNodeOperations.getAdapter(classNode)), ShowClassInHierarchy_Action.this.context);
       tool.openToolLater(true);
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
