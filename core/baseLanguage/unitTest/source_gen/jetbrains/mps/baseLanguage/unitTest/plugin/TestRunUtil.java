@@ -63,6 +63,14 @@ public class TestRunUtil {
     return SModelOperations.getRoots(model, "jetbrains.mps.baseLanguage.unitTest.structure.ITestCase");
   }
 
+  public static List<SNode> getModuleTests(IModule module) {
+    List<SNode> tests = new ArrayList<SNode>();
+    for (SModelDescriptor modelDescriptor : module.getOwnModelDescriptors()) {
+      ListSequence.fromList(tests).addSequence(ListSequence.fromList(TestRunUtil.getModelTests(modelDescriptor.getSModel())));
+    }
+    return tests;
+  }
+
   public static List<SNode> getModuleTests(String moduleName) {
     List<SNode> tests = new ArrayList<SNode>();
     if (moduleName == null) {

@@ -7,7 +7,8 @@ public enum JUnitRunTypes {
   METHOD(),
   NODE(),
   MODEL(),
-  MODULE();
+  MODULE(),
+  PROJECT();
 
   JUnitRunTypes() {
   }

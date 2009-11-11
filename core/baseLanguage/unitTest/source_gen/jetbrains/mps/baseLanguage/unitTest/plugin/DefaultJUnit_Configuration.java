@@ -30,6 +30,7 @@ import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.project.IModule;
 import jetbrains.mps.baseLanguage.plugin.RunUtil;
 import com.intellij.execution.ui.ExecutionConsole;
 import com.intellij.execution.configurations.RunnerSettings;
@@ -85,8 +86,10 @@ public class DefaultJUnit_Configuration extends BaseRunConfig {
             }
           }
         });
-        if (!(DefaultJUnit_Configuration.this.getStateObject().compileInMPS) && DefaultJUnit_Configuration.this.getStateObject().myParams != null && DefaultJUnit_Configuration.this.getStateObject().myParams.getMake()) {
-          error.append("can't make").append("\n");
+        if (DefaultJUnit_Configuration.this.getStateObject().type != JUnitRunTypes.PROJECT) {
+          if (!(DefaultJUnit_Configuration.this.getStateObject().compileInMPS) && DefaultJUnit_Configuration.this.getStateObject().myParams != null && DefaultJUnit_Configuration.this.getStateObject().myParams.getMake()) {
+            error.append("can't make").append("\n");
+          }
         }
       }
 
@@ -114,7 +117,7 @@ public class DefaultJUnit_Configuration extends BaseRunConfig {
         final List<AnAction> actions = ListSequence.fromList(new ArrayList<AnAction>());
         ProcessHandler handler = null;
         {
-          MPSProject mpsproject = MPSDataKeys.MPS_PROJECT.getData(environment.getDataContext());
+          final MPSProject mpsproject = MPSDataKeys.MPS_PROJECT.getData(environment.getDataContext());
           final JUnitTestViewComponent runComponent = new JUnitTestViewComponent(mpsproject, consoleView);
           final Wrappers._T<UnitTestRunner> testRunner = new Wrappers._T<UnitTestRunner>(null);
           try {
@@ -146,6 +149,10 @@ public class DefaultJUnit_Configuration extends BaseRunConfig {
                   ListSequence.fromList(tests).addSequence(ListSequence.fromList(TestRunUtil.getModelTests(TestRunUtil.getModel(DefaultJUnit_Configuration.this.getStateObject().model))));
                 } else if (DefaultJUnit_Configuration.this.getStateObject().type == JUnitRunTypes.MODULE) {
                   ListSequence.fromList(tests).addSequence(ListSequence.fromList(TestRunUtil.getModuleTests(DefaultJUnit_Configuration.this.getStateObject().module)));
+                } else if (DefaultJUnit_Configuration.this.getStateObject().type == JUnitRunTypes.PROJECT) {
+                  for (IModule projectModule : mpsproject.getModules()) {
+                    ListSequence.fromList(tests).addSequence(ListSequence.fromList(TestRunUtil.getModuleTests(projectModule)));
+                  }
                 }
                 runComponent.setTestCaseAndMethod(context, tests, methods);
                 ListSequence.fromList(all).addSequence(ListSequence.fromList(tests));
