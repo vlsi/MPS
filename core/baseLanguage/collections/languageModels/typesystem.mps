@@ -941,24 +941,25 @@
         </node>
         <node role="inequationGroup" type="jetbrains.mps.lang.typesystem.structure.DefaultGroupReference" id="5970100369440882438" />
       </node>
-      <node role="statement" type="jetbrains.mps.lang.typesystem.structure.CreateEquationStatement" id="6126991172893880603">
-        <node role="leftExpression" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause" id="6126991172893880604">
-          <node role="normalType" type="jetbrains.mps.lang.typesystem.structure.TypeOfExpression" id="6126991172893880605">
-            <node role="term" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="6126991172893880606">
-              <node role="operand" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference" id="6126991172893880607">
+      <node role="statement" type="jetbrains.mps.lang.typesystem.structure.CreateLessThanInequationStatement" id="5332044122260178142">
+        <node role="leftExpression" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause" id="5332044122260178143">
+          <node role="normalType" type="jetbrains.mps.lang.typesystem.structure.TypeOfExpression" id="5332044122260178144">
+            <node role="term" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="5332044122260178145">
+              <node role="operand" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference" id="5332044122260178146">
                 <link role="applicableNode" targetNodeId="1178725704686" resolveInfo="op" />
               </node>
-              <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="6126991172893880608">
+              <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="5332044122260178147">
                 <link role="link" targetNodeId="3.1172256416782" />
               </node>
             </node>
           </node>
         </node>
-        <node role="rightExpression" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause" id="6126991172893880609">
-          <node role="normalType" type="jetbrains.mps.lang.typesystem.structure.TypeVarReference" id="6126991172893880610">
+        <node role="rightExpression" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause" id="5332044122260178148">
+          <node role="normalType" type="jetbrains.mps.lang.typesystem.structure.TypeVarReference" id="5332044122260178149">
             <link role="typeVarDeclaration" targetNodeId="6126991172893688470" resolveInfo="ELEMENT_TYPE" />
           </node>
         </node>
+        <node role="inequationGroup" type="jetbrains.mps.lang.typesystem.structure.DefaultGroupReference" id="5332044122260178150" />
       </node>
       <node role="statement" type="jetbrains.mps.lang.typesystem.structure.CreateEquationStatement" id="1219443386085">
         <node role="leftExpression" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause" id="1219443386086">
