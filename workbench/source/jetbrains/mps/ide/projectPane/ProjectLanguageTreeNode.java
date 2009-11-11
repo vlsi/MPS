@@ -149,6 +149,11 @@ class ProjectLanguageTreeNode extends ProjectModuleTreeNode {
     public RuntimeModulesTreeNode() {
       super("runtime");
     }
+
+    @Override
+    public ActionGroup getActionGroup() {
+      return ActionUtils.getGroup(ProjectPane.PROJECT_PANE_RUNTIME_FOLDER_ACTIONS);
+    }
   }
 
   public class AllModelsTreeNode extends TextTreeNode {

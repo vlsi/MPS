@@ -28,6 +28,7 @@ public enum ActionPlace {
   PROJECT_PANE_TRANSIENT_MODULES("MPS_ProjectPane_TransientModels"),
   PROJECT_PANE_PACKAGE("MPS_ProjectPane_Package"),
   PROJECT_PANE_NAMESPACE("MPS_ProjectPane_Namespace"),
+  PROJECT_PANE_RUNTIME_FOLDER("MPS_ProjectPane_RuntimeFolder"),
   PROJECT_PANE("MPS_ProjectPane");
 
   private String myId = "";

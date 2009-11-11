@@ -62,6 +62,7 @@ public class Ide_ApplicationPlugin extends BaseApplicationPlugin {
     this.addGroup(groups, moduleName, "jetbrains.mps.ide.actions.JUnitTestMethodActions_ActionGroup");
     this.addGroup(groups, moduleName, "jetbrains.mps.ide.actions.ModelNewActions_ActionGroup");
     this.addGroup(groups, moduleName, "jetbrains.mps.ide.actions.PackageNewActions_ActionGroup");
+    this.addGroup(groups, moduleName, "jetbrains.mps.ide.actions.RuntimeFolderActions_ActionGroup");
     return groups;
   }
 

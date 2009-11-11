@@ -122,6 +122,7 @@ public class ProjectPane extends AbstractProjectViewPane {
   public static final String PROJECT_PANE_TRANSIENT_MODULES_ACTIONS = TransientModulesActions_ActionGroup.ID;
   public static final String PROJECT_PANE_PACKAGE_ACTIONS = PackageActions_ActionGroup.ID;
   public static final String PROJECT_PANE_NAMESPACE_ACTIONS = NamespaceActions_ActionGroup.ID;
+  public static final String PROJECT_PANE_RUNTIME_FOLDER_ACTIONS = RuntimeFolderActions_ActionGroup.ID;
 
   public static final String PROJECT_NEW_ACTIONS = ProjectNewActions_ActionGroup.ID;
   public static final String SOLUTION_NEW_ACTIONS = SolutionNewActions_ActionGroup.ID;
