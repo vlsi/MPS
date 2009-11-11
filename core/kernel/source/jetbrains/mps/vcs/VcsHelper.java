@@ -24,7 +24,6 @@ import com.intellij.openapi.project.ProjectManager;
 import com.intellij.openapi.util.Computable;
 import com.intellij.openapi.util.io.FileUtil;
 import com.intellij.openapi.application.ApplicationManager;
-import com.sun.org.apache.xml.internal.serializer.utils.Messages;
 
 import java.util.Collections;
 import java.util.Arrays;
