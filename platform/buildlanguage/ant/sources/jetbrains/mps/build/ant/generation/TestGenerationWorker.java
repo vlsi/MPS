@@ -118,9 +118,10 @@ public class TestGenerationWorker extends GeneratorWorker {
           List<BaseTestConfiguration> testConfigurationList = mpsProject.getProjectDescriptor().getTestConfigurations();
           for (BaseTestConfiguration config : testConfigurationList) {
             GenParameters genParams = config.getGenParams(mpsProject, true);
-            for (SModelDescriptor sm : genParams.getModelDescriptors()) {
-              cycles.add(new ModelCycle(sm, sm.getModule(), mpsProject));
-            }
+//            for (SModelDescriptor sm : genParams.getModelDescriptors()) {
+//              cycles.add(new ModelCycle(sm, sm.getModule(), mpsProject));
+//            }
+            cycles.add(new TestConfigurationCycle(mpsProject, config, genParams));
           }
         }
       });
