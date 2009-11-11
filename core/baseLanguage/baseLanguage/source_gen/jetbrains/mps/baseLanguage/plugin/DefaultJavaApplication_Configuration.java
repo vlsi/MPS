@@ -239,6 +239,7 @@ public class DefaultJavaApplication_Configuration extends BaseRunConfig {
     }
 
     protected void disposeEditor() {
+      MySettingsEditor.this.myComponent.dispose();
     }
   }
 

@@ -509,6 +509,15 @@ public class JUnitConfigEditor extends JPanel {
     myThis.myJavaOptions0.reset(config.getStateObject().myParams);
   }
 
+  public void dispose() {
+    myThis.myMethodName0.dispose();
+    myThis.myNodeName0.dispose();
+    myThis.myNodeNameWithMethod0.dispose();
+    myThis.myModelName0.dispose();
+    myThis.myModuleName0.dispose();
+    myThis.myJavaOptions0.dispose();
+  }
+
   public void onSelect() {
     myThis.myModulePanel0.setVisible(false);
     myThis.myModelPanel0.setVisible(false);

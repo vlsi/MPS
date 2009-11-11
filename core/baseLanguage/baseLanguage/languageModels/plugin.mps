@@ -50,7 +50,7 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590373(jetbrains.mps.baseLanguage.classifiers.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590553(jetbrains.mps.uiLanguage.structure)" version="1" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959054e(jetbrains.mps.uiLanguage.constraints)" version="26" />
-  <maxImportIndex value="136" />
+  <maxImportIndex value="137" />
   <import index="1" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="3" />
   <import index="3" modelUID="r:00000000-0000-4000-0000-011c895904a4(jetbrains.mps.ide.actions)" version="-1" />
   <import index="4" modelUID="f:java_stub#java.util(java.util@java_stub)" version="-1" />
@@ -129,6 +129,7 @@
   <import index="133" modelUID="f:java_stub#jetbrains.mps.debug(jetbrains.mps.debug@java_stub)" version="-1" />
   <import index="134" modelUID="f:java_stub#java.lang.annotation(java.lang.annotation@java_stub)" version="-1" />
   <import index="136" modelUID="f:java_stub#jetbrains.mps.findUsages(jetbrains.mps.findUsages@java_stub)" version="-1" />
+  <import index="137" modelUID="f:java_stub#com.intellij.openapi(com.intellij.openapi@java_stub)" version="-1" />
   <node type="jetbrains.mps.lang.plugin.structure.ActionGroupDeclaration" id="1205247737002">
     <property name="name" value="BaseLanguageModelActionsInternal" />
     <node role="modifier" type="jetbrains.mps.lang.plugin.structure.ModificationStatement" id="1205247768364">
@@ -37719,6 +37720,18 @@
           <link role="componentDeclaration" targetNodeId="60375257504267995" resolveInfo="ConfigEditor" />
         </node>
       </node>
+      <node role="disposeBlock" type="jetbrains.mps.lang.plugin.structure.DisposeEditorBlock" id="3188025887418367808">
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="3188025887418367809">
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="3188025887418367813">
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="3188025887418367818">
+              <node role="operand" type="jetbrains.mps.lang.plugin.structure.ComponentReference" id="3188025887418367815" />
+              <node role="operation" type="jetbrains.mps.baseLanguage.classifiers.structure.DefaultClassifierMethodCallOperation" id="3188025887418367822">
+                <link role="member" targetNodeId="3188025887418344676" resolveInfo="dispose" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
     </node>
     <node role="checkBlock" type="jetbrains.mps.lang.plugin.structure.CheckConfigurationBlock" id="4651714262421386269">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="4651714262421386270">
@@ -38654,6 +38667,23 @@
         </node>
       </node>
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="60375257504271248" />
+    </node>
+    <node role="componentMethod" type="jetbrains.mps.baseLanguage.classifiers.structure.DefaultClassifierMethodDeclaration" id="3188025887418344676">
+      <property name="name" value="dispose" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="3188025887418344682" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="3188025887418344678">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="3188025887418344683">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="3188025887418344685">
+            <node role="operand" type="jetbrains.mps.uiLanguage.structure.ComponentReference" id="3188025887418344684">
+              <link role="component" targetNodeId="5360151489983366031" resolveInfo="options" />
+            </node>
+            <node role="operation" type="jetbrains.mps.baseLanguage.classifiers.structure.DefaultClassifierMethodCallOperation" id="3188025887418344689">
+              <link role="member" targetNodeId="3188025887418336205" resolveInfo="dispose" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="3188025887418344681" />
     </node>
     <node role="afterConstruction" type="jetbrains.mps.uiLanguage.structure.AfterConstructionBlock" id="1105312746397522650">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1105312746397522651">
@@ -40120,6 +40150,53 @@
         </node>
       </node>
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="5360151489983366204" />
+    </node>
+    <node role="componentMethod" type="jetbrains.mps.baseLanguage.classifiers.structure.DefaultClassifierMethodDeclaration" id="3188025887418336205">
+      <property name="name" value="dispose" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="3188025887418336209" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="3188025887418336207">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="3188025887418336210">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="3188025887418336212">
+            <node role="operand" type="jetbrains.mps.uiLanguage.structure.ComponentReference" id="3188025887418336211">
+              <link role="component" targetNodeId="8880901618841208228" resolveInfo="jreHome" />
+            </node>
+            <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="3188025887418336216">
+              <link role="baseMethodDeclaration" targetNodeId="3433126726859383360" resolveInfo="dispose" />
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="3188025887418336218">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="3188025887418336220">
+            <node role="operand" type="jetbrains.mps.uiLanguage.structure.ComponentReference" id="3188025887418336219">
+              <link role="component" targetNodeId="426276280371604394" resolveInfo="workingDir" />
+            </node>
+            <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="3188025887418336224">
+              <link role="baseMethodDeclaration" targetNodeId="3433126726859383360" resolveInfo="dispose" />
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="3188025887418336249">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="3188025887418336251">
+            <node role="operand" type="jetbrains.mps.uiLanguage.structure.ComponentReference" id="3188025887418336250">
+              <link role="component" targetNodeId="5001211796553488867" resolveInfo="programParam" />
+            </node>
+            <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="3188025887418336255">
+              <link role="baseMethodDeclaration" targetNodeId="3433126726859383360" resolveInfo="dispose" />
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="3188025887418336257">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="3188025887418336259">
+            <node role="operand" type="jetbrains.mps.uiLanguage.structure.ComponentReference" id="3188025887418336258">
+              <link role="component" targetNodeId="5001211796553488843" resolveInfo="vmParam" />
+            </node>
+            <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="3188025887418336263">
+              <link role="baseMethodDeclaration" targetNodeId="3433126726859383360" resolveInfo="dispose" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="3188025887418336208" />
     </node>
     <node role="componentMethod" type="jetbrains.mps.baseLanguage.classifiers.structure.DefaultClassifierMethodDeclaration" id="6588394597081537837">
       <property name="name" value="onChangeAlternativeJRE" />
@@ -41606,6 +41683,26 @@
         </node>
       </node>
     </node>
+    <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="3433126726859389006">
+      <property name="name" value="getDisposableComponent" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="3433126726859389007">
+        <link role="classifier" targetNodeId="137.~Disposable" resolveInfo="Disposable" />
+      </node>
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="3433126726859389008" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="3433126726859389009">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="3433126726859389015">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="3433126726859389016">
+            <node role="operation" type="jetbrains.mps.baseLanguage.structure.FieldReferenceOperation" id="3433126726859389017">
+              <link role="fieldDeclaration" targetNodeId="8398380099657262856" resolveInfo="field" />
+            </node>
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="3433126726859389018" />
+          </node>
+        </node>
+      </node>
+      <node role="annotation" type="jetbrains.mps.baseLanguage.structure.AnnotationInstance" id="3433126726859389010">
+        <link role="annotation" targetNodeId="9.~Override" />
+      </node>
+    </node>
     <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="8398380099657262851" />
     <node role="constructor" type="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" id="8398380099657262852">
       <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="8398380099657262853" />
@@ -42082,6 +42179,47 @@
         </node>
       </node>
     </node>
+    <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="3433126726859383360">
+      <property name="name" value="dispose" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="3433126726859383361" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="3433126726859383362" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="3433126726859383363">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="3433126726859383365">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="3433126726859383366">
+            <property name="name" value="disposable" />
+            <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="3433126726859383367">
+              <link role="classifier" targetNodeId="137.~Disposable" resolveInfo="Disposable" />
+            </node>
+            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="3433126726859384317">
+              <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="3433126726859384318">
+                <link role="baseMethodDeclaration" targetNodeId="3433126726859289359" resolveInfo="getDisposableComponent" />
+              </node>
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="3433126726859384319" />
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="3433126726859384323">
+          <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="3433126726859384324">
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="3433126726859384336" />
+          </node>
+          <node role="condition" type="jetbrains.mps.baseLanguage.structure.EqualsExpression" id="3433126726859384332">
+            <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="3433126726859384335" />
+            <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="3433126726859384331">
+              <link role="variableDeclaration" targetNodeId="3433126726859383366" resolveInfo="disposable" />
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="3433126726859384338">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="3433126726859384552">
+            <link role="baseMethodDeclaration" targetNodeId="50.~Disposer.dispose(com.intellij.openapi.Disposable):void" resolveInfo="dispose" />
+            <link role="classConcept" targetNodeId="50.~Disposer" resolveInfo="Disposer" />
+            <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="3433126726859384553">
+              <link role="variableDeclaration" targetNodeId="3433126726859383366" resolveInfo="disposable" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
     <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="8795513460990302323">
       <property name="name" value="getTextField" />
       <node role="returnType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="8795513460990302327">
@@ -42095,6 +42233,18 @@
               <link role="baseMethodDeclaration" targetNodeId="16.~JTextField.&lt;init&gt;()" resolveInfo="JTextField" />
             </node>
           </node>
+        </node>
+      </node>
+    </node>
+    <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="3433126726859289359">
+      <property name="name" value="getDisposableComponent" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="3433126726859320774">
+        <link role="classifier" targetNodeId="137.~Disposable" resolveInfo="Disposable" />
+      </node>
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="3433126726859289361" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="3433126726859289362">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="3433126726859384321">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="3433126726859384322" />
         </node>
       </node>
     </node>
@@ -42118,6 +42268,9 @@
     </node>
     <node role="superclass" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="8795513460990302228">
       <link role="classifier" targetNodeId="16.~JPanel" resolveInfo="JPanel" />
+    </node>
+    <node role="implementedInterface" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="3433126726859383364">
+      <link role="classifier" targetNodeId="137.~Disposable" resolveInfo="Disposable" />
     </node>
   </node>
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="8795513460990302364">
@@ -42215,6 +42368,26 @@
         <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="2773897263978623797">
           <link role="classifier" targetNodeId="126.~FileChooserDescriptor" resolveInfo="FileChooserDescriptor" />
         </node>
+      </node>
+    </node>
+    <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="3433126726859388983">
+      <property name="name" value="getDisposableComponent" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="3433126726859388984">
+        <link role="classifier" targetNodeId="137.~Disposable" resolveInfo="Disposable" />
+      </node>
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="3433126726859388985" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="3433126726859388986">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="3433126726859388990">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="3433126726859388991">
+            <node role="operation" type="jetbrains.mps.baseLanguage.structure.FieldReferenceOperation" id="3433126726859388992">
+              <link role="fieldDeclaration" targetNodeId="8795513460990302375" resolveInfo="field" />
+            </node>
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="3433126726859388993" />
+          </node>
+        </node>
+      </node>
+      <node role="annotation" type="jetbrains.mps.baseLanguage.structure.AnnotationInstance" id="3433126726859388987">
+        <link role="annotation" targetNodeId="9.~Override" />
       </node>
     </node>
     <node role="field" type="jetbrains.mps.baseLanguage.structure.FieldDeclaration" id="8795513460990302375">
