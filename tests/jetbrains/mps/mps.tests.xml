@@ -8,6 +8,10 @@
 
     <target name="generation.tests">
         <mps.test.generation fork="true" compile="true" showdiff="true" invoketests="true" loglevel="info">
+            <jvmarg value="-Xss1024k"/>
+            <jvmarg value="-Xmx1000m"/>
+            <jvmarg value="-XX:MaxPermSize=92m"/>
+            <jvmarg value="-XX:+HeapDumpOnOutOfMemoryError"/>
 
             <!-- Bootstrap tests -->
             <project file="${mps.home}/core/baseLanguage/baseLanguage/baseLanguage.mpr"/>
