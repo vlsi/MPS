@@ -317,9 +317,16 @@ public class MessagesViewTool extends BaseProjectTool implements PersistentState
 
     group.addSeparator();
 
-    if (myList.getSelectedIndices().length == 1) {
-      final Message message = (Message) myList.getSelectedValue();
-      if (message.getKind() == MessageKind.ERROR) {
+    if (myList.getSelectedIndices().length >= 1) {
+      final Object[] messages = myList.getSelectedValues();
+      boolean containsError = false;
+      for (Object message : messages) {
+        if (((Message) message).getKind() == MessageKind.ERROR) {
+          containsError = true;
+          break;
+        }
+      }
+      if (containsError) {
         group.addSeparator();
         group.add(new BaseAction("Submit to Issue Tracker") {
           {
@@ -327,7 +334,7 @@ public class MessagesViewTool extends BaseProjectTool implements PersistentState
           }
 
           protected void doExecute(AnActionEvent e) {
-            submitToTracker(message);
+            submitToTracker(messages);
           }
         });
       }
@@ -347,10 +354,16 @@ public class MessagesViewTool extends BaseProjectTool implements PersistentState
     return group;
   }
 
-  private void submitToTracker(Message msg) {
+  private void submitToTracker(Object[] msgs) {
     BlameDialog dialog = BlameDialogComponent.getInstance().createDialog(WindowManager.getInstance().getFrame(getProject()));
-    dialog.setIssueTitle(msg.getText());
-    dialog.setEx(msg.getException());
+    StringBuilder issueTitle = new StringBuilder();
+    for (Object msg : msgs) {
+      if (!(msg instanceof Message)) continue;
+      Message message = (Message) msg;
+      issueTitle.append(message.getText()).append(' ');
+      dialog.setEx(message.getException());
+    }
+    dialog.setIssueTitle(issueTitle.toString());
     dialog.showDialog();
 
     if (!dialog.isCancelled()) {

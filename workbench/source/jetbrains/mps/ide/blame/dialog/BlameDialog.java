@@ -47,6 +47,8 @@ import java.awt.event.ActionEvent;
 import java.io.PrintWriter;
 import java.io.StringWriter;
 import java.io.StringReader;
+import java.util.ArrayList;
+import java.util.List;
 
 public class BlameDialog extends BaseDialog {
   private static final Logger LOG = Logger.getLogger(BlameDialog.class);
@@ -66,7 +68,7 @@ public class BlameDialog extends BaseDialog {
   private boolean myIsCancelled = true;
   private Response myResult;
 
-  private Throwable myEx;
+  private List<Throwable> myEx = new ArrayList<Throwable>();
 
   public BlameDialog(Dialog dialog) {
     super(dialog, CAPTION);
@@ -79,8 +81,13 @@ public class BlameDialog extends BaseDialog {
   }
 
   public void setEx(Throwable ex) {
-    myEx = ex;
-    myException.setText(ex2str(myEx));
+    myEx.add(ex);
+    String text = myException.getText();
+    if (text != null && text.length() > 0) {
+      myException.setText(text + "\n\n" + ex2str(ex));
+    } else {
+      myException.setText(ex2str(ex));
+    }
   }
 
   public void setIssueTitle(String message) {
@@ -184,7 +191,9 @@ public class BlameDialog extends BaseDialog {
     description.append(getAdditionalInfo());
     description.append("\n\n\n");
 
-    description.append(ex2str(myEx));
+    for (Throwable ex : myEx) {
+      description.append(ex2str(ex)).append("\n\n");
+    }
 
     Project project = MPSDataKeys.PROJECT.getData(DataManager.getInstance().getDataContext());
     Poster poster = new Poster(project);
