@@ -88,6 +88,7 @@ public class MatchParensRegexp_Editor extends DefaultNodeEditor {
       style.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD_ITALIC);
       style.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_MAGENTA);
     }
+    MatchParensRegexp_removeName.setCellActions(editorCell, node, editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();

@@ -13,7 +13,7 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902fb(jetbrains.mps.lang.smodel.constraints)" version="21" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" version="16" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959030d(jetbrains.mps.lang.constraints.structure)" version="1" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" version="1" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" version="7" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590338(jetbrains.mps.baseLanguage.closures.structure)" version="3" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959028c(jetbrains.mps.lang.structure.constraints)" version="11" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902ba(jetbrains.mps.lang.sharedConcepts.constraints)" version="0" />
@@ -833,6 +833,7 @@
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Property" id="1174564130683">
         <link role="relationDeclaration" targetNodeId="2.1169194664001" />
+        <link role="actionMap" targetNodeId="3840684028956596921" resolveInfo="MatchParensRegexp_removeName" />
         <node role="styleItem" type="jetbrains.mps.lang.editor.structure.FontStyleStyleClassItem" id="1214314934237">
           <property name="style" value="BOLD_ITALIC" />
         </node>
@@ -2352,6 +2353,26 @@
               </node>
               <node role="rValue" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="6129327962765859663">
                 <property name="value" value="false" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.editor.structure.CellActionMapDeclaration" id="3840684028956596921">
+    <property name="package" value="Regexps" />
+    <property name="name" value="MatchParensRegexp_removeName" />
+    <link role="applicableConcept" targetNodeId="1.1174564062919" resolveInfo="MatchParensRegexp" />
+    <node role="item" type="jetbrains.mps.lang.editor.structure.CellActionMapItem" id="3840684028956596922">
+      <property name="actionId" value="delete_action_id" />
+      <node role="executeFunction" type="jetbrains.mps.lang.editor.structure.CellActionMap_ExecuteFunction" id="3840684028956596923">
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="3840684028956596924">
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="3840684028956596925">
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="3840684028956596927">
+              <node role="operand" type="jetbrains.mps.lang.editor.structure.CellActionMap_FunctionParm_selectedNode" id="3840684028956596926" />
+              <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ReplaceWithNewOperation" id="3840684028956596931">
+                <link role="concept" targetNodeId="1.1174491169200" resolveInfo="ParensRegexp" />
               </node>
             </node>
           </node>
