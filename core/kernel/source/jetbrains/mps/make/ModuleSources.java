@@ -35,7 +35,7 @@ public class ModuleSources {
   private Set<JavaFile> myFilesToCompile = new HashSet<JavaFile>();
 
   private Set<ResourceFile> myResourcesToCopy = new HashSet<ResourceFile>();
-  private static final boolean CHECK_NEW_COMPILATION = false;
+  private static final boolean CHECK_NEW_COMPILATION = true;
 
   ModuleSources(IModule module, Dependencies deps) {
     myModule = module;
@@ -135,9 +135,9 @@ public class ModuleSources {
       IFile resourceInClasses = resourcesInClasses.get(resource);
       ResourceFile resourceInSources = myResourceFiles.get(resource);
       if (resourceInSources == null) {
-        myFilesToDelete.add(resourceInClasses);
+        toDelete.add(resourceInClasses);
       } else if (resourceInSources.getFile().lastModified() < resourceInClasses.lastModified()) {
-        myResourcesToCopy.remove(resourceInSources);
+        resourcesToCopy.remove(resourceInSources);
       }
     }
   }
@@ -155,9 +155,9 @@ public class ModuleSources {
       if (!classFile.exists()) continue;
 
       if (javaFile == null) {
-        myFilesToDelete.add(classFile);
+        toDelete.add(classFile);
       } else if (isFileUpToDate(javaFile, classFile)) {
-        myFilesToCompile.remove(javaFile);
+        toCompile.remove(javaFile);
       }
     }
 
