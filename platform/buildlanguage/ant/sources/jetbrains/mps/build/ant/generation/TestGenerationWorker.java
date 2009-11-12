@@ -43,7 +43,7 @@ public class TestGenerationWorker extends GeneratorWorker {
   private boolean myTestFailed = false;
   private final IBuildServerMessageFormat myBuildServerMessageFormat = getBuildServerMessageFormat();
   private final Map<BaseTestConfiguration, GenParameters> myTestConfigurations = new LinkedHashMap<BaseTestConfiguration, GenParameters>();
-  private final TesterGenerationType myGenerationType = new TesterGenerationType(true);
+  private final TesterGenerationType myGenerationType = new TesterGenerationType(false);
 
   public static void main(String[] args) {
     TestGenerationWorker generator = new TestGenerationWorker(WhatToDo.fromDumpInFile(new File(args[0])), new SystemOutLogger());
@@ -172,7 +172,7 @@ public class TestGenerationWorker extends GeneratorWorker {
         List<BaseTestConfiguration> testConfigurationList = project.getProjectDescriptor().getTestConfigurations();
         if (testConfigurationList.isEmpty()) {
           List<String> properties = myWhatToDo.getMPSProjectFiles().get(project);
-          if (properties.contains(TestGenerationOnTeamcity.WHOLE_PROJECT)) {
+          if (properties != null && properties.contains(TestGenerationOnTeamcity.WHOLE_PROJECT)) {
             TestGenerationWorker.super.extractModels(modelDescriptors, project);
           } else {
             warning("No test configurations for project " + project.getProjectDescriptor().getName());
