@@ -14,8 +14,8 @@ public class WhatToDoSerializationConsistencyTest extends TestCase {
   public void testCloningConcistencyWithProjects() {
     WhatToDo toDo = new WhatToDo();
 
-    toDo.addProjectFile(new File("platform/buildlanguage/BuildLanguage.mpr").getAbsoluteFile());
-    toDo.addProjectFile(new File("platform/bash/jetbrains.mps.bash.mpr").getAbsoluteFile());
+    toDo.addProjectFile(new File("platform/buildlanguage/BuildLanguage.mpr").getAbsoluteFile(), "blahblahblah1", "blahblahblah2");
+    toDo.addProjectFile(new File("platform/bash/jetbrains.mps.bash.mpr").getAbsoluteFile(), "blahblahblah1");
     toDo.addProjectFile(new File("platform/regexp/regexp.mpr").getAbsoluteFile());
 
     testToDoConsistency(toDo);

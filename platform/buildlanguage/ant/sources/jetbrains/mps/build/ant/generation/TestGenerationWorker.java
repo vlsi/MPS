@@ -38,6 +38,7 @@ public class TestGenerationWorker extends GeneratorWorker {
   private boolean myTestFailed = false;
   private final IBuildServerMessageFormat myBuildServerMessageFormat = getBuildServerMessageFormat();
   private final Map<BaseTestConfiguration, GenParameters> myTestConfigurations = new LinkedHashMap<BaseTestConfiguration, GenParameters>();
+  private final TesterGenerationType myGenerationType = new TesterGenerationType(true);
 
   public static void main(String[] args) {
     TestGenerationWorker generator = new TestGenerationWorker(WhatToDo.fromDumpInFile(new File(args[0])), new SystemOutLogger());
@@ -57,31 +58,30 @@ public class TestGenerationWorker extends GeneratorWorker {
   }
 
   @Override
-  protected void generateModulesCycle(GeneratorManager gm, EmptyProgressIndicator emptyProgressIndicator, Cycle cycle) {
+  protected void generateModulesCycle(GeneratorManager gm, ProgressIndicator progressIndicator, Cycle cycle) {
     String currentTestName = myBuildServerMessageFormat.escapeBuildMessage(cycle.toString());
     System.out.println(myBuildServerMessageFormat.formatTestStart(currentTestName));
 
-    final TesterGenerationType generationType = new TesterGenerationType(true);
-    cycle.generate(gm, generationType, emptyProgressIndicator, myMessageHandler);
+    cycle.generate(gm, myGenerationType, progressIndicator, myMessageHandler);
 
     List<String> diffReports;
     if (Boolean.parseBoolean(myWhatToDo.getProperty(TestGenerationOnTeamcity.SHOW_DIFF))) {
       diffReports = ModelAccess.instance().runReadAction(new Computable<List<String>>() {
         public List<String> compute() {
-          return DiffReporter.createDiffReports(generationType);
+          return DiffReporter.createDiffReports(myGenerationType);
         }
       });
     } else {
       diffReports = new ArrayList<String>();
     }
     final List<SModel> outputModels = new ArrayList<SModel>();
-    outputModels.addAll(generationType.getOutputModels());
+    outputModels.addAll(myGenerationType.getOutputModels());
 
     List<CompilationResult> compilationResult;
     if (Boolean.parseBoolean(myWhatToDo.getProperty(GenerateTask.COMPILE))) {
       compilationResult = ModelAccess.instance().runReadAction(new Computable<List<CompilationResult>>() {
         public List<CompilationResult> compute() {
-          return generationType.compile(IAdaptiveProgressMonitor.NULL_PROGRESS_MONITOR);
+          return myGenerationType.compile(IAdaptiveProgressMonitor.NULL_PROGRESS_MONITOR);
         }
       });
     } else {
@@ -92,12 +92,14 @@ public class TestGenerationWorker extends GeneratorWorker {
     if (Boolean.parseBoolean(myWhatToDo.getProperty(TestGenerationOnTeamcity.INVOKE_TESTS)) && Boolean.parseBoolean(myWhatToDo.getProperty(GenerateTask.COMPILE))) {
       testResults = ModelAccess.instance().runReadAction(new Computable<List<TestFailure>>() {
         public List<TestFailure> compute() {
-          return ProjectTester.invokeTests(generationType, outputModels);
+          return ProjectTester.invokeTests(myGenerationType, outputModels);
         }
       });
     } else {
       testResults = Collections.EMPTY_LIST;
     }
+
+    myGenerationType.clean();
 
     StringBuffer sb = createDetailedReport(compilationResult, testResults, diffReports);
     myMessageHandler.clean();
@@ -110,22 +112,19 @@ public class TestGenerationWorker extends GeneratorWorker {
   }
 
   @Override
-  protected List<Cycle> computeGenerationOrder(MPSProject project, Set<MPSProject> projects, Set<IModule> modules, final Set<SModelDescriptor> models) {
+  protected List<Cycle> computeGenerationOrder(MPSProject project, final Set<MPSProject> projects, final Set<IModule> modules, final Set<SModelDescriptor> models) {
     final List<Cycle> cycles = new ArrayList<Cycle>();
-    for (final MPSProject mpsProject : projects) {
-      ModelAccess.instance().runReadAction(new Runnable() {
-        public void run() {
-          List<BaseTestConfiguration> testConfigurationList = mpsProject.getProjectDescriptor().getTestConfigurations();
-          for (BaseTestConfiguration config : testConfigurationList) {
-            GenParameters genParams = config.getGenParams(mpsProject, true);
-            for (SModelDescriptor sm : genParams.getModelDescriptors()) {
-              cycles.add(new ModelCycle(sm, sm.getModule(), mpsProject));
-            }
-//            cycles.add(new TestConfigurationCycle(mpsProject, config, genParams));
-          }
-        }
-      });
+    final Map<IModule, List<SModelDescriptor>> moduleToModels = new LinkedHashMap<IModule, List<SModelDescriptor>>();
+
+    extractModels(projects, modules, models, moduleToModels);
+
+    for (IModule module : moduleToModels.keySet()) {
+      List<SModelDescriptor> modelsForModule = moduleToModels.get(module);
+      for (SModelDescriptor smodel : modelsForModule) {
+        cycles.add(new ModelCycle(smodel, module, project));
+      }
     }
+
     return cycles;
   }
 
@@ -135,7 +134,12 @@ public class TestGenerationWorker extends GeneratorWorker {
       public void run() {
         List<BaseTestConfiguration> testConfigurationList = project.getProjectDescriptor().getTestConfigurations();
         if (testConfigurationList.isEmpty()) {
-          TestGenerationWorker.super.extractModels(modelDescriptors, project);
+          List<String> properties = myWhatToDo.getMPSProjectFiles().get(project);
+          if (properties.contains(TestGenerationOnTeamcity.WHOLE_PROJECT)) {
+            TestGenerationWorker.super.extractModels(modelDescriptors, project);
+          } else {
+            warning("No test configurations for project " + project.getProjectDescriptor().getName());
+          }
         } else {
           for (BaseTestConfiguration config : testConfigurationList) {
             GenParameters genParams = config.getGenParams(project, true);
@@ -191,7 +195,6 @@ public class TestGenerationWorker extends GeneratorWorker {
         sb.append("  ");
         StringWriter writer = new StringWriter();
         failure.thrownException().printStackTrace(new PrintWriter(writer));
-        StringBuffer buffer = writer.getBuffer();
         sb.append(myBuildServerMessageFormat.escapeBuildMessage(writer.getBuffer()));
         sb.append(myBuildServerMessageFormat.getLinesSeparator());
       }
@@ -218,56 +221,6 @@ public class TestGenerationWorker extends GeneratorWorker {
   protected void showStatistic() {
     if (myTestFailed && myWhatToDo.getFailOnError()) {
       throw new BuildException("Tests Failed");
-    }
-  }
-
-  private class TestConfigurationCycle implements Cycle {
-    private final BaseTestConfiguration myConfiguration;
-    private final GenParameters myGenParameters;
-    private final MPSProject myProject;
-
-    public TestConfigurationCycle(MPSProject project, BaseTestConfiguration configuration, GenParameters genParams) {
-      myConfiguration = configuration;
-      myGenParameters = genParams;
-      myProject = project;
-    }
-
-    public void generate(GeneratorManager gm, IGenerationType generationType, ProgressIndicator progressIndicator, IMessageHandler messageHandler) {
-      gm.generateModels(myGenParameters.getModelDescriptors(),
-        new ModuleContext(myGenParameters.getModule(), myProject),
-        generationType,
-        progressIndicator,
-        messageHandler);
-    }
-
-    @Override
-    public String toString() {
-      return "configuration " + myConfiguration.getName() + "@" + myProject.getProjectDescriptor().getName();
-    }
-  }
-
-  private class ModuleCycle implements Cycle {
-    private final IModule myModule;
-    private final List<SModelDescriptor> myModels;
-    private final MPSProject myProject;
-
-    public ModuleCycle(IModule module, List<SModelDescriptor> models, MPSProject project) {
-      myModule = module;
-      myProject = project;
-      myModels = models;
-    }
-
-    public void generate(GeneratorManager gm, IGenerationType generationType, ProgressIndicator progressIndicator, IMessageHandler messageHandler) {
-      gm.generateModels(myModels,
-        new ModuleContext(myModule, myProject),
-        generationType,
-        progressIndicator,
-        messageHandler);
-    }
-
-    @Override
-    public String toString() {
-      return "generating " + myModule;
     }
   }
 

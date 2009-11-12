@@ -17,13 +17,11 @@ package jetbrains.mps.build.ant;
 
 import com.intellij.ide.IdeEventQueue;
 import com.intellij.openapi.application.PathMacros;
-import com.intellij.openapi.project.ProjectManager;
 import com.intellij.openapi.util.Computable;
+import com.intellij.openapi.project.ProjectManager;
 import com.intellij.util.PathUtil;
-import com.intellij.util.Processor;
 import jetbrains.mps.TestMain;
-import jetbrains.mps.fileTypes.MPSFileTypesManager;
-import jetbrains.mps.generator.ModelGenerationStatusManager;
+import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.ide.IdeMain;
 import jetbrains.mps.ide.IdeMain.TestMode;
 import jetbrains.mps.ide.ThreadUtils;
@@ -39,7 +37,6 @@ import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.persistence.DefaultModelRootManager;
 import jetbrains.mps.smodel.persistence.def.ModelFileReadException;
 import jetbrains.mps.smodel.persistence.def.ModelPersistence;
-import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.MPSExtentions;
@@ -84,43 +81,55 @@ public abstract class MpsWorker {
   public void work() {
     setupEnvironment();
 
-    for (File file : myWhatToDo.getMPSProjectFiles()) {
+    Map<File, List<String>> mpsProjects = myWhatToDo.getMPSProjectFiles();
+
+    for (File file : mpsProjects.keySet()) {
       if (!file.getName().endsWith(MPSExtentions.DOT_MPS_PROJECT)) continue;
 
       final MPSProject p = TestMain.loadProject(file);
       info("Loaded project " + p);
 
-      LinkedHashSet<MPSProject> projects = new LinkedHashSet<MPSProject>();
-      projects.add(p);
-      LinkedHashSet<IModule> modules = new LinkedHashSet<IModule>();
-      LinkedHashSet<SModelDescriptor> models = new LinkedHashSet<SModelDescriptor>();
-      collectModelsToGenerate(modules, models);
+      executeTask(p, Collections.singleton(p), new HashSet<IModule>(), new HashSet<SModelDescriptor>());
 
-      executeTask(p, projects, modules, models);
-
-      ThreadUtils.runInUIThreadAndWait(new Runnable() {
-        public void run() {
-          p.dispose();
-
-          IdeEventQueue.getInstance().flushQueue();
-          System.gc();
-        }
-      });
-      
-      for (int i = 0; i < 3; i++) {
-        try {
-          SwingUtilities.invokeAndWait(new Runnable() {
-            public void run() {
-
-            }
-          });
-        } catch (Exception e) {
-          e.printStackTrace();
-        }
-      }
+      disposeProject(p);
+      dispose();
     }
 
+    com.intellij.openapi.project.Project ideaProject = ProjectManager.getInstance().getDefaultProject();
+    File projectFile = FileUtil.createTmpFile();
+    final MPSProject project = new MPSProject(projectFile, new ProjectDescriptor(), ideaProject);
+
+    LinkedHashSet<IModule> modules = new LinkedHashSet<IModule>();
+    LinkedHashSet<SModelDescriptor> models = new LinkedHashSet<SModelDescriptor>();
+    collectModelsToGenerate(modules, models);
+    executeTask(project, Collections.EMPTY_SET, modules, models);
+
     showStatistic();
+  }
+
+  private void dispose() {
+    for (int i = 0; i < 3; i++) {
+      try {
+        SwingUtilities.invokeAndWait(new Runnable() {
+          public void run() {
+
+          }
+        });
+      } catch (Exception e) {
+        e.printStackTrace();
+      }
+    }
+  }
+
+  private void disposeProject(final MPSProject p) {
+    ThreadUtils.runInUIThreadAndWait(new Runnable() {
+      public void run() {
+        p.dispose();
+
+        IdeEventQueue.getInstance().flushQueue();
+        System.gc();
+      }
+    });
   }
 
   protected void setupEnvironment() {
@@ -195,6 +204,7 @@ public abstract class MpsWorker {
   protected void extractModels(Set<SModelDescriptor> modelDescriptors, MPSProject project) {
     List<SModelDescriptor> models = project.getProjectModels();
     for (Language language : project.getProjectLanguages()) {
+      models.addAll(language.getOwnModelDescriptors());
       for (jetbrains.mps.smodel.Generator gen : language.getGenerators()) {
         models.addAll(gen.getOwnModelDescriptors());
       }

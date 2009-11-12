@@ -18,6 +18,8 @@ import java.lang.reflect.Constructor;
 import java.lang.reflect.Method;
 import java.lang.reflect.InvocationTargetException;
 
+import jetbrains.mps.build.ant.ProjectNested;
+
 public abstract class MpsLoadTask extends org.apache.tools.ant.Task {
   private File myMpsHome;
   protected final WhatToDo myWhatToDo = new WhatToDo();
@@ -61,7 +63,7 @@ public abstract class MpsLoadTask extends org.apache.tools.ant.Task {
     }
   }
 
-  public void addConfiguredProject(FileSet projectInner) {
+  public void addConfiguredProject(ProjectNested projectInner) {
     Iterator it = projectInner.iterator();
     while (it.hasNext()) {
       FileResource next = (FileResource) it.next();
@@ -110,6 +112,7 @@ public abstract class MpsLoadTask extends org.apache.tools.ant.Task {
 
       List<String> commandLine = new ArrayList<String>();
       commandLine.add(JavaEnvUtils.getJreExecutable("java"));
+      commandLine.add("-client");
       if (myJvmArgs.isEmpty()) {
         commandLine.add("-Xss1024k");
         commandLine.add("-Xmx512m");

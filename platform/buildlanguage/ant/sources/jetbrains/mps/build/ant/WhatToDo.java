@@ -23,13 +23,11 @@ import java.lang.reflect.Method;
 import java.lang.reflect.InvocationTargetException;
 
 import jetbrains.mps.util.FileUtil;
-import jetbrains.mps.fileTypes.MPSFileType;
-import jetbrains.mps.vfs.MPSExtentions;
 
 public class WhatToDo {
   private final Set<File> myModels = new LinkedHashSet<File>();
   private final Set<File> myModules = new LinkedHashSet<File>();
-  private final Set<File> myMPSProjects = new LinkedHashSet<File>();
+  private final Map<File, List<String>> myMPSProjects = new LinkedHashMap<File, List<String>>();
   private boolean myFailOnError = false;
   private final Map<String, File> myLibraries = new LinkedHashMap<String, File>();
   private final Map<String, String> myMacro = new LinkedHashMap<String, String>();
@@ -55,7 +53,19 @@ public class WhatToDo {
 
   public void addProjectFile(File projectFile) {
     assert projectFile.exists() && projectFile.isFile();
-    myMPSProjects.add(projectFile);
+    if (!myMPSProjects.containsKey(projectFile)) {
+      myMPSProjects.put(projectFile, new ArrayList<String>());
+    }
+  }
+
+  public void addProjectFile(File projectFile, String... property) {
+    assert projectFile.exists() && projectFile.isFile();
+    List<String> projectProperties = myMPSProjects.get(projectFile);
+    if (projectProperties == null) {
+      projectProperties = new ArrayList<String>();
+      myMPSProjects.put(projectFile, projectProperties);
+    }
+    projectProperties.addAll(Arrays.asList(property));
   }
 
   public Set<File> getModels() {
@@ -74,12 +84,12 @@ public class WhatToDo {
     myModules.addAll(modules);
   }
 
-  public Set<File> getMPSProjectFiles() {
-    return Collections.unmodifiableSet(myMPSProjects);
+  public Map<File, List<String>> getMPSProjectFiles() {
+    return Collections.unmodifiableMap(myMPSProjects);
   }
 
-  public void updateMPSProjectFiles(Set<File> mpsProjects) {
-    myMPSProjects.addAll(mpsProjects);
+  public void updateMPSProjectFiles(Map<File, List<String>> mpsProjects) {
+    myMPSProjects.putAll(mpsProjects);
   }
 
   public boolean getFailOnError() {
@@ -168,10 +178,16 @@ public class WhatToDo {
       sb.append(f.getAbsolutePath());
       sb.append(" ");
     }
-    for (File f : myMPSProjects) {
+    for (File f : myMPSProjects.keySet()) {
       sb.append(MPS_PROJECT);
       sb.append("=");
       sb.append(f.getAbsolutePath());
+      sb.append("[");
+      for (String s : myMPSProjects.get(f)) {
+        sb.append(s);
+        sb.append(",");
+      }
+      sb.append("]");
       sb.append(" ");
     }
     for (String libraryName : myLibraries.keySet()) {
@@ -244,7 +260,7 @@ public class WhatToDo {
 
   public static WhatToDo fromDumpInFile(File file) {
     String dump = FileUtil.read(file);
-    file.delete();
+    if (!file.delete()) throw new RuntimeException("File " + file + " was not deleted.");
     return fromCommandLine(dump);
   }
 
@@ -265,7 +281,14 @@ public class WhatToDo {
           String[] nameValuePair = propertyValuePair[1].split("\\[|\\]");
           whatToDo.addMacro(nameValuePair[1], nameValuePair[2]);
         } else if (propertyValuePair[0].equals(MPS_PROJECT)) {
-          whatToDo.addProjectFile(new File(propertyValuePair[1]));
+          String[] nameValuePair = propertyValuePair[1].split("\\[|\\]");
+          String projectName = nameValuePair[0];
+          if (nameValuePair.length > 1) {
+            String[] properties = nameValuePair[1].split(",");
+            whatToDo.addProjectFile(new File(projectName), properties);
+          } else {
+            whatToDo.addProjectFile(new File(projectName));
+          }
         } else if (propertyValuePair[0].equals(FAIL_ON_ERROR)) {
           whatToDo.myFailOnError = Boolean.parseBoolean(propertyValuePair[1]);
         } else if (propertyValuePair[0].equals(LOG_LEVEL)) {

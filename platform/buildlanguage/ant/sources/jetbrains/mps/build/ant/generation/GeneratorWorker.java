@@ -31,7 +31,6 @@ import com.intellij.openapi.util.Computable;
 import javax.swing.SwingUtilities;
 
 public class GeneratorWorker extends MpsWorker {
-  private static final Logger LOG = Logger.getLogger(GeneratorWorker.class);
 
   protected final MyMessageHandler myMessageHandler = new MyMessageHandler();
 
@@ -76,7 +75,7 @@ public class GeneratorWorker extends MpsWorker {
 
     List<Cycle> order = computeGenerationOrder(project, projects, modules, models);
 
-    final EmptyProgressIndicator emptyProgressIndicator = new EmptyProgressIndicator();
+    final ProgressIndicator emptyProgressIndicator = new EmptyProgressIndicator();
     for (final Cycle cycle : order) {
 
       ModelAccess.instance().runWriteAction(new Runnable() {
@@ -87,7 +86,7 @@ public class GeneratorWorker extends MpsWorker {
     }
   }
 
-  protected void generateModulesCycle(GeneratorManager gm, EmptyProgressIndicator emptyProgressIndicator, Cycle cycle) {
+  protected void generateModulesCycle(GeneratorManager gm, ProgressIndicator emptyProgressIndicator, Cycle cycle) {
     info("Start generating " + cycle);
     cycle.generate(gm, new GenerateFilesGenerationType() {
       @Override
@@ -119,8 +118,8 @@ public class GeneratorWorker extends MpsWorker {
     // create cycles
     List<Cycle> cycles = new ArrayList<Cycle>();
     for (Set<IModule> modulesSet : modulesOrder) {
-      SimpleModuleCycle circle = new SimpleModuleCycle(project, modulesSet, moduleToModels);
-      cycles.add(circle);
+      SimpleModuleCycle cycle = new SimpleModuleCycle(project, modulesSet, moduleToModels);
+      cycles.add(cycle);
     }
 
     return cycles;

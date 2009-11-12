@@ -1,15 +1,14 @@
 package jetbrains.mps.build.ant.generation;
 
-import jetbrains.mps.build.ant.MpsWorker;
-import jetbrains.mps.build.ant.MyExecuteStreamHandler;
-import jetbrains.mps.build.ant.MyTeamcityAwareExecuteStreamHandler;
-import jetbrains.mps.build.ant.TeamCityMessageFormat;
-import org.apache.tools.ant.BuildException;
+import jetbrains.mps.build.ant.*;
+import org.apache.tools.ant.types.resources.FileResource;
+
+import java.util.Iterator;
 
 public class TestGenerationOnTeamcity extends GenerateTask {
   public static final String INVOKE_TESTS = "INVOKE_TESTS";
   public static final String SHOW_DIFF = "SHOW_DIFF";
-
+  public static final String WHOLE_PROJECT = "WHOLE_PROJECT";
 
   {
     myWhatToDo.putProperty(INVOKE_TESTS, Boolean.toString(false));
@@ -40,5 +39,17 @@ public class TestGenerationOnTeamcity extends GenerateTask {
   @Override
   protected MyExecuteStreamHandler getExecuteStreamHandler() {
     return new MyTeamcityAwareExecuteStreamHandler(this, new TeamCityMessageFormat());
+  }
+
+  public void addConfiguredProject(ProjectNested projectInner) {
+    if (projectInner.getWholeProject()) {
+      Iterator it = projectInner.iterator();
+      while (it.hasNext()) {
+        FileResource next = (FileResource) it.next();
+        myWhatToDo.addProjectFile(next.getFile(), WHOLE_PROJECT);
+      }
+    } else {
+      super.addConfiguredProject(projectInner);
+    }
   }
 }
