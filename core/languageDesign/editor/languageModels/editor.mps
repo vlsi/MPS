@@ -3845,6 +3845,7 @@
           <link role="relationDeclaration" targetNodeId="2.1164914727930" />
           <node role="editorComponent" type="jetbrains.mps.lang.editor.structure.InlineEditorComponent" id="1165261271537">
             <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Property" id="1165261271538">
+              <property name="readOnly" value="true" />
               <link role="relationDeclaration" targetNodeId="3.1169194664001" />
               <node role="styleItem" type="jetbrains.mps.lang.editor.structure.ForegroundColorStyleClassItem" id="1214399678648">
                 <property name="color" value="DARK_MAGENTA" />
