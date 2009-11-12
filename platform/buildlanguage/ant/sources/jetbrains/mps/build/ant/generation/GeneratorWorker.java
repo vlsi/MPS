@@ -65,7 +65,15 @@ public class GeneratorWorker extends MpsWorker {
   }
 
   private void generate(MPSProject project, Set<MPSProject> projects, Set<IModule> modules, Set<SModelDescriptor> models) {
-    StringBuffer s = new StringBuffer("Generating models:");
+    StringBuffer s = new StringBuffer("Generating:");
+    for (MPSProject p: projects) {
+      s.append("\n    ");
+      s.append(p);
+    }
+    for (IModule m : modules) {
+      s.append("\n    ");
+      s.append(m);
+    }
     for (SModelDescriptor m : models) {
       s.append("\n    ");
       s.append(m);
@@ -87,7 +95,7 @@ public class GeneratorWorker extends MpsWorker {
   }
 
   protected void generateModulesCycle(GeneratorManager gm, ProgressIndicator emptyProgressIndicator, Cycle cycle) {
-    info("Start generating " + cycle);
+    info("Start " + cycle);
     cycle.generate(gm, new GenerateFilesGenerationType() {
       @Override
       public boolean requiresCompilationAfterGeneration() {
@@ -96,7 +104,9 @@ public class GeneratorWorker extends MpsWorker {
     },
       emptyProgressIndicator,
       myMessageHandler);
-    info("Finished generating " + cycle);
+    info("Reloading classes...");
+    ClassLoaderManager.getInstance().reloadAll(new EmptyProgressIndicator());
+    info("Finished " + cycle);
   }
 
   protected List<Cycle> computeGenerationOrder(MPSProject project, Set<MPSProject> projects, Set<IModule> modules, Set<SModelDescriptor> models) {

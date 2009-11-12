@@ -150,4 +150,11 @@ public class TesterGenerationType extends GenerateFilesAndClassesGenerationType 
     }
     return getSources().get(JavaNameUtil.packageNameForModelUID(outputModel) + "." + outputRoot.substring(outputModel.getLongName().length()+1)); // see NameUtil
   }
+
+  public void clean() {
+    myNodeExtensionMap.clear();
+    myOutputModelRefToPath.clear();
+    myOutputModelRefToRoots.clear();
+    myOutputModelToPath.clear();
+  }
 }
