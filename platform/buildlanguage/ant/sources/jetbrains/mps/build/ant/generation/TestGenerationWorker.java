@@ -152,7 +152,8 @@ public class TestGenerationWorker extends GeneratorWorker {
     final List<Cycle> cycles = new ArrayList<Cycle>();
     final Map<IModule, List<SModelDescriptor>> moduleToModels = new LinkedHashMap<IModule, List<SModelDescriptor>>();
 
-    extractModels(projects, modules, models, moduleToModels);
+    cycles.addAll(super.computeGenerationOrder(project, projects, new HashSet<IModule>(), new HashSet<SModelDescriptor>()));
+    extractModels(Collections.EMPTY_SET, modules, models, moduleToModels);
 
     for (IModule module : moduleToModels.keySet()) {
       List<SModelDescriptor> modelsForModule = moduleToModels.get(module);
