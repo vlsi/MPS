@@ -26,6 +26,7 @@ public class LanguageActions_ActionGroup extends GeneratedActionGroup {
       LanguageActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.NewCheckLanguage_Action", "jetbrains.mps.ide");
       LanguageActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.CheckLanguage_Action", "jetbrains.mps.ide");
       LanguageActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.OptimizeModuleImports_Action", "jetbrains.mps.ide");
+      LanguageActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.FixVirtualPackges_Action", "jetbrains.mps.ide");
       LanguageActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.AnalyzeClasspath_Action", "jetbrains.mps.ide");
       LanguageActions_ActionGroup.this.addSeparator();
       LanguageActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.LanguageProperties_Action", "jetbrains.mps.ide");
