@@ -32,9 +32,15 @@ public class TestBrokenReferencesWorker extends MpsWorker {
   }
 
   protected void executeTask(MPSProject project, final Set<MPSProject> projects, Set<IModule> modules, final Set<SModelDescriptor> models) {
+    for (MPSProject p : projects) {
+      extractModels(models, p);
+    }
+    for (IModule m : modules) {
+      extractModels(models, m);
+    }
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
-        for (SModelDescriptor sm : GlobalScope.getInstance().getModelDescriptors()) {
+        for (SModelDescriptor sm : models) {
           if (!SModelStereotype.isUserModel(sm)) continue;
           String testName = "test references for " + sm.getLongName();
           output(myBuildServerMessageFormat.formatTestStart(testName));

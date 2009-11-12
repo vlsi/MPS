@@ -81,33 +81,23 @@ public abstract class MpsWorker {
   public void work() {
     setupEnvironment();
 
-    Map<File, List<String>> mpsProjects = myWhatToDo.getMPSProjectFiles();
-
-    for (File file : mpsProjects.keySet()) {
-      if (!file.getName().endsWith(MPSExtentions.DOT_MPS_PROJECT)) continue;
-
-      final MPSProject p = TestMain.loadProject(file);
-      info("Loaded project " + p);
-
-      executeTask(p, Collections.singleton(p), new HashSet<IModule>(), new HashSet<SModelDescriptor>());
-
-      disposeProject(p);
-      dispose();
-    }
-
     com.intellij.openapi.project.Project ideaProject = ProjectManager.getInstance().getDefaultProject();
+
     File projectFile = FileUtil.createTmpFile();
     final MPSProject project = new MPSProject(projectFile, new ProjectDescriptor(), ideaProject);
 
+    LinkedHashSet<MPSProject> projects = new LinkedHashSet<MPSProject>();
     LinkedHashSet<IModule> modules = new LinkedHashSet<IModule>();
     LinkedHashSet<SModelDescriptor> models = new LinkedHashSet<SModelDescriptor>();
-    collectModelsToGenerate(modules, models);
-    executeTask(project, Collections.EMPTY_SET, modules, models);
+    collectModelsToGenerate(projects, modules, models);
 
+    executeTask(project, projects, modules, models);
+
+    unloadLoadedStuff(projects);
     showStatistic();
   }
 
-  private void dispose() {
+  protected void dispose() {
     for (int i = 0; i < 3; i++) {
       try {
         SwingUtilities.invokeAndWait(new Runnable() {
@@ -121,7 +111,7 @@ public abstract class MpsWorker {
     }
   }
 
-  private void disposeProject(final MPSProject p) {
+  protected void disposeProject(final MPSProject p) {
     ThreadUtils.runInUIThreadAndWait(new Runnable() {
       public void run() {
         p.dispose();
@@ -148,6 +138,11 @@ public abstract class MpsWorker {
 
   protected abstract void showStatistic();
 
+  protected void unloadLoadedStuff(Set<MPSProject> projects) {
+    for (final MPSProject project : projects) {
+      disposeProject(project);
+    }
+  }
 
   private Level getLog4jLevel() {
     switch (myWhatToDo.getLogLevel()) {
@@ -196,9 +191,20 @@ public abstract class MpsWorker {
     });
   }
 
-  public void collectModelsToGenerate(LinkedHashSet<IModule> modules, LinkedHashSet<SModelDescriptor> models) {
+  public void collectModelsToGenerate(Set<MPSProject> projects, LinkedHashSet<IModule> modules, LinkedHashSet<SModelDescriptor> models) {
+    collectFromProjects(projects);
     collectFromModuleFiles(modules);
     collectFromModelFiles(models);
+  }
+
+  private void collectFromProjects(Set<MPSProject> projects) {
+    for (File projectFile : myWhatToDo.getMPSProjectFiles().keySet()) {
+      if (projectFile.getAbsolutePath().endsWith(MPSExtentions.DOT_MPS_PROJECT)) {
+        final MPSProject project = TestMain.loadProject(projectFile);
+        info("Loaded project " + project);
+        projects.add(project);
+      }
+    }
   }
 
   protected void extractModels(Set<SModelDescriptor> modelDescriptors, MPSProject project) {

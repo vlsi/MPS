@@ -10,6 +10,7 @@ import jetbrains.mps.project.ProjectTester;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.ModuleContext;
 import jetbrains.mps.project.structure.project.testconfigurations.BaseTestConfiguration;
+import jetbrains.mps.project.structure.project.ProjectDescriptor;
 import jetbrains.mps.project.tester.TesterGenerationType;
 import jetbrains.mps.project.tester.DiffReporter;
 import jetbrains.mps.generator.GeneratorManager;
@@ -18,12 +19,15 @@ import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.util.misc.hash.HashSet;
+import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.ide.progress.IAdaptiveProgressMonitor;
 import jetbrains.mps.ide.genconf.GenParameters;
 import jetbrains.mps.ide.messages.IMessageHandler;
 import jetbrains.mps.build.ant.IBuildServerMessageFormat;
 import jetbrains.mps.build.ant.WhatToDo;
 import jetbrains.mps.build.ant.TeamCityMessageFormat;
+import jetbrains.mps.vfs.MPSExtentions;
+import jetbrains.mps.TestMain;
 
 import java.util.*;
 import java.io.*;
@@ -31,6 +35,7 @@ import java.io.*;
 import com.intellij.openapi.util.Computable;
 import com.intellij.openapi.progress.EmptyProgressIndicator;
 import com.intellij.openapi.progress.ProgressIndicator;
+import com.intellij.openapi.project.ProjectManager;
 import junit.framework.TestFailure;
 
 public class TestGenerationWorker extends GeneratorWorker {
@@ -43,6 +48,37 @@ public class TestGenerationWorker extends GeneratorWorker {
   public static void main(String[] args) {
     TestGenerationWorker generator = new TestGenerationWorker(WhatToDo.fromDumpInFile(new File(args[0])), new SystemOutLogger());
     generator.workFromMain();
+  }
+
+  public void work() {
+    setupEnvironment();
+
+    Map<File, List<String>> mpsProjects = myWhatToDo.getMPSProjectFiles();
+
+    for (File file : mpsProjects.keySet()) {
+      if (!file.getName().endsWith(MPSExtentions.DOT_MPS_PROJECT)) continue;
+
+      final MPSProject p = TestMain.loadProject(file);
+      info("Loaded project " + p);
+
+      executeTask(p, Collections.singleton(p), new java.util.HashSet<IModule>(), new java.util.HashSet<SModelDescriptor>());
+
+      disposeProject(p);
+      dispose();
+    }
+
+    com.intellij.openapi.project.Project ideaProject = ProjectManager.getInstance().getDefaultProject();
+    File projectFile = FileUtil.createTmpFile();
+    final MPSProject project = new MPSProject(projectFile, new ProjectDescriptor(), ideaProject);
+
+    LinkedHashSet<IModule> modules = new LinkedHashSet<IModule>();
+    LinkedHashSet<SModelDescriptor> models = new LinkedHashSet<SModelDescriptor>();
+    collectModelsToGenerate(Collections.EMPTY_SET, modules, models);
+    executeTask(project, Collections.EMPTY_SET, modules, models);
+
+    dispose();
+
+    showStatistic();
   }
 
   public static IBuildServerMessageFormat getBuildServerMessageFormat() {

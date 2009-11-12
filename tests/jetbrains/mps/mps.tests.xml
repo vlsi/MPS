@@ -61,6 +61,12 @@
             <jvmarg value="-Xmx1000m"/>
             <jvmarg value="-XX:MaxPermSize=92m"/>
             <jvmarg value="-XX:+HeapDumpOnOutOfMemoryError"/>
+            <modules dir="${mps.home}">
+                <exclude name="**/classes/**"/>
+                <exclude name="**/classes_gen/**"/>
+                <exclude name="**/lib/**"/>
+                <exclude name="**/testMaterial/**"/>
+            </modules>
         </mps.test.broken.references>
     </target>
 
