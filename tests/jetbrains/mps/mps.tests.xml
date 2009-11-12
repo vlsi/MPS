@@ -32,7 +32,6 @@
             <project file="${mps.home}/platform/xmlDeprecated/xmlDeprecated.mpr"/>
             <project file="${mps.home}/platform/regexp/regexp.mpr"/>
             <project file="${mps.home}/core/languageDesign/quotation/quotation.mpr"/>
-            <project file="${mps.home}/core/languageDesign/quotation/quotation.mpr"/>
             <project file="${mps.home}/core/languageDesign/annotations/annotations.mpr"/>
             <project file="${mps.home}/core/languageDesign/pattern/pattern.mpr"/>
             <project file="${mps.home}/core/languageDesign/dataFlow/dataFlow.mpr"/>
