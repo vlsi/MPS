@@ -261,7 +261,7 @@ public class ModelChangesWatcher implements ApplicationComponent {
           String filePath = event.getPath();
           VirtualFile file = VFileSystem.getFile(filePath);
           if (file == null) continue;
-          if (file.isDirectory() && file.exists() && (file.getChildren() != null)) {
+          if (file.isDirectory() && file.exists() && (file.getChildren() != null) && file.isInLocalFileSystem()) {
             if (isUnderSignificantRoots(VFileSystem.toFile(file))) {
               VFileSystem.processFilesRecursively(file, new Processor<VirtualFile>() {
                 public boolean process(VirtualFile file) {
