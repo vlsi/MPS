@@ -9,6 +9,7 @@ public class ProjectActions_ActionGroup extends GeneratedActionGroup {
   private static Logger LOG = Logger.getLogger(ProjectActions_ActionGroup.class);
   public static final String ID = "jetbrains.mps.ide.actions.ProjectActions";
   public static final String LABEL_ID_projectNew = ID + "projectNew";
+  public static final String LABEL_ID_runConfig = ID + "runConfig";
 
   public ProjectActions_ActionGroup() {
     super("ProjectActions", ID);
@@ -21,6 +22,7 @@ public class ProjectActions_ActionGroup extends GeneratedActionGroup {
       ProjectActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.MakeProject_Action", "jetbrains.mps.ide");
       ProjectActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.RebuildProject_Action", "jetbrains.mps.ide");
       ProjectActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.CleanProject_Action", "jetbrains.mps.ide");
+      ProjectActions_ActionGroup.this.addAnchor(ProjectActions_ActionGroup.LABEL_ID_runConfig);
       ProjectActions_ActionGroup.this.addSeparator();
       ProjectActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.OptimizeProjectImports_Action", "jetbrains.mps.ide");
       ProjectActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.MPSProjectPaths_Action", "jetbrains.mps.ide");

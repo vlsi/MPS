@@ -16,6 +16,7 @@ import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.project.MPSProject;
 
 public class TestRunUtil {
   public TestRunUtil() {
@@ -84,6 +85,15 @@ public class TestRunUtil {
       }
     }
     return tests;
+  }
+
+  public static boolean containsTest(MPSProject project) {
+    for (IModule module : project.getModules()) {
+      if (ListSequence.fromList(getModuleTests(module)).isNotEmpty()) {
+        return true;
+      }
+    }
+    return false;
   }
 
   public static IModule getModule(String moduleName) {

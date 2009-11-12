@@ -23,6 +23,10 @@ public class JUnitConfigFromProject extends BaseConfigCreator<MPSProject> implem
   }
 
   private void createConfig(final MPSProject parameter) {
+    if (!(TestRunUtil.containsTest(parameter))) {
+      return;
+    }
+
     JUnitConfigFromProject.this.setSourceElement(new MPSPsiElement<MPSProject>(parameter));
 
     final String name = parameter.getComponent(Project.class).getName();
@@ -31,7 +35,7 @@ public class JUnitConfigFromProject extends BaseConfigCreator<MPSProject> implem
       DefaultJUnit_Configuration _config = new DefaultJUnit_Configuration(JUnitConfigFromProject.this.getContext().getProject(), configType.getConfigurationFactories()[0], "NewConfig") {
         @Override
         public String suggestedName() {
-          return "Tests in '" + name + "'";
+          return "All Tests in Project";
         }
       };
       _config.setName(name);

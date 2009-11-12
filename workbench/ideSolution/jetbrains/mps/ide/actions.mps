@@ -406,6 +406,9 @@
       <node role="reference" type="jetbrains.mps.lang.plugin.structure.ActionInstance" id="1215874522487">
         <link role="action" targetNodeId="1215874097590" resolveInfo="CleanProject" />
       </node>
+      <node role="reference" type="jetbrains.mps.lang.plugin.structure.GroupAnchor" id="5205542327955601442">
+        <property name="name" value="runConfig" />
+      </node>
       <node role="reference" type="jetbrains.mps.lang.plugin.structure.Separator" id="1208361663328" />
       <node role="reference" type="jetbrains.mps.lang.plugin.structure.ActionInstance" id="1215889588091">
         <link role="action" targetNodeId="1215889139721" resolveInfo="OptimizeProjectImports" />
@@ -27163,6 +27166,10 @@
     </node>
     <node role="modifier" type="jetbrains.mps.lang.plugin.structure.ModificationStatement" id="1341091614641347439">
       <link role="modifiedGroup" targetNodeId="1341091614641347436" resolveInfo="JUnitTestMethodActions" />
+    </node>
+    <node role="modifier" type="jetbrains.mps.lang.plugin.structure.ModificationStatement" id="7084337574345901885">
+      <link role="modifiedGroup" targetNodeId="1204991220529" resolveInfo="ProjectActions" />
+      <link role="point" targetNodeId="5205542327955601442" resolveInfo="runConfig" />
     </node>
   </node>
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="8300784086089079434">

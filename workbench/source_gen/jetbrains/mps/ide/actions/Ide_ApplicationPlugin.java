@@ -85,6 +85,7 @@ public class Ide_ApplicationPlugin extends BaseApplicationPlugin {
     this.insertGroupIntoAnother(LanguageActions_ActionGroup.ID, "RunContextGroup", null);
     this.insertGroupIntoAnother(JUnitTestCaseActions_ActionGroup.ID, "RunContextGroup", null);
     this.insertGroupIntoAnother(JUnitTestMethodActions_ActionGroup.ID, "RunContextGroup", null);
+    this.insertGroupIntoAnother(ProjectActions_ActionGroup.ID, "RunContextGroup", ProjectActions_ActionGroup.LABEL_ID_runConfig);
   }
 
   public void insertGroupIntoAnother(String toId, String whatId, String labelName) {

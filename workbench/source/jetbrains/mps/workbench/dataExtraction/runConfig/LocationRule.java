@@ -25,6 +25,7 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.project.IModule;
+import jetbrains.mps.project.MPSProject;
 import org.jetbrains.annotations.Nullable;
 
 public class LocationRule implements GetDataRule {
@@ -39,6 +40,8 @@ public class LocationRule implements GetDataRule {
     if (model != null) return new MPSLocation(project, model.getSModel());
     IModule module = (IModule) dataProvider.getData(MPSDataKeys.MODULE.getName());
     if (module != null) return new MPSLocation(project, module);
+    MPSProject mpsProject = (MPSProject) dataProvider.getData(MPSDataKeys.MPS_PROJECT.getName());
+    if (mpsProject != null) return new MPSLocation(project, mpsProject);
     return null;
   }
 }
