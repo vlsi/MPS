@@ -9,7 +9,7 @@
     <target name="generation.tests">
         <mps.test.generation fork="true" compile="true" showdiff="true" invoketests="true" loglevel="info">
 
-            <!-- Bootstrap test -->
+            <!-- Bootstrap tests -->
             <project file="${mps.home}/core/baseLanguage/baseLanguage/baseLanguage.mpr"/>
             <project file="${mps.home}/core/baseLanguage/baseLanguageInternal/baseLanguageInternal.mpr"/>
             <project file="${mps.home}/core/languageDesign/core/core.mpr"/>
@@ -39,7 +39,7 @@
             <project file="${mps.home}/core/languageDesign/test/test.mpr"/>
             <project file="${mps.home}/platform/xml/xml/xml.mpr"/>
 
-            <!-- Applications test -->
+            <!-- Applications tests -->
             <project file="${mps.home}/core/languageDesign/mps-lite/mps-lite.mpr"/>
             <project file="${mps.home}/platform/buildlanguage/BuildLanguage.mpr"/>
             <project file="${mps.home}/samples/complexLanguage/Complex.mpr"/>
