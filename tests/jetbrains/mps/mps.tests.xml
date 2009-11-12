@@ -45,7 +45,6 @@
             <project file="${mps.home}/samples/complexLanguage/Complex.mpr"/>
             <project file="${mps.home}/platform/uiLanguage/uiLanguage.mpr"/>
             <project file="${mps.home}/workbench/ideSolution/ide.mpr"/>
-            <project file="${mps.home}/workbench/ideSolution/ide.mpr"/>
             <project file="${mps.home}/samples/matrixLanguage/jetbrains.mps.matrixLanguage.mpr"/>
             <project file="${mps.home}/platform/ypath/YPath.mpr"/>
             <project file="${mps.home}/samples/xmlLiterals/jetbrains.mps.samples.xmlLiterals.mpr"/>
