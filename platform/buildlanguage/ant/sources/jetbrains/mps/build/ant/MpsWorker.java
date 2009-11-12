@@ -50,6 +50,7 @@ import org.apache.log4j.varia.NullAppender;
 import org.apache.tools.ant.Project;
 import org.apache.tools.ant.ProjectComponent;
 
+import javax.swing.SwingUtilities;
 import java.io.File;
 import java.io.PrintWriter;
 import java.io.StringWriter;
@@ -105,6 +106,18 @@ public abstract class MpsWorker {
           System.gc();
         }
       });
+      
+      for (int i = 0; i < 3; i++) {
+        try {
+          SwingUtilities.invokeAndWait(new Runnable() {
+            public void run() {
+
+            }
+          });
+        } catch (Exception e) {
+          e.printStackTrace();
+        }
+      }
     }
 
     showStatistic();
