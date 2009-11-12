@@ -12,6 +12,8 @@ import jetbrains.mps.smodel.SNode;
 import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.smodel.constraints.PresentationReferentConstraintContext;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 public class MatchVariableReferenceRegexp_match_ReferentConstraint extends BaseNodeReferenceSearchScopeProvider implements IModelConstraints {
   public MatchVariableReferenceRegexp_match_ReferentConstraint() {
@@ -33,8 +35,19 @@ public class MatchVariableReferenceRegexp_match_ReferentConstraint extends BaseN
     }
     ListSequence.fromList(matches).addSequence(ListSequence.fromList(SNodeOperations.getDescendants(top, "jetbrains.mps.baseLanguage.regexp.structure.MatchParensRegexp", true, new String[]{})));
     if (SNodeOperations.isInstanceOf(top, "jetbrains.mps.baseLanguage.regexp.structure.MatchParensRegexp")) {
-      ListSequence.fromList(matches).addElement(top);
+      ListSequence.fromList(matches).addElement(SNodeOperations.cast(top, "jetbrains.mps.baseLanguage.regexp.structure.MatchParensRegexp"));
     }
     return matches;
+  }
+
+  public boolean hasPresentation() {
+    return true;
+  }
+
+  public String getPresentation(final IOperationContext operationContext, final PresentationReferentConstraintContext _context) {
+    return (_context.getSmartReference() ?
+      "\\(" + SPropertyOperations.getString(_context.getParameterNode(), "name") + ")" :
+      SPropertyOperations.getString(_context.getParameterNode(), "name")
+    );
   }
 }

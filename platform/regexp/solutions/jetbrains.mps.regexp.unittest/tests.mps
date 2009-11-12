@@ -360,6 +360,47 @@
         </node>
       </node>
     </node>
+    <node role="regexp" type="jetbrains.mps.baseLanguage.regexp.structure.RegexpDeclaration" id="8786899561264886888">
+      <property name="name" value="test2" />
+      <node role="regexp" type="jetbrains.mps.baseLanguage.regexp.structure.SeqRegexp" id="8786899561264886917">
+        <node role="left" type="jetbrains.mps.baseLanguage.regexp.structure.MatchParensRegexp" id="8786899561264886890">
+          <property name="name" value="myname" />
+          <node role="regexp" type="jetbrains.mps.baseLanguage.regexp.structure.SeqRegexp" id="8786899561264886904">
+            <node role="right" type="jetbrains.mps.baseLanguage.regexp.structure.StarRegexp" id="8786899561264886911">
+              <node role="regexp" type="jetbrains.mps.baseLanguage.regexp.structure.PositiveSymbolClassRegexp" id="8786899561264886912">
+                <node role="part" type="jetbrains.mps.baseLanguage.regexp.structure.PredefinedSymbolClassSymbolClassPart" id="8786899561264886913">
+                  <link role="declaration" targetNodeId="2v.1174554738336" resolveInfo="\w" />
+                </node>
+                <node role="part" type="jetbrains.mps.baseLanguage.regexp.structure.PredefinedSymbolClassSymbolClassPart" id="8786899561264886914">
+                  <link role="declaration" targetNodeId="2v.1174554674770" resolveInfo="\d" />
+                </node>
+                <node role="part" type="jetbrains.mps.baseLanguage.regexp.structure.CharacterSymbolClassPart" id="8786899561264886916">
+                  <property name="character" value="_" />
+                </node>
+              </node>
+            </node>
+            <node role="left" type="jetbrains.mps.baseLanguage.regexp.structure.PredefinedSymbolClassRegexp" id="8786899561264886908">
+              <link role="symbolClass" targetNodeId="2v.1174554738336" resolveInfo="\w" />
+            </node>
+          </node>
+        </node>
+        <node role="right" type="jetbrains.mps.baseLanguage.regexp.structure.SeqRegexp" id="8786899561264886921">
+          <node role="right" type="jetbrains.mps.baseLanguage.regexp.structure.SeqRegexp" id="8786899561265006298">
+            <node role="right" type="jetbrains.mps.baseLanguage.regexp.structure.MatchVariableReferenceRegexp" id="8786899561265006302">
+              <link role="match" targetNodeId="8786899561264886890" resolveInfo="myname" />
+            </node>
+            <node role="left" type="jetbrains.mps.baseLanguage.regexp.structure.StarRegexp" id="8786899561264886926">
+              <node role="regexp" type="jetbrains.mps.baseLanguage.regexp.structure.PredefinedSymbolClassRegexp" id="8786899561264886925">
+                <link role="symbolClass" targetNodeId="2v.1174554710194" resolveInfo="\s" />
+              </node>
+            </node>
+          </node>
+          <node role="left" type="jetbrains.mps.baseLanguage.regexp.structure.StringLiteralRegexp" id="8786899561264886920">
+            <property name="text" value=":" />
+          </node>
+        </node>
+      </node>
+    </node>
   </node>
   <node type="jetbrains.mps.baseLanguage.unitTest.structure.BTestCase" id="1353467374625228509">
     <property name="testCaseName" value="Escaping" />
