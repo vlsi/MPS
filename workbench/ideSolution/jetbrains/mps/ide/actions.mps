@@ -32018,23 +32018,25 @@
                                         <property name="text" value="Temporary workaround for MPS-6704" />
                                       </node>
                                     </node>
-                                    <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="6042027733191671830">
-                                      <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="6042027733191671831">
-                                        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ContinueStatement" id="6042027733191671882" />
-                                      </node>
-                                      <node role="condition" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="6042027733191671873">
-                                        <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="6042027733191671851">
-                                          <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="6042027733191671846">
-                                            <link role="variableDeclaration" targetNodeId="4724295956567059830" resolveInfo="concept" />
-                                          </node>
-                                          <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="6042027733191671869">
-                                            <link role="property" targetNodeId="81.1169194664001" resolveInfo="name" />
-                                          </node>
+                                    <node role="statement" type="jetbrains.mps.baseLanguage.structure.CommentedStatementsBlock" id="2292185719207992184">
+                                      <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="6042027733191671830">
+                                        <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="6042027733191671831">
+                                          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ContinueStatement" id="6042027733191671882" />
                                         </node>
-                                        <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="6042027733191671878">
-                                          <link role="baseMethodDeclaration" targetNodeId="73.~String.equals(java.lang.Object):boolean" resolveInfo="equals" />
-                                          <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="6042027733191671880">
-                                            <property name="value" value="InlineEditorComponent" />
+                                        <node role="condition" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="6042027733191671873">
+                                          <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="6042027733191671851">
+                                            <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="6042027733191671846">
+                                              <link role="variableDeclaration" targetNodeId="4724295956567059830" resolveInfo="concept" />
+                                            </node>
+                                            <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="6042027733191671869">
+                                              <link role="property" targetNodeId="81.1169194664001" resolveInfo="name" />
+                                            </node>
+                                          </node>
+                                          <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="6042027733191671878">
+                                            <link role="baseMethodDeclaration" targetNodeId="73.~String.equals(java.lang.Object):boolean" resolveInfo="equals" />
+                                            <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="6042027733191671880">
+                                              <property name="value" value="InlineEditorComponent" />
+                                            </node>
                                           </node>
                                         </node>
                                       </node>

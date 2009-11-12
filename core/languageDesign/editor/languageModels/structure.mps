@@ -2560,7 +2560,7 @@
       <link role="conceptPropertyDeclaration" targetNodeId="3.1137473854053" />
     </node>
     <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1166049300910">
-      <property name="sourceCardinality" value="1" />
+      <property name="sourceCardinality" value="0..1" />
       <property name="role" value="conceptDeclaration" />
       <link role="target" targetNodeId="1.1169125787135" />
     </node>

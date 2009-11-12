@@ -123,9 +123,11 @@ public class ModelCheckerUtils {
               } else {
                 if (node.getReference(link.getRole()) == null) {
                   // Temporary workaround for MPS-6704 
-                  if (SPropertyOperations.getString(concept, "name").equals("InlineEditorComponent")) {
-                    continue;
-                  }
+                  /*
+                    if (SPropertyOperations.getString(concept, "name").equals("InlineEditorComponent")) {
+                      continue;
+                    }
+                  */
                   addIssue(results, node, "Cardinality constraint violation in role \"" + link.getRole() + "\"");
                 }
               }
