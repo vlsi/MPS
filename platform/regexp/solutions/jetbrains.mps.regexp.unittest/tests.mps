@@ -386,8 +386,13 @@
         </node>
         <node role="right" type="jetbrains.mps.baseLanguage.regexp.structure.SeqRegexp" id="8786899561264886921">
           <node role="right" type="jetbrains.mps.baseLanguage.regexp.structure.SeqRegexp" id="8786899561265006298">
-            <node role="right" type="jetbrains.mps.baseLanguage.regexp.structure.MatchVariableReferenceRegexp" id="8786899561265006302">
-              <link role="match" targetNodeId="8786899561264886890" resolveInfo="myname" />
+            <node role="right" type="jetbrains.mps.baseLanguage.regexp.structure.SeqRegexp" id="8786899561265107276">
+              <node role="right" type="jetbrains.mps.baseLanguage.regexp.structure.PredefinedSymbolClassRegexp" id="8786899561266078734">
+                <link role="symbolClass" targetNodeId="2v.1174554738336" resolveInfo="\w" />
+              </node>
+              <node role="left" type="jetbrains.mps.baseLanguage.regexp.structure.MatchVariableReferenceRegexp" id="8786899561265006302">
+                <link role="match" targetNodeId="8786899561264886890" resolveInfo="myname" />
+              </node>
             </node>
             <node role="left" type="jetbrains.mps.baseLanguage.regexp.structure.StarRegexp" id="8786899561264886926">
               <node role="regexp" type="jetbrains.mps.baseLanguage.regexp.structure.PredefinedSymbolClassRegexp" id="8786899561264886925">

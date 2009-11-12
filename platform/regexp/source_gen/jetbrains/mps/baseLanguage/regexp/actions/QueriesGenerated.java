@@ -124,6 +124,37 @@ public class QueriesGenerated {
       }
     }
     {
+      SNode outputConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.regexp.structure.MatchParensRegexp");
+      SNode childConcept = (SNode)_context.getChildConcept();
+      if (outputConcept == null || SConceptOperations.isSuperConceptOf(childConcept, NameUtil.nodeFQName(outputConcept))) {
+        ListSequence.fromList(result).addElement(new DefaultSimpleSubstituteAction(outputConcept, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope()) {
+          public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
+            SNode node = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.regexp.structure.MatchParensRegexp", _context.getCurrentTargetNode());
+            SPropertyOperations.set(node, "name", (pattern.endsWith(":") ?
+              pattern.substring(1, pattern.length() - 1) :
+              pattern.substring(1)
+            ));
+            return node;
+          }
+
+          public String getMatchingText(String pattern) {
+            if (!(_PrecompiledPatterns.REGEXP1.matcher(pattern).matches())) {
+              return "(name:";
+            }
+            String s = pattern;
+            if (!(s.endsWith(":"))) {
+              s += ":";
+            }
+            return s;
+          }
+
+          public String getVisibleMatchingText(String pattern) {
+            return this.getMatchingText(pattern);
+          }
+        });
+      }
+    }
+    {
       SNode outputConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.regexp.structure.StringLiteralRegexp");
       SNode childConcept = (SNode)_context.getChildConcept();
       if (outputConcept == null || SConceptOperations.isSuperConceptOf(childConcept, NameUtil.nodeFQName(outputConcept))) {
@@ -139,7 +170,7 @@ public class QueriesGenerated {
           }
 
           public boolean canSubstitute_internal(String pattern, boolean strictly) {
-            return _PrecompiledPatterns.REGEXP1.matcher(pattern).matches();
+            return _PrecompiledPatterns.REGEXP2.matcher(pattern).matches();
           }
 
           public String getDescriptionText(String pattern) {
@@ -172,7 +203,7 @@ public class QueriesGenerated {
           }
 
           public boolean canSubstitute_internal(String pattern, boolean strictly) {
-            return _PrecompiledPatterns.REGEXP2.matcher(pattern).matches();
+            return _PrecompiledPatterns.REGEXP3.matcher(pattern).matches();
           }
 
           public String getDescriptionText(String pattern) {
@@ -213,7 +244,7 @@ public class QueriesGenerated {
           }
 
           public boolean canSubstitute_internal(String pattern, boolean strictly) {
-            return _PrecompiledPatterns.REGEXP3.matcher(pattern).matches();
+            return _PrecompiledPatterns.REGEXP4.matcher(pattern).matches();
           }
 
           public String getMatchingText(String pattern) {

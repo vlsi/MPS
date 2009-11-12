@@ -620,12 +620,15 @@
       <link role="target" targetNodeId="1174482743037" resolveInfo="Regexp" />
     </node>
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1174564090390">
-      <property name="value" value="(name" />
+      <property name="value" value="(name:" />
       <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" />
     </node>
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1174564095782">
       <property name="value" value="matching parens" />
       <link role="conceptPropertyDeclaration" targetNodeId="1.1137473914776" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.BooleanConceptProperty" id="8786899561265864288">
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473994950" resolveInfo="dontSubstituteByDefault" />
     </node>
     <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="1174564103895">
       <link role="intfc" targetNodeId="1.1169194658468" />
