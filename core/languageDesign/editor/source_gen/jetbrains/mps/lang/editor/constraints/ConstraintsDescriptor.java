@@ -21,7 +21,6 @@ public class ConstraintsDescriptor implements IModelConstraints {
     ListSequence.fromList(this.myConstraints).addElement(new CellModel_Property_propertyDeclaration_ReferentConstraint());
     ListSequence.fromList(this.myConstraints).addElement(new CellMenuComponentFeature_Property_propertyDeclaration_ReferentConstraint());
     ListSequence.fromList(this.myConstraints).addElement(new CellModel_WithRole_relationDeclaration_ReferentConstraint());
-    ListSequence.fromList(this.myConstraints).addElement(new CellMenuPart_ReplaceNode_CustomNodeConcept_replacementConcept_ReferentConstraint());
     ListSequence.fromList(this.myConstraints).addElement(new CellModel_RefNodeList_linkDeclaration_ReferentConstraint());
     ListSequence.fromList(this.myConstraints).addElement(new CellModel_RefNode_linkDeclaration_ReferentConstraint());
     ListSequence.fromList(this.myConstraints).addElement(new CellModel_TransactionalProperty_property_ReferentConstraint());
