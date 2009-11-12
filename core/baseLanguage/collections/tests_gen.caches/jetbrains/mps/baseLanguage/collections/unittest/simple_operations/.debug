@@ -1,14 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
+  <nodeInfo nodeId="1165526644939" fileName="SimpleOperations1.java" startLine="26" startPosition="0" endLine="79" endPosition="0" />
   <nodeInfo nodeId="1165526656442" fileName="SimpleOperations1.java" startLine="27" startPosition="25" endLine="68" endPosition="7" />
+  <nodeInfo nodeId="1165526704344" fileName="SimpleOperations1.java" startLine="16" startPosition="49" endLine="26" endPosition="0" />
   <nodeInfo nodeId="1165526704346" fileName="SimpleOperations1.java" startLine="17" startPosition="25" endLine="18" endPosition="80" />
   <nodeInfo nodeId="1165526833446" fileName="SimpleOperations1.java" startLine="18" startPosition="80" endLine="19" endPosition="64" />
   <nodeInfo nodeId="1165526923814" fileName="SimpleOperations1.java" startLine="19" startPosition="64" endLine="20" endPosition="64" />
   <nodeInfo nodeId="1165526947964" fileName="SimpleOperations1.java" startLine="68" startPosition="7" endLine="69" endPosition="63" />
   <nodeInfo nodeId="1165526947970" fileName="SimpleOperations1.java" startLine="69" startPosition="63" endLine="70" endPosition="63" />
+  <nodeInfo nodeId="1165526992412" fileName="SimpleOperations1.java" startLine="131" startPosition="0" endLine="141" endPosition="0" />
   <nodeInfo nodeId="1165527075578" fileName="SimpleOperations1.java" startLine="132" startPosition="25" endLine="133" endPosition="68" />
   <nodeInfo nodeId="1165527140910" fileName="SimpleOperations1.java" startLine="133" startPosition="68" endLine="134" endPosition="64" />
   <nodeInfo nodeId="1165527140916" fileName="SimpleOperations1.java" startLine="134" startPosition="64" endLine="135" endPosition="64" />
+  <nodeInfo nodeId="1165527190595" fileName="SimpleOperations1.java" startLine="141" startPosition="0" endLine="151" endPosition="0" />
   <nodeInfo nodeId="1165527190597" fileName="SimpleOperations1.java" startLine="142" startPosition="25" endLine="143" endPosition="91" />
   <nodeInfo nodeId="1165527190604" fileName="SimpleOperations1.java" startLine="143" startPosition="91" endLine="144" endPosition="63" />
   <nodeInfo nodeId="1165527190610" fileName="SimpleOperations1.java" startLine="144" startPosition="63" endLine="145" endPosition="63" />
@@ -26,6 +30,7 @@
   <nodeInfo nodeId="1165596555633" fileName="SimpleOperations1.java" startLine="136" startPosition="63" endLine="137" endPosition="63" />
   <nodeInfo nodeId="1165596592183" fileName="SimpleOperations1.java" startLine="145" startPosition="63" endLine="146" endPosition="62" />
   <nodeInfo nodeId="1165596592189" fileName="SimpleOperations1.java" startLine="146" startPosition="62" endLine="147" endPosition="62" />
+  <nodeInfo nodeId="1165597541289" fileName="SimpleOperations1.java" startLine="79" startPosition="0" endLine="131" endPosition="0" />
   <nodeInfo nodeId="1165597541291" fileName="SimpleOperations1.java" startLine="80" startPosition="25" endLine="121" endPosition="7" />
   <nodeInfo nodeId="1165597563931" fileName="SimpleOperations1.java" startLine="122" startPosition="18" endLine="129" endPosition="5" />
   <nodeInfo nodeId="1165597592844" fileName="SimpleOperations1.java" startLine="121" startPosition="7" endLine="122" endPosition="18" />
@@ -34,6 +39,7 @@
   <nodeInfo nodeId="1165597680563" fileName="SimpleOperations1.java" startLine="125" startPosition="14" endLine="126" endPosition="65" />
   <nodeInfo nodeId="1165597680575" fileName="SimpleOperations1.java" startLine="126" startPosition="65" endLine="127" endPosition="64" />
   <nodeInfo nodeId="1165597680587" fileName="SimpleOperations1.java" startLine="127" startPosition="64" endLine="128" endPosition="69" />
+  <nodeInfo nodeId="1170977675570" fileName="Sort_Test1.java" startLine="12" startPosition="42" endLine="27" endPosition="0" />
   <nodeInfo nodeId="1170977695137" fileName="Sort_Test1.java" startLine="13" startPosition="24" endLine="14" endPosition="100" />
   <nodeInfo nodeId="1170977737761" fileName="Sort_Test1.java" startLine="14" startPosition="100" endLine="15" endPosition="96" />
   <nodeInfo nodeId="1170979101304" fileName="Sort_Test1.java" startLine="15" startPosition="96" endLine="20" endPosition="30" />
@@ -41,6 +47,7 @@
   <nodeInfo nodeId="1170979129412" fileName="Sort_Test1.java" startLine="20" startPosition="30" endLine="21" endPosition="18" />
   <nodeInfo nodeId="1170979142808" fileName="Sort_Test1.java" startLine="22" startPosition="58" endLine="23" endPosition="80" />
   <nodeInfo nodeId="1170979225431" fileName="Sort_Test1.java" startLine="23" startPosition="80" endLine="24" endPosition="14" />
+  <nodeInfo nodeId="1170979239248" fileName="Sort_Test1.java" startLine="27" startPosition="0" endLine="42" endPosition="0" />
   <nodeInfo nodeId="1170979239251" fileName="Sort_Test1.java" startLine="28" startPosition="24" endLine="29" endPosition="100" />
   <nodeInfo nodeId="1170979239263" fileName="Sort_Test1.java" startLine="29" startPosition="100" endLine="30" endPosition="96" />
   <nodeInfo nodeId="1170979239275" fileName="Sort_Test1.java" startLine="30" startPosition="96" endLine="35" endPosition="31" />
@@ -48,20 +55,25 @@
   <nodeInfo nodeId="1170979239291" fileName="Sort_Test1.java" startLine="36" startPosition="18" endLine="40" endPosition="5" />
   <nodeInfo nodeId="1170979239295" fileName="Sort_Test1.java" startLine="37" startPosition="58" endLine="38" endPosition="80" />
   <nodeInfo nodeId="1170979239302" fileName="Sort_Test1.java" startLine="38" startPosition="80" endLine="39" endPosition="14" />
+  <nodeInfo nodeId="1171392119645" fileName="ListOperations_Test.java" startLine="12" startPosition="51" endLine="20" endPosition="0" />
   <nodeInfo nodeId="1171392143009" fileName="ListOperations_Test.java" startLine="13" startPosition="24" endLine="14" endPosition="96" />
   <nodeInfo nodeId="1171392224088" fileName="ListOperations_Test.java" startLine="14" startPosition="96" endLine="15" endPosition="61" />
   <nodeInfo nodeId="1171392231547" fileName="ListOperations_Test.java" startLine="15" startPosition="61" endLine="16" endPosition="44" />
   <nodeInfo nodeId="1171392319786" fileName="ListOperations_Test.java" startLine="16" startPosition="44" endLine="17" endPosition="60" />
   <nodeInfo nodeId="1171392324688" fileName="ListOperations_Test.java" startLine="17" startPosition="60" endLine="18" endPosition="36" />
+  <nodeInfo nodeId="1172256778150" fileName="Contains_Test.java" startLine="15" startPosition="45" endLine="61" endPosition="0" />
   <nodeInfo nodeId="1172256827202" fileName="Contains_Test.java" startLine="16" startPosition="45" endLine="57" endPosition="7" />
   <nodeInfo nodeId="1172256928881" fileName="Contains_Test.java" startLine="57" startPosition="7" endLine="58" endPosition="64" />
+  <nodeInfo nodeId="1172267731982" fileName="Contains_Test.java" startLine="61" startPosition="0" endLine="70" endPosition="0" />
   <nodeInfo nodeId="1172267741016" fileName="Contains_Test.java" startLine="62" startPosition="45" endLine="63" endPosition="93" />
   <nodeInfo nodeId="1172267782804" fileName="Contains_Test.java" startLine="63" startPosition="93" endLine="64" endPosition="64" />
   <nodeInfo nodeId="1172268379289" fileName="Contains_Test.java" startLine="58" startPosition="64" endLine="59" endPosition="65" />
   <nodeInfo nodeId="1172268431597" fileName="Contains_Test.java" startLine="64" startPosition="64" endLine="65" endPosition="65" />
+  <nodeInfo nodeId="1172278345458" fileName="ListOperations_Test.java" startLine="20" startPosition="0" endLine="26" endPosition="0" />
   <nodeInfo nodeId="1172278352727" fileName="ListOperations_Test.java" startLine="21" startPosition="24" endLine="22" endPosition="162" />
   <nodeInfo nodeId="1172279133392" fileName="ListOperations_Test.java" startLine="22" startPosition="162" endLine="23" endPosition="92" />
   <nodeInfo nodeId="1172279190074" fileName="ListOperations_Test.java" startLine="23" startPosition="92" endLine="24" endPosition="96" />
+  <nodeInfo nodeId="1176938681926" fileName="Union_Test.java" startLine="12" startPosition="42" endLine="112" endPosition="0" />
   <nodeInfo nodeId="1176938703546" fileName="Union_Test.java" startLine="13" startPosition="46" endLine="54" endPosition="7" />
   <nodeInfo nodeId="1176938768117" fileName="Union_Test.java" startLine="54" startPosition="7" endLine="95" endPosition="7" />
   <nodeInfo nodeId="1176938902284" fileName="Union_Test.java" startLine="95" startPosition="7" endLine="96" endPosition="86" />
@@ -70,6 +82,7 @@
   <nodeInfo nodeId="1176942511728" fileName="Union_Test.java" startLine="99" startPosition="61" endLine="100" endPosition="61" />
   <nodeInfo nodeId="1176942516488" fileName="Union_Test.java" startLine="100" startPosition="61" endLine="101" endPosition="61" />
   <nodeInfo nodeId="1176942526092" fileName="Union_Test.java" startLine="101" startPosition="61" endLine="102" endPosition="61" />
+  <nodeInfo nodeId="1178898653156" fileName="Distinct_Test.java" startLine="16" startPosition="45" endLine="43" endPosition="0" />
   <nodeInfo nodeId="1178898665545" fileName="Distinct_Test.java" startLine="17" startPosition="49" endLine="18" endPosition="29" />
   <nodeInfo nodeId="1178898722943" fileName="Distinct_Test.java" startLine="18" startPosition="29" endLine="19" endPosition="90" />
   <nodeInfo nodeId="1178898985862" fileName="Distinct_Test.java" startLine="19" startPosition="90" endLine="20" endPosition="54" />
@@ -78,6 +91,7 @@
   <nodeInfo nodeId="1178899262694" fileName="Distinct_Test.java" startLine="36" startPosition="13" endLine="37" endPosition="18" />
   <nodeInfo nodeId="1178899267815" fileName="Distinct_Test.java" startLine="38" startPosition="53" endLine="39" endPosition="32" />
   <nodeInfo nodeId="1178899277291" fileName="Distinct_Test.java" startLine="39" startPosition="32" endLine="40" endPosition="10" />
+  <nodeInfo nodeId="1178899307522" fileName="Distinct_Test.java" startLine="43" startPosition="0" endLine="126" endPosition="0" />
   <nodeInfo nodeId="1178899307525" fileName="Distinct_Test.java" startLine="44" startPosition="49" endLine="45" endPosition="29" />
   <nodeInfo nodeId="1178899307529" fileName="Distinct_Test.java" startLine="45" startPosition="29" endLine="102" endPosition="7" />
   <nodeInfo nodeId="1178899307543" fileName="Distinct_Test.java" startLine="102" startPosition="7" endLine="103" endPosition="54" />
@@ -92,12 +106,16 @@
   <nodeInfo nodeId="1178900451120" fileName="Distinct_Test.java" startLine="25" startPosition="19" endLine="30" endPosition="19" />
   <nodeInfo nodeId="1178900471706" fileName="Distinct_Test.java" startLine="103" startPosition="54" endLine="108" endPosition="19" />
   <nodeInfo nodeId="1178900471720" fileName="Distinct_Test.java" startLine="108" startPosition="19" endLine="113" endPosition="19" />
+  <nodeInfo nodeId="1180974305208" fileName="NaiveSetOperations_Test.java" startLine="546" startPosition="0" endLine="551" endPosition="0" />
   <nodeInfo nodeId="1180974321791" fileName="NaiveSetOperations_Test.java" startLine="14" startPosition="55" endLine="67" endPosition="5" />
   <nodeInfo nodeId="1180974394196" fileName="NaiveSetOperations_Test.java" startLine="287" startPosition="5" endLine="340" endPosition="5" />
   <nodeInfo nodeId="1180974557564" fileName="NaiveSetOperations_Test.java" startLine="340" startPosition="5" endLine="389" endPosition="5" />
+  <nodeInfo nodeId="1180974925059" fileName="NaiveSetOperations_Test.java" startLine="551" startPosition="0" endLine="558" endPosition="0" />
   <nodeInfo nodeId="1180974964109" fileName="NaiveSetOperations_Test.java" startLine="389" startPosition="5" endLine="434" endPosition="5" />
+  <nodeInfo nodeId="1180975293807" fileName="NaiveSetOperations_Test.java" startLine="558" startPosition="0" endLine="566" endPosition="0" />
   <nodeInfo nodeId="1180975323102" fileName="NaiveSetOperations_Test.java" startLine="504" startPosition="5" endLine="545" endPosition="5" />
   <nodeInfo nodeId="1180975845066" fileName="NaiveSetOperations_Test.java" startLine="467" startPosition="5" endLine="504" endPosition="5" />
+  <nodeInfo nodeId="1180976022795" fileName="NaiveSetOperations_Test.java" startLine="566" startPosition="0" endLine="576" endPosition="0" />
   <nodeInfo nodeId="1180976074080" fileName="NaiveSetOperations_Test.java" startLine="567" startPosition="80" endLine="568" endPosition="96" />
   <nodeInfo nodeId="1180976086647" fileName="NaiveSetOperations_Test.java" startLine="568" startPosition="96" endLine="571" endPosition="5" />
   <nodeInfo nodeId="1180976094308" fileName="NaiveSetOperations_Test.java" startLine="569" startPosition="50" endLine="570" endPosition="65" />
@@ -112,6 +130,7 @@
   <nodeInfo nodeId="1180977311679" fileName="NaiveSetOperations_Test.java" startLine="434" startPosition="5" endLine="467" endPosition="5" />
   <nodeInfo nodeId="1180978098265" fileName="NaiveSetOperations_Test.java" startLine="561" startPosition="117" endLine="562" endPosition="110" />
   <nodeInfo nodeId="1180978118548" fileName="NaiveSetOperations_Test.java" startLine="562" startPosition="110" endLine="563" endPosition="110" />
+  <nodeInfo nodeId="1181072889623" fileName="Concat_Test_Test.java" startLine="14" startPosition="48" endLine="112" endPosition="0" />
   <nodeInfo nodeId="1181072909472" fileName="Concat_Test_Test.java" startLine="15" startPosition="45" endLine="56" endPosition="7" />
   <nodeInfo nodeId="1181072938780" fileName="Concat_Test_Test.java" startLine="56" startPosition="7" endLine="97" endPosition="7" />
   <nodeInfo nodeId="1181072957066" fileName="Concat_Test_Test.java" startLine="97" startPosition="7" endLine="98" endPosition="100" />
@@ -128,10 +147,12 @@
   <nodeInfo nodeId="1193919397740" fileName="SimpleOperations1.java" startLine="76" startPosition="66" endLine="77" endPosition="67" />
   <nodeInfo nodeId="1196886260484" fileName="NaiveSetOperations_Test.java" startLine="185" startPosition="5" endLine="246" endPosition="5" />
   <nodeInfo nodeId="1196886294224" fileName="NaiveSetOperations_Test.java" startLine="563" startPosition="110" endLine="564" endPosition="115" />
+  <nodeInfo nodeId="1197927658791" fileName="Map_Test.java" startLine="11" startPosition="40" endLine="18" endPosition="0" />
   <nodeInfo nodeId="1197928280895" fileName="Map_Test.java" startLine="12" startPosition="46" endLine="13" endPosition="81" />
   <nodeInfo nodeId="1197934100662" fileName="Map_Test.java" startLine="13" startPosition="81" endLine="14" endPosition="51" />
   <nodeInfo nodeId="1197935599915" fileName="Map_Test.java" startLine="14" startPosition="51" endLine="15" endPosition="72" />
   <nodeInfo nodeId="1201654801802" fileName="Map_Test.java" startLine="15" startPosition="72" endLine="16" endPosition="68" />
+  <nodeInfo nodeId="1203978489854" fileName="ListOperations_Test.java" startLine="26" startPosition="0" endLine="32" endPosition="0" />
   <nodeInfo nodeId="1203978505890" fileName="ListOperations_Test.java" startLine="27" startPosition="24" endLine="28" endPosition="52" />
   <nodeInfo nodeId="1203980123611" fileName="ListOperations_Test.java" startLine="28" startPosition="52" endLine="29" endPosition="111" />
   <nodeInfo nodeId="1203980132963" fileName="ListOperations_Test.java" startLine="29" startPosition="111" endLine="30" endPosition="32" />
@@ -142,9 +163,11 @@
   <nodeInfo nodeId="1205787896043" fileName="Concat_Test_Test.java" startLine="109" startPosition="68" endLine="110" endPosition="64" />
   <nodeInfo nodeId="1205787985087" fileName="Contains_Test.java" startLine="66" startPosition="17" endLine="67" endPosition="16" />
   <nodeInfo nodeId="1205787995891" fileName="Contains_Test.java" startLine="67" startPosition="16" endLine="68" endPosition="65" />
+  <nodeInfo nodeId="1205788070346" fileName="Distinct_Test.java" startLine="126" startPosition="0" endLine="132" endPosition="0" />
   <nodeInfo nodeId="1205788081005" fileName="Distinct_Test.java" startLine="127" startPosition="45" endLine="128" endPosition="36" />
   <nodeInfo nodeId="1205788095326" fileName="Distinct_Test.java" startLine="128" startPosition="36" endLine="129" endPosition="54" />
   <nodeInfo nodeId="1205788113915" fileName="Distinct_Test.java" startLine="129" startPosition="54" endLine="130" endPosition="66" />
+  <nodeInfo nodeId="1205788230525" fileName="Map_Test.java" startLine="18" startPosition="0" endLine="27" endPosition="0" />
   <nodeInfo nodeId="1205788241404" fileName="Map_Test.java" startLine="20" startPosition="6" endLine="21" endPosition="37" />
   <nodeInfo nodeId="1205788241413" fileName="Map_Test.java" startLine="21" startPosition="37" endLine="22" endPosition="53" />
   <nodeInfo nodeId="1205788241419" fileName="Map_Test.java" startLine="22" startPosition="53" endLine="23" endPosition="70" />
@@ -157,6 +180,7 @@
   <nodeInfo nodeId="1205789000428" fileName="Union_Test.java" startLine="107" startPosition="67" endLine="108" endPosition="64" />
   <nodeInfo nodeId="1205789128065" fileName="Union_Test.java" startLine="108" startPosition="64" endLine="109" endPosition="65" />
   <nodeInfo nodeId="1205789148356" fileName="Union_Test.java" startLine="109" startPosition="65" endLine="110" endPosition="57" />
+  <nodeInfo nodeId="1205789257750" fileName="Null_Test.java" startLine="10" startPosition="41" endLine="25" endPosition="0" />
   <nodeInfo nodeId="1205789273097" fileName="Null_Test.java" startLine="11" startPosition="42" endLine="12" endPosition="26" />
   <nodeInfo nodeId="1205789285855" fileName="Null_Test.java" startLine="12" startPosition="26" endLine="13" endPosition="44" />
   <nodeInfo nodeId="1205789393035" fileName="Null_Test.java" startLine="13" startPosition="44" endLine="14" endPosition="67" />
@@ -169,14 +193,17 @@
   <nodeInfo nodeId="1205789653045" fileName="Null_Test.java" startLine="20" startPosition="62" endLine="21" endPosition="61" />
   <nodeInfo nodeId="1205789673867" fileName="Null_Test.java" startLine="21" startPosition="61" endLine="22" endPosition="47" />
   <nodeInfo nodeId="1205789682799" fileName="Null_Test.java" startLine="22" startPosition="47" endLine="23" endPosition="70" />
+  <nodeInfo nodeId="1206658590895" fileName="Map_Test.java" startLine="27" startPosition="0" endLine="32" endPosition="0" />
   <nodeInfo nodeId="1206658746577" fileName="Map_Test.java" startLine="28" startPosition="51" endLine="29" endPosition="138" />
   <nodeInfo nodeId="1206658761653" fileName="Map_Test.java" startLine="29" startPosition="138" endLine="30" endPosition="72" />
+  <nodeInfo nodeId="1209906614553" fileName="NaiveSetOperations_Test.java" startLine="576" startPosition="0" endLine="586" endPosition="0" />
   <nodeInfo nodeId="1209906614557" fileName="NaiveSetOperations_Test.java" startLine="577" startPosition="74" endLine="578" endPosition="39" />
   <nodeInfo nodeId="1209906614563" fileName="NaiveSetOperations_Test.java" startLine="578" startPosition="39" endLine="579" endPosition="41" />
   <nodeInfo nodeId="1209906614569" fileName="NaiveSetOperations_Test.java" startLine="579" startPosition="41" endLine="582" endPosition="5" />
   <nodeInfo nodeId="1209906614576" fileName="NaiveSetOperations_Test.java" startLine="580" startPosition="49" endLine="581" endPosition="55" />
   <nodeInfo nodeId="1209906614581" fileName="NaiveSetOperations_Test.java" startLine="582" startPosition="5" endLine="583" endPosition="40" />
   <nodeInfo nodeId="1209906614584" fileName="NaiveSetOperations_Test.java" startLine="583" startPosition="40" endLine="584" endPosition="41" />
+  <nodeInfo nodeId="1209906614595" fileName="NaiveSetOperations_Test.java" startLine="586" startPosition="0" endLine="599" endPosition="0" />
   <nodeInfo nodeId="1209906614599" fileName="NaiveSetOperations_Test.java" startLine="587" startPosition="79" endLine="588" endPosition="41" />
   <nodeInfo nodeId="1209906614605" fileName="NaiveSetOperations_Test.java" startLine="588" startPosition="41" endLine="591" endPosition="5" />
   <nodeInfo nodeId="1209906614607" fileName="NaiveSetOperations_Test.java" startLine="589" startPosition="21" endLine="590" endPosition="39" />
@@ -185,6 +212,7 @@
   <nodeInfo nodeId="1209906614626" fileName="NaiveSetOperations_Test.java" startLine="593" startPosition="30" endLine="594" endPosition="54" />
   <nodeInfo nodeId="1209906614633" fileName="NaiveSetOperations_Test.java" startLine="595" startPosition="5" endLine="596" endPosition="40" />
   <nodeInfo nodeId="1209906614637" fileName="NaiveSetOperations_Test.java" startLine="596" startPosition="40" endLine="597" endPosition="41" />
+  <nodeInfo nodeId="1209906614648" fileName="NaiveSetOperations_Test.java" startLine="599" startPosition="0" endLine="621" endPosition="0" />
   <nodeInfo nodeId="1209906614652" fileName="NaiveSetOperations_Test.java" startLine="600" startPosition="85" endLine="601" endPosition="60" />
   <nodeInfo nodeId="1209906614660" fileName="NaiveSetOperations_Test.java" startLine="601" startPosition="60" endLine="608" endPosition="5" />
   <nodeInfo nodeId="1209906614662" fileName="NaiveSetOperations_Test.java" startLine="602" startPosition="21" endLine="603" endPosition="36" />

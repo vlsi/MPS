@@ -1,19 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
+  <nodeInfo nodeId="1170878984788" fileName="MySequence.java" startLine="10" startPosition="33" endLine="78" endPosition="0" />
   <nodeInfo nodeId="1170878998354" fileName="MySequence.java" startLine="11" startPosition="33" endLine="76" endPosition="7" />
+  <nodeInfo nodeId="1170879062052" fileName="MySequence.java" startLine="78" startPosition="0" endLine="82" endPosition="0" />
   <nodeInfo nodeId="1170879079306" fileName="MySequence.java" startLine="79" startPosition="27" endLine="80" endPosition="16" />
+  <nodeInfo nodeId="1170879903124" fileName="BooleanSequence.java" startLine="11" startPosition="0" endLine="19" endPosition="0" />
+  <nodeInfo nodeId="1170879915003" fileName="BooleanSequence.java" startLine="8" startPosition="0" endLine="10" endPosition="3" />
   <nodeInfo nodeId="1170879927240" fileName="BooleanSequence.java" startLine="6" startPosition="63" endLine="7" endPosition="30" />
   <nodeInfo nodeId="1170879946355" fileName="BooleanSequence.java" startLine="12" startPosition="33" endLine="16" endPosition="5" />
   <nodeInfo nodeId="1170880094711" fileName="BooleanSequence.java" startLine="14" startPosition="38" endLine="15" endPosition="18" />
   <nodeInfo nodeId="1170880107999" fileName="BooleanSequence.java" startLine="13" startPosition="27" endLine="14" endPosition="38" />
   <nodeInfo nodeId="1170880188056" fileName="BooleanSequence.java" startLine="16" startPosition="5" endLine="17" endPosition="16" />
   <nodeInfo nodeId="1170880204175" fileName="IntegerSequence.java" startLine="6" startPosition="63" endLine="7" endPosition="31" />
+  <nodeInfo nodeId="1170880204178" fileName="IntegerSequence.java" startLine="8" startPosition="0" endLine="10" endPosition="3" />
+  <nodeInfo nodeId="1170880204181" fileName="IntegerSequence.java" startLine="11" startPosition="0" endLine="19" endPosition="0" />
   <nodeInfo nodeId="1170880204184" fileName="IntegerSequence.java" startLine="12" startPosition="33" endLine="16" endPosition="5" />
   <nodeInfo nodeId="1170880204190" fileName="IntegerSequence.java" startLine="13" startPosition="27" endLine="14" endPosition="38" />
   <nodeInfo nodeId="1170880204198" fileName="IntegerSequence.java" startLine="14" startPosition="38" endLine="15" endPosition="26" />
   <nodeInfo nodeId="1170880204207" fileName="IntegerSequence.java" startLine="16" startPosition="5" endLine="17" endPosition="16" />
+  <nodeInfo nodeId="1172029180836" fileName="Generics1_Test.java" startLine="9" startPosition="46" endLine="16" endPosition="0" />
   <nodeInfo nodeId="1172029188738" fileName="Generics1_Test.java" startLine="10" startPosition="45" endLine="11" endPosition="50" />
   <nodeInfo nodeId="1172029188742" fileName="Generics1_Test.java" startLine="11" startPosition="50" endLine="14" endPosition="5" />
+  <nodeInfo nodeId="1172029195858" fileName="Generics1_Test.java" startLine="16" startPosition="0" endLine="25" endPosition="0" />
   <nodeInfo nodeId="1172029203862" fileName="Generics1_Test.java" startLine="17" startPosition="45" endLine="18" endPosition="49" />
   <nodeInfo nodeId="1172029203866" fileName="Generics1_Test.java" startLine="18" startPosition="49" endLine="19" endPosition="18" />
   <nodeInfo nodeId="1172029203870" fileName="Generics1_Test.java" startLine="19" startPosition="18" endLine="23" endPosition="5" />

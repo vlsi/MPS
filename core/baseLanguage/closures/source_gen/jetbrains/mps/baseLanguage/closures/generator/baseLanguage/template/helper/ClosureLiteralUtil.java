@@ -48,15 +48,15 @@ public class ClosureLiteralUtil {
     return vrefs;
   }
 
-  public static void addAdaptableClosureLiteralTarget(SNode literal, SNode target, TemplateQueryContext genContext) {
+  public static void addAdaptableClosureLiteralTarget(TemplateQueryContext genContext, SNode literal, SNode target) {
     SNode trgCopy = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ClassifierType", null);
     SLinkOperations.setTarget(trgCopy, "classifier", SLinkOperations.getTarget(target, "classifier", false), false);
-    matchParameters(target, trgCopy, SNodeOperations.cast(TypeChecker.getInstance().getTypeOf(literal), "jetbrains.mps.baseLanguage.closures.structure.FunctionType"), literal, genContext);
+    matchParameters(genContext, target, trgCopy, SNodeOperations.cast(TypeChecker.getInstance().getTypeOf(literal), "jetbrains.mps.baseLanguage.closures.structure.FunctionType"), literal);
     Values.LITERAL.set(trgCopy, literal);
     Values.LITERAL_TARGET.set(literal, trgCopy);
   }
 
-  private static void matchParameters(SNode origCT, SNode ctNoParams, SNode ft, SNode literal, TemplateQueryContext genContext) {
+  private static void matchParameters(TemplateQueryContext genContext, SNode origCT, SNode ctNoParams, SNode ft, SNode literal) {
     Map<String, SNode> map = null;
     List<SNode> imds = SLinkOperations.getTargets(SLinkOperations.getTarget(ctNoParams, "classifier", false), "method", true);
     SNode absRetCT = null;
