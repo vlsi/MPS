@@ -139,6 +139,7 @@
                 </node>
                 <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1240926464023">
                   <link role="baseMethodDeclaration" targetNodeId="13.1240919121437" resolveInfo="get" />
+                  <node role="actualArgument" type="jetbrains.mps.lang.generator.generationContext.structure.TemplateFunctionParameter_generationContext" id="552650560884338795" />
                   <node role="actualArgument" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1241039115464" />
                 </node>
               </node>
@@ -189,6 +190,7 @@
                   </node>
                   <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1240926464537">
                     <link role="baseMethodDeclaration" targetNodeId="13.1240919121437" resolveInfo="get" />
+                    <node role="actualArgument" type="jetbrains.mps.lang.generator.generationContext.structure.TemplateFunctionParameter_generationContext" id="552650560884338742" />
                     <node role="actualArgument" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1241039144795" />
                   </node>
                 </node>
@@ -265,6 +267,7 @@
                   </node>
                   <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1240926465250">
                     <link role="baseMethodDeclaration" targetNodeId="13.1240919121437" resolveInfo="get" />
+                    <node role="actualArgument" type="jetbrains.mps.lang.generator.generationContext.structure.TemplateFunctionParameter_generationContext" id="552650560884338760" />
                     <node role="actualArgument" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1241039260429" />
                   </node>
                 </node>
@@ -336,6 +339,7 @@
                 </node>
                 <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1240926467506">
                   <link role="baseMethodDeclaration" targetNodeId="13.1240919121437" resolveInfo="get" />
+                  <node role="actualArgument" type="jetbrains.mps.lang.generator.generationContext.structure.TemplateFunctionParameter_generationContext" id="552650560884338745" />
                   <node role="actualArgument" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1241039230015" />
                 </node>
               </node>
@@ -383,6 +387,7 @@
                 </node>
                 <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1240926464873">
                   <link role="baseMethodDeclaration" targetNodeId="13.1240919121437" resolveInfo="get" />
+                  <node role="actualArgument" type="jetbrains.mps.lang.generator.generationContext.structure.TemplateFunctionParameter_generationContext" id="552650560884338726" />
                   <node role="actualArgument" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1241039198885" />
                 </node>
               </node>
@@ -430,6 +435,7 @@
                 </node>
                 <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1240926466034">
                   <link role="baseMethodDeclaration" targetNodeId="13.1240919121437" resolveInfo="get" />
+                  <node role="actualArgument" type="jetbrains.mps.lang.generator.generationContext.structure.TemplateFunctionParameter_generationContext" id="552650560884338750" />
                   <node role="actualArgument" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1241039120911" />
                 </node>
               </node>
@@ -477,6 +483,7 @@
                 </node>
                 <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1240926464286">
                   <link role="baseMethodDeclaration" targetNodeId="13.1240919121437" resolveInfo="get" />
+                  <node role="actualArgument" type="jetbrains.mps.lang.generator.generationContext.structure.TemplateFunctionParameter_generationContext" id="552650560884338768" />
                   <node role="actualArgument" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1241039182666" />
                 </node>
               </node>
@@ -502,6 +509,7 @@
                 </node>
                 <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1240926463983">
                   <link role="baseMethodDeclaration" targetNodeId="13.1240919121437" resolveInfo="get" />
+                  <node role="actualArgument" type="jetbrains.mps.lang.generator.generationContext.structure.TemplateFunctionParameter_generationContext" id="552650560884338755" />
                   <node role="actualArgument" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1241039127721" />
                 </node>
               </node>
@@ -571,6 +579,7 @@
                 </node>
                 <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1240926466462">
                   <link role="baseMethodDeclaration" targetNodeId="13.1240919121437" resolveInfo="get" />
+                  <node role="actualArgument" type="jetbrains.mps.lang.generator.generationContext.structure.TemplateFunctionParameter_generationContext" id="552650560884338736" />
                   <node role="actualArgument" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1241039224982" />
                 </node>
               </node>
@@ -637,6 +646,7 @@
                                 </node>
                                 <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1240926467684">
                                   <link role="baseMethodDeclaration" targetNodeId="13.1240919121437" resolveInfo="get" />
+                                  <node role="actualArgument" type="jetbrains.mps.lang.generator.generationContext.structure.TemplateFunctionParameter_generationContext" id="552650560884338827" />
                                   <node role="actualArgument" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1241039155391" />
                                 </node>
                               </node>
@@ -685,6 +695,7 @@
                 </node>
                 <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1240926465655">
                   <link role="baseMethodDeclaration" targetNodeId="13.1240919121437" resolveInfo="get" />
+                  <node role="actualArgument" type="jetbrains.mps.lang.generator.generationContext.structure.TemplateFunctionParameter_generationContext" id="552650560884338809" />
                   <node role="actualArgument" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1241039133020" />
                 </node>
               </node>
@@ -721,6 +732,7 @@
                                 </node>
                                 <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1240926464794">
                                   <link role="baseMethodDeclaration" targetNodeId="13.1240919121437" resolveInfo="get" />
+                                  <node role="actualArgument" type="jetbrains.mps.lang.generator.generationContext.structure.TemplateFunctionParameter_generationContext" id="552650560884338730" />
                                   <node role="actualArgument" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1241039206975" />
                                 </node>
                               </node>
@@ -769,6 +781,7 @@
                 </node>
                 <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1240926466582">
                   <link role="baseMethodDeclaration" targetNodeId="13.1240919121437" resolveInfo="get" />
+                  <node role="actualArgument" type="jetbrains.mps.lang.generator.generationContext.structure.TemplateFunctionParameter_generationContext" id="552650560884338798" />
                   <node role="actualArgument" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1241039219949" />
                 </node>
               </node>
@@ -791,6 +804,7 @@
                 </node>
                 <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1240926466905">
                   <link role="baseMethodDeclaration" targetNodeId="13.1240919121437" resolveInfo="get" />
+                  <node role="actualArgument" type="jetbrains.mps.lang.generator.generationContext.structure.TemplateFunctionParameter_generationContext" id="552650560884338797" />
                   <node role="actualArgument" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1241039189104" />
                 </node>
               </node>
@@ -824,6 +838,7 @@
                                 </node>
                                 <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1240926464606">
                                   <link role="baseMethodDeclaration" targetNodeId="13.1240919121437" resolveInfo="get" />
+                                  <node role="actualArgument" type="jetbrains.mps.lang.generator.generationContext.structure.TemplateFunctionParameter_generationContext" id="552650560884338815" />
                                   <node role="actualArgument" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1241039235811" />
                                 </node>
                               </node>
@@ -880,6 +895,7 @@
                   </node>
                   <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1241040548963">
                     <link role="baseMethodDeclaration" targetNodeId="13.1240919121437" resolveInfo="get" />
+                    <node role="actualArgument" type="jetbrains.mps.lang.generator.generationContext.structure.TemplateFunctionParameter_generationContext" id="552650560884338757" />
                     <node role="actualArgument" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1241040548964" />
                   </node>
                 </node>
@@ -925,6 +941,7 @@
                             </node>
                             <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1240926465309">
                               <link role="baseMethodDeclaration" targetNodeId="13.1240919121437" resolveInfo="get" />
+                              <node role="actualArgument" type="jetbrains.mps.lang.generator.generationContext.structure.TemplateFunctionParameter_generationContext" id="552650560884338724" />
                               <node role="actualArgument" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1241033424910" />
                             </node>
                           </node>
@@ -973,6 +990,7 @@
                 </node>
                 <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1240926467061">
                   <link role="baseMethodDeclaration" targetNodeId="13.1240919121437" resolveInfo="get" />
+                  <node role="actualArgument" type="jetbrains.mps.lang.generator.generationContext.structure.TemplateFunctionParameter_generationContext" id="552650560884338775" />
                   <node role="actualArgument" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1241033416547" />
                 </node>
               </node>
@@ -995,6 +1013,7 @@
                 </node>
                 <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1240926466423">
                   <link role="baseMethodDeclaration" targetNodeId="13.1240919121437" resolveInfo="get" />
+                  <node role="actualArgument" type="jetbrains.mps.lang.generator.generationContext.structure.TemplateFunctionParameter_generationContext" id="552650560884338777" />
                   <node role="actualArgument" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1241039246060" />
                 </node>
               </node>
@@ -1065,6 +1084,7 @@
                       </node>
                       <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1240926466946">
                         <link role="baseMethodDeclaration" targetNodeId="13.1240919121437" resolveInfo="get" />
+                        <node role="actualArgument" type="jetbrains.mps.lang.generator.generationContext.structure.TemplateFunctionParameter_generationContext" id="552650560884338759" />
                         <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1241039213200">
                           <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1241039213201" />
                           <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1241039213202">
@@ -1103,6 +1123,7 @@
                   </node>
                   <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1240926466797">
                     <link role="baseMethodDeclaration" targetNodeId="13.1240919121437" resolveInfo="get" />
+                    <node role="actualArgument" type="jetbrains.mps.lang.generator.generationContext.structure.TemplateFunctionParameter_generationContext" id="552650560884338761" />
                     <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1241039251458">
                       <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1241039251459" />
                       <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1241039251460">
@@ -3318,6 +3339,7 @@
                 </node>
                 <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1194387108229369456">
                   <link role="baseMethodDeclaration" targetNodeId="13.1240919121437" resolveInfo="get" />
+                  <node role="actualArgument" type="jetbrains.mps.lang.generator.generationContext.structure.TemplateFunctionParameter_generationContext" id="552650560884338786" />
                   <node role="actualArgument" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1194387108229369457" />
                 </node>
               </node>
@@ -3383,6 +3405,7 @@
                       </node>
                       <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1240919442263">
                         <link role="baseMethodDeclaration" targetNodeId="13.1240919121437" resolveInfo="get" />
+                        <node role="actualArgument" type="jetbrains.mps.lang.generator.generationContext.structure.TemplateFunctionParameter_generationContext" id="552650560884338729" />
                         <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1240919442924">
                           <link role="variableDeclaration" targetNodeId="1216995176835" resolveInfo="trg" />
                         </node>
@@ -3416,6 +3439,7 @@
                             </node>
                             <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1241079053901">
                               <link role="baseMethodDeclaration" targetNodeId="13.1240919103170" resolveInfo="set" />
+                              <node role="actualArgument" type="jetbrains.mps.lang.generator.generationContext.structure.TemplateFunctionParameter_generationContext" id="552650560884338722" />
                               <node role="actualArgument" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1241079055743" />
                               <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1241079058435">
                                 <property name="value" value="done" />
@@ -3538,6 +3562,7 @@
                   </node>
                   <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1241079001694">
                     <link role="baseMethodDeclaration" targetNodeId="13.1240919625778" resolveInfo="isSet" />
+                    <node role="actualArgument" type="jetbrains.mps.lang.generator.generationContext.structure.TemplateFunctionParameter_generationContext" id="552650560884338829" />
                     <node role="actualArgument" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1241079001695" />
                   </node>
                 </node>
@@ -3549,6 +3574,7 @@
                 </node>
                 <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1241078999284">
                   <link role="baseMethodDeclaration" targetNodeId="13.1240919625778" resolveInfo="isSet" />
+                  <node role="actualArgument" type="jetbrains.mps.lang.generator.generationContext.structure.TemplateFunctionParameter_generationContext" id="552650560884338830" />
                   <node role="actualArgument" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1241078999285" />
                 </node>
               </node>
@@ -3616,6 +3642,7 @@
                 </node>
                 <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1241078934262">
                   <link role="baseMethodDeclaration" targetNodeId="13.1240919625778" resolveInfo="isSet" />
+                  <node role="actualArgument" type="jetbrains.mps.lang.generator.generationContext.structure.TemplateFunctionParameter_generationContext" id="552650560884338833" />
                   <node role="actualArgument" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1241078934263" />
                 </node>
               </node>
@@ -3627,6 +3654,7 @@
                   </node>
                   <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1241078931769">
                     <link role="baseMethodDeclaration" targetNodeId="13.1240919625778" resolveInfo="isSet" />
+                    <node role="actualArgument" type="jetbrains.mps.lang.generator.generationContext.structure.TemplateFunctionParameter_generationContext" id="552650560884338834" />
                     <node role="actualArgument" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1241078931770" />
                   </node>
                 </node>
@@ -5266,6 +5294,7 @@
                             </node>
                             <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1240925194671">
                               <link role="baseMethodDeclaration" targetNodeId="13.1240919121437" resolveInfo="get" />
+                              <node role="actualArgument" type="jetbrains.mps.lang.generator.generationContext.structure.TemplateFunctionParameter_generationContext" id="552650560884338735" />
                               <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1240925194672">
                                 <link role="variableDeclaration" targetNodeId="1240925194629" resolveInfo="literal" />
                               </node>
@@ -5502,6 +5531,7 @@
                             </node>
                             <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1240925193696">
                               <link role="baseMethodDeclaration" targetNodeId="13.1240919121437" resolveInfo="get" />
+                              <node role="actualArgument" type="jetbrains.mps.lang.generator.generationContext.structure.TemplateFunctionParameter_generationContext" id="552650560884338787" />
                               <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1240925193697">
                                 <link role="variableDeclaration" targetNodeId="1240925193653" resolveInfo="literal" />
                               </node>
@@ -5567,6 +5597,7 @@
                             </node>
                             <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1240925194757">
                               <link role="baseMethodDeclaration" targetNodeId="13.1240919121437" resolveInfo="get" />
+                              <node role="actualArgument" type="jetbrains.mps.lang.generator.generationContext.structure.TemplateFunctionParameter_generationContext" id="552650560884338817" />
                               <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1240925194758">
                                 <link role="variableDeclaration" targetNodeId="1240925194715" resolveInfo="literal" />
                               </node>
@@ -5880,6 +5911,7 @@
                             </node>
                             <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1240925194151">
                               <link role="baseMethodDeclaration" targetNodeId="13.1240919121437" resolveInfo="get" />
+                              <node role="actualArgument" type="jetbrains.mps.lang.generator.generationContext.structure.TemplateFunctionParameter_generationContext" id="552650560884338811" />
                               <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1240925194152">
                                 <link role="variableDeclaration" targetNodeId="1240925194106" resolveInfo="literal" />
                               </node>
@@ -6027,6 +6059,7 @@
                           </node>
                           <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1240925195176">
                             <link role="baseMethodDeclaration" targetNodeId="13.1240919121437" resolveInfo="get" />
+                            <node role="actualArgument" type="jetbrains.mps.lang.generator.generationContext.structure.TemplateFunctionParameter_generationContext" id="552650560884338821" />
                             <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1240925195177">
                               <link role="variableDeclaration" targetNodeId="1240925195135" resolveInfo="literal" />
                             </node>
@@ -6154,6 +6187,7 @@
                             </node>
                             <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1240925193878">
                               <link role="baseMethodDeclaration" targetNodeId="13.1240919121437" resolveInfo="get" />
+                              <node role="actualArgument" type="jetbrains.mps.lang.generator.generationContext.structure.TemplateFunctionParameter_generationContext" id="552650560884338754" />
                               <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1240925193879">
                                 <link role="variableDeclaration" targetNodeId="1240925193836" resolveInfo="literal" />
                               </node>
@@ -6340,6 +6374,7 @@
                         </node>
                         <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1240925194236">
                           <link role="baseMethodDeclaration" targetNodeId="13.1240919121437" resolveInfo="get" />
+                          <node role="actualArgument" type="jetbrains.mps.lang.generator.generationContext.structure.TemplateFunctionParameter_generationContext" id="552650560884338828" />
                           <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1240925194237">
                             <link role="variableDeclaration" targetNodeId="1240925194196" resolveInfo="literal" />
                           </node>
@@ -6421,6 +6456,7 @@
                           </node>
                           <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1240925193788">
                             <link role="baseMethodDeclaration" targetNodeId="13.1240919121437" resolveInfo="get" />
+                            <node role="actualArgument" type="jetbrains.mps.lang.generator.generationContext.structure.TemplateFunctionParameter_generationContext" id="552650560884338743" />
                             <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1240925193789">
                               <link role="variableDeclaration" targetNodeId="1240925193742" resolveInfo="literal" />
                             </node>
@@ -6555,6 +6591,7 @@
                           </node>
                           <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1240925195257">
                             <link role="baseMethodDeclaration" targetNodeId="13.1240919121437" resolveInfo="get" />
+                            <node role="actualArgument" type="jetbrains.mps.lang.generator.generationContext.structure.TemplateFunctionParameter_generationContext" id="552650560884338738" />
                             <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1240925195258">
                               <link role="variableDeclaration" targetNodeId="1240925195218" resolveInfo="literal" />
                             </node>
@@ -6641,6 +6678,7 @@
                           </node>
                           <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1240925194921">
                             <link role="baseMethodDeclaration" targetNodeId="13.1240919121437" resolveInfo="get" />
+                            <node role="actualArgument" type="jetbrains.mps.lang.generator.generationContext.structure.TemplateFunctionParameter_generationContext" id="552650560884338737" />
                             <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1240925194922">
                               <link role="variableDeclaration" targetNodeId="1240925194881" resolveInfo="literal" />
                             </node>
@@ -6713,6 +6751,7 @@
                           </node>
                           <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1240925194063">
                             <link role="baseMethodDeclaration" targetNodeId="13.1240919121437" resolveInfo="get" />
+                            <node role="actualArgument" type="jetbrains.mps.lang.generator.generationContext.structure.TemplateFunctionParameter_generationContext" id="552650560884338807" />
                             <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1240925194064">
                               <link role="variableDeclaration" targetNodeId="1240925194023" resolveInfo="literal" />
                             </node>
@@ -6762,6 +6801,7 @@
                           </node>
                           <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1240925195090">
                             <link role="baseMethodDeclaration" targetNodeId="13.1240919121437" resolveInfo="get" />
+                            <node role="actualArgument" type="jetbrains.mps.lang.generator.generationContext.structure.TemplateFunctionParameter_generationContext" id="552650560884338784" />
                             <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1240925195091">
                               <link role="variableDeclaration" targetNodeId="1240925195050" resolveInfo="literal" />
                             </node>
@@ -7210,6 +7250,7 @@
                                       </node>
                                       <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1240925194838">
                                         <link role="baseMethodDeclaration" targetNodeId="13.1240919121437" resolveInfo="get" />
+                                        <node role="actualArgument" type="jetbrains.mps.lang.generator.generationContext.structure.TemplateFunctionParameter_generationContext" id="552650560884338731" />
                                         <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1240925194839">
                                           <link role="variableDeclaration" targetNodeId="1240925194799" resolveInfo="literal" />
                                         </node>
@@ -7253,6 +7294,7 @@
                                       </node>
                                       <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1240920877096">
                                         <link role="baseMethodDeclaration" targetNodeId="13.1240919625778" resolveInfo="isSet" />
+                                        <node role="actualArgument" type="jetbrains.mps.lang.generator.generationContext.structure.TemplateFunctionParameter_generationContext" id="552650560884338832" />
                                         <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1240920880816">
                                           <link role="variableDeclaration" targetNodeId="1240925194832" resolveInfo="ct" />
                                         </node>
@@ -7286,6 +7328,7 @@
                                           </node>
                                           <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1240920922986">
                                             <link role="baseMethodDeclaration" targetNodeId="13.1240919121437" resolveInfo="get" />
+                                            <node role="actualArgument" type="jetbrains.mps.lang.generator.generationContext.structure.TemplateFunctionParameter_generationContext" id="552650560884338793" />
                                             <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1240920922987">
                                               <link role="variableDeclaration" targetNodeId="1240925194832" resolveInfo="ct" />
                                             </node>
@@ -7346,6 +7389,7 @@
                                     </node>
                                     <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1240925193526">
                                       <link role="baseMethodDeclaration" targetNodeId="13.1240919121437" resolveInfo="get" />
+                                      <node role="actualArgument" type="jetbrains.mps.lang.generator.generationContext.structure.TemplateFunctionParameter_generationContext" id="552650560884338733" />
                                       <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1240925193527">
                                         <link role="variableDeclaration" targetNodeId="1240925193486" resolveInfo="literal" />
                                       </node>
@@ -7378,6 +7422,7 @@
                                     </node>
                                     <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1240919572883">
                                       <link role="baseMethodDeclaration" targetNodeId="13.1240919625778" resolveInfo="isSet" />
+                                      <node role="actualArgument" type="jetbrains.mps.lang.generator.generationContext.structure.TemplateFunctionParameter_generationContext" id="552650560884338831" />
                                       <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1240919574070">
                                         <link role="variableDeclaration" targetNodeId="1240925193520" resolveInfo="ct" />
                                       </node>
@@ -7406,6 +7451,7 @@
                                         </node>
                                         <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1240919733377">
                                           <link role="baseMethodDeclaration" targetNodeId="13.1240919121437" resolveInfo="get" />
+                                          <node role="actualArgument" type="jetbrains.mps.lang.generator.generationContext.structure.TemplateFunctionParameter_generationContext" id="552650560884338728" />
                                           <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1240919734763">
                                             <link role="variableDeclaration" targetNodeId="1240925193520" resolveInfo="ct" />
                                           </node>
@@ -7498,6 +7544,7 @@
                             </node>
                             <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1240925193442">
                               <link role="baseMethodDeclaration" targetNodeId="13.1240919121437" resolveInfo="get" />
+                              <node role="actualArgument" type="jetbrains.mps.lang.generator.generationContext.structure.TemplateFunctionParameter_generationContext" id="552650560884338802" />
                               <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1240925193443">
                                 <link role="variableDeclaration" targetNodeId="1240925193395" resolveInfo="literal" />
                               </node>
@@ -7547,6 +7594,7 @@
                                   </node>
                                   <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1240925194409">
                                     <link role="baseMethodDeclaration" targetNodeId="13.1240919121437" resolveInfo="get" />
+                                    <node role="actualArgument" type="jetbrains.mps.lang.generator.generationContext.structure.TemplateFunctionParameter_generationContext" id="552650560884338766" />
                                     <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1240925194410">
                                       <link role="variableDeclaration" targetNodeId="1240925194370" resolveInfo="literal" />
                                     </node>
@@ -7664,6 +7712,7 @@
                           </node>
                           <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1240925195007">
                             <link role="baseMethodDeclaration" targetNodeId="13.1240919121437" resolveInfo="get" />
+                            <node role="actualArgument" type="jetbrains.mps.lang.generator.generationContext.structure.TemplateFunctionParameter_generationContext" id="552650560884338741" />
                             <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1240925195008">
                               <link role="variableDeclaration" targetNodeId="1240925194969" resolveInfo="literal" />
                             </node>
@@ -7791,6 +7840,7 @@
                         </node>
                         <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1240925193609">
                           <link role="baseMethodDeclaration" targetNodeId="13.1240919121437" resolveInfo="get" />
+                          <node role="actualArgument" type="jetbrains.mps.lang.generator.generationContext.structure.TemplateFunctionParameter_generationContext" id="552650560884338816" />
                           <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1240925193610">
                             <link role="variableDeclaration" targetNodeId="1240925193569" resolveInfo="literal" />
                           </node>
@@ -7871,6 +7921,7 @@
                           </node>
                           <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1240925194576">
                             <link role="baseMethodDeclaration" targetNodeId="13.1240919121437" resolveInfo="get" />
+                            <node role="actualArgument" type="jetbrains.mps.lang.generator.generationContext.structure.TemplateFunctionParameter_generationContext" id="552650560884338783" />
                             <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1240925194577">
                               <link role="variableDeclaration" targetNodeId="1240925194534" resolveInfo="literal" />
                             </node>
@@ -8002,6 +8053,7 @@
                           </node>
                           <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1240925194327">
                             <link role="baseMethodDeclaration" targetNodeId="13.1240919121437" resolveInfo="get" />
+                            <node role="actualArgument" type="jetbrains.mps.lang.generator.generationContext.structure.TemplateFunctionParameter_generationContext" id="552650560884338778" />
                             <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1240925194328">
                               <link role="variableDeclaration" targetNodeId="1240925194285" resolveInfo="literal" />
                             </node>
@@ -8085,6 +8137,7 @@
                           </node>
                           <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1240925194491">
                             <link role="baseMethodDeclaration" targetNodeId="13.1240919121437" resolveInfo="get" />
+                            <node role="actualArgument" type="jetbrains.mps.lang.generator.generationContext.structure.TemplateFunctionParameter_generationContext" id="552650560884338758" />
                             <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1240925194492">
                               <link role="variableDeclaration" targetNodeId="1240925194452" resolveInfo="literal" />
                             </node>
@@ -8133,6 +8186,7 @@
                           </node>
                           <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1240925193979">
                             <link role="baseMethodDeclaration" targetNodeId="13.1240919121437" resolveInfo="get" />
+                            <node role="actualArgument" type="jetbrains.mps.lang.generator.generationContext.structure.TemplateFunctionParameter_generationContext" id="552650560884338740" />
                             <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1240925193980">
                               <link role="variableDeclaration" targetNodeId="1240925193925" resolveInfo="literal" />
                             </node>
@@ -8244,6 +8298,7 @@
                     </node>
                     <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1240926465348">
                       <link role="baseMethodDeclaration" targetNodeId="13.1240919121437" resolveInfo="get" />
+                      <node role="actualArgument" type="jetbrains.mps.lang.generator.generationContext.structure.TemplateFunctionParameter_generationContext" id="552650560884338801" />
                       <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1240926465349">
                         <link role="variableDeclaration" targetNodeId="1240926465314" resolveInfo="sn" />
                       </node>
@@ -8349,6 +8404,7 @@
                       </node>
                       <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1240926466261">
                         <link role="baseMethodDeclaration" targetNodeId="13.1240919121437" resolveInfo="get" />
+                        <node role="actualArgument" type="jetbrains.mps.lang.generator.generationContext.structure.TemplateFunctionParameter_generationContext" id="552650560884338823" />
                         <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1240926466262">
                           <link role="variableDeclaration" targetNodeId="1240926466224" resolveInfo="sn" />
                         </node>
@@ -8440,6 +8496,7 @@
                       </node>
                       <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1240926467386">
                         <link role="baseMethodDeclaration" targetNodeId="13.1240919121437" resolveInfo="get" />
+                        <node role="actualArgument" type="jetbrains.mps.lang.generator.generationContext.structure.TemplateFunctionParameter_generationContext" id="552650560884338820" />
                         <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1240926467387">
                           <link role="variableDeclaration" targetNodeId="1240926467351" resolveInfo="sn" />
                         </node>
@@ -8506,6 +8563,7 @@
                             </node>
                             <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1240926467547">
                               <link role="baseMethodDeclaration" targetNodeId="13.1240919121437" resolveInfo="get" />
+                              <node role="actualArgument" type="jetbrains.mps.lang.generator.generationContext.structure.TemplateFunctionParameter_generationContext" id="552650560884338772" />
                               <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1240926467548">
                                 <link role="variableDeclaration" targetNodeId="1240926467511" resolveInfo="sn" />
                               </node>
@@ -8583,6 +8641,7 @@
                                 </node>
                                 <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1240926467221">
                                   <link role="baseMethodDeclaration" targetNodeId="13.1240919121437" resolveInfo="get" />
+                                  <node role="actualArgument" type="jetbrains.mps.lang.generator.generationContext.structure.TemplateFunctionParameter_generationContext" id="552650560884338818" />
                                   <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1240926467222">
                                     <link role="variableDeclaration" targetNodeId="1240926467187" resolveInfo="sn" />
                                   </node>
@@ -8630,6 +8689,7 @@
                             </node>
                             <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1240926464070">
                               <link role="baseMethodDeclaration" targetNodeId="13.1240919121437" resolveInfo="get" />
+                              <node role="actualArgument" type="jetbrains.mps.lang.generator.generationContext.structure.TemplateFunctionParameter_generationContext" id="552650560884338791" />
                               <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1240926464071">
                                 <link role="variableDeclaration" targetNodeId="1240926464027" resolveInfo="sn" />
                               </node>
@@ -8708,6 +8768,7 @@
                                       </node>
                                       <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1240926465757">
                                         <link role="baseMethodDeclaration" targetNodeId="13.1240919121437" resolveInfo="get" />
+                                        <node role="actualArgument" type="jetbrains.mps.lang.generator.generationContext.structure.TemplateFunctionParameter_generationContext" id="552650560884338771" />
                                         <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1240926465758">
                                           <link role="variableDeclaration" targetNodeId="1240926465721" resolveInfo="sn" />
                                         </node>
@@ -8775,6 +8836,7 @@
                                   </node>
                                   <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1240926464470">
                                     <link role="baseMethodDeclaration" targetNodeId="13.1240919121437" resolveInfo="get" />
+                                    <node role="actualArgument" type="jetbrains.mps.lang.generator.generationContext.structure.TemplateFunctionParameter_generationContext" id="552650560884338764" />
                                     <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1240926464471">
                                       <link role="variableDeclaration" targetNodeId="1240926464431" resolveInfo="sn" />
                                     </node>
@@ -8842,6 +8904,7 @@
                             </node>
                             <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1240926464919">
                               <link role="baseMethodDeclaration" targetNodeId="13.1240919121437" resolveInfo="get" />
+                              <node role="actualArgument" type="jetbrains.mps.lang.generator.generationContext.structure.TemplateFunctionParameter_generationContext" id="552650560884338789" />
                               <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1240926464920">
                                 <link role="variableDeclaration" targetNodeId="1240926464878" resolveInfo="sn" />
                               </node>
@@ -8918,6 +8981,7 @@
                                   </node>
                                   <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1240926465122">
                                     <link role="baseMethodDeclaration" targetNodeId="13.1240919121437" resolveInfo="get" />
+                                    <node role="actualArgument" type="jetbrains.mps.lang.generator.generationContext.structure.TemplateFunctionParameter_generationContext" id="552650560884338767" />
                                     <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1240926465123">
                                       <link role="variableDeclaration" targetNodeId="1240926465084" resolveInfo="sn" />
                                     </node>
@@ -9001,6 +9065,7 @@
                             </node>
                             <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1240926467263">
                               <link role="baseMethodDeclaration" targetNodeId="13.1240919121437" resolveInfo="get" />
+                              <node role="actualArgument" type="jetbrains.mps.lang.generator.generationContext.structure.TemplateFunctionParameter_generationContext" id="552650560884338732" />
                               <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1240926467264">
                                 <link role="variableDeclaration" targetNodeId="1240926467227" resolveInfo="sn" />
                               </node>
@@ -9059,6 +9124,7 @@
                                   </node>
                                   <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1240926465857">
                                     <link role="baseMethodDeclaration" targetNodeId="13.1240919121437" resolveInfo="get" />
+                                    <node role="actualArgument" type="jetbrains.mps.lang.generator.generationContext.structure.TemplateFunctionParameter_generationContext" id="552650560884338808" />
                                     <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1240926465858">
                                       <link role="variableDeclaration" targetNodeId="1240926465821" resolveInfo="sn" />
                                     </node>
@@ -9163,6 +9229,7 @@
                         </node>
                         <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1240926467326">
                           <link role="baseMethodDeclaration" targetNodeId="13.1240919121437" resolveInfo="get" />
+                          <node role="actualArgument" type="jetbrains.mps.lang.generator.generationContext.structure.TemplateFunctionParameter_generationContext" id="552650560884338788" />
                           <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1240926467327">
                             <link role="variableDeclaration" targetNodeId="1240926467289" resolveInfo="sn" />
                           </node>
@@ -9209,6 +9276,7 @@
                             </node>
                             <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1240920983416">
                               <link role="baseMethodDeclaration" targetNodeId="13.1240919121437" resolveInfo="get" />
+                              <node role="actualArgument" type="jetbrains.mps.lang.generator.generationContext.structure.TemplateFunctionParameter_generationContext" id="552650560884338785" />
                               <node role="actualArgument" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1240920984428" />
                             </node>
                           </node>
@@ -9250,6 +9318,7 @@
                               </node>
                               <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1240926465185">
                                 <link role="baseMethodDeclaration" targetNodeId="13.1240919121437" resolveInfo="get" />
+                                <node role="actualArgument" type="jetbrains.mps.lang.generator.generationContext.structure.TemplateFunctionParameter_generationContext" id="552650560884338824" />
                                 <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1240926465186">
                                   <link role="variableDeclaration" targetNodeId="1240926465149" resolveInfo="sn" />
                                 </node>
@@ -9303,6 +9372,7 @@
                           </node>
                           <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1240920953278">
                             <link role="baseMethodDeclaration" targetNodeId="13.1240919121437" resolveInfo="get" />
+                            <node role="actualArgument" type="jetbrains.mps.lang.generator.generationContext.structure.TemplateFunctionParameter_generationContext" id="552650560884338773" />
                             <node role="actualArgument" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1240920954816" />
                           </node>
                         </node>
@@ -9424,6 +9494,7 @@
                           </node>
                           <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1240920967369">
                             <link role="baseMethodDeclaration" targetNodeId="13.1240919121437" resolveInfo="get" />
+                            <node role="actualArgument" type="jetbrains.mps.lang.generator.generationContext.structure.TemplateFunctionParameter_generationContext" id="552650560884338756" />
                             <node role="actualArgument" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1240920969206" />
                           </node>
                         </node>
@@ -9557,6 +9628,7 @@
                       </node>
                       <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1240926465534">
                         <link role="baseMethodDeclaration" targetNodeId="13.1240919121437" resolveInfo="get" />
+                        <node role="actualArgument" type="jetbrains.mps.lang.generator.generationContext.structure.TemplateFunctionParameter_generationContext" id="552650560884338739" />
                         <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1240926465535">
                           <link role="variableDeclaration" targetNodeId="1240926465495" resolveInfo="sn" />
                         </node>
@@ -9705,6 +9777,7 @@
                       </node>
                       <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1240919225352">
                         <link role="baseMethodDeclaration" targetNodeId="13.1240919103170" resolveInfo="set" />
+                        <node role="actualArgument" type="jetbrains.mps.lang.generator.generationContext.structure.TemplateFunctionParameter_generationContext" id="552650560884338723" />
                         <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1240919227737">
                           <link role="variableDeclaration" targetNodeId="1201192346560" resolveInfo="slist" />
                         </node>
@@ -9860,6 +9933,7 @@
                               </node>
                               <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1240926466684">
                                 <link role="baseMethodDeclaration" targetNodeId="13.1240919121437" resolveInfo="get" />
+                                <node role="actualArgument" type="jetbrains.mps.lang.generator.generationContext.structure.TemplateFunctionParameter_generationContext" id="552650560884338725" />
                                 <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1240926466685">
                                   <link role="variableDeclaration" targetNodeId="1201192346582" resolveInfo="cstmt" />
                                 </node>
@@ -9989,6 +10063,7 @@
                                         </node>
                                         <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1240926465915">
                                           <link role="baseMethodDeclaration" targetNodeId="13.1240919121437" resolveInfo="get" />
+                                          <node role="actualArgument" type="jetbrains.mps.lang.generator.generationContext.structure.TemplateFunctionParameter_generationContext" id="552650560884338774" />
                                           <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1240926465916">
                                             <link role="variableDeclaration" targetNodeId="1201192346582" resolveInfo="cstmt" />
                                           </node>
@@ -10091,6 +10166,7 @@
                       </node>
                       <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1240926434667">
                         <link role="baseMethodDeclaration" targetNodeId="13.1240919103170" resolveInfo="set" />
+                        <node role="actualArgument" type="jetbrains.mps.lang.generator.generationContext.structure.TemplateFunctionParameter_generationContext" id="552650560884338721" />
                         <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1240926434668">
                           <link role="variableDeclaration" targetNodeId="1201192346560" resolveInfo="slist" />
                         </node>
@@ -10148,6 +10224,7 @@
                         </node>
                         <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1240926464402">
                           <link role="baseMethodDeclaration" targetNodeId="13.1240919121437" resolveInfo="get" />
+                          <node role="actualArgument" type="jetbrains.mps.lang.generator.generationContext.structure.TemplateFunctionParameter_generationContext" id="552650560884338803" />
                           <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1240926464403">
                             <link role="variableDeclaration" targetNodeId="1240926464363" resolveInfo="sn" />
                           </node>
@@ -10208,6 +10285,7 @@
                                   </node>
                                   <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1240926466624">
                                     <link role="baseMethodDeclaration" targetNodeId="13.1240919121437" resolveInfo="get" />
+                                    <node role="actualArgument" type="jetbrains.mps.lang.generator.generationContext.structure.TemplateFunctionParameter_generationContext" id="552650560884338769" />
                                     <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1240926466625">
                                       <link role="variableDeclaration" targetNodeId="1240926466587" resolveInfo="sn" />
                                     </node>
@@ -10374,6 +10452,7 @@
                                     </node>
                                     <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1240926464137">
                                       <link role="baseMethodDeclaration" targetNodeId="13.1240919121437" resolveInfo="get" />
+                                      <node role="actualArgument" type="jetbrains.mps.lang.generator.generationContext.structure.TemplateFunctionParameter_generationContext" id="552650560884338805" />
                                       <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1240926464138">
                                         <link role="variableDeclaration" targetNodeId="1240926464098" resolveInfo="sn" />
                                       </node>
@@ -10456,6 +10535,7 @@
                               </node>
                               <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1240926465469">
                                 <link role="baseMethodDeclaration" targetNodeId="13.1240919121437" resolveInfo="get" />
+                                <node role="actualArgument" type="jetbrains.mps.lang.generator.generationContext.structure.TemplateFunctionParameter_generationContext" id="552650560884338812" />
                                 <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1240926465470">
                                   <link role="variableDeclaration" targetNodeId="1240926465432" resolveInfo="sn" />
                                 </node>
@@ -10710,6 +10790,7 @@
                             </node>
                             <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1240926466138">
                               <link role="baseMethodDeclaration" targetNodeId="13.1240919121437" resolveInfo="get" />
+                              <node role="actualArgument" type="jetbrains.mps.lang.generator.generationContext.structure.TemplateFunctionParameter_generationContext" id="552650560884338810" />
                               <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1240926466139">
                                 <link role="variableDeclaration" targetNodeId="1240926466102" resolveInfo="sn" />
                               </node>
@@ -10770,6 +10851,7 @@
                                       </node>
                                       <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1240926467448">
                                         <link role="baseMethodDeclaration" targetNodeId="13.1240919121437" resolveInfo="get" />
+                                        <node role="actualArgument" type="jetbrains.mps.lang.generator.generationContext.structure.TemplateFunctionParameter_generationContext" id="552650560884338799" />
                                         <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1240926467449">
                                           <link role="variableDeclaration" targetNodeId="1240926467412" resolveInfo="sn" />
                                         </node>
@@ -10853,6 +10935,7 @@
                                   </node>
                                   <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1240926466075">
                                     <link role="baseMethodDeclaration" targetNodeId="13.1240919121437" resolveInfo="get" />
+                                    <node role="actualArgument" type="jetbrains.mps.lang.generator.generationContext.structure.TemplateFunctionParameter_generationContext" id="552650560884338822" />
                                     <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1240926466076">
                                       <link role="variableDeclaration" targetNodeId="1240926466039" resolveInfo="sn" />
                                     </node>
@@ -10936,6 +11019,7 @@
                             </node>
                             <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1240926467867">
                               <link role="baseMethodDeclaration" targetNodeId="13.1240919121437" resolveInfo="get" />
+                              <node role="actualArgument" type="jetbrains.mps.lang.generator.generationContext.structure.TemplateFunctionParameter_generationContext" id="552650560884338770" />
                               <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1240926467868">
                                 <link role="variableDeclaration" targetNodeId="1240926467831" resolveInfo="sn" />
                               </node>
@@ -10996,6 +11080,7 @@
                                       </node>
                                       <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1240926464330">
                                         <link role="baseMethodDeclaration" targetNodeId="13.1240919121437" resolveInfo="get" />
+                                        <node role="actualArgument" type="jetbrains.mps.lang.generator.generationContext.structure.TemplateFunctionParameter_generationContext" id="552650560884338734" />
                                         <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1240926464331">
                                           <link role="variableDeclaration" targetNodeId="1240926464291" resolveInfo="sn" />
                                         </node>
@@ -11079,6 +11164,7 @@
                                   </node>
                                   <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1240926466842">
                                     <link role="baseMethodDeclaration" targetNodeId="13.1240919121437" resolveInfo="get" />
+                                    <node role="actualArgument" type="jetbrains.mps.lang.generator.generationContext.structure.TemplateFunctionParameter_generationContext" id="552650560884338747" />
                                     <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1240926466843">
                                       <link role="variableDeclaration" targetNodeId="1240926466804" resolveInfo="sn" />
                                     </node>
@@ -11162,6 +11248,7 @@
                             </node>
                             <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1240926465594">
                               <link role="baseMethodDeclaration" targetNodeId="13.1240919121437" resolveInfo="get" />
+                              <node role="actualArgument" type="jetbrains.mps.lang.generator.generationContext.structure.TemplateFunctionParameter_generationContext" id="552650560884338779" />
                               <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1240926465595">
                                 <link role="variableDeclaration" targetNodeId="1240926465558" resolveInfo="sn" />
                               </node>
@@ -11242,6 +11329,7 @@
                                   </node>
                                   <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1240926464687">
                                     <link role="baseMethodDeclaration" targetNodeId="13.1240919121437" resolveInfo="get" />
+                                    <node role="actualArgument" type="jetbrains.mps.lang.generator.generationContext.structure.TemplateFunctionParameter_generationContext" id="552650560884338763" />
                                     <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1240926464688">
                                       <link role="variableDeclaration" targetNodeId="1240926464650" resolveInfo="sn" />
                                     </node>
@@ -11299,6 +11387,7 @@
                             </node>
                             <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1240926466362">
                               <link role="baseMethodDeclaration" targetNodeId="13.1240919121437" resolveInfo="get" />
+                              <node role="actualArgument" type="jetbrains.mps.lang.generator.generationContext.structure.TemplateFunctionParameter_generationContext" id="552650560884338752" />
                               <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1240926466363">
                                 <link role="variableDeclaration" targetNodeId="1240926466326" resolveInfo="sn" />
                               </node>
@@ -11360,6 +11449,7 @@
                                     </node>
                                     <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1240926466987">
                                       <link role="baseMethodDeclaration" targetNodeId="13.1240919121437" resolveInfo="get" />
+                                      <node role="actualArgument" type="jetbrains.mps.lang.generator.generationContext.structure.TemplateFunctionParameter_generationContext" id="552650560884338800" />
                                       <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1240926466988">
                                         <link role="variableDeclaration" targetNodeId="1240926466952" resolveInfo="sn" />
                                       </node>
@@ -11419,6 +11509,7 @@
                                       </node>
                                       <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1240926465973">
                                         <link role="baseMethodDeclaration" targetNodeId="13.1240919121437" resolveInfo="get" />
+                                        <node role="actualArgument" type="jetbrains.mps.lang.generator.generationContext.structure.TemplateFunctionParameter_generationContext" id="552650560884338792" />
                                         <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1240926465974">
                                           <link role="variableDeclaration" targetNodeId="1240926465923" resolveInfo="sn" />
                                         </node>
@@ -11484,6 +11575,7 @@
                                 </node>
                                 <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1240926466320">
                                   <link role="baseMethodDeclaration" targetNodeId="13.1240919121437" resolveInfo="get" />
+                                  <node role="actualArgument" type="jetbrains.mps.lang.generator.generationContext.structure.TemplateFunctionParameter_generationContext" id="552650560884338819" />
                                   <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1240926466321">
                                     <link role="variableDeclaration" targetNodeId="1240926466286" resolveInfo="sn" />
                                   </node>
@@ -11528,6 +11620,7 @@
                                     </node>
                                     <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1240926467746">
                                       <link role="baseMethodDeclaration" targetNodeId="13.1240919121437" resolveInfo="get" />
+                                      <node role="actualArgument" type="jetbrains.mps.lang.generator.generationContext.structure.TemplateFunctionParameter_generationContext" id="552650560884338746" />
                                       <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1240926467747">
                                         <link role="variableDeclaration" targetNodeId="1240926467711" resolveInfo="sn" />
                                       </node>
@@ -11587,6 +11680,7 @@
                                   </node>
                                   <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1240926466730">
                                     <link role="baseMethodDeclaration" targetNodeId="13.1240919121437" resolveInfo="get" />
+                                    <node role="actualArgument" type="jetbrains.mps.lang.generator.generationContext.structure.TemplateFunctionParameter_generationContext" id="552650560884338727" />
                                     <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1240926466731">
                                       <link role="variableDeclaration" targetNodeId="1240926466692" resolveInfo="sn" />
                                     </node>
@@ -11668,6 +11762,7 @@
                             </node>
                             <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1240926464989">
                               <link role="baseMethodDeclaration" targetNodeId="13.1240919121437" resolveInfo="get" />
+                              <node role="actualArgument" type="jetbrains.mps.lang.generator.generationContext.structure.TemplateFunctionParameter_generationContext" id="552650560884338806" />
                               <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1240926464990">
                                 <link role="variableDeclaration" targetNodeId="1240926464948" resolveInfo="sn" />
                               </node>
@@ -11734,6 +11829,7 @@
                                         </node>
                                         <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1240926467929">
                                           <link role="baseMethodDeclaration" targetNodeId="13.1240919121437" resolveInfo="get" />
+                                          <node role="actualArgument" type="jetbrains.mps.lang.generator.generationContext.structure.TemplateFunctionParameter_generationContext" id="552650560884338781" />
                                           <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1240926467930">
                                             <link role="variableDeclaration" targetNodeId="1240926467893" resolveInfo="sn" />
                                           </node>
@@ -11855,6 +11951,7 @@
                                       </node>
                                       <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1240926464204">
                                         <link role="baseMethodDeclaration" targetNodeId="13.1240919121437" resolveInfo="get" />
+                                        <node role="actualArgument" type="jetbrains.mps.lang.generator.generationContext.structure.TemplateFunctionParameter_generationContext" id="552650560884338825" />
                                         <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1240926464205">
                                           <link role="variableDeclaration" targetNodeId="1240926464166" resolveInfo="sn" />
                                         </node>
@@ -12271,6 +12368,7 @@
                             </node>
                             <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1240921036423">
                               <link role="baseMethodDeclaration" targetNodeId="13.1240919121437" resolveInfo="get" />
+                              <node role="actualArgument" type="jetbrains.mps.lang.generator.generationContext.structure.TemplateFunctionParameter_generationContext" id="552650560884338780" />
                               <node role="actualArgument" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1240921036424" />
                             </node>
                           </node>
@@ -12311,6 +12409,7 @@
                               </node>
                               <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1240921004692">
                                 <link role="baseMethodDeclaration" targetNodeId="13.1240919121437" resolveInfo="get" />
+                                <node role="actualArgument" type="jetbrains.mps.lang.generator.generationContext.structure.TemplateFunctionParameter_generationContext" id="552650560884338790" />
                                 <node role="actualArgument" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1240921007202" />
                               </node>
                             </node>
@@ -12370,6 +12469,7 @@
                         </node>
                         <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1240921065932">
                           <link role="baseMethodDeclaration" targetNodeId="13.1240919121437" resolveInfo="get" />
+                          <node role="actualArgument" type="jetbrains.mps.lang.generator.generationContext.structure.TemplateFunctionParameter_generationContext" id="552650560884338751" />
                           <node role="actualArgument" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1240921065933" />
                         </node>
                       </node>
@@ -12506,6 +12606,7 @@
                           </node>
                           <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1240921024695">
                             <link role="baseMethodDeclaration" targetNodeId="13.1240919121437" resolveInfo="get" />
+                            <node role="actualArgument" type="jetbrains.mps.lang.generator.generationContext.structure.TemplateFunctionParameter_generationContext" id="552650560884338753" />
                             <node role="actualArgument" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1240921024696" />
                           </node>
                         </node>
@@ -12546,6 +12647,7 @@
                             </node>
                             <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1240921018305">
                               <link role="baseMethodDeclaration" targetNodeId="13.1240919121437" resolveInfo="get" />
+                              <node role="actualArgument" type="jetbrains.mps.lang.generator.generationContext.structure.TemplateFunctionParameter_generationContext" id="552650560884338796" />
                               <node role="actualArgument" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1240921018306" />
                             </node>
                           </node>
@@ -13118,6 +13220,7 @@
                               </node>
                               <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1240921057850">
                                 <link role="baseMethodDeclaration" targetNodeId="13.1240919121437" resolveInfo="get" />
+                                <node role="actualArgument" type="jetbrains.mps.lang.generator.generationContext.structure.TemplateFunctionParameter_generationContext" id="552650560884338804" />
                                 <node role="actualArgument" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1240921057851" />
                               </node>
                             </node>
@@ -13232,6 +13335,7 @@
                       </node>
                       <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1240921048809">
                         <link role="baseMethodDeclaration" targetNodeId="13.1240919121437" resolveInfo="get" />
+                        <node role="actualArgument" type="jetbrains.mps.lang.generator.generationContext.structure.TemplateFunctionParameter_generationContext" id="552650560884338826" />
                         <node role="actualArgument" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1240921048810" />
                       </node>
                     </node>
@@ -14249,6 +14353,7 @@
                             </node>
                             <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1240919467023">
                               <link role="baseMethodDeclaration" targetNodeId="13.1240919121437" resolveInfo="get" />
+                              <node role="actualArgument" type="jetbrains.mps.lang.generator.generationContext.structure.TemplateFunctionParameter_generationContext" id="552650560884338782" />
                               <node role="actualArgument" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1240919472209" />
                             </node>
                           </node>
@@ -14550,6 +14655,7 @@
                             </node>
                             <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1240919513021">
                               <link role="baseMethodDeclaration" targetNodeId="13.1240919121437" resolveInfo="get" />
+                              <node role="actualArgument" type="jetbrains.mps.lang.generator.generationContext.structure.TemplateFunctionParameter_generationContext" id="552650560884338814" />
                               <node role="actualArgument" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1240919513022" />
                             </node>
                           </node>
@@ -17396,6 +17502,7 @@
                             </node>
                             <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1240926468047">
                               <link role="baseMethodDeclaration" targetNodeId="13.1240919121437" resolveInfo="get" />
+                              <node role="actualArgument" type="jetbrains.mps.lang.generator.generationContext.structure.TemplateFunctionParameter_generationContext" id="552650560884338776" />
                               <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1240926468048">
                                 <link role="variableDeclaration" targetNodeId="1240926468012" resolveInfo="sn" />
                               </node>
@@ -17459,6 +17566,7 @@
                                   </node>
                                   <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1240926467623">
                                     <link role="baseMethodDeclaration" targetNodeId="13.1240919121437" resolveInfo="get" />
+                                    <node role="actualArgument" type="jetbrains.mps.lang.generator.generationContext.structure.TemplateFunctionParameter_generationContext" id="552650560884338762" />
                                     <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1240926467624">
                                       <link role="variableDeclaration" targetNodeId="1240926467572" resolveInfo="sn" />
                                     </node>
@@ -17516,6 +17624,7 @@
                             </node>
                             <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1240926467160">
                               <link role="baseMethodDeclaration" targetNodeId="13.1240919121437" resolveInfo="get" />
+                              <node role="actualArgument" type="jetbrains.mps.lang.generator.generationContext.structure.TemplateFunctionParameter_generationContext" id="552650560884338765" />
                               <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1240926467161">
                                 <link role="variableDeclaration" targetNodeId="1240926467124" resolveInfo="sn" />
                               </node>
@@ -17576,6 +17685,7 @@
                                   </node>
                                   <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1240926465697">
                                     <link role="baseMethodDeclaration" targetNodeId="13.1240919121437" resolveInfo="get" />
+                                    <node role="actualArgument" type="jetbrains.mps.lang.generator.generationContext.structure.TemplateFunctionParameter_generationContext" id="552650560884338794" />
                                     <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1240926465698">
                                       <link role="variableDeclaration" targetNodeId="1240926465661" resolveInfo="sn" />
                                     </node>
@@ -17650,6 +17760,7 @@
                                       </node>
                                       <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1240926465057">
                                         <link role="baseMethodDeclaration" targetNodeId="13.1240919121437" resolveInfo="get" />
+                                        <node role="actualArgument" type="jetbrains.mps.lang.generator.generationContext.structure.TemplateFunctionParameter_generationContext" id="552650560884338749" />
                                         <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1240926465058">
                                           <link role="variableDeclaration" targetNodeId="1240926465020" resolveInfo="sn" />
                                         </node>
@@ -17721,6 +17832,7 @@
                                       </node>
                                       <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1240926467807">
                                         <link role="baseMethodDeclaration" targetNodeId="13.1240919121437" resolveInfo="get" />
+                                        <node role="actualArgument" type="jetbrains.mps.lang.generator.generationContext.structure.TemplateFunctionParameter_generationContext" id="552650560884338813" />
                                         <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1240926467808">
                                           <link role="variableDeclaration" targetNodeId="1240926467771" resolveInfo="sn" />
                                         </node>
@@ -17788,6 +17900,7 @@
                                 </node>
                                 <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1240926465815">
                                   <link role="baseMethodDeclaration" targetNodeId="13.1240919121437" resolveInfo="get" />
+                                  <node role="actualArgument" type="jetbrains.mps.lang.generator.generationContext.structure.TemplateFunctionParameter_generationContext" id="552650560884338748" />
                                   <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1240926465816">
                                     <link role="variableDeclaration" targetNodeId="1240926465783" resolveInfo="sn" />
                                   </node>
@@ -17833,6 +17946,7 @@
                                   </node>
                                   <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1240926465391">
                                     <link role="baseMethodDeclaration" targetNodeId="13.1240919121437" resolveInfo="get" />
+                                    <node role="actualArgument" type="jetbrains.mps.lang.generator.generationContext.structure.TemplateFunctionParameter_generationContext" id="552650560884338744" />
                                     <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1240926465392">
                                       <link role="variableDeclaration" targetNodeId="1240926465354" resolveInfo="sn" />
                                     </node>

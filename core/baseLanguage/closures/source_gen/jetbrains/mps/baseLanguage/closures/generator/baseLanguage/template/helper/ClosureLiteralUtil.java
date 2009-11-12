@@ -52,8 +52,8 @@ public class ClosureLiteralUtil {
     SNode trgCopy = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ClassifierType", null);
     SLinkOperations.setTarget(trgCopy, "classifier", SLinkOperations.getTarget(target, "classifier", false), false);
     matchParameters(genContext, target, trgCopy, SNodeOperations.cast(TypeChecker.getInstance().getTypeOf(literal), "jetbrains.mps.baseLanguage.closures.structure.FunctionType"), literal);
-    Values.LITERAL.set(trgCopy, literal);
-    Values.LITERAL_TARGET.set(literal, trgCopy);
+    Values.LITERAL.set(genContext, trgCopy, literal);
+    Values.LITERAL_TARGET.set(genContext, literal, trgCopy);
   }
 
   private static void matchParameters(TemplateQueryContext genContext, SNode origCT, SNode ctNoParams, SNode ft, SNode literal) {
@@ -85,7 +85,7 @@ public class ClosureLiteralUtil {
         idx++;
       }
     }
-    Values.TYPE_MAP.set(ctNoParams, map);
+    Values.TYPE_MAP.set(genContext, ctNoParams, map);
     if ((absRetCT != null)) {
       SNode ftResCT = SNodeOperations.cast(FunctionTypeUtil.unmeet(FunctionType_Behavior.call_getNormalizedReturnType_1213877405252(ft)), "jetbrains.mps.baseLanguage.structure.ClassifierType");
       /*
@@ -103,7 +103,7 @@ public class ClosureLiteralUtil {
               SLinkOperations.addChild(newRetCT, "parameter", MapSequence.fromMap(map).get(SPropertyOperations.getString(tvar, "name")));
             }
           */
-          Values.RETURN_TYPE.set(ctNoParams, newRetCT);
+          Values.RETURN_TYPE.set(genContext, ctNoParams, newRetCT);
           break;
         }
       }

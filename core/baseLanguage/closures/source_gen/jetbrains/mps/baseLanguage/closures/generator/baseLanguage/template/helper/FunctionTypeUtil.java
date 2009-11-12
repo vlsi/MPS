@@ -48,7 +48,7 @@ public class FunctionTypeUtil {
     SNode ntype = TypeChecker.getInstance().getRuntimeSupport().coerce_(TypeChecker.getInstance().getTypeOf(expr), HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.structure.ClassifierType"), true);
     assert ntype != null;
     List<SNode> targets = FunctionTypeUtil.getAdaptableClassifierTypeTargets(SNodeOperations.cast(ntype, "jetbrains.mps.baseLanguage.structure.ClassifierType"), generator);
-    String trgFQname = (String)Values.PREP_DATA.get(expr);
+    String trgFQname = (String)Values.PREP_DATA.get(genContext, expr);
     SNode trg = null;
     for (SNode ct : targets) {
       if (trgFQname.equals(INamedConcept_Behavior.call_getFqName_1213877404258(SLinkOperations.getTarget(ct, "classifier", false)))) {
@@ -155,19 +155,19 @@ with_meet:
         ClosureLiteralUtil.addAdaptableClosureLiteralTarget(genContext, SNodeOperations.cast(rexpr, "jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral"), lCType);
       } else {
         FunctionTypeUtil.addAdaptableClassifierTypeTarget(genContext, ClassifierTypeUtil.getDeclarationClassifierType(rFType), lCType);
-        Values.PREP_DATA.set(rexpr, INamedConcept_Behavior.call_getFqName_1213877404258(SLinkOperations.getTarget(lCType, "classifier", false)));
+        Values.PREP_DATA.set(genContext, rexpr, INamedConcept_Behavior.call_getFqName_1213877404258(SLinkOperations.getTarget(lCType, "classifier", false)));
       }
     } else
     if ((lFType != null) && (rCType != null)) {
       FunctionTypeUtil.addAdaptableClassifierTypeTarget(genContext, rCType, ClassifierTypeUtil.getDeclarationClassifierType(lFType));
-      Values.PREP_DATA.set(rexpr, INamedConcept_Behavior.call_getFqName_1213877404258(SLinkOperations.getTarget(ClassifierTypeUtil.getDeclarationClassifierType(lFType), "classifier", false)));
+      Values.PREP_DATA.set(genContext, rexpr, INamedConcept_Behavior.call_getFqName_1213877404258(SLinkOperations.getTarget(ClassifierTypeUtil.getDeclarationClassifierType(lFType), "classifier", false)));
     } else
     if ((lFType != null) && (rFType != null)) {
       if (SNodeOperations.isInstanceOf(rexpr, "jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral")) {
         ClosureLiteralUtil.addAdaptableClosureLiteralTarget(genContext, SNodeOperations.cast(rexpr, "jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral"), ClassifierTypeUtil.getClassifierType(lFType, SLinkOperations.getTargets(rFType, "parameterType", true)));
       } else if (SLinkOperations.getCount(lFType, "throwsType") != SLinkOperations.getCount(rFType, "throwsType")) {
         FunctionTypeUtil.addAdaptableClassifierTypeTarget(genContext, ClassifierTypeUtil.getDeclarationClassifierType(rFType), ClassifierTypeUtil.getDeclarationClassifierType(lFType));
-        Values.PREP_DATA.set(rexpr, INamedConcept_Behavior.call_getFqName_1213877404258(SLinkOperations.getTarget(ClassifierTypeUtil.getDeclarationClassifierType(lFType), "classifier", false)));
+        Values.PREP_DATA.set(genContext, rexpr, INamedConcept_Behavior.call_getFqName_1213877404258(SLinkOperations.getTarget(ClassifierTypeUtil.getDeclarationClassifierType(lFType), "classifier", false)));
       }
     }
   }
@@ -196,7 +196,7 @@ with_meet:
     if (!(hasOneAlready)) {
       SNode trg = SNodeOperations.copyNode(target);
       ListSequence.fromList(trgList).addElement(trg);
-      Values.ADAPTABLE.set(trg, adaptable);
+      Values.ADAPTABLE.set(genContext, trg, adaptable);
     }
   }
 
