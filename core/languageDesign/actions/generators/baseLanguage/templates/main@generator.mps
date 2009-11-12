@@ -3698,7 +3698,7 @@
                               <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1238774271044">
                                 <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1238774271045">
                                   <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1238774271046">
-                                    <link role="baseMethodDeclaration" targetNodeId="1238774271015" resolveInfo="getMatchingText" />
+                                    <link role="baseMethodDeclaration" targetNodeId="5.~AbstractNodeSubstituteAction.getMatchingText(java.lang.String):java.lang.String" resolveInfo="getMatchingText" />
                                     <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1238774271047">
                                       <link role="variableDeclaration" targetNodeId="1238774271040" resolveInfo="pattern" />
                                     </node>
