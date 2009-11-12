@@ -310,6 +310,10 @@
         </component>
 
         <component>
+            <implementation-class>jetbrains.mps.ide.actions.ModelCheckerSettings</implementation-class>
+        </component>
+
+        <component>
             <implementation-class>jetbrains.mps.build.SamplesExtractor</implementation-class>
         </component>
 
