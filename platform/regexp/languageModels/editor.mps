@@ -544,6 +544,12 @@
     <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="1174558016484">
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Property" id="1174558018736">
         <link role="relationDeclaration" targetNodeId="1.1174557887320" />
+        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.FontStyleStyleClassItem" id="3551998361337225132">
+          <property name="style" value="BOLD" />
+        </node>
+        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.ForegroundColorStyleClassItem" id="3551998361337225133">
+          <property name="color" value="DARK_GREEN" />
+        </node>
       </node>
       <node role="cellLayout" type="jetbrains.mps.lang.editor.structure.CellLayout_Indent" id="1237800050989" />
     </node>
@@ -555,6 +561,12 @@
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Property" id="1174558326265">
         <link role="relationDeclaration" targetNodeId="1.1174558315290" />
         <link role="actionMap" targetNodeId="6129327962765122924" resolveInfo="IntervalSymbolClassPart_removeLeft" />
+        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.FontStyleStyleClassItem" id="3551998361337225134">
+          <property name="style" value="BOLD" />
+        </node>
+        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.ForegroundColorStyleClassItem" id="3551998361337225135">
+          <property name="color" value="DARK_GREEN" />
+        </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1174558328282">
         <property name="text" value="-" />
@@ -571,6 +583,12 @@
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Property" id="1174558329519">
         <link role="relationDeclaration" targetNodeId="1.1174558317822" />
         <link role="actionMap" targetNodeId="6129327962764883162" resolveInfo="IntervalSymbolClassPart_removeRight" />
+        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.FontStyleStyleClassItem" id="3551998361337225136">
+          <property name="style" value="BOLD" />
+        </node>
+        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.ForegroundColorStyleClassItem" id="3551998361337225137">
+          <property name="color" value="DARK_GREEN" />
+        </node>
       </node>
       <node role="cellLayout" type="jetbrains.mps.lang.editor.structure.CellLayout_Indent" id="1237800051108" />
     </node>
@@ -1239,6 +1257,11 @@
         <link role="actionMap" targetNodeId="1174908577381" resolveInfo="LookRegexp_Actions" />
         <node role="styleItem" type="jetbrains.mps.lang.editor.structure.ForegroundColorStyleClassItem" id="1214399678902">
           <property name="color" value="DARK_MAGENTA" />
+        </node>
+        <node role="menuDescriptor" type="jetbrains.mps.lang.editor.structure.CellMenuDescriptor" id="3551998361337753092">
+          <node role="cellMenuPart" type="jetbrains.mps.lang.editor.structure.CellMenuPart_ReplaceNode_CustomNodeConcept" id="3551998361337753093">
+            <link role="replacementConcept" targetNodeId="1.1174906544517" resolveInfo="LookRegexp" />
+          </node>
         </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode" id="1174906592533">

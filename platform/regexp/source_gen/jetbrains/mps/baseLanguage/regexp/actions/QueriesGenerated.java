@@ -94,6 +94,14 @@ public class QueriesGenerated {
           public boolean canSubstitute_internal(String pattern, boolean strictly) {
             return _PrecompiledPatterns.REGEXP0.matcher(pattern).matches();
           }
+
+          public String getMatchingText(String pattern) {
+            return pattern;
+          }
+
+          public String getVisibleMatchingText(String pattern) {
+            return this.getMatchingText(pattern);
+          }
         });
       }
     }
@@ -151,6 +159,51 @@ public class QueriesGenerated {
 
           public String getDescriptionText(String pattern) {
             return "string literal";
+          }
+
+          public String getMatchingText(String pattern) {
+            return pattern;
+          }
+
+          public String getVisibleMatchingText(String pattern) {
+            return this.getMatchingText(pattern);
+          }
+        });
+      }
+    }
+    return result;
+  }
+
+  public static List<INodeSubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_SymbolClassPart_3551998361337009320(final IOperationContext operationContext, final NodeSubstituteActionsFactoryContext _context) {
+    List<INodeSubstituteAction> result = ListSequence.fromList(new ArrayList<INodeSubstituteAction>());
+    {
+      SNode outputConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.regexp.structure.CharacterSymbolClassPart");
+      SNode childConcept = (SNode)_context.getChildConcept();
+      if (outputConcept == null || SConceptOperations.isSuperConceptOf(childConcept, NameUtil.nodeFQName(outputConcept))) {
+        ListSequence.fromList(result).addElement(new DefaultSimpleSubstituteAction(outputConcept, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope()) {
+          public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
+            SNode literal = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.regexp.structure.CharacterSymbolClassPart", null);
+            SPropertyOperations.set(literal, "character", (pattern.startsWith("\\") ?
+              pattern.substring(1) :
+              pattern
+            ));
+            return literal;
+          }
+
+          public boolean hasSubstitute() {
+            return true;
+          }
+
+          public boolean canSubstitute_internal(String pattern, boolean strictly) {
+            return _PrecompiledPatterns.REGEXP3.matcher(pattern).matches();
+          }
+
+          public String getMatchingText(String pattern) {
+            return pattern;
+          }
+
+          public String getVisibleMatchingText(String pattern) {
+            return this.getMatchingText(pattern);
           }
         });
       }
@@ -356,7 +409,7 @@ public class QueriesGenerated {
       Calculable calculable = new Calculable() {
         public Object calculate() {
           SearchScopeStatus status = ModelConstraintsUtil.getSearchScope(null, _context.getSourceNode(), ((ConceptDeclaration)SNodeOperations.getAdapter(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.regexp.structure.MatchVariableReferenceRegexp"))), "match", operationContext);
-          return status.getSearchScope().getNodes();
+          return (List<SNode>)status.getSearchScope().getNodes();
         }
       };
       Iterable<SNode> parameterObjects = (Iterable<SNode>)calculable.calculate();

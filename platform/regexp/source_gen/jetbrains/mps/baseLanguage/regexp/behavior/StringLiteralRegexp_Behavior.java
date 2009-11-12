@@ -5,6 +5,7 @@ package jetbrains.mps.baseLanguage.regexp.behavior;
 import jetbrains.mps.smodel.SNode;
 import java.util.List;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import org.apache.commons.lang.StringUtils;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
@@ -19,6 +20,9 @@ public class StringLiteralRegexp_Behavior {
   }
 
   public static boolean call_isCorrect_8330008649152998005(SNode thisNode) {
+    if (StringUtils.isEmpty(SPropertyOperations.getString(thisNode, "text"))) {
+      return false;
+    }
     return StringLiteralRegexp_Behavior.call_toRegexp_8330008649152995372(thisNode, SPropertyOperations.getString(thisNode, "text")) != null;
   }
 

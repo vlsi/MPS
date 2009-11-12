@@ -588,6 +588,24 @@
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="8330008649152998006" />
       <node role="returnType" type="jetbrains.mps.baseLanguage.structure.BooleanType" id="8330008649152998009" />
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="8330008649152998008">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="3551998361336904957">
+          <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="3551998361336904958">
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="3551998361336904975">
+              <node role="expression" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="3551998361336904977">
+                <property name="value" value="false" />
+              </node>
+            </node>
+          </node>
+          <node role="condition" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="3551998361336904970">
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="3551998361336904962">
+              <node role="operand" type="jetbrains.mps.lang.behavior.structure.ThisNodeExpression" id="3551998361336904961" />
+              <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="3551998361336904966">
+                <link role="property" targetNodeId="1.1174482761807" resolveInfo="text" />
+              </node>
+            </node>
+            <node role="operation" type="jetbrains.mps.baseLanguage.structure.IsEmptyOperation" id="3551998361336904974" />
+          </node>
+        </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="8330008649152998010">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.NotEqualsExpression" id="8330008649152998020">
             <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="8330008649152998023" />

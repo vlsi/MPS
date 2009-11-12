@@ -324,12 +324,39 @@
         </node>
       </node>
     </node>
-    <node role="regexp" type="jetbrains.mps.baseLanguage.regexp.structure.RegexpDeclaration" id="6129327962764786122">
-      <property name="name" value="saddassad" />
-      <node role="regexp" type="jetbrains.mps.baseLanguage.regexp.structure.PositiveSymbolClassRegexp" id="6129327962764786132">
-        <node role="part" type="jetbrains.mps.baseLanguage.regexp.structure.IntervalSymbolClassPart" id="6129327962765226218">
-          <property name="start" value="z" />
-          <property name="end" value="s" />
+    <node role="regexp" type="jetbrains.mps.baseLanguage.regexp.structure.RegexpDeclaration" id="3551998361336998501">
+      <property name="name" value="asas" />
+      <node role="regexp" type="jetbrains.mps.baseLanguage.regexp.structure.NTimesRegexp" id="3551998361337647042">
+        <property name="n" value="1" />
+        <node role="regexp" type="jetbrains.mps.baseLanguage.regexp.structure.PositiveSymbolClassRegexp" id="3551998361337647043">
+          <node role="part" type="jetbrains.mps.baseLanguage.regexp.structure.PredefinedSymbolClassSymbolClassPart" id="3551998361337647044">
+            <link role="declaration" targetNodeId="2v.1174554738336" resolveInfo="\w" />
+          </node>
+          <node role="part" type="jetbrains.mps.baseLanguage.regexp.structure.IntervalSymbolClassPart" id="3551998361337647045">
+            <property name="start" value="0" />
+            <property name="end" value="9" />
+          </node>
+          <node role="part" type="jetbrains.mps.baseLanguage.regexp.structure.IntersectionSymbolClassPart" id="3551998361337647046">
+            <node role="left" type="jetbrains.mps.baseLanguage.regexp.structure.IntervalSymbolClassPart" id="3551998361337647047">
+              <property name="start" value="a" />
+              <property name="end" value="z" />
+            </node>
+            <node role="right" type="jetbrains.mps.baseLanguage.regexp.structure.PredefinedSymbolClassSymbolClassPart" id="3551998361337647048">
+              <link role="declaration" targetNodeId="2v.1174554738336" resolveInfo="\w" />
+            </node>
+          </node>
+          <node role="part" type="jetbrains.mps.baseLanguage.regexp.structure.CharacterSymbolClassPart" id="3551998361337647049">
+            <property name="character" value="(" />
+          </node>
+          <node role="part" type="jetbrains.mps.baseLanguage.regexp.structure.CharacterSymbolClassPart" id="3551998361337647050">
+            <property name="character" value=")" />
+          </node>
+          <node role="part" type="jetbrains.mps.baseLanguage.regexp.structure.CharacterSymbolClassPart" id="3551998361337647051">
+            <property name="character" value="[" />
+          </node>
+          <node role="part" type="jetbrains.mps.baseLanguage.regexp.structure.CharacterSymbolClassPart" id="3551998361337647052">
+            <property name="character" value="]" />
+          </node>
         </node>
       </node>
     </node>
