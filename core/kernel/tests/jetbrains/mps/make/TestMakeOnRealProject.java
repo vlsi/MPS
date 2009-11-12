@@ -90,6 +90,25 @@ public class TestMakeOnRealProject extends TestCase {
   }
 
   /**
+   * Checks that resources are copied.
+   */
+  public void testResourcesCopy() {
+    doSolutionsCompilation();
+
+    ModelAccess.instance().runReadAction(new Runnable() {
+      public void run() {
+        for (Solution sln : myProject.getProjectSolutions()) {
+          checkResurcesCopied(sln);
+        }
+
+        for (Language language : myProject.getProjectLanguages()) {
+          checkResurcesCopied(language);
+        }
+      }
+    });
+  }
+
+  /**
    * Test for correctly scanning for changed sources.
    */
   public void testCompileAfterTouch() throws InterruptedException {
@@ -98,15 +117,20 @@ public class TestMakeOnRealProject extends TestCase {
     Thread.sleep(5);
 
     // select and touch
-    Solution sln = myProject.getProjectSolutions().get(0);
-    String sourcePath = sln.getSourcePaths().get(0);
+    Language lang = myProject.getProjectLanguages().get(0);
+    String sourcePath = null;
+    for (String path: lang.getSourcePaths()) {
+      if (path.contains("source_gen")) {
+        sourcePath = path;
+      }
+    }
     File javaFile = collectSpecificFilesFromDir(new File(sourcePath), "java").get(0);
     long time = Math.max(System.currentTimeMillis(), javaFile.lastModified() + 1);
     if (!javaFile.setLastModified(time)) {
       fail("Can't touch the file " + javaFile);
     }
 
-    ModuleSources sources = new ModuleSources(sln, new Dependencies(Collections.EMPTY_SET));
+    ModuleSources sources = new ModuleSources(lang, new Dependencies(Collections.EMPTY_SET));
     String className = javaFile.getPath().replace(sourcePath + File.separator, "").replace(File.separator, ".").replace(".java", "");
     JavaFile javaFileForMake = new JavaFile(FileSystem.getFile(javaFile), className);
     Set<JavaFile> filesToCompile = sources.getFilesToCompile();
@@ -122,6 +146,16 @@ public class TestMakeOnRealProject extends TestCase {
       collectSpecificFilesFromDir(new File(path), "java", sources);
     }
     assertTrue("classes_gen shoud contain one class", sources.size() <= classes.size());
+  }
+
+  private void checkResurcesCopied(IModule module) {
+    IFile classesGen = module.getClassesGen();
+    List<File> classes = collectSpecificFilesFromDir(classesGen.toFile(), "txt");
+    List<File> sources = new ArrayList<File>();
+    for (String path : module.getSourcePaths()) {
+      collectSpecificFilesFromDir(new File(path), "txt", sources);
+    }
+    assertTrue("resources should be copied ", sources.size() == classes.size());
   }
 
   private ArrayList<File> collectSpecificFilesFromDir(File file, final String extension) {
