@@ -17,7 +17,8 @@ package jetbrains.mps.stubs.javastub.classpath;
 
 import jetbrains.mps.baseLanguage.structure.BaseLanguage_Language;
 import jetbrains.mps.stubs.javastub.ClassPathItemProvider;
-import jetbrains.mps.stubs.javastub.ConverterFactory;
+import jetbrains.mps.stubs.javastub.ASMModelLoader;
+import jetbrains.mps.stubs.javastub.classpath.StubHelper;
 import jetbrains.mps.stubs.IModelLoader;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.IModule;
@@ -25,6 +26,7 @@ import jetbrains.mps.project.SModelRoot;
 import jetbrains.mps.reloading.IClassPathItem;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.persistence.AbstractModelRootManager;
+import jetbrains.mps.smodel.persistence.IModelRootManager;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -48,11 +50,11 @@ public abstract class ClassPathModelRootManager extends AbstractModelRootManager
   public Set<SModelDescriptor> read(@NotNull SModelRoot root, @NotNull IModule owner) {
     try {
       myOwner = owner;
-      myModelLoader = ConverterFactory.createClassPathConverter(this, new ClassPathItemProvider() {
+      myModelLoader = new ASMModelLoader((IModelRootManager) this, owner, (ClassPathItemProvider) new ClassPathItemProvider() {
         public IClassPathItem get() {
           return getClassPathItem();
         }
-      }, owner);
+      });
 
       Set<SModelDescriptor> result = new HashSet<SModelDescriptor>();
       addPackageModelDescriptors(result, root.getPrefix());
@@ -118,7 +120,7 @@ public abstract class ClassPathModelRootManager extends AbstractModelRootManager
 
     for (String subpackage : subpackages) {
       if (!getClassPathItem().getAvailableClasses(subpackage).isEmpty()) {
-        SModelReference modelReference = ClassPathModelProvider.uidForPackage(subpackage);
+        SModelReference modelReference = StubHelper.uidForPackageInStubs(subpackage);
         if (SModelRepository.getInstance().getModelDescriptor(modelReference) != null) {
           final SModelDescriptor descriptor = SModelRepository.getInstance().getModelDescriptor(SModelReference.fromString(subpackage + "@" + SModelStereotype.JAVA_STUB));
 

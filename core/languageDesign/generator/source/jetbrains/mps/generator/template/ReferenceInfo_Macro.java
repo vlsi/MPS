@@ -24,7 +24,7 @@ import jetbrains.mps.lang.generator.structure.ReferenceMacro;
 import jetbrains.mps.lang.generator.structure.ReferenceMacro_GetReferent;
 import jetbrains.mps.util.QueryMethodGenerated;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.stubs.javastub.classpath.ClassPathModelProvider;
+import jetbrains.mps.stubs.javastub.classpath.StubHelper;
 
 import java.util.Map;
 
@@ -141,7 +141,7 @@ public class ReferenceInfo_Macro extends ReferenceInfo {
               // model: either current output or java_stub
               if (!modelName.equals(generator.getOutputModel().getLongName())) {
                 // external java_stub
-                myExternalTargetModelReference = ClassPathModelProvider.uidForPackage(modelName);
+                myExternalTargetModelReference = StubHelper.uidForPackageInStubs(modelName);
               }
             }
           }

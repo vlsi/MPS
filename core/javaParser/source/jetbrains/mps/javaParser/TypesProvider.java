@@ -22,7 +22,7 @@ import jetbrains.mps.smodel.SNodeId.Foreign;
 import jetbrains.mps.baseLanguage.structure.*;
 import jetbrains.mps.util.NodeNameUtil;
 import jetbrains.mps.util.NameUtil;
-import jetbrains.mps.stubs.javastub.classpath.ClassPathModelProvider;
+import jetbrains.mps.stubs.javastub.classpath.StubHelper;
 import jetbrains.mps.lang.core.structure.INamedConcept;
 import jetbrains.mps.logging.Logger;
 
@@ -200,7 +200,7 @@ public class TypesProvider {
   private SModelReference modelReferenceFromBinaryClassBinding(BinaryTypeBinding binaryTypeBinding) {
     String classFQName = classFqNameFromCompoundName(binaryTypeBinding.compoundName);
     String packageName = NodeNameUtil.getNamespace(classFQName);
-    SModelReference modelReference = ClassPathModelProvider.uidForPackage(packageName);
+    SModelReference modelReference = StubHelper.uidForPackageInStubs(packageName);
     return modelReference;
   }
 

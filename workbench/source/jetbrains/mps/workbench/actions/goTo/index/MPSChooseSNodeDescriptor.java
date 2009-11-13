@@ -33,7 +33,8 @@ import jetbrains.mps.workbench.choose.base.BaseMPSChooseModel;
 import jetbrains.mps.workbench.editors.MPSEditorOpener;
 import jetbrains.mps.reloading.IClassPathItem;
 import jetbrains.mps.stubs.javastub.classpath.ClassPathModelRootManager;
-import jetbrains.mps.stubs.javastub.classpath.ClassPathModelProvider;
+import jetbrains.mps.stubs.javastub.classpath.ClassifierKind;
+import jetbrains.mps.stubs.javastub.classpath.StubHelper;
 import jetbrains.mps.baseLanguage.structure.ClassConcept;
 import jetbrains.mps.baseLanguage.structure.Annotation;
 import jetbrains.mps.baseLanguage.structure.Interface;
@@ -126,7 +127,7 @@ public class MPSChooseSNodeDescriptor extends BaseMPSChooseModel<SNodeDescriptor
       byte[] content = item.getClass("".equals(pack) ? cls : pack + "." + cls);
 
       String conceptFqName = ClassConcept.concept;
-      switch (ClassPathModelProvider.getClassifierKind(content)) {
+      switch (ClassifierKind.getClassifierKind(content)) {
         case CLASS:
           conceptFqName = ClassConcept.concept;
           break;
@@ -139,14 +140,14 @@ public class MPSChooseSNodeDescriptor extends BaseMPSChooseModel<SNodeDescriptor
         case ENUM:
           conceptFqName = EnumClass.concept;
           break;
-        case UNKNOWNG:
+        case UNKNOWN:
           continue;
       }
 
       result.add(new SNodeDescriptor(cls, conceptFqName, 0, 0, numberInStubModel) {
         @Override
         public SModelReference getModelReference() {
-          return ClassPathModelProvider.uidForPackage(pack);
+          return StubHelper.uidForPackageInStubs(pack);
         }
       });
       numberInStubModel++;
