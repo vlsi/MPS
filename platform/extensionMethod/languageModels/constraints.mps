@@ -199,5 +199,45 @@
       </node>
     </node>
   </node>
+  <node type="jetbrains.mps.lang.constraints.structure.ConceptConstraints" id="2763618064981525308">
+    <link role="concept" targetNodeId="10.1550313277222152185" resolveInfo="ExtensionMethodDeclaration" />
+    <node role="canBeParent" type="jetbrains.mps.lang.constraints.structure.ConstraintFunction_CanBeAParent" id="2763618064981525309">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="2763618064981525310">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="2763618064981525311">
+          <node role="condition" type="jetbrains.mps.baseLanguage.structure.AndExpression" id="2763618064981525322">
+            <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.EqualsExpression" id="2763618064981525326">
+              <node role="rightExpression" type="jetbrains.mps.lang.smodel.structure.LinkRefExpression" id="2763618064981525329">
+                <link role="conceptDeclaration" targetNodeId="10.1550313277222152185" resolveInfo="ExtensionMethodDeclaration" />
+                <link role="linkDeclaration" targetNodeId="2v.1178549979242" />
+              </node>
+              <node role="leftExpression" type="jetbrains.mps.lang.constraints.structure.ConstraintFunctionParameter_link" id="2763618064981525325" />
+            </node>
+            <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.NotExpression" id="2763618064981525331">
+              <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="2763618064981525315">
+                <node role="operand" type="jetbrains.mps.lang.constraints.structure.ConstraintFunctionParameter_childConcept" id="2763618064981525314" />
+                <node role="operation" type="jetbrains.mps.lang.smodel.structure.Concept_IsSubConceptOfOperation" id="2763618064981525319">
+                  <node role="conceptArgument" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" id="2763618064981525321">
+                    <link role="conceptDeclaration" targetNodeId="2v.1146644602865" resolveInfo="PublicVisibility" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+          <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="2763618064981525313">
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="2763618064981525330">
+              <node role="expression" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="2763618064981525334">
+                <property name="value" value="false" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="2763618064981525336">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="2763618064981525338">
+            <property name="value" value="true" />
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
 </model>
 
