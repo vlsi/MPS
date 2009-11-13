@@ -87,7 +87,10 @@ public class TestBrokenReferencesWorker extends MpsWorker {
 
         if (ref.getTargetNode() == null) {
           errorMessages.append(myBuildServerMessageFormat.escapeBuildMessage("Broken reference in node "));
+          errorMessages.append(myBuildServerMessageFormat.escapeBuildMessage(node.getId()));
+          errorMessages.append(myBuildServerMessageFormat.escapeBuildMessage("("));
           errorMessages.append(myBuildServerMessageFormat.escapeBuildMessage(node.toString()));
+          errorMessages.append(myBuildServerMessageFormat.escapeBuildMessage(")"));
           errorMessages.append(myBuildServerMessageFormat.getLinesSeparator());
         }
       }
