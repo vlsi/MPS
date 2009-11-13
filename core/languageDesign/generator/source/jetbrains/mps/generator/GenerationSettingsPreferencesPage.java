@@ -24,6 +24,12 @@ import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import java.awt.BorderLayout;
 import java.awt.GridLayout;
+import java.awt.event.ComponentListener;
+import java.awt.event.ComponentEvent;
+import java.awt.event.ContainerListener;
+import java.awt.event.ContainerEvent;
+import java.beans.PropertyChangeListener;
+import java.beans.PropertyChangeEvent;
 
 class GenerationSettingsPreferencesPage {
   private JPanel myPage;
@@ -35,10 +41,7 @@ class GenerationSettingsPreferencesPage {
 
   public GenerationSettingsPreferencesPage(GenerationSettings settings) {
     myGenerationSettings = settings;
-    mySaveTransientModelsCheckBox.setSelected(myGenerationSettings.isSaveTransientModels());
-    myGenerateRequirementsCheckBox.setSelected(myGenerationSettings.isGenerateRequirements());
-    myShowErrorsOnlyCheckBox.setSelected(myGenerationSettings.isShowErrorsOnly());
-    myCheckModelsBeforeGenerationCheckBox.setSelected(myGenerationSettings.isCheckModelsBeforeGeneration());
+    update();
 
     JPanel optionsPanel = new JPanel(new GridLayout(0, 1));
     optionsPanel.add(mySaveTransientModelsCheckBox);
@@ -79,5 +82,12 @@ class GenerationSettingsPreferencesPage {
            myGenerationSettings.isShowErrorsOnly() == myShowErrorsOnlyCheckBox.isSelected() &&
            myGenerationSettings.isGenerateRequirements() == myGenerateRequirementsCheckBox.isSelected() &&
            myGenerationSettings.isCheckModelsBeforeGeneration() == myCheckModelsBeforeGenerationCheckBox.isSelected());
+  }
+
+  public void update() {
+    mySaveTransientModelsCheckBox.setSelected(myGenerationSettings.isSaveTransientModels());
+    myShowErrorsOnlyCheckBox.setSelected(myGenerationSettings.isShowErrorsOnly());
+    myGenerateRequirementsCheckBox.setSelected(myGenerationSettings.isGenerateRequirements());
+    myCheckModelsBeforeGenerationCheckBox.setSelected(myGenerationSettings.isCheckModelsBeforeGeneration());
   }
 }

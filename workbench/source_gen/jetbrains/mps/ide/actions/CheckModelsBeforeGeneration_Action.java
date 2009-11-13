@@ -9,7 +9,7 @@ import org.apache.commons.logging.LogFactory;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import jetbrains.mps.generator.GenerationSettings;
-import jetbrains.mps.ide.projectPane.Icons;
+import jetbrains.mps.generator.Icons;
 import com.intellij.util.ui.EmptyIcon;
 
 public class CheckModelsBeforeGeneration_Action extends GeneratedAction {
@@ -32,8 +32,7 @@ public class CheckModelsBeforeGeneration_Action extends GeneratedAction {
       {
         boolean optionEnabled = GenerationSettings.getInstance().isCheckModelsBeforeGeneration();
         if (optionEnabled) {
-          // TODO icon is similar, but not the same as icons for other checkable menu items 
-          event.getPresentation().setIcon(Icons.BOOKMARK_UNNUMBERED);
+          event.getPresentation().setIcon(Icons.CHECK_ICON);
         } else {
           event.getPresentation().setIcon(new EmptyIcon(18, 18));
         }

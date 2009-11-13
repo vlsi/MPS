@@ -100,7 +100,7 @@ public class GenerationSettings implements PersistentStateComponent<MyState>, Ap
   }
 
   public void reset() {
-
+    getPreferences().update();
   }
 
   public void disposeUIResources() {

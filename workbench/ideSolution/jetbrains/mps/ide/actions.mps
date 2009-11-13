@@ -39363,11 +39363,6 @@
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="172529947038284127">
           <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="172529947038284128">
-            <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="413573818925444511">
-              <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="413573818925444512">
-                <property name="text" value="TODO icon is similar, but not the same as icons for other checkable menu items" />
-              </node>
-            </node>
             <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="172529947038284132">
               <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="172529947038284139">
                 <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="172529947038284134">
@@ -39378,9 +39373,9 @@
                 </node>
                 <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="172529947038284143">
                   <link role="baseMethodDeclaration" targetNodeId="100.~Presentation.setIcon(javax.swing.Icon):void" resolveInfo="setIcon" />
-                  <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference" id="413573818925444509">
-                    <link role="classifier" targetNodeId="82.~Icons" resolveInfo="Icons" />
-                    <link role="variableDeclaration" targetNodeId="82.~Icons.BOOKMARK_UNNUMBERED" resolveInfo="BOOKMARK_UNNUMBERED" />
+                  <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference" id="4650994696945630078">
+                    <link role="classifier" targetNodeId="52.~Icons" resolveInfo="Icons" />
+                    <link role="variableDeclaration" targetNodeId="52.~Icons.CHECK_ICON" resolveInfo="CHECK_ICON" />
                   </node>
                 </node>
               </node>
