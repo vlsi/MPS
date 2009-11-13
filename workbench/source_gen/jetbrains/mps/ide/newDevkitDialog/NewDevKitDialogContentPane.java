@@ -19,6 +19,7 @@ import org.jdesktop.beansbinding.BeanProperty;
 import org.jdesktop.beansbinding.Bindings;
 import java.io.File;
 import jetbrains.mps.vfs.MPSExtentions;
+import jetbrains.mps.ide.NewModuleCheckUtil;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.progress.ProgressManager;
 import com.intellij.openapi.progress.Task;
@@ -204,13 +205,10 @@ public class NewDevKitDialogContentPane extends JPanel {
       myThis.getDialog().setErrorText("File " + devkitPath + " already exists");
       return;
     }
-    if (!(new File(devkitPath).isAbsolute())) {
-      myThis.getDialog().setErrorText("Path should be absolute");
-      return;
-    }
-    File dir = new File(myThis.getDevkitDir());
-    if (dir.exists() && dir.list().length != 0) {
-      myThis.getDialog().setErrorText("The selected folder is not empty. Please select an empty folder to create a language");
+    File dir = new File(devkitPath);
+    String message = NewModuleCheckUtil.checkModuleDirectory(dir, MPSExtentions.DOT_DEVKIT, "DevKit");
+    if (message != null) {
+      myThis.getDialog().setErrorText(message);
       return;
     }
     myThis.getDialog().dispose();

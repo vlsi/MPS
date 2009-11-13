@@ -20,6 +20,7 @@ import org.jdesktop.beansbinding.Bindings;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import java.io.File;
 import jetbrains.mps.vfs.MPSExtentions;
+import jetbrains.mps.ide.NewModuleCheckUtil;
 import com.intellij.openapi.progress.ProgressManager;
 import com.intellij.openapi.progress.Task;
 import com.intellij.openapi.project.Project;
@@ -220,12 +221,9 @@ public class NewSolutionDialogContentPane extends JPanel {
     String descriptorPath = myThis.getSolutionPath() + File.separator + myThis.getSolutionName() + MPSExtentions.DOT_SOLUTION;
     final File file = new File(descriptorPath);
     File dir = file.getParentFile();
-    if (!(dir.isAbsolute())) {
-      myThis.getDialog().setErrorText("Path should be absolute");
-      return;
-    }
-    if (dir.exists() && dir.list().length != 0) {
-      myThis.getDialog().setErrorText("The selected folder is not empty. Please select an empty folder to create solution");
+    String message = NewModuleCheckUtil.checkModuleDirectory(dir, MPSExtentions.DOT_SOLUTION, "Solution");
+    if (message != null) {
+      myThis.getDialog().setErrorText(message);
       return;
     }
     if (file == null) {

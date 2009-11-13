@@ -18,6 +18,8 @@ import org.jdesktop.beansbinding.Property;
 import org.jdesktop.beansbinding.BeanProperty;
 import org.jdesktop.beansbinding.Bindings;
 import java.io.File;
+import jetbrains.mps.ide.NewModuleCheckUtil;
+import jetbrains.mps.vfs.MPSExtentions;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.util.NameUtil;
 import com.intellij.openapi.progress.ProgressManager;
@@ -27,7 +29,6 @@ import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.progress.ProgressIndicator;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.util.FileUtil;
-import jetbrains.mps.vfs.MPSExtentions;
 import jetbrains.mps.vfs.FileSystemFile;
 import jetbrains.mps.project.structure.modules.LanguageDescriptor;
 import jetbrains.mps.project.structure.modules.ModuleReference;
@@ -207,12 +208,9 @@ public class NewLanguageDialogContentPane extends JPanel {
 
   /*package*/ void onOk() {
     File dir = new File(myThis.getLanguagePath());
-    if (!(dir.isAbsolute())) {
-      myThis.getDialog().setErrorText("Path should be absolute");
-      return;
-    }
-    if (dir.exists()) {
-      myThis.getDialog().setErrorText("Language directory already exists");
+    String message = NewModuleCheckUtil.checkModuleDirectory(dir, MPSExtentions.DOT_LANGUAGE, "Language");
+    if (message != null) {
+      myThis.getDialog().setErrorText(message);
       return;
     }
     if (myThis.getLanguageNamespace().length() == 0) {
@@ -225,10 +223,6 @@ public class NewLanguageDialogContentPane extends JPanel {
     }
     if (NameUtil.shortNameFromLongName(myThis.getLanguageNamespace()).length() == 0) {
       myThis.getDialog().setErrorText("Enter valid namespace");
-      return;
-    }
-    if (dir.exists() && dir.list().length != 0) {
-      myThis.getDialog().setErrorText("The selected folder is not empty. Please select an empty folder to create language");
       return;
     }
     myThis.getDialog().dispose();
