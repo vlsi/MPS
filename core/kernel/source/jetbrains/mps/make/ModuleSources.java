@@ -24,6 +24,7 @@ import jetbrains.mps.reloading.IClassPathItem;
 import jetbrains.mps.reloading.FileClassPathItem;
 
 import java.util.*;
+import java.io.File;
 
 public class ModuleSources {
   private Dependencies myDependencies;
@@ -35,7 +36,7 @@ public class ModuleSources {
   private Set<JavaFile> myFilesToCompile = new HashSet<JavaFile>();
 
   private Set<ResourceFile> myResourcesToCopy = new HashSet<ResourceFile>();
-  private static final boolean CHECK_NEW_COMPILATION = false;
+  private static final boolean USE_NEW_COMPILATION = true;
 
   ModuleSources(IModule module, Dependencies deps) {
     myModule = module;
@@ -98,34 +99,43 @@ public class ModuleSources {
     myFilesToCompile.addAll(myJavaFiles.values());
     myResourcesToCopy.addAll(myResourceFiles.values());
 
-    collectOutputOld(myModule.getClassesGen(), "", myFilesToCompile, myFilesToDelete, myResourcesToCopy);
-    if (CHECK_NEW_COMPILATION) {
+    FileClassPathItem pathItem = myModule.getClassesGenItem();
+    if (USE_NEW_COMPILATION) {
+      if (pathItem == null) {
+        collectOutputOld(myModule.getClassesGen(), "", myFilesToCompile, myFilesToDelete, myResourcesToCopy);
+      } else {
+        collectOutputCached(pathItem, myFilesToCompile, myFilesToDelete, myResourcesToCopy);
+      }
+    } else {
+      collectOutputOld(myModule.getClassesGen(), "", myFilesToCompile, myFilesToDelete, myResourcesToCopy);
       Set<IFile> toDelete = new HashSet<IFile>();
       Set<JavaFile> toCompile = new HashSet<JavaFile>(myJavaFiles.values());
       Set<ResourceFile> resourcesToCopy = new HashSet<ResourceFile>(myResourceFiles.values());
+      if (pathItem == null) {
+        collectOutputOld(myModule.getClassesGen(), "", toCompile, toDelete, resourcesToCopy);
+      } else {
+        collectOutputCached(pathItem, toCompile, toDelete, resourcesToCopy);
+      }
 
-      collectOutputCached(myModule, toCompile, toDelete, resourcesToCopy);
       if (!toCompile.equals(myFilesToCompile)) {
-        System.out.println("To compile problem");
+        System.out.println("To compile problem " + myModule.getModuleFqName());
         System.out.println("Old - " + myFilesToCompile);
         System.out.println("New - " + toCompile);
       }
       if (!toDelete.equals(myFilesToDelete)) {
-        System.out.println("To delete problem");
+        System.out.println("To delete problem " + myModule.getModuleFqName());
         System.out.println("Old - " + myFilesToDelete);
         System.out.println("New - " + toDelete);
       }
       if (!resourcesToCopy.equals(myResourcesToCopy)) {
-        System.out.println("Resource problem");
+        System.out.println("Resource problem " + myModule.getModuleFqName());
         System.out.println("Old - " + myResourcesToCopy);
         System.out.println("New - " + resourcesToCopy);
       }
     }
   }
 
-  private void collectOutputCached(IModule module, Set<JavaFile> toCompile, Set<IFile> toDelete, Set<ResourceFile> resourcesToCopy) {
-    FileClassPathItem pathItem = module.getClassesGenItem();
-    if (pathItem == null) return;
+  private void collectOutputCached(FileClassPathItem pathItem, Set<JavaFile> toCompile, Set<IFile> toDelete, Set<ResourceFile> resourcesToCopy) {
 
     collectOutputForNamespace(pathItem, "", toCompile, toDelete, resourcesToCopy);
 
@@ -138,6 +148,18 @@ public class ModuleSources {
         toDelete.add(resourceInClasses);
       } else if (resourceInSources.getFile().lastModified() < resourceInClasses.lastModified()) {
         resourcesToCopy.remove(resourceInSources);
+      }
+    }
+
+    for (String resource : myResourceFiles.keySet()) {
+      ResourceFile resourceInSources = myResourceFiles.get(resource);
+      if (resourcesToCopy.contains(resourceInSources)) {
+        IFile resourceInClasses = pathItem.getResourceFile(resource);
+        if (resourceInClasses != null) {
+          if (resourceInSources.getFile().lastModified() < resourceInClasses.lastModified()) {
+            resourcesToCopy.remove(resourceInSources);
+          }
+        }
       }
     }
   }
