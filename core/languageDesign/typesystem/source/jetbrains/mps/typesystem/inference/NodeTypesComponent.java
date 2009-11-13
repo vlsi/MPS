@@ -226,9 +226,7 @@ public class NodeTypesComponent implements EditorMessageOwner {
   }
 
   private void putError(SNode node, IErrorReporter errorReporter) {
-    if (ErrorReportUtil.getMetaLevel(node) != 0) {
-      return;
-    }
+    if (!ErrorReportUtil.shouldReportError(node)) return;
 
     Map<SNode, List<IErrorReporter>> errorMap =
       myIsNonTypesystemCheckingInProgress ? myNodesToNonTypesystemErrorsMap : myNodesToErrorsMap;
