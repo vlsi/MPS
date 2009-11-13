@@ -914,8 +914,8 @@
       <option name="VM_PARAMETERS" value="-client -ea -Xmx1024m -Xss1024k -XX:PermSize=92m -Dmps.internal=true -XX:+HeapDumpOnOutOfMemoryError " />
       <option name="PROGRAM_PARAMETERS" value="" />
       <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$/bin" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
-      <option name="ALTERNATIVE_JRE_PATH" value="/usr/lib/jvm/java-6-sun" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" value="" />
       <option name="ENABLE_SWING_INSPECTOR" value="false" />
       <option name="ENV_VARIABLES" />
       <option name="PASS_PARENT_ENVS" value="true" />
@@ -927,7 +927,7 @@
         <option name="LOCAL" value="true" />
       </RunnerSettings>
       <RunnerSettings RunnerId="Profile ">
-        <option name="myExternalizedOptions" value="&#10;additional-options=&#10;snapshots-dir=&#10;" />
+        <option name="myExternalizedOptions" value="&#10;snapshots-dir=&#10;additional-options2=onexit\=snapshot&#10;" />
       </RunnerSettings>
       <RunnerSettings RunnerId="Run" />
       <ConfigurationWrapper RunnerId="Debug" />
@@ -962,67 +962,12 @@
         <entry key="$PROJECT_DIR$">
           <value>
             <SvnBranchConfiguration>
-              <option name="branchMap">
-                <map>
-                  <entry key="https://svn.jetbrains.org/mps/branches">
-                    <value>
-                      <list>
-                        <SvnBranchItem>
-                          <option name="creationDateMillis" value="1258032180742" />
-                          <option name="revision" value="48756" />
-                          <option name="url" value="https://svn.jetbrains.org/mps/branches/1.1" />
-                        </SvnBranchItem>
-                        <SvnBranchItem>
-                          <option name="creationDateMillis" value="1248443447918" />
-                          <option name="revision" value="46281" />
-                          <option name="url" value="https://svn.jetbrains.org/mps/branches/1.0" />
-                        </SvnBranchItem>
-                        <SvnBranchItem>
-                          <option name="creationDateMillis" value="1244492536910" />
-                          <option name="revision" value="45490" />
-                          <option name="url" value="https://svn.jetbrains.org/mps/branches/beta3" />
-                        </SvnBranchItem>
-                        <SvnBranchItem>
-                          <option name="creationDateMillis" value="1239891144085" />
-                          <option name="revision" value="44615" />
-                          <option name="url" value="https://svn.jetbrains.org/mps/branches/beta2" />
-                        </SvnBranchItem>
-                        <SvnBranchItem>
-                          <option name="creationDateMillis" value="1233661871421" />
-                          <option name="revision" value="43217" />
-                          <option name="url" value="https://svn.jetbrains.org/mps/branches/hacking_closures" />
-                        </SvnBranchItem>
-                        <SvnBranchItem>
-                          <option name="creationDateMillis" value="1232936205919" />
-                          <option name="revision" value="43107" />
-                          <option name="url" value="https://svn.jetbrains.org/mps/branches/projectLanguage" />
-                        </SvnBranchItem>
-                        <SvnBranchItem>
-                          <option name="creationDateMillis" value="1230051485784" />
-                          <option name="revision" value="42739" />
-                          <option name="url" value="https://svn.jetbrains.org/mps/branches/beta1.0" />
-                        </SvnBranchItem>
-                        <SvnBranchItem>
-                          <option name="creationDateMillis" value="1224609042985" />
-                          <option name="revision" value="41021" />
-                          <option name="url" value="https://svn.jetbrains.org/mps/branches/xmlDeprecatedToXML" />
-                        </SvnBranchItem>
-                        <SvnBranchItem>
-                          <option name="creationDateMillis" value="1128685466811" />
-                          <option name="revision" value="4818" />
-                          <option name="url" value="https://svn.jetbrains.org/mps/branches/JetBrains" />
-                        </SvnBranchItem>
-                      </list>
-                    </value>
-                  </entry>
-                </map>
-              </option>
               <option name="branchUrls">
                 <list>
-                  <option value="https://svn.jetbrains.org/mps/branches" />
+                  <option value="http://svn.jetbrains.org/mps/branches" />
                 </list>
               </option>
-              <option name="trunkUrl" value="https://svn.jetbrains.org/mps/trunk" />
+              <option name="trunkUrl" value="http://svn.jetbrains.org/mps/trunk" />
             </SvnBranchConfiguration>
           </value>
         </entry>
@@ -1363,9 +1308,7 @@
         <root url="file://$PROJECT_DIR$/lib/ant-1.7.0/lib" />
       </CLASSES>
       <JAVADOC />
-      <SOURCES>
-        <root url="jar://$PROJECT_DIR$/lib/ant-1.7.0/ant-src.zip!/" />
-      </SOURCES>
+      <SOURCES />
       <jarDirectory url="file://$PROJECT_DIR$/lib/ant-1.7.0/lib" recursive="false" />
     </library>
     <library name="Beansbinding">
