@@ -13,11 +13,9 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.stubs.javastub.classpath;
+package jetbrains.mps.stubs;
 
 import jetbrains.mps.baseLanguage.structure.BaseLanguage_Language;
-import jetbrains.mps.stubs.javastub.ClassPathItemProvider;
-import jetbrains.mps.stubs.javastub.ASMModelLoader;
 import jetbrains.mps.stubs.javastub.classpath.StubHelper;
 import jetbrains.mps.stubs.IModelLoader;
 import jetbrains.mps.logging.Logger;
@@ -26,7 +24,6 @@ import jetbrains.mps.project.SModelRoot;
 import jetbrains.mps.reloading.IClassPathItem;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.persistence.AbstractModelRootManager;
-import jetbrains.mps.smodel.persistence.IModelRootManager;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -39,7 +36,7 @@ public abstract class ClassPathModelRootManager extends AbstractModelRootManager
   private static Logger LOG = Logger.getLogger(ClassPathModelRootManager.class);
 
   private static Map<SModelReference, Long> ourTimestamps = new HashMap<SModelReference, Long>();
-  private ModelOwner myOwner;
+  private IModule myModule;
   private IModelLoader myModelLoader;
 
   private Set<SModelDescriptor> myDescriptorsWithListener = new HashSet<SModelDescriptor>();
@@ -48,18 +45,14 @@ public abstract class ClassPathModelRootManager extends AbstractModelRootManager
   @NotNull
   public Set<SModelDescriptor> read(@NotNull SModelRoot root, @NotNull IModule owner) {
     try {
-      myOwner = owner;
-      myModelLoader = new ASMModelLoader((IModelRootManager) this, owner, (ClassPathItemProvider) new ClassPathItemProvider() {
-        public IClassPathItem get() {
-          return getClassPathItem();
-        }
-      });
+      myModule = owner;
+      myModelLoader = createLoader();
 
       Set<SModelDescriptor> result = new HashSet<SModelDescriptor>();
       addPackageModelDescriptors(result, root.getPrefix());
       return result;
     } finally {
-      myOwner = null;
+      myModule = null;
     }
   }
 
@@ -69,6 +62,9 @@ public abstract class ClassPathModelRootManager extends AbstractModelRootManager
     ourTimestamps.put(model.getSModelReference(), timestamp(modelDescriptor));
     model.addLanguage(BaseLanguage_Language.get());
     return model;
+  }
+
+  public void saveModel(@NotNull SModelDescriptor modelDescriptor) {
   }
 
   public void updateAfterLoad(@NotNull SModelDescriptor modelDescriptor) {
@@ -84,10 +80,6 @@ public abstract class ClassPathModelRootManager extends AbstractModelRootManager
 
   public long timestamp(@NotNull SModelDescriptor modelDescriptor) {
     return getClassPathItem().getClassesTimestamp(modelDescriptor.getSModelReference().getLongName());
-  }
-
-
-  public void saveModel(@NotNull SModelDescriptor modelDescriptor) {
   }
 
   @Nullable
@@ -108,7 +100,13 @@ public abstract class ClassPathModelRootManager extends AbstractModelRootManager
     return false;
   }
 
+  protected IModule getModule(){
+    return myModule;
+  }
+
   public abstract IClassPathItem getClassPathItem();
+
+  public abstract IModelLoader createLoader();
 
   private void addPackageModelDescriptors(Set<SModelDescriptor> descriptors, String pack) {
     Set<String> subpackages = getClassPathItem().getSubpackages(pack);
@@ -125,7 +123,7 @@ public abstract class ClassPathModelRootManager extends AbstractModelRootManager
 
           assert descriptor != null;
 
-          SModelRepository.getInstance().addOwnerForDescriptor(descriptor, myOwner);
+          SModelRepository.getInstance().addOwnerForDescriptor(descriptor, myModule);
           descriptors.add(descriptor);
 
           if (!descriptor.isInitialized()) {
@@ -138,7 +136,7 @@ public abstract class ClassPathModelRootManager extends AbstractModelRootManager
           }
         } else {
           SModelDescriptor modelDescriptor = new DefaultSModelDescriptor(this, null, modelReference);
-          SModelRepository.getInstance().registerModelDescriptor(modelDescriptor, myOwner);
+          SModelRepository.getInstance().registerModelDescriptor(modelDescriptor, myModule);
           descriptors.add(modelDescriptor);
 
           if (SModelRepository.getInstance().getOwners(modelDescriptor).size() > 1) {
