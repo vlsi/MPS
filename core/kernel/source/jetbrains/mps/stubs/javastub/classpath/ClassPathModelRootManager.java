@@ -45,7 +45,6 @@ public abstract class ClassPathModelRootManager extends AbstractModelRootManager
   private Set<SModelDescriptor> myDescriptorsWithListener = new HashSet<SModelDescriptor>();
   private MyInitializationListener myInitializationListener = new MyInitializationListener();
 
-
   @NotNull
   public Set<SModelDescriptor> read(@NotNull SModelRoot root, @NotNull IModule owner) {
     try {
