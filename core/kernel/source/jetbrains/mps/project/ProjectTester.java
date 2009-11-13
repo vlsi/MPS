@@ -188,21 +188,21 @@ public class ProjectTester {
             );
 
             if (myIsRunnable) {
-                diffReports.addAll(DiffReporter.createDiffReports(generationType));
+              diffReports.addAll(DiffReporter.createDiffReports(generationType));
             }
             List<SModel> outputModels = new ArrayList<SModel>();
             outputModels.addAll(generationType.getOutputModels());
             if (errors.size() > numErrorsBeforeGeneration) {
-                System.out.println("There were generation errors, cancelling compilation");
-            }
-            else {
-                long start = System.currentTimeMillis();
-                List<CompilationResult> compilationResultList = generationType.compile(IAdaptiveProgressMonitor.NULL_PROGRESS_MONITOR);
-                System.out.println("Compiled " + compilationResultList.size() + " compilation units in " + (System.currentTimeMillis() - start));
-                compilationResults.addAll(createCompilationProblemsList(compilationResultList));
-                if (compilationResults.isEmpty()) {
-                    System.out.println("Compilation ok");
-                }
+              System.out.println("There were generation errors, cancelling compilation");
+            } else {
+              long start = System.currentTimeMillis();
+              List<CompilationResult> compilationResultList = generationType.compile(IAdaptiveProgressMonitor.NULL_PROGRESS_MONITOR);
+              System.out.println("Compiled " + compilationResultList.size() + " compilation units in " + (System.currentTimeMillis() - start));
+              compilationResults.addAll(createCompilationProblemsList(compilationResultList));
+              if (compilationResults.isEmpty()) {
+                System.out.println("Compilation ok");
+              }
+              
               failedTests.addAll(createTestFailures(generationType, outputModels));
             }
 
