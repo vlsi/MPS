@@ -231,7 +231,7 @@ public abstract class MpsWorker {
     }
   }
 
-  private void collectFromModuleFiles(Set<IModule> modules) {
+  protected void collectFromModuleFiles(Set<IModule> modules) {
     for (File moduleFile : myWhatToDo.getModules()) {
       processModuleFile(moduleFile, modules);
     }
@@ -274,7 +274,7 @@ public abstract class MpsWorker {
     }
   }
 
-  private void collectFromModelFiles(Set<SModelDescriptor> modelDescriptor) {
+  protected void collectFromModelFiles(Set<SModelDescriptor> modelDescriptor) {
     for (File f : myWhatToDo.getModels()) {
       if (f.getPath().endsWith(MPSExtentions.DOT_MODEL)) {
         processModelFile(modelDescriptor, f);

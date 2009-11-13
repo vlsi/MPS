@@ -73,7 +73,8 @@ public class TestGenerationWorker extends GeneratorWorker {
 
     LinkedHashSet<IModule> modules = new LinkedHashSet<IModule>();
     LinkedHashSet<SModelDescriptor> models = new LinkedHashSet<SModelDescriptor>();
-    collectModelsToGenerate(Collections.EMPTY_SET, modules, models);
+    collectFromModuleFiles(modules);
+    collectFromModelFiles(models);
     executeTask(project, Collections.EMPTY_SET, modules, models);
 
     dispose();
