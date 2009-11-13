@@ -39,6 +39,7 @@ import junit.framework.TestCase;
 import junit.framework.TestFailure;
 import org.eclipse.jdt.core.compiler.CategorizedProblem;
 import org.eclipse.jdt.internal.compiler.CompilationResult;
+import org.jetbrains.annotations.NotNull;
 
 import java.io.PrintWriter;
 import java.io.StringWriter;
@@ -77,11 +78,11 @@ public class ProjectTester {
     return res;
   }
 
-  private static List<TestFailure> createTestFailures(GenerateFilesAndClassesGenerationType genType, List<SModel> models) {
+  private static List<TestFailure> createTestFailures(@NotNull GenerateFilesAndClassesGenerationType genType, List<SModel> models) {
     return invokeTests(genType, models);
   }
 
-  public static List<TestFailure> invokeTests(GenerateFilesAndClassesGenerationType genType, List<SModel> outputModels) {
+  public static List<TestFailure> invokeTests(@NotNull GenerateFilesAndClassesGenerationType genType, List<SModel> outputModels) {
     final List<TestFailure> result = new ArrayList<TestFailure>();
     for (SModel model : outputModels) {
       ClassLoader classLoader = genType.getCompiler().getClassLoader(model.getClass().getClassLoader());
@@ -202,9 +203,8 @@ public class ProjectTester {
                 if (compilationResults.isEmpty()) {
                     System.out.println("Compilation ok");
                 }
+              failedTests.addAll(createTestFailures(generationType, outputModels));
             }
-
-            failedTests.addAll(createTestFailures(generationType, outputModels));
 
             System.out.println("");
             System.out.println("");
