@@ -36,14 +36,10 @@ import org.apache.tools.ant.BuildException;
 public class GenerateTaskTest extends BuildFileTest {
 
   public void setUp() {
-    configureProject("/media/d/devel/MPS.new/tests/jetbrains/mps/mps.tests.xml");
+    configureProject(GenerateTaskTest.class.getResource("test.generate.task.xml").getFile());
   }
 
-  public void test1() {
-    executeTarget("all");
-  }
-
-  /*public void testComplexLanguageProject() {
+  public void testComplexLanguageProject() {
     executeTarget("testComplexLanguageProject");
   }
 
@@ -86,5 +82,5 @@ public class GenerateTaskTest extends BuildFileTest {
       return;
     }
     fail("BuildException in target " + targetName + " expected.");
-  }*/
+  }
 }
