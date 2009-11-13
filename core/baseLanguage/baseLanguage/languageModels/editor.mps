@@ -10,10 +10,6 @@
   <language namespace="7a5dda62-9140-4668-ab76-d5ed1746f2b2(jetbrains.mps.lang.typesystem)" />
   <language namespace="d4615e3b-d671-4ba9-af01-2b78369b0ba7(jetbrains.mps.lang.pattern)" />
   <language namespace="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" />
-  <language namespace="13744753-c81f-424a-9c1b-cf8943bf4e86(jetbrains.mps.lang.sharedConcepts)" />
-  <language namespace="28f9e497-3b42-4291-aeba-0a1039153ab1(jetbrains.mps.lang.plugin)" />
-  <language namespace="ceab5195-25ea-4f22-9b92-103b95ca8c0c(jetbrains.mps.lang.core)" />
-  <language namespace="af65afd8-f0dd-4942-87d9-63a55f2a9db1(jetbrains.mps.lang.behavior)" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902fb(jetbrains.mps.lang.smodel.constraints)" version="21" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" version="16" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)" version="83" />
@@ -56,7 +52,6 @@
   <import index="27" modelUID="r:00000000-0000-4000-0000-011c895902bf(jetbrains.mps.baseLanguage.actions)" version="-1" />
   <import index="45" modelUID="f:java_stub#jetbrains.mps.smodel.search(jetbrains.mps.smodel.search@java_stub)" version="-1" />
   <import index="46" modelUID="f:java_stub#jetbrains.mps.baseLanguage.search(jetbrains.mps.baseLanguage.search@java_stub)" version="-1" />
-  <import index="48" modelUID="f:java_stub#jetbrains.mps.baseLanguage.editor(jetbrains.mps.baseLanguage.editor@java_stub)" version="-1" />
   <import index="51" modelUID="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" version="0" />
   <import index="54" modelUID="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" version="7" />
   <import index="56" modelUID="f:java_stub#java.awt(java.awt@java_stub)" version="-1" />
@@ -72,17 +67,9 @@
   <import index="84" modelUID="f:java_stub#com.intellij.ide(com.intellij.ide@java_stub)" version="-1" />
   <import index="85" modelUID="f:java_stub#jetbrains.mps.workbench(jetbrains.mps.workbench@java_stub)" version="-1" />
   <import index="86" modelUID="f:java_stub#com.intellij.openapi.actionSystem(com.intellij.openapi.actionSystem@java_stub)" version="-1" />
-  <import index="87" modelUID="f:java_stub#org.jetbrains.annotations(org.jetbrains.annotations@java_stub)" version="-1" />
   <import index="88" modelUID="r:00000000-0000-4000-0000-011c895902c8(jetbrains.mps.baseLanguage.plugin)" version="-1" />
-  <import index="89" modelUID="f:java_stub#jetbrains.mps.util(jetbrains.mps.util@java_stub)" version="-1" />
-  <import index="90" modelUID="f:java_stub#jetbrains.mps.smodel.presentation(jetbrains.mps.smodel.presentation@java_stub)" version="-1" />
-  <import index="91" modelUID="f:java_stub#jetbrains.mps.baseLanguage.constraints(jetbrains.mps.baseLanguage.constraints@java_stub)" version="-1" />
-  <import index="92" modelUID="f:java_stub#java.util(java.util@java_stub)" version="-1" />
-  <import index="93" modelUID="f:java_stub#javax.swing.tree(javax.swing.tree@java_stub)" version="-1" />
   <import index="94" modelUID="f:java_stub#jetbrains.mps.baseLanguage.plugin.uiActions.strategies(jetbrains.mps.baseLanguage.plugin.uiActions.strategies@java_stub)" version="-1" />
-  <import index="95" modelUID="r:2af017c2-293f-4ebb-99f3-81e353b3d6e6(jetbrains.mps.editor.runtime)" version="-1" />
-  <import index="96" modelUID="r:00000000-0000-4000-0000-011c895903aa(jetbrains.mps.baseLanguageInternal.editor)" version="-1" />
-  <import index="97" modelUID="r:00000000-0000-4000-0000-011c89590299(jetbrains.mps.lang.editor.editor)" version="-1" />
+  <import index="96" modelUID="r:00000000-0000-4000-0000-011c895904a4(jetbrains.mps.ide.actions)" version="-1" />
   <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" id="1073416106125">
     <property name="name" value="StatementList_Editor" />
     <link role="conceptDeclaration" targetNodeId="17.1068580123136" />
@@ -12617,7 +12604,6 @@
       </node>
     </node>
   </node>
-  <visible index="2" modelUID="r:00000000-0000-4000-0000-011c895904a4(jetbrains.mps.ide.actions)" />
   <node type="jetbrains.mps.lang.editor.structure.CellKeyMapDeclaration" id="1198252535774">
     <property name="name" value="MethodHierarchy_KeyMap" />
     <property name="everyModel" value="true" />
@@ -12868,12 +12854,12 @@
                                 </node>
                                 <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="7347712222697954543">
                                   <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="7347712222697954545">
-                                    <link role="baseMethodDeclaration" targetNodeId="2v.8300784086089115230" resolveInfo="MethodsToOverrideStrategy" />
+                                    <link role="baseMethodDeclaration" targetNodeId="96.8300784086089115230" resolveInfo="MethodsToOverrideStrategy" />
                                   </node>
                                 </node>
                                 <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="7347712222697954547">
                                   <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="7347712222697954549">
-                                    <link role="baseMethodDeclaration" targetNodeId="2v.8300784086089079436" resolveInfo="OverrideMethodStrategy" />
+                                    <link role="baseMethodDeclaration" targetNodeId="96.8300784086089079436" resolveInfo="OverrideMethodStrategy" />
                                   </node>
                                 </node>
                               </node>
@@ -12963,12 +12949,12 @@
                                 </node>
                                 <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="7347712222697957244">
                                   <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="7347712222697957249">
-                                    <link role="baseMethodDeclaration" targetNodeId="2v.8300784086089115129" resolveInfo="MethodsToImplementStrategy" />
+                                    <link role="baseMethodDeclaration" targetNodeId="96.8300784086089115129" resolveInfo="MethodsToImplementStrategy" />
                                   </node>
                                 </node>
                                 <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="7347712222697957246">
                                   <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="7347712222697957250">
-                                    <link role="baseMethodDeclaration" targetNodeId="2v.8300784086089079506" resolveInfo="ImplementMethodStrategy" />
+                                    <link role="baseMethodDeclaration" targetNodeId="96.8300784086089079506" resolveInfo="ImplementMethodStrategy" />
                                   </node>
                                 </node>
                               </node>

@@ -12,7 +12,6 @@ import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
-import jetbrains.mps.baseLanguageInternal.editor.StyleSheet_StyleSheet;
 import jetbrains.mps.nodeEditor.cellMenu.CompositeSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPart;
 import jetbrains.mps.smodel.IOperationContext;
@@ -98,7 +97,6 @@ public class BreakStatement_Editor extends DefaultNodeEditor {
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setCellId("property_label");
-    StyleSheet_StyleSheet.getInternalName(editorCell).apply(editorCell);
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, true);
