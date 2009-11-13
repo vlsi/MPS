@@ -30247,7 +30247,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="5792297515476823756">
-    <property name="package" value="NewModelChecker" />
+    <property name="package" value="ModelChecker" />
     <property name="name" value="ModelCheckerIssue" />
     <node role="field" type="jetbrains.mps.baseLanguage.structure.FieldDeclaration" id="5792297515476823762">
       <property name="name" value="myNode" />
@@ -30332,7 +30332,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="5792297515476827220">
-    <property name="package" value="NewModelChecker" />
+    <property name="package" value="ModelChecker" />
     <property name="abstractClass" value="false" />
     <property name="name" value="ModelIssueFinder" />
     <node role="field" type="jetbrains.mps.baseLanguage.structure.FieldDeclaration" id="5792297515476886232">
@@ -30501,7 +30501,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="5792297515476827227">
-    <property name="package" value="NewModelChecker" />
+    <property name="package" value="ModelChecker" />
     <property name="name" value="ModelCheckerUtils" />
     <node role="staticMethod" type="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" id="6099148182869303116">
       <property name="name" value="addIssue" />
@@ -32502,6 +32502,75 @@
             </node>
           </node>
         </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="2120158148121346854">
+          <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="2120158148121346855">
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="2120158148121346890">
+              <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="2120158148121346891">
+                <property name="name" value="language" />
+                <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="2120158148121346892">
+                  <link role="classifier" targetNodeId="40.~Language" resolveInfo="Language" />
+                </node>
+                <node role="initializer" type="jetbrains.mps.baseLanguage.structure.CastExpression" id="2120158148121346901">
+                  <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="2120158148121346902">
+                    <link role="classifier" targetNodeId="40.~Language" resolveInfo="Language" />
+                  </node>
+                  <node role="expression" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="2120158148121346905">
+                    <link role="variableDeclaration" targetNodeId="8959719647282613353" resolveInfo="module" />
+                  </node>
+                </node>
+              </node>
+            </node>
+            <node role="statement" type="jetbrains.mps.baseLanguage.collections.structure.ForEachStatement" id="2120158148121346919">
+              <node role="variable" type="jetbrains.mps.baseLanguage.collections.structure.ForEachVariable" id="2120158148121346920">
+                <property name="name" value="generator" />
+              </node>
+              <node role="inputSequence" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="2120158148121348145">
+                <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="2120158148121346925">
+                  <link role="variableDeclaration" targetNodeId="2120158148121346891" resolveInfo="language" />
+                </node>
+                <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="2120158148121348151">
+                  <link role="baseMethodDeclaration" targetNodeId="40.~Language.getGenerators():java.util.List" resolveInfo="getGenerators" />
+                </node>
+              </node>
+              <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="2120158148121346922">
+                <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="2120158148121348159">
+                  <node role="condition" type="jetbrains.mps.baseLanguage.structure.NotExpression" id="2120158148121348163">
+                    <node role="expression" type="jetbrains.mps.baseLanguage.structure.LocalStaticMethodCall" id="2120158148121348166">
+                      <link role="baseMethodDeclaration" targetNodeId="8959719647282613341" resolveInfo="checkModule" />
+                      <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="2120158148121348168">
+                        <link role="variableDeclaration" targetNodeId="8959719647282613346" resolveInfo="results" />
+                      </node>
+                      <node role="actualArgument" type="jetbrains.mps.baseLanguage.collections.structure.ForEachVariableReference" id="2120158148121348174">
+                        <link role="variable" targetNodeId="2120158148121346920" resolveInfo="generator" />
+                      </node>
+                      <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="2120158148121348177">
+                        <link role="variableDeclaration" targetNodeId="6516913638481009082" resolveInfo="operationContext" />
+                      </node>
+                      <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="2120158148121348181">
+                        <link role="variableDeclaration" targetNodeId="8959719647282613351" resolveInfo="progressContext" />
+                      </node>
+                    </node>
+                  </node>
+                  <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="2120158148121348161">
+                    <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="2120158148121348184">
+                      <node role="expression" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="2120158148121348188">
+                        <property name="value" value="false" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+          <node role="condition" type="jetbrains.mps.baseLanguage.structure.InstanceOfExpression" id="2120158148121346884">
+            <node role="classType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="2120158148121346888">
+              <link role="classifier" targetNodeId="40.~Language" resolveInfo="Language" />
+            </node>
+            <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="2120158148121346882">
+              <link role="variableDeclaration" targetNodeId="8959719647282613353" resolveInfo="module" />
+            </node>
+          </node>
+        </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="8959719647282613395">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="8959719647282613397">
             <property name="value" value="true" />
@@ -33021,7 +33090,7 @@
     <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="5792297515476827228" />
   </node>
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="5792297515476886377">
-    <property name="package" value="NewModelChecker" />
+    <property name="package" value="ModelChecker" />
     <property name="name" value="ModelCheckerViewer" />
     <property name="abstractClass" value="true" />
     <node role="staticInnerClassifiers" type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="4196298100962962919">
@@ -35059,7 +35128,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="4425136885333195287">
-    <property name="package" value="NewModelChecker" />
+    <property name="package" value="ModelChecker" />
     <property name="name" value="ProgressContext" />
     <node role="staticMethod" type="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" id="6821879168288363769">
       <property name="name" value="listFromSingleElement" />
@@ -35397,7 +35466,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="6821879168288302770">
-    <property name="package" value="NewModelChecker" />
+    <property name="package" value="ModelChecker" />
     <property name="name" value="ModelsIssueFinder" />
     <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="6821879168288306201">
       <property name="name" value="find" />
@@ -35609,7 +35678,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="8959719647282609756">
-    <property name="package" value="NewModelChecker" />
+    <property name="package" value="ModelChecker" />
     <property name="name" value="ModuleIssueFinder" />
     <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="8959719647282613292">
       <property name="name" value="find" />
@@ -35777,7 +35846,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="8959719647282613454">
-    <property name="package" value="NewModelChecker" />
+    <property name="package" value="ModelChecker" />
     <property name="name" value="ModulesIssueFinder" />
     <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="8959719647282613493">
       <property name="name" value="find" />
@@ -35989,7 +36058,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="8959719647282613621">
-    <property name="package" value="NewModelChecker" />
+    <property name="package" value="ModelChecker" />
     <property name="name" value="ProjectIssueFinder" />
     <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="8959719647282613649">
       <property name="name" value="find" />
@@ -36157,7 +36226,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="6516913638480946073">
-    <property name="package" value="NewModelChecker" />
+    <property name="package" value="ModelChecker" />
     <property name="name" value="AbstractIssueFinder" />
     <property name="abstractClass" value="true" />
     <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="6516913638480946094">
@@ -36894,7 +36963,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="1422776177683086271">
-    <property name="package" value="NewModelChecker" />
+    <property name="package" value="ModelChecker" />
     <property name="name" value="ModelCheckerSettings" />
     <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="7947057805336717311">
       <property name="name" value="getComponentName" />
@@ -37654,7 +37723,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="1422776177683160471">
-    <property name="package" value="NewModelChecker" />
+    <property name="package" value="ModelChecker" />
     <property name="name" value="ModelCheckerSettingsPreferencesPage" />
     <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="7947057805336724050">
       <property name="name" value="getName" />

@@ -39,6 +39,8 @@ import jetbrains.mps.util.Pair;
 import jetbrains.mps.nodeEditor.IErrorReporter;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.SModelStereotype;
+import jetbrains.mps.smodel.Language;
+import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.project.MPSProject;
 import com.intellij.openapi.progress.ProgressIndicator;
 import jetbrains.mps.util.TimePresentationUtil;
@@ -245,6 +247,14 @@ public class ModelCheckerUtils {
       }
       if (!(checkModel(results, modelDescriptor, operationContext, progressContext))) {
         return false;
+      }
+    }
+    if (module instanceof Language) {
+      Language language = (Language)module;
+      for (Generator generator : ListSequence.fromList(language.getGenerators())) {
+        if (!(checkModule(results, generator, operationContext, progressContext))) {
+          return false;
+        }
       }
     }
     return true;
