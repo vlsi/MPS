@@ -31,7 +31,7 @@ public interface IModelRootManager {
   public static final IModelRootManager NULL_MANAGER = new NullModelRootManager();
 
   @NotNull
-  Set<SModelDescriptor> read(@NotNull SModelRoot root, @NotNull IModule owner);
+  Set<SModelDescriptor> getModelDescriptors(@NotNull SModelRoot root, @NotNull IModule owner);
 
   @NotNull
   SModel loadModel(@NotNull SModelDescriptor modelDescriptor);

@@ -28,7 +28,7 @@ public class ProjectModels {
   private static long ourProjectModelDescriptorCount = 0;
   private static final IModelRootManager ourModelRootManager = new AbstractModelRootManager() {
     @NotNull
-    public Set<SModelDescriptor> read(@NotNull SModelRoot root, @NotNull IModule owner) {
+    public Set<SModelDescriptor> getModelDescriptors(@NotNull SModelRoot root, @NotNull IModule owner) {
       throw new RuntimeException();
     }
 
@@ -44,10 +44,6 @@ public class ProjectModels {
     @Nullable
     public SModel refresh(@NotNull SModelDescriptor modelDescriptor) {
       return modelDescriptor.getSModel();
-    }
-
-    public boolean isFindUsagesSupported() {
-      return false;
     }
   };
 

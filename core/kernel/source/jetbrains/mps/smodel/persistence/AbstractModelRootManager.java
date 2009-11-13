@@ -39,11 +39,11 @@ public abstract class AbstractModelRootManager implements IModelRootManager {
   }
 
   public boolean isFindUsagesSupported() {
-    return true;
+    return false;
   }
 
   public boolean containsString(@NotNull SModelDescriptor modelDescriptor, @NotNull String string) {
-    return true;
+    return false;
   }
 
   public boolean isEmpty(SModelDescriptor modelDescriptor) {

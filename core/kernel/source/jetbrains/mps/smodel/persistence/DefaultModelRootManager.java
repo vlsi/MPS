@@ -46,7 +46,7 @@ public class DefaultModelRootManager extends AbstractModelRootManager {
   private static final Logger LOG = Logger.getLogger(DefaultModelRootManager.class);
 
   @NotNull
-  public Set<SModelDescriptor> read(@NotNull SModelRoot root, @NotNull IModule owner) {
+  public Set<SModelDescriptor> getModelDescriptors(@NotNull SModelRoot root, @NotNull IModule owner) {
     Set<SModelDescriptor> result = new HashSet<SModelDescriptor>();
     readModelDescriptors(result, FileSystem.getFile(root.getPath()), root, owner);
     return result;
@@ -101,6 +101,10 @@ public class DefaultModelRootManager extends AbstractModelRootManager {
     SModel newModel = new StubModel(modelDescriptor.getSModelReference());
     LOG.error(exception.getMessage(), newModel);
     return newModel;
+  }
+
+  public boolean isFindUsagesSupported() {
+    return true;
   }
 
   public boolean containsSomeString(@NotNull SModelDescriptor modelDescriptor, @NotNull Set<String> strings) {

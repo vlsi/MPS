@@ -36,24 +36,15 @@ public abstract class ClassPathModelRootManager extends AbstractModelRootManager
   private static Logger LOG = Logger.getLogger(ClassPathModelRootManager.class);
 
   private static Map<SModelReference, Long> ourTimestamps = new HashMap<SModelReference, Long>();
-  private IModule myModule;
   private IModelLoader myModelLoader;
 
   private Set<SModelDescriptor> myDescriptorsWithListener = new HashSet<SModelDescriptor>();
   private MyInitializationListener myInitializationListener = new MyInitializationListener();
 
   @NotNull
-  public Set<SModelDescriptor> read(@NotNull SModelRoot root, @NotNull IModule owner) {
-    try {
-      myModule = owner;
-      myModelLoader = createLoader();
-
-      Set<SModelDescriptor> result = new HashSet<SModelDescriptor>();
-      addPackageModelDescriptors(result, root.getPrefix());
-      return result;
-    } finally {
-      myModule = null;
-    }
+  public Set<SModelDescriptor> getModelDescriptors(@NotNull SModelRoot root, @NotNull IModule owner) {
+    myModelLoader = createLoader(owner);
+    return getPackageModelDescriptors(owner, root);
   }
 
   @NotNull
@@ -96,19 +87,17 @@ public abstract class ClassPathModelRootManager extends AbstractModelRootManager
     return null;
   }
 
-  public boolean isFindUsagesSupported() {
-    return false;
-  }
-
-  protected IModule getModule(){
-    return myModule;
-  }
-
   public abstract IClassPathItem getClassPathItem();
 
-  public abstract IModelLoader createLoader();
+  public abstract IModelLoader createLoader(IModule module);
 
-  private void addPackageModelDescriptors(Set<SModelDescriptor> descriptors, String pack) {
+  private Set<SModelDescriptor> getPackageModelDescriptors(IModule module, SModelRoot root) {
+    Set<SModelDescriptor> result = new HashSet<SModelDescriptor>();
+    addPackageModelDescriptors(module, result, root.getPrefix());
+    return result;
+  }
+
+  private void addPackageModelDescriptors(IModule module, Set<SModelDescriptor> descriptors, String pack) {
     Set<String> subpackages = getClassPathItem().getSubpackages(pack);
     if (pack.equals("")) {
       //we ignore everything in the default package because usage of it is a bad style and many libraries
@@ -123,7 +112,7 @@ public abstract class ClassPathModelRootManager extends AbstractModelRootManager
 
           assert descriptor != null;
 
-          SModelRepository.getInstance().addOwnerForDescriptor(descriptor, myModule);
+          SModelRepository.getInstance().addOwnerForDescriptor(descriptor, module);
           descriptors.add(descriptor);
 
           if (!descriptor.isInitialized()) {
@@ -136,7 +125,7 @@ public abstract class ClassPathModelRootManager extends AbstractModelRootManager
           }
         } else {
           SModelDescriptor modelDescriptor = new DefaultSModelDescriptor(this, null, modelReference);
-          SModelRepository.getInstance().registerModelDescriptor(modelDescriptor, myModule);
+          SModelRepository.getInstance().registerModelDescriptor(modelDescriptor, module);
           descriptors.add(modelDescriptor);
 
           if (SModelRepository.getInstance().getOwners(modelDescriptor).size() > 1) {
@@ -145,7 +134,7 @@ public abstract class ClassPathModelRootManager extends AbstractModelRootManager
         }
       }
 
-      addPackageModelDescriptors(descriptors, subpackage);
+      addPackageModelDescriptors(module, descriptors, subpackage);
     }
   }
 
