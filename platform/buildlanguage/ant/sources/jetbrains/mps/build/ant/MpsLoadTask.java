@@ -91,7 +91,15 @@ public abstract class MpsLoadTask extends org.apache.tools.ant.Task {
     if (!myFork) {
       throw new BuildException("Nested jvmarg is only allowed in fork mode.");
     }
+    log("Nested jvmarg is deprecated. Use jvmargs instead.", org.apache.tools.ant.Project.MSG_WARN);
     myJvmArgs.add(jvmArg.getValue());
+  }
+
+  public void addConfiguredJvmArgs(JvmArgs jvmArg) {
+    if (!myFork) {
+      throw new BuildException("Nested jvmargs is only allowed in fork mode.");
+    }
+    myJvmArgs.addAll(jvmArg.getArgs());
   }
 
   @Override
@@ -112,11 +120,8 @@ public abstract class MpsLoadTask extends org.apache.tools.ant.Task {
 
       List<String> commandLine = new ArrayList<String>();
       commandLine.add(JavaEnvUtils.getJreExecutable("java"));
-      commandLine.add("-client");
       if (myJvmArgs.isEmpty()) {
-        commandLine.add("-Xss1024k");
-        commandLine.add("-Xmx512m");
-        commandLine.add("-XX:MaxPermSize=92m");
+        commandLine.addAll(new JvmArgs().getArgs());
       } else {
         commandLine.addAll(myJvmArgs);
       }

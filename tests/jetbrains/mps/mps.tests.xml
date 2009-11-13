@@ -6,12 +6,18 @@
 
     <target name="all" depends="generation.tests, broken.references.test"/>
 
+    <jvmargs id="mps.args">
+        <arg value="-Xss1024k"/>
+        <arg value="-Xmx1000m"/>
+        <arg value="-XX:MaxPermSize=92m"/>
+        <arg value="-XX:+HeapDumpOnOutOfMemoryError"/>
+        <!--<jvmarg value="-Xdebug"/>-->
+        <!--<jvmarg value="-Xrunjdwp:transport=dt_socket,server=y,suspend=y,address=5005"/>-->
+    </jvmargs>
+
     <target name="generation.tests">
         <mps.test.generation fork="true" compile="true" showdiff="true" invoketests="true" loglevel="info">
-            <jvmarg value="-Xss1024k"/>
-            <jvmarg value="-Xmx1000m"/>
-            <jvmarg value="-XX:MaxPermSize=92m"/>
-            <jvmarg value="-XX:+HeapDumpOnOutOfMemoryError"/>
+            <jvmargs refid="mps.args"/>
 
             <!-- Bootstrap tests -->
             <project file="${mps.home}/core/baseLanguage/baseLanguage/baseLanguage.mpr"/>
@@ -57,10 +63,7 @@
 
     <target name="broken.references.test">
         <mps.test.broken.references fork="true" loglevel="info">
-            <jvmarg value="-Xss1024k"/>
-            <jvmarg value="-Xmx1000m"/>
-            <jvmarg value="-XX:MaxPermSize=92m"/>
-            <jvmarg value="-XX:+HeapDumpOnOutOfMemoryError"/>
+            <jvmargs refid="mps.args"/>
             <modules dir="${mps.home}">
                 <exclude name="**/classes/**"/>
                 <exclude name="**/classes_gen/**"/>
