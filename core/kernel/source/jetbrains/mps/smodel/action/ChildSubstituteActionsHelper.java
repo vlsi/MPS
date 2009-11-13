@@ -310,27 +310,6 @@ public class ChildSubstituteActionsHelper {
     return referentMatchingText;
   }
 
-  private static List<NodeSubstituteActionsBuilder> getActionsBuilders(SNode parentNode,
-                                                                       Language language,
-                                                                       AbstractConceptDeclaration childConcept,
-                                                                       SNode link,
-                                                                       SNode currentTarget,
-                                                                       boolean wrapped,
-                                                                       IOperationContext context) {
-
-    List<NodeSubstituteActionsBuilder> result = new ArrayList<NodeSubstituteActionsBuilder>();
-    for (NodeSubstituteActionsBuilder actionsBuilder : getAllActionsBuilders(language)) {
-      // is applicable ?
-      // the aggregation link target (child concept) should be sub-concept of the 'applicable concept'
-      AbstractConceptDeclaration applicableChildConcept = actionsBuilder.getApplicableConcept();
-      if (SModelUtil_new.isAssignableConcept(childConcept, applicableChildConcept) &&
-        satisfiesPrecondition(actionsBuilder, parentNode, childConcept, link, currentTarget, wrapped, context)) {
-        result.add(actionsBuilder);
-      }
-    }
-    return result;
-  }
-
   private static List<NodeSubstituteActionsBuilder> getAllActionsBuilders(Language language) {
     List<NodeSubstituteActionsBuilder> result = new ArrayList<NodeSubstituteActionsBuilder>();
     SModelDescriptor actionsModelDescr = language.getActionsModelDescriptor();
