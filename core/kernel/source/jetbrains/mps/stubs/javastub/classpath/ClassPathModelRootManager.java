@@ -18,7 +18,7 @@ package jetbrains.mps.stubs.javastub.classpath;
 import jetbrains.mps.baseLanguage.structure.BaseLanguage_Language;
 import jetbrains.mps.stubs.javastub.ClassPathItemProvider;
 import jetbrains.mps.stubs.javastub.ConverterFactory;
-import jetbrains.mps.stubs.IModelLoader;
+import jetbrains.mps.stubs.javastub.IConverter;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.SModelRoot;
@@ -38,7 +38,7 @@ public abstract class ClassPathModelRootManager extends AbstractModelRootManager
 
   private static Map<SModelReference, Long> ourTimestamps = new HashMap<SModelReference, Long>();
   private ModelOwner myOwner;
-  private IModelLoader myModelLoader;
+  private IConverter myConverter;
 
   private Set<SModelDescriptor> myDescriptorsWithListener = new HashSet<SModelDescriptor>();
   private MyInitializationListener myInitializationListener = new MyInitializationListener();
@@ -48,7 +48,7 @@ public abstract class ClassPathModelRootManager extends AbstractModelRootManager
   public Set<SModelDescriptor> read(@NotNull SModelRoot root, @NotNull IModule owner) {
     try {
       myOwner = owner;
-      myModelLoader = ConverterFactory.createClassPathConverter(this, new ClassPathItemProvider() {
+      myConverter = ConverterFactory.createClassPathConverter(this, new ClassPathItemProvider() {
         public IClassPathItem get() {
           return getClassPathItem();
         }
@@ -75,7 +75,9 @@ public abstract class ClassPathModelRootManager extends AbstractModelRootManager
     boolean wasLoading = model.isLoading();
     model.setLoading(true);
     try {
-      myModelLoader.loadModel(modelDescriptor);
+      SModelReference reference = modelDescriptor.getSModelReference();
+      String pack = reference.getLongName();
+      myConverter.loadModel(pack);
     } finally {
       model.setLoading(wasLoading);
     }
