@@ -59,7 +59,7 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959034f(jetbrains.mps.lang.intentions.constraints)" version="1" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902a4(jetbrains.mps.lang.actions.constraints)" version="16" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902a8(jetbrains.mps.lang.actions.structure)" version="23" />
-  <maxImportIndex value="254" />
+  <maxImportIndex value="256" />
   <import index="1" modelUID="f:java_stub#jetbrains.mps.workbench.actions.nodes(jetbrains.mps.workbench.actions.nodes@java_stub)" version="-1" />
   <import index="2" modelUID="f:java_stub#jetbrains.mps.ide.modelchecker(jetbrains.mps.ide.modelchecker@java_stub)" version="-1" />
   <import index="3" modelUID="f:java_stub#jetbrains.mps.workbench.actions.model(jetbrains.mps.workbench.actions.model@java_stub)" version="-1" />
@@ -215,6 +215,8 @@
   <import index="252" modelUID="f:java_stub#com.intellij.openapi.options(com.intellij.openapi.options@java_stub)" version="-1" />
   <import index="253" modelUID="f:java_stub#javax.swing.border(javax.swing.border@java_stub)" version="-1" />
   <import index="254" modelUID="f:java_stub#com.intellij.openapi.extensions(com.intellij.openapi.extensions@java_stub)" version="-1" />
+  <import index="255" modelUID="f:java_stub#com.intellij.util.ui(com.intellij.util.ui@java_stub)" version="-1" />
+  <import index="256" modelUID="f:java_stub#com.intellij.openapi.actionSystem.impl(com.intellij.openapi.actionSystem.impl@java_stub)" version="-1" />
   <node type="jetbrains.mps.lang.plugin.structure.ActionGroupDeclaration" id="1204991215587">
     <property name="name" value="NodeActions" />
     <property name="id" value="ProjectPaneNodeActions" />
@@ -911,6 +913,9 @@
     <node role="contents" type="jetbrains.mps.lang.plugin.structure.ElementListContents" id="1207148351921">
       <node role="reference" type="jetbrains.mps.lang.plugin.structure.GroupAnchor" id="2841218117793443773">
         <property name="name" value="saveTransientModels" />
+      </node>
+      <node role="reference" type="jetbrains.mps.lang.plugin.structure.ActionInstance" id="172529947038284157">
+        <link role="action" targetNodeId="172529947038284053" resolveInfo="CheckModelsBeforeGeneration" />
       </node>
       <node role="reference" type="jetbrains.mps.lang.plugin.structure.Separator" id="1215003476488" />
       <node role="reference" type="jetbrains.mps.lang.plugin.structure.GroupAnchor" id="2841218117793440861">
@@ -39293,6 +39298,125 @@
         <property name="name" value="settings" />
         <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="7947057805336670905">
           <link role="classifier" targetNodeId="1422776177683086271" resolveInfo="ModelCheckerSettings" />
+        </node>
+      </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.plugin.structure.ActionDeclaration" id="172529947038284053">
+    <property name="package" value="Menu.MainMenu" />
+    <property name="name" value="CheckModelsBeforeGeneration" />
+    <property name="caption" value="Check Models Before Generation" />
+    <property name="description" value="Check models for errors before generation" />
+    <property name="isAlwaysVisible" value="true" />
+    <node role="executeFunction" type="jetbrains.mps.lang.plugin.structure.ExecuteBlock" id="172529947038284054">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="172529947038284055">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="172529947038284091">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="172529947038284092">
+            <property name="name" value="settings" />
+            <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="172529947038284093">
+              <link role="classifier" targetNodeId="52.~GenerationSettings" resolveInfo="GenerationSettings" />
+            </node>
+            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="172529947038284096">
+              <link role="baseMethodDeclaration" targetNodeId="52.~GenerationSettings.getInstance():jetbrains.mps.generator.GenerationSettings" resolveInfo="getInstance" />
+              <link role="classConcept" targetNodeId="52.~GenerationSettings" resolveInfo="GenerationSettings" />
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="172529947038284071">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="172529947038284081">
+            <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="172529947038284085">
+              <link role="baseMethodDeclaration" targetNodeId="52.~GenerationSettings.setCheckModelsBeforeGeneration(boolean):void" resolveInfo="setCheckModelsBeforeGeneration" />
+              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.NotExpression" id="172529947038284098">
+                <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="172529947038284101">
+                  <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="172529947038284100">
+                    <link role="variableDeclaration" targetNodeId="172529947038284092" resolveInfo="settings" />
+                  </node>
+                  <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="172529947038284105">
+                    <link role="baseMethodDeclaration" targetNodeId="52.~GenerationSettings.isCheckModelsBeforeGeneration():boolean" resolveInfo="isCheckModelsBeforeGeneration" />
+                  </node>
+                </node>
+              </node>
+            </node>
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="172529947038284097">
+              <link role="variableDeclaration" targetNodeId="172529947038284092" resolveInfo="settings" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="updateBlock" type="jetbrains.mps.lang.plugin.structure.DoUpdateBlock" id="172529947038284108">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="172529947038284109">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="172529947038284117">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="172529947038284118">
+            <property name="name" value="optionEnabled" />
+            <node role="type" type="jetbrains.mps.baseLanguage.structure.BooleanType" id="172529947038284119" />
+            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="172529947038284122">
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="172529947038284121">
+                <link role="classConcept" targetNodeId="52.~GenerationSettings" resolveInfo="GenerationSettings" />
+                <link role="baseMethodDeclaration" targetNodeId="52.~GenerationSettings.getInstance():jetbrains.mps.generator.GenerationSettings" resolveInfo="getInstance" />
+              </node>
+              <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="172529947038284126">
+                <link role="baseMethodDeclaration" targetNodeId="52.~GenerationSettings.isCheckModelsBeforeGeneration():boolean" resolveInfo="isCheckModelsBeforeGeneration" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="172529947038284127">
+          <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="172529947038284128">
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="413573818925444511">
+              <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="413573818925444512">
+                <property name="text" value="TODO icon is similar, but not the same as icons for other checkable menu items" />
+              </node>
+            </node>
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="172529947038284132">
+              <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="172529947038284139">
+                <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="172529947038284134">
+                  <node role="operand" type="jetbrains.mps.lang.plugin.structure.ConceptFunctionParameter_AnActionEvent" id="172529947038284133" />
+                  <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="172529947038284138">
+                    <link role="baseMethodDeclaration" targetNodeId="100.~AnActionEvent.getPresentation():com.intellij.openapi.actionSystem.Presentation" resolveInfo="getPresentation" />
+                  </node>
+                </node>
+                <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="172529947038284143">
+                  <link role="baseMethodDeclaration" targetNodeId="100.~Presentation.setIcon(javax.swing.Icon):void" resolveInfo="setIcon" />
+                  <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference" id="413573818925444509">
+                    <link role="classifier" targetNodeId="82.~Icons" resolveInfo="Icons" />
+                    <link role="variableDeclaration" targetNodeId="82.~Icons.BOOKMARK_UNNUMBERED" resolveInfo="BOOKMARK_UNNUMBERED" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+          <node role="condition" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="172529947038284131">
+            <link role="variableDeclaration" targetNodeId="172529947038284118" resolveInfo="optionEnabled" />
+          </node>
+          <node role="ifFalseStatement" type="jetbrains.mps.baseLanguage.structure.BlockStatement" id="172529947038284145">
+            <node role="statements" type="jetbrains.mps.baseLanguage.structure.StatementList" id="172529947038284146">
+              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="172529947038284147">
+                <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="172529947038284148">
+                  <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="172529947038284149">
+                    <node role="operand" type="jetbrains.mps.lang.plugin.structure.ConceptFunctionParameter_AnActionEvent" id="172529947038284150" />
+                    <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="172529947038284151">
+                      <link role="baseMethodDeclaration" targetNodeId="100.~AnActionEvent.getPresentation():com.intellij.openapi.actionSystem.Presentation" resolveInfo="getPresentation" />
+                    </node>
+                  </node>
+                  <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="172529947038284152">
+                    <link role="baseMethodDeclaration" targetNodeId="100.~Presentation.setIcon(javax.swing.Icon):void" resolveInfo="setIcon" />
+                    <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="2035193597718747133">
+                      <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="2035193597718816246">
+                        <link role="baseMethodDeclaration" targetNodeId="255.~EmptyIcon.&lt;init&gt;(int,int)" resolveInfo="EmptyIcon" />
+                        <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="2035193597718816247">
+                          <property name="value" value="18" />
+                        </node>
+                        <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="2035193597718816249">
+                          <property name="value" value="18" />
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
         </node>
       </node>
     </node>

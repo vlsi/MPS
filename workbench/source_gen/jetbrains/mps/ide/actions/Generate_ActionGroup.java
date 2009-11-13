@@ -18,6 +18,7 @@ public class Generate_ActionGroup extends GeneratedActionGroup {
     this.setPopup(false);
     try {
       Generate_ActionGroup.this.addAnchor(Generate_ActionGroup.LABEL_ID_saveTransientModels);
+      Generate_ActionGroup.this.addAction("jetbrains.mps.ide.actions.CheckModelsBeforeGeneration_Action", "jetbrains.mps.ide");
       Generate_ActionGroup.this.addSeparator();
       Generate_ActionGroup.this.addAnchor(Generate_ActionGroup.LABEL_ID_generateModule);
       Generate_ActionGroup.this.addSeparator();
