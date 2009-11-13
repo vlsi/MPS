@@ -32,7 +32,7 @@ import jetbrains.mps.smodel.constraints.ModelConstraintsManager;
 import jetbrains.mps.workbench.choose.base.BaseMPSChooseModel;
 import jetbrains.mps.workbench.editors.MPSEditorOpener;
 import jetbrains.mps.reloading.IClassPathItem;
-import jetbrains.mps.stubs.javastub.classpath.ClassPathModelRootManager;
+import jetbrains.mps.stubs.ClassPathModelRootManager;
 import jetbrains.mps.stubs.javastub.classpath.ClassifierKind;
 import jetbrains.mps.stubs.javastub.classpath.StubHelper;
 import jetbrains.mps.baseLanguage.structure.ClassConcept;

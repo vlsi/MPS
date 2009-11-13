@@ -18,7 +18,8 @@ package jetbrains.mps.project;
 import com.intellij.openapi.util.Computable;
 import jetbrains.mps.baseLanguage.collections.structure.Collections_Language;
 import jetbrains.mps.baseLanguage.structure.BaseLanguage_Language;
-import jetbrains.mps.stubs.javastub.classpath.ClassPathModelRootManager;
+import jetbrains.mps.stubs.ClassPathModelRootManager;
+import jetbrains.mps.stubs.javastub.classpath.JavaStubClassPathModelRootManager;
 import jetbrains.mps.lang.generator.structure.Generator_Language;
 import jetbrains.mps.library.LibraryManager;
 import jetbrains.mps.logging.Logger;
@@ -883,7 +884,7 @@ public abstract class AbstractModule implements IModule {
     }
   }
 
-  private class MyClassPathModelRootManager extends ClassPathModelRootManager {
+  private class MyClassPathModelRootManager extends JavaStubClassPathModelRootManager {
     public IClassPathItem getClassPathItem() {
       return myJavaStubsClassPath;
     }
