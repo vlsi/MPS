@@ -34,8 +34,9 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590340(jetbrains.mps.lang.pattern.constraints)" version="2" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959033d(jetbrains.mps.lang.annotations.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590345(jetbrains.mps.lang.pattern.structure)" version="0" />
-  <maxImportIndex value="10" />
+  <maxImportIndex value="11" />
   <import index="1" modelUID="r:00000000-0000-4000-0000-011c89590518(jetbrains.mps.baseLanguage.regexp.structure)" version="0" />
+  <import index="11" modelUID="f:java_stub#java.lang(java.lang@java_stub)" version="-1" />
   <node type="jetbrains.mps.lang.constraints.structure.ConceptConstraints" id="1213104858749">
     <link role="concept" targetNodeId="1.1174565027678" resolveInfo="MatchVariableReference" />
     <node role="referent" type="jetbrains.mps.lang.constraints.structure.NodeReferentConstraint" id="1213104858750">
@@ -543,6 +544,33 @@
               </node>
               <node role="ifFalse" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="5533535376639522962">
                 <property name="value" value="regular expression" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.constraints.structure.ConceptConstraints" id="698920857052391451">
+    <property name="package" value="Regexps" />
+    <link role="concept" targetNodeId="1.1174482753837" resolveInfo="StringLiteralRegexp" />
+    <node role="property" type="jetbrains.mps.lang.constraints.structure.NodePropertyConstraint" id="698920857052391452">
+      <link role="applicableProperty" targetNodeId="1.1174482761807" resolveInfo="text" />
+      <node role="propertyValidator" type="jetbrains.mps.lang.constraints.structure.ConstraintFunction_PropertyValidator" id="698920857052391453">
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="698920857052391454">
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="698920857052391455">
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.EqualsExpression" id="698920857052391468">
+              <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="698920857052391471">
+                <property name="value" value="-1" />
+              </node>
+              <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="698920857052391462">
+                <node role="operand" type="jetbrains.mps.lang.constraints.structure.ConstraintsFunctionParameter_propertyValue" id="698920857052391461" />
+                <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="698920857052391466">
+                  <link role="baseMethodDeclaration" targetNodeId="11.~String.indexOf(java.lang.String):int" resolveInfo="indexOf" />
+                  <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="698920857052391467">
+                    <property name="value" value=" " />
+                  </node>
+                </node>
               </node>
             </node>
           </node>

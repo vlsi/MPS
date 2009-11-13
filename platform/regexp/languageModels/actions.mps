@@ -671,8 +671,8 @@
                 </node>
               </node>
               <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="3050481019131578467">
-                <node role="expression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="3050481019131578468">
-                  <link role="variableDeclaration" targetNodeId="3050481019131578430" resolveInfo="seq" />
+                <node role="expression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="698920857052516587">
+                  <link role="variableDeclaration" targetNodeId="3050481019131578436" resolveInfo="ref" />
                 </node>
               </node>
             </node>
@@ -680,10 +680,20 @@
           <node role="matchingText" type="jetbrains.mps.lang.actions.structure.QueryFunction_SideTransform_String" id="3050481019131578469">
             <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="3050481019131578470">
               <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="3050481019131578471">
-                <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="3050481019131578472">
-                  <node role="operand" type="jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_parameterObject" id="3050481019131578473" />
-                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="3050481019131578474">
-                    <link role="property" targetNodeId="2.1169194664001" resolveInfo="name" />
+                <node role="expression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="698920857052770875">
+                  <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="698920857052770871">
+                    <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="698920857052770874">
+                      <property name="value" value="\\(" />
+                    </node>
+                    <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="3050481019131578472">
+                      <node role="operand" type="jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_parameterObject" id="3050481019131578473" />
+                      <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="3050481019131578474">
+                        <link role="property" targetNodeId="2.1169194664001" resolveInfo="name" />
+                      </node>
+                    </node>
+                  </node>
+                  <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="698920857052770878">
+                    <property name="value" value=")" />
                   </node>
                 </node>
               </node>
@@ -810,8 +820,8 @@
                 </node>
               </node>
               <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="3050481019131578596">
-                <node role="expression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="3050481019131578597">
-                  <link role="variableDeclaration" targetNodeId="3050481019131578559" resolveInfo="res" />
+                <node role="expression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="698920857052516584">
+                  <link role="variableDeclaration" targetNodeId="3050481019131578577" resolveInfo="ref" />
                 </node>
               </node>
             </node>

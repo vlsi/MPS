@@ -472,7 +472,7 @@ public class QueriesGenerated {
             SNodeOperations.replaceWithAnother(_context.getSourceNode(), seq);
             SLinkOperations.setTarget(seq, "left", _context.getSourceNode(), true);
             SLinkOperations.setTarget(seq, "right", ref, true);
-            return seq;
+            return ref;
           }
 
           public SNode getOutputConcept() {
@@ -480,7 +480,7 @@ public class QueriesGenerated {
           }
 
           public String getMatchingText(String text) {
-            return SPropertyOperations.getString((item), "name");
+            return "\\(" + SPropertyOperations.getString((item), "name") + ")";
           }
 
           public String getVisibleMatchingText(String text) {
@@ -511,7 +511,7 @@ public class QueriesGenerated {
             SNode ref = SModelOperations.createNewNode(_context.getModel(), "jetbrains.mps.baseLanguage.regexp.structure.PredefinedSymbolClassRegexp", null);
             SLinkOperations.setTarget(ref, "symbolClass", (item), false);
             SLinkOperations.setTarget(res, "right", ref, true);
-            return res;
+            return ref;
           }
 
           public SNode getOutputConcept() {
