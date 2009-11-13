@@ -6,31 +6,26 @@ import jetbrains.mps.plugins.pluginparts.actions.GeneratedAction;
 import javax.swing.Icon;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-import com.intellij.openapi.project.Project;
 import jetbrains.mps.smodel.SModelDescriptor;
+import java.util.List;
+import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.IOperationContext;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import jetbrains.mps.workbench.MPSDataKeys;
-import com.intellij.openapi.progress.ProgressManager;
-import com.intellij.openapi.progress.Task;
-import com.intellij.openapi.progress.ProgressIndicator;
-import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.ide.modelchecker.ModelCheckerUtil;
-import jetbrains.mps.util.CollectionUtil;
-import jetbrains.mps.ide.progress.NullAdaptiveProgressMonitor;
 
 public class CheckModel_Action extends GeneratedAction {
   private static final Icon ICON = null;
   protected static Log log = LogFactory.getLog(CheckModel_Action.class);
 
-  private Project project;
   private SModelDescriptor model;
+  private List<SModelDescriptor> models;
+  private MPSProject mpsProject;
   private IOperationContext operationContext;
 
   public CheckModel_Action() {
-    super("Check Model", "", ICON);
-    this.setIsAlwaysVisible(true);
+    super("Check Model", "Check model for unresolved references and typesystem rules", ICON);
+    this.setIsAlwaysVisible(false);
     this.setExecuteOutsideCommand(true);
   }
 
@@ -41,7 +36,13 @@ public class CheckModel_Action extends GeneratedAction {
 
   public void doUpdate(@NotNull AnActionEvent event) {
     try {
-      this.enable(event.getPresentation());
+      {
+        String whatToCheck = "Model";
+        if (CheckModel_Action.this.models.size() > 1) {
+          whatToCheck = CheckModel_Action.this.models.size() + " Models";
+        }
+        event.getPresentation().setText("Check " + whatToCheck);
+      }
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
         log.error("User's action doUpdate method failed. Action:" + "CheckModel", t);
@@ -55,12 +56,16 @@ public class CheckModel_Action extends GeneratedAction {
     if (!(super.collectActionData(event))) {
       return false;
     }
-    this.project = event.getData(MPSDataKeys.PROJECT);
-    if (this.project == null) {
-      return false;
-    }
     this.model = event.getData(MPSDataKeys.MODEL);
     if (this.model == null) {
+      return false;
+    }
+    this.models = event.getData(MPSDataKeys.MODELS);
+    if (this.models == null) {
+      return false;
+    }
+    this.mpsProject = event.getData(MPSDataKeys.MPS_PROJECT);
+    if (this.mpsProject == null) {
       return false;
     }
     this.operationContext = event.getData(MPSDataKeys.OPERATION_CONTEXT);
@@ -72,18 +77,11 @@ public class CheckModel_Action extends GeneratedAction {
 
   public void doExecute(@NotNull final AnActionEvent event) {
     try {
-      final IOperationContext context = CheckModel_Action.this.operationContext;
-      final SModelDescriptor model = CheckModel_Action.this.model;
-      ProgressManager.getInstance().run(new Task.Modal(CheckModel_Action.this.project, "Checking", false) {
-        public void run(@NotNull ProgressIndicator indicator) {
-          indicator.setIndeterminate(true);
-          ModelAccess.instance().runReadAction(new Runnable() {
-            public void run() {
-              ModelCheckerUtil.checkModels(context, CollectionUtil.set(model), new NullAdaptiveProgressMonitor());
-            }
-          });
-        }
-      });
+      if (CheckModel_Action.this.models.size() > 1) {
+        CheckModel_Action.this.mpsProject.getPluginManager().getTool(ModelCheckerTool_Tool.class).checkModels(CheckModel_Action.this.models, CheckModel_Action.this.operationContext, true);
+      } else {
+        CheckModel_Action.this.mpsProject.getPluginManager().getTool(ModelCheckerTool_Tool.class).checkModel(CheckModel_Action.this.model, CheckModel_Action.this.operationContext, true);
+      }
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
         log.error("User's action execute method failed. Action:" + "CheckModel", t);

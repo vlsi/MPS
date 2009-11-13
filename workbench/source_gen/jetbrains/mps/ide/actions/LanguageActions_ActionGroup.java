@@ -23,8 +23,7 @@ public class LanguageActions_ActionGroup extends GeneratedActionGroup {
       LanguageActions_ActionGroup.this.addAnchor(LanguageActions_ActionGroup.LABEL_ID_newGroup);
       LanguageActions_ActionGroup.this.addSeparator();
       LanguageActions_ActionGroup.this.addAnchor(LanguageActions_ActionGroup.LABEL_ID_generateModule);
-      LanguageActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.NewCheckLanguage_Action", "jetbrains.mps.ide");
-      LanguageActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.CheckLanguage_Action", "jetbrains.mps.ide");
+      LanguageActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.CheckModule_Action", "jetbrains.mps.ide", "Language");
       LanguageActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.OptimizeModuleImports_Action", "jetbrains.mps.ide");
       LanguageActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.FixVirtualPackges_Action", "jetbrains.mps.ide");
       LanguageActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.AnalyzeClasspath_Action", "jetbrains.mps.ide");

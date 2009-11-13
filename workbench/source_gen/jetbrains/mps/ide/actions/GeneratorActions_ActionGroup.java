@@ -24,7 +24,7 @@ public class GeneratorActions_ActionGroup extends GeneratedActionGroup {
       GeneratorActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.DeleteGenerator_Action", "jetbrains.mps.ide");
       GeneratorActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.CopyModuleName_Action", "jetbrains.mps.ide");
       GeneratorActions_ActionGroup.this.addSeparator();
-      GeneratorActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.CheckGenerator_Action", "jetbrains.mps.ide");
+      GeneratorActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.CheckModule_Action", "jetbrains.mps.ide", "Generator");
       GeneratorActions_ActionGroup.this.addSeparator();
       GeneratorActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.GeneratorProperties_Action", "jetbrains.mps.ide");
     } catch (Throwable t) {

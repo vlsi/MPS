@@ -28,8 +28,7 @@ public class SolutionActions_ActionGroup extends GeneratedActionGroup {
       SolutionActions_ActionGroup.this.addSeparator();
       SolutionActions_ActionGroup.this.addAnchor(SolutionActions_ActionGroup.LABEL_ID_generateModule);
       SolutionActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.GenerateTextFromSolution_Action", "jetbrains.mps.ide");
-      SolutionActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.CheckSolution_Action", "jetbrains.mps.ide");
-      SolutionActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.NewCheckSolution_Action", "jetbrains.mps.ide");
+      SolutionActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.CheckModule_Action", "jetbrains.mps.ide", "Solution");
       SolutionActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.OptimizeModuleImports_Action", "jetbrains.mps.ide");
       SolutionActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.AnalyzeClasspath_Action", "jetbrains.mps.ide");
       SolutionActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.ShowModuleDependencies_Action", "jetbrains.mps.ide");

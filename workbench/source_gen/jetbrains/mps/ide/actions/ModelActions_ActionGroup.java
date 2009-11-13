@@ -32,7 +32,6 @@ public class ModelActions_ActionGroup extends GeneratedActionGroup {
       ModelActions_ActionGroup.this.addAnchor(ModelActions_ActionGroup.LABEL_ID_showHelp);
       ModelActions_ActionGroup.this.addSeparator();
       ModelActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.CheckModel_Action", "jetbrains.mps.ide");
-      ModelActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.NewCheckModel_Action", "jetbrains.mps.ide");
       ModelActions_ActionGroup.this.addSeparator();
       ModelActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.GenerateModel_Action", "jetbrains.mps.ide", IGenerationType.FILES);
       ModelActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.GenerateModel_Action", "jetbrains.mps.ide", IGenerationType.TEXT);
