@@ -94,117 +94,142 @@ public class ModelCheckerUtils {
   public static boolean checkModel(final SearchResults<ModelCheckerIssue> results, final SModelDescriptor modelDescriptor, final IOperationContext operationContext, final ProgressContext progressContext) {
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
+        ModelCheckerSettings settings = ModelCheckerSettings.getInstance();
         SModel model = modelDescriptor.getSModel();
+
+        // Check for unavailable concepts 
         for (SNode node : ListSequence.fromList(SModelOperations.getNodes(model, null))) {
-          if (!(checkAndUpdateIndicator(progressContext, "Checking " + SModelOperations.getModelName(model) + " for structure..."))) {
+          if (!(checkAndUpdateIndicator(progressContext, "Checking " + SModelOperations.getModelName(model) + " for instances of unavailable concepts..."))) {
             return;
           }
           SNode concept = SNodeOperations.getConceptDeclaration(node);
           if (concept == null) {
             addIssue(results, node, "Cannot find concept \"" + INamedConcept_Behavior.call_getFqName_1213877404258(concept) + "\"");
-            continue;
           }
+        }
 
-          // Check for unresolved references 
-          for (SReference ref : ListSequence.fromList(node.getReferences())) {
-            if (ref.getTargetNode() == null) {
-              addIssue(results, node, "Unresolved reference: " + ref.getResolveInfo());
+        // Check for unresolved references 
+        if (settings.isCheckUnresolvedReferences()) {
+          for (SNode node : ListSequence.fromList(SModelOperations.getNodes(model, null))) {
+            if (!(checkAndUpdateIndicator(progressContext, "Checking " + SModelOperations.getModelName(model) + " for unresolved references..."))) {
+              return;
             }
-          }
-
-          // Check links 
-          for (LinkDeclaration linkDeclaration : ListSequence.fromList(SModelSearchUtil.getLinkDeclarations(((AbstractConceptDeclaration)SNodeOperations.getAdapter(concept))))) {
-            LinkDeclaration link = SModelUtil_new.getGenuineLinkDeclaration(linkDeclaration);
-            if (link.getSourceCardinality() == Cardinality._1 || link.getSourceCardinality() == Cardinality._1__n) {
-              if (link.getMetaClass() == LinkMetaclass.aggregation) {
-                if (node.getChildren(link.getRole()).isEmpty()) {
-                  addIssue(results, node, "Cardinality constraint violation in role \"" + link.getRole() + "\"");
-                }
-              } else {
-                if (node.getReference(link.getRole()) == null) {
-                  // Temporary workaround for MPS-6704 
-                  /*
-                    if (SPropertyOperations.getString(concept, "name").equals("InlineEditorComponent")) {
-                      continue;
-                    }
-                  */
-                  addIssue(results, node, "Cardinality constraint violation in role \"" + link.getRole() + "\"");
-                }
+            // Check for unresolved references 
+            for (SReference ref : ListSequence.fromList(node.getReferences())) {
+              if (ref.getTargetNode() == null) {
+                addIssue(results, node, "Unresolved reference: " + ref.getResolveInfo());
               }
             }
           }
+        }
 
-          for (String role : SetSequence.fromSet(node.getChildRoles())) {
-            if (!(isDeclaredLink(concept, role, true))) {
-              addIssue(results, node, "Usage of undeclared child role \"" + role + "\"", MessageStatus.WARNING);
+        // Check for constraints 
+        if (settings.isCheckConstraints()) {
+          for (SNode node : ListSequence.fromList(SModelOperations.getNodes(model, null))) {
+            if (!(checkAndUpdateIndicator(progressContext, "Checking " + SModelOperations.getModelName(model) + " for cardinalities and properties constraints..."))) {
+              return;
             }
-          }
+            SNode concept = SNodeOperations.getConceptDeclaration(node);
 
-          for (String role : SetSequence.fromSet(node.getReferenceRoles())) {
-            if (!(isDeclaredLink(concept, role, false))) {
-              addIssue(results, node, "Usage of undeclared reference role \"" + role + "\"", MessageStatus.WARNING);
-            }
-          }
-
-          // Check properties 
-          ConceptAndSuperConceptsScope chs = new ConceptAndSuperConceptsScope(((AbstractConceptDeclaration)SNodeOperations.getAdapter(concept)));
-          List<PropertyDeclaration> props = chs.getAdapters(PropertyDeclaration.class);
-          for (PropertyDeclaration p : ListSequence.fromList(props)) {
-            PropertySupport ps = PropertySupport.getPropertySupport(p);
-            String value = ps.fromInternalValue(node.getProperty(p.getName()));
-            if (!(ps.canSetValue(node, p.getName(), value, operationContext.getScope()))) {
-              addIssue(results, node, "Property constraint violation for property \"" + p.getName() + "\"", MessageStatus.WARNING);
-            }
-          }
-
-          for (String name : SetSequence.fromSet(node.getPropertyNames())) {
-            if (node.isRoot() && SModelTreeNode.PACK.equals(name)) {
-              continue;
-            }
-            if (!(isDeclaredProperty(concept, name))) {
-              addIssue(results, node, "Usage of undeclared property \"" + name + "\"", MessageStatus.WARNING);
-            }
-          }
-
-          // Check scopes 
-          for (SReference ref : ListSequence.fromList(node.getReferences())) {
-            if (!(isDeclaredLink(concept, ref.getRole(), false))) {
-              continue;
-            }
-            SNode targetNode = ref.getTargetNode();
-            if (targetNode == null) {
-              continue;
-            }
-            try {
-              String specializedLinkRole = getMostSpecializedLinkRole(SNodeOperations.getConceptDeclaration(node), ref.getRole());
-
-              SearchScopeStatus status = ModelConstraintsUtil.getSearchScope(null, node, ((AbstractConceptDeclaration)SNodeOperations.getAdapter(concept)), specializedLinkRole, operationContext);
-              if (status.isOk() && !(status.isDefault())) {
-                List<SNode> nodes = status.getSearchScope().getNodes();
-                if (!(ListSequence.fromList(nodes).contains(targetNode))) {
-                  addIssue(results, node, "Reference in role \"" + specializedLinkRole + "\" is out of scope", MessageStatus.WARNING);
+            // Check links 
+            for (LinkDeclaration linkDeclaration : ListSequence.fromList(SModelSearchUtil.getLinkDeclarations(((AbstractConceptDeclaration)SNodeOperations.getAdapter(concept))))) {
+              LinkDeclaration link = SModelUtil_new.getGenuineLinkDeclaration(linkDeclaration);
+              if (link.getSourceCardinality() == Cardinality._1 || link.getSourceCardinality() == Cardinality._1__n) {
+                if (link.getMetaClass() == LinkMetaclass.aggregation) {
+                  if (node.getChildren(link.getRole()).isEmpty()) {
+                    addIssue(results, node, "Cardinality constraint violation in role \"" + link.getRole() + "\"");
+                  }
+                } else {
+                  if (node.getReference(link.getRole()) == null) {
+                    addIssue(results, node, "Cardinality constraint violation in role \"" + link.getRole() + "\"");
+                  }
                 }
               }
-            } catch (Exception e) {
-              e.printStackTrace();
-              addIssue(results, node, "Exception \"" + e.getMessage() + "\" during scope checking");
+            }
+
+            for (String role : SetSequence.fromSet(node.getChildRoles())) {
+              if (!(isDeclaredLink(concept, role, true))) {
+                addIssue(results, node, "Usage of undeclared child role \"" + role + "\"", MessageStatus.WARNING);
+              }
+            }
+
+            for (String role : SetSequence.fromSet(node.getReferenceRoles())) {
+              if (!(isDeclaredLink(concept, role, false))) {
+                addIssue(results, node, "Usage of undeclared reference role \"" + role + "\"", MessageStatus.WARNING);
+              }
+            }
+
+            // Check properties 
+            ConceptAndSuperConceptsScope chs = new ConceptAndSuperConceptsScope(((AbstractConceptDeclaration)SNodeOperations.getAdapter(concept)));
+            List<PropertyDeclaration> props = chs.getAdapters(PropertyDeclaration.class);
+            for (PropertyDeclaration p : ListSequence.fromList(props)) {
+              PropertySupport ps = PropertySupport.getPropertySupport(p);
+              String value = ps.fromInternalValue(node.getProperty(p.getName()));
+              if (!(ps.canSetValue(node, p.getName(), value, operationContext.getScope()))) {
+                addIssue(results, node, "Property constraint violation for property \"" + p.getName() + "\"", MessageStatus.WARNING);
+              }
+            }
+
+            for (String name : SetSequence.fromSet(node.getPropertyNames())) {
+              if (node.isRoot() && SModelTreeNode.PACK.equals(name)) {
+                continue;
+              }
+              if (!(isDeclaredProperty(concept, name))) {
+                addIssue(results, node, "Usage of undeclared property \"" + name + "\"", MessageStatus.WARNING);
+              }
+            }
+          }
+        }
+
+        // Check for scopes 
+        if (settings.isCheckScopes()) {
+          for (SNode node : ListSequence.fromList(SModelOperations.getNodes(model, null))) {
+            if (!(checkAndUpdateIndicator(progressContext, "Checking " + SModelOperations.getModelName(model) + " for valid scopes in references..."))) {
+              return;
+            }
+            SNode concept = SNodeOperations.getConceptDeclaration(node);
+
+            for (SReference ref : ListSequence.fromList(node.getReferences())) {
+              if (!(isDeclaredLink(concept, ref.getRole(), false))) {
+                continue;
+              }
+              SNode targetNode = ref.getTargetNode();
+              if (targetNode == null) {
+                continue;
+              }
+              try {
+                String specializedLinkRole = getMostSpecializedLinkRole(SNodeOperations.getConceptDeclaration(node), ref.getRole());
+
+                SearchScopeStatus status = ModelConstraintsUtil.getSearchScope(null, node, ((AbstractConceptDeclaration)SNodeOperations.getAdapter(concept)), specializedLinkRole, operationContext);
+                if (status.isOk() && !(status.isDefault())) {
+                  List<SNode> nodes = status.getSearchScope().getNodes();
+                  if (!(ListSequence.fromList(nodes).contains(targetNode))) {
+                    addIssue(results, node, "Reference in role \"" + specializedLinkRole + "\" is out of scope", MessageStatus.WARNING);
+                  }
+                }
+              } catch (Exception e) {
+                e.printStackTrace();
+                addIssue(results, node, "Exception \"" + e.getMessage() + "\" during scope checking");
+              }
             }
           }
         }
 
         // Check for typesystem rules 
-        TypeChecker tc = TypeChecker.getInstance();
-        for (SNode rootNode : ListSequence.fromList(SModelOperations.getRoots(model, null))) {
-          if (!(checkAndUpdateIndicator(progressContext, "Checking " + SModelOperations.getModelName(model) + " for typesystem rules..."))) {
-            return;
-          }
-          tc.checkRoot(rootNode);
-          TypeCheckingContext typeCheckingContext = NodeTypesComponentsRepository.getInstance().getTypeCheckingContext(rootNode);
-          NodeTypesComponent nodeTypesComponent = typeCheckingContext.getBaseNodeTypesComponent();
-          for (Pair<SNode, List<IErrorReporter>> nodeErrorReporters : SetSequence.fromSet(nodeTypesComponent.getNodesWithErrors())) {
-            SNode node = nodeErrorReporters.o1;
-            for (IErrorReporter errorReporter : ListSequence.fromList(nodeErrorReporters.o2)) {
-              addIssue(results, node, errorReporter.reportError(), errorReporter.getMessageStatus());
+        if (settings.isCheckTypesystem()) {
+          TypeChecker tc = TypeChecker.getInstance();
+          for (SNode rootNode : ListSequence.fromList(SModelOperations.getRoots(model, null))) {
+            if (!(checkAndUpdateIndicator(progressContext, "Checking " + SModelOperations.getModelName(model) + " for typesystem rules..."))) {
+              return;
+            }
+            tc.checkRoot(rootNode);
+            TypeCheckingContext typeCheckingContext = NodeTypesComponentsRepository.getInstance().getTypeCheckingContext(rootNode);
+            NodeTypesComponent nodeTypesComponent = typeCheckingContext.getBaseNodeTypesComponent();
+            for (Pair<SNode, List<IErrorReporter>> nodeErrorReporters : SetSequence.fromSet(nodeTypesComponent.getNodesWithErrors())) {
+              SNode node = nodeErrorReporters.o1;
+              for (IErrorReporter errorReporter : ListSequence.fromList(nodeErrorReporters.o2)) {
+                addIssue(results, node, errorReporter.reportError(), errorReporter.getMessageStatus());
+              }
             }
           }
         }
