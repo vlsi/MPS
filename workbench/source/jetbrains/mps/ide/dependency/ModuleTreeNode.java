@@ -115,8 +115,9 @@ public class ModuleTreeNode extends MPSTreeNode {
   }
 
   private void addModules(MPSTreeNode node, List<? extends IModule> ms) {
-    Collections.sort(ms, new ModulesComparator());
-    for (IModule m : ms) {
+    List <? extends IModule>  modules = new ArrayList<IModule>(ms);
+    Collections.sort(modules, new ModulesComparator());
+    for (IModule m : modules) {
       node.add(new ModuleTreeNode(myProject, m));
     }
   }
