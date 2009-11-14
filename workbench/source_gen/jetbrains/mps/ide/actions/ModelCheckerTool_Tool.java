@@ -4,16 +4,21 @@ package jetbrains.mps.ide.actions;
 
 import jetbrains.mps.plugins.pluginparts.tool.GeneratedTool;
 import jetbrains.mps.project.MPSProject;
-import com.intellij.ui.content.ContentManager;
 import com.intellij.ui.content.ContentManagerListener;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
+import jetbrains.mps.ide.findusages.INavigateableTool;
+import com.intellij.openapi.wm.ToolWindow;
+import jetbrains.mps.ide.findusages.INavigator;
+import com.intellij.ui.content.ContentManager;
+import com.intellij.ui.content.Content;
+import javax.swing.JComponent;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.ide.icons.IconManager;
 import com.intellij.openapi.wm.ToolWindowAnchor;
-import javax.swing.JComponent;
 import jetbrains.mps.MPSProjectHolder;
+import jetbrains.mps.ide.findusages.UsagesViewTracker;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.project.IModule;
@@ -22,15 +27,35 @@ import jetbrains.mps.generator.GenerationSettings;
 import jetbrains.mps.ide.findusages.model.SearchResults;
 import jetbrains.mps.ide.findusages.model.SearchResult;
 import com.intellij.openapi.ui.Messages;
-import com.intellij.ui.content.Content;
 import com.intellij.ui.content.ContentManagerAdapter;
 import com.intellij.ui.content.ContentManagerEvent;
 
 public class ModelCheckerTool_Tool extends GeneratedTool {
   private MPSProject myProject;
-  private ContentManager myContentManager;
   private ContentManagerListener myListener = null;
   private List<ModelCheckerViewer> myViewers = ListSequence.fromList(new ArrayList<ModelCheckerViewer>());
+  private INavigateableTool myNavigateableTool = new INavigateableTool() {
+    public int getPriority() {
+      return 3;
+    }
+
+    public ToolWindow getToolWindow() {
+      ModelCheckerTool_Tool.this.register();
+      return ModelCheckerTool_Tool.this.getToolWindow();
+    }
+
+    public INavigator getCurrentNavigateableView() {
+      ContentManager contentManager = ModelCheckerTool_Tool.this.getContentManager();
+      Content selectedContent = contentManager.getSelectedContent();
+      if (selectedContent == null) {
+        return null;
+      } else {
+        JComponent component = selectedContent.getComponent();
+        assert component instanceof ModelCheckerViewer;
+        return (ModelCheckerViewer)component;
+      }
+    }
+  };
 
   public ModelCheckerTool_Tool(Project project) {
     super(project, "Model Checker", -1, IconManager.EMPTY_ICON, ToolWindowAnchor.BOTTOM, false);
@@ -42,11 +67,20 @@ public class ModelCheckerTool_Tool extends GeneratedTool {
 
   public void init(Project project) {
     ModelCheckerTool_Tool.this.myProject = project.getComponent(MPSProjectHolder.class).getMPSProject();
-    ModelCheckerTool_Tool.this.myContentManager = ModelCheckerTool_Tool.this.getContentManager();
+    UsagesViewTracker.register(ModelCheckerTool_Tool.this.myNavigateableTool);
   }
 
   public void dispose() {
-    ModelCheckerTool_Tool.this.myContentManager.removeAllContents(true);
+    UsagesViewTracker.unregister(ModelCheckerTool_Tool.this.myNavigateableTool);
+    ModelCheckerTool_Tool.this.getContentManager().removeAllContents(true);
+  }
+
+  protected void doRegister() {
+    UsagesViewTracker.register(ModelCheckerTool_Tool.this.myNavigateableTool);
+  }
+
+  protected void doUnregister() {
+    UsagesViewTracker.unregister(ModelCheckerTool_Tool.this.myNavigateableTool);
   }
 
   public ModelCheckerViewer checkModel(SModelDescriptor modelDescriptor, IOperationContext operationContext, boolean showTab) {
@@ -164,7 +198,7 @@ public class ModelCheckerTool_Tool extends GeneratedTool {
         ListSequence.fromList(ModelCheckerTool_Tool.this.myViewers).removeElement(elem);
       }
     };
-    ModelCheckerTool_Tool.this.myContentManager.addContentManagerListener(ModelCheckerTool_Tool.this.myListener);
+    ModelCheckerTool_Tool.this.getContentManager().addContentManagerListener(ModelCheckerTool_Tool.this.myListener);
   }
 
   private ModelCheckerViewer createViewer(IOperationContext operationContext) {
