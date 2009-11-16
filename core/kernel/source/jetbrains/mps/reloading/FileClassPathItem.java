@@ -20,9 +20,7 @@ import jetbrains.mps.util.ReadUtil;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.MPSExtentions;
-import jetbrains.mps.generator.fileGenerator.AllCaches;
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.annotations.Nullable;
 
 import java.io.File;
 import java.io.IOException;
@@ -36,20 +34,11 @@ import java.util.*;
  */
 public class FileClassPathItem extends AbstractClassPathItem {
   private String myClassPath;
-
   private Map<String, Set<String>> mySubpackagesCache = new HashMap<String, Set<String>>();
   private Map<String, Set<String>> myAvailableClassesCache = new HashMap<String, Set<String>>();
-  private Map<String, Long> myLastModifiedCache = new HashMap<String, Long>();
-  private Map<String, IFile> myResources = new HashMap<String, IFile>();
-  private final boolean myCacheResources;
 
   public FileClassPathItem(String classPath) {
-    this(classPath, false);
-  }
-
-  public FileClassPathItem(String classPath, boolean cacheResources) {
     myClassPath = classPath;
-    myCacheResources = cacheResources;
   }
 
   public String getClassPath() {
@@ -90,40 +79,14 @@ public class FileClassPathItem extends AbstractClassPathItem {
     }
   }
 
-  @Nullable
-  public IFile getResourceFile(String name) {
-    IFile resourceFile = myResources.get(name);
-    if (resourceFile == null) {
-      resourceFile = FileSystem.getFile(myClassPath + File.separator + name.replace('/', File.separatorChar));
-      addResourceToCache(name, resourceFile);
-    }
-    if (!resourceFile.exists()) {
-      if (myCacheResources) {
-        myResources.remove(name);
-      }
-      return null;
-    }
-    return resourceFile;
-  }
-
-  private void addResourceToCache(String name, IFile resourceFile) {
-    if (myCacheResources) {
-      myResources.put(name, resourceFile);
-    }
-  }
-
   public URL getResource(String name) {
     try {
-      IFile resourceFile = getResourceFile(name);
-      if (resourceFile == null) return null;
+      IFile resourceFile = FileSystem.getFile(myClassPath + File.separator + name.replace('/', File.separatorChar));      
+      if (!resourceFile.exists()) return null;
       return resourceFile.toURL();
     } catch (MalformedURLException e) {
       return null;
     }
-  }
-
-  public Map<String, IFile> getResources() {
-    return Collections.unmodifiableMap(myResources);
   }
 
   @NotNull
@@ -173,42 +136,18 @@ public class FileClassPathItem extends AbstractClassPathItem {
             } else {
               subpacks.add(namespace + name);
             }
-          } else {
-            processResource(namespace, file, name);
-          }
+          } 
         }
 
         if (name.endsWith(".class")) {
-          String className = name.substring(0, name.length() - ".class".length());
-          if (namespace.length() > 0) {
-            myLastModifiedCache.put(namespace + "." + className, fileLastModified);
-          } else {
-            myLastModifiedCache.put(className, fileLastModified);
-          }
-
-          classes.add(className);
+          classes.add(name.substring(0, name.length() - ".class".length()));
         }
       }
     }
 
     mySubpackagesCache.put(namespace, subpacks);
     myAvailableClassesCache.put(namespace, classes);
-  }
-
-  public Long getClassLastModified(String namespace, String name) {
-    if (namespace.length() > 0) {
-      return myLastModifiedCache.get(namespace + "." + name);
-    } else {
-      return myLastModifiedCache.get(name);
-    }
-  }
-
-  private void processResource(String namespace, IFile file, String name) {
-    if (!AllCaches.getInstance().isCacheFile(file)) {
-      String resourceName = namespace.replace(".", "/") + (namespace.length() > 0 ? "/" : "") + name;
-      addResourceToCache(resourceName, file);
-    }
-  }
+  }    
 
   public long getClassesTimestamp(String namespace) {
     IFile dir = getModelDir(namespace);

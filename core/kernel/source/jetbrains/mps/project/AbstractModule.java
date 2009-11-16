@@ -76,7 +76,6 @@ public abstract class AbstractModule implements IModule {
 
   private IClassPathItem myClassPath;
   private IClassPathItem myJavaStubsClassPath;
-  private FileClassPathItem myClassesGen;
   private MyClassPathModelRootManager myManager = new MyClassPathModelRootManager();
   private List<SModelRoot> mySModelRoots = new ArrayList<SModelRoot>();
   private Set<String> myIncludedClassPath;
@@ -109,11 +108,7 @@ public abstract class AbstractModule implements IModule {
 
   public String getModuleFqName() {
     return myModuleReference.getModuleFqName();
-  }
-
-  public FileClassPathItem getClassesGenItem() {
-    return myClassesGen;
-  }
+  }  
 
   @Nullable
   public String getModuleNamespace() {
@@ -610,13 +605,8 @@ public abstract class AbstractModule implements IModule {
           LOG.error("Can't load class path item " + s + " in " + this + (file.isDirectory() ? ". Execute make in IDEA." : ""));
         } else {
           IClassPathItem currentItem;
-          if (file.isDirectory()) {
-            boolean isClassesGen = s.equals(getClassesGen().getCanonicalPath());
-            currentItem = new FileClassPathItem(s, isClassesGen);
-            // remember classes gen
-            if (isClassesGen) {
-              myClassesGen = (FileClassPathItem) currentItem;
-            }
+          if (file.isDirectory()) {            
+            currentItem = new FileClassPathItem(s);
           } else {
             currentItem = new JarFileClassPathItem(s);
           }
