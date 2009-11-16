@@ -18,6 +18,7 @@ public class Tools_ActionGroup extends GeneratedActionGroup {
       Tools_ActionGroup.this.addAction("jetbrains.mps.ide.actions.ShowModuleRepository_Action", "jetbrains.mps.ide");
       Tools_ActionGroup.this.addAction("jetbrains.mps.ide.actions.ShowModelRepository_Action", "jetbrains.mps.ide");
       Tools_ActionGroup.this.addAction("jetbrains.mps.ide.actions.ShowBookmarks_Action", "jetbrains.mps.ide");
+      Tools_ActionGroup.this.addAction("jetbrains.mps.ide.actions.ShowModelChecker_Action", "jetbrains.mps.ide");
       Tools_ActionGroup.this.addAnchor(Tools_ActionGroup.LABEL_ID_customTools);
       Tools_ActionGroup.this.addSeparator();
       Tools_ActionGroup.this.addAction("jetbrains.mps.ide.actions.ReloadAll_Action", "jetbrains.mps.ide");
