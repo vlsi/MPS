@@ -4,7 +4,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class TeamCityMessageFormat implements IBuildServerMessageFormat {
-  private static final String LINES_SEPARATOR = "|n\\\n";
+  private static final String LINES_SEPARATOR = "|n";
 
   public String escapeBuildMessage(String rawMessage) {
     return rawMessage.replace("|", "||").replace("'", "|'").replace("\n", "|n").replace("\r", "|r").replace("]", "|]");
