@@ -2123,7 +2123,7 @@
         <link role="styleClass" targetNodeId="15.1234958090348" resolveInfo="LeftParenAfterName" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode" id="540871147943773375">
-        <property name="attractsFocus" value="2" />
+        <property name="attractsFocus" value="3" />
         <link role="relationDeclaration" targetNodeId="1.1167380149910" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="540871147943773376">
