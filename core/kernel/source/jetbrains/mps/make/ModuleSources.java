@@ -35,7 +35,6 @@ public class ModuleSources {
 
   private Set<ResourceFile> myResourcesToCopy = new HashSet<ResourceFile>();
   private static final boolean USE_NEW_COMPILATION = false;
-  private boolean myUseLastModidiedChache = false;
   private Map<String, Long> myLastModidifiedChache = new HashMap<String, Long>();
 
   ModuleSources(IModule module, Dependencies deps) {
@@ -108,7 +107,6 @@ public class ModuleSources {
       }
     } else {
       collectOutputOld(myModule.getClassesGen(), "", myFilesToCompile, myFilesToDelete, myResourcesToCopy);
-      //checkCompilation(pathItem);
     }
   }
 
@@ -116,6 +114,10 @@ public class ModuleSources {
     Set<IFile> toDelete = new HashSet<IFile>();
     Set<JavaFile> toCompile = new HashSet<JavaFile>(myJavaFiles.values());
     Set<ResourceFile> resourcesToCopy = new HashSet<ResourceFile>(myResourceFiles.values());
+
+
+    collectOutputOld(myModule.getClassesGen(), "", toCompile, toDelete, resourcesToCopy);
+    /*
     if (pathItem == null) {
       collectOutputOld(myModule.getClassesGen(), "", toCompile, toDelete, resourcesToCopy);
     } else {
@@ -136,7 +138,8 @@ public class ModuleSources {
       System.out.println("Resource problem " + myModule.getModuleFqName());
       System.out.println("Old - " + myResourcesToCopy);
       System.out.println("New - " + resourcesToCopy);
-    }    
+    }
+        */
   }
 
   private void collectOutputCached(FileClassPathItem pathItem, Set<JavaFile> toCompile, Set<IFile> toDelete, Set<ResourceFile> resourcesToCopy) {
@@ -177,19 +180,19 @@ public class ModuleSources {
         clazzName = clazzName.substring(0, index);
       }
       JavaFile javaFile = myJavaFiles.get(clazzName);
-      IFile classFile = FileSystem.getFile(item.getModelDir(namespace + "." + clazz) + MPSExtentions.DOT_CLASSFILE);
-      if (!classFile.exists()) continue;
 
       if (javaFile == null) {
+        IFile classFile = FileSystem.getFile(item.getModelDir(namespace + "." + clazz) + MPSExtentions.DOT_CLASSFILE);
+        if (!classFile.exists()) continue;
         toDelete.add(classFile);
 
-      } else{
+      } else {
         Long classLastModified = item.getClassLastModified(namespace, clazz);
-        if (classLastModified == null) {
-          System.out.println("Cache miss - " + classFile);
+        if (classLastModified == null) {          
+          IFile classFile = FileSystem.getFile(item.getModelDir(namespace + "." + clazz) + MPSExtentions.DOT_CLASSFILE);
           classLastModified = classFile.lastModified();
         }
-        if (isFileUpToDate(javaFile, classLastModified)) {      
+        if (isFileUpToDate(javaFile, classLastModified)) {
           toCompile.remove(javaFile);
         }
       }
@@ -237,25 +240,14 @@ public class ModuleSources {
   private boolean isFileUpToDate(JavaFile javaFile, long classFileLastModified) {
     if (javaFile.getFile().lastModified() < classFileLastModified) {
       for (String fqName : myDependencies.getAllDependencies(javaFile.getClassName())) {
-        IFile depJavaFile = myDependencies.getJavaFile(fqName);
-        if (depJavaFile != null && getLastModified(fqName, depJavaFile) > classFileLastModified) {
+        Long javaFileLastModified = myDependencies.getJavaFileLastModified(fqName);
+        if (javaFileLastModified == null || javaFileLastModified > classFileLastModified) {
           return false;
         }
       }
       return true;
     }
     return false;
-  }
-
-  private long getLastModified(String fqName, IFile depJavaFile) {
-    if (myUseLastModidiedChache) {
-      if (!myLastModidifiedChache.containsKey(fqName)) {
-        myLastModidifiedChache.put(fqName, depJavaFile.lastModified());
-      }
-      return myLastModidifiedChache.get(fqName);
-    } else {
-      return depJavaFile.lastModified();
-    }
   }
 
   private boolean isIgnored(IFile file) {

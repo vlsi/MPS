@@ -38,6 +38,7 @@ class Dependencies {
   private Map<String, Set<String>> myDependencies = new HashMap<String, Set<String>>();
   private Map<String, Set<String>> myExtendsDependencies = new HashMap<String, Set<String>>();
   private Map<String, IModule> myModules = new HashMap<String, IModule>();
+  private Map<String, Long> myLastModified = new HashMap<String, Long>();
 
   public Dependencies(Collection<IModule> ms) {
     for (IModule m : ms) {
@@ -96,5 +97,21 @@ class Dependencies {
       myDependencies.put(r.getClassName(), r.getDependencies());
       myExtendsDependencies.put(r.getClassName(), r.getExtends());
     }
+  }
+
+  public Long getJavaFileLastModified(String fqName) {
+    Long value = myLastModified.get(fqName);
+    if (value == null) {
+      IFile iFile = getJavaFile(fqName);
+      if (iFile == null) {
+        value = null;
+      } else {
+        value = iFile.lastModified();
+
+      }
+      myLastModified.put(fqName, value);
+    }
+
+    return value;
   }
 }
