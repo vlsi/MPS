@@ -49,6 +49,10 @@ public class check_Constraints_NonTypesystemRule extends AbstractNonTypesystemRu
             BaseIntentionProvider intentionProvider = null;
             IErrorTarget errorTarget = new NodeErrorTarget();
             IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(node, "Node isn't applicable in the context", "r:cec599e3-51d2-48a7-af31-989e3cbd593c(jetbrains.mps.lang.core.typesystem)", "5622704259074610949", intentionProvider, errorTarget);
+            {
+              SNode _foreign_34989546 = cm.getCanBeChildBlock(operationContext, node.getConceptFqName());
+              _reporter_2309309498.addAdditionalRuleId(_foreign_34989546.getModel().toString(), _foreign_34989546.getId());
+            }
           }
         }
       }
@@ -60,6 +64,10 @@ public class check_Constraints_NonTypesystemRule extends AbstractNonTypesystemRu
             BaseIntentionProvider intentionProvider = null;
             IErrorTarget errorTarget = new NodeErrorTarget();
             IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(node, "Not rootable concept added as root", "r:cec599e3-51d2-48a7-af31-989e3cbd593c(jetbrains.mps.lang.core.typesystem)", "5622704259074611001", intentionProvider, errorTarget);
+            {
+              SNode _foreign_34989546 = cm.getCanBeRootBlock(operationContext, node.getConceptFqName());
+              _reporter_2309309498.addAdditionalRuleId(_foreign_34989546.getModel().toString(), _foreign_34989546.getId());
+            }
           }
         }
       }
@@ -76,6 +84,10 @@ public class check_Constraints_NonTypesystemRule extends AbstractNonTypesystemRu
           BaseIntentionProvider intentionProvider = null;
           IErrorTarget errorTarget = new NodeErrorTarget();
           IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(node, "Node isn't applicable in the context", "r:cec599e3-51d2-48a7-af31-989e3cbd593c(jetbrains.mps.lang.core.typesystem)", "5622704259074611096", intentionProvider, errorTarget);
+          {
+            SNode _foreign_34989546 = cm.getCanBeParentBlock(node, operationContext);
+            _reporter_2309309498.addAdditionalRuleId(_foreign_34989546.getModel().toString(), _foreign_34989546.getId());
+          }
         }
       }
     }

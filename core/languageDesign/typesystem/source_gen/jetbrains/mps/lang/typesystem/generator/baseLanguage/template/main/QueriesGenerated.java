@@ -1975,6 +1975,22 @@ public class QueriesGenerated {
     return SNodeOperations.isInstanceOf(_context.getNode(), "jetbrains.mps.lang.typesystem.structure.SubtypingRule") && SubtypingRule_Behavior.call_surelyKeepsConcept_4214710807058415622(SNodeOperations.cast(_context.getNode(), "jetbrains.mps.lang.typesystem.structure.SubtypingRule"));
   }
 
+  public static boolean ifMacro_Condition_5087829510150339182(final IOperationContext operationContext, final IfMacroContext _context) {
+    return (SLinkOperations.getTarget(_context.getNode(), "foreignMessageSource", true) != null);
+  }
+
+  public static boolean ifMacro_Condition_5087829510150342502(final IOperationContext operationContext, final IfMacroContext _context) {
+    return (SLinkOperations.getTarget(_context.getNode(), "foreignMessageSource", true) != null);
+  }
+
+  public static boolean ifMacro_Condition_5087829510150342547(final IOperationContext operationContext, final IfMacroContext _context) {
+    return (SLinkOperations.getTarget(_context.getNode(), "foreignMessageSource", true) != null);
+  }
+
+  public static boolean ifMacro_Condition_5087829510150342592(final IOperationContext operationContext, final IfMacroContext _context) {
+    return (SLinkOperations.getTarget(_context.getNode(), "foreignMessageSource", true) != null);
+  }
+
   public static boolean ifMacro_Condition_6663831120772322929(final IOperationContext operationContext, final IfMacroContext _context) {
     return (SLinkOperations.getTarget(_context.getNode(), "errorString", true) == null);
   }
@@ -2469,6 +2485,38 @@ public class QueriesGenerated {
     } else {
       return SLinkOperations.getTarget(_context.getNode(), "childIndex", true);
     }
+  }
+
+  public static SNode sourceNodeQuery_5087829510150333617(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return SLinkOperations.getTarget(_context.getNode(), "foreignMessageSource", true);
+  }
+
+  public static SNode sourceNodeQuery_5087829510150339130(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return SLinkOperations.getTarget(_context.getNode(), "foreignMessageSource", true);
+  }
+
+  public static SNode sourceNodeQuery_5087829510150339138(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return SLinkOperations.getTarget(_context.getNode(), "foreignMessageSource", true);
+  }
+
+  public static SNode sourceNodeQuery_5087829510150339146(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return SLinkOperations.getTarget(_context.getNode(), "foreignMessageSource", true);
+  }
+
+  public static SNode sourceNodeQuery_5087829510150339171(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return SLinkOperations.getTarget(_context.getNode(), "foreignMessageSource", true);
+  }
+
+  public static SNode sourceNodeQuery_5087829510150342483(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return SLinkOperations.getTarget(_context.getNode(), "foreignMessageSource", true);
+  }
+
+  public static SNode sourceNodeQuery_5087829510150342528(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return SLinkOperations.getTarget(_context.getNode(), "foreignMessageSource", true);
+  }
+
+  public static SNode sourceNodeQuery_5087829510150342573(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return SLinkOperations.getTarget(_context.getNode(), "foreignMessageSource", true);
   }
 
   public static SNode sourceNodeQuery_5360587928437811089(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {

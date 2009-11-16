@@ -290,6 +290,25 @@
                     <node role="nodeToReport" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="5622704259074610953">
                       <link role="variableDeclaration" targetNodeId="4950342498455635259" resolveInfo="node" />
                     </node>
+                    <node role="foreignMessageSource" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="8856236746934088969">
+                      <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="8856236746934088968">
+                        <link role="variableDeclaration" targetNodeId="4950342498455637953" resolveInfo="cm" />
+                      </node>
+                      <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="8856236746934088973">
+                        <link role="baseMethodDeclaration" targetNodeId="7.~ModelConstraintsManager.getCanBeChildBlock(jetbrains.mps.smodel.IOperationContext,java.lang.String):jetbrains.mps.smodel.SNode" resolveInfo="getCanBeChildBlock" />
+                        <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="8856236746934088975">
+                          <link role="variableDeclaration" targetNodeId="5622704259074608655" resolveInfo="operationContext" />
+                        </node>
+                        <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="8856236746934088978">
+                          <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="8856236746934088977">
+                            <link role="variableDeclaration" targetNodeId="4950342498455635259" resolveInfo="node" />
+                          </node>
+                          <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="8856236746934088982">
+                            <link role="baseMethodDeclaration" targetNodeId="4.~SNode.getConceptFqName():java.lang.String" resolveInfo="getConceptFqName" />
+                          </node>
+                        </node>
+                      </node>
+                    </node>
                   </node>
                 </node>
                 <node role="condition" type="jetbrains.mps.baseLanguage.structure.NotExpression" id="5622704259074610946">
@@ -372,6 +391,25 @@
                     </node>
                     <node role="nodeToReport" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="5622704259074611005">
                       <link role="variableDeclaration" targetNodeId="4950342498455635259" resolveInfo="node" />
+                    </node>
+                    <node role="foreignMessageSource" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="8856236746934088985">
+                      <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="8856236746934088984">
+                        <link role="variableDeclaration" targetNodeId="4950342498455637953" resolveInfo="cm" />
+                      </node>
+                      <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="8856236746934088989">
+                        <link role="baseMethodDeclaration" targetNodeId="7.~ModelConstraintsManager.getCanBeRootBlock(jetbrains.mps.smodel.IOperationContext,java.lang.String):jetbrains.mps.smodel.SNode" resolveInfo="getCanBeRootBlock" />
+                        <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="8856236746934088990">
+                          <link role="variableDeclaration" targetNodeId="5622704259074608655" resolveInfo="operationContext" />
+                        </node>
+                        <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="8856236746934088993">
+                          <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="8856236746934088992">
+                            <link role="variableDeclaration" targetNodeId="4950342498455635259" resolveInfo="node" />
+                          </node>
+                          <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="8856236746934088997">
+                            <link role="baseMethodDeclaration" targetNodeId="4.~SNode.getConceptFqName():java.lang.String" resolveInfo="getConceptFqName" />
+                          </node>
+                        </node>
+                      </node>
                     </node>
                   </node>
                 </node>
@@ -469,6 +507,20 @@
                 </node>
                 <node role="nodeToReport" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="5622704259074611100">
                   <link role="variableDeclaration" targetNodeId="4950342498455635259" resolveInfo="node" />
+                </node>
+                <node role="foreignMessageSource" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="8856236746934089000">
+                  <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="8856236746934088999">
+                    <link role="variableDeclaration" targetNodeId="4950342498455637953" resolveInfo="cm" />
+                  </node>
+                  <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="8856236746934089004">
+                    <link role="baseMethodDeclaration" targetNodeId="7.~ModelConstraintsManager.getCanBeParentBlock(jetbrains.mps.smodel.SNode,jetbrains.mps.smodel.IOperationContext):jetbrains.mps.smodel.SNode" resolveInfo="getCanBeParentBlock" />
+                    <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="8856236746934089005">
+                      <link role="variableDeclaration" targetNodeId="4950342498455635259" resolveInfo="node" />
+                    </node>
+                    <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="8856236746934089007">
+                      <link role="variableDeclaration" targetNodeId="5622704259074608655" resolveInfo="operationContext" />
+                    </node>
+                  </node>
                 </node>
               </node>
             </node>
