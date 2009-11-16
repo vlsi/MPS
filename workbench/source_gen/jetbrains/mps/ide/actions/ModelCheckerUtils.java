@@ -49,13 +49,13 @@ import jetbrains.mps.ide.progress.TaskProgressSettings;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 
 public class ModelCheckerUtils {
-  private static void addIssue(SearchResults<ModelCheckerIssue> results, SNode node, String message, MessageStatus status) {
-    ModelCheckerIssue issue = new ModelCheckerIssue(node, message);
+  private static void addIssue(SearchResults<ModelCheckerIssue> results, SNode node, String message, MessageStatus status, ModelCheckerFix fix) {
+    ModelCheckerIssue issue = new ModelCheckerIssue(node, message, fix);
     results.getSearchResults().add(new SearchResult(issue, node, status.toString()));
   }
 
   private static void addIssue(SearchResults<ModelCheckerIssue> results, SNode node, String message) {
-    addIssue(results, node, message, MessageStatus.ERROR);
+    addIssue(results, node, message, MessageStatus.ERROR, null);
   }
 
   private static boolean isDeclaredLink(SNode concept, String role, boolean child) {
@@ -163,13 +163,13 @@ public class ModelCheckerUtils {
 
             for (String role : SetSequence.fromSet(node.getChildRoles())) {
               if (!(isDeclaredLink(concept, role, true))) {
-                addIssue(results, node, "Usage of undeclared child role \"" + role + "\"", MessageStatus.WARNING);
+                addIssue(results, node, "Usage of undeclared child role \"" + role + "\"", MessageStatus.WARNING, new ModelCheckerFix.UndeclaredChild(node, role));
               }
             }
 
             for (String role : SetSequence.fromSet(node.getReferenceRoles())) {
               if (!(isDeclaredLink(concept, role, false))) {
-                addIssue(results, node, "Usage of undeclared reference role \"" + role + "\"", MessageStatus.WARNING);
+                addIssue(results, node, "Usage of undeclared reference role \"" + role + "\"", MessageStatus.WARNING, new ModelCheckerFix.UndeclaredReference(node, role));
               }
             }
 
@@ -180,7 +180,7 @@ public class ModelCheckerUtils {
               PropertySupport ps = PropertySupport.getPropertySupport(p);
               String value = ps.fromInternalValue(node.getProperty(p.getName()));
               if (!(ps.canSetValue(node, p.getName(), value, operationContext.getScope()))) {
-                addIssue(results, node, "Property constraint violation for property \"" + p.getName() + "\"", MessageStatus.WARNING);
+                addIssue(results, node, "Property constraint violation for property \"" + p.getName() + "\"", MessageStatus.WARNING, null);
               }
             }
 
@@ -189,7 +189,7 @@ public class ModelCheckerUtils {
                 continue;
               }
               if (!(isDeclaredProperty(concept, name))) {
-                addIssue(results, node, "Usage of undeclared property \"" + name + "\"", MessageStatus.WARNING);
+                addIssue(results, node, "Usage of undeclared property \"" + name + "\"", MessageStatus.WARNING, new ModelCheckerFix.UndeclaredProperty(node, name));
               }
             }
           }
@@ -218,7 +218,7 @@ public class ModelCheckerUtils {
                 if (checkScope(concept, node, targetNode, specializedLinkRole, operationContext)) {
                 } else if (checkScope(concept, node, targetNode, specializedLinkRole, new ModuleContext(thisModelModule, operationContext.getMPSProject()))) {
                 } else {
-                  addIssue(results, node, "Reference in role \"" + specializedLinkRole + "\" is out of scope", MessageStatus.WARNING);
+                  addIssue(results, node, "Reference in role \"" + specializedLinkRole + "\" is out of scope", MessageStatus.WARNING, null);
                 }
               } catch (Exception e) {
                 e.printStackTrace();
@@ -241,7 +241,7 @@ public class ModelCheckerUtils {
             for (Pair<SNode, List<IErrorReporter>> nodeErrorReporters : SetSequence.fromSet(nodeTypesComponent.getNodesWithErrors())) {
               SNode node = nodeErrorReporters.o1;
               for (IErrorReporter errorReporter : ListSequence.fromList(nodeErrorReporters.o2)) {
-                addIssue(results, node, errorReporter.reportError(), errorReporter.getMessageStatus());
+                addIssue(results, node, errorReporter.reportError(), errorReporter.getMessageStatus(), null);
               }
             }
           }

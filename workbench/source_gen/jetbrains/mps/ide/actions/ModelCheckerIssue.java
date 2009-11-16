@@ -7,10 +7,16 @@ import jetbrains.mps.smodel.SNode;
 public class ModelCheckerIssue {
   private SNode myNode;
   private String myMessage;
+  private ModelCheckerFix myFix;
 
-  public ModelCheckerIssue(SNode node, String message) {
+  public ModelCheckerIssue(SNode node, String message, ModelCheckerFix fix) {
     this.myNode = node;
     this.myMessage = message;
+    this.myFix = fix;
+  }
+
+  public ModelCheckerIssue(SNode node, String message) {
+    this(node, message, null);
   }
 
   public SNode getNode() {
@@ -19,5 +25,17 @@ public class ModelCheckerIssue {
 
   public String getMessage() {
     return this.myMessage;
+  }
+
+  public boolean fix() {
+    if (this.myFix != null) {
+      return this.myFix.doFix();
+    } else {
+      return false;
+    }
+  }
+
+  public boolean isFixable() {
+    return this.myFix != null;
   }
 }

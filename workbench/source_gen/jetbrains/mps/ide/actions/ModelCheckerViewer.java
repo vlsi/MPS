@@ -14,6 +14,11 @@ import jetbrains.mps.ide.findusages.view.treeholder.treeview.ViewOptions;
 import java.awt.FlowLayout;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import com.intellij.openapi.ui.Messages;
+import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
+import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.ide.findusages.model.SearchResult;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.ide.findusages.findalgorithm.finders.IFinder;
 import jetbrains.mps.ide.findusages.model.IResultProvider;
 import jetbrains.mps.ide.findusages.view.FindUtils;
@@ -26,7 +31,6 @@ import com.intellij.openapi.progress.ProgressIndicator;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.ide.icons.IconManager;
 import java.util.List;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.ide.projectPane.Icons;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.ide.findusages.model.SearchResults;
@@ -48,6 +52,7 @@ public abstract class ModelCheckerViewer extends JPanel implements INavigator {
   private Runnable myRecheckRunnable;
   private JButton myGenerateButton;
   private JButton myRecheckButton;
+  private JButton myFixButton;
   private boolean myAlreadyCheckedSomething;
 
   public ModelCheckerViewer(MPSProject mpsProject, IOperationContext operationContext) {
@@ -87,12 +92,52 @@ public abstract class ModelCheckerViewer extends JPanel implements INavigator {
     });
     this.myRecheckButton.setVisible(false);
 
+    this.myFixButton = new JButton("Perform Quick Fixes");
+    this.myFixButton.setToolTipText("Remove all undeclared children and undeclared references");
+    this.myFixButton.addActionListener(new ActionListener() {
+      public void actionPerformed(ActionEvent event) {
+        ModelCheckerViewer.this.performQuickFixes();
+      }
+    });
+
     buttonPanel.add(this.myGenerateButton);
     buttonPanel.add(this.myRecheckButton);
+    buttonPanel.add(this.myFixButton);
     this.add(buttonPanel, BorderLayout.SOUTH);
   }
 
   protected abstract void close();
+
+  public void performQuickFixes() {
+    // Ask if need to fix 
+    int dialogAnswer = Messages.showYesNoDialog(this.myOperationContext.getProject(), "You are going to remove undeclared properties and children from nodes. " + "You may not be able to undo it. Are you sure?", "Warning", null);
+    if (dialogAnswer != 0) {
+      return;
+    }
+
+    // Perform quick fixes 
+    final Wrappers._int fixedTotal = new Wrappers._int(0);
+    ModelAccess.instance().runWriteActionInCommand(new Runnable() {
+      public void run() {
+        for (SearchResult<ModelCheckerIssue> result : ListSequence.fromList(ModelCheckerViewer.this.getSearchResults().getSearchResults())) {
+          ModelCheckerIssue issue = result.getObject();
+          if (issue.isFixable() && issue.fix()) {
+            fixedTotal.value++;
+          }
+        }
+      }
+    });
+
+    // Perform recheck if needed 
+    if (fixedTotal.value != 0) {
+      int dialogAnswer1 = Messages.showYesNoDialog(this.myOperationContext.getProject(), "Model checker fixed " + fixedTotal.value + " issues. Do you wish to recheck?", "Recheck", null);
+      if (dialogAnswer1 != 0) {
+        return;
+      }
+      assert ModelCheckerViewer.this.myRecheckRunnable != null;
+      ModelCheckerViewer.this.myRecheckRunnable.run();
+    }
+  }
 
   private void checkSomething(final IFinder finder, String taskTitle) {
     if (!(this.myAlreadyCheckedSomething)) {
@@ -187,7 +232,7 @@ public abstract class ModelCheckerViewer extends JPanel implements INavigator {
     return this.myTabIcon;
   }
 
-  public SearchResults getSearchResults() {
+  public SearchResults<ModelCheckerIssue> getSearchResults() {
     return this.myUsagesView.getSearchResults();
   }
 
