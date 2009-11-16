@@ -279,8 +279,10 @@ public class ModelChangesWatcher implements ApplicationComponent {
 
     private void processBeforeEvent(VFileEvent event, String filePath, ReloadSession reloadSession) {
       if (MPSFileTypesManager.instance().isModelFile(filePath)) {
+        LOG.info("Got refresh before event for " + filePath);
         BeforeModelEventProcessor.getInstance().process(event, reloadSession);
       } else if (MPSFileTypesManager.instance().isModuleFile(filePath)) {
+        LOG.info("Got refresh before event for " + filePath);
         BeforeModuleEventProcessor.getInstance().process(event, reloadSession);
       }
     }
@@ -329,8 +331,10 @@ public class ModelChangesWatcher implements ApplicationComponent {
 
     private void processAfterEvent(String filePath, VFileEvent event, ReloadSession reloadSession) {
       if (MPSFileTypesManager.instance().isModelFile(filePath)) {
+        LOG.info("Got refresh after event for " + filePath);
         ModelFileProcessor.getInstance().process(event, reloadSession);
       } else if (MPSFileTypesManager.instance().isModuleFile(filePath)) {
+        LOG.info("Got refresh after event for " + filePath);
         ModuleFileProcessor.getInstance().process(event, reloadSession);
       }
     }

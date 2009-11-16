@@ -397,6 +397,8 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor {
     //we must be in command since model save might change model by adding model/language imports
     if (!mySModel.isLoading()) LOG.assertInCommand();
 
+    LOG.info("Saving model " + mySModel.getSModelFqName());
+
     if (needsReloading()) {
       LOG.warning("Model file " + mySModel.getSModelFqName() + " was modified externally!\n" +
         "You might want to turn \"Synchronize files on frame activation/deactivation\" option on to avoid conflicts.");

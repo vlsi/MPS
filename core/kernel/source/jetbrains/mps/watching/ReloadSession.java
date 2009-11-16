@@ -79,6 +79,7 @@ class ReloadSession {
 
             if (areModulesUpdated || !myNewModuleVFiles.isEmpty()) {
               progressIndicator.setText("Reloading classes... Please wait.");
+              LOG.info("Reloading classes.");
               ClassLoaderManager.getInstance().reloadAll(new EmptyProgressIndicator());
             }
 
