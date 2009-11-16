@@ -219,7 +219,7 @@ public abstract class BaseTool {
     //if we create a new project, tool windows are created for it automatically
     ToolWindow toolWindow = myWindowManager.getToolWindow(myId);
     if (toolWindow == null) {
-      toolWindow = myWindowManager.registerToolWindow(myId, myCanCloseContent, myAnchor, mySideTool);
+      toolWindow = myWindowManager.registerToolWindow(myId, getCanCloseContent(), myAnchor, mySideTool);
     }
     toolWindow.setIcon(myIcon);
 
@@ -333,5 +333,11 @@ public abstract class BaseTool {
   @Deprecated
   protected MPSProject getMPSProject() {
     return myProject.getComponent(MPSProjectHolder.class).getMPSProject();
+  }
+
+  // TODO introduced this method because of MPS-6541, should be removed MPS-6521
+  @Deprecated
+  protected boolean getCanCloseContent() {
+    return myCanCloseContent;
   }
 }

@@ -248,4 +248,8 @@ public class ModelCheckerTool_Tool extends GeneratedTool {
       }
     };
   }
+
+  protected boolean getCanCloseContent() {
+    return true;
+  }
 }
