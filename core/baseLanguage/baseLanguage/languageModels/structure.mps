@@ -468,6 +468,14 @@
     <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="1237546138606">
       <link role="intfc" targetNodeId="1237545921771" resolveInfo="IContainsStatementList" />
     </node>
+    <node role="propertyDeclaration" type="jetbrains.mps.lang.structure.structure.PropertyDeclaration" id="4467513934994662256">
+      <property name="name" value="forceOneLine" />
+      <link role="dataType" targetNodeId="4.1082983657063" resolveInfo="boolean" />
+    </node>
+    <node role="propertyDeclaration" type="jetbrains.mps.lang.structure.structure.PropertyDeclaration" id="4467513934994662257">
+      <property name="name" value="forceMultiLine" />
+      <link role="dataType" targetNodeId="4.1082983657063" resolveInfo="boolean" />
+    </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1068580123165">
     <property name="name" value="InstanceMethodDeclaration" />

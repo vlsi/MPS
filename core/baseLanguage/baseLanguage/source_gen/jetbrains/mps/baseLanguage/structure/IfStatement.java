@@ -14,6 +14,8 @@ public class IfStatement extends Statement implements IContainsStatementList {
   public static final String SHORT_DESCRIPTION = "shortDescription";
   public static final String ALIAS = "alias";
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
+  public static final String FORCE_ONE_LINE = "forceOneLine";
+  public static final String FORCE_MULTI_LINE = "forceMultiLine";
   public static final String CONDITION = "condition";
   public static final String IF_FALSE_STATEMENT = "ifFalseStatement";
   public static final String IF_TRUE = "ifTrue";
@@ -45,6 +47,22 @@ public class IfStatement extends Statement implements IContainsStatementList {
 
   public void setVirtualPackage(String value) {
     this.setProperty(IfStatement.VIRTUAL_PACKAGE, value);
+  }
+
+  public boolean getForceOneLine() {
+    return this.getBooleanProperty(IfStatement.FORCE_ONE_LINE);
+  }
+
+  public void setForceOneLine(boolean value) {
+    this.setBooleanProperty(IfStatement.FORCE_ONE_LINE, value);
+  }
+
+  public boolean getForceMultiLine() {
+    return this.getBooleanProperty(IfStatement.FORCE_MULTI_LINE);
+  }
+
+  public void setForceMultiLine(boolean value) {
+    this.setBooleanProperty(IfStatement.FORCE_MULTI_LINE, value);
   }
 
   public Expression getCondition() {

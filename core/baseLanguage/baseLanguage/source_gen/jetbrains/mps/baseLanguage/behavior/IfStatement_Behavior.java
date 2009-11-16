@@ -7,6 +7,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 public class IfStatement_Behavior {
   public static void init(SNode thisNode) {
@@ -31,6 +32,14 @@ public class IfStatement_Behavior {
     if (ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(thisNode, "ifTrue", true), "statement", true)).count() != 1) {
       return false;
     }
+
+    if (SPropertyOperations.getBoolean(thisNode, "forceMultiLine")) {
+      return false;
+    }
+    if (SPropertyOperations.getBoolean(thisNode, "forceOneLine")) {
+      return true;
+    }
+
     SNode onlyStatement = ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(thisNode, "ifTrue", true), "statement", true)).first();
     return Statement_Behavior.call_isGuardClauseStatement_1237547327995(onlyStatement);
   }

@@ -14942,6 +14942,38 @@
             </node>
           </node>
         </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.Statement" id="4467513934995225738" />
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="4467513934994688381">
+          <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="4467513934994688382">
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="4467513934994688391">
+              <node role="expression" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="4467513934994688393">
+                <property name="value" value="false" />
+              </node>
+            </node>
+          </node>
+          <node role="condition" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="4467513934994688386">
+            <node role="operand" type="jetbrains.mps.lang.behavior.structure.ThisNodeExpression" id="4467513934994688385" />
+            <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="4467513934994688390">
+              <link role="property" targetNodeId="1.4467513934994662257" resolveInfo="forceMultiLine" />
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="4467513934994688360">
+          <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="4467513934994688361">
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="4467513934994688370">
+              <node role="expression" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="4467513934994688372">
+                <property name="value" value="true" />
+              </node>
+            </node>
+          </node>
+          <node role="condition" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="4467513934994688365">
+            <node role="operand" type="jetbrains.mps.lang.behavior.structure.ThisNodeExpression" id="4467513934994688364" />
+            <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="4467513934994688369">
+              <link role="property" targetNodeId="1.4467513934994662256" resolveInfo="forceOnLine" />
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.Statement" id="4467513934995304993" />
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1237547296931">
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1237547296932">
             <property name="name" value="onlyStatement" />

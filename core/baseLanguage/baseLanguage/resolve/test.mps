@@ -103,6 +103,8 @@
         <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="8249991444799260809" />
         <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="8249991444799260810">
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="8249991444799262733">
+            <property name="forceMultiLine" value="true" />
+            <property name="forceOneLine" value="true" />
             <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="8249991444799262735">
               <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="8249991444799267707">
                 <node role="expression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="8249991444799267709">
@@ -121,6 +123,8 @@
           </node>
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.Statement" id="8249991444799267710" />
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="8249991444799267712">
+            <property name="forceMultiLine" value="false" />
+            <property name="forceOneLine" value="false" />
             <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="8249991444799267713">
               <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="8249991444799267722">
                 <node role="expression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="8249991444799267724">
@@ -137,8 +141,28 @@
               </node>
             </node>
           </node>
-          <node role="statement" type="jetbrains.mps.baseLanguage.structure.Statement" id="8249991444799267725" />
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.Statement" id="8249991444799267726" />
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="4467513934995127776">
+            <property name="forceMultiLine" value="false" />
+            <property name="forceOneLine" value="false" />
+            <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="4467513934995127777">
+              <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="4467513934995127781">
+                <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="4467513934995127782">
+                  <property name="name" value="i" />
+                  <node role="type" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="4467513934995127783" />
+                </node>
+              </node>
+              <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="4467513934995127785">
+                <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="4467513934995127786">
+                  <property name="name" value="j" />
+                  <node role="type" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="4467513934995127787" />
+                </node>
+              </node>
+            </node>
+            <node role="condition" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="4467513934995127780">
+              <property name="value" value="true" />
+            </node>
+          </node>
         </node>
       </node>
     </node>
