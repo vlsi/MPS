@@ -20,7 +20,6 @@ import jetbrains.mps.lang.core.behavior.BaseConcept_Behavior;
 
 public class ErrorReportUtil {
   public static boolean shouldReportError(SNode node) {
-    if (TypeChecker.getInstance().isGenerationMode()) return false;
     if (getMetaLevel(node) != 0) return false;
     return true;
   }
