@@ -48,6 +48,7 @@ public class VcsHelper {
     String memoryVersion = "Save Memory Version";
     String[] options = {diskVersion, memoryVersion};
     int result = com.intellij.openapi.ui.Messages.showDialog(message, title, options, 0, com.intellij.openapi.ui.Messages.getQuestionIcon());
+    if (result == -1) return showDiskMemoryMerge(modelFile, inMemory);
     if (options[result].equals(diskVersion)) {
       return false;
     } else {
