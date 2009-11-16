@@ -1112,11 +1112,19 @@ __switch__:
         Calculable calc = new Calculable() {
           public Object calculate() {
             //  'qualified this' - only in inner classes 
-            return ListSequence.fromList(SNodeOperations.getAncestors(SNodeOperations.getAncestor(_context.getParentNode(), "jetbrains.mps.baseLanguage.structure.Classifier", false, false), "jetbrains.mps.baseLanguage.structure.Classifier", false)).where(new IWhereFilter<SNode>() {
-              public boolean accept(SNode it) {
-                return !(SNodeOperations.isInstanceOf(it, "jetbrains.mps.baseLanguage.structure.AnonymousClass"));
+            List<SNode> result = new ArrayList<SNode>();
+            SNode classifier = SNodeOperations.getAncestor(_context.getParentNode(), "jetbrains.mps.baseLanguage.structure.Classifier", false, false);
+            if (!(Classifier_Behavior.call_isStatic_521412098689998668(classifier))) {
+              for (SNode parentClassifier : SNodeOperations.getAncestors(classifier, "jetbrains.mps.baseLanguage.structure.Classifier", false)) {
+                if (!(SNodeOperations.isInstanceOf(parentClassifier, "jetbrains.mps.baseLanguage.structure.AnonymousClass"))) {
+                  ListSequence.fromList(result).addElement(parentClassifier);
+                  if (Classifier_Behavior.call_isStatic_521412098689998668(parentClassifier)) {
+                    break;
+                  }
+                }
               }
-            }).toListSequence();
+            }
+            return result;
           }
         };
         Iterable<SNode> queryResult = (Iterable)calc.calculate();
