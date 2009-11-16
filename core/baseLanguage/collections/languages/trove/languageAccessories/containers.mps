@@ -13,9 +13,11 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902db(jetbrains.mps.baseLanguage.blTypes.constraints)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590338(jetbrains.mps.baseLanguage.closures.structure)" version="3" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590334(jetbrains.mps.baseLanguage.closures.constraints)" version="2" />
-  <maxImportIndex value="2" />
+  <maxImportIndex value="4" />
   <import index="1" modelUID="f:java_stub#gnu.trove.decorator(gnu.trove.decorator@java_stub)" version="-1" />
   <import index="2" modelUID="f:java_stub#gnu.trove(gnu.trove@java_stub)" version="-1" />
+  <import index="3" modelUID="r:8835fbd0-40c0-4726-83db-aa015a60e8fd(jetbrains.mps.baseLanguage.collections.trove.runtime)" version="-1" />
+  <import index="4" modelUID="f:java_stub#jetbrains.mps.baseLanguage.collections.trove.runtime(jetbrains.mps.baseLanguage.collections.trove.runtime@java_stub)" version="-1" />
   <node type="jetbrains.mps.baseLanguage.collections.structure.CustomContainers" id="9034802358628764708">
     <property name="name" value="TroveSets" />
     <node role="containerDeclaration" type="jetbrains.mps.baseLanguage.collections.structure.CustomContainerDeclaration" id="9034802358628764709">
@@ -1261,6 +1263,129 @@
       </node>
       <node role="typeVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.TypeVariableDeclaration" id="7602110602933850568">
         <property name="name" value="K" />
+      </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.baseLanguage.collections.structure.CustomContainers" id="4737294400113290499">
+    <property name="name" value="TroveLists" />
+    <node role="containerDeclaration" type="jetbrains.mps.baseLanguage.collections.structure.CustomContainerDeclaration" id="4737294400113290500">
+      <property name="name" value="byteArrayList" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="4737294400113290501" />
+      <node role="containerType" type="jetbrains.mps.baseLanguage.collections.structure.ListType" id="4737294400113290504">
+        <node role="elementType" type="jetbrains.mps.baseLanguage.structure.ByteType" id="4737294400113290506" />
+      </node>
+      <node role="runtimeType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="4737294400113332704">
+        <link role="classifier" targetNodeId="4.~TByteArrayListDecorator" resolveInfo="TByteArrayListDecorator" />
+      </node>
+      <node role="factory" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="4737294400113332706">
+        <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="4737294400113332708">
+          <link role="baseMethodDeclaration" targetNodeId="4.~TByteArrayListDecorator.&lt;init&gt;(gnu.trove.TByteArrayList)" resolveInfo="TByteArrayListDecorator" />
+          <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="4737294400113332710">
+            <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="4737294400113332712">
+              <link role="baseMethodDeclaration" targetNodeId="2.~TByteArrayList.&lt;init&gt;()" resolveInfo="TByteArrayList" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="containerDeclaration" type="jetbrains.mps.baseLanguage.collections.structure.CustomContainerDeclaration" id="4737294400113332721">
+      <property name="name" value="doubleArrayList" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="4737294400113332722" />
+      <node role="containerType" type="jetbrains.mps.baseLanguage.collections.structure.ListType" id="4737294400113332723">
+        <node role="elementType" type="jetbrains.mps.baseLanguage.structure.DoubleType" id="4737294400113332730" />
+      </node>
+      <node role="runtimeType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="4737294400113332731">
+        <link role="classifier" targetNodeId="4.~TDoubleArrayListDecorator" resolveInfo="TDoubleArrayListDecorator" />
+      </node>
+      <node role="factory" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="4737294400113332726">
+        <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="4737294400113332727">
+          <link role="baseMethodDeclaration" targetNodeId="4.~TDoubleArrayListDecorator.&lt;init&gt;(gnu.trove.TDoubleArrayList)" resolveInfo="TDoubleArrayListDecorator" />
+          <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="4737294400113332728">
+            <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="4737294400113337800">
+              <link role="baseMethodDeclaration" targetNodeId="2.~TDoubleArrayList.&lt;init&gt;()" resolveInfo="TDoubleArrayList" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="containerDeclaration" type="jetbrains.mps.baseLanguage.collections.structure.CustomContainerDeclaration" id="4737294400113337801">
+      <property name="name" value="floatArrayList" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="4737294400113337802" />
+      <node role="containerType" type="jetbrains.mps.baseLanguage.collections.structure.ListType" id="4737294400113337805">
+        <node role="elementType" type="jetbrains.mps.baseLanguage.structure.FloatType" id="4737294400113337807" />
+      </node>
+      <node role="runtimeType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="4737294400113337808">
+        <link role="classifier" targetNodeId="4.~TFloatArrayListDecorator" resolveInfo="TFloatArrayListDecorator" />
+      </node>
+      <node role="factory" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="4737294400113337810">
+        <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="4737294400113337812">
+          <link role="baseMethodDeclaration" targetNodeId="4.~TFloatArrayListDecorator.&lt;init&gt;(gnu.trove.TFloatArrayList)" resolveInfo="TFloatArrayListDecorator" />
+          <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="4737294400113337814">
+            <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="4737294400113337815">
+              <link role="baseMethodDeclaration" targetNodeId="2.~TFloatArrayList.&lt;init&gt;()" resolveInfo="TFloatArrayList" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="containerDeclaration" type="jetbrains.mps.baseLanguage.collections.structure.CustomContainerDeclaration" id="4737294400113337816">
+      <property name="name" value="intArrayList" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="4737294400113337817" />
+      <node role="containerType" type="jetbrains.mps.baseLanguage.collections.structure.ListType" id="4737294400113337820">
+        <node role="elementType" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="4737294400113337822" />
+      </node>
+      <node role="runtimeType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="4737294400113594703">
+        <link role="classifier" targetNodeId="4.~TIntArrayListDecorator" resolveInfo="TIntArrayListDecorator" />
+      </node>
+      <node role="factory" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="4737294400113337826">
+        <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="4737294400113337828">
+          <link role="baseMethodDeclaration" targetNodeId="4.~TIntArrayListDecorator.&lt;init&gt;(gnu.trove.TIntArrayList)" resolveInfo="TIntArrayListDecorator" />
+          <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="4737294400113337830">
+            <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="4737294400113337831">
+              <link role="baseMethodDeclaration" targetNodeId="2.~TIntArrayList.&lt;init&gt;()" resolveInfo="TIntArrayList" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="containerDeclaration" type="jetbrains.mps.baseLanguage.collections.structure.CustomContainerDeclaration" id="4737294400113337832">
+      <property name="name" value="longArrayList" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="4737294400113337833" />
+      <node role="containerType" type="jetbrains.mps.baseLanguage.collections.structure.ListType" id="4737294400113337836">
+        <node role="elementType" type="jetbrains.mps.baseLanguage.structure.LongType" id="4737294400113337838" />
+      </node>
+      <node role="runtimeType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="4737294400113337839">
+        <link role="classifier" targetNodeId="4.~TLongArrayListDecorator" resolveInfo="TLongArrayListDecorator" />
+      </node>
+      <node role="factory" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="4737294400113337841">
+        <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="4737294400113337843">
+          <link role="baseMethodDeclaration" targetNodeId="4.~TLongArrayListDecorator.&lt;init&gt;(gnu.trove.TLongArrayList)" resolveInfo="TLongArrayListDecorator" />
+          <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="4737294400113337845">
+            <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="4737294400113337846">
+              <link role="baseMethodDeclaration" targetNodeId="2.~TLongArrayList.&lt;init&gt;()" resolveInfo="TLongArrayList" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="containerDeclaration" type="jetbrains.mps.baseLanguage.collections.structure.CustomContainerDeclaration" id="4737294400113337847">
+      <property name="name" value="shortArralyList" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="4737294400113337848" />
+      <node role="containerType" type="jetbrains.mps.baseLanguage.collections.structure.ListType" id="4737294400113337851">
+        <node role="elementType" type="jetbrains.mps.baseLanguage.structure.ShortType" id="4737294400113337853" />
+      </node>
+      <node role="runtimeType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="4737294400113337854">
+        <link role="classifier" targetNodeId="4.~TShortArrayListDecorator" resolveInfo="TShortArrayListDecorator" />
+      </node>
+      <node role="factory" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="4737294400113337856">
+        <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="4737294400113337858">
+          <link role="baseMethodDeclaration" targetNodeId="4.~TShortArrayListDecorator.&lt;init&gt;(gnu.trove.TShortArrayList)" resolveInfo="TShortArrayListDecorator" />
+          <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="4737294400113337861">
+            <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="4737294400113337862">
+              <link role="baseMethodDeclaration" targetNodeId="2.~TShortArrayList.&lt;init&gt;()" resolveInfo="TShortArrayList" />
+            </node>
+          </node>
+        </node>
       </node>
     </node>
   </node>
