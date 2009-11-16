@@ -44,8 +44,8 @@
     </appender>
 
     <appender name="FILE-VCS" class="org.apache.log4j.RollingFileAppender" additivity="false">
-        <param name="MaxFileSize" value="1Mb"/>
-        <param name="MaxBackupIndex" value="3"/>
+        <param name="MaxFileSize" value="2Mb"/>
+        <param name="MaxBackupIndex" value="5"/>
         <param name="file" value="$SYSTEM_DIR$/log/mpsvcs.log"/>
         <layout class="org.apache.log4j.PatternLayout">
             <param name="ConversionPattern" value="%d [%7r] %6p - %30.60c - %m \n"/>
