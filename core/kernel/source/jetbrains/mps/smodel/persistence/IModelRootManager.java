@@ -36,6 +36,8 @@ public interface IModelRootManager {
   @NotNull
   SModel loadModel(@NotNull SModelDescriptor modelDescriptor);
 
+  void updateAfterLoad(@NotNull SModelDescriptor modelDescriptor);
+
   void saveModel(@NotNull SModelDescriptor modelDescriptor);
 
   @Nullable

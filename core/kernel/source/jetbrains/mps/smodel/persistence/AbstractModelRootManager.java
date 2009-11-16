@@ -35,6 +35,9 @@ public abstract class AbstractModelRootManager implements IModelRootManager {
     return modelDescriptor.getSModel();
   }
 
+  public void updateAfterLoad(@NotNull SModelDescriptor modelDescriptor) {
+  }
+
   public boolean isFindUsagesSupported() {
     return false;
   }

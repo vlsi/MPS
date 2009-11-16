@@ -146,6 +146,7 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor {
   }
 
   private void doPostLoadStuff() {
+    myModelRootManager.updateAfterLoad(this);
     LOG.assertLog(mySModel != null, "Couldn't load model \"" + getSModelReference().getLongName() + "\"");
 
     tryFixingVersion();

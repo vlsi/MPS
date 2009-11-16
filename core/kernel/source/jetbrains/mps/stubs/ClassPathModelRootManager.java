@@ -21,7 +21,6 @@ import jetbrains.mps.stubs.IModelLoader;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.SModelRoot;
-import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.reloading.IClassPathItem;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.persistence.AbstractModelRootManager;
@@ -37,12 +36,15 @@ public abstract class ClassPathModelRootManager extends AbstractModelRootManager
   private static Logger LOG = Logger.getLogger(ClassPathModelRootManager.class);
 
   private static Map<SModelReference, Long> ourTimestamps = new HashMap<SModelReference, Long>();
+  private IModelLoader myModelLoader;
+
+  private Set<SModelDescriptor> myDescriptorsWithListener = new HashSet<SModelDescriptor>();
+  private MyInitializationListener myInitializationListener = new MyInitializationListener();
 
   @NotNull
-  public Set<SModelDescriptor> getModelDescriptors(@NotNull SModelRoot root, @NotNull IModule module) {
-    Set<SModelDescriptor> result = new HashSet<SModelDescriptor>();
-    addPackageModelDescriptors(module, result, root.getPrefix());
-    return result;
+  public Set<SModelDescriptor> getModelDescriptors(@NotNull SModelRoot root, @NotNull IModule owner) {
+    myModelLoader = createLoader(owner);
+    return getPackageModelDescriptors(owner, root);
   }
 
   @NotNull
@@ -50,20 +52,21 @@ public abstract class ClassPathModelRootManager extends AbstractModelRootManager
     SModel model = new SModel(modelDescriptor.getSModelReference());
     ourTimestamps.put(model.getSModelReference(), timestamp(modelDescriptor));
     model.addLanguage(BaseLanguage_Language.get());
-
-    boolean wasLoading = model.isLoading();
-    model.setLoading(true);
-    try {
-      IModelLoader loader = createLoader(modelDescriptor,model);
-      loader.loadModel();
-    } finally {
-      model.setLoading(wasLoading);
-    }
-
     return model;
   }
 
   public void saveModel(@NotNull SModelDescriptor modelDescriptor) {
+  }
+
+  public void updateAfterLoad(@NotNull SModelDescriptor modelDescriptor) {
+    SModel model = modelDescriptor.getSModel();
+    boolean wasLoading = model.isLoading();
+    model.setLoading(true);
+    try {
+      myModelLoader.loadModel(modelDescriptor);
+    } finally {
+      model.setLoading(wasLoading);
+    }
   }
 
   public long timestamp(@NotNull SModelDescriptor modelDescriptor) {
@@ -73,18 +76,26 @@ public abstract class ClassPathModelRootManager extends AbstractModelRootManager
   @Nullable
   public SModel refresh(@NotNull SModelDescriptor modelDescriptor) {
     SModel smodel = modelDescriptor.getSModel();
-    if (smodel == null) return null;
+    if (smodel != null) {
+      long timestamp = timestamp(modelDescriptor);
+      long modelTimestamp = ourTimestamps.get(smodel.getSModelReference());
+      if (modelTimestamp == timestamp) {
+        return smodel;
+      }
+    }
 
-    long timestamp = timestamp(modelDescriptor);
-    long modelTimestamp = ourTimestamps.get(smodel.getSModelReference());
-    if (modelTimestamp != timestamp) return null;
-
-    return smodel;
+    return null;
   }
 
   public abstract IClassPathItem getClassPathItem();
 
-  public abstract IModelLoader createLoader(SModelDescriptor modelDescriptor,SModel model);
+  public abstract IModelLoader createLoader(IModule module);
+
+  private Set<SModelDescriptor> getPackageModelDescriptors(IModule module, SModelRoot root) {
+    Set<SModelDescriptor> result = new HashSet<SModelDescriptor>();
+    addPackageModelDescriptors(module, result, root.getPrefix());
+    return result;
+  }
 
   private void addPackageModelDescriptors(IModule module, Set<SModelDescriptor> descriptors, String pack) {
     Set<String> subpackages = getClassPathItem().getSubpackages(pack);
@@ -103,6 +114,15 @@ public abstract class ClassPathModelRootManager extends AbstractModelRootManager
 
           SModelRepository.getInstance().addOwnerForDescriptor(descriptor, module);
           descriptors.add(descriptor);
+
+          if (!descriptor.isInitialized()) {
+            if (!myDescriptorsWithListener.contains(descriptor)) {
+              descriptor.addModelListener(myInitializationListener);
+              myDescriptorsWithListener.add(descriptor);
+            }
+          } else {
+            updateAfterLoad(descriptor);
+          }
         } else {
           SModelDescriptor modelDescriptor = new DefaultSModelDescriptor(this, null, modelReference);
           SModelRepository.getInstance().registerModelDescriptor(modelDescriptor, module);
@@ -118,4 +138,17 @@ public abstract class ClassPathModelRootManager extends AbstractModelRootManager
     }
   }
 
+  public void dispose() {
+    for (SModelDescriptor sm : myDescriptorsWithListener) {
+      sm.removeModelListener(myInitializationListener);
+    }
+  }
+
+  private class MyInitializationListener extends SModelAdapter {
+    public void modelInitialized(SModelDescriptor sm) {
+      updateAfterLoad(sm);
+      sm.removeModelListener(this);
+      myDescriptorsWithListener.remove(sm);
+    }
+  }
 }
