@@ -73,6 +73,7 @@ import com.intellij.util.ui.MessageCategory;
 import org.jetbrains.annotations.Nls;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import org.apache.log4j.Level;
 
 import java.awt.*;
 import java.io.*;
@@ -97,6 +98,10 @@ import jetbrains.mps.vfs.VFileSystem;
  */
 public class AbstractVcsHelperImpl extends AbstractVcsHelper {
   private static final Logger LOG = Logger.getInstance("#com.intellij.openapi.vcs.impl.AbstractVcsHelperImpl");
+
+  static {
+    LOG.setLevel(Level.DEBUG);
+  }
 
   private final Project myProject;
   private File myBackup;
@@ -597,11 +602,14 @@ public class AbstractVcsHelperImpl extends AbstractVcsHelper {
     if (toMerge.isEmpty()) {
       return alreadyResolved;
     }
+    LOG.debug("Showing merge for files " + toMerge);
     // on the next line originally provider were passed instead of provider decorator
     final MultipleFileMergeDialog fileMergeDialog = new MultipleFileMergeDialog(myProject, toMerge, providerDecorator);
     // MPS Patch End
     fileMergeDialog.show();
-    return CollectionUtil.union(fileMergeDialog.getProcessedFiles(), alreadyResolved);
+    List<VirtualFile> resolved = CollectionUtil.union(fileMergeDialog.getProcessedFiles(), alreadyResolved);
+    LOG.debug("Merge finished with resolved files " + resolved);
+    return resolved;
   }
 
   // MPS Patch Start: several new helper methods for our new showMergeDialog
