@@ -49,6 +49,9 @@ public class AssertStatement_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstant_7459_7(editorContext, node));
     editorCell.addEditorCell(this.createConstant_7459_5(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_7459_3(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_7459_8(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_7459_9(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_7459_5(editorContext, node));
     return editorCell;
   }
 
@@ -124,6 +127,29 @@ public class AssertStatement_Editor extends DefaultNodeEditor {
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
+      style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
+    }
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+
+  private EditorCell createConstant_7459_8(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, " ");
+    editorCell.setCellId("Constant_7459_8");
+    {
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.SELECTABLE, false);
+      style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
+    }
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+
+  private EditorCell createConstant_7459_9(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "foreign message source(optional)");
+    editorCell.setCellId("Constant_7459_9");
+    {
+      Style style = editorCell.getStyle();
       style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
     }
     editorCell.setDefaultText("");
@@ -206,6 +232,27 @@ public class AssertStatement_Editor extends DefaultNodeEditor {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("messageTarget");
     provider.setNoTargetText("<no messageTarget>");
+    EditorCell editorCell;
+    editorCell = provider.createEditorCell(editorContext);
+    {
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
+    }
+    editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
+    SNode attributeConcept = provider.getRoleAttribute();
+    Class attributeKind = provider.getRoleAttributeClass();
+    if (attributeConcept != null) {
+      IOperationContext opContext = editorContext.getOperationContext();
+      EditorManager manager = EditorManager.getInstanceFromContext(opContext);
+      return manager.createRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
+    } else
+    return editorCell;
+  }
+
+  private EditorCell createRefNode_7459_5(EditorContext editorContext, SNode node) {
+    CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
+    provider.setRole("foreignMessageSource");
+    provider.setNoTargetText("<no foreignMessageSource>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
     {

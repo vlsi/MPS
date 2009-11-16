@@ -18,7 +18,7 @@ public class InfoStatement extends Statement implements MessageStatement {
   public static final String NODE_TO_REPORT = "nodeToReport";
   public static final String HELGINS_INTENTION = "helginsIntention";
   public static final String MESSAGE_TARGET = "messageTarget";
-  public static final String FOREIGN_ERROR_SOURCE = "foreignErrorSource";
+  public static final String FOREIGN_MESSAGE_SOURCE = "foreignMessageSource";
 
   public InfoStatement(SNode node) {
     super(node);
@@ -80,12 +80,12 @@ public class InfoStatement extends Statement implements MessageStatement {
     super.setChild(InfoStatement.MESSAGE_TARGET, node);
   }
 
-  public Expression getForeignErrorSource() {
-    return (Expression)this.getChild(Expression.class, InfoStatement.FOREIGN_ERROR_SOURCE);
+  public Expression getForeignMessageSource() {
+    return (Expression)this.getChild(Expression.class, InfoStatement.FOREIGN_MESSAGE_SOURCE);
   }
 
-  public void setForeignErrorSource(Expression node) {
-    super.setChild(InfoStatement.FOREIGN_ERROR_SOURCE, node);
+  public void setForeignMessageSource(Expression node) {
+    super.setChild(InfoStatement.FOREIGN_MESSAGE_SOURCE, node);
   }
 
   public static InfoStatement newInstance(SModel sm, boolean init) {

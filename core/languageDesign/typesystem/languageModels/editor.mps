@@ -1028,6 +1028,25 @@
           <property name="flag" value="true" />
         </node>
       </node>
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="4447441075424592331">
+        <property name="text" value=" " />
+        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem" id="4447441075424592332" />
+        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.IndentLayoutNewLineStyleClassItem" id="4447441075424592333">
+          <property name="flag" value="true" />
+        </node>
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="4447441075424592336">
+        <property name="text" value="foreign message source(optional)" />
+        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.IndentLayoutNewLineStyleClassItem" id="4447441075424592337">
+          <property name="flag" value="true" />
+        </node>
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode" id="4447441075424592334">
+        <link role="relationDeclaration" targetNodeId="1.4008603303335354465" />
+        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.IndentLayoutNewLineStyleClassItem" id="4447441075424592335">
+          <property name="flag" value="true" />
+        </node>
+      </node>
       <node role="cellLayout" type="jetbrains.mps.lang.editor.structure.CellLayout_Indent" id="1237812417713" />
     </node>
   </node>
@@ -1103,6 +1122,25 @@
         <property name="noTargetText" value="&lt;no intention&gt;" />
         <link role="relationDeclaration" targetNodeId="1.1227096802791" />
         <node role="styleItem" type="jetbrains.mps.lang.editor.structure.IndentLayoutNewLineStyleClassItem" id="1237812427022">
+          <property name="flag" value="true" />
+        </node>
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="4447441075424592338">
+        <property name="text" value=" " />
+        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem" id="4447441075424592339" />
+        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.IndentLayoutNewLineStyleClassItem" id="4447441075424592340">
+          <property name="flag" value="true" />
+        </node>
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="4447441075424592341">
+        <property name="text" value="foreign message source(optional)" />
+        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.IndentLayoutNewLineStyleClassItem" id="4447441075424592342">
+          <property name="flag" value="true" />
+        </node>
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode" id="4447441075424592343">
+        <link role="relationDeclaration" targetNodeId="1.4008603303335354465" />
+        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.IndentLayoutNewLineStyleClassItem" id="4447441075424592344">
           <property name="flag" value="true" />
         </node>
       </node>
@@ -2437,6 +2475,25 @@
           <property name="flag" value="true" />
         </node>
       </node>
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="4447441075424592353">
+        <property name="text" value=" " />
+        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem" id="4447441075424592354" />
+        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.IndentLayoutNewLineStyleClassItem" id="4447441075424592355">
+          <property name="flag" value="true" />
+        </node>
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="4447441075424592356">
+        <property name="text" value="foreign message source(optional)" />
+        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.IndentLayoutNewLineStyleClassItem" id="4447441075424592357">
+          <property name="flag" value="true" />
+        </node>
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode" id="4447441075424592358">
+        <link role="relationDeclaration" targetNodeId="1.4008603303335354465" />
+        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.IndentLayoutNewLineStyleClassItem" id="4447441075424592359">
+          <property name="flag" value="true" />
+        </node>
+      </node>
       <node role="cellLayout" type="jetbrains.mps.lang.editor.structure.CellLayout_Indent" id="1237812555196" />
     </node>
   </node>
@@ -3264,6 +3321,18 @@
           <property name="flag" value="true" />
         </node>
       </node>
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="4447441075424595179">
+        <property name="text" value="foreign message source" />
+        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.IndentLayoutNewLineStyleClassItem" id="4447441075424595180">
+          <property name="flag" value="true" />
+        </node>
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode" id="4447441075424595181">
+        <link role="relationDeclaration" targetNodeId="1.4447441075424595172" />
+        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.IndentLayoutNewLineStyleClassItem" id="4447441075424595182">
+          <property name="flag" value="true" />
+        </node>
+      </node>
       <node role="cellLayout" type="jetbrains.mps.lang.editor.structure.CellLayout_Indent" id="1237812433807" />
     </node>
   </node>
@@ -3523,6 +3592,18 @@
           <property name="flag" value="true" />
         </node>
       </node>
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="4447441075424595175">
+        <property name="text" value="foreign message source" />
+        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.IndentLayoutNewLineStyleClassItem" id="4447441075424595176">
+          <property name="flag" value="true" />
+        </node>
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode" id="4447441075424595177">
+        <link role="relationDeclaration" targetNodeId="1.4447441075424595174" />
+        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.IndentLayoutNewLineStyleClassItem" id="4447441075424595178">
+          <property name="flag" value="true" />
+        </node>
+      </node>
       <node role="cellLayout" type="jetbrains.mps.lang.editor.structure.CellLayout_Indent" id="1237812133102" />
     </node>
   </node>
@@ -3581,6 +3662,25 @@
         <property name="noTargetText" value="&lt;no intention&gt;" />
         <link role="relationDeclaration" targetNodeId="1.1227096802791" />
         <node role="styleItem" type="jetbrains.mps.lang.editor.structure.IndentLayoutNewLineStyleClassItem" id="1237812309401">
+          <property name="flag" value="true" />
+        </node>
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="4447441075424592345">
+        <property name="text" value=" " />
+        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem" id="4447441075424592346" />
+        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.IndentLayoutNewLineStyleClassItem" id="4447441075424592347">
+          <property name="flag" value="true" />
+        </node>
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="4447441075424592348">
+        <property name="text" value="foreign message source(optional)" />
+        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.IndentLayoutNewLineStyleClassItem" id="4447441075424592349">
+          <property name="flag" value="true" />
+        </node>
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode" id="4447441075424592350">
+        <link role="relationDeclaration" targetNodeId="1.4008603303335354465" />
+        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.IndentLayoutNewLineStyleClassItem" id="4447441075424592351">
           <property name="flag" value="true" />
         </node>
       </node>
@@ -3643,6 +3743,18 @@
           <property name="flag" value="true" />
         </node>
       </node>
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="4447441075424595183">
+        <property name="text" value="foreign message source" />
+        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.IndentLayoutNewLineStyleClassItem" id="4447441075424595184">
+          <property name="flag" value="true" />
+        </node>
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode" id="4447441075424595185">
+        <link role="relationDeclaration" targetNodeId="1.4447441075424595170" />
+        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.IndentLayoutNewLineStyleClassItem" id="4447441075424595186">
+          <property name="flag" value="true" />
+        </node>
+      </node>
       <node role="cellLayout" type="jetbrains.mps.lang.editor.structure.CellLayout_Indent" id="1237812562786" />
     </node>
   </node>
@@ -3699,6 +3811,18 @@
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode" id="1227104723182">
         <link role="relationDeclaration" targetNodeId="1.1227104609964" />
         <node role="styleItem" type="jetbrains.mps.lang.editor.structure.IndentLayoutNewLineStyleClassItem" id="1237812319511">
+          <property name="flag" value="true" />
+        </node>
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="4447441075424595188">
+        <property name="text" value="foreign message source" />
+        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.IndentLayoutNewLineStyleClassItem" id="4447441075424595189">
+          <property name="flag" value="true" />
+        </node>
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode" id="4447441075424595190">
+        <link role="relationDeclaration" targetNodeId="1.4447441075424595168" />
+        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.IndentLayoutNewLineStyleClassItem" id="4447441075424595191">
           <property name="flag" value="true" />
         </node>
       </node>

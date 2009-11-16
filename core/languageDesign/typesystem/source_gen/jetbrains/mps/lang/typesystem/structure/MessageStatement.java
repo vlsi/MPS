@@ -10,7 +10,7 @@ public interface MessageStatement extends INodeAdapter {
   public static final String NODE_TO_REPORT = "nodeToReport";
   public static final String HELGINS_INTENTION = "helginsIntention";
   public static final String MESSAGE_TARGET = "messageTarget";
-  public static final String FOREIGN_ERROR_SOURCE = "foreignErrorSource";
+  public static final String FOREIGN_MESSAGE_SOURCE = "foreignMessageSource";
 
   public Expression getNodeToReport();
   public void setNodeToReport(Expression node);
@@ -18,6 +18,6 @@ public interface MessageStatement extends INodeAdapter {
   public void setHelginsIntention(TypesystemIntention node);
   public MessageTarget getMessageTarget();
   public void setMessageTarget(MessageTarget node);
-  public Expression getForeignErrorSource();
-  public void setForeignErrorSource(Expression node);
+  public Expression getForeignMessageSource();
+  public void setForeignMessageSource(Expression node);
 }

@@ -18,7 +18,7 @@ public class WarningStatement extends Statement implements MessageStatement {
   public static final String NODE_TO_REPORT = "nodeToReport";
   public static final String HELGINS_INTENTION = "helginsIntention";
   public static final String MESSAGE_TARGET = "messageTarget";
-  public static final String FOREIGN_ERROR_SOURCE = "foreignErrorSource";
+  public static final String FOREIGN_MESSAGE_SOURCE = "foreignMessageSource";
 
   public WarningStatement(SNode node) {
     super(node);
@@ -80,12 +80,12 @@ public class WarningStatement extends Statement implements MessageStatement {
     super.setChild(WarningStatement.MESSAGE_TARGET, node);
   }
 
-  public Expression getForeignErrorSource() {
-    return (Expression)this.getChild(Expression.class, WarningStatement.FOREIGN_ERROR_SOURCE);
+  public Expression getForeignMessageSource() {
+    return (Expression)this.getChild(Expression.class, WarningStatement.FOREIGN_MESSAGE_SOURCE);
   }
 
-  public void setForeignErrorSource(Expression node) {
-    super.setChild(WarningStatement.FOREIGN_ERROR_SOURCE, node);
+  public void setForeignMessageSource(Expression node) {
+    super.setChild(WarningStatement.FOREIGN_MESSAGE_SOURCE, node);
   }
 
   public static WarningStatement newInstance(SModel sm, boolean init) {

@@ -1769,6 +1769,11 @@
       <property name="role" value="messageTarget" />
       <link role="target" targetNodeId="1227096479619" resolveInfo="MessageTarget" />
     </node>
+    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="4447441075424595172">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="foreignMessageSource" />
+      <link role="target" targetNodeId="2.1068431790191" resolveInfo="Expression" />
+    </node>
     <node role="propertyDeclaration" type="jetbrains.mps.lang.structure.structure.PropertyDeclaration" id="1222948753920">
       <property name="name" value="modelId" />
       <link role="dataType" targetNodeId="1.1082983041843" resolveInfo="string" />
@@ -1944,6 +1949,11 @@
       <property name="role" value="messageTarget" />
       <link role="target" targetNodeId="1227096479619" resolveInfo="MessageTarget" />
     </node>
+    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="4447441075424595174">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="foreignMessageSource" />
+      <link role="target" targetNodeId="2.1068431790191" resolveInfo="Expression" />
+    </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1224760201579">
     <property name="name" value="InfoStatement" />
@@ -1995,6 +2005,11 @@
       <property name="role" value="messageTarget" />
       <link role="target" targetNodeId="1227096479619" resolveInfo="MessageTarget" />
     </node>
+    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="4447441075424595170">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="foreignMessageSource" />
+      <link role="target" targetNodeId="2.1068431790191" resolveInfo="Expression" />
+    </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1225971039738">
     <property name="name" value="InfoStatement_internal" />
@@ -2028,6 +2043,11 @@
       <property name="metaClass" value="aggregation" />
       <property name="role" value="messageTarget" />
       <link role="target" targetNodeId="1227096479619" resolveInfo="MessageTarget" />
+    </node>
+    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="4447441075424595168">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="foreignMessageSource" />
+      <link role="target" targetNodeId="2.1068431790191" resolveInfo="Expression" />
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1227096479619">
@@ -2077,7 +2097,7 @@
     </node>
     <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="4008603303335354465">
       <property name="metaClass" value="aggregation" />
-      <property name="role" value="foreignErrorSource" />
+      <property name="role" value="foreignMessageSource" />
       <link role="target" targetNodeId="2.1068431790191" resolveInfo="Expression" />
     </node>
   </node>
