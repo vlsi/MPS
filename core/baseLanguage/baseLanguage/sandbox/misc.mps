@@ -1442,6 +1442,11 @@
             </node>
           </node>
         </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="4702785547741923358">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.ClassifierClassExpression" id="4702785547741923359">
+            <link role="classifier" targetNodeId="3325977160883785002" resolveInfo="BinaryOperations" />
+          </node>
+        </node>
       </node>
     </node>
   </node>
