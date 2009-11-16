@@ -19,14 +19,14 @@ public class TeamCityMessageFormat implements IBuildServerMessageFormat {
       "]", "|]"
     };
 
-    for (int i = 0; i < replacements.length >> 1; i += 2) {
+    for (int i = 0; i < replacements.length; i += 2) {
       StringBuffer newMessage = new StringBuffer(message.length());
       Pattern p = Pattern.compile(replacements[i]);
       Matcher m = p.matcher (message);
       boolean found = false;
       while (m.find()) {
         found = true;
-        m.appendReplacement(newMessage, replacements[i+1]);
+        m.appendReplacement(newMessage, replacements[i + 1]);
       }
       if (found) {
         m.appendTail(newMessage);
