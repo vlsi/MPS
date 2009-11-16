@@ -56,10 +56,6 @@ import java.util.*;
 public class ModelChangesWatcher implements ApplicationComponent {
   public static final Logger LOG = Logger.getLogger(ModelChangesWatcher.class);
 
-  static {
-    org.apache.log4j.Logger.getLogger(ModelChangesWatcher.class.getName()).setLevel(Level.DEBUG);
-  }
-
   public static ModelChangesWatcher instance() {
     return ApplicationManager.getApplication().getComponent(ModelChangesWatcher.class);
   }

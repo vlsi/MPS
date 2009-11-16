@@ -99,12 +99,7 @@ import jetbrains.mps.vfs.VFileSystem;
 public class AbstractVcsHelperImpl extends AbstractVcsHelper {
   private static final Logger LOG = Logger.getInstance("#com.intellij.openapi.vcs.impl.AbstractVcsHelperImpl");
 
-  static {
-    LOG.setLevel(Level.DEBUG);
-  }
-
   private final Project myProject;
-  private File myBackup;
 
   public AbstractVcsHelperImpl(Project project) {
     myProject = project;
@@ -551,6 +546,7 @@ public class AbstractVcsHelperImpl extends AbstractVcsHelper {
     // MPS Patch Start
     // we create providerDecorator which does actual backup
     MergeProvider providerDecorator = new MergeProvider() {
+      private File myBackup;
       @NotNull
       public MergeData loadRevisions(VirtualFile file) throws VcsException {
         MergeData mergeData = provider.loadRevisions(file);
@@ -600,6 +596,7 @@ public class AbstractVcsHelperImpl extends AbstractVcsHelper {
       }
     }
     if (toMerge.isEmpty()) {
+      LOG.debug("It seems that all files were already resolved " + alreadyResolved);
       return alreadyResolved;
     }
     LOG.debug("Showing merge for files " + toMerge);

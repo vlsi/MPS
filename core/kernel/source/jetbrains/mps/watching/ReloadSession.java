@@ -50,10 +50,6 @@ class ReloadSession {
   private final Set<IModule> myDeletedModules = new HashSet<IModule>();
   private final Set<IReloadListener> myReloadListeners;
 
-  static {
-    org.apache.log4j.Logger.getLogger(ReloadSession.class.getName()).setLevel(Level.DEBUG);
-  }
-
   public ReloadSession(Set<IReloadListener> reloadListeners) {
     myReloadListeners = reloadListeners;
   }

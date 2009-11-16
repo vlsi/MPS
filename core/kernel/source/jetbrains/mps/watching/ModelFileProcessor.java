@@ -32,10 +32,6 @@ class ModelFileProcessor extends EventProcessor {
   private static final Logger LOG = Logger.getLogger(ModelFileProcessor.class);
   private static final ModelFileProcessor INSTANCE = new ModelFileProcessor();
 
-  static {
-    org.apache.log4j.Logger.getLogger(ModelFileProcessor.class.getName()).setLevel(Level.DEBUG);
-  }
-
   public static ModelFileProcessor getInstance() {
     return INSTANCE;
   }
