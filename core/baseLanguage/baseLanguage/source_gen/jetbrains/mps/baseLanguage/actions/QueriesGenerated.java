@@ -331,6 +331,14 @@ __switch__:
     return SNodeOperations.isInstanceOf(SNodeOperations.getParent(_context.getSourceNode()), "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration");
   }
 
+  public static boolean sideTransformHintSubstituteActionsBuilder_Precondition_Expression_434283027167546576(final IOperationContext operationContext, final SideTransformPreconditionContext _context) {
+    return !(SNodeOperations.isInstanceOf(SNodeOperations.getParent(_context.getSourceNode()), "jetbrains.mps.baseLanguage.structure.DotExpression"));
+  }
+
+  public static boolean sideTransformHintSubstituteActionsBuilder_Precondition_Expression_434283027167640978(final IOperationContext operationContext, final SideTransformPreconditionContext _context) {
+    return !(SNodeOperations.isInstanceOf(SNodeOperations.getParent(_context.getSourceNode()), "jetbrains.mps.baseLanguage.structure.DotExpression"));
+  }
+
   public static boolean sideTransformHintSubstituteActionsBuilder_Precondition_ClassifierType_710337334809133195(final IOperationContext operationContext, final SideTransformPreconditionContext _context) {
     return SNodeOperations.isInstanceOf(SNodeOperations.getParent(_context.getSourceNode()), "jetbrains.mps.baseLanguage.structure.InstanceOfExpression");
   }
@@ -497,6 +505,18 @@ __switch__:
     if (SNodeOperations.isInstanceOf(_context.getSampleNode(), "jetbrains.mps.baseLanguage.structure.BaseAssignmentExpression")) {
       SLinkOperations.setTarget(_context.getNewNode(), "lValue", SLinkOperations.getTarget(SNodeOperations.cast(_context.getSampleNode(), "jetbrains.mps.baseLanguage.structure.BaseAssignmentExpression"), "lValue", true), true);
       SLinkOperations.setTarget(_context.getNewNode(), "rValue", SLinkOperations.getTarget(SNodeOperations.cast(_context.getSampleNode(), "jetbrains.mps.baseLanguage.structure.BaseAssignmentExpression"), "rValue", true), true);
+    }
+  }
+
+  public static void nodeFactory_NodeSetup_PrefixDecrementExpression_434283027167909683(final IOperationContext operationContext, final NodeSetupContext _context) {
+    if (SNodeOperations.isInstanceOf(_context.getSampleNode(), "jetbrains.mps.baseLanguage.structure.Expression")) {
+      SLinkOperations.setTarget(_context.getNewNode(), "expression", SNodeOperations.cast(_context.getSampleNode(), "jetbrains.mps.baseLanguage.structure.Expression"), true);
+    }
+  }
+
+  public static void nodeFactory_NodeSetup_PrefixIncrementExpression_434283027167909706(final IOperationContext operationContext, final NodeSetupContext _context) {
+    if (SNodeOperations.isInstanceOf(_context.getSampleNode(), "jetbrains.mps.baseLanguage.structure.Expression")) {
+      SLinkOperations.setTarget(_context.getNewNode(), "expression", SNodeOperations.cast(_context.getSampleNode(), "jetbrains.mps.baseLanguage.structure.Expression"), true);
     }
   }
 
@@ -2434,7 +2454,7 @@ __switch__:
   public static List<INodeSubstituteAction> sideTransform_ActionsFactory_Expression_1214919536691(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
     List<INodeSubstituteAction> result = ListSequence.fromList(new ArrayList<INodeSubstituteAction>());
     {
-      SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.Expression");
+      SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.PostfixDecrementExpression");
       ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(concept, _context.getSourceNode()) {
         public SNode doSubstitute(String pattern) {
           SNode result = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.PostfixIncrementExpression", null);
@@ -2453,29 +2473,6 @@ __switch__:
 
         public String getDescriptionText(String pattern) {
           return "postfix increment";
-        }
-      });
-    }
-    {
-      SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.Expression");
-      ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(concept, _context.getSourceNode()) {
-        public SNode doSubstitute(String pattern) {
-          SNode result = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.PostfixDecrementExpression", null);
-          SLinkOperations.setTarget(result, "expression", SNodeOperations.copyNode(_context.getSourceNode()), true);
-          SNodeOperations.replaceWithAnother(_context.getSourceNode(), result);
-          return result;
-        }
-
-        public String getMatchingText(String pattern) {
-          return "--";
-        }
-
-        public String getVisibleMatchingText(String pattern) {
-          return this.getMatchingText(pattern);
-        }
-
-        public String getDescriptionText(String pattern) {
-          return "postfix decrement";
         }
       });
     }
@@ -3181,7 +3178,7 @@ __switch__:
   public static List<INodeSubstituteAction> sideTransform_ActionsFactory_Expression_1239713315270(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
     List<INodeSubstituteAction> result = ListSequence.fromList(new ArrayList<INodeSubstituteAction>());
     {
-      SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.PostfixDecrementExpression");
+      SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.PrefixDecrementExpression");
       ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(concept, _context.getSourceNode()) {
         public SNode doSubstitute(String pattern) {
           SNode result = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.PrefixDecrementExpression", null);
@@ -3314,6 +3311,34 @@ __switch__:
 
         public String getDescriptionText(String pattern) {
           return "unary minus";
+        }
+      });
+    }
+    return result;
+  }
+
+  public static List<INodeSubstituteAction> sideTransform_ActionsFactory_Expression_434283027167546590(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
+    List<INodeSubstituteAction> result = ListSequence.fromList(new ArrayList<INodeSubstituteAction>());
+    {
+      SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.PostfixDecrementExpression");
+      ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(concept, _context.getSourceNode()) {
+        public SNode doSubstitute(String pattern) {
+          SNode result = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.PostfixDecrementExpression", null);
+          SLinkOperations.setTarget(result, "expression", SNodeOperations.copyNode(_context.getSourceNode()), true);
+          SNodeOperations.replaceWithAnother(_context.getSourceNode(), result);
+          return result;
+        }
+
+        public String getMatchingText(String pattern) {
+          return "--";
+        }
+
+        public String getVisibleMatchingText(String pattern) {
+          return this.getMatchingText(pattern);
+        }
+
+        public String getDescriptionText(String pattern) {
+          return "postfix decrement";
         }
       });
     }
