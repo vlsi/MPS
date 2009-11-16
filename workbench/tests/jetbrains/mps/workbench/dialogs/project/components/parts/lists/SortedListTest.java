@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.uitests.sortedlist;
+package jetbrains.mps.workbench.dialogs.project.components.parts.lists;
 
 import jetbrains.mps.workbench.dialogs.project.components.parts.ListsFactory.ListComparator;
 import jetbrains.mps.workbench.dialogs.project.components.parts.SortedList;
