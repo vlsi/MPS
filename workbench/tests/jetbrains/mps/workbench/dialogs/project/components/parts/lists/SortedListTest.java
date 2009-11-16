@@ -15,12 +15,12 @@
  */
 package jetbrains.mps.workbench.dialogs.project.components.parts.lists;
 
-import jetbrains.mps.workbench.dialogs.project.components.parts.ListsFactory.ListComparator;
-import jetbrains.mps.workbench.dialogs.project.components.parts.SortedList;
 import junit.framework.TestCase;
 
 import java.util.Collections;
 import java.util.LinkedList;
+
+import jetbrains.mps.workbench.dialogs.project.components.parts.lists.ListsFactory.ListComparator;
 
 public class SortedListTest extends TestCase {
 
