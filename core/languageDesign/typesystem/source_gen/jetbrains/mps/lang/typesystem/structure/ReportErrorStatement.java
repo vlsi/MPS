@@ -18,6 +18,7 @@ public class ReportErrorStatement extends Statement implements MessageStatement 
   public static final String NODE_TO_REPORT = "nodeToReport";
   public static final String HELGINS_INTENTION = "helginsIntention";
   public static final String MESSAGE_TARGET = "messageTarget";
+  public static final String FOREIGN_ERROR_SOURCE = "foreignErrorSource";
 
   public ReportErrorStatement(SNode node) {
     super(node);
@@ -77,6 +78,14 @@ public class ReportErrorStatement extends Statement implements MessageStatement 
 
   public void setMessageTarget(MessageTarget node) {
     super.setChild(ReportErrorStatement.MESSAGE_TARGET, node);
+  }
+
+  public Expression getForeignErrorSource() {
+    return (Expression)this.getChild(Expression.class, ReportErrorStatement.FOREIGN_ERROR_SOURCE);
+  }
+
+  public void setForeignErrorSource(Expression node) {
+    super.setChild(ReportErrorStatement.FOREIGN_ERROR_SOURCE, node);
   }
 
   public static ReportErrorStatement newInstance(SModel sm, boolean init) {
