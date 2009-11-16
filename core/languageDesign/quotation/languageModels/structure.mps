@@ -63,6 +63,9 @@
       <property name="role" value="expression" />
       <link role="target" targetNodeId="5.1068431790191" resolveInfo="Expression" />
     </node>
+    <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="201537367881178501">
+      <link role="intfc" targetNodeId="1.201537367881071930" resolveInfo="IMetaLevelChanger" />
+    </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1196350785112">
     <property name="name" value="Antiquotation" />
@@ -85,6 +88,9 @@
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1196350785116">
       <property name="value" value="&lt;quotation&gt;" />
       <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" resolveInfo="alias" />
+    </node>
+    <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="201537367881178511">
+      <link role="intfc" targetNodeId="1.201537367881071930" resolveInfo="IMetaLevelChanger" />
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1196350785117">

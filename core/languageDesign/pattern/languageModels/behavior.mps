@@ -51,26 +51,18 @@
   <visible index="2" modelUID="r:00000000-0000-4000-0000-011c89590282(jetbrains.mps.lang.core.behavior)" />
   <node type="jetbrains.mps.lang.behavior.structure.ConceptBehavior" id="534621188390792429">
     <link role="concept" targetNodeId="1.1136720037777" resolveInfo="PatternExpression" />
-    <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="534621188390792432">
-      <property name="name" value="getChildMetaLevel" />
-      <link role="overriddenMethod" targetNodeId="2v.3981318653438239103" resolveInfo="getChildMetaLevel" />
-      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="534621188390792435">
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="534621188390792438">
-          <node role="expression" type="jetbrains.mps.baseLanguage.structure.MinusExpression" id="534621188390792471">
-            <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="534621188390792472">
-              <node role="operand" type="jetbrains.mps.lang.behavior.structure.ThisNodeExpression" id="534621188390792473" />
-              <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="534621188390792474">
-                <link role="baseMethodDeclaration" targetNodeId="2v.3981318653438234726" resolveInfo="getMetaLevel" />
-              </node>
-            </node>
-            <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="534621188390792475">
-              <property name="value" value="1" />
-            </node>
+    <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="201537367881178490">
+      <property name="name" value="getMetaLevelChange" />
+      <link role="overriddenMethod" targetNodeId="2v.201537367881074474" resolveInfo="getMetaLevelChange" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="201537367881178493">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="201537367881178498">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="201537367881178500">
+            <property name="value" value="-1" />
           </node>
         </node>
       </node>
-      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="534621188390792436" />
-      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="534621188390792437" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="201537367881178496" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="201537367881178497" />
     </node>
     <node role="constructor" type="jetbrains.mps.lang.behavior.structure.ConceptConstructorDeclaration" id="534621188390792430">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="534621188390792431" />

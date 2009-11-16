@@ -114,6 +114,9 @@
       <property name="value" value="&gt;pattern&lt;" />
       <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" />
     </node>
+    <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="201537367881178489">
+      <link role="intfc" targetNodeId="1.201537367881071930" resolveInfo="IMetaLevelChanger" />
+    </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1136720037779">
     <property name="name" value="PatternVariableDeclaration" />

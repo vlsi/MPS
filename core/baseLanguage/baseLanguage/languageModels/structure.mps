@@ -3539,6 +3539,9 @@
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.BooleanConceptProperty" id="6329021646629104956">
       <link role="conceptPropertyDeclaration" targetNodeId="4.1137473854053" resolveInfo="abstract" />
     </node>
+    <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="201537367881181077">
+      <link role="intfc" targetNodeId="4.201537367881071930" resolveInfo="IMetaLevelChanger" />
+    </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="6329021646629104957">
     <property name="name" value="TextCommentPart" />

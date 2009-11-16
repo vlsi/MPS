@@ -16942,19 +16942,19 @@
   </node>
   <node type="jetbrains.mps.lang.behavior.structure.ConceptBehavior" id="4581730695772276352">
     <link role="concept" targetNodeId="1.6329021646629104955" resolveInfo="CommentPart" />
-    <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="4581730695772276355">
-      <property name="name" value="getChildMetaLevel" />
-      <link role="overriddenMethod" targetNodeId="20.3981318653438239103" resolveInfo="getChildMetaLevel" />
-      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="4581730695772276358">
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="4581730695772287608">
-          <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference" id="4581730695772287610">
+    <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="201537367881181078">
+      <property name="name" value="getMetaLevelChange" />
+      <link role="overriddenMethod" targetNodeId="20.201537367881074474" resolveInfo="getMetaLevelChange" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="201537367881181081">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="201537367881181084">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference" id="201537367881181086">
             <link role="classifier" targetNodeId="2.~Integer" resolveInfo="Integer" />
             <link role="variableDeclaration" targetNodeId="2.~Integer.MAX_VALUE" resolveInfo="MAX_VALUE" />
           </node>
         </node>
       </node>
-      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="4581730695772276359" />
-      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="4581730695772276360" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="201537367881181082" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="201537367881181083" />
     </node>
     <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="7236590470026152831">
       <property name="name" value="isToDo" />

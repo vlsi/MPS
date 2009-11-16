@@ -224,45 +224,56 @@
             </node>
           </node>
         </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="3981318653438236170">
-          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="3981318653438236171">
-            <property name="name" value="parent" />
-            <node role="type" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="3981318653438236172">
-              <link role="concept" targetNodeId="1.1133920641626" resolveInfo="BaseConcept" />
-            </node>
-            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="3981318653438236173">
-              <node role="operand" type="jetbrains.mps.lang.behavior.structure.ThisNodeExpression" id="3981318653438236174" />
-              <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_GetParentOperation" id="3981318653438236175" />
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="201537367881074507">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="201537367881074508">
+            <property name="name" value="metalevel" />
+            <node role="type" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="201537367881074509" />
+            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="201537367881074511">
+              <property name="value" value="0" />
             </node>
           </node>
         </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="3981318653438236177">
-          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="3981318653438236180">
-            <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="3981318653438236179">
-              <link role="variableDeclaration" targetNodeId="3981318653438236171" resolveInfo="parent" />
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ForeachStatement" id="201537367881074494">
+          <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="201537367881074495">
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="201537367881074512">
+              <node role="expression" type="jetbrains.mps.baseLanguage.structure.PlusAssignmentExpression" id="201537367881074514">
+                <node role="rValue" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="201537367881074518">
+                  <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="201537367881074517">
+                    <link role="variableDeclaration" targetNodeId="201537367881074496" resolveInfo="metaLevelChanger" />
+                  </node>
+                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="201537367881074522">
+                    <link role="baseMethodDeclaration" targetNodeId="201537367881074474" resolveInfo="getMetaLevelChange" />
+                  </node>
+                </node>
+                <node role="lValue" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="201537367881074513">
+                  <link role="variableDeclaration" targetNodeId="201537367881074508" resolveInfo="metalevel" />
+                </node>
+              </node>
             </node>
-            <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="3981318653438239115">
-              <link role="baseMethodDeclaration" targetNodeId="3981318653438239103" resolveInfo="getChildMetaLevel" />
+          </node>
+          <node role="variable" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="201537367881074496">
+            <property name="name" value="metaLevelChanger" />
+            <node role="type" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="201537367881074497">
+              <link role="concept" targetNodeId="1.201537367881071930" resolveInfo="IMetaLevelChanger" />
             </node>
+          </node>
+          <node role="iterable" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="201537367881074498">
+            <node role="operand" type="jetbrains.mps.lang.behavior.structure.ThisNodeExpression" id="201537367881074499" />
+            <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_GetAncestorsOperation" id="201537367881074500">
+              <node role="parameter" type="jetbrains.mps.lang.smodel.structure.OperationParm_Concept" id="201537367881074501">
+                <node role="conceptArgument" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" id="201537367881074502">
+                  <link role="conceptDeclaration" targetNodeId="1.201537367881071930" resolveInfo="IMetaLevelChanger" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="201537367881074524">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="201537367881074526">
+            <link role="variableDeclaration" targetNodeId="201537367881074508" resolveInfo="metalevel" />
           </node>
         </node>
       </node>
-    </node>
-    <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="3981318653438239103">
-      <property name="name" value="getChildMetaLevel" />
-      <property name="isVirtual" value="true" />
-      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="3981318653438239104" />
-      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="3981318653438239106">
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="3981318653438239110">
-          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="3981318653438239112">
-            <node role="operand" type="jetbrains.mps.lang.behavior.structure.ThisNodeExpression" id="3981318653438239113" />
-            <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="3981318653438239114">
-              <link role="baseMethodDeclaration" targetNodeId="3981318653438234726" resolveInfo="getMetaLevel" />
-            </node>
-          </node>
-        </node>
-      </node>
-      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="3981318653438239109" />
     </node>
     <node role="constructor" type="jetbrains.mps.lang.behavior.structure.ConceptConstructorDeclaration" id="1213877396712">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1213877396713" />
@@ -375,6 +386,20 @@
     </node>
     <node role="constructor" type="jetbrains.mps.lang.behavior.structure.ConceptConstructorDeclaration" id="1224608888227">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1224608888228" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.behavior.structure.ConceptBehavior" id="201537367881074471">
+    <link role="concept" targetNodeId="1.201537367881071930" resolveInfo="IMetaLevelChanger" />
+    <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="201537367881074474">
+      <property name="name" value="getMetaLevelChange" />
+      <property name="isVirtual" value="true" />
+      <property name="isAbstract" value="true" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="201537367881074475" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="201537367881074478" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="201537367881074477" />
+    </node>
+    <node role="constructor" type="jetbrains.mps.lang.behavior.structure.ConceptConstructorDeclaration" id="201537367881074472">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="201537367881074473" />
     </node>
   </node>
 </model>

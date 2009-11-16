@@ -12,7 +12,7 @@ public class CommentPart_Behavior {
   public static void init(SNode thisNode) {
   }
 
-  public static int virtual_getChildMetaLevel_3981318653438239103(SNode thisNode) {
+  public static int virtual_getMetaLevelChange_201537367881074474(SNode thisNode) {
     return Integer.MAX_VALUE;
   }
 
