@@ -12,6 +12,7 @@ import jetbrains.mps.util.JDOMUtil;
 import jetbrains.mps.vcs.diff.ui.MergeModelsDialog;
 import jetbrains.mps.vcs.diff.ui.ModelDiffTool;
 import jetbrains.mps.vcs.diff.ui.ModelDiffTool.ReadException;
+import jetbrains.mps.vcs.diff.MPSDiffRequestFactory.ModelMergeRequest;
 import jetbrains.mps.MPSProjectHolder;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.openapi.vcs.AbstractVcsHelper;
@@ -31,6 +32,7 @@ import java.util.List;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.OutputStream;
+import java.io.File;
 
 import org.jetbrains.annotations.NotNull;
 import org.jdom.Document;
@@ -42,19 +44,42 @@ public class VcsHelper {
   private static final Logger LOG = Logger.getLogger(VcsHelper.class);
 
   public static boolean showDiskMemoryMerge(IFile modelFile, final SModel inMemory) {
-    String message = "Model " + inMemory + " has conflicting changes.\n It was modified on disk and in memory at the same time. Which version to keep?";
-    String title = "Model " + inMemory + " has conflicting changes.";
-    String diskVersion = "Load Disk Version";
-    String memoryVersion = "Save Memory Version";
-    String[] options = {diskVersion, memoryVersion};
-    int result = com.intellij.openapi.ui.Messages.showDialog(message, title, options, 0, com.intellij.openapi.ui.Messages.getQuestionIcon());
-    if (result == -1) return showDiskMemoryMerge(modelFile, inMemory);
-    if (options[result].equals(diskVersion)) {
-      return false;
-    } else {
-      return true;
-    }
+    try {
+      File backupFile = doBackup(modelFile, inMemory);
+
+      String message = "Model " + inMemory + " has conflicting changes.\n" +
+        "It was modified on disk and in memory at the same time.\n" +
+        "Fear not, backup of both versions was created and saved to:\n" +
+        backupFile.getAbsolutePath() + "\n" + 
+        "Which version to use?";
+      String title = "Model " + inMemory + " has conflicting changes.";
+      String diskVersion = "Load Disk Version";
+      String memoryVersion = "Save Memory Version";
+      String[] options = {diskVersion, memoryVersion};
+      int result = com.intellij.openapi.ui.Messages.showDialog(message, title, options, 0, com.intellij.openapi.ui.Messages.getQuestionIcon());
+      if (result == -1) return showDiskMemoryMerge(modelFile, inMemory);
+      if (options[result].equals(diskVersion)) {
+        return false;
+      } else {
+        return true;
+      }
 //    doRealMerge(modelFile, inMemory);
+    } catch (IOException e) {
+      LOG.error(e);
+      throw new RuntimeException(e);
+    }
+  }
+
+  private static File doBackup(IFile modelFile, SModel inMemory) throws IOException {
+    File tmp = jetbrains.mps.util.FileUtil.createTmpDir();
+    AbstractVcsHelperImpl.writeContentsToFile(modelToBytes(inMemory), modelFile.getName(), tmp, "memory");
+    FileUtil.copy(modelFile.toFile(), new File(tmp.getAbsolutePath() + File.separator + modelFile.getName() + "." + "filesystem"));
+    File zipfile = AbstractVcsHelperImpl.getZipFile(modelFile.getPath());
+    jetbrains.mps.util.FileUtil.zip(tmp, zipfile);
+
+    jetbrains.mps.util.FileUtil.delete(tmp);
+
+    return zipfile;
   }
 
   private static void doRealMerge(IFile modelFile, final SModel inMemory) {

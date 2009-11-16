@@ -93,6 +93,7 @@ import jetbrains.mps.vfs.VFileSystem;
 /**
  * This class was patched by MPS in order to add backup of conflicted filas before conflict resolving.
  * Changes were made in showMergeDialog method.
+ * It was also patched in order to fix multiple merge dialog problem, when MPS and IDEA both displayed merge dialog for the same file.
  */
 public class AbstractVcsHelperImpl extends AbstractVcsHelper {
   private static final Logger LOG = Logger.getInstance("#com.intellij.openapi.vcs.impl.AbstractVcsHelperImpl");
@@ -611,7 +612,7 @@ public class AbstractVcsHelperImpl extends AbstractVcsHelper {
     writeContentsToFile(contents[ModelMergeRequest.CURRENT], file, tmp, "mine");
     writeContentsToFile(contents[ModelMergeRequest.LAST_REVISION], file, tmp, "repository");
     writeMetaInformation(request, file, tmp);
-    File zipfile = getZipFile(file);
+    File zipfile = getZipFile(file.getPath());
     FileUtil.zip(tmp, zipfile);
 
     FileUtil.delete(tmp);
@@ -620,11 +621,11 @@ public class AbstractVcsHelperImpl extends AbstractVcsHelper {
   }
 
   @Patch
-  private static File getZipFile(VirtualFile file) {
-    File zipfile = new File(file.getPath() + ".zip");
+  public static File getZipFile(String path) {
+    File zipfile = new File(path + ".zip");
     int i = 0;
     while (zipfile.exists()) {
-      zipfile = new File(file.getPath() + "." + i + ".zip");
+      zipfile = new File(path + "." + i + ".zip");
       i++;
     }
     return zipfile;
@@ -645,12 +646,18 @@ public class AbstractVcsHelperImpl extends AbstractVcsHelper {
 
   @Patch
   private static void writeContentsToFile(DiffContent contents, VirtualFile file, File tmpDir, String suffix) throws IOException {
-    File baseFile = new File(tmpDir.getAbsolutePath() + File.separator + file.getName() + "." + suffix);
+    writeContentsToFile(contents.getBytes(), file.getName(), tmpDir, suffix);
+  }
+
+  @Patch
+  public static void writeContentsToFile(byte[] contents, String name, File tmpDir, String suffix) throws IOException {
+    File baseFile = new File(tmpDir.getAbsolutePath() + File.separator + name + "." + suffix);
     baseFile.createNewFile();
     OutputStream stream = new FileOutputStream(baseFile);
-    stream.write(contents.getBytes());
+    stream.write(contents);
     stream.close();
   }
+
 
   @Patch
   private static String decodeContent(final VirtualFile file, final byte[] content) {
