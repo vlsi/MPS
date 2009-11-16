@@ -21,6 +21,9 @@ import java.util.ArrayList;
 import java.util.Set;
 import jetbrains.mps.internal.collections.runtime.IMapping;
 import java.util.Iterator;
+import jetbrains.mps.internal.collections.runtime.IVisitor;
+import jetbrains.mps.internal.collections.runtime.ArrayUtils;
+import jetbrains.mps.internal.collections.runtime.ISelector;
 
 public class Map_Test extends Util_Test {
   public void test_initSize() throws Exception {
@@ -176,5 +179,19 @@ public class Map_Test extends Util_Test {
     Assert.assertSame(2, MapSequence.fromMap(map).count());
     Assert.assertSame(2, MapSequence.fromMap(map).get("b"));
     Assert.assertSame(3, MapSequence.fromMap(map).get("c"));
+  }
+
+  public void test_mappings2() throws Exception {
+    Map<Integer, String> mis = MapSequence.<Integer, String>fromMapAndKeysArray(new HashMap<Integer, String>(), 1, 2, 3).withValues("a", "b", "c");
+    SetSequence.fromSet(MapSequence.fromMap(mis).mappingsSet()).toListSequence().visitAll(new IVisitor<IMapping<Integer, String>>() {
+      public void visit(IMapping<Integer, String> m) {
+        m.value(String.valueOf((char)('A' - 1 + m.key())));
+      }
+    });
+    this.assertIterableEqualsIgnoreOrder(Sequence.fromIterable(ArrayUtils.fromCharacterArray("ABC".toCharArray())).select(new ISelector<Character, String>() {
+      public String select(Character c) {
+        return String.valueOf(c);
+      }
+    }), MapSequence.fromMap(mis).values());
   }
 }
