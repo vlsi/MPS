@@ -15,8 +15,8 @@
  */
 package jetbrains.mps.uitests.sortedlist;
 
-import jetbrains.mps.workbench.dialogs.project.listsupport.ListsFactory.ListComparator;
-import jetbrains.mps.workbench.dialogs.project.listsupport.SortedList;
+import jetbrains.mps.workbench.dialogs.project.components.parts.ListsFactory.ListComparator;
+import jetbrains.mps.workbench.dialogs.project.components.parts.SortedList;
 import junit.framework.TestCase;
 
 import java.util.Collections;
