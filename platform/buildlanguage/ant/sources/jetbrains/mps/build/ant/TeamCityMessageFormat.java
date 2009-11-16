@@ -12,14 +12,14 @@ public class TeamCityMessageFormat implements IBuildServerMessageFormat {
 
   public StringBuffer escapeBuildMessage(StringBuffer message) {
     String [] replacements = new String[] {
-      "|", "||",
+      "\\|", "||",
       "'", "|'",
       "\n", LINES_SEPARATOR,
       "\r", "|r",
       "]", "|]"
     };
 
-    for (int i=0; i<replacements.length>>1; i+=2) {
+    for (int i = 0; i < replacements.length >> 1; i += 2) {
       StringBuffer newMessage = new StringBuffer(message.length());
       Pattern p = Pattern.compile(replacements[i]);
       Matcher m = p.matcher (message);
