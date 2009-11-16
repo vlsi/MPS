@@ -39,6 +39,7 @@ public class FileClassPathItem extends AbstractClassPathItem {
 
   private Map<String, Set<String>> mySubpackagesCache = new HashMap<String, Set<String>>();
   private Map<String, Set<String>> myAvailableClassesCache = new HashMap<String, Set<String>>();
+  private Map<String, Long> myLastModifiedCache = new HashMap<String, Long>();
   private Map<String, IFile> myResources = new HashMap<String, IFile>();
   private final boolean myCacheResources;
 
@@ -163,7 +164,8 @@ public class FileClassPathItem extends AbstractClassPathItem {
     if (files != null) {
       for (IFile file : files) {
         String name = file.getName();
-        lastModified = Math.max(lastModified, file.lastModified());
+        long fileLastModified = file.lastModified();
+        lastModified = Math.max(lastModified, fileLastModified);
         if (!name.endsWith(MPSExtentions.DOT_CLASSFILE)) { //isDirectory is quite expensive operation
           if (file.isDirectory()) {
             if (namespace.length() > 0) {
@@ -177,13 +179,28 @@ public class FileClassPathItem extends AbstractClassPathItem {
         }
 
         if (name.endsWith(".class")) {
-          classes.add(name.substring(0, name.length() - ".class".length()));
+          String className = name.substring(0, name.length() - ".class".length());
+          if (namespace.length() > 0) {
+            myLastModifiedCache.put(namespace + "." + className, fileLastModified);
+          } else {
+            myLastModifiedCache.put(className, fileLastModified);
+          }
+
+          classes.add(className);
         }
       }
     }
 
-    mySubpackagesCache.put(namespace, subpacks.isEmpty() ? null : subpacks);
-    myAvailableClassesCache.put(namespace, classes.isEmpty() ? null : classes);
+    mySubpackagesCache.put(namespace, subpacks);
+    myAvailableClassesCache.put(namespace, classes);
+  }
+
+  public Long getClassLastModified(String namespace, String name) {
+    if (namespace.length() > 0) {
+      return myLastModifiedCache.get(namespace + "." + name);
+    } else {
+      return myLastModifiedCache.get(name);
+    }
   }
 
   private void processResource(String namespace, IFile file, String name) {
