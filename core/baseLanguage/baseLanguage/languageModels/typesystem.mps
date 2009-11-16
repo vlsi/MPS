@@ -9360,11 +9360,17 @@
     <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1201700941925">
       <node role="statement" type="jetbrains.mps.lang.typesystem.structure.AssertStatement" id="1201700958007">
         <node role="condition" type="jetbrains.mps.baseLanguage.structure.NotExpression" id="1201700960901">
-          <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1201700971248">
-            <link role="baseMethodDeclaration" targetNodeId="1201699810579" resolveInfo="withinStatic" />
-            <link role="classConcept" targetNodeId="1176897069499" resolveInfo="RulesFunctions_BaseLanguage" />
-            <node role="actualArgument" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference" id="1201700987124">
-              <link role="applicableNode" targetNodeId="1201700952881" resolveInfo="thisExpression" />
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="6516287307421538381">
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="6516287307421538382">
+              <node role="operand" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference" id="6516287307421538383">
+                <link role="applicableNode" targetNodeId="1201700952881" resolveInfo="thisExpression" />
+              </node>
+              <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="6516287307421538384">
+                <link role="baseMethodDeclaration" targetNodeId="37.6516287307421538194" resolveInfo="getContextClassifierMember" />
+              </node>
+            </node>
+            <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="6516287307421538385">
+              <link role="baseMethodDeclaration" targetNodeId="37.8986964027630462944" resolveInfo="isStatic" />
             </node>
           </node>
         </node>

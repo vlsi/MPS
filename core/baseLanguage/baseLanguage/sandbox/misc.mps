@@ -1573,5 +1573,69 @@
       </node>
     </node>
   </node>
+  <node type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="6516287307421516309">
+    <property name="name" value="ThisOfStaticMethods" />
+    <node role="staticMethod" type="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" id="6516287307421516315">
+      <property name="name" value="foo" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="6516287307421516316" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="6516287307421516317" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="6516287307421516318">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="6516287307421516325">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="6516287307421516327">
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="6516287307421516326" />
+            <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="6516287307421516332">
+              <link role="baseMethodDeclaration" targetNodeId="150.~Object.equals(java.lang.Object):boolean" resolveInfo="equals" />
+              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="6516287307421516333" />
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="4010707020509668431">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="4010707020509668432">
+            <node role="creator" type="jetbrains.mps.baseLanguage.structure.AnonymousClassCreator" id="4010707020509704674">
+              <node role="cls" type="jetbrains.mps.baseLanguage.structure.AnonymousClass" id="4010707020509704675">
+                <property name="nonStatic" value="true" />
+                <link role="classifier" targetNodeId="6516287307421516309" resolveInfo="ThisOfStaticMethods" />
+                <link role="baseMethodDeclaration" targetNodeId="6516287307421516311" resolveInfo="ThisOfStaticMethods" />
+                <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="4010707020509704676" />
+                <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="4010707020509704678">
+                  <property name="name" value="bar" />
+                  <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="4010707020509704679" />
+                  <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="4010707020509704680" />
+                  <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="4010707020509704681">
+                    <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="4010707020509704682">
+                      <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="4010707020509704684">
+                        <node role="operand" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="4010707020509704683" />
+                        <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="4010707020509704688">
+                          <link role="baseMethodDeclaration" targetNodeId="150.~Object.equals(java.lang.Object):boolean" resolveInfo="equals" />
+                          <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="4010707020509704689" />
+                        </node>
+                      </node>
+                    </node>
+                    <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="4010707020509704691">
+                      <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="4010707020509704693">
+                        <node role="operand" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="4010707020509704692">
+                          <link role="classConcept" targetNodeId="6516287307421516309" resolveInfo="ThisOfStaticMethods" />
+                        </node>
+                        <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="4010707020509704697">
+                          <link role="baseMethodDeclaration" targetNodeId="150.~Object.equals(java.lang.Object):boolean" resolveInfo="equals" />
+                          <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="4010707020509704698" />
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="6516287307421516310" />
+    <node role="constructor" type="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" id="6516287307421516311">
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="6516287307421516312" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="6516287307421516313" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="6516287307421516314" />
+    </node>
+  </node>
 </model>
 
