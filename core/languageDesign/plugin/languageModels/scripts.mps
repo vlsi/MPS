@@ -662,14 +662,12 @@
               </node>
             </node>
             <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="8849278392331870609">
-              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="8849278392331870610">
-                <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="8849278392331870611">
-                  <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="8849278392332150617">
+              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="7380893767129149052">
+                <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="7380893767129149054">
+                  <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="7380893767129149053">
                     <link role="variableDeclaration" targetNodeId="8849278392331870606" resolveInfo="projectRef" />
                   </node>
-                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ReplaceWithNewOperation" id="8849278392331870613">
-                    <link role="concept" targetNodeId="1.1213888797251" resolveInfo="ConceptFunctionParameter_Project" />
-                  </node>
+                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_DeleteOperation" id="7380893767129149058" />
                 </node>
               </node>
             </node>

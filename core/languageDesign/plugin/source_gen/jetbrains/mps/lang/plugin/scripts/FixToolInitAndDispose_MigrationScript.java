@@ -89,7 +89,7 @@ public class FixToolInitAndDispose_MigrationScript extends BaseMigrationScript {
               break;
             }
             projectRef = projectRef_iterator.next();
-            SNodeOperations.replaceWithNewChild(projectRef, "jetbrains.mps.lang.plugin.structure.ConceptFunctionParameter_Project");
+            SNodeOperations.deleteNode(projectRef);
           }
         }
 
