@@ -961,6 +961,14 @@ public class QueriesGenerated {
     return SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(_context.getNode(), "contents", true), "jetbrains.mps.lang.plugin.structure.UpdateGroupBlock"), "enumerateFunction", true) != null;
   }
 
+  public static boolean ifMacro_Condition_8849278392331870334(final IOperationContext operationContext, final IfMacroContext _context) {
+    return (SLinkOperations.getTarget(_context.getNode(), "toolDisposeBlock", true) != null);
+  }
+
+  public static boolean ifMacro_Condition_8849278392331870358(final IOperationContext operationContext, final IfMacroContext _context) {
+    return (SLinkOperations.getTarget(_context.getNode(), "toolInitBlock", true) != null);
+  }
+
   public static SNode sourceNodeQuery_1204046353137(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return _context.getNode();
   }
@@ -1179,6 +1187,14 @@ public class QueriesGenerated {
 
   public static SNode sourceNodeQuery_5003188907305740062(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "contents", true);
+  }
+
+  public static SNode sourceNodeQuery_8849278392331870325(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "toolDisposeBlock", true), "body", true);
+  }
+
+  public static SNode sourceNodeQuery_8849278392331870347(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "toolInitBlock", true), "body", true);
   }
 
   public static Iterable sourceNodesQuery_1204045442068(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {

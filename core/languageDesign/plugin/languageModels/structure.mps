@@ -587,11 +587,23 @@
       <property name="metaClass" value="aggregation" />
       <property name="role" value="initBlock" />
       <link role="target" targetNodeId="1206110093589" resolveInfo="InitBlock" />
+      <node role="deprecatedNode$attribute" type="jetbrains.mps.lang.structure.structure.DeprecatedNodeAnnotation" id="8849278392331869030" />
     </node>
     <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1213888923963">
       <property name="metaClass" value="aggregation" />
       <property name="role" value="disposeBlock" />
       <link role="target" targetNodeId="1206110108761" resolveInfo="DisposeBlock" />
+      <node role="deprecatedNode$attribute" type="jetbrains.mps.lang.structure.structure.DeprecatedNodeAnnotation" id="8849278392331869031" />
+    </node>
+    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="8849278392331869032">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="toolInitBlock" />
+      <link role="target" targetNodeId="1213888653896" resolveInfo="InitBlock" />
+    </node>
+    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="8849278392331870280">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="toolDisposeBlock" />
+      <link role="target" targetNodeId="1213888677711" resolveInfo="DisposeBlock" />
     </node>
     <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1214307129846">
       <property name="metaClass" value="aggregation" />

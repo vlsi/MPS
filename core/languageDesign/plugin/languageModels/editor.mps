@@ -1238,11 +1238,47 @@
         <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode" id="1214305695646">
           <property name="noTargetText" value="&lt;init block&gt;" />
           <link role="relationDeclaration" targetNodeId="1.1213888910618" />
+          <node role="renderingCondition" type="jetbrains.mps.lang.editor.structure.QueryFunction_NodeCondition" id="8849278392331870281">
+            <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="8849278392331870282">
+              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="8849278392331870283">
+                <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="8849278392331870290">
+                  <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="8849278392331870285">
+                    <node role="operand" type="jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_node" id="8849278392331870284" />
+                    <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="8849278392331870289">
+                      <link role="link" targetNodeId="1.1213888910618" />
+                    </node>
+                  </node>
+                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_IsNotNullOperation" id="8849278392331870294" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode" id="8849278392331870310">
+          <link role="relationDeclaration" targetNodeId="1.8849278392331869032" />
         </node>
         <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1214305695647" />
         <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode" id="1214305695648">
           <property name="noTargetText" value="&lt;dispose block&gt;" />
           <link role="relationDeclaration" targetNodeId="1.1213888923963" />
+          <node role="renderingCondition" type="jetbrains.mps.lang.editor.structure.QueryFunction_NodeCondition" id="8849278392331870295">
+            <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="8849278392331870296">
+              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="8849278392331870297">
+                <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="8849278392331870304">
+                  <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="8849278392331870299">
+                    <node role="operand" type="jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_node" id="8849278392331870298" />
+                    <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="8849278392331870303">
+                      <link role="link" targetNodeId="1.1213888923963" />
+                    </node>
+                  </node>
+                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_IsNotNullOperation" id="8849278392331870308" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode" id="8849278392331870312">
+          <link role="relationDeclaration" targetNodeId="1.8849278392331870280" />
         </node>
         <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1214305695649" />
         <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode" id="1214305564349">

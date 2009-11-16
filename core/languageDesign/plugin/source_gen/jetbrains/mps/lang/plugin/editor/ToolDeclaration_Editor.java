@@ -35,6 +35,7 @@ import jetbrains.mps.project.IModule;
 import jetbrains.mps.lang.structure.editor.EditorUtil;
 import jetbrains.mps.plugins.MacrosUtil;
 import jetbrains.mps.vfs.FileSystem;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.nodeEditor.BlockCells;
 import javax.swing.JComponent;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandler;
@@ -82,11 +83,17 @@ public class ToolDeclaration_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstant_4170_8(editorContext, node));
     editorCell.addEditorCell(this.createRefNodeList_4170_0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_4170_9(editorContext, node));
-    editorCell.addEditorCell(this.createRefNode_4170_0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_4170_10(editorContext, node));
+    if (renderingCondition4170_2(node, editorContext, editorContext.getOperationContext().getScope())) {
+      editorCell.addEditorCell(this.createRefNode_4170_0(editorContext, node));
+    }
     editorCell.addEditorCell(this.createRefNode_4170_1(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_4170_10(editorContext, node));
+    if (renderingCondition4170_3(node, editorContext, editorContext.getOperationContext().getScope())) {
+      editorCell.addEditorCell(this.createRefNode_4170_2(editorContext, node));
+    }
+    editorCell.addEditorCell(this.createRefNode_4170_3(editorContext, node));
     editorCell.addEditorCell(this.createConstant_4170_11(editorContext, node));
-    editorCell.addEditorCell(this.createRefNode_4170_2(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_4170_4(editorContext, node));
     editorCell.addEditorCell(this.createConstant_4170_12(editorContext, node));
     editorCell.addEditorCell(this.createRefNodeList_4170_1(editorContext, node));
     return editorCell;
@@ -167,7 +174,7 @@ public class ToolDeclaration_Editor extends DefaultNodeEditor {
     }
     editorCell.addEditorCell(this.createCollection_4170_8(editorContext, node));
     editorCell.addEditorCell(this.createCollection_4170_9(editorContext, node));
-    if (renderingCondition4170_3(node, editorContext, editorContext.getOperationContext().getScope())) {
+    if (renderingCondition4170_5(node, editorContext, editorContext.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.createConstant_4170_14(editorContext, node));
     }
     return editorCell;
@@ -181,7 +188,7 @@ public class ToolDeclaration_Editor extends DefaultNodeEditor {
       style.set(StyleAttributes.SELECTABLE, false);
     }
     editorCell.addEditorCell(this.createCollection_4170_0(editorContext, node));
-    if (renderingCondition4170_2(node, editorContext, editorContext.getOperationContext().getScope())) {
+    if (renderingCondition4170_4(node, editorContext, editorContext.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.createConstant_4170_13(editorContext, node));
     }
     return editorCell;
@@ -494,6 +501,23 @@ public class ToolDeclaration_Editor extends DefaultNodeEditor {
 
   private EditorCell createRefNode_4170_1(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
+    provider.setRole("toolInitBlock");
+    provider.setNoTargetText("<no toolInitBlock>");
+    EditorCell editorCell;
+    editorCell = provider.createEditorCell(editorContext);
+    editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
+    SNode attributeConcept = provider.getRoleAttribute();
+    Class attributeKind = provider.getRoleAttributeClass();
+    if (attributeConcept != null) {
+      IOperationContext opContext = editorContext.getOperationContext();
+      EditorManager manager = EditorManager.getInstanceFromContext(opContext);
+      return manager.createRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
+    } else
+    return editorCell;
+  }
+
+  private EditorCell createRefNode_4170_2(EditorContext editorContext, SNode node) {
+    CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("disposeBlock");
     provider.setNoTargetText("<dispose block>");
     EditorCell editorCell;
@@ -509,7 +533,24 @@ public class ToolDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefNode_4170_2(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_4170_3(EditorContext editorContext, SNode node) {
+    CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
+    provider.setRole("toolDisposeBlock");
+    provider.setNoTargetText("<no toolDisposeBlock>");
+    EditorCell editorCell;
+    editorCell = provider.createEditorCell(editorContext);
+    editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
+    SNode attributeConcept = provider.getRoleAttribute();
+    Class attributeKind = provider.getRoleAttributeClass();
+    if (attributeConcept != null) {
+      IOperationContext opContext = editorContext.getOperationContext();
+      EditorManager manager = EditorManager.getInstanceFromContext(opContext);
+      return manager.createRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
+    } else
+    return editorCell;
+  }
+
+  private EditorCell createRefNode_4170_4(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("getComponentBlock");
     provider.setNoTargetText("<getComponent block>");
@@ -540,10 +581,18 @@ public class ToolDeclaration_Editor extends DefaultNodeEditor {
   }
 
   private static boolean renderingCondition4170_2(SNode node, EditorContext editorContext, IScope scope) {
-    return BlockCells.useBraces();
+    return (SLinkOperations.getTarget(node, "initBlock", true) != null);
   }
 
   private static boolean renderingCondition4170_3(SNode node, EditorContext editorContext, IScope scope) {
+    return (SLinkOperations.getTarget(node, "disposeBlock", true) != null);
+  }
+
+  private static boolean renderingCondition4170_4(SNode node, EditorContext editorContext, IScope scope) {
+    return BlockCells.useBraces();
+  }
+
+  private static boolean renderingCondition4170_5(SNode node, EditorContext editorContext, IScope scope) {
     return BlockCells.useBraces();
   }
 
