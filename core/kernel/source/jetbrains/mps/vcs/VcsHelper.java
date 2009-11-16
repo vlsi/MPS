@@ -25,6 +25,7 @@ import com.intellij.openapi.project.ProjectManager;
 import com.intellij.openapi.util.Computable;
 import com.intellij.openapi.util.io.FileUtil;
 import com.intellij.openapi.application.ApplicationManager;
+import com.intellij.openapi.application.Application;
 
 import java.util.Collections;
 import java.util.Arrays;
@@ -35,6 +36,7 @@ import java.io.OutputStream;
 import java.io.File;
 
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 import org.jdom.Document;
 
 import javax.swing.SwingUtilities;
@@ -45,12 +47,16 @@ public class VcsHelper {
 
   public static boolean showDiskMemoryMerge(IFile modelFile, final SModel inMemory) {
     try {
-      //File backupFile = doBackup(modelFile, inMemory);
+      File backupFile = null;
+      Application application = ApplicationManager.getApplication();
+      if (application.isUnitTestMode() || application.isHeadlessEnvironment()) {
+        backupFile = doBackup(modelFile, inMemory);
+      }
 
       String message = "Model " + inMemory + " has conflicting changes.\n" +
         "It was modified on disk and in memory at the same time.\n" +
         "Fear not, backup of both versions was created and saved to:\n" +
-       /* backupFile.getAbsolutePath() +*/ "\n" +
+        (backupFile == null ? "test_backup" : backupFile.getAbsolutePath()) + "\n" +
         "Which version to use?";
       String title = "Model " + inMemory + " has conflicting changes.";
       String diskVersion = "Load Disk Version";
@@ -64,7 +70,7 @@ public class VcsHelper {
         return true;
       }
 //    doRealMerge(modelFile, inMemory);
-    } catch (Throwable e) {
+    } catch (IOException e) {
       LOG.error(e);
       throw new RuntimeException(e);
     }
