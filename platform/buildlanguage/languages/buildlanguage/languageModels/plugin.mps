@@ -2786,7 +2786,7 @@
         <link role="classifier" targetNodeId="1225567254164" resolveInfo="BuildScriptRunnerComponent" />
       </node>
     </node>
-    <node role="initBlock" type="jetbrains.mps.lang.plugin.structure.ProjectPluginInitBlock" id="1225567254255">
+    <node role="toolInitBlock" type="jetbrains.mps.lang.plugin.structure.InitBlock" id="3267667135427744562">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1225567254256">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="2444892561514411732">
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="2444892561514411733">
@@ -2848,7 +2848,7 @@
         </node>
       </node>
     </node>
-    <node role="disposeBlock" type="jetbrains.mps.lang.plugin.structure.ProjectPluginDisposeBlock" id="1233565678272">
+    <node role="toolDisposeBlock" type="jetbrains.mps.lang.plugin.structure.DisposeBlock" id="3267667135427744587">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1233565678273">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1233565704603">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1233565706138">

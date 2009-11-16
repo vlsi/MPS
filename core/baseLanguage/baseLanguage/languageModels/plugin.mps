@@ -1959,7 +1959,14 @@
         </node>
       </node>
     </node>
-    <node role="initBlock" type="jetbrains.mps.lang.plugin.structure.ProjectPluginInitBlock" id="1216657102102">
+    <node role="fieldDeclaration" type="jetbrains.mps.baseLanguage.classifiers.structure.DefaultClassifierFieldDeclaration" id="1216657110747">
+      <property name="name" value="myComponent" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PrivateVisibility" id="1216657110748" />
+      <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="3344292066845077735">
+        <link role="classifier" targetNodeId="91.~TodoViewer" resolveInfo="TodoViewer" />
+      </node>
+    </node>
+    <node role="toolInitBlock" type="jetbrains.mps.lang.plugin.structure.InitBlock" id="3267667135427744573">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1216657102103">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1217598419950">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression" id="1217598422563">
@@ -1984,14 +1991,7 @@
         </node>
       </node>
     </node>
-    <node role="fieldDeclaration" type="jetbrains.mps.baseLanguage.classifiers.structure.DefaultClassifierFieldDeclaration" id="1216657110747">
-      <property name="name" value="myComponent" />
-      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PrivateVisibility" id="1216657110748" />
-      <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="3344292066845077735">
-        <link role="classifier" targetNodeId="91.~TodoViewer" resolveInfo="TodoViewer" />
-      </node>
-    </node>
-    <node role="disposeBlock" type="jetbrains.mps.lang.plugin.structure.ProjectPluginDisposeBlock" id="3344292066845003612">
+    <node role="toolDisposeBlock" type="jetbrains.mps.lang.plugin.structure.DisposeBlock" id="3267667135427744579">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="3344292066845003613">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="3344292066845077736">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="3344292066845077740">
@@ -39337,7 +39337,7 @@
         </node>
       </node>
     </node>
-    <node role="initBlock" type="jetbrains.mps.lang.plugin.structure.ProjectPluginInitBlock" id="6173548178016197438">
+    <node role="toolInitBlock" type="jetbrains.mps.lang.plugin.structure.InitBlock" id="3267667135427744571">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="6173548178016197439">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="3201726544224019936">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression" id="3201726544224019973">
@@ -39479,7 +39479,7 @@
         </node>
       </node>
     </node>
-    <node role="disposeBlock" type="jetbrains.mps.lang.plugin.structure.ProjectPluginDisposeBlock" id="8136820323456449867">
+    <node role="toolDisposeBlock" type="jetbrains.mps.lang.plugin.structure.DisposeBlock" id="3267667135427744585">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="8136820323456449868">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="8136820323456515392">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="8136820323456515578">

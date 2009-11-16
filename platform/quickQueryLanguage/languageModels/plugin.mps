@@ -3640,11 +3640,18 @@
         </node>
       </node>
     </node>
-    <node role="initBlock" type="jetbrains.mps.lang.plugin.structure.ProjectPluginInitBlock" id="1220009035807">
+    <node role="getComponentBlock" type="jetbrains.mps.lang.plugin.structure.GetComponentBlock" id="1220013701849">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1220013701850">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1220013704696">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1220013704697" />
+        </node>
+      </node>
+    </node>
+    <node role="toolInitBlock" type="jetbrains.mps.lang.plugin.structure.InitBlock" id="3267667135427744558">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1220009035808">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1220010893758">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1220010894088">
-            <node role="operand" type="jetbrains.mps.lang.plugin.structure.ConceptFunctionParameter_MPSProject" id="1220010893759" />
+            <node role="operand" type="jetbrains.mps.lang.plugin.structure.ConceptFunctionParameter_Project" id="3267667135427744557" />
             <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1220010933467">
               <link role="baseMethodDeclaration" targetNodeId="10.~MPSProject.getComponent(java.lang.Class):java.lang.Object" resolveInfo="getComponent" />
               <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.ClassifierClassExpression" id="1220010938469">
@@ -3652,13 +3659,6 @@
               </node>
             </node>
           </node>
-        </node>
-      </node>
-    </node>
-    <node role="getComponentBlock" type="jetbrains.mps.lang.plugin.structure.GetComponentBlock" id="1220013701849">
-      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1220013701850">
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1220013704696">
-          <node role="expression" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1220013704697" />
         </node>
       </node>
     </node>

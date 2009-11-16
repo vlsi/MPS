@@ -83,7 +83,7 @@
         <link role="classifier" targetNodeId="15.~StructureViewComponent" resolveInfo="StructureViewComponent" />
       </node>
     </node>
-    <node role="initBlock" type="jetbrains.mps.lang.plugin.structure.ProjectPluginInitBlock" id="1217360991609">
+    <node role="toolInitBlock" type="jetbrains.mps.lang.plugin.structure.InitBlock" id="3267667135427744551">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1217360991610">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1217360996397">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression" id="1217360997620">
