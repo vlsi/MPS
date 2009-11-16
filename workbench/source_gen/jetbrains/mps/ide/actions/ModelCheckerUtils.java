@@ -15,8 +15,11 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.structure.structure.PropertyDeclaration;
-import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.smodel.constraints.SearchScopeStatus;
+import jetbrains.mps.smodel.constraints.ModelConstraintsUtil;
+import java.util.List;
+import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
@@ -26,18 +29,16 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.lang.structure.structure.Cardinality;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.smodel.search.ConceptAndSuperConceptsScope;
-import java.util.List;
 import jetbrains.mps.smodel.PropertySupport;
 import jetbrains.mps.ide.ui.smodel.SModelTreeNode;
-import jetbrains.mps.smodel.constraints.SearchScopeStatus;
-import jetbrains.mps.smodel.constraints.ModelConstraintsUtil;
+import jetbrains.mps.project.IModule;
+import jetbrains.mps.project.ModuleContext;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.typesystem.inference.NodeTypesComponentsRepository;
 import jetbrains.mps.typesystem.inference.NodeTypesComponent;
 import jetbrains.mps.util.Pair;
 import jetbrains.mps.nodeEditor.IErrorReporter;
-import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.Generator;
@@ -91,6 +92,17 @@ public class ModelCheckerUtils {
   private static boolean isDeclaredProperty(SNode concept, String name) {
     PropertyDeclaration propertyDeclaration = SModelSearchUtil.findPropertyDeclaration(((AbstractConceptDeclaration)SNodeOperations.getAdapter(concept)), name);
     return propertyDeclaration != null;
+  }
+
+  private static boolean checkScope(SNode concept, SNode node, SNode targetNode, String refRole, IOperationContext operationContext) {
+    SearchScopeStatus status = ModelConstraintsUtil.getSearchScope(null, node, ((AbstractConceptDeclaration)SNodeOperations.getAdapter(concept)), refRole, operationContext);
+    if (status.isOk() && !(status.isDefault())) {
+      List<SNode> nodes = status.getSearchScope().getNodes();
+      if (!(ListSequence.fromList(nodes).contains(targetNode))) {
+        return false;
+      }
+    }
+    return true;
   }
 
   public static boolean checkModel(final SearchResults<ModelCheckerIssue> results, final SModelDescriptor modelDescriptor, final IOperationContext operationContext, final ProgressContext progressContext) {
@@ -202,12 +214,11 @@ public class ModelCheckerUtils {
               try {
                 String specializedLinkRole = getMostSpecializedLinkRole(SNodeOperations.getConceptDeclaration(node), ref.getRole());
 
-                SearchScopeStatus status = ModelConstraintsUtil.getSearchScope(null, node, ((AbstractConceptDeclaration)SNodeOperations.getAdapter(concept)), specializedLinkRole, operationContext);
-                if (status.isOk() && !(status.isDefault())) {
-                  List<SNode> nodes = status.getSearchScope().getNodes();
-                  if (!(ListSequence.fromList(nodes).contains(targetNode))) {
-                    addIssue(results, node, "Reference in role \"" + specializedLinkRole + "\" is out of scope", MessageStatus.WARNING);
-                  }
+                IModule thisModelModule = model.getModelDescriptor().getModule();
+                if (checkScope(concept, node, targetNode, specializedLinkRole, operationContext)) {
+                } else if (checkScope(concept, node, targetNode, specializedLinkRole, new ModuleContext(thisModelModule, operationContext.getMPSProject()))) {
+                } else {
+                  addIssue(results, node, "Reference in role \"" + specializedLinkRole + "\" is out of scope", MessageStatus.WARNING);
                 }
               } catch (Exception e) {
                 e.printStackTrace();

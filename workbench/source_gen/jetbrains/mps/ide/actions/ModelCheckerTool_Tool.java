@@ -4,6 +4,7 @@ package jetbrains.mps.ide.actions;
 
 import jetbrains.mps.plugins.pluginparts.tool.GeneratedTool;
 import jetbrains.mps.project.MPSProject;
+import com.intellij.openapi.project.Project;
 import com.intellij.ui.content.ContentManagerListener;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -14,11 +15,12 @@ import jetbrains.mps.ide.findusages.INavigator;
 import com.intellij.ui.content.ContentManager;
 import com.intellij.ui.content.Content;
 import javax.swing.JComponent;
-import com.intellij.openapi.project.Project;
+import com.intellij.openapi.vcs.checkin.CheckinHandlerFactory;
 import jetbrains.mps.ide.icons.IconManager;
 import com.intellij.openapi.wm.ToolWindowAnchor;
 import jetbrains.mps.MPSProjectHolder;
 import jetbrains.mps.ide.findusages.UsagesViewTracker;
+import com.intellij.openapi.vcs.ProjectLevelVcsManager;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.project.IModule;
@@ -27,11 +29,13 @@ import jetbrains.mps.generator.GenerationSettings;
 import jetbrains.mps.ide.findusages.model.SearchResults;
 import jetbrains.mps.ide.findusages.model.SearchResult;
 import com.intellij.openapi.ui.Messages;
+import com.intellij.openapi.vcs.checkin.CheckinHandler;
 import com.intellij.ui.content.ContentManagerAdapter;
 import com.intellij.ui.content.ContentManagerEvent;
 
 public class ModelCheckerTool_Tool extends GeneratedTool {
-  private MPSProject myProject;
+  private MPSProject myMPSProject;
+  private Project myProject;
   private ContentManagerListener myListener = null;
   private List<ModelCheckerViewer> myViewers = ListSequence.fromList(new ArrayList<ModelCheckerViewer>());
   private INavigateableTool myNavigateableTool = new INavigateableTool() {
@@ -56,6 +60,7 @@ public class ModelCheckerTool_Tool extends GeneratedTool {
       }
     }
   };
+  private CheckinHandlerFactory myCheckinHandlerFactory = new ModelCheckerCheckinHandler.MyHandlerFactory();
 
   public ModelCheckerTool_Tool(Project project) {
     super(project, "Model Checker", -1, IconManager.EMPTY_ICON, ToolWindowAnchor.BOTTOM, false);
@@ -66,7 +71,8 @@ public class ModelCheckerTool_Tool extends GeneratedTool {
   }
 
   public void init(Project project) {
-    ModelCheckerTool_Tool.this.myProject = project.getComponent(MPSProjectHolder.class).getMPSProject();
+    ModelCheckerTool_Tool.this.myMPSProject = project.getComponent(MPSProjectHolder.class).getMPSProject();
+    ModelCheckerTool_Tool.this.myProject = project;
     UsagesViewTracker.register(ModelCheckerTool_Tool.this.myNavigateableTool);
   }
 
@@ -76,10 +82,12 @@ public class ModelCheckerTool_Tool extends GeneratedTool {
   }
 
   protected void doRegister() {
+    ProjectLevelVcsManager.getInstance(ModelCheckerTool_Tool.this.myProject).registerCheckinHandlerFactory(ModelCheckerTool_Tool.this.myCheckinHandlerFactory);
     UsagesViewTracker.register(ModelCheckerTool_Tool.this.myNavigateableTool);
   }
 
   protected void doUnregister() {
+    ProjectLevelVcsManager.getInstance(ModelCheckerTool_Tool.this.myProject).unregisterCheckinHandlerFactory(ModelCheckerTool_Tool.this.myCheckinHandlerFactory);
     UsagesViewTracker.unregister(ModelCheckerTool_Tool.this.myNavigateableTool);
   }
 
@@ -160,6 +168,38 @@ public class ModelCheckerTool_Tool extends GeneratedTool {
     return true;
   }
 
+  public CheckinHandler.ReturnResult checkModelsBeforeCommit(IOperationContext operationContext, List<SModelDescriptor> modelDescriptors) {
+    ModelCheckerViewer viewer = ModelCheckerTool_Tool.this.checkModels(modelDescriptors, operationContext, false);
+    SearchResults<ModelCheckerIssue> issues = viewer.getSearchResults();
+    int warnings = 0;
+    int errors = 0;
+    for (SearchResult<ModelCheckerIssue> issue : ListSequence.fromList(issues.getSearchResults())) {
+      String category = issue.getCategory();
+      if (ModelCheckerViewer.MyNodeRepresentator.CATEGORY_ERROR.equals(category)) {
+        errors++;
+      } else if (ModelCheckerViewer.MyNodeRepresentator.CATEGORY_WARNING.equals(category)) {
+        warnings++;
+      }
+    }
+
+    if (errors != 0) {
+      String dialogMessage = "Model checker found " + errors + " errors and " + warnings + " warnings. Would you like to review them?";
+      int dialogAnswer = Messages.showDialog(operationContext.getProject(), dialogMessage, "Model Checking", new String[]{"Review","Commit","Cancel"}, 2, null);
+      if (dialogAnswer == 0) {
+        // review errors and warnings, don't commit 
+        ModelCheckerTool_Tool.this.showTabWithResults(viewer);
+        return CheckinHandler.ReturnResult.CLOSE_WINDOW;
+      } else if (dialogAnswer == 1) {
+        // ignore errors and warnings 
+        return CheckinHandler.ReturnResult.COMMIT;
+      } else if (dialogAnswer == 2) {
+        // Cancel 
+        return CheckinHandler.ReturnResult.CANCEL;
+      }
+    }
+    return CheckinHandler.ReturnResult.COMMIT;
+  }
+
   public void closeTab(JComponent component) {
     ContentManager contentManager = ModelCheckerTool_Tool.this.getContentManager();
     Content content = contentManager.getContent(component);
@@ -202,7 +242,7 @@ public class ModelCheckerTool_Tool extends GeneratedTool {
   }
 
   private ModelCheckerViewer createViewer(IOperationContext operationContext) {
-    return new ModelCheckerViewer(ModelCheckerTool_Tool.this.myProject, operationContext) {
+    return new ModelCheckerViewer(ModelCheckerTool_Tool.this.myMPSProject, operationContext) {
       protected void close() {
         ModelCheckerTool_Tool.this.closeTab(this);
       }
