@@ -1434,6 +1434,9 @@
           </node>
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="4581730695772505308">
+          <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="1968738786583176344">
+            <property name="text" value="jhjhjh sdkj skdj" />
+          </node>
           <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.StatementCommentPart" id="4581730695772505309">
             <node role="commentedStatement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="4581730695772472561">
               <node role="expression" type="jetbrains.mps.baseLanguage.structure.ClassifierClassExpression" id="4581730695772472562">

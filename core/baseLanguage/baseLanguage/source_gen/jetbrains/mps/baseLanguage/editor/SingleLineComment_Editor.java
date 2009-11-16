@@ -49,6 +49,7 @@ public class SingleLineComment_Editor extends DefaultNodeEditor {
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setCellId("conceptProperty_alias");
     BaseLanguageStyle_StyleSheet.getComment(editorCell).apply(editorCell);
+    UncommentSingleLineComment.setCellActions(editorCell, node, editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();

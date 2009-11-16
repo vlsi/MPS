@@ -16138,12 +16138,79 @@
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_ConceptProperty" id="6329021646629175161">
         <link role="relationDeclaration" targetNodeId="18.1137473891462" resolveInfo="alias" />
         <link role="styleClass" targetNodeId="1198594875276" resolveInfo="Comment" />
+        <link role="actionMap" targetNodeId="6173498004806798033" resolveInfo="UncommentSingleLineComment" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNodeList" id="6329021646629175163">
         <link role="relationDeclaration" targetNodeId="17.6329021646629175155" />
         <node role="cellLayout" type="jetbrains.mps.lang.editor.structure.CellLayout_Indent" id="6329021646629175164" />
       </node>
       <node role="cellLayout" type="jetbrains.mps.lang.editor.structure.CellLayout_Indent" id="6329021646629175160" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.editor.structure.CellActionMapDeclaration" id="6173498004806798033">
+    <property name="name" value="UncommentSingleLineComment" />
+    <link role="applicableConcept" targetNodeId="17.6329021646629104954" resolveInfo="SingleLineComment" />
+    <node role="item" type="jetbrains.mps.lang.editor.structure.CellActionMapItem" id="6173498004806814533">
+      <property name="actionId" value="delete_action_id" />
+      <node role="executeFunction" type="jetbrains.mps.lang.editor.structure.CellActionMap_ExecuteFunction" id="6173498004806814534">
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="6173498004806814535">
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ForeachStatement" id="6173498004806817302">
+            <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="6173498004806817303">
+              <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="6173498004806817330">
+                <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="6173498004806817331">
+                  <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="6173498004806817345">
+                    <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="6173498004806817347">
+                      <node role="operand" type="jetbrains.mps.lang.editor.structure.CellActionMap_FunctionParm_selectedNode" id="6173498004806817346" />
+                      <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ReplaceWithAnotherOperation" id="6173498004806817351">
+                        <node role="replacementNode" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="6173498004806817360">
+                          <node role="operand" type="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" id="6173498004806817358">
+                            <link role="concept" targetNodeId="17.6329021646629175143" resolveInfo="StatementCommentPart" />
+                            <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="6173498004806817353">
+                              <link role="variableDeclaration" targetNodeId="6173498004806817309" resolveInfo="commentPart" />
+                            </node>
+                          </node>
+                          <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="6173498004806817364">
+                            <link role="link" targetNodeId="17.6329021646629175144" />
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                  <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="6173498004806817366" />
+                </node>
+                <node role="condition" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="6173498004806817338">
+                  <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="6173498004806817337">
+                    <link role="variableDeclaration" targetNodeId="6173498004806817309" resolveInfo="commentPart" />
+                  </node>
+                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation" id="6173498004806817342">
+                    <node role="conceptArgument" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" id="6173498004806817344">
+                      <link role="conceptDeclaration" targetNodeId="17.6329021646629175143" resolveInfo="StatementCommentPart" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+            <node role="variable" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="6173498004806817309">
+              <property name="name" value="commentPart" />
+              <node role="type" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="6173498004806817319">
+                <link role="concept" targetNodeId="17.6329021646629104955" resolveInfo="CommentPart" />
+              </node>
+            </node>
+            <node role="iterable" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="6173498004806817313">
+              <node role="operand" type="jetbrains.mps.lang.editor.structure.CellActionMap_FunctionParm_selectedNode" id="6173498004806817314" />
+              <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkListAccess" id="6173498004806817315">
+                <link role="link" targetNodeId="17.6329021646629175155" />
+              </node>
+            </node>
+          </node>
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="6173498004806817368">
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="6173498004806817370">
+              <node role="operand" type="jetbrains.mps.lang.editor.structure.CellActionMap_FunctionParm_selectedNode" id="6173498004806817369" />
+              <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_DeleteOperation" id="6173498004806817374" />
+            </node>
+          </node>
+        </node>
+      </node>
     </node>
   </node>
 </model>
