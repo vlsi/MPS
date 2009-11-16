@@ -13942,8 +13942,10 @@
               <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1226062531001">
                 <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1226062531002">
                   <property name="name" value="parameters" />
-                  <node role="type" type="jetbrains.mps.lang.smodel.structure.SNodeListType" id="1226062531003">
-                    <link role="elementConcept" targetNodeId="51.1071489090640" resolveInfo="ConceptDeclaration" />
+                  <node role="type" type="jetbrains.mps.baseLanguage.collections.structure.ListType" id="2273805526478437950">
+                    <node role="elementType" type="jetbrains.mps.lang.smodel.structure.SConceptType" id="2273805526478437955">
+                      <link role="conceptDeclaraton" targetNodeId="17.1107135704075" resolveInfo="ConceptFunctionParameter" />
+                    </node>
                   </node>
                   <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1226062531004">
                     <node role="operand" type="jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_node" id="1226062531005" />

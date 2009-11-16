@@ -54,7 +54,7 @@ public class ClassifierType_Behavior {
   public static List<String> virtual_getVariableSuffixes_1213877337304(SNode thisNode) {
     String classifierName = SPropertyOperations.getString(SLinkOperations.getTarget(thisNode, "classifier", false), "name");
     String shortName = NameUtil.shortNameFromLongName(classifierName);
-    return NameUtil.splitByCamels(NameUtil.decapitalize(shortName));
+    return ((List<String>)NameUtil.splitByCamels(NameUtil.decapitalize(shortName)));
   }
 
   public static SNode virtual_getClassExpression_1213877337357(SNode thisNode) {
