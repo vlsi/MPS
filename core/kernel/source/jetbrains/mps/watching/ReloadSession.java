@@ -32,6 +32,7 @@ import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.watching.ModelChangesWatcher.IReloadListener;
 import jetbrains.mps.workbench.actions.model.DeleteModelHelper;
 import org.jetbrains.annotations.NotNull;
+import org.apache.log4j.Level;
 
 import java.io.File;
 import java.util.HashSet;
@@ -49,6 +50,10 @@ class ReloadSession {
   private final Set<IModule> myDeletedModules = new HashSet<IModule>();
   private final Set<IReloadListener> myReloadListeners;
 
+  static {
+    org.apache.log4j.Logger.getLogger(ReloadSession.class.getName()).setLevel(Level.DEBUG);
+  }
+
   public ReloadSession(Set<IReloadListener> reloadListeners) {
     myReloadListeners = reloadListeners;
   }
@@ -60,6 +65,14 @@ class ReloadSession {
 
         public void run(@NotNull final ProgressIndicator progressIndicator) {
           fireReloadStarted();
+          LOG.debug("Starting reload for:\n" +
+            (myChangedModels.size() == 0 ? "" : "Changed models : " + myChangedModels + "\n") +
+            (myChangedModules.size() == 0 ? "" : "Changed modules : " + myChangedModules + "\n") +
+            (myChangedProjects.size() == 0 ? "" : "Changed projects : " + myChangedProjects + "\n") +
+            (myNewModelVFiles.size() == 0 ? "" : "New models : " + myNewModelVFiles + "\n") +
+            (myNewModuleVFiles.size() == 0 ? "" : "New modules : " + myNewModuleVFiles + "\n") +
+            (myDeletedModels.size() == 0 ? "" : "Deleted models : " + myDeletedModels + "\n") +
+            (myDeletedModules.size() == 0 ? "" : "Deleted modules : " + myDeletedModules + "\n"));
 
           try {
             if (!myNewModuleVFiles.isEmpty()) {
@@ -84,6 +97,7 @@ class ReloadSession {
             }
 
           } finally {
+            LOG.info("Reload finished.");
             fireReloadFinished();
           }
         }
@@ -104,10 +118,10 @@ class ReloadSession {
   }
 
   private void updateModels(final ProgressIndicator progressIndicator) {
-    progressIndicator.setText("Reloading updated models... Please wait.");
-    for (final SModelDescriptor model : myChangedModels) {
-      ModelAccess.instance().runWriteAction(new Runnable() {
-        public void run() {
+    ModelAccess.instance().runWriteAction(new Runnable() {
+      public void run() {
+        progressIndicator.setText("Reloading updated models... Please wait.");
+        for (final SModelDescriptor model : myChangedModels) {
           try {
             String text = "Reloading " + model.getSModelReference().getSModelFqName();
             LOG.info(text);
@@ -116,9 +130,10 @@ class ReloadSession {
           } catch (RuntimeException e) {
             LOG.error(e);
           }
+
         }
-      });
-    }
+      }
+    });
   }
 
   private boolean updateModules(final ProgressIndicator progressIndicator) {
@@ -176,6 +191,7 @@ class ReloadSession {
           Set<IModule> modules = modelDescriptor.getModules();
           for (IModule module : modules) {
             if (myChangedModules.contains(module)) {
+              LOG.debug("Skip model " + modelDescriptor + " since we want to reload " + module);
               skip.add(modelDescriptor);
               break;
             }
@@ -186,6 +202,7 @@ class ReloadSession {
         Set<Generator> generators = CollectionUtil.filter(Generator.class, myChangedModules);
         myChangedModules.removeAll(generators);
         for (Generator gen : generators) {
+          LOG.debug("Skip generator " + gen + " since we want to reload " + gen.getSourceLanguage());
           myChangedModules.add(gen.getSourceLanguage());
         }
 

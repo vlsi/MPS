@@ -22,11 +22,19 @@ import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
+import jetbrains.mps.logging.Logger;
 
 import java.io.File;
 
+import org.apache.log4j.Level;
+
 class ModelFileProcessor extends EventProcessor {
+  private static final Logger LOG = Logger.getLogger(ModelFileProcessor.class);
   private static final ModelFileProcessor INSTANCE = new ModelFileProcessor();
+
+  static {
+    org.apache.log4j.Logger.getLogger(ModelFileProcessor.class.getName()).setLevel(Level.DEBUG);
+  }
 
   public static ModelFileProcessor getInstance() {
     return INSTANCE;
@@ -35,6 +43,7 @@ class ModelFileProcessor extends EventProcessor {
   @Override
   protected void processContentChanged(VFileEvent event, ReloadSession reloadSession) {
     SModelDescriptor model = SModelRepository.getInstance().findModel(FileSystem.getFile(event.getPath()));
+    LOG.debug("Content change event for model file " + event.getPath() + ". Found model " + model + "." + (model != null ? " Needs reloading " + model.needsReloading() : ""));
     if ((model != null) && (model.needsReloading())) {
       reloadSession.addChangedModel(model);
     }

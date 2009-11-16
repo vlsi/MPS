@@ -47,6 +47,7 @@ import jetbrains.mps.library.Library;
 import jetbrains.mps.library.ProjectLibraryManager;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
+import org.apache.log4j.Level;
 
 import java.io.File;
 import java.io.IOException;
@@ -54,6 +55,10 @@ import java.util.*;
 
 public class ModelChangesWatcher implements ApplicationComponent {
   public static final Logger LOG = Logger.getLogger(ModelChangesWatcher.class);
+
+  static {
+    org.apache.log4j.Logger.getLogger(ModelChangesWatcher.class.getName()).setLevel(Level.DEBUG);
+  }
 
   public static ModelChangesWatcher instance() {
     return ApplicationManager.getApplication().getComponent(ModelChangesWatcher.class);
@@ -65,7 +70,7 @@ public class ModelChangesWatcher implements ApplicationComponent {
 
   private final ProjectManager myProjectManager;
   private final VirtualFileManager myVirtualFileManager;
-  private ReloadSession myReloadSession;
+  private volatile ReloadSession myReloadSession;
   private final Object myLock = new Object();
   private final Set<IReloadListener> myReloadListeners = new HashSet<IReloadListener>();
   private final Timer myTimer;
@@ -279,10 +284,10 @@ public class ModelChangesWatcher implements ApplicationComponent {
 
     private void processBeforeEvent(VFileEvent event, String filePath, ReloadSession reloadSession) {
       if (MPSFileTypesManager.instance().isModelFile(filePath)) {
-        LOG.info("Got refresh before event for " + filePath);
+        LOG.debug("Process before event for " + filePath);
         BeforeModelEventProcessor.getInstance().process(event, reloadSession);
       } else if (MPSFileTypesManager.instance().isModuleFile(filePath)) {
-        LOG.info("Got refresh before event for " + filePath);
+        LOG.debug("Process before event for " + filePath);
         BeforeModuleEventProcessor.getInstance().process(event, reloadSession);
       }
     }
@@ -305,6 +310,7 @@ public class ModelChangesWatcher implements ApplicationComponent {
         // collecting changed models, modules etc.
         for (final VFileEvent event : events) {
           String path = event.getPath();
+          LOG.debug("Got event " + event);
           File file = new File(path);
           // last part of condition was added due to MPS-4780 [build:3180] null
           // (NPE in Arrays.asList())
@@ -331,10 +337,10 @@ public class ModelChangesWatcher implements ApplicationComponent {
 
     private void processAfterEvent(String filePath, VFileEvent event, ReloadSession reloadSession) {
       if (MPSFileTypesManager.instance().isModelFile(filePath)) {
-        LOG.info("Got refresh after event for " + filePath);
+        LOG.debug("Process after event for " + filePath);
         ModelFileProcessor.getInstance().process(event, reloadSession);
       } else if (MPSFileTypesManager.instance().isModuleFile(filePath)) {
-        LOG.info("Got refresh after event for " + filePath);
+        LOG.debug("Process after event for " + filePath);
         ModuleFileProcessor.getInstance().process(event, reloadSession);
       }
     }
