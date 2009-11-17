@@ -11,6 +11,7 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Property;
 import jetbrains.mps.nodeEditor.cells.PropertyAccessor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.AttributesRolesUtil;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 public class CreatePropertyAntiquotation_Intention extends BaseIntention {
   public CreatePropertyAntiquotation_Intention() {
@@ -76,7 +77,10 @@ public class CreatePropertyAntiquotation_Intention extends BaseIntention {
     if (SLinkOperations.getTarget(contextNode, AttributesRolesUtil.childRoleFromPropertyAttributeRole("propertyAntiquotation", propertyName), true) != null) {
       SLinkOperations.setTarget(contextNode, AttributesRolesUtil.childRoleFromPropertyAttributeRole("propertyAntiquotation", propertyName), null, true);
     } else {
-      SLinkOperations.setNewChild(contextNode, AttributesRolesUtil.childRoleFromPropertyAttributeRole("propertyAntiquotation", propertyName), "jetbrains.mps.lang.quotation.structure.PropertyAntiquotation");
+      SNode propertyAntiquotation = SLinkOperations.setNewChild(contextNode, AttributesRolesUtil.childRoleFromPropertyAttributeRole("propertyAntiquotation", propertyName), "jetbrains.mps.lang.quotation.structure.PropertyAntiquotation");
+      if (selectedCell.getParent() != null && selectedCell.getParent().getSNode() != contextNode) {
+        SPropertyOperations.set(propertyAntiquotation, "label", SPropertyOperations.getString(SNodeOperations.getConceptDeclaration(contextNode), "name"));
+      }
     }
   }
 

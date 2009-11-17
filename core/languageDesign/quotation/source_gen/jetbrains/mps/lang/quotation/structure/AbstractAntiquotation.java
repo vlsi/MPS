@@ -12,6 +12,7 @@ import jetbrains.mps.project.GlobalScope;
 
 public class AbstractAntiquotation extends BaseConcept implements IMetaLevelChanger {
   public static final String concept = "jetbrains.mps.lang.quotation.structure.AbstractAntiquotation";
+  public static final String LABEL = "label";
   public static final String SHORT_DESCRIPTION = "shortDescription";
   public static final String ALIAS = "alias";
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
@@ -19,6 +20,14 @@ public class AbstractAntiquotation extends BaseConcept implements IMetaLevelChan
 
   public AbstractAntiquotation(SNode node) {
     super(node);
+  }
+
+  public String getLabel() {
+    return this.getProperty(AbstractAntiquotation.LABEL);
+  }
+
+  public void setLabel(String value) {
+    this.setProperty(AbstractAntiquotation.LABEL, value);
   }
 
   public String getShortDescription() {

@@ -24,6 +24,7 @@ import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
+import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 
 public class PropertyAntiquotation_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
@@ -38,6 +39,7 @@ public class PropertyAntiquotation_Editor extends DefaultNodeEditor {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_5335_0");
     editorCell.addEditorCell(this.createConstant_5335_0(editorContext, node));
+    editorCell.addEditorCell(this.createProperty_5335_0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_5335_0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_5335_1(editorContext, node));
     return editorCell;
@@ -200,11 +202,48 @@ public class PropertyAntiquotation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
+  private EditorCell createProperty_5335_0(EditorContext editorContext, SNode node) {
+    CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
+    provider.setRole("label");
+    provider.setNoTargetText("");
+    provider.setAllowsEmptyTarget(true);
+    EditorCell editorCell;
+    editorCell = provider.createEditorCell(editorContext);
+    editorCell.setCellId("property_label");
+    {
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator<Color>() {
+        public Color calculate(EditorCell cell) {
+          return PropertyAntiquotation_Editor._StyleParameter_QueryFunction_5335_2((cell == null ?
+            null :
+            cell.getSNode()
+          ), (cell == null ?
+            null :
+            cell.getEditorContext()
+          ));
+        }
+      });
+    }
+    editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
+    SNode attributeConcept = provider.getRoleAttribute();
+    Class attributeKind = provider.getRoleAttributeClass();
+    if (attributeConcept != null) {
+      IOperationContext opContext = editorContext.getOperationContext();
+      EditorManager manager = EditorManager.getInstanceFromContext(opContext);
+      return manager.createRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
+    } else
+    return editorCell;
+  }
+
   private static Color _StyleParameter_QueryFunction_5335_0(SNode node, EditorContext editorContext) {
     return Colors.BROWN;
   }
 
   private static Color _StyleParameter_QueryFunction_5335_1(SNode node, EditorContext editorContext) {
+    return Colors.BROWN;
+  }
+
+  private static Color _StyleParameter_QueryFunction_5335_2(SNode node, EditorContext editorContext) {
     return Colors.BROWN;
   }
 }

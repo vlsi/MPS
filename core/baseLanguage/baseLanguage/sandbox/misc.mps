@@ -1640,5 +1640,22 @@
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="6516287307421516314" />
     </node>
   </node>
+  <node type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="6489343236075097086">
+    <property name="name" value="QuotationsAndAntiquotations" />
+    <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="6489343236075097087" />
+    <node role="constructor" type="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" id="6489343236075097088">
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="6489343236075097089" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="6489343236075097090" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="6489343236075097091">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="6489343236075099013">
+          <node role="expression" type="jetbrains.mps.lang.quotation.structure.Quotation" id="6489343236075099014">
+            <node role="quotedNode" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="6489343236075189269">
+              <link role="classifier" targetNodeId="150.~Object" resolveInfo="Object" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
 </model>
 

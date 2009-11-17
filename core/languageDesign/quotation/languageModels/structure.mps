@@ -57,6 +57,10 @@
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1196350785110">
     <property name="name" value="AbstractAntiquotation" />
     <link role="extends" targetNodeId="1.1133920641626" resolveInfo="BaseConcept" />
+    <node role="propertyDeclaration" type="jetbrains.mps.lang.structure.structure.PropertyDeclaration" id="6489343236075007666">
+      <property name="name" value="label" />
+      <link role="dataType" targetNodeId="1.1082983041843" resolveInfo="string" />
+    </node>
     <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1196350785111">
       <property name="metaClass" value="aggregation" />
       <property name="sourceCardinality" value="1" />
