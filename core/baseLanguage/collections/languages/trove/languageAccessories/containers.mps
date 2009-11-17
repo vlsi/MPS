@@ -1369,7 +1369,7 @@
       </node>
     </node>
     <node role="containerDeclaration" type="jetbrains.mps.baseLanguage.collections.structure.CustomContainerDeclaration" id="4737294400113337847">
-      <property name="name" value="shortArralyList" />
+      <property name="name" value="shortArrayList" />
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="4737294400113337848" />
       <node role="containerType" type="jetbrains.mps.baseLanguage.collections.structure.ListType" id="4737294400113337851">
         <node role="elementType" type="jetbrains.mps.baseLanguage.structure.ShortType" id="4737294400113337853" />
