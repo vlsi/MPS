@@ -470,6 +470,7 @@ public class MessagesViewTool extends BaseProjectTool implements PersistentState
           myList.setFixedCellWidth(width);
         }
 
+        updateHeader();
         updateActions();
       }
 
@@ -488,6 +489,21 @@ public class MessagesViewTool extends BaseProjectTool implements PersistentState
         }
       }
     });
+  }
+
+  private String getHeaderPart(int count, String name) {
+    return count + " " + name + ((count > 1)? "s" : "");
+  }
+
+  private void updateHeader() {
+    if (hasErrors() || hasWarnings() || hasInfo()) {
+      if (getToolWindow() == null) return;
+      getToolWindow().setTitle(" ("
+        + getHeaderPart(myErrors, "error") + "/"
+        + getHeaderPart(myWarnings, "warning") + "/"
+        + getHeaderPart(myInfos, "info")
+        + ")");
+    }
   }
 
   private void updateActions() {
