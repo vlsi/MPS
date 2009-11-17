@@ -85,8 +85,8 @@ public class EditorContext {
     mySModelEvents = modelEvents;
   }
 
-  private EditorCell createNodeCell(java.util.List<SModelEvent> events, ReferencedNodeContext refContext) {
-    return myOperationContext.getComponent(EditorManager.class).createEditorCell(this, events, refContext);
+  private EditorCell createNodeCell(java.util.List<SModelEvent> events) {
+    return myOperationContext.getComponent(EditorManager.class).createEditorCell(this, events, myCurrentRefNodeContext);
   }
 
   public EditorCell createRootCell(SNode node, java.util.List<SModelEvent> events) {
@@ -121,7 +121,7 @@ public class EditorContext {
     }
     ReferencedNodeContext oldNodeContext = myCurrentRefNodeContext;
     myCurrentRefNodeContext = myCurrentRefNodeContext.sameContextButAnotherNode(node);
-    EditorCell nodeCell = createNodeCell(mySModelEvents, myCurrentRefNodeContext);
+    EditorCell nodeCell = createNodeCell(mySModelEvents);
     myCurrentRefNodeContext = oldNodeContext;
     return nodeCell;
   }  
@@ -132,7 +132,7 @@ public class EditorContext {
     }
     ReferencedNodeContext oldNodeContext = myCurrentRefNodeContext;
     myCurrentRefNodeContext = myCurrentRefNodeContext.contextWithOneMoreReference(targetNode, sourceNode, role);
-    EditorCell nodeCell = createNodeCell(mySModelEvents, myCurrentRefNodeContext);
+    EditorCell nodeCell = createNodeCell(mySModelEvents);
     myCurrentRefNodeContext = oldNodeContext;
     return nodeCell;
   }
