@@ -114,6 +114,8 @@ public class EditorCell_Property extends EditorCell_Label {
 
     if (isValidText(text)) {
       myModelAccessor.setText(text);
+    } else {
+      getEditorContext().getNodeEditorComponent().requestRelayout();
     }
     setErrorState(!isValidText(text));
   }
