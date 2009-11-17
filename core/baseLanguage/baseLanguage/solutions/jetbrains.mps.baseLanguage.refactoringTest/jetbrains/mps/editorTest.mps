@@ -1471,8 +1471,11 @@
       <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1232130325398" />
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1232130325399" />
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1232130325400">
-        <node role="testNode$attribute" type="jetbrains.mps.lang.test.structure.AnonymousCellAnnotation" id="1232130363513">
+        <node role="testNode$attribute" type="jetbrains.mps.lang.test.structure.AnonymousCellAnnotation" id="7725307805110950805">
           <property name="isLastPosition" value="true" />
+          <property name="useLabelSelection" value="true" />
+          <property name="selectionStart" value="0" />
+          <property name="selectionEnd" value="0" />
           <property name="cellId" value="Constant_6577_0" />
         </node>
       </node>
@@ -1486,8 +1489,9 @@
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference" id="1932269937152549843">
             <link role="classifier" targetNodeId="1.~Math" resolveInfo="Math" />
             <link role="variableDeclaration" targetNodeId="1.~Math.E" resolveInfo="E" />
-            <node role="testNode$attribute" type="jetbrains.mps.lang.test.structure.AnonymousCellAnnotation" id="1932269937152549844">
+            <node role="testNode$attribute" type="jetbrains.mps.lang.test.structure.AnonymousCellAnnotation" id="7725307805110950806">
               <property name="isLastPosition" value="true" />
+              <property name="useLabelSelection" value="true" />
               <property name="selectionStart" value="1" />
               <property name="selectionEnd" value="1" />
               <property name="cellId" value="property_name" />
@@ -3815,11 +3819,11 @@
     </node>
     <node role="result" type="jetbrains.mps.baseLanguage.structure.BlockStatement" id="5778786395602485272">
       <node role="statements" type="jetbrains.mps.baseLanguage.structure.StatementList" id="2494233300340549959">
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="2494233300340549966">
-          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="2494233300340549967">
-            <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="2494233300340549968">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="7725307805111171951">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="7725307805111171952">
+            <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="7725307805111171953">
               <link role="classifier" targetNodeId="1.~Integer" resolveInfo="Integer" />
-              <node role="testNode$attribute" type="jetbrains.mps.lang.test.structure.AnonymousCellAnnotation" id="2494233300340549969">
+              <node role="testNode$attribute" type="jetbrains.mps.lang.test.structure.AnonymousCellAnnotation" id="7725307805111171954">
                 <property name="isLastPosition" value="true" />
                 <property name="useLabelSelection" value="true" />
                 <property name="selectionStart" value="7" />
