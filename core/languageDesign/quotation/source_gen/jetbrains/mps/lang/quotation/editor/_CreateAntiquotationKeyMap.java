@@ -215,7 +215,7 @@ public class _CreateAntiquotationKeyMap extends EditorCellKeyMap {
         SLinkOperations.setTarget(contextNode, AttributesRolesUtil.childRoleFromLinkAttributeRole("referenceAntiquotation", role), null, true);
       } else {
         SNode referenceAntiquotation = SLinkOperations.setNewChild(contextNode, AttributesRolesUtil.childRoleFromLinkAttributeRole("referenceAntiquotation", role), "jetbrains.mps.lang.quotation.structure.ReferenceAntiquotation");
-        if (selectedCell.getParent() != null && selectedCell.getParent().getSNode() != contextNode) {
+        if (selectedCell.isSingleNodeCell()) {
           SPropertyOperations.set(referenceAntiquotation, "label", SPropertyOperations.getString(SNodeOperations.getConceptDeclaration(contextNode), "name"));
         }
       }
@@ -285,7 +285,7 @@ public class _CreateAntiquotationKeyMap extends EditorCellKeyMap {
         SLinkOperations.setTarget(contextNode, AttributesRolesUtil.childRoleFromPropertyAttributeRole("propertyAntiquotation", propertyName), null, true);
       } else {
         SNode propertyAntiquotation = SLinkOperations.setNewChild(contextNode, AttributesRolesUtil.childRoleFromPropertyAttributeRole("propertyAntiquotation", propertyName), "jetbrains.mps.lang.quotation.structure.PropertyAntiquotation");
-        if (selectedCell.getParent() != null && selectedCell.getParent().getSNode() != contextNode) {
+        if (selectedCell.isSingleNodeCell()) {
           SPropertyOperations.set(propertyAntiquotation, "label", SPropertyOperations.getString(SNodeOperations.getConceptDeclaration(contextNode), "name"));
         }
       }

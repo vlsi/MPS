@@ -78,7 +78,7 @@ public class CreatePropertyAntiquotation_Intention extends BaseIntention {
       SLinkOperations.setTarget(contextNode, AttributesRolesUtil.childRoleFromPropertyAttributeRole("propertyAntiquotation", propertyName), null, true);
     } else {
       SNode propertyAntiquotation = SLinkOperations.setNewChild(contextNode, AttributesRolesUtil.childRoleFromPropertyAttributeRole("propertyAntiquotation", propertyName), "jetbrains.mps.lang.quotation.structure.PropertyAntiquotation");
-      if (selectedCell.getParent() != null && selectedCell.getParent().getSNode() != contextNode) {
+      if (selectedCell.isSingleNodeCell()) {
         SPropertyOperations.set(propertyAntiquotation, "label", SPropertyOperations.getString(SNodeOperations.getConceptDeclaration(contextNode), "name"));
       }
     }

@@ -120,6 +120,7 @@ public interface EditorCell extends Cloneable {
   EditorCell findCellWeak(int x, int y, Condition<EditorCell> condition);
 
   EditorCell_Collection getParent();
+  boolean isSingleNodeCell();
 
   void synchronizeViewWithModel();
 

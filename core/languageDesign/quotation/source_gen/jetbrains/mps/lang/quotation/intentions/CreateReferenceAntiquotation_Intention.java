@@ -86,7 +86,7 @@ public class CreateReferenceAntiquotation_Intention extends BaseIntention {
       SLinkOperations.setTarget(contextNode, AttributesRolesUtil.childRoleFromLinkAttributeRole("referenceAntiquotation", role), null, true);
     } else {
       SNode referenceAntiquotation = SLinkOperations.setNewChild(contextNode, AttributesRolesUtil.childRoleFromLinkAttributeRole("referenceAntiquotation", role), "jetbrains.mps.lang.quotation.structure.ReferenceAntiquotation");
-      if (selectedCell.getParent() != null && selectedCell.getParent().getSNode() != contextNode) {
+      if (selectedCell.isSingleNodeCell()) {
         SPropertyOperations.set(referenceAntiquotation, "label", SPropertyOperations.getString(SNodeOperations.getConceptDeclaration(contextNode), "name"));
       }
     }

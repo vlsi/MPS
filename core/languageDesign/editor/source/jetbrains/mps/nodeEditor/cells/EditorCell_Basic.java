@@ -581,6 +581,19 @@ public abstract class EditorCell_Basic implements EditorCell {
     return myParent;
   }
 
+  public boolean isSingleNodeCell() {
+    if (myParent == null) {
+      return true;
+    }
+    if (myParent.getSNode() != myNode) {
+      return true;
+    }
+    if (myParent.getChildCount() == 1) {
+      return myParent.isSingleNodeCell();
+    }
+    return false;
+  }
+
   void setParent(EditorCell_Collection parent) {
     myParent = parent;
   }

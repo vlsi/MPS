@@ -1649,8 +1649,11 @@
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="6489343236075097091">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="6489343236075099013">
           <node role="expression" type="jetbrains.mps.lang.quotation.structure.Quotation" id="6489343236075099014">
-            <node role="quotedNode" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="6489343236075189269">
-              <link role="classifier" targetNodeId="150.~Object" resolveInfo="Object" />
+            <node role="quotedNode" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="5781946779619904638">
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="5781946779619904641" />
+              <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="5781946779619904642">
+                <link role="baseMethodDeclaration" targetNodeId="150.~Object.hashCode():int" resolveInfo="hashCode" />
+              </node>
             </node>
           </node>
         </node>

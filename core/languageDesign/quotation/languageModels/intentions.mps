@@ -676,35 +676,12 @@
                     </node>
                   </node>
                 </node>
-                <node role="condition" type="jetbrains.mps.baseLanguage.structure.AndExpression" id="6489343236075024211">
-                  <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.NotEqualsExpression" id="6489343236075024212">
-                    <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="6489343236075024213">
-                      <link role="variableDeclaration" targetNodeId="1227886737972" resolveInfo="contextNode" />
-                    </node>
-                    <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="6489343236075024214">
-                      <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="6489343236075024215">
-                        <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="6489343236075024216">
-                          <link role="variableDeclaration" targetNodeId="1227886737966" resolveInfo="selectedCell" />
-                        </node>
-                        <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="6489343236075024217">
-                          <link role="baseMethodDeclaration" targetNodeId="3.~EditorCell.getParent():jetbrains.mps.nodeEditor.cells.EditorCell_Collection" resolveInfo="getParent" />
-                        </node>
-                      </node>
-                      <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="6489343236075024218">
-                        <link role="baseMethodDeclaration" targetNodeId="3.~EditorCell_Basic.getSNode():jetbrains.mps.smodel.SNode" resolveInfo="getSNode" />
-                      </node>
-                    </node>
+                <node role="condition" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="5781946779619821905">
+                  <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="5781946779619821906">
+                    <link role="variableDeclaration" targetNodeId="1227886737966" resolveInfo="selectedCell" />
                   </node>
-                  <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.NotEqualsExpression" id="6489343236075024219">
-                    <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="6489343236075024220">
-                      <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="6489343236075024221">
-                        <link role="variableDeclaration" targetNodeId="1227886737966" resolveInfo="selectedCell" />
-                      </node>
-                      <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="6489343236075024222">
-                        <link role="baseMethodDeclaration" targetNodeId="3.~EditorCell.getParent():jetbrains.mps.nodeEditor.cells.EditorCell_Collection" resolveInfo="getParent" />
-                      </node>
-                    </node>
-                    <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="6489343236075024223" />
+                  <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="5781946779619821907">
+                    <link role="baseMethodDeclaration" targetNodeId="3.~EditorCell.isSingleNodeCell():boolean" resolveInfo="isSingleNodeCell" />
                   </node>
                 </node>
               </node>
@@ -1140,35 +1117,12 @@
                     </node>
                   </node>
                 </node>
-                <node role="condition" type="jetbrains.mps.baseLanguage.structure.AndExpression" id="6489343236075023642">
-                  <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.NotEqualsExpression" id="6489343236075024141">
-                    <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="6489343236075024144">
-                      <link role="variableDeclaration" targetNodeId="1227886869135" resolveInfo="contextNode" />
-                    </node>
-                    <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="6489343236075023651">
-                      <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="6489343236075023646">
-                        <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="6489343236075023645">
-                          <link role="variableDeclaration" targetNodeId="1227886869129" resolveInfo="selectedCell" />
-                        </node>
-                        <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="6489343236075023650">
-                          <link role="baseMethodDeclaration" targetNodeId="3.~EditorCell.getParent():jetbrains.mps.nodeEditor.cells.EditorCell_Collection" resolveInfo="getParent" />
-                        </node>
-                      </node>
-                      <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="6489343236075024140">
-                        <link role="baseMethodDeclaration" targetNodeId="3.~EditorCell_Basic.getSNode():jetbrains.mps.smodel.SNode" resolveInfo="getSNode" />
-                      </node>
-                    </node>
+                <node role="condition" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="5781946779619821898">
+                  <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="5781946779619821899">
+                    <link role="variableDeclaration" targetNodeId="1227886869129" resolveInfo="selectedCell" />
                   </node>
-                  <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.NotEqualsExpression" id="6489343236075023638">
-                    <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="6489343236075023294">
-                      <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="6489343236075023293">
-                        <link role="variableDeclaration" targetNodeId="1227886869129" resolveInfo="selectedCell" />
-                      </node>
-                      <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="6489343236075023637">
-                        <link role="baseMethodDeclaration" targetNodeId="3.~EditorCell.getParent():jetbrains.mps.nodeEditor.cells.EditorCell_Collection" resolveInfo="getParent" />
-                      </node>
-                    </node>
-                    <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="6489343236075023641" />
+                  <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="5781946779619821900">
+                    <link role="baseMethodDeclaration" targetNodeId="3.~EditorCell.isSingleNodeCell():boolean" resolveInfo="isSingleNodeCell" />
                   </node>
                 </node>
               </node>
