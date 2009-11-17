@@ -91,17 +91,7 @@ public class EditorManager {
     }
     return result;
   }
-
-  //creating a cell for attributed property
-  public EditorCell createPropertyAttributeCell(EditorContext context, SNode propertyAttribute, EditorCell propertyCell) {
-    return createRoleAttributeCell(context, propertyAttribute, PropertyAttributeConcept.class, propertyCell);
-  }
-
-  //creating a cell for attributed link
-  public EditorCell createLinkAttributeCell(EditorContext context, SNode linkAttribute, EditorCell refCell) {
-    return createRoleAttributeCell(context, linkAttribute, LinkAttributeConcept.class, refCell);
-  }
-
+  
   public EditorCell getCurrentAttributedPropertyCell() {
     return getCurrentAttributedCellWithRole(PropertyAttributeConcept.class);
   }
@@ -116,7 +106,13 @@ public class EditorManager {
 
   // use parameter attributeClass carefully, it is a "kind" of an attribute rather than an exact class of an attribute
   public EditorCell createRoleAttributeCell(EditorContext context, SNode roleAttribute, Class attributeClass, EditorCell cellWithRole) {
-    return context.createRoleAttributeCell(attributeClass, cellWithRole, roleAttribute);
+    // TODO: Make processing of style attributes more generic.
+    EditorCell attributeCell = context.createRoleAttributeCell(attributeClass, cellWithRole, roleAttribute);
+    if (cellWithRole.getStyle().get(StyleAttributes.INDENT_LAYOUT_NEW_LINE)) {
+      attributeCell.getStyle().set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
+    }
+    
+    return attributeCell;
   }
 
   /*package*/ EditorCell doCreateRoleAttributeCell(Class attributeClass, EditorCell cellWithRole, EditorContext context, SNode roleAttribute) {
@@ -133,12 +129,7 @@ public class EditorManager {
   }
 
   public EditorCell createNodeAttributeCell(EditorContext context, SNode attribute, EditorCell nodeCell) {
-    // TODO: Make processing of style attributes more generic.
-    EditorCell attributeCell = createRoleAttributeCell(context, attribute, AttributeConcept.class, nodeCell);
-    if (nodeCell.getStyle().get(StyleAttributes.INDENT_LAYOUT_NEW_LINE)) {
-      attributeCell.getStyle().set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
-    }
-    return attributeCell;
+    return createRoleAttributeCell(context, attribute, AttributeConcept.class, nodeCell);
   }
 
   public EditorCell getCurrentAttributedCellWithRole(Class attributeClass) {
