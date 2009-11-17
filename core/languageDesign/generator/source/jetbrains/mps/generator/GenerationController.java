@@ -439,7 +439,9 @@ public class GenerationController {
     private long myStartTime;
     private long myStartJobTime;
     private long myTotalJob;
-    private volatile boolean myIsDisposed;
+
+    private final Object myDisposeSync = new Object();
+    private boolean myIsDisposed = false;
 
     public TaskProgressHelper(GenerationController generationController) {
       myGenerationController = generationController;
@@ -457,13 +459,15 @@ public class GenerationController {
     }
 
     private void clear() {
-      myIsDisposed = true;
-      myTimer = null;
-      myTaskName = null;
-      myProgress = null;
-      myStartTime = 0;
-      myStartJobTime = 0;
-      myTotalJob = 0;
+      synchronized (myDisposeSync) {
+        myIsDisposed = true;
+        myTimer = null;
+        myTaskName = null;
+        myProgress = null;
+        myStartTime = 0;
+        myStartJobTime = 0;
+        myTotalJob = 0;
+      }
     }
 
     public void startLeafTask(String taskName, ProgressIndicator progressIndicator, long totalJob, long startJobTime) {
@@ -471,7 +475,6 @@ public class GenerationController {
       myProgress = progressIndicator;
       myTotalJob = totalJob;
       myStartJobTime = startJobTime;
-      myIsDisposed = false;
 
       final long estimatedTime = TaskProgressSettings.getInstance().getEstimatedTimeMillis(taskName);
       myStartTime = System.currentTimeMillis();
@@ -481,17 +484,19 @@ public class GenerationController {
         boolean myIndeterminate = false;
 
         public void actionPerformed(ActionEvent e) {
-          if (myIsDisposed) return;
+          synchronized (myDisposeSync) {
+            if (myIsDisposed) return;
 
-          myMillis += TIMER_DELAY;
-          if (myMillis > estimatedTime) {
-            myMillis = estimatedTime;
-            myIndeterminate = true;
-            advance(myTotalJob, (myStartTime - myStartJobTime) + myMillis);
-            myProgress.setIndeterminate(true);
-          }
-          if (!myIndeterminate) {
-            advance(myTotalJob, (myStartTime - myStartJobTime) + myMillis);
+            myMillis += TIMER_DELAY;
+            if (myMillis > estimatedTime) {
+              myMillis = estimatedTime;
+              myIndeterminate = true;
+              advance(myTotalJob, (myStartTime - myStartJobTime) + myMillis);
+              myProgress.setIndeterminate(true);
+            }
+            if (!myIndeterminate) {
+              advance(myTotalJob, (myStartTime - myStartJobTime) + myMillis);
+            }
           }
         }
       });
