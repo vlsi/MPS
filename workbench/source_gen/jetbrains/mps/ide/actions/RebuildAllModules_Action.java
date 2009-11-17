@@ -14,6 +14,7 @@ import java.util.Set;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.LinkedHashSet;
+import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import com.intellij.openapi.progress.ProgressManager;
 
@@ -59,7 +60,12 @@ public class RebuildAllModules_Action extends GeneratedAction {
 
   public void doExecute(@NotNull final AnActionEvent event) {
     try {
-      Set<IModule> modules = SetSequence.fromSetWithValues(new LinkedHashSet<IModule>(), MPSModuleRepository.getInstance().getAllModules());
+      final Set<IModule> modules = SetSequence.fromSet(new LinkedHashSet<IModule>());
+      ModelAccess.instance().runReadAction(new Runnable() {
+        public void run() {
+          SetSequence.fromSet(modules).addSequence(SetSequence.fromSet(SetSequence.fromSetWithValues(new LinkedHashSet<IModule>(), MPSModuleRepository.getInstance().getAllModules())));
+        }
+      });
       ProgressManager.getInstance().run(new DefaultMakeTask(RebuildAllModules_Action.this.project, "Rebuilding", modules, true));
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
