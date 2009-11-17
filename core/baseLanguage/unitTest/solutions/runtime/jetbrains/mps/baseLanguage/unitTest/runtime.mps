@@ -404,7 +404,7 @@
                       <link role="variableDeclaration" targetNodeId="3.~System.err" resolveInfo="err" />
                     </node>
                     <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="3402001546485225047">
-                      <link role="baseMethodDeclaration" targetNodeId="4.~PrintStream.print(java.lang.String):void" resolveInfo="print" />
+                      <link role="baseMethodDeclaration" targetNodeId="4.~PrintStream.println(java.lang.String):void" resolveInfo="println" />
                       <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="3402001546485225048">
                         <property name="value" value="Can't run. Test is Null" />
                       </node>
@@ -429,7 +429,7 @@
                       <link role="variableDeclaration" targetNodeId="3.~System.err" resolveInfo="err" />
                     </node>
                     <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="4098745120222609998">
-                      <link role="baseMethodDeclaration" targetNodeId="4.~PrintStream.print(java.lang.String):void" resolveInfo="print" />
+                      <link role="baseMethodDeclaration" targetNodeId="4.~PrintStream.println(java.lang.String):void" resolveInfo="println" />
                       <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="4098745120222610000">
                         <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="4098745120222610015">
                           <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="4098745120222610006">

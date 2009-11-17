@@ -42,11 +42,11 @@ public class TestRunner extends BaseTestRunner {
     testResult.addListener(new MyTestListener(out, err));
     for (Test test : ListSequence.fromList(tests)) {
       if (test == null) {
-        System.err.print("Can't run. Test is Null");
+        System.err.println("Can't run. Test is Null");
         continue;
       }
       if (test.countTestCases() == 0) {
-        System.err.print("No tests found in " + test.getClass().getName());
+        System.err.println("No tests found in " + test.getClass().getName());
         continue;
       }
       test.run(testResult);
