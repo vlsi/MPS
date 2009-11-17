@@ -389,7 +389,7 @@ public class QueriesGenerated {
             SNodeOperations.replaceWithAnother(_context.getSourceNode(), result);
             SLinkOperations.setTarget(result, "left", _context.getSourceNode(), true);
             SLinkOperations.setTarget(result, "right", newRegexp, true);
-            return result;
+            return newRegexp;
           }
 
           public SNode getOutputConcept() {
@@ -570,6 +570,24 @@ public class QueriesGenerated {
           }
         });
       }
+    }
+    {
+      SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.regexp.structure.ParensRegexp");
+      ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(concept, _context.getSourceNode()) {
+        public SNode doSubstitute(String pattern) {
+          SNode pr = SNodeOperations.replaceWithNewChild(_context.getSourceNode(), "jetbrains.mps.baseLanguage.regexp.structure.ParensRegexp");
+          SLinkOperations.setTarget(pr, "expr", _context.getSourceNode(), true);
+          return pr;
+        }
+
+        public String getMatchingText(String pattern) {
+          return ")";
+        }
+
+        public String getVisibleMatchingText(String pattern) {
+          return this.getMatchingText(pattern);
+        }
+      });
     }
     return result;
   }

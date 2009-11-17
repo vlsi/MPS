@@ -65,6 +65,7 @@ public class FromNToMTimesRegexp_Editor extends DefaultNodeEditor {
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.PUNCTUATION_LEFT, true);
+      style.set(StyleAttributes.PUNCTUATION_RIGHT, true);
     }
     editorCell.setDefaultText("");
     return editorCell;
