@@ -142,11 +142,13 @@ public class KeyMapUtil {
                                                                                          EditorContext editorContext,
                                                                                          List<Pair<EditorCellKeyMap, EditorCell>> keymapsAndCells) {
     // choose appropriate actions from keymaps
-    int caretPosition = getCaretPositionCode(selectedCell);
+
     List<Pair<EditorCellKeyMapAction, EditorCell>> actionsAndCells = new LinkedList<Pair<EditorCellKeyMapAction, EditorCell>>();
     for (Pair<EditorCellKeyMap, EditorCell> keymapAndCell : keymapsAndCells) {
       EditorCellKeyMap keymap = keymapAndCell.o1;
       EditorCell keymapOwnerCell = keymapAndCell.o2;
+
+      int caretPosition = getCaretPositionCode(selectedCell, keymapOwnerCell);
 
       List<EditorCellKeyMapAction> actions = keymap.getActions(keyEvent);
       for (EditorCellKeyMapAction action : actions) {
@@ -160,6 +162,7 @@ public class KeyMapUtil {
     return actionsAndCells;
   }
 
+  @Deprecated
   private static int getCaretPositionCode(EditorCell selectedCell) {
     int actualCaretPosition = EditorCellKeyMapAction.CARET_AT_ANY_POSITION;
     if (selectedCell instanceof EditorCell_Label) {
@@ -167,6 +170,21 @@ public class KeyMapUtil {
       if (isStrictlyFirstCaretPosition(label)) {
         actualCaretPosition = EditorCellKeyMapAction.CARET_AT_FIRST_POSITION;
       } else if (isStrictlyLastCaretPosition(label)) {
+        actualCaretPosition = EditorCellKeyMapAction.CARET_AT_LAST_POSITION;
+      } else {
+        actualCaretPosition = EditorCellKeyMapAction.CARET_AT_INTERMEDIATE_POSITION;
+      }
+    }
+    return actualCaretPosition;
+  }
+
+  private static int getCaretPositionCode(EditorCell selectedCell, EditorCell keyMapCell) {
+    int actualCaretPosition = EditorCellKeyMapAction.CARET_AT_ANY_POSITION;
+    if (selectedCell instanceof EditorCell_Label) {
+      EditorCell_Label label = (EditorCell_Label) selectedCell;
+      if (isStrictlyFirstCaretPosition(label) && keyMapCell.getFirstLeaf() == selectedCell) {
+        actualCaretPosition = EditorCellKeyMapAction.CARET_AT_FIRST_POSITION;
+      } else if (isStrictlyLastCaretPosition(label) && keyMapCell.getLastLeaf() == selectedCell) {
         actualCaretPosition = EditorCellKeyMapAction.CARET_AT_LAST_POSITION;
       } else {
         actualCaretPosition = EditorCellKeyMapAction.CARET_AT_INTERMEDIATE_POSITION;
@@ -231,11 +249,12 @@ public class KeyMapUtil {
     }
 
     // choose appropriate actions from keymaps
-    int caretPosition = getCaretPositionCode(selectedCell);
     List<Pair<EditorCellKeyMapAction, ActionKey>> result = new LinkedList<Pair<EditorCellKeyMapAction, ActionKey>>();
     for (Pair<EditorCellKeyMap, EditorCell> keymapAndCell : keymapsAndCells) {
       EditorCellKeyMap keymap = keymapAndCell.o1;
       EditorCell keymapOwnerCell = keymapAndCell.o2;
+
+      int caretPosition = getCaretPositionCode(selectedCell, keymapOwnerCell);
 
       List<Pair<EditorCellKeyMapAction, ActionKey>> actionsAndKeys = keymap.getAllActionsAndKeys();
       for (Pair<EditorCellKeyMapAction, ActionKey> actionAndKey : actionsAndKeys) {
