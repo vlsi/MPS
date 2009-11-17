@@ -12,7 +12,7 @@ import java.util.Collection;
 import java.util.NoSuchElementException;
 
 public class TFloatArrayListDecorator extends AbstractList<Float> implements List<Float>, Serializable {
-  private static final long serialVersionUID = 0L - 2243271180253209272L;
+  private static final long serialVersionUID = -2243271180253209272L;
 
   private TFloatArrayList primList;
 

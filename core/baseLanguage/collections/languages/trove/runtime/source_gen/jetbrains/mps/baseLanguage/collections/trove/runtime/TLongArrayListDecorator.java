@@ -12,7 +12,7 @@ import java.util.Collection;
 import java.util.NoSuchElementException;
 
 public class TLongArrayListDecorator extends AbstractList<Long> implements List<Long>, Serializable {
-  private static final long serialVersionUID = 0L - 3396176387555572481L;
+  private static final long serialVersionUID = -3396176387555572481L;
 
   private TLongArrayList primList;
 

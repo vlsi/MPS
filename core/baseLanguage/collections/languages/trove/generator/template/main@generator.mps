@@ -55,15 +55,10 @@
       <property name="name" value="serialVersionUID" />
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PrivateVisibility" id="4737294400113452209" />
       <node role="type" type="jetbrains.mps.baseLanguage.structure.LongType" id="4737294400113452238" />
-      <node role="initializer" type="jetbrains.mps.baseLanguage.structure.MinusExpression" id="4737294400113452243">
-        <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.LongLiteral" id="4737294400113452247">
-          <property name="value" value="0L" />
-          <node role="nodeMacro$attribute" type="jetbrains.mps.lang.generator.structure.SwitchMacro" id="4737294400113452250">
-            <link role="templateSwitch" targetNodeId="4737294400113444012" resolveInfo="primType_to_serialVersionUID" />
-          </node>
-        </node>
-        <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.LongLiteral" id="4737294400113452248">
-          <property name="value" value="0L" />
+      <node role="initializer" type="jetbrains.mps.baseLanguage.structure.LongLiteral" id="4737294400113452247">
+        <property name="value" value="0L" />
+        <node role="nodeMacro$attribute" type="jetbrains.mps.lang.generator.structure.SwitchMacro" id="4737294400113452250">
+          <link role="templateSwitch" targetNodeId="4737294400113444012" resolveInfo="primType_to_serialVersionUID" />
         </node>
       </node>
     </node>
@@ -2282,7 +2277,7 @@
       <link role="applicableConcept" targetNodeId="2v.1070534604311" resolveInfo="ByteType" />
       <node role="ruleConsequence" type="jetbrains.mps.lang.generator.structure.InlineTemplate_RuleConsequence" id="4737294400113444114">
         <node role="templateNode" type="jetbrains.mps.baseLanguage.structure.LongLiteral" id="4737294400113452170">
-          <property name="value" value="2994287303793904190L" />
+          <property name="value" value="-2994287303793904190L" />
         </node>
       </node>
     </node>
@@ -2290,7 +2285,7 @@
       <link role="applicableConcept" targetNodeId="2v.1070534513062" resolveInfo="DoubleType" />
       <node role="ruleConsequence" type="jetbrains.mps.lang.generator.structure.InlineTemplate_RuleConsequence" id="4737294400113452172">
         <node role="templateNode" type="jetbrains.mps.baseLanguage.structure.LongLiteral" id="4737294400113452173">
-          <property name="value" value="4675825719645399432L" />
+          <property name="value" value="-4675825719645399432L" />
         </node>
       </node>
     </node>
@@ -2298,7 +2293,7 @@
       <link role="applicableConcept" targetNodeId="2v.1070534436861" resolveInfo="FloatType" />
       <node role="ruleConsequence" type="jetbrains.mps.lang.generator.structure.InlineTemplate_RuleConsequence" id="4737294400113452175">
         <node role="templateNode" type="jetbrains.mps.baseLanguage.structure.LongLiteral" id="4737294400113452176">
-          <property name="value" value="2243271180253209272L" />
+          <property name="value" value="-2243271180253209272L" />
         </node>
       </node>
     </node>
@@ -2306,7 +2301,7 @@
       <link role="applicableConcept" targetNodeId="2v.1070534370425" resolveInfo="IntegerType" />
       <node role="ruleConsequence" type="jetbrains.mps.lang.generator.structure.InlineTemplate_RuleConsequence" id="4737294400113452178">
         <node role="templateNode" type="jetbrains.mps.baseLanguage.structure.LongLiteral" id="4737294400113452179">
-          <property name="value" value="2501998260531327522L" />
+          <property name="value" value="-2501998260531327522L" />
         </node>
       </node>
     </node>
@@ -2314,7 +2309,7 @@
       <link role="applicableConcept" targetNodeId="2v.1068581242867" resolveInfo="LongType" />
       <node role="ruleConsequence" type="jetbrains.mps.lang.generator.structure.InlineTemplate_RuleConsequence" id="4737294400113452181">
         <node role="templateNode" type="jetbrains.mps.baseLanguage.structure.LongLiteral" id="4737294400113452182">
-          <property name="value" value="3396176387555572481L" />
+          <property name="value" value="-3396176387555572481L" />
         </node>
       </node>
     </node>
@@ -2322,7 +2317,7 @@
       <link role="applicableConcept" targetNodeId="2v.1070533982221" resolveInfo="ShortType" />
       <node role="ruleConsequence" type="jetbrains.mps.lang.generator.structure.InlineTemplate_RuleConsequence" id="4737294400113452184">
         <node role="templateNode" type="jetbrains.mps.baseLanguage.structure.LongLiteral" id="4737294400113452185">
-          <property name="value" value="6388370221310077367L" />
+          <property name="value" value="-6388370221310077367L" />
         </node>
       </node>
     </node>

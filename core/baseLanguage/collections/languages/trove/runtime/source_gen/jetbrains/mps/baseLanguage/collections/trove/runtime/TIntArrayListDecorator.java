@@ -12,7 +12,7 @@ import java.util.Collection;
 import java.util.NoSuchElementException;
 
 public class TIntArrayListDecorator extends AbstractList<Integer> implements List<Integer>, Serializable {
-  private static final long serialVersionUID = 0L - 2501998260531327522L;
+  private static final long serialVersionUID = -2501998260531327522L;
 
   private TIntArrayList primList;
 
