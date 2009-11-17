@@ -226,6 +226,7 @@ public class ChildSubstituteActionsHelper {
     List<INodeSubstituteAction> actions = new ArrayList<INodeSubstituteAction>();
     for (String fqName : concepts) {
       ConceptDeclaration applicableConcept = (ConceptDeclaration) SModelUtil_new.findConceptDeclaration(fqName, scope);
+      assert applicableConcept != null : "No concept " + fqName;
       actions.addAll(createDefaultActions(applicableConcept, parentNode, currentChild, childSetter, context));
     }
 
