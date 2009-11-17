@@ -20229,7 +20229,7 @@
                 <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="304171431353092821">
                   <link role="baseMethodDeclaration" targetNodeId="4.~String.replaceFirst(java.lang.String,java.lang.String):java.lang.String" resolveInfo="replaceFirst" />
                   <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="304171431353092822">
-                    <property name="value" value="-?(\\d+)(l|L)" />
+                    <property name="value" value="(-?\\d+)(l|L)" />
                   </node>
                   <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="304171431353092823">
                     <property name="value" value="$1" />

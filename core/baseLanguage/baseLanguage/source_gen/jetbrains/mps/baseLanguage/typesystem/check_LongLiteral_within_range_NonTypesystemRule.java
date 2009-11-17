@@ -19,7 +19,7 @@ public class check_LongLiteral_within_range_NonTypesystemRule extends AbstractNo
 
   public void applyRule(final SNode longLiteral, final TypeCheckingContext typeCheckingContext) {
     try {
-      Long.parseLong(SPropertyOperations.getString(longLiteral, "value").replaceFirst("-?(\\d+)(l|L)", "$1"));
+      Long.parseLong(SPropertyOperations.getString(longLiteral, "value").replaceFirst("(-?\\d+)(l|L)", "$1"));
     } catch (NumberFormatException e) {
       if (!(false)) {
         BaseIntentionProvider intentionProvider = null;
