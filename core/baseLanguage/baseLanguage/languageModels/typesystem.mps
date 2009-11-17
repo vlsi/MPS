@@ -20208,5 +20208,64 @@
       </node>
     </node>
   </node>
+  <node type="jetbrains.mps.lang.typesystem.structure.NonTypesystemRule" id="7411612096156021729">
+    <property name="name" value="check_LongLiteral_within_range" />
+    <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="7411612096156021730">
+      <node role="statement" type="jetbrains.mps.baseLanguage.structure.TryCatchStatement" id="7411612096156022226">
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="7411612096156022227">
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="7411612096156022232">
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="7411612096156022234">
+              <link role="classConcept" targetNodeId="4.~Long" resolveInfo="Long" />
+              <link role="baseMethodDeclaration" targetNodeId="4.~Long.parseLong(java.lang.String):long" resolveInfo="parseLong" />
+              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="304171431353092817">
+                <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="304171431353092818">
+                  <node role="operand" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference" id="304171431353092819">
+                    <link role="applicableNode" targetNodeId="7411612096156021732" resolveInfo="longLiteral" />
+                  </node>
+                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="304171431353092820">
+                    <link role="property" targetNodeId="1.4269842503726207157" resolveInfo="value" />
+                  </node>
+                </node>
+                <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="304171431353092821">
+                  <link role="baseMethodDeclaration" targetNodeId="4.~String.replaceFirst(java.lang.String,java.lang.String):java.lang.String" resolveInfo="replaceFirst" />
+                  <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="304171431353092822">
+                    <property name="value" value="-?(\\d+)(l|L)" />
+                  </node>
+                  <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="304171431353092823">
+                    <property name="value" value="$1" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="catchClause" type="jetbrains.mps.baseLanguage.structure.CatchClause" id="7411612096156022228">
+          <node role="throwable" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="7411612096156022229">
+            <property name="name" value="e" />
+            <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="7411612096156022241">
+              <link role="classifier" targetNodeId="4.~NumberFormatException" resolveInfo="NumberFormatException" />
+            </node>
+          </node>
+          <node role="catchBody" type="jetbrains.mps.baseLanguage.structure.StatementList" id="7411612096156022231">
+            <node role="statement" type="jetbrains.mps.lang.typesystem.structure.AssertStatement" id="7411612096156022242">
+              <node role="condition" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="7411612096156022246">
+                <property name="value" value="false" />
+              </node>
+              <node role="errorString" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="7411612096156022247">
+                <property name="value" value="Value out of range" />
+              </node>
+              <node role="nodeToReport" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference" id="7411612096156022248">
+                <link role="applicableNode" targetNodeId="7411612096156021732" resolveInfo="longLiteral" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="applicableNode" type="jetbrains.mps.lang.typesystem.structure.ConceptReference" id="7411612096156021732">
+      <property name="name" value="longLiteral" />
+      <link role="concept" targetNodeId="1.4269842503726207156" resolveInfo="LongLiteral" />
+    </node>
+  </node>
 </model>
 

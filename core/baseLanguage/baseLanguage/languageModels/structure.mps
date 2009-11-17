@@ -3415,7 +3415,7 @@
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConstrainedDataTypeDeclaration" id="4269842503726207818">
     <property name="name" value="_LongType_String" />
-    <property name="constraint" value="[0-9]+(l|L)" />
+    <property name="constraint" value="-?[0-9]+(l|L)" />
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="5279705229678483897">
     <property name="name" value="FloatingPointFloatConstant" />
