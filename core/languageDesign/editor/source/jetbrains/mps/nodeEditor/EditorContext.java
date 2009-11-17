@@ -293,10 +293,12 @@ public class EditorContext {
   }
 
   public EditorCell createRoleAttributeCell(Class attributeClass, EditorCell cellWithRole, SNode roleAttribute) {
+    /*    
     if (myCurrentRefNodeContext != null) {
       if (attributeClass != jetbrains.mps.lang.annotations.structure.LinkAttributeConcept.class && myCurrentRefNodeContext.hasRoles())
         return cellWithRole;
     }
+    */
     return myOperationContext.getComponent(EditorManager.class).doCreateRoleAttributeCell(attributeClass, cellWithRole, this, roleAttribute);
   }
 
