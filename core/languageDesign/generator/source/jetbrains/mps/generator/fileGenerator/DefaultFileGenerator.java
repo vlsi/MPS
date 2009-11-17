@@ -42,10 +42,12 @@ public class DefaultFileGenerator implements IFileGenerator {
 
     File outputDir = FileGenerationUtil.getDefaultOutputDir(inputModel, outputRootDir);
     String extension = TextGenManager.instance().getExtension(outputRootNode);
-    if (extension == null) {
+    String filename = (extension == null)? outputRootNode.getName() : outputRootNode.getName() + "." + extension;
+    if (filename == null) {
       return null;
     }
-    File file = new File(outputDir, outputRootNode.getName() + "." + extension);
+
+    File file = new File(outputDir, filename);
 
     if (!file.getParentFile().exists()) {
       file.getParentFile().mkdirs();
