@@ -17,11 +17,6 @@ import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.LinkedHashSet;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import com.intellij.openapi.progress.ProgressManager;
-import com.intellij.openapi.progress.Task;
-import com.intellij.openapi.progress.ProgressIndicator;
-import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.make.ModuleMaker;
-import jetbrains.mps.reloading.ClassLoaderManager;
 
 public class MakeProject_Action extends GeneratedAction {
   private static final Icon ICON = null;
@@ -70,20 +65,11 @@ public class MakeProject_Action extends GeneratedAction {
 
   public void doExecute(@NotNull final AnActionEvent event) {
     try {
-      final Set<IModule> modules = SetSequence.fromSet(new LinkedHashSet<IModule>());
+      Set<IModule> modules = SetSequence.fromSet(new LinkedHashSet<IModule>());
       SetSequence.fromSet(modules).addSequence(ListSequence.fromList(MakeProject_Action.this.project.getProjectSolutions()));
       SetSequence.fromSet(modules).addSequence(ListSequence.fromList(MakeProject_Action.this.project.getProjectLanguages()));
       SetSequence.fromSet(modules).addSequence(ListSequence.fromList(MakeProject_Action.this.project.getProjectDevKits()));
-      ProgressManager.getInstance().run(new Task.Modal(MakeProject_Action.this.ideaProject, "Making", true) {
-        public void run(@NotNull final ProgressIndicator indicator) {
-          ModelAccess.instance().runReadAction(new Runnable() {
-            public void run() {
-              new ModuleMaker().make(modules, indicator);
-              ClassLoaderManager.getInstance().reloadAll(indicator);
-            }
-          });
-        }
-      });
+      ProgressManager.getInstance().run(new DefaultMakeTask(MakeProject_Action.this.ideaProject, "Making", modules, false));
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
         log.error("User's action execute method failed. Action:" + "MakeProject", t);

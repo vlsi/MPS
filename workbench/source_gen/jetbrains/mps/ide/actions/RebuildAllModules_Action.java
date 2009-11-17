@@ -10,17 +10,12 @@ import com.intellij.openapi.project.Project;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import jetbrains.mps.workbench.MPSDataKeys;
-import com.intellij.openapi.progress.ProgressManager;
-import com.intellij.openapi.progress.Task;
-import com.intellij.openapi.progress.ProgressIndicator;
-import jetbrains.mps.smodel.ModelAccess;
 import java.util.Set;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.LinkedHashSet;
 import jetbrains.mps.smodel.MPSModuleRepository;
-import jetbrains.mps.make.ModuleMaker;
-import jetbrains.mps.reloading.ClassLoaderManager;
+import com.intellij.openapi.progress.ProgressManager;
 
 public class RebuildAllModules_Action extends GeneratedAction {
   private static final Icon ICON = null;
@@ -64,19 +59,8 @@ public class RebuildAllModules_Action extends GeneratedAction {
 
   public void doExecute(@NotNull final AnActionEvent event) {
     try {
-      ProgressManager.getInstance().run(new Task.Modal(RebuildAllModules_Action.this.project, "Rebuilding", true) {
-        public void run(@NotNull final ProgressIndicator indicator) {
-          ModelAccess.instance().runReadAction(new Runnable() {
-            public void run() {
-              Set<IModule> modules = SetSequence.fromSetWithValues(new LinkedHashSet<IModule>(), MPSModuleRepository.getInstance().getAllModules());
-              ModuleMaker maker = new ModuleMaker();
-              maker.clean(modules, indicator);
-              maker.make(modules, indicator);
-              ClassLoaderManager.getInstance().reloadAll(indicator);
-            }
-          });
-        }
-      });
+      Set<IModule> modules = SetSequence.fromSetWithValues(new LinkedHashSet<IModule>(), MPSModuleRepository.getInstance().getAllModules());
+      ProgressManager.getInstance().run(new DefaultMakeTask(RebuildAllModules_Action.this.project, "Rebuilding", modules, true));
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
         log.error("User's action execute method failed. Action:" + "RebuildAllModules", t);

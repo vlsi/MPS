@@ -11,14 +11,9 @@ import jetbrains.mps.project.IModule;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import jetbrains.mps.workbench.MPSDataKeys;
-import com.intellij.openapi.progress.ProgressManager;
-import com.intellij.openapi.progress.Task;
-import com.intellij.openapi.progress.ProgressIndicator;
-import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.make.ModuleMaker;
-import jetbrains.mps.plugin.CompilationResult;
+import java.util.Set;
 import jetbrains.mps.util.CollectionUtil;
-import jetbrains.mps.reloading.ClassLoaderManager;
+import com.intellij.openapi.progress.ProgressManager;
 
 public class MakeModule_Action extends GeneratedAction {
   private static final Icon ICON = null;
@@ -74,19 +69,8 @@ public class MakeModule_Action extends GeneratedAction {
 
   public void doExecute(@NotNull final AnActionEvent event) {
     try {
-      ProgressManager.getInstance().run(new Task.Modal(MakeModule_Action.this.project, "Making...", true) {
-        public void run(@NotNull final ProgressIndicator indicator) {
-          ModelAccess.instance().runReadAction(new Runnable() {
-            public void run() {
-              ModuleMaker maker = new ModuleMaker();
-              CompilationResult r = maker.make(CollectionUtil.set(MakeModule_Action.this.module), indicator);
-              if (r.isReloadingNeeded()) {
-                ClassLoaderManager.getInstance().reloadAll(indicator);
-              }
-            }
-          });
-        }
-      });
+      Set<IModule> modules = CollectionUtil.set(MakeModule_Action.this.module);
+      ProgressManager.getInstance().run(new DefaultMakeTask(MakeModule_Action.this.project, "Making", modules, false));
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
         log.error("User's action execute method failed. Action:" + "MakeModule", t);
