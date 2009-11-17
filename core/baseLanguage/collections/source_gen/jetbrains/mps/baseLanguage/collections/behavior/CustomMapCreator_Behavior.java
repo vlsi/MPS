@@ -22,16 +22,17 @@ public class CustomMapCreator_Behavior {
       res.changeModel(AuxilaryRuntimeModel.getDescriptor().getSModel());
     }
     final List<SNode> params = ListSequence.fromList(new ArrayList<SNode>());
-    if ((SLinkOperations.getTarget(thisNode, "valueType", true) != null)) {
-      ListSequence.fromList(params).addElement(SLinkOperations.getTarget(thisNode, "valueType", true));
-    }
     if ((SLinkOperations.getTarget(thisNode, "keyType", true) != null)) {
       ListSequence.fromList(params).addElement(SLinkOperations.getTarget(thisNode, "keyType", true));
     }
+    if ((SLinkOperations.getTarget(thisNode, "valueType", true) != null)) {
+      ListSequence.fromList(params).addElement(SLinkOperations.getTarget(thisNode, "valueType", true));
+    }
+    final List<SNode> tvars = SLinkOperations.getTargets(SLinkOperations.getTarget(thisNode, "containerDeclaration", false), "typeVariableDeclaration", true);
     ListSequence.fromList(SNodeOperations.getChildren(res)).toListSequence().visitAll(new IVisitor<SNode>() {
       public void visit(SNode chld) {
         if (SNodeOperations.isInstanceOf(chld, "jetbrains.mps.baseLanguage.structure.TypeVariableReference")) {
-          SNodeOperations.replaceWithAnother(chld, SNodeOperations.copyNode(ListSequence.fromList(params).removeLastElement()));
+          SNodeOperations.replaceWithAnother(chld, SNodeOperations.copyNode(ListSequence.fromList(params).getElement(ListSequence.fromList(tvars).indexOf(SLinkOperations.getTarget(SNodeOperations.cast(chld, "jetbrains.mps.baseLanguage.structure.TypeVariableReference"), "typeVariableDeclaration", false)))));
         }
       }
     });

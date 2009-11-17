@@ -24,6 +24,7 @@ import java.util.Iterator;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.internal.collections.runtime.ArrayUtils;
 import jetbrains.mps.internal.collections.runtime.ISelector;
+import java.util.WeakHashMap;
 
 public class Map_Test extends Util_Test {
   public void test_initSize() throws Exception {
@@ -193,5 +194,23 @@ public class Map_Test extends Util_Test {
         return String.valueOf(c);
       }
     }), MapSequence.fromMap(mis).values());
+  }
+
+  public void test_weakHashMap() throws Exception {
+    Map<Object, Integer> moi = MapSequence.fromMap(new WeakHashMap<Object, Integer>());
+    Object o = new Object();
+    MapSequence.fromMap(moi).put(o, 1);
+    Assert.assertSame(1, MapSequence.fromMap(moi).count());
+    Assert.assertNotNull(o);
+    o = null;
+    System.gc();
+    System.gc();
+    try {
+      Thread.sleep(1000);
+    } catch (InterruptedException e) {
+    }
+    System.gc();
+    Assert.assertSame(0, MapSequence.fromMap(moi).count());
+
   }
 }

@@ -13,53 +13,54 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590283(jetbrains.mps.lang.core.constraints)" version="2" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902db(jetbrains.mps.baseLanguage.blTypes.constraints)" version="0" />
-  <maxImportIndex value="1" />
+  <maxImportIndex value="2" />
   <import index="1" modelUID="f:java_stub#java.util(java.util@java_stub)" version="-1" />
-  <node type="jetbrains.mps.baseLanguage.collections.structure.CustomContainers" id="6099516049394630678">
-    <property name="name" value="Sample" />
-    <node role="containerDeclaration" type="jetbrains.mps.baseLanguage.collections.structure.CustomContainerDeclaration" id="6099516049394747450">
-      <property name="name" value="myArrayList" />
-      <node role="containerType" type="jetbrains.mps.baseLanguage.collections.structure.ListType" id="6099516049395283769">
-        <node role="elementType" type="jetbrains.mps.baseLanguage.structure.TypeVariableReference" id="6099516049395283771">
-          <link role="typeVariableDeclaration" targetNodeId="6099516049395283766" resolveInfo="T" />
+  <import index="2" modelUID="f:java_stub#jetbrains.mps.util(jetbrains.mps.util@java_stub)" version="-1" />
+  <node type="jetbrains.mps.baseLanguage.collections.structure.CustomContainers" id="4498918741262375223">
+    <property name="name" value="WeakCollections" />
+    <node role="containerDeclaration" type="jetbrains.mps.baseLanguage.collections.structure.CustomContainerDeclaration" id="4498918741262375224">
+      <property name="name" value="weakHashMap" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="4498918741262375225" />
+      <node role="containerType" type="jetbrains.mps.baseLanguage.collections.structure.MapType" id="4498918741262375228">
+        <node role="valueType" type="jetbrains.mps.baseLanguage.structure.TypeVariableReference" id="4498918741262375234">
+          <link role="typeVariableDeclaration" targetNodeId="4498918741262375232" resolveInfo="V" />
+        </node>
+        <node role="keyType" type="jetbrains.mps.baseLanguage.structure.TypeVariableReference" id="4498918741262375233">
+          <link role="typeVariableDeclaration" targetNodeId="4498918741262375231" resolveInfo="K" />
         </node>
       </node>
-      <node role="runtimeType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="6099516049395283772">
-        <link role="classifier" targetNodeId="1.~ArrayList" resolveInfo="ArrayList" />
-        <node role="parameter" type="jetbrains.mps.baseLanguage.structure.TypeVariableReference" id="6099516049395283774">
-          <link role="typeVariableDeclaration" targetNodeId="6099516049395283766" resolveInfo="T" />
+      <node role="runtimeType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="4498918741262375235">
+        <link role="classifier" targetNodeId="1.~WeakHashMap" resolveInfo="WeakHashMap" />
+        <node role="parameter" type="jetbrains.mps.baseLanguage.structure.TypeVariableReference" id="4498918741262381420">
+          <link role="typeVariableDeclaration" targetNodeId="4498918741262375231" resolveInfo="K" />
+        </node>
+        <node role="parameter" type="jetbrains.mps.baseLanguage.structure.TypeVariableReference" id="4498918741262381422">
+          <link role="typeVariableDeclaration" targetNodeId="4498918741262375232" resolveInfo="V" />
         </node>
       </node>
-      <node role="typeVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.TypeVariableDeclaration" id="6099516049395283766">
-        <property name="name" value="T" />
-      </node>
-      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="6099516049395283775" />
-    </node>
-    <node role="containerDeclaration" type="jetbrains.mps.baseLanguage.collections.structure.CustomContainerDeclaration" id="1576845966387098114">
-      <property name="name" value="myHashMap" />
-      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1576845966387098117" />
-      <node role="typeVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.TypeVariableDeclaration" id="1576845966387098121">
+      <node role="typeVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.TypeVariableDeclaration" id="4498918741262375231">
         <property name="name" value="K" />
       </node>
-      <node role="typeVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.TypeVariableDeclaration" id="1576845966387098122">
+      <node role="typeVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.TypeVariableDeclaration" id="4498918741262375232">
         <property name="name" value="V" />
       </node>
-      <node role="containerType" type="jetbrains.mps.baseLanguage.collections.structure.MapType" id="1576845966387098123">
-        <node role="keyType" type="jetbrains.mps.baseLanguage.structure.TypeVariableReference" id="1576845966387098126">
-          <link role="typeVariableDeclaration" targetNodeId="1576845966387098121" resolveInfo="K" />
-        </node>
-        <node role="valueType" type="jetbrains.mps.baseLanguage.structure.TypeVariableReference" id="1576845966387098127">
-          <link role="typeVariableDeclaration" targetNodeId="1576845966387098122" resolveInfo="V" />
+    </node>
+    <node role="containerDeclaration" type="jetbrains.mps.baseLanguage.collections.structure.CustomContainerDeclaration" id="4498918741262480972">
+      <property name="name" value="weakHashSet" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="4498918741262480973" />
+      <node role="containerType" type="jetbrains.mps.baseLanguage.collections.structure.SetType" id="4498918741262480976">
+        <node role="elementType" type="jetbrains.mps.baseLanguage.structure.TypeVariableReference" id="4498918741262480979">
+          <link role="typeVariableDeclaration" targetNodeId="4498918741262480978" resolveInfo="E" />
         </node>
       </node>
-      <node role="runtimeType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="9034802358628632226">
-        <link role="classifier" targetNodeId="1.~TreeMap" resolveInfo="TreeMap" />
-        <node role="parameter" type="jetbrains.mps.baseLanguage.structure.TypeVariableReference" id="9034802358628632228">
-          <link role="typeVariableDeclaration" targetNodeId="1576845966387098121" resolveInfo="K" />
+      <node role="runtimeType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="4498918741262482972">
+        <link role="classifier" targetNodeId="2.~WeakSet" resolveInfo="WeakSet" />
+        <node role="parameter" type="jetbrains.mps.baseLanguage.structure.TypeVariableReference" id="4498918741262482974">
+          <link role="typeVariableDeclaration" targetNodeId="4498918741262480978" resolveInfo="E" />
         </node>
-        <node role="parameter" type="jetbrains.mps.baseLanguage.structure.TypeVariableReference" id="9034802358628632230">
-          <link role="typeVariableDeclaration" targetNodeId="1576845966387098122" resolveInfo="V" />
-        </node>
+      </node>
+      <node role="typeVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.TypeVariableDeclaration" id="4498918741262480978">
+        <property name="name" value="E" />
       </node>
     </node>
   </node>

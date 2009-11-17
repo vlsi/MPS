@@ -17,6 +17,7 @@ import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.ArrayUtils;
 import java.util.Arrays;
 import org.apache.commons.lang.ObjectUtils;
+import jetbrains.mps.util.WeakSet;
 
 public class Set_Test extends Util_Test {
   public void test_initSize() throws Exception {
@@ -129,5 +130,22 @@ public class Set_Test extends Util_Test {
     Set<String> hs = SetSequence.fromSetAndArray(new HashSet<String>(), null);
     Assert.assertSame(1, SetSequence.fromSet(hs).count());
     Assert.assertTrue(SetSequence.fromSet(hs).contains(null));
+  }
+
+  public void test_weakSet() throws Exception {
+    Set<Object> ws = SetSequence.fromSet(new WeakSet<Object>());
+    Object o = new Object();
+    SetSequence.fromSet(ws).addElement(o);
+    Assert.assertSame(1, SetSequence.fromSet(ws).count());
+    Assert.assertNotNull(o);
+    o = null;
+    System.gc();
+    System.gc();
+    try {
+      Thread.sleep(1000);
+    } catch (InterruptedException e) {
+    }
+    System.gc();
+    Assert.assertTrue(SetSequence.fromSet(ws).isEmpty());
   }
 }

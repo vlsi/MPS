@@ -575,6 +575,26 @@
           </node>
         </node>
       </node>
+      <node role="testMethod" type="jetbrains.mps.baseLanguage.unitTest.structure.TestMethod" id="4498918741262483070">
+        <property name="methodName" value="aqwe" />
+        <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="4498918741262483071" />
+        <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="4498918741262483072" />
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="4498918741262483073">
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="4498918741262483746">
+            <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="4498918741262483747">
+              <property name="name" value="asd" />
+              <node role="type" type="jetbrains.mps.baseLanguage.collections.structure.SetType" id="4498918741262483748">
+                <node role="elementType" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="4498918741262483754" />
+              </node>
+              <node role="initializer" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="4498918741262484887">
+                <node role="creator" type="jetbrains.mps.baseLanguage.collections.structure.CustomContainerCreator" id="4498918741262484888">
+                  <link role="containerDeclaration" targetNodeId="2.1279588871815200341" resolveInfo="intHashSet" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
     </node>
     <node role="superclass" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="8269230326124799301">
       <link role="classifier" targetNodeId="1.1204129267857" resolveInfo="Util_Test" />

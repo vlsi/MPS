@@ -12,9 +12,9 @@ import java.util.Iterator;
 import jetbrains.mps.baseLanguage.closures.runtime.YieldingIterator;
 import jetbrains.mps.internal.collections.runtime.ISequenceClosure;
 import java.util.Arrays;
+import jetbrains.mps.internal.collections.runtime.ArrayUtils;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.internal.collections.runtime.ArrayUtils;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.IterableUtils;
@@ -289,7 +289,7 @@ __switch__:
 
   public void test_toOperations() throws Exception {
     Iterable<Integer> input = this.input5();
-    Assert.assertTrue(Arrays.equals(new Integer[]{1,2,3,4,5}, Sequence.fromIterable(input).toListSequence().toGenericArray(Integer.class)));
+    Assert.assertTrue(Arrays.equals(new int[]{1,2,3,4,5}, ArrayUtils.toIntArray(Sequence.fromIterable(input).toListSequence())));
     this.assertIterableEquals(this.expect5(), Sequence.fromIterable(input).toListSequence());
     Integer i = 1;
     for (Iterator<Integer> it = input.iterator(); it.hasNext(); i++) {
