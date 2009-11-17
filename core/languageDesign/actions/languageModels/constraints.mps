@@ -406,5 +406,55 @@
       </node>
     </node>
   </node>
+  <node type="jetbrains.mps.lang.constraints.structure.ConceptConstraints" id="1371735981988471172">
+    <property name="package" value="menuBuilderParts" />
+    <link role="concept" targetNodeId="1.1177333529597" resolveInfo="ConceptPart" />
+  </node>
+  <node type="jetbrains.mps.lang.constraints.structure.ConceptConstraints" id="1371735981988471173">
+    <property name="package" value="menuParts.RightTransform" />
+    <link role="concept" targetNodeId="1.1177496137779" resolveInfo="SideTransformMenuPart" />
+    <node role="canBeChild" type="jetbrains.mps.lang.constraints.structure.ConstraintFunction_CanBeAChild" id="1371735981988471174">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1371735981988471175">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1371735981988471176">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.NotEqualsExpression" id="1371735981988471187">
+            <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1371735981988471190" />
+            <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1371735981988471178">
+              <node role="operand" type="jetbrains.mps.lang.constraints.structure.ConstraintFunctionParameter_parentNode" id="1371735981988471177" />
+              <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_GetAncestorOperation" id="1371735981988471182">
+                <node role="parameter" type="jetbrains.mps.lang.smodel.structure.OperationParm_Concept" id="1371735981988471183">
+                  <node role="conceptArgument" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" id="1371735981988471186">
+                    <link role="conceptDeclaration" targetNodeId="1.1138079221458" resolveInfo="SideTransformHintSubstituteActionsBuilder" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.constraints.structure.ConceptConstraints" id="1371735981988685426">
+    <property name="package" value="menuParts.Substitute" />
+    <link role="concept" targetNodeId="1.1177323652379" resolveInfo="SubstituteMenuPart" />
+    <node role="canBeChild" type="jetbrains.mps.lang.constraints.structure.ConstraintFunction_CanBeAChild" id="1371735981988685427">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1371735981988685428">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1371735981988685430">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.NotEqualsExpression" id="1371735981988685431">
+            <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1371735981988685432" />
+            <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1371735981988685433">
+              <node role="operand" type="jetbrains.mps.lang.constraints.structure.ConstraintFunctionParameter_parentNode" id="1371735981988685434" />
+              <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_GetAncestorOperation" id="1371735981988685435">
+                <node role="parameter" type="jetbrains.mps.lang.smodel.structure.OperationParm_Concept" id="1371735981988685436">
+                  <node role="conceptArgument" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" id="1371735981988686005">
+                    <link role="conceptDeclaration" targetNodeId="1.1112058030570" resolveInfo="NodeSubstituteActionsBuilder" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
 </model>
 
