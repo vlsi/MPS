@@ -294,12 +294,12 @@ public class ClassifierTypeUtil {
       null
     );
     if ((cType == null)) {
-      SNode ctw = TypeChecker.getInstance().getRuntimeSupport().coerce_(type, HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.structure.ClassifierType"), true);
       SNode cts = TypeChecker.getInstance().getRuntimeSupport().coerce_(type, HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.structure.ClassifierType"), false);
-      cType = ((cts != null) ?
-        cts :
-        ctw
-      );
+      if ((cts != null)) {
+        cType = cts;
+      } else {
+        cType = TypeChecker.getInstance().getRuntimeSupport().coerce_(type, HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.structure.ClassifierType"), true);
+      }
     }
     return cType;
   }
