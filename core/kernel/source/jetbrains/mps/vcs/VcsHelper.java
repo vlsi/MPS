@@ -47,16 +47,12 @@ public class VcsHelper {
 
   public static boolean showDiskMemoryMerge(IFile modelFile, final SModel inMemory) {
     try {
-      File backupFile = null;
-      Application application = ApplicationManager.getApplication();
-      if (application.isUnitTestMode() || application.isHeadlessEnvironment()) {
-        backupFile = doBackup(modelFile, inMemory);
-      }
+      File backupFile = doBackup(modelFile, inMemory);
 
       String message = "Model " + inMemory + " has conflicting changes.\n" +
         "It was modified on disk and in memory at the same time.\n" +
         "Fear not, backup of both versions was created and saved to:\n" +
-        (backupFile == null ? "test_backup" : backupFile.getAbsolutePath()) + "\n" +
+        backupFile.getAbsolutePath() + "\n" +
         "Which version to use?";
       String title = "Model " + inMemory + " has conflicting changes.";
       String diskVersion = "Load Disk Version";
