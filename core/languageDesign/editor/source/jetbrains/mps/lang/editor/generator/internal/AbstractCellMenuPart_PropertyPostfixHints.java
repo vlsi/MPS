@@ -28,6 +28,7 @@ import jetbrains.mps.smodel.action.INodeSubstituteAction;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.ide.ChooseItemComponent;
 
+import javax.swing.Icon;
 import java.util.*;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -47,9 +48,7 @@ public abstract class AbstractCellMenuPart_PropertyPostfixHints implements Subst
     for (final String postfix : postfixes) {
       actions.add(new PostfixSubstituteAction(postfix, node, postfixGroup,
         propertySupport, property.getName(), context.getScope(), editorContext));
-    }
-    actions.add(new NoPostfixSubstituteAction(node, postfixGroup,
-      propertySupport, property.getName(), context.getScope(), editorContext));
+    }    
     return (List) actions;
   }
 
@@ -181,59 +180,6 @@ public abstract class AbstractCellMenuPart_PropertyPostfixHints implements Subst
       String propertyName = myPropertyName;
       assert propertyName != null;
       getSourceNode().setProperty(propertyName, myPostfixGroup.getMatchingText(pattern, myPostfix));
-
-      myEditorContext.flushEvents();
-
-      EditorCell editorCell = myEditorContext.getSelectedCell();
-      if (editorCell instanceof EditorCell_Label) {
-        ((EditorCell_Label) editorCell).end();
-      }
-
-      return null;
-    }
-  }
-
-  private static class NoPostfixSubstituteAction extends AbstractNodeSubstituteAction {
-    private final PostfixGroup myPostfixGroup;
-    private final PropertySupport myPropertySupport;
-    private final String myPropertyName;
-    private final IScope myScope;
-    private final EditorContext myEditorContext;
-
-    public NoPostfixSubstituteAction(SNode node, PostfixGroup postfixGroup, PropertySupport propertySupport, String propertyName, IScope scope, EditorContext editorContext) {
-      super(null, "", node);
-      myPostfixGroup = postfixGroup;
-      myPropertySupport = propertySupport;
-      myPropertyName = propertyName;
-      myScope = scope;
-      myEditorContext = editorContext;
-    }
-
-    @Override
-    public boolean canSubstituteStrictly(String pattern) {
-      return super.canSubstituteStrictly(pattern) && canSubstitute(pattern);
-    }
-
-    public boolean canSubstitute(String pattern) {
-      if (myPostfixGroup.isShowUnpostfixed(pattern)) {
-        return myPropertySupport.canSetValue(getSourceNode(), myPropertyName, pattern, myScope);
-      } else {
-        return false;
-      }
-    }
-
-    protected String getMatchingText(String pattern, boolean referent_presentation, boolean visible) {
-      return pattern;
-    }
-
-    public int getSortPriority(String pattern) {
-      return myPostfixGroup.isUnpostfixedFirst(pattern) ? -1 : 1;  
-    }
-
-    public SNode doSubstitute(String pattern) {
-      String propertyName = myPropertyName;
-      assert propertyName != null;
-      getSourceNode().setProperty(propertyName, pattern);
 
       myEditorContext.flushEvents();
 
