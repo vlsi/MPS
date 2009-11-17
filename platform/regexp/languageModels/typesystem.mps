@@ -305,8 +305,8 @@
             <node role="operand" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference" id="8330008649152998029">
               <link role="applicableNode" targetNodeId="8330008649152998004" resolveInfo="literal" />
             </node>
-            <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="8330008649152998034">
-              <link role="baseMethodDeclaration" targetNodeId="2v.8330008649152998005" resolveInfo="isCorrect" />
+            <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="4759120547781297325">
+              <link role="baseMethodDeclaration" targetNodeId="2v.4759120547781297301" resolveInfo="isValid" />
             </node>
           </node>
         </node>

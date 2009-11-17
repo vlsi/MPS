@@ -408,6 +408,68 @@
         </node>
       </node>
     </node>
+    <node role="regexp" type="jetbrains.mps.baseLanguage.regexp.structure.RegexpDeclaration" id="4759120547781122944">
+      <property name="name" value="qq" />
+      <node role="regexp" type="jetbrains.mps.baseLanguage.regexp.structure.SeqRegexp" id="4759120547781167972">
+        <node role="right" type="jetbrains.mps.baseLanguage.regexp.structure.SeqRegexp" id="4759120547781167978">
+          <node role="right" type="jetbrains.mps.baseLanguage.regexp.structure.SeqRegexp" id="4759120547781170025">
+            <node role="right" type="jetbrains.mps.baseLanguage.regexp.structure.SeqRegexp" id="4759120547781170084">
+              <node role="right" type="jetbrains.mps.baseLanguage.regexp.structure.FromNToMTimesRegexp" id="4759120547781170092">
+                <property name="m" value="2" />
+                <property name="n" value="1" />
+                <node role="regexp" type="jetbrains.mps.baseLanguage.regexp.structure.SeqRegexp" id="4759120547781170097">
+                  <node role="right" type="jetbrains.mps.baseLanguage.regexp.structure.SeqRegexp" id="4759120547781170112">
+                    <node role="left" type="jetbrains.mps.baseLanguage.regexp.structure.PredefinedSymbolClassRegexp" id="4759120547781170100">
+                      <link role="symbolClass" targetNodeId="2v.1174554674770" resolveInfo="\d" />
+                    </node>
+                    <node role="right" type="jetbrains.mps.baseLanguage.regexp.structure.PositiveSymbolClassRegexp" id="4759120547781170115">
+                      <node role="part" type="jetbrains.mps.baseLanguage.regexp.structure.IntervalSymbolClassPart" id="4759120547781170117">
+                        <property name="start" value="a" />
+                        <property name="end" value="z" />
+                      </node>
+                      <node role="part" type="jetbrains.mps.baseLanguage.regexp.structure.PredefinedSymbolClassSymbolClassPart" id="4759120547781170120">
+                        <link role="declaration" targetNodeId="2v.1174554674770" resolveInfo="\d" />
+                      </node>
+                      <node role="part" type="jetbrains.mps.baseLanguage.regexp.structure.PredefinedSymbolClassSymbolClassPart" id="4759120547781170122">
+                        <link role="declaration" targetNodeId="2v.3050481019132403217" resolveInfo="\\" />
+                      </node>
+                      <node role="part" type="jetbrains.mps.baseLanguage.regexp.structure.PredefinedSymbolClassSymbolClassPart" id="4759120547781170125">
+                        <link role="declaration" targetNodeId="2v.1174554710194" resolveInfo="\s" />
+                      </node>
+                    </node>
+                  </node>
+                  <node role="left" type="jetbrains.mps.baseLanguage.regexp.structure.StringLiteralRegexp" id="4759120547781295277">
+                    <property name="text" value="aaa\u0000" />
+                  </node>
+                </node>
+              </node>
+              <node role="left" type="jetbrains.mps.baseLanguage.regexp.structure.PlusRegexp" id="4759120547781170046">
+                <node role="regexp" type="jetbrains.mps.baseLanguage.regexp.structure.PredefinedSymbolClassRegexp" id="4759120547781170033">
+                  <link role="symbolClass" targetNodeId="2v.1174554738336" resolveInfo="\w" />
+                </node>
+              </node>
+            </node>
+            <node role="left" type="jetbrains.mps.baseLanguage.regexp.structure.PositiveSymbolClassRegexp" id="4759120547781167999">
+              <node role="part" type="jetbrains.mps.baseLanguage.regexp.structure.CharacterSymbolClassPart" id="4759120547781168000">
+                <property name="character" value="s" />
+              </node>
+            </node>
+          </node>
+          <node role="left" type="jetbrains.mps.baseLanguage.regexp.structure.LazyPlusRegexp" id="4759120547781167976">
+            <node role="regexp" type="jetbrains.mps.baseLanguage.regexp.structure.PredefinedSymbolClassRegexp" id="4759120547781167975">
+              <link role="symbolClass" targetNodeId="2v.1174554738336" resolveInfo="\w" />
+            </node>
+          </node>
+        </node>
+        <node role="left" type="jetbrains.mps.baseLanguage.regexp.structure.LazyStarRegexp" id="4759120547781122985">
+          <node role="regexp" type="jetbrains.mps.baseLanguage.regexp.structure.NegativeSymbolClassRegexp" id="4759120547781122986">
+            <node role="part" type="jetbrains.mps.baseLanguage.regexp.structure.CharacterSymbolClassPart" id="4759120547781122987">
+              <property name="character" value="e" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
   </node>
   <node type="jetbrains.mps.baseLanguage.unitTest.structure.BTestCase" id="1353467374625228509">
     <property name="testCaseName" value="Escaping" />

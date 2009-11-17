@@ -8,12 +8,14 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptPropertyOperations;
 import java.util.regex.Pattern;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
 
 public class Regexp_Behavior {
   private static Class[] PARAMETERS_1213877429451 = {SNode.class};
   private static Class[] PARAMETERS_1222432436326 = {SNode.class ,List.class};
   private static Class[] PARAMETERS_1353467374623880338 = {SNode.class};
+  private static Class[] PARAMETERS_4759120547781297301 = {SNode.class};
 
   public static void init(SNode thisNode) {
   }
@@ -46,7 +48,7 @@ public class Regexp_Behavior {
   }
 
   public static String call_escape_1353467374624660231(SNode thisNode, String s) {
-    if (s.indexOf('\\') == -1) {
+    if (s == null || s.indexOf('\\') == -1) {
       return s;
     }
     StringBuilder sb = new StringBuilder();
@@ -64,6 +66,15 @@ public class Regexp_Behavior {
     return false;
   }
 
+  public static boolean virtual_isValid_4759120547781297301(SNode thisNode) {
+    for (SNode n : ListSequence.fromList(SNodeOperations.getChildren(thisNode))) {
+      if (SNodeOperations.isInstanceOf(n, "jetbrains.mps.baseLanguage.regexp.structure.Regexp") && !(Regexp_Behavior.call_isValid_4759120547781297301(SNodeOperations.cast(n, "jetbrains.mps.baseLanguage.regexp.structure.Regexp")))) {
+        return false;
+      }
+    }
+    return true;
+  }
+
   public static String call_toString_1213877429451(SNode thisNode) {
     return (String)BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.regexp.structure.Regexp"), "virtual_toString_1213877429451", PARAMETERS_1213877429451);
   }
@@ -76,6 +87,10 @@ public class Regexp_Behavior {
     return (Boolean)BehaviorManager.getInstance().invoke(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.regexp.structure.Regexp"), "virtual_needParentheses_1353467374623880338", PARAMETERS_1353467374623880338);
   }
 
+  public static boolean call_isValid_4759120547781297301(SNode thisNode) {
+    return (Boolean)BehaviorManager.getInstance().invoke(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.regexp.structure.Regexp"), "virtual_isValid_4759120547781297301", PARAMETERS_4759120547781297301);
+  }
+
   public static String callSuper_toString_1213877429451(SNode thisNode, String callerConceptFqName) {
     return (String)BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.regexp.structure.Regexp"), callerConceptFqName, "virtual_toString_1213877429451", PARAMETERS_1213877429451);
   }
@@ -86,5 +101,9 @@ public class Regexp_Behavior {
 
   public static boolean callSuper_needParentheses_1353467374623880338(SNode thisNode, String callerConceptFqName) {
     return (Boolean)BehaviorManager.getInstance().invokeSuper(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.regexp.structure.Regexp"), callerConceptFqName, "virtual_needParentheses_1353467374623880338", PARAMETERS_1353467374623880338);
+  }
+
+  public static boolean callSuper_isValid_4759120547781297301(SNode thisNode, String callerConceptFqName) {
+    return (Boolean)BehaviorManager.getInstance().invokeSuper(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.regexp.structure.Regexp"), callerConceptFqName, "virtual_isValid_4759120547781297301", PARAMETERS_4759120547781297301);
   }
 }

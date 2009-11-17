@@ -11,6 +11,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class StringLiteralRegexp_Behavior {
   private static Class[] PARAMETERS_1222431822198 = {SNode.class ,List.class};
+  private static Class[] PARAMETERS_4759120547781297313 = {SNode.class};
 
   public static void init(SNode thisNode) {
   }
@@ -19,7 +20,7 @@ public class StringLiteralRegexp_Behavior {
     return StringLiteralRegexp_Behavior.call_toRegexp_8330008649152995372(thisNode, SPropertyOperations.getString(thisNode, "text"));
   }
 
-  public static boolean call_isCorrect_8330008649152998005(SNode thisNode) {
+  public static boolean virtual_isValid_4759120547781297301(SNode thisNode) {
     if (StringUtils.isEmpty(SPropertyOperations.getString(thisNode, "text"))) {
       return false;
     }
@@ -89,7 +90,15 @@ public class StringLiteralRegexp_Behavior {
     return (String)BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.regexp.structure.StringLiteralRegexp"), "virtual_getString_1222432436326", PARAMETERS_1222431822198, vars);
   }
 
+  public static boolean call_isValid_4759120547781297313(SNode thisNode) {
+    return (Boolean)BehaviorManager.getInstance().invoke(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.regexp.structure.StringLiteralRegexp"), "virtual_isValid_4759120547781297301", PARAMETERS_4759120547781297313);
+  }
+
   public static String callSuper_getString_1222431822198(SNode thisNode, String callerConceptFqName, List<SNode> vars) {
     return (String)BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.regexp.structure.StringLiteralRegexp"), callerConceptFqName, "virtual_getString_1222432436326", PARAMETERS_1222431822198, vars);
+  }
+
+  public static boolean callSuper_isValid_4759120547781297313(SNode thisNode, String callerConceptFqName) {
+    return (Boolean)BehaviorManager.getInstance().invokeSuper(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.regexp.structure.StringLiteralRegexp"), callerConceptFqName, "virtual_isValid_4759120547781297301", PARAMETERS_4759120547781297313);
   }
 }

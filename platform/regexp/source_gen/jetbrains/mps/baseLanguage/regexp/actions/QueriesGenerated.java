@@ -68,6 +68,12 @@ public class QueriesGenerated {
     }
   }
 
+  public static void nodeFactory_NodeSetup_SymbolClassRegexp_4759120547780396754(final IOperationContext operationContext, final NodeSetupContext _context) {
+    if (SNodeOperations.isInstanceOf(_context.getSampleNode(), "jetbrains.mps.baseLanguage.regexp.structure.SymbolClassRegexp")) {
+      SLinkOperations.addAll(_context.getNewNode(), "part", SLinkOperations.getTargets(SNodeOperations.cast(_context.getSampleNode(), "jetbrains.mps.baseLanguage.regexp.structure.SymbolClassRegexp"), "part", true));
+    }
+  }
+
   public static void nodeFactory_NodeSetup_UnaryRegexp_6799940379546646405(final IOperationContext operationContext, final NodeSetupContext _context) {
     if (SNodeOperations.isInstanceOf(_context.getSampleNode(), "jetbrains.mps.baseLanguage.regexp.structure.UnaryRegexp")) {
       SLinkOperations.setTarget(_context.getNewNode(), "regexp", SLinkOperations.getTarget(SNodeOperations.cast(_context.getSampleNode(), "jetbrains.mps.baseLanguage.regexp.structure.UnaryRegexp"), "regexp", true), true);
@@ -410,15 +416,18 @@ public class QueriesGenerated {
           SNode node = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.regexp.structure.NTimesRegexp", null);
           SNodeOperations.replaceWithAnother(_context.getSourceNode(), node);
           SLinkOperations.setTarget(node, "regexp", _context.getSourceNode(), true);
-          SPropertyOperations.set(node, "n", "" + Integer.parseInt((pattern.endsWith("}") ?
-            pattern.substring(1, pattern.length() - 1) :
-            pattern.substring(1)
-          )));
+          {
+            Pattern _pattern_0 = _PrecompiledPatterns.REGEXP5;
+            Matcher _matcher_0 = _pattern_0.matcher(pattern);
+            if (_matcher_0.find()) {
+              SPropertyOperations.set(node, "n", "" + Integer.parseInt(_matcher_0.group(1)));
+            }
+          }
           return node;
         }
 
         public String getMatchingText(String pattern) {
-          if (!(_PrecompiledPatterns.REGEXP5.matcher(pattern).matches())) {
+          if (!(_PrecompiledPatterns.REGEXP6.matcher(pattern).matches())) {
             return "{n}";
           }
           String s = pattern;
@@ -441,7 +450,7 @@ public class QueriesGenerated {
           SNodeOperations.replaceWithAnother(_context.getSourceNode(), node);
           SLinkOperations.setTarget(node, "regexp", _context.getSourceNode(), true);
           {
-            Pattern _pattern_0 = _PrecompiledPatterns.REGEXP6;
+            Pattern _pattern_0 = _PrecompiledPatterns.REGEXP7;
             Matcher _matcher_0 = _pattern_0.matcher(pattern);
             if (_matcher_0.find()) {
               SPropertyOperations.set(node, "n", "" + Integer.parseInt(_matcher_0.group(1)));
@@ -451,7 +460,7 @@ public class QueriesGenerated {
         }
 
         public String getMatchingText(String pattern) {
-          if (!(_PrecompiledPatterns.REGEXP7.matcher(pattern).matches())) {
+          if (!(_PrecompiledPatterns.REGEXP8.matcher(pattern).matches())) {
             return "{n,}";
           }
           String s = pattern;
@@ -477,14 +486,14 @@ public class QueriesGenerated {
           SNodeOperations.replaceWithAnother(_context.getSourceNode(), node);
           SLinkOperations.setTarget(node, "regexp", _context.getSourceNode(), true);
           {
-            Pattern _pattern_0 = _PrecompiledPatterns.REGEXP8;
+            Pattern _pattern_0 = _PrecompiledPatterns.REGEXP9;
             Matcher _matcher_0 = _pattern_0.matcher(pattern);
             if (_matcher_0.find()) {
               SPropertyOperations.set(node, "m", "" + Integer.parseInt(_matcher_0.group(1)));
             }
           }
           {
-            Pattern _pattern_0 = _PrecompiledPatterns.REGEXP9;
+            Pattern _pattern_0 = _PrecompiledPatterns.REGEXP10;
             Matcher _matcher_0 = _pattern_0.matcher(pattern);
             if (_matcher_0.find()) {
               SPropertyOperations.set(node, "n", "" + Integer.parseInt(_matcher_0.group(1)));
@@ -494,20 +503,20 @@ public class QueriesGenerated {
         }
 
         public String getMatchingText(String pattern) {
-          if (!(_PrecompiledPatterns.REGEXP10.matcher(pattern).matches())) {
+          if (!(_PrecompiledPatterns.REGEXP11.matcher(pattern).matches())) {
             return "{n,m}";
           }
           String left = "n";
           String right = "m";
           {
-            Pattern _pattern_0 = _PrecompiledPatterns.REGEXP11;
+            Pattern _pattern_0 = _PrecompiledPatterns.REGEXP12;
             Matcher _matcher_0 = _pattern_0.matcher(pattern);
             if (_matcher_0.find()) {
               right = _matcher_0.group(1);
             }
           }
           {
-            Pattern _pattern_0 = _PrecompiledPatterns.REGEXP12;
+            Pattern _pattern_0 = _PrecompiledPatterns.REGEXP13;
             Matcher _matcher_0 = _pattern_0.matcher(pattern);
             if (_matcher_0.find()) {
               left = _matcher_0.group(1);
@@ -541,6 +550,14 @@ public class QueriesGenerated {
 
           public SNode getOutputConcept() {
             return concept;
+          }
+
+          public String getMatchingText(String text) {
+            return SConceptPropertyOperations.getString((item), "alias");
+          }
+
+          public String getVisibleMatchingText(String text) {
+            return this.getMatchingText(text);
           }
         });
       }

@@ -7,13 +7,20 @@ import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
-import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
+import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.MPSColors;
 import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
 import jetbrains.mps.nodeEditor.style.Padding;
 import jetbrains.mps.nodeEditor.style.Measure;
+import jetbrains.mps.nodeEditor.cells.EditorCell_Property;
+import jetbrains.mps.nodeEditor.cells.ModelAccessor;
+import jetbrains.mps.baseLanguage.regexp.behavior.Regexp_Behavior;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.util.EqualUtil;
+import jetbrains.mps.nodeEditor.CellActionType;
+import jetbrains.mps.nodeEditor.cellActions.CellAction_Empty;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
@@ -23,6 +30,10 @@ import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 public class RegexpDeclaration_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_4843_0(editorContext, node);
+  }
+
+  public EditorCell createInspectedCell(EditorContext editorContext, SNode node) {
+    return this.createCollection_4843_1(editorContext, node);
   }
 
   private EditorCell createCollection_4843_0(EditorContext editorContext, SNode node) {
@@ -37,6 +48,25 @@ public class RegexpDeclaration_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstant_4843_3(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_4843_0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_4843_2(editorContext, node));
+    return editorCell;
+  }
+
+  private EditorCell createCollection_4843_1(EditorContext editorContext, SNode node) {
+    EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
+    editorCell.setCellId("Collection_4843_1");
+    editorCell.addEditorCell(this.createCollection_4843_2(editorContext, node));
+    return editorCell;
+  }
+
+  private EditorCell createCollection_4843_2(EditorContext editorContext, SNode node) {
+    EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
+    editorCell.setCellId("Collection_4843_2");
+    {
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.SELECTABLE, false);
+    }
+    editorCell.addEditorCell(this.createConstant_4843_6(editorContext, node));
+    editorCell.addEditorCell(this.createReadOnlyModelAccessor_4843_0(editorContext, node));
     return editorCell;
   }
 
@@ -106,6 +136,34 @@ public class RegexpDeclaration_Editor extends DefaultNodeEditor {
       style.set(StyleAttributes.TEXT_COLOR, MPSColors.darkGray);
     }
     editorCell.setDefaultText("");
+    return editorCell;
+  }
+
+  private EditorCell createConstant_4843_6(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "regexp:");
+    editorCell.setCellId("Constant_4843_6");
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+
+  private EditorCell createReadOnlyModelAccessor_4843_0(final EditorContext editorContext, final SNode node) {
+    EditorCell_Property editorCell = EditorCell_Property.create(editorContext, new ModelAccessor() {
+      public String getText() {
+        return (Regexp_Behavior.call_isValid_4759120547781297301(SLinkOperations.getTarget(node, "regexp", true)) ?
+          "/" + Regexp_Behavior.call_toString_1213877429451(SLinkOperations.getTarget(node, "regexp", true)) + "/" :
+          "<invalid>"
+        );
+      }
+
+      public void setText(String s) {
+      }
+
+      public boolean isValidText(String s) {
+        return EqualUtil.equals(s, this.getText());
+      }
+    }, node);
+    editorCell.setAction(CellActionType.DELETE, new CellAction_Empty());
+    editorCell.setCellId("ReadOnlyModelAccessor_4843_0");
     return editorCell;
   }
 

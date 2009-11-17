@@ -6,7 +6,7 @@ import jetbrains.mps.lang.typesystem.runtime.AbstractNonTypesystemRule_Runtime;
 import jetbrains.mps.lang.typesystem.runtime.NonTypesystemRule_Runtime;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
-import jetbrains.mps.baseLanguage.regexp.behavior.StringLiteralRegexp_Behavior;
+import jetbrains.mps.baseLanguage.regexp.behavior.Regexp_Behavior;
 import jetbrains.mps.intentions.BaseIntentionProvider;
 import jetbrains.mps.typesystem.inference.IErrorTarget;
 import jetbrains.mps.typesystem.inference.NodeErrorTarget;
@@ -18,7 +18,7 @@ public class check_StringLiteralRegexp_NonTypesystemRule extends AbstractNonType
   }
 
   public void applyRule(final SNode literal, final TypeCheckingContext typeCheckingContext) {
-    if (!(StringLiteralRegexp_Behavior.call_isCorrect_8330008649152998005(literal))) {
+    if (!(Regexp_Behavior.call_isValid_4759120547781297301(literal))) {
       {
         BaseIntentionProvider intentionProvider = null;
         IErrorTarget errorTarget = new NodeErrorTarget();
