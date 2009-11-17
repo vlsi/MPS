@@ -122,13 +122,10 @@ public class FileClassPathItem extends AbstractClassPathItem {
     Set<String> classes = new HashSet<String>(0);
     IFile dir = getModelDir(namespace);
 
-    long lastModified = dir.lastModified();
     List<IFile> files = dir.list();
     if (files != null) {
       for (IFile file : files) {
         String name = file.getName();
-        long fileLastModified = file.lastModified();
-        lastModified = Math.max(lastModified, fileLastModified);
         if (!name.endsWith(MPSExtentions.DOT_CLASSFILE)) { //isDirectory is quite expensive operation
           if (file.isDirectory()) {
             if (namespace.length() > 0) {
