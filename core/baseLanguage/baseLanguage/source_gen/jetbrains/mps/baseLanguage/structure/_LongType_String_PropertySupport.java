@@ -12,6 +12,6 @@ public class _LongType_String_PropertySupport extends PropertySupport {
     } else {
       testValue = value;
     }
-    return testValue.matches("[0-9]+(l|L)");
+    return testValue.matches("-?[0-9]+(l|L)");
   }
 }
