@@ -23,10 +23,10 @@ public class ActionDataParameterDeclaration_Behavior {
 
   public static List<SNode> getVariants_1227641865136() {
     List<SNode> dataKeys = new ArrayList<SNode>();
+    ListSequence.fromList(dataKeys).addSequence(ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(SLinkOperations.getTarget(new _Quotations.QuotationClass_0().createNode(), "classifier", false), "jetbrains.mps.baseLanguage.structure.ClassConcept"), "staticField", true)));
     ListSequence.fromList(dataKeys).addSequence(ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(SLinkOperations.getTarget(new _Quotations.QuotationClass_1().createNode(), "classifier", false), "jetbrains.mps.baseLanguage.structure.ClassConcept"), "staticField", true)));
-    ListSequence.fromList(dataKeys).addSequence(ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(SLinkOperations.getTarget(new _Quotations.QuotationClass_2().createNode(), "classifier", false), "jetbrains.mps.baseLanguage.structure.ClassConcept"), "staticField", true)));
+    ListSequence.fromList(dataKeys).removeElement(SLinkOperations.getTarget(new _Quotations.QuotationClass_7().createNode(), "variableDeclaration", false));
     ListSequence.fromList(dataKeys).removeElement(SLinkOperations.getTarget(new _Quotations.QuotationClass_8().createNode(), "variableDeclaration", false));
-    ListSequence.fromList(dataKeys).removeElement(SLinkOperations.getTarget(new _Quotations.QuotationClass_9().createNode(), "variableDeclaration", false));
     return dataKeys;
   }
 }

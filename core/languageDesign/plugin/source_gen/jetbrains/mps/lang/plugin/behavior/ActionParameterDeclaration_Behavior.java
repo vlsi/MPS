@@ -17,11 +17,11 @@ public class ActionParameterDeclaration_Behavior {
 
   public static SNode virtual_getFieldDeclaration_1171743928471867409(SNode thisNode) {
     if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(thisNode, "type", true), "jetbrains.mps.lang.smodel.structure.SNodeType")) {
-      return SLinkOperations.getTarget(new _Quotations.QuotationClass_5().createNode(), "variableDeclaration", false);
+      return SLinkOperations.getTarget(new _Quotations.QuotationClass_4().createNode(), "variableDeclaration", false);
     } else if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(thisNode, "type", true), "jetbrains.mps.lang.smodel.structure.SModelType")) {
-      return SLinkOperations.getTarget(new _Quotations.QuotationClass_6().createNode(), "variableDeclaration", false);
+      return SLinkOperations.getTarget(new _Quotations.QuotationClass_5().createNode(), "variableDeclaration", false);
     } else if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(thisNode, "type", true), "jetbrains.mps.lang.smodel.structure.SNodeListType")) {
-      return SLinkOperations.getTarget(new _Quotations.QuotationClass_7().createNode(), "variableDeclaration", false);
+      return SLinkOperations.getTarget(new _Quotations.QuotationClass_6().createNode(), "variableDeclaration", false);
     }
     throw new IllegalStateException("Action parameter has wrong type: " + BaseConcept_Behavior.call_getPresentation_1213877396640(SLinkOperations.getTarget(thisNode, "type", true)));
   }

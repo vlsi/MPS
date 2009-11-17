@@ -13,7 +13,7 @@ public class typeof_MultitabbedEditorTabType_SubtypingRule extends SubtypingRule
   }
 
   public SNode getSubOrSuperType(SNode tabType, TypeCheckingContext typeCheckingContext) {
-    return new _Quotations.QuotationClass_14().createNode(typeCheckingContext);
+    return new _Quotations.QuotationClass_13().createNode(typeCheckingContext);
   }
 
   public String getApplicableConceptFQName() {

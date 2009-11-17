@@ -21,8 +21,8 @@ import jetbrains.mps.workbench.tools.BaseTool;
 
 import javax.swing.Icon;
 
-public abstract class GeneratedTool extends BaseGeneratedTool {
-  protected GeneratedTool(Project project, String id, int number, Icon icon, ToolWindowAnchor anchor, boolean canCloseContent) {
+public abstract class BaseGeneratedTool extends BaseTool {
+  protected BaseGeneratedTool(Project project, String id, int number, Icon icon, ToolWindowAnchor anchor, boolean canCloseContent) {
     super(project, id, number, icon, anchor, canCloseContent);
   }
 

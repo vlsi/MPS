@@ -13,7 +13,7 @@ public class MultitabbedEditorTab_Behavior {
   }
 
   public static SNode virtual_createType_1213877527970(SNode thisNode) {
-    return new _Quotations.QuotationClass_4().createNode();
+    return new _Quotations.QuotationClass_3().createNode();
   }
 
   public static SNode call_createType_144706109457735808(SNode thisNode) {

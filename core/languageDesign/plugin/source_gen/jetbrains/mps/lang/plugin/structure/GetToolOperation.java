@@ -15,11 +15,11 @@ public class GetToolOperation extends ProjectOperation {
     super(node);
   }
 
-  public ToolDeclaration getTool() {
-    return (ToolDeclaration)this.getReferent(ToolDeclaration.class, GetToolOperation.TOOL);
+  public BaseToolDeclaration getTool() {
+    return (BaseToolDeclaration)this.getReferent(BaseToolDeclaration.class, GetToolOperation.TOOL);
   }
 
-  public void setTool(ToolDeclaration node) {
+  public void setTool(BaseToolDeclaration node) {
     super.setReferent(GetToolOperation.TOOL, node);
   }
 

@@ -4,15 +4,15 @@ package jetbrains.mps.buildlanguage.plugin;
 
 import jetbrains.mps.plugins.projectplugins.BaseProjectPlugin;
 import java.util.List;
-import jetbrains.mps.plugins.pluginparts.tool.GeneratedTool;
+import jetbrains.mps.plugins.pluginparts.tool.BaseGeneratedTool;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.plugins.pluginparts.prefs.BaseProjectPrefsComponent;
 
 public class Buildlanguage_ProjectPlugin extends BaseProjectPlugin {
-  public List<GeneratedTool> initTools(Project project) {
-    List<GeneratedTool> tools = ListSequence.fromList(new ArrayList<GeneratedTool>());
+  public List<BaseGeneratedTool> initTools(Project project) {
+    List<BaseGeneratedTool> tools = ListSequence.fromList(new ArrayList<BaseGeneratedTool>());
     ListSequence.fromList(tools).addElement(new BuildLanguageTool_Tool(project));
     return tools;
   }

@@ -17,7 +17,7 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902ae(jetbrains.mps.lang.typesystem.constraints)" version="17" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590283(jetbrains.mps.lang.core.constraints)" version="2" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" version="7" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590368(jetbrains.mps.lang.plugin.structure)" version="21" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590368(jetbrains.mps.lang.plugin.structure)" version="22" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590338(jetbrains.mps.baseLanguage.closures.structure)" version="3" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590361(jetbrains.mps.lang.plugin.constraints)" version="19" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590340(jetbrains.mps.lang.pattern.constraints)" version="2" />
@@ -37,7 +37,7 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590402(jetbrains.mps.baseLanguage.strings.structure)" version="9" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590373(jetbrains.mps.baseLanguage.classifiers.structure)" version="0" />
   <maxImportIndex value="39" />
-  <import index="4" modelUID="r:00000000-0000-4000-0000-011c89590368(jetbrains.mps.lang.plugin.structure)" version="21" />
+  <import index="4" modelUID="r:00000000-0000-4000-0000-011c89590368(jetbrains.mps.lang.plugin.structure)" version="22" />
   <import index="6" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="3" />
   <import index="18" modelUID="f:java_stub#javax.swing(javax.swing@java_stub)" version="-1" />
   <import index="19" modelUID="f:java_stub#jetbrains.mps.plugins.pluginparts.tool(jetbrains.mps.plugins.pluginparts.tool@java_stub)" version="-1" />
@@ -415,10 +415,10 @@
     <property name="package" value="Tool" />
     <property name="name" value="Typeof_ToolType_Instanceof_BaseTool" />
     <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1208529625342">
-      <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1208529659230">
-        <node role="expression" type="jetbrains.mps.lang.quotation.structure.Quotation" id="1208529668152">
-          <node role="quotedNode" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1208529677966">
-            <link role="classifier" targetNodeId="19.~GeneratedTool" resolveInfo="GeneratedTool" />
+      <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="2247201315540920226">
+        <node role="expression" type="jetbrains.mps.lang.quotation.structure.Quotation" id="2247201315540920227">
+          <node role="quotedNode" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="8268027161981065408">
+            <link role="classifier" targetNodeId="19.~BaseGeneratedTool" resolveInfo="BaseGeneratedTool" />
           </node>
         </node>
       </node>

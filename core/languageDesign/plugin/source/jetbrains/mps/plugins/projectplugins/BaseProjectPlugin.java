@@ -28,6 +28,7 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.plugins.pluginparts.custom.BaseCustomProjectPlugin;
 import jetbrains.mps.plugins.pluginparts.prefs.BaseProjectPrefsComponent;
 import jetbrains.mps.plugins.pluginparts.tool.GeneratedTool;
+import jetbrains.mps.plugins.pluginparts.tool.BaseGeneratedTool;
 import jetbrains.mps.plugins.projectplugins.BaseProjectPlugin.PluginState;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.workbench.editors.MPSEditorOpenHandlerOwner;
@@ -55,8 +56,8 @@ public abstract class BaseProjectPlugin implements MPSEditorOpenHandlerOwner, Pe
 
   }
 
-  protected List<GeneratedTool> initTools(Project project) {
-    return new ArrayList<GeneratedTool>();
+  protected List<BaseGeneratedTool> initTools(Project project) {
+    return new ArrayList<BaseGeneratedTool>();
   }
 
   protected List<BaseCustomProjectPlugin> initCustomParts(MPSProject project) {

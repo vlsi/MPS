@@ -112,7 +112,9 @@ public class ModelCheckerTool_Tool extends GeneratedTool {
   public ModelCheckerViewer checkModule(IModule module, IOperationContext operationContext, boolean showTab) {
     ModelCheckerViewer newViewer = ModelCheckerTool_Tool.this.createViewer(operationContext);
     newViewer.checkModule(module);
-    ModelCheckerTool_Tool.this.showTabWithResults(newViewer);
+    if (showTab) {
+      ModelCheckerTool_Tool.this.showTabWithResults(newViewer);
+    }
     return newViewer;
   }
 

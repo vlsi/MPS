@@ -13,7 +13,7 @@ public class typeof_PropertyRefType_isSubtype_PropertyRef_SubtypingRule extends 
   }
 
   public SNode getSubOrSuperType(SNode refType, TypeCheckingContext typeCheckingContext) {
-    return new _Quotations.QuotationClass_20().createNode(typeCheckingContext);
+    return new _Quotations.QuotationClass_19().createNode(typeCheckingContext);
   }
 
   public String getApplicableConceptFQName() {

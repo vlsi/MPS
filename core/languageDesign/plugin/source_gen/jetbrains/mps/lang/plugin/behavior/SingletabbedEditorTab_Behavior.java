@@ -13,7 +13,7 @@ public class SingletabbedEditorTab_Behavior {
   }
 
   public static SNode virtual_createType_1213877527970(SNode thisNode) {
-    return new _Quotations.QuotationClass_3().createNode();
+    return new _Quotations.QuotationClass_2().createNode();
   }
 
   public static SNode call_createType_144706109457730962(SNode thisNode) {
