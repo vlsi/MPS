@@ -1510,13 +1510,13 @@
           </node>
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="6857488637699642352">
-          <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="6857488637699642354">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="6489343236075007663">
             <link role="classConcept" targetNodeId="150.~String" resolveInfo="String" />
             <link role="baseMethodDeclaration" targetNodeId="150.~String.format(java.lang.String,java.lang.Object...):java.lang.String" resolveInfo="format" />
-            <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="6857488637699642357">
+            <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="6489343236075007664">
               <property name="value" value="" />
             </node>
-            <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="6857488637699642816">
+            <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="6489343236075007665">
               <property name="value" value="" />
             </node>
           </node>
