@@ -12,6 +12,6 @@ public class _FloatNumberValue_PropertySupport extends PropertySupport {
     } else {
       testValue = value;
     }
-    return testValue.matches("-?[0-9]+\\.[0-9]*f");
+    return testValue.matches("-?[0-9]+\\.[0-9]*(f|F)");
   }
 }

@@ -3441,7 +3441,7 @@
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConstrainedDataTypeDeclaration" id="5279705229678483898">
     <property name="name" value="_FloatNumberValue" />
-    <property name="constraint" value="-?[0-9]+\\.[0-9]*f" />
+    <property name="constraint" value="-?[0-9]+\\.[0-9]*(f|F)" />
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="8064396509828172209">
     <property name="name" value="UnaryMinus" />
