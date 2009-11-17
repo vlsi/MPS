@@ -86,7 +86,13 @@ public class SubtypingCache {
     Map<CacheNodeHandler, Map<String, SNode>> cache = isWeak ? myCoerceToConceptsCacheWeak : myCoerceToConceptsCache;
     Map<String, SNode> map = cache.get(new CacheNodeHandler(subtype));
     if (map != null && map.containsKey(conceptFQName)) {
-      return new Pair<Boolean, SNode>(true, map.get(conceptFQName));
+      SNode result = map.get(conceptFQName);
+      if (result != null && result.shouldHaveBeenDisposed()) {
+        map.remove(conceptFQName);
+        return new Pair<Boolean, SNode>(false, null);
+      } else {
+        return new Pair<Boolean, SNode>(true, result);
+      }
     } else {
       return new Pair<Boolean, SNode>(false, null);
     }
@@ -101,8 +107,14 @@ public class SubtypingCache {
     Map<Class, Pair<SNode, GeneratedMatchingPattern>> map = cache.get(new CacheNodeHandler(subtype));
     if (map != null && map.containsKey(c)) {
       Pair<SNode, GeneratedMatchingPattern> patternPair = map.get(c);
-      pattern.fillFieldValuesFrom(patternPair.o2);
-      return new Pair<Boolean, SNode>(true, patternPair.o1);
+      SNode resultNode = patternPair.o1;
+      if (resultNode != null && resultNode.shouldHaveBeenDisposed()) {
+        map.remove(c);
+        return new Pair<Boolean, SNode>(false, null);
+      } else {
+        pattern.fillFieldValuesFrom(patternPair.o2);
+        return new Pair<Boolean, SNode>(true, resultNode);
+      }
     } else {
       return new Pair<Boolean, SNode>(false, null);
     }
