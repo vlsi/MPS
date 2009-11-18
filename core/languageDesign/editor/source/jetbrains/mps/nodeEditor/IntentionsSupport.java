@@ -264,7 +264,7 @@ public class IntentionsSupport {
     return group;
   }
 
-  private void showIntentionsMenu() {
+  public void showIntentionsMenu() {
     EditorContext editorContext = myEditor.getEditorContext();
     final EditorCell selectedCell = editorContext.getSelectedCell();
     int x = selectedCell.getX();

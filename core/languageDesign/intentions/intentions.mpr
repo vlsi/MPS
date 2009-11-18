@@ -5,7 +5,9 @@
   </component>
   <component name="Encoding" useUTFGuessing="true" native2AsciiForPropertiesFiles="false" />
   <component name="MPSProject">
-    <projectSolutions />
+    <projectSolutions>
+      <solutionPath path="${project}/solutions/intentions/intentions.msd" folder="" />
+    </projectSolutions>
     <projectLanguages>
       <languagePath path="${project}/intentions.mpl" />
     </projectLanguages>

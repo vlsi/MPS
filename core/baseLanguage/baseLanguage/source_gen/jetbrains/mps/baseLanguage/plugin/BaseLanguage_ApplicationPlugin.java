@@ -20,6 +20,7 @@ public class BaseLanguage_ApplicationPlugin extends BaseApplicationPlugin {
     this.addGroup(groups, moduleName, "jetbrains.mps.baseLanguage.plugin.BaseLanguageEditorPopupInternal_ActionGroup");
     this.addGroup(groups, moduleName, "jetbrains.mps.baseLanguage.plugin.BaseLanguageNodeActionsInternal_ActionGroup");
     this.addGroup(groups, moduleName, "jetbrains.mps.baseLanguage.plugin.BaseLanguageToolsAddition_ActionGroup");
+    this.addGroup(groups, moduleName, "jetbrains.mps.baseLanguage.plugin.IntentionsGroup_ActionGroup");
     return groups;
   }
 
