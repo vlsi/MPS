@@ -85,8 +85,7 @@ public class TesterGenerationType extends GenerateFilesAndClassesGenerationType 
 
   @Override
   public List<CompilationResult> compile(IAdaptiveProgressMonitor progress) {
-    myNodeExtensionMap.clear();
-    myOutputModelToPath.clear();
+    clean();
     return super.compile(progress);
   }
 
