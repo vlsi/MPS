@@ -277,6 +277,10 @@
         </component>
 
         <component>
+            <implementation-class>jetbrains.mps.watching.WatchedRoots</implementation-class>
+        </component>
+
+        <component>
             <implementation-class>jetbrains.mps.fileTypes.MPSFileTypesManager</implementation-class>
         </component>
 
