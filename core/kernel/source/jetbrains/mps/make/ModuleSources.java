@@ -136,7 +136,7 @@ public class ModuleSources {
     if (javaFile.getFile().lastModified() < classFileLastModified) {
       for (String fqName : myDependencies.getAllDependencies(javaFile.getClassName())) {
         Long javaFileLastModified = myDependencies.getJavaFileLastModified(fqName);
-        if (javaFileLastModified == null || javaFileLastModified > classFileLastModified) {
+        if (javaFileLastModified != null && javaFileLastModified > classFileLastModified) {
           return false;
         }
       }
