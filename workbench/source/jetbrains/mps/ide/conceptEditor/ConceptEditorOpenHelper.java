@@ -18,7 +18,7 @@ package jetbrains.mps.ide.conceptEditor;
 import jetbrains.mps.workbench.editors.MPSEditorOpenHandler;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
-import jetbrains.mps.lang.intentions.structure.IntentionDeclaration;
+import jetbrains.mps.lang.intentions.structure.BaseIntentionDeclaration;
 import jetbrains.mps.lang.findUsages.structure.FinderDeclaration;
 import jetbrains.mps.lang.generator.structure.TemplateDeclaration;
 import jetbrains.mps.lang.generator.structure.RootTemplateAnnotation_AnnotationLink;
