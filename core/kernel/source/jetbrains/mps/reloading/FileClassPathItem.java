@@ -142,9 +142,9 @@ public class FileClassPathItem extends AbstractClassPathItem {
       }
     }
 
-    mySubpackagesCache.put(namespace, subpacks);
-    myAvailableClassesCache.put(namespace, classes);
-  }    
+    mySubpackagesCache.put(namespace, subpacks.isEmpty() ? null : subpacks);
+    myAvailableClassesCache.put(namespace, classes.isEmpty() ? null : classes);
+  }
 
   public long getClassesTimestamp(String namespace) {
     IFile dir = getModelDir(namespace);
