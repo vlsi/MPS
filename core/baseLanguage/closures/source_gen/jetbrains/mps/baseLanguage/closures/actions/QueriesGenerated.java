@@ -32,7 +32,7 @@ import jetbrains.mps.smodel.action.AbstractSideTransformHintSubstituteAction;
 
 public class QueriesGenerated {
   public static boolean nodeSubstituteActionsBuilder_Precondition_ThisExpression_1199651311977(final IOperationContext operationContext, final NodeSubstitutePreconditionContext _context) {
-    return (SNodeOperations.getAncestor(_context.getParentNode(), "jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral", true, false) != null);
+    return false && (SNodeOperations.getAncestor(_context.getParentNode(), "jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral", true, false) != null);
   }
 
   public static boolean nodeSubstituteActionsBuilder_Precondition_Expression_1199711420040(final IOperationContext operationContext, final NodeSubstitutePreconditionContext _context) {
