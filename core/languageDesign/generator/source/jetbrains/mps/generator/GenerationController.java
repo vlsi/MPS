@@ -452,9 +452,7 @@ public class GenerationController {
       if (fraction > 1) {
         fraction = 1;
       }
-      if (myProgress != null) {
-        myProgress.setFraction(fraction);
-      }
+      myProgress.setFraction(fraction);
       myGenerationController.setText2(myGenerationController.getText2(), myTotalJob, myStartJobTime);
     }
 
