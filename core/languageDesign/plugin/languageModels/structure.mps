@@ -3494,7 +3494,7 @@
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="6547237850567458268">
     <property name="package" value="Tool" />
     <property name="name" value="BaseToolDeclaration" />
-    <property name="rootable" value="true" />
+    <property name="rootable" value="false" />
     <property name="iconPath" value="${language_descriptor}\icons\tool.png" />
     <link role="extends" targetNodeId="6.1133920641626" resolveInfo="BaseConcept" />
     <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="6547237850567462848">
@@ -3540,6 +3540,10 @@
     <property name="name" value="TabbedToolDeclaration" />
     <property name="rootable" value="true" />
     <link role="extends" targetNodeId="6547237850567458268" resolveInfo="BaseToolDeclaration" />
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="7566788359603019575">
+      <property name="value" value="Tabbed Tool" />
+      <link role="conceptPropertyDeclaration" targetNodeId="6.1137473891462" resolveInfo="alias" />
+    </node>
     <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="5896642449625986997">
       <property name="metaClass" value="aggregation" />
       <property name="role" value="toolInitBlock" />
@@ -3550,19 +3554,24 @@
       <property name="role" value="toolDisposeBlock" />
       <link role="target" targetNodeId="1213888677711" resolveInfo="DisposeBlock" />
     </node>
-    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="5896642449625986999">
-      <property name="metaClass" value="aggregation" />
-      <property name="role" value="disposeTabBlock" />
-      <property name="sourceCardinality" value="0..1" />
-      <link role="target" targetNodeId="5896642449625987000" resolveInfo="DisposeTabBlock" />
-    </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="5896642449625987000">
     <property name="package" value="Tool.Methods" />
-    <property name="name" value="DisposeTabBlock" />
-    <link role="extends" targetNodeId="2.1137021947720" resolveInfo="ConceptFunction" />
+    <property name="name" value="AddTabOperation" />
+    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="7566788359602201160">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="componentExpression" />
+      <property name="sourceCardinality" value="1" />
+      <link role="target" targetNodeId="2.1068431790191" resolveInfo="Expression" />
+    </node>
+    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="7566788359602201162">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="disposeTabBlock" />
+      <property name="sourceCardinality" value="1" />
+      <link role="target" targetNodeId="7566788359602201181" resolveInfo="DisposeTabBlock" />
+    </node>
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="5896642449625987002">
-      <property name="value" value="disposeTab" />
+      <property name="value" value="add tab" />
       <link role="conceptPropertyDeclaration" targetNodeId="6.1137473891462" resolveInfo="alias" />
     </node>
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.BooleanConceptProperty" id="5896642449625987004">
@@ -3571,6 +3580,9 @@
     <node role="conceptLink" type="jetbrains.mps.lang.structure.structure.ReferenceConceptLink" id="5896642449625987019">
       <link role="conceptLinkDeclaration" targetNodeId="2.1161119487665" resolveInfo="applicableConceptFunctionParameter" />
       <link role="target" targetNodeId="5896642449625987005" resolveInfo="ConceptFunctionParameter_TabIndex" />
+    </node>
+    <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="7566788359602201161">
+      <link role="intfc" targetNodeId="2.1197027803184" resolveInfo="IOperation" />
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="5896642449625987005">
@@ -3591,6 +3603,27 @@
     </node>
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.BooleanConceptProperty" id="5896642449625987010">
       <link role="conceptPropertyDeclaration" targetNodeId="6.1137473994950" resolveInfo="dontSubstituteByDefault" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="7566788359602201181">
+    <property name="package" value="Tool.Methods" />
+    <property name="name" value="DisposeTabBlock" />
+    <link role="extends" targetNodeId="6.1133920641626" resolveInfo="BaseConcept" />
+    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="7566788359602201182">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="body" />
+      <property name="sourceCardinality" value="1" />
+      <link role="target" targetNodeId="2.1068580123136" resolveInfo="StatementList" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="7566788359603253716">
+    <property name="package" value="Tool.Methods" />
+    <property name="name" value="DisposeTabComponentReference" />
+    <property name="iconPath" value="${mps_home}/core/baseLanguage/baseLanguage/icons/parameter.png" />
+    <link role="extends" targetNodeId="2.1068431790191" resolveInfo="Expression" />
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="7566788359603255008">
+      <property name="value" value="component" />
+      <link role="conceptPropertyDeclaration" targetNodeId="6.1137473891462" resolveInfo="alias" />
     </node>
   </node>
 </model>

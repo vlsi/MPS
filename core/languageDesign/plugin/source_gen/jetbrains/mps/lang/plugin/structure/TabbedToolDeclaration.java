@@ -11,7 +11,6 @@ public class TabbedToolDeclaration extends BaseToolDeclaration {
   public static final String concept = "jetbrains.mps.lang.plugin.structure.TabbedToolDeclaration";
   public static final String TOOL_INIT_BLOCK = "toolInitBlock";
   public static final String TOOL_DISPOSE_BLOCK = "toolDisposeBlock";
-  public static final String DISPOSE_TAB_BLOCK = "disposeTabBlock";
 
   public TabbedToolDeclaration(SNode node) {
     super(node);
@@ -31,14 +30,6 @@ public class TabbedToolDeclaration extends BaseToolDeclaration {
 
   public void setToolDisposeBlock(DisposeBlock node) {
     super.setChild(TabbedToolDeclaration.TOOL_DISPOSE_BLOCK, node);
-  }
-
-  public DisposeTabBlock getDisposeTabBlock() {
-    return (DisposeTabBlock)this.getChild(DisposeTabBlock.class, TabbedToolDeclaration.DISPOSE_TAB_BLOCK);
-  }
-
-  public void setDisposeTabBlock(DisposeTabBlock node) {
-    super.setChild(TabbedToolDeclaration.DISPOSE_TAB_BLOCK, node);
   }
 
   public static TabbedToolDeclaration newInstance(SModel sm, boolean init) {

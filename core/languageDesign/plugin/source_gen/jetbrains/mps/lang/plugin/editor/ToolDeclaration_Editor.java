@@ -82,19 +82,19 @@ public class ToolDeclaration_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createCollection_4170_5(editorContext, node));
     editorCell.addEditorCell(this.createConstant_4170_8(editorContext, node));
     editorCell.addEditorCell(this.createRefNodeList_4170_0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_4170_9(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_4170_10(editorContext, node));
     if (renderingCondition4170_2(node, editorContext, editorContext.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.createRefNode_4170_0(editorContext, node));
     }
     editorCell.addEditorCell(this.createRefNode_4170_1(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_4170_10(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_4170_11(editorContext, node));
     if (renderingCondition4170_3(node, editorContext, editorContext.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.createRefNode_4170_2(editorContext, node));
     }
     editorCell.addEditorCell(this.createRefNode_4170_3(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_4170_11(editorContext, node));
-    editorCell.addEditorCell(this.createRefNode_4170_4(editorContext, node));
     editorCell.addEditorCell(this.createConstant_4170_12(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_4170_4(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_4170_13(editorContext, node));
     editorCell.addEditorCell(this.createRefNodeList_4170_1(editorContext, node));
     return editorCell;
   }
@@ -175,7 +175,7 @@ public class ToolDeclaration_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createCollection_4170_8(editorContext, node));
     editorCell.addEditorCell(this.createCollection_4170_9(editorContext, node));
     if (renderingCondition4170_5(node, editorContext, editorContext.getOperationContext().getScope())) {
-      editorCell.addEditorCell(this.createConstant_4170_14(editorContext, node));
+      editorCell.addEditorCell(this.createConstant_4170_15(editorContext, node));
     }
     return editorCell;
   }
@@ -189,7 +189,7 @@ public class ToolDeclaration_Editor extends DefaultNodeEditor {
     }
     editorCell.addEditorCell(this.createCollection_4170_0(editorContext, node));
     if (renderingCondition4170_4(node, editorContext, editorContext.getOperationContext().getScope())) {
-      editorCell.addEditorCell(this.createConstant_4170_13(editorContext, node));
+      editorCell.addEditorCell(this.createConstant_4170_14(editorContext, node));
     }
     return editorCell;
   }
@@ -297,13 +297,6 @@ public class ToolDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_4170_9(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
-    editorCell.setCellId("Constant_4170_9");
-    editorCell.setDefaultText("");
-    return editorCell;
-  }
-
   private EditorCell createConstant_4170_10(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
     editorCell.setCellId("Constant_4170_10");
@@ -326,16 +319,23 @@ public class ToolDeclaration_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_4170_13(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "{");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
     editorCell.setCellId("Constant_4170_13");
-    BaseLanguageStyle_StyleSheet.getLeftBrace(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   private EditorCell createConstant_4170_14(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "}");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "{");
     editorCell.setCellId("Constant_4170_14");
+    BaseLanguageStyle_StyleSheet.getLeftBrace(editorCell).apply(editorCell);
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+
+  private EditorCell createConstant_4170_15(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "}");
+    editorCell.setCellId("Constant_4170_15");
     BaseLanguageStyle_StyleSheet.getRightBrace(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
@@ -618,9 +618,13 @@ public class ToolDeclaration_Editor extends DefaultNodeEditor {
 
     public EditorCell createEmptyCell(EditorContext editorContext) {
       EditorCell emptyCell = null;
-      emptyCell = super.createEmptyCell(editorContext);
+      emptyCell = this.createEmptyCell_internal(editorContext, this.getOwner());
       this.installElementCellActions(super.getOwner(), null, emptyCell, editorContext);
       return emptyCell;
+    }
+
+    public EditorCell createEmptyCell_internal(EditorContext editorContext, SNode node) {
+      return this.createConstant_4170_9(editorContext, node);
     }
 
     public void installElementCellActions(SNode listOwner, SNode elementNode, EditorCell elementCell, EditorContext editorContext) {
@@ -639,6 +643,17 @@ public class ToolDeclaration_Editor extends DefaultNodeEditor {
 
     public EditorCell createSeparatorCell(EditorContext editorContext) {
       return super.createSeparatorCell(editorContext);
+    }
+
+    private EditorCell createConstant_4170_9(EditorContext editorContext, SNode node) {
+      EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "<no tool fields>");
+      editorCell.setCellId("Constant_4170_9");
+      {
+        Style style = editorCell.getStyle();
+        style.set(StyleAttributes.TEXT_COLOR, MPSColors.gray);
+      }
+      editorCell.setDefaultText("");
+      return editorCell;
     }
   }
 

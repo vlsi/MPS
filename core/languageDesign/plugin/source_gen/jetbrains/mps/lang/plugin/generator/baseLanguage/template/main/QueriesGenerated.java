@@ -541,7 +541,7 @@ public class QueriesGenerated {
   }
 
   public static Object referenceMacro_GetReferent_1209910342306(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return _context.getOutputNodeByInputNodeAndMappingLabel(SLinkOperations.getTarget(_context.getNode(), "tool", false), "map_ToolClass");
+    return _context.getOutputNodeByInputNodeAndMappingLabel(SLinkOperations.getTarget(_context.getNode(), "tool", false), "map_BaseToolClass");
   }
 
   public static Object referenceMacro_GetReferent_1210181278366(final IOperationContext operationContext, final ReferenceMacroContext _context) {
@@ -553,7 +553,7 @@ public class QueriesGenerated {
   }
 
   public static Object referenceMacro_GetReferent_1214489951991(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return _context.getOutputNodeByInputNodeAndMappingLabel(SLinkOperations.getTarget(_context.getNode(), "tool", false), "map_ToolClass");
+    return _context.getOutputNodeByInputNodeAndMappingLabel(SLinkOperations.getTarget(_context.getNode(), "tool", false), "map_BaseToolClass");
   }
 
   public static Object referenceMacro_GetReferent_1215283464729(final IOperationContext operationContext, final ReferenceMacroContext _context) {
@@ -667,12 +667,7 @@ public class QueriesGenerated {
   }
 
   public static Object referenceMacro_GetReferent_7167571922052023438(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    if ((SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.lang.plugin.structure.ToolDeclaration", false, false) != null)) {
-      _context.getOutputNodeByInputNodeAndMappingLabel(SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.lang.plugin.structure.ToolDeclaration", false, false), "map_ToolClass");
-    } else if ((SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.lang.plugin.structure.TabbedToolDeclaration", false, false) != null)) {
-      _context.getOutputNodeByInputNodeAndMappingLabel(SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.lang.plugin.structure.TabbedToolDeclaration", false, false), "map_TabbedToolClass");
-    }
-    return _context.getOutputNodeByInputNodeAndMappingLabel(SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.lang.plugin.structure.ToolDeclaration", false, false), "map_ToolClass");
+    return _context.getOutputNodeByInputNodeAndMappingLabel(SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.lang.plugin.structure.ToolDeclaration", false, false), "map_BaseToolClass");
   }
 
   public static Object referenceMacro_GetReferent_7167571922052023594(final IOperationContext operationContext, final ReferenceMacroContext _context) {
@@ -684,7 +679,7 @@ public class QueriesGenerated {
   }
 
   public static Object referenceMacro_GetReferent_7167571922052023636(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return _context.getOutputNodeByInputNodeAndMappingLabel(SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.lang.plugin.structure.BaseToolDeclaration", false, false), "map_ToolClass");
+    return _context.getOutputNodeByInputNodeAndMappingLabel(SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.lang.plugin.structure.BaseToolDeclaration", false, false), "map_BaseToolClass");
   }
 
   public static Object referenceMacro_GetReferent_7167571922052023659(final IOperationContext operationContext, final ReferenceMacroContext _context) {
@@ -976,10 +971,6 @@ public class QueriesGenerated {
     return (SLinkOperations.getTarget(_context.getNode(), "toolDisposeBlock", true) != null);
   }
 
-  public static boolean ifMacro_Condition_2247201315540925602(final IOperationContext operationContext, final IfMacroContext _context) {
-    return (SLinkOperations.getTarget(_context.getNode(), "disposeTabBlock", true) != null);
-  }
-
   public static boolean ifMacro_Condition_3001545589053200118(final IOperationContext operationContext, final IfMacroContext _context) {
     return (SLinkOperations.getTarget(_context.getNode(), "beforeWriteBlock", true) != null);
   }
@@ -1234,10 +1225,6 @@ public class QueriesGenerated {
 
   public static SNode sourceNodeQuery_2247201315540925545(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "toolDisposeBlock", true), "body", true);
-  }
-
-  public static SNode sourceNodeQuery_2247201315540925621(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "disposeTabBlock", true), "body", true);
   }
 
   public static SNode sourceNodeQuery_3734045384532260919(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
