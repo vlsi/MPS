@@ -64,6 +64,7 @@ public class JavaCompiler {
   private List<CompilationResult> myCompilationResults = new ArrayList<CompilationResult>();
   private File mySourceDir;
   private Map<String, SModel> myPackageFQNamesToModels = new HashMap<String, SModel>();
+  private Set<String> myModelsToCreate = new HashSet<String>();
   private String myPrefix = null;
 
   public JavaCompiler(Solution solution, File sourceDir) {
@@ -84,6 +85,9 @@ public class JavaCompiler {
     }
     String prefixPath = myPrefix.replace('.', File.separatorChar);
     String sourcePath = mySourceDir.getPath();
+    if (prefixPath.endsWith(File.separator)) {
+      prefixPath = prefixPath.substring(0, prefixPath.length() - 1);
+    }
     if (!(sourcePath.endsWith(prefixPath))) {
       LOG.warning("source directory path does not match package structure");
       return null;
@@ -126,13 +130,12 @@ public class JavaCompiler {
       } else {
         if (packageNameFromFile.endsWith(packageNameWithoutPrefix)) {
           int index = packageNameFromFile.length() - packageNameWithoutPrefix.length();
-          myPrefix = packageNameFromFile.substring(0, index-1);
+          myPrefix = packageNameFromFile.substring(0, index);
         } else {
           LOG.error("package name in a source file does not correpond to file path");
           return;
         }
       }
-      SModel model = getModel(packageNameFromFile);
       String fileName;
       String nameAndExtension = file.getName();
       int offset = nameAndExtension.lastIndexOf('.');
@@ -143,8 +146,8 @@ public class JavaCompiler {
       }
       classFQName.append(".");
       classFQName.append(fileName);
-      myPackageFQNamesToModels.put(packageNameFromFile, model);
-      addSource(classFQName.toString(), fileContents, model);
+      registerModelForPackage(packageNameFromFile);
+      addSource(classFQName.toString(), fileContents);
     } catch (Throwable t) {
       LOG.error(t);
     }
@@ -177,22 +180,34 @@ public class JavaCompiler {
     }
   }
 
-  private SModel getModel(String fqName) {
+  private void registerModelForPackage(String fqName) {
     SModelFqName sModelFqName = SModelFqName.fromString(fqName);
     SModelDescriptor modelDescriptor = SModelRepository.getInstance().getModelDescriptor(sModelFqName);
     if (modelDescriptor != null) {
       if (!mySolution.getOwnModelDescriptors().contains(modelDescriptor)) {
         LOG.error("model descriptor with fq name " + fqName + " is not owned by module " + mySolution.getModuleFqName());
-        return null;
+        return;
       }
+      myPackageFQNamesToModels.put(fqName, modelDescriptor.getSModel());
     } else {
-      modelDescriptor =
-        mySolution.createModel(sModelFqName, mySolution.getSModelRoots().get(0));//todo get model root from UI
+      myModelsToCreate.add(fqName);
     }
+  }
+
+  private void createModels() {
+    for (String packageFqName : myModelsToCreate) {
+      SModel model = createModel(SModelFqName.fromString(packageFqName));
+      myPackageFQNamesToModels.put(packageFqName, model);
+    }
+  }
+
+  private SModel createModel(SModelFqName modelFqName) {
+    SModelDescriptor modelDescriptor =
+      mySolution.createModel(modelFqName, mySolution.getSModelRoots().get(0));//todo get model root from UI
     return modelDescriptor.getSModel();
   }
 
-  public void addSource(String classFqName, String text, SModel model) {
+  public void addSource(String classFqName, String text) {
     CompilationUnit compilationUnit = new CompilationUnit(text.toCharArray(), classFqName.replace(".", File.separator) + MPSExtentions.DOT_JAVAFILE, "UTF-8");
     myCompilationUnits.put(classFqName, compilationUnit);
   }
@@ -269,6 +284,7 @@ public class JavaCompiler {
   }
 
   public void buildAST() {
+    createModels();
     ReferentsCreator referentsCreator = new ReferentsCreator(new HashMap<String, SModel>(myPackageFQNamesToModels));
     referentsCreator.exec(myCompilationUnitDeclarations.toArray(new CompilationUnitDeclaration[myCompilationUnitDeclarations.size()]));
     new JavaConverterTreeBuilder().exec(referentsCreator, myPackageFQNamesToModels);
@@ -302,43 +318,6 @@ public class JavaCompiler {
 
       return super.findType(fqName);
     }
-  }
-
-  private boolean askForClassLocation(String fqName) {
-    final String name = NameUtil.shortNameFromLongName(fqName);
-    JFileChooser fileChooser = new JFileChooser(mySourceDir);
-    fileChooser.setFileFilter(new javax.swing.filechooser.FileFilter() {
-      @Override
-      public boolean accept(File f) {
-        return f.isDirectory() || f.getName().endsWith(name + ".class");
-      }
-
-      @Override
-      public String getDescription() {
-        return "Java class " + name;
-      }
-    });
-    fileChooser.setDialogTitle("Select class location for " + fqName);
-    fileChooser.setFileSelectionMode(JFileChooser.FILES_ONLY);
-    int option = fileChooser.showOpenDialog(null);
-    if (option != JFileChooser.APPROVE_OPTION) {
-      return false;
-    }
-    File f = fileChooser.getSelectedFile();
-    String postfix = fqName.replace('.', File.separatorChar);
-    String fileAbsolutePath = f.getAbsolutePath();
-    if (!fileAbsolutePath.endsWith(postfix)) {
-      LOG.error("file path does not correspond class package");
-      return false;
-    }
-    String classPath = fileAbsolutePath.substring(fileAbsolutePath.length() - postfix.length());
-    File classFile = new File(classPath);
-    if (!classFile.exists()) {
-      LOG.error("classpath directory does not exist");
-      return false;
-    }
-    myClassPathItem.add(new FileClassPathItem(classPath));
-    return true;
   }
 
   private static class MyErrorHandlingPolicy implements IErrorHandlingPolicy {
