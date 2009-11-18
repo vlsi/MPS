@@ -116,24 +116,24 @@ public class SNodeTreeNode extends MPSTreeNodeEx {
   @Override
   public Icon getAdditionalIcon() {
     if (!myNode.isInstanceOfConcept(Classifier.concept)) return null;
-    Icon defaultIcon = com.intellij.util.Icons.PACKAGE_LOCAL_ICON;
-    final SNode[] visibility = new SNode[1];
+    final Icon[] defaultIcon = new Icon[]{com.intellij.util.Icons.PACKAGE_LOCAL_ICON};
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
-        visibility[0] = myNode.getChild(Classifier.VISIBILITY);
+        SNode visibility = myNode.getChild(Classifier.VISIBILITY);
+        if (visibility == null) return;
+        if (visibility.isInstanceOfConcept(PrivateVisibility.concept)) {
+          defaultIcon[0] = com.intellij.util.Icons.PRIVATE_ICON;
+        }
+        if (visibility.isInstanceOfConcept(PublicVisibility.concept)) {
+          defaultIcon[0] = com.intellij.util.Icons.PUBLIC_ICON;
+        }
+        if (visibility.isInstanceOfConcept(ProtectedVisibility.concept)) {
+          defaultIcon[0] = com.intellij.util.Icons.PROTECTED_ICON;
+        }
+
       }
     });
-    if (visibility[0] == null) return defaultIcon;
-    if (visibility[0].isInstanceOfConcept(PrivateVisibility.concept)) {
-      return com.intellij.util.Icons.PRIVATE_ICON;
-    }
-    if (visibility[0].isInstanceOfConcept(PublicVisibility.concept)) {
-      return com.intellij.util.Icons.PUBLIC_ICON;
-    }
-    if (visibility[0].isInstanceOfConcept(ProtectedVisibility.concept)) {
-      return com.intellij.util.Icons.PROTECTED_ICON;
-    }
-    return defaultIcon;
+    return defaultIcon[0];
   }
 
   public SModelTreeNode getSModelModelTreeNode() {
