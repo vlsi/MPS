@@ -27,6 +27,7 @@ import com.intellij.openapi.util.Computable;
 import com.intellij.openapi.wm.IdeFocusManager;
 import com.intellij.openapi.wm.impl.IdeFocusManagerHeadless;
 import com.intellij.ui.TreeToolTipHandler;
+import com.intellij.util.ui.EmptyIcon;
 import jetbrains.mps.ide.IdeMain;
 import jetbrains.mps.ide.IdeMain.TestMode;
 import jetbrains.mps.ide.ThreadUtils;
@@ -689,6 +690,7 @@ public abstract class MPSTree extends DnDAwareTree implements Disposable {
   }
 
   protected static class NewMPSTreeCellRenderer extends JPanel implements TreeCellRenderer {
+    private JLabel myIconLabel = new JLabel();
     private JLabel myMainTextLabel = new JLabel();
     private JLabel myAdditionalTextLabel = new JLabel();
     private boolean mySelected;
@@ -698,6 +700,7 @@ public abstract class MPSTree extends DnDAwareTree implements Disposable {
     public NewMPSTreeCellRenderer() {
       setLayout(new BorderLayout());
       setOpaque(false);
+      add(myIconLabel, BorderLayout.WEST);
       add(myMainTextLabel, BorderLayout.CENTER);
       add(myAdditionalTextLabel, BorderLayout.EAST);
     }
@@ -731,6 +734,9 @@ public abstract class MPSTree extends DnDAwareTree implements Disposable {
         if (!selected) {
           myMainTextLabel.setForeground(treeNode.getColor());
         }
+        Icon additionalIcon = treeNode.getAdditionalIcon();
+        myMainTextLabel.setIcon(additionalIcon);
+
         myNode = treeNode;
       } else {
         myMainTextLabel.setFont(tree.getFont());
@@ -754,7 +760,12 @@ public abstract class MPSTree extends DnDAwareTree implements Disposable {
           icon = UIManager.getIcon("Tree.closedIcon");
         }
       }
-      myMainTextLabel.setIcon(icon);
+      if (myMainTextLabel.getIcon() == null) {
+        myMainTextLabel.setIcon(icon);
+        myIconLabel.setIcon(null);
+      } else {
+        myIconLabel.setIcon(icon);
+      }
       mySelected = selected;
       myHasFocus = hasFocus;
 

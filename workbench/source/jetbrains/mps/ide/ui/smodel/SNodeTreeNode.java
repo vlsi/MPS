@@ -27,9 +27,14 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.Condition;
 import jetbrains.mps.workbench.action.ActionUtils;
+import jetbrains.mps.baseLanguage.structure.Classifier;
+import jetbrains.mps.baseLanguage.structure.PublicVisibility;
+import jetbrains.mps.baseLanguage.structure.PrivateVisibility;
+import jetbrains.mps.baseLanguage.structure.ProtectedVisibility;
 
 import javax.swing.tree.DefaultTreeModel;
 import javax.swing.tree.TreeNode;
+import javax.swing.Icon;
 import java.awt.Color;
 import java.util.List;
 
@@ -106,6 +111,29 @@ public class SNodeTreeNode extends MPSTreeNodeEx {
 
     setText(caclulateNodeTextPresentation());
     setAutoExpandable(myNode != null && !myNode.isRoot());
+  }
+
+  @Override
+  public Icon getAdditionalIcon() {
+    if (!myNode.isInstanceOfConcept(Classifier.concept)) return null;
+    Icon defaultIcon = com.intellij.util.Icons.PACKAGE_LOCAL_ICON;
+    final SNode[] visibility = new SNode[1];
+    ModelAccess.instance().runReadAction(new Runnable() {
+      public void run() {
+        visibility[0] = myNode.getChild(Classifier.VISIBILITY);
+      }
+    });
+    if (visibility[0] == null) return defaultIcon;
+    if (visibility[0].isInstanceOfConcept(PrivateVisibility.concept)) {
+      return com.intellij.util.Icons.PRIVATE_ICON;
+    }
+    if (visibility[0].isInstanceOfConcept(PublicVisibility.concept)) {
+      return com.intellij.util.Icons.PUBLIC_ICON;
+    }
+    if (visibility[0].isInstanceOfConcept(ProtectedVisibility.concept)) {
+      return com.intellij.util.Icons.PROTECTED_ICON;
+    }
+    return defaultIcon;
   }
 
   public SModelTreeNode getSModelModelTreeNode() {

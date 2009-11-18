@@ -299,6 +299,10 @@ public abstract class MPSTreeNode extends DefaultMutableTreeNode implements Iter
   protected void updatePresentation() {
   }
 
+  public Icon getAdditionalIcon() {
+    return null;
+  }
+
   public final Icon getIcon(boolean expanded) {
     if (expanded) {
       return myExpandedIcon;
