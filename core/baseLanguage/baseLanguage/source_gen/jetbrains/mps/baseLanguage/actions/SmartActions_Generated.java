@@ -105,7 +105,6 @@ public class SmartActions_Generated {
           if (sNode == null) {
             return false;
           }
-          
           SNode ancestor = SNodeOperations.getAncestor(sNode, "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false);
           (getSmartActionContext()).get("classConcept")[0] = ancestor;
           (getSmartActionContext()).get("operationContext")[0] = getOperationContext();

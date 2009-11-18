@@ -44,13 +44,13 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)" version="32" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590402(jetbrains.mps.baseLanguage.strings.structure)" version="9" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959035b(jetbrains.mps.lang.findUsages.structure)" version="2" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590353(jetbrains.mps.lang.intentions.structure)" version="9" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590353(jetbrains.mps.lang.intentions.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959034f(jetbrains.mps.lang.intentions.constraints)" version="1" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590358(jetbrains.mps.lang.findUsages.constraints)" version="4" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590373(jetbrains.mps.baseLanguage.classifiers.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590553(jetbrains.mps.uiLanguage.structure)" version="1" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959054e(jetbrains.mps.uiLanguage.constraints)" version="26" />
-  <maxImportIndex value="138" />
+  <maxImportIndex value="137" />
   <import index="1" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="3" />
   <import index="3" modelUID="r:00000000-0000-4000-0000-011c895904a4(jetbrains.mps.ide.actions)" version="-1" />
   <import index="4" modelUID="f:java_stub#java.util(java.util@java_stub)" version="-1" />
@@ -44007,73 +44007,6 @@
             <link role="variableDeclaration" targetNodeId="1177224257042842035" resolveInfo="results" />
           </node>
         </node>
-      </node>
-    </node>
-  </node>
-  <node type="jetbrains.mps.lang.plugin.structure.ActionDeclaration" id="1121530350417144582">
-    <property name="name" value="GenerateIntentionsPlugin" />
-    <property name="caption" value="Show generation intentions" />
-    <property name="description" value="Shows the menu with generation intentions" />
-    <node role="executeFunction" type="jetbrains.mps.lang.plugin.structure.ExecuteBlock" id="1121530350417144583">
-      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1121530350417144584">
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1865106864369165099">
-          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1865106864369165100">
-            <property name="name" value="intentionsSupport" />
-            <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1865106864369165101">
-              <link role="classifier" targetNodeId="35.~IntentionsSupport" resolveInfo="IntentionsSupport" />
-            </node>
-            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1865106864369165102">
-              <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1865106864369165103">
-                <node role="operand" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpression" id="1865106864369165104" />
-                <node role="operation" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterReferenceOperation" id="1865106864369165105">
-                  <link role="member" targetNodeId="1865106864369109357" resolveInfo="editorComponent" />
-                </node>
-              </node>
-              <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1865106864369165106">
-                <link role="baseMethodDeclaration" targetNodeId="35.~EditorComponent.getIntentionsSupport():jetbrains.mps.nodeEditor.IntentionsSupport" resolveInfo="getIntentionsSupport" />
-              </node>
-            </node>
-          </node>
-        </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1865106864369165108">
-          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1865106864369165110">
-            <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1865106864369165109">
-              <link role="variableDeclaration" targetNodeId="1865106864369165100" resolveInfo="intentionsSupport" />
-            </node>
-            <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="3332511592120694939">
-              <link role="baseMethodDeclaration" targetNodeId="35.~IntentionsSupport.showIntentionsMenu():void" resolveInfo="showIntentionsMenu" />
-            </node>
-          </node>
-        </node>
-      </node>
-    </node>
-    <node role="keystroke" type="jetbrains.mps.lang.plugin.structure.KeyMapKeystroke" id="1121530350417187583">
-      <property name="modifiers" value="alt" />
-      <property name="keycode" value="VK_8" />
-    </node>
-    <node role="parameter" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterDeclaration" id="6213051846374483425">
-      <property name="name" value="editorContext" />
-      <link role="key" targetNodeId="54.~MPSDataKeys.EDITOR_CONTEXT" resolveInfo="EDITOR_CONTEXT" />
-    </node>
-    <node role="parameter" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterDeclaration" id="1865106864369109357">
-      <property name="name" value="editorComponent" />
-      <link role="key" targetNodeId="54.~MPSDataKeys.EDITOR_COMPONENT" resolveInfo="EDITOR_COMPONENT" />
-    </node>
-    <node role="parameter" type="jetbrains.mps.lang.plugin.structure.ActionParameterDeclaration" id="2470263148108402772">
-      <property name="name" value="classConcept" />
-      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PrivateVisibility" id="2470263148108402773" />
-      <node role="type" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="2470263148108402774">
-        <link role="concept" targetNodeId="1.1068390468198" resolveInfo="ClassConcept" />
-      </node>
-    </node>
-  </node>
-  <node type="jetbrains.mps.lang.plugin.structure.ActionGroupDeclaration" id="1121530350417719708">
-    <property name="name" value="IntentionsGroup" />
-    <property name="isPopup" value="true" />
-    <property name="caption" value="Intentions groupp" />
-    <node role="contents" type="jetbrains.mps.lang.plugin.structure.ElementListContents" id="1121530350417719710">
-      <node role="reference" type="jetbrains.mps.lang.plugin.structure.ActionInstance" id="1121530350417721097">
-        <link role="action" targetNodeId="1121530350417144582" resolveInfo="GenerateIntentionsPlugin" />
       </node>
     </node>
   </node>
