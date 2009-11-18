@@ -787,6 +787,9 @@ public abstract class MPSTree extends DnDAwareTree implements Disposable {
       Icon icon = myMainTextLabel.getIcon();
       if (icon != null) {
         imageOffset = icon.getIconWidth() + Math.max(0, myMainTextLabel.getIconTextGap() - 1);
+        if (myIconLabel.getIcon() != null) {
+          imageOffset += Math.max(0, myIconLabel.getWidth() - 1);
+        }
       } else {
         imageOffset = 0;
       }
