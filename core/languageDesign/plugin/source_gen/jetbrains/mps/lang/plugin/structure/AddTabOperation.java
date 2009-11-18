@@ -16,6 +16,8 @@ public class AddTabOperation extends BaseConcept implements IOperation {
   public static final String ALIAS = "alias";
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
   public static final String COMPONENT_EXPRESSION = "componentExpression";
+  public static final String TITLE_EXPRESSION = "titleExpression";
+  public static final String ICON_EXPRESSION = "iconExpression";
   public static final String DISPOSE_TAB_BLOCK = "disposeTabBlock";
 
   public AddTabOperation(SNode node) {
@@ -52,6 +54,22 @@ public class AddTabOperation extends BaseConcept implements IOperation {
 
   public void setComponentExpression(Expression node) {
     super.setChild(AddTabOperation.COMPONENT_EXPRESSION, node);
+  }
+
+  public Expression getTitleExpression() {
+    return (Expression)this.getChild(Expression.class, AddTabOperation.TITLE_EXPRESSION);
+  }
+
+  public void setTitleExpression(Expression node) {
+    super.setChild(AddTabOperation.TITLE_EXPRESSION, node);
+  }
+
+  public Expression getIconExpression() {
+    return (Expression)this.getChild(Expression.class, AddTabOperation.ICON_EXPRESSION);
+  }
+
+  public void setIconExpression(Expression node) {
+    super.setChild(AddTabOperation.ICON_EXPRESSION, node);
   }
 
   public DisposeTabBlock getDisposeTabBlock() {

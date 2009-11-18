@@ -44,8 +44,8 @@ public abstract class BaseProjectPlugin implements MPSEditorOpenHandlerOwner, Pe
 
   private Project myProject;
 
-  private List<GeneratedTool> myTools = new ArrayList<GeneratedTool>();
-  private List<GeneratedTool> myInitializedTools = new ArrayList<GeneratedTool>();
+  private List<BaseGeneratedTool> myTools = new ArrayList<BaseGeneratedTool>();
+  private List<BaseGeneratedTool> myInitializedTools = new ArrayList<BaseGeneratedTool>();
   private List<BaseCustomProjectPlugin> myCustomPartsToDispose = new ArrayList<BaseCustomProjectPlugin>();
   private List<BaseProjectPrefsComponent> myPrefsComponents = new ArrayList<BaseProjectPrefsComponent>();
   private List<GenerationListener> myGenerationListeners = new ArrayList<GenerationListener>();
@@ -111,7 +111,7 @@ public abstract class BaseProjectPlugin implements MPSEditorOpenHandlerOwner, Pe
 
     myTools = (List) (initTools(myProject));
     final Project ideaProject = getIDEAProject();
-    for (final GeneratedTool tool : myTools) {
+    for (final BaseGeneratedTool tool : myTools) {
       if (ideaProject.isDisposed()) return;
       try {
         tool.init(ideaProject);
@@ -134,7 +134,7 @@ public abstract class BaseProjectPlugin implements MPSEditorOpenHandlerOwner, Pe
     }
 
     final Project ideaProject = getIDEAProject();
-    for (final GeneratedTool tool : myTools) {
+    for (final BaseGeneratedTool tool : myTools) {
       if (ideaProject.isDisposed()) return;
       if (!myInitializedTools.contains(tool)) return;
       try {
@@ -166,7 +166,7 @@ public abstract class BaseProjectPlugin implements MPSEditorOpenHandlerOwner, Pe
     return Collections.unmodifiableList(myPrefsComponents);
   }
 
-  public List<GeneratedTool> getTools() {
+  public List<BaseGeneratedTool> getTools() {
     return Collections.unmodifiableList(myTools);
   }
 

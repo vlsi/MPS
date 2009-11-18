@@ -28,6 +28,10 @@ public class AddTabOperation_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConceptProperty_0985_0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_0985_0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_0985_0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_0985_4(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_0985_3(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_0985_3(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_0985_2(editorContext, node));
     editorCell.addEditorCell(this.createConstant_0985_2(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_0985_1(editorContext, node));
     editorCell.addEditorCell(this.createConstant_0985_1(editorContext, node));
@@ -53,6 +57,28 @@ public class AddTabOperation_Editor extends DefaultNodeEditor {
   private EditorCell createConstant_0985_2(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ",");
     editorCell.setCellId("Constant_0985_2");
+    {
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.PUNCTUATION_LEFT, true);
+    }
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+
+  private EditorCell createConstant_0985_3(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ",");
+    editorCell.setCellId("Constant_0985_3");
+    {
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.PUNCTUATION_LEFT, true);
+    }
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+
+  private EditorCell createConstant_0985_4(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ",");
+    editorCell.setCellId("Constant_0985_4");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.PUNCTUATION_LEFT, true);
@@ -100,6 +126,40 @@ public class AddTabOperation_Editor extends DefaultNodeEditor {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("disposeTabBlock");
     provider.setNoTargetText("<no disposeTabBlock>");
+    EditorCell editorCell;
+    editorCell = provider.createEditorCell(editorContext);
+    editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
+    SNode attributeConcept = provider.getRoleAttribute();
+    Class attributeKind = provider.getRoleAttributeClass();
+    if (attributeConcept != null) {
+      IOperationContext opContext = editorContext.getOperationContext();
+      EditorManager manager = EditorManager.getInstanceFromContext(opContext);
+      return manager.createRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
+    } else
+    return editorCell;
+  }
+
+  private EditorCell createRefNode_0985_2(EditorContext editorContext, SNode node) {
+    CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
+    provider.setRole("iconExpression");
+    provider.setNoTargetText("<no iconExpression>");
+    EditorCell editorCell;
+    editorCell = provider.createEditorCell(editorContext);
+    editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
+    SNode attributeConcept = provider.getRoleAttribute();
+    Class attributeKind = provider.getRoleAttributeClass();
+    if (attributeConcept != null) {
+      IOperationContext opContext = editorContext.getOperationContext();
+      EditorManager manager = EditorManager.getInstanceFromContext(opContext);
+      return manager.createRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
+    } else
+    return editorCell;
+  }
+
+  private EditorCell createRefNode_0985_3(EditorContext editorContext, SNode node) {
+    CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
+    provider.setRole("titleExpression");
+    provider.setNoTargetText("<no titleExpression>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());

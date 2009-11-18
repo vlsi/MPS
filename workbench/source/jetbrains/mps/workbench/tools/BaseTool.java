@@ -219,7 +219,7 @@ public abstract class BaseTool {
     //if we create a new project, tool windows are created for it automatically
     ToolWindow toolWindow = myWindowManager.getToolWindow(myId);
     if (toolWindow == null) {
-      toolWindow = myWindowManager.registerToolWindow(myId, getCanCloseContent(), myAnchor, mySideTool);
+      toolWindow = myWindowManager.registerToolWindow(myId, myCanCloseContent, myAnchor, mySideTool);
     }
     toolWindow.setIcon(myIcon);
 
@@ -298,9 +298,7 @@ public abstract class BaseTool {
     return null;
   }
 
-  // TODO made this method public because of MPS-6520 issue, should be protected 
-  @Hack
-  public Content addContent(JComponent component, String name, Icon icon, boolean isLockable) {
+  protected Content addContent(JComponent component, String name, Icon icon, boolean isLockable) {
     Content content = new ContentFactoryImpl().createContent(component, name, isLockable);
     if (icon != null) {
       content.putUserData(ToolWindow.SHOW_CONTENT_ICON, Boolean.TRUE);
@@ -319,10 +317,11 @@ public abstract class BaseTool {
     manager.setSelectedContent(content);
   }
 
-  // TODO made this method public because of MPS-6520 issue, should be protected
-  @Hack
-  public ContentManager getContentManager() {
+  protected ContentManager getContentManager() {
     if (!isRegistered()) register();
+    if (getToolWindow() == null) {
+      return null;
+    }
     return getToolWindow().getContentManager();
   }
 
@@ -333,11 +332,5 @@ public abstract class BaseTool {
   @Deprecated
   protected MPSProject getMPSProject() {
     return myProject.getComponent(MPSProjectHolder.class).getMPSProject();
-  }
-
-  // TODO introduced this method because of MPS-6541, should be removed MPS-6521
-  @Deprecated
-  protected boolean getCanCloseContent() {
-    return myCanCloseContent;
   }
 }

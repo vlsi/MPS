@@ -31,6 +31,7 @@ import jetbrains.mps.plugins.PluginUtil;
 import jetbrains.mps.plugins.PluginUtil.ProjectPluginCreator;
 import jetbrains.mps.plugins.pluginparts.prefs.BaseProjectPrefsComponent;
 import jetbrains.mps.plugins.pluginparts.tool.GeneratedTool;
+import jetbrains.mps.plugins.pluginparts.tool.BaseGeneratedTool;
 import jetbrains.mps.plugins.projectplugins.BaseProjectPlugin.PluginState;
 import jetbrains.mps.plugins.projectplugins.ProjectPluginManager.PluginsState;
 import jetbrains.mps.project.MPSProject;
@@ -75,11 +76,11 @@ public class ProjectPluginManager implements ProjectComponent, PersistentStateCo
   }
 
   @Nullable
-  public <T extends GeneratedTool> T getTool(Class<T> toolClass) {
+  public <T extends BaseGeneratedTool> T getTool(Class<T> toolClass) {
     synchronized (myPluginsLock) {
       for (BaseProjectPlugin plugin : mySortedPlugins) {
-        List<GeneratedTool> tools = ((BaseProjectPlugin) plugin).getTools();
-        for (GeneratedTool tool : tools) {
+        List<BaseGeneratedTool> tools = ((BaseProjectPlugin) plugin).getTools();
+        for (BaseGeneratedTool tool : tools) {
           if (tool.getClass().getName().equals(toolClass.getName())) return (T) tool;
         }
       }
