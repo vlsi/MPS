@@ -43,7 +43,7 @@
         </filter>
     </appender>
 
-    <appender name="FILE-VCS" class="org.apache.log4j.RollingFileAppender" additivity="false">
+    <appender name="FILE-VCS" class="org.apache.log4j.RollingFileAppender">
         <param name="MaxFileSize" value="2Mb"/>
         <param name="MaxBackupIndex" value="5"/>
         <param name="file" value="$SYSTEM_DIR$/log/mpsvcs.log"/>
@@ -52,17 +52,17 @@
         </layout>
     </appender>
 
-    <category name="jetbrains.mps.watching">
+    <category name="jetbrains.mps.watching" additivity="false">
         <priority value="DEBUG"/>
         <appender-ref ref="FILE-VCS"/>
     </category>
 
-    <category name="jetbrains.mps.vcs">
+    <category name="jetbrains.mps.vcs" additivity="false">
         <priority value="DEBUG"/>
         <appender-ref ref="FILE-VCS"/>
     </category>
 
-    <category name="com.intellij.openapi.vcs">
+    <category name="com.intellij.openapi.vcs" additivity="false">
         <priority value="DEBUG"/>
         <appender-ref ref="FILE-VCS"/>
     </category>
