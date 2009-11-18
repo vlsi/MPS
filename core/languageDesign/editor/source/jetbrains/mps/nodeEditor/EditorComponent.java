@@ -201,10 +201,6 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
 
   private Map<KeyStroke, MPSActionProxy> myActionProxies = new HashMap<KeyStroke, MPSActionProxy>();
 
-  public IntentionsSupport getIntentionsSupport() {
-    return myIntentionsSupport;
-  }
-
   private IntentionsSupport myIntentionsSupport;
   @SuppressWarnings({"UnusedDeclaration"})
   private AutoValidator myAutoValidator;
