@@ -16,7 +16,7 @@ import jetbrains.mps.lang.test.behavior.TestInfo_Behavior;
 import jetbrains.mps.util.Macros;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.lang.test.behavior.NodesTestCase_Behavior;
-
+import jetbrains.mps.lang.intentions.behavior.IntentionDeclaration_Behavior;
 import jetbrains.mps.lang.plugin.behavior.KeyMapKeystroke_Behavior;
 import jetbrains.mps.generator.template.ReferenceMacroContext;
 import jetbrains.mps.smodel.SNode;
@@ -113,6 +113,10 @@ public class QueriesGenerated {
 
   public static Object propertyMacro_GetPropertyValue_1225985087451(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return SNodeOperations.getParent(SLinkOperations.getTarget(_context.getNode(), "declaration", false)).getId();
+  }
+
+  public static Object propertyMacro_GetPropertyValue_1225991473951(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return SNodeOperations.getModel(SLinkOperations.getTarget(_context.getNode(), "intention", false)).getLongName() + "." + IntentionDeclaration_Behavior.call_getGeneratedName_1213877237628(SLinkOperations.getTarget(_context.getNode(), "intention", false));
   }
 
   public static Object propertyMacro_GetPropertyValue_1226937589842(final IOperationContext operationContext, final PropertyMacroContext _context) {
