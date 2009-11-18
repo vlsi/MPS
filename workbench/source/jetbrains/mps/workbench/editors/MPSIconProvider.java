@@ -36,7 +36,7 @@ import org.jetbrains.annotations.Nullable;
 
 import javax.swing.Icon;
 
-public class MPSIconProvider implements FileIconProvider, ApplicationComponent {
+public class MPSIconProvider extends MultiTabPropertyProvider implements FileIconProvider, ApplicationComponent {
 
   @NonNls
   @NotNull
@@ -54,22 +54,9 @@ public class MPSIconProvider implements FileIconProvider, ApplicationComponent {
   public Icon getIcon(VirtualFile file, int flags, Project project) {
     if (file instanceof MPSNodeVirtualFile) {
       MPSNodeVirtualFile nodeFile = (MPSNodeVirtualFile) file;
-      FileEditor[] editors = FileEditorManager.getInstance(project).getEditors(file);
-      if (editors != null && editors.length > 0) {
-        FileEditor editor = editors[0];
-        if (editor instanceof MPSFileNodeEditor) {
-          IEditor nodeEditor = ((MPSFileNodeEditor) editor).getNodeEditor();
-          if (nodeEditor instanceof TabbedEditor) {
-            TabbedEditor tabbedEditor = (TabbedEditor) nodeEditor;
-            EditorComponent tabEditor = tabbedEditor.getTabbedPane().getCurrentTab().getCurrentEditorComponent();
-            if (tabEditor instanceof NodeEditorComponent) {
-              SNode node = ((NodeEditorComponent) tabEditor).getEditedNode();
-              if (node != null) {
-                return IconManager.getIconFor(node);
-              }
-            }
-          }
-        }
+      SNode node = getCurrentEditedNode(project, file);
+      if (node != null) {
+        return IconManager.getIconFor(node);
       }
       return IconManager.getIconFor(nodeFile.getNode());
     }
