@@ -122,8 +122,13 @@ public class JavaCompiler {
       }
       String packageNameFromFile = classFQName.toString();
       if (myPrefix != null) {
-        String postfix = packageNameWithoutPrefix.equals("") ? "" : '.' + packageNameWithoutPrefix;
-        if (!((myPrefix + postfix).equals(packageNameFromFile))) {
+        String pattern;
+        if ("".equals(packageNameWithoutPrefix) && myPrefix.endsWith(".")) {
+          pattern = myPrefix.substring(0, myPrefix.length() - 1);
+        } else {
+          pattern = myPrefix + packageNameWithoutPrefix;
+        }
+        if (!((pattern).equals(packageNameFromFile))) {
           LOG.error("package name in a source file does not correpond to file path");
           return;
         }
@@ -240,7 +245,7 @@ public class JavaCompiler {
   //returns true if classpathes were added and needs re-compilation
   private boolean addClassPathsAndBuildAst() {
     boolean hasErrors = false;
-    List<String> fqNames = new ArrayList<String>();
+    Set<String> fqNames = new LinkedHashSet<String>();
     for (CompilationUnitDeclaration decl : myCompilationUnitDeclarations) {
       if (decl.hasErrors()) {
         hasErrors = true;
@@ -260,7 +265,7 @@ public class JavaCompiler {
       int option = JOptionPane.showConfirmDialog(null, "Some imports in source code were not resolved.\nDo you want to specify classpaths for unresolved imports?");
       if (option == JOptionPane.YES_OPTION) {
         ArrayList<String> list = new ArrayList<String>();
-        JDialog dialog = UIComponents.createClasspathsDialog(mySourceDir, list);
+        JDialog dialog = UIComponents.createClasspathsDialog(mySourceDir, list, new Vector<String>(fqNames));
         dialog.setVisible(true);
         if (!list.isEmpty()) {
           for (String classpath : list) {

@@ -13,6 +13,7 @@ import jetbrains.mps.workbench.MPSDataKeys;
 
 import javax.swing.*;
 import java.util.List;
+import java.util.Vector;
 import java.io.File;
 import java.awt.BorderLayout;
 import java.awt.FlowLayout;
@@ -68,13 +69,16 @@ public class UIComponents {
     return UiListsFactory.createBoundListPanel(owner, "Classpaths", list, renderer, null, chooser);
   }
 
-  public static JDialog createClasspathsDialog(File sourceDir, final List<String> additionalClasspaths) {
+  public static JDialog createClasspathsDialog(File sourceDir, final List<String> additionalClasspaths, List<String> classFqNames) {
     IOperationContext data = MPSDataKeys.OPERATION_CONTEXT.getData(DataManager.getInstance().getDataContext());
     IBindedDialog dialog = new MyDialog(data);
     final JDialog jDialog = (JDialog) dialog;
     JPanel panel = createClassPathPanel(dialog, sourceDir, ObservableCollections.observableList(additionalClasspaths));
+    JList classesList = new JList(new Vector<String>(classFqNames));
+    JSplitPane splitPane = new JSplitPane(JSplitPane.HORIZONTAL_SPLIT, panel, classesList);
+    
     jDialog.setLayout(new BorderLayout());
-    jDialog.add(panel, BorderLayout.CENTER);
+    jDialog.add(splitPane, BorderLayout.CENTER);
     JPanel buttonsPanel = new JPanel();
     buttonsPanel.setLayout(new FlowLayout());
     buttonsPanel.add(new JButton(new AbstractAction("OK") {
