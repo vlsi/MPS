@@ -201,6 +201,10 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
 
   private Map<KeyStroke, MPSActionProxy> myActionProxies = new HashMap<KeyStroke, MPSActionProxy>();
 
+  public IntentionsSupport getIntentionsSupport() {
+    return myIntentionsSupport;
+  }
+
   private IntentionsSupport myIntentionsSupport;
   @SuppressWarnings({"UnusedDeclaration"})
   private AutoValidator myAutoValidator;
@@ -1741,6 +1745,16 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
         mySelectedCell.setSelected(true);
       }
 
+      boolean eq = false;
+      if (newSelectedCell != null && mySelectedCell != null) {
+        String id1 = newSelectedCell.getCellId();
+        String id2 = mySelectedCell.getCellId();
+
+        if(id1!=null)
+        eq = id1.equals(id2);
+      }
+
+      //if (!eq)
       fireCellSelectionChanged(oldSelection, newSelectedCell);
     }
 
@@ -2194,6 +2208,12 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
   }
 
   public void putCellAndNodesToDependOn(EditorCell cell, Set<SNode> nodes, Set<SNodePointer> refTargets) {
+    for (SNode n:nodes){
+      if (n==null) continue;
+      if ("4413749148913760651".equals(n.getId()) || "Constant_2079_0".equals(cell.getCellId())){
+        System.out.printf("123");
+      }
+    }
     myCellsToNodesToDependOnMap.put(cell, nodes);
     myCellsToRefTargetsToDependOnMap.put(cell, refTargets);
   }
@@ -2703,6 +2723,11 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
   }
 
   private class MyEventsCollector extends EventsCollector {
+    @Override
+    public void flush() {
+      super.flush();
+    }
+
     protected void eventsHappened(List<SModelEvent> events) {
       handleEvents(events);
     }
