@@ -78,7 +78,9 @@ public class VcsRootsManager implements ProjectComponent {
   }
 
   public void projectOpened() {
-    addDirectoryMappings();
+    if (ApplicationLevelVcsManager.instance().getSettings().getAutomaticallyDiscoverVcsRoots()) {
+      addDirectoryMappings();
+    }
     GlobalSModelEventsManager.getInstance().addGlobalModelListener(myGlobalSModelListener);
   }
 

@@ -27,10 +27,18 @@ public class VcsSettingsPanel extends JPanel {
   private final VcsIdeSettings mySettings;
   private final JCheckBox myTextModeDifferenceCheckBox;
   private final JCheckBox myNotifyWhenChangedOutsideAreMade;
+  private final JCheckBox myAutomaticallyDiscoverVcsRoots;
 
   public VcsSettingsPanel(VcsIdeSettings settings) {
     super(new VerticalFlowLayout(true, false));
     mySettings = settings;
+
+    JPanel vcsRootsPanel = new JPanel(new BorderLayout());
+    vcsRootsPanel.setBorder(new TitledBorder("Vcs roots"));
+    myAutomaticallyDiscoverVcsRoots = new JCheckBox("Automatically discover vcs roots",
+      mySettings.getAutomaticallyDiscoverVcsRoots());
+    vcsRootsPanel.add(myAutomaticallyDiscoverVcsRoots);
+
 
     JPanel diffPanel = new JPanel(new BorderLayout());
     diffPanel.setBorder(new TitledBorder("Differences view"));
@@ -43,22 +51,26 @@ public class VcsSettingsPanel extends JPanel {
       mySettings.getNotifyWhenChangedOutsideAreMade());
     notificationsPanel.add(myNotifyWhenChangedOutsideAreMade);
 
+    add(vcsRootsPanel);
     add(notificationsPanel);
     add(diffPanel);
   }
 
   public boolean isModified() {
     return (myTextModeDifferenceCheckBox.isSelected() != mySettings.getTextModeEnabled()) ||
-      (myNotifyWhenChangedOutsideAreMade.isSelected() != mySettings.getNotifyWhenChangedOutsideAreMade());
+      (myNotifyWhenChangedOutsideAreMade.isSelected() != mySettings.getNotifyWhenChangedOutsideAreMade()) ||
+      (myAutomaticallyDiscoverVcsRoots.isSelected() != mySettings.getAutomaticallyDiscoverVcsRoots());
   }
 
   public void reset() {
     myTextModeDifferenceCheckBox.setSelected(mySettings.getTextModeEnabled());
     myNotifyWhenChangedOutsideAreMade.setSelected(mySettings.getNotifyWhenChangedOutsideAreMade());
+    myAutomaticallyDiscoverVcsRoots.setSelected(mySettings.getAutomaticallyDiscoverVcsRoots());
   }
 
   public void apply() {
     mySettings.setTextModeEnabled(myTextModeDifferenceCheckBox.isSelected());
     mySettings.setNotifyWhenChangedOutsideAreMade(myNotifyWhenChangedOutsideAreMade.isSelected());
+    mySettings.setAutomaticallyDiscoverVcsRoots(myAutomaticallyDiscoverVcsRoots.isSelected());
   }
 }

@@ -18,6 +18,7 @@ package jetbrains.mps.vcs.ui;
 public class VcsIdeSettings {
   private boolean myTextModeEnabled = false;
   private boolean myNotifyWhenChangedOutsideAreMade = true;
+  private boolean myAutomaticallyDiscoverVcsRoots = true;
 
   public boolean getTextModeEnabled() {
     return myTextModeEnabled;
@@ -33,5 +34,13 @@ public class VcsIdeSettings {
 
   public void setNotifyWhenChangedOutsideAreMade(boolean notifyWhenChangedOutsideAreMade) {
     myNotifyWhenChangedOutsideAreMade = notifyWhenChangedOutsideAreMade;
+  }
+
+  public boolean getAutomaticallyDiscoverVcsRoots() {
+    return myAutomaticallyDiscoverVcsRoots;
+  }
+
+  public void setAutomaticallyDiscoverVcsRoots(boolean automaticallyDiscoverVcsRoots) {
+    myAutomaticallyDiscoverVcsRoots = automaticallyDiscoverVcsRoots;
   }
 }
