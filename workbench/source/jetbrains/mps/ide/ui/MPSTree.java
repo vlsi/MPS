@@ -722,7 +722,7 @@ public abstract class MPSTree extends DnDAwareTree implements Disposable {
       String text = value.toString();
       String additionalText = null;
       if (value instanceof MPSTreeNode) {
-        MPSTreeNode treeNode = (MPSTreeNode) value;
+        final MPSTreeNode treeNode = (MPSTreeNode) value;
         icon = treeNode.getIcon(expanded);
         text = treeNode.getText();
         additionalText = treeNode.getAdditionalText();
@@ -734,7 +734,11 @@ public abstract class MPSTree extends DnDAwareTree implements Disposable {
         if (!selected) {
           myMainTextLabel.setForeground(treeNode.getColor());
         }
-        Icon additionalIcon = treeNode.getAdditionalIcon();
+        Icon additionalIcon = ModelAccess.instance().runReadAction(new Computable<Icon>() {
+          public Icon compute() {
+            return treeNode.getAdditionalIcon();
+          }
+        });
         myMainTextLabel.setIcon(additionalIcon);
 
         myNode = treeNode;
