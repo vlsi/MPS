@@ -45,12 +45,12 @@ public class BrokenReferencesTestTest extends TestCase {
     final boolean[] brokenReferenceFound = new boolean[1];
     TestBrokenReferencesWorker worker = new TestBrokenReferencesWorker(whatToDo, new SystemOutLogger()) {
       @Override
-      protected void output(String text) {
+      protected void output(CharSequence text) {
         TeamCityMessageFormat teamCityMessageFormat = new TeamCityMessageFormat();
         if (teamCityMessageFormat.isBuildServerMessage(text) && teamCityMessageFormat.isTestFailMessage(text)) {
           brokenReferenceFound[0] = true;
         }
-        System.out.println(teamCityMessageFormat.escapeBuildMessage(text));
+        System.out.append(teamCityMessageFormat.escapeBuildMessage(new StringBuffer(text)));
       }
     };
     worker.work();

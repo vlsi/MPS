@@ -56,8 +56,8 @@ public class TestBrokenReferencesWorker extends MpsWorker {
     });
   }
 
-  protected void output(String s) {
-    System.out.println(s);
+  protected void output(CharSequence s) {
+    System.out.append(s);
   }
 
   private StringBuffer checkModel(SModelDescriptor sm) {
@@ -65,16 +65,16 @@ public class TestBrokenReferencesWorker extends MpsWorker {
     StringBuffer errorMessages = new StringBuffer();
     List<String> validationResult = sm.validate(scope);
     for (String item : validationResult) {
-      errorMessages.append(myBuildServerMessageFormat.escapeBuildMessage(item));
-      errorMessages.append(myBuildServerMessageFormat.getLinesSeparator());
+      errorMessages.append(item);
+      errorMessages.append("\n");
     }
 
     for (SNode node : sm.getSModel().allNodes()) {
       debug("Checking node " + node);
       if (SModelUtil_new.findConceptDeclaration(node.getConceptFqName(), GlobalScope.getInstance()) == null) {
-        errorMessages.append(myBuildServerMessageFormat.escapeBuildMessage("Unknown concept "));
-        errorMessages.append(myBuildServerMessageFormat.escapeBuildMessage(node.getConceptFqName()));
-        errorMessages.append(myBuildServerMessageFormat.getLinesSeparator());
+        errorMessages.append("Unknown concept ");
+        errorMessages.append(node.getConceptFqName());
+        errorMessages.append("\n");
       }
     }
 
@@ -86,16 +86,15 @@ public class TestBrokenReferencesWorker extends MpsWorker {
         }
 
         if (ref.getTargetNode() == null) {
-          errorMessages.append(myBuildServerMessageFormat.escapeBuildMessage("Broken reference in node "));
-          errorMessages.append(myBuildServerMessageFormat.escapeBuildMessage(node.getId()));
-          errorMessages.append(myBuildServerMessageFormat.escapeBuildMessage("("));
-          errorMessages.append(myBuildServerMessageFormat.escapeBuildMessage(node.toString()));
-          errorMessages.append(myBuildServerMessageFormat.escapeBuildMessage(")"));
-          errorMessages.append(myBuildServerMessageFormat.getLinesSeparator());
+          errorMessages.append("Broken reference in node ");
+          errorMessages.append(node.getId());
+          errorMessages.append("(");
+          errorMessages.append(node);
+          errorMessages.append(")\n");
         }
       }
     }
-    return errorMessages;
+    return myBuildServerMessageFormat.escapeBuildMessage(errorMessages);
   }
 
   protected void showStatistic() {

@@ -96,7 +96,7 @@ public class TestGenerationWorker extends GeneratorWorker {
 
   @Override
   protected void generateModulesCycle(GeneratorManager gm, ProgressIndicator progressIndicator, Cycle cycle) {
-    String currentTestName = myBuildServerMessageFormat.escapeBuildMessage(cycle.toString());
+    String currentTestName = myBuildServerMessageFormat.escapeBuildMessage(new StringBuffer(cycle.toString())).toString();
     System.out.println(myBuildServerMessageFormat.formatTestStart(currentTestName));
 
     cycle.generate(gm, myGenerationType, progressIndicator, myMessageHandler);
@@ -192,66 +192,62 @@ public class TestGenerationWorker extends GeneratorWorker {
     StringBuffer sb = new StringBuffer();
 
     if (myMessageHandler.getGenerationErrors().size() > 0) {
-      sb.append("Generation errors:");
-      sb.append(myBuildServerMessageFormat.getLinesSeparator());
+      sb.append("Generation errors:\n");
       for (String e : myMessageHandler.getGenerationErrors()) {
         sb.append("  ");
-        sb.append(myBuildServerMessageFormat.escapeBuildMessage(e));
-        sb.append(myBuildServerMessageFormat.getLinesSeparator());
+        sb.append(e);
+        sb.append("\n");
       }
-      sb.append(myBuildServerMessageFormat.getLinesSeparator());
+      sb.append("\n");
     }
 
     boolean headerPrinted = false;
     for (CompilationResult r : compilationResult) {
       if (r.getErrors() != null && r.getErrors().length > 0) {
         if (!headerPrinted) {
-          sb.append("Compilation problems:");
-          sb.append(myBuildServerMessageFormat.getLinesSeparator());
+          sb.append("Compilation problems:\n");
           headerPrinted = true;
         }
         for (CategorizedProblem p : r.getErrors()) {
           sb.append("  ");
-          sb.append(myBuildServerMessageFormat.escapeBuildMessage(new String(r.getCompilationUnit().getFileName())));
+          sb.append(new String(r.getCompilationUnit().getFileName()));
           sb.append(" (");
           sb.append(p.getSourceLineNumber());
           sb.append("): ");
-          sb.append(myBuildServerMessageFormat.escapeBuildMessage(p.getMessage()));
-          sb.append(myBuildServerMessageFormat.getLinesSeparator());
+          sb.append(p.getMessage());
+          sb.append("\n");
         }
       }
     }
     if (headerPrinted) {
-      sb.append(myBuildServerMessageFormat.getLinesSeparator());
+      sb.append("\n");
     }
 
     if (testFailures.size() > 0) {
-      sb.append("Test Failures:");
-      sb.append(myBuildServerMessageFormat.getLinesSeparator());
+      sb.append("Test Failures:\n");
       for (TestFailure failure : testFailures) {
         sb.append("  ");
         StringWriter writer = new StringWriter();
         failure.thrownException().printStackTrace(new PrintWriter(writer));
-        sb.append(myBuildServerMessageFormat.escapeBuildMessage(writer.getBuffer()));
-        sb.append(myBuildServerMessageFormat.getLinesSeparator());
+        sb.append(writer.getBuffer());
+        sb.append("\n");
       }
-      sb.append(myBuildServerMessageFormat.getLinesSeparator());
+      sb.append("\n");
     }
 
     if (Boolean.parseBoolean(myWhatToDo.getProperty(TestGenerationOnTeamcity.SHOW_DIFF))) {
       if (diffReports.size() > 0) {
-        sb.append("Difference:");
-        sb.append(myBuildServerMessageFormat.getLinesSeparator());
+        sb.append("Difference:\n");
         for (String diffReport : diffReports) {
           sb.append("  ");
-          sb.append(myBuildServerMessageFormat.escapeBuildMessage(diffReport));
-          sb.append(myBuildServerMessageFormat.getLinesSeparator());
+          sb.append(diffReport);
+          sb.append("\n");
         }
-        sb.append(myBuildServerMessageFormat.getLinesSeparator());
+        sb.append("\n");
       }
     }
 
-    return sb;
+    return myBuildServerMessageFormat.escapeBuildMessage(sb);
   }
 
   @Override
