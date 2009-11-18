@@ -30,6 +30,8 @@ public class InternUtil {
       if (result != null) {
         return result;
       }
+      // Ensure we cache only what's necessary!
+      s = new String (s);
       internCache.cacheObject(s, s);
     }
     return s;
