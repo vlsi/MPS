@@ -7,16 +7,20 @@ import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.workbench.dialogs.project.IBindedDialog;
+import jetbrains.mps.workbench.dialogs.project.BaseBindedDialog;
 import jetbrains.mps.workbench.dialogs.project.components.parts.UiListsFactory;
+import jetbrains.mps.workbench.MPSDataKeys;
 
 import javax.swing.*;
 import java.util.List;
 import java.io.File;
 import java.awt.BorderLayout;
 import java.awt.FlowLayout;
+import java.awt.HeadlessException;
 import java.awt.event.ActionEvent;
 
 import com.intellij.openapi.util.Computable;
+import com.intellij.ide.DataManager;
 import org.jdesktop.beansbinding.AutoBinding;
 import org.jdesktop.observablecollections.ObservableCollections;
 
@@ -61,13 +65,14 @@ public class UIComponents {
     DefaultListCellRenderer renderer = new DefaultListCellRenderer();
     // ModuleRenderer renderer = new ModuleRenderer(owner.getModuleScope(), owner.getProjectScope());
 
-    return UiListsFactory.createBoundListPanel(owner, "Classpaths", ObservableCollections.observableList(list), renderer, null, chooser);
+    return UiListsFactory.createBoundListPanel(owner, "Classpaths", list, renderer, null, chooser);
   }
 
   public static JDialog createClasspathsDialog(File sourceDir, final List<String> additionalClasspaths) {
-    IBindedDialog dialog = new MyDialog();
+    IOperationContext data = MPSDataKeys.OPERATION_CONTEXT.getData(DataManager.getInstance().getDataContext());
+    IBindedDialog dialog = new MyDialog(data);
     final JDialog jDialog = (JDialog) dialog;
-    JPanel panel = createClassPathPanel(dialog, sourceDir, additionalClasspaths);
+    JPanel panel = createClassPathPanel(dialog, sourceDir, ObservableCollections.observableList(additionalClasspaths));
     jDialog.setLayout(new BorderLayout());
     jDialog.add(panel, BorderLayout.CENTER);
     JPanel buttonsPanel = new JPanel();
@@ -88,24 +93,13 @@ public class UIComponents {
     return jDialog;
   }
 
-  static class MyDialog extends JDialog implements IBindedDialog {
+  static class MyDialog extends BaseBindedDialog {
+    protected MyDialog(IOperationContext operationContext) throws HeadlessException {
+      super("Classpaths", operationContext);
+    }
+
     public JComponent getMainComponent() {
       return this.getRootPane();
-    }
-
-    public IOperationContext getOperationContext() {
-      return null;
-    }
-
-    public IScope getModuleScope() {
-      return null;
-    }
-
-    public IScope getProjectScope() {
-      return null;
-    }
-
-    public void addBinding(AutoBinding binding) {
     }
   }
 }
