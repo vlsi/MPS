@@ -70,14 +70,14 @@
       <property name="package" value="Tool.Methods" />
       <link role="applicableConcept" targetNodeId="1.5896642449625987000" resolveInfo="AddTabOperation" />
       <node role="ruleConsequence" type="jetbrains.mps.lang.generator.structure.TemplateDeclarationReference" id="3062002558005338731">
-        <link role="template" targetNodeId="3062002558005338732" resolveInfo="reduce_AddTabOperation" />
+        <link role="template" targetNodeId="3.3062002558005753444" resolveInfo="reduce_AddTabOperation" />
       </node>
     </node>
     <node role="reductionMappingRule" type="jetbrains.mps.lang.generator.structure.Reduction_MappingRule" id="3062002558005860135">
       <property name="package" value="Tool.Methods" />
       <link role="applicableConcept" targetNodeId="1.5896642449625987000" resolveInfo="AddTabOperation" />
       <node role="ruleConsequence" type="jetbrains.mps.lang.generator.structure.TemplateDeclarationReference" id="3062002558005860137">
-        <link role="template" targetNodeId="3062002558005860138" resolveInfo="reduce_AddTabOperation" />
+        <link role="template" targetNodeId="3.3062002558005753444" resolveInfo="reduce_AddTabOperation" />
       </node>
     </node>
   </node>
