@@ -250,7 +250,8 @@ public class JavaCompiler {
       if (decl.hasErrors()) {
         hasErrors = true;
         for (CategorizedProblem problem : decl.compilationResult().getErrors()) {
-          if (problem.getID() == IProblem.ImportNotFound) {
+          int id = problem.getID();
+          if (id == IProblem.ImportNotFound || id == IProblem.IsClassPathCorrect) {
             fqNames.add(problem.getArguments()[0]);
           } else {
             String message = problem.getMessage();
