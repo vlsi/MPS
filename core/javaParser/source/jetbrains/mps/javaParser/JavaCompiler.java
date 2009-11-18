@@ -25,17 +25,23 @@ import org.eclipse.jdt.internal.compiler.classfmt.ClassFileConstants;
 import org.eclipse.jdt.internal.compiler.impl.CompilerOptions;
 import org.eclipse.jdt.internal.compiler.batch.CompilationUnit;
 import org.eclipse.jdt.core.compiler.CategorizedProblem;
+import org.eclipse.jdt.core.compiler.IProblem;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.reloading.IClassPathItem;
 import jetbrains.mps.reloading.CompositeClassPathItem;
 import jetbrains.mps.reloading.CommonPaths;
+import jetbrains.mps.reloading.FileClassPathItem;
 import jetbrains.mps.vfs.MPSExtentions;
 import jetbrains.mps.util.FileUtil;
+import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.compiler.MPSNameEnvironment;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.Solution;
 
+import javax.swing.JFileChooser;
+import javax.swing.JOptionPane;
+import javax.swing.JDialog;
 import java.util.*;
 import java.io.*;
 
@@ -53,7 +59,7 @@ public class JavaCompiler {
   private Map<String, CompilationUnit> myCompilationUnits = new HashMap<String, CompilationUnit>();
   private Set<ICompilationUnit> myProcessedCompilationUnits = new HashSet<ICompilationUnit>();
   private List<CompilationUnitDeclaration> myCompilationUnitDeclarations = new ArrayList<CompilationUnitDeclaration>();
-  private IClassPathItem myClassPathItem;
+  private CompositeClassPathItem myClassPathItem;
   private Solution mySolution;
   private List<CompilationResult> myCompilationResults = new ArrayList<CompilationResult>();
   private File mySourceDir;
@@ -119,7 +125,7 @@ public class JavaCompiler {
       } else {
         if (packageNameFromFile.endsWith(packageNameWithoutPrefix)) {
           int index = packageNameFromFile.length() - packageNameWithoutPrefix.length();
-          myPrefix = packageNameFromFile.substring(0, index);
+          myPrefix = packageNameFromFile.substring(0, index-1);
         } else {
           LOG.error("package name in a source file does not correpond to file path");
           return;
@@ -200,23 +206,69 @@ public class JavaCompiler {
   }
 
   public void compile() {
-    org.eclipse.jdt.internal.compiler.Compiler c = new CompilerImpl();
-    //c.options.verbose = true;
+    boolean needsRecompilation = true;
+    while (needsRecompilation) {
+      recompile();
+      needsRecompilation = addClassPathsAndBuildAst();
+    }
+  }
 
+  private void recompile() {
+    myCompilationUnitDeclarations = new ArrayList<CompilationUnitDeclaration>();
+    myProcessedCompilationUnits = new HashSet<ICompilationUnit>();
+    Compiler c = new CompilerImpl();
+    //c.options.verbose = true;
     c.compile(myCompilationUnits.values().toArray(new CompilationUnit[0]));
-    buildAST();
+  }
+
+  //returns true if classpathes were added and needs re-compilation
+  private boolean addClassPathsAndBuildAst() {
+    boolean hasErrors = false;
+    List<String> fqNames = new ArrayList<String>();
+    for (CompilationUnitDeclaration decl : myCompilationUnitDeclarations) {
+      if (decl.hasErrors()) {
+        hasErrors = true;
+        for (CategorizedProblem problem : decl.compilationResult().getErrors()) {
+          if (problem.getID() == IProblem.ImportNotFound) {
+            fqNames.add(problem.getArguments()[0]);
+          } else {
+            String message = problem.getMessage();
+            LOG.error(message + " (line: " + problem.getSourceLineNumber() + ")");
+            //, new FileWithPosition(javaFile.getFile(), cp.getSourceStart()));
+          }
+        }
+      }
+    }
+    boolean buildAstNow = true;
+    if (!fqNames.isEmpty()) {
+      int option = JOptionPane.showConfirmDialog(null, "Some imports in source code were not resolved.\nDo you want to specify classpaths for unresolved imports?");
+      if (option == JOptionPane.YES_OPTION) {
+        ArrayList<String> list = new ArrayList<String>();
+        JDialog dialog = UIComponents.createClasspathsDialog(mySourceDir, list);
+        dialog.setVisible(true);
+        if (!list.isEmpty()) {
+          for (String classpath : list) {
+            myClassPathItem.add(new FileClassPathItem(classpath));
+          }
+          return true;
+        }
+      }
+    }
+    if (hasErrors) {
+      int option = JOptionPane.showConfirmDialog(null, "Errors were found during compilation. Are you sure you want to build MPS model?");
+      if (option != JOptionPane.YES_OPTION) {
+        buildAstNow = false;
+      }
+    }
+    if (buildAstNow) {
+      buildAST();
+      return false;
+    }
+    return false;
   }
 
   public void buildAST() {
     ReferentsCreator referentsCreator = new ReferentsCreator(new HashMap<String, SModel>(myPackageFQNamesToModels));
-    for (CompilationUnitDeclaration decl : myCompilationUnitDeclarations) {
-      if (decl.hasErrors()) {
-        for (CategorizedProblem problem : decl.compilationResult().getErrors()) {
-          String message = problem.getMessage();
-          LOG.error(message + " (line: " + problem.getSourceLineNumber() + ")");//, new FileWithPosition(javaFile.getFile(), cp.getSourceStart()));
-        }
-      }
-    }
     referentsCreator.exec(myCompilationUnitDeclarations.toArray(new CompilationUnitDeclaration[myCompilationUnitDeclarations.size()]));
     new JavaConverterTreeBuilder().exec(referentsCreator, myPackageFQNamesToModels);
   }
@@ -249,6 +301,43 @@ public class JavaCompiler {
 
       return super.findType(fqName);
     }
+  }
+
+  private boolean askForClassLocation(String fqName) {
+    final String name = NameUtil.shortNameFromLongName(fqName);
+    JFileChooser fileChooser = new JFileChooser(mySourceDir);
+    fileChooser.setFileFilter(new javax.swing.filechooser.FileFilter() {
+      @Override
+      public boolean accept(File f) {
+        return f.isDirectory() || f.getName().endsWith(name + ".class");
+      }
+
+      @Override
+      public String getDescription() {
+        return "Java class " + name;
+      }
+    });
+    fileChooser.setDialogTitle("Select class location for " + fqName);
+    fileChooser.setFileSelectionMode(JFileChooser.FILES_ONLY);
+    int option = fileChooser.showOpenDialog(null);
+    if (option != JFileChooser.APPROVE_OPTION) {
+      return false;
+    }
+    File f = fileChooser.getSelectedFile();
+    String postfix = fqName.replace('.', File.separatorChar);
+    String fileAbsolutePath = f.getAbsolutePath();
+    if (!fileAbsolutePath.endsWith(postfix)) {
+      LOG.error("file path does not correspond class package");
+      return false;
+    }
+    String classPath = fileAbsolutePath.substring(fileAbsolutePath.length() - postfix.length());
+    File classFile = new File(classPath);
+    if (!classFile.exists()) {
+      LOG.error("classpath directory does not exist");
+      return false;
+    }
+    myClassPathItem.add(new FileClassPathItem(classPath));
+    return true;
   }
 
   private static class MyErrorHandlingPolicy implements IErrorHandlingPolicy {
