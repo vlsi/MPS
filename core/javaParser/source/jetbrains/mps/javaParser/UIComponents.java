@@ -18,6 +18,7 @@ import java.awt.event.ActionEvent;
 
 import com.intellij.openapi.util.Computable;
 import org.jdesktop.beansbinding.AutoBinding;
+import org.jdesktop.observablecollections.ObservableCollections;
 
 /**
  * Created by IntelliJ IDEA.
@@ -60,7 +61,7 @@ public class UIComponents {
     DefaultListCellRenderer renderer = new DefaultListCellRenderer();
     // ModuleRenderer renderer = new ModuleRenderer(owner.getModuleScope(), owner.getProjectScope());
 
-    return UiListsFactory.createBoundListPanel(owner, "Classpaths", list, renderer, null, chooser);
+    return UiListsFactory.createBoundListPanel(owner, "Classpaths", ObservableCollections.observableList(list), renderer, null, chooser);
   }
 
   public static JDialog createClasspathsDialog(File sourceDir, final List<String> additionalClasspaths) {
