@@ -118,7 +118,8 @@ public class JavaCompiler {
       }
       String packageNameFromFile = classFQName.toString();
       if (myPrefix != null) {
-        if (!((myPrefix + packageNameWithoutPrefix).equals(packageNameFromFile))) {
+        String postfix = packageNameWithoutPrefix.equals("") ? "" : '.' + packageNameWithoutPrefix;
+        if (!((myPrefix + postfix).equals(packageNameFromFile))) {
           LOG.error("package name in a source file does not correpond to file path");
           return;
         }
