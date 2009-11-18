@@ -16,15 +16,12 @@
 package jetbrains.mps.ide.tabbedEditor;
 
 import com.intellij.ide.DataManager;
-import com.intellij.openapi.project.Project;
-import com.intellij.openapi.wm.ToolWindowManager;
 import com.intellij.openapi.fileEditor.FileEditor;
 import jetbrains.mps.nodeEditor.CellSelectionListener;
 import jetbrains.mps.nodeEditor.EditorComponent;
-import jetbrains.mps.nodeEditor.NodeEditorComponent;
 import jetbrains.mps.nodeEditor.InspectorTool;
-import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.workbench.MPSDataKeys;
 
 import javax.swing.JComponent;
 import javax.swing.JLabel;
@@ -34,10 +31,10 @@ import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
 import java.awt.BorderLayout;
 import java.awt.Color;
+import java.awt.event.HierarchyEvent;
+import java.awt.event.HierarchyListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
-import java.awt.event.HierarchyListener;
-import java.awt.event.HierarchyEvent;
 import java.util.*;
 
 public class LazyTabbedPane extends JPanel {
@@ -97,6 +94,7 @@ public class LazyTabbedPane extends JPanel {
   }
 
   public void initTab(final ILazyTab tab) {
+    myTabbedEditor.onSelectInnerTab();
     if (myInitializedTabs.contains(tab)) return;
     final JPanel panel = (JPanel) myTabbedPane.getComponentAt(myLazyTabs.indexOf(tab));
     JComponent component = tab.getComponent();

@@ -16,7 +16,11 @@
 package jetbrains.mps.ide.tabbedEditor;
 
 import com.intellij.openapi.actionSystem.DataProvider;
+import com.intellij.openapi.fileEditor.FileEditorManager;
 import com.intellij.openapi.fileEditor.FileEditorStateLevel;
+import com.intellij.openapi.fileEditor.impl.FileEditorManagerImpl;
+import com.intellij.openapi.project.Project;
+import com.intellij.openapi.vfs.VirtualFile;
 import jetbrains.mps.ide.IEditor;
 import jetbrains.mps.ide.MPSEditorState;
 import jetbrains.mps.ide.tabbedEditor.tabs.BaseMultitabbedTab;
@@ -119,6 +123,14 @@ public class TabbedEditor implements IEditor {
     if (component != null) {
       component.requestFocus();
     }
+  }
+
+  public void onSelectInnerTab() {
+    Project project = myOperationContext.getProject();
+    FileEditorManagerImpl manager = (FileEditorManagerImpl) FileEditorManager.getInstance(project);
+    VirtualFile virtualFile = manager.getCurrentFile();
+    if (virtualFile == null) return;
+    manager.updateFilePresentation(virtualFile);
   }
 
   @NotNull

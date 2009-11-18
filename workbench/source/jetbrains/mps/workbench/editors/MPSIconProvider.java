@@ -17,10 +17,17 @@ package jetbrains.mps.workbench.editors;
 
 import com.intellij.ide.FileIconProvider;
 import com.intellij.openapi.components.ApplicationComponent;
+import com.intellij.openapi.fileEditor.FileEditor;
+import com.intellij.openapi.fileEditor.FileEditorManager;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.vfs.VirtualFile;
+import jetbrains.mps.ide.IEditor;
 import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.ide.projectPane.Icons;
+import jetbrains.mps.ide.tabbedEditor.TabbedEditor;
+import jetbrains.mps.nodeEditor.EditorComponent;
+import jetbrains.mps.nodeEditor.NodeEditorComponent;
+import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.workbench.languagesFs.MPSLanguageVirtualFile;
 import jetbrains.mps.workbench.nodesFs.MPSNodeVirtualFile;
 import org.jetbrains.annotations.NonNls;
@@ -47,6 +54,23 @@ public class MPSIconProvider implements FileIconProvider, ApplicationComponent {
   public Icon getIcon(VirtualFile file, int flags, Project project) {
     if (file instanceof MPSNodeVirtualFile) {
       MPSNodeVirtualFile nodeFile = (MPSNodeVirtualFile) file;
+      FileEditor[] editors = FileEditorManager.getInstance(project).getEditors(file);
+      if (editors != null && editors.length > 0) {
+        FileEditor editor = editors[0];
+        if (editor instanceof MPSFileNodeEditor) {
+          IEditor nodeEditor = ((MPSFileNodeEditor) editor).getNodeEditor();
+          if (nodeEditor instanceof TabbedEditor) {
+            TabbedEditor tabbedEditor = (TabbedEditor) nodeEditor;
+            EditorComponent tabEditor = tabbedEditor.getTabbedPane().getCurrentTab().getCurrentEditorComponent();
+            if (tabEditor instanceof NodeEditorComponent) {
+              SNode node = ((NodeEditorComponent) tabEditor).getEditedNode();
+              if (node != null) {
+                return IconManager.getIconFor(node);
+              }
+            }
+          }
+        }
+      }
       return IconManager.getIconFor(nodeFile.getNode());
     }
     if (file instanceof MPSLanguageVirtualFile) {
