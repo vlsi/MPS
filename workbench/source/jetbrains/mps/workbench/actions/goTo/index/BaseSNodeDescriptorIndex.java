@@ -16,6 +16,7 @@
 package jetbrains.mps.workbench.actions.goTo.index;
 
 import com.intellij.openapi.vfs.VirtualFile;
+import com.intellij.openapi.util.Key;
 import com.intellij.util.indexing.DataIndexer;
 import com.intellij.util.indexing.FileBasedIndex;
 import com.intellij.util.indexing.FileBasedIndex.InputFilter;
@@ -43,6 +44,7 @@ import java.util.Map;
 public abstract class BaseSNodeDescriptorIndex extends ScalarIndexExtension<SNodeDescriptor> {
 
   private static final Logger LOG = Logger.getLogger(BaseSNodeDescriptorIndex.class);
+  private static final Key<SModel> PARSED_MODEL = new Key<SModel>("parsed-model");
 
   private final MyInputFilter myInputFilter = new MyInputFilter();
   private final MyIndexer myIndexer = new MyIndexer();
@@ -81,9 +83,18 @@ public abstract class BaseSNodeDescriptorIndex extends ScalarIndexExtension<SNod
       ModelAccess.instance().runIndexing(new Runnable() {
         public void run() {
           try {
-            SModel model = ModelPersistence.readModel(inputData.getContent());
+            SModel model = inputData.getUserData(PARSED_MODEL);
+
+            if (model == null) {
+              model = ModelPersistence.readModel(inputData.getContent());
+              if (model != null) {
+                model.setLoading(true);
+              }
+              inputData.putUserData(PARSED_MODEL, model);
+            } 
+
             if (model == null) return;
-            model.setLoading(true);
+                        
             List<SNode> nodes = getNodesToIterate(model);
             for (final SNode node : nodes) {
               String persistentName = node.getPersistentProperty(INamedConcept.NAME);
