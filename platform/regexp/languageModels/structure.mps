@@ -1033,11 +1033,13 @@
     <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1220356033934">
       <property name="metaClass" value="aggregation" />
       <property name="role" value="left" />
+      <property name="sourceCardinality" value="1" />
       <link role="target" targetNodeId="1220356640633" resolveInfo="SymbolClassRegexpAndPart" />
     </node>
     <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1220356007276">
       <property name="metaClass" value="aggregation" />
       <property name="role" value="right" />
+      <property name="sourceCardinality" value="1" />
       <link role="target" targetNodeId="1220356640633" resolveInfo="SymbolClassRegexpAndPart" />
     </node>
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1220355672855">

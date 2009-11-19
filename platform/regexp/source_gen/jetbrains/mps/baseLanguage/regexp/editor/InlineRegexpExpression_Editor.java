@@ -12,6 +12,13 @@ import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.MPSFonts;
 import jetbrains.mps.nodeEditor.MPSColors;
+import jetbrains.mps.nodeEditor.cells.EditorCell_Property;
+import jetbrains.mps.nodeEditor.cells.ModelAccessor;
+import jetbrains.mps.baseLanguage.regexp.behavior.Regexp_Behavior;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.util.EqualUtil;
+import jetbrains.mps.nodeEditor.CellActionType;
+import jetbrains.mps.nodeEditor.cellActions.CellAction_Empty;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
@@ -65,6 +72,9 @@ public class InlineRegexpExpression_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstant_6834_7(editorContext, node));
     editorCell.addEditorCell(this.createConstant_6834_8(editorContext, node));
     editorCell.addEditorCell(this.createConstant_6834_9(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_6834_17(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_6834_18(editorContext, node));
+    editorCell.addEditorCell(this.createReadOnlyModelAccessor_6834_0(editorContext, node));
     return editorCell;
   }
 
@@ -251,6 +261,45 @@ public class InlineRegexpExpression_Editor extends DefaultNodeEditor {
       style.set(StyleAttributes.PUNCTUATION_LEFT, true);
     }
     editorCell.setDefaultText("");
+    return editorCell;
+  }
+
+  private EditorCell createConstant_6834_17(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
+    editorCell.setCellId("Constant_6834_17");
+    {
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
+    }
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+
+  private EditorCell createConstant_6834_18(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "Value:");
+    editorCell.setCellId("Constant_6834_18");
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+
+  private EditorCell createReadOnlyModelAccessor_6834_0(final EditorContext editorContext, final SNode node) {
+    EditorCell_Property editorCell = EditorCell_Property.create(editorContext, new ModelAccessor() {
+      public String getText() {
+        return (Regexp_Behavior.call_isValid_4759120547781297301(SLinkOperations.getTarget(node, "regexp", true)) ?
+          "/" + Regexp_Behavior.call_toString_1213877429451(SLinkOperations.getTarget(node, "regexp", true)) + "/" :
+          "<invalid>"
+        );
+      }
+
+      public void setText(String s) {
+      }
+
+      public boolean isValidText(String s) {
+        return EqualUtil.equals(s, this.getText());
+      }
+    }, node);
+    editorCell.setAction(CellActionType.DELETE, new CellAction_Empty());
+    editorCell.setCellId("ReadOnlyModelAccessor_6834_0");
     return editorCell;
   }
 

@@ -2230,6 +2230,30 @@
         </node>
       </node>
     </node>
+    <node role="nodeFactory" type="jetbrains.mps.lang.actions.structure.NodeFactory" id="7048923897762413188">
+      <link role="applicableConcept" targetNodeId="1.1174653354106" resolveInfo="RegexpUsingConstruction" />
+      <node role="setupFunction" type="jetbrains.mps.lang.actions.structure.NodeSetupFunction" id="7048923897762413189">
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="7048923897762413190">
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="7048923897762413248">
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression" id="7048923897762413255">
+              <node role="lValue" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="7048923897762413250">
+                <node role="operand" type="jetbrains.mps.lang.actions.structure.NodeSetupFunction_NewNode" id="7048923897762413249" />
+                <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="7048923897762413254">
+                  <link role="link" targetNodeId="1.1174653387388" />
+                </node>
+              </node>
+              <node role="rValue" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="7048923897762413258">
+                <node role="creator" type="jetbrains.mps.lang.smodel.structure.SNodeCreator" id="7048923897762422752">
+                  <node role="createdType" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="7048923897762422753">
+                    <link role="concept" targetNodeId="1.1174510540317" resolveInfo="InlineRegexpExpression" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
   </node>
   <node type="jetbrains.mps.lang.actions.structure.NodeSubstituteActions" id="3050481019132371336">
     <property name="name" value="regexps_fromstring" />

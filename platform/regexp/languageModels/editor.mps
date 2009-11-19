@@ -492,6 +492,61 @@
         </node>
       </node>
       <node role="cellLayout" type="jetbrains.mps.lang.editor.structure.CellLayout_Indent" id="1237800051149" />
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="7048923897762546575">
+        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.IndentLayoutNewLineStyleClassItem" id="7048923897762546577">
+          <property name="flag" value="true" />
+        </node>
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="7048923897762546579">
+        <property name="text" value="Value:" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_ReadOnlyModelAccessor" id="7048923897762548596">
+        <node role="modelAccessor" type="jetbrains.mps.lang.editor.structure.ReadOnlyModelAccessor" id="7048923897762548597">
+          <node role="getter" type="jetbrains.mps.lang.editor.structure.QueryFunction_ModelAccess_Getter" id="7048923897762548598">
+            <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="7048923897762548599">
+              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="7048923897762548600">
+                <node role="expression" type="jetbrains.mps.baseLanguage.structure.TernaryOperatorExpression" id="7048923897762548601">
+                  <node role="condition" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="7048923897762548602">
+                    <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="7048923897762548603">
+                      <node role="operand" type="jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_node" id="7048923897762548604" />
+                      <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="7048923897762549856">
+                        <link role="link" targetNodeId="1.1174510571016" />
+                      </node>
+                    </node>
+                    <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="7048923897762548606">
+                      <link role="baseMethodDeclaration" targetNodeId="2v.4759120547781297301" resolveInfo="isValid" />
+                    </node>
+                  </node>
+                  <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="7048923897762548607">
+                    <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="7048923897762548608">
+                      <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="7048923897762548609">
+                        <property name="value" value="/" />
+                      </node>
+                      <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="7048923897762548610">
+                        <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="7048923897762548611">
+                          <node role="operand" type="jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_node" id="7048923897762548612" />
+                          <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="7048923897762549857">
+                            <link role="link" targetNodeId="1.1174510571016" />
+                          </node>
+                        </node>
+                        <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="7048923897762548614">
+                          <link role="baseMethodDeclaration" targetNodeId="2v.1213877429451" resolveInfo="toString" />
+                        </node>
+                      </node>
+                    </node>
+                    <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="7048923897762548615">
+                      <property name="value" value="/" />
+                    </node>
+                  </node>
+                  <node role="ifFalse" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="7048923897762548616">
+                    <property name="value" value="&lt;invalid&gt;" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
     </node>
   </node>
   <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" id="1174512458522">

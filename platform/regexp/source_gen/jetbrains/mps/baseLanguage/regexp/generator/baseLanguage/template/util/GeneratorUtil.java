@@ -5,6 +5,9 @@ package jetbrains.mps.baseLanguage.regexp.generator.baseLanguage.template.util;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import java.util.List;
+import java.util.ArrayList;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 
 public class GeneratorUtil {
   public static SNode findRegexpUsingConstructionFor(SNode ref) {
@@ -12,8 +15,10 @@ public class GeneratorUtil {
     SNode ruc = SNodeOperations.getAncestor(parens, "jetbrains.mps.baseLanguage.regexp.structure.RegexpUsingConstruction", false, false);
     if (ruc != null) {
       return ruc;
-    } else {
-      SNode dcl = SNodeOperations.getAncestor(parens, "jetbrains.mps.baseLanguage.regexp.structure.RegexpDeclaration", false, false);
+    }
+
+    SNode dcl = SNodeOperations.getAncestor(parens, "jetbrains.mps.baseLanguage.regexp.structure.RegexpDeclaration", false, false);
+    if (dcl != null) {
       for (SNode parentRuc : SNodeOperations.getAncestors(ref, "jetbrains.mps.baseLanguage.regexp.structure.RegexpUsingConstruction", false)) {
         for (SNode regref : SNodeOperations.getDescendants(parentRuc, "jetbrains.mps.baseLanguage.regexp.structure.RegexpDeclarationReferenceRegexp", false, new String[]{})) {
           if (SLinkOperations.getTarget(regref, "regexp", false) == dcl) {
@@ -21,7 +26,81 @@ public class GeneratorUtil {
           }
         }
       }
-      return null;
     }
+
+    for (SNode ifst : SNodeOperations.getAncestors(ref, "jetbrains.mps.baseLanguage.structure.IfStatement", true)) {
+      for (SNode expr : SNodeOperations.getDescendants(SLinkOperations.getTarget(ifst, "condition", true), "jetbrains.mps.baseLanguage.regexp.structure.FindMatchExpression", true, new String[]{})) {
+        if (belongs(ref, expr, 0)) {
+          return expr;
+        }
+      }
+    }
+    return null;
+  }
+
+  public static SNode getRegexpIfContainer(SNode n) {
+    SNode container = SNodeOperations.getAncestor(n, "jetbrains.mps.baseLanguage.structure.Statement", false, false);
+    if ((container != null) && (SNodeOperations.getParent(container) != null) && SNodeOperations.isInstanceOf(SNodeOperations.getParent(container), "jetbrains.mps.baseLanguage.structure.StatementList") && SNodeOperations.isInstanceOf(container, "jetbrains.mps.baseLanguage.structure.IfStatement")) {
+      return SNodeOperations.cast(container, "jetbrains.mps.baseLanguage.structure.IfStatement");
+    }
+    return null;
+  }
+
+  public static List<SNode> collectNamedParentheses(SNode node) {
+    List<SNode> res = new ArrayList<SNode>();
+    for (SNode ref : SNodeOperations.getDescendants(node, "jetbrains.mps.baseLanguage.regexp.structure.RegexpDeclarationReferenceRegexp", false, new String[]{})) {
+      if (SLinkOperations.getTarget(ref, "regexp", false) != null) {
+        for (SNode mpe : SNodeOperations.getDescendants(SLinkOperations.getTarget(ref, "regexp", false), "jetbrains.mps.baseLanguage.regexp.structure.MatchParensRegexp", false, new String[]{})) {
+          ListSequence.fromList(res).addElement(mpe);
+        }
+      }
+    }
+    for (SNode mpe : SNodeOperations.getDescendants(node, "jetbrains.mps.baseLanguage.regexp.structure.MatchParensRegexp", false, new String[]{})) {
+      ListSequence.fromList(res).addElement(mpe);
+    }
+    return res;
+  }
+
+  public static boolean belongs(SNode ref, SNode regexp, int deep) {
+    if (deep > 16) {
+      return false;
+    }
+    for (SNode mpe : SNodeOperations.getDescendants(regexp, "jetbrains.mps.baseLanguage.regexp.structure.MatchParensRegexp", true, new String[]{})) {
+      if (mpe == SLinkOperations.getTarget(ref, "match", false)) {
+        return true;
+      }
+    }
+    for (SNode declref : SNodeOperations.getDescendants(regexp, "jetbrains.mps.baseLanguage.regexp.structure.RegexpDeclarationReferenceRegexp", true, new String[]{})) {
+      if (SLinkOperations.getTarget(declref, "regexp", false) != null && belongs(ref, SLinkOperations.getTarget(declref, "regexp", false), deep + 1)) {
+        return true;
+      }
+    }
+    return false;
+  }
+
+  public static List<SNode> collectMatchReferences(SNode enclosingNode) {
+    List<SNode> matches = new ArrayList<SNode>();
+    for (SNode ruc : SNodeOperations.getAncestors(enclosingNode, "jetbrains.mps.baseLanguage.regexp.structure.RegexpUsingConstruction", true)) {
+      ListSequence.fromList(matches).addSequence(ListSequence.fromList(collectNamedParentheses(ruc)));
+    }
+    for (SNode ifst : SNodeOperations.getAncestors(enclosingNode, "jetbrains.mps.baseLanguage.structure.IfStatement", true)) {
+      SNode toCollect = null;
+      if (ListSequence.fromList(SNodeOperations.getAncestors(enclosingNode, null, true)).contains(SLinkOperations.getTarget(ifst, "ifTrue", true))) {
+        toCollect = SLinkOperations.getTarget(ifst, "condition", true);
+      } else {
+        for (SNode elseif : SLinkOperations.getTargets(ifst, "elsifClauses", true)) {
+          if (ListSequence.fromList(SNodeOperations.getAncestors(enclosingNode, null, true)).contains(SLinkOperations.getTarget(elseif, "statementList", true))) {
+            toCollect = SLinkOperations.getTarget(elseif, "condition", true);
+            break;
+          }
+        }
+      }
+      if (toCollect != null) {
+        for (SNode expr : SNodeOperations.getDescendants(toCollect, "jetbrains.mps.baseLanguage.regexp.structure.FindMatchExpression", true, new String[]{})) {
+          ListSequence.fromList(matches).addSequence(ListSequence.fromList(collectNamedParentheses(expr)));
+        }
+      }
+    }
+    return matches;
   }
 }

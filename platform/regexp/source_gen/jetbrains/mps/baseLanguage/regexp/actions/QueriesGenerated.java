@@ -9,13 +9,13 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.action.NodeSetupContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import java.util.List;
 import jetbrains.mps.smodel.action.INodeSubstituteAction;
 import jetbrains.mps.smodel.action.NodeSubstituteActionsFactoryContext;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.smodel.action.DefaultSimpleSubstituteAction;
 import jetbrains.mps.smodel.SModel;
@@ -88,6 +88,10 @@ public class QueriesGenerated {
     } else if (SNodeOperations.isInstanceOf(_context.getSampleNode(), "jetbrains.mps.baseLanguage.regexp.structure.Regexp")) {
       SLinkOperations.setTarget(_context.getNewNode(), "expr", SNodeOperations.cast(_context.getSampleNode(), "jetbrains.mps.baseLanguage.regexp.structure.Regexp"), true);
     }
+  }
+
+  public static void nodeFactory_NodeSetup_RegexpUsingConstruction_7048923897762413189(final IOperationContext operationContext, final NodeSetupContext _context) {
+    SLinkOperations.setTarget(_context.getNewNode(), "regexp", SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.regexp.structure.InlineRegexpExpression", null), true);
   }
 
   public static void nodeFactory_NodeSetup_LookRegexp_8786899561263173302(final IOperationContext operationContext, final NodeSetupContext _context) {
