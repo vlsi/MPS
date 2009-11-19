@@ -68,6 +68,9 @@ import org.jetbrains.annotations.Nullable;
   protected abstract SNode getImmatureTargetNode();
 
   protected void makeMature() {
+    if (!myMature) {
+        ImmatureReferences.getInstance().remove(this);
+    }
     myMature = true;
   }
 

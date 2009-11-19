@@ -15,19 +15,19 @@
  */
 package jetbrains.mps.smodel;
 
-import com.intellij.openapi.components.ApplicationComponent;
-import com.intellij.openapi.application.Application;
-import com.intellij.openapi.application.ApplicationManager;
+import java.util.NoSuchElementException;
+import java.util.Map.Entry;
+import java.util.concurrent.ConcurrentHashMap;
+import java.util.concurrent.ConcurrentLinkedQueue;
+import java.util.concurrent.ConcurrentMap;
+
+import jetbrains.mps.cleanup.CleanupListener;
+import jetbrains.mps.cleanup.CleanupManager;
+
 import org.jetbrains.annotations.NotNull;
 
-import java.util.List;
-import java.util.Map;
-import java.util.HashMap;
-import java.util.ArrayList;
-import java.util.Map.Entry;
-
-import jetbrains.mps.cleanup.CleanupManager;
-import jetbrains.mps.cleanup.CleanupListener;
+import com.intellij.openapi.application.ApplicationManager;
+import com.intellij.openapi.components.ApplicationComponent;
 
 
 class ImmatureReferences implements ApplicationComponent {
@@ -37,15 +37,19 @@ class ImmatureReferences implements ApplicationComponent {
   }
 
   private CleanupManager myCleanupManager;
+  
   private SModelRepository mySModelRepository;
 
-  private final Object myLock = new Object();
-
-  private Map<SModelReference, List<SReferenceBase>> myReferences = new HashMap<SModelReference, List<SReferenceBase>>();
-
+  private ConcurrentMap<SModelReference, ConcurrentMap<SReferenceBase, SReferenceBase>> myReferences = new ConcurrentHashMap<SModelReference, ConcurrentMap<SReferenceBase,SReferenceBase>>();  
+  
+  private ConcurrentLinkedQueue<ConcurrentMap<SReferenceBase,SReferenceBase>> myReferencesSetPool = new ConcurrentLinkedQueue<ConcurrentMap<SReferenceBase,SReferenceBase>> ();
+  
   ImmatureReferences(CleanupManager cleanupManager, SModelRepository modelRepository) {
     myCleanupManager = cleanupManager;
     mySModelRepository = modelRepository;
+    for (int i=0; i<4; i++) {
+        myReferencesSetPool.add(new ConcurrentHashMap<SReferenceBase, SReferenceBase>());
+    }
   }
 
   @NotNull
@@ -56,14 +60,12 @@ class ImmatureReferences implements ApplicationComponent {
   public void initComponent() {
     myCleanupManager.addCleanupListener(new CleanupListener() {
       public void performCleanup() {
-        synchronized (myLock) {
-          for (Entry<SModelReference, List<SReferenceBase>> entry : myReferences.entrySet()) {
-            for (SReferenceBase r : entry.getValue()) {
+          for (Entry<SModelReference, ConcurrentMap<SReferenceBase, SReferenceBase>> entry : myReferences.entrySet()) {
+            for (SReferenceBase r : entry.getValue().values ()) {
               r.mature();
             }
           }
           myReferences.clear();
-        }
       }
     });
 
@@ -80,14 +82,35 @@ class ImmatureReferences implements ApplicationComponent {
   }
 
   void add(SReferenceBase ref) {
-    synchronized (myLock) {
       SModelReference modelRef = ref.getSourceNode().getModel().getSModelReference();
-      List<SReferenceBase> items = myReferences.get(modelRef);
-      if (items == null) {
-        items = new ArrayList<SReferenceBase>();
-        myReferences.put(modelRef, items);
-      }
-      items.add(ref);
-    }
+      ConcurrentMap<SReferenceBase, SReferenceBase> refSet = getOrCreateRefSet(modelRef);
+      refSet.put(ref, ref);
   }
+
+  void remove(SReferenceBase ref) {
+      SModelReference modelRef = ref.getSourceNode().getModel().getSModelReference();
+      ConcurrentMap<SReferenceBase, SReferenceBase> refSet = myReferences.get(modelRef);
+      if (refSet != null) {
+          refSet.remove(ref);
+      }
+  }
+  
+  private ConcurrentMap<SReferenceBase, SReferenceBase> getOrCreateRefSet (SModelReference modelRef) {
+    ConcurrentMap<SReferenceBase, SReferenceBase> pooledSet;
+    try {
+        pooledSet = myReferencesSetPool.remove();
+    }
+    catch (NoSuchElementException e) {
+        pooledSet = new ConcurrentHashMap<SReferenceBase, SReferenceBase> ();
+    }
+    ConcurrentMap<SReferenceBase, SReferenceBase> usedSet = myReferences.putIfAbsent(modelRef, pooledSet);
+    if (usedSet == null) {
+        usedSet = pooledSet;
+        pooledSet = new ConcurrentHashMap<SReferenceBase, SReferenceBase> ();
+    }
+    myReferencesSetPool.add(pooledSet);
+    return usedSet;
+  }
+  
+  
 }
