@@ -11,13 +11,16 @@ import com.intellij.openapi.project.Project;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.project.IModule;
+import javax.swing.tree.TreeNode;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
+import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.workbench.MPSDataKeys;
 import javax.swing.JOptionPane;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.workbench.dialogs.project.creation.NewModelDialog;
 import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.ide.ui.TextTreeNode;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.ide.projectPane.ProjectPane;
 
@@ -30,6 +33,7 @@ public class NewModel_Action extends GeneratedAction {
   private MPSProject project;
   private IOperationContext context;
   private IModule module;
+  private TreeNode treeNode;
 
   public NewModel_Action() {
     super("Model", "", ICON);
@@ -42,9 +46,25 @@ public class NewModel_Action extends GeneratedAction {
     return "";
   }
 
+  public boolean isApplicable(AnActionEvent event) {
+    String stereotype = NewModel_Action.this.getStereotype();
+    if (stereotype == null) {
+      return true;
+    }
+    for (String availableStereotype : SModelStereotype.values) {
+      if (stereotype.equals(availableStereotype)) {
+        return true;
+      }
+    }
+    return false;
+  }
+
   public void doUpdate(@NotNull AnActionEvent event) {
     try {
-      this.enable(event.getPresentation());
+      {
+        boolean enabled = this.isApplicable(event);
+        this.setEnabledState(event.getPresentation(), enabled);
+      }
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
         log.error("User's action doUpdate method failed. Action:" + "NewModel", t);
@@ -78,6 +98,10 @@ public class NewModel_Action extends GeneratedAction {
     if (this.module == null) {
       return false;
     }
+    this.treeNode = event.getData(MPSDataKeys.LOGICAL_VIEW_NODE);
+    if (this.treeNode == null) {
+      return false;
+    }
     return true;
   }
 
@@ -94,7 +118,8 @@ public class NewModel_Action extends GeneratedAction {
       );
       ModelAccess.instance().runReadAction(new Runnable() {
         public void run() {
-          dialog.value = new NewModelDialog(localModule, NewModel_Action.this.getNamespace(), localContext);
+          String stereotype = ((TextTreeNode)NewModel_Action.this.treeNode).getDefaultStereotype();
+          dialog.value = new NewModelDialog(localModule, NewModel_Action.this.getNamespace(), localContext, stereotype);
         }
       });
       dialog.value.showDialog();
@@ -108,6 +133,13 @@ public class NewModel_Action extends GeneratedAction {
         log.error("User's action execute method failed. Action:" + "NewModel", t);
       }
     }
+  }
+
+  protected String getStereotype() {
+    if (NewModel_Action.this.treeNode instanceof TextTreeNode) {
+      return ((TextTreeNode)NewModel_Action.this.treeNode).getDefaultStereotype();
+    }
+    return null;
   }
 
   protected String getNamespace() {

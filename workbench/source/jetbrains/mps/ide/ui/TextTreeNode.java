@@ -16,6 +16,10 @@
 package jetbrains.mps.ide.ui;
 
 import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.smodel.SModelStereotype;
+import jetbrains.mps.ide.projectPane.ProjectModuleTreeNode;
+
+import javax.swing.tree.TreeNode;
 
 public class TextTreeNode extends MPSTreeNode {
   public TextTreeNode(String text) {
@@ -26,5 +30,16 @@ public class TextTreeNode extends MPSTreeNode {
     super(context);
     setText(text);
     setNodeIdentifier(text.replaceAll(MPSTree.TREE_PATH_SEPARATOR, " "));
+  }
+
+  public String getDefaultStereotype() {
+    TreeNode parent = getParent();
+    if (parent != null && parent instanceof TextTreeNode) {
+      return ((TextTreeNode) parent).getDefaultStereotype();
+    }
+    if (parent != null && parent instanceof ProjectModuleTreeNode) {
+      return null;
+    }
+    return SModelStereotype.NONE;
   }
 }

@@ -13,6 +13,7 @@ import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.smodel.Generator;
+import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.workbench.dialogs.project.creation.NewModelDialog;
@@ -40,7 +41,16 @@ public class NewSubModel_Action extends GeneratedAction {
   }
 
   public boolean isApplicable(AnActionEvent event) {
-    return NewSubModel_Action.this.model.getModule() instanceof Solution || NewSubModel_Action.this.model.getModule() instanceof Generator;
+    boolean correctModule = NewSubModel_Action.this.model.getModule() instanceof Solution || NewSubModel_Action.this.model.getModule() instanceof Generator;
+    boolean correctStereotype = false;
+    String stereotype = NewSubModel_Action.this.model.getStereotype();
+    for (String availableStereotype : SModelStereotype.values) {
+      if (stereotype.equals(availableStereotype)) {
+        correctStereotype = true;
+        break;
+      }
+    }
+    return correctModule && correctStereotype;
   }
 
   public void doUpdate(@NotNull AnActionEvent event) {
@@ -87,7 +97,8 @@ public class NewSubModel_Action extends GeneratedAction {
       final String namespace = NewSubModel_Action.this.model.getLongName();
       ModelAccess.instance().runReadAction(new Runnable() {
         public void run() {
-          dialog.value = new NewModelDialog(localModule, namespace, NewSubModel_Action.this.context);
+          String stereotype = NewSubModel_Action.this.model.getStereotype();
+          dialog.value = new NewModelDialog(localModule, namespace, NewSubModel_Action.this.context, stereotype);
         }
       });
       dialog.value.showDialog();

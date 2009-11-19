@@ -160,6 +160,11 @@ public class SModelsSubtree {
       setIcon(Icons.PROJECT_MODELS_ICON, false);
       setIcon(Icons.PROJECT_MODELS_EXPANDED_ICON, true);
     }
+
+    @Override
+    public String getDefaultStereotype() {
+      return SModelStereotype.JAVA_STUB;
+    }
   }
 
   public static class TestsTreeNode extends TextTreeNode {
@@ -168,6 +173,11 @@ public class SModelsSubtree {
 
       setIcon(Icons.PROJECT_MODELS_ICON, false);
       setIcon(Icons.PROJECT_MODELS_EXPANDED_ICON, true);
+    }
+
+    @Override
+    public String getDefaultStereotype() {
+      return SModelStereotype.TESTS;
     }
   }
 }

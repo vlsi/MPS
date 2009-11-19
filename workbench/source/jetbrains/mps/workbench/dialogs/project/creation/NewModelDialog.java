@@ -51,6 +51,14 @@ public class NewModelDialog extends BaseDialog {
     initContentPane();
   }
 
+  public NewModelDialog(IModule module, String namespace, IOperationContext context, String stereotype) throws HeadlessException {
+    this(module, namespace, context);
+    if (stereotype != null) {
+      myModelStereotype.setEnabled(false);
+      myModelStereotype.setSelectedItem(stereotype);
+    }
+  }
+
   public DialogDimensions getDefaultDimensionSettings() {
     return new DialogDimensions(100, 100, 400, 300);
   }
