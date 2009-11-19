@@ -138,6 +138,34 @@ public class TestMakeOnRealProject extends TestCase {
     assertTrue(filesToCompile.contains(javaFileForMake));
   }
 
+  /*
+  Temporaly turn off.
+  public void testCompileAfterDelete() throws InterruptedException {
+    doSolutionsCompilation();
+
+    Thread.sleep(5);
+
+    // select and touch
+    Language lang = myProject.getProjectLanguages().get(0);
+    String sourcePath = null;
+    for (String path: lang.getSourcePaths()) {
+      if (path.contains("source_gen")) {
+        sourcePath = path;
+      }
+    }
+    String pathToStructure = "jetbrains/mps/make/testMake/Language/behavior";
+    File javaFile = collectSpecificFilesFromDir(new File(sourcePath + File.separator + pathToStructure), "java").get(0);
+
+    if (!javaFile.delete()) {
+      fail("Can't delete the file " + javaFile);
+    }
+
+    ModuleSources sources = new ModuleSources(lang, new Dependencies(Arrays.asList((IModule)lang)));        
+    Set<JavaFile> filesToCompile = sources.getFilesToCompile();
+    assertEquals(1, filesToCompile.size());
+  }
+    */
+
   private void checkModuleCompiled(IModule module) {
     IFile classesGen = module.getClassesGen();
     List<File> classes = collectSpecificFilesFromDir(classesGen.toFile(), "class");
