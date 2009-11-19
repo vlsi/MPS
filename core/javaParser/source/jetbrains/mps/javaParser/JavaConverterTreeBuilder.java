@@ -729,10 +729,21 @@ public class JavaConverterTreeBuilder {
       args = new Expression[0];
     }
     for (Expression arg : args) {
-      call.addActualArgument(processExpressionRefl(arg));
+      jetbrains.mps.baseLanguage.structure.Expression expression = processExpressionRefl(arg);
+      if (expression == null) {
+        System.err.println("");
+      }
+      call.addActualArgument(expression);
     }
   }
 
+  jetbrains.mps.baseLanguage.structure.Expression processExpression(ClassLiteralAccess x) {
+    ClassifierClassExpression classExpression = ClassifierClassExpression.newInstance(myCurrentModel);
+    SReference classifierReference = myTypesProvider.createClassifierReference((ReferenceBinding) x.targetType,
+      ClassifierClassExpression.CLASSIFIER, classExpression.getNode());
+    classExpression.getNode().addReference(classifierReference);
+    return classExpression;
+  }
 
   jetbrains.mps.baseLanguage.structure.Expression processExpression(UnaryExpression x) {
     int operator = ((x.bits & UnaryExpression.OperatorMASK) >> UnaryExpression.OperatorSHIFT);

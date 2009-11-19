@@ -243,6 +243,9 @@ public class TypesProvider {
 
   private Classifier getMPSClassById(SModel model, SNodeId nodeId) {
     String idString = nodeId.toString();
+    if (idString.startsWith(Foreign.ID_PREFIX)) {
+      idString = idString.substring(Foreign.ID_PREFIX.length());
+    }
     return getMPSClassByIdString(model, idString);
   }
 

@@ -319,24 +319,7 @@ public class ReferentsCreator {
 
     @Override
     public boolean visit(Argument argument, BlockScope scope) {
-      /* try {
-        if (scope == scope.methodScope()) {
-          return true;
-        }
-
-        JMethodBody enclosingBody = findEnclosingMethod(scope);
-        SourceInfo info = makeSourceInfo(argument, enclosingBody.getMethod());
-        LocalVariableBinding b = argument.binding;
-        JType localType = (JType) typeMap.get(b.type);
-        JLocal newLocal = program.createLocal(info, argument.name, localType,
-            b.isFinal(), enclosingBody);
-        typeMap.put(b, newLocal);
-        return true;
-      } catch (Throwable e) {
-        throw translateException(argument, e);
-      }*/
-      //todo arguments are processed in a method "visit" for Method
-      return false;
+      return visitLocalDeclaration(argument);
     }
 
     @Override
@@ -393,6 +376,10 @@ public class ReferentsCreator {
 
     @Override
     public boolean visit(LocalDeclaration localDeclaration, BlockScope scope) {
+      return visitLocalDeclaration(localDeclaration);
+    }
+
+    private boolean visitLocalDeclaration(LocalDeclaration localDeclaration) {
       SModel model = myReferentsCreator.myCurrentModel;
       LocalVariableBinding b = localDeclaration.binding;
       Type localType = createType(localDeclaration.type.resolvedType);
