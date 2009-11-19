@@ -205,9 +205,12 @@ public class TypesProvider {
   }
 
   private SModelDescriptor regularModelReferenceFromForeign(SModelReference foreingModelReference) {
-    SModelDescriptor sModelDescriptor =
-      SModelRepository.getInstance().getModelDescriptor(foreingModelReference.getSModelFqName().withoutStereotype());
-    return sModelDescriptor;
+  /*  SModelDescriptor sModelDescriptor =
+      SModelRepository.getInstance().getModelDescriptor(foreingModelReference.getSModelFqName().withoutStereotype());*/
+    //todo: if a generated model from an aspect model is accessed, it won't contain generated classes of course
+    //todo: we should create a stereotype "converted" instead
+    // return sModelDescriptor;
+    return null;
   }
 
   private SReference getRegularMPSNodeReferenceFromForeignId(SNode sourceNode, String role, SModelReference modelReference, SNodeId nodeId, TargetKind targetKind) {

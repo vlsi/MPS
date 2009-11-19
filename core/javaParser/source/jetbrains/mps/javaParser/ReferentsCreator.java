@@ -22,6 +22,7 @@ import org.eclipse.jdt.internal.compiler.ast.AnnotationMethodDeclaration;
 import org.eclipse.jdt.internal.compiler.ast.Expression;
 import org.eclipse.jdt.internal.compiler.ast.FieldDeclaration;
 import org.eclipse.jdt.internal.compiler.ast.ConstructorDeclaration;
+import org.eclipse.jdt.internal.compiler.ast.TryStatement;
 import jetbrains.mps.smodel.INodeAdapter;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.CopyUtil;
@@ -318,8 +319,13 @@ public class ReferentsCreator {
     }
 
     @Override
-    public boolean visit(Argument argument, BlockScope scope) {
-      return visitLocalDeclaration(argument);
+    public boolean visit(TryStatement tryStatement, BlockScope scope) {
+      if (tryStatement.catchArguments != null) {
+        for (Argument argument : tryStatement.catchArguments) {
+          visitLocalDeclaration(argument);
+        }
+      }
+      return true;
     }
 
     @Override
