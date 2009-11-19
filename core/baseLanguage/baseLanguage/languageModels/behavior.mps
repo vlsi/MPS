@@ -45,7 +45,7 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590361(jetbrains.mps.lang.plugin.constraints)" version="19" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959036e(jetbrains.mps.baseLanguage.classifiers.constraints)" version="7" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959037d(jetbrains.mps.lang.dataFlow.structure)" version="0" />
-  <maxImportIndex value="28" />
+  <maxImportIndex value="30" />
   <import index="1" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="3" />
   <import index="2" modelUID="f:java_stub#java.lang(java.lang@java_stub)" version="-1" />
   <import index="3" modelUID="f:java_stub#jetbrains.mps.project(jetbrains.mps.project@java_stub)" version="-1" />
@@ -64,6 +64,8 @@
   <import index="25" modelUID="r:00000000-0000-4000-0000-011c89590338(jetbrains.mps.baseLanguage.closures.structure)" version="3" />
   <import index="26" modelUID="r:6fb1beb5-17d5-44c1-a541-c95672dc4233(jetbrains.mps.dataFlow.runtime)" version="-1" />
   <import index="27" modelUID="f:java_stub#jetbrains.mps.baseLanguage.structure(jetbrains.mps.baseLanguage.structure@java_stub)" version="-1" />
+  <import index="29" modelUID="f:java_stub#javax.swing(javax.swing@java_stub)" version="-1" />
+  <import index="30" modelUID="f:java_stub#com.intellij.util(com.intellij.util@java_stub)" version="-1" />
   <node type="jetbrains.mps.lang.behavior.structure.ConceptBehavior" id="1213877208326">
     <property name="package" value="type.primitive" />
     <link role="concept" targetNodeId="1.1068581242867" resolveInfo="LongType" />
@@ -702,6 +704,25 @@
         </node>
       </node>
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1219155724242" />
+    </node>
+    <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="8884554759541377970">
+      <property name="name" value="getAdditionalIcon" />
+      <property name="isVirtual" value="true" />
+      <link role="overriddenMethod" targetNodeId="20.5017341185733863694" resolveInfo="getAdditionalIcon" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="8884554759541377971" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="8884554759541377972">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="8884554759541377989">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="8884554759541377990">
+            <node role="operand" type="jetbrains.mps.lang.behavior.structure.ThisNodeExpression" id="8884554759541377991" />
+            <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="8884554759541377992">
+              <link role="baseMethodDeclaration" targetNodeId="20.5017341185733863694" resolveInfo="getAdditionalIcon" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="8884554759541377973">
+        <link role="classifier" targetNodeId="29.~Icon" resolveInfo="Icon" />
+      </node>
     </node>
     <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="4025276038182459890">
       <property name="name" value="getChildrenToDisplayIntention" />
@@ -2556,6 +2577,25 @@
             </node>
           </node>
         </node>
+      </node>
+    </node>
+    <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="5017341185733869650">
+      <property name="name" value="getAdditionalIcon" />
+      <property name="isVirtual" value="true" />
+      <link role="overriddenMethod" targetNodeId="20.5017341185733863694" resolveInfo="getAdditionalIcon" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="5017341185733869651" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="5017341185733869652">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="5017341185733869674">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="5017341185733869675">
+            <node role="operand" type="jetbrains.mps.lang.behavior.structure.ThisNodeExpression" id="5017341185733869676" />
+            <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="5017341185733869677">
+              <link role="baseMethodDeclaration" targetNodeId="5017341185733869581" resolveInfo="getVisibilityIcon" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="5017341185733869653">
+        <link role="classifier" targetNodeId="29.~Icon" resolveInfo="Icon" />
       </node>
     </node>
     <node role="constructor" type="jetbrains.mps.lang.behavior.structure.ConceptConstructorDeclaration" id="1213877306354">
@@ -6396,6 +6436,25 @@
       </node>
       <node role="returnType" type="jetbrains.mps.baseLanguage.structure.BooleanType" id="8986964027630472418" />
     </node>
+    <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="8884554759541381553">
+      <property name="name" value="getAdditionalIcon" />
+      <property name="isVirtual" value="true" />
+      <link role="overriddenMethod" targetNodeId="20.5017341185733863694" resolveInfo="getAdditionalIcon" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="8884554759541381554" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="8884554759541381555">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="8884554759541381561">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="8884554759541381562">
+            <node role="operand" type="jetbrains.mps.lang.behavior.structure.ThisNodeExpression" id="8884554759541381563" />
+            <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="8884554759541381564">
+              <link role="baseMethodDeclaration" targetNodeId="5017341185733869581" resolveInfo="getVisibilityIcon" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="8884554759541381556">
+        <link role="classifier" targetNodeId="29.~Icon" resolveInfo="Icon" />
+      </node>
+    </node>
   </node>
   <node type="jetbrains.mps.lang.behavior.structure.ConceptBehavior" id="1213877352267">
     <property name="package" value="type" />
@@ -8783,6 +8842,25 @@
         </node>
       </node>
     </node>
+    <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="8884554759541381539">
+      <property name="name" value="getAdditionalIcon" />
+      <property name="isVirtual" value="true" />
+      <link role="overriddenMethod" targetNodeId="20.5017341185733863694" resolveInfo="getAdditionalIcon" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="8884554759541381540" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="8884554759541381541">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="8884554759541381547">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="8884554759541381548">
+            <node role="operand" type="jetbrains.mps.lang.behavior.structure.ThisNodeExpression" id="8884554759541381549" />
+            <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="8884554759541381550">
+              <link role="baseMethodDeclaration" targetNodeId="5017341185733869581" resolveInfo="getVisibilityIcon" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="8884554759541381542">
+        <link role="classifier" targetNodeId="29.~Icon" resolveInfo="Icon" />
+      </node>
+    </node>
   </node>
   <node type="jetbrains.mps.lang.behavior.structure.ConceptBehavior" id="1213877400601">
     <link role="concept" targetNodeId="1.1083260308424" resolveInfo="EnumConstantReference" />
@@ -10359,6 +10437,25 @@
       <node role="returnType" type="jetbrains.mps.baseLanguage.structure.BooleanType" id="1233076666326" />
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1233076666327" />
     </node>
+    <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="8884554759541381512">
+      <property name="name" value="getAdditionalIcon" />
+      <property name="isVirtual" value="true" />
+      <link role="overriddenMethod" targetNodeId="20.5017341185733863694" resolveInfo="getAdditionalIcon" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="8884554759541381513" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="8884554759541381514">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="8884554759541381521">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="8884554759541381522">
+            <node role="operand" type="jetbrains.mps.lang.behavior.structure.ThisNodeExpression" id="8884554759541381523" />
+            <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="8884554759541381524">
+              <link role="baseMethodDeclaration" targetNodeId="5017341185733869581" resolveInfo="getVisibilityIcon" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="8884554759541381515">
+        <link role="classifier" targetNodeId="29.~Icon" resolveInfo="Icon" />
+      </node>
+    </node>
     <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="4025276038182459792">
       <property name="name" value="getChildrenToDisplayIntention" />
       <property name="isVirtual" value="true" />
@@ -10697,6 +10794,25 @@
       </node>
       <node role="returnType" type="jetbrains.mps.baseLanguage.structure.BooleanType" id="1233076532809" />
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1233076532810" />
+    </node>
+    <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="8884554759541375762">
+      <property name="name" value="getAdditionalIcon" />
+      <property name="isVirtual" value="true" />
+      <link role="overriddenMethod" targetNodeId="20.5017341185733863694" resolveInfo="getAdditionalIcon" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="8884554759541375763" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="8884554759541375764">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="8884554759541376067">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="8884554759541376068">
+            <node role="operand" type="jetbrains.mps.lang.behavior.structure.ThisNodeExpression" id="8884554759541376069" />
+            <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="8884554759541376070">
+              <link role="baseMethodDeclaration" targetNodeId="5017341185733869581" resolveInfo="getVisibilityIcon" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="8884554759541375765">
+        <link role="classifier" targetNodeId="29.~Icon" resolveInfo="Icon" />
+      </node>
     </node>
     <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="1234359686037">
       <property name="name" value="isVoidReturn" />
@@ -11920,6 +12036,25 @@
         </node>
       </node>
       <node role="returnType" type="jetbrains.mps.baseLanguage.structure.BooleanType" id="8986964027630472405" />
+    </node>
+    <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="8884554759541376072">
+      <property name="name" value="getAdditionalIcon" />
+      <property name="isVirtual" value="true" />
+      <link role="overriddenMethod" targetNodeId="20.5017341185733863694" resolveInfo="getAdditionalIcon" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="8884554759541376073" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="8884554759541376074">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="8884554759541376080">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="8884554759541376081">
+            <node role="operand" type="jetbrains.mps.lang.behavior.structure.ThisNodeExpression" id="8884554759541376082" />
+            <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="8884554759541376083">
+              <link role="baseMethodDeclaration" targetNodeId="5017341185733869581" resolveInfo="getVisibilityIcon" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="8884554759541376075">
+        <link role="classifier" targetNodeId="29.~Icon" resolveInfo="Icon" />
+      </node>
     </node>
     <node role="constructor" type="jetbrains.mps.lang.behavior.structure.ConceptConstructorDeclaration" id="1213877492561">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1213877492562" />
@@ -14777,6 +14912,25 @@
       </node>
       <node role="returnType" type="jetbrains.mps.baseLanguage.structure.BooleanType" id="8986964027630472430" />
     </node>
+    <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="8884554759541381569">
+      <property name="name" value="getAdditionalIcon" />
+      <property name="isVirtual" value="true" />
+      <link role="overriddenMethod" targetNodeId="20.5017341185733863694" resolveInfo="getAdditionalIcon" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="8884554759541381570" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="8884554759541381571">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="8884554759541381577">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="8884554759541381578">
+            <node role="operand" type="jetbrains.mps.lang.behavior.structure.ThisNodeExpression" id="8884554759541381579" />
+            <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="8884554759541381580">
+              <link role="baseMethodDeclaration" targetNodeId="5017341185733869581" resolveInfo="getVisibilityIcon" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="8884554759541381572">
+        <link role="classifier" targetNodeId="29.~Icon" resolveInfo="Icon" />
+      </node>
+    </node>
   </node>
   <node type="jetbrains.mps.lang.behavior.structure.ConceptBehavior" id="1213877539511">
     <property name="package" value="method.instance" />
@@ -17239,6 +17393,138 @@
     </node>
     <node role="constructor" type="jetbrains.mps.lang.behavior.structure.ConceptConstructorDeclaration" id="7236590470026154811">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="7236590470026154812" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.behavior.structure.ConceptBehavior" id="5017341185733869578">
+    <link role="concept" targetNodeId="1.1178549954367" resolveInfo="IVisible" />
+    <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="5017341185733869581">
+      <property name="name" value="getVisibilityIcon" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="5017341185733869582" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="5017341185733869585">
+        <link role="classifier" targetNodeId="29.~Icon" resolveInfo="Icon" />
+      </node>
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="5017341185733869584">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="5017341185733869604">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="5017341185733869605">
+            <property name="name" value="defaultIcon" />
+            <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="5017341185733869606">
+              <link role="classifier" targetNodeId="29.~Icon" resolveInfo="Icon" />
+            </node>
+            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference" id="5017341185733869607">
+              <link role="classifier" targetNodeId="30.~Icons" resolveInfo="Icons" />
+              <link role="variableDeclaration" targetNodeId="30.~Icons.PACKAGE_LOCAL_ICON" resolveInfo="PACKAGE_LOCAL_ICON" />
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="5017341185733869608">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="5017341185733869609">
+            <property name="name" value="visibility" />
+            <node role="type" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="5017341185733869610">
+              <link role="concept" targetNodeId="1.1146644584814" resolveInfo="Visibility" />
+            </node>
+            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="5017341185733869611">
+              <node role="operand" type="jetbrains.mps.lang.behavior.structure.ThisNodeExpression" id="5017341185733869612" />
+              <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="5017341185733869613">
+                <link role="link" targetNodeId="1.1178549979242" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="5017341185733869614">
+          <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="5017341185733869615">
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="5017341185733869616">
+              <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference" id="5017341185733869617">
+                <link role="classifier" targetNodeId="30.~Icons" resolveInfo="Icons" />
+                <link role="variableDeclaration" targetNodeId="30.~Icons.PUBLIC_ICON" resolveInfo="PUBLIC_ICON" />
+              </node>
+            </node>
+          </node>
+          <node role="condition" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="5017341185733869618">
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="5017341185733869619">
+              <link role="variableDeclaration" targetNodeId="5017341185733869609" resolveInfo="visibility" />
+            </node>
+            <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation" id="5017341185733869620">
+              <node role="conceptArgument" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" id="5017341185733869621">
+                <link role="conceptDeclaration" targetNodeId="1.1146644602865" resolveInfo="PublicVisibility" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="5017341185733869622">
+          <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="5017341185733869623">
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="5017341185733869624">
+              <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference" id="5017341185733869625">
+                <link role="classifier" targetNodeId="30.~Icons" resolveInfo="Icons" />
+                <link role="variableDeclaration" targetNodeId="30.~Icons.PRIVATE_ICON" resolveInfo="PRIVATE_ICON" />
+              </node>
+            </node>
+          </node>
+          <node role="condition" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="5017341185733869626">
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="5017341185733869627">
+              <link role="variableDeclaration" targetNodeId="5017341185733869609" resolveInfo="visibility" />
+            </node>
+            <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation" id="5017341185733869628">
+              <node role="conceptArgument" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" id="5017341185733869629">
+                <link role="conceptDeclaration" targetNodeId="1.1146644623116" resolveInfo="PrivateVisibility" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="5017341185733869630">
+          <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="5017341185733869631">
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="5017341185733869632">
+              <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference" id="5017341185733869633">
+                <link role="classifier" targetNodeId="30.~Icons" resolveInfo="Icons" />
+                <link role="variableDeclaration" targetNodeId="30.~Icons.PROTECTED_ICON" resolveInfo="PROTECTED_ICON" />
+              </node>
+            </node>
+          </node>
+          <node role="condition" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="5017341185733869634">
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="5017341185733869635">
+              <link role="variableDeclaration" targetNodeId="5017341185733869609" resolveInfo="visibility" />
+            </node>
+            <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation" id="5017341185733869636">
+              <node role="conceptArgument" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" id="5017341185733869637">
+                <link role="conceptDeclaration" targetNodeId="1.1146644641414" resolveInfo="ProtectedVisibility" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="5017341185733869638">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="5017341185733869639">
+            <link role="variableDeclaration" targetNodeId="5017341185733869605" resolveInfo="defaultIcon" />
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="constructor" type="jetbrains.mps.lang.behavior.structure.ConceptConstructorDeclaration" id="5017341185733869579">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="5017341185733869580" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.behavior.structure.ConceptBehavior" id="8884554759541377993">
+    <property name="package" value="classifier" />
+    <link role="concept" targetNodeId="1.1206629501431" resolveInfo="InstanceInitializer" />
+    <node role="constructor" type="jetbrains.mps.lang.behavior.structure.ConceptConstructorDeclaration" id="8884554759541377994">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="8884554759541377995" />
+    </node>
+    <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="8884554759541377996">
+      <property name="name" value="getAdditionalIcon" />
+      <property name="isVirtual" value="true" />
+      <link role="overriddenMethod" targetNodeId="20.5017341185733863694" resolveInfo="getAdditionalIcon" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="8884554759541377997" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="8884554759541377998">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="8884554759541378004">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="8884554759541378005">
+            <node role="operand" type="jetbrains.mps.lang.behavior.structure.ThisNodeExpression" id="8884554759541378006" />
+            <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="8884554759541378007">
+              <link role="baseMethodDeclaration" targetNodeId="5017341185733869581" resolveInfo="getVisibilityIcon" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="8884554759541377999">
+        <link role="classifier" targetNodeId="29.~Icon" resolveInfo="Icon" />
+      </node>
     </node>
   </node>
 </model>

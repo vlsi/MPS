@@ -34,12 +34,13 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895903fe(jetbrains.mps.baseLanguage.strings.constraints)" version="1" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590402(jetbrains.mps.baseLanguage.strings.structure)" version="9" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590373(jetbrains.mps.baseLanguage.classifiers.structure)" version="0" />
-  <maxImportIndex value="8" />
+  <maxImportIndex value="9" />
   <import index="1" modelUID="r:00000000-0000-4000-0000-011c89590373(jetbrains.mps.baseLanguage.classifiers.structure)" version="0" />
   <import index="3" modelUID="f:java_stub#java.lang(java.lang@java_stub)" version="-1" />
   <import index="5" modelUID="r:00000000-0000-4000-0000-011c895902c8(jetbrains.mps.baseLanguage.plugin)" version="-1" />
   <import index="6" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="3" />
   <import index="7" modelUID="r:00000000-0000-4000-0000-011c895902c0(jetbrains.mps.baseLanguage.behavior)" version="-1" />
+  <import index="9" modelUID="f:java_stub#javax.swing(javax.swing@java_stub)" version="-1" />
   <node type="jetbrains.mps.lang.behavior.structure.ConceptBehavior" id="1213877255427">
     <link role="concept" targetNodeId="1.1205752174734" resolveInfo="IClassifierPart" />
     <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="1213877255428">
@@ -356,6 +357,7 @@
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1213877428706" />
     </node>
   </node>
+  <visible index="2" modelUID="r:00000000-0000-4000-0000-011c89590282(jetbrains.mps.lang.core.behavior)" />
   <node type="jetbrains.mps.lang.behavior.structure.ConceptBehavior" id="1213877480555">
     <property name="package" value="Methods" />
     <link role="concept" targetNodeId="1.1205769003971" resolveInfo="DefaultClassifierMethodDeclaration" />
@@ -390,6 +392,24 @@
       </node>
       <node role="returnType" type="jetbrains.mps.baseLanguage.structure.BooleanType" id="1233077653568" />
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1233077653569" />
+    </node>
+    <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="8884554759541375254">
+      <property name="name" value="getAdditionalIcon" />
+      <link role="overriddenMethod" targetNodeId="2v.5017341185733863694" resolveInfo="getAdditionalIcon" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="8884554759541375257">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="8884554759541375753">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="8884554759541375754">
+            <node role="operand" type="jetbrains.mps.lang.behavior.structure.ThisNodeExpression" id="8884554759541375755" />
+            <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="8884554759541375756">
+              <link role="baseMethodDeclaration" targetNodeId="7.5017341185733869581" resolveInfo="getVisibilityIcon" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="8884554759541375258">
+        <link role="classifier" targetNodeId="9.~Icon" resolveInfo="Icon" />
+      </node>
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="8884554759541375259" />
     </node>
     <node role="constructor" type="jetbrains.mps.lang.behavior.structure.ConceptConstructorDeclaration" id="1213877480563">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1213877480564" />

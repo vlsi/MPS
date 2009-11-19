@@ -4,6 +4,8 @@ package jetbrains.mps.baseLanguage.classifiers.behavior;
 
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import javax.swing.Icon;
+import jetbrains.mps.baseLanguage.behavior.IVisible_Behavior;
 
 public class DefaultClassifierMethodDeclaration_Behavior {
   public static void init(SNode thisNode) {
@@ -15,5 +17,9 @@ public class DefaultClassifierMethodDeclaration_Behavior {
 
   public static boolean virtual_canBeAnnotated_1233076312117(SNode thisNode) {
     return true;
+  }
+
+  public static Icon virtual_getAdditionalIcon_5017341185733863694(SNode thisNode) {
+    return IVisible_Behavior.call_getVisibilityIcon_5017341185733869581(thisNode);
   }
 }

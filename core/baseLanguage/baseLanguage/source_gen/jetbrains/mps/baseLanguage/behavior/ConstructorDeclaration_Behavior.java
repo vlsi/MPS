@@ -5,6 +5,7 @@ package jetbrains.mps.baseLanguage.behavior;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.core.behavior.IDeprecatable_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import javax.swing.Icon;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
@@ -12,6 +13,7 @@ import jetbrains.mps.lang.core.behavior.BaseConcept_Behavior;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
 
 public class ConstructorDeclaration_Behavior {
+  private static Class[] PARAMETERS_8884554759541375762 = {SNode.class};
   private static Class[] PARAMETERS_4025276038182459842 = {SNode.class};
 
   public static void init(SNode thisNode) {
@@ -23,6 +25,10 @@ public class ConstructorDeclaration_Behavior {
 
   public static boolean virtual_canBeAnnotated_1233076312117(SNode thisNode) {
     return true;
+  }
+
+  public static Icon virtual_getAdditionalIcon_5017341185733863694(SNode thisNode) {
+    return IVisible_Behavior.call_getVisibilityIcon_5017341185733869581(thisNode);
   }
 
   public static boolean virtual_isReturnsVoid_1234359555698(SNode thisNode) {
@@ -59,8 +65,16 @@ public class ConstructorDeclaration_Behavior {
     return result.toString();
   }
 
+  public static Icon call_getAdditionalIcon_8884554759541375762(SNode thisNode) {
+    return (Icon)BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.ConstructorDeclaration"), "virtual_getAdditionalIcon_5017341185733863694", PARAMETERS_8884554759541375762);
+  }
+
   public static List<SNode> call_getChildrenToDisplayIntention_4025276038182459842(SNode thisNode) {
     return (List<SNode>)BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.ConstructorDeclaration"), "virtual_getChildrenToDisplayIntention_4025276038182319417", PARAMETERS_4025276038182459842);
+  }
+
+  public static Icon callSuper_getAdditionalIcon_8884554759541375762(SNode thisNode, String callerConceptFqName) {
+    return (Icon)BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.ConstructorDeclaration"), callerConceptFqName, "virtual_getAdditionalIcon_5017341185733863694", PARAMETERS_8884554759541375762);
   }
 
   public static List<SNode> callSuper_getChildrenToDisplayIntention_4025276038182459842(SNode thisNode, String callerConceptFqName) {

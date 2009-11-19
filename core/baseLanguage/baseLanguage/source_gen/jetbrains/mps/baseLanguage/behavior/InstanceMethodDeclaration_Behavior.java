@@ -4,6 +4,7 @@ package jetbrains.mps.baseLanguage.behavior;
 
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import javax.swing.Icon;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
@@ -11,6 +12,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
 
 public class InstanceMethodDeclaration_Behavior {
+  private static Class[] PARAMETERS_8884554759541381512 = {SNode.class};
   private static Class[] PARAMETERS_4025276038182459792 = {SNode.class};
   private static Class[] PARAMETERS_5014346297260520665 = {SNode.class};
 
@@ -23,6 +25,10 @@ public class InstanceMethodDeclaration_Behavior {
 
   public static boolean virtual_canBeAnnotated_1233076312117(SNode thisNode) {
     return true;
+  }
+
+  public static Icon virtual_getAdditionalIcon_5017341185733863694(SNode thisNode) {
+    return IVisible_Behavior.call_getVisibilityIcon_5017341185733869581(thisNode);
   }
 
   public static List<SNode> virtual_getChildrenToDisplayIntention_4025276038182319200(SNode thisNode) {
@@ -49,12 +55,20 @@ public class InstanceMethodDeclaration_Behavior {
     return null;
   }
 
+  public static Icon call_getAdditionalIcon_8884554759541381512(SNode thisNode) {
+    return (Icon)BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration"), "virtual_getAdditionalIcon_5017341185733863694", PARAMETERS_8884554759541381512);
+  }
+
   public static List<SNode> call_getChildrenToDisplayIntention_4025276038182459792(SNode thisNode) {
     return (List<SNode>)BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration"), "virtual_getChildrenToDisplayIntention_4025276038182319200", PARAMETERS_4025276038182459792);
   }
 
   public static SNode call_getNearestOverriddenMethod_5014346297260520665(SNode thisNode) {
     return (SNode)BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration"), "virtual_getNearestOverriddenMethod_5358895268254685434", PARAMETERS_5014346297260520665);
+  }
+
+  public static Icon callSuper_getAdditionalIcon_8884554759541381512(SNode thisNode, String callerConceptFqName) {
+    return (Icon)BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration"), callerConceptFqName, "virtual_getAdditionalIcon_5017341185733863694", PARAMETERS_8884554759541381512);
   }
 
   public static List<SNode> callSuper_getChildrenToDisplayIntention_4025276038182459792(SNode thisNode, String callerConceptFqName) {

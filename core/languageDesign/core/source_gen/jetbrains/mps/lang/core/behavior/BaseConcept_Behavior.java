@@ -5,12 +5,14 @@ package jetbrains.mps.lang.core.behavior;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import javax.swing.Icon;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.presentation.ReferenceConceptUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptPropertyOperations;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
 
 public class BaseConcept_Behavior {
+  private static Class[] PARAMETERS_5017341185733863694 = {SNode.class};
   private static Class[] PARAMETERS_1213877396640 = {SNode.class};
   private static Class[] PARAMETERS_3981318653438234726 = {SNode.class};
 
@@ -19,6 +21,10 @@ public class BaseConcept_Behavior {
 
   public static boolean call_isInTemplates_1213877396627(SNode thisNode) {
     return SModelStereotype.isGeneratorModel(SNodeOperations.getModel(thisNode));
+  }
+
+  public static Icon virtual_getAdditionalIcon_5017341185733863694(SNode thisNode) {
+    return null;
   }
 
   public static String virtual_getPresentation_1213877396640(SNode thisNode) {
@@ -54,12 +60,20 @@ public class BaseConcept_Behavior {
     return metalevel;
   }
 
+  public static Icon call_getAdditionalIcon_5017341185733863694(SNode thisNode) {
+    return (Icon)BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.core.structure.BaseConcept"), "virtual_getAdditionalIcon_5017341185733863694", PARAMETERS_5017341185733863694);
+  }
+
   public static String call_getPresentation_1213877396640(SNode thisNode) {
     return (String)BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.core.structure.BaseConcept"), "virtual_getPresentation_1213877396640", PARAMETERS_1213877396640);
   }
 
   public static int call_getMetaLevel_3981318653438234726(SNode thisNode) {
     return (Integer)BehaviorManager.getInstance().invoke(Integer.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.core.structure.BaseConcept"), "virtual_getMetaLevel_3981318653438234726", PARAMETERS_3981318653438234726);
+  }
+
+  public static Icon callSuper_getAdditionalIcon_5017341185733863694(SNode thisNode, String callerConceptFqName) {
+    return (Icon)BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.core.structure.BaseConcept"), callerConceptFqName, "virtual_getAdditionalIcon_5017341185733863694", PARAMETERS_5017341185733863694);
   }
 
   public static String callSuper_getPresentation_1213877396640(SNode thisNode, String callerConceptFqName) {

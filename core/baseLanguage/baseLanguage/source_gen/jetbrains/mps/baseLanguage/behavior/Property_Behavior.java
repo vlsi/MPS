@@ -7,8 +7,12 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import javax.swing.Icon;
+import jetbrains.mps.smodel.behaviour.BehaviorManager;
 
 public class Property_Behavior {
+  private static Class[] PARAMETERS_8884554759541381539 = {SNode.class};
+
   public static void init(SNode thisNode) {
     SLinkOperations.setNewChild(thisNode, "visibility", "jetbrains.mps.baseLanguage.structure.PublicVisibility");
   }
@@ -50,5 +54,17 @@ public class Property_Behavior {
 
   public static boolean call_hasSetter_1213877383224(SNode thisNode) {
     return PropertyImplementation_Behavior.call_hasSetter_1213877430658(SLinkOperations.getTarget(thisNode, "propertyImplementation", true));
+  }
+
+  public static Icon virtual_getAdditionalIcon_5017341185733863694(SNode thisNode) {
+    return IVisible_Behavior.call_getVisibilityIcon_5017341185733869581(thisNode);
+  }
+
+  public static Icon call_getAdditionalIcon_8884554759541381539(SNode thisNode) {
+    return (Icon)BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.Property"), "virtual_getAdditionalIcon_5017341185733863694", PARAMETERS_8884554759541381539);
+  }
+
+  public static Icon callSuper_getAdditionalIcon_8884554759541381539(SNode thisNode, String callerConceptFqName) {
+    return (Icon)BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.Property"), callerConceptFqName, "virtual_getAdditionalIcon_5017341185733863694", PARAMETERS_8884554759541381539);
   }
 }

@@ -6,12 +6,14 @@ import jetbrains.mps.smodel.SNode;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import javax.swing.Icon;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class StaticFieldDeclaration_Behavior {
   private static Class[] PARAMETERS_4025276038182459921 = {SNode.class};
   private static Class[] PARAMETERS_8986964027630472415 = {SNode.class};
+  private static Class[] PARAMETERS_8884554759541381553 = {SNode.class};
 
   public static void init(SNode thisNode) {
   }
@@ -30,6 +32,10 @@ public class StaticFieldDeclaration_Behavior {
     return true;
   }
 
+  public static Icon virtual_getAdditionalIcon_5017341185733863694(SNode thisNode) {
+    return IVisible_Behavior.call_getVisibilityIcon_5017341185733869581(thisNode);
+  }
+
   public static List<SNode> call_getChildrenToDisplayIntention_4025276038182459921(SNode thisNode) {
     return (List<SNode>)BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration"), "virtual_getChildrenToDisplayIntention_4025276038182325660", PARAMETERS_4025276038182459921);
   }
@@ -38,11 +44,19 @@ public class StaticFieldDeclaration_Behavior {
     return (Boolean)BehaviorManager.getInstance().invoke(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration"), "virtual_isStatic_8986964027630462944", PARAMETERS_8986964027630472415);
   }
 
+  public static Icon call_getAdditionalIcon_8884554759541381553(SNode thisNode) {
+    return (Icon)BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration"), "virtual_getAdditionalIcon_5017341185733863694", PARAMETERS_8884554759541381553);
+  }
+
   public static List<SNode> callSuper_getChildrenToDisplayIntention_4025276038182459921(SNode thisNode, String callerConceptFqName) {
     return (List<SNode>)BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration"), callerConceptFqName, "virtual_getChildrenToDisplayIntention_4025276038182325660", PARAMETERS_4025276038182459921);
   }
 
   public static boolean callSuper_isStatic_8986964027630472415(SNode thisNode, String callerConceptFqName) {
     return (Boolean)BehaviorManager.getInstance().invokeSuper(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration"), callerConceptFqName, "virtual_isStatic_8986964027630462944", PARAMETERS_8986964027630472415);
+  }
+
+  public static Icon callSuper_getAdditionalIcon_8884554759541381553(SNode thisNode, String callerConceptFqName) {
+    return (Icon)BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration"), callerConceptFqName, "virtual_getAdditionalIcon_5017341185733863694", PARAMETERS_8884554759541381553);
   }
 }

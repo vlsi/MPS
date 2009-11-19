@@ -19,22 +19,19 @@ import com.intellij.openapi.actionSystem.ActionGroup;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.ide.projectPane.ProjectPane;
-import jetbrains.mps.ide.ui.MPSTreeNodeEx;
 import jetbrains.mps.ide.ui.ErrorState;
+import jetbrains.mps.ide.ui.MPSTreeNodeEx;
+import jetbrains.mps.lang.core.behavior.BaseConcept_Behavior;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.Condition;
 import jetbrains.mps.workbench.action.ActionUtils;
-import jetbrains.mps.baseLanguage.structure.Classifier;
-import jetbrains.mps.baseLanguage.structure.PublicVisibility;
-import jetbrains.mps.baseLanguage.structure.PrivateVisibility;
-import jetbrains.mps.baseLanguage.structure.ProtectedVisibility;
 
+import javax.swing.Icon;
 import javax.swing.tree.DefaultTreeModel;
 import javax.swing.tree.TreeNode;
-import javax.swing.Icon;
 import java.awt.Color;
 import java.util.List;
 
@@ -115,25 +112,7 @@ public class SNodeTreeNode extends MPSTreeNodeEx {
 
   @Override
   public Icon getAdditionalIcon() {
-    if (!myNode.isInstanceOfConcept(Classifier.concept)) return null;
-    Icon defaultIcon = com.intellij.util.Icons.PACKAGE_LOCAL_ICON;
-    final SNode[] visibility = new SNode[1];
-    ModelAccess.instance().runReadAction(new Runnable() {
-      public void run() {
-        visibility[0] = myNode.getChild(Classifier.VISIBILITY);
-      }
-    });
-    if (visibility[0] == null) return defaultIcon;
-    if (visibility[0].isInstanceOfConcept(PrivateVisibility.concept)) {
-      return com.intellij.util.Icons.PRIVATE_ICON;
-    }
-    if (visibility[0].isInstanceOfConcept(PublicVisibility.concept)) {
-      return com.intellij.util.Icons.PUBLIC_ICON;
-    }
-    if (visibility[0].isInstanceOfConcept(ProtectedVisibility.concept)) {
-      return com.intellij.util.Icons.PROTECTED_ICON;
-    }
-    return defaultIcon;
+    return BaseConcept_Behavior.call_getAdditionalIcon_5017341185733863694(myNode);
   }
 
   public SModelTreeNode getSModelModelTreeNode() {
