@@ -734,11 +734,7 @@ public abstract class MPSTree extends DnDAwareTree implements Disposable {
         if (!selected) {
           myMainTextLabel.setForeground(treeNode.getColor());
         }
-        Icon additionalIcon = ModelAccess.instance().runReadAction(new Computable<Icon>() {
-          public Icon compute() {
-            return treeNode.getAdditionalIcon();
-          }
-        });
+        Icon additionalIcon = treeNode.getAdditionalIcon();
         myMainTextLabel.setIcon(additionalIcon);
 
         myNode = treeNode;

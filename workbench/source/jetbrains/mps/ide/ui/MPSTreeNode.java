@@ -50,6 +50,7 @@ public abstract class MPSTreeNode extends DefaultMutableTreeNode implements Iter
 
   private Icon myCollapsedIcon = Icons.CLOSED_FOLDER;
   private Icon myExpandedIcon = Icons.OPENED_FOLDER;
+  private Icon myAdditionalIcon = null;
   private String myNodeIdentifier;
   private String myText;
   private String myAdditionalText = null;
@@ -299,8 +300,12 @@ public abstract class MPSTreeNode extends DefaultMutableTreeNode implements Iter
   protected void updatePresentation() {
   }
 
-  public Icon getAdditionalIcon() {
-    return null;
+  public final Icon getAdditionalIcon() {
+    return myAdditionalIcon;
+  }
+
+  public final void setAdditionalIcon(Icon newIcon) {
+    myAdditionalIcon = newIcon;
   }
 
   public final Icon getIcon(boolean expanded) {
