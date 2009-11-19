@@ -38,6 +38,7 @@ import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.compiler.MPSNameEnvironment;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.Solution;
+import jetbrains.mps.javaParser.UIComponents.MyDialog;
 
 import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
@@ -265,12 +266,12 @@ public class JavaCompiler {
     if (!fqNames.isEmpty()) {
       int option = JOptionPane.showConfirmDialog(null, "Some imports in source code were not resolved.\nDo you want to specify classpaths for unresolved imports?");
       if (option == JOptionPane.YES_OPTION) {
-        ArrayList<String> list = new ArrayList<String>();
-        JDialog dialog = UIComponents.createClasspathsDialog(mySourceDir, list, new Vector<String>(fqNames));
+        MyDialog dialog = UIComponents.createClasspathsDialog(mySourceDir, new Vector<String>(fqNames));
         dialog.setVisible(true);
+        List<IClassPathItem> list = dialog.getChosenClassPaths();
         if (!list.isEmpty()) {
-          for (String classpath : list) {
-            myClassPathItem.add(new FileClassPathItem(classpath));
+          for (IClassPathItem classpath : list) {
+            myClassPathItem.add(classpath); //todo maybe add them to solution
           }
           return true;
         }
