@@ -71,11 +71,6 @@ public class MessagesViewTool extends BaseProjectTool implements PersistentState
   private static final Logger LOG = Logger.getLogger(MessagesViewTool.class);
   private static final int MAX_MESSAGES_SIZE = 30000;
 
-  private MyToggleAction myErrorsAction = new MyToggleAction("Show Error Messages", jetbrains.mps.ide.messages.Icons.ERROR_ICON) {
-    protected boolean isEnabled() {
-      return hasErrors();
-    }
-  };
   private MyToggleAction myWarningsAction = new MyToggleAction("Show Warnings Messages", jetbrains.mps.ide.messages.Icons.WARNING_ICON) {
     protected boolean isEnabled() {
       return hasWarnings();
@@ -119,7 +114,6 @@ public class MessagesViewTool extends BaseProjectTool implements PersistentState
     panel.add(new JPanel(), BorderLayout.CENTER);
 
     final DefaultActionGroup group = ActionUtils.groupFromActions(
-      myErrorsAction,
       myWarningsAction,
       myInfoAction,
       myAutoscrollToSourceAction
@@ -393,7 +387,7 @@ public class MessagesViewTool extends BaseProjectTool implements PersistentState
   private boolean isVisible(Message m) {
     switch (m.getKind()) {
       case ERROR:
-        return myErrorsAction.isSelected(null);
+        return true;
       case WARNING:
         return myWarningsAction.isSelected(null);
       case INFORMATION:
@@ -518,11 +512,10 @@ public class MessagesViewTool extends BaseProjectTool implements PersistentState
   }
 
   public MyState getState() {
-    return new MyState(myErrorsAction.isSelected(null), myWarningsAction.isSelected(null), myInfoAction.isSelected(null), myAutoscrollToSourceAction.isSelected(null));
+    return new MyState(myWarningsAction.isSelected(null), myInfoAction.isSelected(null), myAutoscrollToSourceAction.isSelected(null));
   }
 
   public void loadState(MyState state) {
-    myErrorsAction.setSelected(null, state.isErrors());
     myWarningsAction.setSelected(null, state.isWarnings());
     myInfoAction.setSelected(null, state.isInfo());
     myAutoscrollToSourceAction.setSelected(null, state.isAutoscrollToSource());
@@ -570,7 +563,6 @@ public class MessagesViewTool extends BaseProjectTool implements PersistentState
   }
 
   public static class MyState {
-    private boolean myErrors;
     private boolean myWarnings;
     private boolean myInfo;
     private boolean myAutoscrollToSource;
@@ -578,19 +570,10 @@ public class MessagesViewTool extends BaseProjectTool implements PersistentState
     public MyState() {
     }
 
-    public MyState(boolean errors, boolean warnings, boolean info, boolean autoscrollToSource) {
-      myErrors = errors;
+    public MyState(boolean warnings, boolean info, boolean autoscrollToSource) {
       myWarnings = warnings;
       myInfo = info;
       myAutoscrollToSource = autoscrollToSource;
-    }
-
-    public boolean isErrors() {
-      return myErrors;
-    }
-
-    public void setErrors(boolean errors) {
-      myErrors = errors;
     }
 
     public boolean isWarnings() {
