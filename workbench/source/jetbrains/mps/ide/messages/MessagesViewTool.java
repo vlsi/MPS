@@ -361,7 +361,7 @@ public class MessagesViewTool extends BaseProjectTool implements PersistentState
       if (!(msg instanceof Message)) continue;
       Message message = (Message) msg;
       issueTitle.append(message.getText()).append(' ');
-      dialog.setEx(message.getException());
+      dialog.addEx(message.getException());
     }
     dialog.setIssueTitle(issueTitle.toString());
     dialog.showDialog();

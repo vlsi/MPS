@@ -80,7 +80,7 @@ public class BlameDialog extends BaseDialog {
     init();
   }
 
-  public void setEx(Throwable ex) {
+  public void addEx(Throwable ex) {
     myEx.add(ex);
     String text = myException.getText();
     if (text != null && text.length() > 0) {
