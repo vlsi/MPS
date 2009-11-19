@@ -8,7 +8,6 @@ import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import javax.swing.Icon;
-import jetbrains.mps.lang.core.behavior.BaseConcept_Behavior;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
@@ -32,7 +31,7 @@ public class FieldDeclaration_Behavior {
   }
 
   public static Icon virtual_getAdditionalIcon_5017341185733863694(SNode thisNode) {
-    return BaseConcept_Behavior.call_getAdditionalIcon_5017341185733863694(thisNode);
+    return IVisible_Behavior.call_getVisibilityIcon_5017341185733869581(thisNode);
   }
 
   public static List<SNode> virtual_getChildrenToDisplayIntention_4025276038182325660(SNode thisNode) {

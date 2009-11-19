@@ -714,8 +714,8 @@
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="8884554759541377989">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="8884554759541377990">
             <node role="operand" type="jetbrains.mps.lang.behavior.structure.ThisNodeExpression" id="8884554759541377991" />
-            <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="8884554759541377992">
-              <link role="baseMethodDeclaration" targetNodeId="20.5017341185733863694" resolveInfo="getAdditionalIcon" />
+            <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="7088757316642900054">
+              <link role="baseMethodDeclaration" targetNodeId="5017341185733869581" resolveInfo="getVisibilityIcon" />
             </node>
           </node>
         </node>
