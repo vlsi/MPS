@@ -37,18 +37,18 @@ class ImmatureReferences implements ApplicationComponent {
   }
 
   private CleanupManager myCleanupManager;
-  
+
   private SModelRepository mySModelRepository;
 
-  private ConcurrentMap<SModelReference, ConcurrentMap<SReferenceBase, SReferenceBase>> myReferences = new ConcurrentHashMap<SModelReference, ConcurrentMap<SReferenceBase,SReferenceBase>>();  
-  
-  private ConcurrentLinkedQueue<ConcurrentMap<SReferenceBase,SReferenceBase>> myReferencesSetPool = new ConcurrentLinkedQueue<ConcurrentMap<SReferenceBase,SReferenceBase>> ();
-  
+  private ConcurrentMap<SModelReference, ConcurrentMap<SReferenceBase, SReferenceBase>> myReferences = new ConcurrentHashMap<SModelReference, ConcurrentMap<SReferenceBase, SReferenceBase>>();
+
+  private ConcurrentLinkedQueue<ConcurrentMap<SReferenceBase, SReferenceBase>> myReferencesSetPool = new ConcurrentLinkedQueue<ConcurrentMap<SReferenceBase, SReferenceBase>>();
+
   ImmatureReferences(CleanupManager cleanupManager, SModelRepository modelRepository) {
     myCleanupManager = cleanupManager;
     mySModelRepository = modelRepository;
-    for (int i=0; i<4; i++) {
-        myReferencesSetPool.add(new ConcurrentHashMap<SReferenceBase, SReferenceBase>());
+    for (int i = 0; i < 4; i++) {
+      myReferencesSetPool.add(new ConcurrentHashMap<SReferenceBase, SReferenceBase>());
     }
   }
 
@@ -60,12 +60,12 @@ class ImmatureReferences implements ApplicationComponent {
   public void initComponent() {
     myCleanupManager.addCleanupListener(new CleanupListener() {
       public void performCleanup() {
-          for (Entry<SModelReference, ConcurrentMap<SReferenceBase, SReferenceBase>> entry : myReferences.entrySet()) {
-            for (SReferenceBase r : entry.getValue().values ()) {
-              r.mature();
-            }
+        for (Entry<SModelReference, ConcurrentMap<SReferenceBase, SReferenceBase>> entry : myReferences.entrySet()) {
+          for (SReferenceBase r : entry.getValue().values()) {
+            r.mature();
           }
-          myReferences.clear();
+        }
+        myReferences.clear();
       }
     });
 
@@ -82,35 +82,35 @@ class ImmatureReferences implements ApplicationComponent {
   }
 
   void add(SReferenceBase ref) {
-      SModelReference modelRef = ref.getSourceNode().getModel().getSModelReference();
-      ConcurrentMap<SReferenceBase, SReferenceBase> refSet = getOrCreateRefSet(modelRef);
-      refSet.put(ref, ref);
+    SModelReference modelRef = ref.getSourceNode().getModel().getSModelReference();
+    ConcurrentMap<SReferenceBase, SReferenceBase> refSet = getOrCreateRefSet(modelRef);
+    refSet.put(ref, ref);
   }
 
   void remove(SReferenceBase ref) {
-      SModelReference modelRef = ref.getSourceNode().getModel().getSModelReference();
-      ConcurrentMap<SReferenceBase, SReferenceBase> refSet = myReferences.get(modelRef);
-      if (refSet != null) {
-          refSet.remove(ref);
-      }
+    SModelReference modelRef = ref.getSourceNode().getModel().getSModelReference();
+    ConcurrentMap<SReferenceBase, SReferenceBase> refSet = myReferences.get(modelRef);
+    if (refSet != null) {
+      refSet.remove(ref);
+    }
   }
-  
-  private ConcurrentMap<SReferenceBase, SReferenceBase> getOrCreateRefSet (SModelReference modelRef) {
+
+  private ConcurrentMap<SReferenceBase, SReferenceBase> getOrCreateRefSet(SModelReference modelRef) {
     ConcurrentMap<SReferenceBase, SReferenceBase> pooledSet;
     try {
-        pooledSet = myReferencesSetPool.remove();
+      pooledSet = myReferencesSetPool.remove();
     }
     catch (NoSuchElementException e) {
-        pooledSet = new ConcurrentHashMap<SReferenceBase, SReferenceBase> ();
+      pooledSet = new ConcurrentHashMap<SReferenceBase, SReferenceBase>();
     }
     ConcurrentMap<SReferenceBase, SReferenceBase> usedSet = myReferences.putIfAbsent(modelRef, pooledSet);
     if (usedSet == null) {
-        usedSet = pooledSet;
-        pooledSet = new ConcurrentHashMap<SReferenceBase, SReferenceBase> ();
+      usedSet = pooledSet;
+      pooledSet = new ConcurrentHashMap<SReferenceBase, SReferenceBase>();
     }
     myReferencesSetPool.add(pooledSet);
     return usedSet;
   }
-  
-  
+
+
 }
