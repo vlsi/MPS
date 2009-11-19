@@ -40,6 +40,7 @@ import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.workbench.action.ActionUtils;
 import jetbrains.mps.workbench.action.BaseAction;
 import jetbrains.mps.workbench.tools.BaseProjectTool;
+import jetbrains.mps.util.NameUtil;
 
 import javax.swing.*;
 import java.awt.BorderLayout;
@@ -492,7 +493,7 @@ public class MessagesViewTool extends BaseProjectTool implements PersistentState
   }
 
   private String getHeaderPart(int count, String name) {
-    return count + " " + name + ((count > 1)? "s" : "");
+    return count + " " + ((count > 1)? NameUtil.pluralize(name) : name);
   }
 
   private void updateHeader() {

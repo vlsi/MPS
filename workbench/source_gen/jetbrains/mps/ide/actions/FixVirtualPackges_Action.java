@@ -18,6 +18,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.lang.structure.behavior.AbstractConceptDeclaration_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.util.EqualUtil;
 
 public class FixVirtualPackges_Action extends GeneratedAction {
   private static final Icon ICON = null;
@@ -79,10 +80,7 @@ public class FixVirtualPackges_Action extends GeneratedAction {
           }
           String aspectPack = SPropertyOperations.getString(SNodeOperations.cast(aspect, "jetbrains.mps.lang.core.structure.BaseConcept"), "virtualPackage");
           String conceptPack = SPropertyOperations.getString(concept, "virtualPackage");
-          if (aspectPack == null && conceptPack == null) {
-            continue;
-          }
-          if (aspectPack != null && aspectPack.equals(conceptPack)) {
+          if (EqualUtil.equals(aspectPack, conceptPack)) {
             continue;
           }
 

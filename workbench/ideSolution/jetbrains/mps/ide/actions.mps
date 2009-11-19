@@ -36062,42 +36062,14 @@
                   <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="8592711004491392287">
                     <node role="statement" type="jetbrains.mps.baseLanguage.structure.ContinueStatement" id="8592711004491392364" />
                   </node>
-                  <node role="condition" type="jetbrains.mps.baseLanguage.structure.AndExpression" id="1619983563430371991">
-                    <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.EqualsExpression" id="1619983563430371995">
-                      <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1619983563430371998" />
-                      <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1619983563430372009">
-                        <link role="variableDeclaration" targetNodeId="1619983563430371958" resolveInfo="conceptPack" />
-                      </node>
+                  <node role="condition" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="3841638327552801313">
+                    <link role="classConcept" targetNodeId="76.~EqualUtil" resolveInfo="EqualUtil" />
+                    <link role="baseMethodDeclaration" targetNodeId="76.~EqualUtil.equals(java.lang.Object,java.lang.Object):boolean" resolveInfo="equals" />
+                    <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="3841638327552801314">
+                      <link role="variableDeclaration" targetNodeId="1619983563430371949" resolveInfo="aspectPack" />
                     </node>
-                    <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.EqualsExpression" id="1619983563430371983">
-                      <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1619983563430371982">
-                        <link role="variableDeclaration" targetNodeId="1619983563430371949" resolveInfo="aspectPack" />
-                      </node>
-                      <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1619983563430371987" />
-                    </node>
-                  </node>
-                </node>
-                <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1619983563430372000">
-                  <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1619983563430372001">
-                    <node role="statement" type="jetbrains.mps.baseLanguage.structure.ContinueStatement" id="1619983563430372024" />
-                  </node>
-                  <node role="condition" type="jetbrains.mps.baseLanguage.structure.AndExpression" id="1619983563430372014">
-                    <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1619983563430372018">
-                      <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1619983563430372017">
-                        <link role="variableDeclaration" targetNodeId="1619983563430371949" resolveInfo="aspectPack" />
-                      </node>
-                      <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1619983563430372022">
-                        <link role="baseMethodDeclaration" targetNodeId="73.~String.equals(java.lang.Object):boolean" resolveInfo="equals" />
-                        <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1619983563430372023">
-                          <link role="variableDeclaration" targetNodeId="1619983563430371958" resolveInfo="conceptPack" />
-                        </node>
-                      </node>
-                    </node>
-                    <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.NotEqualsExpression" id="1619983563430372010">
-                      <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1619983563430372004">
-                        <link role="variableDeclaration" targetNodeId="1619983563430371949" resolveInfo="aspectPack" />
-                      </node>
-                      <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1619983563430372013" />
+                    <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="3841638327552801316">
+                      <link role="variableDeclaration" targetNodeId="1619983563430371958" resolveInfo="conceptPack" />
                     </node>
                   </node>
                 </node>
