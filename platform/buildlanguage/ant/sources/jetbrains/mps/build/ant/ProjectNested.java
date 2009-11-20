@@ -7,12 +7,12 @@ import java.io.File;
 
 public class ProjectNested extends FileSet {
   private boolean myWholeProject = false;
-  private static final String[] INCLUDES = new String[]{"**/*.mpr"};
+  private static final String[] EXCLUDES = new String[]{"**/*.msd, **/*.mpl, **/*.class, **/*.java, **/*.mps, **/.svn/"};
 
   @Override
   public void setDir(File dir) throws BuildException {
     super.setDir(dir);
-    appendIncludes(INCLUDES);
+    appendExcludes(EXCLUDES);
   }
 
   public boolean getWholeProject() {
