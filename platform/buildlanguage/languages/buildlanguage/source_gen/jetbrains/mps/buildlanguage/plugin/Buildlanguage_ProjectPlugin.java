@@ -11,7 +11,7 @@ import java.util.ArrayList;
 import jetbrains.mps.plugins.pluginparts.prefs.BaseProjectPrefsComponent;
 
 public class Buildlanguage_ProjectPlugin extends BaseProjectPlugin {
-  public List<BaseGeneratedTool> initTools(Project project) {
+  public List<BaseGeneratedTool> initAllTools(Project project) {
     List<BaseGeneratedTool> tools = ListSequence.fromList(new ArrayList<BaseGeneratedTool>());
     ListSequence.fromList(tools).addElement(new BuildLanguageTool_Tool(project));
     return tools;

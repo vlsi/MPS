@@ -79,7 +79,7 @@ public class Ide_ProjectPlugin extends BaseProjectPlugin {
     }, this);
   }
 
-  public List<BaseGeneratedTool> initTools(Project project) {
+  public List<BaseGeneratedTool> initAllTools(Project project) {
     List<BaseGeneratedTool> tools = ListSequence.fromList(new ArrayList<BaseGeneratedTool>());
     ListSequence.fromList(tools).addElement(new NodeExplorer_Tool(project));
     ListSequence.fromList(tools).addElement(new ModuleRepository_Tool(project));

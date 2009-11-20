@@ -3257,7 +3257,7 @@
       </node>
     </node>
     <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1203875172792">
-      <property name="name" value="initTools" />
+      <property name="name" value="initAllTools" />
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1203875172795" />
       <node role="returnType" type="jetbrains.mps.baseLanguage.collections.structure.ListType" id="1238672240669">
         <node role="elementType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="8268027161981038856">

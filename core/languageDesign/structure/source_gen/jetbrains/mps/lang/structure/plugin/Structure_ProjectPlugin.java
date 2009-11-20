@@ -10,7 +10,7 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 
 public class Structure_ProjectPlugin extends BaseProjectPlugin {
-  public List<BaseGeneratedTool> initTools(Project project) {
+  public List<BaseGeneratedTool> initAllTools(Project project) {
     List<BaseGeneratedTool> tools = ListSequence.fromList(new ArrayList<BaseGeneratedTool>());
     ListSequence.fromList(tools).addElement(new StructureView_Tool(project));
     return tools;
