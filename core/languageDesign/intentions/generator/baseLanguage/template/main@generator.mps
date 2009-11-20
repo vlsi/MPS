@@ -940,8 +940,8 @@
         </node>
       </node>
     </node>
-    <node role="superclass" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="5711848865190513437">
-      <link role="classifier" targetNodeId="6.~EditorIntention" resolveInfo="EditorIntention" />
+    <node role="superclass" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="2339919405497088943">
+      <link role="classifier" targetNodeId="6.~BaseIntention" resolveInfo="BaseIntention" />
     </node>
   </node>
   <node type="jetbrains.mps.lang.generator.structure.TemplateDeclaration" id="1240407734051">
