@@ -481,7 +481,7 @@ public class JUnitConfigEditor extends JPanel {
           config.getStateObject().type = type;
         }
         if (config.getStateObject().myParams == null) {
-          config.getStateObject().myParams = new ConfigRunParameters(true);
+          config.getStateObject().myParams = new ConfigRunParameters();
         }
         myThis.myJavaOptions0.apply(config.getStateObject().myParams);
       }

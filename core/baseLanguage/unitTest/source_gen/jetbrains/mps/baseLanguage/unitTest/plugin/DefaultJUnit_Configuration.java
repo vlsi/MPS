@@ -179,7 +179,7 @@ public class DefaultJUnit_Configuration extends BaseRunConfig {
           });
 
           if (process.value != null) {
-            JUnitProcessHandler processHandler = new JUnitProcessHandler(runComponent, runComponent.getConsole(), process.value);
+            JUnitProcessHandler processHandler = new JUnitProcessHandler(runComponent, process.value, testRunner.value.getCommandString());
             runComponent.onStart(processHandler);
             handler = processHandler;
           }
