@@ -25,10 +25,9 @@
   <devkit namespace="2677cb18-f558-4e33-bc38-a5139cee06dc(jetbrains.mps.devkit.language-design)" />
   <maxImportIndex value="1" />
   <import index="1" modelUID="r:43b4d418-d4ca-4d97-ab07-31e4f3ddb3e5(jetbrains.mps.lang.smodelTests.structure)" version="-1" />
-  <visible index="2" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="278471160714141631">
     <property name="name" value="Child" />
-    <link role="extends" targetNodeId="2v.1133920641626" resolveInfo="BaseConcept" />
+    <link role="extends" targetNodeId="8758390115028851449" resolveInfo="NamedConcept" />
     <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="278471160714141632">
       <property name="metaClass" value="aggregation" />
       <property name="role" value="grandChild_0_1" />
@@ -53,13 +52,14 @@
       <link role="target" targetNodeId="278471160714141636" resolveInfo="GrandChild" />
     </node>
   </node>
+  <visible index="2" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="278471160714141636">
     <property name="name" value="GrandChild" />
     <link role="extends" targetNodeId="2v.1133920641626" resolveInfo="BaseConcept" />
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="278471160714141637">
     <property name="name" value="Root" />
-    <link role="extends" targetNodeId="2v.1133920641626" resolveInfo="BaseConcept" />
+    <link role="extends" targetNodeId="8758390115028851449" resolveInfo="NamedConcept" />
     <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="278471160714141638">
       <property name="metaClass" value="aggregation" />
       <property name="role" value="child_0_n" />
@@ -82,12 +82,39 @@
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="34342663958604621">
     <property name="name" value="ChildSubConcept" />
     <link role="extends" targetNodeId="278471160714141631" resolveInfo="Child" />
-    <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="34342663958604626" />
     <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="34342663958604622">
       <property name="metaClass" value="aggregation" />
       <property name="role" value="specializedGranChild_0_1" />
       <link role="target" targetNodeId="278471160714141636" resolveInfo="GrandChild" />
       <link role="specializedLink" targetNodeId="278471160714141632" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="8758390115028851398">
+    <property name="name" value="ReferenceContainer" />
+    <link role="extends" targetNodeId="2v.1133920641626" resolveInfo="BaseConcept" />
+    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="8758390115028851399">
+      <property name="metaClass" value="reference" />
+      <property name="role" value="root" />
+      <property name="sourceCardinality" value="1" />
+      <link role="target" targetNodeId="278471160714141637" resolveInfo="Root" />
+    </node>
+    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="8758390115028851400">
+      <property name="metaClass" value="reference" />
+      <property name="role" value="leftChild" />
+      <link role="target" targetNodeId="278471160714141631" resolveInfo="Child" />
+    </node>
+    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="8758390115028851401">
+      <property name="metaClass" value="reference" />
+      <property name="role" value="rightChild" />
+      <link role="target" targetNodeId="278471160714141631" resolveInfo="Child" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="8758390115028851449">
+    <property name="name" value="NamedConcept" />
+    <link role="extends" targetNodeId="2v.1133920641626" resolveInfo="BaseConcept" />
+    <node role="propertyDeclaration" type="jetbrains.mps.lang.structure.structure.PropertyDeclaration" id="8758390115028851453">
+      <property name="name" value="name" />
+      <link role="dataType" targetNodeId="2v.1082983041843" resolveInfo="string" />
     </node>
   </node>
 </model>

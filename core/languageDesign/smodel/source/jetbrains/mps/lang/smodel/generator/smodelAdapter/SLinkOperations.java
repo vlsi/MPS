@@ -18,6 +18,7 @@ package jetbrains.mps.lang.smodel.generator.smodelAdapter;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.BaseAdapter;
 import jetbrains.mps.smodel.SModelUtil_new;
+import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.smodel.search.SModelSearchUtil;
 import jetbrains.mps.smodel.action.NodeFactoryManager;
 import jetbrains.mps.project.GlobalScope;
@@ -176,6 +177,28 @@ public class SLinkOperations {
   public static List<SNode> getConceptLinkTargets(SNode node, String linkName) {
     if (node == null) return new ArrayList<SNode>();
     return node.getAdapter().getConceptLinkTargets(linkName, true);
+  }
+
+  public static SNode findLinkDeclaration(SReference reference) {
+    if (reference == null) {
+      return null;
+    }
+    LinkDeclaration linkDeclaration = reference.getSourceNode().getLinkDeclaration(reference.getRole());
+    return linkDeclaration == null ? null : linkDeclaration.getNode();
+  }
+
+  public static SNode getTargetNode(SReference reference) {
+    if (reference == null) {
+      return null;
+    }
+    return reference.getTargetNode();
+  }
+
+  public static String getRole(SReference reference) {
+    if (reference == null) {
+      return null;
+    }
+    return reference.getRole();
   }
 
 }

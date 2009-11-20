@@ -585,4 +585,26 @@ public class SNodeOperations {
     return node;
   }
 
+  public static SNode getContainingLinkDeclaration(SNode childNode) {
+    if (childNode == null) {
+      return null; 
+    }
+    LinkDeclaration linkDeclaration = childNode.getRoleLink();
+    return linkDeclaration == null ? null : linkDeclaration.getNode();
+  }
+
+  public static String getContainingLinkRole(SNode childNode) {
+    if (childNode == null) {
+      return null;
+    }
+    return childNode.getRole_();
+  }
+
+  public static List<SReference> getReferences(SNode node) {
+    if (node == null) {
+      return new ArrayList<SReference>(0);
+    }
+    return node.getReferences();
+  }
+
 }

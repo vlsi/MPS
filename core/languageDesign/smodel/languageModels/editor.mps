@@ -2885,5 +2885,242 @@
       </node>
     </node>
   </node>
+  <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" id="8758390115028597876">
+    <property name="package" value="operation.node" />
+    <link role="conceptDeclaration" targetNodeId="1.8758390115028452779" resolveInfo="Node_GetReferencesOperation" />
+    <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Component" id="8758390115028597879">
+      <link role="editorComponent" targetNodeId="1206480334645" resolveInfo="ReplaceableAlias_Comp" />
+    </node>
+    <node role="inspectedCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="8758390115028597976">
+      <node role="cellLayout" type="jetbrains.mps.lang.editor.structure.CellLayout_Indent" id="8758390115028597977" />
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="8758390115028597978">
+        <property name="text" value="The 'references' operation" />
+        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.ForegroundColorStyleClassItem" id="8758390115028597979">
+          <property name="color" value="blue" />
+        </node>
+        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.TextBackgroundColorStyleClassItem" id="8758390115029293350">
+          <property name="color" value="lightGray" />
+        </node>
+        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.IndentLayoutNewLineStyleClassItem" id="8758390115028597983">
+          <property name="flag" value="true" />
+        </node>
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="8758390115028597985">
+        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.IndentLayoutNewLineStyleClassItem" id="8758390115028597987">
+          <property name="flag" value="true" />
+        </node>
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="8758390115028597989">
+        <property name="text" value="Returns all references defined in this node" />
+        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.FontStyleStyleClassItem" id="8758390115028597995" />
+        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.IndentLayoutNewLineStyleClassItem" id="8758390115028597992">
+          <property name="flag" value="true" />
+        </node>
+      </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.editor.structure.EditorComponentDeclaration" id="1547759872598425693">
+    <property name="package" value="operation.reference" />
+    <property name="name" value="AliasComponent" />
+    <link role="conceptDeclaration" targetNodeId="1.1547759872598425074" resolveInfo="IReferenceOperation" />
+    <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Alternation" id="1547759872598425695">
+      <property name="vertical" value="true" />
+      <node role="ifTrueCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_ConceptProperty" id="1547759872598425696">
+        <property name="noTargetText" value="&lt;no alias&gt;" />
+        <link role="relationDeclaration" targetNodeId="2.1156235010670" resolveInfo="alias" />
+        <node role="menuDescriptor" type="jetbrains.mps.lang.editor.structure.CellMenuDescriptor" id="1547759872598425697">
+          <node role="cellMenuPart" type="jetbrains.mps.lang.editor.structure.CellMenuPart_ReplaceNode_CustomNodeConcept" id="1547759872598425698">
+            <link role="replacementConcept" targetNodeId="1.1138411891628" resolveInfo="SNodeOperation" />
+          </node>
+        </node>
+        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.FontStyleStyleClassItem" id="1547759872598425699">
+          <property name="style" value="BOLD" />
+        </node>
+      </node>
+      <node role="alternationCondition" type="jetbrains.mps.lang.editor.structure.QueryFunction_NodeCondition" id="1547759872598425700">
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1547759872598425701">
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1547759872598425702">
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.NotExpression" id="1547759872598425703">
+              <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1547759872598425704">
+                <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1547759872598425705">
+                  <node role="operand" type="jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_node" id="1547759872598425706" />
+                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_GetConceptOperation" id="1547759872598425707" />
+                </node>
+                <node role="operation" type="jetbrains.mps.lang.smodel.structure.Concept_IsExactlyOperation" id="1547759872598425708">
+                  <node role="conceptArgument" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" id="1547759872598425709">
+                    <link role="conceptDeclaration" targetNodeId="1.1138411891628" resolveInfo="SNodeOperation" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="ifFalseCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Error" id="1547759872598425710">
+        <property name="text" value="&lt;choose operaion&gt;" />
+      </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" id="1547759872598430271">
+    <property name="package" value="operation.reference" />
+    <link role="conceptDeclaration" targetNodeId="1.4124388153790980106" resolveInfo="Link_GetTargetOperation" />
+    <node role="inspectedCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="1547759872598430275">
+      <node role="cellLayout" type="jetbrains.mps.lang.editor.structure.CellLayout_Indent" id="1547759872598430276" />
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1547759872598430277">
+        <property name="text" value="Get reference 'target' operation" />
+        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.IndentLayoutNewLineStyleClassItem" id="1547759872598430278">
+          <property name="flag" value="true" />
+        </node>
+        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.TextBackgroundColorStyleClassItem" id="1547759872598430285">
+          <property name="color" value="lightGray" />
+        </node>
+        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.ForegroundColorStyleClassItem" id="1547759872598430284">
+          <property name="color" value="blue" />
+        </node>
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1547759872598430287">
+        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.IndentLayoutNewLineStyleClassItem" id="1547759872598430292">
+          <property name="flag" value="true" />
+        </node>
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1547759872598430289">
+        <property name="text" value="Returns target node linked by this reference" />
+        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.IndentLayoutNewLineStyleClassItem" id="1547759872598430293">
+          <property name="flag" value="true" />
+        </node>
+        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.FontStyleStyleClassItem" id="1547759872598430295" />
+      </node>
+    </node>
+    <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Component" id="3787402074205667918">
+      <link role="editorComponent" targetNodeId="1547759872598425693" resolveInfo="AliasComponent" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" id="4175779910939087429">
+    <property name="package" value="operation.reference" />
+    <link role="conceptDeclaration" targetNodeId="1.1547759872598425067" resolveInfo="Reference_GetLinkDeclarationOpration" />
+    <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Component" id="4175779910939087431">
+      <link role="editorComponent" targetNodeId="1547759872598425693" resolveInfo="AliasComponent" />
+    </node>
+    <node role="inspectedCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="4175779910939087432">
+      <node role="cellLayout" type="jetbrains.mps.lang.editor.structure.CellLayout_Indent" id="4175779910939087433" />
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="4175779910939087434">
+        <property name="text" value="Get reference 'linkDeclaration' operation" />
+        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.IndentLayoutNewLineStyleClassItem" id="4175779910939087778">
+          <property name="flag" value="true" />
+        </node>
+        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.TextBackgroundColorStyleClassItem" id="4175779910939087782">
+          <property name="color" value="lightGray" />
+        </node>
+        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.ForegroundColorStyleClassItem" id="4175779910939087784">
+          <property name="color" value="blue" />
+        </node>
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="4175779910939087436">
+        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.IndentLayoutNewLineStyleClassItem" id="4175779910939087779">
+          <property name="flag" value="true" />
+        </node>
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="4175779910939087438">
+        <property name="text" value="Returns LinkDeclararion representing containment link for this node inside parent node" />
+        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.IndentLayoutNewLineStyleClassItem" id="4175779910939087780">
+          <property name="flag" value="true" />
+        </node>
+        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.FontStyleStyleClassItem" id="4175779910939087787" />
+      </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" id="1892129828611825079">
+    <property name="package" value="type" />
+    <link role="conceptDeclaration" targetNodeId="1.8758390115029295477" resolveInfo="SReferenceType" />
+    <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1892129828611825081">
+      <property name="text" value="reference" />
+      <link role="styleClass" targetNodeId="5.1186415544875" resolveInfo="KeyWord" />
+      <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PaddingRightStyleClassItem" id="1892129828611825082">
+        <property name="value" value="0.0" />
+      </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" id="5692182839349412522">
+    <property name="package" value="operation.reference" />
+    <link role="conceptDeclaration" targetNodeId="1.5692182839349412519" resolveInfo="Reference_GetRoleOperation" />
+    <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Component" id="5692182839349412524">
+      <link role="editorComponent" targetNodeId="1547759872598425693" resolveInfo="AliasComponent" />
+    </node>
+    <node role="inspectedCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="5692182839349412526">
+      <node role="cellLayout" type="jetbrains.mps.lang.editor.structure.CellLayout_Indent" id="5692182839349412528" />
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="5692182839349412530">
+        <property name="text" value="Get reference 'role' operation" />
+        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.IndentLayoutNewLineStyleClassItem" id="5692182839349412537">
+          <property name="flag" value="true" />
+        </node>
+        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.TextBackgroundColorStyleClassItem" id="5692182839349412539">
+          <property name="color" value="lightGray" />
+        </node>
+        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.ForegroundColorStyleClassItem" id="5692182839349412541">
+          <property name="color" value="blue" />
+        </node>
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="5692182839349412532">
+        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.IndentLayoutNewLineStyleClassItem" id="5692182839349412536">
+          <property name="flag" value="true" />
+        </node>
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="5692182839349412534">
+        <property name="text" value="Returns reference role value" />
+        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.IndentLayoutNewLineStyleClassItem" id="5692182839349412535">
+          <property name="flag" value="true" />
+        </node>
+        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.FontStyleStyleClassItem" id="5692182839349412543" />
+      </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" id="5820409030208925319">
+    <property name="package" value="operation.node" />
+    <link role="conceptDeclaration" targetNodeId="1.5820409030208923287" resolveInfo="Node_GetContainingLinkOperation" />
+    <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Component" id="5820409030208925321">
+      <link role="editorComponent" targetNodeId="1206480334645" resolveInfo="ReplaceableAlias_Comp" />
+    </node>
+    <node role="inspectedCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="5820409030208925325">
+      <node role="cellLayout" type="jetbrains.mps.lang.editor.structure.CellLayout_Vertical" id="5820409030208925326" />
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="5820409030208925327">
+        <property name="text" value="Get node 'containingLink' operation" />
+        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.ForegroundColorStyleClassItem" id="5820409030208925332">
+          <property name="color" value="blue" />
+        </node>
+        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.TextBackgroundColorStyleClassItem" id="5820409030208925334">
+          <property name="color" value="lightGray" />
+        </node>
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="5820409030208925329" />
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="5820409030208925331">
+        <property name="text" value="Returns aggregation LinkDeclararion defined in concept of parent node and representing containment reference for this node" />
+        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.FontStyleStyleClassItem" id="5820409030208925335" />
+      </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" id="1960721196051541157">
+    <property name="package" value="operation.node" />
+    <link role="conceptDeclaration" targetNodeId="1.1960721196051541146" resolveInfo="Node_GetContainingRoleOperation" />
+    <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Component" id="1960721196051541159">
+      <link role="editorComponent" targetNodeId="1206480334645" resolveInfo="ReplaceableAlias_Comp" />
+    </node>
+    <node role="inspectedCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="1960721196051541167">
+      <node role="cellLayout" type="jetbrains.mps.lang.editor.structure.CellLayout_Vertical" id="1960721196051541168" />
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1960721196051541169">
+        <property name="text" value="Get node 'containingRole' operation" />
+        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.ForegroundColorStyleClassItem" id="1960721196051541170">
+          <property name="color" value="blue" />
+        </node>
+        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.TextBackgroundColorStyleClassItem" id="1960721196051541171">
+          <property name="color" value="lightGray" />
+        </node>
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1960721196051541172" />
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1960721196051541173">
+        <property name="text" value="Returns aggregation link role defined in concept of parent node and representing containment reference for this node" />
+        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.FontStyleStyleClassItem" id="1960721196051541174" />
+      </node>
+    </node>
+  </node>
 </model>
 
