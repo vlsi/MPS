@@ -21,6 +21,7 @@ import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.workbench.actions.nodes.GoToIntentionsHelper;
 import jetbrains.mps.workbench.actions.nodes.GoToFindersHelper;
 import jetbrains.mps.workbench.actions.nodes.GoToGenHelper;
+import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
@@ -225,6 +226,43 @@ public class AbstractConceptDeclaration_Behavior {
 
   public static List<SNode> call_findGeneratorFragments_6409339300305625383(SNode thisNode, IScope scope) {
     return GoToGenHelper.getGenFragments(((AbstractConceptDeclaration)SNodeOperations.getAdapter(thisNode)), scope);
+  }
+
+  public static List<SNode> call_findAdditionalGenerators_3590548766499750586(SNode thisNode, IScope scope) {
+    List<SNode> result = new ArrayList<SNode>();
+    Language language = SModelUtil.getDeclaringLanguage(thisNode, scope);
+    if (language == null) {
+      return result;
+    }
+    for (Generator generator : language.getGenerators()) {
+      for (SModelDescriptor md : generator.getOwnTemplateModels()) {
+        SModel model = md.getSModel();
+        for (SNode templateSwitch : SModelOperations.getRoots(model, "jetbrains.mps.lang.generator.structure.TemplateSwitch")) {
+          for (SNode mappingRule : SLinkOperations.getTargets(templateSwitch, "reductionMappingRule", true)) {
+            if (SLinkOperations.getTarget(mappingRule, "applicableConcept", false) == thisNode) {
+              ListSequence.fromList(result).addElement(templateSwitch);
+              break;
+            }
+          }
+        }
+        for (SNode mappingConfiguration : SModelOperations.getRoots(model, "jetbrains.mps.lang.generator.structure.MappingConfiguration")) {
+          for (SNode mapConfChild : SNodeOperations.getChildren(mappingConfiguration)) {
+            if (SNodeOperations.isInstanceOf(mapConfChild, "jetbrains.mps.lang.generator.structure.BaseMappingRule")) {
+              if (SLinkOperations.getTarget(SNodeOperations.cast(mapConfChild, "jetbrains.mps.lang.generator.structure.BaseMappingRule"), "applicableConcept", false) == thisNode) {
+                ListSequence.fromList(result).addElement(mappingConfiguration);
+                break;
+              }
+            } else if (SNodeOperations.isInstanceOf(mapConfChild, "jetbrains.mps.lang.generator.structure.DropRootRule")) {
+              if (SLinkOperations.getTarget(SNodeOperations.cast(mapConfChild, "jetbrains.mps.lang.generator.structure.DropRootRule"), "applicableConcept", false) == thisNode) {
+                ListSequence.fromList(result).addElement(mappingConfiguration);
+                break;
+              }
+            }
+          }
+        }
+      }
+    }
+    return result;
   }
 
   public static SNode call_findTextgen_6409339300305625442(SNode thisNode, IScope scope) {
