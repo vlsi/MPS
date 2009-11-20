@@ -61,6 +61,8 @@ public class JavaConverterTreeBuilder {
   private Map<String, SModel> myModelMap;
 
   private Classifier myCurrentClass;
+  private TypeDeclaration myCurrentTypeDeclaration;
+
   private BaseMethodDeclaration myCurrentMethod;
   private TypesProvider myTypesProvider;
 
@@ -597,6 +599,46 @@ public class JavaConverterTreeBuilder {
     return result;
   }
 
+  private boolean isSubtype(ReferenceBinding subtype, TypeBinding supertype) {
+    if (supertype == subtype) {
+      return true;
+    }
+    if (subtype.superclass() != null) {
+      if (isSubtype(subtype.superclass(), supertype)) {
+        return true;
+      }
+    }
+    if(subtype.superInterfaces() != null) {
+      for (ReferenceBinding infc : subtype.superInterfaces()) {
+        if (isSubtype(infc, supertype)) {
+          return true;
+        }
+      }
+    }
+    return false;
+  }
+
+  private ThisExpression createThisExpression(MethodBinding binding, Expression receiver) {
+    ReferenceBinding methodDeclaringClass = binding.declaringClass;
+    SourceTypeBinding currentClass = myCurrentTypeDeclaration.binding;
+    ThisExpression thisExpression = ThisExpression.newInstance(myCurrentModel);
+    if (currentClass == methodDeclaringClass) {
+      return thisExpression;
+    }
+    if (isSubtype(currentClass, methodDeclaringClass)) {
+      return thisExpression;
+    }
+    while (!currentClass.isStatic() && currentClass.isNestedType()) {
+      currentClass = ((NestedTypeBinding) currentClass).enclosingType;
+      if (isSubtype(currentClass, methodDeclaringClass)) {
+        break;
+      }
+    }
+    thisExpression.getNode().addReference(
+        myTypesProvider.createClassifierReference(
+          (ReferenceBinding) currentClass, ThisExpression.CLASS_CONCEPT, thisExpression.getNode()));
+    return thisExpression;
+  }
 
   jetbrains.mps.baseLanguage.structure.Expression processExpression(MessageSend x) {
 
@@ -629,9 +671,11 @@ public class JavaConverterTreeBuilder {
           * actually be the wrong type, if the target method is in an enclosing
           * class. We have to synthesize our own ref of the correct type.
           */
-          //todo do it after debug if really necessary
-          // qualifier = createThisRef(info, method.getEnclosingType());
-          qualifier = processExpressionRefl(x.receiver);
+          if (x.receiver.isImplicitThis()) {
+            qualifier = createThisExpression(x.binding, x.receiver);
+          } else {
+            qualifier = processExpressionRefl(x.receiver);
+          }
         }
       } else {
         qualifier = processExpressionRefl(x.receiver);
@@ -1154,6 +1198,7 @@ public class JavaConverterTreeBuilder {
       // Do not process.          //todo methods
       return classifier;
     }
+    myCurrentTypeDeclaration = x;
     myCurrentClass = classifier;
     try {
       if (x.fields != null) {
@@ -1212,6 +1257,7 @@ public class JavaConverterTreeBuilder {
 
       //currentClassScope = null;
       myCurrentClass = null;
+      myCurrentTypeDeclaration = null;
       //currentSeparatorPositions = null;
       //currentFileName = null;
     } catch (Throwable e) {
