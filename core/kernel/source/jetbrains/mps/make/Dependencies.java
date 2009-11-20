@@ -104,7 +104,7 @@ class Dependencies {
     if (value == null) {
       IFile iFile = getJavaFile(fqName);
       if (iFile == null) {
-        value = null;
+        value = 0L;
       } else {
         value = iFile.lastModified();
 
@@ -113,5 +113,9 @@ class Dependencies {
     }
 
     return value;
+  }
+
+  public IModule getModule(String fqName) {
+    return myModules.get(fqName);    
   }
 }

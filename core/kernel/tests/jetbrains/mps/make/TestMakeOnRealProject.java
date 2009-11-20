@@ -138,8 +138,7 @@ public class TestMakeOnRealProject extends TestCase {
     assertTrue(filesToCompile.contains(javaFileForMake));
   }
 
-  /*
-  Temporaly turn off.
+
   public void testCompileAfterDelete() throws InterruptedException {
     doSolutionsCompilation();
 
@@ -164,7 +163,7 @@ public class TestMakeOnRealProject extends TestCase {
     Set<JavaFile> filesToCompile = sources.getFilesToCompile();
     assertEquals(1, filesToCompile.size());
   }
-    */
+    
 
   private void checkModuleCompiled(IModule module) {
     IFile classesGen = module.getClassesGen();

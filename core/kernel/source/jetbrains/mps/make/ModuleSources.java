@@ -95,7 +95,7 @@ public class ModuleSources {
   private void collectOutputFilesInfo() {
     myFilesToCompile.addAll(myJavaFiles.values());
     myResourcesToCopy.addAll(myResourceFiles.values());
-        
+
     collectOutput(myModule.getClassesGen(), "", myFilesToCompile, myFilesToDelete, myResourcesToCopy);
   }
 
@@ -135,9 +135,11 @@ public class ModuleSources {
   private boolean isFileUpToDate(JavaFile javaFile, long classFileLastModified) {
     if (javaFile.getFile().lastModified() < classFileLastModified) {
       for (String fqName : myDependencies.getAllDependencies(javaFile.getClassName())) {
-        Long javaFileLastModified = myDependencies.getJavaFileLastModified(fqName);
-        if (javaFileLastModified != null && javaFileLastModified > classFileLastModified) {
-          return false;
+        if (myDependencies.getModule(fqName) != null) {
+          Long javaFileLastModified = myDependencies.getJavaFileLastModified(fqName);
+          if (javaFileLastModified == 0 || javaFileLastModified > classFileLastModified) {
+            return false;
+          }
         }
       }
       return true;
