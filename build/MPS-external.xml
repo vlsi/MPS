@@ -321,7 +321,7 @@
     <antcall target="MPS-languages.pack.jetbrains.mps.bash0" />
     <antcall target="MPS-languages.pack.jetbrains.mps.baseLanguage.regexp0" />
     <antcall target="MPS-languages.pack.jetbrains.mps.baseLanguage.regexp.examples0" />
-    <antcall target="MPS-languages.pack.jetbrains.mps.baseLanguage.methodExtension0" />
+    <antcall target="MPS-languages.pack.jetbrains.mps.baseLanguage.extensionMethods0" />
     <antcall target="MPS-languages.pack.jetbrains.mps.uiLanguage0" />
     <antcall target="MPS-languages.pack.jetbrains.mps.xml0" />
     <antcall target="MPS-languages.pack.jetbrains.mps.xml.deprecated0" />
@@ -358,10 +358,10 @@
     <copy file="${mps_home}/about.txt" tofile="${deploy.dir}/MPS/about.txt" />
     <mkdir dir="${deploy.dir}/MPS" />
     <copy todir="${deploy.dir}/MPS-buildTools.zip.tmp/tools">
-      <fileset dir="${mps_home}/build/tools" excludes="**/SignCode.exe, " />
+      <fileset dir="${mps_home}/build/tools" excludes="**/SignCode.exe, **/sign.code.jar, " />
     </copy>
     <copy todir="${deploy.dir}/MPS-buildTools.zip.tmp/resources">
-      <fileset dir="${mps_home}/build/resources" excludes="**/*.spc, **/*.pvk, " />
+      <fileset dir="${mps_home}/build/resources" excludes="**/*.spc, **/*.pvk, **/*.pw, " />
     </copy>
     <zip destfile="${deploy.dir}/MPS-buildTools.zip" duplicate="preserve" filesonly="true">
       <zipfileset dir="${deploy.dir}/MPS-buildTools.zip.tmp" />

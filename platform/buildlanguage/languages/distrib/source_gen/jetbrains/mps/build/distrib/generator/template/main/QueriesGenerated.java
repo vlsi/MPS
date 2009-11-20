@@ -31,6 +31,7 @@ import jetbrains.mps.generator.template.IfMacroContext;
 import org.apache.commons.lang.StringUtils;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.MPSModuleRepository;
+import jetbrains.mps.build.distrib.behavior.DigitalSignatureWindowsConfiguration_Behavior;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
 import java.util.ArrayList;
@@ -486,6 +487,14 @@ public class QueriesGenerated {
     return SystemSpecificConfig_Behavior.call_getVMOptionsFilePath_1231769123888(_context.getNode());
   }
 
+  public static Object propertyMacro_GetPropertyValue_3575617408111161854(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    String commandLine = "";
+    for (SNode commandLinePart : ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(_context.getNode(), "signatureConfiguration", true), "commandLine", true))) {
+      commandLine += AbstractCommandLinePart_Behavior.call_getText_1231864533228(commandLinePart);
+    }
+    return commandLine;
+  }
+
   public static Object propertyMacro_GetPropertyValue_3858179827519823479(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return SystemSpecificConfig_Behavior.call_getVMOptionsFilePath_1231769123888(_context.getNode());
   }
@@ -603,7 +612,7 @@ public class QueriesGenerated {
   }
 
   public static boolean ifMacro_Condition_1231864147687(final IOperationContext operationContext, final IfMacroContext _context) {
-    return (SLinkOperations.getTarget(_context.getNode(), "signatureConfiguration", true) != null);
+    return (SLinkOperations.getTarget(_context.getNode(), "signatureConfiguration", true) != null) && !(DigitalSignatureWindowsConfiguration_Behavior.call_isJar_5274998544330616023(SLinkOperations.getTarget(_context.getNode(), "signatureConfiguration", true)));
   }
 
   public static boolean ifMacro_Condition_1234538966103(final IOperationContext operationContext, final IfMacroContext _context) {
@@ -862,6 +871,10 @@ public class QueriesGenerated {
     return !(AbstractPath_Behavior.call_getFullPath_1230059208735(SLinkOperations.getTarget(SystemSpecificConfig_Behavior.call_getDistribConfiguration_1230207861621(_context.getNode()), "startupDirectory", true)).equals("."));
   }
 
+  public static boolean ifMacro_Condition_3575617408111161884(final IOperationContext operationContext, final IfMacroContext _context) {
+    return (SLinkOperations.getTarget(_context.getNode(), "signatureConfiguration", true) != null) && DigitalSignatureWindowsConfiguration_Behavior.call_isJar_5274998544330616023(SLinkOperations.getTarget(_context.getNode(), "signatureConfiguration", true));
+  }
+
   public static boolean ifMacro_Condition_5311051194232934170(final IOperationContext operationContext, final IfMacroContext _context) {
     return SPropertyOperations.getBoolean(SystemSpecificConfig_Behavior.call_getDistribConfiguration_1230207861621(_context.getNode()), "useVMOptionsFile") && UniversalConfig_Behavior.call_addWindowsStartupScript_1239641827577(_context.getNode());
   }
@@ -928,6 +941,10 @@ public class QueriesGenerated {
 
   public static SNode sourceNodeQuery_1241440614591(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(SystemSpecificConfig_Behavior.call_getDistribConfiguration_1230207861621(_context.getNode()), "buildVersion", true);
+  }
+
+  public static SNode sourceNodeQuery_3575617408111161831(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "signatureConfiguration", true), "pathToExecutable", true);
   }
 
   public static Iterable sourceNodesQuery_1230059665156(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {

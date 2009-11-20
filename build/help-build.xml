@@ -50,6 +50,7 @@
         <exclude name="**/*.bdp" />
         <exclude name="**/*.pvk" />
         <exclude name="**/*.spc" />
+        <exclude name="**/*.pw" />
         <exclude name="**/sign/**" />
         <exclude name="system/**" />
         <exclude name="integrationBuild*" />

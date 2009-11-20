@@ -291,6 +291,7 @@
     <property name="package" value="systemSpecific.windows" />
     <property name="name" value="DigitalSignatureWindowsConfiguration" />
     <link role="extends" targetNodeId="2v.1133920641626" resolveInfo="BaseConcept" />
+    <node role="propertyDeclaration" type="jetbrains.mps.lang.structure.structure.PropertyDeclaration" id="5274998544330616019" />
     <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1231859196186">
       <property name="metaClass" value="aggregation" />
       <property name="role" value="pathToExecutable" />
