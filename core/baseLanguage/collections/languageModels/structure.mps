@@ -408,7 +408,7 @@
     <link role="extends" targetNodeId="2.1068431790189" />
     <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1151689745422">
       <property name="metaClass" value="aggregation" />
-      <property name="sourceCardinality" value="1" />
+      <property name="sourceCardinality" value="0..1" />
       <property name="role" value="elementType" />
       <link role="target" targetNodeId="2.1068431790189" />
     </node>

@@ -470,6 +470,60 @@ __switch__:
     this.assertIterableEquals(ArrayUtils.fromIntegerArray(new int[]{3}), this.abc(1));
   }
 
+  public void test_sequenceTypeWithoutElement() throws Exception {
+    Iterable<Integer> si = Sequence.fromClosure(new ISequenceClosure<Integer>() {
+      public Iterable<Integer> iterable() {
+        return new Iterable<Integer>() {
+          public Iterator<Integer> iterator() {
+            return new YieldingIterator<Integer>() {
+              private int __CP__ = 0;
+
+              protected boolean moveToNext() {
+__loop__:
+                do {
+__switch__:
+                  switch (this.__CP__) {
+                    case -1:
+                      assert false : "Internal error";
+                      return false;
+                    case 2:
+                      this.__CP__ = 3;
+                      this.yield(1);
+                      return true;
+                    case 3:
+                      this.__CP__ = 4;
+                      this.yield(2);
+                      return true;
+                    case 4:
+                      this.__CP__ = 5;
+                      this.yield(3);
+                      return true;
+                    case 5:
+                      this.__CP__ = 6;
+                      this.yield(4);
+                      return true;
+                    case 6:
+                      this.__CP__ = 1;
+                      this.yield(5);
+                      return true;
+                    case 0:
+                      this.__CP__ = 2;
+                      break;
+                    default:
+                      break __loop__;
+                  }
+                } while(true);
+                return false;
+              }
+            };
+          }
+        };
+      }
+    });
+    Iterable is = si;
+    this.assertIterableEquals(this.input5(), is);
+  }
+
   public Iterable<Integer> abc(final int j) {
     return Sequence.fromClosure(new ISequenceClosure<Integer>() {
       public Iterable<Integer> iterable() {

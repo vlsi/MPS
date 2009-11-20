@@ -76,6 +76,10 @@ public class QueriesGenerated {
     return (SLinkOperations.getTarget(_context.getSourceNode(), "delimiter", true) == null);
   }
 
+  public static boolean sideTransformHintSubstituteActionsBuilder_Precondition_SequenceType_569424390635550565(final IOperationContext operationContext, final SideTransformPreconditionContext _context) {
+    return (SLinkOperations.getTarget(_context.getSourceNode(), "elementType", true) == null);
+  }
+
   public static boolean sideTransformHintSubstituteActionsBuilder_Precondition_AbstractContainerCreator_1279588871814823471(final IOperationContext operationContext, final SideTransformPreconditionContext _context) {
     return (SLinkOperations.getTarget(_context.getSourceNode(), "elementType", true) == null);
   }
@@ -282,6 +286,7 @@ public class QueriesGenerated {
   }
 
   public static void nodeFactory_NodeSetup_SequenceType_7246115176735615124(final IOperationContext operationContext, final NodeSetupContext _context) {
+    SLinkOperations.setNewChild(_context.getNewNode(), "elementType", "jetbrains.mps.baseLanguage.structure.Type");
     if (ListSequence.fromList(SNodeOperations.getChildren(_context.getSampleNode())).count() == 1) {
       SNode maybeElementType = ListSequence.fromList(SNodeOperations.getChildren(_context.getSampleNode())).first();
       if (SPropertyOperations.getString(SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.collections.structure.SequenceType", "elementType"), "role").equals(maybeElementType.getRole_())) {
@@ -571,6 +576,32 @@ public class QueriesGenerated {
 
         public String getVisibleMatchingText(String pattern) {
           return this.getMatchingText(pattern);
+        }
+      });
+    }
+    return result;
+  }
+
+  public static List<INodeSubstituteAction> sideTransform_ActionsFactory_SequenceType_569424390635550564(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
+    List<INodeSubstituteAction> result = ListSequence.fromList(new ArrayList<INodeSubstituteAction>());
+    {
+      SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.SequenceType");
+      ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(concept, _context.getSourceNode()) {
+        public SNode doSubstitute(String pattern) {
+          SLinkOperations.setNewChild(_context.getSourceNode(), "elementType", "jetbrains.mps.baseLanguage.structure.Type");
+          return _context.getSourceNode();
+        }
+
+        public String getMatchingText(String pattern) {
+          return "<";
+        }
+
+        public String getVisibleMatchingText(String pattern) {
+          return this.getMatchingText(pattern);
+        }
+
+        public String getDescriptionText(String pattern) {
+          return "specify element type";
         }
       });
     }
