@@ -72,6 +72,10 @@ public abstract class SNodeId implements Comparable<SNodeId> {
       myId = id;
     }
 
+    public long getId() {
+      return myId;
+    }
+
     public boolean equals(Object o) {
       if (this == o) return true;
       if (o == null || getClass() != o.getClass()) return false;
