@@ -31,8 +31,7 @@ public class FastNodeFinder {
   private boolean myInitialized;
   private SModelAdapter myListener = new MySModelAdapter();
 
-  private Map<String, Set<SNode>> myNodesAll = new HashMap<String, Set<SNode>>();
-  private Map<String, Set<SNode>> myNodesNoInheritance = new HashMap<String, Set<SNode>>();
+  private Map<String, Set<SNode>> myNodes = new HashMap<String, Set<SNode>>();
 
   public FastNodeFinder(SModelDescriptor modelDescriptor) {
     myModelDescriptor = modelDescriptor;
@@ -60,30 +59,27 @@ public class FastNodeFinder {
         initCache();
       }
 
-      Map<String, Set<SNode>> map = myNodesNoInheritance;
-      if (includeInherited) {
-        map = myNodesAll;
-      }
+      final List<SNode> result = new ArrayList<SNode>();
 
-      if (map.containsKey(conceptFqName)) {
-        final List<SNode> result = new ArrayList<SNode>();
-        for (SNode n : map.get(conceptFqName)) {
-          SNode node = n;
-          if (node != null) {
-            result.add(node);
+      if (includeInherited) {
+        for (String d : LanguageHierarchyCache.getInstance().getAllDescendantsOfConcept(conceptFqName)) {
+          if (myNodes.containsKey(d)) {
+            result.addAll(myNodes.get(d));
           }
         }
-
-        Collections.sort(result, new Comparator<SNode>() {
-          public int compare(SNode o1, SNode o2) {
-            return o1.getSNodeId().compareTo(o2.getSNodeId());
-          }
-        });
-
-        return result;
+      } else {
+        if (myNodes.containsKey(conceptFqName)) {
+          result.addAll(myNodes.get(conceptFqName));
+        }
       }
 
-      return Collections.EMPTY_LIST;
+      Collections.sort(result, new Comparator<SNode>() {
+        public int compare(SNode o1, SNode o2) {
+          return o1.getSNodeId().compareTo(o2.getSNodeId());
+        }
+      });
+
+      return result;
     }
   }
 
@@ -97,12 +93,7 @@ public class FastNodeFinder {
       }
 
       String conceptFqName = root.getConceptFqName();
-
-      add(conceptFqName, root, true);
-
-      for (String acd : getParents(conceptFqName)) {
-        add(acd, root, false);
-      }
+      add(conceptFqName, root);
     } finally {
       NodeReadAccessCasterInEditor.setEventsBlocked(wereBlocked);
     }
@@ -118,49 +109,28 @@ public class FastNodeFinder {
       }
 
       String conceptFqName = root.getConceptFqName();
-      remove(conceptFqName, root, true);
-
-      for (String acd : getParents(conceptFqName)) {
-        remove(acd, root, false);
-      }
+      remove(conceptFqName, root);
     } finally {
       NodeReadAccessCasterInEditor.setEventsBlocked(wereBlocked);
     }
   }
 
-  private Set<String> getParents(String current) {
-    return LanguageHierarchyCache.getInstance().getAncestorsNames(current);
-  }
+  private void add(String conceptFqName, SNode node) {
 
-  private void add(String conceptFqName, SNode node, boolean noInheritance) {
-    Map<String, Set<SNode>> map;
-    if (noInheritance) {
-      map = myNodesNoInheritance;
-    } else {
-      map = myNodesAll;
-    }
-
-    Set<SNode> set = map.get(conceptFqName);
+    Set<SNode> set = myNodes.get(conceptFqName);
     if (set == null) {
       set = new HashSet<SNode>(1);
-      map.put(conceptFqName, set);
+      myNodes.put(conceptFqName, set);
     }
     set.add(node);
   }
 
-  private void remove(String conceptFqName, SNode node, boolean noInheritance) {
-    Map<String, Set<SNode>> map;
-    if (noInheritance) {
-      map = myNodesNoInheritance;
-    } else {
-      map = myNodesAll;
-    }
-
-    Set<SNode> set = map.get(conceptFqName);
+  private void remove(String conceptFqName, SNode node) {
+    Set<SNode> set = myNodes.get(conceptFqName);
 
     set.remove(node);
     if (set.isEmpty()) {
-      map.remove(conceptFqName);
+      myNodes.remove(conceptFqName);
     }
   }
 
@@ -200,8 +170,7 @@ public class FastNodeFinder {
     public void loadingStateChanged(SModelDescriptor model, boolean isLoading) {
       synchronized (myLock) {
         myInitialized = false;
-        myNodesAll.clear();
-        myNodesNoInheritance.clear();
+        myNodes.clear();
       }
     }
   }
