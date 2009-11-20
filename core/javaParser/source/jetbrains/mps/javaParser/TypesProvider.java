@@ -183,12 +183,6 @@ public class TypesProvider {
       SNodeId nodeId = createMethodId(binding, binaryTypeBinding);
       SModelReference modelReference = modelReferenceFromBinaryClassBinding(binaryTypeBinding);
       SReference result = getRegularMPSNodeReferenceFromForeignId(sourceNode, role, modelReference, nodeId, TargetKind.METHOD);
-      //debug
-      if("~List.add(null):boolean".equals(nodeId.toString())) {
-        nodeId = createMethodId(binding, binaryTypeBinding);
-        modelReference = modelReferenceFromBinaryClassBinding(binaryTypeBinding);
-        result = getRegularMPSNodeReferenceFromForeignId(sourceNode, role, modelReference, nodeId, TargetKind.METHOD);
-      }
       return result;
     }
     if (binding.declaringClass instanceof ParameterizedTypeBinding) {

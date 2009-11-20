@@ -740,16 +740,12 @@ public class JavaConverterTreeBuilder {
       AnonymousClassCreator anonymousClassCreator = AnonymousClassCreator.newInstance(myCurrentModel);
       creator = anonymousClassCreator;
       AnonymousClass anonymousClass = (AnonymousClass) myTypesProvider.getRaw(x.anonymousType.binding);
-     // myTypesProvider.createMethodReference(b, AnonymousClass.BASE_METHOD_DECLARATION, anonymousClass.getNode());
-     // addCallArgs(x.arguments, anonymousClass);
+      SReference methodReference =
+        myTypesProvider.createMethodReference(b, AnonymousClass.BASE_METHOD_DECLARATION, anonymousClass.getNode());
+      anonymousClass.getNode().addReference(methodReference);
+      addCallArgs(x.arguments, anonymousClass);
 
       anonymousClassCreator.setCls(anonymousClass);
-
-      if (x.arguments != null) {
-        for (Expression arg : x.arguments) {
-          anonymousClass.addParameter(processExpressionRefl(arg));
-        }
-      }
     } else {
 
       /*
@@ -778,9 +774,6 @@ public class JavaConverterTreeBuilder {
     }
     for (Expression arg : args) {
       jetbrains.mps.baseLanguage.structure.Expression expression = processExpressionRefl(arg);
-      if (expression == null) {
-        System.err.println("");
-      }
       call.addActualArgument(expression);
     }
   }
