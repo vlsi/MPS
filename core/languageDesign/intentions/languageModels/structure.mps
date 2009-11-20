@@ -28,6 +28,111 @@
         </entry>
       </conceptFeatureMap>
     </refactoringContext>
+    <refactoringContext modelVersion="1">
+      <refactoring refactoringClass="jetbrains.mps.lang.structure.scripts.MovePropertyUp" />
+      <moveMap>
+        <entry>
+          <key modelUID="r:00000000-0000-4000-0000-011c89590353(jetbrains.mps.lang.intentions.structure)" nodeId="1193396901469" />
+          <value modelUID="r:00000000-0000-4000-0000-011c89590353(jetbrains.mps.lang.intentions.structure)" nodeId="2522969319638091385" />
+        </entry>
+      </moveMap>
+      <conceptFeatureMap>
+        <entry>
+          <key featureName="isErrorIntention" featureKind="PROPERTY" />
+          <value featureName="isErrorIntention" conceptFQName="jetbrains.mps.lang.intentions.structure.BaseIntentionDeclaration" featureKind="PROPERTY" />
+        </entry>
+      </conceptFeatureMap>
+    </refactoringContext>
+    <refactoringContext modelVersion="2">
+      <refactoring refactoringClass="jetbrains.mps.lang.structure.scripts.MovePropertyUp" />
+      <moveMap>
+        <entry>
+          <key modelUID="r:00000000-0000-4000-0000-011c89590353(jetbrains.mps.lang.intentions.structure)" nodeId="1225199239732" />
+          <value modelUID="r:00000000-0000-4000-0000-011c89590353(jetbrains.mps.lang.intentions.structure)" nodeId="2522969319638091386" />
+        </entry>
+      </moveMap>
+      <conceptFeatureMap>
+        <entry>
+          <key featureName="isAvailableInChildNodes" featureKind="PROPERTY" />
+          <value featureName="isAvailableInChildNodes" conceptFQName="jetbrains.mps.lang.intentions.structure.BaseIntentionDeclaration" featureKind="PROPERTY" />
+        </entry>
+      </conceptFeatureMap>
+    </refactoringContext>
+    <refactoringContext modelVersion="3">
+      <refactoring refactoringClass="jetbrains.mps.lang.structure.scripts.MoveLinkUp" />
+      <moveMap>
+        <entry>
+          <key modelUID="r:00000000-0000-4000-0000-011c89590353(jetbrains.mps.lang.intentions.structure)" nodeId="1192795926648" />
+          <value modelUID="r:00000000-0000-4000-0000-011c89590353(jetbrains.mps.lang.intentions.structure)" nodeId="2522969319638093993" />
+        </entry>
+      </moveMap>
+      <conceptFeatureMap>
+        <entry>
+          <key featureName="descriptionFunction" featureKind="CHILD" />
+          <value featureName="descriptionFunction" conceptFQName="jetbrains.mps.lang.intentions.structure.BaseIntentionDeclaration" featureKind="CHILD" />
+        </entry>
+      </conceptFeatureMap>
+    </refactoringContext>
+    <refactoringContext modelVersion="4">
+      <refactoring refactoringClass="jetbrains.mps.lang.structure.scripts.MoveLinkUp" />
+      <moveMap>
+        <entry>
+          <key modelUID="r:00000000-0000-4000-0000-011c89590353(jetbrains.mps.lang.intentions.structure)" nodeId="3618415754251190681" />
+          <value modelUID="r:00000000-0000-4000-0000-011c89590353(jetbrains.mps.lang.intentions.structure)" nodeId="2522969319638093994" />
+        </entry>
+      </moveMap>
+      <conceptFeatureMap>
+        <entry>
+          <key featureName="childFilterFunction" featureKind="CHILD" />
+          <value featureName="childFilterFunction" conceptFQName="jetbrains.mps.lang.intentions.structure.BaseIntentionDeclaration" featureKind="CHILD" />
+        </entry>
+      </conceptFeatureMap>
+    </refactoringContext>
+    <refactoringContext modelVersion="5">
+      <refactoring refactoringClass="jetbrains.mps.lang.structure.scripts.MoveLinkUp" />
+      <moveMap>
+        <entry>
+          <key modelUID="r:00000000-0000-4000-0000-011c89590353(jetbrains.mps.lang.intentions.structure)" nodeId="1192795688242" />
+          <value modelUID="r:00000000-0000-4000-0000-011c89590353(jetbrains.mps.lang.intentions.structure)" nodeId="2522969319638093995" />
+        </entry>
+      </moveMap>
+      <conceptFeatureMap>
+        <entry>
+          <key featureName="isApplicableFunction" featureKind="CHILD" />
+          <value featureName="isApplicableFunction" conceptFQName="jetbrains.mps.lang.intentions.structure.BaseIntentionDeclaration" featureKind="CHILD" />
+        </entry>
+      </conceptFeatureMap>
+    </refactoringContext>
+    <refactoringContext modelVersion="6">
+      <refactoring refactoringClass="jetbrains.mps.lang.structure.scripts.MoveLinkUp" />
+      <moveMap>
+        <entry>
+          <key modelUID="r:00000000-0000-4000-0000-011c89590353(jetbrains.mps.lang.intentions.structure)" nodeId="1192796383601" />
+          <value modelUID="r:00000000-0000-4000-0000-011c89590353(jetbrains.mps.lang.intentions.structure)" nodeId="2522969319638198290" />
+        </entry>
+      </moveMap>
+      <conceptFeatureMap>
+        <entry>
+          <key featureName="forConcept" featureKind="REFERENCE" />
+          <value featureName="forConcept" conceptFQName="jetbrains.mps.lang.intentions.structure.BaseIntentionDeclaration" featureKind="REFERENCE" />
+        </entry>
+      </conceptFeatureMap>
+    </refactoringContext>
+    <refactoringContext modelVersion="7">
+      <refactoring refactoringClass="jetbrains.mps.lang.structure.scripts.MoveLinkUp" />
+      <moveMap>
+        <entry>
+          <key modelUID="r:00000000-0000-4000-0000-011c89590353(jetbrains.mps.lang.intentions.structure)" nodeId="1192795699931" />
+          <value modelUID="r:00000000-0000-4000-0000-011c89590353(jetbrains.mps.lang.intentions.structure)" nodeId="2522969319638198291" />
+        </entry>
+      </moveMap>
+      <conceptFeatureMap>
+        <entry>
+          <key featureName="executeFunction" featureKind="CHILD" />
+          <value featureName="executeFunction" conceptFQName="jetbrains.mps.lang.intentions.structure.BaseIntentionDeclaration" featureKind="CHILD" />
+        </entry>
+      </conceptFeatureMap>
+    </refactoringContext>
   </refactoringHistory>
   <language namespace="c72da2b9-7cce-4447-8389-f407dc1158b7(jetbrains.mps.lang.structure)" />
   <language namespace="f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)" />
@@ -48,7 +153,7 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902db(jetbrains.mps.baseLanguage.blTypes.constraints)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" version="0" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590353(jetbrains.mps.lang.intentions.structure)" version="0" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590353(jetbrains.mps.lang.intentions.structure)" version="7" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902bc(jetbrains.mps.lang.sharedConcepts.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895903fe(jetbrains.mps.baseLanguage.strings.constraints)" version="1" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590402(jetbrains.mps.baseLanguage.strings.structure)" version="9" />
@@ -63,52 +168,7 @@
     <property name="rootable" value="true" />
     <property name="name" value="IntentionDeclaration" />
     <property name="iconPath" value="${language_descriptor}\icons\intention.png" />
-    <link role="extends" targetNodeId="1.1133920641626" resolveInfo="BaseConcept" />
-    <node role="propertyDeclaration" type="jetbrains.mps.lang.structure.structure.PropertyDeclaration" id="1193396901469">
-      <property name="name" value="isErrorIntention" />
-      <link role="dataType" targetNodeId="1.1082983657063" resolveInfo="boolean" />
-    </node>
-    <node role="propertyDeclaration" type="jetbrains.mps.lang.structure.structure.PropertyDeclaration" id="1225199239732">
-      <property name="name" value="isAvailableInChildNodes" />
-      <link role="dataType" targetNodeId="1.1082983657063" resolveInfo="boolean" />
-    </node>
-    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1192796383601">
-      <property name="role" value="forConcept" />
-      <property name="sourceCardinality" value="1" />
-      <link role="target" targetNodeId="5.1169125787135" resolveInfo="AbstractConceptDeclaration" />
-    </node>
-    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1192795926648">
-      <property name="metaClass" value="aggregation" />
-      <property name="role" value="descriptionFunction" />
-      <property name="sourceCardinality" value="1" />
-      <link role="target" targetNodeId="1192794782375" resolveInfo="DescriptionBlock" />
-    </node>
-    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="3618415754251190681">
-      <property name="metaClass" value="aggregation" />
-      <property name="role" value="childFilterFunction" />
-      <link role="target" targetNodeId="3618415754251190680" resolveInfo="ChildFilterBlock" />
-    </node>
-    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1192795688242">
-      <property name="metaClass" value="aggregation" />
-      <property name="role" value="isApplicableFunction" />
-      <property name="sourceCardinality" value="0..1" />
-      <link role="target" targetNodeId="1192795771125" resolveInfo="IsApplicableBlock" />
-    </node>
-    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1192795699931">
-      <property name="metaClass" value="aggregation" />
-      <property name="role" value="executeFunction" />
-      <property name="sourceCardinality" value="1" />
-      <link role="target" targetNodeId="1192795911897" resolveInfo="ExecuteBlock" />
-    </node>
-    <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="1192795004608">
-      <link role="intfc" targetNodeId="1.1169194658468" resolveInfo="INamedConcept" />
-    </node>
-    <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="3745452943050787525">
-      <link role="intfc" targetNodeId="10.1628770029971140533" resolveInfo="ICheckedNamePolicy" />
-    </node>
-    <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="8952337903384645983">
-      <link role="intfc" targetNodeId="5.2621449412040133764" resolveInfo="IConceptAspect" />
-    </node>
+    <link role="extends" targetNodeId="2522969319638091381" resolveInfo="BaseIntentionDeclaration" />
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1192794782375">
     <property name="name" value="DescriptionBlock" />
@@ -298,6 +358,67 @@
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.BooleanConceptProperty" id="3618415754251192147">
       <link role="conceptPropertyDeclaration" targetNodeId="1.1137473994950" resolveInfo="dontSubstituteByDefault" />
     </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="2522969319638091381">
+    <property name="name" value="BaseIntentionDeclaration" />
+    <link role="extends" targetNodeId="1.1133920641626" resolveInfo="BaseConcept" />
+    <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="2522969319638091382">
+      <link role="intfc" targetNodeId="1.1169194658468" resolveInfo="INamedConcept" />
+    </node>
+    <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="2522969319638091383">
+      <link role="intfc" targetNodeId="10.1628770029971140533" resolveInfo="ICheckedNamePolicy" />
+    </node>
+    <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="2522969319638091384">
+      <link role="intfc" targetNodeId="5.2621449412040133764" resolveInfo="IConceptAspect" />
+    </node>
+    <node role="propertyDeclaration" type="jetbrains.mps.lang.structure.structure.PropertyDeclaration" id="2522969319638091385">
+      <property name="name" value="isErrorIntention" />
+      <link role="dataType" targetNodeId="1.1082983657063" resolveInfo="boolean" />
+    </node>
+    <node role="propertyDeclaration" type="jetbrains.mps.lang.structure.structure.PropertyDeclaration" id="2522969319638091386">
+      <property name="name" value="isAvailableInChildNodes" />
+      <link role="dataType" targetNodeId="1.1082983657063" resolveInfo="boolean" />
+    </node>
+    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="2522969319638093993">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="descriptionFunction" />
+      <property name="sourceCardinality" value="1" />
+      <link role="target" targetNodeId="1192794782375" resolveInfo="DescriptionBlock" />
+    </node>
+    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="2522969319638093994">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="childFilterFunction" />
+      <link role="target" targetNodeId="3618415754251190680" resolveInfo="ChildFilterBlock" />
+    </node>
+    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="2522969319638093995">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="isApplicableFunction" />
+      <property name="sourceCardinality" value="0..1" />
+      <link role="target" targetNodeId="1192795771125" resolveInfo="IsApplicableBlock" />
+    </node>
+    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="2522969319638198290">
+      <property name="role" value="forConcept" />
+      <property name="sourceCardinality" value="1" />
+      <link role="target" targetNodeId="5.1169125787135" resolveInfo="AbstractConceptDeclaration" />
+    </node>
+    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="2522969319638198291">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="executeFunction" />
+      <property name="sourceCardinality" value="1" />
+      <link role="target" targetNodeId="1192795911897" resolveInfo="ExecuteBlock" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="2522969319638198292">
+    <property name="name" value="GenerateIntentionDeclaration" />
+    <property name="iconPath" value="${language_descriptor}/icons/generate_intention.png" />
+    <property name="rootable" value="true" />
+    <link role="extends" targetNodeId="2522969319638091381" resolveInfo="BaseIntentionDeclaration" />
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="2522969319638198293">
+    <property name="name" value="SuroundWithIntentionDeclaration" />
+    <property name="iconPath" value="${language_descriptor}/icons/surround_with_intention.png" />
+    <property name="rootable" value="true" />
+    <link role="extends" targetNodeId="2522969319638091381" resolveInfo="BaseIntentionDeclaration" />
   </node>
 </model>
 
