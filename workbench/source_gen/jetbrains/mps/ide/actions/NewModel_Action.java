@@ -118,7 +118,10 @@ public class NewModel_Action extends GeneratedAction {
       );
       ModelAccess.instance().runReadAction(new Runnable() {
         public void run() {
-          String stereotype = ((TextTreeNode)NewModel_Action.this.treeNode).getDefaultStereotype();
+          String stereotype = ((NewModel_Action.this.treeNode instanceof TextTreeNode) ?
+            ((TextTreeNode)NewModel_Action.this.treeNode).getDefaultStereotype() :
+            SModelStereotype.NONE
+          );
           dialog.value = new NewModelDialog(localModule, NewModel_Action.this.getNamespace(), localContext, stereotype);
         }
       });

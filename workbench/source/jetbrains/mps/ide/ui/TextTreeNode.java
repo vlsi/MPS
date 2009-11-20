@@ -38,7 +38,7 @@ public class TextTreeNode extends MPSTreeNode {
       return ((TextTreeNode) parent).getDefaultStereotype();
     }
     if (parent != null && parent instanceof ProjectModuleTreeNode) {
-      return null;
+      return SModelStereotype.NONE;
     }
     return SModelStereotype.NONE;
   }
