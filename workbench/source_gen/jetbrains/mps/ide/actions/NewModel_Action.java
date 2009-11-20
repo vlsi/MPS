@@ -20,9 +20,9 @@ import javax.swing.JOptionPane;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.workbench.dialogs.project.creation.NewModelDialog;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.ide.ui.TextTreeNode;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.ide.projectPane.ProjectPane;
+import jetbrains.mps.ide.ui.TextTreeNode;
 
 public class NewModel_Action extends GeneratedAction {
   private static final Icon ICON = null;
@@ -118,10 +118,7 @@ public class NewModel_Action extends GeneratedAction {
       );
       ModelAccess.instance().runReadAction(new Runnable() {
         public void run() {
-          String stereotype = ((NewModel_Action.this.treeNode instanceof TextTreeNode) ?
-            ((TextTreeNode)NewModel_Action.this.treeNode).getDefaultStereotype() :
-            SModelStereotype.NONE
-          );
+          String stereotype = NewModel_Action.this.getStereotype();
           dialog.value = new NewModelDialog(localModule, NewModel_Action.this.getNamespace(), localContext, stereotype);
         }
       });
