@@ -506,7 +506,10 @@ public class JavaConverterTreeBuilder {
   jetbrains.mps.baseLanguage.structure.Expression processExpression(org.eclipse.jdt.internal.compiler.ast.CastExpression x) {
     CastExpression result = CastExpression.newInstance(myCurrentModel);
     result.setExpression(processExpressionRefl(x.expression));
-    result.setType(createType(x.expectedType));
+    
+    //compiler returns not a type but rather an expression
+    result.setType(createType((TypeBinding) ((SingleNameReference)x.type).binding));
+
     return result;
   }
 
