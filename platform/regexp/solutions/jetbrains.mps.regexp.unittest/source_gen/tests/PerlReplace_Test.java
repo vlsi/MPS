@@ -15,4 +15,18 @@ public class PerlReplace_Test extends TestCase {
   public void test_swap() throws Exception {
     Assert.assertEquals("word2 first", _PrecompiledPatterns.REPLREGEXP2.matcher("   first   word2").replaceFirst("$2 $1"));
   }
+
+  public void test_checkLiterals() throws Exception {
+    Assert.assertEquals("\\", _PrecompiledPatterns.REPLREGEXP3.matcher("a").replaceFirst("\\\\"));
+    Assert.assertEquals("[]", _PrecompiledPatterns.REPLREGEXP4.matcher("a").replaceFirst("[]"));
+    Assert.assertEquals("$", _PrecompiledPatterns.REPLREGEXP5.matcher("a").replaceFirst("\\$"));
+    Assert.assertEquals("\"", _PrecompiledPatterns.REPLREGEXP6.matcher("a").replaceFirst("\""));
+    Assert.assertEquals("\"", _PrecompiledPatterns.REPLREGEXP12.matcher("a").replaceFirst("\""));
+    Assert.assertEquals("()", _PrecompiledPatterns.REPLREGEXP7.matcher("a").replaceFirst("()"));
+    Assert.assertEquals("{}", _PrecompiledPatterns.REPLREGEXP8.matcher("a").replaceFirst("{}"));
+    Assert.assertEquals("\n", _PrecompiledPatterns.REPLREGEXP9.matcher("a").replaceFirst("\n"));
+    Assert.assertEquals("^", _PrecompiledPatterns.REPLREGEXP10.matcher("a").replaceFirst("^"));
+    Assert.assertEquals("'", _PrecompiledPatterns.REPLREGEXP11.matcher("a").replaceFirst("'"));
+    Assert.assertEquals("'", _PrecompiledPatterns.REPLREGEXP13.matcher("a").replaceFirst("\'"));
+  }
 }

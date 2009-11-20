@@ -15,7 +15,7 @@ public class LiteralReplacement_Behavior {
   }
 
   public static String virtual_toString_3796137614137538905(SNode thisNode, SNode search) {
-    return StringLiteralRegexp_Behavior.call_toRegexp_8330008649152995372(thisNode, SPropertyOperations.getString(thisNode, "text"));
+    return LiteralReplacement_Behavior.call_toRegexp_3796137614137565586(thisNode, SPropertyOperations.getString(thisNode, "text"));
   }
 
   public static boolean call_isValid_3796137614137567952(SNode thisNode) {
@@ -59,15 +59,20 @@ public class LiteralReplacement_Behavior {
             }
             sb.append(c);
           }
-        } else if (c == 'n' || c == 't' || c == 'b' || c == 'f' || c == 'r' || c == '"' || c == '\'' || c == '\\') {
+        } else if (c == 'n' || c == 't' || c == 'b' || c == 'f' || c == 'r' || c == '"' || c == '\'') {
           sb.append(c);
+        } else if (c == '\\') {
+          sb.append("\\\\\\");
         } else {
           return null;
         }
       } else if (c < 32) {
         return null;
       } else if (c < 128) {
-        if (c == '(' || c == ')' || c == '[' || c == ']' || c == '{' || c == '}' || c == '+' || c == '*' || c == '?' || c == '|' || c == '^' || c == '.' || c == '$') {
+        if (c == '$') {
+          sb.append('\\');
+          sb.append('\\');
+        } else if (c == '"') {
           sb.append('\\');
         }
         sb.append(c);
