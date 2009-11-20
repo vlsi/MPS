@@ -47,8 +47,8 @@ public class GeneratorWorker extends MpsWorker {
     super(whatToDo, logger);
   }
 
-  protected void executeTask(final MPSProject project, final Set<MPSProject> projects, final Set<IModule> modules, final Set<SModelDescriptor> models) {
-    generate(project, projects, modules, models);
+  protected void executeTask(final MPSProject project, GenerationObjects go) {
+    generate(project, go);
   }
 
   protected void showStatistic() {
@@ -64,55 +64,52 @@ public class GeneratorWorker extends MpsWorker {
     }
   }
 
-  private void generate(MPSProject project, Set<MPSProject> projects, Set<IModule> modules, Set<SModelDescriptor> models) {
+  private void generate(MPSProject project, GenerationObjects go) {
     StringBuffer s = new StringBuffer("Generating:");
-    for (MPSProject p: projects) {
+    for (MPSProject p: go.getProjects()) {
       s.append("\n    ");
       s.append(p);
     }
-    for (IModule m : modules) {
+    for (IModule m : go.getModules()) {
       s.append("\n    ");
       s.append(m);
     }
-    for (SModelDescriptor m : models) {
+    for (SModelDescriptor m : go.getModels()) {
       s.append("\n    ");
       s.append(m);
     }
     info(s.toString());
     final GeneratorManager gm = project.getComponentSafe(GeneratorManager.class);
 
-    List<Cycle> order = computeGenerationOrder(project, projects, modules, models);
+    List<Cycle> order = computeGenerationOrder(project, go);
 
-    final ProgressIndicator emptyProgressIndicator = new EmptyProgressIndicator();
     for (final Cycle cycle : order) {
 
       ModelAccess.instance().runWriteAction(new Runnable() {
         public void run() {
-          generateModulesCycle(gm, emptyProgressIndicator, cycle);
+          generateModulesCycle(gm, cycle);
         }
       });
     }
   }
 
-  protected void generateModulesCycle(GeneratorManager gm, ProgressIndicator emptyProgressIndicator, Cycle cycle) {
+  protected void generateModulesCycle(GeneratorManager gm, Cycle cycle) {
     info("Start " + cycle);
     cycle.generate(gm, new GenerateFilesGenerationType() {
       @Override
       public boolean requiresCompilationAfterGeneration() {
         return Boolean.parseBoolean(myWhatToDo.getProperty(GenerateTask.COMPILE));
       }
-    },
-      emptyProgressIndicator,
-      myMessageHandler);
+    }, myMessageHandler);
     info("Reloading classes...");
     ClassLoaderManager.getInstance().reloadAll(new EmptyProgressIndicator());
     info("Finished " + cycle);
   }
 
-  protected List<Cycle> computeGenerationOrder(MPSProject project, Set<MPSProject> projects, Set<IModule> modules, Set<SModelDescriptor> models) {
+  protected List<Cycle> computeGenerationOrder(MPSProject project, GenerationObjects go) {
 
     final Map<IModule, List<SModelDescriptor>> moduleToModels = new LinkedHashMap<IModule, List<SModelDescriptor>>();
-    extractModels(projects, modules, models, moduleToModels);
+    extractModels(go.getProjects(), go.getModules(), go.getModels(), moduleToModels);
 
     // calculate order
     List<Set<IModule>> modulesOrder = ModelAccess.instance().runReadAction(new Computable<List<Set<IModule>>>() {
@@ -176,7 +173,7 @@ public class GeneratorWorker extends MpsWorker {
   }
 
   protected static interface Cycle {
-    void generate(GeneratorManager gm, IGenerationType generationType, ProgressIndicator progressIndicator, IMessageHandler messageHandler);
+    void generate(GeneratorManager gm, IGenerationType generationType, IMessageHandler messageHandler);
   }
 
   protected static class SimpleModuleCycle implements Cycle {
@@ -190,7 +187,7 @@ public class GeneratorWorker extends MpsWorker {
       myModuleToModels = moduleToModels;
     }
 
-    public void generate(GeneratorManager gm, IGenerationType generationType, ProgressIndicator indicator, IMessageHandler messageHandler) {
+    public void generate(GeneratorManager gm, IGenerationType generationType, IMessageHandler messageHandler) {
       List<Pair<SModelDescriptor, IOperationContext>> modelsToContext = new ArrayList<Pair<SModelDescriptor, IOperationContext>>();
       for (IModule module : myModules) {
         ModuleContext moduleContext = new ModuleContext(module, myProject);
@@ -199,7 +196,7 @@ public class GeneratorWorker extends MpsWorker {
           modelsToContext.add(new Pair<SModelDescriptor, IOperationContext>(model, moduleContext));
         }
       }
-      gm.generateModels(modelsToContext, generationType, indicator, messageHandler, false);
+      gm.generateModels(modelsToContext, generationType, new EmptyProgressIndicator(), messageHandler, false);
     }
 
     @Override

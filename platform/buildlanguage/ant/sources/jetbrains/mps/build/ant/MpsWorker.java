@@ -86,14 +86,12 @@ public abstract class MpsWorker {
     File projectFile = FileUtil.createTmpFile();
     final MPSProject project = new MPSProject(projectFile, new ProjectDescriptor(), ideaProject);
 
-    LinkedHashSet<MPSProject> projects = new LinkedHashSet<MPSProject>();
-    LinkedHashSet<IModule> modules = new LinkedHashSet<IModule>();
-    LinkedHashSet<SModelDescriptor> models = new LinkedHashSet<SModelDescriptor>();
-    collectModelsToGenerate(projects, modules, models);
+    MpsWorker.GenerationObjects go = new GenerationObjects();
+    collectModelsToGenerate(go);
 
-    executeTask(project, projects, modules, models);
+    executeTask(project, go);
 
-    unloadLoadedStuff(projects);
+    unloadLoadedStuff(go.getProjects());
     showStatistic();
   }
 
@@ -134,7 +132,7 @@ public abstract class MpsWorker {
     loadLibraries();
   }
 
-  protected abstract void executeTask(MPSProject project, Set<MPSProject> projects, Set<IModule> modules, Set<SModelDescriptor> models);
+  protected abstract void executeTask(MPSProject project, GenerationObjects go);
 
   protected abstract void showStatistic();
 
@@ -191,10 +189,10 @@ public abstract class MpsWorker {
     });
   }
 
-  public void collectModelsToGenerate(Set<MPSProject> projects, LinkedHashSet<IModule> modules, LinkedHashSet<SModelDescriptor> models) {
-    collectFromProjects(projects);
-    collectFromModuleFiles(modules);
-    collectFromModelFiles(models);
+  public void collectModelsToGenerate(GenerationObjects go) {
+    collectFromProjects(go.getProjects());
+    collectFromModuleFiles(go.getModules());
+    collectFromModelFiles(go.getModels());
   }
 
   private void collectFromProjects(Set<MPSProject> projects) {
@@ -401,6 +399,33 @@ public abstract class MpsWorker {
       } else {
         System.out.println(text);
       }
+    }
+  }
+
+  protected class GenerationObjects {
+    private final Set<MPSProject> myProjects = new LinkedHashSet<MPSProject>();
+    private final Set<IModule> myModules = new LinkedHashSet<IModule>();
+    private final Set<SModelDescriptor> myModels = new LinkedHashSet<SModelDescriptor>();
+
+    public GenerationObjects() {
+    }
+
+    public GenerationObjects(Set<MPSProject> mpsProjects, Set<IModule> modules, Set<SModelDescriptor> models) {
+      myProjects.addAll(mpsProjects);
+      myModules.addAll(modules);
+      myModels.addAll(models);
+    }
+
+    public Set<MPSProject> getProjects() {
+      return myProjects;
+    }
+
+    public Set<IModule> getModules() {
+      return myModules;
+    }
+
+    public Set<SModelDescriptor> getModels() {
+      return myModels;
     }
   }
 }

@@ -61,7 +61,7 @@ public class TestGenerationWorker extends GeneratorWorker {
       final MPSProject p = TestMain.loadProject(file);
       info("Loaded project " + p);
 
-      executeTask(p, Collections.singleton(p), new java.util.HashSet<IModule>(), new java.util.HashSet<SModelDescriptor>());
+      executeTask(p, new GenerationObjects(Collections.singleton(p), new java.util.HashSet<IModule>(), new java.util.HashSet<SModelDescriptor>()));
 
       disposeProject(p);
       dispose();
@@ -75,7 +75,7 @@ public class TestGenerationWorker extends GeneratorWorker {
     LinkedHashSet<SModelDescriptor> models = new LinkedHashSet<SModelDescriptor>();
     collectFromModuleFiles(modules);
     collectFromModelFiles(models);
-    executeTask(project, Collections.EMPTY_SET, modules, models);
+    executeTask(project, new GenerationObjects(Collections.EMPTY_SET, modules, models));
 
     dispose();
 
@@ -95,11 +95,11 @@ public class TestGenerationWorker extends GeneratorWorker {
   }
 
   @Override
-  protected void generateModulesCycle(GeneratorManager gm, ProgressIndicator progressIndicator, Cycle cycle) {
+  protected void generateModulesCycle(GeneratorManager gm, Cycle cycle) {
     String currentTestName = myBuildServerMessageFormat.escapeBuildMessage(new StringBuffer(cycle.toString())).toString();
     System.out.println(myBuildServerMessageFormat.formatTestStart(currentTestName));
 
-    cycle.generate(gm, myGenerationType, progressIndicator, myMessageHandler);
+    cycle.generate(gm, myGenerationType, myMessageHandler);
 
     List<String> diffReports;
     if (Boolean.parseBoolean(myWhatToDo.getProperty(TestGenerationOnTeamcity.SHOW_DIFF))) {
@@ -149,11 +149,11 @@ public class TestGenerationWorker extends GeneratorWorker {
   }
 
   @Override
-  protected List<Cycle> computeGenerationOrder(MPSProject project, final Set<MPSProject> projects, final Set<IModule> modules, final Set<SModelDescriptor> models) {
+  protected List<Cycle> computeGenerationOrder(MPSProject project, GenerationObjects go) {
     final List<Cycle> cycles = new ArrayList<Cycle>();
     final Map<IModule, List<SModelDescriptor>> moduleToModels = new LinkedHashMap<IModule, List<SModelDescriptor>>();
 
-    extractModels(projects, modules, models, moduleToModels);
+    extractModels(go.getProjects(), go.getModules(), go.getModels(), moduleToModels);
 
     for (IModule module : moduleToModels.keySet()) {
       List<SModelDescriptor> modelsForModule = moduleToModels.get(module);
@@ -268,11 +268,11 @@ public class TestGenerationWorker extends GeneratorWorker {
       myModule = module;
     }
 
-    public void generate(GeneratorManager gm, IGenerationType generationType, ProgressIndicator progressIndicator, IMessageHandler messageHandler) {
+    public void generate(GeneratorManager gm, IGenerationType generationType, IMessageHandler messageHandler) {
       gm.generateModels(Collections.singletonList(mySModel),
         new ModuleContext(myModule, myProject),
         generationType,
-        progressIndicator,
+        new EmptyProgressIndicator(),
         messageHandler);
     }
 

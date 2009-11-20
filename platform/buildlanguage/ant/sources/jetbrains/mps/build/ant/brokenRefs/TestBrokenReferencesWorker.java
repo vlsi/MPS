@@ -31,16 +31,16 @@ public class TestBrokenReferencesWorker extends MpsWorker {
     return new TeamCityMessageFormat();
   }
 
-  protected void executeTask(MPSProject project, final Set<MPSProject> projects, Set<IModule> modules, final Set<SModelDescriptor> models) {
-    for (MPSProject p : projects) {
-      extractModels(models, p);
+  protected void executeTask(MPSProject project, final GenerationObjects go) {
+    for (MPSProject p : go.getProjects()) {
+      extractModels(go.getModels(), p);
     }
-    for (IModule m : modules) {
-      extractModels(models, m);
+    for (IModule m : go.getModules()) {
+      extractModels(go.getModels(), m);
     }
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
-        for (SModelDescriptor sm : models) {
+        for (SModelDescriptor sm : go.getModels()) {
           if (!SModelStereotype.isUserModel(sm)) continue;
           String testName = "test references for " + sm.getLongName();
           output(myBuildServerMessageFormat.formatTestStart(testName));
