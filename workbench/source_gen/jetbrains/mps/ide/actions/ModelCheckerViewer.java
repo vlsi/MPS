@@ -19,24 +19,22 @@ import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.ide.findusages.model.SearchResult;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.ide.findusages.findalgorithm.finders.IFinder;
+import java.util.List;
+import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.ide.findusages.model.IResultProvider;
 import jetbrains.mps.ide.findusages.view.FindUtils;
 import jetbrains.mps.ide.findusages.model.SearchQuery;
+import jetbrains.mps.ide.findusages.model.holders.ModelsHolder;
 import com.intellij.openapi.progress.ProgressManager;
 import com.intellij.openapi.progress.Task;
 import com.intellij.openapi.project.Project;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.progress.ProgressIndicator;
-import jetbrains.mps.smodel.SModelDescriptor;
-import jetbrains.mps.ide.icons.IconManager;
-import java.util.List;
-import jetbrains.mps.ide.projectPane.Icons;
-import jetbrains.mps.project.IModule;
 import jetbrains.mps.ide.findusages.model.SearchResults;
 import jetbrains.mps.ide.findusages.view.treeholder.treeview.INodeRepresentator;
 import jetbrains.mps.ide.findusages.view.treeholder.tree.TextOptions;
 import jetbrains.mps.util.NameUtil;
+import jetbrains.mps.ide.projectPane.Icons;
 import org.apache.commons.lang.StringEscapeUtils;
 import org.jdom.Element;
 import jetbrains.mps.ide.findusages.CantSaveSomethingException;
@@ -139,23 +137,30 @@ public abstract class ModelCheckerViewer extends JPanel implements INavigator {
     }
   }
 
-  private void checkSomething(final IFinder finder, String taskTitle) {
+  public void checkModelsCore(final List<SModelDescriptor> modelDescriptors, final String taskTargetTitle, final Icon taskIcon) {
+    this.saveRecheckRunnable(new Runnable() {
+      public void run() {
+        ModelCheckerViewer.this.checkModelsCore(modelDescriptors, taskTargetTitle, taskIcon);
+      }
+    });
+
     if (!(this.myAlreadyCheckedSomething)) {
-      IResultProvider resultProvider = FindUtils.makeProvider(finder);
-      SearchQuery searchQuery = new SearchQuery(ModelCheckerViewer.this.myProject.getScope());
+      IResultProvider resultProvider = FindUtils.makeProvider(new ModelCheckerIssueFinder());
+      SearchQuery searchQuery = new SearchQuery(new ModelsHolder(modelDescriptors, this.myOperationContext), ModelCheckerViewer.this.myProject.getScope());
       ModelCheckerViewer.this.myUsagesView.setRunOptions(resultProvider, searchQuery, new UsagesView.ButtonConfiguration(false, false, true));
     }
-
     this.myAlreadyCheckedSomething = true;
 
-    ProgressManager.getInstance().run(new Task.Modal(this.myProject.getComponent(Project.class), taskTitle, true) {
+    ProgressManager.getInstance().run(new Task.Modal(this.myProject.getComponent(Project.class), "Checking " + taskTargetTitle, true) {
       public void run(@NotNull ProgressIndicator indicator) {
         ModelCheckerViewer.this.myUsagesView.run(indicator);
       }
     });
+
+    this.setTabProperties(taskTargetTitle, taskIcon);
   }
 
-  private void setTabProperties(String title, Icon icon) {
+  public void setTabProperties(String title, Icon icon) {
     this.myTabTitle = title;
     this.myTabIcon = icon;
   }
@@ -170,58 +175,8 @@ public abstract class ModelCheckerViewer extends JPanel implements INavigator {
     this.myRecheckButton.setVisible(runnable != null);
   }
 
-  public void checkModel(final SModelDescriptor modelDescriptor) {
-    this.saveRecheckRunnable(new Runnable() {
-      public void run() {
-        ModelCheckerViewer.this.checkModel(modelDescriptor);
-      }
-    });
-    this.checkSomething(new ModelIssueFinder(this.myOperationContext, modelDescriptor), "Checking " + modelDescriptor.getLongName());
-    this.setTabProperties(modelDescriptor.getName(), IconManager.getIconFor(modelDescriptor));
-  }
-
-  public void checkModels(final List<SModelDescriptor> modelDescriptors) {
-    this.saveRecheckRunnable(new Runnable() {
-      public void run() {
-        ModelCheckerViewer.this.checkModels(modelDescriptors);
-      }
-    });
-    this.checkSomething(new ModelsIssueFinder(this.myOperationContext, modelDescriptors), "Checking " + ListSequence.fromList(modelDescriptors).count() + " models");
-    this.setTabProperties(ListSequence.fromList(modelDescriptors).count() + " models", Icons.MODEL_ICON);
-  }
-
-  public void checkModule(final IModule module) {
-    this.saveRecheckRunnable(new Runnable() {
-      public void run() {
-        ModelCheckerViewer.this.checkModule(module);
-      }
-    });
-    this.checkSomething(new ModuleIssueFinder(this.myOperationContext, module), "Checking " + module.getModuleFqName());
-    this.setTabProperties(module.getModuleFqName(), IconManager.getIconFor(module));
-  }
-
-  public void checkModules(final List<IModule> modules) {
-    this.saveRecheckRunnable(new Runnable() {
-      public void run() {
-        ModelCheckerViewer.this.checkModules(modules);
-      }
-    });
-    this.checkSomething(new ModulesIssueFinder(this.myOperationContext, modules), "Checking " + ListSequence.fromList(modules).count() + " modules");
-    this.setTabProperties(ListSequence.fromList(modules).count() + " modules", Icons.MODULE_GROUP_CLOSED);
-  }
-
-  public void checkProject(final MPSProject project) {
-    this.saveRecheckRunnable(new Runnable() {
-      public void run() {
-        ModelCheckerViewer.this.checkProject(project);
-      }
-    });
-    this.checkSomething(new ProjectIssueFinder(this.myOperationContext, project), "Checking " + project.getProjectDescriptor().getName());
-    this.setTabProperties(project.getProjectDescriptor().getName(), Icons.PROJECT_ICON);
-  }
-
-  public UsagesView getUsagesView() {
-    return this.myUsagesView;
+  public void dispose() {
+    this.myUsagesView.dispose();
   }
 
   public String getTabTitle() {
@@ -260,7 +215,7 @@ public abstract class ModelCheckerViewer extends JPanel implements INavigator {
     public String getCategoryText(TextOptions options, String category, boolean isResultsSection) {
       String counter = "";
       if (options.myCounters && isResultsSection) {
-        counter = " (" + NameUtil.formatNumericalString(options.mySubresultsCount, "issue");
+        counter = " (" + NameUtil.formatNumericalString(options.mySubresultsCount, "issue") + ")";
       }
       return "<strong>" + category + counter + "</strong>";
     }

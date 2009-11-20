@@ -15,15 +15,16 @@ import com.intellij.openapi.wm.ToolWindowAnchor;
 import jetbrains.mps.MPSProjectHolder;
 import com.intellij.openapi.vcs.ProjectLevelVcsManager;
 import jetbrains.mps.ide.findusages.UsagesViewTracker;
-import jetbrains.mps.smodel.SModelDescriptor;
-import jetbrains.mps.smodel.IOperationContext;
 import java.util.List;
+import jetbrains.mps.smodel.SModelDescriptor;
+import javax.swing.Icon;
+import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.ide.projectPane.Icons;
 import jetbrains.mps.project.IModule;
 import com.intellij.openapi.application.ApplicationManager;
 import jetbrains.mps.generator.GenerationSettings;
 import jetbrains.mps.ide.findusages.model.SearchResults;
-import jetbrains.mps.ide.findusages.model.SearchResult;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
 import com.intellij.openapi.ui.Messages;
 import com.intellij.openapi.vcs.checkin.CheckinHandler;
 
@@ -71,49 +72,33 @@ public class ModelCheckerTool_Tool extends GeneratedTabbedTool {
     UsagesViewTracker.unregister(ModelCheckerTool_Tool.this.myNavigateableTool);
   }
 
-  public ModelCheckerViewer checkModel(SModelDescriptor modelDescriptor, IOperationContext operationContext, boolean showTab) {
+  private ModelCheckerViewer checkSomething(final List<SModelDescriptor> modelDescriptors, final String taskTargetTitle, final Icon taskIcon, IOperationContext operationContext, boolean showTab) {
     ModelCheckerViewer newViewer = ModelCheckerTool_Tool.this.createViewer(operationContext);
-    newViewer.checkModel(modelDescriptor);
+    newViewer.checkModelsCore(modelDescriptors, taskTargetTitle, taskIcon);
     if (showTab) {
       ModelCheckerTool_Tool.this.showTabWithResults(newViewer);
     }
     return newViewer;
+  }
+
+  public ModelCheckerViewer checkModel(SModelDescriptor modelDescriptor, IOperationContext operationContext, boolean showTab) {
+    return ModelCheckerTool_Tool.this.checkSomething(ModelCheckerUtils.getModelDescriptors(modelDescriptor), modelDescriptor.getName(), IconManager.getIconFor(modelDescriptor), operationContext, showTab);
   }
 
   public ModelCheckerViewer checkModels(List<SModelDescriptor> modelDescriptors, IOperationContext operationContext, boolean showTab) {
-    ModelCheckerViewer newViewer = ModelCheckerTool_Tool.this.createViewer(operationContext);
-    newViewer.checkModels(modelDescriptors);
-    if (showTab) {
-      ModelCheckerTool_Tool.this.showTabWithResults(newViewer);
-    }
-    return newViewer;
+    return ModelCheckerTool_Tool.this.checkSomething(modelDescriptors, ListSequence.fromList(modelDescriptors).count() + " models", Icons.MODEL_ICON, operationContext, showTab);
   }
 
   public ModelCheckerViewer checkModule(IModule module, IOperationContext operationContext, boolean showTab) {
-    ModelCheckerViewer newViewer = ModelCheckerTool_Tool.this.createViewer(operationContext);
-    newViewer.checkModule(module);
-    if (showTab) {
-      ModelCheckerTool_Tool.this.showTabWithResults(newViewer);
-    }
-    return newViewer;
+    return ModelCheckerTool_Tool.this.checkSomething(ModelCheckerUtils.getModelDescriptors(module), module.getModuleFqName(), IconManager.getIconFor(module), operationContext, showTab);
   }
 
   public ModelCheckerViewer checkModules(List<IModule> modules, IOperationContext operationContext, boolean showTab) {
-    ModelCheckerViewer newViewer = ModelCheckerTool_Tool.this.createViewer(operationContext);
-    newViewer.checkModules(modules);
-    if (showTab) {
-      ModelCheckerTool_Tool.this.showTabWithResults(newViewer);
-    }
-    return newViewer;
+    return ModelCheckerTool_Tool.this.checkSomething(ModelCheckerUtils.getModelDescriptors(modules), ListSequence.fromList(modules).count() + " modules", Icons.MODULE_GROUP_CLOSED, operationContext, showTab);
   }
 
   public ModelCheckerViewer checkProject(MPSProject mpsProject, IOperationContext operationContext, boolean showTab) {
-    ModelCheckerViewer newViewer = ModelCheckerTool_Tool.this.createViewer(operationContext);
-    newViewer.checkProject(mpsProject);
-    if (showTab) {
-      ModelCheckerTool_Tool.this.showTabWithResults(newViewer);
-    }
-    return newViewer;
+    return ModelCheckerTool_Tool.this.checkSomething(ModelCheckerUtils.getModelDescriptors(mpsProject), mpsProject.getProjectDescriptor().getName(), Icons.PROJECT_ICON, operationContext, showTab);
   }
 
   public boolean checkModelsBeforeGenerationIfNeeded(IOperationContext operationContext, List<SModelDescriptor> modelDescriptors, Runnable regenerationRunnable) {
@@ -121,18 +106,12 @@ public class ModelCheckerTool_Tool extends GeneratedTabbedTool {
     if (!(checkModels)) {
       return true;
     }
+
     ModelCheckerViewer viewer = ModelCheckerTool_Tool.this.checkModels(modelDescriptors, operationContext, false);
     SearchResults<ModelCheckerIssue> issues = viewer.getSearchResults();
-    int warnings = 0;
-    int errors = 0;
-    for (SearchResult<ModelCheckerIssue> issue : ListSequence.fromList(issues.getSearchResults())) {
-      String category = issue.getCategory();
-      if (ModelCheckerUtils.CATEGORY_ERROR.equals(category)) {
-        errors++;
-      } else if (ModelCheckerUtils.CATEGORY_WARNING.equals(category)) {
-        warnings++;
-      }
-    }
+
+    int warnings = ModelCheckerUtils.getIssueCountForCategory(issues, ModelCheckerUtils.CATEGORY_WARNING);
+    int errors = ModelCheckerUtils.getIssueCountForCategory(issues, ModelCheckerUtils.CATEGORY_ERROR);
 
     if (errors != 0) {
       String dialogMessage = "Model checker found " + errors + " errors and " + warnings + " warnings. Review them and don't generate models or ignore them?";
@@ -153,16 +132,9 @@ public class ModelCheckerTool_Tool extends GeneratedTabbedTool {
   public CheckinHandler.ReturnResult checkModelsBeforeCommit(IOperationContext operationContext, List<SModelDescriptor> modelDescriptors) {
     ModelCheckerViewer viewer = ModelCheckerTool_Tool.this.checkModels(modelDescriptors, operationContext, false);
     SearchResults<ModelCheckerIssue> issues = viewer.getSearchResults();
-    int warnings = 0;
-    int errors = 0;
-    for (SearchResult<ModelCheckerIssue> issue : ListSequence.fromList(issues.getSearchResults())) {
-      String category = issue.getCategory();
-      if (ModelCheckerUtils.CATEGORY_ERROR.equals(category)) {
-        errors++;
-      } else if (ModelCheckerUtils.CATEGORY_WARNING.equals(category)) {
-        warnings++;
-      }
-    }
+
+    int warnings = ModelCheckerUtils.getIssueCountForCategory(issues, ModelCheckerUtils.CATEGORY_WARNING);
+    int errors = ModelCheckerUtils.getIssueCountForCategory(issues, ModelCheckerUtils.CATEGORY_ERROR);
 
     if (errors != 0) {
       String dialogMessage = "Model checker found " + errors + " errors and " + warnings + " warnings. Would you like to review them?";
@@ -195,7 +167,7 @@ public class ModelCheckerTool_Tool extends GeneratedTabbedTool {
       private ModelCheckerViewer myComponent = viewer;
 
       public void disposeTab() {
-        this.myComponent.getUsagesView().dispose();
+        this.myComponent.dispose();
       }
 
       public JComponent getComponent() {

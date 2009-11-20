@@ -39,12 +39,13 @@ import jetbrains.mps.typesystem.inference.NodeTypesComponentsRepository;
 import jetbrains.mps.typesystem.inference.NodeTypesComponent;
 import jetbrains.mps.util.Pair;
 import jetbrains.mps.nodeEditor.IErrorReporter;
+import com.intellij.openapi.progress.ProgressIndicator;
+import jetbrains.mps.util.TimePresentationUtil;
+import java.util.ArrayList;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.project.MPSProject;
-import com.intellij.openapi.progress.ProgressIndicator;
-import jetbrains.mps.util.TimePresentationUtil;
 import jetbrains.mps.ide.progress.TaskProgressSettings;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 
@@ -109,7 +110,7 @@ public class ModelCheckerUtils {
     return true;
   }
 
-  public static String getResultCategory(MessageStatus messageStatus) {
+  private static String getResultCategory(MessageStatus messageStatus) {
     switch (messageStatus) {
       case ERROR:
         return CATEGORY_ERROR;
@@ -268,35 +269,6 @@ public class ModelCheckerUtils {
     return !(progressContext.getProgressIndicator().isCanceled());
   }
 
-  public static boolean checkModule(SearchResults<ModelCheckerIssue> results, IModule module, IOperationContext operationContext, ProgressContext progressContext) {
-    for (SModelDescriptor modelDescriptor : ListSequence.fromList(module.getOwnModelDescriptors())) {
-      if (!(SModelStereotype.isUserModel(modelDescriptor))) {
-        continue;
-      }
-      if (!(checkModel(results, modelDescriptor, operationContext, progressContext))) {
-        return false;
-      }
-    }
-    if (module instanceof Language) {
-      Language language = (Language)module;
-      for (Generator generator : ListSequence.fromList(language.getGenerators())) {
-        if (!(checkModule(results, generator, operationContext, progressContext))) {
-          return false;
-        }
-      }
-    }
-    return true;
-  }
-
-  public static boolean checkProject(SearchResults<ModelCheckerIssue> results, MPSProject mpsProject, IOperationContext operationContext, ProgressContext progressContext) {
-    for (IModule module : ListSequence.fromList(mpsProject.getModules())) {
-      if (!(checkModule(results, module, operationContext, progressContext))) {
-        return false;
-      }
-    }
-    return true;
-  }
-
   public static boolean checkAndUpdateIndicator(ProgressContext progressContext, String text) {
     ProgressIndicator indicator = progressContext.getProgressIndicator();
     long estimatedTime = progressContext.getEstimatedTime();
@@ -319,12 +291,38 @@ public class ModelCheckerUtils {
     return true;
   }
 
-  public static String getTaskName(MPSProject mpsProject) {
-    return mpsProject.getProjectDescriptor().getName() + "_projectcheck";
+  public static List<SModelDescriptor> getModelDescriptors(SModelDescriptor modelDescriptor) {
+    List<SModelDescriptor> modelDescrpitors = ListSequence.fromList(new ArrayList<SModelDescriptor>());
+    ListSequence.fromList(modelDescrpitors).addElement(modelDescriptor);
+    return modelDescrpitors;
   }
 
-  public static String getTaskName(IModule module) {
-    return module.getModuleFqName() + "_modulecheck";
+  public static List<SModelDescriptor> getModelDescriptors(IModule module) {
+    List<SModelDescriptor> modelDescrpitors = ListSequence.fromList(new ArrayList<SModelDescriptor>());
+    for (SModelDescriptor modelDescriptor : ListSequence.fromList(module.getOwnModelDescriptors())) {
+      if (SModelStereotype.isUserModel(modelDescriptor)) {
+        ListSequence.fromList(modelDescrpitors).addElement(modelDescriptor);
+      }
+    }
+    if (module instanceof Language) {
+      Language language = (Language)module;
+      for (Generator generator : ListSequence.fromList(language.getGenerators())) {
+        ListSequence.fromList(modelDescrpitors).addSequence(ListSequence.fromList(getModelDescriptors(generator)));
+      }
+    }
+    return modelDescrpitors;
+  }
+
+  public static List<SModelDescriptor> getModelDescriptors(List<IModule> modules) {
+    List<SModelDescriptor> modelDescrpitors = ListSequence.fromList(new ArrayList<SModelDescriptor>());
+    for (IModule module : ListSequence.fromList(modules)) {
+      ListSequence.fromList(modelDescrpitors).addSequence(ListSequence.fromList(getModelDescriptors(module)));
+    }
+    return modelDescrpitors;
+  }
+
+  public static List<SModelDescriptor> getModelDescriptors(MPSProject mpsProject) {
+    return getModelDescriptors(mpsProject.getModules());
   }
 
   public static String getTaskName(SModelDescriptor modelDescriptor) {
@@ -345,5 +343,18 @@ public class ModelCheckerUtils {
       result += getEstimatedTimeMillis(taskName);
     }
     return result;
+  }
+
+  public static int getIssueCountForCategory(SearchResults<ModelCheckerIssue> issues, String category) {
+    if (category == null) {
+      return 0;
+    }
+    int issueCount = 0;
+    for (SearchResult<ModelCheckerIssue> issue : ListSequence.fromList(issues.getSearchResults())) {
+      if (category.equals(issue.getCategory())) {
+        issueCount++;
+      }
+    }
+    return issueCount;
   }
 }
