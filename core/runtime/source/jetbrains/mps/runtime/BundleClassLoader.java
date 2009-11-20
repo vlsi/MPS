@@ -15,6 +15,8 @@
  */
 package jetbrains.mps.runtime;
 
+import jetbrains.mps.util.InternUtil;
+
 import java.net.URL;
 import java.util.HashMap;
 import java.util.Map;
@@ -42,6 +44,8 @@ public class BundleClassLoader<T> extends BaseClassLoader {
       if (myClassesCache.containsKey(fqName)) {
         return myClassesCache.get(fqName);
       }
+
+      fqName = InternUtil.intern(fqName);
       try {
         Class<?> cls = Class.forName(fqName, false, this);
         myClassesCache.put(fqName, cls);
