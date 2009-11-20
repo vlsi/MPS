@@ -1369,7 +1369,7 @@ public class JavaConverterTreeBuilder {
     myCurrentMethod = null;
     myCurrentModel = null;
     for (TypeDeclaration type : referentsCreator.getClassifierTypeDecls()) {
-      myCurrentModel = getModelByTypeDecalration(type);
+      myCurrentModel = getModelByTypeDeclaration(type.binding);
       if (myCurrentModel != null) {
         Classifier classifier = processType(type);
         if (referentsCreator.isTopLevelClassifier(type)) {
@@ -1380,11 +1380,14 @@ public class JavaConverterTreeBuilder {
     }
   }
 
-  public SModel getModelByTypeDecalration(TypeDeclaration typeDeclaration) {
-    String packageName = JavaCompiler.packageNameFromCompoundName(typeDeclaration.binding.compoundName);
+  public SModel getModelByTypeDeclaration(SourceTypeBinding typeBinding) {
+    if (typeBinding instanceof NestedTypeBinding) {
+      return getModelByTypeDeclaration(((NestedTypeBinding)typeBinding).enclosingType);
+    }
+    String packageName = JavaCompiler.packageNameFromCompoundName(typeBinding.compoundName);
     SModel sModel = myModelMap.get(packageName);
     if (sModel == null) {
-      LOG.error("can't find a model for Type Declaration " + new String(typeDeclaration.name) + " : package name is " + packageName);
+      LOG.error("can't find a model for Type Declaration " + new String(typeBinding.sourceName) + " : package name is " + packageName);
     }
     return sModel;
   }
