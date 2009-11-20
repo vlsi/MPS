@@ -6,7 +6,6 @@ import jetbrains.mps.plugins.pluginparts.actions.GeneratedActionGroup;
 import jetbrains.mps.logging.Logger;
 import com.intellij.ide.actions.GotoActionAction;
 import jetbrains.mps.workbench.actions.goTo.GoToRootNodeAction;
-import jetbrains.mps.workbench.actions.goTo.GoToNamedNodeAction;
 import jetbrains.mps.workbench.actions.goTo.GoToModelAction;
 import jetbrains.mps.workbench.actions.goTo.GoToLanguageAction;
 import jetbrains.mps.workbench.actions.goTo.GoToSolutionAction;
@@ -24,7 +23,6 @@ public class Goto_ActionGroup extends GeneratedActionGroup {
       Goto_ActionGroup.this.addAction("jetbrains.mps.ide.actions.GoToAction_Action", "jetbrains.mps.ide", new GotoActionAction());
       Goto_ActionGroup.this.addSeparator();
       Goto_ActionGroup.this.addAction("jetbrains.mps.ide.actions.GoToRootNode_Action", "jetbrains.mps.ide", new GoToRootNodeAction());
-      Goto_ActionGroup.this.addAction("jetbrains.mps.ide.actions.GoToNamedNode_Action", "jetbrains.mps.ide", new GoToNamedNodeAction());
       Goto_ActionGroup.this.addAction("jetbrains.mps.ide.actions.GoToNodeById_Action", "jetbrains.mps.ide");
       Goto_ActionGroup.this.addSeparator();
       Goto_ActionGroup.this.addAction("jetbrains.mps.ide.actions.GoToConceptDeclaration_Action", "jetbrains.mps.ide");

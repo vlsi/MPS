@@ -944,14 +944,6 @@
           </node>
         </node>
       </node>
-      <node role="reference" type="jetbrains.mps.lang.plugin.structure.ActionInstance" id="3906874221886742585">
-        <link role="action" targetNodeId="3906874221886742347" resolveInfo="GoToNamedNode" />
-        <node role="actualParameter" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="3906874221886742586">
-          <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="3906874221886742587">
-            <link role="baseMethodDeclaration" targetNodeId="117.~GoToNamedNodeAction.&lt;init&gt;()" resolveInfo="GoToNamedNodeAction" />
-          </node>
-        </node>
-      </node>
       <node role="reference" type="jetbrains.mps.lang.plugin.structure.ActionInstance" id="3906874221886742588">
         <link role="action" targetNodeId="227146524086541067" resolveInfo="GoToNodeById" />
       </node>
