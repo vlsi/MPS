@@ -228,7 +228,12 @@ public class ReferentsCreator {
           }
           AnonymousClass anonymousClass = (AnonymousClass) classifier;
           anonymousClass.setName("");
-          ReferenceBinding superClassBinding = binding.superclass();
+          ReferenceBinding superClassBinding;
+          if (binding.superInterfaces != null && !(binding.superInterfaces.length == 0)) {
+            superClassBinding = binding.superInterfaces[0];
+          } else {
+            superClassBinding = binding.superclass;
+          }
           if (superClassBinding != null) {
             ClassifierType superClass = (ClassifierType) createType(superClassBinding);
             anonymousClass.setClassifier(superClass.getClassifier()); //todo reference resolve is performed here, maybe not necessary (copy reference instead)
