@@ -27839,7 +27839,7 @@
                     <link role="baseMethodDeclaration" targetNodeId="149.~PathManager.getHomePath():java.lang.String" resolveInfo="getHomePath" />
                   </node>
                   <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="5408201126509038654">
-                    <property name="value" value="core/javaParser/source/jetbrains/mps/javaParser/testMaterial" />
+                    <property name="value" value="core/languageDesign/plugin/source/jetbrains/mps/plugins" />
                   </node>
                 </node>
               </node>
