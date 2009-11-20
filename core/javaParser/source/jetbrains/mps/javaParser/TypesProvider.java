@@ -182,7 +182,14 @@ public class TypesProvider {
       BinaryTypeBinding binaryTypeBinding = (BinaryTypeBinding) binding.declaringClass;
       SNodeId nodeId = createMethodId(binding, binaryTypeBinding);
       SModelReference modelReference = modelReferenceFromBinaryClassBinding(binaryTypeBinding);
-      return getRegularMPSNodeReferenceFromForeignId(sourceNode, role, modelReference, nodeId, TargetKind.METHOD);
+      SReference result = getRegularMPSNodeReferenceFromForeignId(sourceNode, role, modelReference, nodeId, TargetKind.METHOD);
+      //debug
+      if("~List.add(null):boolean".equals(nodeId.toString())) {
+        nodeId = createMethodId(binding, binaryTypeBinding);
+        modelReference = modelReferenceFromBinaryClassBinding(binaryTypeBinding);
+        result = getRegularMPSNodeReferenceFromForeignId(sourceNode, role, modelReference, nodeId, TargetKind.METHOD);
+      }
+      return result;
     }
     if (binding.declaringClass instanceof ParameterizedTypeBinding) {
       ParameterizedTypeBinding parameterizedTypeBinding = (ParameterizedTypeBinding) binding.declaringClass;
@@ -424,9 +431,6 @@ public class TypesProvider {
     if (type instanceof ParameterizedTypeBinding) {
       StringBuilder sb = new StringBuilder();
       sb.append(asString(((ParameterizedTypeBinding) type).genericType()));
-      sb.append('<');
-      appendList(sb, ((ParameterizedTypeBinding) type).arguments);
-      sb.append('>');
       return sb.toString();
     }
     if (type instanceof BinaryTypeBinding) {
@@ -450,7 +454,8 @@ public class TypesProvider {
     }
     if (type instanceof TypeVariableBinding) {
       TypeVariableBinding typeVariableBinding = (TypeVariableBinding) type;
-      Binding binding = typeVariableBinding.declaringElement;
+      return asString(typeVariableBinding.superclass);
+     /* Binding binding = typeVariableBinding.declaringElement;
       String name = null;
       if (binding instanceof MethodBinding) {
         MethodBinding methodBinding = (MethodBinding) binding;
@@ -459,16 +464,16 @@ public class TypesProvider {
         SourceTypeBinding sourceTypeBinding = (SourceTypeBinding) binding;
         name = new String(sourceTypeBinding.typeVariables[typeVariableBinding.rank].sourceName);
       }
-      return name;
+      return name;*/
     }
     if (type instanceof WildcardBinding && ((WildcardBinding) type).boundKind == Wildcard.EXTENDS) {
-      return "? extends " + asString(((WildcardBinding) type).bound); //todo multiple bounds (much later)
+      return asString(((WildcardBinding) type).bound); //todo multiple bounds (much later)
     }
     if (type instanceof WildcardBinding && ((WildcardBinding) type).boundKind == Wildcard.SUPER) {
-      return "? super " + asString(((WildcardBinding) type).bound);
+      return asString(((WildcardBinding) type).bound);  //todo is lower bound ok in erasure?
     }
     if (type.isUnboundWildcard()) {
-      return "?";
+      return "java.lang.Object";
     }
 
     throw new RuntimeException("unexpected type: " + type);
