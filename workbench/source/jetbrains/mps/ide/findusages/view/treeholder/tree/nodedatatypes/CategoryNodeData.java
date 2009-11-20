@@ -22,6 +22,7 @@ import jetbrains.mps.ide.findusages.view.treeholder.treeview.path.PathItemRole;
 import jetbrains.mps.ide.findusages.view.treeholder.treeview.INodeRepresentator;
 import jetbrains.mps.ide.projectPane.Icons;
 import jetbrains.mps.project.MPSProject;
+import jetbrains.mps.util.NameUtil;
 import org.jdom.Element;
 
 import javax.swing.Icon;
@@ -64,15 +65,14 @@ public class CategoryNodeData extends BaseStaticNodeData {
 
   public String getText(TextOptions options) {
     if (myNodeRepresentator == null) {
-      String counter = options.myCounters && isResultsSection() ? " " + sizeRepresentation(options.mySubresultsCount) : "";
+      String counter = "";
+      if (options.myCounters && isResultsSection()) {
+        counter = (" <b>(" + NameUtil.formatNumericalString(options.mySubresultsCount, "usage") + ")</b>");
+      }
       return super.getText(options) + counter;
     } else {
       return myNodeRepresentator.getCategoryText(options, myCategory, isResultsSection());
     }
-  }
-
-  private static String sizeRepresentation(int size) {
-    return "<b>(" + Integer.toString(size) + " usage" + (size == 1 ? "" : "s") + ")</b>";
   }
 
   private static Icon getIconFromRepresentator(INodeRepresentator nodeRepresentator, String category) {

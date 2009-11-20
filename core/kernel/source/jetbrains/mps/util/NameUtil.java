@@ -224,6 +224,18 @@ public class NameUtil {
   }
 
   /**
+   * Return numerical string for given quantity of objects and singular form of object name.
+   * For example, for <code>(5, "issue")</code> returns <code>"5 issues"</code>.
+   * 
+   * @param quantity quantity of counted objects
+   * @param singular singular form of counted objects
+   * @return numerical string
+   */
+  public static String formatNumericalString(int quantity, String singular) {
+    return quantity + " " + (quantity == 1 ? singular : pluralize(singular));
+  }
+
+  /**
    * "aaaBBB" -> "AAA_BBB"
    */
   public static String toConstantName(String s) {

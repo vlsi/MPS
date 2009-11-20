@@ -35,6 +35,7 @@ import jetbrains.mps.ide.findusages.CantLoadSomethingException;
 import jetbrains.mps.plugins.pluginparts.tool.GeneratedTool;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.util.NameUtil;
 import org.jetbrains.annotations.NotNull;
 import org.jdom.Element;
 
@@ -121,9 +122,7 @@ public class TodoViewer extends JPanel {
     }
 
     public String getResultsText(TextOptions options) {
-      int size = options.mySubresultsCount;
-      String sizeRepr = size + " TODO item" + (size == 1 ? "" : "s");
-      return "<strong>" + sizeRepr + " found</strong>";
+      return "<strong>" + NameUtil.formatNumericalString(options.mySubresultsCount, "TODO item") + " found</strong>";
     }
 
     public Icon getResultsIcon() {

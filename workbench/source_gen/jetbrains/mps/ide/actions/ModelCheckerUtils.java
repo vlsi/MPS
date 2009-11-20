@@ -4,7 +4,6 @@ package jetbrains.mps.ide.actions;
 
 import jetbrains.mps.ide.findusages.model.SearchResults;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.nodeEditor.MessageStatus;
 import jetbrains.mps.ide.findusages.model.SearchResult;
 import jetbrains.mps.lang.structure.structure.LinkDeclaration;
 import jetbrains.mps.smodel.search.SModelSearchUtil;
@@ -19,6 +18,7 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.constraints.SearchScopeStatus;
 import jetbrains.mps.smodel.constraints.ModelConstraintsUtil;
 import java.util.List;
+import jetbrains.mps.nodeEditor.MessageStatus;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModel;
@@ -49,13 +49,17 @@ import jetbrains.mps.ide.progress.TaskProgressSettings;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 
 public class ModelCheckerUtils {
-  private static void addIssue(SearchResults<ModelCheckerIssue> results, SNode node, String message, MessageStatus status, ModelCheckerFix fix) {
+  public static final String CATEGORY_ERROR = "Errors";
+  public static final String CATEGORY_WARNING = "Warnings";
+  public static final String CATEGORY_INFO = "Infos";
+
+  private static void addIssue(SearchResults<ModelCheckerIssue> results, SNode node, String message, String category, ModelCheckerFix fix) {
     ModelCheckerIssue issue = new ModelCheckerIssue(node, message, fix);
-    results.getSearchResults().add(new SearchResult(issue, node, status.toString()));
+    results.getSearchResults().add(new SearchResult(issue, node, category));
   }
 
   private static void addIssue(SearchResults<ModelCheckerIssue> results, SNode node, String message) {
-    addIssue(results, node, message, MessageStatus.ERROR, null);
+    addIssue(results, node, message, CATEGORY_ERROR, null);
   }
 
   private static boolean isDeclaredLink(SNode concept, String role, boolean child) {
@@ -103,6 +107,19 @@ public class ModelCheckerUtils {
       }
     }
     return true;
+  }
+
+  public static String getResultCategory(MessageStatus messageStatus) {
+    switch (messageStatus) {
+      case ERROR:
+        return CATEGORY_ERROR;
+      case WARNING:
+        return CATEGORY_WARNING;
+      case OK:
+        return CATEGORY_INFO;
+      default:
+        return CATEGORY_ERROR;
+    }
   }
 
   public static boolean checkModel(final SearchResults<ModelCheckerIssue> results, final SModelDescriptor modelDescriptor, final IOperationContext operationContext, final ProgressContext progressContext) {
@@ -163,13 +180,13 @@ public class ModelCheckerUtils {
 
             for (String role : SetSequence.fromSet(node.getChildRoles())) {
               if (!(isDeclaredLink(concept, role, true))) {
-                addIssue(results, node, "Usage of undeclared child role \"" + role + "\"", MessageStatus.WARNING, new ModelCheckerFix.UndeclaredChild(node, role));
+                addIssue(results, node, "Usage of undeclared child role \"" + role + "\"", CATEGORY_WARNING, new ModelCheckerFix.UndeclaredChild(node, role));
               }
             }
 
             for (String role : SetSequence.fromSet(node.getReferenceRoles())) {
               if (!(isDeclaredLink(concept, role, false))) {
-                addIssue(results, node, "Usage of undeclared reference role \"" + role + "\"", MessageStatus.WARNING, new ModelCheckerFix.UndeclaredReference(node, role));
+                addIssue(results, node, "Usage of undeclared reference role \"" + role + "\"", CATEGORY_WARNING, new ModelCheckerFix.UndeclaredReference(node, role));
               }
             }
 
@@ -180,7 +197,7 @@ public class ModelCheckerUtils {
               PropertySupport ps = PropertySupport.getPropertySupport(p);
               String value = ps.fromInternalValue(node.getProperty(p.getName()));
               if (!(ps.canSetValue(node, p.getName(), value, operationContext.getScope()))) {
-                addIssue(results, node, "Property constraint violation for property \"" + p.getName() + "\"", MessageStatus.WARNING, null);
+                addIssue(results, node, "Property constraint violation for property \"" + p.getName() + "\"", CATEGORY_WARNING, null);
               }
             }
 
@@ -189,7 +206,7 @@ public class ModelCheckerUtils {
                 continue;
               }
               if (!(isDeclaredProperty(concept, name))) {
-                addIssue(results, node, "Usage of undeclared property \"" + name + "\"", MessageStatus.WARNING, new ModelCheckerFix.UndeclaredProperty(node, name));
+                addIssue(results, node, "Usage of undeclared property \"" + name + "\"", CATEGORY_WARNING, new ModelCheckerFix.UndeclaredProperty(node, name));
               }
             }
           }
@@ -218,7 +235,7 @@ public class ModelCheckerUtils {
                 if (checkScope(concept, node, targetNode, specializedLinkRole, operationContext)) {
                 } else if (checkScope(concept, node, targetNode, specializedLinkRole, new ModuleContext(thisModelModule, operationContext.getMPSProject()))) {
                 } else {
-                  addIssue(results, node, "Reference in role \"" + specializedLinkRole + "\" is out of scope", MessageStatus.WARNING, null);
+                  addIssue(results, node, "Reference in role \"" + specializedLinkRole + "\" is out of scope", CATEGORY_WARNING, null);
                 }
               } catch (Exception e) {
                 e.printStackTrace();
@@ -241,7 +258,7 @@ public class ModelCheckerUtils {
             for (Pair<SNode, List<IErrorReporter>> nodeErrorReporters : SetSequence.fromSet(nodeTypesComponent.getNodesWithErrors())) {
               SNode node = nodeErrorReporters.o1;
               for (IErrorReporter errorReporter : ListSequence.fromList(nodeErrorReporters.o2)) {
-                addIssue(results, node, errorReporter.reportError(), errorReporter.getMessageStatus(), null);
+                addIssue(results, node, errorReporter.reportError(), getResultCategory(errorReporter.getMessageStatus()), null);
               }
             }
           }

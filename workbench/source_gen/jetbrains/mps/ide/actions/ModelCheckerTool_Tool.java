@@ -127,9 +127,9 @@ public class ModelCheckerTool_Tool extends GeneratedTabbedTool {
     int errors = 0;
     for (SearchResult<ModelCheckerIssue> issue : ListSequence.fromList(issues.getSearchResults())) {
       String category = issue.getCategory();
-      if (ModelCheckerViewer.MyNodeRepresentator.CATEGORY_ERROR.equals(category)) {
+      if (ModelCheckerUtils.CATEGORY_ERROR.equals(category)) {
         errors++;
-      } else if (ModelCheckerViewer.MyNodeRepresentator.CATEGORY_WARNING.equals(category)) {
+      } else if (ModelCheckerUtils.CATEGORY_WARNING.equals(category)) {
         warnings++;
       }
     }
@@ -157,9 +157,9 @@ public class ModelCheckerTool_Tool extends GeneratedTabbedTool {
     int errors = 0;
     for (SearchResult<ModelCheckerIssue> issue : ListSequence.fromList(issues.getSearchResults())) {
       String category = issue.getCategory();
-      if (ModelCheckerViewer.MyNodeRepresentator.CATEGORY_ERROR.equals(category)) {
+      if (ModelCheckerUtils.CATEGORY_ERROR.equals(category)) {
         errors++;
-      } else if (ModelCheckerViewer.MyNodeRepresentator.CATEGORY_WARNING.equals(category)) {
+      } else if (ModelCheckerUtils.CATEGORY_WARNING.equals(category)) {
         warnings++;
       }
     }

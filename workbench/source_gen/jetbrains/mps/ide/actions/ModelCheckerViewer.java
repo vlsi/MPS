@@ -35,8 +35,8 @@ import jetbrains.mps.ide.projectPane.Icons;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.ide.findusages.model.SearchResults;
 import jetbrains.mps.ide.findusages.view.treeholder.treeview.INodeRepresentator;
-import jetbrains.mps.nodeEditor.MessageStatus;
 import jetbrains.mps.ide.findusages.view.treeholder.tree.TextOptions;
+import jetbrains.mps.util.NameUtil;
 import org.apache.commons.lang.StringEscapeUtils;
 import org.jdom.Element;
 import jetbrains.mps.ide.findusages.CantSaveSomethingException;
@@ -245,20 +245,12 @@ public abstract class ModelCheckerViewer extends JPanel implements INavigator {
   }
 
   public static class MyNodeRepresentator implements INodeRepresentator<ModelCheckerIssue> {
-    public static final String CATEGORY_ERROR = MessageStatus.ERROR.toString();
-    public static final String CATEGORY_WARNING = MessageStatus.WARNING.toString();
-    public static final String CATEGORY_OK = MessageStatus.OK.toString();
-
     public MyNodeRepresentator() {
     }
 
     public String getResultsText(TextOptions options) {
       int size = options.mySubresultsCount;
-      String sizeRepr = size + " issue" + ((size == 1 ?
-        "" :
-        "s"
-      ));
-      return "<strong>" + sizeRepr + " found</strong>";
+      return "<strong>" + NameUtil.formatNumericalString(size, "issue") + " found</strong>";
     }
 
     public Icon getResultsIcon() {
@@ -268,29 +260,17 @@ public abstract class ModelCheckerViewer extends JPanel implements INavigator {
     public String getCategoryText(TextOptions options, String category, boolean isResultsSection) {
       String counter = "";
       if (options.myCounters && isResultsSection) {
-        int size = options.mySubresultsCount;
-        counter = " (" + size + " issue" + ((size == 0 ?
-          "" :
-          "s"
-        )) + ")";
+        counter = " (" + NameUtil.formatNumericalString(options.mySubresultsCount, "issue");
       }
-      String categoryRepr = "";
-      if (CATEGORY_ERROR.equals(category)) {
-        categoryRepr = "Errors";
-      } else if (CATEGORY_WARNING.equals(category)) {
-        categoryRepr = "Warnings";
-      } else if (CATEGORY_OK.equals(category)) {
-        categoryRepr = "Infos";
-      }
-      return "<strong>" + categoryRepr + counter + "</strong>";
+      return "<strong>" + category + counter + "</strong>";
     }
 
     public Icon getCategoryIcon(String category) {
-      if (CATEGORY_ERROR.equals(category)) {
+      if (ModelCheckerUtils.CATEGORY_ERROR.equals(category)) {
         return jetbrains.mps.ide.messages.Icons.ERROR_ICON;
-      } else if (CATEGORY_WARNING.equals(category)) {
+      } else if (ModelCheckerUtils.CATEGORY_WARNING.equals(category)) {
         return jetbrains.mps.ide.messages.Icons.WARNING_ICON;
-      } else if (CATEGORY_OK.equals(category)) {
+      } else if (ModelCheckerUtils.CATEGORY_INFO.equals(category)) {
         return jetbrains.mps.ide.messages.Icons.INFORMATION_ICON;
       }
       return jetbrains.mps.ide.messages.Icons.ERROR_ICON;
