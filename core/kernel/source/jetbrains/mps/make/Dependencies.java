@@ -94,8 +94,8 @@ class Dependencies {
   private void add(IModule m, ModelDependencies root) {
     for (RootDependencies r : root.getDependencies()) {
       myModules.put(r.getClassName(), m);
-      myDependencies.put(r.getClassName(), r.getDependencies());
-      myExtendsDependencies.put(r.getClassName(), r.getExtends());
+      myDependencies.put(r.getClassName(), new HashSet<String>(r.getDependencies()));
+      myExtendsDependencies.put(r.getClassName(), new HashSet<String>(r.getExtends()));
     }
   }
 

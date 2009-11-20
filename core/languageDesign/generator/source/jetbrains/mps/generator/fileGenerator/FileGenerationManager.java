@@ -220,7 +220,8 @@ public class FileGenerationManager implements ApplicationComponent {
       if (textGenResult.getDependencies().get(key).equals(value)) {
         result.add(key);
       }
-    }
+    }    
+    Collections.sort(result);
     return result;
   }
 
