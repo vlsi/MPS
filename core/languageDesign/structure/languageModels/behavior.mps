@@ -1384,7 +1384,7 @@
             </node>
           </node>
           <node role="variable" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="4085963264561846703">
-            <property name="name" value="actions" />
+            <property name="name" value="transformActions" />
             <node role="type" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="4085963264561846704">
               <link role="concept" targetNodeId="28.1138079416598" resolveInfo="SideTransformHintSubstituteActions" />
             </node>

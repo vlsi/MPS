@@ -90,10 +90,10 @@ public class AbstractConceptDeclaration_Behavior {
         }
       }
     }
-    for (SNode sideactions : SModelOperations.getRoots(model, "jetbrains.mps.lang.actions.structure.SideTransformHintSubstituteActions")) {
-      for (SNode actionsBuilder : SLinkOperations.getTargets(sideactions, "actionsBuilder", true)) {
+    for (SNode transformActions : SModelOperations.getRoots(model, "jetbrains.mps.lang.actions.structure.SideTransformHintSubstituteActions")) {
+      for (SNode actionsBuilder : SLinkOperations.getTargets(transformActions, "actionsBuilder", true)) {
         if (SLinkOperations.getTarget(actionsBuilder, "applicableConcept", false) == thisNode) {
-          ListSequence.fromList(result).addElement(sideactions);
+          ListSequence.fromList(result).addElement(transformActions);
           break;
         }
       }
