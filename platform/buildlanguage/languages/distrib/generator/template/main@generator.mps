@@ -2169,6 +2169,12 @@
                     </node>
                   </node>
                 </node>
+                <node role="atributes" type="jetbrains.mps.build.generictasks.structure.Attribute" id="5505272610370530949">
+                  <link role="attributeDeclaration" targetNodeId="4v.353793545802813590" resolveInfo="fork" />
+                  <node role="value" type="jetbrains.mps.buildlanguage.structure.BooleanLiteral" id="5505272610370530951">
+                    <property name="value" value="true" />
+                  </node>
+                </node>
                 <node role="nested" type="jetbrains.mps.build.generictasks.structure.TaskCall" id="3575617408111161848">
                   <link role="declaration" targetNodeId="4v.353793545802813634" resolveInfo="arg" />
                   <node role="atributes" type="jetbrains.mps.build.generictasks.structure.Attribute" id="3575617408111161851">

@@ -153,7 +153,7 @@
     <exec executable="${basedir}/${deploy.dir}/nsis/makensis.exe" osfamily="windows" failonerror="true">
       <arg file="${nsis.script.path.tmp}" />
     </exec>
-    <java jar="${mps_home}/build/sign/sign.code.jar" failonerror="true" dir="${scripts.folder}">
+    <java jar="${mps_home}/build/sign/sign.code.jar" failonerror="true" dir="${scripts.folder}" fork="true">
       <arg line="${mps_home}/build/sign/SignCode.exe-spc ${mps_home}/build/sign/cert_2009_cs.spc -v ${mps_home}/build/sign/key_2009_cs_nocrypt.pvk ${installer} ${mps_home}/build ${mps_home}/build/sign/key.pw" />
     </java>
     <delete file="${nsis.script.path.tmp}" />
