@@ -133,6 +133,16 @@
         </entry>
       </conceptFeatureMap>
     </refactoringContext>
+    <refactoringContext modelVersion="8">
+      <refactoring refactoringClass="jetbrains.mps.lang.structure.refactorings.RenameConcept" />
+      <moveMap />
+      <conceptFeatureMap>
+        <entry>
+          <key featureName="SuroundWithIntentionDeclaration" conceptFQName="jetbrains.mps.lang.intentions.structure.SuroundWithIntentionDeclaration" featureKind="CONCEPT" />
+          <value featureName="SurroundWithIntentionDeclaration" conceptFQName="jetbrains.mps.lang.intentions.structure.SurroundWithIntentionDeclaration" featureKind="CONCEPT" />
+        </entry>
+      </conceptFeatureMap>
+    </refactoringContext>
   </refactoringHistory>
   <language namespace="c72da2b9-7cce-4447-8389-f407dc1158b7(jetbrains.mps.lang.structure)" />
   <language namespace="f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)" />
@@ -153,7 +163,7 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902db(jetbrains.mps.baseLanguage.blTypes.constraints)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" version="0" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590353(jetbrains.mps.lang.intentions.structure)" version="7" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590353(jetbrains.mps.lang.intentions.structure)" version="8" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902bc(jetbrains.mps.lang.sharedConcepts.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895903fe(jetbrains.mps.baseLanguage.strings.constraints)" version="1" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590402(jetbrains.mps.baseLanguage.strings.structure)" version="9" />
@@ -415,7 +425,7 @@
     <link role="extends" targetNodeId="2522969319638091381" resolveInfo="BaseIntentionDeclaration" />
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="2522969319638198293">
-    <property name="name" value="SuroundWithIntentionDeclaration" />
+    <property name="name" value="SurroundWithIntentionDeclaration" />
     <property name="iconPath" value="${language_descriptor}/icons/surround_with_intention.png" />
     <property name="rootable" value="true" />
     <link role="extends" targetNodeId="2522969319638091381" resolveInfo="BaseIntentionDeclaration" />
