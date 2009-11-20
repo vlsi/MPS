@@ -54,6 +54,7 @@ public class ModelCheckerTool_Tool extends GeneratedTabbedTool {
   }
 
   public void init(Project project) {
+    super.init(project);
     ModelCheckerTool_Tool.this.myMPSProject = project.getComponent(MPSProjectHolder.class).getMPSProject();
     ModelCheckerTool_Tool.this.myProject = project;
   }

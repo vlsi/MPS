@@ -22,6 +22,8 @@ public class BaseToolDeclaration extends BaseConcept implements IClassifier, ICh
   public static final String SHORT_DESCRIPTION = "shortDescription";
   public static final String ALIAS = "alias";
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
+  public static final String TOOL_INIT_BLOCK = "toolInitBlock";
+  public static final String TOOL_DISPOSE_BLOCK = "toolDisposeBlock";
   public static final String METHOD_DECLARATION = "methodDeclaration";
   public static final String FIELD_DECLARATION = "fieldDeclaration";
 
@@ -83,6 +85,22 @@ public class BaseToolDeclaration extends BaseConcept implements IClassifier, ICh
 
   public void setVirtualPackage(String value) {
     this.setProperty(BaseToolDeclaration.VIRTUAL_PACKAGE, value);
+  }
+
+  public InitBlock getToolInitBlock() {
+    return (InitBlock)this.getChild(InitBlock.class, BaseToolDeclaration.TOOL_INIT_BLOCK);
+  }
+
+  public void setToolInitBlock(InitBlock node) {
+    super.setChild(BaseToolDeclaration.TOOL_INIT_BLOCK, node);
+  }
+
+  public DisposeBlock getToolDisposeBlock() {
+    return (DisposeBlock)this.getChild(DisposeBlock.class, BaseToolDeclaration.TOOL_DISPOSE_BLOCK);
+  }
+
+  public void setToolDisposeBlock(DisposeBlock node) {
+    super.setChild(BaseToolDeclaration.TOOL_DISPOSE_BLOCK, node);
   }
 
   public int getMethodDeclarationsCount() {

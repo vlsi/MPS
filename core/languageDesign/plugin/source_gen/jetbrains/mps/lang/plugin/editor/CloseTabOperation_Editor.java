@@ -25,22 +25,31 @@ public class CloseTabOperation_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Collection_6994_0");
     editorCell.addEditorCell(this.createConceptProperty_6994_0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_6994_0(editorContext, node));
-    editorCell.addEditorCell(this.createRefNode_6994_0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_6994_1(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_6994_0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_6994_2(editorContext, node));
     return editorCell;
   }
 
   private EditorCell createConstant_6994_0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "(");
     editorCell.setCellId("Constant_6994_0");
-    BaseLanguageStyle_StyleSheet.getLeftBracket(editorCell).apply(editorCell);
+    BaseLanguageStyle_StyleSheet.getLeftParenAfterName(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   private EditorCell createConstant_6994_1(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ")");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "component:");
     editorCell.setCellId("Constant_6994_1");
+    BaseLanguageStyle_StyleSheet.getAnnotation(editorCell).apply(editorCell);
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+
+  private EditorCell createConstant_6994_2(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ")");
+    editorCell.setCellId("Constant_6994_2");
     BaseLanguageStyle_StyleSheet.getRightBracket(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
@@ -53,6 +62,7 @@ public class CloseTabOperation_Editor extends DefaultNodeEditor {
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setCellId("conceptProperty_alias");
+    BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();

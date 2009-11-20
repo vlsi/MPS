@@ -11,8 +11,6 @@ public class ToolDeclaration extends BaseToolDeclaration {
   public static final String concept = "jetbrains.mps.lang.plugin.structure.ToolDeclaration";
   public static final String INIT_BLOCK = "initBlock";
   public static final String DISPOSE_BLOCK = "disposeBlock";
-  public static final String TOOL_INIT_BLOCK = "toolInitBlock";
-  public static final String TOOL_DISPOSE_BLOCK = "toolDisposeBlock";
   public static final String GET_COMPONENT_BLOCK = "getComponentBlock";
 
   public ToolDeclaration(SNode node) {
@@ -33,22 +31,6 @@ public class ToolDeclaration extends BaseToolDeclaration {
 
   public void setDisposeBlock(ProjectPluginDisposeBlock node) {
     super.setChild(ToolDeclaration.DISPOSE_BLOCK, node);
-  }
-
-  public InitBlock getToolInitBlock() {
-    return (InitBlock)this.getChild(InitBlock.class, ToolDeclaration.TOOL_INIT_BLOCK);
-  }
-
-  public void setToolInitBlock(InitBlock node) {
-    super.setChild(ToolDeclaration.TOOL_INIT_BLOCK, node);
-  }
-
-  public DisposeBlock getToolDisposeBlock() {
-    return (DisposeBlock)this.getChild(DisposeBlock.class, ToolDeclaration.TOOL_DISPOSE_BLOCK);
-  }
-
-  public void setToolDisposeBlock(DisposeBlock node) {
-    super.setChild(ToolDeclaration.TOOL_DISPOSE_BLOCK, node);
   }
 
   public GetComponentBlock getGetComponentBlock() {

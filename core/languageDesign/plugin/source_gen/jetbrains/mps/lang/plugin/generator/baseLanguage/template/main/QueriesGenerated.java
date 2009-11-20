@@ -269,7 +269,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_1212256768919(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    IModule module = ((TemplateQueryContext)_context).getGenerator().getGeneratorSessionContext().getInvocationContext().getModule();
+    IModule module = _context.getGenerator().getGeneratorSessionContext().getInvocationContext().getModule();
     return (module == null ?
       null :
       module.getModuleUID()
@@ -483,7 +483,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_2247201315540925474(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    IModule module = ((TemplateQueryContext)_context).getGenerator().getGeneratorSessionContext().getInvocationContext().getModule();
+    IModule module = _context.getGenerator().getGeneratorSessionContext().getInvocationContext().getModule();
     return (module == null ?
       null :
       module.getModuleUID()
@@ -1219,10 +1219,6 @@ public class QueriesGenerated {
     return SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "initBlock", true), "body", true);
   }
 
-  public static SNode sourceNodeQuery_2247201315540925521(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "toolInitBlock", true), "body", true);
-  }
-
   public static SNode sourceNodeQuery_3062002558005753464(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "disposeTabBlock", true), "body", true);
   }
@@ -1252,7 +1248,10 @@ public class QueriesGenerated {
   }
 
   public static SNode sourceNodeQuery_7953090692945373326(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return SLinkOperations.getTarget(_context.getNode(), "iconExpression", true);
+    return ((SLinkOperations.getTarget(_context.getNode(), "iconExpression", true) == null) ?
+      new _Quotations.QuotationClass_4().createNode() :
+      SLinkOperations.getTarget(_context.getNode(), "iconExpression", true)
+    );
   }
 
   public static SNode sourceNodeQuery_8059910092825107665(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
@@ -1417,6 +1416,10 @@ public class QueriesGenerated {
 
   public static Iterable sourceNodesQuery_2247201315540925564(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     return SLinkOperations.getTargets(_context.getNode(), "methodDeclaration", true);
+  }
+
+  public static Iterable sourceNodesQuery_3622664231941272411(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
+    return SLinkOperations.getTargets(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "toolInitBlock", true), "body", true), "statement", true);
   }
 
   public static Iterable sourceNodesQuery_4042687513231504054(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {

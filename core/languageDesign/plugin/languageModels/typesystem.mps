@@ -2134,22 +2134,8 @@
   </node>
   <node type="jetbrains.mps.lang.typesystem.structure.InferenceRule" id="7566788359602202948">
     <property name="name" value="typeof_AddTabOperation" />
-    <property name="package" value="Tool.Methods" />
+    <property name="package" value="Tool.Operations" />
     <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="7566788359602202949">
-      <node role="statement" type="jetbrains.mps.lang.typesystem.structure.CreateEquationStatement" id="7566788359602206001">
-        <node role="rightExpression" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause" id="7566788359602206005">
-          <node role="normalType" type="jetbrains.mps.lang.quotation.structure.Quotation" id="7566788359602206006">
-            <node role="quotedNode" type="jetbrains.mps.baseLanguage.structure.VoidType" id="7566788359602206008" />
-          </node>
-        </node>
-        <node role="leftExpression" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause" id="7566788359602206004">
-          <node role="normalType" type="jetbrains.mps.lang.typesystem.structure.TypeOfExpression" id="7566788359602205996">
-            <node role="term" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference" id="7566788359602205998">
-              <link role="applicableNode" targetNodeId="7566788359602202950" resolveInfo="operation" />
-            </node>
-          </node>
-        </node>
-      </node>
       <node role="statement" type="jetbrains.mps.lang.typesystem.structure.CreateLessThanInequationStatement" id="7566788359603051873">
         <node role="inequationGroup" type="jetbrains.mps.lang.typesystem.structure.DefaultGroupReference" id="7566788359603051874" />
         <node role="rightExpression" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause" id="7566788359603052803">
@@ -2222,7 +2208,7 @@
   </node>
   <node type="jetbrains.mps.lang.typesystem.structure.InferenceRule" id="7566788359603255009">
     <property name="name" value="typeof_DisposeTabComponentReference" />
-    <property name="package" value="Tool.Methods" />
+    <property name="package" value="Tool.Operations" />
     <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="7566788359603255010">
       <node role="statement" type="jetbrains.mps.lang.typesystem.structure.CreateEquationStatement" id="7566788359603426477">
         <node role="leftExpression" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause" id="7566788359603426480">
@@ -2262,22 +2248,8 @@
   </node>
   <node type="jetbrains.mps.lang.typesystem.structure.InferenceRule" id="5818192529492111950">
     <property name="name" value="typeof_CloseTabOperation" />
-    <property name="package" value="Tool.Methods" />
+    <property name="package" value="Tool.Operations" />
     <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="5818192529492111951">
-      <node role="statement" type="jetbrains.mps.lang.typesystem.structure.CreateEquationStatement" id="5818192529492111953">
-        <node role="rightExpression" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause" id="5818192529492111954">
-          <node role="normalType" type="jetbrains.mps.lang.quotation.structure.Quotation" id="5818192529492111955">
-            <node role="quotedNode" type="jetbrains.mps.baseLanguage.structure.VoidType" id="5818192529492111956" />
-          </node>
-        </node>
-        <node role="leftExpression" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause" id="5818192529492111957">
-          <node role="normalType" type="jetbrains.mps.lang.typesystem.structure.TypeOfExpression" id="5818192529492111958">
-            <node role="term" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference" id="5818192529492111959">
-              <link role="applicableNode" targetNodeId="5818192529492111952" resolveInfo="operation" />
-            </node>
-          </node>
-        </node>
-      </node>
       <node role="statement" type="jetbrains.mps.lang.typesystem.structure.CreateLessThanInequationStatement" id="5818192529492111961">
         <node role="inequationGroup" type="jetbrains.mps.lang.typesystem.structure.DefaultGroupReference" id="5818192529492111962" />
         <node role="rightExpression" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause" id="5818192529492111963">
@@ -2304,32 +2276,6 @@
     <node role="applicableNode" type="jetbrains.mps.lang.typesystem.structure.ConceptReference" id="5818192529492111952">
       <property name="name" value="operation" />
       <link role="concept" targetNodeId="4.5818192529492099570" resolveInfo="CloseTabOperation" />
-    </node>
-  </node>
-  <node type="jetbrains.mps.lang.typesystem.structure.InferenceRule" id="1862809785209130920">
-    <property name="name" value="typeof_GetSelectedTab" />
-    <property name="package" value="Tool.Methods" />
-    <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1862809785209130921">
-      <node role="statement" type="jetbrains.mps.lang.typesystem.structure.CreateEquationStatement" id="1862809785209130923">
-        <node role="rightExpression" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause" id="1862809785209130924">
-          <node role="normalType" type="jetbrains.mps.lang.quotation.structure.Quotation" id="1862809785209130925">
-            <node role="quotedNode" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1862809785209152319">
-              <link role="classifier" targetNodeId="18.~JComponent" resolveInfo="JComponent" />
-            </node>
-          </node>
-        </node>
-        <node role="leftExpression" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause" id="1862809785209130927">
-          <node role="normalType" type="jetbrains.mps.lang.typesystem.structure.TypeOfExpression" id="1862809785209130928">
-            <node role="term" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference" id="1862809785209135612">
-              <link role="applicableNode" targetNodeId="1862809785209130922" resolveInfo="tab" />
-            </node>
-          </node>
-        </node>
-      </node>
-    </node>
-    <node role="applicableNode" type="jetbrains.mps.lang.typesystem.structure.ConceptReference" id="1862809785209130922">
-      <property name="name" value="operation" />
-      <link role="concept" targetNodeId="4.1862809785209122566" resolveInfo="GetSelectedTab" />
     </node>
   </node>
 </model>

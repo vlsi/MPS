@@ -9,27 +9,9 @@ import jetbrains.mps.project.GlobalScope;
 
 public class TabbedToolDeclaration extends BaseToolDeclaration {
   public static final String concept = "jetbrains.mps.lang.plugin.structure.TabbedToolDeclaration";
-  public static final String TOOL_INIT_BLOCK = "toolInitBlock";
-  public static final String TOOL_DISPOSE_BLOCK = "toolDisposeBlock";
 
   public TabbedToolDeclaration(SNode node) {
     super(node);
-  }
-
-  public InitBlock getToolInitBlock() {
-    return (InitBlock)this.getChild(InitBlock.class, TabbedToolDeclaration.TOOL_INIT_BLOCK);
-  }
-
-  public void setToolInitBlock(InitBlock node) {
-    super.setChild(TabbedToolDeclaration.TOOL_INIT_BLOCK, node);
-  }
-
-  public DisposeBlock getToolDisposeBlock() {
-    return (DisposeBlock)this.getChild(DisposeBlock.class, TabbedToolDeclaration.TOOL_DISPOSE_BLOCK);
-  }
-
-  public void setToolDisposeBlock(DisposeBlock node) {
-    super.setChild(TabbedToolDeclaration.TOOL_DISPOSE_BLOCK, node);
   }
 
   public static TabbedToolDeclaration newInstance(SModel sm, boolean init) {
