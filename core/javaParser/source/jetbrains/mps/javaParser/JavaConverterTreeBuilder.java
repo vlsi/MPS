@@ -23,6 +23,7 @@ import jetbrains.mps.baseLanguage.structure.FieldDeclaration;
 import jetbrains.mps.baseLanguage.structure.CastExpression;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.util.NameUtil;
 import org.eclipse.jdt.internal.compiler.impl.*;
 import org.eclipse.jdt.internal.compiler.impl.BooleanConstant;
 import org.eclipse.jdt.internal.compiler.impl.CharConstant;
@@ -186,7 +187,7 @@ public class JavaConverterTreeBuilder {
 
   StringLiteral processConstant(StringConstant x) {
     StringLiteral result = StringLiteral.newInstance(myCurrentModel);
-    result.setValue(x.stringValue());
+    result.setValue(NameUtil.convertToMetaString(x.stringValue()));
     return result;
   }
 
