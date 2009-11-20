@@ -1988,7 +1988,7 @@
     <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="1174909137457">
       <link role="keyMap" targetNodeId="3050481019131644558" resolveInfo="RegexpSequenceByEnter" />
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1174909553541">
-        <property name="text" value="\(" />
+        <property name="text" value="\" />
         <link role="styleClass" targetNodeId="5169131996393625117" resolveInfo="RegexpBrace" />
         <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PunctuationRightStyleClassItem" id="8786899561264674063">
           <property name="flag" value="true" />
@@ -2008,10 +2008,6 @@
             </node>
           </node>
         </node>
-      </node>
-      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1174909556965">
-        <property name="text" value=")" />
-        <link role="styleClass" targetNodeId="5169131996393625128" resolveInfo="RightRegexpBrace" />
       </node>
       <node role="cellLayout" type="jetbrains.mps.lang.editor.structure.CellLayout_Indent" id="1237800051113" />
     </node>
@@ -3269,7 +3265,7 @@
     <link role="conceptDeclaration" targetNodeId="1.3796137614137538894" resolveInfo="MatchVariableReferenceReplacement" />
     <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="3796137614137558171">
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="3796137614137558172">
-        <property name="text" value="\(" />
+        <property name="text" value="\" />
         <link role="styleClass" targetNodeId="5169131996393625117" resolveInfo="RegexpBrace" />
         <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PunctuationRightStyleClassItem" id="3796137614137558173">
           <property name="flag" value="true" />
@@ -3289,10 +3285,6 @@
             </node>
           </node>
         </node>
-      </node>
-      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="3796137614137558179">
-        <property name="text" value=")" />
-        <link role="styleClass" targetNodeId="5169131996393625128" resolveInfo="RightRegexpBrace" />
       </node>
       <node role="cellLayout" type="jetbrains.mps.lang.editor.structure.CellLayout_Indent" id="3796137614137558180" />
     </node>

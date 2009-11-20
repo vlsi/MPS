@@ -187,20 +187,15 @@
         <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="8786899561264893435">
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="8786899561264898304">
             <node role="expression" type="jetbrains.mps.baseLanguage.structure.TernaryOperatorExpression" id="8786899561264898306">
-              <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="8786899561264898321">
-                <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="8786899561264898311">
-                  <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="8786899561264898310">
-                    <property name="value" value="\\(" />
-                  </node>
-                  <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="8786899561264898315">
-                    <node role="operand" type="jetbrains.mps.lang.constraints.structure.ConstraintFunctionParameter_parameterNode" id="8786899561264898314" />
-                    <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="8786899561264898319">
-                      <link role="property" targetNodeId="2v.1169194664001" resolveInfo="name" />
-                    </node>
-                  </node>
+              <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="8786899561264898311">
+                <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="8786899561264898310">
+                  <property name="value" value="\\" />
                 </node>
-                <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="8786899561264898324">
-                  <property name="value" value=")" />
+                <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="8786899561264898315">
+                  <node role="operand" type="jetbrains.mps.lang.constraints.structure.ConstraintFunctionParameter_parameterNode" id="8786899561264898314" />
+                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="8786899561264898319">
+                    <link role="property" targetNodeId="2v.1169194664001" resolveInfo="name" />
+                  </node>
                 </node>
               </node>
               <node role="ifFalse" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="8786899561264898326">
@@ -588,20 +583,15 @@
         <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="3796137614137558251">
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="3796137614137558252">
             <node role="expression" type="jetbrains.mps.baseLanguage.structure.TernaryOperatorExpression" id="3796137614137558253">
-              <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="3796137614137558254">
-                <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="3796137614137558255">
-                  <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="3796137614137558256">
-                    <property name="value" value="\\(" />
-                  </node>
-                  <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="3796137614137558257">
-                    <node role="operand" type="jetbrains.mps.lang.constraints.structure.ConstraintFunctionParameter_parameterNode" id="3796137614137558258" />
-                    <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="3796137614137558259">
-                      <link role="property" targetNodeId="2v.1169194664001" resolveInfo="name" />
-                    </node>
-                  </node>
+              <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="3796137614137558255">
+                <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="3796137614137558256">
+                  <property name="value" value="\\" />
                 </node>
-                <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="3796137614137558260">
-                  <property name="value" value=")" />
+                <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="3796137614137558257">
+                  <node role="operand" type="jetbrains.mps.lang.constraints.structure.ConstraintFunctionParameter_parameterNode" id="3796137614137558258" />
+                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="3796137614137558259">
+                    <link role="property" targetNodeId="2v.1169194664001" resolveInfo="name" />
+                  </node>
                 </node>
               </node>
               <node role="ifFalse" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="3796137614137558261">

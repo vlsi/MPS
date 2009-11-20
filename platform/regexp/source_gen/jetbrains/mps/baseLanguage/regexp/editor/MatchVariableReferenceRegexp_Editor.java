@@ -30,26 +30,17 @@ public class MatchVariableReferenceRegexp_Editor extends DefaultNodeEditor {
     editorCell.addKeyMap(new RegexpSequenceByEnter());
     editorCell.addEditorCell(this.createConstant_1753_0(editorContext, node));
     editorCell.addEditorCell(this.createRefCell_1753_0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_1753_1(editorContext, node));
     return editorCell;
   }
 
   private EditorCell createConstant_1753_0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "\\(");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "\\");
     editorCell.setCellId("Constant_1753_0");
     RegexpStylesheet_StyleSheet.getRegexpBrace(editorCell).apply(editorCell);
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.PUNCTUATION_RIGHT, true);
     }
-    editorCell.setDefaultText("");
-    return editorCell;
-  }
-
-  private EditorCell createConstant_1753_1(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ")");
-    editorCell.setCellId("Constant_1753_1");
-    RegexpStylesheet_StyleSheet.getRightRegexpBrace(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }

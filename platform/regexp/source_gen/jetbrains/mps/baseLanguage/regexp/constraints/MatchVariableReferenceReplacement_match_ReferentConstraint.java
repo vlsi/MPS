@@ -43,7 +43,7 @@ public class MatchVariableReferenceReplacement_match_ReferentConstraint extends 
 
   public String getPresentation(final IOperationContext operationContext, final PresentationReferentConstraintContext _context) {
     return (_context.getSmartReference() ?
-      "\\(" + SPropertyOperations.getString(_context.getParameterNode(), "name") + ")" :
+      "\\" + SPropertyOperations.getString(_context.getParameterNode(), "name") :
       SPropertyOperations.getString(_context.getParameterNode(), "name")
     );
   }

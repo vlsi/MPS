@@ -2036,6 +2036,66 @@
           </node>
         </node>
       </node>
+      <node role="testMethod" type="jetbrains.mps.baseLanguage.unitTest.structure.TestMethod" id="8942139995508443379">
+        <property name="methodName" value="swap" />
+        <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="8942139995508443380" />
+        <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="8942139995508443381" />
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="8942139995508443382">
+          <node role="statement" type="jetbrains.mps.baseLanguage.unitTest.structure.AssertEquals" id="8942139995508443383">
+            <node role="expected" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="8942139995508443386">
+              <property name="value" value="word2 first" />
+            </node>
+            <node role="actual" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="8942139995508443388">
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="8942139995508443387">
+                <property name="value" value="   first   word2" />
+              </node>
+              <node role="operation" type="jetbrains.mps.baseLanguage.regexp.structure.ReplaceRegexpOperation" id="8942139995508443392">
+                <node role="replacement" type="jetbrains.mps.baseLanguage.regexp.structure.MatchVariableReferenceReplacement" id="8942139995508443428">
+                  <link role="match" targetNodeId="8942139995508443418" resolveInfo="w2" />
+                </node>
+                <node role="replacement" type="jetbrains.mps.baseLanguage.regexp.structure.LiteralReplacement" id="8942139995508443432">
+                  <property name="text" value=" " />
+                </node>
+                <node role="replacement" type="jetbrains.mps.baseLanguage.regexp.structure.MatchVariableReferenceReplacement" id="8942139995508443434">
+                  <link role="match" targetNodeId="8942139995508443404" resolveInfo="w1" />
+                </node>
+                <node role="search" type="jetbrains.mps.baseLanguage.regexp.structure.SeqRegexp" id="8942139995508443398">
+                  <node role="left" type="jetbrains.mps.baseLanguage.regexp.structure.StarRegexp" id="8942139995508443396">
+                    <node role="regexp" type="jetbrains.mps.baseLanguage.regexp.structure.PredefinedSymbolClassRegexp" id="8942139995508443395">
+                      <link role="symbolClass" targetNodeId="2v.1174554710194" resolveInfo="\s" />
+                    </node>
+                  </node>
+                  <node role="right" type="jetbrains.mps.baseLanguage.regexp.structure.SeqRegexp" id="8942139995508443409">
+                    <node role="right" type="jetbrains.mps.baseLanguage.regexp.structure.SeqRegexp" id="8942139995508443415">
+                      <node role="right" type="jetbrains.mps.baseLanguage.regexp.structure.MatchParensRegexp" id="8942139995508443418">
+                        <property name="name" value="w2" />
+                        <node role="regexp" type="jetbrains.mps.baseLanguage.regexp.structure.PlusRegexp" id="8942139995508443421">
+                          <node role="regexp" type="jetbrains.mps.baseLanguage.regexp.structure.PredefinedSymbolClassRegexp" id="8942139995508443420">
+                            <link role="symbolClass" targetNodeId="2v.1174554738336" resolveInfo="\w" />
+                          </node>
+                        </node>
+                      </node>
+                      <node role="left" type="jetbrains.mps.baseLanguage.regexp.structure.PlusRegexp" id="8942139995508443413">
+                        <node role="regexp" type="jetbrains.mps.baseLanguage.regexp.structure.PredefinedSymbolClassRegexp" id="8942139995508443412">
+                          <link role="symbolClass" targetNodeId="2v.1174554710194" resolveInfo="\s" />
+                        </node>
+                      </node>
+                    </node>
+                    <node role="left" type="jetbrains.mps.baseLanguage.regexp.structure.MatchParensRegexp" id="8942139995508443404">
+                      <property name="name" value="w1" />
+                      <node role="regexp" type="jetbrains.mps.baseLanguage.regexp.structure.PlusRegexp" id="8942139995508443407">
+                        <node role="regexp" type="jetbrains.mps.baseLanguage.regexp.structure.PredefinedSymbolClassRegexp" id="8942139995508443406">
+                          <link role="symbolClass" targetNodeId="2v.1174554738336" resolveInfo="\w" />
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
     </node>
   </node>
 </model>

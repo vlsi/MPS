@@ -46,7 +46,7 @@ public class MatchVariableReferenceRegexp_match_ReferentConstraint extends BaseN
 
   public String getPresentation(final IOperationContext operationContext, final PresentationReferentConstraintContext _context) {
     return (_context.getSmartReference() ?
-      "\\(" + SPropertyOperations.getString(_context.getParameterNode(), "name") + ")" :
+      "\\" + SPropertyOperations.getString(_context.getParameterNode(), "name") :
       SPropertyOperations.getString(_context.getParameterNode(), "name")
     );
   }

@@ -11,4 +11,8 @@ public class PerlReplace_Test extends TestCase {
     Assert.assertEquals("a!b!c!d!e!f!", _PrecompiledPatterns.REPLREGEXP1.matcher(input).replaceAll("$1!"));
     Assert.assertEquals("a!bbccddeeffffffff", _PrecompiledPatterns.REPLREGEXP0.matcher(input).replaceFirst("$1!"));
   }
+
+  public void test_swap() throws Exception {
+    Assert.assertEquals("word2 first", _PrecompiledPatterns.REPLREGEXP2.matcher("   first   word2").replaceFirst("$2 $1"));
+  }
 }
