@@ -12,7 +12,9 @@ public class ReplaceRegexpOperation_Behavior {
   public static String call_getReplacementString_3796137614137207007(SNode thisNode) {
     StringBuilder sb = new StringBuilder();
     for (SNode rep : SLinkOperations.getTargets(thisNode, "replacement", true)) {
-      sb.append(Replacement_Behavior.call_toString_3796137614137538905(rep, SLinkOperations.getTarget(thisNode, "search", true)));
+      if ((rep != null)) {
+        sb.append(Replacement_Behavior.call_toString_3796137614137538905(rep, SLinkOperations.getTarget(thisNode, "search", true)));
+      }
     }
     return sb.toString();
   }

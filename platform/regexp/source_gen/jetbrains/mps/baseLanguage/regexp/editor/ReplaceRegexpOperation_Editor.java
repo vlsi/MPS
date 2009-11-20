@@ -16,10 +16,10 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Property;
 import jetbrains.mps.nodeEditor.cells.ModelAccessor;
 import jetbrains.mps.baseLanguage.regexp.behavior.Regexp_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.baseLanguage.regexp.behavior.ReplaceRegexpOperation_Behavior;
 import jetbrains.mps.util.EqualUtil;
 import jetbrains.mps.nodeEditor.CellActionType;
 import jetbrains.mps.nodeEditor.cellActions.CellAction_Empty;
+import jetbrains.mps.baseLanguage.regexp.behavior.ReplaceRegexpOperation_Behavior;
 import jetbrains.mps.nodeEditor.cellProviders.AbstractCellListHandler;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Indent;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
@@ -93,6 +93,8 @@ public class ReplaceRegexpOperation_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstant_7518_19(editorContext, node));
     editorCell.addEditorCell(this.createConstant_7518_20(editorContext, node));
     editorCell.addEditorCell(this.createReadOnlyModelAccessor_7518_0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_7518_26(editorContext, node));
+    editorCell.addEditorCell(this.createReadOnlyModelAccessor_7518_1(editorContext, node));
     return editorCell;
   }
 
@@ -359,11 +361,18 @@ public class ReplaceRegexpOperation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
+  private EditorCell createConstant_7518_26(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "Replacement:");
+    editorCell.setCellId("Constant_7518_26");
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+
   private EditorCell createReadOnlyModelAccessor_7518_0(final EditorContext editorContext, final SNode node) {
     EditorCell_Property editorCell = EditorCell_Property.create(editorContext, new ModelAccessor() {
       public String getText() {
         return (Regexp_Behavior.call_isValid_4759120547781297301(SLinkOperations.getTarget(node, "search", true)) ?
-          "/" + Regexp_Behavior.call_toString_1213877429451(SLinkOperations.getTarget(node, "search", true)) + "/" + ReplaceRegexpOperation_Behavior.call_getReplacementString_3796137614137207007(node) + "/" :
+          "/" + Regexp_Behavior.call_toString_1213877429451(SLinkOperations.getTarget(node, "search", true)) + "/" :
           "<invalid>"
         );
       }
@@ -377,6 +386,28 @@ public class ReplaceRegexpOperation_Editor extends DefaultNodeEditor {
     }, node);
     editorCell.setAction(CellActionType.DELETE, new CellAction_Empty());
     editorCell.setCellId("ReadOnlyModelAccessor_7518_0");
+    {
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
+    }
+    return editorCell;
+  }
+
+  private EditorCell createReadOnlyModelAccessor_7518_1(final EditorContext editorContext, final SNode node) {
+    EditorCell_Property editorCell = EditorCell_Property.create(editorContext, new ModelAccessor() {
+      public String getText() {
+        return "\"" + ReplaceRegexpOperation_Behavior.call_getReplacementString_3796137614137207007(node) + "\"";
+      }
+
+      public void setText(String s) {
+      }
+
+      public boolean isValidText(String s) {
+        return EqualUtil.equals(s, this.getText());
+      }
+    }, node);
+    editorCell.setAction(CellActionType.DELETE, new CellAction_Empty());
+    editorCell.setCellId("ReadOnlyModelAccessor_7518_1");
     return editorCell;
   }
 

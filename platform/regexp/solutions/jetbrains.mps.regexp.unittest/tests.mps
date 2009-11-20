@@ -2050,6 +2050,7 @@
                 <property name="value" value="   first   word2" />
               </node>
               <node role="operation" type="jetbrains.mps.baseLanguage.regexp.structure.ReplaceRegexpOperation" id="8942139995508443392">
+                <property name="globalReplace" value="false" />
                 <node role="replacement" type="jetbrains.mps.baseLanguage.regexp.structure.MatchVariableReferenceReplacement" id="8942139995508443428">
                   <link role="match" targetNodeId="8942139995508443418" resolveInfo="w2" />
                 </node>

@@ -12,6 +12,10 @@ public class Replacement_Behavior {
   public static void init(SNode thisNode) {
   }
 
+  public static String virtual_toString_3796137614137538905(SNode thisNode, SNode search) {
+    return "";
+  }
+
   public static String call_toString_3796137614137538905(SNode thisNode, SNode search) {
     return (String)BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.regexp.structure.Replacement"), "virtual_toString_3796137614137538905", PARAMETERS_3796137614137538905, search);
   }
