@@ -12,7 +12,7 @@ public class Statements_Test extends TestCase {
     String input = "reader@gmail.com";
     boolean matches = false;
     {
-      Pattern _pattern_0 = _PrecompiledPatterns.REGEXP14;
+      Pattern _pattern_0 = _PrecompiledPatterns.REGEXP15;
       Matcher _matcher_0 = _pattern_0.matcher(input);
       if (_matcher_0.matches()) {
         matches = true;
@@ -24,7 +24,7 @@ public class Statements_Test extends TestCase {
   public void test_iftilde() throws Exception {
     boolean result = false;
     {
-      Pattern _pattern_0 = _PrecompiledPatterns.REGEXP8;
+      Pattern _pattern_0 = _PrecompiledPatterns.REGEXP9;
       Matcher _matcher_0 = _pattern_0.matcher("aaabcd");
       if (_matcher_0.find()) {
         result = true;

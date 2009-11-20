@@ -19,6 +19,7 @@ import java.util.ArrayList;
 import jetbrains.mps.baseLanguage.regexp.behavior.Regexp_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import java.util.regex.Pattern;
+import jetbrains.mps.baseLanguage.regexp.behavior.ReplaceRegexpOperation_Behavior;
 import jetbrains.mps.generator.template.ReferenceMacroContext;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
@@ -28,7 +29,7 @@ import jetbrains.mps.generator.template.MappingScriptContext;
 public class QueriesGenerated {
   public static boolean createRootRule_Condition_1194610104145(final IOperationContext operationContext, final CreateRootRuleContext _context) {
     SModel smodel = _context.getInputModel();
-    return ListSequence.fromList(SModelOperations.getNodes(smodel, "jetbrains.mps.baseLanguage.regexp.structure.InlineRegexpExpression")).count() > 0;
+    return ListSequence.fromList(SModelOperations.getNodes(smodel, "jetbrains.mps.baseLanguage.regexp.structure.InlineRegexpExpression")).count() > 0 || ListSequence.fromList(SModelOperations.getNodes(smodel, "jetbrains.mps.baseLanguage.regexp.structure.ReplaceRegexpOperation")).count() > 0;
   }
 
   public static boolean baseMappingRule_Condition_1222259398301(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
@@ -46,6 +47,10 @@ public class QueriesGenerated {
   public static boolean baseMappingRule_Condition_2588298302277788537(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
     SNode ruc = SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.baseLanguage.regexp.structure.RegexpUsingConstruction", false, false);
     return SNodeOperations.isInstanceOf(ruc, "jetbrains.mps.baseLanguage.regexp.structure.ReplaceWithRegexpExpression") || SNodeOperations.isInstanceOf(ruc, "jetbrains.mps.baseLanguage.regexp.structure.ReplaceWithRegexpOperation");
+  }
+
+  public static boolean baseMappingRule_Condition_3796137614137205667(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
+    return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(_context.getNode(), "operation", true), "jetbrains.mps.baseLanguage.regexp.structure.ReplaceRegexpOperation");
   }
 
   public static boolean baseMappingRule_Condition_4276824325038550474(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
@@ -132,6 +137,32 @@ public class QueriesGenerated {
     return _context.createUniqueName("REGEXP", null);
   }
 
+  public static Object propertyMacro_GetPropertyValue_3796137614137206989(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return ReplaceRegexpOperation_Behavior.call_getReplacementString_3796137614137207007(SNodeOperations.cast(SLinkOperations.getTarget(_context.getNode(), "operation", true), "jetbrains.mps.baseLanguage.regexp.structure.ReplaceRegexpOperation"));
+  }
+
+  public static Object propertyMacro_GetPropertyValue_3796137614137699139(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return Regexp_Behavior.call_toString_1213877429451(SLinkOperations.getTarget(_context.getNode(), "search", true));
+  }
+
+  public static Object propertyMacro_GetPropertyValue_3796137614137699149(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    int result = 0;
+    if (SPropertyOperations.getBoolean(_context.getNode(), "multiLine")) {
+      result = result + Pattern.MULTILINE;
+    }
+    if (SPropertyOperations.getBoolean(_context.getNode(), "dotAll")) {
+      result = result + Pattern.DOTALL;
+    }
+    if (SPropertyOperations.getBoolean(_context.getNode(), "caseInsensitive")) {
+      result = result + Pattern.CASE_INSENSITIVE;
+    }
+    return result;
+  }
+
+  public static Object propertyMacro_GetPropertyValue_3796137614137699191(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return _context.createUniqueName("REPLREGEXP", null);
+  }
+
   public static Object propertyMacro_GetPropertyValue_7048923897763036419(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return _context.createUniqueName("_matcher_", SNodeOperations.getParent(_context.getNode()));
   }
@@ -144,8 +175,19 @@ public class QueriesGenerated {
     return _context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "precompiledRegexp");
   }
 
+  public static Object referenceMacro_GetReferent_1643569692138080185(final IOperationContext operationContext, final ReferenceMacroContext _context) {
+    return _context.getOutputNodeByInputNodeAndMappingLabel(SNodeOperations.cast(SLinkOperations.getTarget(_context.getNode(), "operation", true), "jetbrains.mps.baseLanguage.regexp.structure.ReplaceRegexpOperation"), "precompiledRegexp");
+  }
+
   public static Object referenceMacro_GetReferent_2512254891788090401(final IOperationContext operationContext, final ReferenceMacroContext _context) {
     return _context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "matcher");
+  }
+
+  public static Object referenceMacro_GetReferent_3796137614137206957(final IOperationContext operationContext, final ReferenceMacroContext _context) {
+    return (SPropertyOperations.getBoolean(SNodeOperations.cast(SLinkOperations.getTarget(_context.getNode(), "operation", true), "jetbrains.mps.baseLanguage.regexp.structure.ReplaceRegexpOperation"), "globalReplace") ?
+      "replaceAll" :
+      "replaceFirst"
+    );
   }
 
   public static SNode sourceNodeQuery_1174512824855(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
@@ -250,6 +292,10 @@ public class QueriesGenerated {
     return SLinkOperations.getTarget(_context.getNode(), "operand", true);
   }
 
+  public static SNode sourceNodeQuery_3796137614137206943(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return SLinkOperations.getTarget(_context.getNode(), "operand", true);
+  }
+
   public static SNode sourceNodeQuery_4276824325038550656(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "regexp", true);
   }
@@ -268,6 +314,10 @@ public class QueriesGenerated {
 
   public static Iterable sourceNodesQuery_1194610249636(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     return SModelOperations.getNodes(_context.getInputModel(), "jetbrains.mps.baseLanguage.regexp.structure.InlineRegexpExpression");
+  }
+
+  public static Iterable sourceNodesQuery_3796137614137699128(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
+    return SModelOperations.getNodes(_context.getInputModel(), "jetbrains.mps.baseLanguage.regexp.structure.ReplaceRegexpOperation");
   }
 
   public static Iterable sourceNodesQuery_7048923897763033509(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {

@@ -11,17 +11,17 @@ import java.util.regex.Matcher;
 
 public class Match_Test extends TestCase {
   public void test_find() throws Exception {
-    Assert.assertTrue(_PrecompiledPatterns.REGEXP9.matcher("acccasdawe").find());
-    Assert.assertFalse(_PrecompiledPatterns.REGEXP10.matcher("accasdawe").find());
+    Assert.assertTrue(_PrecompiledPatterns.REGEXP10.matcher("acccasdawe").find());
+    Assert.assertFalse(_PrecompiledPatterns.REGEXP11.matcher("accasdawe").find());
   }
 
   public void test_match() throws Exception {
-    Assert.assertTrue(_PrecompiledPatterns.REGEXP11.matcher("ww").matches());
-    Assert.assertFalse(_PrecompiledPatterns.REGEXP12.matcher("www").matches());
+    Assert.assertTrue(_PrecompiledPatterns.REGEXP12.matcher("ww").matches());
+    Assert.assertFalse(_PrecompiledPatterns.REGEXP13.matcher("www").matches());
   }
 
   public void test_split() throws Exception {
-    List<String> list = RegexpOperations.split("abc, def, xxyyy", _PrecompiledPatterns.REGEXP13);
+    List<String> list = RegexpOperations.split("abc, def, xxyyy", _PrecompiledPatterns.REGEXP14);
     Assert.assertEquals(list.size(), 3);
     Assert.assertEquals("abc", list.get(0));
     Assert.assertEquals("def", list.get(1));
@@ -31,7 +31,7 @@ public class Match_Test extends TestCase {
   public void test_refFromRegexps() throws Exception {
     boolean executed = false;
     {
-      Pattern _pattern_0 = _PrecompiledPatterns.REGEXP15;
+      Pattern _pattern_0 = _PrecompiledPatterns.REGEXP16;
       Matcher _matcher_0 = _pattern_0.matcher("asdasd [ww]");
       if (_matcher_0.find()) {
         Assert.assertEquals("ww", _matcher_0.group(2));
@@ -47,13 +47,22 @@ public class Match_Test extends TestCase {
     this.check("xxxaaadyyy");
   }
 
-  public void check(String searchin) {
+  public void test_innerRegexps() throws Exception {
     Matcher _matcher_5236_0;
+    if ((_matcher_5236_0 = _PrecompiledPatterns.REGEXP1.matcher("_123[3] inner")).find()) {
+      Assert.assertEquals("inner", _matcher_5236_0.group(3));
+      Assert.assertEquals("3", "1");
+      Assert.assertEquals("_123", "id");
+    }
+  }
+
+  public void check(String searchin) {
     Matcher _matcher_5236_1;
-    if ((_matcher_5236_0 = _PrecompiledPatterns.REGEXP5.matcher(searchin)).find()) {
-      Assert.assertEquals("xyz", _matcher_5236_0.group(1));
-    } else if ((_matcher_5236_1 = _PrecompiledPatterns.REGEXP6.matcher(searchin)).find()) {
-      Assert.assertEquals("aaad", _matcher_5236_1.group(1));
+    Matcher _matcher_5236_2;
+    if ((_matcher_5236_1 = _PrecompiledPatterns.REGEXP6.matcher(searchin)).find()) {
+      Assert.assertEquals("xyz", _matcher_5236_1.group(1));
+    } else if ((_matcher_5236_2 = _PrecompiledPatterns.REGEXP7.matcher(searchin)).find()) {
+      Assert.assertEquals("aaad", _matcher_5236_2.group(1));
     } else {
       Assert.fail("no match");
     }

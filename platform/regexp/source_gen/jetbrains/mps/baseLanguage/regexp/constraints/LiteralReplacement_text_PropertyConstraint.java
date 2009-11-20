@@ -9,16 +9,16 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
-public class StringLiteralRegexp_text_PropertyConstraint implements IModelConstraints, INodePropertyValidator {
-  public StringLiteralRegexp_text_PropertyConstraint() {
+public class LiteralReplacement_text_PropertyConstraint implements IModelConstraints, INodePropertyValidator {
+  public LiteralReplacement_text_PropertyConstraint() {
   }
 
   public void registerSelf(ModelConstraintsManager manager) {
-    manager.registerNodePropertyValidator("jetbrains.mps.baseLanguage.regexp.structure.StringLiteralRegexp", "text", this);
+    manager.registerNodePropertyValidator("jetbrains.mps.baseLanguage.regexp.structure.LiteralReplacement", "text", this);
   }
 
   public void unRegisterSelf(ModelConstraintsManager manager) {
-    manager.unRegisterNodePropertyValidator("jetbrains.mps.baseLanguage.regexp.structure.StringLiteralRegexp", "text");
+    manager.unRegisterNodePropertyValidator("jetbrains.mps.baseLanguage.regexp.structure.LiteralReplacement", "text");
   }
 
   public boolean checkPropertyValue(final SNode node, final String propertyName, final String propertyValue, final IScope scope) {

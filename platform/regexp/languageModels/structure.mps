@@ -1139,5 +1139,75 @@
       <link role="conceptPropertyDeclaration" targetNodeId="1.1137473994950" resolveInfo="dontSubstituteByDefault" />
     </node>
   </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="3796137614137086346">
+    <property name="name" value="ReplaceRegexpOperation" />
+    <property name="package" value="Operations" />
+    <node role="propertyDeclaration" type="jetbrains.mps.lang.structure.structure.PropertyDeclaration" id="3796137614137159270">
+      <property name="name" value="dotAll" />
+      <link role="dataType" targetNodeId="1.1082983657063" resolveInfo="boolean" />
+    </node>
+    <node role="propertyDeclaration" type="jetbrains.mps.lang.structure.structure.PropertyDeclaration" id="3796137614137159271">
+      <property name="name" value="multiLine" />
+      <link role="dataType" targetNodeId="1.1082983657063" resolveInfo="boolean" />
+    </node>
+    <node role="propertyDeclaration" type="jetbrains.mps.lang.structure.structure.PropertyDeclaration" id="3796137614137159272">
+      <property name="name" value="caseInsensitive" />
+      <link role="dataType" targetNodeId="1.1082983657063" resolveInfo="boolean" />
+    </node>
+    <node role="propertyDeclaration" type="jetbrains.mps.lang.structure.structure.PropertyDeclaration" id="3796137614137159273">
+      <property name="name" value="globalReplace" />
+      <link role="dataType" targetNodeId="1.1082983657063" resolveInfo="boolean" />
+    </node>
+    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="3796137614137159227">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="search" />
+      <property name="sourceCardinality" value="1" />
+      <link role="target" targetNodeId="1174482743037" resolveInfo="Regexp" />
+    </node>
+    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="3796137614137086347">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="replacement" />
+      <property name="sourceCardinality" value="0..n" />
+      <link role="target" targetNodeId="3796137614137538898" resolveInfo="Replacement" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="3796137614137159228">
+      <property name="value" value="s/regexp/replacement/" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" resolveInfo="alias" />
+    </node>
+    <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="3796137614137203259">
+      <link role="intfc" targetNodeId="2.1197027803184" resolveInfo="IOperation" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="3796137614137538892">
+    <property name="name" value="LiteralReplacement" />
+    <property name="package" value="Replaces" />
+    <link role="extends" targetNodeId="3796137614137538898" resolveInfo="Replacement" />
+    <node role="propertyDeclaration" type="jetbrains.mps.lang.structure.structure.PropertyDeclaration" id="3796137614137565243">
+      <property name="name" value="text" />
+      <link role="dataType" targetNodeId="1.1082983041843" resolveInfo="string" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="3796137614137565244">
+      <property name="value" value="'" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" resolveInfo="alias" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="3796137614137538894">
+    <property name="package" value="Replaces" />
+    <property name="name" value="MatchVariableReferenceReplacement" />
+    <link role="extends" targetNodeId="3796137614137538898" resolveInfo="Replacement" />
+    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="3796137614137539525">
+      <property name="sourceCardinality" value="1" />
+      <property name="role" value="match" />
+      <link role="target" targetNodeId="1174564062919" resolveInfo="MatchParensRegexp" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="3796137614137538898">
+    <property name="package" value="Replaces" />
+    <property name="name" value="Replacement" />
+    <link role="extends" targetNodeId="1.1133920641626" resolveInfo="BaseConcept" />
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.BooleanConceptProperty" id="3796137614137949772">
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473854053" resolveInfo="abstract" />
+    </node>
+  </node>
 </model>
 

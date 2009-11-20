@@ -376,5 +376,60 @@
       <link role="concept" targetNodeId="1.6129327962763158517" resolveInfo="FindMatchExpression" />
     </node>
   </node>
+  <node type="jetbrains.mps.lang.typesystem.structure.InferenceRule" id="3796137614137203404">
+    <property name="name" value="typeof_ReplaceRegexpOperation" />
+    <property name="package" value="Operations" />
+    <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="3796137614137203405">
+      <node role="statement" type="jetbrains.mps.lang.typesystem.structure.CreateEquationStatement" id="3796137614137203407">
+        <node role="leftExpression" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause" id="3796137614137203408">
+          <node role="normalType" type="jetbrains.mps.lang.typesystem.structure.TypeOfExpression" id="3796137614137203409">
+            <node role="term" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference" id="3796137614137203414">
+              <link role="applicableNode" targetNodeId="3796137614137203406" resolveInfo="operation" />
+            </node>
+          </node>
+        </node>
+        <node role="rightExpression" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause" id="3796137614137203411">
+          <node role="normalType" type="jetbrains.mps.lang.quotation.structure.Quotation" id="3796137614137203412">
+            <node role="quotedNode" type="jetbrains.mps.baseLanguage.structure.StringType" id="3796137614137679059" />
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="applicableNode" type="jetbrains.mps.lang.typesystem.structure.ConceptReference" id="3796137614137203406">
+      <property name="name" value="operation" />
+      <link role="concept" targetNodeId="1.3796137614137086346" resolveInfo="ReplaceRegexpOperation" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.typesystem.structure.NonTypesystemRule" id="3796137614137565921">
+    <property name="name" value="check_LiteralReplacement" />
+    <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="3796137614137565922">
+      <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="3796137614137565925">
+        <node role="condition" type="jetbrains.mps.baseLanguage.structure.NotExpression" id="3796137614137565926">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="3796137614137565927">
+            <node role="operand" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference" id="3796137614137567949">
+              <link role="applicableNode" targetNodeId="3796137614137565924" resolveInfo="literal" />
+            </node>
+            <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="3796137614137567993">
+              <link role="baseMethodDeclaration" targetNodeId="2v.3796137614137567952" resolveInfo="isValid" />
+            </node>
+          </node>
+        </node>
+        <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="3796137614137565930">
+          <node role="statement" type="jetbrains.mps.lang.typesystem.structure.ReportErrorStatement" id="3796137614137565931">
+            <node role="errorString" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="3796137614137565932">
+              <property name="value" value="Incorrect regexp string literal" />
+            </node>
+            <node role="nodeToReport" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference" id="3796137614137565933">
+              <link role="applicableNode" targetNodeId="3796137614137565924" resolveInfo="literal" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="applicableNode" type="jetbrains.mps.lang.typesystem.structure.ConceptReference" id="3796137614137565924">
+      <property name="name" value="literal" />
+      <link role="concept" targetNodeId="1.3796137614137538892" resolveInfo="LiteralReplacement" />
+    </node>
+  </node>
 </model>
 

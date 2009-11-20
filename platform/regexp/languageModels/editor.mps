@@ -2949,5 +2949,369 @@
       </node>
     </node>
   </node>
+  <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" id="3796137614137159229">
+    <property name="package" value="Operations" />
+    <link role="conceptDeclaration" targetNodeId="1.3796137614137086346" resolveInfo="InlineReplaceRegexpExpression" />
+    <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="3796137614137159234">
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="3796137614137159235">
+        <property name="text" value="s/" />
+        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.ForegroundColorStyleClassItem" id="3796137614137159236">
+          <property name="color" value="DARK_MAGENTA" />
+        </node>
+        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PunctuationRightStyleClassItem" id="3796137614137159237">
+          <property name="flag" value="true" />
+        </node>
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode" id="3796137614137159238">
+        <link role="relationDeclaration" targetNodeId="1.3796137614137159227" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="3796137614137202912">
+        <property name="text" value="/" />
+        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.ForegroundColorStyleClassItem" id="3796137614137202913">
+          <property name="color" value="DARK_MAGENTA" />
+        </node>
+        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PunctuationLeftStyleClassItem" id="3796137614137202914">
+          <property name="flag" value="true" />
+        </node>
+        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PunctuationRightStyleClassItem" id="3796137614137203255">
+          <property name="flag" value="true" />
+        </node>
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNodeList" id="3796137614137203257">
+        <link role="relationDeclaration" targetNodeId="1.3796137614137086347" />
+        <node role="cellLayout" type="jetbrains.mps.lang.editor.structure.CellLayout_Indent" id="3796137614137203258" />
+        <node role="emptyCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="3796137614137404098" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="3796137614137159239">
+        <property name="text" value="/" />
+        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.ForegroundColorStyleClassItem" id="3796137614137159240">
+          <property name="color" value="DARK_MAGENTA" />
+        </node>
+        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PunctuationLeftStyleClassItem" id="3796137614137159241">
+          <property name="flag" value="true" />
+        </node>
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="3796137614137203280">
+        <property name="text" value="g" />
+        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.ForegroundColorStyleClassItem" id="3796137614137203281">
+          <property name="color" value="DARK_MAGENTA" />
+        </node>
+        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PunctuationLeftStyleClassItem" id="3796137614137203282">
+          <property name="flag" value="true" />
+        </node>
+        <node role="renderingCondition" type="jetbrains.mps.lang.editor.structure.QueryFunction_NodeCondition" id="3796137614137203283">
+          <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="3796137614137203284">
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="3796137614137203285">
+              <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="3796137614137203287">
+                <node role="operand" type="jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_node" id="3796137614137203286" />
+                <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="3796137614137203291">
+                  <link role="property" targetNodeId="1.3796137614137159273" resolveInfo="globalReplace" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="3796137614137159242">
+        <property name="text" value="m" />
+        <node role="renderingCondition" type="jetbrains.mps.lang.editor.structure.QueryFunction_NodeCondition" id="3796137614137159243">
+          <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="3796137614137159244">
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="3796137614137159245">
+              <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="3796137614137159246">
+                <node role="operand" type="jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_node" id="3796137614137159247" />
+                <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="3796137614137159248">
+                  <link role="property" targetNodeId="1.3796137614137159271" resolveInfo="multiLine" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.ForegroundColorStyleClassItem" id="3796137614137159249">
+          <property name="color" value="DARK_MAGENTA" />
+        </node>
+        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PunctuationLeftStyleClassItem" id="3796137614137159250">
+          <property name="flag" value="true" />
+        </node>
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="3796137614137159251">
+        <property name="text" value="s" />
+        <node role="renderingCondition" type="jetbrains.mps.lang.editor.structure.QueryFunction_NodeCondition" id="3796137614137159252">
+          <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="3796137614137159253">
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="3796137614137159254">
+              <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="3796137614137159255">
+                <node role="operand" type="jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_node" id="3796137614137159256" />
+                <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="3796137614137159257">
+                  <link role="property" targetNodeId="1.3796137614137159270" resolveInfo="dotAll" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.ForegroundColorStyleClassItem" id="3796137614137159258">
+          <property name="color" value="DARK_MAGENTA" />
+        </node>
+        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PunctuationLeftStyleClassItem" id="3796137614137159259">
+          <property name="flag" value="true" />
+        </node>
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="3796137614137159260">
+        <property name="text" value="i" />
+        <node role="renderingCondition" type="jetbrains.mps.lang.editor.structure.QueryFunction_NodeCondition" id="3796137614137159261">
+          <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="3796137614137159262">
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="3796137614137159263">
+              <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="3796137614137159264">
+                <node role="operand" type="jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_node" id="3796137614137159265" />
+                <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="3796137614137159266">
+                  <link role="property" targetNodeId="1.3796137614137159272" resolveInfo="caseInsensitive" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.ForegroundColorStyleClassItem" id="3796137614137159267">
+          <property name="color" value="DARK_MAGENTA" />
+        </node>
+        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PunctuationLeftStyleClassItem" id="3796137614137159268">
+          <property name="flag" value="true" />
+        </node>
+      </node>
+      <node role="cellLayout" type="jetbrains.mps.lang.editor.structure.CellLayout_Indent" id="3796137614137159269" />
+    </node>
+    <node role="inspectedCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="3796137614137203292">
+      <property name="vertical" value="true" />
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="3796137614137203293">
+        <property name="text" value="Options:" />
+        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.IndentLayoutNewLineStyleClassItem" id="3796137614137203294">
+          <property name="flag" value="true" />
+        </node>
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="3796137614137203350">
+        <property name="text" value="Global replace (/g) :" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Property" id="3796137614137203354">
+        <link role="relationDeclaration" targetNodeId="1.3796137614137159273" resolveInfo="globalReplace" />
+        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.IndentLayoutNewLineStyleClassItem" id="3796137614137203355">
+          <property name="flag" value="true" />
+        </node>
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="3796137614137203359">
+        <property name="text" value="  " />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="3796137614137203361">
+        <property name="text" value="Replaces every subsequence of the input sequence that matches the pattern with the given replacement string." />
+        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.IndentLayoutNewLineStyleClassItem" id="3796137614137203362">
+          <property name="flag" value="true" />
+        </node>
+        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.FontStyleStyleClassItem" id="3796137614137203367">
+          <property name="style" value="ITALIC" />
+        </node>
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="3796137614137203364">
+        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.IndentLayoutNewLineStyleClassItem" id="3796137614137203365">
+          <property name="flag" value="true" />
+        </node>
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="3796137614137203295">
+        <property name="text" value="Case insensitive (/i) :" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Property" id="3796137614137203296">
+        <link role="relationDeclaration" targetNodeId="1.3796137614137159272" resolveInfo="caseInsensitive" />
+        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.IndentLayoutNewLineStyleClassItem" id="3796137614137203297">
+          <property name="flag" value="true" />
+        </node>
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="3796137614137203298">
+        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.IndentLayoutNewLineStyleClassItem" id="3796137614137203299">
+          <property name="flag" value="true" />
+        </node>
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="3796137614137203300">
+        <property name="text" value="Dot all (/s) : " />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Property" id="3796137614137203301">
+        <link role="relationDeclaration" targetNodeId="1.3796137614137159270" resolveInfo="dotAll" />
+        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.IndentLayoutNewLineStyleClassItem" id="3796137614137203302">
+          <property name="flag" value="true" />
+        </node>
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="3796137614137203303">
+        <property name="text" value="  " />
+        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem" id="3796137614137203304">
+          <property name="flag" value="false" />
+        </node>
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="3796137614137203305">
+        <property name="text" value="If dot all mode is enabled, the . symbol class will include new line characters" />
+        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.FontStyleStyleClassItem" id="3796137614137203306">
+          <property name="style" value="ITALIC" />
+        </node>
+        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.IndentLayoutNewLineStyleClassItem" id="3796137614137203307">
+          <property name="flag" value="true" />
+        </node>
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="3796137614137203308">
+        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.IndentLayoutNewLineStyleClassItem" id="3796137614137203309">
+          <property name="flag" value="true" />
+        </node>
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="3796137614137203310">
+        <property name="text" value="Multiline mode (/m) : " />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Property" id="3796137614137203311">
+        <link role="relationDeclaration" targetNodeId="1.3796137614137159271" resolveInfo="multiLine" />
+        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.IndentLayoutNewLineStyleClassItem" id="3796137614137203312">
+          <property name="flag" value="true" />
+        </node>
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="3796137614137203313">
+        <property name="text" value="  " />
+        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem" id="3796137614137203314">
+          <property name="flag" value="false" />
+        </node>
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="3796137614137203315">
+        <property name="text" value="If multiline mode is enabled, the $ and ^ will work not only in the start and" />
+        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.FontStyleStyleClassItem" id="3796137614137203316">
+          <property name="style" value="ITALIC" />
+        </node>
+        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.IndentLayoutNewLineStyleClassItem" id="3796137614137203317">
+          <property name="flag" value="true" />
+        </node>
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="3796137614137203318">
+        <property name="text" value="  " />
+        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem" id="3796137614137203319">
+          <property name="flag" value="false" />
+        </node>
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="3796137614137203320">
+        <property name="text" value="the end of the text but on starts and ends of lines separated by new line characters" />
+        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.FontStyleStyleClassItem" id="3796137614137203321">
+          <property name="style" value="ITALIC" />
+        </node>
+        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.IndentLayoutNewLineStyleClassItem" id="3796137614137203322">
+          <property name="flag" value="true" />
+        </node>
+      </node>
+      <node role="cellLayout" type="jetbrains.mps.lang.editor.structure.CellLayout_Indent" id="3796137614137203323" />
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="3796137614137203324">
+        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.IndentLayoutNewLineStyleClassItem" id="3796137614137203325">
+          <property name="flag" value="true" />
+        </node>
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="3796137614137203326">
+        <property name="text" value="Value:" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_ReadOnlyModelAccessor" id="3796137614137203327">
+        <node role="modelAccessor" type="jetbrains.mps.lang.editor.structure.ReadOnlyModelAccessor" id="3796137614137203328">
+          <node role="getter" type="jetbrains.mps.lang.editor.structure.QueryFunction_ModelAccess_Getter" id="3796137614137203329">
+            <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="3796137614137203330">
+              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="3796137614137203331">
+                <node role="expression" type="jetbrains.mps.baseLanguage.structure.TernaryOperatorExpression" id="3796137614137203332">
+                  <node role="condition" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="3796137614137203333">
+                    <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="3796137614137203334">
+                      <node role="operand" type="jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_node" id="3796137614137203335" />
+                      <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="3796137614137203368">
+                        <link role="link" targetNodeId="1.3796137614137159227" />
+                      </node>
+                    </node>
+                    <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="3796137614137203337">
+                      <link role="baseMethodDeclaration" targetNodeId="2v.4759120547781297301" resolveInfo="isValid" />
+                    </node>
+                  </node>
+                  <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="3796137614138106238">
+                    <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="3796137614138087584">
+                      <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="3796137614137203338">
+                        <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="3796137614137203339">
+                          <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="3796137614137203340">
+                            <property name="value" value="/" />
+                          </node>
+                          <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="3796137614137203341">
+                            <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="3796137614137203342">
+                              <node role="operand" type="jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_node" id="3796137614137203343" />
+                              <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="3796137614137203369">
+                                <link role="link" targetNodeId="1.3796137614137159227" />
+                              </node>
+                            </node>
+                            <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="3796137614137203345">
+                              <link role="baseMethodDeclaration" targetNodeId="2v.1213877429451" resolveInfo="toString" />
+                            </node>
+                          </node>
+                        </node>
+                        <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="3796137614137203346">
+                          <property name="value" value="/" />
+                        </node>
+                      </node>
+                      <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="3796137614138087588">
+                        <node role="operand" type="jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_node" id="3796137614138087587" />
+                        <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="3796137614138106237">
+                          <link role="baseMethodDeclaration" targetNodeId="2v.3796137614137207007" resolveInfo="getReplacementString" />
+                        </node>
+                      </node>
+                    </node>
+                    <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="3796137614138106241">
+                      <property name="value" value="/" />
+                    </node>
+                  </node>
+                  <node role="ifFalse" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="3796137614137203347">
+                    <property name="value" value="&lt;invalid&gt;" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" id="3796137614137558169">
+    <property name="package" value="Replaces" />
+    <link role="conceptDeclaration" targetNodeId="1.3796137614137538894" resolveInfo="MatchVariableReferenceReplacement" />
+    <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="3796137614137558171">
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="3796137614137558172">
+        <property name="text" value="\(" />
+        <link role="styleClass" targetNodeId="5169131996393625117" resolveInfo="RegexpBrace" />
+        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PunctuationRightStyleClassItem" id="3796137614137558173">
+          <property name="flag" value="true" />
+        </node>
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefCell" id="3796137614137558174">
+        <link role="relationDeclaration" targetNodeId="1.3796137614137539525" />
+        <node role="editorComponent" type="jetbrains.mps.lang.editor.structure.InlineEditorComponent" id="3796137614137558175">
+          <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Property" id="3796137614137558176">
+            <property name="readOnly" value="true" />
+            <link role="relationDeclaration" targetNodeId="2.1169194664001" resolveInfo="name" />
+            <node role="styleItem" type="jetbrains.mps.lang.editor.structure.FontStyleStyleClassItem" id="3796137614137558177">
+              <property name="style" value="ITALIC" />
+            </node>
+            <node role="styleItem" type="jetbrains.mps.lang.editor.structure.ForegroundColorStyleClassItem" id="3796137614137558178">
+              <property name="color" value="DARK_BLUE" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="3796137614137558179">
+        <property name="text" value=")" />
+        <link role="styleClass" targetNodeId="5169131996393625128" resolveInfo="RightRegexpBrace" />
+      </node>
+      <node role="cellLayout" type="jetbrains.mps.lang.editor.structure.CellLayout_Indent" id="3796137614137558180" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" id="3796137614137565245">
+    <property name="package" value="Replaces" />
+    <link role="conceptDeclaration" targetNodeId="1.3796137614137538892" resolveInfo="LiteralReplacement" />
+    <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="3796137614137565247">
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Property" id="3796137614137565248">
+        <link role="relationDeclaration" targetNodeId="1.3796137614137565243" resolveInfo="text" />
+        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.FontStyleStyleClassItem" id="3796137614137565249">
+          <property name="style" value="BOLD" />
+        </node>
+        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.ForegroundColorStyleClassItem" id="3796137614137565250">
+          <property name="color" value="DARK_GREEN" />
+        </node>
+      </node>
+      <node role="cellLayout" type="jetbrains.mps.lang.editor.structure.CellLayout_Indent" id="3796137614137565251" />
+    </node>
+  </node>
 </model>
 

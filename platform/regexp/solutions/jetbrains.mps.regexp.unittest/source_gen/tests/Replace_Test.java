@@ -8,7 +8,7 @@ import junit.framework.Assert;
 
 public class Replace_Test extends TestCase {
   public void test_replace1() throws Exception {
-    String s = RegexpOperations.replace("Manny goes home", _PrecompiledPatterns.REGEXP7, new _Replacer0(Replace_Test.this, null));
+    String s = RegexpOperations.replace("Manny goes home", _PrecompiledPatterns.REGEXP8, new _Replacer0(Replace_Test.this, null));
     Assert.assertEquals("<Manny> <goes> <home>", s);
   }
 }

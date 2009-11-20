@@ -29,5 +29,7 @@ public class DFABuilders extends DataFlowBuilders {
     manager.register("jetbrains.mps.baseLanguage.regexp.structure.BinaryRegexp", new BinaryRegexp_DataFlow());
     manager.register("jetbrains.mps.baseLanguage.regexp.structure.MatchRegexpExpression", new MatchRegexpExpression_DataFlow());
     manager.register("jetbrains.mps.baseLanguage.regexp.structure.FindMatchExpression", new FindMatchExpression_DataFlow());
+    manager.register("jetbrains.mps.baseLanguage.regexp.structure.ReplaceRegexpOperation", new ReplaceRegexpOperation_DataFlow());
+    manager.register("jetbrains.mps.baseLanguage.regexp.structure.MatchVariableReferenceReplacement", new MatchVariableReferenceReplacement_DataFlow());
   }
 }
