@@ -5322,7 +5322,7 @@
           </node>
         </node>
         <node role="commandLine" type="jetbrains.mps.build.distrib.structure.StringCommandLinePart" id="1238070302929">
-          <property name="text" value="-spc " />
+          <property name="text" value=" -spc " />
         </node>
         <node role="commandLine" type="jetbrains.mps.build.distrib.structure.PathCommantLinePart" id="1238071102567">
           <node role="path" type="jetbrains.mps.build.packaging.structure.Path" id="1238071102568">
@@ -5395,21 +5395,6 @@
           <property name="text" value=" " />
         </node>
         <node role="commandLine" type="jetbrains.mps.build.distrib.structure.ArtifactReferenceCommandLinePart" id="8235068106207260985" />
-        <node role="commandLine" type="jetbrains.mps.build.distrib.structure.StringCommandLinePart" id="8235068106207366719">
-          <property name="text" value=" " />
-        </node>
-        <node role="commandLine" type="jetbrains.mps.build.distrib.structure.PathCommantLinePart" id="8235068106207260986">
-          <node role="path" type="jetbrains.mps.build.packaging.structure.Path" id="8235068106207260987">
-            <node role="macro" type="jetbrains.mps.build.packaging.structure.MacroReference" id="8235068106207260988">
-              <property name="name" value="mps_home" />
-            </node>
-            <node role="compositePathComponent" type="jetbrains.mps.build.packaging.structure.CompositePathComponent" id="8235068106207260989">
-              <node role="pathComponent" type="jetbrains.mps.build.packaging.structure.PathComponent" id="8235068106207260990">
-                <property name="path" value="build" />
-              </node>
-            </node>
-          </node>
-        </node>
         <node role="commandLine" type="jetbrains.mps.build.distrib.structure.StringCommandLinePart" id="8235068106207402534">
           <property name="text" value=" " />
         </node>
