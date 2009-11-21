@@ -18,22 +18,9 @@ package jetbrains.mps.util;
 import jetbrains.mps.util.misc.ObjectCache;
 
 public class InternUtil {
-
-  private static final ObjectCache<String, String> internCache = new ObjectCache<String, String>(20000);
+  private static final Interner ourInterner = new Interner(20000);
 
   public static String intern(String s) {
-    if (s == null) {
-      return null;
-    }
-    synchronized (internCache) {
-      String result = internCache.tryKey(s);
-      if (result != null) {
-        return result;
-      }
-      // Ensure we cache only what's necessary!
-      s = new String (s);
-      internCache.cacheObject(s, s);
-    }
-    return s;
+    return ourInterner.intern(s);
   }
 }
