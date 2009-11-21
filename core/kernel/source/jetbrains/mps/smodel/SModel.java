@@ -1037,6 +1037,8 @@ public class SModel implements Iterable<SNode> {
 
   @Nullable
   public SNode getNodeById(SNodeId nodeId) {
+    if (nodeId == null) return null;
+
     if (nodeId.isRegular()) {
       return myRegularIdToNodeMap.get(nodeId.getId());
     }
