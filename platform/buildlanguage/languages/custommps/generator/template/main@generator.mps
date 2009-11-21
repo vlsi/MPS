@@ -5385,8 +5385,8 @@
               <node role="pathComponent" type="jetbrains.mps.build.packaging.structure.PathComponent" id="1238071239067">
                 <property name="path" value="sign" />
               </node>
-              <node role="pathComponent" type="jetbrains.mps.build.packaging.structure.PathComponent" id="2840917085334207165">
-                <property name="path" value="key_2009_cs_nocrypt.pvk" />
+              <node role="pathComponent" type="jetbrains.mps.build.packaging.structure.PathComponent" id="8859217416499868553">
+                <property name="path" value="key_2009_cs.pvk" />
               </node>
             </node>
           </node>
