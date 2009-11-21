@@ -38,6 +38,10 @@ public abstract class SNodeId implements Comparable<SNodeId> {
     }
   }
 
+  abstract boolean isRegular();
+
+  abstract long getId();
+
   public int compareTo(SNodeId id) {
     if (id instanceof Regular && this instanceof Regular) {
       Regular r1 = (Regular) this;
@@ -70,6 +74,11 @@ public abstract class SNodeId implements Comparable<SNodeId> {
 
     public Regular(long id) {
       myId = id;
+    }
+
+
+    boolean isRegular() {
+      return true;
     }
 
     public long getId() {
@@ -108,6 +117,14 @@ public abstract class SNodeId implements Comparable<SNodeId> {
         throw new IllegalArgumentException("foreign node id must begin with '" + ID_PREFIX + "'");
       }
       myId = InternUtil.intern(id);
+    }
+
+    boolean isRegular() {
+      return false;
+    }
+
+    long getId() {
+      throw new UnsupportedOperationException();
     }
 
     public boolean equals(Object o) {
