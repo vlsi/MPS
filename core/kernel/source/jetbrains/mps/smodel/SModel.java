@@ -25,19 +25,15 @@ import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.refactoring.framework.RefactoringHistory;
 import jetbrains.mps.smodel.event.*;
 import jetbrains.mps.smodel.search.IsInstanceCondition;
-import jetbrains.mps.smodel.SNodeId.Regular;
 import jetbrains.mps.util.Condition;
 import jetbrains.mps.util.EqualUtil;
 import jetbrains.mps.util.WeakSet;
-import jetbrains.mps.util.misc.hash.LongHashMap;
 import jetbrains.mps.util.annotation.UseCarefully;
 import org.jdom.Element;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.*;
-
-import gnu.trove.TIntHash;
 
 /**
  * Author: Sergey Dmitriev
@@ -72,7 +68,6 @@ public class SModel implements Iterable<SNode> {
   private List<ImportElement> myAdditionalModelsVersions = new ArrayList<ImportElement>();
 
   private Map<SNodeId, SNode> myIdToNodeMap = new HashMap<SNodeId, SNode>();
-  private LongHashMap<SNode> myRegularIdToNodeMap = new LongHashMap<SNode>();
 
   private HashMap<Object, Object> myUserObjects = new HashMap<Object, Object>();
   private RefactoringHistory myRefactoringHistory = new RefactoringHistory();
@@ -99,7 +94,7 @@ public class SModel implements Iterable<SNode> {
 
   public SModelId getSModelId() {
     return getSModelReference().getSModelId();
-  }                            
+  }
 
   @NotNull
   public String getShortName() {
@@ -1037,25 +1032,13 @@ public class SModel implements Iterable<SNode> {
 
   @Nullable
   public SNode getNodeById(SNodeId nodeId) {
-    if (nodeId == null) return null;
-
-    if (nodeId.isRegular()) {
-      return myRegularIdToNodeMap.get(nodeId.getId());
-    }
-
     SNode node = myIdToNodeMap.get(nodeId);
     if (node != null) return node;
     return myIdToNodeMap.get(nodeId);
   }
 
   public Set<SNodeId> getNodeIds() {
-    Set<SNodeId> result = new HashSet<SNodeId>();
-    result.addAll(myIdToNodeMap.keySet());
-    for (Long l : myRegularIdToNodeMap.keySet()) {
-      result.add(new Regular(l));
-    }
-
-    return result;
+    return new HashSet<SNodeId>(myIdToNodeMap.keySet());
   }
 
   void putNodeId(@NotNull SNodeId id, @NotNull SNode node) {
@@ -1063,33 +1046,22 @@ public class SModel implements Iterable<SNode> {
       LOG.error("Registration in model " + getSModelReference() + " is temporarely forbidden");
     }
 
-    SNode existingNode = id.isRegular() ? myRegularIdToNodeMap.get(id.getId()) : myIdToNodeMap.get(id);
+    SNode existingNode = myIdToNodeMap.get(id);
     if (existingNode != null && existingNode != node) {
       SNode.resetIdCounter();
       throw new RuntimeException("couldn't set id=" + id + " to node: " + node.getDebugText() + "\nnode with this id exists: " + existingNode.getDebugText());
     }
-
-    if (id.isRegular()) {
-      myRegularIdToNodeMap.put(id.getId(), node);
-    } else {
-      myIdToNodeMap.put(id, node);
-    }
+    myIdToNodeMap.put(id, node);
   }
 
   void removeNodeId(@NotNull SNodeId id) {
-    if (id.isRegular()) {
-      myRegularIdToNodeMap.remove(id.getId());
-    } else {
-      myIdToNodeMap.remove(id);
-    }
+    myIdToNodeMap.remove(id);
   }
 
   @NotNull
   public Collection<SNode> getAllNodesWithIds() {
-    Set<SNode> nodesWithIds = new HashSet<SNode>();
-    nodesWithIds.addAll(myIdToNodeMap.values());
-    nodesWithIds.addAll(myRegularIdToNodeMap.values());
-    return nodesWithIds;
+    Collection<SNode> nodes = myIdToNodeMap.values();
+    return Collections.unmodifiableCollection(nodes);
   }
 
   public boolean isNotEditable() {
@@ -1112,11 +1084,10 @@ public class SModel implements Iterable<SNode> {
       myListeners.clear();
       myWeakListeners.clear();
     }
-    for (SNode sn: getAllNodesWithIds()) {
+    for (SNode sn: myIdToNodeMap.values()) {
       sn.dispose();
     }
     myIdToNodeMap.clear();
-    myRegularIdToNodeMap.clear();
     myRoots.clear();
   }
 
@@ -1169,6 +1140,15 @@ public class SModel implements Iterable<SNode> {
       }
     }
     importedModels.clear();
+  }
+
+  public SNode getNodeByCondition(Condition<SNode> c) {
+    for (SNode node : myIdToNodeMap.values()) {
+      if (c.met(node)) {
+        return node;
+      }
+    }
+    return null;
   }
 
   public void clearAdapters() {
