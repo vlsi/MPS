@@ -1799,5 +1799,45 @@
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1241440507173" />
     </node>
   </node>
+  <node type="jetbrains.mps.lang.behavior.structure.ConceptBehavior" id="5274998544330616020">
+    <property name="package" value="systemSpecific.windows" />
+    <link role="concept" targetNodeId="1.1231848405646" resolveInfo="DigitalSignatureWindowsConfiguration" />
+    <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="5274998544330616023">
+      <property name="name" value="isJar" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="5274998544330616024" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.BooleanType" id="5274998544330616028" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="5274998544330616026">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="5274998544330616029">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="5274998544330616050">
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="5274998544330616045">
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="5274998544330616037">
+                <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="5274998544330616032">
+                  <node role="operand" type="jetbrains.mps.lang.behavior.structure.ThisNodeExpression" id="5274998544330616031" />
+                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="5274998544330616036">
+                    <link role="link" targetNodeId="1.1231859196186" />
+                  </node>
+                </node>
+                <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="5274998544330616041">
+                  <link role="baseMethodDeclaration" targetNodeId="3v.1233322718999" resolveInfo="getFile" />
+                </node>
+              </node>
+              <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="5274998544330616049">
+                <link role="baseMethodDeclaration" targetNodeId="4.~File.getPath():java.lang.String" resolveInfo="getPath" />
+              </node>
+            </node>
+            <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="5274998544330616054">
+              <link role="baseMethodDeclaration" targetNodeId="5.~String.endsWith(java.lang.String):boolean" resolveInfo="endsWith" />
+              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="5274998544330616055">
+                <property name="value" value=".jar" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="constructor" type="jetbrains.mps.lang.behavior.structure.ConceptConstructorDeclaration" id="5274998544330616021">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="5274998544330616022" />
+    </node>
+  </node>
 </model>
 
