@@ -11626,7 +11626,7 @@
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="3062002558005860148">
             <node role="operand" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="3062002558005860146">
               <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="3062002558005860147">
-                <link role="baseMethodDeclaration" targetNodeId="5896642449626171767" resolveInfo="GeneratedTabbedTool" />
+                <link role="baseMethodDeclaration" targetNodeId="3062002558005753492" resolveInfo="GeneratedTabbedTool" />
               </node>
             </node>
             <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="3062002558005860152">
@@ -11668,7 +11668,7 @@
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="5457007217766506921">
             <node role="operand" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="5457007217766506919">
               <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="5457007217766506920">
-                <link role="baseMethodDeclaration" targetNodeId="5896642449626171767" resolveInfo="GeneratedTabbedTool" />
+                <link role="baseMethodDeclaration" targetNodeId="3062002558005753492" resolveInfo="GeneratedTabbedTool" />
               </node>
             </node>
             <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="5457007217766506925">
