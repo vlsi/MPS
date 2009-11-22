@@ -472,7 +472,7 @@ public abstract class AbstractModule implements IModule {
           SModelRoot root = new SModelRoot(this, modelRoot);
           mySModelRoots.add(root);
           IModelRootManager manager = root.getManager();
-          manager.getModelDescriptors(root, this);
+          manager.updateModelsWhenLoaded(root, this);
         } catch (Exception e) {
           LOG.error("Error loading models from root: prefix: \"" + modelRoot.getPrefix() + "\" path: \"" + modelRoot.getPath() + "\". Requested by: " + this, e);
         }
@@ -660,14 +660,14 @@ public abstract class AbstractModule implements IModule {
     ModelRoot mr = new ModelRoot();
     mr.setPrefix("");
 
-    myManager.getModelDescriptors(new SModelRoot(this, mr), this);
+    myManager.updateModelsWhenLoaded(new SModelRoot(this, mr), this);
   }
 
   private void loadJavaStubModelRoots() {
     for (SModelRoot mr : getSModelRoots()) {
       IModelRootManager m = mr.getManager();
       if (m instanceof ClassPathModelRootManager) {
-        m.getModelDescriptors(mr, this);
+        m.updateModelsWhenLoaded(mr, this);
       }
     }
   }

@@ -29,10 +29,8 @@ import java.util.Set;
 class NullModelRootManager extends AbstractModelRootManager {
   public static final Logger LOG = Logger.getLogger(NullModelRootManager.class);
 
-  @NotNull
-  public Set<SModelDescriptor> getModelDescriptors(@NotNull SModelRoot root, @NotNull IModule owner) {
+  public void updateModelsWhenLoaded(@NotNull SModelRoot root, @NotNull IModule owner) {
     LOG.error("Can't read from Null Model Root Manager");
-    return new HashSet<SModelDescriptor>();
   }
 
   @NotNull

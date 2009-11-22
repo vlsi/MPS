@@ -45,11 +45,8 @@ import java.util.*;
 public class DefaultModelRootManager extends AbstractModelRootManager {
   private static final Logger LOG = Logger.getLogger(DefaultModelRootManager.class);
 
-  @NotNull
-  public Set<SModelDescriptor> getModelDescriptors(@NotNull SModelRoot root, @NotNull IModule owner) {
-    Set<SModelDescriptor> result = new HashSet<SModelDescriptor>();
-    readModelDescriptors(result, FileSystem.getFile(root.getPath()), root, owner);
-    return result;
+  public void updateModelsWhenLoaded(@NotNull SModelRoot root, @NotNull IModule owner) {
+    readModelDescriptors(FileSystem.getFile(root.getPath()), root, owner);
   }
 
   @NotNull
@@ -188,7 +185,7 @@ public class DefaultModelRootManager extends AbstractModelRootManager {
     }
   }
 
-  private void readModelDescriptors(Set<SModelDescriptor> modelDescriptors, IFile dir, SModelRoot modelRoot, ModelOwner owner) {
+  private void readModelDescriptors(IFile dir, SModelRoot modelRoot, ModelOwner owner) {
     if (dir.getName().endsWith(".svn")) return;
     if (!dir.isDirectory()) return;
 
@@ -211,11 +208,10 @@ public class DefaultModelRootManager extends AbstractModelRootManager {
         modelDescriptor = getInstance(this, file.getAbsolutePath(), modelReference, owner, false);
         LOG.debug("I've read model descriptor " + modelDescriptor.getSModelReference() + "\n" + "Model root is " + modelRoot.getPath() + " " + modelRoot.getPrefix());
       }
-      modelDescriptors.add(modelDescriptor);
     }
     for (IFile childDir : files) {
       if (childDir.isDirectory()) {
-        readModelDescriptors(modelDescriptors, childDir, modelRoot, owner);
+        readModelDescriptors(childDir, modelRoot, owner);
       }
     }
   }

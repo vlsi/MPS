@@ -30,13 +30,10 @@ import java.util.Set;
 public interface IModelRootManager {
   public static final IModelRootManager NULL_MANAGER = new NullModelRootManager();
 
-  @NotNull
-  Set<SModelDescriptor> getModelDescriptors(@NotNull SModelRoot root, @NotNull IModule owner);
+  void updateModelsWhenLoaded(@NotNull SModelRoot root, @NotNull IModule owner);
 
   @NotNull
   SModel loadModel(@NotNull SModelDescriptor modelDescriptor);
-
-  void updateAfterLoad(@NotNull SModelDescriptor modelDescriptor);
 
   void saveModel(@NotNull SModelDescriptor modelDescriptor);
 
