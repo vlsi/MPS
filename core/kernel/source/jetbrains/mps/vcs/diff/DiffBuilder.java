@@ -191,8 +191,7 @@ public class DiffBuilder {
           SNodeId parentId = sNode.getParent().getSNodeId();
           SNode oldParent = myOldModel.getNodeById(parentId);
           SNodeId oldChildId = null;
-          if (oldParent != null) {
-            oldParent.getChild(role);
+          if (oldParent != null) {            
             if (oldParent.getChild(role) != null) {
               oldChildId = oldParent.getChild(role).getSNodeId();
             }

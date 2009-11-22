@@ -134,7 +134,7 @@ public class RootDifferenceDialog extends BaseDialog implements EditorMessageOwn
     final DiffEditorComponent result = new DiffEditorComponent(context, node) {
       @Override
       public void configureBlock(ChangesBlock block) {
-        block.addMenu(new RevertMenu(block.getChanges()));
+        block.addMenu(new RevertMenu(block.getChanges(), getChanges()));
       }
     };
     result.editNode(node, context);
@@ -183,30 +183,36 @@ public class RootDifferenceDialog extends BaseDialog implements EditorMessageOwn
     dispose();
   }
 
-  private void applyMeassage(List<ChangeEditorMessage> notAppliedChanges, ChangeEditorMessage m) {
-    if (!notAppliedChanges.contains(m)) {
+  private void applyChange(List<Change> notAppliedChanges, Change changeToApply) {
+    if (!notAppliedChanges.contains(changeToApply)) {
       return;
     }
-    for (SNodeId usedNodeId : m.getChange().getDependences()) {
-      for (ChangeEditorMessage message : notAppliedChanges) {
-        Change change = message.getChange();
+    notAppliedChanges.remove(changeToApply);
+    for (SNodeId usedNodeId : changeToApply.getDependences()) {
+      for (Change change : notAppliedChanges) {
         if (change instanceof NewNodeChange || change instanceof DeleteNodeChange || change instanceof MoveNodeChange) {
           if (change.getAffectedNodeId().equals(usedNodeId)) {
-            applyMeassage(notAppliedChanges, message);
+            applyChange(notAppliedChanges, change);
             break;
           }
         }
       }
     }
-    m.getChange().apply(myNewModel);
-    notAppliedChanges.remove(m);
+    for (Change change : new ArrayList<Change>(notAppliedChanges)) {
+      if (change.getDependences().contains(change.getAffectedNodeId())) {
+        applyChange(notAppliedChanges, change);        
+      }
+    }
+    changeToApply.apply(myNewModel);
   }
 
   class RevertMenu extends JLabel {
-    private List<ChangeEditorMessage> myChanges;
+    private List<ChangeEditorMessage> myChangeMessages;
+    private List<Change> myChanges;
 
-    public RevertMenu(List<ChangeEditorMessage> changes) {
+    public RevertMenu(List<ChangeEditorMessage> changeMessages, List<Change> changes) {
       super(Icons.REVERT);
+      myChangeMessages = changeMessages;
       myChanges = changes;
 
       setBorder(new EmptyBorder(0, 2, 1, 2));
@@ -236,11 +242,11 @@ public class RootDifferenceDialog extends BaseDialog implements EditorMessageOwn
       ModelAccess.instance().runWriteActionInCommand(new Runnable() {
 
         public void run() {
-          List<ChangeEditorMessage> notAppliedChanges = new ArrayList<ChangeEditorMessage>();
+          List<Change> notAppliedChanges = new ArrayList<Change>();
           notAppliedChanges.addAll(myChanges);
 
-          for (ChangeEditorMessage m : myChanges) {
-            applyMeassage(notAppliedChanges, m);
+          for (ChangeEditorMessage m : myChangeMessages) {
+            applyChange(notAppliedChanges, m.getChange());
           }
         }
       });

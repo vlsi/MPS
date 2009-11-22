@@ -32,7 +32,8 @@ public abstract class DiffEditorComponent extends EditorComponent {
   private EditorMessageOwner myOwner = new EditorMessageOwner() {
 
   };
-  private ArrayList<ChangeEditorMessage> myChanges = new ArrayList<ChangeEditorMessage>();
+  private List<Change> myChanges = new ArrayList<Change>();
+  private ArrayList<ChangeEditorMessage> myChangeEditorMessages = new ArrayList<ChangeEditorMessage>();
   private InspectorEditorComponent myInspector;
   private static final Color ERROR_COLOR = new Color(255, 220, 220);
 
@@ -49,7 +50,7 @@ public abstract class DiffEditorComponent extends EditorComponent {
     myInspector.getHighlightManager().removeAllChanges(this);
     myInspector.getHighlightManager().rebuildMessages();
     if (myInspector.getHighlightManager().getMessageFor(node) == null) {
-      makeChangeBlocks(myInspector, new ArrayList(myChanges));
+      makeChangeBlocks(myInspector, new ArrayList(myChangeEditorMessages));
     }
   }
 
@@ -70,8 +71,9 @@ public abstract class DiffEditorComponent extends EditorComponent {
     return getEditorContext().createRootCell(getEditedNode(), events);
   }
 
-  public void hightlight(final List<Change> changes, final boolean isNew, final boolean revertedChanges) {
+  public void hightlight(final List<Change> changes, final boolean isNewVersion, final boolean revertedChanges) {
     final List<ChangeEditorMessage> resultChanges = new ArrayList<ChangeEditorMessage>();
+    myChanges = new ArrayList<Change>(changes);
     SNode sNode = getRootCell().getSNode();
     if (sNode == null) {
       return;
@@ -102,7 +104,7 @@ public abstract class DiffEditorComponent extends EditorComponent {
           }
 
           if (change instanceof NewNodeChange) {
-            if (!isNew) {
+            if (!isNewVersion) {
               ChangeEditorMessage message = createEditorMessage(change, model, revertedChanges, !newChanges.contains(change));
               resultChanges.add(message);
               getHighlightManager().mark(message);
@@ -118,7 +120,7 @@ public abstract class DiffEditorComponent extends EditorComponent {
           }
 
           if (change instanceof DeleteNodeChange) {
-            if (isNew) {
+            if (isNewVersion) {
               ChangeEditorMessage message = createEditorMessage(change, model, revertedChanges, !newChanges.contains(change));
               resultChanges.add(message);
               getHighlightManager().mark(message);
@@ -131,7 +133,7 @@ public abstract class DiffEditorComponent extends EditorComponent {
     for (ChangeEditorMessage editorMessage : resultChanges) {
       getInspector().getHighlightManager().mark(editorMessage);
     }
-    myChanges = new ArrayList<ChangeEditorMessage>(resultChanges);
+    myChangeEditorMessages = new ArrayList<ChangeEditorMessage>(resultChanges);
   }
 
   private Set<Change> getNewChanges(List<Change> changes) {
@@ -175,9 +177,9 @@ public abstract class DiffEditorComponent extends EditorComponent {
   }
 
   public void makeChangeBlocks() {
-    makeChangeBlocks(this, new ArrayList(myChanges));
+    makeChangeBlocks(this, new ArrayList(myChangeEditorMessages));
     if (myInspector.getHighlightManager().getMessageFor(myInspector.getEditedNode()) == null) {
-      makeChangeBlocks(myInspector, new ArrayList(myChanges));
+      makeChangeBlocks(myInspector, new ArrayList(myChangeEditorMessages));
     }
   }
 
@@ -222,7 +224,7 @@ public abstract class DiffEditorComponent extends EditorComponent {
   public abstract void configureBlock(ChangesBlock block);
 
   public void removeAllChanges() {
-    for (ChangeEditorMessage message : myChanges) {
+    for (ChangeEditorMessage message : myChangeEditorMessages) {
       getHighlightManager().removeMessage(message);
       myInspector.getHighlightManager().removeMessage(message);
     }
@@ -283,5 +285,9 @@ public abstract class DiffEditorComponent extends EditorComponent {
 
       }
     });
+  }
+
+  public List<Change> getChanges() {
+    return myChanges;
   }
 }

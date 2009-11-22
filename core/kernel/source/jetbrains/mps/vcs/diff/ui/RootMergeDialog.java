@@ -41,9 +41,6 @@ import java.util.List;
 import java.util.ArrayList;
 import java.util.Set;
 
-import com.intellij.ui.ListUtil;
-import org.apache.commons.collections.ListUtils;
-
 public class RootMergeDialog extends BaseDialog implements EditorMessageOwner {
   private JPanel myTopComponent;
   private JPanel myBottomComponent;
@@ -270,7 +267,7 @@ public class RootMergeDialog extends BaseDialog implements EditorMessageOwner {
 
       addMouseListener(new MouseAdapter() {
         public void mousePressed(MouseEvent e) {
-          revert();
+          apply();
         }
       });
     }
@@ -283,7 +280,7 @@ public class RootMergeDialog extends BaseDialog implements EditorMessageOwner {
       return getIcon().getIconHeight();
     }
 
-    protected void revert() {
+    protected void apply() {
       ModelAccess.instance().runWriteActionInCommand(new Runnable() {
 
         public void run() {
