@@ -11484,7 +11484,7 @@
             <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="3062002558005753451">
               <node role="operand" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="3062002558005753452">
                 <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="3062002558005753453">
-                  <link role="baseMethodDeclaration" targetNodeId="5896642449626171767" resolveInfo="GeneratedTabbedTool" />
+                  <link role="baseMethodDeclaration" targetNodeId="3062002558005753492" resolveInfo="GeneratedTabbedTool" />
                 </node>
               </node>
               <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="3062002558005753454">
@@ -11618,16 +11618,23 @@
     <property name="package" value="Tool.Operations" />
     <link role="applicableConcept" targetNodeId="1.5818192529492099570" resolveInfo="CloseTabOperation" />
     <node role="contentNode" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="3062002558005851375">
-      <property name="name" value="foo" />
+      <property name="name" value="someMethod" />
       <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="3062002558005851376" />
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="3062002558005851377" />
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="3062002558005851378">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="369043346076687856">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="369043346076687857">
+            <property name="name" value="tool" />
+            <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="369043346076687858">
+              <link role="classifier" targetNodeId="22.~GeneratedTabbedTool" resolveInfo="GeneratedTabbedTool" />
+            </node>
+            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="369043346076687860" />
+          </node>
+        </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="3062002558005860145">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="3062002558005860148">
-            <node role="operand" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="3062002558005860146">
-              <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="3062002558005860147">
-                <link role="baseMethodDeclaration" targetNodeId="3062002558005753492" resolveInfo="GeneratedTabbedTool" />
-              </node>
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="369043346076687862">
+              <link role="variableDeclaration" targetNodeId="369043346076687857" resolveInfo="genTabbedTool" />
             </node>
             <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="3062002558005860152">
               <link role="baseMethodDeclaration" targetNodeId="22.~GeneratedTabbedTool.closeTab(javax.swing.JComponent):void" resolveInfo="closeTab" />
@@ -11660,16 +11667,23 @@
     <property name="name" value="reduce_GetSelectedTabOperation" />
     <link role="applicableConcept" targetNodeId="1.1862809785209122566" resolveInfo="GetSelectedTabOperation" />
     <node role="contentNode" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="5457007217766492728">
-      <property name="name" value="foo" />
+      <property name="name" value="someMethod" />
       <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="5457007217766492729" />
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="5457007217766492730" />
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="5457007217766492731">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="369043346076687864">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="369043346076687865">
+            <property name="name" value="tool" />
+            <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="369043346076687870">
+              <link role="classifier" targetNodeId="22.~GeneratedTabbedTool" resolveInfo="GeneratedTabbedTool" />
+            </node>
+            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="369043346076687867" />
+          </node>
+        </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="5457007217766506918">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="5457007217766506921">
-            <node role="operand" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="5457007217766506919">
-              <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="5457007217766506920">
-                <link role="baseMethodDeclaration" targetNodeId="3062002558005753492" resolveInfo="GeneratedTabbedTool" />
-              </node>
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="369043346076687869">
+              <link role="variableDeclaration" targetNodeId="369043346076687865" resolveInfo="tool" />
             </node>
             <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="5457007217766506925">
               <link role="baseMethodDeclaration" targetNodeId="22.~GeneratedTabbedTool.getSelectedTab():javax.swing.JComponent" resolveInfo="getSelectedTab" />
