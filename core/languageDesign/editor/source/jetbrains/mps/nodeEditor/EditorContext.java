@@ -293,12 +293,12 @@ public class EditorContext {
   }
 
   public EditorCell createRoleAttributeCell(Class attributeClass, EditorCell cellWithRole, SNode roleAttribute) {
-    /*    
     if (myCurrentRefNodeContext != null) {
       if (attributeClass != jetbrains.mps.lang.annotations.structure.LinkAttributeConcept.class && myCurrentRefNodeContext.hasRoles())
+        //Do not show attributes on reference cells.
         return cellWithRole;
     }
-    */
+    
     return myOperationContext.getComponent(EditorManager.class).doCreateRoleAttributeCell(attributeClass, cellWithRole, this, roleAttribute);
   }
 
