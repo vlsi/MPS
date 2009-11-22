@@ -644,6 +644,10 @@ public class QueriesGenerated {
     return _context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "map_KeymapConstructor");
   }
 
+  public static Object referenceMacro_GetReferent_5124230653299831359(final IOperationContext operationContext, final ReferenceMacroContext _context) {
+    return SLinkOperations.getTarget(_context.getNode(), "declaration", false);
+  }
+
   public static Object referenceMacro_GetReferent_6620706402222853282(final IOperationContext operationContext, final ReferenceMacroContext _context) {
     return _context.getOutputNodeByInputNodeAndMappingLabel(SLinkOperations.getTarget(_context.getNode(), "member", false), "map_ClassifierMethod");
   }
@@ -1438,6 +1442,10 @@ public class QueriesGenerated {
 
   public static Iterable sourceNodesQuery_5003188907305740112(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     return SLinkOperations.getTargets(SLinkOperations.getTarget(_context.getNode(), "body", true), "statement", true);
+  }
+
+  public static Iterable sourceNodesQuery_5124230653299831350(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
+    return SLinkOperations.getTargets(_context.getNode(), "conceptsToDebug", true);
   }
 
   public static Iterable sourceNodesQuery_5457007217767579160(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {

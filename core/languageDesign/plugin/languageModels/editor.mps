@@ -5280,6 +5280,54 @@
       <node role="cellLayout" type="jetbrains.mps.lang.editor.structure.CellLayout_Indent" id="1862809785209128878" />
     </node>
   </node>
+  <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" id="5124230653299542675">
+    <property name="package" value="Custom.ApplicationPlugin" />
+    <link role="conceptDeclaration" targetNodeId="1.5124230653299542673" resolveInfo="ConceptReference" />
+    <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefCell" id="5124230653299542800">
+      <link role="relationDeclaration" targetNodeId="1.5124230653299542674" />
+      <node role="editorComponent" type="jetbrains.mps.lang.editor.structure.InlineEditorComponent" id="5124230653299542801">
+        <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Property" id="5124230653299542803">
+          <property name="readOnly" value="true" />
+          <link role="relationDeclaration" targetNodeId="14.1169194664001" resolveInfo="name" />
+        </node>
+      </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" id="5124230653299630702">
+    <property name="package" value="Custom.ApplicationPlugin" />
+    <link role="conceptDeclaration" targetNodeId="1.5124230653299345208" resolveInfo="DebugInfoInitializer" />
+    <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="5124230653299630704">
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="5124230653299630707">
+        <property name="text" value="Debug info initializer" />
+        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.IndentLayoutNewLineStyleClassItem" id="5124230653299630708">
+          <property name="flag" value="true" />
+        </node>
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="5124230653299630723">
+        <property name="text" value="concepts to debug:" />
+        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.IndentLayoutNewLineStyleClassItem" id="5124230653299630724">
+          <property name="flag" value="true" />
+        </node>
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="5124230653299630710">
+        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem" id="5124230653299630711">
+          <property name="flag" value="false" />
+        </node>
+        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.IndentLayoutIndentStyleClassItem" id="5124230653299630715">
+          <property name="flag" value="true" />
+        </node>
+        <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNodeList" id="5124230653299630716">
+          <link role="relationDeclaration" targetNodeId="1.5124230653299370499" />
+          <node role="cellLayout" type="jetbrains.mps.lang.editor.structure.CellLayout_Indent" id="5124230653299630717" />
+          <node role="styleItem" type="jetbrains.mps.lang.editor.structure.IndentLayoutNewLineChildrenStyleClassItem" id="5124230653299630725">
+            <property name="flag" value="true" />
+          </node>
+        </node>
+        <node role="cellLayout" type="jetbrains.mps.lang.editor.structure.CellLayout_Indent" id="5124230653299630713" />
+      </node>
+      <node role="cellLayout" type="jetbrains.mps.lang.editor.structure.CellLayout_Indent" id="5124230653299630706" />
+    </node>
+  </node>
   <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" id="485694842828666099">
     <property name="package" value="Tool.Operations" />
     <link role="conceptDeclaration" targetNodeId="1.485694842828664424" resolveInfo="SmartDisposeClosureParameterDeclaration" />

@@ -3640,6 +3640,29 @@
       <link role="conceptPropertyDeclaration" targetNodeId="6.1137473854053" resolveInfo="abstract" />
     </node>
   </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="5124230653299542673">
+    <property name="package" value="Custom.ApplicationPlugin" />
+    <property name="name" value="ConceptReference" />
+    <link role="extends" targetNodeId="6.1133920641626" resolveInfo="BaseConcept" />
+    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="5124230653299542674">
+      <property name="metaClass" value="reference" />
+      <property name="role" value="declaration" />
+      <property name="sourceCardinality" value="1" />
+      <link role="target" targetNodeId="8.1071489090640" resolveInfo="ConceptDeclaration" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="5124230653299345208">
+    <property name="name" value="DebugInfoInitializer" />
+    <property name="package" value="Custom.ApplicationPlugin" />
+    <property name="rootable" value="true" />
+    <link role="extends" targetNodeId="6.1133920641626" resolveInfo="BaseConcept" />
+    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="5124230653299370499">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="conceptsToDebug" />
+      <property name="sourceCardinality" value="0..n" />
+      <link role="target" targetNodeId="5124230653299542673" resolveInfo="ConceptReference" />
+    </node>
+  </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="485694842828664424">
     <property name="package" value="Tool.Operations" />
     <property name="name" value="SmartDisposeClosureParameterDeclaration" />
