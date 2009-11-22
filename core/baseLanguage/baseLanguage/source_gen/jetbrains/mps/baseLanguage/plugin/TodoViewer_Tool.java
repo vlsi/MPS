@@ -16,15 +16,17 @@ public class TodoViewer_Tool extends GeneratedTool {
     super(project, "TODO", 2, IconManager.loadIcon(MacrosUtil.expandPath("${language_descriptor}\\source\\jetbrains\\mps\\baseLanguage\\plugin\\todo.png", "jetbrains.mps.baseLanguage"), true), ToolWindowAnchor.BOTTOM, false);
   }
 
-  public JComponent getComponent() {
-    return TodoViewer_Tool.this.myComponent;
-  }
-
   public void init(Project project) {
+    super.init(project);
     TodoViewer_Tool.this.myComponent = new TodoViewer(TodoViewer_Tool.this.getMPSProject());
   }
 
   public void dispose() {
     TodoViewer_Tool.this.myComponent.dispose();
+    super.dispose();
+  }
+
+  public JComponent getComponent() {
+    return TodoViewer_Tool.this.myComponent;
   }
 }

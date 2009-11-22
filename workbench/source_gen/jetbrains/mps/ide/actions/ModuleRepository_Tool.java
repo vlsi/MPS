@@ -9,10 +9,10 @@ import com.intellij.openapi.project.Project;
 import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.plugins.MacrosUtil;
 import com.intellij.openapi.wm.ToolWindowAnchor;
-import javax.swing.JComponent;
 import java.awt.BorderLayout;
 import com.intellij.openapi.actionSystem.DefaultActionGroup;
 import jetbrains.mps.workbench.tools.CloseAction;
+import javax.swing.JComponent;
 import com.intellij.openapi.actionSystem.ActionManager;
 import com.intellij.openapi.actionSystem.ActionPlaces;
 
@@ -24,8 +24,18 @@ public class ModuleRepository_Tool extends GeneratedTool {
     super(project, "Module Repository Viewer", -1, IconManager.loadIcon(MacrosUtil.expandPath("${mps_home}\\workbench\\source\\jetbrains\\mps\\ide\\projectPane\\nodes\\project.png", "jetbrains.mps.ide"), true), ToolWindowAnchor.BOTTOM, false);
   }
 
-  public JComponent getComponent() {
-    return ModuleRepository_Tool.this.myPanel;
+  public void makeAvailable() {
+    super.makeAvailable();
+    ModuleRepository_Tool.this.myComponent.install();
+  }
+
+  @Override
+  public void makeUnavailable() {
+    super.makeUnavailable();
+    ModuleRepository_Tool.this.myComponent.uninstall();
+  }
+
+  public void dispose() {
   }
 
   public void init(Project project) {
@@ -38,17 +48,7 @@ public class ModuleRepository_Tool extends GeneratedTool {
     ModuleRepository_Tool.this.myPanel.add(toolbar, BorderLayout.WEST);
   }
 
-  public void dispose() {
-  }
-
-  public void makeAvailable() {
-    super.makeAvailable();
-    ModuleRepository_Tool.this.myComponent.install();
-  }
-
-  @Override
-  public void makeUnavailable() {
-    super.makeUnavailable();
-    ModuleRepository_Tool.this.myComponent.uninstall();
+  public JComponent getComponent() {
+    return ModuleRepository_Tool.this.myPanel;
   }
 }

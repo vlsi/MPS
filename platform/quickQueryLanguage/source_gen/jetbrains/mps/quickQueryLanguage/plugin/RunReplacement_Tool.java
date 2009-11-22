@@ -10,13 +10,13 @@ import com.intellij.openapi.project.Project;
 import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.plugins.MacrosUtil;
 import com.intellij.openapi.wm.ToolWindowAnchor;
-import javax.swing.JComponent;
 import com.intellij.ui.content.ContentManager;
 import com.intellij.ui.content.Content;
 import jetbrains.mps.ide.findusages.model.SearchQuery;
 import jetbrains.mps.quickQueryLanguage.runtime.Query;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.ide.findusages.view.FindUtils;
+import javax.swing.JComponent;
 
 public class RunReplacement_Tool extends GeneratedTool {
   private List<ReplacementView> myViews = ListSequence.fromList(new ArrayList<ReplacementView>());
@@ -25,11 +25,8 @@ public class RunReplacement_Tool extends GeneratedTool {
     super(project, "Replacement", -1, IconManager.loadIcon(MacrosUtil.expandPath("${language_descriptor}\\icons\\replace.png", "jetbrains.mps.quickQueryLanguage"), true), ToolWindowAnchor.BOTTOM, false);
   }
 
-  public JComponent getComponent() {
-    return null;
-  }
-
   public void init(Project project) {
+    super.init(project);
     project.getComponent(Project.class);
   }
 
@@ -61,5 +58,9 @@ public class RunReplacement_Tool extends GeneratedTool {
         RunReplacement_Tool.this.getContentManager().setSelectedContent(content);
       }
     });
+  }
+
+  public JComponent getComponent() {
+    return null;
   }
 }

@@ -8,7 +8,6 @@ import javax.swing.JPanel;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.ide.icons.IconManager;
 import com.intellij.openapi.wm.ToolWindowAnchor;
-import javax.swing.JComponent;
 import java.awt.BorderLayout;
 import com.intellij.openapi.actionSystem.DefaultActionGroup;
 import jetbrains.mps.workbench.tools.CloseAction;
@@ -17,6 +16,7 @@ import com.intellij.openapi.actionSystem.ActionPlaces;
 import com.intellij.openapi.util.Disposer;
 import jetbrains.mps.debug.StacktraceUtil;
 import com.intellij.execution.ui.ConsoleViewContentType;
+import javax.swing.JComponent;
 
 public class AnalyzeStacktrace_Tool extends GeneratedTool {
   private String myStackTrace;
@@ -27,11 +27,8 @@ public class AnalyzeStacktrace_Tool extends GeneratedTool {
     super(project, "Analyze Stacktrace", -1, IconManager.EMPTY_ICON, ToolWindowAnchor.BOTTOM, false);
   }
 
-  public JComponent getComponent() {
-    return AnalyzeStacktrace_Tool.this.myComponent;
-  }
-
   public void init(Project project) {
+    super.init(project);
     AnalyzeStacktrace_Tool.this.myConsoleView = new ConsoleViewImpl(AnalyzeStacktrace_Tool.this.getProject(), false);
     AnalyzeStacktrace_Tool.this.myComponent = new JPanel(new BorderLayout());
     AnalyzeStacktrace_Tool.this.myComponent.add(AnalyzeStacktrace_Tool.this.myConsoleView.getComponent());
@@ -42,11 +39,16 @@ public class AnalyzeStacktrace_Tool extends GeneratedTool {
 
   public void dispose() {
     Disposer.dispose(AnalyzeStacktrace_Tool.this.myConsoleView);
+    super.dispose();
   }
 
   public void setStackTrace(String str) {
     AnalyzeStacktrace_Tool.this.myStackTrace = str;
     AnalyzeStacktrace_Tool.this.myConsoleView.clear();
     StacktraceUtil.appendStacktraceToConsole(AnalyzeStacktrace_Tool.this.myConsoleView, str, ConsoleViewContentType.ERROR_OUTPUT);
+  }
+
+  public JComponent getComponent() {
+    return AnalyzeStacktrace_Tool.this.myComponent;
   }
 }

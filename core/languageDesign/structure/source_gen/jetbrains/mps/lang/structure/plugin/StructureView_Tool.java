@@ -15,15 +15,16 @@ public class StructureView_Tool extends GeneratedTool {
     super(project, "Concept Structure", -1, IconManager.EMPTY_ICON, ToolWindowAnchor.BOTTOM, false);
   }
 
-  public JComponent getComponent() {
-    return StructureView_Tool.this.myComponent.getComponent();
-  }
-
   public void init(Project project) {
+    super.init(project);
     StructureView_Tool.this.myComponent = new StructureViewComponent();
   }
 
   public StructureViewComponent getStructureView() {
     return StructureView_Tool.this.myComponent;
+  }
+
+  public JComponent getComponent() {
+    return StructureView_Tool.this.myComponent.getComponent();
   }
 }

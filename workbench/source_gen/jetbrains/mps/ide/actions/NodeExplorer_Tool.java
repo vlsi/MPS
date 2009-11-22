@@ -9,11 +9,11 @@ import com.intellij.openapi.project.Project;
 import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.plugins.MacrosUtil;
 import com.intellij.openapi.wm.ToolWindowAnchor;
-import javax.swing.JComponent;
 import java.awt.BorderLayout;
 import com.intellij.openapi.actionSystem.DefaultActionGroup;
 import jetbrains.mps.workbench.tools.CloseAction;
 import com.intellij.openapi.actionSystem.AnActionEvent;
+import javax.swing.JComponent;
 import com.intellij.openapi.actionSystem.ActionManager;
 import com.intellij.openapi.actionSystem.ActionPlaces;
 
@@ -25,8 +25,8 @@ public class NodeExplorer_Tool extends GeneratedTool {
     super(project, "Node Explorer", -1, IconManager.loadIcon(MacrosUtil.expandPath("${mps_home}\\workbench\\source\\jetbrains\\mps\\ide\\projectPane\\nodes\\default.png", "jetbrains.mps.ide"), true), ToolWindowAnchor.BOTTOM, false);
   }
 
-  public JComponent getComponent() {
-    return NodeExplorer_Tool.this.myPanel;
+  public NodeExplorerComponent getNodeExplorer() {
+    return NodeExplorer_Tool.this.myNodeExplorer;
   }
 
   public void init(Project project) {
@@ -44,7 +44,7 @@ public class NodeExplorer_Tool extends GeneratedTool {
     NodeExplorer_Tool.this.myPanel.add(toolbar, BorderLayout.WEST);
   }
 
-  public NodeExplorerComponent getNodeExplorer() {
-    return NodeExplorer_Tool.this.myNodeExplorer;
+  public JComponent getComponent() {
+    return NodeExplorer_Tool.this.myPanel;
   }
 }
