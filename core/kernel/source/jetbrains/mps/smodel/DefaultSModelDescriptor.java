@@ -101,7 +101,7 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor {
 
       addListenersFromSModel();
 
-      SModel oldModel = mySModel;
+      final SModel oldModel = mySModel;
       mySModel = loadModel();
 
       if (myFastNodeFinder != null) {
@@ -113,11 +113,18 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor {
 
       doPostLoadStuff();
 
-      oldModel.dispose();
       SModelRepository.getInstance().markChanged(this, false);
       MPSModuleRepository.getInstance().invalidateCaches();
 
       mySModel.fireModelReloaded();
+
+      ModelAccess.instance().runReadInEDT(new Runnable() {
+
+        public void run() {
+          oldModel.dispose();
+        }
+      });
+
     }
   }
 
