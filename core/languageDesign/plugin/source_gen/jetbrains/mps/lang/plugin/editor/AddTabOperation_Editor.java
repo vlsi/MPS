@@ -145,7 +145,7 @@ public class AddTabOperation_Editor extends DefaultNodeEditor {
 
   private EditorCell createRefNode_0985_2(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
-    provider.setRole("disposeTabBlock");
+    provider.setRole("disposeTabClosure");
     provider.setNoTargetText("<no dispose block>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);

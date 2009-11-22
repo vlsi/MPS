@@ -27,6 +27,7 @@ import jetbrains.mps.generator.GenerationSettings;
 import jetbrains.mps.ide.findusages.model.SearchResults;
 import com.intellij.openapi.ui.Messages;
 import com.intellij.openapi.vcs.checkin.CheckinHandler;
+import jetbrains.mps.lang.plugin.structure.IComponentDisposer;
 
 public class ModelCheckerTool_Tool extends GeneratedTabbedTool {
   private MPSProject myMPSProject;
@@ -163,17 +164,11 @@ public class ModelCheckerTool_Tool extends GeneratedTabbedTool {
     };
   }
 
-  private void showTabWithResults(final ModelCheckerViewer viewer) {
-    ModelCheckerTool_Tool.this.addTab(new GeneratedTabbedTool.IDisposableTab() {
-      private ModelCheckerViewer myComponent = viewer;
-
-      public void disposeTab() {
-        this.myComponent.dispose();
+  private void showTabWithResults(ModelCheckerViewer viewer) {
+    ModelCheckerTool_Tool.this.addTab(viewer, null, null, new IComponentDisposer<ModelCheckerViewer>() {
+      public void disposeComponent(ModelCheckerViewer component) {
+        component.dispose();
       }
-
-      public JComponent getComponent() {
-        return this.myComponent;
-      }
-    }, viewer.getTabTitle(), viewer.getTabIcon());
+    });
   }
 }

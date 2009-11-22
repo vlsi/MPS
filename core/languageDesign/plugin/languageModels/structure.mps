@@ -3583,9 +3583,9 @@
     </node>
     <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="7566788359602201162">
       <property name="metaClass" value="aggregation" />
-      <property name="role" value="disposeTabBlock" />
+      <property name="role" value="disposeTabClosure" />
       <property name="sourceCardinality" value="0..1" />
-      <link role="target" targetNodeId="7566788359602201181" resolveInfo="DisposeTabBlock" />
+      <link role="target" targetNodeId="2.1068431790191" resolveInfo="Expression" />
     </node>
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="5896642449625987002">
       <property name="value" value="addTab" />
@@ -3593,27 +3593,6 @@
     </node>
     <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="7566788359602201161">
       <link role="intfc" targetNodeId="2.1197027803184" resolveInfo="IOperation" />
-    </node>
-  </node>
-  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="7566788359602201181">
-    <property name="package" value="Tool.Operations" />
-    <property name="name" value="DisposeTabBlock" />
-    <link role="extends" targetNodeId="6.1133920641626" resolveInfo="BaseConcept" />
-    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="7566788359602201182">
-      <property name="metaClass" value="aggregation" />
-      <property name="role" value="body" />
-      <property name="sourceCardinality" value="1" />
-      <link role="target" targetNodeId="2.1068580123136" resolveInfo="StatementList" />
-    </node>
-  </node>
-  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="7566788359603253716">
-    <property name="package" value="Tool.Operations" />
-    <property name="name" value="DisposeTabComponentReference" />
-    <property name="iconPath" value="${mps_home}/core/baseLanguage/baseLanguage/icons/parameter.png" />
-    <link role="extends" targetNodeId="2.1068431790191" resolveInfo="Expression" />
-    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="7566788359603255008">
-      <property name="value" value="component" />
-      <link role="conceptPropertyDeclaration" targetNodeId="6.1137473891462" resolveInfo="alias" />
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="5818192529492099570">
@@ -3659,6 +3638,43 @@
     </node>
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.BooleanConceptProperty" id="8096638938275444189">
       <link role="conceptPropertyDeclaration" targetNodeId="6.1137473854053" resolveInfo="abstract" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="485694842828664424">
+    <property name="package" value="Tool.Operations" />
+    <property name="name" value="SmartDisposeClosureParameterDeclaration" />
+    <link role="extends" targetNodeId="28.1203252195462" resolveInfo="UnboundClosureParameterDeclaration" />
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="485694842828666085">
+      <property name="value" value="~ &lt;name&gt;" />
+      <link role="conceptPropertyDeclaration" targetNodeId="6.1137473891462" resolveInfo="alias" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="485694842828666086">
+      <property name="value" value="smart closure parameter" />
+      <link role="conceptPropertyDeclaration" targetNodeId="6.1137473914776" resolveInfo="shortDescription" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.baseLanguage.structure.Interface" id="485694842829280671">
+    <property name="package" value="Tool" />
+    <property name="name" value="IComponentDisposer" />
+    <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="485694842829280677">
+      <property name="isAbstract" value="true" />
+      <property name="name" value="disposeComponent" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="485694842829280678" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="485694842829280679" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="485694842829280680" />
+      <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="485694842829280681">
+        <property name="name" value="component" />
+        <node role="type" type="jetbrains.mps.baseLanguage.structure.TypeVariableReference" id="485694842829280682">
+          <link role="typeVariableDeclaration" targetNodeId="485694842829280674" resolveInfo="T" />
+        </node>
+      </node>
+    </node>
+    <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="485694842829280672" />
+    <node role="typeVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.TypeVariableDeclaration" id="485694842829280674">
+      <property name="name" value="T" />
+      <node role="bound" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="485694842829280676">
+        <link role="classifier" targetNodeId="24.~JComponent" resolveInfo="JComponent" />
+      </node>
     </node>
   </node>
 </model>

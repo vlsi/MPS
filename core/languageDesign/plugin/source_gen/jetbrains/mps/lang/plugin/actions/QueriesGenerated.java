@@ -5,22 +5,23 @@ package jetbrains.mps.lang.plugin.actions;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.action.NodeSubstitutePreconditionContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.action.NodeSetupContext;
+import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import java.util.List;
 import jetbrains.mps.smodel.action.INodeSubstituteAction;
 import jetbrains.mps.smodel.action.NodeSubstituteActionsFactoryContext;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
-import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.Calculable;
 import jetbrains.mps.smodel.action.DefaultChildNodeSubstituteAction;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.plugin.behavior.ActionDataParameterDeclaration_Behavior;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.action.ChildSubstituteActionsHelper;
 import jetbrains.mps.smodel.action.RemoveSubstituteActionByConditionContext;
 import java.util.Iterator;
@@ -33,6 +34,15 @@ public class QueriesGenerated {
 
   public static boolean nodeSubstituteActionsBuilder_Precondition_Statement_9101790344583086387(final IOperationContext operationContext, final NodeSubstitutePreconditionContext _context) {
     return SNodeOperations.getAncestor(_context.getParentNode(), "jetbrains.mps.lang.plugin.structure.ExecuteConfigBlock", true, false) != null;
+  }
+
+  public static void nodeFactory_NodeSetup_AddTabOperation_485694842828664422(final IOperationContext operationContext, final NodeSetupContext _context) {
+    SNode disposeTabClosure = SLinkOperations.getTarget(_context.getNewNode(), "disposeTabClosure", true);
+    if ((disposeTabClosure == null)) {
+      disposeTabClosure = SLinkOperations.setNewChild(_context.getNewNode(), "disposeTabClosure", "jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral");
+    }
+    SNode pd = SLinkOperations.addNewChild(SNodeOperations.cast(disposeTabClosure, "jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral"), "parameter", "jetbrains.mps.lang.plugin.structure.SmartDisposeClosureParameterDeclaration");
+    SPropertyOperations.set(pd, "name", "component");
   }
 
   public static List<INodeSubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_Type_1217414463812(final IOperationContext operationContext, final NodeSubstituteActionsFactoryContext _context) {

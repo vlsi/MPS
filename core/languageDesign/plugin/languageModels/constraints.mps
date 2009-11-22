@@ -888,30 +888,6 @@
     <link role="concept" targetNodeId="7.1205681149025" resolveInfo="UpdateBlock" />
     <link role="defaultConcreteConcept" targetNodeId="7.1205681243813" resolveInfo="IsApplicableBlock" />
   </node>
-  <node type="jetbrains.mps.lang.constraints.structure.ConceptConstraints" id="7566788359603255954">
-    <property name="package" value="Tool.Operations" />
-    <link role="concept" targetNodeId="7.7566788359603253716" resolveInfo="DisposeTabComponentReference" />
-    <node role="canBeChild" type="jetbrains.mps.lang.constraints.structure.ConstraintFunction_CanBeAChild" id="7566788359603255955">
-      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="7566788359603255956">
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="7566788359603255957">
-          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="7566788359603255971">
-            <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="7566788359603255959">
-              <node role="operand" type="jetbrains.mps.lang.constraints.structure.ConstraintFunctionParameter_parentNode" id="7566788359603255958" />
-              <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_GetAncestorOperation" id="7566788359603255963">
-                <node role="parameter" type="jetbrains.mps.lang.smodel.structure.OperationParm_Concept" id="7566788359603255964">
-                  <node role="conceptArgument" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" id="7566788359603255968">
-                    <link role="conceptDeclaration" targetNodeId="7.7566788359602201181" resolveInfo="DisposeTabBlock" />
-                  </node>
-                </node>
-                <node role="parameter" type="jetbrains.mps.lang.smodel.structure.OperationParm_Inclusion" id="7566788359603255970" />
-              </node>
-            </node>
-            <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_IsNotNullOperation" id="7566788359603255975" />
-          </node>
-        </node>
-      </node>
-    </node>
-  </node>
   <node type="jetbrains.mps.lang.constraints.structure.ConceptConstraints" id="8096638938275444162">
     <property name="package" value="Tool.Operations" />
     <link role="concept" targetNodeId="7.8096638938275438668" resolveInfo="TabbedToolOperation" />
@@ -961,6 +937,25 @@
             <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation" id="8096638938275444184">
               <node role="conceptArgument" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" id="8096638938275444185">
                 <link role="conceptDeclaration" targetNodeId="7.5896642449625981893" resolveInfo="TabbedToolDeclaration" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
+  <visible index="3" modelUID="r:00000000-0000-4000-0000-011c89590338(jetbrains.mps.baseLanguage.closures.structure)" />
+  <node type="jetbrains.mps.lang.constraints.structure.ConceptConstraints" id="485694842828666087">
+    <property name="package" value="Tool.Operations" />
+    <link role="concept" targetNodeId="7.485694842828664424" resolveInfo="SmartDisposeClosureParameterDeclaration" />
+    <node role="canBeChild" type="jetbrains.mps.lang.constraints.structure.ConstraintFunction_CanBeAChild" id="485694842828666088">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="485694842828666089">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="485694842828666090">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="485694842828666092">
+            <node role="operand" type="jetbrains.mps.lang.constraints.structure.ConstraintFunctionParameter_parentNode" id="485694842828666091" />
+            <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation" id="485694842828666096">
+              <node role="conceptArgument" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" id="485694842828666098">
+                <link role="conceptDeclaration" targetNodeId="3v.1199569711397" resolveInfo="ClosureLiteral" />
               </node>
             </node>
           </node>

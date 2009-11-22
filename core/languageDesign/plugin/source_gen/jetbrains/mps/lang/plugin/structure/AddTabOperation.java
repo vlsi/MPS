@@ -17,7 +17,7 @@ public class AddTabOperation extends TabbedToolOperation implements IOperation {
   public static final String COMPONENT_EXPRESSION = "componentExpression";
   public static final String TITLE_EXPRESSION = "titleExpression";
   public static final String ICON_EXPRESSION = "iconExpression";
-  public static final String DISPOSE_TAB_BLOCK = "disposeTabBlock";
+  public static final String DISPOSE_TAB_CLOSURE = "disposeTabClosure";
 
   public AddTabOperation(SNode node) {
     super(node);
@@ -71,12 +71,12 @@ public class AddTabOperation extends TabbedToolOperation implements IOperation {
     super.setChild(AddTabOperation.ICON_EXPRESSION, node);
   }
 
-  public DisposeTabBlock getDisposeTabBlock() {
-    return (DisposeTabBlock)this.getChild(DisposeTabBlock.class, AddTabOperation.DISPOSE_TAB_BLOCK);
+  public Expression getDisposeTabClosure() {
+    return (Expression)this.getChild(Expression.class, AddTabOperation.DISPOSE_TAB_CLOSURE);
   }
 
-  public void setDisposeTabBlock(DisposeTabBlock node) {
-    super.setChild(AddTabOperation.DISPOSE_TAB_BLOCK, node);
+  public void setDisposeTabClosure(Expression node) {
+    super.setChild(AddTabOperation.DISPOSE_TAB_CLOSURE, node);
   }
 
   public static AddTabOperation newInstance(SModel sm, boolean init) {

@@ -1219,14 +1219,6 @@ public class QueriesGenerated {
     return SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "initBlock", true), "body", true);
   }
 
-  public static SNode sourceNodeQuery_3062002558005753464(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "disposeTabBlock", true), "body", true);
-  }
-
-  public static SNode sourceNodeQuery_3062002558005753484(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return SLinkOperations.getTarget(_context.getNode(), "componentExpression", true);
-  }
-
   public static SNode sourceNodeQuery_3062002558005861649(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "componentExpression", true);
   }
@@ -1243,19 +1235,29 @@ public class QueriesGenerated {
     return SLinkOperations.getTarget(_context.getNode(), "contents", true);
   }
 
-  public static SNode sourceNodeQuery_7953090692945373315(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return SLinkOperations.getTarget(_context.getNode(), "titleExpression", true);
+  public static SNode sourceNodeQuery_8383992355238345812(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return ((SLinkOperations.getTarget(_context.getNode(), "titleExpression", true) == null) ?
+      new _Quotations.QuotationClass_4().createNode() :
+      SLinkOperations.getTarget(_context.getNode(), "titleExpression", true)
+    );
   }
 
-  public static SNode sourceNodeQuery_7953090692945373326(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+  public static SNode sourceNodeQuery_8383992355238345841(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return ((SLinkOperations.getTarget(_context.getNode(), "iconExpression", true) == null) ?
-      new _Quotations.QuotationClass_4().createNode() :
+      new _Quotations.QuotationClass_5().createNode() :
       SLinkOperations.getTarget(_context.getNode(), "iconExpression", true)
     );
   }
 
-  public static SNode sourceNodeQuery_8059910092825107665(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(_context.getNode(), "componentExpression", true));
+  public static SNode sourceNodeQuery_8383992355238345866(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return ((SLinkOperations.getTarget(_context.getNode(), "disposeTabClosure", true) == null) ?
+      new _Quotations.QuotationClass_6().createNode() :
+      SLinkOperations.getTarget(_context.getNode(), "disposeTabClosure", true)
+    );
+  }
+
+  public static SNode sourceNodeQuery_8383992355238345892(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return SLinkOperations.getTarget(_context.getNode(), "componentExpression", true);
   }
 
   public static SNode sourceNodeQuery_8849278392331870325(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {

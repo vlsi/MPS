@@ -13,7 +13,7 @@ public class Typeof_ToolType_Instanceof_BaseTool_SubtypingRule extends Subtyping
   }
 
   public SNode getSubOrSuperType(SNode toolType, TypeCheckingContext typeCheckingContext) {
-    return new _Quotations.QuotationClass_20().createNode(typeCheckingContext);
+    return new _Quotations.QuotationClass_21().createNode(typeCheckingContext);
   }
 
   public String getApplicableConceptFQName() {

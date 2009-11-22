@@ -19,6 +19,7 @@ import com.intellij.openapi.project.Project;
 import com.intellij.openapi.wm.ToolWindowAnchor;
 import com.intellij.ui.content.*;
 import jetbrains.mps.workbench.tools.BaseTool;
+import jetbrains.mps.lang.plugin.structure.IComponentDisposer;
 
 import javax.swing.Icon;
 import javax.swing.JComponent;
@@ -47,7 +48,21 @@ public abstract class GeneratedTabbedTool extends BaseGeneratedTool {
     contentManager.removeContent(content, true);
   }
 
-  public void addTab(IDisposableTab tab, String title, Icon icon) {
+  public <T extends JComponent> void addTab(final T tabComponent, String title, Icon icon,
+                                            final IComponentDisposer<T> tabDisposer) {
+    IDisposableTab tab = new IDisposableTab() {
+      public void disposeTab() {
+        if (tabDisposer == null) {
+          return;
+        }
+        tabDisposer.disposeComponent(tabComponent);
+      }
+
+      public JComponent getComponent() {
+        return tabComponent;
+      }
+    };
+
     addContentRemovedListenerIfNeeded();
     closeCurrentTabIfUnpinned();
     addContent(tab.getComponent(), title, icon, true);

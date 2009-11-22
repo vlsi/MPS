@@ -39599,40 +39599,30 @@
       <property name="name" value="showTabWithResults" />
       <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="5457007217767351074" />
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="5457007217767351072">
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="5457007217767351077">
-          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="5457007217767351078">
-            <node role="operand" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpression" id="5457007217767351079" />
-            <node role="operation" type="jetbrains.mps.lang.plugin.structure.AddTabOperation" id="5457007217767351080">
-              <node role="disposeTabBlock" type="jetbrains.mps.lang.plugin.structure.DisposeTabBlock" id="5457007217767351082">
-                <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="5457007217767351083">
-                  <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="5457007217767351084">
-                    <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="5457007217767351086">
-                      <node role="operand" type="jetbrains.mps.lang.plugin.structure.DisposeTabComponentReference" id="5457007217767351087" />
-                      <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="5457007217767351088">
-                        <link role="baseMethodDeclaration" targetNodeId="2555598330999290915" resolveInfo="getUsagesView" />
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="485694842829119797">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="485694842829119799">
+            <node role="operand" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpression" id="485694842829119798" />
+            <node role="operation" type="jetbrains.mps.lang.plugin.structure.AddTabOperation" id="485694842829119805">
+              <node role="disposeTabClosure" type="jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral" id="485694842829119806">
+                <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="485694842829119807">
+                  <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="485694842829257567">
+                    <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="485694842829257574">
+                      <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="485694842829257568">
+                        <link role="variableDeclaration" targetNodeId="485694842829119808" resolveInfo="component" />
+                      </node>
+                      <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="485694842829260367">
+                        <link role="baseMethodDeclaration" targetNodeId="2555598330999290915" resolveInfo="dispose" />
                       </node>
                     </node>
                   </node>
                 </node>
+                <node role="parameter" type="jetbrains.mps.lang.plugin.structure.SmartDisposeClosureParameterDeclaration" id="485694842829119808">
+                  <property name="name" value="component" />
+                  <node role="type" type="jetbrains.mps.baseLanguage.structure.WildCardType" id="485694842829119809" />
+                </node>
               </node>
-              <node role="componentExpression" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="5457007217767351091">
+              <node role="componentExpression" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="485694842829119815">
                 <link role="variableDeclaration" targetNodeId="5457007217767351075" resolveInfo="viewer" />
-              </node>
-              <node role="titleExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="7953090692946170170">
-                <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="7953090692946170163">
-                  <link role="variableDeclaration" targetNodeId="5457007217767351075" resolveInfo="viewer" />
-                </node>
-                <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="7953090692946172964">
-                  <link role="baseMethodDeclaration" targetNodeId="8560641068482549939" resolveInfo="getTabTitle" />
-                </node>
-              </node>
-              <node role="iconExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="7953090692946172978">
-                <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="7953090692946172971">
-                  <link role="variableDeclaration" targetNodeId="5457007217767351075" resolveInfo="viewer" />
-                </node>
-                <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="7953090692946172988">
-                  <link role="baseMethodDeclaration" targetNodeId="4689025177660010342" resolveInfo="getTabIcon" />
-                </node>
               </node>
             </node>
           </node>
@@ -39641,7 +39631,7 @@
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PrivateVisibility" id="5457007217767351073" />
       <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="5457007217767351075">
         <property name="name" value="viewer" />
-        <property name="isFinal" value="true" />
+        <property name="isFinal" value="false" />
         <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="5457007217767351076">
           <link role="classifier" targetNodeId="5792297515476886377" resolveInfo="ModelCheckerViewer" />
         </node>
