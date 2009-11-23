@@ -77,19 +77,8 @@ public abstract class BaseStubModelRootManager extends AbstractModelRootManager 
 
   }
 
-  private void updateModel(SModelDescriptor modelDescriptor, SModel model) {
-    boolean wasLoading = model.isLoading();
-    model.setLoading(true);
-    try {
-      IModelLoader loader = createLoader(modelDescriptor, model);
-      loader.loadModel();
-    } finally {
-      model.setLoading(wasLoading);
-    }
-  }
-
   @Nullable
-  public SModel refresh(@NotNull SModelDescriptor modelDescriptor) {
+  public final SModel refresh(@NotNull SModelDescriptor modelDescriptor) {
     SModel smodel = modelDescriptor.getSModel();
     if (smodel == null) return null;
 
@@ -100,9 +89,20 @@ public abstract class BaseStubModelRootManager extends AbstractModelRootManager 
     return smodel;
   }
 
-  public void dispose() {
+  public final void dispose() {
     for (SModelDescriptor sm : myDescriptorsWithListener) {
       sm.removeModelListener(myInitializationListener);
+    }
+  }
+
+  private void updateModel(SModelDescriptor modelDescriptor, SModel model) {
+    boolean wasLoading = model.isLoading();
+    model.setLoading(true);
+    try {
+      IModelLoader loader = createLoader(modelDescriptor, model);
+      loader.loadModel();
+    } finally {
+      model.setLoading(wasLoading);
     }
   }
 
