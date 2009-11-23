@@ -8,14 +8,14 @@
     <projectSolutions>
       <solutionPath path="${project}/solutions/jetbrains.mps.regexp.examples/jetbrains.mps.regexp.examples.msd" />
       <solutionPath path="${project}/solutions/jetbrains.mps.regexp.sandbox/jetbrains.mps.regexp.sandbox.msd" />
+      <solutionPath path="${project}/solutions/jetbrains.mps.regexp.unittest/jetbrains.mps.regexp.unittest.msd" folder="" />
     </projectSolutions>
     <projectLanguages>
       <languagePath path="${project}/regexp.mpl" />
     </projectLanguages>
     <projectDevkits />
     <genConfs>
-      <genConfModule runnable="true" name="examples" moduleRef="jetbrains.mps.baseLanguage.regexp.examples" />
-      <genConfModule runnable="false" name="regexp" moduleRef="daafa647-f1f7-4b0b-b096-69cd7c8408c0(jetbrains.mps.baseLanguage.regexp)" />
+      <genConfModule name="unittest" moduleRef="jetbrains.mps.baseLanguage.regexp.unittest" />
     </genConfs>
   </component>
   <component name="ProjectDetails">
@@ -26,6 +26,23 @@
   </component>
   <component name="ProjectRootManager" version="2" />
   <component name="SvnBranchConfigurationManager">
+    <option name="myConfigurationMap">
+      <map>
+        <entry key="$APPLICATION_HOME_DIR$">
+          <value>
+            <SvnBranchConfiguration>
+              <option name="branchUrls">
+                <list>
+                  <option value="http://svn.jetbrains.org/mps/branches" />
+                  <option value="http://svn.jetbrains.org/mps/tags" />
+                </list>
+              </option>
+              <option name="trunkUrl" value="http://svn.jetbrains.org/mps/trunk" />
+            </SvnBranchConfiguration>
+          </value>
+        </entry>
+      </map>
+    </option>
     <option name="myVersion" value="124" />
     <option name="mySupportsUserInfoFilter" value="true" />
   </component>
