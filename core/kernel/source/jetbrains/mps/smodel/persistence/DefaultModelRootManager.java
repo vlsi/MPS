@@ -42,10 +42,10 @@ import java.util.*;
 /**
  * @author Kostik
  */
-public class DefaultModelRootManager extends AbstractModelRootManager {
+public class DefaultModelRootManager extends BaseMPSModelRootManager {
   private static final Logger LOG = Logger.getLogger(DefaultModelRootManager.class);
 
-  public void updateModelsWhenLoaded(@NotNull SModelRoot root, @NotNull IModule owner) {
+  public void updateModels(@NotNull SModelRoot root, @NotNull IModule owner) {
     readModelDescriptors(FileSystem.getFile(root.getPath()), root, owner);
   }
 

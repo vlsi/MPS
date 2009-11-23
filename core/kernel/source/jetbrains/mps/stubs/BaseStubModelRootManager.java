@@ -15,13 +15,10 @@
  */
 package jetbrains.mps.stubs;
 
-import jetbrains.mps.baseLanguage.structure.BaseLanguage_Language;
-import jetbrains.mps.stubs.javastub.classpath.StubHelper;
 import jetbrains.mps.stubs.IModelLoader;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.SModelRoot;
-import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.reloading.IClassPathItem;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.persistence.AbstractModelRootManager;
@@ -30,15 +27,15 @@ import org.jetbrains.annotations.Nullable;
 
 import java.util.*;
 
-public abstract class ClassPathModelRootManager extends AbstractModelRootManager {
-  private static Logger LOG = Logger.getLogger(ClassPathModelRootManager.class);
+public abstract class BaseStubModelRootManager extends AbstractModelRootManager {
+  private static Logger LOG = Logger.getLogger(BaseStubModelRootManager.class);
 
   private static Map<SModelReference, Long> ourTimestamps = new HashMap<SModelReference, Long>();
 
   private Set<SModelDescriptor> myDescriptorsWithListener = new HashSet<SModelDescriptor>();
   private MyInitializationListener myInitializationListener = new MyInitializationListener();
 
-  public void updateModelsWhenLoaded(@NotNull SModelRoot root, @NotNull IModule module) {
+  public void updateModels(@NotNull SModelRoot root, @NotNull IModule module) {
     SModelRepository repository = SModelRepository.getInstance();
 
     for (SModelDescriptor descriptor : getModelDescriptors(module, root.getPrefix())) {
@@ -65,7 +62,10 @@ public abstract class ClassPathModelRootManager extends AbstractModelRootManager
   public SModel loadModel(@NotNull SModelDescriptor modelDescriptor) {
     SModel model = new SModel(modelDescriptor.getSModelReference());
     ourTimestamps.put(model.getSModelReference(), timestamp(modelDescriptor));
-    model.addLanguage(BaseLanguage_Language.get());
+
+    for (Language l:getLanguagesToImport()){
+      model.addLanguage(l);
+    }
 
     updateModel(modelDescriptor, model);
 
@@ -102,17 +102,19 @@ public abstract class ClassPathModelRootManager extends AbstractModelRootManager
     return smodel;
   }
 
+  public void dispose() {
+    for (SModelDescriptor sm : myDescriptorsWithListener) {
+      sm.removeModelListener(myInitializationListener);
+    }
+  }
+
   public abstract IClassPathItem getClassPathItem();
 
   protected abstract IModelLoader createLoader(SModelDescriptor modelDescriptor, SModel model);
 
   protected abstract Set<SModelDescriptor> getModelDescriptors(IModule module, String pack);
 
-  public void dispose() {
-    for (SModelDescriptor sm : myDescriptorsWithListener) {
-      sm.removeModelListener(myInitializationListener);
-    }
-  }
+  protected abstract Set<Language> getLanguagesToImport();
 
   private class MyInitializationListener extends SModelAdapter {
     public void modelInitialized(SModelDescriptor sm) {

@@ -19,6 +19,7 @@ import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.SModelRoot;
 import jetbrains.mps.smodel.persistence.AbstractModelRootManager;
 import jetbrains.mps.smodel.persistence.IModelRootManager;
+import jetbrains.mps.smodel.persistence.BaseMPSModelRootManager;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -26,8 +27,8 @@ import java.util.Set;
 
 public class ProjectModels {
   private static long ourProjectModelDescriptorCount = 0;
-  private static final IModelRootManager ourModelRootManager = new AbstractModelRootManager() {
-    public void updateModelsWhenLoaded(@NotNull SModelRoot root, @NotNull IModule owner) {
+  private static final IModelRootManager ourModelRootManager = new BaseMPSModelRootManager() {
+    public void updateModels(@NotNull SModelRoot root, @NotNull IModule owner) {
       throw new RuntimeException();
     }
 

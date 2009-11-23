@@ -26,10 +26,10 @@ import org.jetbrains.annotations.NotNull;
 import java.util.HashSet;
 import java.util.Set;
 
-class NullModelRootManager extends AbstractModelRootManager {
+class NullModelRootManager extends BaseMPSModelRootManager {
   public static final Logger LOG = Logger.getLogger(NullModelRootManager.class);
 
-  public void updateModelsWhenLoaded(@NotNull SModelRoot root, @NotNull IModule owner) {
+  public void updateModels(@NotNull SModelRoot root, @NotNull IModule owner) {
     LOG.error("Can't read from Null Model Root Manager");
   }
 

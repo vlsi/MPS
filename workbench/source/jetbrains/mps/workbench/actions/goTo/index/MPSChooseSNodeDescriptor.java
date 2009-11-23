@@ -32,7 +32,7 @@ import jetbrains.mps.smodel.constraints.ModelConstraintsManager;
 import jetbrains.mps.workbench.choose.base.BaseMPSChooseModel;
 import jetbrains.mps.workbench.editors.MPSEditorOpener;
 import jetbrains.mps.reloading.IClassPathItem;
-import jetbrains.mps.stubs.ClassPathModelRootManager;
+import jetbrains.mps.stubs.BaseStubModelRootManager;
 import jetbrains.mps.stubs.javastub.classpath.ClassifierKind;
 import jetbrains.mps.stubs.javastub.classpath.StubHelper;
 import jetbrains.mps.baseLanguage.structure.ClassConcept;
@@ -108,8 +108,8 @@ public class MPSChooseSNodeDescriptor extends BaseMPSChooseModel<SNodeDescriptor
     for (IModule m : scope.getVisibleModules()) {
       for (SModelRoot root : m.getSModelRoots()) {
         IModelRootManager manager = root.getManager();
-        if (manager instanceof ClassPathModelRootManager) {
-          ClassPathModelRootManager classpathManager = (ClassPathModelRootManager) manager;
+        if (manager instanceof BaseStubModelRootManager) {
+          BaseStubModelRootManager classpathManager = (BaseStubModelRootManager) manager;
           iterateClassPath(classpathManager.getClassPathItem(), result, "");
         }
       }

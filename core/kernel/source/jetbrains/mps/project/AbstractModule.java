@@ -18,7 +18,7 @@ package jetbrains.mps.project;
 import com.intellij.openapi.util.Computable;
 import jetbrains.mps.baseLanguage.collections.structure.Collections_Language;
 import jetbrains.mps.baseLanguage.structure.BaseLanguage_Language;
-import jetbrains.mps.stubs.ClassPathModelRootManager;
+import jetbrains.mps.stubs.BaseStubModelRootManager;
 import jetbrains.mps.stubs.javastub.classpath.JavaStubClassPathModelRootManager;
 import jetbrains.mps.lang.generator.structure.Generator_Language;
 import jetbrains.mps.library.LibraryManager;
@@ -472,7 +472,7 @@ public abstract class AbstractModule implements IModule {
           SModelRoot root = new SModelRoot(this, modelRoot);
           mySModelRoots.add(root);
           IModelRootManager manager = root.getManager();
-          manager.updateModelsWhenLoaded(root, this);
+          manager.updateModels(root, this);
         } catch (Exception e) {
           LOG.error("Error loading models from root: prefix: \"" + modelRoot.getPrefix() + "\" path: \"" + modelRoot.getPath() + "\". Requested by: " + this, e);
         }
@@ -660,14 +660,14 @@ public abstract class AbstractModule implements IModule {
     ModelRoot mr = new ModelRoot();
     mr.setPrefix("");
 
-    myManager.updateModelsWhenLoaded(new SModelRoot(this, mr), this);
+    myManager.updateModels(new SModelRoot(this, mr), this);
   }
 
   private void loadJavaStubModelRoots() {
     for (SModelRoot mr : getSModelRoots()) {
       IModelRootManager m = mr.getManager();
-      if (m instanceof ClassPathModelRootManager) {
-        m.updateModelsWhenLoaded(mr, this);
+      if (m instanceof BaseStubModelRootManager) {
+        m.updateModels(mr, this);
       }
     }
   }
