@@ -19,6 +19,7 @@ import jetbrains.mps.nodeEditor.IErrorReporter;
 import jetbrains.mps.baseLanguage.behavior.LocalVariableDeclaration_Behavior;
 import jetbrains.mps.baseLanguage.behavior.IVariableAssignment_Behavior;
 import org.jetbrains.annotations.NotNull;
+import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.dataFlow.runtime.NullableAnalysisResult;
 
 public class DataFlowUtil {
@@ -157,13 +158,15 @@ public class DataFlowUtil {
 
   @CheckingMethod
   public static void checkUnusedVariables(final TypeCheckingContext typeCheckingContext, @NotNull SNode statementList, Program program) {
-    Set<SNode> unusedVariables = DataFlow.getUnusedVariables(program, statementList);
-    for (SNode var : unusedVariables) {
+    Set<SNode> usedVariables = DataFlow.getUsedVariables(program, statementList);
+    for (SNode var : SNodeOperations.getDescendants(statementList, "jetbrains.mps.baseLanguage.structure.VariableDeclaration", false, new String[]{})) {
       if (!(SNodeOperations.isInstanceOf(SNodeOperations.getParent(var), "jetbrains.mps.baseLanguage.structure.CatchClause")) && SNodeOperations.getAncestor(var, "jetbrains.mps.lang.quotation.structure.Quotation", false, false) == null) {
-        {
-          BaseIntentionProvider intentionProvider = null;
-          IErrorTarget errorTarget = new NodeErrorTarget();
-          IErrorReporter _reporter_2309309498 = typeCheckingContext.reportWarning(var, "Unused variable", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1223642399966", intentionProvider, errorTarget);
+        if (SLinkOperations.getTarget(var, "initializer", true) == null && !(SetSequence.fromSet(usedVariables).contains(var))) {
+          {
+            BaseIntentionProvider intentionProvider = null;
+            IErrorTarget errorTarget = new NodeErrorTarget();
+            IErrorReporter _reporter_2309309498 = typeCheckingContext.reportWarning(var, "Unused variable", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "8937659523942275424", intentionProvider, errorTarget);
+          }
         }
       }
     }
