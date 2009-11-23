@@ -18,7 +18,7 @@ package jetbrains.mps.intentions;
 import jetbrains.mps.lang.typesystem.runtime.quickfix.QuickFix_Runtime;
 
 public interface IntentionProvider {
-  public Intention getIntention();
+  public BaseIntention getIntention();
 
   public QuickFix_Runtime getQuickFix();
 

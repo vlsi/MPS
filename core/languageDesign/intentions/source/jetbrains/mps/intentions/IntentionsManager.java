@@ -24,7 +24,9 @@ import com.intellij.openapi.components.Storage;
 import com.intellij.openapi.util.Computable;
 import com.intellij.openapi.util.Pair;
 import jetbrains.mps.lang.intentions.behavior.IntentionDeclaration_Behavior;
+import jetbrains.mps.lang.intentions.behavior.BaseIntentionDeclaration_Behavior;
 import jetbrains.mps.lang.intentions.structure.IntentionDeclaration;
+import jetbrains.mps.lang.intentions.structure.BaseIntentionDeclaration;
 import jetbrains.mps.lang.script.plugin.migrationtool.MigrationScriptUtil;
 import jetbrains.mps.lang.script.runtime.AbstractMigrationRefactoring;
 import jetbrains.mps.lang.script.runtime.BaseMigrationScript;
@@ -114,7 +116,7 @@ public class IntentionsManager implements ApplicationComponent, PersistentStateC
     });
   }
 
-  public Collection<Pair<Intention, SNode>> getAvailableIntentions(final SNode node, final EditorContext context, @Nullable final Computable<Boolean> terminated) {
+  public Collection<Pair<Intention, SNode>> getAvailableIntentions(final SNode node, final EditorContext context, @Nullable final Computable<Boolean> terminated, final Class<? extends Intention> intentionClass) {
     try {
       TypeChecker.getInstance().enableGlobalSubtypingCache();
       Set<Pair<Intention, SNode>> intentions = ModelAccess.instance().runReadAction(new Computable<Set<Pair<Intention, SNode>>>() {
@@ -122,12 +124,16 @@ public class IntentionsManager implements ApplicationComponent, PersistentStateC
           Set<Pair<Intention, SNode>> result = new HashSet<Pair<Intention, SNode>>();
 
           for (Intention intention : getAvailableIntentionsForExactNode(node, context, false, true, terminated)) {
-            result.add(new Pair<Intention, SNode>(intention, node));
+            if (intentionClass.isAssignableFrom(intention.getClass())) {
+              result.add(new Pair<Intention, SNode>(intention, node));
+            }
           }
           SNode parent = node.getParent();
           while (parent != null) {
             for (Intention intention : getAvailableIntentionsForExactNode(parent, context, true, true, terminated)) {
-              result.add(new Pair<Intention, SNode>(intention, parent));
+              if (intentionClass.isAssignableFrom(intention.getClass())) {
+                result.add(new Pair<Intention, SNode>(intention, parent));
+              }
             }
             parent = parent.getParent();
           }
@@ -350,8 +356,8 @@ public class IntentionsManager implements ApplicationComponent, PersistentStateC
     SModelDescriptor intentionsModelDescriptor = l.getIntentionsModelDescriptor();
     if (intentionsModelDescriptor != null) {
       SModel smodel = intentionsModelDescriptor.getSModel();
-      for (IntentionDeclaration intentionDeclaration : smodel.getRootsAdapters(IntentionDeclaration.class)) {
-        String className = smodel.getSModelReference().getLongName() + "." + IntentionDeclaration_Behavior.call_getGeneratedName_1213877237628(intentionDeclaration.getNode());
+      for (BaseIntentionDeclaration intentionDeclaration : smodel.getRootsAdapters(BaseIntentionDeclaration.class)) {
+        String className = smodel.getSModelReference().getLongName() + "." + BaseIntentionDeclaration_Behavior.call_getGeneratedName_6263518417926802289(intentionDeclaration.getNode());
         try {
           Class<?> cls = l.getClass(className);
 

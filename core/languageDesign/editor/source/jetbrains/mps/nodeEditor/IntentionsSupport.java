@@ -25,10 +25,7 @@ import com.intellij.openapi.ui.popup.ListPopup;
 import com.intellij.openapi.util.Computable;
 import com.intellij.openapi.util.Pair;
 import com.intellij.ui.awt.RelativePoint;
-import jetbrains.mps.intentions.Intention;
-import jetbrains.mps.intentions.IntentionType;
-import jetbrains.mps.intentions.IntentionsManager;
-import jetbrains.mps.intentions.LightBulbMenu;
+import jetbrains.mps.intentions.*;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.smodel.ModelAccess;
@@ -234,6 +231,9 @@ public class IntentionsSupport {
     BaseGroup group = new BaseGroup("");
     List<Pair<Intention, SNode>> groupItems = new ArrayList<Pair<Intention, SNode>>();
     groupItems.addAll(getAvailableIntentions(null));
+    if(groupItems.isEmpty()){
+      return null;
+    }
     Collections.sort(groupItems, new Comparator<Pair<Intention, SNode>>() {
       public int compare(Pair<Intention, SNode> o1, Pair<Intention, SNode> o2) {
         Intention intention1 = o1.getFirst();
@@ -321,7 +321,7 @@ public class IntentionsSupport {
     SNode node = myEditor.getSelectedNode();
     EditorContext editorContext = myEditor.getEditorContext();
     if (node != null && editorContext != null) {
-      result.addAll(IntentionsManager.getInstance().getAvailableIntentions(node, editorContext, terminated));
+      result.addAll(IntentionsManager.getInstance().getAvailableIntentions(node, editorContext, terminated, BaseIntention.class));
     }
     return result;
   }
@@ -342,5 +342,16 @@ public class IntentionsSupport {
 
   public boolean isLightBulbVisible() {
     return myLightBulb.isVisible();
+  }
+
+  @Override
+  public String toString() {
+    return "IntentionsSupport{" +
+      "myEditor=" + myEditor +
+      ", myShowIntentionsAction=" + myShowIntentionsAction +
+      ", myLightBulbLocation=" + myLightBulbLocation +
+      ", myLightBulb=" + myLightBulb +
+      ", myShowIntentionsThread=" + myShowIntentionsThread +
+      '}';
   }
 }

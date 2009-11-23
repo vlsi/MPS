@@ -37,6 +37,7 @@ import jetbrains.mps.ide.tooltips.MPSToolTipManager;
 import jetbrains.mps.ide.ui.MPSErrorDialog;
 import jetbrains.mps.intentions.Intention;
 import jetbrains.mps.intentions.IntentionsManager;
+import jetbrains.mps.intentions.BaseIntention;
 import jetbrains.mps.lang.typesystem.plugin.GoToTypeErrorRuleUtil;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.nodeEditor.EditorManager.EditorCell_STHint;
@@ -850,7 +851,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
         SNode node = getSelectedNode();
         EditorContext editorContext = getEditorContext();
         if (node != null && editorContext != null) {
-          result.addAll(IntentionsManager.getInstance().getAvailableIntentions(node, editorContext, null));
+          result.addAll(IntentionsManager.getInstance().getAvailableIntentions(node, editorContext, null, BaseIntention.class));
         }
       }
     });

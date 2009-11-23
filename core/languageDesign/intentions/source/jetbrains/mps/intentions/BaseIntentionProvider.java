@@ -62,12 +62,12 @@ public class BaseIntentionProvider implements IntentionProvider {
     return myExecuteImmediately;
   }
 
-  public Intention getIntention() {
+  public BaseIntention getIntention() {
     final QuickFix_Runtime quickFix = getQuickFix();
     if (quickFix == null) {
       return null;
     }
-    return new Intention() {
+    return new BaseIntention() {
       public String getConcept() {
         return null;
       }
