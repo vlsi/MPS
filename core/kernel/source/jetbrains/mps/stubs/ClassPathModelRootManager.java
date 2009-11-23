@@ -28,10 +28,7 @@ import jetbrains.mps.smodel.persistence.AbstractModelRootManager;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Map;
-import java.util.Set;
+import java.util.*;
 
 public abstract class ClassPathModelRootManager extends AbstractModelRootManager {
   private static Logger LOG = Logger.getLogger(ClassPathModelRootManager.class);
@@ -42,7 +39,26 @@ public abstract class ClassPathModelRootManager extends AbstractModelRootManager
   private MyInitializationListener myInitializationListener = new MyInitializationListener();
 
   public void updateModelsWhenLoaded(@NotNull SModelRoot root, @NotNull IModule module) {
-    addPackageModelDescriptors(module, root.getPrefix());
+    SModelRepository repository = SModelRepository.getInstance();
+
+    for (SModelDescriptor descriptor : getModelDescriptors(module, root.getPrefix())) {
+      if (repository.getModelDescriptor(descriptor.getSModelReference()) == null) {
+        repository.registerModelDescriptor(descriptor, module);
+
+        if (repository.getOwners(descriptor).size() > 1) {
+          LOG.warning("Loading the same java_stub package twice : " + descriptor.getLongName() + " from " + repository.getOwners(descriptor));
+        }
+      } else {
+        if (!descriptor.isInitialized()) {
+          if (!myDescriptorsWithListener.contains(descriptor)) {
+            descriptor.addModelListener(myInitializationListener);
+            myDescriptorsWithListener.add(descriptor);
+          }
+        } else {
+          updateModel(descriptor, descriptor.getSModel());
+        }
+      }
+    }
   }
 
   @NotNull
@@ -88,46 +104,9 @@ public abstract class ClassPathModelRootManager extends AbstractModelRootManager
 
   public abstract IClassPathItem getClassPathItem();
 
-  public abstract IModelLoader createLoader(SModelDescriptor modelDescriptor, SModel model);
+  protected abstract IModelLoader createLoader(SModelDescriptor modelDescriptor, SModel model);
 
-  private void addPackageModelDescriptors(IModule module, String pack) {
-    Set<String> subpackages = getClassPathItem().getSubpackages(pack);
-    if (pack.equals("")) {
-      //we ignore everything in the default package because usage of it is a bad style and many libraries
-      //use it for some purposes. Also it's impossible to import classes from it.
-    }
-
-    for (String subpackage : subpackages) {
-      if (!getClassPathItem().getAvailableClasses(subpackage).isEmpty()) {
-        SModelReference modelReference = StubHelper.uidForPackageInStubs(subpackage);
-        if (SModelRepository.getInstance().getModelDescriptor(modelReference) != null) {
-          final SModelDescriptor descriptor = SModelRepository.getInstance().getModelDescriptor(SModelReference.fromString(subpackage + "@" + SModelStereotype.JAVA_STUB));
-
-          assert descriptor != null;
-
-          SModelRepository.getInstance().addOwnerForDescriptor(descriptor, module);
-
-          if (!descriptor.isInitialized()) {
-            if (!myDescriptorsWithListener.contains(descriptor)) {
-              descriptor.addModelListener(myInitializationListener);
-              myDescriptorsWithListener.add(descriptor);
-            }
-          } else {
-            updateModel(descriptor,descriptor.getSModel());
-          }
-        } else {
-          SModelDescriptor modelDescriptor = new DefaultSModelDescriptor(this, null, modelReference);
-          SModelRepository.getInstance().registerModelDescriptor(modelDescriptor, module);
-
-          if (SModelRepository.getInstance().getOwners(modelDescriptor).size() > 1) {
-            LOG.warning("Loading the same java_stub package twice : " + pack + " from " + SModelRepository.getInstance().getOwners(modelDescriptor));
-          }
-        }
-      }
-
-      addPackageModelDescriptors(module, subpackage);
-    }
-  }
+  protected abstract Set<SModelDescriptor> getModelDescriptors(IModule module, String pack);
 
   public void dispose() {
     for (SModelDescriptor sm : myDescriptorsWithListener) {
@@ -137,7 +116,7 @@ public abstract class ClassPathModelRootManager extends AbstractModelRootManager
 
   private class MyInitializationListener extends SModelAdapter {
     public void modelInitialized(SModelDescriptor sm) {
-      updateModel(sm,sm.getSModel());
+      updateModel(sm, sm.getSModel());
       sm.removeModelListener(this);
       myDescriptorsWithListener.remove(sm);
     }
