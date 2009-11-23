@@ -32,7 +32,13 @@ public abstract class BaseStubModelRootManager extends AbstractModelRootManager 
   private static Map<SModelReference, Long> ourTimestamps = new HashMap<SModelReference, Long>();
 
   private Set<SModelDescriptor> myDescriptorsWithListener = new HashSet<SModelDescriptor>();
-  private MyInitializationListener myInitializationListener = new MyInitializationListener();
+  private SModelAdapter myInitializationListener = new SModelAdapter() {
+    public void modelInitialized(SModelDescriptor sm) {
+      updateModelInLoadingState(sm, sm.getSModel());
+      sm.removeModelListener(this);
+      myDescriptorsWithListener.remove(sm);
+    }
+  };
 
   public final void updateModels(@NotNull SModelRoot root, @NotNull IModule module) {
     SModelRepository repository = SModelRepository.getInstance();
@@ -51,7 +57,7 @@ public abstract class BaseStubModelRootManager extends AbstractModelRootManager 
             myDescriptorsWithListener.add(descriptor);
           }
         } else {
-          updateModel(descriptor, descriptor.getSModel());
+          updateModelInLoadingState(descriptor, descriptor.getSModel());
         }
       }
     }
@@ -66,7 +72,7 @@ public abstract class BaseStubModelRootManager extends AbstractModelRootManager 
       model.addLanguage(l);
     }
 
-    updateModel(modelDescriptor, model);
+    updateModelInLoadingState(modelDescriptor, model);
 
     return model;
   }
@@ -93,11 +99,11 @@ public abstract class BaseStubModelRootManager extends AbstractModelRootManager 
     }
   }
 
-  private void updateModel(SModelDescriptor modelDescriptor, SModel model) {
+  private void updateModelInLoadingState(SModelDescriptor modelDescriptor, SModel model) {
     boolean wasLoading = model.isLoading();
     model.setLoading(true);
     try {
-      doUpdateModel(modelDescriptor, model);
+      updateModel(modelDescriptor, model);
     } finally {
       model.setLoading(wasLoading);
     }
@@ -107,15 +113,7 @@ public abstract class BaseStubModelRootManager extends AbstractModelRootManager 
 
   protected abstract Set<Language> getLanguagesToImport();
 
-  protected abstract void doUpdateModel(SModelDescriptor modelDescriptor, SModel model);
+  protected abstract void updateModel(SModelDescriptor modelDescriptor, SModel model);
 
   protected abstract Set<SModelDescriptor> getModelDescriptors(IModule module, String pack);
-
-  private class MyInitializationListener extends SModelAdapter {
-    public void modelInitialized(SModelDescriptor sm) {
-      updateModel(sm, sm.getSModel());
-      sm.removeModelListener(this);
-      myDescriptorsWithListener.remove(sm);
-    }
-  }
 }
