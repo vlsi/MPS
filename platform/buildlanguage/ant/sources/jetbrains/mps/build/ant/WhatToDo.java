@@ -30,6 +30,7 @@ public class WhatToDo {
   private final Map<File, List<String>> myMPSProjects = new LinkedHashMap<File, List<String>>();
   private boolean myFailOnError = false;
   private final Map<String, File> myLibraries = new LinkedHashMap<String, File>();
+  private final Set<String> myCompiledLibraries = new LinkedHashSet<String>();
   private final Map<String, String> myMacro = new LinkedHashMap<String, String>();
   private int myLogLevel = org.apache.tools.ant.Project.MSG_INFO;
   private static final String MODEL_FILE = "MODEL_FILE";
@@ -39,6 +40,7 @@ public class WhatToDo {
   private static final String MPS_MACRO = "MPS_MACRO";
   private static final String FAIL_ON_ERROR = "FAIL_ON_ERROR";
   private static final String LOG_LEVEL = "LOG_LEVEL";
+  private static final String LIBRARY_COMPILE = "LIBRARY_COMPILE";
   private final Map<String, String> myProperties = new LinkedHashMap<String, String>();
 
   public void addModuleFile(File file) {
@@ -108,8 +110,11 @@ public class WhatToDo {
     myProperties.putAll(properties);
   }
 
-  public void addLibrary(String name, File dir) {
+  public void addLibrary(String name, File dir, boolean compile) {
     myLibraries.put(name, dir);
+    if (compile) {
+      myCompiledLibraries.add(name);
+    }
   }
 
   public Map<String, File> getLibraries() {
@@ -118,6 +123,14 @@ public class WhatToDo {
 
   public void updateLibraries(Map<String, File> libraries) {
     myLibraries.putAll(libraries);
+  }
+
+  public Set<String> getCompiledLibraries() {
+    return Collections.unmodifiableSet(myCompiledLibraries);
+  }
+
+  public void updateCompiledLibraries(Set<String> libraries) {
+    myCompiledLibraries.addAll(libraries);
   }
 
   public void addMacro(String name, String value) {
@@ -195,6 +208,9 @@ public class WhatToDo {
       sb.append("=");
       sb.append("[");
       sb.append(libraryName);
+      if (myCompiledLibraries.contains(libraryName)) {
+        sb.append("," + LIBRARY_COMPILE);
+      }
       sb.append("]");
       sb.append(myLibraries.get(libraryName).getAbsolutePath());
       sb.append(" ");
@@ -276,7 +292,15 @@ public class WhatToDo {
           whatToDo.addModuleFile(new File(propertyValuePair[1]));
         } else if (propertyValuePair[0].equals(MPS_LIBRARY)) {
           String[] nameValuePair = propertyValuePair[1].split("\\[|\\]");
-          whatToDo.addLibrary(nameValuePair[1], new File(nameValuePair[2]));
+          String name = nameValuePair[1];
+          String[] strings = name.split(",");
+          if (strings.length == 1) {
+            whatToDo.addLibrary(name, new File(nameValuePair[2]), false);
+          } else if (strings[1].equals(LIBRARY_COMPILE)) {
+            whatToDo.addLibrary(strings[0], new File(nameValuePair[2]), true);
+          } else {
+            System.err.println("Don't know what to do with input " + name);
+          }
         } else if (propertyValuePair[0].equals(MPS_MACRO)) {
           String[] nameValuePair = propertyValuePair[1].split("\\[|\\]");
           whatToDo.addMacro(nameValuePair[1], nameValuePair[2]);

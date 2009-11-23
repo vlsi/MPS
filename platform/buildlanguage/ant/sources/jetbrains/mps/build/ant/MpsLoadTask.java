@@ -72,7 +72,7 @@ public abstract class MpsLoadTask extends org.apache.tools.ant.Task {
   }
 
   public void addConfiguredLibrary(LibraryDataType libraryInner) {
-    myWhatToDo.addLibrary(libraryInner.getName(), libraryInner.getDir());
+    myWhatToDo.addLibrary(libraryInner.getName(), libraryInner.getDir(), libraryInner.getCompile());
   }
 
   public void addConfiguredMacro(Macro macro) {

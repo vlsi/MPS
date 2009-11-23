@@ -22,6 +22,7 @@ import java.io.File;
 public class LibraryDataType extends DataType {
   private String myName;
   private File myDir;
+  private boolean myCompile = false;
 
   public String getName() {
     return myName;
@@ -37,5 +38,13 @@ public class LibraryDataType extends DataType {
 
   public void setDir(File dir) {
     myDir = dir;
+  }
+
+  public boolean getCompile() {
+    return myCompile;
+  }
+
+  public void setCompile(boolean compile) {
+    myCompile = compile;
   }
 }

@@ -44,9 +44,9 @@ public class WhatToDoSerializationConsistencyTest extends TestCase {
   public void testCloningConcistencyWithLibraries() {
     WhatToDo toDo = new WhatToDo();
 
-    toDo.addLibrary("name1", new File("dir1").getAbsoluteFile());
-    toDo.addLibrary("name2", new File("dir3").getAbsoluteFile());
-    toDo.addLibrary("name3", new File("dir4").getAbsoluteFile());
+    toDo.addLibrary("name1", new File("dir1").getAbsoluteFile(), false);
+    toDo.addLibrary("name2", new File("dir3").getAbsoluteFile(), true);
+    toDo.addLibrary("name3", new File("dir4").getAbsoluteFile(), false);
 
     testToDoConsistency(toDo);
   }

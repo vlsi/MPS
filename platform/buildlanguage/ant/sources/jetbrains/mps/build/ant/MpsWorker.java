@@ -19,8 +19,11 @@ import com.intellij.ide.IdeEventQueue;
 import com.intellij.openapi.application.PathMacros;
 import com.intellij.openapi.util.Computable;
 import com.intellij.openapi.project.ProjectManager;
+import com.intellij.openapi.progress.EmptyProgressIndicator;
 import com.intellij.util.PathUtil;
 import jetbrains.mps.TestMain;
+import jetbrains.mps.plugin.CompilationResult;
+import jetbrains.mps.make.ModuleMaker;
 import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.ide.IdeMain;
 import jetbrains.mps.ide.IdeMain.TestMode;
@@ -58,6 +61,7 @@ public abstract class MpsWorker {
   protected final List<String> myWarnings = new ArrayList<String>();
   protected final WhatToDo myWhatToDo;
   private final AntLogger myLogger;
+  private final Set<Library> myCompiledLibraries = new LinkedHashSet<Library>();
 
   public MpsWorker(WhatToDo whatToDo, ProjectComponent component) {
     this(whatToDo, new ProjectComponentLogger(component));
@@ -130,6 +134,38 @@ public abstract class MpsWorker {
 
     setMacro();
     loadLibraries();
+    make();
+  }
+
+  protected void make() {
+    final Set<IModule> toCompile = new LinkedHashSet<IModule>();
+    for (final Library l : myCompiledLibraries) {
+      ModelAccess.instance().runReadAction(new Runnable() {
+        public void run() {
+          List<IModule> moduleList = MPSModuleRepository.getInstance().getAllModulesInDirectory(new File(l.getPath()));
+          for (IModule module : moduleList) {
+            if (!module.isPackaged() && module.isCompileInMPS()) {
+              toCompile.add(module);
+            }
+          }
+        }
+      });
+    }
+    if (toCompile.isEmpty()) return;
+    info("Starting compilation:");
+    StringBuffer sb = new StringBuffer();
+    for (IModule m : toCompile) {
+      sb.append("    ");
+      sb.append(m.getModuleFqName());
+      sb.append("\n");
+    }
+    info(sb.toString());
+    CompilationResult result = ModelAccess.instance().runReadAction(new Computable<CompilationResult>() {
+      public CompilationResult compute() {
+        return new ModuleMaker().make(toCompile, new EmptyProgressIndicator());
+      }
+    });
+    info(result.toString());
   }
 
   protected abstract void executeTask(MPSProject project, GenerationObjects go);
@@ -179,6 +215,10 @@ public abstract class MpsWorker {
       library.setName(libName);
       library.setPath(myWhatToDo.getLibraries().get(libName).getAbsolutePath());
       libraries.put(libName, library);
+
+      if (myWhatToDo.getCompiledLibraries().contains(libName)) {
+        myCompiledLibraries.add(library);
+      }
     }
 
     LibraryManager.getInstance().loadState(state);

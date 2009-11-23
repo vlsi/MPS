@@ -201,27 +201,7 @@ public class TestGenerationWorker extends GeneratorWorker {
       sb.append("\n");
     }
 
-    boolean headerPrinted = false;
-    for (CompilationResult r : compilationResult) {
-      if (r.getErrors() != null && r.getErrors().length > 0) {
-        if (!headerPrinted) {
-          sb.append("Compilation problems:\n");
-          headerPrinted = true;
-        }
-        for (CategorizedProblem p : r.getErrors()) {
-          sb.append("  ");
-          sb.append(new String(r.getCompilationUnit().getFileName()));
-          sb.append(" (");
-          sb.append(p.getSourceLineNumber());
-          sb.append("): ");
-          sb.append(p.getMessage());
-          sb.append("\n");
-        }
-      }
-    }
-    if (headerPrinted) {
-      sb.append("\n");
-    }
+    printCompilationResult(compilationResult, sb);
 
     if (testFailures.size() > 0) {
       sb.append("Test Failures:\n");
@@ -248,6 +228,30 @@ public class TestGenerationWorker extends GeneratorWorker {
     }
 
     return myBuildServerMessageFormat.escapeBuildMessage(sb);
+  }
+
+  protected void printCompilationResult(List<CompilationResult> compilationResult, StringBuffer sb) {
+    boolean headerPrinted = false;
+    for (CompilationResult r : compilationResult) {
+      if (r.getErrors() != null && r.getErrors().length > 0) {
+        if (!headerPrinted) {
+          sb.append("Compilation problems:\n");
+          headerPrinted = true;
+        }
+        for (CategorizedProblem p : r.getErrors()) {
+          sb.append("  ");
+          sb.append(new String(r.getCompilationUnit().getFileName()));
+          sb.append(" (");
+          sb.append(p.getSourceLineNumber());
+          sb.append("): ");
+          sb.append(p.getMessage());
+          sb.append("\n");
+        }
+      }
+    }
+    if (headerPrinted) {
+      sb.append("\n");
+    }
   }
 
   @Override
