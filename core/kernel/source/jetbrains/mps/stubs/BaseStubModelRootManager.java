@@ -15,11 +15,9 @@
  */
 package jetbrains.mps.stubs;
 
-import jetbrains.mps.stubs.IModelLoader;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.SModelRoot;
-import jetbrains.mps.reloading.IClassPathItem;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.persistence.AbstractModelRootManager;
 import jetbrains.mps.workbench.actions.goTo.index.SNodeDescriptor;
@@ -99,8 +97,7 @@ public abstract class BaseStubModelRootManager extends AbstractModelRootManager 
     boolean wasLoading = model.isLoading();
     model.setLoading(true);
     try {
-      IModelLoader loader = createLoader(modelDescriptor, model);
-      loader.loadModel();
+      doUpdateModel(modelDescriptor, model);
     } finally {
       model.setLoading(wasLoading);
     }
@@ -108,11 +105,11 @@ public abstract class BaseStubModelRootManager extends AbstractModelRootManager 
 
   public abstract Set<SNodeDescriptor> getRootNodeDescriptors();
 
-  protected abstract IModelLoader createLoader(SModelDescriptor modelDescriptor, SModel model);
+  protected abstract Set<Language> getLanguagesToImport();
+
+  protected abstract void doUpdateModel(SModelDescriptor modelDescriptor, SModel model);
 
   protected abstract Set<SModelDescriptor> getModelDescriptors(IModule module, String pack);
-
-  protected abstract Set<Language> getLanguagesToImport();
 
   private class MyInitializationListener extends SModelAdapter {
     public void modelInitialized(SModelDescriptor sm) {
