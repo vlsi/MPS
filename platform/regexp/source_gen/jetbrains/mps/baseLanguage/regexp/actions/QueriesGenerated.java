@@ -40,6 +40,22 @@ public class QueriesGenerated {
     return !(SNodeOperations.isInstanceOf(_context.getSourceNode(), "jetbrains.mps.baseLanguage.regexp.structure.UnaryRegexp"));
   }
 
+  public static boolean sideTransformHintSubstituteActionsBuilder_Precondition_ReplaceRegexpOperation_1767845709140629297(final IOperationContext operationContext, final SideTransformPreconditionContext _context) {
+    return !(SPropertyOperations.getBoolean(_context.getSourceNode(), "dotAll"));
+  }
+
+  public static boolean sideTransformHintSubstituteActionsBuilder_Precondition_ReplaceRegexpOperation_1767845709140648041(final IOperationContext operationContext, final SideTransformPreconditionContext _context) {
+    return !(SPropertyOperations.getBoolean(_context.getSourceNode(), "caseInsensitive"));
+  }
+
+  public static boolean sideTransformHintSubstituteActionsBuilder_Precondition_ReplaceRegexpOperation_1767845709140648065(final IOperationContext operationContext, final SideTransformPreconditionContext _context) {
+    return !(SPropertyOperations.getBoolean(_context.getSourceNode(), "multiLine"));
+  }
+
+  public static boolean sideTransformHintSubstituteActionsBuilder_Precondition_ReplaceRegexpOperation_1767845709140648089(final IOperationContext operationContext, final SideTransformPreconditionContext _context) {
+    return !(SPropertyOperations.getBoolean(_context.getSourceNode(), "globalReplace"));
+  }
+
   public static boolean sideTransformHintSubstituteActionsBuilder_Precondition_InlineRegexpExpression_6129327962765969733(final IOperationContext operationContext, final SideTransformPreconditionContext _context) {
     return !(SPropertyOperations.getBoolean(_context.getSourceNode(), "multiLine"));
   }
@@ -603,6 +619,110 @@ public class QueriesGenerated {
           }
         });
       }
+    }
+    return result;
+  }
+
+  public static List<INodeSubstituteAction> sideTransform_ActionsFactory_ReplaceRegexpOperation_1767845709140629296(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
+    List<INodeSubstituteAction> result = ListSequence.fromList(new ArrayList<INodeSubstituteAction>());
+    {
+      SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.regexp.structure.InlineRegexpExpression");
+      ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(concept, _context.getSourceNode()) {
+        public SNode doSubstitute(String pattern) {
+          SPropertyOperations.set(_context.getSourceNode(), "dotAll", "" + true);
+          return _context.getSourceNode();
+        }
+
+        public String getMatchingText(String pattern) {
+          return "s";
+        }
+
+        public String getVisibleMatchingText(String pattern) {
+          return this.getMatchingText(pattern);
+        }
+
+        public String getDescriptionText(String pattern) {
+          return "enables dotall mode";
+        }
+      });
+    }
+    return result;
+  }
+
+  public static List<INodeSubstituteAction> sideTransform_ActionsFactory_ReplaceRegexpOperation_1767845709140648026(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
+    List<INodeSubstituteAction> result = ListSequence.fromList(new ArrayList<INodeSubstituteAction>());
+    {
+      SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.regexp.structure.InlineRegexpExpression");
+      ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(concept, _context.getSourceNode()) {
+        public SNode doSubstitute(String pattern) {
+          SPropertyOperations.set(_context.getSourceNode(), "caseInsensitive", "" + true);
+          return _context.getSourceNode();
+        }
+
+        public String getMatchingText(String pattern) {
+          return "i";
+        }
+
+        public String getVisibleMatchingText(String pattern) {
+          return this.getMatchingText(pattern);
+        }
+
+        public String getDescriptionText(String pattern) {
+          return "enables case-insensitive matching";
+        }
+      });
+    }
+    return result;
+  }
+
+  public static List<INodeSubstituteAction> sideTransform_ActionsFactory_ReplaceRegexpOperation_1767845709140648050(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
+    List<INodeSubstituteAction> result = ListSequence.fromList(new ArrayList<INodeSubstituteAction>());
+    {
+      SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.regexp.structure.InlineRegexpExpression");
+      ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(concept, _context.getSourceNode()) {
+        public SNode doSubstitute(String pattern) {
+          SPropertyOperations.set(_context.getSourceNode(), "multiLine", "" + true);
+          return _context.getSourceNode();
+        }
+
+        public String getMatchingText(String pattern) {
+          return "m";
+        }
+
+        public String getVisibleMatchingText(String pattern) {
+          return this.getMatchingText(pattern);
+        }
+
+        public String getDescriptionText(String pattern) {
+          return "enables multiline mode";
+        }
+      });
+    }
+    return result;
+  }
+
+  public static List<INodeSubstituteAction> sideTransform_ActionsFactory_ReplaceRegexpOperation_1767845709140648074(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
+    List<INodeSubstituteAction> result = ListSequence.fromList(new ArrayList<INodeSubstituteAction>());
+    {
+      SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.regexp.structure.InlineRegexpExpression");
+      ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(concept, _context.getSourceNode()) {
+        public SNode doSubstitute(String pattern) {
+          SPropertyOperations.set(_context.getSourceNode(), "globalReplace", "" + true);
+          return _context.getSourceNode();
+        }
+
+        public String getMatchingText(String pattern) {
+          return "g";
+        }
+
+        public String getVisibleMatchingText(String pattern) {
+          return this.getMatchingText(pattern);
+        }
+
+        public String getDescriptionText(String pattern) {
+          return "global replace";
+        }
+      });
     }
     return result;
   }

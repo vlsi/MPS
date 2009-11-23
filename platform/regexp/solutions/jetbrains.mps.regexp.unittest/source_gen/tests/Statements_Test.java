@@ -24,7 +24,7 @@ public class Statements_Test extends TestCase {
   public void test_iftilde() throws Exception {
     boolean result = false;
     {
-      Pattern _pattern_0 = _PrecompiledPatterns.REGEXP9;
+      Pattern _pattern_0 = _PrecompiledPatterns.REGEXP10;
       Matcher _matcher_0 = _pattern_0.matcher("aaabcd");
       if (_matcher_0.find()) {
         result = true;

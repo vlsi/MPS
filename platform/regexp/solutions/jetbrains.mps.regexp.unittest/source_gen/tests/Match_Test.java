@@ -11,12 +11,12 @@ import java.util.regex.Matcher;
 
 public class Match_Test extends TestCase {
   public void test_find() throws Exception {
-    Assert.assertTrue(_PrecompiledPatterns.REGEXP10.matcher("acccasdawe").find());
-    Assert.assertFalse(_PrecompiledPatterns.REGEXP11.matcher("accasdawe").find());
+    Assert.assertTrue(_PrecompiledPatterns.REGEXP11.matcher("acccasdawe").find());
+    Assert.assertFalse(_PrecompiledPatterns.REGEXP12.matcher("accasdawe").find());
   }
 
   public void test_match() throws Exception {
-    Assert.assertTrue(_PrecompiledPatterns.REGEXP12.matcher("ww").matches());
+    Assert.assertTrue(_PrecompiledPatterns.REGEXP8.matcher("ww").matches());
     Assert.assertFalse(_PrecompiledPatterns.REGEXP13.matcher("www").matches());
   }
 

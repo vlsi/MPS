@@ -130,6 +130,7 @@ public class ReplaceRegexpOperation_Editor extends DefaultNodeEditor {
       style.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_MAGENTA);
       style.set(StyleAttributes.PUNCTUATION_LEFT, true);
     }
+    ReplaceRegexpOperation_removeM.setCellActions(editorCell, node, editorContext);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -142,6 +143,7 @@ public class ReplaceRegexpOperation_Editor extends DefaultNodeEditor {
       style.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_MAGENTA);
       style.set(StyleAttributes.PUNCTUATION_LEFT, true);
     }
+    ReplaceRegexpOperation_removeS.setCellActions(editorCell, node, editorContext);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -154,6 +156,7 @@ public class ReplaceRegexpOperation_Editor extends DefaultNodeEditor {
       style.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_MAGENTA);
       style.set(StyleAttributes.PUNCTUATION_LEFT, true);
     }
+    ReplaceRegexpOperation_removeI.setCellActions(editorCell, node, editorContext);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -179,6 +182,7 @@ public class ReplaceRegexpOperation_Editor extends DefaultNodeEditor {
       style.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_MAGENTA);
       style.set(StyleAttributes.PUNCTUATION_LEFT, true);
     }
+    ReplaceRegexpOperation_removeG.setCellActions(editorCell, node, editorContext);
     editorCell.setDefaultText("");
     return editorCell;
   }

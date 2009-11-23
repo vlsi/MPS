@@ -3251,6 +3251,198 @@
         </node>
       </node>
     </node>
+    <node role="actionsBuilder" type="jetbrains.mps.lang.actions.structure.SideTransformHintSubstituteActionsBuilder" id="1767845709140648074">
+      <link role="applicableConcept" targetNodeId="1.3796137614137086346" resolveInfo="ReplaceRegexpOperation" />
+      <node role="part" type="jetbrains.mps.lang.actions.structure.AddMenuPart" id="1767845709140648075">
+        <link role="concept" targetNodeId="1.1174510540317" resolveInfo="InlineRegexpExpression" />
+        <node role="part" type="jetbrains.mps.lang.actions.structure.SimpleSideTransformMenuPart" id="1767845709140648076">
+          <node role="handler" type="jetbrains.mps.lang.actions.structure.QueryFunction_SideTransform_Handler" id="1767845709140648077">
+            <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1767845709140648078">
+              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1767845709140648079">
+                <node role="expression" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression" id="1767845709140648080">
+                  <node role="lValue" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1767845709140648081">
+                    <node role="operand" type="jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_sourceNode" id="1767845709140648082" />
+                    <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="1767845709140648096">
+                      <link role="property" targetNodeId="1.3796137614137159273" resolveInfo="globalReplace" />
+                    </node>
+                  </node>
+                  <node role="rValue" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1767845709140648084">
+                    <property name="value" value="true" />
+                  </node>
+                </node>
+              </node>
+              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1767845709140648085">
+                <node role="expression" type="jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_sourceNode" id="1767845709140648086" />
+              </node>
+            </node>
+          </node>
+          <node role="matchingText" type="jetbrains.mps.lang.actions.structure.SideTransform_SimpleString" id="1767845709140648087">
+            <property name="text" value="g" />
+          </node>
+          <node role="descriptionText" type="jetbrains.mps.lang.actions.structure.SideTransform_SimpleString" id="1767845709140648088">
+            <property name="text" value="global replace" />
+          </node>
+        </node>
+      </node>
+      <node role="precondition" type="jetbrains.mps.lang.actions.structure.SideTransformHintSubstitutePreconditionFunction" id="1767845709140648089">
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1767845709140648090">
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1767845709140648091">
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.NotExpression" id="1767845709140648092">
+              <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1767845709140648093">
+                <node role="operand" type="jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_sourceNode" id="1767845709140648094" />
+                <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="1767845709140648097">
+                  <link role="property" targetNodeId="1.3796137614137159273" resolveInfo="globalReplace" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="actionsBuilder" type="jetbrains.mps.lang.actions.structure.SideTransformHintSubstituteActionsBuilder" id="1767845709140648050">
+      <link role="applicableConcept" targetNodeId="1.3796137614137086346" resolveInfo="ReplaceRegexpOperation" />
+      <node role="part" type="jetbrains.mps.lang.actions.structure.AddMenuPart" id="1767845709140648051">
+        <link role="concept" targetNodeId="1.1174510540317" resolveInfo="InlineRegexpExpression" />
+        <node role="part" type="jetbrains.mps.lang.actions.structure.SimpleSideTransformMenuPart" id="1767845709140648052">
+          <node role="handler" type="jetbrains.mps.lang.actions.structure.QueryFunction_SideTransform_Handler" id="1767845709140648053">
+            <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1767845709140648054">
+              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1767845709140648055">
+                <node role="expression" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression" id="1767845709140648056">
+                  <node role="lValue" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1767845709140648057">
+                    <node role="operand" type="jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_sourceNode" id="1767845709140648058" />
+                    <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="1767845709140648073">
+                      <link role="property" targetNodeId="1.3796137614137159271" resolveInfo="multiLine" />
+                    </node>
+                  </node>
+                  <node role="rValue" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1767845709140648060">
+                    <property name="value" value="true" />
+                  </node>
+                </node>
+              </node>
+              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1767845709140648061">
+                <node role="expression" type="jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_sourceNode" id="1767845709140648062" />
+              </node>
+            </node>
+          </node>
+          <node role="matchingText" type="jetbrains.mps.lang.actions.structure.SideTransform_SimpleString" id="1767845709140648063">
+            <property name="text" value="m" />
+          </node>
+          <node role="descriptionText" type="jetbrains.mps.lang.actions.structure.SideTransform_SimpleString" id="1767845709140648064">
+            <property name="text" value="enables multiline mode" />
+          </node>
+        </node>
+      </node>
+      <node role="precondition" type="jetbrains.mps.lang.actions.structure.SideTransformHintSubstitutePreconditionFunction" id="1767845709140648065">
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1767845709140648066">
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1767845709140648067">
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.NotExpression" id="1767845709140648068">
+              <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1767845709140648069">
+                <node role="operand" type="jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_sourceNode" id="1767845709140648070" />
+                <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="1767845709140648072">
+                  <link role="property" targetNodeId="1.3796137614137159271" resolveInfo="multiLine" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="actionsBuilder" type="jetbrains.mps.lang.actions.structure.SideTransformHintSubstituteActionsBuilder" id="1767845709140629296">
+      <link role="applicableConcept" targetNodeId="1.3796137614137086346" resolveInfo="ReplaceRegexpOperation" />
+      <node role="part" type="jetbrains.mps.lang.actions.structure.AddMenuPart" id="1767845709140648006">
+        <link role="concept" targetNodeId="1.1174510540317" resolveInfo="InlineRegexpExpression" />
+        <node role="part" type="jetbrains.mps.lang.actions.structure.SimpleSideTransformMenuPart" id="1767845709140648007">
+          <node role="handler" type="jetbrains.mps.lang.actions.structure.QueryFunction_SideTransform_Handler" id="1767845709140648008">
+            <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1767845709140648009">
+              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1767845709140648012">
+                <node role="expression" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression" id="1767845709140648019">
+                  <node role="lValue" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1767845709140648014">
+                    <node role="operand" type="jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_sourceNode" id="1767845709140648013" />
+                    <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="1767845709140648049">
+                      <link role="property" targetNodeId="1.3796137614137159270" resolveInfo="dotAll" />
+                    </node>
+                  </node>
+                  <node role="rValue" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1767845709140648022">
+                    <property name="value" value="true" />
+                  </node>
+                </node>
+              </node>
+              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1767845709140648024">
+                <node role="expression" type="jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_sourceNode" id="1767845709140648025" />
+              </node>
+            </node>
+          </node>
+          <node role="matchingText" type="jetbrains.mps.lang.actions.structure.SideTransform_SimpleString" id="1767845709140648010">
+            <property name="text" value="s" />
+          </node>
+          <node role="descriptionText" type="jetbrains.mps.lang.actions.structure.SideTransform_SimpleString" id="1767845709140648011">
+            <property name="text" value="enables dotall mode" />
+          </node>
+        </node>
+      </node>
+      <node role="precondition" type="jetbrains.mps.lang.actions.structure.SideTransformHintSubstitutePreconditionFunction" id="1767845709140629297">
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1767845709140629298">
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1767845709140629356">
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.NotExpression" id="1767845709140629357">
+              <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1767845709140629360">
+                <node role="operand" type="jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_sourceNode" id="1767845709140629359" />
+                <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="1767845709140648048">
+                  <link role="property" targetNodeId="1.3796137614137159270" resolveInfo="dotAll" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="actionsBuilder" type="jetbrains.mps.lang.actions.structure.SideTransformHintSubstituteActionsBuilder" id="1767845709140648026">
+      <link role="applicableConcept" targetNodeId="1.3796137614137086346" resolveInfo="ReplaceRegexpOperation" />
+      <node role="part" type="jetbrains.mps.lang.actions.structure.AddMenuPart" id="1767845709140648027">
+        <link role="concept" targetNodeId="1.1174510540317" resolveInfo="InlineRegexpExpression" />
+        <node role="part" type="jetbrains.mps.lang.actions.structure.SimpleSideTransformMenuPart" id="1767845709140648028">
+          <node role="handler" type="jetbrains.mps.lang.actions.structure.QueryFunction_SideTransform_Handler" id="1767845709140648029">
+            <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1767845709140648030">
+              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1767845709140648031">
+                <node role="expression" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression" id="1767845709140648032">
+                  <node role="lValue" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1767845709140648033">
+                    <node role="operand" type="jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_sourceNode" id="1767845709140648034" />
+                    <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="1767845709140648035">
+                      <link role="property" targetNodeId="1.3796137614137159272" resolveInfo="caseInsensitive" />
+                    </node>
+                  </node>
+                  <node role="rValue" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1767845709140648036">
+                    <property name="value" value="true" />
+                  </node>
+                </node>
+              </node>
+              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1767845709140648037">
+                <node role="expression" type="jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_sourceNode" id="1767845709140648038" />
+              </node>
+            </node>
+          </node>
+          <node role="matchingText" type="jetbrains.mps.lang.actions.structure.SideTransform_SimpleString" id="1767845709140648039">
+            <property name="text" value="i" />
+          </node>
+          <node role="descriptionText" type="jetbrains.mps.lang.actions.structure.SideTransform_SimpleString" id="1767845709140648040">
+            <property name="text" value="enables case-insensitive matching" />
+          </node>
+        </node>
+      </node>
+      <node role="precondition" type="jetbrains.mps.lang.actions.structure.SideTransformHintSubstitutePreconditionFunction" id="1767845709140648041">
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1767845709140648042">
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1767845709140648043">
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.NotExpression" id="1767845709140648044">
+              <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1767845709140648045">
+                <node role="operand" type="jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_sourceNode" id="1767845709140648046" />
+                <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="1767845709140648047">
+                  <link role="property" targetNodeId="1.3796137614137159272" resolveInfo="caseInsensitive" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
   </node>
 </model>
 
