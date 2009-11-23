@@ -161,6 +161,7 @@ public class IMethodCall_actualArguments extends AbstractCellProvider {
         Style style = editorCell.getStyle();
         style.set(StyleAttributes.SELECTABLE, true);
         style.set(StyleAttributes.EDITABLE, true);
+        style.set(StyleAttributes.INDENT_LAYOUT_NO_WRAP, true);
       }
       editorCell.setDefaultText("");
       return editorCell;

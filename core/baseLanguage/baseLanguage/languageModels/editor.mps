@@ -8649,6 +8649,9 @@
           <node role="styleItem" type="jetbrains.mps.lang.editor.structure.EditableStyleClassItem" id="1214398032098">
             <property name="flag" value="true" />
           </node>
+          <node role="styleItem" type="jetbrains.mps.lang.editor.structure.IndentLayoutNoWrapClassItem" id="909288871967990218">
+            <property name="flag" value="true" />
+          </node>
         </node>
         <node role="focusPolicyApplicable" type="jetbrains.mps.lang.editor.structure.QueryFunction_NodeCondition" id="1225529606622">
           <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1225529606623">

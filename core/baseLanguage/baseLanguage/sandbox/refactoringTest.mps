@@ -50,6 +50,16 @@
   <import index="32" modelUID="f:java_stub#java.nio(java.nio@java_stub)" version="-1" />
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="6208804448825809377">
     <property name="name" value="ArrayLength" />
+    <node role="staticMethod" type="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" id="909288871967797956">
+      <property name="name" value="b" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="909288871967809739" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="909288871967797958" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="909288871967797959" />
+      <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="909288871967809737">
+        <property name="name" value="p" />
+        <node role="type" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="909288871967809738" />
+      </node>
+    </node>
     <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="6208804448825809378" />
     <node role="constructor" type="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" id="6208804448825809379">
       <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="6208804448825809380" />
@@ -58,6 +68,125 @@
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="4837728922725361456">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="4837728922725361472">
             <property name="value" value="true" />
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="909288871967809741">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.LocalStaticMethodCall" id="909288871967809742">
+            <link role="baseMethodDeclaration" targetNodeId="909288871967797956" resolveInfo="b" />
+            <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalStaticMethodCall" id="909288871967809743">
+              <link role="baseMethodDeclaration" targetNodeId="909288871967797956" resolveInfo="b" />
+              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalStaticMethodCall" id="909288871967809744">
+                <link role="baseMethodDeclaration" targetNodeId="909288871967797956" resolveInfo="b" />
+                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalStaticMethodCall" id="909288871967809745">
+                  <link role="baseMethodDeclaration" targetNodeId="909288871967797956" resolveInfo="b" />
+                  <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalStaticMethodCall" id="909288871967809746">
+                    <link role="baseMethodDeclaration" targetNodeId="909288871967797956" resolveInfo="b" />
+                    <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalStaticMethodCall" id="909288871967809747">
+                      <link role="baseMethodDeclaration" targetNodeId="909288871967797956" resolveInfo="b" />
+                      <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalStaticMethodCall" id="909288871967809748">
+                        <link role="baseMethodDeclaration" targetNodeId="909288871967797956" resolveInfo="b" />
+                        <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalStaticMethodCall" id="909288871967809749">
+                          <link role="baseMethodDeclaration" targetNodeId="909288871967797956" resolveInfo="b" />
+                          <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalStaticMethodCall" id="909288871967809750">
+                            <link role="baseMethodDeclaration" targetNodeId="909288871967797956" resolveInfo="b" />
+                            <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalStaticMethodCall" id="909288871967809751">
+                              <link role="baseMethodDeclaration" targetNodeId="909288871967797956" resolveInfo="b" />
+                              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalStaticMethodCall" id="909288871967809752">
+                                <link role="baseMethodDeclaration" targetNodeId="909288871967797956" resolveInfo="b" />
+                                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalStaticMethodCall" id="909288871967809753">
+                                  <link role="baseMethodDeclaration" targetNodeId="909288871967797956" resolveInfo="b" />
+                                  <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalStaticMethodCall" id="909288871967809754">
+                                    <link role="baseMethodDeclaration" targetNodeId="909288871967797956" resolveInfo="b" />
+                                    <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalStaticMethodCall" id="909288871967809755">
+                                      <link role="baseMethodDeclaration" targetNodeId="909288871967797956" resolveInfo="b" />
+                                      <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalStaticMethodCall" id="909288871967809756">
+                                        <link role="baseMethodDeclaration" targetNodeId="909288871967797956" resolveInfo="b" />
+                                        <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalStaticMethodCall" id="909288871967809757">
+                                          <link role="baseMethodDeclaration" targetNodeId="909288871967797956" resolveInfo="b" />
+                                          <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalStaticMethodCall" id="909288871967809758">
+                                            <link role="baseMethodDeclaration" targetNodeId="909288871967797956" resolveInfo="b" />
+                                            <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalStaticMethodCall" id="909288871967809759">
+                                              <link role="baseMethodDeclaration" targetNodeId="909288871967797956" resolveInfo="b" />
+                                              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalStaticMethodCall" id="909288871967809760">
+                                                <link role="baseMethodDeclaration" targetNodeId="909288871967797956" resolveInfo="b" />
+                                                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalStaticMethodCall" id="909288871967809761">
+                                                  <link role="baseMethodDeclaration" targetNodeId="909288871967797956" resolveInfo="b" />
+                                                  <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalStaticMethodCall" id="909288871967809762">
+                                                    <link role="baseMethodDeclaration" targetNodeId="909288871967797956" resolveInfo="b" />
+                                                    <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalStaticMethodCall" id="909288871967809763">
+                                                      <link role="baseMethodDeclaration" targetNodeId="909288871967797956" resolveInfo="b" />
+                                                      <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalStaticMethodCall" id="909288871967809764">
+                                                        <link role="baseMethodDeclaration" targetNodeId="909288871967797956" resolveInfo="b" />
+                                                        <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalStaticMethodCall" id="909288871967809765">
+                                                          <link role="baseMethodDeclaration" targetNodeId="909288871967797956" resolveInfo="b" />
+                                                          <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalStaticMethodCall" id="909288871967809766">
+                                                            <link role="baseMethodDeclaration" targetNodeId="909288871967797956" resolveInfo="b" />
+                                                            <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalStaticMethodCall" id="909288871967809767">
+                                                              <link role="baseMethodDeclaration" targetNodeId="909288871967797956" resolveInfo="b" />
+                                                              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalStaticMethodCall" id="909288871967809768">
+                                                                <link role="baseMethodDeclaration" targetNodeId="909288871967797956" resolveInfo="b" />
+                                                                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalStaticMethodCall" id="909288871967809769">
+                                                                  <link role="baseMethodDeclaration" targetNodeId="909288871967797956" resolveInfo="b" />
+                                                                  <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalStaticMethodCall" id="909288871967809770">
+                                                                    <link role="baseMethodDeclaration" targetNodeId="909288871967797956" resolveInfo="b" />
+                                                                    <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalStaticMethodCall" id="909288871967809771">
+                                                                      <link role="baseMethodDeclaration" targetNodeId="909288871967797956" resolveInfo="b" />
+                                                                      <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalStaticMethodCall" id="909288871967809772">
+                                                                        <link role="baseMethodDeclaration" targetNodeId="909288871967797956" resolveInfo="b" />
+                                                                        <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalStaticMethodCall" id="909288871967809773">
+                                                                          <link role="baseMethodDeclaration" targetNodeId="909288871967797956" resolveInfo="b" />
+                                                                          <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalStaticMethodCall" id="909288871967809774">
+                                                                            <link role="baseMethodDeclaration" targetNodeId="909288871967797956" resolveInfo="b" />
+                                                                            <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalStaticMethodCall" id="909288871967809775">
+                                                                              <link role="baseMethodDeclaration" targetNodeId="909288871967797956" resolveInfo="b" />
+                                                                              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalStaticMethodCall" id="909288871967809776">
+                                                                                <link role="baseMethodDeclaration" targetNodeId="909288871967797956" resolveInfo="b" />
+                                                                                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalStaticMethodCall" id="909288871967809777">
+                                                                                  <link role="baseMethodDeclaration" targetNodeId="909288871967797956" resolveInfo="b" />
+                                                                                  <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalStaticMethodCall" id="909288871967809778">
+                                                                                    <link role="baseMethodDeclaration" targetNodeId="909288871967797956" resolveInfo="b" />
+                                                                                    <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalStaticMethodCall" id="909288871967809779">
+                                                                                      <link role="baseMethodDeclaration" targetNodeId="909288871967797956" resolveInfo="b" />
+                                                                                      <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalStaticMethodCall" id="909288871967809780">
+                                                                                        <link role="baseMethodDeclaration" targetNodeId="909288871967797956" resolveInfo="b" />
+                                                                                      </node>
+                                                                                    </node>
+                                                                                  </node>
+                                                                                </node>
+                                                                              </node>
+                                                                            </node>
+                                                                          </node>
+                                                                        </node>
+                                                                      </node>
+                                                                    </node>
+                                                                  </node>
+                                                                </node>
+                                                              </node>
+                                                            </node>
+                                                          </node>
+                                                        </node>
+                                                      </node>
+                                                    </node>
+                                                  </node>
+                                                </node>
+                                              </node>
+                                            </node>
+                                          </node>
+                                        </node>
+                                      </node>
+                                    </node>
+                                  </node>
+                                </node>
+                              </node>
+                            </node>
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
           </node>
         </node>
       </node>
