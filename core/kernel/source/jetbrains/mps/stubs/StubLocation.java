@@ -12,7 +12,11 @@ public class StubLocation {
   public StubLocation(String path, String prefix, IModule module) {
     myPath = path;
     myPrefix = prefix;
-    myModuleReference = module.getModuleReference();
+    if (module == null) {
+      myModuleReference = null;
+    } else {
+      myModuleReference = module.getModuleReference();
+    }
   }
 
   public String getPath() {
@@ -24,6 +28,7 @@ public class StubLocation {
   }
 
   public IModule getModule() {
+    if (myModuleReference == null) return null;
     return MPSModuleRepository.getInstance().getModule(myModuleReference);
   }
 }
