@@ -15,7 +15,7 @@ public class DebugInfoInitializer_CustomApplicationPlugin extends BaseCustomAppl
   }
 
   public void doInit() {
-    DebugInfoManager manager = DebugInfoManager.getInstance();
+    DebugInfoManager manager = new DebugInfoManager();
     manager.addDebuggableConcept(INamedConcept_Behavior.call_getFqName_1213877404258(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.Statement")));
     manager.addDebuggableConcept(INamedConcept_Behavior.call_getFqName_1213877404258(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.FieldDeclaration")));
     manager.addDebuggableConcept(INamedConcept_Behavior.call_getFqName_1213877404258(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration")));
