@@ -2172,6 +2172,137 @@
           </node>
         </node>
       </node>
+      <node role="testMethod" type="jetbrains.mps.baseLanguage.unitTest.structure.TestMethod" id="3632055896798290267">
+        <property name="methodName" value="dotAllMode" />
+        <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="3632055896798290268" />
+        <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="3632055896798290269" />
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="3632055896798290270">
+          <node role="statement" type="jetbrains.mps.baseLanguage.unitTest.structure.AssertEquals" id="3632055896798290271">
+            <node role="expected" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="3632055896798292824">
+              <property name="value" value="!\n!\n!" />
+            </node>
+            <node role="actual" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="3632055896798292812">
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="3632055896798290274">
+                <property name="value" value="aaaaa\nddddd\nwwwww" />
+              </node>
+              <node role="operation" type="jetbrains.mps.baseLanguage.regexp.structure.ReplaceRegexpOperation" id="3632055896798292816">
+                <property name="globalReplace" value="true" />
+                <node role="search" type="jetbrains.mps.baseLanguage.regexp.structure.PlusRegexp" id="3632055896798292819">
+                  <node role="regexp" type="jetbrains.mps.baseLanguage.regexp.structure.DotRegexp" id="3632055896798292821" />
+                </node>
+                <node role="replacement" type="jetbrains.mps.baseLanguage.regexp.structure.LiteralReplacement" id="3632055896798292823">
+                  <property name="text" value="!" />
+                </node>
+              </node>
+            </node>
+          </node>
+          <node role="statement" type="jetbrains.mps.baseLanguage.unitTest.structure.AssertEquals" id="3632055896798292826">
+            <node role="expected" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="3632055896798292827">
+              <property name="value" value="!" />
+            </node>
+            <node role="actual" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="3632055896798292828">
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="3632055896798292829">
+                <property name="value" value="aaaaa\nddddd\nwwwww" />
+              </node>
+              <node role="operation" type="jetbrains.mps.baseLanguage.regexp.structure.ReplaceRegexpOperation" id="3632055896798292830">
+                <property name="dotAll" value="true" />
+                <property name="globalReplace" value="true" />
+                <node role="search" type="jetbrains.mps.baseLanguage.regexp.structure.PlusRegexp" id="3632055896798292831">
+                  <node role="regexp" type="jetbrains.mps.baseLanguage.regexp.structure.DotRegexp" id="3632055896798292832" />
+                </node>
+                <node role="replacement" type="jetbrains.mps.baseLanguage.regexp.structure.LiteralReplacement" id="3632055896798292833">
+                  <property name="text" value="!" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="testMethod" type="jetbrains.mps.baseLanguage.unitTest.structure.TestMethod" id="3632055896798292834">
+        <property name="methodName" value="multiLine" />
+        <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="3632055896798292835" />
+        <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="3632055896798292836" />
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="3632055896798292837">
+          <node role="statement" type="jetbrains.mps.baseLanguage.unitTest.structure.AssertEquals" id="3632055896798292838">
+            <node role="expected" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="3632055896798292841">
+              <property name="value" value="sada\n[asdad]\nasda\n[asada]" />
+            </node>
+            <node role="actual" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="3632055896798292844">
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="3632055896798292842">
+                <property name="value" value="sada\nasdad:\nasda\nasada:" />
+              </node>
+              <node role="operation" type="jetbrains.mps.baseLanguage.regexp.structure.ReplaceRegexpOperation" id="3632055896798292848">
+                <property name="globalReplace" value="true" />
+                <property name="multiLine" value="true" />
+                <node role="search" type="jetbrains.mps.baseLanguage.regexp.structure.SeqRegexp" id="3632055896798292861">
+                  <node role="right" type="jetbrains.mps.baseLanguage.regexp.structure.SeqRegexp" id="3632055896798292866">
+                    <node role="right" type="jetbrains.mps.baseLanguage.regexp.structure.StringLiteralRegexp" id="3632055896798292869">
+                      <property name="text" value=":" />
+                    </node>
+                    <node role="left" type="jetbrains.mps.baseLanguage.regexp.structure.MatchParensRegexp" id="3632055896798292864">
+                      <property name="name" value="text" />
+                      <node role="regexp" type="jetbrains.mps.baseLanguage.regexp.structure.PlusRegexp" id="3632055896798292871">
+                        <node role="regexp" type="jetbrains.mps.baseLanguage.regexp.structure.PredefinedSymbolClassRegexp" id="3632055896798292870">
+                          <link role="symbolClass" targetNodeId="2v.1174554738336" resolveInfo="\w" />
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                  <node role="left" type="jetbrains.mps.baseLanguage.regexp.structure.LineStartRegexp" id="3632055896798292851" />
+                </node>
+                <node role="replacement" type="jetbrains.mps.baseLanguage.regexp.structure.LiteralReplacement" id="3632055896798292879">
+                  <property name="text" value="[" />
+                </node>
+                <node role="replacement" type="jetbrains.mps.baseLanguage.regexp.structure.MatchVariableReferenceReplacement" id="3632055896798292875">
+                  <link role="match" targetNodeId="3632055896798292864" resolveInfo="text" />
+                </node>
+                <node role="replacement" type="jetbrains.mps.baseLanguage.regexp.structure.LiteralReplacement" id="3632055896798292877">
+                  <property name="text" value="]" />
+                </node>
+              </node>
+            </node>
+          </node>
+          <node role="statement" type="jetbrains.mps.baseLanguage.unitTest.structure.AssertEquals" id="3632055896798296107">
+            <node role="expected" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="3632055896798296108">
+              <property name="value" value="sada\nasdad:\nasda\nasada:" />
+            </node>
+            <node role="actual" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="3632055896798296109">
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="3632055896798296110">
+                <property name="value" value="sada\nasdad:\nasda\nasada:" />
+              </node>
+              <node role="operation" type="jetbrains.mps.baseLanguage.regexp.structure.ReplaceRegexpOperation" id="3632055896798296111">
+                <property name="globalReplace" value="true" />
+                <property name="multiLine" value="false" />
+                <node role="search" type="jetbrains.mps.baseLanguage.regexp.structure.SeqRegexp" id="3632055896798296112">
+                  <node role="right" type="jetbrains.mps.baseLanguage.regexp.structure.SeqRegexp" id="3632055896798296113">
+                    <node role="right" type="jetbrains.mps.baseLanguage.regexp.structure.StringLiteralRegexp" id="3632055896798296114">
+                      <property name="text" value=":" />
+                    </node>
+                    <node role="left" type="jetbrains.mps.baseLanguage.regexp.structure.MatchParensRegexp" id="3632055896798296115">
+                      <property name="name" value="text" />
+                      <node role="regexp" type="jetbrains.mps.baseLanguage.regexp.structure.PlusRegexp" id="3632055896798296116">
+                        <node role="regexp" type="jetbrains.mps.baseLanguage.regexp.structure.PredefinedSymbolClassRegexp" id="3632055896798296117">
+                          <link role="symbolClass" targetNodeId="2v.1174554738336" resolveInfo="\w" />
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                  <node role="left" type="jetbrains.mps.baseLanguage.regexp.structure.LineStartRegexp" id="3632055896798296118" />
+                </node>
+                <node role="replacement" type="jetbrains.mps.baseLanguage.regexp.structure.LiteralReplacement" id="3632055896798296119">
+                  <property name="text" value="[" />
+                </node>
+                <node role="replacement" type="jetbrains.mps.baseLanguage.regexp.structure.MatchVariableReferenceReplacement" id="3632055896798296120">
+                  <link role="match" targetNodeId="3632055896798296115" resolveInfo="text" />
+                </node>
+                <node role="replacement" type="jetbrains.mps.baseLanguage.regexp.structure.LiteralReplacement" id="3632055896798296121">
+                  <property name="text" value="]" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
       <node role="testMethod" type="jetbrains.mps.baseLanguage.unitTest.structure.TestMethod" id="8942139995508580996">
         <property name="methodName" value="checkLiterals" />
         <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="8942139995508580997" />

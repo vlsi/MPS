@@ -8,13 +8,13 @@ import junit.framework.Assert;
 public class PerlReplace_Test extends TestCase {
   public void test_simple() throws Exception {
     String input = "aaabbccddeeffffffff";
-    Assert.assertEquals("a!b!c!d!e!f!", _PrecompiledPatterns.REPLREGEXP5.matcher(input).replaceAll("$1!"));
+    Assert.assertEquals("a!b!c!d!e!f!", _PrecompiledPatterns.REPLREGEXP9.matcher(input).replaceAll("$1!"));
     Assert.assertEquals("a!bbccddeeffffffff", _PrecompiledPatterns.REPLREGEXP0.matcher(input).replaceFirst("$1!"));
   }
 
   public void test_swap() throws Exception {
-    Assert.assertEquals("word2 first", _PrecompiledPatterns.REPLREGEXP7.matcher("   first   word2").replaceFirst("$2 $1"));
-    _PrecompiledPatterns.REPLREGEXP6.matcher("").replaceFirst("[$1]");
+    Assert.assertEquals("word2 first", _PrecompiledPatterns.REPLREGEXP11.matcher("   first   word2").replaceFirst("$2 $1"));
+    _PrecompiledPatterns.REPLREGEXP10.matcher("").replaceFirst("[$1]");
   }
 
   public void test_oneLetter() throws Exception {
@@ -22,18 +22,28 @@ public class PerlReplace_Test extends TestCase {
     Assert.assertEquals("AA", _PrecompiledPatterns.REPLREGEXP4.matcher("A").replaceFirst("AA"));
   }
 
+  public void test_dotAllMode() throws Exception {
+    Assert.assertEquals("!\n!\n!", _PrecompiledPatterns.REPLREGEXP5.matcher("aaaaa\nddddd\nwwwww").replaceAll("!"));
+    Assert.assertEquals("!", _PrecompiledPatterns.REPLREGEXP6.matcher("aaaaa\nddddd\nwwwww").replaceAll("!"));
+  }
+
+  public void test_multiLine() throws Exception {
+    Assert.assertEquals("sada\n[asdad]\nasda\n[asada]", _PrecompiledPatterns.REPLREGEXP7.matcher("sada\nasdad:\nasda\nasada:").replaceAll("[$1]"));
+    Assert.assertEquals("sada\nasdad:\nasda\nasada:", _PrecompiledPatterns.REPLREGEXP8.matcher("sada\nasdad:\nasda\nasada:").replaceAll("[$1]"));
+  }
+
   public void test_checkLiterals() throws Exception {
-    Assert.assertEquals("\\", _PrecompiledPatterns.REPLREGEXP8.matcher("a").replaceFirst("\\\\"));
-    Assert.assertEquals("[]", _PrecompiledPatterns.REPLREGEXP9.matcher("a").replaceFirst("[]"));
-    Assert.assertEquals("$", _PrecompiledPatterns.REPLREGEXP10.matcher("a").replaceFirst("\\$"));
-    Assert.assertEquals("\"", _PrecompiledPatterns.REPLREGEXP11.matcher("a").replaceFirst("\""));
-    Assert.assertEquals("\"", _PrecompiledPatterns.REPLREGEXP17.matcher("a").replaceFirst("\""));
-    Assert.assertEquals("()", _PrecompiledPatterns.REPLREGEXP12.matcher("a").replaceFirst("()"));
-    Assert.assertEquals("{}", _PrecompiledPatterns.REPLREGEXP13.matcher("a").replaceFirst("{}"));
-    Assert.assertEquals("\n", _PrecompiledPatterns.REPLREGEXP14.matcher("a").replaceFirst("\n"));
-    Assert.assertEquals("^", _PrecompiledPatterns.REPLREGEXP15.matcher("a").replaceFirst("^"));
-    Assert.assertEquals("'", _PrecompiledPatterns.REPLREGEXP16.matcher("a").replaceFirst("'"));
-    Assert.assertEquals("'", _PrecompiledPatterns.REPLREGEXP18.matcher("a").replaceFirst("\'"));
+    Assert.assertEquals("\\", _PrecompiledPatterns.REPLREGEXP12.matcher("a").replaceFirst("\\\\"));
+    Assert.assertEquals("[]", _PrecompiledPatterns.REPLREGEXP13.matcher("a").replaceFirst("[]"));
+    Assert.assertEquals("$", _PrecompiledPatterns.REPLREGEXP14.matcher("a").replaceFirst("\\$"));
+    Assert.assertEquals("\"", _PrecompiledPatterns.REPLREGEXP15.matcher("a").replaceFirst("\""));
+    Assert.assertEquals("\"", _PrecompiledPatterns.REPLREGEXP21.matcher("a").replaceFirst("\""));
+    Assert.assertEquals("()", _PrecompiledPatterns.REPLREGEXP16.matcher("a").replaceFirst("()"));
+    Assert.assertEquals("{}", _PrecompiledPatterns.REPLREGEXP17.matcher("a").replaceFirst("{}"));
+    Assert.assertEquals("\n", _PrecompiledPatterns.REPLREGEXP18.matcher("a").replaceFirst("\n"));
+    Assert.assertEquals("^", _PrecompiledPatterns.REPLREGEXP19.matcher("a").replaceFirst("^"));
+    Assert.assertEquals("'", _PrecompiledPatterns.REPLREGEXP20.matcher("a").replaceFirst("'"));
+    Assert.assertEquals("'", _PrecompiledPatterns.REPLREGEXP22.matcher("a").replaceFirst("\'"));
     Assert.assertEquals("\u2606", _PrecompiledPatterns.REPLREGEXP1.matcher("a").replaceFirst("\u2606"));
     Assert.assertEquals("\r", _PrecompiledPatterns.REPLREGEXP2.matcher("a").replaceFirst("\r"));
   }
