@@ -5,9 +5,9 @@ package jetbrains.mps.baseLanguage.regexp.generator.baseLanguage.template.util;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.List;
 import java.util.ArrayList;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
 
 public class GeneratorUtil {
   public static SNode findRegexpUsingConstructionFor(SNode ref) {
@@ -30,7 +30,7 @@ public class GeneratorUtil {
 
     for (SNode ifst : SNodeOperations.getAncestors(ref, "jetbrains.mps.baseLanguage.structure.IfStatement", true)) {
       for (SNode expr : SNodeOperations.getDescendants(SLinkOperations.getTarget(ifst, "condition", true), "jetbrains.mps.baseLanguage.regexp.structure.FindMatchExpression", true, new String[]{})) {
-        if (belongs(ref, expr, 0)) {
+        if (ListSequence.fromList(collectNamedParentheses(expr)).contains(SLinkOperations.getTarget(ref, "match", false))) {
           return expr;
         }
       }
@@ -46,36 +46,26 @@ public class GeneratorUtil {
     return null;
   }
 
-  public static List<SNode> collectNamedParentheses(SNode node) {
+  private static List<SNode> collectNamedParentheses(SNode node) {
     List<SNode> res = new ArrayList<SNode>();
-    for (SNode ref : SNodeOperations.getDescendants(node, "jetbrains.mps.baseLanguage.regexp.structure.RegexpDeclarationReferenceRegexp", false, new String[]{})) {
-      if (SLinkOperations.getTarget(ref, "regexp", false) != null) {
-        for (SNode mpe : SNodeOperations.getDescendants(SLinkOperations.getTarget(ref, "regexp", false), "jetbrains.mps.baseLanguage.regexp.structure.MatchParensRegexp", false, new String[]{})) {
-          ListSequence.fromList(res).addElement(mpe);
-        }
-      }
-    }
-    for (SNode mpe : SNodeOperations.getDescendants(node, "jetbrains.mps.baseLanguage.regexp.structure.MatchParensRegexp", false, new String[]{})) {
-      ListSequence.fromList(res).addElement(mpe);
-    }
+    collectNamedParenthesesInternal(node, new ArrayList<SNode>(), res);
     return res;
   }
 
-  public static boolean belongs(SNode ref, SNode regexp, int deep) {
-    if (deep > 16) {
-      return false;
+  private static void collectNamedParenthesesInternal(SNode node, List<SNode> seen, List<SNode> found) {
+    if (ListSequence.fromList(seen).contains(node)) {
+      return;
     }
-    for (SNode mpe : SNodeOperations.getDescendants(regexp, "jetbrains.mps.baseLanguage.regexp.structure.MatchParensRegexp", true, new String[]{})) {
-      if (mpe == SLinkOperations.getTarget(ref, "match", false)) {
-        return true;
+    ListSequence.fromList(seen).addElement(node);
+
+    for (SNode ref : SNodeOperations.getDescendants(node, "jetbrains.mps.baseLanguage.regexp.structure.RegexpDeclarationReferenceRegexp", false, new String[]{})) {
+      if (SLinkOperations.getTarget(ref, "regexp", false) != null) {
+        collectNamedParenthesesInternal(SLinkOperations.getTarget(ref, "regexp", false), seen, found);
       }
     }
-    for (SNode declref : SNodeOperations.getDescendants(regexp, "jetbrains.mps.baseLanguage.regexp.structure.RegexpDeclarationReferenceRegexp", true, new String[]{})) {
-      if (SLinkOperations.getTarget(declref, "regexp", false) != null && belongs(ref, SLinkOperations.getTarget(declref, "regexp", false), deep + 1)) {
-        return true;
-      }
+    for (SNode mpe : SNodeOperations.getDescendants(node, "jetbrains.mps.baseLanguage.regexp.structure.MatchParensRegexp", false, new String[]{})) {
+      ListSequence.fromList(found).addElement(mpe);
     }
-    return false;
   }
 
   public static List<SNode> collectMatchReferences(SNode enclosingNode) {

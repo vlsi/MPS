@@ -1907,16 +1907,16 @@
                 <node role="expected" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="902359922144295166">
                   <property name="value" value="3" />
                 </node>
-                <node role="actual" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="902359922144295167">
-                  <property name="value" value="1" />
+                <node role="actual" type="jetbrains.mps.baseLanguage.regexp.structure.MatchVariableReference" id="1767845709140912926">
+                  <link role="match" targetNodeId="902359922144295112" resolveInfo="number" />
                 </node>
               </node>
               <node role="statement" type="jetbrains.mps.baseLanguage.unitTest.structure.AssertEquals" id="902359922144295169">
                 <node role="expected" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="902359922144295172">
                   <property name="value" value="_123" />
                 </node>
-                <node role="actual" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="902359922144295173">
-                  <property name="value" value="id" />
+                <node role="actual" type="jetbrains.mps.baseLanguage.regexp.structure.MatchVariableReference" id="1767845709140912928">
+                  <link role="match" targetNodeId="902359922144295067" resolveInfo="identifier" />
                 </node>
               </node>
             </node>
@@ -1927,7 +1927,7 @@
                 </node>
               </node>
               <node role="inputExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="902359922144295137">
-                <property name="value" value="_123[3] inner" />
+                <property name="value" value="_123[3]inner" />
               </node>
             </node>
           </node>
@@ -2157,7 +2157,7 @@
                 <property name="value" value="A" />
               </node>
               <node role="operation" type="jetbrains.mps.baseLanguage.regexp.structure.ReplaceRegexpOperation" id="1767845709140460469">
-                <property name="caseInsensitive" value="false" />
+                <property name="caseInsensitive" value="true" />
                 <property name="globalReplace" value="false" />
                 <property name="dotAll" value="false" />
                 <property name="multiLine" value="false" />

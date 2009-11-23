@@ -49,10 +49,10 @@ public class Match_Test extends TestCase {
 
   public void test_innerRegexps() throws Exception {
     Matcher _matcher_5236_0;
-    if ((_matcher_5236_0 = _PrecompiledPatterns.REGEXP1.matcher("_123[3] inner")).find()) {
+    if ((_matcher_5236_0 = _PrecompiledPatterns.REGEXP1.matcher("_123[3]inner")).find()) {
       Assert.assertEquals("inner", _matcher_5236_0.group(3));
-      Assert.assertEquals("3", "1");
-      Assert.assertEquals("_123", "id");
+      Assert.assertEquals("3", _matcher_5236_0.group(2));
+      Assert.assertEquals("_123", _matcher_5236_0.group(1));
     }
   }
 
