@@ -72,6 +72,11 @@ public abstract class MpsLoadTask extends org.apache.tools.ant.Task {
   }
 
   public void addConfiguredLibrary(LibraryDataType libraryInner) {
+    if (libraryInner.getName() == null) {
+      log("Library missing required attribute name.", org.apache.tools.ant.Project.MSG_ERR);
+    } else if (libraryInner.getDir() == null) {
+      throw new BuildException("Library missing required attribute dir.");
+    }
     myWhatToDo.addLibrary(libraryInner.getName(), libraryInner.getDir(), libraryInner.getCompile());
   }
 

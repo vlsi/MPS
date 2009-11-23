@@ -18,7 +18,6 @@ import jetbrains.mps.generator.IGenerationType;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.util.misc.hash.HashSet;
 import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.ide.progress.IAdaptiveProgressMonitor;
 import jetbrains.mps.ide.genconf.GenParameters;
@@ -34,7 +33,6 @@ import java.io.*;
 
 import com.intellij.openapi.util.Computable;
 import com.intellij.openapi.progress.EmptyProgressIndicator;
-import com.intellij.openapi.progress.ProgressIndicator;
 import com.intellij.openapi.project.ProjectManager;
 import junit.framework.TestFailure;
 
@@ -201,7 +199,27 @@ public class TestGenerationWorker extends GeneratorWorker {
       sb.append("\n");
     }
 
-    printCompilationResult(compilationResult, sb);
+    boolean headerPrinted = false;
+    for (CompilationResult r : compilationResult) {
+      if (r.getErrors() != null && r.getErrors().length > 0) {
+        if (!headerPrinted) {
+          sb.append("Compilation problems:\n");
+          headerPrinted = true;
+        }
+        for (CategorizedProblem p : r.getErrors()) {
+          sb.append("  ");
+          sb.append(new String(r.getCompilationUnit().getFileName()));
+          sb.append(" (");
+          sb.append(p.getSourceLineNumber());
+          sb.append("): ");
+          sb.append(p.getMessage());
+          sb.append("\n");
+        }
+      }
+    }
+    if (headerPrinted) {
+      sb.append("\n");
+    }
 
     if (testFailures.size() > 0) {
       sb.append("Test Failures:\n");
@@ -228,30 +246,6 @@ public class TestGenerationWorker extends GeneratorWorker {
     }
 
     return myBuildServerMessageFormat.escapeBuildMessage(sb);
-  }
-
-  protected void printCompilationResult(List<CompilationResult> compilationResult, StringBuffer sb) {
-    boolean headerPrinted = false;
-    for (CompilationResult r : compilationResult) {
-      if (r.getErrors() != null && r.getErrors().length > 0) {
-        if (!headerPrinted) {
-          sb.append("Compilation problems:\n");
-          headerPrinted = true;
-        }
-        for (CategorizedProblem p : r.getErrors()) {
-          sb.append("  ");
-          sb.append(new String(r.getCompilationUnit().getFileName()));
-          sb.append(" (");
-          sb.append(p.getSourceLineNumber());
-          sb.append("): ");
-          sb.append(p.getMessage());
-          sb.append("\n");
-        }
-      }
-    }
-    if (headerPrinted) {
-      sb.append("\n");
-    }
   }
 
   @Override
