@@ -66,7 +66,7 @@ public class RMIHandler {
         System.out.println("client is " + client);
         System.out.println("access denied");
       } catch (Exception e) {
-        e.printStackTrace();
+        throw new RuntimeException("Access Denied", e);
       }
       throw new RuntimeException("Access Denied");
     }
