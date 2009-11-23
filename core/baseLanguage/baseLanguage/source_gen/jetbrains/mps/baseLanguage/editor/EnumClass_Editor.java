@@ -7,6 +7,7 @@ import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
+import jetbrains.mps.nodeEditor.AbstractCellProvider;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
@@ -17,6 +18,8 @@ import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
+import jetbrains.mps.smodel.IScope;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandler;
 import jetbrains.mps.smodel.action.NodeFactoryManager;
 import jetbrains.mps.nodeEditor.CellActionType;
@@ -34,6 +37,9 @@ public class EnumClass_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Collection_3195_0");
     editorCell.addEditorCell(this.createConstant_3195_1(editorContext, node));
     editorCell.addEditorCell(this.createProperty_3195_0(editorContext, node));
+    if (renderingCondition3195_0(node, editorContext, editorContext.getOperationContext().getScope())) {
+      editorCell.addEditorCell(this.createComponent_3195_0(editorContext, node));
+    }
     editorCell.addEditorCell(this.createConstant_3195_12(editorContext, node));
     editorCell.addEditorCell(this.createRefNodeList_3195_5(editorContext, node));
     editorCell.addEditorCell(this.createConstant_3195_2(editorContext, node));
@@ -47,6 +53,12 @@ public class EnumClass_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstant_3195_11(editorContext, node));
     editorCell.addEditorCell(this.createRefNodeList_3195_4(editorContext, node));
     editorCell.addEditorCell(this.createConstant_3195_4(editorContext, node));
+    return editorCell;
+  }
+
+  private EditorCell createComponent_3195_0(EditorContext editorContext, SNode node) {
+    AbstractCellProvider provider = new _GenericDeclaration_TypeVariables_Component(node);
+    EditorCell editorCell = provider.createEditorCell(editorContext);
     return editorCell;
   }
 
@@ -246,6 +258,10 @@ public class EnumClass_Editor extends DefaultNodeEditor {
       return manager.createRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
     } else
     return editorCell;
+  }
+
+  private static boolean renderingCondition3195_0(SNode node, EditorContext editorContext, IScope scope) {
+    return SLinkOperations.getCount(node, "typeVariableDeclaration") > 0;
   }
 
   private static class fieldListHandler_3195_0 extends RefNodeListHandler {

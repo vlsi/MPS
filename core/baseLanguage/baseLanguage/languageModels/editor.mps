@@ -4067,6 +4067,29 @@
           <property name="flag" value="true" />
         </node>
       </node>
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Component" id="6650568951502239952">
+        <link role="editorComponent" targetNodeId="1109280020740" resolveInfo="_GenericDeclaration_TypeVariables_Component" />
+        <node role="renderingCondition" type="jetbrains.mps.lang.editor.structure.QueryFunction_NodeCondition" id="6650568951502239953">
+          <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="6650568951502239954">
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="6650568951502239955">
+              <node role="expression" type="jetbrains.mps.baseLanguage.structure.GreaterThanExpression" id="6650568951502239956">
+                <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="6650568951502239957">
+                  <property name="value" value="0" />
+                </node>
+                <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="6650568951502239958">
+                  <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="6650568951502239959">
+                    <node role="operand" type="jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_node" id="6650568951502239960" />
+                    <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkListAccess" id="6650568951502239961">
+                      <link role="link" targetNodeId="17.1109279881614" />
+                    </node>
+                  </node>
+                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.LinkList_GetCountOperation" id="6650568951502239962" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1169763676999">
         <property name="text" value="implements" />
         <link role="styleClass" targetNodeId="1186415544875" resolveInfo="KeyWord" />
