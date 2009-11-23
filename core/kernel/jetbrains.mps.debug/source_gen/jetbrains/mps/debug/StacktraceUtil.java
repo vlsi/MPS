@@ -12,10 +12,10 @@ import com.intellij.openapi.project.Project;
 import java.util.List;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SModelRepository;
-import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import org.apache.commons.lang.ObjectUtils;
 import jetbrains.mps.smodel.SModelStereotype;
+import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.smodel.ModelAccess;
 import com.intellij.openapi.actionSystem.DataContext;
 import com.intellij.ide.DataManager;
@@ -79,32 +79,32 @@ public class StacktraceUtil {
       method.substring(0, lastDot)
     );
     List<SModelDescriptor> list = SModelRepository.getInstance().getModelDescriptorsByModelName(pkg);
-    final Wrappers._T<SModelDescriptor> descriptor = new Wrappers._T<SModelDescriptor>(null);
-    for (SModelDescriptor modelDescriptor : ListSequence.fromList(list)) {
-      if (!(ObjectUtils.equals(modelDescriptor.getStereotype(), SModelStereotype.JAVA_STUB))) {
-        descriptor.value = modelDescriptor;
+    for (final SModelDescriptor descriptor : ListSequence.fromList(list)) {
+      if (ObjectUtils.equals(descriptor.getStereotype(), SModelStereotype.JAVA_STUB)) {
+        continue;
       }
-    }
 
-    if (descriptor.value == null) {
-      return null;
-    }
+      final DebugInfo result = BLDebugInfoCache.getInstance().get(descriptor);
+      if (result == null) {
+        continue;
+      }
 
-    final DebugInfo result = BLDebugInfoCache.getInstance().get(descriptor.value);
-    if (result == null) {
-      return null;
-    }
-
-    final Wrappers._T<SNode> nodeToShow = new Wrappers._T<SNode>(null);
-    ModelAccess.instance().runReadAction(new Runnable() {
-      public void run() {
-        String[] str = position.split(":");
-        if (str.length >= 2) {
-          nodeToShow.value = result.getNodeForLine(str[0], Integer.parseInt(str[1]), descriptor.value.getSModel());
+      final Wrappers._T<SNode> nodeToShow = new Wrappers._T<SNode>(null);
+      ModelAccess.instance().runReadAction(new Runnable() {
+        public void run() {
+          String[] str = position.split(":");
+          if (str.length >= 2) {
+            nodeToShow.value = result.getNodeForLine(str[0], Integer.parseInt(str[1]), descriptor.getSModel());
+          }
         }
+      });
+
+      if (nodeToShow.value != null) {
+        return nodeToShow.value;
       }
-    });
-    return nodeToShow.value;
+    }
+
+    return null;
   }
 
   private static void showNode(SNode node) {
