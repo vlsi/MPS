@@ -343,15 +343,4 @@ public class IntentionsSupport {
   public boolean isLightBulbVisible() {
     return myLightBulb.isVisible();
   }
-
-  @Override
-  public String toString() {
-    return "IntentionsSupport{" +
-      "myEditor=" + myEditor +
-      ", myShowIntentionsAction=" + myShowIntentionsAction +
-      ", myLightBulbLocation=" + myLightBulbLocation +
-      ", myLightBulb=" + myLightBulb +
-      ", myShowIntentionsThread=" + myShowIntentionsThread +
-      '}';
-  }
 }

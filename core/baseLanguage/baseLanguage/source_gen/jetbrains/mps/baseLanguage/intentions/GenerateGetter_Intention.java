@@ -33,16 +33,16 @@ public class GenerateGetter_Intention extends GenerateIntention {
     List<SNode> fields = SLinkOperations.getTargets(SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.ClassConcept"), "field", true);
     boolean allGettersImplemented = true;
     for (SNode fieldDeclaration : fields) {
-      final Wrappers._boolean hasCurrentFiedGetter = new Wrappers._boolean(false);
+      final Wrappers._boolean hasCurrentFieldGetter = new Wrappers._boolean(false);
       final String getterName = "get" + NameUtil.capitalize(SPropertyOperations.getString(fieldDeclaration, "name"));
       ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.ClassConcept"), "method", true)).visitAll(new IVisitor<SNode>() {
         public void visit(SNode it) {
-          if (!(SPropertyOperations.getString(it, "name").equals(getterName) && ListSequence.fromList(SLinkOperations.getTargets(it, "parameter", true)).isEmpty())) {
-            hasCurrentFiedGetter.value = true;
+          if (SPropertyOperations.getString(it, "name").equals(getterName) && ListSequence.fromList(SLinkOperations.getTargets(it, "parameter", true)).isEmpty()) {
+            hasCurrentFieldGetter.value = true;
           }
         }
       });
-      if (!(hasCurrentFiedGetter.value)) {
+      if (!(hasCurrentFieldGetter.value)) {
         allGettersImplemented = false;
       }
     }
