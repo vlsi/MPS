@@ -22,6 +22,7 @@ import jetbrains.mps.project.SModelRoot;
 import jetbrains.mps.reloading.IClassPathItem;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.persistence.AbstractModelRootManager;
+import jetbrains.mps.workbench.actions.goTo.index.SNodeDescriptor;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -35,7 +36,7 @@ public abstract class BaseStubModelRootManager extends AbstractModelRootManager 
   private Set<SModelDescriptor> myDescriptorsWithListener = new HashSet<SModelDescriptor>();
   private MyInitializationListener myInitializationListener = new MyInitializationListener();
 
-  public void updateModels(@NotNull SModelRoot root, @NotNull IModule module) {
+  public final void updateModels(@NotNull SModelRoot root, @NotNull IModule module) {
     SModelRepository repository = SModelRepository.getInstance();
 
     for (SModelDescriptor descriptor : getModelDescriptors(module, root.getPrefix())) {
@@ -59,7 +60,7 @@ public abstract class BaseStubModelRootManager extends AbstractModelRootManager 
   }
 
   @NotNull
-  public SModel loadModel(@NotNull SModelDescriptor modelDescriptor) {
+  public final SModel loadModel(@NotNull SModelDescriptor modelDescriptor) {
     SModel model = new SModel(modelDescriptor.getSModelReference());
     ourTimestamps.put(model.getSModelReference(), timestamp(modelDescriptor));
 
@@ -72,6 +73,10 @@ public abstract class BaseStubModelRootManager extends AbstractModelRootManager 
     return model;
   }
 
+  public final void saveModel(@NotNull SModelDescriptor modelDescriptor) {
+
+  }
+
   private void updateModel(SModelDescriptor modelDescriptor, SModel model) {
     boolean wasLoading = model.isLoading();
     model.setLoading(true);
@@ -81,13 +86,6 @@ public abstract class BaseStubModelRootManager extends AbstractModelRootManager 
     } finally {
       model.setLoading(wasLoading);
     }
-  }
-
-  public void saveModel(@NotNull SModelDescriptor modelDescriptor) {
-  }
-
-  public long timestamp(@NotNull SModelDescriptor modelDescriptor) {
-    return getClassPathItem().getClassesTimestamp(modelDescriptor.getSModelReference().getLongName());
   }
 
   @Nullable
@@ -108,7 +106,7 @@ public abstract class BaseStubModelRootManager extends AbstractModelRootManager 
     }
   }
 
-  public abstract IClassPathItem getClassPathItem();
+  public abstract Set<SNodeDescriptor> getRootNodeDescriptors();
 
   protected abstract IModelLoader createLoader(SModelDescriptor modelDescriptor, SModel model);
 

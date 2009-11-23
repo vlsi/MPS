@@ -109,55 +109,11 @@ public class MPSChooseSNodeDescriptor extends BaseMPSChooseModel<SNodeDescriptor
       for (SModelRoot root : m.getSModelRoots()) {
         IModelRootManager manager = root.getManager();
         if (manager instanceof BaseStubModelRootManager) {
-          BaseStubModelRootManager classpathManager = (BaseStubModelRootManager) manager;
-          iterateClassPath(classpathManager.getClassPathItem(), result, "");
+          result.addAll(((BaseStubModelRootManager) manager).getRootNodeDescriptors());
         }
       }
     }
   }
-
-  private void iterateClassPath(IClassPathItem item, Set<SNodeDescriptor> result, final String pack) {
-    int numberInStubModel = 0;
-    List<String> availableClasses = new ArrayList<String>();
-    availableClasses.addAll(item.getAvailableClasses(pack));
-    Collections.sort(availableClasses);
-    for (String cls : availableClasses) {
-      if (cls.contains("$")) continue;
-
-      byte[] content = item.getClass("".equals(pack) ? cls : pack + "." + cls);
-
-      String conceptFqName = ClassConcept.concept;
-      switch (ClassifierKind.getClassifierKind(content)) {
-        case CLASS:
-          conceptFqName = ClassConcept.concept;
-          break;
-        case INTERFACE:
-          conceptFqName = Interface.concept;
-          break;
-        case ANNOTATIONS:
-          conceptFqName = Annotation.concept;
-          break;
-        case ENUM:
-          conceptFqName = EnumClass.concept;
-          break;
-        case UNKNOWN:
-          continue;
-      }
-
-      result.add(new SNodeDescriptor(cls, conceptFqName, 0, 0, numberInStubModel) {
-        @Override
-        public SModelReference getModelReference() {
-          return StubHelper.uidForPackageInStubs(pack);
-        }
-      });
-      numberInStubModel++;
-    }
-
-    for (String subpack : item.getSubpackages(pack)) {
-      iterateClassPath(item, result, subpack);
-    }
-  }
-  
 
   public NavigationItem doGetNavigationItem(final SNodeDescriptor object) {
     return new RootNodeElement(object) {
