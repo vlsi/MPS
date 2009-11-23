@@ -43911,10 +43911,9 @@
             <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1587969695316322711">
               <link role="classifier" targetNodeId="138.~DebugInfoManager" resolveInfo="DebugInfoManager" />
             </node>
-            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1587969695316322713">
-              <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1587969695316322714">
-                <link role="baseMethodDeclaration" targetNodeId="138.~DebugInfoManager.&lt;init&gt;()" resolveInfo="DebugInfoManager" />
-              </node>
+            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="2464389921387036696">
+              <link role="baseMethodDeclaration" targetNodeId="138.~DebugInfoManager.getInstance():jetbrains.mps.debug.DebugInfoManager" resolveInfo="getInstance" />
+              <link role="classConcept" targetNodeId="138.~DebugInfoManager" resolveInfo="DebugInfoManager" />
             </node>
           </node>
         </node>
