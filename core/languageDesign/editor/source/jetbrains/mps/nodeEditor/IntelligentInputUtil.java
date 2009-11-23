@@ -29,7 +29,6 @@ import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import java.util.List;
 
 import com.intellij.openapi.util.Computable;
-import org.jetbrains.annotations.NotNull;
 
 public class IntelligentInputUtil {
 
@@ -187,12 +186,12 @@ public class IntelligentInputUtil {
       return true;
     } else {
       if (isInOneStepAmbigousPosition(substituteInfo, smallPattern + tail)) {
-        if (tryToSubstitudeFirstSutable(editorContext, smallPattern + tail, substituteInfo)) {
+        if (tryToSubstituteFirstSutable(editorContext, smallPattern + tail, substituteInfo)) {
           return true;
         }
         editorContext.getNodeEditorComponent().activateNodeSubstituteChooser(cell, substituteInfo, false);
       } else if (isInAmbigousPosition(substituteInfo, smallPattern, tail)) {
-        if (tryToSubstitudeFirstSutable(editorContext, smallPattern, substituteInfo)) {
+        if (tryToSubstituteFirstSutable(editorContext, smallPattern, substituteInfo)) {
           return true;
         }
         cell.setText(smallPattern);
@@ -268,7 +267,7 @@ public class IntelligentInputUtil {
     return true;
   }
 
-  private static boolean tryToSubstitudeFirstSutable(EditorContext editorContext, String text, NodeSubstituteInfo substituteInfo) {
+  private static boolean tryToSubstituteFirstSutable(EditorContext editorContext, String text, NodeSubstituteInfo substituteInfo) {
     SNode concept = substituteInfo.getMatchingActions(text, true).get(0).getOutputConcept();
     if (concept == null) {
       return false;
