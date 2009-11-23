@@ -165,7 +165,7 @@ public class ModelCheckerTool_Tool extends GeneratedTabbedTool {
   }
 
   private void showTabWithResults(ModelCheckerViewer viewer) {
-    ModelCheckerTool_Tool.this.addTab(viewer, null, null, new IComponentDisposer<ModelCheckerViewer>() {
+    ModelCheckerTool_Tool.this.addTab(viewer, viewer.getTabTitle(), viewer.getTabIcon(), new IComponentDisposer<ModelCheckerViewer>() {
       public void disposeComponent(ModelCheckerViewer component) {
         component.dispose();
       }

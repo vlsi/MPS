@@ -39624,6 +39624,22 @@
               <node role="componentExpression" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="485694842829119815">
                 <link role="variableDeclaration" targetNodeId="5457007217767351075" resolveInfo="viewer" />
               </node>
+              <node role="titleExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="369043346076961481">
+                <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="369043346076961475">
+                  <link role="variableDeclaration" targetNodeId="5457007217767351075" resolveInfo="viewer" />
+                </node>
+                <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="369043346076962352">
+                  <link role="baseMethodDeclaration" targetNodeId="8560641068482549939" resolveInfo="getTabTitle" />
+                </node>
+              </node>
+              <node role="iconExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="369043346076962364">
+                <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="369043346076962358">
+                  <link role="variableDeclaration" targetNodeId="5457007217767351075" resolveInfo="viewer" />
+                </node>
+                <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="369043346076962385">
+                  <link role="baseMethodDeclaration" targetNodeId="4689025177660010342" resolveInfo="getTabIcon" />
+                </node>
+              </node>
             </node>
           </node>
         </node>

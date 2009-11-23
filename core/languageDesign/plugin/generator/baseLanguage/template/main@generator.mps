@@ -11547,7 +11547,10 @@
                         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="8383992355238345848">
                           <node role="expression" type="jetbrains.mps.baseLanguage.structure.TernaryOperatorExpression" id="8383992355238345849">
                             <node role="ifTrue" type="jetbrains.mps.lang.quotation.structure.Quotation" id="8383992355238345850">
-                              <node role="quotedNode" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="8383992355238345851" />
+                              <node role="quotedNode" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference" id="369043346077021610">
+                                <link role="classifier" targetNodeId="47.~IconManager" resolveInfo="IconManager" />
+                                <link role="variableDeclaration" targetNodeId="47.~IconManager.EMPTY_ICON" resolveInfo="EMPTY_ICON" />
+                              </node>
                             </node>
                             <node role="condition" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="8383992355238345852">
                               <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="8383992355238345853">
