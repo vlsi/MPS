@@ -80,7 +80,7 @@ public class HighlightUsages_Action extends GeneratedAction {
           EditorMessageOwner messageOwner = HighlightUsages_Action.this.editorComponent.getHighlightMessagesOwner();
           SNode node = HighlightUsages_Action.this.editorCell.getSNodeWRTReference();
           Set<SReference> usages = HighlightUsages_Action.this.model.findUsages(node);
-          boolean highlight = highlightManager.getMessageFor(node) == null;
+          boolean highlight = highlightManager.getMessageFor(HighlightUsages_Action.this.editorCell.getSNode()) == null;
           if (usages.size() > 0 && SNodeOperations.getContainingRoot(node) == HighlightUsages_Action.this.editorComponent.getRootCell().getSNode().getContainingRoot()) {
             if (highlight) {
               highlightManager.mark(node, HighlightConstants.NODE_COLOR, "source node", messageOwner);

@@ -18631,8 +18631,16 @@
                       </node>
                       <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="5533671870987100205">
                         <link role="baseMethodDeclaration" targetNodeId="65.~NodeHighlightManager.getMessageFor(jetbrains.mps.smodel.SNode):jetbrains.mps.nodeEditor.EditorMessage" resolveInfo="getMessageFor" />
-                        <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="5533671870987100206">
-                          <link role="variableDeclaration" targetNodeId="5533671870987099313" resolveInfo="operationNode" />
+                        <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="226043169587987877">
+                          <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="226043169587987826">
+                            <node role="operand" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpression" id="226043169587987827" />
+                            <node role="operation" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterReferenceOperation" id="226043169587987828">
+                              <link role="member" targetNodeId="5533671870987003866" resolveInfo="editorCell" />
+                            </node>
+                          </node>
+                          <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="226043169587988457">
+                            <link role="baseMethodDeclaration" targetNodeId="174.~EditorCell.getSNode():jetbrains.mps.smodel.SNode" resolveInfo="getSNode" />
+                          </node>
                         </node>
                       </node>
                     </node>
