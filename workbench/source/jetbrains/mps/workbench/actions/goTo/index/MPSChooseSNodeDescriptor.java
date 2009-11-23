@@ -33,6 +33,7 @@ import jetbrains.mps.workbench.choose.base.BaseMPSChooseModel;
 import jetbrains.mps.workbench.editors.MPSEditorOpener;
 import jetbrains.mps.reloading.IClassPathItem;
 import jetbrains.mps.stubs.BaseStubModelRootManager;
+import jetbrains.mps.stubs.StubLocation;
 import jetbrains.mps.stubs.javastub.classpath.ClassifierKind;
 import jetbrains.mps.stubs.javastub.classpath.StubHelper;
 import jetbrains.mps.baseLanguage.structure.ClassConcept;
@@ -109,7 +110,7 @@ public class MPSChooseSNodeDescriptor extends BaseMPSChooseModel<SNodeDescriptor
       for (SModelRoot root : m.getSModelRoots()) {
         IModelRootManager manager = root.getManager();
         if (manager instanceof BaseStubModelRootManager) {
-          result.addAll(((BaseStubModelRootManager) manager).getRootNodeDescriptors());
+          result.addAll(((BaseStubModelRootManager) manager).getRootNodeDescriptors(new StubLocation(root.getPath(), root.getPrefix(), m)));
         }
       }
     }
