@@ -272,7 +272,7 @@ public class SModel implements Iterable<SNode> {
   }
 
   public SModelDescriptor getModelDescriptor() {
-    assert !isDisposed();
+    // assert !isDisposed();
     return SModelRepository.getInstance().getModelDescriptor(this);
   }
 
