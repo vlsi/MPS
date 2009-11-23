@@ -19,6 +19,7 @@ import jetbrains.mps.nodeEditor.IErrorReporter;
 import jetbrains.mps.baseLanguage.behavior.LocalVariableDeclaration_Behavior;
 import jetbrains.mps.baseLanguage.behavior.IVariableAssignment_Behavior;
 import org.jetbrains.annotations.NotNull;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.dataFlow.runtime.NullableAnalysisResult;
 
@@ -161,7 +162,7 @@ public class DataFlowUtil {
     Set<SNode> usedVariables = DataFlow.getUsedVariables(program, statementList);
     for (SNode var : SNodeOperations.getDescendants(statementList, "jetbrains.mps.baseLanguage.structure.VariableDeclaration", false, new String[]{})) {
       if (!(SNodeOperations.isInstanceOf(SNodeOperations.getParent(var), "jetbrains.mps.baseLanguage.structure.CatchClause")) && SNodeOperations.getAncestor(var, "jetbrains.mps.lang.quotation.structure.Quotation", false, false) == null) {
-        if (SLinkOperations.getTarget(var, "initializer", true) == null && !(SetSequence.fromSet(usedVariables).contains(var))) {
+        if (SLinkOperations.getTarget(var, "initializer", true) == null && SNodeOperations.getConceptDeclaration(var) == SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.VariableDeclaration") && !(SetSequence.fromSet(usedVariables).contains(var))) {
           {
             BaseIntentionProvider intentionProvider = null;
             IErrorTarget errorTarget = new NodeErrorTarget();
