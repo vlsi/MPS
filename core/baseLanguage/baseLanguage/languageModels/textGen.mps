@@ -7405,6 +7405,62 @@
             <property name="value" value=")" />
           </node>
         </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="8435245205864941034">
+          <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="8435245205864941035">
+            <node role="statement" type="jetbrains.mps.lang.textGen.structure.AppendOperation" id="8435245205864948307">
+              <node role="part" type="jetbrains.mps.lang.textGen.structure.ConstantStringAppendPart" id="8435245205864948309">
+                <property name="value" value=" {" />
+              </node>
+              <node role="part" type="jetbrains.mps.lang.textGen.structure.NewLineAppendPart" id="8435245205864948311" />
+            </node>
+            <node role="statement" type="jetbrains.mps.lang.textGen.structure.WithIndentOperation" id="8435245205864948313">
+              <node role="list" type="jetbrains.mps.baseLanguage.structure.StatementList" id="8435245205864948314">
+                <node role="statement" type="jetbrains.mps.baseLanguage.structure.ForeachStatement" id="8435245205864948317">
+                  <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="8435245205864948318">
+                    <node role="statement" type="jetbrains.mps.lang.textGen.structure.AppendOperation" id="8435245205864948319">
+                      <node role="part" type="jetbrains.mps.lang.textGen.structure.NodeAppendPart" id="8435245205864948342">
+                        <node role="value" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="8435245205864948344">
+                          <link role="variableDeclaration" targetNodeId="8435245205864948322" resolveInfo="imd" />
+                        </node>
+                      </node>
+                      <node role="part" type="jetbrains.mps.lang.textGen.structure.NewLineAppendPart" id="8435245205864948346" />
+                    </node>
+                  </node>
+                  <node role="iterable" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="8435245205864948332">
+                    <node role="operand" type="jetbrains.mps.lang.textGen.structure.NodeParameter" id="8435245205864948331" />
+                    <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkListAccess" id="8435245205864948338">
+                      <link role="link" targetNodeId="1.492581319488141108" />
+                    </node>
+                  </node>
+                  <node role="variable" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="8435245205864948322">
+                    <property name="name" value="imd" />
+                    <node role="type" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="8435245205864948326">
+                      <link role="concept" targetNodeId="1.1068580123165" resolveInfo="InstanceMethodDeclaration" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+            <node role="statement" type="jetbrains.mps.lang.textGen.structure.AppendOperation" id="8435245205864948350">
+              <node role="part" type="jetbrains.mps.lang.textGen.structure.NewLineAppendPart" id="8435245205864949478" />
+              <node role="part" type="jetbrains.mps.lang.textGen.structure.ConstantStringAppendPart" id="8435245205864948352">
+                <property name="value" value="}" />
+              </node>
+            </node>
+          </node>
+          <node role="condition" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="8435245205864948302">
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="8435245205864941039">
+              <node role="operand" type="jetbrains.mps.lang.textGen.structure.NodeParameter" id="8435245205864941038" />
+              <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkListAccess" id="8435245205864948301">
+                <link role="link" targetNodeId="1.492581319488141108" />
+              </node>
+            </node>
+            <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.IsNotEmptyOperation" id="8435245205864948306" />
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.lang.textGen.structure.AppendOperation" id="8435245205864949474">
+          <node role="part" type="jetbrains.mps.lang.textGen.structure.NewLineAppendPart" id="8435245205864949476" />
+        </node>
       </node>
     </node>
   </node>

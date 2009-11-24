@@ -28,5 +28,18 @@ public class EnumConstantDeclaration_TextGen extends SNodeTextGen {
       }
     }
     this.append(")");
+    if (ListSequence.fromList(SLinkOperations.getTargets(node, "method", true)).isNotEmpty()) {
+      this.append(" {");
+      this.appendNewLine();
+      this.increaseDepth();
+      for (SNode imd : SLinkOperations.getTargets(node, "method", true)) {
+        TextGenManager.instance().appendNodeText(this.getContext(), this.getBuffer(), imd, this.getSNode());
+        this.appendNewLine();
+      }
+      this.decreaseDepth();
+      this.appendNewLine();
+      this.append("}");
+    }
+    this.appendNewLine();
   }
 }

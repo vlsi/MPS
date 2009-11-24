@@ -1701,10 +1701,27 @@
       <property name="name" value="GOODBYE" />
       <link role="baseMethodDeclaration" targetNodeId="1908995137503717945" resolveInfo="EnumConstantsWithMethods" />
       <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1908995137503731357">
+        <property name="name" value="foo" />
         <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1908995137503731358" />
-        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1908995137503731359" />
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1908995137503731359">
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="4208903103370784402">
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="4208903103370784403">
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference" id="4208903103370784404">
+                <link role="classifier" targetNodeId="150.~System" />
+                <link role="variableDeclaration" targetNodeId="150.~System.err" />
+              </node>
+              <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="4208903103370784405">
+                <link role="baseMethodDeclaration" targetNodeId="152.~PrintStream.println(java.lang.String):void" />
+                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="4208903103370784406">
+                  <property name="value" value="hello" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
       </node>
       <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1908995137503731360">
+        <property name="name" value="bar" />
         <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1908995137503731361" />
         <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1908995137503731362" />
       </node>
