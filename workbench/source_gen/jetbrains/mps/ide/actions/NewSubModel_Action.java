@@ -98,7 +98,7 @@ public class NewSubModel_Action extends GeneratedAction {
       ModelAccess.instance().runReadAction(new Runnable() {
         public void run() {
           String stereotype = NewSubModel_Action.this.model.getStereotype();
-          dialog.value = new NewModelDialog(localModule, namespace, NewSubModel_Action.this.context, stereotype);
+          dialog.value = new NewModelDialog(localModule, namespace, NewSubModel_Action.this.context, stereotype, true);
         }
       });
       dialog.value.showDialog();

@@ -22,7 +22,7 @@ import jetbrains.mps.workbench.dialogs.project.creation.NewModelDialog;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.ide.projectPane.ProjectPane;
-import jetbrains.mps.ide.ui.TextTreeNode;
+import jetbrains.mps.ide.IStereotypeProvider;
 
 public class NewModel_Action extends GeneratedAction {
   private static final Icon ICON = null;
@@ -119,7 +119,7 @@ public class NewModel_Action extends GeneratedAction {
       ModelAccess.instance().runReadAction(new Runnable() {
         public void run() {
           String stereotype = NewModel_Action.this.getStereotype();
-          dialog.value = new NewModelDialog(localModule, NewModel_Action.this.getNamespace(), localContext, stereotype);
+          dialog.value = new NewModelDialog(localModule, NewModel_Action.this.getNamespace(), localContext, stereotype, NewModel_Action.this.isStrict());
         }
       });
       dialog.value.showDialog();
@@ -136,10 +136,17 @@ public class NewModel_Action extends GeneratedAction {
   }
 
   protected String getStereotype() {
-    if (NewModel_Action.this.treeNode instanceof TextTreeNode) {
-      return ((TextTreeNode)NewModel_Action.this.treeNode).getDefaultStereotype();
+    if (NewModel_Action.this.treeNode instanceof IStereotypeProvider) {
+      return ((IStereotypeProvider)NewModel_Action.this.treeNode).getStereotype();
     }
     return null;
+  }
+
+  protected boolean isStrict() {
+    if (NewModel_Action.this.treeNode instanceof IStereotypeProvider) {
+      return ((IStereotypeProvider)NewModel_Action.this.treeNode).isStrict();
+    }
+    return false;
   }
 
   protected String getNamespace() {
