@@ -39740,7 +39740,7 @@
                     </node>
                   </node>
                   <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="5457007217767351504">
-                    <property name="value" value="2" />
+                    <property name="value" value="0" />
                   </node>
                   <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="5457007217767351505" />
                 </node>
@@ -39803,12 +39803,22 @@
                 </node>
               </node>
               <node role="elsifClauses" type="jetbrains.mps.baseLanguage.structure.ElsifClause" id="5457007217767351529">
-                <node role="condition" type="jetbrains.mps.baseLanguage.structure.EqualsExpression" id="5457007217767351530">
-                  <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="5457007217767351531">
-                    <property name="value" value="2" />
+                <node role="condition" type="jetbrains.mps.baseLanguage.structure.OrExpression" id="7635215049667541529">
+                  <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.EqualsExpression" id="7635215049667541533">
+                    <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="7635215049667541536">
+                      <property name="value" value="-1" />
+                    </node>
+                    <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="7635215049667541532">
+                      <link role="variableDeclaration" targetNodeId="5457007217767351490" resolveInfo="dialogAnswer" />
+                    </node>
                   </node>
-                  <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="5457007217767351532">
-                    <link role="variableDeclaration" targetNodeId="5457007217767351490" resolveInfo="dialogAnswer" />
+                  <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.EqualsExpression" id="5457007217767351530">
+                    <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="5457007217767351532">
+                      <link role="variableDeclaration" targetNodeId="5457007217767351490" resolveInfo="dialogAnswer" />
+                    </node>
+                    <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="5457007217767351531">
+                      <property name="value" value="2" />
+                    </node>
                   </node>
                 </node>
                 <node role="statementList" type="jetbrains.mps.baseLanguage.structure.StatementList" id="5457007217767351533">

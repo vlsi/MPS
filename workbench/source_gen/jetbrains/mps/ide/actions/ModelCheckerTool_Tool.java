@@ -191,7 +191,7 @@ public class ModelCheckerTool_Tool extends GeneratedTabbedTool {
 
     if (errors != 0) {
       String dialogMessage = "Model checker found " + errors + " errors and " + warnings + " warnings. Would you like to review them?";
-      int dialogAnswer = Messages.showDialog(operationContext.getProject(), dialogMessage, "Model Checking", new String[]{"Review","Commit","Cancel"}, 2, null);
+      int dialogAnswer = Messages.showDialog(operationContext.getProject(), dialogMessage, "Model Checking", new String[]{"Review","Commit","Cancel"}, 0, null);
       if (dialogAnswer == 0) {
         // review errors and warnings, don't commit 
         ModelCheckerTool_Tool.this.showTabWithResults(viewer);
@@ -199,7 +199,7 @@ public class ModelCheckerTool_Tool extends GeneratedTabbedTool {
       } else if (dialogAnswer == 1) {
         // ignore errors and warnings 
         return CheckinHandler.ReturnResult.COMMIT;
-      } else if (dialogAnswer == 2) {
+      } else if (dialogAnswer == 2 || dialogAnswer == -1) {
         // Cancel 
         return CheckinHandler.ReturnResult.CANCEL;
       }
