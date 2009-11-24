@@ -81,6 +81,14 @@ public class GenerateModel_Action extends GeneratedAction {
 
   public void doExecute(@NotNull final AnActionEvent event) {
     try {
+      boolean checkSuccessful = GenerateModel_Action.this.project.getPluginManager().getTool(ModelCheckerTool_Tool.class).checkModelsBeforeGenerationIfNeeded(GenerateModel_Action.this.context, GenerateModel_Action.this.models, new Runnable() {
+        public void run() {
+          GenerateModel_Action.this.project.getComponentSafe(GeneratorManager.class).generateModelsFromDifferentModules(GenerateModel_Action.this.context, GenerateModel_Action.this.models, GenerateModel_Action.this.generationType);
+        }
+      });
+      if (!(checkSuccessful)) {
+        return;
+      }
       GenerateModel_Action.this.project.getComponentSafe(GeneratorManager.class).generateModelsFromDifferentModules(GenerateModel_Action.this.context, GenerateModel_Action.this.models, GenerateModel_Action.this.generationType);
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
