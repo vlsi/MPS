@@ -7014,17 +7014,12 @@
                       </node>
                       <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1208797968583">
                         <link role="baseMethodDeclaration" targetNodeId="34.~ConsoleViewImpl.print(java.lang.String,com.intellij.execution.ui.ConsoleViewContentType):void" resolveInfo="print" />
-                        <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1213184751736">
-                          <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1213184753005">
-                            <property name="value" value="\n" />
+                        <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1208797968584">
+                          <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1208797968585">
+                            <link role="variableDeclaration" targetNodeId="1208776122569" resolveInfo="message" />
                           </node>
-                          <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1208797968584">
-                            <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1208797968585">
-                              <link role="variableDeclaration" targetNodeId="1208776122569" resolveInfo="message" />
-                            </node>
-                            <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1208797968586">
-                              <link role="baseMethodDeclaration" targetNodeId="1208775591149" resolveInfo="getMessage" />
-                            </node>
+                          <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1208797968586">
+                            <link role="baseMethodDeclaration" targetNodeId="1208775591149" resolveInfo="getMessage" />
                           </node>
                         </node>
                         <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference" id="1213183325122">
@@ -7056,17 +7051,12 @@
                       </node>
                       <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1208800821799">
                         <link role="baseMethodDeclaration" targetNodeId="34.~ConsoleViewImpl.print(java.lang.String,com.intellij.execution.ui.ConsoleViewContentType):void" resolveInfo="print" />
-                        <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1213184745323">
-                          <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1213184745952">
-                            <property name="value" value="\n" />
+                        <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1208800821800">
+                          <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1208800821801">
+                            <link role="variableDeclaration" targetNodeId="1208776122569" resolveInfo="message" />
                           </node>
-                          <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1208800821800">
-                            <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1208800821801">
-                              <link role="variableDeclaration" targetNodeId="1208776122569" resolveInfo="message" />
-                            </node>
-                            <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1208800821802">
-                              <link role="baseMethodDeclaration" targetNodeId="1208775591149" resolveInfo="getMessage" />
-                            </node>
+                          <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1208800821802">
+                            <link role="baseMethodDeclaration" targetNodeId="1208775591149" resolveInfo="getMessage" />
                           </node>
                         </node>
                         <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference" id="1213183309501">

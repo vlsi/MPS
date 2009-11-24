@@ -69,9 +69,9 @@ public class TestOutputComponent {
       if (message.isError()) {
         StacktraceUtil.appendStacktraceToConsole(this.consoleView, message.getMessage(), ConsoleViewContentType.ERROR_OUTPUT);
       } else if (message.isInternal()) {
-        this.consoleView.print(message.getMessage() + "\n", ConsoleViewContentType.SYSTEM_OUTPUT);
+        this.consoleView.print(message.getMessage(), ConsoleViewContentType.SYSTEM_OUTPUT);
       } else {
-        this.consoleView.print(message.getMessage() + "\n", ConsoleViewContentType.NORMAL_OUTPUT);
+        this.consoleView.print(message.getMessage(), ConsoleViewContentType.NORMAL_OUTPUT);
       }
     }
   }
