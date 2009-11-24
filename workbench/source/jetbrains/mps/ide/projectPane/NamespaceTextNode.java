@@ -24,6 +24,7 @@ import jetbrains.mps.ide.projectPane.NamespaceTreeBuilder.NamespaceNodeBuilder;
 import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.ide.ui.TextTreeNode;
 import jetbrains.mps.ide.ui.smodel.SModelTreeNode;
+import jetbrains.mps.ide.IStereotypeProvider;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SModelDescriptor;
@@ -33,7 +34,9 @@ import jetbrains.mps.workbench.action.ActionUtils;
 import java.util.ArrayList;
 import java.util.List;
 
-public class NamespaceTextNode extends TextTreeNode {
+import javax.swing.tree.TreeNode;
+
+public class NamespaceTextNode extends TextTreeNode implements IStereotypeProvider {
   private static final NamespaceNodeBuilder<NamespaceTextNode> BUILDER = new NamespaceNodeBuilder<NamespaceTextNode>() {
     public NamespaceTextNode createNamespaceNode(String text, IOperationContext context) {
       return new NamespaceTextNode(text, context);
@@ -152,6 +155,28 @@ public class NamespaceTextNode extends TextTreeNode {
   }
 
   public boolean isFinalName() {
+    return false;
+  }
+
+  public String getStereotype() {
+    TreeNode parent = getParent();
+    while (parent != null) {
+      if (parent instanceof IStereotypeProvider) {
+        return ((IStereotypeProvider) parent).getStereotype();
+      }
+      parent = parent.getParent();
+    }
+    return null;
+  }
+
+  public boolean isStrict() {
+    TreeNode parent = getParent();
+    while (parent != null) {
+      if (parent instanceof IStereotypeProvider) {
+        return ((IStereotypeProvider) parent).isStrict();
+      }
+      parent = parent.getParent();
+    }
     return false;
   }
 }

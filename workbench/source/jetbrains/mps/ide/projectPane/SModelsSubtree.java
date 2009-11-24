@@ -17,6 +17,7 @@ package jetbrains.mps.ide.projectPane;
 
 import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.ide.ui.TextTreeNode;
+import jetbrains.mps.ide.IStereotypeProvider;
 import jetbrains.mps.ide.ui.smodel.SModelTreeNode;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.SModelRoot;
@@ -153,7 +154,7 @@ public class SModelsSubtree {
     return shortName.split("\\.").length - 1;
   }
 
-  public static class JavaStubsTreeNode extends TextTreeNode {
+  public static class JavaStubsTreeNode extends TextTreeNode implements IStereotypeProvider {
     public JavaStubsTreeNode(IOperationContext context) {
       super("java stubs", context);
 
@@ -161,13 +162,16 @@ public class SModelsSubtree {
       setIcon(Icons.PROJECT_MODELS_EXPANDED_ICON, true);
     }
 
-    @Override
-    public String getDefaultStereotype() {
+    public String getStereotype() {
       return SModelStereotype.JAVA_STUB;
+    }
+
+    public boolean isStrict() {
+      return true;
     }
   }
 
-  public static class TestsTreeNode extends TextTreeNode {
+  public static class TestsTreeNode extends TextTreeNode implements IStereotypeProvider {
     public TestsTreeNode(IOperationContext context) {
       super("tests", context);
 
@@ -175,9 +179,12 @@ public class SModelsSubtree {
       setIcon(Icons.PROJECT_MODELS_EXPANDED_ICON, true);
     }
 
-    @Override
-    public String getDefaultStereotype() {
+    public String getStereotype() {
       return SModelStereotype.TESTS;
+    }
+
+    public boolean isStrict() {
+      return true;
     }
   }
 }

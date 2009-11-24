@@ -20,9 +20,11 @@ import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.ModuleContext;
 import jetbrains.mps.smodel.Generator;
+import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.workbench.action.ActionUtils;
+import jetbrains.mps.ide.IStereotypeProvider;
 
-class GeneratorTreeNode extends ProjectModuleTreeNode {
+class GeneratorTreeNode extends ProjectModuleTreeNode implements IStereotypeProvider {
   private boolean myInitialized;
 
   public GeneratorTreeNode(Generator generator, MPSProject project) {
@@ -85,4 +87,11 @@ class GeneratorTreeNode extends ProjectModuleTreeNode {
     return generator.getModuleUID();
   }
 
+  public String getStereotype() {
+    return SModelStereotype.GENERATOR;
+  }
+
+  public boolean isStrict() {
+    return false; 
+  }
 }

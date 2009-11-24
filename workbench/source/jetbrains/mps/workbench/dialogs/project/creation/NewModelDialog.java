@@ -51,11 +51,11 @@ public class NewModelDialog extends BaseDialog {
     initContentPane();
   }
 
-  public NewModelDialog(IModule module, String namespace, IOperationContext context, String stereotype) throws HeadlessException {
+  public NewModelDialog(IModule module, String namespace, IOperationContext context, String stereotype, boolean strict) throws HeadlessException {
     this(module, namespace, context);
     if (stereotype != null) {
-      myModelStereotype.setEnabled(false);
       myModelStereotype.setSelectedItem(stereotype);
+      myModelStereotype.setEnabled(!strict);
     }
   }
 
