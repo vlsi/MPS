@@ -1691,5 +1691,30 @@
       </node>
     </node>
   </node>
+  <node type="jetbrains.mps.baseLanguage.structure.EnumClass" id="1908995137503717943">
+    <property name="name" value="EnumConstantsWithMethods" />
+    <node role="enumConstant" type="jetbrains.mps.baseLanguage.structure.EnumConstantDeclaration" id="1908995137503731352">
+      <property name="name" value="HELLO" />
+      <link role="baseMethodDeclaration" targetNodeId="1908995137503717945" resolveInfo="EnumConstantsWithMethods" />
+    </node>
+    <node role="enumConstant" type="jetbrains.mps.baseLanguage.structure.EnumConstantDeclaration" id="1908995137503731353">
+      <property name="name" value="GOODBYE" />
+      <link role="baseMethodDeclaration" targetNodeId="1908995137503717945" resolveInfo="EnumConstantsWithMethods" />
+      <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1908995137503731357">
+        <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1908995137503731358" />
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1908995137503731359" />
+      </node>
+      <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1908995137503731360">
+        <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1908995137503731361" />
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1908995137503731362" />
+      </node>
+    </node>
+    <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1908995137503717944" />
+    <node role="constructor" type="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" id="1908995137503717945">
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1908995137503717946" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1908995137503717947" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1908995137503717948" />
+    </node>
+  </node>
 </model>
 

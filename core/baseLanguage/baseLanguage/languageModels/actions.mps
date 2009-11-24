@@ -11995,5 +11995,53 @@
       </node>
     </node>
   </node>
+  <node type="jetbrains.mps.lang.actions.structure.SideTransformHintSubstituteActions" id="3189410239339391543">
+    <property name="name" value="enumConstant_rt" />
+    <node role="actionsBuilder" type="jetbrains.mps.lang.actions.structure.SideTransformHintSubstituteActionsBuilder" id="3189410239339391544">
+      <property name="transformTag" value="ext_1_RTransform" />
+      <link role="applicableConcept" targetNodeId="1.1083245299891" resolveInfo="EnumConstantDeclaration" />
+      <node role="part" type="jetbrains.mps.lang.actions.structure.AddMenuPart" id="3189410239339394918">
+        <link role="concept" targetNodeId="1.1068580123165" resolveInfo="InstanceMethodDeclaration" />
+        <node role="part" type="jetbrains.mps.lang.actions.structure.SimpleSideTransformMenuPart" id="3189410239339394920">
+          <node role="handler" type="jetbrains.mps.lang.actions.structure.QueryFunction_SideTransform_Handler" id="3189410239339394921">
+            <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="3189410239339394922">
+              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="3189410239339394927">
+                <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="3189410239339394934">
+                  <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="3189410239339394929">
+                    <node role="operand" type="jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_sourceNode" id="3189410239339394928" />
+                    <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkListAccess" id="3189410239339394933">
+                      <link role="link" targetNodeId="1.492581319488141108" />
+                    </node>
+                  </node>
+                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.LinkList_AddNewChildOperation" id="3189410239339394938" />
+                </node>
+              </node>
+            </node>
+          </node>
+          <node role="matchingText" type="jetbrains.mps.lang.actions.structure.SideTransform_SimpleString" id="3189410239339394923">
+            <property name="text" value="{" />
+          </node>
+          <node role="descriptionText" type="jetbrains.mps.lang.actions.structure.SideTransform_SimpleString" id="3189410239339394926">
+            <property name="text" value="add enum constant methods" />
+          </node>
+        </node>
+      </node>
+      <node role="precondition" type="jetbrains.mps.lang.actions.structure.SideTransformHintSubstitutePreconditionFunction" id="3189410239339394410">
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="3189410239339394411">
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="3189410239339394905">
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="3189410239339394912">
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="3189410239339394907">
+                <node role="operand" type="jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_sourceNode" id="3189410239339394906" />
+                <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkListAccess" id="3189410239339394911">
+                  <link role="link" targetNodeId="1.492581319488141108" />
+                </node>
+              </node>
+              <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.IsEmptyOperation" id="3189410239339394916" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
 </model>
 
