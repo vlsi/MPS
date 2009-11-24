@@ -13,7 +13,9 @@ import com.intellij.openapi.actionSystem.AnActionEvent;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.workbench.MPSDataKeys;
+import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.workbench.dialogs.project.utildialogs.clonemodel.CloneModelDialog;
+import jetbrains.mps.smodel.ModelAccess;
 
 public class CloneModel_Action extends GeneratedAction {
   private static final Icon ICON = null;
@@ -83,8 +85,13 @@ public class CloneModel_Action extends GeneratedAction {
 
   public void doExecute(@NotNull final AnActionEvent event) {
     try {
-      CloneModelDialog dialog = new CloneModelDialog(CloneModel_Action.this.model, CloneModel_Action.this.context);
-      dialog.showDialog();
+      final Wrappers._T<CloneModelDialog> dialog = new Wrappers._T<CloneModelDialog>();
+      ModelAccess.instance().runReadAction(new Runnable() {
+        public void run() {
+          dialog.value = new CloneModelDialog(CloneModel_Action.this.model, CloneModel_Action.this.context);
+        }
+      });
+      dialog.value.showDialog();
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
         log.error("User's action execute method failed. Action:" + "CloneModel", t);

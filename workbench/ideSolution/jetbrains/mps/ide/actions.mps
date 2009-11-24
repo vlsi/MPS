@@ -1943,19 +1943,32 @@
             <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1701333800199078322">
               <link role="classifier" targetNodeId="168.~CloneModelDialog" resolveInfo="CloneModelDialog" />
             </node>
-            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1215874789780">
-              <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1215874789781">
-                <link role="baseMethodDeclaration" targetNodeId="168.~CloneModelDialog.&lt;init&gt;(jetbrains.mps.smodel.SModelDescriptor,jetbrains.mps.smodel.IOperationContext)" resolveInfo="CloneModelDialog" />
-                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1215874793829">
-                  <node role="operand" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpression" id="1215874793830" />
-                  <node role="operation" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterReferenceOperation" id="1217420646259">
-                    <link role="member" targetNodeId="1217420646258" resolveInfo="model" />
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.lang.plugin.structure.ExecuteLightweightCommandStatement" id="4047102590261012443">
+          <node role="commandClosureLiteral" type="jetbrains.mps.lang.plugin.structure.CommandClosureLiteral" id="4047102590261012444">
+            <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="4047102590261012445">
+              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="4047102590261012456">
+                <node role="expression" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression" id="4047102590261012459">
+                  <node role="lValue" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="4047102590261012457">
+                    <link role="variableDeclaration" targetNodeId="1215874783309" resolveInfo="dialog" />
                   </node>
-                </node>
-                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1215874797146">
-                  <node role="operand" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpression" id="1215874797147" />
-                  <node role="operation" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterReferenceOperation" id="1217420646896">
-                    <link role="member" targetNodeId="1217420646895" resolveInfo="context" />
+                  <node role="rValue" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="4047102590261012463">
+                    <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="4047102590261012464">
+                      <link role="baseMethodDeclaration" targetNodeId="168.~CloneModelDialog.&lt;init&gt;(jetbrains.mps.smodel.SModelDescriptor,jetbrains.mps.smodel.IOperationContext)" resolveInfo="CloneModelDialog" />
+                      <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="4047102590261012465">
+                        <node role="operand" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpression" id="4047102590261012466" />
+                        <node role="operation" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterReferenceOperation" id="4047102590261012467">
+                          <link role="member" targetNodeId="1217420646258" resolveInfo="model" />
+                        </node>
+                      </node>
+                      <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="4047102590261012468">
+                        <node role="operand" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpression" id="4047102590261012469" />
+                        <node role="operation" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterReferenceOperation" id="4047102590261012470">
+                          <link role="member" targetNodeId="1217420646895" resolveInfo="context" />
+                        </node>
+                      </node>
+                    </node>
                   </node>
                 </node>
               </node>
