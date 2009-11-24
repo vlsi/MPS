@@ -20,6 +20,7 @@ public class EnumConstantDeclaration extends BaseConcept implements IValidIdenti
   public static final String RESOLVE_INFO = "resolveInfo";
   public static final String BASE_METHOD_DECLARATION = "baseMethodDeclaration";
   public static final String VISIBILITY = "visibility";
+  public static final String METHOD = "method";
   public static final String ACTUAL_ARGUMENT = "actualArgument";
 
   public EnumConstantDeclaration(SNode node) {
@@ -88,6 +89,26 @@ public class EnumConstantDeclaration extends BaseConcept implements IValidIdenti
 
   public void setVisibility(Visibility node) {
     super.setChild(EnumConstantDeclaration.VISIBILITY, node);
+  }
+
+  public int getMethodsCount() {
+    return this.getChildCount(EnumConstantDeclaration.METHOD);
+  }
+
+  public Iterator<InstanceMethodDeclaration> methods() {
+    return this.children(InstanceMethodDeclaration.class, EnumConstantDeclaration.METHOD);
+  }
+
+  public List<InstanceMethodDeclaration> getMethods() {
+    return this.getChildren(InstanceMethodDeclaration.class, EnumConstantDeclaration.METHOD);
+  }
+
+  public void addMethod(InstanceMethodDeclaration node) {
+    this.addChild(EnumConstantDeclaration.METHOD, node);
+  }
+
+  public void insertMethod(InstanceMethodDeclaration prev, InstanceMethodDeclaration node) {
+    this.insertChild(prev, EnumConstantDeclaration.METHOD, node);
   }
 
   public int getActualArgumentsCount() {

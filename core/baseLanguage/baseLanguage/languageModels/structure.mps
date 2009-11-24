@@ -1171,6 +1171,12 @@
     <property name="name" value="EnumConstantDeclaration" />
     <property name="package" value="classifier.enum" />
     <link role="extends" targetNodeId="4.1133920641626" resolveInfo="BaseConcept" />
+    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="492581319488141108">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="method" />
+      <property name="sourceCardinality" value="0..n" />
+      <link role="target" targetNodeId="1068580123165" resolveInfo="InstanceMethodDeclaration" />
+    </node>
     <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1236880967992">
       <property name="metaClass" value="reference" />
       <property name="role" value="constructor" />
