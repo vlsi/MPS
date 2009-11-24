@@ -1065,6 +1065,7 @@ public class SModel implements Iterable<SNode> {
   }
 
   public boolean isNotEditable() {
+    assert !isDisposed();
     SModelDescriptor modelDescriptor = getModelDescriptor();
     assert modelDescriptor != null;
     return modelDescriptor.isReadOnly();
